@@ -22,30 +22,40 @@ const ThankyouPage = () => {
     <Layout backgroundColor={WHITE_SMOKE} pageTitle={PAGE_TITLE.Thankyou}>
       <div className="main-container header-content ">
         <Breadcrumb data={data} />
-        <h1>
-          <span className="red ">Thank you</span> for contacting us!
-        </h1>
       </div>
 
       <div className="body-background-white">
         <div className="main-container body-content">
-          <p>Thank you for your inquiry.</p>
+          <h1>
+            <span className="red">
+              <h1>Thank you!</h1>
+            </span>
+          </h1>
           <p>
-            We will be in contact soon. In the meantime, please have a look at
-            our&nbsp;
-            <a href="/Consulting/" target="_blank">
-              Consulting Services
-            </a>
-            &nbsp;
-            <img src={external}></img> and&nbsp;
-            <a href="/People" target="_blank">
-              People
-            </a>
-            &nbsp;
-            <img src={external}></img>.
+            Your form has been successfully submitted. We will be in contact as
+            soon as possible
+            <br />
+            In the meantime, check out our other services and meet our amazing
+            team.
           </p>
+
+          <div className="flex-between">
+            <div>
+              <p>SSW can help your business in many ways:</p>
+              <a className="red done" href="https://www.ssw.com.au/ssw/Consulting/Default.aspx">
+                SSW Consulting
+              </a>
+            </div>
+            <div>
+              <p>Want to know more about our consultants:</p>{" "}
+              <a className="red done" href="https://www.ssw.com.au/people/">
+                SSW People
+              </a>
+            </div>
+          </div>
         </div>
       </div>
+
       <BuildPlatform backgroundColor={WHITE_SMOKE} />
     </Layout>
   );
