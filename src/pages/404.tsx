@@ -15,7 +15,7 @@ const NotFoundPage = () => {
               <div className="not-found-message">
                 <h2 className="unselectable">
                   <span>PAGE NOT FOUND</span> <br />
-                  Sorry, we couldn't flip to the <br />
+                  Sorry, we couldn't find the <br />
                   page you were looking for<span> </span>
                 </h2>
               </div>
