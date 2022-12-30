@@ -27,7 +27,7 @@ export const Carousel = ({ data }) => {
   }
 
   return (
-    <Section>
+    <Section className="bg-gray-100">
       <Container size="custom">
         <CarouselImplementation
           autoPlay={true}

@@ -8,21 +8,64 @@ blocks:
         openIn: modal
         imgSrc: /uploads/why-ssw.jpeg
       - label: Case Study - Improving Radiologists' Ability to Detect Breast Cancer
-        link: >-
-          https://www.ssw.com.au/SSW/Consulting/Case-Study/SydneyUni.aspx
+        link: 'https://www.ssw.com.au/SSW/Consulting/Case-Study/SydneyUni.aspx'
         openIn: sameWindow
         imgSrc: /uploads/case-study.jpeg
       - label: SSW TV
-        link: >-
-          https://tv.ssw.com/
+        link: 'https://tv.ssw.com/'
         openIn: newWindow
         imgSrc: /uploads/ssw-tv.png
-      - label: Are your staff being driven nuts by outdated software or manual processes?
-        link: >-
-          https://www.ssw.com.au/ssw/Consulting/Are-You-Stuck.aspx
+      - label: >-
+          Are your staff being driven nuts by outdated software or manual
+          processes?
+        link: 'https://www.ssw.com.au/ssw/Consulting/Are-You-Stuck.aspx'
         openIn: sameWindow
         imgSrc: /uploads/need-help.jpeg
     _template: carousel
+  - bigCardsLabel: Consulting
+    bigCards:
+      - title: Web / Angular / React
+        description: >
+          Ever since SSW developed the very first .NET Website in Australia,
+          we've been known as leaders in Web  Development.
+        link: /ssw/Consulting/Web-Applications.aspx
+        color: red
+      - title: DevOps & Cloud
+        description: >
+          Making your software ships by using SSW developers' best practices in
+          Azure, DevOps and Docker Containers.
+        link: /ssw/Consulting/Azure.aspx
+        color: lightgray
+      - title: Mobile/Bots/AI
+        description: >
+          SSW software developers are experts at building cross platform mobile
+          and chat apps using the power of AI with Machine Learning.
+        link: /ssw/Consulting/Mobile-Application-Development.aspx
+        color: mediumgray
+      - title: Dynamics 365
+        description: >
+          Dynamics 365/CRM brings new levels of customer intelligence, providing
+          employees the information they need to truly impress.
+        link: /ssw/Consulting/Microsoft-Dynamics-365.aspx
+        color: darkgray
+    smallCardsLabel: Core Services
+    smallCards:
+      - title: Training
+        link: /ssw/Events/?tech=all&type=all
+        color: darkgray
+      - title: Office 365/SharePoint
+        link: /ssw/Consulting/SharePoint.aspx
+        color: darkgray
+      - title: Book an Expert
+        link: /ssw/Consulting/Consulting.aspx
+        color: darkgray
+      - title: Rules
+        link: /rules
+        color: darkgray
+    links:
+      - label: More Services...
+        link: /ssw/Consulting/
+    _template: serviceCards
   - headline: Welcome to the Tina Starter
     text: >
       This project is set up to show you the basics of working with Tina. You're
@@ -72,3 +115,4 @@ blocks:
     color: tint
     _template: features
 ---
+
