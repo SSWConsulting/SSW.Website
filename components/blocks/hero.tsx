@@ -2,12 +2,10 @@ import * as React from "react";
 import { Actions } from "../util/actions";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
-import { useTheme } from "../layout";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
 
 export const Hero = ({ data, parentField }) => {
-  const theme = useTheme();
   const headlineColorClasses = {
     blue: "from-blue-400 to-blue-600",
     teal: "from-teal-400 to-teal-600",
@@ -44,7 +42,7 @@ export const Hero = ({ data, parentField }) => {
                 className={`bg-clip-text text-transparent bg-gradient-to-r  ${
                   data.color === "primary"
                     ? `from-white to-gray-100`
-                    : headlineColorClasses[theme.color]
+                    : headlineColorClasses['blue']
                 }`}
               >
                 {data.headline}

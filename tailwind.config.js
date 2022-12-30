@@ -1,5 +1,4 @@
 const colors = require("tailwindcss/colors");
-const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   mode: "jit",
@@ -17,19 +16,18 @@ module.exports = {
       purple: colors.purple,
       pink: colors.pink,
       yellow: colors.yellow,
+      sswRed: "#cc4141",
       gray: {
-        50: "#F6F6F9",
-        100: "#EDECF3",
-        150: "#E6E3EF",
-        200: "#E1DDEC",
-        250: "#C9C5D5",
-        300: "#b2adbe",
-        400: "#918c9e",
-        500: "#716c7f",
-        600: "#565165",
-        700: "#433e52",
-        800: "#363145",
-        900: "#252336",
+        50: '#f9f9f9', 
+        100: '#f2f2f2', 
+        200: '#dfdfdf', 
+        300: '#cccccc', 
+        400: '#a6a6a6', 
+        500: '#808080', 
+        600: '#737373', 
+        700: '#606060', 
+        800: '#414141', 
+        900: '#333333',
         1000: "#1c1b2e",
       },
       blue: {
@@ -63,6 +61,7 @@ module.exports = {
       "2xl": "1800px",
     },
     fontSize: {
+      xxs: ".625rem",
       xs: ".875rem",
       sm: "1rem",
       base: "1.125rem",
@@ -99,8 +98,7 @@ module.exports = {
         "-1": "-1",
       },
       fontFamily: {
-        nunito: ["Nunito", ...defaultTheme.fontFamily.sans],
-        lato: ["Lato", ...defaultTheme.fontFamily.sans],
+        sans: ['Arial','Helvetica Neue','Helvetica','sans-serif'],
       },
       typography: (theme) => ({
         DEFAULT: {
