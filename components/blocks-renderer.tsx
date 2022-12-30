@@ -1,5 +1,6 @@
 import React from "react";
 import type { Page } from "../.tina/__generated__/types";
+import { Carousel } from "./blocks/carousel";
 import { Content } from "./blocks/content";
 import { Features } from "./blocks/features";
 import { Hero } from "./blocks/hero";
@@ -11,6 +12,15 @@ export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
       {props.blocks
         ? props.blocks.map(function (block, i) {
             switch (block.__typename) {
+              case "PageBlocksCarousel":
+                return (
+                  <div
+                    data-tinafield={`blocks.${i}`}
+                    key={i + block.__typename}
+                  >
+                    <Carousel data={block} parentField={`blocks.${i}`} />
+                  </div>
+                );
               case "PageBlocksContent":
                 return (
                   <div
@@ -20,6 +30,15 @@ export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
                     <Content data={block} parentField={`blocks.${i}`} />
                   </div>
                 );
+                case "PageBlocksFeatures":
+                  return (
+                    <div
+                      data-tinafield={`blocks.${i}`}
+                      key={i + block.__typename}
+                    >
+                      <Features data={block} parentField={`blocks.${i}`} />
+                    </div>
+                  );
               case "PageBlocksHero":
                 return (
                   <div
@@ -27,15 +46,6 @@ export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
                     key={i + block.__typename}
                   >
                     <Hero data={block} parentField={`blocks.${i}`} />
-                  </div>
-                );
-              case "PageBlocksFeatures":
-                return (
-                  <div
-                    data-tinafield={`blocks.${i}`}
-                    key={i + block.__typename}
-                  >
-                    <Features data={block} parentField={`blocks.${i}`} />
                   </div>
                 );
               case "PageBlocksTestimonial":
