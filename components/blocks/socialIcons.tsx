@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 import layoutData from "../../content/global/index.json";
 
@@ -77,7 +78,7 @@ export const SocialIcons = ({ className }) => {
                         icon={icon}
                         title={social.title}
                         linkText={social.linkText}
-                        href={socialStyles.url}
+                        url={social.url}
                         style={style} />
                 )
             })}
@@ -88,25 +89,27 @@ export const SocialIcons = ({ className }) => {
 class SocialIconParams {
     icon: IconDefinition;
     title: string;
-    href: string;
+    url: string;
     linkText?: string;
     style?: React.CSSProperties;
 }
 
-const SocialIcon = ({ icon, title, href, linkText,style }: SocialIconParams) => {
+const SocialIcon = ({ icon, title, url, linkText, style }: SocialIconParams) => {
     const widthClass = linkText ? 'w-fit' : 'w-6';
     const paddingClass = linkText ? 'pl-2 pr-2' : '';
     return (        
-        <a
-            className={`h-6 ${widthClass} ${paddingClass} flex justify-center items-center text-base hover:bg-gray-1000 hover:bg-none`}
-            style={style}
-            title={title}
-            href={href}
-            target="_blank"
-            rel="noreferrer"
-        >
-            <FontAwesomeIcon icon={icon} color="white" />
-            {linkText && <span className="ml-2 text-white text-xs font-bold">{linkText}</span>}
-        </a>
+        <Link href={url}>
+            <a
+                className={`h-6 ${widthClass} ${paddingClass} flex justify-center items-center text-base hover:bg-gray-1000 hover:bg-none cursor-pointer`}
+                style={style}
+                title={title}
+                
+                target="_blank"
+                rel="noreferrer nofollow"
+            >
+                <FontAwesomeIcon icon={icon} color="white" />
+                {linkText && <span className="ml-2 text-white text-xs font-bold">{linkText}</span>}
+            </a>
+        </Link>
     )
 }

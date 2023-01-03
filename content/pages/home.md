@@ -65,12 +65,11 @@ blocks:
       - label: More Services...
         link: /ssw/Consulting/
     _template: serviceCards
-  - content: "Our software developers & consultants have delivered the best in the business to more than 1,400 clients in 15 countries.\_[Read more](https://www.ssw.com.au/ssw/company/AboutUs.aspx)\n"
+  - content: "Our software developers & consultants have delivered the best in the business to more than 1,400 clients in 15 countries. [Read more about us](https://www.ssw.com.au/ssw/company/AboutUs.aspx)"
     backgroundColor: default
     _template: centerAlignedContent
   - content: >
-      [BUILT ON THE MICROSOFT AZURE
-      PLATFORM](https://www.ssw.com.au/ssw/Consulting/Azure.aspx)
+      [BUILT ON THE MICROSOFT AZURE PLATFORM](https://www.ssw.com.au/ssw/Consulting/Azure.aspx)
     backgroundColor: default
     _template: centerAlignedContent
 ---

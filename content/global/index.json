@@ -1,8 +1,9 @@
 {
   "header": {
-    "name": "Tina Starter",
+    "name": "SSW Consulting",
     "title": "SSW Consulting - .NET, Azure, CRM, Angular, React, Dynamics",
-    "description": "30+ years of Microsoft software and web development experience in Australia, France and China. We build with Angular, React, .NET, Azure, Dynamics 365 CRM."
+    "description": "30+ years of Microsoft software and web development experience in Australia, France and China. We build with Angular, React, .NET, Azure, Dynamics 365 CRM.",
+    "url": "https://www.ssw.com.au/"
   },
   "socials": [
     {

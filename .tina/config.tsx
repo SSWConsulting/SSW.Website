@@ -177,6 +177,11 @@ const config = defineStaticConfig({
                 label: "Description",
                 name: "description",
               },
+              {
+                type: "string",
+                label: "URL",
+                name: "url",
+              },
             ],
           },
           {

@@ -2,15 +2,13 @@ import React from "react";
 import Head from "next/head";
 import { Header } from "./header";
 import { Footer } from "./footer";
-import layoutData from "../../content/global/index.json";
 import { Theme } from "./theme";
-import { SEO } from "./seo";
 
-export const Layout = ({ data = layoutData, children }) => {
+export const Layout = ({ children }) => {
   return (
     <>
       <Head>
-        <SEO data={data} />
+        <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Theme>
