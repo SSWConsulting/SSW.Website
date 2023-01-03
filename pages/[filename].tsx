@@ -12,7 +12,7 @@ export default function HomePage(
     data: props.data,
   });
   return (
-    <Layout rawData={data} data={data.global as any}>
+    <Layout data={data.global as any}>
       <Blocks {...data.page} />
     </Layout>
   );

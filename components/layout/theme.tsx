@@ -1,7 +1,6 @@
 import * as React from "react";
-import GlobalData from "../../content/global/index.json";
 
-const ThemeContext = React.createContext(GlobalData.theme);
+const ThemeContext = React.createContext({});
 
 export const useTheme = () => React.useContext(ThemeContext);
 
@@ -26,7 +25,7 @@ const getUserSystemDarkMode = () => {
   return "light";
 };
 
-export const Theme = ({ data, children }) => {
+export const Theme = ({ children }) => {
   const [systemDarkMode, setSystemDarkMode] = React.useState(
     getUserSystemDarkMode()
   );
@@ -47,24 +46,10 @@ export const Theme = ({ data, children }) => {
     return;
   }, [setSystemDarkMode]);
 
-  const { color = "blue", font = "sans", darkMode = "system" } = data;
-
-  React.useEffect(() => {
-    updateRenderColorMode(
-      darkMode === "system"
-        ? systemDarkMode
-        : darkMode !== ""
-        ? darkMode
-        : "light"
-    );
-  }, [systemDarkMode, darkMode]);
-
   return (
     <ThemeContext.Provider
       value={{
-        color,
-        font,
-        darkMode,
+        darkMode: systemDarkMode,
       }}
     >
       {children}

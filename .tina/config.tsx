@@ -1,5 +1,6 @@
 import { defineStaticConfig } from "tinacms";
 import { contentBlockSchema } from "../components/blocks/content";
+import { centerAlignedContentBlockSchema } from "../components/blocks/centerAlignedContent";
 import { featureBlockSchema } from "../components/blocks/features";
 import { carouselBlockSchema } from "../components/blocks/carousel";
 import { serviceCardsBlockSchema } from "../components/blocks/serviceCards";
@@ -161,7 +162,6 @@ const config = defineStaticConfig({
             label: "Header",
             name: "header",
             fields: [
-              iconSchema,
               {
                 type: "string",
                 label: "Name",
@@ -169,139 +169,59 @@ const config = defineStaticConfig({
               },
               {
                 type: "string",
-                label: "Color",
-                name: "color",
-                options: [
-                  { label: "Default", value: "default" },
-                  { label: "Primary", value: "primary" },
-                ],
+                label: "Title",
+                name: "title",
               },
               {
-                type: "object",
-                label: "Nav Links",
-                name: "nav",
-                list: true,
-                ui: {
-                  itemProps: (item) => {
-                    return { label: item?.label };
-                  },
-                  defaultItem: {
-                    href: "home",
-                    label: "Home",
-                  },
-                },
-                fields: [
-                  {
-                    type: "string",
-                    label: "Link",
-                    name: "href",
-                  },
-                  {
-                    type: "string",
-                    label: "Label",
-                    name: "label",
-                  },
-                ],
+                type: "string",
+                label: "Description",
+                name: "description",
               },
             ],
           },
           {
             type: "object",
-            label: "Footer",
-            name: "footer",
+            label: "Socials",
+            name: "socials",
+            list: true,
             fields: [
               {
                 type: "string",
-                label: "Color",
-                name: "color",
+                label: "Type",
+                name: "type",
                 options: [
-                  { label: "Default", value: "default" },
-                  { label: "Primary", value: "primary" },
+                  { label: "Phone", value: "phone" },
+                  { label: "Facebook", value: "facebook" },
+                  { label: "Twitter", value: "twitter" },
+                  { label: "Instagram", value: "instagram" },
+                  { label: "LinkedIn", value: "linkedin" },
+                  { label: "Github", value: "github" },
+                  { label: "YouTube", value: "youtube" },
+                  { label: "TikTok", value: "tiktok" }
                 ],
               },
               {
-                type: "object",
-                label: "Social Links",
-                name: "social",
-                fields: [
-                  {
-                    type: "string",
-                    label: "Facebook",
-                    name: "facebook",
-                  },
-                  {
-                    type: "string",
-                    label: "Twitter",
-                    name: "twitter",
-                  },
-                  {
-                    type: "string",
-                    label: "Instagram",
-                    name: "instagram",
-                  },
-                  {
-                    type: "string",
-                    label: "Github",
-                    name: "github",
-                  },
-                ],
+                type: "string",
+                label: "Title",
+                name: "title",
               },
+              {
+                type: "string",
+                label: "URL",
+                name: "url",
+              },
+              {
+                type: "string",
+                label: "Username",
+                name: "username",
+              },
+              {
+                type: "string",
+                label: "Text",
+                name: "linkText",
+              }
             ],
-          },
-          {
-            type: "object",
-            label: "Theme",
-            name: "theme",
-            // @ts-ignore
-            fields: [
-              {
-                type: "string",
-                label: "Primary Color",
-                name: "color",
-                ui: {
-                  component: ColorPickerInput,
-                },
-              },
-              {
-                type: "string",
-                name: "font",
-                label: "Font Family",
-                options: [
-                  {
-                    label: "System Sans",
-                    value: "sans",
-                  },
-                  {
-                    label: "Nunito",
-                    value: "nunito",
-                  },
-                  {
-                    label: "Lato",
-                    value: "lato",
-                  },
-                ],
-              },
-              {
-                type: "string",
-                name: "darkMode",
-                label: "Dark Mode",
-                options: [
-                  {
-                    label: "System",
-                    value: "system",
-                  },
-                  {
-                    label: "Light",
-                    value: "light",
-                  },
-                  {
-                    label: "Dark",
-                    value: "dark",
-                  },
-                ],
-              },
-            ],
-          },
+          }
         ],
       },
       {
@@ -344,10 +264,14 @@ const config = defineStaticConfig({
             type: "string",
             label: "Title",
             name: "title",
-            description:
-              "The title of the page. This is used to display the title in the CMS",
             isTitle: true,
             required: true,
+          },
+          {
+            type: "string",
+            label: "Description",
+            name: "description",
+            description: "Used for SEO description",
           },
           {
             type: "object",
@@ -359,6 +283,7 @@ const config = defineStaticConfig({
             },
             templates: [
               carouselBlockSchema,
+              centerAlignedContentBlockSchema,
               heroBlockSchema,
               serviceCardsBlockSchema,
               // @ts-ignore

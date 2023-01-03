@@ -4,42 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
-a:hover {
+a:hover:not(.unstyled) {
     border-color: #cc4141;
     color: #cc4141;
     transition: all .3s ease-in-out 0s;
 }
-
-/* Social icons start */
-.bg-youtube {
-    background-color: #b31217;
-}
-
-.bg-linkedin {
-    background-color: #0077b5;
-}
-
-.bg-twitter {
-    background-color: #55acee;
-}
-
-.bg-instagram {
-    background: linear-gradient(
-        45deg,
-        #f09433 0%,
-        #e6683c 25%,
-        #dc2743 50%,
-        #cc2366 75%,
-        #bc1888 100%
-    );
-    background-color: #bc1888;
-}
-
-.bg-facebook {
-    background-color: #3b5998;
-}
-
-.bg-tiktok {
-    background-color: #000;
-}
-/* Social icons end */

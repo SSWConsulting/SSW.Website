@@ -22,7 +22,7 @@ blocks:
         openIn: sameWindow
         imgSrc: /uploads/need-help.jpeg
     _template: carousel
-  - bigCardsLabel: Consulting
+  - bigCardsLabel: Consulting $$$
     bigCards:
       - title: Web / Angular / React
         description: >
@@ -36,10 +36,9 @@ blocks:
           Azure, DevOps and Docker Containers.
         link: /ssw/Consulting/Azure.aspx
         color: lightgray
-      - title: Mobile/Bots/AI
-        description: >
-          SSW software developers are experts at building cross platform mobile
-          and chat apps using the power of AI with Machine Learning.
+      - title: Power Platform
+        description: |
+          Power platform is awesome
         link: /ssw/Consulting/Mobile-Application-Development.aspx
         color: mediumgray
       - title: Dynamics 365
@@ -66,53 +65,13 @@ blocks:
       - label: More Services...
         link: /ssw/Consulting/
     _template: serviceCards
-  - headline: Welcome to the Tina Starter
-    text: >
-      This project is set up to show you the basics of working with Tina. You're
-      looking at the landing page, which pulls content from
-      content/pages/home.md, components from components/blocks, and puts them
-      all together in pages/\[filename].tsx, all based on a schema defined in
-      .tina/schema.ts.
-    actions:
-      - label: Get Started
-        type: button
-        icon: true
-        link: /posts
-      - label: Read Blog
-        type: link
-        icon: false
-        link: /posts
-    image:
-      src: /uploads/unsplash-75EFpyXu3Wg.jpg
-      alt: >-
-        Photo of palm trees at sunset by Adam Birkett -
-        unsplash.com/photos/75EFpyXu3Wg
-    color: default
-    _template: hero
-  - items:
-      - icon:
-          name: BiCodeBlock
-          color: red
-          style: float
-        title: Amazing Feature
-        text: >-
-          Aliquam blandit felis rhoncus, eleifend ipsum in, condimentum nibh.
-          Praesent ac faucibus risus, eu lacinia enim.
-      - icon:
-          name: BiLike
-          color: primary
-          style: float
-        title: This Is a Feature
-        text: Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
-      - icon:
-          name: BiPalette
-          color: green
-          style: float
-        title: Configurable Theme
-        text: >-
-          Edit global theme configuration with Tina. Change your theme's primary
-          color, font, or icon set.
-    color: tint
-    _template: features
+  - content: "Our software developers & consultants have delivered the best in the business to more than 1,400 clients in 15 countries.\_[Read more](https://www.ssw.com.au/ssw/company/AboutUs.aspx)\n"
+    backgroundColor: default
+    _template: centerAlignedContent
+  - content: >
+      [BUILT ON THE MICROSOFT AZURE
+      PLATFORM](https://www.ssw.com.au/ssw/Consulting/Azure.aspx)
+    backgroundColor: default
+    _template: centerAlignedContent
 ---
 

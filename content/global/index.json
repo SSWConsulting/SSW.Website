@@ -1,38 +1,55 @@
 {
   "header": {
     "name": "Tina Starter",
-    "icon": {
-      "color": "orange",
-      "style": "float",
-      "name": "Tina"
+    "title": "SSW Consulting - .NET, Azure, CRM, Angular, React, Dynamics",
+    "description": "30+ years of Microsoft software and web development experience in Australia, France and China. We build with Angular, React, .NET, Azure, Dynamics 365 CRM."
+  },
+  "socials": [
+    {
+      "type": "phone",
+      "title": "Call us",
+      "url": "tel:+61299533000",
+      "linkText": "CALL US"
     },
-    "color": "default",
-    "nav": [
-      {
-        "href": "",
-        "label": "Home"
-      },
-      {
-        "href": "about",
-        "label": "About"
-      },
-      {
-        "href": "posts",
-        "label": "Blog"
-      }
-    ]
-  },
-  "footer": {
-    "color": "default",
-    "social": {
-      "facebook": "/",
-      "twitter": "/",
-      "instagram": "/"
+    {
+      "type": "youtube",
+      "title": "SSW on YouTube",
+      "url": "https://www.youtube.com/user/sswtechtalks/",
+      "username": "sswtechtalks"
+    },
+    {
+      "type": "linkedin",
+      "title": "SSW on LinkedIn",
+      "url": "https://www.linkedin.com/company/ssw/"
+    },
+    {
+      "type": "github",
+      "title": "SSW on GitHub",
+      "url": "https://www.github.com/sswconsulting",
+      "username": "sswconsulting"
+    },
+    {
+      "type": "facebook",
+      "title": "SSW on Facebook",
+      "url": "https://www.facebook.com/SSW.page"
+    },
+    {
+      "type": "instagram",
+      "title": "SSW on Instagram",
+      "url": "https://www.instagram.com/ssw_tv",
+      "username": "ssw_tv"
+    },
+    {
+      "type": "twitter",
+      "title": "SSW on Twitter",
+      "url": "https://twitter.com/SSW_TV",
+      "username": "SSW_TV"
+    },
+    {
+      "type": "tiktok",
+      "title": "SSW on TikTok",
+      "url": "https://www.tiktok.com/@ssw_tv",
+      "username": "ssw_tv"
     }
-  },
-  "theme": {
-    "color": "blue",
-    "font": "sans",
-    "darkMode": "system"
-  }
+  ]
 }

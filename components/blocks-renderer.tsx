@@ -1,6 +1,7 @@
 import React from "react";
 import type { Page } from "../.tina/__generated__/types";
 import { Carousel } from "./blocks/carousel";
+import { CenterAlignedContent } from "./blocks/centerAlignedContent";
 import { Content } from "./blocks/content";
 import { Features } from "./blocks/features";
 import { Hero } from "./blocks/hero";
@@ -20,6 +21,15 @@ export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
                     key={i + block.__typename}
                   >
                     <Carousel data={block} parentField={`blocks.${i}`} />
+                  </div>
+                );
+              case "PageBlocksCenterAlignedContent":
+                return (
+                  <div
+                    data-tinafield={`blocks.${i}`}
+                    key={i + block.__typename}
+                  >
+                    <CenterAlignedContent data={block} parentField={`blocks.${i}`} />
                   </div>
                 );
               case "PageBlocksContent":

@@ -4,15 +4,16 @@ import { Header } from "./header";
 import { Footer } from "./footer";
 import layoutData from "../../content/global/index.json";
 import { Theme } from "./theme";
+import { SEO } from "./seo";
 
 export const Layout = ({ data = layoutData, children }) => {
   return (
     <>
       <Head>
-        <title>SSW</title>
+        <SEO data={data} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Theme data={data?.theme}>
+      <Theme>
         <div>
           <Header  />
           <div className="flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000 flex flex-col">

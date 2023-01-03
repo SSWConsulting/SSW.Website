@@ -7,6 +7,13 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
+const bgColor = {
+  "red": "bg-sswRed",
+  "lightgray": "bg-gray-300",
+  "mediumgray": "bg-gray-600",
+  "darkgray": "bg-gray-700",
+};
+
 export const ServiceCards = ({ data }) => {
   return (
     <Section className="bg-gray-100">
@@ -26,21 +33,12 @@ export const ServiceCards = ({ data }) => {
 };
 
 const Label = ({ text }) => {
-  return <div className="absolute text-sm text-left text-white font-thin uppercase bg-gray-700 w-fit p-2">{text}</div>
+  return (
+    <div className="absolute text-sm text-left text-white font-thin uppercase bg-gray-700 w-fit p-2">
+      {text}
+    </div>
+  )
 };
-
-const getBgColor = (color) => {
-  switch (color) {
-    case "red":
-      return "bg-sswRed";
-    case "lightgray":
-      return "bg-gray-300";
-    case "mediumgray":
-      return "bg-gray-600";
-    case "darkgray":
-      return "bg-gray-700";
-  }
-}
 
 const BigCards = ({ title, cards }) => {
   return (
@@ -53,12 +51,12 @@ const BigCards = ({ title, cards }) => {
         {cards.map((card) => (
           <li
             key={card.title}
-            className={`col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg text-center shadow ${getBgColor(card.color)}`}
+            className={`col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg text-center shadow ${bgColor[card.color]}`}
           >
             <Link href={card.link}>
-              <a>
+              <a className="unstyled">
                 <div className="flex flex-1 flex-col p-8">
-                  <h3 className="mt-6 text-sm font-medium text-white">
+                  <h3 className="pt-8 pb-3 text-xl font-medium text-white">
                     {card.title}
                   </h3>
                   <TinaMarkdown content={card.description} />
@@ -83,7 +81,7 @@ const SmallCards = ({ title, cards }) => {
         {cards.map((card) => (
           <li
             key={card.title}
-            className={`col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg text-center shadow ${getBgColor(card.color)}`}
+            className={`col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg text-center shadow ${bgColor[card.color]}`}
           >
             <Link href={card.link}>
               <a>
