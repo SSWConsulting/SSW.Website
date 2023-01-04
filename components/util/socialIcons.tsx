@@ -16,7 +16,6 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import classNames from 'classnames';
 
-
 const socialStyles = {
     phone: {
         icon: faPhone,
@@ -69,9 +68,13 @@ const socialStyles = {
     },
 };
 
-export const SocialIcons = ({ className }) => {
+export interface SocialIconsParams {
+    className?: string;
+}
+
+export const SocialIcons = (data?: SocialIconsParams) => {
     return (   
-        <div className={`flex gap-2 ${className}`}>
+        <div className={`flex gap-2 ${data?.className}`}>
             {layoutData.socials.map(social => {
                 const { icon, style } = socialStyles[social.type];
                 return (

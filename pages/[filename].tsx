@@ -1,4 +1,3 @@
-import { NextSeoProps } from "next-seo";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../.tina/__generated__/client";
@@ -23,7 +22,7 @@ export default function HomePage(
           {
             title: data.page.title,
             description: data.page.description,
-          } as Partial<NextSeoProps>
+          }
         }
       />
       <Layout>
