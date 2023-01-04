@@ -5,12 +5,14 @@ import { Carousel } from "./blocks/carousel";
 import { CenterAlignedContent } from "./blocks/centerAlignedContent";
 import { Content } from "./blocks/content";
 import { ServiceCards } from "./blocks/serviceCards";
+import { UpcomingEvents } from "./blocks/upcomingEvents";
 
 const componentMap = {
   PageBlocksCarousel: Carousel,
   PageBlocksCenterAlignedContent: CenterAlignedContent,
   PageBlocksContent: Content,
   PageBlocksServiceCards: ServiceCards,
+  PageBlocksUpcomingEvents: UpcomingEvents,
 };
 
 export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {

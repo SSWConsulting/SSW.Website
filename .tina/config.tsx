@@ -1,9 +1,5 @@
 import { defineStaticConfig } from "tinacms";
-import { contentBlockSchema } from "../components/blocks/content";
-import { centerAlignedContentBlockSchema } from "../components/blocks/centerAlignedContent";
-import { carouselBlockSchema } from "../components/blocks/carousel";
-import { serviceCardsBlockSchema } from "../components/blocks/serviceCards";
-import { heroBlockSchema } from "../components/blocks/hero";
+import * as Schemas from "../components/blocks";
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -257,11 +253,7 @@ const config = defineStaticConfig({
               visualSelector: true,
             },
             templates: [
-              carouselBlockSchema,
-              centerAlignedContentBlockSchema,
-              heroBlockSchema,
-              serviceCardsBlockSchema,
-              contentBlockSchema,
+              ...Schemas.pageBlocks,
             ],
           },
         ],

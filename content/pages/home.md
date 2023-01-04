@@ -38,8 +38,9 @@ blocks:
         link: /ssw/Consulting/Azure.aspx
         color: lightgray
       - title: Mobile/Boys/AI
-        description: |
-          SSW software developers are experts at building cross platform mobile and chat apps using the power of Al with Machine Learning.
+        description: >
+          SSW software developers are experts at building cross platform mobile
+          and chat apps using the power of Al with Machine Learning.
         link: /ssw/Consulting/Mobile-Application-Development.aspx
         color: mediumgray
       - title: Dynamics 365
@@ -67,6 +68,9 @@ blocks:
         link: /ssw/Consulting/
     backgroundColor: lightgray
     _template: serviceCards
+  - title: Upcoming Events
+    numberOfEvents: 30
+    _template: upcomingEvents
   - content: >
       Our software developers & consultants have delivered the best in the
       business to more than 1,400 clients in 15 countries. [Read more about

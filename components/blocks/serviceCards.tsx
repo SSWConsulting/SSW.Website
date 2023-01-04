@@ -54,9 +54,9 @@ const BigCards = ({ title, cards }) => {
             className={`col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg text-center shadow ${bgColor[card.color]}`}
           >
             <Link href={card.link}>
-              <a className="unstyled">
+              <a className="unstyled text-white">
                 <div className="flex flex-1 flex-col p-8">
-                  <h3 className="pt-8 pb-3 text-xl font-medium text-white">
+                  <h3 className="pt-8 pb-3 text-xl font-medium">
                     {card.title}
                   </h3>
                   <TinaMarkdown content={card.description} />

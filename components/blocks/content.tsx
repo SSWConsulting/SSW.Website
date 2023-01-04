@@ -15,6 +15,7 @@ export const Content = ({ data, parentField = "" }) => {
         size="large"
         width="medium"
       >
+        <h2 className="text-3xl font-light pt-16 pb-5">{data.title}</h2>
         <TinaMarkdown content={data.body} />
       </Container>
     </Section>
@@ -31,6 +32,11 @@ export const contentBlockSchema: TinaTemplate = {
     },
   },
   fields: [
+    {
+      type: "string",
+      label: "Title",
+      name: "title",
+    },
     {
       type: "rich-text",
       label: "Body",
