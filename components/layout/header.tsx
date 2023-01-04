@@ -1,20 +1,20 @@
 import React from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import { Container } from "../util/container";
 import { SocialIcons } from "../util/socialIcons";
 
 export const Header = () => {
-  const router = useRouter();
+  // const router = useRouter();
 
   // If we're on an admin path, other links should also link to their admin paths
-  const [prefix, setPrefix] = React.useState("");
+  // const [prefix, setPrefix] = React.useState("");
 
-  React.useEffect(() => {
-    if (window && window.location.pathname.startsWith("/admin")) {
-      setPrefix("/admin");
-    }
-  }, []);
+  // React.useEffect(() => {
+  //   if (window && window.location.pathname.startsWith("/admin")) {
+  //     setPrefix("/admin");
+  //   }
+  // }, []);
 
   return (
     <div className={`relative overflow-hidden bg-gradient-to-b`}>

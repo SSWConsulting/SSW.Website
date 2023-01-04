@@ -14,7 +14,7 @@ export default function BlogPostPage(
   });
   if (data && data.post) {
     return (
-      <Layout data={data.global as any}>
+      <Layout data={data.global}>
         <Post {...data.post} />
       </Layout>
     );
@@ -54,5 +54,5 @@ export const getStaticPaths = async () => {
   };
 };
 
-export type AsyncReturnType<T extends (...args: any) => Promise<any>> =
-  T extends (...args: any) => Promise<infer R> ? R : any;
+export type AsyncReturnType<T extends (...args: any) => Promise<any>> = // eslint-disable-line @typescript-eslint/no-explicit-any
+  T extends (...args: any) => Promise<infer R> ? R : any; // eslint-disable-line @typescript-eslint/no-explicit-any

@@ -4,14 +4,14 @@ const ThemeContext = React.createContext({});
 
 export const useTheme = () => React.useContext(ThemeContext);
 
-const updateRenderColorMode = (themeMode: "dark" | "light") => {
-  if (typeof window !== "undefined") {
-    const root = window.document.documentElement;
-    root.classList.remove("dark");
-    root.classList.remove("light");
-    root.classList.add(themeMode);
-  }
-};
+// const updateRenderColorMode = (themeMode: "dark" | "light") => {
+//   if (typeof window !== "undefined") {
+//     const root = window.document.documentElement;
+//     root.classList.remove("dark");
+//     root.classList.remove("light");
+//     root.classList.add(themeMode);
+//   }
+// };
 
 const getUserSystemDarkMode = () => {
   if (typeof window !== "undefined") {

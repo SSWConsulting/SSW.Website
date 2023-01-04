@@ -120,7 +120,7 @@ class Event {
   FormattedDate: string;
   RelativeDate: string;
 
-  constructor(e: any) {
+  constructor(e) {
     this.Id = e.Id;
     this.Url = {
       Description: e.Url.Description,
