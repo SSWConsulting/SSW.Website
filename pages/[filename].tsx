@@ -1,8 +1,11 @@
-import { Blocks } from "../components/blocks-renderer";
-import { useTina } from "tinacms/dist/react";
-import { client } from "../.tina/__generated__/client";
-import { Layout } from "../components/layout";
 import { NextSeoProps } from "next-seo";
+import { useTina } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { client } from "../.tina/__generated__/client";
+import { Blocks } from "../components/blocks-renderer";
+import { componentRenderer } from "../components/blocks/mdxComponentRenderer";
+import { Layout } from "../components/layout";
+import { Container } from "../components/util/container";
 import { SEO } from "../components/util/seo";
 
 export default function HomePage(
@@ -15,12 +18,30 @@ export default function HomePage(
   });
   return (
     <>
-      <SEO seo={{
-        title: data.page.title,
-        description: data.page.description,
-      } as Partial<NextSeoProps>} />
-      <Layout data={data.global as any}>
-        <Blocks {...data.page} />
+      <SEO
+        seo={
+          {
+            title: data.page.title,
+            description: data.page.description,
+          } as Partial<NextSeoProps>
+        }
+      />
+      <Layout>
+        <Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
+        <Container className={`flex-1 pt-4`}>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="col-span-2 prose-sm max-w-full">
+              <TinaMarkdown
+                components={componentRenderer}
+                content={data.page._body}
+                />
+            </div>
+            <div className="col-span-1">
+              <Blocks prefix="PageSideBar" blocks={data.page.sideBar} />              
+            </div>
+          </div>
+        </Container>
+        <Blocks prefix="PageAfterBody" blocks={data.page.afterBody} />
       </Layout>
     </>
   );
@@ -28,7 +49,7 @@ export default function HomePage(
 
 export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.contentQuery({
-    relativePath: `${params.filename}.md`,
+    relativePath: `${params.filename}.mdx`,
   });
   return {
     props: {

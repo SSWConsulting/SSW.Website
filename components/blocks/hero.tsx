@@ -91,7 +91,7 @@ export const Hero = ({ data, parentField }) => {
 };
 
 export const heroBlockSchema: TinaTemplate = {
-  name: "hero",
+  name: "Hero",
   label: "Hero",
   ui: {
     previewSrc: "/blocks/hero.png",

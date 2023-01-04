@@ -114,8 +114,8 @@ const Links = ({ links }) => {
 };
 
 export const serviceCardsBlockSchema: Template = {
-  name: "serviceCards",
-  label: "ServiceCards",
+  name: "ServiceCards",
+  label: "Service Cards",
   ui: {
     previewSrc: "/blocks/hero.png",
   },

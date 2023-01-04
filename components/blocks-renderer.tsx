@@ -1,33 +1,31 @@
 import React from "react";
-import type { Page } from "../.tina/__generated__/types";
 
 import { Carousel } from "./blocks/carousel";
-import { CenterAlignedContent } from "./blocks/centerAlignedContent";
 import { Content } from "./blocks/content";
 import { ServiceCards } from "./blocks/serviceCards";
 import { UpcomingEvents } from "./blocks/upcomingEvents";
 
 const componentMap = {
-  PageBlocksCarousel: Carousel,
-  PageBlocksCenterAlignedContent: CenterAlignedContent,
-  PageBlocksContent: Content,
-  PageBlocksServiceCards: ServiceCards,
-  PageBlocksUpcomingEvents: UpcomingEvents,
+  "Carousel": Carousel,
+  "Content": Content,
+  "ServiceCards": ServiceCards,
+  "UpcomingEvents": UpcomingEvents,
 };
 
-export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
+export const Blocks = ({ prefix, blocks}) => {
   return (
     <>
-      {props.blocks ? props.blocks.map(renderBlock) : null}
+      {blocks ? blocks.map((block, i) => renderBlock(prefix, block, i)) : null}
     </>
   );
 };
 
 const renderBlock = (
-  block: import("d:/src/SSW.Website/.tina/__generated__/types").PageBlocks,
-  i: number
+  prefix,
+  block,
+  i,
 ): JSX.Element => {
-  const component = componentMap[block.__typename];
+  const component = componentMap[block.__typename?.replace(prefix, "")];
 
   if (!component) {
     return null;

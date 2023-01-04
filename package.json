@@ -34,6 +34,7 @@
     "@headlessui/react": "1.7.5",
     "@tailwindcss/typography": "^0.5.8",
     "axios": "^1.2.2",
+    "classnames": "^2.3.2",
     "date-fns": "^2.23.0",
     "dayjs": "^1.11.7",
     "next": "^12.3.1",

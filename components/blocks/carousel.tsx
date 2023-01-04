@@ -80,7 +80,7 @@ const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
 }
 
 export const carouselBlockSchema: Template = {
-  name: "carousel",
+  name: "Carousel",
   label: "Carousel",
   ui: {
     previewSrc: "/blocks/hero.png",

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import type { Template } from "tinacms";
 import axios from "axios";
 import dayjs from "dayjs";
@@ -7,7 +6,6 @@ import utc from "dayjs/plugin/utc";
 import isBetween from "dayjs/plugin/isBetween";
 import relativeTime from "dayjs/plugin/relativeTime";
 
-import { Container } from "../util/container";
 import Link from "next/link";
 
 dayjs.extend(utc);
@@ -48,11 +46,13 @@ export const UpcomingEvents = ({ data }) => {
   }, []);
 
   return (
-    <Container>
-      <h2 className="text-3xl font-light pt-16 pb-5">{data.title}</h2>
-      <div className="full flex-column max-h-128 overflow-y-scroll">
-        {loading ? <p>Loading...</p> : events.map(renderEvent)}
-        <div className="flex flex-row-reverse">
+    <div className="not-prose00">
+      <h2 className="text-3xl font-thin pb-5">{data.title}</h2>
+      <div className="full flex-column bg-gray-100">
+        <div className="max-h-128 overflow-y-scroll">
+          {loading ? <p>Loading...</p> : events.map(renderEvent)}
+        </div>
+        <div className="flex flex-row-reverse mt-3">
           {/* TODO: Update link after implement this page */}
           <Link href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all">
             <a className="inline-flex items-center rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
@@ -61,7 +61,7 @@ export const UpcomingEvents = ({ data }) => {
           </Link>
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 
@@ -71,7 +71,7 @@ const renderEvent = (e: Event) => {
 
   return (
     <article key={e.Id} className="flex my-2">
-      <figure>
+      <figure className="min-w-fit">
         <Link href={e.Thumbnail.Url}>
           <a>
             <img
@@ -88,7 +88,7 @@ const renderEvent = (e: Event) => {
           <span>
             {e.FormattedDate}
           </span>
-          <span className="inline-flex items-center rounded-md bg-gray-500 ml-2 px-2.5 py-0.5 text-sm font-bold text-white">
+          <span className="inline-flex items-center rounded-md bg-gray-700 ml-2 px-1.5 text-sm font-bold text-white">
             {e.RelativeDate}
           </span>      
         </time>
@@ -173,8 +173,8 @@ class Event {
 }
 
 export const upcomingEventsBlockSchema: Template = {
-  name: "upcomingEvents",
-  label: "UpcomingEvents",
+  name: "UpcomingEvents",
+  label: "Upcoming Events",
   ui: {
     previewSrc: "/blocks/content.png",
     defaultItem: {

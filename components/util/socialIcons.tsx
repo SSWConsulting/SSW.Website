@@ -14,6 +14,7 @@ import {
     faGithub,
     faTiktok,
 } from '@fortawesome/free-brands-svg-icons';
+import classNames from 'classnames';
 
 
 const socialStyles = {
@@ -100,7 +101,11 @@ const SocialIcon = ({ icon, title, url, linkText, style }: SocialIconParams) => 
     return (        
         <Link href={url}>
             <a
-                className={`h-6 ${widthClass} ${paddingClass} flex justify-center items-center text-base hover:bg-gray-1000 hover:bg-none cursor-pointer`}
+                className={classNames(
+                    `h-6 flex justify-center items-center text-base hover:bg-gray-1000 hover:bg-none cursor-pointer`,
+                    widthClass,
+                    paddingClass
+                )}
                 style={style}
                 title={title}
                 

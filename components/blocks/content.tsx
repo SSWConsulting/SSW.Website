@@ -1,29 +1,29 @@
 import React from "react";
+import type { Template } from "tinacms";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
-import type { TinaTemplate } from "tinacms";
 
-export const Content = ({ data, parentField = "" }) => {
+const alignmentClasses = {
+  left: "text-left",
+  center: "text-center",
+  right: "text-right",
+};
+
+export const Content = ({ data }) => {
+  const alignment = alignmentClasses[data.align] ?? alignmentClasses.left;
   return (
-    <Section color={data.color}>
-      <Container
-        className={`prose prose-lg ${
-          data.color === "primary" ? `prose-primary` : `dark:prose-dark`
-        }`}
-        data-tinafield={`${parentField}.body`}
-        size="large"
-        width="medium"
-      >
-        <h2 className="text-3xl font-light pt-16 pb-5">{data.title}</h2>
-        <TinaMarkdown content={data.body} />
+    <Section color={data.backgroundColor}>
+      <Container size="medium" className={`prose ${alignment}`}>
+        {data.title && <h2 className="text-3xl font-light pt-16 pb-5">{data.title}</h2>}
+        <TinaMarkdown content={data.content} />
       </Container>
     </Section>
   );
 };
 
-export const contentBlockSchema: TinaTemplate = {
-  name: "content",
+export const contentBlockSchema: Template = {
+  name: "Content",
   label: "Content",
   ui: {
     previewSrc: "/blocks/content.png",
@@ -39,8 +39,18 @@ export const contentBlockSchema: TinaTemplate = {
     },
     {
       type: "rich-text",
-      label: "Body",
-      name: "body",
+      label: "Content",
+      name: "content",
+    },
+    {
+      type: "string",
+      label: "Align",
+      name: "align",
+      options: [
+        { label: "Left", value: "left" },
+        { label: "Center", value: "center" },
+        { label: "Right", value: "right" },
+      ],
     },
     {
       type: "string",
