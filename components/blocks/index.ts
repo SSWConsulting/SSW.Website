@@ -1,5 +1,6 @@
 import type { Template } from "tinacms";
 
+import { aboutUsBlockSchema } from "./aboutUs";
 import { contentBlockSchema } from "./content";
 import { carouselBlockSchema } from "./carousel";
 import { heroBlockSchema } from "./hero";
@@ -7,6 +8,7 @@ import { serviceCardsBlockSchema } from "./serviceCards";
 import { upcomingEventsBlockSchema } from "./upcomingEvents";
 
 export const pageBlocks: Template[] = [
+    aboutUsBlockSchema,
     contentBlockSchema,
     carouselBlockSchema,
     serviceCardsBlockSchema,
@@ -14,6 +16,7 @@ export const pageBlocks: Template[] = [
     upcomingEventsBlockSchema,
 ];
 
+export * from "./aboutUs";
 export * from "./content";
 export * from "./carousel";
 export * from "./hero";

@@ -17,7 +17,7 @@ const config = defineStaticConfig({
     // this is the config for the tina cloud media store
     tina: {
       publicFolder: "public",
-      mediaRoot: "uploads",
+      mediaRoot: "media",
     },
   },
   build: {
@@ -169,6 +169,79 @@ const config = defineStaticConfig({
                 name: "url",
               },
             ],
+          },
+          {
+            type: "object",
+            label: "Offices",
+            name: "offices",
+            list: true,
+            fields: [
+              {
+                type: "string",
+                name: "url",
+                label: "Url",
+                required: true
+              },
+              {
+                type: "string",
+                name: "name",
+                label: "Name",
+                required: true
+              },
+              {
+                type: "string",
+                name: "streetAddress",
+                label: "Street Address",
+                required: true
+              },
+              {
+                type: "string",
+                name: "suburb",
+                label: "Suburb"
+              },
+              {
+                type: "string",
+                name: "addressLocality",
+                label: "Address Locality",
+                required: true
+              },
+              {
+                type: "string",
+                name: "addressRegion",
+                label: "Address Region",
+                required: true
+              },
+              {
+                type: "string",
+                name: "addressCountry",
+                label: "Address Country",
+                required: true
+              },
+              {
+                type: "string",
+                name: "postalCode",
+                label: "Post Code",
+                required: true
+              },
+              {
+                type: "string",
+                name: "phone",
+                label: "Phone",
+                required: true
+              },
+              {
+                type: "string",
+                name: "hours",
+                label: "Hours",
+                required: true
+              },
+              {
+                type: "string",
+                name: "days",
+                label: "Days",
+                required: true
+              }
+            ]
           },
           {
             type: "object",

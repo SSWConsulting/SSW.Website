@@ -5,6 +5,66 @@
     "description": "30+ years of Microsoft software and web development experience in Australia, France and China. We build with Angular, React, .NET, Azure, Dynamics 365 CRM.",
     "url": "https://www.ssw.com.au/"
   },
+  "aboutUs": {
+    "video": {
+      "url": "https://www.youtube.com/embed/2G7z2mF7Onk",
+      "thumbnailUrl": "https://i.ytimg.com/vi/2G7z2mF7Onk/maxresdefault.jpg"
+    },
+    "offices": [
+      {
+        "url": "/ssw/Company/Offices/Sydney",
+        "name": "SSW Sydney Office",
+        "streetAddress": "Level 1, 81 - 91 Military Road",
+        "suburb": "Neutral Bay",
+        "addressLocality": "Sydney",
+        "addressRegion": "NSW",
+        "addressCountry": "Australia",
+        "postalCode": 2089,
+        "phone": "+61 2 9953 3000",
+        "hours": "9am - 6pm AEST",
+        "days": "Monday - Friday"
+      },
+      {
+        "url": "/ssw/Company/Offices/Brisbane",
+        "name": "SSW Brisbane Office",
+        "streetAddress": "Level 1, 471 Adelaide Street",
+        "suburb": "",
+        "addressLocality": "Brisbane",
+        "addressRegion": "QLD",
+        "addressCountry": "Australia",
+        "postalCode": 4000,
+        "phone": "+61 7 3077 7081",
+        "hours": "9am - 6pm AEST",
+        "days": "Monday - Friday"
+      },
+      {
+        "url": "/ssw/Company/Offices/Melbourne",
+        "name": "SSW Melbourne Office",
+        "streetAddress": "Level 1, 370 Little Bourke Street",
+        "suburb": "",
+        "addressLocality": "Melbourne",
+        "addressRegion": "VIC",
+        "addressCountry": "Australia",
+        "postalCode": 3000,
+        "phone": "+61 3 9005 2034",
+        "hours": "9am - 6pm AEST",
+        "days": "Monday - Friday"
+      },
+      {
+        "url": "/ssw/Company/Offices/Newcastle",
+        "name": "SSW Newcastle Office",
+        "streetAddress": "432 Hunter St",
+        "suburb": "",
+        "addressLocality": "Newcastle",
+        "addressRegion": "NSW",
+        "addressCountry": "Australia",
+        "postalCode": 2300,
+        "phone": "+61 2 9953 3000",
+        "hours": "9am - 6pm AEST",
+        "days": "Monday - Friday"
+      }
+    ]
+  },
   "socials": [
     {
       "type": "phone",

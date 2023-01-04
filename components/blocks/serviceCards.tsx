@@ -46,7 +46,7 @@ const BigCards = ({ title, cards }) => {
       <Label text={title} />
       <ul
         role="list"
-        className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-5"
+        className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-5"
       >
         {cards.map((card) => (
           <li
@@ -76,7 +76,7 @@ const SmallCards = ({ title, cards }) => {
       <Label text={title} />
       <ul
         role="list"
-        className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-5"
+        className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-5"
       >
         {cards.map((card) => (
           <li

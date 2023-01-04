@@ -159,5 +159,8 @@ module.exports = {
   variants: {
     extend: { typography: ["tint", "dark", "primary"] },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require('@headlessui/tailwindcss')({ prefix: 'ui' }),
+  ],
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import { AboutUs } from "./blocks/aboutUs";
 
 import { Carousel } from "./blocks/carousel";
 import { Content } from "./blocks/content";
@@ -6,6 +7,7 @@ import { ServiceCards } from "./blocks/serviceCards";
 import { UpcomingEvents } from "./blocks/upcomingEvents";
 
 const componentMap = {
+  "AboutUs": AboutUs,
   "Carousel": Carousel,
   "Content": Content,
   "ServiceCards": ServiceCards,
