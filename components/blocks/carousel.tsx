@@ -27,7 +27,7 @@ export const Carousel = ({ data }) => {
   }
 
   return (
-    <Section className="bg-gray-100">
+    <Section color={data.backgroundColor}>
       <Container size="custom">
         <CarouselImplementation
           autoPlay={true}
@@ -125,6 +125,16 @@ export const carouselBlockSchema: Template = {
           label: 'Image',
           name: 'imgSrc',
         },
+      ],
+    },
+    {
+      type: "string",
+      label: "Background Color",
+      name: "backgroundColor",
+      options: [
+        { label: "Default", value: "default" },
+        { label: "Light Gray", value: "lightgray" },
+        { label: "Primary", value: "primary" },
       ],
     },
   ],

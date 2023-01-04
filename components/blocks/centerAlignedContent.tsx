@@ -9,7 +9,7 @@ import { Section } from "../util/section";
 export const CenterAlignedContent = ({ data }) => {
 
   return (
-    <Section className={data.backgroundColor}>
+    <Section color={data.backgroundColor}>
       <Container size="medium">
         <div className="text-center text-black">
           <TinaMarkdown content={data.content} />
@@ -37,7 +37,7 @@ export const centerAlignedContentBlockSchema: Template = {
       name: "backgroundColor",
       options: [
         { label: "Default", value: "default" },
-        { label: "Tint", value: "tint" },
+        { label: "Light Gray", value: "lightgray" },
         { label: "Primary", value: "primary" },
       ],
     },

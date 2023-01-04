@@ -21,8 +21,9 @@ blocks:
         link: 'https://www.ssw.com.au/ssw/Consulting/Are-You-Stuck.aspx'
         openIn: sameWindow
         imgSrc: /uploads/need-help.jpeg
+    backgroundColor: lightgray
     _template: carousel
-  - bigCardsLabel: Consulting $$$
+  - bigCardsLabel: Consulting
     bigCards:
       - title: Web / Angular / React
         description: >
@@ -36,9 +37,9 @@ blocks:
           Azure, DevOps and Docker Containers.
         link: /ssw/Consulting/Azure.aspx
         color: lightgray
-      - title: Power Platform
+      - title: Mobile/Boys/AI
         description: |
-          Power platform is awesome
+          SSW software developers are experts at building cross platform mobile and chat apps using the power of Al with Machine Learning.
         link: /ssw/Consulting/Mobile-Application-Development.aspx
         color: mediumgray
       - title: Dynamics 365
@@ -64,13 +65,18 @@ blocks:
     links:
       - label: More Services...
         link: /ssw/Consulting/
+    backgroundColor: lightgray
     _template: serviceCards
-  - content: "Our software developers & consultants have delivered the best in the business to more than 1,400 clients in 15 countries. [Read more about us](https://www.ssw.com.au/ssw/company/AboutUs.aspx)"
+  - content: >
+      Our software developers & consultants have delivered the best in the
+      business to more than 1,400 clients in 15 countries. [Read more about
+      us](https://www.ssw.com.au/ssw/company/AboutUs.aspx)
     backgroundColor: default
     _template: centerAlignedContent
   - content: >
-      [BUILT ON THE MICROSOFT AZURE PLATFORM](https://www.ssw.com.au/ssw/Consulting/Azure.aspx)
-    backgroundColor: default
+      [BUILT ON THE MICROSOFT AZURE
+      PLATFORM](https://www.ssw.com.au/ssw/Consulting/Azure.aspx)
+    backgroundColor: lightgray
     _template: centerAlignedContent
 ---
 

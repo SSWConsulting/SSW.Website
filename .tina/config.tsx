@@ -1,13 +1,9 @@
 import { defineStaticConfig } from "tinacms";
 import { contentBlockSchema } from "../components/blocks/content";
 import { centerAlignedContentBlockSchema } from "../components/blocks/centerAlignedContent";
-import { featureBlockSchema } from "../components/blocks/features";
 import { carouselBlockSchema } from "../components/blocks/carousel";
 import { serviceCardsBlockSchema } from "../components/blocks/serviceCards";
 import { heroBlockSchema } from "../components/blocks/hero";
-import { testimonialBlockSchema } from "../components/blocks/testimonial";
-import { ColorPickerInput } from "../components/fields/color";
-import { iconSchema } from "../components/util/icon";
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -61,12 +57,6 @@ const config = defineStaticConfig({
             type: "rich-text",
             label: "Excerpt",
             name: "excerpt",
-          },
-          {
-            type: "reference",
-            label: "Author",
-            name: "author",
-            collections: ["author"],
           },
           {
             type: "datetime",
@@ -230,26 +220,6 @@ const config = defineStaticConfig({
         ],
       },
       {
-        label: "Authors",
-        name: "author",
-        path: "content/authors",
-        format: "md",
-        fields: [
-          {
-            type: "string",
-            label: "Name",
-            name: "name",
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: "string",
-            label: "Avatar",
-            name: "avatar",
-          },
-        ],
-      },
-      {
         label: "Pages",
         name: "page",
         path: "content/pages",
@@ -258,9 +228,9 @@ const config = defineStaticConfig({
             if (document._sys.filename === "home") {
               return `/`;
             }
-            if (document._sys.filename === "about") {
-              return `/about`;
-            }
+            // if (document._sys.filename === "about") {
+            //   return `/about`;
+            // }
             return undefined;
           },
         },
@@ -291,10 +261,7 @@ const config = defineStaticConfig({
               centerAlignedContentBlockSchema,
               heroBlockSchema,
               serviceCardsBlockSchema,
-              // @ts-ignore
-              featureBlockSchema,
               contentBlockSchema,
-              testimonialBlockSchema,
             ],
           },
         ],

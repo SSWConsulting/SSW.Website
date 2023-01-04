@@ -16,7 +16,7 @@ const bgColor = {
 
 export const ServiceCards = ({ data }) => {
   return (
-    <Section className="bg-gray-100">
+    <Section color={data.backgroundColor}>
       <Container size="custom">
         <div className="py-4">
           <BigCards title={data.bigCardsLabel} cards={data.bigCards} />
@@ -231,6 +231,16 @@ export const serviceCardsBlockSchema: Template = {
           label: "URL",
           name: "link",
         },
+      ],
+    },
+    {
+      type: "string",
+      label: "Background Color",
+      name: "backgroundColor",
+      options: [
+        { label: "Default", value: "default" },
+        { label: "Light Gray", value: "lightgray" },
+        { label: "Primary", value: "primary" },
       ],
     },
   ],

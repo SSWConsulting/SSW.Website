@@ -38,11 +38,11 @@ export const contentBlockSchema: TinaTemplate = {
     },
     {
       type: "string",
-      label: "Color",
-      name: "color",
+      label: "Background Color",
+      name: "backgroundColor",
       options: [
         { label: "Default", value: "default" },
-        { label: "Tint", value: "tint" },
+        { label: "Light Gray", value: "lightgray" },
         { label: "Primary", value: "primary" },
       ],
     },

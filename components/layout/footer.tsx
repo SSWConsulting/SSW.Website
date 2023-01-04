@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "../util/container";
-import { SocialIcons } from "../blocks/socialIcons";
+import { SocialIcons } from "../util/socialIcons";
 
 export const Footer = () => {
   return (

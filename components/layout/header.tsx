@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Container } from "../util/container";
-import { SocialIcons } from "../blocks/socialIcons";
+import { SocialIcons } from "../util/socialIcons";
 
 export const Header = () => {
   const router = useRouter();
