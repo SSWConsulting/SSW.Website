@@ -59,7 +59,8 @@ export const contentBlockSchema: Template = {
       options: [
         { label: "Default", value: "default" },
         { label: "Light Gray", value: "lightgray" },
-        { label: "Primary", value: "primary" },
+        { label: "Red", value: "red" },
+        { label: "Black", value: "black" },
       ],
     },
   ],

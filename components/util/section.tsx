@@ -4,7 +4,8 @@ export const Section = ({ children, color = "", className = "" }) => {
   const sectionColor = {
     default: "bg-white text-black",
     lightgray: "bg-gray-100 text-black",
-    primary: "bg-sswRed text-white",
+    red: "bg-sswRed text-white",
+    black: "bg-black text-white",
   };
   const sectionColorCss = sectionColor[color] || sectionColor.default;
 
