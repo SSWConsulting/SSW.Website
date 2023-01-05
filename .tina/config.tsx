@@ -254,6 +254,35 @@ const config = defineStaticConfig({
           },
         ],
       },
+      {
+        label: "Consulting Pages",
+        name: "consulting",
+        format: "mdx",
+        path: "content/consulting",
+        ui: {
+          router: ({ document }) => {
+            return `/consulting/${document._sys.filename}`;
+          },
+        },
+        fields: [
+          {
+            type: "string",
+            label: "Title",
+            name: "title",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "rich-text",
+            label: "Body",
+            name: "_body",
+            templates: [
+              ...Schemas.pageBlocks,
+            ],
+            isBody: true,
+          }
+        ],
+      },
     ],
   },
 });

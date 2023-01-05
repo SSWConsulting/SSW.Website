@@ -1,8 +1,13 @@
-
-
 query contentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   page(relativePath: $relativePath) {
     ...PageParts
+  }
+}
+
+query consultingContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  consulting(relativePath: $relativePath) {
+    ...ConsultingParts
   }
 }
