@@ -17,7 +17,7 @@ const config = defineStaticConfig({
     // this is the config for the tina cloud media store
     tina: {
       publicFolder: "public",
-      mediaRoot: "media",
+      mediaRoot: "images",
     },
   },
   build: {

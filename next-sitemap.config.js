@@ -3,7 +3,7 @@
 module.exports = {
   siteUrl: process.env.SITE_URL || 'https://ssw.com.au',
   generateRobotsTxt: true,
-  outDir: './out',
+  outDir: './.next/static/',
   robotsTxtOptions: {
     additionalSitemaps: [
       // TODO: add sitemaps for other sites when they are available
