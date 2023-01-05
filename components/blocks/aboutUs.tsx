@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image"
 import type { Template } from "tinacms";
-import { Disclosure } from "@headlessui/react";
 import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
+import classNames from "classNames"
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowAltCircleDown, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import layoutData from "../../content/global/index.json";
@@ -18,8 +23,7 @@ export const AboutUs = ({ data }) => {
       <Container>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3 mt-5">
           <TV />
-          <ContactUs />
-          <Map />
+          <ContactUsAndMap />
         </div>
       </Container>
     </Section>
@@ -41,10 +45,7 @@ const TV = () => {
           ></iframe>
         ) : (
           <figure onClick={() => setVideoClicked(true)}>
-            <img
-              src={layoutData.aboutUs.video.thumbnailUrl}
-              alt="SSW Tv"
-            />
+            <img src={layoutData.aboutUs.video.thumbnailUrl} alt="SSW Tv" />
             <div></div>
           </figure>
         )}
@@ -53,51 +54,96 @@ const TV = () => {
   );
 };
 
-const ContactUs = () => {
+const ContactUsAndMap = () => {
+  const [office, setOffice] = useState(null);
   return (
     <div>
       <h2>Contact Us</h2>
-      <div className="w-full">
-        <div className="mx-auto w-full max-w-md rounded-2xl bg-white">
-          {layoutData.aboutUs.offices.map((office, i) => (
-            <OfficeInfo key={i} office={office} />
+        <div className="flex flex-col justify-center">
+          {layoutData.offices.map((o, i) => (
+            <AccordionItem
+              key={i}
+              office={o}
+              selectedOffice={office}
+              setSelectedOffice={setOffice}>
+              <OfficeInfo office={o} />
+            </AccordionItem>
           ))}
         </div>
-      </div>
     </div>
+  );
+};
+
+const AccordionItem = ({ office, selectedOffice, setSelectedOffice, children }) => {
+  const currentlySelected = office.addressLocality === selectedOffice?.addressLocality
+  const handleSetIndex = () => {
+    if (office.addressLocality === selectedOffice?.addressLocality) {
+      setSelectedOffice(null);
+    } else if (!currentlySelected) {
+      setSelectedOffice(office);
+    }
+  };
+
+  const selectedClass = "bg-sswRed"
+  const unselectedClass = "bg-gray-400"
+
+  return (
+    <>
+      <div
+        onClick={() => handleSetIndex()}
+        className={classNames(
+          'flex group cursor-pointer justify-between items-center p-2 mb-2',
+          currentlySelected ? selectedClass : unselectedClass
+        )}
+      >
+        <div className="flex group cursor-pointer pl-2">
+          <div className="text-white uppercase">
+            {office.addressLocality}
+          </div>
+        </div>
+        <div className="flex items-center justify-center">
+          {!currentlySelected ? (
+            <FontAwesomeIcon icon={faArrowAltCircleRight} color="white" />
+          ) : (
+            <FontAwesomeIcon icon={faArrowAltCircleDown} color="white" />
+          )}
+        </div>
+      </div>
+
+      {currentlySelected && (
+        <div>
+          {children}
+        </div>
+      )}
+    </>
   );
 };
 
 const OfficeInfo = ({ office }) => {
   return (
-    <Disclosure>
-      <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">{office.addressLocality}</Disclosure.Button>
-      <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-        <p>
-          <Link href={office.url}>{office.name}</Link>
-        </p>
-        <p itemProp="address" itemType="http://schema.org/PostalAddress">
-          <span itemProp="streetAddress">{office.streetAddress}</span>
-          <br />
-          {office.suburb && <span>{office.suburb}, </span>}
-          <span itemProp="addressLocality">{office.addressLocality}</span>,{" "}
-          <span itemProp="addressRegion">{office.addressRegion}</span>
-          <span itemProp="postalCode">{office.postalCode}</span>,{" "}
-          <span itemProp="addressCountry">{office.addressCountry}</span>
-        </p>
-        <p>
-          Phone: <strong>{office.phone}</strong>
-        </p>
-        <p>
-          Hours:{" "}
-          <strong>
-            {office.hours}
-            <br />
-            {office.days}
-          </strong>
-        </p>
-      </Disclosure.Panel>
-    </Disclosure>
+    <div className="p-4 text-sm text-black">
+      <p className="pb-2">
+        <Link href={office.url}>{office.name}</Link>
+      </p>
+      <p itemProp="address" itemType="http://schema.org/PostalAddress">
+        <span itemProp="streetAddress">{office.streetAddress}</span>
+        <br />
+        {office.suburb && <span>{office.suburb}, </span>}
+        <span itemProp="addressLocality">{office.addressLocality}</span>,{" "}
+        <span itemProp="addressRegion">{office.addressRegion}</span>{" "}
+        <span itemProp="postalCode">{office.postalCode}</span>,{" "}
+        <span itemProp="addressCountry">{office.addressCountry}</span>
+      </p>
+      <p class="py-2">
+        Phone: <span class="text-sswRed">{office.phone}</span>
+      </p>
+      <p className="pb-2">
+        Hours:{" "}
+        <span class="text-sswRed">{office.hours}</span>
+        <br />
+        <span class="text-sswRed">{office.days}</span>
+      </p>
+    </div>
   );
 };
 

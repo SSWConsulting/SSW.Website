@@ -66,7 +66,12 @@ const config = defineStaticConfig({
             type: "object",
             label: "Offices",
             name: "offices",
-            list: true,
+            list: true,          
+            ui: {
+              itemProps: (item) => {
+                return { label: item?.addressLocality };
+              },
+            },
             fields: [
               {
                 type: "string",
@@ -139,7 +144,12 @@ const config = defineStaticConfig({
             type: "object",
             label: "Socials",
             name: "socials",
-            list: true,
+            list: true,            
+            ui: {
+              itemProps: (item) => {
+                return { label: item?.type };
+              },
+            },
             fields: [
               {
                 type: "string",
