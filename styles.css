@@ -1,16 +1,17 @@
-@import "react-responsive-carousel/lib/styles/carousel.min.css";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-a {
-  transition: all .3s ease-in-out 0s;
+@layer base {
+  a {
+    transition: all .3s ease-in-out 0s;
+  }
+
+  a:not(.unstyled) {
+    @apply hover:border-sswRed hover:text-sswRed;
+  }
 }
 
-a:not(.unstyled) {
-  @apply hover:border-sswRed hover:text-sswRed;
-}
-
-.header-1 {
+@layer components {
+  @import "react-responsive-carousel/lib/styles/carousel.min.css";
 }

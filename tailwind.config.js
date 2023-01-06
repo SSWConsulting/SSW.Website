@@ -121,9 +121,6 @@ module.exports = {
             "code::after": {
               content: '""',
             },
-            "p:first-of-type": {
-              fontSize: "1.125rem",
-            },
           },
         },
         tint: {

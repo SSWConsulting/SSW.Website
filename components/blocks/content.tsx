@@ -1,7 +1,7 @@
 import React from "react";
 import { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import classNames from 'classNames';
+import classNames from 'classnames';
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import { customImageBlockSchema } from "./customImage";
@@ -14,11 +14,20 @@ const alignmentClasses = {
   right: "text-right",
 };
 
+const sizeClasses = {
+  "sm": "prose-sm",
+  "base": "prose-base",
+  "lg": "prose-lg",
+  "xl": "prose-xl",
+  "2xl": "prose-2xl",
+};
+
 export const Content = ({ data }) => {
   const alignment = alignmentClasses[data.align] ?? alignmentClasses.left;
+  const size = sizeClasses[data.size] ?? sizeClasses.base;
   return (
     <Section color={data.backgroundColor}>
-      <Container size="medium" className={classNames('prose', alignment)}>
+      <Container size="medium" className={classNames('prose', alignment, size)}>
         {data.title && <h2 className="text-3xl font-light pt-16 pb-5">{data.title}</h2>}
         <TinaMarkdown content={data.content} components={componentRenderer} />
       </Container>
@@ -49,6 +58,18 @@ export const contentBlockSchema: Template = {
         customImageBlockSchema,
         clientLogosBlockSchema,
       ]
+    },
+    {
+      type: "string",
+      label: "Text size",
+      name: "size",
+      options: [
+        { label: "small", value: "sm" },
+        { label: "normal", value: "base" },
+        { label: "large", value: "lg" },
+        { label: "extra large", value: "xl" },
+        { label: "2x large", value: "2xl" },
+      ],
     },
     {
       type: "string",

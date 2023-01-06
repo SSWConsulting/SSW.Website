@@ -1,9 +1,9 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
-import type { Template } from 'tinacms';
-import { Container } from '../util/container';
-import { Section } from '../util/section';
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import type { Template } from "tinacms";
+import { Container } from "../util/container";
+import { Section } from "../util/section";
 
 export const BuiltOnAzure = ({ data }) => {
   return (
@@ -17,13 +17,15 @@ export const BuiltOnAzure = ({ data }) => {
               height={30}
               width={30}
             />
-            <div className="ml-2 tracking-widest uppercase">Built on the Microsoft Azure Platform</div>
+            <div className="ml-2 text-center tracking-widest uppercase">
+              Built on the Microsoft Azure Platform
+            </div>
           </a>
         </Link>
       </Container>
     </Section>
   );
-}
+};
 
 export const builtOnAzureBlockSchema: Template = {
   name: "BuiltOnAzure",
@@ -40,6 +42,6 @@ export const builtOnAzureBlockSchema: Template = {
         { label: "Red", value: "red" },
         { label: "Black", value: "black" },
       ],
-    } 
-  ]
-}
+    },
+  ],
+};

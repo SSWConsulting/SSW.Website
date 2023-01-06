@@ -38,17 +38,17 @@ const WORKING_TIME = {
 const States = {
   QLD: {
     timeZone: "Australia/Queensland",
-    location: "top-[34%] left-[90%]",
+    location: "top-[165px] right-[75px]",
     mapClass: "bg-[url('/images/map/map-qld.png')]",
   },
   NSW: {
     timeZone: "Australia/NSW",
-    location: "top-[47%] left-[90%]",
+    location: "top-[",
     mapClass: "bg-[url('/images/map/map-nsw.png')]",
   },
   VIC: {
     timeZone: "Australia/Victoria",
-    location: "top-[53%] left-[87%]",
+    location: "top-[",
     mapClass: "bg-[url('/images/map/map-vic.png')]",
   },
 };
@@ -72,20 +72,21 @@ const TV = () => {
     <div>
       <h2>tv.ssw.com</h2>
 
-      <div>
-        {videoClicked ? (
-          <iframe
-            width="100%"
-            src={layoutData.aboutUs.video.url}
-            allowFullScreen
-          ></iframe>
-        ) : (
-          <figure onClick={() => setVideoClicked(true)}>
-            <img src={layoutData.aboutUs.video.thumbnailUrl} alt="SSW TV" />
-            <div></div>
-          </figure>
-        )}
-      </div>
+      {videoClicked ? (
+        <iframe
+          src={layoutData.aboutUs.video.url}
+          width="100%"
+          allowFullScreen
+        ></iframe>
+      ) : (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={layoutData.aboutUs.video.thumbnailUrl}
+            alt="SSW TV"
+            onClick={() => setVideoClicked(true)} />
+        </>
+      )}
     </div>
   );
 };
@@ -99,42 +100,32 @@ const ContactUsAndMap = () => {
         <h2>Contact Us</h2>
         <div className="flex flex-col justify-center">
           {layoutData.offices.map((o, i) => (
-              <AccordionItem
-                key={i}
-                office={o}
-                selectedOffice={office}
-                setSelectedOffice={setOffice}
-                setStateBeingHovered={setStateBeingHovered}
-              >
-                <OfficeInfo office={o} />
-                {/* Render state names over images */}
-                <div className="hidden-xs">
-                  <div
-                    className={classNames(
-                      'block absolute cursor-pointer transition duration-[2000ms] z-10',
-                      States[o.addressRegion]?.location
-                    )}
-                    onMouseEnter={() => setStateBeingHovered(o.addressRegion)}
-                    onMouseLeave={() => setStateBeingHovered(null)}
-                    onClick={() => setOffice(o.addressRegion) }
-                  >
-                    <h6 className={
-                      classNames(
-                        'py-0.5 px-1.5 text-[0.7rem] text-white uppercase',
-                        office?.addressRegion === o.addressRegion ? 'bg-sswRed' : 'bg-gray-900'
-                      )
-                    }>
-                      {o.addressRegion}
-                    </h6>
-                  </div>
-                </div>
-              </AccordionItem>
+            <AccordionItem
+              key={i}
+              office={o}
+              selectedOffice={office}
+              setSelectedOffice={setOffice}
+              setStateBeingHovered={setStateBeingHovered}
+            >
+              <OfficeInfo office={o} />
+            </AccordionItem>
           ))}
         </div>
       </div>
 
-      <div>
-        <Map state={stateBeingHovered || office?.addressRegion} />
+      {/* TODO: update state images to show state name */}
+      {/* TODO: update state hover images to show state name with a red background */}
+      <div className="hidden md:block relative bg-no-repeat bg-[length:100%_auto] bg-[url('/images/map/map-bg.png')]">
+        <Image
+          className={classNames(
+            "bg-no-repeat bg-[length:100%_auto]",
+            States[stateBeingHovered || office?.addressRegion]?.mapClass
+          )}
+          src="/images/placeholder.png"
+          alt="Placeholder"
+          height={402}
+          width={550}
+        />
       </div>
     </>
   );
@@ -158,32 +149,27 @@ const AccordionItem = ({
   };
 
   const selectedClass = "bg-sswRed";
-  const unselectedClass = "bg-gray-400";
+  const unselectedClass = "bg-gray-400 hover:bg-gray-600";
 
   return (
     <>
       <div
-        onMouseEnter={() => setStateBeingHovered(office.addressRegion)}
-        onMouseLeave={() => setStateBeingHovered(null)}
-        onClick={() => handleSetIndex()}
         className={classNames(
           "flex group cursor-pointer justify-between items-center p-2 mb-2",
           currentlySelected ? selectedClass : unselectedClass
         )}
+        onMouseEnter={() => setStateBeingHovered(office.addressRegion)}
+        onMouseLeave={() => setStateBeingHovered(null)}
+        onClick={() => handleSetIndex()}
       >
         <div className="flex group cursor-pointer pl-2">
           <div className="text-white uppercase">{office.addressLocality}</div>
         </div>
-        <div className="flex items-center justify-center">
-          {!currentlySelected ? (
-            <FontAwesomeIcon icon={faArrowAltCircleRight} color="white" />
-          ) : (
-            <FontAwesomeIcon icon={faArrowAltCircleDown} color="white" />
-          )}
+        <div className="flex items-center justify-center text-white">
+          <FontAwesomeIcon icon={currentlySelected ? faArrowAltCircleDown : faArrowAltCircleRight} />
         </div>
       </div>
-
-      {currentlySelected && <div>{children}</div>}
+      {currentlySelected && children}
     </>
   );
 };
@@ -246,30 +232,6 @@ const OpenStatus = ({ state }) => {
     >
       {status}
     </span>
-  );
-};
-
-const Map = ({ state }) => {
-  return (
-    <div
-      id="mapWrap"
-      className="hidden md:block max-h-[350px] bg-no-repeat bg-[length:100%_auto] bg-[url('/images/map/map-bg.png')]"
-    >
-      <div id="locationMap">
-        <Image
-          className={classNames(
-            "bg-no-repeat bg-[length:100%_auto]",
-            States[state]?.mapClass
-          )}
-          src="/images/placeholder.png"
-          alt="Placeholder"
-          height={402}
-          width={550}
-          useMap="#map"
-          id="map-img"
-        />
-      </div>
-    </div>
   );
 };
 

@@ -49,7 +49,7 @@ export const UpcomingEvents = ({ data }) => {
     <div className="not-prose00">
       <h2 className="text-2xl font-light pb-5">{data.title}</h2>
       <div className="full flex-column">
-        <div className="max-h-128 bg-gray-100 overflow-y-scroll border-2">
+        <div className="max-h-128 bg-gray-100 overflow-y-scroll overflow-x-hidden border-2">
           {loading ? <p>Loading...</p> : events.map(renderEvent)}
         </div>
         <div className="flex flex-row-reverse mt-3">
@@ -70,15 +70,16 @@ const renderEvent = (e: Event) => {
     !e.Url.Url.includes("ssw.com.au") || e.Url.Url.includes("/ssw/redirect");
 
   return (
-    <article key={e.Id} className="flex">
-      <figure className="min-w-fit">
+    <article key={e.Id} className="flex py-4">
+      <figure className="flex items-center min-w-fit">
         <Link href={e.Thumbnail.Url}>
           <a>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={e.Thumbnail.Url}
               alt="event logo"
-              width={100}
-              height={100}
+              width={75}
+              height={75}
             />
           </a>
         </Link>
@@ -97,7 +98,7 @@ const renderEvent = (e: Event) => {
             <a className="text-sswRed text-sm" target={isExternalLink ? "_blank" : "_self"}>{e.Title}</a>
           </Link>
         </h5>
-        {!!e.Presenter && <span className="text-xs">{e.Presenter}</span>}
+        {!!e.Presenter && <span className="text-xs whitespace-nowrap">{e.Presenter}</span>}
       </div>
     </article>
   );

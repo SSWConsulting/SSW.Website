@@ -2,7 +2,7 @@ import React from 'react';
 import type { Template } from 'tinacms';
 import Image from 'next/image';
 
-export const ClientLogos = ({ data }) => {
+export const ClientLogos = () => {
   return (
     <div>
       <Image src="/images/clientLogos/clients1.png" alt="Client logo 1" height={50} width={380} />

@@ -1,8 +1,6 @@
 import React from 'react';
 import type { Template } from 'tinacms';
 import Image from 'next/image';
-import { Container } from '../util/container';
-import { Section } from '../util/section';
 
 export const CustomImage = ({ data }) => {
   return (
