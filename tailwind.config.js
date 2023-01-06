@@ -17,6 +17,7 @@ module.exports = {
       pink: colors.pink,
       yellow: colors.yellow,
       sswRed: "#cc4141",
+      azure: "#007fff",
       gray: {
         50: '#f9f9f9', 
         100: '#f2f2f2', 

@@ -1,6 +1,7 @@
 import React from "react";
-import type { Template } from "tinacms";
+import { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import classNames from 'classNames';
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import { customImageBlockSchema } from "./customImage";
@@ -17,7 +18,7 @@ export const Content = ({ data }) => {
   const alignment = alignmentClasses[data.align] ?? alignmentClasses.left;
   return (
     <Section color={data.backgroundColor}>
-      <Container size="medium" className={`prose ${alignment}`}>
+      <Container size="medium" className={classNames('prose', alignment)}>
         {data.title && <h2 className="text-3xl font-light pt-16 pb-5">{data.title}</h2>}
         <TinaMarkdown content={data.content} components={componentRenderer} />
       </Container>

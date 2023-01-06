@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import type { Template } from 'tinacms';
 import { Container } from '../util/container';
@@ -7,7 +9,17 @@ export const BuiltOnAzure = ({ data }) => {
   return (
     <Section color={data.backgroundColor}>
       <Container>
-        <span>Built on the Microsoft Azure Platform</span>
+        <Link href="/consulting/azure">
+          <a className="flex items-center justify-center unstyled hover:text-azure hover:border-azure">
+            <Image
+              src="/images/logos/azure.png"
+              alt="Microsoft Azure Logo"
+              height={30}
+              width={30}
+            />
+            <div className="ml-2 tracking-widest uppercase">Built on the Microsoft Azure Platform</div>
+          </a>
+        </Link>
       </Container>
     </Section>
   );
