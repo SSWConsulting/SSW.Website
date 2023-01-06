@@ -17,6 +17,7 @@ module.exports = {
       pink: colors.pink,
       yellow: colors.yellow,
       sswRed: "#cc4141",
+      azure: "#007fff",
       gray: {
         50: '#f9f9f9', 
         100: '#f2f2f2', 
@@ -98,7 +99,7 @@ module.exports = {
         "-1": "-1",
       },
       fontFamily: {
-        sans: ['Arial','Helvetica Neue','Helvetica','sans-serif'],
+        sans: ['Open Sans','Helvetica Neue','Helvetica','sans-serif'],
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -119,9 +120,6 @@ module.exports = {
             },
             "code::after": {
               content: '""',
-            },
-            "p:first-of-type": {
-              fontSize: "1.125rem",
             },
           },
         },

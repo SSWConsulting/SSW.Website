@@ -6,6 +6,9 @@ import { carouselBlockSchema } from "./carousel";
 import { heroBlockSchema } from "./hero";
 import { serviceCardsBlockSchema } from "./serviceCards";
 import { upcomingEventsBlockSchema } from "./upcomingEvents";
+import { builtOnAzureBlockSchema } from "./builtOnAzure";
+import { customImageBlockSchema } from "./customImage";
+import { clientLogosBlockSchema } from "./clientLogos";
 
 export const pageBlocks: Template[] = [
     aboutUsBlockSchema,
@@ -14,6 +17,9 @@ export const pageBlocks: Template[] = [
     serviceCardsBlockSchema,
     heroBlockSchema,
     upcomingEventsBlockSchema,
+    builtOnAzureBlockSchema,
+    customImageBlockSchema,
+    clientLogosBlockSchema,
 ];
 
 export * from "./aboutUs";
@@ -22,3 +28,6 @@ export * from "./carousel";
 export * from "./hero";
 export * from "./serviceCards";
 export * from "./upcomingEvents";
+export * from "./builtOnAzure";
+export * from "./customImage";
+export * from "./clientLogos";

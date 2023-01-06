@@ -3,6 +3,7 @@ import Link from "next/link";
 // import { useRouter } from "next/router";
 import { Container } from "../util/container";
 import { SocialIcons } from "../util/socialIcons";
+import Image from "next/image";
 
 export const Header = () => {
   // const router = useRouter();
@@ -19,9 +20,11 @@ export const Header = () => {
   return (
     <div className={`relative overflow-hidden bg-gradient-to-b`}>
       <Container size="custom" className="py-0 relative z-10 max-w-8xl my-4">
-        <div className="flex justify-between items-center">
+        <div className="sm:flex sm:justify-between sm:items-center">
           <Logo />
-          <SocialIcons/>
+          <div className="flex items-center justify-center mt-4 sm:mt-0">
+            <SocialIcons/>
+          </div>
         </div>
       </Container>
     </div>
@@ -37,10 +40,14 @@ const Logo = () => {
     : "/images/ssw-logo.svg";
 
   return (
-    <h4 className="flex items-center">
+    <h4 className="flex items-center justify-center">
       <Link href="/" passHref>
         <a className="flex gap-1 items-center whitespace-nowrap tracking-[.002em]">
-          <img src={logoPath} alt="SSW - Enterprise Software Development" />
+          <Image
+            src={logoPath}
+            alt="SSW - Enterprise Software Development"
+            height={60}
+            width={90} />
         </a>
       </Link>
       <div className="w-24 ml-4 text-xxs leading-3 uppercase text-gray-700 font-thin">

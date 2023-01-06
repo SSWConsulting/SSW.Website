@@ -5,6 +5,9 @@ import { Carousel } from "./blocks/carousel";
 import { Content } from "./blocks/content";
 import { ServiceCards } from "./blocks/serviceCards";
 import { UpcomingEvents } from "./blocks/upcomingEvents";
+import { BuiltOnAzure } from "./blocks/builtOnAzure";
+import { CustomImage } from "./blocks/customImage";
+import { ClientLogos } from "./blocks/clientLogos";
 
 const componentMap = {
   "AboutUs": AboutUs,
@@ -12,6 +15,9 @@ const componentMap = {
   "Content": Content,
   "ServiceCards": ServiceCards,
   "UpcomingEvents": UpcomingEvents,
+  "BuiltOnAzure": BuiltOnAzure,
+  "CustomImage": CustomImage,
+  "ClientLogos": ClientLogos,
 };
 
 export const Blocks = ({ prefix, blocks}) => {

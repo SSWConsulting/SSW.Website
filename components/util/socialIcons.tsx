@@ -74,7 +74,7 @@ export interface SocialIconsParams {
 
 export const SocialIcons = (data?: SocialIconsParams) => {
     return (   
-        <div className={`flex gap-2 ${data?.className}`}>
+        <div className={classNames('flex gap-2', data?.className)}>
             {layoutData.socials.map(social => {
                 const { icon, style } = socialStyles[social.type];
                 return (
@@ -100,12 +100,12 @@ class SocialIconParams {
 
 const SocialIcon = ({ icon, title, url, linkText, style }: SocialIconParams) => {
     const widthClass = linkText ? 'w-fit' : 'w-6';
-    const paddingClass = linkText ? 'pl-2 pr-2' : '';
+    const paddingClass = linkText ? 'px-1 sm:px-2' : '';
     return (        
         <Link href={url}>
             <a
                 className={classNames(
-                    `h-6 flex justify-center items-center text-base hover:bg-gray-1000 hover:bg-none cursor-pointer`,
+                    'h-6 flex justify-center items-center text-base hover:bg-gray-1000 hover:bg-none cursor-pointer',
                     widthClass,
                     paddingClass
                 )}
@@ -116,7 +116,7 @@ const SocialIcon = ({ icon, title, url, linkText, style }: SocialIconParams) => 
                 rel="noreferrer nofollow"
             >
                 <FontAwesomeIcon icon={icon} color="white" />
-                {linkText && <span className="ml-2 text-white text-xs font-bold">{linkText}</span>}
+                {linkText && <span className="ml-2 text-white inline text-xs font-bold">{linkText}</span>}
             </a>
         </Link>
     )
