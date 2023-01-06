@@ -4,8 +4,10 @@ import { client } from "../../.tina/__generated__/client";
 // import { Blocks } from "../../components/blocks-renderer";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
+import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
+import styles from './[filename].module.css';
 
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -20,16 +22,22 @@ export default function ConsultingPage(
     <>
       <SEO seo={data.consulting.seo} />
       <Layout>
-        <Container className={"prose"}>
-          <TinaMarkdown
-            components={componentRenderer}
-            content={data.consulting._body}
-          />
-        </Container>
+        {/* <Container> */}
+          <section className={`mx-auto max-w-[1170] px-4 text-center ${styles.container}`}>
+            <TinaMarkdown
+              components={componentRenderer}
+              content={data.consulting._body}
+            />
+            <Benefits data={{}}></Benefits>
+          </section>
+        {/* </Container> */}
       </Layout>
     </>
   );
 }
+
+// mw 1170 py 15
+
 
 export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.consultingContentQuery({
