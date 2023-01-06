@@ -8,10 +8,18 @@ interface SEOProps{
 }
 
 export const SEO: FC<SEOProps> = ({seo}) => {
+    // Remove null values from SEO object
+    Object.keys(seo).forEach(key => {
+        if (!seo[key]) {
+            delete seo[key];
+        }
+    });
+
     const seoProps = {
         ...NEXT_SEO_DEFAULT,
         ...seo,
     };
+    
     return (
         <NextSeo {...seoProps } />
     );

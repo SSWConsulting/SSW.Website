@@ -283,6 +283,12 @@ const config = defineStaticConfig({
             required: true,
           },
           {
+            type: "string",
+            label: "Description",
+            name: "description",
+            description: "Used for SEO description",
+          },
+          {
             type: "rich-text",
             label: "Body",
             name: "_body",

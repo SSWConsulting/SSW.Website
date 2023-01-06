@@ -203,14 +203,14 @@ const OfficeInfo = ({ office }) => {
         <span itemProp="postalCode">{office.postalCode}</span>,{" "}
         <span itemProp="addressCountry">{office.addressCountry}</span>
       </p>
-      <p class="py-2">
-        Phone: <span class="text-sswRed">{office.phone}</span>
+      <p className="py-2">
+        Phone: <span className="text-sswRed">{office.phone}</span>
       </p>
       <p className="pb-2">
-        Hours: <span class="text-sswRed">{office.hours}</span>{" "}
+        Hours: <span className="text-sswRed">{office.hours}</span>{" "}
         <OpenStatus state={office.addressRegion} />
         <br />
-        <span class="text-sswRed">{office.days}</span>
+        <span className="text-sswRed">{office.days}</span>
       </p>
     </div>
   );

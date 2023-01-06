@@ -49,8 +49,13 @@ export const Carousel = ({ data }) => {
 const createCarouselItemImage = ({ imgSrc, label }, index: React.Key) => {
   return (
     <div key={index}>
-      <Image src={imgSrc} alt={label} height={388} width={1080} />
-      {/* <img src={imgSrc} alt={label} /> */}
+      <Image
+        src={imgSrc}
+        alt={label}
+        height={388}
+        width={1080}
+        layout="responsive"
+      />
       <p className="legend sr-only">{label}</p>
     </div>
   );
