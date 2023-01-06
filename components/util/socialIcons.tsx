@@ -100,7 +100,7 @@ class SocialIconParams {
 
 const SocialIcon = ({ icon, title, url, linkText, style }: SocialIconParams) => {
     const widthClass = linkText ? 'w-fit' : 'w-6';
-    const paddingClass = linkText ? 'pl-2 pr-2' : '';
+    const paddingClass = linkText ? 'px-1 sm:px-2' : '';
     return (        
         <Link href={url}>
             <a
@@ -116,7 +116,7 @@ const SocialIcon = ({ icon, title, url, linkText, style }: SocialIconParams) => 
                 rel="noreferrer nofollow"
             >
                 <FontAwesomeIcon icon={icon} color="white" />
-                {linkText && <span className="ml-2 text-white text-xs font-bold">{linkText}</span>}
+                {linkText && <span className="sm:ml-2 text-white hidden sm:inline text-xs font-bold">{linkText}</span>}
             </a>
         </Link>
     )

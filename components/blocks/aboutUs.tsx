@@ -264,7 +264,7 @@ const Map = ({ state }) => {
           src="/images/placeholder.png"
           alt="Placeholder"
           height={402}
-          width={350}
+          width={550}
           useMap="#map"
           id="map-img"
         />

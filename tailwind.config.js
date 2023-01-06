@@ -98,7 +98,7 @@ module.exports = {
         "-1": "-1",
       },
       fontFamily: {
-        sans: ['Arial','Helvetica Neue','Helvetica','sans-serif'],
+        sans: ['Open Sans','Helvetica Neue','Helvetica','sans-serif'],
       },
       typography: (theme) => ({
         DEFAULT: {
