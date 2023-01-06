@@ -278,6 +278,100 @@ const config = defineStaticConfig({
           // @ts-ignore
           seoSchema,
           {
+            type: "object",
+            label: "Booking",
+            name: "booking",
+            fields: [
+              {
+                type: "string",
+                label: "Title",
+                name: "title",
+              },
+              {
+                type: "string",
+                label: "subTitle",
+                name: "subTitle",
+              }
+            ]
+          },
+          {
+            type: "object",
+            label: "Benefits",
+            name: "benefits",
+            fields: [
+              {
+                type: "object",
+                list: true,
+                label: "benefit list",
+                name: "benefitList",
+                fields: [
+                  {
+                    type: "string",
+                    label: "Image URL",
+                    name: "image",
+                  },
+                  {
+                    type: "string",
+                    label: "Title",
+                    name: "title",
+                  },
+                  {
+                    type: "string",
+                    label: "Description",
+                    name: "description",
+                  },
+                ],
+              },
+              {
+                type: "object",
+                label: "Rule",
+                name: "rule",
+                fields: [
+                  {
+                    type: "string",
+                    label: "Name",
+                    name: "name",
+                  },
+                  {
+                    type: "string",
+                    label: "URL",
+                    name: "url",
+                  }
+                ],
+              }
+            ],
+          },
+          {
+            type: "string",
+            label: "Technology header",
+            name: "techHeader",
+          },
+          {
+            type: "object",
+            list: true,
+            label: "Technology Cards",
+            name: "technologyCards",
+            fields: [
+              {
+                type: "string",
+                label: "Name",
+                name: "name"
+              }
+            ]
+          },
+          {
+            type: "object",
+            label: "Solution",
+            name: "solution",
+            fields: [
+              {
+                type: "string",
+                label: "Project",
+                name: "project"
+              }
+            ]
+          },
+          {
             type: "rich-text",
             label: "Body",
             name: "_body",
