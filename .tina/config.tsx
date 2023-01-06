@@ -296,8 +296,8 @@ const config = defineStaticConfig({
                 type: "string",
                 label: "subTitle",
                 name: "subTitle",
-              },
-            ],
+              }
+            ]
           },
           {
             type: "object",
@@ -345,6 +345,19 @@ const config = defineStaticConfig({
                 ],
               },
             ],
+          },
+          {
+            type: "object",
+            list: true,
+            label: "Technology Cards",
+            name: "technologyCards",
+            fields: [
+              {
+                type: "string",
+                label: "Name",
+                name: "name"
+              }
+            ]
           },
           {
             type: "object",
