@@ -4,8 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-a:hover:not(.unstyled) {
-    border-color: #cc4141;
-    color: #cc4141;
-    transition: all .3s ease-in-out 0s;
+a:not(.unstyled) {
+  @apply hover:border-sswRed hover:text-sswRed;
+  transition: all .3s ease-in-out 0s;
+}
+
+.header-1 {
 }

@@ -3,6 +3,9 @@ import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
+import { customImageBlockSchema } from "./customImage";
+import { clientLogosBlockSchema } from "./clientLogos";
+import { componentRenderer } from "./mdxComponentRenderer";
 
 const alignmentClasses = {
   left: "text-left",
@@ -16,7 +19,7 @@ export const Content = ({ data }) => {
     <Section color={data.backgroundColor}>
       <Container size="medium" className={`prose ${alignment}`}>
         {data.title && <h2 className="text-3xl font-light pt-16 pb-5">{data.title}</h2>}
-        <TinaMarkdown content={data.content} />
+        <TinaMarkdown content={data.content} components={componentRenderer} />
       </Container>
     </Section>
   );
@@ -41,6 +44,10 @@ export const contentBlockSchema: Template = {
       type: "rich-text",
       label: "Content",
       name: "content",
+      templates: [
+        customImageBlockSchema,
+        clientLogosBlockSchema,
+      ]
     },
     {
       type: "string",
