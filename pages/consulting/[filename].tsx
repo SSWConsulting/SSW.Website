@@ -35,6 +35,9 @@ const consultingComponentRenderer: Components<Record<string, unknown>> = {
     return <code>{data.children}</code>;
   },
 };
+import { Benefits } from "../../components/util/consulting/benefits";
+import { Container } from "../../components/util/container";
+import styles from './[filename].module.css';
 
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -86,12 +89,16 @@ export default function ConsultingPage(
               techHeader={data.consulting.techHeader}
               techCards={techCards}
             />
+            <Benefits data={{}}></Benefits>
           </div>
         </Section>
       </Layout>
     </>
   );
 }
+
+// mw 1170 py 15
+
 
 export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.consultingContentQuery({
