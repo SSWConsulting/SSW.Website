@@ -1,40 +1,68 @@
 ---
-type: consulting
-
 title: Kubernetes
-description:
-
-booking:
-    title: Need help with <span class="red">Kubernetes containers</span>?
-    subTitle: Build and ship your application anywhere
-
-benefits:
-    benefitList:
+description: 
+techHeader: Technology
+beforeBody:
+  - booking:
+      title: Need help with <span class="red">Kubernetes containers</span>?
+      subTitle: Build and ship your application anywhere
+    _template: Booking
+afterBody:
+  - benefits:
+      benefitList:
         - image: ../images/sharing-and-collaboration.png
           title: MULTI-CLOUD PLATFORMS
-          description: Build once, run it anywhere! A major benefit is its portability. It enables you to easily and reliably run applications on different environments. This reduces vendor lock-in with a specific cloud provider, giving you the ability to migrate easily if the need arises.
+          description: >-
+            Build once, run it anywhere! A major benefit is its portability. It
+            enables you to easily and reliably run applications on different
+            environments. This reduces vendor lock-in with a specific cloud
+            provider, giving you the ability to migrate easily if the need
+            arises.
         - image: ../images/self-service.png
           title: RAPID STARTUP
-          description: A spike in incoming traffic? No problem! New containers will start up rapidly because they are running the application, and not booting a whole operating system. Containers can also start up on different nodes of your cluster, allowing your service to naturally balance load across all available nodes.
+          description: >-
+            A spike in incoming traffic? No problem! New containers will start
+            up rapidly because they are running the application, and not booting
+            a whole operating system. Containers can also start up on different
+            nodes of your cluster, allowing your service to naturally balance
+            load across all available nodes.
         - image: ../images/low-startup-cost.png
           title: REDUCED RUNNING COSTS
-          description: Containers run more efficiently by packing applications in tighter, reducing overheads and making better use of your existing resources. It allows companies to save on everything from server costs to the employees needed to maintain them. Fewer resources, more automation!
+          description: >-
+            Containers run more efficiently by packing applications in tighter,
+            reducing overheads and making better use of your existing resources.
+            It allows companies to save on everything from server costs to the
+            employees needed to maintain them. Fewer resources, more automation!
         - image: ../images/crm-integration.png
           title: CONSISTENCY
-          description: Images contain all the dependencies required to run an application. As such, Development, Staging and Production all run identical environments. This provides huge benefits in identifying and resolving issues quickly and you will never hear "It works on my machine" again.
+          description: >-
+            Images contain all the dependencies required to run an application.
+            As such, Development, Staging and Production all run identical
+            environments. This provides huge benefits in identifying and
+            resolving issues quickly and you will never hear "It works on my
+            machine" again.
         - image: ../images/happy_clients.png
           title: OPERATIONAL SIMPLICITY
-          description: Containers are designed from the ground up be built and deployed automatically. Since containers package up all their dependencies, you no longer need to ensure that the correct libraries are installed on each environment. That makes it is a breeze to migrate between environments. Your servers should be cattle, not pets.
+          description: >-
+            Containers are designed from the ground up be built and deployed
+            automatically. Since containers package up all their dependencies,
+            you no longer need to ensure that the correct libraries are
+            installed on each environment. That makes it is a breeze to migrate
+            between environments. Your servers should be cattle, not pets.
         - image: ../images/security-db.png
           title: ISOLATION AND SECURITY
-          description: It ensures your applications and resources are isolated and segregated. Docker, for example, makes sure each container has its own resources that are isolated from other containers, granting you complete control over traffic flow and management.
-
-techHeader: Technology
-technologyCards:
-    - name: kubernetes
-    
-solution:
-    project: container-orchestration
+          description: >-
+            It ensures your applications and resources are isolated and
+            segregated. Docker, for example, makes sure each container has its
+            own resources that are isolated from other containers, granting you
+            complete control over traffic flow and management.
+    _template: Benefits
+  - technologyCards:
+      - name: kubernetes
+    _template: Technologies
+  - solution:
+      project: container-orchestration
+    _template: Solution
 ---
 
 # The benefits of **Kubernetes containers**

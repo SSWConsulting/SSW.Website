@@ -1,7 +1,7 @@
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../.tina/__generated__/client";
-// import { Blocks } from "../../components/blocks-renderer";
+import { Blocks } from "../../components/blocks-renderer";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
@@ -15,7 +15,7 @@ export default function ConsultingPage(
     query: props.query,
     variables: props.variables,
   });
-  console.log('page data', data.consulting)
+  console.log('consulting data', data.consulting)
   return (
     <>
       <SEO
@@ -26,6 +26,7 @@ export default function ConsultingPage(
           }
         }
       />
+      <Blocks prefix="PageBeforeBody" blocks={data.consulting.beforeBody} />
       <Layout>
         <Container className={`prose`}>
           <TinaMarkdown
@@ -34,6 +35,7 @@ export default function ConsultingPage(
           />
         </Container>
       </Layout>
+      {/* <Blocks prefix="PageAfterBody" blocks={data.consulting.afterBody} /> */}
     </>
   );
 }

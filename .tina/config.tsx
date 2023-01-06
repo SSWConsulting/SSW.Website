@@ -66,7 +66,7 @@ const config = defineStaticConfig({
             type: "object",
             label: "Offices",
             name: "offices",
-            list: true,          
+            list: true,
             ui: {
               itemProps: (item) => {
                 return { label: item?.addressLocality };
@@ -144,7 +144,7 @@ const config = defineStaticConfig({
             type: "object",
             label: "Socials",
             name: "socials",
-            list: true,            
+            list: true,
             ui: {
               itemProps: (item) => {
                 return { label: item?.type };
@@ -289,6 +289,18 @@ const config = defineStaticConfig({
             description: "Used for SEO description",
           },
           {
+            type: "object",
+            list: true,
+            name: "beforeBody",
+            label: "Before body",
+            ui: {
+              visualSelector: true,
+            },
+            templates: [
+              ...Schemas.consultBlocks,
+            ],
+          },
+          {
             type: "rich-text",
             label: "Body",
             name: "_body",
@@ -296,7 +308,19 @@ const config = defineStaticConfig({
               ...Schemas.pageBlocks,
             ],
             isBody: true,
-          }
+          },
+          {
+            type: "object",
+            list: true,
+            name: "afterBody",
+            label: "After body",
+            ui: {
+              visualSelector: true,
+            },
+            templates: [
+              ...Schemas.consultBlocks,
+            ],
+          },
         ],
       },
     ],

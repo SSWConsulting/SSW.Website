@@ -90,7 +90,7 @@ const renderEvent = (e: Event) => {
           </span>
           <span className="inline-flex items-center rounded-md bg-gray-700 ml-2 px-1.5 text-sm font-bold text-white">
             {e.RelativeDate}
-          </span>      
+          </span>
         </time>
         <h5>
           <Link href={e.Url.Url}>
