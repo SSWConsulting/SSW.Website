@@ -16,9 +16,9 @@ export const Booking = (props: {
   );
 
   return (
-    <div className="flex flex-col">
-      <h1 dangerouslySetInnerHTML={{ __html: props.title }}></h1>
-      <h2>{props.subTitle}</h2>
+    <article className="max-w-[1170px] mx-auto px-[15px]">
+      <h1 dangerouslySetInnerHTML={{ __html: props.title }} className="text-[3.28rem] pb-[20px] pt-[60px] my-4"></h1>
+      <h2 className="text-[2.2rem] mt-[20px] mb-[10px]">{props.subTitle}</h2>
       <Button onClick={showBookingForm} data-aos="fade-up">
         {props.buttonText}
       </Button>
@@ -28,6 +28,6 @@ export const Booking = (props: {
         isShareForm={false}
       />
       <h2 className="mt-8">or call us on {sydneyOfficeLayoutData.phone}</h2>
-    </div>
+    </article>
   );
 };

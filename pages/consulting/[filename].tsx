@@ -49,6 +49,9 @@ export default function ConsultingPage(
     <>
       <SEO seo={data.consulting.seo} />
       <Layout>
+        <Section>
+          <Booking {...data.consulting.booking}></Booking>
+        </Section>
         <Section
           color="black"
           className={`prose-consulting border-y-4
@@ -57,7 +60,6 @@ export default function ConsultingPage(
                     py-24 text-center`}
         >
           <div className="mx-auto max-w-8xl px-4">
-          <Booking {...data.consulting.booking}></Booking>
             <TinaMarkdown
               components={{
                 ...componentRenderer,
