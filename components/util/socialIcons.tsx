@@ -116,7 +116,7 @@ const SocialIcon = ({ icon, title, url, linkText, style }: SocialIconParams) => 
                 rel="noreferrer nofollow"
             >
                 <FontAwesomeIcon icon={icon} color="white" />
-                {linkText && <span className="ml-2 text-white inline text-xs font-bold">{linkText}</span>}
+                {linkText && <span className="ml-2 inline text-xs font-bold text-white">{linkText}</span>}
             </a>
         </Link>
     )

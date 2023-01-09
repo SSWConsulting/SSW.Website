@@ -46,16 +46,16 @@ export const UpcomingEvents = ({ data }) => {
   }, []);
 
   return (
-    <div className="not-prose00">
-      <h2 className="text-2xl font-light pb-5">{data.title}</h2>
-      <div className="full flex-column">
-        <div className="max-h-128 bg-gray-100 overflow-y-scroll overflow-x-hidden border-2">
+    <div className="not-prose">
+      <h2 className="pb-5 text-2xl font-light">{data.title}</h2>
+      <div>
+        <div className="max-h-128 overflow-x-hidden overflow-y-scroll border-2 bg-gray-100">
           {loading ? <p>Loading...</p> : events.map(renderEvent)}
         </div>
-        <div className="flex flex-row-reverse mt-3">
+        <div className="mt-3 flex flex-row-reverse">
           {/* TODO: Update link after implement this page */}
           <Link href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all">
-            <a className="inline-flex items-center border-2 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-black shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            <a className="inline-flex items-center border-2 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-black shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2">
               More Events
             </a>
           </Link>
@@ -71,7 +71,7 @@ const renderEvent = (e: Event) => {
 
   return (
     <article key={e.Id} className="flex py-4">
-      <figure className="flex items-center min-w-fit">
+      <figure className="flex min-w-fit items-center">
         <Link href={e.Thumbnail.Url}>
           <a>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -84,21 +84,21 @@ const renderEvent = (e: Event) => {
           </a>
         </Link>
       </figure>
-      <div className="flex flex-col justify-center ml-5">
-        <time className="uppercase text-xs">
+      <div className="ml-5 flex flex-col justify-center">
+        <time className="text-xs uppercase">
           <span>
             {e.FormattedDate}
           </span>
-          <span className="inline-flex items-center rounded-md bg-gray-700 ml-2 px-1.5 text-xs font-bold text-white">
+          <span className="ml-2 inline-flex items-center rounded-md bg-gray-700 px-1.5 text-xs font-bold text-white">
             {e.RelativeDate}
           </span>      
         </time>
         <h5>
           <Link href={e.Url.Url}>
-            <a className="text-sswRed text-sm" target={isExternalLink ? "_blank" : "_self"}>{e.Title}</a>
+            <a className="text-sm text-sswRed" target={isExternalLink ? "_blank" : "_self"}>{e.Title}</a>
           </Link>
         </h5>
-        {!!e.Presenter && <span className="text-xs whitespace-nowrap">{e.Presenter}</span>}
+        {!!e.Presenter && <span className="whitespace-nowrap text-xs">{e.Presenter}</span>}
       </div>
     </article>
   );

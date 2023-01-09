@@ -28,7 +28,7 @@ export const Content = ({ data }) => {
   return (
     <Section color={data.backgroundColor}>
       <Container size="medium" className={classNames('prose', alignment, size)}>
-        {data.title && <h2 className="text-3xl font-light pt-16 pb-5">{data.title}</h2>}
+        {data.title && <h2 className="pt-16 pb-5 text-3xl font-light">{data.title}</h2>}
         <TinaMarkdown content={data.content} components={componentRenderer} />
       </Container>
     </Section>

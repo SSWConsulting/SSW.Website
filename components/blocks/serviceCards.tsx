@@ -34,7 +34,7 @@ export const ServiceCards = ({ data }) => {
 
 const Label = ({ text }) => {
   return (
-    <div className={`absolute text-xs text-left text-white font-normal uppercase ${bgColor["darkgray"]} w-fit p-2 z-10`}>
+    <div className={`absolute text-left text-xs font-normal uppercase text-white ${bgColor["darkgray"]} z-10 w-fit p-2`}>
       {text}
     </div>
   )
@@ -46,7 +46,7 @@ const BigCards = ({ title, cards }) => {
       <Label text={title} />
       <ul
         role="list"
-        className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4 mt-5"
+        className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4"
       >
         {cards.map((card) => (
           <li
@@ -54,9 +54,9 @@ const BigCards = ({ title, cards }) => {
             className={`col-span-1 flex flex-col divide-y divide-gray-200 text-center shadow ${bgColor[card.color]} hover:opacity-80`}
           >
             <Link href={card.link}>
-              <a className="unstyled text-white text-left">
+              <a className="unstyled text-left text-white">
                 <div className="flex flex-1 flex-col p-8">
-                  <h3 className="lg:pt-8 pb-3 text-2xl font-light">
+                  <h3 className="pb-3 text-2xl font-light lg:pt-8">
                     {card.title}
                   </h3>
                   <TinaMarkdown content={card.description} />
@@ -76,7 +76,7 @@ const SmallCards = ({ title, cards }) => {
       <Label text={title} />
       <ul
         role="list"
-        className="grid grid-cols-1 gap-2 grid-cols-2 md:grid-cols-4 mt-5"
+        className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4"
       >
         {cards.map((card) => (
           <li
@@ -84,9 +84,9 @@ const SmallCards = ({ title, cards }) => {
             className={`col-span-1 flex flex-col divide-y divide-gray-200 text-center shadow ${bgColor[card.color]} hover:opacity-80`}
           >
             <Link href={card.link}>
-              <a className="flex flex-col justify-end h-full">
-                <div className="flex flex-1 flex-col justify-end sm:justify-center pb-4 md:pb-8 py-8 px-2">
-                  <h3 className="text-sm mt-10 md:mt-0 font-light text-white">
+              <a className="flex h-full flex-col justify-end">
+                <div className="flex flex-1 flex-col justify-end py-8 px-2 pb-4 sm:justify-center md:pb-8">
+                  <h3 className="mt-10 text-sm font-light text-white md:mt-0">
                     {card.title}
                   </h3>
                 </div>
@@ -101,10 +101,10 @@ const SmallCards = ({ title, cards }) => {
 
 const Links = ({ links }) => {
   return (
-    <div className="flex justify-between items-center gap-6 flex-wrap py-3">
+    <div className="flex flex-wrap items-center justify-between gap-6 py-3">
       {links.map((card, i) => (
         <Link key={i} href={card.link}>
-          <a className="inline-flex items-center border-2 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-black shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+          <a className="inline-flex items-center border-2 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-black shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2">
             {card.label}
           </a>
         </Link>

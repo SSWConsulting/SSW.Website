@@ -57,7 +57,7 @@ export const AboutUs = ({ data }) => {
   return (
     <Section color={data.backgroundColor}>
       <Container>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 mt-5">
+        <div className="mt-5 grid grid-cols-1 gap-6 md:grid-cols-3">
           <TV />
           <ContactUsAndMap />
         </div>
@@ -115,7 +115,7 @@ const ContactUsAndMap = () => {
 
       {/* TODO: update state images to show state name */}
       {/* TODO: update state hover images to show state name with a red background */}
-      <div className="hidden md:block relative bg-no-repeat bg-[length:100%_auto] bg-[url('/images/map/map-bg.png')]">
+      <div className="relative hidden bg-[url('/images/map/map-bg.png')] bg-[length:100%_auto] bg-no-repeat md:block">
         <Image
           className={classNames(
             "bg-no-repeat bg-[length:100%_auto]",
@@ -162,8 +162,8 @@ const AccordionItem = ({
         onMouseLeave={() => setStateBeingHovered(null)}
         onClick={() => handleSetIndex()}
       >
-        <div className="flex group cursor-pointer pl-2">
-          <div className="text-white uppercase">{office.addressLocality}</div>
+        <div className="group flex cursor-pointer pl-2">
+          <div className="uppercase text-white">{office.addressLocality}</div>
         </div>
         <div className="flex items-center justify-center text-white">
           <FontAwesomeIcon icon={currentlySelected ? faArrowAltCircleDown : faArrowAltCircleRight} />

@@ -10,14 +10,14 @@ export const BuiltOnAzure = ({ data }) => {
     <Section color={data.backgroundColor}>
       <Container>
         <Link href="/consulting/azure">
-          <a className="flex items-center justify-center unstyled hover:text-azure hover:border-azure">
+          <a className="unstyled flex items-center justify-center hover:border-azure hover:text-azure">
             <Image
               src="/images/logos/azure.png"
               alt="Microsoft Azure Logo"
               height={30}
               width={30}
             />
-            <div className="ml-2 text-center tracking-widest uppercase">
+            <div className="ml-2 text-center uppercase tracking-widest">
               Built on the Microsoft Azure Platform
             </div>
           </a>

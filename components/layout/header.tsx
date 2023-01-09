@@ -19,10 +19,10 @@ export const Header = () => {
 
   return (
     <div className={`relative overflow-hidden bg-gradient-to-b`}>
-      <Container size="custom" className="py-0 relative z-10 max-w-8xl my-4">
-        <div className="sm:flex sm:justify-between sm:items-center">
+      <Container size="custom" className="relative z-10 my-4 max-w-8xl py-0">
+        <div className="sm:flex sm:items-center sm:justify-between">
           <Logo />
-          <div className="flex items-center justify-center mt-4 sm:mt-0">
+          <div className="mt-4 flex items-center justify-center sm:mt-0">
             <SocialIcons/>
           </div>
         </div>
@@ -42,7 +42,7 @@ const Logo = () => {
   return (
     <h4 className="flex items-center justify-center">
       <Link href="/" passHref>
-        <a className="flex gap-1 items-center whitespace-nowrap tracking-[.002em]">
+        <a className="flex items-center gap-1 whitespace-nowrap tracking-[.002em]">
           <Image
             src={logoPath}
             alt="SSW - Enterprise Software Development"
@@ -50,7 +50,7 @@ const Logo = () => {
             width={90} />
         </a>
       </Link>
-      <div className="w-24 ml-4 text-xxs leading-3 uppercase text-gray-700 font-thin">
+      <div className="ml-4 w-24 text-xxs font-thin uppercase leading-3 text-gray-700">
         Enterprise Software Development
       </div>
     </h4>

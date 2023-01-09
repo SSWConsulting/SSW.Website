@@ -1,4 +1,5 @@
 import * as React from "react";
+import classNames from "classnames";
 import { wrapFieldsWithMeta } from "tinacms";
 
 export const colorOptions = [
@@ -29,17 +30,17 @@ export const ColorPickerInput = wrapFieldsWithMeta(({ input }) => {
   return (
     <>
       <input type="text" id={input.name} className="hidden" {...input} />
-      <div className="flex gap-2 flex-wrap">
+      <div className="flex flex-wrap gap-2">
         {colorOptions.map((color) => {
           return (
             <button
-              className={`w-9 h-9 rounded-full shadow border ${
-                inputClasses[color]
-              } ${
+              className={classNames(
+                "h-9 w-9 rounded-full border shadow",
+                inputClasses[color],
                 input.value === color
-                  ? "ring-[3px] ring-offset-2 ring-blue-400"
+                  ? "ring-[3px] ring-blue-400 ring-offset-2"
                   : ""
-              }`}
+              )}
               onClick={() => {
                 input.onChange(color);
               }}

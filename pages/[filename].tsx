@@ -28,8 +28,8 @@ export default function HomePage(
       <Layout>
         <Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
         <Container className={`flex-1 pt-4`}>
-          <div className="md:grid md:grid-cols-5 lg:grid-cols-3 gap-4">
-            <div className="md:col-span-3 lg:col-span-2 prose-sm max-w-full">
+          <div className="gap-4 md:grid md:grid-cols-5 lg:grid-cols-3">
+            <div className="prose-sm max-w-full md:col-span-3 lg:col-span-2">
               <TinaMarkdown
                 components={componentRenderer}
                 content={data.page._body}
