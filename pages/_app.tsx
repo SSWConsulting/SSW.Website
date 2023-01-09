@@ -6,6 +6,7 @@ import { NEXT_SEO_DEFAULT } from "../next-seo.config";
 import AOS from "aos";
 import * as gtag from "../lib/gtag";
 import "aos/dist/aos.css";
+import "react-responsive-modal/styles.css";
 import "../styles.css";
 
 const isDev = process.env.NODE_ENV === "development";

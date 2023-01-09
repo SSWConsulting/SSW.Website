@@ -1,6 +1,5 @@
 import Modal from "react-responsive-modal";
 import { BookingForm } from "../bookingForm/bookingForm";
-import "react-responsive-modal/styles.css";
 import styles from "./bookingFormPopup.module.css";
 
 const BookingFormPopup = ({ isVisible, showBookingForm, isShareForm }) => {

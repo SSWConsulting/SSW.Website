@@ -27,7 +27,7 @@ export const Booking = (props: {
         showBookingForm={setIsVisible}
         isShareForm={false}
       />
-      <h2 className="mt-8">or call us on {sydneyOfficeLayoutData.phone}</h2>
+      <h2 className="text-[2.2rem] mt-8">or call us on {sydneyOfficeLayoutData.phone}</h2>
     </article>
   );
 };
