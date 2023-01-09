@@ -56,6 +56,8 @@ const createCarouselItemImage = ({ imgSrc, label }, index: React.Key) => {
         width={1080}
         layout="responsive"
       />
+      {/* `legend` required so that the carousel works properly */}
+      {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
       <p className="legend sr-only">{label}</p>
     </div>
   );
@@ -65,7 +67,7 @@ const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
   if (isSelected) {
       return (
           <li 
-            className="w-5 h-5 inline-block my-0 mx-2 bg-sswRed"
+            className="my-0 mx-2 inline-block h-5 w-5 bg-sswRed"
             aria-label={`Selected: ${label} ${index + 1}`}
             title={`Selected: ${label} ${index + 1}`}
           />
@@ -73,7 +75,7 @@ const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
   }
   return (
       <li
-        className="w-5 h-5 inline-block my-0 mx-2 bg-gray-500"
+        className="my-0 mx-2 inline-block h-5 w-5 bg-gray-500"
         onClick={onClickHandler}
         onKeyDown={onClickHandler}
         value={index}

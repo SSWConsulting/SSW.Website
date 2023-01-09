@@ -9,9 +9,9 @@ import { Section } from "../util/section";
 
 const bgColor = {
   "red": "bg-sswRed",
-  "lightgray": "bg-gray-300",
-  "mediumgray": "bg-gray-600",
-  "darkgray": "bg-gray-700",
+  "lightgray": "bg-[#9e9e9e]",
+  "mediumgray": "bg-[#666666]",
+  "darkgray": "bg-[#414141]",
 };
 
 export const ServiceCards = ({ data }) => {
@@ -34,7 +34,7 @@ export const ServiceCards = ({ data }) => {
 
 const Label = ({ text }) => {
   return (
-    <div className="absolute text-sm text-left text-white font-thin uppercase bg-gray-700 w-fit p-2">
+    <div className={`absolute text-left text-xs font-normal uppercase text-white ${bgColor["darkgray"]} z-10 w-fit p-2`}>
       {text}
     </div>
   )
@@ -46,17 +46,17 @@ const BigCards = ({ title, cards }) => {
       <Label text={title} />
       <ul
         role="list"
-        className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-5"
+        className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4"
       >
         {cards.map((card) => (
           <li
             key={card.title}
-            className={`col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg text-center shadow ${bgColor[card.color]}`}
+            className={`col-span-1 flex flex-col divide-y divide-gray-200 text-center shadow ${bgColor[card.color]} hover:opacity-80`}
           >
             <Link href={card.link}>
-              <a className="unstyled text-white">
+              <a className="unstyled text-left text-white">
                 <div className="flex flex-1 flex-col p-8">
-                  <h3 className="pt-8 pb-3 text-xl font-medium">
+                  <h3 className="pb-3 text-2xl font-light lg:pt-8">
                     {card.title}
                   </h3>
                   <TinaMarkdown content={card.description} />
@@ -76,17 +76,17 @@ const SmallCards = ({ title, cards }) => {
       <Label text={title} />
       <ul
         role="list"
-        className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-5"
+        className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4"
       >
         {cards.map((card) => (
           <li
             key={card.title}
-            className={`col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg text-center shadow ${bgColor[card.color]}`}
+            className={`col-span-1 flex flex-col divide-y divide-gray-200 text-center shadow ${bgColor[card.color]} hover:opacity-80`}
           >
             <Link href={card.link}>
-              <a>
-                <div className="flex flex-1 flex-col p-8">
-                  <h3 className="mt-6 text-sm font-medium text-white">
+              <a className="flex h-full flex-col justify-end">
+                <div className="flex flex-1 flex-col justify-end py-8 px-2 pb-4 sm:justify-center md:pb-8">
+                  <h3 className="mt-10 text-sm font-light text-white md:mt-0">
                     {card.title}
                   </h3>
                 </div>
@@ -101,10 +101,10 @@ const SmallCards = ({ title, cards }) => {
 
 const Links = ({ links }) => {
   return (
-    <div className="flex justify-between items-center gap-6 flex-wrap py-3">
+    <div className="flex flex-wrap items-center justify-between gap-6 py-3">
       {links.map((card, i) => (
         <Link key={i} href={card.link}>
-          <a className="inline-flex items-center rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+          <a className="inline-flex items-center border-2 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-black shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2">
             {card.label}
           </a>
         </Link>

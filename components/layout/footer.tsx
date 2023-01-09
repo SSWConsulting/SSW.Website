@@ -6,10 +6,10 @@ import { SocialIcons } from "../util/socialIcons";
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white text-xxs">
+    <footer className="bg-gray-900 text-xxs text-white">
       <Container className="relative" size="xsmall">
         <CopyrightInfo />
-        <SocialIcons className="my-4 justify-center lg:hidden" />
+        <SocialIcons className="my-6 justify-center sm:my-4 sm:hidden" />
         <DeploymentInfo />
       </Container>
     </footer>
@@ -21,7 +21,7 @@ const Divider = () => (
 )
 
 const CopyrightInfo = () => (
-  <div className="flex justify-between items-center gap-6 flex-wrap">
+  <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
     <div>
       &copy; Copyright SSW 1990-{new Date().getFullYear()}. All Rights Reserved.
     </div>
@@ -41,8 +41,8 @@ const CopyrightInfo = () => (
 )
 
 const DeploymentInfo = () => (
-  <div className="flex justify-between items-center gap-6 flex-wrap">
-    <div>
+  <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
+    <div className="text-center sm:text-left">
       Our website is under{" "}
       <Link
         href="https://www.ssw.com.au/rules/rules-to-better-websites-deployment"
