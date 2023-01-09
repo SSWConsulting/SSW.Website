@@ -35,6 +35,7 @@ jobs:
           output_location: ".next" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
         env:
+          IS_STATIC_EXPORT: true
           NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
           NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref || github.ref_name }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
