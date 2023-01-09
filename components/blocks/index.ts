@@ -31,3 +31,4 @@ export * from "./upcomingEvents";
 export * from "./builtOnAzure";
 export * from "./customImage";
 export * from "./clientLogos";
+export * from "./booking";

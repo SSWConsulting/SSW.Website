@@ -372,6 +372,28 @@ const config = defineStaticConfig({
             ]
           },
           {
+            type: "object",
+            label: "Booking",
+            name: "booking",
+            fields: [
+              {
+                type: "string",
+                label: "Title",
+                name: "title",
+              },
+              {
+                type: "string",
+                label: "Subtitle",
+                name: "subTitle",
+              },
+              {
+                type: "string",
+                label: "Button Text",
+                name: "buttonText",
+              }
+            ],
+          },
+          {
             type: "rich-text",
             label: "Body",
             name: "_body",

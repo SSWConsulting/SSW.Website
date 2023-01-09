@@ -7,6 +7,9 @@ import { Layout } from "../../components/layout";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import ReactPlayer from "react-player";
+import { Booking } from "../../components/blocks";
+import BookingFormPopup from "../../components/bookingFormPopup/bookingFormPopup";
+import { useState } from "react";
 
 const consultingComponentRenderer: Components<Record<string, unknown>> = {
   code: (data) => {
@@ -41,6 +44,7 @@ export default function ConsultingPage(
     variables: props.variables,
   });
 
+  
   return (
     <>
       <SEO seo={data.consulting.seo} />
@@ -53,6 +57,7 @@ export default function ConsultingPage(
                     py-24 text-center`}
         >
           <div className="mx-auto max-w-8xl px-4">
+          <Booking {...data.consulting.booking}></Booking>
             <TinaMarkdown
               components={{
                 ...componentRenderer,
