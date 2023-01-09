@@ -30,8 +30,10 @@ export default function ConsultingPage(
         }
       />
       <Layout>
-        <Container className={`prose`}>
+        <section>
           <Booking {...data.consulting.booking}></Booking>
+        </section>
+        <Container className={`prose`}>
           <TinaMarkdown
             components={componentRenderer}
             content={data.consulting._body}
