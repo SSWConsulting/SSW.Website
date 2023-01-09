@@ -1,5 +1,6 @@
 import { DefaultSeo } from "next-seo";
 import { NEXT_SEO_DEFAULT } from '../next-seo.config';
+import "react-responsive-modal/styles.css";
 import "../styles.css";
 
 const App = ({ Component, pageProps }) => {

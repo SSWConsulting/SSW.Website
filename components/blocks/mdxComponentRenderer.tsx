@@ -15,7 +15,7 @@ export const componentRenderer: Components<{
     UpcomingEvents: {
       title: string;
       numberOfEvents: number;
-    }
+    };
   }> = {
     ClientLogos: () => (
       <ClientLogos />
