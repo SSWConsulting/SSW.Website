@@ -1,0 +1,74 @@
+.basicButton {
+    position: relative;
+    width: 43%;
+    height: 90px;
+    border: 0;
+    background: #cc4141;
+    color: #fff;
+    font-size: 1.6rem;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.button {
+    composes: basicButton;
+    margin-top: 50px;
+}
+
+.hoverable:hover > .anim {
+    -moz-animation: anim-out 0.75s;
+    -webkit-animation: anim-out 0.75s;
+    animation: anim-out 0.75s;
+}
+
+.hoverable:hover > .anim:after {
+    -moz-animation: anim-out-pseudo 0.75s;
+    -webkit-animation: anim-out-pseudo 0.75s;
+    animation: anim-out-pseudo 0.75s;
+}
+
+@keyframes anim-out {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes anim-out-pseudo {
+    0% {
+        background: rgba(0, 0, 0, 0.25);
+    }
+    100% {
+        background: transparent;
+    }
+}
+
+.anim {
+    -moz-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+}
+
+.anim:before {
+    position: relative;
+    content: '';
+    display: block;
+    margin-top: 100%;
+}
+
+.anim:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+}

@@ -22,3 +22,4 @@ export * from "./carousel";
 export * from "./hero";
 export * from "./serviceCards";
 export * from "./upcomingEvents";
+export * from "./booking";

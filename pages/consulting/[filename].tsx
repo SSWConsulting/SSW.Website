@@ -6,6 +6,9 @@ import { componentRenderer } from "../../components/blocks/mdxComponentRenderer"
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
+import { Booking } from "../../components/blocks";
+import BookingFormPopup from "../../components/bookingFormPopup/bookingFormPopup";
+import { useState } from "react";
 
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -15,7 +18,7 @@ export default function ConsultingPage(
     query: props.query,
     variables: props.variables,
   });
-  console.log('page data', data.consulting)
+  
   return (
     <>
       <SEO
@@ -28,6 +31,7 @@ export default function ConsultingPage(
       />
       <Layout>
         <Container className={`prose`}>
+          <Booking {...data.consulting.booking}></Booking>
           <TinaMarkdown
             components={componentRenderer}
             content={data.consulting._body}

@@ -6,11 +6,11 @@ export const componentRenderer: Components<{
     UpcomingEvents: {
       title: string;
       numberOfEvents: number;
-    };
+    }
   }> = {
     UpcomingEvents: (props) => {
       return (
         <UpcomingEvents data={props} />
       );
-    },
+    }
   };
