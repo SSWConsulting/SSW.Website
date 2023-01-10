@@ -33,6 +33,9 @@ jobs:
         NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref || github.ref_name }}
         TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
 
+    - name: Zip artifact
+      run: zip -r --symlinks node-app.zip .next
+
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
       with:
@@ -67,6 +70,13 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: node-app
+        path: .
+
+    - name: Unzip artifact
+      run: |
+        unzip node-app.zip node-app
+        rm node-app.zip
+        ls -R
 
     - name: 'Login via Azure CLI'
       uses: azure/login@v1
@@ -80,6 +90,7 @@ jobs:
         app-name: ${{ env.WEBAPP_NAME }}
         slot-name:  ${{ env.SLOT_NAME }}
         package: .
+        startUpCommand: 'yarn start'
     
     - name: Comment on PR with the preview link
       uses: mshick/add-pr-comment@v1

@@ -16,26 +16,28 @@ jobs:
     runs-on: ubuntu-latest
     name: Build
     steps:
-      - uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: lts/*
-      
-      - run: yarn install
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: lts/*
+    
+    - run: yarn install
 
-      - run: yarn build
-        env:
-          NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
-          NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref || github.ref_name }}
-          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+    - run: yarn build
+      env:
+        NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
+        NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref || github.ref_name }}
+        TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: node-app
-          path: .next
+    - run: zip -r --symlinks node-app.zip .next
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: node-app
+        path: node-app.zip
 
   deploy-to-stage:
     name: Deploy to staging
@@ -50,6 +52,13 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: node-app
+          path: .
+
+      - name: Unzip artifact
+        run: |
+          unzip node-app.zip node-app
+          rm node-app.zip
+          ls -R
 
       - name: 'Login via Azure CLI'
         uses: azure/login@v1
@@ -63,6 +72,7 @@ jobs:
           app-name: ${{ env.WEBAPP_NAME }}
           slot-name:  ${{ env.SLOT_NAME }}
           package: .
+          startUpCommand: 'yarn start'
       
   deploy:
     name: Release to prod
