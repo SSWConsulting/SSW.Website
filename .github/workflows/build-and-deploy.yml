@@ -31,7 +31,8 @@ jobs:
         NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref || github.ref_name }}
         TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
 
-    - run: zip -r --symlinks node-app.zip .next
+    - name: Zip artifact
+      run: zip -r --symlinks node-app.zip .next
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
