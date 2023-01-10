@@ -30,14 +30,13 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: node-app
-        path: .
+        path: ./temp-node-app
 
     - name: Unzip artifact
       run: |
-        ls -R
-        unzip node-app.zip node-app
-        rm node-app.zip
-        ls -R
+        mkdir node-app
+        unzip ./temp-node-app/node-app.zip -d ./node-app
+        rm -rf ./temp-node-app
 
     - name: 'Login via Azure CLI'
       uses: azure/login@v1

@@ -29,7 +29,7 @@ jobs:
         TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
 
     - name: Zip artifact
-      run: zip -j -r --symlinks node-app.zip .next
+      run: zip -r --symlinks node-app.zip .next
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
@@ -37,3 +37,4 @@ jobs:
         name: node-app
         path: node-app.zip
         retention-days: 1
+        if-no-files-found: error
