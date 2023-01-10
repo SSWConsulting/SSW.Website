@@ -13,13 +13,12 @@ on:
       AZURE_CREDENTIALS:
         required: true
 
+env:
+  WEBAPP_NAME: ssw-website-v3
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
-    env:
-      WEBAPP_NAME: ssw-website-v3
-      RESOURCE_GROUP: ssw-website
 
     environment:
       name: ${{ env.ENVIRONMENT_NAME }}
@@ -52,7 +51,7 @@ jobs:
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
-        app-name: ${{ env.WEBAPP_NAME }}
+        app-name: ssw-website-v3
         slot-name:  ${{ env.SLOT_NAME }}
         package: .
         startUpCommand: 'yarn start'

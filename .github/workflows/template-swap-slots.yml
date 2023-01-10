@@ -5,13 +5,13 @@ on:
       AZURE_CREDENTIALS:
         required: true
 
+env:
+  WEBAPP_NAME: ssw-website-v3
+  RESOURCE_GROUP: ssw-website
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
-    env:
-      WEBAPP_NAME: ssw-website-v3
-      RESOURCE_GROUP: ssw-website
 
     environment:
       name: 'Production'
