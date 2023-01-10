@@ -151,6 +151,43 @@ module.exports = {
             },
           },
         },
+        cp: {
+          css: {
+            h1: {
+              fontSize: "3.28rem",
+              margin: "1rem 0",
+              padding: "60px 0 20px 0",
+              lineHeight: 1.2,
+              fontWeight: 300,
+              fontFamily: "Open Sans, sans-serif",
+              "> strong": {
+                color: "#cc4141",
+              },
+            },
+            "p, ul": {
+              fontFamily: "Open Sans, sans-serif",
+              fontSize: "1.2rem",
+              fontWeight: 300,
+              margin: "0 auto",
+              padding: "20px 0",
+              width: "75%",
+            },
+            "ul > li": {
+              display: "block",
+              fontWeight: 700,
+              margin: "2em 3rem 0 3rem",
+              "> div::before": {
+                color: "#cc4141",
+                content: "\"\u25A0\"",
+                display: "inline-block",
+                fontFamily: "Arial Black",
+                fontWeight: 700,
+                marginLeft: "-1em",
+                width: "1em",
+              },
+            },
+          }
+        }
       }),
     },
   },
