@@ -11,10 +11,11 @@ on:
   workflow_dispatch:
 
 env:
-  azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_AGREEABLE_WAVE_0F035BD1E }}
+  publish_profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B38E297B2E0645B48397990896EE0F32 }}
 
 jobs:
   build:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build
     steps:
@@ -26,6 +27,7 @@ jobs:
           node-version: lts/*
       
       - run: yarn install
+
       - run: yarn build
         env:
           NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
@@ -38,7 +40,33 @@ jobs:
           name: node-app
           path: .next
 
+  deploy_pr:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    name: Deploy
+    needs: build
+
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v2
+        with:
+          name: node-app
+
+      - name: 'Deploy to Azure Web App'
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'ssw-website-v3'
+          slot-name: ${{ github.head_ref || github.ref_name }}
+          publish-profile: ${{ env.publish_profile }}
+          package: .
+      
+      - name: Generate summary
+        run: |
+          echo "Site available at ${{ steps.deploy-to-webapp.outputs.webapp-url }}" >> $GITHUB_STEP_SUMMARY
+
   deploy:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     name: Deploy
     needs: build
@@ -58,5 +86,9 @@ jobs:
         with:
           app-name: 'ssw-website-v3'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B38E297B2E0645B48397990896EE0F32 }}
+          publish-profile: ${{ env.publish_profile }}
           package: .
+      
+      - name: Generate summary
+        run: |
+          echo "Site available at ${{ steps.deploy-to-webapp.outputs.webapp-url }}" >> $GITHUB_STEP_SUMMARY
