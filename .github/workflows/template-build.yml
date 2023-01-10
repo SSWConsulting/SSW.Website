@@ -1,0 +1,39 @@
+name: Build NextJS site
+
+on:
+  workflow_call:
+    secrets:
+      NEXT_PUBLIC_TINA_CLIENT_ID:
+        required: true
+      TINA_TOKEN:
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: lts/*
+        cache: yarn
+    
+    - run: yarn install
+
+    - run: yarn build
+      env:
+        NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
+        NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref || github.ref_name }}
+        TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+
+    - name: Zip artifact
+      run: zip -j -r --symlinks node-app.zip .next
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: node-app
+        path: node-app.zip
+        retention-days: 1

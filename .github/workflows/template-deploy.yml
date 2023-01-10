@@ -1,0 +1,58 @@
+name: Deploy NextJS site
+
+on:
+  workflow_call:
+    inputs:
+      ENVIRONMENT_NAME:
+        required: true
+        type: string
+      SLOT_NAME:
+        required: true
+        type: string
+    secrets:
+      AZURE_CREDENTIALS:
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      WEBAPP_NAME: ssw-website-v3
+      RESOURCE_GROUP: ssw-website
+
+    environment:
+      name: ${{ env.ENVIRONMENT_NAME }}
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    outputs:
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v2
+      with:
+        name: node-app
+        path: .
+
+    - name: Unzip artifact
+      run: |
+        ls -R
+        unzip node-app.zip node-app
+        rm node-app.zip
+        ls -R
+
+    - name: 'Login via Azure CLI'
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: 'Deploy to Azure Web App'
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{ env.WEBAPP_NAME }}
+        slot-name:  ${{ env.SLOT_NAME }}
+        package: .
+        startUpCommand: 'yarn start'

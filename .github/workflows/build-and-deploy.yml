@@ -6,88 +6,25 @@ on:
       - main
   workflow_dispatch:
 
-env:
-  WEBAPP_NAME: ssw-website-v3
-  RESOURCE_GROUP: ssw-website
-  SLOT_NAME: staging  # Create a slot on your web app called "staging"
-
 jobs:
   build:
-    runs-on: ubuntu-latest
-    name: Build
-    steps:
-    - uses: actions/checkout@v3
-
-    - name: Setup node
-      uses: actions/setup-node@v3
-      with:
-        node-version: lts/*
-    
-    - run: yarn install
-
-    - run: yarn build
-      env:
-        NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
-        NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref || github.ref_name }}
-        TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-
-    - name: Zip artifact
-      run: zip -r --symlinks node-app.zip .next
-
-    - name: Upload artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: node-app
-        path: node-app.zip
+    name: Build and upload artifacts
+    uses: ./.github/workflows/build.yml
+    secrets:
+      NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
+      TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
 
   deploy-to-stage:
     name: Deploy to staging
     needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: 'Staging'
-      url: ${{ steps.deploy-to-stage.outputs.webapp-url }}
-
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v2
-        with:
-          name: node-app
-          path: .
-
-      - name: Unzip artifact
-        run: |
-          unzip node-app.zip node-app
-          rm node-app.zip
-          ls -R
-
-      - name: 'Login via Azure CLI'
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      - name: 'Deploy to Azure Web App'
-        id: deploy-to-stage
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: ${{ env.WEBAPP_NAME }}
-          slot-name:  ${{ env.SLOT_NAME }}
-          package: .
-          startUpCommand: 'yarn start'
+    uses: ./.github/workflows/template-deploy.yml
+    with:
+      ENVIRONMENT_NAME: Staging
+      SLOT_NAME: staging
+    secrets:
+      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
       
-  deploy:
+  promote_to_prod:
     name: Release to prod
     needs: deploy-to-stage
-    runs-on: ubuntu-latest
-    environment:
-      name: 'Production'
-      url: 'https://${{ env.WEBAPP_NAME }}.azurewebsites.net/'
-
-    steps:
-      - name: Log into Azure CLI with service principal
-        uses: azure/login@v1.1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      - name: Swap slots
-        run: az webapp deployment slot swap -s ${{ env.SLOT_NAME }} -n ${{ env.WEBAPP_NAME }} -g ${{ env.RESOURCE_GROUP }}
+    uses: ./.github/workflows/template-swap-slots.yml
