@@ -97,9 +97,6 @@ export default function ConsultingPage(
   );
 }
 
-// mw 1170 py 15
-
-
 export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.consultingContentQuery({
     relativePath: `${params.filename}.mdx`,
