@@ -2,13 +2,11 @@ import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../.tina/__generated__/client";
 // import { Blocks } from "../../components/blocks-renderer";
+import { Booking } from "../../components/blocks";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
-import { Booking } from "../../components/blocks";
-import BookingFormPopup from "../../components/bookingFormPopup/bookingFormPopup";
-import { useState } from "react";
 
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -30,7 +28,7 @@ export default function ConsultingPage(
         }
       />
       <Layout>
-        <section>
+        <section className="flex items-center relative text-center min-h-[800px] overflow-hidden text-white font-light video-mask">
           <Booking {...data.consulting.booking}></Booking>
         </section>
         <Container className={`prose`}>

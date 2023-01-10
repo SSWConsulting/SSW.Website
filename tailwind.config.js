@@ -100,6 +100,17 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Open Sans','Helvetica Neue','Helvetica','sans-serif'],
+        body: ['Arial', 'Helvetica Neue', 'Helvetica', 'sans-serif']
+      },
+      animation: {
+        'more-bounce': 'more-bounce 2s infinite'
+      },
+      keyframes: {
+        'more-bounce': {
+          '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
+          '40%': { transform: 'translateY(-30px)' },
+          '60%': { transform: 'translateY(-15px)' },
+        }
       },
       typography: (theme) => ({
         DEFAULT: {

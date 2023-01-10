@@ -10,8 +10,36 @@
   a:not(.unstyled) {
     @apply hover:border-sswRed hover:text-sswRed;
   }
+
+  html,
+  body {
+    @apply font-body text-[14px];
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-sans leading-[1.2];
+  }
 }
 
 @layer components {
   @import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+  .more {
+    font: var(--fa-font-solid);
+    content: "\f007";
+  }
+
+  .icon::before {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .video-mask {
+    background: rgba(0, 0, 0, 0.75) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
+  }
 }

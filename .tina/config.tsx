@@ -307,6 +307,11 @@ const config = defineStaticConfig({
                 type: "string",
                 label: "Button Text",
                 name: "buttonText",
+              },
+              {
+                type: "image",
+                label: "Video Background",
+                name: "videoBackground",
               }
             ],
           },
