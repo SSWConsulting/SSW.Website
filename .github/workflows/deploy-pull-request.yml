@@ -18,16 +18,11 @@ jobs:
   
   set-up-test-env:
     name: Create test env
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Log into Azure CLI with service principal
-      uses: azure/login@v1.1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-    - name: Create slot on staging site
-      run: az webapp deployment slot create --resource-group $RESOURCE_GROUP  --name $WEBAPP_NAME --slot $SLOT_NAME
+    uses: ./.github/workflows/template-create-slot.yml
+    with:
+      SLOT_NAME: pr-${{ github.event.number }}
+    secrets:
+      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
 
   deploy:
     name: Deploy to test env

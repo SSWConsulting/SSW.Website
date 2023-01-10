@@ -6,6 +6,8 @@ on:
       - main
   workflow_dispatch:
 
+concurrency: main
+
 jobs:
   build:
     name: Build and upload artifacts

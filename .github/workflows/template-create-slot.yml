@@ -1,6 +1,10 @@
 name: Promote staging to prod
 on:
   workflow_call:
+    inputs:
+      SLOT_NAME:
+        type: string
+        required: true
     secrets:
       AZURE_CREDENTIALS:
         required: true
@@ -20,9 +24,9 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Swap slots
+    - name: Create slot
       run: |
-        az webapp deployment slot swap \
-          --slot staging \
+        az webapp deployment slot create \
+          --slot ${{ inputs.SLOT_NAME }} \
           --name ssw-website-v3 \
           --resource-group ssw-website
