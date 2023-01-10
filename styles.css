@@ -13,7 +13,7 @@
 
   html,
   body {
-    @apply font-body text-[14px];
+    @apply font-body text-[14px] scroll-smooth;
   }
   
   h1,
