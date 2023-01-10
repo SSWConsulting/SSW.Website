@@ -4,15 +4,15 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches:
-      - main
   workflow_dispatch:
+
+env:
+  WEBAPP_NAME: ssw-website-v3
+  RESOURCE_GROUP: ssw-website
+  SLOT_NAME: staging  # Create a slot on your web app called "staging"
 
 jobs:
   build:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build
     steps:
@@ -37,43 +37,13 @@ jobs:
           name: node-app
           path: .next
 
-  deploy_pr:
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    name: Deploy ${{ github.head_ref || github.ref_name }}
+  deploy-to-stage:
+    name: Deploy to staging
     needs: build
-
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v2
-        with:
-          name: node-app
-
-      - name: 'Login via Azure CLI'
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'ssw-website-v3'
-          slot-name: ${{ github.head_ref || github.ref_name }}
-          package: .
-      
-      - name: Generate summary
-        run: |
-          echo "Site available at ${{ steps.deploy-to-webapp.outputs.webapp-url }}" >> $GITHUB_STEP_SUMMARY
-
-  deploy:
-    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
-    name: Deploy
-    needs: build
     environment:
-      name: 'production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+      name: 'Staging'
+      url: ${{ steps.deploy-to-stage.outputs.webapp-url }}
 
     steps:
       - name: Download artifact from build job
@@ -87,13 +57,26 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
+        id: deploy-to-stage
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'ssw-website-v3'
-          slot-name: 'production'
+          app-name: ${{ env.WEBAPP_NAME }}
+          slot-name:  ${{ env.SLOT_NAME }}
           package: .
       
-      - name: Generate summary
-        run: |
-          echo "Site available at ${{ steps.deploy-to-webapp.outputs.webapp-url }}" >> $GITHUB_STEP_SUMMARY
+  deploy:
+    name: Release to prod
+    needs: deploy-to-stage
+    runs-on: ubuntu-latest
+    environment:
+      name: 'Production'
+      url: 'https://${{ env.WEBAPP_NAME }}.azurewebsites.net/'
+
+    steps:
+      - name: Log into Azure CLI with service principal
+        uses: azure/login@v1.1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Swap slots
+        run: az webapp deployment slot swap -s ${{ env.SLOT_NAME }} -n ${{ env.WEBAPP_NAME }} -g ${{ env.RESOURCE_GROUP }}
