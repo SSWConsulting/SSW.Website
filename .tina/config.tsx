@@ -306,7 +306,7 @@ const config = defineStaticConfig({
                 name: "benefitList",
                 fields: [
                   {
-                    type: "string",
+                    type: "image",
                     label: "Image URL",
                     name: "image",
                   },
