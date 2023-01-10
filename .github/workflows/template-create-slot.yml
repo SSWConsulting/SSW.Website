@@ -13,10 +13,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    environment:
-      name: 'Production'
-      url: 'https://ssw-website-v3.azurewebsites.net/'
-
     steps:
 
     - name: Log into Azure CLI with service principal
