@@ -31,6 +31,13 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+        env:
+          ENABLE_PREVIEW_FEATURES: true
+          FUNCTION_LANGUAGE: node
+          FUNCTION_LANGUAGE_VERSION: 16
+          NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
+          NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref || github.ref_name }}
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
