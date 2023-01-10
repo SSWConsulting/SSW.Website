@@ -10,9 +10,6 @@ on:
       - main
   workflow_dispatch:
 
-env:
-  publish_profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B38E297B2E0645B48397990896EE0F32 }}
-
 jobs:
   build:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
@@ -43,7 +40,7 @@ jobs:
   deploy_pr:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-    name: Deploy
+    name: Deploy ${{ github.head_ref || github.ref_name }}
     needs: build
 
     steps:
@@ -52,13 +49,17 @@ jobs:
         with:
           name: node-app
 
+      - name: 'Login via Azure CLI'
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'ssw-website-v3'
           slot-name: ${{ github.head_ref || github.ref_name }}
-          publish-profile: ${{ env.publish_profile }}
           package: .
       
       - name: Generate summary
@@ -80,13 +81,17 @@ jobs:
         with:
           name: node-app
 
+      - name: 'Login via Azure CLI'
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'ssw-website-v3'
           slot-name: 'production'
-          publish-profile: ${{ env.publish_profile }}
           package: .
       
       - name: Generate summary
