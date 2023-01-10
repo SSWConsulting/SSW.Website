@@ -8,6 +8,7 @@ import * as gtag from "../lib/gtag";
 import "aos/dist/aos.css";
 import "react-responsive-modal/styles.css";
 import "../styles.css";
+import '@fontsource/open-sans/300.css';
 
 const isDev = process.env.NODE_ENV === "development";
 

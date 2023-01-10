@@ -2,14 +2,13 @@ import { useTina } from "tinacms/dist/react";
 import { Components, TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../.tina/__generated__/client";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
+// import { Blocks } from "../../components/blocks-renderer";
+import { Booking } from "../../components/blocks";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import ReactPlayer from "react-player";
-import { Booking } from "../../components/blocks";
-import BookingFormPopup from "../../components/bookingFormPopup/bookingFormPopup";
-import { useState } from "react";
 
 const consultingComponentRenderer: Components<Record<string, unknown>> = {
   code: (data) => {
@@ -49,7 +48,7 @@ export default function ConsultingPage(
     <>
       <SEO seo={data.consulting.seo} />
       <Layout>
-        <Section>
+        <Section className="flex items-center relative text-center min-h-[800px] overflow-hidden text-white font-light video-mask">
           <Booking {...data.consulting.booking}></Booking>
         </Section>
         <Section

@@ -2,7 +2,10 @@ const colors = require("tailwindcss/colors");
 
 module.exports = {
   mode: "jit",
-  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   darkMode: "class",
   theme: {
     colors: {
@@ -19,15 +22,15 @@ module.exports = {
       sswRed: "#cc4141",
       azure: "#007fff",
       gray: {
-        50: "#f9f9f9", 
-        100: "#f2f2f2", 
-        200: "#dfdfdf", 
-        300: "#cccccc", 
-        400: "#a6a6a6", 
-        500: "#808080", 
-        600: "#737373", 
-        700: "#606060", 
-        800: "#414141", 
+        50: "#f9f9f9",
+        100: "#f2f2f2",
+        200: "#dfdfdf",
+        300: "#cccccc",
+        400: "#a6a6a6",
+        500: "#808080",
+        600: "#737373",
+        700: "#606060",
+        800: "#414141",
         900: "#333333",
         1000: "#1c1b2e",
       },
@@ -95,13 +98,24 @@ module.exports = {
       },
       spacing: {
         128: "32rem",
-        "liveStream": "75px"
+        liveStream: "75px",
       },
       zIndex: {
         "-1": "-1",
       },
       fontFamily: {
         sans: ["Open Sans", "Helvetica Neue", "Helvetica", "sans-serif"],
+        body: ["Arial", "Helvetica Neue", "Helvetica", "sans-serif"],
+      },
+      animation: {
+        "more-bounce": "more-bounce 2s infinite",
+      },
+      keyframes: {
+        "more-bounce": {
+          "0%, 20%, 50%, 80%, 100%": { transform: "translateY(0)" },
+          "40%": { transform: "translateY(-30px)" },
+          "60%": { transform: "translateY(-15px)" },
+        },
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -118,10 +132,10 @@ module.exports = {
               margin: "-0.25rem 1px",
             },
             "code::before": {
-              content: "\"\"",
+              content: '""',
             },
             "code::after": {
-              content: "\"\"",
+              content: '""',
             },
           },
         },
@@ -178,7 +192,7 @@ module.exports = {
               margin: "2em 3rem 0 3rem",
               "> div::before": {
                 color: theme("colors.sswRed"),
-                content: "\"\u25A0\"",
+                content: '"\u25A0"',
                 display: "inline-block",
                 fontFamily: "Arial Black",
                 fontWeight: theme("fontWeight.bold"),
@@ -186,7 +200,7 @@ module.exports = {
                 width: "1em",
               },
             },
-          }
+          },
         },
       }),
       backgroundImage: {
