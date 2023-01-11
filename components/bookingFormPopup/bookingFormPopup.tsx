@@ -8,23 +8,15 @@ const BookingFormPopup = ({ isVisible, showBookingForm, isShareForm }) => {
       <Modal
         open={isVisible}
         onClose={showBookingForm}
-        styles={{
-          modal: {
-            maxWidth: "unset",
-            width: "600px",
-            background: "white",
-          },
-        }}
         showCloseIcon={false}
         classNames={{
           modalAnimationIn: styles.formEnterModalAnimation,
           modalAnimationOut: styles.formLeaveModalAnimation,
+          modal: 'w-[600px] bg-black/0 max-w-none'
         }}
         animationDuration={700}
       >
-        <div>
-          <BookingForm />
-        </div>
+        <BookingForm />
       </Modal>
     </div>
   );

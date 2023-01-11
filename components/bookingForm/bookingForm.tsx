@@ -1,75 +1,118 @@
+import { Formik } from "formik";
+import { useEffect, useMemo, useState } from "react";
+import FormGroupInput from "../form/formGroupInput";
+import {
+  ACTIVE_INPUT,
+  AUSTRALIA,
+  FORM_INPUT,
+  STATE_DEFAULT_VALUE,
+} from "../util/constants";
+import { ValidationSchema } from "./validationSchema";
+
 export const BookingForm = () => {
-  const inputClasses =
-    "mt-1 py-2 block w-full rounded-md border-b-sswRed-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50";
+  //Show FormStates and Active label
+  const [contactSuccess, setContactSuccess] = useState(false);
+  const [country, setCountry] = useState("");
+  const [activeInputLabel, setActiveInputLabel] = useState({});
 
-  const countriesList = [
-    {
-      label: "Australia",
-      value: "australia",
-    },
-    {
-      label: "China",
-      value: "china",
-    },
-    {
-      label: "Europe",
-      value: "eu",
-    },
-    {
-      label: "South America",
-      value: "southamerica",
-    },
-    {
-      label: "USA",
-      value: "usa",
-    },
+  const initialFormValues = {
+    fullName: "",
+    email: "",
+    phone: "",
+    location: "",
+    states: STATE_DEFAULT_VALUE,
+    note: "",
+    company: "",
+    referredCompany: "",
+    referredFullName: "",
+    referredEmail: "",
+  };
 
-    {
-      label: "Other",
-      value: "other",
-    },
-  ];
+  //Condition to avoid SSR (Server-Side Rendering) for getting page path
+  let sourceWebPageURL: string;
+  if (typeof window !== "undefined") {
+    sourceWebPageURL = window.location.href;
+  } else {
+    sourceWebPageURL = "";
+  }
+  //ReCaptcha
+  const [contactReCaptcha, setContactReCaptcha] = useState("");
+
+  //returns true if country is Australia
+  const handleStates = (country: string) => {
+    return country === AUSTRALIA;
+  };
+
+  //useMemo is call, whenever country value is changed
+  const isShowStates = useMemo(() => handleStates(country), [country]);
+
+  //Changing state of Validation Schema
+  const [schema, setSchema] = useState(() =>
+    ValidationSchema(isShowStates, false)
+  );
+
+  useEffect(() => {
+    // every time isShowState changes, recreate the schema and set it in the state
+    setSchema(ValidationSchema(isShowStates, false));
+  }, [isShowStates]);
+
+  const handleActiveInputLabel = (targetInput, value) => {
+    if (
+      (targetInput == ACTIVE_INPUT.FullName ||
+        targetInput == ACTIVE_INPUT.Email ||
+        targetInput == ACTIVE_INPUT.Phone ||
+        targetInput == ACTIVE_INPUT.Location ||
+        targetInput == ACTIVE_INPUT.Company ||
+        targetInput == ACTIVE_INPUT.Note ||
+        targetInput == ACTIVE_INPUT.ReferredCompany ||
+        targetInput == ACTIVE_INPUT.ReferredFullName ||
+        targetInput == ACTIVE_INPUT.ReferredEmail) &&
+      !!value.trim()
+    ) {
+      setActiveInputLabel({ ...activeInputLabel, [targetInput]: true });
+    } else if (targetInput == ACTIVE_INPUT.States && isShowStates) {
+      setActiveInputLabel({ ...activeInputLabel, [targetInput]: true });
+    } else {
+      setActiveInputLabel({ ...activeInputLabel, [targetInput]: false });
+    }
+  };
+
+  const handleOnSubmit = (values, actions) => {
+    console.log("form submit", values);
+  };
 
   return (
-    <>
-      <h1 className="text-sswRed text-2xl">Get your project started!</h1>
-      <form>
-        <span className="text-gray-700">Your Full Name</span>
-        <input className={inputClasses}></input>
-        <span className="text-gray-700">Your Email</span>
-        <input className={inputClasses}></input>
-        <span className="text-gray-700">Your Phone</span>
-        <input className={inputClasses}></input>
-        <select
-          required
-          onClick={(e) => {
-            // handleInput(ACTIVE_INPUT.Location, e.currentTarget.value);
-          }}
-          onChange={(e) => {
-            // e.currentTarget.value == "australia"
-            //   ? setIsShowState(true)
-            //   : setIsShowState(false);
-          }}
-        >
-          <option className="d-none" value="">
-            Location
-          </option>
-          {countriesList.map((country) => (
-            <option key={country.value} value={country.value}>
-              {country.label}
-            </option>
-          ))}
-        </select>
-        <span className="text-gray-700">Your Company</span>
-        <input className={inputClasses}></input>
+    <div className="rounded-none bg-[#eee]">
+      <div className="relative p-[15px]">
+        <div className="m-0 bg-white p-[0.25rem_1.5rem_1.25rem]">
+          <h2 className="mt-[5px] mb-8 pt-[5px] text-[1.8rem] text-sswRed">
+            Get your project started!
+          </h2>
 
-        <span className="text-gray-700">Note</span>
-        <textarea className={inputClasses}></textarea>
-
-        {/* TODO: Add reCaptcha thing */}
-
-        <button className="bg-sswRed text-white rounded p-2 my-4">SUBMIT</button>
-      </form>
-    </>
+          <Formik
+            validationSchema={schema}
+            initialValues={initialFormValues}
+            onSubmit={handleOnSubmit}
+          >
+            <FormGroupInput
+              name={FORM_INPUT.FullName}
+              type="text"
+              label={ACTIVE_INPUT.FullName}
+              activeLabelClass={
+                activeInputLabel[ACTIVE_INPUT.FullName]
+                  ? ACTIVE_INPUT.ClassShow
+                  : ACTIVE_INPUT.None
+              }
+              handleChange={(e) => {
+                handleActiveInputLabel(
+                  ACTIVE_INPUT.FullName,
+                  e.currentTarget.value
+                );
+              }}
+            />
+          </Formik>
+        </div>
+      </div>
+    </div>
   );
 };

@@ -1,16 +1,16 @@
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { VFC, useState } from "react";
 import layoutData from "../../content/global/index.json";
 import BookingFormPopup from "../bookingFormPopup/bookingFormPopup";
 import Button from "../button/button";
 
-export const Booking = (props: {
+export const Booking: VFC<{
   title?: string;
   subTitle?: string;
   buttonText?: string;
   videoBackground?: string;
-}) => {
+}> = ({ title, subTitle, buttonText, videoBackground }) => {
   const [isVisible, setIsVisible] = useState(false);
   const showBookingForm = () => setIsVisible(!isVisible);
 
@@ -22,12 +22,12 @@ export const Booking = (props: {
     <>
       <article className="mx-auto max-w-[1170px] px-[15px]">
         <h1
-          dangerouslySetInnerHTML={{ __html: props.title }}
+          dangerouslySetInnerHTML={{ __html: title }}
           className="my-4 pb-[20px] pt-[60px] text-[3.28rem]"
         ></h1>
-        <h2 className="mt-[20px] mb-[10px] text-[2.2rem]">{props.subTitle}</h2>
+        <h2 className="mt-[20px] mb-[10px] text-[2.2rem]">{subTitle}</h2>
         <Button onClick={showBookingForm} data-aos="fade-up">
-          {props.buttonText}
+          {buttonText}
         </Button>
         <BookingFormPopup
           isVisible={isVisible}
@@ -54,7 +54,7 @@ export const Booking = (props: {
         muted
         loop
       >
-        <source src={props.videoBackground} type="video/mp4" />
+        <source src={videoBackground} type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>
     </>
