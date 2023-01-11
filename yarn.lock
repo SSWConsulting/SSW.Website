@@ -3547,6 +3547,7 @@ __metadata:
     dayjs: ^1.11.7
     eslint: ^8.13.0
     eslint-plugin-tailwindcss: ^3.8.0
+    formik: ^2.2.9
     next: ^12.3.1
     next-seo: ^5.15.0
     next-sitemap: ^3.1.44
@@ -3568,6 +3569,7 @@ __metadata:
     tailwindcss: ^3.2.4
     tinacms: ^1.1.2
     typescript: ^4.5.2
+    yup: ^0.32.11
   languageName: unknown
   linkType: soft
 
@@ -3892,25 +3894,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*":
-  version: 18.0.23
-  resolution: "@types/react@npm:18.0.23"
+"@types/react@npm:^17.0.0":
+  version: 17.0.52
+  resolution: "@types/react@npm:17.0.52"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 8b915793b9d6d53c19d76aab35d50a407cac6f4fb1e349cf037196302e8a7661d6c75870dc2fcb0b029c6f0db89d23fee910b777d28dd0e26becf8b312ddb61b
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:^17.0.35":
-  version: 17.0.51
-  resolution: "@types/react@npm:17.0.51"
-  dependencies:
-    "@types/prop-types": "*"
-    "@types/scheduler": "*"
-    csstype: ^3.0.2
-  checksum: a9680a17444df4edf89e91acb66fbe1eb8c3397ece0f279f67f3fd7f17c60460834e3be721947a7cddc916b76f7c62df3dbd1f6da1057643c5620e32a7a32ec5
+  checksum: a51b98dd87838d161278fdf9dd78e6a4ff8c018f406d6647f77963e144fb52a8beee40c89fd0e7e840eaeaa8bd9fe2f34519410540b1a52d43a6f8b4d2fbce33
   languageName: node
   linkType: hard
 
@@ -6443,6 +6434,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"deepmerge@npm:^2.1.1":
+  version: 2.2.1
+  resolution: "deepmerge@npm:2.2.1"
+  checksum: 284b71065079e66096229f735a9a0222463c9ca9ee9dda7d5e9a0545bf254906dbc7377e3499ca3b2212073672b1a430d80587993b43b87d8de17edc6af649a8
+  languageName: node
+  linkType: hard
+
 "deepmerge@npm:^4.0.0, deepmerge@npm:^4.2.2":
   version: 4.2.2
   resolution: "deepmerge@npm:4.2.2"
@@ -7719,6 +7717,23 @@ __metadata:
   version: 0.2.2
   resolution: "format@npm:0.2.2"
   checksum: 646a60e1336250d802509cf24fb801e43bd4a70a07510c816fa133aa42cdbc9c21e66e9cc0801bb183c5b031c9d68be62e7fbb6877756e52357850f92aa28799
+  languageName: node
+  linkType: hard
+
+"formik@npm:^2.2.9":
+  version: 2.2.9
+  resolution: "formik@npm:2.2.9"
+  dependencies:
+    deepmerge: ^2.1.1
+    hoist-non-react-statics: ^3.3.0
+    lodash: ^4.17.21
+    lodash-es: ^4.17.21
+    react-fast-compare: ^2.0.1
+    tiny-warning: ^1.0.2
+    tslib: ^1.10.0
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: f07f80eee8423b4c5560546c48c4093c47530dae7d931a4e0d947d68ae1aab94291b1bf2e99ecaa5854ee50593b415fb5724c624c787338f0577f066009e8812
   languageName: node
   linkType: hard
 
@@ -11966,6 +11981,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-fast-compare@npm:^2.0.1":
+  version: 2.0.4
+  resolution: "react-fast-compare@npm:2.0.4"
+  checksum: 06046595f90a4e3e3a56f40a8078c00aa71bdb064ddb98343f577f546aa22e888831fd45f009c93b34707cc842b4c637737e956fd13d6f80607ee92fb9cf9a1c
+  languageName: node
+  linkType: hard
+
 "react-fast-compare@npm:^3.0.1":
   version: 3.2.0
   resolution: "react-fast-compare@npm:3.2.0"
@@ -13799,7 +13821,7 @@ remark-mdx@next:
   languageName: node
   linkType: hard
 
-"tiny-warning@npm:^1.0.3":
+"tiny-warning@npm:^1.0.2, tiny-warning@npm:^1.0.3":
   version: 1.0.3
   resolution: "tiny-warning@npm:1.0.3"
   checksum: da62c4acac565902f0624b123eed6dd3509bc9a8d30c06e017104bedcf5d35810da8ff72864400ad19c5c7806fc0a8323c68baf3e326af7cb7d969f846100d71
@@ -13953,7 +13975,7 @@ remark-mdx@next:
   languageName: node
   linkType: hard
 
-"tslib@npm:^1.8.1":
+"tslib@npm:^1.10.0, tslib@npm:^1.8.1":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: dbe628ef87f66691d5d2959b3e41b9ca0045c3ee3c7c7b906cc1e328b39f199bb1ad9e671c39025bd56122ac57dfbf7385a94843b1cc07c60a4db74795829acd
@@ -15024,7 +15046,7 @@ remark-mdx@next:
   languageName: node
   linkType: hard
 
-"yup@npm:^0.32.0, yup@npm:^0.32.9":
+"yup@npm:^0.32.0, yup@npm:^0.32.11, yup@npm:^0.32.9":
   version: 0.32.11
   resolution: "yup@npm:0.32.11"
   dependencies:
