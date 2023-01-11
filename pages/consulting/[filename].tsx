@@ -4,19 +4,17 @@ import { client } from "../../.tina/__generated__/client";
 // import { Blocks } from "../../components/blocks-renderer";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
-import { Benefits } from "../../components/util/consulting/benefits";
-import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import ReactPlayer from "react-player";
 
-const consultingComponentRenderer: Components<{}> = {
+const consultingComponentRenderer: Components<Record<string, unknown>> = {
   code: (data) => {
     const { children: { props: { type, text } } } = data;
     if (type === "text" && text.startsWith("youtube:")) {
       const link = text.replace("youtube:", "").trim();
       return (
-        <div className="my-8 mx-auto relative h-[400px] w-[800px]">
+        <div className="relative my-8 mx-auto h-[400px] w-[800px]">
           <ReactPlayer
             className="absolute top-0 left-0"
             url={link}
@@ -43,25 +41,24 @@ export default function ConsultingPage(
     <>
       <SEO seo={data.consulting.seo} />
       <Layout>
-        {/* <Container className="prose"> */}
         <Section
           color="black"
+          // https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/186
+          // eslint-disable-next-line tailwindcss/no-contradicting-classname
           className={`
-            prose-cp
-            mx-auto px-4 py-[100px]
-            max-w-[1170px] min-w-full
-            text-center text-white
-            bg-fixed bg-black bg-center bg-no-repeat bg-cover bg-[url('/consulting/mvc-benefits-bg.jpg')]
-            border-y-4 border-y-sswRed overflow-hidden`
+            prose-consulting
+            mx-auto min-w-full max-w-[1170px]
+            overflow-hidden border-y-4
+            border-y-sswRed bg-black
+            bg-[url('/consulting/mvc-benefits-bg.jpg')] bg-cover bg-fixed bg-center bg-no-repeat px-4
+            py-[100px] text-center text-white`
           }
         >
           <TinaMarkdown
             components={{ ...componentRenderer, ...consultingComponentRenderer }}
             content={data.consulting._body}
           />
-          <Benefits data={data.consulting.benefits}></Benefits>
         </Section>
-        {/* </Container> */}
       </Layout>
     </>
   );
