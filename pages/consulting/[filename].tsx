@@ -37,7 +37,6 @@ const consultingComponentRenderer: Components<Record<string, unknown>> = {
 };
 import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
-import styles from './[filename].module.css';
 
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
