@@ -14,7 +14,7 @@ const consultingComponentRenderer: Components<Record<string, unknown>> = {
     if (type === "text" && text.startsWith("youtube:")) {
       const link = text.replace("youtube:", "").trim();
       return (
-        <div className="relative my-8 mx-auto h-[400px] w-[800px]">
+        <div className="relative m-8 mx-auto aspect-video">
           <ReactPlayer
             className="absolute top-0 left-0"
             url={link}
@@ -44,20 +44,20 @@ export default function ConsultingPage(
         <Section
           color="black"
           // https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/186
-          // eslint-disable-next-line tailwindcss/no-contradicting-classname
+          // eslint-disable-next-line tailwindcss/no-contradicting-classname, tailwindcss/no-arbitrary-value
           className={`
             prose-consulting
-            mx-auto min-w-full max-w-[1170px]
-            overflow-hidden border-y-4
-            border-y-sswRed bg-black
-            bg-[url('/consulting/mvc-benefits-bg.jpg')] bg-cover bg-fixed bg-center bg-no-repeat px-4
-            py-[100px] text-center text-white`
+            border-y-4 border-y-sswRed
+            bg-[url('/consulting/mvc-benefits-bg.jpg')] bg-cover bg-fixed bg-center bg-no-repeat
+            py-24 text-center`
           }
         >
-          <TinaMarkdown
-            components={{ ...componentRenderer, ...consultingComponentRenderer }}
-            content={data.consulting._body}
-          />
+          <div className="mx-auto max-w-8xl px-4">
+            <TinaMarkdown
+              components={{ ...componentRenderer, ...consultingComponentRenderer }}
+              content={data.consulting._body}
+            />
+          </div>
         </Section>
       </Layout>
     </>
