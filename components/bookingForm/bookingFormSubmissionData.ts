@@ -4,7 +4,7 @@ export const bookingFormSubmissionData = (
   contactReCaptcha,
   sourceWebPageURL
 ) => {
-  let subject = isShareForm
+  const subject = isShareForm
     ? `Share This Page enquiry - ${values.referredCompany} - ${values.fullName}`
     : `Consulting enquiry - ${values.company} - ${values.fullName}`;
 
