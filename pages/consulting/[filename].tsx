@@ -7,6 +7,14 @@ import { componentRenderer } from "../../components/blocks/mdxComponentRenderer"
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
+import React from "react";
+
+export type ConsultingEnv = {
+  env: { recaptchaKey?: string };
+};
+export const ConsultingContext = React.createContext<ConsultingEnv>({
+  env: {},
+});
 
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -16,19 +24,23 @@ export default function ConsultingPage(
     query: props.query,
     variables: props.variables,
   });
-  
+
   return (
-    <>
+    <ConsultingContext.Provider
+      value={{
+        env: {
+          recaptchaKey: props.env["RECAPTCHA_KEY"],
+        },
+      }}
+    >
       <SEO
-        seo={
-          {
-            title: data.consulting.title,
-            description: data.consulting.description,
-          }
-        }
+        seo={{
+          title: data.consulting.title,
+          description: data.consulting.description,
+        }}
       />
       <Layout>
-        <section className="flex items-center relative text-center min-h-[800px] overflow-hidden text-white font-light video-mask">
+        <section className="video-mask relative flex min-h-[800px] items-center overflow-hidden text-center font-light text-white">
           <Booking {...data.consulting.booking}></Booking>
         </section>
         <Container className={`prose`}>
@@ -39,7 +51,7 @@ export default function ConsultingPage(
           />
         </Container>
       </Layout>
-    </>
+    </ConsultingContext.Provider>
   );
 }
 
@@ -47,11 +59,15 @@ export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.consultingContentQuery({
     relativePath: `${params.filename}.mdx`,
   });
+
   return {
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
+      env: {
+        RECAPTCHA_KEY: process.env.RECAPTCHA_KEY,
+      },
     },
   };
 };

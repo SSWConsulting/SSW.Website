@@ -28,6 +28,10 @@ export const FormCountriesList = [
   },
 ];
 
+//FORMS
+//ContactForm title
+export const CONTACT_FORM_TITLE = "Get your project started!";
+
 //Validation  Messages
 export const VALIDATION_ERROR_MESSAGE = {
   FULL_NAME: "Please enter your first name and last name.",
@@ -75,3 +79,39 @@ export const FORM_INPUT = {
   ReferredEmail: "referredEmail",
   None: "",
 };
+
+//Australian all States list
+export const AustralianStatesList = [
+  {
+    label: "Australian Capital Territory",
+    value: "100000003",
+  },
+  {
+    label: "New South Wales",
+    value: "100000000",
+  },
+  {
+    label: "Northern Territory",
+    value: "100000006",
+  },
+  {
+    label: "Queensland",
+    value: "100000002",
+  },
+  {
+    label: "South Australia",
+    value: "100000004",
+  },
+  {
+    label: "Tasmania",
+    value: "100000007",
+  },
+  {
+    label: "Victoria",
+    value: "100000001",
+  },
+  {
+    label: "Western Australia",
+    value: "100000005",
+  },
+];

@@ -3,9 +3,9 @@ import { ErrorMessage, Field, FieldHookConfig, useField } from "formik";
 import { ChangeEvent, ChangeEventHandler, VFC } from "react";
 import { FormGroupProps } from "./formGroupTypes";
 
-const FormGroupInput: VFC<
+const FormGroupTextArea: VFC<
   FieldHookConfig<any> &
-    FormGroupProps & { handleChange: ChangeEventHandler<HTMLInputElement> }
+    FormGroupProps & { handleChange: ChangeEventHandler<HTMLTextAreaElement> }
 > = ({
   label,
   activeLabelClass,
@@ -29,23 +29,24 @@ const FormGroupInput: VFC<
       </label>
       <Field name={field.name}>
         {({ field }) => {
-          const inputOnChange: ChangeEventHandler<HTMLInputElement> = (
-            e: ChangeEvent<HTMLInputElement>
+          const textAreaOnChange: ChangeEventHandler<HTMLTextAreaElement> = (
+            e: ChangeEvent<HTMLTextAreaElement>
           ) => {
             field.onChange(e);
             handleChange(e);
           };
 
           return (
-            <input
+            <textarea
               {...field}
               {...props}
               className={fieldClass}
-              onChange={inputOnChange}
+              onChange={textAreaOnChange}
             />
           );
         }}
       </Field>
+      <small>Maximium 2000 characters</small>
       <ErrorMessage
         name={field.name}
         className={errorMessageClass}
@@ -55,4 +56,4 @@ const FormGroupInput: VFC<
   );
 };
 
-export default FormGroupInput;
+export default FormGroupTextArea;

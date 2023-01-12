@@ -1,26 +1,33 @@
-import classNames from "classnames";
 import { ErrorMessage, Field, FieldHookConfig, useField } from "formik";
-import { ChangeEvent, ChangeEventHandler, VFC } from "react";
+import {
+  ChangeEvent,
+  ChangeEventHandler,
+  FC,
+  MouseEventHandler
+} from "react";
 import { FormGroupProps } from "./formGroupTypes";
+import classNames from "classnames";
 
-const FormGroupInput: VFC<
+const FormGroupSelect: FC<
   FieldHookConfig<any> &
-    FormGroupProps & { handleChange: ChangeEventHandler<HTMLInputElement> }
+    FormGroupProps & 
+    { handleChange?: ChangeEventHandler<HTMLSelectElement> } & 
+    { handleClick: MouseEventHandler<HTMLSelectElement> }
 > = ({
   label,
   activeLabelClass,
   fieldClass,
   errorMessageClass,
   handleChange,
+  handleClick,
   ...props
 }) => {
   const [field, meta] = useField(props);
-
-  fieldClass = classNames(fieldClass || "form-control", {
+  
+  fieldClass = classNames(fieldClass || "form-select", {
     "is-invalid": !!meta.error,
   });
   !errorMessageClass && (errorMessageClass = "invalid-feedback");
-  !props.placeholder && (props.placeholder = label);
 
   return (
     <div className="field-wrapper">
@@ -29,25 +36,28 @@ const FormGroupInput: VFC<
       </label>
       <Field name={field.name}>
         {({ field }) => {
-          const inputOnChange: ChangeEventHandler<HTMLInputElement> = (
-            e: ChangeEvent<HTMLInputElement>
+          const selectOnChange: ChangeEventHandler<HTMLSelectElement> = (
+            e: ChangeEvent<HTMLSelectElement>
           ) => {
             field.onChange(e);
-            handleChange(e);
+            !!handleChange && handleChange(e);
           };
 
           return (
-            <input
+            <select
               {...field}
               {...props}
               className={fieldClass}
-              onChange={inputOnChange}
-            />
+              onChange={selectOnChange}
+              onClick={handleClick}
+            >
+              {props.children}
+            </select>
           );
         }}
       </Field>
       <ErrorMessage
-        name={field.name}
+        name={props.name}
         className={errorMessageClass}
         component="div"
       />
@@ -55,4 +65,4 @@ const FormGroupInput: VFC<
   );
 };
 
-export default FormGroupInput;
+export default FormGroupSelect;
