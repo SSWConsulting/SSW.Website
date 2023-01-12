@@ -22,10 +22,10 @@ const testimonials = (data) => {
     <div className="grid sm:grid-flow-row md:grid-flow-col">
       {data.map((testimonial) => (
         <div className="m-5">
-          <div className="rounded-lg bg-gray-100 p-5 text-lg sm:h-64 md:h-80">
+          <div className="rounded-lg testimonialBubble bg-gray-100 p-5 text-lg sm:h-64 md:h-80">
             <TinaMarkdown content={testimonial.body} />
           </div>
-          <div className="m-2 flex text-gray-900">
+          <div className="m-2 mt-8 flex text-gray-900">
             <Image
               src={testimonial.avatar}
               width="51"
@@ -44,7 +44,7 @@ const testimonials = (data) => {
 };
 
 export const testimonialBlockSchema: Template = {
-  name: "testimonialsRow",
+  name: "TestimonialRow",
   label: "Testimonials",
   ui: {
     previewSrc: "/blocks/testimonials.png",

@@ -4,7 +4,7 @@
 
 @layer base {
   a {
-    transition: all .3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
   }
 
   a:not(.unstyled) {
@@ -14,4 +14,16 @@
 
 @layer components {
   @import "react-responsive-carousel/lib/styles/carousel.min.css";
+}
+
+.testimonialBubble:after {
+	content: '';
+	position: absolute;
+	bottom: 93px;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: rgb(242 242 242);
+	border-bottom: 0;
+  
 }

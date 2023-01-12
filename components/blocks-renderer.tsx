@@ -19,7 +19,7 @@ const componentMap = {
   "BuiltOnAzure": BuiltOnAzure,
   "CustomImage": CustomImage,
   "ClientLogos": ClientLogos,
-  "Testimonials": TestimonialRow,
+  "TestimonialRow": TestimonialRow,
 };
 
 export const Blocks = ({ prefix, blocks}) => {
