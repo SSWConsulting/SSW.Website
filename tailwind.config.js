@@ -101,7 +101,7 @@ module.exports = {
         "-1": "-1",
       },
       fontFamily: {
-        sans: ["Open Sans","Helvetica Neue","Helvetica","sans-serif"],
+        sans: ["Open Sans", "Helvetica Neue", "Helvetica", "sans-serif"],
       },
       backgroundImage: {
         "benefits-bg": "url('/consulting/mvc-benefits-bg.jpg')",
