@@ -23,6 +23,10 @@
   h5 {
     @apply font-sans leading-[1.2];
   }
+
+  small {
+    @apply text-xs;
+  }
 }
 
 @layer components {
@@ -49,24 +53,30 @@
   }
 
   .field-wrapper label {
-    @apply absolute font-normal -top-[10px] -left-[10px] ml-[2px] bg-[length:100%_10px] bg-center bg-no-repeat px-[3px] text-[12px] text-[#999] opacity-0 transition-all duration-100 ease-linear;
+    @apply absolute -top-[10px] -left-[10px] ml-[2px] bg-[length:100%_10px] bg-center bg-no-repeat px-[3px] text-[12px] font-normal text-[#999] opacity-0 transition-all duration-100 ease-linear;
     background-image: linear-gradient(to bottom, #fff, #fff);
   }
   .field-wrapper label.show {
-    @apply -top-[17px] -left-[5px] opacity-100 bg-transparent;
+    @apply -top-[17px] -left-[5px] bg-transparent opacity-100;
   }
 
   .form-control {
-    @apply appearance-none block font-normal leading-normal w-full outline-none placeholder:text-[#6C757D];
+    @apply block w-full appearance-none font-normal leading-normal placeholder:text-[#6C757D];
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
   .form-control,
   .form-select {
-    @apply !border-0 rounded-none;
+    @apply rounded-none !border-0 outline-none;
+  }
+
+  .form-select {
+    @apply block w-full cursor-pointer appearance-none bg-white bg-[length:16px_12px] bg-[center_right_.75rem] bg-no-repeat p-1 text-sm font-normal leading-normal text-[#212529];
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
 
   .invalid-feedback {
-    @apply text-[#dc3545] hidden text-xs mt-1 w-full;
+    @apply mt-1 hidden w-full text-xs text-[#dc3545];
   }
   .is-invalid ~ .invalid-feedback {
     @apply block;
@@ -79,6 +89,29 @@
   }
   .field-wrapper input.form-control,
   .field-wrapper textarea.form-control {
-    @apply border-0 rounded-none !border-b !border-solid !border-[#ccc] bg-transparent shadow-none py-[6px] pr-[12px] text-[#333] text-[1em];
+    @apply rounded-none border-0 !border-b-[1px] !border-solid !border-[#ccc] bg-transparent py-[6px] pr-[12px] text-[1em] text-[#333] shadow-none;
+  }
+  .field-wrapper .form-select {
+    @apply !border-b-[1px] !border-solid !border-[#ccc];
+  }
+
+  button.done {
+    @apply inline-block cursor-pointer border-none !border-sswRed bg-[#cc4141] bg-no-repeat pr-[30px] text-sm font-normal uppercase leading-[18px] text-white no-underline !outline-sswRed hover:!bg-[#d76969] hover:!text-white;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAYAAAAMJL+VAAABGklEQVQ4y7XUsUoDURAF0CCIVWJhYWdhaVKolf6ERVIknQlWpvIXREg+QdsUCgmkFxs7BUEbv8AqCNZ24Vg4wrIk5mXFgYE3l3vnLvvmTamUC5RxgiEeIoeBlUt/CRxjghu0cBjZCmyC46LNe3hF7RdOLTi9ZZt3QlhJ4FaC20ltvo537CzgVbEZ553QrKcYdDFYwNnAG+4z2ACnKQZjNDL1ClZz9R0+sZvBGxinGDxjP1Nf4vbHBBe+o53T7eGliEEbU4xwFOerGbpkgzHqOewsvnqKJ6zN0NVTf9HMS8Y5PrA1RzdA909jiu05mvQx/feHlhH2E1ZFNTj9ovuoHQvtGk0cRDYDm+THtYhJJVbzCI+Ro8Aqy/b7Ai65u7TwIdSpAAAAAElFTkSuQmCC);
+    background-position: 100%;
+  }
+
+  .btn {
+    @apply inline-block cursor-pointer select-none rounded border-[1px] border-solid border-transparent bg-transparent p-[.375rem_.75rem] text-center align-middle text-sm font-normal leading-normal text-[#212529] no-underline;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  .alert {
+    @apply relative mb-4 rounded border-[1px] border-transparent border-solid border-transparent p-4;
+  }
+  
+  .alert-success {
+    @apply text-[#0f5132] bg-[#d1e7dd] border-[#badbcc];
   }
 }

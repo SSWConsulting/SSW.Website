@@ -1,3 +1,4 @@
+import React from "react";
 import { useTina } from "tinacms/dist/react";
 import { Components, TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../.tina/__generated__/client";
@@ -34,6 +35,14 @@ const consultingComponentRenderer: Components<Record<string, unknown>> = {
   },
 };
 
+
+export type ConsultingEnv = {
+  env: { recaptchaKey?: string };
+};
+export const ConsultingContext = React.createContext<ConsultingEnv>({
+  env: {},
+});
+
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
@@ -43,12 +52,17 @@ export default function ConsultingPage(
     variables: props.variables,
   });
 
-  
   return (
-    <>
+    <ConsultingContext.Provider
+      value={{
+        env: {
+          recaptchaKey: props.env["RECAPTCHA_KEY"],
+        },
+      }}
+    >
       <SEO seo={data.consulting.seo} />
       <Layout>
-        <Section className="flex items-center relative text-center min-h-[800px] overflow-hidden text-white font-light video-mask">
+        <Section className="video-mask relative flex min-h-[800px] items-center overflow-hidden text-center font-light text-white">
           <Booking {...data.consulting.booking}></Booking>
         </Section>
         <Section
@@ -71,7 +85,7 @@ export default function ConsultingPage(
           </div>
         </Section>
       </Layout>
-    </>
+    </ConsultingContext.Provider>
   );
 }
 
@@ -88,6 +102,9 @@ export const getStaticProps = async ({ params }) => {
       query: tinaProps.query,
       variables: tinaProps.variables,
       testimonialResult: testimonials,
+      env: {
+        RECAPTCHA_KEY: process.env.RECAPTCHA_KEY,
+      },
     },
   };
 };
