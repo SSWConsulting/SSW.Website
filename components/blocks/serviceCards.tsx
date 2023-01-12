@@ -103,7 +103,7 @@ const Links = ({ links }) => {
   return (
     <div className="flex flex-wrap items-center justify-between gap-6 py-3">
       {links.map((card, i) => (
-        <Link key={i} href={card.link}>
+        <Link key={i} href={card.link ?? ''}> 
           <a className="inline-flex items-center border-2 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-black shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2">
             {card.label}
           </a>
