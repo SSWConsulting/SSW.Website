@@ -19,11 +19,10 @@
 .testimonialBubble:after {
 	content: '';
 	position: absolute;
-	bottom: 93px;
+	bottom: -16px;
 	width: 0;
 	height: 0;
 	border: 20px solid transparent;
 	border-top-color: rgb(242 242 242);
 	border-bottom: 0;
-  
 }

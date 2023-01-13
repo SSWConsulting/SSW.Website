@@ -10,37 +10,38 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 export const TestimonialRow = ({ data }) => {
   return (
     <Section>
-      <Container size="custom" className="h-full md:mx-5 lg:mx-10">
-        {testimonials(data.testimonials)}
+      <Container size="custom" className="h-full">
+        <div className="grid sm:grid-flow-row md:grid-flow-col">
+          {testimonials(data.testimonials)}
+        </div>
       </Container>
     </Section>
   );
 };
 
 const testimonials = (data) => {
-  return (
-    <div className="grid sm:grid-flow-row md:grid-flow-col">
-      {data.map((testimonial) => (
-        <div className="m-5">
-          <div className="rounded-lg testimonialBubble bg-gray-100 p-5 text-lg sm:h-64 md:h-80">
-            <TinaMarkdown content={testimonial.body} />
-          </div>
-          <div className="m-2 mt-8 flex text-gray-900">
-            <Image
-              src={testimonial.avatar}
-              width="51"
-              height="51"
-              className="rounded-full"
-            />
-            <div className="ml-2">
-              <p className="font-semibold">{testimonial.name}</p>
-              <p>{testimonial.company}</p>
-            </div>
-          </div>
+  return data.map((testimonial, i) => (
+    <div className="m-5" key={i}>
+      <div
+        className="testimonialBubble rounded-lg bg-gray-100 p-5 text-lg sm:h-64 md:h-80"
+        data-aos="flip-right"
+      >
+        <TinaMarkdown content={testimonial.body} />
+      </div>
+      <div className="m-2 mt-6 flex text-gray-900">
+        <Image
+          src={testimonial.avatar}
+          width="51"
+          height="51"
+          className="rounded-full"
+        />
+        <div className="ml-2">
+          <p className="font-semibold">{testimonial.name}</p>
+          <p>{testimonial.company}</p>
         </div>
-      ))}
+      </div>
     </div>
-  );
+  ));
 };
 
 export const testimonialBlockSchema: Template = {
