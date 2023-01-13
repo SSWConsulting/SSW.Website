@@ -20,10 +20,9 @@ export const Booking: VFC<{
 
   return (
     <>
-      <article className="mx-auto max-w-[1170px] px-[15px]">
+      <article className="main-container">
         <h1
           dangerouslySetInnerHTML={{ __html: title }}
-          className="my-4 pb-[20px] pt-[60px] text-[3.28rem]"
         ></h1>
         <h2 className="mt-[20px] mb-[10px] text-[2.2rem]">{subTitle}</h2>
         <Button onClick={showBookingForm} data-aos="fade-up">

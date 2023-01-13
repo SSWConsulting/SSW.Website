@@ -24,6 +24,14 @@
     @apply font-sans leading-[1.2];
   }
 
+  h1 {
+    @apply m-[1rem_0] pb-[20px] pt-[60px] !text-[3.28rem];
+  }
+
+  h2 {
+    @apply mb-[10px] mt-[20px] !text-[2.2rem];
+  }
+
   small {
     @apply text-xs;
   }
@@ -31,6 +39,9 @@
 
 @layer components {
   @import "react-responsive-carousel/lib/styles/carousel.min.css";
+  @import "react-responsive-modal/styles.css";
+  @import "@fontsource/open-sans/300.css";
+  @import "aos/dist/aos.css";
 
   .more {
     font: var(--fa-font-solid);
@@ -108,10 +119,30 @@
   }
 
   .alert {
-    @apply relative mb-4 rounded border-[1px] border-transparent border-solid border-transparent p-4;
+    @apply relative mb-4 rounded border-[1px] border-solid border-transparent border-transparent p-4;
   }
-  
+
   .alert-success {
-    @apply text-[#0f5132] bg-[#d1e7dd] border-[#badbcc];
+    @apply border-[#badbcc] bg-[#d1e7dd] text-[#0f5132];
+  }
+
+  .technology-card {
+    @apply m-[20px_15px_60px_15px] min-h-[410px] border-b-2 border-solid border-b-sswRed bg-contentGray p-[41px];
+  }
+  .technology-card p {
+    @apply m-[0_auto] w-9/12 py-[20px] text-justify font-sans text-[1.2rem] font-light text-black;
+  }
+  .technology-card p a {
+    @apply ml-4 font-body;
+  }
+  .technology-card a {
+    @apply text-linkGray;
+  }
+  .technology-card img {
+    @apply h-[100px];
+  }
+
+  .main-container {
+    @apply mx-auto max-w-[1170px] px-[15px];
   }
 }

@@ -11,3 +11,14 @@ query consultingContentQuery($relativePath: String!) {
     ...ConsultingParts
   }
 }
+
+query technologyCardContentQuery($cardNames: [String!]) {
+  ...LayoutQueryFragment
+  technologiesConnection(filter: {name: {in: $cardNames}}) {
+    edges {
+      node {
+        ...TechnologiesParts
+      }
+    }
+  }
+}

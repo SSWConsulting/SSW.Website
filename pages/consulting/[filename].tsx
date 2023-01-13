@@ -2,12 +2,14 @@ import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../.tina/__generated__/client";
 // import { Blocks } from "../../components/blocks-renderer";
+import React from "react";
 import { Booking } from "../../components/blocks";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
+import TechnologyCards from "../../components/technologyCard/technologyCards";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
-import React from "react";
+import { Section } from "../../components/util/section";
 
 export type ConsultingEnv = {
   env: { recaptchaKey?: string };
@@ -24,6 +26,11 @@ export default function ConsultingPage(
     query: props.query,
     variables: props.variables,
   });
+  const techCards = props.data.consulting.technologyCards.map((c) => ({
+    ...props.technologyCards.data.technologiesConnection.edges.find(
+      (n) => n.node.name === c.name
+    ).node,
+  }));
 
   return (
     <ConsultingContext.Provider
@@ -40,9 +47,9 @@ export default function ConsultingPage(
         }}
       />
       <Layout>
-        <section className="video-mask relative flex min-h-[800px] items-center overflow-hidden text-center font-light text-white">
+        <Section className="!video-mask flex min-h-[800px] items-center text-center font-light !text-white">
           <Booking {...data.consulting.booking}></Booking>
-        </section>
+        </Section>
         <Container className={`prose`}>
           <a id="more" />
           <TinaMarkdown
@@ -50,6 +57,12 @@ export default function ConsultingPage(
             content={data.consulting._body}
           />
         </Container>
+        <Section className="min-h-[556px] pb-[100px] text-center">
+          <TechnologyCards
+            techHeader={data.consulting.techHeader}
+            techCards={techCards}
+          ></TechnologyCards>
+        </Section>
       </Layout>
     </ConsultingContext.Provider>
   );
@@ -60,11 +73,19 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.mdx`,
   });
 
+  const technologyCards = tinaProps.data.consulting.technologyCards.map(
+    (c) => c.name
+  );
+  const technologyCardsProps = await client.queries.technologyCardContentQuery({
+    cardNames: technologyCards,
+  });
+
   return {
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
+      technologyCards: technologyCardsProps,
       env: {
         RECAPTCHA_KEY: process.env.RECAPTCHA_KEY,
       },

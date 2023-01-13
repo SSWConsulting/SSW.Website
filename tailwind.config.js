@@ -18,6 +18,8 @@ module.exports = {
       yellow: colors.yellow,
       sswRed: "#cc4141",
       azure: "#007fff",
+      contentGray: "#f5f5f5",
+      linkGray: "#666",
       gray: {
         50: '#f9f9f9', 
         100: '#f2f2f2', 
