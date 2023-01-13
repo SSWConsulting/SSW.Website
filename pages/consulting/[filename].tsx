@@ -31,6 +31,10 @@ const consultingComponentRenderer: Components<Record<string, unknown>> = {
     return <code>{data.children}</code>;
   },
 };
+// import { Blocks } from "../../components/blocks-renderer";
+import React from "react";
+import TechnologyCards from "../../components/technologyCard/technologyCards";
+import { Container } from "../../components/util/container";
 
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -40,6 +44,11 @@ export default function ConsultingPage(
     query: props.query,
     variables: props.variables,
   });
+  const techCards = props.data.consulting.technologyCards.map((c) => ({
+    ...props.technologyCards.data.technologiesConnection.edges.find(
+      (n) => n.node.name === c.name
+    ).node,
+  }));
 
   return (
     <>
@@ -61,6 +70,10 @@ export default function ConsultingPage(
               content={data.consulting._body}
             />
             <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
+          <TechnologyCards
+            techHeader={data.consulting.techHeader}
+            techCards={techCards}
+          ></TechnologyCards>
           </div>
         </Section>
       </Layout>
@@ -74,6 +87,12 @@ export const getStaticProps = async ({ params }) => {
   });
 
   const testimonials = await client.queries.allTestimonialsQuery();
+  const technologyCards = tinaProps.data.consulting.technologyCards.map(
+    (c) => c.name
+  );
+  const technologyCardsProps = await client.queries.technologyCardContentQuery({
+    cardNames: technologyCards,
+  });
 
   return {
     props: {
@@ -81,6 +100,7 @@ export const getStaticProps = async ({ params }) => {
       query: tinaProps.query,
       variables: tinaProps.variables,
       testimonialResult: testimonials,
+      technologyCards: technologyCardsProps,
     },
   };
 };

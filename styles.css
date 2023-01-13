@@ -10,9 +10,58 @@
   a:not(.unstyled) {
     @apply hover:border-sswRed hover:text-sswRed;
   }
+
+  html,
+  body {
+    @apply font-body text-[14px] leading-[1.43];
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-sans leading-[1.2];
+  }
+
+  h1 {
+    @apply m-[1rem_0] pb-[20px] pt-[60px] !text-[3.28rem];
+  }
+
+  h2 {
+    @apply mb-[10px] mt-[20px] !text-[2.2rem];
+  }
+
+  figure {
+    @apply mb-4;
+  }
 }
 
 @layer components {
   @import "react-responsive-carousel/lib/styles/carousel.min.css";
 }
 
+  @import "react-responsive-modal/styles.css";
+  @import "@fontsource/open-sans/300.css";
+  @import "aos/dist/aos.css";
+
+  .technology-card {
+    @apply m-[20px_15px_60px_15px] min-h-[410px] border-b-2 border-solid border-b-sswRed bg-contentGray p-[41px];
+  }
+  .technology-card p {
+    @apply m-[0_auto] w-9/12 py-[20px] text-justify font-sans text-[1.2rem] font-light text-black;
+  }
+  .technology-card p a {
+    @apply ml-4 font-body;
+  }
+  .technology-card a {
+    @apply text-linkGray;
+  }
+  .technology-card img {
+    @apply h-[100px];
+  }
+
+  .main-container {
+    @apply mx-auto max-w-[1170px] px-[15px];
+  }
+}
