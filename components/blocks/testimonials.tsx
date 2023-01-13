@@ -30,7 +30,7 @@ const testimonials = (data) => {
       </div>
       <div className="m-2 mt-6 flex text-gray-900">
         <Image
-          src={testimonial.avatar}
+          src={testimonial.avatar ?? ''}
           width="51"
           height="51"
           className="rounded-full"
