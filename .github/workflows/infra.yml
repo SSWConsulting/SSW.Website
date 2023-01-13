@@ -1,0 +1,43 @@
+name: Infra CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency: main
+
+defaults:
+  run:
+    shell: pwsh
+
+env:
+  bicepPath: ./infra/main.bicep
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Build
+      run: |
+        az bicep build --file ${{ env.bicepPath }}
+
+    - name: Log into Azure CLI with service principal
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Deploy
+      run: |
+        $timestamp = (Get-Date -Format yyyy-MM-ddTHH-mm)
+
+        az group create `
+          --location ${{ vars.AZURE_RESOURCE_GROUP_LOCATION }} `
+          --name ${{ vars.AZURE_RESOURCE_GROUP }}
+
+        az deployment group create `
+          --name $timestamp `
+          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
+          --template-file ${{ env.bicepPath }}
