@@ -52,7 +52,7 @@ var appSettings = [
   }
   {
     name: 'WEBSITES_PORT'
-    value: '80'
+    value: '3000'
   }
 ]
 
