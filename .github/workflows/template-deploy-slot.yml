@@ -49,7 +49,48 @@ jobs:
           --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
           --name ${{ vars.APP_SERVICE_NAME }} `
           --slot ${{ inputs.slot_name }} `
-          --configuration-source ${{ vars.APP_SERVICE_NAME }}
+          --configuration-source ${{ vars.APP_SERVICE_NAME }} `
+          --output none
+        Write-Host '✅ slot created'
+
+        # get slot identity
+        $identityId = az webapp identity assign `
+          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
+          --name ${{ vars.APP_SERVICE_NAME }} `
+          --slot ${{ inputs.slot_name }} `
+          --query principalId `
+          --output tsv
+        Write-Host '✅ identity created'
+
+        # Configure WebApp to use the Manage Identity Credentials to perform docker pull operations
+        $configId = (
+          az webapp show `
+            --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
+            --name ${{ vars.APP_SERVICE_NAME }} `
+            --slot ${{ inputs.slot_name }} `
+            --query id `
+            --output tsv
+          ) + "/config/web"
+        az resource update `
+          --ids $configId `
+          --set properties.acrUseManagedIdentityCreds=True `
+          --output none
+        Write-Host '✅ acrUseManagedIdentityCreds set'
+
+        $acrId = az acr show `
+          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
+          --name ${{ vars.ACR_LOGIN_SERVER }} `
+          --query id `
+          --output tsv
+        Write-Host '✅ acr found'
+
+        # grant access to the identity on ACR
+        az role assignment create `
+          --assignee $identityId `
+          --scope $acrId `
+          --role acrpull `
+          -o none
+        Write-Host '✅ acrpull role granted'
 
     - name: AppService - Get slot URL
       id: get-app-service-url
