@@ -2,11 +2,12 @@ name: PR - build and deploy to slot
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
     branches:
     - main
 
-concurrency: ci-${{ github.event.number }}
+concurrency: 
+  group: ci-${{ github.event.number }}-${{ github.workflow }}
+  cancel-in-progress: true
 
 defaults:
   run:

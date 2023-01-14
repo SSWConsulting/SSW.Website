@@ -2,11 +2,19 @@ name: PR - Lint code
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    branches:
+    - main
+
+concurrency: 
+  group: ci-${{ github.event.number }}-${{ github.workflow }}
+  cancel-in-progress: true
 
 defaults:
   run:
     shell: pwsh
+
+env:
+  bicepPath: ./infra/main.bicep
 
 jobs:
   lint-infra:
