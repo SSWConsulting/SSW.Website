@@ -57,7 +57,7 @@ jobs:
           --query "[0].name" `
           --output tsv
 
-        echo "webapp-url=https://$url)" >> $GITHUB_OUTPUT
+        echo "webapp-url=https://$url)" >> $env:GITHUB_OUTPUT
 
     - name: AppService - Deploy
       id: deploy-to-webapp
