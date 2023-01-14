@@ -86,7 +86,8 @@ jobs:
 
         # grant access to the identity on ACR
         az role assignment create `
-          --assignee $identityId `
+          --assignee-object-id $identityId `
+          --assignee-principal-type ServicePrincipal `
           --scope $acrId `
           --role acrpull `
           -o none
