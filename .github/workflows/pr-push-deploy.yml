@@ -41,6 +41,11 @@ jobs:
     permissions:
       pull-requests: write
     steps:
+
+    - uses: johnlokerse/website-healthcheck@v2
+      with:
+        web-url: ${{ steps.get-app-service-url.outputs.webapp-url }}
+        scan-for-text: "ssw"
     
     - name: Comment on PR with the preview link
       uses: mshick/add-pr-comment@v1
@@ -54,3 +59,17 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         repo-token-user-login: 'github-actions[bot]'
         allow-repeats: true
+
+    - name: Lighthouse Audit
+      uses: foo-software/lighthouse-check-action@master
+      with:
+        urls: ${{ needs.deploy.outputs.url }}
+        device: all
+        gitHubAccessToken: ${{ secrets.GITHUB_TOKEN }}
+        outputDirectory: ${{ github.workspace }}/tmp/artifacts
+
+    - name: Upload Lighthouse artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: Lighthouse reports
+        path: ${{ github.workspace }}/tmp/artifacts
