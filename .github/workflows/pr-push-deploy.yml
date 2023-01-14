@@ -61,6 +61,7 @@ jobs:
     permissions:
       pull-requests: write
     steps:
+
     - name: Check URL Status
       uses: gpuliyar/check-url-action@v1.0.1
       with:
@@ -70,16 +71,15 @@ jobs:
         retry-delay: 5000
         codes-allowed: 200
 
-    - name: Lighthouse Audit
-      uses: foo-software/lighthouse-check-action@master
+    - name: Generate Lighthouse Report
+      uses: justinribeiro/lighthouse-action@master
       with:
-        urls: ${{ needs.deploy.outputs.url }}
-        device: all
-        gitHubAccessToken: ${{ secrets.GITHUB_TOKEN }}
-        outputDirectory: ${{ github.workspace }}/tmp/artifacts
+        secret: ${{ secrets.GITHUB_TOKEN }}
+        url: ${{ needs.deploy.outputs.url }}
+        wptConnectionSpeed: fourg
 
-    - name: Upload Lighthouse artifacts
-      uses: actions/upload-artifact@v3
+    - name: Saving Lighthouse Audit Artifacts
+      uses: actions/upload-artifact@master
       with:
-        name: Lighthouse reports
-        path: ${{ github.workspace }}/tmp/artifacts
+        name: lighthouse-artifacts
+        path: './results'
