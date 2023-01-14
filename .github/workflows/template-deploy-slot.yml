@@ -13,6 +13,10 @@ on:
     secrets:
       AZURE_CREDENTIALS:
         required: true
+    outputs:
+      url: 
+        description: URL to the environment that was deployed to
+        value: ${{ jobs.deploy.outputs.url }}
 
 defaults:
   run:
@@ -57,7 +61,7 @@ jobs:
           --query "[0].name" `
           --output tsv
 
-        echo "webapp-url=https://$url)" >> $env:GITHUB_OUTPUT
+        echo "webapp-url=https://$url" >> $env:GITHUB_OUTPUT
 
     - name: AppService - Deploy
       id: deploy-to-webapp
