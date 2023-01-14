@@ -40,13 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
-    steps:
-
-    - uses: johnlokerse/website-healthcheck@v2
-      with:
-        web-url: ${{ steps.get-app-service-url.outputs.webapp-url }}
-        scan-for-text: "ssw"
-    
+    steps:    
     - name: Comment on PR with the preview link
       uses: mshick/add-pr-comment@v1
       with:
@@ -59,6 +53,22 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         repo-token-user-login: 'github-actions[bot]'
         allow-repeats: true
+
+  lighthouse-audit:
+    name: Lighthouse Audit
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+    - name: Check URL Status
+      uses: gpuliyar/check-url-action@v1.0.1
+      with:
+        url: ${{ needs.deploy.outputs.url }}
+        init-delay: 5000
+        retry-count: 3
+        retry-delay: 5000
+        codes-allowed: 200
 
     - name: Lighthouse Audit
       uses: foo-software/lighthouse-check-action@master
