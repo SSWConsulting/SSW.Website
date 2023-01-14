@@ -14,6 +14,10 @@ on:
       AZURE_CREDENTIALS:
         required: true
 
+defaults:
+  run:
+    shell: pwsh
+
 jobs:
   deploy:
     runs-on: ubuntu-latest

@@ -8,6 +8,10 @@ on:
 
 concurrency: ci-${{ github.event.number }}
 
+defaults:
+  run:
+    shell: pwsh
+
 jobs:
   build:
     name: Build and upload artifacts

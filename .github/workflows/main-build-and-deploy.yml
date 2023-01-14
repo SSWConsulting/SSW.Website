@@ -8,6 +8,10 @@ on:
 
 concurrency: main
 
+defaults:
+  run:
+    shell: pwsh
+
 jobs:
   build:
     name: Build and upload artifacts

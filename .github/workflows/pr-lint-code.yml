@@ -4,6 +4,10 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+defaults:
+  run:
+    shell: pwsh
+
 jobs:
   lint-infra:
     runs-on: ubuntu-latest
