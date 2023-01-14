@@ -5,7 +5,17 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  build:
+  lint-infra:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v3
+
+    - name: Build
+      run: |
+        az bicep build --file ${{ env.bicepPath }}
+
+  lint-code:
     runs-on: ubuntu-latest
     steps:
 
