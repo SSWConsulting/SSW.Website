@@ -20,10 +20,10 @@ jobs:
 
     environment:
       name: ${{ inputs.environment_name }}
-      url: ${{ steps.create-slot.outputs.webapp-url }}
+      url: ${{ steps.get-app-service-url.outputs.webapp-url }}
 
     outputs:
-      url: ${{ steps.create-slot.outputs.webapp-url }}
+      url: ${{ steps.get-app-service-url.outputs.webapp-url }}
 
     steps:
 
@@ -34,32 +34,24 @@ jobs:
 
     - name: AppService - Create slot
       id: create-slot
+      if: github.event_name == 'pull_request'
       run: |
-        if ("${{ inputs.slot_name }}" -ieq "production")
-        {
-          # production is a reserved slot - no need to create
-          $url = az webapp config hostname list `
-            --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
-            --webapp-name ${{ vars.APP_SERVICE_NAME }} `
-            --query "[0].name" `
-            --output tsv
-        }
-        else
-        {
-          # need to create slot
-          az webapp deployment slot create `
-            --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
-            --name ${{ vars.APP_SERVICE_NAME }} `
-            --slot ${{ inputs.slot_name }} `
-            --configuration-source ${{ vars.APP_SERVICE_NAME }}
+        # need to create slot
+        az webapp deployment slot create `
+          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
+          --name ${{ vars.APP_SERVICE_NAME }} `
+          --slot ${{ inputs.slot_name }} `
+          --configuration-source ${{ vars.APP_SERVICE_NAME }}
 
-          $url = az webapp config hostname list `
-            --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
-            --webapp-name ${{ vars.APP_SERVICE_NAME }} `
-            --slot ${{ inputs.slot_name }} `
-            --query "[0].name" `
-            --output tsv
-        }
+    - name: AppService - Get slot URL
+      id: get-app-service-url
+      run: |
+        $url = az webapp config hostname list `
+          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
+          --webapp-name ${{ vars.APP_SERVICE_NAME }} `
+          --slot ${{ inputs.slot_name }} `
+          --query "[0].name" `
+          --output tsv
 
         echo "webapp-url=https://$url)" >> $GITHUB_OUTPUT
 
