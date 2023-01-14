@@ -50,7 +50,8 @@ jobs:
           --tag ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.tag }} `
           --build-arg NEXT_PUBLIC_TINA_CLIENT_ID=${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }} `
           --build-arg NEXT_PUBLIC_TINA_BRANCH=${{ github.head_ref || github.ref_name }} `
-          --build-arg TINA_TOKEN=${{ secrets.TINA_TOKEN }}
+          --build-arg TINA_TOKEN=${{ secrets.TINA_TOKEN }} `
+          .
 
     - name: Docker - Push changes
       run: |
