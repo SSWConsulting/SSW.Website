@@ -16,7 +16,7 @@ on:
     outputs:
       url: 
         description: URL to the environment that was deployed to
-        value: ${{ jobs.deploy.outputs.url }}
+        value: ${{ jobs.deploy-to-slot.outputs.url }}
 
 defaults:
   run:
@@ -44,6 +44,21 @@ jobs:
       id: create-slot
       if: github.event_name == 'pull_request'
       run: |
+        # check if slot exists
+        $alreadyExists = (az webapp deployment slot list `
+          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
+          --name ${{ vars.APP_SERVICE_NAME }} `
+          --query "[].name" `
+          --output tsv `
+        ).Contains('${{ inputs.slot_name }}')
+
+        if ($alreadyExists) {
+          Write-Host '⏩ slot already exists'
+          Return 0;
+        }
+
+        Write-Host '👷 need to create slot'
+
         # need to create slot
         az webapp deployment slot create `
           --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `

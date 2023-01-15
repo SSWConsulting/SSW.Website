@@ -15,7 +15,6 @@ export default function ConsultingPage(
     query: props.query,
     variables: props.variables,
   });
-  console.log('page data', data.consulting)
   return (
     <>
       <SEO

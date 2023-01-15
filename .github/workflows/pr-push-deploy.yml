@@ -34,52 +34,42 @@ jobs:
     secrets:
       AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
 
-  comment_on_pr:
-    name: Comment on PR
-    needs: deploy
-    runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-    steps:    
-    - name: Comment on PR with the preview link
-      uses: mshick/add-pr-comment@v1
-      with:
-        message: |
-          ## Preview link: ${{ needs.deploy.outputs.url }}
-          
-          - Your changes have been deployed to the preview site. The preview site will update as you add more commits to this branch.
-          - The preview link is shareable, but will be deleted when the pull request is merged or closed.
-          > *This is an automated message.*
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        repo-token-user-login: 'github-actions[bot]'
-        allow-repeats: true
-
-  lighthouse-audit:
-    name: Lighthouse Audit
+  pagespeed-insights:
+    name: PageSpeed Insights
     needs: deploy
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
     steps:
 
-    - name: Check URL Status
-      uses: gpuliyar/check-url-action@v1.0.1
-      with:
+    - uses: wicksipedia/pagespeed-insights@main
+      id: pagespeed-insights
+      with:          
         url: ${{ needs.deploy.outputs.url }}
-        init-delay: 5000
-        retry-count: 3
-        retry-delay: 5000
-        codes-allowed: 200
+        categories: |
+          accessibility
+          best_practices
+          performance
+          SEO
+        strategy: mobile
+        key: ${{ secrets.PAGESPEED_INSIGHTS_API_KEY }}
 
-    - name: Generate Lighthouse Report
-      uses: justinribeiro/lighthouse-action@master
+    - name: Comment on PR with insights
+      uses: mshick/add-pr-comment@v1
       with:
-        secret: ${{ secrets.GITHUB_TOKEN }}
-        url: ${{ needs.deploy.outputs.url }}
-        wptConnectionSpeed: fourg
+        message: |
+          ## PageSpeed Insights
 
-    - name: Saving Lighthouse Audit Artifacts
-      uses: actions/upload-artifact@master
-      with:
-        name: lighthouse-artifacts
-        path: './results'
+          | Category        | Score                                                   |
+          | ---             | ---                                                     |
+          | Accessibility   | ${{ steps.pagespeed-insights.outputs.accessibility }}   |
+          | Best practices  | ${{ steps.pagespeed-insights.outputs.best_practices }}  |
+          | Performance     | ${{ steps.pagespeed-insights.outputs.performance }}     |
+          | SEO             | ${{ steps.pagespeed-insights.outputs.seo }}             |
+
+          View the full report <https://pagespeed.web.dev/report?url=${{ needs.deploy.outputs.url }}>
+
+          > *This is an automated message.*
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        repo-token-user-login: 'github-actions[bot]'
+        allow-repeats: true

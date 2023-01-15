@@ -5,13 +5,8 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Install dependencies based on the preferred package manager
-COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
-RUN \
-  if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
-  elif [ -f package-lock.json ]; then npm ci; \
-  elif [ -f pnpm-lock.yaml ]; then yarn global add pnpm && pnpm i --frozen-lockfile; \
-  else echo "Lockfile not found." && exit 1; \
-  fi
+COPY package.json yarn.lock* ./
+RUN yarn --frozen-lockfile
 
 
 # Rebuild the source code only when needed
@@ -27,6 +22,15 @@ ENV TINA_TOKEN ${TINA_TOKEN}
 ARG NEXT_PUBLIC_TINA_BRANCH
 ENV NEXT_PUBLIC_TINA_BRANCH ${NEXT_PUBLIC_TINA_BRANCH}
 
+ARG NEXT_PUBLIC_GITHUB_RUN_DATE
+ENV NEXT_PUBLIC_GITHUB_RUN_DATE ${NEXT_PUBLIC_GITHUB_RUN_DATE}
+ARG NEXT_PUBLIC_GITHUB_REPOSITORY
+ENV NEXT_PUBLIC_GITHUB_REPOSITORY ${NEXT_PUBLIC_GITHUB_REPOSITORY}
+ARG NEXT_PUBLIC_GITHUB_RUN_ID
+ENV NEXT_PUBLIC_GITHUB_RUN_ID ${NEXT_PUBLIC_GITHUB_RUN_ID}
+ARG NEXT_PUBLIC_GITHUB_RUN_NUMBER
+ENV NEXT_PUBLIC_GITHUB_RUN_NUMBER ${NEXT_PUBLIC_GITHUB_RUN_NUMBER}
+
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
@@ -34,7 +38,7 @@ COPY . .
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
-ENV NEXT_TELEMETRY_DISABLED 1
+# ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN yarn build
 

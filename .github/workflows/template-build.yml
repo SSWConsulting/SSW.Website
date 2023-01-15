@@ -22,12 +22,16 @@ jobs:
   build-site:
     runs-on: ubuntu-latest
     steps:
-
-    - uses: satackey/action-docker-layer-caching@v0.0.11
-      # Ignore the failure of a step and avoid terminating the job.
-      continue-on-error: true
     
     - uses: actions/checkout@v3
+
+    - name: Get current date
+      id: date
+      run: |
+        echo "date=$(Get-Date -Format yyyy-MM-ddThh:mm:ssZ -AsUtc)" >> $env:GITHUB_OUTPUT
+
+    - name: Docker - Set up Buildx
+      uses: docker/setup-buildx-action@v2
 
     - name: Azure CLI - Login
       uses: azure/login@v1
@@ -38,25 +42,21 @@ jobs:
       run: |
         az acr login --name ${{ vars.ACR_LOGIN_SERVER }}
 
-    - name: Docker - Pull & untag existing image
-      run: |
-        # this command will error if image:tag doesn't exist
-        docker manifest inspect ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.tag }}
-        # these commands should only run when image:tag exists
-        docker pull ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.tag }}
-        docker rmi ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.tag }}
-      continue-on-error: true
-
-    - name: Docker - Build and tag images
-      run: |
-        docker build `
-          --tag ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ github.sha }} `
-          --tag ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.tag }} `
-          --build-arg NEXT_PUBLIC_TINA_CLIENT_ID=${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }} `
-          --build-arg NEXT_PUBLIC_TINA_BRANCH=${{ github.head_ref || github.ref_name }} `
-          --build-arg TINA_TOKEN=${{ secrets.TINA_TOKEN }} `
-          .
-
-    - name: Docker - Push changes
-      run: |
-        docker image push --all-tags ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}
+    - name: Docker - Build and push
+      uses: docker/build-push-action@v3
+      with:
+        context: .
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+        push: true
+        tags: |
+          ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ github.sha }}
+          ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.tag }}
+        build-args: |
+          NEXT_PUBLIC_GITHUB_RUN_DATE=${{ steps.date.outputs.date }}
+          NEXT_PUBLIC_GITHUB_RUN_ID=${{ github.run_id }}
+          NEXT_PUBLIC_GITHUB_RUN_NUMBER=${{ github.run_number }}
+          NEXT_PUBLIC_GITHUB_REPOSITORY=${{ github.repository }}
+          NEXT_PUBLIC_TINA_CLIENT_ID=${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
+          NEXT_PUBLIC_TINA_BRANCH=${{ github.head_ref || github.ref_name }}
+          TINA_TOKEN=${{ secrets.TINA_TOKEN }}

@@ -31,27 +31,10 @@ jobs:
       run: |
         az acr login --name ${{ vars.ACR_LOGIN_SERVER }}
 
-    - name: Docker - Pull ${{ inputs.old_tag }}
-      run: |
-        # this command will error if image:tag doesn't exist
-        docker manifest inspect ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.old_tag }}
-        # these commands should only run when image:tag exists
-        docker pull ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.old_tag }}
-      continue-on-error: true
-
-    - name: Docker - Pull & untag ${{ inputs.tag }}
-      run: |
-        # this command will error if image:tag doesn't exist
-        docker manifest inspect ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.tag }}
-        # these commands should only run when image:tag exists
-        docker pull ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.tag }}
-        docker rmi ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.tag }}
-      continue-on-error: true
-
-    - name: Docker - Tag image with new tag
-      run: |
-        docker image tag ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.old_tag }} ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.new_tag }}
-
-    - name: Docker - Push changes
-      run: |
-        docker image push --all-tags ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}
+    - uses: shrink/actions-docker-registry-tag@v3
+      with:
+        registry: ${{ vars.ACR_LOGIN_SERVER }}
+        repository: ${{ vars.IMAGE_NAME }}
+        target: ${{ inputs.old_tag }}
+        tags: |
+          ${{ inputs.new_tag }}
