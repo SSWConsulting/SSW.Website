@@ -42,7 +42,7 @@ jobs:
 
     - name: Docker - Tag image with new tag
       run: |
-        docker tag ${{ inputs.old_tag }} ${{ inputs.new_tag }}
+        docker tag ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.old_tag }} ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.new_tag }}
 
     - name: Docker - Push changes
       run: |
