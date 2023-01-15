@@ -16,6 +16,17 @@ RUN \
 
 # Rebuild the source code only when needed
 FROM node:16-alpine AS builder
+
+# Build requires some environment variables -> source them as build args
+ARG NEXT_PUBLIC_TINA_CLIENT_ID
+ENV NEXT_PUBLIC_TINA_CLIENT_ID ${NEXT_PUBLIC_TINA_CLIENT_ID}
+
+ARG TINA_TOKEN
+ENV TINA_TOKEN ${TINA_TOKEN}
+
+ARG NEXT_PUBLIC_TINA_BRANCH
+ENV NEXT_PUBLIC_TINA_BRANCH ${NEXT_PUBLIC_TINA_BRANCH}
+
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
@@ -23,7 +34,7 @@ COPY . .
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
-# ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN yarn build
 

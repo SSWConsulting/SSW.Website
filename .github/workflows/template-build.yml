@@ -1,0 +1,58 @@
+name: Template - Build site
+
+on:
+  workflow_call:
+    inputs:
+      tag:
+        type: string
+        required: true
+    secrets:
+      AZURE_CREDENTIALS:
+        required: true
+      NEXT_PUBLIC_TINA_CLIENT_ID:
+        required: true
+      TINA_TOKEN:
+        required: true
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - uses: actions/checkout@v3
+
+    - name: Azure CLI - Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: ACR - Login
+      run: |
+        az acr login --name ${{ vars.ACR_LOGIN_SERVER }}
+
+    - name: Docker - Pull & untag existing image
+      run: |
+        # this command will error if image:tag doesn't exist
+        docker manifest inspect ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.tag }}
+        # these commands should only run when image:tag exists
+        docker pull ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.tag }}
+        docker rmi ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.tag }}
+      continue-on-error: true
+
+    - name: Docker - Build and tag images
+      run: |
+        docker build `
+          --tag ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ github.sha }} `
+          --tag ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.tag }} `
+          --build-arg NEXT_PUBLIC_TINA_CLIENT_ID=${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }} `
+          --build-arg NEXT_PUBLIC_TINA_BRANCH=${{ github.head_ref || github.ref_name }} `
+          --build-arg TINA_TOKEN=${{ secrets.TINA_TOKEN }} `
+          .
+
+    - name: Docker - Push changes
+      run: |
+        docker image push --all-tags ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}

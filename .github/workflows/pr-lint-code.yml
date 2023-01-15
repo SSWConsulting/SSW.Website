@@ -1,0 +1,44 @@
+name: PR - Lint code
+
+on:
+  pull_request:
+    branches:
+    - main
+
+concurrency: 
+  group: ci-${{ github.event.number }}-${{ github.workflow }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: pwsh
+
+env:
+  bicepPath: ./infra/main.bicep
+
+jobs:
+  lint-infra:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v3
+
+    - name: Build
+      run: |
+        az bicep build --file ${{ env.bicepPath }}
+
+  lint-code:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: yarn
+
+      - run: yarn install
+
+      - run: yarn lint

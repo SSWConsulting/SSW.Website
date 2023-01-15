@@ -1,0 +1,28 @@
+name: PR - Lint PR
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+concurrency: 
+  group: ci-${{ github.event.number }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  pr-lint:
+    runs-on: ubuntu-latest
+    name: Check linked issues
+    steps:
+
+      - uses: nearform/github-action-check-linked-issues@v1
+        id: check-linked-issues
+        with:
+          exclude-branches: "dependabot/**"
+      
+      - name: Generate summary
+        run: |
+          echo "Found ${{ steps.check-linked-issues.outputs.linked_issues_count }} issues linked to PR" >> $GITHUB_STEP_SUMMARY

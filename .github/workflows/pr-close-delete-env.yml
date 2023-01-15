@@ -1,0 +1,41 @@
+name: PR - Delete Environment when PR is closed
+
+on:
+  pull_request:
+    types: [closed]
+
+defaults:
+  run:
+    shell: pwsh
+
+env:
+  ENVIRONMENT_NAME: "PR #${{ github.event.number }}"
+  SLOT_NAME: pr-${{ github.event.number }}
+
+jobs:
+  delete-slot:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Azure CLI - Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    
+    - name: Delete slot on staging site
+      run: |
+        az webapp deployment slot delete `
+          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
+          --name ${{ vars.APP_SERVICE_NAME }} `
+          --slot ${{ env.ENVIRONMENT_NAME }}
+
+  delete-deployment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Delete Deployment Environment
+        uses: strumwolf/delete-deployment-environment@v2.0.1
+        with:
+          environment: ${{ env.ENVIRONMENT_NAME }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          onlyRemoveDeployments: true
