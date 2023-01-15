@@ -25,6 +25,11 @@ jobs:
     
     - uses: actions/checkout@v3
 
+    - name: Get current date
+      id: date
+      run: |
+        echo "date=$(Get-Date -Format yyyy-MM-ddThh:mm:ssZ -AsUtc)" >> $env:GITHUB_OUTPUT
+
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
 
@@ -48,6 +53,10 @@ jobs:
           ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ github.sha }}
           ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.tag }}
         build-args: |
+          NEXT_PUBLIC_GITHUB_RUN_DATE=${{ steps.date.outputs.date }}
+          NEXT_PUBLIC_GITHUB_RUN_ID=${{ github.run_id }}
+          NEXT_PUBLIC_GITHUB_RUN_NUMBER=${{ github.run_number }}
+          NEXT_PUBLIC_GITHUB_REPOSITORY=${{ github.repository }}
           NEXT_PUBLIC_TINA_CLIENT_ID=${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
           NEXT_PUBLIC_TINA_BRANCH=${{ github.head_ref || github.ref_name }}
           TINA_TOKEN=${{ secrets.TINA_TOKEN }}
