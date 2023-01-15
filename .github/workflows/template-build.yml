@@ -19,7 +19,7 @@ defaults:
     shell: pwsh
 
 jobs:
-  build:
+  build-site:
     runs-on: ubuntu-latest
     steps:
 

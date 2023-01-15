@@ -23,7 +23,7 @@ defaults:
     shell: pwsh
 
 jobs:
-  deploy:
+  deploy-to-slot:
     runs-on: ubuntu-latest
 
     environment:
