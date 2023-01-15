@@ -16,7 +16,7 @@ on:
     outputs:
       url: 
         description: URL to the environment that was deployed to
-        value: ${{ jobs.deploy.outputs.url }}
+        value: ${{ jobs.deploy-to-slot.outputs.url }}
 
 defaults:
   run:
