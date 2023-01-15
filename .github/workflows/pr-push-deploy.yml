@@ -54,7 +54,7 @@ jobs:
         strategy: mobile
         key: ${{ secrets.PAGESPEED_INSIGHTS_API_KEY }}
 
-    - name: Comment on PR with the preview link
+    - name: Comment on PR with insights
       uses: mshick/add-pr-comment@v1
       with:
         message: |
@@ -66,6 +66,8 @@ jobs:
           | Best practices  | ${{ steps.pagespeed-insights.outputs.best_practices }}  |
           | Performance     | ${{ steps.pagespeed-insights.outputs.performance }}     |
           | SEO             | ${{ steps.pagespeed-insights.outputs.seo }}             |
+
+          View the full report <https://pagespeed.web.dev/report?url=${{ needs.deploy.outputs.url }}>
 
           > *This is an automated message.*
         repo-token: ${{ secrets.GITHUB_TOKEN }}
