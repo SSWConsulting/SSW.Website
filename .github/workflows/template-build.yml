@@ -30,7 +30,7 @@ jobs:
       run: |
         echo "date=$(Get-Date -Format yyyy-MM-ddThh:mm:ssZ -AsUtc)" >> $env:GITHUB_OUTPUT
 
-    - name: Set up Docker Buildx
+    - name: Docker - Set up Buildx
       uses: docker/setup-buildx-action@v2
 
     - name: Azure CLI - Login
@@ -42,7 +42,7 @@ jobs:
       run: |
         az acr login --name ${{ vars.ACR_LOGIN_SERVER }}
 
-    - name: Build and push
+    - name: Docker - Build and push
       uses: docker/build-push-action@v3
       with:
         context: .
