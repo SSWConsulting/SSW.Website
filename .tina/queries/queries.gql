@@ -29,7 +29,12 @@ query technologyCardContentQuery($cardNames: [String!]) {
   technologiesConnection(filter: {name: {in: $cardNames}}) {
     edges {
       node {
-        ...TechnologiesParts
+        ... on Technologies {
+          name
+          readMoreSlug
+          thumbnail
+          body
+        }
       }
     }
   }

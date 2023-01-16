@@ -44,10 +44,13 @@ export default function ConsultingPage(
     query: props.query,
     variables: props.variables,
   });
-  const techCards = props.data.consulting.technologyCards.map((c) => ({
-    ...props.technologyCards.data.technologiesConnection.edges.find(
-      (n) => n.node.name === c.name
-    ).node,
+
+  const technologyCardDocs =
+    props.technologyCards.data.technologiesConnection.edges.map((n) => n.node);
+  const techCards = data.consulting.technologyCards.map((c) => ({
+    ...technologyCardDocs.find(
+      (n) => !!n.name && n.name === c.technologyCard?.name
+    ),
   }));
 
   return (
@@ -90,8 +93,13 @@ export const getStaticProps = async ({ params }) => {
   const technologyCards = tinaProps.data.consulting.technologyCards.map(
     (c) => c.name
   );
+  const technologyCardNames =
+    tinaProps.data.consulting.technologyCards?.reduce<string[]>((pre, cur) => {
+      !!cur.technologyCard?.name && pre.push(cur.technologyCard.name);
+      return pre;
+    }, []) || [];
   const technologyCardsProps = await client.queries.technologyCardContentQuery({
-    cardNames: technologyCards,
+    cardNames: technologyCardNames,
   });
 
   return {
