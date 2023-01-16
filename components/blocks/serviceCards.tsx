@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 
@@ -55,11 +56,24 @@ const BigCards = ({ title, cards }) => {
           >
             <Link href={card.link}>
               <a className="unstyled text-left text-white">
-                <div className="flex flex-1 flex-col p-8">
-                  <h3 className="pb-3 text-2xl font-light lg:pt-8">
-                    {card.title}
-                  </h3>
-                  <TinaMarkdown content={card.description} />
+                <div className="flex flex-1 flex-col">
+                  <div
+                    className="absolute flex-1 self-end"
+                    >
+                    <Image 
+                        src={card.imgSrc} 
+                        width="100"
+                        height="100"
+                        objectFit="contain"
+                        objectPosition="10px 0px"
+                        alt=""/>
+                  </div>
+                  <div className="relative p-8">
+                    <h3 className="pb-3 text-2xl font-light lg:pt-8">
+                      {card.title}
+                    </h3>
+                    <TinaMarkdown content={card.description} />
+                  </div>
                 </div>
               </a>
             </Link>
