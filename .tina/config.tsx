@@ -1,6 +1,7 @@
 import { defineStaticConfig, TinaCMS } from "tinacms";
 import * as Schemas from "../components/blocks";
 import { seoSchema } from "../components/util/seo";
+import {formatTestimonialFilename} from "../helpers/formatTestimonialFilename";
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -378,6 +379,43 @@ const config = defineStaticConfig({
             templates: [...Schemas.pageBlocks],
             isBody: true,
           },
+        ],
+      },
+      {
+        label: "Testimonials",
+        name: "testimonials",
+        format: "mdx",
+        path: "content/testimonials",
+        ui: {
+          router: ({ document }) => {
+            return `/testimonials/${document._sys.filename}`;
+          },
+        },
+        fields: [
+        {
+          type: "string",
+          label: "Name",
+          name: "name",
+          required: true,
+        },
+        {
+          type: "image",
+          label: "Avatar",
+          name: "avatar",
+          required: true,
+        },
+        {
+          type: "string",
+          label: "Company",
+          name: "company",
+          required: true,
+        },
+        {
+          type: "rich-text",
+          label: "Body",
+          name: "body",
+          isBody: true,
+        },
         ],
       },
     ],

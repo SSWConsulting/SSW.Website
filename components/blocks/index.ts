@@ -9,7 +9,6 @@ import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { builtOnAzureBlockSchema } from "./builtOnAzure";
 import { customImageBlockSchema } from "./customImage";
 import { clientLogosBlockSchema } from "./clientLogos";
-import { testimonialBlockSchema } from "./testimonials";
 
 export const pageBlocks: Template[] = [
     aboutUsBlockSchema,
@@ -21,7 +20,6 @@ export const pageBlocks: Template[] = [
     builtOnAzureBlockSchema,
     customImageBlockSchema,
     clientLogosBlockSchema,
-    testimonialBlockSchema,
 ];
 
 export * from "./aboutUs";
@@ -33,4 +31,3 @@ export * from "./upcomingEvents";
 export * from "./builtOnAzure";
 export * from "./customImage";
 export * from "./clientLogos";
-export * from "./testimonials";
