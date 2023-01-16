@@ -45,22 +45,6 @@
   @import "@fontsource/open-sans/300.css";
   @import "aos/dist/aos.css";
 
-  .technology-card {
-    @apply m-[20px_15px_60px_15px] min-h-[410px] border-b-2 border-solid border-b-sswRed bg-contentGray p-[41px];
-  }
-  .technology-card p {
-    @apply m-[0_auto] w-9/12 py-[20px] text-justify font-sans text-[1.2rem] font-light text-black;
-  }
-  .technology-card p a {
-    @apply ml-4 font-body;
-  }
-  .technology-card a {
-    @apply text-linkGray;
-  }
-  .technology-card img {
-    @apply h-[100px];
-  }
-
   .main-container {
     @apply mx-auto max-w-[1170px] px-[15px];
   }

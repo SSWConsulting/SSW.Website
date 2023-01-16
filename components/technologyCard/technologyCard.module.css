@@ -1,0 +1,22 @@
+.technology-card {
+  @apply border-b-sswRed bg-gray-75;
+  margin: 20px 15px 60px 15px;
+  padding: 41px;
+  min-height: 410px;
+  border-bottom: 2px solid;
+}
+.technology-card p {
+  @apply text-md text-justify font-sans font-light text-black;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  padding: 20px 0;
+}
+.technology-card p a {
+  @apply ml-4 font-body;
+}
+.technology-card a {
+  @apply text-gray-650;
+}
+.technology-card img {
+  height: 100px;
+}

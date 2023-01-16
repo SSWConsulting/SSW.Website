@@ -4,6 +4,7 @@ import { BASE_URL } from "../util/constants";
 import { TechnologyCardProps } from "./technologyCardTypes";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import Image from "next/image";
+import styles from './technologyCard.module.css';
 
 const TechnologyCard: VFC<TechnologyCardProps> = ({
   name,
@@ -12,8 +13,8 @@ const TechnologyCard: VFC<TechnologyCardProps> = ({
   body,
 }) => {
   return (
-    <div className="col-span-6">
-      <article className="technology-card" data-aos="flip-left">
+    <div className="col-span-12 md:col-span-6">
+      <article className={styles['technology-card']} data-aos="flip-left">
         <figure>
           <Image
             src={thumbnail || "/images/ssw-logo.svg"}
