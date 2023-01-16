@@ -98,9 +98,16 @@ const SmallCards = ({ title, cards }) => {
             className={`col-span-1 flex flex-col divide-y divide-gray-200 text-center shadow ${bgColor[card.color]} hover:opacity-80`}
           >
             <Link href={card.link}>
-              <a className="flex h-full flex-col justify-end">
-                <div className="flex flex-1 flex-col justify-end py-8 px-2 pb-4 sm:justify-center md:pb-8">
-                  <h3 className="mt-10 text-sm font-light text-white md:mt-0">
+              <a className="flex h-full flex-col">
+                <div className="flex flex-1 flex-col justify-center py-8 px-2 pb-4 sm:justify-center md:flex-row md:pb-8">
+                <Image 
+                    className=""
+                    src={card.imgSrc} 
+                    width="50"
+                    height="50"
+                    objectFit="contain"
+                    alt=""/>
+                  <h3 className="mt-1 text-sm font-light text-white md:m-5 ">
                     {card.title}
                   </h3>
                 </div>
