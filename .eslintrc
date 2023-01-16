@@ -8,5 +8,8 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:@next/next/recommended",
     "plugin:tailwindcss/recommended"
-  ]
+  ],
+  "rules": {
+    "quotes": ["error", "double"]
+  }
 }

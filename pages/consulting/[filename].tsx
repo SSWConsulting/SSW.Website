@@ -26,7 +26,7 @@ export default function ConsultingPage(
         }
       />
       <Layout>
-        <Container className={`prose`}>
+        <Container className={"prose"}>
           <TinaMarkdown
             components={componentRenderer}
             content={data.consulting._body}

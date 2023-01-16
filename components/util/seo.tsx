@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
 import { NextSeo, NextSeoProps } from "next-seo";
-import { NEXT_SEO_DEFAULT } from '../../next-seo.config';
+import { NEXT_SEO_DEFAULT } from "../../next-seo.config";
 
 interface SEOProps{
     seo?: Partial<NextSeoProps>;

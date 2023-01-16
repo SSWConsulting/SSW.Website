@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 
 import type { Template } from "tinacms";
 
-import { Carousel as CarouselImplementation }  from 'react-responsive-carousel';
+import { Carousel as CarouselImplementation }  from "react-responsive-carousel";
 
 import { Container } from "../util/container";
 import { Section } from "../util/section";
@@ -13,14 +13,14 @@ export const Carousel = ({ data }) => {
   const router = useRouter();
 
   const openItem = ({ link, openIn }) => {
-    if (openIn === 'newWindow') {
-      window.open(link, '_blank');
+    if (openIn === "newWindow") {
+      window.open(link, "_blank");
       return;
-    } else if (openIn === 'sameWindow') {
+    } else if (openIn === "sameWindow") {
       router.push(link);
       return;
-    } else if (openIn === 'modal') {
-      window.open(link, '_blank');
+    } else if (openIn === "modal") {
+      window.open(link, "_blank");
       return;
     } else {
       console.log(`unknown openIn value '${openIn}'`);
@@ -102,9 +102,9 @@ export const carouselBlockSchema: Template = {
       list: true,
       ui: {
         defaultItem: {
-          label: 'Item description',
-          link: '/',
-          openIn: 'sameWindow',
+          label: "Item description",
+          link: "/",
+          openIn: "sameWindow",
         },
         itemProps: (item) => ({ label: item.label }),
       },
@@ -130,9 +130,9 @@ export const carouselBlockSchema: Template = {
           ],
         },
         {
-          type: 'image',
-          label: 'Image',
-          name: 'imgSrc',
+          type: "image",
+          label: "Image",
+          name: "imgSrc",
         },
       ],
     },

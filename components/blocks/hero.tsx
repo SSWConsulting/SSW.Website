@@ -36,13 +36,13 @@ export const Hero = ({ data, parentField }) => {
           {data.headline && (
             <h3
               data-tinafield={`${parentField}.headline`}
-              className={`relative	mb-10 w-full text-5xl font-extrabold leading-tight tracking-normal`}
+              className={"relative	mb-10 w-full text-5xl font-extrabold leading-tight tracking-normal"}
             >
               <span
                 className={`bg-gradient-to-r bg-clip-text text-transparent  ${
                   data.color === "primary"
-                    ? `from-white to-gray-100`
-                    : headlineColorClasses['blue']
+                    ? "from-white to-gray-100"
+                    : headlineColorClasses["blue"]
                 }`}
               >
                 {data.headline}

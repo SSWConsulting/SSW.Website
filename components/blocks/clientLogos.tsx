@@ -1,6 +1,6 @@
-import React from 'react';
-import type { Template } from 'tinacms';
-import Image from 'next/image';
+import React from "react";
+import type { Template } from "tinacms";
+import Image from "next/image";
 
 export const ClientLogos = () => {
   return (
