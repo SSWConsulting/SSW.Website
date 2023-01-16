@@ -10,6 +10,7 @@
     "plugin:tailwindcss/recommended"
   ],
   "rules": {
-    "quotes": ["error", "double"]
+    "quotes": ["error", "double"],
+    "tailwindcss/no-arbitrary-value": "error"
   }
 }
