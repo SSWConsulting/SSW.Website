@@ -100,13 +100,13 @@ const SmallCards = ({ title, cards }) => {
             <Link href={card.link}>
               <a className="flex h-full flex-col">
                 <div className="flex flex-1 flex-col justify-center py-8 px-2 pb-4 sm:justify-center md:flex-row md:pb-8">
-                <Image 
-                    className=""
-                    src={card.imgSrc} 
-                    width="50"
-                    height="50"
-                    objectFit="contain"
-                    alt=""/>
+                  <Image 
+                      className=""
+                      src={card.imgSrc} 
+                      width="50"
+                      height="50"
+                      objectFit="contain"
+                      alt=""/>
                   <h3 className="mt-1 text-sm font-light text-white md:m-5 ">
                     {card.title}
                   </h3>
