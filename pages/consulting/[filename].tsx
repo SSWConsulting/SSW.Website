@@ -7,6 +7,7 @@ import { Layout } from "../../components/layout";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { Benefits } from "../../components/util/consulting/benefits";
 import ReactPlayer from "react-player";
 // import { Blocks } from "../../components/blocks-renderer";
 import React from "react";
@@ -35,8 +36,6 @@ const consultingComponentRenderer: Components<Record<string, unknown>> = {
     return <code>{data.children}</code>;
   },
 };
-import { Benefits } from "../../components/util/consulting/benefits";
-import { Container } from "../../components/util/container";
 
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -90,7 +89,7 @@ export default function ConsultingPage(
               techHeader={data.consulting.techHeader}
               techCards={techCards}
             />
-            <Benefits data={{}}></Benefits>
+            <Benefits data={data.consulting.benefits} />
           </div>
         </Section>
       </Layout>
