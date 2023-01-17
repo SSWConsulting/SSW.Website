@@ -17,14 +17,7 @@ export default function HomePage(
   });
   return (
     <>
-      <SEO
-        seo={
-          {
-            title: data.page.title,
-            description: data.page.description,
-          }
-        }
-      />
+      <SEO seo={data.page.seo} />
       <Layout>
         <Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
         <Container className={"flex-1 pt-4"}>
@@ -33,10 +26,10 @@ export default function HomePage(
               <TinaMarkdown
                 components={componentRenderer}
                 content={data.page._body}
-                />
+              />
             </div>
             <div className="md:col-span-2 lg:col-span-1">
-              <Blocks prefix="PageSideBar" blocks={data.page.sideBar} />              
+              <Blocks prefix="PageSideBar" blocks={data.page.sideBar} />
             </div>
           </div>
         </Container>
