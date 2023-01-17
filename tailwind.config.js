@@ -89,6 +89,9 @@ module.exports = {
       3: "3px",
       4: "4px",
     },
+    minHeight: {
+      158: "39.5rem",
+    },
     extend: {
       textDecoration: ["active"],
       opacity: {
