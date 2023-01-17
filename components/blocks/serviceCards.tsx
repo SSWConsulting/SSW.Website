@@ -55,8 +55,8 @@ const BigCards = ({ title, cards }) => {
             className={`col-span-1 flex flex-col divide-y divide-gray-200 text-center shadow ${bgColor[card.color]} hover:opacity-80`}
           >
             <Link href={card.link}>
-              <a className="unstyled text-left text-white">
-                <div className="flex flex-1 flex-col">
+              <a className="unstyled flex grow text-left text-white">
+                <div className="flex grow flex-col">
                   <div
                     className="absolute flex-1 self-end"
                     >
@@ -68,10 +68,11 @@ const BigCards = ({ title, cards }) => {
                         objectPosition="10px 0px"
                         alt=""/>
                   </div>
-                  <div className="relative p-8">
-                    <h3 className="pb-3 text-2xl font-light lg:pt-8">
+                  <div className="relative flex grow flex-col p-8">
+                    <h3 className="flex pb-3 text-2xl font-light lg:pt-8">
                       {card.title}
                     </h3>
+                    <div className="grow"></div>
                     <TinaMarkdown content={card.description} />
                   </div>
                 </div>
