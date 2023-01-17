@@ -1,18 +1,15 @@
+import classNames from "classnames";
 import { ErrorMessage, Field, FieldHookConfig, useField } from "formik";
 import {
   ChangeEvent,
   ChangeEventHandler,
-  FC,
-  MouseEventHandler
+  FC
 } from "react";
 import { FormGroupProps } from "./formGroupTypes";
-import classNames from "classnames";
 
 const FormGroupSelect: FC<
   FieldHookConfig<string> &
-    FormGroupProps & 
-    { handleChange?: ChangeEventHandler<HTMLSelectElement> } & 
-    { handleClick: MouseEventHandler<HTMLSelectElement> }
+    FormGroupProps<HTMLSelectElement>
 > = ({
   label,
   activeLabelClass,
@@ -40,7 +37,7 @@ const FormGroupSelect: FC<
             e: ChangeEvent<HTMLSelectElement>
           ) => {
             field.onChange(e);
-            !!handleChange && handleChange(e);
+            !!handleChange && handleChange(field, e);
           };
 
           return (

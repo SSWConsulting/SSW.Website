@@ -70,20 +70,9 @@ export const BookingForm = () => {
   }, [isShowStates]);
 
   const handleActiveInputLabel = (targetInput, value) => {
-    if (
-      (targetInput == ACTIVE_INPUT.FullName ||
-        targetInput == ACTIVE_INPUT.Email ||
-        targetInput == ACTIVE_INPUT.Phone ||
-        targetInput == ACTIVE_INPUT.Location ||
-        targetInput == ACTIVE_INPUT.Company ||
-        targetInput == ACTIVE_INPUT.Note ||
-        targetInput == ACTIVE_INPUT.ReferredCompany ||
-        targetInput == ACTIVE_INPUT.ReferredFullName ||
-        targetInput == ACTIVE_INPUT.ReferredEmail) &&
-      !!value.trim()
-    ) {
+    if (targetInput !== FORM_INPUT.States && !!value.trim()) {
       setActiveInputLabel({ ...activeInputLabel, [targetInput]: true });
-    } else if (targetInput == ACTIVE_INPUT.States && isShowStates) {
+    } else if (targetInput === FORM_INPUT.States && isShowStates) {
       setActiveInputLabel({ ...activeInputLabel, [targetInput]: true });
     } else {
       setActiveInputLabel({ ...activeInputLabel, [targetInput]: false });
@@ -113,11 +102,13 @@ export const BookingForm = () => {
       .catch(() => alert("Failed to create lead in CRM"));
   };
 
-  const getCommonFieldProps = (label: string) => ({
-    label,
-    activeLabelClass: activeInputLabel[label]
+  const getCommonFieldProps = (fieldName: string) => ({
+    name: fieldName,
+    activeLabelClass: activeInputLabel[fieldName]
       ? ACTIVE_INPUT.ClassShow
       : ACTIVE_INPUT.None,
+    handleChange: ({ name }, e) =>
+      handleActiveInputLabel(name, e.currentTarget.value),
   });
 
   const getDefaultOption = (fieldName: string) => {
@@ -126,10 +117,8 @@ export const BookingForm = () => {
       value: fieldName.charAt(0).toUpperCase() + fieldName.slice(1),
     };
   };
-  const locationDefaultOption = getDefaultOption(
-    FORM_INPUT.Location.toLowerCase()
-  );
-  const statesDefaultOption = getDefaultOption(FORM_INPUT.States.toLowerCase());
+  const locationDefaultOption = getDefaultOption(FORM_INPUT.Location);
+  const statesDefaultOption = getDefaultOption(FORM_INPUT.States);
 
   return (
     <div className="rounded-none bg-gray-125">
@@ -153,52 +142,29 @@ export const BookingForm = () => {
             {({ values }) => (
               <Form noValidate>
                 <FormGroupInput
-                  name={FORM_INPUT.FullName}
+                  label={ACTIVE_INPUT.FullName}
                   type="text"
-                  {...getCommonFieldProps(ACTIVE_INPUT.FullName)}
-                  handleChange={(e) =>
-                    handleActiveInputLabel(
-                      ACTIVE_INPUT.FullName,
-                      e.currentTarget.value
-                    )
-                  }
+                  {...getCommonFieldProps(FORM_INPUT.FullName)}
                 />
 
                 <FormGroupInput
-                  name={FORM_INPUT.Email.toLowerCase()}
+                  label={ACTIVE_INPUT.Email}
                   type="email"
-                  {...getCommonFieldProps(ACTIVE_INPUT.Email)}
-                  handleChange={(e) =>
-                    handleActiveInputLabel(
-                      ACTIVE_INPUT.Email,
-                      e.currentTarget.value
-                    )
-                  }
+                  {...getCommonFieldProps(FORM_INPUT.Email)}
                 />
 
                 <FormGroupInput
-                  name={FORM_INPUT.Phone.toLowerCase()}
+                  label={ACTIVE_INPUT.Phone}
                   type="phone"
-                  {...getCommonFieldProps(ACTIVE_INPUT.Phone)}
-                  handleChange={(e) =>
-                    handleActiveInputLabel(
-                      ACTIVE_INPUT.Phone,
-                      e.currentTarget.value
-                    )
-                  }
+                  {...getCommonFieldProps(FORM_INPUT.Phone)}
                 />
 
                 <FormGroupSelect
-                  name={locationDefaultOption.name}
-                  {...getCommonFieldProps(ACTIVE_INPUT.Location)}
-                  handleClick={(e) => {
-                    handleActiveInputLabel(
-                      ACTIVE_INPUT.Location,
-                      e.currentTarget.value
-                    );
-                  }}
-                  handleChange={(e) => {
+                  label={ACTIVE_INPUT.Location}
+                  {...getCommonFieldProps(locationDefaultOption.name)}
+                  handleChange={(field, e) => {
                     setCountry(e.currentTarget.value);
+                    handleActiveInputLabel(field.name, e.currentTarget.value);
                   }}
                 >
                   <option className="hidden" value="">
@@ -217,14 +183,8 @@ export const BookingForm = () => {
 
                 {isShowStates ? (
                   <FormGroupSelect
-                    name={statesDefaultOption.name}
-                    {...getCommonFieldProps(ACTIVE_INPUT.States)}
-                    handleClick={(e) => {
-                      handleActiveInputLabel(
-                        ACTIVE_INPUT.States,
-                        e.currentTarget.value
-                      );
-                    }}
+                    label={ACTIVE_INPUT.States}
+                    {...getCommonFieldProps(statesDefaultOption.name)}
                   >
                     <option className="hidden" value="">
                       {statesDefaultOption.value}
@@ -248,30 +208,16 @@ export const BookingForm = () => {
                 )}
 
                 <FormGroupInput
-                  name={FORM_INPUT.Company.toLowerCase()}
-                  label={FORM_INPUT.Company}
-                  {...getCommonFieldProps(ACTIVE_INPUT.Company)}
-                  handleChange={(e) => {
-                    handleActiveInputLabel(
-                      ACTIVE_INPUT.Company,
-                      e.currentTarget.value
-                    );
-                  }}
+                  label={ACTIVE_INPUT.Company}
+                  {...getCommonFieldProps(FORM_INPUT.Company)}
                 />
 
                 <FormGroupTextArea
-                  name={FORM_INPUT.Note.toLowerCase()}
                   label={ACTIVE_INPUT.Note}
                   placeholder="Note"
                   rows={4}
                   maxLength={2000}
-                  {...getCommonFieldProps(ACTIVE_INPUT.Note)}
-                  handleChange={(e) => {
-                    handleActiveInputLabel(
-                      ACTIVE_INPUT.Note,
-                      e.currentTarget.value
-                    );
-                  }}
+                  {...getCommonFieldProps(FORM_INPUT.Note)}
                 />
 
                 <div className="mb-4 h-22 w-88">

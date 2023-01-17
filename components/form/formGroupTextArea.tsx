@@ -5,7 +5,7 @@ import { FormGroupProps } from "./formGroupTypes";
 
 const FormGroupTextArea: VFC<
   FieldHookConfig<string> &
-    FormGroupProps & { handleChange: ChangeEventHandler<HTMLTextAreaElement> }
+    FormGroupProps<HTMLTextAreaElement>
 > = ({
   label,
   activeLabelClass,
@@ -33,7 +33,7 @@ const FormGroupTextArea: VFC<
             e: ChangeEvent<HTMLTextAreaElement>
           ) => {
             field.onChange(e);
-            handleChange(e);
+            !!handleChange && handleChange(field, e);
           };
 
           return (

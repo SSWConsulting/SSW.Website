@@ -5,7 +5,7 @@ import { FormGroupProps } from "./formGroupTypes";
 
 const FormGroupInput: VFC<
   FieldHookConfig<string> &
-    FormGroupProps & { handleChange: ChangeEventHandler<HTMLInputElement> }
+    FormGroupProps<HTMLInputElement>
 > = ({
   label,
   activeLabelClass,
@@ -33,7 +33,7 @@ const FormGroupInput: VFC<
             e: ChangeEvent<HTMLInputElement>
           ) => {
             field.onChange(e);
-            handleChange(e);
+            !!handleChange && handleChange(field, e);
           };
 
           return (

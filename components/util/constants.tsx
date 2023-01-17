@@ -66,7 +66,7 @@ export const ACTIVE_INPUT = {
 
 //FORMS INPUTS
 export const FORM_INPUT = {
-  FullName: "fullName",
+  FullName: "FullName",
   Email: "Email",
   Phone: "Phone",
   Location: "Location",
