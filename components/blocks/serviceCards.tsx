@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 
@@ -54,12 +55,26 @@ const BigCards = ({ title, cards }) => {
             className={`col-span-1 flex flex-col divide-y divide-gray-200 text-center shadow ${bgColor[card.color]} hover:opacity-80`}
           >
             <Link href={card.link}>
-              <a className="unstyled text-left text-white">
-                <div className="flex flex-1 flex-col p-8">
-                  <h3 className="pb-3 text-2xl font-light lg:pt-8">
-                    {card.title}
-                  </h3>
-                  <TinaMarkdown content={card.description} />
+              <a className="unstyled flex grow text-left text-white">
+                <div className="flex grow flex-col">
+                  <div
+                    className="absolute flex-1 self-end"
+                    >
+                    <Image 
+                        src={card.imgSrc} 
+                        width="100"
+                        height="100"
+                        objectFit="contain"
+                        objectPosition="10px 0px"
+                        alt=""/>
+                  </div>
+                  <div className="relative flex grow flex-col p-8">
+                    <h3 className="flex pb-3 text-2xl font-light lg:pt-8">
+                      {card.title}
+                    </h3>
+                    <div className="grow"></div>
+                    <TinaMarkdown content={card.description} />
+                  </div>
                 </div>
               </a>
             </Link>
@@ -84,9 +99,16 @@ const SmallCards = ({ title, cards }) => {
             className={`col-span-1 flex flex-col divide-y divide-gray-200 text-center shadow ${bgColor[card.color]} hover:opacity-80`}
           >
             <Link href={card.link}>
-              <a className="flex h-full flex-col justify-end">
-                <div className="flex flex-1 flex-col justify-end py-8 px-2 pb-4 sm:justify-center md:pb-8">
-                  <h3 className="mt-10 text-sm font-light text-white md:mt-0">
+              <a className="flex h-full flex-col">
+                <div className="flex flex-1 flex-col justify-center py-8 px-2 pb-4 sm:justify-center md:flex-row md:pb-8">
+                  <Image 
+                      className=""
+                      src={card.imgSrc} 
+                      width="50"
+                      height="50"
+                      objectFit="contain"
+                      alt=""/>
+                  <h3 className="mt-1 text-sm font-light text-white md:m-5 ">
                     {card.title}
                   </h3>
                 </div>
