@@ -8,6 +8,10 @@ interface SEOProps {
 }
 
 export const SEO: FC<SEOProps> = ({ seo }) => {
+  if (!seo) {
+    return null;
+  }
+
   // Remove null values from SEO object
   Object.keys(seo).forEach((key) => {
     if (!seo[key]) {
