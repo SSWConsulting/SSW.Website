@@ -18,7 +18,7 @@ export const Header = () => {
   // }, []);
 
   return (
-    <div className={`relative overflow-hidden bg-gradient-to-b`}>
+    <div className={"relative overflow-hidden bg-gradient-to-b"}>
       <Container size="custom" className="relative z-10 my-4 max-w-8xl py-0">
         <div className="sm:flex sm:items-center sm:justify-between">
           <Logo />
@@ -42,7 +42,7 @@ const Logo = () => {
   return (
     <h4 className="flex items-center justify-center">
       <Link href="/" passHref>
-        <a className="flex items-center gap-1 whitespace-nowrap tracking-[.002em]">
+        <a className="flex items-center gap-1 whitespace-nowrap">
           <Image
             src={logoPath}
             alt="SSW - Enterprise Software Development"

@@ -1,9 +1,9 @@
 /** @type {import('next-sitemap').IConfig} */
 
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://ssw.com.au',
+  siteUrl: process.env.SITE_URL || "https://ssw.com.au",
   generateRobotsTxt: true,
-  outDir: './.next/static/',
+  outDir: "./.next/static/",
   robotsTxtOptions: {
     additionalSitemaps: [
       // TODO: add sitemaps for other sites when they are available

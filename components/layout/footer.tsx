@@ -60,8 +60,8 @@ const DeploymentInfo = () => (
 );
 
 const LinkToDeployment = () => {
-  const deploymentDate = process.env.NEXT_PUBLIC_GITHUB_RUN_DATE ? dayjs.utc(process.env.NEXT_PUBLIC_GITHUB_RUN_DATE).fromNow() : 'XXX';
-  const deploymentNumber = process.env.NEXT_PUBLIC_GITHUB_RUN_NUMBER || 'XXX';
+  const deploymentDate = process.env.NEXT_PUBLIC_GITHUB_RUN_DATE ? dayjs.utc(process.env.NEXT_PUBLIC_GITHUB_RUN_DATE).fromNow() : "XXX";
+  const deploymentNumber = process.env.NEXT_PUBLIC_GITHUB_RUN_NUMBER || "XXX";
 
   return (
     <span>
