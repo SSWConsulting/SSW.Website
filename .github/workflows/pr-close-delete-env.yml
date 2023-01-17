@@ -45,7 +45,7 @@ jobs:
           --assignee $identityId `
           --scope $acrId `
           --role acrpull `
-          -o none
+          --output none
         Write-Host '✅ acrpull role deleted'
     
     - name: Delete slot on staging site

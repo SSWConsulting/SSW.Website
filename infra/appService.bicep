@@ -75,28 +75,7 @@ resource appService 'Microsoft.Web/sites@2022-03-01' = {
       alwaysOn: true
       http20Enabled: true
       minTlsVersion: '1.2'
-      linuxFxVersion: 'DOCKER|${acr.properties.loginServer}/${dockerImage}:prod'
-    }
-  }
-}
-
-resource appServiceSlot 'Microsoft.Web/sites/slots@2022-03-01' = {
-  name: '${appService.name}/staging'
-  location: location
-  kind: 'app,linux,container'
-  identity: {
-    type: 'SystemAssigned'
-  }
-  properties: {
-    httpsOnly: true
-    clientAffinityEnabled: false
-    siteConfig: {
-      appSettings: appSettings
-      acrUseManagedIdentityCreds: true
-      alwaysOn: true
-      http20Enabled: true
-      minTlsVersion: '1.2'
-      linuxFxVersion: 'DOCKER|${acr.properties.loginServer}/${dockerImage}:staging'
+      linuxFxVersion: 'DOCKER|${acr.properties.loginServer}/${dockerImage}:production'
     }
   }
 }
@@ -106,7 +85,7 @@ resource appServiceSlot 'Microsoft.Web/sites/slots@2022-03-01' = {
 // This is the ACR Pull Role Definition Id: https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#acrpull
 var acrPullRoleDefinitionId = subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '7f951dda-4ed3-4680-a7ca-43fe172d538d')
 
-resource appServiceSlotAcrPullRoleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
+resource appServiceAcrPullRoleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
   scope: acr
   name: guid(acr.id, appService.id, acrPullRoleDefinitionId)
   properties: {
@@ -116,15 +95,4 @@ resource appServiceSlotAcrPullRoleAssignment 'Microsoft.Authorization/roleAssign
   }
 }
 
-resource appServiceAcrPullRoleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
-  scope: acr
-  name: guid(acr.id, appServiceSlot.id, acrPullRoleDefinitionId)
-  properties: {
-    principalId: appServiceSlot.identity.principalId
-    roleDefinitionId: acrPullRoleDefinitionId
-    principalType: 'ServicePrincipal'
-  }
-}
-
 output appServiceHostName string = appService.properties.defaultHostName
-output appServiceSlotHostName string = appServiceSlot.properties.defaultHostName

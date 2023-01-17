@@ -51,4 +51,3 @@ module appService 'appService.bicep' = {
 
 output acrLoginServer string = acr.outputs.acrLoginServer
 output appServiceHostName string = appService.outputs.appServiceHostName
-output appServiceSlotHostName string = appService.outputs.appServiceSlotHostName
