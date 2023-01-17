@@ -1,15 +1,8 @@
 .technology-card {
-  @apply border-b-sswRed bg-gray-75;
-  margin: 20px 15px 60px 15px;
-  padding: 41px;
-  min-height: 410px;
-  border-bottom: 2px solid;
+  @apply m-[20px_15px_60px_15px] min-h-[410px] border-b-[2px] border-solid border-b-sswRed bg-gray-75 p-[41px];
 }
 .technology-card p {
-  @apply text-md text-justify font-sans font-light text-black;
-  margin: 0 auto;
-  font-size: 1.2rem;
-  padding: 20px 0;
+  @apply m-[0_auto] w-9/12 p-[20px_0] text-justify font-sans text-md font-light text-black;
 }
 .technology-card p a {
   @apply ml-4 font-body;
@@ -18,5 +11,5 @@
   @apply text-gray-650;
 }
 .technology-card img {
-  height: 100px;
+  @apply h-[100px];
 }
