@@ -5,8 +5,9 @@ import { Analytics } from "../components/layout/analytics";
 import { NEXT_SEO_DEFAULT } from "../next-seo.config";
 import * as gtag from "../lib/gtag";
 import "aos/dist/aos.css";
-import "../styles.css";
 import AOS from "aos";
+import "aos/dist/aos.css"
+import "../styles.css";
 
 const isDev = process.env.NODE_ENV === "development";
 
