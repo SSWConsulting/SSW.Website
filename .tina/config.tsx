@@ -1,5 +1,6 @@
 import { defineStaticConfig, TinaCMS } from "tinacms";
 import * as Schemas from "../components/blocks";
+import { seoSchema } from "../components/util/seo";
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -25,7 +26,7 @@ const config = defineStaticConfig({
     outputFolder: "admin", // within the public folder
   },
   cmsCallback: (cms: TinaCMS) => {
-    cms.flags.set('branch-switcher', true);
+    cms.flags.set("branch-switcher", true);
     return cms;
   },
   schema: {
@@ -70,7 +71,7 @@ const config = defineStaticConfig({
             type: "object",
             label: "Offices",
             name: "offices",
-            list: true,          
+            list: true,
             ui: {
               itemProps: (item) => {
                 return { label: item?.addressLocality };
@@ -81,74 +82,74 @@ const config = defineStaticConfig({
                 type: "string",
                 name: "url",
                 label: "Url",
-                required: true
+                required: true,
               },
               {
                 type: "string",
                 name: "name",
                 label: "Name",
-                required: true
+                required: true,
               },
               {
                 type: "string",
                 name: "streetAddress",
                 label: "Street Address",
-                required: true
+                required: true,
               },
               {
                 type: "string",
                 name: "suburb",
-                label: "Suburb"
+                label: "Suburb",
               },
               {
                 type: "string",
                 name: "addressLocality",
                 label: "Address Locality",
-                required: true
+                required: true,
               },
               {
                 type: "string",
                 name: "addressRegion",
                 label: "Address Region",
-                required: true
+                required: true,
               },
               {
                 type: "string",
                 name: "addressCountry",
                 label: "Address Country",
-                required: true
+                required: true,
               },
               {
                 type: "string",
                 name: "postalCode",
                 label: "Post Code",
-                required: true
+                required: true,
               },
               {
                 type: "string",
                 name: "phone",
                 label: "Phone",
-                required: true
+                required: true,
               },
               {
                 type: "string",
                 name: "hours",
                 label: "Hours",
-                required: true
+                required: true,
               },
               {
                 type: "string",
                 name: "days",
                 label: "Days",
-                required: true
-              }
-            ]
+                required: true,
+              },
+            ],
           },
           {
             type: "object",
             label: "Socials",
             name: "socials",
-            list: true,            
+            list: true,
             ui: {
               itemProps: (item) => {
                 return { label: item?.type };
@@ -167,7 +168,7 @@ const config = defineStaticConfig({
                   { label: "LinkedIn", value: "linkedin" },
                   { label: "Github", value: "github" },
                   { label: "YouTube", value: "youtube" },
-                  { label: "TikTok", value: "tiktok" }
+                  { label: "TikTok", value: "tiktok" },
                 ],
               },
               {
@@ -189,9 +190,9 @@ const config = defineStaticConfig({
                 type: "string",
                 label: "Text",
                 name: "linkText",
-              }
+              },
             ],
-          }
+          },
         ],
       },
       {
@@ -215,12 +216,8 @@ const config = defineStaticConfig({
             isTitle: true,
             required: true,
           },
-          {
-            type: "string",
-            label: "Description",
-            name: "description",
-            description: "Used for SEO description",
-          },
+          // @ts-ignore
+          seoSchema,
           {
             type: "object",
             list: true,
@@ -229,17 +226,13 @@ const config = defineStaticConfig({
             ui: {
               visualSelector: true,
             },
-            templates: [
-              ...Schemas.pageBlocks,
-            ],
+            templates: [...Schemas.pageBlocks],
           },
           {
             type: "rich-text",
             label: "Body",
             name: "_body",
-            templates: [
-              ...Schemas.pageBlocks,
-            ],
+            templates: [...Schemas.pageBlocks],
             isBody: true,
           },
           {
@@ -250,9 +243,7 @@ const config = defineStaticConfig({
             ui: {
               visualSelector: true,
             },
-            templates: [
-              ...Schemas.pageBlocks,
-            ],
+            templates: [...Schemas.pageBlocks],
           },
           {
             type: "object",
@@ -262,9 +253,7 @@ const config = defineStaticConfig({
             ui: {
               visualSelector: true,
             },
-            templates: [
-              ...Schemas.pageBlocks,
-            ],
+            templates: [...Schemas.pageBlocks],
           },
         ],
       },
@@ -286,21 +275,15 @@ const config = defineStaticConfig({
             isTitle: true,
             required: true,
           },
-          {
-            type: "string",
-            label: "Description",
-            name: "description",
-            description: "Used for SEO description",
-          },
+          // @ts-ignore
+          seoSchema,
           {
             type: "rich-text",
             label: "Body",
             name: "_body",
-            templates: [
-              ...Schemas.pageBlocks,
-            ],
+            templates: [...Schemas.pageBlocks],
             isBody: true,
-          }
+          },
         ],
       },
     ],

@@ -15,16 +15,10 @@ export default function ConsultingPage(
     query: props.query,
     variables: props.variables,
   });
+
   return (
     <>
-      <SEO
-        seo={
-          {
-            title: data.consulting.title,
-            description: data.consulting.description,
-          }
-        }
-      />
+      <SEO seo={data.consulting.seo} />
       <Layout>
         <Container className={`prose`}>
           <TinaMarkdown
