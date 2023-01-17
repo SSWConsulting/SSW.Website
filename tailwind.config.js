@@ -259,6 +259,7 @@ module.exports = {
     extend: { typography: ["tint", "dark", "primary"] },
   },
   plugins: [
+    require('./plugins/normalize.js'),
     require("@tailwindcss/typography"),
     require("@headlessui/tailwindcss")({ prefix: "ui" }),
 
