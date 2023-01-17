@@ -1,4 +1,4 @@
-import { defineStaticConfig } from "tinacms";
+import { defineStaticConfig, TinaCMS } from "tinacms";
 import * as Schemas from "../components/blocks";
 
 const config = defineStaticConfig({
@@ -23,6 +23,10 @@ const config = defineStaticConfig({
   build: {
     publicFolder: "public", // The public asset folder for your framework
     outputFolder: "admin", // within the public folder
+  },
+  cmsCallback: (cms: TinaCMS) => {
+    cms.flags.set('branch-switcher', true);
+    return cms;
   },
   schema: {
     collections: [
