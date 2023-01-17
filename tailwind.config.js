@@ -151,9 +151,6 @@ module.exports = {
             },
           },
         },
-        letterSpacing:{
-          wide: "0.002em"
-        }
       }),
     },
   },

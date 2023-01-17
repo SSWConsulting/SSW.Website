@@ -73,7 +73,7 @@ export const Hero = ({ data, parentField }) => {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              className="absolute h-auto w-full max-w-xs rounded-lg opacity-50 mix-blend-multiply blur-2xl brightness-150 contrast-[0.9] saturate-200 dark:opacity-30 dark:mix-blend-hard-light dark:brightness-150 lg:max-w-none"
+              className="absolute h-auto w-full max-w-xs rounded-lg opacity-50 mix-blend-multiply blur-2xl brightness-150 saturate-200 dark:opacity-30 dark:mix-blend-hard-light dark:brightness-150 lg:max-w-none"
               src={data.image.src}
               aria-hidden="true"
             />

@@ -38,17 +38,14 @@ const WORKING_TIME = {
 const States = {
   QLD: {
     timeZone: "Australia/Queensland",
-    location: "top-[165px] right-[75px]",
     mapClass: "bg-[url('/images/map/map-qld.png')]",
   },
   NSW: {
     timeZone: "Australia/NSW",
-    location: "top-[",
     mapClass: "bg-[url('/images/map/map-nsw.png')]",
   },
   VIC: {
     timeZone: "Australia/Victoria",
-    location: "top-[",
     mapClass: "bg-[url('/images/map/map-vic.png')]",
   },
 };
@@ -115,6 +112,7 @@ const ContactUsAndMap = () => {
 
       {/* TODO: update state images to show state name */}
       {/* TODO: update state hover images to show state name with a red background */}
+      {/* eslint-disable-next-line tailwindcss/no-arbitrary-value*/}
       <div className="relative hidden bg-[url('/images/map/map-bg.png')] bg-[length:100%_auto] bg-no-repeat md:block">
         <Image
           className={classNames(
