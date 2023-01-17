@@ -4,7 +4,7 @@ export type TechnologyCardProps = {
   techListLength: number;
   readMoreSlug?: string | null;
   thumbnail?: string | null;
-  body?: any | null;
+  body?: any | null; // eslint-disable-line @typescript-eslint/no-explicit-any
 };
 
 export type TechnologyCardsProps = {
@@ -13,6 +13,6 @@ export type TechnologyCardsProps = {
     name: string;
     readMoreSlug?: string | null;
     thumbnail?: string | null;
-    body?: any | null;
+    body?: any | null; // eslint-disable-line @typescript-eslint/no-explicit-any
   }[];
 };

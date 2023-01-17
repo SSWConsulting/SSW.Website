@@ -8,7 +8,7 @@ const TechnologyCards: VFC<TechnologyCardsProps> = ({
   techHeader,
   techCards,
 }) => {
-  const [techComponents, setTechComponents]: any = useState([]);
+  const [techComponents, setTechComponents] = useState([]);
   const getComponent = (name: string, index: number) => {
     const technologyCardNode = techCards.find((c) => c.name == name);
     if (technologyCardNode) {
@@ -27,7 +27,7 @@ const TechnologyCards: VFC<TechnologyCardsProps> = ({
 
   useEffect(() => {
     techCards.map((card, index) => {
-      setTechComponents((techComponents: any[]) => [
+      setTechComponents((techComponents: Element[]) => [
         ...techComponents,
         getComponent(card.name, index),
       ]);
