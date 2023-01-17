@@ -1,9 +1,9 @@
-import React from "react";
 import { useTina } from "tinacms/dist/react";
 import { Components, TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../.tina/__generated__/client";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 // import { Blocks } from "../../components/blocks-renderer";
+import React from "react";
 import { Booking } from "../../components/blocks";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
@@ -35,6 +35,7 @@ const consultingComponentRenderer: Components<Record<string, unknown>> = {
   },
 };
 
+import { Container } from "../../components/util/container";
 
 export type ConsultingEnv = {
   env: { recaptchaKey?: string };
@@ -62,9 +63,9 @@ export default function ConsultingPage(
     >
       <SEO seo={data.consulting.seo} />
       <Layout>
-        <Section className="video-mask relative flex min-h-[800px] items-center overflow-hidden text-center font-light text-white">
+      <Section className="video-mask items-center text-center font-light" color="black">
           <Booking {...data.consulting.booking}></Booking>
-        </Section>
+      </Section>
         <Section
           color="black"
           className={`prose-consulting border-y-4

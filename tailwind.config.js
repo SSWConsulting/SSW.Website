@@ -1,4 +1,5 @@
 const colors = require("tailwindcss/colors");
+const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   mode: "jit",
@@ -92,6 +93,12 @@ module.exports = {
         7: ".075",
         15: ".15",
       },
+      height: {
+        22: "5.5rem",
+      },
+      width: {
+        88: "22rem",
+      },
       maxWidth: {
         "8xl": "83rem",
         "9xl": "86rem",
@@ -101,6 +108,7 @@ module.exports = {
         liveStream: "75px",
       },
       zIndex: {
+        "-100": "-100",
         "-1": "-1",
       },
       fontFamily: {
@@ -109,6 +117,8 @@ module.exports = {
       },
       animation: {
         "more-bounce": "more-bounce 2s infinite",
+        "ripple": "ripple-out 0.75s",
+        "ripple-pseudo": "ripple-out-pseudo 0.75s",
       },
       keyframes: {
         "more-bounce": {
@@ -116,6 +126,25 @@ module.exports = {
           "40%": { transform: "translateY(-30px)" },
           "60%": { transform: "translateY(-15px)" },
         },
+        "ripple-out": {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
+        },
+        "ripple-out-pseudo": {
+          "0%": { background: "rgba(0, 0, 0, 0.25)" },
+          "100%": { background: "transparent" },
+        }
+      },
+      colors: {
+        gray: {
+          75: "#f5f5f5", 
+          125: "#eeeeee", 
+          450: "#9e9e9e", 
+          550: "#6C757D", 
+        },
+        red: {
+          550: "#dc3545",
+        }
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -216,5 +245,10 @@ module.exports = {
   plugins: [
     require("@tailwindcss/typography"),
     require("@headlessui/tailwindcss")({ prefix: "ui" }),
+    plugin(function ({ addBase, theme }) {
+      addBase({
+        html: { fontSize: "14px", fontFamily: theme("fontFamily.body") },
+      });
+    }),
   ],
 };

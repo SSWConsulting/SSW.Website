@@ -12,7 +12,7 @@ dayjs.extend(utc);
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-xxs text-white">
+    <footer className="page-footer bg-gray-900 text-xxs text-white">
       <Container className="relative" size="xsmall">
         <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
           <CopyrightInfo />

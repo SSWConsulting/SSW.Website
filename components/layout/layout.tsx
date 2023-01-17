@@ -3,8 +3,9 @@ import Head from "next/head";
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { Theme } from "./theme";
+import { classNames } from "tinacms";
 
-export const Layout = ({ children }) => {
+export const Layout = ({ children, className = "" }) => {
   return (
     <>
       <Head>
@@ -12,7 +13,7 @@ export const Layout = ({ children }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Theme>
-        <div>
+        <div className={classNames("page-container", className)}>
           <Header  />
           <div className="flex flex-1 flex-col">
             {children}

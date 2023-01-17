@@ -4,7 +4,7 @@ import { ChangeEvent, ChangeEventHandler, VFC } from "react";
 import { FormGroupProps } from "./formGroupTypes";
 
 const FormGroupTextArea: VFC<
-  FieldHookConfig<any> &
+  FieldHookConfig<string> &
     FormGroupProps & { handleChange: ChangeEventHandler<HTMLTextAreaElement> }
 > = ({
   label,

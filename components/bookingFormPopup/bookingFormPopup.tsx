@@ -2,7 +2,7 @@ import Modal from "react-responsive-modal";
 import { BookingForm } from "../bookingForm/bookingForm";
 import styles from "./bookingFormPopup.module.css";
 
-const BookingFormPopup = ({ isVisible, showBookingForm, isShareForm }) => {
+const BookingFormPopup = ({ isVisible, showBookingForm }) => {
   return (
     <div>
       <Modal
@@ -12,7 +12,7 @@ const BookingFormPopup = ({ isVisible, showBookingForm, isShareForm }) => {
         classNames={{
           modalAnimationIn: styles.formEnterModalAnimation,
           modalAnimationOut: styles.formLeaveModalAnimation,
-          modal: 'w-[600px] bg-black/0 max-w-none'
+          modal: "w-[600px] bg-black/0 max-w-none"
         }}
         animationDuration={700}
       >

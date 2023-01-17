@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Form, Formik } from "formik";
+import { useRouter } from "next/router";
 import { useContext, useEffect, useMemo, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { ConsultingContext } from "../../pages/consulting/[filename]";
@@ -15,8 +16,8 @@ import {
   FormCountriesList,
   STATE_DEFAULT_VALUE,
 } from "../util/constants";
-import { ValidationSchema } from "./validationSchema";
 import { bookingFormSubmissionData } from "./bookingFormSubmissionData";
+import { ValidationSchema } from "./validationSchema";
 
 export const BookingForm = () => {
   //Show FormStates and Active label
@@ -24,6 +25,7 @@ export const BookingForm = () => {
   const [country, setCountry] = useState("");
   const [activeInputLabel, setActiveInputLabel] = useState({});
   const consultingContext = useContext(ConsultingContext);
+  const router = useRouter();
 
   const initialFormValues = {
     fullName: "",
@@ -98,15 +100,14 @@ export const BookingForm = () => {
     actions.setSubmitting(false);
 
     await axios
-      .post(`/ssw/api/crm/createlead`, data, {
+      .post("/ssw/api/crm/createlead", data, {
         headers: { "Content-Type": "application/json" },
       })
       .then(() => {
         setContactSuccess(true);
         setTimeout(function () {
           setContactSuccess(false);
-          //TODO: redirect to thank you page
-          // navigate("/thankyou/");
+          router.push("/thankyou/");
         }, 1000);
       })
       .catch(() => alert("Failed to create lead in CRM"));
@@ -131,10 +132,10 @@ export const BookingForm = () => {
   const statesDefaultOption = getDefaultOption(FORM_INPUT.States.toLowerCase());
 
   return (
-    <div className="rounded-none bg-[#eee]">
-      <div className="relative p-[15px]">
-        <div className="m-0 bg-white p-[0.25rem_1.5rem_1.25rem]">
-          <h2 className="mt-[5px] mb-[2em] pt-[5px] text-[1.8rem] text-sswRed">
+    <div className="rounded-none bg-gray-125">
+      <div className="relative p-4">
+        <div className="m-0 bg-white px-6 pt-1 pb-5">
+          <h2 className="mt-1.5 mb-14 pt-1.5 !text-2xl text-sswRed">
             {CONTACT_FORM_TITLE}
           </h2>
           {!!contactSuccess && (
@@ -273,7 +274,7 @@ export const BookingForm = () => {
                   }}
                 />
 
-                <div className="mb-[1em] h-[78px] w-[304px]">
+                <div className="mb-4 h-22 w-88">
                   {consultingContext.env.recaptchaKey !== "FALSE" && (
                     <ReCAPTCHA
                       sitekey={consultingContext.env.recaptchaKey}
@@ -284,7 +285,7 @@ export const BookingForm = () => {
                   )}
                 </div>
 
-                <button type="submit" className="btn done">
+                <button type="submit" className="done py-1.5 px-3">
                   SUBMIT
                 </button>
               </Form>

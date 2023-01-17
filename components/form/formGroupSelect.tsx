@@ -9,7 +9,7 @@ import { FormGroupProps } from "./formGroupTypes";
 import classNames from "classnames";
 
 const FormGroupSelect: FC<
-  FieldHookConfig<any> &
+  FieldHookConfig<string> &
     FormGroupProps & 
     { handleChange?: ChangeEventHandler<HTMLSelectElement> } & 
     { handleClick: MouseEventHandler<HTMLSelectElement> }

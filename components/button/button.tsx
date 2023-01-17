@@ -1,16 +1,18 @@
-import classnames from "classnames";
-import styles from "./button.module.css";
+import classNames from "classnames";
 
-const Button = ({ children, ...props }) => {
+const Button = ({ children, ripple, ...props }) => {
+  const buttonClassName = classNames(
+    {
+      "ripple-button": !!ripple,
+    },
+    props["className"]
+  );
+
   return (
     <>
-      <button
-        type="button"
-        className={classnames(styles.button, styles.hoverable)}
-        {...props}
-      >
+      <button type="button" {...props} className={buttonClassName}>
         {children}
-        <div className={styles.anim} />
+        {ripple && <div className="ripple-button-anim" />}
       </button>
     </>
   );

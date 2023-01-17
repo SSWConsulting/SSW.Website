@@ -3,5 +3,5 @@ export type FormGroupProps = {
   activeLabelClass?: string | null;
   fieldClass?: string | null;
   errorMessageClass?: string | null;
-  [key: string]: any;
+  [key: string]: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 };

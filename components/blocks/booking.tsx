@@ -20,27 +20,26 @@ export const Booking: VFC<{
 
   return (
     <>
-      <article className="mx-auto max-w-[1170px] px-[15px]">
-        <h1
-          dangerouslySetInnerHTML={{ __html: title }}
-          className="my-4 pb-[20px] pt-[60px] text-[3.28rem]"
-        ></h1>
-        <h2 className="mt-[20px] mb-[10px] text-[2.2rem]">{subTitle}</h2>
-        <Button onClick={showBookingForm} data-aos="fade-up">
+      <article className="main-container">
+        <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
+        <h2>{subTitle}</h2>
+        <Button
+          ripple
+          className="mx-auto mt-14 w-96"
+          onClick={showBookingForm}
+          data-aos="fade-up"
+        >
           {buttonText}
         </Button>
         <BookingFormPopup
           isVisible={isVisible}
           showBookingForm={setIsVisible}
-          isShareForm={false}
         />
-        <h2 className="mt-[40px] mb-[10px] text-[2.2rem]">
-          or call us on {sydneyOfficeLayoutData.phone}
-        </h2>
+        <h2>or call us on {sydneyOfficeLayoutData.phone}</h2>
         <div className="animate-more-bounce pt-20">
           <a
             href="#more"
-            className="cursor-default text-5xl no-underline hover:!text-[#9e9e9e]"
+            className="cursor-default text-5xl no-underline hover:!text-gray-450"
           >
             <FontAwesomeIcon icon={faAngleDown}></FontAwesomeIcon>
           </a>
@@ -48,7 +47,7 @@ export const Booking: VFC<{
       </article>
 
       <video
-        className="absolute -z-[100] min-w-full object-cover transition-opacity duration-1000 max-[1402px]:hidden"
+        className="-z-100 transition-opacity duration-1000"
         playsInline
         autoPlay
         muted
