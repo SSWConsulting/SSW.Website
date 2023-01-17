@@ -19,16 +19,16 @@ module.exports = {
       sswRed: "#cc4141",
       azure: "#007fff",
       gray: {
-        50: '#f9f9f9', 
-        100: '#f2f2f2', 
-        200: '#dfdfdf', 
-        300: '#cccccc', 
-        400: '#a6a6a6', 
-        500: '#808080', 
-        600: '#737373', 
-        700: '#606060', 
-        800: '#414141', 
-        900: '#333333',
+        50: "#f9f9f9", 
+        100: "#f2f2f2", 
+        200: "#dfdfdf", 
+        300: "#cccccc", 
+        400: "#a6a6a6", 
+        500: "#808080", 
+        600: "#737373", 
+        700: "#606060", 
+        800: "#414141", 
+        900: "#333333",
         1000: "#1c1b2e",
       },
       blue: {
@@ -99,7 +99,7 @@ module.exports = {
         "-1": "-1",
       },
       fontFamily: {
-        sans: ['Open Sans','Helvetica Neue','Helvetica','sans-serif'],
+        sans: ["Open Sans","Helvetica Neue","Helvetica","sans-serif"],
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -116,10 +116,10 @@ module.exports = {
               margin: "-0.25rem 1px",
             },
             "code::before": {
-              content: '""',
+              content: "\"\"",
             },
             "code::after": {
-              content: '""',
+              content: "\"\"",
             },
           },
         },
@@ -151,6 +151,9 @@ module.exports = {
             },
           },
         },
+        letterSpacing:{
+          wide: "0.002em"
+        }
       }),
     },
   },
@@ -159,6 +162,6 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/typography"),
-    require('@headlessui/tailwindcss')({ prefix: 'ui' }),
+    require("@headlessui/tailwindcss")({ prefix: "ui" }),
   ],
 };
