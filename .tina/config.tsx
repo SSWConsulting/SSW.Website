@@ -1,7 +1,6 @@
 import { defineStaticConfig, TinaCMS } from "tinacms";
 import * as Schemas from "../components/blocks";
 import { seoSchema } from "../components/util/seo";
-import {formatTestimonialFilename} from "../helpers/formatTestimonialFilename";
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
