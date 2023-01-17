@@ -54,13 +54,13 @@ export default function ConsultingPage(
   });
 
   return (
-    <ConsultingContext.Provider
-      value={{
-        env: {
-          recaptchaKey: props.env["RECAPTCHA_KEY"],
-        },
-      }}
-    >
+      <ConsultingContext.Provider
+          value={{
+              env: {
+                  recaptchaKey: props.env["RECAPTCHA_KEY"],
+              },
+          }}
+      >
       <SEO seo={data.consulting.seo} />
       <Layout>
       <Section className="video-mask items-center text-center font-light" color="black">
