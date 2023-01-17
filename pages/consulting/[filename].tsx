@@ -61,7 +61,7 @@ export default function ConsultingPage(
               }}
               content={data.consulting._body}
             />
-            <TestimonialRow testimonials={data.consulting.testimonials} />
+            <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
           </div>
         </Section>
       </Layout>
@@ -74,11 +74,14 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.mdx`,
   });
 
+  const testimonials = await client.queries.allTestimonialsQuery();
+
   return {
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
+      testimonialResult: testimonials,
     },
   };
 };

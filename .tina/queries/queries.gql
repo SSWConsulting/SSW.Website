@@ -11,3 +11,16 @@ query consultingContentQuery($relativePath: String!) {
     ...ConsultingParts
   }
 }
+
+query allTestimonialsQuery {
+  testimonialsConnection {
+    edges {
+      node {
+        name,
+        avatar,
+        body,
+        company
+      }
+    }
+  }
+}
