@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
-import { DefaultSeo } from 'next-seo';
-import { NEXT_SEO_DEFAULT } from '../next-seo.config';
+import { useEffect } from "react";
+import { DefaultSeo } from "next-seo";
+import { NEXT_SEO_DEFAULT } from "../next-seo.config";
 
 import "../styles.css";
 import AOS from "aos";
