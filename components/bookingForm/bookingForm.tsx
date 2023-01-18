@@ -221,7 +221,7 @@ export const BookingForm = () => {
                 />
 
                 <div className="mb-4 h-22 w-88">
-                  {consultingContext.env.recaptchaKey !== "FALSE" && (
+                  {!!consultingContext.env.recaptchaKey && (
                     <ReCAPTCHA
                       sitekey={consultingContext.env.recaptchaKey}
                       onChange={(value) => {

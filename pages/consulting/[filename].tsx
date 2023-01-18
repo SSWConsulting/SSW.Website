@@ -57,7 +57,7 @@ export default function ConsultingPage(
       <ConsultingContext.Provider
           value={{
               env: {
-                  recaptchaKey: props.env["RECAPTCHA_KEY"],
+                  recaptchaKey: props.env["GOOGLE_RECAPTCHA_KEY"],
               },
           }}
       >
@@ -104,7 +104,7 @@ export const getStaticProps = async ({ params }) => {
       variables: tinaProps.variables,
       testimonialResult: testimonials,
       env: {
-        RECAPTCHA_KEY: process.env.RECAPTCHA_KEY,
+        GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY || null,
       },
     },
   };
