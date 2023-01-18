@@ -66,13 +66,13 @@ export const ACTIVE_INPUT = {
 
 //FORMS INPUTS
 export const FORM_INPUT = {
-  FullName: "FullName",
-  Email: "Email",
-  Phone: "Phone",
-  Location: "Location",
-  States: "States",
-  Note: "Note",
-  Company: "Company",
+  FullName: "fullName",
+  Email: "email",
+  Phone: "phone",
+  Location: "location",
+  States: "states",
+  Note: "note",
+  Company: "company",
   ClassShow: "show",
   ReferredCompany: "referredCompany",
   ReferredFullName: "referredFullName",

@@ -24,7 +24,7 @@ const FormGroupInput: VFC<
 
   return (
     <div className="field-wrapper">
-      <label htmlFor={props.id || props.name} className={activeLabelClass}>
+      <label htmlFor={field.name} className={activeLabelClass}>
         {label}
       </label>
       <Field name={field.name}>

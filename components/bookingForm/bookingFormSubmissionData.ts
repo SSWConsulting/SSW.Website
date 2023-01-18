@@ -1,9 +1,11 @@
+import { BookingFormSubmissionData } from "../../services";
+
 export const bookingFormSubmissionData = (
   values,
   isShareForm,
   contactReCaptcha,
   sourceWebPageURL
-) => {
+): BookingFormSubmissionData => {
   const subject = isShareForm
     ? `Share This Page enquiry - ${values.referredCompany} - ${values.fullName}`
     : `Consulting enquiry - ${values.company} - ${values.fullName}`;

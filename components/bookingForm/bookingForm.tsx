@@ -18,6 +18,7 @@ import {
 } from "../util/constants";
 import { bookingFormSubmissionData } from "./bookingFormSubmissionData";
 import { ValidationSchema } from "./validationSchema";
+import { createLead } from "../../services";
 
 export const BookingForm = () => {
   //Show FormStates and Active label
@@ -88,10 +89,7 @@ export const BookingForm = () => {
     );
     actions.setSubmitting(false);
 
-    await axios
-      .post("/ssw/api/crm/createlead", data, {
-        headers: { "Content-Type": "application/json" },
-      })
+    await createLead(data)
       .then(() => {
         setContactSuccess(true);
         setTimeout(function () {
@@ -139,7 +137,7 @@ export const BookingForm = () => {
             initialValues={initialFormValues}
             onSubmit={handleOnSubmit}
           >
-            {({ values }) => (
+            {({ values, isSubmitting, errors }) => (
               <Form noValidate>
                 <FormGroupInput
                   label={ACTIVE_INPUT.FullName}
@@ -231,9 +229,11 @@ export const BookingForm = () => {
                   )}
                 </div>
 
-                <button type="submit" className="done py-1.5 px-3">
+                <button type="submit" disabled={isSubmitting} className="done py-1.5 px-3">
                   SUBMIT
                 </button>
+
+                <p>{JSON.stringify(errors)}</p>
               </Form>
             )}
           </Formik>
