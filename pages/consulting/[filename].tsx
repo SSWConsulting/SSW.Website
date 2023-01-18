@@ -47,11 +47,11 @@ export default function ConsultingPage(
 
   const technologyCardDocs =
     props.technologyCards.data.technologiesConnection.edges.map((n) => n.node);
-  const techCards = data.consulting.technologyCards.map((c) => ({
+  const techCards = data.consulting.technologyCards?.map((c) => ({
     ...technologyCardDocs.find(
       (n) => !!n.name && n.name === c.technologyCard?.name
     ),
-  }));
+  })) || [];
 
   return (
     <>
