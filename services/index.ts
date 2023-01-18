@@ -9,7 +9,7 @@ export const createLead = async (data: BookingFormSubmissionData) => {
 export type BookingFormSubmissionData = {
   Name: string;
   Topic: string;
-  Company: String;
+  Company: string;
   Country: string;
   State: string;
   Email: string;
