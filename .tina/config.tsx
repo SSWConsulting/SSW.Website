@@ -363,6 +363,8 @@ const config = defineStaticConfig({
             label: "Tech Header",
             name: "techHeader",
           },
+          // @ts-ignore
+          seoSchema,
           {
             type: "rich-text",
             label: "Body",
