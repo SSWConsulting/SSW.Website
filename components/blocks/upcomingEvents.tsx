@@ -30,7 +30,7 @@ export const UpcomingEvents = ({ data }) => {
 
       setLoading(true);
       const res = await axios.get(
-        `https://www.ssw.com.au/ssw/SharePointEventsService.aspx`,
+        "https://www.ssw.com.au/ssw/SharePointEventsService.aspx",
         { params }
       );
       setLoading(false);

@@ -74,7 +74,7 @@ export const Actions = ({
                   {action.label}
                   {action.icon && (
                     <BiRightArrowAlt
-                      className={`ml-1 -mr-1 h-6 w-6 opacity-80`}
+                      className={"ml-1 -mr-1 h-6 w-6 opacity-80"}
                     />
                   )}
                 </button>
@@ -88,16 +88,16 @@ export const Actions = ({
                   data-tinafield={`${parentField}.${index}`}
                   className={classNames(
                     "group inline-flex items-center text-lg font-semibold transition duration-150 ease-out",
-                    parentColor === "primary" ? `text-white hover:text-gray-50` : linkButtonColorClasses.blue
+                    parentColor === "primary" ? "text-white hover:text-gray-50" : linkButtonColorClasses.blue
                   )}
                   style={{
-                    textShadow: `0 3px 7px rgba(var(--color-rgb-blue-400),0.2)`,
+                    textShadow: "0 3px 7px rgba(var(--color-rgb-blue-400),0.2)",
                   }}
                 >
                   {action.label}
                   {action.icon && (
                     <BiRightArrowAlt
-                      className={`mx-0 h-6 w-6 opacity-80`}
+                      className={"mx-0 h-6 w-6 opacity-80"}
                     />
                   )}
                 </a>

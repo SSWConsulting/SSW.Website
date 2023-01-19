@@ -36,13 +36,13 @@ export const Hero = ({ data, parentField }) => {
           {data.headline && (
             <h3
               data-tinafield={`${parentField}.headline`}
-              className={`relative	mb-10 w-full text-5xl font-extrabold leading-tight tracking-normal`}
+              className={"relative	mb-10 w-full text-5xl font-extrabold leading-tight tracking-normal"}
             >
               <span
                 className={`bg-gradient-to-r bg-clip-text text-transparent  ${
                   data.color === "primary"
-                    ? `from-white to-gray-100`
-                    : headlineColorClasses['blue']
+                    ? "from-white to-gray-100"
+                    : headlineColorClasses["blue"]
                 }`}
               >
                 {data.headline}
@@ -73,7 +73,7 @@ export const Hero = ({ data, parentField }) => {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              className="absolute h-auto w-full max-w-xs rounded-lg opacity-50 mix-blend-multiply blur-2xl brightness-150 contrast-[0.9] saturate-200 dark:opacity-30 dark:mix-blend-hard-light dark:brightness-150 lg:max-w-none"
+              className="absolute h-auto w-full max-w-xs rounded-lg opacity-50 mix-blend-multiply blur-2xl brightness-150 saturate-200 dark:opacity-30 dark:mix-blend-hard-light dark:brightness-150 lg:max-w-none"
               src={data.image.src}
               aria-hidden="true"
             />

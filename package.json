@@ -1,12 +1,12 @@
 {
   "name": "@tinacms/starter",
-  "version": "0.1.0",
+  "version": "1.22.19",
   "private": true,
   "scripts": {
     "dev": "tinacms dev --watchFolders='components/util/icon.tsx' -c \"next dev\"",
     "build": "tinacms build && next build",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
-    "start": "tinacms build && next start",
+    "start": "tinacms build && node_modules/next/dist/bin/next start -p $PORT",
     "export": "npm run build && next export",
     "lint": "eslint . --ext .ts,.tsx"
   },
@@ -61,6 +61,7 @@
     "typescript": "^4.5.2"
   },
   "resolutions": {
-    "final-form": "4.20.1"
+    "final-form": "4.20.1",
+    "@types/react": "^17.0.2"
   }
 }

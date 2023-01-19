@@ -17,26 +17,19 @@ export default function HomePage(
   });
   return (
     <>
-      <SEO
-        seo={
-          {
-            title: data.page.title,
-            description: data.page.description,
-          }
-        }
-      />
+      <SEO seo={data.page.seo} />
       <Layout>
         <Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
-        <Container className={`flex-1 pt-4`}>
+        <Container className={"flex-1 pt-4"}>
           <div className="gap-4 md:grid md:grid-cols-5 lg:grid-cols-3">
             <div className="prose-sm max-w-full md:col-span-3 lg:col-span-2">
               <TinaMarkdown
                 components={componentRenderer}
                 content={data.page._body}
-                />
+              />
             </div>
             <div className="md:col-span-2 lg:col-span-1">
-              <Blocks prefix="PageSideBar" blocks={data.page.sideBar} />              
+              <Blocks prefix="PageSideBar" blocks={data.page.sideBar} />
             </div>
           </div>
         </Container>

@@ -1,8 +1,8 @@
 module.exports = {
   images: {
-    domains: ['assets.tina.io'],
+    domains: ["assets.tina.io"],
   },
-  output: 'standalone', // required for Docker support
+  output: "standalone", // required for Docker support
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,

@@ -1,12 +1,33 @@
 import { useTina } from "tinacms/dist/react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { Components, TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../.tina/__generated__/client";
 // import { Blocks } from "../../components/blocks-renderer";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
-import { Container } from "../../components/util/container";
+import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import ReactPlayer from "react-player";
+
+const consultingComponentRenderer: Components<Record<string, unknown>> = {
+  code: (data) => {
+    const { children: { props: { type, text } } } = data;
+    if (type === "text" && text.startsWith("youtube:")) {
+      const link = text.replace("youtube:", "").trim();
+      return (
+        <div className="relative m-8 mx-auto aspect-video">
+          <ReactPlayer
+            className="absolute top-0 left-0"
+            url={link}
+            width={"100%"}
+            height={"100%"}
+          />
+        </div>
+      )
+    }
+    return <code>{data.children}</code>
+  }
+};
 
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -17,25 +38,28 @@ export default function ConsultingPage(
     variables: props.variables,
     path: props.path
   });
-  console.log('page data', data.consulting)
+
   return (
     <>
-      <SEO
-        seo={
-          {
-            title: data.consulting.title,
-            description: data.consulting.description,
-          }
-        }
-      />
+      <SEO seo={data.consulting.seo} />
       <Layout>
-        <Container className={`prose`}>
-          <Breadcrumbs path={props.path} suffix={data.global.breadcrumbSuffix} title={data.consulting.title} />
-          <TinaMarkdown
-            components={componentRenderer}
-            content={data.consulting._body}
-          />
-        </Container>
+        <Section
+          color="black"
+          className={`
+            prose-consulting
+            border-y-4 border-y-sswRed
+            bg-benefits-bg bg-cover bg-fixed bg-center bg-no-repeat
+            py-24 text-center`
+          }
+        >
+          <div className="mx-auto max-w-8xl px-4">
+            <Breadcrumbs path={props.path} suffix={data.global.breadcrumbSuffix} title={data.consulting.title} />
+            <TinaMarkdown
+              components={{ ...componentRenderer, ...consultingComponentRenderer }}
+              content={data.consulting._body}
+            />
+          </div>
+        </Section>
       </Layout>
     </>
   );

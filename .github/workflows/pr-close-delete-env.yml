@@ -1,0 +1,68 @@
+name: PR - Delete Environment when PR is closed
+
+on:
+  pull_request:
+    types: [closed]
+
+defaults:
+  run:
+    shell: pwsh
+
+env:
+  ENVIRONMENT_NAME: "PR #${{ github.event.number }}"
+  SLOT_NAME: pr-${{ github.event.number }}
+
+jobs:
+  delete-slot:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Azure CLI - Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    
+    - name: Cleanup ACRPull permission
+      run: |
+        $acrId = az acr show `
+          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
+          --name ${{ vars.ACR_LOGIN_SERVER }} `
+          --query id `
+          --output tsv
+        Write-Host '✅ acr found'
+
+        # get slot identity
+        $identityId = az webapp identity show `
+          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
+          --name ${{ vars.APP_SERVICE_NAME }} `
+          --slot ${{ env.SLOT_NAME }} `
+          --query principalId `
+          --output tsv
+        Write-Host '✅ slot identity found'
+
+        # grant access to the identity on ACR
+        az role assignment delete `
+          --assignee $identityId `
+          --scope $acrId `
+          --role acrpull `
+          --output none
+        Write-Host '✅ acrpull role deleted'
+    
+    - name: Delete slot on staging site
+      run: |
+        az webapp deployment slot delete `
+          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
+          --name ${{ vars.APP_SERVICE_NAME }} `
+          --slot ${{ env.SLOT_NAME }} `
+          --output none
+
+  delete-deployment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Delete Deployment Environment
+        uses: strumwolf/delete-deployment-environment@v2.0.1
+        with:
+          environment: ${{ env.ENVIRONMENT_NAME }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          onlyRemoveDeployments: true

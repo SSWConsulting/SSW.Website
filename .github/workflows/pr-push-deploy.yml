@@ -1,0 +1,75 @@
+name: PR - build and deploy to slot
+
+on:
+  pull_request:
+    branches:
+    - main
+
+concurrency: 
+  group: ci-${{ github.event.number }}-${{ github.workflow }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  build:
+    name: Build and upload artifacts
+    uses: ./.github/workflows/template-build.yml
+    with:
+      tag: pr-${{ github.event.number }}
+    secrets:
+      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+      NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
+      TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+  
+  deploy:
+    name: Deploy to slot
+    uses: ./.github/workflows/template-deploy-slot.yml
+    needs: build
+    with:
+      environment_name: "PR #${{ github.event.number }}"
+      slot_name: pr-${{ github.event.number }}
+    secrets:
+      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+
+  pagespeed-insights:
+    name: PageSpeed Insights
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+
+    - uses: wicksipedia/pagespeed-insights@main
+      id: pagespeed-insights
+      with:          
+        url: ${{ needs.deploy.outputs.url }}
+        categories: |
+          accessibility
+          best_practices
+          performance
+          SEO
+        strategy: mobile
+        key: ${{ secrets.PAGESPEED_INSIGHTS_API_KEY }}
+
+    - name: Comment on PR with insights
+      uses: mshick/add-pr-comment@v1
+      with:
+        message: |
+          ## PageSpeed Insights
+
+          | Category        | Score                                                   |
+          | ---             | ---                                                     |
+          | Accessibility   | ${{ steps.pagespeed-insights.outputs.accessibility }}   |
+          | Best practices  | ${{ steps.pagespeed-insights.outputs.best_practices }}  |
+          | Performance     | ${{ steps.pagespeed-insights.outputs.performance }}     |
+          | SEO             | ${{ steps.pagespeed-insights.outputs.seo }}             |
+
+          View the full report <https://pagespeed.web.dev/report?url=${{ needs.deploy.outputs.url }}>
+
+          > *This is an automated message.*
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        repo-token-user-login: 'github-actions[bot]'
+        allow-repeats: true

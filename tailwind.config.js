@@ -2,7 +2,7 @@ const colors = require("tailwindcss/colors");
 
 module.exports = {
   mode: "jit",
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
     colors: {
@@ -19,16 +19,16 @@ module.exports = {
       sswRed: "#cc4141",
       azure: "#007fff",
       gray: {
-        50: '#f9f9f9', 
-        100: '#f2f2f2', 
-        200: '#dfdfdf', 
-        300: '#cccccc', 
-        400: '#a6a6a6', 
-        500: '#808080', 
-        600: '#737373', 
-        700: '#606060', 
-        800: '#414141', 
-        900: '#333333',
+        50: "#f9f9f9", 
+        100: "#f2f2f2", 
+        200: "#dfdfdf", 
+        300: "#cccccc", 
+        400: "#a6a6a6", 
+        500: "#808080", 
+        600: "#737373", 
+        700: "#606060", 
+        800: "#414141", 
+        900: "#333333",
         1000: "#1c1b2e",
       },
       blue: {
@@ -90,7 +90,8 @@ module.exports = {
         15: ".15",
       },
       maxWidth: {
-        "8xl": "86rem",
+        "8xl": "83rem",
+        "9xl": "86rem",
       },
       spacing: {
         128: "32rem",
@@ -99,7 +100,10 @@ module.exports = {
         "-1": "-1",
       },
       fontFamily: {
-        sans: ['Open Sans','Helvetica Neue','Helvetica','sans-serif'],
+        sans: ["Open Sans","Helvetica Neue","Helvetica","sans-serif"],
+      },
+      backgroundImage: {
+        "benefits-bg": "url('/consulting/mvc-benefits-bg.jpg')",
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -116,10 +120,10 @@ module.exports = {
               margin: "-0.25rem 1px",
             },
             "code::before": {
-              content: '""',
+              content: "\"\"",
             },
             "code::after": {
-              content: '""',
+              content: "\"\"",
             },
           },
         },
@@ -151,6 +155,41 @@ module.exports = {
             },
           },
         },
+        consulting: {
+          css: {
+            h1: {
+              fontSize: "3.28rem",
+              margin: "1rem 0",
+              padding: "60px 0 20px 0",
+              lineHeight: 1.2,
+              fontWeight: theme("fontWeight.light"),
+              "> strong": {
+                color: theme("colors.sswRed"),
+              },
+            },
+            "p, ul": {
+              fontSize: "1.2rem",
+              fontWeight: theme("fontWeight.light"),
+              margin: "0 auto",
+              padding: "20px 0",
+              width: "75%",
+            },
+            "ul > li": {
+              display: "block",
+              fontWeight: theme("fontWeight.bold"),
+              margin: "2em 3rem 0 3rem",
+              "> div::before": {
+                color: theme("colors.sswRed"),
+                content: "\"\u25A0\"",
+                display: "inline-block",
+                fontFamily: "Arial Black",
+                fontWeight: theme("fontWeight.bold"),
+                marginLeft: "-1em",
+                width: "1em",
+              },
+            },
+          }
+        },
       }),
     },
   },
@@ -159,6 +198,6 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/typography"),
-    require('@headlessui/tailwindcss')({ prefix: 'ui' }),
+    require("@headlessui/tailwindcss")({ prefix: "ui" }),
   ],
 };

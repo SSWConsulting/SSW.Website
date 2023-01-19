@@ -1,0 +1,36 @@
+name: Main - build and deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency: 
+  group: main
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  build:
+    name: Build and upload artifacts
+    uses: ./.github/workflows/template-build.yml
+    with:
+      tag: production
+    secrets:
+      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+      NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
+      TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+  
+  deploy-to-prod:
+    name: Deploy to production
+    uses: ./.github/workflows/template-deploy-slot.yml
+    needs: build
+    with:
+      ENVIRONMENT_NAME: production
+      SLOT_NAME: production
+    secrets:
+      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
