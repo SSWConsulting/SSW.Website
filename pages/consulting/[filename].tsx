@@ -6,6 +6,7 @@ import { componentRenderer } from "../../components/blocks/mdxComponentRenderer"
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -14,6 +15,7 @@ export default function ConsultingPage(
     data: props.data,
     query: props.query,
     variables: props.variables,
+    path: props.path
   });
   console.log('page data', data.consulting)
   return (
@@ -28,6 +30,7 @@ export default function ConsultingPage(
       />
       <Layout>
         <Container className={`prose`}>
+          <Breadcrumbs path={props.path} suffix={data.global.breadcrumbSuffix} title={data.consulting.title} />
           <TinaMarkdown
             components={componentRenderer}
             content={data.consulting._body}
@@ -47,6 +50,7 @@ export const getStaticProps = async ({ params }) => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
+      path: params.filename,
     },
   };
 };

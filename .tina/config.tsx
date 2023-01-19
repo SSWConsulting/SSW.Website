@@ -63,6 +63,11 @@ const config = defineStaticConfig({
             ],
           },
           {
+            type: "string",
+            label: "Breadcrumb Suffix",
+            name: "breadcrumbSuffix",
+          },
+          {
             type: "object",
             label: "Offices",
             name: "offices",
