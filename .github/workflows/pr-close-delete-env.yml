@@ -35,7 +35,7 @@ jobs:
         $identityId = az webapp identity show `
           --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
           --name ${{ vars.APP_SERVICE_NAME }} `
-          --slot ${{ env.slot_name }} `
+          --slot ${{ env.SLOT_NAME }} `
           --query principalId `
           --output tsv
         Write-Host '✅ slot identity found'
