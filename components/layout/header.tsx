@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "../util/container";
 import { SocialIcons } from "../util/socialIcons";
 import Image from "next/image";
+import { LiveStreamBanner } from "../liveStreamBanner";
 
 export const Header = () => {
   // const router = useRouter();
@@ -19,6 +20,7 @@ export const Header = () => {
 
   return (
     <div className={"relative overflow-hidden bg-gradient-to-b"}>
+      <LiveStreamBanner/>
       <Container size="custom" className="relative z-10 my-4 max-w-9xl py-0">
         <div className="sm:flex sm:items-center sm:justify-between">
           <Logo />
