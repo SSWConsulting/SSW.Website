@@ -90,7 +90,8 @@ module.exports = {
         15: ".15",
       },
       maxWidth: {
-        "8xl": "86rem",
+        "8xl": "83rem",
+        "9xl": "86rem",
       },
       spacing: {
         128: "32rem",
@@ -100,6 +101,9 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Open Sans","Helvetica Neue","Helvetica","sans-serif"],
+      },
+      backgroundImage: {
+        "benefits-bg": "url('/consulting/mvc-benefits-bg.jpg')",
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -150,6 +154,41 @@ module.exports = {
               fontSize: "1.365rem",
             },
           },
+        },
+        consulting: {
+          css: {
+            h1: {
+              fontSize: "3.28rem",
+              margin: "1rem 0",
+              padding: "60px 0 20px 0",
+              lineHeight: 1.2,
+              fontWeight: theme("fontWeight.light"),
+              "> strong": {
+                color: theme("colors.sswRed"),
+              },
+            },
+            "p, ul": {
+              fontSize: "1.2rem",
+              fontWeight: theme("fontWeight.light"),
+              margin: "0 auto",
+              padding: "20px 0",
+              width: "75%",
+            },
+            "ul > li": {
+              display: "block",
+              fontWeight: theme("fontWeight.bold"),
+              margin: "2em 3rem 0 3rem",
+              "> div::before": {
+                color: theme("colors.sswRed"),
+                content: "\"\u25A0\"",
+                display: "inline-block",
+                fontFamily: "Arial Black",
+                fontWeight: theme("fontWeight.bold"),
+                marginLeft: "-1em",
+                width: "1em",
+              },
+            },
+          }
         },
       }),
     },
