@@ -43,12 +43,10 @@ export default function ConsultingPage(
       <Layout>
         <Section
           color="black"
-          // https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/186
-          // eslint-disable-next-line tailwindcss/no-contradicting-classname, tailwindcss/no-arbitrary-value
           className={`
             prose-consulting
             border-y-4 border-y-sswRed
-            bg-[url('/consulting/mvc-benefits-bg.jpg')] bg-cover bg-fixed bg-center bg-no-repeat
+            bg-benefits-bg bg-cover bg-fixed bg-center bg-no-repeat
             py-24 text-center`
           }
         >

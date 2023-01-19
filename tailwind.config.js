@@ -102,6 +102,9 @@ module.exports = {
       fontFamily: {
         sans: ["Open Sans","Helvetica Neue","Helvetica","sans-serif"],
       },
+      backgroundImage: {
+        "benefits-bg": "url('/consulting/mvc-benefits-bg.jpg')",
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
@@ -186,7 +189,7 @@ module.exports = {
               },
             },
           }
-        }
+        },
       }),
     },
   },
