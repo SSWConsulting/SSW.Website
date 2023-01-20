@@ -1,4 +1,7 @@
-module.exports = {
+// eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
+const withTM = require("next-transpile-modules")(["ssw.megamenu"])
+
+module.exports = withTM({
   images: {
     domains: ["assets.tina.io"],
   },
@@ -24,4 +27,4 @@ module.exports = {
       },
     ];
   },
-};
+});

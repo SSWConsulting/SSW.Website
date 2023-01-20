@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import Head from "next/head";
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { Theme } from "./theme";
+import { Menu } from "ssw.megamenu"
 
 export const Layout = ({ children }) => {
+  const node = useRef();
+  const [isMenuOpened, setIsMenuOpened] = useState(false);
+
+  const actionOnToggleClick = () => {
+    setIsMenuOpened(!isMenuOpened);
+  };
+
+  const handleClick = (e) => {
+    if (node.current){
+      node.current.contains(e.target) ?? setIsMenuOpened(false);
+    }
+  };
+
   return (
     <>
       <Head>
@@ -13,7 +27,12 @@ export const Layout = ({ children }) => {
       </Head>
       <Theme>
         <div>
-          <Header  />
+          <Header />
+          <div
+            ref={node}
+            onMouseDown={isMenuOpened ? (event) => handleClick(event) : null}>
+            <Menu onClickToggle={() => actionOnToggleClick()} />
+          </div>
           <div className="flex flex-1 flex-col bg-gradient-to-br from-white to-gray-50 text-gray-800 dark:from-gray-900 dark:to-gray-1000">
             {children}
           </div>
