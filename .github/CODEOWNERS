@@ -1,0 +1,5 @@
+# Default Owners for all branches
+@SSWConsulting/ssw-website-v3-team
+
+# Wicksy to own the .github folder
+/.github @wicksipedia
