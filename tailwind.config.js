@@ -95,6 +95,7 @@ module.exports = {
       },
       spacing: {
         128: "32rem",
+        "liveStream": "75px"
       },
       zIndex: {
         "-1": "-1",
@@ -191,6 +192,10 @@ module.exports = {
           }
         },
       }),
+      backgroundImage: {
+        "live-banner-wait": "url('/blocks/LiveStreamBanner-Wait.png')",
+        "live-banner-live": "url('/blocks/LiveStreamBanner-Live.gif')",
+      }
     },
   },
   variants: {
