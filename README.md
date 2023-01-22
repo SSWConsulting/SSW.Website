@@ -43,14 +43,14 @@ yarn dev
 - http://localhost:3000/exit-admin : log out of Tina Cloud
 - http://localhost:4001/altair/ : GraphQL playground to test queries and browse the API documentation
 
+## Pull Requests
+
+Each Pull Request will be deployed to its own staging environment, the URL to the environment is available in the PR thread.
+
 ## Getting Help
 
-To get help with any TinaCMS challenges you may have:
+- [Email SSW](mailto:info@ssw.com.au) to schedule a call.
+- Reach out through the chat widget on [ssw.com.au](https://ssw.com.au)
 
 - Visit the [documentation](https://tina.io/docs/) to learn about Tina.
-- [Join our Discord](https://discord.gg/zumN63Ybpf) to share feedback.
-- Visit the [community forum](https://community.tinacms.org/) to ask questions.
-- Get support through the chat widget on the TinaCMS Dashboard
-- [Email us](mailto:support@tina.io) to schedule a call with our team and share more about your context and what you're trying to achieve.
-- [Search or open an issue](https://github.com/tinacms/tinacms/issues) if something is not working.
-- Reach out on Twitter at [@tina_cms](https://twitter.com/tina_cms).
+- [Join the Tina Discord](https://discord.gg/zumN63Ybpf) to share feedback for Tina to improve.
