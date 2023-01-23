@@ -1,23 +1,28 @@
-# Tina Starter 🦙
 
-![tina-cloud-starter-demo](https://user-images.githubusercontent.com/103008/130587027-995ccc45-a852-4f90-b658-13e8e0517339.gif)
+![SSW Banner](https://user-images.githubusercontent.com/17246482/213943898-d3d7268c-0636-4469-ad47-4052302cf567.png)
+# SSW.Website v3!
 
-This Next.js starter is powered by [TinaCMS](https://app.tina.io) for you and your team to visually live edit the structured content of your website. ✨
 
-The content is managed through Markdown and JSON files stored in your GitHub repository, and queried through Tina GraphQL API.
+This repository is a v3 of the SSW.Website. This website uses NextJS with TinaCMS.
 
-### Features
+## See the important Documents
+- Instructions - Compile (F5 Experience)
+- Instructions - Deployment
+- Business
+- Technologies and Architecture
+- Alternative Solutions Considered
+- Definition of Done
+- Definition of Ready
 
-- [Tina Headless CMS](https://app.tina.io) for authentication, content modeling, visual editing and team management.
-- [Vercel](https://vercel.com) deployment to visually edit your site from the `/admin` route.
-- Local development workflow from the filesystem with a local GraqhQL server.
+## Architecture Overview
+![architecture-diagram](https://user-images.githubusercontent.com/17246482/213947700-2ab46353-5e1b-4e65-9681-9fddf69fdda0.png)
 
 ## Requirements
 
 - Git, [Node.js Active LTS](https://nodejs.org/en/about/releases/), Yarn installed for local development.
 - A [TinaCMS](https://app.tina.io) account for live editing.
 
-## Local Development
+## Get Started
 
 Install the project's dependencies:
 
@@ -31,6 +36,12 @@ Run the project locally:
 yarn dev
 ```
 
+Build the project:
+
+```bash
+yarn build
+```
+
 ### Local URLs
 
 - http://localhost:3000 : browse the website
@@ -38,45 +49,14 @@ yarn dev
 - http://localhost:3000/exit-admin : log out of Tina Cloud
 - http://localhost:4001/altair/ : GraphQL playground to test queries and browse the API documentation
 
-### Building the Starter Locally (Using the hosted content API)
+## Pull Requests
 
-Replace the `.env.example`, with `.env`
-
-```
-NEXT_PUBLIC_TINA_CLIENT_ID=<get this from the project you create at app.tina.io>
-TINA_TOKEN=<get this from the project you create at app.tina.io>
-NEXT_PUBLIC_TINA_BRANCH=<Specify the branch with Tina configured>
-```
-
-Build the project:
-
-```bash
-yarn build
-```
+Each Pull Request will be deployed to its own staging environment, the URL to the environment is available in the PR thread.
 
 ## Getting Help
 
-To get help with any TinaCMS challenges you may have:
+- [Email SSW](mailto:info@ssw.com.au) to schedule a call.
+- Reach out through the chat widget on [ssw.com.au](https://ssw.com.au)
 
 - Visit the [documentation](https://tina.io/docs/) to learn about Tina.
-- [Join our Discord](https://discord.gg/zumN63Ybpf) to share feedback.
-- Visit the [community forum](https://community.tinacms.org/) to ask questions.
-- Get support through the chat widget on the TinaCMS Dashboard
-- [Email us](mailto:support@tina.io) to schedule a call with our team and share more about your context and what you're trying to achieve.
-- [Search or open an issue](https://github.com/tinacms/tinacms/issues) if something is not working.
-- Reach out on Twitter at [@tina_cms](https://twitter.com/tina_cms).
-
-## Development tips
-
-### Visual Studio Code GraphQL extension
-
-[Install the GraphQL extension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql) to benefit from type auto-completion.
-
-### Typescript
-
-A good way to ensure your components match the shape of your data is to leverage the auto-generated TypeScript types.
-These are rebuilt when your `.tina` config changes.
-
-## LICENSE
-
-Licensed under the [Apache 2.0 license](./LICENSE).
+- [Join the Tina Discord](https://discord.gg/zumN63Ybpf) to share feedback for Tina to improve.
