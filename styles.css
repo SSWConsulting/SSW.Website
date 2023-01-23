@@ -20,6 +20,7 @@
 	content: '';
 	position: absolute;
 	bottom: -16px;
+	left: 15px;
 	width: 0;
 	height: 0;
 	border: 20px solid transparent;
