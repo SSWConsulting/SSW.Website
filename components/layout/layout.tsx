@@ -6,7 +6,7 @@ import { Theme } from "./theme";
 import { Menu, MobileMenu } from "ssw.megamenu"
 
 export const Layout = ({ children }) => {
-  const node = useRef();
+  const node = useRef<HTMLDivElement>();
   const [isMenuOpened, setIsMenuOpened] = useState(false);
 
   const actionOnToggleClick = () => {
@@ -14,9 +14,9 @@ export const Layout = ({ children }) => {
   };
 
   const handleClick = (e) => {
-    if (node.current){
-      node.current.contains(e.target) ?? setIsMenuOpened(false);
-    }
+      if (node.current){
+        node.current.contains(e.target) ?? setIsMenuOpened(false);
+      }
   };
 
   return (
