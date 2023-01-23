@@ -1,7 +1,7 @@
 import { useTina } from "tinacms/dist/react";
 import { Components, TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../.tina/__generated__/client";
-import { TestimonialRow } from "../../components/TestimonialRow";
+import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
 import { Section } from "../../components/util/section";

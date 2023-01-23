@@ -1,9 +1,10 @@
 import * as React from "react";
 
-import { Container } from "./util/container";
-import { Section } from "./util/section";
+import { Container } from "../util/container";
+import { Section } from "../util/section";
 import Image from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import "TestimonialRow.css";
 
 export const TestimonialRow = ({ testimonialsQueryResult }) => {
   const testimonialsData =
