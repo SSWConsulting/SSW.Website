@@ -21,10 +21,10 @@
 }
 
 .breadcrumb_item a {
-    @apply inline no-underline text-xs font-light;
+    @apply inline no-underline text-[0.8rem] text-[#666];
 }
 
 .breadcrumb_item:not(:first-child)::before {
-    @apply px-2 list-none;
+    @apply px-2 list-none text-[0.8rem] text-[#666];
     content: ">";
 }
