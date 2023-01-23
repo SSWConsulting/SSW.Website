@@ -4,11 +4,14 @@ import { Container } from "../util/container";
 import { Section } from "../util/section";
 import Image from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import "TestimonialRow.css";
+import styles from "./TestimonialRow.module.css";
 
 export const TestimonialRow = ({ testimonialsQueryResult }) => {
+  console.log(testimonialsQueryResult);
   const testimonialsData =
-    testimonialsQueryResult.data.testimonialsConnection.edges.map(t => t.node);
+    testimonialsQueryResult.data.testimonialsConnection.Testimonials.map(
+      (t) => t.Testimonial
+    );
 
   const randomTestimonials = testimonialsData
     .sort(() => 0.5 - Math.random())
@@ -29,7 +32,7 @@ const testimonials = (data) => {
   return data?.map((testimonial, i) => (
     <div className="not-prose m-5" key={i}>
       <div
-        className="testimonialBubble rounded-lg bg-gray-100 p-5 text-base sm:h-64 md:h-96"
+        className={`${styles.testimonialBubble} rounded-lg bg-gray-100 p-5 text-base sm:h-64 md:h-96`}
         data-aos="flip-right"
       >
         <TinaMarkdown content={testimonial?.body} />

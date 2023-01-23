@@ -14,8 +14,8 @@ query consultingContentQuery($relativePath: String!) {
 
 query allTestimonialsQuery {
   testimonialsConnection {
-    edges {
-      node {
+    Testimonials: edges {
+      Testimonial: node {
         name,
         avatar,
         body,
