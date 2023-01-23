@@ -1,7 +1,5 @@
-import React from 'react';
-import type { Template } from 'tinacms';
-import Image from 'next/image';
-import NextBreadcrumbs from 'nextjs-breadcrumbs';
+import React from "react";
+import NextBreadcrumbs from "nextjs-breadcrumbs";
 
 export const Breadcrumbs = (props) => {
   return (
