@@ -15,7 +15,7 @@ This repository is a v3 of the SSW.Website. This website uses NextJS with TinaCM
 - Definition of Ready
 
 ## Architecture Overview
-![Architecture-Diagram](https://user-images.githubusercontent.com/17246482/213943914-a98f32b5-4b65-4316-82ca-9cd308f3f315.png)
+![architecture-diagram](https://user-images.githubusercontent.com/17246482/213947700-2ab46353-5e1b-4e65-9681-9fddf69fdda0.png)
 
 ## Requirements
 
@@ -34,6 +34,12 @@ Run the project locally:
 
 ```
 yarn dev
+```
+
+Build the project:
+
+```bash
+yarn build
 ```
 
 ### Local URLs
