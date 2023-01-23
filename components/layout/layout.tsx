@@ -3,7 +3,7 @@ import Head from "next/head";
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { Theme } from "./theme";
-import { Menu } from "ssw.megamenu"
+import { Menu, MobileMenu } from "ssw.megamenu"
 
 export const Layout = ({ children }) => {
   const node = useRef();
@@ -27,16 +27,17 @@ export const Layout = ({ children }) => {
       </Head>
       <Theme>
         <div>
-          <Header />
           <div
             ref={node}
             onMouseDown={isMenuOpened ? (event) => handleClick(event) : null}>
+            <Header />
             <Menu onClickToggle={() => actionOnToggleClick()} />
+            <div className="flex flex-1 flex-col bg-gradient-to-br from-white to-gray-50 text-gray-800 dark:from-gray-900 dark:to-gray-1000">
+              {children}
+            </div>
+            <Footer />
           </div>
-          <div className="flex flex-1 flex-col bg-gradient-to-br from-white to-gray-50 text-gray-800 dark:from-gray-900 dark:to-gray-1000">
-            {children}
-          </div>
-          <Footer />
+          <MobileMenu isMenuOpened={isMenuOpened}></MobileMenu>
         </div>
       </Theme>
     </>
