@@ -1,36 +1,33 @@
-import analytics from "../analytics";
 import { DefaultSeo } from "next-seo";
-import { useEffect } from "react";
 import { NEXT_SEO_DEFAULT } from "../next-seo.config";
 import "../styles.css";
-import { hotjar } from "react-hotjar";
-import Script from "next/script";
-
-const zendeskKey = process.env.NEXT_PUBLIC_ZENDESK_CHAT_KEY;
+import { Analytics } from "../components/layout/analytics";
+import * as gtag from "../lib/gtag";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 const isDev = process.env.NODE_ENV === "development";
 
 const App = ({ Component, pageProps }) => {
+  const router = useRouter();
   useEffect(() => {
-    analytics.page();
+    const handleRouteChange = (url) => {
+      gtag.pageview(url);
+    };
 
-    if (!isDev) {
-      hotjar.initialize(
-        parseInt(process.env.NEXT_PUBLIC_HOTJAR_ID),
-        parseInt(process.env.NEXT_PUBLIC_HOTJAR_SV)
-      );
+    if(!isDev){
+      router.events.on("routeChangeComplete", handleRouteChange);
+      
+      return () => {
+        router.events.off("routeChangeComplete", handleRouteChange);
+      };
     }
-  }, []);
+  }, [router.events]);
 
   return (
     <>
-      {!isDev && 
-        <Script
-          id="ze-snippet"
-          src={`https://static.zdassets.com/ekr/snippet.js?key=${zendeskKey}`}
-        />
-      }
       <DefaultSeo {...NEXT_SEO_DEFAULT} />
       <Component {...pageProps} />
+      { !isDev && <Analytics /> }
     </>
   );
 };
