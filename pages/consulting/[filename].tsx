@@ -47,11 +47,10 @@ export default function ConsultingPage(
       <Layout>
         <Section
           color="black"
-          className={`
-            bg-benefits-bg
-            prose-consulting border-y-4
-            border-y-sswRed bg-cover bg-fixed bg-center bg-no-repeat
-            py-24 text-center`}
+          className={`prose-consulting border-y-4
+                    border-y-sswRed 
+                    bg-benefits bg-cover bg-fixed bg-center bg-no-repeat
+                    py-24 text-center`}
         >
           <div className="mx-auto max-w-8xl px-4">
             <TinaMarkdown

@@ -103,9 +103,6 @@ module.exports = {
       fontFamily: {
         sans: ["Open Sans", "Helvetica Neue", "Helvetica", "sans-serif"],
       },
-      backgroundImage: {
-        "benefits-bg": "url('/consulting/mvc-benefits-bg.jpg')",
-      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
@@ -195,6 +192,7 @@ module.exports = {
       backgroundImage: {
         "live-banner-wait": "url('/blocks/LiveStreamBanner-Wait.png')",
         "live-banner-live": "url('/blocks/LiveStreamBanner-Live.gif')",
+        "benefits": "url('/consulting/mvc-benefits-bg.jpg')",
       }
     },
   },
