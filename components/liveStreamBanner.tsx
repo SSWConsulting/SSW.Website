@@ -17,8 +17,8 @@ dayjs.extend(timezone);
 
 export const LiveStreamBanner = () => {
   const [event, setEvent] = useState({
-    Title: "Loading...",
-    StartDateTime: new Date(),
+    Title: null,
+    StartDateTime: null,
   });
   const [isLive, setIsLive] = useState(false);
 
