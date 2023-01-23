@@ -9,10 +9,10 @@ const hjSv = process.env.NEXT_PUBLIC_HOTJAR_SV;
 export const Analytics = () => {
     return (
         <>
-            <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
+            <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
             <Script 
                 id="ga-inline" 
-                strategy="afterInteractive">
+                strategy="lazyOnload">
                 {`
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
@@ -24,7 +24,7 @@ export const Analytics = () => {
             </Script>
             <Script 
                 id="gtm-inline"
-                strategy="afterInteractive">
+                strategy="lazyOnload">
                     {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
                         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -35,7 +35,7 @@ export const Analytics = () => {
             {/*Hotjar Tracking Code*/}
             <Script
                 id="hotjar-inline"
-                strategy="afterInteractive">
+                strategy="lazyOnload">
                 {`
                     (function(h,o,t,j,a,r){
                         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -51,7 +51,7 @@ export const Analytics = () => {
 height="0" width="0" style="display:none;visibility:hidden"></iframe>`}}></noscript>
             {/*Zendesk Chat*/}
             <Script
-                strategy="afterInteractive"
+                strategy="lazyOnload"
                 id="ze-snippet"
                 src={`https://static.zdassets.com/ekr/snippet.js?key=${zendeskKey}`}/>
         </>
