@@ -43,7 +43,7 @@ export default function ConsultingPage(
     <>
       <SEO seo={data.consulting.seo} />
       <Layout>
-        <Section className="py-5 px-8 mx-auto w-[1280px]">
+        <Section className="py-5 px-8 mx-auto w-full md:w-[1280px]">
           <Breadcrumbs path={props.path} suffix={data.global.breadcrumbSuffix} title={data.consulting.title} />
         </Section>
         <Section

@@ -17,14 +17,14 @@
 }
 
 .breadcrumb_item {
-    @apply inline;
+    @apply inline text-[0.8rem] text-[#666];
 }
 
 .breadcrumb_item a {
-    @apply inline no-underline text-[0.8rem] text-[#666];
+    @apply no-underline;
 }
 
 .breadcrumb_item:not(:first-child)::before {
-    @apply px-2 list-none text-[0.8rem] text-[#666];
+    @apply px-2 list-none;
     content: ">";
 }
