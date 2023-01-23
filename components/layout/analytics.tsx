@@ -34,7 +34,8 @@ export const Analytics = () => {
             </Script>
             {/*Hotjar Tracking Code*/}
             <Script
-                id="hotjar-inline">
+                id="hotjar-inline"
+                strategy="afterInteractive">
                 {`
                     (function(h,o,t,j,a,r){
                         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
