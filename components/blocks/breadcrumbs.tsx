@@ -5,7 +5,7 @@ import NextBreadcrumbs from 'nextjs-breadcrumbs';
 
 export const Breadcrumbs = (props) => {
   return (
-    <div className="mb-5">
+    <div>
       <NextBreadcrumbs 
         replaceCharacterList={[
             {from: "consulting", to: "Services"},

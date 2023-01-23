@@ -43,6 +43,9 @@ export default function ConsultingPage(
     <>
       <SEO seo={data.consulting.seo} />
       <Layout>
+        <Section className="py-5 px-5">
+          <Breadcrumbs path={props.path} suffix={data.global.breadcrumbSuffix} title={data.consulting.title} />
+        </Section>
         <Section
           color="black"
           className={`
@@ -53,7 +56,6 @@ export default function ConsultingPage(
           }
         >
           <div className="mx-auto max-w-8xl px-4">
-            <Breadcrumbs path={props.path} suffix={data.global.breadcrumbSuffix} title={data.consulting.title} />
             <TinaMarkdown
               components={{ ...componentRenderer, ...consultingComponentRenderer }}
               content={data.consulting._body}
