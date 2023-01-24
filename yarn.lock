@@ -10,6 +10,16 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
+"@analytics/google-analytics@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@analytics/google-analytics/-/google-analytics-1.0.5.tgz#7ee30379bfcd082c108beed32182d9a33579d6dc"
+  integrity sha512-I/yfiCVQo8AeT72KPa6z571LJKDbLdm4ntDqOHiE2Xehw9UjKcXQWiKTHL1/nfOOiekfpLf/6rFS5P6dQ0vImw==
+
+"@analytics/google-tag-manager@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@analytics/google-tag-manager/-/google-tag-manager-0.5.3.tgz#2c8bf3c39aad941873c3f5a48307bdee752c1b39"
+  integrity sha512-hk9cQtccAA48y3yP7wZ7k0ugi7qqi4dGB/w8d+hXwnPbo52MNu07ZtclL94S4GCb2vfVPfUgGz8vpuYBUO1xZw==
+
 "@ardatan/relay-compiler@12.0.0":
   version "12.0.0"
   resolved "https://registry.yarnpkg.com/@ardatan/relay-compiler/-/relay-compiler-12.0.0.tgz#2e4cca43088e807adc63450e8cab037020e91106"
@@ -9340,6 +9350,16 @@ sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==
+
+ssw.megamenu@2.2.8:
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/ssw.megamenu/-/ssw.megamenu-2.2.8.tgz#f0b1721170d42439b98ca64527a7895910084851"
+  integrity sha512-wy8v9fyNLI2vSXTIy9NtXFa7Qs28YMZRUZnvgEyuqVFS6p4j503wJOQnZXXSJTCgeSIAleIcHfeT4/MYjAqzfQ==
+  dependencies:
+    "@fortawesome/fontawesome-svg-core" "^6.2.1"
+    "@fortawesome/free-solid-svg-icons" "^6.2.1"
+    "@fortawesome/react-fontawesome" "^0.2.0"
+    classnames "^2.3.2"
 
 stable@^0.1.8:
   version "0.1.8"
