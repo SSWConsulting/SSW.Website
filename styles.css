@@ -76,11 +76,7 @@
   .video-mask > video {
     @apply absolute min-w-full object-cover max-[1402px]:hidden;
   }
-
-  .field-wrapper {
-    @apply relative mb-[20px] block py-[5px];
-  }
-
+  
   .field-wrapper label {
     @apply absolute -top-[10px] -left-[10px] ml-[2px] bg-[length:100%_10px] bg-center bg-no-repeat px-[3px] text-[12px] font-normal text-[#999] opacity-0 transition-all duration-100 ease-linear;
     background-image: linear-gradient(to bottom, #fff, #fff);

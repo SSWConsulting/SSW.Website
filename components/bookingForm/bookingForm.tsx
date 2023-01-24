@@ -136,7 +136,7 @@ export const BookingForm = () => {
             initialValues={initialFormValues}
             onSubmit={handleOnSubmit}
           >
-            {({ values, isSubmitting, errors }) => (
+            {({ values, isSubmitting }) => (
               <Form noValidate>
                 <FormGroupInput
                   label={ACTIVE_INPUT.FullName}
@@ -231,8 +231,6 @@ export const BookingForm = () => {
                 <button type="submit" disabled={isSubmitting} className="done py-1.5 px-3">
                   SUBMIT
                 </button>
-
-                <p>{JSON.stringify(errors)}</p>
               </Form>
             )}
           </Formik>

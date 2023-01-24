@@ -23,7 +23,7 @@ const FormGroupInput: VFC<
   !props.placeholder && (props.placeholder = label);
 
   return (
-    <div className="field-wrapper">
+    <div className="field-wrapper relative mb-5 block py-1.5">
       <label htmlFor={field.name} className={activeLabelClass}>
         {label}
       </label>
