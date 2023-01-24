@@ -1,15 +1,15 @@
+import React from "react";
+import ReactPlayer from "react-player";
 import { useTina } from "tinacms/dist/react";
 import { Components, TinaMarkdown } from "tinacms/dist/rich-text";
+
 import { client } from "../../.tina/__generated__/client";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
-// import { Blocks } from "../../components/blocks-renderer";
-import React from "react";
 import { Booking } from "../../components/blocks";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import ReactPlayer from "react-player";
 
 const consultingComponentRenderer: Components<Record<string, unknown>> = {
   code: (data) => {
@@ -34,8 +34,6 @@ const consultingComponentRenderer: Components<Record<string, unknown>> = {
     return <code>{data.children}</code>;
   },
 };
-
-import { Container } from "../../components/util/container";
 
 export type ConsultingEnv = {
   env: { recaptchaKey?: string };
