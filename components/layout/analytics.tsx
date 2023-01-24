@@ -50,6 +50,19 @@ export const Analytics = () => {
             <noscript dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXX"
 height="0" width="0" style="display:none;visibility:hidden"></iframe>`}}></noscript>
             {/*Zendesk Chat*/}
+            <Script 
+                id="connectOnPage-inline"
+                strategy="afterInteractive">
+                {`
+                window.zESettings = {
+                    webWidget: {
+                        chat: {
+                            connectOnPageLoad: false        
+                        }
+                    }
+                };
+                `}
+            </Script>
             <Script
                 strategy="lazyOnload"
                 id="ze-snippet"
