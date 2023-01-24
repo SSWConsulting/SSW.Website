@@ -6,13 +6,13 @@
 This repository is a v3 of the SSW.Website. This website uses NextJS with TinaCMS.
 
 ## See the important Documents
-- Instructions - Compile (F5 Experience)
-- Instructions - Deployment
-- Business
-- Technologies and Architecture
-- Alternative Solutions Considered
-- Definition of Done
-- Definition of Ready
+- [Instructions - Compile (F5 Experience)](https://github.com/SSWConsulting/SSW.Website-v3/wiki/Instructions---Compile-(F5-Experience))
+- [Instructions - Deployment](https://github.com/SSWConsulting/SSW.Website-v3/wiki/Instructions---Deployment)
+- [Business](https://github.com/SSWConsulting/SSW.Website-v3/wiki/Business)
+- [Technologies and Architecture](https://github.com/SSWConsulting/SSW.Website-v3/wiki/Technologies-and-Architecture)
+- [Alternative Solutions Considered](https://github.com/SSWConsulting/SSW.Website-v3/wiki/Alternative-Solutions-Considered)
+- [Definition of Done](https://github.com/SSWConsulting/SSW.Website-v3/wiki/Definition-of-Done)
+- [Definition of Ready](https://github.com/SSWConsulting/SSW.Website-v3/wiki/Definition-of-Ready)
 
 ## Architecture Overview
 ![architecture-diagram](https://user-images.githubusercontent.com/17246482/213947700-2ab46353-5e1b-4e65-9681-9fddf69fdda0.png)
