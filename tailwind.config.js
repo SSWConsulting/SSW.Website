@@ -101,10 +101,7 @@ module.exports = {
         "-1": "-1",
       },
       fontFamily: {
-        sans: ["Open Sans","Helvetica Neue","Helvetica","sans-serif"],
-      },
-      backgroundImage: {
-        "benefits-bg": "url('/consulting/mvc-benefits-bg.jpg')",
+        sans: ["Open Sans", "Helvetica Neue", "Helvetica", "sans-serif"],
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -195,6 +192,7 @@ module.exports = {
       backgroundImage: {
         "live-banner-wait": "url('/blocks/LiveStreamBanner-Wait.png')",
         "live-banner-live": "url('/blocks/LiveStreamBanner-Live.gif')",
+        "benefits": "url('/consulting/mvc-benefits-bg.jpg')",
       }
     },
   },
