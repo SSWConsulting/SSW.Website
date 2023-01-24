@@ -32,19 +32,23 @@ const consultingComponentRenderer: Components<Record<string, unknown>> = {
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
+
   const { data } = useTina({
     data: props.data,
     query: props.query,
     variables: props.variables,
-    path: props.path
   });
+
+  const removeExtension = (file: string) => {
+    return file.split(".")[0]
+  }
 
   return (
     <>
       <SEO seo={data.consulting.seo} />
       <Layout>
         <Section className="mx-auto w-full py-5 px-8 md:w-224">
-          <Breadcrumbs path={props.path} suffix={data.global.breadcrumbSuffix} title={data.consulting.title} />
+          <Breadcrumbs path={removeExtension(props.variables.relativePath)} suffix={data.global.breadcrumbSuffix} title={data.consulting.title} />
         </Section>
         <Section
           color="black"
@@ -76,7 +80,6 @@ export const getStaticProps = async ({ params }) => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
-      path: params.filename,
     },
   };
 };
