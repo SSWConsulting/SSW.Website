@@ -1,5 +1,6 @@
 import React from "react";
 import ReactPlayer from "react-player";
+import type { Template } from "tinacms";
 
 export const VideoEmbed = ({ data }) => {
   return (
