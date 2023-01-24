@@ -279,23 +279,6 @@ const config = defineStaticConfig({
           seoSchema,
           {
             type: "object",
-            label: "Booking",
-            name: "booking",
-            fields: [
-              {
-                type: "string",
-                label: "Title",
-                name: "title",
-              },
-              {
-                type: "string",
-                label: "subTitle",
-                name: "subTitle",
-              }
-            ]
-          },
-          {
-            type: "object",
             label: "Benefits",
             name: "benefits",
             fields: [
