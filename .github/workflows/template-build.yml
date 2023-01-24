@@ -13,6 +13,16 @@ on:
         required: true
       TINA_TOKEN:
         required: true
+      NEXT_PUBLIC_GOOGLE_GTM_ID:
+        required: true
+      NEXT_PUBLIC_GOOGLE_ANALYTICS:
+        required: true
+      NEXT_PUBLIC_HOTJAR_ID:
+        required: true
+      NEXT_PUBLIC_HOTJAR_SV:
+        required: true
+      NEXT_PUBLIC_ZENDESK_CHAT_KEY:
+        required: true
 
 defaults:
   run:
@@ -60,3 +70,8 @@ jobs:
           NEXT_PUBLIC_TINA_CLIENT_ID=${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
           NEXT_PUBLIC_TINA_BRANCH=${{ github.head_ref || github.ref_name }}
           TINA_TOKEN=${{ secrets.TINA_TOKEN }}
+          NEXT_PUBLIC_GOOGLE_GTM_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID}}
+          NEXT_PUBLIC_GOOGLE_ANALYTICS=${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS}}
+          NEXT_PUBLIC_HOTJAR_ID=${{ secrets.NEXT_PUBLIC_HOTJAR_ID}}
+          NEXT_PUBLIC_HOTJAR_SV=${{ secrets.NEXT_PUBLIC_HOTJAR_SV}}
+          NEXT_PUBLIC_ZENDESK_CHAT_KEY=${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY}}

@@ -4,7 +4,7 @@
 
 @layer base {
   a {
-    transition: all .3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
   }
 
   a:not(.unstyled) {
@@ -15,3 +15,4 @@
 @layer components {
   @import "react-responsive-carousel/lib/styles/carousel.min.css";
 }
+
