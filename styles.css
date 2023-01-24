@@ -4,7 +4,7 @@
 
 @layer base {
   a {
-    transition: all .3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
   }
 
   a:not(.unstyled) {
@@ -16,15 +16,3 @@
   @import "react-responsive-carousel/lib/styles/carousel.min.css";
 }
 
-.breadcrumb_item {
-    @apply inline text-[0.8rem] text-[#666];
-}
-
-.breadcrumb_item a {
-    @apply no-underline;
-}
-
-.breadcrumb_item:not(:first-child)::before {
-    @apply px-2 list-none;
-    content: ">";
-}

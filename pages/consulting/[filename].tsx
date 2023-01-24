@@ -1,7 +1,7 @@
 import { useTina } from "tinacms/dist/react";
 import { Components, TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../.tina/__generated__/client";
-// import { Blocks } from "../../components/blocks-renderer";
+import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
 import { Section } from "../../components/util/section";
@@ -11,7 +11,11 @@ import ReactPlayer from "react-player";
 
 const consultingComponentRenderer: Components<Record<string, unknown>> = {
   code: (data) => {
-    const { children: { props: { type, text } } } = data;
+    const {
+      children: {
+        props: { type, text },
+      },
+    } = data;
     if (type === "text" && text.startsWith("youtube:")) {
       const link = text.replace("youtube:", "").trim();
       return (
@@ -23,10 +27,10 @@ const consultingComponentRenderer: Components<Record<string, unknown>> = {
             height={"100%"}
           />
         </div>
-      )
+      );
     }
-    return <code>{data.children}</code>
-  }
+    return <code>{data.children}</code>;
+  },
 };
 
 export default function ConsultingPage(
@@ -52,18 +56,20 @@ export default function ConsultingPage(
         </Section>
         <Section
           color="black"
-          className={`
-            prose-consulting
-            border-y-4 border-y-sswRed
-            bg-benefits-bg bg-cover bg-fixed bg-center bg-no-repeat
-            py-24 text-center`
-          }
+          className={`prose-consulting border-y-4
+                    border-y-sswRed 
+                    bg-benefits bg-cover bg-fixed bg-center bg-no-repeat
+                    py-24 text-center`}
         >
           <div className="mx-auto max-w-8xl px-4">
             <TinaMarkdown
-              components={{ ...componentRenderer, ...consultingComponentRenderer }}
+              components={{
+                ...componentRenderer,
+                ...consultingComponentRenderer,
+              }}
               content={data.consulting._body}
             />
+            <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
           </div>
         </Section>
       </Layout>
@@ -75,11 +81,15 @@ export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.consultingContentQuery({
     relativePath: `${params.filename}.mdx`,
   });
+
+  const testimonials = await client.queries.allTestimonialsQuery();
+
   return {
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
+      testimonialResult: testimonials,
     },
   };
 };
