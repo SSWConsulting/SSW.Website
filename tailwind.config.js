@@ -91,6 +91,7 @@ module.exports = {
     },
     minHeight: {
       158: "39.5rem",
+      1025: "410px",
     },
     extend: {
       textDecoration: ["active"],
@@ -103,6 +104,8 @@ module.exports = {
         "9xl": "86rem",
       },
       spacing: {
+        15: "60px",
+        25: "100px",
         128: "32rem",
         liveStream: "75px",
       },
