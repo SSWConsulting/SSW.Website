@@ -1,8 +1,6 @@
 import { VFC, useEffect, useState } from "react";
 import TechnologyCard from "./technologyCard";
-import {
-  TechnologyCardsProps
-} from "./technologyCardTypes";
+import { TechnologyCardsProps } from "./technologyCardTypes";
 
 const TechnologyCards: VFC<TechnologyCardsProps> = ({
   techHeader,
@@ -35,8 +33,8 @@ const TechnologyCards: VFC<TechnologyCardsProps> = ({
   }, []);
 
   return (
-    <article className="main-container">
-      <h1>{techHeader}</h1>
+    <article className="main-container bg-white text-black">
+      <h1 className="mt-0">{techHeader}</h1>
       <div className="grid grid-cols-12">{techComponents}</div>
     </article>
   );

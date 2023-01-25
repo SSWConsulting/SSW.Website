@@ -2,7 +2,7 @@
   @apply m-[20px_15px_60px_15px] min-h-[410px] border-b-[2px] border-solid border-b-sswRed bg-gray-75 p-[41px];
 }
 .technology-card p {
-  @apply m-[0_auto] w-9/12 p-[20px_0] text-justify font-sans text-md font-light text-black;
+  @apply m-[0_auto] w-9/12 p-[20px_0] text-justify font-sans text-md font-light;
 }
 .technology-card p a {
   @apply ml-4 font-body;

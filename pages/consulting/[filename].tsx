@@ -7,6 +7,9 @@ import { Layout } from "../../components/layout";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import ReactPlayer from "react-player";
+// import { Blocks } from "../../components/blocks-renderer";
+import React from "react";
+import TechnologyCards from "../../components/technologyCard/technologyCards";
 
 const consultingComponentRenderer: Components<Record<string, unknown>> = {
   code: (data) => {
@@ -31,10 +34,6 @@ const consultingComponentRenderer: Components<Record<string, unknown>> = {
     return <code>{data.children}</code>;
   },
 };
-// import { Blocks } from "../../components/blocks-renderer";
-import React from "react";
-import TechnologyCards from "../../components/technologyCard/technologyCards";
-import { Container } from "../../components/util/container";
 
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -47,11 +46,12 @@ export default function ConsultingPage(
 
   const technologyCardDocs =
     props.technologyCards.data.technologiesConnection.edges.map((n) => n.node);
-  const techCards = data.consulting.technologyCards?.map((c) => ({
-    ...technologyCardDocs.find(
-      (n) => !!n.name && n.name === c.technologyCard?.name
-    ),
-  })) || [];
+  const techCards =
+    data.consulting.technologyCards?.map((c) => ({
+      ...technologyCardDocs.find(
+        (n) => !!n.name && n.name === c.technologyCard?.name
+      ),
+    })) || [];
 
   return (
     <>
@@ -73,10 +73,10 @@ export default function ConsultingPage(
               content={data.consulting._body}
             />
             <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
-          <TechnologyCards
-            techHeader={data.consulting.techHeader}
-            techCards={techCards}
-          ></TechnologyCards>
+            <TechnologyCards
+              techHeader={data.consulting.techHeader}
+              techCards={techCards}
+            />
           </div>
         </Section>
       </Layout>
@@ -90,9 +90,7 @@ export const getStaticProps = async ({ params }) => {
   });
 
   const testimonials = await client.queries.allTestimonialsQuery();
-  const technologyCards = tinaProps.data.consulting.technologyCards.map(
-    (c) => c.name
-  );
+
   const technologyCardNames =
     tinaProps.data.consulting.technologyCards?.reduce<string[]>((pre, cur) => {
       !!cur.technologyCard?.name && pre.push(cur.technologyCard.name);

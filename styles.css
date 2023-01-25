@@ -39,7 +39,6 @@
 
 @layer components {
   @import "react-responsive-carousel/lib/styles/carousel.min.css";
-}
 
   @import "react-responsive-modal/styles.css";
   @import "@fontsource/open-sans/300.css";
