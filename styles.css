@@ -15,16 +15,3 @@
 @layer components {
   @import "react-responsive-carousel/lib/styles/carousel.min.css";
 }
-
-.breadcrumb_item {
-    @apply inline text-[0.8rem] text-[#666];
-}
-
-.breadcrumb_item a {
-    @apply no-underline;
-}
-
-.breadcrumb_item:not(:first-child)::before {
-    @apply px-2 list-none;
-    content: ">";
-}

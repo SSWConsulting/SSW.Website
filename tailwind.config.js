@@ -1,4 +1,5 @@
 const colors = require("tailwindcss/colors");
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   mode: "jit",
@@ -84,6 +85,9 @@ module.exports = {
       4: "4px",
     },
     extend: {
+        content: {
+            'bread': "'>'",
+        },
       textDecoration: ["active"],
       opacity: {
         7: ".075",
@@ -205,5 +209,14 @@ module.exports = {
   plugins: [
     require("@tailwindcss/typography"),
     require("@headlessui/tailwindcss")({ prefix: "ui" }),
+
+    // taken from https://github.com/tailwindlabs/tailwindcss/discussions/2156#discussioncomment-1283105
+    plugin(function ({ addVariant, e }) {
+      addVariant("not-first", ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.${e(`not-first${separator}${className}`)}:not(:first-child)`
+        })
+      })
+    }),
   ],
 };
