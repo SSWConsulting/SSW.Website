@@ -3,7 +3,7 @@ import Head from "next/head";
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { Theme } from "./theme";
-import { Menu, MobileMenu } from "ssw.megamenu"
+import { Menu, MobileMenu } from "../../lib/ssw.megamenu"
 
 export const Layout = ({ children }) => {
   const node = useRef<HTMLDivElement>();
