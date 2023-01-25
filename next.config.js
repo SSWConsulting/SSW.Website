@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
-module.exports = withTM({
+module.exports = {
   images: {
     domains: ["assets.tina.io"],
   },
@@ -25,4 +24,4 @@ module.exports = withTM({
       },
     ];
   },
-});
+};
