@@ -85,9 +85,9 @@ module.exports = {
       4: "4px",
     },
     extend: {
-        content: {
-            'bread': "'>'",
-        },
+      content: {
+        'bread': "'>'",
+      },
       textDecoration: ["active"],
       opacity: {
         7: ".075",
