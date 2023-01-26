@@ -18,6 +18,9 @@ export const VideoEmbed = ({ data }) => {
 export const videoEmbedBlockSchema: Template = {
   name: "VideoEmbed",
   label: "Video Embed",
+  ui: {
+    previewSrc: "/blocks/videoEmbedContent.png"
+  },
   fields: [
     {
       type: "string",
