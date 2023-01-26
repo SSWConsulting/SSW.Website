@@ -63,7 +63,7 @@ export default function ConsultingPage(
     <>
       <SEO seo={data.consulting.seo} />
       <Layout>
-        <Section className="mx-auto w-full py-5 px-8 max-w-9xl">
+        <Section className="mx-auto w-full max-w-7xl py-5 px-8">
           <Breadcrumbs path={removeExtension(props.variables.relativePath)} suffix={data.global.breadcrumbSuffix} title={data.consulting.title} />
         </Section>
         <Section
