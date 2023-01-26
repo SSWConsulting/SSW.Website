@@ -44,10 +44,6 @@
   @import "@fontsource/open-sans/300.css";
   @import "aos/dist/aos.css";
 
-  .main-container {
-    @apply mx-auto max-w-[1170px] px-[15px];
-  }
-
   .bg-phone {
     @apply bg-[#b31217];
   }

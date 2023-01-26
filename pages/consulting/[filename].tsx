@@ -71,24 +71,25 @@ export default function ConsultingPage(
           className={`
             prose-consulting
             border-y-4 border-y-sswRed
-            bg-benefits bg-cover bg-fixed bg-center bg-no-repeat
-            py-24 text-center`}
+            text-center`}
         >
-          <div className="mx-auto max-w-8xl px-4">
-            <TinaMarkdown
-              components={{
-                ...componentRenderer,
-                ...consultingComponentRenderer,
-              }}
-              content={data.consulting._body}
-            />
-            <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
-            <TechnologyCards
-              techHeader={data.consulting.techHeader}
-              techCards={techCards}
-            />
-            <Benefits data={data.consulting.benefits} />
+          <div className="bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
+            <div className="mx-auto max-w-8xl px-4">
+              <TinaMarkdown
+                components={{
+                  ...componentRenderer,
+                  ...consultingComponentRenderer,
+                }}
+                content={data.consulting._body}
+              />
+              <Benefits data={data.consulting.benefits} />
+            </div>
           </div>
+          <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
+          <TechnologyCards
+            techHeader={data.consulting.techHeader}
+            techCards={techCards}
+          />
         </Section>
       </Layout>
     </>
