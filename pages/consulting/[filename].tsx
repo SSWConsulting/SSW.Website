@@ -9,7 +9,6 @@ import { SEO } from "../../components/util/seo";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Benefits } from "../../components/util/consulting/benefits";
 import ReactPlayer from "react-player";
-// import { Blocks } from "../../components/blocks-renderer";
 import React from "react";
 import TechnologyCards from "../../components/technologyCard/technologyCards";
 
@@ -70,11 +69,10 @@ export default function ConsultingPage(
         <Section
           color="black"
           className={`
-            prose-consulting
-            border-y-4 border-y-sswRed
-            bg-benefits-bg bg-cover bg-fixed bg-center bg-no-repeat
-            py-24 text-center`
-          }
+            bg-benefits-bg
+            prose-consulting border-y-4
+            border-y-sswRed bg-cover bg-fixed bg-center bg-no-repeat
+            py-24 text-center`}
         >
           <div className="mx-auto max-w-8xl px-4">
             <TinaMarkdown

@@ -360,19 +360,6 @@ const config = defineStaticConfig({
           },
           {
             type: "object",
-            list: true,
-            label: "Technology Cards",
-            name: "technologyCards",
-            fields: [
-              {
-                type: "string",
-                label: "Name",
-                name: "name"
-              }
-            ]
-          },
-          {
-            type: "object",
             label: "Solution",
             name: "solution",
             fields: [
