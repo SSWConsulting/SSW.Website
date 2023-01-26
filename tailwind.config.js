@@ -120,9 +120,6 @@ module.exports = {
         sans: ["Open Sans", "Helvetica Neue", "Helvetica", "sans-serif"],
         body: ["Arial", "Helvetica Neue", "Helvetica", "sans-serif"],
       },
-      backgroundImage: {
-        "benefits-bg": "url('/consulting/mvc-benefits-bg.jpg')",
-      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
@@ -146,6 +143,18 @@ module.exports = {
               color: theme("colors.gray.700"),
               backgroundColor: theme("colors.gray.100"),
               lineHeight: 1.5,
+            },
+            code: {
+              backgroundColor: theme("colors.gray.100"),
+              padding: "0.25rem",
+              borderRadius: "3px",
+              margin: "-0.25rem 1px",
+            },
+            "code::before": {
+              content: "",
+            },
+            "code::after": {
+              content: "",
             },
           },
         },
@@ -202,42 +211,7 @@ module.exports = {
               margin: "2em 3rem 0 3rem",
               "> div::before": {
                 color: theme("colors.sswRed"),
-                content: "\"\u25A0\"",
-                display: "inline-block",
-                fontFamily: "Arial Black",
-                fontWeight: theme("fontWeight.bold"),
-                marginLeft: "-1em",
-                width: "1em",
-              },
-            },
-          }
-        },
-        consulting: {
-          css: {
-            h1: {
-              fontSize: "3.28rem",
-              margin: "1rem 0",
-              padding: "60px 0 20px 0",
-              lineHeight: 1.2,
-              fontWeight: theme("fontWeight.light"),
-              "> strong": {
-                color: theme("colors.sswRed"),
-              },
-            },
-            "p, ul": {
-              fontSize: "1.2rem",
-              fontWeight: theme("fontWeight.light"),
-              margin: "0 auto",
-              padding: "20px 0",
-              width: "75%",
-            },
-            "ul > li": {
-              display: "block",
-              fontWeight: theme("fontWeight.bold"),
-              margin: "2em 3rem 0 3rem",
-              "> div::before": {
-                color: theme("colors.sswRed"),
-                content: '"\u25A0"',
+                content: "\u25A0",
                 display: "inline-block",
                 fontFamily: "Arial Black",
                 fontWeight: theme("fontWeight.bold"),
@@ -259,7 +233,7 @@ module.exports = {
     extend: { typography: ["tint", "dark", "primary"] },
   },
   plugins: [
-    require('./plugins/normalize.js'),
+    require("./plugins/normalize.js"),
     require("@tailwindcss/typography"),
     require("@headlessui/tailwindcss")({ prefix: "ui" }),
 
