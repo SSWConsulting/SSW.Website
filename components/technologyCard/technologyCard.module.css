@@ -1,0 +1,12 @@
+.technology-card p {
+  @apply mx-auto my-auto w-9/12 px-0 py-5 text-justify font-sans text-md font-light;
+}
+.technology-card p a {
+  @apply ml-4 font-body;
+}
+.technology-card a {
+  @apply text-gray-650;
+}
+.technology-card img {
+  @apply h-25;
+}

@@ -296,8 +296,8 @@ const config = defineStaticConfig({
                 type: "string",
                 label: "subTitle",
                 name: "subTitle",
-              }
-            ]
+              },
+            ],
           },
           {
             type: "object",
@@ -341,9 +341,9 @@ const config = defineStaticConfig({
                     type: "string",
                     label: "URL",
                     name: "url",
-                  }
+                  },
                 ],
-              }
+              },
             ],
           },
           {
@@ -353,28 +353,15 @@ const config = defineStaticConfig({
           },
           {
             type: "object",
-            list: true,
-            label: "Technology Cards",
-            name: "technologyCards",
-            fields: [
-              {
-                type: "string",
-                label: "Name",
-                name: "name"
-              }
-            ]
-          },
-          {
-            type: "object",
             label: "Solution",
             name: "solution",
             fields: [
               {
                 type: "string",
                 label: "Project",
-                name: "project"
-              }
-            ]
+                name: "project",
+              },
+            ],
           },
           {
             type: "rich-text",
@@ -382,6 +369,25 @@ const config = defineStaticConfig({
             name: "_body",
             templates: [...Schemas.pageBlocks],
             isBody: true,
+          },
+          {
+            type: "object",
+            label: "Technology Cards",
+            name: "technologyCards",
+            ui: {
+              itemProps: (item) => ({
+                label: item?.technologyCard,
+              }),
+            },
+            list: true,
+            fields: [
+              {
+                type: "reference",
+                label: "Technology Card",
+                name: "technologyCard",
+                collections: ["technologies"],
+              },
+            ],
           },
         ],
       },
@@ -396,30 +402,66 @@ const config = defineStaticConfig({
           },
         },
         fields: [
-        {
-          type: "string",
-          label: "Name",
-          name: "name",
-          required: true,
+          {
+            type: "string",
+            label: "Name",
+            name: "name",
+            required: true,
+          },
+          {
+            type: "image",
+            label: "Avatar",
+            name: "avatar",
+            required: true,
+          },
+          {
+            type: "string",
+            label: "Company",
+            name: "company",
+            required: true,
+          },
+          {
+            type: "rich-text",
+            label: "Body",
+            name: "body",
+            isBody: true,
+          },
+        ],
+      },
+      {
+        label: "Technology Cards",
+        name: "technologies",
+        format: "mdx",
+        path: "content/technologies",
+        ui: {
+          router: ({ document }) => {
+            return `/technologies/${document._sys.filename}`;
+          },
         },
-        {
-          type: "image",
-          label: "Avatar",
-          name: "avatar",
-          required: true,
-        },
-        {
-          type: "string",
-          label: "Company",
-          name: "company",
-          required: true,
-        },
-        {
-          type: "rich-text",
-          label: "Body",
-          name: "body",
-          isBody: true,
-        },
+        fields: [
+          {
+            type: "string",
+            label: "Name",
+            name: "name",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "string",
+            label: "Read More Slug",
+            name: "readMoreSlug",
+          },
+          {
+            type: "image",
+            label: "Thumbnail",
+            name: "thumbnail",
+          },
+          {
+            type: "rich-text",
+            label: "Body",
+            name: "body",
+            isBody: true,
+          },
         ],
       },
     ],
