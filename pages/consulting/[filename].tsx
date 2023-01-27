@@ -2,6 +2,7 @@ import { useTina } from "tinacms/dist/react";
 import { Components, TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../.tina/__generated__/client";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
+import { Marketing } from "../../components/marketing/Marketing";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
 import { Section } from "../../components/util/section";
@@ -73,6 +74,7 @@ export default function ConsultingPage(
               content={data.consulting._body}
             />
             <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
+            <Marketing content={data.consulting} />
             <TechnologyCards
               techHeader={data.consulting.techHeader}
               techCards={techCards}
