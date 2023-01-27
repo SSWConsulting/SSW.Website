@@ -38,7 +38,7 @@ const config = defineStaticConfig({
         format: "mdx",
         ui: {
           router: ({ document }) => {
-            return `/consulting/${document._sys.filename}`;
+            return `/marketing/${document._sys.filename}`;
           },
         },
         fields: [
