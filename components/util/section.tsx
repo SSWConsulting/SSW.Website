@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-export const Section = ({ children, color = "", className = "" }) => {
+export const Section = ({ children, color = "", className = "", style = {} }) => {
   const sectionColor = {
     default: "bg-white text-black",
     lightgray: "bg-gray-100 text-black",
@@ -17,6 +17,7 @@ export const Section = ({ children, color = "", className = "" }) => {
         sectionColorCss,
         className
       )}
+      style={style}
     >
       {children}
     </section>
