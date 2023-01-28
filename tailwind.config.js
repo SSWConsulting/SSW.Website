@@ -70,6 +70,7 @@ module.exports = {
       xs: ".875rem",
       sm: "1rem",
       base: "1.125rem",
+      md: "1.2rem",
       lg: "1.25rem",
       xl: "1.5rem",
       "2xl": "1.75rem",
@@ -86,6 +87,10 @@ module.exports = {
       2: "2px",
       3: "3px",
       4: "4px",
+    },
+    minHeight: {
+      158: "39.5rem",
+      1025: "410px",
     },
     extend: {
       textDecoration: ["active"],
@@ -104,6 +109,8 @@ module.exports = {
         "9xl": "86rem",
       },
       spacing: {
+        15: "60px",
+        25: "100px",
         128: "32rem",
         liveStream: "75px",
       },
@@ -235,8 +242,8 @@ module.exports = {
       backgroundImage: {
         "live-banner-wait": "url('/blocks/LiveStreamBanner-Wait.png')",
         "live-banner-live": "url('/blocks/LiveStreamBanner-Live.gif')",
-        "benefits": "url('/consulting/mvc-benefits-bg.jpg')",
-      }
+        benefits: "url('/consulting/mvc-benefits-bg.jpg')",
+      },
     },
   },
   variants: {

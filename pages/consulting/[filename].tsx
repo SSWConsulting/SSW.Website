@@ -10,6 +10,10 @@ import { componentRenderer } from "../../components/blocks/mdxComponentRenderer"
 import { Layout } from "../../components/layout";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
+import ReactPlayer from "react-player";
+// import { Blocks } from "../../components/blocks-renderer";
+import React from "react";
+import TechnologyCards from "../../components/technologyCard/technologyCards";
 
 const consultingComponentRenderer: Components<Record<string, unknown>> = {
   code: (data) => {
@@ -51,6 +55,15 @@ export default function ConsultingPage(
     variables: props.variables,
   });
 
+  const technologyCardDocs =
+    props.technologyCards.data.technologiesConnection.edges.map((n) => n.node);
+  const techCards =
+    data.consulting.technologyCards?.map((c) => ({
+      ...technologyCardDocs.find(
+        (n) => !!n.name && n.name === c.technologyCard?.name
+      ),
+    })) || [];
+
   return (
       <ConsultingContext.Provider
           value={{
@@ -81,6 +94,10 @@ export default function ConsultingPage(
               content={data.consulting._body}
             />
             <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
+            <TechnologyCards
+              techHeader={data.consulting.techHeader}
+              techCards={techCards}
+            />
           </div>
         </Section>
       </Layout>
@@ -95,14 +112,24 @@ export const getStaticProps = async ({ params }) => {
 
   const testimonials = await client.queries.allTestimonialsQuery();
 
+  const technologyCardNames =
+    tinaProps.data.consulting.technologyCards?.reduce<string[]>((pre, cur) => {
+      !!cur.technologyCard?.name && pre.push(cur.technologyCard.name);
+      return pre;
+    }, []) || [];
+  const technologyCardsProps = await client.queries.technologyCardContentQuery({
+    cardNames: technologyCardNames,
+  });
+
   return {
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
       testimonialResult: testimonials,
+      technologyCards: technologyCardsProps,
       env: {
-        GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY || null,
+          GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY || null,
       },
     },
   };
