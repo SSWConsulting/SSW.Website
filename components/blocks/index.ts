@@ -23,7 +23,8 @@ export const pageBlocks: Template[] = [
     customImageBlockSchema,
     clientLogosBlockSchema,
     columnLayoutBlockSchema,
-    videoEmbedBlockSchema,
+    videoEmbedBlockSchema
+];
 
 export * from "./carousel";
 export * from "./serviceCards";
