@@ -88,10 +88,6 @@ module.exports = {
       3: "3px",
       4: "4px",
     },
-    minHeight: {
-      158: "39.5rem",
-      1025: "410px",
-    },
     extend: {
       textDecoration: ["active"],
       opacity: {
@@ -103,6 +99,10 @@ module.exports = {
       },
       width: {
         88: "22rem",
+      },
+      minHeight: {
+        158: "39.5rem",
+        1025: "410px",
       },
       maxWidth: {
         "8xl": "83rem",
@@ -148,6 +148,7 @@ module.exports = {
           125: "#eeeeee", 
           450: "#9e9e9e", 
           550: "#6C757D", 
+          650: "#666666",
         },
         red: {
           550: "#dc3545",

@@ -1,16 +1,14 @@
-import React from "react";
-import ReactPlayer from "react-player";
 import { useTina } from "tinacms/dist/react";
 import { Components, TinaMarkdown } from "tinacms/dist/rich-text";
 
+import ReactPlayer from "react-player";
 import { client } from "../../.tina/__generated__/client";
-import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { Booking } from "../../components/blocks";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
+import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import ReactPlayer from "react-player";
 // import { Blocks } from "../../components/blocks-renderer";
 import React from "react";
 import TechnologyCards from "../../components/technologyCard/technologyCards";
