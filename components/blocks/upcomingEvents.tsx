@@ -47,8 +47,8 @@ export const UpcomingEvents = ({ data }) => {
   }, []);
 
   return (
-    <div className="not-prose">
-      <h2 className="pb-5 text-2xl font-light">{data.title}</h2>
+    <div className="prose-home">
+      <h1 className="pb-5 font-light">{data.title}</h1>
       <div>
         <div className="max-h-128 overflow-x-hidden overflow-y-scroll border-2 bg-gray-100">
           {loading ? <p>Loading...</p> : events.map(renderEvent)}

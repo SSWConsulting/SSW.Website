@@ -201,6 +201,26 @@ module.exports = {
             },
           },
         },
+        home: {
+          css: {
+            h1: {
+              fontSize: "2rem",
+              margin: "1rem 0",
+              padding: "60px 0 20px 0",
+              lineHeight: 1.2,
+            },
+            h3: {
+              fontSize: "1.5rem",
+              marginBottom: "7px",
+            },
+            p: {
+              marginBottom: "10px",
+            },
+            hr: {
+              margin: "30px 0",
+            }
+          },
+        },
       }),
       backgroundImage: {
         "live-banner-wait": "url('/blocks/LiveStreamBanner-Wait.png')",
