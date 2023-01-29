@@ -17,7 +17,7 @@ export const ColumnLayout = ({ data }) => {
   return (
     <div className="grid grid-cols-12 gap-x-6">
       <div className="sm:col-span-5">
-        {!!data.imageLink ? (
+        {data.imageLink ? (
           <a href={data.imageLink} target="_blank">
             <RawImage />
           </a>
