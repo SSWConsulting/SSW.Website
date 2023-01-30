@@ -379,11 +379,6 @@ const config = defineStaticConfig({
             ],
           },
           {
-            type: "string",
-            label: "Technology header",
-            name: "techHeader",
-          },
-          {
             type: "object",
             label: "Solution",
             name: "solution",
@@ -401,6 +396,11 @@ const config = defineStaticConfig({
             name: "_body",
             templates: [...Schemas.pageBlocks],
             isBody: true,
+          },
+          {
+            type: "string",
+            label: "Technology header",
+            name: "techHeader",
           },
           {
             type: "object",
