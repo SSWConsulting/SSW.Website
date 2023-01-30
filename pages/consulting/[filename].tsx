@@ -6,6 +6,7 @@ import { componentRenderer } from "../../components/blocks/mdxComponentRenderer"
 import { Layout } from "../../components/layout";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import ReactPlayer from "react-player";
 // import { Blocks } from "../../components/blocks-renderer";
 import React from "react";
@@ -38,11 +39,16 @@ const consultingComponentRenderer: Components<Record<string, unknown>> = {
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
+
   const { data } = useTina({
     data: props.data,
     query: props.query,
     variables: props.variables,
   });
+
+  const removeExtension = (file: string) => {
+    return file.split(".")[0]
+  }
 
   const technologyCardDocs =
     props.technologyCards.data.technologiesConnection.edges.map((n) => n.node);
@@ -57,6 +63,9 @@ export default function ConsultingPage(
     <>
       <SEO seo={data.consulting.seo} />
       <Layout>
+        <Section className="mx-auto w-full max-w-7xl py-5 px-8">
+          <Breadcrumbs path={removeExtension(props.variables.relativePath)} suffix={data.global.breadcrumbSuffix} title={data.consulting.title} />
+        </Section>
         <Section
           color="black"
           className={`prose-consulting border-y-4
