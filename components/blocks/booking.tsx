@@ -2,21 +2,25 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { VFC, useState } from "react";
 import layoutData from "../../content/global/index.json";
-import BookingFormPopup from "../bookingFormPopup/bookingFormPopup";
+import FormPopup from "../formPopup/formPopup";
 import Button from "../button/button";
+import { BookingForm } from "../bookingForm/bookingForm";
 
 export const Booking: VFC<{
   title?: string;
   subTitle?: string;
   buttonText?: string;
   videoBackground?: string;
-}> = ({ title, subTitle, buttonText, videoBackground }) => {
+  recaptchaKey?: string;
+}> = ({ title, subTitle, buttonText, videoBackground, recaptchaKey }) => {
   const [isVisible, setIsVisible] = useState(false);
   const showBookingForm = () => setIsVisible(!isVisible);
 
   const sydneyOfficeLayoutData = layoutData.offices.find(
     (o) => o.addressLocality === "Sydney"
   );
+
+  const bookingForm = <BookingForm recaptchaKey={recaptchaKey} />;
 
   return (
     <>
@@ -31,9 +35,10 @@ export const Booking: VFC<{
         >
           {buttonText}
         </Button>
-        <BookingFormPopup
+        <FormPopup
           isVisible={isVisible}
           showBookingForm={setIsVisible}
+          formChildren={bookingForm}
         />
         <h2>or call us on {sydneyOfficeLayoutData.phone}</h2>
         <div className="animate-more-bounce pt-20">

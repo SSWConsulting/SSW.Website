@@ -1,8 +1,8 @@
 import Modal from "react-responsive-modal";
 import { BookingForm } from "../bookingForm/bookingForm";
-import styles from "./bookingFormPopup.module.css";
+import styles from "./formPopup.module.css";
 
-const BookingFormPopup = ({ isVisible, showBookingForm }) => {
+const FormPopup = ({ isVisible, showBookingForm, formChildren }) => {
   return (
     <div>
       <Modal
@@ -16,10 +16,10 @@ const BookingFormPopup = ({ isVisible, showBookingForm }) => {
         }}
         animationDuration={700}
       >
-        <BookingForm />
+        {formChildren}
       </Modal>
     </div>
   );
 };
 
-export default BookingFormPopup;
+export default FormPopup;

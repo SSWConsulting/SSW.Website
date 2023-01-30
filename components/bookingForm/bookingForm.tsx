@@ -1,8 +1,7 @@
 import { Form, Formik } from "formik";
 import { useRouter } from "next/router";
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import { ConsultingContext } from "../../pages/consulting/[filename]";
 import { createLead } from "../../services";
 import FormGroupInput from "../form/formGroupInput";
 import FormGroupSelect from "../form/formGroupSelect";
@@ -19,12 +18,11 @@ import {
 import { bookingFormSubmissionData } from "./bookingFormSubmissionData";
 import { ValidationSchema } from "./validationSchema";
 
-export const BookingForm = () => {
+export const BookingForm = ({recaptchaKey}) => {
   //Show FormStates and Active label
   const [contactSuccess, setContactSuccess] = useState(false);
   const [country, setCountry] = useState("");
   const [activeInputLabel, setActiveInputLabel] = useState({});
-  const consultingContext = useContext(ConsultingContext);
   const router = useRouter();
 
   const initialFormValues = {
@@ -218,9 +216,9 @@ export const BookingForm = () => {
                 />
 
                 <div className="mb-4 h-22 w-88">
-                  {!!consultingContext.env.recaptchaKey && (
+                  {recaptchaKey && (
                     <ReCAPTCHA
-                      sitekey={consultingContext.env.recaptchaKey}
+                      sitekey={recaptchaKey}
                       onChange={(value) => {
                         setContactReCaptcha(value);
                       }}

@@ -38,17 +38,9 @@ const consultingComponentRenderer: Components<Record<string, unknown>> = {
   },
 };
 
-export type ConsultingEnv = {
-  env: { recaptchaKey?: string };
-};
-export const ConsultingContext = React.createContext<ConsultingEnv>({
-  env: {},
-});
-
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
-
   const { data } = useTina({
     data: props.data,
     query: props.query,
@@ -56,8 +48,8 @@ export default function ConsultingPage(
   });
 
   const removeExtension = (file: string) => {
-    return file.split(".")[0]
-  }
+    return file.split(".")[0];
+  };
 
   const technologyCardDocs =
     props.technologyCards.data.technologiesConnection.edges.map((n) => n.node);
@@ -69,27 +61,31 @@ export default function ConsultingPage(
     })) || [];
 
   return (
-      <ConsultingContext.Provider
-          value={{
-              env: {
-                  recaptchaKey: props.env["GOOGLE_RECAPTCHA_KEY"],
-              },
-          }}
-      >
+    <>
       <SEO seo={data.consulting.seo} />
       <Layout>
         <Section className="mx-auto w-full max-w-7xl py-5 px-8">
-          <Breadcrumbs path={removeExtension(props.variables.relativePath)} suffix={data.global.breadcrumbSuffix} title={data.consulting.title} />
+          <Breadcrumbs
+            path={removeExtension(props.variables.relativePath)}
+            suffix={data.global.breadcrumbSuffix}
+            title={data.consulting.title}
+          />
         </Section>
-        <Section className="video-mask items-center text-center font-light" color="black">
-          <Booking {...data.consulting.booking}></Booking>
+        <Section
+          className="video-mask items-center text-center font-light"
+          color="black"
+        >
+          <Booking
+            {...data.consulting.booking}
+            recaptchaKey={props.env["GOOGLE_RECAPTCHA_KEY"]}
+          ></Booking>
         </Section>
         <Section
           color="black"
           className={`prose-consulting border-y-4
-                    border-y-sswRed 
-                    bg-benefits bg-cover bg-fixed bg-center bg-no-repeat
-                    py-24 text-center`}
+                  border-y-sswRed 
+                  bg-benefits bg-cover bg-fixed bg-center bg-no-repeat
+                  py-24 text-center`}
         >
           <a id="more" />
           <div className="mx-auto max-w-8xl px-4">
@@ -108,7 +104,7 @@ export default function ConsultingPage(
           </div>
         </Section>
       </Layout>
-    </ConsultingContext.Provider>
+    </>
   );
 }
 
@@ -136,7 +132,7 @@ export const getStaticProps = async ({ params }) => {
       testimonialResult: testimonials,
       technologyCards: technologyCardsProps,
       env: {
-          GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY || null,
+        GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY || null,
       },
     },
   };
