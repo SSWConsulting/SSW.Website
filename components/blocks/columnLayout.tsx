@@ -15,8 +15,8 @@ export const ColumnLayout = ({ data }) => {
   );
 
   return (
-    <div className="grid grid-cols-12 gap-x-6">
-      <div className="sm:col-span-5">
+    <div className="md:grid md:grid-cols-12 md:gap-x-6">
+      <div className="col-span-5">
         {data.imageLink ? (
           <a href={data.imageLink} target="_blank">
             <RawImage />
@@ -25,7 +25,7 @@ export const ColumnLayout = ({ data }) => {
           <RawImage />
         )}
       </div>
-      <div className="sm:col-span-7">
+      <div className="col-span-7">
         <TinaMarkdown content={data.message} />
       </div>
     </div>
