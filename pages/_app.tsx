@@ -3,10 +3,10 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { DefaultSeo } from "next-seo";
 import { NEXT_SEO_DEFAULT } from "../next-seo.config";
-import AOS from "aos";
 import * as gtag from "../lib/gtag";
 import "aos/dist/aos.css";
 import "../styles.css";
+import AOS from "aos";
 
 const isDev = process.env.NODE_ENV === "development";
 

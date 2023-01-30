@@ -33,6 +33,7 @@
   "dependencies": {
     "@analytics/google-analytics": "^1.0.5",
     "@analytics/google-tag-manager": "^0.5.3",
+    "@fontsource/open-sans": "^4.5.13",
     "@fortawesome/fontawesome-free": "^6.2.1",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
@@ -48,6 +49,7 @@
     "dayjs": "^1.11.7",
     "next": "^12.3.1",
     "next-seo": "^5.15.0",
+    "nextjs-breadcrumbs": "^1.1.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",

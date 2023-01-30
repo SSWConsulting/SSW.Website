@@ -1,8 +1,12 @@
 const colors = require("tailwindcss/colors");
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   mode: "jit",
-  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   darkMode: "class",
   theme: {
     colors: {
@@ -19,15 +23,17 @@ module.exports = {
       sswRed: "#cc4141",
       azure: "#007fff",
       gray: {
-        50: "#f9f9f9", 
-        100: "#f2f2f2", 
-        200: "#dfdfdf", 
-        300: "#cccccc", 
-        400: "#a6a6a6", 
-        500: "#808080", 
-        600: "#737373", 
-        700: "#606060", 
-        800: "#414141", 
+        50: "#f9f9f9",
+        75: "#f5f5f5",
+        100: "#f2f2f2",
+        200: "#dfdfdf",
+        300: "#cccccc",
+        400: "#a6a6a6",
+        500: "#808080",
+        600: "#737373",
+        650: "#666666",
+        700: "#606060",
+        800: "#414141",
         900: "#333333",
         1000: "#1c1b2e",
       },
@@ -66,6 +72,7 @@ module.exports = {
       xs: ".875rem",
       sm: "1rem",
       base: "1.125rem",
+      md: "1.2rem",
       lg: "1.25rem",
       xl: "1.5rem",
       "2xl": "1.75rem",
@@ -83,7 +90,14 @@ module.exports = {
       3: "3px",
       4: "4px",
     },
+    minHeight: {
+      158: "39.5rem",
+      1025: "410px",
+    },
     extend: {
+      content: {
+        'bread': "'>'",
+      },
       textDecoration: ["active"],
       opacity: {
         7: ".075",
@@ -94,14 +108,17 @@ module.exports = {
         "9xl": "86rem",
       },
       spacing: {
+        15: "60px",
+        25: "100px",
         128: "32rem",
-        "liveStream": "75px"
+        liveStream: "75px",
       },
       zIndex: {
         "-1": "-1",
       },
       fontFamily: {
         sans: ["Open Sans", "Helvetica Neue", "Helvetica", "sans-serif"],
+        body: ["Arial", "Helvetica Neue", "Helvetica", "sans-serif"],
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -118,10 +135,10 @@ module.exports = {
               margin: "-0.25rem 1px",
             },
             "code::before": {
-              content: "\"\"",
+              content: '""',
             },
             "code::after": {
-              content: "\"\"",
+              content: '""',
             },
           },
         },
@@ -178,7 +195,7 @@ module.exports = {
               margin: "2em 3rem 0 3rem",
               "> div::before": {
                 color: theme("colors.sswRed"),
-                content: "\"\u25A0\"",
+                content: '"\u25A0"',
                 display: "inline-block",
                 fontFamily: "Arial Black",
                 fontWeight: theme("fontWeight.bold"),
@@ -186,14 +203,14 @@ module.exports = {
                 width: "1em",
               },
             },
-          }
+          },
         },
       }),
       backgroundImage: {
         "live-banner-wait": "url('/blocks/LiveStreamBanner-Wait.png')",
         "live-banner-live": "url('/blocks/LiveStreamBanner-Live.gif')",
-        "benefits": "url('/consulting/mvc-benefits-bg.jpg')",
-      }
+        benefits: "url('/consulting/mvc-benefits-bg.jpg')",
+      },
     },
   },
   variants: {
@@ -202,5 +219,14 @@ module.exports = {
   plugins: [
     require("@tailwindcss/typography"),
     require("@headlessui/tailwindcss")({ prefix: "ui" }),
+
+    // taken from https://github.com/tailwindlabs/tailwindcss/discussions/2156#discussioncomment-1283105
+    plugin(function ({ addVariant, e }) {
+      addVariant("not-first", ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.${e(`not-first${separator}${className}`)}:not(:first-child)`
+        })
+      })
+    }),
   ],
 };
