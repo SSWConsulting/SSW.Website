@@ -1,4 +1,5 @@
 module.exports = {
+  poweredByHeader: false,
   images: {
     domains: ["assets.tina.io", "i.ytimg.com", "www.ssw.com.au"],
   },
