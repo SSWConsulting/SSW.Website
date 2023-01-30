@@ -8,6 +8,8 @@ import { UpcomingEvents } from "./blocks/upcomingEvents";
 import { BuiltOnAzure } from "./blocks/builtOnAzure";
 import { CustomImage } from "./blocks/customImage";
 import { ClientLogos } from "./blocks/clientLogos";
+import { ColumnLayout } from "./blocks/columnLayout";
+
 
 const componentMap = {
   "AboutUs": AboutUs,
@@ -18,6 +20,7 @@ const componentMap = {
   "BuiltOnAzure": BuiltOnAzure,
   "CustomImage": CustomImage,
   "ClientLogos": ClientLogos,
+  "ColumnLayout":  ColumnLayout,
 };
 
 export const Blocks = ({ prefix, blocks}) => {
