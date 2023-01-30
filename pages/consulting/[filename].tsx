@@ -9,6 +9,7 @@ import { Layout } from "../../components/layout";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 // import { Blocks } from "../../components/blocks-renderer";
 import React from "react";
 import TechnologyCards from "../../components/technologyCard/technologyCards";
@@ -47,11 +48,16 @@ export const ConsultingContext = React.createContext<ConsultingEnv>({
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
+
   const { data } = useTina({
     data: props.data,
     query: props.query,
     variables: props.variables,
   });
+
+  const removeExtension = (file: string) => {
+    return file.split(".")[0]
+  }
 
   const technologyCardDocs =
     props.technologyCards.data.technologiesConnection.edges.map((n) => n.node);
@@ -72,9 +78,12 @@ export default function ConsultingPage(
       >
       <SEO seo={data.consulting.seo} />
       <Layout>
-      <Section className="video-mask items-center text-center font-light" color="black">
+        <Section className="mx-auto w-full max-w-7xl py-5 px-8">
+          <Breadcrumbs path={removeExtension(props.variables.relativePath)} suffix={data.global.breadcrumbSuffix} title={data.consulting.title} />
+        </Section>
+        <Section className="video-mask items-center text-center font-light" color="black">
           <Booking {...data.consulting.booking}></Booking>
-      </Section>
+        </Section>
         <Section
           color="black"
           className={`prose-consulting border-y-4

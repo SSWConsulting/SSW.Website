@@ -7479,6 +7479,11 @@ next@^12.3.1:
     "@next/swc-win32-ia32-msvc" "12.3.4"
     "@next/swc-win32-x64-msvc" "12.3.4"
 
+nextjs-breadcrumbs@^1.1.9:
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/nextjs-breadcrumbs/-/nextjs-breadcrumbs-1.1.9.tgz#6b50c3bcf0db6b59985d89cfb95b69b6bc4f4bb5"
+  integrity sha512-kzK1bysO5dqdlsPgJ84XgAfAFKWEqlXcSWROwuR1BqST8ibcmLc3LKgak8hiO2DH2mMdd0wTR7oCkebReyBQTg==
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
@@ -9217,16 +9222,6 @@ sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==
-
-ssw.megamenu@2.2.8:
-  version "2.2.8"
-  resolved "https://registry.yarnpkg.com/ssw.megamenu/-/ssw.megamenu-2.2.8.tgz#f0b1721170d42439b98ca64527a7895910084851"
-  integrity sha512-wy8v9fyNLI2vSXTIy9NtXFa7Qs28YMZRUZnvgEyuqVFS6p4j503wJOQnZXXSJTCgeSIAleIcHfeT4/MYjAqzfQ==
-  dependencies:
-    "@fortawesome/fontawesome-svg-core" "^6.2.1"
-    "@fortawesome/free-solid-svg-icons" "^6.2.1"
-    "@fortawesome/react-fontawesome" "^0.2.0"
-    classnames "^2.3.2"
 
 stable@^0.1.8:
   version "0.1.8"

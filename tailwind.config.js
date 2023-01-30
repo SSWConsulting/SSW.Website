@@ -89,6 +89,9 @@ module.exports = {
       4: "4px",
     },
     extend: {
+      content: {
+        'bread': "'>'",
+      },
       textDecoration: ["active"],
       opacity: {
         7: ".075",
@@ -157,22 +160,26 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            h1: {
+              fontSize: "2rem",
+              margin: "1rem 0",
+              padding: "60px 0 20px 0",
+              lineHeight: 1.2,
+            },
+            h3: {
+              fontSize: "1.5rem",
+              marginBottom: "7px",
+            },
+            p: {
+              marginBottom: "10px",
+            },
+            hr: {
+              margin: "30px 0",
+            },
             pre: {
               color: theme("colors.gray.700"),
               backgroundColor: theme("colors.gray.100"),
               lineHeight: 1.5,
-            },
-            code: {
-              backgroundColor: theme("colors.gray.100"),
-              padding: "0.25rem",
-              borderRadius: "3px",
-              margin: "-0.25rem 1px",
-            },
-            "code::before": {
-              content: '""',
-            },
-            "code::after": {
-              content: '""',
             },
           },
         },
@@ -253,10 +260,20 @@ module.exports = {
   plugins: [
     require("@tailwindcss/typography"),
     require("@headlessui/tailwindcss")({ prefix: "ui" }),
+
     plugin(function ({ addBase, theme }) {
       addBase({
         html: { fontSize: "14px", fontFamily: theme("fontFamily.body") },
       });
+    }),
+
+    // taken from https://github.com/tailwindlabs/tailwindcss/discussions/2156#discussioncomment-1283105
+    plugin(function ({ addVariant, e }) {
+      addVariant("not-first", ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.${e(`not-first${separator}${className}`)}:not(:first-child)`
+        })
+      })
     }),
   ],
 };

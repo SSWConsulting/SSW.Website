@@ -7,7 +7,6 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import styles from "./TestimonialRow.module.css";
 
 export const TestimonialRow = ({ testimonialsQueryResult }) => {
-  console.log(testimonialsQueryResult);
   const testimonialsData =
     testimonialsQueryResult.data.testimonialsConnection.Testimonials.map(
       (t) => t.Testimonial

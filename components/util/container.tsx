@@ -16,15 +16,15 @@ export const Container = ({
     default: "py-12",
   };
   const widthClass = {
-    small: "max-w-4xl",
-    medium: "max-w-5xl",
-    large: "max-w-7xl",
+    small: "max-w-4xl px-6",
+    medium: "max-w-5xl px-6",
+    large: "max-w-7xl px-6",
     custom: "",
   };
 
   return (
     <div
-      className={`${widthClass[width]} mx-auto px-6 sm:px-8 ${verticalPadding[size]} ${className}`}
+      className={`${widthClass[width]} mx-auto sm:px-8 ${verticalPadding[size]} ${className}`}
       {...props}
     >
       {children}

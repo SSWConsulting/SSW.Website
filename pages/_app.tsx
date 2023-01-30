@@ -1,7 +1,7 @@
-import { Analytics } from "../components/layout/analytics";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { DefaultSeo } from "next-seo";
+import { Analytics } from "../components/layout/analytics";
 import { NEXT_SEO_DEFAULT } from "../next-seo.config";
 import * as gtag from "../lib/gtag";
 import "aos/dist/aos.css";
@@ -34,7 +34,7 @@ const App = ({ Component, pageProps }) => {
     <>
       <DefaultSeo {...NEXT_SEO_DEFAULT} />
       <Component {...pageProps} />
-      { !isDev && <Analytics /> }
+      <Analytics />
     </>
   );
 };
