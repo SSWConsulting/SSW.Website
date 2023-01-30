@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    domains: ["assets.tina.io"],
+    domains: ["assets.tina.io", "www.ssw.com.au"],
   },
   output: "standalone", // required for Docker support
   webpack(config) {
