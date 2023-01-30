@@ -3,7 +3,7 @@ import Head from "next/head";
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { Theme } from "./theme";
-import { Menu, MobileMenu } from "../../lib/ssw.megamenu"
+import { Menu, MobileMenu } from "../../lib/ssw.megamenu";
 
 export const Layout = ({ children }) => {
   const node = useRef<HTMLDivElement>();
@@ -14,9 +14,9 @@ export const Layout = ({ children }) => {
   };
 
   const handleClick = (e) => {
-      if (node.current){
-        node.current.contains(e.target) ?? setIsMenuOpened(false);
-      }
+    if (node.current) {
+      node.current.contains(e.target) ?? setIsMenuOpened(false);
+    }
   };
 
   return (
@@ -26,14 +26,16 @@ export const Layout = ({ children }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Theme>
-        <div className="mx-auto max-w-7xl px-6 sm:px-8"
+        <div
+          className="mx-auto max-w-7xl px-6 sm:px-8"
           ref={node}
-          onMouseDown={isMenuOpened ? (event) => handleClick(event) : null}>
+          onMouseDown={isMenuOpened ? (event) => handleClick(event) : null}
+        >
           <Header />
-          <Menu  onClickToggle={() => actionOnToggleClick()} />
+          <Menu onClickToggle={() => actionOnToggleClick()} />
         </div>
         <div className="flex flex-1 flex-col bg-gradient-to-br from-white to-gray-50 text-gray-800 dark:from-gray-900 dark:to-gray-1000">
-            {children}
+          {children}
         </div>
         <Footer />
         <MobileMenu isMenuOpened={isMenuOpened}></MobileMenu>

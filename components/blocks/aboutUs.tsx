@@ -77,10 +77,11 @@ const TV = () => {
         ></iframe>
       ) : (
         <>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={layoutData.aboutUs.video.thumbnailUrl}
             alt="SSW TV"
+            width={340}
+            height={190}
             onClick={() => setVideoClicked(true)} />
         </>
       )}
