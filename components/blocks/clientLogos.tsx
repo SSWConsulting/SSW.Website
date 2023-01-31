@@ -4,13 +4,34 @@ import Image from "next/image";
 
 export const ClientLogos = () => {
   return (
-    <div className="flex">
-      <Image src="/images/clientLogos/clients1.png" alt="Client logo 1" height={50} width={380} />
-      <Image src="/images/clientLogos/clients2.png" alt="Client logo 2" height={50} width={380} />
-      <Image src="/images/clientLogos/clients3.png" alt="Client logo 3" height={50} width={380} />
+    <div className="grid grid-cols-3">
+      <figure className="col-span-3 md:col-auto">
+        <Image
+          src="/images/clientLogos/clients1.png"
+          alt="Client logo 1"
+          height={50}
+          width={380}
+        />
+      </figure>
+      <figure className="col-span-3 md:col-auto">
+        <Image
+          src="/images/clientLogos/clients2.png"
+          alt="Client logo 2"
+          height={50}
+          width={380}
+        />
+      </figure>
+      <figure className="col-span-3 md:col-auto">
+        <Image
+          src="/images/clientLogos/clients3.png"
+          alt="Client logo 3"
+          height={50}
+          width={380}
+        />
+      </figure>
     </div>
   );
-}
+};
 
 export const clientLogosBlockSchema: Template = {
   name: "ClientLogos",
@@ -23,5 +44,5 @@ export const clientLogosBlockSchema: Template = {
       name: "altText",
       required: true,
     },
-  ]
-}
+  ],
+};
