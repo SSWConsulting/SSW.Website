@@ -13,6 +13,7 @@ import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { Benefits } from "../../components/util/consulting/benefits";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
+import OverLapVideoCard from "../../components/videoCard/overlapVideoCard";
 
 const consultingComponentRenderer: Components<Record<string, unknown>> = {
   code: (data) => {
@@ -86,11 +87,10 @@ export default function ConsultingPage(
           color="black"
           className={`
             prose-consulting
-            border-y-4 border-y-sswRed
             text-center`}
         >
           <a id="more" />
-          <div className="w-full bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
+          <div className="w-full border-y-4 border-y-sswRed bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
             <div className="mx-auto max-w-8xl px-4">
               <TinaMarkdown
                 components={{
@@ -105,6 +105,14 @@ export default function ConsultingPage(
         </Section>
         <Section>
           <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
+        </Section>
+        <Section className="bg-transparent">
+          <OverLapVideoCard
+            url={props.whySSW.videoUrl}
+            title={props.whySSW.title}
+            description={props.whySSW.body}
+            image={props.whySSW.backgroundImage}
+          />
         </Section>
         <Section className="pb-28 text-center">
           <div className="main-container">
@@ -135,6 +143,8 @@ export const getStaticProps = async ({ params }) => {
     cardNames: technologyCardNames,
   });
 
+  const whySSW = await (await client.queries.marketing({ relativePath: "why-choose-ssw.mdx" })).data.marketing;
+  
   return {
     props: {
       data: tinaProps.data,
@@ -142,6 +152,7 @@ export const getStaticProps = async ({ params }) => {
       variables: tinaProps.variables,
       testimonialResult: testimonials,
       technologyCards: technologyCardsProps,
+      whySSW: whySSW,
       env: {
         GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY || null,
       },

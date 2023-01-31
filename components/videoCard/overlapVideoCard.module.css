@@ -1,0 +1,12 @@
+.overlap-video-card {
+  min-height: 537px;
+  padding: 0 30px 100px 30px;
+}
+
+.overlap-video-card .player {
+  width: 570px;
+}
+
+.overlap-video-card article {
+  padding: 20px 0;
+}
