@@ -144,18 +144,6 @@ module.exports = {
               backgroundColor: theme("colors.gray.100"),
               lineHeight: 1.5,
             },
-            code: {
-              backgroundColor: theme("colors.gray.100"),
-              padding: "0.25rem",
-              borderRadius: "3px",
-              margin: "-0.25rem 1px",
-            },
-            "code::before": {
-              content: "",
-            },
-            "code::after": {
-              content: "",
-            },
           },
         },
         tint: {
@@ -233,7 +221,6 @@ module.exports = {
     extend: { typography: ["tint", "dark", "primary"] },
   },
   plugins: [
-    require("./plugins/normalize.js"),
     require("@tailwindcss/typography"),
     require("@headlessui/tailwindcss")({ prefix: "ui" }),
 
