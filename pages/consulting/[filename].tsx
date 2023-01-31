@@ -4,14 +4,14 @@ import { Components, TinaMarkdown } from "tinacms/dist/rich-text";
 import ReactPlayer from "react-player";
 import { client } from "../../.tina/__generated__/client";
 import { Booking } from "../../components/blocks";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 // import { Blocks } from "../../components/blocks-renderer";
-import React from "react";
+import BookingButton from "../../components/bookingButton/bookingButton";
 import TechnologyCards from "../../components/technologyCard/technologyCards";
 
 const consultingComponentRenderer: Components<Record<string, unknown>> = {
@@ -75,10 +75,12 @@ export default function ConsultingPage(
           className="video-mask items-center text-center font-light"
           color="black"
         >
-          <Booking
-            {...data.consulting.booking}
-            recaptchaKey={props.env["GOOGLE_RECAPTCHA_KEY"]}
-          ></Booking>
+          <Booking {...data.consulting.booking}>
+            <BookingButton
+              buttonText={data.consulting.booking.buttonText}
+              recaptchaKey={props.env["GOOGLE_RECAPTCHA_KEY"]}
+            />
+          </Booking>
         </Section>
         <Section
           color="black"
