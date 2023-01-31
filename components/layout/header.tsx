@@ -1,31 +1,25 @@
 import React from "react";
 import Link from "next/link";
-// import { useRouter } from "next/router";
-import { Container } from "../util/container";
-import { SocialIcons } from "../util/socialIcons";
 import Image from "next/image";
+import { Container } from "../util/container";
+import { SocialIcons, SocialTypes } from "../util/socialIcons";
 import { LiveStreamBanner } from "../liveStreamBanner";
 
 export const Header = () => {
-  // const router = useRouter();
 
-  // If we're on an admin path, other links should also link to their admin paths
-  // const [prefix, setPrefix] = React.useState("");
-
-  // React.useEffect(() => {
-  //   if (window && window.location.pathname.startsWith("/admin")) {
-  //     setPrefix("/admin");
-  //   }
-  // }, []);
+  // all SocialType values except phone
+  const excludeMobile = Object.values(SocialTypes).filter(
+    (type) => type !== SocialTypes.phone
+  );
 
   return (
     <div className={"relative overflow-hidden bg-gradient-to-b"}>
       <LiveStreamBanner/>
-      <Container size="custom" className="relative z-10 my-4 max-w-9xl py-0">
+      <Container width="custom" size="custom" padding="" className="relative z-10 my-4 max-w-9xl py-0">
         <div className="sm:flex sm:items-center sm:justify-between">
           <Logo />
           <div className="mt-4 flex items-center justify-center sm:mt-0">
-            <SocialIcons/>
+            <SocialIcons excludeMobile={excludeMobile}/>
           </div>
         </div>
       </Container>

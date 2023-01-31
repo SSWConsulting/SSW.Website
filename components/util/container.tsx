@@ -1,9 +1,11 @@
 import React from "react";
+import { classNames } from "tinacms";
 
 export const Container = ({
   children,
   size = "medium",
   width = "large",
+  padding = "px-8",
   className = "",
   ...props
 }) => {
@@ -24,7 +26,15 @@ export const Container = ({
 
   return (
     <div
-      className={`${widthClass[width]} mx-auto px-6 sm:px-8 ${verticalPadding[size]} ${className}`}
+      className={
+        classNames(
+          "mx-auto",
+          padding,
+          widthClass[width],
+          verticalPadding[size],
+          className
+        )
+      }
       {...props}
     >
       {children}
