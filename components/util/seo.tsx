@@ -25,9 +25,87 @@ export const SEO: FC<SEOProps> = ({ seo }) => {
   return <NextSeo {...seoProps} />;
 };
 
+const openGraphSchema = {
+  type: "object",
+  label: "Open Graph",
+  name: "openGraph",
+  fields: [
+    {
+      type: "string",
+      label: "Type",
+      name: "type",
+      component: "select",
+      options: [
+        {
+          value: "website",
+          label: "Website",
+        },
+        {
+          value: "video.movie",
+          label: "Video",
+        },
+      ],
+    },
+    {
+      type: "string",
+      label: "Url",
+      name: "url",
+    },
+    {
+      type: "string",
+      label: "Title",
+      name: "title",
+    },
+    {
+      type: "string",
+      label: "Description",
+      name: "description",
+    },
+    {
+      label: "Images",
+      name: "images",
+      list: true,
+      type: "object",
+      ui: {
+        itemProps: (item) => {
+          return { label: item.url }
+        },
+        defaultItem: {
+          url: "/",
+          width: 800,
+          height: 600,
+          alt: "Default alt text",
+        }
+      },
+      fields: [
+        {
+          type: "string",
+          label: "Image Url",
+          name: "url",
+        },
+        {
+          type: "number",
+          label: "Width (px)",
+          name: "width",
+        },
+        {
+          type: "number",
+          label: "Height (px)",
+          name: "height",
+        },
+        {
+          type: "string",
+          label: "Image Alt Text",
+          name: "alt",
+        },
+      ],
+    },
+  ],
+};
+
 export const seoSchema = {
   type: "object",
-  label: "SEO",
+  label: "SEO Values",
   name: "seo",
   fields: [
     {
@@ -45,5 +123,6 @@ export const seoSchema = {
       label: "Canonical URL",
       name: "canonical",
     },
+    openGraphSchema,
   ],
 };
