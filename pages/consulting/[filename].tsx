@@ -7,8 +7,8 @@ import { Layout } from "../../components/layout";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { Benefits } from "../../components/util/consulting/benefits";
 import ReactPlayer from "react-player";
-// import { Blocks } from "../../components/blocks-renderer";
 import React from "react";
 import TechnologyCards from "../../components/technologyCard/technologyCards";
 
@@ -68,25 +68,28 @@ export default function ConsultingPage(
         </Section>
         <Section
           color="black"
-          className={`prose-consulting border-y-4
-                    border-y-sswRed 
-                    bg-benefits bg-cover bg-fixed bg-center bg-no-repeat
-                    py-24 text-center`}
+          className={`
+            prose-consulting
+            border-y-4 border-y-sswRed
+            text-center`}
         >
-          <div className="mx-auto max-w-8xl px-4">
-            <TinaMarkdown
-              components={{
-                ...componentRenderer,
-                ...consultingComponentRenderer,
-              }}
-              content={data.consulting._body}
-            />
-            <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
-            <TechnologyCards
-              techHeader={data.consulting.techHeader}
-              techCards={techCards}
-            />
+          <div className="bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
+            <div className="mx-auto max-w-8xl px-4">
+              <TinaMarkdown
+                components={{
+                  ...componentRenderer,
+                  ...consultingComponentRenderer,
+                }}
+                content={data.consulting._body}
+              />
+              <Benefits data={data.consulting.benefits} />
+            </div>
           </div>
+          <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
+          <TechnologyCards
+            techHeader={data.consulting.techHeader}
+            techCards={techCards}
+          />
         </Section>
       </Layout>
     </>

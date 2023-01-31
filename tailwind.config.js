@@ -199,7 +199,7 @@ module.exports = {
               margin: "2em 3rem 0 3rem",
               "> div::before": {
                 color: theme("colors.sswRed"),
-                content: '"\u25A0"',
+                content: "\u25A0",
                 display: "inline-block",
                 fontFamily: "Arial Black",
                 fontWeight: theme("fontWeight.bold"),

@@ -296,8 +296,8 @@ const config = defineStaticConfig({
                 type: "string",
                 label: "subTitle",
                 name: "subTitle",
-              },
-            ],
+              }
+            ]
           },
           {
             type: "object",
@@ -325,6 +325,18 @@ const config = defineStaticConfig({
                     label: "Description",
                     name: "description",
                   },
+                  {
+                    type: "string",
+                    required: false,
+                    label: "linkName",
+                    name: "linkName",
+                  },
+                  {
+                    type: "string",
+                    required: false,
+                    label: "linkURL",
+                    name: "linkURL",
+                  }
                 ],
               },
               {
