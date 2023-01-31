@@ -136,6 +136,10 @@
     @apply block;
   }
 
+  .field-wrapper {
+    @apply relative mb-[20px] block py-[5px];
+  }
+
   .field-wrapper input.form-control:focus,
   .field-wrapper .form-select:focus,
   .field-wrapper textarea.form-control:focus {
