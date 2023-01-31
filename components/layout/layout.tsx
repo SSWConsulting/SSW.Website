@@ -27,19 +27,21 @@ export const Layout = ({ children, className = "" }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Theme>
-        <div
-          className={classNames("mx-auto max-w-7xl px-6 sm:px-8", className)}
-          ref={node}
-          onMouseDown={isMenuOpened ? (event) => handleClick(event) : null}
-        >
-          <Header />
-          <Menu onClickToggle={() => actionOnToggleClick()} />
+        <div className={classNames("page-container", className)}>
+          <div
+            className="mx-auto max-w-7xl px-6 sm:px-8"
+            ref={node}
+            onMouseDown={isMenuOpened ? (event) => handleClick(event) : null}
+          >
+            <Header />
+            <Menu onClickToggle={() => actionOnToggleClick()} />
+          </div>
+          <div className="flex flex-1 flex-col from-white to-gray-50 text-gray-800 dark:from-gray-900 dark:to-gray-1000">
+            {children}
+          </div>
+          <Footer />
+          <MobileMenu isMenuOpened={isMenuOpened}></MobileMenu>
         </div>
-        <div className="flex flex-1 flex-col bg-gradient-to-br from-white to-gray-50 text-gray-800 dark:from-gray-900 dark:to-gray-1000">
-          {children}
-        </div>
-        <Footer />
-        <MobileMenu isMenuOpened={isMenuOpened}></MobileMenu>
       </Theme>
     </>
   );

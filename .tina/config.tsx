@@ -294,9 +294,19 @@ const config = defineStaticConfig({
               },
               {
                 type: "string",
-                label: "subTitle",
+                label: "Subtitle",
                 name: "subTitle",
               },
+              {
+                type: "string",
+                label: "Button Text",
+                name: "buttonText",
+              },
+              {
+                type: "image",
+                label: "Video Background",
+                name: "videoBackground",
+              }
             ],
           },
           {
