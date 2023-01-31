@@ -89,7 +89,8 @@ export default function ConsultingPage(
             border-y-4 border-y-sswRed
             text-center`}
         >
-          <div className="bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
+          <a id="more" />
+          <div className="w-full bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
             <div className="mx-auto max-w-8xl px-4">
               <TinaMarkdown
                 components={{
@@ -101,11 +102,17 @@ export default function ConsultingPage(
               <Benefits data={data.consulting.benefits} />
             </div>
           </div>
+        </Section>
+        <Section>
           <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
-          <TechnologyCards
-            techHeader={data.consulting.techHeader}
-            techCards={techCards}
-          />
+        </Section>
+        <Section className="pb-28 text-center">
+          <div className="main-container">
+            <TechnologyCards
+              techHeader={data.consulting.techHeader}
+              techCards={techCards}
+            />
+          </div>
         </Section>
       </Layout>
     </>

@@ -28,7 +28,7 @@ const App = ({ Component, pageProps }) => {
   }, [router.events]);
 
   // Initialize AOS (Animate on Scroll Library) see https://michalsnik.github.io/aos/ 
-  useEffect(() => AOS.init({ duration: 1200, once: true }));
+  useEffect(() => AOS.init({ duration: 1200 }));
 
   return (
     <>
