@@ -335,6 +335,18 @@ const config = defineStaticConfig({
                     label: "Description",
                     name: "description",
                   },
+                  {
+                    type: "string",
+                    required: false,
+                    label: "linkName",
+                    name: "linkName",
+                  },
+                  {
+                    type: "string",
+                    required: false,
+                    label: "linkURL",
+                    name: "linkURL",
+                  }
                 ],
               },
               {

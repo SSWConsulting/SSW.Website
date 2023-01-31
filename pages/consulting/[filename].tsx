@@ -6,13 +6,13 @@ import { client } from "../../.tina/__generated__/client";
 import { Booking } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import BookingButton from "../../components/bookingButton/bookingButton";
 import { Layout } from "../../components/layout";
+import TechnologyCards from "../../components/technologyCard/technologyCards";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
+import { Benefits } from "../../components/util/consulting/benefits";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-// import { Blocks } from "../../components/blocks-renderer";
-import BookingButton from "../../components/bookingButton/bookingButton";
-import TechnologyCards from "../../components/technologyCard/technologyCards";
 
 const consultingComponentRenderer: Components<Record<string, unknown>> = {
   code: (data) => {
@@ -84,26 +84,28 @@ export default function ConsultingPage(
         </Section>
         <Section
           color="black"
-          className={`prose-consulting border-y-4
-                  border-y-sswRed 
-                  bg-benefits bg-cover bg-fixed bg-center bg-no-repeat
-                  py-24 text-center`}
+          className={`
+            prose-consulting
+            border-y-4 border-y-sswRed
+            text-center`}
         >
-          <a id="more" />
-          <div className="mx-auto max-w-8xl px-4">
-            <TinaMarkdown
-              components={{
-                ...componentRenderer,
-                ...consultingComponentRenderer,
-              }}
-              content={data.consulting._body}
-            />
-            <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
-            <TechnologyCards
-              techHeader={data.consulting.techHeader}
-              techCards={techCards}
-            />
+          <div className="bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
+            <div className="mx-auto max-w-8xl px-4">
+              <TinaMarkdown
+                components={{
+                  ...componentRenderer,
+                  ...consultingComponentRenderer,
+                }}
+                content={data.consulting._body}
+              />
+              <Benefits data={data.consulting.benefits} />
+            </div>
           </div>
+          <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
+          <TechnologyCards
+            techHeader={data.consulting.techHeader}
+            techCards={techCards}
+          />
         </Section>
       </Layout>
     </>
