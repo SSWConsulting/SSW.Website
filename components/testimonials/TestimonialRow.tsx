@@ -6,7 +6,7 @@ import styles from "./TestimonialRow.module.css";
 export const TestimonialRow = ({ testimonials }) => {
   return (
     <Container size="custom" className="h-full">
-      <div className="grid sm:grid-flow-row md:grid-flow-col mt-17">
+      <div className="mt-17 grid sm:grid-flow-row md:grid-flow-col">
         {getTestimonialCards(testimonials)}
       </div>
     </Container>
