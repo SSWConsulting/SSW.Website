@@ -2,55 +2,52 @@ import React, { FC } from "react";
 
 import { NextSeo, NextSeoProps } from "next-seo";
 import { NEXT_SEO_DEFAULT } from "../../next-seo.config";
+import { OpenGraphMedia } from "next-seo/lib/types";
 
 interface SEOProps {
-  seo?: Partial<NextSeoProps>;
+  title: string,
+  description: string,
+  canonical?: string,
+  images: OpenGraphMedia[]
 }
 
 export const SEO: FC<SEOProps> = ({ seo }) => {
   if (!seo) return null;
 
+  let seoPartial: Partial<NextSeoProps> = {};
+
+  seoPartial = {
+    title: seo.title,
+    description: seo.description,
+    canonical: seo.canonical,
+    openGraph: {
+      title: seo.title,
+      description: seo.description,
+      url: seo.canonical,
+      images: seo.images
+    }
+  }
+
   // Remove null values from SEO object
-  Object.keys(seo).forEach((key) => {
-    if (!seo[key]) {
+  Object.keys(seoPartial).forEach((key) => {
+    if (!seoPartial[key]) {
       delete seo[key];
     }
   });
-
+  
   const seoProps = {
     ...NEXT_SEO_DEFAULT,
-    ...seo,
+    ...seoPartial,
   };
 
   return <NextSeo {...seoProps} />;
 };
 
-const openGraphSchema = {
+export const seoSchema = {
   type: "object",
-  label: "Open Graph",
-  name: "openGraph",
+  label: "SEO Values",
+  name: "seo",
   fields: [
-    {
-      type: "string",
-      label: "Type",
-      name: "type",
-      component: "select",
-      options: [
-        {
-          value: "website",
-          label: "Website",
-        },
-        {
-          value: "video.movie",
-          label: "Video",
-        },
-      ],
-    },
-    {
-      type: "string",
-      label: "Url",
-      name: "url",
-    },
     {
       type: "string",
       label: "Title",
@@ -60,6 +57,11 @@ const openGraphSchema = {
       type: "string",
       label: "Description",
       name: "description",
+    },
+    {
+      type: "string",
+      label: "Canonical URL",
+      name: "canonical",
     },
     {
       label: "Images",
@@ -100,29 +102,5 @@ const openGraphSchema = {
         },
       ],
     },
-  ],
-};
-
-export const seoSchema = {
-  type: "object",
-  label: "SEO Values",
-  name: "seo",
-  fields: [
-    {
-      type: "string",
-      label: "Title",
-      name: "title",
-    },
-    {
-      type: "string",
-      label: "Description",
-      name: "description",
-    },
-    {
-      type: "string",
-      label: "Canonical URL",
-      name: "canonical",
-    },
-    openGraphSchema,
   ],
 };
