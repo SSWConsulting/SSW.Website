@@ -83,7 +83,6 @@ export const seoSchema = {
           return { label: item.url }
         },
         defaultItem: {
-          url: "/",
           width: 800,
           height: 600,
           alt: "Default alt text",
@@ -91,7 +90,7 @@ export const seoSchema = {
       },
       fields: [
         {
-          type: "string",
+          type: "image",
           label: "Image Url",
           name: "url",
           require: true
