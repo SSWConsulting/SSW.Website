@@ -2,13 +2,23 @@ import React, { FC } from "react";
 
 import { NextSeo, NextSeoProps } from "next-seo";
 import { NEXT_SEO_DEFAULT } from "../../next-seo.config";
-import { OpenGraphMedia } from "next-seo/lib/types";
 
-interface SEOProps {
-  title: string,
-  description: string,
+interface ImageObject {
+  url: string,
+  width?: number,
+  height?: number,
+  alt?: string
+}
+
+interface SEOObject {
+  title?: string,
+  description?: string,
   canonical?: string,
-  images: OpenGraphMedia[]
+  images?: ImageObject[]
+}
+
+interface SEOProps{
+  seo?: SEOObject
 }
 
 export const SEO: FC<SEOProps> = ({ seo }) => {
@@ -84,6 +94,7 @@ export const seoSchema = {
           type: "string",
           label: "Image Url",
           name: "url",
+          require: true
         },
         {
           type: "number",
