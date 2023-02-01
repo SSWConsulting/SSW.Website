@@ -2,6 +2,7 @@ import React, { FC } from "react";
 
 import { NextSeo, NextSeoProps } from "next-seo";
 import { NEXT_SEO_DEFAULT } from "../../next-seo.config";
+import { OpenGraphMedia } from "next-seo/lib/types";
 
 interface ImageObject {
   url: string,
@@ -14,14 +15,14 @@ interface SEOObject {
   title?: string,
   description?: string,
   canonical?: string,
-  images?: ImageObject[]
+  images?: OpenGraphMedia[]
 }
 
 interface SEOProps{
   seo?: SEOObject
 }
 
-export const SEO: FC<SEOProps> = ({ seo }) => {
+export const SEO = ({ seo }) => {
   if (!seo) return null;
 
   let seoPartial: Partial<NextSeoProps> = {};
@@ -34,7 +35,7 @@ export const SEO: FC<SEOProps> = ({ seo }) => {
       title: seo.title,
       description: seo.description,
       url: seo.canonical,
-      images: seo.images
+      images: seo.images ?? null
     }
   }
 
