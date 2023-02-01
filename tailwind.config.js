@@ -166,6 +166,7 @@ module.exports = {
       },
       spacing: {
         15: "60px",
+        17: "4.25rem",
         25: "100px",
         128: "32rem",
         liveStream: "75px",
