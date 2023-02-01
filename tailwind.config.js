@@ -1,5 +1,5 @@
 const colors = require("tailwindcss/colors");
-const plugin = require('tailwindcss/plugin')
+const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   mode: "jit",
@@ -24,14 +24,12 @@ module.exports = {
       azure: "#007fff",
       gray: {
         50: "#f9f9f9",
-        75: "#f5f5f5",
         100: "#f2f2f2",
         200: "#dfdfdf",
         300: "#cccccc",
         400: "#a6a6a6",
         500: "#808080",
         600: "#737373",
-        650: "#666666",
         700: "#606060",
         800: "#414141",
         900: "#333333",
@@ -107,6 +105,12 @@ module.exports = {
         7: ".075",
         15: ".15",
       },
+      height: {
+        22: "5.5rem",
+      },
+      width: {
+        88: "22rem",
+      },
       minHeight: {
         158: "39.5rem",
         1025: "410px",
@@ -167,11 +171,44 @@ module.exports = {
         liveStream: "75px",
       },
       zIndex: {
+        "-100": "-100",
         "-1": "-1",
       },
       fontFamily: {
         sans: ["Open Sans", "Helvetica Neue", "Helvetica", "sans-serif"],
         body: ["Arial", "Helvetica Neue", "Helvetica", "sans-serif"],
+      },
+      animation: {
+        "more-bounce": "more-bounce 2s infinite",
+        "ripple": "ripple-out 0.75s",
+        "ripple-pseudo": "ripple-out-pseudo 0.75s",
+      },
+      keyframes: {
+        "more-bounce": {
+          "0%, 20%, 50%, 80%, 100%": { transform: "translateY(0)" },
+          "40%": { transform: "translateY(-30px)" },
+          "60%": { transform: "translateY(-15px)" },
+        },
+        "ripple-out": {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
+        },
+        "ripple-out-pseudo": {
+          "0%": { background: "rgba(0, 0, 0, 0.25)" },
+          "100%": { background: "transparent" },
+        }
+      },
+      colors: {
+        gray: {
+          75: "#f5f5f5", 
+          125: "#eeeeee", 
+          450: "#9e9e9e", 
+          550: "#6C757D", 
+          650: "#666666",
+        },
+        red: {
+          550: "#dc3545",
+        }
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -276,6 +313,12 @@ module.exports = {
   plugins: [
     require("@tailwindcss/typography"),
     require("@headlessui/tailwindcss")({ prefix: "ui" }),
+
+    plugin(function ({ addBase, theme }) {
+      addBase({
+        html: { fontSize: "14px", fontFamily: theme("fontFamily.body") },
+      });
+    }),
 
     // taken from https://github.com/tailwindlabs/tailwindcss/discussions/2156#discussioncomment-1283105
     plugin(function ({ addVariant, e }) {
