@@ -105,6 +105,11 @@ const config = defineStaticConfig({
             ],
           },
           {
+            type: "string",
+            label: "Breadcrumb Suffix",
+            name: "breadcrumbSuffix",
+          },
+          {
             type: "object",
             label: "Offices",
             name: "offices",
@@ -326,9 +331,19 @@ const config = defineStaticConfig({
               },
               {
                 type: "string",
-                label: "subTitle",
+                label: "Subtitle",
                 name: "subTitle",
               },
+              {
+                type: "string",
+                label: "Button Text",
+                name: "buttonText",
+              },
+              {
+                type: "image",
+                label: "Video Background",
+                name: "videoBackground",
+              }
             ],
           },
           {
@@ -357,6 +372,18 @@ const config = defineStaticConfig({
                     label: "Description",
                     name: "description",
                   },
+                  {
+                    type: "string",
+                    required: false,
+                    label: "linkName",
+                    name: "linkName",
+                  },
+                  {
+                    type: "string",
+                    required: false,
+                    label: "linkURL",
+                    name: "linkURL",
+                  }
                 ],
               },
               {

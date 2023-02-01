@@ -1,13 +1,9 @@
-import * as React from "react";
-
-import { Container } from "../util/container";
-import { Section } from "../util/section";
 import Image from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { Container } from "../util/container";
 import styles from "./TestimonialRow.module.css";
 
 export const TestimonialRow = ({ testimonialsQueryResult }) => {
-  console.log(testimonialsQueryResult);
   const testimonialsData =
     testimonialsQueryResult.data.testimonialsConnection.Testimonials.map(
       (t) => t.Testimonial
@@ -18,13 +14,11 @@ export const TestimonialRow = ({ testimonialsQueryResult }) => {
     .slice(0, 3);
 
   return (
-    <Section>
-      <Container size="custom" className="h-full">
-        <div className="grid sm:grid-flow-row md:grid-flow-col">
-          {testimonials(randomTestimonials)}
-        </div>
-      </Container>
-    </Section>
+    <Container size="custom" className="h-full">
+      <div className="grid sm:grid-flow-row md:grid-flow-col">
+        {testimonials(randomTestimonials)}
+      </div>
+    </Container>
   );
 };
 

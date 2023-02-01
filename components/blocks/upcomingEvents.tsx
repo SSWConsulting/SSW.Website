@@ -8,6 +8,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import { Event } from "../../classes/event";
 
 import Link from "next/link";
+import Image from "next/image";
 
 dayjs.extend(utc);
 dayjs.extend(isBetween);
@@ -47,9 +48,9 @@ export const UpcomingEvents = ({ data }) => {
   }, []);
 
   return (
-    <div className="not-prose">
-      <h2 className="pb-5 text-2xl font-light">{data.title}</h2>
-      <div>
+    <div className="prose">
+      <h1 className="pb-5 font-light">{data.title}</h1>
+      <div className="not-prose">
         <div className="max-h-128 overflow-x-hidden overflow-y-scroll border-2 bg-gray-100">
           {loading ? <p>Loading...</p> : events.map(renderEvent)}
         </div>
@@ -71,12 +72,11 @@ const renderEvent = (e: Event) => {
     !e.Url.Url.includes("ssw.com.au") || e.Url.Url.includes("/ssw/redirect");
 
   return (
-    <article key={e.Id} className="flex py-4">
+    <article key={e.Id} className="flex">
       <figure className="flex min-w-fit items-center">
         <Link href={e.Thumbnail.Url}>
           <a>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={e.Thumbnail.Url}
               alt="event logo"
               width={75}
