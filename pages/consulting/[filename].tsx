@@ -104,7 +104,7 @@ export default function ConsultingPage(
           </div>
         </Section>
         <Section>
-          <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
+          <TestimonialRow testimonials={props.testimonialResult} />
         </Section>
         <Section className="pb-28 text-center">
           <div className="main-container">
@@ -125,6 +125,12 @@ export const getStaticProps = async ({ params }) => {
   });
 
   const testimonials = await client.queries.allTestimonialsQuery();
+  const randomTestimonials =
+    testimonials.data.testimonialsConnection.Testimonials.map(
+      (t) => t.Testimonial
+    )
+      .sort(() => 0.5 - Math.random())
+      .slice(0, 3);
 
   const technologyCardNames =
     tinaProps.data.consulting.technologyCards?.reduce<string[]>((pre, cur) => {
@@ -140,7 +146,7 @@ export const getStaticProps = async ({ params }) => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
-      testimonialResult: testimonials,
+      testimonialResult: randomTestimonials,
       technologyCards: technologyCardsProps,
       env: {
         GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY || null,

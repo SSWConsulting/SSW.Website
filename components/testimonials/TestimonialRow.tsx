@@ -3,26 +3,17 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Container } from "../util/container";
 import styles from "./TestimonialRow.module.css";
 
-export const TestimonialRow = ({ testimonialsQueryResult }) => {
-  const testimonialsData =
-    testimonialsQueryResult.data.testimonialsConnection.Testimonials.map(
-      (t) => t.Testimonial
-    );
-
-  const randomTestimonials = testimonialsData
-    .sort(() => 0.5 - Math.random())
-    .slice(0, 3);
-
+export const TestimonialRow = ({ testimonials }) => {
   return (
     <Container size="custom" className="h-full">
       <div className="grid sm:grid-flow-row md:grid-flow-col">
-        {testimonials(randomTestimonials)}
+        {getTestimonialCards(testimonials)}
       </div>
     </Container>
   );
 };
 
-const testimonials = (data) => {
+const getTestimonialCards = (data) => {
   return data?.map((testimonial, i) => (
     <div className="not-prose m-5" key={i}>
       <div
