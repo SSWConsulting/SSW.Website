@@ -1,9 +1,11 @@
 import React from "react";
+import { classNames } from "tinacms";
 
 export const Container = ({
   children,
   size = "medium",
   width = "large",
+  padding = "px-8",
   className = "",
   ...props
 }) => {
@@ -16,15 +18,23 @@ export const Container = ({
     default: "py-12",
   };
   const widthClass = {
-    small: "max-w-4xl px-6",
-    medium: "max-w-5xl px-6",
-    large: "max-w-7xl px-6",
+    small: "max-w-4xl",
+    medium: "max-w-5xl",
+    large: "max-w-7xl",
     custom: "",
   };
 
   return (
     <div
-      className={`${widthClass[width]} mx-auto sm:px-8 ${verticalPadding[size]} ${className}`}
+      className={
+        classNames(
+          "mx-auto",
+          padding,
+          widthClass[width],
+          verticalPadding[size],
+          className
+        )
+      }
       {...props}
     >
       {children}
