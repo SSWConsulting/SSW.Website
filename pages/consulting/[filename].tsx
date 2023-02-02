@@ -107,6 +107,7 @@ export default function ConsultingPage(
         <Section>
           <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
         </Section>
+        <Marketing content={data.consulting} />
         <Section className="pb-28 text-center">
           <div className="main-container">
             <TechnologyCards
