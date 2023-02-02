@@ -1,16 +1,19 @@
 import { useTina } from "tinacms/dist/react";
 import { Components, TinaMarkdown } from "tinacms/dist/rich-text";
+
+import ReactPlayer from "react-player";
 import { client } from "../../.tina/__generated__/client";
-import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
+import { Booking } from "../../components/blocks";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Marketing } from "../../components/marketing/Marketing";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import BookingButton from "../../components/bookingButton/bookingButton";
 import { Layout } from "../../components/layout";
+import TechnologyCards from "../../components/technologyCard/technologyCards";
+import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
+import { Benefits } from "../../components/util/consulting/benefits";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import ReactPlayer from "react-player";
-// import { Blocks } from "../../components/blocks-renderer";
-import React from "react";
-import TechnologyCards from "../../components/technologyCard/technologyCards";
 
 const consultingComponentRenderer: Components<Record<string, unknown>> = {
   code: (data) => {
@@ -45,6 +48,10 @@ export default function ConsultingPage(
     variables: props.variables,
   });
 
+  const removeExtension = (file: string) => {
+    return file.split(".")[0];
+  };
+
   const technologyCardDocs =
     props.technologyCards.data.technologiesConnection.edges.map((n) => n.node);
   const techCards =
@@ -58,23 +65,50 @@ export default function ConsultingPage(
     <>
       <SEO seo={data.consulting.seo} />
       <Layout>
+        <Section className="mx-auto w-full max-w-7xl py-5 px-8">
+          <Breadcrumbs
+            path={removeExtension(props.variables.relativePath)}
+            suffix={data.global.breadcrumbSuffix}
+            title={data.consulting.title}
+          />
+        </Section>
+        <Section
+          className="video-mask items-center text-center font-light"
+          color="black"
+        >
+          <Booking {...data.consulting.booking}>
+            <BookingButton
+              buttonText={data.consulting.booking.buttonText}
+              recaptchaKey={props.env["GOOGLE_RECAPTCHA_KEY"]}
+            />
+          </Booking>
+        </Section>
         <Section
           color="black"
-          className={`prose-consulting border-y-4
-                    border-y-sswRed 
-                    bg-benefits bg-cover bg-fixed bg-center bg-no-repeat
-                    py-24 text-center`}
+          className={`
+            prose-consulting
+            border-y-4 border-y-sswRed
+            text-center`}
         >
-          <div className="mx-auto max-w-8xl px-4">
-            <TinaMarkdown
-              components={{
-                ...componentRenderer,
-                ...consultingComponentRenderer,
-              }}
-              content={data.consulting._body}
-            />
-            <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
-            <Marketing content={data.consulting} />
+          <a id="more" />
+          <div className="w-full bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
+            <div className="mx-auto max-w-8xl px-4">
+              <TinaMarkdown
+                components={{
+                  ...componentRenderer,
+                  ...consultingComponentRenderer,
+                }}
+                content={data.consulting._body}
+              />
+              <Benefits data={data.consulting.benefits} />
+            </div>
+          </div>
+        </Section>
+        <Section>
+          <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
+        </Section>
+        <Section className="pb-28 text-center">
+          <div className="main-container">
             <TechnologyCards
               techHeader={data.consulting.techHeader}
               techCards={techCards}
@@ -109,6 +143,9 @@ export const getStaticProps = async ({ params }) => {
       variables: tinaProps.variables,
       testimonialResult: testimonials,
       technologyCards: technologyCardsProps,
+      env: {
+        GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY || null,
+      },
     },
   };
 };

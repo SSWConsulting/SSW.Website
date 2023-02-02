@@ -5,19 +5,22 @@ import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import { Container } from "../util/container";
-import { SocialIcons } from "../util/socialIcons";
+import { SocialIcons, SocialTypes } from "../util/socialIcons";
 
 dayjs.extend(timezone);
 dayjs.extend(utc);
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-xxs text-white">
+    <footer className="page-footer bg-gray-900 text-xxs text-white">
       <Container className="relative" size="xsmall">
         <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
           <CopyrightInfo />
         </div>
-        <SocialIcons className="my-6 justify-center sm:my-4 sm:hidden" />
+        <SocialIcons
+          className="my-6 justify-center sm:hidden"
+          excludeDesktop={Object.values(SocialTypes)}
+          excludeMobile={[ SocialTypes.phone ]} />
         <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
           <DeploymentInfo />
           <SiteInfo />
