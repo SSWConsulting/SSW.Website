@@ -7,7 +7,11 @@ on:
         type: string
         required: true
     secrets:
-      AZURE_CREDENTIALS:
+      AZURE_CLIENT_ID: 
+        required: true
+      AZURE_TENANT_ID:
+        required: true
+      AZURE_SUBSCRIPTION_ID:
         required: true
       NEXT_PUBLIC_TINA_CLIENT_ID:
         required: true
@@ -27,6 +31,10 @@ on:
 defaults:
   run:
     shell: pwsh
+
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   build-site:
@@ -63,16 +71,16 @@ jobs:
           ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ github.sha }}
           ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.tag }}
         build-args: |
+          NEXT_PUBLIC_GOOGLE_GTM_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID}}
+          NEXT_PUBLIC_GOOGLE_ANALYTICS=${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS}}
           NEXT_PUBLIC_GITHUB_RUN_DATE=${{ steps.date.outputs.date }}
           NEXT_PUBLIC_GITHUB_RUN_ID=${{ github.run_id }}
           NEXT_PUBLIC_GITHUB_RUN_NUMBER=${{ github.run_number }}
           NEXT_PUBLIC_GITHUB_REPOSITORY=${{ github.repository }}
-          NEXT_PUBLIC_TINA_CLIENT_ID=${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
-          NEXT_PUBLIC_TINA_BRANCH=${{ github.head_ref || github.ref_name }}
-          TINA_TOKEN=${{ secrets.TINA_TOKEN }}
-          NEXT_PUBLIC_GOOGLE_GTM_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID}}
-          NEXT_PUBLIC_GOOGLE_ANALYTICS=${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS}}
           NEXT_PUBLIC_HOTJAR_ID=${{ secrets.NEXT_PUBLIC_HOTJAR_ID}}
           NEXT_PUBLIC_HOTJAR_SV=${{ secrets.NEXT_PUBLIC_HOTJAR_SV}}
+          NEXT_PUBLIC_TINA_CLIENT_ID=${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
+          NEXT_PUBLIC_TINA_BRANCH=${{ github.head_ref || github.ref_name }}
           NEXT_PUBLIC_ZENDESK_CHAT_KEY=${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY}}
           GOOGLE_RECAPTCHA_KEY=${{ secrets.GOOGLE_RECAPTCHA_KEY }}
+          TINA_TOKEN=${{ secrets.TINA_TOKEN }}

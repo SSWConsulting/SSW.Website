@@ -13,22 +13,17 @@ defaults:
   run:
     shell: pwsh
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   build:
     name: Build and upload artifacts
     uses: ./.github/workflows/template-build.yml
     with:
       tag: pr-${{ github.event.number }}
-    secrets:
-      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
-      NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
-      TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-      NEXT_PUBLIC_GOOGLE_GTM_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID}}
-      NEXT_PUBLIC_GOOGLE_ANALYTICS: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS}}
-      NEXT_PUBLIC_HOTJAR_ID: ${{ secrets.NEXT_PUBLIC_HOTJAR_ID}}
-      NEXT_PUBLIC_HOTJAR_SV: ${{ secrets.NEXT_PUBLIC_HOTJAR_SV}}
-      NEXT_PUBLIC_ZENDESK_CHAT_KEY: ${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY}}
-  
+    secrets: inherit
   
   deploy:
     name: Deploy to slot
@@ -37,8 +32,7 @@ jobs:
     with:
       environment_name: "PR #${{ github.event.number }}"
       slot_name: pr-${{ github.event.number }}
-    secrets:
-      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+    secrets: inherit
 
   pagespeed-insights:
     name: PageSpeed Insights

@@ -11,7 +11,11 @@ on:
         default: production
         required: false
     secrets:
-      AZURE_CREDENTIALS:
+      AZURE_CLIENT_ID: 
+        required: true
+      AZURE_TENANT_ID:
+        required: true
+      AZURE_SUBSCRIPTION_ID:
         required: true
     outputs:
       url: 
@@ -21,6 +25,10 @@ on:
 defaults:
   run:
     shell: pwsh
+
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   deploy-to-slot:
@@ -38,7 +46,9 @@ jobs:
     - name: Azure CLI - Login
       uses: azure/login@v1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
     - name: AppService - Create slot
       id: create-slot
