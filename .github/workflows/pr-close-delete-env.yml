@@ -12,6 +12,10 @@ env:
   ENVIRONMENT_NAME: "PR #${{ github.event.number }}"
   SLOT_NAME: pr-${{ github.event.number }}
 
+permissions:
+      id-token: write
+      contents: read
+
 jobs:
   delete-slot:
     runs-on: ubuntu-latest
@@ -20,7 +24,9 @@ jobs:
     - name: Azure CLI - Login
       uses: azure/login@v1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        client-id: ${{ secrets.AZURE_CLIENT_ID  }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID  }}
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
     
     - name: Cleanup ACRPull permission
       run: |

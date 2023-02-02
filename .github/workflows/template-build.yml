@@ -7,7 +7,11 @@ on:
         type: string
         required: true
     secrets:
-      AZURE_CREDENTIALS:
+      AZURE_CLIENT_ID: 
+        required: true
+      AZURE_TENANT_ID:
+        required: true
+      AZURE_SUBSCRIPTION_ID:
         required: true
       NEXT_PUBLIC_TINA_CLIENT_ID:
         required: true
@@ -27,6 +31,10 @@ on:
 defaults:
   run:
     shell: pwsh
+
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   build-site:

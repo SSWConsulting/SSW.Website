@@ -14,6 +14,10 @@ defaults:
   run:
     shell: pwsh
 
+permissions:
+      id-token: write
+      contents: read
+      
 jobs:
   build:
     name: Build and upload artifacts
@@ -21,7 +25,9 @@ jobs:
     with:
       tag: production
     secrets:
-      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID  }}
+      AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID  }}
+      AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
       TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
       NEXT_PUBLIC_GOOGLE_GTM_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID}}
@@ -38,4 +44,6 @@ jobs:
       ENVIRONMENT_NAME: production
       SLOT_NAME: production
     secrets:
-      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID  }}
+      AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID  }}
+      AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
