@@ -16,7 +16,7 @@
     "@tinacms/cli": "^1.0.8",
     "@types/js-cookie": "^3.0.0",
     "@types/node": "^16.11.7",
-    "@types/react": "^17.0.35",
+    "@types/react": "^18.0.0",
     "@types/styled-components": "^5.1.15",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
@@ -47,12 +47,13 @@
     "classnames": "^2.3.2",
     "date-fns": "^2.23.0",
     "dayjs": "^1.11.7",
+    "eslint-config-next": "^13.1.6",
     "formik": "^2.2.9",
-    "next": "^12.3.1",
+    "next": "^13.1.6",
     "next-seo": "^5.15.0",
     "nextjs-breadcrumbs": "^1.1.9",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-google-recaptcha": "^2.1.0",
     "react-icons": "^4.2.0",
     "react-is": "^17.0.2",
@@ -69,6 +70,8 @@
   },
   "resolutions": {
     "final-form": "4.20.1",
-    "@types/react": "^17.0.2"
+    "@types/react": "^18.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
 }
