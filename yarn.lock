@@ -2657,10 +2657,10 @@
     hoist-non-react-statics "^3.3.0"
     redux "^4.0.0"
 
-"@types/react@*", "@types/react@^17.0.2":
-  version "17.0.53"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.53.tgz#10d4d5999b8af3d6bc6a9369d7eb953da82442ab"
-  integrity sha512-1yIpQR2zdYu1Z/dc1OxC+MA6GR240u3gcnP4l6mvj/PJiVaqHsQPmWttsvHsfnhfPbU2FuGmo0wSITPygjBmsw==
+"@types/react@*", "@types/react@^18.0.0":
+  version "18.0.27"
+  resolved "https://registry.npmmirror.com/@types/react/-/react-18.0.27.tgz#d9425abe187a00f8a5ec182b010d4fd9da703b71"
+  integrity sha512-3vtRKHgVxu3Jp9t718R9BuzoD4NcQ8YJ5XRzsSKxNDiDonD2MXIT1TmSkenxuCycZJoQT5d2vE8LwWJxBC1gmA==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -7473,10 +7473,10 @@ next@^12.3.1:
     "@next/swc-win32-ia32-msvc" "12.3.4"
     "@next/swc-win32-x64-msvc" "12.3.4"
 
-nextjs-breadcrumbs@^1.1.9:
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/nextjs-breadcrumbs/-/nextjs-breadcrumbs-1.1.9.tgz#6b50c3bcf0db6b59985d89cfb95b69b6bc4f4bb5"
-  integrity sha512-kzK1bysO5dqdlsPgJ84XgAfAFKWEqlXcSWROwuR1BqST8ibcmLc3LKgak8hiO2DH2mMdd0wTR7oCkebReyBQTg==
+nextjs-breadcrumbs2@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.npmmirror.com/nextjs-breadcrumbs2/-/nextjs-breadcrumbs2-2.0.4.tgz#ea47899097268c5e9a1bbf425a07ddcac8622a26"
+  integrity sha512-UxYpJ1lTzPqaLWuAaYNJSW4Nmcidu5Z7Es3pMd9txzOYJ3enjsa8U9g22xrkNhrIXLxnlUkbm6nr3tP73xtzJw==
 
 nice-try@^1.0.4:
   version "1.0.5"
