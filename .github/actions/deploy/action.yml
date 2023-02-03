@@ -1,15 +1,31 @@
 name: Deploy
 
 inputs:
-  slot_name:
-    type: string
-    default: production
-    required: false
   AZURE_CLIENT_ID: 
+    description: client id for OIDC
     required: true
   AZURE_TENANT_ID:
+    description: tenant id
     required: true
   AZURE_SUBSCRIPTION_ID:
+    description: subscription id
+    required: true
+  AZURE_RESOURCE_GROUP:
+    description: resource group name
+    required: true
+  APP_SERVICE_NAME:
+    description: appservice name
+    required: true
+  slot_name:
+    type: string
+    description: app service slot name
+    default: production
+    required: false
+  ACR_LOGIN_SERVER:
+    description: acr server
+    required: true
+  IMAGE_NAME:
+    description: Name of the image
     required: true
 
 outputs:
@@ -35,8 +51,8 @@ runs:
       run: |
         # check if slot exists
         $alreadyExists = (az webapp deployment slot list `
-          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
-          --name ${{ vars.APP_SERVICE_NAME }} `
+          --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
+          --name ${{ inputs.APP_SERVICE_NAME }} `
           --query "[].name" `
           --output tsv `
         ).Contains('${{ inputs.slot_name }}')
@@ -50,17 +66,17 @@ runs:
 
         # need to create slot
         az webapp deployment slot create `
-          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
-          --name ${{ vars.APP_SERVICE_NAME }} `
+          --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
+          --name ${{ inputs.APP_SERVICE_NAME }} `
           --slot ${{ inputs.slot_name }} `
-          --configuration-source ${{ vars.APP_SERVICE_NAME }} `
+          --configuration-source ${{ inputs.APP_SERVICE_NAME }} `
           --output none
         Write-Host '✅ slot created'
 
         # get slot identity
         $identityId = az webapp identity assign `
-          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
-          --name ${{ vars.APP_SERVICE_NAME }} `
+          --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
+          --name ${{ inputs.APP_SERVICE_NAME }} `
           --slot ${{ inputs.slot_name }} `
           --query principalId `
           --output tsv
@@ -69,8 +85,8 @@ runs:
         # Configure WebApp to use the Manage Identity Credentials to perform docker pull operations
         $configId = (
           az webapp show `
-            --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
-            --name ${{ vars.APP_SERVICE_NAME }} `
+            --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
+            --name ${{ inputs.APP_SERVICE_NAME }} `
             --slot ${{ inputs.slot_name }} `
             --query id `
             --output tsv
@@ -82,8 +98,8 @@ runs:
         Write-Host '✅ acrUseManagedIdentityCreds set'
 
         $acrId = az acr show `
-          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
-          --name ${{ vars.ACR_LOGIN_SERVER }} `
+          --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
+          --name ${{ inputs.ACR_LOGIN_SERVER }} `
           --query id `
           --output tsv
         Write-Host '✅ acr found'
@@ -102,8 +118,8 @@ runs:
       id: get-app-service-url
       run: |
         $url = az webapp config hostname list `
-          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
-          --webapp-name ${{ vars.APP_SERVICE_NAME }} `
+          --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
+          --webapp-name ${{ inputs.APP_SERVICE_NAME }} `
           --slot ${{ inputs.slot_name }} `
           --query "[0].name" `
           --output tsv
@@ -111,10 +127,9 @@ runs:
         echo "webapp-url=https://$url" >> $env:GITHUB_OUTPUT
 
     - name: AppService - Deploy
-      shell: pwsh
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
-        app-name: ${{ vars.APP_SERVICE_NAME }}
+        app-name: ${{ inputs.APP_SERVICE_NAME }}
         slot-name: ${{ inputs.slot_name }}
-        images: ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.slot_name }}
+        images: ${{ inputs.ACR_LOGIN_SERVER }}/${{ inputs.IMAGE_NAME }}:${{ inputs.slot_name }}
