@@ -27,12 +27,15 @@ jobs:
   deploy:
     name: Deploy to slot
     needs: build
+    runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
       pull-requests: write
     steps:
-      - uses: './.github/deploy'
+      - uses: actions/checkout@v3
+
+      - uses: ./.github/actions/deploy
         id: deploy
         with:
           slot_name: pr-${{ github.event.number }}

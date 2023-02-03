@@ -24,11 +24,13 @@ jobs:
   deploy-to-prod:
     name: Deploy to Production
     needs: build
+    runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
     steps:
-      - uses: './.github/deploy'
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/deploy
         with:
           slot_name: pr-${{ github.event.number }}
           AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
