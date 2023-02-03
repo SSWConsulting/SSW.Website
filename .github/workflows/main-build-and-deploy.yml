@@ -8,16 +8,11 @@ on:
 
 concurrency: 
   group: main
-  cancel-in-progress: true
-
-defaults:
-  run:
-    shell: pwsh
 
 permissions:
-      id-token: write
-      contents: read
-      
+  id-token: write
+  contents: read
+
 jobs:
   build:
     name: Build and upload artifacts
@@ -27,10 +22,15 @@ jobs:
     secrets: inherit
   
   deploy-to-prod:
-    name: Deploy to production
-    uses: ./.github/workflows/template-deploy-slot.yml
+    name: Deploy to Production
     needs: build
-    with:
-      ENVIRONMENT_NAME: production
-      SLOT_NAME: production
-    secrets: inherit
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: './.github/deploy'
+        with:
+          slot_name: pr-${{ github.event.number }}
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
