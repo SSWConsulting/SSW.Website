@@ -55,9 +55,11 @@ runs:
           --name ${{ inputs.APP_SERVICE_NAME }} `
           --query "[].name" `
           --output tsv `
-        ).Contains('${{ inputs.slot_name }}')
+        )
 
-        if ($alreadyExists) {
+        $alreadyExists ??= @()
+
+        if ($alreadyExists.Contains('${{ inputs.slot_name }}')) {
           Write-Host '⏩ slot already exists'
           Return 0;
         }
