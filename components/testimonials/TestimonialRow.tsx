@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Image from "next/legacy/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Container } from "../util/container";
@@ -9,9 +10,13 @@ export const TestimonialRow = ({ testimonialsQueryResult }) => {
       (t) => t.Testimonial
     );
 
-  const randomTestimonials = testimonialsData
-    .sort(() => 0.5 - Math.random())
-    .slice(0, 3);
+  const [randomTestimonials, setRandomTestimonials] = useState([]);
+  useEffect(() => {
+    const testimonials = testimonialsData
+      .sort(() => 0.5 - Math.random())
+      .slice(0, 3);
+    setRandomTestimonials(testimonials);
+  }, []);
 
   return (
     <Container size="custom" className="h-full">
