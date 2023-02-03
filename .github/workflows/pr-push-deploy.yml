@@ -13,63 +13,72 @@ defaults:
   run:
     shell: pwsh
 
-permissions:
-  id-token: write
-  contents: read
-
 jobs:
   build:
     name: Build and upload artifacts
     uses: ./.github/workflows/template-build.yml
     with:
       tag: pr-${{ github.event.number }}
+    permissions:
+      id-token: write
+      contents: read
     secrets: inherit
   
   deploy:
     name: Deploy to slot
-    uses: ./.github/workflows/template-deploy-slot.yml
     needs: build
-    with:
-      environment_name: "PR #${{ github.event.number }}"
-      slot_name: pr-${{ github.event.number }}
-    secrets: inherit
-
-  pagespeed-insights:
-    name: PageSpeed Insights
-    needs: deploy
-    runs-on: ubuntu-latest
     permissions:
+      id-token: write
+      contents: read
       pull-requests: write
     steps:
+      - uses: './.github/deploy'
+        id: deploy
+        with:
+          slot_name: pr-${{ github.event.number }}
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-    - uses: wicksipedia/pagespeed-insights@main
-      id: pagespeed-insights
-      with:          
-        url: ${{ needs.deploy.outputs.url }}
-        categories: |
-          accessibility
-          best_practices
-          performance
-          SEO
-        strategy: mobile
-        key: ${{ secrets.PAGESPEED_INSIGHTS_API_KEY }}
+      - name: Comment on PR with insights
+        uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            Deployed changes to <${{ steps.deploy.outputs.url }}>
 
-    - name: Comment on PR with insights
-      uses: mshick/add-pr-comment@v1
-      with:
-        message: |
-          ## PageSpeed Insights
+            > *This is an automated message.*
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+          allow-repeats: true
 
-          | Category        | Score                                                   |
-          | ---             | ---                                                     |
-          | Accessibility   | ${{ steps.pagespeed-insights.outputs.accessibility }}   |
-          | Best practices  | ${{ steps.pagespeed-insights.outputs.best_practices }}  |
-          | Performance     | ${{ steps.pagespeed-insights.outputs.performance }}     |
-          | SEO             | ${{ steps.pagespeed-insights.outputs.seo }}             |
+      - uses: wicksipedia/pagespeed-insights@main
+        id: pagespeed-insights
+        with:          
+          url: ${{ steps.deploy.outputs.url }}
+          categories: |
+            accessibility
+            best_practices
+            performance
+            SEO
+          strategy: mobile
+          key: ${{ secrets.PAGESPEED_INSIGHTS_API_KEY }}
 
-          View the full report <https://pagespeed.web.dev/report?url=${{ needs.deploy.outputs.url }}>
+      - name: Comment on PR with insights
+        uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            ## PageSpeed Insights
 
-          > *This is an automated message.*
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        repo-token-user-login: 'github-actions[bot]'
-        allow-repeats: true
+            | Category        | Score                                                   |
+            | ---             | ---                                                     |
+            | Accessibility   | ${{ steps.pagespeed-insights.outputs.accessibility }}   |
+            | Best practices  | ${{ steps.pagespeed-insights.outputs.best_practices }}  |
+            | Performance     | ${{ steps.pagespeed-insights.outputs.performance }}     |
+            | SEO             | ${{ steps.pagespeed-insights.outputs.seo }}             |
+
+            View the full report <https://pagespeed.web.dev/report?url=${{ steps.deploy.outputs.url }}>
+
+            > *This is an automated message.*
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+          allow-repeats: true
