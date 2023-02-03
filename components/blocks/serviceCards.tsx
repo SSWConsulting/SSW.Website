@@ -42,94 +42,93 @@ const Label = ({ text }) => {
 };
 
 const BigCards = ({ title, cards }) => {
-  return (
-    <>
-      <Label text={title} />
-      <ul
-        role="list"
-        className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4"
-      >
-        {cards.map((card) => (
-          <li
-            key={card.title}
-            className={`col-span-1 flex flex-col divide-y divide-gray-200 text-center shadow ${bgColor[card.color]} hover:opacity-80`}
-          >
-            <Link href={card.link}>
-              <a className="unstyled flex grow text-left text-white">
-                <div className="flex grow flex-col">
-                  <div
-                    className="absolute flex-1 self-end"
-                    >
-                    <Image 
-                        src={card.imgSrc} 
-                        width="100"
-                        height="100"
-                        objectFit="contain"
-                        objectPosition="10px 0px"
-                        alt=""/>
-                  </div>
-                  <div className="relative flex grow flex-col p-8">
-                    <h3 className="flex pb-3 text-2xl font-light lg:pt-8">
-                      {card.title}
-                    </h3>
-                    <div className="grow"></div>
-                    <TinaMarkdown content={card.description} />
-                  </div>
-                </div>
-              </a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </>
-  );
+  return <>
+    <Label text={title} />
+    <ul
+      role="list"
+      className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4"
+    >
+      {cards.map((card) => (
+        <li
+          key={card.title}
+          className={`col-span-1 flex flex-col divide-y divide-gray-200 text-center shadow ${bgColor[card.color]} hover:opacity-80`}
+        >
+          <Link href={card.link} className="unstyled flex grow text-left text-white">
+
+            <div className="flex grow flex-col">
+              <div
+                className="absolute flex-1 self-end"
+                >
+                <Image 
+                    src={card.imgSrc} 
+                    width="100"
+                    height="100"
+                    objectFit="contain"
+                    objectPosition="10px 0px"
+                    alt=""/>
+              </div>
+              <div className="relative flex grow flex-col p-8">
+                <h3 className="flex pb-3 text-2xl font-light lg:pt-8">
+                  {card.title}
+                </h3>
+                <div className="grow"></div>
+                <TinaMarkdown content={card.description} />
+              </div>
+            </div>
+
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </>;
 };
 
 const SmallCards = ({ title, cards }) => {
-  return (
-    <>
-      <Label text={title} />
-      <ul
-        role="list"
-        className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4"
-      >
-        {cards.map((card) => (
-          <li
-            key={card.title}
-            className={`col-span-1 flex flex-col divide-y divide-gray-200 text-center shadow ${bgColor[card.color]} hover:opacity-80`}
-          >
-            <Link href={card.link}>
-              <a className="flex h-full flex-col">
-                <div className="flex flex-1 flex-col justify-center py-8 px-2 pb-4 sm:justify-center md:flex-row md:pb-8">
-                  <Image 
-                      className=""
-                      src={card.imgSrc} 
-                      width="50"
-                      height="50"
-                      objectFit="contain"
-                      alt=""/>
-                  <h3 className="mt-1 text-sm font-light text-white md:m-5 ">
-                    {card.title}
-                  </h3>
-                </div>
-              </a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </>
-  );
+  return <>
+    <Label text={title} />
+    <ul
+      role="list"
+      className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4"
+    >
+      {cards.map((card) => (
+        <li
+          key={card.title}
+          className={`col-span-1 flex flex-col divide-y divide-gray-200 text-center shadow ${bgColor[card.color]} hover:opacity-80`}
+        >
+          <Link href={card.link} className="flex h-full flex-col">
+
+            <div className="flex flex-1 flex-col justify-center py-8 px-2 pb-4 sm:justify-center md:flex-row md:pb-8">
+              <Image 
+                  className=""
+                  src={card.imgSrc} 
+                  width="50"
+                  height="50"
+                  objectFit="contain"
+                  alt=""/>
+              <h3 className="mt-1 text-sm font-light text-white md:m-5 ">
+                {card.title}
+              </h3>
+            </div>
+
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </>;
 };
 
 const Links = ({ links }) => {
   return (
     <div className="flex flex-wrap items-center justify-between gap-6 py-3">
       {links.map((card, i) => (
-        <Link key={i} href={card.link ?? ""}> 
-          <a className="inline-flex items-center border-2 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-black shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2">
-            {card.label}
-          </a>
-        </Link>
+        (<Link
+          key={i}
+          href={card.link ?? ""}
+          className="inline-flex items-center border-2 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-black shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2">
+
+          {card.label}
+
+        </Link>)
       ))}
     </div>
   );
