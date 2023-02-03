@@ -33,6 +33,8 @@ jobs:
       contents: read
       pull-requests: write
     steps:
+      - uses: actions/checkout@v3
+
       - uses: ./.github/actions/deploy
         id: deploy
         with:
