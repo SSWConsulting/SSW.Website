@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import type { Template } from "tinacms";
 import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";

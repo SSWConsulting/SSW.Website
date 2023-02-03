@@ -3,7 +3,7 @@ import { VFC } from "react";
 import { BASE_URL } from "../util/constants";
 import { TechnologyCardProps } from "./technologyCardTypes";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import styles from "./technologyCard.module.css";
 import classnames from "classnames";
 
