@@ -1,6 +1,6 @@
 import React from "react";
 import type { Template } from "tinacms";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const ColumnLayout = ({ data }) => {

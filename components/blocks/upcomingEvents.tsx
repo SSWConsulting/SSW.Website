@@ -8,7 +8,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import { Event } from "../../classes/event";
 
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 dayjs.extend(utc);
 dayjs.extend(isBetween);
