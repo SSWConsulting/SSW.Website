@@ -61,7 +61,7 @@ var appSettings = [
 ]
 
 resource appService 'Microsoft.Web/sites@2022-03-01' = {
-  name: 'app-${projectName}-${entropy})}'
+  name: 'app-${projectName}-${entropy}'
   location: location
   kind: 'app,linux,container'
   identity: {
