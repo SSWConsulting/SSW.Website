@@ -24,6 +24,7 @@ jobs:
   deploy-to-prod:
     name: Deploy to Production
     needs: build
+    runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
