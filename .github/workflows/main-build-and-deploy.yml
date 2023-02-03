@@ -25,6 +25,9 @@ jobs:
     name: Deploy to Production
     needs: build
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: ${{ steps.deploy.outputs.url }}
     permissions:
       id-token: write
       contents: read
@@ -33,6 +36,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Deploy to production
+        id: deploy
         uses: ./.github/actions/deploy
         with:
           slot_name: production
