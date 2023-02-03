@@ -29,7 +29,7 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - uses: './.github/actions/deploy'
+      - uses: ./.github/actions/deploy
         with:
           slot_name: pr-${{ github.event.number }}
           AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
