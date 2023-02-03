@@ -117,6 +117,13 @@ runs:
       shell: pwsh
       id: get-app-service-url
       run: |
+        if ("${{ inputs.slot_name }}" -ieq "production")
+        {
+          echo "webapp-url=https://${{ inputs.APP_SERVICE_NAME }}.azurewebsites.net" >> $env:GITHUB_OUTPUT
+          Write-Host '⏩ we know the production url already'
+          Return 0;
+        }
+
         $url = az webapp config hostname list `
           --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
           --webapp-name ${{ inputs.APP_SERVICE_NAME }} `
