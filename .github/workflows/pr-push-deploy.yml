@@ -33,7 +33,7 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - uses: './.github/deploy'
+      - uses: './.github/actions/deploy'
         id: deploy
         with:
           slot_name: pr-${{ github.event.number }}
