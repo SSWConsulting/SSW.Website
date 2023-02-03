@@ -1,5 +1,6 @@
 param projectName string = 'sswwebsite'
 param location string = resourceGroup().location
+param tags object
 
 @allowed([
   'B1'
@@ -35,6 +36,7 @@ resource acr 'Microsoft.ContainerRegistry/registries@2021-09-01' existing = {
 resource plan 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: 'plan-${projectName}' 
   location: location
+  tags: tags
   kind: 'linux'
   sku: {
     name: skuName
@@ -63,9 +65,9 @@ resource appService 'Microsoft.Web/sites@2022-03-01' = {
   identity: {
     type: 'SystemAssigned'
   }
-  tags: {
+  tags: union(tags, {
     'hidden-related:${plan.id}': 'empty'
-  }
+  })
   properties: {
     serverFarmId: plan.id
     httpsOnly: true
