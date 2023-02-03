@@ -9,6 +9,9 @@ import * as gtag from "../lib/gtag";
 import { NEXT_SEO_DEFAULT } from "../next-seo.config";
 import "../styles.css";
 
+// Hack as per https://stackoverflow.com/a/66575373 to stop font awesome icons breaking
+import "@fortawesome/fontawesome-svg-core/styles.css"
+
 const isDev = process.env.NODE_ENV === "development";
 
 const App = ({ Component, pageProps }) => {

@@ -1,5 +1,6 @@
 param projectName string = 'sswwebsite'
 param location string = resourceGroup().location
+param tags object
 
 @allowed([
   'B1'
@@ -28,6 +29,8 @@ param acrName string
 @description('The docker image')
 param dockerImage string = 'sswwebsite'
 
+var entropy = substring(guid(subscription().subscriptionId, resourceGroup().id), 0, 4)
+
 resource acr 'Microsoft.ContainerRegistry/registries@2021-09-01' existing = {
   name: acrName
 }
@@ -35,6 +38,7 @@ resource acr 'Microsoft.ContainerRegistry/registries@2021-09-01' existing = {
 resource plan 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: 'plan-${projectName}' 
   location: location
+  tags: tags
   kind: 'linux'
   sku: {
     name: skuName
@@ -57,15 +61,15 @@ var appSettings = [
 ]
 
 resource appService 'Microsoft.Web/sites@2022-03-01' = {
-  name: 'app-${projectName}'
+  name: 'app-${projectName}-${entropy}'
   location: location
   kind: 'app,linux,container'
   identity: {
     type: 'SystemAssigned'
   }
-  tags: {
+  tags: union(tags, {
     'hidden-related:${plan.id}': 'empty'
-  }
+  })
   properties: {
     serverFarmId: plan.id
     httpsOnly: true

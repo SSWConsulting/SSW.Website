@@ -1,0 +1,142 @@
+name: Deploy
+
+inputs:
+  AZURE_CLIENT_ID: 
+    description: client id for OIDC
+    required: true
+  AZURE_TENANT_ID:
+    description: tenant id
+    required: true
+  AZURE_SUBSCRIPTION_ID:
+    description: subscription id
+    required: true
+  AZURE_RESOURCE_GROUP:
+    description: resource group name
+    required: true
+  APP_SERVICE_NAME:
+    description: appservice name
+    required: true
+  slot_name:
+    type: string
+    description: app service slot name
+    default: production
+    required: false
+  ACR_LOGIN_SERVER:
+    description: acr server
+    required: true
+  IMAGE_NAME:
+    description: Name of the image
+    required: true
+
+outputs:
+  url: 
+    description: URL to the environment that was deployed to
+    value: ${{ steps.get-app-service-url.outputs.webapp-url }}
+
+runs:
+  using: "composite"  
+  steps:
+
+    - name: Azure CLI - Login
+      uses: azure/login@v1
+      with:
+        client-id: ${{ inputs.AZURE_CLIENT_ID }}
+        tenant-id: ${{ inputs.AZURE_TENANT_ID }}
+        subscription-id: ${{ inputs.AZURE_SUBSCRIPTION_ID }}
+
+    - name: AppService - Create slot
+      shell: pwsh
+      id: create-slot
+      if: github.event_name == 'pull_request'
+      run: |
+        # check if slot exists
+        $alreadyExists = (az webapp deployment slot list `
+          --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
+          --name ${{ inputs.APP_SERVICE_NAME }} `
+          --query "[].name" `
+          --output tsv `
+        ).Contains('${{ inputs.slot_name }}')
+
+        if ($alreadyExists) {
+          Write-Host '⏩ slot already exists'
+          Return 0;
+        }
+
+        Write-Host '👷 need to create slot'
+
+        # need to create slot
+        az webapp deployment slot create `
+          --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
+          --name ${{ inputs.APP_SERVICE_NAME }} `
+          --slot ${{ inputs.slot_name }} `
+          --configuration-source ${{ inputs.APP_SERVICE_NAME }} `
+          --output none
+        Write-Host '✅ slot created'
+
+        # get slot identity
+        $identityId = az webapp identity assign `
+          --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
+          --name ${{ inputs.APP_SERVICE_NAME }} `
+          --slot ${{ inputs.slot_name }} `
+          --query principalId `
+          --output tsv
+        Write-Host '✅ identity created'
+
+        # Configure WebApp to use the Manage Identity Credentials to perform docker pull operations
+        $configId = (
+          az webapp show `
+            --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
+            --name ${{ inputs.APP_SERVICE_NAME }} `
+            --slot ${{ inputs.slot_name }} `
+            --query id `
+            --output tsv
+          ) + "/config/web"
+        az resource update `
+          --ids $configId `
+          --set properties.acrUseManagedIdentityCreds=True `
+          --output none
+        Write-Host '✅ acrUseManagedIdentityCreds set'
+
+        $acrId = az acr show `
+          --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
+          --name ${{ inputs.ACR_LOGIN_SERVER }} `
+          --query id `
+          --output tsv
+        Write-Host '✅ acr found'
+
+        # grant access to the identity on ACR
+        az role assignment create `
+          --assignee-object-id $identityId `
+          --assignee-principal-type ServicePrincipal `
+          --scope $acrId `
+          --role acrpull `
+          -o none
+        Write-Host '✅ acrpull role granted'
+
+    - name: AppService - Get slot URL
+      shell: pwsh
+      id: get-app-service-url
+      run: |
+        if ("${{ inputs.slot_name }}" -ieq "production")
+        {
+          echo "webapp-url=https://${{ inputs.APP_SERVICE_NAME }}.azurewebsites.net" >> $env:GITHUB_OUTPUT
+          Write-Host '⏩ we know the production url already'
+          Return 0;
+        }
+
+        $url = az webapp config hostname list `
+          --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
+          --webapp-name ${{ inputs.APP_SERVICE_NAME }} `
+          --slot ${{ inputs.slot_name }} `
+          --query "[0].name" `
+          --output tsv
+
+        echo "webapp-url=https://$url" >> $env:GITHUB_OUTPUT
+
+    - name: AppService - Deploy
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{ inputs.APP_SERVICE_NAME }}
+        slot-name: ${{ inputs.slot_name }}
+        images: ${{ inputs.ACR_LOGIN_SERVER }}/${{ inputs.IMAGE_NAME }}:${{ inputs.slot_name }}

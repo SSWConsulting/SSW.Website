@@ -19,63 +19,74 @@ jobs:
     uses: ./.github/workflows/template-build.yml
     with:
       tag: pr-${{ github.event.number }}
-    secrets:
-      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
-      NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
-      TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-      NEXT_PUBLIC_GOOGLE_GTM_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID}}
-      NEXT_PUBLIC_GOOGLE_ANALYTICS: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS}}
-      NEXT_PUBLIC_HOTJAR_ID: ${{ secrets.NEXT_PUBLIC_HOTJAR_ID}}
-      NEXT_PUBLIC_HOTJAR_SV: ${{ secrets.NEXT_PUBLIC_HOTJAR_SV}}
-      NEXT_PUBLIC_ZENDESK_CHAT_KEY: ${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY}}
-  
+    permissions:
+      id-token: write
+      contents: read
+    secrets: inherit
   
   deploy:
     name: Deploy to slot
-    uses: ./.github/workflows/template-deploy-slot.yml
     needs: build
-    with:
-      environment_name: "PR #${{ github.event.number }}"
-      slot_name: pr-${{ github.event.number }}
-    secrets:
-      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
-
-  pagespeed-insights:
-    name: PageSpeed Insights
-    needs: deploy
     runs-on: ubuntu-latest
     permissions:
+      id-token: write
+      contents: read
       pull-requests: write
     steps:
+      - uses: actions/checkout@v3
 
-    - uses: wicksipedia/pagespeed-insights@main
-      id: pagespeed-insights
-      with:          
-        url: ${{ needs.deploy.outputs.url }}
-        categories: |
-          accessibility
-          best_practices
-          performance
-          SEO
-        strategy: mobile
-        key: ${{ secrets.PAGESPEED_INSIGHTS_API_KEY }}
+      - name: Deploy to slot
+        uses: ./.github/actions/deploy
+        id: deploy
+        with:
+          slot_name: pr-${{ github.event.number }}
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          AZURE_RESOURCE_GROUP: ${{ vars.AZURE_RESOURCE_GROUP }}
+          APP_SERVICE_NAME: ${{ vars.APP_SERVICE_NAME }}
+          ACR_LOGIN_SERVER: ${{ vars.ACR_LOGIN_SERVER }}
+          IMAGE_NAME: ${{ vars.IMAGE_NAME }}
 
-    - name: Comment on PR with insights
-      uses: mshick/add-pr-comment@v1
-      with:
-        message: |
-          ## PageSpeed Insights
+      - name: Comment on PR with insights
+        uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            Deployed changes to <${{ steps.deploy.outputs.url }}>
 
-          | Category        | Score                                                   |
-          | ---             | ---                                                     |
-          | Accessibility   | ${{ steps.pagespeed-insights.outputs.accessibility }}   |
-          | Best practices  | ${{ steps.pagespeed-insights.outputs.best_practices }}  |
-          | Performance     | ${{ steps.pagespeed-insights.outputs.performance }}     |
-          | SEO             | ${{ steps.pagespeed-insights.outputs.seo }}             |
+            > *This is an automated message.*
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+          allow-repeats: true
 
-          View the full report <https://pagespeed.web.dev/report?url=${{ needs.deploy.outputs.url }}>
+      - uses: wicksipedia/pagespeed-insights@main
+        id: pagespeed-insights
+        with:          
+          url: ${{ steps.deploy.outputs.url }}
+          categories: |
+            accessibility
+            best_practices
+            performance
+            SEO
+          strategy: mobile
+          key: ${{ secrets.PAGESPEED_INSIGHTS_API_KEY }}
 
-          > *This is an automated message.*
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        repo-token-user-login: 'github-actions[bot]'
-        allow-repeats: true
+      - name: Comment on PR with insights
+        uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            ## PageSpeed Insights
+
+            | Category        | Score                                                   |
+            | ---             | ---                                                     |
+            | Accessibility   | ${{ steps.pagespeed-insights.outputs.accessibility }}   |
+            | Best practices  | ${{ steps.pagespeed-insights.outputs.best_practices }}  |
+            | Performance     | ${{ steps.pagespeed-insights.outputs.performance }}     |
+            | SEO             | ${{ steps.pagespeed-insights.outputs.seo }}             |
+
+            View the full report <https://pagespeed.web.dev/report?url=${{ steps.deploy.outputs.url }}>
+
+            > *This is an automated message.*
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+          allow-repeats: true

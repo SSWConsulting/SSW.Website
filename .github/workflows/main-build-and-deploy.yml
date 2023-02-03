@@ -8,11 +8,10 @@ on:
 
 concurrency: 
   group: main
-  cancel-in-progress: true
 
-defaults:
-  run:
-    shell: pwsh
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   build:
@@ -20,22 +19,27 @@ jobs:
     uses: ./.github/workflows/template-build.yml
     with:
       tag: production
-    secrets:
-      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
-      NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
-      TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-      NEXT_PUBLIC_GOOGLE_GTM_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID}}
-      NEXT_PUBLIC_GOOGLE_ANALYTICS: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS}}
-      NEXT_PUBLIC_HOTJAR_ID: ${{ secrets.NEXT_PUBLIC_HOTJAR_ID}}
-      NEXT_PUBLIC_HOTJAR_SV: ${{ secrets.NEXT_PUBLIC_HOTJAR_SV}}
-      NEXT_PUBLIC_ZENDESK_CHAT_KEY: ${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY}}
+    secrets: inherit
   
   deploy-to-prod:
-    name: Deploy to production
-    uses: ./.github/workflows/template-deploy-slot.yml
+    name: Deploy to Production
     needs: build
-    with:
-      ENVIRONMENT_NAME: production
-      SLOT_NAME: production
-    secrets:
-      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: Deploy to production
+        uses: ./.github/actions/deploy
+        with:
+          slot_name: production
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          AZURE_RESOURCE_GROUP: ${{ vars.AZURE_RESOURCE_GROUP }}
+          APP_SERVICE_NAME: ${{ vars.APP_SERVICE_NAME }}
+          ACR_LOGIN_SERVER: ${{ vars.ACR_LOGIN_SERVER }}
+          IMAGE_NAME: ${{ vars.IMAGE_NAME }}
