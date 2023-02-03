@@ -177,7 +177,7 @@ const OfficeInfo = ({ office }) => {
   return (
     <div className="p-4 text-sm text-black">
       <p className="pb-2">
-        <Link href={office.url}>{office.name}</Link>
+        <Link href={office.url} legacyBehavior>{office.name}</Link>
       </p>
       <p itemProp="address" itemType="http://schema.org/PostalAddress">
         <span itemProp="streetAddress">{office.streetAddress}</span>

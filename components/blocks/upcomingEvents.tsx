@@ -56,10 +56,12 @@ export const UpcomingEvents = ({ data }) => {
         </div>
         <div className="mt-3 flex flex-row-reverse">
           {/* TODO: Update link after implement this page */}
-          <Link href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all">
-            <a className="inline-flex items-center border-2 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-black shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2">
+          <Link
+            href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all"
+            className="inline-flex items-center border-2 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-black shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2">
+            
               More Events
-            </a>
+            
           </Link>
         </div>
       </div>
@@ -75,14 +77,14 @@ const renderEvent = (e: Event) => {
     <article key={e.Id} className="flex">
       <figure className="flex min-w-fit items-center">
         <Link href={e.Thumbnail.Url}>
-          <a>
-            <Image
-              src={e.Thumbnail.Url}
-              alt="event logo"
-              width={75}
-              height={75}
-            />
-          </a>
+
+          <Image
+            src={e.Thumbnail.Url}
+            alt="event logo"
+            width={75}
+            height={75}
+          />
+
         </Link>
       </figure>
       <div className="ml-5 flex flex-col justify-center">
@@ -95,8 +97,11 @@ const renderEvent = (e: Event) => {
           </span>      
         </time>
         <h5>
-          <Link href={e.Url.Url}>
-            <a className="text-sm text-sswRed" target={isExternalLink ? "_blank" : "_self"}>{e.Title}</a>
+          <Link
+            href={e.Url.Url}
+            className="text-sm text-sswRed"
+            target={isExternalLink ? "_blank" : "_self"}>
+            {e.Title}
           </Link>
         </h5>
         {!!e.Presenter && <span className="whitespace-nowrap text-xs">{e.Presenter}</span>}

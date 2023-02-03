@@ -27,16 +27,16 @@ const ThankyouPage = () => {
               <p className={textContentClass}>
                 SSW can help your business in many ways:
               </p>
-              <Link href="/consulting/Default.aspx">
-                <a className={doneButtonClass}>SSW Consulting</a>
+              <Link href="/consulting/Default.aspx" className={doneButtonClass}>
+                SSW Consulting
               </Link>
             </div>
             <div>
               <p className={textContentClass}>
                 Want to know more about our consultants:
               </p>{" "}
-              <Link href="/people/">
-                <a className={doneButtonClass}>SSW People</a>
+              <Link href="/people/" className={doneButtonClass}>
+                SSW People
               </Link>
             </div>
           </div>

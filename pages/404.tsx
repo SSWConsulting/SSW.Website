@@ -26,18 +26,18 @@ export default function FourOhFour() {
             <div className="mx-auto">
               <div className="my-4 bg-gray-200 px-5 py-4">
                 Visit{" "}
-                <Link href="/">
-                  <a className="text-sswRed no-underline">SSW homepage</a>
+                <Link href="/" className="text-sswRed no-underline">
+                  SSW homepage
                 </Link>{" "}
                 to find out how we can help you.
               </div>
 
               <div className="my-4 bg-gray-200 px-5 py-4">
                 Learn more about{" "}
-                <Link href="/rules/404-useful-error-page">
-                  <a className="text-sswRed no-underline">
+                <Link href="/rules/404-useful-error-page" className="text-sswRed no-underline">
+                  
                     having a useful 404 error page
-                  </a>
+                  
                 </Link>
                 .
               </div>

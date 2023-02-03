@@ -73,7 +73,7 @@ const LinkToDeployment = () => {
         href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_REPOSITORY}/actions/runs/${process.env.NEXT_PUBLIC_GITHUB_RUN_ID}`}
         target="_blank"
       >
-        <a>{deploymentNumber}</a>
+        {deploymentNumber}
       </Link>
       )
     </span>
@@ -93,15 +93,13 @@ const SiteInfo = () => (
       // TODO: Implementation
       href="https://www.ssw.com.au/ssw/HealthCheck"
     >
-      <a>
-        HEALTH CHECK
-        <Image
-          src="/images/health-check.png"
-          alt="health check logo"
-          height={14}
-          width={40}
-        />
-      </a>
+      HEALTH CHECK<Image
+        src="/images/health-check.png"
+        alt="health check logo"
+        height={14}
+        width={40}
+      />
+
     </Link>
   </div>
 );
