@@ -11,8 +11,9 @@ export const BuiltOnAzure = ({ data }) => {
       <Container>
         <Link
           href="/consulting/azure"
-          className="unstyled flex items-center justify-center hover:border-azure hover:text-azure">
-
+          className="unstyled flex items-center justify-center hover:border-azure hover:text-azure"
+        >
+          {/* TODO: refactor with next/image */}
           <Image
             src="/images/logos/azure.png"
             alt="Microsoft Azure Logo"
@@ -22,7 +23,6 @@ export const BuiltOnAzure = ({ data }) => {
           <div className="ml-2 text-center uppercase tracking-widest">
             Built on the Microsoft Azure Platform
           </div>
-
         </Link>
       </Container>
     </Section>

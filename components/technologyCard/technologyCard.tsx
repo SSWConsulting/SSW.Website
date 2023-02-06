@@ -23,6 +23,7 @@ const TechnologyCard: VFC<TechnologyCardProps> = ({
         data-aos="flip-left"
       >
         <figure>
+          {/* TODO: refactor with next/image */}
           <Image
             src={thumbnail || "/images/ssw-logo.svg"}
             alt={thumbnail ? name : "SSW Consulting"}

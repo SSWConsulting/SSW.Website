@@ -3,6 +3,7 @@ import type { Template } from "tinacms";
 import Image from "next/legacy/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+/* TODO: refactor with next/image */
 export const ColumnLayout = ({ data }) => {
   const RawImage = () => (
     <Image

@@ -37,6 +37,7 @@ const testimonials = (data) => {
         <TinaMarkdown content={testimonial?.body} />
       </div>
       <div className="m-2 mt-6 flex text-gray-900">
+        {/* TODO: refactor with next/image */}
         <Image
           src={testimonial?.avatar ?? ""}
           height={56}

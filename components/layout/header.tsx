@@ -46,6 +46,7 @@ const Logo = () => {
         passHref
         className="flex items-center gap-1 whitespace-nowrap"
       >
+        {/* TODO: refactor with next/image */}
         <Image
           src={logoPath}
           alt="SSW - Enterprise Software Development"
