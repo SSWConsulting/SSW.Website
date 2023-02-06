@@ -72,7 +72,7 @@ export const SocialIcons = (data?: SocialIconsParams) => {
     return (   
         <div className={
             classNames(
-                "flex gap-1 flex-grow sm:flex-grow-0", 
+                "flex gap-2 flex-grow sm:flex-grow-0", 
                 data?.className,
             )}
         >
@@ -94,7 +94,7 @@ export const SocialIcons = (data?: SocialIconsParams) => {
                                 "h-11 flex justify-center items-center text-base hover:bg-gray-1000 hover:bg-none cursor-pointer",
                                 styling.bgClassName,
                                 social.linkText ? "w-fit" : "w-11",
-                                { "px-1 sm:px-4" : social.linkText },
+                                { "px-6" : social.linkText },
                                 { "flex sm:hidden": hideOnDesktop },
                                 { "hidden sm:flex": hideOnMobile },
                                 { "flex-grow sm:flex-grow-0": growOnMobile },
@@ -103,8 +103,8 @@ export const SocialIcons = (data?: SocialIconsParams) => {
                             target="_blank"
                             rel="noreferrer nofollow"
                         >
-                            <FontAwesomeIcon size="xl" icon={styling.icon} color="white" />
-                            {social.linkText && <span className="ml-2 inline text-xs font-bold text-white">{social.linkText}</span>}
+                            <FontAwesomeIcon className={classNames({"text-3xl" : !social.linkText})} icon={styling.icon} color="white" />
+                            {social.linkText && <span className="ml-2 inline text-base font-bold text-white">{social.linkText}</span>}
                         </a>
                     </Link>
                 )
