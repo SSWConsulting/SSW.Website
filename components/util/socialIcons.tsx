@@ -99,13 +99,11 @@ export const SocialIcons = (data?: SocialIconsParams) => {
                                 { "hidden sm:flex": hideOnMobile },
                                 { "flex-grow sm:flex-grow-0": growOnMobile },
                             )}
-                            title={social.title}
-                            
+                            title={social.title}                            
                             target="_blank"
                             rel="noreferrer nofollow"
                         >
-                            {/* // eslint-disable-next-line tailwindcss/no-custom-classname */}
-                            <FontAwesomeIcon className="fa-lg" icon={styling.icon} color="white" />
+                            <FontAwesomeIcon size="xl" icon={styling.icon} color="white" />
                             {social.linkText && <span className="ml-2 inline text-xs font-bold text-white">{social.linkText}</span>}
                         </a>
                     </Link>
