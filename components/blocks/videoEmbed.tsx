@@ -1,5 +1,5 @@
 import React from "react";
-import ReactPlayer from "react-player";
+import ReactPlayer from "../reactPlayer/reactPlayer";
 import type { Template } from "tinacms";
 
 export const VideoEmbed = ({ data }) => {
@@ -13,13 +13,13 @@ export const VideoEmbed = ({ data }) => {
       />
     </div>
   );
-}
+};
 
 export const videoEmbedBlockSchema: Template = {
   name: "VideoEmbed",
   label: "Video Embed",
   ui: {
-    previewSrc: "/blocks/videoEmbedContent.png"
+    previewSrc: "/blocks/videoEmbedContent.png",
   },
   fields: [
     {
@@ -28,5 +28,5 @@ export const videoEmbedBlockSchema: Template = {
       name: "url",
       required: true,
     },
-  ]
-}
+  ],
+};

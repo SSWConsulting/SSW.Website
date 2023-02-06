@@ -72,7 +72,8 @@
     @apply bg-[#3b5998];
   }
   .bg-instagram {
-    @apply bg-[#bc1888] bg-gradient-to-tr from-[#f09433] to-[#bc1888];
+    @apply bg-[#bc1888];
+    background: linear-gradient(45deg,#f09433,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888);
   }
   .bg-twitter {
     @apply bg-[#55acee];

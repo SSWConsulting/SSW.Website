@@ -39,9 +39,11 @@ export const Layout = ({ children, className = "" }) => {
           <div className="flex flex-1 flex-col from-white to-gray-50 text-gray-800 dark:from-gray-900 dark:to-gray-1000">
             {children}
           </div>
+          <div>
+            <Footer />
+            <MobileMenu isMenuOpened={isMenuOpened}></MobileMenu>
+          </div>
         </div>
-        <Footer />
-        <MobileMenu isMenuOpened={isMenuOpened}></MobileMenu>
       </Theme>
     </>
   );
