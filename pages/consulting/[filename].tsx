@@ -5,6 +5,7 @@ import ReactPlayer from "react-player";
 import { client } from "../../.tina/__generated__/client";
 import { Booking } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { Marketing } from "../../components/marketing/Marketing";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import BookingButton from "../../components/bookingButton/bookingButton";
 import { Layout } from "../../components/layout";
@@ -106,6 +107,7 @@ export default function ConsultingPage(
         <Section>
           <TestimonialRow testimonials={props.testimonialResult} />
         </Section>
+        <Marketing content={data.consulting} />
         <Section className="pb-28 text-center">
           <div className="main-container">
             <TechnologyCards

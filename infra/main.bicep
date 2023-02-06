@@ -29,11 +29,17 @@ param dockerImage string = 'sswwebsite'
 
 param now string = utcNow('yyyy-MM-ddTHH-mm')
 
+var tags = {
+  // change this to 'core' when you are ready to deploy to production
+  'cost-category': 'dev/test'
+}
+
 module acr 'acr.bicep' = {
   name: 'acr-${now}'
   params: {
     projectName: projectName
     location: location
+    tags: tags
   }
 }
 
@@ -42,6 +48,7 @@ module appService 'appService.bicep' = {
   params: {
     projectName: projectName
     location: location
+    tags: tags
     skuName: skuName
     skuCapacity: skuCapacity
     acrName: acr.outputs.acrName

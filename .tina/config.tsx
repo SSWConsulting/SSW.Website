@@ -448,6 +448,12 @@ const config = defineStaticConfig({
               },
             ],
           },
+          {
+            type: "reference",
+            label: "Marketing",
+            name: "marketing",
+            collections: ["marketing"],
+          },
         ],
       },
       {
