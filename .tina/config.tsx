@@ -321,6 +321,18 @@ const config = defineStaticConfig({
           seoSchema,
           {
             type: "object",
+            label: "Solution",
+            name: "solution",
+            fields: [
+              {
+                type: "string",
+                label: "Project",
+                name: "project",
+              },
+            ],
+          },
+          {
+            type: "object",
             label: "Booking",
             name: "booking",
             fields: [
@@ -345,6 +357,13 @@ const config = defineStaticConfig({
                 name: "videoBackground",
               }
             ],
+          },
+          {
+            type: "rich-text",
+            label: "Body",
+            name: "_body",
+            templates: [...Schemas.pageBlocks],
+            isBody: true,
           },
           {
             type: "object",
@@ -406,53 +425,41 @@ const config = defineStaticConfig({
             ],
           },
           {
-            type: "object",
-            label: "Solution",
-            name: "solution",
-            fields: [
-              {
-                type: "string",
-                label: "Project",
-                name: "project",
-              },
-            ],
-          },
-          {
-            type: "rich-text",
-            label: "Body",
-            name: "_body",
-            templates: [...Schemas.pageBlocks],
-            isBody: true,
-          },
-          {
-            type: "string",
-            label: "Technology header",
-            name: "techHeader",
-          },
-          {
-            type: "object",
-            label: "Technology Cards",
-            name: "technologyCards",
-            ui: {
-              itemProps: (item) => ({
-                label: item?.technologyCard,
-              }),
-            },
-            list: true,
-            fields: [
-              {
-                type: "reference",
-                label: "Technology Card",
-                name: "technologyCard",
-                collections: ["technologies"],
-              },
-            ],
-          },
-          {
             type: "reference",
             label: "Marketing",
             name: "marketing",
             collections: ["marketing"],
+          },
+          {
+            type: "object",
+            label: "Technologies",
+            name: "technologies",
+            fields: [
+              {
+                type: "string",
+                label: "Header",
+                name: "header"
+              },
+              {
+                type: "object",
+                label: "Technology Cards",
+                name: "technologyCards",
+                ui: {
+                  itemProps: (item) => ({
+                    label: item?.technologyCard,
+                  }),
+                },
+                list: true,
+                fields: [
+                  {
+                    type: "reference",
+                    label: "Technology Card",
+                    name: "technologyCard",
+                    collections: ["technologies"],
+                  },
+                ],
+              },
+            ]
           },
         ],
       },
