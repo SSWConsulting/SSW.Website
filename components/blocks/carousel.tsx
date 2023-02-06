@@ -29,7 +29,7 @@ export const Carousel = ({ data }) => {
 
   return (
     <Section color={data.backgroundColor}>
-      <Container size="custom">
+      <Container size="custom" className="w-full">
         <CarouselImplementation
           autoPlay={true}
           infiniteLoop={true}
