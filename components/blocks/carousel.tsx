@@ -28,7 +28,7 @@ export const Carousel = ({ data }) => {
   }
 
   return (
-    <Section color={data.backgroundColor}>
+    <Section className="hidden md:flex" color={data.backgroundColor}>
       <Container size="custom" className="w-full">
         <CarouselImplementation
           autoPlay={true}
@@ -55,6 +55,7 @@ const createCarouselItemImage = ({ imgSrc, label }, index: React.Key) => {
         height={388}
         width={1080}
         layout="responsive"
+        priority={index === 0}
       />
       {/* `legend` required so that the carousel works properly */}
       {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
