@@ -213,14 +213,17 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            lineHeight: 1.5,
             h1: {
               fontSize: "2rem",
+              fontWeight: "300",
               margin: "1rem 0",
               padding: "60px 0 20px 0",
               lineHeight: 1.2,
             },
             h3: {
               fontSize: "1.5rem",
+              fontWeight: "300",
               marginBottom: "7px",
             },
             p: {
