@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
     - main
+  workflow_dispatch:
 
 concurrency: 
   group: ci-${{ github.event.number }}-${{ github.workflow }}
@@ -53,8 +54,6 @@ jobs:
         with:
           message: |
             Deployed changes to <${{ steps.deploy.outputs.url }}>
-
-            > *This is an automated message.*
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           allow-repeats: true
@@ -85,8 +84,6 @@ jobs:
             | SEO             | ${{ steps.pagespeed-insights.outputs.seo }}             |
 
             View the full report <https://pagespeed.web.dev/report?url=${{ steps.deploy.outputs.url }}>
-
-            > *This is an automated message.*
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           allow-repeats: true
