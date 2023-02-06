@@ -1,7 +1,7 @@
 import { useTina } from "tinacms/dist/react";
 import { Components, TinaMarkdown } from "tinacms/dist/rich-text";
 
-import ReactPlayer from "react-player";
+import ReactPlayer from "../../components/reactPlayer/reactPlayer";
 import { client } from "../../.tina/__generated__/client";
 import { Booking } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";

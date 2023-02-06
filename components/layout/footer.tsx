@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
@@ -20,7 +20,8 @@ export const Footer = () => {
         <SocialIcons
           className="my-6 justify-center sm:hidden"
           excludeDesktop={Object.values(SocialTypes)}
-          excludeMobile={[ SocialTypes.phone ]} />
+          excludeMobile={[SocialTypes.phone]}
+        />
         <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
           <DeploymentInfo />
           <SiteInfo />
@@ -63,7 +64,9 @@ const DeploymentInfo = () => (
 );
 
 const LinkToDeployment = () => {
-  const deploymentDate = process.env.NEXT_PUBLIC_GITHUB_RUN_DATE ? dayjs.utc(process.env.NEXT_PUBLIC_GITHUB_RUN_DATE).fromNow() : "XXX";
+  const deploymentDate = process.env.NEXT_PUBLIC_GITHUB_RUN_DATE
+    ? dayjs.utc(process.env.NEXT_PUBLIC_GITHUB_RUN_DATE).fromNow()
+    : "XXX";
   const deploymentNumber = process.env.NEXT_PUBLIC_GITHUB_RUN_NUMBER || "XXX";
 
   return (
@@ -73,7 +76,7 @@ const LinkToDeployment = () => {
         href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_REPOSITORY}/actions/runs/${process.env.NEXT_PUBLIC_GITHUB_RUN_ID}`}
         target="_blank"
       >
-        <a>{deploymentNumber}</a>
+        {deploymentNumber}
       </Link>
       )
     </span>
@@ -93,15 +96,14 @@ const SiteInfo = () => (
       // TODO: Implementation
       href="https://www.ssw.com.au/ssw/HealthCheck"
     >
-      <a>
-        HEALTH CHECK
-        <Image
-          src="/images/health-check.png"
-          alt="health check logo"
-          height={14}
-          width={40}
-        />
-      </a>
+      {/* TODO: refactor with next/image */}
+      HEALTH CHECK
+      <Image
+        src="/images/health-check.png"
+        alt="health check logo"
+        height={14}
+        width={40}
+      />
     </Link>
   </div>
 );

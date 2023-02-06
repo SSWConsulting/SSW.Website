@@ -1,12 +1,18 @@
 import React from "react";
 import type { Template } from "tinacms";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
+/* TODO: refactor with next/image */
 export const CustomImage = ({ data }) => {
   return (
-    <Image src={data.src} alt={data.altText} height={data.height} width={data.width} />
+    <Image
+      src={data.src}
+      alt={data.altText}
+      height={data.height}
+      width={data.width}
+    />
   );
-}
+};
 
 export const customImageBlockSchema: Template = {
   name: "CustomImage",
@@ -36,5 +42,5 @@ export const customImageBlockSchema: Template = {
       name: "width",
       required: true,
     },
-  ]
-}
+  ],
+};
