@@ -109,7 +109,7 @@ export default function ConsultingPage(
         </Section>
         <Section className="mb-16">
           <Container padding="px-4" className="flex flex-wrap">
-            <TestimonialRow testimonials={props.testimonialResult} />
+            <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
             <BookingButton {...bookingButtonProps} containerClass="w-full" />
           </Container>
         </Section>
@@ -158,12 +158,6 @@ export const getStaticProps = async ({ params }) => {
   });
 
   const testimonials = await client.queries.allTestimonialsQuery();
-  const randomTestimonials =
-    testimonials.data.testimonialsConnection.Testimonials.map(
-      (t) => t.Testimonial
-    )
-      .sort(() => 0.5 - Math.random())
-      .slice(0, 3);
 
   const technologyCardNames =
     tinaProps.data.consulting.technologies.technologyCards?.reduce<string[]>(
@@ -182,7 +176,7 @@ export const getStaticProps = async ({ params }) => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
-      testimonialResult: randomTestimonials,
+      testimonialResult: testimonials,
       technologyCards: technologyCardsProps,
       env: {
         GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY || null,
