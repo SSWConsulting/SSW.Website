@@ -8,7 +8,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import { Event } from "../../classes/event";
 
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 dayjs.extend(utc);
 dayjs.extend(isBetween);
@@ -20,7 +20,10 @@ export const UpcomingEvents = ({ data }) => {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const datetime = dayjs.utc().startOf("day").format("YYYY-MM-DDTHH:mm:ss[Z]"); //Why
+      const datetime = dayjs
+        .utc()
+        .startOf("day")
+        .format("YYYY-MM-DDTHH:mm:ss[Z]"); //Why
       const params = {
         odataFilter: encodeURIComponent(
           `$filter=Enabled ne false and EndDateTime gt datetime'${datetime}'`
@@ -56,10 +59,11 @@ export const UpcomingEvents = ({ data }) => {
         </div>
         <div className="mt-3 flex flex-row-reverse">
           {/* TODO: Update link after implement this page */}
-          <Link href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all">
-            <a className="inline-flex items-center border-2 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-black shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2">
-              More Events
-            </a>
+          <Link
+            href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all"
+            className="inline-flex items-center border-2 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-black shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
+          >
+            More Events
           </Link>
         </div>
       </div>
@@ -75,31 +79,34 @@ const renderEvent = (e: Event) => {
     <article key={e.Id} className="flex">
       <figure className="flex min-w-fit items-center">
         <Link href={e.Thumbnail.Url}>
-          <a>
-            <Image
-              src={e.Thumbnail.Url}
-              alt="event logo"
-              width={75}
-              height={75}
-            />
-          </a>
+          {/* TODO: refactor with next/image */}
+          <Image
+            src={e.Thumbnail.Url}
+            alt="event logo"
+            width={75}
+            height={75}
+          />
         </Link>
       </figure>
       <div className="ml-5 flex flex-col justify-center">
         <time className="text-xs uppercase">
-          <span>
-            {e.FormattedDate}
-          </span>
+          <span>{e.FormattedDate}</span>
           <span className="ml-2 inline-flex items-center rounded-md bg-gray-700 px-1.5 text-xs font-bold text-white">
             {e.RelativeDate}
-          </span>      
+          </span>
         </time>
         <h5>
-          <Link href={e.Url.Url}>
-            <a className="text-sm text-sswRed" target={isExternalLink ? "_blank" : "_self"}>{e.Title}</a>
+          <Link
+            href={e.Url.Url}
+            className="text-sm text-sswRed"
+            target={isExternalLink ? "_blank" : "_self"}
+          >
+            {e.Title}
           </Link>
         </h5>
-        {!!e.Presenter && <span className="whitespace-nowrap text-xs">{e.Presenter}</span>}
+        {!!e.Presenter && (
+          <span className="whitespace-nowrap text-xs">{e.Presenter}</span>
+        )}
       </div>
     </article>
   );

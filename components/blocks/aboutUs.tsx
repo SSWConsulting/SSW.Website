@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import type { Template } from "tinacms";
 import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
@@ -77,12 +77,14 @@ const TV = () => {
         ></iframe>
       ) : (
         <>
+          {/* TODO: refactor with next/image */}
           <Image
             src={layoutData.aboutUs.video.thumbnailUrl}
             alt="SSW TV"
             width={340}
             height={190}
-            onClick={() => setVideoClicked(true)} />
+            onClick={() => setVideoClicked(true)}
+          />
         </>
       )}
     </div>
@@ -115,9 +117,10 @@ const ContactUsAndMap = () => {
       {/* TODO: update state hover images to show state name with a red background */}
       {/* eslint-disable-next-line tailwindcss/no-arbitrary-value*/}
       <div className="relative hidden bg-[url('/images/map/map-bg.png')] bg-[length:100%_auto] bg-no-repeat md:block">
+        {/* TODO: refactor with next/image */}
         <Image
           className={classNames(
-            "bg-no-repeat bg-[length:100%_auto]",
+            "bg-[length:100%_auto] bg-no-repeat",
             States[stateBeingHovered || office?.addressRegion]?.mapClass
           )}
           src="/images/placeholder.png"
@@ -154,7 +157,7 @@ const AccordionItem = ({
     <>
       <div
         className={classNames(
-          "flex group cursor-pointer justify-between items-center p-2 mb-2",
+          "group mb-2 flex cursor-pointer items-center justify-between p-2",
           currentlySelected ? selectedClass : unselectedClass
         )}
         onMouseEnter={() => setStateBeingHovered(office.addressRegion)}
@@ -165,7 +168,11 @@ const AccordionItem = ({
           <div className="uppercase text-white">{office.addressLocality}</div>
         </div>
         <div className="flex items-center justify-center text-white">
-          <FontAwesomeIcon icon={currentlySelected ? faArrowAltCircleDown : faArrowAltCircleRight} />
+          <FontAwesomeIcon
+            icon={
+              currentlySelected ? faArrowAltCircleDown : faArrowAltCircleRight
+            }
+          />
         </div>
       </div>
       {currentlySelected && children}
@@ -177,7 +184,9 @@ const OfficeInfo = ({ office }) => {
   return (
     <div className="p-4 text-sm text-black">
       <p className="pb-2">
-        <Link href={office.url}>{office.name}</Link>
+        <Link href={office.url} legacyBehavior>
+          {office.name}
+        </Link>
       </p>
       <p itemProp="address" itemType="http://schema.org/PostalAddress">
         <span itemProp="streetAddress">{office.streetAddress}</span>
@@ -226,7 +235,7 @@ const OpenStatus = ({ state }) => {
     <span
       className={classNames(
         statusClass,
-        "ml-2 p-1 font-bold text-xxs text-white uppercase"
+        "ml-2 p-1 text-xxs font-bold uppercase text-white"
       )}
     >
       {status}

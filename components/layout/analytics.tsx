@@ -9,10 +9,10 @@ const hjSv = process.env.NEXT_PUBLIC_HOTJAR_SV;
 export const Analytics = () => {
   return (
     <>
-      <GoogleAnalytics analyticsId={`${gaId}`} />
-      <GoogleTagManager tagId={`${gtmId}`} />
-      <Hotjar hotjarId={`${hjId}`} hotjarSv={`${hjSv}`} />
-      <Zendesk zendeskKey={`${zendesk}`} />
+      <GoogleAnalytics analyticsId={`${gaId ? gaId : ""}`} />
+      <GoogleTagManager tagId={`${gtmId ? gtmId : ""}`} />
+      <Hotjar hotjarId={`${hjId ? hjId : ""}`} hotjarSv={`${hjSv ? hjSv : ""}`} />
+      <Zendesk zendeskKey={`${zendesk ? zendesk : ""}`} />
     </>
   );
 };
