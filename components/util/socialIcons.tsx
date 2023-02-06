@@ -72,7 +72,7 @@ export const SocialIcons = (data?: SocialIconsParams) => {
     return (   
         <div className={
             classNames(
-                "flex gap-4 flex-grow sm:flex-grow-0", 
+                "flex gap-1 flex-grow sm:flex-grow-0", 
                 data?.className,
             )}
         >
@@ -91,9 +91,9 @@ export const SocialIcons = (data?: SocialIconsParams) => {
                     <Link key={social.type} href={social.url}>
                         <a
                             className={classNames(
-                                "h-8 flex justify-center items-center text-base hover:bg-gray-1000 hover:bg-none cursor-pointer",
+                                "h-11 flex justify-center items-center text-base hover:bg-gray-1000 hover:bg-none cursor-pointer",
                                 styling.bgClassName,
-                                social.linkText ? "w-fit" : "w-8",
+                                social.linkText ? "w-fit" : "w-11",
                                 { "px-1 sm:px-4" : social.linkText },
                                 { "flex sm:hidden": hideOnDesktop },
                                 { "hidden sm:flex": hideOnMobile },
@@ -104,7 +104,8 @@ export const SocialIcons = (data?: SocialIconsParams) => {
                             target="_blank"
                             rel="noreferrer nofollow"
                         >
-                            <FontAwesomeIcon icon={styling.icon} color="white" />
+                            {/* // eslint-disable-next-line tailwindcss/no-custom-classname */}
+                            <FontAwesomeIcon className="fa-lg" icon={styling.icon} color="white" />
                             {social.linkText && <span className="ml-2 inline text-xs font-bold text-white">{social.linkText}</span>}
                         </a>
                     </Link>
