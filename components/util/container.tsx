@@ -3,8 +3,8 @@ import { classNames } from "tinacms";
 
 export const Container = ({
   children,
-  size = "medium",
-  width = "large",
+  size = "default",
+  width = "default",
   padding = "px-8",
   className = "",
   ...props
@@ -21,6 +21,7 @@ export const Container = ({
     small: "max-w-4xl",
     medium: "max-w-5xl",
     large: "max-w-7xl",
+    default: "max-w-7xl",
     custom: "",
   };
 

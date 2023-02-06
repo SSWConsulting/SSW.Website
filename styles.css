@@ -59,10 +59,6 @@
     @apply absolute bottom-0 w-full;
   }
 
-  .main-container {
-    @apply mx-auto max-w-[1170px] px-[15px];
-  }
-
   .bg-phone {
     @apply bg-[#b31217];
   }
