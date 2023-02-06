@@ -42,11 +42,11 @@ const Logo = () => {
           <Image
             src={logoPath}
             alt="SSW - Enterprise Software Development"
-            height={60}
-            width={90} />
+            height={100}
+            width={150} />
         </a>
       </Link>
-      <div className="ml-4 w-24 text-xxs font-thin uppercase leading-3 text-gray-700">
+      <div className="ml-4 w-24 text-sm font-semibold uppercase leading-4 text-gray-700">
         Enterprise Software Development
       </div>
     </h4>
