@@ -21,14 +21,14 @@ export default function HomePage(
       <Layout>
         <Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
         <Container className={"flex-1 pt-4"}>
-          <div className="gap-4 md:grid md:grid-cols-5 lg:grid-cols-3">
-            <div className="prose max-w-full md:col-span-3 lg:col-span-2">
+          <div className="gap-4 md:grid md:grid-cols-5 lg:grid-cols-5">
+            <div className="prose max-w-full leading-5 md:col-span-3 lg:col-span-3">
               <TinaMarkdown
                 components={componentRenderer}
                 content={data.page._body}
               />
             </div>
-            <div className="md:col-span-2 lg:col-span-1">
+            <div className="md:col-span-2 lg:col-span-2">
               <Blocks prefix="PageSideBar" blocks={data.page.sideBar} />
             </div>
           </div>
