@@ -29,9 +29,9 @@ export const TestimonialRow = ({ testimonialsQueryResult }) => {
 
 const getTestimonialCards = (data) => {
   return data?.map((testimonial, i) => (
-    <div className="not-prose m-5" key={i}>
+    <div className="not-prose p-5" key={i}>
       <div
-        className={`${styles.testimonialBubble} rounded-lg bg-gray-100 p-5 text-xl sm:h-64 md:h-96`}
+        className={`${styles.testimonialBubble} rounded-lg bg-gray-100 p-5 text-xl sm:h-64 md:h-full`}
         data-aos="flip-right"
       >
         <TinaMarkdown content={testimonial?.body} />
