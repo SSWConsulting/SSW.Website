@@ -1,16 +1,13 @@
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC } from "react";
-import layoutData from "../../content/global/index.json";
 
 export const Booking: FC<{
   title?: string;
   subTitle?: string;
   videoBackground?: string;
 }> = ({ title, subTitle, videoBackground, children }) => {
-  const sydneyOfficeLayoutData = layoutData.offices.find(
-    (o) => o.addressLocality === "Sydney"
-  );
+
 
   return (
     <>
@@ -18,7 +15,6 @@ export const Booking: FC<{
         <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
         <h2>{subTitle}</h2>
         {children}
-        <h2>or call us on {sydneyOfficeLayoutData.phone}</h2>
         <div className="animate-more-bounce pt-20">
           <a
             href="#more"

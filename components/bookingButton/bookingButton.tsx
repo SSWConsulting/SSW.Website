@@ -2,11 +2,16 @@ import { VFC, useState } from "react";
 import { BookingForm } from "../bookingForm/bookingForm";
 import Button from "../button/button";
 import Popup from "../popup/popup";
+import layoutData from "../../content/global/index.json";
 
 const BookingButton: VFC<{
   buttonText?: string;
   recaptchaKey?: string;
 }> = ({ buttonText, recaptchaKey }) => {
+  const sydneyOfficeLayoutData = layoutData.offices.find(
+    (o) => o.addressLocality === "Sydney"
+  );
+
   const [isVisible, setIsVisible] = useState(false);
   const showBookingForm = () => setIsVisible(!isVisible);
 
@@ -22,6 +27,7 @@ const BookingButton: VFC<{
       >
         {buttonText}
       </Button>
+      <h2 className="mx-auto w-max">or call us on {sydneyOfficeLayoutData.phone}</h2>
       <Popup
         isVisible={isVisible}
         showBookingForm={setIsVisible}

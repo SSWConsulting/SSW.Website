@@ -104,8 +104,14 @@ export default function ConsultingPage(
             </div>
           </div>
         </Section>
-        <Section>
+        <Section className="flex flex-col">
           <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
+          <div className="mb-5 flex flex-col justify-center">
+            <BookingButton
+                buttonText={data.consulting.booking.buttonText}
+                recaptchaKey={props.env["GOOGLE_RECAPTCHA_KEY"]}
+            />
+          </div>
         </Section>
         <Marketing content={data.consulting} />
         <Section className="pb-28 text-center">
