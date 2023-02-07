@@ -33,6 +33,8 @@ jobs:
       id-token: write
       contents: read
       pull-requests: write
+    outputs:
+      url: ${{ steps.deploy.outputs.url }}
     steps:
       - uses: actions/checkout@v3
 
@@ -49,7 +51,7 @@ jobs:
           ACR_LOGIN_SERVER: ${{ vars.ACR_LOGIN_SERVER }}
           IMAGE_NAME: ${{ vars.IMAGE_NAME }}
 
-      - name: Comment on PR with insights
+      - name: Comment on PR
         uses: mshick/add-pr-comment@v1
         with:
           message: |
@@ -58,10 +60,17 @@ jobs:
           repo-token-user-login: 'github-actions[bot]'
           allow-repeats: true
 
+  pagespeedInsights:
+    name: Run PageSpeed Insights
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
       - uses: wicksipedia/pagespeed-insights@main
         id: pagespeed-insights
         with:          
-          url: ${{ steps.deploy.outputs.url }}
+          url: ${{ needs.deploy.outputs.url }}
           categories: |
             accessibility
             best_practices
@@ -83,7 +92,7 @@ jobs:
             | Performance     | ${{ steps.pagespeed-insights.outputs.performance }}     |
             | SEO             | ${{ steps.pagespeed-insights.outputs.seo }}             |
 
-            View the full report <https://pagespeed.web.dev/report?url=${{ steps.deploy.outputs.url }}>
+            View the full report <https://pagespeed.web.dev/report?url=${{ needs.deploy.outputs.url }}>
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           allow-repeats: true
