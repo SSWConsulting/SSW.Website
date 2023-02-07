@@ -7,11 +7,7 @@ import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import classNames from "classnames";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowAltCircleDown,
-  faArrowAltCircleRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { BiChevronRightCircle } from "react-icons/bi";
 
 import { Container } from "../util/container";
 import { Section } from "../util/section";
@@ -85,7 +81,7 @@ export const AboutUs = ({ data }) => {
   return (
     <Section color={data.backgroundColor}>
       <Container className="w-full">
-        <div className="mt-5 grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           <TV
             className={"hidden sm:block"}
           />
@@ -113,7 +109,7 @@ const TV = ({
   const [videoClicked, setVideoClicked] = useState(false);
   return (
     <div className={className}>
-      <h2>tv.ssw.com</h2>
+      <h2 className="mt-0">tv.ssw.com</h2>
 
       {videoClicked ? (
         <iframe
@@ -146,20 +142,20 @@ const ContactUs = ({
 }) => {
   return (
     <div className={className}>
-      <h2>Contact Us</h2>
-      <div className="flex flex-col justify-center">
+      <h2 className="mt-0">Contact Us</h2>
+      <ul className="flex flex-col">
         {offices.map((o, i) => (
-          <AccordionItem
-            key={i}
-            office={o}
-            selectedOffice={selectedOffice}
-            setSelectedOffice={setSelectedOffice}
-            setStateBeingHovered={setStateBeingHovered}
-          >
-            <OfficeInfo office={o} />
-          </AccordionItem>
+            <AccordionItem
+              key={i}
+              office={o}
+              selectedOffice={selectedOffice}
+              setSelectedOffice={setSelectedOffice}
+              setStateBeingHovered={setStateBeingHovered}
+            >
+              <OfficeInfo office={o} />
+            </AccordionItem>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
@@ -181,33 +177,33 @@ const AccordionItem = ({
     }
   };
 
-  const selectedClass = "bg-sswRed";
-  const unselectedClass = "bg-gray-400 hover:bg-gray-600";
-
   return (
-    <>
+    <li>
       <div
         className={classNames(
-          "group mb-2 flex cursor-pointer items-center justify-between p-2",
-          currentlySelected ? selectedClass : unselectedClass
+          "group mb-2 flex cursor-pointer items-center justify-between p-2 transition-all duration-500",
+          currentlySelected ? "bg-sswRed" : "bg-gray-400 hover:bg-gray-600"
         )}
         onMouseEnter={() => setStateBeingHovered(office.addressRegion)}
         onMouseLeave={() => setStateBeingHovered(null)}
         onClick={() => handleSetIndex()}
       >
         <div className="group flex cursor-pointer pl-2">
-          <div className="uppercase text-white">{office.addressLocality}</div>
+          <div className="font-sans uppercase text-white">{office.addressLocality}</div>
         </div>
         <div className="flex items-center justify-center text-white">
-          <FontAwesomeIcon
-            icon={
-              currentlySelected ? faArrowAltCircleDown : faArrowAltCircleRight
-            }
-          />
+          <BiChevronRightCircle />
         </div>
       </div>
-      {currentlySelected && children}
-    </>
+
+      <div 
+        className={classNames(
+          "overflow-hidden transition-all duration-500",
+          currentlySelected ? "max-h-52" : "max-h-0",
+        )}>
+        {children}
+      </div>
+    </li>
   );
 };
 
@@ -281,32 +277,34 @@ const Map = ({
 }) => {
   return (
     <div className={className}>
-      <h2>&nbsp;</h2>
+      <h2 className="mt-0">&nbsp;</h2>
       {/* eslint-disable-next-line tailwindcss/no-arbitrary-value*/}
-      <div className="absolute h-[300px] w-[350px]">
-        <div className="absolute top-0">          
-          <Image
-            src="/blocks/aboutUs/map-bg.png"
-            alt="Placeholder"
-            height={350}
-            width={402}
-          />
+      <div className="h-[300px] w-[350px]">
+        <div className="relative">
+          <div className="absolute top-0">          
+            <Image
+              src="/blocks/aboutUs/map-bg.png"
+              alt="Placeholder"
+              height={350}
+              width={402}
+            />
+          </div>
+          {Object.keys(States).map((stateKey) => {
+            const state = States[stateKey];
+            const stateSelection = selectedOffice?.addressRegion === stateKey ? state.selected : state.notSelected;
+            const hoverSelection = stateBeingHovered === stateKey ? stateSelection.hovered : stateSelection.notHovered;
+            return (
+              <div key={stateKey} className="absolute top-0">
+                <Image
+                  src={hoverSelection}
+                  alt="Placeholder"
+                  height={350}
+                  width={402}
+                />
+              </div>
+            );
+          })}
         </div>
-        {Object.keys(States).map((stateKey) => {
-          const state = States[stateKey];
-          const stateSelection = selectedOffice?.addressRegion === stateKey ? state.selected : state.notSelected;
-          const hoverSelection = stateBeingHovered === stateKey ? stateSelection.hovered : stateSelection.notHovered;
-          return (
-            <div key={stateKey} className="absolute top-0">
-              <Image
-                src={hoverSelection}
-                alt="Placeholder"
-                height={350}
-                width={402}
-              />
-            </div>
-          );
-        })}
       </div>
     </div>
   );

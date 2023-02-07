@@ -1,17 +1,16 @@
 import React from "react";
 import Link from "next/link";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import { IconType } from "react-icons";
 import {
-  faYoutube,
-  faLinkedinIn,
-  faFacebookF,
-  faInstagram,
-  faTwitter,
-  faGithub,
-  faTiktok,
-} from "@fortawesome/free-brands-svg-icons";
+  FaPhone,
+  FaYoutube,
+  FaLinkedinIn,
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaGithub,
+  FaTiktok,
+} from "react-icons/fa";
 import classNames from "classnames";
 
 import layoutData from "../../content/global/index.json";
@@ -29,61 +28,61 @@ export enum SocialTypes {
 
 const socialStyles = new Map<
   SocialTypes,
-  { icon: IconDefinition; bgClassName: string }
+  { icon: IconType; bgClassName: string }
 >([
   [
     SocialTypes.phone,
     {
-      icon: faPhone,
+      icon: FaPhone,
       bgClassName: "bg-phone",
     },
   ],
   [
     SocialTypes.youtube,
     {
-      icon: faYoutube,
+      icon: FaYoutube,
       bgClassName: "bg-youtube",
     },
   ],
   [
     SocialTypes.linkedin,
     {
-      icon: faLinkedinIn,
+      icon: FaLinkedinIn,
       bgClassName: "bg-linkedin",
     },
   ],
   [
     SocialTypes.facebook,
     {
-      icon: faFacebookF,
+      icon: FaFacebookF,
       bgClassName: "bg-facebook",
     },
   ],
   [
     SocialTypes.instagram,
     {
-      icon: faInstagram,
+      icon: FaInstagram,
       bgClassName: "bg-instagram",
     },
   ],
   [
     SocialTypes.twitter,
     {
-      icon: faTwitter,
+      icon: FaTwitter,
       bgClassName: "bg-twitter",
     },
   ],
   [
     SocialTypes.tiktok,
     {
-      icon: faTiktok,
+      icon: FaTiktok,
       bgClassName: "bg-tiktok",
     },
   ],
   [
     SocialTypes.github,
     {
-      icon: faGithub,
+      icon: FaGithub,
       bgClassName: "bg-github",
     },
   ],
@@ -137,9 +136,8 @@ export const SocialIcons = (data?: SocialIconsParams) => {
             target="_blank"
             rel="noreferrer nofollow"
           >
-            <FontAwesomeIcon
+            <styling.icon
               className={classNames({ "text-3xl": !social.linkText })}
-              icon={styling.icon}
               color="white"
             />
             {social.linkText && (

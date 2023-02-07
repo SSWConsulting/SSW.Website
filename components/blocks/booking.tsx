@@ -1,6 +1,5 @@
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC } from "react";
+import { FaAngleDown } from "react-icons/fa";
 import layoutData from "../../content/global/index.json";
 
 export const Booking: FC<{
@@ -25,7 +24,7 @@ export const Booking: FC<{
             href="#more"
             className="cursor-default text-5xl no-underline hover:!text-gray-450"
           >
-            <FontAwesomeIcon icon={faAngleDown}></FontAwesomeIcon>
+            <FaAngleDown />
           </a>
         </div>
       </article>
