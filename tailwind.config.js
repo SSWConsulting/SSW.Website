@@ -169,6 +169,7 @@ module.exports = {
         17: "4.25rem",
         25: "100px",
         128: "32rem",
+        150: "40rem",
         liveStream: "75px",
       },
       zIndex: {
