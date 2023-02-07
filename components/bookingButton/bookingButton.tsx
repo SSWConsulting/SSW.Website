@@ -20,16 +20,23 @@ const BookingButton: FC<{
   );
 
   return (
-    <div className={classNames("flex flex-col items-center", containerClass)}>
+    <div
+      className={classNames(
+        "flex w-full flex-col items-center",
+        containerClass
+      )}
+    >
       <Button
         ripple
-        className={classNames("mx-auto mt-14 w-96", buttonClass)}
+        className={classNames("mx-auto mt-14 w-96 max-w-full p-3", buttonClass)}
         onClick={showBookingForm}
         data-aos="fade-up"
       >
         {buttonText}
       </Button>
-      <h2 className="mx-auto w-max">or call us on {sydneyOfficeLayoutData.phone}</h2>
+      <h2 className="mx-auto max-w-full text-center">
+        or call us on {sydneyOfficeLayoutData.phone}
+      </h2>
       <Popup
         isVisible={isVisible}
         showBookingForm={setIsVisible}
