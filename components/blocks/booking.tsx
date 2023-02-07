@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { FaAngleDown } from "react-icons/fa";
-import layoutData from "../../content/global/index.json";
 import { Container } from "../util/container";
 
 export const Booking: FC<{
@@ -15,7 +14,7 @@ export const Booking: FC<{
         <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
         <h2>{subTitle}</h2>
         {children}
-        <div className="animate-more-bounce pt-20">
+        <div className="flex animate-more-bounce flex-col items-center pt-20">
           <a
             href="#more"
             className="cursor-default text-5xl no-underline hover:!text-gray-450"

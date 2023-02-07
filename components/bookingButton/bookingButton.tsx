@@ -34,7 +34,7 @@ const BookingButton: VFC<{
         showBookingForm={setIsVisible}
         children={bookingForm}
       />
-      <h2>or call us on {sydneyOfficeLayoutData.phone}</h2>
+      <h2 className="text-center">or call us on {sydneyOfficeLayoutData.phone}</h2>
     </div>
   );
 };
