@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Layout } from "../components/layout";
+import { Container } from "../components/util/container";
 
 const ThankyouPage = () => {
   const textContentClass = "px-[100px] text-lg mb-4";
@@ -8,7 +9,7 @@ const ThankyouPage = () => {
   return (
     <Layout className="bg-gray-75">
       <div className="!max-w-full !bg-white">
-        <div className="main-container mb-8 pb-8 pl-4 text-center">
+        <Container padding="px-4" className="pb-8 text-center">
           <h1>
             <span className="text-sswRed">
               <h1>Thank you!</h1>
@@ -40,7 +41,7 @@ const ThankyouPage = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </Container>
       </div>
     </Layout>
   );

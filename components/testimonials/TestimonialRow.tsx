@@ -19,15 +19,15 @@ export const TestimonialRow = ({ testimonialsQueryResult }) => {
   }, []);
 
   return (
-    <Container size="custom" className="h-full">
-      <div className="grid sm:grid-flow-row md:grid-flow-col">
-        {testimonials(randomTestimonials)}
+    <Container size="custom">
+      <div className="mt-17 grid sm:grid-flow-row md:grid-flow-col">
+        {getTestimonialCards(randomTestimonials)}
       </div>
     </Container>
   );
 };
 
-const testimonials = (data) => {
+const getTestimonialCards = (data) => {
   return data?.map((testimonial, i) => (
     <div className="not-prose m-5" key={i}>
       <div

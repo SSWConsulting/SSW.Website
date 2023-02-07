@@ -3,7 +3,7 @@ import { Components, TinaMarkdown } from "tinacms/dist/rich-text";
 
 import ReactPlayer from "../../components/reactPlayer/reactPlayer";
 import { client } from "../../.tina/__generated__/client";
-import { Booking } from "../../components/blocks";
+import { Booking, BuiltOnAzure, ClientLogos } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Marketing } from "../../components/marketing/Marketing";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
@@ -14,6 +14,7 @@ import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { Benefits } from "../../components/util/consulting/benefits";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
+import { Container } from "../../components/util/container";
 
 const consultingComponentRenderer: Components<Record<string, unknown>> = {
   code: (data) => {
@@ -55,11 +56,16 @@ export default function ConsultingPage(
   const technologyCardDocs =
     props.technologyCards.data.technologiesConnection.edges.map((n) => n.node);
   const techCards =
-    data.consulting.technologyCards?.map((c) => ({
+    data.consulting.technologies.technologyCards?.map((c) => ({
       ...technologyCardDocs.find(
         (n) => !!n.name && n.name === c.technologyCard?.name
       ),
     })) || [];
+
+  const bookingButtonProps = {
+    buttonText: data.consulting.booking.buttonText,
+    recaptchaKey: props.env["GOOGLE_RECAPTCHA_KEY"],
+  };
 
   return (
     <>
@@ -77,10 +83,7 @@ export default function ConsultingPage(
           color="black"
         >
           <Booking {...data.consulting.booking}>
-            <BookingButton
-              buttonText={data.consulting.booking.buttonText}
-              recaptchaKey={props.env["GOOGLE_RECAPTCHA_KEY"]}
-            />
+            <BookingButton {...bookingButtonProps} />
           </Booking>
         </Section>
         <Section
@@ -104,17 +107,45 @@ export default function ConsultingPage(
             </div>
           </div>
         </Section>
-        <Section>
-          <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
+        <Section className="mb-16">
+          <Container padding="px-4" className="flex flex-wrap">
+            <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
+            <BookingButton {...bookingButtonProps} containerClass="w-full" />
+          </Container>
         </Section>
         <Marketing content={data.consulting} />
-        <Section className="pb-28 text-center">
-          <div className="main-container">
+        <Section className="!bg-gray-75 pb-40">
+          <Container size="custom">
+            <h1 className="text-center">Companies we have worked with</h1>
+            <ClientLogos />
+          </Container>
+        </Section>
+        <Section className="pb-16 text-center">
+          <Container padding="px-4">
             <TechnologyCards
-              techHeader={data.consulting.techHeader}
+              techHeader={data.consulting.technologies.header}
               techCards={techCards}
             />
-          </div>
+          </Container>
+        </Section>
+        <Section className="!bg-gray-75 pb-25 text-center">
+          <Container size="custom">
+            <h1>
+              Talk to us about your{" "}
+              <span className="text-sswRed">
+                {data.consulting.solution.project}
+              </span>{" "}
+              project
+            </h1>
+            <p className="text-lg">
+              Jump on a call with one of our Account Managers to discuss how we
+              can help you.
+            </p>
+            <BookingButton {...bookingButtonProps} />
+          </Container>
+        </Section>
+        <Section>
+          <BuiltOnAzure data={{ backgroundColor: "default" }} />
         </Section>
       </Layout>
     </>
@@ -129,10 +160,13 @@ export const getStaticProps = async ({ params }) => {
   const testimonials = await client.queries.allTestimonialsQuery();
 
   const technologyCardNames =
-    tinaProps.data.consulting.technologyCards?.reduce<string[]>((pre, cur) => {
-      !!cur.technologyCard?.name && pre.push(cur.technologyCard.name);
-      return pre;
-    }, []) || [];
+    tinaProps.data.consulting.technologies.technologyCards?.reduce<string[]>(
+      (pre, cur) => {
+        !!cur.technologyCard?.name && pre.push(cur.technologyCard.name);
+        return pre;
+      },
+      []
+    ) || [];
   const technologyCardsProps = await client.queries.technologyCardContentQuery({
     cardNames: technologyCardNames,
   });

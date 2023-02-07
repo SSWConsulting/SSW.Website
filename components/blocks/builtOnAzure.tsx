@@ -8,7 +8,7 @@ import { Section } from "../util/section";
 export const BuiltOnAzure = ({ data }) => {
   return (
     <Section color={data.backgroundColor}>
-      <Container>
+      <Container className="text-lg">
         <Link
           href="/consulting/azure"
           className="unstyled flex items-center justify-center hover:border-azure hover:text-azure"
