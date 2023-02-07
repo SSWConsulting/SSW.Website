@@ -1,11 +1,11 @@
-import { VFC, useState } from "react";
+import { FC, useState } from "react";
 import { BookingForm } from "../bookingForm/bookingForm";
 import Button from "../button/button";
 import Popup from "../popup/popup";
 import layoutData from "../../content/global/index.json";
 import classNames from "classnames";
 
-const BookingButton: VFC<{
+const BookingButton: FC<{
   buttonText?: string;
   recaptchaKey?: string;
   containerClass?: string;
@@ -29,12 +29,12 @@ const BookingButton: VFC<{
       >
         {buttonText}
       </Button>
+      <h2 className="mx-auto w-max">or call us on {sydneyOfficeLayoutData.phone}</h2>
       <Popup
         isVisible={isVisible}
         showBookingForm={setIsVisible}
         children={bookingForm}
       />
-      <h2 className="text-center">or call us on {sydneyOfficeLayoutData.phone}</h2>
     </div>
   );
 };

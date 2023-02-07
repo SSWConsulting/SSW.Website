@@ -291,7 +291,7 @@ module.exports = {
             "ul > li": {
               display: "block",
               fontWeight: theme("fontWeight.bold"),
-              margin: "2em 3rem 0 3rem",
+              margin: "2em 3rem 0 3rem",       
               "> div::before": {
                 color: theme("colors.sswRed"),
                 content: "\"\u25A0\"",
@@ -300,8 +300,9 @@ module.exports = {
                 fontWeight: theme("fontWeight.bold"),
                 marginLeft: "-1em",
                 width: "1em",
-              },
+              },       
             },
+
           },
         },
       }),
