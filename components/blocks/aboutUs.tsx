@@ -225,7 +225,7 @@ const AccordionItem = ({
           </div>
         </div>
         <div className="flex items-center justify-center text-white">
-          <BiChevronRightCircle />
+        <BiChevronRightCircle className={classNames({"rotate-90" : currentlySelected})} />       
         </div>
       </div>
 
