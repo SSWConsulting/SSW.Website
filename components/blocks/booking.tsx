@@ -1,7 +1,7 @@
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC } from "react";
-import layoutData from "../../content/global/index.json";
+import { Container } from "../util/container";
 
 export const Booking: FC<{
   title?: string;
@@ -9,17 +9,12 @@ export const Booking: FC<{
   videoBackground?: string;
   children: React.ReactNode;
 }> = ({ title, subTitle, videoBackground, children }) => {
-  const sydneyOfficeLayoutData = layoutData.offices.find(
-    (o) => o.addressLocality === "Sydney"
-  );
-
   return (
     <>
-      <article className="main-container">
+      <Container padding="px-4">
         <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
         <h2>{subTitle}</h2>
         {children}
-        <h2>or call us on {sydneyOfficeLayoutData.phone}</h2>
         <div className="animate-more-bounce pt-20">
           <a
             href="#more"
@@ -28,7 +23,7 @@ export const Booking: FC<{
             <FontAwesomeIcon icon={faAngleDown}></FontAwesomeIcon>
           </a>
         </div>
-      </article>
+      </Container>
 
       <video
         className="-z-100 transition-opacity duration-1000"

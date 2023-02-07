@@ -166,6 +166,7 @@ module.exports = {
       },
       spacing: {
         15: "60px",
+        17: "4.25rem",
         25: "100px",
         128: "32rem",
         150: "40rem",
@@ -214,7 +215,7 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            lineHeight: 1.5,
+            lineHeight: 1.45,
             h1: {
               fontSize: "2rem",
               fontWeight: "300",
@@ -293,7 +294,7 @@ module.exports = {
               margin: "2em 3rem 0 3rem",
               "> div::before": {
                 color: theme("colors.sswRed"),
-                content: "\u25A0",
+                content: "\"\u25A0\"",
                 display: "inline-block",
                 fontFamily: "Arial Black",
                 fontWeight: theme("fontWeight.bold"),
