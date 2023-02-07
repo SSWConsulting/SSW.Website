@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/legacy/image";
 import type { Template } from "tinacms";
@@ -72,22 +72,47 @@ const States = {
 };
 
 export const AboutUs = ({ data }) => {
+  const offices = layoutData.offices;
+  const [selectedOffice, setSelectedOffice] = useState(null);
+  const [stateBeingHovered, setStateBeingHovered] = useState(null);
+
+  useEffect(() => {
+    const defaultOffice = offices.find(o => o.addressLocality === "Sydney");
+    setSelectedOffice(defaultOffice);
+    setStateBeingHovered(defaultOffice.addressRegion);
+  }, []);
+
   return (
     <Section color={data.backgroundColor}>
-      <Container size="custom">
+      <Container className="w-full">
         <div className="mt-5 grid grid-cols-1 gap-6 md:grid-cols-3">
-          <TV />
-          <ContactUsAndMap />
+          <TV
+            className={"hidden sm:block"}
+          />
+          <ContactUs
+            className={""}
+            offices={offices}
+            selectedOffice={selectedOffice}
+            setSelectedOffice={setSelectedOffice}
+            setStateBeingHovered={setStateBeingHovered}
+          />
+          <Map
+            className={"hidden sm:block"}
+            selectedOffice={selectedOffice}
+            stateBeingHovered={stateBeingHovered}
+          />
         </div>
       </Container>
     </Section>
   );
 };
 
-const TV = () => {
+const TV = ({
+  className
+}) => {
   const [videoClicked, setVideoClicked] = useState(false);
   return (
-    <div>
+    <div className={className}>
       <h2>tv.ssw.com</h2>
 
       {videoClicked ? (
@@ -112,58 +137,30 @@ const TV = () => {
   );
 };
 
-const ContactUsAndMap = () => {
-  const [office, setOffice] = useState(null);
-  const [stateBeingHovered, setStateBeingHovered] = useState(null);
+const ContactUs = ({
+  className,
+  offices,
+  selectedOffice,
+  setSelectedOffice,
+  setStateBeingHovered,
+}) => {
   return (
-    <>
-      <div>
-        <h2>Contact Us</h2>
-        <div className="flex flex-col justify-center">
-          {layoutData.offices.map((o, i) => (
-            <AccordionItem
-              key={i}
-              office={o}
-              selectedOffice={office}
-              setSelectedOffice={setOffice}
-              setStateBeingHovered={setStateBeingHovered}
-            >
-              <OfficeInfo office={o} />
-            </AccordionItem>
-          ))}
-        </div>
+    <div className={className}>
+      <h2>Contact Us</h2>
+      <div className="flex flex-col justify-center">
+        {offices.map((o, i) => (
+          <AccordionItem
+            key={i}
+            office={o}
+            selectedOffice={selectedOffice}
+            setSelectedOffice={setSelectedOffice}
+            setStateBeingHovered={setStateBeingHovered}
+          >
+            <OfficeInfo office={o} />
+          </AccordionItem>
+        ))}
       </div>
-
-      <div className="hidden md:block">
-        <h2>&nbsp;</h2>
-        {/* eslint-disable-next-line tailwindcss/no-arbitrary-value*/}
-        <div className="relative h-[300px]">
-          <div className="absolute top-0">          
-            <Image
-              src="/blocks/aboutUs/map-bg.png"
-              alt="Placeholder"
-              height={350}
-              width={402}
-            />
-          </div>
-          {Object.keys(States).map((stateKey) => {
-            const state = States[stateKey];
-            const stateSelection = office?.addressRegion === stateKey ? state.selected : state.notSelected;
-            const hoverSelection = stateBeingHovered === stateKey ? stateSelection.hovered : stateSelection.notHovered;
-            return (
-              <div key={stateKey} className="absolute top-0">
-                <Image
-                  src={hoverSelection}
-                  alt="Placeholder"
-                  height={350}
-                  width={402}
-                />
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </>
+    </div>
   );
 };
 
@@ -276,6 +273,44 @@ const OpenStatus = ({ state }) => {
     </span>
   );
 };
+
+const Map = ({
+  className,
+  selectedOffice,
+  stateBeingHovered,
+}) => {
+  return (
+    <div className={className}>
+      <h2>&nbsp;</h2>
+      {/* eslint-disable-next-line tailwindcss/no-arbitrary-value*/}
+      <div className="absolute h-[300px] w-[350px]">
+        <div className="absolute top-0">          
+          <Image
+            src="/blocks/aboutUs/map-bg.png"
+            alt="Placeholder"
+            height={350}
+            width={402}
+          />
+        </div>
+        {Object.keys(States).map((stateKey) => {
+          const state = States[stateKey];
+          const stateSelection = selectedOffice?.addressRegion === stateKey ? state.selected : state.notSelected;
+          const hoverSelection = stateBeingHovered === stateKey ? stateSelection.hovered : stateSelection.notHovered;
+          return (
+            <div key={stateKey} className="absolute top-0">
+              <Image
+                src={hoverSelection}
+                alt="Placeholder"
+                height={350}
+                width={402}
+              />
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
 
 export const aboutUsBlockSchema: Template = {
   name: "AboutUs",
