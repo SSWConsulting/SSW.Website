@@ -8,7 +8,7 @@ import Image from "next/legacy/image";
 export const ClientLogos = () => {
   return (
     <div className="grid grid-cols-3">
-      <figure className="col-span-3 md:col-auto">
+      <figure className="col-span-3 text-center md:col-auto">
         <Image
           src="/images/clientLogos/clients1.png"
           alt="Client logo 1"
@@ -16,7 +16,7 @@ export const ClientLogos = () => {
           width={380}
         />
       </figure>
-      <figure className="col-span-3 md:col-auto">
+      <figure className="col-span-3 text-center md:col-auto">
         <Image
           src="/images/clientLogos/clients2.png"
           alt="Client logo 2"
@@ -24,7 +24,7 @@ export const ClientLogos = () => {
           width={380}
         />
       </figure>
-      <figure className="col-span-3 md:col-auto">
+      <figure className="col-span-3 text-center md:col-auto">
         <Image
           src="/images/clientLogos/clients3.png"
           alt="Client logo 3"
