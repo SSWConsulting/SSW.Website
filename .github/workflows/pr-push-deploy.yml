@@ -25,7 +25,7 @@ jobs:
       contents: read
     secrets: inherit
   
-  deploy:
+  pr-deploy:
     name: Deploy to slot
     needs: build
     runs-on: ubuntu-latest
@@ -62,7 +62,7 @@ jobs:
 
   pagespeedInsights:
     name: Run PageSpeed Insights
-    needs: deploy
+    needs: pr-deploy
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
@@ -70,7 +70,7 @@ jobs:
       - uses: wicksipedia/pagespeed-insights@main
         id: pagespeed-insights
         with:          
-          url: ${{ needs.deploy.outputs.url }}
+          url: ${{ needs.pr-deploy.outputs.url }}
           categories: |
             accessibility
             best_practices
@@ -92,7 +92,7 @@ jobs:
             | Performance     | ${{ steps.pagespeed-insights.outputs.performance }}     |
             | SEO             | ${{ steps.pagespeed-insights.outputs.seo }}             |
 
-            View the full report <https://pagespeed.web.dev/report?url=${{ needs.deploy.outputs.url }}>
+            View the full report <https://pagespeed.web.dev/report?url=${{ needs.pr-deploy.outputs.url }}>
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           allow-repeats: true
