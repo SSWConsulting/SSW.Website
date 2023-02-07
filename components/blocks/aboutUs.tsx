@@ -38,22 +38,43 @@ const WORKING_TIME = {
 const States = {
   QLD: {
     timeZone: "Australia/Queensland",
-    mapClass: "bg-[url('/images/map/map-qld.png')]",
+    selected: {
+      hovered: "/blocks/aboutUs/map-qld-selected-hovered.png",
+      notHovered: "/blocks/aboutUs/map-qld-selected-nothovered.png",
+    },
+    notSelected: {
+      hovered: "/blocks/aboutUs/map-qld-notselected-hovered.png",
+      notHovered: "/blocks/aboutUs/map-qld-notselected-nothovered.png",
+    },
   },
   NSW: {
     timeZone: "Australia/NSW",
-    mapClass: "bg-[url('/images/map/map-nsw.png')]",
+    selected: {
+      hovered: "/blocks/aboutUs/map-nsw-selected-hovered.png",
+      notHovered: "/blocks/aboutUs/map-nsw-selected-nothovered.png",
+    },
+    notSelected: {
+      hovered: "/blocks/aboutUs/map-nsw-notselected-hovered.png",
+      notHovered: "/blocks/aboutUs/map-nsw-notselected-nothovered.png",
+    },
   },
   VIC: {
     timeZone: "Australia/Victoria",
-    mapClass: "bg-[url('/images/map/map-vic.png')]",
+    selected: {
+      hovered: "/blocks/aboutUs/map-vic-selected-hovered.png",
+      notHovered: "/blocks/aboutUs/map-vic-selected-nothovered.png",
+    },
+    notSelected: {
+      hovered: "/blocks/aboutUs/map-vic-notselected-hovered.png",
+      notHovered: "/blocks/aboutUs/map-vic-notselected-nothovered.png",
+    },
   },
 };
 
 export const AboutUs = ({ data }) => {
   return (
     <Section color={data.backgroundColor}>
-      <Container>
+      <Container size="custom">
         <div className="mt-5 grid grid-cols-1 gap-6 md:grid-cols-3">
           <TV />
           <ContactUsAndMap />
@@ -113,21 +134,34 @@ const ContactUsAndMap = () => {
         </div>
       </div>
 
-      {/* TODO: update state images to show state name */}
-      {/* TODO: update state hover images to show state name with a red background */}
-      {/* eslint-disable-next-line tailwindcss/no-arbitrary-value*/}
-      <div className="relative hidden bg-[url('/images/map/map-bg.png')] bg-[length:100%_auto] bg-no-repeat md:block">
-        {/* TODO: refactor with next/image */}
-        <Image
-          className={classNames(
-            "bg-[length:100%_auto] bg-no-repeat",
-            States[stateBeingHovered || office?.addressRegion]?.mapClass
-          )}
-          src="/images/placeholder.png"
-          alt="Placeholder"
-          height={402}
-          width={550}
-        />
+      <div className="hidden md:block">
+        <h2>&nbsp;</h2>
+        {/* eslint-disable-next-line tailwindcss/no-arbitrary-value*/}
+        <div className="relative h-[300px]">
+          <div className="absolute top-0">          
+            <Image
+              src="/blocks/aboutUs/map-bg.png"
+              alt="Placeholder"
+              height={350}
+              width={402}
+            />
+          </div>
+          {Object.keys(States).map((stateKey) => {
+            const state = States[stateKey];
+            const stateSelection = office?.addressRegion === stateKey ? state.selected : state.notSelected;
+            const hoverSelection = stateBeingHovered === stateKey ? stateSelection.hovered : stateSelection.notHovered;
+            return (
+              <div key={stateKey} className="absolute top-0">
+                <Image
+                  src={hoverSelection}
+                  alt="Placeholder"
+                  height={350}
+                  width={402}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );
