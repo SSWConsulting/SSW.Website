@@ -1,6 +1,5 @@
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC } from "react";
+import { FaAngleDown } from "react-icons/fa";
 import { Container } from "../util/container";
 
 export const Booking: FC<{
@@ -15,12 +14,12 @@ export const Booking: FC<{
         <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
         <h2>{subTitle}</h2>
         {children}
-        <div className="animate-more-bounce pt-20">
+        <div className="flex animate-more-bounce flex-col items-center pt-20">
           <a
             href="#more"
             className="cursor-default text-5xl no-underline hover:!text-gray-450"
           >
-            <FontAwesomeIcon icon={faAngleDown}></FontAwesomeIcon>
+            <FaAngleDown />
           </a>
         </div>
       </Container>
