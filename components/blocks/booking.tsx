@@ -6,6 +6,7 @@ export const Booking: FC<{
   title?: string;
   subTitle?: string;
   videoBackground?: string;
+  children: React.ReactNode;
 }> = ({ title, subTitle, videoBackground, children }) => {
 
 
