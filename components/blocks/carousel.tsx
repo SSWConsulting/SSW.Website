@@ -1,10 +1,10 @@
 import * as React from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useRouter } from "next/router";
 
 import type { Template } from "tinacms";
 
-import { Carousel as CarouselImplementation }  from "react-responsive-carousel";
+import { Carousel as CarouselImplementation } from "react-responsive-carousel";
 
 import { Container } from "../util/container";
 import { Section } from "../util/section";
@@ -25,11 +25,11 @@ export const Carousel = ({ data }) => {
     } else {
       console.log(`unknown openIn value '${openIn}'`);
     }
-  }
+  };
 
   return (
-    <Section color={data.backgroundColor}>
-      <Container size="custom">
+    <Section className="hidden md:flex" color={data.backgroundColor}>
+      <Container size="custom" className="w-full">
         <CarouselImplementation
           autoPlay={true}
           infiniteLoop={true}
@@ -37,8 +37,11 @@ export const Carousel = ({ data }) => {
           showThumbs={false}
           showStatus={false}
           stopOnHover={true}
-          onClickItem={x => {openItem(data.items[x])}}
-          renderIndicator={createCarouselIndicator}>
+          onClickItem={(x) => {
+            openItem(data.items[x]);
+          }}
+          renderIndicator={createCarouselIndicator}
+        >
           {data.items.map(createCarouselItemImage)}
         </CarouselImplementation>
       </Container>
@@ -49,44 +52,46 @@ export const Carousel = ({ data }) => {
 const createCarouselItemImage = ({ imgSrc, label }, index: React.Key) => {
   return (
     <div key={index}>
+      {/* TODO: refactor with next/image */}
       <Image
         src={imgSrc}
         alt={label}
         height={388}
         width={1080}
         layout="responsive"
+        priority={index === 0}
       />
       {/* `legend` required so that the carousel works properly */}
       {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
       <p className="legend sr-only">{label}</p>
     </div>
   );
-}
+};
 
 const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
   if (isSelected) {
-      return (
-          <li 
-            className="my-0 mx-2 inline-block h-5 w-5 bg-sswRed"
-            aria-label={`Selected: ${label} ${index + 1}`}
-            title={`Selected: ${label} ${index + 1}`}
-          />
-      );
+    return (
+      <li
+        className="my-0 mx-2 inline-block h-5 w-5 bg-sswRed"
+        aria-label={`Selected: ${label} ${index + 1}`}
+        title={`Selected: ${label} ${index + 1}`}
+      />
+    );
   }
   return (
-      <li
-        className="my-0 mx-2 inline-block h-5 w-5 bg-gray-500"
-        onClick={onClickHandler}
-        onKeyDown={onClickHandler}
-        value={index}
-        key={index}
-        role="button"
-        tabIndex={0}
-        title={`${label} ${index + 1}`}
-        aria-label={`${label} ${index + 1}`}
-      />
+    <li
+      className="my-0 mx-2 inline-block h-5 w-5 bg-gray-500"
+      onClick={onClickHandler}
+      onKeyDown={onClickHandler}
+      value={index}
+      key={index}
+      role="button"
+      tabIndex={0}
+      title={`${label} ${index + 1}`}
+      aria-label={`${label} ${index + 1}`}
+    />
   );
-}
+};
 
 export const carouselBlockSchema: Template = {
   name: "Carousel",

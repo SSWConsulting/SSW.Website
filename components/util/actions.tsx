@@ -63,7 +63,7 @@ export const Actions = ({
           let element = null;
           if (action.type === "button") {
             element = (
-              <Link key={index} href={action.link ? action.link : "/"}>
+              <Link key={index} href={action.link ? action.link : "/"} legacyBehavior>
                 <button
                   data-tinafield={`${parentField}.${index}`}
                   className={classNames(
@@ -83,25 +83,27 @@ export const Actions = ({
           }
           if (action.type === "link" || action.type === "linkExternal") {
             element = (
-              <Link key={index} href={action.link ? action.link : "/"} passHref>
-                <a
-                  data-tinafield={`${parentField}.${index}`}
-                  className={classNames(
-                    "group inline-flex items-center text-lg font-semibold transition duration-150 ease-out",
-                    parentColor === "primary" ? "text-white hover:text-gray-50" : linkButtonColorClasses.blue
-                  )}
-                  style={{
-                    textShadow: "0 3px 7px rgba(var(--color-rgb-blue-400),0.2)",
-                  }}
-                >
-                  {action.label}
-                  {action.icon && (
-                    <BiRightArrowAlt
-                      className={"mx-0 h-6 w-6 opacity-80"}
-                    />
-                  )}
-                </a>
-              </Link>
+              (<Link
+                key={index}
+                href={action.link ? action.link : "/"}
+                passHref
+                data-tinafield={`${parentField}.${index}`}
+                className={classNames(
+                  "group inline-flex items-center text-lg font-semibold transition duration-150 ease-out",
+                  parentColor === "primary" ? "text-white hover:text-gray-50" : linkButtonColorClasses.blue
+                )}
+                style={{
+                  textShadow: "0 3px 7px rgba(var(--color-rgb-blue-400),0.2)",
+                }}>
+
+                {action.label}
+                {action.icon && (
+                  <BiRightArrowAlt
+                    className={"mx-0 h-6 w-6 opacity-80"}
+                  />
+                )}
+
+              </Link>)
             );
           }
           return element;

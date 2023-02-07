@@ -1,7 +1,10 @@
 import React from "react";
 import type { Template } from "tinacms";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
+{
+  /* TODO: refactor with next/image */
+}
 export const ClientLogos = () => {
   return (
     <div className="grid grid-cols-3">

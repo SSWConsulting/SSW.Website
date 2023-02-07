@@ -1,4 +1,5 @@
-import Image from "next/image";
+import { useEffect, useState } from "react";
+import Image from "next/legacy/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Container } from "../util/container";
 import styles from "./TestimonialRow.module.css";
@@ -9,9 +10,13 @@ export const TestimonialRow = ({ testimonialsQueryResult }) => {
       (t) => t.Testimonial
     );
 
-  const randomTestimonials = testimonialsData
-    .sort(() => 0.5 - Math.random())
-    .slice(0, 3);
+  const [randomTestimonials, setRandomTestimonials] = useState([]);
+  useEffect(() => {
+    const testimonials = testimonialsData
+      .sort(() => 0.5 - Math.random())
+      .slice(0, 3);
+    setRandomTestimonials(testimonials);
+  }, []);
 
   return (
     <Container size="custom" className="h-full">
@@ -32,6 +37,7 @@ const testimonials = (data) => {
         <TinaMarkdown content={testimonial?.body} />
       </div>
       <div className="m-2 mt-6 flex text-gray-900">
+        {/* TODO: refactor with next/image */}
         <Image
           src={testimonial?.avatar ?? ""}
           height={56}

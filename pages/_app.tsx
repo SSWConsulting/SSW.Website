@@ -10,7 +10,7 @@ import { NEXT_SEO_DEFAULT } from "../next-seo.config";
 import "../styles.css";
 
 // Hack as per https://stackoverflow.com/a/66575373 to stop font awesome icons breaking
-import "@fortawesome/fontawesome-svg-core/styles.css"
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -21,17 +21,19 @@ const App = ({ Component, pageProps }) => {
       gtag.pageview(url);
     };
 
-    if(!isDev){
+    if (!isDev) {
       router.events.on("routeChangeComplete", handleRouteChange);
-      
+
       return () => {
         router.events.off("routeChangeComplete", handleRouteChange);
       };
     }
   }, [router.events]);
 
-  // Initialize AOS (Animate on Scroll Library) see https://michalsnik.github.io/aos/ 
-  useEffect(() => AOS.init({ duration: 1200 }));
+  // Initialize AOS (Animate on Scroll Library) see https://michalsnik.github.io/aos/
+  useEffect(() => {
+    AOS.init({ duration: 1200 });
+  }, []);
 
   return (
     <>
