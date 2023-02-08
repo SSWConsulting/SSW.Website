@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import Modal from "react-responsive-modal";
 import styles from "./popup.module.css";
 
@@ -11,7 +12,11 @@ const Popup = ({ isVisible, showBookingForm, children }) => {
         classNames={{
           modalAnimationIn: styles.formEnterModalAnimation,
           modalAnimationOut: styles.formLeaveModalAnimation,
-          modal: "w-[600px] bg-black/0 max-w-none"
+          modal: classNames([
+            "sm:max-w-2xl sm:m-5 sm:p-5",
+            "w-full mx-0",
+            "bg-black/0",
+          ]),
         }}
         animationDuration={700}
       >

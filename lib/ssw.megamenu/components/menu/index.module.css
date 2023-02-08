@@ -28,12 +28,6 @@
   margin: auto;
 }
 
-@media (min-width: 600px) and (max-width: 1279px) {
-  .MegaMenu {
-    width: 95%;
-  }
-}
-
 @media (min-width: 1280px) {
   .MegaMenu {
     width: 100%;
