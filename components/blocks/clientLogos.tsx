@@ -1,10 +1,7 @@
 import React from "react";
 import type { Template } from "tinacms";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
-{
-  /* TODO: refactor with next/image */
-}
 export const ClientLogos = () => {
   return (
     <div className="grid grid-cols-3">
@@ -14,6 +11,7 @@ export const ClientLogos = () => {
           alt="Client logo 1"
           height={50}
           width={380}
+          className="mx-auto max-w-full"
         />
       </figure>
       <figure className="col-span-3 text-center md:col-auto">
@@ -22,6 +20,7 @@ export const ClientLogos = () => {
           alt="Client logo 2"
           height={50}
           width={380}
+          className="mx-auto max-w-full"
         />
       </figure>
       <figure className="col-span-3 text-center md:col-auto">
@@ -30,6 +29,7 @@ export const ClientLogos = () => {
           alt="Client logo 3"
           height={50}
           width={380}
+          className="mx-auto max-w-full"
         />
       </figure>
     </div>
