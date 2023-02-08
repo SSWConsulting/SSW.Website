@@ -10,7 +10,7 @@ export const Booking: FC<{
 }> = ({ title, subTitle, videoBackground, children }) => {
   return (
     <>
-      <Container padding="px-4 w-full">
+      <Container padding="px-4" className="w-full">
         <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
         <h2>{subTitle}</h2>
         {children}
