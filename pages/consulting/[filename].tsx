@@ -79,7 +79,7 @@ export default function ConsultingPage(
           />
         </Section>
         <Section
-          className="video-mask items-center text-center font-light"
+          className="video-mask w-full items-center text-center font-light"
           color="black"
         >
           <Booking {...data.consulting.booking}>
@@ -108,9 +108,9 @@ export default function ConsultingPage(
           </div>
         </Section>
         <Section className="mb-16">
-          <Container padding="px-4" className="flex flex-wrap">
+          <Container padding="px-4" className="flex w-full flex-wrap">
             <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
-            <BookingButton {...bookingButtonProps} containerClass="w-full mt-20" />
+            <BookingButton {...bookingButtonProps} containerClass="mt-20" />
           </Container>
         </Section>
         <Marketing content={data.consulting} />
@@ -129,7 +129,7 @@ export default function ConsultingPage(
           </Container>
         </Section>
         <Section className="!bg-gray-75 pb-25 text-center">
-          <Container size="custom">
+          <Container size="custom" className="w-full">
             <h1>
               Talk to us about your{" "}
               <span className="text-sswRed">

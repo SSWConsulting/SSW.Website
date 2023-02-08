@@ -18,7 +18,7 @@ import {
 import { bookingFormSubmissionData } from "./bookingFormSubmissionData";
 import { ValidationSchema } from "./validationSchema";
 
-export const BookingForm = ({recaptchaKey}) => {
+export const BookingForm = ({ recaptchaKey }) => {
   //Show FormStates and Active label
   const [contactSuccess, setContactSuccess] = useState(false);
   const [country, setCountry] = useState("");
@@ -215,18 +215,24 @@ export const BookingForm = ({recaptchaKey}) => {
                   {...getCommonFieldProps(FORM_INPUT.Note)}
                 />
 
-                <div className="mb-4 h-22 w-88">
-                  {recaptchaKey && (
-                    <ReCAPTCHA
-                      sitekey={recaptchaKey}
-                      onChange={(value) => {
-                        setContactReCaptcha(value);
-                      }}
-                    />
-                  )}
+                <div className="mb-4 w-full overflow-x-auto">
+                  <div className="h-22 w-88">
+                    {recaptchaKey && (
+                      <ReCAPTCHA
+                        sitekey={recaptchaKey}
+                        onChange={(value) => {
+                          setContactReCaptcha(value);
+                        }}
+                      />
+                    )}
+                  </div>
                 </div>
 
-                <button type="submit" disabled={isSubmitting} className="done py-1.5 px-3">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="done py-1.5 px-3"
+                >
                   SUBMIT
                 </button>
               </Form>
