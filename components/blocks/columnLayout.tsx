@@ -1,6 +1,6 @@
 import React from "react";
 import type { Template } from "tinacms";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 /* TODO: refactor with next/image */
@@ -11,7 +11,6 @@ export const ColumnLayout = ({ data }) => {
       alt={data.altText}
       height={data.height ?? 0}
       width={data.width ?? 0}
-      layout="responsive"
     />
   );
 
