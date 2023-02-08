@@ -172,6 +172,9 @@ module.exports = {
         150: "40rem",
         liveStream: "75px",
       },
+      padding: {
+        "9/16": "56.25%",
+      },
       zIndex: {
         "-100": "-100",
         "-1": "-1",

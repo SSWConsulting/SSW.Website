@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import type { Template } from "tinacms";
 import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
@@ -106,25 +106,29 @@ export const AboutUs = ({ data }) => {
   return (
     <Section color={data.backgroundColor}>
       <Container className="w-full">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <TV className={"hidden sm:block"} />
-          <ContactUs
-            className={""}
-            offices={offices}
-            selectedOffice={selectedOffice}
-            setSelectedOffice={setSelectedOffice}
-            officeBeingHovered={officeBeingHovered}
-            setStateBeingHovered={setStateBeingHovered}
-          />
-          <Map
-            className={"hidden sm:block"}
-            offices={offices}
-            selectedOffice={selectedOffice}
-            setSelectedOffice={setSelectedOffice}
-            stateBeingHovered={stateBeingHovered}
-            setOfficeBeingHovered={setOfficeBeingHovered}
-            setStateBeingHovered={setStateBeingHovered}
-          />
+        <div className="grid grid-cols-3 gap-6">
+          <TV className="col-span-3 sm:col-span-1" />
+          <div className="col-span-3 md:col-span-2">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <ContactUs
+                className=""
+                offices={offices}
+                selectedOffice={selectedOffice}
+                setSelectedOffice={setSelectedOffice}
+                officeBeingHovered={officeBeingHovered}
+                setStateBeingHovered={setStateBeingHovered}
+              />
+              <Map
+                className="hidden sm:block"
+                offices={offices}
+                selectedOffice={selectedOffice}
+                setSelectedOffice={setSelectedOffice}
+                stateBeingHovered={stateBeingHovered}
+                setOfficeBeingHovered={setOfficeBeingHovered}
+                setStateBeingHovered={setStateBeingHovered}
+              />
+            </div>
+          </div>
         </div>
       </Container>
     </Section>
@@ -137,24 +141,24 @@ const TV = ({ className }) => {
     <div className={className}>
       <h2 className="mt-0">tv.ssw.com</h2>
 
-      {videoClicked ? (
-        <iframe
-          src={layoutData.aboutUs.video.url}
-          width="100%"
-          allowFullScreen
-        ></iframe>
-      ) : (
-        <>
-          {/* TODO: refactor with next/image */}
+      <div className="relative w-full h-0 pb-9/16">
+        {videoClicked ? (
+          <iframe
+            src={layoutData.aboutUs.video.url}
+            width="100%"
+            height="100%"
+            className="absolute"
+            allowFullScreen
+          ></iframe>
+        ) : (
           <Image
             src={layoutData.aboutUs.video.thumbnailUrl}
             alt="SSW TV"
-            width={340}
-            height={190}
+            fill={true}
             onClick={() => setVideoClicked(true)}
           />
-        </>
-      )}
+        )}
+      </div>
     </div>
   );
 };
@@ -213,7 +217,9 @@ const AccordionItem = ({
           "group mb-2 flex cursor-pointer items-center justify-between p-2 transition-all duration-500",
           currentlySelected
             ? "bg-sswRed"
-            : officeBeingHovered === office ? "bg-gray-600" : "bg-gray-400 hover:bg-gray-600"
+            : officeBeingHovered === office
+            ? "bg-gray-600"
+            : "bg-gray-400 hover:bg-gray-600"
         )}
         onMouseEnter={() => setStateBeingHovered(office.addressRegion)}
         onMouseLeave={() => setStateBeingHovered(null)}
@@ -225,7 +231,9 @@ const AccordionItem = ({
           </div>
         </div>
         <div className="flex items-center justify-center text-white">
-        <BiChevronRightCircle className={classNames({"rotate-90" : currentlySelected})} />       
+          <BiChevronRightCircle
+            className={classNames({ "rotate-90": currentlySelected })}
+          />
         </div>
       </div>
 
@@ -335,7 +343,9 @@ const Map = ({
         </defs>
         {Object.keys(States).map((stateKey) => {
           const state = States[stateKey];
-          const primaryOffice = offices.find(o => o.addressRegion === stateKey);
+          const primaryOffice = offices.find(
+            (o) => o.addressRegion === stateKey
+          );
 
           return (
             <g
@@ -370,7 +380,11 @@ const Map = ({
               {state.label && (
                 <>
                   <text
-                    filter={selectedOffice?.addressRegion === stateKey ? "url(#selected)" :  "url(#notSelected)"}
+                    filter={
+                      selectedOffice?.addressRegion === stateKey
+                        ? "url(#selected)"
+                        : "url(#notSelected)"
+                    }
                     x={state.label.x}
                     y={state.label.y}
                     className={classNames("cursor-pointer fill-white text-xxs")}
