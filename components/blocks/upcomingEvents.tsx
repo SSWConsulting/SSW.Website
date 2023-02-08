@@ -51,7 +51,7 @@ export const UpcomingEvents = ({ data }) => {
   }, []);
 
   return (
-    <div className="prose">
+    <div className="prose max-w-none">
       <h1 className="pb-5 font-light">{data.title}</h1>
       <div className="not-prose">
         <div className="max-h-150 grow overflow-x-hidden overflow-y-scroll border-2 bg-gray-100">
