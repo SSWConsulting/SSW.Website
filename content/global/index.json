@@ -12,6 +12,7 @@
     }
   },
   "breadcrumbSuffix": "SSW Consulting - Sydney, Brisbane, Melbourne",
+  "bookingButtonText": "Book a FREE Initial Meeting",
   "offices": [
     {
       "url": "/ssw/Company/Offices/Sydney",
