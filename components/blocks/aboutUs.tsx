@@ -107,7 +107,7 @@ export const AboutUs = ({ data }) => {
     <Section color={data.backgroundColor}>
       <Container className="w-full">
         <div className="grid grid-cols-3 gap-6">
-          <TV className="col-span-3 sm:col-span-1" />
+          <TV className="col-span-3 sm:col-span-1 max-md:hidden" />
           <div className="col-span-3 md:col-span-2">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <ContactUs
