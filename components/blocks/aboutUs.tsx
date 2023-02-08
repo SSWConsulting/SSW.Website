@@ -107,7 +107,7 @@ export const AboutUs = ({ data }) => {
     <Section color={data.backgroundColor}>
       <Container className="w-full">
         <div className="grid grid-cols-3 gap-6">
-          <TV className="col-span-3 sm:col-span-1 max-md:hidden" />
+          <TV className="col-span-3 max-md:hidden sm:col-span-1" />
           <div className="col-span-3 md:col-span-2">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <ContactUs
@@ -141,7 +141,7 @@ const TV = ({ className }) => {
     <div className={className}>
       <h2 className="mt-0">tv.ssw.com</h2>
 
-      <div className="relative w-full h-0 pb-9/16">
+      <div className="relative h-0 w-full pb-9/16">
         {videoClicked ? (
           <iframe
             src={layoutData.aboutUs.video.url}
