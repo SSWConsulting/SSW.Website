@@ -130,13 +130,7 @@ export default function ConsultingPage(
         </Section>
         <Section className="!bg-gray-75 pb-25 text-center">
           <Container size="custom" className="w-full">
-            <h1>
-              Talk to us about your{" "}
-              <span className="text-sswRed">
-                {data.consulting.solution.project}
-              </span>{" "}
-              needs
-            </h1>
+            <h1 dangerouslySetInnerHTML={{ __html: parseCallToAction(data.consulting.callToAction, data.consulting.solution.project) }}></h1>
             <p className="text-lg">
               Jump on a call with one of our Account Managers to discuss how we
               can help you.
@@ -150,6 +144,12 @@ export default function ConsultingPage(
       </Layout>
     </>
   );
+}
+
+const parseCallToAction = (content: string, project: string) => {
+    const replacement = `<span class="text-sswRed">${project}</span>`;
+
+    return content?.replace("{{TITLE}}", replacement);
 }
 
 export const getStaticProps = async ({ params }) => {
