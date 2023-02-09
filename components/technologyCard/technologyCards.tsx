@@ -35,7 +35,7 @@ const TechnologyCards: VFC<TechnologyCardsProps> = ({
   return (
     <article className="bg-white text-black">
       <h1 className="mt-0">{techHeader}</h1>
-      <div className="grid grid-cols-12">{techComponents}</div>
+      <div className="grid grid-cols-12 gap-y-10">{techComponents}</div>
     </article>
   );
 };

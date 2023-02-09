@@ -18,7 +18,7 @@ const TechnologyCard: VFC<TechnologyCardProps> = ({
       <article
         className={classnames([
           styles["technology-card"],
-          "mx-3.5 mt-5 mb-15 min-h-1025 border-b-2 border-solid border-b-sswRed bg-gray-75 p-10",
+          "mx-3.5 mt-5 mb-15 h-full border-b-2 border-solid border-b-sswRed bg-gray-75 p-10",
         ])}
         data-aos="flip-left"
       >
