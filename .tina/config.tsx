@@ -167,7 +167,7 @@ const config = defineStaticConfig({
                 required: true,
               },
               {
-                type: "string",
+                type: "number",
                 name: "postalCode",
                 label: "Post Code",
                 required: true,
