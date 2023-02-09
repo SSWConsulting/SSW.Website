@@ -110,6 +110,11 @@ const config = defineStaticConfig({
             name: "breadcrumbSuffix",
           },
           {
+            type: "string",
+            label: "Booking Button Text",
+            name: "bookingButtonText",
+          },
+          {
             type: "object",
             label: "Offices",
             name: "offices",

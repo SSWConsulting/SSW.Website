@@ -63,7 +63,7 @@ export default function ConsultingPage(
     })) || [];
 
   const bookingButtonProps = {
-    buttonText: data.consulting.booking.buttonText,
+    buttonText: data.global.bookingButtonText,
     recaptchaKey: props.env["GOOGLE_RECAPTCHA_KEY"],
   };
 
