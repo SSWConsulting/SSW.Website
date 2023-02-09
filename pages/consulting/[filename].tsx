@@ -135,7 +135,7 @@ export default function ConsultingPage(
               <span className="text-sswRed">
                 {data.consulting.solution.project}
               </span>{" "}
-              project
+              needs
             </h1>
             <p className="text-lg">
               Jump on a call with one of our Account Managers to discuss how we
