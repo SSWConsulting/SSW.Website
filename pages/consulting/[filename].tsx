@@ -85,7 +85,7 @@ export default function ConsultingPage(
             <BookingButton {...bookingButtonProps} containerClass="mt-20" />
           </Container>
         </Section>
-        <Marketing content={data.consulting} />
+        <Marketing content={props.marketingData} />
         <Section className="!bg-gray-75 pb-40">
           <Container size="custom">
             <h1 className="text-center">Companies we have worked with</h1>
@@ -102,13 +102,7 @@ export default function ConsultingPage(
         </Section>
         <Section className="!bg-gray-75 pb-25 text-center">
           <Container size="custom" className="w-full">
-            <h1>
-              Talk to us about your{" "}
-              <span className="text-sswRed">
-                {data.consulting.solution.project}
-              </span>{" "}
-              project
-            </h1>
+            <h1 dangerouslySetInnerHTML={{ __html: parseCallToAction(data.consulting.callToAction, data.consulting.solution.project) }}></h1>
             <p className="text-lg">
               Jump on a call with one of our Account Managers to discuss how we
               can help you.
@@ -122,6 +116,12 @@ export default function ConsultingPage(
       </Layout>
     </>
   );
+}
+
+const parseCallToAction = (content: string, project: string) => {
+    const replacement = `<span class="text-sswRed">${project}</span>`;
+
+    return content?.replace("{{TITLE}}", replacement);
 }
 
 export const getStaticProps = async ({ params }) => {
@@ -143,6 +143,10 @@ export const getStaticProps = async ({ params }) => {
     cardNames: technologyCardNames,
   });
 
+  const marketingSection = await client.queries.marketing({
+    relativePath: "/why-choose-ssw.mdx",
+  })
+
   return {
     props: {
       data: tinaProps.data,
@@ -150,6 +154,7 @@ export const getStaticProps = async ({ params }) => {
       variables: tinaProps.variables,
       testimonialResult: testimonials,
       technologyCards: technologyCardsProps,
+      marketingData: marketingSection.data,
       env: {
         GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY || null,
       },

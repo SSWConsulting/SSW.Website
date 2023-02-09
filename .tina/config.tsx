@@ -167,7 +167,7 @@ const config = defineStaticConfig({
                 required: true,
               },
               {
-                type: "string",
+                type: "number",
                 name: "postalCode",
                 label: "Post Code",
                 required: true,
@@ -337,6 +337,13 @@ const config = defineStaticConfig({
             ],
           },
           {
+            type: "string",
+            label: "Call to Action",
+            description: "Technology title inserted via {{TITLE}}. E.g. \"Talk to us about your {{TITLE}} project\"",
+            name: "callToAction",
+            required: false,
+          },
+          {
             type: "object",
             label: "Booking",
             name: "booking",
@@ -428,12 +435,6 @@ const config = defineStaticConfig({
                 ],
               },
             ],
-          },
-          {
-            type: "reference",
-            label: "Marketing",
-            name: "marketing",
-            collections: ["marketing"],
           },
           {
             type: "object",
