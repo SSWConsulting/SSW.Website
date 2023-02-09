@@ -113,7 +113,7 @@ export default function ConsultingPage(
             <BookingButton {...bookingButtonProps} containerClass="mt-20" />
           </Container>
         </Section>
-        <Marketing content={data.consulting} />
+        <Marketing content={props.marketingData} />
         <Section className="!bg-gray-75 pb-40">
           <Container size="custom">
             <h1 className="text-center">Companies we have worked with</h1>
@@ -171,6 +171,10 @@ export const getStaticProps = async ({ params }) => {
     cardNames: technologyCardNames,
   });
 
+  const marketingSection = await client.queries.marketing({
+    relativePath: "/why-choose-ssw.mdx",
+  })
+
   return {
     props: {
       data: tinaProps.data,
@@ -178,6 +182,7 @@ export const getStaticProps = async ({ params }) => {
       variables: tinaProps.variables,
       testimonialResult: testimonials,
       technologyCards: technologyCardsProps,
+      marketingData: marketingSection.data,
       env: {
         GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY || null,
       },

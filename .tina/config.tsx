@@ -430,12 +430,6 @@ const config = defineStaticConfig({
             ],
           },
           {
-            type: "reference",
-            label: "Marketing",
-            name: "marketing",
-            collections: ["marketing"],
-          },
-          {
             type: "object",
             label: "Technologies",
             name: "technologies",
