@@ -56,7 +56,7 @@ export default function ConsultingPage(
   const technologyCardDocs =
     props.technologyCards.data.technologiesConnection.edges.map((n) => n.node);
   const techCards =
-    data.consulting.technologies.technologyCards?.map((c) => ({
+    data.consulting.technologies?.technologyCards?.map((c) => ({
       ...technologyCardDocs.find(
         (n) => !!n.name && n.name === c.technologyCard?.name
       ),
@@ -160,7 +160,7 @@ export const getStaticProps = async ({ params }) => {
   const testimonials = await client.queries.allTestimonialsQuery();
 
   const technologyCardNames =
-    tinaProps.data.consulting.technologies.technologyCards?.reduce<string[]>(
+    tinaProps.data.consulting.technologies?.technologyCards?.reduce<string[]>(
       (pre, cur) => {
         !!cur.technologyCard?.name && pre.push(cur.technologyCard.name);
         return pre;
