@@ -120,14 +120,14 @@ export default function ConsultingPage(
             <ClientLogos />
           </Container>
         </Section>
-        <Section className="pb-16 text-center">
+        {!!techCards.length && <Section className="pb-16 text-center">
           <Container padding="px-4">
             <TechnologyCards
               techHeader={data.consulting.technologies.header}
               techCards={techCards}
             />
           </Container>
-        </Section>
+        </Section>}
         <Section className="!bg-gray-75 pb-25 text-center">
           <Container size="custom" className="w-full">
             <h1 dangerouslySetInnerHTML={{ __html: parseCallToAction(data.consulting.callToAction, data.consulting.solution.project) }}></h1>
