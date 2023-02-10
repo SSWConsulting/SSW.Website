@@ -22,11 +22,19 @@
   background: #eee;
   color: #333 !important;
 }
-.menuDrop > ul > li:hover > a {
+.menuDrop > ul > li > div {
+  transition: all 0.3s ease-in-out 0s;
+}
+.inline-block {
+  display: inline-block;
+}
+.menuDrop > ul > li:hover > a,
+.menuDrop > ul > li:hover > div {
   color: #333 !important;
   border-bottom: 0 !important;
 }
-.menuDrop > ul > li > a {
+.menuDrop > ul > li > a, 
+.menuDrop > ul > li > div {
   color: #eee !important;
   border-bottom: 0 !important;
   text-decoration: none !important;
