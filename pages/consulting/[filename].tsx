@@ -1,44 +1,19 @@
 import { useTina } from "tinacms/dist/react";
-import { Components, TinaMarkdown } from "tinacms/dist/rich-text";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-import ReactPlayer from "../../components/reactPlayer/reactPlayer";
 import { client } from "../../.tina/__generated__/client";
 import { Booking, BuiltOnAzure, ClientLogos } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
-import { Marketing } from "../../components/marketing/Marketing";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import BookingButton from "../../components/bookingButton/bookingButton";
 import { Layout } from "../../components/layout";
+import { Marketing } from "../../components/marketing/Marketing";
 import TechnologyCards from "../../components/technologyCard/technologyCards";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { Benefits } from "../../components/util/consulting/benefits";
+import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import { Container } from "../../components/util/container";
-
-const consultingComponentRenderer: Components<Record<string, unknown>> = {
-  code: (data) => {
-    const {
-      children: {
-        props: { type, text },
-      },
-    } = data;
-    if (type === "text" && text.startsWith("youtube:")) {
-      const link = text.replace("youtube:", "").trim();
-      return (
-        <div className="relative m-8 mx-auto aspect-video">
-          <ReactPlayer
-            className="absolute top-0 left-0"
-            url={link}
-            width={"100%"}
-            height={"100%"}
-          />
-        </div>
-      );
-    }
-    return <code>{data.children}</code>;
-  },
-};
 
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -97,10 +72,7 @@ export default function ConsultingPage(
           <div className="w-full bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
             <div className="mx-auto max-w-8xl px-4">
               <TinaMarkdown
-                components={{
-                  ...componentRenderer,
-                  ...consultingComponentRenderer,
-                }}
+                components={componentRenderer}
                 content={data.consulting._body}
               />
               <Benefits data={data.consulting.benefits} />
