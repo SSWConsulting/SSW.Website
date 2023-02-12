@@ -31,7 +31,7 @@ export default function ConsultingPage(
   const technologyCardDocs =
     props.technologyCards.data.technologiesConnection.edges.map((n) => n.node);
   const techCards =
-    data.consulting.technologies.technologyCards?.map((c) => ({
+    data.consulting.technologies?.technologyCards?.map((c) => ({
       ...technologyCardDocs.find(
         (n) => !!n.name && n.name === c.technologyCard?.name
       ),
@@ -92,14 +92,14 @@ export default function ConsultingPage(
             <ClientLogos />
           </Container>
         </Section>
-        <Section className="pb-16 text-center">
+        {!!techCards.length && <Section className="pb-16 text-center">
           <Container padding="px-4">
             <TechnologyCards
               techHeader={data.consulting.technologies.header}
               techCards={techCards}
             />
           </Container>
-        </Section>
+        </Section>}
         <Section className="!bg-gray-75 pb-25 text-center">
           <Container size="custom" className="w-full">
             <h1 dangerouslySetInnerHTML={{ __html: parseCallToAction(data.consulting.callToAction, data.consulting.solution.project) }}></h1>
@@ -132,7 +132,7 @@ export const getStaticProps = async ({ params }) => {
   const testimonials = await client.queries.allTestimonialsQuery();
 
   const technologyCardNames =
-    tinaProps.data.consulting.technologies.technologyCards?.reduce<string[]>(
+    tinaProps.data.consulting.technologies?.technologyCards?.reduce<string[]>(
       (pre, cur) => {
         !!cur.technologyCard?.name && pre.push(cur.technologyCard.name);
         return pre;
