@@ -10,7 +10,6 @@ import { Layout } from "../../components/layout";
 import { Marketing } from "../../components/marketing/Marketing";
 import { MediaCardProps } from "../../components/media/mediaCard";
 import MediaCards from "../../components/media/mediaCards";
-import ReactPlayer from "../../components/reactPlayer/reactPlayer";
 import TechnologyCards from "../../components/technologyCard/technologyCards";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { Benefits } from "../../components/util/consulting/benefits";
@@ -101,14 +100,16 @@ export default function ConsultingPage(
             <ClientLogos />
           </Container>
         </Section>
-        {!!techCards.length && <Section className="pb-16 text-center">
-          <Container padding="px-4">
-            <TechnologyCards
-              techHeader={data.consulting.technologies.header}
-              techCards={techCards}
-            />
-          </Container>
-        </Section>}
+        {!!techCards.length && (
+          <Section className="pb-16 text-center">
+            <Container padding="px-4">
+              <TechnologyCards
+                techHeader={data.consulting.technologies.header}
+                techCards={techCards}
+              />
+            </Container>
+          </Section>
+        )}
         {!!mediaCardProps.length && (
           <Section className="pb-16 text-center">
             <Container size="custom">
