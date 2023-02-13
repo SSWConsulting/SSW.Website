@@ -1,9 +1,9 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/legacy/image";
 import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
+import dynamic from "next/dynamic";
+import Image from "next/legacy/image";
+import Link from "next/link";
 import { Container } from "../util/container";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
 
@@ -53,33 +53,31 @@ const CopyrightInfo = () => (
   </>
 );
 
-const DeploymentInfo = () => (
-  <div className="text-center sm:text-left">
-    Our website is under{" "}
-    <Link href="https://www.ssw.com.au/rules/rules-to-better-websites-deployment">
-      CONSTANT CONTINUOUS DEPLOYMENT
-    </Link>
-    . <LinkToDeployment />
-  </div>
-);
-
-const LinkToDeployment = () => {
+const DeploymentInfo = () => {
   const deploymentDate = process.env.NEXT_PUBLIC_GITHUB_RUN_DATE
     ? dayjs.utc(process.env.NEXT_PUBLIC_GITHUB_RUN_DATE).fromNow()
     : "XXX";
   const deploymentNumber = process.env.NEXT_PUBLIC_GITHUB_RUN_NUMBER || "XXX";
 
+  const deploymentLinkInfo = {
+    deploymentDate,
+    repo: process.env.NEXT_PUBLIC_GITHUB_REPOSITORY,
+    runId: process.env.NEXT_PUBLIC_GITHUB_RUN_ID,
+    deploymentNumber,
+  };
+
+  const DynamicDeploymentLink = dynamic(() => import("./deploymentLink"), {
+    ssr: false,
+  });
+
   return (
-    <span>
-      Last deployed {deploymentDate} (Build #{" "}
-      <Link
-        href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_REPOSITORY}/actions/runs/${process.env.NEXT_PUBLIC_GITHUB_RUN_ID}`}
-        target="_blank"
-      >
-        {deploymentNumber}
+    <div className="text-center sm:text-left">
+      Our website is under{" "}
+      <Link href="https://www.ssw.com.au/rules/rules-to-better-websites-deployment">
+        CONSTANT CONTINUOUS DEPLOYMENT.&nbsp;
       </Link>
-      )
-    </span>
+      <DynamicDeploymentLink {...deploymentLinkInfo} />
+    </div>
   );
 };
 
