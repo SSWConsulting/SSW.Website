@@ -15,6 +15,7 @@ const MediaCard: FC<MediaCardProps> = ({ type, content }) => {
 
   return (
     <div
+      data-aos="flip-left"
       className={classNames(
         bgImagesClasses[type],
         "card",
