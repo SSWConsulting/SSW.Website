@@ -1,25 +1,72 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import dynamic from "next/dynamic";
+
 import styles from "./zendeskButton.module.css";
 
 const ZendeskButton = ({ zendeskKey }) => {
   const [loaded, setLoaded] = useState(false);
+  const zdscript = useRef<HTMLScriptElement>();
+  const clickEvent = useRef<NodeJS.Timer>();
+  const maxRetries = useRef<number>(20);
+  const clicked = useRef<boolean>(false);
 
   useEffect(() => {
     const script = document.getElementById("ze-snippet");
     setLoaded(!!script);
+
+    return () => {
+      clickEvent.current && clearInterval(clickEvent.current);
+      clickEvent.current = undefined;
+      zdscript.current && zdscript.current.removeEventListener("load", handleScriptLoaded);
+      zdscript.current = undefined;
+      clicked.current = false;
+      maxRetries.current = 20;
+    };
   }, []);
 
-  const loadZenDesk = () => {
+  const handleScriptLoaded = (event) => {
+    if (event.type === "load") {
+      const clickButton = () => {
+        if(clicked.current) return;
+        setLoaded(true)
+        const xframe = document.querySelector("iframe[title=\"Button to launch messaging window\"]") as HTMLIFrameElement;
+        const doc = xframe?.contentDocument || xframe?.contentWindow.document;
+        const zendeskNativeButton = doc?.querySelector("button");
+
+        if (zendeskNativeButton) {
+          zendeskNativeButton.click();
+          clicked.current = true;
+        }
+      }
+
+      const repeat = () => {
+        clickButton();
+        maxRetries.current = maxRetries.current - 1;
+        if(maxRetries.current > 0 && !clicked.current) {
+          clearTimeout(clickEvent.current);
+          clickEvent.current = setTimeout(() => repeat(), 200);
+        }
+      }
+      if(maxRetries.current > 0) {
+        clickEvent.current = setTimeout(() => repeat(), 200);
+      }
+    }
+  };
+
+  const loadZenDesk = (e) => {
+    e.preventDefault();
     if (!zendeskKey || zendeskKey === "undefined" || loaded) return;
 
-    const zdscript = document.createElement("script");
-    zdscript.setAttribute("id", "ze-snippet");
-    zdscript.src = `https://static.zdassets.com/ekr/snippet.js?key=${zendeskKey}`;
-    document.getElementsByTagName("body")[0].appendChild(zdscript);
+    clickEvent.current && clearTimeout(clickEvent.current);
+    maxRetries.current = 20;
+    clicked.current = false;
 
-    zdscript.onload = (event) => {
-      if (event.type === "load") setLoaded(true);
-    };
+    zdscript.current = document.createElement("script");
+    zdscript.current.setAttribute("id", "ze-snippet");
+    zdscript.current.src = `https://static.zdassets.com/ekr/snippet.js?key=${zendeskKey}`;
+    document.getElementsByTagName("body")[0].appendChild(zdscript.current);
+
+    zdscript.current.addEventListener("load", handleScriptLoaded);
   };
 
   return (
@@ -48,4 +95,8 @@ const ZendeskButton = ({ zendeskKey }) => {
   );
 };
 
-export default ZendeskButton;
+const LazyZendeskButton = dynamic(() => Promise.resolve(ZendeskButton), {
+  ssr: false,
+});
+
+export default LazyZendeskButton;
