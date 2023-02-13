@@ -111,7 +111,7 @@ export default function ConsultingPage(
           </Section>
         )}
         {!!mediaCardProps.length && (
-          <Section className="pb-16 text-center">
+          <Section className="pb-40 pt-8 text-center">
             <Container size="custom">
               <MediaCards
                 header={data.consulting.medias?.header}
