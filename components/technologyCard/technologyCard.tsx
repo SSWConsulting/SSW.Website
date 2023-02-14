@@ -22,15 +22,17 @@ const TechnologyCard: VFC<TechnologyCardProps> = ({
         ])}
         data-aos="flip-left"
       >
-        <figure>
-          {/* TODO: refactor with next/image */}
-          <Image
-            src={thumbnail || "/images/ssw-logo.svg"}
-            alt={thumbnail ? name : "SSW Consulting"}
-            width={295}
-            height={100}
-          ></Image>
-        </figure>
+        {
+          thumbnail &&
+          <figure>
+            <Image
+              src={thumbnail || "/images/ssw-logo.svg"}
+              alt={thumbnail ? name : "SSW Consulting"}
+              width={295}
+              height={100}
+            ></Image>
+          </figure>
+        }
         <TinaMarkdown content={body} />
         {readMoreSlug && <Link href={BASE_URL + readMoreSlug}>Read More</Link>}
       </article>
