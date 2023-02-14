@@ -367,7 +367,7 @@ const config = defineStaticConfig({
                 type: "image",
                 label: "Video Background",
                 name: "videoBackground",
-              }
+              },
             ],
           },
           {
@@ -414,7 +414,7 @@ const config = defineStaticConfig({
                     required: false,
                     label: "linkURL",
                     name: "linkURL",
-                  }
+                  },
                 ],
               },
               {
@@ -444,7 +444,7 @@ const config = defineStaticConfig({
               {
                 type: "string",
                 label: "Header",
-                name: "header"
+                name: "header",
               },
               {
                 type: "object",
@@ -465,7 +465,47 @@ const config = defineStaticConfig({
                   },
                 ],
               },
-            ]
+            ],
+          },
+          {
+            type: "object",
+            label: "Medias",
+            name: "medias",
+            fields: [
+              {
+                type: "string",
+                label: "Header",
+                name: "header",
+              },
+              {
+                type: "object",
+                label: "Media Cards",
+                name: "mediaCards",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    label: "Type",
+                    name: "type",
+                    options: [
+                      {
+                        value: "video",
+                        label: "Video",
+                      },
+                      {
+                        value: "blog",
+                        label: "Blog",
+                      },
+                    ],
+                  },
+                  {
+                    type: "rich-text",
+                    label: "Content",
+                    name: "content",
+                  },
+                ],
+              },
+            ],
           },
         ],
       },
