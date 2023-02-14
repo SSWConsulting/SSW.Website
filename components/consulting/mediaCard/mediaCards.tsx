@@ -10,7 +10,7 @@ const MediaCards: FC<{ header: string; cardProps: MediaCardProps[] }> = ({
   return (
     <>
       <h1 className="mb-12">{header}</h1>
-      <div className="flex flex-wrap gap-8">{cards}</div>
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">{cards}</div>
     </>
   );
 };

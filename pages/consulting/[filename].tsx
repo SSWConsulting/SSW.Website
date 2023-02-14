@@ -8,8 +8,8 @@ import { componentRenderer } from "../../components/blocks/mdxComponentRenderer"
 import BookingButton from "../../components/bookingButton/bookingButton";
 import { Layout } from "../../components/layout";
 import { Marketing } from "../../components/marketing/Marketing";
-import { MediaCardProps } from "../../components/media/mediaCard";
-import MediaCards from "../../components/media/mediaCards";
+import { MediaCardProps } from "../../components/consulting/mediaCard/mediaCard";
+import MediaCards from "../../components/consulting/mediaCard/mediaCards";
 import TechnologyCards from "../../components/technologyCard/technologyCards";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { Benefits } from "../../components/util/consulting/benefits";

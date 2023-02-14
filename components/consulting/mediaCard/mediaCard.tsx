@@ -1,10 +1,10 @@
 import classNames from "classnames";
 import { FC } from "react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 export type MediaCardProps = {
   type: "video" | "blog";
-  content: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+  content: TinaMarkdownContent | TinaMarkdownContent[];
 };
 
 const MediaCard: FC<MediaCardProps> = ({ type, content }) => {
@@ -19,8 +19,7 @@ const MediaCard: FC<MediaCardProps> = ({ type, content }) => {
       className={classNames(
         bgImagesClasses[type],
         "card",
-        "thumbnail-card",
-        "w-96"
+        "bg-[length:30px_25px] bg-[95%_92%] bg-no-repeat"
       )}
     >
       <TinaMarkdown content={content} />
