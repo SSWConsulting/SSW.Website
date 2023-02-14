@@ -15,5 +15,6 @@
   "rules": {
     "quotes": ["error", "double"],
     "tailwindcss/no-arbitrary-value": "error"
-  }
+  },
+  "reportUnusedDisableDirectives": true
 }

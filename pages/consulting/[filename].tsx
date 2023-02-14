@@ -8,6 +8,8 @@ import { componentRenderer } from "../../components/blocks/mdxComponentRenderer"
 import BookingButton from "../../components/bookingButton/bookingButton";
 import { Layout } from "../../components/layout";
 import { Marketing } from "../../components/marketing/Marketing";
+import { MediaCardProps } from "../../components/consulting/mediaCard/mediaCard";
+import MediaCards from "../../components/consulting/mediaCard/mediaCards";
 import TechnologyCards from "../../components/technologyCard/technologyCards";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { Benefits } from "../../components/util/consulting/benefits";
@@ -35,6 +37,12 @@ export default function ConsultingPage(
       ...technologyCardDocs.find(
         (n) => !!n.name && n.name === c.technologyCard?.name
       ),
+    })) || [];
+
+  const mediaCardProps =
+    data.consulting.medias?.mediaCards?.map<MediaCardProps>((m) => ({
+      type: m.type as MediaCardProps["type"],
+      content: m.content,
     })) || [];
 
   const bookingButtonProps = {
@@ -92,17 +100,36 @@ export default function ConsultingPage(
             <ClientLogos />
           </Container>
         </Section>
-        {!!techCards.length && <Section className="pb-16 text-center">
-          <Container padding="px-4">
-            <TechnologyCards
-              techHeader={data.consulting.technologies.header}
-              techCards={techCards}
-            />
-          </Container>
-        </Section>}
+        {!!techCards.length && (
+          <Section className="pb-16 text-center">
+            <Container padding="px-4">
+              <TechnologyCards
+                techHeader={data.consulting.technologies.header}
+                techCards={techCards}
+              />
+            </Container>
+          </Section>
+        )}
+        {!!mediaCardProps.length && (
+          <Section className="pb-40 pt-8 text-center">
+            <Container size="custom">
+              <MediaCards
+                header={data.consulting.medias?.header}
+                cardProps={mediaCardProps}
+              />
+            </Container>
+          </Section>
+        )}
         <Section className="!bg-gray-75 pb-25 text-center">
           <Container size="custom" className="w-full">
-            <h1 dangerouslySetInnerHTML={{ __html: parseCallToAction(data.consulting.callToAction, data.consulting.solution.project) }}></h1>
+            <h1
+              dangerouslySetInnerHTML={{
+                __html: parseCallToAction(
+                  data.consulting.callToAction,
+                  data.consulting.solution.project
+                ),
+              }}
+            ></h1>
             <p className="text-lg">
               Jump on a call with one of our Account Managers to discuss how we
               can help you.
@@ -119,10 +146,10 @@ export default function ConsultingPage(
 }
 
 const parseCallToAction = (content: string, project: string) => {
-    const replacement = `<span class="text-sswRed">${project}</span>`;
+  const replacement = `<span class="text-sswRed">${project}</span>`;
 
-    return content?.replace("{{TITLE}}", replacement);
-}
+  return content?.replace("{{TITLE}}", replacement);
+};
 
 export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.consultingContentQuery({
@@ -145,7 +172,7 @@ export const getStaticProps = async ({ params }) => {
 
   const marketingSection = await client.queries.marketing({
     relativePath: "/why-choose-ssw.mdx",
-  })
+  });
 
   return {
     props: {
