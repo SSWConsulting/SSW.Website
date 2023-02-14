@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { Container } from "../util/container";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
 import { LiveStreamBanner } from "../liveStreamBanner";
@@ -46,7 +46,6 @@ const Logo = () => {
         passHref
         className="flex items-center gap-1 whitespace-nowrap"
       >
-        {/* TODO: refactor with next/image */}
         <Image
           src={logoPath}
           alt="SSW - Enterprise Software Development"
