@@ -3,7 +3,7 @@ import { VFC } from "react";
 import { BASE_URL } from "../util/constants";
 import { TechnologyCardProps } from "./technologyCardTypes";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import styles from "./technologyCard.module.css";
 import classnames from "classnames";
 
@@ -24,12 +24,12 @@ const TechnologyCard: VFC<TechnologyCardProps> = ({
       >
         {
           thumbnail &&
-          <figure>
+          <figure className="relative h-24">
             <Image
               src={thumbnail || "/images/ssw-logo.svg"}
               alt={thumbnail ? name : "SSW Consulting"}
-              width={295}
-              height={100}
+              fill
+              objectFit="contain"
             ></Image>
           </figure>
         }
