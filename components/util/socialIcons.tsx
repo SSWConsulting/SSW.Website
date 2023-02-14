@@ -126,7 +126,7 @@ export const SocialIcons = (data?: SocialIconsParams) => {
             className={classNames(
               "flex h-11 cursor-pointer items-center justify-center text-base hover:bg-gray-1000 hover:bg-none",
               styling.bgClassName,
-              social.linkText ? "w-fit" : "w-11",
+              social.linkText ? "w-fit shrink-0" : "w-11",
               { "px-6": social.linkText },
               { "flex sm:hidden": hideOnDesktop },
               { "hidden sm:flex": hideOnMobile },
