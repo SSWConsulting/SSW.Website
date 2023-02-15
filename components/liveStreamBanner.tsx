@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import isBetween from "dayjs/plugin/isBetween";
@@ -7,7 +6,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import timezone from "dayjs/plugin/timezone";
 import classNames from "classnames";
-import { Event } from "../classes/event";
+import { getLiveStreamBannerInfo } from "../services";
 
 dayjs.extend(utc);
 dayjs.extend(isBetween);
@@ -24,34 +23,19 @@ export const LiveStreamBanner = () => {
 
   useEffect(() => {
     const fetchEvent = async () => {
-      const datetime = dayjs.utc().format("YYYY-MM-DDTHH:mm:ss[Z]"); //Why
-
-      const params = {
-        odataFilter: encodeURIComponent(
-          `$filter=Enabled ne false and EndDateTime gt datetime'${datetime}'`
-        ),
-        $top: 1,
-        // TODO: Doesn't work
-        $orderby: encodeURIComponent("StartDateTime desc"),
-      };
-
-      const res = await axios.get(
-        "https://www.ssw.com.au/ssw/SharePointEventsService.aspx",
-        { params }
-      );
+      const datetime = dayjs.utc();
+      const res = await getLiveStreamBannerInfo(datetime);
 
       if (res?.status !== 200) return;
 
-      const event = res?.data
-        .map((e) => new Event(e))
-        .sort((a, z) => a.StartDateTime - z.StartDateTime)[0];
-      setEvent(event);
+      const latestEvent = res.data[0];
+      setEvent(latestEvent);
 
       const startDateTime = dayjs(event.StartDateTime);
 
       const isNow = dayjs(datetime).isBetween(
         startDateTime,
-        dayjs(event.EndDateTime)
+        dayjs(latestEvent.EndDateTime)
       );
       setIsLive(isNow);
     };

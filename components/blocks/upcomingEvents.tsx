@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
-import type { Template } from "tinacms";
-import axios from "axios";
 import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
 import isBetween from "dayjs/plugin/isBetween";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { Event } from "../../classes/event";
+import utc from "dayjs/plugin/utc";
+import { useEffect, useState } from "react";
+import type { Template } from "tinacms";
 
-import Link from "next/link";
 import Image from "next/legacy/image";
+import Link from "next/link";
+import { EventInfo, getUpcomingEvents } from "../../services";
 
 dayjs.extend(utc);
 dayjs.extend(isBetween);
@@ -22,28 +21,13 @@ export const UpcomingEvents = ({ data }) => {
     const fetchEvents = async () => {
       const datetime = dayjs
         .utc()
-        .startOf("day")
-        .format("YYYY-MM-DDTHH:mm:ss[Z]"); //Why
-      const params = {
-        odataFilter: encodeURIComponent(
-          `$filter=Enabled ne false and EndDateTime gt datetime'${datetime}'`
-        ),
-        $top: data.numberOfEvents,
-        // TODO: Doesn't work
-        $orderby: encodeURIComponent("StartDateTime desc"),
-      };
+        .startOf("day");
 
       setLoading(true);
-      const res = await axios.get(
-        "https://www.ssw.com.au/ssw/SharePointEventsService.aspx",
-        { params }
-      );
+      const res = await getUpcomingEvents(datetime, data.numberOfEvents);
       setLoading(false);
 
       if (res?.status !== 200) return;
-      const events = res?.data
-        .map((e) => new Event(e))
-        .sort((a, z) => a.StartDateTime - z.StartDateTime);
       setEvents(events);
     };
 
@@ -71,7 +55,7 @@ export const UpcomingEvents = ({ data }) => {
   );
 };
 
-const renderEvent = (e: Event) => {
+const renderEvent = (e: EventInfo) => {
   const isExternalLink =
     !e.Url.Url.includes("ssw.com.au") || e.Url.Url.includes("/ssw/redirect");
 
