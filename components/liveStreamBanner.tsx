@@ -70,7 +70,7 @@ export const LiveStreamBanner = () => {
     const interval = setInterval(() => {
       setCountdownMins(countdownMins => countdownMins - 1);
       console.log("test");
-    }, 5000);
+    }, 60000);
 
     return () => clearInterval(interval);
   }, []);
