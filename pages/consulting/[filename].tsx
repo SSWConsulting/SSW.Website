@@ -50,6 +50,11 @@ export default function ConsultingPage(
     recaptchaKey: props.env["GOOGLE_RECAPTCHA_KEY"],
   };
 
+  data.consulting.seo = {
+    ...data.consulting.seo,
+    title: data.consulting.seo?.title || data.consulting.title
+  };
+
   return (
     <>
       <SEO seo={data.consulting.seo} />
