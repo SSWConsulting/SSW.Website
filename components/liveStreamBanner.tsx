@@ -23,6 +23,9 @@ export const LiveStreamBanner = () => {
   });
   const [isLive, setIsLive] = useState(false);
 
+  const [countdownMins, setCountdownMins] = useState(0);
+  const [countdownText, setCountdownText] = useState("AA");
+
   useEffect(() => {
     const fetchEvent = async () => {
       const datetime = dayjs.utc().format("YYYY-MM-DDTHH:mm:ss[Z]"); //Why
@@ -55,10 +58,27 @@ export const LiveStreamBanner = () => {
         dayjs(event.EndDateTime)
       );
       setIsLive(isNow);
+
+      return startDateTime;
     };
 
-    fetchEvent();
+    fetchEvent().then(() => {
+      const startDateTime = dayjs(event.StartDateTime);
+      setCountdownMins(startDateTime.diff(dayjs(), "minute"));
+    }); 
+
+    const interval = setInterval(() => {
+      setCountdownMins(countdownMins => countdownMins - 1);
+      console.log("test");
+    }, 5000);
+
+    return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    setCountdownText(countdownTimeText(countdownMins));
+    console.log(countdownMins);
+  }, [countdownMins])
 
   if (event.StartDateTime === undefined) return <></>;
 
@@ -67,7 +87,6 @@ export const LiveStreamBanner = () => {
 
   if (isSameDay) {
     const liveText = "Streaming live now.";
-    const countdownText = `Airing in ${countdownTimeText(startDateTime)}. `;
     return (
       <div className="w-full bg-gray-900">
       <a href="https://ssw.com.au/live">
@@ -94,9 +113,9 @@ export const LiveStreamBanner = () => {
   }
 };
 
-function countdownTimeText(startDateTime: dayjs.Dayjs) {
-  const hours = startDateTime.diff(dayjs(), "hour");
-  const minutes = startDateTime.diff(dayjs(), "minute") % 60;
+function countdownTimeText(countdownMins:number) {
+  const hours = Math.floor(countdownMins / 60);
+  const minutes = countdownMins % 60;
 
   let countdownText = "";
   
@@ -116,7 +135,7 @@ function countdownTimeText(startDateTime: dayjs.Dayjs) {
     countdownText = countdownText.concat(`${minutes} minute`)
   } 
 
-  return countdownText;
+  return `Airing in ${countdownText}. `;
 }
 
 function scheduledTimeText(startDateTime: dayjs.Dayjs) {
