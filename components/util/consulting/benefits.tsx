@@ -19,9 +19,10 @@ const BenefitCard = ({ data, aosType }) => {
         {title}
       </h4>
       <article>
-        <p className="m-0 w-full py-0 text-left font-light leading-normal">
-          {description}
-        </p>
+        <p
+          className="m-0 w-full py-0 text-left font-light leading-normal"
+          dangerouslySetInnerHTML={{ __html: description }}
+        ></p>
         {linkURL && (
           <a className="text-white no-underline" href={linkURL}>
             {linkName}
