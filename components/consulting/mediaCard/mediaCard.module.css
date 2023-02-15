@@ -1,16 +1,3 @@
-.technology-card p {
-  @apply mx-auto my-auto w-9/12 px-0 py-5 text-center font-sans text-md font-light;
-}
-.technology-card p a {
-  @apply ml-4 font-body;
-}
-.technology-card a {
-  @apply text-gray-650;
-}
-.technology-card img {
-  @apply h-25;
-}
-
 .card {
   @apply border-b-2 border-solid border-b-sswRed bg-gray-75 py-11 px-16;
 }

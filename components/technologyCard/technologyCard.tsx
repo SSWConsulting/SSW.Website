@@ -19,6 +19,7 @@ const TechnologyCard: FC<TechnologyCardProps> = ({
       <article
         className={classnames([
           styles["technology-card"],
+          styles.card,
           "card mx-3.5 mt-5 mb-15 h-full p-10",
         ])}
         data-aos="flip-left"

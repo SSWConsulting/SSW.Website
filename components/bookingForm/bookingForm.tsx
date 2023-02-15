@@ -1,4 +1,5 @@
 import { Form, Formik } from "formik";
+import classNames from "classnames";
 import { useRouter } from "next/router";
 import { useEffect, useMemo, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -17,6 +18,7 @@ import {
 } from "../util/constants";
 import { bookingFormSubmissionData } from "./bookingFormSubmissionData";
 import { ValidationSchema } from "./validationSchema";
+import styles from "./bookingForm.module.css";
 
 export const BookingForm = ({ recaptchaKey }) => {
   //Show FormStates and Active label
@@ -123,7 +125,7 @@ export const BookingForm = ({ recaptchaKey }) => {
             {CONTACT_FORM_TITLE}
           </h2>
           {!!contactSuccess && (
-            <div className="alert alert-success mb-8" role="alert">
+            <div className={classNames(styles.alert, styles["alert-success"], "mb-8")} role="alert">
               An email has been sent to the SSW Sales team and someone will be
               in contact with you soon
             </div>

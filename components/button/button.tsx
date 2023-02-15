@@ -1,10 +1,9 @@
 import classNames from "classnames";
+import styles from "./button.module.css";
 
 const Button = ({ children, ripple, ...props }) => {
   const buttonClassName = classNames(
-    {
-      "ripple-button": !!ripple,
-    },
+    ripple && styles["ripple-button"],
     props["className"]
   );
 
@@ -12,7 +11,7 @@ const Button = ({ children, ripple, ...props }) => {
     <>
       <button type="button" {...props} className={buttonClassName}>
         {children}
-        {ripple && <div className="ripple-button-anim" />}
+        {ripple && <div className={styles["ripple-button-anim"]} />}
       </button>
     </>
   );

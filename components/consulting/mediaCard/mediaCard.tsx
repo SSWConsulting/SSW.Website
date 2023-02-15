@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { FC } from "react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import styles from "./mediaCard.module.css";
 
 export type MediaCardProps = {
   type: "video" | "blog";
@@ -18,7 +19,7 @@ const MediaCard: FC<MediaCardProps> = ({ type, content }) => {
       data-aos="flip-left"
       className={classNames(
         bgImagesClasses[type],
-        "card",
+        styles.card,
         "bg-[length:30px_25px] bg-[95%_92%] bg-no-repeat"
       )}
     >
