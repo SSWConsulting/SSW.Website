@@ -69,14 +69,15 @@ export const LiveStreamBanner = () => {
     const countdownText = `Airing ${startDateTime.fromNow()}. `;
     return (
       <a href="https://ssw.com.au/live">
+        
         <div
           className={classNames(
-            "h-liveStream bg-gray-900 bg-right-top bg-no-repeat p-3 uppercase",
+            "h-liveStream bg-gray-900 bg-right-top bg-no-repeat p-5 uppercase",
             isLive ? "bg-live-banner-live" : "bg-live-banner-wait"
           )}
         >
-          <h1 className="text-xl font-light text-gray-300">{event.Title}</h1>
-          <p className=" text-xs text-white">
+          <h1 className="m-0 py-0 text-xl font-light text-gray-300">{event.Title}</h1>
+          <p className="py-0 text-xs text-white">
             <span className="text-sswRed">
               {isLive ? liveText : countdownText}
             </span>
