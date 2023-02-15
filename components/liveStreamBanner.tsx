@@ -5,6 +5,7 @@ import utc from "dayjs/plugin/utc";
 import isBetween from "dayjs/plugin/isBetween";
 import relativeTime from "dayjs/plugin/relativeTime";
 import advancedFormat from "dayjs/plugin/advancedFormat";
+import updateLocale from "dayjs/plugin/updateLocale";
 import timezone from "dayjs/plugin/timezone";
 import classNames from "classnames";
 import { Event } from "../classes/event";
@@ -66,13 +67,14 @@ export const LiveStreamBanner = () => {
 
   if (isSameDay) {
     const liveText = "Streaming live now.";
-    const countdownText = `Airing ${startDateTime.fromNow()}. `;
+    const countdownText = `Airing in ${countdownTimeText(startDateTime)}. `;
     return (
+      <div className="w-full bg-gray-900">
       <a href="https://ssw.com.au/live">
         
         <div
           className={classNames(
-            "h-liveStream bg-gray-900 bg-right-top bg-no-repeat p-5 uppercase",
+            "h-liveStream bg-gray-900 bg-right-top bg-no-repeat p-5 uppercase mx-auto max-w-7xl px-6 sm:px-8",
             isLive ? "bg-live-banner-live" : "bg-live-banner-wait"
           )}
         >
@@ -85,11 +87,37 @@ export const LiveStreamBanner = () => {
           </p>
         </div>
       </a>
+      </div>
     );
   } else {
     return <></>;
   }
 };
+
+function countdownTimeText(startDateTime: dayjs.Dayjs) {
+  const hours = startDateTime.diff(dayjs(), "hour");
+  const minutes = startDateTime.diff(dayjs(), "minute") % 60;
+
+  let countdownText = "";
+  
+  if (hours > 1) {
+    countdownText = countdownText.concat(`${hours} hours`)
+  } else if (hours == 1) {
+    countdownText = countdownText.concat(`${hours} hour`)
+  }
+
+  if (hours > 0 && minutes > 0) {
+    countdownText = countdownText.concat(" and ")
+  }
+
+  if (minutes > 1) {
+    countdownText = countdownText.concat(`${minutes} minutes`)
+  } else if (minutes === 1) {
+    countdownText = countdownText.concat(`${minutes} minute`)
+  } 
+
+  return countdownText;
+}
 
 function scheduledTimeText(startDateTime: dayjs.Dayjs) {
   const sydStartTime = startDateTime.tz("Australia/Sydney").format("h a");

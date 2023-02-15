@@ -5,6 +5,7 @@ import { Footer } from "./footer";
 import { Theme } from "./theme";
 import { Menu, MobileMenu } from "../../lib/ssw.megamenu";
 import { classNames } from "tinacms";
+import { LiveStreamBanner } from "../liveStreamBanner";
 
 export const Layout = ({ children, className = "" }) => {
   const node = useRef<HTMLDivElement>();
@@ -27,6 +28,7 @@ export const Layout = ({ children, className = "" }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Theme>
+        <LiveStreamBanner />
         <div className={classNames("page-container", className)}>
           <div
             className="mx-auto max-w-7xl px-6 sm:px-8"
