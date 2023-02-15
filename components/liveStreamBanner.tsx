@@ -69,7 +69,6 @@ export const LiveStreamBanner = () => {
 
     const interval = setInterval(() => {
       setCountdownMins(countdownMins => countdownMins - 1);
-      console.log("test");
     }, 60000);
 
     return () => clearInterval(interval);
@@ -77,7 +76,6 @@ export const LiveStreamBanner = () => {
 
   useEffect(() => {
     setCountdownText(countdownTimeText(countdownMins));
-    console.log(countdownMins);
   }, [countdownMins])
 
   if (event.StartDateTime === undefined) return <></>;
