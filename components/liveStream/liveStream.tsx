@@ -13,7 +13,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import { Tooltip } from "react-tooltip";
+import { Tooltip } from "react-tooltip/dist/react-tooltip.umd"; // Workaround for render issue. See https://github.com/ReactTooltip/react-tooltip/issues/933
 import layoutData from "../../content/global/index.json";
 import {
   ExternalSpeakerInfo,
