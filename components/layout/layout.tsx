@@ -1,26 +1,13 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import Head from "next/head";
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { Theme } from "./theme";
-import { Menu, MobileMenu } from "../../lib/ssw.megamenu";
+import { MenuBar } from "ssw.megamenu";
 import { classNames } from "tinacms";
 import { LiveStreamBanner } from "../liveStreamBanner";
 
 export const Layout = ({ children, className = "" }) => {
-  const node = useRef<HTMLDivElement>();
-  const [isMenuOpened, setIsMenuOpened] = useState(false);
-
-  const actionOnToggleClick = () => {
-    setIsMenuOpened(!isMenuOpened);
-  };
-
-  const handleClick = (e) => {
-    if (node.current && !node.current.contains(e.target)) {
-      setIsMenuOpened(false);
-    }
-  };
-
   return (
     <>
       <Head>
@@ -29,22 +16,19 @@ export const Layout = ({ children, className = "" }) => {
       </Head>
       <Theme>
         <div
-          className={classNames("relative min-h-screen flex flex-col", className)}
-          onMouseDown={isMenuOpened ? (event) => handleClick(event) : null}
+          className={classNames(
+            "relative flex min-h-screen flex-col",
+            className
+          )}
         >
           <header>
             <LiveStreamBanner />
             <div className="mx-auto max-w-9xl px-6 sm:px-8">
               <Header />
-              <div ref={node} >
-                <Menu onClickToggle={() => actionOnToggleClick()} />
-                <MobileMenu isMenuOpened={isMenuOpened} />
-              </div>
             </div>
+            <MenuBar className="mx-auto max-w-9xl px-6 sm:px-8" />
           </header>
-          <main className="grow bg-white">
-            {children}
-          </main>
+          <main className="grow bg-white">{children}</main>
           <Footer />
         </div>
       </Theme>
