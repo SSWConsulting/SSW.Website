@@ -34,56 +34,56 @@ const socialStyles = new Map<
     SocialTypes.phone,
     {
       icon: FaPhone,
-      bgClassName: "bg-phone",
+      bgClassName: "bg-socialPhone",
     },
   ],
   [
     SocialTypes.youtube,
     {
       icon: FaYoutube,
-      bgClassName: "bg-youtube",
+      bgClassName: "bg-socialYoutube",
     },
   ],
   [
     SocialTypes.linkedin,
     {
       icon: FaLinkedinIn,
-      bgClassName: "bg-linkedin",
+      bgClassName: "bg-socialLinkedin",
     },
   ],
   [
     SocialTypes.facebook,
     {
       icon: FaFacebookF,
-      bgClassName: "bg-facebook",
+      bgClassName: "bg-socialFacebook",
     },
   ],
   [
     SocialTypes.instagram,
     {
       icon: FaInstagram,
-      bgClassName: "bg-instagram",
+      bgClassName: "bg-gradient-to-tr from-[#f09433] to-[#bc1888]",
     },
   ],
   [
     SocialTypes.twitter,
     {
       icon: FaTwitter,
-      bgClassName: "bg-twitter",
+      bgClassName: "bg-socialTwitter",
     },
   ],
   [
     SocialTypes.tiktok,
     {
       icon: FaTiktok,
-      bgClassName: "bg-tiktok",
+      bgClassName: "bg-socialTiktok",
     },
   ],
   [
     SocialTypes.github,
     {
       icon: FaGithub,
-      bgClassName: "bg-github",
+      bgClassName: "bg-socialGithub",
     },
   ],
 ]);

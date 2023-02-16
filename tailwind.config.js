@@ -20,6 +20,13 @@ module.exports = {
       purple: colors.purple,
       pink: colors.pink,
       yellow: colors.yellow,
+      socialPhone: "#b31217",
+      socialYoutube: "#b31217",
+      socialLinkedin: "#0077b5",
+      socialFacebook: "#3b5998",
+      socialTwitter: "#55acee",
+      socialTiktok: "#000",
+      socialGithub: "#000",
       sswRed: "#cc4141",
       azure: "#007fff",
       gray: {
