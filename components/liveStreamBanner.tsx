@@ -5,7 +5,6 @@ import utc from "dayjs/plugin/utc";
 import isBetween from "dayjs/plugin/isBetween";
 import relativeTime from "dayjs/plugin/relativeTime";
 import advancedFormat from "dayjs/plugin/advancedFormat";
-import updateLocale from "dayjs/plugin/updateLocale";
 import timezone from "dayjs/plugin/timezone";
 import classNames from "classnames";
 import { Event } from "../classes/event";
@@ -68,7 +67,11 @@ export const LiveStreamBanner = () => {
     }); 
 
     const interval = setInterval(() => {
-      setCountdownMins(countdownMins => countdownMins - 1);
+      if(countdownMins > 1) {
+        setCountdownMins(countdownMins => countdownMins - 1);
+      } else {
+        setIsLive(true);
+      }      
     }, 60000);
 
     return () => clearInterval(interval);
