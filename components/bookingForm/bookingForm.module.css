@@ -3,5 +3,5 @@
 }
 
 .alert-success {
-  @apply border-[#badbcc] bg-[#d1e7dd] text-[#0f5132];
+  @apply border-green-100 bg-green-50 text-green-900;
 }

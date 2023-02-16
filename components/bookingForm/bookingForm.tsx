@@ -125,7 +125,7 @@ export const BookingForm = ({ recaptchaKey }) => {
             {CONTACT_FORM_TITLE}
           </h2>
           {!!contactSuccess && (
-            <div className={classNames(styles.alert, styles["alert-success"], "mb-8")} role="alert">
+            <div className={"relative mb-8 rounded border-1 border-solid border-green-100 bg-green-50 p-4 text-green-900"} role="alert">
               An email has been sent to the SSW Sales team and someone will be
               in contact with you soon
             </div>

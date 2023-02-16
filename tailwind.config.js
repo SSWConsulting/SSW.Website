@@ -20,13 +20,13 @@ module.exports = {
       purple: colors.purple,
       pink: colors.pink,
       yellow: colors.yellow,
-      socialPhone: "#b31217",
-      socialYoutube: "#b31217",
-      socialLinkedin: "#0077b5",
-      socialFacebook: "#3b5998",
-      socialTwitter: "#55acee",
-      socialTiktok: "#000",
-      socialGithub: "#000",
+      "social-phone": "#b31217",
+      "social-youtube": "#b31217",
+      "social-linkedin": "#0077b5",
+      "social-facebook": "#3b5998",
+      "social-twitter": "#55acee",
+      "social-tiktok": "#000",
+      "social-github": "#000",
       sswRed: "#cc4141",
       azure: "#007fff",
       gray: {
@@ -325,12 +325,16 @@ module.exports = {
         benefits: "url('/consulting/mvc-benefits-bg.jpg')",
       },
     },
+    linearGradientColors: {
+      "social-instagram": ["#f09433", "#e6683c 25%", "#dc2743 50%", "#cc2366 75%", "#bc1888"]
+    }
   },
   variants: {
     extend: { typography: ["tint", "dark", "primary"] },
   },
   plugins: [
     require("@tailwindcss/typography"),
+    require("tailwindcss-gradients"),
     require("@headlessui/tailwindcss")({ prefix: "ui" }),
 
     // taken from https://github.com/tailwindlabs/tailwindcss/discussions/2156#discussioncomment-1283105
