@@ -69,9 +69,7 @@ export const LiveStreamBanner = () => {
     const interval = setInterval(() => {
       if(countdownMins > 1) {
         setCountdownMins(countdownMins => countdownMins - 1);
-      } else {
-        setIsLive(true);
-      }      
+      }  
     }, 60000);
 
     return () => clearInterval(interval);
@@ -94,7 +92,7 @@ export const LiveStreamBanner = () => {
         
         <div
           className={classNames(
-            "h-liveStream bg-gray-900 bg-right-top bg-no-repeat p-5 uppercase mx-auto max-w-7xl px-6 sm:px-8",
+            "bg-gray-900 bg-right-top bg-no-repeat p-5 uppercase mx-auto max-w-7xl px-6 sm:px-8",
             isLive ? "bg-live-banner-live" : "bg-live-banner-wait"
           )}
         >
