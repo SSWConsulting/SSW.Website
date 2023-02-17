@@ -50,11 +50,6 @@ export default function ConsultingPage(
     recaptchaKey: props.env["GOOGLE_RECAPTCHA_KEY"],
   };
 
-  data.consulting.seo = {
-    ...data.consulting.seo,
-    title: data.consulting.seo?.title || data.consulting.title
-  };
-
   return (
     <>
       <SEO seo={data.consulting.seo} />
@@ -63,7 +58,7 @@ export default function ConsultingPage(
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}
             suffix={data.global.breadcrumbSuffix}
-            title={data.consulting.title}
+            title={data.consulting.seo?.title}
           />
         </Section>
         <Section
