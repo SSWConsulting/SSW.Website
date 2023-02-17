@@ -1,5 +1,5 @@
 .technology-card p {
-  @apply mx-auto my-auto w-9/12 px-0 py-5 text-justify font-sans text-md font-light;
+  @apply mx-auto my-auto w-9/12 px-0 py-5 text-center font-sans text-md font-light;
 }
 .technology-card p a {
   @apply ml-4 font-body;
