@@ -1,41 +1,19 @@
-import { VFC, useEffect, useState } from "react";
+import { FC } from "react";
 import TechnologyCard from "./technologyCard";
 import { TechnologyCardsProps } from "./technologyCardTypes";
 
-const TechnologyCards: VFC<TechnologyCardsProps> = ({
+const TechnologyCards: FC<TechnologyCardsProps> = ({
   techHeader,
   techCards,
 }) => {
-  const [techComponents, setTechComponents] = useState([]);
-  const getComponent = (name: string, index: number) => {
-    const technologyCardNode = techCards.find((c) => c.name == name);
-    if (technologyCardNode) {
-      return (
-        <TechnologyCard
-          {...technologyCardNode}
-          index={index}
-          techListLength={techCards.length}
-          key={index}
-        />
-      );
-    } else {
-      return null;
-    }
-  };
-
-  useEffect(() => {
-    techCards.map((card, index) => {
-      setTechComponents((techComponents: Element[]) => [
-        ...techComponents,
-        getComponent(card.name, index),
-      ]);
-    });
-  }, []);
-
   return (
     <article className="bg-white text-black">
       <h1 className="mt-0">{techHeader}</h1>
-      <div className="grid grid-cols-12 gap-y-10">{techComponents}</div>
+      <div className="grid grid-cols-12 gap-y-10">
+        {techCards.map((card) => {
+          return <TechnologyCard key={card.name} {...card} />;
+        })}
+      </div>
     </article>
   );
 };

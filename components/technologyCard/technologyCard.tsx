@@ -28,7 +28,7 @@ const TechnologyCard: FC<TechnologyCardProps> = ({
               src={thumbnail || "/images/ssw-logo.svg"}
               alt={thumbnail ? name : "SSW Consulting"}
               fill
-              objectFit="contain"
+              className="object-contain"
             ></Image>
           </figure>
         )}
