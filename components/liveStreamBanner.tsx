@@ -8,10 +8,6 @@ import advancedFormat from "dayjs/plugin/advancedFormat";
 import timezone from "dayjs/plugin/timezone";
 import classNames from "classnames";
 import { Event } from "../classes/event";
-import { start } from "repl";
-
-import mockData from "./mockData.json";
-import { count } from "console";
 
 dayjs.extend(utc);
 dayjs.extend(isBetween);
@@ -51,9 +47,7 @@ export const LiveStreamBanner = () => {
 
       if (res?.status !== 200) return;
 
-      console.log(res.data);
-
-      const event = mockData
+      const event = res?.data
         .map((e) => new Event(e))
         .sort((a, z) => a.StartDateTime - z.StartDateTime)[0];
       await setEvent(event);
@@ -61,7 +55,6 @@ export const LiveStreamBanner = () => {
       const start = await dayjs(event.StartDateTime)
       await setStartDateTime(start);
       await setCountdownMins(start.diff(dayjs(), "minute"));
-      console.log("mins", start.diff(dayjs(), "minute"))
       
       const isNow = dayjs(datetime).isBetween(
         start,
