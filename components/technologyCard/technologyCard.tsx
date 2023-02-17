@@ -12,9 +12,10 @@ const TechnologyCard: FC<TechnologyCardProps> = ({
   readMoreSlug,
   thumbnail,
   body,
+  className,
 }) => {
   return (
-    <div className="col-span-12 md:col-span-6">
+    <div className={`col-span-12 ${className ?? ""}`}>
       <article
         className={classnames([
           styles["technology-card"],
