@@ -209,7 +209,7 @@ export const BookingForm = ({ recaptchaKey }) => {
 
                 <FormGroupTextArea
                   label={ACTIVE_INPUT.Note}
-                  placeholder="Note"
+                placeholder="How can we help you?"
                   rows={4}
                   maxLength={2000}
                   {...getCommonFieldProps(FORM_INPUT.Note)}

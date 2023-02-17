@@ -95,7 +95,7 @@ const renderEvent = (e: Event) => {
             {e.RelativeDate}
           </span>
         </time>
-        <h5>
+        <h2 className="m-0 text-sm">
           <Link
             href={e.Url.Url}
             className="text-sm text-sswRed"
@@ -103,7 +103,7 @@ const renderEvent = (e: Event) => {
           >
             {e.Title}
           </Link>
-        </h5>
+        </h2>
         {!!e.Presenter && (
           <span className="whitespace-nowrap text-xs">{e.Presenter}</span>
         )}

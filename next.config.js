@@ -1,4 +1,8 @@
 module.exports = {
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
   poweredByHeader: false,
   images: {
     domains: ["assets.tina.io", "i.ytimg.com", "www.ssw.com.au"],
