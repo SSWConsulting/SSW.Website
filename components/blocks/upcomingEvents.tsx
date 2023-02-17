@@ -61,7 +61,7 @@ export const UpcomingEvents = ({ data }) => {
           {/* TODO: Update link after implement this page */}
           <Link
             href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all"
-            className="inline-flex items-center rounded border-1 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-black shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
+            className="inline-flex items-center rounded border-1 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
           >
             More Events
           </Link>
