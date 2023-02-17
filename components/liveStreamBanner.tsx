@@ -8,6 +8,10 @@ import advancedFormat from "dayjs/plugin/advancedFormat";
 import timezone from "dayjs/plugin/timezone";
 import classNames from "classnames";
 import { Event } from "../classes/event";
+import { start } from "repl";
+
+import mockData from "./mockData.json";
+import { count } from "console";
 
 dayjs.extend(utc);
 dayjs.extend(isBetween);
@@ -23,7 +27,9 @@ export const LiveStreamBanner = () => {
   const [isLive, setIsLive] = useState(false);
 
   const [countdownMins, setCountdownMins] = useState(0);
-  const [countdownText, setCountdownText] = useState("AA");
+  const [countdownText, setCountdownText] = useState("");
+
+  const [startDateTime, setStartDateTime] = useState(undefined);
 
   useEffect(() => {
     const fetchEvent = async () => {
@@ -45,43 +51,47 @@ export const LiveStreamBanner = () => {
 
       if (res?.status !== 200) return;
 
-      const event = res?.data
+      console.log(res.data);
+
+      const event = mockData
         .map((e) => new Event(e))
         .sort((a, z) => a.StartDateTime - z.StartDateTime)[0];
-      setEvent(event);
+      await setEvent(event);
 
-      const startDateTime = dayjs(event.StartDateTime);
-
+      const start = await dayjs(event.StartDateTime)
+      await setStartDateTime(start);
+      await setCountdownMins(start.diff(dayjs(), "minute"));
+      console.log("mins", start.diff(dayjs(), "minute"))
+      
       const isNow = dayjs(datetime).isBetween(
-        startDateTime,
+        start,
         dayjs(event.EndDateTime)
       );
-      setIsLive(isNow);
 
-      return startDateTime;
+      setIsLive(isNow);
     };
 
-    fetchEvent().then(() => {
-      const startDateTime = dayjs(event.StartDateTime);
-      setCountdownMins(startDateTime.diff(dayjs(), "minute"));
-    }); 
+    fetchEvent();
 
     const interval = setInterval(() => {
-      if(countdownMins > 1) {
-        setCountdownMins(countdownMins => countdownMins - 1);
-      }  
+      setCountdownMins(countdownMins => countdownMins - 1);
     }, 60000);
 
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
-    setCountdownText(countdownTimeText(countdownMins));
+    if (countdownMins > -1) {
+      setCountdownText(countdownTextFormat(countdownMins));
+      setIsLive(false);
+    } else {
+      setIsLive(true);
+    }
+    
   }, [countdownMins])
 
-  if (event.StartDateTime === undefined) return <></>;
+  if (startDateTime === undefined) return <></>;
 
-  const startDateTime = dayjs(event.StartDateTime);
   const isSameDay = startDateTime.isSame(dayjs(), "day");
 
   if (isSameDay) {
@@ -112,7 +122,7 @@ export const LiveStreamBanner = () => {
   }
 };
 
-function countdownTimeText(countdownMins:number) {
+function countdownTextFormat(countdownMins:number) {
   const hours = Math.floor(countdownMins / 60);
   const minutes = countdownMins % 60;
 
@@ -128,7 +138,7 @@ function countdownTimeText(countdownMins:number) {
     countdownText = countdownText.concat(" and ")
   }
 
-  if (minutes > 1) {
+  if (minutes > 1 || minutes == 0) {
     countdownText = countdownText.concat(`${minutes} minutes`)
   } else if (minutes === 1) {
     countdownText = countdownText.concat(`${minutes} minute`)
