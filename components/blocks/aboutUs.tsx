@@ -267,13 +267,13 @@ const OfficeInfo = ({ office }) => {
         <span itemProp="addressCountry">{office.addressCountry}</span>
       </p>
       <p className="py-2">
-        Phone: <span className="text-sswRed">{office.phone}</span>
+        Phone: {office.phone}
       </p>
       <p className="pb-2">
-        Hours: <span className="text-sswRed">{office.hours}</span>{" "}
+        Hours: {office.hours}
         <OpenStatus state={office.addressRegion} />
         <br />
-        <span className="text-sswRed">{office.days}</span>
+        {office.days}
       </p>
     </div>
   );
