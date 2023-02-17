@@ -9,6 +9,8 @@ import timezone from "dayjs/plugin/timezone";
 import classNames from "classnames";
 import { Event } from "../classes/event";
 
+import countdownTextFormat from "../helpers/countdownTextFormat";
+
 dayjs.extend(utc);
 dayjs.extend(isBetween);
 dayjs.extend(relativeTime);
@@ -47,8 +49,6 @@ export const LiveStreamBanner = () => {
 
       if (res?.status !== 200) return;
 
-      console.log(res.data);
-
       const event = res?.data
         .map((e) => new Event(e))
         .sort((a, z) => a.StartDateTime - z.StartDateTime)[0];
@@ -78,13 +78,8 @@ export const LiveStreamBanner = () => {
   }, []);
 
   useEffect(() => {
-    if (countdownMins > -1) {
-      setCountdownText(countdownTextFormat(countdownMins));
-      setIsLive(false);
-    } else {
-      setIsLive(true);
-    }
-    
+    setCountdownText(countdownTextFormat(countdownMins));
+    setIsLive(countdownMins <= 0);
   }, [countdownMins])
 
   if (startDateTime === undefined) return <></>;
@@ -118,31 +113,6 @@ export const LiveStreamBanner = () => {
     return <></>;
   }
 };
-
-function countdownTextFormat(countdownMins:number) {
-  const hours = Math.floor(countdownMins / 60);
-  const minutes = countdownMins % 60;
-
-  let countdownText = "";
-  
-  if (hours > 1) {
-    countdownText = countdownText.concat(`${hours} hours`)
-  } else if (hours == 1) {
-    countdownText = countdownText.concat(`${hours} hour`)
-  }
-
-  if (hours > 0 && minutes > 0) {
-    countdownText = countdownText.concat(" and ")
-  }
-
-  if (minutes > 1 || minutes == 0) {
-    countdownText = countdownText.concat(`${minutes} minutes`)
-  } else if (minutes === 1) {
-    countdownText = countdownText.concat(`${minutes} minute`)
-  } 
-
-  return `Airing in ${countdownText}. `;
-}
 
 function scheduledTimeText(startDateTime: dayjs.Dayjs) {
   const sydStartTime = startDateTime.tz("Australia/Sydney").format("h a");
