@@ -151,12 +151,22 @@ const TV = ({ className }) => {
             allowFullScreen
           ></iframe>
         ) : (
-          <Image
-            src={layoutData.aboutUs.video.thumbnailUrl}
-            alt="SSW TV"
-            fill={true}
-            onClick={() => setVideoClicked(true)}
-          />
+          <div onClick={() => setVideoClicked(true)}>
+            
+            <Image
+              className="absolute transition duration-1000 hover:brightness-75"
+              src={layoutData.aboutUs.video.thumbnailUrl}
+              alt="SSW TV"
+              fill={true}
+            />
+            <div className="absolute inset-1/2 h-20 w-20">
+              <Image 
+                alt="Play Button"
+                src="/images/play.png"
+                fill={true}
+              />
+            </div>
+          </div>
         )}
       </div>
     </div>
