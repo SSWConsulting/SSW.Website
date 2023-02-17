@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { Container } from "../util/container";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
 import { LiveStreamBanner } from "../liveStreamBanner";
@@ -20,7 +20,7 @@ export const Header = () => {
         padding=""
         className="relative z-10 my-4 max-w-9xl py-0"
       >
-        <div className="sm:flex sm:items-center sm:justify-between">
+        <div className="sm:flex sm:items-center sm:justify-between sm:gap-2">
           <Logo />
           <div className="mt-4 flex items-center justify-center sm:mt-0">
             <SocialIcons excludeMobile={excludeMobile} />
@@ -46,7 +46,6 @@ const Logo = () => {
         passHref
         className="flex items-center gap-1 whitespace-nowrap"
       >
-        {/* TODO: refactor with next/image */}
         <Image
           src={logoPath}
           alt="SSW - Enterprise Software Development"
@@ -54,7 +53,7 @@ const Logo = () => {
           width={150}
         />
       </Link>
-      <div className="ml-4 w-24 text-sm font-semibold uppercase leading-4 text-gray-700">
+      <div className="ml-4 hidden w-24 text-sm font-semibold uppercase leading-4 text-gray-700 md:block">
         Enterprise Software Development
       </div>
     </h4>
