@@ -33,7 +33,7 @@ export const LiveStreamBanner = () => {
 
       const params = {
         odataFilter: encodeURIComponent(
-          `$filter=Enabled ne false and EndDateTime gt datetime'${datetime}'`
+          `$filter=Enabled ne false and EndDateTime gt datetime'${datetime}' and CalendarType eq 'User Groups'`
         ),
         $top: 1,
         // TODO: Doesn't work
@@ -46,6 +46,8 @@ export const LiveStreamBanner = () => {
       );
 
       if (res?.status !== 200) return;
+
+      console.log(res.data);
 
       const event = res?.data
         .map((e) => new Event(e))
@@ -67,7 +69,9 @@ export const LiveStreamBanner = () => {
     fetchEvent();
 
     const interval = setInterval(() => {
-      setCountdownMins(countdownMins => countdownMins - 1);
+      if (countdownMins >= -1) {
+        setCountdownMins(countdownMins => countdownMins - 1);
+      }
     }, 60000);
 
     return () => clearInterval(interval);
