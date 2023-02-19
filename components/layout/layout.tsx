@@ -29,7 +29,7 @@ export const Layout = ({ children, className = "" }) => {
       <Theme>
         <div className={classNames("page-container", className)}>
           <div
-            className="mx-auto max-w-7xl px-6 sm:px-8"
+            className="mx-auto max-w-9xl px-6 sm:px-8"
             ref={node}
             onMouseDown={isMenuOpened ? (event) => handleClick(event) : null}
           >
