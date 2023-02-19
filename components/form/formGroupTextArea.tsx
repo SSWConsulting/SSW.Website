@@ -46,7 +46,7 @@ const FormGroupTextArea: VFC<
           );
         }}
       </Field>
-      <small>Maximium 2000 characters</small>
+      <small>Maximum 2000 characters</small>
       <ErrorMessage
         name={field.name}
         className={errorMessageClass}

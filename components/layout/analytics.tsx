@@ -1,6 +1,5 @@
 import Script from "next/script";
 
-const zendesk = process.env.NEXT_PUBLIC_ZENDESK_CHAT_KEY;
 const gaId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS;
 const gtmId = process.env.NEXT_PUBLIC_GOOGLE_GTM_ID;
 const hjId = process.env.NEXT_PUBLIC_HOTJAR_ID;
@@ -11,8 +10,10 @@ export const Analytics = () => {
     <>
       <GoogleAnalytics analyticsId={`${gaId ? gaId : ""}`} />
       <GoogleTagManager tagId={`${gtmId ? gtmId : ""}`} />
-      <Hotjar hotjarId={`${hjId ? hjId : ""}`} hotjarSv={`${hjSv ? hjSv : ""}`} />
-      <Zendesk zendeskKey={`${zendesk ? zendesk : ""}`} />
+      <Hotjar
+        hotjarId={`${hjId ? hjId : ""}`}
+        hotjarSv={`${hjSv ? hjSv : ""}`}
+      />
     </>
   );
 };
@@ -83,32 +84,6 @@ const Hotjar = (props: { hotjarId: string; hotjarSv: string }) => {
             })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
         `}
       </Script>
-    </>
-  );
-};
-
-const Zendesk = (props: { zendeskKey: string }) => {
-  if (!props.zendeskKey) {
-    return null;
-  }
-  return (
-    <>
-      <Script id="connectOnPage-inline" strategy="afterInteractive">
-        {`
-            window.zESettings = {
-                webWidget: {
-                    chat: {
-                        connectOnPageLoad: false        
-                    }
-                }
-            };
-        `}
-      </Script>
-      <Script
-        strategy="lazyOnload"
-        id="ze-snippet"
-        src={`https://static.zdassets.com/ekr/snippet.js?key=${props.zendeskKey}`}
-      />
     </>
   );
 };

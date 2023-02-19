@@ -1,5 +1,5 @@
 import * as React from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { useRouter } from "next/router";
 
 import type { Template } from "tinacms";
@@ -52,13 +52,12 @@ export const Carousel = ({ data }) => {
 const createCarouselItemImage = ({ imgSrc, label }, index: React.Key) => {
   return (
     <div key={index}>
-      {/* TODO: refactor with next/image */}
       <Image
         src={imgSrc}
         alt={label}
         height={388}
         width={1080}
-        layout="responsive"
+        sizes="100vw"
         priority={index === 0}
       />
       {/* `legend` required so that the carousel works properly */}
@@ -72,7 +71,7 @@ const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
   if (isSelected) {
     return (
       <li
-        className="my-0 mx-2 inline-block h-5 w-5 bg-sswRed"
+        className="my-0 mx-1 inline-block h-7 w-7 bg-sswRed"
         aria-label={`Selected: ${label} ${index + 1}`}
         title={`Selected: ${label} ${index + 1}`}
       />
@@ -80,7 +79,7 @@ const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
   }
   return (
     <li
-      className="my-0 mx-2 inline-block h-5 w-5 bg-gray-500"
+      className="my-0 mx-1 inline-block h-7 w-7 bg-gray-500"
       onClick={onClickHandler}
       onKeyDown={onClickHandler}
       value={index}

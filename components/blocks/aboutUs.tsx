@@ -267,13 +267,13 @@ const OfficeInfo = ({ office }) => {
         <span itemProp="addressCountry">{office.addressCountry}</span>
       </p>
       <p className="py-2">
-        Phone: <span className="text-sswRed">{office.phone}</span>
+        Phone: {office.phone}
       </p>
       <p className="pb-2">
-        Hours: <span className="text-sswRed">{office.hours}</span>{" "}
+        Hours: {office.hours}
         <OpenStatus state={office.addressRegion} />
         <br />
-        <span className="text-sswRed">{office.days}</span>
+        {office.days}
       </p>
     </div>
   );
@@ -304,7 +304,7 @@ const OpenStatus = ({ state }) => {
     <span
       className={classNames(
         statusClass,
-        "ml-2 p-1 text-xxs font-bold uppercase text-white"
+        "ml-2 p-1 text-xxxs font-bold uppercase text-white"
       )}
     >
       {status}
@@ -387,7 +387,7 @@ const Map = ({
                     }
                     x={state.label.x}
                     y={state.label.y}
-                    className={classNames("cursor-pointer fill-white text-xxs")}
+                    className={classNames("cursor-pointer fill-white text-xxxs")}
                     onClick={() => setSelectedOffice(primaryOffice)}
                     onMouseOver={() => {
                       setOfficeBeingHovered(primaryOffice);
