@@ -4,7 +4,6 @@ import { BASE_URL } from "../util/constants";
 import { TechnologyCardProps } from "./technologyCardTypes";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import Image from "next/image";
-import styles from "./technologyCard.module.css";
 import classnames from "classnames";
 
 const TechnologyCard: FC<TechnologyCardProps> = ({
@@ -15,13 +14,9 @@ const TechnologyCard: FC<TechnologyCardProps> = ({
   className,
 }) => {
   return (
-    <div className={`col-span-12 ${className ?? ""}`}>
+    <div className={classnames("col-span-12", className)}>
       <article
-        className={classnames([
-          styles["technology-card"],
-          styles.card,
-          "card mx-3.5 mb-15 mt-5 h-full p-10",
-        ])}
+        className="prose-technology-card mx-3.5 mb-15 mt-5 h-full p-10"
         data-aos="flip-left"
       >
         {thumbnail && (
