@@ -43,6 +43,12 @@ jobs:
     
     - uses: actions/checkout@v3
 
+    - name: Load .env file
+      uses: xom9ikk/dotenv@v2
+      with:
+        path: ./.github
+        load-mode: strict
+
     - uses: DamianReeves/write-file-action@master
       name: Make site unindexable
       if: github.event_name == 'pull_request'      
@@ -70,7 +76,7 @@ jobs:
 
     - name: ACR - Login
       run: |
-        az acr login --name ${{ vars.ACR_LOGIN_SERVER }}
+        az acr login --name ${{ env.ACR_LOGIN_SERVER }}
 
     - name: Docker - Build and push
       uses: docker/build-push-action@v3
@@ -80,8 +86,8 @@ jobs:
         cache-to: type=gha,mode=max
         push: true
         tags: |
-          ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ github.sha }}
-          ${{ vars.ACR_LOGIN_SERVER }}/${{ vars.IMAGE_NAME }}:${{ inputs.tag }}
+          ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
         build-args: |
           NEXT_PUBLIC_GOOGLE_GTM_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID}}
           NEXT_PUBLIC_GOOGLE_ANALYTICS=${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS}}
