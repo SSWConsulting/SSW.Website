@@ -58,7 +58,7 @@ jobs:
           IMAGE_NAME: ${{ env.IMAGE_NAME }}
 
       - name: Comment on PR
-        uses: mshick/add-pr-comment@v1
+        uses: mshick/add-pr-comment@v2
         with:
           message: |
             Deployed changes to <${{ steps.deploy.outputs.url }}>
@@ -86,7 +86,7 @@ jobs:
           key: ${{ secrets.PAGESPEED_INSIGHTS_API_KEY }}
 
       - name: Comment on PR with insights
-        uses: mshick/add-pr-comment@v1
+        uses: mshick/add-pr-comment@v2
         with:
           message: |
             ## PageSpeed Insights
