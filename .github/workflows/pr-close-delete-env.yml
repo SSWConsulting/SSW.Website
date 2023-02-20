@@ -21,6 +21,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+    - name: Load .env file
+      uses: xom9ikk/dotenv@v2
+      with:
+        path: ./.github
+        load-mode: strict
+
     - name: Azure CLI - Login
       uses: azure/login@v1
       with:
@@ -31,16 +38,16 @@ jobs:
     - name: Cleanup ACRPull permission
       run: |
         $acrId = az acr show `
-          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
-          --name ${{ vars.ACR_LOGIN_SERVER }} `
+          --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
+          --name ${{ env.ACR_LOGIN_SERVER }} `
           --query id `
           --output tsv
         Write-Host '✅ acr found'
 
         # get slot identity
         $identityId = az webapp identity show `
-          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
-          --name ${{ vars.APP_SERVICE_NAME }} `
+          --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
+          --name ${{ env.APP_SERVICE_NAME }} `
           --slot ${{ env.SLOT_NAME }} `
           --query principalId `
           --output tsv
@@ -57,7 +64,7 @@ jobs:
     - name: Delete slot on staging site
       run: |
         az webapp deployment slot delete `
-          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} `
-          --name ${{ vars.APP_SERVICE_NAME }} `
+          --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
+          --name ${{ env.APP_SERVICE_NAME }} `
           --slot ${{ env.SLOT_NAME }} `
           --output none
