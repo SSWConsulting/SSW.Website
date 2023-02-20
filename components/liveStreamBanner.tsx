@@ -91,7 +91,7 @@ export const LiveStreamBanner = () => {
     const liveText = "Streaming live now.";
     return (
       <div className="w-full bg-gray-900">
-      <a href="https://ssw.com.au/live">
+      <a className="unstyled" href="https://ssw.com.au/live">
         
         <div
           className={classNames(
