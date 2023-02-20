@@ -3,7 +3,6 @@ import type { Template } from "tinacms";
 import Image from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-/* TODO: refactor with next/image */
 export const ColumnLayout = ({ data }) => {
   const RawImage = () => (
     <Image
@@ -18,7 +17,7 @@ export const ColumnLayout = ({ data }) => {
     <div className="md:grid md:grid-cols-12 md:gap-x-6">
       <div className="col-span-5">
         {data.imageLink ? (
-          <a href={data.imageLink} target="_blank">
+          <a href={data.imageLink} target="_blank" rel="noopener noreferrer">
             <RawImage />
           </a>
         ) : (
