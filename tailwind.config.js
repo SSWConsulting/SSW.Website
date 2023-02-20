@@ -20,6 +20,13 @@ module.exports = {
       purple: colors.purple,
       pink: colors.pink,
       yellow: colors.yellow,
+      "social-phone": "#b31217",
+      "social-youtube": "#b31217",
+      "social-linkedin": "#0077b5",
+      "social-facebook": "#3b5998",
+      "social-twitter": "#55acee",
+      "social-tiktok": "#000",
+      "social-github": "#000",
       sswRed: "#cc4141",
       azure: "#007fff",
       gray: {
@@ -117,6 +124,7 @@ module.exports = {
       minHeight: {
         158: "39.5rem",
         1025: "410px",
+        "800px": "800px",
         "1/2": "50%",
         "1/3": "33.333333%",
         "2/3": "66.666667%",
@@ -311,19 +319,49 @@ module.exports = {
 
           },
         },
+        "technology-card": {
+          css: {
+            "border-bottom-width": "2px",
+            "border-style": "solid",
+            "border-bottom-color": theme("colors.sswRed"),
+            "background-color": theme("colors.gray.75"),
+            "padding": "2.75rem 4rem",
+            
+            "&.thumbnail-card": {
+              "background-size": "30px 25px",
+              "background-position": "95% 92%",
+              "background-repeat": "no-repeat",
+            },
+
+            p: {
+              "margin-top": "1rem",
+              "margin-bottom": "1rem",
+              "text-align": "left",
+              "font-size": "1.25rem",
+            },
+          }   
+        },
       }),
       backgroundImage: {
+        done: "url('/images/icons/done.png')",
         "live-banner-wait": "url('/blocks/LiveStreamBanner-Wait.png')",
         "live-banner-live": "url('/blocks/LiveStreamBanner-Live.gif')",
+        "card-video": "url('/images/icons/video-icon.svg')",
+        "card-blog": "url('/images/icons/blog-post.svg')",
         benefits: "url('/consulting/mvc-benefits-bg.jpg')",
+        "video-mask": "url('/images/video-mask.png')",
       },
     },
+    linearGradientColors: {
+      "social-instagram": ["#f09433", "#e6683c 25%", "#dc2743 50%", "#cc2366 75%", "#bc1888"]
+    }
   },
   variants: {
     extend: { typography: ["tint", "dark", "primary"] },
   },
   plugins: [
     require("@tailwindcss/typography"),
+    require("tailwindcss-gradients"),
     require("@headlessui/tailwindcss")({ prefix: "ui" }),
 
     // taken from https://github.com/tailwindlabs/tailwindcss/discussions/2156#discussioncomment-1283105

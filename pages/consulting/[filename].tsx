@@ -62,7 +62,7 @@ export default function ConsultingPage(
           />
         </Section>
         <Section
-          className="video-mask w-full items-center text-center font-light"
+          className="w-full items-center !bg-black/75 bg-video-mask text-center font-light"
           color="black"
         >
           <Booking {...data.consulting.booking}>

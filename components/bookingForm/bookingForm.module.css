@@ -1,0 +1,7 @@
+.alert {
+  @apply relative mb-4 rounded border-[1px] border-solid border-transparent p-4;
+}
+
+.alert-success {
+  @apply border-green-100 bg-green-50 text-green-900;
+}

@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { ErrorMessage, Field, FieldHookConfig, useField } from "formik";
 import { ChangeEvent, ChangeEventHandler, VFC } from "react";
 import { FormGroupProps } from "./formGroupTypes";
+import styles from "./formGroup.module.css";
 
 const FormGroupInput: VFC<
   FieldHookConfig<string> &
@@ -16,14 +17,14 @@ const FormGroupInput: VFC<
 }) => {
   const [field, meta] = useField(props);
 
-  fieldClass = classNames(fieldClass || "form-control", {
-    "is-invalid": !!meta.error,
-  });
-  !errorMessageClass && (errorMessageClass = "invalid-feedback");
+  fieldClass = classNames(fieldClass || styles["form-control"],
+    !!meta.error && styles["is-invalid"],
+  );
+  !errorMessageClass && (errorMessageClass = styles["invalid-feedback"]);
   !props.placeholder && (props.placeholder = label);
 
   return (
-    <div className="field-wrapper relative mb-5 block py-1.5">
+    <div className={classNames(styles["field-wrapper"], "relative mb-5 block py-1.5")}>
       <label htmlFor={field.name} className={activeLabelClass}>
         {label}
       </label>
