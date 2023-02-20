@@ -5,10 +5,37 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
     schedule:
-      interval: "daily"
-    allow:
-      - dependency-name: "tinacms"
-      - dependency-name: "@tinacms*"
+      interval: "weekly"
+    labels:
+      - dependencies
+    commit-message:
+      prefix: "⬆️ Actions"
+    rebase-strategy: auto
+
+  # Maintain dependencies for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - dependencies
+    commit-message:
+      prefix: "⬆️ NPM"
+    rebase-strategy: auto
+    ignore:
+      - dependency-name: "yup"
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - dependencies
+    commit-message:
+      prefix: "⬆️ Docker"
+    rebase-strategy: auto
