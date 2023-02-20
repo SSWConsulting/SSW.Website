@@ -96,7 +96,7 @@ export const LiveStreamBanner = () => {
         <div
           className={classNames(
             "bg-gray-900 bg-right-top bg-no-repeat p-5 uppercase mx-auto max-w-9xl px-6 sm:px-8",
-            isLive ? "bg-live-banner-live" : "bg-live-banner-wait"
+            isLive ? "md:bg-live-banner-live" : "md:bg-live-banner-wait"
           )}
         >
           <h1 className="m-0 py-0 text-xl font-light text-gray-300">{event.Title}</h1>
