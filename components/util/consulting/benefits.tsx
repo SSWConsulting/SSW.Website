@@ -1,16 +1,18 @@
 import React from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import path from "path";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import styles from "./benefits.module.css";
 
 const BenefitCard = ({ data, aosType }) => {
   const { image, title, description, linkURL, linkName } = data;
   return (
     <article className="px-14 py-11" data-aos={aosType}>
       <figure className="relative float-left h-40 w-40 select-none">
-        {/* TODO: refactor with next/image */}
         <Image
           src={`/images/benefits/${path.basename(image)}`}
-          layout="fill"
+          sizes="100vw"
+          fill
           alt="benefit icon"
         />
       </figure>
@@ -19,9 +21,9 @@ const BenefitCard = ({ data, aosType }) => {
         {title}
       </h4>
       <article>
-        <p className="m-0 w-full py-0 text-left font-light leading-normal">
-          {description}
-        </p>
+        <section className={`not-prose ${styles.description}`}>
+          <TinaMarkdown content={description}></TinaMarkdown>
+        </section>
         {linkURL && (
           <a className="text-white no-underline" href={linkURL}>
             {linkName}
