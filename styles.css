@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 @layer base {
-  a {
-    transition: all 0.3s ease-in-out 0s;
-  }
 
   a:not(.unstyled) {
-    @apply hover:border-sswRed hover:text-sswRed;
+    @apply underline transition duration-300 hover:border-sswRed hover:text-sswRed;
+  }
+
+  html {
+    @apply text-[14px] font-body;
   }
 
   html,
