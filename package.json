@@ -26,7 +26,7 @@
     "next-sitemap": "^3.1.52",
     "postcss": "^8.3.11",
     "postcss-import": "^15.1.0",
-    "postcss-nesting": "^11.1.0",
+    "postcss-nesting": "^11.2.1",
     "prettier": "^2.8.4",
     "prettier-plugin-tailwindcss": "^0.2.2"
   },
