@@ -20,5 +20,5 @@ export default function countdownTextFormat(countdownMins:number) {
       countdownText += "1 minute";
     } 
   
-    return `Airing in ${countdownText}. `;
+    return countdownText;
   }

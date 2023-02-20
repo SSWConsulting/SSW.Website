@@ -11,8 +11,6 @@ import { Event } from "../classes/event";
 
 import countdownTextFormat from "../helpers/countdownTextFormat";
 
-import mockData from "./mockData.json";
-
 dayjs.extend(utc);
 dayjs.extend(isBetween);
 dayjs.extend(relativeTime);
@@ -51,7 +49,7 @@ export const LiveStreamBanner = () => {
 
       if (res?.status !== 200) return;
 
-      const event = mockData
+      const event = res?.data
         .map((e) => new Event(e))
         .sort((a, z) => a.StartDateTime - z.StartDateTime)[0];
       await setEvent(event);
@@ -80,7 +78,8 @@ export const LiveStreamBanner = () => {
   }, []);
 
   useEffect(() => {
-    setCountdownText(countdownTextFormat(countdownMins));
+    const formattedCountdown = countdownTextFormat(countdownMins);
+    setCountdownText(`Airing in ${formattedCountdown}. `);
     setIsLive(countdownMins <= 0);
   }, [countdownMins])
 
