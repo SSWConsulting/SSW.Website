@@ -11,6 +11,8 @@ import { Event } from "../classes/event";
 
 import countdownTextFormat from "../helpers/countdownTextFormat";
 
+import mockData from "./mockData.json";
+
 dayjs.extend(utc);
 dayjs.extend(isBetween);
 dayjs.extend(relativeTime);
@@ -49,7 +51,7 @@ export const LiveStreamBanner = () => {
 
       if (res?.status !== 200) return;
 
-      const event = res?.data
+      const event = mockData
         .map((e) => new Event(e))
         .sort((a, z) => a.StartDateTime - z.StartDateTime)[0];
       await setEvent(event);
@@ -94,7 +96,7 @@ export const LiveStreamBanner = () => {
         
         <div
           className={classNames(
-            "bg-gray-900 bg-right-top bg-no-repeat p-5 uppercase mx-auto max-w-7xl px-6 sm:px-8",
+            "bg-gray-900 bg-right-top bg-no-repeat p-5 uppercase mx-auto max-w-9xl px-6 sm:px-8",
             isLive ? "bg-live-banner-live" : "bg-live-banner-wait"
           )}
         >
