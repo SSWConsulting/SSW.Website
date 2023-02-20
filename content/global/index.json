@@ -86,12 +86,6 @@
       "url": "https://www.linkedin.com/company/ssw/"
     },
     {
-      "type": "github",
-      "title": "SSW on GitHub",
-      "url": "https://www.github.com/sswconsulting",
-      "username": "sswconsulting"
-    },
-    {
       "type": "facebook",
       "title": "SSW on Facebook",
       "url": "https://www.facebook.com/SSW.page"
@@ -113,6 +107,12 @@
       "title": "SSW on TikTok",
       "url": "https://www.tiktok.com/@ssw_tv",
       "username": "ssw_tv"
+    },
+    {
+      "type": "github",
+      "title": "SSW on GitHub",
+      "url": "https://www.github.com/sswconsulting",
+      "username": "sswconsulting"
     }
   ]
 }
