@@ -124,6 +124,7 @@ module.exports = {
       minHeight: {
         158: "39.5rem",
         1025: "410px",
+        "800px": "800px",
         "1/2": "50%",
         "1/3": "33.333333%",
         "2/3": "66.666667%",
@@ -320,9 +321,11 @@ module.exports = {
         },
       }),
       backgroundImage: {
+        done: "url('/images/icons/done.png')",
         "live-banner-wait": "url('/blocks/LiveStreamBanner-Wait.png')",
         "live-banner-live": "url('/blocks/LiveStreamBanner-Live.gif')",
         benefits: "url('/consulting/mvc-benefits-bg.jpg')",
+        "video-mask": "url('/images/video-mask.png')",
       },
     },
     linearGradientColors: {

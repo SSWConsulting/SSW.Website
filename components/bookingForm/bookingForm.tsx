@@ -1,5 +1,4 @@
 import { Form, Formik } from "formik";
-import classNames from "classnames";
 import { useRouter } from "next/router";
 import { useEffect, useMemo, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -18,7 +17,6 @@ import {
 } from "../util/constants";
 import { bookingFormSubmissionData } from "./bookingFormSubmissionData";
 import { ValidationSchema } from "./validationSchema";
-import styles from "./bookingForm.module.css";
 
 export const BookingForm = ({ recaptchaKey }) => {
   //Show FormStates and Active label

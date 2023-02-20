@@ -61,7 +61,6 @@ const createCarouselItemImage = ({ imgSrc, label }, index: React.Key) => {
         priority={index === 0}
       />
       {/* `legend` required so that the carousel works properly */}
-      {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
       <p className="legend sr-only">{label}</p>
     </div>
   );

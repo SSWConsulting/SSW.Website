@@ -27,7 +27,7 @@ export const Layout = ({ children, className = "" }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Theme>
-        <div className={classNames("page-container", className)}>
+        <div className={classNames("relative min-h-screen", className)}>
           <div
             className="mx-auto max-w-9xl px-6 sm:px-8"
             ref={node}
