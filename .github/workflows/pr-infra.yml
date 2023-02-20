@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - '.github/workflows/main-infra.yml'
+      - '.github/workflows/pr-infra.yml'
       - 'infra/**'
   workflow_dispatch:
 
@@ -53,6 +53,7 @@ jobs:
           --name ${{ env.AZURE_RESOURCE_GROUP }}
 
         az deployment group create `
+          --what-if `
           --name $timestamp `
           --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
           --template-file ${{ env.BICEP_PATH }}
