@@ -1,3 +1,5 @@
+const { redirect } = require("next/dist/server/api-utils");
+
 module.exports = {
   i18n: {
     locales: ["en"],
@@ -23,10 +25,15 @@ module.exports = {
         source: "/",
         destination: "/home",
       },
+    ];
+  },
+  async redirects() {
+    return [      
       {
         source: "/admin",
         destination: "/admin/index.html",
+        permanent: true,
       },
-    ];
-  },
+    ]
+  }
 };
