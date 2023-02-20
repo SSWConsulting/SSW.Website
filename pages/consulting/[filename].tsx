@@ -58,7 +58,7 @@ export default function ConsultingPage(
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}
             suffix={data.global.breadcrumbSuffix}
-            title={data.consulting.title}
+            title={data.consulting.seo?.title}
           />
         </Section>
         <Section

@@ -36,7 +36,7 @@ export const ServiceCards = ({ data }) => {
 const Label = ({ text }) => {
   return (
     <div
-      className={`absolute text-left text-xs font-normal uppercase text-white ${bgColor["darkgray"]} z-10 w-fit p-2`}
+      className={`absolute text-left text-xxxs font-normal uppercase text-white ${bgColor["darkgray"]} z-10 w-fit p-2`}
     >
       {text}
     </div>
@@ -135,7 +135,7 @@ const Links = ({ links }) => {
         <Link
           key={i}
           href={card.link ?? ""}
-          className="inline-flex items-center border-2 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-black shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
+          className="inline-flex items-center rounded border-1 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
         >
           {card.label}
         </Link>

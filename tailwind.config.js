@@ -66,7 +66,8 @@ module.exports = {
       "2xl": "1800px",
     },
     fontSize: {
-      xxs: ".625rem",
+      xxxs: ".625rem",
+      xxs: ".75rem",
       xs: ".875rem",
       sm: "1rem",
       base: "1.125rem",

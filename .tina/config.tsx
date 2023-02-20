@@ -315,13 +315,6 @@ const config = defineStaticConfig({
           },
         },
         fields: [
-          {
-            type: "string",
-            label: "Title",
-            name: "title",
-            isTitle: true,
-            required: true,
-          },
           // @ts-ignore
           seoSchema,
           {
@@ -339,7 +332,8 @@ const config = defineStaticConfig({
           {
             type: "string",
             label: "Call to Action",
-            description: "Technology title inserted via {{TITLE}}. E.g. \"Talk to us about your {{TITLE}} project\"",
+            description:
+              'Technology title inserted via {{TITLE}}. E.g. "Talk to us about your {{TITLE}} project"',
             name: "callToAction",
             required: false,
           },
@@ -399,7 +393,7 @@ const config = defineStaticConfig({
                     name: "title",
                   },
                   {
-                    type: "string",
+                    type: "rich-text",
                     label: "Description",
                     name: "description",
                   },
