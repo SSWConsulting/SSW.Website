@@ -4,7 +4,7 @@ import NextBreadcrumbs from "nextjs-breadcrumbs2";
 export const Breadcrumbs = (props) => {
   const listItemStyling = "breadcrumb_item inline text-xs text-gray-700 no-underline not-first:before:content-bread not-first:before:px-2 before:list-none"
   return (
-    <div>
+    <>
       <NextBreadcrumbs 
         replaceCharacterList={[
             {from: "consulting", to: "Services"},
@@ -15,6 +15,6 @@ export const Breadcrumbs = (props) => {
         activeItemClassName={listItemStyling}
         rootLabel={"Home"}
       />
-    </div>
+    </>
   );
 }
