@@ -326,12 +326,6 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("@headlessui/tailwindcss")({ prefix: "ui" }),
 
-    plugin(function ({ addBase, theme }) {
-      addBase({
-        html: { fontSize: "14px", fontFamily: theme("fontFamily.body") },
-      });
-    }),
-
     // taken from https://github.com/tailwindlabs/tailwindcss/discussions/2156#discussioncomment-1283105
     plugin(function ({ addVariant, e }) {
       addVariant("not-first", ({ modifySelectors, separator }) => {
