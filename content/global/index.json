@@ -15,7 +15,7 @@
   "bookingButtonText": "Book a FREE Initial Meeting",
   "offices": [
     {
-      "url": "/ssw/Company/Offices/Sydney",
+      "url": "https://ssw.com.au/ssw/Company/Offices/Sydney",
       "name": "SSW Sydney Office",
       "streetAddress": "Level 1, 81 - 91 Military Road",
       "suburb": "Neutral Bay",
@@ -28,7 +28,7 @@
       "days": "Monday - Friday"
     },
     {
-      "url": "/ssw/Company/Offices/Brisbane",
+      "url": "https://ssw.com.au/ssw/Company/Offices/Brisbane",
       "name": "SSW Brisbane Office",
       "streetAddress": "Level 1, 471 Adelaide Street",
       "suburb": "",
@@ -41,7 +41,7 @@
       "days": "Monday - Friday"
     },
     {
-      "url": "/ssw/Company/Offices/Melbourne",
+      "url": "https://ssw.com.au/ssw/Company/Offices/Melbourne",
       "name": "SSW Melbourne Office",
       "streetAddress": "Level 1, 370 Little Bourke Street",
       "suburb": "",
@@ -54,7 +54,7 @@
       "days": "Monday - Friday"
     },
     {
-      "url": "/ssw/Company/Offices/Newcastle",
+      "url": "https://ssw.com.au/ssw/Company/Offices/Newcastle",
       "name": "SSW Newcastle Office",
       "streetAddress": "432 Hunter St",
       "suburb": "",
