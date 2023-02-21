@@ -64,18 +64,16 @@ const BigCards = ({ title, cards }) => {
             >
               <div className="flex grow flex-col">
                 <div className="absolute flex-1 self-end">
-                  {/* TODO: refactor with next/image */}
                   <Image
+                    className="opacity-50"
                     src={card.imgSrc}
                     width="100"
                     height="100"
-                    objectFit="contain"
-                    objectPosition="10px 0px"
                     alt=""
                   />
                 </div>
                 <div className="relative flex grow flex-col p-8">
-                  <h3 className="flex pb-3 text-2xl font-light lg:pt-8">
+                  <h3 className="flex pb-3 text-2xl font-thin lg:pt-8">
                     {card.title}
                   </h3>
                   <div className="grow"></div>
@@ -106,7 +104,7 @@ const SmallCards = ({ title, cards }) => {
             } hover:opacity-80`}
           >
             <Link href={card.link} className="unstyled flex h-full flex-col">
-              <div className="flex flex-1 flex-col justify-center py-8 px-2 pb-4 sm:justify-center md:flex-row md:pb-8">
+              <div className="flex flex-1 flex-col items-center py-8 px-2 pb-4 sm:justify-center md:flex-row md:pb-8">
                 <Image
                   className=""
                   src={card.imgSrc}
@@ -114,7 +112,7 @@ const SmallCards = ({ title, cards }) => {
                   height="50"
                   alt=""
                 />
-                <h3 className="mt-1 text-sm font-light text-white md:m-5 ">
+                <h3 className="unstyled mt-1 pt-2 text-sm font-light text-white md:m-5">
                   {card.title}
                 </h3>
               </div>
