@@ -35,7 +35,10 @@ const LiveStream: FC<{}> = () => {
     linkedin: { icon: FaLinkedinIn, bgClass: "bg-social-linkedin" },
     twitter: { icon: FaTwitter, bgClass: "bg-social-twitter" },
     youtube: { icon: FaYoutube, bgClass: "bg-social-youtube" },
-    instagram: { icon: FaInstagram, bgClass: "bg-gradient-tr-social-instagram" },
+    instagram: {
+      icon: FaInstagram,
+      bgClass: "bg-gradient-tr-social-instagram",
+    },
     github: { icon: FaGithub, bgClass: "bg-social-github" },
   };
 
@@ -146,8 +149,8 @@ const LiveStream: FC<{}> = () => {
       >
         <hr
           className={classNames(styles["hr-arrow"], "my-6", {
-            "after:content-['\\f106']": collapseMap["collapsableWidget"],
-            "after:content-['\\f107']": !collapseMap["collapsableWidget"],
+            [styles["hr-arrow-collapse"]]: collapseMap["collapsableWidget"],
+            [styles["hr-arrow-expand"]]: !collapseMap["collapsableWidget"],
           })}
         />
       </a>
@@ -256,7 +259,7 @@ const LiveStream: FC<{}> = () => {
               <a
                 href="https://www.ssw.com.au/ssw/NETUG/EvaluationSurvey.aspx"
                 target="_blank"
-                className="mr-2 flex h-11 w-full items-center justify-center rounded-md bg-sswRed text-white hover:!text-gray-125 md:w-72"
+                className="mr-2 flex h-11 w-full items-center justify-center rounded-md bg-sswRed text-white !no-underline hover:!text-gray-125 md:w-72"
               >
                 Take the Survey
               </a>
@@ -301,7 +304,7 @@ const LiveStream: FC<{}> = () => {
                 })}
               >
                 <a
-                  className="float-right mt-4 cursor-pointer border-b-1 border-dotted border-gray-450"
+                  className="float-right mt-4 cursor-pointer border-b-1 border-dotted border-gray-450 !no-underline"
                   onClick={() =>
                     setCollapseMap({
                       [eventDescriptionCollapseId]:
@@ -343,7 +346,7 @@ const LiveStream: FC<{}> = () => {
                 {/* TODO: Implement subscribe function */}
                 <a
                   href="#"
-                  className="col-span-3 flex h-11 items-center justify-center rounded-md bg-sswRed align-middle leading-4 text-white hover:!text-gray-125 md:col-span-1"
+                  className="col-span-3 flex h-11 items-center justify-center rounded-md bg-sswRed align-middle leading-4 text-white !no-underline hover:!text-gray-125 md:col-span-1"
                 >
                   <FaEnvelope className="mr-2" />
                   Subscribe
@@ -373,7 +376,7 @@ const LiveStream: FC<{}> = () => {
                 />
                 {!!speakerInfo.PresenterProfileLink && (
                   <a
-                    className="float-right border-b-1 border-dotted border-gray-450"
+                    className="float-right border-b-1 border-dotted border-gray-450 !no-underline"
                     href={speakerInfo.PresenterProfileLink}
                     target="_blank"
                   >

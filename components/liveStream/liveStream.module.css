@@ -3,7 +3,15 @@
 }
 
 .hr-arrow:after {
-  @apply font-['FontAwesome'] relative inline-block bg-white -top-4 text-lg px-1;
+  @apply relative -top-4 inline-block bg-white px-1 font-['FontAwesome'] text-lg;
+}
+
+.hr-arrow.hr-arrow-collapse {
+  @apply after:content-['\f106'];
+}
+
+.hr-arrow.hr-arrow-expand {
+  @apply after:content-['\f107'];
 }
 
 .event-description-wrapper {
