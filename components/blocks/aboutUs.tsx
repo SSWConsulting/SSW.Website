@@ -141,7 +141,7 @@ const TV = ({ className }) => {
     <div className={className}>
       <h2 className="mt-0">tv.ssw.com</h2>
 
-      <div className="relative h-0 w-full pb-9/16">
+      <div className="relative h-0 w-full cursor-pointer pb-9/16">
         {videoClicked ? (
           <iframe
             src={layoutData.aboutUs.video.url}
@@ -160,7 +160,7 @@ const TV = ({ className }) => {
               fill={true}
             />
             <Image 
-              className="absolute inset-0 m-auto"
+              className="pointer-events-none absolute inset-0 m-auto"
               alt="Play Button"
               src="/images/play.png"
               height={60}
