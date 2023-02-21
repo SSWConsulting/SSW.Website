@@ -12,8 +12,8 @@ dayjs.extend(utc);
 
 export const Footer = () => {
   return (
-    <footer className="absolute bottom-0 w-full bg-gray-900 text-xxs text-gray-300">
-      <Container className="relative" size="xsmall">
+    <footer className="w-full bg-gray-900 text-xxs text-gray-300">
+      <Container size="xsmall">
         <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
           <CopyrightInfo />
         </div>

@@ -40,12 +40,10 @@ export const Layout = ({ children, className = "" }) => {
               <MobileMenu isMenuOpened={isMenuOpened} />
             </div>
           </div>
-          <div className="flex flex-1 flex-col from-white to-gray-50 text-gray-800">
+          <main className="flex flex-1 flex-col from-white to-gray-50 text-gray-800">
             {children}
-          </div>
-          <div>
-            <Footer />
-          </div>
+          </main>
+          <Footer />
         </div>
       </Theme>
     </>
