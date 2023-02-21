@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 
@@ -105,15 +105,13 @@ const SmallCards = ({ title, cards }) => {
               bgColor[card.color]
             } hover:opacity-80`}
           >
-            <Link href={card.link} className="flex h-full flex-col">
+            <Link href={card.link} className="unstyled flex h-full flex-col">
               <div className="flex flex-1 flex-col justify-center py-8 px-2 pb-4 sm:justify-center md:flex-row md:pb-8">
-                {/* TODO: refactor with next/image */}
                 <Image
                   className=""
                   src={card.imgSrc}
                   width="50"
                   height="50"
-                  objectFit="contain"
                   alt=""
                 />
                 <h3 className="mt-1 text-sm font-light text-white md:m-5 ">
@@ -135,7 +133,7 @@ const Links = ({ links }) => {
         <Link
           key={i}
           href={card.link ?? ""}
-          className="inline-flex items-center rounded border-1 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
+          className="unstyled inline-flex items-center rounded border-1 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
         >
           {card.label}
         </Link>
