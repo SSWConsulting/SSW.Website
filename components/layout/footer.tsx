@@ -48,7 +48,7 @@ const CopyrightInfo = () => (
         FEEDBACK TO SSW
       </Link>
       <Divider />
-      <Link href="/ssw/Standards/Forms/ConsultingOrderTermsConditions.aspx">
+      <Link href="https://www.ssw.com.au/ssw/Standards/Forms/ConsultingOrderTermsConditions.aspx">
         TERMS AND CONDITIONS
       </Link>
     </div>
