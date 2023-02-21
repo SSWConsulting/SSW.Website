@@ -34,56 +34,56 @@ const socialStyles = new Map<
     SocialTypes.phone,
     {
       icon: FaPhone,
-      bgClassName: "bg-phone",
+      bgClassName: "bg-social-phone",
     },
   ],
   [
     SocialTypes.youtube,
     {
       icon: FaYoutube,
-      bgClassName: "bg-youtube",
+      bgClassName: "bg-social-youtube",
     },
   ],
   [
     SocialTypes.linkedin,
     {
       icon: FaLinkedinIn,
-      bgClassName: "bg-linkedin",
+      bgClassName: "bg-social-linkedin",
     },
   ],
   [
     SocialTypes.facebook,
     {
       icon: FaFacebookF,
-      bgClassName: "bg-facebook",
+      bgClassName: "bg-social-facebook",
     },
   ],
   [
     SocialTypes.instagram,
     {
       icon: FaInstagram,
-      bgClassName: "bg-instagram",
+      bgClassName: "bg-gradient-tr-social-instagram",
     },
   ],
   [
     SocialTypes.twitter,
     {
       icon: FaTwitter,
-      bgClassName: "bg-twitter",
+      bgClassName: "bg-social-twitter",
     },
   ],
   [
     SocialTypes.tiktok,
     {
       icon: FaTiktok,
-      bgClassName: "bg-tiktok",
+      bgClassName: "bg-social-tiktok",
     },
   ],
   [
     SocialTypes.github,
     {
       icon: FaGithub,
-      bgClassName: "bg-github",
+      bgClassName: "bg-social-github",
     },
   ],
 ]);
@@ -124,7 +124,7 @@ export const SocialIcons = (data?: SocialIconsParams) => {
             key={social.type}
             href={social.url}
             className={classNames(
-              "flex h-11 cursor-pointer items-center justify-center text-base hover:bg-gray-1000 hover:bg-none",
+              "unstyled flex h-11 cursor-pointer items-center justify-center text-base hover:bg-gray-900 hover:bg-none",
               styling.bgClassName,
               social.linkText ? "w-fit shrink-0" : "w-11",
               { "px-6": social.linkText },

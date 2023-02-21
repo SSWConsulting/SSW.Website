@@ -6,6 +6,7 @@ import {
   FC
 } from "react";
 import { FormGroupProps } from "./formGroupTypes";
+import styles from "./formGroup.module.css";
 
 const FormGroupSelect: FC<
   FieldHookConfig<string> &
@@ -21,13 +22,13 @@ const FormGroupSelect: FC<
 }) => {
   const [field, meta] = useField(props);
   
-  fieldClass = classNames(fieldClass || "form-select", {
-    "is-invalid": !!meta.error,
-  });
-  !errorMessageClass && (errorMessageClass = "invalid-feedback");
+  fieldClass = classNames(fieldClass || styles["form-select"],
+    !!meta.error && styles["is-invalid"],
+  );
+  !errorMessageClass && (errorMessageClass = styles["invalid-feedback"]);
 
   return (
-    <div className="field-wrapper">
+      <div className={styles["field-wrapper"]}>
       <label htmlFor={props.id || props.name} className={activeLabelClass}>
         {label}
       </label>

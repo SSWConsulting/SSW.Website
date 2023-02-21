@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "../util/container";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
-import { LiveStreamBanner } from "../liveStreamBanner";
 
 export const Header = () => {
   // all SocialType values except phone
@@ -13,7 +12,6 @@ export const Header = () => {
 
   return (
     <div className={"relative overflow-hidden bg-gradient-to-b"}>
-      <LiveStreamBanner />
       <Container
         width="custom"
         size="custom"

@@ -15,6 +15,7 @@ export const getLiveStreamBannerInfo = async (datetime: Dayjs) => {
   const odataFilter = `$filter=Enabled ne false \
 and StartShowBannerDateTime le datetime'${dateFilter}' \
 and EndShowBannerDateTime ge datetime'${dateFilter}'\
+and CalendarType eq 'User Groups'\
 &$orderby=StartDateTime asc\
 &$top=1`;
 

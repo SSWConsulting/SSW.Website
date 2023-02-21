@@ -141,7 +141,7 @@ const TV = ({ className }) => {
     <div className={className}>
       <h2 className="mt-0">tv.ssw.com</h2>
 
-      <div className="relative h-0 w-full pb-9/16">
+      <div className="relative h-0 w-full cursor-pointer pb-9/16">
         {videoClicked ? (
           <iframe
             src={layoutData.aboutUs.video.url}
@@ -151,12 +151,22 @@ const TV = ({ className }) => {
             allowFullScreen
           ></iframe>
         ) : (
-          <Image
-            src={layoutData.aboutUs.video.thumbnailUrl}
-            alt="SSW TV"
-            fill={true}
-            onClick={() => setVideoClicked(true)}
-          />
+          <div onClick={() => setVideoClicked(true)} className="flex items-center justify-center">
+            
+            <Image
+              className="relative transition duration-500 hover:brightness-75"
+              src={layoutData.aboutUs.video.thumbnailUrl}
+              alt="SSW TV"
+              fill={true}
+            />
+            <Image 
+              className="pointer-events-none absolute inset-0 m-auto"
+              alt="Play Button"
+              src="/images/play.png"
+              height={60}
+              width={60}
+            />
+          </div>
         )}
       </div>
     </div>

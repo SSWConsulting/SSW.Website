@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 
@@ -64,18 +64,16 @@ const BigCards = ({ title, cards }) => {
             >
               <div className="flex grow flex-col">
                 <div className="absolute flex-1 self-end">
-                  {/* TODO: refactor with next/image */}
                   <Image
+                    className="opacity-50"
                     src={card.imgSrc}
                     width="100"
                     height="100"
-                    objectFit="contain"
-                    objectPosition="10px 0px"
                     alt=""
                   />
                 </div>
                 <div className="relative flex grow flex-col p-8">
-                  <h3 className="flex pb-3 text-2xl font-light lg:pt-8">
+                  <h3 className="flex pb-3 text-2xl font-thin lg:pt-8">
                     {card.title}
                   </h3>
                   <div className="grow"></div>
@@ -105,18 +103,16 @@ const SmallCards = ({ title, cards }) => {
               bgColor[card.color]
             } hover:opacity-80`}
           >
-            <Link href={card.link} className="flex h-full flex-col">
-              <div className="flex flex-1 flex-col justify-center py-8 px-2 pb-4 sm:justify-center md:flex-row md:pb-8">
-                {/* TODO: refactor with next/image */}
+            <Link href={card.link} className="unstyled flex h-full flex-col">
+              <div className="flex flex-1 flex-col items-center py-8 px-2 pb-4 sm:justify-center md:flex-row md:pb-8">
                 <Image
                   className=""
                   src={card.imgSrc}
                   width="50"
                   height="50"
-                  objectFit="contain"
                   alt=""
                 />
-                <h3 className="mt-1 text-sm font-light text-white md:m-5 ">
+                <h3 className="unstyled mt-1 pt-2 text-sm font-light text-white md:m-5">
                   {card.title}
                 </h3>
               </div>
@@ -135,7 +131,7 @@ const Links = ({ links }) => {
         <Link
           key={i}
           href={card.link ?? ""}
-          className="inline-flex items-center rounded border-1 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
+          className="unstyled inline-flex items-center rounded border-1 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
         >
           {card.label}
         </Link>

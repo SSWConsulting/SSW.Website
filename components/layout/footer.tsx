@@ -12,17 +12,19 @@ dayjs.extend(utc);
 
 export const Footer = () => {
   return (
-    <footer className="page-footer bg-gray-900 text-xxs text-gray-300">
-      <Container className="relative" size="xsmall">
+    <footer className="w-full bg-gray-900 text-xxs text-gray-300">
+      <Container size="xsmall">
         <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
           <CopyrightInfo />
         </div>
+        <hr className="my-4 border-gray-800 sm:hidden"/>
         <SocialIcons
           className="my-6 justify-center sm:hidden"
           excludeDesktop={Object.values(SocialTypes)}
           excludeMobile={[SocialTypes.phone]}
         />
-        <div className="mt-9 flex flex-wrap items-center justify-center gap-6 border-t-1 border-gray-800 pt-2 sm:justify-between">
+        <hr className="my-4 border-gray-800"/>
+        <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
           <DeploymentInfo />
           <SiteInfo />
         </div>
@@ -46,7 +48,7 @@ const CopyrightInfo = () => (
         FEEDBACK TO SSW
       </Link>
       <Divider />
-      <Link href="/ssw/Standards/Forms/ConsultingOrderTermsConditions.aspx">
+      <Link href="https://www.ssw.com.au/ssw/Standards/Forms/ConsultingOrderTermsConditions.aspx">
         TERMS AND CONDITIONS
       </Link>
     </div>

@@ -11,11 +11,11 @@
       "thumbnailUrl": "https://i.ytimg.com/vi/2G7z2mF7Onk/maxresdefault.jpg"
     }
   },
-  "breadcrumbSuffix": "SSW Consulting - Sydney, Brisbane, Melbourne",
+  "breadcrumbSuffix": "SSW Consulting - Sydney, Brisbane, Melbourne, Newcastle",
   "bookingButtonText": "Book a FREE Initial Meeting",
   "offices": [
     {
-      "url": "/ssw/Company/Offices/Sydney",
+      "url": "https://ssw.com.au/ssw/Company/Offices/Sydney",
       "name": "SSW Sydney Office",
       "streetAddress": "Level 1, 81 - 91 Military Road",
       "suburb": "Neutral Bay",
@@ -28,7 +28,7 @@
       "days": "Monday - Friday"
     },
     {
-      "url": "/ssw/Company/Offices/Brisbane",
+      "url": "https://ssw.com.au/ssw/Company/Offices/Brisbane",
       "name": "SSW Brisbane Office",
       "streetAddress": "Level 1, 471 Adelaide Street",
       "suburb": "",
@@ -41,7 +41,7 @@
       "days": "Monday - Friday"
     },
     {
-      "url": "/ssw/Company/Offices/Melbourne",
+      "url": "https://ssw.com.au/ssw/Company/Offices/Melbourne",
       "name": "SSW Melbourne Office",
       "streetAddress": "Level 1, 370 Little Bourke Street",
       "suburb": "",
@@ -54,7 +54,7 @@
       "days": "Monday - Friday"
     },
     {
-      "url": "/ssw/Company/Offices/Newcastle",
+      "url": "https://ssw.com.au/ssw/Company/Offices/Newcastle",
       "name": "SSW Newcastle Office",
       "streetAddress": "432 Hunter St",
       "suburb": "",
@@ -89,13 +89,6 @@
       "showOnHeader": true
     },
     {
-      "type": "github",
-      "title": "SSW on GitHub",
-      "url": "https://www.github.com/sswconsulting",
-      "username": "sswconsulting",
-      "showOnHeader": true
-    },
-    {
       "type": "facebook",
       "title": "SSW on Facebook",
       "url": "https://www.facebook.com/SSW.page",
@@ -119,7 +112,13 @@
       "type": "tiktok",
       "title": "SSW on TikTok",
       "url": "https://www.tiktok.com/@ssw_tv",
-      "username": "ssw_tv",
+      "username": "ssw_tv"
+    },
+    {
+      "type": "github",
+      "title": "SSW on GitHub",
+      "url": "https://www.github.com/sswconsulting",
+      "username": "sswconsulting",
       "showOnHeader": true
     },
     {

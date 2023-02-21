@@ -25,7 +25,7 @@ export const Booking: FC<{
       </Container>
 
       <video
-        className="-z-100 transition-opacity duration-1000"
+        className="absolute -z-100 h-full min-w-full object-cover transition-opacity duration-1000"
         playsInline
         autoPlay
         muted

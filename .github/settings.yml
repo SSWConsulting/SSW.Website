@@ -122,7 +122,7 @@ branches:
         # The number of approvals required. (1-6)
         required_approving_review_count: 1
         # Dismiss approved reviews automatically when a new commit is pushed.
-        dismiss_stale_reviews: true
+        dismiss_stale_reviews: false
         # Blocks merge until code owners have reviewed.
         require_code_owner_reviews: true
         # Specify which users and teams can dismiss pull request reviews. Pass an empty dismissal_restrictions object to disable. User and team dismissal_restrictions are only available for organization-owned repositories. Omit this parameter for personal repositories.
@@ -132,10 +132,11 @@ branches:
       # Required. Require status checks to pass before merging. Set to null to disable
       required_status_checks:
         # Required. Require branches to be up to date before merging.
-        strict: true
+        strict: false
         # Required. The list of status checks to require in order to merge into this branch
         contexts:
         - 'Check linked issues'
+        - 'CodeQL'
         - 'Deploy to slot'
         - 'lint-code'
         - 'lint-infra'

@@ -9,17 +9,16 @@ export type MediaCardProps = {
 
 const MediaCard: FC<MediaCardProps> = ({ type, content }) => {
   const bgImagesClasses = {
-    video: "bg-[url('/images/icons/video-icon.svg')]",
-    blog: "bg-[url('/images/icons/blog-post.svg')]",
+    video: "bg-card-video",
+    blog: "bg-card-blog",
   };
 
   return (
     <div
       data-aos="flip-left"
       className={classNames(
+        "prose-technology-card thumbnail-card",
         bgImagesClasses[type],
-        "card",
-        "bg-[length:30px_25px] bg-[95%_92%] bg-no-repeat"
       )}
     >
       <TinaMarkdown content={content} />
