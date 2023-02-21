@@ -1,5 +1,8 @@
 import axios from "axios";
+import { AxiosResponse } from "axios";
 import dayjs, { Dayjs } from "dayjs";
+
+const odataDateFormat = "YYYY-MM-DDTHH:mm:ss[Z]";
 
 export const createLead = async (data: BookingFormSubmissionData) => {
   return await axios.post("/ssw/api/crm/createlead", data, {
@@ -8,40 +11,37 @@ export const createLead = async (data: BookingFormSubmissionData) => {
 };
 
 export const getLiveStreamBannerInfo = async (datetime: Dayjs) => {
-  const dateFilter = datetime.format();
-  const oDataFilter = `$filter=Enabled ne false \
-    and StartShowBannerDateTime le datetime'${dateFilter}' \
-    and EndShowBannerDateTime ge datetime'${dateFilter}'\
-    &$orderby=StartDateTime asc\
-    &$top=1`;
+  const dateFilter = datetime.format(odataDateFormat);
+  const odataFilter = `$filter=Enabled ne false \
+and StartShowBannerDateTime le datetime'${dateFilter}' \
+and EndShowBannerDateTime ge datetime'${dateFilter}'\
+&$orderby=StartDateTime asc\
+&$top=1`;
 
   return await axios.get<LiveStreamBannerInfo[]>(
     "https://ssw.com.au/ssw/SharePointEventsService.aspx",
     {
-      params: { oDataFilter: encodeURIComponent(oDataFilter) },
+      params: { odataFilter: encodeURIComponent(odataFilter) },
     }
   );
-
-  // return {
-  //   url: "https://www.youtube.com/embed/QYTa5aHdhh0?rel=0&autoplay=1",
-  // };
 };
 
 export const getUpcomingEvents = async (datetime: Dayjs, top: number) => {
-  const dateFilter = datetime.format();
-  const oDataFilter = `$filter=Enabled ne false \
-    and EndDateTime gt datetime'${dateFilter}'\
-    &$orderby=StartDateTime asc\
-    &$top=${top}`;
+  const dateFilter = datetime.format(odataDateFormat);
+  const odataFilter = `$filter=Enabled ne false \
+and EndDateTime gt datetime'${dateFilter}'\
+&$orderby=StartDateTime asc\
+&$top=${top}`;
 
   const res = await axios.get<EventInfo[]>(
     "https://ssw.com.au/ssw/SharePointEventsService.aspx",
     {
-      params: { oDataFilter: encodeURIComponent(oDataFilter) },
+      params: { odataFilter: encodeURIComponent(odataFilter) },
     }
   );
 
   !!res.data &&
+    Array.isArray(res.data) &&
     res.data.forEach((b) => {
       b.FormattedDate = formatBannerDate(b);
       b.RelativeDate = formatRelativeBannerDate(b);
@@ -51,20 +51,54 @@ export const getUpcomingEvents = async (datetime: Dayjs, top: number) => {
 };
 
 export const getLiveStreamWidgetInfo = async (datetime: Dayjs) => {
-  const dateFilter = datetime.format();
-  const oDataFilter = `$filter=Enabled ne false \
-    and StartShowBannerDateTime le datetime'${dateFilter}' \
-    and EndShowBannerDateTime ge datetime'${dateFilter}'\
-    &$orderby=StartDateTime asc\
-    &$top=1\
-    &$select=*,InternalPresenters/EMail&$expand=InternalPresenters/Id`;
+  const dateFilter = datetime.format(odataDateFormat);
+  const odataFilter = `$filter=Enabled ne false \
+and StartShowBannerDateTime le datetime'${dateFilter}' \
+and EndShowBannerDateTime ge datetime'${dateFilter}'\
+&$orderby=StartDateTime asc\
+&$top=1\
+&$select=*,InternalPresenters/EMail&$expand=InternalPresenters/Id`;
 
-  return await axios.get<LiveStreamWidgetInfo[]>(
+  const eventsRes = await axios.get<LiveStreamWidgetInfo[]>(
     "https://ssw.com.au/ssw/SharePointEventsService.aspx",
     {
-      params: { oDataFilter: encodeURIComponent(oDataFilter) },
+      params: { odataFilter: encodeURIComponent(odataFilter) },
     }
   );
+
+  const event = eventsRes.data?.length ? eventsRes.data[0] : null;
+
+  const eventRes: AxiosResponse<LiveStreamWidgetInfo> = {
+    ...eventsRes,
+    data: {
+      ...event,
+      ChannelId: "UCBFgwtV9lIIhvoNh0xoQ7Pg", // hard coded for now
+    },
+  };
+
+  return eventRes;
+};
+
+export const getExternalSpeakerInfo = async (id: string) => {
+  const odataFilter = `$filter=Id eq ${id}`;
+
+  const speakersRes = await axios.get<ExternalSpeakerInfo[]>(
+    "https://ssw.com.au/ssw/SharePointExternalSpeakersService.aspx",
+    {
+      params: { odataFilter: encodeURIComponent(odataFilter) },
+    }
+  );
+
+  const speaker = speakersRes.data?.length ? speakersRes.data[0] : null;
+
+  const speakerRes: AxiosResponse<ExternalSpeakerInfo> = {
+    ...speakersRes,
+    data: {
+      ...speaker,
+    },
+  };
+
+  return speakerRes;
 };
 
 const formatBannerDate = (bannerInfo: LiveStreamBannerInfo) => {
@@ -139,4 +173,18 @@ export interface EventInfo extends LiveStreamBannerInfo {
 
 export interface LiveStreamWidgetInfo extends LiveStreamBannerInfo {
   YouTubeId: string;
+  ChannelId: string;
+  EventDescription: string;
+  ExternalPresentersId: {
+    results: string[];
+  };
+}
+
+export interface ExternalSpeakerInfo {
+  Title: string;
+  PresenterProfileImage: {
+    Url: string;
+  };
+  PresenterShortDescription: string;
+  PresenterProfileLink: string;
 }

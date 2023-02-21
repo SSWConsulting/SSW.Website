@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import { ErrorMessage, Field, FieldHookConfig, useField } from "formik";
-import { ChangeEvent, ChangeEventHandler, VFC } from "react";
+import { ChangeEvent, ChangeEventHandler, FC } from "react";
 import { FormGroupProps } from "./formGroupTypes";
 
-const FormGroupInput: VFC<
+const FormGroupInput: FC<
   FieldHookConfig<string> &
     FormGroupProps<HTMLInputElement>
 > = ({

@@ -1,0 +1,28 @@
+.hr-arrow {
+  @apply overflow-visible text-center text-[#d5d5d5];
+}
+
+.hr-arrow:after {
+  @apply font-['FontAwesome'] relative inline-block bg-white -top-4 text-lg px-1;
+}
+
+.event-description-wrapper {
+  @apply min-h-70 transition-all;
+}
+
+.event-description-wrapper p {
+  @apply mb-3;
+}
+
+.speaker-description-wrapper span,
+.speaker-description-wrapper p {
+  @apply !font-body !text-sm;
+}
+
+.collapse-cover {
+  @apply relative -mt-[60px] w-full bg-gradient-to-b from-transparent to-gray-75 pt-[60px];
+}
+
+a.social-media-icon {
+  @apply inline-block p-[10px] hover:bg-gray-1000 hover:bg-none;
+}

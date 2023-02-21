@@ -19,16 +19,15 @@ export const UpcomingEvents = ({ data }) => {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const datetime = dayjs
-        .utc()
-        .startOf("day");
+      const datetime = dayjs.utc().startOf("day");
 
       setLoading(true);
       const res = await getUpcomingEvents(datetime, data.numberOfEvents);
       setLoading(false);
 
-      if (res?.status !== 200) return;
-      setEvents(events);
+      if (res?.status !== 200 || !res.data.length) return;
+
+      setEvents(res.data);
     };
 
     fetchEvents();

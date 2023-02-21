@@ -26,7 +26,7 @@ export const LiveStreamBanner = () => {
       const datetime = dayjs.utc();
       const res = await getLiveStreamBannerInfo(datetime);
 
-      if (res?.status !== 200) return;
+      if (res?.status !== 200 || !res.data.length) return;
 
       const latestEvent = res.data[0];
       setEvent(latestEvent);
@@ -43,7 +43,7 @@ export const LiveStreamBanner = () => {
     fetchEvent();
   }, []);
 
-  if (event.StartDateTime === undefined) return <></>;
+  if (!event?.StartDateTime) return <></>;
 
   const startDateTime = dayjs(event.StartDateTime);
   const isSameDay = startDateTime.isSame(dayjs(), "day");

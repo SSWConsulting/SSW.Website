@@ -5,6 +5,7 @@ import { Footer } from "./footer";
 import { Theme } from "./theme";
 import { Menu, MobileMenu } from "../../lib/ssw.megamenu";
 import { classNames } from "tinacms";
+import LiveStream from "../liveStream/liveStream";
 
 export const Layout = ({ children, className = "" }) => {
   const node = useRef<HTMLDivElement>();
@@ -35,6 +36,7 @@ export const Layout = ({ children, className = "" }) => {
           >
             <Header />
             <Menu onClickToggle={() => actionOnToggleClick()} />
+            <LiveStream />
           </div>
           <div className="flex flex-1 flex-col from-white to-gray-50 text-gray-800 dark:from-gray-900 dark:to-gray-1000">
             {children}

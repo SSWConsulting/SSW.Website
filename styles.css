@@ -33,7 +33,11 @@
   }
 
   h3 {
-    @apply mb-[2px] mt-[10px] text-[1.75rem]
+    @apply mb-[2px] mt-[10px] text-[1.75rem];
+  }
+
+  h4 {
+    @apply mb-[10px] mt-[20px] font-body text-[1.2rem];
   }
 
   h1 + h2 {
@@ -94,6 +98,9 @@
   }
   .bg-github {
     @apply bg-[#000];
+  }
+  .bg-meetup {
+    @apply bg-[#f05664];
   }
 
   .more {

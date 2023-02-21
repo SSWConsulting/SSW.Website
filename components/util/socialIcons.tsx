@@ -102,7 +102,7 @@ export const SocialIcons = (data?: SocialIconsParams) => {
         data?.className
       )}
     >
-      {layoutData.socials.map((social) => {
+      {layoutData.socials.filter(s => s.showOnHeader).map((social) => {
         const hideOnDesktop =
           data.excludeDesktop?.length &&
           data.excludeDesktop.includes(SocialTypes[social.type]);
