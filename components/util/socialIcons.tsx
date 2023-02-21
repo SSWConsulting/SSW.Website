@@ -124,7 +124,7 @@ export const SocialIcons = (data?: SocialIconsParams) => {
             key={social.type}
             href={social.url}
             className={classNames(
-              "flex h-11 cursor-pointer items-center justify-center text-base hover:bg-gray-1000 hover:bg-none",
+              "unstyled flex h-11 cursor-pointer items-center justify-center text-base hover:bg-gray-900 hover:bg-none",
               styling.bgClassName,
               social.linkText ? "w-fit shrink-0" : "w-11",
               { "px-6": social.linkText },

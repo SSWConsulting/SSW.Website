@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import type { Template } from "tinacms";
 import axios from "axios";
 import dayjs from "dayjs";
@@ -7,8 +9,6 @@ import isBetween from "dayjs/plugin/isBetween";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { Event } from "../../classes/event";
 
-import Link from "next/link";
-import Image from "next/legacy/image";
 
 dayjs.extend(utc);
 dayjs.extend(isBetween);
@@ -61,7 +61,7 @@ export const UpcomingEvents = ({ data }) => {
           {/* TODO: Update link after implement this page */}
           <Link
             href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all"
-            className="inline-flex items-center rounded border-1 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
+            className="unstyled inline-flex items-center rounded border-1 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
           >
             More Events
           </Link>
@@ -77,28 +77,27 @@ const renderEvent = (e: Event) => {
 
   return (
     <article key={e.Id} className="flex">
-      <figure className="flex min-w-fit items-center">
+      <div className="flex min-w-fit items-center">
         <Link href={e.Thumbnail.Url}>
-          {/* TODO: refactor with next/image */}
           <Image
             src={e.Thumbnail.Url}
-            alt="event logo"
-            width={75}
-            height={75}
+            alt={`${e.Title} logo`}
+            width={100}
+            height={100}
           />
         </Link>
-      </figure>
-      <div className="ml-5 flex flex-col justify-center">
-        <time className="text-xs uppercase">
-          <span>{e.FormattedDate}</span>
-          <span className="ml-2 inline-flex items-center rounded-md bg-gray-700 px-1.5 text-xs font-bold text-white">
+      </div>
+      <div className="flex flex-col justify-center px-6">
+        <time className="uppercase">
+          <span className="text-xs">{e.FormattedDate}</span>
+          <span className="ml-2 inline-flex items-center rounded-md bg-gray-700 px-1.5 font-bold text-white">
             {e.RelativeDate}
           </span>
         </time>
-        <h2 className="m-0 text-sm">
+        <h2 className="m-0 py-1 text-sm">
           <Link
             href={e.Url.Url}
-            className="text-sm text-sswRed"
+            className="unstyled text-sm font-bold text-sswRed"
             target={isExternalLink ? "_blank" : "_self"}
           >
             {e.Title}

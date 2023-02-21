@@ -16,8 +16,8 @@ export const Layout = ({ children, className = "" }) => {
   };
 
   const handleClick = (e) => {
-    if (node.current) {
-      node.current.contains(e.target) ?? setIsMenuOpened(false);
+    if (node.current && !node.current.contains(e.target)) {
+      setIsMenuOpened(false);
     }
   };
 
@@ -28,23 +28,24 @@ export const Layout = ({ children, className = "" }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Theme>
-        <LiveStreamBanner />
-        <div className={classNames("relative min-h-screen", className)}>
-          <div
-            className="mx-auto max-w-9xl px-6 sm:px-8"
-            ref={node}
-            onMouseDown={isMenuOpened ? (event) => handleClick(event) : null}
-          >
-            <Header />
-            <Menu onClickToggle={() => actionOnToggleClick()} />
-          </div>
-          <div className="flex flex-1 flex-col from-white to-gray-50 text-gray-800 dark:from-gray-900 dark:to-gray-1000">
+        <div
+          className={classNames("relative min-h-screen flex flex-col", className)}
+          onMouseDown={isMenuOpened ? (event) => handleClick(event) : null}
+        >
+          <header>
+            <LiveStreamBanner />
+            <div className="mx-auto max-w-9xl px-6 sm:px-8">
+              <Header />
+              <div ref={node} >
+                <Menu onClickToggle={() => actionOnToggleClick()} />
+                <MobileMenu isMenuOpened={isMenuOpened} />
+              </div>
+            </div>
+          </header>
+          <main className="grow bg-white">
             {children}
-          </div>
-          <div>
-            <Footer />
-            <MobileMenu isMenuOpened={isMenuOpened}></MobileMenu>
-          </div>
+          </main>
+          <Footer />
         </div>
       </Theme>
     </>

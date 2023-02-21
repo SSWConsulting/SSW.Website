@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import axios from "axios";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
@@ -22,6 +23,7 @@ export const LiveStreamBanner = () => {
     Title: null,
     StartDateTime: null,
   });
+  const router = useRouter();
   const [isLive, setIsLive] = useState(false);
 
   const [countdownMins, setCountdownMins] = useState(0);
@@ -85,7 +87,7 @@ export const LiveStreamBanner = () => {
 
   if (startDateTime === undefined) return <></>;
 
-  const isSameDay = startDateTime.isSame(dayjs(), "day");
+  const isSameDay = router.query.liveBanner || startDateTime.isSame(dayjs(), "day");
 
   if (isSameDay) {
     const liveText = "Streaming live now.";
