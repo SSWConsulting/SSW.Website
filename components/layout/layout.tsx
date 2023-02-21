@@ -28,19 +28,21 @@ export const Layout = ({ children, className = "" }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Theme>
-        <LiveStreamBanner />
         <div
-          className={classNames("relative min-h-screen", className)}
+          className={classNames("relative min-h-screen flex flex-col", className)}
           onMouseDown={isMenuOpened ? (event) => handleClick(event) : null}
         >
-          <div className="mx-auto max-w-9xl px-6 sm:px-8">
-            <Header />
-            <div ref={node} >
-              <Menu onClickToggle={() => actionOnToggleClick()} />
-              <MobileMenu isMenuOpened={isMenuOpened} />
+          <header>
+            <LiveStreamBanner />
+            <div className="mx-auto max-w-9xl px-6 sm:px-8">
+              <Header />
+              <div ref={node} >
+                <Menu onClickToggle={() => actionOnToggleClick()} />
+                <MobileMenu isMenuOpened={isMenuOpened} />
+              </div>
             </div>
-          </div>
-          <main className="flex flex-1 flex-col from-white to-gray-50 text-gray-800">
+          </header>
+          <main className="grow bg-white">
             {children}
           </main>
           <Footer />
