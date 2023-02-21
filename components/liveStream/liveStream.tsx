@@ -30,13 +30,13 @@ const LiveStream: FC<{}> = () => {
   const socialMediaTypes: {
     [key: string]: { icon: IconType; bgClass: string };
   } = {
-    meetup: { icon: FaMeetup, bgClass: "bg-meetup" },
-    facebook: { icon: FaFacebookF, bgClass: "bg-facebook" },
-    linkedin: { icon: FaLinkedinIn, bgClass: "bg-linkedin" },
-    twitter: { icon: FaTwitter, bgClass: "bg-twitter" },
-    youtube: { icon: FaYoutube, bgClass: "bg-youtube" },
-    instagram: { icon: FaInstagram, bgClass: "bg-instagram" },
-    github: { icon: FaGithub, bgClass: "bg-github" },
+    meetup: { icon: FaMeetup, bgClass: "bg-social-meetup" },
+    facebook: { icon: FaFacebookF, bgClass: "bg-social-facebook" },
+    linkedin: { icon: FaLinkedinIn, bgClass: "bg-social-linkedin" },
+    twitter: { icon: FaTwitter, bgClass: "bg-social-twitter" },
+    youtube: { icon: FaYoutube, bgClass: "bg-social-youtube" },
+    instagram: { icon: FaInstagram, bgClass: "bg-gradient-tr-social-instagram" },
+    github: { icon: FaGithub, bgClass: "bg-social-github" },
   };
 
   const [widgetInfo, setWidgetInfo] = useState<LiveStreamWidgetInfo>();

@@ -27,6 +27,7 @@ module.exports = {
       "social-twitter": "#55acee",
       "social-tiktok": "#000",
       "social-github": "#000",
+      "social-meetup": "#f05664",
       sswRed: "#cc4141",
       azure: "#007fff",
       gray: {

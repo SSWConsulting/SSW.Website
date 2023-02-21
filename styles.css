@@ -60,42 +60,6 @@
   @import "@fontsource/open-sans/300.css";
   @import "aos/dist/aos.css";
 
-  .bg-phone {
-    @apply bg-[#b31217];
-  }
-  .bg-youtube {
-    @apply bg-[#b31217];
-  }
-  .bg-linkedin {
-    @apply bg-[#0077b5];
-  }
-  .bg-facebook {
-    @apply bg-[#3b5998];
-  }
-  .bg-instagram {
-    @apply bg-[#bc1888];
-    background: linear-gradient(
-      45deg,
-      #f09433,
-      #e6683c 25%,
-      #dc2743 50%,
-      #cc2366 75%,
-      #bc1888
-    );
-  }
-  .bg-twitter {
-    @apply bg-[#55acee];
-  }
-  .bg-tiktok {
-    @apply bg-[#000];
-  }
-  .bg-github {
-    @apply bg-[#000];
-  }
-  .bg-meetup {
-    @apply bg-[#f05664];
-  }
-
   .icon::before {
     @apply inline-block;
     text-rendering: auto;
