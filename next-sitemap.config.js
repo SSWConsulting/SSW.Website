@@ -1,10 +1,18 @@
 /** @type {import('next-sitemap').IConfig} */
 
 module.exports = {
-  siteUrl: process.env.SITE_URL || "https://ssw.com.au",
+  siteUrl: process.env.SITE_URL,
+  changefreq: "daily",
+  priority: 0.7,
+  sitemapSize: 5000,
   generateRobotsTxt: true,
-  outDir: "./.next/static/",
   robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: "*",
+        allow: "/",
+      },
+    ],
     additionalSitemaps: [
       // TODO: add sitemaps for other sites when they are available
       // 'https://ssw.com.au/people/sitemap.xml',
