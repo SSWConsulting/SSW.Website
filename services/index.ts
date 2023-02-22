@@ -108,7 +108,7 @@ export const getSpeakersInfo = async (ids?: string[], emails?: string[]) => {
         if (internalSpeakerRes.status === 200 && internalSpeakerRes.data) {
           const internalSpeaker = internalSpeakerRes.data;
           speakers.push({
-            Title: !!internalSpeaker.Nickname
+            Title: internalSpeaker.Nickname
               ? `${internalSpeaker.FirstName} (${internalSpeaker.Nickname}) ${internalSpeaker.LastName}`
               : `${internalSpeaker.FirstName} ${internalSpeaker.LastName}`,
             PresenterProfileImage: {

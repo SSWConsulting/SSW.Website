@@ -369,7 +369,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
             <h3 className="mb-3 text-xl font-bold">About the Speaker</h3>
             {!!speakersInfo.length &&
               speakersInfo.map((speakerInfo, index) => (
-                <div key={index} className="grid grid-cols-6 gap-x-8 mb-8">
+                <div key={index} className="mb-8 grid grid-cols-6 gap-x-8">
                   <div className="col-span-1">
                     <Image
                       src={speakerInfo.PresenterProfileImage?.Url}
