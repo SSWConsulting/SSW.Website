@@ -72,6 +72,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
         className={classNames(styles["social-media-icon"], bgClass)}
         href={link}
         target="_blank"
+        rel="noopener noreferrer"
       >
         <MediaType className="text-3xl" color="white" />
       </a>
@@ -200,8 +201,9 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
           <div className="col-span-3 block sm:hidden">
             <a
               href={youtubeUrls.liveStreamUrl}
-              target="_blank"
               className="flex h-12 items-center justify-center bg-sswRed text-white"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Chat with us on Youtube
             </a>
@@ -215,6 +217,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
               className="mr-2 inline-block"
               href={layoutData.apps.sswRewards.link.appStore}
               target="_blank"
+              rel="noopener noreferrer"
             >
               <Image
                 id="appStoreBadge"
@@ -240,6 +243,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
               className="inline-block"
               href={layoutData.apps.sswRewards.link.googlePlay}
               target="_blank"
+              rel="noopener noreferrer"
             >
               <Image
                 id="googlePlayBadge"
