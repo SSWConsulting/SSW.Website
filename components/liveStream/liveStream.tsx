@@ -16,9 +16,9 @@ import {
 import { Tooltip } from "react-tooltip";
 import layoutData from "../../content/global/index.json";
 import {
-  ExternalSpeakerInfo,
+  SpeakerInfo,
   LiveStreamWidgetInfo,
-  getExternalSpeakerInfo,
+  getSpeakersInfo,
   getLiveStreamWidgetInfo,
 } from "../../services";
 import ReactPlayer from "../reactPlayer/reactPlayer";
@@ -43,7 +43,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
   };
 
   const [widgetInfo, setWidgetInfo] = useState<LiveStreamWidgetInfo>();
-  const [speakerInfo, setSpeakerInfo] = useState<ExternalSpeakerInfo>();
+  const [speakersInfo, setSpeakersInfo] = useState<SpeakerInfo[]>([]);
   const [youtubeUrls, setYoutubeUrls] = useState<{
     videoUrl?: string;
     chatUrl?: string;
@@ -101,20 +101,28 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
           liveStreamUrl: `https://www.youtube.com/watch?v=${widgetInfoRes.data.YouTubeId}`,
         });
 
-        const speakerInfoRes = await getExternalSpeakerInfo(
-          widgetInfoRes.data.ExternalPresentersId.results[0]
-        );
+        const ids: string[] = [];
+        const emails: string[] = [];
 
-        if (speakerInfoRes.status === 200 && speakerInfoRes.data) {
-          setSpeakerInfo(speakerInfoRes.data);
+        if (widgetInfoRes.data.ExternalPresentersId?.results?.length) {
+          ids.push(...widgetInfoRes.data.ExternalPresentersId.results);
         }
+
+        if (widgetInfoRes.data.InternalPresenters?.results?.length) {
+          emails.push(
+            ...widgetInfoRes.data.InternalPresenters.results.map((i) => i.EMail)
+          );
+        }
+
+        const speakersInfo = await getSpeakersInfo(ids, emails);
+        setSpeakersInfo(speakersInfo);
       }
     };
 
     fetchLiveStreamInfo();
   }, [isLive, event]);
 
-  if (!widgetInfo || !speakerInfo) {
+  if (!widgetInfo) {
     return <></>;
   }
 
@@ -359,34 +367,37 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
 
           <div className="bg-gray-75 py-2 px-4">
             <h3 className="mb-3 text-xl font-bold">About the Speaker</h3>
-            <div className="grid grid-cols-6 gap-x-8">
-              <div className="col-span-1">
-                <Image
-                  src={speakerInfo.PresenterProfileImage?.Url}
-                  alt={speakerInfo.Title}
-                  width={200}
-                  height={200}
-                />
-              </div>
-              <div className="col-span-5">
-                <p className="mb-3 font-bold">{speakerInfo.Title}</p>
-                <p
-                  className={styles["speaker-description-wrapper"]}
-                  dangerouslySetInnerHTML={{
-                    __html: speakerInfo.PresenterShortDescription,
-                  }}
-                />
-                {!!speakerInfo.PresenterProfileLink && (
-                  <a
-                    className="float-right border-b-1 border-dotted border-gray-450 !no-underline"
-                    href={speakerInfo.PresenterProfileLink}
-                    target="_blank"
-                  >
-                    {speakerInfo.Title}'s profile&gt;
-                  </a>
-                )}
-              </div>
-            </div>
+            {!!speakersInfo.length &&
+              speakersInfo.map((speakerInfo, index) => (
+                <div key={index} className="grid grid-cols-6 gap-x-8 mb-8">
+                  <div className="col-span-1">
+                    <Image
+                      src={speakerInfo.PresenterProfileImage?.Url}
+                      alt={speakerInfo.Title}
+                      width={200}
+                      height={200}
+                    />
+                  </div>
+                  <div className="col-span-5">
+                    <p className="mb-3 font-bold">{speakerInfo.Title}</p>
+                    <p
+                      className={styles["speaker-description-wrapper"]}
+                      dangerouslySetInnerHTML={{
+                        __html: speakerInfo.PresenterShortDescription,
+                      }}
+                    />
+                    {!!speakerInfo.PresenterProfileLink && (
+                      <a
+                        className="float-right border-b-1 border-dotted border-gray-450 !no-underline"
+                        href={speakerInfo.PresenterProfileLink}
+                        target="_blank"
+                      >
+                        {speakerInfo.Title}'s profile&gt;
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       </div>

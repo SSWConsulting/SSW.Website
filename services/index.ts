@@ -76,26 +76,53 @@ export const getLiveStreamWidgetInfo = async (eventId: string) => {
   return eventRes;
 };
 
-export const getExternalSpeakerInfo = async (id: string) => {
-  const odataFilter = `$filter=Id eq ${id}`;
+export const getSpeakersInfo = async (ids?: string[], emails?: string[]) => {
+  const speakers: SpeakerInfo[] = [];
 
-  const speakersRes = await axios.get<ExternalSpeakerInfo[]>(
-    "https://ssw.com.au/ssw/SharePointExternalSpeakersService.aspx",
-    {
-      params: { odataFilter: encodeURIComponent(odataFilter) },
-    }
-  );
+  if (ids?.length) {
+    const externalSpeakerFilter = `$filter=${ids
+      .map((id) => `Id eq ${id}`)
+      .join(" or ")}`;
 
-  const speaker = speakersRes.data?.length ? speakersRes.data[0] : null;
+    const externalSpeakersRes = await axios.get<SpeakerInfo[]>(
+      "https://ssw.com.au/ssw/SharePointExternalSpeakersService.aspx",
+      {
+        params: { odataFilter: encodeURIComponent(externalSpeakerFilter) },
+      }
+    );
 
-  const speakerRes: AxiosResponse<ExternalSpeakerInfo> = {
-    ...speakersRes,
-    data: {
-      ...speaker,
-    },
-  };
+    externalSpeakersRes.status === 200 &&
+      speakers.push(...externalSpeakersRes.data);
+  }
 
-  return speakerRes;
+  if (emails?.length) {
+    await Promise.all(
+      emails.map(async (email) => {
+        const internalSpeakerRes = await axios.get<InternalSpeakerInfo>(
+          "https://ssw.com.au/ssw/CRMService.aspx",
+          {
+            params: { odata: encodeURIComponent(email) },
+          }
+        );
+
+        if (internalSpeakerRes.status === 200 && internalSpeakerRes.data) {
+          const internalSpeaker = internalSpeakerRes.data;
+          speakers.push({
+            Title: !!internalSpeaker.Nickname
+              ? `${internalSpeaker.FirstName} (${internalSpeaker.Nickname}) ${internalSpeaker.LastName}`
+              : `${internalSpeaker.FirstName} ${internalSpeaker.LastName}`,
+            PresenterProfileImage: {
+              Url: internalSpeaker.PhotoURL,
+            },
+            PresenterShortDescription: internalSpeaker.ShortDescription,
+            PresenterProfileLink: internalSpeaker.ProfileURL,
+          });
+        }
+      })
+    );
+  }
+
+  return speakers;
 };
 
 const formatBannerDate = (bannerInfo: LiveStreamBannerInfo) => {
@@ -173,15 +200,30 @@ export interface LiveStreamWidgetInfo extends LiveStreamBannerInfo {
   ChannelId: string;
   EventDescription: string;
   ExternalPresentersId: {
-    results: string[];
+    results?: string[];
+  };
+  InternalPresenters: {
+    results?: {
+      EMail: string;
+    }[];
   };
 }
 
-export interface ExternalSpeakerInfo {
+export interface SpeakerInfo {
   Title: string;
   PresenterProfileImage: {
     Url: string;
   };
   PresenterShortDescription: string;
   PresenterProfileLink: string;
+}
+
+export interface InternalSpeakerInfo {
+  FirstName: string;
+  LastName: string;
+  Nickname: string;
+  PhotoURL: string;
+  GitHubURL: string;
+  ProfileURL: string;
+  ShortDescription: string;
 }
