@@ -12,7 +12,7 @@ export const NEXT_SEO_DEFAULT: NextSeoProps = {
     url: layoutData.header.url,
     title: layoutData.header.title,
     description: layoutData.header.description,
-    siteName: layoutData.header.name,
+    siteName: layoutData.header.site_name,
   },
   twitter: {
     handle: layoutData.socials.find(s => s.type === "twitter")?.username,
