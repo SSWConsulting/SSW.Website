@@ -395,6 +395,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
                         className="float-right border-b-1 border-dotted border-gray-450 !no-underline"
                         href={speakerInfo.PresenterProfileLink}
                         target="_blank"
+                        rel="noopener noreferrer"
                       >
                         {speakerInfo.Title}'s profile&gt;
                       </a>
