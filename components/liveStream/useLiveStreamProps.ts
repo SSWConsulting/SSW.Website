@@ -1,0 +1,75 @@
+import dayjs from "dayjs";
+import { useEffect, useRef, useState } from "react";
+import { LiveStreamBannerInfo, getLiveStreamBannerInfo } from "../../services";
+
+export type LiveStreamProps = {
+  countdownMins: number;
+  isLive: boolean;
+  event?: LiveStreamBannerInfo;
+};
+
+export function useLiveStreamProps(intervalMinutes?: number): LiveStreamProps {
+  !intervalMinutes && (intervalMinutes = 1);
+
+  const [countdownMins, setCountdownMins] = useState<number>();
+  const [event, setEvent] = useState<LiveStreamBannerInfo>();
+  const [isLive, setIsLive] = useState(false);
+
+  const timer = useRef<NodeJS.Timer>();
+  const shouldCountdown = useRef<boolean>();
+
+  useEffect(() => {
+    const fetchEvent = async () => {
+      const rightnow = dayjs().utc();
+
+      if (
+        (!event && countdownMins === undefined) ||
+        (!!event && rightnow.isAfter(event.EndDateTime))
+      ) {
+        const res = await getLiveStreamBannerInfo(rightnow);
+
+        if (res?.status !== 200 || !res.data.length) {
+          setIsLive(false);
+          setEvent(undefined);
+          shouldCountdown.current = false;
+
+          return;
+        }
+
+        const latestEvent = res.data[0];
+        setEvent(latestEvent);
+
+        const start = dayjs(latestEvent.StartDateTime);
+        setCountdownMins(start.diff(rightnow, "minute"));
+
+        shouldCountdown.current = true;
+      }
+
+      setIsLive(
+        countdownMins <= 0 && !!event && rightnow.isBefore(event.EndDateTime)
+      );
+    };
+
+    fetchEvent();
+  }, [countdownMins]);
+
+  useEffect(() => {
+    if (!timer.current) {
+      timer.current = setInterval(() => {
+        setCountdownMins((countdownMins) =>
+          shouldCountdown.current
+            ? countdownMins - intervalMinutes
+            : countdownMins
+        );
+      }, intervalMinutes * 60 * 1000 || 60000);
+    }
+
+    return () => clearInterval(timer.current);
+  }, [intervalMinutes]);
+
+  return {
+    countdownMins,
+    event,
+    isLive,
+  };
+}

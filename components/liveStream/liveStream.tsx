@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import dayjs from "dayjs";
 import Image from "next/image";
 import Script from "next/script";
 import { FC, useEffect, useState } from "react";
@@ -14,7 +13,6 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import ReactPlayer from "react-player";
 import { Tooltip } from "react-tooltip";
 import layoutData from "../../content/global/index.json";
 import {
@@ -23,9 +21,11 @@ import {
   getExternalSpeakerInfo,
   getLiveStreamWidgetInfo,
 } from "../../services";
+import ReactPlayer from "../reactPlayer/reactPlayer";
 import styles from "./liveStream.module.css";
+import { LiveStreamProps } from "./useLiveStreamProps";
 
-const LiveStream: FC<{}> = () => {
+export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
   const eventDescriptionCollapseId = "eventDescription";
   const socialMediaTypes: {
     [key: string]: { icon: IconType; bgClass: string };
@@ -86,8 +86,11 @@ const LiveStream: FC<{}> = () => {
 
   useEffect(() => {
     const fetchLiveStreamInfo = async () => {
-      const datetime = dayjs.utc();
-      const widgetInfoRes = await getLiveStreamWidgetInfo(datetime);
+      if (!isLive) {
+        return;
+      }
+
+      const widgetInfoRes = await getLiveStreamWidgetInfo(event.Id);
 
       if (widgetInfoRes.status === 200 && widgetInfoRes.data) {
         setWidgetInfo(widgetInfoRes.data);
@@ -109,10 +112,10 @@ const LiveStream: FC<{}> = () => {
     };
 
     fetchLiveStreamInfo();
-  }, []);
+  }, [isLive, event]);
 
   if (!widgetInfo || !speakerInfo) {
-    return null;
+    return <></>;
   }
 
   return (
@@ -167,8 +170,7 @@ const LiveStream: FC<{}> = () => {
       >
         <div className="mb-4 grid grid-cols-3 gap-8">
           <div id="thumbnailAnchor" className="col-span-3 md:col-span-2">
-            <div className="relative h-0 pt-[56.25%]">
-              {/* custom padding to have best ratio */}
+            <div className={styles["video-player-wrapper"]}>
               <div className="absolute top-0 h-full w-full">
                 {videoPlayer()}
               </div>
@@ -176,7 +178,7 @@ const LiveStream: FC<{}> = () => {
           </div>
           {/* custom fixed width and height to have best looking and fixed size for different screens */}
           <div
-            className="fixed top-2 right-0 z-99 h-[212px] w-[376px]"
+            className={styles["video-thumbnail-wrapper"]}
             data-aos="slide-left"
             data-aos-duration={500}
             data-aos-anchor="#thumbnailAnchor"
@@ -184,7 +186,7 @@ const LiveStream: FC<{}> = () => {
           >
             {videoPlayer()}
           </div>
-          <div className="hidden sm:col-span-3 sm:block sm:h-[420px] md:col-span-1 md:h-full">
+          <div className={styles["live-chat-wrapper"]}>
             <iframe width="100%" height="100%" src={youtubeUrls.chatUrl} />
           </div>
           <div className="col-span-3 block sm:hidden">
@@ -391,5 +393,3 @@ const LiveStream: FC<{}> = () => {
     </>
   );
 };
-
-export default LiveStream;

@@ -1,12 +1,13 @@
-import React, { useRef, useState } from "react";
 import Head from "next/head";
-import { Header } from "./header";
-import { Footer } from "./footer";
-import { Theme } from "./theme";
-import { Menu, MobileMenu } from "../../lib/ssw.megamenu";
+import { useRef, useState } from "react";
 import { classNames } from "tinacms";
-import { LiveStreamBanner } from "../liveStreamBanner";
-import LiveStream from "../liveStream/liveStream";
+import { Menu, MobileMenu } from "../../lib/ssw.megamenu";
+import { LiveStream } from "../liveStream/liveStream";
+import { LiveStreamBanner } from "../liveStream/liveStreamBanner";
+import { useLiveStreamProps } from "../liveStream/useLiveStreamProps";
+import { Footer } from "./footer";
+import { Header } from "./header";
+import { Theme } from "./theme";
 
 export const Layout = ({ children, className = "" }) => {
   const node = useRef<HTMLDivElement>();
@@ -22,6 +23,8 @@ export const Layout = ({ children, className = "" }) => {
     }
   };
 
+  const liveStreamProps = useLiveStreamProps();
+
   return (
     <>
       <Head>
@@ -30,23 +33,24 @@ export const Layout = ({ children, className = "" }) => {
       </Head>
       <Theme>
         <div
-          className={classNames("relative min-h-screen flex flex-col", className)}
+          className={classNames(
+            "relative flex min-h-screen flex-col",
+            className
+          )}
           onMouseDown={isMenuOpened ? (event) => handleClick(event) : null}
         >
           <header>
-            <LiveStreamBanner />
+            <LiveStreamBanner {...liveStreamProps} />
             <div className="mx-auto max-w-9xl px-6 sm:px-8">
               <Header />
-              <div ref={node} >
+              <div ref={node}>
                 <Menu onClickToggle={() => actionOnToggleClick()} />
                 <MobileMenu isMenuOpened={isMenuOpened} />
-                <LiveStream />
+                <LiveStream {...liveStreamProps} />
               </div>
             </div>
           </header>
-          <main className="grow bg-white">
-            {children}
-          </main>
+          <main className="grow bg-white">{children}</main>
           <Footer />
         </div>
       </Theme>

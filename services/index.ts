@@ -13,8 +13,7 @@ export const createLead = async (data: BookingFormSubmissionData) => {
 export const getLiveStreamBannerInfo = async (datetime: Dayjs) => {
   const dateFilter = datetime.format(odataDateFormat);
   const odataFilter = `$filter=Enabled ne false \
-and StartShowBannerDateTime le datetime'${dateFilter}' \
-and EndShowBannerDateTime ge datetime'${dateFilter}'\
+and EndDateTime ge datetime'${dateFilter}'\
 and CalendarType eq 'User Groups'\
 &$orderby=StartDateTime asc\
 &$top=1`;
@@ -51,11 +50,8 @@ and EndDateTime gt datetime'${dateFilter}'\
   return res;
 };
 
-export const getLiveStreamWidgetInfo = async (datetime: Dayjs) => {
-  const dateFilter = datetime.format(odataDateFormat);
-  const odataFilter = `$filter=Enabled ne false \
-and StartShowBannerDateTime le datetime'${dateFilter}' \
-and EndShowBannerDateTime ge datetime'${dateFilter}'\
+export const getLiveStreamWidgetInfo = async (eventId: string) => {
+  const odataFilter = `$filter=Id eq ${eventId}\
 &$orderby=StartDateTime asc\
 &$top=1\
 &$select=*,InternalPresenters/EMail&$expand=InternalPresenters/Id`;
