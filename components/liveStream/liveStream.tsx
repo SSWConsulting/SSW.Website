@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import Script from "next/script";
 import { FC, useEffect, useState } from "react";
 import { IconType } from "react-icons";
@@ -16,10 +17,10 @@ import {
 import { Tooltip } from "react-tooltip/dist/react-tooltip.umd"; // Workaround for render issue. See https://github.com/ReactTooltip/react-tooltip/issues/933
 import layoutData from "../../content/global/index.json";
 import {
-  SpeakerInfo,
   LiveStreamWidgetInfo,
-  getSpeakersInfo,
+  SpeakerInfo,
   getLiveStreamWidgetInfo,
+  getSpeakersInfo,
 } from "../../services";
 import ReactPlayer from "../reactPlayer/reactPlayer";
 import styles from "./liveStream.module.css";
@@ -52,6 +53,10 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
   const [collapseMap, setCollapseMap] = useState<{ [key: string]: boolean }>({
     [eventDescriptionCollapseId]: true,
   });
+  const [eventDescriptionCollapsable, setEventDescriptionCollapsable] =
+    useState<boolean>();
+
+  const router = useRouter();
 
   const videoPlayer = () => (
     <ReactPlayer
@@ -85,9 +90,19 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
       (e.style.maxHeight = `${document.body.offsetHeight}px`);
   };
 
+  const collapsableEventDescriptionRefCallback = (e: HTMLDivElement) => {
+    if (e) {
+      const collapsable = e.scrollHeight > e.clientHeight;
+
+      if (eventDescriptionCollapsable == undefined) {
+        setEventDescriptionCollapsable(collapsable);
+      }
+    }
+  };
+
   useEffect(() => {
     const fetchLiveStreamInfo = async () => {
-      if (!isLive) {
+      if (!isLive && !router.query.liveStream) {
         return;
       }
 
@@ -115,7 +130,17 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
           );
         }
 
-        const speakersInfo = await getSpeakersInfo(ids, emails);
+        const speakersInfo: SpeakerInfo[] = [];
+
+        if (ids.length || emails.length) {
+          const remoteSpeakersInfo = await getSpeakersInfo(ids, emails);
+          speakersInfo.push(...remoteSpeakersInfo);
+        } else {
+          speakersInfo.push({
+            Title: widgetInfoRes.data.Presenter,
+            PresenterProfileLink: widgetInfoRes.data.PresenterProfileUrl.Url,
+          });
+        }
         setSpeakersInfo(speakersInfo);
       }
     };
@@ -299,6 +324,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
               <h3 className="mb-3 text-xl font-bold">About the Talk</h3>
               <div
                 id={eventDescriptionCollapseId}
+                ref={collapsableEventDescriptionRefCallback}
                 className={classNames(
                   styles["event-description-wrapper"],
                   { "max-h-70": collapseMap[eventDescriptionCollapseId] },
@@ -311,26 +337,28 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
                   __html: widgetInfo.EventDescription,
                 }}
               ></div>
-              <div
-                className={classNames({
-                  [styles["collapse-cover"]]:
-                    collapseMap[eventDescriptionCollapseId],
-                })}
-              >
-                <a
-                  className="float-right mt-4 cursor-pointer border-b-1 border-dotted border-gray-450 !no-underline"
-                  onClick={() =>
-                    setCollapseMap({
-                      [eventDescriptionCollapseId]:
-                        !collapseMap[eventDescriptionCollapseId],
-                    })
-                  }
+              {eventDescriptionCollapsable && (
+                <div
+                  className={classNames({
+                    [styles["collapse-cover"]]:
+                      collapseMap[eventDescriptionCollapseId],
+                  })}
                 >
-                  {collapseMap[eventDescriptionCollapseId]
-                    ? "More >"
-                    : "< Less"}
-                </a>
-              </div>
+                  <a
+                    className="float-right mt-4 cursor-pointer border-b-1 border-dotted border-gray-450 !no-underline"
+                    onClick={() =>
+                      setCollapseMap({
+                        [eventDescriptionCollapseId]:
+                          !collapseMap[eventDescriptionCollapseId],
+                      })
+                    }
+                  >
+                    {collapseMap[eventDescriptionCollapseId]
+                      ? "More >"
+                      : "< Less"}
+                  </a>
+                </div>
+              )}
             </div>
 
             <div className="mt-17">
@@ -375,12 +403,14 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
               speakersInfo.map((speakerInfo, index) => (
                 <div key={index} className="mb-8 grid grid-cols-6 gap-x-8">
                   <div className="col-span-1">
-                    <Image
-                      src={speakerInfo.PresenterProfileImage?.Url}
-                      alt={speakerInfo.Title}
-                      width={200}
-                      height={200}
-                    />
+                    {!!speakerInfo.PresenterProfileImage && (
+                      <Image
+                        src={speakerInfo.PresenterProfileImage?.Url}
+                        alt={speakerInfo.Title}
+                        width={200}
+                        height={200}
+                      />
+                    )}
                   </div>
                   <div className="col-span-5">
                     <p className="mb-3 font-bold">{speakerInfo.Title}</p>

@@ -15,7 +15,7 @@
 }
 
 .event-description-wrapper {
-  @apply min-h-70 transition-all;
+  @apply transition-all;
 }
 
 .event-description-wrapper p {

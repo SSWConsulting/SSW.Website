@@ -199,6 +199,7 @@ export interface LiveStreamWidgetInfo extends LiveStreamBannerInfo {
   YouTubeId: string;
   ChannelId: string;
   EventDescription: string;
+  Presenter: string;
   ExternalPresentersId: {
     results?: string[];
   };
@@ -207,15 +208,18 @@ export interface LiveStreamWidgetInfo extends LiveStreamBannerInfo {
       EMail: string;
     }[];
   };
+  PresenterProfileUrl: {
+    Url: string;
+  };
 }
 
 export interface SpeakerInfo {
   Title: string;
-  PresenterProfileImage: {
+  PresenterProfileLink: string;
+  PresenterProfileImage?: {
     Url: string;
   };
-  PresenterShortDescription: string;
-  PresenterProfileLink: string;
+  PresenterShortDescription?: string;
 }
 
 export interface InternalSpeakerInfo {
