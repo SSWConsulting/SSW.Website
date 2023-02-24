@@ -76,8 +76,9 @@ const DeploymentInfo = () => {
     <div className="text-center sm:text-left">
       Our website is under{" "}
       <Link href="https://www.ssw.com.au/rules/rules-to-better-websites-deployment">
-        CONSTANT CONTINUOUS DEPLOYMENT.&nbsp;
+        CONSTANT CONTINUOUS DEPLOYMENT
       </Link>
+      &nbsp;|&nbsp;
       <DynamicDeploymentLink {...deploymentLinkInfo} />
     </div>
   );
