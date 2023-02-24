@@ -18,13 +18,8 @@ export const Layout = ({ children, className = "" }) => {
         <div
           className={classNames("relative min-h-screen flex flex-col", className)}
         >
-          <header>
-            <LiveStreamBanner />
-            <div className="mx-auto max-w-9xl px-6 sm:px-8">
-              <Header />
-              <Menu />
-            </div>
-          </header>
+          <LiveStreamBanner />
+          <Menu />
           <main className="grow bg-white">
             {children}
           </main>
