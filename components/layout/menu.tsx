@@ -2,89 +2,81 @@ import { Fragment, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Dialog, Popover, Transition } from "@headlessui/react";
-import {
-  HiOutlineArrowDown as ArrowPathIcon,
-  HiBars3 as Bars3Icon,
-  HiOutlineChartPie as ChartPieIcon,
-  HiOutlineCursorArrowRays as CursorArrowRaysIcon,
-  HiOutlineFingerPrint as FingerPrintIcon,
-  HiOutlineSquaresPlus as SquaresPlusIcon,
-  HiOutlineXMark as XMarkIcon,
-} from "react-icons/hi2";
-import {
-  HiChevronDown as ChevronDownIcon,
-  HiPhone as PhoneIcon,
-  HiPlay as PlayCircleIcon,
+import { 
+    HiChevronDown as ChevronDownIcon,
+    HiOutlineCursorClick,
+    HiShieldCheck,
+    HiOutlineViewGrid,
+    HiRefresh,
 } from "react-icons/hi";
+import {
+  HiBars3 as Bars3Icon,
+  HiOutlineXMark as XMarkIcon,
+  HiOutlineChartBar,
+} from "react-icons/hi2";
+import { classNames } from "tinacms";
 
 const menuHeaders = [
-
-];
-
-const products = [
   {
-    name: "Analytics",
-    description: "Get a better understanding of your traffic",
-    href: "#",
-    icon: ChartPieIcon,
+    name: "Services",
+    children: [
+      {
+        name: "Development",
+        icon: HiOutlineChartBar,
+        description:
+          "Get a better understanding of where your traffic is coming from.",
+        href: "/services/development",
+      },
+      {
+        name: "Cloud and Infrastructure",
+        icon: HiOutlineCursorClick,
+        description:
+          "Speak directly to you're customers in a more meaningful way.",
+        href: "/services/development",
+      },
+      {
+        name: "Platform Development",
+        icon: HiShieldCheck,
+        description:
+          "Your customers' data will be safe and secure.",
+        href: "/services/development",
+      },
+      {
+        name: "UI/UX Design",
+        icon: HiOutlineViewGrid,
+        description:
+          "Connect with third-party tools that you're already using.",
+        href: "/services/development",
+      },
+      {
+        name: "Automations",
+        icon: HiRefresh,
+        description:
+          "Build strategic tunnels that will drive your customers to convert.",
+        href: "/services/development",
+      },
+    ],
   },
   {
-    name: "Engagement",
-    description: "Speak directly to your customers",
-    href: "#",
-    icon: CursorArrowRaysIcon,
+    name: "Events and Training",
+    children: [],
   },
   {
-    name: "Security",
-    description: "Your customers’ data will be safe and secure",
-    href: "#",
-    icon: FingerPrintIcon,
+    name: "About Us",
+    children: [],
   },
   {
-    name: "Integrations",
-    description: "Connect with third-party tools",
-    href: "#",
-    icon: SquaresPlusIcon,
+    name: "SSW Rules",
+    href: "https://ssw.com.au/rules",
   },
   {
-    name: "Automations",
-    description: "Build strategic funnels that will convert",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-];
-const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
-];
-const company = [
-  {
-    name: "About us",
-    href: "#",
-    description:
-      "Learn more about our company values and mission to empower others",
-  },
-  {
-    name: "Careers",
-    href: "#",
-    description:
-      "Looking for you next career opportunity? See all of our open positions",
-  },
-  {
-    name: "Support",
-    href: "#",
-    description:
-      "Get in touch with our dedicated support team or reach out on our community forums",
-  },
-  {
-    name: "Blog",
-    href: "#",
-    description:
-      "Read our latest announcements and get perspectives from our team",
+    name: "Contact Us",
+    href: "https://www.ssw.com.au/ssw/Company/ContactUs.aspx",
+    isPrimary: true,
   },
 ];
 
-const Logo = ({children}) => {
+const Logo = (props) => {
   // show the xmas logo for 1-25 December
   const date = new Date();
   const isXmas = date.getMonth() === 11 && date.getDate() <= 25;
@@ -109,7 +101,7 @@ const Logo = ({children}) => {
       <div className="ml-4 hidden w-24 text-sm font-semibold uppercase leading-4 text-gray-700 sm:sr-only md:block">
         Enterprise Software Development
       </div>
-      {children}
+      {props.children}
     </h4>
   );
 };
@@ -135,116 +127,10 @@ export const Menu = () => {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 focus-visible:outline-none">
-              Product
-              <ChevronDownIcon
-                className="h-5 w-5 flex-none text-gray-400"
-                aria-hidden="true"
-              />
-            </Popover.Button>
-
-            <Transition
-              as={Fragment}
-              enter="transition ease-out duration-200"
-              enterFrom="opacity-0 translate-y-1"
-              enterTo="opacity-100 translate-y-0"
-              leave="transition ease-in duration-150"
-              leaveFrom="opacity-100 translate-y-0"
-              leaveTo="opacity-0 translate-y-1"
-            >
-              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
-                <div className="p-4">
-                  {products.map((item) => (
-                    <div
-                      key={item.name}
-                      className="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-                    >
-                      <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <item.icon
-                          className="group-hover:text-indigo-600 h-6 w-6 text-gray-600"
-                          aria-hidden="true"
-                        />
-                      </div>
-                      <div className="flex-auto">
-                        <a
-                          href={item.href}
-                          className="block font-semibold text-gray-900"
-                        >
-                          {item.name}
-                          <span className="absolute inset-0" />
-                        </a>
-                        <p className="mt-1 text-gray-600">{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                  {callsToAction.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-                    >
-                      <item.icon
-                        className="h-5 w-5 flex-none text-gray-400"
-                        aria-hidden="true"
-                      />
-                      {item.name}
-                    </a>
-                  ))}
-                </div>
-              </Popover.Panel>
-            </Transition>
-          </Popover>
-
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Features
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Marketplace
-          </a>
-
-          <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 focus-visible:outline-none">
-              Company
-              <ChevronDownIcon
-                className="h-5 w-5 flex-none text-gray-400"
-                aria-hidden="true"
-              />
-            </Popover.Button>
-
-            <Transition
-              as={Fragment}
-              enter="transition ease-out duration-200"
-              enterFrom="opacity-0 translate-y-1"
-              enterTo="opacity-100 translate-y-0"
-              leave="transition ease-in duration-150"
-              leaveFrom="opacity-100 translate-y-0"
-              leaveTo="opacity-0 translate-y-1"
-            >
-              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-96 rounded-3xl bg-white p-4 shadow-lg ring-1 ring-gray-900/5">
-                {company.map((item) => (
-                  <div
-                    key={item.name}
-                    className="relative rounded-lg p-4 hover:bg-gray-50"
-                  >
-                    <a
-                      href={item.href}
-                      className="block text-sm font-semibold leading-6 text-gray-900"
-                    >
-                      {item.name}
-                      <span className="absolute inset-0" />
-                    </a>
-                    <p className="mt-1 text-sm leading-6 text-gray-600">
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
-              </Popover.Panel>
-            </Transition>
-          </Popover>
+        <Popover.Group className="hidden lg:flex lg:gap-x-4">
+          {menuHeaders.map((item) => (
+            <DesktopMenuItem key={item.name} item={item} />
+          ))}
         </Popover.Group>
       </nav>
       <Dialog
@@ -270,73 +156,100 @@ export const Menu = () => {
                 <XMarkIcon className="h-6 w-6" aria-hidden="true" />
               </button>
             </Logo>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
-                  {products.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >
-                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <item.icon
-                          className="group-hover:text-indigo-600 h-6 w-6 text-gray-600"
-                          aria-hidden="true"
-                        />
-                      </div>
-                      {item.name}
-                    </a>
-                  ))}
-                </div>
-                <div className="space-y-2 py-6">
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Features
-                  </a>
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Marketplace
-                  </a>
-
-                  {company.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >
-                      {item.name}
-                    </a>
-                  ))}
-                </div>
-                <div className="py-6">
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Log in
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="sticky bottom-0 grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50 text-center">
-            {callsToAction.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="p-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-100"
-              >
-                {item.name}
-              </a>
-            ))}
           </div>
         </Dialog.Panel>
       </Dialog>
     </header>
+  );
+};
+
+const DesktopMenuItem = ({ item }) => {
+  const itemPadding = "py-3 px-4";
+  if (!item.children) {
+    return (
+      <div
+        className={classNames(
+          itemPadding,
+          item.isPrimary ? "bg-sswRed text-white" : "bg-transparent",
+          "rounded-md"
+        )}
+      >
+        <Link
+          href={item.href}
+          className="unstyled text-sm font-semibold leading-6 !no-underline"
+        >
+          {item.name}
+        </Link>
+      </div>
+    );
+  }
+
+  return (
+    <Popover className="relative">
+      <Popover.Button className={classNames(
+        itemPadding,
+        "flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 focus-visible:outline-none",
+      )}>
+        {item.name}
+        <ChevronDownIcon
+          className="h-5 w-5 flex-none text-gray-400"
+          aria-hidden="true"
+        />
+      </Popover.Button>
+
+      <Transition
+        as={Fragment}
+        enter="transition ease-out duration-200"
+        enterFrom="opacity-0 translate-y-1"
+        enterTo="opacity-100 translate-y-0"
+        leave="transition ease-in duration-150"
+        leaveFrom="opacity-100 translate-y-0"
+        leaveTo="opacity-0 translate-y-1"
+      >
+        <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+          <div className="p-4">
+            {item.children.map((item) => (
+              <div
+                key={item.name}
+                className="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+              >
+                <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                  <item.icon
+                    className="group-hover:text-indigo-600 h-6 w-6 text-gray-600"
+                    aria-hidden="true"
+                  />
+                </div>
+                <div className="flex-auto">
+                  <a
+                    href={item.href}
+                    className="block font-semibold text-gray-900"
+                  >
+                    {item.name}
+                    <span className="absolute inset-0" />
+                  </a>
+                  <p className="mt-1 text-gray-600">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+            {item.callsToAction &&
+              item.callsToAction.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
+                >
+                  <item.icon
+                    className="h-5 w-5 flex-none text-gray-400"
+                    aria-hidden="true"
+                  />
+                  {item.name}
+                </a>
+              ))}
+          </div>
+        </Popover.Panel>
+      </Transition>
+    </Popover>
   );
 };
