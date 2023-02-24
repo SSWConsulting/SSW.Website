@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Dialog, Popover, Transition } from "@headlessui/react";
+import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import {
   HiChevronDown as ChevronDownIcon,
   HiOutlineCursorClick,
@@ -152,7 +152,6 @@ const menuHeaders = [
   {
     name: "Contact Us",
     href: "https://www.ssw.com.au/ssw/Company/ContactUs.aspx",
-    isPrimary: true,
   },
 ];
 
@@ -175,10 +174,10 @@ const Logo = (props) => {
           src={logoPath}
           alt="SSW - Enterprise Software Development"
           height={100}
-          width={150}
+          width={100}
         />
       </Link>
-      <div className="ml-4 hidden w-24 text-sm font-semibold uppercase leading-4 text-gray-700 sm:sr-only md:block">
+      <div className="ml-4 w-24 text-sm font-semibold uppercase leading-4 text-gray-700">
         Enterprise Software Development
       </div>
       {props.children}
@@ -220,9 +219,7 @@ export const Menu = () => {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-10" />
-        <Dialog.Panel
-          className="fixed inset-y-0 right-0 z-10 flex w-full flex-col justify-between overflow-y-auto bg-white sm:ring-1 sm:ring-gray-900/10"
-        >
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 flex w-full flex-col overflow-y-auto bg-white sm:ring-1 sm:ring-gray-900/10">
           <div className="p-6">
             <Logo>
               <div className="grow"></div>
@@ -235,6 +232,15 @@ export const Menu = () => {
                 <XMarkIcon className="h-6 w-6" aria-hidden="true" />
               </button>
             </Logo>
+          </div>
+          <div className="mt-6 flow-root">
+            <div className="-my-6 divide-y divide-gray-500/10">
+              <div className="space-y-2 p-6">
+                {menuHeaders.map((item) => (
+                  <MobileMenuItem key={item.name} menuItem={item} />
+                ))}
+              </div>
+            </div>
           </div>
         </Dialog.Panel>
       </Dialog>
@@ -347,5 +353,49 @@ const DesktopMenuItem = ({ item }) => {
         </Popover.Panel>
       </Transition>
     </Popover>
+  );
+};
+
+const MobileMenuItem = ({ menuItem }) => {
+  if (!menuItem.children) {
+    return (
+      <a
+        href={menuItem.href}
+        className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+      >
+        {menuItem.name}
+      </a>
+    );
+  }
+
+  return (
+    <Disclosure as="div" className="-mx-3">
+      {({ open }) => (
+        <>
+          <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-gray-50">
+            {menuItem.name}
+            <ChevronDownIcon
+              className={classNames(
+                open ? "rotate-180" : "",
+                "h-5 w-5 flex-none"
+              )}
+              aria-hidden="true"
+            />
+          </Disclosure.Button>
+          <Disclosure.Panel className="mt-2 space-y-2">
+            {menuItem.children.map((item) => (
+              <Disclosure.Button
+                key={item.name}
+                as="a"
+                href={item.href}
+                className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+              >
+                {item.name}
+              </Disclosure.Button>
+            ))}
+          </Disclosure.Panel>
+        </>
+      )}
+    </Disclosure>
   );
 };

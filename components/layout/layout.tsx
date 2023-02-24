@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 import { classNames } from "tinacms";
-import { Header } from "./header";
 import { Footer } from "./footer";
 import { Theme } from "./theme";
 import { LiveStreamBanner } from "../liveStreamBanner";
