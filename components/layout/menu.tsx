@@ -28,42 +28,63 @@ const menuHeaders = [
       {
         name: "Development",
         icon: HiOutlineChartBar,
-        description:
-          "Get a better understanding of where your traffic is coming from.",
         href: "/services/development",
       },
       {
         name: "Cloud and Infrastructure",
         icon: HiOutlineCursorClick,
-        description:
-          "Speak directly to you're customers in a more meaningful way.",
         href: "/services/development",
       },
       {
         name: "Platform Development",
         icon: HiShieldCheck,
-        description: "Your customers' data will be safe and secure.",
         href: "/services/development",
       },
       {
         name: "UI/UX Design",
         icon: HiOutlineViewGrid,
-        description:
-          "Connect with third-party tools that you're already using.",
         href: "/services/development",
       },
       {
         name: "Automations",
         icon: HiRefresh,
-        description:
-          "Build strategic tunnels that will drive your customers to convert.",
         href: "/services/development",
       },
     ],
+    featured: {
+      title: "FEATURED SERVICES",
+      items: [
+        {
+          name: ".NET",
+          href: "https://www.ssw.com.au/consulting/react",
+          image: "/images/thumbs/thumb-net-icon.png",
+          description:
+            "React is a JavaScript library that combines the speed of JavaScript with new ways of rendering web pages, making them highly dynamic and responsive to user input.",
+        },
+        {
+          name: "Angular",
+          href: "https://www.ssw.com.au/consulting/angular",
+          image: "/images/thumbs/thumb-angular-icon.png",
+          description:
+            "Our enterprise clients love Angular, be it government or large insurance firms, Angular enables you to get systems into production in record time and allows you to be more ambitious with what you want to achieve.",
+        },
+        {
+          name: "React",
+          href: "https://www.ssw.com.au/consulting/react",
+          image: "/images/thumbs/thumb-react-banner.png",
+          description:
+            "React is a JavaScript library that combines the speed of JavaScript with new ways of rendering web pages, making them highly dynamic and responsive to user input.",
+        },
+      ],
+    },
   },
   {
     name: "Events and Training",
     children: [],
+    featured: {
+      title: "FEATURED EVENTS",
+      items: [],
+    },
   },
   {
     name: "About Us",
@@ -71,22 +92,27 @@ const menuHeaders = [
       {
         name: "About SSW",
         icon: HiOutlineInformationCircle,
+        href: "",
       },
       {
         name: "SSW People",
         icon: HiOutlineUsers,
+        href: "",
       },
       {
         name: "Our Offices",
         icon: HiOutlineLocationMarker,
+        href: "",
       },
       {
         name: "SSW TV",
         icon: HiOutlineVideoCamera,
+        href: "",
       },
       {
         name: "Join Us",
         icon: HiOutlineUserAdd,
+        href: "",
       },
     ],
     featured: {
@@ -97,23 +123,23 @@ const menuHeaders = [
           href: "https://ssw.com.au/people/matt-wicks",
           image:
             "https://github.com/SSWConsulting/SSW.People.Profiles/raw/main/Matt-Wicks/Images/Matt-Wicks-Profile.jpg",
-          quote:
+          description:
             "I didn't want to pay DynDNS - so I wrote an Azure function to replace them",
         },
         {
           name: "Tylah Kapa",
           href: "https://ssw.com.au/people/tylah-kapa",
           image:
-            "https://github.com/SSWConsulting/SSW.People.Profiles/raw/main/tylah-kapa/Images/tylah-kapa-Profile.jpg",
-          quote:
+            "https://github.com/SSWConsulting/SSW.People.Profiles/raw/main/Tylah-Kapa/Images/Tylah-Kapa-Profile.jpg",
+          description:
             "Every great developer you know got there by solving problems they were unqualified to solve until...",
         },
         {
           name: "Adam Cogan",
           href: "https://ssw.com.au/people/adam-cogan",
           image:
-            "https://github.com/SSWConsulting/SSW.People.Profiles/raw/main/adam-cogan/Images/adam-cogan-Profile.jpg",
-          quote:
+            "https://github.com/SSWConsulting/SSW.People.Profiles/raw/main/Adam-Cogan/Images/Adam-Cogan-Profile.jpg",
+          description:
             "Talent can fix tricky bugs, but teamwork and brains build great software.",
         },
       ],
@@ -166,7 +192,7 @@ export const Menu = () => {
   return (
     <header className="bg-white">
       <nav
-        className="mx-auto flex max-w-9xl items-center justify-between p-6 lg:px-8"
+        className="relative mx-auto flex max-w-9xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
         <Logo />
@@ -181,7 +207,7 @@ export const Menu = () => {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <Popover.Group className="hidden lg:flex lg:gap-x-4">
+        <Popover.Group className="z-50 hidden lg:flex lg:gap-x-4">
           {menuHeaders.map((item) => (
             <DesktopMenuItem key={item.name} item={item} />
           ))}
@@ -195,7 +221,6 @@ export const Menu = () => {
       >
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel
-          focus="true"
           className="fixed inset-y-0 right-0 z-10 flex w-full flex-col justify-between overflow-y-auto bg-white sm:ring-1 sm:ring-gray-900/10"
         >
           <div className="p-6">
@@ -239,7 +264,7 @@ const DesktopMenuItem = ({ item }) => {
   }
 
   return (
-    <Popover className="relative isolate z-50">
+    <Popover className="">
       <Popover.Button
         className={classNames(
           itemPadding,
@@ -264,52 +289,60 @@ const DesktopMenuItem = ({ item }) => {
       >
         <Popover.Panel
           className={classNames(
-            item.featured ? "max-w-md -left-8 top-full" : "max-w-md -left-8 top-full",
-            "absolute z-10 mt-3 w-screen overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
+            "absolute left-0 mt-7 w-screen max-w-9xl overflow-hidden rounded-3xl bg-white shadow-xl ring-1 ring-gray-900/5"
           )}
         >
-          <div className="p-4">
-            {item.children.map((item) => (
-              <div
-                key={item.name}
-                className="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-              >
-                <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                  <item.icon
-                    className="group-hover:text-indigo-600 h-6 w-6 text-sswRed"
-                    aria-hidden="true"
-                  />
-                </div>
-                <div className="flex flex-auto flex-col justify-center">
-                  <a
-                    href={item.href}
-                    className="unstyled block font-semibold text-gray-900"
+          <div className="mx-auto max-w-7xl py-10 px-6">
+            <h3 className="text-sm font-medium leading-6 text-gray-500">
+              {item.featured.title}
+            </h3>
+            <div className="grid grid-cols-1 gap-y-10 gap-x-8 lg:grid-cols-4">
+              <div className="grid grid-cols-1 gap-10 sm:gap-8 lg:col-span-3 lg:grid-cols-3">
+                {item.featured.items.map((item) => (
+                  <article
+                    key={item.name}
+                    className="relative isolate flex max-w-2xl flex-col gap-x-8 gap-y-6 sm:flex-row sm:items-start lg:flex-col lg:items-stretch"
                   >
-                    {item.name}
-                    <span className="absolute inset-0" />
-                  </a>
-                  {item.description && (
-                    <p className="mt-1 text-gray-600">{item.description}</p>
-                  )}
-                </div>
+                    <div className="relative flex-none">
+                      <Image
+                        className="max-h-64 w-full rounded-lg object-cover"
+                        src={item.image}
+                        alt={item.name}
+                        width={100}
+                        height={100}
+                      />
+                    </div>
+                    <div>
+                      <h4 className="mt-2 text-sm font-bold leading-6 text-gray-900">
+                        <Link className="unstyled" href={item.href}>
+                          <span className="absolute inset-0" />
+                          {item.name}
+                        </Link>
+                      </h4>
+                      <p className="mt-2 text-sm leading-6 text-gray-600">
+                        {item.description}
+                      </p>
+                    </div>
+                  </article>
+                ))}
               </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-            {item.callsToAction &&
-              item.callsToAction.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-                >
-                  <item.icon
-                    className="h-5 w-5 flex-none text-gray-400"
-                    aria-hidden="true"
-                  />
-                  {item.name}
-                </a>
-              ))}
+              <ul>
+                {item.children.map((item) => (
+                  <li key={item.name} className="first:pb-1 not-first:py-1">
+                    <Link
+                      href={item.href}
+                      className="unstyled flex gap-x-4 py-2 text-sm font-semibold leading-6 text-gray-900"
+                    >
+                      <item.icon
+                        className="h-6 w-6 flex-none text-sswRed"
+                        aria-hidden="true"
+                      />
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </Popover.Panel>
       </Transition>
