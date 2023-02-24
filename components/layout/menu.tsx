@@ -2,12 +2,17 @@ import { Fragment, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Dialog, Popover, Transition } from "@headlessui/react";
-import { 
-    HiChevronDown as ChevronDownIcon,
-    HiOutlineCursorClick,
-    HiShieldCheck,
-    HiOutlineViewGrid,
-    HiRefresh,
+import {
+  HiChevronDown as ChevronDownIcon,
+  HiOutlineCursorClick,
+  HiShieldCheck,
+  HiOutlineViewGrid,
+  HiRefresh,
+  HiOutlineInformationCircle,
+  HiOutlineUsers,
+  HiOutlineLocationMarker,
+  HiOutlineVideoCamera,
+  HiOutlineUserAdd,
 } from "react-icons/hi";
 import {
   HiBars3 as Bars3Icon,
@@ -37,8 +42,7 @@ const menuHeaders = [
       {
         name: "Platform Development",
         icon: HiShieldCheck,
-        description:
-          "Your customers' data will be safe and secure.",
+        description: "Your customers' data will be safe and secure.",
         href: "/services/development",
       },
       {
@@ -63,7 +67,57 @@ const menuHeaders = [
   },
   {
     name: "About Us",
-    children: [],
+    children: [
+      {
+        name: "About SSW",
+        icon: HiOutlineInformationCircle,
+      },
+      {
+        name: "SSW People",
+        icon: HiOutlineUsers,
+      },
+      {
+        name: "Our Offices",
+        icon: HiOutlineLocationMarker,
+      },
+      {
+        name: "SSW TV",
+        icon: HiOutlineVideoCamera,
+      },
+      {
+        name: "Join Us",
+        icon: HiOutlineUserAdd,
+      },
+    ],
+    featured: {
+      title: "FEATURED SSW PEOPLE",
+      items: [
+        {
+          name: "Matt Wicks",
+          href: "https://ssw.com.au/people/matt-wicks",
+          image:
+            "https://github.com/SSWConsulting/SSW.People.Profiles/raw/main/Matt-Wicks/Images/Matt-Wicks-Profile.jpg",
+          quote:
+            "I didn't want to pay DynDNS - so I wrote an Azure function to replace them",
+        },
+        {
+          name: "Tylah Kapa",
+          href: "https://ssw.com.au/people/tylah-kapa",
+          image:
+            "https://github.com/SSWConsulting/SSW.People.Profiles/raw/main/tylah-kapa/Images/tylah-kapa-Profile.jpg",
+          quote:
+            "Every great developer you know got there by solving problems they were unqualified to solve until...",
+        },
+        {
+          name: "Adam Cogan",
+          href: "https://ssw.com.au/people/adam-cogan",
+          image:
+            "https://github.com/SSWConsulting/SSW.People.Profiles/raw/main/adam-cogan/Images/adam-cogan-Profile.jpg",
+          quote:
+            "Talent can fix tricky bugs, but teamwork and brains build great software.",
+        },
+      ],
+    },
   },
   {
     name: "SSW Rules",
@@ -146,7 +200,7 @@ export const Menu = () => {
         >
           <div className="p-6">
             <Logo>
-                <div className="grow"></div>
+              <div className="grow"></div>
               <button
                 type="button"
                 className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -185,11 +239,13 @@ const DesktopMenuItem = ({ item }) => {
   }
 
   return (
-    <Popover className="relative">
-      <Popover.Button className={classNames(
-        itemPadding,
-        "flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 focus-visible:outline-none",
-      )}>
+    <Popover className="relative isolate z-50">
+      <Popover.Button
+        className={classNames(
+          itemPadding,
+          "flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 focus-visible:outline-none"
+        )}
+      >
         {item.name}
         <ChevronDownIcon
           className="h-5 w-5 flex-none text-gray-400"
@@ -206,7 +262,12 @@ const DesktopMenuItem = ({ item }) => {
         leaveFrom="opacity-100 translate-y-0"
         leaveTo="opacity-0 translate-y-1"
       >
-        <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+        <Popover.Panel
+          className={classNames(
+            item.featured ? "max-w-md -left-8 top-full" : "max-w-md -left-8 top-full",
+            "absolute z-10 mt-3 w-screen overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
+          )}
+        >
           <div className="p-4">
             {item.children.map((item) => (
               <div
@@ -215,19 +276,21 @@ const DesktopMenuItem = ({ item }) => {
               >
                 <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                   <item.icon
-                    className="group-hover:text-indigo-600 h-6 w-6 text-gray-600"
+                    className="group-hover:text-indigo-600 h-6 w-6 text-sswRed"
                     aria-hidden="true"
                   />
                 </div>
-                <div className="flex-auto">
+                <div className="flex flex-auto flex-col justify-center">
                   <a
                     href={item.href}
-                    className="block font-semibold text-gray-900"
+                    className="unstyled block font-semibold text-gray-900"
                   >
                     {item.name}
                     <span className="absolute inset-0" />
                   </a>
-                  <p className="mt-1 text-gray-600">{item.description}</p>
+                  {item.description && (
+                    <p className="mt-1 text-gray-600">{item.description}</p>
+                  )}
                 </div>
               </div>
             ))}
