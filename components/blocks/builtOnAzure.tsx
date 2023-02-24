@@ -1,6 +1,6 @@
-import Image from "next/legacy/image";
-import Link from "next/link";
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import type { Template } from "tinacms";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
@@ -10,10 +10,9 @@ export const BuiltOnAzure = ({ data }) => {
     <Section color={data.backgroundColor}>
       <Container className="text-lg">
         <Link
-          href="/consulting/azure"
+          href="https://www.ssw.com.au/ssw/Consulting/Azure.aspx"
           className="unstyled flex items-center justify-center hover:border-azure hover:text-azure"
         >
-          {/* TODO: refactor with next/image */}
           <Image
             src="/images/logos/azure.png"
             alt="Microsoft Azure Logo"
