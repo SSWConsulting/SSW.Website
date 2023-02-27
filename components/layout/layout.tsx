@@ -1,7 +1,6 @@
 import Head from "next/head";
-import { useRef, useState } from "react";
+import { MenuBar } from "ssw.megamenu";
 import { classNames } from "tinacms";
-import { Menu, MobileMenu } from "../../lib/ssw.megamenu";
 import { LiveStream } from "../liveStream/liveStream";
 import { LiveStreamBanner } from "../liveStream/liveStreamBanner";
 import { useLiveStreamProps } from "../liveStream/useLiveStreamProps";
@@ -10,19 +9,6 @@ import { Header } from "./header";
 import { Theme } from "./theme";
 
 export const Layout = ({ children, className = "" }) => {
-  const node = useRef<HTMLDivElement>();
-  const [isMenuOpened, setIsMenuOpened] = useState(false);
-
-  const actionOnToggleClick = () => {
-    setIsMenuOpened(!isMenuOpened);
-  };
-
-  const handleClick = (e) => {
-    if (node.current && !node.current.contains(e.target)) {
-      setIsMenuOpened(false);
-    }
-  };
-
   const liveStreamProps = useLiveStreamProps();
 
   return (
@@ -37,17 +23,13 @@ export const Layout = ({ children, className = "" }) => {
             "relative flex min-h-screen flex-col",
             className
           )}
-          onMouseDown={isMenuOpened ? (event) => handleClick(event) : null}
         >
           <header>
             <LiveStreamBanner {...liveStreamProps} />
             <div className="mx-auto max-w-9xl px-6 sm:px-8">
               <Header />
-              <div ref={node}>
-                <Menu onClickToggle={() => actionOnToggleClick()} />
-                <MobileMenu isMenuOpened={isMenuOpened} />
-                <LiveStream {...liveStreamProps} />
-              </div>
+              <MenuBar />
+              <LiveStream {...liveStreamProps} />
             </div>
           </header>
           <main className="grow bg-white">{children}</main>

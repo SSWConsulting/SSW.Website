@@ -8,6 +8,7 @@ import "react-tooltip/dist/react-tooltip.css";
 import { Analytics } from "../components/layout/analytics";
 import * as gtag from "../lib/gtag";
 import { NEXT_SEO_DEFAULT } from "../next-seo.config";
+import "ssw.megamenu/dist/style.css";
 import "../styles.css";
 
 import ZendeskButton from "../components/zendeskButton/zendeskButton";
