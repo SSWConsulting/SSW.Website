@@ -305,6 +305,45 @@ const config = defineStaticConfig({
         ],
       },
       {
+        label: "Training Pages",
+        name: "training",
+        format: "mdx",
+        path: "content/training",
+        ui: {
+          router: ({ document }) => {
+            return `/training/${document._sys.filename}`;
+          },
+        },
+        fields: [
+          // @ts-ignore
+          seoSchema,
+          {
+            type: "string",
+            label: "Tagline",
+            name: "tagline",
+            required: true,
+          },
+          {
+            type: "string",
+            label: "Secondary Tagline",
+            name: "secondaryTagline",
+            required: true,
+          },
+          {
+            type: "image",
+            label: "Hero Background",
+            name: "heroBackground",
+            required: true,
+          },
+          {
+            type: "image",
+            label: "Person",
+            name: "person",
+            required: true,
+          },
+        ]
+      },
+      {
         label: "Consulting Pages",
         name: "consulting",
         format: "mdx",
