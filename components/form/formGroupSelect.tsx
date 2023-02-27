@@ -29,7 +29,7 @@ const FormGroupSelect: FC<
 
   return (
       <div className={styles["field-wrapper"]}>
-      <label htmlFor={props.id || props.name} className={activeLabelClass}>
+      <label htmlFor={props.id || props.name} className={styles[activeLabelClass]}>
         {label}
       </label>
       <Field name={field.name}>

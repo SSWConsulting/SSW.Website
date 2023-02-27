@@ -25,7 +25,7 @@ const FormGroupInput: FC<
 
   return (
     <div className={classNames(styles["field-wrapper"], "relative mb-5 block py-1.5")}>
-      <label htmlFor={field.name} className={activeLabelClass}>
+      <label htmlFor={field.name} className={styles[activeLabelClass]}>
         {label}
       </label>
       <Field name={field.name}>

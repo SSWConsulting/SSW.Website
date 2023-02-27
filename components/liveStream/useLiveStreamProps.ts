@@ -1,6 +1,7 @@
+import axios from "axios";
 import dayjs from "dayjs";
 import { useEffect, useRef, useState } from "react";
-import { LiveStreamBannerInfo, getLiveStreamBannerInfo } from "../../services";
+import { LiveStreamBannerInfo } from "../../services";
 
 export type LiveStreamProps = {
   countdownMins: number;
@@ -26,7 +27,9 @@ export function useLiveStreamProps(intervalMinutes?: number): LiveStreamProps {
         (!event && countdownMins === undefined) ||
         (!!event && rightnow.isAfter(event.EndDateTime))
       ) {
-        const res = await getLiveStreamBannerInfo(rightnow);
+        const res = await axios.get<LiveStreamBannerInfo[]>("/api/get-livestream-banner",{
+          params: { datetime: rightnow.toISOString() },
+        })
 
         if (res?.status !== 200 || !res.data.length) {
           setIsLive(false);

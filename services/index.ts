@@ -2,18 +2,15 @@ import axios from "axios";
 import { AxiosResponse } from "axios";
 import dayjs, { Dayjs } from "dayjs";
 
-const odataDateFormat = "YYYY-MM-DDTHH:mm:ss[Z]";
-
 export const createLead = async (data: BookingFormSubmissionData) => {
-  return await axios.post("/ssw/api/crm/createlead", data, {
+  return await axios.post("https://www.ssw.com.au/ssw/api/crm/createlead", data, {
     headers: { "Content-Type": "application/json" },
   });
 };
 
-export const getLiveStreamBannerInfo = async (datetime: Dayjs) => {
-  const dateFilter = datetime.format(odataDateFormat);
+export const getLiveStreamBannerInfo = async (datetime: string) => {
   const odataFilter = `$filter=Enabled ne false \
-and EndDateTime ge datetime'${dateFilter}'\
+and EndDateTime ge datetime'${datetime}'\
 and CalendarType eq 'User Groups'\
 &$orderby=StartDateTime asc\
 &$top=1`;
@@ -26,10 +23,9 @@ and CalendarType eq 'User Groups'\
   );
 };
 
-export const getUpcomingEvents = async (datetime: Dayjs, top: number) => {
-  const dateFilter = datetime.format(odataDateFormat);
+export const getUpcomingEvents = async (datetime: string, top: number) => {
   const odataFilter = `$filter=Enabled ne false \
-and EndDateTime gt datetime'${dateFilter}'\
+and EndDateTime gt datetime'${datetime}'\
 &$orderby=StartDateTime asc\
 &$top=${top}`;
 

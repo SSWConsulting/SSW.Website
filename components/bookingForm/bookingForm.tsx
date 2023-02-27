@@ -1,8 +1,8 @@
+import axios from "axios";
 import { Form, Formik } from "formik";
 import { useRouter } from "next/router";
 import { useEffect, useMemo, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import { createLead } from "../../services";
 import FormGroupInput from "../form/formGroupInput";
 import FormGroupSelect from "../form/formGroupSelect";
 import FormGroupTextArea from "../form/formGroupTextArea";
@@ -86,7 +86,8 @@ export const BookingForm = ({ recaptchaKey }) => {
     );
     actions.setSubmitting(false);
 
-    await createLead(data)
+    await axios
+      .post("/api/create-lead", data)
       .then(() => {
         setContactSuccess(true);
         setTimeout(function () {
@@ -123,7 +124,12 @@ export const BookingForm = ({ recaptchaKey }) => {
             {CONTACT_FORM_TITLE}
           </h2>
           {!!contactSuccess && (
-            <div className={"relative mb-8 rounded border-1 border-solid border-green-100 bg-green-50 p-4 text-green-900"} role="alert">
+            <div
+              className={
+                "relative mb-8 rounded border-1 border-solid border-green-100 bg-green-50 p-4 text-green-900"
+              }
+              role="alert"
+            >
               An email has been sent to the SSW Sales team and someone will be
               in contact with you soon
             </div>
@@ -209,7 +215,7 @@ export const BookingForm = ({ recaptchaKey }) => {
 
                 <FormGroupTextArea
                   label={ACTIVE_INPUT.Note}
-                placeholder="How can we help you?"
+                  placeholder="How can we help you?"
                   rows={4}
                   maxLength={2000}
                   {...getCommonFieldProps(FORM_INPUT.Note)}

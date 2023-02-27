@@ -7,7 +7,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
 
-import { EventInfo, getUpcomingEvents } from "../../services";
+import axios from "axios";
+import { EventInfo } from "../../services";
 
 dayjs.extend(utc);
 dayjs.extend(isBetween);
@@ -22,7 +23,9 @@ export const UpcomingEvents = ({ data }) => {
       const datetime = dayjs.utc().startOf("day");
 
       setLoading(true);
-      const res = await getUpcomingEvents(datetime, data.numberOfEvents);
+      const res = await axios.get<EventInfo[]>("/api/get-upcoming-events", {
+        params: { datetime: datetime.toISOString(), top: data.numberOfEvents },
+      });
       setLoading(false);
 
       if (res?.status !== 200 || !res.data.length) return;

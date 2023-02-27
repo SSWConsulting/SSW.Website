@@ -1,3 +1,4 @@
+import axios from "axios";
 import classNames from "classnames";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -16,12 +17,7 @@ import {
 } from "react-icons/fa";
 import { Tooltip } from "react-tooltip/dist/react-tooltip.umd"; // Workaround for render issue. See https://github.com/ReactTooltip/react-tooltip/issues/933
 import layoutData from "../../content/global/index.json";
-import {
-  LiveStreamWidgetInfo,
-  SpeakerInfo,
-  getLiveStreamWidgetInfo,
-  getSpeakersInfo,
-} from "../../services";
+import { LiveStreamWidgetInfo, SpeakerInfo } from "../../services";
 import ReactPlayer from "../reactPlayer/reactPlayer";
 import styles from "./liveStream.module.css";
 import { LiveStreamProps } from "./useLiveStreamProps";
@@ -106,7 +102,12 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
         return;
       }
 
-      const widgetInfoRes = await getLiveStreamWidgetInfo(event.Id);
+      const widgetInfoRes = await axios.get<LiveStreamWidgetInfo>(
+        "/api/get-livestream-widget",
+        {
+          params: { eventId: event.Id },
+        }
+      );
 
       if (widgetInfoRes.status === 200 && widgetInfoRes.data) {
         setWidgetInfo(widgetInfoRes.data);
@@ -133,8 +134,23 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
         const speakersInfo: SpeakerInfo[] = [];
 
         if (ids.length || emails.length) {
-          const remoteSpeakersInfo = await getSpeakersInfo(ids, emails);
-          speakersInfo.push(...remoteSpeakersInfo);
+          const idsParam = ids
+            .map(id => `ids=${id}`)
+            .join("&");
+          const emailsParam = emails
+            .map(email => `emails=${email}`)
+            .join("&");
+
+          const remoteSpeakersInfoRes = await axios.get<SpeakerInfo[]>(
+            `/api/get-speakers?${idsParam}&${emailsParam}`
+          );
+
+          if (
+            remoteSpeakersInfoRes.status === 200 &&
+            remoteSpeakersInfoRes.data.length
+          ) {
+            speakersInfo.push(...remoteSpeakersInfoRes.data);
+          }
         } else {
           speakersInfo.push({
             Title: widgetInfoRes.data.Presenter,
