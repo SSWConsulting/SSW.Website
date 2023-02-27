@@ -94,7 +94,10 @@ export const BookingForm = ({ recaptchaKey }) => {
           router.push("/thankyou/");
         }, 1000);
       })
-      .catch(() => alert("Failed to create lead in CRM"));
+      .catch((err) => {
+        console.error(err);
+        return alert("Failed to create lead in CRM")
+      });
   };
 
   const getCommonFieldProps = (fieldName: string) => ({
