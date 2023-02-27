@@ -9,8 +9,6 @@ export default async function handler(
     const idsParam = req.query["ids"];
     const emailsParam = req.query["emails"];
 
-    console.log('query', req.query)
-
     const ids = typeof idsParam === "string" ? [idsParam] : idsParam;
     const emails =
       typeof emailsParam === "string" ? [emailsParam] : emailsParam;

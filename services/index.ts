@@ -1,6 +1,5 @@
-import axios from "axios";
-import { AxiosResponse } from "axios";
-import dayjs, { Dayjs } from "dayjs";
+import axios, { AxiosResponse } from "axios";
+import dayjs from "dayjs";
 
 export const createLead = async (data: BookingFormSubmissionData) => {
   return await axios.post("https://www.ssw.com.au/ssw/api/crm/createlead", data, {
