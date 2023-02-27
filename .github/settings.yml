@@ -139,6 +139,7 @@ branches:
         contexts:
         - 'Check linked issues'
         - 'CodeQL'
+        - 'dependency-review'
         - 'Deploy to slot'
         - 'lint-code'
         - 'lint-infra'
