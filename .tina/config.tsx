@@ -116,84 +116,6 @@ const config = defineStaticConfig({
           },
           {
             type: "object",
-            label: "Offices",
-            name: "offices",
-            list: true,
-            ui: {
-              itemProps: (item) => {
-                return { label: item?.addressLocality };
-              },
-            },
-            fields: [
-              {
-                type: "string",
-                name: "url",
-                label: "Url",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "name",
-                label: "Name",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "streetAddress",
-                label: "Street Address",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "suburb",
-                label: "Suburb",
-              },
-              {
-                type: "string",
-                name: "addressLocality",
-                label: "Address Locality",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "addressRegion",
-                label: "Address Region",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "addressCountry",
-                label: "Address Country",
-                required: true,
-              },
-              {
-                type: "number",
-                name: "postalCode",
-                label: "Post Code",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "phone",
-                label: "Phone",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "hours",
-                label: "Hours",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "days",
-                label: "Days",
-                required: true,
-              },
-            ],
-          },
-          {
-            type: "object",
             label: "Socials",
             name: "socials",
             list: true,
@@ -601,6 +523,71 @@ const config = defineStaticConfig({
             type: "rich-text",
             label: "About us",
             name: "aboutus",
+          },
+          {
+            type: "string",
+            name: "url",
+            label: "Url",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "name",
+            label: "Name",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "streetAddress",
+            label: "Street Address",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "suburb",
+            label: "Suburb",
+          },
+          {
+            type: "string",
+            name: "addressLocality",
+            label: "Address Locality",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "addressRegion",
+            label: "Address Region",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "addressCountry",
+            label: "Address Country",
+            required: true,
+          },
+          {
+            type: "number",
+            name: "postalCode",
+            label: "Post Code",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "phone",
+            label: "Phone",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "hours",
+            label: "Hours",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "days",
+            label: "Days",
+            required: true,
           },
         ],
       }
