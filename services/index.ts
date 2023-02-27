@@ -194,6 +194,7 @@ export interface LiveStreamWidgetInfo extends LiveStreamBannerInfo {
   YouTubeId: string;
   ChannelId: string;
   EventDescription: string;
+  EventShortDescription: string;
   Presenter: string;
   ExternalPresentersId: {
     results?: string[];
