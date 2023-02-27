@@ -96,3 +96,4 @@ jobs:
           NEXT_PUBLIC_ZENDESK_CHAT_KEY=${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY}}
           GOOGLE_RECAPTCHA_KEY=${{ secrets.GOOGLE_RECAPTCHA_KEY }}
           TINA_TOKEN=${{ secrets.TINA_TOKEN }}
+          SITE_URL=https://ssw.com.au
