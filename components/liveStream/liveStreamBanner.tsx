@@ -23,17 +23,20 @@ export const LiveStreamBanner: FC<LiveStreamProps> = ({
 }) => {
   const router = useRouter();
   const [countdownText, setCountdownText] = useState("");
+  const [showBanner, setShowBanner] = useState<boolean>();
 
   useEffect(() => {
     const formattedCountdown = countdownTextFormat(countdownMins);
     setCountdownText(`Airing in ${formattedCountdown}. `);
-  }, [countdownMins]);
+
+    setShowBanner(
+      !!event &&
+        (!!router.query.liveBanner ||
+          dayjs(event.StartDateTime).isSame(dayjs(), "day"))
+    );
+  }, [countdownMins, event]);
 
   if (!event?.StartDateTime) return <></>;
-
-  const showBanner =
-    router.query.liveBanner ||
-    dayjs(event.StartDateTime).isSame(dayjs(), "day");
 
   if (showBanner) {
     const liveText = "Streaming live now.";
