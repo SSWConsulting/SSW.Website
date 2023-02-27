@@ -35,6 +35,8 @@ const BenefitCard = ({ data, aosType }) => {
 };
 
 export const Benefits = ({ data }) => {
+  if (!data) return <></>;
+
   const { rule, benefitList } = data;
 
   return (
