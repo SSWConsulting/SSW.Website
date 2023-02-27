@@ -82,6 +82,10 @@ labels:
     color: 0E8A16
     description: A code quality improvement e.g. Tech debt
 
+  - name: 'Type: Dependencies'
+    color: FF2222
+    description: Dependabot found some dependencies to upgrade
+
 # Milestones: define milestones for Issues and Pull Requests
 milestones:
   # - title: milestone-title
@@ -138,7 +142,6 @@ branches:
         # Required. The list of status checks to require in order to merge into this branch
         contexts:
         - 'Check linked issues'
-        - 'CodeQL'
         - 'dependency-review'
         - 'Deploy to slot'
         - 'lint-code'
