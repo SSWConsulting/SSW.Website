@@ -35,7 +35,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@headlessui/react": "1.7.11",
+    "@headlessui/react": "1.7.12",
     "@headlessui/tailwindcss": "^0.1.2",
     "@tailwindcss/typography": "^0.5.8",
     "aos": "^2.3.4",
