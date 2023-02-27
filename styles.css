@@ -9,7 +9,7 @@
   }
 
   html {
-    @apply text-[14px] font-body;
+    @apply font-body;
   }
 
   html,
@@ -22,27 +22,31 @@
   h3,
   h4,
   h5 {
-    @apply font-sans leading-[1.2];
+    @apply font-sans leading-tight;
   }
 
   h1 {
-    @apply my-4 pb-[20px] pt-[60px] text-[3.28rem];
+    @apply my-4 pb-5 pt-15 text-4xl;
   }
 
   h2 {
-    @apply mb-[10px] mt-[40px] text-[2.2rem];
+    @apply mb-2.5 mt-10 text-3xl;
   }
 
   h3 {
-    @apply mb-[2px] mt-[10px] text-[1.75rem];
+    @apply mb-0.5 mt-2.5 text-2xl;
   }
 
   h4 {
-    @apply mb-[10px] mt-[20px] font-body text-[1.2rem];
+    @apply text-xl;
+  }
+
+  h5 {
+    @apply text-lg;
   }
 
   h1 + h2 {
-    @apply !mt-[20px];
+    @apply !mt-5;
   }
 
   small {

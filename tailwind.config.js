@@ -235,14 +235,12 @@ module.exports = {
           css: {
             lineHeight: 1.45,
             h1: {
-              fontSize: "2rem",
               fontWeight: "300",
               margin: "1rem 0",
               padding: "60px 0 20px 0",
               lineHeight: 1.2,
             },
             h3: {
-              fontSize: "1.5rem",
               fontWeight: "300",
               marginBottom: "7px",
             },
@@ -259,38 +257,9 @@ module.exports = {
             },
           },
         },
-        tint: {
-          css: {
-            pre: {
-              color: theme("colors.gray.800"),
-              backgroundColor: theme("colors.gray.150"),
-            },
-          },
-        },
-        lg: {
-          css: {
-            pre: {
-              lineHeight: 1.5,
-            },
-            "p:first-of-type": {
-              fontSize: "1.365rem",
-            },
-          },
-        },
-        xl: {
-          css: {
-            pre: {
-              lineHeight: 1.5,
-            },
-            "p:first-of-type": {
-              fontSize: "1.365rem",
-            },
-          },
-        },
         consulting: {
           css: {
             h1: {
-              fontSize: "3.28rem",
               margin: "1rem 0",
               padding: "60px 0 20px 0",
               lineHeight: 1.2,
@@ -300,7 +269,6 @@ module.exports = {
               },
             },
             "p, ul": {
-              fontSize: "1.2rem",
               fontWeight: theme("fontWeight.light"),
               margin: "0 auto",
               padding: "20px 0",
@@ -341,7 +309,6 @@ module.exports = {
               "margin-top": "1rem",
               "margin-bottom": "1rem",
               "text-align": "left",
-              "font-size": "1.25rem",
             },
           }   
         },
@@ -361,7 +328,7 @@ module.exports = {
     }
   },
   variants: {
-    extend: { typography: ["tint", "dark", "primary"] },
+    // extend: { typography: ["tint", "dark", "primary"] },
   },
   plugins: [
     require("@tailwindcss/typography"),

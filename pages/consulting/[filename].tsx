@@ -54,7 +54,7 @@ export default function ConsultingPage(
     <>
       <SEO seo={data.consulting.seo} />
       <Layout>
-        <Section className="mx-auto w-full max-w-7xl py-5 px-8">
+        <Section className="mx-auto w-full max-w-9xl py-5 px-8">
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}
             suffix={data.global.breadcrumbSuffix}
@@ -78,7 +78,7 @@ export default function ConsultingPage(
         >
           <a id="more" />
           <div className="w-full bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
-            <div className="mx-auto max-w-8xl px-4">
+            <div className="mx-auto max-w-9xl px-4">
               <TinaMarkdown
                 components={componentRenderer}
                 content={data.consulting._body}
