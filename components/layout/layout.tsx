@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { classNames } from "tinacms";
@@ -44,11 +45,15 @@ export const Layout = ({ children, className = "" }) => {
           )}
         >
           <header>
-            <LiveStreamBanner {...liveStreamProps} />
+            <Suspense fallback={<></>}>
+              <LiveStreamBanner {...liveStreamProps} />
+            </Suspense>
             <div className="mx-auto max-w-9xl px-6 sm:px-8">
               <Header />
               <MenuBar />
-              <LiveStream {...liveStreamProps} />
+              <Suspense fallback={<></>}>
+                <LiveStream {...liveStreamProps} />
+              </Suspense>
             </div>
           </header>
           <main className="grow bg-white">{children}</main>
