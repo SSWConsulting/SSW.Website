@@ -3,7 +3,9 @@
     "name": "SSW Consulting - Sydney, Brisbane, Melbourne, Newcastle",
     "title": "SSW Consulting - .NET, Web, Mobile, CRM, SharePoint, Azure, Power BI, Angular, React, Office 365 and Dynamics",
     "description": "30+ years of Microsoft software and web development experience in Australia, France and China. We build with Angular, React, .NET, Azure, Dynamics 365 CRM.",
-    "url": "https://www.ssw.com.au/"
+    "url": "https://www.ssw.com.au/",
+    "site_name": "SSW Consulting",
+    "alternate_site_name": "SSW"
   },
   "aboutUs": {
     "video": {

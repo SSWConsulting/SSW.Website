@@ -1,5 +1,5 @@
 .hr-arrow {
-  @apply overflow-visible text-center text-[#d5d5d5];
+  @apply overflow-visible text-center text-gray-300;
 }
 
 .hr-arrow:after {
@@ -12,37 +12,4 @@
 
 .hr-arrow.hr-arrow-expand {
   @apply after:content-['\f107'];
-}
-
-.event-description-wrapper {
-  @apply transition-all;
-}
-
-.event-description-wrapper p {
-  @apply mb-3;
-}
-
-.speaker-description-wrapper span,
-.speaker-description-wrapper p {
-  @apply !font-body !text-sm;
-}
-
-.collapse-cover {
-  @apply relative -mt-[60px] w-full bg-gradient-to-b from-transparent to-gray-75 pt-[60px];
-}
-
-a.social-media-icon {
-  @apply inline-block p-[10px] hover:bg-gray-1000 hover:bg-none;
-}
-
-.video-player-wrapper {
-  @apply relative h-0 pt-[56.25%];
-}
-
-.video-thumbnail-wrapper {
-  @apply fixed top-2 right-0 z-99 h-[212px] w-[376px];
-}
-
-.live-chat-wrapper {
-@apply hidden sm:col-span-3 sm:block sm:h-[420px] md:col-span-1 md:h-full
 }

@@ -2,14 +2,15 @@ import React from "react";
 import Link from "next/link";
 import { IconType } from "react-icons";
 import {
-  FaPhoneAlt as FaPhone,
-  FaYoutube,
-  FaLinkedinIn,
   FaFacebookF,
-  FaInstagram,
-  FaTwitter,
   FaGithub,
+  FaInstagram,
+  FaLinkedinIn,
+  FaMeetup,
+  FaPhoneAlt as FaPhone,
   FaTiktok,
+  FaTwitter,
+  FaYoutube,
 } from "react-icons/fa";
 import classNames from "classnames";
 
@@ -21,6 +22,7 @@ export enum SocialTypes {
   linkedin = "linkedin",
   facebook = "facebook",
   instagram = "instagram",
+  meetup = "meetup",
   twitter = "twitter",
   tiktok = "tiktok",
   github = "github",
@@ -86,6 +88,13 @@ const socialStyles = new Map<
       bgClassName: "bg-social-github",
     },
   ],
+  [
+    SocialTypes.meetup,
+    {
+      icon: FaMeetup,
+      bgClassName: "bg-social-meetup",
+    },
+  ],
 ]);
 
 export interface SocialIconsParams {
@@ -98,11 +107,11 @@ export const SocialIcons = (data?: SocialIconsParams) => {
   return (
     <div
       className={classNames(
-        "flex flex-grow gap-2 sm:flex-grow-0",
+        "flex flex-grow gap-2 sm:flex-grow-0 flex-wrap",
         data?.className
       )}
     >
-      {layoutData.socials.filter(s => s.showOnHeader).map((social) => {
+      {layoutData.socials.map((social) => {
         const hideOnDesktop =
           data.excludeDesktop?.length &&
           data.excludeDesktop.includes(SocialTypes[social.type]);

@@ -4,40 +4,17 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import { FC, useEffect, useState } from "react";
-import { IconType } from "react-icons";
-import {
-  FaEnvelope,
-  FaFacebookF,
-  FaGithub,
-  FaInstagram,
-  FaLinkedinIn,
-  FaMeetup,
-  FaTwitter,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
 import { Tooltip } from "react-tooltip/dist/react-tooltip.umd"; // Workaround for render issue. See https://github.com/ReactTooltip/react-tooltip/issues/933
 import layoutData from "../../content/global/index.json";
 import { LiveStreamWidgetInfo, SpeakerInfo } from "../../services";
 import ReactPlayer from "../reactPlayer/reactPlayer";
+import { SocialIcons, SocialTypes } from "../util/socialIcons";
 import styles from "./liveStream.module.css";
 import { LiveStreamProps } from "./useLiveStreamProps";
 
 export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
   const eventDescriptionCollapseId = "eventDescription";
-  const socialMediaTypes: {
-    [key: string]: { icon: IconType; bgClass: string };
-  } = {
-    meetup: { icon: FaMeetup, bgClass: "bg-social-meetup" },
-    facebook: { icon: FaFacebookF, bgClass: "bg-social-facebook" },
-    linkedin: { icon: FaLinkedinIn, bgClass: "bg-social-linkedin" },
-    twitter: { icon: FaTwitter, bgClass: "bg-social-twitter" },
-    youtube: { icon: FaYoutube, bgClass: "bg-social-youtube" },
-    instagram: {
-      icon: FaInstagram,
-      bgClass: "bg-gradient-tr-social-instagram",
-    },
-    github: { icon: FaGithub, bgClass: "bg-social-github" },
-  };
 
   const [widgetInfo, setWidgetInfo] = useState<LiveStreamWidgetInfo>();
   const [speakersInfo, setSpeakersInfo] = useState<SpeakerInfo[]>([]);
@@ -53,32 +30,6 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
     useState<boolean>();
 
   const router = useRouter();
-
-  const videoPlayer = () => (
-    <ReactPlayer
-      url={youtubeUrls.videoUrl}
-      width="100%"
-      height="100%"
-      controls={true}
-    />
-  );
-
-  const socialMediaIcon = (key: string) => {
-    const link = layoutData.socials.find((s) => s.type === key)?.url;
-    const bgClass = socialMediaTypes[key].bgClass;
-    const MediaType = socialMediaTypes[key].icon;
-
-    return (
-      <a
-        className={classNames(styles["social-media-icon"], bgClass)}
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <MediaType className="text-3xl" color="white" />
-      </a>
-    );
-  };
 
   const collapsableWidgetRefCallback = (e: HTMLDivElement) => {
     !!e &&
@@ -134,11 +85,9 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
         const speakersInfo: SpeakerInfo[] = [];
 
         if (ids.length || emails.length) {
-          const idsParam = ids
-            .map(id => `ids=${id}`)
-            .join("&");
+          const idsParam = ids.map((id) => `ids=${id}`).join("&");
           const emailsParam = emails
-            .map(email => `emails=${email}`)
+            .map((email) => `emails=${email}`)
             .join("&");
 
           const remoteSpeakersInfoRes = await axios.get<SpeakerInfo[]>(
@@ -172,7 +121,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
     <>
       <Script src="https://apis.google.com/js/platform.js" />
       <div className="grid grid-cols-4">
-        <div className="col-span-1">
+        <div className="col-span-2 sm:col-span-1">
           <Image
             src="/images/logos/SSW_NUG_Live.png"
             width="239"
@@ -181,14 +130,14 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
             className="object-contain"
           />
         </div>
-        <div className="col-span-3 flex items-center justify-end">
-          <span className="pr-2">Subscribe to SSW TV</span>
+        <div className="col-span-2 flex items-center justify-end sm:col-span-3">
+          <span className="hidden pr-2 sm:inline">Subscribe to SSW TV</span>  
           <div
             className="g-ytsubscribe"
             data-channelid={widgetInfo.ChannelId}
             data-layout="default"
             data-count="default"
-          ></div>
+            ></div>
         </div>
       </div>
 
@@ -220,23 +169,33 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
       >
         <div className="mb-4 grid grid-cols-3 gap-8">
           <div id="thumbnailAnchor" className="col-span-3 md:col-span-2">
-            <div className={styles["video-player-wrapper"]}>
+            <div className="relative h-0 pt-9/16">
               <div className="absolute top-0 h-full w-full">
-                {videoPlayer()}
+                <ReactPlayer
+                  url={youtubeUrls.videoUrl}
+                  width="100%"
+                  height="100%"
+                  controls={true}
+                />
               </div>
             </div>
           </div>
           {/* custom fixed width and height to have best looking and fixed size for different screens */}
           <div
-            className={styles["video-thumbnail-wrapper"]}
+            className={"fixed top-2 right-0 z-99 aspect-video h-56"}
             data-aos="slide-left"
             data-aos-duration={500}
             data-aos-anchor="#thumbnailAnchor"
             data-aos-anchor-placement="bottom-top"
           >
-            {videoPlayer()}
+            <ReactPlayer
+              url={youtubeUrls.videoUrl}
+              width="100%"
+              height="100%"
+              controls={true}
+            />
           </div>
-          <div className={styles["live-chat-wrapper"]}>
+          <div className="hidden h-full sm:col-span-3 sm:block md:col-span-1">
             <iframe width="100%" height="100%" src={youtubeUrls.chatUrl} />
           </div>
           <div className="col-span-3 block sm:hidden">
@@ -342,7 +301,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
                 id={eventDescriptionCollapseId}
                 ref={collapsableEventDescriptionRefCallback}
                 className={classNames(
-                  styles["event-description-wrapper"],
+                  "prose",
                   { "max-h-70": collapseMap[eventDescriptionCollapseId] },
                   { "max-h-screen": !collapseMap[eventDescriptionCollapseId] },
                   {
@@ -350,14 +309,15 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
                   }
                 )}
                 dangerouslySetInnerHTML={{
-                  __html: widgetInfo.EventDescription,
+                  __html:
+                    widgetInfo.EventDescription ||
+                    widgetInfo.EventShortDescription,
                 }}
               ></div>
               {eventDescriptionCollapsable && (
                 <div
                   className={classNames({
-                    [styles["collapse-cover"]]:
-                      collapseMap[eventDescriptionCollapseId],
+                    "relative -mt-15 w-full bg-gradient-to-b from-transparent to-gray-75 pt-15": collapseMap[eventDescriptionCollapseId],
                   })}
                 >
                   <a
@@ -379,15 +339,10 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
 
             <div className="mt-17">
               <h4 className="font-bold">Follow us on:</h4>
-              <div className="flex gap-x-4">
-                {socialMediaIcon("meetup")}
-                {socialMediaIcon("facebook")}
-                {socialMediaIcon("linkedin")}
-                {socialMediaIcon("twitter")}
-                {socialMediaIcon("youtube")}
-                {socialMediaIcon("instagram")}
-                {socialMediaIcon("github")}
-              </div>
+              <SocialIcons
+                excludeDesktop={[SocialTypes.phone]}
+                excludeMobile={[SocialTypes.phone]}
+              />
             </div>
 
             <div className="mt-17">
@@ -431,7 +386,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
                   <div className="col-span-5">
                     <p className="mb-3 font-bold">{speakerInfo.Title}</p>
                     <p
-                      className={styles["speaker-description-wrapper"]}
+                      className="prose-sm"
                       dangerouslySetInnerHTML={{
                         __html: speakerInfo.PresenterShortDescription,
                       }}
