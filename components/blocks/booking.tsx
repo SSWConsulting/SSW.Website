@@ -11,7 +11,7 @@ export const Booking: FC<{
   return (
     <>
       <Container padding="px-4" className="w-full">
-        <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
+        <h1 className="md:px-32 lg:px-48" dangerouslySetInnerHTML={{ __html: title }}></h1>
         <h2>{subTitle}</h2>
         {children}
         <div className="flex animate-more-bounce flex-col items-center pt-20">
