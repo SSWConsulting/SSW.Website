@@ -102,6 +102,16 @@ const config = defineStaticConfig({
                 label: "URL",
                 name: "url",
               },
+              {
+                type: "string",
+                label: "Site Name",
+                name: "site_name",
+              },
+              {
+                type: "string",
+                label: "Alternate Site Name",
+                name: "alternate_site_name",
+              },
             ],
           },
           {
