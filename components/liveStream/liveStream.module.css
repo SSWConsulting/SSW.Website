@@ -1,0 +1,15 @@
+.hr-arrow {
+  @apply overflow-visible text-center text-gray-300;
+}
+
+.hr-arrow:after {
+  @apply relative -top-4 inline-block bg-white px-1 font-['FontAwesome'] text-lg;
+}
+
+.hr-arrow.hr-arrow-collapse {
+  @apply after:content-['\f106'];
+}
+
+.hr-arrow.hr-arrow-expand {
+  @apply after:content-['\f107'];
+}

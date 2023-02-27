@@ -27,6 +27,7 @@ module.exports = {
       "social-twitter": "#55acee",
       "social-tiktok": "#000",
       "social-github": "#000",
+      "social-meetup": "#f05664",
       sswRed: "#cc4141",
       azure: "#007fff",
       gray: {
@@ -122,6 +123,7 @@ module.exports = {
         88: "22rem",
       },
       minHeight: {
+        70: "17.5rem",
         158: "39.5rem",
         1025: "410px",
         "800px": "800px",
@@ -179,6 +181,7 @@ module.exports = {
         15: "60px",
         17: "4.25rem",
         25: "100px",
+        70: "17.5rem",
         128: "32rem",
         150: "40rem",
         liveStream: "75px",
@@ -187,6 +190,7 @@ module.exports = {
         "9/16": "56.25%",
       },
       zIndex: {
+        "99": "99",
         "-100": "-100",
         "-1": "-1",
       },

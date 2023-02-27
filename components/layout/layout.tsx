@@ -1,16 +1,19 @@
-import React from "react";
+import { Suspense } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { classNames } from "tinacms";
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { Theme } from "./theme";
 import { MenuBar } from "ssw.megamenu";
-import { classNames } from "tinacms";
-import { LiveStreamBanner } from "../liveStreamBanner";
+import { LiveStream } from "../liveStream/liveStream";
+import { LiveStreamBanner } from "../liveStream/liveStreamBanner";
+import { useLiveStreamProps } from "../liveStream/useLiveStreamProps";
 
 import layoutData from "../../content/global/index.json";
 
 export const Layout = ({ children, className = "" }) => {
+  const liveStreamProps = useLiveStreamProps();
   const router = useRouter();
 
   const structuredData = {
@@ -42,11 +45,16 @@ export const Layout = ({ children, className = "" }) => {
           )}
         >
           <header>
-            <LiveStreamBanner />
+            <Suspense fallback={<></>}>
+              <LiveStreamBanner {...liveStreamProps} />
+            </Suspense>
             <div className="mx-auto max-w-9xl px-6 sm:px-8">
               <Header />
+              <MenuBar />
+              <Suspense fallback={<></>}>
+                <LiveStream {...liveStreamProps} />
+              </Suspense>
             </div>
-            <MenuBar className="mx-auto max-w-9xl px-6 sm:px-8" />
           </header>
           <main className="grow bg-white">{children}</main>
           <Footer />
