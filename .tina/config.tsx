@@ -576,6 +576,34 @@ const config = defineStaticConfig({
           },
         ],
       },
+      {
+        label: "Office Pages",
+        name: "offices",
+        format: "mdx",
+        path: "content/offices",
+        ui: {
+          router: ({ document }) => {
+            return `/offices/${document._sys.filename}`;
+          },
+        },
+        fields: [
+          {
+            type: "string",
+            label: "Heading",
+            name: "heading",
+          },
+          {
+            type: "string",
+            label: "Subheading",
+            name: "subheading",
+          },
+          {
+            type: "rich-text",
+            label: "About us",
+            name: "aboutus",
+          },
+        ],
+      }
     ],
   },
 });
