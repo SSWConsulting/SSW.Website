@@ -57,7 +57,7 @@ export const LiveStreamBanner: FC<LiveStreamProps> = ({
         <a className="unstyled" href="https://ssw.com.au/live">
           <div
             className={classNames(
-              "mx-auto max-w-9xl bg-gray-900 bg-right-top bg-no-repeat p-5 px-6 py-1 uppercase sm:px-8",
+              "mx-auto max-w-9xl bg-gray-900 bg-right-top bg-no-repeat px-6 py-1 uppercase sm:px-8",
               isLive ? "md:bg-live-banner-live" : "md:bg-live-banner-wait"
             )}
           >
@@ -65,10 +65,9 @@ export const LiveStreamBanner: FC<LiveStreamProps> = ({
               {event.Title}
             </h1>
             <p className="py-0 text-xs text-white">
-              <span className="text-sswRed">
+              <span className="text-sswRed block">
                 {isLive ? liveText : countdownText}
               </span>
-              <br />
               {!isLive && scheduledTimeText(dayjs(event.StartDateTime))}
             </p>
           </div>
