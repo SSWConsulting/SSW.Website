@@ -5,12 +5,14 @@ import { LiveStreamBannerInfo } from "../../services";
 
 export type LiveStreamProps = {
   countdownMins: number;
+  liveStreamDelayMinutes: number;
   isLive: boolean;
   event?: LiveStreamBannerInfo;
 };
 
-export function useLiveStreamProps(intervalMinutes?: number): LiveStreamProps {
+export function useLiveStreamProps(liveStreamDelayMinutes?: number, intervalMinutes?: number): LiveStreamProps {
   !intervalMinutes && (intervalMinutes = 1);
+  !liveStreamDelayMinutes && (liveStreamDelayMinutes = 30);
 
   const [countdownMins, setCountdownMins] = useState<number>();
   const [event, setEvent] = useState<LiveStreamBannerInfo>();
@@ -42,7 +44,7 @@ export function useLiveStreamProps(intervalMinutes?: number): LiveStreamProps {
         const latestEvent = res.data[0];
         setEvent(latestEvent);
 
-        const start = dayjs(latestEvent.StartDateTime);
+        const start = dayjs(latestEvent.StartDateTime).add(liveStreamDelayMinutes, 'minute');
         setCountdownMins(start.diff(rightnow, "minute"));
 
         shouldCountdown.current = true;
@@ -72,6 +74,7 @@ export function useLiveStreamProps(intervalMinutes?: number): LiveStreamProps {
 
   return {
     countdownMins,
+    liveStreamDelayMinutes,
     event,
     isLive,
   };

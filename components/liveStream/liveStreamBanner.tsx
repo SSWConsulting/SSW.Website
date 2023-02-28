@@ -18,12 +18,24 @@ dayjs.extend(timezone);
 
 export const LiveStreamBanner: FC<LiveStreamProps> = ({
   countdownMins,
+  liveStreamDelayMinutes,
   isLive,
   event,
 }) => {
   const router = useRouter();
   const [countdownText, setCountdownText] = useState("");
   const [showBanner, setShowBanner] = useState<boolean>();
+
+  const scheduledTimeText = (startDateTime: dayjs.Dayjs) => {
+    const sydStartTime = startDateTime.tz("Australia/Sydney").format("h:mm a");
+    const sydLiveTime = startDateTime
+      .add(liveStreamDelayMinutes, "minute")
+      .tz("Australia/Sydney")
+      .format("h:mm a");
+    return `Live stream starts at ${sydLiveTime} Sydney, doors open at ${sydStartTime} Sydney. ${startDateTime.format(
+      "Do MMM YYYY "
+    )} #NetUG`;
+  };
 
   useEffect(() => {
     const formattedCountdown = countdownTextFormat(countdownMins);
@@ -45,7 +57,7 @@ export const LiveStreamBanner: FC<LiveStreamProps> = ({
         <a className="unstyled" href="https://ssw.com.au/live">
           <div
             className={classNames(
-              "mx-auto max-w-9xl bg-gray-900 bg-right-top bg-no-repeat p-5 px-6 uppercase sm:px-8",
+              "mx-auto max-w-9xl bg-gray-900 bg-right-top bg-no-repeat p-5 px-6 py-1 uppercase sm:px-8",
               isLive ? "md:bg-live-banner-live" : "md:bg-live-banner-wait"
             )}
           >
@@ -56,7 +68,8 @@ export const LiveStreamBanner: FC<LiveStreamProps> = ({
               <span className="text-sswRed">
                 {isLive ? liveText : countdownText}
               </span>
-              {!isLive && scheduledTimeText(dayjs(event.StartDateTime))} #NetUG
+              <br />
+              {!isLive && scheduledTimeText(dayjs(event.StartDateTime))}
             </p>
           </div>
         </a>
@@ -66,8 +79,3 @@ export const LiveStreamBanner: FC<LiveStreamProps> = ({
     return <></>;
   }
 };
-
-function scheduledTimeText(startDateTime: dayjs.Dayjs) {
-  const sydStartTime = startDateTime.tz("Australia/Sydney").format("h a");
-  return `${sydStartTime} Sydney, ${startDateTime.format("Do MMM YYYY ")}`;
-}
