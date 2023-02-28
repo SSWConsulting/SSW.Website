@@ -553,7 +553,7 @@ const config = defineStaticConfig({
                       name="rating"
                       id="rating"
                       type="range"
-                      min="1"
+                      min="-1"
                       max="5"
                       step="1"
                       // This will pass along props.input.onChange to set our form values as this input changes.
