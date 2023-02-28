@@ -20,6 +20,7 @@ module.exports = {
       purple: colors.purple,
       pink: colors.pink,
       yellow: colors.yellow,
+      amber: colors.amber,
       "social-phone": "#b31217",
       "social-youtube": "#b31217",
       "social-linkedin": "#0077b5",

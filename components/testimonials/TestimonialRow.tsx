@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import classNames from "classnames";
 import Image from "next/legacy/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Container } from "../util/container";
+import { AiFillStar } from "react-icons/ai";
 import styles from "./TestimonialRow.module.css";
 
 export const TestimonialRow = ({ testimonialsQueryResult }) => {
@@ -20,7 +22,7 @@ export const TestimonialRow = ({ testimonialsQueryResult }) => {
 
   return (
     <Container size="custom">
-      <div className="mt-17 grid sm:grid-flow-row md:grid-flow-col">
+      <div className="mt-17 grid gap-12 md:grid-cols-3">
         {getTestimonialCards(randomTestimonials)}
       </div>
     </Container>
@@ -29,26 +31,33 @@ export const TestimonialRow = ({ testimonialsQueryResult }) => {
 
 const getTestimonialCards = (data) => {
   return data?.map((testimonial, i) => (
-    <div className="not-prose p-5" key={i}>
       <div
-        className={`${styles.testimonialBubble} rounded-lg bg-gray-100 p-10 text-xl sm:h-64 md:h-full`}
-        data-aos="flip-right"
+        className="flex flex-col rounded border-b-4 border-b-sswRed bg-white p-10 text-center text-xl drop-shadow sm:h-96 md:h-full"
+        key={i}
+        // data-aos="flip-right"
       >
-        <TinaMarkdown content={testimonial?.body} />
-      </div>
-      <div className="m-2 mt-6 flex text-gray-900">
-        {/* TODO: refactor with next/image */}
-        <Image
-          src={testimonial?.avatar ?? ""}
-          height={56}
-          width={56}
-          className="rounded-full"
-        />
-        <div className="ml-2">
-          <p className="font-semibold">{testimonial?.name}</p>
-          <p>{testimonial?.company}</p>
+        <div className="mb-10">
+          <div className="mb-5 flex flex-col items-center">
+            <Image
+              src={testimonial?.avatar ?? ""}
+              height={80}
+              width={80}
+              className="rounded-full"
+            />
+            <div className="mt-5 flex items-center"> 
+              {Array.from(Array(5).keys()).map((rating) => (
+                <AiFillStar key={rating}
+                  className={classNames(testimonial?.rating > rating ? "text-amber-500" : "text-gray-200", "h-5 w-5 flex-shrink-0")} 
+                  aria-hidden="true"
+                />
+              ))}
+            </div> 
+          </div>
+          <p>{testimonial?.name}, <span className="font-semibold">{testimonial?.company}</span></p>
         </div>
-      </div>
+        <div className="text-md font-light text-gray-400">
+          <TinaMarkdown content={testimonial?.body} />
+        </div>
     </div>
   ));
 };
