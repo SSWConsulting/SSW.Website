@@ -5,6 +5,7 @@ export const Section = ({ children, color = "", className = "", style = {} }) =>
   const sectionColor = {
     default: "bg-white text-black",
     lightgray: "bg-gray-100 text-black",
+    darkgray: "bg-gray-900 text-black",
     red: "bg-sswRed text-white",
     black: "bg-black text-white",
   };

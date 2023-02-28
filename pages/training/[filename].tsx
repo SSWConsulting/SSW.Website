@@ -64,8 +64,21 @@ export default function TrainingPage(
           />
         </Section>
 
-        <Section className="bg-gray-75 pb-40">
-          <Container className={"flex-1"}>
+        <Section color="white" className="pb-12">
+          <Container className={"flex-1 pt-0 text-center"}>
+          </Container>
+        </Section>
+
+        <Section color="darkgray" className="pb-12">
+          <Container className={"flex flex-1 flex-col items-center pt-0 text-center"}>
+            <h1 className="pt-12 text-white">Popular courses from <span className="text-sswRed">SSWTV</span> channel</h1>
+            <p className="max-w-3xl text-base text-gray-500">List of the most popular courses videos that liked by our developers</p>
+
+          </Container>
+        </Section>
+
+        <Section color="lightgray" className="">
+          <Container className={"flex-1 pt-0"}>
             <div className="mx-auto flex max-w-9xl flex-col items-center">
               <h1>What do people <span className="text-sswRed">say</span>?</h1>
               <p className="text-lg font-light text-gray-500">Review from members who has taken our programs</p>
@@ -74,8 +87,8 @@ export default function TrainingPage(
           </Container>
         </Section>
 
-        <Section className="bg-white pb-40">
-          <Container className={"flex-1 pt-4"}>
+        <Section color="white">
+          <Container className={"flex-1 pt-0"}>
             <div className="flex flex-col items-center pb-15 text-center">
               <h1>Trusted by more than <span className="text-sswRed">1400+</span> clients in the world</h1>
               <p className="max-w-3xl text-lg font-light text-gray-500">Our software developers & consultants have delivered the best in the business to more than 1,400 clients in 15 countries. Read more</p>
@@ -84,17 +97,15 @@ export default function TrainingPage(
           </Container>
         </Section>
 
-        <Section className="bg-gray-900">
-          <Container className={"flex-1 pt-4"}>
-            <p className="">Subscribe to get notified about SSW training programs</p>
-            <p>Subscribe to get notified about SSW training programs</p>
+        <Section color="darkgray">
+          <Container className={"flex flex-1 flex-col items-center pt-15 text-center"}>
+            <p className="text-3xl font-light text-white">Subscribe to get notified about SSW training programs</p>
+            <p className="text-base text-gray-500">Subscribe to get notified about SSW training programs</p>
 
-            <div>
-              <input type="text" placeholder="Enter your email" />
-              <button>Subscribe</button>
+            <div className="flex flex-col items-center pt-8 pb-12 md:flex-row">
+              <input type="text" className="mr-5 w-96 bg-gray-800 px-5 py-3 text-white" placeholder="Enter your email" />
+              <button className="mt-5 w-36 bg-sswRed px-5 py-3 text-white md:mt-0">Subscribe</button>
             </div>
-      
-             
           </Container>
         </Section>
       </Layout>

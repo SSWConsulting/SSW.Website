@@ -14,6 +14,11 @@ const ZendeskButton = ({ zendeskKey }) => {
     const script = document.getElementById("ze-snippet");
     setLoaded(!!script);
 
+    zdscript.current = document.createElement("script");
+    zdscript.current.setAttribute("id", "ze-snippet");
+    zdscript.current.src = `https://static.zdassets.com/ekr/snippet.js?key=${zendeskKey}`;
+    document.getElementsByTagName("body")[0].appendChild(zdscript.current);
+
     return () => {
       clickEvent.current && clearInterval(clickEvent.current);
       clickEvent.current = undefined;
