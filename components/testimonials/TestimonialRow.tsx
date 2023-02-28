@@ -4,7 +4,6 @@ import Image from "next/legacy/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Container } from "../util/container";
 import { AiFillStar } from "react-icons/ai";
-import styles from "./TestimonialRow.module.css";
 
 export const TestimonialRow = ({ testimonialsQueryResult }) => {
   const testimonialsData =
@@ -34,7 +33,7 @@ const getTestimonialCards = (data) => {
       <div
         className="flex flex-col rounded border-b-4 border-b-sswRed bg-white p-10 text-center text-xl drop-shadow sm:h-96 md:h-full"
         key={i}
-        // data-aos="flip-right"
+        data-aos="flip-right"
       >
         <div className="mb-10">
           <div className="mb-5 flex flex-col items-center">
