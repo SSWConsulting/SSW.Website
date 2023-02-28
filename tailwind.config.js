@@ -107,6 +107,9 @@ module.exports = {
       4: "4px",
     },
     extend: {
+      backgroundPosition: {
+        "right-bottom-4": "right 1rem bottom 1rem",
+      },
       content: {
         "bread": "'>'",
       },
@@ -260,10 +263,6 @@ module.exports = {
         consulting: {
           css: {
             h1: {
-              margin: "1rem 0",
-              padding: "60px 0 20px 0",
-              lineHeight: 1.2,
-              fontWeight: theme("fontWeight.light"),
               "> strong": {
                 color: theme("colors.sswRed"),
               },
@@ -273,6 +272,9 @@ module.exports = {
               margin: "0 auto",
               padding: "20px 0",
               width: "75%",
+            },
+            "p > img": {
+              margin: "0 auto",
             },
             "ul > li": {
               display: "block",
@@ -290,27 +292,6 @@ module.exports = {
             },
 
           },
-        },
-        "technology-card": {
-          css: {
-            "border-bottom-width": "2px",
-            "border-style": "solid",
-            "border-bottom-color": theme("colors.sswRed"),
-            "background-color": theme("colors.gray.75"),
-            "padding": "2.75rem 4rem",
-            
-            "&.thumbnail-card": {
-              "background-size": "30px 25px",
-              "background-position": "95% 92%",
-              "background-repeat": "no-repeat",
-            },
-
-            p: {
-              "margin-top": "1rem",
-              "margin-bottom": "1rem",
-              "text-align": "left",
-            },
-          }   
         },
       }),
       backgroundImage: {

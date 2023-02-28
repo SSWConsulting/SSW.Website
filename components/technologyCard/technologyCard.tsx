@@ -1,10 +1,8 @@
-import Link from "next/link";
 import { FC } from "react";
-import { BASE_URL } from "../util/constants";
-import { TechnologyCardProps } from "./technologyCardTypes";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+import Link from "next/link";
 import Image from "next/image";
-import classnames from "classnames";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { TechnologyCardProps } from "./technologyCardTypes";
 
 const TechnologyCard: FC<TechnologyCardProps> = ({
   name,
@@ -14,12 +12,12 @@ const TechnologyCard: FC<TechnologyCardProps> = ({
   className,
 }) => {
   return (
-    <div className={classnames("col-span-12", className)}>
+    <div className={className}>
       <article
-        className="prose-technology-card mx-3.5 mb-15 mt-5 h-full p-10"
+        className="mx-3.5 mb-15 mt-5 flex h-full flex-col border-b-2 border-solid border-sswRed bg-gray-75 py-11 px-16"
         data-aos="flip-left"
       >
-        {thumbnail && (
+        {thumbnail ? (
           <figure className="relative h-24">
             <Image
               src={thumbnail || "/images/ssw-logo.svg"}
@@ -28,10 +26,14 @@ const TechnologyCard: FC<TechnologyCardProps> = ({
               className="object-contain"
             ></Image>
           </figure>
+        ) : (
+          <h2>{name}</h2>
         )}
-        <TinaMarkdown content={body} />
+        <div className="prose max-w-full grow prose-p:text-justify prose-strong:text-sswRed">
+          <TinaMarkdown content={body} />
+        </div>
         {readMoreSlug && (
-          <Link className="text-md" href={BASE_URL + readMoreSlug}>
+          <Link className="text-md" href={readMoreSlug}>
             Read More
           </Link>
         )}

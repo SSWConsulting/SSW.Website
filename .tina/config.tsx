@@ -391,6 +391,11 @@ const config = defineStaticConfig({
                 list: true,
                 label: "benefit list",
                 name: "benefitList",
+                ui: {
+                  itemProps: (item) => {
+                    return { label: item?.title };
+                  },
+                },
                 fields: [
                   {
                     type: "image",
