@@ -44,7 +44,7 @@ export function useLiveStreamProps(liveStreamDelayMinutes?: number, intervalMinu
         const latestEvent = res.data[0];
         setEvent(latestEvent);
 
-        const start = dayjs(latestEvent.StartDateTime).add(liveStreamDelayMinutes, 'minute');
+        const start = dayjs(latestEvent.StartDateTime).add(liveStreamDelayMinutes, "minute");
         setCountdownMins(start.diff(rightnow, "minute"));
 
         shouldCountdown.current = true;
