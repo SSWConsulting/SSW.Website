@@ -115,6 +115,11 @@ const config = defineStaticConfig({
             name: "bookingButtonText",
           },
           {
+            type: "string",
+            label: "Booking Phone No.",
+            name: "bookingPhone",
+          },
+          {
             type: "object",
             label: "Socials",
             name: "socials",

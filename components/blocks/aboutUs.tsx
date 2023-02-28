@@ -13,6 +13,8 @@ import { Container } from "../util/container";
 import { Section } from "../util/section";
 import layoutData from "../../content/global/index.json";
 
+import { client } from "../../.tina/__generated__/client";
+
 dayjs.extend(timezone);
 dayjs.extend(utc);
 
@@ -92,15 +94,19 @@ const States = {
 };
 
 export const AboutUs = ({ data }) => {
-  const offices = layoutData.offices;
+  const [offices, setOffices] = useState([]);
   const [selectedOffice, setSelectedOffice] = useState(null);
   const [officeBeingHovered, setOfficeBeingHovered] = useState(null);
   const [stateBeingHovered, setStateBeingHovered] = useState(null);
 
   useEffect(() => {
-    const defaultOffice = offices.find((o) => o.addressLocality === "Sydney");
-    setSelectedOffice(defaultOffice);
-    setStateBeingHovered(defaultOffice.addressRegion);
+    client.queries.officesConnection().then(res => {
+      const newOffices = res.data.officesConnection.edges.map(e => e.node);
+      setOffices(newOffices);
+      const defaultOffice = newOffices.find((o) => o.addressLocality === "Sydney");
+      setSelectedOffice(defaultOffice);
+      setStateBeingHovered(defaultOffice.addressRegion);
+    })
   }, []);
 
   return (
