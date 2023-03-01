@@ -525,11 +525,6 @@ const config = defineStaticConfig({
             name: "subheading",
           },
           {
-            type: "rich-text",
-            label: "About us",
-            name: "aboutus",
-          },
-          {
             type: "string",
             name: "url",
             label: "Url",
@@ -594,6 +589,13 @@ const config = defineStaticConfig({
             label: "Days",
             required: true,
           },
+          {
+            type: "rich-text",
+            label: "Body",
+            name: "_body",
+            templates: [...Schemas.pageBlocks],
+            isBody: true,
+          }
         ],
       }
     ],

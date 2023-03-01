@@ -1,6 +1,8 @@
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+
 import { client } from "../../.tina/__generated__/client";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
@@ -15,29 +17,31 @@ export default function OfficePage(
     variables: props.variables,
   });
 
-    return (
-        <Layout>
-            <Section>
-              <Container>
+  return (
+      <Layout>
+          <Container className={"flex-1 pt-4"}>
+            <div className="gap-4 md:grid md:grid-cols-5 lg:grid-cols-5">
+              <div className="prose max-w-full md:col-span-3 lg:col-span-3">
                 <h1>{data.offices.heading}</h1>
                 <h2>{data.offices.subheading}</h2>
-              </Container>
-            </Section>
-            <div className="mx-auto max-w-9xl px-6 sm:px-8">
-              <TinaMarkdown 
-                content={data.offices.aboutus}
-              />
+                <TinaMarkdown 
+                  components={componentRenderer}
+                  content={data.offices._body}
+                />
+              </div>
+              <div className="md:col-span-2 lg:col-span-2">
+                <p>Hello</p>
+              </div>
             </div>
-        </Layout>
-    )
+          </Container>
+      </Layout>
+  )
 }
 
 export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.offices({ 
     relativePath: `${params.filename}.mdx`
   });
-
-  console.log(tinaProps.data.offices);
 
   return { 
     props: {
