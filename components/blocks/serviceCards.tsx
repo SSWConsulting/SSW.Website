@@ -36,7 +36,7 @@ export const ServiceCards = ({ data }) => {
 const Label = ({ text }) => {
   return (
     <div
-      className={`absolute text-left text-xxxs font-normal uppercase text-white ${bgColor["darkgray"]} z-10 w-fit p-2`}
+      className={`absolute text-left text-xxxs font-normal uppercase text-white ${bgColor["darkgray"]} z-badge w-fit p-2`}
     >
       {text}
     </div>

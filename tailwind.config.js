@@ -198,6 +198,7 @@ module.exports = {
         "bgVideo",
         "videoMask",
         "content",
+        "badge",
         "videoThumbnail",
         "tooltip",
       ], // ordered by z-index ascendant
