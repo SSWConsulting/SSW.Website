@@ -1,6 +1,6 @@
+import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import * as React from "react";
 
 import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -36,7 +36,7 @@ export const ServiceCards = ({ data }) => {
 const Label = ({ text }) => {
   return (
     <div
-      className={`absolute text-left text-xxxs font-normal uppercase text-white ${bgColor["darkgray"]} z-10 w-fit p-2`}
+      className={`absolute text-left text-xxxs font-normal uppercase text-white ${bgColor["darkgray"]} w-fit p-2 z-badge`}
     >
       {text}
     </div>
