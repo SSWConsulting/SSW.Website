@@ -69,7 +69,7 @@ export const Layout = ({ children, className = "" }) => {
               </Suspense>
             </div>
           </header>
-          <main className="grow bg-white -z-100">{children}</main>
+          <main className="grow bg-white">{children}</main>
           <Footer />
         </div>
       </Theme>
