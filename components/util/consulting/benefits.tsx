@@ -6,17 +6,11 @@ import styles from "./benefits.module.css";
 
 const BenefitCard = ({ data, aosType }) => {
   const { image, title, description, linkURL, linkName } = data;
+  const imagePath = image ? `/images/benefits/${path.basename(image)}` : "";
   return (
     <article className="px-14 py-11" data-aos={aosType}>
       <figure className="relative float-left h-40 w-40 select-none">
-        {image && (
-          <Image
-            src={`/images/benefits/${path.basename(image)}`}
-            sizes="100vw"
-            fill
-            alt="benefit icon"
-          />
-        )}
+        <Image src={imagePath} sizes="100vw" fill alt="benefit icon" />
       </figure>
 
       <h4 className="mb-2 mt-4 text-left text-xl font-medium uppercase leading-snug">
