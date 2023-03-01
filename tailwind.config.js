@@ -198,7 +198,7 @@ module.exports = {
         "-1": "-1",
       },
       fontFamily: {
-        sans: ["Open Sans", "Helvetica Neue", "Helvetica", "sans-serif"],
+        sans: ["var(--open-sans-font)", "Helvetica Neue", "Helvetica", "sans-serif"],
         body: ["Arial", "Helvetica Neue", "Helvetica", "sans-serif"],
       },
       animation: {
