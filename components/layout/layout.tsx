@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import Head from "next/head";
+import { Open_Sans } from "next/font/google";
 import { useRouter } from "next/router";
 import { classNames } from "tinacms";
 import { Header } from "./header";
@@ -12,18 +13,22 @@ import { useLiveStreamProps } from "../liveStream/useLiveStreamProps";
 
 import layoutData from "../../content/global/index.json";
 
+const openSans = Open_Sans({
+  subsets: ["latin"],
+});
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: layoutData.header.site_name,
+  alternateName: layoutData.header.alternate_site_name,
+  description: layoutData.header.description,
+  url: layoutData.header.url,
+};
+
 export const Layout = ({ children, className = "" }) => {
   const liveStreamProps = useLiveStreamProps();
   const router = useRouter();
-
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: layoutData.header.site_name,
-    alternateName: layoutData.header.alternate_site_name,
-    description: layoutData.header.description,
-    url: layoutData.header.url,
-  };
 
   return (
     <>
@@ -36,6 +41,14 @@ export const Layout = ({ children, className = "" }) => {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
           />
         )}
+
+        <style jsx global>
+          {`
+            :root {
+              --open-sans-font: ${openSans.style.fontFamily};
+            }
+          `}
+        </style>
       </Head>
       <Theme>
         <div
