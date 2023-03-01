@@ -14,7 +14,10 @@
   ],
   "rules": {
     "quotes": ["error", "double"],
-    "tailwindcss/no-arbitrary-value": "error"
+    "tailwindcss/no-arbitrary-value": "error",
+    "tailwindcss/no-custom-classname": ["error", {
+      "whitelist": ["g\\-yt.+", "legend"]
+    }]
   },
   "reportUnusedDisableDirectives": true
 }
