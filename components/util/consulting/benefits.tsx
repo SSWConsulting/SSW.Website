@@ -7,14 +7,14 @@ import classNames from "classnames";
 const BenefitCard = ({ className, data, aosType }) => {
   const { image, title, description, linkURL, linkName } = data;
   return (
-    <article className={classNames("px-14 py-11", className)} data-aos={aosType}>
+    <article
+      className={classNames("px-14 py-11", className)}
+      data-aos={aosType}
+    >
       <figure className="relative float-left h-40 w-40 select-none">
-        <Image
-          src={image}
-          sizes="100vw"
-          fill
-          alt={title || "benefit icon"}
-        />
+        {image && (
+          <Image src={image} sizes="100vw" fill alt={title || "benefit icon"} />
+        )}
       </figure>
 
       <h4 className="mb-2 mt-4 text-left text-xl font-medium uppercase leading-snug">
@@ -43,15 +43,17 @@ export const Benefits = ({ data }) => {
     <article>
       <section className="grid sm:grid-cols-1 md:grid-cols-2">
         {benefitList?.map((benefit, index) => {
-            return (
-              <BenefitCard
-                key={benefit.title}
-                className={ benefitList.length % 2 === 0 ? "" : "last-of-type:col-span-full"}
-                data={benefit}
-                aosType={index % 2 === 0 ? "fade-left" : "fade-right"}
-              />
-            );
-          })}
+          return (
+            <BenefitCard
+              key={benefit.title}
+              className={
+                benefitList.length % 2 === 0 ? "" : "last-of-type:col-span-full"
+              }
+              data={benefit}
+              aosType={index % 2 === 0 ? "fade-left" : "fade-right"}
+            />
+          );
+        })}
       </section>
       {rule && (
         <p>
