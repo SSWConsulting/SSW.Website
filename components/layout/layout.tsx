@@ -14,7 +14,8 @@ import { useLiveStreamProps } from "../liveStream/useLiveStreamProps";
 import layoutData from "../../content/global/index.json";
 
 const openSans = Open_Sans({
-  variable: '--open-sans-font',
+  variable: "--open-sans-font",
+  subsets: ["latin"]
 });
 
 const structuredData = {
@@ -45,7 +46,8 @@ export const Layout = ({ children, className = "" }) => {
       <Theme>
         <div
           className={classNames(
-            "relative flex min-h-screen flex-col",
+            "flex min-h-screen flex-col font-sans",
+            openSans.variable,
             className
           )}
         >
