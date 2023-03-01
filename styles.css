@@ -9,7 +9,7 @@
   }
 
   html {
-    @apply font-body;
+    @apply font-sans;
   }
 
   html,
