@@ -242,6 +242,7 @@ module.exports = {
         red: {
           550: "#dc3545",
         },
+        inherit: "inherit",
       },
       typography: (theme) => ({
         DEFAULT: {
