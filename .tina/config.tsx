@@ -515,6 +515,11 @@ const config = defineStaticConfig({
         },
         fields: [
           {
+            type: "image",
+            label: "Cover Image",
+            name: "coverImg",
+          },
+          {
             type: "string",
             label: "Heading",
             name: "heading",
@@ -595,7 +600,7 @@ const config = defineStaticConfig({
             name: "_body",
             templates: [...Schemas.pageBlocks],
             isBody: true,
-          }
+          },
         ],
       }
     ],
