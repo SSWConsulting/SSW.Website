@@ -1,7 +1,7 @@
 import { defineStaticConfig, TinaCMS, wrapFieldsWithMeta } from "tinacms";
 import * as Schemas from "../components/blocks";
+import { ratingSchema } from "../components/util/consulting/rating";
 import { seoSchema } from "../components/util/seo";
-import React from "react";
 
 const config = defineStaticConfig({
 	clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -549,33 +549,7 @@ const config = defineStaticConfig({
 						required: true,
 					},
 					{
-						type: "number",
-						label: "Rating",
-						name: "rating",
-						// As per https://tina.io/docs/extending-tina/custom-field-components/#custom-component-example
-						ui: {
-							parse: (val) => Number(val),
-
-							// wrapping our component in wrapFieldsWithMeta renders our label & description.
-							component: wrapFieldsWithMeta(({ field, input, meta }) => {
-								return (
-									<div>
-										<input
-											name="rating"
-											id="rating"
-											type="range"
-											min="-1"
-											max="5"
-											step="1"
-											// This will pass along props.input.onChange to set our form values as this input changes.
-											{...input}
-										/>
-										<br />
-										Value: {input.value}
-									</div>
-								);
-							}),
-						},
+						...ratingSchema,
 						required: true,
 					},
 					{
