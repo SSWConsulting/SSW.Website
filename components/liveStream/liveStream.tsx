@@ -151,7 +151,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
       >
         <hr className="my-6 w-full" />
         <div
-          className="bg-inherit absolute w-min px-1"
+          className="absolute w-min bg-inherit px-1"
         >
           {collapseMap["collapsableWidget"] ? <TfiAngleUp /> : <TfiAngleDown />}
         </div>
