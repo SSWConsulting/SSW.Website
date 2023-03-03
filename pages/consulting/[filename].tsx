@@ -17,6 +17,8 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 
+import TermsAndConditionsLayout from "../../components/consulting/termsAndConditionsLayout/termsAndConditionsLayout";
+
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
@@ -50,97 +52,112 @@ export default function ConsultingPage(
     recaptchaKey: props.env["GOOGLE_RECAPTCHA_KEY"],
   };
 
+  console.log(data.consulting);
+
   return (
     <>
       <SEO seo={data.consulting.seo} />
-      <Layout>
-        <Section className="mx-auto w-full max-w-9xl py-5 px-8">
-          <Breadcrumbs
-            path={removeExtension(props.variables.relativePath)}
-            suffix={data.global.breadcrumbSuffix}
-            title={data.consulting.seo?.title}
-          />
-        </Section>
-        <Section
-          className="w-full items-center !bg-black/75 bg-video-mask text-center font-light"
-          color="black"
-        >
-          <Booking {...data.consulting.booking}>
-            <BookingButton {...bookingButtonProps} />
-          </Booking>
-        </Section>
-        <Section
-          color="black"
-          className={`
-            prose-consulting
-            border-y-4 border-y-sswRed
-            text-center`}
-        >
-          <a id="more" />
-          <div className="w-full bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
-            <div className="mx-auto max-w-9xl px-4">
-              <TinaMarkdown
-                components={componentRenderer}
-                content={data.consulting._body}
+      {data.consulting.layout === "T&CPage" ?
+        <>
+          <Layout>
+            <Section className="mx-auto w-full max-w-9xl py-5 px-8">
+              <Breadcrumbs
+                path={removeExtension(props.variables.relativePath)}
+                suffix={data.global.breadcrumbSuffix}
+                title={data.consulting.seo?.title}
               />
-              <Benefits data={data.consulting.benefits} />
+            </Section>
+            <TermsAndConditionsLayout data={data.consulting} />
+          </Layout>
+        </> :
+        <Layout>
+          <Section className="mx-auto w-full max-w-9xl py-5 px-8">
+            <Breadcrumbs
+              path={removeExtension(props.variables.relativePath)}
+              suffix={data.global.breadcrumbSuffix}
+              title={data.consulting.seo?.title}
+            />
+          </Section>
+          <Section
+            className="w-full items-center !bg-black/75 bg-video-mask text-center font-light"
+            color="black"
+          >
+            <Booking {...data.consulting.booking}>
+              <BookingButton {...bookingButtonProps} />
+            </Booking>
+          </Section>
+          <Section
+            color="black"
+            className={`
+          prose-consulting
+          border-y-4 border-y-sswRed
+          text-center`}
+          >
+            <a id="more" />
+            <div className="w-full bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
+              <div className="mx-auto max-w-9xl px-4">
+                <TinaMarkdown
+                  components={componentRenderer}
+                  content={data.consulting._body}
+                />
+                <Benefits data={data.consulting.benefits} />
+              </div>
             </div>
-          </div>
-        </Section>
-        <Section className="mb-16">
-          <Container padding="px-4" className="flex w-full flex-wrap">
-            <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
-            <BookingButton {...bookingButtonProps} containerClass="mt-20" />
-          </Container>
-        </Section>
-        <Marketing content={props.marketingData} />
-        <Section className="!bg-gray-75 pb-40">
-          <Container size="custom">
-            <h1 className="text-center">Companies we have worked with</h1>
-            <ClientLogos />
-          </Container>
-        </Section>
-        {!!techCards.length && (
-          <Section className="pb-16 text-center">
-            <Container padding="px-4">
-              <TechnologyCards
-                techHeader={data.consulting.technologies.header}
-                techCards={techCards}
-              />
+          </Section>
+          <Section className="mb-16">
+            <Container padding="px-4" className="flex w-full flex-wrap">
+              <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
+              <BookingButton {...bookingButtonProps} containerClass="mt-20" />
             </Container>
           </Section>
-        )}
-        {!!mediaCardProps.length && (
-          <Section className="pb-40 pt-8 text-center">
+          <Marketing content={props.marketingData} />
+          <Section className="!bg-gray-75 pb-40">
             <Container size="custom">
-              <MediaCards
-                header={data.consulting.medias?.header}
-                cardProps={mediaCardProps}
-              />
+              <h1 className="text-center">Companies we have worked with</h1>
+              <ClientLogos />
             </Container>
           </Section>
-        )}
-        <Section className="!bg-gray-75 pb-25 text-center">
-          <Container size="custom" className="w-full">
-            <h1
-              dangerouslySetInnerHTML={{
-                __html: parseCallToAction(
-                  data.consulting.callToAction,
-                  data.consulting.solution.project
-                ),
-              }}
-            ></h1>
-            <p className="text-lg">
-              Jump on a call with one of our Account Managers to discuss how we
-              can help you.
-            </p>
-            <BookingButton {...bookingButtonProps} />
-          </Container>
-        </Section>
-        <Section>
-          <BuiltOnAzure data={{ backgroundColor: "default" }} />
-        </Section>
-      </Layout>
+          {!!techCards.length && (
+            <Section className="pb-16 text-center">
+              <Container padding="px-4">
+                <TechnologyCards
+                  techHeader={data.consulting.technologies.header}
+                  techCards={techCards}
+                />
+              </Container>
+            </Section>
+          )}
+          {!!mediaCardProps.length && (
+            <Section className="pb-40 pt-8 text-center">
+              <Container size="custom">
+                <MediaCards
+                  header={data.consulting.medias?.header}
+                  cardProps={mediaCardProps}
+                />
+              </Container>
+            </Section>
+          )}
+          <Section className="!bg-gray-75 pb-25 text-center">
+            <Container size="custom" className="w-full">
+              <h1
+                dangerouslySetInnerHTML={{
+                  __html: parseCallToAction(
+                    data.consulting.callToAction,
+                    data.consulting.solution.project
+                  ),
+                }}
+              ></h1>
+              <p className="text-lg">
+                Jump on a call with one of our Account Managers to discuss how we
+                can help you.
+              </p>
+              <BookingButton {...bookingButtonProps} />
+            </Container>
+          </Section>
+          <Section>
+            <BuiltOnAzure data={{ backgroundColor: "default" }} />
+          </Section>
+        </Layout>}
     </>
   );
 }

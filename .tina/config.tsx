@@ -313,6 +313,9 @@ const config = defineStaticConfig({
           router: ({ document }) => {
             return `/consulting/${document._sys.filename}`;
           },
+          defaultItem: {
+            layout: "ConsultingPage"
+          }
         },
         fields: [
           // @ts-ignore
@@ -328,6 +331,18 @@ const config = defineStaticConfig({
                 name: "project",
               },
             ],
+          },
+          {
+            label: "Layout",
+            name: "layout",
+            type: "string",
+            options: [{
+              value: "ConsultingPage",
+              label: "Consulting Page"
+            }, {
+              value: "T&CPage",
+              label: "T&C Page"
+            }]
           },
           {
             type: "string",
@@ -499,6 +514,161 @@ const config = defineStaticConfig({
                   },
                 ],
               },
+            ],
+          },
+          {
+            type: "object",
+            label: "Rates",
+            name: "rates",
+            fields: [
+              {
+                type: "string",
+                label: "Title",
+                name: "title",
+              },
+              {
+                type: "object",
+                list: true,
+                label: "Rate List",
+                name: "rateList",
+                ui: {
+                  itemProps: (item) => {
+                    return { label: item?.resource };
+                  },
+                },
+                fields: [
+                  {
+                    type: "string",
+                    label: "Resource",
+                    name: "resource",
+                  },
+                  {
+                    type: "object",
+                    label: "Standard Hourly Rate",
+                    name: "standardHourlyRate",
+                    fields: [
+                      {
+                        type: "string",
+                        label: "AUD",
+                        name: "AUD",
+                      },
+                      {
+                        type: "string",
+                        label: "GST",
+                        name: "GST",
+                      },
+                    ]
+                  },
+                  {
+                    type: "object",
+                    label: "Standard Daily Rate",
+                    name: "standardDailyRate",
+                    fields: [
+                      {
+                        type: "string",
+                        label: "AUD",
+                        name: "AUD",
+                      },
+                      {
+                        type: "string",
+                        label: "GST",
+                        name: "GST",
+                      },
+                    ]
+                  },
+                  {
+                    type: "object",
+                    label: "Prepaid Hourly Rate",
+                    name: "prepaidHourlyRate",
+                    fields: [
+                      {
+                        type: "string",
+                        label: "AUD",
+                        name: "AUD",
+                      },
+                      {
+                        type: "string",
+                        label: "GST",
+                        name: "GST",
+                      },
+                    ]
+                  },
+                  {
+                    type: "object",
+                    label: "Prepaid Daily Rate",
+                    name: "prepaidDailyRate",
+                    fields: [
+                      {
+                        type: "string",
+                        label: "AUD",
+                        name: "AUD",
+                      },
+                      {
+                        type: "string",
+                        label: "GST",
+                        name: "GST",
+                      },
+                    ]
+                  },
+                ],
+              },
+              {
+                type: "object",
+                label: "Link",
+                name: "link",
+                fields: [
+                  {
+                    type: "string",
+                    label: "Text",
+                    name: "text",
+                  },
+                  {
+                    type: "string",
+                    label: "Address",
+                    name: "address",
+                  },
+                ]
+              },
+            ],
+          },
+          {
+            type: "object",
+            label: "Terms",
+            name: "terms",
+            fields: [
+              {
+                type: "string",
+                label: "Title",
+                name: "title",
+              },
+              {
+                type: "string",
+                label: "Introduction",
+                name: "introduction",
+              },
+              {
+                type: "rich-text",
+                label: "Content",
+                name: "content",
+                isBody: true,
+              },
+            ],
+          },
+          {
+            type: "object",
+            label: "Agreement",
+            name: "agreement",
+            fields: [
+              {
+                type: "string",
+                label: "Title",
+                name: "title",
+              },
+              {
+                type: "string",
+                label: "Introduction",
+                name: "introduction",
+              }
             ],
           },
         ],
