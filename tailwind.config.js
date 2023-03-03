@@ -1,6 +1,7 @@
 const colors = require("tailwindcss/colors");
-const plugin = require('tailwindcss/plugin');
+const plugin = require("tailwindcss/plugin");
 
+/** @type {import("tailwindcss").Config} */
 module.exports = {
   mode: "jit",
   content: [
@@ -108,8 +109,11 @@ module.exports = {
       4: "4px",
     },
     extend: {
+      backgroundPosition: {
+        "right-bottom-4": "right 1rem bottom 1rem",
+      },
       content: {
-        "bread": "'>'",
+        bread: "'>'",
       },
       textDecoration: ["active"],
       opacity: {
@@ -190,18 +194,27 @@ module.exports = {
       padding: {
         "9/16": "56.25%",
       },
-      zIndex: {
-        "99": "99",
-        "-100": "-100",
-        "-1": "-1",
-      },
+      zIndexStack: [
+        "base",
+        "bgVideo",
+        "videoMask",
+        "content",
+        "badge",
+        "videoThumbnail",
+        "tooltip",
+      ], // ordered by z-index ascendant
       fontFamily: {
-        sans: ["Open Sans", "Helvetica Neue", "Helvetica", "sans-serif"],
+        sans: [
+          "var(--open-sans-font)",
+          "Helvetica Neue",
+          "Helvetica",
+          "sans-serif",
+        ],
         body: ["Arial", "Helvetica Neue", "Helvetica", "sans-serif"],
       },
       animation: {
         "more-bounce": "more-bounce 2s infinite",
-        "ripple": "ripple-out 0.75s",
+        ripple: "ripple-out 0.75s",
         "ripple-pseudo": "ripple-out-pseudo 0.75s",
       },
       keyframes: {
@@ -217,19 +230,19 @@ module.exports = {
         "ripple-out-pseudo": {
           "0%": { background: "rgba(0, 0, 0, 0.25)" },
           "100%": { background: "transparent" },
-        }
+        },
       },
       colors: {
         gray: {
-          75: "#f5f5f5", 
-          125: "#eeeeee", 
-          450: "#9e9e9e", 
-          550: "#6C757D", 
+          75: "#f5f5f5",
+          125: "#eeeeee",
+          450: "#9e9e9e",
+          550: "#6C757D",
           650: "#666666",
         },
         red: {
           550: "#dc3545",
-        }
+        },
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -261,10 +274,6 @@ module.exports = {
         consulting: {
           css: {
             h1: {
-              margin: "1rem 0",
-              padding: "60px 0 20px 0",
-              lineHeight: 1.2,
-              fontWeight: theme("fontWeight.light"),
               "> strong": {
                 color: theme("colors.sswRed"),
               },
@@ -275,43 +284,24 @@ module.exports = {
               padding: "20px 0",
               width: "75%",
             },
+            "p > img": {
+              margin: "0 auto",
+            },
             "ul > li": {
               display: "block",
               fontWeight: theme("fontWeight.bold"),
-              margin: "2em 3rem 0 3rem",       
+              margin: "2em 3rem 0 3rem",
               "> div::before": {
                 color: theme("colors.sswRed"),
-                content: "\"\u25A0\"",
+                content: '"\u25A0"',
                 display: "inline-block",
                 fontFamily: "Arial Black",
                 fontWeight: theme("fontWeight.bold"),
                 marginLeft: "-1em",
                 width: "1em",
-              },       
+              },
             },
-
           },
-        },
-        "technology-card": {
-          css: {
-            "border-bottom-width": "2px",
-            "border-style": "solid",
-            "border-bottom-color": theme("colors.sswRed"),
-            "background-color": theme("colors.gray.75"),
-            "padding": "2.75rem 4rem",
-            
-            "&.thumbnail-card": {
-              "background-size": "30px 25px",
-              "background-position": "95% 92%",
-              "background-repeat": "no-repeat",
-            },
-
-            p: {
-              "margin-top": "1rem",
-              "margin-bottom": "1rem",
-              "text-align": "left",
-            },
-          }   
         },
       }),
       backgroundImage: {
@@ -325,8 +315,14 @@ module.exports = {
       },
     },
     linearGradientColors: {
-      "social-instagram": ["#f09433", "#e6683c 25%", "#dc2743 50%", "#cc2366 75%", "#bc1888"]
-    }
+      "social-instagram": [
+        "#f09433",
+        "#e6683c 25%",
+        "#dc2743 50%",
+        "#cc2366 75%",
+        "#bc1888",
+      ],
+    },
   },
   variants: {
     // extend: { typography: ["tint", "dark", "primary"] },
@@ -340,9 +336,25 @@ module.exports = {
     plugin(function ({ addVariant, e }) {
       addVariant("not-first", ({ modifySelectors, separator }) => {
         modifySelectors(({ className }) => {
-          return `.${e(`not-first${separator}${className}`)}:not(:first-child)`
-        })
-      })
+          return `.${e(`not-first${separator}${className}`)}:not(:first-child)`;
+        });
+      });
+    }),
+
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          z: (value) => ({
+            zIndex: value,
+          }),
+        },
+        {
+          values: Object.keys(theme("zIndexStack")).reduce((ret, key) => {
+            ret[theme("zIndexStack")[key]] = key;
+            return ret;
+          }, {}),
+        }
+      );
     }),
   ],
 };
