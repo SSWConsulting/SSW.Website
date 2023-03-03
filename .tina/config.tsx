@@ -1,5 +1,6 @@
-import { defineStaticConfig, TinaCMS } from "tinacms";
+import { defineStaticConfig, TinaCMS, wrapFieldsWithMeta } from "tinacms";
 import * as Schemas from "../components/blocks";
+import { ratingSchema } from "../components/util/consulting/rating";
 import { seoSchema } from "../components/util/seo";
 
 const config = defineStaticConfig({
@@ -545,6 +546,10 @@ const config = defineStaticConfig({
 						type: "string",
 						label: "Company",
 						name: "company",
+						required: true,
+					},
+					{
+						...ratingSchema,
 						required: true,
 					},
 					{
