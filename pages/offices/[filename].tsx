@@ -11,6 +11,8 @@ import Image from "next/image";
 import OfficesSidebar from "../../components/offices/officesSidebar";
 import { BuiltOnAzure } from "../../components/blocks";
 import { Section } from "../../components/util/section";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { SEO } from "../../components/util/seo";
 
 export default function OfficePage(
     props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -21,7 +23,13 @@ export default function OfficePage(
     variables: props.variables,
   });
 
+  const removeExtension = (file: string) => {
+    return file.split(".")[0];
+  };
+
   return (
+    <>
+      <SEO seo={data.offices.seo}/>
       <Layout>
           {data.offices.coverImg
           ? <div className="mx-auto max-w-9xl px-6 sm:px-8">
@@ -36,7 +44,14 @@ export default function OfficePage(
             </div>
           : <></>
           }
-          
+
+          <Section className="mx-auto w-full max-w-9xl py-5 px-8">
+            <Breadcrumbs
+              path={removeExtension(props.variables.relativePath)}
+              suffix={data.global.breadcrumbSuffix}
+              title={data.offices.name}
+            />
+          </Section>
           
           <Container className={"flex-1 pt-4"}>
             <div className="gap-8 md:grid md:grid-cols-7">
@@ -65,11 +80,12 @@ export default function OfficePage(
             <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
           </Section>
       </Layout>
+    </>
   )
 }
 
 export const getStaticProps = async ({ params }) => {
-  const tinaProps = await client.queries.offices({ 
+  const tinaProps = await client.queries.officeContentQuery({ 
     relativePath: `${params.filename}.mdx`
   });
 

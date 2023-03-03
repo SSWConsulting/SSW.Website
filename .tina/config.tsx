@@ -592,6 +592,8 @@ const config = defineStaticConfig({
           },
         },
         fields: [
+          // @ts-ignore
+          seoSchema,
           {
             type: "image",
             label: "Cover Image",
