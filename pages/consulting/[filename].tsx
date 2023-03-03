@@ -126,7 +126,7 @@ export default function ConsultingPage(
               dangerouslySetInnerHTML={{
                 __html: parseCallToAction(
                   data.consulting.callToAction,
-                  data.consulting.solution.project
+                  data.consulting.solution?.project
                 ),
               }}
             ></h1>

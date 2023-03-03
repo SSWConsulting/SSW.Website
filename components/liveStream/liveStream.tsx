@@ -5,12 +5,12 @@ import { useRouter } from "next/router";
 import Script from "next/script";
 import { FC, useEffect, useState } from "react";
 import { FaEnvelope } from "react-icons/fa";
+import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip/dist/react-tooltip.umd"; // Workaround for render issue. See https://github.com/ReactTooltip/react-tooltip/issues/933
 import layoutData from "../../content/global/index.json";
 import { LiveStreamWidgetInfo, SpeakerInfo } from "../../services";
 import ReactPlayer from "../reactPlayer/reactPlayer";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
-import styles from "./liveStream.module.css";
 import { LiveStreamProps } from "./useLiveStreamProps";
 
 export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
@@ -142,19 +142,19 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
       </div>
 
       <a
-        className="cursor-pointer"
+        className="relative flex cursor-pointer items-center justify-center bg-white"
         onClick={() =>
           setCollapseMap({
             collapsableWidget: !collapseMap["collapsableWidget"],
           })
         }
       >
-        <hr
-          className={classNames(styles["hr-arrow"], "my-6", {
-            [styles["hr-arrow-collapse"]]: collapseMap["collapsableWidget"],
-            [styles["hr-arrow-expand"]]: !collapseMap["collapsableWidget"],
-          })}
-        />
+        <hr className="my-6 w-full" />
+        <div
+          className="absolute w-min bg-inherit px-1"
+        >
+          {collapseMap["collapsableWidget"] ? <TfiAngleUp /> : <TfiAngleDown />}
+        </div>
       </a>
 
       <div
@@ -164,7 +164,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
           {
             "!max-h-0": collapseMap["collapsableWidget"],
           },
-          "transition-all"
+          "transition-all overflow-hidden"
         )}
       >
         <div className="mb-4 grid grid-cols-3 gap-8">
