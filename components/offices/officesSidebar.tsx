@@ -20,12 +20,16 @@ const OfficesSidebar = ({ phone, streetAddress, suburb, addressLocality, address
 
             <p>Learn more on <a href="https://sswchapel.com.au/sydney/">SSW Chapel</a></p>
 
-            <Image 
+            {sideImg
+            ?<Image 
                 src={sideImg}
                 width={285}
                 height={160}
                 alt="Sidebar Image"
             />
+            : <></>
+            }
+            
 
             <h3>We ❤️ Microsoft</h3>
             <div className="border-1 border-gray-300 bg-gray-100 px-4 py-3">

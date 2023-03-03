@@ -9,6 +9,8 @@ import { Container } from "../../components/util/container";
 
 import Image from "next/image";
 import OfficesSidebar from "../../components/offices/officesSidebar";
+import { BuiltOnAzure } from "../../components/blocks";
+import { Section } from "../../components/util/section";
 
 export default function OfficePage(
     props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -21,16 +23,20 @@ export default function OfficePage(
 
   return (
       <Layout>
-          <div className="mx-auto max-w-9xl px-6 sm:px-8">
-            <div className="h-auto w-auto">
-              <Image 
-                width={1320}
-                height={485}           
-                src={data.offices.coverImg}
-                alt="Cover image"
-              />
+          {data.offices.coverImg
+          ? <div className="mx-auto max-w-9xl px-6 sm:px-8">
+              <div className="h-auto w-auto">
+                <Image 
+                  width={1320}
+                  height={485}           
+                  src={data.offices.coverImg}
+                  alt="Cover image"
+                />
+              </div>
             </div>
-          </div>
+          : <></>
+          }
+          
           
           <Container className={"flex-1 pt-4"}>
             <div className="gap-8 md:grid md:grid-cols-7">
@@ -55,6 +61,9 @@ export default function OfficePage(
               </div>
             </div>
           </Container>
+          <Section>
+            <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+          </Section>
       </Layout>
   )
 }
