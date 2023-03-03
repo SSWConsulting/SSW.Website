@@ -600,7 +600,7 @@ const config = defineStaticConfig({
             name: "_body",
             templates: [...Schemas.pageBlocks],
             isBody: true,
-          },
+          }
         ],
       }
     ],

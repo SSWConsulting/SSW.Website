@@ -8,6 +8,7 @@ import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 
 import Image from "next/image";
+import OfficesSidebar from "../../components/offices/officesSidebar";
 
 export default function OfficePage(
     props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -32,17 +33,23 @@ export default function OfficePage(
           </div>
           
           <Container className={"flex-1 pt-4"}>
-            <div className="gap-4 md:grid md:grid-cols-5">
-              <div className="prose max-w-full md:col-span-4">
-                <h1>{data.offices.heading}</h1>
-                <h2>{data.offices.subheading}</h2>
+            <div className="gap-8 md:grid md:grid-cols-7">
+              <div className="prose max-w-full prose-h2:text-sswRed prose-h4:text-lg md:col-span-5">
                 <TinaMarkdown 
                   components={componentRenderer}
                   content={data.offices._body}
                 />
               </div>
-              <div className="md:col-span-1">
-                <p>Test</p>
+              <div className="prose prose-h3:text-sswRed md:col-span-2">
+                <OfficesSidebar 
+                  phone={data.offices.phone} 
+                  streetAddress={data.offices.streetAddress} 
+                  suburb={data.offices.suburb}
+                  addressLocality={data.offices.addressLocality}
+                  addressRegion={data.offices.addressRegion}
+                  postalCode={data.offices.postalCode}
+                  addressCountry={data.offices.addressCountry}
+                />
               </div>
             </div>
           </Container>
