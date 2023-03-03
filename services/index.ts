@@ -35,13 +35,6 @@ and EndDateTime gt datetime'${datetime}'\
     }
   );
 
-  !!res.data &&
-    Array.isArray(res.data) &&
-    res.data.forEach((b) => {
-      b.FormattedDate = formatBannerDate(b);
-      b.RelativeDate = formatRelativeBannerDate(b);
-    });
-
   return res;
 };
 
@@ -118,40 +111,6 @@ export const getSpeakersInfo = async (ids?: string[], emails?: string[]) => {
   }
 
   return speakers;
-};
-
-const formatBannerDate = (bannerInfo: LiveStreamBannerInfo) => {
-  if (!bannerInfo.StartDateTime || !bannerInfo.EndDateTime) return null;
-
-  // NOTE: Omit ddd for brevity if it's next year's event
-  const dateformat =
-    dayjs(bannerInfo.StartDateTime).year === dayjs().year
-      ? "ddd MMM D"
-      : "MMM D YYYY";
-  const isOneDayEvent = dayjs(bannerInfo.StartDateTime)
-    .startOf("day")
-    .isSame(dayjs(bannerInfo.EndDateTime).startOf("day"));
-  const startDate = dayjs(bannerInfo.StartDateTime).format(dateformat);
-  const endDate = dayjs(bannerInfo.EndDateTime).format(dateformat);
-
-  return isOneDayEvent ? startDate : `${startDate} - ${endDate}`;
-};
-
-const formatRelativeBannerDate = (bannerInfo: LiveStreamBannerInfo) => {
-  const now = dayjs();
-  const start = dayjs(bannerInfo.StartDateTime);
-  const end = dayjs(bannerInfo.EndDateTime);
-
-  if (now.isBetween(start, end)) {
-    return "now running";
-  }
-
-  const days = start.diff(now, "d");
-  if (days === 0) {
-    return "today";
-  } else {
-    return `${days} ${days === 1 ? "day" : "days"} to go`;
-  }
 };
 
 export type BookingFormSubmissionData = {

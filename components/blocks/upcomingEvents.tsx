@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
 
 import axios from "axios";
-import { EventInfo } from "../../services";
+import { EventInfo, LiveStreamBannerInfo } from "../../services";
 
 dayjs.extend(utc);
 dayjs.extend(isBetween);
@@ -20,7 +20,7 @@ export const UpcomingEvents = ({ data }) => {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const datetime = dayjs.utc().startOf("day");
+      const datetime = dayjs().startOf("day").utc();
 
       setLoading(true);
       const res = await axios.get<EventInfo[]>("/api/get-upcoming-events", {
@@ -29,6 +29,13 @@ export const UpcomingEvents = ({ data }) => {
       setLoading(false);
 
       if (res?.status !== 200 || !res.data.length) return;
+
+      !!res.data &&
+        Array.isArray(res.data) &&
+        res.data.forEach((b) => {
+          b.FormattedDate = formatBannerDate(b);
+          b.RelativeDate = formatRelativeBannerDate(b);
+        });
 
       setEvents(res.data);
     };
@@ -119,4 +126,43 @@ export const upcomingEventsBlockSchema: Template = {
       name: "numberOfEvents",
     },
   ],
+};
+
+const formatBannerDate = (bannerInfo: LiveStreamBannerInfo) => {
+  if (!bannerInfo.StartDateTime || !bannerInfo.EndDateTime) return null;
+
+  // NOTE: Omit ddd for brevity if it's next year's event
+  const dateformat =
+    dayjs(bannerInfo.StartDateTime).year() === dayjs().year()
+      ? "ddd MMM D"
+      : "MMM D YYYY";
+
+  const isOneDayEvent = dayjs(bannerInfo.StartDateTime)
+    .startOf("day")
+    .isSame(dayjs(bannerInfo.EndDateTime).startOf("day"));
+  const startDate = dayjs(bannerInfo.StartDateTime).format(dateformat);
+  const endDate = dayjs(bannerInfo.EndDateTime).format(dateformat);
+
+  return isOneDayEvent ? startDate : `${startDate} - ${endDate}`;
+};
+
+const formatRelativeBannerDate = (bannerInfo: LiveStreamBannerInfo) => {
+  const now = dayjs();
+  const start = dayjs(bannerInfo.StartDateTime);
+  const end = dayjs(bannerInfo.EndDateTime);
+
+  if (now.isBetween(start, end)) {
+    return "now running";
+  }
+
+  const isSameDay = now.startOf("day").isSame(start.startOf("day"));
+
+  const days = start.diff(now, "d");
+  if (days === 0 && isSameDay) {
+    return "today";
+  } else if (days > 0) {
+    return `${days} ${days === 1 ? "day" : "days"} to go`;
+  } else {
+    return "";
+  }
 };
