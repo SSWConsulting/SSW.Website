@@ -128,6 +128,7 @@ module.exports = {
 				88: "22rem",
 			},
 			minHeight: {
+				20: "5rem",
 				70: "17.5rem",
 				158: "39.5rem",
 				1025: "410px",

@@ -48,7 +48,7 @@ const TestimonialCard = ({ testimonial }) => {
 				/>
 			</div>
 			<Rating className="mx-auto mt-8" rating={testimonial?.rating} />
-			<p className="mt-8 font-semibold">
+			<p className="mt-8 min-h-20 font-semibold">
 				{testimonial?.name}, {testimonial?.company}
 			</p>
 			<div className="mt-8 text-gray-900">
