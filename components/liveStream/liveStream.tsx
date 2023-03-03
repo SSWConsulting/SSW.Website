@@ -5,12 +5,12 @@ import { useRouter } from "next/router";
 import Script from "next/script";
 import { FC, useEffect, useState } from "react";
 import { FaEnvelope } from "react-icons/fa";
+import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip/dist/react-tooltip.umd"; // Workaround for render issue. See https://github.com/ReactTooltip/react-tooltip/issues/933
 import layoutData from "../../content/global/index.json";
 import { LiveStreamWidgetInfo, SpeakerInfo } from "../../services";
 import ReactPlayer from "../reactPlayer/reactPlayer";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
-import styles from "./liveStream.module.css";
 import { LiveStreamProps } from "./useLiveStreamProps";
 
 export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
@@ -131,30 +131,30 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
           />
         </div>
         <div className="col-span-2 flex items-center justify-end sm:col-span-3">
-          <span className="hidden pr-2 sm:inline">Subscribe to SSW TV</span>  
+          <span className="hidden pr-2 sm:inline">Subscribe to SSW TV</span>
           <div
             className="g-ytsubscribe"
             data-channelid={widgetInfo.ChannelId}
             data-layout="default"
             data-count="default"
-            ></div>
+          ></div>
         </div>
       </div>
 
       <a
-        className="cursor-pointer"
+        className="relative flex cursor-pointer items-center justify-center bg-white"
         onClick={() =>
           setCollapseMap({
             collapsableWidget: !collapseMap["collapsableWidget"],
           })
         }
       >
-        <hr
-          className={classNames(styles["hr-arrow"], "my-6", {
-            [styles["hr-arrow-collapse"]]: collapseMap["collapsableWidget"],
-            [styles["hr-arrow-expand"]]: !collapseMap["collapsableWidget"],
-          })}
-        />
+        <hr className="my-6 w-full" />
+        <div
+          className="absolute w-min bg-inherit px-1"
+        >
+          {collapseMap["collapsableWidget"] ? <TfiAngleUp /> : <TfiAngleDown />}
+        </div>
       </a>
 
       <div
@@ -164,7 +164,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
           {
             "!max-h-0": collapseMap["collapsableWidget"],
           },
-          "transition-all"
+          "transition-all overflow-hidden"
         )}
       >
         <div className="mb-4 grid grid-cols-3 gap-8">
@@ -182,7 +182,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
           </div>
           {/* custom fixed width and height to have best looking and fixed size for different screens */}
           <div
-            className={"fixed top-2 right-0 z-99 aspect-video h-56"}
+            className={"fixed top-2 right-0 aspect-video h-56 z-videoThumbnail"}
             data-aos="slide-left"
             data-aos-duration={500}
             data-aos-anchor="#thumbnailAnchor"
@@ -229,7 +229,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
               <Tooltip
                 anchorSelect="#appStoreBadge"
                 place="bottom"
-                className="z-99 p-1"
+                className="p-1 z-tooltip"
               >
                 <Image
                   src="/images/badges/QRcode_App_Store.svg"
@@ -255,7 +255,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
               <Tooltip
                 anchorSelect="#googlePlayBadge"
                 place="bottom"
-                className="z-99 p-1"
+                className="p-1 z-tooltip"
               >
                 <Image
                   src="/images/badges/QRcode_Google_Play.svg"
@@ -287,7 +287,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
                   data-tooltip-content="You are now leaving SSW"
                   data-tooltip-place="bottom"
                 />
-                <Tooltip id="external" className="z-99" />
+                <Tooltip id="external" className="z-tooltip" />
               </div>
             </div>
           </div>
@@ -317,7 +317,8 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
               {eventDescriptionCollapsable && (
                 <div
                   className={classNames({
-                    "relative -mt-15 w-full bg-gradient-to-b from-transparent to-gray-75 pt-15": collapseMap[eventDescriptionCollapseId],
+                    "relative -mt-15 w-full bg-gradient-to-b from-transparent to-gray-75 pt-15":
+                      collapseMap[eventDescriptionCollapseId],
                   })}
                 >
                   <a

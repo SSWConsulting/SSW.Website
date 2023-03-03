@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import Head from "next/head";
+import { Open_Sans } from "next/font/google";
 import { useRouter } from "next/router";
 import { classNames } from "tinacms";
 import { Header } from "./header";
@@ -12,18 +13,23 @@ import { useLiveStreamProps } from "../liveStream/useLiveStreamProps";
 
 import layoutData from "../../content/global/index.json";
 
+const openSans = Open_Sans({
+  variable: "--open-sans-font",
+  subsets: ["latin"]
+});
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: layoutData.header.site_name,
+  alternateName: layoutData.header.alternate_site_name,
+  description: layoutData.header.description,
+  url: layoutData.header.url,
+};
+
 export const Layout = ({ children, className = "" }) => {
   const liveStreamProps = useLiveStreamProps();
   const router = useRouter();
-
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: layoutData.header.site_name,
-    alternateName: layoutData.header.alternate_site_name,
-    description: layoutData.header.description,
-    url: layoutData.header.url,
-  };
 
   return (
     <>
@@ -40,7 +46,8 @@ export const Layout = ({ children, className = "" }) => {
       <Theme>
         <div
           className={classNames(
-            "relative flex min-h-screen flex-col",
+            "flex min-h-screen flex-col font-sans",
+            openSans.variable,
             className
           )}
         >
@@ -56,7 +63,7 @@ export const Layout = ({ children, className = "" }) => {
               </Suspense>
             </div>
           </header>
-          <main className="grow bg-white -z-100">{children}</main>
+          <main className="grow bg-white">{children}</main>
           <Footer />
         </div>
       </Theme>
