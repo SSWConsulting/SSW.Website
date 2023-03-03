@@ -23,7 +23,7 @@ export const TestimonialRow = ({ testimonialsQueryResult }) => {
 			<h2 className="mb-8 text-center">
 				What do people <span className="text-sswRed">Say</span>?
 			</h2>
-			<div className="grid gap-12 md:grid-cols-3">
+			<div className="grid gap-6 md:grid-cols-3">
 				{randomTestimonials?.map((testimonial, i) => (
 					<TestimonialCard key={i} testimonial={testimonial} />
 				))}
@@ -48,10 +48,12 @@ const TestimonialCard = ({ testimonial }) => {
 				/>
 			</div>
 			<Rating className="mx-auto mt-8" rating={testimonial?.rating} />
-			<p className="mt-8 min-h-20 font-semibold">
-				{testimonial?.name}, {testimonial?.company}
+			<p className="mt-4 min-h-24">
+				{testimonial?.name}
+				{", "}
+				<span className="font-semibold">{testimonial?.company}</span>
 			</p>
-			<div className="mt-8 text-gray-900">
+			<div className="mt-2 text-sm text-gray-900">
 				<TinaMarkdown content={testimonial?.body} />
 			</div>
 		</div>
