@@ -94,19 +94,15 @@ const States = {
 };
 
 export const AboutUs = ({ data }) => {
-  const [offices, setOffices] = useState([]);
+  const offices = layoutData.offices;
   const [selectedOffice, setSelectedOffice] = useState(null);
   const [officeBeingHovered, setOfficeBeingHovered] = useState(null);
   const [stateBeingHovered, setStateBeingHovered] = useState(null);
 
   useEffect(() => {
-    client.queries.officesConnection().then(res => {
-      const newOffices = res.data.officesConnection.edges.map(e => e.node);
-      setOffices(newOffices);
-      const defaultOffice = newOffices.find((o) => o.addressLocality === "Sydney");
-      setSelectedOffice(defaultOffice);
-      setStateBeingHovered(defaultOffice.addressRegion);
-    })
+    const defaultOffice = offices.find((o) => o.addressLocality === "Sydney");
+    setSelectedOffice(defaultOffice);
+    setStateBeingHovered(defaultOffice.addressRegion);
   }, []);
 
   return (
