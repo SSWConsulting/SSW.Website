@@ -34,7 +34,7 @@ export default function OfficePage(
           
           <Container className={"flex-1 pt-4"}>
             <div className="gap-8 md:grid md:grid-cols-7">
-              <div className="prose max-w-full prose-h2:text-sswRed prose-h4:text-lg md:col-span-5">
+              <div className="prose max-w-full prose-h2:text-3xl prose-h2:font-light prose-h2:text-sswRed prose-h4:text-lg md:col-span-5">
                 <TinaMarkdown 
                   components={componentRenderer}
                   content={data.offices._body}
@@ -49,6 +49,7 @@ export default function OfficePage(
                   addressRegion={data.offices.addressRegion}
                   postalCode={data.offices.postalCode}
                   addressCountry={data.offices.addressCountry}
+                  testimonial={props.testimonial}
                 />
               </div>
             </div>
@@ -62,11 +63,18 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.mdx`
   });
 
+  const testimonialResult = await client.queries.allTestimonialsQuery();
+
+  const testimonials = testimonialResult.data.testimonialsConnection.Testimonials;
+
+  const testimonial = testimonials[Math.floor(Math.random() * testimonials.length)].Testimonial;
+
   return { 
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
-      variables: tinaProps.variables
+      variables: tinaProps.variables,
+      testimonial: testimonial
     }
   };
 }

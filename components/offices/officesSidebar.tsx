@@ -1,6 +1,7 @@
 import Image from "next/image";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-const OfficesSidebar = ({ phone, streetAddress, suburb, addressLocality, addressRegion, postalCode, addressCountry }) => {
+const OfficesSidebar = ({ phone, streetAddress, suburb, addressLocality, addressRegion, postalCode, addressCountry, testimonial }) => {
     return (
         <div>
             <h3>Contact Us</h3>
@@ -39,10 +40,10 @@ const OfficesSidebar = ({ phone, streetAddress, suburb, addressLocality, address
             </div>
             <h3>Testimonials</h3>
             <div className="border-1 border-gray-300 bg-gray-100 px-3 py-4">
-                <p>"I was very happy with SSW's service on our recent .NET Point-of-Sale project. 
-                    Some of the types of issues SSW handled adeptly were: the quality of the user interface, 
-                    business requirements, legacy code and data structures, and ease of maintenance for down the track."
-                </p>
+                <TinaMarkdown 
+                    content={testimonial.body}
+                />
+                <p><strong>{testimonial.name}</strong> - {testimonial.company}</p>
             </div>
         </div>
     )
