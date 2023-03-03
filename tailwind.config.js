@@ -236,9 +236,6 @@ module.exports = {
               padding: "60px 0 20px 0",
               lineHeight: 1.2,
             },
-            h2: {
-              color: theme("colors.sswRed"),
-            },
             h3: {
               fontWeight: "300",
               marginBottom: "7px",
