@@ -4,6 +4,7 @@ import { ClientLogos } from "./clientLogos";
 import { CustomImage } from "./customImage";
 import { VideoEmbed } from "./videoEmbed";
 import { ColumnLayout } from "./columnLayout";
+import { TableLayout } from "./tableLayout";
 
 export const componentRenderer: Components<{
   ClientLogos: Record<string, never>;
@@ -24,10 +25,24 @@ export const componentRenderer: Components<{
     src: string;
     message: string;
   };
+  TableLayout: {
+    listofColumns: [
+      {
+        header: string;
+        hours: string;
+        listItem: [
+          {
+            item: string;
+          }
+        ];
+      }
+    ];
+  };
 }> = {
   VideoEmbed: (props) => <VideoEmbed data={props} />,
   ClientLogos: () => <ClientLogos />,
   CustomImage: (props) => <CustomImage data={props} />,
   UpcomingEvents: (props) => <UpcomingEvents data={props} />,
   ColumnLayout: (props) => <ColumnLayout data={props} />,
+  TableLayout: (props) => <TableLayout {...props} />,
 };
