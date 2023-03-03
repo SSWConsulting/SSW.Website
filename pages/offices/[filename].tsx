@@ -50,6 +50,7 @@ export default function OfficePage(
                   postalCode={data.offices.postalCode}
                   addressCountry={data.offices.addressCountry}
                   testimonial={props.testimonial}
+                  sideImg={data.offices.sideImg}
                 />
               </div>
             </div>

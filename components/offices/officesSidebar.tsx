@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-const OfficesSidebar = ({ phone, streetAddress, suburb, addressLocality, addressRegion, postalCode, addressCountry, testimonial }) => {
+const OfficesSidebar = ({ phone, streetAddress, suburb, addressLocality, addressRegion, postalCode, addressCountry, testimonial, sideImg }) => {
     return (
         <div>
             <h3>Contact Us</h3>
@@ -20,8 +20,15 @@ const OfficesSidebar = ({ phone, streetAddress, suburb, addressLocality, address
 
             <p>Learn more on <a href="https://sswchapel.com.au/sydney/">SSW Chapel</a></p>
 
+            <Image 
+                src={sideImg}
+                width={285}
+                height={160}
+                alt="Sidebar Image"
+            />
+
             <h3>We ❤️ Microsoft</h3>
-            <div className="border-1 border-gray-300 bg-gray-100 px-3 py-4">
+            <div className="border-1 border-gray-300 bg-gray-100 px-4 py-3">
                 <p><strong>SSW is a Microsoft Gold Certified Partner!</strong></p>
                 <Image 
                     className="m-0"
@@ -39,7 +46,7 @@ const OfficesSidebar = ({ phone, streetAddress, suburb, addressLocality, address
                 </p>
             </div>
             <h3>Testimonials</h3>
-            <div className="border-1 border-gray-300 bg-gray-100 px-3 py-4">
+            <div className="border-1 border-gray-300 bg-gray-100 px-4 py-3">
                 <TinaMarkdown 
                     content={testimonial.body}
                 />

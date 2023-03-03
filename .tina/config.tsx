@@ -598,14 +598,9 @@ const config = defineStaticConfig({
             name: "coverImg",
           },
           {
-            type: "string",
-            label: "Heading",
-            name: "heading",
-          },
-          {
-            type: "string",
-            label: "Subheading",
-            name: "subheading",
+            type: "image",
+            label: "Sidebar Image",
+            name: "sideImg",
           },
           {
             type: "string",
