@@ -20,39 +20,40 @@ export const TestimonialRow = ({ testimonialsQueryResult }) => {
 
 	return (
 		<Container size="custom">
-			<div className="mt-17 grid gap-12 md:grid-cols-3">
-				{getTestimonialCards(randomTestimonials)}
+			<h2 className="mb-8 text-center">
+				What do people <span className="text-sswRed">Say</span>?
+			</h2>
+			<div className="grid gap-12 md:grid-cols-3">
+				{randomTestimonials?.map((testimonial, i) => (
+					<TestimonialCard key={i} testimonial={testimonial} />
+				))}
 			</div>
 		</Container>
 	);
 };
 
-const getTestimonialCards = (data) => {
-	return data?.map((testimonial, i) => (
+const TestimonialCard = ({ testimonial }) => {
+	return (
 		<div
-			className="flex flex-col rounded border-b-4 border-b-sswRed bg-white p-10 text-center text-xl drop-shadow sm:h-96 md:h-full"
-			key={i}
+			className="flex flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-10 text-center text-xl drop-shadow sm:h-96 md:h-full"
 			data-aos="flip-right"
 		>
-			<div className="mb-10">
-				<div className="mb-5 flex flex-col items-center">
-					<Image
-						alt={`Picture of ${testimonial?.name} as an avatar`}
-						src={testimonial?.avatar ?? ""}
-						height={80}
-						width={80}
-						className="rounded-full"
-					/>
-					<Rating className="mt-2" rating={testimonial?.rating} />
-				</div>
-				<p>
-					{testimonial?.name},{" "}
-					<span className="font-semibold">{testimonial?.company}</span>
-				</p>
+			<div className="flex flex-col items-center">
+				<Image
+					alt={`Picture of ${testimonial?.name} as an avatar`}
+					src={testimonial?.avatar ?? ""}
+					height={120}
+					width={120}
+					className="rounded-full"
+				/>
 			</div>
-			<div className="text-md font-light text-gray-400">
+			<Rating className="mx-auto mt-8" rating={testimonial?.rating} />
+			<p className="mt-8 font-semibold">
+				{testimonial?.name}, {testimonial?.company}
+			</p>
+			<div className="mt-8 text-gray-900">
 				<TinaMarkdown content={testimonial?.body} />
 			</div>
 		</div>
-	));
+	);
 };

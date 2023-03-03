@@ -15,7 +15,7 @@ export const Rating = ({ className, rating }) => {
 					key={idx}
 					className={classNames(
 						rating > idx ? "text-amber-500" : "text-gray-200",
-						"h-5 w-5 flex-shrink-0"
+						"h-8 w-8 flex-shrink-0"
 					)}
 					aria-hidden="true"
 				/>
