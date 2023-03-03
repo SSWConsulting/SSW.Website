@@ -49,7 +49,7 @@ export default function OfficePage(
             <Breadcrumbs
               path={removeExtension(props.variables.relativePath)}
               suffix={data.global.breadcrumbSuffix}
-              title={data.offices.name}
+              title={data.offices.seo.title}
             />
           </Section>
           
