@@ -41,10 +41,8 @@ export default function ConsultingPage(
 
   const mediaCardProps =
     data.consulting.medias?.mediaCards?.map<MediaCardProps>((m) => ({
-      thumbnail: m.thumbnail as MediaCardProps["thumbnail"],
-      title: m.title as MediaCardProps["title"],
-      attribution: m.attribution as MediaCardProps["attribution"],
       type: m.type as MediaCardProps["type"],
+      content: m.content,
     })) || [];
 
   const bookingButtonProps = {
