@@ -8,11 +8,13 @@ import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 
 import Image from "next/image";
-import OfficesSidebar from "../../components/offices/officesSidebar";
 import { BuiltOnAzure } from "../../components/blocks";
 import { Section } from "../../components/util/section";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { SEO } from "../../components/util/seo";
+import MicrosoftPanel from "../../components/offices/microsoftPanel";
+import TestimonialPanel from "../../components/offices/testimonialPanel";
+import ContactPanel from "../../components/offices/contactPanel";
 
 export default function OfficePage(
     props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -62,7 +64,7 @@ export default function OfficePage(
                 />
               </div>
               <div className="prose prose-h3:text-sswRed md:col-span-2">
-                <OfficesSidebar 
+                <ContactPanel 
                   phone={data.offices.phone} 
                   streetAddress={data.offices.streetAddress} 
                   suburb={data.offices.suburb}
@@ -70,9 +72,11 @@ export default function OfficePage(
                   addressRegion={data.offices.addressRegion}
                   postalCode={data.offices.postalCode}
                   addressCountry={data.offices.addressCountry}
-                  testimonial={props.testimonial}
                   sideImg={data.offices.sideImg}
                 />
+  
+                <MicrosoftPanel />
+                <TestimonialPanel testimonial={props.testimonial} />
               </div>
             </div>
           </Container>
