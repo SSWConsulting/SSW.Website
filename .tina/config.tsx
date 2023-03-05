@@ -601,6 +601,11 @@ const config = defineStaticConfig({
           },
           {
             type: "image",
+            label: "Thumbnail",
+            name: "thumbnail",
+          },
+          {
+            type: "image",
             label: "Sidebar Image",
             name: "sideImg",
           },
