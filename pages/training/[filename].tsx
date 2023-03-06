@@ -11,6 +11,7 @@ import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { Section } from "../../components/util/section";
 import { ClientLogos } from "../../components/blocks";
 import { Container } from "../../components/util/container";
+import HorizontalList, { HorizontalListItemProps } from "../../components/util/horizontalList";
 
 export default function TrainingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -20,6 +21,13 @@ export default function TrainingPage(
     query: props.query,
     variables: props.variables,
   });
+
+  const horizontalListProps =
+    data.training.horizontalListItems?.listItems?.map<HorizontalListItemProps>((m) => ({
+      icon: m.icon,
+      title: m.title,
+      content: m.content,
+    })) || [];
 
   return (
     <>
@@ -69,19 +77,20 @@ export default function TrainingPage(
           </Container>
         </Section>
 
+        <Section color="lightgray" className="pb-12">
+          <Container className={"flex flex-1 flex-col items-center pt-0 text-center"}>
+            <HorizontalList header={data.training.horizontalListItems?.header} listItemProps={horizontalListProps} />
+          </Container>
+        </Section>
+
         <Section color="darkgray" className="pb-12">
           <Container className={"flex flex-1 flex-col items-center pt-0 text-center"}>
-            <h1 className="pt-12 text-white">Popular courses from <span className="text-sswRed">SSWTV</span> channel</h1>
-            <p className="max-w-3xl text-base text-gray-500">List of the most popular courses videos that liked by our developers</p>
-
           </Container>
         </Section>
 
         <Section color="lightgray" className="">
           <Container className={"flex-1 pt-0"}>
             <div className="mx-auto flex max-w-9xl flex-col items-center">
-              <h1>What do people <span className="text-sswRed">say</span>?</h1>
-              <p className="text-lg font-light text-gray-500">Review from members who has taken our programs</p>
               <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
             </div>
           </Container>
