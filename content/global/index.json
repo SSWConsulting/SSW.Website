@@ -3,7 +3,9 @@
     "name": "SSW Consulting - Sydney, Brisbane, Melbourne, Newcastle",
     "title": "SSW Consulting - .NET, Web, Mobile, CRM, SharePoint, Azure, Power BI, Angular, React, Office 365 and Dynamics",
     "description": "30+ years of Microsoft software and web development experience in Australia, France and China. We build with Angular, React, .NET, Azure, Dynamics 365 CRM.",
-    "url": "https://www.ssw.com.au/"
+    "url": "https://www.ssw.com.au/",
+    "site_name": "SSW Consulting",
+    "alternate_site_name": "SSW"
   },
   "aboutUs": {
     "video": {
@@ -72,35 +74,41 @@
       "type": "phone",
       "title": "Call us",
       "url": "tel:+61299533000",
-      "linkText": "CALL US"
+      "linkText": "CALL US",
+      "showOnHeader": true
     },
     {
       "type": "youtube",
       "title": "SSW on YouTube",
       "url": "https://www.youtube.com/user/sswtechtalks/",
-      "username": "sswtechtalks"
+      "username": "sswtechtalks",
+      "showOnHeader": true
     },
     {
       "type": "linkedin",
       "title": "SSW on LinkedIn",
-      "url": "https://www.linkedin.com/company/ssw/"
+      "url": "https://www.linkedin.com/company/ssw/",
+      "showOnHeader": true
     },
     {
       "type": "facebook",
       "title": "SSW on Facebook",
-      "url": "https://www.facebook.com/SSW.page"
+      "url": "https://www.facebook.com/SSW.page",
+      "showOnHeader": true
     },
     {
       "type": "instagram",
       "title": "SSW on Instagram",
       "url": "https://www.instagram.com/ssw_tv",
-      "username": "ssw_tv"
+      "username": "ssw_tv",
+      "showOnHeader": true
     },
     {
       "type": "twitter",
       "title": "SSW on Twitter",
       "url": "https://twitter.com/SSW_TV",
-      "username": "SSW_TV"
+      "username": "SSW_TV",
+      "showOnHeader": true
     },
     {
       "type": "tiktok",
@@ -112,7 +120,20 @@
       "type": "github",
       "title": "SSW on GitHub",
       "url": "https://www.github.com/sswconsulting",
-      "username": "sswconsulting"
+      "username": "sswconsulting",
+      "showOnHeader": true
+    },
+    {
+      "type": "meetup",
+      "url": "https://www.meetup.com/Sydney-NET-User-Group/"
     }
-  ]
+  ],
+  "apps": {
+    "sswRewards": {
+      "link": {
+        "appStore": "https://apps.apple.com/au/app/ssw-rewards/id1482994853",
+        "googlePlay": "https://play.google.com/store/apps/details?id=com.ssw.consulting&hl=en&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+      }
+    }
+  }
 }

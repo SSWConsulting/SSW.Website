@@ -82,6 +82,10 @@ labels:
     color: 0E8A16
     description: A code quality improvement e.g. Tech debt
 
+  - name: 'Type: Dependencies'
+    color: FF2222
+    description: Dependabot found some dependencies to upgrade
+
 # Milestones: define milestones for Issues and Pull Requests
 milestones:
   # - title: milestone-title
@@ -109,7 +113,9 @@ teams:
     # * `admin` - can pull, push and administer this repository.
     # * `maintain` - Recommended for project managers who need to manage the repository without access to sensitive or destructive actions.
     # * `triage` - Recommended for contributors who need to proactively manage issues and pull requests without write access.
-  - name: ssw-website-v3-team
+  - name: sswdesigners
+    permission: push
+  - name: sswdevelopers
     permission: push
 
 branches:
@@ -136,7 +142,7 @@ branches:
         # Required. The list of status checks to require in order to merge into this branch
         contexts:
         - 'Check linked issues'
-        - 'CodeQL'
+        - 'dependency-review'
         - 'Deploy to slot'
         - 'lint-code'
         - 'lint-infra'

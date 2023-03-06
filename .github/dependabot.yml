@@ -12,7 +12,7 @@ updates:
     schedule:
       interval: "weekly"
     labels:
-      - dependencies
+      - 'Type: Dependencies'
     commit-message:
       prefix: "⬆️ Actions"
     rebase-strategy: auto
@@ -23,7 +23,7 @@ updates:
     schedule:
       interval: "weekly"
     labels:
-      - dependencies
+      - 'Type: Dependencies'
     commit-message:
       prefix: "⬆️ NPM"
     rebase-strategy: auto
@@ -35,7 +35,7 @@ updates:
     schedule:
       interval: "weekly"
     labels:
-      - dependencies
+      - 'Type: Dependencies'
     commit-message:
       prefix: "⬆️ Docker"
     rebase-strategy: auto

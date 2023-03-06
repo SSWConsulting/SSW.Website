@@ -26,7 +26,8 @@ query allTestimonialsQuery {
         name,
         avatar,
         body,
-        company
+        company,
+        rating
       }
     }
   }
