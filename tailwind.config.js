@@ -291,11 +291,9 @@ module.exports = {
 							margin: "0 auto",
 							padding: "20px 0",
 						},
-						"p": {
-              "margin-top": "1rem",
-              "margin-bottom": "1rem",
-              "text-align": "left",
-            },
+						"p > img": {
+							margin: "0 auto",
+						},
 						"ul > li": {
 							display: "block",
 							fontWeight: theme("fontWeight.bold"),
@@ -321,7 +319,7 @@ module.exports = {
 				"card-blog": "url('/images/icons/blog-post.svg')",
 				benefits: "url('/consulting/mvc-benefits-bg.jpg')",
 				"video-mask": "url('/images/video-mask.png')",
-        "polygons": "url('/images/polygonBackground.png')",
+                "polygons": "url('/images/polygonBackground.png')",
 			},
 		},
 		linearGradientColors: {
@@ -337,19 +335,20 @@ module.exports = {
 	variants: {
 		// extend: { typography: ["tint", "dark", "primary"] },
 	},
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("tailwindcss-gradients"),
-    require("@headlessui/tailwindcss")({ prefix: "ui" }),
+	plugins: [
+		require("@tailwindcss/typography"),
+		require("tailwindcss-gradients"),
+		require("@headlessui/tailwindcss")({ prefix: "ui" }),
 
-    // taken from https://github.com/tailwindlabs/tailwindcss/discussions/2156#discussioncomment-1283105
-    plugin(function ({ addVariant, e }) {
-      addVariant("not-first", ({ modifySelectors, separator }) => {
-        modifySelectors(({ className }) => {
-          return `.${e(`not-first${separator}${className}`)}:not(:first-child)`
-        })
-      })
-    }),
+		// taken from https://github.com/tailwindlabs/tailwindcss/discussions/2156#discussioncomment-1283105
+		plugin(function ({ addVariant, e }) {
+			addVariant("not-first", ({ modifySelectors, separator }) => {
+				modifySelectors(({ className }) => {
+					return `.${e(`not-first${separator}${className}`)}:not(:first-child)`;
+				});
+			});
+		}),
+
 		plugin(function ({ matchUtilities, theme }) {
 			matchUtilities(
 				{
