@@ -36,8 +36,10 @@ const VideoCard: FC<VideoCardProps> = ({ link, thumbnail, title }) => {
   );
 };
 
-const VideoCards: FC<{ cardProps: VideoCardProps[] }> = ({
+const VideoCards: FC<{ cardProps: VideoCardProps[], channelLink: string, defaultChannelLink: string }> = ({
   cardProps,
+  channelLink,
+  defaultChannelLink
 }) => {
   if (cardProps.length == 0) return null;
 
@@ -66,10 +68,10 @@ const VideoCards: FC<{ cardProps: VideoCardProps[] }> = ({
           <Button
             ripple
             className="mt-15"
-            href="https://www.youtube.com/@SSWTV"
             data-aos="fade-up"
+            onClick={() => window.open(channelLink || defaultChannelLink, "_blank")}
           >
-            <a className="unstyled px-7" href="https://www.youtube.com/@SSWTV">Watch More Videos</a>
+            <span className="px-7">Watch More Videos</span>
           </Button>
         </div>
       </Container>
@@ -82,6 +84,11 @@ export const videoCardSchema = {
   label: "Videos",
   name: "videos",
   fields: [
+    {
+      type: "string",
+      label: "Channel Link",
+      name: "channelLink",
+    },
     {
       type: "object",
       label: "Video Cards",

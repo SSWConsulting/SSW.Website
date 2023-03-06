@@ -74,41 +74,35 @@
       "type": "phone",
       "title": "Call us",
       "url": "tel:+61299533000",
-      "linkText": "CALL US",
-      "showOnHeader": true
+      "linkText": "CALL US"
     },
     {
       "type": "youtube",
       "title": "SSW on YouTube",
       "url": "https://www.youtube.com/user/sswtechtalks/",
-      "username": "sswtechtalks",
-      "showOnHeader": true
+      "username": "sswtechtalks"
     },
     {
       "type": "linkedin",
       "title": "SSW on LinkedIn",
-      "url": "https://www.linkedin.com/company/ssw/",
-      "showOnHeader": true
+      "url": "https://www.linkedin.com/company/ssw/"
     },
     {
       "type": "facebook",
       "title": "SSW on Facebook",
-      "url": "https://www.facebook.com/SSW.page",
-      "showOnHeader": true
+      "url": "https://www.facebook.com/SSW.page"
     },
     {
       "type": "instagram",
       "title": "SSW on Instagram",
       "url": "https://www.instagram.com/ssw_tv",
-      "username": "ssw_tv",
-      "showOnHeader": true
+      "username": "ssw_tv"
     },
     {
       "type": "twitter",
       "title": "SSW on Twitter",
       "url": "https://twitter.com/SSW_TV",
-      "username": "SSW_TV",
-      "showOnHeader": true
+      "username": "SSW_TV"
     },
     {
       "type": "tiktok",
@@ -120,8 +114,7 @@
       "type": "github",
       "title": "SSW on GitHub",
       "url": "https://www.github.com/sswconsulting",
-      "username": "sswconsulting",
-      "showOnHeader": true
+      "username": "sswconsulting"
     },
     {
       "type": "meetup",
@@ -135,5 +128,6 @@
         "googlePlay": "https://play.google.com/store/apps/details?id=com.ssw.consulting&hl=en&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
       }
     }
-  }
+  },
+  "youtubeChannelLink": "https://www.youtube.com/@SSWTV"
 }
