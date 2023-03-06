@@ -125,11 +125,11 @@ const config = defineStaticConfig({
 						label: "Booking Button Text",
 						name: "bookingButtonText",
 					},
-          {
-            type: "string",
-            label: "Booking Phone No.",
-            name: "bookingPhone",
-          },
+					{
+						type: "string",
+						label: "Booking Phone No.",
+						name: "bookingPhone",
+					},
 					{
 						type: "object",
 						label: "Offices",
@@ -601,108 +601,108 @@ const config = defineStaticConfig({
 					},
 				],
 			},
-      {
-        label: "Office Pages",
-        name: "offices",
-        format: "mdx",
-        path: "content/offices",
-        ui: {
-          router: ({ document }) => {
-            return `/offices/${document._sys.filename}`;
-          },
-        },
-        fields: [
-          // @ts-ignore
-          seoSchema,
-          {
-            type: "image",
-            label: "Cover Image",
-            name: "coverImg",
-          },
-          {
-            type: "image",
-            label: "Thumbnail",
-            name: "thumbnail",
-          },
-          {
-            type: "image",
-            label: "Sidebar Image",
-            name: "sideImg",
-          },
-          {
-            type: "string",
-            name: "url",
-            label: "Url",
-            required: true,
-          },
-          {
-            type: "string",
-            name: "name",
-            label: "Name",
-            required: true,
-          },
-          {
-            type: "string",
-            name: "streetAddress",
-            label: "Street Address",
-            required: true,
-          },
-          {
-            type: "string",
-            name: "suburb",
-            label: "Suburb",
-          },
-          {
-            type: "string",
-            name: "addressLocality",
-            label: "Address Locality",
-            required: true,
-          },
-          {
-            type: "string",
-            name: "addressRegion",
-            label: "Address Region",
-            required: true,
-          },
-          {
-            type: "string",
-            name: "addressCountry",
-            label: "Address Country",
-            required: true,
-          },
-          {
-            type: "number",
-            name: "postalCode",
-            label: "Post Code",
-            required: true,
-          },
-          {
-            type: "string",
-            name: "phone",
-            label: "Phone",
-            required: true,
-          },
-          {
-            type: "string",
-            name: "hours",
-            label: "Hours",
-            required: true,
-          },
-          {
-            type: "string",
-            name: "days",
-            label: "Days",
-            required: true,
-          },
-          {
-            type: "rich-text",
-            label: "Body",
-            name: "_body",
-            templates: [...Schemas.pageBlocks],
-            isBody: true,
-          }
-        ],
-      }
+			{
+				label: "Office Pages",
+				name: "offices",
+				format: "mdx",
+				path: "content/offices",
+				ui: {
+					router: ({ document }) => {
+						return `/offices/${document._sys.filename}`;
+					},
+				},
+				fields: [
+					// @ts-ignore
+					seoSchema,
+					{
+						type: "image",
+						label: "Cover Image",
+						name: "coverImg",
+					},
+					{
+						type: "image",
+						label: "Thumbnail",
+						name: "thumbnail",
+					},
+					{
+						type: "image",
+						label: "Sidebar Image",
+						name: "sideImg",
+					},
+					{
+						type: "string",
+						name: "url",
+						label: "Url",
+						required: true,
+					},
+					{
+						type: "string",
+						name: "name",
+						label: "Name",
+						required: true,
+					},
+					{
+						type: "string",
+						name: "streetAddress",
+						label: "Street Address",
+						required: true,
+					},
+					{
+						type: "string",
+						name: "suburb",
+						label: "Suburb",
+					},
+					{
+						type: "string",
+						name: "addressLocality",
+						label: "Address Locality",
+						required: true,
+					},
+					{
+						type: "string",
+						name: "addressRegion",
+						label: "Address Region",
+						required: true,
+					},
+					{
+						type: "string",
+						name: "addressCountry",
+						label: "Address Country",
+						required: true,
+					},
+					{
+						type: "number",
+						name: "postalCode",
+						label: "Post Code",
+						required: true,
+					},
+					{
+						type: "string",
+						name: "phone",
+						label: "Phone",
+						required: true,
+					},
+					{
+						type: "string",
+						name: "hours",
+						label: "Hours",
+						required: true,
+					},
+					{
+						type: "string",
+						name: "days",
+						label: "Days",
+						required: true,
+					},
+					{
+						type: "rich-text",
+						label: "Body",
+						name: "_body",
+						templates: [...Schemas.pageBlocks],
+						isBody: true,
+					},
+				],
+			},
 		],
 	},
 });
