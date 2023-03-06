@@ -22,7 +22,7 @@ export default function OfficeIndex(
       <Container className="flex-1 gap-8 pt-2 md:grid md:grid-cols-7">
         <div className="md:col-span-5">
           {offices.map(office => 
-          <div className="mb-10 block">
+          <div key={office.addressLocality} className="mb-10 block">
             <h2 className="mt-0 text-sswRed">{`${office.addressLocality} | ${office.addressCountry}`}</h2>
             {office.thumbnail 
               ? <Image 
@@ -59,7 +59,7 @@ export default function OfficeIndex(
         <div className="prose prose-h3:text-sswRed md:col-span-2">
           <h3>SSW Offices</h3>
           <ul>
-            {offices.map(office => <li>{office.addressLocality}</li>)}
+            {offices.map(office => <li key={office.addressLocality}>{office.addressLocality}</li>)}
           </ul>
 
           <MicrosoftPanel />
