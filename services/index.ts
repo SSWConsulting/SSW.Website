@@ -138,6 +138,8 @@ export interface LiveStreamBannerInfo {
 	Title: string;
 	FormattedDate: string;
 	RelativeDate: string;
+	SSW_DelayedLiveStreamStart: boolean;
+	SSW_LiveStreamDelayMinutes: number;
 }
 
 export interface EventInfo extends LiveStreamBannerInfo {

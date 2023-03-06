@@ -10,13 +10,13 @@ export type LiveStreamProps = {
   event?: LiveStreamBannerInfo;
 };
 
-export function useLiveStreamProps(liveStreamDelayMinutes?: number, intervalMinutes?: number): LiveStreamProps {
+export function useLiveStreamProps(intervalMinutes?: number): LiveStreamProps {
   !intervalMinutes && (intervalMinutes = 1);
-  !liveStreamDelayMinutes && (liveStreamDelayMinutes = 30);
 
   const [countdownMins, setCountdownMins] = useState<number>();
   const [event, setEvent] = useState<LiveStreamBannerInfo>();
   const [isLive, setIsLive] = useState(false);
+  const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
 
   const timer = useRef<NodeJS.Timer>();
   const shouldCountdown = useRef<boolean>();
@@ -44,6 +44,9 @@ export function useLiveStreamProps(liveStreamDelayMinutes?: number, intervalMinu
         const latestEvent = res.data[0];
         setEvent(latestEvent);
 
+        !liveStreamDelayMinutes &&
+          latestEvent.SSW_DelayedLiveStreamStart &&
+          setLiveStreamDelayMinutes(latestEvent.SSW_LiveStreamDelayMinutes);
         const start = dayjs(latestEvent.StartDateTime).add(liveStreamDelayMinutes, "minute");
         setCountdownMins(start.diff(rightnow, "minute"));
 
