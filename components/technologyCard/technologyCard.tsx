@@ -1,43 +1,45 @@
-import Link from "next/link";
 import { FC } from "react";
-import { BASE_URL } from "../util/constants";
-import { TechnologyCardProps } from "./technologyCardTypes";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+import Link from "next/link";
 import Image from "next/image";
-import classnames from "classnames";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { TechnologyCardProps } from "./technologyCardTypes";
 
 const TechnologyCard: FC<TechnologyCardProps> = ({
-  name,
-  readMoreSlug,
-  thumbnail,
-  body,
-  className,
+	name,
+	readMoreSlug,
+	thumbnail,
+	body,
+	className,
 }) => {
-  return (
-    <div className={classnames("col-span-12", className)}>
-      <article
-        className="prose-technology-card mx-3.5 mb-15 mt-5 h-full p-10"
-        data-aos="flip-left"
-      >
-        {thumbnail && (
-          <figure className="relative h-24">
-            <Image
-              src={thumbnail || "/images/ssw-logo.svg"}
-              alt={thumbnail ? name : "SSW Consulting"}
-              fill
-              className="object-contain"
-            ></Image>
-          </figure>
-        )}
-        <TinaMarkdown content={body} />
-        {readMoreSlug && (
-          <Link className="text-md" href={BASE_URL + readMoreSlug}>
-            Read More
-          </Link>
-        )}
-      </article>
-    </div>
-  );
+	return (
+		<div className={className}>
+			<article
+				className="mx-3.5 mb-15 mt-5 flex h-full flex-col border-b-2 border-solid border-sswRed bg-gray-75 py-11 px-16"
+				data-aos="flip-left"
+			>
+				{thumbnail ? (
+					<figure className="relative h-24">
+						<Image
+							src={thumbnail || "/images/ssw-logo.svg"}
+							alt={thumbnail ? name : "SSW Consulting"}
+							fill
+							className="object-contain"
+						></Image>
+					</figure>
+				) : (
+					<h2>{name}</h2>
+				)}
+				<div className="prose max-w-full grow prose-p:text-justify prose-strong:text-sswRed prose-ul:columns-1 md:prose-ul:columns-2 lg:prose-ul:columns-3">
+					<TinaMarkdown content={body} />
+				</div>
+				{readMoreSlug && (
+					<Link className="text-md" href={readMoreSlug}>
+						Read More
+					</Link>
+				)}
+			</article>
+		</div>
+	);
 };
 
 export default TechnologyCard;

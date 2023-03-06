@@ -60,7 +60,6 @@ const createCarouselItemImage = ({ imgSrc, label }, index: React.Key) => {
         height={388}
         width={1080}
         sizes="100vw"
-        priority={index === 0}
       />
       {/* `legend` required so that the carousel works properly */}
       <p className="legend sr-only">{label}</p>

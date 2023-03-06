@@ -21,7 +21,7 @@ export const Header = () => {
         <div className="sm:flex sm:items-center sm:justify-between sm:gap-2">
           <Logo />
           <div className="mt-4 flex items-center justify-center sm:mt-0">
-            <SocialIcons excludeMobile={excludeMobile} />
+            <SocialIcons excludeMobile={excludeMobile} excludeDesktop={[SocialTypes.meetup]} />
           </div>
         </div>
       </Container>
