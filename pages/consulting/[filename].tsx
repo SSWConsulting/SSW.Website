@@ -62,7 +62,7 @@ export default function ConsultingPage(
           />
         </Section>
         <Section
-          className="w-full items-center !bg-black/75 bg-video-mask text-center font-light"
+          className="w-full"
           color="black"
         >
           <Booking {...data.consulting.booking}>
@@ -126,7 +126,7 @@ export default function ConsultingPage(
               dangerouslySetInnerHTML={{
                 __html: parseCallToAction(
                   data.consulting.callToAction,
-                  data.consulting.solution.project
+                  data.consulting.solution?.project
                 ),
               }}
             ></h1>

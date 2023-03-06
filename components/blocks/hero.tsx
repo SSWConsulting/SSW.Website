@@ -1,9 +1,9 @@
 import * as React from "react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import type { Template } from "tinacms";
 import { Actions } from "../util/actions";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
-import type { TinaTemplate } from "tinacms";
 
 export const Hero = ({ data, parentField }) => {
   const headlineColorClasses = {
@@ -30,13 +30,15 @@ export const Hero = ({ data, parentField }) => {
               className="relative z-20 mb-8 inline-block px-3 py-1 font-bold tracking-wide"
             >
               {data.tagline}
-              <span className="absolute left-0 top-0 -z-1 h-full w-full rounded-full bg-current opacity-7"></span>
+              <span className="absolute left-0 top-0 h-full w-full rounded-full bg-current opacity-7"></span>
             </h2>
           )}
           {data.headline && (
             <h3
               data-tinafield={`${parentField}.headline`}
-              className={"relative	mb-10 w-full text-5xl font-extrabold leading-tight tracking-normal"}
+              className={
+                "relative	mb-10 w-full text-5xl font-extrabold leading-tight tracking-normal"
+              }
             >
               <span
                 className={`bg-gradient-to-r bg-clip-text text-transparent  ${
@@ -90,7 +92,7 @@ export const Hero = ({ data, parentField }) => {
   );
 };
 
-export const heroBlockSchema: TinaTemplate = {
+export const heroBlockSchema: Template = {
   name: "Hero",
   label: "Hero",
   ui: {

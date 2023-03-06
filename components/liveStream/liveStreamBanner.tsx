@@ -53,7 +53,7 @@ export const LiveStreamBanner: FC<LiveStreamProps> = ({
               {event.Title}
             </h1>
             <p className="py-0 text-xs text-white">
-              <span className="text-sswRed">
+              <span className="block text-sswRed">
                 {isLive ? liveText : countdownText}
               </span>
               {!isLive && scheduledTimeText(dayjs(event.StartDateTime))} #NetUG
