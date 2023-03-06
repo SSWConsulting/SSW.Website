@@ -4,7 +4,7 @@ const MicrosoftPanel = () => {
     return (
         <>
             <h3>We ❤️ Microsoft</h3>
-            <div className="border-1 border-gray-300 bg-gray-100 px-4 py-3">
+            <div className="border-2 bg-gray-100 px-4 py-2">
                 <p><strong>SSW is a Microsoft Gold Certified Partner!</strong></p>
                 <Image 
                     className="m-0"
