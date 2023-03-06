@@ -2,7 +2,6 @@ import { defineStaticConfig, TinaCMS, wrapFieldsWithMeta } from "tinacms";
 import * as Schemas from "../components/blocks";
 import { ratingSchema } from "../components/util/consulting/rating";
 import { seoSchema } from "../components/util/seo";
-import { videoCardSchema } from "../components/util/videoCards";
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -329,8 +328,6 @@ const config = defineStaticConfig({
         fields: [
           // @ts-ignore
           seoSchema,
-          // @ts-ignore
-          videoCardSchema,
           {
             type: "object",
             label: "Solution",
