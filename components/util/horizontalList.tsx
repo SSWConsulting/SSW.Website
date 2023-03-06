@@ -10,14 +10,14 @@ export type HorizontalListItemProps = {
 
 const HorizontalListItem: FC<HorizontalListItemProps> = ({ icon, title, content }) => {
   return (
-    <div className="flex">
+    <div className="flex items-center">
       <Image
         src={icon || ""}
         alt={`${title} icon`}
-        width={70}
-        height={70}
+        width={75}
+        height={75}
       />
-      <div className="flex flex-col flex-start text-left ml-3 text-gray-500">
+      <div className="ml-3 flex flex-col justify-start text-left text-gray-500">
         <span className="text-xl font-semibold text-black">{title}</span>
         <TinaMarkdown content={content} />
       </div>
@@ -33,7 +33,7 @@ const HorizontalList: FC<{ header: string; listItemProps: HorizontalListItemProp
 
   return (
     <>
-      <h1 className="font-bold mb-12" dangerouslySetInnerHTML={{ __html: header }}></h1>
+      <h1 className="mb-12 font-bold" dangerouslySetInnerHTML={{ __html: header }}></h1>
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">{listItems}</div>
     </>
   );
