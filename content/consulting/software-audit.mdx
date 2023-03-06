@@ -115,32 +115,14 @@ benefits:
 ## How long does this normally take?
 
 <TableLayout
-  listofColumns={[
-    {
-      header: "Client time commitment",
-      hours: "8 hours",
-      listItem: [
-        { item: "Final presentation" },
-        { item: "Available for contact" },
-        { item: "Initial meeting" }
-      ]
-    },
-    {
-      header: "SSW time commitment",
-      hours: "16 hours",
-      listItem: [
-        { item: "Present findings and documentation to client" },
-        { item: "Prepare for final presentation" },
-        { item: "Initial meeting with client" },
-        { item: "Perform the Software Audit" }
-      ]
-    }
-  ]}
+  mdxTable={<>
+    | Client time commitment | SSW time commitment   | \n|:----------------------|:------------------| \n| 8 hours                | 16 hours              | \n|  1- Initial meeting x- - Available for contact x- - Final presentation x-    | 1- Initial meeting with client x- - Present findings and documentation to client x- - Perform the Software Audit x- - Present findings and documentation to client x- |
+  </>}
 />
 
 ## SSW Software Audit Services can help in:
 
-*  Ensuring the application can be maintained and extended easily in the future
+* Ensuring the application can be maintained and extended easily in the future
 * Discovering problems early; it's much easier and cheaper to fix issues early in the project
 * Removing unnecessary clutter and updating old components
 * Improving performance, scalability and reliability
