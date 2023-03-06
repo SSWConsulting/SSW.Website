@@ -46,17 +46,14 @@ export default function OfficePage(
             </div>
           : <></>
           }
-
-          <Section className="mx-auto w-full max-w-9xl py-5 px-8">
+          
+          <Container className="flex-1 pt-2">
             <Breadcrumbs
               path={removeExtension(props.variables.relativePath)}
               suffix={data.global.breadcrumbSuffix}
               title={data.offices.seo.title}
             />
-          </Section>
-          
-          <Container className={"flex-1 pt-4"}>
-            <div className="gap-8 md:grid md:grid-cols-7">
+            <div className="mt-8 gap-8 md:grid md:grid-cols-7">
               <div className="prose max-w-full prose-h2:text-3xl prose-h2:font-light prose-h2:text-sswRed prose-h4:text-lg md:col-span-5">
                 <TinaMarkdown 
                   components={componentRenderer}
@@ -94,9 +91,7 @@ export const getStaticProps = async ({ params }) => {
   });
 
   const testimonialResult = await client.queries.allTestimonialsQuery();
-
   const testimonials = testimonialResult.data.testimonialsConnection.Testimonials;
-
   const testimonial = testimonials[Math.floor(Math.random() * testimonials.length)].Testimonial;
 
   return { 
