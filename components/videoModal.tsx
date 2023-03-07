@@ -11,7 +11,7 @@ export const VideoModal = ({ url }) => {
     return (
         <div>
             <Popup isVisible={show} onClose={hideModal} className="sm:max-w-7xl">
-                <div className="relative mx-auto aspect-video w-full h-full">
+                <div className="relative mx-auto aspect-video h-full w-full">
                     <ReactPlayer
                         playing={show}
                         className="absolute top-0 left-0"

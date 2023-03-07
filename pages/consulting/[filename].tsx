@@ -16,7 +16,6 @@ import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import { VideoModal } from "../../components/videoModal";
 
 export default function ConsultingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
