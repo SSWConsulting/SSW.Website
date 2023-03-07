@@ -25,8 +25,10 @@ export default function OfficeIndex(
 					{offices.map((office) => (
 						<div key={office.addressLocality} className="mb-10 block">
 							<span>
-								<h2 className="mt-0 text-sswRed">{`${office.addressLocality} | ${office.addressCountry}`} <Flag country="Australia" /></h2>
-								
+								<h2 className="mt-0 text-sswRed">
+									{`${office.addressLocality} | ${office.addressCountry}`}{" "}
+									<Flag country="Australia" />
+								</h2>
 							</span>
 							{office.thumbnail ? (
 								<Image
@@ -53,7 +55,9 @@ export default function OfficeIndex(
 								</a>
 							</p>
 							<p className="block max-sm:clear-left">
-								<a href="">Directions to SSW {office.addressLocality}</a>
+								<a href={`${office.url}#Directions`}>
+									Directions to SSW {office.addressLocality}
+								</a>
 							</p>
 						</div>
 					))}

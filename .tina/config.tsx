@@ -3,6 +3,8 @@ import * as Schemas from "../components/blocks";
 import { ratingSchema } from "../components/util/consulting/rating";
 import { seoSchema } from "../components/util/seo";
 
+import { sswCountries } from "../components/util/constants/country";
+
 const config = defineStaticConfig({
 	clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
 	branch:
@@ -651,6 +653,7 @@ const config = defineStaticConfig({
 						type: "string",
 						name: "suburb",
 						label: "Suburb",
+						required: true,
 					},
 					{
 						type: "string",
@@ -668,6 +671,7 @@ const config = defineStaticConfig({
 						type: "string",
 						name: "addressCountry",
 						label: "Address Country",
+						options: sswCountries.map((country) => country.label),
 						required: true,
 					},
 					{
@@ -693,6 +697,48 @@ const config = defineStaticConfig({
 						name: "days",
 						label: "Days",
 						required: true,
+					},
+					{
+						type: "rich-text",
+						label: "About Us",
+						name: "aboutUs",
+						templates: [...Schemas.pageBlocks],
+					},
+					{
+						type: "image",
+						label: "Map Image",
+						name: "map",
+						templates: [...Schemas.pageBlocks],
+					},
+					{
+						type: "rich-text",
+						label: "Directions",
+						name: "directions",
+						templates: [...Schemas.pageBlocks],
+					},
+					{
+						type: "rich-text",
+						label: "Parking",
+						name: "parking",
+						templates: [...Schemas.pageBlocks],
+					},
+					{
+						type: "rich-text",
+						label: "Public Transport",
+						name: "publicTransport",
+						templates: [...Schemas.pageBlocks],
+					},
+					{
+						type: "rich-text",
+						label: "Team",
+						name: "team",
+						templates: [...Schemas.pageBlocks],
+					},
+					{
+						type: "rich-text",
+						label: "Photos",
+						name: "photos",
+						templates: [...Schemas.pageBlocks],
 					},
 					{
 						type: "rich-text",

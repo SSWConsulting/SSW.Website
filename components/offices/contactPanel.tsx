@@ -10,7 +10,6 @@ const ContactPanel = ({
 	addressCountry,
 	sideImg,
 }) => {
-	console.log(addressCountry);
 	return (
 		<>
 			<h3>Contact Us</h3>
