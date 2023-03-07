@@ -13,8 +13,6 @@ import { Container } from "../util/container";
 import { Section } from "../util/section";
 import layoutData from "../../content/global/index.json";
 
-import { client } from "../../.tina/__generated__/client";
-
 dayjs.extend(timezone);
 dayjs.extend(utc);
 
