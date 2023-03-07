@@ -9,8 +9,8 @@ export const Booking: FC<{
   children: React.ReactNode;
 }> = ({ title, subTitle, videoBackground, children }) => {
   return (
-    <>
-      <Container padding="px-4" className="w-full">
+    <div className="flex w-full items-center text-center font-light after:absolute after:h-full after:w-full after:bg-black/75 after:bg-video-mask after:z-videoMask">
+      <Container padding="px-4" className="w-full z-content">
         <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
         <h2>{subTitle}</h2>
         {children}
@@ -25,7 +25,7 @@ export const Booking: FC<{
       </Container>
 
       <video
-        className="absolute -z-100 h-full min-w-full object-cover transition-opacity duration-1000"
+        className="absolute h-full min-w-full object-cover transition-opacity duration-1000 z-bgVideo"
         playsInline
         autoPlay
         muted
@@ -34,6 +34,6 @@ export const Booking: FC<{
         <source src={videoBackground} type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>
-    </>
+    </div>
   );
 };

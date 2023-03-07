@@ -8,10 +8,6 @@
     @apply underline transition duration-300 hover:border-sswRed hover:text-sswRed;
   }
 
-  html {
-    @apply font-body;
-  }
-
   html,
   body {
     @apply scroll-smooth;
@@ -76,4 +72,13 @@
     background-position: 100%;
   }
 
+
+	.customTable table, th, td{
+		border: 1px solid;
+		padding: 8px;
+	}
+
+	.customTable li{
+		list-style-type: square;
+	}
 }

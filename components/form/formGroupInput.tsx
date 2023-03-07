@@ -1,10 +1,10 @@
 import classNames from "classnames";
 import { ErrorMessage, Field, FieldHookConfig, useField } from "formik";
-import { ChangeEvent, ChangeEventHandler, VFC } from "react";
+import { ChangeEvent, ChangeEventHandler, FC } from "react";
 import { FormGroupProps } from "./formGroupTypes";
 import styles from "./formGroup.module.css";
 
-const FormGroupInput: VFC<
+const FormGroupInput: FC<
   FieldHookConfig<string> &
     FormGroupProps<HTMLInputElement>
 > = ({
@@ -25,7 +25,7 @@ const FormGroupInput: VFC<
 
   return (
     <div className={classNames(styles["field-wrapper"], "relative mb-5 block py-1.5")}>
-      <label htmlFor={field.name} className={activeLabelClass}>
+      <label htmlFor={field.name} className={styles[activeLabelClass]}>
         {label}
       </label>
       <Field name={field.name}>
