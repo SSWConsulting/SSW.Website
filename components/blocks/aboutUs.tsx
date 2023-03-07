@@ -12,6 +12,7 @@ import { BiChevronRightCircle } from "react-icons/bi";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import layoutData from "../../content/global/index.json";
+import { VideoModal } from "../videoModal";
 
 dayjs.extend(timezone);
 dayjs.extend(utc);
@@ -136,38 +137,12 @@ export const AboutUs = ({ data }) => {
 };
 
 const TV = ({ className }) => {
-  const [videoClicked, setVideoClicked] = useState(false);
   return (
     <div className={className}>
       <h2 className="mt-0">tv.ssw.com</h2>
 
       <div className="relative h-0 w-full cursor-pointer pb-9/16">
-        {videoClicked ? (
-          <iframe
-            src={layoutData.aboutUs.video.url}
-            width="100%"
-            height="100%"
-            className="absolute"
-            allowFullScreen
-          ></iframe>
-        ) : (
-          <div onClick={() => setVideoClicked(true)} className="flex items-center justify-center">
-            
-            <Image
-              className="relative transition duration-500 hover:brightness-75"
-              src={layoutData.aboutUs.video.thumbnailUrl}
-              alt="SSW TV"
-              fill={true}
-            />
-            <Image 
-              className="pointer-events-none absolute inset-0 m-auto"
-              alt="Play Button"
-              src="/images/play.png"
-              height={60}
-              width={60}
-            />
-          </div>
-        )}
+        <VideoModal url={layoutData.aboutUs.video.url} />
       </div>
     </div>
   );
