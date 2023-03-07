@@ -2,6 +2,7 @@
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+import { HiMail } from "react-icons/hi";
 import { client } from "../../.tina/__generated__/client";
 import { Layout } from "../../components/layout";
 import { SEO } from "../../components/util/seo";
@@ -12,6 +13,7 @@ import { Section } from "../../components/util/section";
 import { ClientLogos } from "../../components/blocks";
 import { Container } from "../../components/util/container";
 import HorizontalList, { HorizontalListItemProps } from "../../components/util/horizontalList";
+import TrainingInformation from "../../components/trainingInformation";
 
 export default function TrainingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -34,7 +36,7 @@ export default function TrainingPage(
       <SEO seo={data.training.seo} />
       <Layout>
         <Section 
-          className="bg-white bg-cover bg-no-repeat"
+          className="border-b-8 border-sswRed bg-white bg-cover bg-no-repeat"
           style={{ backgroundImage: `url(${data.training.heroBackground})` }}
         >
           <Container className={"flex-1 pt-0"}>
@@ -74,6 +76,11 @@ export default function TrainingPage(
 
         <Section color="white" className="pb-12">
           <Container className={"flex-1 pt-0 text-center"}>
+            <div className="grid grid-cols-1 lg:grid-cols-3">
+              <TrainingInformation header="Who should apply?" listItemProps={horizontalListProps} />
+              <TrainingInformation header="What do you get?" listItemProps={horizontalListProps} />
+              <TrainingInformation header="When does it run?" listItemProps={horizontalListProps} />
+            </div>
           </Container>
         </Section>
 
@@ -88,7 +95,7 @@ export default function TrainingPage(
           </Container>
         </Section>
 
-        <Section color="lightgray" className="">
+        <Section color="white" className="">
           <Container className={"flex-1 pt-0"}>
             <div className="mx-auto flex max-w-9xl flex-col items-center">
               <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
@@ -96,7 +103,7 @@ export default function TrainingPage(
           </Container>
         </Section>
 
-        <Section color="white">
+        <Section color="lightgray">
           <Container className={"flex-1 pt-0"}>
             <div className="flex flex-col items-center pb-15 text-center">
               <h1>Trusted by more than <span className="text-sswRed">1400+</span> clients in the world</h1>
@@ -108,12 +115,15 @@ export default function TrainingPage(
 
         <Section color="darkgray">
           <Container className={"flex flex-1 flex-col items-center pt-15 text-center"}>
-            <p className="text-3xl font-light text-white">Subscribe to get notified about SSW training programs</p>
-            <p className="text-base text-gray-500">Subscribe to get notified about SSW training programs</p>
+      <p className="text-3xl font-light text-white">Subscribe to get notified about <span className="text-sswRed">SSW training programs</span></p>
+            <p className="text-base text-gray-500">Get the most popular courses from our developers</p>
 
             <div className="flex flex-col items-center pt-8 pb-12 md:flex-row">
               <input type="text" className="mr-5 w-96 bg-gray-800 px-5 py-3 text-white" placeholder="Enter your email" />
-              <button className="mt-5 w-36 bg-sswRed px-5 py-3 text-white md:mt-0">Subscribe</button>
+              <button className="mt-5 flex w-36 items-center bg-sswRed px-5 py-3 text-white md:mt-0">
+                <HiMail color="white" />
+                <span className="ml-2">Subscribe</span>
+              </button>
             </div>
           </Container>
         </Section>
