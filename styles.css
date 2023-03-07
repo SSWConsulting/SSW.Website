@@ -72,4 +72,13 @@
     background-position: 100%;
   }
 
+
+	.customTable table, th, td{
+		border: 1px solid;
+		padding: 8px;
+	}
+
+	.customTable li{
+		list-style-type: square;
+	}
 }

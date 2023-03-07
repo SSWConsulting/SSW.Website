@@ -5,6 +5,7 @@ import { CustomImage } from "./customImage";
 import { VideoEmbed } from "./videoEmbed";
 import { ColumnLayout } from "./columnLayout";
 import { Carousel } from "./carousel";
+import { TableLayout } from "./tableLayout";
 
 export const componentRenderer: Components<{
   ClientLogos: Record<string, never>;
@@ -29,6 +30,9 @@ export const componentRenderer: Components<{
     items: Array<any>;
     backgroundColor: string;
   };
+  TableLayout: {
+    mdxTable: string;
+	};
 }> = {
   VideoEmbed: (props) => <VideoEmbed data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -36,4 +40,5 @@ export const componentRenderer: Components<{
   UpcomingEvents: (props) => <UpcomingEvents data={props} />,
   ColumnLayout: (props) => <ColumnLayout data={props} />,
   Carousel: (props) => <Carousel data={props} />,
+  TableLayout: (props) => <TableLayout data={props} />,
 };
