@@ -55,7 +55,7 @@ export default function OfficePage(
 						title={data.offices.seo.title}
 					/>
 					<div className="mt-8 gap-8 md:grid md:grid-cols-7">
-						<div className="prose max-w-full prose-h2:text-3xl prose-h2:font-light prose-h2:text-sswRed prose-h4:text-lg md:col-span-5">
+						<div className="prose max-w-full prose-h2:mb-2 prose-h2:text-3xl prose-h2:font-light prose-h2:text-sswRed prose-h4:text-lg md:col-span-5">
 							<h2>About Us</h2>
 							<TinaMarkdown
 								components={componentRenderer}
@@ -63,15 +63,16 @@ export default function OfficePage(
 							/>
 
 							<h2>SSW {data.offices.addressLocality} Map</h2>
-							{data.offices.map 
-              ? <Image
-                  src={data.offices.map}
-                  width={1920}
-                  height={1080}
-                  alt={`SSW ${data.offices.addressLocality} Map`}
-                />
-              : <></>
-              }
+							{data.offices.map ? (
+								<Image
+									src={data.offices.map}
+									width={1920}
+									height={1080}
+									alt={`SSW ${data.offices.addressLocality} Map`}
+								/>
+							) : (
+								<></>
+							)}
 
 							<h2 id="Directions">
 								SSW {data.offices.addressLocality} Directions
