@@ -431,6 +431,12 @@ const config = defineStaticConfig({
 								type: "object",
 								label: "Rule",
 								name: "rule",
+								list: true,
+								ui: {
+									itemProps: (item) => {
+										return { label: item?.name };
+									},
+								},
 								fields: [
 									{
 										type: "string",
