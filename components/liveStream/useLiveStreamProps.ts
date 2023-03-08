@@ -49,7 +49,9 @@ export function useLiveStreamProps(intervalMinutes?: number): LiveStreamProps {
 
 				!liveStreamDelayMinutes &&
 					latestEvent.SSW_DelayedLiveStreamStart &&
-					setLiveStreamDelayMinutes(latestEvent.SSW_LiveStreamDelayMinutes);
+					setLiveStreamDelayMinutes(
+						latestEvent.SSW_LiveStreamDelayMinutes ?? 0
+					);
 				const start = dayjs(latestEvent.StartDateTime).add(
 					liveStreamDelayMinutes,
 					"minute"
