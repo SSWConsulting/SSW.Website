@@ -22,6 +22,7 @@ export default function OfficeIndex(
 
 	return (
 		<Layout>
+			{/* TODO: SEO */}
 			<Container className="flex-1 pt-2">
 				<Breadcrumbs
 					path={"/offices"}

@@ -61,19 +61,20 @@ export default function OfficePage(
 								components={componentRenderer}
 								content={data.offices.aboutUs}
 							/>
-
-							<h2>SSW {data.offices.addressLocality} Map</h2>
 							{data.offices.map ? (
-								<Image
-									src={data.offices.map}
-									width={1920}
-									height={1080}
-									alt={`SSW ${data.offices.addressLocality} Map`}
-								/>
+								<>
+									<h2>SSW {data.offices.addressLocality} Map</h2>
+									<Image
+										src={data.offices.map}
+										width={1920}
+										height={1080}
+										alt={`SSW ${data.offices.addressLocality} Map`}
+									/>
+								</>
 							) : (
 								<></>
 							)}
-
+							;
 							<h2 id="Directions">
 								SSW {data.offices.addressLocality} Directions
 							</h2>
@@ -81,31 +82,32 @@ export default function OfficePage(
 								components={componentRenderer}
 								content={data.offices.directions}
 							/>
-
 							<h2>Parking</h2>
 							<TinaMarkdown
 								components={componentRenderer}
 								content={data.offices.parking}
 							/>
-
 							<h2>Public Transport</h2>
 							<TinaMarkdown
 								components={componentRenderer}
 								content={data.offices.publicTransport}
 							/>
-
-							<h2>The SSW {data.offices.addressLocality} Team</h2>
-							<TinaMarkdown
-								components={componentRenderer}
-								content={data.offices.team}
-							/>
-
+							{data.offices.team.children.length > 0 ? (
+								<>
+									<h2>The SSW {data.offices.addressLocality} Team</h2>
+									<TinaMarkdown
+										components={componentRenderer}
+										content={data.offices.team}
+									/>
+								</>
+							) : (
+								<></>
+							)}
 							<h2>SSW {data.offices.addressLocality} Photos</h2>
 							<TinaMarkdown
 								components={componentRenderer}
 								content={data.offices.photos}
 							/>
-
 							<TinaMarkdown
 								components={componentRenderer}
 								content={data.offices._body}

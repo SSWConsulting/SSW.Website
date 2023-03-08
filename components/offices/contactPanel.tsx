@@ -36,7 +36,8 @@ const ContactPanel = ({
 			</p>
 
 			<p>
-				Learn more on <a href="https://sswchapel.com.au/sydney/">SSW Chapel</a>
+				Learn more on{" "}
+				<a href={`https://sswchapel.com.au/${addressLocality}`}>SSW Chapel</a>
 			</p>
 
 			{sideImg ? (
