@@ -63,12 +63,15 @@ export default function OfficePage(
 							/>
 
 							<h2>SSW {data.offices.addressLocality} Map</h2>
-							<Image
-								src={data.offices.map}
-								width={1920}
-								height={1080}
-								alt={`SSW ${data.offices.addressLocality} Map`}
-							/>
+							{data.offices.map 
+              ? <Image
+                  src={data.offices.map}
+                  width={1920}
+                  height={1080}
+                  alt={`SSW ${data.offices.addressLocality} Map`}
+                />
+              : <></>
+              }
 
 							<h2 id="Directions">
 								SSW {data.offices.addressLocality} Directions
