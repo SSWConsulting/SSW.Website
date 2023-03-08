@@ -44,7 +44,12 @@ export const LiveStreamBanner: FC<LiveStreamProps> = ({
 		setShowBanner(
 			!!event &&
 				(!!router.query.liveBanner ||
-					dayjs(event.StartDateTime).isSame(dayjs(), "day"))
+					dayjs().isBetween(
+						dayjs(event.StartShowBannerDateTime),
+						dayjs(event.EndShowBannerDateTime),
+						null,
+						"[)"
+					))
 		);
 	}, [countdownMins, event]);
 
