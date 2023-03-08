@@ -30,7 +30,7 @@ const ContactPanel = ({
 				<br />
 				<strong>
 					{streetAddress} <br />
-					{suburb}, {addressLocality}, {addressRegion} {postalCode} <br />
+					{suburb}, {addressRegion} {postalCode} <br />
 					{addressCountry}
 				</strong>
 			</p>

@@ -108,6 +108,7 @@ export default function OfficePage(
 								components={componentRenderer}
 								content={data.offices.photos}
 							/>
+							<hr />
 							<TinaMarkdown
 								components={componentRenderer}
 								content={data.offices._body}
