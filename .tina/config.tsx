@@ -606,4 +606,5 @@ const config = defineStaticConfig({
 	},
 });
 
-export default config; 
+export default config;
+ 
