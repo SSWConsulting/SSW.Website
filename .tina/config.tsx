@@ -457,6 +457,11 @@ const config = defineStaticConfig({
 								name: "header",
 							},
 							{
+								type: "string",
+								label: "Subheading",
+								name: "subheading",
+							},
+							{
 								type: "object",
 								label: "Technology Cards",
 								name: "technologyCards",
