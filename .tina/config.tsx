@@ -384,6 +384,16 @@ const config = defineStaticConfig({
 					},
 					{
 						type: "object",
+						list: true,
+						name: "afterBody",
+						label: "After body",
+						ui: {
+							visualSelector: true,
+						},
+						templates: [...Schemas.pageBlocks],
+					},
+					{
+						type: "object",
 						label: "Benefits",
 						name: "benefits",
 						fields: [
