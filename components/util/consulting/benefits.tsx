@@ -54,12 +54,20 @@ export const Benefits = ({ data }) => {
 					);
 				})}
 			</section>
-			{rule && (
+			{rule && rule.name != "" && (
 				<p>
-					Have a look at{" "}
-					<a className="text-white no-underline" href={rule?.url}>
-						{rule?.name}
-					</a>
+					{rule?.map((aRule, index) => (
+						<span key={index}>
+							{index === 0 ? "Have a look at " : " and "}
+							<a
+								key={index}
+								className="text-white no-underline "
+								href={aRule?.url}
+							>
+								{aRule?.name}
+							</a>
+						</span>
+					))}
 				</p>
 			)}
 		</article>
