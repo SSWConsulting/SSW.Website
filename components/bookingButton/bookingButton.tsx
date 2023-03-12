@@ -39,7 +39,7 @@ const BookingButton: FC<{
       </h2>
       <Popup
         isVisible={isVisible}
-        showBookingForm={setIsVisible}
+        onClose={setIsVisible}
         children={bookingForm}
       />
     </div>

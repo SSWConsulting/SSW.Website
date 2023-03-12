@@ -1,15 +1,12 @@
 import React from "react";
-import ReactPlayer from "../reactPlayer/reactPlayer";
 import type { Template } from "tinacms";
+import { VideoModal } from "../videoModal";
 
 export const VideoEmbed = ({ data }) => {
   return (
     <div className="relative m-8 mx-auto aspect-video w-3/4">
-      <ReactPlayer
-        className="absolute top-0 left-0"
+      <VideoModal
         url={data.url}
-        width={"100%"}
-        height={"100%"}
       />
     </div>
   );
