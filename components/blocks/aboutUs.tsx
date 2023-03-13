@@ -139,7 +139,10 @@ const TV = ({ className }) => {
   return (
     <div className={className}>
       <h2 className="mt-0">tv.ssw.com</h2>
-      <VideoModal url={layoutData.aboutUs.video.url} />
+
+      <div className="relative h-0 w-full cursor-pointer pb-9/16">
+        <VideoModal url={layoutData.aboutUs.video.url} />
+      </div>
     </div>
   );
 };
