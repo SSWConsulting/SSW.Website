@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 import React, { useEffect, useState } from "react";
 import type { Template } from "tinacms";
 import markdownItMultimdTable from "markdown-it-multimd-table";

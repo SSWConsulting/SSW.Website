@@ -1,7 +1,7 @@
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import ReactPlayer from "../reactPlayer/reactPlayer";
+import { VideoModal } from "../videoModal";
 
 export const Marketing = (props) => {
   const content = props.content.marketing;
@@ -22,12 +22,7 @@ export const Marketing = (props) => {
         ></h1>
         <div className="my-8 flex flex-col justify-between md:flex-row">
           <div className="relative mx-auto aspect-video w-full md:w-1/2">
-            <ReactPlayer
-              className="absolute top-0 left-0"
-              url={content?.videoUrl}
-              width={"100%"}
-              height={"100%"}
-            />
+            <VideoModal url={content?.videoUrl} />
           </div>
           <div className="mt-16 w-full pb-0 text-left font-sans text-md text-white md:mt-0 md:ml-10 md:w-1/3">
             <TinaMarkdown content={content?.body} />
