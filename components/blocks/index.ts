@@ -11,6 +11,7 @@ import { customImageBlockSchema } from "./customImage";
 import { clientLogosBlockSchema } from "./clientLogos";
 import { videoEmbedBlockSchema } from "./videoEmbed";
 import { columnLayoutBlockSchema } from "./columnLayout";
+import { TableBlockSchema } from "./tableLayout";
 
 export const pageBlocks: Template[] = [
     aboutUsBlockSchema,
@@ -23,7 +24,8 @@ export const pageBlocks: Template[] = [
     customImageBlockSchema,
     clientLogosBlockSchema,
     columnLayoutBlockSchema,
-    videoEmbedBlockSchema
+    videoEmbedBlockSchema,
+    TableBlockSchema
 ];
 
 export * from "./aboutUs";

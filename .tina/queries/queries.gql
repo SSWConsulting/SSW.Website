@@ -12,10 +12,10 @@ query consultingContentQuery($relativePath: String!) {
   }
 }
 
-query trainingContentQuery($relativePath: String!) {
+query officeContentQuery($relativePath: String!) {
   ...LayoutQueryFragment
-  training(relativePath: $relativePath) {
-    ...TrainingParts
+  offices(relativePath: $relativePath) {
+    ...OfficesParts
   }
 }
 
