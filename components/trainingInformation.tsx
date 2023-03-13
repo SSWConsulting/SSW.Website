@@ -1,72 +1,48 @@
-import Image from "next/image";
 import { FC } from "react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import * as Schemas from "../components/blocks";
+import { componentRenderer } from "../components/blocks/mdxComponentRenderer";
 
-export type VerticalListItemProps = {
-  icon: string;
-  title: string;
-};
-
-const VerticalListItem: FC<VerticalListItemProps> = ({ icon, title }) => {
-  return (
-    <div className="flex items-center">
-      <Image
-        src={icon || ""}
-        alt={`${title} icon`}
-        width={75}
-        height={75}
-      />
-      <span className="text-xl font-semibold text-black">{title}</span>
-    </div>
-  )
-}
-
-const TrainingInformation: FC<{ listItemProps: VerticalListItemProps[], header: string }> = ({ listItemProps, header, }) => {
-  const listItems = listItemProps.map((p, i) => <VerticalListItem key={i} {...p} />);
-
-  return (
-    <div>
-      <h1 className="font-bold" dangerouslySetInnerHTML={{ __html: header }}></h1>
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-1">{listItems}</div>
-    </div>
-  );
+const TrainingInformation: FC<{ body: TinaMarkdownContent | TinaMarkdownContent[], header: string }> = ({ body, header }) => {
+    return (
+        <div className="flex flex-col items-center text-center lg:text-left">
+            <h1 dangerouslySetInnerHTML={{ __html: header }}></h1>
+            <div className="w-full sm:w-3/4 lg:w-full">
+                <TinaMarkdown
+                    components={componentRenderer}
+                    content={body}
+                />
+            </div>
+        </div>
+    );
 }
 
 export const trainingInformationSchema = {
-  type: "object",
-  label: "Horizontal List Items",
-  name: "horizontalListItems",
-  fields: [
-    {
-      type: "string",
-      label: "Header",
-      name: "header",
-    },
-    {
-      type: "object",
-      label: "Apply List Items",
-      name: "applyListItems",
-      list: true,
-      fields: [
+    type: "object",
+    label: "Training Information",
+    name: "trainingInformation",
+    fields: [
         {
-          type: "string",
-          label: "Title",
-          name: "title",
+            type: "object",
+            label: "Information Columns",
+            name: "informationColumns",
+            list: true,
+            fields: [
+                {
+                    type: "string",
+                    label: "Header",
+                    name: "header",
+                },
+                {
+                    type: "rich-text",
+                    label: "Body",
+                    name: "body",
+                    templates: [...Schemas.pageBlocks],
+                    isBody: true,
+                },
+            ],
         },
-        {
-          type: "rich-text",
-          label: "Content",
-          name: "content",
-          isBody: true,
-        },
-        {
-          type: "image",
-          label: "Icon",
-          name: "icon",
-        }
-      ],
-    },
-  ],
+    ],
 };
 
 export default TrainingInformation;

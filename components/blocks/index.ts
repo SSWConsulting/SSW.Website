@@ -12,6 +12,7 @@ import { clientLogosBlockSchema } from "./clientLogos";
 import { videoEmbedBlockSchema } from "./videoEmbed";
 import { columnLayoutBlockSchema } from "./columnLayout";
 import { TableBlockSchema } from "./tableLayout";
+import { verticalListItemSchema } from "./verticalListItem";
 
 export const pageBlocks: Template[] = [
     aboutUsBlockSchema,
@@ -25,7 +26,8 @@ export const pageBlocks: Template[] = [
     clientLogosBlockSchema,
     columnLayoutBlockSchema,
     videoEmbedBlockSchema,
-    TableBlockSchema
+    TableBlockSchema,
+    verticalListItemSchema
 ];
 
 export * from "./aboutUs";
@@ -40,3 +42,4 @@ export * from "./clientLogos";
 export * from "./booking";
 export * from "./videoEmbed";
 export * from "./columnLayout";
+export * from "./verticalListItem";

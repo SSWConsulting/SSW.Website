@@ -19,6 +19,13 @@ query officeContentQuery($relativePath: String!) {
   }
 }
 
+query trainingContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  training(relativePath: $relativePath) {
+    ...TrainingParts
+  }
+}
+
 query allTestimonialsQuery {
   testimonialsConnection {
     Testimonials: edges {

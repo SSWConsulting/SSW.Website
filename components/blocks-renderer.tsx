@@ -9,6 +9,7 @@ import { BuiltOnAzure } from "./blocks/builtOnAzure";
 import { CustomImage } from "./blocks/customImage";
 import { ClientLogos } from "./blocks/clientLogos";
 import { ColumnLayout } from "./blocks/columnLayout";
+import { VerticalListItem } from "./blocks/verticalListItem";
 
 
 const componentMap = {
@@ -21,6 +22,7 @@ const componentMap = {
   "CustomImage": CustomImage,
   "ClientLogos": ClientLogos,
   "ColumnLayout":  ColumnLayout,
+  "VerticalListItem":  VerticalListItem,
 };
 
 export const Blocks = ({ prefix, blocks}) => {
