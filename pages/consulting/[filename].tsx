@@ -88,7 +88,10 @@ export default function ConsultingPage(
 				</Section>
 				<Section className="mb-16">
 					<Container padding="px-4" className="flex w-full flex-wrap">
-						<Blocks prefix={"ConsultingAfterBody"} blocks={data.consulting.afterBody} />
+						<Blocks
+							prefix={"ConsultingAfterBody"}
+							blocks={data.consulting.afterBody}
+						/>
 						<TestimonialRow testimonialsQueryResult={props.testimonialResult} />
 						<BookingButton {...bookingButtonProps} containerClass="mt-20" />
 					</Container>
