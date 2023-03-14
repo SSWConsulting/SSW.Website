@@ -21,7 +21,7 @@ export const Marketing = (props) => {
           dangerouslySetInnerHTML={{ __html: content?.title }}
         ></h1>
         <div className="my-8 flex flex-col justify-between md:flex-row">
-          <div className="relative mx-auto aspect-video w-full md:w-1/2">
+          <div className="mx-auto w-full md:w-1/2">
             <VideoModal url={content?.videoUrl} />
           </div>
           <div className="mt-16 w-full pb-0 text-left font-sans text-md text-white md:mt-0 md:ml-10 md:w-1/3">
