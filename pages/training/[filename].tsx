@@ -14,6 +14,7 @@ import { ClientLogos } from "../../components/blocks";
 import { Container } from "../../components/util/container";
 import HorizontalList, { HorizontalListItemProps } from "../../components/util/horizontalList";
 import TrainingInformation from "../../components/trainingInformation";
+import VideoCards, { VideoCardProps, videoCardSchema } from "../../components/util/videoCards";
 
 export default function TrainingPage(
     props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -29,6 +30,12 @@ export default function TrainingPage(
             icon: m.icon,
             title: m.title,
             content: m.content,
+        })) || [];
+
+    const videoCardProps =
+        data.training.videos?.videoCards?.map<VideoCardProps>((m) => ({
+            title: m.title,
+            link: m.link,
         })) || [];
 
     return (
@@ -93,10 +100,7 @@ export default function TrainingPage(
                     </Container>
                 </Section>
 
-                <Section color="darkgray" className="pb-12">
-                    <Container className={"flex flex-1 flex-col items-center pt-0 text-center"}>
-                    </Container>
-                </Section>
+                <VideoCards cardProps={videoCardProps} channelLink={data.training.videos?.channelLink} defaultChannelLink={data.global.youtubeChannelLink} />
 
                 <Section color="white" className="">
                     <Container className={"flex-1 pt-0"}>

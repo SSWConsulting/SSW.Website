@@ -4,6 +4,8 @@ import { ratingSchema } from "../components/util/consulting/rating";
 import { seoSchema } from "../components/util/seo";
 import { horizontalListSchema } from "../components/util/horizontalList";
 import { trainingInformationSchema } from "../components/trainingInformation";
+import { videoCardSchema } from "../components/util/videoCards";
+
 
 import { sswCountries } from "../components/util/constants/country";
 
@@ -82,6 +84,11 @@ const config = defineStaticConfig({
                     global: true,
                 },
                 fields: [
+                    {
+						type: "string",
+						label: "Youtube channel link",
+						name: "youtubeChannelLink",
+					},
                     {
                         type: "object",
                         label: "Header",
@@ -339,6 +346,8 @@ const config = defineStaticConfig({
                     seoSchema,
                     // @ts-ignore
                     trainingInformationSchema,
+                    // @ts-ignore
+                    videoCardSchema,
                     {
                         type: "string",
                         label: "Tagline",
