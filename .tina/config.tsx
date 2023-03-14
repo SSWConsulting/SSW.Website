@@ -5,7 +5,7 @@ import { seoSchema } from "../components/util/seo";
 import { horizontalListSchema } from "../components/util/horizontalList";
 import { trainingInformationSchema } from "../components/trainingInformation";
 import { videoCardSchema } from "../components/util/videoCards";
-
+import { trainingHeaderSchema } from "../components/training/trainingHeader";
 
 import { sswCountries } from "../components/util/constants/country";
 
@@ -85,10 +85,10 @@ const config = defineStaticConfig({
                 },
                 fields: [
                     {
-						type: "string",
-						label: "Youtube channel link",
-						name: "youtubeChannelLink",
-					},
+                        type: "string",
+                        label: "Youtube channel link",
+                        name: "youtubeChannelLink",
+                    },
                     {
                         type: "object",
                         label: "Header",
@@ -345,33 +345,11 @@ const config = defineStaticConfig({
                     // @ts-ignore
                     seoSchema,
                     // @ts-ignore
+                    trainingHeaderSchema,
+                    // @ts-ignore
                     trainingInformationSchema,
                     // @ts-ignore
                     videoCardSchema,
-                    {
-                        type: "string",
-                        label: "Tagline",
-                        name: "tagline",
-                        required: true,
-                    },
-                    {
-                        type: "string",
-                        label: "Secondary Tagline",
-                        name: "secondaryTagline",
-                        required: true,
-                    },
-                    {
-                        type: "image",
-                        label: "Hero Background",
-                        name: "heroBackground",
-                        required: true,
-                    },
-                    {
-                        type: "image",
-                        label: "Person",
-                        name: "person",
-                        required: true,
-                    },
                     // @ts-ignore
                     horizontalListSchema,
                 ]

@@ -1,20 +1,18 @@
 
 import { useTina } from "tinacms/dist/react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { HiMail } from "react-icons/hi";
 import { client } from "../../.tina/__generated__/client";
 import { Layout } from "../../components/layout";
 import { SEO } from "../../components/util/seo";
-import { ImArrowUpRight2 } from "react-icons/im";
-import Image from "next/image";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { Section } from "../../components/util/section";
 import { ClientLogos } from "../../components/blocks";
 import { Container } from "../../components/util/container";
 import HorizontalList, { HorizontalListItemProps } from "../../components/util/horizontalList";
 import TrainingInformation from "../../components/trainingInformation";
-import VideoCards, { VideoCardProps, videoCardSchema } from "../../components/util/videoCards";
+import VideoCards, { VideoCardProps } from "../../components/util/videoCards";
+import TrainingHeader from "../../components/training/trainingHeader";
 
 export default function TrainingPage(
     props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -42,44 +40,8 @@ export default function TrainingPage(
         <>
             <SEO seo={data.training.seo} />
             <Layout>
-                <Section
-                    className="border-b-8 border-sswRed bg-white bg-cover bg-no-repeat"
-                    style={{ backgroundImage: `url(${data.training.heroBackground})` }}
-                >
-                    <Container className={"flex-1 pt-0"}>
-                        <div className="px-6 pb-24 sm:pb-32 lg:flex lg:px-8">
-                            <div className="mx-auto max-w-2xl pt-8 lg:mx-0 lg:max-w-3xl">
-                                <Image
-                                    src="/images/internshipLogo.png"
-                                    alt="SSW Internship Program logo"
-                                    width={250}
-                                    height={30}
-                                />
-                                <div className="mt-10 max-w-2xl text-4xl font-black text-white sm:text-6xl">
-                                    <h1 dangerouslySetInnerHTML={{ __html: data.training.tagline }}></h1>
-                                </div>
-                                <p className="max-w-lg text-sm leading-8 text-gray-300">
-                                    {data.training.secondaryTagline}
-                                </p>
-                                <div className="mt-10">
-                                    <button
-                                        className="flex items-center gap-2 bg-sswRed px-5 py-2.5 text-sm font-normal text-white shadow-sm"
-                                    >
-                                        Apply Now
-                                        <ImArrowUpRight2 />
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </Container>
-                    <Image
-                        className="absolute bottom-0 right-0 hidden lg:block"
-                        src={data.training.person}
-                        alt="person"
-                        width={900}
-                        height={30}
-                    />
-                </Section>
+
+                <TrainingHeader data={data.training.trainingHeader} />
 
                 <Section color="white" className="pb-12">
                     <Container className={"flex-1 pt-0 text-center"}>
@@ -156,6 +118,7 @@ export const getStaticProps = async ({ params }) => {
                 GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY || null,
             },
         },
+        revalidate: 10
     };
 };
 
