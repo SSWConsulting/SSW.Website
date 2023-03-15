@@ -119,6 +119,11 @@ const config = defineStaticConfig({
 					},
 					{
 						type: "string",
+						label: "Youtube channel link",
+						name: "youtubeChannelLink",
+					},
+					{
+						type: "string",
 						label: "Breadcrumb Suffix",
 						name: "breadcrumbSuffix",
 					},
