@@ -32,6 +32,21 @@ query allTestimonialsQuery {
     }
   }
 }
+
+query testimonalsQuery($categories: [String!]) {
+  testimonialsConnection(filter: {categories: {category: {testimonialCategories: {name: {in: $categories} }}}}) {
+    edges {
+      node {
+        name,
+        avatar,
+        body,
+        company,
+        rating
+      }
+    }
+  }
+}
+
 query technologyCardContentQuery($cardNames: [String!]) {
   ...LayoutQueryFragment
   technologiesConnection(filter: {name: {in: $cardNames}}) {

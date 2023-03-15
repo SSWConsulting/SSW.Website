@@ -388,6 +388,20 @@ const config = defineStaticConfig({
 						required: false,
 					},
 					{
+						type: "object",
+						label: "Testimonial Categories",
+						name: "testimonialCategories",
+						list: true,
+						fields: [
+							{
+								type: "reference",
+								label: "Testimonial Category",
+								name: "testimonialCategory",
+								collections: ["testimonialCategories"],
+							},
+						],
+					},
+					{
 						type: "rich-text",
 						label: "Body",
 						name: "_body",
@@ -552,17 +566,13 @@ const config = defineStaticConfig({
 				name: "testimonials",
 				format: "mdx",
 				path: "content/testimonials",
-				ui: {
-					router: ({ document }) => {
-						return `/testimonials/${document._sys.filename}`;
-					},
-				},
 				fields: [
 					{
 						type: "string",
 						label: "Name",
 						name: "name",
 						required: true,
+						isTitle: true,
 					},
 					{
 						type: "image",
@@ -577,6 +587,20 @@ const config = defineStaticConfig({
 						required: true,
 					},
 					{
+						type: "object",
+						label: "Categories",
+						name: "categories",
+						list: true,
+						fields: [
+							{
+								type: "reference",
+								label: "Category",
+								name: "category",
+								collections: ["testimonialCategories"],
+							},
+						],
+					},
+					{
 						...ratingSchema,
 						required: true,
 					},
@@ -589,15 +613,30 @@ const config = defineStaticConfig({
 				],
 			},
 			{
+				label: "Testimonial Categories",
+				name: "testimonialCategories",
+				format: "mdx",
+				path: "content/testimonialCategories",
+				fields: [
+					{
+						type: "string",
+						label: "Name",
+						name: "name",
+						required: true,
+						isTitle: true,
+					},
+					{
+						type: "string",
+						label: "Description",
+						name: "description",
+					},
+				],
+			},
+			{
 				label: "Technology Cards",
 				name: "technologies",
 				format: "mdx",
 				path: "content/technologies",
-				ui: {
-					router: ({ document }) => {
-						return `/technologies/${document._sys.filename}`;
-					},
-				},
 				fields: [
 					{
 						type: "string",

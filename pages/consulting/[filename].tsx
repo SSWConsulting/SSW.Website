@@ -159,7 +159,16 @@ export const getStaticProps = async ({ params }) => {
 		relativePath: `${params.filename}.mdx`,
 	});
 
-	const testimonials = await client.queries.allTestimonialsQuery();
+	const categories = tinaProps.data.consulting.testimonialCategories?.map(category => 
+		category.testimonialCategory.name) || [];
+
+	const testimonials = await client.queries.testimonalsQuery({
+		categories
+	});
+
+  const generalTestimonials = await client.queries.testimonalsQuery({
+		categories: "General"
+	});
 
 	const technologyCardNames =
 		tinaProps.data.consulting.technologies?.technologyCards?.reduce<string[]>(
@@ -183,6 +192,7 @@ export const getStaticProps = async ({ params }) => {
 			query: tinaProps.query,
 			variables: tinaProps.variables,
 			testimonialResult: testimonials,
+      generalTestimonialResult: generalTestimonials,
 			technologyCards: technologyCardsProps,
 			marketingData: marketingSection.data,
 			env: {
