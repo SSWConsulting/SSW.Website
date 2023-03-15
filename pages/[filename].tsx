@@ -10,35 +10,33 @@ import { SEO } from "../components/util/seo";
 export default function HomePage(
 	props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
-	const { data } = useTina({
-		data: props.data,
-		query: props.query,
-		variables: props.variables,
-	});
-	return (
-		<>
-			<SEO seo={data.page.seo} />
-			<Layout>
-				<Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
-				<Container className="flex-1 pt-4">
-					<div className="flex">
-						<div className="prose max-w-full grow">
-							<TinaMarkdown
-								components={componentRenderer}
-								content={data.page._body}
-							/>
-						</div>
-						{data.page.sideBar && data.page.sideBar.length > 0 && (
-							<div className="shrink-0 grow-0 basis-2/5 pl-3">
-								<Blocks prefix="PageSideBar" blocks={data.page.sideBar} />
-							</div>
-						)}
-					</div>
-				</Container>
-				<Blocks prefix="PageAfterBody" blocks={data.page.afterBody} />
-			</Layout>
-		</>
-	);
+  const { data } = useTina({
+    data: props.data,
+    query: props.query,
+    variables: props.variables,
+  });
+  return (
+    <>
+      <SEO seo={data.page.seo} />
+      <Layout>
+        <Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
+        <Container className={"flex-1 pt-4"}>
+          <div className="gap-4 md:grid md:grid-cols-5 lg:grid-cols-5">
+            <div className="max-w-full md:col-span-3 lg:col-span-3">
+              <TinaMarkdown
+                components={componentRenderer}
+                content={data.page._body}
+              />
+            </div>
+            <div className="md:col-span-2 lg:col-span-2">
+              <Blocks prefix="PageSideBar" blocks={data.page.sideBar} />
+            </div>
+          </div>
+        </Container>
+        <Blocks prefix="PageAfterBody" blocks={data.page.afterBody} />
+      </Layout>
+    </>
+  );
 }
 
 export const getStaticProps = async ({ params }) => {
