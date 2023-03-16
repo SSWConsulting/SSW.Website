@@ -30,7 +30,7 @@ const TechnologyCard: FC<TechnologyCardProps> = ({
 				) : (
 					<h2>{name}</h2>
 				)}
-				<div className="tech-widget prose-ul-li:grid-6 prose max-w-full grow prose-p:text-justify prose-strong:text-sswRed prose-ul:grid prose-ul:grid-flow-col prose-ul:grid-rows-12 prose-ul:text-left">
+				<div className="prose-ul-li:grid-6 prose max-w-full grow prose-p:text-justify prose-strong:text-sswRed prose-ul:grid prose-ul:grid-flow-col prose-ul:grid-rows-12 prose-ul:text-left descendant-div:!m-0">
 					<TinaMarkdown content={body} />
 				</div>
 				{readMoreSlug && (
