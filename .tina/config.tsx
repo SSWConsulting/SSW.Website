@@ -604,6 +604,11 @@ const config = defineStaticConfig({
 				name: "offices",
 				format: "mdx",
 				path: "content/offices",
+				ui: {
+					router: ({ document }) => {
+						return `/offices/${document._sys.filename}`;
+					},
+				},
 				fields: [
 					// @ts-ignore
 					seoSchema,
