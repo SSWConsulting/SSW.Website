@@ -7,10 +7,6 @@ export const SEO = ({ seo }) => {
 	if (!seo) return null;
 
 	let seoPartial: Partial<NextSeoProps> = {};
-	const images = seo.images?.map((image) => ({
-		...image,
-		url: `${layoutData.header.url}${image.url}`,
-	}));
 
 	seoPartial = {
 		title: seo.title,
@@ -20,7 +16,7 @@ export const SEO = ({ seo }) => {
 			title: seo.title,
 			description: seo.description,
 			url: seo.canonical,
-			images: images ?? null,
+			images: seo.images ?? null,
 		},
 		twitter: {
 			site: seo.canonical,
