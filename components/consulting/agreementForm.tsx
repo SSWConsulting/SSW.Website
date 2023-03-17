@@ -1,61 +1,87 @@
 import React from "react";
 import { Template } from "tinacms";
+import { Formik, Field, Form } from "formik";
+
+const fields = [
+	{
+		id: "aperson",
+		label: "Authorized Person",
+		placeholder: "",
+	},
+	{
+		id: "position",
+		label: "Position",
+		placeholder: "",
+	},
+	{
+		id: "fullcompanyname",
+		label: "Person or Full Company Name",
+		placeholder: "",
+	},
+	{
+		id: "address",
+		label: "Client registered business address",
+		placeholder: "",
+	},
+	{
+		id: "signdate",
+		label: "Authorized Person",
+		placeholder: "Signature & Date",
+	},
+	{
+		id: "abn",
+		label: "Client ABN + date of incorporation",
+		placeholder: "",
+	},
+];
 
 export const AgreementForm = () => {
+	const initialValues = fields.reduce(
+		(total, curr) => ({ ...total, [curr.id]: "" }),
+		{}
+	);
 	return (
-		<div className="agreement-form">
-			<div className="row">
-				<div className="col-sm-3">
-					<label htmlFor="aperson">Authorized Person</label>
-				</div>
-				<div className="col-sm-9">
-					<input type="text" id="aperson" name="aperson" />
-				</div>
+		<div>
+			<Formik
+				initialValues={initialValues}
+				onSubmit={(values) => {
+					console.log(values);
+				}}
+			>
+				<Form className="my-10 bg-gray-75 p-10">
+					{fields.map((field) => (
+						<FormField
+							id={field.id}
+							label={field.label}
+							placeholder={field.placeholder}
+						/>
+					))}
+					<hr />
+					<button className="bg-green-100" type="submit">
+						Submit
+					</button>
+				</Form>
+			</Formik>
+		</div>
+	);
+};
+
+const FormField = ({ label, id, placeholder }) => {
+	return (
+		<div className="h-auto p-10 md:grid-cols-5">
+			<div className="relative float-left w-1/4 py-2.5 pr-2 text-right font-bold">
+				<label className="mb-1" htmlFor={id}>
+					{label}
+				</label>
 			</div>
-			<div className="row">
-				<div className="col-sm-3">
-					<label htmlFor="position">Position</label>
-				</div>
-				<div className="col-sm-9">
-					<input type="text" id="position" name="position" />
-				</div>
-			</div>
-			<div className="row">
-				<div className="col-sm-3">
-					<label htmlFor="fullcompanyname">Person or Full Company Name</label>
-				</div>
-				<div className="col-sm-9">
-					<input
-						type="text"
-						id="fullcompanyname"
-						name="fullcompanyname"
-						placeholder="E.g. Northwind Pty Ltd"
-					/>
-				</div>
-			</div>
-			<div className="row">
-				<div className="col-sm-3">
-					<label htmlFor="signdate">Signature &amp; Date</label>
-				</div>
-				<div className="col-sm-9">
-					<input type="text" id="signdate" name="signdate" />
-				</div>
-			</div>
-			<div className="row">
-				<div className="col-sm-3">
-					<label htmlFor="address">Client registered business address</label>
-				</div>
-				<div className="col-sm-9">
-					<textarea id="address" name="address"></textarea>
-				</div>
-			</div>
-			<div className="row">
-				<div className="col-sm-3">
-					<label htmlFor="abn">Client ABN + date of incorporation</label>
-				</div>
-				<div className="col-sm-9">
-					<input type="text" id="abn" name="abn" />
-				</div>
+			<div className="relative float-left w-3/4">
+				<Field
+					className="w-full rounded border-2 border-gray-300 p-3"
+					type="text"
+					id={id}
+					name={id}
+					placeholder={placeholder}
+				/>
 			</div>
 		</div>
 	);
