@@ -73,10 +73,7 @@ export default function OfficeIndex(
 								</p>
 								<p className="block max-sm:clear-left">
 									<Link
-										href={`${
-											office.url ||
-											`/offices/${office.addressLocality.toLowerCase()}`
-										}#Directions`}
+										href={`${`/offices/${office.addressLocality.toLowerCase()}`}#Directions`}
 									>
 										Directions to SSW {office.addressLocality}
 									</Link>
@@ -108,7 +105,13 @@ export default function OfficeIndex(
 						<h3>SSW Offices</h3>
 						<ul>
 							{offices.map((office) => (
-								<li key={office.addressLocality}>{office.addressLocality}</li>
+								<li key={office.addressLocality}>
+									<Link
+										href={`${`/offices/${office.addressLocality.toLowerCase()}`}#Directions`}
+									>
+										{office.addressLocality}
+									</Link>
+								</li>
 							))}
 						</ul>
 

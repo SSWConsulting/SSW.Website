@@ -6,6 +6,7 @@ import { VideoEmbed } from "./videoEmbed";
 import { ColumnLayout } from "./columnLayout";
 import { Carousel } from "./carousel";
 import { TableLayout } from "./tableLayout";
+import { GoogleMapsWrapper } from "./googleMapsWrapper";
 
 export const componentRenderer: Components<{
 	ClientLogos: Record<string, never>;
@@ -38,6 +39,11 @@ export const componentRenderer: Components<{
 	TableLayout: {
 		mdxTable: string;
 	};
+	GoogleMaps: {
+		url: string;
+		width: string;
+		height: string;
+	};
 }> = {
 	VideoEmbed: (props) => <VideoEmbed data={props} />,
 	ClientLogos: () => <ClientLogos />,
@@ -46,4 +52,5 @@ export const componentRenderer: Components<{
 	ColumnLayout: (props) => <ColumnLayout data={props} />,
 	Carousel: (props) => <Carousel data={props} />,
 	TableLayout: (props) => <TableLayout data={props} />,
+	GoogleMaps: (props) => <GoogleMapsWrapper {...props} />,
 };

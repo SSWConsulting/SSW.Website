@@ -636,7 +636,6 @@ const config = defineStaticConfig({
 						type: "string",
 						name: "url",
 						label: "Url",
-						required: true,
 					},
 					{
 						type: "string",
