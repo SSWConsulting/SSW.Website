@@ -1,13 +1,12 @@
+import Image from "next/image";
+
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { client } from "../../.tina/__generated__/client";
 
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
-
-import { client } from "../../.tina/__generated__/client";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
-
-import Image from "next/image";
 import { BuiltOnAzure } from "../../components/blocks";
 import { Section } from "../../components/util/section";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
@@ -124,7 +123,7 @@ export default function OfficePage(
 								postalCode={data.offices.postalCode}
 								addressCountry={data.offices.addressCountry}
 								sideImg={data.offices.sideImg}
-                sidebarSecondaryPlace={data.offices.sidebarSecondaryPlace}
+								sidebarSecondaryPlace={data.offices.sidebarSecondaryPlace}
 							/>
 
 							<MicrosoftPanel />
@@ -162,7 +161,11 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-	const pagesListData = await client.queries.officesConnection();
+	const pagesListData = await client.queries.officesConnection({
+		filter: {
+			addressCountry: { eq: "Australia" },
+		},
+	});
 	return {
 		paths: pagesListData.data.officesConnection.edges.map((page) => ({
 			params: { filename: page.node._sys.filename },
