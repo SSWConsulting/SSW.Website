@@ -2,8 +2,9 @@ import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { client } from "../../.tina/__generated__/client";
-import { Booking, BuiltOnAzure, ClientLogos } from "../../components/blocks";
+import { BuiltOnAzure, ClientLogos } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { Booking } from "../../components/blocks/booking";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import BookingButton from "../../components/bookingButton/bookingButton";
 import { Layout } from "../../components/layout";
