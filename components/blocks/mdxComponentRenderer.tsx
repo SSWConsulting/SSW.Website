@@ -40,9 +40,9 @@ export const componentRenderer: Components<{
 		mdxTable: string;
 	};
 	GoogleMaps: {
-		url: string;
-		width: string;
-		height: string;
+		embedUrl: string;
+		embedWidth: string;
+		embedHeight: string;
 	};
 }> = {
 	VideoEmbed: (props) => <VideoEmbed data={props} />,
