@@ -1,7 +1,8 @@
-import { Layout } from "../../components/layout";
+import Image from "next/image";
+import Link from "next/link";
 import { client } from "../../.tina/__generated__/client";
 import { useTina } from "tinacms/dist/react";
-import Image from "next/image";
+import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import MicrosoftPanel from "../../components/offices/microsoftPanel";
 import TestimonialPanel from "../../components/offices/testimonialPanel";
@@ -61,14 +62,24 @@ export default function OfficeIndex(
 									<strong>Phone: {office.phone}</strong>
 								</p>
 								<p className="block max-sm:clear-left">
-									<a href={office.url}>
+									<Link
+										href={
+											office.url ||
+											`/offices/${office.addressLocality.toLowerCase()}`
+										}
+									>
 										Learn more about our {office.addressLocality} office
-									</a>
+									</Link>
 								</p>
 								<p className="block max-sm:clear-left">
-									<a href={`${office.url}#Directions`}>
+									<Link
+										href={`${
+											office.url ||
+											`/offices/${office.addressLocality.toLowerCase()}`
+										}#Directions`}
+									>
 										Directions to SSW {office.addressLocality}
-									</a>
+									</Link>
 								</p>
 							</div>
 						))}
@@ -90,8 +101,7 @@ export default function OfficeIndex(
 						</p>
 						<br />
 						<p>
-							Visit our worldwide website:{" "}
-							<a href="https://ssw.com/">ssw.com.</a>
+							Visit our worldwide website: <Link href="/">ssw.com</Link>.
 						</p>
 					</div>
 					<div className="prose prose-h3:text-sswRed md:col-span-2">
