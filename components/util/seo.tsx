@@ -16,6 +16,9 @@ export const SEO = ({ seo }) => {
       description: seo.description,
       url: seo.canonical,
       images: seo.images ?? null
+    },
+    twitter: {
+      site: seo.canonical
     }
   }
 
