@@ -1,6 +1,7 @@
 import React from "react";
 import { Template } from "tinacms";
 import { Formik, Field, Form } from "formik";
+import Button from "../button/button";
 
 const fields = [
 	{
@@ -48,18 +49,23 @@ export const AgreementForm = () => {
 					console.log(values);
 				}}
 			>
-				<Form className="my-10 bg-gray-75 p-10">
-					{fields.map((field) => (
-						<FormField
-							id={field.id}
-							label={field.label}
-							placeholder={field.placeholder}
-						/>
-					))}
+				<Form>
+					<div className="my-10 bg-gray-75 p-8">
+						{fields.map((field) => (
+							<FormField
+								id={field.id}
+								label={field.label}
+								placeholder={field.placeholder}
+							/>
+						))}
+					</div>
+
 					<hr />
-					<button className="bg-green-100" type="submit">
-						Submit
-					</button>
+					<div className="flex justify-center">
+						<button className="done mx-auto my-4 py-2 px-3" onClick={() => window.print()} type="submit">
+							Print and sign
+						</button>
+					</div>
 				</Form>
 			</Formik>
 		</div>
@@ -68,15 +74,15 @@ export const AgreementForm = () => {
 
 const FormField = ({ label, id, placeholder }) => {
 	return (
-		<div className="h-auto p-10 md:grid-cols-5">
-			<div className="relative float-left w-1/4 py-2.5 pr-2 text-right font-bold">
+		<div className="relative inline-block h-auto w-full pb-3 sm:inline-flex md:grid-cols-4 ">
+			<div className="float-left py-2.5 pr-2 font-bold sm:w-1/4 sm:text-right">
 				<label className="mb-1" htmlFor={id}>
 					{label}
 				</label>
 			</div>
-			<div className="relative float-left w-3/4">
+			<div className="float-left inline-flex w-full sm:w-3/4">
 				<Field
-					className="w-full rounded border-2 border-gray-300 p-3"
+					className="w-full rounded border-2 border-gray-300 p-2"
 					type="text"
 					id={id}
 					name={id}
