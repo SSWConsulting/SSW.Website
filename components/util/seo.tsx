@@ -67,9 +67,10 @@ export const seoSchema = {
 					return { label: item.url };
 				},
 				defaultItem: {
-					width: 800,
-					height: 600,
-					alt: "Default alt text",
+					url: "/images/ssw-og.jpg",
+					width: 1200,
+					height: 630,
+					alt: "SSW Consulting - Enterprise Software Development",
 				},
 			},
 			fields: [
