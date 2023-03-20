@@ -39,9 +39,11 @@ export const componentRenderer: Components<{
 	TableLayout: {
 		mdxTable: string;
 	};
-	AgreementForm: Record<string, never>;
+	AgreementForm: {
+		backgroundColor: string;
+	};
 }> = {
-	AgreementForm: () => <AgreementForm />,
+	AgreementForm: (props) => <AgreementForm data={props} />,
 	ClientLogos: () => <ClientLogos />,
 	ColumnLayout: (props) => <ColumnLayout data={props} />,
 	CustomImage: (props) => <CustomImage data={props} />,

@@ -1,7 +1,6 @@
 import React from "react";
 import { Template } from "tinacms";
-import { Formik, Field, Form } from "formik";
-import Button from "../button/button";
+import { sectionColors } from "../util/constants/styles";
 
 const fields = [
 	{
@@ -36,52 +35,45 @@ const fields = [
 	},
 ];
 
-export const AgreementForm = () => {
-	const initialValues = fields.reduce(
-		(total, curr) => ({ ...total, [curr.id]: "" }),
-		{}
-	);
+export const AgreementForm = ({ data }) => {
+	const sectionColorCss =
+		sectionColors[data.backgroundColor] || sectionColors.default;
 	return (
 		<div>
-			<Formik
-				initialValues={initialValues}
-				onSubmit={(values) => {
-					console.log(values);
-				}}
-			>
-				<Form>
-					<div className="my-10 bg-gray-75 p-8">
-						{fields.map((field) => (
-							<FormField
-								id={field.id}
-								label={field.label}
-								placeholder={field.placeholder}
-							/>
-						))}
-					</div>
+			<div className={`my-10 p-8 ${sectionColorCss}`}>
+				{fields.map((field) => (
+					<FormField
+						id={field.id}
+						label={field.label}
+						placeholder={field.placeholder}
+					/>
+				))}
+			</div>
 
-					<hr />
-					<div className="flex justify-center">
-						<button className="done mx-auto my-4 py-2 px-3" onClick={() => window.print()} type="submit">
-							Print and sign
-						</button>
-					</div>
-				</Form>
-			</Formik>
+			<hr />
+			<div className="flex justify-center">
+				<button
+					className="done mx-auto my-4 py-2 px-3"
+					onClick={() => window.print()}
+					type="submit"
+				>
+					Print and sign
+				</button>
+			</div>
 		</div>
 	);
 };
 
 const FormField = ({ label, id, placeholder }) => {
 	return (
-		<div className="relative inline-block h-auto w-full pb-3 sm:inline-flex md:grid-cols-4 ">
-			<div className="float-left py-2.5 pr-2 font-bold sm:w-1/4 sm:text-right">
+		<div className="relative inline-block w-full pb-3 md:flex">
+			<div className="w-96 py-2.5 pr-2 text-left font-bold sm:grow-0 md:text-right">
 				<label className="mb-1" htmlFor={id}>
 					{label}
 				</label>
 			</div>
-			<div className="float-left inline-flex w-full sm:w-3/4">
-				<Field
+			<div className="inline-flex w-full md:grow">
+				<input
 					className="w-full rounded border-2 border-gray-300 p-2"
 					type="text"
 					id={id}
@@ -99,9 +91,15 @@ export const agreementFormBlockSchema: Template = {
 	ui: {},
 	fields: [
 		{
-			name: "foo",
-			label: "foo",
 			type: "string",
+			label: "Background Color",
+			name: "backgroundColor",
+			options: [
+				{ label: "Default", value: "default" },
+				{ label: "Light Gray", value: "lightgray" },
+				{ label: "Red", value: "red" },
+				{ label: "Black", value: "black" },
+			],
 		},
 	],
 };
