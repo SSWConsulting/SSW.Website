@@ -1,45 +1,48 @@
 import type { Template } from "tinacms";
 
 import { aboutUsBlockSchema } from "./aboutUs";
-import { contentBlockSchema } from "./content";
+import { builtOnAzureBlockSchema } from "./builtOnAzure";
 import { carouselBlockSchema } from "./carousel";
+import { clientLogosBlockSchema } from "./clientLogos";
+import { columnLayoutBlockSchema } from "./columnLayout";
+import { contentBlockSchema } from "./content";
+import { contentCardBlockSchema } from "./contentCard";
+import { customImageBlockSchema } from "./customImage";
+import { googleMapsSchema } from "./googleMapsWrapper";
 import { heroBlockSchema } from "./hero";
 import { serviceCardsBlockSchema } from "./serviceCards";
+import { tableBlockSchema } from "./tableLayout";
 import { upcomingEventsBlockSchema } from "./upcomingEvents";
-import { builtOnAzureBlockSchema } from "./builtOnAzure";
-import { customImageBlockSchema } from "./customImage";
-import { clientLogosBlockSchema } from "./clientLogos";
 import { videoEmbedBlockSchema } from "./videoEmbed";
-import { columnLayoutBlockSchema } from "./columnLayout";
-import { TableBlockSchema } from "./tableLayout";
-import { contentCardBlockSchema } from "./contentCard";
 
 export const pageBlocks: Template[] = [
 	aboutUsBlockSchema,
-	contentBlockSchema,
-	carouselBlockSchema,
-	serviceCardsBlockSchema,
-	heroBlockSchema,
-	upcomingEventsBlockSchema,
 	builtOnAzureBlockSchema,
-	customImageBlockSchema,
+	carouselBlockSchema,
 	clientLogosBlockSchema,
 	columnLayoutBlockSchema,
-	videoEmbedBlockSchema,
-	TableBlockSchema,
+	contentBlockSchema,
 	contentCardBlockSchema,
+	customImageBlockSchema,
+	googleMapsSchema,
+	heroBlockSchema,
+	serviceCardsBlockSchema,
+	tableBlockSchema,
+	upcomingEventsBlockSchema,
+	videoEmbedBlockSchema,
 ];
 
 export * from "./aboutUs";
-export * from "./content";
+export * from "./builtOnAzure";
 export * from "./carousel";
+export * from "./clientLogos";
+export * from "./columnLayout";
+export * from "./content";
+export * from "./contentCard";
+export * from "./customImage";
+export * from "./googleMapsWrapper";
 export * from "./hero";
 export * from "./serviceCards";
+export * from "./tableLayout";
 export * from "./upcomingEvents";
-export * from "./builtOnAzure";
-export * from "./customImage";
-export * from "./clientLogos";
-export * from "./booking";
 export * from "./videoEmbed";
-export * from "./columnLayout";
-export * from "./contentCard";

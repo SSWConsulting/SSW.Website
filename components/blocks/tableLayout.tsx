@@ -41,7 +41,7 @@ export const TableLayout = ({ data }) => {
 	);
 };
 
-export const TableBlockSchema: Template = {
+export const tableBlockSchema: Template = {
 	label: "Table Layout",
 	name: "TableLayout",
 	ui: {
