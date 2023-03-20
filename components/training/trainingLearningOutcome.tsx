@@ -1,7 +1,5 @@
-import Image from "next/image";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
-import { ImArrowUpRight2 } from "react-icons/im";
 import HorizontalList from "../util/horizontalList";
 import { Template } from "tinacms/dist/admin/types";
 

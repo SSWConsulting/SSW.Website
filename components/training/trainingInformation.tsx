@@ -4,6 +4,7 @@ import { componentRenderer } from "../../components/blocks/mdxComponentRenderer"
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { Section } from "../util/section";
 import { Container } from "../util/container";
+import { verticalListItemSchema } from "../blocks";
 
 export type TrainingInformationItemProps = {
     header: string;
@@ -14,7 +15,7 @@ const TrainingInformationItem: FC<TrainingInformationItemProps> = ({ header, bod
     return (
         <div className="flex flex-col items-center text-center lg:text-left">
             <h1 dangerouslySetInnerHTML={{ __html: header }}></h1>
-            <div className="w-full sm:w-3/4 lg:w-full">
+            <div className="w-full text-left sm:w-3/4 lg:w-full">
                 <TinaMarkdown
                     components={componentRenderer}
                     content={body}
@@ -28,7 +29,7 @@ export const TrainingInformation = ({ data }) => {
     return (
         <Section color="white">
             <Container className={"flex-1 pt-0"}>
-                <div className="flex justify-between">
+        <div className="grid grid-cols-1 justify-between lg:grid-cols-3">
                     {data.trainingInformationItems?.map((item) => <TrainingInformationItem header={item.header} body={item.body} />)}
                 </div>
             </Container>
@@ -56,7 +57,7 @@ export const trainingInformationSchema: Template = {
                     type: "rich-text",
                     label: "Body",
                     name: "body",
-                    // templates: [...pageBlocks],
+                    templates: [verticalListItemSchema],
                 },
             ],
         },
