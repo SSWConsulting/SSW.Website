@@ -1,4 +1,6 @@
-export const technologiesSchema = {
+import type { Collection } from "tinacms";
+
+export const technologiesSchema: Collection = {
 	label: "Technology Cards",
 	name: "technologies",
 	format: "mdx",

@@ -1,4 +1,6 @@
-export const globalSchema = {
+import type { Collection } from "tinacms";
+
+export const globalSchema : Collection = {
 	label: "Global",
 	name: "global",
 	path: "content/global",

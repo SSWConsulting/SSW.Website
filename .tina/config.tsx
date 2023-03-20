@@ -36,19 +36,12 @@ const config = defineStaticConfig({
 	},
 	schema: {
 		collections: [
-			// @ts-ignore
 			marketingSchema,
-			// @ts-ignore
 			globalSchema,
-			// @ts-ignore
 			pagesSchema,
-			// @ts-ignore
 			consultingSchema,
-			// @ts-ignore
 			testimonialSchema,
-			// @ts-ignore
 			technologiesSchema,
-			// @ts-ignore
 			officeSchema,
 		],
 	},

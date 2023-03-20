@@ -1,8 +1,10 @@
+import type { Collection } from "tinacms";
+
 import * as Schemas from "../../components/blocks";
 import { sswCountries } from "../../components/util/constants/country";
 import { seoSchema } from "../../components/util/seo";
 
-export const officeSchema = {
+export const officeSchema : Collection = {
 	label: "Office Pages",
 	name: "offices",
 	format: "mdx",

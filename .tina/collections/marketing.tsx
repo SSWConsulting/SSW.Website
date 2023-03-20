@@ -1,4 +1,6 @@
-export const marketingSchema = {
+import type { Collection } from "tinacms";
+
+export const marketingSchema: Collection = {
 	label: "Marketing",
 	name: "marketing",
 	path: "content/marketing",

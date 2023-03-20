@@ -1,6 +1,8 @@
+import type { Collection } from "tinacms";
+
 import { ratingSchema } from "../../components/util/consulting/rating";
 
-export const testimonialSchema = {
+export const testimonialSchema: Collection = {
 	label: "Testimonials",
 	name: "testimonials",
 	format: "mdx",

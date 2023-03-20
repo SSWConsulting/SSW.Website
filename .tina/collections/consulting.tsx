@@ -1,7 +1,9 @@
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 
-export const consultingSchema = {
+import type { Collection } from "tinacms";
+
+export const consultingSchema: Collection = {
 	label: "Consulting Pages",
 	name: "consulting",
 	format: "mdx",
