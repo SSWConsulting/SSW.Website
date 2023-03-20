@@ -1,6 +1,7 @@
 import type { Template } from "tinacms";
 
 import { aboutUsBlockSchema } from "./aboutUs";
+import { agreementFormBlockSchema } from "../consulting/agreementForm";
 import { builtOnAzureBlockSchema } from "./builtOnAzure";
 import { carouselBlockSchema } from "./carousel";
 import { clientLogosBlockSchema } from "./clientLogos";
@@ -10,15 +11,13 @@ import { customImageBlockSchema } from "./customImage";
 import { googleMapsSchema } from "./googleMapsWrapper";
 import { heroBlockSchema } from "./hero";
 import { serviceCardsBlockSchema } from "./serviceCards";
-import { tableBlockSchema } from "./tableLayout";
 import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { videoEmbedBlockSchema } from "./videoEmbed";
-import { columnLayoutBlockSchema } from "./columnLayout";
 import { tableBlockSchema } from "./tableLayout";
-import { agreementFormBlockSchema } from "../consulting/agreementForm";
 
 export const pageBlocks: Template[] = [
 	aboutUsBlockSchema,
+	agreementFormBlockSchema,
 	builtOnAzureBlockSchema,
 	carouselBlockSchema,
 	clientLogosBlockSchema,
@@ -34,6 +33,7 @@ export const pageBlocks: Template[] = [
 ];
 
 export * from "./aboutUs";
+export * from "../consulting/agreementForm";
 export * from "./builtOnAzure";
 export * from "./carousel";
 export * from "./clientLogos";
@@ -46,5 +46,3 @@ export * from "./serviceCards";
 export * from "./tableLayout";
 export * from "./upcomingEvents";
 export * from "./videoEmbed";
-export * from "./columnLayout";
-export * from "../consulting/agreementForm";
