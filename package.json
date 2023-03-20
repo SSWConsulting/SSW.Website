@@ -23,7 +23,7 @@
 		"autoprefixer": "^10.4.0",
 		"eslint": "^8.35.0",
 		"eslint-plugin-tailwindcss": "^3.8.3",
-		"next-sitemap": "^3.1.54",
+		"next-sitemap": "^4.0.6",
 		"postcss": "^8.3.11",
 		"postcss-import": "^15.1.0",
 		"postcss-nesting": "^11.2.1",
