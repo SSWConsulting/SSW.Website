@@ -42,6 +42,7 @@ export const componentRenderer: Components<{
 	};
 	AgreementForm: {
 		backgroundColor: string;
+	};
 	GoogleMaps: {
 		embedUrl: string;
 		embedWidth: string;
