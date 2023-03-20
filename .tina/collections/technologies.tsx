@@ -3,11 +3,6 @@ export const technologiesSchema = {
 	name: "technologies",
 	format: "mdx",
 	path: "content/technologies",
-	ui: {
-		router: ({ document }) => {
-			return `/technologies/${document._sys.filename}`;
-		},
-	},
 	fields: [
 		{
 			type: "string",

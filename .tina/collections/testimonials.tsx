@@ -5,11 +5,6 @@ export const testimonialSchema = {
 	name: "testimonials",
 	format: "mdx",
 	path: "content/testimonials",
-	ui: {
-		router: ({ document }) => {
-			return `/testimonials/${document._sys.filename}`;
-		},
-	},
 	fields: [
 		{
 			type: "string",

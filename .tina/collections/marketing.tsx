@@ -3,11 +3,6 @@ export const marketingSchema = {
 	name: "marketing",
 	path: "content/marketing",
 	format: "mdx",
-	ui: {
-		router: ({ document }) => {
-			return `/marketing/${document._sys.filename}`;
-		},
-	},
 	fields: [
 		{
 			type: "string",
