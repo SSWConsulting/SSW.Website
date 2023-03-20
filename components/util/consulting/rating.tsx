@@ -1,4 +1,4 @@
-import type { NumberField } from "tinacms";
+import type { NumberField } from "@tinacms/schema-tools/dist/types/index";
 
 import React from "react";
 import { wrapFieldsWithMeta } from "tinacms";
