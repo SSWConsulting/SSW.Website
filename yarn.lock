@@ -2157,10 +2157,10 @@
     webfontloader "1.6.28"
     xstate "4.32.1"
 
-"@tinacms/cli@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-1.3.2.tgz#ff1276439dba6ece925fef667701cb53f0f70d80"
-  integrity sha512-89enerBNT8Hj1/uunZA5nekE4T5wtH5tmE/EVd5QFz570pVIMCiYAkgjdR9bk67FlX1JPxHwE0i3rpMzLI1drg==
+"@tinacms/cli@^1.3.3":
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-1.3.3.tgz#401fb64ae1f1a10f650bf9e018ee26a8c0405f12"
+  integrity sha512-va33fYMntLWdRh3qjpA4F5+q8CIMZ4nscLwNkJrt4yipwC2toN27gL0/VNLmIumB6DERNg76nFX2Y7Vh6x5ZUw==
   dependencies:
     "@graphql-codegen/core" "^2.1.0"
     "@graphql-codegen/plugin-helpers" latest
@@ -2172,10 +2172,10 @@
     "@graphql-tools/graphql-file-loader" "^7.2.0"
     "@graphql-tools/load" "^7.3.2"
     "@tinacms/app" "1.1.2"
-    "@tinacms/datalayer" "1.1.5"
-    "@tinacms/graphql" "1.3.4"
+    "@tinacms/datalayer" "1.1.6"
+    "@tinacms/graphql" "1.3.5"
     "@tinacms/metrics" "1.0.2"
-    "@tinacms/schema-tools" "1.3.3"
+    "@tinacms/schema-tools" "1.3.4"
     ajv "^6.12.3"
     altair-express-middleware "4.0.6"
     auto-bind "^4.0.0"
@@ -2211,22 +2211,22 @@
     yup "^0.32.9"
     zod "^3.14.3"
 
-"@tinacms/datalayer@1.1.5":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@tinacms/datalayer/-/datalayer-1.1.5.tgz#456f84807fd2aa0816e7b6df952a8d329d6cbe9b"
-  integrity sha512-X8YkMBY+gMHuAKVoK6ELQrvQUAMWlfOy1RvJ7JLiD1xdXZhSk7YRk+XAMUS63oWQtS76pb2hCjLMPDFjc4riUw==
+"@tinacms/datalayer@1.1.6":
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@tinacms/datalayer/-/datalayer-1.1.6.tgz#055b5a47f9f40ec9587af79c58344327028bdea2"
+  integrity sha512-A9usRwxsueituBUuy98ghRgQ8JCCIlYUtGyYgp8LiEdHJWN3tz38UpaspU+CeYmFTwFjQqrHDX2kYWo+LAShkQ==
   dependencies:
-    "@tinacms/graphql" "1.3.4"
+    "@tinacms/graphql" "1.3.5"
 
-"@tinacms/graphql@1.3.4":
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-1.3.4.tgz#154d4e453e2cf1a0f51e73b6e4115a01ea38f635"
-  integrity sha512-JqhJ0zW0YCWaVMKyIIF/XBplTA5hN0UzqD8cEB81lcTPhowwErWptAQce2P+jpCeftuCZddBs1IMb0wpeCiXYQ==
+"@tinacms/graphql@1.3.5":
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-1.3.5.tgz#da181e5544df7a27436894470fcd4611fcc69fb5"
+  integrity sha512-6FJlf/f6rgo2NvCzYblMf8i3hVHyulBp19Jtc062vzCBq6LAE9IL7oAHwQ//2lsNZv/Im8ypIW8XHTfKpOVZNg==
   dependencies:
     "@graphql-tools/relay-operation-optimizer" "^6.4.1"
     "@iarna/toml" "^2.2.5"
-    "@tinacms/mdx" "1.3.3"
-    "@tinacms/schema-tools" "1.3.3"
+    "@tinacms/mdx" "1.3.4"
+    "@tinacms/schema-tools" "1.3.4"
     abstract-level "^1.0.3"
     body-parser "^1.19.0"
     cors "^2.8.5"
@@ -2274,12 +2274,12 @@
     ws "^7.3.1"
     yup "^0.32.9"
 
-"@tinacms/mdx@1.3.3":
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/@tinacms/mdx/-/mdx-1.3.3.tgz#8ccdecb0ab4d3466b56cd117b66a3875d55acbf3"
-  integrity sha512-Y5y61CrKloEio7QAaE4S0d+WMApqCsQsrKCzTWSrOeoZOGccZiOfosSrzJg+kE353a8+OSCp572OsJvOgBLS2A==
+"@tinacms/mdx@1.3.4":
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@tinacms/mdx/-/mdx-1.3.4.tgz#384a9d0eecdad9491a2af68bb4e04ccce5d4c5c3"
+  integrity sha512-9HUJiRYUzeAWEbyyxESU7wMfL1x1BY8TNe4vG0Ks1UFVZS3X1wOJPb9rLmhvi4taGbbwCXcbu+AVRGlCmgroUw==
   dependencies:
-    "@tinacms/schema-tools" "1.3.3"
+    "@tinacms/schema-tools" "1.3.4"
     "@types/mdast" "^3.0.10"
     "@types/unist" "^2.0.6"
     acorn "8.8.2"
@@ -2340,6 +2340,14 @@
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/@tinacms/schema-tools/-/schema-tools-1.3.3.tgz#c1d2f63e2df1d294acfbbe4c7ec836e79937bdd0"
   integrity sha512-zHWc+8Pij7JxeDrrTx8mvYaz1rzLoo6MuZXJ/rxdlKG+Ff0XXX2O5tfgZ1yoFGA7ZP2WrNM3QvyPa5hsYngrQA==
+  dependencies:
+    url-pattern "^1.0.3"
+    zod "^3.14.3"
+
+"@tinacms/schema-tools@1.3.4":
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@tinacms/schema-tools/-/schema-tools-1.3.4.tgz#2d4fe1ffef1b174e8bf0722e5f0a2fd80fc3b49f"
+  integrity sha512-Cg4VGjleWzNZBscNvnMFQtU30kSYe/mptEO7GeGuA8eGOrvtotTiHjTIjnmR0MP/t1aFsa8lYFismlLbtdCLjg==
   dependencies:
     url-pattern "^1.0.3"
     zod "^3.14.3"
