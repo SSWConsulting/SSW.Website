@@ -2,8 +2,6 @@ import { defineStaticConfig, TinaCMS, wrapFieldsWithMeta } from "tinacms";
 import * as Schemas from "../components/blocks";
 import { ratingSchema } from "../components/util/consulting/rating";
 import { seoSchema } from "../components/util/seo";
-import { horizontalListSchema } from "../components/util/horizontalList";
-import { trainingInformationSchema } from "../components/trainingInformation";
 import { videoCardSchema } from "../components/util/videoCards";
 import { trainingHeaderSchema } from "../components/training/trainingHeader";
 
@@ -346,12 +344,18 @@ const config = defineStaticConfig({
                     seoSchema,
                     // @ts-ignore
                     trainingHeaderSchema,
-                    // @ts-ignore
-                    trainingInformationSchema,
+                    {
+                        type: "object",
+                        list: true,
+                        name: "_body",
+                        label: "Body",
+                        ui: {
+                            visualSelector: true,
+                        },
+                        templates: [...Schemas.pageBlocks],
+                    },
                     // @ts-ignore
                     videoCardSchema,
-                    // @ts-ignore
-                    horizontalListSchema,
                 ]
             },
             {

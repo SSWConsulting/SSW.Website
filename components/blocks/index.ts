@@ -13,6 +13,8 @@ import { videoEmbedBlockSchema } from "./videoEmbed";
 import { columnLayoutBlockSchema } from "./columnLayout";
 import { TableBlockSchema } from "./tableLayout";
 import { verticalListItemSchema } from "./verticalListItem";
+import { trainingLearningOutcomeSchema } from "../training/trainingLearningOutcome";
+import { trainingInformationSchema } from "../training/trainingInformation";
 
 export const pageBlocks: Template[] = [
     aboutUsBlockSchema,
@@ -27,7 +29,9 @@ export const pageBlocks: Template[] = [
     columnLayoutBlockSchema,
     videoEmbedBlockSchema,
     TableBlockSchema,
-    verticalListItemSchema
+    verticalListItemSchema,
+    trainingLearningOutcomeSchema,
+    trainingInformationSchema,
 ];
 
 export * from "./aboutUs";
@@ -43,3 +47,5 @@ export * from "./booking";
 export * from "./videoEmbed";
 export * from "./columnLayout";
 export * from "./verticalListItem";
+export * from "../training/trainingLearningOutcome"
+export * from "../training/trainingInformation"

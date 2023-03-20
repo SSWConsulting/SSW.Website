@@ -9,10 +9,9 @@ import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { Section } from "../../components/util/section";
 import { ClientLogos } from "../../components/blocks";
 import { Container } from "../../components/util/container";
-import HorizontalList, { HorizontalListItemProps } from "../../components/util/horizontalList";
-import TrainingInformation from "../../components/trainingInformation";
 import VideoCards, { VideoCardProps } from "../../components/util/videoCards";
 import TrainingHeader from "../../components/training/trainingHeader";
+import { Blocks } from "../../components/blocks-renderer";
 
 export default function TrainingPage(
     props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -22,13 +21,6 @@ export default function TrainingPage(
         query: props.query,
         variables: props.variables,
     });
-
-    const horizontalListProps =
-        data.training.horizontalListItems?.listItems?.map<HorizontalListItemProps>((m) => ({
-            icon: m.icon,
-            title: m.title,
-            content: m.content,
-        })) || [];
 
     const videoCardProps =
         data.training.videos?.videoCards?.map<VideoCardProps>((m) => ({
@@ -40,27 +32,9 @@ export default function TrainingPage(
         <>
             <SEO seo={data.training.seo} />
             <Layout>
-
                 <TrainingHeader data={data.training.trainingHeader} />
 
-                <Section color="white" className="pb-12">
-                    <Container className={"flex-1 pt-0 text-center"}>
-                        <div className="grid grid-cols-1 gap-0 lg:grid-cols-3 lg:gap-24">
-                            {
-                                data.training.trainingInformation?.informationColumns?.map((data) =>
-                                    <TrainingInformation body={data.body} header={data.header} />
-
-                                )
-                            }
-                        </div>
-                    </Container>
-                </Section>
-
-                <Section color="lightgray" className="pb-12">
-                    <Container className={"flex flex-1 flex-col items-center pt-0 text-center"}>
-                        <HorizontalList header={data.training.horizontalListItems?.header} listItemProps={horizontalListProps} />
-                    </Container>
-                </Section>
+                <Blocks prefix="Training_body" blocks={data.training._body} />
 
                 <VideoCards cardProps={videoCardProps} channelLink={data.training.videos?.channelLink} defaultChannelLink={data.global.youtubeChannelLink} />
 

@@ -10,7 +10,8 @@ import { CustomImage } from "./blocks/customImage";
 import { ClientLogos } from "./blocks/clientLogos";
 import { ColumnLayout } from "./blocks/columnLayout";
 import { VerticalListItem } from "./blocks/verticalListItem";
-
+import { TrainingInformation } from "./training/trainingInformation";
+import { TrainingLearningOutcome } from "./training/trainingLearningOutcome";
 
 const componentMap = {
   "AboutUs": AboutUs,
@@ -23,6 +24,8 @@ const componentMap = {
   "ClientLogos": ClientLogos,
   "ColumnLayout":  ColumnLayout,
   "VerticalListItem":  VerticalListItem,
+  "TrainingInformation":  TrainingInformation,
+  "TrainingLearningOutcome": TrainingLearningOutcome
 };
 
 export const Blocks = ({ prefix, blocks}) => {
@@ -38,6 +41,8 @@ const renderBlock = (
   block,
   i,
 ): JSX.Element => {
+  // As per the Tina schema, the prefix should match the component property name, however,
+  // if this does not work (e.g. _body), a simple console.log(block) should tell you what it is
   const component = componentMap[block.__typename?.replace(prefix, "")];
 
   if (!component) {

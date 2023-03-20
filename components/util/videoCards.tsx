@@ -50,7 +50,7 @@ const VideoCards: FC<{ cardProps: VideoCardProps[], channelLink: string, default
                         </div>
                         <span className="text-gray-500">The most popular courses from our developers</span>
                     </div>
-                    <div className="w-full xl:w-3/4">
+                    <div>
                         <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">{cards}</div>
                     </div>
                     <Button

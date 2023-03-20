@@ -1,4 +1,4 @@
-import { Components } from "tinacms/dist/rich-text";
+import { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { UpcomingEvents } from "./upcomingEvents";
 import { ClientLogos } from "./clientLogos";
 import { CustomImage } from "./customImage";
@@ -7,12 +7,26 @@ import { ColumnLayout } from "./columnLayout";
 import { Carousel } from "./carousel";
 import { TableLayout } from "./tableLayout";
 import { VerticalListItem } from "./verticalListItem";
+import { TrainingInformation } from "../training/trainingInformation";
+import { TrainingLearningOutcome } from "../training/trainingLearningOutcome";
 
 export const componentRenderer: Components<{
     ClientLogos: Record<string, never>;
     VerticalListItem: {
         icon: string,
         content: string,
+    };
+    TrainingInformation: {
+        body: string,
+        header: string
+    };
+    TrainingLearningOutcome: {
+        header: string
+        listItems: {
+            content: string;
+            icon: string;
+            title: string;
+        }[];
     };
     CustomImage: {
         src: string;
@@ -52,4 +66,6 @@ export const componentRenderer: Components<{
     Carousel: (props) => <Carousel data={props} />,
     TableLayout: (props) => <TableLayout data={props} />,
     VerticalListItem: (props) => <VerticalListItem data={props} />,
+    TrainingInformation: (props) => <TrainingInformation data={props} />,
+    TrainingLearningOutcome: (props) => <TrainingLearningOutcome data={props} />,
 };
