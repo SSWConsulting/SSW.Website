@@ -110,6 +110,9 @@ module.exports = {
 			4: "4px",
 		},
 		extend: {
+			gridTemplateRows: {
+				12: "repeat(12, minmax(min-content, 0fr))",
+			},
 			backgroundPosition: {
 				"right-bottom-4": "right 1rem bottom 1rem",
 			},
@@ -320,7 +323,7 @@ module.exports = {
 				"card-blog": "url('/images/icons/blog-post.svg')",
 				benefits: "url('/consulting/mvc-benefits-bg.jpg')",
 				"video-mask": "url('/images/video-mask.png')",
-                "polygons": "url('/images/polygonBackground.png')",
+				polygons: "url('/images/polygonBackground.png')",
 			},
 		},
 		linearGradientColors: {

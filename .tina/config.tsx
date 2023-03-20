@@ -39,11 +39,6 @@ const config = defineStaticConfig({
 				name: "marketing",
 				path: "content/marketing",
 				format: "mdx",
-				ui: {
-					router: ({ document }) => {
-						return `/marketing/${document._sys.filename}`;
-					},
-				},
 				fields: [
 					{
 						type: "string",
@@ -478,6 +473,11 @@ const config = defineStaticConfig({
 								name: "header",
 							},
 							{
+								type: "string",
+								label: "Subheading",
+								name: "subheading",
+							},
+							{
 								type: "object",
 								label: "Technology Cards",
 								name: "technologyCards",
@@ -545,11 +545,6 @@ const config = defineStaticConfig({
 				name: "testimonials",
 				format: "mdx",
 				path: "content/testimonials",
-				ui: {
-					router: ({ document }) => {
-						return `/testimonials/${document._sys.filename}`;
-					},
-				},
 				fields: [
 					{
 						type: "string",
@@ -586,11 +581,6 @@ const config = defineStaticConfig({
 				name: "technologies",
 				format: "mdx",
 				path: "content/technologies",
-				ui: {
-					router: ({ document }) => {
-						return `/technologies/${document._sys.filename}`;
-					},
-				},
 				fields: [
 					{
 						type: "string",
@@ -649,7 +639,6 @@ const config = defineStaticConfig({
 						type: "string",
 						name: "url",
 						label: "Url",
-						required: true,
 					},
 					{
 						type: "string",
@@ -704,13 +693,28 @@ const config = defineStaticConfig({
 						type: "string",
 						name: "hours",
 						label: "Hours",
-						required: true,
 					},
 					{
 						type: "string",
 						name: "days",
 						label: "Days",
-						required: true,
+					},
+					{
+						type: "object",
+						name: "sidebarSecondaryPlace",
+						label: "Sidebar secondary place URL",
+						fields: [
+							{
+								type: "string",
+								name: "name",
+								label: "Name",
+							},
+							{
+								type: "string",
+								name: "url",
+								label: "URL",
+							},
+						],
 					},
 					{
 						type: "rich-text",

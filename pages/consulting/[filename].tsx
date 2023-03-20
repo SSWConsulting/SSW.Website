@@ -2,8 +2,9 @@ import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { client } from "../../.tina/__generated__/client";
-import { Booking, BuiltOnAzure, ClientLogos } from "../../components/blocks";
+import { BuiltOnAzure, ClientLogos } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { Booking } from "../../components/blocks/booking";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import BookingButton from "../../components/bookingButton/bookingButton";
 import { Layout } from "../../components/layout";
@@ -52,7 +53,7 @@ export default function ConsultingPage(
 
 	return (
 		<>
-			<SEO seo={data.consulting.seo} />
+			<SEO seo={props.seo} />
 			<Layout>
 				<Section className="mx-auto w-full max-w-9xl py-5 px-8">
 					<Breadcrumbs
@@ -61,10 +62,7 @@ export default function ConsultingPage(
 						title={data.consulting.seo?.title}
 					/>
 				</Section>
-				<Section
-					className="w-full items-center !bg-black/75 bg-video-mask text-center font-light"
-					color="black"
-				>
+				<Section className="w-full" color="black">
 					<Booking {...data.consulting.booking}>
 						<BookingButton {...bookingButtonProps} />
 					</Booking>
@@ -72,9 +70,9 @@ export default function ConsultingPage(
 				<Section
 					color="black"
 					className={`
-          prose-consulting
-          border-y-4 border-y-sswRed
-          text-center`}
+            prose-consulting
+            border-y-4 border-y-sswRed
+            text-center`}
 				>
 					<a id="more" />
 					<div className="w-full bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
@@ -105,6 +103,7 @@ export default function ConsultingPage(
 						<Container padding="px-4">
 							<TechnologyCards
 								techHeader={data.consulting.technologies.header}
+								techSubheading={data.consulting.technologies.subheading}
 								techCards={techCards}
 							/>
 						</Container>
@@ -126,7 +125,7 @@ export default function ConsultingPage(
 							dangerouslySetInnerHTML={{
 								__html: parseCallToAction(
 									data.consulting.callToAction,
-									data.consulting.solution.project
+									data.consulting.solution?.project
 								),
 							}}
 						></h1>
@@ -155,6 +154,10 @@ export const getStaticProps = async ({ params }) => {
 	const tinaProps = await client.queries.consultingContentQuery({
 		relativePath: `${params.filename}.mdx`,
 	});
+
+	const canonical = `${tinaProps.data.global.header.url}consulting/${params.filename}`;
+	const seo = tinaProps.data.consulting.seo;
+	seo.canonical = canonical;
 
 	const testimonials = await client.queries.allTestimonialsQuery();
 
@@ -185,6 +188,7 @@ export const getStaticProps = async ({ params }) => {
 			env: {
 				GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY || null,
 			},
+			seo,
 		},
 	};
 };

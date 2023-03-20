@@ -7,6 +7,7 @@ import { ColumnLayout } from "./columnLayout";
 import { Carousel } from "./carousel";
 import { TableLayout } from "./tableLayout";
 import { AgreementForm } from "../consulting/agreementForm";
+import { GoogleMapsWrapper } from "./googleMapsWrapper";
 
 export const componentRenderer: Components<{
 	ClientLogos: Record<string, never>;
@@ -41,6 +42,10 @@ export const componentRenderer: Components<{
 	};
 	AgreementForm: {
 		backgroundColor: string;
+	GoogleMaps: {
+		embedUrl: string;
+		embedWidth: string;
+		embedHeight: string;
 	};
 }> = {
 	AgreementForm: (props) => <AgreementForm data={props} />,
@@ -51,4 +56,5 @@ export const componentRenderer: Components<{
 	Carousel: (props) => <Carousel data={props} />,
 	TableLayout: (props) => <TableLayout data={props} />,
 	VideoEmbed: (props) => <VideoEmbed data={props} />,
+	GoogleMaps: (props) => <GoogleMapsWrapper {...props} />,
 };
