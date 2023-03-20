@@ -43,6 +43,7 @@ export const AgreementForm = ({ data }) => {
 			<div className={`my-10 p-8 ${sectionColorCss}`}>
 				{fields.map((field) => (
 					<FormField
+						key={field.id}
 						id={field.id}
 						label={field.label}
 						placeholder={field.placeholder}
