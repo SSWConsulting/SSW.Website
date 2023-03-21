@@ -46,7 +46,7 @@ export const tableBlockSchema: Template = {
 	name: "TableLayout",
 	ui: {
 		itemProps: (item) => {
-			return { label: item?.header };
+			return { label: item?.mdxTable };
 		},
 	},
 	fields: [
