@@ -10,7 +10,7 @@ import { Container } from "../util/container";
 
 export const InternalCarousel = ({ data }) => {
 	return (
-		<Container size="custom" className="w-3/4 px-0 prose-ul:text-right">
+		<Container size="custom" className="px-0 md:w-3/4">
 			<CarouselImplementation
 				autoPlay={true}
 				infiniteLoop={true}
@@ -41,7 +41,7 @@ const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
 	if (isSelected) {
 		return (
 			<li
-				className="my-0 mx-1 inline-block h-7 w-7 bg-sswRed"
+				className="my-0 mx-1 inline-block h-6 w-6 bg-sswRed md:h-7 md:w-7"
 				aria-label={`Selected: ${label} ${index + 1}`}
 				title={`Selected: ${label} ${index + 1}`}
 			/>
@@ -49,7 +49,7 @@ const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
 	}
 	return (
 		<li
-			className="my-0 mx-1 inline-block h-7 w-7 bg-gray-500 text-right prose-ul:text-right"
+			className="my-0 mx-1 inline-block h-6 w-6 bg-gray-500 md:h-7 md:w-7"
 			onClick={onClickHandler}
 			onKeyDown={onClickHandler}
 			value={index}
@@ -76,7 +76,7 @@ const renderBody = ({ header, paragraph, website, technologies }) => {
 			<div className="text-left prose-p:py-2">
 				<TinaMarkdown content={paragraph} />
 			</div>
-			<div className="flex">{technologies?.map(createTechBlock)}</div>
+			<div className="flex flex-wrap">{technologies?.map(createTechBlock)}</div>
 			<div className="mt-3 mb-7 h-1 w-full bg-sswRed"></div>
 		</div>
 	);
@@ -85,7 +85,7 @@ const renderBody = ({ header, paragraph, website, technologies }) => {
 const createTechBlock = ({ name }, index: React.Key) => {
 	return (
 		<div
-			className="mx-0.5 min-w-fit bg-sswRed py-1 px-2 first:ml-0"
+			className="my-0.5 mr-1 min-w-fit bg-sswRed py-1 px-2 text-left"
 			key={index}
 		>
 			{name}
