@@ -1,0 +1,10 @@
+.carouselSubject {
+    width: 900px !important;
+    display: block !important;
+}
+
+@media screen and (max-width: 1280px) {
+    .carouselSubject {
+        display: none !important;
+    }
+}

@@ -1,29 +1,28 @@
 import Image from "next/image";
+import classNames from "classnames";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import { ImArrowUpRight2 } from "react-icons/im";
+import { Carousel } from "react-responsive-carousel";
+import styles from "./training.module.css";
 
 const TrainingHeader = ({ data }) => {
     return (
         <Section
-            className="border-b-8 border-sswRed bg-white bg-cover bg-no-repeat"
+            className="h-full border-b-8 border-sswRed bg-white bg-cover bg-no-repeat"
             style={{ backgroundImage: `url(${data?.heroBackground})` }}
         >
             <Container className={"flex-1 pt-0"}>
-                <div className="px-6 pb-24 sm:pb-32 lg:flex lg:px-8">
-                    <div className="mx-auto max-w-2xl pt-8 lg:mx-0 lg:max-w-3xl">
-                        <Image
-                            src="/images/internshipLogo.png"
-                            alt="SSW Internship Program logo"
-                            width={250}
-                            height={30}
-                        />
+                <div className={`px-6 pb-24 lg:flex lg:px-8 ${!data?.person ? "justify-center text-center" : "text-left"}`}>
+                    <div className={`mx-auto flex max-w-2xl flex-col pt-8 lg:mx-0 lg:max-w-3xl ${!data?.person && "items-center"}`}>
                         <div className="mt-10 max-w-2xl text-4xl font-black text-white sm:text-6xl">
                             <h1 dangerouslySetInnerHTML={{ __html: data?.tagline }}></h1>
                         </div>
-                        <p className="max-w-lg text-sm leading-8 text-gray-300">
-                            {data?.secondaryTagline}
-                        </p>
+                        {data?.secondaryTagline &&
+                            <p className="max-w-lg text-sm leading-8 text-gray-300">
+                                {data?.secondaryTagline}
+                            </p>
+                        }
                         <div className="mt-10">
                             <button
                                 className="flex items-center gap-2 bg-sswRed px-5 py-2.5 text-sm font-normal text-white shadow-sm"
@@ -35,47 +34,99 @@ const TrainingHeader = ({ data }) => {
                     </div>
                 </div>
             </Container>
-            <Image
-                className="absolute bottom-0 right-0 hidden lg:block"
-                src={data?.person}
-                alt="person"
-                width={900}
-                height={30}
-            />
+            {data?.person &&
+                <Image
+                className={classNames(styles["carouselSubject"], "absolute bottom-0 right-12 xl:right-44")}
+                    src={data?.person}
+                    alt="person"
+                    width={800}
+                    height={30}
+                />
+            }
         </Section>
     );
 }
 
+export const TrainingCarousel = ({ data }) => {
+    return (
+        <Carousel
+            infiniteLoop
+            // autoPlay
+            showThumbs={false}
+            showStatus={false}
+            showArrows={false}
+            stopOnHover
+            renderIndicator={createCarouselIndicator}
+        >
+            {
+                data.trainingHeaderCarouselItem.map((item, key) =>
+                    <TrainingHeader key={key} data={item} />)
+            }
+        </Carousel>
+    )
+}
+
+const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
+    if (isSelected) {
+        return (
+            <li
+                className="mx-1 mb-4 inline-block h-4 w-4 rounded-3xl bg-sswRed"
+                aria-label={`Selected: ${label} ${index + 1}`}
+                title={`Selected: ${label} ${index + 1}`}
+            />
+        );
+    }
+    return (
+        <li
+            className="mx-1 mb-4 inline-block h-4 w-4 rounded-3xl bg-gray-500"
+            onClick={onClickHandler}
+            onKeyDown={onClickHandler}
+            value={index}
+            key={index}
+            role="button"
+            tabIndex={0}
+            title={`${label} ${index + 1}`}
+            aria-label={`${label} ${index + 1}`}
+        />
+    );
+};
+
 export const trainingHeaderSchema = {
     type: "object",
-    label: "Training Header",
-    name: "trainingHeader",
+    label: "Training Header Carousel",
+    name: "trainingHeaderCarousel",
     fields: [
         {
-            type: "string",
-            label: "Tagline",
-            name: "tagline",
-            required: true,
-        },
-        {
-            type: "string",
-            label: "Secondary Tagline",
-            name: "secondaryTagline",
-            required: true,
-        },
-        {
-            type: "image",
-            label: "Hero Background",
-            name: "heroBackground",
-            required: true,
-        },
-        {
-            type: "image",
-            label: "Person",
-            name: "person",
-            required: true,
-        },
+            type: "object",
+            label: "Training Header Carousel Item",
+            name: "trainingHeaderCarouselItem",
+            list: true,
+            fields: [
+                {
+                    type: "string",
+                    label: "Tagline",
+                    name: "tagline",
+                    required: true,
+                },
+                {
+                    type: "string",
+                    label: "Secondary Tagline",
+                    name: "secondaryTagline",
+                },
+                {
+                    type: "image",
+                    label: "Hero Background",
+                    name: "heroBackground",
+                    required: true,
+                },
+                {
+                    type: "image",
+                    label: "Person",
+                    name: "person",
+                },
+            ]
+        }
     ],
 };
 
-export default TrainingHeader;
+export default TrainingCarousel;

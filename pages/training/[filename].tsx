@@ -10,7 +10,7 @@ import { Section } from "../../components/util/section";
 import { ClientLogos } from "../../components/blocks";
 import { Container } from "../../components/util/container";
 import VideoCards, { VideoCardProps } from "../../components/util/videoCards";
-import TrainingHeader from "../../components/training/trainingHeader";
+import { TrainingCarousel } from "../../components/training/trainingHeader";
 import { Blocks } from "../../components/blocks-renderer";
 
 export default function TrainingPage(
@@ -32,7 +32,7 @@ export default function TrainingPage(
         <>
             <SEO seo={data.training.seo} />
             <Layout>
-                <TrainingHeader data={data.training.trainingHeader} />
+                <TrainingCarousel data={data.training.trainingHeaderCarousel} />
 
                 <Blocks prefix="Training_body" blocks={data.training._body} />
 
