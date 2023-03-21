@@ -68,7 +68,7 @@ const renderBody = ({ header, paragraph, website, technologies }) => {
 			<div className="mt-2 flex justify-between text-left font-semibold text-sswRed prose-p:py-0">
 				<h4>{header}</h4>
 				<span className={website ? "" : "hidden"}>
-					<a href={website} target="_blank">
+					<a href={website} target="_blank" rel="noopener noreferrer">
 						Visit Website
 					</a>
 				</span>
