@@ -15,11 +15,9 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = (props) => {
 			<NextBreadcrumbs
 				replaceCharacterList={[
 					{ from: "consulting", to: "Services" },
+					{ from: "offices", to: "Offices" },
 					{ from: props.path, to: `${props.title} | ${props.suffix}` },
 				]}
-				transformLabel={(label) =>
-					label.charAt(0).toUpperCase() + label.slice(1)
-				}
 				activeItemClassName={listItemStyling}
 				inactiveItemClassName={listItemStyling}
 				listClassName="pl-0"
