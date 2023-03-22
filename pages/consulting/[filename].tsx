@@ -93,7 +93,7 @@ export default function ConsultingPage(
 							prefix={"ConsultingAfterBody"}
 							blocks={data.consulting.afterBody}
 						/>
-						<TestimonialRow testimonialsQueryResult={props.testimonialResult} />
+						<TestimonialRow testimonialsResult={props.testimonialsResult} />
 						<BookingButton {...bookingButtonProps} containerClass="mt-20" />
 					</Container>
 				</Section>
@@ -161,16 +161,37 @@ export const getStaticProps = async ({ params }) => {
 		relativePath: `${params.filename}.mdx`,
 	});
 
-  const categories = tinaProps.data.consulting.testimonialCategories?.map(category => 
-    category.testimonialCategory.name) || [];
+	const categories =
+		tinaProps.data.consulting?.testimonialCategories?.map(
+			(category) => category.testimonialCategory.name
+		) || [];
 
-  const testimonials = await client.queries.testimonalsQuery({
-    categories
-  });
-
-  const generalTestimonials = await client.queries.testimonalsQuery({
-		categories: "General"
+	const testimonials = await client.queries.testimonalsQuery({
+		categories,
 	});
+
+	let testimonialsResult = testimonials.data.testimonialsConnection.edges.map(
+		(t) => t.node
+	);
+
+	testimonialsResult = testimonialsResult.sort(() => 0.5 - Math.random());
+
+  // Adds general testimonials if not filled by testimonials with matching categories
+	if (testimonialsResult.length < 3) {
+    const generalTestimonials = await client.queries.testimonalsQuery({
+      categories: "General",
+    });
+  
+    const generalTestimonialsResult =
+      generalTestimonials.data.testimonialsConnection.edges.map((t) => t.node);
+    
+		const randomGeneral = generalTestimonialsResult.sort(
+			() => 0.5 - Math.random()
+		);
+		testimonialsResult.push(...randomGeneral);
+	}
+
+	testimonialsResult = testimonialsResult.slice(0, 3);
 
 	const canonical = `${tinaProps.data.global.header.url}consulting/${params.filename}`;
 	const seo = tinaProps.data.consulting.seo;
@@ -197,8 +218,7 @@ export const getStaticProps = async ({ params }) => {
 			data: tinaProps.data,
 			query: tinaProps.query,
 			variables: tinaProps.variables,
-			testimonialResult: testimonials,
-      generalTestimonialResult: generalTestimonials,
+			testimonialsResult,
 			technologyCards: technologyCardsProps,
 			marketingData: marketingSection.data,
 			env: {

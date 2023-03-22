@@ -4,27 +4,14 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Container } from "../util/container";
 import { Rating } from "../util/consulting/rating";
 
-export const TestimonialRow = ({ testimonialsQueryResult }) => {
-	const testimonialsData =
-		testimonialsQueryResult.data.testimonialsConnection.Testimonials.map(
-			(t) => t.Testimonial
-		);
-
-	const [randomTestimonials, setRandomTestimonials] = useState([]);
-	useEffect(() => {
-		const testimonials = testimonialsData
-			.sort(() => 0.5 - Math.random())
-			.slice(0, 3);
-		setRandomTestimonials(testimonials);
-	}, []);
-
+export const TestimonialRow = ({ testimonialsResult }) => {
 	return (
 		<Container size="custom">
 			<h2 className="mb-8 text-center">
 				What do people <span className="text-sswRed">Say</span>?
 			</h2>
 			<div className="grid gap-6 md:grid-cols-3">
-				{randomTestimonials?.map((testimonial, i) => (
+				{testimonialsResult?.map((testimonial, i) => (
 					<TestimonialCard key={i} testimonial={testimonial} />
 				))}
 			</div>
