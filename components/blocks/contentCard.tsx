@@ -5,9 +5,9 @@ import { videoEmbedBlockSchema } from "./videoEmbed";
 
 export const ContentCard = ({ data }) => {
 	return (
-		<div className="relative mx-auto my-5 w-full border-b-2 border-solid border-sswRed bg-gray-75 p-10 text-center">
+		<article className="relative mx-auto my-5 w-full border-b-2 border-solid border-sswRed bg-gray-75 p-10 text-center">
 			<TinaMarkdown content={data.content} components={componentRenderer} />
-		</div>
+		</article>
 	);
 };
 

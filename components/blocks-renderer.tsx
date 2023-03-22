@@ -43,7 +43,7 @@ const renderBlock = (prefix, block, i): JSX.Element => {
 	const blockProps = { data: block, parentField: field };
 
 	return (
-		<div data-tinafield={field} key={i + block.__typename}>
+		<div className="contents" data-tinafield={field} key={i + block.__typename}>
 			{React.createElement(component, { ...blockProps })}
 		</div>
 	);
