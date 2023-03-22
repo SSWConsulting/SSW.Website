@@ -1,18 +1,26 @@
 import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import classnames from "classnames";
-
 // As per https://tailwindcss.com/docs/columns
 const largest_col = 12;
 
 export const TextColumns = ({ data }) => {
-	const cols = [];
-	for (let i = 1; i <= largest_col; i++) {
-		cols.push(`md:columns-${i.toString()}`);
-	}
+	const classNames = {
+		1: "md:columns-1",
+		2: "md:columns-2",
+		3: "md:columns-3",
+		4: "md:columns-4",
+		5: "md:columns-5",
+		6: "md:columns-6",
+		7: "md:columns-7",
+		8: "md:columns-8",
+		9: "md:columns-9",
+		10: "md:columns-10",
+		11: "md:columns-11",
+		12: "md:columns-12",
+	};
 
 	return (
-		<div className={cols[data.colCount - 1]}>
+		<div className={classNames[data.colCount] ?? ""}>
 			<TinaMarkdown content={data.colBody} />
 		</div>
 	);
