@@ -8,7 +8,8 @@ const tableStyles = {
 	none: "",
 	basicBorder:
 		"descendant-table:border-1 descendant-table:border-solid descendant-table:p-2 descendant-th:border-1 descendant-th:border-solid descendant-th:p-2 descendant-td:border-1 descendant-td:border-solid descendant-td:p-2",
-	styled: "descendant-th:border-b-sswRed",
+	styled:
+		"descendant-th:border-b-sswRed [&>table>tbody>*:nth-child(even)]:bg-gray-75",
 };
 
 export const TableLayout = ({ data }) => {
