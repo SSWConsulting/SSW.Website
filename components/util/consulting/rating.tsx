@@ -1,3 +1,5 @@
+import type { NumberField } from "@tinacms/schema-tools/dist/types/index";
+
 import React from "react";
 import { wrapFieldsWithMeta } from "tinacms";
 import { AiFillStar } from "react-icons/ai";
@@ -24,7 +26,7 @@ export const Rating = ({ className, rating }) => {
 	);
 };
 
-export const ratingSchema = {
+export const ratingSchema: NumberField = {
 	type: "number",
 	label: "Rating",
 	name: "rating",
