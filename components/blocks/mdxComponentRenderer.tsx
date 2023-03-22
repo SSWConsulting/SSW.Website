@@ -1,6 +1,4 @@
-import type { TinaMarkdownContent } from "tinacms";
-
-import { Components } from "tinacms/dist/rich-text";
+import { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { UpcomingEvents } from "./upcomingEvents";
 import { ClientLogos } from "./clientLogos";
 import { CustomImage } from "./customImage";
