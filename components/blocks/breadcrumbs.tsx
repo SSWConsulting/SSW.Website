@@ -16,7 +16,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = (props) => {
 				replaceCharacterList={[
 					{ from: "consulting", to: "Services" },
 					{ from: "offices", to: "Offices" },
-					{ from: props.path, to: `${props.title} | ${props.suffix}` },
+					{ from: props.path, to: `${props.title}` },
 				]}
 				activeItemClassName={listItemStyling}
 				inactiveItemClassName={listItemStyling}
