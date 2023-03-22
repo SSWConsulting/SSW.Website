@@ -157,7 +157,9 @@ export const getStaticProps = async ({ params }) => {
 
 	const canonical = `${tinaProps.data.global.header.url}consulting/${params.filename}`;
 	const seo = tinaProps.data.consulting.seo;
-	seo.canonical = canonical;
+	if (seo) {
+		seo.canonical = canonical;
+	}
 
 	const testimonials = await client.queries.allTestimonialsQuery();
 
