@@ -1,34 +1,36 @@
 import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+
 // As per https://tailwindcss.com/docs/columns
 const largest_col = 12;
 
-export const TextColumns = ({ data }) => {
-	const classNames = {
-		1: "md:columns-1",
-		2: "md:columns-2",
-		3: "md:columns-3",
-		4: "md:columns-4",
-		5: "md:columns-5",
-		6: "md:columns-6",
-		7: "md:columns-7",
-		8: "md:columns-8",
-		9: "md:columns-9",
-		10: "md:columns-10",
-		11: "md:columns-11",
-		12: "md:columns-12",
-	};
+// Can't be done with for loop because it runs on client
+const classNames = [
+	"md:columns-1",
+	"md:columns-2",
+	"md:columns-3",
+	"md:columns-4",
+	"md:columns-5",
+	"md:columns-6",
+	"md:columns-7",
+	"md:columns-8",
+	"md:columns-9",
+	"md:columns-10",
+	"md:columns-11",
+	"md:columns-12",
+];
 
+export const DynamicColumns = ({ data }) => {
 	return (
-		<div className={classNames[data.colCount] ?? ""}>
+		<div className={classNames[data.colCount - 1] ?? ""}>
 			<TinaMarkdown content={data.colBody} />
 		</div>
 	);
 };
 
-export const textColumnsSchema: Template = {
-	name: "TextColumns",
-	label: "Text Column Display",
+export const dynamicColumnsSchema: Template = {
+	name: "DynamicColumns",
+	label: "Dynamic Column Layout",
 	fields: [
 		{
 			type: "rich-text",

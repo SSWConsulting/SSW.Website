@@ -8,7 +8,7 @@ import { Carousel } from "./carousel";
 import { TableLayout } from "./tableLayout";
 import { AgreementForm } from "../consulting/agreementForm";
 import { GoogleMapsWrapper } from "./googleMapsWrapper";
-import { TextColumns } from "./textColumns";
+import { DynamicColumns } from "./dynamicColumns";
 
 export const componentRenderer: Components<{
 	ClientLogos: Record<string, never>;
@@ -17,6 +17,10 @@ export const componentRenderer: Components<{
 		alt: string;
 		height: number;
 		width: number;
+	};
+	DynamicColumns: {
+		colBody: TinaMarkdownContent;
+		colCount: number;
 	};
 	VideoEmbed: {
 		url: string;
@@ -49,10 +53,6 @@ export const componentRenderer: Components<{
 		embedWidth: string;
 		embedHeight: string;
 	};
-	TextColumns: {
-		colBody: TinaMarkdownContent;
-		colCount: number;
-	};
 }> = {
 	AgreementForm: (props) => <AgreementForm data={props} />,
 	ClientLogos: () => <ClientLogos />,
@@ -63,5 +63,5 @@ export const componentRenderer: Components<{
 	TableLayout: (props) => <TableLayout data={props} />,
 	VideoEmbed: (props) => <VideoEmbed data={props} />,
 	GoogleMaps: (props) => <GoogleMapsWrapper {...props} />,
-	TextColumns: (props) => <TextColumns data={props} />
+	DynamicColumns: (props) => <DynamicColumns data={props} />,
 };

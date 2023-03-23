@@ -14,7 +14,7 @@ import { serviceCardsBlockSchema } from "./serviceCards";
 import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { videoEmbedBlockSchema } from "./videoEmbed";
 import { tableBlockSchema } from "./tableLayout";
-import { textColumnsSchema } from "./textColumns";
+import { dynamicColumnsSchema } from "./dynamicColumns";
 
 export const pageBlocks: Template[] = [
 	aboutUsBlockSchema,
@@ -29,7 +29,7 @@ export const pageBlocks: Template[] = [
 	heroBlockSchema,
 	serviceCardsBlockSchema,
 	tableBlockSchema,
-	textColumnsSchema,
+	dynamicColumnsSchema,
 	upcomingEventsBlockSchema,
 	videoEmbedBlockSchema,
 ];
@@ -46,6 +46,6 @@ export * from "./googleMapsWrapper";
 export * from "./hero";
 export * from "./serviceCards";
 export * from "./tableLayout";
-export * from "./textColumns";
+export * from "./dynamicColumns";
 export * from "./upcomingEvents";
 export * from "./videoEmbed";
