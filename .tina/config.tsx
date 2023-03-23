@@ -3,6 +3,7 @@ import { consultingSchema } from "./collections/consulting";
 import { globalSchema } from "./collections/global";
 import { marketingSchema } from "./collections/marketing";
 import { officeSchema } from "./collections/offices";
+import { opportunitiesSchema } from "./collections/opportunities";
 import { pagesSchema } from "./collections/pages";
 import { technologiesSchema } from "./collections/technologies";
 import { testimonialSchema } from "./collections/testimonials";
@@ -43,6 +44,7 @@ const config = defineStaticConfig({
 			testimonialSchema,
 			technologiesSchema,
 			officeSchema,
+			opportunitiesSchema,
 		],
 	},
 });
