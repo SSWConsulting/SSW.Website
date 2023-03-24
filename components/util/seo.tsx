@@ -51,6 +51,7 @@ export const seoSchema = {
 			type: "string",
 			label: "Description",
 			name: "description",
+			component: "textarea",
 		},
 		{
 			type: "string",
