@@ -2,9 +2,11 @@ import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../.tina/__generated__/client";
 import { Blocks } from "../components/blocks-renderer";
+import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { componentRenderer } from "../components/blocks/mdxComponentRenderer";
 import { Layout } from "../components/layout";
 import { Container } from "../components/util/container";
+import { Section } from "../components/util/section";
 import { SEO } from "../components/util/seo";
 
 export default function HomePage(
@@ -16,6 +18,10 @@ export default function HomePage(
 		variables: props.variables,
 	});
 
+	const removeExtension = (file: string) => {
+		return file.split(".")[0];
+	};
+
 	const contentClass = data.page.sideBar
 		? "max-w-full md:col-span-3"
 		: "max-w-full md:col-span-5";
@@ -24,6 +30,17 @@ export default function HomePage(
 		<>
 			<SEO seo={data.page.seo} />
 			<Layout>
+				{data.page.breadcrumbs ? (
+					<Section className="mx-auto -mb-20 w-full max-w-9xl py-5 px-8">
+						<Breadcrumbs
+							path={removeExtension(props.variables.relativePath)}
+							suffix={data.global.breadcrumbSuffix}
+							title={data.page.seo?.title}
+						/>
+					</Section>
+				) : (
+					<></>
+				)}
 				<Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
 				<Container className={"flex-1 pt-4"}>
 					<div className="gap-4 md:grid md:grid-cols-5">

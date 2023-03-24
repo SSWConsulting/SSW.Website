@@ -27,6 +27,12 @@ export const pagesSchema: Collection = {
 		// @ts-ignore
 		seoSchema,
 		{
+			type: "boolean",
+			name: "breadcrumbs",
+			label: "Breadcrumbs enabled",
+			required: true,
+		},
+		{
 			type: "object",
 			list: true,
 			name: "beforeBody",
