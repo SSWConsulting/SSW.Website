@@ -1,5 +1,10 @@
 import { defineStaticConfig, TinaCMS, wrapFieldsWithMeta } from "tinacms";
-import { consultingSchema } from "./collections/consulting";
+import {
+	consultingSchema,
+	consultingCategorySchema,
+	consultingTagSchema,
+	consultingIndexSchema,
+} from "./collections/consulting";
 import { globalSchema } from "./collections/global";
 import { marketingSchema } from "./collections/marketing";
 import { officeSchema } from "./collections/offices";
@@ -39,6 +44,9 @@ const config = defineStaticConfig({
 			marketingSchema,
 			globalSchema,
 			pagesSchema,
+			consultingIndexSchema,
+			consultingCategorySchema,
+			consultingTagSchema,
 			consultingSchema,
 			testimonialSchema,
 			technologiesSchema,

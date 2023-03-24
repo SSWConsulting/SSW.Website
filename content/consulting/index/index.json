@@ -1,0 +1,35 @@
+{
+  "categories": [
+    {
+      "category": "content/consulting/category/development-teams.json",
+      "pages": [
+        {
+          "title": "Web Applications + APIs",
+          "description": "SSW has the resources to develop sites of any scope, from ongoing maintenance tasks to the implementation of large complex sites.",
+          "logo": "/images/thumbs/thumb-web-mvc.jpg",
+          "page": "content/consulting/web-applications.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "content/consulting/category/consulting.json"
+    },
+    {
+      "category": "content/consulting/category/creatives.json"
+    },
+    {
+      "category": "content/consulting/category/platforms.json"
+    },
+    {
+      "category": "content/consulting/category/content-management-systems.json"
+    },
+    {
+      "category": "content/consulting/category/cloud-and-infrastructure.json"
+    }
+  ]
+}

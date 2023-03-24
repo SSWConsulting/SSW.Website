@@ -3,6 +3,127 @@ import { seoSchema } from "../../components/util/seo";
 
 import type { Collection } from "tinacms";
 
+export const consultingIndexSchema: Collection = {
+	label: "Consulting - Index",
+	name: "consultingIndex",
+	path: "content/consulting/index",
+	format: "json",
+	ui: {
+		global: true,
+	},
+	fields: [
+		{
+			type: "object",
+			label: "Categories",
+			name: "categories",
+			list: true,
+			ui: {
+				itemProps: (item) => {
+					return { label: item?.category };
+				},
+			},
+			fields: [
+				{
+					type: "reference",
+					label: "Category",
+					name: "category",
+					collections: ["consultingCategory"],
+				},
+				{
+					type: "object",
+					label: "Pages",
+					name: "pages",
+					list: true,
+					ui: {
+						itemProps: (item) => {
+							return { label: item?.page };
+						},
+					},
+					fields: [
+						{
+							type: "string",
+							label: "Title",
+							name: "title",
+						},
+						{
+							type: "string",
+							label: "Description",
+							name: "description",
+							ui: {
+								component: "textarea",
+							},
+						},
+						{
+							type: "image",
+							label: "Logo",
+							name: "logo",
+						},
+						{
+							type: "reference",
+							label: "Page",
+							name: "page",
+							collections: ["consulting"],
+						},
+						{
+							type: "object",
+							label: "Tags",
+							name: "tags",
+							list: true,
+							ui: {
+								itemProps: (item) => {
+									return { label: item?.tag };
+								},
+							},
+							fields: [
+								{
+									type: "reference",
+									label: "Tag",
+									name: "tag",
+									collections: ["consultingTag"],
+								},
+							],
+						},
+					],
+				},
+			],
+		},
+	],
+};
+
+export const consultingCategorySchema: Collection = {
+	label: "Consulting - Categories",
+	name: "consultingCategory",
+	path: "content/consulting/category",
+	format: "json",
+	ui: {
+		global: true,
+	},
+	fields: [
+		{
+			type: "string",
+			label: "Name",
+			name: "name",
+		},
+	],
+};
+
+export const consultingTagSchema: Collection = {
+	label: "Consulting - Tags",
+	name: "consultingTag",
+	path: "content/consulting/tag",
+	format: "json",
+	ui: {
+		global: true,
+	},
+	fields: [
+		{
+			type: "string",
+			label: "Name",
+			name: "name",
+		},
+	],
+};
+
 export const consultingSchema: Collection = {
 	label: "Consulting Pages",
 	name: "consulting",
