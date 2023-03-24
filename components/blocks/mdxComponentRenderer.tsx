@@ -9,6 +9,7 @@ import { TableLayout } from "./tableLayout";
 import { AgreementForm } from "../consulting/agreementForm";
 import { GoogleMapsWrapper } from "./googleMapsWrapper";
 import { DynamicColumns } from "./dynamicColumns";
+import { FixedColumns } from "./fixedColumns";
 
 export const componentRenderer: Components<{
 	ClientLogos: Record<string, never>;
@@ -22,6 +23,10 @@ export const componentRenderer: Components<{
 		colBody: TinaMarkdownContent;
 		colCount: number;
 	};
+	FixedColumns: {
+		firstColBody: TinaMarkdownContent;
+		secondColBody: TinaMarkdownContent;
+	}
 	VideoEmbed: {
 		url: string;
 	};
@@ -64,4 +69,5 @@ export const componentRenderer: Components<{
 	VideoEmbed: (props) => <VideoEmbed data={props} />,
 	GoogleMaps: (props) => <GoogleMapsWrapper {...props} />,
 	DynamicColumns: (props) => <DynamicColumns data={props} />,
+	FixedColumns: (props) => <FixedColumns data={props} />,
 };

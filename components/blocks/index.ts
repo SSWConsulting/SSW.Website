@@ -15,6 +15,7 @@ import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { videoEmbedBlockSchema } from "./videoEmbed";
 import { tableBlockSchema } from "./tableLayout";
 import { dynamicColumnsSchema } from "./dynamicColumns";
+import { fixedColumnsSchema } from "./fixedColumns";
 
 export const pageBlocks: Template[] = [
 	aboutUsBlockSchema,
@@ -32,6 +33,7 @@ export const pageBlocks: Template[] = [
 	dynamicColumnsSchema,
 	upcomingEventsBlockSchema,
 	videoEmbedBlockSchema,
+	fixedColumnsSchema,
 ];
 
 export * from "./aboutUs";
@@ -42,6 +44,7 @@ export * from "./clientLogos";
 export * from "./columnLayout";
 export * from "./content";
 export * from "./customImage";
+export * from "./fixedColumns";
 export * from "./googleMapsWrapper";
 export * from "./hero";
 export * from "./serviceCards";
