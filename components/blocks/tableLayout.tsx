@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 import React, { useEffect, useState } from "react";
 import type { Template } from "tinacms";
 import markdownItMultimdTable from "markdown-it-multimd-table";
@@ -42,7 +41,7 @@ export const TableLayout = ({ data }) => {
 	);
 };
 
-export const TableBlockSchema: Template = {
+export const tableBlockSchema: Template = {
 	label: "Table Layout",
 	name: "TableLayout",
 	ui: {
