@@ -26,9 +26,9 @@ const componentMap = {
 
 export const Blocks = ({ prefix, blocks }) => {
 	return (
-		<>
+		<div>
 			{blocks ? blocks.map((block, i) => renderBlock(prefix, block, i)) : null}
-		</>
+		</div>
 	);
 };
 

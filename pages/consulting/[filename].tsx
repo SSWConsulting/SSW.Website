@@ -89,10 +89,16 @@ export default function ConsultingPage(
 				</Section>
 				<Section className="mb-16">
 					<Container padding="px-4" className="flex w-full flex-wrap">
-						<Blocks
-							prefix={"ConsultingAfterBody"}
-							blocks={data.consulting.afterBody}
-						/>
+						{data.consulting.afterBody ? (
+							<div>
+								<Blocks
+									prefix={"ConsultingAfterBody"}
+									blocks={data.consulting.afterBody}
+								/>
+							</div>
+						) : (
+							<></>
+						)}
 						<TestimonialRow testimonialsResult={props.testimonialsResult} />
 						<BookingButton {...bookingButtonProps} containerClass="mt-20" />
 					</Container>
@@ -176,15 +182,15 @@ export const getStaticProps = async ({ params }) => {
 
 	testimonialsResult = testimonialsResult.sort(() => 0.5 - Math.random());
 
-  // Adds general testimonials if not filled by testimonials with matching categories
+	// Adds general testimonials if not filled by testimonials with matching categories
 	if (testimonialsResult.length < 3) {
-    const generalTestimonials = await client.queries.testimonalsQuery({
-      categories: "General",
-    });
-  
-    const generalTestimonialsResult =
-      generalTestimonials.data.testimonialsConnection.edges.map((t) => t.node);
-    
+		const generalTestimonials = await client.queries.testimonalsQuery({
+			categories: "General",
+		});
+
+		const generalTestimonialsResult =
+			generalTestimonials.data.testimonialsConnection.edges.map((t) => t.node);
+
 		const randomGeneral = generalTestimonialsResult.sort(
 			() => 0.5 - Math.random()
 		);
