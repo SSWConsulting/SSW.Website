@@ -9,6 +9,7 @@ import { contentBlockSchema } from "./content";
 import { customImageBlockSchema } from "./customImage";
 import { googleMapsSchema } from "./googleMapsWrapper";
 import { heroBlockSchema } from "./hero";
+import { internalCarouselBlockSchema } from "./internalCarousel";
 import { serviceCardsBlockSchema } from "./serviceCards";
 import { tableBlockSchema } from "./tableLayout";
 import { upcomingEventsBlockSchema } from "./upcomingEvents";
@@ -28,6 +29,7 @@ export const pageBlocks: Template[] = [
 	tableBlockSchema,
 	upcomingEventsBlockSchema,
 	videoEmbedBlockSchema,
+	internalCarouselBlockSchema,
 ];
 
 export * from "./aboutUs";
