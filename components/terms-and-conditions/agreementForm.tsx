@@ -15,6 +15,7 @@ export const AgreementForm = ({ data }) => {
             id={field.id}
             label={field.label}
             placeholder={field.placeholder}
+            resizeable={field.resizeable}
           />
         ))}
       </div>
@@ -33,7 +34,9 @@ export const AgreementForm = ({ data }) => {
   );
 };
 
-const FormField = ({ label, id, placeholder }) => {
+const FormField = ({ label, id, placeholder, resizeable }) => {
+  const classes = "w-full rounded border-2 border-gray-300 p-2";
+
   return (
     <div className="relative inline-block w-full pb-3 md:flex">
       <div className="w-96 py-2.5 pr-2 text-left font-bold sm:grow-0 md:text-right">
@@ -42,13 +45,17 @@ const FormField = ({ label, id, placeholder }) => {
         </label>
       </div>
       <div className="inline-flex w-full md:grow">
-        <input
-          className="w-full rounded border-2 border-gray-300 p-2"
-          type="text"
-          id={id}
-          name={id}
-          placeholder={placeholder}
-        />
+        {resizeable
+          ? <textarea className={classnames(classes, "resize-y")}></textarea>
+          : <input
+              className={classes}
+              type="text"
+              id={id}
+              name={id}
+              placeholder={placeholder}
+            />
+        }
+        
       </div>
     </div>
   );
@@ -93,6 +100,12 @@ export const agreementFormBlockSchema: Template = {
           label: "Placeholder",
           name: "placeholder",
         },
+        {
+          type: "boolean",
+          label: "Resizeable",
+          name: "resizeable",
+          required: true
+        }
       ],
     },
   ],

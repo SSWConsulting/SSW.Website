@@ -56,6 +56,7 @@ export const componentRenderer: Components<{
 			id: string;
 			label: string;
 			placeholder: string;
+			resizeable: boolean;
 		}[]
 	};
 	GoogleMaps: {
