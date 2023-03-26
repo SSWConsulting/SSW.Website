@@ -1,7 +1,7 @@
 import type { Template } from "tinacms";
 
 import { aboutUsBlockSchema } from "./aboutUs";
-import { agreementFormBlockSchema } from "../consulting/agreementForm";
+import { agreementFormBlockSchema } from "../terms-and-conditions/agreementForm";
 import { builtOnAzureBlockSchema } from "./builtOnAzure";
 import { carouselBlockSchema } from "./carousel";
 import { clientLogosBlockSchema } from "./clientLogos";
@@ -18,26 +18,26 @@ import { dynamicColumnsSchema } from "./dynamicColumns";
 import { fixedColumnsSchema } from "./fixedColumns";
 
 export const pageBlocks: Template[] = [
-	aboutUsBlockSchema,
-	agreementFormBlockSchema,
-	builtOnAzureBlockSchema,
-	carouselBlockSchema,
-	clientLogosBlockSchema,
-	columnLayoutBlockSchema,
-	contentBlockSchema,
-	customImageBlockSchema,
-	googleMapsSchema,
-	heroBlockSchema,
-	serviceCardsBlockSchema,
-	tableBlockSchema,
-	dynamicColumnsSchema,
-	upcomingEventsBlockSchema,
-	videoEmbedBlockSchema,
-	fixedColumnsSchema,
+  aboutUsBlockSchema,
+  agreementFormBlockSchema,
+  builtOnAzureBlockSchema,
+  carouselBlockSchema,
+  clientLogosBlockSchema,
+  columnLayoutBlockSchema,
+  contentBlockSchema,
+  customImageBlockSchema,
+  googleMapsSchema,
+  heroBlockSchema,
+  serviceCardsBlockSchema,
+  tableBlockSchema,
+  dynamicColumnsSchema,
+  upcomingEventsBlockSchema,
+  videoEmbedBlockSchema,
+  fixedColumnsSchema,
 ];
 
 export * from "./aboutUs";
-export * from "../consulting/agreementForm";
+export * from "../terms-and-conditions/agreementForm";
 export * from "./builtOnAzure";
 export * from "./carousel";
 export * from "./clientLogos";

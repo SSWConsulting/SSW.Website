@@ -6,7 +6,7 @@ import { VideoEmbed } from "./videoEmbed";
 import { ColumnLayout } from "./columnLayout";
 import { Carousel } from "./carousel";
 import { TableLayout } from "./tableLayout";
-import { AgreementForm } from "../consulting/agreementForm";
+import { AgreementForm } from "../terms-and-conditions/agreementForm";
 import { GoogleMapsWrapper } from "./googleMapsWrapper";
 import { DynamicColumns } from "./dynamicColumns";
 import { FixedColumns } from "./fixedColumns";
@@ -52,6 +52,11 @@ export const componentRenderer: Components<{
 	};
 	AgreementForm: {
 		backgroundColor: string;
+		fields: {
+			id: string;
+			label: string;
+			placeholder: string;
+		}[]
 	};
 	GoogleMaps: {
 		embedUrl: string;
