@@ -9,6 +9,7 @@ import { TableLayout } from "./tableLayout";
 import { SSWTable } from "./tables/sswTable";
 import { Citation } from "./citation";
 import { GoogleMapsWrapper } from "./googleMapsWrapper";
+import { InternalCarousel } from "./internalCarousel";
 
 export const componentRenderer: Components<{
 	ClientLogos: Record<string, never>;
@@ -78,6 +79,18 @@ export const componentRenderer: Components<{
 		embedWidth: string;
 		embedHeight: string;
 	};
+	InternalCarousel: {
+		items: {
+			label: string;
+			imgSrc: string;
+		}[];
+		header: string;
+		paragraph: string;
+		website: string;
+		technologies: {
+			name: string;
+		}[];
+	};
 }> = {
 	VideoEmbed: (props) => <VideoEmbed data={props} />,
 	ClientLogos: () => <ClientLogos />,
@@ -89,4 +102,5 @@ export const componentRenderer: Components<{
 	SSWTable: (props) => <SSWTable {...props} />,
 	Citation: (props) => <Citation {...props} />,
 	GoogleMaps: (props) => <GoogleMapsWrapper {...props} />,
+	InternalCarousel: (props) => <InternalCarousel data={props} />,
 };

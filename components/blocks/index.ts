@@ -4,6 +4,7 @@ import { aboutUsBlockSchema } from "./aboutUs";
 import { contentBlockSchema } from "./content";
 import { carouselBlockSchema } from "./carousel";
 import { heroBlockSchema } from "./hero";
+import { internalCarouselBlockSchema } from "./internalCarousel";
 import { serviceCardsBlockSchema } from "./serviceCards";
 import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { builtOnAzureBlockSchema } from "./builtOnAzure";
@@ -32,6 +33,7 @@ export const pageBlocks: Template[] = [
 	sswTableBlockSchema,
 	subButtonSchema,
 	googleMapsSchema,
+	internalCarouselBlockSchema,
 ];
 
 export * from "./aboutUs";
