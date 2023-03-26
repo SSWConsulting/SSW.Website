@@ -15,7 +15,7 @@ const VideoCard: FC<VideoCardProps> = ({ link, title }) => {
     return (
         <VideoModal url={link}>
             <div className="flex h-full items-center justify-between bg-white p-5">
-                <span className="w-3/4 text-left text-lg font-bold text-sswRed">{title}</span>
+                <span className="w-3/4 text-left text-lg font-bold">{title}</span>
                 <AiFillPlayCircle className="text-sswRed" size={50} />
             </div>
         </VideoModal>

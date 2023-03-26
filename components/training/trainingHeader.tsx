@@ -36,7 +36,7 @@ const TrainingHeader = ({ data }) => {
             </Container>
             {data?.person &&
                 <Image
-                className={classNames(styles["carouselSubject"], "absolute bottom-0 right-12 xl:right-44")}
+                    className={classNames(styles["carouselSubject"], "absolute bottom-0 right-12 xl:right-44")}
                     src={data?.person}
                     alt="person"
                     width={800}
@@ -124,6 +124,30 @@ export const trainingHeaderSchema = {
                     label: "Person",
                     name: "person",
                 },
+                {
+                    type: "object",
+                    label: "Link",
+                    name: "link",
+                    fields: [
+                        {
+                            type: "string",
+                            label: "Link Text",
+                            name: "linkText",
+                            required: true,
+                        },
+                        {
+                            type: "string",
+                            label: "URL",
+                            name: "url",
+                            required: true,
+                        },
+                        {
+                            type: "image",
+                            label: "Icon",
+                            name: "icon",
+                        },
+                    ]
+                }
             ]
         }
     ],

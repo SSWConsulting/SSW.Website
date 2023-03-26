@@ -29,8 +29,8 @@ export const TrainingInformation = ({ data }) => {
     return (
         <Section color="white">
             <Container className={"flex-1 pt-0"}>
-        <div className="grid grid-cols-1 justify-between lg:grid-cols-3">
-                    {data.trainingInformationItems?.map((item) => <TrainingInformationItem header={item.header} body={item.body} />)}
+                <div className="grid grid-cols-1 justify-between lg:grid-cols-3">
+                    {data.trainingInformationItems?.map((item, key) => <TrainingInformationItem key={key} header={item.header} body={item.body} />)}
                 </div>
             </Container>
         </Section>

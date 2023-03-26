@@ -46,7 +46,7 @@ export default function TrainingPage(
                     </Container>
                 </Section>
 
-                <Section color="lightgray">
+                <Section color="white">
                     <Container className={"flex-1 pt-0"}>
                         <div className="flex flex-col items-center pb-15 text-center">
                             <h1>Trusted by more than <span className="text-sswRed">1400+</span> clients in the world</h1>
@@ -56,7 +56,10 @@ export default function TrainingPage(
                     </Container>
                 </Section>
 
-                <Section color="darkgray">
+                <Section
+                    color="darkgray"
+                    style={{ backgroundImage: "url(/images/SSWPolygons.png)" }}
+                >
                     <Container className={"flex flex-1 flex-col items-center pt-15 text-center"}>
                         <p className="text-3xl font-light text-white">Subscribe to get notified about <span className="text-sswRed">SSW training programs</span></p>
                         <p className="text-base text-gray-500">Get the most popular courses from our developers</p>

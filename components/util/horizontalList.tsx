@@ -11,12 +11,14 @@ export type HorizontalListItemProps = {
 const HorizontalListItem: FC<HorizontalListItemProps> = ({ icon, title, content }) => {
     return (
         <div className="flex items-center">
-            <Image
-                src={icon || ""}
-                alt={`${title} icon`}
-                width={75}
-                height={75}
-            />
+            {icon &&
+                <Image
+                    src={icon || ""}
+                    alt={`${title} icon`}
+                    width={75}
+                    height={75}
+                />
+            }
             <div className="ml-3 flex flex-col justify-start text-left text-gray-500">
                 <span className="text-xl font-semibold text-black">{title}</span>
                 <TinaMarkdown content={content} />
