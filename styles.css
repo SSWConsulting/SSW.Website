@@ -87,4 +87,14 @@
 	.customTable li {
 		list-style-type: square;
 	}
+
+	@media print {
+		.no-print,
+		.no-print * {
+			display: none !important;
+		}
+		.pagebreak {
+			page-break-before: always;
+		}
+	}
 }

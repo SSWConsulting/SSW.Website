@@ -1,13 +1,14 @@
 import React from "react";
 import { Template } from "tinacms";
 import { sectionColors } from "../util/constants/styles";
+import classnames from "classnames";
 
 export const AgreementForm = ({ data }) => {
   const sectionColorCss =
     sectionColors[data.backgroundColor] || sectionColors.default;
   return (
     <div>
-      <div className={`my-10 p-8 ${sectionColorCss}`}>
+      <div className={classnames("pagebreak my-10 p-8", sectionColorCss)}>
         {data.fields.map((field) => (
           <FormField
             key={field.id}

@@ -15,7 +15,7 @@ import layoutData from "../../content/global/index.json";
 
 const openSans = Open_Sans({
   variable: "--open-sans-font",
-  subsets: ["latin"]
+  subsets: ["latin"],
 });
 
 const structuredData = {
@@ -51,7 +51,7 @@ export const Layout = ({ children, className = "" }) => {
             className
           )}
         >
-          <header>
+          <header className="no-print">
             <Suspense fallback={<></>}>
               <LiveStreamBanner {...liveStreamProps} />
             </Suspense>

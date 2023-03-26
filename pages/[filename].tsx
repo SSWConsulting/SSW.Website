@@ -57,7 +57,9 @@ export default function HomePage(
 						)}
 					</div>
 				</Container>
-				<Blocks prefix="PageAfterBody" blocks={data.page.afterBody} />
+				<div className="no-print">
+					<Blocks prefix="PageAfterBody" blocks={data.page.afterBody} />
+				</div>
 			</Layout>
 		</>
 	);
