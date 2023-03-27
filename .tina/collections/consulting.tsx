@@ -19,7 +19,7 @@ export const consultingIndexSchema: Collection = {
 			list: true,
 			ui: {
 				itemProps: (item) => {
-					return { label: item?.category };
+					return { label: item?.category.split("/")[3].replace(".json", "") };
 				},
 			},
 			fields: [
@@ -36,7 +36,7 @@ export const consultingIndexSchema: Collection = {
 					list: true,
 					ui: {
 						itemProps: (item) => {
-							return { label: item?.page };
+							return { label: item?.title };
 						},
 					},
 					fields: [
@@ -63,6 +63,13 @@ export const consultingIndexSchema: Collection = {
 							label: "Page",
 							name: "page",
 							collections: ["consulting"],
+                            required: true,
+						},
+						{
+							type: "string",
+							label: "External URL",
+                            description: "Takes precedence over page if selected. If using this, you still have to select a (random) page.",
+							name: "externalUrl",
 						},
 						{
 							type: "object",

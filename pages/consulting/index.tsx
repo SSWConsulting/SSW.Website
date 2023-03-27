@@ -34,7 +34,7 @@ export default function OfficeIndex(
 				name: c.category.name,
 				pages: c.pages.map((p) => {
 					return {
-						url: p.page.id.replace("content/", "").replace(".mdx", ""),
+						url: p.externalUrl || p.page.id.replace("content/", "").replace(".mdx", ""),
 						title: p.title,
 						description: p.description,
 						logo: p.logo,
