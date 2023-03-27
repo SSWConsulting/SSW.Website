@@ -13,23 +13,621 @@
               "tag": "content/consulting/tag/website-development.json"
             }
           ]
+        },
+        {
+          "title": "Mobile Apps",
+          "description": "We can build your mobile app using React Native, MAUI (was Xamarin), Flutter, Cordova, PWA, or Ionic!",
+          "logo": "/images/thumbs/thumb-mobiles-apps-icon.jpg",
+          "page": "content/consulting/mobile-application-development.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/mobile-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Angular / SPA",
+          "description": "Build sexy web apps with this a TypeScript-based web application platform, open-sourced and led by Google!",
+          "logo": "/images/thumbs/thumb-angularjs.jpg",
+          "page": "content/consulting/angular.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "React ",
+          "description": "Easily create interactive UIs with this JavaScript library, maintained by Facebook, Instagram and a large community!",
+          "logo": "/images/thumbs/thumb-react.jpg",
+          "page": "content/consulting/react.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            },
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Vue.js",
+          "description": "Vue.js is a progressive JavaScript framework to build web interfaces and applications.",
+          "logo": "/images/thumbs/thumb-vuejs.jpg",
+          "page": "content/consulting/vue.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Blazor",
+          "description": "The best way to build an enterprise app blazing fast. We've seen it more than 50x faster than Angular (once it's loaded) on testing. C# with Razor pages is nicer than JavaScript.",
+          "logo": "/images/thumbs/thumb-blazor.jpg",
+          "page": "content/consulting/blazor.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": ".NET MAUI (aka Windows Desktop Apps)",
+          "description": "Desktop Apps have different responsive layouts, menus, and multi–windowing, but they work on Windows too. .NET MAUI (previously WinUI and WPF) is used to create these business applications.",
+          "logo": "/images/thumbs/thumb-windows8.jpg",
+          "page": "content/consulting/desktop-development.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Enterprise Reporting + BI",
+          "description": "Custom SQL reporting for unparalleled access to your company's data. Add a cube, Telerik Reports and a dashboard to drive your business forward.",
+          "logo": "/images/thumbs/thumb-enterprise-reporting.jpg",
+          "page": "content/consulting/enterprise-reporting.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Database Development and Performance",
+          "description": "Whether it is good old SQL Server or the super scalable SQL Azure, our consultants know how to help you simplify your database and improve its performance.",
+          "logo": "/images/thumbs/thumb-database-dev.jpg",
+          "page": "content/consulting/database-development.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/database-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Power BI",
+          "description": "A cloud based business analytics service that allows anyone to visualize and analyze data with greater speed, efficiency and understanding.",
+          "logo": "/images/thumbs/thumb-powerbi.jpg",
+          "page": "content/consulting/power-bi.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/database-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Bots",
+          "description": "Awesome bots gives you an advantage in finding and automatically entering data for your business with advanced artificial intelligence.",
+          "logo": "/images/thumbs/thumb-azure-bot-icon.jpg",
+          "page": "content/consulting/bots.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Azure Cognitive Services",
+          "description": "Make your existing applications smarter. Add Artificial Intelligence APIs like vision, speech, language and knowledge capability to your apps.",
+          "logo": "/images/thumbs/thumb-azurecognitiveservices.jpg",
+          "page": "content/consulting/azure.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Azure Synapse",
+          "description": "A limitless analytics service that brings together enterprise data warehousing and Big Data analytics. It gives you the freedom to query data on your terms, using either serverless or dedicated resources at scale.",
+          "logo": "/images/thumbs/thumb-azuresynapse.jpg",
+          "page": "content/consulting/azure-synapse.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/database-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
         }
       ]
     },
     {
-      "category": "content/consulting/category/consulting.json"
+      "category": "content/consulting/category/consulting.json",
+      "pages": [
+        {
+          "title": "Remote Work",
+          "description": "Put the tools in place to allow your employees to work from home including Teams, cloud migration, VPN, training, and more.",
+          "logo": "/images/thumbs/thumb-remote.jpg",
+          "page": "content/consulting/remote-work.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Chinafy",
+          "description": "China is a booming market and now is the time to take advantage of this growing user base. Includes WeChat Mini Programs.",
+          "logo": "/images/thumbs/thumb-china.jpg",
+          "page": "content/consulting/chinafy-app.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            },
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Strategic Architecture",
+          "description": "Combine SSW's deep experience with best practices and industry trends to develop a strategic architecture for your organization.",
+          "logo": "/images/thumbs/thumb-strategicarchitecture.jpg",
+          "page": "content/consulting/strategic-architecture.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Software Auditing",
+          "description": "Receive an independent examination of your software product and processes.",
+          "logo": "/images/thumbs/thumb-software-auditing.jpg",
+          "page": "content/consulting/software-audit.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "ALM + GitHub + Azure DevOps",
+          "description": "Azure DevOps, GitHub, Visual Studio, and VS Code provide the backbone for delivering software continuously. Manage large teams and codebases with ease.",
+          "logo": "/images/thumbs/thumb-vs.jpg",
+          "page": "content/consulting/alm-azure-devops.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "DevOps",
+          "description": "Enables your organization be more agile, bringing consistency, improving quality, and allowing you to be responsive to changes and issues.",
+          "logo": "/images/thumbs/thumb-devops.jpg",
+          "page": "content/consulting/devops.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Scrum",
+          "description": "Increase software quality and eliminate miscommunication by adopting the Scrum framework.",
+          "logo": "/images/thumbs/thumb-scrum.jpg",
+          "page": "content/consulting/scrum.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Kubernetes",
+          "description": "Kubernetes provides great benefits, such as high availability, auto-scaling, self-healing and supports automated blue-green deployments.",
+          "logo": "/images/thumbs/thumb-kubernetes.jpg",
+          "page": "content/consulting/kubernetes.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Pay Per Click",
+          "description": "Businesses are now able to target their prospects based on their interests and actions on social media platforms.",
+          "logo": "/images/thumbs/thumb-search.jpg",
+          "page": "content/consulting/pay-per-click.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Microsoft HoloLens",
+          "description": "Get started with the first fully self-contained, holographic computer, which enables you to interact with high‑definition holograms.",
+          "logo": "/images/thumbs/thumb-hololens.jpg",
+          "page": "content/consulting/microsoft-hololens.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/mobile-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Machine Learning & AI",
+          "description": "Enable better decisions based on data. Now computers can understand and learn on their own.",
+          "logo": "/images/thumbs/thumb-machinelearning.jpg",
+          "page": "content/consulting/artificial-intelligence.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Smart Office & Smart Home",
+          "description": "An office or house becomes smart when its systems (lights, climate control, music, blinds etc) are integrated and perform automated tasks.",
+          "logo": "/images/thumbs/thumb-control4.jpg",
+          "page": "content/consulting/smart-office-and-smart-home.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            },
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Access Database Upsizing",
+          "description": "If you are experiencing connection, speed and data corruption issues with Microsoft Access, then there is a way to solve them all.",
+          "logo": "/images/thumbs/thumb-access.jpg",
+          "page": "content/consulting/access-database-upsizing.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Zendesk",
+          "description": "Modern customers want to be able to contact you by different media and devices seamlessly. Zendesk is the perfect solution.",
+          "logo": "/images/thumbs/thumb-zendesk.jpg",
+          "page": "content/consulting/zendesk.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Mentoring",
+          "description": "Does your team of developers need to learn a new technology? SSW mentoring is the best way to get them up to speed to deliver quality software.",
+          "logo": "/images/thumbs/thumb-mentor.jpg",
+          "page": "content/consulting/mentoring.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Custom Training",
+          "description": "We believe that everyone should have access to expert advice. SSW provides high quality hands-on training for your team.",
+          "logo": "/images/thumbs/thumb-customtraining-icon.jpg",
+          "page": "content/consulting/access-database-upsizing.mdx",
+          "externalUrl": "https://www.ssw.com.au/ssw/Events/Training/Training-Options.aspx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Security",
+          "description": "We help you avoid high cost and high profile breaches. Include secure code auditing, network and infrastructure consulting, and identity. We specialise in Auth0, B2C, Azure AD and IdentityServer.",
+          "logo": "/images/thumbs/thumb-security.jpg",
+          "page": "content/consulting/security.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Xero & MYOB",
+          "description": "We help organizations to remain more organized while carrying out standard accounting functions with Xero and MYOB.",
+          "logo": "/images/thumbs/thumb-xeromyob.jpg",
+          "page": "content/consulting/xero-myob.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Test Practice",
+          "description": "SSW can help you to review your current practices and recommend better test strategies and approaches to help you improve the quality of your software.",
+          "logo": "/images/thumbs/thumb-testing.jpg",
+          "page": "content/consulting/test-practice.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Microsoft Viva",
+          "description": "Microsoft Viva is an employee experience platform. It is designed to help people connect, focus, learn and thrive at work.",
+          "logo": "/images/thumbs/thumb-viva.jpg",
+          "page": "content/consulting/microsoft-viva.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        }
+      ]
     },
     {
-      "category": "content/consulting/category/creatives.json"
+      "category": "content/consulting/category/creatives.json",
+      "pages": [
+        {
+          "title": "SSW Digital",
+          "description": "To accelerate growth you need a digital partner who can help build your digital strategy, prioritise the implementation and execute the campaigns.",
+          "logo": "/images/thumbs/thumb-sswdigital.jpg",
+          "page": "content/consulting/access-database-upsizing.mdx",
+          "externalUrl": "https://sswdigital.com/",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            },
+            {
+              "tag": "content/consulting/tag/design.json"
+            }
+          ]
+        },
+        {
+          "title": "SSW Chapel Conference Rental",
+          "description": "Do you have an event idea? Then we have the venue! The SSW Chapel conference rooms are spacious and quiet retreats in convenient locations.",
+          "logo": "/images/thumbs/thumb-chapelrental.jpg",
+          "page": "content/consulting/angular.mdx",
+          "externalUrl": "https://sswchapel.com.au/",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/design.json"
+            },
+            {
+              "tag": "content/consulting/tag/video.json"
+            }
+          ]
+        }
+      ]
     },
     {
-      "category": "content/consulting/category/platforms.json"
+      "category": "content/consulting/category/platforms.json",
+      "pages": [
+        {
+          "title": "Microsoft Azure",
+          "description": "Enables you to build and run highly available applications without focusing on the infrastructure. Azure makes it easy, scalable, and cheap... for others it is difficult and expensive :)",
+          "logo": "/images/thumbs/thumb-azure.jpg",
+          "page": "content/consulting/azure.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Power Platform",
+          "description": "Microsoft's Power Platform is a set of low-code applications that can be used individually to create easy to use business solutions. ",
+          "logo": "/images/thumbs/thumb-power-platform.jpg",
+          "page": "content/consulting/power-platform.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/database-development.json"
+            }
+          ]
+        },
+        {
+          "title": "SharePoint",
+          "description": "The premier content management to store all documents & records. SSW helps enterprises customize and develop SharePoint often powered by the SharePoint Framework (aka SPFx) with React.",
+          "logo": "/images/thumbs/thumb-sharepoint.jpg",
+          "page": "content/consulting/sharepoint.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Microsoft Dynamics 365",
+          "description": "Dynamics 365 combines existing Microsoft products such as Dynamics CRM, Dynamics NAV, and Dynamics AX into one seamless solution.",
+          "logo": "/images/thumbs/thumb-dynamics-icon.jpg",
+          "page": "content/consulting/dynamics-365.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Office 365",
+          "description": "The Office you know plus extra tools will help you work better together, all based on the cloud.",
+          "logo": "/images/thumbs/thumb-office.jpg",
+          "page": "content/consulting/office-365.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            }
+          ]
+        }
+      ]
     },
     {
       "category": "content/consulting/category/content-management-systems.json"
     },
     {
-      "category": "content/consulting/category/cloud-and-infrastructure.json"
+      "category": "content/consulting/category/cloud-and-infrastructure.json",
+      "pages": [
+        {
+          "title": "Network Architecture",
+          "description": "In such a fast paced moving industry, it's important to have a well designed and maintained Network Infrastructure.",
+          "logo": "/images/thumbs/thumb-network.jpg",
+          "page": "content/consulting/network-architecture.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "PowerShell",
+          "description": "Get your infrastructure automation from snail's pace to blazing fast.",
+          "logo": "/images/thumbs/thumb-powershell.jpg",
+          "page": "content/consulting/powershell.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Backup/Disaster Recovery Audit",
+          "description": "If you have good backups and a thorough Disaster Recovery plan, you can mitigate or completely overcome potential catastrophes.",
+          "logo": "/images/thumbs/thumb-backup-icon.jpg",
+          "page": "content/consulting/backup-recovery.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Microsoft Teams",
+          "description": "Teams is the premier Office 365 chat, collaboration and phone system from Microsoft.",
+          "logo": "/images/thumbs/thumb-teams.jpg",
+          "page": "content/consulting/microsoft-teams.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Video Conferencing",
+          "description": "Engage remote teams and employees to work from home; promote collaboration across the team; run webinars and live events; meet clients; interview job candidates.",
+          "logo": "/images/thumbs/thumb-video-conferencing.jpg",
+          "page": "content/consulting/video-conferencing.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Service Desk",
+          "description": "Potential costs savings as you are only paying for support when you need it.",
+          "logo": "/images/thumbs/thumb-servicedesk.jpg",
+          "page": "content/consulting/service-desk.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Support Plans",
+          "description": "Gain peace of mind that you'll be covered in case of an emergency.",
+          "logo": "/images/thumbs/thumb-supportplans.jpg",
+          "page": "content/consulting/support-plans.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
