@@ -10,6 +10,7 @@ import { contentBlockSchema } from "./content";
 import { customImageBlockSchema } from "./customImage";
 import { googleMapsSchema } from "./googleMapsWrapper";
 import { heroBlockSchema } from "./hero";
+import { internalCarouselBlockSchema } from "./internalCarousel";
 import { serviceCardsBlockSchema } from "./serviceCards";
 import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { videoEmbedBlockSchema } from "./videoEmbed";
@@ -34,6 +35,7 @@ export const pageBlocks: Template[] = [
   upcomingEventsBlockSchema,
   videoEmbedBlockSchema,
   fixedColumnsSchema,
+	internalCarouselBlockSchema,
 ];
 
 export * from "./aboutUs";

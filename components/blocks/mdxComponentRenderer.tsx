@@ -10,6 +10,7 @@ import { AgreementForm } from "../terms-and-conditions/agreementForm";
 import { GoogleMapsWrapper } from "./googleMapsWrapper";
 import { DynamicColumns } from "./dynamicColumns";
 import { FixedColumns } from "./fixedColumns";
+import { InternalCarousel } from "./internalCarousel";
 
 export const componentRenderer: Components<{
 	ClientLogos: Record<string, never>;
@@ -64,6 +65,18 @@ export const componentRenderer: Components<{
 		embedWidth: string;
 		embedHeight: string;
 	};
+	InternalCarousel: {
+		items: {
+			label: string;
+			imgSrc: string;
+		}[];
+		header: string;
+		paragraph: string;
+		website: string;
+		technologies: {
+			name: string;
+		}[];
+	};
 }> = {
 	AgreementForm: (props) => <AgreementForm data={props} />,
 	ClientLogos: () => <ClientLogos />,
@@ -76,4 +89,5 @@ export const componentRenderer: Components<{
 	GoogleMaps: (props) => <GoogleMapsWrapper {...props} />,
 	DynamicColumns: (props) => <DynamicColumns data={props} />,
 	FixedColumns: (props) => <FixedColumns data={props} />,
+	InternalCarousel: (props) => <InternalCarousel data={props} />,
 };
