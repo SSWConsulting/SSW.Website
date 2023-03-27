@@ -15,6 +15,11 @@ export default function HomePage(
     query: props.query,
     variables: props.variables,
   });
+
+  const contentClass = data.page.sideBar
+		? "max-w-full md:col-span-3"
+		: "max-w-full md:col-span-5";
+
   return (
     <>
       <SEO seo={data.page.seo} />
@@ -22,15 +27,17 @@ export default function HomePage(
         <Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
         <Container className={"flex-1 pt-4"}>
           <div className="gap-4 md:grid md:grid-cols-5 lg:grid-cols-5">
-            <div className="max-w-full md:col-span-3 lg:col-span-3">
+            <div className={contentClass}>
               <TinaMarkdown
                 components={componentRenderer}
                 content={data.page._body}
               />
             </div>
-            <div className="md:col-span-2 lg:col-span-2">
-              <Blocks prefix="PageSideBar" blocks={data.page.sideBar} />
-            </div>
+            {!!data.page.sideBar && (
+							<div className="md:col-span-2">
+								<Blocks prefix="PageSideBar" blocks={data.page.sideBar} />
+							</div>
+						)}
           </div>
         </Container>
         <Blocks prefix="PageAfterBody" blocks={data.page.afterBody} />

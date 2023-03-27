@@ -10,6 +10,8 @@ import { SSWTable } from "./tables/sswTable";
 import { Citation } from "./citation";
 import { GoogleMapsWrapper } from "./googleMapsWrapper";
 import { InternalCarousel } from "./internalCarousel";
+import { NewsTable } from "./tables/newsTable";
+import { SubButton } from "./subButton";
 
 export const componentRenderer: Components<{
 	ClientLogos: Record<string, never>;
@@ -91,6 +93,10 @@ export const componentRenderer: Components<{
 			name: string;
 		}[];
 	};
+	NewsTable: Record<string, never>;
+	SubButton: {
+		subButtonText: string;
+	};
 }> = {
 	VideoEmbed: (props) => <VideoEmbed data={props} />,
 	ClientLogos: () => <ClientLogos />,
@@ -103,4 +109,6 @@ export const componentRenderer: Components<{
 	Citation: (props) => <Citation {...props} />,
 	GoogleMaps: (props) => <GoogleMapsWrapper {...props} />,
 	InternalCarousel: (props) => <InternalCarousel data={props} />,
+	NewsTable: () => <NewsTable />,
+	SubButton: (props) => <SubButton data={props} />,
 };

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Template } from "tinacms";
 
-export const SubButton = ({ subButtonText = undefined }) => {
+export const SubButton = (data) => {
 	const handleSubscribe = () => {
 		console.log("subscribe");
 	};
@@ -12,7 +12,7 @@ export const SubButton = ({ subButtonText = undefined }) => {
 			className="box-border flex w-auto cursor-pointer items-center justify-center gap-1 bg-sswRed py-2 pl-4 pr-2 font-sans uppercase text-white hover:text-gray-100 hover:opacity-95"
 			onClick={handleSubscribe}
 		>
-			{subButtonText ?? "join"}
+			{data.subButtonText ?? "join"}
 			<Image
 				className="inline-block align-middle leading-8"
 				src={"/images/circle-tick.png"}
@@ -26,7 +26,7 @@ export const SubButton = ({ subButtonText = undefined }) => {
 
 export const subButtonSchema: Template = {
 	label: "Subscribe button",
-	name: "subButton",
+	name: "SubButton",
 	ui: {
 		itemProps: (item) => {
 			return { label: item?.header };

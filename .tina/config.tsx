@@ -2,7 +2,6 @@ import { defineStaticConfig, TinaCMS, wrapFieldsWithMeta } from "tinacms";
 import { consultingSchema } from "./collections/consulting";
 import { globalSchema } from "./collections/global";
 import { marketingSchema } from "./collections/marketing";
-import { newslettersSchema } from "./collections/newsletters";
 import { officeSchema } from "./collections/offices";
 import { pagesSchema } from "./collections/pages";
 import { technologiesSchema } from "./collections/technologies";
@@ -44,7 +43,6 @@ const config = defineStaticConfig({
 			testimonialSchema,
 			technologiesSchema,
 			officeSchema,
-			newslettersSchema
 		],
 	},
 });

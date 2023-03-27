@@ -38,5 +38,14 @@ export const NewsTable = () => {
 
 export const newsTableBlockSchema: Template = {
 	name: "NewsTable",
-	fields: [],
+	label: "News Table",
+	// Todo: Find a way to have no fields - the one below is to satisfy compiler
+	fields: [
+		{
+			type: "string",
+			label: "Alt text",
+			name: "altText",
+			required: true,
+		},
+	],
 };
