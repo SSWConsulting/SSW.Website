@@ -58,9 +58,9 @@ export default function OfficeIndex(
             {/* TODO: SEO */}
             <Container className="flex-1 pt-2">
                 <Breadcrumbs path={"/consulting"} suffix="" title={"Services"} />
-                <h1 className="pt-0">Consulting Services</h1>
-                <div className="flex">
-                    <div className="shrink-0 pr-6">
+                <h1 className="pt-0 text-3xl">Consulting Services</h1>
+                <div className="flex flex-col md:flex-row">
+                    <div className="shrink-0 pr-10">
                         <TagNav
                             tags={tags}
                             selectedTag={selectedTag}
@@ -117,13 +117,18 @@ const Category = ({ category, selectedTag }) => {
 
     return (
         <>
-            {pages.length > 0 && <h2 className="mt-0">{category.name}</h2>}
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            {pages.length > 0 &&
+                <div>
+                    <hr className="my-5 border-gray-100" />
+                    <h2 className="mt-0">{category.name}</h2>
+                </div>
+            }
+            <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
                 {pages
                     .map((page) => (
                         <div
                             key={page.title}
-                            className="relative flex items-center bg-white px-5 py-4 hover:bg-gray-50"
+                            className="relative flex items-center bg-white p-3 hover:bg-gray-50"
                         >
                             <div className="shrink-0">
                                 {page.logo && (
@@ -139,14 +144,13 @@ const Category = ({ category, selectedTag }) => {
                             <div className="min-w-0 flex-1">
                                 <Link href={page.url} className="unstyled">
                                     <span className="absolute inset-0" aria-hidden="true" />
-                                    <h3 className="mt-0 mb-2 text-xl text-sswRed">{page.title}</h3>
+                                    <h3 className="mt-0 mb-2 text-lg text-sswRed">{page.title}</h3>
                                     <p className="text-sm text-black">{page.description}</p>
                                 </Link>
                             </div>
                         </div>
                     ))}
             </div>
-            {pages.length > 0 && <hr className="my-5 border-gray-100" /> }
         </>
     );
 };
