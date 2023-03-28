@@ -297,6 +297,17 @@
           ]
         },
         {
+          "title": "Document Management",
+          "description": "SSW has potential solutions to improve the logistics of getting multiple document approvals, focussing on automated document workflow.",
+          "logo": "/images/thumbs/thumb-document-management.jpg",
+          "page": "content/consulting/sharepoint.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
           "title": "Pay Per Click",
           "description": "Businesses are now able to target their prospects based on their interests and actions on social media platforms.",
           "logo": "/images/thumbs/thumb-search.jpg",
@@ -371,6 +382,18 @@
           "description": "Modern customers want to be able to contact you by different media and devices seamlessly. Zendesk is the perfect solution.",
           "logo": "/images/thumbs/thumb-zendesk.jpg",
           "page": "content/consulting/zendesk.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "Educational",
+          "description": "We can create a whole raft of other solutions depending on your school’s (or university’s) existing technology and unique requirements.",
+          "logo": "/images/thumbs/thumb-educational.jpg",
+          "page": "content/consulting/access-database-upsizing.mdx",
+          "externalUrl": "https://www.ssw.com.au/ssw/Educational/",
           "tags": [
             {
               "tag": "content/consulting/tag/consulting.json"
@@ -569,6 +592,17 @@
           "tags": [
             {
               "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
+          "title": "On-Premises: Hyper-V",
+          "description": "We recommend Microsoft Hyper-V - the fastest growing virtualization solution on the market today.",
+          "logo": "/images/thumbs/thumb-hyper-v.jpg",
+          "page": "content/consulting/hyper-v.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
             }
           ]
         },
