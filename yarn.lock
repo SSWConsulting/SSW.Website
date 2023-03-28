@@ -7122,10 +7122,10 @@ markdown-escapes@^1.0.0:
   resolved "https://registry.yarnpkg.com/markdown-escapes/-/markdown-escapes-1.0.4.tgz#c95415ef451499d7602b91095f3c8e8975f78535"
   integrity sha512-8z4efJYk43E0upd0NbVXwgSTQs6cT3T06etieCMEg7dRbzCbxUCK/GHlX8mhHRDcp+OLlHkPKsvqQTCvsRl2cg==
 
-markdown-it-multimd-table@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/markdown-it-multimd-table/-/markdown-it-multimd-table-4.2.0.tgz#4b74c352a422dc5b2dad5c6b1f8c54443e53a692"
-  integrity sha512-wFpb8TSQ9josQrAlOg1toEAHHSGYQZ4krBKfpejPQ+lq3oudnxCNW4S6gYMcRbkrtrfX/ND2njr4belnKt3fBg==
+markdown-it-multimd-table@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/markdown-it-multimd-table/-/markdown-it-multimd-table-4.2.1.tgz#c98f1ff286f75a55899915e45d8aaa8c463c4c09"
+  integrity sha512-0WEkr2Siw1I9TFaKEHwCXDRxIXWmuzht496Mb8yCkFnK+OVDqMSN6k5/FwyKlZIMtYNOK02e8o0uh3H0WMqstQ==
 
 markdown-it@^13.0.1:
   version "13.0.1"
