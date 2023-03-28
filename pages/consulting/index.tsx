@@ -60,7 +60,7 @@ export default function OfficeIndex(
                 <Breadcrumbs path={"/consulting"} suffix="" title={"Services"} />
                 <h1 className="pt-0 text-3xl">Consulting Services</h1>
                 <div className="flex flex-col md:flex-row">
-                    <div className="shrink-0 pr-10">
+                    <div className="shrink-0 pr-20">
                         <TagNav
                             tags={tags}
                             selectedTag={selectedTag}
@@ -91,17 +91,25 @@ const TagNav = ({ tags, selectedTag, setSelectedTag }) => {
             <ul className="list-none">
                 {tags.map((tag) => {
                     const isSelected = tag === selectedTag;
+                    const [hovered, setHovered] = useState(false);
                     return (
                         <li
                             key={tag}
                             className={classNames(
-                                "cursor-pointer ease-in-out",
+                                "cursor-pointer ease-in-out p-1",
+                                "hover:ease-in-out duration-500 hover:bg-gray-100",
                                 isSelected ? "text-sswRed" : ""
                             )}
                             onClick={() => setSelectedTag(tag)}
+                            onMouseEnter={() => setHovered(true)}
+                            onMouseLeave={() => setHovered(false)}
                         >
-                            <div className="inline-block h-3.5 w-6">
-                                {isSelected && <BsArrowRightCircle />}
+                            <div className={classNames(
+                                "inline-block h-3.5 w-6 text-sswRed", 
+                                (!hovered && !isSelected) && "-translate-x-2", 
+                                hovered && "translate-x-0 ease-in duration-300"
+                            )}>
+                                {(isSelected || hovered) && <BsArrowRightCircle />}
                             </div>
                             <span className="truncate">{tag}</span>
                         </li>
@@ -120,7 +128,7 @@ const Category = ({ category, selectedTag }) => {
             {pages.length > 0 &&
                 <div>
                     <hr className="my-5 border-gray-100" />
-                    <h2 className="mt-0">{category.name}</h2>
+                    <h2 className="mt-0 text-sswRed">{category.name}</h2>
                 </div>
             }
             <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
@@ -128,7 +136,7 @@ const Category = ({ category, selectedTag }) => {
                     .map((page) => (
                         <div
                             key={page.title}
-                            className="relative flex items-center bg-white p-3 hover:bg-gray-50"
+                            className="relative flex bg-white p-3 hover:bg-gray-50"
                         >
                             <div className="shrink-0">
                                 {page.logo && (
