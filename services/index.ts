@@ -1,12 +1,14 @@
 import axios, { AxiosResponse } from "axios";
 
 export const createLead = async (data: BookingFormSubmissionData) => {
+	return await axios.post(process.env.CREATE_LEAD_ENDPOINT, data, {
+		headers: { "Content-Type": "application/json" },
+	});
+};
+
+export const validateToken = async ({ contactReCaptcha }) => {
 	return await axios.post(
-		"https://www.ssw.com.au/ssw/api/crm/createlead",
-		data,
-		{
-			headers: { "Content-Type": "application/json" },
-		}
+		`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_KEY}&response=${contactReCaptcha}`
 	);
 };
 

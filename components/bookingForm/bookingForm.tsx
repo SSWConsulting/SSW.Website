@@ -95,17 +95,29 @@ export const BookingForm = ({ recaptchaKey }) => {
 		actions.setSubmitting(false);
 
 		await axios
-			.post("/api/create-lead", data)
-			.then(() => {
-				setContactSuccess(true);
-				setTimeout(function () {
-					setContactSuccess(false);
-					router.push("/thankyou/");
-				}, 1000);
+			.post("/api/validate-token", { contactReCaptcha })
+			.then(async (res) => {
+				if (res.data.success) {
+					await axios
+						.post("/api/create-lead", data)
+						.then(() => {
+							setContactSuccess(true);
+							setTimeout(function () {
+								setContactSuccess(false);
+								router.push("/thankyou/");
+							}, 1000);
+						})
+						.catch((err) => {
+							console.error(err);
+							return alert("Failed to create lead in CRM");
+						});
+				} else {
+					return alert("Invalid reCaptcha!");
+				}
 			})
 			.catch((err) => {
 				console.error(err);
-				return alert("Failed to create lead in CRM");
+				return alert("Failded to verify reCaptcha!");
 			});
 	};
 
