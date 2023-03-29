@@ -3,11 +3,11 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const FixedColumns = ({ data }) => {
   return (
-    <div className="grid gap-6 md:grid-cols-2">
-      <div className="md:col-span-1">
+    <div className="grid md:grid-cols-2 md:gap-6">
+      <div>
         <TinaMarkdown content={data.firstColBody} />
       </div>
-      <div className="md:col-span-1">
+      <div>
         <TinaMarkdown content={data.secondColBody} />
       </div>
     </div>
