@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-import { useEffectOnce } from "usehooks-ts";
+import { useEffect, useRef, useState } from "react";
+import { useEffectOnce, useHover } from "usehooks-ts";
 import Image from "next/image";
 import Link from "next/link";
 import classNames from "classnames";
@@ -20,45 +20,23 @@ const allServices = "All SSW Services";
 export default function OfficeIndex(
 	props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
-	const [selectedTag, setSelectedTag] = useState(allServices);
-
+	const gridRef = useRef(null);
 	const { data } = useTina({
 		query: props.query,
 		variables: props.variables,
 		data: props.data,
 	});
 
-	const categories = data.consultingIndexConnection.edges
-		.map((edge) => edge.node.categories)
-		.flat(1)
-		.filter((c) => c.pages && c.pages.length > 0)
-		.map((c) => {
-			return {
-				name: c.category.name,
-				pages: c.pages.map((p) => {
-					return {
-						url:
-							p.externalUrl ||
-							p.page.id.replace("content/", "").replace(".mdx", ""),
-						title: p.title,
-						description: p.description,
-						logo: p.logo,
-						tags: [allServices, ...p.tags.map((t) => t.tag.name)],
-					};
-				}),
-			};
-		});
+	const [selectedTag, setSelectedTag] = useState(allServices);
+	const [categories, setCategories] = useState([]);
+	const [tags, setTags] = useState([]);
 
-	const tags = [
-		...new Set(
-			categories
-				.map((c) => c.pages?.map((p) => p.tags).flat())
-				.flat()
-				.filter((x) => !!x)
-		),
-	];
+	useEffect(() => {
+		const processedData = processData(data);
+		setCategories(processedData.categories);
+		setTags(processedData.tags);
+	}, [data]);
 
-	const gridRef = useRef(null);
 	useEffectOnce(() => {
 		// will automatically clean itself up when dom node is removed
 		wrapGrid(gridRef.current);
@@ -72,11 +50,19 @@ export default function OfficeIndex(
 				<h1 className="pt-0 text-3xl">Consulting Services</h1>
 				<div className="flex flex-col md:flex-row">
 					<div className="shrink-0 md:pr-20">
-						<TagNav
-							tags={tags}
-							selectedTag={selectedTag}
-							setSelectedTag={setSelectedTag}
-						/>
+						<h3 className="mb-4 text-sswRed">
+							<MdLiveHelp className="mr-2 inline-block" />I am looking for...
+						</h3>
+						<ul className="list-none">
+							{tags.map((tag) => (
+								<Tag
+									key={tag}
+									tag={tag}
+									selectedTag={selectedTag}
+									setSelectedTag={setSelectedTag}
+								/>
+							))}
+						</ul>
 					</div>
 					<div>
 						<div
@@ -98,43 +84,32 @@ export default function OfficeIndex(
 	);
 }
 
-const TagNav = ({ tags, selectedTag, setSelectedTag }) => {
+const Tag = ({ tag, selectedTag, setSelectedTag }) => {
+	const isSelected = tag === selectedTag;
+	const hoverRef = useRef(null);
+	const hovered = useHover(hoverRef);
+
 	return (
-		<>
-			<h3 className="mb-4 text-sswRed">
-				<MdLiveHelp className="mr-2 inline-block" />I am looking for...
-			</h3>
-			<ul className="list-none">
-				{tags.map((tag) => {
-					const isSelected = tag === selectedTag;
-					const [hovered, setHovered] = useState(false);
-					return (
-						<li
-							key={tag}
-							className={classNames(
-								"cursor-pointer p-1 ease-in-out",
-								"duration-500 hover:bg-gray-100 hover:ease-in-out",
-								isSelected ? "text-sswRed" : ""
-							)}
-							onClick={() => setSelectedTag(tag)}
-							onMouseEnter={() => setHovered(true)}
-							onMouseLeave={() => setHovered(false)}
-						>
-							<div
-								className={classNames(
-									"inline-block h-3.5 w-6 text-sswRed",
-									!hovered && !isSelected && "-translate-x-2",
-									hovered && "translate-x-0 duration-300 ease-in"
-								)}
-							>
-								{(isSelected || hovered) && <BsArrowRightCircle />}
-							</div>
-							<span className="truncate">{tag}</span>
-						</li>
-					);
-				})}
-			</ul>
-		</>
+		<li
+			className={classNames(
+				"cursor-pointer p-1 ease-in-out",
+				"duration-500 hover:bg-gray-100 hover:ease-in-out",
+				isSelected ? "text-sswRed" : ""
+			)}
+			onClick={() => setSelectedTag(tag)}
+			ref={hoverRef}
+		>
+			<div
+				className={classNames(
+					"inline-block h-3.5 w-6 text-sswRed",
+					!hovered && !isSelected && "-translate-x-2",
+					hovered && "translate-x-0 duration-300 ease-in"
+				)}
+			>
+				{(isSelected || hovered) && <BsArrowRightCircle />}
+			</div>
+			<span className="truncate">{tag}</span>
+		</li>
 	);
 };
 
@@ -197,6 +172,43 @@ const PageCard = ({ page }) => {
 			</div>
 		</div>
 	);
+};
+
+const processData = (data) => {
+	const categories = data.consultingIndexConnection.edges
+		.map((edge) => edge.node.categories)
+		.flat(1)
+		.filter((c) => c.pages && c.pages.length > 0)
+		.map((c) => {
+			return {
+				name: c.category.name,
+				pages: c.pages.map((p) => {
+					return {
+						url:
+							p.externalUrl ||
+							p.page.id.replace("content/", "").replace(".mdx", ""),
+						title: p.title,
+						description: p.description,
+						logo: p.logo,
+						tags: [allServices, ...p.tags.map((t) => t.tag.name)],
+					};
+				}),
+			};
+		});
+
+	const tags = [
+		...new Set(
+			categories
+				.map((c) => c.pages?.map((p) => p.tags).flat())
+				.flat()
+				.filter((x) => !!x)
+		),
+	];
+
+	return {
+		categories,
+		tags,
+	};
 };
 
 export const getStaticProps = async () => {
