@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useEffectOnce } from "usehooks-ts";
 import Image from "next/image";
 import Link from "next/link";
 import classNames from "classnames";
-import { Transition } from "@headlessui/react";
 import { MdLiveHelp } from "react-icons/md";
 import { BsArrowRightCircle } from "react-icons/bs";
+
+import { wrapGrid } from "animate-css-grid";
 
 import { client } from "../../.tina/__generated__/client";
 import { useTina } from "tinacms/dist/react";
@@ -56,6 +58,12 @@ export default function OfficeIndex(
 		),
 	];
 
+	const gridRef = useRef(null);
+	useEffectOnce(() => {
+		// will automatically clean itself up when dom node is removed
+		wrapGrid(gridRef.current);
+	});
+
 	return (
 		<Layout>
 			{/* TODO: SEO */}
@@ -63,7 +71,7 @@ export default function OfficeIndex(
 				<Breadcrumbs path={"/consulting"} suffix="" title={"Services"} />
 				<h1 className="pt-0 text-3xl">Consulting Services</h1>
 				<div className="flex flex-col md:flex-row">
-					<div className="shrink-0 pr-20">
+					<div className="shrink-0 md:pr-20">
 						<TagNav
 							tags={tags}
 							selectedTag={selectedTag}
@@ -71,13 +79,18 @@ export default function OfficeIndex(
 						/>
 					</div>
 					<div>
-						{categories.map((category) => (
-							<Category
-								key={category.name}
-								category={category}
-								selectedTag={selectedTag}
-							/>
-						))}
+						<div
+							ref={gridRef}
+							className="grid grid-cols-1 gap-2 lg:grid-cols-2"
+						>
+							{categories.map((category) => (
+								<Category
+									key={category.name}
+									category={category}
+									selectedTag={selectedTag}
+								/>
+							))}
+						</div>
 					</div>
 				</div>
 			</Container>
@@ -132,58 +145,57 @@ const Category = ({ category, selectedTag }) => {
 			isVisible: page.tags.includes(selectedTag),
 		};
 	});
-	const categoryVisible = pages.some((p) => p.isVisible);
+
+	const categoryVisible = pages.some((page) => page.isVisible);
 
 	return (
 		<>
-			<Transition
-				show={categoryVisible}
-				enter="transition-opacity duration-300"
-				enterFrom="opacity-0"
-				enterTo="opacity-100"
-				leave="transition-opacity duration-300"
-				leaveFrom="opacity-100"
-				leaveTo="opacity-0"
+			<div
+				className={classNames("lg:col-span-2", !categoryVisible && "hidden")}
 			>
-				<hr className="my-5 border-gray-100" />
-				<h2 className="mt-0 text-sswRed">{category.name}</h2>
-			</Transition>
-			<div className="flex flex-row flex-wrap">
-				{pages.map((page) => (
-					<Transition
-						key={page.title}
-						className="relative flex w-full origin-center bg-white p-3 hover:bg-gray-50 md:w-1/2"
-						appear={true}
-						show={page.isVisible}
-						enter="transition ease-in-out duration-300 transform"
-						enterFrom="opacity-0 scale-0 w-0"
-						enterTo="opacity-100 scale-100"
-						leave="transition ease-in-out duration-300 transform"
-						leaveFrom="opacity-100 scale-100"
-						leaveTo="opacity-0 scale-0 w-0"
-					>
-						<div className="shrink-0">
-							{page.logo && (
-								<Image
-									className="mr-4 aspect-square h-14 w-14 border-1 border-gray-100 md:h-28 md:w-28"
-									height={115}
-									width={115}
-									src={page.logo}
-									alt={`${page.title} logo`}
-								/>
-							)}
-						</div>
-						<div className="min-w-0 flex-1">
-							<Link href={page.url} className="unstyled">
-								<span className="absolute inset-0" aria-hidden="true" />
-								<h3 className="mt-0 mb-2 text-lg text-sswRed">{page.title}</h3>
-								<p className="text-sm text-black">{page.description}</p>
-							</Link>
-						</div>
-					</Transition>
-				))}
+				{/* animate-css-grid requires a single element at this level */}
+				<div>
+					<hr className="my-5 border-gray-100" />
+					<h2 className="mt-0 text-sswRed">{category.name}</h2>
+				</div>
 			</div>
+			{pages.map((page) => (
+				<PageCard key={page.title} page={page} />
+			))}
 		</>
+	);
+};
+
+const PageCard = ({ page }) => {
+	return (
+		<div
+			className={classNames(
+				"relative bg-white p-3 hover:bg-gray-50",
+				!page.isVisible && "hidden"
+			)}
+		>
+			{/* animate-css-grid requires a single element at this level */}
+			<div className="flex">
+				<div className="shrink-0">
+					{page.logo && (
+						<Image
+							className="mr-4 aspect-square h-14 w-14 border-1 border-gray-100 md:h-28 md:w-28"
+							height={115}
+							width={115}
+							src={page.logo}
+							alt={`${page.title} logo`}
+						/>
+					)}
+				</div>
+				<div className="min-w-0 flex-1">
+					<Link href={page.url} className="unstyled">
+						<span className="absolute inset-0" aria-hidden="true" />
+						<h3 className="mt-0 mb-2 text-lg text-sswRed">{page.title}</h3>
+						<p className="text-sm text-black">{page.description}</p>
+					</Link>
+				</div>
+			</div>
+		</div>
 	);
 };
 
