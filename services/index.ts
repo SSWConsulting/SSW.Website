@@ -8,7 +8,7 @@ export const createLead = async (data: BookingFormSubmissionData) => {
 
 export const validateToken = async ({ contactReCaptcha }) => {
 	return await axios.post(
-		`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_KEY}&response=${contactReCaptcha}`
+		`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_KEY_v2}&response=${contactReCaptcha}`
 	);
 };
 
