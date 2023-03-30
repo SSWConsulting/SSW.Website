@@ -1,36 +1,36 @@
 query contentQuery($relativePath: String!) {
-  ...LayoutQueryFragment
-  page(relativePath: $relativePath) {
-    ...PageParts
-  }
+	...LayoutQueryFragment
+	page(relativePath: $relativePath) {
+		...PageParts
+	}
 }
 
 query consultingContentQuery($relativePath: String!) {
-  ...LayoutQueryFragment
-  consulting(relativePath: $relativePath) {
-    ...ConsultingParts
-  }
+	...LayoutQueryFragment
+	consulting(relativePath: $relativePath) {
+		...ConsultingParts
+	}
 }
 
 query officeContentQuery($relativePath: String!) {
-  ...LayoutQueryFragment
-  offices(relativePath: $relativePath) {
-    ...OfficesParts
-  }
+	...LayoutQueryFragment
+	offices(relativePath: $relativePath) {
+		...OfficesParts
+	}
 }
 
 query allTestimonialsQuery {
-  testimonialsConnection {
-    Testimonials: edges {
-      Testimonial: node {
-        name,
-        avatar,
-        body,
-        company,
-        rating
-      }
-    }
-  }
+	testimonialsConnection {
+		Testimonials: edges {
+			Testimonial: node {
+				name
+				avatar
+				body
+				company
+				rating
+			}
+		}
+	}
 }
 
 query testimonalsQuery($categories: [String!]) {
@@ -48,17 +48,17 @@ query testimonalsQuery($categories: [String!]) {
 }
 
 query technologyCardContentQuery($cardNames: [String!]) {
-  ...LayoutQueryFragment
-  technologiesConnection(filter: {name: {in: $cardNames}}) {
-    edges {
-      node {
-        ... on Technologies {
-          name
-          readMoreSlug
-          thumbnail
-          body
-        }
-      }
-    }
-  }
+	...LayoutQueryFragment
+	technologiesConnection(filter: { name: { in: $cardNames } }) {
+		edges {
+			node {
+				... on Technologies {
+					name
+					readMoreSlug
+					thumbnail
+					body
+				}
+			}
+		}
+	}
 }
