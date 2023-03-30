@@ -39,10 +39,10 @@ export const opportunitiesSchema: Collection = {
 			ui: {
 				itemProps: (item) => ({ label: item?.location }),
 				validate: (value) => {
-					let locations = value?.map((x) => x.location);
+					const locations = value?.map((x) => x.location);
 
-					var locArray: string[] = [];
-					var duplicated = false;
+					const locArray: string[] = [];
+					let duplicated = false;
 
 					locations?.forEach((loc) => {
 						if (!locArray.includes(loc)) {
