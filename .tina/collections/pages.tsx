@@ -13,7 +13,7 @@ export const pagesSchema: Collection = {
 			if (document._sys.filename === "home") {
 				return `/`;
 			}
-			return undefined;
+			return `/${document._sys.filename}`;
 		},
 	},
 	fields: [
@@ -26,6 +26,12 @@ export const pagesSchema: Collection = {
 		},
 		// @ts-ignore
 		seoSchema,
+		{
+			type: "boolean",
+			name: "breadcrumbs",
+			label: "Breadcrumbs enabled",
+			required: true,
+		},
 		{
 			type: "object",
 			list: true,
