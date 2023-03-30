@@ -36,5 +36,19 @@ export const testimonialSchema: Collection = {
 			name: "body",
 			isBody: true,
 		},
+		{
+			type: "object",
+			label: "Categories",
+			name: "categories",
+			list: true,
+			fields: [
+				{
+					type: "reference",
+					label: "Category",
+					name: "category",
+					collections: ["testimonialCategories"],
+				},
+			],
+		},
 	],
 };
