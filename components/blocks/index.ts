@@ -7,6 +7,7 @@ import { carouselBlockSchema } from "./carousel";
 import { clientLogosBlockSchema } from "./clientLogos";
 import { columnLayoutBlockSchema } from "./columnLayout";
 import { contentBlockSchema } from "./content";
+import { contentCardBlockSchema } from "./contentCard";
 import { customImageBlockSchema } from "./customImage";
 import { googleMapsSchema } from "./googleMapsWrapper";
 import { heroBlockSchema } from "./hero";
@@ -26,6 +27,7 @@ export const pageBlocks: Template[] = [
   clientLogosBlockSchema,
   columnLayoutBlockSchema,
   contentBlockSchema,
+  contentCardBlockSchema,
   customImageBlockSchema,
   googleMapsSchema,
   heroBlockSchema,
@@ -35,7 +37,7 @@ export const pageBlocks: Template[] = [
   upcomingEventsBlockSchema,
   videoEmbedBlockSchema,
   fixedColumnsSchema,
-	internalCarouselBlockSchema,
+  internalCarouselBlockSchema,
 ];
 
 export * from "./aboutUs";
@@ -45,6 +47,7 @@ export * from "./carousel";
 export * from "./clientLogos";
 export * from "./columnLayout";
 export * from "./content";
+export * from "./contentCard";
 export * from "./customImage";
 export * from "./fixedColumns";
 export * from "./googleMapsWrapper";

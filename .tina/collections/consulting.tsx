@@ -192,11 +192,35 @@ export const consultingSchema: Collection = {
 			required: false,
 		},
 		{
+			type: "object",
+			label: "Testimonial Categories",
+			name: "testimonialCategories",
+			list: true,
+			fields: [
+				{
+					type: "reference",
+					label: "Testimonial Category",
+					name: "testimonialCategory",
+					collections: ["testimonialCategories"],
+				},
+			],
+		},
+		{
 			type: "rich-text",
 			label: "Body",
 			name: "_body",
 			templates: [...Schemas.pageBlocks],
 			isBody: true,
+		},
+		{
+			type: "object",
+			list: true,
+			name: "afterBody",
+			label: "After body",
+			ui: {
+				visualSelector: true,
+			},
+			templates: [...Schemas.pageBlocks],
 		},
 		{
 			type: "object",
