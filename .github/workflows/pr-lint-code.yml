@@ -3,9 +3,9 @@ name: PR - Lint code
 on:
   pull_request:
     branches:
-    - main
+      - main
 
-concurrency: 
+concurrency:
   group: ci-${{ github.event.number }}-${{ github.workflow }}
   cancel-in-progress: true
 
@@ -20,17 +20,15 @@ jobs:
   lint-infra:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
 
-    - uses: actions/checkout@v3
-
-    - name: Build
-      run: |
-        az bicep build --file ${{ env.bicepPath }}
+      - name: Build
+        run: |
+          az bicep build --file ${{ env.bicepPath }}
 
   lint-code:
     runs-on: ubuntu-latest
     steps:
-
       - uses: actions/checkout@v3
 
       - name: Setup node
@@ -41,4 +39,4 @@ jobs:
 
       - run: yarn install
 
-      - run: yarn lint
+      - run: yarn lint --max-warnings 0
