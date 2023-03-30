@@ -515,8 +515,8 @@
           "title": "Web Design & UX",
           "description": "A well designed user interface can improve your corporate image and sales. We deliver practical, creative and unique user experience for your website/app.",
           "logo": "/images/thumbs/thumb-design.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/UI-UX-Design.aspx",
+          "page": "content/consulting/ui-ux-design.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/application-development.json"
