@@ -1,12 +1,12 @@
+# SSW.Website v3
 
 ![SSW Banner](https://user-images.githubusercontent.com/17246482/213943898-d3d7268c-0636-4469-ad47-4052302cf567.png)
-# SSW.Website v3!
-
 
 This repository is a v3 of the SSW.Website. This website uses NextJS with TinaCMS.
 
 ## See the important Documents
-- [Instructions - Compile (F5 Experience)](https://github.com/SSWConsulting/SSW.Website-v3/wiki/Instructions---Compile-(F5-Experience))
+
+- [Instructions - Compile (F5 Experience)](<https://github.com/SSWConsulting/SSW.Website-v3/wiki/Instructions---Compile-(F5-Experience)>)
 - [Instructions - Deployment](https://github.com/SSWConsulting/SSW.Website-v3/wiki/Instructions---Deployment)
 - [Business](https://github.com/SSWConsulting/SSW.Website-v3/wiki/Business)
 - [Technologies and Architecture](https://github.com/SSWConsulting/SSW.Website-v3/wiki/Technologies-and-Architecture)
@@ -15,6 +15,7 @@ This repository is a v3 of the SSW.Website. This website uses NextJS with TinaCM
 - [Definition of Ready](https://github.com/SSWConsulting/SSW.Website-v3/wiki/Definition-of-Ready)
 
 ## Architecture Overview
+
 ![architecture-diagram](https://user-images.githubusercontent.com/17246482/213947700-2ab46353-5e1b-4e65-9681-9fddf69fdda0.png)
 
 ## Requirements
@@ -26,13 +27,13 @@ This repository is a v3 of the SSW.Website. This website uses NextJS with TinaCM
 
 Install the project's dependencies:
 
-```
+```bash
 yarn install
 ```
 
 Run the project locally:
 
-```
+```bash
 yarn dev
 ```
 
@@ -42,12 +43,32 @@ Build the project:
 yarn build
 ```
 
+## Updating the project's dependencies
+
+```bash
+yarn upgrade-interactive
+```
+
+Test locally to make sure everything still works.
+
+To keep the `yarn.lock` file up to date, ensure syncyarnlock is installed globally:
+
+```bash
+yarn global add syncyarnlock
+```
+
+Then run:
+
+```bash
+syncyarnlock -s -k
+```
+
 ### Local URLs
 
-- http://localhost:3000 : browse the website
-- http://localhost:3000/admin : connect to Tina Cloud and go in edit mode
-- http://localhost:3000/exit-admin : log out of Tina Cloud
-- http://localhost:4001/altair/ : GraphQL playground to test queries and browse the API documentation
+- <http://localhost:3000> : browse the website
+- <http://localhost:3000/admin> : connect to Tina Cloud and go in edit mode
+- <http://localhost:3000/exit-admin> : log out of Tina Cloud
+- <http://localhost:4001/altair/> : GraphQL playground to test queries and browse the API documentation
 
 ## Pull Requests
 
