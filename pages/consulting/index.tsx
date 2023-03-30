@@ -14,6 +14,7 @@ import { useTina } from "tinacms/dist/react";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { SEO } from "../../components/util/seo";
 
 const allServices = "All SSW Services";
 
@@ -30,11 +31,13 @@ export default function OfficeIndex(
 	const [selectedTag, setSelectedTag] = useState(allServices);
 	const [categories, setCategories] = useState([]);
 	const [tags, setTags] = useState([]);
+	const [seo, setSeo] = useState(null);
 
 	useEffect(() => {
 		const processedData = processData(data);
 		setCategories(processedData.categories);
 		setTags(processedData.tags);
+		setSeo(processedData.seo);
 	}, [data]);
 
 	useEffectOnce(() => {
@@ -44,7 +47,7 @@ export default function OfficeIndex(
 
 	return (
 		<Layout>
-			{/* TODO: SEO */}
+			<SEO seo={{ ...seo, canonical: "/consulting" }} />
 			<Container className="flex-1 pt-2">
 				<Breadcrumbs path={"/consulting"} suffix="" title={"Services"} />
 				<h1 className="pt-0 text-3xl">Consulting Services</h1>
@@ -175,9 +178,13 @@ const PageCard = ({ page }) => {
 };
 
 const processData = (data) => {
-	const categories = data.consultingIndexConnection.edges
-		.map((edge) => edge.node.categories)
-		.flat(1)
+	if (data.consultingIndexConnection.edges.length !== 1) {
+		throw new Error("Expected exactly one consulting index page");
+	}
+
+	const node = data.consultingIndexConnection.edges[0].node;
+
+	const categories = node.categories
 		.filter((c) => c.pages && c.pages.length > 0)
 		.map((c) => {
 			return {
@@ -208,6 +215,7 @@ const processData = (data) => {
 	return {
 		categories,
 		tags,
+		seo: node.seo,
 	};
 };
 

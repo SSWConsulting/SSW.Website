@@ -49,6 +49,8 @@ COPY . .
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
+
+# was hitting memory limit during build with default heap size
 ENV NODE_OPTIONS="--max-old-space-size=8192"
 RUN yarn build
 
