@@ -104,7 +104,7 @@ const SmallCards = ({ title, cards }) => {
             } hover:opacity-80`}
           >
             <Link href={card.link} className="unstyled flex h-full flex-col">
-              <div className="flex flex-1 flex-col items-center py-8 px-2 pb-4 sm:justify-center md:flex-row md:pb-8">
+              <div className="flex flex-1 flex-col items-center px-2 py-8 pb-4 sm:justify-center md:flex-row md:pb-8">
                 <Image
                   className=""
                   src={card.imgSrc}

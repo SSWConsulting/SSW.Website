@@ -23,7 +23,7 @@ export const AgreementForm = ({ data }) => {
       <hr />
       <div className="flex justify-center">
         <button
-          className="done mx-auto my-4 py-2 px-3"
+          className="done mx-auto my-4 px-3 py-2"
           onClick={() => window.print()}
           type="submit"
         >
