@@ -114,6 +114,24 @@
           ]
         },
         {
+          "title": "Jamstack (Static Sites with Gatsby/Next.js)",
+          "description": "Jamstack is a modern web development architecture based on client-side JavaScript, reusable APIs and prebuilt Markup. It's used on SSW Rules and SSW People.",
+          "logo": "/images/thumbs/thumb-jamstack.jpg",
+          "page": "content/consulting/access-database-upsizing.mdx",
+          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Jamstack.aspx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/cms.json"
+            }
+          ]
+        },
+        {
           "title": "Enterprise Reporting + BI",
           "description": "Custom SQL reporting for unparalleled access to your company's data. Add a cube, Telerik Reports and a dashboard to drive your business forward.",
           "logo": "/images/thumbs/thumb-enterprise-reporting.jpg",
@@ -473,6 +491,66 @@
       "category": "content/consulting/category/creatives.json",
       "pages": [
         {
+          "title": "Product Design",
+          "description": "We help companies to successfully launch products or services or re-create existing ones, improving UI, UX, and the corporate identity for your project.",
+          "logo": "/images/thumbs/thumb-product-design.jpg",
+          "page": "content/consulting/access-database-upsizing.mdx",
+          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Product-Design.aspx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/mobile-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/design.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Web Design & UX",
+          "description": "A well designed user interface can improve your corporate image and sales. We deliver practical, creative and unique user experience for your website/app.",
+          "logo": "/images/thumbs/thumb-design.jpg",
+          "page": "content/consulting/access-database-upsizing.mdx",
+          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/UI-UX-Design.aspx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/mobile-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/design.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Video Production",
+          "description": "Use a great video to promote your message and build more customers.",
+          "logo": "/images/thumbs/thumb-video-production.jpg",
+          "page": "content/consulting/video-production.mdx",
+          "externalUrl": "",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/design.json"
+            },
+            {
+              "tag": "content/consulting/tag/video.json"
+            },
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
           "title": "SSW Digital",
           "description": "To accelerate growth you need a digital partner who can help build your digital strategy, prioritise the implementation and execute the campaigns.",
           "logo": "/images/thumbs/thumb-sswdigital.jpg",
@@ -568,7 +646,135 @@
       ]
     },
     {
-      "category": "content/consulting/category/content-management-systems.json"
+      "category": "content/consulting/category/content-management-systems.json",
+      "pages": [
+        {
+          "title": "WordPress",
+          "description": "WordPress the most popular content management system (CMS) on the web, and is trusted by content publishers from both large and small businesses.",
+          "logo": "/images/thumbs/thumb-wordpress.jpg",
+          "page": "content/consulting/access-database-upsizing.mdx",
+          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/WordPress.aspx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+            },
+            {
+              "tag": "content/consulting/tag/cms.json"
+            }
+          ]
+        },
+        {
+          "title": "Kentico",
+          "description": "Kentico is the only fully integrated ASP.NET CMS, E-commerce, and Online Marketing platform.",
+          "logo": "/images/thumbs/thumb-kentico.jpg",
+          "page": "content/consulting/access-database-upsizing.mdx",
+          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Kentico.aspx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+            },
+            {
+              "tag": "content/consulting/tag/cms.json"
+            }
+          ]
+        },
+        {
+          "title": "DNN - DotNetNuke",
+          "description": "DNN (AKA Evoq) can be used as a web content management system (CMS) for simple web sites or as a powerful application development framework.",
+          "logo": "/images/thumbs/thumb-dnn.jpg",
+          "page": "content/consulting/access-database-upsizing.mdx",
+          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/DNN-DotNetNuke.aspx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+            },
+            {
+              "tag": "content/consulting/tag/cms.json"
+            }
+          ]
+        },
+        {
+          "title": "Sitefinity",
+          "description": "Sitefinity's mix of benefits for marketers, IT managers, Developers and designers make it the ideal choice for medium sized businesses.",
+          "logo": "/images/thumbs/thumb-sitefinity.jpg",
+          "page": "content/consulting/access-database-upsizing.mdx",
+          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Sitefinity.aspx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+            },
+            {
+              "tag": "content/consulting/tag/cms.json"
+            }
+          ]
+        },
+        {
+          "title": "Orchard",
+          "description": "A free, open source, community-focused project aimed at delivering applications and reusable components on the rock-solid ASP.NET MVC platform.",
+          "logo": "/images/thumbs/thumb-orchard.jpg",
+          "page": "content/consulting/access-database-upsizing.mdx",
+          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Orchard.aspx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+            },
+            {
+              "tag": "content/consulting/tag/cms.json"
+            }
+          ]
+        },
+        {
+          "title": "Sitecore",
+          "description": "A mix of powerful marketing and business features, rich development support and scalability make it the ideal solution for leading websites.",
+          "logo": "/images/thumbs/thumb-sitecore.jpg",
+          "page": "content/consulting/access-database-upsizing.mdx",
+          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Sitecore.aspx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+            },
+            {
+              "tag": "content/consulting/tag/cms.json"
+            }
+          ]
+        },
+        {
+          "title": "Umbraco",
+          "description": "With over than 200.000 installations, Umbraco is one of the most deployed Web Content Management Systems on the Microsoft stack.",
+          "logo": "/images/thumbs/thumb-umbraco.jpg",
+          "page": "content/consulting/access-database-upsizing.mdx",
+          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Umbraco.aspx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+            },
+            {
+              "tag": "content/consulting/tag/cms.json"
+            }
+          ]
+        }
+      ]
     },
     {
       "category": "content/consulting/category/cloud-and-infrastructure.json",
@@ -600,6 +806,30 @@
           "description": "We recommend Microsoft Hyper-V - the fastest growing virtualization solution on the market today.",
           "logo": "/images/thumbs/thumb-hyper-v.jpg",
           "page": "content/consulting/hyper-v.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+            }
+          ]
+        },
+        {
+          "title": "On-Premises: Data Protection Manager",
+          "description": "Microsoft System Center Data Protection Manager can take the stress out of backups by allowing you to control all backups from one central console.",
+          "logo": "/images/thumbs/thumb-data-protection.jpg",
+          "page": "content/consulting/access-database-upsizing.mdx",
+          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Data-Protection-Manager.aspx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+            }
+          ]
+        },
+        {
+          "title": "BackBlaze and CloudBerry",
+          "description": "Backblaze has introduced a simple backup system utilizing B2 Cloud Storage which is cheap, requires little on premises infrastructure and fast to setup.",
+          "logo": "/images/thumbs/thumb-backblaze.jpg",
+          "page": "content/consulting/access-database-upsizing.mdx",
+          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/BackBlaze-and-CloudBerry-Backup.aspx",
           "tags": [
             {
               "tag": "content/consulting/tag/cloud-and-infrastructure.json"
