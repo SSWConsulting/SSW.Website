@@ -1,4 +1,4 @@
-import { Components } from "tinacms/dist/rich-text";
+import { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { UpcomingEvents } from "./upcomingEvents";
 import { ClientLogos } from "./clientLogos";
 import { CustomImage } from "./customImage";
@@ -6,7 +6,11 @@ import { VideoEmbed } from "./videoEmbed";
 import { ColumnLayout } from "./columnLayout";
 import { Carousel } from "./carousel";
 import { TableLayout } from "./tableLayout";
+import { AgreementForm } from "../terms-and-conditions/agreementForm";
 import { GoogleMapsWrapper } from "./googleMapsWrapper";
+import { DynamicColumns } from "./dynamicColumns";
+import { FixedColumns } from "./fixedColumns";
+import { InternalCarousel } from "./internalCarousel";
 
 export const componentRenderer: Components<{
 	ClientLogos: Record<string, never>;
@@ -16,6 +20,14 @@ export const componentRenderer: Components<{
 		height: number;
 		width: number;
 	};
+	DynamicColumns: {
+		colBody: TinaMarkdownContent;
+		colCount: number;
+	};
+	FixedColumns: {
+		firstColBody: TinaMarkdownContent;
+		secondColBody: TinaMarkdownContent;
+	}
 	VideoEmbed: {
 		url: string;
 	};
@@ -39,18 +51,43 @@ export const componentRenderer: Components<{
 	TableLayout: {
 		mdxTable: string;
 	};
+	AgreementForm: {
+		backgroundColor: string;
+		fields: {
+			id: string;
+			label: string;
+			placeholder: string;
+			resizeable: boolean;
+		}[]
+	};
 	GoogleMaps: {
 		embedUrl: string;
 		embedWidth: string;
 		embedHeight: string;
 	};
+	InternalCarousel: {
+		items: {
+			label: string;
+			imgSrc: string;
+		}[];
+		header: string;
+		paragraph: string;
+		website: string;
+		technologies: {
+			name: string;
+		}[];
+	};
 }> = {
-	VideoEmbed: (props) => <VideoEmbed data={props} />,
+	AgreementForm: (props) => <AgreementForm data={props} />,
 	ClientLogos: () => <ClientLogos />,
+	ColumnLayout: (props) => <ColumnLayout data={props} />,
 	CustomImage: (props) => <CustomImage data={props} />,
 	UpcomingEvents: (props) => <UpcomingEvents data={props} />,
-	ColumnLayout: (props) => <ColumnLayout data={props} />,
 	Carousel: (props) => <Carousel data={props} />,
 	TableLayout: (props) => <TableLayout data={props} />,
+	VideoEmbed: (props) => <VideoEmbed data={props} />,
 	GoogleMaps: (props) => <GoogleMapsWrapper {...props} />,
+	DynamicColumns: (props) => <DynamicColumns data={props} />,
+	FixedColumns: (props) => <FixedColumns data={props} />,
+	InternalCarousel: (props) => <InternalCarousel data={props} />,
 };
