@@ -4,7 +4,7 @@ import {
 	Employment_Type,
 	Locations,
 	Job_Status,
-} from "../../components/util/constants";
+} from "../../components/util/constants/opportunity";
 
 export const opportunitiesSchema: Collection = {
 	label: "Current Opportunities",
@@ -23,13 +23,13 @@ export const opportunitiesSchema: Collection = {
 			type: "string",
 			label: "Type",
 			name: "employementtype",
-			options: Employment_Type.map((type) => type.label),
+			options: Employment_Type.map((type) => type),
 		},
 		{
 			type: "string",
 			label: "Status",
 			name: "status",
-			options: Job_Status.map((status) => status.label),
+			options: Job_Status.map((status) => status),
 		},
 		{
 			type: "object",
@@ -62,7 +62,7 @@ export const opportunitiesSchema: Collection = {
 					type: "string",
 					label: "Select Location",
 					name: "location",
-					options: Locations.map((location) => location.label),
+					options: Locations.map((location) => location),
 				},
 			],
 		},
