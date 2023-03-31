@@ -104,7 +104,7 @@ const SiteInfo = () => (
         alt="health check logo"
         height={14}
         width={40}
-        className="inline-block pl-2 pb-1"
+        className="inline-block pb-1 pl-2"
       />
     </Link>
   </div>

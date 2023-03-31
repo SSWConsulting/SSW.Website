@@ -31,7 +31,7 @@ export default function HomePage(
       <SEO seo={data.page.seo} />
       <Layout>
         {data.page.breadcrumbs ? (
-          <Section className="mx-auto -mb-20 w-full max-w-9xl py-5 px-8">
+          <Section className="mx-auto -mb-20 w-full max-w-9xl px-8 py-5">
             <Breadcrumbs
               path={removeExtension(props.variables.relativePath)}
               suffix={data.global.breadcrumbSuffix}

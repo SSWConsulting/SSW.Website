@@ -215,7 +215,7 @@ const PageCard = ({ page }) => {
         <div className="min-w-0 flex-1">
           <Link href={page.url} className="unstyled">
             <span className="absolute inset-0" aria-hidden="true" />
-            <h3 className="mt-0 mb-2 text-lg text-sswRed">{page.title}</h3>
+            <h3 className="mb-2 mt-0 text-lg text-sswRed">{page.title}</h3>
             <p className="text-sm text-black">{page.description}</p>
           </Link>
         </div>

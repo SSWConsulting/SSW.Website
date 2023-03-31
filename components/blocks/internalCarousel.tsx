@@ -41,7 +41,7 @@ const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
 	if (isSelected) {
 		return (
 			<li
-				className="my-0 mx-1 inline-block h-6 w-6 bg-sswRed md:h-7 md:w-7"
+				className="mx-1 my-0 inline-block h-6 w-6 bg-sswRed md:h-7 md:w-7"
 				aria-label={`Selected: ${label} ${index + 1}`}
 				title={`Selected: ${label} ${index + 1}`}
 			/>
@@ -49,7 +49,7 @@ const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
 	}
 	return (
 		<li
-			className="my-0 mx-1 inline-block h-6 w-6 bg-gray-500 md:h-7 md:w-7"
+			className="mx-1 my-0 inline-block h-6 w-6 bg-gray-500 md:h-7 md:w-7"
 			onClick={onClickHandler}
 			onKeyDown={onClickHandler}
 			value={index}
@@ -77,7 +77,7 @@ const renderBody = ({ header, paragraph, website, technologies }) => {
 				<TinaMarkdown content={paragraph} />
 			</div>
 			<div className="flex flex-wrap">{technologies?.map(createTechBlock)}</div>
-			<div className="mt-3 mb-7 h-1 w-full bg-sswRed"></div>
+			<div className="mb-7 mt-3 h-1 w-full bg-sswRed"></div>
 		</div>
 	);
 };
@@ -85,7 +85,7 @@ const renderBody = ({ header, paragraph, website, technologies }) => {
 const createTechBlock = ({ name }, index: React.Key) => {
 	return (
 		<div
-			className="my-0.5 mr-1 min-w-fit bg-sswRed py-1 px-2 text-left"
+			className="my-0.5 mr-1 min-w-fit bg-sswRed px-2 py-1 text-left"
 			key={index}
 		>
 			{name}
