@@ -7,7 +7,7 @@ on:
         type: string
         required: true
     secrets:
-      AZURE_CLIENT_ID: 
+      AZURE_CLIENT_ID:
         required: true
       AZURE_TENANT_ID:
         required: true
@@ -34,69 +34,88 @@ jobs:
   build-site:
     runs-on: ubuntu-latest
     steps:
-    
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Load .env file
-      uses: xom9ikk/dotenv@v2
-      with:
-        path: ./.github
-        load-mode: strict
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
 
-    - uses: DamianReeves/write-file-action@master
-      name: Make site unindexable
-      if: github.event_name == 'pull_request'      
-      with:
-        path: public/robots.txt
-        contents: |
-          User-agent: *
-          Disallow: /
-        write-mode: overwrite 
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        shell: bash
+        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
 
-    - name: Get current date
-      id: date
-      run: |
-        echo "date=$(Get-Date -Format yyyy-MM-ddThh:mm:ssZ -AsUtc)" >> $env:GITHUB_OUTPUT
+      - uses: actions/cache@v3
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: |
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
-    - name: Docker - Set up Buildx
-      uses: docker/setup-buildx-action@v2
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v2
+        with:
+          path: ./.github
+          load-mode: strict
 
-    - name: Azure CLI - Login
-      uses: azure/login@v1
-      with:
-        client-id: ${{ secrets.AZURE_CLIENT_ID }}
-        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - uses: DamianReeves/write-file-action@master
+        name: Make site unindexable
+        if: github.event_name == 'pull_request'
+        with:
+          path: public/robots.txt
+          contents: |
+            User-agent: *
+            Disallow: /
+          write-mode: overwrite
 
-    - name: ACR - Login
-      run: |
-        az acr login --name ${{ env.ACR_LOGIN_SERVER }}
+      - name: Get current date
+        id: date
+        run: |
+          echo "date=$(Get-Date -Format yyyy-MM-ddThh:mm:ssZ -AsUtc)" >> $env:GITHUB_OUTPUT
 
-    - name: Docker - Build and push
-      uses: docker/build-push-action@v4
-      with:
-        context: .
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
-        push: true
-        tags: |
-          ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
-          ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
-        build-args: |
-          NEXT_PUBLIC_GOOGLE_GTM_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID}}
-          NEXT_PUBLIC_GOOGLE_ANALYTICS=${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS}}
-          NEXT_PUBLIC_GITHUB_RUN_DATE=${{ steps.date.outputs.date }}
-          NEXT_PUBLIC_GITHUB_RUN_ID=${{ github.run_id }}
-          NEXT_PUBLIC_GITHUB_RUN_NUMBER=${{ github.run_number }}
-          NEXT_PUBLIC_GITHUB_REPOSITORY=${{ github.repository }}
-          NEXT_PUBLIC_HOTJAR_ID=${{ secrets.NEXT_PUBLIC_HOTJAR_ID}}
-          NEXT_PUBLIC_HOTJAR_SV=${{ secrets.NEXT_PUBLIC_HOTJAR_SV}}
-          NEXT_PUBLIC_TINA_CLIENT_ID=${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
-          NEXT_PUBLIC_TINA_BRANCH=${{ github.head_ref || github.ref_name }}
-          NEXT_PUBLIC_ZENDESK_CHAT_KEY=${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY}}
-          GOOGLE_RECAPTCHA_KEY=${{ secrets.GOOGLE_RECAPTCHA_KEY }}
-          GOOGLE_RECAPTCHA_KEY_v2=${{ secrets.GOOGLE_RECAPTCHA_KEY_v2 }}
-          GOOGLE_RECAPTCHA_SITE_KEY=${{ secrets.GOOGLE_RECAPTCHA_SITE_KEY }}
-          CREATE_LEAD_ENDPOINT=${{ secrets.CREATE_LEAD_ENDPOINT }}
-          TINA_TOKEN=${{ secrets.TINA_TOKEN }}
-          SITE_URL=https://ssw.com.au
+      - run: yarn install
+
+      - run: yarn build
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+          NEXT_PUBLIC_GOOGLE_GTM_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID }}
+          NEXT_PUBLIC_GOOGLE_ANALYTICS: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS }}
+          NEXT_PUBLIC_GITHUB_RUN_DATE: ${{ steps.date.outputs.date }}
+          NEXT_PUBLIC_GITHUB_RUN_ID: ${{ github.run_id }}
+          NEXT_PUBLIC_GITHUB_RUN_NUMBER: ${{ github.run_number }}
+          NEXT_PUBLIC_GITHUB_REPOSITORY: ${{ github.repository }}
+          NEXT_PUBLIC_HOTJAR_ID: ${{ secrets.NEXT_PUBLIC_HOTJAR_ID }}
+          NEXT_PUBLIC_HOTJAR_SV: ${{ secrets.NEXT_PUBLIC_HOTJAR_SV }}
+          NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
+          NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref || github.ref_name }}
+          NEXT_PUBLIC_ZENDESK_CHAT_KEY: ${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY }}
+          GOOGLE_RECAPTCHA_KEY: ${{ secrets.GOOGLE_RECAPTCHA_KEY }}
+          GOOGLE_RECAPTCHA_KEY_v2: ${{ secrets.GOOGLE_RECAPTCHA_KEY_v2 }}
+          GOOGLE_RECAPTCHA_SITE_KEY: ${{ secrets.GOOGLE_RECAPTCHA_SITE_KEY }}
+          CREATE_LEAD_ENDPOINT: ${{ secrets.CREATE_LEAD_ENDPOINT }}
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+          SITE_URL: https://ssw.com.au
+
+      - name: Azure CLI - Login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: ACR - Login
+        run: |
+          az acr login --name ${{ env.ACR_LOGIN_SERVER }}
+
+      - name: Docker - Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+            ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}

@@ -15,7 +15,7 @@ const TechnologyCard: FC<TechnologyCardProps> = ({
 	return (
 		<div className={className}>
 			<article
-				className="mx-3.5 mb-15 mt-5 flex h-full flex-col border-b-2 border-solid border-sswRed bg-gray-75 py-11 px-16"
+				className="mx-3.5 mb-15 mt-5 flex h-full flex-col border-b-2 border-solid border-sswRed bg-gray-75 px-16 py-11"
 				data-aos="flip-left"
 			>
 				{thumbnail ? (

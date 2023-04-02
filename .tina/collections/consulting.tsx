@@ -3,6 +3,134 @@ import { seoSchema } from "../../components/util/seo";
 
 import type { Collection } from "tinacms";
 
+export const consultingIndexSchema: Collection = {
+	label: "Consulting - Index",
+	name: "consultingIndex",
+	path: "content/consulting/index",
+	format: "json",
+	fields: [
+		// @ts-ignore
+		seoSchema,
+		{
+			type: "object",
+			label: "Categories",
+			name: "categories",
+			list: true,
+			ui: {
+				itemProps: (item) => {
+					return { label: item?.category?.split("/")[3].replace(".json", "") };
+				},
+			},
+			fields: [
+				{
+					type: "reference",
+					label: "Category",
+					name: "category",
+					collections: ["consultingCategory"],
+				},
+				{
+					type: "object",
+					label: "Pages",
+					name: "pages",
+					list: true,
+					ui: {
+						itemProps: (item) => {
+							return { label: item?.title };
+						},
+					},
+					fields: [
+						{
+							type: "string",
+							label: "Title",
+							name: "title",
+						},
+						{
+							type: "string",
+							label: "Description",
+							name: "description",
+							ui: {
+								component: "textarea",
+							},
+						},
+						{
+							type: "image",
+							label: "Logo",
+							name: "logo",
+						},
+						{
+							type: "reference",
+							label: "Page",
+							name: "page",
+							collections: ["consulting"],
+							required: true,
+						},
+						{
+							type: "string",
+							label: "External URL",
+							description:
+								"Takes precedence over page if selected. If using this, you still have to select a (random) page.",
+							name: "externalUrl",
+						},
+						{
+							type: "object",
+							label: "Tags",
+							name: "tags",
+							list: true,
+							ui: {
+								itemProps: (item) => {
+									return { label: item?.tag };
+								},
+							},
+							fields: [
+								{
+									type: "reference",
+									label: "Tag",
+									name: "tag",
+									collections: ["consultingTag"],
+								},
+							],
+						},
+					],
+				},
+			],
+		},
+	],
+};
+
+export const consultingCategorySchema: Collection = {
+	label: "Consulting - Categories",
+	name: "consultingCategory",
+	path: "content/consulting/category",
+	format: "json",
+	ui: {
+		global: true,
+	},
+	fields: [
+		{
+			type: "string",
+			label: "Name",
+			name: "name",
+		},
+	],
+};
+
+export const consultingTagSchema: Collection = {
+	label: "Consulting - Tags",
+	name: "consultingTag",
+	path: "content/consulting/tag",
+	format: "json",
+	ui: {
+		global: true,
+	},
+	fields: [
+		{
+			type: "string",
+			label: "Name",
+			name: "name",
+		},
+	],
+};
+
 export const consultingSchema: Collection = {
 	label: "Consulting Pages",
 	name: "consulting",
@@ -64,11 +192,35 @@ export const consultingSchema: Collection = {
 			required: false,
 		},
 		{
+			type: "object",
+			label: "Testimonial Categories",
+			name: "testimonialCategories",
+			list: true,
+			fields: [
+				{
+					type: "reference",
+					label: "Testimonial Category",
+					name: "testimonialCategory",
+					collections: ["testimonialCategories"],
+				},
+			],
+		},
+		{
 			type: "rich-text",
 			label: "Body",
 			name: "_body",
 			templates: [...Schemas.pageBlocks],
 			isBody: true,
+		},
+		{
+			type: "object",
+			list: true,
+			name: "afterBody",
+			label: "After body",
+			ui: {
+				visualSelector: true,
+			},
+			templates: [...Schemas.pageBlocks],
 		},
 		{
 			type: "object",

@@ -1,5 +1,3 @@
-const { redirect } = require("next/dist/server/api-utils");
-
 module.exports = {
 	i18n: {
 		locales: ["en"],

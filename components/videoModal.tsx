@@ -13,7 +13,7 @@ export const VideoModal = ({ children = null, url }) => {
                 <div className="relative mx-auto aspect-video h-full w-full">
                     <ReactPlayer
                         playing={show}
-                        className="absolute top-0 left-0"
+                        className="absolute left-0 top-0"
                         url={url || ""}
                         width={"100%"}
                         height={"100%"}
@@ -24,7 +24,7 @@ export const VideoModal = ({ children = null, url }) => {
                 <div className="relative mx-auto aspect-video">
                     <ReactPlayer
                         light
-                        className="pointer-events-none absolute top-0 left-0"
+                        className="pointer-events-none absolute left-0 top-0"
                         url={url || ""}
                         width={"100%"}
                         height={"100%"}
