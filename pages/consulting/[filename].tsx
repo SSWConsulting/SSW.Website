@@ -229,7 +229,8 @@ export const getStaticProps = async ({ params }) => {
       technologyCards: technologyCardsProps,
       marketingData: marketingSection.data,
       env: {
-        GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_SITE_KEY || null,
+        GOOGLE_RECAPTCHA_SITE_KEY:
+          process.env.GOOGLE_RECAPTCHA_SITE_KEY || null,
       },
       seo,
     },
