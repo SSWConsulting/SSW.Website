@@ -2,8 +2,21 @@ import { Container } from "../util/container";
 import { Section } from "../util/section";
 import HorizontalList, { HorizontalListItemProps } from "../util/horizontalList";
 import type { Template } from "tinacms";
+import { FC } from "react";
+import { TinaMarkdownContent } from "tinacms/dist/rich-text";
 
-export const TrainingLearningOutcome = ({ data }) => {
+export type TrainingLearningOutcomeProps = {
+    data: {
+        header: string,
+        listItems: {
+            title: string,
+            content: TinaMarkdownContent | TinaMarkdownContent[],
+            icon: string
+        }[]
+    }
+};
+
+export const TrainingLearningOutcome: FC<TrainingLearningOutcomeProps> = ({ data }) => {
     const horizontalListProps = data.listItems?.map<HorizontalListItemProps>((m) => ({
         title: m.title,
         icon: m.icon,

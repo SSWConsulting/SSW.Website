@@ -109,7 +109,7 @@ export const componentRenderer: Components<{
 	DynamicColumns: (props) => <DynamicColumns data={props} />,
 	FixedColumns: (props) => <FixedColumns data={props} />,
 	InternalCarousel: (props) => <InternalCarousel data={props} />,
-  VerticalListItem: (props) => <VerticalListItem data={props} />,
-  TrainingInformation: (props) => <TrainingInformation data={props} />,
-  TrainingLearningOutcome: (props) => <TrainingLearningOutcome data={props} />,
+    VerticalListItem: (props) => <VerticalListItem data={props} />,
+    TrainingInformation: (props) => <TrainingInformation data={props} />,
+    TrainingLearningOutcome: (props) => <TrainingLearningOutcome data={props} />,
 };
