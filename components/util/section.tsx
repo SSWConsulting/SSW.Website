@@ -1,26 +1,25 @@
 import React from "react";
 import classNames from "classnames";
+import { sectionColors } from "./constants/styles";
 
-export const Section = ({ children, color = "", className = "", style = {} }) => {
-  const sectionColor = {
-    default: "bg-white text-black",
-    lightgray: "bg-gray-100 text-black",
-    darkgray: "bg-gray-900 text-black",
-    red: "bg-sswRed text-white",
-    black: "bg-black text-white",
-  };
-  const sectionColorCss = sectionColor[color] || sectionColor.default;
+export const Section = ({
+	children,
+	color = "",
+	className = "",
+	style = {},
+}) => {
+	const sectionColorCss = sectionColors[color] || sectionColors.default;
 
-  return (
-    <section
-      className={classNames(
-        "flex flex-1 relative transition duration-150 ease-out body-font overflow-hidden",
-        sectionColorCss,
-        className
-      )}
-      style={style}
-    >
-      {children}
-    </section>
-  );
+	return (
+		<section
+			className={classNames(
+				"body-font relative flex flex-1 overflow-hidden transition duration-150 ease-out",
+				sectionColorCss,
+				className
+			)}
+			style={style}
+		>
+			{children}
+		</section>
+	);
 };

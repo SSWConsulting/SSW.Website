@@ -1,9 +1,9 @@
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import Link from "next/link";
 import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
-import dynamic from "next/dynamic";
-import Image from "next/legacy/image";
-import Link from "next/link";
 import { Container } from "../util/container";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
 
@@ -12,18 +12,18 @@ dayjs.extend(utc);
 
 export const Footer = () => {
   return (
-    <footer className="w-full bg-gray-900 text-xxs text-gray-300">
+    <footer className="no-print w-full bg-gray-900 text-xxs text-gray-300">
       <Container size="xsmall">
         <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
           <CopyrightInfo />
         </div>
-        <hr className="my-4 border-gray-800 sm:hidden"/>
+        <hr className="my-4 border-gray-800 sm:hidden" />
         <SocialIcons
           className="my-6 justify-center sm:hidden"
           excludeDesktop={Object.values(SocialTypes)}
           excludeMobile={[SocialTypes.phone, SocialTypes.meetup]}
         />
-        <hr className="my-4 border-gray-800"/>
+        <hr className="my-4 border-gray-800" />
         <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
           <DeploymentInfo />
           <SiteInfo />
@@ -76,8 +76,9 @@ const DeploymentInfo = () => {
     <div className="text-center sm:text-left">
       Our website is under{" "}
       <Link href="https://www.ssw.com.au/rules/rules-to-better-websites-deployment">
-        CONSTANT CONTINUOUS DEPLOYMENT.&nbsp;
+        CONSTANT CONTINUOUS DEPLOYMENT
       </Link>
+      .&nbsp;
       <DynamicDeploymentLink {...deploymentLinkInfo} />
     </div>
   );
@@ -103,6 +104,7 @@ const SiteInfo = () => (
         alt="health check logo"
         height={14}
         width={40}
+        className="inline-block pb-1 pl-2"
       />
     </Link>
   </div>

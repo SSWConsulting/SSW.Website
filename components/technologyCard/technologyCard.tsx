@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -14,7 +15,7 @@ const TechnologyCard: FC<TechnologyCardProps> = ({
 	return (
 		<div className={className}>
 			<article
-				className="mx-3.5 mb-15 mt-5 flex h-full flex-col border-b-2 border-solid border-sswRed bg-gray-75 py-11 px-16"
+				className="mx-3.5 mb-15 mt-5 flex h-full flex-col border-b-2 border-solid border-sswRed bg-gray-75 px-16 py-11"
 				data-aos="flip-left"
 			>
 				{thumbnail ? (
@@ -29,7 +30,7 @@ const TechnologyCard: FC<TechnologyCardProps> = ({
 				) : (
 					<h2>{name}</h2>
 				)}
-				<div className="prose max-w-full grow prose-p:text-justify prose-strong:text-sswRed prose-ul:columns-1 md:prose-ul:columns-2 lg:prose-ul:columns-3">
+				<div className="prose-ul-li:grid-6 prose max-w-full grow prose-p:text-justify prose-strong:text-sswRed prose-ul:grid prose-ul:grid-flow-col prose-ul:grid-rows-12 prose-ul:text-left descendant-div:!m-0">
 					<TinaMarkdown content={body} />
 				</div>
 				{readMoreSlug && (
