@@ -41,7 +41,7 @@ export default function TrainingPage(
                 <Section color="white" className="">
                     <Container className={"flex-1 pt-0"}>
                         <div className="mx-auto flex max-w-9xl flex-col items-center">
-                            <TestimonialRow testimonialsQueryResult={props.testimonialResult} />
+                            <TestimonialRow testimonialsResult={props.testimonialResult} />
                         </div>
                     </Container>
                 </Section>
@@ -83,14 +83,38 @@ export const getStaticProps = async ({ params }) => {
         relativePath: `${params.filename}.mdx`,
     });
 
-    const testimonials = await client.queries.allTestimonialsQuery();
+    const testimonials = await client.queries.testimonalsQuery();
+
+    let testimonialsResult = testimonials.data.testimonialsConnection.edges.map(
+      (t) => t.node
+    );
+
+    testimonialsResult = testimonialsResult.sort(() => 0.5 - Math.random());
+
+    // Adds general testimonials if not filled by testimonials with matching categories
+    if (testimonialsResult.length < 3) {
+      const generalTestimonials = await client.queries.testimonalsQuery({
+        categories: "General",
+      });
+
+      const generalTestimonialsResult =
+        generalTestimonials.data.testimonialsConnection.edges.map((t) => t.node);
+
+      const randomGeneral = generalTestimonialsResult.sort(
+        () => 0.5 - Math.random()
+      );
+      testimonialsResult.push(...randomGeneral);
+    }
+
+    testimonialsResult = testimonialsResult.slice(0, 3);
+
 
     return {
         props: {
             data: tinaProps.data,
             query: tinaProps.query,
             variables: tinaProps.variables,
-            testimonialResult: testimonials,
+            testimonialResult: testimonialsResult,
             env: {
                 GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY || null,
             },
