@@ -13,6 +13,7 @@ import { pagesSchema } from "./collections/pages";
 import { technologiesSchema } from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
+import { trainingSchema } from "./collections/training";
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -54,35 +55,7 @@ const config = defineStaticConfig({
       testimonialCategoriesSchema,
       technologiesSchema,
       officeSchema,
-      {
-          label: "Training Pages",
-          name: "training",
-          format: "mdx",
-          path: "content/training",
-          ui: {
-              router: ({ document }) => {
-                  return `/training/${document._sys.filename}`;
-              },
-          },
-          fields: [
-              // @ts-ignore
-              seoSchema,
-              // @ts-ignore
-              trainingHeaderSchema,
-              {
-                  type: "object",
-                  list: true,
-                  name: "_body",
-                  label: "Body",
-                  ui: {
-                      visualSelector: true,
-                  },
-                  templates: [...Schemas.pageBlocks],
-              },
-              // @ts-ignore
-              videoCardSchema,
-          ]
-      },
+      trainingSchema,
     ],
   },
 });
