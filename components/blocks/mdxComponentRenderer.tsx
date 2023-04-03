@@ -34,7 +34,7 @@ export const componentRenderer: Components<{
   TrainingLearningOutcome: {
       header: string
       listItems: {
-          content: string;
+          content: TinaMarkdownContent | TinaMarkdownContent[];
           icon: string;
           title: string;
       }[];
