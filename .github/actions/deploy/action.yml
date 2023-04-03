@@ -1,7 +1,7 @@
 name: Deploy
 
 inputs:
-  AZURE_CLIENT_ID: 
+  AZURE_CLIENT_ID:
     description: client id for OIDC
     required: true
   AZURE_TENANT_ID:
@@ -29,20 +29,29 @@ inputs:
     required: true
 
 outputs:
-  url: 
+  url:
     description: URL to the environment that was deployed to
     value: ${{ steps.get-app-service-url.outputs.webapp-url }}
 
 runs:
-  using: "composite"  
+  using: "composite"
   steps:
-
     - name: Azure CLI - Login
       uses: azure/login@v1
       with:
         client-id: ${{ inputs.AZURE_CLIENT_ID }}
         tenant-id: ${{ inputs.AZURE_TENANT_ID }}
         subscription-id: ${{ inputs.AZURE_SUBSCRIPTION_ID }}
+
+    - name: Dev Lead Endpoint
+      if: github.event_name == 'pull_request'
+      with:
+        CREATE_LEAD_ENDPOINT: ${{ secrets.CREATE_LEAD_ENDPOINT_dev }}
+
+    - name: Prod Lead Endpoint
+      if: github.event_name != 'pull_request'
+      with:
+        CREATE_LEAD_ENDPOINT: ${{ secrets.CREATE_LEAD_ENDPOINT_prod }}
 
     - name: AppService - Create slot
       shell: pwsh
