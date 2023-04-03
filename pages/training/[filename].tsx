@@ -64,7 +64,7 @@ export default function TrainingPage(
                         <p className="text-3xl font-light text-white">Subscribe to get notified about <span className="text-sswRed">SSW training programs</span></p>
                         <p className="text-base text-gray-500">Get the most popular courses from our developers</p>
 
-                        <div className="flex flex-col items-center pt-8 pb-12 md:flex-row">
+                        <div className="flex flex-col items-center pb-12 pt-8 md:flex-row">
                             <input type="text" className="mr-5 w-96 bg-gray-800 px-5 py-3 text-white" placeholder="Enter your email" />
                             <button className="mt-5 flex w-36 items-center bg-sswRed px-5 py-3 text-white md:mt-0">
                                 <HiMail color="white" />
