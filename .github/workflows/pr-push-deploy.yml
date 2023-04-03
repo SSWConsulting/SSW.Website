@@ -3,10 +3,10 @@ name: PR - build and deploy to slot
 on:
   pull_request:
     branches:
-    - main
+      - main
   workflow_dispatch:
 
-concurrency: 
+concurrency:
   group: ci-${{ github.event.number }}-${{ github.workflow }}
   cancel-in-progress: true
 
@@ -23,8 +23,22 @@ jobs:
     permissions:
       id-token: write
       contents: read
-    secrets: inherit
-  
+    secrets:
+      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
+      TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+      NEXT_PUBLIC_GOOGLE_GTM_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID }}
+      NEXT_PUBLIC_ZENDESK_CHAT_KEY: ${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY }}
+      CREATE_LEAD_ENDPOINT: ${{ secrets.CREATE_LEAD_ENDPOINT_dev }}
+      NEXT_PUBLIC_GOOGLE_ANALYTICS: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS }}
+      NEXT_PUBLIC_HOTJAR_ID: ${{ secrets.NEXT_PUBLIC_HOTJAR_ID }}
+      NEXT_PUBLIC_HOTJAR_SV: ${{ secrets.NEXT_PUBLIC_HOTJAR_SV }}
+      GOOGLE_RECAPTCHA_KEY: ${{ secrets.GOOGLE_RECAPTCHA_KEY }}
+      GOOGLE_RECAPTCHA_KEY_v2: ${{ secrets.GOOGLE_RECAPTCHA_KEY_v2 }}
+      GOOGLE_RECAPTCHA_SITE_KEY: ${{ secrets.GOOGLE_RECAPTCHA_SITE_KEY }}
+
   pr-deploy:
     name: Deploy to slot
     needs: build
@@ -63,7 +77,7 @@ jobs:
           message: |
             Deployed changes to <${{ steps.deploy.outputs.url }}>
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token-user-login: 'github-actions[bot]'
+          repo-token-user-login: "github-actions[bot]"
           allow-repeats: true
 
   pagespeedInsights:
@@ -75,7 +89,7 @@ jobs:
     steps:
       - uses: wicksipedia/pagespeed-insights@main
         id: pagespeed-insights
-        with:          
+        with:
           url: ${{ needs.pr-deploy.outputs.url }}
           categories: |
             accessibility
@@ -100,5 +114,5 @@ jobs:
 
             View the full report <https://pagespeed.web.dev/report?url=${{ needs.pr-deploy.outputs.url }}>
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token-user-login: 'github-actions[bot]'
+          repo-token-user-login: "github-actions[bot]"
           allow-repeats: true

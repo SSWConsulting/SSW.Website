@@ -21,6 +21,20 @@ on:
         required: true
       NEXT_PUBLIC_ZENDESK_CHAT_KEY:
         required: true
+      CREATE_LEAD_ENDPOINT:
+        required: true
+      NEXT_PUBLIC_GOOGLE_ANALYTICS:
+        required: true
+      NEXT_PUBLIC_HOTJAR_ID:
+        required: true
+      NEXT_PUBLIC_HOTJAR_SV:
+        required: true
+      GOOGLE_RECAPTCHA_KEY:
+        required: true
+      GOOGLE_RECAPTCHA_KEY_v2:
+        required: true
+      GOOGLE_RECAPTCHA_SITE_KEY:
+        required: true
 
 defaults:
   run:
