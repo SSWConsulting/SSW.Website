@@ -38,7 +38,6 @@ export const TrainingInformation = ({ data }) => {
 }
 
 export const trainingInformationSchema: Template = {
-    type: "object",
     label: "Training Information",
     name: "TrainingInformation",
     fields: [
