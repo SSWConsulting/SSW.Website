@@ -1,7 +1,7 @@
 import { Container } from "../util/container";
 import { Section } from "../util/section";
-import HorizontalList from "../util/horizontalList";
-import { Template } from "tinacms/dist/admin/types";
+import HorizontalList, { HorizontalListItemProps } from "../util/horizontalList";
+import type { Template } from "tinacms";
 
 export const TrainingLearningOutcome = ({ data }) => {
     const horizontalListProps = data.listItems?.map<HorizontalListItemProps>((m) => ({
@@ -23,7 +23,6 @@ export const TrainingLearningOutcome = ({ data }) => {
 }
 
 export const trainingLearningOutcomeSchema: Template = {
-    type: "object",
     label: "Training Learning Outcomes",
     name: "TrainingLearningOutcome",
     fields: [
