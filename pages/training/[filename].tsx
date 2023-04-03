@@ -58,7 +58,7 @@ export default function TrainingPage(
 
                 <Section
                     color="darkgray"
-                    style={{ backgroundImage: "url(/images/SSWPolygons.png)" }}
+                    style={{ backgroundImage: "url(/images/polygonBackground.png)" }}
                 >
                     <Container className={"flex flex-1 flex-col items-center pt-15 text-center"}>
                         <p className="text-3xl font-light text-white">Subscribe to get notified about <span className="text-sswRed">SSW training programs</span></p>
