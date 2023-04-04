@@ -5,13 +5,14 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const VerticalListItem = ({ data }) => {
     return (
-        <div className="flex items-center">
+        <div className="flex items-center pb-5">
             {data.icon &&
                 <Image
                     src={data.icon || ""}
                     alt={`${data.title} icon`}
-                    width={75}
-                    height={75}
+                    width={65}
+                    height={65}
+                    className="pr-5" 
                 />
             }
             <TinaMarkdown content={data.content} />

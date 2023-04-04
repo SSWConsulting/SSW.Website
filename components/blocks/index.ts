@@ -21,6 +21,7 @@ import { fixedColumnsSchema } from "./fixedColumns";
 import { verticalListItemSchema } from "./verticalListItem";
 import { trainingLearningOutcomeSchema } from "../training/trainingLearningOutcome";
 import { trainingInformationSchema } from "../training/trainingInformation";
+import { recurringEventSchema } from "./recurringEvent";
 
 export const pageBlocks: Template[] = [
   aboutUsBlockSchema,
@@ -44,6 +45,7 @@ export const pageBlocks: Template[] = [
   verticalListItemSchema,
   trainingLearningOutcomeSchema,
   trainingInformationSchema,
+  recurringEventSchema,
 ];
 
 export * from "./aboutUs";
@@ -64,5 +66,6 @@ export * from "./dynamicColumns";
 export * from "./upcomingEvents";
 export * from "./videoEmbed";
 export * from "./verticalListItem";
-export * from "../training/trainingLearningOutcome"
-export * from "../training/trainingInformation"
+export * from "../training/trainingLearningOutcome";
+export * from "../training/trainingInformation";
+export * from "./recurringEvent";

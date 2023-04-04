@@ -56,7 +56,10 @@ export default function TrainingPage(
                     </Container>
                 </Section>
 
-                <Section
+                {/* 
+                    Blocked by: https://github.com/SSWConsulting/SSW.Website-v3/issues/282
+
+                    <Section
                     color="darkgray"
                     style={{ backgroundImage: "url(/images/polygonBackground.png)" }}
                 >
@@ -72,7 +75,7 @@ export default function TrainingPage(
                             </button>
                         </div>
                     </Container>
-                </Section>
+            </Section>*/}
             </Layout>
         </>
     );
@@ -86,24 +89,24 @@ export const getStaticProps = async ({ params }) => {
     const testimonials = await client.queries.testimonalsQuery();
 
     let testimonialsResult = testimonials.data.testimonialsConnection.edges.map(
-      (t) => t.node
+        (t) => t.node
     );
 
     testimonialsResult = testimonialsResult.sort(() => 0.5 - Math.random());
 
     // Adds general testimonials if not filled by testimonials with matching categories
     if (testimonialsResult.length < 3) {
-      const generalTestimonials = await client.queries.testimonalsQuery({
-        categories: "General",
-      });
+        const generalTestimonials = await client.queries.testimonalsQuery({
+            categories: "General",
+        });
 
-      const generalTestimonialsResult =
-        generalTestimonials.data.testimonialsConnection.edges.map((t) => t.node);
+        const generalTestimonialsResult =
+            generalTestimonials.data.testimonialsConnection.edges.map((t) => t.node);
 
-      const randomGeneral = generalTestimonialsResult.sort(
-        () => 0.5 - Math.random()
-      );
-      testimonialsResult.push(...randomGeneral);
+        const randomGeneral = generalTestimonialsResult.sort(
+            () => 0.5 - Math.random()
+        );
+        testimonialsResult.push(...randomGeneral);
     }
 
     testimonialsResult = testimonialsResult.slice(0, 3);

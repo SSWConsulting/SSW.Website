@@ -3847,6 +3847,7 @@ __metadata:
     prettier: ^2.8.7
     prettier-plugin-tailwindcss: ^0.2.6
     react: ^18.2.0
+    react-countdown: ^2.3.5
     react-dom: ^18.2.0
     react-google-recaptcha: ^2.1.0
     react-icons: ^4.8.0
@@ -13850,6 +13851,18 @@ __metadata:
   peerDependencies:
     react: "*"
   checksum: 40b49e1aa2ab27a099cc37a3fa2d5bb906b8def4dbe2d922c0e42365e386d82b03f9b06a2b29a44a51f1e114cef72e61c0ba0740581a128d951936ea4617429b
+  languageName: node
+  linkType: hard
+
+"react-countdown@npm:^2.3.5":
+  version: 2.3.5
+  resolution: "react-countdown@npm:2.3.5"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: ">= 15"
+    react-dom: ">= 15"
+  checksum: 24289f40591e88003052270e4eb9f7a87838e403ec2036fbd5ef99d57851c8d9739dae619d65f339494e582e34e2691c033a975bd8f7416730fc9beaf76a2b4b
   languageName: node
   linkType: hard
 

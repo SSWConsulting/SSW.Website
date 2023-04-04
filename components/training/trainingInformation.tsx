@@ -5,6 +5,7 @@ import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { Section } from "../util/section";
 import { Container } from "../util/container";
 import { verticalListItemSchema } from "../blocks/verticalListItem";
+import { recurringEventSchema } from "../blocks/recurringEvent";
 
 export type TrainingInformationItemProps = {
     header: string;
@@ -13,7 +14,7 @@ export type TrainingInformationItemProps = {
 
 const TrainingInformationItem: FC<TrainingInformationItemProps> = ({ header, body }) => {
     return (
-        <div className="flex flex-col items-center text-center lg:text-left">
+        <div className="flex flex-col text-center lg:text-left">
             <h1 dangerouslySetInnerHTML={{ __html: header }}></h1>
             <div className="w-full text-left sm:w-3/4 lg:w-full">
                 <TinaMarkdown
@@ -56,7 +57,7 @@ export const trainingInformationSchema: Template = {
                     type: "rich-text",
                     label: "Body",
                     name: "body",
-                    templates: [verticalListItemSchema],
+                    templates: [verticalListItemSchema, recurringEventSchema],
                 },
             ],
         },
