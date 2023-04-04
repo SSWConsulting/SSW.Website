@@ -29,8 +29,6 @@ on:
         required: true
       NEXT_PUBLIC_HOTJAR_SV:
         required: true
-      GOOGLE_RECAPTCHA_KEY:
-        required: true
       GOOGLE_RECAPTCHA_KEY_v2:
         required: true
       GOOGLE_RECAPTCHA_SITE_KEY:
