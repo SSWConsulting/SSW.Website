@@ -56,7 +56,7 @@ export const trainingInformationSchema: Template = {
                     type: "rich-text",
                     label: "Body",
                     name: "body",
-                    templates: [verticalListItemSchema],
+                    // templates: [verticalListItemSchema],
                 },
             ],
         },
