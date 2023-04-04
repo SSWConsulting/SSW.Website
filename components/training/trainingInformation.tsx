@@ -4,7 +4,7 @@ import { componentRenderer } from "../../components/blocks/mdxComponentRenderer"
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { Section } from "../util/section";
 import { Container } from "../util/container";
-import { verticalListItemSchema } from "../blocks";
+import { verticalListItemSchema } from "../blocks/verticalListItem";
 
 export type TrainingInformationItemProps = {
     header: string;
@@ -56,7 +56,7 @@ export const trainingInformationSchema: Template = {
                     type: "rich-text",
                     label: "Body",
                     name: "body",
-                    // templates: [verticalListItemSchema],
+                    templates: [verticalListItemSchema],
                 },
             ],
         },
