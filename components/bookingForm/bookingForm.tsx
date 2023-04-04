@@ -97,31 +97,27 @@ export const BookingForm = ({ recaptchaKey }) => {
     actions.setSubmitting(false);
 
     await axios
-      .post("/api/validate-token", { contactReCaptcha })
-      .then(async (res) => {
-        if (res.data.success) {
-          setInvalidReptcha("");
-          await axios
-            .post("/api/create-lead", data)
-            .then(() => {
-              setContactSuccess(true);
-              setTimeout(function () {
-                setContactSuccess(false);
-                router.push("/thankyou/");
-              }, 1000);
-            })
-            .catch((err) => {
-              console.error(err);
-              return alert("Failed to create lead in CRM");
-            });
+      .post("/api/create-lead", data)
+      .then((response) => {
+        if (response.data && !response.data.success) {
+          setInvalidReptcha("Invalid ReCaptcha!");
         } else {
-          setInvalidReptcha("Invalid reCaptcha!");
+          onSuccess();
         }
       })
       .catch((err) => {
         console.error(err);
-        setInvalidReptcha("Failded to verify reCaptcha!");
+        return alert("Failed to create lead in CRM");
       });
+  };
+
+  const onSuccess = () => {
+    setInvalidReptcha("");
+    setContactSuccess(true);
+    setTimeout(function () {
+      setContactSuccess(false);
+      router.push("/thankyou/");
+    }, 1000);
   };
 
   const getCommonFieldProps = (fieldName: string) => ({
@@ -253,11 +249,6 @@ export const BookingForm = ({ recaptchaKey }) => {
                 />
 
                 <div className="mb-4 w-full overflow-x-auto">
-                  {invalidRecaptcha && (
-                    <span className="text-sm text-red-600">
-                      {invalidRecaptcha}
-                    </span>
-                  )}
                   <div className="h-22 w-88">
                     {recaptchaKey && (
                       <ReCAPTCHA
@@ -268,6 +259,11 @@ export const BookingForm = ({ recaptchaKey }) => {
                       />
                     )}
                   </div>
+                  {invalidRecaptcha && (
+                    <span className="text-sm text-red-600">
+                      {invalidRecaptcha}
+                    </span>
+                  )}
                 </div>
 
                 <button
