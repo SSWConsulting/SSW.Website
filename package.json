@@ -49,7 +49,7 @@
     "markdown-it": "^13.0.1",
     "markdown-it-multimd-table": "^4.2.1",
     "next": "^13.2.4",
-    "next-seo": "^5.15.0",
+    "next-seo": "^6.0.0",
     "nextjs-breadcrumbs2": "^2.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
