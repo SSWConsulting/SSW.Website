@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import type { Template } from "tinacms";
 import Countdown from "react-countdown";
 
@@ -32,15 +32,14 @@ type TimeComponentProps = {
     className?: string
 };
 
-const calculateNextRecurringEvent = (day: DaysOfWeek): number => {
-    const nextDate: any = new Date();
-    const currentDate: any = new Date();
+const calculateNextRecurringEventDate = (day: DaysOfWeek): Date => {
+    const nextDate: Date = new Date();
 
     nextDate.setUTCDate(nextDate.getUTCDate() + (day - nextDate.getUTCDay()) % 7 + 1);
     nextDate.setHours(9)
     nextDate.setMinutes(0)
 
-    return Math.abs(currentDate - nextDate);
+    return nextDate;
 }
 
 const TimeComponent: FC<TimeComponentProps> = ({ time, identifier, className }) => {
@@ -68,13 +67,13 @@ const renderer = ({ days, hours, minutes }) => {
 };
 
 export const RecurringEvent = ({ data }) => {
-    const day = convertStringToDayOfWeek(data.day);
-    const timeUntilNextEvent = calculateNextRecurringEvent(day);
+    const day: DaysOfWeek = convertStringToDayOfWeek(data.day);
+    const nextEventDate: Date = calculateNextRecurringEventDate(day);
 
     return (
         <div>
             <Countdown
-                date={Date.now() + timeUntilNextEvent}
+                date={nextEventDate}
                 renderer={renderer}
             />
         </div>

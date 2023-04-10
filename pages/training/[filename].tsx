@@ -1,7 +1,6 @@
 
 import { useTina } from "tinacms/dist/react";
 
-import { HiMail } from "react-icons/hi";
 import { client } from "../../.tina/__generated__/client";
 import { Layout } from "../../components/layout";
 import { SEO } from "../../components/util/seo";
