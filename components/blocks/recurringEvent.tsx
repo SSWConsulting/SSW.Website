@@ -33,13 +33,14 @@ type TimeComponentProps = {
 };
 
 const calculateNextRecurringEvent = (day: DaysOfWeek): number => {
-    const nextDate = new Date();
+    const nextDate: any = new Date();
+    const currentDate: any = new Date();
 
     nextDate.setUTCDate(nextDate.getUTCDate() + (day - nextDate.getUTCDay()) % 7 + 1);
     nextDate.setHours(9)
     nextDate.setMinutes(0)
 
-    return Math.abs(new Date() - nextDate);
+    return Math.abs(currentDate - nextDate);
 }
 
 const TimeComponent: FC<TimeComponentProps> = ({ time, identifier, className }) => {
