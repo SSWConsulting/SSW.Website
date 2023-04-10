@@ -11,7 +11,7 @@
     "lint": "eslint . --ext .ts,.tsx"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^13.2.4",
+    "@next/eslint-plugin-next": "^13.3.0",
     "@svgr/webpack": "^7.0.0",
     "@tinacms/cli": "^1.5.3",
     "@types/js-cookie": "^3.0.3",
