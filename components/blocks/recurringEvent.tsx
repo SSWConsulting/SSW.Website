@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import type { Template } from "tinacms";
 import Countdown from "react-countdown";
+import { FaRegCalendarCheck } from "react-icons/fa";
 
 enum DaysOfWeek {
     Monday = 7,
@@ -57,7 +58,7 @@ const TimeComponent: FC<TimeComponentProps> = ({ time, identifier, className }) 
 
 const renderer = ({ days, hours, minutes }) => {
     return (
-        <div className="flex items-center pb-5">
+        <div className="flex items-center">
             <TimeComponent time={days} identifier="days" className="pr-1" />
             <TimeComponent time={hours} identifier="hrs" className="pr-1" />
             <TimeComponent time={minutes} identifier="min" className="pr-1" />
@@ -71,11 +72,25 @@ export const RecurringEvent = ({ data }) => {
     const nextEventDate: Date = calculateNextRecurringEventDate(day);
 
     return (
-        <div>
-            <Countdown
-                date={nextEventDate}
-                renderer={renderer}
-            />
+        <div className="flex flex-col">
+            <div className="my-3 flex flex-col sm:flex-row">
+                <Countdown
+                    date={nextEventDate}
+                    renderer={renderer}
+                />
+                { data.applyLinkRedirect &&
+                    <button
+                        className="ml-0 mt-2 w-48 rounded bg-sswRed px-15 py-3 sm:ml-2 sm:mt-0 "
+                        onClick={() => window.open(`mailto:${data.applyLinkRedirect}` || "", "_blank")}
+                    >
+                        <span className="text-lg font-medium text-white">Apply</span>
+                    </button>
+                }
+            </div>
+            <div className="flex items-center">
+                <FaRegCalendarCheck size={20} />
+                <span className="ml-2 font-medium">{nextEventDate.toDateString()}</span>
+            </div>
         </div>
     );
 };
@@ -88,7 +103,6 @@ export const recurringEventSchema: Template = {
             type: "string",
             label: "Apply Link Redirect",
             name: "applyLinkRedirect",
-            required: true
         },
         {
             type: "string",
