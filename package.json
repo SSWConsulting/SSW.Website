@@ -44,7 +44,7 @@
     "classnames": "^2.3.2",
     "date-fns": "^2.29.3",
     "dayjs": "^1.11.7",
-    "eslint-config-next": "^13.2.4",
+    "eslint-config-next": "^13.3.0",
     "formik": "^2.2.9",
     "markdown-it": "^13.0.1",
     "markdown-it-multimd-table": "^4.2.1",
