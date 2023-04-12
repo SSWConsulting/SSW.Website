@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "projectName": {
-      "value": "sswwebsitetest"
+      "value": "sswwebsite"
     },
     "KeyVaultName": {
       "value": "Kv-SSW-v3"
