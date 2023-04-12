@@ -34,7 +34,7 @@ jobs:
 
       - name: Build
         run: |
-          az bicep build --file ${{ env.BICEP_PATH_DEV }}
+          az bicep build --file ${{ env.BICEP_PATH }}
 
       - name: Azure CLI - Login
         uses: azure/login@v1
@@ -55,4 +55,4 @@ jobs:
             --what-if `
             --name $timestamp `
             --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
-            --template-file ${{ env.BICEP_PATH_DEV }}
+            --template-file ${{ env.ParameterFile }}

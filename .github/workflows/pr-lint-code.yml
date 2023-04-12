@@ -14,7 +14,7 @@ defaults:
     shell: pwsh
 
 env:
-  bicepPath: "./infra/main.bicep -TemplateParameterFile ./infra/pr-parameters.json"
+  bicepPath: "./infra/main.bicep"
 
 jobs:
   lint-infra:
