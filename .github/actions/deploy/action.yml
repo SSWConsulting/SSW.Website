@@ -69,61 +69,61 @@ runs:
 
         if ($alreadyExists.Contains('${{ inputs.slot_name }}')) {
           Write-Host '⏩ slot already exists'
-          Return 0;
         }
+        else
+        {
+          Write-Host '👷 need to create slot'
 
-        Write-Host '👷 need to create slot'
-
-        # need to create slot
-        az webapp deployment slot create `
-          --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
-          --name ${{ inputs.APP_SERVICE_NAME }} `
-          --slot ${{ inputs.slot_name }} `
-          --configuration-source ${{ inputs.APP_SERVICE_NAME }} `
-          --output none
-        Write-Host '✅ slot created'
-
-        # get slot identity
-        $identityId = az webapp identity assign `
-          --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
-          --name ${{ inputs.APP_SERVICE_NAME }} `
-          --slot ${{ inputs.slot_name }} `
-          --query principalId `
-          --output tsv
-        Write-Host '✅ identity created'
-
-        # Configure WebApp to use the Manage Identity Credentials to perform docker pull operations
-        $configId = (
-          az webapp show `
+          # need to create slot
+          az webapp deployment slot create `
             --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
             --name ${{ inputs.APP_SERVICE_NAME }} `
             --slot ${{ inputs.slot_name }} `
+            --configuration-source ${{ inputs.APP_SERVICE_NAME }} `
+            --output none
+          Write-Host '✅ slot created'
+
+          # get slot identity
+          $identityId = az webapp identity assign `
+            --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
+            --name ${{ inputs.APP_SERVICE_NAME }} `
+            --slot ${{ inputs.slot_name }} `
+            --query principalId `
+            --output tsv
+          Write-Host '✅ identity created'
+
+          # Configure WebApp to use the Manage Identity Credentials to perform docker pull operations
+          $configId = (
+            az webapp show `
+              --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
+              --name ${{ inputs.APP_SERVICE_NAME }} `
+              --slot ${{ inputs.slot_name }} `
+              --query id `
+              --output tsv
+            ) + "/config/web"
+          az resource update `
+            --ids $configId `
+            --set properties.acrUseManagedIdentityCreds=True `
+            --output none
+          Write-Host '✅ acrUseManagedIdentityCreds set'
+
+          $acrId = az acr show `
+            --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
+            --name ${{ inputs.ACR_LOGIN_SERVER }} `
             --query id `
             --output tsv
-          ) + "/config/web"
-        az resource update `
-          --ids $configId `
-          --set properties.acrUseManagedIdentityCreds=True `
-          --output none
-        Write-Host '✅ acrUseManagedIdentityCreds set'
+          Write-Host '✅ acr found'
 
-        $acrId = az acr show `
-          --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
-          --name ${{ inputs.ACR_LOGIN_SERVER }} `
-          --query id `
-          --output tsv
-        Write-Host '✅ acr found'
-
-        # grant access to the identity on ACR
-        az role assignment create `
-          --assignee-object-id $identityId `
-          --assignee-principal-type ServicePrincipal `
-          --scope $acrId `
-          --role acrpull `
-          -o none
-        Write-Host '✅ acrpull role granted'
-
-        # Apply app settings to the prod or PR slots (based on the names) (instead of applying it all via BICEP - then. do we remove appsettings from BICEP?)
+          # grant access to the identity on ACR
+          az role assignment create `
+            --assignee-object-id $identityId `
+            --assignee-principal-type ServicePrincipal `
+            --scope $acrId `
+            --role acrpull `
+            -o none
+          Write-Host '✅ acrpull role granted'
+        }
+        # Apply app settings to the PR slots
         az webapp config appsettings set `
           --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
           --name ${{ inputs.APP_SERVICE_NAME }} `
