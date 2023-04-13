@@ -119,7 +119,7 @@ runs:
           --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
           --name ${{ inputs.APP_SERVICE_NAME }} `
           --slot ${{ inputs.slot_name }} `
-          --settings GOOGLE_RECAPTCHA_KEY_v2=${{ secret.GOOGLE_RECAPTCHA_KEY_v2 }} GOOGLE_RECAPTCHA_SITE_KEY=${{ secret.GOOGLE_RECAPTCHA_SITE_KEY }} CREATE_LEAD_ENDPOINT=${{ secret.CREATE_LEAD_ENDPOINT_DEV }}
+          --settings GOOGLE_RECAPTCHA_KEY_v2=${{ secret.GOOGLE_RECAPTCHA_KEY_V2 }} GOOGLE_RECAPTCHA_SITE_KEY=${{ secret.GOOGLE_RECAPTCHA_SITE_KEY }} CREATE_LEAD_ENDPOINT=${{ secret.CREATE_LEAD_ENDPOINT_DEV }}
 
 
         Write-Host '✅ PR - appsettings have been applied'
@@ -161,6 +161,6 @@ runs:
         az webapp config appsettings set `
           --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
           --name ${{ inputs.APP_SERVICE_NAME }} `
-          --settings GOOGLE_RECAPTCHA_KEY_v2=${{ secret.GOOGLE_RECAPTCHA_KEY_v2 }} GOOGLE_RECAPTCHA_SITE_KEY=${{ secret.GOOGLE_RECAPTCHA_SITE_KEY }} CREATE_LEAD_ENDPOINT=${{ secret.CREATE_LEAD_ENDPOINT_PROD }}
+          --settings GOOGLE_RECAPTCHA_KEY_v2=${{ secret.GOOGLE_RECAPTCHA_KEY_V2 }} GOOGLE_RECAPTCHA_SITE_KEY=${{ secret.GOOGLE_RECAPTCHA_SITE_KEY }} CREATE_LEAD_ENDPOINT=${{ secret.CREATE_LEAD_ENDPOINT_PROD }}
 
         Write-Host '✅ Production - appsettings have been applied'
