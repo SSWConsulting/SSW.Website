@@ -56,4 +56,3 @@ jobs:
             --name $timestamp `
             --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
             --template-file ${{ env.BICEP_PATH }}
-            --parameters ${{ env.ParameterFile }}

@@ -168,6 +168,6 @@ runs:
         az webapp config appsettings set `
           --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
           --name ${{ inputs.APP_SERVICE_NAME }} `
-          --settings GOOGLE_RECAPTCHA_KEY_V2=${{ inputs.GOOGLE_RECAPTCHA_KEY_V2 }} GOOGLE_RECAPTCHA_SITE_KEY=${{ inputs.GOOGLE_RECAPTCHA_SITE_KEY }} CREATE_LEAD_ENDPOINT=${{ inputs.CREATE_LEAD_ENDPOINT }}
+          --settings "GOOGLE_RECAPTCHA_KEY_V2=${{ inputs.GOOGLE_RECAPTCHA_KEY_V2 }}" "GOOGLE_RECAPTCHA_SITE_KEY=${{ inputs.GOOGLE_RECAPTCHA_SITE_KEY }}" "CREATE_LEAD_ENDPOINT=${{ inputs.CREATE_LEAD_ENDPOINT }}"
 
         Write-Host '✅ Production - appsettings have been applied'
