@@ -1,7 +1,7 @@
 name: Deploy
 
 inputs:
-  AZURE_CLIENT_ID: 
+  AZURE_CLIENT_ID:
     description: client id for OIDC
     required: true
   AZURE_TENANT_ID:
@@ -29,14 +29,13 @@ inputs:
     required: true
 
 outputs:
-  url: 
+  url:
     description: URL to the environment that was deployed to
     value: ${{ steps.get-app-service-url.outputs.webapp-url }}
 
 runs:
-  using: "composite"  
+  using: "composite"
   steps:
-
     - name: Azure CLI - Login
       uses: azure/login@v1
       with:
@@ -115,6 +114,16 @@ runs:
           -o none
         Write-Host '✅ acrpull role granted'
 
+        # Apply app settings to the prod or PR slots (based on the names) (instead of applying it all via BICEP - then. do we remove appsettings from BICEP?)
+        az webapp config appsettings set `
+          --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
+          --name ${{ inputs.APP_SERVICE_NAME }} `
+          --slot ${{ inputs.slot_name }} `
+          --settings GOOGLE_RECAPTCHA_KEY_v2=${{ secret.GOOGLE_RECAPTCHA_KEY_v2 }} GOOGLE_RECAPTCHA_SITE_KEY=${{ secret.GOOGLE_RECAPTCHA_SITE_KEY }} CREATE_LEAD_ENDPOINT=${{ secret.CREATE_LEAD_ENDPOINT_DEV }}
+
+
+        Write-Host '✅ PR - appsettings have been applied'
+
     - name: AppService - Get slot URL
       shell: pwsh
       id: get-app-service-url
@@ -142,3 +151,16 @@ runs:
         app-name: ${{ inputs.APP_SERVICE_NAME }}
         slot-name: ${{ inputs.slot_name }}
         images: ${{ inputs.ACR_LOGIN_SERVER }}/${{ inputs.IMAGE_NAME }}:${{ inputs.slot_name }}
+
+    - name: AppService - Apply Settings
+      shell: pwsh
+      id: App-Settings
+      if: ${{ inputs.slot_name }} == 'production'
+      run: |
+        # Settings
+        az webapp config appsettings set `
+          --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
+          --name ${{ inputs.APP_SERVICE_NAME }} `
+          --settings GOOGLE_RECAPTCHA_KEY_v2=${{ secret.GOOGLE_RECAPTCHA_KEY_v2 }} GOOGLE_RECAPTCHA_SITE_KEY=${{ secret.GOOGLE_RECAPTCHA_SITE_KEY }} CREATE_LEAD_ENDPOINT=${{ secret.CREATE_LEAD_ENDPOINT_PROD }}
+
+        Write-Host '✅ Production - appsettings have been applied'

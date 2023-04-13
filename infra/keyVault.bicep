@@ -1,5 +1,5 @@
 @description('Specifies the name of the key vault.')
-param keyVaultName string = 'tempV22'
+param keyVaultName string
 
 @description('Specifies whether the key vault is a standard vault or a premium vault.')
 @allowed([

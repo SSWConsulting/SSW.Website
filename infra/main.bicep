@@ -1,9 +1,6 @@
 
 param projectName string = 'sswwebsite'
-param KeyVaultName string = 'Kv-SSW-v3'
-param GoogleRecaptchaKey string = 'Google-Recaptcha-KEY'
-param GoogleRecaptchaSiteKEY string = 'Google-Recaptcha-Site-KEY'
-param CreateLeadEndpoint string = 'Create-Lead-Endpoint-Prod'
+
 
 param location string = resourceGroup().location
 
@@ -25,6 +22,9 @@ param location string = resourceGroup().location
   'P3V3'
 ])
 param skuName string = 'P1V2'
+
+var entropy = substring(guid(subscription().subscriptionId, resourceGroup().id), 0, 4)
+var KeyVaultName = 'kv-${projectName}-${entropy}'
 
 param roleName string = 'Key Vault Secrets User'
 
@@ -68,26 +68,6 @@ module keyVault 'keyVault.bicep' = {
   }
 }
 
-resource kv 'Microsoft.KeyVault/vaults@2023-02-01' existing = {
-  name: KeyVaultName
-}
-
-// KeyVault secrets
-resource kvGoogleRecaptchaKey 'Microsoft.KeyVault/vaults/secrets@2022-07-01' existing = {
-  parent: kv
-  name: GoogleRecaptchaKey
-}
-resource kvGoogleRecaptchaSiteKEY 'Microsoft.KeyVault/vaults/secrets@2022-07-01' existing = {
-  parent: kv
-  name: GoogleRecaptchaSiteKEY
-}
-resource kvCreateLeadEndpoint 'Microsoft.KeyVault/vaults/secrets@2022-07-01' existing = {
-  parent: kv
-  name: CreateLeadEndpoint
-
-}
-
-
 module appService 'appService.bicep' = {
   name: 'appService-${now}'
   params: {
@@ -98,9 +78,6 @@ module appService 'appService.bicep' = {
     skuCapacity: skuCapacity
     acrName: acr.outputs.acrName
     dockerImage: dockerImage
-    GOOGLE_RECAPTCHA_KEY_v2: '@Microsoft.KeyVault(SecretUri=${kvGoogleRecaptchaKey.properties.secretUri})'
-    GOOGLE_RECAPTCHA_SITE_KEY: '@Microsoft.KeyVault(SecretUri=${kvGoogleRecaptchaSiteKEY.properties.secretUri})'
-    CREATE_LEAD_ENDPOINT: '@Microsoft.KeyVault(SecretUri=${kvCreateLeadEndpoint.properties.secretUri})'
   }
 }
 

@@ -1,12 +1,6 @@
 param projectName string = 'sswwebsite'
 param location string = resourceGroup().location
 param tags object
-@secure()
-param GOOGLE_RECAPTCHA_KEY_v2 string
-@secure()
-param GOOGLE_RECAPTCHA_SITE_KEY string
-@secure()
-param CREATE_LEAD_ENDPOINT string
 
 @allowed([
   'B1'
@@ -67,18 +61,6 @@ var appSettings = [
   {
     name: 'DOCKER_REGISTRY_SERVER_URL'
     value: 'https://acrsswwebsite.azurecr.io'
-  }
-  {
-    name: 'GOOGLE_RECAPTCHA_KEY_v2'
-    value: GOOGLE_RECAPTCHA_KEY_v2
-  }
-  {
-    name: 'GOOGLE_RECAPTCHA_SITE_KEY'
-    value: GOOGLE_RECAPTCHA_SITE_KEY
-  }
-  {
-    name: 'CREATE_LEAD_ENDPOINT'
-    value: CREATE_LEAD_ENDPOINT
   }
 ]
 
