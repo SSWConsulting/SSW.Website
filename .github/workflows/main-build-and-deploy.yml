@@ -6,7 +6,7 @@ on:
       - main
   workflow_dispatch:
 
-concurrency: 
+concurrency:
   group: main
 
 permissions:
@@ -20,7 +20,7 @@ jobs:
     with:
       tag: production
     secrets: inherit
-  
+
   deploy-to-prod:
     name: Deploy to Production
     needs: build
@@ -32,7 +32,6 @@ jobs:
       id-token: write
       contents: read
     steps:
-
       - uses: actions/checkout@v3
 
       - name: Load .env file
@@ -53,3 +52,6 @@ jobs:
           APP_SERVICE_NAME: ${{ env.APP_SERVICE_NAME }}
           ACR_LOGIN_SERVER: ${{ env.ACR_LOGIN_SERVER }}
           IMAGE_NAME: ${{ env.IMAGE_NAME }}
+          CREATE_LEAD_ENDPOINT: ${{ secrets.CREATE_LEAD_ENDPOINT_DEV }}
+          GOOGLE_RECAPTCHA_SITE_KEY: ${{ secrets.GOOGLE_RECAPTCHA_SITE_KEY }}
+          GOOGLE_RECAPTCHA_KEY_V2: ${{ secrets.GOOGLE_RECAPTCHA_KEY_V2 }}
