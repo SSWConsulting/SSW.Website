@@ -164,7 +164,7 @@ runs:
     - name: AppService - Apply Settings
       shell: pwsh
       id: App-Settings
-      if: ${{ inputs.slot_name }} == 'production'
+      if: inputs.slot_name == 'production'
       run: |
         # Settings
         az webapp config appsettings set `
