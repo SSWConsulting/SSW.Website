@@ -1,7 +1,5 @@
 
 param projectName string = 'sswwebsite'
-
-
 param location string = resourceGroup().location
 
 @allowed([
