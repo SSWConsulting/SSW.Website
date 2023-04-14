@@ -1,10 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { Template } from "tinacms";
-import {
-	addContactToNewsletters,
-	AddContactToNewslettersData,
-} from "../../services";
+import { AddContactToNewslettersData } from "../../services";
+import axios from "axios";
 
 export const SubNewsLettersButton = (data) => {
 	const [email, setEmail] = React.useState<string>("");
@@ -25,7 +23,8 @@ export const SubNewsLettersButton = (data) => {
 				FullName: fullName,
 			};
 			try {
-				const addContactToNewsLettersResult = await addContactToNewsletters(
+				const addContactToNewsLettersResult = await axios.post(
+					"/api/add-contact-to-newsletters",
 					payLoad
 				);
 				setInformationMessage(addContactToNewsLettersResult.data.message);
