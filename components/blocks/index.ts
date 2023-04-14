@@ -14,7 +14,7 @@ import { videoEmbedBlockSchema } from "./videoEmbed";
 import { columnLayoutBlockSchema } from "./columnLayout";
 import { sswTableBlockSchema } from "./tables/sswTable";
 import { citationBlockSchema } from "./citation";
-import { subButtonSchema } from "./subButton";
+import { subNewsLettersButtonSchema } from "./subNewsLettersButton";
 import { googleMapsSchema } from "./googleMapsWrapper";
 import { newsTableBlockSchema } from "./tables/newsTable";
 
@@ -32,10 +32,10 @@ export const pageBlocks: Template[] = [
 	videoEmbedBlockSchema,
 	citationBlockSchema,
 	sswTableBlockSchema,
-	subButtonSchema,
+	subNewsLettersButtonSchema,
 	googleMapsSchema,
 	internalCarouselBlockSchema,
-	newsTableBlockSchema
+	newsTableBlockSchema,
 ];
 
 export * from "./aboutUs";
@@ -51,7 +51,7 @@ export * from "./googleMapsWrapper";
 export * from "./hero";
 export * from "./tables/newsTable";
 export * from "./serviceCards";
-export * from "./subButton";
+export * from "./subNewsLettersButton";
 export * from "./tables/sswTable";
 export * from "./upcomingEvents";
 export * from "./videoEmbed";

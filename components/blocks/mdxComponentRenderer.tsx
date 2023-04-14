@@ -11,7 +11,7 @@ import { Citation } from "./citation";
 import { GoogleMapsWrapper } from "./googleMapsWrapper";
 import { InternalCarousel } from "./internalCarousel";
 import { NewsTable } from "./tables/newsTable";
-import { SubButton } from "./subButton";
+import { SubNewsLettersButton } from "./subNewsLettersButton";
 
 export const componentRenderer: Components<{
 	ClientLogos: Record<string, never>;
@@ -94,8 +94,8 @@ export const componentRenderer: Components<{
 		}[];
 	};
 	NewsTable: Record<string, never>;
-	SubButton: {
-		subButtonText: string;
+	SubNewsLettersButton: {
+		subNewsLettersButtonText: string;
 	};
 }> = {
 	VideoEmbed: (props) => <VideoEmbed data={props} />,
@@ -110,5 +110,5 @@ export const componentRenderer: Components<{
 	GoogleMaps: (props) => <GoogleMapsWrapper {...props} />,
 	InternalCarousel: (props) => <InternalCarousel data={props} />,
 	NewsTable: () => <NewsTable />,
-	SubButton: (props) => <SubButton data={props} />,
+	SubNewsLettersButton: (props) => <SubNewsLettersButton data={props} />,
 };

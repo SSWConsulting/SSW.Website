@@ -6,7 +6,7 @@ import {
 	AddContactToNewslettersData,
 } from "../../services";
 
-export const SubButton = (data) => {
+export const SubNewsLettersButton = (data) => {
 	const [email, setEmail] = React.useState<string>("");
 	const [fullName, setFullName] = React.useState<string>("");
 	const [informationMessage, setInformationMessage] =
@@ -80,7 +80,7 @@ export const SubButton = (data) => {
 						className="box-border flex w-1/2 cursor-pointer items-center justify-center gap-1 bg-sswRed py-2 pl-4 pr-2 font-sans uppercase text-white hover:text-gray-100 hover:opacity-95"
 						onClick={handleSubscribe}
 					>
-						{data.subButtonText ?? "join"}
+						{data.subNewsLettersButtonText ?? "join"}
 						<Image
 							className="inline-block align-middle leading-8"
 							src={"/images/circle-tick.png"}
@@ -104,9 +104,9 @@ export const SubButton = (data) => {
 	);
 };
 
-export const subButtonSchema: Template = {
-	label: "Subscribe button",
-	name: "SubButton",
+export const subNewsLettersButtonSchema: Template = {
+	label: "Subscribe To NewsLetters Button",
+	name: "SubNewsLettersButton",
 	ui: {
 		itemProps: (item) => {
 			return { label: item?.header };
@@ -115,8 +115,8 @@ export const subButtonSchema: Template = {
 	fields: [
 		{
 			type: "string",
-			label: "subscribe button text",
-			name: "subButtonText",
+			label: "subscribe to news letters button text",
+			name: "subNewsLettersButtonText",
 		},
 	],
 };
