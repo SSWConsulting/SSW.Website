@@ -15,7 +15,9 @@ export const VerticalListItem = ({ data }) => {
                     className="pr-5" 
                 />
             }
-            <TinaMarkdown content={data.content} />
+            <div className="font-helvetica font-bold">
+                <TinaMarkdown content={data.content} />
+            </div>
         </div>
     );
 };

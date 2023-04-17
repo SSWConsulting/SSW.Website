@@ -15,7 +15,7 @@ export type TrainingInformationItemProps = {
 const TrainingInformationItem: FC<TrainingInformationItemProps> = ({ header, body }) => {
     return (
         <div className="flex flex-col text-center lg:text-left">
-            <h1 dangerouslySetInnerHTML={{ __html: header }}></h1>
+            <h1 className="mt-0 pt-0" dangerouslySetInnerHTML={{ __html: header }}></h1>
             <div className="w-full text-left sm:w-3/4 lg:w-full">
                 <TinaMarkdown
                     components={componentRenderer}
@@ -29,8 +29,8 @@ const TrainingInformationItem: FC<TrainingInformationItemProps> = ({ header, bod
 export const TrainingInformation = ({ data }) => {
     return (
         <Section color="white">
-            <Container className={"flex-1 pt-0"}>
-                <div className="grid grid-cols-1 justify-between lg:grid-cols-3">
+            <Container className={"flex-1 p-0"}>
+                <div className="grid grid-cols-1 justify-between py-10 lg:grid-cols-3">
                     {data.trainingInformationItems?.map((item, key) => <TrainingInformationItem key={key} header={item.header} body={item.body} />)}
                 </div>
             </Container>

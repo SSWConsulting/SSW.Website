@@ -222,7 +222,12 @@ module.exports = {
           "Helvetica",
           "sans-serif",
         ],
-        body: ["Arial", "Helvetica Neue", "Helvetica", "sans-serif"],
+        helvetica: [
+          "Helvetica Neue",
+          "Helvetica",
+          "sans-serif",
+        ],
+        body: ["var(--open-sans-font)", "Helvetica Neue", "Helvetica", "sans-serif"],
       },
       animation: {
         "more-bounce": "more-bounce 2s infinite",
@@ -260,7 +265,7 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-						maxWidth: 0,
+            maxWidth: 0,
             lineHeight: 1.45,
             h1: {
               fontWeight: "300",

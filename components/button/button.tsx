@@ -6,7 +6,8 @@ const Button = ({ children, ripple, ...props }) => {
 
   const buttonClassName = classNames(
     ripple && "relative h-[90px] overflow-hidden border-none bg-sswRed text-[1.6rem] text-white",
-    props["className"]
+    props["className"],
+    "rounded"
   );
 
   return (

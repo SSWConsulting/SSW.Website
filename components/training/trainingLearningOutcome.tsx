@@ -25,9 +25,9 @@ export const TrainingLearningOutcome: FC<TrainingLearningOutcomeProps> = ({ data
 
     return (
         <Section color="lightgray">
-            <Container className={"flex-1 pt-0"}>
-                <div className="flex flex-col items-center">
-                    <h1 dangerouslySetInnerHTML={{ __html: data?.header }}></h1>
+            <Container className={"flex-1 p-0"}>
+                <div className="flex flex-col items-center py-10">
+                    <h1 className="mt-0 pt-0" dangerouslySetInnerHTML={{ __html: data?.header }}></h1>
                     <HorizontalList listItemProps={horizontalListProps} />
                 </div>
             </Container>

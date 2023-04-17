@@ -15,7 +15,7 @@ const TrainingHeader = ({ data }) => {
             <Container className={"flex-1 pt-0"}>
                 <div className={`px-6 pb-24 lg:flex lg:px-8 ${!data?.person ? "justify-center text-center" : "text-left"}`}>
                     <div className={`mx-auto flex max-w-2xl flex-col pt-8 lg:mx-0 lg:max-w-3xl ${!data?.person && "items-center"}`}>
-                        <div className="mt-10 max-w-2xl text-4xl font-black text-white sm:text-6xl">
+                        <div className="mt-10 max-w-2xl text-4xl font-semibold text-white sm:text-6xl">
                             <h1 dangerouslySetInnerHTML={{ __html: data?.tagline }}></h1>
                         </div>
                         {data?.secondaryTagline &&
@@ -25,7 +25,7 @@ const TrainingHeader = ({ data }) => {
                         }
                         <div className="mt-10">
                             <button
-                                className="flex items-center gap-2 bg-sswRed px-5 py-2.5 text-sm font-normal text-white shadow-sm"
+                                className="flex items-center gap-2 rounded bg-sswRed px-5 py-2.5 text-sm font-normal text-white shadow-sm"
                             >
                                 Apply Now
                                 <ImArrowUpRight2 />
@@ -36,10 +36,10 @@ const TrainingHeader = ({ data }) => {
             </Container>
             {data?.person &&
                 <Image
-                    className={classNames(styles["carouselSubject"], "absolute bottom-0 right-12 xl:right-44")}
+                    className={classNames(styles["carouselSubject"], "absolute bottom-0 right-5 xl:right-44")}
                     src={data?.person}
                     alt="person"
-                    width={800}
+                    width={700}
                     height={30}
                 />
             }

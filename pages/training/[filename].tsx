@@ -48,7 +48,7 @@ export default function TrainingPage(
                 <Section color="white">
                     <Container className={"flex-1 pt-0"}>
                         <div className="flex flex-col items-center pb-15 text-center">
-                            <h1>Trusted by more than <span className="text-sswRed">1400+</span> clients in the world</h1>
+                            <h2>Trusted by more than <span className="text-sswRed">1400+</span> clients in the world</h2>
                             <p className="max-w-3xl text-lg font-light text-gray-500">Our software developers & consultants have delivered the best in the business to more than 1,400 clients in 15 countries. Read more</p>
                         </div>
                         <ClientLogos />
