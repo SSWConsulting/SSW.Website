@@ -9,12 +9,12 @@ import styles from "./training.module.css";
 const TrainingHeader = ({ data }) => {
     return (
         <Section
-            className="h-full border-b-8 border-sswRed bg-white bg-cover bg-no-repeat"
+            className="flex h-full flex-col items-center border-b-8 border-sswRed bg-white bg-cover bg-no-repeat lg:block"
             style={{ backgroundImage: `url(${data?.heroBackground})` }}
         >
             <Container className={"flex-1 pt-0"}>
-                <div className={`px-6 pb-24 lg:flex lg:px-8 ${!data?.person ? "justify-center text-center" : "text-left"}`}>
-                    <div className={`mx-auto flex max-w-2xl flex-col pt-8 lg:mx-0 lg:max-w-3xl ${!data?.person && "items-center"}`}>
+                <div className={`px-6 lg:flex lg:px-8 lg:pb-24 ${!data?.person ? "justify-center text-center" : "text-center lg:text-left"}`}>
+                    <div className={`mx-auto flex max-w-2xl flex-col items-center pt-8 lg:mx-0 lg:max-w-3xl lg:items-start ${!data?.person && "md:items-center"}`}>
                         <div className="mt-10 max-w-2xl text-4xl font-semibold text-white sm:text-6xl">
                             <h1 dangerouslySetInnerHTML={{ __html: data?.tagline }}></h1>
                         </div>
@@ -36,11 +36,11 @@ const TrainingHeader = ({ data }) => {
             </Container>
             {data?.person &&
                 <Image
-                    className={classNames(styles["carouselSubject"], "absolute bottom-0 right-5 xl:right-44")}
+                className={classNames(styles["carouselSubject"], "max-w-screen-md sm:max-w-full block lg:absolute lg:bottom-0 lg:right-5 xl:right-44")}
                     src={data?.person}
                     alt="person"
-                    width={700}
-                    height={30}
+                    width={900}
+                    height={50}
                 />
             }
         </Section>

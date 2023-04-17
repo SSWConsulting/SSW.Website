@@ -42,7 +42,7 @@ const VideoCards: FC<{ cardProps: VideoCardProps[], channelLink: string, default
                             <h1 className="my-0 flex flex-col items-center py-0 text-center md:flex-row">
                                 <span className="text-4xl text-white"><span className="text-sswRed">Popular</span> courses from</span>
                                 <Image
-                                    className="ml-2"
+                                    className="mt-2 md:ml-2 md:mt-0"
                                     src={"/images/sswtv-logo.svg"}
                                     alt={"SSW TV"}
                                     height={50}

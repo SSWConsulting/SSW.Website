@@ -10,7 +10,7 @@ export type HorizontalListItemProps = {
 
 const HorizontalListItem: FC<HorizontalListItemProps> = ({ icon, title, content }) => {
     return (
-        <div className="flex items-center">
+        <div className="flex flex-col items-center">
             {icon &&
                 <Image
                     src={icon || ""}
@@ -19,7 +19,7 @@ const HorizontalListItem: FC<HorizontalListItemProps> = ({ icon, title, content 
                     height={75}
                 />
             }
-            <div className="ml-3 flex flex-col justify-start text-left text-gray-500">
+            <div className="mt-3 flex flex-col justify-start text-center text-gray-500">
                 <span className="text-xl font-semibold text-black">{title}</span>
                 <TinaMarkdown content={content} />
             </div>
@@ -34,7 +34,7 @@ const HorizontalList: FC<{ listItemProps: HorizontalListItemProps[] }> = ({
 
     return (
         <>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">{listItems}</div>
+            <div className="grid grid-cols-2 gap-8 md:grid-cols-3 md:gap-4 lg:grid-cols-6">{listItems}</div>
         </>
     );
 }

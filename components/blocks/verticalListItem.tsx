@@ -4,15 +4,17 @@ import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const VerticalListItem = ({ data }) => {
+    const iconScale = data?.iconScale ? data?.iconScale : 1;
+
     return (
         <div className="flex items-center pb-5">
             {data.icon &&
                 <Image
                     src={data.icon || ""}
                     alt={`${data.title} icon`}
-                    width={65}
+                    width={65 * iconScale}
                     height={65}
-                    className="pr-5" 
+                    className="pr-5"
                 />
             }
             <div className="font-helvetica font-bold">
@@ -36,6 +38,11 @@ export const verticalListItemSchema: Template = {
             type: "image",
             label: "Icon",
             name: "icon",
+        },
+        {
+            type: "number",
+            label: "Icon Scale",
+            name: "iconScale",
         }
     ],
 };

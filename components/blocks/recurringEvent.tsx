@@ -46,7 +46,7 @@ const calculateNextRecurringEventDate = (day: DaysOfWeek): Date => {
 const TimeComponent: FC<TimeComponentProps> = ({ time, identifier, className }) => {
     return (
         <div className={`flex flex-col text-white ${className}`}>
-            <div className="flex h-12 w-15 items-center justify-center rounded-t bg-sswRed text-2xl">
+            <div className="flex h-12 w-15 items-center justify-center rounded-t bg-sswRed font-helvetica text-2xl">
                 {time}
             </div>
             <div className="flex h-7 w-15 items-center justify-center rounded-b bg-black">

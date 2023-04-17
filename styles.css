@@ -10,7 +10,7 @@
 	html,
 	body {
 		@apply scroll-smooth;
-        font-family: --var(open-sans-font), Helvetica Neue, Helvetica, sans-serif;
+        font-family: --var(open-sans-font), Helvetica Neue, Helvetica, Arial, sans-serif;
 	}
 
 	h1,
@@ -19,7 +19,7 @@
 	h4,
 	h5 {
 		@apply font-sans leading-tight;
-        font-family: Helvetica Neue, Helvetica, sans-serif;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 	}
 
 	h1 {
