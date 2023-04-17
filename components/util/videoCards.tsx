@@ -38,8 +38,8 @@ const VideoCards: FC<{ cardProps: VideoCardProps[], channelLink: string, default
             <Container size="default">
                 <div className="flex flex-col items-center">
                     <div className="mb-15 flex flex-col items-center">
-                        <div className="mb-7 flex flex-col items-center sm:mb-3 sm:flex-row">
-                            <h1 className="mt-0 flex items-center pt-0">
+                        <div className="mb-7 items-center sm:mb-3 ">
+                            <h1 className="my-0 flex flex-col items-center py-0 text-center md:flex-row">
                                 <span className="text-4xl text-white"><span className="text-sswRed">Popular</span> courses from</span>
                                 <Image
                                     className="ml-2"

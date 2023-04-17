@@ -23,7 +23,7 @@ const TrainingHeader = ({ data }) => {
                                 {data?.secondaryTagline}
                             </p>
                         }
-                        <div className="mt-10">
+                        <div className={`${data?.secondaryTagline ? "mt-10" : ""}`}>
                             <button
                                 className="flex items-center gap-2 rounded bg-sswRed px-5 py-2.5 text-sm font-normal text-white shadow-sm"
                             >

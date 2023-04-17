@@ -16,7 +16,7 @@ const TrainingInformationItem: FC<TrainingInformationItemProps> = ({ header, bod
     return (
         <div className="flex flex-col text-center lg:text-left">
             <h1 className="mt-0 pt-0" dangerouslySetInnerHTML={{ __html: header }}></h1>
-            <div className="w-full text-left sm:w-3/4 lg:w-full">
+            <div className="w-full items-center text-left sm:w-3/4 lg:w-full">
                 <TinaMarkdown
                     components={componentRenderer}
                     content={body}

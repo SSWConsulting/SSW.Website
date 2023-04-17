@@ -109,6 +109,7 @@ export const getStaticProps = async ({ params }) => {
     }
 
     testimonialsResult = testimonialsResult.slice(0, 3);
+    testimonialsResult.map(testimonial => testimonial.rating = 5);
 
 
     return {
