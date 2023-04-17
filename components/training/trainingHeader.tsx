@@ -14,7 +14,7 @@ const TrainingHeader = ({ data }) => {
         >
             <Container className={"flex-1 pt-0"}>
                 <div className={`px-6 lg:flex lg:px-8 lg:pb-24 ${!data?.person ? "justify-center text-center" : "text-center lg:text-left"}`}>
-                    <div className={`mx-auto flex max-w-2xl flex-col items-center pt-8 lg:mx-0 lg:max-w-3xl lg:items-start ${!data?.person && "md:items-center"}`}>
+                    <div className={`mx-auto flex max-w-2xl flex-col items-center pt-8 lg:mx-0 lg:max-w-3xl lg:items-start ${!data?.person && "lg:items-center"}`}>
                         <div className="mt-10 max-w-2xl text-4xl font-semibold text-white sm:text-6xl">
                             <h1 dangerouslySetInnerHTML={{ __html: data?.tagline }}></h1>
                         </div>
