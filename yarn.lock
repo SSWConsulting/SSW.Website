@@ -4068,7 +4068,7 @@ __metadata:
     styled-jsx: ^5.1.2
     tailwindcss: ^3.3.1
     tailwindcss-gradients: ^3.0.0
-    tinacms: ^1.4.5
+    tinacms: ^1.4.6
     typescript: ^5.0.3
     usehooks-ts: ^2.9.1
     yup: ^0.32.11
@@ -4124,9 +4124,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tinacms/toolkit@npm:1.6.3":
-  version: 1.6.3
-  resolution: "@tinacms/toolkit@npm:1.6.3"
+"@tinacms/toolkit@npm:1.6.4":
+  version: 1.6.4
+  resolution: "@tinacms/toolkit@npm:1.6.4"
   dependencies:
     "@floating-ui/dom": ^0.1.7
     "@floating-ui/react-dom": ^0.3.3
@@ -4169,7 +4169,7 @@ __metadata:
     react: ">=16.14"
     react-dom: ">=16.14"
     react-is: ">=16.14.0"
-  checksum: 0cee888bf41b0774319eabfde530b02e921c6406ab252dfeb6b22d894934d312aa018b4b88fdc72380052db5488a7f5fff32b30814af1b390d169237ca00737a
+  checksum: a0ed2b04eaf69c5ca9b43e941a5e4ca996deba574478831e71c966cf4f7af6c048e3b40c2f2cb7f8fda8b579f9c6928ab3173d27b6f1a70a59d27944adb836e9
   languageName: node
   linkType: hard
 
@@ -16348,9 +16348,9 @@ remark-mdx@next:
   languageName: node
   linkType: hard
 
-"tinacms@npm:^1.4.5":
-  version: 1.4.5
-  resolution: "tinacms@npm:1.4.5"
+"tinacms@npm:^1.4.6":
+  version: 1.4.6
+  resolution: "tinacms@npm:1.4.6"
   dependencies:
     "@graphql-inspector/core": ^4.0.0
     "@graphql-tools/relay-operation-optimizer": ^6.4.1
@@ -16359,7 +16359,7 @@ remark-mdx@next:
     "@react-hook/window-size": ^3.0.7
     "@tinacms/schema-tools": 1.4.2
     "@tinacms/sharedctx": 1.0.1
-    "@tinacms/toolkit": 1.6.3
+    "@tinacms/toolkit": 1.6.4
     crypto-js: ^4.0.0
     encoding: 0.1.13
     fetch-ponyfill: ^7.1.0
@@ -16376,7 +16376,7 @@ remark-mdx@next:
     react: ">=16.14.0"
     react-dom: ">=16.14.0"
     react-is: ^16.13.1 || <18.0.0
-  checksum: 6378c862bc50a8e91a81b4a3707aa2f718d5c71718d36ed69ae26abcbd10bbad22f7e5b2e8b942702aad989609036429acfc55cc991372cf34e7b0d7ba887ece
+  checksum: 3b3e396c7de824f174654ff88382d8eaadb8c46121e118f86fe8c13546146ef82c75e18416a95760a18caf79cc144f4b63623c03fd868702fa08e500a3b3d63f
   languageName: node
   linkType: hard
 
