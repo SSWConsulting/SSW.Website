@@ -40,7 +40,7 @@ const VideoCards: FC<{ cardProps: VideoCardProps[], channelLink: string, default
                     <div className="mb-15 flex flex-col items-center">
                         <div className="mb-7 items-center sm:mb-3 ">
                             <h1 className="my-0 flex flex-col items-center py-0 text-center md:flex-row">
-                                <span className="text-4xl text-white"><span className="text-sswRed">Popular</span> courses from</span>
+                                <span className="text-4xl text-white"><span className="text-sswRed">Popular</span> videos from</span>
                                 <Image
                                     className="mt-2 md:ml-2 md:mt-0"
                                     src={"/images/sswtv-logo.svg"}
@@ -50,7 +50,7 @@ const VideoCards: FC<{ cardProps: VideoCardProps[], channelLink: string, default
                                 />
                             </h1>
                         </div>
-                        <span className="text-gray-500">The most popular courses from our developers</span>
+                        <span className="text-gray-500">The most popular videos from our developers</span>
                     </div>
                     <div>
                         <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">{cards}</div>

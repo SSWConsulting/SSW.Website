@@ -37,13 +37,16 @@ export default function TrainingPage(
 
                 <VideoCards cardProps={videoCardProps} channelLink={data.training.videos?.channelLink} defaultChannelLink={data.global.youtubeChannelLink} />
 
+                {/* 
+                    Blocked while waiting for testimonials
+
                 <Section color="white" className="">
                     <Container className={"flex-1 pt-0"}>
                         <div className="mx-auto flex max-w-9xl flex-col items-center">
                             <TestimonialRow testimonialsResult={props.testimonialResult} />
                         </div>
                     </Container>
-                </Section>
+                </Section> */}
 
                 <Section color="white">
                     <Container className={"flex-1 pt-0"}>
