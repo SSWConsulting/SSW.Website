@@ -237,9 +237,23 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const pagesListData = await client.queries.consultingConnection();
+  let aPageListData = await client.queries.consultingConnection();
+  const allPagesListData = aPageListData;
+
+  while (aPageListData.data.consultingConnection.pageInfo.hasNextPage) {
+    const lastCursor =
+      aPageListData.data.consultingConnection.pageInfo.endCursor;
+    aPageListData = await client.queries.consultingConnection({
+      after: lastCursor,
+    });
+
+    allPagesListData.data.consultingConnection.edges.push(
+      ...aPageListData.data.consultingConnection.edges
+    );
+  }
+
   return {
-    paths: pagesListData.data.consultingConnection.edges.map((page) => ({
+    paths: allPagesListData.data.consultingConnection.edges.map((page) => ({
       params: { filename: page.node._sys.filename },
     })),
     fallback: false,
