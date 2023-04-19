@@ -1,0 +1,571 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <script language="javascript" type="text/javascript">
+        //generate email
+        function sendEmail(encodedEmail) {
+            // do the mailto: link
+            location.href = "mailto:" + decodeEmail(encodedEmail) + "?subject=''";
+        }
+
+        //generate email with subject
+        function sendEmail(encodedEmail, emailSubject) {
+            // do the mailto: link
+            location.href = "mailto:" + decodeEmail(encodedEmail) + "?subject=" + emailSubject;
+        }
+
+        // return the decoded email address
+        function decodeEmail(encodedEmail) {
+            // holds the decoded email address
+            var email = "";
+
+            // go through and decode the email address
+            for (i = 0; i < encodedEmail.length; ) {
+                // holds each letter (2 digits)
+                var letter = "";
+                letter = encodedEmail.charAt(i) + encodedEmail.charAt(i + 1);
+
+                // build the real email address
+                email += String.fromCharCode(parseInt(letter, 16));
+                i += 2;
+            }
+
+            return email;
+        }
+
+        // display the email address in the statusbar
+        function displayStatus(encodedEmail) {
+            window.status = "mailto:" + decodeEmail(encodedEmail);
+        }
+
+        // clear the statusbar message
+        function clearStatus() {
+            window.status = "";
+        }
+    </script>
+
+    <title>SSWUpdate - Is your version number meaningful?</title>
+    <style type="text/css">
+        body
+        {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            margin: 0px;
+        }
+        h1
+        {
+            color: #a7a9ac;
+            font-size: 30px;
+        }
+        td, th
+        {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 11px;
+        }
+        .sectionTitle
+        {
+            font-family: "Century Gothic" , Arial, Verdana, Helvetica, sans-serif;
+            font-size: 20px;
+            color: #f25622;
+            font-weight: normal;
+        }
+        .newsTitle
+        {
+            color: #f25622;
+            font-size: 14px;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+        .magazineTitle
+        {
+            font-family: "Century Gothic" , Arial, Helvetica, sans-serif;
+            color: #f25622;
+            font-weight: normal;
+            font-size: 30px;
+        }
+        .section
+        {
+            border-top: 1px #cccccc dotted;
+        }
+        .copyright
+        {
+            font-weight: bold;
+            color: #999999;
+            font-size: 10px;
+        }
+        .proudly
+        {
+            font-weight: normal;
+            font-size: 9px;
+            color: #999999;
+        }
+        .proudly a
+        {
+            color: #999999;
+        }
+        .noborder
+        {
+            border: none;
+        }
+        .footer a
+        {
+            color: gray;
+        }
+        .signature
+        {
+            font-style: italic;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body bgcolor="#e7e7cf">
+    <table width="710" border="0" align="center" cellpadding="0" cellspacing="0" id="container"
+        bgcolor="white" style="border: 1px #cccccc solid; font-family: Verdana, Geneva, sans-serif;">
+        <tr>
+            <td width="100%" bgcolor="#efefef">
+                <table width="98%" border="0" cellspacing="0" cellpadding="15">
+                    <tr>
+                        <td>
+                            <strong>SSWUpdate - </strong>Is your version number meaningful?
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td width="200" valign="middle" bgcolor="#efefef" style="border-top: 4px #f26522 solid;
+                border-left: 1px #cccccc solid;">
+                <img src="/ssw/images/Gold_Certified_Partner74x35.gif" alt="Microsoft Gold Partner Logo"
+                    width="75" height="35" align="right" style="padding: 5px;" />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <table width="100%" border="0" cellspacing="0" cellpadding="20">
+                    <tr>
+                        <td>
+                            <a href="/ssw/Events/SSWTechBreakfast.aspx">
+                                <img src="/ssw/Images/SSWTechBreakfastBanner.gif" alt="SSW Tech Breakfast"
+                                    width="468" height="60" border="0" /></a>
+                            <h1>
+                                [<span class="magazineTitle"> the cutting edge</span> ]</h1>
+                            <p>
+                                G'Day Developers!</p>
+                            <p>
+                                A version number is only good if it conveys useful information. We use a 4 part
+                                version number which is made up of the following:</p>
+                            <ol>
+                                <li>Major version number</li>
+                                <li>Minor version number</li>
+                                <li>Patch number</li>
+                                <li>Build / Changeset number</li>
+                            </ol>
+                            <p>
+                                Each part of the version number has specific meaning:</p>
+                            <ul>
+                                <li>The Major version number should only be changed at the discretion of the product
+                                    owner. This is usually due to addition of completely new areas of functionality
+                                    for the application.</li>
+                                <li>The Minor version number should be incremented for each release and resets to zero
+                                    for a new major version.</li>
+                                <li>The Patch number should be incremented for each hotfix applied in between releases
+                                    and resets to zero each new release.</li>
+                                <li>The Build number should match the TFS changeset number and this increases non-sequentially
+                                    over time.</li>
+                            </ul>
+                            <p>
+                                See more of the <a href="/ssw/Standards/Rules/RulesToBetterSetups.aspx#MeaningfulVersionNumber">
+                                    SSW Rules</a> pages.</p>
+                            <p class="signature">
+                                Adam Cogan</p>
+                            <p>
+                                Got a comment for Adam? <a target="_blank" href="javascript:sendEmail('4164616d436f67616e405353572e636f6d2e6175')"
+                                    onmouseover="javascript:displayStatus('4164616d436f67616e405353572e636f6d2e6175'); return true;"
+                                    onmouseout="javascript:clearStatus(); return true;">Email Adam</a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="newsTitle">
+                                Sydney .NET User Group -
+                                <br />
+                                The best place to learn .NET for free in Sydney</h3>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="210" valign="top">
+                                        <img src="/ssw/NETUG/SSWUpdate/images/UserGroupNov2004.jpg"
+                                            alt=".NET User Group" height="133" width="200" />
+                                    </td>
+                                    <td valign="bottom">
+                                        <h3>
+                                            6 days to go!</h3>
+                                        <p>
+                                            <a href="/ssw/NETUG/Sydney.aspx">Sydney .NET User Group</a><br />
+                                            Wednesday 15th April 2009<br />
+                                            5:45pm - 9:00pm<br />
+                                            Microsoft, Sydney<br />
+                                            1 Epping Road, North Ryde
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>
+                                <strong>Team Foundation Server (TFS) for Successful Project Management by <a href="http://www.adamcogan.com">
+                                    Adam Cogan</a></strong></p>
+                            <p>
+                                Visual Studio Team System (VSTS) and Team Foundation Server (TFS) is the best tool
+                                for Microsoft developers to to have successful projects and a smooth software development
+                                processes.</p>
+                            <p>
+                                Come see the Chief Architect from SSW show you:</p>
+                            <ul>
+                                <li>The right way to use work items</li>
+                                <li>The way to complete a work items and send a &#8216;done&#8217;</li>
+                                <li>Use templates for your standard work items</li>
+                                <li>The extra work items that developers always forget</li>
+                                <li>TFS handles repetitive tasks</li>
+                                <li>What is good and bad about Excel and Project integration</li>
+                                <li>What you can use from the built in reporting as well as the Project portals available
+                                    on SharePoint</li>
+                                <li>The important reports to give your Project Manager</li>
+                                <li>The metrics to bother with</li>
+                            </ul>
+                            <p>
+                                Walk away knowing how to see the project health and progress. VSTS is designed to
+                                help address many of these traditional problems faced by project managers. It does
+                                so by providing a set of integrated tools to help teams improve their software development
+                                activities and to help project managers better support the software development
+                                processes.</p>
+                            <p>
+                                During this session we will cover the lifecycle of creating work items and tracking
+                                of releases using Visual Studio Team System and Team Foundation Server.</p>
+                            <p>
+                                <strong>Visual Studio Team System 2010 by Stephen Godbold by Stephen Godbold</strong></p>
+                            <p>
+                                Software quality is important. There is no debate about it. The question is, how
+                                do we achieve quality? In the application lifecycle management tooling space the
+                                current offerings are disparate at best &#8211; requiring tools on tools to achieve
+                                productivity. Visual Studio Team System 2010 in conjunction with Team Foundation
+                                Server attempts to rectify this by unifying the underlying flow of information between
+                                design, development and test disciplines.
+                            </p>
+                            <p>
+                                In this session Stephen Godbold will highlight the enhancements made to the Team
+                                System offering that will drive up quality through a single source of truth and
+                                a shared application view across teams. He will demonstrate how this relates to
+                                you and your team by walking through the lifecycle of a bug in a typical application
+                                from discovery during testing to analysis, solution design, fix, and quality management
+                                before release.
+                            </p>
+                            <p>
+                                To see more details and RSVP, please visit our <a href="http://www.facebook.com/group.php?gid=12452677980">
+                                    facebook .NET group</a> or our <a href="http://www.linkedin.com/groups?gid=1520317&trk=hb_side_g">
+                                        LinkedIn .NET group</a>.</p>
+                            <br />
+                            <table border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="320" align="center">
+                                        <a href="http://www.facebook.com/group.php?gid=12452677980">
+                                            <img src="/ssw/NETUG/Images/Facebook.gif" alt="facebook" class="noborder" /></a>
+                                    </td>
+                                    <td width="320" align="center">
+                                        <a href="http://www.linkedin.com/groups?gid=1520317&trk=hb_side_g">
+                                            <img src="/ssw/NETUG/Images/LinkedIn.gif" alt="LinkedIn" class="noborder" /></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="newsTitle">
+                                Canberra .NET User Group -
+                                <br />
+                                The best place to learn .NET for free in Canberra</h3>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td valign="top" width="210">
+                                        <img src="/ssw/Images/CanbUG.jpg" alt="Canberra User Group"
+                                            width="200" height="133" />
+                                    </td>
+                                    <td valign="bottom">
+                                        <h3>
+                                            11 days to go!</h3>
+                                        <p>
+                                            <a href="/ssw/NETUG/Canberra.aspx">Canberra .NET Developers User
+                                                Group</a><br />
+                                            Monday 20th April 2009</p>
+                                        <p>
+                                            Lunch: 12:30pm - 1:30pm<br />
+                                            King O'Malley's Irish Pub<br />
+                                            131 City Walk<br />
+                                            Canberra City<br />
+                                            <br />
+                                            Dinner: 4:30pm - 6:00pm
+                                            <br />
+                                            Microsoft Canberra Branch<br />
+                                            Walter Turnbull Building<br />
+                                            Level 2, 44 Sydney Ave
+                                            <br />
+                                            Barton ACT</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>
+                                <strong>Team Foundation Server (TFS) for Successful Project Management by <a href="http://www.adamcogan.com">
+                                    Adam Cogan</a></strong></p>
+                            <p>
+                                Visual Studio Team System (VSTS) and Team Foundation Server (TFS) is the best tool
+                                for Microsoft developers to to have successful projects and a smooth software development
+                                processes.</p>
+                            <p>
+                                Come see the Chief Architect from SSW show you:</p>
+                            <ul>
+                                <li>The right way to use work items</li>
+                                <li>The way to complete a work items and send a &#8216;done&#8217;</li>
+                                <li>Use templates for your standard work items</li>
+                                <li>The extra work items that developers always forget</li>
+                                <li>TFS handles repetitive tasks</li>
+                                <li>What is good and bad about Excel and Project integration</li>
+                                <li>What you can use from the built in reporting as well as the Project portals available
+                                    on SharePoint</li>
+                                <li>The important reports to give your Project Manager</li>
+                                <li>The metrics to bother with</li>
+                            </ul>
+                            <p>
+                                Walk away knowing how to see the project health and progress. VSTS is designed to
+                                help address many of these traditional problems faced by project managers. It does
+                                so by providing a set of integrated tools to help teams improve their software development
+                                activities and to help project managers better support the software development
+                                processes.</p>
+                            <p>
+                                During this session we will cover the lifecycle of creating work items and tracking
+                                of releases using Visual Studio Team System and Team Foundation Server.</p>
+                            <p>
+                                To see more details and RSVP, please visit our <a href="http://www.facebook.com/group.php?gid=31380367562">
+                                    facebook .NET group</a> or our <a href="http://www.linkedin.com/groups?gid=1520387&amp;trk=hb_side_g">
+                                        LinkedIn .NET group</a>.
+                            </p>
+                            <table border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="320" align="center">
+                                        <a href="http://www.facebook.com/group.php?gid=12452677980">
+                                            <img src="/ssw/NETUG/Images/Facebook.gif" alt="facebook" class="noborder" /></a>
+                                    </td>
+                                    <td width="320" align="center">
+                                        <a href="http://www.linkedin.com/groups?gid=1520317&trk=hb_side_g">
+                                            <img src="/ssw/NETUG/Images/LinkedIn.gif" alt="LinkedIn" class="noborder" /></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="newsTitle">
+                                <a name="CanberraDotnetUsergroup" id="A1"></a>UTS SharePoint Course</h3>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td valign="top" style="width: 200px">
+                                        <img src="/ssw/EventsCalendar/Images/uts.jpg" alt="User Group"
+                                            height="133" />
+                                    </td>
+                                    <td valign="bottom">
+                                        <p>
+                                            Every Wednesday<br />
+                                            (Tentative Date)
+                                            <br />
+                                            6:00pm - 9:00pm<br />
+                                            UTS City Campus<br />
+                                            Building 10, Level 3, Room 210<br />
+                                            Sydney<br />
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>
+                                <strong>Managing and Using SharePoint 2007</strong></p>
+                            <p>
+                                This course has a particular emphasis on real world applications and skills. Topics
+                                covered include:</p>
+                            <ul>
+                                <li>What is SharePoint</li>
+                                <li>How to install SharePoint Server 2007</li>
+                                <li>SharePoint Security</li>
+                                <li>SharePoint User Interface</li>
+                                <li>SharePoint Document management</li>
+                                <li>How to Create a Portal</li>
+                                <li>Setting up lists and documents libraries</li>
+                                <li>Advanced SharePoint features</li>
+                                <li>Migrating content into SharePoint</li>
+                                <li>Workflow</li>
+                                <li>SharePoint and Search</li>
+                                <li>SharePoint Business Data Catalogue</li>
+                                <li>SharePoint Administration</li>
+                                <li>Form and Excel services</li>
+                                <li>Web publishing</li>
+                            </ul>
+                            <p>
+                                <strong>Application Details</strong></p>
+                            <p>
+                                To apply and reserve a place please visit the <a href="http://it.uts.edu.au/course/shortcourse/programming/SharePoint.html">
+                                    UTS Managing and Using SharePoint 2007 Course Page</a>
+                            </p>
+                            <p>
+                                Please direct any queries to Elaine Lawrence ph: 9514 1861 or email: <a href="mailto:shortcourses@it.uts.edu.au">
+                                    shortcourses@it.uts.edu.au</a>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="newsTitle">
+                                <a name="featuredproduct" id="featuredproduct"></a>Featured Product: SSW Code Auditor</h3>
+                            <p>
+                                <a href="/ssw/CodeAuditor/">
+                                    <img class="noborder" alt="SSW Code Auditor" src="/ssw/CodeAuditor/Images/productbox.gif"
+                                        align="right" /></a><strong>Automate your Code Reviews with SSW Code Auditor</strong></p>
+                            <p>
+                                Here at SSW, we face the problem of maintaining our standards across nearly five
+                                thousand web pages, over twenty active projects in both Visual Basic (6 and .NET)
+                                and C#. There comes a point where a tool to check our work is needed, this tool
+                                is SSW Code Auditor.</p>
+                            <p>
+                                SSW Code Auditor utilises the power of Regular Expressions to audit your code. This
+                                powerful feature permits the user to write their own set of rules and have different
+                                rules for different projects.</p>
+                            <p>
+                                <a href="/ssw/CodeAuditor/">More on SSW's Code Auditor</a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="newsTitle">
+                                Advertise with SSW</h3>
+                            <p>
+                                If you would like to advertise your product or service with SSW or would like to
+                                find out more about various advertising opportunities, please email your enquiry
+                                to <a href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175')"
+                                    onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                    onmouseout="javascript:clearStatus(); return true;">sophiebelle</a> or call:
+                                +61 2 9953 3000.</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top" style="border-left: 1px #cccccc solid;" bgcolor="#eeeeee">
+                <img alt="SSW Update" src="/SSW/NETUG/SSWUpdate/Images/featureImage02.jpg"
+                    width="200" height="300" class="featureimage" />
+                <table width="100%" border="0" cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td bgcolor="#FFFFFF">
+                            <h3 class="sectionTitle">
+                                April 2009</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="sectionTitle">
+                                Tech Breakfast</h3>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td width="55" valign="top">
+                                        <img src="/ssw/NETUG/SSWUpdate/Images/Icon_techbreakfast.gif"
+                                            alt="Join us for Tech Breakfast" height="46" width="46" />
+                                    </td>
+                                    <td valign="top">
+                                        <strong>15 days to go </strong>
+                                        <p>
+                                            SYDNEY: SharePoint - Yellow Brick Road</p>
+                                        <p style="color: #666666;">
+                                            Friday, 24th April 2009<br />
+                                            8:00am-11:00am</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>
+                                Come and join us as we learn how the largest public SharePoint site in Australia
+                                (www.WorleyParsons.com) got up and running.<br />
+                                Adam Cogan of SSW will share his experience and lessons learnt on this project.
+                                Adam will also show you how to &#8220;sexify&#8220; the look and feel of your website.
+                            </p>
+                            <p align="right">
+                                <a href="/ssw/Shop/BasketInsert.aspx?ProductID=TBSPYB">
+                                    <img src="/ssw/Images/Button_Register_small.gif" alt="Register Now"
+                                        border="0" /></a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="sectionTitle">
+                                Employment</h3>
+                            <p>
+                                Due to the tremendous growth that our business has experienced over the last few
+                                months, we are seeking enthusiastic people to join the SSW team.</p>
+                            <p>
+                                Our Company is based in Neutral Bay which is one of the most elegant and scenic
+                                areas of Sydney. SSW is an Australian owned progressive consulting firm specialising
+                                in building, implementing and maintaining Microsoft .NET software applications.</p>
+                            <p>
+                                We are currently strongly looking for a <strong>SharePoint Developer</strong>.</p>
+                            <p>
+                                We are also currently looking for:</p>
+                            <ul style="font-weight: bold;">
+                                <li>ASP.NET, VB.NET, C#, OLAP, SharePoint Software Developer </li>
+                                <li>Technical BDM in Melbourne, Brisbane, or Canberra</li>
+                                <li>IT Senior Marketing Consultant (part-time)</li>
+                                <li>Project Manager</li>
+                            </ul>
+                            <p>
+                                <a href="/ssw/Employment/Employment.aspx">Read more and Apply NOW...</a></p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table align="center" width="710">
+        <tr>
+            <td class="copyright">
+                Copyright &copy; SSW 1990-2009. All Rights Reserved.
+            </td>
+            <td class="proudly" align="right">
+                Proudly developed by <a href="">SSW Sydney Web Design</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table>
+                    <tr valign="top" class="footer">
+                        <td valign="top" align="center">
+                            <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','=Advertisting')"
+                                onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                onmouseout="javascript:clearStatus(); return true;">Advertise with SSW</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','Unsubscribe')"
+                                onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                onmouseout="javascript:clearStatus(); return true;">Unsubscribe</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" href="/ssw/Events/SSWTechBreakfastprevious.aspx">
+                                Previous SSW Updates</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','Got a Hot Tip to share?')"
+                                onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                onmouseout="javascript:clearStatus(); return true;">Got a Hot Tip to share?</a>
+                            |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','About%20your%20newsletter')"
+                                onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                onmouseout="javascript:clearStatus(); return true;">Got a comment to make?</a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

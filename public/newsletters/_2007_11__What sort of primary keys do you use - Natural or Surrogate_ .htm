@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>SSW Update - What sort of primary keys do you use - Natural or Surrogate?</title>
+<script src="/ssw/include/decodemail.js" type="text/javascript"></script>
+</head>
+
+<body bgcolor="#e7e7cf">
+
+<style type="text/css">
+<!--
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	margin: 0px;
+}
+td, th {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.sectionTitle {
+	font-family: "Century Gothic", Arial, Verdana, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #f25622;
+	font-weight: normal;
+}
+.newsTitle {
+	color: #f25622;
+	font-size: 14px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.magazineTitle {
+	font-family: "Century Gothic", Arial, Helvetica, sans-serif;
+	color: #f25622;
+	font-weight: normal;
+	font-size: 30px;
+}
+.section {
+	border-top: 1px #cccccc dotted;
+}
+.copyright {
+	font-weight: bold;
+	color: #999999;
+	font-size: 10px;
+}
+.proudly {
+	font-weight: normal;
+	font-size: 9px;
+	color: #999999;
+}
+.noborder {
+	border: none;
+}
+}
+.footer a {
+	color: gray;
+}
+-->
+</style>
+<font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+<table width="710" border="0" align="center" cellpadding="0" cellspacing="0" id="container" bgcolor="white" style="border: 1px #cccccc solid;">
+	<tr>
+		<td width="100%" bgcolor="#efefef">
+		<table width="98%" border="0" cellspacing="0" cellpadding="15">
+			<tr>
+				<td><span class="Subject"><strong>SSW Update - </strong>What sort of primary keys do you use - Natural or Surrogate?</span></td>
+			</tr>
+		</table>
+		</td>
+		<td width="200" valign="middle" bgcolor="#efefef" style="border-top: 4px #f26522 solid; border-left: 1px #cccccc solid;">
+		<img src="/ssw/images/Gold_Certified_Partner74x35.gif" alt="Microsoft Gold Partner Logo" width="75" height="35" align="right" style="padding: 5px;" /></td>
+	</tr>
+	<tr>
+		<td valign="top" id="main">
+		<table width="100%" border="0" cellspacing="0" cellpadding="20">
+			<tr>
+				<td>
+				<a href="/ssw/Redirect/sswupdate/2007Nov/TechBreakfast.htm">
+				<img src="/ssw/Images/SSWTechBreakfastBanner.gif" alt="SSW Tech Breakfast" width="468" height="60" border="0" class="banner" /></a>
+				<h1>&nbsp;</h1>
+				<h1 style="color: #a7a9ac; font-size: 30px;">[<span class="magazineTitle"> 
+				the cutting edge</span> ]</h1>
+				<p>G'Day Developers! </p>
+				<p> Now this is a controversial one. Which one do you use?</p>
+				<ol>
+					<li>A "Natural" (or "Intelligent") key is actual data</li>
+					<ul><li>Surname, FirstName, DateOfBirth</li>
+					</ul>
+					<li>An "Acquired Surrogate" (or "Artifical" or "System Generated") key is NOT derived from data eg. Autonumber</li>
+					<ul><li>eg. ClientID 1234</li>
+					<li>eg. ClientID JSKDYF</li>
+					<li>eg. ReceiptID 1234</li>
+					</ul>
+					<li>A "Derived Surrogate" (or "User Provided") key is indirectly derived from data eg. Autonumber</li>
+					<ul><li>eg. ClientID SSW (for SSW)</li>
+					<li>eg. EmpID AJC (for Adam Jon Cogan)</li>
+					<li>eg. ProdID CA (for Code Auditor)</li>
+					</ul>
+				</ol>
+				<p>The problems with Natural Keys:</p>
+				<ul>
+					<li>Because they have a business meaning, if that meaning changes (eg. they change their surname), then that 
+					value NEEDS to changed. Changing a value with data is a little hard - but a lot easier with Cascade Update.</li>
+					<li>The main problem is that the key is large and combined and this needs to be used in all joins</li>
+				</ul>
+				<p>The Problem with Acquired Surrogate Keys:</p>
+				<ul>
+					<li>A surrogate key has no meaning to a user</li>
+					<li>It always requires a join when browsing a child table eg. The InvoiceDetail table</li>
+				</ul>
+				<p>The Problem with Derived Surrogate</p>
+				<ul>
+					<li>The user needs to enter a unique value</li>
+					<li>Because they have a business meaning, if that meaning changes (eg. they change their company name), 
+					then that value MAY NEED to changed. Changing a value with data is a little hard - but a lot easier with 
+					Cascade Update</li>
+					<li>More likely to have a problem with Merge Replication</li>
+				</ul>
+				<p><a href="/ssw/Redirect/SSWUpdate/2007Nov/NewsletterRule.htm">So our recommendations are:</a>
+				<p>Sample code for the SSW Derived Surrogate:
+				<ul>
+					<li><a href="#">GenerateClientID_VBA</a></li>
+					<li><a href="GenerateClientID_SQLServer.txt">GenerateClientID_SQLServer</a></li>
+				</ul>
+				</p>
+				<p>Cheers until next time,
+				<a href="/ssw/Redirect/SSWUpdate/2007Nov/adamprofile.htm">
+				Adam</a><br />
+				SSW Chief Architect and Microsoft Regional Director, Australia&nbsp;
+				</p>
+				<p>Got a comment for Adam?
+				<a onclick="javascript:sendEmailWithoutSubject('6164616d636f67616e407373772e636f6d2e6175',this)" encode="6164616d636f67616e407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('6164616d636f67616e407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer">6164616d636f67616e407373772e636f6d2e6175</a>
+				</p>
+				</td>
+				</tr>
+				<tr>
+				<td class="section">
+				<h3 class="newsTitle">
+				<a name="SydneyDotnetUsergroup" id="SydneyDotnetUsergroup">
+				</a>Sydney .NET User Group - <br />
+				The best place to learn .NET for free in Sydney</h3>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="210" valign="top">
+						<img src="/ssw/Images/SDNUG.jpg" alt="User Group" height="133" width="200" /></td>
+						<td valign="bottom">
+						<h3>2 days to go!</h3>
+						<p>
+						<a href="/ssw/Redirect/SSWUpdate/2007Nov/NewsletterNetUG.htm">
+						Sydney .NET User Group</a><br />
+						Wednesday 21st November 2007<br />
+						5:45pm - 9:00pm<br />
+						Microsoft, Sydney</p>
+						</td>
+					</tr>
+				</table>
+				<p><strong>Visual Studio 2008 and LINQ</strong></p>
+				<p>Come and hear Adam Cogan and Eric Phan present Visual Studio 2008 and LINQ</p>
+				<p>LINQ is the future of ORM on the .NET platform and with the release of Visual Studio 2008 only 
+				months away it will become mainstream. In this presentation you will learn about the different types 
+				of LINQ and how to use LINQ to quickly build data-driven applications.</p>
+				<a onclick="javascript:sendEmailWithSubject('736f7068696562656c6c65407373772e636f6d2e6175','See%20You%20There%20',this)" encode="736f7068696562656c6c65407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('736f7068696562656c6c65407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText="true">
+				See You There!!!</a>|
+				<a onclick="javascript:sendEmailWithSubject('736f7068696562656c6c65407373772e636f6d2e6175','subject=Sorry%20I%20can%27t%20make%20it%20',this)" encode="736f7068696562656c6c65407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('736f7068696562656c6c65407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText="true">
+				Sorry I can't make it</a></td>
+			</tr>
+						<tr>
+				<td class="section" style="height: 165px">
+				<h3 class="newsTitle">
+				<a name="featuredproduct" id="featuredproduct"></a>Featured 
+				Product: SSW .NET Toolkit</h3>
+				<p><a href="/ssw/redirect/sswupdate/2007Nov/Product.htm">
+				<img align="right" class="noborder" alt="SSW .NET Toolkit" 
+				src="/ssw/NetToolkit/Images/productbox2.JPG" /></a> 
+				<strong>Develop applications more efficiently while following best practices with SSW .NET Toolkit</strong></p>
+				<p>The SSW .NET Toolkit is an example of a distributed multi-layer application based on the Microsoft 
+				Northwind database. Designed by Developers for Developers, the real-world source can be used as a model 
+				and basis for custom-designed applications perfect for small and medium enterprise (SME) applications. 
+				Microsoft's examples like Duwamish and IBuySpy are code intensive and marketed towards architects, not 
+				developers. The SSW .NET Toolkit delivers more functionality using less code.</p>
+				
+				<p>
+				<a href="/ssw/redirect/sswupdate/2007Nov/Product.htm">More on 
+				SSW's .NET Toolkit</a> </p>
+				</td>
+			</tr>
+			<tr>
+				<td class="section">
+				<h3 class="newsTitle">Advertise with SSW</h3>
+				<p>If you would like to advertise your product or service with 
+				SSW or would like to find out more about various advertising 
+				opportunities, please email your enquiry to
+				<a onclick="javascript:sendEmailWithoutSubject('736f7068696562656c6c65407373772e636f6d2e6175',this)" encode="736f7068696562656c6c65407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('736f7068696562656c6c65407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer">736f7068696562656c6c65407373772e636f6d2e6175</a><br/>
+				or call: +61 2 9953 3000.</p>
+				</td>
+			</tr>
+		</table>
+		</td>
+		<td valign="top" bgcolor="#eeeeee" id="sidebar" style="border-left: 1px #cccccc solid; border-bottom: 10px #f26522 solid;">
+		<font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+		<img alt="SSW Update" src="/SSW/NETUG/SSWUpdate/Images/newsletterNov.jpg" width="200" height="300" class="featureimage" /></font><table width="100%" border="0" cellpadding="10" cellspacing="0">
+			<tr>
+				<td bgcolor="#FFFFFF">
+				<h3 class="sectionTitle">November 2007</h3>
+				</td>
+			</tr>
+			<tr>
+				<td class="section">
+				<h3 class="sectionTitle">Tech Breakfast</h3>
+				<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+						<td width="55" valign="top">
+						<img src="/ssw/NETUG/SSWUpdate/Images/Icon_techbreakfast.gif" alt="Join us for Tech Breakfast" height="46" width="46" /></td>
+						<td valign="top"><strong>11 days to go </strong>
+						<p> SYDNEY: SharePoint 2007 (MOSS)</p>
+						<p>
+						<font color="#666666" size="1" face="Verdana, Arial, Helvetica, sans-serif">
+						Friday, 30th November 2007<br />
+						8:00am-11:00am</font></p>
+						</td>
+					</tr>
+				</table>
+				<p> In this session, Marten Ataalla will provide an introduction to Microsoft 
+				SharePoint 2007 with the aim of evaluating its effectiveness for Enterprise 
+				Content Management (ECM).</p>
+				<p>He will also look at document and record management scenarios and taking 
+				advantage of the rich new Workflow and Content Management System. </p>
+				<p align="right">
+				<a href="/ssw/Redirect/SSWUpdate/2007Nov/SSWTechBreakfast1.htm">
+				<img src="/ssw/Images/Button_Register_small.gif" alt="Register Now" border="0" /></a></p>
+				<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+						<td width="55" valign="top">
+						<img src="/ssw/NETUG/SSWUpdate/Images/Icon_techbreakfast.gif" alt="Join us for Tech Breakfast" height="46" width="46" /></td>
+						<td valign="top"><strong>67 days to go </strong>
+						<p>SYDNEY: CRM 4 (with WorkFlow)</p>
+						<p><font color="#666666" size="1">Friday, 25th January 2008<br />
+						8:00am-11:00am</font></p>
+						</td>
+					</tr>
+				</table>
+				<p>Adam Cogan will introduce Microsoft CRM which has been designed to provide a complete suite of powerful 
+				marketing, sales, and customer service capabilities, all with a familiar and consistent user experience 
+				based on Microsoft Office and the Microsoft Office Outlook messaging and collaboration client.</p>
+				<p>The session will be broken into the following sections:</p>
+				<ul>
+					<li>Up and Running on Microsoft CRM 4 (aka Titan)</li>
+					<li>Experiences with customizing and extending CRM 4 (aka Titan)</li>
+					<li>Using Workflow in CRM 4 (aka Titan)</li>
+				</ul>
+	
+				<font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+				<p align="right">
+				<a href="/ssw/Redirect/SSWUpdate/2007Nov/SSWTechBreakfast2.htm">
+				<img src="/ssw/Images/Button_Register_small.gif" alt="Register Now" border="0" /></a></p>
+				</font></td>
+			</tr>
+			<tr>
+				<td class="section">
+				<h3 class="sectionTitle">Tips</h3>
+				<p>.NET:<br />
+				<a href="/ssw/Redirect/SSWUpdate/2007Nov/kb1.htm">
+				How do I use Lambda functions to filter a list in C# 3.0?</a><br />
+				-answered by:<br />
+				Eric Phan</p>
+				<p>.NET:<br />
+				<a href="/ssw/Redirect/SSWUpdate/2007Nov/kb2.htm">
+				How do I work offline with TFS powertoy?</a><br />
+				-answered by:<br />
+				Mark Liu</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="section">
+				<h3 class="sectionTitle">Employment</h3>
+				<p>Due to the tremendous growth that our business has 
+				experienced over the last few months, we are seeking 
+				enthusiastic people to join the SSW team.</p>
+				<p>Our Company is based in Neutral Bay which is one of the most 
+				elegant and scenic areas of Sydney. SSW is an Australian owned 
+				progressive consulting firm specialising in building, 
+				implementing and maintaining Microsoft .NET software 
+				applications.</p>
+				<p>We are currently strongly looking for a <strong>Technical BDM
+				</strong>to take initial meetings and manage clients in 
+				Brisbane, Melbourne, or Canberra.</p>
+				<p>We are also currently looking for:</p>
+				<table width="100%" border="0" cellspacing="0" cellpadding="2">
+					<tr>
+						<td valign="top">&#8226;</td>
+						<td width="100%" valign="top"><strong>ASP.NET, VB.NET, 
+						C#, OLAP, SharePoint Software Developer </strong></td>
+					</tr>
+					<tr>
+						<td valign="top">&#8226;</td>
+						<td><strong>Technical BDM in Melbourne, Brisbane, or 
+						Canberra</strong>
+						</td>
+					</tr>
+					<tr>
+						<td valign="top">&#8226;</td>
+						<td valign="top"><strong>IT Senior Marketing Consultant 
+						(part-time)</strong></td>
+					</tr>
+					<tr>
+						<td valign="top">&#8226;</td>
+						<td valign="top"><strong>Project Manager</strong></td>
+					</tr>
+				</table>
+				<p>
+				<a href="/ssw/Redirect/sswupdate/2007Nov/Employment.htm">
+				Read more and Apply NOW...</a></p>
+				</td>
+			</tr>
+		</table>
+&nbsp;</td>
+	</tr>
+</table>
+<table align="center" width="710">
+	<tr>
+		<td class="copyright" style="width: 353px">Copyright ?SSW 1990-2007. All Rights Reserved.</td>
+		<td class="proudly" align="right">Proudly developed by
+		<a href="">SSW Sydney Web Design</a></td>
+	</tr>
+	<tr>
+		<td class="footer" colspan="2">
+		<table>
+			<tr valign="top" class="footer">
+				<td valign="top" align="center">
+				<a onclick="javascript:sendEmailWithSubject('736f7068696562656c6c65407373772e636f6d2e6175','Advertisting',this)" encode="736f7068696562656c6c65407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('736f7068696562656c6c65407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText="true">
+				Advertise with SSW</a>| </td>
+				<td valign="top" align="center">
+				<a onclick="javascript:sendEmailWithSubject('736f7068696562656c6c65407373772e636f6d2e6175','Please%20Unsubscribe%20Me',this)" encode="736f7068696562656c6c65407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('736f7068696562656c6c65407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText="true">
+				Unsubscribe</a> | </td>
+				<td valign="top" align="center">
+				<a target="_blank" href="/ssw/NETUG/SSWUpdatePrevious.aspx">
+				Previous SSW Updates</a> | </td>
+				<td valign="top" align="center">
+				<a onclick="javascript:sendEmailWithSubject('736f7068696562656c6c65407373772e636f6d2e6175','Hot%20Tip',this)" encode="736f7068696562656c6c65407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('736f7068696562656c6c65407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText="true">
+				Got a Hot Tip to share?</a> | </td>
+				<td valign="top" align="center">
+				<a onclick="javascript:sendEmailWithSubject('736f7068696562656c6c65407373772e636f6d2e6175','About%20your%20newsletter',this)" encode="736f7068696562656c6c65407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('736f7068696562656c6c65407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText="true">
+				Got a comment to make?</a></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+</font>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+/****** Object:  StoredProcedure [dbo].[procClientIDGenerate]    Script Date: 11/21/2007 12:30:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER  PROCEDURE [dbo].[procClientIDGenerate]
+@strRandom varchar(6) OUTPUT --the random ID
+AS
+--*************************************************************************************************
+--AUTHOR:         DATE:             VERSION :         COMMENTS:
+--Peter Ahn       07/09/2001        0.1                     For saving client data in GenericForm.asp in SSW site
+--*************************************************************************************************
+-- This Can't be made as UDF because udf doesn't support rand() function
+--EXAmple:
+--	DECLARE @ClientID AS varchar(6)
+--	exec procClientIDGenerate @strRandom=@ClientID OUTPUT
+--	print @ClientID
+
+--ST: This can be made as CLR stored procedure
+--ST: Pre-generated ClientID with TABLELOCK could be better (SQL Server agent job)
+
+DECLARE @intLoop int -- number of characters currently in the ID
+SET @intLoop = 0 
+SET @strRandom = ''
+DECLARE @intRandom int -- used in generating the ID
+SET @intRandom = 1
+-- Create Random ID
+WHILE @intLoop <> 6 -- length of ID currently hardcoded to 8
+BEGIN
+      SET @intRandom = cast((rand() * 43) as int) + 49 -- Random number between 49 and 90
+      -- We only want 1 to 9 and A to Z (caps only)
+      IF ((@intRandom >= 49) And (@intRandom <= 57)) OR ((@intRandom >= 65) And (@intRandom <= 90))
+      BEGIN
+            SET @strRandom = @strRandom + CHAR(@intRandom)
+            SET @intLoop = @intLoop + 1
+      END
+END
+-- Check if ID already exist
+DECLARE @intValid Int
+SET @intValid = 0 
+SET @intValid = (
+      SELECT Count(*)
+      FROM Client
+      WHERE ClientID = @strRandom
+      )
+--IF @intValid = 0
+--BEGIN
+      -- ID doesn't exist
+      -- SELECT @strRandom -- Return the ID
+--END
+--ELSE 
+IF @intValid <> 0
+BEGIN
+      -- ID does exist
+      EXEC procContactIDGenerate @strRandom output
+      -- Generate another ID to return 
+END
+RETURN 0

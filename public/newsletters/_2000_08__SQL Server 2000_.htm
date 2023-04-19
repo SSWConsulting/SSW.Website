@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Access/SQL Server/ASP Newsletter August 2000</title>
+<LINK href="/ssw/Include/ssw.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/ssw/include/decodemail.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<table width="90%">
+  <tr>
+    <td>
+      <p>|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_| 
+      </p>
+      <p>SSW Monthly Newsletter And User Group Reminder 
+      </p>
+      <p>|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_| 
+      </p>
+      <p>This newsletter is a service offered exclusively to clients of Superior 
+        Software for Windows.<br>
+        It offers the latest product news as well as Hot Tips which will help 
+        you get the most from your existing SSW Products and Services. 
+      </p>
+      <p>1. THE ACCESS/ASP/SQL SERVER USERS GROUP SYDNEY, Wednesday 16th August 
+        2000 <br>
+        2. PRODUCT NEWS: SSW DATA RENOVATOR - Data Renovator gets rave review 
+        in Technical Magazine Smart Access<br>
+        3. HOT TIPS FOR DEVELOPERS <br>
+        4. DATABASE NEWS - THE HOME LOAN COMPANY <br>
+        5. ASP Guru? Work at SSW! </p>
+      <p>========================================================================== 
+        <br>
+        1. The Access/ASP/SQL Server User Group <br>
+        Sponsored by Microsoft and SSW Wednesday 16th 
+        August 2000, 5:45 pm ========================================================================== 
+      </p>
+      <p>SQL Server 2000 Tools </p>
+      <p>Overview This Month <br>
+        We have a couple of presentations, the feature one from Dave Lean of Microsoft. 
+        Dave will be presenting a detailed overview of all the tools and their 
+        enhancement in SQL Server 2000. </p>
+      <p>What do I bring along? <br>
+        Just your self.... and a hot tip on any of these topics: <br>
+        * Access <br>
+        * ADP <br>
+        * VB <br>
+        * HTML / Front Page <br>
+        * ADO <br>
+        * ASP<br>
+        * SQL Server or <br>
+        * Hot Sites </p>
+      <p>Tips to get there You can catch the following buses from Town Hall City: 
+        288 - Express to Epping. 290 & 292 - Epping via Crows Nest. Ask your friendly 
+        bus driver to let you off near Microsoft. See the map at www.ssw.com.au/accessUG 
+      </p>
+      <p>========================================================================== 
+        <br>
+        2. SSW DATA RENOVATOR <br>
+        ========================================================================== 
+      </p>
+      <p>Data Renovator gets rave review in Technical Magazine Smart Access by 
+        Garry Robinson www.vb123.com </p>
+      <p>What does he say? <br>
+        "Into this minefield of complexity and valuable live data steps an Access 
+        utility called SSW Data Renovator. The program is designed to transfer 
+        information from an old database structure to a new database structure. 
+        It does this by analyzing both databases and working out what has changed 
+        between the old and the new... "I would recommend the product for a lot 
+        of transfer exercises as it will allow you to concentrate on the job of 
+        getting the newest database design correct... "Thinking back this program 
+        could have saved me about 30 hours in the last year and as the program 
+        is delivered to you fully operational for 50 trials, then you should have 
+        no trouble deciding if it OK for you..." visit http://www.ssw.com.au/ssw/DataRenovator/ 
+        to see how SSW tools can make development that much easier... Get more 
+        info at the web site - http://www.smartaccessnewsletter.com/ or contact 
+        Garry Robinson www.VB123.com. </p>
+      <p>========================================================================= 
+        <br>
+        3. Hot Tips for Developers<br>
+        ========================================================================= 
+      </p>
+      <p>SQL Server <br>
+        The SQL Server 7.0 "Currency" data type stores monetary information to 
+        four decimal places. This can get messy when calculating and storing values 
+        such as GST Amounts. To avoid repeatedly using "CAST" and "CONVERT" and 
+        "ROUND" in stored procedures, you should try using a user-defined datatype. 
+        A data type of decimal (19,2) should do the trick. 19 is the total length 
+        of the number ("precision"), and 2 is the number of decimal places ("scale") 
+        of the number. To make it even easier to use, create a new default of 
+        "(0)" and assign it to the datatype. Using data types and defaults in 
+        this way allows greater consistency between fields in the database. </p>
+      <p> <a onclick="javascript:sendEmailWithoutSubject('696e666f407373772e636f6d2e6175',this)"  encode="696e666f407373772e636f6d2e6175" category="info" process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" >696e666f72407373772e636f6d2e6175 </a>
+ </p>
+      <p>VB/ Access Beginners Tip <br>
+        Don't use If...ElseIf...ElseIf... when a Select Case is more appropriate 
+      </p>
+      <p>Example of code in the OnCurrent Event </p>
+      <p>If DateDiff("d", [LastPay], Date) <= 30 Then <br>
+        Me.Detail.BackColor = vbWhite <br>
+        ElseIf DateDiff("d", [LastPay], Date) < 60 Then <br>
+        Me.Detail.BackColor = vbYellow ElseIf <br>
+        DateDiff("d", [LastPay], Date) > 90 Then <br>
+        Me.Detail.BackColor = vbRed <br>
+        End If </p>
+      <p>This code more efficient and more easily updated with this Select Case... 
+      </p>
+      <p>lngDays = DateDiff("d", [LastPay], Date) <br>
+        Select Case lngDays <br>
+        Case <= 30<br>
+        Me.Detail.BackColor = vbWhite <br>
+        Case 31 to 59 <br>
+        Me.Detail.BackColor = vbYellow <br>
+        Case 60 to 89 <br>
+        Me.Detail.BackColor = vbBlue <br>
+        Case Else <br>
+        Me.Detail.BackColor = vbRed<br>
+        End Select </p>
+      <p>Thanks to Brendan Reynolds brenreyn@indigo.ie </p>
+      <p>Got a hot tip you want to share? Email  <a onclick="javascript:sendEmailWithoutSubject('696e666f407373772e636f6d2e6175',this)"  encode="696e666f407373772e636f6d2e6175" category="info" process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" >696e666f72407373772e636f6d2e6175 </a>
+ </p>
+      <p>========================================================================= 
+        <br>
+        4. DATABASE NEWS - THE HOME LOAN COMPANY ========================================================================= 
+      </p>
+      <p>The Home Loan Company SSW has worked with The Home Loan Company since 
+        1996. The Home Loan Company commissioned SSW to build an Access 97 database 
+        to administrate the businesses customer and financials. Peter Beverley, 
+        The Home Loan Company's General Manager said that "SSW have shown real 
+        expertise in Access, that's why we've kept coming back."</p>
+      <p> For all your home loan needs call the Home Loan Company 61 2 9840 1011 
+      </p>
+      <p>SSW caters for a broad range of clients, from small single person enterprises 
+        to large multinationals. Our skill set is diverse enough to be able to 
+        meet your range of development needs while maintaining a level of expertise 
+        that ensures we know how to answer your questions. SSW has built up serious 
+        expertise in Access over the last 10 years and still consults in pure 
+        Access as well as SQL, VB & ASP. </p>
+      <p>Call SSW 61 2 9953 3000 for all your Access, SQL Server, VB ad ASP development 
+        needs. </p>
+      <p>========================================================================= 
+        <br>
+        5. Love New Technology? Work at SSW <br>
+        ========================================================================= 
+      </p>
+      <p>SSW is looking for an articulate Senior Database Developer focused on 
+        new technology and dedicated to getting the job done. </p>
+      <p>SQL SERVER + Stored Procedures <br>
+        ASP <br>
+        COM+ </p>
+      <p>Attractive Salary will be negotiated. Call us 61 2 9953 3000 to arrange 
+        an interview. </p>
+      <p>======================================================================== 
+        <br>
+        SSW&#8217;s Marketing Team edits this newsletter. We would like your feedback. 
+        If you have a tip you want to share, a website you want us to review or 
+        comments on our service, please write to  <a onclick="javascript:sendEmailWithoutSubject('696e666f407373772e636f6d2e6175',this)"  encode="696e666f407373772e636f6d2e6175" category="info" process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" >696e666f72407373772e636f6d2e6175 </a>
+ or visit us at 
+        www.ssw.com.au SSW Pty Limited Gateway Court, 
+        Suite 10, 81 - 91 Military Road, Neutral Bay, NSW,2089 Phone: +61 2 9953 
+        3000 Fax: +61 2 9953 3105 www.ssw.com.au SSW specialises 
+        in delivering efficient, cost effective solutions for your database or 
+        Internet requirements. Our ability to integrate these functions together 
+        helps companies streamline operations, while making the most of opportunities 
+        presented by the on-line world. If you can't use our services at the moment 
+        but know someone who may, pass on our details.........it could earn you 
+        some easy $$$$! SSW has a guaranteed $150 Spotters Fee for 
+        any referrals we convert into new Database or Web Site development business.</p>
+      <p> ========================================================================== 
+        <br>
+        We're not the people surfing the net, we're the people making the waves. 
+        ========================================================================== 
+      </p>
+      <p>To unsubscribe from this newsletter: <a href="javascript:var e1='%73s%77.%63%6fm&#046;&#097;&#117;',e2='&#109;&#097;&#105;&#108;&#116;&#111;&#058;%20', e3='%69%6e&#102;%6f';var e0=e2+e3+'@'+e1;(window.location?window.location.replace(e0):document.write(e0));" title="&#105;&#110;&#102;&#111;&#064;&#115;&#115;&#119;&#046;&#099;&#111;&#109;&#046;&#097;&#117;">info@s*w.com.au</a><br>
+		<b>
+		<span class = "updatefooter">
+		Powered by SSW Email Merge PRO!</span></p>
+</td>
+  </tr>
+</table>
+</body>
+</html>

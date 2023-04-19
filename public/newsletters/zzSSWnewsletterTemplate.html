@@ -1,0 +1,614 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>SSW Update - Do you know when to use Reporting Services?</title>
+    <link href="/ssw/Images/icoSSW_2014.ico" rel="shortcut icon" />
+
+    <script language="javascript" type="text/javascript">
+        //generate email
+        function sendEmail(encodedEmail) {
+            // do the mailto: link
+            location.href = "mailto:" + decodeEmail(encodedEmail) + "?subject=''";
+        }
+
+        //generate email with subject
+        function sendEmail(encodedEmail, emailSubject) {
+            // do the mailto: link
+            location.href = "mailto:" + decodeEmail(encodedEmail) + "?subject=" + emailSubject;
+        }
+
+        // return the decoded email address
+        function decodeEmail(encodedEmail) {
+            // holds the decoded email address
+            var email = "";
+
+            // go through and decode the email address
+            for (i = 0; i < encodedEmail.length; ) {
+                // holds each letter (2 digits)
+                var letter = "";
+                letter = encodedEmail.charAt(i) + encodedEmail.charAt(i + 1);
+
+                // build the real email address
+                email += String.fromCharCode(parseInt(letter, 16));
+                i += 2;
+            }
+
+            return email;
+        }
+
+        // display the email address in the statusbar
+        function displayStatus(encodedEmail) {
+            window.status = "mailto:" + decodeEmail(encodedEmail);
+        }
+
+        // clear the statusbar message
+        function clearStatus() {
+            window.status = "";
+        }
+    </script>
+
+</head>
+<body bgcolor="#e7e7cf">
+    <style type="text/css">
+        <!
+        -- body
+        {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            margin: 0px;
+        }
+        td, th
+        {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 11px;
+        }
+        .sectionTitle
+        {
+            font-family: "Century Gothic" , Arial, Verdana, Helvetica, sans-serif;
+            font-size: 20px;
+            color: #f25622;
+            font-weight: normal;
+        }
+        .newsTitle
+        {
+            color: #f25622;
+            font-size: 14px;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+        .magazineTitle
+        {
+            font-family: "Century Gothic" , Arial, Helvetica, sans-serif;
+            color: #f25622;
+            font-weight: normal;
+            font-size: 30px;
+        }
+        .section
+        {
+            border-top: 1px #cccccc dotted;
+        }
+        .copyright
+        {
+            font-weight: bold;
+            color: #999999;
+            font-size: 10px;
+        }
+        .proudly
+        {
+            font-weight: normal;
+            font-size: 9px;
+            color: #999999;
+        }
+        .footer a
+        {
+            color: gray;
+        }
+        -- ></style>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+        <table width="710" border="0" align="center" cellpadding="0" cellspacing="0" id="container"
+            bgcolor="white" style="border: 1px #cccccc solid;">
+            <tr>
+                <td width="100%" bgcolor="#efefef">
+                    <table width="98%" border="0" cellspacing="0" cellpadding="15">
+                        <tr>
+                            <td>
+                                <strong><span class="Subject">SSW Update - Do you know when to use Reporting Services?</span></strong>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="200" valign="middle" bgcolor="#efefef" style="border-top: 4px #f26522 solid;
+                    border-left: 1px #cccccc solid;">
+                    <img src="/ssw/images/WAS_NOT_IN_TFS/Gold_Certified_Partner74x35.gif" alt="Microsoft Gold Partner Logo"
+                        width="75" height="35" align="right" style="padding: 5px;" />
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" id="main">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="20">
+                        <tr>
+                            <td>
+                                <a href="/ssw/Redirect/sswupdate/2006nov/TechBreakfast.htm">
+                                    <img src="/ssw/Images/SSWTechBreakfastBanner.gif" alt="SSW Tech Breakfast"
+                                        width="468" height="60" border="0" class="banner" /></a><h1>
+                                            &nbsp;</h1>
+                                <h1 style="color: #a7a9ac; font-size: 30px;">
+                                    [<span class="magazineTitle"> the cutting edge</span> ]</h1>
+                                <p>
+                                    G&#39;Day Developers!
+                                </p>
+                                <!--this table is using for free lunch event-->
+                                <table width="605" border="0" cellpadding="0" cellspacing="0" id="uni-banner">
+                                    <tr>
+                                        <td width="120" height="120">
+                                            <img src="/ssw/images/icon_free.gif" alt="free" />
+                                        </td>
+                                        <td>
+                                            <h1 style="color: #ED1B23; font-size: 40px; font-family: Verdana; font-weight: 100;">
+                                                Lunch + Presentation</h1>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <h2 style="color: #95969A; font-size: 24px; text-align: center; font-weight: 100;
+                                                margin-top: 5px; margin-bottom: 10px;">
+                                                "What Microsoft offers *you* and your Career"</h2>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <strong>Do you know when to use Reporting Services?</strong>
+                                <p>
+                                    Like any solution, Reporting Services has its pros and cons. From our experience,
+                                    we have discovered these things about Reporting Services:
+                                </p>
+                                <p>
+                                    <strong>Cons</strong></p>
+                                <ul>
+                                    <li>Parameters - you are forced to use built-in controls</li>
+                                    <li>Query string - when you change the parameters and refresh a report, the values do
+                                        not appear directly in the query string, making it hard to copy/paste URLs</li>
+                                    <li>Can&#39;t separate SQL into a strongly-typed dataset or middle-tier object like
+                                        in ASP.NET</li>
+                                    <li>There are potential difficulties with the deployment of RS reports and the exposing
+                                        of them. However, once we have the infrastructure...</li>
+                                </ul>
+                                <p>
+                                    <strong>Pros</strong></p>
+                                <ul>
+                                    <li>You can develop <strong>read only</strong> reports faster in Reporting Services
+                                        than ASP.NET</li>
+                                    <li>Maintenance with RS is easier as in most cases you don&#39;t have to write any code</li>
+                                    <li>Flexibility with groupings and totals is easier ?in ASP.NET you would need to iterate
+                                        through the DataSet keeping variables with the totals</li>
+                                    <li>Parameters are built-in ?in ASP.NET there is code</li>
+                                    <li>Drilldown interactivity ?in ASP.NET you need to code up a treeview</li>
+                                    <li>Users can have reports emailed to them automatically on a schedule</li>
+                                    <li>Users can export natively to PDF and XLS, plus a variety of other popular formats</li>
+                                </ul>
+                                <p>
+                                    So in conclusion, if you will only ever need 1 report, go with ASP.NET - it is easier
+                                    to get up and running. If you plan to have more than one report, use Reporting Services
+                                    - it&#39;s worth the time to set-up.
+                                </p>
+                                <p>
+                                    For a more detailed comparison between reporting solutions, take a look at our <a
+                                        href="/ssw/Standards/developerDotNet/guidelinesforreportingwebclient.aspx">
+                                        Guidelines for Report Solutions - Web Clients</a>.
+                                </p>
+                                <p>
+                                    <br />
+                                    <a target="_blank" href="/ssw/Redirect/sswupdate/2006oct/NewsletterRule.htm">
+                                        More on Rules to Better Microsoft SQL Reporting Services...</a></p>
+                                <p>
+                                    Cheers until next time,<br />
+                                    <br />
+                                    <a target="_blank" href="/ssw/employees/employeesprofile.aspx?EmpID=AC">
+                                        Adam</a><br />
+                                    SSW Chief Architect and Microsoft Regional Director, Australia
+                                </p>
+                                <p>
+                                    Got a comment for Adam? <a target="_blank" href="javascript:sendEmail('6164616d636f67616e405353572e636f6d2e6175')"
+                                        onmouseover="javascript:displayStatus('6164616d636f67616e405353572e636f6d2e6175'); return true;"
+                                        onmouseout="javascript:clearStatus(); return true;">Email Adam</a>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="newsTitle">
+                                    <font color="f25622"><a name="Sydney.NetUserGroup" id="Sydney.NetUserGroup"></a>Sydney.NetUserGroup
+                                        -
+                                        <br />
+                                        The best place to learn .NET for free in Sydney</font></h3>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="210" valign="top">
+                                            <img src="/ssw/Images/SDNUG.jpg" alt="User Group" height="133"
+                                                width="200" />
+                                        </td>
+                                        <td valign="bottom">
+                                            <h3>
+                                                20 days to go!</h3>
+                                            <p>
+                                                <a href="/ssw/Redirect/SSWUpdate/2006oct/NewsletterNetUG.htm"
+                                                    target="_blank">Sydney .NET User Group</a><br />
+                                                Wednesday 18th October 2006<br />
+                                                5:45pm - 9:00pm<br />
+                                                Microsoft, Sydney</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    <strong>Software as a Service - Catching the Long Tail</strong></p>
+                                <p>
+                                    <strong></strong>The guest speaker Nigel Watson from Microsoft Australia will be
+                                    talking about how from small start-ups to large enteprises, software as a service
+                                    (SaaS) is changing how software is designed, developed and consumed. This session
+                                    discusses the business drivers behind SaaS, and then looks at how these in turn
+                                    drive the architecture of SaaS solutions as opposed to &#39;on-premise&#39; software.
+                                </p>
+                                <p>
+                                    Along the way, he will discuss the technical issues that any current or prospective
+                                    SaaS vendor will need to grapple with in order to successfully deliver software
+                                    as a service.</p>
+                                <p>
+                                    <strong>Atlas</strong>
+                                </p>
+                                <p>
+                                    <a href="/ssw/Redirect/sswupdate/2006oct/TimKremerProfile.htm"
+                                        title="/ssw/Redirect/sswupdate/2006oct/TimKremerProfile.htm">
+                                        Tim Kremer</a> will continue to discuss the Microsoft Ajax Library from last
+                                    month&#39;s session and will further reinforce its benefits and features such as:</p>
+                                <p>
+                                    - Ability to integrate cross-browser client script libraries with the ASP.NET 2.0
+                                    server-based development framework.<br />
+                                    <br />
+                                    - Atlas&#39; ability to take advantage of AJAX techniques on the web, thus enabling
+                                    you to create ASP.NET pages with a rich, responsive UI and server communication.<br />
+                                    <br />
+                                    - Due to Atlas&#39; extension of ASP.NET, it is fully integrated with server-based
+                                    services.</p>
+                                <p>
+                                    Throughout his presentation Tim will take a one step further by providing you with
+                                    worked examples of the new client libraries as well as using the server side libraries
+                                    to add ajax functionality to your ASP.NET existing applications.</p>
+                                <p>
+                                    <a href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','See%20You%20There')"
+                                        onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                        onmouseout="javascript:clearStatus(); return true;" target="_blank">See You There!!!</a>
+                                    | <a href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','Sorry%20I%20can%27t%20make%20it')"
+                                        onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                        onmouseout="javascript:clearStatus(); return true;" target="_blank">Sorry I can&#39;t
+                                        make it</a></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="newsTitle">
+                                    <font color="f25622"><a name="GainTheKnowledgeAndSkills" id="GainTheKnowledgeAndSkills">
+                                    </a>Gain the knowledge and skills required to deploy and manage reports using Microsoft
+                                        Reporting Services</font></h3>
+                                <p>
+                                    <strong>Microsoft SQL Server 2005 Reporting Services - 2 Day Program</strong></p>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="210" valign="top">
+                                            <img src="/ssw/Images/SydneyCBDMedium.jpg" alt="Sydney" width="200"
+                                                height="131" />
+                                        </td>
+                                        <td valign="bottom">
+                                            <h3>
+                                                8 days to go!</h3>
+                                            <p>
+                                                <a href="/ssw/Redirect/SSWUpdate/2006oct/ReportingServices.htm"
+                                                    target="_blank">Microsoft SQL Server 2005
+                                                    <br />
+                                                    Reporting Services</a>
+                                                <br />
+                                                Monday 16 &amp; Tuesday 17 October 2006<br />
+                                                9:00am - 5:00pm<strong><br />
+                                                </strong>Location: SSW, Sydney</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    This 2 day course has been specifically designed by the Sydney based SQL Guru and
+                                    MS Regional Director Adam Cogan. Throughout this course Adam will cover the most
+                                    popular reporting technologies in the industry, comprehend the new Report Designer,
+                                    the important differences between Access Reports and Reporting Services and much
+                                    more.
+                                </p>
+                                <p>
+                                    There is also a practical side to this course as you will get to be exposed to real
+                                    life examples of Microsoft&#39;s landscape of enterprise reporting and learn the
+                                    right and wrong ways of developing reports.&nbsp;
+                                </p>
+                                <p>
+                                    To find out more about the course&#39;s content, please see <a href="/ssw/Redirect/SSWUpdate/2006oct/ReportingServices.htm"
+                                        target="_blank">More on Reporting Services Training</a> <a href="/ssw/Redirect/SSWUpdate/2006oct/RegisterReportingServices.htm">
+                                        </a>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="newsTitle">
+                                    <font color="#f25622"><a name="sharpoint" id="sharpoint"></a>Featured Service: SharePoint
+                                        2007 </font>
+                                </h3>
+                                <p>
+                                    <strong>Microsoft&#39;s CMS solution</strong></p>
+                                <p>
+                                    <img src="/ssw/Company/Images/SharePoint2007Logo.gif" alt="SharePoint 2007"
+                                        width="200" height="61" align="right" class="noborder" />Microsoft Office SharePoint
+                                    Server 2007 improves organisational effectiveness by providing one unified suite
+                                    of enterprise-scale applications. This satisfies diverse business-critical needs
+                                    such as; managing content and business processes, simplifying how people work together
+                                    across boundaries, and enabling better informed decision-making.
+                                </p>
+                                <p>
+                                    <a target="_blank" href="/ssw/Redirect/sswupdate/2006oct/Product.htm">
+                                        More on SSW Microsoft SharePoint 2007... </a>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                        </tr>
+                    </table>
+                    <a href="/ssw/Redirect/sswupdate/2006nov/TechBreakfast.htm">
+                    </a>
+                </td>
+                <td valign="top" bgcolor="#eeeeee" id="sidebar" style="border-left: 1px #cccccc solid;
+                    border-bottom: 10px #f26522 solid;">
+                    <img alt="Feature Image" src="/SSW/NETUG/SSWUpdate/Images/newsletterNov.jpg"
+                        width="200" height="300" class="featureimage" />
+                    <table width="100%" border="0" cellpadding="10" cellspacing="0">
+                        <tr>
+                            <td bgcolor="#FFFFFF">
+                                <h3 class="sectionTitle">
+                                    October 2006</h3>
+                                <table width="100%" border="0" cellspacing="3" cellpadding="2">
+                                    <tr>
+                                        <td valign="top">
+                                            &#8226;
+                                        </td>
+                                        <td width="100%" valign="top">
+                                           The Cutting Edge
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top">
+                                            &#8226;
+                                        </td>
+                                        <td valign="top">
+                                            <a href="#Sydney.NetUserGroup">Sydney .NET User Group</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top">
+                                            &#8226;
+                                        </td>
+                                        <td valign="top">
+                                          Gain the knowledge and skills
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top">
+                                            &#8226;
+                                        </td>
+                                        <td valign="top">
+                                           Earning more per hour as a developer
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top">
+                                            &#8226;
+                                        </td>
+                                        <td valign="top">
+                                            <a href="#sharpoint">Featured Service: SharePoint 2007</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="sectionTitle">
+                                    Tech Breakfast</h3>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="55" valign="top">
+                                            <img src="/ssw/NETUG/SSWUpdate/Images//Icon_SQL.gif" alt="SQL" width="46"
+                                                height="46" />
+                                        </td>
+                                        <td valign="top">
+                                            <strong>8 days to go </strong>
+                                            <p class="title">
+                                                SQL Server 2005: Advanced Indexing Strategies</p>
+                                            <p class="datetime">
+                                                <font color="#666666" size="1">Friday, 6th Oct. 2006<br />
+                                                    8:00am-11:00am</font></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    In this session we look at a fast-paced collection of indexing tips and tricks based
+                                    on an already optimised base table structure. How you create your base table - as
+                                    well as cluster it - has a big impact on that table&#39;s performance.</p>
+                                <p align="right">
+                                    <a target="_blank" href="/ssw/Redirect/SSWUpdate/2006oct/SSWTechBreakfast1.htm">
+                                        <img src="/ssw/Images/Button_Register_small.gif" alt="Register Now" width="60"
+                                            height="21" border="0" /></a></p>
+                                <p>
+                                    &nbsp;</p>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="55" valign="top">
+                                            <span class="eventinfo">
+                                                <img src="/ssw/NETUG/SSWUpdate/Images/Icon_expression.gif" alt="Expression"
+                                                    width="46" height="46" /></span>
+                                        </td>
+                                        <td valign="top">
+                                            <strong>29 days to go </strong>
+                                            <p class="title">
+                                                Introduction to Microsoft Expression
+                                            </p>
+                                            <p class="datetime">
+                                                <font color="#666666" size="1">Friday, 6th Oct. 2006<br />
+                                                    8:00am-11:00am</font></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    A practical session for the IT Industry exposing attendees to the new Microsoft
+                                    Expression framework.</p>
+                                <p align="right">
+                                    <a target="_blank" href="/ssw/Redirect/SSWUpdate/2006oct/SSWTechBreakfast1.htm">
+                                        <img src="/ssw/Images/Button_Register_small.gif" alt="Register Now" width="60"
+                                            height="21" border="0" /></a></p>
+                                <p>
+                                    &nbsp;</p>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="55" valign="top">
+                                            <span class="eventinfo">
+                                                <img src="/ssw/NETUG/SSWUpdate/Images//Icon_sucProject.gif" alt="Successful Project"
+                                                    width="46" height="46" /></span>
+                                        </td>
+                                        <td valign="top">
+                                            <strong>57 days to go </strong>
+                                            <p class="title">
+                                                Sydney: Rules to Successful Projects (Part A &amp; B)
+                                            </p>
+                                            <p class="datetime">
+                                                <font color="#666666" size="1">Friday, 6th Oct. 2006<br />
+                                                    8:00am-11:00am</font></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    What makes a good software development consultancy? What sets one company completely
+                                    above another? What makes a project completely successful? In this special Sydney
+                                    session, Adam will look at each of these questions and give you the answers you
+                                    are looking for!</p>
+                                <p align="right">
+                                    <a target="_blank" href="/ssw/Redirect/SSWUpdate/2006oct/SSWTechBreakfast1.htm">
+                                        <img src="/ssw/Images/Button_Register_small.gif" alt="Register Now" width="60"
+                                            height="21" border="0" /></a></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="sectionTitle">
+                                    Latest News</h3>
+                                <p>
+                                    SSW Consulting Completes 2 year financial modeling project for Commonwealth Bank
+                                    of Australia</p>
+                                <p>
+                                    <a target="_blank" href="/ssw/Redirect/SSWUpdate/2006oct/News.htm">
+                                        More SSW News</a>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="sectionTitle">
+                                    Employment</h3>
+                                <p>
+                                    Due to the tremendous growth that our business has experienced over the last few
+                                    months, we are seeking enthusiastic people to join the SSW team.</p>
+                                <p>
+                                    Our Company is based in Neutral Bay which is one of the most elegant and scenic
+                                    areas of Sydney. SSW is an Australian owned progressive consulting firm specialising
+                                    in building, implementing and maintaining Microsoft .NET software applications.</p>
+                                <p>
+                                    We are currently looking for:</p>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="2">
+                                    <tr>
+                                        <td valign="top">
+                                            &#8226;
+                                        </td>
+                                        <td width="100%" valign="top">
+                                            <strong>.NET (and OLAP) Developer</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top">
+                                            &#8226;
+                                        </td>
+                                        <td valign="top">
+                                            <strong>IT Marketing Administrator</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top">
+                                            &#8226;
+                                        </td>
+                                        <td valign="top">
+                                            <strong>Office Manager</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top">
+                                            &#8226;
+                                        </td>
+                                        <td valign="top">
+                                            <strong>Project Manager</strong>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    <a target="_blank" href="/ssw/Redirect/sswupdate/2006oct/Employment.htm">
+                                        Read more and Apply NOW...</a></p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </font>
+    <table align="center" width="710">
+        <tr>
+            <td class="copyright">
+                Copyright ?SSW 1990-2006. All Rights Reserved.
+            </td>
+            <td class="proudly" align="right">
+                Proudly developed by SSW Sydney Web Designers
+            </td>
+        </tr>
+        <tr>
+            <td class="footer" colspan="2">
+                <table>
+                    <tr valign="top" class="footer">
+                        <td valign="top" align="center">
+                            <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','=Advertisting')"
+                                onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                onmouseout="javascript:clearStatus(); return true;">Advertise with SSW</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','Unsubscribe')"
+                                onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                onmouseout="javascript:clearStatus(); return true;">Unsubscribe</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" href="/ssw/Events/SSWTechBreakfastprevious.aspx">
+                                Previous SSW Updates</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','Got a Hot Tip to share?')"
+                                onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                onmouseout="javascript:clearStatus(); return true;">Got a Hot Tip to share?</a>
+                            |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','About%20your%20newsletter')"
+                                onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                onmouseout="javascript:clearStatus(); return true;">Got a comment to make?</a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

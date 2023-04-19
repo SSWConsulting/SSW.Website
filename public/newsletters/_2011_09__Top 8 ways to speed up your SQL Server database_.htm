@@ -1,0 +1,586 @@
+﻿ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    
+<title>SSW Update - Top 8 ways to speed up your SQL Server database</title>
+    
+ 
+    <script src="/ssw/Include/jquery.js" type="text/javascript"></script>
+
+    <script src="/ssw/Include/decodeMailNew.js" type="text/javascript"></script>
+ 
+</head>
+
+<body bgcolor="#e7e7cf">
+<style type="text/css">
+    body {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; margin: 0px;}
+	h1 {color: #a7a9ac; font-size: 30px;}
+    td, th {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;}    
+    .sectionTitle {font-family: "Century Gothic", Arial, Verdana, Helvetica, sans-serif; font-size: 20px; color: #ff0000;	font-weight: normal;}
+    .newsTitle {color: #ff0000; font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif;}        
+    .magazineTitle {font-family: "Century Gothic", Arial, Helvetica, sans-serif; color: #ff0000; font-weight: normal; font-size: 30px;}
+    .section {border-top: 1px #cccccc dotted;}        
+    .copyright {font-weight: bold; color: #999999;	font-size: 10px;}     
+    .proudly {font-weight: normal; font-size: 9px; color: #999999;}
+	.proudly a {color:#999999;}
+    .noborder {border: none;}
+    .footer a {color: gray;}
+	.signature {font-style:italic; font-weight:bold;}
+	dl dd {background-repeat: no-repeat;background-color: transparent;padding: 0 0 10px 20px;margin-left: 10px;}
+    .goodCode dd {background-image: url(/ssw/Standards/Rules/images/Good.gif);}
+    .badCode dd {background-image: url(/ssw/Standards/Rules/images/Bad.gif);}
+    dl dt {background: #eee; border-width: 1px 1px 1px 4px; border-color: #aaa; border-style: solid; padding: 10px; margin: 5px; font-family: Courier;}
+    img.background {background: #eee; border-width: 1px 1px 1px 4px; border-color: #aaa; border-style: solid; padding: 10px; margin: 15px; font-family: Courier;}
+    
+table.BrainQuest {font-family:Verdana, Geneva, sans-serif; border: 0px white solid; border-top: 4px #B6B6B6 solid; font-size:11px; width:465px;  padding: 0; margin: 0;}
+table.BrainQuest tr.header td {background-color: #F5f5f5; color: #444444; font-size: 14px; padding: 5px 0px 10px 4px; margin: 0; border-top: 2px white solid; border-bottom: 2px white solid;}
+table.BrainQuest tr.header td span {color: #aaaaaa; font-size: 10px; text-transform:uppercase;}
+table.BrainQuest td.first {margin: 0; background:#E5E5E5 url(/ssw/images/schedulebg.png) no-repeat scroll right center; height:27px; overflow:hidden; padding:6px 8px 7px 4px; white-space:nowrap; width:100px; font-weight:bold; color: #aaa; font-size: 10px;}
+table.BrainQuest td.first span {color: Black;}
+table.BrainQuest td img {border: none;}
+table.BrainQuest td.button {text-align: center;}
+table.BrainQuest td.button a {border: none;}
+    
+    #right td.button {text-align: left;
+               padding-left: 10px;}
+    
+</style>
+
+<table width="710" border="0" align="center" cellpadding="0" cellspacing="0" id="container" bgcolor="white" style="border: 1px #cccccc solid; font-family:Verdana, Geneva, sans-serif;">
+	<tr>
+		<td width="100%" bgcolor="#efefef">
+		<table width="98%" border="0" cellspacing="0" cellpadding="15">
+			<tr>
+				<td><strong>SSW Update - Top 8 ways to speed up your SQL Server database</strong></td>
+			</tr>
+		</table>
+		</td>
+		
+        <td valign="middle" bgcolor="#efefef" style="border-top: 4px #f26522 solid; border-left: 1px #cccccc solid; width: 202px;">
+		    <img src="/ssw/Images/SSWLogo/thumb_www_ssw_com_au.gif" alt="Microsoft Gold Partner Logo"  align="right" style="padding: 5px;" />
+        </td>
+	</tr>
+	<tr>
+		<td valign="top">
+		<table width="100%" border="0" cellspacing="0" cellpadding="20">
+			<tr>
+				<td>
+				<a href="/ssw/Events/Brain-Quest-VisualStudio2010-TFS2010-SharePoint2010.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">
+				<img src="/ssw/Images/banner_brainquest.jpg" alt=SSW Brain Quest" width="468" border="0" /></a>
+
+				<h1>[<span class="magazineTitle">the cutting edge</span> ]</h1>
+				<p><b>G'day Developers!</b></p>
+                <p>
+                 Well it has been a busy month for our fearless leader, Adam, who has spent the past few weeks away at the Microsoft Partner Conference followed by Tech Ed and then the Build Conference in Anaheim and now he is 
+                 off to run scrum training in LA, New York and Toronto!  </p>
+                <p>In the meantime, the SSW team has also been busy - our production team have been working tirelessly on SSW TV as well as a new corporate video and our first free webinar was such a huge success this month that we have 
+                decided to run two more next month. We will be repeating our SharePoint Webinar for those of you who missed it as well as a brand new webinar about SQL Server.</p>
+                
+                <p>Keep reading for more details on our webinars and all our other news.</p>
+                                                             
+                <p>The SSW Team</p>
+                <br /><br />
+                <p>
+			    Got a comment for Adam? 
+			    <a href="mailto:adamcogan@ssw.com.au?subject=Newsletter">Email Adam</a>
+			    </p>
+                <p><a href="http://www.adamcogan.com/?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">Adam's blog</a>
+                </p>
+		</td>
+        </tr>
+         <tr>
+			<td class="section">
+				<h3 class="newsTitle">
+				    <a name="SSW.Webinar - Top 8 ways to speed up your SQL Server database" id="A3"></a>SSW.Webinar - Top 8 ways to speed up your SQL Server database</h3>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+                        <tr>
+						    <td style="width: 210px;" valign="top">
+						     <a href="/ssw/Training/Top-8-ways-to-speed-up-SQL-Server.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011"> <img src="/ssw/NETUG/SSWUpdate/Images/sqllogo.png" alt="SQL" width="200" height="133"/></a>
+                            </td>
+						    <td valign="bottom">
+						        <h3>20 days to go!</h3>
+                                <p>    
+						            <a href="/ssw/Training/Top-8-ways-to-speed-up-SQL-Server.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">
+                                        Top 8 ways to speed up your SQL Server database</a> <br /><br />
+						                11am - 12pm<br/>
+                                        Thursday 6th Oct
+						        </p>
+						    </td>
+					    </tr>
+				    </tbody>
+                </table>
+		    <p>
+                <strong>Top 8 ways to speed up your SQL Server database</strong>
+            </p>
+                     
+            <p>This webinar will provide the attendee with:
+            <ul>
+            <li>An understanding of the major contributors to poor SQL Server performance</li>
+            <li>The key ways to overcome these challenges</li>
+            </ul>
+            </p>
+
+            <p>Webinar Outline:</p>
+            <p>
+            <ul>
+            <li>Top 8 ways to improve the performance of your SQL Server Database</li>
+            <li>How to prevent performance issues from occurring</li>
+            <li>How to resolve these issues after it goes into production</li>
+            <li>How write code that ensures your SQL server remains healthy</li>
+            <li>Steps an administrator can take to return your SQL server to optimal health</li>
+            <li>Question and Answer time</li>
+            </ul>
+            </p>
+            <p><b>Target Audience:</b> Software developers, SQL Server Admins, IT managers</p>
+            <p>Date: Thursday 6th October 2011<br />
+            Location: Online Webinar </p>
+           
+           <a href="/ssw/Training/Top-8-ways-to-speed-up-SQL-Server.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">
+           <img src="/ssw/Images/Button_Register.gif?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011" alt="Book Now"/></a></td>
+           
+ 	        <p>
+            </p>
+
+			 </td>
+             </tr>
+         
+         
+         <tr>
+			<td class="section">
+				<h3 class="newsTitle">
+				    <a name="SSW.Webinar - SharePoint 101 for Business" id="A5"></a>SSW.Webinar - SharePoint 101 for Business</h3>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+                        <tr>
+						    <td style="width: 210px;" valign="top">
+						     <a href="/ssw/Training/SharePointForBusiness.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011"> <img src="/ssw/NETUG/SSWUpdate/Images/SharePoint logo.png" alt="SharePoint" width="200" height="133"/></a>
+                            </td>
+						    <td valign="bottom">
+						        <h3>18 days to go!</h3>
+                                <p>    
+						            <a href="/ssw/Training/SharePointForBusiness.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">
+                                        SharePoint 101 for Business Webinar</a> <br /><br />
+						                11am - 12pm<br/>
+                                        Tuesday 4th Oct
+						        </p>
+						    </td>
+					    </tr>
+				    </tbody>
+                </table>
+		    <p>
+                <strong>SharePoint 101 for Business Webinar By Marlon Marescia</strong>
+            </p>
+            <p> <font color="red">We had such a huge positive response to our first webinar that we decided to run the session again with the addition of an interactive Q&A time at the end of the session. </font> </p>
+            
+            <p>This webinar is aimed at business decision makers who want to know why and how their business should be using SharePoint.</p>
+
+            <p>The topics covered will be: </p>
+            <p>
+            <ol>
+            <li>Why should your business use SharePoint 2010?</li>
+            <li>Differences between the different SharePoint licenses</li>
+            <li>An explanation of how common business scenarios are solved using the SharePoint feature set</li>
+            <li>SharePoint in regards to implementation, costs and timelines</li>
+            <li>SharePoint Development - What if I need more than SharePoint's out of the box functionality?</li>
+            </ol>
+            </p>
+            <p><b>Target Audience:</b> Business and IT Decision Makers</p>
+            <p>Date: Tuesday 4th October 2011<br />
+            Location: Online Webinar </p>
+           
+           <a href="/ssw/Training/SharePointForBusiness.aspx#Register">
+           <img src="/ssw/Images/Button_Register.gif" alt="Book Now"/></a></td>
+           
+ 	        <p>
+            </p>
+
+			 </td>
+             </tr>
+		              <!--<tr>
+				<td class="section">
+				<h3 class="newsTitle">
+				<a name="Coming Soon" id="A3"></a>Coming Soon.....</h3>
+                <p style="text-align:center;">
+                <img src="/ssw/NETUG/SSWUpdate/Images/SSWTV_logo-1.jpg" alt="SSW TV"/>
+				</p>
+                <p>SSW TV will feature a variety of online video training courses and webinars. Content will include SharePoint, CRM, Business Intelligence, .NET, 
+                Scrum and more!
+                </p>
+			  </td>
+			</tr>-->
+
+         <tr>
+			<td class="section">
+				<h3 class="newsTitle">
+				    <a name="SSWBrainQuest" id="A2"></a>SSW Brain Quest -<br/>
+				    Team Foundation Server and SharePoint 2010</h3>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+                        <tr>
+						    <td style="width: 210px;" valign="top">
+						        <img src="/ssw/NETUG/SSWUpdate/Images/TFS_SP.jpg" alt="SharePoint" width="200" height="133"/>
+                            </td>
+						    <td valign="bottom">
+						        <h3>Last Session for 2011</h3>
+                                <p>    
+						            <a href="/ssw/Events/VisualStudio2010_TFS2010_SharePoint2010.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">
+                                        SSW Brain Quest - Sydney</a> <br /><br />
+						                9:00am - 6:00pm<br/>
+                                        Sydney - Mon 31 Oct 2011
+						        </p>
+						    </td>
+					    </tr>
+				    </tbody>
+                </table>
+		    <p>
+                <strong>Team Foundation Server and SharePoint 2010 by <a href="https://sharepoint.ssw.com.au/AboutUs/Employees/Pages/Adam.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">
+                Adam Cogan</a></strong>
+            </p>
+            <p>
+            This training course brings developers up-to-speed on the new features and benefits of Visual Studio 2010 Ultimate, 
+            Team Foundation Server 2010 and SharePoint 2010. With detailed insight into project management, requirements gathering, user 
+            stories, testing, workflow, document management and Office integration, attendees will leave with a strong understanding of how 
+            to embrace TFS 2010 and SharePoint 2010 in their organization.
+            </p>
+            <p> The 1 day course if broken up into 2 sessions which can be booked individually or you can enrol in the full day event:
+            <ul>
+                <li>Session 1: Team Foundation Server 2010</li>
+                <li>Session 2: SharePoint 2010 </li>
+            </ul>
+            </p>
+ 	        <p><a href="/ssw/Events/VisualStudio2010_TFS2010_SharePoint2010.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">
+               For full details on each session please visit our website</a>
+            </p>
+
+			<table class="BrainQuest" cellpadding="0" cellspacing="0">
+              <tr class="header">
+                <td><span>Price (ex GST)</span><br /></td>
+                <td><span>TFS 2010</span><br />$110</td>
+                <td><span>SharePoint</span><br />$110</td>
+                <td><span>FULL DAY</span><br />$190</td>
+                <td><span>HOSTED</span><br /></td>
+              </tr>
+              
+              <tr>
+                <td class="first"><span>Sydney</span><br />31 OCT 2011</td>
+                <td class="button"><a href="/ssw/Shop/BasketInsert.aspx?ProductID=BQTF17?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011"><img src="/ssw/images/button_miniBookNow.gif" alt="Book Now"/></a></td>
+                <td class="button"><a href="/ssw/Shop/BasketInsert.aspx?ProductID=BQSP17?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011"><img src="/ssw/images/button_miniBookNow.gif" alt="Book Now"/></a></td>
+                <td class="button"><a href="/ssw/Shop/BasketInsert.aspx?ProductID=BQFD17?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011"><img src="/ssw/images/button_miniBookNow.gif" alt="Book Now"/></a></td>
+                <td><a href="/ssw/Events/Brain-Quest-VisualStudio2010-TFS2010-SharePoint2010.aspx#Sydney?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">
+                SSW<br />Sydney</a></td>
+              </tr>
+              <tr>
+                <td class="first"><span>Brisbane</span><br />16 JAN 2012</td>
+                <td class="button"><a href="/ssw/Shop/BasketInsert.aspx?ProductID=BQTF18?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011"><img src="/ssw/images/button_miniBookNow.gif" alt="Book Now"/></a></td>
+                <td class="button"><a href="/ssw/Shop/BasketInsert.aspx?ProductID=BQSP18?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011"><img src="/ssw/images/button_miniBookNow.gif" alt="Book Now"/></a></td>
+                <td class="button"><a href="/ssw/Shop/BasketInsert.aspx?ProductID=BQFD18?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011"><img src="/ssw/images/button_miniBookNow.gif" alt="Book Now"/></a></td>
+                <td><a href="/ssw/Events/Brain-Quest-VisualStudio2010-TFS2010-SharePoint2010.aspx#Sydney?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">
+                    Microsoft<br />Brisbane</a></td>
+              </tr>
+              </table>
+             </td>
+             </tr>
+
+
+
+
+		<tr>
+			<td class="section">
+				<h3 class="newsTitle">Sydney .NET User Group - <br />
+				    The best place to learn .NET for free in Sydney</h3>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="210" valign="top">
+						    <img src="/ssw/NETUG/SSWUpdate/Images/UserGroupNov2004.jpg" alt="User Group" width="150" />
+                        </td>
+						<td valign="bottom">
+						<h3>6 Days to go!</h3>
+						<p>
+						    <a href="/ssw/NETUG/Sydney.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">
+						    Sydney .NET User Group</a><br />
+                            Wednesday 21st Sep 2011<br />
+                            5:45pm - 9:00pm<br />
+                       <strong>Temporary New Location</strong><br />
+						    SSW Head Office<br />
+						    Gateway Court, Suite 13<br /> 
+                            81-91 Military Road, Neutral Bay
+                        </p>
+					  </td>
+					</tr>
+				</table>
+		
+        <p><strong>Building Hybrid Social Apps with Dynamics CRM, Windows Azure & Twitter</strong></p>
+        <p>Speaker: George Doubinski</p>
+        <p>This talk explores how you to leverage cloud technologies to develop advanced business solutions with CRM. Attend to see how to develop solutions that pull together Microsoft Dynamics CRM 2011, Windows Azure 
+        platform and social media tools. This session will cover how you to architect business solutions that harness the power of the cloud regardless of whether you intend to deploy Microsoft Dynamics CRM as on on-premise 
+        server or as a cloud service. See how Twitter can be part of your enterprise solution as a private broadcast notification tool.</p>
+                
+        <p>
+            To see more details and RSVP, please visit our <a href="http://www.facebook.com/groups/NetUG">
+    facebook .NET group
+</a> or our <a href="http://www.linkedin.com/groupItem?view=&gid=1520317&type=member&item=70973634&qid=a49546b4-ef17-4e56-9307-338ec5a45066&goback=%2Egmp_1520317%3Futm_source%3DSeptember%2BNewsletter%2B2011%2Egde_1520317_member_57324340%2Egmp_1520317">
+            LinkedIn .NET group</a>.</p><br />
+		
+            <table border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="320" align="center"><a href="http://www.facebook.com/groups/NetUG/?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011"><img src="/ssw/NETUG/Images/Facebook.gif" alt="facebook" class="noborder" /></a></td>
+                <td width="320" align="center"><a href="http://www.linkedin.com/groupItem?view=&gid=1520317&type=member&item=57324340&qid=c93f614f-81a1-414e-88df-ece68f627e86&goback=%2Egmp_1520317?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011"><img src="/ssw/NETUG/Images/LinkedIn.gif" alt="LinkedIn" class="noborder" /></a></td>
+            </tr>
+            </table>
+            <center><h3>Sydney .Net User Group proudly sponsored by: </h3><br /> 
+            <a href="http://www.telerik.com/?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011"><img src="/ssw/netug/sswupdate/images/Telerik Logo.jpg" alt="Telerik Logo" width="150" height="50" /></a></center>
+			</td>
+            
+		</tr>
+  	<tr>
+			<td class="section">
+				<h3 class="newsTitle">Newcastle Coders Group - 6th Anniversary</h3>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="210" valign="top">
+						    <img src="/ssw/Employees/Images/AdamCogan_Profil_2.jpg" alt="Adam Cogan" width="150" />
+                        </td>
+						<td valign="bottom">
+						<h3>1 month to go!</h3>
+						<p>
+						    <a href="http://www.ncg.asn.au/?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">
+						    Newcastle Coders Group</a><br />
+                            Wednesday 2nd NOV 2011<br />
+                            6pm - 9:00pm<br />
+                            Newcastle University<br />
+						</p>
+					  </td>
+					</tr>
+				</table>
+		<p><strong>Interface Useability</strong></p>
+        <p>Speaker: Adam Cogan</p>
+        <p>
+            Interface design is not something that belongs solely in the world of Apple. Your website and applications can all benefit greatly from an understanding of how your users might navigate your product. <br />
+            Unfortunately for developers, interface usability is something of an afterthought, making your otherwise perfect application difficult to operate.<br />
+            In this session, get real world examples of good and bad usability from Adam. Bring along your websites and applications and undergo the Adam Cogan crash test!<br />
+            The evening will commence with a detailed discussion of good interface design and usability, and then move onto an analysis of good and bad site examples.<br />
+            The night will finish with an open floor workshop to discuss user submitted sites and applications, and workshop improvements for attendees.</p>
+            <p>
+            <b>Please send your submissions to <a href="mailto:adamcogan@ssw.com.au?subject=Newcastle Coders Group">Adam</a> prior so they can be scheduled into the discussion.</b> 
+            </p>
+       
+        <p>To see more details and RSVP, please visit the Newcastle Coders Group <a href="http://www.ncg.asn.au/?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">Website</a></p>
+            
+      </td>
+      </tr>
+                  <tr>
+			<td class="section">
+				<h3 class="newsTitle">
+				<a name="ScrumTrainingCourse" id="A1"></a>Scrum Training Course</h3>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						<td style="width: 210px;" valign="top">
+						<img src="/ssw/Training/images/Scrum_circle.jpg" alt="BI" width="200" height="133"/></td>
+						<td valign="bottom">
+						
+						<p><a href="/SSW/events/scrum-training-course.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">
+						    Scrum Training Course</a><br/>
+                  		<b><del>Cost: $3,995 + GST 
+                        <br /></del></b>
+                         <b>  Sale Price $2,995 + GST</b> <br />
+
+                		</p>
+						</td>
+					</tr>
+				</tbody></table>
+				<p>This 5 day course is normally $3,995 + GST however we are offering a 25% off the full price for all remaining 2011 courses.</p>
+                
+                <p><strong>
+					Overview
+				</strong></p>
+				<p>
+					This Scrum Developer course is a unique and intensive five-day experience for software developers. 
+					The course guides teams on how to turn product requirements into potentially shippable increments 
+					of software using the Scrum framework, Visual Studio 2010, and modern software engineering practices. 
+					Attendees will work in self-organizing, self-managing teams using a common instance of Visual Studio 
+					Team Foundation Server 2010 to achieve this goal.
+				</p>
+                <p> FINAL SCRUM TRAINING COURSES FOR 2011 ANNOUNCED</p>
+               		
+               		
+			<table class="BrainQuest" id="right" cellpadding="0" cellspacing="0">
+
+             
+              <tr>
+               <td class="first"><span>New York</span><br />26 SEP 2011</td>
+                <td class="button"><a href="/ssw/Events/Scrum-Training-Course.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011"><img src="/ssw/images/button_miniBookNow.gif" alt="Book Now"/></a></td>
+<!--            </tr>
+            <tr>-->
+                <td class="first"><span>Perth</span><br />14 NOV 2011</td>
+                <td class="button"><a href="/ssw/Events/Scrum-Training-Course.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011"><img src="/ssw/images/button_miniBookNow.gif" alt="Book Now"/></a></td>
+            </tr>
+            <tr>
+               <td class="first"><span>Toronto</span><br />3 OCT 2011</td>
+                <td class="button"><a href="/ssw/Events/Scrum-Training-Course.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011"><img src="/ssw/images/button_miniBookNow.gif" alt="Book Now"/></a></td>
+  <!--          </tr>
+            <tr>-->
+                <td class="first"><span>Brisbane</span><br />21 NOV 2011</td>
+                <td class="button"><a href="/ssw/Events/Scrum-Training-Course.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011"><img src="/ssw/images/button_miniBookNow.gif" alt="Book Now"/></a></td>
+            </tr>              
+            <tr>
+                <td class="first"><span>Sydney</span><br />7 NOV 2011</td>
+                <td class="button"><a href="/ssw/Events/Scrum-Training-Course.aspx??utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011"><img src="/ssw/images/button_miniBookNow.gif" alt="Book Now"/></a></td>
+   <!--           </tr>           
+             <tr>-->
+                <td class="first"><span>Melbourne</span><br />28 NOV 2011</td>
+                <td class="button"><a href="/ssw/Events/Scrum-Training-Course.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011"><img src="/ssw/images/button_miniBookNow.gif" alt="Book Now"/></a></td>
+            </tr>
+
+
+            </table>
+ 	 	
+		<br />	<a href="/SSW/events/scrum-training-course.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">
+				Find out more and Register</a>
+				</td>
+			</tr>
+
+      <tr>
+				<td class="section">
+				<h3 class="newsTitle">
+				<a name="Welcome to SSW" id="A4"></a>Welcome to SSW</h3>
+                
+				<p>SSW would like to welcome a new employee to the team this month:
+                </p>
+                <br />
+                
+                <strong>Mehmet Ozdemir</strong><br />
+                <strong>Developer</strong><br />
+                <p><img class="noborder" alt="Raj" src="/ssw/NETUG/SSWUpdate/Images/Memmette4.JPG" width="150" height="100" align="right" />
+				</p>
+                Mehmet brings to SSW clients some pretty high-end experience with reporting solutions (SQL Server, Cognos ReportNet, Hyperion), databases (SQL Server, Oracle, 
+                Teradata) and master data management (Oracle DRM).<br /> He is equally comfortable with small or very large projects, whether it’s writing a few reports to work 
+                out how many loans were processed during previous business day or tuning SQL Server stored procedures or rolling out server infrastructure 
+                an OLAP cube with a complete reporting and analytics suite. Mehmet loves rolling up his sleeves and getting a great solution shipped.
+
+                </td>
+			    </tr>
+<!--            <tr>
+                <td>                
+				
+               
+				<strong>Titus Maclaren</strong><br />
+                <strong>Assistant to Multimedia Producer</strong><br /></p>
+                <p><img class="noborder" alt="Titus" src="/ssw/NETUG/SSWUpdate/Images/Titus_Mugshot_Main_1.jpeg" width="150" height="100" align="right" />
+                </p><p>
+                Brother of Ulysses Maclaren (SSW General Manager), Titus joins our film & TV department this month, having recently graduated from Bond University. 
+                Titus will be bringing advertising and comedy expertise to the team to continue improving the corporate image and marketing tools.
+                </p>
+                </td>
+		     </tr>
+-->     
+                <tr>
+				<td class="section">
+				<h3 class="newsTitle">
+				<a name="featuredproduct" id="featuredproduct"></a>Featured Product: SharePoint 2010</h3>
+                <h4>With the 2011 SharePoint conference only a few weeks away, we decided to make SharePoint 2010 our feature product this month</h4>
+                <p><a href="http://www.msSharePointconference.com/Pages/default.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">
+				<img class="noborder" alt="SharePoint 2010" src="/SSW/NETUG/Images/SharePointConf2011.jpg" width="150" height="150" align="left" style="padding: 10px;" /></a>
+				</p>
+				
+                
+                <p>​Microsoft SharePoint 2010 makes it easier for people to work together. Using SharePoint 2010, your people can set-up Web sites to share information with others, manage documents 
+                from start to finish, and publish reports to help everyone make better decisions.</p>
+                <p>Organizations are extremely good at accumulating data. Mostly in the form of documents and records, this data is often haphazardly located across the organization, and poorly integrated into document 
+                processes.<br />
+                SharePoint 2010 aims to improve the situation, by storing all documents & records in a centralized system. They can store every version of a document, allow you to enforce information management policies, 
+                and improve efficiency by automating common business processes.
+                </p>
+
+               
+				<p><a href="http://SharePoint.microsoft.com/en-us/Pages/default.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">
+                    More on Microsoft SharePoint 2010</a></p>
+                <p><a href="http://www.msSharePointconference.com/Pages/default.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">
+                    More on the 2011 SharePoint Conference</a></p>
+                </td>
+			</tr>
+            <tr>
+				<td class="section">
+				<h3 class="newsTitle">Advertise with SSW</h3>
+				<p>
+				    If you would like to advertise your product or service with SSW or would like to 
+                    find out more about various advertising opportunities, please email your enquiry 
+                    to <a href="mailto:info@ssw.com.au?subject=Newsletter">info@ssw.com.au</a> or call: +61 2 9953 3000.</p>
+				</td>
+			</tr>
+		</table>
+
+       
+	  </td>
+		<td valign="top" style="border-left: 1px #cccccc solid; width: 202px;" bgcolor="#eeeeee">
+		<img alt="SSW Update" src="/SSW/NETUG/SSWUpdate/Images/Newsletter logo.png" width="200" height="300" class="featureimage" />
+        
+        <table width="100%" border="0" cellpadding="10" cellspacing="0">
+			<tr>
+				<td bgcolor="#FFFFFF">
+				<h3 class="sectionTitle">September 2011</h3>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="section">
+				<h3 class="sectionTitle">Employment</h3>
+                <p> <b>SharePoint Developer</b></p>
+                <p>Are you looking to establish a career working with the latest software technology for a large range of great organisations? Do you enjoy managing 
+                your own clients in a fun, fast-paced and dynamic environment?<br /> 
+                SSW has been the leading Microsoft technology company in Sydney for 21 years. We require an enthusiastic SharePoint developer to start ASAP. 
+                </p>
+                <p><a href="/ssw/Employment/Employment.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">
+				    Read more and Apply NOW...</a></p>
+			    <p> <b>Senior Designer</b></p>
+                <p>SSW is looking for a highly talented front-end Web Designer who is passionate about creating great standards-based Web 2.0 sites. This role requires 
+                the understanding of how people behave in certain contexts and how various stimuli and circumstances can affect individual thought processes in social 
+                and professional situations. <br />
+                You will be working with both creative designers and the development team in various challenging projects. This role requires someone who is able to 
+                communicate effectively with both disciplines together with creating aesthetically pleasing design prototypes, including graphic design, site navigation, 
+                and layout of content. 
+                </p>
+				
+	            <p><a href="/ssw/Employment/Employment.aspx?utm_source=Newsletter&utm_medium=Email&utm_campaign=September2011">
+				    Read more and Apply NOW...</a></p>
+				</td>
+			</tr>
+		</table>
+        </td>
+	</tr>
+</table>
+<table align="center" width="710">
+	<tr>
+		<td class="copyright">Copyright © SSW 1990-2010. All Rights Reserved.</td>
+		<td class="proudly" align="right">Proudly developed by <a href="">
+		    SSW Sydney Web Design</a></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+		<table align="center">
+			<tr valign="top" class="footer">
+                        <td valign="top" align="center">
+                            <a href="mailto:info@ssw.com.au?subject=Advertisting">Advertise with SSW</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            Unsubscribe |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" href="/ssw/NETUG/SSWUpdatePrevious.aspx">
+                                Previous SSW Updates</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a href="mailto:info@ssw.com.au?subject=Got a Hot Tip to share?">Got a Hot Tip to share?</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a href="mailto:info@ssw.com.au?subject=Got a comment to make?">Got a comment to make?</a>
+                        </td>
+                  </tr>
+		</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

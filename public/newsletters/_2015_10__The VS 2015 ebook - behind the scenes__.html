@@ -1,0 +1,1350 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <meta name="format-detection" content="telephone=no">
+
+    <title>SSW Update: The VS 2015 ebook: behind the scenes</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,600italic,700italic,800,800italic' rel='stylesheet' type='text/css'>
+
+    <style type="text/css">
+        /* Outlook link fix */
+
+        #outlook a {
+            padding: 0;
+        }
+
+        /* Hotmail background &amp; line height fixes */
+
+        .ExternalClass {
+            width: 100% !important;
+        }
+
+            .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font,
+            .ExternalClass td, .ExternalClass div {
+                line-height: 100%;
+            }
+
+        /* Image borders &amp; formatting */
+
+        img {
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+            margin: 0 0 0 0 !important;
+        }
+
+        a img {
+            border: none;
+            margin: 0 0 0 0 !important;
+        }
+
+        /* Re-style iPhone automatic links (eg. phone numbers) */
+
+        .applelinks a {
+            color: #222222;
+            text-decoration: none;
+        }
+
+        /* Hotmail symbol fix for mobile devices */
+
+        .ExternalClass img[class^=Emoji] {
+            width: 10px !important;
+            height: 10px !important;
+            display: inline !important;
+        }
+
+        .tpl-content {
+            display: inline !important;
+        }
+
+
+
+        /* Media Query for mobile */
+
+
+
+        @media screen and (max-width: 639px) {
+
+            table[class=wrap100], td[class=wrap100] {
+                width: 100% !important;
+            }
+
+            table[class=wrap1001], td[class=wrap1001] {
+                width: 96% !important;
+                float: none !important;
+                margin: 0 auto !important;
+            }
+
+            table[class=wrap1002], td[class=wrap1002] {
+                width: 132px !important;
+                float: none !important;
+                margin: 0 auto !important;
+                display: inline-block !important;
+            }
+
+
+
+            img[class=resize_img] {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            td[class=split_cont] {
+                width: 100% !important;
+                display: inline-block !important;
+                text-align: center !important;
+            }
+
+            td[class=font_resize] {
+                font-size: 22px !important;
+                line-height: normal !important;
+                float: none !important;
+                text-align: center !important;
+            }
+
+            td[class=split_cont7] {
+                width: 100% !important;
+                display: inline-block !important;
+            }
+
+            td[class=split_cont8] {
+                display: none !important;
+            }
+        }
+
+        @media screen and (max-width: 599px) {
+
+            table[class=wrap1001], td[class=wrap1001] {
+                width: 93% !important;
+                float: none !important;
+                margin: 0 auto !important;
+            }
+
+            table[class=wrap1003], td[class=wrap1003] {
+                width: 130px !important;
+                float: none !important;
+                margin: 0 auto !important;
+            }
+
+            td[class=split_cont1] {
+                width: 100% !important;
+                display: inline-block !important;
+                text-align: center !important;
+            }
+
+            td[class=split_cont2] {
+                display: none !important;
+            }
+
+            td[class=split_cont3] {
+                width: 100% !important;
+                display: inline-block !important;
+                text-align: center !important;
+                height: auto !important;
+                padding: 15px 0 0 0 !important;
+            }
+
+            td[class=split_cont4] {
+                width: 100% !important;
+                display: inline-block !important;
+                text-align: center !important;
+                height: auto !important;
+                padding: 10px 0 15px 0 !important;
+            }
+        }
+
+        @media screen and (max-width: 439px) {
+
+            td[class=split_cont5] {
+                width: 100% !important;
+                display: inline-block !important;
+                text-align: center !important;
+                height: auto !important;
+                padding: 10px 0 15px 0 !important;
+            }
+
+            td[class=split_cont6] {
+                width: 100% !important;
+                display: inline-block !important;
+                height: auto !important;
+                padding: 10px 0 15px 0 !important;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+
+            /* This resizes tables and images to be 100% wide with a proportionate width */
+
+
+
+        }
+
+        a:hover {
+            text-decoration: underline !important;
+        }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+
+
+<body style="padding:0; margin:0; -webkit-text-size-adjust: 100%;">
+
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+
+        <tr>
+
+            <td align="center" valign="top" bgcolor="#333333">
+                <table width="640" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap100">
+
+                    <tr>
+
+                        <td class="split_cont3" height="69" align="left" valign="middle" bgcolor="#ffffff" style="padding:0 0 0 20px;"><a href="https://www.ssw.com.au/ssw/NETUG/SSWUpdate/_2015_10__The VS 2015 ebook - behind the scenes__.html?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/ssw-logo.png" width="80" height="42" alt="logo" border="0"></a></td>
+
+                        <td class="split_cont4" height="69" align="right" valign="middle" bgcolor="#ffffff" style="font-family: 'Open Sans', sans-serif; font-size:24px; color:#cc4141; font-weight:300; text-transform:uppercase; line-height:14px; padding:0 16px 0 0;"><strong style="color:#999999;font-size:30px;">[</strong>the cutting edge<strong style="color:#999999; font-size:30px;">]</strong></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td class="split_cont3" height="35" align="left" valign="middle" bgcolor="#444444" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#ffffff; font-weight:normal; line-height:14px; padding:0 0 0 20px; text-transform:uppercase;">The VS 2015 ebook: behind the scenes</td>
+
+                        <td class="split_cont4" height="35" align="right" valign="middle" bgcolor="#444444" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#ffffff; font-weight:normal; line-height:14px; padding:0 20px 0 0; text-transform:uppercase;"><strong>October 2015  | </strong>  <a href="https://www.ssw.com.au/ssw/NETUG/SSWUpdate/_2015_10__The VS 2015 ebook - behind the scenes__.html?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook" style="color:#448ccb; text-decoration:none;">View Online</a></td>
+
+                    </tr>
+
+                </table>
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="center" valign="top" bgcolor="#cccccc">
+                <table width="640" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap100">
+
+                    <tr>
+
+                        <td align="left" valign="top"><a href="http://www.adamcogan.com/2015/10/14/the-vs-2015-ebook-behind-the-scenes/?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/VS-2015-Newsletter-banner.jpg" width="640" height="200" alt="banner" class="resize_img" border="0" align="left"></a></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td height="25" align="left" valign="top" bgcolor="#ffffff">&nbsp;</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td align="center" valign="top" bgcolor="#ffffff">
+                            <table width="580" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap1001">
+
+                                <tr>
+
+                                    <td align="left" valign="top" style="font-family: 'Open Sans', sans-serif; font-size:30px; color:#cc4141; font-weight:300; padding:0 0px 10px 0;">The VS 2015 ebook: behind the scenes</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#444444; font-weight:normal; padding:0 0 15px 0; line-height:17px;">In August SSW released its first ever ebook, entitled "The Visual Studio 2015 (Anti-inflammatory) Check List". We set out to create something that was unique, visually pleasing, and straight to the point, so you get the top 5 pieces of information quickly. From conception to delivery, it was a collaborative labour of love, and the outcome was so beautiful that even I was surprised.</td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+
+                    </tr>
+
+                </table>
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="center" valign="top" bgcolor="#bbbbbb">
+                <table width="640" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap100">
+
+                    <tr>
+
+                        <td align="center" valign="top" bgcolor="#ffffff">
+                            <table width="580" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap1001">
+
+
+
+                                <tr>
+
+                                    <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#444444; font-weight:normal; padding:13px 0 0px 0; line-height:17px;">
+                                        <img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/VS-2015-ebook-pages.jpg" /> <br />
+                                    <b>Figure: This beautifully designed ebook informs developers of 5 cool new things within Visual Studio 2015</b></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#444444; font-weight:normal; padding:13px 0 0px 0; line-height:17px;">Marketing can be a bit of a black art. It's everywhere and is a necessity in the business world, but it's hard to do well. We're always looking for new ways to reach our audience, which is where the ebook comes in. We released it for free, as part of our marketing for our <a href="https://www.ssw.com.au/ssw/Events/Training/Brain-Quest-VS2015-ASP-NET-vNext-DevOps.aspx" style="color:#448ccb; text-decoration:none;">Brain Quest course</a>. </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#444444; font-weight:normal; padding:13px 0 0px 0; line-height:17px;"><a href="http://www.adamcogan.com/2015/10/14/the-vs-2015-ebook-behind-the-scenes/?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook" style="color:#448ccb; text-decoration:none;">Keep reading to find out more about the ebook - and how you can get a copy.</a></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td height="35" align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#444444; font-weight:normal;">&nbsp;</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td align="left" valign="top">
+                                        <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+
+                                            <tr>
+
+                                                <td class="split_cont6" align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#444444; font-weight:normal;">- Adam Cogan, SSW</td>
+
+                                                <td class="split_cont6" align="right" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal;">
+                                                    <strong>Got a comment for Adam?</strong><br>
+
+                                                    <a href="http://www.adamcogan.com/?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook" style="color:#448ccb; text-decoration:none;">Comment on Adam Cogan's blog</a><br>
+
+                                                    <a href="https://twitter.com/adamcogan" style="color:#448ccb; text-decoration:none;">Tweet @adamcogan</a><br>
+
+                                                    <a href="mailto:adamcogan@ssw.com.au" style="color:#448ccb; text-decoration:none;">Email Adam Cogan</a>
+                                                </td>
+
+                                            </tr>
+
+                                        </table>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td height="22" align="left" valign="top" style="border-bottom:1px dotted #d2d2d2">&nbsp;</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td align="left" valign="top">
+                                        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                                            <tr>
+
+                                                <td class="split_cont1" width="231" align="left" valign="top">
+                                                    <table width="211" border="0" cellpadding="0" cellspacing="0" class="wrap100">
+
+                                                        <tr>
+
+                                                            <td class="split_cont4" height="50" align="left" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#777777; font-weight:bold;">Featured Video from SSW TV</td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="split_cont" align="left" valign="top"><a href="http://tv.ssw.com/6440/asp-net-5-and-mvc-6-wheres-my-cheese-dev-superpowers-episode-15?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/DevSuperPowers-video-Wheres-my-cheese.jpg" width="210" height="120" alt="video" border="0"></a></td>
+
+                                                        </tr>
+
+                                                    </table>
+                                                </td>
+
+                                                <td class="split_cont1" align="left" valign="bottom">
+                                                    <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+
+                                                        <tr>
+
+                                                            <td class="split_cont2" height="50" align="left" valign="top">&nbsp;</td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td align="left" valign="top" style="font-family: 'Open Sans', sans-serif; font-size:18px; color:#cc4141; padding:10px 0 8px 0;">ASP.NET 5 and MVC 6, Where’s my cheese? | Dev Superpowers Episode 15</td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;">The introduction of ASP.NET 5 and MVC 6 has brought with it a range of technologies that are brand new to the .NET world. <a href="http://tv.ssw.com/6440/asp-net-5-and-mvc-6-wheres-my-cheese-dev-superpowers-episode-15?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook" style="color:#448ccb; text-decoration:none;">Watch video.</a></td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td height="37" align="left" valign="top">&nbsp;</td>
+
+                                                        </tr>
+
+                                                    </table>
+                                                </td>
+
+                                            </tr>
+
+                                        </table>
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td align="left" valign="top" bgcolor="#ffffff"><a href="http://tv.ssw.com/free-webinar-introduction-to-windows-server-containers-for-the-net-developer?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/DevSuperPowers-Banner-Windows-Server-Containers.jpg" width="640" height="200" alt="devsuperpowers" class="resize_img" border="0" align="left"></a></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td height="28" align="left" valign="top" bgcolor="#ffffff">&nbsp;</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td align="center" valign="top" bgcolor="#ffffff">
+                            <table width="602" border="0" cellspacing="0" cellpadding="0" class="wrap1001">
+
+                                <tr>
+
+                                    <td>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+                                            <tr>
+
+                                                <td class="split_cont1" width="150" align="left" valign="top">
+                                                    <table width="130" border="0" cellspacing="0" cellpadding="0" class="wrap1003">
+
+                                                        <tr>
+
+                                                            <td height="94" align="center" valign="middle" bgcolor="#cccccc" style="font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#444444; font-weight:normal;text-transform:uppercase;">
+                                                                <strong>Oct</strong><br>
+
+                                                                <strong style="font-size:36px;">29</strong><br>
+
+                                                                Thu
+                                                            </td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td height="41" align="center" valign="middle" bgcolor="#eeeeee" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal;">Free Webinar</td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td align="center" valign="middle">&nbsp;</td>
+
+                                                        </tr>
+
+                                                    </table>
+                                                </td>
+
+                                                <td class="split_cont1" align="left" valign="top">
+                                                    <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+
+                                                        <tr>
+
+                                                            <td align="left" valign="top" style="font-family: 'Open Sans', sans-serif; font-size:18px; color:#cc4141; padding:0 0 5px 0;">Introduction to Windows Server Containers for the .NET Developer</td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;">Join Jeremy Cade as he walks you through the steps required to containerize, provision and deploy a ASP.NET 5 (vNext) on the upcoming Windows Server Nano platform with .NET. <a href="http://tv.ssw.com/free-webinar-introduction-to-windows-server-containers-for-the-net-developer?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook" style="color:#448ccb; text-decoration:none;">Read more</a></td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td height="25" align="left" valign="top">&nbsp;</td>
+
+                                                        </tr>
+
+                                                    </table>
+                                                </td>
+
+                                            </tr>
+
+                                        </table>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td height="29" align="left" valign="top" style="border-top:1px dotted #d2d2d2">&nbsp;</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+
+                                            <tr>
+
+                                                <td class="split_cont" align="left" valign="top">
+                                                    <table width="290" border="0" cellspacing="0" cellpadding="0" class="wrap100">
+
+                                                        <tr>
+
+                                                            <td class="split_cont" align="left" valign="top"><a href="https://www.ssw.com.au/ssw/Events/Training/Angular-Superpowers-Tour-Angular-ASP-MVC-in-VS2015.aspx?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/angular-superpowers-small.jpg" width="290" height="80" alt="angular superpowers" border="0"></a></td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="split_cont" align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;padding:12px 0 19px 0;">This two-day workshop ($199 + GST) brings developers up-to-speed on the new features and benefits of using ASP.NET 5 and Angular 2 in Visual Studio 2015 to build awesome web applications. <a href="https://www.ssw.com.au/ssw/Events/Training/Angular-Superpowers-Tour-Angular-ASP-MVC-in-VS2015.aspx?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook" style="color:#448ccb; text-decoration:none;">Read More</a></td>
+
+                                                        </tr>
+                                                        
+                                                        <tr>
+
+                                                            <td align="left" valign="top" style="border-bottom:2px solid #ffffff;">
+                                                                <table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                                                                    <tr>
+
+                                                                        <td width="54" height="54" align="center" valign="middle" bgcolor="#cccccc" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#444444; font-weight:normal;text-transform:uppercase;">
+                                                                            <strong>Nov</strong><br>
+
+                                                                            <strong style="font-size:24px; line-height:21px;">05</strong><br>
+
+                                                                            Thu
+                                                                        </td>
+
+                                                                        <td align="left" valign="middle" bgcolor="#eeeeee" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal; padding:0 0 0 18px;">Melbourne, Australia</td>
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td align="left" valign="top" style="border-bottom:2px solid #ffffff;">
+                                                                <table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                                                                    <tr>
+
+                                                                        <td width="54" height="54" align="center" valign="middle" bgcolor="#cccccc" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#444444; font-weight:normal;text-transform:uppercase;">
+                                                                            <strong>Nov</strong><br>
+
+                                                                            <strong style="font-size:24px; line-height:21px;">23</strong><br>
+
+                                                                            Mon
+                                                                        </td>
+
+                                                                        <td align="left" valign="middle" bgcolor="#eeeeee" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal; padding:0 0 0 18px;">Brisbane, Australia</td>
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+
+                                                        </tr>
+
+
+
+                                                        <!-- New Row Start -->
+                                                        <tr>
+
+                                                            <td align="left" valign="top">
+                                                                <table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                                                                    <tr>
+
+                                                                        <td width="54" height="54" align="center" valign="middle" bgcolor="#cccccc" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#444444; font-weight:normal;text-transform:uppercase;">
+                                                                            <strong>Nov</strong><br>
+
+                                                                            <strong style="font-size:24px; line-height:21px;">26</strong><br>
+
+                                                                            Thu
+                                                                        </td>
+
+                                                                        <td align="left" valign="middle" bgcolor="#eeeeee" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal; padding:0 0 0 18px;">Sydney, Australia</td>
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+
+                                                        </tr>
+
+                                                        <!-- New Row End -->
+
+                                                        <tr>
+
+                                                            <td align="left" valign="top">&nbsp;</td>
+
+                                                        </tr>
+
+                                                    </table>
+                                                </td>
+
+                                                <td class="split_cont" align="right" valign="top">
+                                                    <table width="292" border="0" cellspacing="0" cellpadding="0" class="wrap1001">
+
+                                                        <tr>
+
+                                                            <td class="split_cont" align="left" valign="top"><a href="http://xamarinhackday.com/?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/xhd-banner.png" width="290" height="80" alt="xamarin" border="0"></a></td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="split_cont" align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;padding:12px 0 19px 0;">Xamarin is a product that allows you to use .NET/C# to create native apps that will run across Android, iOS, and Windows. Xamarin Hack Days make it easy for anyone to learn cross-platform development in a supportive environment. <a href="http://xamarinhackday.com/?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook" style="color:#448ccb; text-decoration:none;">Read More</a></td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td align="left" valign="top" style="border-bottom:2px solid #ffffff;">
+                                                                <table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                                                                    <tr>
+
+                                                                        <td width="54" height="54" align="center" valign="middle" bgcolor="#cccccc" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#444444; font-weight:normal;text-transform:uppercase;">
+                                                                            <strong>Oct</strong><br>
+
+                                                                            <strong style="font-size:24px; line-height:21px;">17</strong><br>
+
+                                                                            Sat
+                                                                        </td>
+
+                                                                        <td align="left" valign="middle" bgcolor="#eeeeee" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal; padding:0 0 0 18px;">Split, Croatia</td>
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td align="left" valign="top" style="border-bottom:2px solid #ffffff;">
+                                                                <table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                                                                    <tr>
+
+                                                                        <td width="54" height="54" align="center" valign="middle" bgcolor="#cccccc" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#444444; font-weight:normal;text-transform:uppercase;">
+                                                                            <strong>Nov</strong><br>
+
+                                                                            <strong style="font-size:24px; line-height:21px;">21</strong><br>
+
+                                                                            Sat
+                                                                        </td>
+
+                                                                        <td align="left" valign="middle" bgcolor="#eeeeee" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal; padding:0 0 0 18px;">Zagreb, Croatia</td>
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+
+                                                        </tr>
+
+                                                        <!-- New XHD Row Start -->
+                                                        <tr>
+
+                                                            <td align="left" valign="top">
+                                                                <table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                                                                    <tr>
+
+                                                                        <td width="54" height="54" align="center" valign="middle" bgcolor="#cccccc" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#444444; font-weight:normal;text-transform:uppercase;">
+                                                                            <strong>Feb</strong><br>
+
+                                                                            <strong style="font-size:24px; line-height:21px;">7</strong><br>
+
+                                                                            Sat
+                                                                        </td>
+
+                                                                        <td align="left" valign="middle" bgcolor="#eeeeee" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal; padding:0 0 0 18px;">Melbourne, Australia</td>
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+
+                                                        </tr>
+
+                                                        <!-- New XHD Row End -->
+
+                                                        <tr>
+
+                                                            <td align="left" valign="top">&nbsp;</td>
+
+                                                        </tr>
+
+
+
+                                                    </table>
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td height="20" align="left" valign="top" style="border-top:1px dotted #d2d2d2">&nbsp;</td>
+                                                <td height="20" align="left" valign="top" style="border-top:1px dotted #d2d2d2">&nbsp;</td>
+                                            </tr>
+
+
+                                            <tr>
+
+                                                <td class="split_cont" align="left" valign="top">
+                                                    <table width="290" border="0" cellspacing="0" cellpadding="0" class="wrap100">
+
+                                                        <tr>
+
+                                                            <td class="split_cont" align="left" valign="top"><a href="http://firebootcamp.com/?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/fbc-banner.png" width="290" height="80" alt="firebootcamp" border="0"></a></td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="split_cont" align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;padding:12px 0 19px 0;">FireBootCamp is an intensive 9-week program designed to make you "job ready". Participants learn, work and code together for 10-12 hours per day, 5 days a week, building a .NET application with an experienced mentor. <a href="http://firebootcamp.com/?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook" style="color:#448ccb; text-decoration:none;">Read More</a></td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td align="left" valign="top" style="border-bottom:2px solid #ffffff;">
+                                                                <table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                                                                    <tr>
+
+                                                                        <td width="54" height="54" align="center" valign="middle" bgcolor="#cccccc" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#444444; font-weight:normal;text-transform:uppercase;">
+                                                                            <strong>Nov</strong><br>
+
+                                                                            <strong style="font-size:24px; line-height:21px;">30</strong><br>
+
+                                                                            Mon
+                                                                        </td>
+
+                                                                        <td align="left" valign="middle" bgcolor="#eeeeee" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal; padding:0 0 0 18px;">Sydney, Australia</td>
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td align="left" valign="top" style="border-bottom:2px solid #ffffff;">
+                                                                <table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                                                                    <tr>
+
+                                                                        <td width="54" height="54" align="center" valign="middle" bgcolor="#cccccc" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#444444; font-weight:normal;text-transform:uppercase;">
+                                                                            <strong>Mar</strong><br>
+
+                                                                            <strong style="font-size:24px; line-height:21px;">14</strong><br>
+
+                                                                            Mon
+                                                                        </td>
+
+                                                                        <td align="left" valign="middle" bgcolor="#eeeeee" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal; padding:0 0 0 18px;">Redmond, USA</td>
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+
+                                                        </tr>
+
+
+
+                                                        <!-- New FBC Row Start -->
+                                                        <tr>
+
+                                                            <td align="left" valign="top">
+                                                                <table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                                                                    <tr>
+
+                                                                        <td width="54" height="54" align="center" valign="middle" bgcolor="#cccccc" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#444444; font-weight:normal;text-transform:uppercase;">
+                                                                            <strong>Mar</strong><br>
+
+                                                                            <strong style="font-size:24px; line-height:21px;">28</strong><br>
+
+                                                                            Mon
+                                                                        </td>
+
+                                                                        <td align="left" valign="middle" bgcolor="#eeeeee" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal; padding:0 0 0 18px;">Sydney, Australia</td>
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+
+                                                        </tr>
+
+                                                        <!-- New FBC Row End -->
+
+                                                        <tr>
+
+                                                            <td align="left" valign="top">&nbsp;</td>
+
+                                                        </tr>
+
+                                                    </table>
+                                                </td>
+
+                                                <td class="split_cont" align="right" valign="top">
+                                                    <table width="292" border="0" cellspacing="0" cellpadding="0" class="wrap1001">
+
+                                                        <tr>
+
+                                                            <td class="split_cont" align="left" valign="top"><a href="http://firebootcamp.com/webinar?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/fbcwebinar-banner.jpg" width="290" height="80" alt="Firebootcamp webinar" border="0"></a></td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td class="split_cont" align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;padding:12px 0 19px 0;">
+                                                                If you would like to become a Web Developer in record time then this webinar will show you:
+                                                                <ol>
+                                                                    <li>Whether you should self-learn, join a coding boot camp or sign up for an online course</li>
+                                                                    <li>The pros and cons of learning each language like .NET, Ruby on Rails, AngularJS, etc.</li>
+                                                                    <li>Which languages you should learn to secure a high paying job</li>
+                                                                    <li>The qualities required to be successful as a software developer. <a href="http://firebootcamp.com/webinar/?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook" style="color:#448ccb; text-decoration:none;">Read More</a></li>
+                                                                </ol>
+                                                            </td>
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td align="left" valign="top" style="border-bottom:2px solid #ffffff;">
+                                                                <table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                                                                    <tr>
+
+                                                                        <td align="center" height="54" valign="middle" bgcolor="#eeeeee" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal; padding:0 0 0 18px;">Runs weekly</td>
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+
+                                                        </tr>
+
+
+                                                        <tr>
+
+                                                            <td align="left" valign="top">&nbsp;</td>
+
+                                                        </tr>
+
+
+
+                                                    </table>
+                                                </td>
+
+                                            </tr>
+
+                                        </table>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>&nbsp;</td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td align="center" valign="top" bgcolor="#eeeeee">
+                            <table width="602" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap1001">
+
+                                <tr>
+
+                                    <td align="left" valign="top">&nbsp;</td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td align="left" valign="top" style="font-family: 'Open Sans', sans-serif; font-size:30px; color:#cc4141;font-weight:300;">October User Group</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td align="left" valign="top" style="font-family: 'Open Sans', sans-serif; font-size:18px; color:#cc4141;font-weight:normal; padding:14px 0 7px 0;">Coding in the Open: Open Source at Microsoft</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;padding:0px 0 15px 0;">Felix, Rita and Steven are Open Source Engineers at Microsoft San Francisco, hacking away with engineering teams inside Microsoft, open source communities, and startups. </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;">In this talk, they will candidly and openly talk about how open source is used inside Microsoft, how they team up with communities outside the Microsoft ecosystem, and what the Redmond company is doing to make developers working in a bunch of diverse environments happy.</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td height="22" align="left" valign="top">&nbsp;</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td align="left" valign="top">
+                                        <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+
+                                            <tr>
+
+                                                <td class="split_cont5" width="141" align="left" valign="top"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/profile-felix-rita-steven.jpg" width="120" height="120" alt="Felix Rita Steven" border="0"></td>
+
+                                                <td class="split_cont5" align="left" valign="top">
+                                                    <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+
+                                                        <tr>
+
+                                                            <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#777777; font-weight:bold;padding:7px 0 5px 0;">About the presenters</td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;padding:0px 0 15px 0;">Felix Rieseberg is an Open Source Engineer, working on sophisticated web app development, modern DevOps workflows, and cross-platform development.  Rita Zhang is an engineer/architect, concentrating on strategic engagements with partners using emerging Open Source technologies, and sharing technical collaterals with the community. Steven Edouard is a Software Engineer, focusing on open source integrations with Microsoft Azure. </td>
+
+                                                        </tr>
+
+                                                    </table>
+                                                </td>
+
+                                            </tr>
+
+                                        </table>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td height="25" align="left" valign="top">&nbsp;</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td align="left" valign="top">
+                                        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                                            <tr>
+
+                                                <td class="split_cont4" width="310" align="left" valign="middle" style="padding:0 0 10px 17px;"><a href="https://www.ssw.com.au/ssw/NETUG/Sydney.aspx?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/netug-logo.png" width="254" height="80" alt="net" border="0" align="middle"></a></td>
+                                                <td class="split_cont4" width="310" align="left" valign="middle" style="padding:0 0 10px 17px;"><a href="https://www.ssw.com.au/ssw/NETUG/Canberra.aspx?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/cnetug-logo.png" width="254" height="80" alt="net" border="0" align="middle"></a></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="split_cont1" align="center" valign="top">
+                                                    <table width="291" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                                                        <tr>
+
+                                                            <td align="left" valign="top">
+                                                                <table width="290" border="0" align="left" cellpadding="0" cellspacing="0">
+
+                                                                    <tr>
+
+                                                                        <td width="54" height="54" align="center" valign="middle" bgcolor="#bbbbbb" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#444444; font-weight:normal;text-transform:uppercase;">
+                                                                            <strong>Oct</strong><br>
+
+                                                                            <strong style="font-size:24px; line-height:21px;">21</strong><br>
+
+                                                                            Wed
+                                                                        </td>
+
+                                                                        <td align="left" valign="middle" bgcolor="#cccccc" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal; padding:0 0 0 18px;">
+                                                                            <strong>Microsoft Sydney</strong><br>
+
+                                                                            1 Epping Rd, North Ryde NSW
+                                                                        </td>
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td height="42" align="left" valign="bottom">
+                                                                <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+
+                                                                    <tr>
+
+                                                                        <td width="76" align="left" valign="top"><a href="https://www.facebook.com/events/107093676314954/"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/btn-fb.png" width="65" height="30" alt="fb" border="0" align="left"></a></td>
+
+                                                                        <td width="66" align="left" valign="top"><a href="https://www.linkedin.com/grp/post/1520317-6057683585228423171?trk=groups-post-b-title"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/btn-linkedin.png" width="55" height="30" alt="linkedin" border="0" align="left"></a></td>
+
+                                                                        <td width="61" align="left" valign="top"><a href="http://www.meetup.com/Sydney-NET-User-Group/events/225909688/"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/btn-meetup.png" width="50" height="30" alt="meetup" border="0" align="left"></a></td>
+
+                                                                        <td align="left" valign="top"><a href="http://www.ssw.com.au/ssw/NETUG/Live.aspx?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/btn-livestream.png" width="72" height="30" alt="lives" border="0" align="left"></a></td>
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+
+                                                        </tr>
+
+                                                    </table>
+                                                </td>
+                                                <td class="split_cont1" align="center" valign="top">
+                                                    <table width="291" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                                                        <tr>
+
+                                                            <td align="left" valign="top">
+                                                                <table width="290" border="0" align="left" cellpadding="0" cellspacing="0">
+
+                                                                    <tr>
+
+
+
+                                                                        <td height="54"  align="left" valign="middle" bgcolor="#cccccc" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal; padding:0 0 0 18px;">
+                                                                            Not running this month<br>
+
+
+                                                                        </td>
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td height="42" align="left" valign="bottom">
+                                                                <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+
+                                                                    <tr>
+
+                                                                        <td width="76" align="left" valign="top"><a href="https://www.facebook.com/groups/CanberraNetUG/?ref=bookmarks"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/btn-fb.png" width="65" height="30" alt="fb" border="0" align="left"></a></td>
+
+                                                                        <td width="66" align="left" valign="top"><a href="https://www.linkedin.com/grp/home?gid=1520387"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/btn-linkedin.png" width="55" height="30" alt="linkedin" border="0" align="left"></a></td>
+
+                                                                        <td width="61" align="left" valign="top"><a href="http://www.meetup.com/Canberra-NET-User-Group/"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/btn-meetup.png" width="50" height="30" alt="meetup" border="0" align="left"></a></td>
+
+                                                                        <td align="left" valign="top">&nbsp;</td>
+
+                                                                    </tr>
+
+                                                                </table>
+                                                            </td>
+
+                                                        </tr>
+
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                        </table>
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td align="left" valign="top" bgcolor="#ffffff"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/arrow-bg.png" width="640" height="59" alt="bg" class="resize_img" border="0" align="left"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td align="center" valign="top" bgcolor="#dddddd">
+                            <table width="602" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap1001">
+
+                                <tr>
+
+                                    <td class="split_cont" align="left" valign="top">
+                                        <table width="291" border="0" cellspacing="0" cellpadding="0" class="wrap1001">
+
+                                            <tr>
+
+                                                <td class="split_cont" align="left" valign="top"><a href="http://nerddinner.com/8140"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/nerddinner-banner.png" width="290" height="80" alt="nerddinner" border="0"></a></td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td class="split_cont" align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;padding:15px 0 16px 0;">SSW and Octopus Deploy invite you to join us for pizza! It's a fun and delicious opportunity for networking with peers and sharing thoughts after the Sydney .NET User Group. <a href="http://nerddinner.com/8140" style="color:#448ccb; text-decoration:none;">Read More</a></td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td align="left" valign="top">
+                                                    <table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                                                        <tr>
+
+                                                            <td width="54" height="54" align="center" valign="middle" bgcolor="#bbbbbb" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#444444; font-weight:normal; text-transform:uppercase;">
+                                                                <strong>Oct</strong><br>
+
+                                                                <strong style="font-size:24px; line-height:21px;">21</strong><br>
+
+                                                                Wed
+                                                            </td>
+
+                                                            <td align="left" valign="middle" bgcolor="#cccccc" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal; padding:0 0 0 18px;">
+                                                                <strong>Microsoft Sydney</strong><br>
+
+                                                                1 Epping Rd, North Ryde NSW
+                                                            </td>
+
+                                                        </tr>
+
+                                                    </table>
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td align="left" valign="top">&nbsp;</td>
+
+                                            </tr>
+
+                                        </table>
+                                    </td>
+
+                                    <td class="split_cont" align="right" valign="top">
+                                        <table width="291" border="0" cellspacing="0" cellpadding="0" class="wrap1001">
+
+                                            <tr>
+
+                                                <td class="split_cont" align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#777777; font-weight:bold;padding:4px 0 14px 0;">Sydney .NET User Group and NerdDinner proudly sponsored by:</td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td class="split_cont" align="left" valign="top" style="padding:0px 0 11px 0;"><a href="http://octopusdeploy.com/"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/sponsor-octopus-deploy.png" width="290" height="80" alt="deploy" border="0"></a></td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td class="split_cont" align="left" valign="top"><a href="https://www.ssw.com.au/ssw/?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/sponsor-ssw.png" width="290" height="80" alt="ssw" border="0"></a></td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td height="36" align="left" valign="top">&nbsp;</td>
+
+                                            </tr>
+
+                                        </table>
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td height="23" align="left" valign="top" bgcolor="#ffffff">&nbsp;</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td align="center" valign="top" bgcolor="#ffffff">
+                            <table width="602" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap1001">
+
+                                <tr>
+
+
+
+                                    <td align="left" valign="top" style="font-family: 'Open Sans', sans-serif; font-size:30px; color:#cc4141;font-weight:300;">SSW is Hiring!</td>
+
+
+
+                                    <td height="35" align="right" valign="middle" style="font-family: 'Open Sans', sans-serif; font-size:12px; color:#448ccb;font-weight:normal;"><a href="https://www.ssw.com.au/ssw/Employment/Employment.aspx?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook" style="color:#448ccb; text-decoration:none;">More SSW jobs</a></td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+
+                    </tr>
+
+                </table>
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="center" valign="top" bgcolor="#333333">
+                <table width="640" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap100">
+
+                    <tr>
+
+                        <td align="center" valign="top" bgcolor="#ffffff">
+                            <table width="602" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap1001">
+
+                                <tr>
+
+                                    <td class="split_cont7" align="left" valign="top">
+                                        <table width="286" border="0" cellpadding="0" cellspacing="0" class="wrap100">
+
+
+
+                                            <tr>
+
+                                                <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;padding:11px 0 15px 0;">
+                                                    <strong style="color:#777777;font-size:14px;">Front End Web Developer / Designer</strong><br>
+
+                                                    SSW Sydney or SSW Melbourne
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;padding:0px 0 15px 0;">SSW is looking for a highly talented Front End Web Developer / Designer who is passionate about creating great standards-based sites. This role requires someone who is able to articulate concisely, think critically, and create aesthetically pleasing prototypes. An understanding of what constitutes a great user experience is a must. <a href="https://www.ssw.com.au/ssw/Employment/Employment.aspx?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook" style="color:#448ccb; text-decoration:none;">Read More</a></td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td class="split_cont8" align="left" valign="top">&nbsp;</td>
+
+                                            </tr>
+
+                                        </table>
+                                    </td>
+
+                                    <td class="split_cont7" align="right" valign="top">
+                                        <table width="290" border="0" cellpadding="0" cellspacing="0" class="wrap100">
+
+
+
+                                            <tr>
+
+                                                <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;padding:11px 0 15px 0;">
+                                                    <strong style="color:#777777; font-size:14px;">Senior SharePoint + Web Developer</strong><br>
+
+                                                    SSW Brisbane
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;padding:0px 0 4px 0;">SSW is looking for an experienced and talented SharePoint developer who is passionate about implementing awesome SharePoint solutions. This role requires great communication skills and solid experience delivering production-ready SharePoint solutions. <a href="https://www.ssw.com.au/ssw/Employment/Employment.aspx?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook" style="color:#448ccb; text-decoration:none;">Read More</a></td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td align="left" valign="top">&nbsp;</td>
+
+                                            </tr>
+
+                                        </table>
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td align="left" valign="middle" style="border-bottom:1px solid #444444; padding:10px 0 10px 0;">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="wrap1001">
+
+                                <tr>
+
+                                    <td class="split_cont1" align="left" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#7e7e7e; font-weight:normal;">Copyright © SSW 1990-2015. All Rights Reserved.</td>
+
+                                    <td class="split_cont1" align="right" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#7e7e7e; font-weight:normal;">Proudly developed by <a href="https://www.ssw.com.au/?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook" style="color:#7e7e7e; text-decoration:none;">SSW Sydney Web Design</a></td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td align="center" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#7e7e7e; font-weight:normal; text-transform:uppercase;padding:10px 0 10px 0;"><a href="mailto:info@ssw.com.au?subject=Advertisting" style="color:#7e7e7e; text-decoration:none;">Advertise with SSW</a> |  Unsubscribe |  <a href="http://www.ssw.com.au/ssw/NETUG/SSWUpdatePrevious.aspx?utm_source=SSWUpdate_October&utm_medium=email&utm_campaign=VS2015%20ebook" style="color:#7e7e7e; text-decoration:none;">Previous SSW Updates</a> |  <a href="mailto:info@ssw.com.au?subject=Got a Hot Tip to share?" style="color:#7e7e7e; text-decoration:none;">Got a Hot Tip to share?</a> |  <a href="mailto:info@ssw.com.au?subject=Got a comment to make?" style="color:#7e7e7e; text-decoration:none;">Got a comment to make?</a></td>
+
+                    </tr>
+
+                </table>
+            </td>
+
+        </tr>
+
+    </table>
+
+</body>
+
+</html>

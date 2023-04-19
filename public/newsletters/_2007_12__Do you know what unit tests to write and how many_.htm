@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>SSW Update - Do you know what unit tests to write and how many?</title>
+    <script type="text/javascript" src="/ssw/include/decodemail.js"></script>
+</head>
+<body bgcolor="#e7e7cf">
+    <style type="text/css">
+<!--
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	margin:0px;
+}
+td, th {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.sectionTitle {
+	font-family: "Century Gothic", Arial, Verdana, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #f25622;
+	font-weight: normal;
+}
+.newsTitle {
+	color: #f25622;
+	font-size: 14px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.magazineTitle {
+	font-family: "Century Gothic", Arial, Helvetica, sans-serif;
+	color: #f25622;
+	font-weight: normal;
+	font-size: 30px;
+}
+.section {
+	border-top: 1px #cccccc dotted;
+}
+.copyright {
+	font-weight: bold;
+	color: #999999;
+	font-size: 10px;
+}
+.proudly {
+	font-weight: normal;
+	font-size: 9px;
+	color: #999999;
+}
+.footer a {
+	color: gray;
+}
+.style1 {
+	font-size: 11px;
+}
+.style2 {
+	font-size: x-small;
+}
+.style5 {
+	color: #000000;
+}
+-->
+</style>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+        <table width="710" border="0" align="center" cellpadding="0" cellspacing="0" id="container"
+            bgcolor="white" style="border: 1px #cccccc solid;">
+            <tr>
+                <td width="100%" rowspan="2" valign="top" background="/ssw/NETUG/SSWUpdate/Images/christmasbar.gif"
+                    bgcolor="#efefef">
+                    <img src="/ssw/NETUG/SSWUpdate/Images/christmasbar.gif" width="11"
+                        height="10" /></td>
+                <td width="100%" bgcolor="#efefef">
+                    <table width="98%" border="0" cellspacing="0" cellpadding="15">
+                        <tr>
+                            <td>
+                                <strong><span class="Subject">SSW Update - Do you know what unit tests to write and how many?</span></strong></td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="200" valign="middle" bgcolor="#efefef" style="border-top: 4px #f26522 solid;
+                    border-left: 1px #cccccc solid;">
+                    <img src="/ssw/Images/Gold_Certified_Partner74x35.gif" alt="Microsoft Gold Partner Logo"
+                        width="75" height="35" align="right" style="padding: 5px;" /></td>
+            </tr>
+            <tr>
+                <td valign="top" id="main">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="20">
+                        <tr>
+                            <td>
+                                <a href="/ssw/Redirect/sswupdate/2007nov/TechBreakfast.htm">
+                                    <img src="/ssw/Images/SSWTechBreakfastBanner.gif" alt="SSW Tech Breakfast"
+                                        width="468" height="60" border="0" class="banner" /></a><h1>
+                                            &nbsp;
+                                        </h1>
+                                <h1 style="color: #a7a9ac; font-size: 30px;">
+                                    [<span class="magazineTitle"> the cutting edge</span> ]</h1>
+                                <p>
+                                    G'Day Developers!</p>
+                                 <p><strong>Do you know what unit tests to write and how many?</strong></p>
+                                 <p>People aim for 100% Unit Test Coverage but in the real world this is 100% impractical. 
+								Actually it seems that the most popular metric in TDD (Test Driven Development) is to aim 
+								for 100% of methods to be unit tested. However in the real world this goal is rarely, if 
+								ever, achieved. Unit tests are created to validate and assert that public and protected 
+								methods of a class meet an expected outcome based on varying input. This includes both 
+								good and bad data being tested, to ensure the method behaves as expected and returns the 
+								correct result or traps any errors. </p>
+								<p>Generally, private methods should not have unit tests written for them as they are not 
+								exposed to other objects outside the original class. These private methods are likely to 
+								be refactored (eg. changed, renamed) over time and will require the unit tests to be updated 
+								and this becomes a maintenance nightmare. So how do private methods get tested? Private 
+								methods should be tested by the unit tests on the public and protected methods calling them 
+								and this will indirectly test the private method behaves as intended.</p> 
+								<p>Eg. You would test correct input such as 12/3 = 4  plus bad input such as 12/4 <> 4 and 
+								that 12/0 does not crash the application, and instead a DivideByZero Exception is thrown and 
+								handled gracefully. <br/>
+								Eg. Methods returning a Boolean value need to have both true and false test cases.</p>
+								
+                                <p>See more <a href="/ssw/Redirect/SSWUpdate/2007Dec/NewsletterRule.htm">
+                                    Rules to Better Unit Tests</a>
+                               <p>Merry Christmas and a Happy New Year!</p>
+                               <p><a target="_blank" href="/ssw/Redirect/SSWUpdate/2007Dec/adamprofile.htm">
+                                        Adam</a><br/>
+                                 SSW Chief Architect and Microsoft Regional Director, Australia</p>
+                               <p>Got a comment for Adam? <a onclick="javascript:sendEmailWithoutSubject('6164616d636f67616e407373772e636f6d2e6175',this)" encode="6164616d636f67616e407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('6164616d636f67616e407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer">6164616d636f67616e407373772e636f6d2e6175</a>.
+                                    </p>                        
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="newsTitle">
+                                    <font color="f25622"><a name="SydneyDotnetUsergroup" id="SydneyDotnetUsergroup"></a>
+                                        Sydney .NET User Group -
+                                        <br />
+                                        The best place to learn .NET for free in Sydney</font></h3>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="210" valign="top">
+                                            <img src="/ssw/Images/SDNUG.jpg" alt="User Group" height="133"
+                                                width="200" /></td>
+                                        <td valign="bottom">
+                                            <h3>
+                                                1 day to go!</h3>
+                                            <p>
+                                                <a href="/ssw/Redirect/SSWUpdate/2007Dec/NewsletterNetUG.htm"
+                                                    target="_blank">Sydney .NET User Group</a><br />
+                                                Wednesday 19th December 2007<br />
+                                                5:45pm - 9:00pm<br />
+                                                Microsoft, Sydney</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    <strong>Windows Workflow Foundation</strong></p>
+                                <p>
+                                    Adam Cogan and Mark Liu will be introducing Windows Workflow Foundation. We will discuss some 
+                                    real world scenarios, go over the architecture of the framework, and talk about some common 
+                                    problems people may face when adopting this new technology.
+                                </p>
+                                <p>
+                                  	 <a   onclick="javascript:sendEmailWithSubject('696e666f407373772e636f6d2e6175','See%20You%20There',this)" encode='696e666f407373772e636f6d2e6175' process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText='true' >See You There!!</a> | 
+											 					 <a   onclick="javascript:sendEmailWithSubject('696e666f407373772e636f6d2e6175','Sorry%20I%20can%27t%20make%20it',this)" encode='696e666f407373772e636f6d2e6175' process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText='true' >Sorry I can't make it</a><br />
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section" style="height: 297px">
+                                <h3 class="newsTitle">
+                                    <font color="#f25622"><a name="sharpoint" id="sharpoint"></a>Featured Service: </font>
+                                    SSW SQL Deploy</h3>
+                                <p>
+                                    <strong>Have your application automatically deploy schema changes to your backend SQL Server with SSW SQL Deploy</strong></p>
+                                <p>
+                                    <img src="/ssw/SQLDeploy/Images/productbox_short.GIF" alt="SSW SQL Deploy"
+                                        width="145" height="225" align="right" class="noborder" />How many times have you deployed an initial version of your SQL Server or MSDE Database application to your 
+                                clients or departments, then wondered how you are going to make updates to the Database schema in the future 
+                                without hassle?</p>
+								<p>SQL Deploy solves this problem by automatically performing Database updates as a part of your 
+								application deployment. Bundle SSW SQL Deploy when you distribute a new version of your application 
+								to clients and all your database changes will happen automatically.</p>
+                                <p>
+                                    <a target="_blank" href="/ssw/Redirect/SSWUpdate/2007Dec/Product.htm">More on SSW SQL Deploy</a><br />
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="newsTitle">
+                                    Merry Christmas from SSW</h3>
+                                <font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+                                    <p class="style1">
+                                            <img src="/ssw/NETUG/SSWUpdate/Images/xmastreesmall.jpg" alt="Merry Christmas!"
+                                                width="100" height="152" align="right" class="noborder" /><font face="Verdana, Arial, Helvetica, sans-serif">From all the staff at SSW we would like to wish you a very Merry
+                                                    Christmas and a Happy New Year. May you enjoy a festive season with your families
+                                                    and keep safe. See you in 2008.</font><br/>
+                                     <a href="http://www.elfyourself.com/?id=1385941578">A little fun</a> from the SSW Team.</p>
+                                     <p><font face="Verdana, Arial, Helvetica, sans-serif"><span class="style1">SSW will
+                                                        be closed on the following dates:</span></font></p>
+                                </font>
+                                <p>
+                                    <font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font face="Verdana, Arial, Helvetica, sans-serif">
+                                        <span class="style1">&raquo; <strong>Tuesday</strong> 25th Dec 2007<br />
+                                        </span><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><span class="style1">
+                                            &raquo; </span></font><span class="style1"><strong>Wednesday</strong> 26th Dec 2007<br />
+                                            </span><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><span class="style1">
+                                                &raquo; </span></font><span class="style1"><strong>Tuesday</strong> 1st January 2008</span></font><br />
+                                    </font>
+                                </p>
+                                <tr>
+                                    <td class="section">
+                                        <font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+                                            <h3 class="newsTitle">
+                                                Advertise with SSW</h3>
+                                            <p class="newsTitle">
+                                                <font face="Verdana, Arial, Helvetica, sans-serif" size="2"><span class="style5"><span
+                                                    class="style1">If you would like to advertise your product or service with SSW or
+                                                    would like to find out more about different advertising opportunities, please email
+                                                    your enquiries to <a href="javascript:var e1='%73s%77.%63%6fm&#046;&#097;&#117;',e2='&#109;&#097;&#105;&#108;&#116;&#111;&#058;%20', e3='%69%6e&#102;%6f';var e0=e2+e3+'@'+e1;(window.location?window.location.replace(e0):document.write(e0));" title="&#105;&#110;&#102;&#111;&#064;&#115;&#115;&#119;&#046;&#099;&#111;&#109;&#046;&#097;&#117;">info@s*w.com.au</a> or call:
+                                                    +61 2 9953 3000.</span><br />
+                                                </span></font>
+                                            </p>
+                                        </font>
+                                    </td>
+                                </tr>
+                    </table>
+                    <br />
+                    <a href="/ssw/Redirect/sswupdate/2007nov/TechBreakfast.htm"
+                        class="magazineTitle"></a>
+                </td>
+                <td valign="top" bgcolor="#eeeeee" id="sidebar" style="border-left: 1px #cccccc solid;
+                    border-bottom: 10px #f26522 solid;">
+                    <img alt="Merry Christmas" src="/ssw/NETUG/SSWUpdate/Images/featureimage_2007Dec.jpg"
+                        width="200" height="300" class="featureimage" />
+                    <table width="100%" border="0" cellpadding="10" cellspacing="0">
+                        <tr>
+                            <td bgcolor="#FFFFFF" style="height: 69px">
+                                <h3 class="sectionTitle">
+                                    December 2007</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section" style="height: 551px">
+                                <h3 class="sectionTitle">
+                                    Tech Breakfast</h3>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="55" valign="top">
+                                            <span class="eventinfo">
+                                                <img src="/ssw/NETUG/SSWUpdate/Images/Icon_techbreakfast.gif"
+                                                    alt="Data Dude" width="46" height="46" /></span></td>
+                                        <td valign="top">
+                                            <strong>38 days to go </strong>
+                                            <p class="title">
+                                                CRM 4 (with WorkFlow)</p>
+                                            <p class="datetime">
+                                                <font color="#666666" size="1">Friday, 25th January 2008<br />
+                                                    8:00am-11:00am</font></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p>Adam Cogan will introduce Microsoft CRM which has been designed to provide a complete 
+                                suite of powerful marketing, sales, and customer service capabilities, all with a familiar 
+                                and consistent user experience based on Microsoft Office and the Microsoft Office Outlook 
+                                messaging and collaboration client.</p>
+                                <p>The session will be broken into the following sections:</p>
+								<ul>
+								<li>Up and Running on Microsoft CRM 4 (aka Titan)</li>
+								<li>Experiences with customizing and extending CRM 4 (aka Titan)</li>
+								<li>Using Workflow in CRM 4 (aka Titan)</li>
+								</ul>
+
+                                <p align="right">
+                                    <a target="_blank" href="/ssw/Redirect/SSWUpdate/2007Dec/SSWTechBreakfast1.htm">
+                                        <img src="/ssw/Images/Button_Register_small.gif" alt="Register Now" width="100"
+                                            height="35" border="0" /></a><br />
+                                </p>
+                                <font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td width="55" valign="top">
+                                                <img src="/ssw/NETUG/SSWUpdate/Images/Icon_techbreakfast.gif"
+                                                    alt="Extreme Programming" width="46" height="46" /></td>
+                                            <td valign="top">
+                                                <strong><span class="style2">73</span> days to go </strong>
+                                                <p class="title">
+                                                    Windows Vista Service Pack 1</p>
+                                                <p class="datetime">
+                                                    <font color="#666666" size="1">Friday, 29th February 2008<br />
+                                                        8:00am-11:00am</font></p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <p class="style1">
+                                        February is a big month for Microsoft, lots of releases and updates</p>
+                                    <ul>
+                                    <li class="style1">Windows Server 2008 (a.k.a. Longhorn)</li>
+                                    <li class="style1">SQL Server 2008 (a.k.a Katami)</li>
+                                    <li class="style1">Visual Studio 2008 and TFS 2008 (a.k.a Orcas)</li>
+                                    <li class="style1">Vista Service Pack 1</li>
+                                    </ul>    
+									<p class="style1">Find out what&#8217;s new and how it affects you </p>                                   
+                                    <p align="right">
+                                        <a target="_blank" href="/ssw/Redirect/SSWUpdate/2007Dec/SSWTechBreakfast2.htm">
+                                            <img src="/ssw/Images/Button_Register_small.gif" alt="Register Now" width="100"
+                                                height="35" border="0" /></a></p>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section" style="height: 179px">
+                                <h3 class="sectionTitle">
+                                    Tips</h3>
+                                <p>
+                                    <a href="/ssw/Redirect/SSWUpdate/2007Dec/kb1.htm">
+									What is involved in porting ASP to ASP.NET?</a><br />
+                                    -answered: by David Klein</p>
+                                <p>
+                                    <a href="/ssw/Redirect/SSWUpdate/2007Dec/kb2.htm">
+                                    Do you know the HTML colors that are equivalent to Excel 2007&#8217;s Color Scales?</a>&nbsp;
+                                    <br />
+                                    -answered: by Adam Cogan</p>
+                                <p>
+                                    &nbsp;
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="sectionTitle">
+                                    Employment</h3>
+                                <p>
+                                    Due to the tremendous growth that our business has experienced over the last few
+                                    months, we are seeking enthusiastic people to join the SSW team.</p>
+                                <p>
+                                    Our company is based in Neutral Bay which is one of the most elegant and scenic
+                                    areas of Sydney. SSW is an Australian owned progressive consulting firm specialising
+                                    in building, implementing and maintaining Microsoft .NET software applications.</p>
+                                <p>We are also currently looking for:</p>
+
+				<table border="0" cellpadding="2" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td valign="top">&#8226;</td>
+						<td valign="top" width="100%"><strong>ASP.NET, VB.NET, 
+						C#, OLAP, SharePoint Software Developer </strong></td>
+					</tr>
+					<tr>
+						<td valign="top">&#8226;</td>
+
+						<td><strong>Technical BDM in Melbourne, Brisbane, or 
+						Canberra</strong>
+						</td>
+					</tr>
+					<tr>
+						<td valign="top">&#8226;</td>
+						<td valign="top"><strong>IT Senior Marketing Consultant 
+						(part-time)</strong></td>
+					</tr>
+
+					<tr>
+						<td valign="top">&#8226;</td>
+						<td valign="top"><strong>Project Manager</strong></td>
+                                    </tr>
+                    </tbody>
+                 </table>               
+                                <p>
+                                    <a target="_blank" href="/ssw/Redirect/sswupdate/2007Dec/Employment.htm">
+                                        Read more and Apply NOW...</a></p>
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
+                </td>
+            </tr>
+        </table>
+    </font>
+    <table align="center" width="710">
+        <tr>
+            <td class="copyright">
+                Copyright ?SSW 1990-2007. All Rights Reserved.
+            </td>
+            <td class="proudly" align="right">
+                Proudly developed by <a href="">SSW Sydney Web Design</a></td>
+        </tr>
+        <tr>
+            <td class="footer" colspan="2">
+                <table>
+                    <tr valign="top" class="footer">
+                        <td valign="top" align="center">
+                           <a onclick="javascript:sendEmailWithSubject('696e666f407373772e636f6d2e6175','Advertisting',this)" encode='696e666f407373772e636f6d2e6175' process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText='true' >Advertise with SSW</a>
+					<a onclick="javascript:sendEmailWithSubject('696e666f407373772e636f6d2e6175','Please%20Unsubscribe%20Me',this)" encode='696e666f407373772e636f6d2e6175' process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText='true' >Unsubscribe</a>
+					<a onclick="javascript:sendEmailWithSubject('696e666f407373772e636f6d2e6175','Hot%20Tip',this)" encode='696e666f407373772e636f6d2e6175' process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText='true' >Got a Hot Tip to share?</a>
+					<a onclick="javascript:sendEmailWithSubject('696e666f407373772e636f6d2e6175','About%20your%20newsletter',this)" encode='696e666f407373772e636f6d2e6175' process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText='true' >Got a comment to make?</a></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

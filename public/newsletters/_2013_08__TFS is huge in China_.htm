@@ -1,0 +1,1024 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>SSW Update - TFS is huge in China - the work item journey with 20 million records</title>
+    <script src="/ssw/Include/jquery.js" type="text/javascript"></script>
+    <script src="/ssw/Include/decodeMailNew.js" type="text/javascript"></script>
+</head>
+
+<body bgcolor="#e7e7cf">
+    <style type="text/css">
+        body
+        {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            margin: 0px;
+        }
+
+        h1
+        {
+            color: #a7a9ac;
+            font-size: 30px;
+        }
+
+        td, th
+        {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 11px;
+        }
+
+        .sectionTitle
+        {
+            font-family: "Century Gothic", Arial, Verdana, Helvetica, sans-serif;
+            font-size: 20px;
+            color: #ff0000;
+            font-weight: normal;
+        }
+
+        .newsTitle
+        {
+            color: #5C5C5C;
+            font-size: 14px;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .newsTitle2
+        {
+            color: #5C5C5C;
+            font-size: 14px;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            padding-left: 30px;
+        }
+
+        .magazineTitle
+        {
+            font-family: "Century Gothic", Arial, Helvetica, sans-serif;
+            color: #ff0000;
+            font-weight: normal;
+            font-size: 30px;
+        }
+
+        .section
+        {
+            border-top: 1px #cccccc dotted;
+        }
+
+        .copyright
+        {
+            font-weight: bold;
+            color: #999999;
+            font-size: 10px;
+        }
+
+        .proudly
+        {
+            font-weight: normal;
+            font-size: 9px;
+            color: #999999;
+        }
+
+            .proudly a
+            {
+                color: #999999;
+            }
+
+        .noborder
+        {
+            border: none;
+        }
+
+        .footer a
+        {
+            color: gray;
+        }
+
+        .signature
+        {
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        dl dd
+        {
+            background-repeat: no-repeat;
+            background-color: transparent;
+            padding: 0 0 10px 20px;
+            margin-left: 10px;
+        }
+
+        .goodCode dd
+        {
+            background-image: url(/ssw/Standards/Rules/images/Good.gif);
+        }
+
+        .badCode dd
+        {
+            background-image: url(/ssw/Standards/Rules/images/Bad.gif);
+        }
+
+        dl dt
+        {
+            background: #eee;
+            border-width: 1px 1px 1px 4px;
+            border-color: #aaa;
+            border-style: solid;
+            padding: 10px;
+            margin: 5px;
+            font-family: Courier;
+        }
+
+        img.background
+        {
+            background: #eee;
+            border-width: 1px 1px 1px 4px;
+            border-color: #aaa;
+            border-style: solid;
+            padding: 10px;
+            margin: 15px;
+            font-family: Courier;
+        }
+
+        table.BrainQuest
+        {
+            font-family: Verdana, Geneva, sans-serif;
+            border: 0px white solid;
+            border-top: 4px #B6B6B6 solid;
+            font-size: 11px;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+            table.BrainQuest tr.header td
+            {
+                background-color: #F5f5f5;
+                color: #444444;
+                font-size: 14px;
+                padding: 5px 0px 10px 4px;
+                margin: 0;
+                border-top: 2px white solid;
+                border-bottom: 2px white solid;
+            }
+
+                table.BrainQuest tr.header td span
+                {
+                    color: #aaaaaa;
+                    font-size: 10px;
+                    text-transform: uppercase;
+                }
+
+            table.BrainQuest td.first
+            {
+                margin: 0;
+                background: #E5E5E5 url(/ssw/images/schedulebg.png) no-repeat scroll right center;
+                height: 27px;
+                overflow: hidden;
+                padding: 6px 8px 7px 4px;
+                white-space: nowrap;
+                width: 200px;
+                font-weight: bold;
+                color: #aaa;
+                font-size: 10px;
+            }
+
+                table.BrainQuest td.first span
+                {
+                    color: Black;
+                }
+
+            table.BrainQuest td.second
+            {
+                margin: 0;
+                background: #E5E5E5 url(/ssw/images/schedulebg.png) no-repeat scroll right center;
+                height: 27px;
+                overflow: hidden;
+                padding: 6px 8px 7px 4px;
+                white-space: nowrap;
+                width: 100%;
+                font-weight: bold;
+                color: #aaa;
+                font-size: 10px;
+            }
+
+                table.BrainQuest td.second span
+                {
+                    color: Black;
+                }
+
+            table.BrainQuest td img
+            {
+                border: none;
+            }
+
+            table.BrainQuest td.button
+            {
+                text-align: center;
+            }
+
+                table.BrainQuest td.button a
+                {
+                    border: none;
+                }
+
+        #right td.button
+        {
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        .style1
+        {
+            text-align: left;
+        }
+    </style>
+
+
+    <table width="710" border="0" align="center" cellpadding="0" cellspacing="0" id="container" bgcolor="white" style="border: 1px #cccccc solid; font-family: Verdana, Geneva, sans-serif;">
+        <tr>
+            <td bgcolor="#efefef">
+                <table width="508px;" border="0" cellspacing="0" cellpadding="15">
+                    <tr>
+                        <td><strong>SSW Update - TFS is huge in China - the work item journey with 20 million records</strong></td>
+
+                    </tr>
+                </table>
+            </td>
+
+            <td valign="middle" bgcolor="#efefef" style="border-top: 4px #f26522 solid; border-left: 1px #cccccc solid; width: 202px;">
+                <img src="/ssw/Company/Images/small_partnerlogo.png" alt="Microsoft Gold Partner Logo" align="right" style="padding: 5px;" />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="width: 508px;">
+                <table width="468" border="0" cellspacing="0" cellpadding="20">
+                    <tr>
+                        <td>
+                            <a href="http://tv.ssw.com/?utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">
+                                <img src="/ssw/NETUG/SSWUpdate/Images/SSW_TV banner.jpg" alt="SSW TV" width="468" border="0" /></a>
+
+                            <h1>[<span class="magazineTitle">the cutting edge</span> ]</h1>
+                            <p><b>G'day Developers!</b></p>
+                            <p>Recently Lei Xu and I completed a hair-raising TFS 2012 project. We hit some snags trying to optimize Work Items with 20,000,000 records. Let me tell you the story...</p>
+
+                            <p>
+                                It was completed shortly after arriving home from the <a title="MVP Summit" href="http://www.2013mvpsummit.com/">MVP Summit</a> in Redmond. 
+                    It was lucky we were full of information from Brian Harry and his team. This job turned out to be one of the most challenging that I've ever done, 
+                    pushing the performance limits of Team Foundation Server 2012 (these tips apply to TFS 2013 and 2010 as well).
+                            </p>
+                            <p>
+                                <img class="size-full wp-image-397 " alt="brian-lei" src="http://www.adamcogan.com/wp-content/uploads/2013/07/brian-lei.jpg" width="470" height="318" />
+                            </p>
+                            <b>Figure: Brian Harry and Lei Xu @ MVP Summit</b>
+                            <p>
+                                First some background: the client runs one of the biggest development teams in the world. They have over 20,000 developers and have a lot of experience gathering, 
+                    analyzing and acting on performance metrics acquired while testing software prior to wide scale deployment. 
+                    The system we needed to implement and customize had to cope with a massive number of concurrent requests, of course in very timely fashion. 
+                    We used the TFS Integration Platform and the TFS Object Model to implement most of the functionality required.
+                            </p>
+
+                            <p>
+                                Initially we thought TFS should be able to handle the load without too many problems, because Microsoft has been 
+                    <a href="http://blogs.msdn.com/b/bharry/archive/2009/09/04/dogfooding-tfs-2010-in-devdiv.aspx">dogfooding TFS in their developer division</a>
+                                for a long time, with great results.
+                            </p>
+
+                            <p>
+                                However, like every story, things will never run as you expect. Once the coding was done, with all the data access, business logic and interface implementations on top
+                     of TFS Object Model, it was time for the 1<sup>st</sup> performance tests.
+                            </p>
+
+                            <p>The initial results were disappointing...</p>
+
+                            <p>(<a href="http://www.adamcogan.com/2013/08/04/tfs-is-huge-in-china-part-1/?utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">Keep reading to find out why)</a></p>
+
+                            <p>
+                                -Adam Cogan, SSW
+                            </p>
+                            <p>
+                                Got a comment for Adam?<br />
+                                <a href="mailto:adamcogan@ssw.com.au">Email Adam Cogan</a><br />
+                                <a href="http://www.adamcogan.com/?utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">Adam Cogan's blog</a><br />
+                                <a href="http://www.twitter.com/adamcogan">@adamcogan</a>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h2>NEW SSW TV VIDEOS!</h2>
+                            <h3 class="newsTitle2">Three new videos from the Sydney ShareThePoint Conference</h3>
+                            <center>
+                                <p>
+                                    <a href="http://tv.ssw.com/tag/sharethepoint">
+                                        <img class="noborder" alt="SSWTV Video" width="350" src="/SSW/NETUG/SSWUpdate/Images/SharePoint_SSWTV.png" /></a>
+                                </p>
+                            </center>
+
+                            <h3><a href="http://tv.ssw.com/3661/whats-missing-in-sharepoint-2013-sharethepoint-conference/?utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">What's Missing in SharePoint 2013?</a></h3>
+                            <p>We asked the experts what they thought was missing from SharePoint 2013.</p>
+                            <p>Featuring:</p>
+                            <ul>
+                                <li>Michael Doyle &#8211; SharePoint Architect, Wagenner Edstrom</li>
+                                <li>Todd Klindt &#8211; SharePoint MVC, Rackspace</li>
+                                <li>Daniel McPherson &#8211; SharePoint Architect, Zevenseas</li>
+                            </ul>
+                            <br />
+                            <h3><a href="http://tv.ssw.com/3664/business-challenges-in-sharepoint-2013-sharethepoint-conference/?utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">Business Challenges Solved by SharePoint 2013</a></h3>
+                            <p>The expert's opinions on the Business Challenges presented in SharePoint 2013.</p>
+                            <br />
+                            <h3><a href="http://tv.ssw.com/3658/top-tip-for-sharepoint-2013-sharethepoint-conference/?utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">Top Tips for SharePoint 2013 Users</a></h3>
+                            <p>The expert's Top Tips for SharePoint 2013 End-Users.</p>
+                            <p>Featuring:</p>
+                            <ul>
+                                <li>Michael Doyle &#8211; SharePoint Architect, Wagenner Edstrom</li>
+                                <li>Todd Klindt &#8211; SharePoint MVC, Rackspace</li>
+                                <li>Darren McGuiness &#8211; Portfolio Manager of Human Interface Technologies, CSA</li>
+                                <li>Daniel McPherson &#8211; SharePoint Architect, Zevenseas</li>
+                            </ul>
+                            <br />
+                            <p>Take a look!</p>
+
+                            <p><a href="http://tv.ssw.com/tag/sharepoint-2013?utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">Watch more videos on SSW TV</a></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="section">
+                            <h2>There's Still Time to Sign Up for the 3 Day Scrum Training!</h2>
+                            <h3 class="newsTitle2">Intensive Professional Scrum Developer Course</h3>
+                            <table class="BrainQuest" width="468" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="210" valign="middle">
+                                        <p>
+                                            <a href="http://www.ssw.com.au/ssw/Events/Training/Scrum-Training-Course-3-days.aspx?utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">
+                                                <img src="/SSW/Training/images/Scrum_circle.jpg" class="noborder" alt="Scrum" width="200" /></a>
+                                        </p>
+                                    </td>
+                                    <td valign="middle">
+                                        <p>
+                                            Brisbane, Melbourne, Sydney, Perth, Canberra, Adelaide
+                                        </p>
+                                        <p>
+                                            Cost: $2,995 + GST Pre Paid
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>
+                                Professional Scrum Developer courses teach students how to work in a team - using modern software engineering practices - to develop 
+                            an increment of potentially releasable functionality using a specific technology platform.
+                            </p>
+                            <p>
+                                Classes are exercise-driven, with students working in self-organizing teams to develop "done" increments from Product Backlog items.
+                            </p>
+                            <p>
+                                <strong>Course at a Glance:</strong>
+                            </p>
+                            <p>
+                                This 3-day Professional Scrum Developer .NET course is a mix of lecture, demonstration, group discussion, simulation, and hands-on 
+                            software development. The bulk of the course will be spent working as a team on a case study application delivering increments of new 
+                            functionality in mini-sprints. Here is the course at a glance:
+                            </p>
+                            <p>
+                                <img class="noborder" alt="Scrum" src="/ssw/NETUG/SSWUpdate/Images/Scrum_at_a_glance.png" />
+                            </p>
+                            <p>
+                                Note: Scrum fundamentals are not covered in this 3-day course. If you are not experienced with Scrum fundamentals, the 
+                            <a href="http://www.ssw.com.au/ssw/Events/Scrum-Training-Course.aspx?utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">5 day course</a> is still available.
+                            </p>
+
+                            <table class="BrainQuest" width="508" border="0" cellpadding="0" cellspacing="0" id="Table2">
+                                <tr>
+                                    <td class="first"><span>Adelaide</span><br />
+                                        08 OCT 2013</td>
+                                    <td class="button"><a href="http://www.ssw.com.au/ssw/Shop/BasketInsert.aspx?ProductID=3PSDAD&utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">
+                                        <img src="/ssw/images/book-now-btn.jpg" alt="Book Now" /></a></td>
+                                    <td class="first"><span>Melbourne</span><br />
+                                        22 OCT 2013</td>
+                                    <td class="button"><a href="http://www.ssw.com.au/ssw/Shop/BasketInsert.aspx?ProductID=3PSDME&utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">
+                                        <img src="/ssw/images/book-now-btn.jpg" alt="Book Now" /></a></td>
+                                </tr>
+                                <tr>
+                                    <td class="first"><span>Sydney</span><br />
+                                        14 OCT 2013</td>
+                                    <td class="button"><a href="http://www.ssw.com.au/ssw/Shop/BasketInsert.aspx?ProductID=3PSDSY&utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">
+                                        <img src="/ssw/images/book-now-btn.jpg" alt="Book Now" /></a></td>
+                                    <td class="first"><span>Perth</span><br />
+                                        04 NOV 2013</td>
+                                    <td class="button"><a href="http://www.ssw.com.au/ssw/Shop/BasketInsert.aspx?ProductID=3PSDPE&utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">
+                                        <img src="/ssw/images/book-now-btn.jpg" alt="Book Now" /></a></td>
+
+                                </tr>
+                                <tr>
+                                    <td class="first"><span>Canberra</span><br />
+                                        10 DEC 2013</td>
+                                    <td class="button"><a href="http://www.ssw.com.au/ssw/Shop/BasketInsert.aspx?ProductID=3PSDCA&utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">
+                                        <img src="/ssw/images/book-now-btn.jpg" alt="Book Now" /></a></td>
+                                </tr>
+                            </table>
+
+                            <br />
+                            <a href="http://www.ssw.com.au/ssw/Events/Scrum-Training-Course-3-days.aspx?utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">Find out more and Register</a>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="section">
+                            <h2>TechEd Australia 2013</h2>
+                            <h3 class="newsTitle2">What's happening in the world of Microsoft</h3>
+                            <table width="468" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="210" valign="middle">
+                                        <p>
+                                            <img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/teched2013-keynote-hero.jpg" alt="TechEd2013" />
+                                        </p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p>
+                                            TechEd is Microsoft's ultimate technology geek fest for IT Professionals and Enterprise Developers looking to explore a broad set of Microsoft technologies, tools, platforms and services. 
+         It's all about hands-on learning, deep product exploration, and countless opportunities to build relationships with Microsoft experts and the community.
+                                        </p>
+
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>
+                                SSW is excited to announce that the presenters this year include our own Adam Cogan and Damian Brady, who will be hosting two sessions, 
+           Climbing the Agile Testing Ladder featuring Visual Studio 2013, TFS 2013, Microsoft Test Manager 2013, and Lab Management 2013 and 
+           "What's New for ALM in Visual Studio 2013 and Team Foundation Server 2013.
+                            </p>
+
+                            <p><b>TechEd Australia 2013 will be held at the Gold Coast Convention and Exhibition Centre September 3-6.</b> </p>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="section">
+                            <h2>Sydney .NET User Group</h2>
+                            <h3 class="newsTitle2">The best place to learn .NET for free in Sydney</h3>
+                            <table width="468" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="210" valign="middle">
+                                        <p>
+                                            <img src="/ssw/NETUG/Images/NETUG_logo-syd.png" alt="User Group" width="200" />
+                                        </p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p>
+                                            <a href="http://www.ssw.com.au/ssw/NETUG/Sydney.aspx?utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">Sydney .NET User Group</a><br />
+                                            Wednesday 21th August 2013<br />
+                                            6:00pm - 8:00pm<br />
+                                            SSW Office<br />
+                                            Gateway Court, Suite 13<br />
+                                            81-91 Military Road, Neutral Bay NSW 2089
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <p><strong>"Great Intranets of the Modern Age" - James Robertson</strong></p>
+                            <p>Intranets have been around for a long time now, but SharePoint has brought new functionality and capability into organisations that promises to transform these sites.</p>
+
+                            <p>
+                                But what direction should we be heading, and what makes a truly great intranet? This presentation, by the world's leading intranet expert, will provide a 
+                            practical and inspirational view of the role that intranets can (and should) play.
+                            </p>
+
+                            <p>
+                                Many real-world screenshots of intranets will be shared, focusing on SharePoint sites and solutions. 
+                        These include winners from the global Intranet Innovation Awards.
+                            </p>
+
+
+                            <br />
+                            <table width="468" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="210" valign="middle">
+                                        <p>
+                                            <img src="/ssw/NETUG/SSWUpdate/Images/james-robertson-designing-intranets.jpg" alt="Designing Intranets" width="150" />
+                                        </p>
+                                    </td>
+                                    <td valign="bottom">
+
+                                        <p><strong>ABOUT THE PRESENTER</strong></p>
+                            <p>
+                                James Robertson is one of the global experts on intranet strategy and design.
+                            </p>
+
+                                        <p>
+                                            He is the author of <a href="http://www.steptwo.com.au/products/every-team/" target="_blank">What every intranet team should know</a> and
+                                            <a href="http://www.steptwo.com.au/products/designing-intranets/" target="_blank">Designing intranets: creating sites that work</a>, 
+                            the two best-selling intranet books in the world. He has also written over two hundred <a href="http://www.steptwo.com.au/category/papers" target="_blank">articles</a>
+                                            and a variety of best-practice resources, including the <a href="http://www.steptwo.com.au/product/intranet-roadmap/" target="_blank">Intranet Roadmap</a>.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>
+                                James is the founder and managing director of Step Two Designs, a vendor-neutral consultancy located in Australia. In this role, he has helped high-profile 
+                            organisations to develop intranet strategies, both within Australia and internationally.
+                            </p>
+
+                            <p>
+                                James has keynoted conferences around the globe, including in the UK, USA, Denmark, the Netherlands, Sweden, Norway, Singapore, Malaysia, New Zealand and Australia. 
+                            As a certified trainer, he regularly runs one and two-day practical workshops on intranet strategy and design, both within Australia and internationally.
+                            </p>
+
+                            <p>
+                                James is also a leading specialist on the topic of web content management. He is a founding member of the CM Professionals association, 
+                            and has helped many organisations to select a suitable CMS.
+                            </p>
+
+                            <p>
+                                To see more details and RSVP, please visit our <a href="https://www.facebook.com/events/486562578104993/">Facebook .NET Group</a>, our <a href="http://www.linkedin.com/groupItem?view=&gid=1520317&type=member&item=260975489&qid=256cfa33-ac28-4b79-b037-694bfbb16d34&trk=group_most_recent_rich-0-b-ttl&goback=%2Egmr_1520317">LinkedIn .NET Group</a> or our <a href="http://www.meetup.com/Sydney-NET-User-Group/events/131309562/">Meetup Group</a>.
+                            </p>
+                            <table border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto; padding-top: 20px;">
+                                <tr>
+                                    <td width="150" align="center"><a href="https://www.facebook.com/events/486562578104993/">
+                                        <img src="/ssw/NETUG/Images/Facebook.gif" alt="facebook" class="noborder" /></a></td>
+                                    <td width="150" align="center"><a href="http://www.linkedin.com/groupItem?view=&gid=1520317&type=member&item=260975489&qid=256cfa33-ac28-4b79-b037-694bfbb16d34&trk=group_most_recent_rich-0-b-ttl&goback=%2Egmr_1520317">
+                                        <img src="/ssw/NETUG/Images/linkedin.jpg" alt="LinkedIn" width="130" class="noborder" /></a></td>
+                                    <td width="150" align="center"><a href="http://www.meetup.com/Sydney-NET-User-Group/events/131309562/">
+                                        <img src="/ssw/NETUG/SSWUpdate/Images/meetup_logo.jpg" alt="MeetUp" width="100" class="noborder" /></a></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h2>SSW and Telerik NerdDinner</h2>
+                            <h3 class="newsTitle2">Where nerds meet and eat</h3>
+                            <table width="468" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="210" valign="middle">
+                                        <p>
+                                            <a href="http://nerddinner.com/7003">
+                                                <img src="/ssw/NETUG/SSWUpdate/Images/NerdDinner.jpg" alt="NerdDinner" class="noborder" width="200" /></a>
+                                        </p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p>
+                                            <a href="http://nerddinner.com/7003">NerdDinner - Where geeks eat</a><br />
+                                            Wednesday 21th August 2013<br />
+                                            8:10pm - 9:30pm<br />
+                                            The Oaks Hotel<br />
+                                            118 Military Road, Neutral Bay
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>SSW and Telerik invite you to join us for pizza at The Oaks. A fantastic opportunity for networking with peers and sharing thoughts after the Sydney .NET User Group presentation.</p>
+
+                            <h4>Sydney .Net User Group and NerdDinner proudly sponsored by:</h4>
+                            <center>
+                                <p>
+                                    <a href="http://nerddinner.com/6950">
+                                        <img src="/ssw/netug/sswupdate/images/Telerik Logo.jpg" alt="Telerik Logo" width="150" height="50" border="0" /></a>
+                                </p>
+                            </center>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="section">
+                            <h2>Canberra .NET User Group </h2>
+                            <h3 class="newsTitle2">The best place to learn .NET for free in Canberra</h3>
+                            <table width="468" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="210" valign="middle">
+                                        <img src="/ssw/NETUG/Images/NETUG_logo-canberra.png" alt="User Group" width="200" />
+                                    </td>
+                                    <td valign="bottom">
+                                        <a href="http://www.ssw.com.au/ssw/NETUG/Canberra.aspx?utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">Canberra .NET User Group</a><br />
+                                        Monday 19th August 2013<br />
+                                        6:00pm - 8:00pm<br />
+                                        Microsoft Canberra Branch<br />
+                                        Walter Turnbull Building<br />
+                                        Level 2, 44 Sydney Ave<br />
+                                        Canberra, Australia
+                                    </td>
+                                </tr>
+                            </table>
+                            <p><strong>"Secure BYOD Applications including .Net Development environments using hardware based security" - Nadia Vostrikov</strong></p>
+                            <p>
+                                Randtronics introduces SPYRUS Secure Portable Workplace which offers “Secured by SPYRUS™” military grade encryption technology in a Microsoft certified and 
+                        tested Windows To Go drive that runs Windows 8 from non-secure environments. The presenter will provide technical details and a technology demonstration on how 
+                        you can securely use the Windows To Go feature in BYOD environments.
+                            </p>
+
+                            <p>
+                                Additionally Randtronics will provide an overview of .Net software development kits that use hardware security modules to EAL4+ security level to develop 
+                        security-aware applications such as secure messaging, file encryption, certificate authority implementations, and remote access solutions. Developers can use SDKs 
+                        to retain maximum flexibility in security options without writing applications from scratch.
+                            </p>
+
+                            <br />
+                            <p><strong>ABOUT THE PRESENTER</strong></p>
+                            <p>
+                                Nadia Vostrikov is a Senior Software Support Engineer at Randtronics with 12 years experience in software development and implementation of data encryption solutions. 
+                        She holds a Bachelor degree with honours in Computer Science and is a Microsoft Certified Professional. Nadia spent 8 years in Japan working with the latest technologies 
+                        and developing various software solutions for digital television. Now at Randtronics she continues development of crypto modules for in-house products, and consults in 
+                        areas of security and data privacy standards, recommending and implementing encryption and tokenisation solutions to meet business and technical requirements for complex 
+                        environments. Also conducts product training, proof of concepts and provides pre and post-sales support for clients in Australia and APAC.
+                            </p>
+
+                            <p>
+                                To see more details and RSVP, please visit 
+                            our <a href="https://www.facebook.com/events/620381537994927/">Facebook .NET Group</a>, 
+                            our <a href="http://www.linkedin.com/groupItem?view=&gid=1520387&type=member&item=265622331&qid=21c970a0-67bf-463f-9f3e-94e25c61e6ea&trk=group_most_recent_rich-0-b-ttl&goback=%2Egna_1520387%2Egmr_1520387">LinkedIn .NET Group</a> or 
+                            our <a href="http://www.meetup.com/Canberra-NET-User-Group/events/134619162/">Meetup Group</a>.
+                            </p>
+
+                            <table border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto; padding-top: 20px;">
+                                <tr>
+                                    <td width="150" align="center"><a href="https://www.facebook.com/events/620381537994927/">
+                                        <img src="/ssw/NETUG/Images/Facebook.gif" alt="facebook" class="noborder" /></a></td>
+                                    <td width="150" align="center"><a href="http://www.linkedin.com/groupItem?view=&gid=1520387&type=member&item=265622331&qid=21c970a0-67bf-463f-9f3e-94e25c61e6ea&trk=group_most_recent_rich-0-b-ttl&goback=%2Egna_1520387%2Egmr_1520387">
+                                        <img src="/ssw/NETUG/Images/linkedin.jpg" alt="LinkedIn" width="130" class="noborder" /></a></td>
+                                    <td width="150" align="center"><a href="http://www.meetup.com/Canberra-NET-User-Group/events/134619162/">
+                                        <img src="/ssw/NETUG/SSWUpdate/Images/meetup_logo.jpg" alt="MeetUp" width="100" class="noborder" /></a></td>
+                                </tr>
+                            </table>
+                            <center>
+
+                                <h4>Canberra .Net User Group proudly sponsored by:</h4>
+                                <p>
+                                    <a href="http://www.microsoft.com/en-au/default.aspx">
+                                        <img src="/ssw/NETUG/SSWUpdate/Images/new_ms_logo_small.jpg" alt="Microsoft Logo" class="noborder" width="105" height="80" /></a></>
+                                </p>
+                            </center>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="section">
+                            <h2>Brisbane .NET User Group </h2>
+                            <h3 class="newsTitle2">The best place to learn .NET for free in Brisbane</h3>
+                            <table width="468" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td valign="bottom">
+                                        <a href="http://www.ssw.com.au/ssw/NETUG/Canberra.aspx?utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">Brisbane .NET User Group</a><br />
+                                        Tuesday 20th August 2013<br />
+                                        6:00pm - 8:00pm<br />
+                                        Microsoft Brisbane<br />
+                                        Level 28, 400 George Street<br />
+                                        Brisbane, Australia
+                                    </td>
+                                </tr>
+                            </table>
+                            <p><strong>"Climbing the Agile Testing Ladder featuring VS 2013, TFS 2013, and MTM" - Adam Cogan and Damian Brady</strong></p>
+                            <p>
+                                Let's do a lap around the improvements to Microsoft Test Manager and see how the world has improved with manual, exploratory, and automated testing.
+                            </p>
+                            <p>In this session, we will:</p>
+                            <ul>
+                                <li>Talk about how stakeholders can start a discussion with the Feedback tool</li>
+                                <li>Show how the initial testing experience is now in the web and the advanced experience is in Microsoft Test Manager</li>
+                                <li>Use Visual Studio to author automated tests that can be played back against a variety of browsers</li>
+                                <li>Look at a technique that will allow you to test across different devices and form factors</li>
+                                <li>Explain how Lab Management setup and administration has improved dramatically</li>
+                            </ul>
+
+                            <p>Whether you're a tester or a developer, this session is for you.</p>
+
+                            <br />
+                            <p><strong>ABOUT THE PRESENTERS</strong></p>
+                            <p>
+                                Adam Cogan is the Chief Architect at SSW, a Microsoft Certified Gold Partner specializing in custom .NET, SharePoint, and CRM solutions
+                        (with a splash of Buisness Intelligence). At SSW, Adam has been developing custom solutions for business across a range of industries such as 
+                        Government, engineering, banking, insurance, and manufacturing since 1990 for clients such as Microsoft, Worley Parsons, and Aurecon.
+                            </p>
+
+                            <p>
+                                At SSW, Adam enjoys working with the teams, improving their usage of Scrum and TFS, reviewing the architecture of large .NET projects, while 
+                        also taking an active interest in the overall User Experience (UX).
+                            </p>
+
+                            <p>
+                                Damian Brady is a Solution Architect and Microsoft Certified Professional who runs the Brisbane SSW Office. 
+                        With well over ten years of experience both in software development and business analysis roles, Damian has had exposure to a large number of industries 
+                        including government and finance. A software architect with a wide skillset, he is able to use his excellent technical skills and knowledge of business 
+                        process to deliver the most effective solutions to our clients.
+                            </p>
+
+                            <p>
+                                His main loves are helping Scrum teams run smoothly and effectively using TFS, and delivering great ASP.NET MVC web applications. He has also had 
+                        extensive experience in .Net WinForms applications, mobile-targeted websites, and SQL Server.
+                            </p>
+
+
+                            <p>
+                                To see more details and RSVP, please visit 
+                                our <a href="http://www.meetup.com/Brisbane-Net-User-Group/events/134448072/">Meetup Group</a>.
+                            </p>
+
+                            <table border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto; padding-top: 20px;">
+                                <tr>
+                                    <td width="150" align="center"><a href="http://www.meetup.com/Brisbane-Net-User-Group/events/134448072/">
+                                        <img src="/ssw/NETUG/SSWUpdate/Images/meetup_logo.jpg" alt="MeetUp" width="100" class="noborder" /></a></td>
+                                </tr>
+                            </table>
+                            <center>
+                                <p>
+                                    <h4>Brisbane .Net User Group proudly sponsored by:</h4>
+                                    <a href="http://www.microsoft.com/en-au/default.aspx">
+                                        <img src="/ssw/NETUG/SSWUpdate/Images/new_ms_logo_small.jpg" alt="Microsoft Logo" class="noborder" width="105" height="80" /></a></>
+                                </p>
+                            </center>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="section">
+
+                            <h2>SSW-UTS Short courses</h2>
+                            <center>
+                                <p>
+                                    <img src="/ssw/NETUG/SSWUpdate/Images/UTS_image1.jpg" alt="UTS courses 2013" />
+                                </p>
+                            </center>
+                            <h3 class="newsTitle2">SSW is proud to partner with UTS to offer short courses in the field of Information Technology and Management for the working professional or anyone wishing to upgrade their skills</h3>
+
+                            <table width="468" border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 210px;" valign="top">
+                                            <img src="/ssw/NETUG/SSWUpdate/Images/visual-studio-2013-logo.png" alt="Visual Studio 2012" width="200" /></td>
+                                        <td valign="bottom">
+
+                                            <h3 class="newsTitle"><a href="https://shortcourses-bookings.uts.edu.au/Clientview/Schedules/ScheduleDetail.aspx?ScheduleID=1160&EventID=1065">UTS Short Course - Developing Windows and Web Application with MVC 4.0 and Visual Studio 2012
+                                            </a></h3>
+                                            <p>
+                                                Every Thursday<br />
+                                                Dates: August 8th - October 17th<br />
+                                                Times: 6:00-9:00pm
+                                            <br />
+                                                Duration: 10 weeks<br />
+                                                Venue: UTS - Broadway<br />
+                                                Price: $1,650<br />
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p><b>More Information</b></p>
+                            <p>
+                                This course introduces students to Microsoft .NET Framework through hands-on exercises and live demos. 
+            Both C# and VB.NET code is provided side-by-side giving the students a deeper understanding of the commonalities between the languages.
+                            </p>
+
+                            <p>
+                                For the full course description or to enrol, visit the 
+           <a href="https://shortcourses-bookings.uts.edu.au/Clientview/Schedules/ScheduleDetail.aspx?ScheduleID=1160&EventID=1065">UTS Developing Windows and Web Application with MVC 4.0 and Visual Studio 2012</a>
+                            </p>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="section">
+                            <h3 class="newsTitle">
+                                <a name="Welcome to SSW" id="A4"></a>Welcome to SSW</h3>
+                            <p>SSW would like to welcome a new employee to the team this month:</p>
+                            <br />
+                            <img class="noborder" alt="Joanna" src="/SSW/NETUG/SSWUpdate/Images/joanna_info.jpg" width="172" height="165" align="right" style="padding-left: 15px;" />
+                            <strong>Joanna Feely</strong><br />
+                            <strong>Personal Assistant/Office Administrator - Sydney</strong><br />
+                            <p>
+                                Brooke has left SSW to work full-time on her novel and aims to have it published within a year. Good luck - we cant wait to read a draft! Her replacement Joanna
+                           is a Sydney local, who, like Brooke before her, has a passion for writing. She trained as an editor at the University of Wollongong and 
+                           travelled around Europe and Australia before settling back in Sydney as a member of the SSW team.
+                            </p>
+
+                            <p>
+                                Joanna's role at SSW is Personal Assistant to Chief Architect Adam Cogan, as well as the day-to-day running of the office. 
+                         She helps organise SSW training events and User Groups, and also puts together the regular newsletter that is distributed to company friends and 
+                            clients to keep them in the loop with what's happening at SSW.
+                            </p>
+
+                            <p>She is loving getting to use her eye for detail, strong organisational skills, and knowledge of HTML in a friendly office atmosphere.</p>
+
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="section">
+                            <h2>Sydney .NET 4hr Monster Night</h2>
+
+                            <h3 class="newsTitle2">All the way from the USA: Jason Beres (Infragistics) and Glenn Block (Microsoft) - Azure mobile - MVVM Javascript Apps</h3>
+                            <table width="468" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    
+
+                                        <p><img src="Images/banner-monster-night-small.png" alt="MonsterNight" width="470" class="noborder" /></p>
+                                    
+                                    <td>
+                                        <p>
+                                            <a href="http://www.ssw.com.au/ssw/Events/Events.aspx?utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">Free 4-hour .NET Monster Night</a><br />
+                                            Monday 9th September 2013<br />
+                                            5:00pm - 9:00pm<br />
+                                            SSW Offices<br />
+                                            Gateway Court, Suite 13<br />
+                                            81-91 Military Road, Neutral Bay NSW 2089
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+
+                            <h2>JASON BERES 5-7PM</h2>
+                            <p><b>Interaction design with Indigo Studio</b></p>
+                            <p>
+                                Rather than spending weeks creating a prototype in code, Indigo Studio is a FREE tool that allows you to rapidly iterate and validate designs 
+                        by creating interactive prototypes.
+                            </p>
+                            <p>Jason will show how to create prototypes and share them as an interactive HTML5 app that can then be used to allow users to test on a variety of devices.</p>
+
+                            <p><b>Building MVVM JavaScript Apps for the C# / XAML Developer </b></p>
+                            <p>Jason Beres will teach developers how to implement the MVVM pattern in HTML5/JavaScript using the Knockout JS library. </p>
+                            <p>
+                                Key topics covered include a review of MVVM Fundamentals, a walkthrough of simple WPF MVVM line-of-business application, an introduction to the Knockout 
+                        JS library and a walkthrough of an HTML5/JS version of the WPF MVVM line-of-business application.
+                            </p>
+                            <br />
+                            <h2>GLENN BLOCK 7-9PM</h2>
+                            <p><b>C# on a diet with scriptcs</b></p>
+                            <p>
+                                Have you ever found times where you just want to write and execute some C# code and you ask yourself Do I really need an IDE? a solution? a project? a class? 
+                        Do I really need to compile? Why do I have to worry about all these dlls? if you've done any development with dynamic languages like Ruby, Python or node.js the 
+                        answer is you don't. But what about C#? scriptcs (https://github.com/scriptcs/scriptcs) is new way to develop C# applications as script. It leverages compiler 
+                        advancements of Roslyn and combines the power of nuget to offer a low calorie approach to working with C#. It's great for prototyping, simple scripting or even 
+                        building simple apps. Not only does it let you write scripted "apps", but it also includes a REPL so you can execute code interactively. You can even debug. 
+                        Come to this talk and it will change the way you think about C# development.
+                            </p>
+
+                            <b>
+                                <p>Ease your mobile app development to the cloud powered by Javascript with Azure Mobile Services</p>
+                            </b>
+                            <p>
+                                Javascript, it's not just for browsers anymore. If you are a Javascript developer today you are no longer confined to the browser frame, you can take those 
+                        skills to mobile devices, servers and the cloud. The technology makes it possible, but it's not easy. You've got a lot of learning to do and a lot of things to 
+                        worry about like data, identity, validation, push, scale and diagnostics to name a few. Azure Mobile Services is there to make it easy. It provides you a ton of 
+                        backend services out of the box to help you cloud enable those client apps utilizing the client side Javascript skills you already have. If you are a node developer 
+                        you can go even further. It doesn't stop there though, it includes client SDKs for IOS, Android, WIndows 8 and a newly announced library for Phonegap/HTML5 which 
+                        you can use to reach any device anywhere. You have to just see it to believe it, and if you come to this talk you will!
+                            </p>
+
+                            <br />
+                            <p><strong>ABOUT THE PRESENTERS</strong></p>
+                            <b>JASON BERES</b>
+                            <p>
+                                As the Sr. VP of Developer Tools at Infragistics, Jason and his team spearhead the customer-driven, innovative features and functionality throughout all of Infragistics' 
+                        developer & user experience products. Jason works directly with Infragistics customers around the globe to ensure that their needs are met through our products and roadmaps. 
+                        Jason is also a Microsoft .NET MVP, and he is the author of several books on .NET development, covering topics like SQL Server, C#, Visual Basic .NET and most recently 
+                        Silverlight development.  Jason is a national and international conference speaker and keeps very active in the .NET community.
+                            </p>
+
+                            <b>GLENN BLOCK</b>
+                            <p>
+                                Glenn works on the Windows Azure engineering team making sure it's a kick-ass platform for Open Source development. When he's not developing products or with 
+                        family you'll find him at a conference somewhere in the world, hacking away on some new thing, pairing up with whoever he can find, or tweeting in to the wee 
+                        hours of the night as @gblock.
+                            </p>
+
+                            <p>
+                                To see more details and RSVP, please visit our <a href="https://www.facebook.com/events/155403994656668/?ref=3">Facebook .NET Group</a>, our <a href="http://www.linkedin.com/groupItem?view=&gid=1520317&type=member&item=265982707&qid=47b78714-4d85-4c7e-8505-4eb88477ab2d&trk=group_most_recent_rich-0-b-ttl&goback=%2Egmr_1520317">LinkedIn .NET Group</a> or our <a href="http://www.meetup.com/Sydney-NET-User-Group/events/134869362/">Meetup Group</a>.
+                            </p>
+
+                            <table border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto; padding-top: 20px;">
+                                <tr>
+                                    <td width="150" align="center"><a href="https://www.facebook.com/events/155403994656668/?ref=3">
+                                        <img src="/ssw/NETUG/Images/Facebook.gif" alt="facebook" class="noborder" /></a></td>
+                                    <td width="150" align="center"><a href="http://www.linkedin.com/groupItem?view=&gid=1520317&type=member&item=265982707&qid=47b78714-4d85-4c7e-8505-4eb88477ab2d&trk=group_most_recent_rich-0-b-ttl&goback=%2Egmr_1520317">
+                                        <img src="/ssw/NETUG/Images/linkedin.jpg" alt="LinkedIn" width="130" class="noborder" /></a></td>
+                                    <td width="150" align="center"><a href="http://www.meetup.com/Sydney-NET-User-Group/events/134869362/">
+                                        <img src="/ssw/NETUG/SSWUpdate/Images/meetup_logo.jpg" alt="MeetUp" width="100" class="noborder" /></a></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h2>SSW and Jason Beres NerdDinner</h2>
+                            <h3 class="newsTitle2">Where nerds meet and eat - Monster Night Edition</h3>
+                            <table width="468" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="210" valign="middle">
+                                        <p>
+                                            <a href="http://nerddinner.com/7037">
+                                                <img src="/ssw/NETUG/SSWUpdate/Images/NerdDinner.jpg" alt="NerdDinner" class="noborder" width="200" /></a>
+                                        </p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p>
+                                            <a href="http://nerddinner.com/7037">NerdDinner - Where geeks eat</a><br />
+                                            Wednesday 21th August 2013<br />
+                                            9.10pm - 10:30pm<br />
+                                            The Oaks Hotel<br />
+                                            118 Military Road, Neutral Bay
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>SSW and Jason Beres invite you to join us for pizza at The Oaks. A fantastic opportunity for networking with peers and sharing thoughts after the Sydney .NET User Group Monster Night presentation.</p>
+                            <center>
+                                <h4>This special Monster Night Sydney .Net and NerdDinner proudly sponsored by Infragistics</h4>
+                            </center>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="section">
+                            <h2>Advertise with SSW</h2>
+                            <p>
+                                If you would like to advertise your product or service with SSW or would like to 
+                    find out more about various advertising opportunities, please email your enquiry 
+                    to <a href="mailto:info@ssw.com.au?subject=Newsletter">info@ssw.com.au</a> or call: +61 2 9953 3000.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top" style="border-left: 1px #cccccc solid; width: 202px;" bgcolor="#eeeeee">
+                <img alt="SSW Update" src="/SSW/NETUG/SSWUpdate/Images/featureImage2008/05.jpg" width="200" height="300" class="featureimage" />
+                <table width="202px" border="0" cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td bgcolor="#FFFFFF">
+                            <h3 class="sectionTitle">August 2013</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="sectionTitle">Employment</h3>
+                            <p><b>Senior Web Designer!</b></p>
+                            <p>
+                                SSW is looking for a highly talented Web Designer who is passionate about creating great standards-based sites and has worked in a Digital Agency. 
+                            This role requires a deep understanding of how people interpret information and the best way to achieve this 
+                            goal in different scenarios.
+                            </p>
+                            <p>
+                                <img src="/ssw/NETUG/SSWUpdate/Images/graphic%20design2.jpg" alt="graphic designer" />
+                            </p>
+                            <p>
+                                You will be working with both creative designers and technical minded developers in a wide variety of exciting corporate projects. 
+                         This role requires someone who is able to articulate concisely, think critically, and create aesthetically pleasing prototypes. 
+                         A solid understanding of what constitutes a great user experience is a must. 
+                         General knowledge of other design aspects, primarily print and digital, are also favorable.
+                            </p>
+
+                            <p>
+                                <a href="http://www.ssw.com.au/ssw/Employment/Employment.aspx?utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">Read more and APPLY NOW...</a>
+                            </p>
+                            <p><b>SharePoint 2013 Developer</b></p>
+                            <p>
+                                Are you looking to establish a career working with the latest software technology for a large range of great organisations? Do you enjoy managing 
+                    your own clients in a fun, fast-paced and dynamic environment?<br />
+                                SSW has been the leading Microsoft technology company in Sydney for 21 years. We require an enthusiastic SharePoint developer to start ASAP. 
+                            </p>
+                            <p>
+                                <a href="http://www.ssw.com.au/ssw/Employment/Employment.aspx?utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">Read more and APPLY NOW...</a>
+                            </p>
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table align="center" width="710">
+        <tr>
+            <td class="copyright">Copyright © SSW 1990-2013. All Rights Reserved.</td>
+            <td class="proudly" align="right">Proudly developed by <a href="http://www.ssw.com.au?utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">SSW Sydney Web Design</a></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table align="center">
+                    <tr valign="top" class="footer">
+                        <td valign="top" align="center">
+                            <a href="mailto:info@ssw.com.au?subject=Advertisting">Advertise with SSW</a> |
+                        </td>
+                        <td valign="top" align="center">Unsubscribe |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" href="http://www.ssw.com.au/ssw/NETUG/SSWUpdatePrevious.aspx?utm_source=SSWUpdate_August&utm_medium=email&utm_campaign=TFS is huge in China">Previous SSW Updates</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a href="mailto:info@ssw.com.au?subject=Got a Hot Tip to share?">Got a Hot Tip to share?</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a href="mailto:info@ssw.com.au?subject=Got a comment to make?">Got a comment to make?</a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

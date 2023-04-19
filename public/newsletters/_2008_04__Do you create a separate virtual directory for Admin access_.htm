@@ -1,0 +1,468 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>SSW Update - Do you create a separate virtual directory for Admin access?</title>
+<script src="/ssw/include/decodemail.js" type="text/javascript"></script>
+</head>
+
+<body bgcolor="#e7e7cf">
+
+<style type="text/css">
+<!--
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	margin: 0px;
+}
+td, th {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.sectionTitle {
+	font-family: "Century Gothic", Arial, Verdana, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #f25622;
+	font-weight: normal;
+}
+.newsTitle {
+	color: #f25622;
+	font-size: 14px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.magazineTitle {
+	font-family: "Century Gothic", Arial, Helvetica, sans-serif;
+	color: #f25622;
+	font-weight: normal;
+	font-size: 30px;
+}
+.section {
+	border-top: 1px #cccccc dotted;
+}
+.copyright {
+	font-weight: bold;
+	color: #999999;
+	font-size: 10px;
+}
+.proudly {
+	font-weight: normal;
+	font-size: 9px;
+	color: #999999;
+}
+.noborder {
+	border: none;
+}
+}
+.footer a {
+	color: gray;
+}
+-->
+</style>
+<font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+<table width="710" border="0" align="center" cellpadding="0" cellspacing="0" id="container" bgcolor="white" style="border: 1px #cccccc solid;">
+	<tr>
+		<td width="100%" bgcolor="#efefef">
+		<table width="98%" border="0" cellspacing="0" cellpadding="15">
+			<tr>
+				<td><span class="Subject"><strong>SSW Update - </strong>Do you create a separate virtual directory for Admin access?</span></td>
+			</tr>
+		</table>
+		</td>
+		<td width="200" valign="middle" bgcolor="#efefef" style="border-top: 4px #f26522 solid; border-left: 1px #cccccc solid;">
+		<img src="/ssw/images/Gold_Certified_Partner74x35.gif" alt="Microsoft Gold Partner Logo" width="75" height="35" align="right" style="padding: 5px;" /></td>
+	</tr>
+	<tr>
+		<td valign="top" id="main">
+		<table width="100%" border="0" cellspacing="0" cellpadding="20">
+			<tr>
+				<td>
+				<a href="/ssw/Redirect/sswupdate/2008Apr/TechBreakfast.htm">
+				<img src="/ssw/Images/SSWTechBreakfastBanner.gif" alt="SSW Tech Breakfast" width="468" height="60" border="0" class="banner" /></a>
+				<h1>&nbsp;</h1>
+				<h1 style="color: #a7a9ac; font-size: 30px;">[<span class="magazineTitle"> 
+				the cutting edge</span> ]</h1>
+				<p>G'Day Developers! </p>
+				<p>When going public with Reporting Services, you should have 2 ports:</p>
+				<ol>
+					<li><strong>A public access port.</strong> This allows your public users to access their reports normally on a port which has been configured for anonymous users.</li>
+					<li><strong>An admin access port on your web site.</strong> This allows authenticated internal users to administer the report server via the Report Manager.</li>
+				</ol>
+				<p>To set this up you need to perform the following:</p>
+				<p><strong>In Windows Explorer:</strong></p>
+				<ol>
+					<li>Create a Windows User account for the anonymous reporting services site to run as. e.g. IUSR_ReportViewer</li>
+					<li>Open up the ReportingServices directory (C:\Program Files\Microsoft SQL Server\MSSQL.3\Reporting Services)</li>
+					<li>Duplicate the ReportServer and the ReportManager folders then rename prefix them with _External e.g. ReportServer_External and ReportManager_External</li>
+					<li>Set the file access security on the new folders so that "Everyone" has full permissions.</li>
+					<li>Edit the ReportServer_External/rsreportserver.config file. Update the URL node &lt;UrlRoot&gt;<urlroot></urlroot>http://xxxx:81/ReportServer&lt;/URlRoot&gt;</li>
+					<li>The ReportManager_External/RSWebApplication.config file. Update the URL node &lt;ReportServerUrl&gt;http://xxxx:81/ReportServer&lt;/ReportServerUrl&gt;</li>
+				</ol>
+				
+				<p><strong>In IIS Manager: </strong></p>
+                <ol>
+                    <li>Create another website on another port (i.e. port 81) </li>
+                    <li>Create Virtual Direcoties for ReportServer and Reports then point them to the new
+                        folders we just made. Make sure they are setup as applications.</li>
+                    <li>Change the Authentication of these 2 virtual directorys to use the user we have
+                        already created "USR_ReportViewer". Ensure that all other Authenticated access is
+                        unchecked.</li>
+                    <li>In the Reports Virtual Direcotry, make sure that it is running the same version
+                        of ASP.NET. Set the Applicaiton to execute Scripts and Executables. Add Home.aspx
+                        into the Default Documents. </li>
+                    <li>In the ReportServer Virtual Directory, make sure that it is running the same version
+                        of ASP.NET. Remove all the Application Mappings in the Application Confguration.
+                        Then add a wildcard mapping to the Executable C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\aspnet_isapi.dll</li></ol>
+				
+				<p>See<a href="/ssw/Redirect/SSWUpdate/2008Apr/NewsletterRule.htm"> 
+				how to do this</a> in SQL Management Studio, Reporting Services and with SQL 2000 in Windows Explorer and IIS Manager</p>
+				
+				<p>To see more rules like this, go to the
+				<a href="/ssw/Standards/Rules/Default.aspx">
+				SSW Rules</a> page.</p>
+				<p>Cheers until next time,
+				<a href="/ssw/Redirect/SSWUpdate/2008Apr/adamprofile.htm">
+				Adam</a><br />
+				SSW Chief Architect and Microsoft Regional Director, Australia&nbsp;
+				</p>
+				<p>Got a comment for Adam?
+				<a onclick="javascript:sendEmailWithoutSubject('6164616d636f67616e407373772e636f6d2e6175',this)" encode="6164616d636f67616e407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('6164616d636f67616e407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer">6164616d636f67616e407373772e636f6d2e6175</a>
+				</p>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="section">
+				<h3 class="newsTitle">
+				<a name="SydneyDotnetUsergroup" id="SydneyDotnetUsergroup">
+				</a>Sydney .NET User Group - <br />
+				The best place to learn .NET for free in Sydney</h3>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="210" valign="top">
+						<img src="/ssw/Images/SDNUG.jpg" alt="User Group" height="133" width="200" /></td>
+						<td valign="bottom">
+						<h3>2 days to go!</h3>
+						<p>
+						<a href="/ssw/Redirect/SSWUpdate/2008Apr/NewsletterNetUG.htm">
+						Sydney .NET User Group</a><br />
+						Wednesday 16th April 2008<br />
+						5:45pm - 9:00pm<br />
+						Microsoft, Sydney</p>
+						</td>
+					</tr>
+				</table>
+				<p><strong>Social Engineering with Facebook API using Visual Studio 2008 by Tom Gao</strong> </p>
+				<p><strong>About</strong><br/>
+                    The facebook platform is currently valued at 10 billion dollars with over 40 million users 
+                    registering within the last year alone. It is predicted to overtake myspace in the next year 
+                    or so. <br>
+                    In my work as the National Technical Director at EuroRSCG we&#8217;re required to meet an increasing 
+                    demand to develop applications for social networks such as Facebook. This is because although 
+                    Internet and online advertising is still the heart of most &#8216;online&#8217; business . Today industry 
+                    leaders in marketing such as Sony, Tony Ferguson and Veet are recognizing that the real &#8216;gold&#8217; 
+                    in advertising is not through pushing end users to use a product that they know little about 
+                    or bringing a banner in front of their face <em>but through word of mouth</em>.<br/>
+                    The reality of the matter is if my friends have added a facebook application and have sent me 
+                    action item on facebook. The psychology of ignoring such an action item would be anti-social. 
+                    This has been the driving factor in the success to facebook applications.</p>
+                    <p><strong>Description</strong><br/>
+                    Materials that will be presented include:</p>
+                    <ul>
+                        <li>Explaination to the Facebook architecture &amp; framework</li>
+                        <li>Facebook security and limitations</li>
+                        <li>ASP.NET Facebook API</li>
+                        <li>Facebook Markup Language (FBML)</li>
+                        <li>Facebook javascript (yes, specific to facebook)</li>
+                        <li>Facebook application development through IFrame</li>
+                    </ul>
+                    <p>During the presentation I will be running through live examples in developing facebook 
+                    applications for both Windows Application and Web Application. <br/>
+                    In Windows application development example application will actually be tapping into the 
+                    API to retrieve individual profile, friends information live from facebook.<br/>
+                    In web application we will attempt to create a live facebook application during the 
+                    presentation through both FBML  and Facebook IFrame approach.</p>
+                    <p><strong>Audience</strong><br/>
+                    This presentation is vital to anyone working in the digital space and is interested in 
+                    achieving a core understanding of the Facebook framework and how to develop on one of the 
+                    most popular social network frameworks in the world. </p>
+                    <p><strong>Credentials</strong><br/>
+                    Tom Gao is currently working as the National Technical Director in Australia at EuroRSCG 
+                    Worldwide one of the largest digital and marketing agency in the world with over 233 offices 
+                    worldwide. Tom is also a representative on the body of Australian Interactive Media Industry 
+                    Association (AMIA). Tom is a MCAD, MCSD, MCDBA, MCT as well as the sole author to The Complete 
+                    Reference to Professional SOA using Visual Studio 2005. Tom is also currently completing his 
+                    Doctorate in Cryptography at the University of South Australia.</p>
+              <a onclick="javascript:sendEmailWithSubject('736f7068696562656c6c65407373772e636f6d2e6175','See%20You%20There%20',this)" encode="736f7068696562656c6c65407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('736f7068696562656c6c65407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText="true">
+				See You There!!!</a>|
+				<a onclick="javascript:sendEmailWithSubject('736f7068696562656c6c65407373772e636f6d2e6175','subject=Sorry%20I%20can%27t%20make%20it%20',this)" encode="736f7068696562656c6c65407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('736f7068696562656c6c65407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText="true">
+				Sorry I can't make it</a></td>
+			</tr>
+			<tr>
+				<td class="section">
+				<h3 class="newsTitle">
+				<a name="CanberraDevUsergroup" id="CanberraDevUsergroup">
+				</a>Canberra Developers .NET User Group - <br />
+				The best place to learn .NET for free in Canberra</h3>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="210" valign="top">
+						<img src="/ssw/Images/CanbUG.jpg" alt="Canberra User Group" height="133" width="200" /></td>
+						<td valign="bottom">
+						<h3 class="style1">3 days to go!</h3>
+						<p>
+						<a href="/ssw/Redirect/SSWUpdate/2008Apr/NewsletterCanbUG.htm">
+						Canberra .NET Developers User Group</a><br />
+						Thursday 17th April 2008<br />
+						Lunch: 12:30pm - 1:30pm<br />
+						King O'Malley's Irish Pub<br/>
+						131 City Walk<br/>
+						Canberra City<br/>
+						<br/>
+						Dinner: 4:30pm - 6:00pm <br/>
+						Microsoft Canberra Branch<br/>
+						Walter Turnbull Building<br/>
+						Level 2, 44 Sydney Ave <br/>
+						Barton ACT</p>
+						</td>
+					</tr>
+				</table>
+				<p><strong>Social Engineering with Facebook API using Visual Studio 2008</strong></p>
+				<p>The Facebook platform is currently valued at 15 billion dollars with 60 million monthly active users and an 
+				average of 250,000 new registrants per day. Facebook has already overtaken MySpace as the most popular social 
+				networking site in UK. With its recent launch of translation services it is ready to dominate the world wide 
+				social network. <br/>
+				Tom Gao, Technical Director for Euro RSCG Australia will be demonstrating how to create Facebook applications 
+				in ASP.NET using VS2008 using both Facebook Markup Language (FBML) as well as Facebook IFrame. <br/>
+				Materials that will be presented include: </p>
+				<ul>
+					<li>Facebook Architecture and Framework</li>
+					<li>Facebook Security and Limitations</li>
+					<li>ASP.NET Facebook Toolkit</li>
+					<li>Facebook Markup Language (FBML)</li>
+					<li>Facebook Javascript (yes, specific to facebook)</li>
+					<li>Facebook IFrame</li>
+				</ul>
+				<p>This presentation is suited to everyone working in the digital space and is interested in developing 
+				applications on one of the most popular social networking frameworks in the world.</p>
+				<a onclick="javascript:sendEmailWithSubject('736f7068696562656c6c65407373772e636f6d2e6175','See%20You%20There%20-%20Canberra',this)" encode="736f7068696562656c6c65407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('736f7068696562656c6c65407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText="true">
+				See You There!!!</a> |
+				<a onclick="javascript:sendEmailWithSubject('736f7068696562656c6c65407373772e636f6d2e6175','Sorry%20I%20can%27t%20make%20it%20-%20Canberra',this)" encode="736f7068696562656c6c65407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('736f7068696562656c6c65407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText="true">
+				Sorry I can't make it</a></td>
+			</tr>
+			<tr>
+				<td class="section">
+				<h3 class="newsTitle">
+				<a name="BIVoyageClass" id="BIVoyageClass">
+				</a>BI Voyage class - <br />
+				 Microsoft BI Bootcamp: SQL Server 2005, Office System 2007 and PerformancePoint Server 2007</h3>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="210" valign="top">
+						<img src="/ssw/Events/Images/PeterMyers.jpg" alt="BI Course" height="120" width="120" /></td>
+						<td valign="bottom">
+						<h3 class="style1" style="color:#F25622;">*Special 10% Off*</h3>
+						<p>
+						<a href="/ssw/Redirect/SSWUpdate/2008Mar/BICourse.htm">
+						SQL Server 2005 End-to-End Business Intelligence Workshop</a><br />
+						Monday 12th May 2008 - <br />
+						Friday 16th May 2008</p>
+						</td>
+					</tr>
+				</table>
+				<p><strong>Description</strong></p>
+				<p>Business intelligence solutions provide the infrastructure that enables people at all levels of a business to make better decisions based on more 
+				accurate and up-to-date information. This workshop focuses on the teaching IT professionals the best practices and skills required to successfully 
+				design, build, deploy, and operate a business intelligence solution using SQL Server 2005.</p>
+				<p><strong>Course Summary</strong></p>
+                <p>During this 5-day course, you will learn about integrating Integration Services, Analysis Services and Reporting Services to build a business 
+                intelligence solution. When you complete this course, you will understand how to design, develop, deploy, and operate a business intelligence solution 
+                that integrates data from an On-Line Transactional Processing (OLTP) into a SQL Server Analysis Services (SSAS) cube and delivers reports to business users. </p>
+                <ul>
+                	<li><strong>Integrate:</strong> Define, debug, deploy, manage and secure SQL Server Integration Services (SSIS) packages that extract, transform, and load 
+                	data from an OLTP database into an SSAS cube and a relational data warehouse<br/></li>
+                	<li><strong>Analyze:</strong> Define, deploy, process, manage and secure SQL Server Analysis Services (SSAS) cubes, mining models, dimensions, hierarchies, 
+                	calculations, translations, and Key Performance Indicators (KPIs)<br/></li>
+                	<li><strong>Report:</strong> Define, deploy, manage, and secure SQL Server Reporting Services (SSRS) reports that consume data stored in SSAS cubes and in 
+                	the relational data warehouse and deliver reports to business users.</li>
+                </ul>
+                <p>This course will demonstrate a fully working end-to-end solution, including extensive demos, hands-on labs, sample projects that will not only teach how to 
+                use the new technology, but also illustrate business intelligence and data warehouse best practices. </p>
+                <p>See more about the <a href="/ssw/redirect/sswupdate/2008Mar/BICourse.htm">SSW Special on this BI Course</a>.</p>
+    			</td>
+			</tr>
+			<tr>
+				<td class="section">
+				<h3 class="newsTitle">
+				<a name="featuredproduct" id="featuredproduct"></a>Featured 
+				Product: SSW Exchange Team Calendar</h3>
+				<p><a href="/ssw/redirect/sswupdate/2008Apr/Product.htm">
+				<img align="right" class="noborder" alt="SSW Team Calendar" src="/ssw/TeamCalendar/Images/productbox.gif" /></a><strong>
+				View all Calendars in your company with SSW Exchange Team Calendar
+				</strong></p>
+				<p>SSW Exchange Team Calendar extracts calendar information stored on your Microsoft Exchange Server and makes it available on the web. 
+				Managers and staff have an up-to-date schedule of appointments for all mailboxes on Exchange simply by using their web browser.</p>
+				<p>
+				<a href="/ssw/redirect/sswupdate/2008Apr/Product.htm">More on 
+				SSW's Exchange Team Calendar</a> </p>
+				</td>
+			</tr>
+			<tr>
+				<td class="section">
+				<h3 class="newsTitle">Advertise with SSW</h3>
+				<p>If you would like to advertise your product or service with 
+				SSW or would like to find out more about various advertising 
+				opportunities, please email your enquiry to
+				<a onclick="javascript:sendEmailWithoutSubject('736f7068696562656c6c65407373772e636f6d2e6175',this)" encode="736f7068696562656c6c65407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('736f7068696562656c6c65407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer">736f7068696562656c6c65407373772e636f6d2e6175</a><br/>
+				or call: +61 2 9953 3000.</p>
+				</td>
+			</tr>
+		</table>
+		</td>
+		<td valign="top" bgcolor="#eeeeee" id="sidebar" style="border-left: 1px #cccccc solid; border-bottom: 10px #f26522 solid;">
+		<font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+		<img alt="SSW Update" src="/SSW/NETUG/SSWUpdate/Images/featureImage2008/04.jpg" width="200" height="300" class="featureimage" /></font><table width="100%" border="0" cellpadding="10" cellspacing="0">
+			<tr>
+				<td bgcolor="#FFFFFF">
+				<h3 class="sectionTitle">April 2008</h3>
+				</td>
+			</tr>
+			<tr>
+				<td class="section">
+				<h3 class="sectionTitle">Tech Breakfast</h3>
+				<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+						<td width="55" valign="top">
+						<img src="/ssw/NETUG/SSWUpdate/Images/Icon_techbreakfast.gif" alt="Join us for Tech Breakfast" height="46" width="46" /></td>
+						<td valign="top"><strong>4 days to go </strong>
+						<p>SYDNEY: SQL 2005/2008 T-SQL Enhancements and CLR Integration</p>
+						<p><font color="#666666" size="1" face="Verdana, Arial, Helvetica, sans-serif">
+						Friday, 18th April 2008<br />
+						8:00am-11:00am</font></p>
+						</td>
+					</tr>
+				</table>
+				<p>Now that SQL 2008 is almost upon us and you have finally moved to SQL 2005. Are you really getting the most 
+			    out of the new features that were introduced? </p>
+			    <p>Come see Justin King demonstrate the T-SQL Language enhancements such as PIVOT, Common Table Expressions 
+			    (CTE), Ranking Functions, Exception Handling, DDL Triggers and much more.</p>
+			    <p>Also see how you can build CLR assemblies and how to use them within SQL Server 2005. We will also demonstrate 
+			    some of the upcoming features for SQL Server 2008.</p>
+				<p align="right">
+				<a href="/ssw/Redirect/SSWUpdate/2008Apr/SSWTechBreakfast1.htm">
+				<img src="/ssw/Images/Button_Register_small.gif" alt="Register Now" border="0" /></a></p>
+				<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+						<td width="55" valign="top">
+						<img src="/ssw/NETUG/SSWUpdate/Images/Icon_techbreakfast.gif" alt="Join us for Tech Breakfast" height="46" width="46" /></td>
+						<td valign="top"><strong>46 days to go </strong>
+						<p>SYDNEY: Project Server 2007 integration with Team Foundation Server</p>
+						<p><font color="#666666" size="1">Friday, 23rd May
+						2008<br />
+						8:00am-11:00am</font></p>
+						</td>
+					</tr>
+				</table>
+				<p>Streamline your project management and development cycles with Project Server 2007. In this session we will be stepping into the roles 
+				of the Project Manager, Developer, Account Manager and Client to see how these roles interact within a project. We will integrate with 
+				Microsoft Team Foundation Server 2008 and the Project Server 2007 Outlook Add-in</p>
+				<p>Features covered</p>
+				<ul>
+					<li>Task tracking</li>
+					<li>Resource management</li>
+					<li>Time sheets</li>
+					<li>Reporting</li>
+				</ul>    
+
+				<font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+				<p align="right">
+				<a href="/ssw/Redirect/SSWUpdate/2008Apr/SSWTechBreakfast2.htm">
+				<img src="/ssw/Images/Button_Register_small.gif" alt="Register Now" border="0" /></a></p>
+				</font></td>
+			</tr>
+			<tr>
+				<td class="section">
+				<h3 class="sectionTitle">Employment</h3>
+				<p>Due to the tremendous growth that our business has 
+				experienced over the last few months, we are seeking 
+				enthusiastic people to join the SSW team.</p>
+				<p>Our Company is based in Neutral Bay which is one of the most 
+				elegant and scenic areas of Sydney. SSW is an Australian owned 
+				progressive consulting firm specialising in building, 
+				implementing and maintaining Microsoft .NET software 
+				applications.</p>
+				<p>We are currently strongly looking for a <strong>Technical BDM
+				</strong>to take initial meetings and manage clients in 
+				Brisbane, Melbourne, or Canberra.</p>
+				<p>We are also currently looking for:</p>
+				<table width="100%" border="0" cellspacing="0" cellpadding="2">
+					<tr>
+						<td valign="top">&#8226;</td>
+						<td width="100%" valign="top"><strong>ASP.NET, VB.NET, 
+						C#, OLAP, SharePoint Software Developer </strong></td>
+					</tr>
+					<tr>
+						<td valign="top">&#8226;</td>
+						<td><strong>Technical BDM in Melbourne, Brisbane, or 
+						Canberra</strong>
+						</td>
+					</tr>
+					<tr>
+						<td valign="top">&#8226;</td>
+						<td width="100%" valign="top"><strong>Personal Assistant</strong></td>
+					</tr>
+					<tr>
+						<td valign="top">&#8226;</td>
+						<td valign="top"><strong>IT Senior Marketing Consultant 
+						(part-time)</strong></td>
+					</tr>
+					<tr>
+						<td valign="top">&#8226;</td>
+						<td valign="top"><strong>Project Manager</strong></td>
+					</tr>
+				</table>
+				<p>
+				<a href="/ssw/Redirect/sswupdate/2008Apr/Employment.htm">
+				Read more and Apply NOW...</a></p>
+				</td>
+			</tr>
+		</table>
+&nbsp;</td>
+	</tr>
+</table>
+<table align="center" width="710">
+	<tr>
+		<td class="copyright">Copyright ?SSW 1990-2007. All Rights Reserved.</td>
+		<td class="proudly" align="right">Proudly developed by
+		<a href="">SSW Sydney Web Design</a></td>
+	</tr>
+	<tr>
+		<td class="footer" colspan="2">
+		<table>
+			<tr valign="top" class="footer">
+				<td valign="top" align="center">
+				
+<a onclick="javascript:sendEmailWithSubject('736f7068696562656c6c65407373772e636f6d2e6175','Advertisting',this)" encode="736f7068696562656c6c65407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('736f7068696562656c6c65407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText="true">
+				Advertise with SSW</a>| </td>
+				<td valign="top" align="center">
+				<a onclick="javascript:sendEmailWithSubject('736f7068696562656c6c65407373772e636f6d2e6175','Please%20Unsubscribe%20Me',this)" encode="736f7068696562656c6c65407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('736f7068696562656c6c65407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText="true">
+				Unsubscribe</a> | </td>
+				<td valign="top" align="center">
+				<a target="_blank" href="/ssw/NETUG/SSWUpdatePrevious.aspx">
+				Previous SSW Updates</a> | </td>
+				<td valign="top" align="center">
+				<a onclick="javascript:sendEmailWithSubject('736f7068696562656c6c65407373772e636f6d2e6175','Hot%20Tip',this)" encode="736f7068696562656c6c65407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('736f7068696562656c6c65407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText="true">
+				Got a Hot Tip to share?</a> | </td>
+				<td valign="top" align="center">
+				<a onclick="javascript:sendEmailWithSubject('736f7068696562656c6c65407373772e636f6d2e6175','About%20your%20newsletter',this)" encode="736f7068696562656c6c65407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('736f7068696562656c6c65407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText="true">
+				Got a comment to make?</a></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+</font>
+
+</body>
+
+</html>

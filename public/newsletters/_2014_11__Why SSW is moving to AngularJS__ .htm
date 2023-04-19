@@ -1,0 +1,790 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>SSW Update - Why SSW is moving to AngularJS</title>
+    <script src="/ssw/Include/jquery.js" type="text/javascript"></script>
+    <script src="/ssw/Include/decodeMailNew.js" type="text/javascript"></script>
+    <link href="/ssw/Images/icoSSW_2014.ico" rel="shortcut icon" />
+</head>
+
+<body bgcolor="#e7e7cf">
+    <style type="text/css">
+        body {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            margin: 0px;
+        }
+
+        h1 {
+            color: #a7a9ac;
+            font-size: 30px;
+        }
+
+        td, th {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 11px;
+        }
+
+        .sectionTitle {
+            font-family: "Century Gothic", Arial, Verdana, Helvetica, sans-serif;
+            font-size: 20px;
+            color: #ff0000;
+            font-weight: normal;
+        }
+
+        .newsTitle {
+            color: #5C5C5C;
+            font-size: 14px;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .newsTitle2 {
+            color: #5C5C5C;
+            font-size: 14px;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            padding-left: 30px;
+        }
+
+        .magazineTitle {
+            font-family: "Century Gothic", Arial, Helvetica, sans-serif;
+            color: #ff0000;
+            font-weight: normal;
+            font-size: 30px;
+        }
+
+        .section {
+            border-top: 1px #cccccc dotted;
+        }
+
+        .copyright {
+            font-weight: bold;
+            color: #999999;
+            font-size: 10px;
+        }
+
+        .proudly {
+            font-weight: normal;
+            font-size: 9px;
+            color: #999999;
+        }
+
+            .proudly a {
+                color: #999999;
+            }
+
+        .noborder {
+            border: none;
+        }
+
+        .footer a {
+            color: gray;
+        }
+
+        .signature {
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        dl dd {
+            background-repeat: no-repeat;
+            background-color: transparent;
+            padding: 0 0 10px 20px;
+            margin-left: 10px;
+        }
+
+        .goodCode dd {
+            background-image: url(/ssw/Standards/Rules/images/Good.gif);
+        }
+
+        .badCode dd {
+            background-image: url(/ssw/Standards/Rules/images/Bad.gif);
+        }
+
+        dl dt {
+            background: #eee;
+            border-width: 1px 1px 1px 4px;
+            border-color: #aaa;
+            border-style: solid;
+            padding: 10px;
+            margin: 5px;
+            font-family: Courier;
+        }
+
+        img.background {
+            background: #eee;
+            border-width: 1px 1px 1px 4px;
+            border-color: #aaa;
+            border-style: solid;
+            padding: 10px;
+            margin: 15px;
+            font-family: Courier;
+        }
+
+        table.BrainQuest {
+            font-family: Verdana, Geneva, sans-serif;
+            border: 0px white solid;
+            border-top: 4px #B6B6B6 solid;
+            font-size: 11px;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+            table.BrainQuest tr.header td {
+                background-color: #F5f5f5;
+                color: #444444;
+                font-size: 14px;
+                padding: 5px 0px 10px 4px;
+                margin: 0;
+                border-top: 2px white solid;
+                border-bottom: 2px white solid;
+            }
+
+                table.BrainQuest tr.header td span {
+                    color: #aaaaaa;
+                    font-size: 10px;
+                    text-transform: uppercase;
+                }
+
+            table.BrainQuest td.first {
+                margin: 0;
+                background: #E5E5E5 url(/ssw/images/schedulebg.png) no-repeat scroll right center;
+                height: 27px;
+                overflow: hidden;
+                padding: 6px 8px 7px 4px;
+                white-space: nowrap;
+                width: 200px;
+                font-weight: bold;
+                color: #aaa;
+                font-size: 10px;
+            }
+
+                table.BrainQuest td.first span {
+                    color: Black;
+                }
+
+            table.BrainQuest td.second {
+                margin: 0;
+                background: #E5E5E5 url(/ssw/images/schedulebg.png) no-repeat scroll right center;
+                height: 27px;
+                overflow: hidden;
+                padding: 6px 8px 7px 4px;
+                white-space: nowrap;
+                width: 100%;
+                font-weight: bold;
+                color: #aaa;
+                font-size: 10px;
+            }
+
+                table.BrainQuest td.second span {
+                    color: Black;
+                }
+
+            table.BrainQuest td img {
+                border: none;
+            }
+
+            table.BrainQuest td.button {
+                text-align: center;
+            }
+
+                table.BrainQuest td.button a {
+                    border: none;
+                }
+
+        #right td.button {
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        .style1 {
+            text-align: left;
+        }
+    </style>
+
+
+    <table width="710" border="0" align="center" cellpadding="0" cellspacing="0" id="container" bgcolor="white" style="border: 1px #cccccc solid; font-family: Verdana, Geneva, sans-serif;">
+        <tr>
+            <td bgcolor="#efefef">
+                <table width="508px;" border="0" cellspacing="0" cellpadding="15">
+                    <tr>
+                        <td><strong>Why SSW is moving to AngularJS</strong></td>
+
+                    </tr>
+                </table>
+            </td>
+
+            <td valign="middle" bgcolor="#efefef" style="border-top: 4px #f26522 solid; border-left: 1px #cccccc solid; width: 202px;">
+                <img src="/ssw/Company/Images/small_partnerlogo.png" alt="Microsoft Gold Partner Logo" align="right" style="padding: 5px;" />
+            </td>
+        </tr>
+
+
+        <tr>
+            <td valign="top" style="width: 508px;">
+                <table width="468" border="0" cellspacing="0" cellpadding="20">
+                    <tr>
+                        <td>
+                            <p><center><a href="http://ssw.com.au/ssw/NETUG/SSWUpdate/_2014_11__Why%20SSW%20is%20moving%20to%20AngularJS__%20.htm?utm_source=SSWUpdate_November&utm_medium=email&utm_campaign=Why SSW is moving to AngularJS" target="_blank">Read this newsletter from your browser</a></center></p>
+
+                            <h1>[<span class="magazineTitle">the cutting edge</span> ]</h1>
+                            <p><b>G'day Developers!</b></p>
+
+                            <p><img src="/SSW/NETUG/SSWUpdate/Images/AngularJS-hearts-NET.png" width="470" /></p>
+                            
+                            <b>Why SSW is moving to AngularJS and MVC – Great for users and great for devs.</b>
+
+                            <p>Over the last 6 months, AngularJS has become the frontend framework of choice for SSW developers. They are all excited to be leveraging the combination of AngularJS and MVC in order to provide amazing user experiences.</p>
+                            
+                            <p>Senior developers at SSW are excited to use AngularJS to make more responsive client side applications with a clear Separation of Concerns (SoC).</p>
+
+                            <blockquote>
+                                <i>"Basically it's MVC for your client side"</i><br />
+                                Mark Liu – Solution Architect at SSW
+                            </blockquote>
+                         
+                            <p>The pace at which new JavaScript technologies are released is frightening. Angular is currently at version 1.3 and we have had increasing success with those projects. When 2.0 comes it will no doubt be a major change. Whilst some semantic changes are going be paper cuts to many developers, overall we are excited with the suite of improvements that 2.0 brings to the table. It certainly builds on the solid foundations already laid.</p>
+
+                            <p><a href="http://firebootcamp.com/?utm_source=SSWUpdate_November&utm_medium=email&utm_campaign=Why SSW is moving to AngularJS" target="_blank">FireBootCamp.com</a> attendees found using AngularJS and MVC an enlightening experience while building <a href="https://sswlinkauditor.com/?utm_source=SSWUpdate_November&utm_medium=email&utm_campaign=Why SSW is moving to AngularJS" target="_blank">sswlinkauditor.com</a>. Having the front end being able to leverage the backend power with technologies such as Microsoft Azure and ASP.NET WebAPI2 made AngularJS sing.</a></p>
+
+                            <blockquote>
+                                <i>"What I loved about Angular was we were able to easily update live data and move between webpages without refreshing."</i><br />
+                                Duncan Hunter – FireBootCamp Attendee
+                            </blockquote>
+
+                            <p><a href="http://www.adamcogan.com/2014/11/13/why-ssw-is-moving-to-angularjs/?utm_source=SSWUpdate_November&utm_medium=email&utm_campaign=Why SSW is moving to AngularJS" target="_blank">Keep reading to find out 6 reasons why AngularJS delivers a better user experience while building scalable web applications.</a></p>
+
+                                <p>-Adam Cogan, SSW</p>
+
+                                <p>Got a comment for Adam?<br />
+
+                                    <a href="http://www.adamcogan.com/?utm_source=SSWUpdate_November&utm_medium=email&utm_campaign=Why SSW is moving to AngularJS" target="_blank">Comment on Adam Cogan's blog</a><br />
+                                    <a href="http://www.twitter.com/adamcogan" target="_blank">Tweet @adamcogan</a><br />
+                                    <a href="mailto:adamcogan@ssw.com.au">Email Adam Cogan</a></p>
+                            </td>
+                    </tr>
+
+                    <tr>
+                        <td class="section">
+                            <h2>New SSW TV video!</h2>
+                            <h3 class="newsTitle">How to Use Hot Towel Angular with Duncan Hunter</h3>
+
+                            <p><a href="http://tv.ssw.com/5611/use-hot-towel-angular-duncan-hunter?utm_source=SSWUpdate_November&utm_medium=email&utm_campaign=Why SSW is moving to AngularJS" target="_blank">
+    <img src="/SSW/NETUG/SSWUpdate/Images/HotTowelAngular-ThumbnailWithLogov2.jpg" width="470" style="border:1px solid black" />
+</a></p>
+
+                            <p>
+                                <b>
+                            This presentation is a walk through of the code, benefits and how to get started using John Papa’s Hot Towel Angular. Hot Towel Angular creates a
+                            great starting point for building a Single Page Application (SPA).
+                                </b>
+                            </p>
+                            
+                            <p>Out of the box it provides a modular structure for your code, view navigation, 
+                            data binding, separation of services, and simple but elegant styling. Hot Towel provides everything you need to build a SPA, so you can focus on 
+                            your app, not the plumbing.</p>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="section">
+                            <h2>FireBootCamp TechBreakfast</h2>
+                            <h3 class="newsTitle">Want to become a full stack developer in 2015?</h3>
+
+                            <p>
+                                <a href="http://www.ssw.com.au/ssw/events/techbreakfast/How-to-upgrade-your-skills-to-developer-in-2015.aspx?utm_source=SSWUpdate_November&utm_medium=email&utm_campaign=Why SSW is moving to AngularJS" target="_blank">
+                                    <img src="/SSW/NETUG/SSWUpdate/Images/tech-brekky-banner-new.jpg" width="470" style="border:0px solid black" alt="FireBootCamp TechBreakfast" />
+                                </a>
+                            </p>
+
+                            <table width="458" border="0" cellspacing="10" cellpadding="0">
+                                <tr>
+                                    <td width="145" valign="top">
+                                        <p>
+                                            <b>Tuesday 9th December</b><br />
+                                            9.00 AM - 11.00 AM AEDT<br />
+                                            <strong>Cost:</strong> No Charge<br /> <br />
+                                            <strong>Location:</strong> <br />
+                                            Gateway Court, Suite 13<br />
+                                            81-91 Military Road, <br />
+                                            Neutral Bay NSW 2089
+
+                                        </p>
+
+                                    </td>
+                                    <td valign="top">
+
+                                        <p>Come to this free Tech Breakfast and find out how to become a full stack developer in 9 weeks.</p>
+
+                                        <p>During this session you will:</p>
+                                        <ul>
+                                            <li>Learn what the hottest technologies enterprise companies are looking for in their new recruits</li>
+                                            <li>Discover the most effective ways to learn .NET development</li>
+                                            <li>Meet a dietitian who became a developer in 9 weeks</li>
+                                            <li>Have access to industry professionals who can help you make the change</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <center>
+                                <p>
+                                    <a href="http://www.ssw.com.au/ssw/events/techbreakfast/How-to-upgrade-your-skills-to-developer-in-2015.aspx?utm_source=SSWUpdate_November&utm_medium=email&utm_campaign=Why SSW is moving to AngularJS" target="_blank">
+                                        <img src="/ssw/NETUG/SSWUpdate/Images/more-information.png" alt="More Information" border="0" />
+                                    </a>
+                                </p>
+                            </center>
+
+                        </td>
+                    </tr>   
+
+                    <tr>
+                        <td class="section">
+                            <h2>Webinar: Dev Superpowers - AngularJS</h2>
+                            <h3 class="newsTitle2">Create impressively dynamic interfaces</h3>
+                            <a href="http://www.ssw.com.au/ssw/Events/Webinars/DevSuperpowers-AngularJS.aspx?utm_source=SSWUpdate_November&utm_medium=email&utm_campaign=Why SSW is moving to AngularJS" target="_blank">
+                                <img src="/ssw/events/webinars/images/DevSuperPowers-AngularJS.jpg" width="470" border="0" />
+                            </a>
+                            <p><b>Combine AngularJS and ASP.NET MVC for next generation web applications</b></p>
+                            <table width="458" border="0" cellspacing="10" cellpadding="0">
+                                <tr>
+                                    <td width="145" valign="top">
+                                        <p>
+                                            <strong>Cost:</strong> No Charge</p>
+                                        <p>
+                                            <b>
+                                                USA
+                                            </b><br />
+                                                26th November<br />
+                                            4.00 PM - 5.00 PM EST
+                                        </p>
+
+                                        <p>
+                                            <b>
+                                                Europe<br />
+                                            </b>
+                                                27th November<br />
+                                            11:00 AM - 12:00 PM CET
+                                        </p>
+                                            <p>
+                                                <b>Australia<br /></b>
+                                                27th November<br />
+                                                11.00am - 12.00pm AEDT
+                                            </p>
+
+                                    </td>
+                                    <td valign="top">
+
+                                        <p>Watch Ben Cull write some code as he transforms a rigid MVC web application into a dynamic pleasure using AngularJS.</p>
+                                        
+                                        <p>AngularJS is a client-side javascript framework that enables the creation of impressively dynamic user interfaces. 
+                                        It strives to remove the tedium of manipulating DOM elements by abstracting many common functions such as showing/hiding, 
+                                        updating content and injecting/removing elements.</p>
+                                        
+                                        <p><br /><center>
+                                            <a href="http://www.ssw.com.au/ssw/Events/Webinars/DevSuperpowers-AngularJS.aspx?utm_source=SSWUpdate_November&utm_medium=email&utm_campaign=Why SSW is moving to AngularJS" target="_blank">
+                                                <img src="/ssw/NETUG/SSWUpdate/Images/register.png" alt="Register Now" border="0" /></center>
+                                            </a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <p>More webinars coming soon:</p>
+                            <ul>
+                                <li><a href="http://www.ssw.com.au/ssw/events/webinars/DevSuperpowers-azure.aspx?utm_source=SSWUpdate_November&utm_medium=email&utm_campaign=Why SSW is moving to AngularJS" target="_blank">Dev Superpowers: Azure - Continuous deployment to Microsoft Azure websites – Thusrday 29th January</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="section">
+                            <h2>Become a World Class Developer in just 9 weeks with FireBootCamp!</h2>
+                            <h3 class="newsTitle">Special Intensive Course</h3>
+
+                            <a href="http://www.firebootcamp.com" target="_blank"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/FireBootCamp-Newsletter-banner.jpg" alt="FireBootCamp" border="1" color="000000" /></a>
+
+                            <p><b>Redmond, Sydney, Melbourne, Brisbane, San Francisco</b></p>
+
+                            <p>
+                                The FireBootCamp program is an intensive, full-time, 9-week program. Participants learn, work and code together for 10-12 hours per day, 5 days
+                                a week. Apart from exercise and food breaks, the guys in the program are hands on learning all day every day.
+                            </p>
+
+                            <p>
+                                The program focuses on real world skills including Agile software development practices, enterprise architecture, application life cycle,
+                                end-to-end testing and user interface design. The technology stack covers .NET MVC, AngularJS, TypeScript, jQuery, Windows Azure and uses Microsoft Visual Studio 2013.
+                            </p>
+
+
+                            <p><strong>Scheduled Boot Camps:</strong></p>
+                            <table class="BrainQuest" width="508" border="0" cellpadding="0" cellspacing="0" id="Table1">
+
+
+                                <tr>
+                                    <td class="first">
+                                        <span>Sydney, NSW, Australia</span><br />
+                                        19th Jan - 20th Mar 2015<br />
+                                    </td>
+
+                            </table>
+
+    <br /><center>
+              <a href="http://firebootcamp.com/schedule/?utm_source=SSWUpdate_November&utm_medium=email&utm_campaign=Why SSW is moving to AngularJS" target="_blank">
+                  <img src="/ssw/NETUG/SSWUpdate/Images/more-information.png" border="0" alt="Find out more" />
+              </a>
+    </center>
+    </td>
+    </tr>
+
+
+                    <tr>
+                        <td class="section">
+                            <h2>Xamarin Hack Days around the world</h2>
+
+                            <center><p><a href="http://xamarinhackday.com/" target="_blank"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/xamarin-logo.png" alt="Xamarin Hack Day" border="0" /></a></p></center>
+
+                            <p>Xamarin is a product that allows you to use .NET/C# to create native apps that will run across Android, iOS, and Windows. 
+                            While there is always a learning curve when using a new product, Xamarin Hack Days make it easy for anyone who wants to learn 
+                            cross-platform development in a supportive and friendly environment.</p>
+
+                            <p>There will be something for everyone - experienced Xamarin developers can share ideas with other experienced developers, and 
+                            if you're a beginner then there's plenty to learn on the day. Best of all, it's totally free.</p>
+
+                            <p><strong>Upcoming Xamarin Hack Days:</strong></p>
+                            <table class="BrainQuest" width="508" border="0" cellpadding="0" cellspacing="0" id="Table1">
+
+                                <tr>
+                                    <td class="first">
+                                        <span>Redmond, WA, USA</span><br />
+                                        22nd Nov 2014<br />
+                                    </td>
+
+                                    <td class="first">
+                                        <span>Melbourne, VIC, Australia</span><br />
+                                        29th November 2014<br />
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="first">
+                                        <span>Sydney, NSW, Australia</span><br />
+                                        6th Dec 2014<br />
+                                    </td>
+                            </table>
+
+
+                            <p><center><a href="http://xamarinhackday.com/register/" target="_blank"><img src="/ssw/NETUG/SSWUpdate/Images/more-information.png" border="0" /></a></center></a></p>
+
+
+                            <p> </p>
+
+
+                        </td>
+                    </tr>
+
+
+
+    <tr>
+        <td class="section">
+            <h2>Sydney .NET User Group</h2>
+            <h3 class="newsTitle">The best place to learn .NET for free in Sydney</h3>
+            <table width="468" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="210" valign="middle">
+
+                        <p> <img src="/ssw/NETUG/Images/NETUG_logo-syd.png" alt="User Group" width="200" /></p>
+                    </td>
+
+                    <td valign="bottom">
+                        <p>
+                            <a href="http://www.ssw.com.au/ssw/NETUG/Sydney.aspx?utm_source=SSWUpdate_November&utm_medium=email&utm_campaign=Why SSW is moving to AngularJS" target="_blank">Sydney .NET User Group</a><br />
+                            Wednesday 19th November 2014<br />
+                            6:00pm - 8:00pm<br />
+                            SSW Office<br />
+                            Gateway Court, Suite 13<br />
+                            81-91 Military Road, Neutral Bay NSW 2089
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <p><strong>"Happy ever after: Code Auditor married Roslyn" – Danijel Malik</strong></p>
+
+            <p>At SSW we care about quality. We care about it some much that we built a tool named Code Auditor which scans code and reports issues. 
+            It's not really a secret that our rules relied on C# snippets and Regex patterns. Over time - as the C# language evolved - we started seeing false positives. 
+            Yikes! Then we met Roslyn – the new .NET compiler platform – which opened a new dimension in the Code Analysis world. We drive a Mercedes now. 
+            Want to have a test drive? Join me in this session and you'll learn what Roslyn can do for you. Forget the demos, see the real world code.
+            </p>
+
+            <p><b>About the presenter:</b><br />
+                Danijel works as a Solution Architect for SSW. He has 10+ years of experience building custom software solutions. 
+            Although he likes to explore bleeding edge technologies he will always look for quality first. 
+            Danijel is a Visual Studio ALM MVP and MCSD for Web Applications.
+            </p>
+
+
+            <p>
+                To see more details and RSVP, please visit
+                our <a href="https://www.facebook.com/events/625382900923122/" target="_blank">Facebook .NET Group</a>,
+                our <a href="https://www.linkedin.com/groupItem?view=&gid=1520317&type=member&item=5935260832542769156&trk=groups_most_recent-0-b-ttl&goback=%2Egmr_1520317" target="_blank">LinkedIn .NET Group</a>
+                or our <a href="http://www.meetup.com/Sydney-NET-User-Group/events/217511792/" target="_blank">Meetup Group</a>.
+            </p>
+
+            <table border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto; padding-top: 20px;">
+                <tr>
+                    <td width="150" align="center">
+                        <a href="https://www.facebook.com/events/625382900923122/" target="_blank">
+                            <img src="/ssw/NETUG/Images/Facebook.gif" alt="facebook" class="noborder" />
+                        </a>
+                    </td>
+
+                    <td width="150" align="center">
+                        <a href="https://www.linkedin.com/groupItem?view=&gid=1520317&type=member&item=5935260832542769156&trk=groups_most_recent-0-b-ttl&goback=%2Egmr_1520317" target="_blank">
+                            <img src="/ssw/NETUG/Images/linkedin.jpg" alt="LinkedIn" width="130" class="noborder" />
+                        </a>
+                    </td>
+
+                    <td width="150" align="center">
+                        <a href="http://www.meetup.com/Sydney-NET-User-Group/events/217511792/" target="_blank">
+                            <img src="/ssw/NETUG/SSWUpdate/Images/meetup_logo.jpg" alt="MeetUp" width="100" class="noborder" />
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class="section">
+            <h2>Can't make it to the Sydney .NET User Group?</h2>
+            <h3 class="newsTitle">Watch the Live stream!</h3>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="210" valign="middle">
+                        <center><a href="http://www.ssw.com.au/ssw/NETUG/Live.aspx?utm_source=SSWUpdate_November&utm_medium=email&utm_campaign=Why SSW is moving to AngularJS" target=" _blank" =_blank"><img src="/ssw/NETUG/SSWUpdate/images/NETUG-live.jpg" alt="Live stream" width="200" border="0" /></a></center>
+                    </td>
+                    <td valign="bottom">
+                        <h3>Tune in from anywhere!</h3>
+                        <p>
+                            <a href="http://www.ssw.com.au/ssw/NETUG/Live.aspx?utm_source=SSWUpdate_November&utm_medium=email&utm_campaign=Why SSW is moving to AngularJS" target="_blank">
+                                Sydney .NET User Group Live
+                            </a><br />
+                            19th November 2014<br />
+                            6PM AEDT (UTC+11)
+                        </p>
+                        <p>The team at SSW TV are now streaming our User Group sessions live. Each session will also be published on the SSW TV site after the event so you can review what was said in the sessions.</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="section">
+            <h2>Then join us at the NerdDinner</h2>
+            <h3 class="newsTitle">Where nerds meet and eat</h3>
+            <table width="468" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="210" valign="middle">
+                        <p>
+                            <a href="http://nerddinner.com/7723">
+                                <img src="/ssw/NETUG/SSWUpdate/Images/NerdDinner.jpg" alt="NerdDinner" class="noborder" width="200" />
+                            </a>
+                        </p>
+                    </td>
+                    <td valign="bottom">
+                        <p>
+                            <a href="http://nerddinner.com/7723" target="_blank">NerdDinner - Where geeks eat</a><br />
+                            Wednesday 19th November 2014<br />
+                            8:10pm - 9:30pm<br />
+                            The Oaks Hotel<br />
+                            118 Military Road, Neutral Bay
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <p>SSW and Telerik invite you to join us for pizza at The Oaks. A fantastic opportunity for networking with peers and sharing thoughts after the Sydney .NET User Group presentation.</p>
+
+            <center>
+                <h4>Sydney .NET User Group and NerdDinner proudly sponsored by:</h4>
+
+                <p>
+                    <a href="http://telerik.com/">
+                        <img src="/ssw/netug/sswupdate/images/Telerik Logo.jpg" alt="Telerik Logo" width="150" height="50" border="0" />
+                    </a>
+                </p>
+            </center>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class="section">
+            <h2>Canberra .NET User Group </h2>
+            <h3 class="newsTitle">The best place to learn .NET for free in Canberra</h3>
+            <table width="468" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="210" valign="middle">
+                        <img src="/ssw/NETUG/Images/NETUG_logo-canberra.png" alt="User Group" width="200" />
+                    </td>
+                    <td valign="bottom">
+                        <a href="http://www.ssw.com.au/ssw/NETUG/Canberra.aspx?utm_source=SSWUpdate_November&utm_medium=email&utm_campaign=Why SSW is moving to AngularJS" target="_blank">Canberra .NET User Group</a><br />
+                        Monday 17th November 2014<br />
+                        6:00pm - 8:00pm<br />
+                        Microsoft Canberra Branch<br />
+                        Level 4, 6 National Circuit<br />
+                        Barton, Australia
+                    </td>
+                </tr>
+            </table>
+
+            <p><strong>"Happy ever after: Code Auditor married Roslyn" – Danijel Malik</strong></p>
+
+            <p>
+                At SSW we care about quality. We care about it some much that we built a tool named Code Auditor which scans code and reports issues.
+                It's not really a secret that our rules relied on C# snippets and Regex patterns. Over time - as the C# language evolved - we started seeing false positives.
+                Yikes! Then we met Roslyn – the new .NET compiler platform – which opened a new dimension in the Code Analysis world. We drive a Mercedes now.
+                Want to have a test drive? Join me in this session and you'll learn what Roslyn can do for you. Forget the demos, see the real world code.
+            </p>
+
+            <p>
+                <b>About the presenter:</b><br />
+                Danijel works as a Solution Architect for SSW. He has 10+ years of experience building custom software solutions.
+                Although he likes to explore bleeding edge technologies he will always look for quality first.
+                Danijel is a Visual Studio ALM MVP and MCSD for Web Applications.
+            </p>
+
+
+            <p>
+                To see more details and RSVP, please visit
+                our <a href="https://www.facebook.com/events/291294737735984/" target="_blank">Facebook .NET Group</a>,
+                our <a href="https://www.linkedin.com/groupItem?view=&gid=1520387&type=member&item=5935262448708771843&trk=groups_most_recent-0-b-ttl&goback=%2Egna_1520387%2Egmr_1520387" target="_blank">LinkedIn .NET Group</a> or
+                our <a href="http://www.meetup.com/Canberra-NET-User-Group/events/217512082/" target="_blank">Meetup Group</a>.
+            </p>
+
+            <table border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto; padding-top: 20px;">
+                <tr>
+                    <td width="150" align="center">
+                        <a href="https://www.facebook.com/events/291294737735984/" target="_blank">
+                            <img src="/ssw/NETUG/Images/Facebook.gif" alt="facebook" class="noborder" />
+                        </a>
+                    </td>
+
+                    <td width="150" align="center">
+                        <a href="https://www.linkedin.com/groupItem?view=&gid=1520387&type=member&item=5935262448708771843&trk=groups_most_recent-0-b-ttl&goback=%2Egna_1520387%2Egmr_1520387" target="_blank">
+                            <img src="/ssw/NETUG/Images/linkedin.jpg" alt="LinkedIn" width="130" class="noborder" />
+                        </a>
+                    </td>
+
+                    <td width="150" align="center">
+                        <a href="http://www.meetup.com/Canberra-NET-User-Group/events/217512082/" target="_blank">
+                            <img src="/ssw/NETUG/SSWUpdate/Images/meetup_logo.jpg" alt="MeetUp" width="100" class="noborder" />
+                        </a>
+                    </td>
+                </tr>
+            </table>
+            <center>
+                <h4>Canberra .NET User Group proudly sponsored by:</h4>
+                <p>
+                    <a href="http://www.microsoft.com/en-au/default.aspx" target="_blank">
+                        <img src="/ssw/NETUG/SSWUpdate/Images/new_ms_logo_small.jpg" alt="Microsoft Logo" class="noborder" width="105" height="80" />
+                    </a>
+                </p>
+            </center>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="section">
+            <h2>Advertise with SSW</h2>
+            <p>
+                If you would like to advertise your product or service with SSW or would like to
+                find out more about various advertising opportunities, please email your enquiry
+                to <a href="mailto:info@ssw.com.au?subject=Newsletter">info@ssw.com.au</a> or call: +61 2 9953 3000.
+            </p>
+        </td>
+    </tr>
+    </table>
+    </td>
+
+
+    <td valign="top" style="border-left: 1px #cccccc solid; width: 202px;" bgcolor="#eeeeee">
+        <img alt="SSW Update" src="/SSW/NETUG/SSWUpdate/Images/featureImage2008/11.jpg" width="200" height="300" class="featureimage" />
+        <table width="200px" border="0" cellpadding="10" cellspacing="0">
+            <tr>
+                <td bgcolor="#FFFFFF">
+                    <h3 class="sectionTitle">November 2014</h3>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="section">
+                    <h3 class="sectionTitle">Employment</h3>
+
+                    <p><b>General Manager<br />
+                        SSW Beijing</b></p>
+
+                    <p>The manager will be in charge of the company's daily operations, including implementing sales plans, developing marketing plans, and leading project teams. </p>
+                    
+                    <b>Requirements:</b>
+                    <ul>
+                        <li><b>Must be a strong, fluent communicator in both English and Chinese</b></li>                        
+                        <li>A background in <b>software engineering</b></li>
+                        <li>Enjoy working with a team who has strong technical skills in <b>Microsoft technologies</b></li>
+                        <li>A bachelor's degree in Computer Science, Software Engineering or Business Management</li>
+                        <li>Strong influencing impact, he/she can engage with executive level</li>
+                        <li>Must be living in, or willing to relocate to, Beijing, China</li>
+                    </ul>
+
+
+                    
+                    <p><a href="http://jobs.zhaopin.com/541933128250020.htm?ssidkey=y&ss=201&ff=03" target="_blank">See full listing and APPLY NOW</a></p>
+
+                </td>
+            </tr>
+        </table>
+    </td>
+    </tr>
+    </table>
+    <table align="center" width="710">
+        <tr>
+            <td class="copyright">Copyright © SSW 1990-2014. All Rights Reserved.</td>
+            <td class="proudly" align="right">Proudly developed by <a href="http://www.ssw.com.au?utm_source=SSWUpdate_November&utm_medium=email&utm_campaign=Why SSW is moving to AngularJS" target="_blank">SSW Sydney Web Design</a></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table align="center">
+                    <tr valign="top" class="footer">
+                        <td valign="top" align="center">
+                            <a href="mailto:info@ssw.com.au?subject=Advertisting">Advertise with SSW</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            Unsubscribe |
+                        </td>
+                        <td valign="top" align="center">
+                            <a href="http://www.ssw.com.au/ssw/NETUG/SSWUpdatePrevious.aspx?utm_source=SSWUpdate_November&utm_medium=email&utm_campaign=Why SSW is moving to AngularJS" target="_blank">Previous SSW Updates</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a href="mailto:info@ssw.com.au?subject=Got a Hot Tip to share?">Got a Hot Tip to share?</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a href="mailto:info@ssw.com.au?subject=Got a comment to make?">Got a comment to make?</a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

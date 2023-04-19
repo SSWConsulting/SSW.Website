@@ -1,0 +1,545 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>SSW Update - Do you avoid only using source control on code?</title>
+    <script type="text/javascript" src="/ssw/include/decodemail.js"></script>
+</head>
+<body bgcolor="#e7e7cf">
+    <style type="text/css">
+<!--
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	margin:0px;
+}
+td, th {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.sectionTitle {
+	font-family: "Century Gothic", Arial, Verdana, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #f25622;
+	font-weight: normal;
+}
+.newsTitle {
+	color: #f25622;
+	font-size: 14px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.magazineTitle {
+	font-family: "Century Gothic", Arial, Helvetica, sans-serif;
+	color: #f25622;
+	font-weight: normal;
+	font-size: 30px;
+}
+.section {
+	border-top: 1px #cccccc dotted;
+}
+.copyright {
+	font-weight: bold;
+	color: #999999;
+	font-size: 10px;
+}
+.proudly {
+	font-weight: normal;
+	font-size: 9px;
+	color: #999999;
+}
+.footer a {
+	color: gray;
+}
+-->
+</style>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+        <table width="710" border="0" align="center" cellpadding="0" cellspacing="0" id="container"
+            bgcolor="white" style="border: 1px #cccccc solid;">
+            <tr>
+                <td width="100%" bgcolor="#efefef">
+                    <table width="98%" border="0" cellspacing="0" cellpadding="15">
+                        <tr>
+                            <td>
+                                <span class="Subject"><strong>SSW Update - </strong>Do you avoid only using source control
+                                    on code?</span></td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="200" valign="middle" bgcolor="#efefef" style="border-top: 4px #f26522 solid;
+                    border-left: 1px #cccccc solid;">
+                    <img src="/ssw/images/Gold_Certified_Partner74x35.gif" alt="Microsoft Gold Partner Logo"
+                        width="75" height="35" align="right" style="padding: 5px;" /></td>
+            </tr>
+            <tr>
+                <td valign="top" id="main">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="20">
+                        <tr>
+                            <td>
+                                <a href="/ssw/Redirect/sswupdate/2006nov/TechBreakfast.htm">
+                                    <img src="/ssw/Images/SSWTechBreakfastBanner.gif" alt="SSW Tech Breakfast"
+                                        width="468" height="60" border="0" class="banner" /></a>
+                                <h1>
+                                    &nbsp;</h1>
+                                <h1 style="color: #a7a9ac; font-size: 30px;">
+                                    [<span class="magazineTitle"> the cutting edge</span> ]</h1>
+                                <p>
+                                    G'Day Developers!
+                                </p>
+                                <p>
+                                    You can spend valuable developer time on every part of a project, not just the code
+                                    files. The bulk of time is normally spent on coding up .cs, .vb, .resx and .aspx
+                                    files. However, you could potentially have the following happen if you do not include
+                                    other files in source control:
+                                </p>
+                                <ul>
+                                    <li>lose work</li>
+                                    <li>lose old versions of work</li>
+                                    <li>have work overwritten</li>
+                                </ul>
+                                <p>
+                                    In particular, you should make it as easy as possible to see who changed what, who
+                                    deleted what, and allow a simple rollback to previous versions of non-code files.
+                                    Files you should put in <a href="/ssw/Standards/Rules/RulesToBetterSourceControl.aspx">
+                                        source control</a> include:
+                                </p>
+                                <ul>
+                                    <li>XSL files</li>
+                                    <li>Word documents</li>
+                                    <li>Excel Spreadsheets</li>
+                                    <li>Visio Diagrams</li>
+                                    <li>HTML files</li>
+                                    <li>Image files, Flash animations and psd files (yes this takes room in your source
+                                        control database - but we still want to be able to revert to an old version easily).</li>
+                                </ul>
+                                <p>
+                                    Cheers until next time, <a href="/ssw/Redirect/SSWUpdate/2007Feb/adamprofile.htm">
+                                        Adam</a><br />
+                                    SSW Chief Architect and Microsoft Regional Director, Australia&nbsp;
+                                </p>
+                                <p>
+                                    Got a comment for Adam? <a onclick="javascript:sendEmailWithoutSubject('6164616d636f67616e407373772e636f6d2e6175',this)" encode="6164616d636f67616e407373772e636f6d2e6175" process='true' onmouseover="self.status='mailto:' + decodeit('6164616d636f67616e407373772e636f6d2e6175'); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer">6164616d636f67616e407373772e636f6d2e6175</a>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="newsTitle">
+                                    <a name="SydneyDotnetUsergroup0" id="SydneyDotnetUsergroup0"></a>*SPECIAL* Sydney
+                                    .NET User Group -
+                                    <br />
+                                    Software Legend Juval Lowy presents an introduction on Windows Communication Foundation
+                                </h3>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="210" valign="top">
+                                            <img src="/SSW/NETUG/SSWUpdate/Images/UserGroupSpecialEvent.jpg"
+                                                alt="User Group" height="133" width="200" /></td>
+                                        <td valign="bottom">
+                                            <h3>
+                                                Today!</h3>
+                                            <p>
+                                                <a href="/ssw/Redirect/SSWUpdate/2007Feb/NewsletterNetUG.htm">Sydney
+                                                    .NET User Group</a><br />
+                                                Wednesday 14th February 2007<br />
+                                                5:45pm - 9:00pm<br />
+                                                Microsoft, Sydney</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    <strong>Programming Windows Communication Foundation
+                                        <br />
+                                        &#8211; a Developer's Primer</strong><br />
+                                    <br />
+                                    How do you actually build and consume WCF-based services? At its core, the WCF programming
+                                    model is simple and straightforward, requiring very little work on behalf of the
+                                    developer.
+                                </p>
+                                <p>
+                                    This session describes the essential WCF programming concepts: clients, services,
+                                    contracts and end points, and shows how to build, configure and host simple services.
+                                    After attending this session you will be able to start programming and exploring
+                                    WCF.<br />
+                                    <br />
+                                    <br />
+                                    <strong>About Juval Lowy</strong><br />
+                                    <br />
+                                    Juval Lowy is a software architect and the principal of IDesign
+                                    <br />
+                                    (<a target="_blank" href="http://www.idesign.net">www.idesign.net</a>)<img src="/ssw/Images/LeaveSite.gif"
+                                        alt="Extreme Programming" height="11" width="17" />, specializing in .NET 3.0
+                                    architecture consulting and advanced .NET 3.0 training. Juval is Microsoft&#8217;s
+                                    <a target="_blank" href="http://rd.microsoft.com/">Regional Director</a>
+                                    <img src="/ssw/Images/LeaveSite.gif" alt="Extreme Programming"
+                                        height="11" width="17" />
+                                    for the Silicon Valley, working with Microsoft on helping the industry adopt .NET
+                                    3.0. His latest book is Programming WCF Services (O'Reilly 2007).
+                                </p>
+                                <p>
+                                    Juval participates in the Microsoft internal design reviews for future versions
+                                    of .NET and related technologies. Juval published numerous 
+                                        articles<img src="/ssw/Images/LeaveSite.gif" alt="Extreme Programming"
+                                            height="11" width="17" />, regarding almost every aspect of .NET development,
+                                    and is a frequent presenter at development 
+                                        conferences
+                                    <img src="/ssw/Images/LeaveSite.gif" alt="Extreme Programming"
+                                        height="11" width="17" />.
+                                </p>
+                                <p>
+                                    Microsoft recognized Juval as a Software Legend as one of the world's top .NET experts
+                                    and industry leaders.<br />
+                                </p>
+                                <p>
+                                    	 <a   onclick="javascript:sendEmailWithSubject('696e666f407373772e636f6d2e6175','See%20You%20There',this)" encode='696e666f407373772e636f6d2e6175' process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText='true' >See You There!!</a> | 
+											 					 <a   onclick="javascript:sendEmailWithSubject('696e666f407373772e636f6d2e6175','Sorry%20I%20can%27t%20make%20it',this)" encode='696e666f407373772e636f6d2e6175' process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText='true' >Sorry I can't make it</a><br />
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="newsTitle">
+                                    <a name="SydneyDotnetUsergroup" id="SydneyDotnetUsergroup"></a>Sydney .NET User
+                                    Group -
+                                    <br />
+                                    The best place to learn .NET for free in Sydney</h3>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="210" valign="top">
+                                            <img src="/ssw/Images/SDNUG.jpg" alt="User Group" height="133"
+                                                width="200" /></td>
+                                        <td valign="bottom">
+                                            <h3>
+                                                7 days to go!</h3>
+                                            <p>
+                                                <a href="/ssw/Redirect/SSWUpdate/2007Feb/NewsletterNetUG.htm">Sydney
+                                                    .NET User Group</a><br />
+                                                Wednesday 21st February 2007<br />
+                                                5:45pm - 9:00pm<br />
+                                                Microsoft, Sydney</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    <strong>
+                                        <br />
+                                        10 CSS Best Practices</strong><br />
+                                    <strong>
+                                        <br />
+                                    </strong>Sick of style saturation? <a href="/ssw/Redirect/SSWUpdate/2007Feb/TristanProfile.htm">
+                                        Tristan Kurniawan</a>, SSW Graphic Designer, will show you how to apply these
+                                    CSS best practices to regain creative control over the layout and design whilst
+                                    streamlining the process of creating and maintaining your website.
+                                    <br />
+                                </p>
+                                <p>
+                                    <strong>Microsoft Customer Relationship Management (CRM)</strong></p>
+                                <p>
+                                    <a href="/ssw/Redirect/SSWUpdate/2007Feb/adamprofile.htm">Adam
+                                        Cogan</a> will be continuing the session with an introduction to Microsoft CRM
+                                    which has been designed to provide a complete suite of powerful marketing, sales,
+                                    and customer service capabilities, all with a familiar and consistent user experience
+                                    based on Microsoft Office and the Microsoft Office Outlook messaging and collaboration
+                                    client.&nbsp;
+                                </p>
+                                <p>
+                                    He will then cover the following benefits of CRM and how they can bring an advantage
+                                    to you and your company:</p>
+                                <ul>
+                                    <li>Ease of use</li>
+                                    <li>Security</li>
+                                    <li>Customisability</li>
+                                    <li>Mobility</li>
+                                    <li>Integration</li>
+                                </ul>
+                                <p>
+                                    <a href="/ssw/Redirect/SSWUpdate/2007Feb/andrewweaverprofile.htm">
+                                        Andrew Weaver</a> and George Doubinski will then conclude the session with demonstrations
+                                    and discussion on extending and customising CRM to improve your marketing/sales
+                                    effectiveness. <br />
+                                </p>
+                                <p>
+                                    	 <a   onclick="javascript:sendEmailWithSubject('696e666f407373772e636f6d2e6175','See%20You%20There',this)" encode='696e666f407373772e636f6d2e6175' process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText='true' >See You There!!</a> | 
+											 					 <a   onclick="javascript:sendEmailWithSubject('696e666f407373772e636f6d2e6175','Sorry%20I%20can%27t%20make%20it',this)" encode='696e666f407373772e636f6d2e6175' process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText='true' >Sorry I can't make it</a></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="newsTitle">
+                                    <a name="GainTheKnowledgeAndSkills" id="GainTheKnowledgeAndSkills"></a>Mix07
+                                    Las Vegas, USA</h3>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="210" valign="top">
+                                            <img src="/ssw/NETUG/SSWUpdate/Images/mix07_200X133.jpg" alt="Mix07"
+                                                height="133" width="200" /></td>
+                                        <td valign="bottom">
+                                            <h3>
+                                                75 days to go!</h3>
+                                            <p>
+                                                <a target="_blank" href="http://www.visitmix.com/">Mix07 Las Vegas, USA</a><img src="/ssw/Images/LeaveSite.gif"
+                                                    alt="Extreme Programming" height="11" width="17" /><br />
+                                                30th April - 2nd May 2007<br />
+                                                The Venetian Hotel in Las Vegas</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    MIX is Microsoft&#8217;s conference for Web designers, developers and decision-makers
+                                    who make their living at the forefront of the consumer Web.
+                                </p>
+                                <p>
+                                    Join the conversation with Microsoft and others on how to harness the latest technologies,
+                                    unlock new revenue opportunities, reduce development costs and improve customer
+                                    experience. MIX is for cutting-edge Web professionals designing and building next-generation
+                                    experiences.
+                                    <br />
+                                    <br />
+                                    P.S. Adam Cogan will be one of the presenters during the event, so come along and
+                                    MIX in the right crowd!<br />
+                                    <br />
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="newsTitle">
+                                    <a name="featuredproduct" id="featuredproduct"></a>Featured Product: SSW Code Auditor</h3>
+                                <p>
+                                    <strong>Keep your code *healthy* with SSW Code Auditor
+                                        <br />
+                                        <img width="160" height="174" align="right" class="noborder" alt="SSW Code Auditor"
+                                            src="/ssw/NETUG/SSWUpdate/Images/newsCodeAuditor.jpg" />The
+                                        best .NET Re-factor Tool<br />
+                                    </strong>
+                                    <br />
+                                    Are you looking to eradicate bugs and ensure consistency? SSW Code Auditor is a
+                                    tool that allows developers to take control of your code, ensuring large, complex
+                                    source code can be simplified, cleaned and maintained.
+                                    <br />
+                                    <br />
+                                    The built-in rules focus on the most popular .NET languages (C#, VB.NET) for both
+                                    Windows Forms and ASP.NET; however, the flexibility of SSW Code Auditor allows the
+                                    developer to add their own rules to target any language in any text file.<br />
+                                    &nbsp;</p>
+                                <p>
+                                    <a href="/ssw/CodeAuditor/">More on SSW Code Auditor </a>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="newsTitle">
+                                    Advertise with SSW</h3>
+                                <p>
+                                    If you would like to advertise your product or service with SSW or would like to
+                                    find out more about various advertising opportunities, please email your enquiry
+                                    to <a href="javascript:var e1='%73s%77.%63%6fm&#046;&#097;&#117;',e2='&#109;&#097;&#105;&#108;&#116;&#111;&#058;%20', e3='%69%6e&#102;%6f';var e0=e2+e3+'@'+e1;(window.location?window.location.replace(e0):document.write(e0));" title="&#105;&#110;&#102;&#111;&#064;&#115;&#115;&#119;&#046;&#099;&#111;&#109;&#046;&#097;&#117;">info@s*w.com.au</a><br />
+                                    or call: +61 2 9953 3000.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td valign="top" bgcolor="#eeeeee" id="sidebar" style="border-left: 1px #cccccc solid;
+                    border-bottom: 10px #f26522 solid;">
+                    <font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+                        <img alt="SSW " src="/SSW/NETUG/SSWUpdate/Images/newsletterFeb07.jpg"
+                            width="200" height="300" class="featureimage" /></font><table width="100%" border="0"
+                                cellpadding="10" cellspacing="0">
+                                <tr>
+                                    <td bgcolor="#FFFFFF">
+                                        <h3 class="sectionTitle">
+                                            February 2007</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="section">
+                                        <h3 class="sectionTitle">
+                                            Tech Breakfast</h3>
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="55" valign="top">
+                                                        <img src="/ssw/NETUG/SSWUpdate/Images/Icon_techbreakfast.gif"
+                                                            alt="Visual Studio for Database Professionals" height="46" width="46" /></td>
+                                                    <td valign="top">
+                                                        <strong>16 days to go </strong>
+                                                        <p>
+                                                            Visual Studio for Database Professionals
+                                                            <br />
+                                                            (Data Dude)</p>
+                                                        <p>
+                                                            <font color="#666666" size="1">Friday, 2nd Mar. 2007<br />
+                                                                8:00am-11:00am</font></p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p>
+                                            In this session Adam will provide introduction to Visual Studio Team Edition for
+                                            Database Professionals and will cover: schema maintenance, unit testing and data
+                                            generation, including a discussion on ways of extending this newly released product.</p>
+                                        <p align="right">
+                                            <a href="/ssw/Redirect/SSWUpdate/2007Feb/SSWTechBreakfast1.htm">
+                                                <img src="/ssw/Images/Button_Register_small.gif" alt="Register Now"
+                                                    border="0" /></a></p>
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="55" valign="top">
+                                                        <img src="/ssw/NETUG/SSWUpdate/Images/Icon_techbreakfast.gif"
+                                                            alt="Extreme Programming" height="46" width="46" /></td>
+                                                    <td valign="top">
+                                                        <strong>51 days to go </strong>
+                                                        <p>
+                                                            Extreme Programming</p>
+                                                        <p>
+                                                            <font color="#666666" size="1">Friday, 6th Apr. 2007<br />
+                                                                8:00am-11:00am</font></p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p>
+                                            This course will cover how to incorporate eXtreme Programming practices with .NET-
+                                            connected technologies to create high quality, low cost software.
+                                            <br />
+                                            This hands on, realistic course explains XP in the context of Microsoft .NET Framework,
+                                            Visual Studio .NET, Visual C# and more.
+                                        </p>
+                                        <p align="right">
+                                            <a href="/ssw/Redirect/SSWUpdate/2007Feb/SSWTechBreakfast2.htm">
+                                                <img src="/ssw/Images/Button_Register_small.gif" alt="Register Now"
+                                                    border="0" /></a></p>
+                                        <font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="55" valign="top">
+                                                            <img src="/ssw/NETUG/SSWUpdate/Images/Icon_techbreakfast.gif"
+                                                                alt="Extreme Programming" height="46" width="46" /></td>
+                                                        <td valign="top">
+                                                            <strong>93 days to go </strong>
+                                                            <p>
+                                                                SYDNEY: Top 15 SQL Server DBA Tasks for SQL Server 2005
+                                                            </p>
+                                                            <p>
+                                                                <font color="#666666" size="1">Friday, 18th May 2007<br />
+                                                                    8:00am-11:00am</font></p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </font>
+                                        <br />
+                                        Examine how to automate your SQL Server 2005 servers, set them on &quot;auto-pilot&quot;
+                                        for routine tasks and how to best take advantage of the DBMaint utility to automate
+                                        your backups and reorgs.
+                                        <br />
+                                        <br />
+                                        Take a look at how to configure your alerts and operators to get proper notifications
+                                        when events occur. <font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+                                            <p align="right">
+                                                <a href="/ssw/Redirect/SSWUpdate/2007Feb/SSWTechBreakfast3.htm">
+                                                    <img src="/ssw/Images/Button_Register_small.gif" alt="Register Now"
+                                                        border="0" /></a></p>
+                                        </font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="section">
+                                        <h3 class="sectionTitle">
+                                            Tips</h3>
+                                        <p>
+                                            SSW Link Auditor:<br />
+                                            <a href="/ssw/Redirect/SSWUpdate/2007Feb/kb1.htm">What does SSW
+                                                Link Auditor do above the Microsoft Front Page link checker known as &quot;Broken
+                                                Hyperlinks&quot;?</a><br />
+                                            -answered by:
+                                            <br />
+                                            James Zhou</p>
+                                        <p>
+                                            SSW SQL Auditor:<br />
+                                            <a href="/ssw/Redirect/SSWUpdate/2007Feb/kb2.htm">How do I make
+                                                a custom rule?</a><br />
+                                            -answered by:<br />
+                                            Frank Wang</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="section">
+                                        <h3 class="sectionTitle">
+                                            Employment</h3>
+                                        <p>
+                                            Due to the tremendous growth that our business has experienced over the last few
+                                            months, we are seeking enthusiastic people to join the SSW team.</p>
+                                        <p>
+                                            Our Company is based in Neutral Bay which is one of the most elegant and scenic
+                                            areas of Sydney. SSW is an Australian owned progressive consulting firm specialising
+                                            in building, implementing and maintaining Microsoft .NET software applications.</p>
+                                        <p>
+                                            We are currently looking for:</p>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="2">
+                                            <tr>
+                                                <td valign="top">
+                                                    &#8226;</td>
+                                                <td width="100%" valign="top">
+                                                    <strong>.NET (and OLAP) Developer</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    &#8226;</td>
+                                                <td width="100%" valign="top">
+                                                    <strong>Technical Personal Assistant</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    &#8226;</td>
+                                                <td valign="top">
+                                                    <strong>IT Senior Marketing Consultant (part-time)</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    &#8226;</td>
+                                                <td valign="top">
+                                                    <strong>Office Manager</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    &#8226;</td>
+                                                <td valign="top">
+                                                    <strong>Project Manager</strong></td>
+                                            </tr>
+                                        </table>
+                                        <p>
+                                            <a href="/ssw/Redirect/sswupdate/2007Feb/Employment.htm">Read more
+                                                and Apply NOW...</a></p>
+                                    </td>
+                                </tr>
+                            </table>
+                    &nbsp;</td>
+            </tr>
+        </table>
+        <table align="center" width="710">
+            <tr>
+                <td class="copyright">
+                    Copyright ?SSW 1990-2007. All Rights Reserved.</td>
+                <td class="proudly" align="right">
+                    Proudly developed by <a href="">SSW Sydney Web Design</a></td>
+            </tr>
+            <tr>
+                <td class="footer" colspan="2">
+                    <table>
+                        <tr valign="top" class="footer">
+                            <td valign="top" align="center">
+                               	<a onclick="javascript:sendEmailWithSubject('696e666f407373772e636f6d2e6175','Advertisting',this)" encode='696e666f407373772e636f6d2e6175' process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText='true' >Advertise with SSW</a>
+					<a onclick="javascript:sendEmailWithSubject('696e666f407373772e636f6d2e6175','Please%20Unsubscribe%20Me',this)" encode='696e666f407373772e636f6d2e6175' process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText='true' >Unsubscribe</a>
+					<a onclick="javascript:sendEmailWithSubject('696e666f407373772e636f6d2e6175','Hot%20Tip',this)" encode='696e666f407373772e636f6d2e6175' process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText='true' >Got a Hot Tip to share?</a>
+					<a onclick="javascript:sendEmailWithSubject('696e666f407373772e636f6d2e6175','About%20your%20newsletter',this)" encode='696e666f407373772e636f6d2e6175' process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" keepText='true' >Got a comment to make?</a></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </font>
+</body>
+</html>

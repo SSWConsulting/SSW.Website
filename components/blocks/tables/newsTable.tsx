@@ -1,17 +1,13 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Template } from "tinacms";
 import { SSWTable } from "./sswTable";
+import newLettersList from "../../../content/newsletters_list.json";
 
 export const NewsTable = () => {
 	const [tables, setTables] = useState({});
 
 	useEffect(() => {
-		async function init() {
-			const response = await axios.get("/api/get-newsletters?year=all");
-			if (response.status === 200) setTables(response.data);
-		}
-		init();
+		setTables(newLettersList);
 	}, []);
 
 	return (

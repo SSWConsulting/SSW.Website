@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script language="javascript" type="text/javascript">
+        //generate email
+        function sendEmail(encodedEmail) {
+            // do the mailto: link
+            location.href = "mailto:" + decodeEmail(encodedEmail) + "?subject=''";
+        }
+
+        //generate email with subject
+        function sendEmail(encodedEmail, emailSubject) {
+            // do the mailto: link
+            location.href = "mailto:" + decodeEmail(encodedEmail) + "?subject=" + emailSubject;
+        }
+
+        // return the decoded email address
+        function decodeEmail(encodedEmail) {
+            // holds the decoded email address
+            var email = "";
+
+            // go through and decode the email address
+            for (i = 0; i < encodedEmail.length; ) {
+                // holds each letter (2 digits)
+                var letter = "";
+                letter = encodedEmail.charAt(i) + encodedEmail.charAt(i + 1);
+
+                // build the real email address
+                email += String.fromCharCode(parseInt(letter, 16));
+                i += 2;
+            }
+
+            return email;
+        }
+
+        // display the email address in the statusbar
+        function displayStatus(encodedEmail) {
+            window.status = "mailto:" + decodeEmail(encodedEmail);
+        }
+
+        // clear the statusbar message
+        function clearStatus() {
+            window.status = "";
+        }
+    </script>
+
+    <title>Tech Breakfast on Dynamic Data</title>
+</head>
+<body style="background: #eeeeee; color: #666666; font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
+    font-size: 12px;">
+    <table align="center" width="650" border="0" cellspacing="0" cellpadding="0" style="font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;">
+        <tr>
+            <td>
+                <table width="650" border="0" cellspacing="0" cellpadding="0" style="font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+                    font-size: 11px;">
+                    <td colspan="2">
+                        <p align="center">
+                            
+                                If you cannot view this email, please visit our website</p>
+                    </td>
+                    <tr>
+                        <td rowspan="2">
+                            <a href="" target="_blank">
+                                <img src="/ssw/NETUG/SSWUpdate/images/logoSSW.jpg" alt="www.ssw.com.au"
+                                    width="325" height="107" style="border: none;" />
+                        </td>
+                        <td height="64" bgcolor="#CCCCCC" style="color: #FFF;">
+                            <h1 style="color: #FFFFFF; font-size: 18px; padding-left: 15px; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;">
+                                Tech Breakfast on Dynamic Data</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="/ssw/NETUG/SSWUpdate/images/headershadow.jpg" width="325"
+                                height="43" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table width="650" border="0" align="center" cellspacing="0" cellpadding="0">
+        <tr>
+            <td bgcolor="#CCCCCC">
+                &nbsp;
+            </td>
+            <td bgcolor="#FFFFFF">
+                <table width="642" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td colspan="2" bgcolor="#FFFFFF">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center" bgcolor="#FFFFFF">
+                            <span style="color: #ed2624; font-size: 20px; font-weight: bold; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;">
+                                Create Data Driven Websites Without Writing Code <span style="color: #666666; font-size: 12px;
+                                    font-weight: normal;">by Eric Phan</span></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" bgcolor="#FFFFFF">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center" bgcolor="#FFFFFF">
+                            <table width="642" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="444" align="left" valign="top">
+                                        <table width="444" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td height="28" bgcolor="#666666" style="padding-left: 10px;">
+                                                    <h3 style="color: #FFFFFF; font-size: 14px; margin: 0; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;">
+                                                        Dynamic Data - Data entry made easy with ASP.NET</h3>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td bgcolor="#eeeeee" style="padding: 10px 10px 0 10px; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+                                                    color: #666666; font-size: 12px;">
+                                                    <p>
+                                                        <img src="/ssw/NETUG/SSWUpdate/images/tick.gif" alt="" /><span
+                                                            style="font-size: 14px;"><strong> Watch</strong></span> a live demonstration
+                                                        and see how to build an awesome website using tips and tricks in Visual Studio.Net,
+                                                        ASP .NET and J-query
+                                                    </p>
+                                                    <p>
+                                                        <img src="/ssw/NETUG/SSWUpdate/images/tick.gif" alt="" /><span
+                                                            style="font-size: 14px;"><strong> Learn</strong></span> how to create data driven
+                                                        websites in 5 minutes from SSW real life case studies</p>
+                                                    <p>
+                                                        <img src="/ssw/NETUG/SSWUpdate/images/tick.gif" alt="" /><span
+                                                            style="font-size: 14px;"><strong> Enjoy</strong></span> a fulfilling healthy
+                                                        breakfast</p>
+                                                    <p>
+                                                        <span style="font-size: 14px;"><em>Date: <strong>27 March 2009</strong></em></span>
+                                                        <br />
+                                                        <span style="font-size: 14px;"><em>Time: <strong>8am - 11am</strong></em></span></p>
+                                                    <p>
+                                                        When working with databases, we often need to create some administrative pages to
+                                                        do all our CRUD (create, read, update and delete) operations on the tables. This
+                                                        can be a long and repetitive process if you don't use a code generator. Thankfully
+                                                        in Visual Studio 2008 SP1, Dynamic data allows us to create all those pages without
+                                                        writing a single line of code!
+                                                        <br />
+                                                        <br />
+                                                        In this session you will also find out how to customize these admin pages with different
+                                                        looks and data entry controls.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td width="198" align="center" valign="middle">
+                                        <p>
+                                            <a href="/ssw/Events/SSWTechBreakfast.aspx" target="_blank">
+                                                <img src="/ssw/NETUG/SSWUpdate/images/register_image.jpg" width="198"
+                                                    height="230" alt="Register" style="border: none;" /></a></p>
+                                        <p style="font-size: 14px; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+                                            color: #666666;">
+                                            or call
+                                            <br />
+                                            <strong>02 9953 3000</strong></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="left" valign="top">
+                                        <table width="641" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td width="155">
+                                                    <img src="/ssw/NETUG/SSWUpdate/images/ericphan.jpg" width="154"
+                                                        height="151" alt="Eric Phan" />
+                                                </td>
+                                                <td width="482" style="padding-right: 10px;">
+                                                    <p style="font-size: 12px; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+                                                        color: 666666;">
+                                                        <strong>Eric Phan</strong>
+                                                        <br />
+                                                        See Eric’s <a href="/SSW/employees/employeesprofile.aspx?EmpID=EP"
+                                                            target="_blank">profile</a> and <a href="http://www.ericphan.info" target="_blank">his
+                                                                blog</a></p>
+                                                    <p style="font-size: 12px; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+                                                        color: #666666;">
+                                                        Eric Phan is the lead developer for a SSW development project which uses dynamic
+                                                        data as the backbone of the project. He has a in-depth knowledge of most aspects
+                                                        of .NET as well as experience with Java (J2SE &amp; J2ME).
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="28" colspan="2" bgcolor="#666666" style="padding-left: 10px;">
+                            <h3 style="color: #FFFFFF; font-size: 14px; margin-left: 12px; margin: 0; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;">
+                                Where? At SSW</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="444" bgcolor="#FFFFFF" style="padding: 10px 10px 0 10px; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+                            color: #666666; font-size: 12px;">
+                            <p>
+                                Gateway Court Suite 10, (Opposite The Oaks Hotel)
+                                <br />
+                                81 - 91 Military Road, Neutral Bay NSW 2089 AUSTRALIA.</p>
+                            <p>
+                                Excellent transport facilities including ferry, bus and freeway systems provide
+                                easy access to Neutral Bay. We look forward to seeing you soon.</p>
+                            <p>
+                                <a href="/ssw/Company/Directions/NeutralBay/" target="_blank">See
+                                    directions to SSW</a></p>
+                        </td>
+                        <td colspan="-1" rowspan="2" align="center" bgcolor="#FFFFFF">
+                            <a href="http://maps.google.com.au/maps?q=81+-+91+Military+Road,+Neutral+Bay&oe=utf-8&rls=org.mozilla:en-US:official&client=firefox-a&um=1&ie=UTF-8&split=0&gl=au&sa=X&oi=geocode_result&resnum=1&ct=title"
+                                target="_blank" style="border: none;">
+                                <img src="/ssw/NETUG/SSWUpdate/images/map_to_ssw.jpg" width="165"
+                                    height="165" alt="Map to SSW" style="border: none;" /></a>
+                            <p style="font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; font-size: 11px;">
+                                <a href="http://maps.google.com.au/maps?q=81+-+91+Military+Road,+Neutral+Bay&oe=utf-8&rls=org.mozilla:en-US:official&client=firefox-a&um=1&ie=UTF-8&split=0&gl=au&sa=X&oi=geocode_result&resnum=1&ct=title">
+                                    Print map</a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#eeeeee" style="padding: 5px 10px 5px 10px;">
+                            <p style="font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; color: #666666;
+                                font-size: 13px;">
+                                <strong>Upcoming sessions</strong></p>
+                            <p style="font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; color: #666666;
+                                font-size: 12px;">
+                                <span style="font-weight: bold;">> SharePoint - Yellow Brick Road<br />
+                                    > TFS - What is New in 2010<br />
+                                    > Silverlight 2 - Tips and Tricks<br />
+                                    > Project Server 2007 integration with Team Foundation Server</span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" bgcolor="#FFFFFF">
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td bgcolor="#CCCCCC">
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="3" bgcolor="#CCCCCC">
+                &nbsp;
+            </td>
+            <td bgcolor="#CCCCCC" align="center">
+                &nbsp;
+            </td>
+            <td rowspan="3" bgcolor="#CCCCCC">
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#CCCCCC" align="center">
+                <p style="font-size: 11px; color: #666666; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;">
+                    Copyright © SSW 1990-2008. All Rights Reserved.<br />
+                    <table>
+                        <tr valign="top" class="footer">
+                            <td valign="top" align="center">
+                                <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','=Advertisting')"
+                                    onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                    onmouseout="javascript:clearStatus(); return true;">Advertise with SSW</a> |
+                            </td>
+                            <td valign="top" align="center">
+                                <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','Unsubscribe')"
+                                    onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                    onmouseout="javascript:clearStatus(); return true;">Unsubscribe</a> |
+                            </td>
+                            <td valign="top" align="center">
+                                <a target="_blank" href="/ssw/Events/SSWTechBreakfastprevious.aspx">
+                                    Previous SSW Updates</a> |
+                            </td>
+                            <td valign="top" align="center">
+                                <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','Got a Hot Tip to share?')"
+                                    onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                    onmouseout="javascript:clearStatus(); return true;">Got a Hot Tip to share?</a>
+                                |
+                            </td>
+                            <td valign="top" align="center">
+                                <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','About%20your%20newsletter')"
+                                    onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                    onmouseout="javascript:clearStatus(); return true;">Got a comment to make?</a>
+                            </td>
+                        </tr>
+                    </table>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#CCCCCC" align="center">
+                &nbsp;
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

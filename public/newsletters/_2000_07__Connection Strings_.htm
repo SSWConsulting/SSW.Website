@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Access/SQL Server/ASP Newsletter July 2000</title>
+<LINK href="/ssw/Include/ssw.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/ssw/include/decodemail.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<table width="90%">
+  <tr>
+    <td>
+      <p>|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|</p>
+      <p><br>
+        SSW Monthly Newsletter</p>
+      
+      <p><br>
+        |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|</p>
+      <p><br>
+        This newsletter is a service offered exclusively to clients of Superior 
+        Software for Windows. It offers the latest product news as well as Hot 
+        Tips which will help you get the most from your existing SSW 
+        Products and Services.</p>
+      <p> 1. THE ACCESS/ASP/SQL SERVER USERS GROUP SYDNEY, WEDNESDAY 19 July<br>
+        <br>
+        2. PRODUCT NEWS www.VB123.com - The Toolshed</p>
+      <p> 3. HOT TIPS FOR DEVELOPERS</p>
+      <p> 4. DATABASE NEWS - TolBay City Agents</p>
+      <p> 5. ASP Guru? Work at SSW! </p>
+      <p><br>
+        ==========================================================================</p>
+      <p>1. The Access/ASP/SQL Server User Group<br>
+        Sponsored by Microsoft and SSW<br>
+        Wednesday 19th July 2000, 5:45 pm</p>
+      <p>www.ssw.com.au/accessUG<br>
+        ==========================================================================</p>
+      <p>What do I bring along?<br>
+        <br>
+        Just your self.... and a hot tip on any of these topics:<br>
+        * Access<br>
+        * ADP<br>
+        * VB<br>
+        * HTML / Front Page<br>
+        * ADO<br>
+        * ASP<br>
+        * SQL Server or<br>
+        * Hot Sites</p>
+      
+      <p><br>
+        ==========================================================================<br>
+        2. www.vb123.com - the Toolshed<br>
+        ==========================================================================</p>
+      <p>&quot;The Toolshed&quot; is a collection of resources for Microsoft Access, 
+        Visual Basic, Microsoft Graphs and Charts, HTML, Active Server Pages and 
+        FrontPage and is well worth a visit. It runs on your computer and includes 
+        a search engine. It includes all the resources at vb123.com plus source 
+        code, databases and other files.</p>
+      <p>For more information go to http://www.vb123.com/toolshed/default.htm</p>
+      <p><br>
+        =========================================================================<br>
+        3. Hot Tips for Developers<br>
+        =========================================================================</p>
+      <p>**SQL Server Hot Tip**</p>
+      <p>I want to give the user a combo box with a list of all the current databases 
+        on my SQL Server so they can select. How do I do this?<br>
+        <br>
+        To enumerate the databases on the current server, you can use this SQL:<br>
+        <br>
+        SELECT * FROM sysdatabases WHERE sid &lt;&gt; 0x01<br>
+        <br>
+        The sid column identifies the database creator. The hexadecimal value 
+        0x01 signifies that the database is internally created</p>
+      <p> <a onclick="javascript:sendEmailWithoutSubject('696e666f407373772e636f6d2e6175',this)"  encode="696e666f407373772e636f6d2e6175" category="info" process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" >696e666f72407373772e636f6d2e6175 </a>
+</p>
+      
+      <p>**Access/Visual Basic Hot Tip** </p>
+      <p>Using the CALL statement to call a function</p>
+      <p>Most people associate the CALL keyword with SUB PROCEDURES. If a function 
+        returns a value but the value returned is not always used (e.g. so the 
+        function can be used in expressions) it can be a pain to create a dummy 
+        variable to store the returned value from the function. The CALL statement 
+        can be used in Visual Basic to run a function without storing the value 
+        returned.</p>
+      <p>i.e.<br>
+        ' Common Method<br>
+        Dim varRetValue as Variant<br>
+        varRetValue = ProcessOrders(strOrderID)<br>
+        <br>
+        ' OR (USING THIS TIP)<br>
+        ' Using CALL Statement<br>
+        Call ProcessOrders(strOrderID)<br>
+        <br>
+        <a onclick="javascript:sendEmailWithoutSubject('696e666f407373772e636f6d2e6175',this)"  encode="696e666f407373772e636f6d2e6175" category="info" process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" >696e666f72407373772e636f6d2e6175 </a>
+</p>
+      
+      <p>**Access/VB/SQL Tip**</p>
+      <p>We used to always use a SSW function called FileOpenMDB() . These days 
+        we don't deal with Access backends as often as SQL backends. So instead 
+        of storing the BACKEND path like<br>
+        C:\CiscoDB\CiscoData.mdb&quot; <br>
+        these days we just store a connnection string like<br>
+        Provider=SQLOLEDB.1;Persist Security Info=False;User ID=sa;Initial Catalog=SSWData;Data 
+        Source=chook</p>
+      <p> <br>
+        Here is a the function we use to edit connection string</p>
+      <p><br>
+        '-----------------------------------------------------------------------<br>
+        Private Function strUDLEdit(strDatabasePath As String) As String<br>
+        '-----------------------------------------------------------------------<br>
+        'Requires Reference: Microsoft OLE DB Service Component 1.0<br>
+        'Allows to open udl interface with existing connection string and edit 
+        it<br>
+        'Example: ctldatabasepath = strUDLEdit(ctldatabasepath)<br>
+        'Created 22/06/2000 - ST</p>
+      <p>On Error GoTo Err_strUDLEdit</p>
+      <p>strUDLEdit = &quot;&quot;</p>
+      <p>'Requires Reference: Microsoft OLE DB Service Component 1.0<br>
+        Dim UserDefLink As MSDASC.DataLinks<br>
+        Set UserDefLink = New MSDASC.DataLinks</p>
+      <p>Dim cnn As ADODB.Connection<br>
+        Set cnn = New ADODB.Connection</p>
+      <p>cnn.ConnectionString = ctlDatabasePath</p>
+      <p>Dim bolDummy As Boolean<br>
+        bolDummy = UserDefLink.PromptEdit(cnn)</p>
+      <p>strUDLEdit = cnn.ConnectionString</p>
+      <p>Set cnn = Nothing</p>
+      <p>Exit_strUDLEdit:<br>
+        Exit Function<br>
+        Err_strUDLEdit:<br>
+        If Err = 91 Then<br>
+        MsgBox &quot;Select Full Path of Access Database (OLEDB Provider string)&quot;, 
+        vbOKOnly + vbExclamation, &quot;Validation&quot;</p>
+      <p> ElseIf Err.Number = -2147217805 Or Err.Number = -2147467259 Or Err.Number 
+        = -2147217843 Then<br>
+        MsgBox &quot;Initialization string cannot be retrieved.&quot;, vbCritical 
+        + vbOKOnly, &quot;Validation&quot;</p>
+      <p> Else<br>
+        MsgBox &quot;Error number: &quot; &amp; Err.Number &amp; &quot; &quot; 
+        &amp; Err.Description, &quot;strUDLEdit&quot;<br>
+        End If<br>
+        Resume Exit_strUDLEdit<br>
+        Resume 'Move to here for debugging</p>
+      <p><br>
+        End Function</p>
+      <p>Sergei Tchernykh</p>
+      
+      <p><br>
+        Got a hot tip you want to share? Email  <a onclick="javascript:sendEmailWithoutSubject('696e666f407373772e636f6d2e6175',this)"  encode="696e666f407373772e636f6d2e6175" category="info" process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" >696e666f72407373772e636f6d2e6175 </a>
+</p>
+      <p>=========================================================================<br>
+        4. SSW Solution Tolbay City Agents<br>
+        =========================================================================</p>
+      <p>SSW was commissioned by City Agents to build a custom database to manage 
+        the day-to-day running of their business. City Agents is a legal searching 
+        firm employed principally by lawyers to carry out searching, paralegal 
+        and agency work. As such they have to keep control of many small but nonetheless 
+        important tasks and have these integrated into a solid reporting and accountable 
+        system.</p>
+      <p>The database was built using ADP (Access Data Projects) in Access 2000 
+        with MSDE as the backend. It took approximately 15 development days.<br>
+        <br>
+        Mark Scott, director of City Agents, said &quot;We are very pleased with 
+        the outcome, speed and flexibility of the database and its cost.&quot;<br>
+      </p>
+      <p>=========================================================================<br>
+        5. Love New Technology? Work at SSW<br>
+        =========================================================================</p>
+      <p>SSW is looking for an articulate Senior Database Developer focused on 
+        new <br>
+        technology and dedicated to getting the job done.</p>
+      <p> SQL SERVER + Stored Procedures<br>
+        ASP<br>
+        COM+</p>
+      <p><br>
+        SSW is also looking for a Graphic Designer who knows HTML and is strong 
+        at developing<br>
+        a great corporate 'look and feel'.<br>
+      </p>
+      <p>Attractive Salary will be negotiated.</p>
+      <p><br>
+        Call us 61 2 9953 3000 to arrange an interview. </p>
+      <p><br>
+        ========================================================================</p>
+      <p>SSW&#146;s Marketing Team edits this newsletter. We would like your feedback.</p>
+      <p>If you have a tip you want to share, a website you want us to review 
+        or<br>
+        comments on our service, please write to  <a onclick="javascript:sendEmailWithoutSubject('696e666f407373772e636f6d2e6175',this)"  encode="696e666f407373772e636f6d2e6175" category="info" process='true' onmouseover="self.status='mailto:' + decodeit('696e666f72407373772e636f6d2e6175 '); return true;" onmouseout="self.status='';return true;" style=" text-decoration: underline; cursor:pointer" >696e666f72407373772e636f6d2e6175 </a>
+ or visit us at<br>
+        www.ssw.com.au</p>
+      <p>SSW Pty Limited<br>
+        Gateway Court, Suite 10, 81 - 91 Military Road, Neutral Bay, NSW,2089<br>
+        Phone: +61 2 9953 3000 Fax: +61 2 9953 3105<br>
+        www.ssw.com.au</p>
+      <p>SSW specialises in delivering efficient, cost effective<br>
+        solutions for your database or Internet requirements. Our ability to<br>
+        integrate these functions together helps companies streamline operations,<br>
+        while making the most of opportunities presented by the on-line world.</p>
+      <p>If you can't use our services at the moment but know someone who may, 
+        pass<br>
+        on our details.........it could earn you some easy $$$$! Superior<br>
+        Software has a guaranteed $150 Spotters Fee for any referrals we convert<br>
+        into new Database or Web Site development business.</p>
+      
+      <p>We're not the people surfing the net, we're the people making the waves.<br>
+        ==========================================================================</p>
+      
+      <p>To unsubscribe from this newsletter: <a href="javascript:var e1='%73s%77.%63%6fm&#046;&#097;&#117;',e2='&#109;&#097;&#105;&#108;&#116;&#111;&#058;%20', e3='%69%6e&#102;%6f';var e0=e2+e3+'@'+e1;(window.location?window.location.replace(e0):document.write(e0));" title="&#105;&#110;&#102;&#111;&#064;&#115;&#115;&#119;&#046;&#099;&#111;&#109;&#046;&#097;&#117;">info@s*w.com.au</a><br>
+		<span class = "updatefooter">
+Powered by SSW Email Merge PRO!</span></p>
+</td>
+  </tr>
+</table>
+</body>
+</html>

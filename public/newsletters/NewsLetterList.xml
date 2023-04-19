@@ -1,0 +1,2179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <newsletters year="2000">
+    <newsletter>
+      <year>2000</year>
+      <month>02</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2000_02__DevCon 2000 and GST and the Developer_.htm</url>
+      <description>DevCon 2000 and GST and the Developer</description>
+    </newsletter>
+    <newsletter>
+      <year>2000</year>
+      <month>04</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2000_04__SQL Server 7.0 SP2_.htm</url>
+      <description>SQL Server 7.0 SP2</description>
+    </newsletter>
+    <newsletter>
+      <year>2000</year>
+      <month>05</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2000_05__English Query_.htm</url>
+      <description>English Query</description>
+    </newsletter>
+    <newsletter>
+      <year>2000</year>
+      <month>06</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2000_06__Visio 2000_.htm</url>
+      <description>Visio 2000</description>
+    </newsletter>
+    <newsletter>
+      <year>2000</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2000_07__Connection Strings_.htm</url>
+      <description>Connection Strings</description>
+    </newsletter>
+    <newsletter>
+      <year>2000</year>
+      <month>08</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2000_08__SQL Server 2000_.htm</url>
+      <description>SQL Server 2000</description>
+    </newsletter>
+    <newsletter>
+      <year>2000</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2000_09__Select Statements in ADO_.htm</url>
+      <description>Select Statements in ADO</description>
+    </newsletter>
+    <newsletter>
+      <year>2000</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2000_10__Exchange Server 2000 and what a developer needs to know_.htm</url>
+      <description>Exchange Server 2000 and what a developer needs to know</description>
+    </newsletter>
+    <newsletter>
+      <year>2000</year>
+      <month>11</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2000_11__What makes a great spec_.htm</url>
+      <description>What makes a great spec?</description>
+    </newsletter>
+    <newsletter>
+      <year>2000</year>
+      <month>12</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2000_12__Visual Studio.Net_.htm</url>
+      <description>Visual Studio.Net</description>
+    </newsletter>
+  </newsletters>
+  <newsletters year="2001">
+    <newsletter>
+      <year>2001</year>
+      <month>01</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2001_01__Microsoft SharePoint Portal Server and the Web Storage System_.htm</url>
+      <description>Microsoft SharePoint Portal Server and the Web Storage System</description>
+    </newsletter>
+    <newsletter>
+      <year>2001</year>
+      <month>02</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2001_02__Develop Client-Server Applications with Access_.htm</url>
+      <description>Develop Client-Server Applications with Access</description>
+    </newsletter>
+    <newsletter>
+      <year>2001</year>
+      <month>03</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2001_03__Using Object-Oriented Features in VS.NET_.htm</url>
+      <description>Using Object-Oriented Features in VS.NET</description>
+    </newsletter>
+    <newsletter>
+      <year>2001</year>
+      <month>05</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2001_05__Office XP - What's in it for me_.htm</url>
+      <description>Office XP - What's in it for me?</description>
+    </newsletter>
+    <newsletter>
+      <year>2001</year>
+      <month>06</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2001_06__.NET in the world now_.htm</url>
+      <description>.NET in the world now</description>
+    </newsletter>
+    <newsletter>
+      <year>2001</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2001_07__Working in .NET_.htm</url>
+      <description>Working in .NET</description>
+    </newsletter>
+    <newsletter>
+      <year>2001</year>
+      <month>08</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2001_08__SQL Server tech breakfast double session_.htm</url>
+      <description>SQL Server tech breakfast double session</description>
+    </newsletter>
+    <newsletter>
+      <year>2001</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2001_09__We're looking for feedback on our upcoming projects_.htm</url>
+      <description>We're looking for feedback on our upcoming projects</description>
+    </newsletter>
+    <newsletter>
+      <year>2001</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2001_10__Make your specification work_.htm</url>
+      <description>Make your specification work</description>
+    </newsletter>
+    <newsletter>
+      <year>2001</year>
+      <month>11</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2001_11__XML Web Services in Visual Studio .NET_.htm</url>
+      <description>XML Web Services in Visual Studio .NET</description>
+    </newsletter>
+    <newsletter>
+      <year>2001</year>
+      <month>12</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2001_12__.NET Object Design_.htm</url>
+      <description>.NET Object Design</description>
+    </newsletter>
+  </newsletters>
+  <newsletters year="2002">
+    <newsletter>
+      <year>2002</year>
+      <month>01</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2002_01__Is your Spec in Bite-size Pieces_.htm</url>
+      <description>Is your Spec in Bite-size Pieces</description>
+    </newsletter>
+    <newsletter>
+      <year>2002</year>
+      <month>02</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2002_02__Is Everyone on your team a Standards Watchdog_.htm</url>
+      <description>Is Everyone on your team a Standards Watchdog</description>
+    </newsletter>
+    <newsletter>
+      <year>2002</year>
+      <month>02</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2002_02__NZDevdays_MS Dev Days_.htm</url>
+      <description>NZDevdays</description>
+    </newsletter>
+    <newsletter>
+      <year>2002</year>
+      <month>02</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2002_02__VSNETLaunch_Special Invitation to the Microsoft Visual Studio.NET Launch Event_.htm</url>
+      <description>VSNETLaunch</description>
+    </newsletter>
+    <newsletter>
+      <year>2002</year>
+      <month>03</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2002_03__Techies that Talk Sense_.htm</url>
+      <description>Techies that Talk Sense</description>
+    </newsletter>
+    <newsletter>
+      <year>2002</year>
+      <month>04</month>
+      <optionalTitle>2</optionalTitle>
+      <url>SSWUpdate/_2002_04_2_Special .NET User Group with Ken Getz_.htm</url>
+      <description>Special .NET User Group with Ken Getz</description>
+    </newsletter>
+    <newsletter>
+      <year>2002</year>
+      <month>04</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2002_04__Dealing with Distractions_.htm</url>
+      <description>Dealing with Distractions</description>
+    </newsletter>
+    <newsletter>
+      <year>2002</year>
+      <month>05</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2002_05__Do you always carry your Tool Box_.htm</url>
+      <description>Do you always carry your Tool Box?</description>
+    </newsletter>
+    <newsletter>
+      <year>2002</year>
+      <month>06</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2002_06__Do you manage expectations_.htm</url>
+      <description>Do you manage expectations?</description>
+    </newsletter>
+    <newsletter>
+      <year>2002</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2002_07__Do you use eXtreme Programming wisely_.htm</url>
+      <description>Do you use eXtreme Programming wisely?</description>
+    </newsletter>
+    <newsletter>
+      <year>2002</year>
+      <month>08</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2002_08__Do you manage your email_.htm</url>
+      <description>Do you manage your email?</description>
+    </newsletter>
+    <newsletter>
+      <year>2002</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2002_09__Do you send Morning Goals_.htm</url>
+      <description>Do you send Morning Goals?</description>
+    </newsletter>
+    <newsletter>
+      <year>2002</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2002_10__Do you follow up emails effectively_.htm</url>
+      <description>Do you follow up emails effectively?</description>
+    </newsletter>
+    <newsletter>
+      <year>2002</year>
+      <month>11</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2002_11__Do you CC everyone_.htm</url>
+      <description>Do you CC everyone?</description>
+    </newsletter>
+    <newsletter>
+      <year>2002</year>
+      <month>12</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2002_12__Do you investigate before writing new code_.htm</url>
+      <description>Do you investigate before writing new code?</description>
+    </newsletter>
+  </newsletters>
+  <newsletters year="2003">
+    <newsletter>
+      <year>2003</year>
+      <month>01</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2003_01__Do you know the quickest way to fix small web errors_.htm</url>
+      <description>Do you know the quickest way to fix small web errors?</description>
+    </newsletter>
+    <newsletter>
+      <year>2003</year>
+      <month>02</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2003_02__Do you think that when replying to emails it's better late than never_.htm</url>
+      <description>Do you think that when replying to emails it's better late than never?</description>
+    </newsletter>
+    <newsletter>
+      <year>2003</year>
+      <month>03</month>
+      <optionalTitle>2</optionalTitle>
+      <url>SSWUpdate/_2003_03_2_Special Double Events Notice_.htm</url>
+      <description>Special Double Events Notice</description>
+    </newsletter>
+    <newsletter>
+      <year>2003</year>
+      <month>03</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2003_03__Do you avoid reviewing performance without metrics_.htm</url>
+      <description>Do you avoid reviewing performance without metrics?</description>
+    </newsletter>
+    <newsletter>
+      <year>2003</year>
+      <month>04</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2003_04__Do you use instant messenger for business_.htm</url>
+      <description>Do you use instant messenger for business?</description>
+    </newsletter>
+    <newsletter>
+      <year>2003</year>
+      <month>05</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2003_05__Which third party developer tools should I use_.htm</url>
+      <description>Which third party developer tools should I use?</description>
+    </newsletter>
+    <newsletter>
+      <year>2003</year>
+      <month>06</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2003_06__Are you a good SQL Server DBA_.htm</url>
+      <description>Are you a good SQL Server DBA?</description>
+    </newsletter>
+    <newsletter>
+      <year>2003</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2003_07__Do you manage your software consultants_.htm</url>
+      <description>Do you manage your software consultants?</description>
+    </newsletter>
+    <newsletter>
+      <year>2003</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2003_07__LogExplorer_Do you recover data using your SQL Server transaction logs_.htm</url>
+      <description>LogExplorer</description>
+    </newsletter>
+    <newsletter>
+      <year>2003</year>
+      <month>08</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2003_08__User Group Late 1 Day.htm</url>
+      <description>User Group Late 1 Day.htm</description>
+    </newsletter>
+    <newsletter>
+      <year>2003</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2003_09__Tom Howe speaking at User Group.htm</url>
+      <description>Tom Howe speaking at User Group.htm</description>
+    </newsletter>
+    <newsletter>
+      <year>2003</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2003_10__Do you use the new security options in Outlook 2003_.htm</url>
+      <description>Do you use the new security options in Outlook 2003?</description>
+    </newsletter>
+    <newsletter>
+      <year>2003</year>
+      <month>11</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2003_11__Is your website multibrowser compatible_.htm</url>
+      <description>Is your website multibrowser compatible</description>
+    </newsletter>
+    <newsletter>
+      <year>2003</year>
+      <month>12</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2003_12__Do you manage your clients expectations_.htm</url>
+      <description>Do you manage your clients expectations?</description>
+    </newsletter>
+  </newsletters>
+  <newsletters year="2004">
+    <newsletter>
+      <year>2004</year>
+      <month>01</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2004_01__Do you always use query strings_.htm</url>
+      <description>Do you always use query strings?</description>
+    </newsletter>
+    <newsletter>
+      <year>2004</year>
+      <month>02</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2004_02__Adam Cogan presenting in all states this week_.htm</url>
+      <description>Adam Cogan presenting in all states this week</description>
+    </newsletter>
+    <newsletter>
+      <year>2004</year>
+      <month>03</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2004_03__Do you know how to best manage your dead time_.htm</url>
+      <description>Do you know how to best manage your dead time?</description>
+    </newsletter>
+    <newsletter>
+      <year>2004</year>
+      <month>04</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2004_04__New anti-spam legislation in force from April 10th_.htm</url>
+      <description>New anti-spam legislation in force from April 10th</description>
+    </newsletter>
+    <newsletter>
+      <year>2004</year>
+      <month>05</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2004_05__Important notes for your Data Entry Forms_.htm</url>
+      <description>Important notes for your Data Entry Forms</description>
+    </newsletter>
+    <newsletter>
+      <year>2004</year>
+      <month>06</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2004_06__Do you enforce deadlines, have a project plan and a debrief_.htm</url>
+      <description>Do you enforce deadlines, have a project plan and a debrief?</description>
+    </newsletter>
+    <newsletter>
+      <year>2004</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2004_07__Dont criticize when you are in charge_.htm</url>
+      <description>Dont criticize when you are in charge</description>
+    </newsletter>
+    <newsletter>
+      <year>2004</year>
+      <month>08</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2004_08__Do you use inherited forms for consistent behaviour_.htm</url>
+      <description>Do you use inherited forms for consistent behaviour?</description>
+    </newsletter>
+    <newsletter>
+      <year>2004</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2004_09__The implementation of the XML Index in Yukon_.htm</url>
+      <description>The implementation of the XML Index in Yukon</description>
+    </newsletter>
+    <newsletter>
+      <year>2004</year>
+      <month>10</month>
+      <optionalTitle>MiniUpdate</optionalTitle>
+      <url>SSWUpdate/_2004_10_MiniUpdate_User Group_.htm</url>
+      <description>User Group</description>
+    </newsletter>
+    <newsletter>
+      <year>2004</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2004_10__AfricaEmail_ The African Roadshow October 2004 - Nairobi, Dar es Salaam, and Johannesburg_.htm</url>
+      <description>AfricaEmail</description>
+    </newsletter>
+    <newsletter>
+      <year>2004</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2004_10__User Group 2 Weeks Late_.htm</url>
+      <description>User Group 2 Weeks Late</description>
+    </newsletter>
+    <newsletter>
+      <year>2004</year>
+      <month>11</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2004_11__Does backward compatibility kill good code_.htm</url>
+      <description>Does backward compatibility kill good code</description>
+    </newsletter>
+    <newsletter>
+      <year>2004</year>
+      <month>12</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2004_12__Do you follow naming convention for your Boolean Property_.htm</url>
+      <description>Do you follow naming convention for your Boolean Property?</description>
+    </newsletter>
+  </newsletters>
+  <newsletters year="2005">
+    <newsletter>
+      <year>2005</year>
+      <month>01</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2005_01__ Do you manage your Clients' expectations_.htm</url>
+      <description> Do you manage your Clients' expectations?</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>02</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2005_02__Do you refer to form controls directly_.htm</url>
+      <description>Do you refer to form controls directly?</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>03</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2005_03__Move your OLAP MetaData from Access to SQL Server!_.htm</url>
+      <description>Move your OLAP MetaData from Access to SQL Server!</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>04</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2005_04__Do you include version numbers in your setup filename_.htm</url>
+      <description>Do you include version numbers in your setup filename?</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>05</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2005_05__Are your settings and the customizable settings, in different files_.htm</url>
+      <description>Are your settings and the customizable settings, in different files?</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>06</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2005_06__Do you believe content is king_.htm</url>
+      <description>Do you believe content is king?</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2005_07__Do you follow the Banana Rule in your web pages_.htm</url>
+      <description>Do you follow the Banana Rule in your web pages?</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2005_07__Special .Net User Group with Kit George and Vinaya Bhushana Gattam Reddy_.htm</url>
+      <description>Special .Net User Group with Kit George and Vinaya Bhushana Gattam Reddy</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>08</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2005_08__Do you send morning goals_.htm</url>
+      <description>Do you send morning goals?</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>08</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2005_08__SSW Kiwi Update NZ User Groups Tech Ed_.htm</url>
+      <description>SSW Kiwi Update NZ User Groups Tech Ed</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>09</month>
+      <optionalTitle>3</optionalTitle>
+      <url>SSWUpdate/_2005_09_3_Migrating to SQL_USA Special Offer_.htm</url>
+      <description>Migrating to SQL</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>09</month>
+      <optionalTitle>4</optionalTitle>
+      <url>SSWUpdate/_2005_09_4_Migrating to SQL_USA_ Special Offer 2_.htm</url>
+      <description>Migrating to SQL</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>09</month>
+      <optionalTitle>5</optionalTitle>
+      <url>SSWUpdate/_2005_09_5_Migrating to SQL Special Offer Lumigent_.htm</url>
+      <description>Migrating to SQL Special Offer Lumigent</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>09</month>
+      <optionalTitle>6</optionalTitle>
+      <url>SSWUpdate/_2005_09_6_Migrating to SQL_.htm</url>
+      <description>Migrating to SQL</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>09</month>
+      <optionalTitle>7</optionalTitle>
+      <url>SSWUpdate/_2005_09_7_Migrating to SQL_Special Offer_.htm</url>
+      <description>Migrating to SQL</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2005_09__Do you use enough keywords on the page_.htm</url>
+      <description>Do you use enough keywords on the page?</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2005_09__Migrating to SQL_Special Offer 2_.htm</url>
+      <description>Migrating to SQL</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2005_09__Migrating to SQL_USA_.htm</url>
+      <description>Migrating to SQL</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2005_10__Do you refactor your code and keep methods short_.htm</url>
+      <description>Do you refactor your code and keep methods short?</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2005_10__Reporting Services Training, Brisbane_.htm</url>
+      <description>Reporting Services Training, Brisbane</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2005_10__The Singapore SQL Server User Group_.htm</url>
+      <description>The Singapore SQL Server User Group</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>11</month>
+      <optionalTitle>2</optionalTitle>
+      <url>SSWUpdate/_2005_11_2_Brian Randell in Town for Special User Group _Tech Breakfast_.htm</url>
+      <description>Brian Randell in Town for Special User Group </description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>11</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2005_11_Mini_VSLive! Sydney Don't Miss Out!_.htm</url>
+      <description>VSLive! Sydney Don't Miss Out!</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>11</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2005_11__Do you use email for tasks - not communication_.htm</url>
+      <description>Do you use email for tasks - not communication?</description>
+    </newsletter>
+    <newsletter>
+      <year>2005</year>
+      <month>12</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2005_12__Do you create new databases in the default directory_.htm</url>
+      <description>Do you create new databases in the default directory?</description>
+    </newsletter>
+  </newsletters>
+  <newsletters year="2006">
+    <newsletter>
+      <year>2006</year>
+      <month>01</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2006_01__How much intelligence in the setup.exe_.htm</url>
+      <description>How much intelligence in the setup.exe</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>02</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2006_02_Mini_See Billy Hollis doing his Advanced Data Binding 2.0 Session_.htm</url>
+      <description>See Billy Hollis doing his Advanced Data Binding 2.0 Session</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>02</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2006_02__Do you understand the value of consistency_.htm</url>
+      <description>Do you understand the value of consistency?</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>03</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2006_03__Do you conduct market research via the web_.htm</url>
+      <description>Do you conduct market research via the web?</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>04</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2006_04_Mini_SSW Diagnostics New Release_.htm</url>
+      <description>SSW Diagnostics New Release</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>04</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2006_04__Do you avoid using one form for data entry and find navigation_.htm</url>
+      <description>Do you avoid using one form for data entry and find navigation?</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>05</month>
+      <optionalTitle>Mini1</optionalTitle>
+      <url>SSWUpdate/_2006_05_Mini1_Making VSTS integrate into your current systems_.htm</url>
+      <description>Making VSTS integrate into your current systems</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>05</month>
+      <optionalTitle>Mini2</optionalTitle>
+      <url>SSWUpdate/_2006_05_Mini2_Special Tech Breakfast in Brisbane _ Adam Cogan presenting Rules to Successful Projects (Part A_B)_.htm</url>
+      <description>Special Tech Breakfast in Brisbane </description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>05</month>
+      <optionalTitle>Mini3</optionalTitle>
+      <url>SSWUpdate/_2006_05_Mini3_Special Offer for Tech Breakfast in Brisbane with Adam Cogan presenting Rules to successful projects _Part A _B_.htm</url>
+      <description>Special Offer for Tech Breakfast in Brisbane with Adam Cogan presenting Rules to successful projects </description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>05</month>
+      <optionalTitle>Mini4</optionalTitle>
+      <url>SSWUpdate/_2006_05_Mini4_Special Offer_ Half Price for Tech Breakfast with Adam Cogan presenting The Best Ways To Show Your Data_.htm</url>
+      <description>Special Offer</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>05</month>
+      <optionalTitle>Mini5</optionalTitle>
+      <url>SSWUpdate/_2006_05_Mini5_Early Bird Special _Discount for Tech Breakfast Visual Studio 2005 Team System_.htm</url>
+      <description>Early Bird Special </description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>05</month>
+      <optionalTitle>Mini6</optionalTitle>
+      <url>SSWUpdate/_2006_05_Mini6_Complimentary Event _Adam Cogan in Hobart Tonight _ Adelaide Tomorrow!_.htm</url>
+      <description>Complimentary Event </description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>05</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2006_05__Do you email clients as soon as you realise you will overrun your original estimate_.htm</url>
+      <description>Do you email clients as soon as you realise you will overrun your original estimate?</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>06</month>
+      <optionalTitle>Mini1</optionalTitle>
+      <url>SSWUpdate/_2006_06_Mini1_NRG_SSW in association with Vic.net Users present Earning More Per Hour as a Developer_.htm</url>
+      <description>NRG</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>06</month>
+      <optionalTitle>Mini2</optionalTitle>
+      <url>SSWUpdate/_2006_06_Mini2_SSW Upcoming Tech Breakfasts and Specials_.htm</url>
+      <description>SSW Upcoming Tech Breakfasts and Specials</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>06</month>
+      <optionalTitle>Mini3(English)</optionalTitle>
+      <url>SSWUpdate/_2006_06_Mini3(English)_Special Beijing User Group with Adam Cogan_.htm</url>
+      <description>Special Beijing User Group with Adam Cogan</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>06</month>
+      <optionalTitle>Mini3</optionalTitle>
+      <url>SSWUpdate/_2006_06_Mini3_Beijing User Group with Adam Cogan_SSW  CA and Microsoft Regional Director in Australia Making VSTS integrate into your current systems_.htm</url>
+      <description>Beijing User Group with Adam Cogan</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>06</month>
+      <optionalTitle>Mini4</optionalTitle>
+      <url>SSWUpdate/_2006_06_Mini4_Chengdu User Group with Adam Cogan_SSW CA and Microsoft Regional Director in Australia Making VSTS integrate into your current systems_.htm</url>
+      <description>Chengdu User Group with Adam Cogan</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>06</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2006_06__Do you allow users to check for a new version easily_.htm</url>
+      <description>Do you allow users to check for a new version easily?</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2006_07__Do you send a Test Please email_.htm</url>
+      <description>Do you send a Test Please email?</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>08</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2006_08_Mini_1 Day Workshop Earning More Per Hour As A Developer_.htm</url>
+      <description>1 Day Workshop Earning More Per Hour As A Developer</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>08</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2006_08__Do you always fix it - or at least report it_.htm</url>
+      <description>Do you always fix it - or at least report it?</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>09</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2006_09_Mini_Adam Cogan in Canberra_.htm</url>
+      <description>Adam Cogan in Canberra</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2006_09__Do you maintain verbal contact with your client_.htm</url>
+      <description>Do you maintain verbal contact with your client?</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2006_10__Microsoft Reporting Services Training_.htm</url>
+      <description>Microsoft Reporting Services Training</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>11</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2006_11_Mini_SQL Server 2005 Advanced Indexing Strategies_.htm</url>
+      <description>SQL Server 2005 Advanced Indexing Strategies</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>11</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2006_11__Do you always carry your toolbox_.htm</url>
+      <description>Do you always carry your toolbox?</description>
+    </newsletter>
+    <newsletter>
+      <year>2006</year>
+      <month>12</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2006_12__Do you use email for tasks only - not communication_.htm</url>
+      <description>Do you use email for tasks only - not communication?</description>
+    </newsletter>
+  </newsletters>
+  <newsletters year="2007">
+    <newsletter>
+      <year>2007</year>
+      <month>01</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2007_01__Rules to Better Windows Vista Deployment_.htm</url>
+      <description>Rules to Better Windows Vista Deployment</description>
+    </newsletter>
+    <newsletter>
+      <year>2007</year>
+      <month>02</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2007_02__Do you avoid only using source control on code_.htm</url>
+      <description>Do you avoid only using source control on code?</description>
+    </newsletter>
+    <newsletter>
+      <year>2007</year>
+      <month>03</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2007_03__Do you provide the reason behind the rules rather than blind criticism_.htm</url>
+      <description>Do you provide the reason behind the rules rather than blind criticism?</description>
+    </newsletter>
+    <newsletter>
+      <year>2007</year>
+      <month>04</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2007_04__Do you know the main reasons to upsize from Access to SQL Server 2005_.htm</url>
+      <description>Do you know the main reasons to upsize from Access to SQL Server 2005?</description>
+    </newsletter>
+    <newsletter>
+      <year>2007</year>
+      <month>05</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2007_05__Do you know who has authority_.htm</url>
+      <description>Do you know who has authority?</description>
+    </newsletter>
+    <newsletter>
+      <year>2007</year>
+      <month>06</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2007_06__Do you implement an error logger_.htm</url>
+      <description>Do you implement an error logger?</description>
+    </newsletter>
+    <newsletter>
+      <year>2007</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2007_07__Do you know that you should never throw an exception using System.Exception_.htm</url>
+      <description>Do you know that you should never throw an exception using System.Exception?</description>
+    </newsletter>
+    <newsletter>
+      <year>2007</year>
+      <month>08</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2007_08__Do you comment and brand your code_.htm</url>
+      <description>Do you comment and brand your code?</description>
+    </newsletter>
+    <newsletter>
+      <year>2007</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2007_09__Do you use appropriate and user-friendly icons_.htm</url>
+      <description>Do you use appropriate and user-friendly icons?</description>
+    </newsletter>
+    <newsletter>
+      <year>2007</year>
+      <month>10</month>
+      <optionalTitle>NZ</optionalTitle>
+      <url>SSWUpdate/_2007_10_NZ_Do you use appropriate and user-friendly icons_.htm</url>
+      <description>Do you use appropriate and user-friendly icons?</description>
+    </newsletter>
+    <newsletter>
+      <year>2007</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2007_10__Cycling to Wagga Wagga_.htm</url>
+      <description>Cycling to Wagga Wagga</description>
+    </newsletter>
+    <newsletter>
+      <year>2007</year>
+      <month>11</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2007_11__What sort of primary keys do you use - Natural or Surrogate_ .htm</url>
+      <description>What sort of primary keys do you use - Natural or Surrogate?</description>
+    </newsletter>
+    <newsletter>
+      <year>2007</year>
+      <month>12</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2007_12__Do you know what unit tests to write and how many_.htm</url>
+      <description>Do you know what unit tests to write and how many?</description>
+    </newsletter>
+  </newsletters>
+  <newsletters year="2008">
+    <newsletter>
+      <year>2008</year>
+      <month>01</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2008_01__Do you use inherited forms for consistent behaviour_ .htm</url>
+      <description>Do you use inherited forms for consistent behaviour?</description>
+    </newsletter>
+    <newsletter>
+      <year>2008</year>
+      <month>02</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2008_02__Do you know how Google ranks pages_.htm</url>
+      <description>Do you know how Google ranks pages?</description>
+    </newsletter>
+    <newsletter>
+      <year>2008</year>
+      <month>03</month>
+      <optionalTitle>UNSW</optionalTitle>
+      <url>SSWUpdate/_2008_03_UNSW_University Presentation.htm</url>
+      <description>University Presentation.htm</description>
+    </newsletter>
+    <newsletter>
+      <year>2008</year>
+      <month>03</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2008_03__Do you conduct a Specification Review_.htm</url>
+      <description>Do you conduct a Specification Review?</description>
+    </newsletter>
+    <newsletter>
+      <year>2008</year>
+      <month>04</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2008_04__Do you create a separate virtual directory for Admin access_.htm</url>
+      <description>Do you create a separate virtual directory for Admin access?</description>
+    </newsletter>
+    <newsletter>
+      <year>2008</year>
+      <month>04</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2008_04__University of New South Wales Presentation_.htm</url>
+      <description>University of New South Wales Presentation</description>
+    </newsletter>
+    <newsletter>
+      <year>2008</year>
+      <month>05</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2008_05__Do you turn on undo disks for testing purposes_.htm</url>
+      <description>Do you turn on undo disks for testing purposes?</description>
+    </newsletter>
+    <newsletter>
+      <year>2008</year>
+      <month>05</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2008_05__Macquarie University Presentation_.htm</url>
+      <description>Macquarie University Presentation</description>
+    </newsletter>
+    <newsletter>
+      <year>2008</year>
+      <month>06</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2008_06__Do you make sure that the database structure is automatically handled via 3 buttons_.htm</url>
+      <description>Do you make sure that the database structure is automatically handled via 3 buttons?</description>
+    </newsletter>
+    <newsletter>
+      <year>2008</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2008_07__Why is it great to work in SSW today_.htm</url>
+      <description>Why is it great to work in SSW today</description>
+    </newsletter>
+    <newsletter>
+      <year>2008</year>
+      <month>08</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2008_08__Do you run web tests on your website (for load and automated testing)_.htm</url>
+      <description>Do you run web tests on your website (for load and automated testing)?</description>
+    </newsletter>
+    <newsletter>
+      <year>2008</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2008_09__Do you assume catastrophic failure before touching a server_.htm</url>
+      <description>Do you assume catastrophic failure before touching a server?</description>
+    </newsletter>
+    <newsletter>
+      <year>2008</year>
+      <month>10</month>
+      <optionalTitle>NZ</optionalTitle>
+      <url>SSWUpdate/_2008_10_NZ_Dunedin User Group_.htm</url>
+      <description>Dunedin User Group</description>
+    </newsletter>
+    <newsletter>
+      <year>2008</year>
+      <month>10</month>
+      <optionalTitle>NZ</optionalTitle>
+      <url>SSWUpdate/_2008_10_NZ_University of Otago Presentation_.htm</url>
+      <description>University of Otago Presentation</description>
+    </newsletter>
+    <newsletter>
+      <year>2008</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2008_10__Do you use setup and set up correctly_.htm</url>
+      <description>Do you use setup and set up correctly?</description>
+    </newsletter>
+    <newsletter>
+      <year>2008</year>
+      <month>11</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2008_11__Do you keep chunks of work small_.htm</url>
+      <description>Do you keep chunks of work small?</description>
+    </newsletter>
+    <newsletter>
+      <year>2008</year>
+      <month>12</month>
+      <optionalTitle>NZ</optionalTitle>
+      <url>SSWUpdate/_2008_12_NZ_SQL PASS Community Connect Event_.htm</url>
+      <description>SQL PASS Community Connect Event</description>
+    </newsletter>
+    <newsletter>
+      <year>2008</year>
+      <month>12</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2008_12__Do you know the best way to demo Microsoft CRM 4 to clients_.htm</url>
+      <description>Do you know the best way to demo Microsoft CRM 4 to clients?</description>
+    </newsletter>
+    <newsletter>
+      <year>2008</year>
+      <month>12</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2008_12__Special visit from Jonas the Silverlight guru!_.htm</url>
+      <description>Special visit from Jonas the Silverlight guru!</description>
+    </newsletter>
+  </newsletters>
+  <newsletters year="2009">
+    <newsletter>
+      <year>2009</year>
+      <month>01</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2009_01__Do you use CRM Plug-ins for data synchronization_.htm</url>
+      <description>Do you use CRM Plug-ins for data synchronization?</description>
+    </newsletter>
+    <newsletter>
+      <year>2009</year>
+      <month>02</month>
+      <optionalTitle>Tech Breakfast</optionalTitle>
+      <url>SSWUpdate/_2009_02_Tech Breakfast_Dynamic Data - Data entry made easy_.html</url>
+      <description>Dynamic Data - Data entry made easy</description>
+    </newsletter>
+    <newsletter>
+      <year>2009</year>
+      <month>03</month>
+      <optionalTitle>Tech Breakfast</optionalTitle>
+      <url>SSWUpdate/_2009_03_Tech Breakfast_Dynamic Data - Data entry made easy_.html</url>
+      <description>Dynamic Data - Data entry made easy</description>
+    </newsletter>
+    <newsletter>
+      <year>2009</year>
+      <month>04</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2009_04__Is your version number meaningful_.htm</url>
+      <description>Is your version number meaningful</description>
+    </newsletter>
+    <newsletter>
+      <year>2009</year>
+      <month>05</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2009_05__Does your SharePoint site have favicon_.htm</url>
+      <description>Does your SharePoint site have favicon</description>
+    </newsletter>
+    <newsletter>
+      <year>2009</year>
+      <month>06</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2009_06__Do you comment each property and method_.htm</url>
+      <description>Do you comment each property and method?</description>
+    </newsletter>
+    <newsletter>
+      <year>2009</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2009_07__Do you keep chunks of work small_.htm</url>
+      <description>Do you keep chunks of work small?</description>
+    </newsletter>
+    <newsletter>
+      <year>2009</year>
+      <month>08</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2009_08__Do you use more meaningful names than Hungarian short form_.htm</url>
+      <description>Do you use more meaningful names than Hungarian short form?</description>
+    </newsletter>
+    <newsletter>
+      <year>2009</year>
+      <month>09</month>
+      <optionalTitle>NZ</optionalTitle>
+      <url>SSWUpdate/_2009_09_NZ_North Shore .NET User Group by Adam Cogan_.htm</url>
+      <description>North Shore .NET User Group by Adam Cogan</description>
+    </newsletter>
+    <newsletter>
+      <year>2009</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2009_09__Do you know why you choose Windows Forms_.htm</url>
+      <description>Do you know why you choose Windows Forms?</description>
+    </newsletter>
+    <newsletter>
+      <year>2009</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2009_10__Do you use the MVVM pattern instead of spaghetti design in your silverlight and WPF projects_.htm</url>
+      <description>Do you use the MVVM pattern instead of spaghetti design in your silverlight and WPF projects?</description>
+    </newsletter>
+    <newsletter>
+      <year>2009</year>
+      <month>11</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2009_11_Mini_Sharepoint Workshop and TFS 2010_.htm</url>
+      <description>Sharepoint Workshop and TFS 2010</description>
+    </newsletter>
+    <newsletter>
+      <year>2009</year>
+      <month>11</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2009_11__Does backward compatibility kill good code_.htm</url>
+      <description>Does backward compatibility kill good code</description>
+    </newsletter>
+    <newsletter>
+      <year>2009</year>
+      <month>12</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2009_12_Mini_SSW Brain Quest Adelaide- Team Foundation Server and SharePoint 2010_.htm</url>
+      <description>SSW Brain Quest Adelaide- Team Foundation Server and SharePoint 2010</description>
+    </newsletter>
+    <newsletter>
+      <year>2009</year>
+      <month>12</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2009_12_Mini_SSW Brain Quest Melbourne- Team Foundation Server and SharePoint 2010_.htm</url>
+      <description>SSW Brain Quest Melbourne- Team Foundation Server and SharePoint 2010</description>
+    </newsletter>
+    <newsletter>
+      <year>2009</year>
+      <month>12</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2009_12__Do you know the three important sites for when you're stuck_.htm</url>
+      <description>Do you know the three important sites for when you're stuck?</description>
+    </newsletter>
+  </newsletters>
+  <newsletters year="2010">
+    <newsletter>
+      <year>2010</year>
+      <month>01</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2010_01_Mini_SSW Brain Quest Brisbane- Team Foundation Server and SharePoint 2010_.htm</url>
+      <description>SSW Brain Quest Brisbane- Team Foundation Server and SharePoint 2010</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>01</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2010_01_Mini_SSW Brain Quest Sydney- Team Foundation Server and SharePoint 2010_.htm</url>
+      <description>SSW Brain Quest Sydney- Team Foundation Server and SharePoint 2010</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>01</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2010_01__Do you format and comment your regular expressions_.htm</url>
+      <description>Do you format and comment your regular expressions?</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>02</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2010_02_Mini_SSW Brain Quest Perth- Team Foundation Server and SharePoint 2010_.htm</url>
+      <description>SSW Brain Quest Perth- Team Foundation Server and SharePoint 2010</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>02</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2010_02_Mini_UTS Short Courses_.htm</url>
+      <description>UTS Short Courses</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>02</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2010_02__Do you know the benefits of using source control_.htm</url>
+      <description>Do you know the benefits of using source control?</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>03</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2010_03_Mini_SSW Brain Quest Adelaide- Team Foundation Server and SharePoint 2010_.htm</url>
+      <description>SSW Brain Quest Adelaide- Team Foundation Server and SharePoint 2010</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>03</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2010_03_Mini_SSW Brain Quest Melbourne- Team Foundation Server and SharePoint 2010_.htm</url>
+      <description>SSW Brain Quest Melbourne- Team Foundation Server and SharePoint 2010</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>03</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2010_03_Mini_SSW Brain Quest Sydney- Team Foundation Server and SharePoint 2010_.htm</url>
+      <description>SSW Brain Quest Sydney- Team Foundation Server and SharePoint 2010</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>03</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2010_03__11 Great Events Coming-VersionResend-DoNotAddtoXMLList.htm</url>
+      <description>11 Great Events Coming-VersionResend-DoNotAddtoXMLList.htm</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>03</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2010_03__11 Great Events Coming_.htm</url>
+      <description>11 Great Events Coming</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>03</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2010_03__Make a separate database for your Data Warehouse_.htm</url>
+      <description>Make a separate database for your Data Warehouse</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>04</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2010_04_Mini_SSW Brain Quest Canberra- Team Foundation Server and SharePoint 2010_.htm</url>
+      <description>SSW Brain Quest Canberra- Team Foundation Server and SharePoint 2010</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>04</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2010_04__Where appropriate do you use text rather than images_.htm</url>
+      <description>Where appropriate do you use text rather than images</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>05</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2010_05__Steve Forte Day_.htm</url>
+      <description>Steve Forte Day</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>06</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2010_06_Mini_SSW Scrum and Brain Quest in Milan_London _Team Foundation Server and SharePoint 2010_.htm</url>
+      <description>SSW Scrum and Brain Quest in Milan</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>06</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2010_06__Professional Scrum Developer Training_.htm</url>
+      <description>Professional Scrum Developer Training</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2010_07__ChinaPSDEDM_.htm</url>
+      <description>ChinaPSDEDM</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2010_07__Do you know that developers should do all their custom work in their own SharePoint development environment_.htm</url>
+      <description>Do you know that developers should do all their custom work in their own SharePoint development environment?</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>08</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2010_08__Do you know how to create nice URLs using ASP.NET 4_.htm</url>
+      <description>Do you know how to create nice URLs using ASP.NET 4?</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>09</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2010_09_Mini_Visual Studio 2010 Training_.htm</url>
+      <description>Visual Studio 2010 Training</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2010_09__Do you know the best way to take SharePoint data offline_.htm</url>
+      <description>Do you know the best way to take SharePoint data offline?</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2010_10__Are your settings and the customizable settings in different files_.htm</url>
+      <description>Are your settings and the customizable settings in different files?</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>11</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2010_11__SSW Silverlight application goes live for DispatchKing_.htm</url>
+      <description>SSW Silverlight application goes live for DispatchKing</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>12</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2010_12_Mini_SSW Scrum Training in USA_.htm</url>
+      <description>SSW Scrum Training in USA</description>
+    </newsletter>
+    <newsletter>
+      <year>2010</year>
+      <month>12</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2010_12__Do you add the image and the text of the error message for SEO_.htm</url>
+      <description>Do you add the image and the text of the error message for SEO?</description>
+    </newsletter>
+  </newsletters>
+  <newsletters year="2011">
+    <newsletter>
+      <year>2011</year>
+      <month>01</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2011_01__Do you realize that when it comes to interface design less is more_.htm</url>
+      <description>Do you realize that when it comes to interface design less is more?</description>
+    </newsletter>
+    <newsletter>
+      <year>2011</year>
+      <month>02</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2011_02_Mini_SSW Scrum Training in USA_.htm</url>
+      <description>SSW Scrum Training in USA</description>
+    </newsletter>
+    <newsletter>
+      <year>2011</year>
+      <month>02</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2011_02__SharePoint 101_.htm</url>
+      <description>SharePoint 101</description>
+    </newsletter>
+    <newsletter>
+      <year>2011</year>
+      <month>03</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2011_03_Mini_New Zealand Visual Studio ALM Conference _.htm</url>
+      <description>New Zealand Visual Studio ALM Conference </description>
+    </newsletter>
+    <newsletter>
+      <year>2011</year>
+      <month>03</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2011_03__Telerik Australia event - Focus on Developer Productivity_.htm</url>
+      <description>Telerik Australia event - Focus on Developer Productivity</description>
+    </newsletter>
+    <newsletter>
+      <year>2011</year>
+      <month>04</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2011_04_Mini_Brian Randell Microsoft Virtualization for Developers_.htm</url>
+      <description>Brian Randell Microsoft Virtualization for Developers</description>
+    </newsletter>
+    <newsletter>
+      <year>2011</year>
+      <month>04</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2011_04__The Architect's Master Class_.htm</url>
+      <description>The Architect's Master Class</description>
+    </newsletter>
+    <newsletter>
+      <year>2011</year>
+      <month>05</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2011_05_Mini_Brisbane_.htm</url>
+      <description>Brisbane</description>
+    </newsletter>
+    <newsletter>
+      <year>2011</year>
+      <month>05</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2011_05_Mini_Sydney_.htm</url>
+      <description>Sydney</description>
+    </newsletter>
+    <newsletter>
+      <year>2011</year>
+      <month>05</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2011_05__The Architect's Master Class Nearly Here_.htm</url>
+      <description>The Architect's Master Class Nearly Here</description>
+    </newsletter>
+    <newsletter>
+      <year>2011</year>
+      <month>06</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2011_06__Scrumming it in New Delhi,  India_.htm</url>
+      <description>Scrumming it in New Delhi,  India</description>
+    </newsletter>
+    <newsletter>
+      <year>2011</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2011_07__Highlights from the Architects Masterclass_.htm</url>
+      <description>Highlights from the Architects Masterclass</description>
+    </newsletter>
+    <newsletter>
+      <year>2011</year>
+      <month>08</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2011_08__SSW goes virtual_.htm</url>
+      <description>SSW goes virtual</description>
+    </newsletter>
+    <newsletter>
+      <year>2011</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2011_09__Top 8 ways to speed up your SQL Server database_.htm</url>
+      <description>Top 8 ways to speed up your SQL Server database</description>
+    </newsletter>
+    <newsletter>
+      <year>2011</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2011_10__DDD is coming to Brisbane_.htm</url>
+      <description>DDD is coming to Brisbane</description>
+    </newsletter>
+    <newsletter>
+      <year>2011</year>
+      <month>11</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2011_11__Learn Cutting Edge Technology with Industry Experts – SSW TV Launches_.htm</url>
+      <description>Learn Cutting Edge Technology with Industry Experts – SSW TV Launches</description>
+    </newsletter>
+    <newsletter>
+      <year>2011</year>
+      <month>11</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2011_11__SSW Special Offer - save over $2000 per ticket for PSD training course!_.htm</url>
+      <description>SSW Special Offer - save over $2000 per ticket for PSD training course!</description>
+    </newsletter>
+    <newsletter>
+      <year>2011</year>
+      <month>12</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2011_12__New 3 Day Scrum Course Launches in 2012_.htm</url>
+      <description>New 3 Day Scrum Course Launches in 2012</description>
+    </newsletter>
+  </newsletters>
+  <newsletters year="2012">
+    <newsletter>
+      <year>2012</year>
+      <month>01</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2012_01__What's happening at SSW in 2012_.htm</url>
+      <description>What's happening at SSW in 2012?</description>
+    </newsletter>
+    <newsletter>
+      <year>2012</year>
+      <month>02</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2012_02__Architecture Clinic with JuvalLöwy_.htm</url>
+      <description>Architecture Clinic with JuvalLöwy</description>
+    </newsletter>
+    <newsletter>
+      <year>2012</year>
+      <month>03</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2012_03__SSW and SolidQ bringing SQL Training to Australia_.htm</url>
+      <description>SSW and SolidQ bringing SQL Training to Australia</description>
+    </newsletter>
+    <newsletter>
+      <year>2012</year>
+      <month>04</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2012_04__Moving your Apps to Azure with Andrew Coates.htm</url>
+      <description>Moving your Apps to Azure with Andrew Coates.htm</description>
+    </newsletter>
+    <newsletter>
+      <year>2012</year>
+      <month>04</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2012_04__Moving your Apps to Azure with Andrew Coates_.htm</url>
+      <description>Moving your Apps to Azure with Andrew Coates</description>
+    </newsletter>
+    <newsletter>
+      <year>2012</year>
+      <month>05</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2012_05_Mini_Tech_Breakfast CPlusPlus and Visual Studio Dev 11 Modern, Readable, Fast, Safe_.htm</url>
+      <description>Tech</description>
+    </newsletter>
+    <newsletter>
+      <year>2012</year>
+      <month>05</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2012_05__MVC Training for Enterprising Developers PLUS a New Telerik NerdDinner_.htm</url>
+      <description>MVC Training for Enterprising Developers PLUS a New Telerik NerdDinner</description>
+    </newsletter>
+    <newsletter>
+      <year>2012</year>
+      <month>06</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2012_06__Kate Gregory is coming to Australia_.htm</url>
+      <description>Kate Gregory is coming to Australia</description>
+    </newsletter>
+    <newsletter>
+      <year>2012</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2012_07__Adam's European Adventure for TechEd 2012 in Amsterdam_.htm</url>
+      <description>Adam's European Adventure for TechEd 2012 in Amsterdam</description>
+    </newsletter>
+    <newsletter>
+      <year>2012</year>
+      <month>08</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2012_08__Cars and user experiences_.htm</url>
+      <description>Cars and user experiences</description>
+    </newsletter>
+    <newsletter>
+      <year>2012</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2012_09__Video - Successful Scrum in Action - A website upgrade for the National Australia Day Council_.htm</url>
+      <description>Video - Successful Scrum in Action - A website upgrade for the National Australia Day Council</description>
+    </newsletter>
+    <newsletter>
+      <year>2012</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2012_10__Learn to make software development less risky_.htm</url>
+      <description>Learn to make software development less risky</description>
+    </newsletter>
+    <newsletter>
+      <year>2012</year>
+      <month>11</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2012_11__Microsoft is onto something here_.htm</url>
+      <description>Microsoft is onto something here</description>
+    </newsletter>
+    <newsletter>
+      <year>2012</year>
+      <month>12</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2012_12__Adam's year as a Microsoft Regional Director_.htm</url>
+      <description>Adam's year as a Microsoft Regional Director</description>
+    </newsletter>
+  </newsletters>
+  <newsletters year="2013">
+    <newsletter>
+      <year>2013</year>
+      <month>01</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2013_01__Celebrate 20 years with us_.htm</url>
+      <description>Celebrate 20 years with us</description>
+    </newsletter>
+    <newsletter>
+      <year>2013</year>
+      <month>02</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2013_02_Mini_UTS Courses_.htm</url>
+      <description>UTS Courses</description>
+    </newsletter>
+    <newsletter>
+      <year>2013</year>
+      <month>02</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2013_02__2012 Retrospective of SSW_.htm</url>
+      <description>2012 Retrospective of SSW</description>
+    </newsletter>
+    <newsletter>
+      <year>2013</year>
+      <month>03</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2013_03__Lync 2013_.htm</url>
+      <description>Lync 2013</description>
+    </newsletter>
+    <newsletter>
+      <year>2013</year>
+      <month>04</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2013_04__Single Page Applications_.htm</url>
+      <description>Single Page Applications</description>
+    </newsletter>
+    <newsletter>
+      <year>2013</year>
+      <month>05</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2013_05__Effective Product Owners Use the Business Value Field_.htm</url>
+      <description>Effective Product Owners Use the Business Value Field</description>
+    </newsletter>
+    <newsletter>
+      <year>2013</year>
+      <month>06</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2013_06__New Features in Visual Studio 2013 and TFS 2013_.htm</url>
+      <description>New Features in Visual Studio 2013 and TFS 2013</description>
+    </newsletter>
+    <newsletter>
+      <year>2013</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2013_07__A Glimpse into your ASP_NET App.htm</url>
+      <description>A Glimpse into your ASP</description>
+    </newsletter>
+    <newsletter>
+      <year>2013</year>
+      <month>08</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2013_08__TFS is huge in China_.htm</url>
+      <description>TFS is huge in China</description>
+    </newsletter>
+    <newsletter>
+      <year>2013</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2013_09__How do we make good Product Owners__.htm</url>
+      <description>How do we make good Product Owners</description>
+    </newsletter>
+    <newsletter>
+      <year>2013</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2013_10__SSW TV has a new face__.htm</url>
+      <description>SSW TV has a new face</description>
+    </newsletter>
+    <newsletter>
+      <year>2013</year>
+      <month>11</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2013_11__Fire Boot Camp__.htm</url>
+      <description>Fire Boot Camp</description>
+    </newsletter>
+    <newsletter>
+      <year>2013</year>
+      <month>12</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2013_12__Adam's 2013 as a Microsoft Regional Director__.htm</url>
+      <description>Adam's 2013 as a Microsoft Regional Director</description>
+    </newsletter>
+  </newsletters>
+  <newsletters year="2014">
+    <newsletter>
+      <year>2014</year>
+      <month>01</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2014_01__FireBootCamp is one week away from ignition__.htm</url>
+      <description>FireBootCamp is one week away from ignition</description>
+    </newsletter>
+    <newsletter>
+      <year>2014</year>
+      <month>02</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2014_02__FireBootCamp is up and running__.htm</url>
+      <description>FireBootCamp is up and running</description>
+    </newsletter>
+    <newsletter>
+      <year>2014</year>
+      <month>03</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2014_03__Your last chance to get a ticket to the FireBootCamp gala day__ .htm</url>
+      <description>Your last chance to get a ticket to the FireBootCamp gala day</description>
+    </newsletter>
+    <newsletter>
+      <year>2014</year>
+      <month>04</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2014_04__FireBootCamp Sydney ended successfully__.htm</url>
+      <description>FireBootCamp Sydney ended successfully</description>
+    </newsletter>
+    <newsletter>
+      <year>2014</year>
+      <month>05</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2014_05__And the winner is__.htm</url>
+      <description>And the winner is</description>
+    </newsletter>
+    <newsletter>
+      <year>2014</year>
+      <month>06</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2014_06__Introducing the new SSW logo__.htm</url>
+      <description>Introducing the new SSW logo</description>
+    </newsletter>
+    <newsletter>
+      <year>2014</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2014_07__Sign up to a free xamarin hack day in your local area__.htm</url>
+      <description>Sign up to a free xamarin hack day in your local area</description>
+    </newsletter>
+    <newsletter>
+      <year>2014</year>
+      <month>08</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2014_08__Building a croquembouche in just 4 weeks__.htm</url>
+      <description>Building a croquembouche in just 4 weeks</description>
+    </newsletter>
+    <newsletter>
+      <year>2014</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2014_09__Come and see what the FireBootCamp graduates have built__.htm</url>
+      <description>Come and see what the FireBootCamp graduates have built</description>
+    </newsletter>
+    <newsletter>
+      <year>2014</year>
+      <month>10</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2014_10_Mini_SSW Course AngularJS ASPNET MVC_.html</url>
+      <description>SSW Course AngularJS ASPNET MVC</description>
+    </newsletter>
+    <newsletter>
+      <year>2014</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2014_10__Creating an ouroboros__.htm</url>
+      <description>Creating an ouroboros</description>
+    </newsletter>
+    <newsletter>
+      <year>2014</year>
+      <month>11</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2014_11__Why SSW is moving to AngularJS__ .htm</url>
+      <description>Why SSW is moving to AngularJS</description>
+    </newsletter>
+    <newsletter>
+      <year>2014</year>
+      <month>12</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2014_12__Adams 2014 in review__.htm</url>
+      <description>Adams 2014 in review</description>
+    </newsletter>
+  </newsletters>
+  <newsletters year="2015">
+    <newsletter>
+      <year>2015</year>
+      <month>01</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2015_01__Getting 96 percent Code Reuse with Xamarin Forms__.htm</url>
+      <description>Getting 96 percent Code Reuse with Xamarin Forms</description>
+    </newsletter>
+    <newsletter>
+      <year>2015</year>
+      <month>02</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2015_02__The Agile Olympics__.htm</url>
+      <description>The Agile Olympics</description>
+    </newsletter>
+    <newsletter>
+      <year>2015</year>
+      <month>03</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2015_03__Whats new in VS 2015 and ALM 2015__ .htm</url>
+      <description>Whats new in VS 2015 and ALM 2015?</description>
+    </newsletter>
+    <newsletter>
+      <year>2015</year>
+      <month>04</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2015_04__SSW Data Onion.htm</url>
+      <description>SSW Data Onion.htm</description>
+    </newsletter>
+    <newsletter>
+      <year>2015</year>
+      <month>05</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2015_05__Winning on Visual Studio Online in Australia__.htm</url>
+      <description>Winning on Visual Studio Online in Australia</description>
+    </newsletter>
+    <newsletter>
+      <year>2015</year>
+      <month>06</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2015_06__SSW is proud of another project__.htm</url>
+      <description>SSW is proud of another project</description>
+    </newsletter>
+    <newsletter>
+      <year>2015</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2015_07__5 things to love about Dynamics CRM 2015__.htm</url>
+      <description>5 things to love about Dynamics CRM 2015</description>
+    </newsletter>
+    <newsletter>
+      <year>2015</year>
+      <month>08</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2015_08__Tips for Tesla__.htm</url>
+      <description>Tips for Tesla</description>
+    </newsletter>
+    <newsletter>
+      <year>2015</year>
+      <month>09</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2015_09_Mini_Mooncake festival and how you can Chinafy to enter the Chinese market_.html</url>
+      <description>Mooncake festival and how you can Chinafy to enter the Chinese market</description>
+    </newsletter>
+    <newsletter>
+      <year>2015</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2015_09__FireBootCamp won the MAPA award for learning__.html</url>
+      <description>FireBootCamp won the MAPA award for learning</description>
+    </newsletter>
+    <newsletter>
+      <year>2015</year>
+      <month>10</month>
+      <optionalTitle>Mini</optionalTitle>
+      <url>SSWUpdate/_2015_10_Mini_The Angular Superpowers Tour_.html</url>
+      <description>The Angular Superpowers Tour</description>
+    </newsletter>
+    <newsletter>
+      <year>2015</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2015_10__The VS 2015 ebook - behind the scenes__.html</url>
+      <description>The VS 2015 ebook - behind the scenes</description>
+    </newsletter>
+    <newsletter>
+      <year>2015</year>
+      <month>11</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2015_11__Teaching Kids to Code in Sydney__.html</url>
+      <description>Teaching Kids to Code in Sydney</description>
+    </newsletter>
+    <newsletter>
+      <year>2015</year>
+      <month>12</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2015_12__The Microsoft Band 2 user experience__.html</url>
+      <description>The Microsoft Band 2 user experience</description>
+    </newsletter>
+  </newsletters>
+  <newsletters year="2016">
+    <newsletter>
+      <year>2016</year>
+      <month>01</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2016_01__Adams 2015 in review__.html</url>
+      <description>Adams 2015 in review</description>
+    </newsletter>
+    <newsletter>
+      <year>2016</year>
+      <month>02</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2016_02__High Fashion and Javascript Frameworks__.html</url>
+      <description>High Fashion and Javascript Frameworks</description>
+    </newsletter>
+    <newsletter>
+      <year>2016</year>
+      <month>03</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2016_03__Finishing a Feature__.html</url>
+      <description>Finishing a Feature</description>
+    </newsletter>
+    <newsletter>
+      <year>2016</year>
+      <month>04</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2016_04__Angular 2.0 Should Be Your Next New Project__.html</url>
+      <description>Angular 2.0 Should Be Your Next New Project</description>
+    </newsletter>
+    <newsletter>
+      <year>2016</year>
+      <month>05</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2016_05__SharePoint 2016 - The futures so bright I gotta wear shades__.html</url>
+      <description>SharePoint 2016 - The futures so bright I gotta wear shades</description>
+    </newsletter>
+    <newsletter>
+      <year>2016</year>
+      <month>06</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2016_06__I learnt how to train developers as quickly as possible__.html</url>
+      <description>I learnt how to train developers as quickly as possible</description>
+    </newsletter>
+    <newsletter>
+      <year>2016</year>
+      <month>07</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2016_07__How to blow 10 million dollars__.html</url>
+      <description>How to blow 10 million dollars</description>
+    </newsletter>
+    <newsletter>
+      <year>2016</year>
+      <month>08</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2016_08__Hanselman Unplugged 2__.html</url>
+      <description>Hanselman Unplugged 2</description>
+    </newsletter>
+    <newsletter>
+      <year>2016</year>
+      <month>09</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2016_09__SSW Chapel - Doing a renovation in 6 days__.html</url>
+      <description>SSW Chapel - Doing a renovation in 6 days</description>
+    </newsletter>
+    <newsletter>
+      <year>2016</year>
+      <month>10</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2016_10__Power BI - No more guessing__.html</url>
+      <description>Power BI - No more guessing</description>
+    </newsletter>
+    <newsletter>
+      <year>2016</year>
+      <month>11</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2016_11__The SSW Getaway__.html</url>
+      <description>The SSW Getaway</description>
+    </newsletter>
+    <newsletter>
+      <year>2016</year>
+      <month>12</month>
+      <optionalTitle>
+      </optionalTitle>
+      <url>SSWUpdate/_2016_12__How to learn Angular 2 fast__.html</url>
+      <description>How to learn Angular 2 fast</description>
+    </newsletter>
+  </newsletters>
+</root>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import { Template } from "tinacms";
 import cs from "classnames";
 import axios from "axios";
@@ -28,7 +27,11 @@ const fetchTableData = async (url: string): Promise<ArrayLikeObject> => {
 
 const TableItem = ({ type, value, url }) => {
 	if (type === "link") {
-		return <Link href={url}>{value}</Link>;
+		return (
+			<a href={`/newsletters/${url}`} target="_blank" rel="noopener noreferrer">
+				{value}
+			</a>
+		);
 	}
 
 	return value;

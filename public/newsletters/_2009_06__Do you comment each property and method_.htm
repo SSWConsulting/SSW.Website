@@ -1,0 +1,643 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <script src="/ssw/Include/jquery.js" type="text/javascript"></script>
+
+    <script src="/ssw/Include/decodeMailNew.js" type="text/javascript"></script>
+
+    <title>SSWUpdate - Do you comment each property and method?</title>
+    <style type="text/css">
+        body
+        {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            margin: 0px;
+        }
+        h1
+        {
+            color: #a7a9ac;
+            font-size: 30px;
+        }
+        td, th
+        {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 11px;
+        }
+        .sectionTitle
+        {
+            font-family: "Century Gothic" , Arial, Verdana, Helvetica, sans-serif;
+            font-size: 20px;
+            color: #f25622;
+            font-weight: normal;
+        }
+        .newsTitle
+        {
+            color: #f25622;
+            font-size: 14px;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+        .magazineTitle
+        {
+            font-family: "Century Gothic" , Arial, Helvetica, sans-serif;
+            color: #f25622;
+            font-weight: normal;
+            font-size: 30px;
+        }
+        .section
+        {
+            border-top: 1px #cccccc dotted;
+        }
+        .copyright
+        {
+            font-weight: bold;
+            color: #999999;
+            font-size: 10px;
+        }
+        .proudly
+        {
+            font-weight: normal;
+            font-size: 9px;
+            color: #999999;
+        }
+        .proudly a
+        {
+            color: #999999;
+        }
+        .noborder
+        {
+            border: none;
+        }
+        .footer a
+        {
+            color: gray;
+        }
+        .signature
+        {
+            font-style: italic;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body bgcolor="#e7e7cf">
+    <table width="710" border="0" align="center" cellpadding="0" cellspacing="0" id="container"
+        bgcolor="white" style="border: 1px #cccccc solid; font-family: Verdana, Geneva, sans-serif;">
+        <tr>
+            <td width="100%" bgcolor="#efefef">
+                <table width="98%" border="0" cellspacing="0" cellpadding="15">
+                    <tr>
+                        <td>
+                            <strong>SSWUpdate - </strong>Do you comment each property and method?
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td width="200" valign="middle" bgcolor="#efefef" style="border-top: 4px #f26522 solid;
+                border-left: 1px #cccccc solid;">
+                <img src="/ssw/images/Gold_Certified_Partner74x35.gif" alt="Microsoft Gold Partner Logo"
+                    width="75" height="35" align="right" style="padding: 5px;" />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <table width="100%" border="0" cellspacing="0" cellpadding="20">
+                    <tr>
+                        <td>
+                            <a href="/ssw/Events/SSWTechBreakfast.aspx">
+                                <img src="/ssw/Images/SSWTechBreakfastBanner.gif" alt="SSW Tech Breakfast"
+                                    width="468" height="60" border="0" /></a>
+                            <h1>
+                                [<span class="magazineTitle"> the cutting edge</span> ]</h1>
+                            <p>
+                                G'Day Developers!</p>
+                            <p>
+                                Its important that you have a consistent code comment standard throughout an application,
+                                regardless of language. Therefore, other developers can quickly determine the workings
+                                of a function/sub/class/stored procedure. Ideally, code should be as simple and
+                                self-explanatory as possible. Exceptions should be noted in line, especially when
+                                there is a .NET catch statement for generic System.Exceptions (in VB6/Access - for
+                                a Resume Next statement or similar).
+                            </p>
+                            <p>
+                                e.g. catch (InteropServices.COMException ex) <span class="Caption">//Catch all COM Exceptions
+                                    from third party COM component</span>
+                            </p>
+                            <p>
+                                In JavaScript and HTML, you should put these comments between the
+                                <br>
+                                &lt;HEAD&gt; and&nbsp;&nbsp;&lt;/HEAD&gt;<br />
+                                tags.&nbsp;<br />
+                                <br />
+                                To delmit the comments (ie top and bottom), you should use the standard block comment
+                                markers of
+                                <br />
+                                &lt;!--&nbsp;and --&gt;.
+                                <br />
+                                <br />
+                                A css file should be delimited with the block comment marks of
+                                <br />
+                                /* and */.</p>
+                            <p>
+                                If the file contains any function/sub module/class declaration, comments will
+                                be containted to each of them containing at least the following:
+                            </p>
+                            <ul>
+                                <li>function/sub module/class name</li>
+                                <li>role of the function/sub module/class declaration</li>
+                            </ul>
+                            <blockquote>
+                                <div style="border: 1px solid rgb(204, 204, 204); padding: 15px 10px; background-color: rgb(238, 238, 238);">
+                                    <p>
+                                        <b><span style="font-size: 9pt; font-family: courier new;">Above a method or property
+                                            declaration:<br />
+                                        </span></b><span style="font-size: 9pt; font-family: courier new;">''' &lt;summary&gt;<br />
+                                            '''
+                                            <br />
+                                            ''' &lt;/summary&gt;<br />
+                                            ''' &lt;param&nbsp;name="sender"&gt;&lt;/param&gt;<br />
+                                            ''' &lt;param&nbsp;name="e"&gt;&lt;/param&gt;<br />
+                                            ''' &lt;remarks&nbsp;&gt;&lt;/remarks&gt;<br />
+                                        </span>
+                                    </p>
+                                    The comments can be generated automatically by VS.NET<br />
+                                    /// - C#<br />
+                                    ''' - VB.NET<br />
+                                    Bonus - you can automatically generate documentation - but the number of clients
+                                    that want this is minimal.
+                                </div>
+                            </blockquote>
+                            <p>
+                                See more of the <a href="/ssw/Standards/Rules/RulestoBetterCode.aspx#CodeComment">
+                                    SSW Rules</a> pages.</p>
+                            <p class="signature">
+                                Adam Cogan</p>
+                            <p>
+                                Got a comment for Adam? <a target="_blank" keeptext="false" encode="4164616d436f67616e405353572e636f6d2e6175">
+                                    Email Adam</a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="newsTitle">
+                                Sydney .NET User Group -
+                                <br />
+                                The best place to learn .NET for free in Sydney</h3>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="210" valign="top">
+                                        <img src="/ssw/NETUG/SSWUpdate/images/UserGroupNov2004.jpg"
+                                            alt=".NET User Group" height="133" width="200" />
+                                    </td>
+                                    <td valign="bottom">
+                                        <h3>
+                                            7 days to go!</h3>
+                                        <p>
+                                            <a href="/ssw/NETUG/Sydney.aspx">Sydney .NET User Group</a><br />
+                                            Wednesday 17th June 2009<br />
+                                            5:45pm - 9:00pm<br />
+                                            Microsoft, Sydney<br />
+                                            1 Epping Road, North Ryde
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>
+                                <strong>Harness the Power of the Platform &#8211; Writing Windows 7 Applications by
+                                    <a href="http://blogs.msdn.com/acoat">Andrew Coates</a></strong></p>
+                            <p>
+                                A smart developer stands on the shoulders of the giants that came before. Windows
+                                7 is just around the corner. As a platform, it boasts a number of differentiating
+                                features that you as a developer can exploit for no additional charge. Come along
+                                to this demo-heavy exploration of the platform and the tools you need to make it
+                                shine. We&#8217;ll also have copies of the Release Candidate version of Windows
+                                7 to distribute.</p>
+                            <p>
+                                Andrew Coates has been a Developer Evangelist for Microsoft in Australia since January
+                                2004. Before joining Microsoft, Andrew was an independent consultant specialising
+                                in database applications using Microsoft technologies including SQL Server, Visual
+                                FoxPro and Microsoft Office.<br />
+                                Andrew's wide range of experience includes telecommunications, SMB inventory, dispatch
+                                and accounting systems, using both web and rich client front ends. He has developed
+                                and delivered class room training and has mentored a number of developers in Visual
+                                FoxPro and SQL Server technologies.<br />
+                                Andrew has spoken at international conferences on Geographical Information Systems,
+                                health statistics and database maintenance and is a regular presenter at TechEd
+                                both locally and internationally. An MCPD, MCTS and MCSD, Andrew also holds a Masters
+                                degree in Civil Engineering. Andrew blogs at <a href="http://blogs.msdn.com/acoat">http://blogs.msdn.com/acoat</a>.</p>
+                            <p>
+                                <strong>SharePoint &#8211; 8 Tips from the Trenches by <a href="https://sharepoint.ssw.com.au/AboutUs/Employees/Pages/John.aspx">
+                                    John Liu (aka Liuy)</a></strong></p>
+                            <p>
+                                <a href="https://sharepoint.ssw.com.au/AboutUs/Employees/Pages/John.aspx">John Liu (aka
+                                    Liuy)</a> rarely gets out of the hot and sticky SSW trench. Come hear his war
+                                stories dealing with SharePoint solutions. John has delivered SharePoint sites for
+                                clients such as Microsoft, WorleyParsons and the worst one Adam Cogan.</p>
+                            <p>
+                                Topics he will cover are:</p>
+                            <ol>
+                                <li>Getting the design right</li>
+                                <li>Web Parts - All the good stuff you get for free</li>
+                                <li>Performance tips for publishing sites</li>
+                                <li>The dirty stuff &#8211; deployment</li>
+                                <li>Less manual steps via SPConfigModification</li>
+                                <li>Dark data - CAML</li>
+                                <li>The 3rd party tools you need</li>
+                                <li>Things needed in SharePoint 2010</li>
+                            </ol>
+                            <p>
+                                To see more details and RSVP, please visit our <a href="http://www.facebook.com/group.php?gid=12452677980">
+                                    facebook .NET group</a> or our <a href="http://www.linkedin.com/groups?gid=1520317&trk=hb_side_g">
+                                        LinkedIn .NET group</a>.</p>
+                            <br />
+                            <table border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="320" align="center">
+                                        <a href="http://www.facebook.com/group.php?gid=12452677980">
+                                            <img src="/ssw/NETUG/Images/Facebook.gif" alt="facebook" class="noborder" /></a>
+                                    </td>
+                                    <td width="320" align="center">
+                                        <a href="http://www.linkedin.com/groups?gid=1520317&trk=hb_side_g">
+                                            <img src="/ssw/NETUG/Images/LinkedIn.gif" alt="LinkedIn" class="noborder" /></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="newsTitle">
+                                Canberra .NET User Group -
+                                <br />
+                                The best place to learn .NET for free in Canberra</h3>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td valign="top" width="210">
+                                        <img src="/ssw/Images/CanbUG.jpg" alt="Canberra User Group"
+                                            width="200" height="133" />
+                                    </td>
+                                    <td valign="bottom">
+                                        <h3>
+                                            5 days to go!</h3>
+                                        <p>
+                                            <a href="/ssw/NETUG/Canberra.aspx">Canberra .NET Developers User
+                                                Group</a><br />
+                                            Monday 15th June 2009</p>
+                                        <p>
+                                            Lunch: 12:30pm - 1:30pm<br />
+                                            King O'Malley's Irish Pub<br />
+                                            131 City Walk<br />
+                                            Canberra City<br />
+                                            <br />
+                                            Dinner: 4:30pm - 6:00pm
+                                            <br />
+                                            Microsoft Canberra Branch<br />
+                                            Walter Turnbull Building<br />
+                                            Level 2, 44 Sydney Ave
+                                            <br />
+                                            Barton ACT</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>
+                                <strong>Harness the Power of the Platform &#8211; Writing Windows 7 Applications by
+                                    <a href="http://blogs.msdn.com/acoat">Andrew Coates</a></strong></p>
+                            <p>
+                                A smart developer stands on the shoulders of the giants that came before. Windows
+                                7 is just around the corner. As a platform, it boasts a number of differentiating
+                                features that you as a developer can exploit for no additional charge. Come along
+                                to this demo-heavy exploration of the platform and the tools you need to make it
+                                shine. We&#8217;ll also have copies of the Release Candidate version of Windows
+                                7 to distribute.</p>
+                            <p>
+                                Andrew Coates has been a Developer Evangelist for Microsoft in Australia since January
+                                2004. Before joining Microsoft, Andrew was an independent consultant specialising
+                                in database applications using Microsoft technologies including SQL Server, Visual
+                                FoxPro and Microsoft Office.<br />
+                                Andrew's wide range of experience includes telecommunications, SMB inventory, dispatch
+                                and accounting systems, using both web and rich client front ends. He has developed
+                                and delivered class room training and has mentored a number of developers in Visual
+                                FoxPro and SQL Server technologies.<br />
+                                Andrew has spoken at international conferences on Geographical Information Systems,
+                                health statistics and database maintenance and is a regular presenter at TechEd
+                                both locally and internationally. An MCPD, MCTS and MCSD, Andrew also holds a Masters
+                                degree in Civil Engineering. Andrew blogs at <a href="http://blogs.msdn.com/acoat">http://blogs.msdn.com/acoat</a>.</p>
+                            <p>
+                                To see more details and RSVP, please visit our <a href="http://www.facebook.com/group.php?gid=31380367562">
+                                    facebook .NET group</a> or our <a href="http://www.linkedin.com/groups?gid=1520387&amp;trk=hb_side_g">
+                                        LinkedIn .NET group</a>.
+                            </p>
+                            <table border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="320" align="center">
+                                        <a href="http://www.facebook.com/group.php?gid=12452677980">
+                                            <img src="/ssw/NETUG/Images/Facebook.gif" alt="facebook" class="noborder" /></a>
+                                    </td>
+                                    <td width="320" align="center">
+                                        <a href="http://www.linkedin.com/groups?gid=1520317&trk=hb_side_g">
+                                            <img src="/ssw/NETUG/Images/LinkedIn.gif" alt="LinkedIn" class="noborder" /></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="newsTitle">
+                                <a name="SharePoint101Workshop" id="A1"></a>SharePoint 101 Workshop -<br>
+                                What every business person should know about SharePoint 2007</h3>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 210px;" valign="top">
+                                            <img src="/ssw/NETUG/Images/sharepoint_logo_image.jpg" alt="SharePoint"
+                                                width="200" height="133" />
+                                        </td>
+                                        <td valign="bottom">
+                                            <p>
+                                                <a href="/ssw/SharePointForBusiness.aspx">SharePoint 101
+                                                    Workshop</a><br />
+                                                Friday 12th June 2009<br />
+                                                8:00am - 11:00am<br />
+                                                SSW Office, Sydney<br />
+                                                Suite 10, 81-91 Military Road, Neutral Bay<br />
+                                                <b>Cost: No Charge </b>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>
+                                <strong>Workshop Objective</strong></p>
+                            <p>
+                                This workshop will provide the attendees with:</p>
+                            <ul>
+                                <li>An understanding of how key features of SharePoint can enhance business processes</li>
+                                <li>An understanding of the costs, timelines, staff involvement and commitment a business
+                                    will incur when implementing SharePoint</li>
+                            </ul>
+                            <p>
+                                <strong>Workshop Outline</strong></p>
+                            <ul>
+                                <li>Why should your business use SharePoint 2007?</li>
+                                <li>Differences between Windows SharePoint Services (WSS) and Microsoft Office SharePoint
+                                    Services (MOSS)</li>
+                                <li>Explanation and demonstration of the business challenges the SharePoint feature
+                                    set solve</li>
+                                <li>SharePoint in regards to implementation, costs and timelines</li>
+                                <li>SharePoint 2007 and the User Experience (custom design)</li>
+                                <li>SharePoint Development - What if I need more than SharePoint's out of the box functionality?</li>
+                            </ul>
+                            <a href="/ssw/SharePointForBusiness.aspx">Find out more
+                                and Register</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="newsTitle">
+                                <a name="NZSharePointConference" id="A2"></a>New Zealand SharePoint Conference 2009
+                                -<br />
+                                Stop, Collaborate and Listen!</h3>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 210px;" valign="top">
+                                            <img src="/ssw/NETUG/SSWUpdate/Images/NZSP_09.jpg" alt="SharePoint"
+                                                width="200" height="133" />
+                                        </td>
+                                        <td valign="bottom">
+                                            <p>
+                                                <a href="http://www.regonline.com/builder/site/Default.aspx?eventid=714444">New Zealand
+                                                    SharePoint Conference 2009</a><br />
+                                                Thursday 2nd July 2009 to
+                                                <br />
+                                                Friday 3rd July 2009<br />
+                                                Wellingotn, NZ<br />
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>
+                                SharePoint has rapidly become one of the most popular technology platforms for information
+                                workers throughout New Zealand so it's about time we all got together and shared
+                                our experiences and expertise as the community that we are.
+                                <br />
+                                This will be the New Zealand conference to learn about SharePoint 2007 with expert
+                                local and international speakers presenting on topics that will help you understand
+                                and succeed with your SharePoint implementations and add real value to your organisation
+                                and businesses.
+                            </p>
+                            <p>
+                                In addition to the session content you'll have ample opportunities to network with
+                                your peers in the community and technical and industry experts including local and
+                                international Microsoft Most Valued Professionals and New Zealand's top Certified
+                                Partners.
+                                <br />
+                                Don’t miss out on New Zealand's biggest SharePoint event of the year! Come and join
+                                the excitement of the first dedicated SharePoint conference in New Zealand!
+                            </p>
+                            <a href="http://www.regonline.com/builder/site/Default.aspx?eventid=714444">Find out
+                                more and Register</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="newsTitle">
+                                <a name="VSTSTrainingAd" id="A1"></a>VSTS Training in Sydney, Melbourne and Brisbane</h3>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td valign="top" style="width: 200px">
+                                        <img src="/ssw/NETUG/SSWUpdate/Images/VSTS_Training.jpg" alt="VSTS Training by Enhance ALM" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>
+                                Great new courses on Visual Studio Team System including</p>
+                            <ul>
+                                <li>VSTS Essentials</li>
+                                <li>VSTS Essentials for Project Managers and Business Analysts</li>
+                                <li>Essential Database Development with VSTS</li>
+                                <li>TFS Admin Essentials</li>
+                            </ul>
+                            <p>
+                                Enhance ALM is offering the following public courses in Sydney, Melbourne and Brisbane
+                                this month.</p>
+                            <p>
+                                Each of the following courses have been developed to assist development teams gain
+                                the most from their investment in Visual Studio Team System.</p>
+                            <ol>
+                                <li><strong>VSTS Essentials</strong><br />
+                                    Duration: 2 days | Cost: $ 1,195 | 
+                                        Course outline<br />
+                                    Dates: Melbourne (15-16 Jun), Brisbane (22-23 Jun), Sydney (23-30 Jun) </li>
+                                <li><strong>VSTS Essentials for Project Managers and Business Analysts</strong><br />
+                                    Duration: 1 day | Cost: $ 595 | 
+                                        Course outline
+                                    <br />
+                                    Dates: Melbourne (17 Jun), Brisbane (24 Jun), Brisbane (1 Jul) </li>
+                                <li><strong>Essentials Database Development with VSTS</strong><br />
+                                    Duration: 1 day | Cost: $ 595 | 
+                                        Course outline
+                                    <br />
+                                    Dates: Melbourne (18 Jun), Brisbane (25 Jun), Brisbane (3 Jul) </li>
+                                <li><strong>TFS Admin Essentials</strong><br />
+                                    Duration: 1 day | Cost: $ 595 | 
+                                        Course outline
+                                    <br />
+                                    Dates: Melbourne (19 Jun), Brisbane (26 Jun), Brisbane (2 Jul)<br />
+                                </li>
+                            </ol>
+                            <p>
+                                <strong>More Details</strong><br />
+                                Secure online event registration is available at <a href="https://secure.enhancealm.com.au/registration/registrationwizard.aspx">
+                                    https://secure.enhancealm.com.au/registration/registrationwizard.aspx</a>.</p>
+                            <p>
+                                Please direct any queries to Anthony Borton ph: 0408 302 173 or email: <a target="_blank"
+                                   keeptext="false" encode="616e74686f6e796240656e68616e6365616c6d2e636f6d2e6175">Anthony Borton</a>.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="newsTitle">
+                                <a name="featuredproduct" id="featuredproduct"></a>Featured Product: SSW Code Auditor</h3>
+                            <p>
+                                <a href="/ssw/CodeAuditor/">
+                                    <img class="noborder" alt="SSW Code Auditor" src="/ssw/CodeAuditor/Images/productbox.gif"
+                                        align="right" /></a><strong>Automate your Code Reviews with SSW Code Auditor</strong></p>
+                            <p>
+                                Are you looking to eradicate bugs and ensure consistency? SSW Code Auditor is a
+                                code analysis tool that allows developers to take control of your code, ensuring
+                                large, complex source code can be simplified, cleaned and maintained. The built-in
+                                rules focus on the most popular .NET languages (C#, VB.NET) for both Windows Forms
+                                and ASP.NET; however, the flexibility of SSW Code Auditor allows the developer to
+                                add their own rules to target any language in any text file.</p>
+                            <p>
+                                <a href="/ssw/CodeAuditor/">More on SSW's Code Auditor</a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="newsTitle">
+                                Advertise with SSW</h3>
+                            <p>
+                                If you would like to advertise your product or service with SSW or would like to
+                                find out more about various advertising opportunities, please email your enquiry
+                                to <a target="_blank" keeptext="false" encode="736f7068696562656c6c65405353572e636f6d2e6175">
+                                    sophiebelle</a> or call: +61 2 9953 3000.</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top" style="border-left: 1px #cccccc solid;" bgcolor="#eeeeee">
+                <img alt="SSW Update" src="/SSW/NETUG/SSWUpdate/Images/featureImage04.jpg"
+                    width="200" height="300" class="featureimage" />
+                <table width="100%" border="0" cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td bgcolor="#FFFFFF">
+                            <h3 class="sectionTitle">
+                                June 2009</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="sectionTitle">
+                                Tech Breakfast</h3>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td width="55" valign="top">
+                                        <img src="/ssw/NETUG/SSWUpdate/Images/Icon_techbreakfast.gif"
+                                            alt="Join us for Tech Breakfast" height="46" width="46" />
+                                    </td>
+                                    <td valign="top">
+                                        <strong>16 days to go </strong>
+                                        <p>
+                                            SYDNEY: SharePoint - Yellow Brick Road</p>
+                                        <p style="color: #666666;">
+                                            Friday, 26th June 2009<br />
+                                            8:00am-11:00am</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>
+                                Come and join us as we learn how the largest public SharePoint site in Australia
+                                (www.WorleyParsons.com) got up and running.<br />
+                                Adam Cogan of SSW will share his experience and lessons learnt on this project.
+                                Adam will also show you how to &#8220;sexify&#8220; the look and feel of your website.
+                            </p>
+                            <p align="right">
+                                <a href="/ssw/Shop/BasketInsert.aspx?ProductID=TBSPYB">
+                                    <img src="/ssw/Images/Button_Register_small.gif" alt="Register Now"
+                                        border="0" /></a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="sectionTitle">
+                                Employment</h3>
+                            <p>
+                                Due to the tremendous growth that our business has experienced over the last few
+                                months, we are seeking enthusiastic people to join the SSW team.</p>
+                            <p>
+                                Our Company is based in Neutral Bay which is one of the most elegant and scenic
+                                areas of Sydney. SSW is an Australian owned progressive consulting firm specialising
+                                in building, implementing and maintaining Microsoft .NET software applications.</p>
+                            <p>
+                                We are currently strongly looking for a <strong>SharePoint Developer</strong>.</p>
+                            <p>
+                                We are also currently looking for:</p>
+                            <ul style="font-weight: bold;">
+                                <li>ASP.NET, VB.NET, C#, OLAP, SharePoint Software Developer </li>
+                                <li>Technical BDM in Melbourne, Brisbane, or Canberra</li>
+                                <li>IT Senior Marketing Consultant (part-time)</li>
+                                <li>Project Manager</li>
+                            </ul>
+                            <p>
+                                <a href="/ssw/Employment/Employment.aspx">Read more and Apply NOW...</a></p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table align="center" width="710">
+        <tr>
+            <td class="copyright">
+                Copyright &copy; SSW 1990-2009. All Rights Reserved.
+            </td>
+            <td class="proudly" align="right">
+                Proudly developed by <a href="">SSW Sydney Web Design</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table>
+                    <tr valign="top" class="footer">
+                        <td valign="top" align="center">
+                            <a target="_blank" keeptext="true" encode="736f7068696562656c6c65407373772e636f6d2e6175"
+                                emailsubject="Advertisting">Advertise with SSW</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" keeptext="true" encode="736f7068696562656c6c65407373772e636f6d2e6175"
+                                emailsubject="Unsubscribe">Unsubscribe</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" href="/ssw/Events/SSWTechBreakfastprevious.aspx">
+                                Previous SSW Updates</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" keeptext="true" encode="736f7068696562656c6c65407373772e636f6d2e6175"
+                                emailsubject="Got a Hot Tip to share?">Got a Hot Tip to share?</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" keeptext="true" encode="736f7068696562656c6c65407373772e636f6d2e6175"
+                                emailsubject="About%20your%20newsletter">Got a comment to make?</a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

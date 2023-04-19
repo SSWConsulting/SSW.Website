@@ -1,0 +1,639 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <script language="javascript" type="text/javascript">
+        //generate email
+        function sendEmail(encodedEmail) {
+            // do the mailto: link
+            location.href = "mailto:" + decodeEmail(encodedEmail) + "?subject=''";
+        }
+
+        //generate email with subject
+        function sendEmail(encodedEmail, emailSubject) {
+            // do the mailto: link
+            location.href = "mailto:" + decodeEmail(encodedEmail) + "?subject=" + emailSubject;
+        }
+
+        // return the decoded email address
+        function decodeEmail(encodedEmail) {
+            // holds the decoded email address
+            var email = "";
+
+            // go through and decode the email address
+            for (i = 0; i < encodedEmail.length; ) {
+                // holds each letter (2 digits)
+                var letter = "";
+                letter = encodedEmail.charAt(i) + encodedEmail.charAt(i + 1);
+
+                // build the real email address
+                email += String.fromCharCode(parseInt(letter, 16));
+                i += 2;
+            }
+
+            return email;
+        }
+
+        // display the email address in the statusbar
+        function displayStatus(encodedEmail) {
+            window.status = "mailto:" + decodeEmail(encodedEmail);
+        }
+
+        // clear the statusbar message
+        function clearStatus() {
+            window.status = "";
+        }
+    </script>
+
+    <title>SSW Update - Do you use CRM Plug-ins for data synchronization?</title>
+</head>
+<body bgcolor="#e7e7cf">
+    <style type="text/css">
+        <!
+        -- body
+        {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            margin: 0px;
+        }
+        td, th
+        {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 11px;
+        }
+        .sectionTitle
+        {
+            font-family: "Century Gothic" , Arial, Verdana, Helvetica, sans-serif;
+            font-size: 20px;
+            color: #f25622;
+            font-weight: normal;
+        }
+        .newsTitle
+        {
+            color: #f25622;
+            font-size: 14px;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+        .magazineTitle
+        {
+            font-family: "Century Gothic" , Arial, Helvetica, sans-serif;
+            color: #f25622;
+            font-weight: normal;
+            font-size: 30px;
+        }
+        .section
+        {
+            border-top: 1px #cccccc dotted;
+        }
+        .copyright
+        {
+            font-weight: bold;
+            color: #999999;
+            font-size: 10px;
+        }
+        .proudly
+        {
+            font-weight: normal;
+            font-size: 9px;
+            color: #999999;
+        }
+        .noborder
+        {
+            border: none;
+        }
+        }
+        .footer a
+        {
+            color: gray;
+        }
+        -- ></style>
+    <font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+        <table width="710" border="0" align="center" cellpadding="0" cellspacing="0" id="container"
+            bgcolor="white" style="border: 1px #cccccc solid;">
+            <tr>
+                <td width="100%" bgcolor="#efefef">
+                    <table width="98%" border="0" cellspacing="0" cellpadding="15">
+                        <tr>
+                            <td>
+                                <span class="Subject"><strong>SSW Update - </strong>Do you use CRM Plug-ins for data
+                                    synchronization?</span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="200" valign="middle" bgcolor="#efefef" style="border-top: 4px #f26522 solid;
+                    border-left: 1px #cccccc solid;">
+                    <img src="/ssw/images/Gold_Certified_Partner74x35.gif" alt="Microsoft Gold Partner Logo"
+                        width="75" height="35" align="right" style="padding: 5px;" />
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" id="main">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="20">
+                        <tr>
+                            <td>
+                                <a href="/ssw/Events/SSWTechBreakfast.aspx">
+                                    <img src="/ssw/Images/SSWTechBreakfastBanner.gif" alt="SSW Tech Breakfast"
+                                        width="468" height="60" border="0" class="banner" /></a>
+                                <h1>
+                                    &nbsp;</h1>
+                                <h1 style="color: #a7a9ac; font-size: 30px;">
+                                    [<span class="magazineTitle"> the cutting edge</span> ]</h1>
+                                <p>
+                                    G'Day Developers!
+                                </p>
+                                <p>
+                                    Many businesses are moving to CRM4 today. During the transition period you need
+                                    both the old and new systems to see the same data. So how do you achieve this data
+                                    synchronization?</p>
+                                <p>
+                                    A plug-in is most useful for the following:</p>
+                                <ol>
+                                    <li>Record auditing</li>
+                                    <li>Business process automation (WorkFlow)</li>
+                                    <li>Data integration with other applications</li>
+                                </ol>
+                                <p>
+                                    CRM 3.0 exposed Callouts for interacting with CRM and developing custom code to
+                                    attach to events at the CRM platform layer, however with CRM 4.0 this architecture
+                                    has been completely redesigned.
+                                </p>
+                                <p>
+                                    Now we can create Plug-ins that make use of Synchronous and Asynchronous operations.
+                                    They give improvements in development time, deployment, administration and reliability.</p>
+                                <p>
+                                    We recommend using CRM Plug-ins for data synchronization instead of a Workflow because:</p>
+                                <ul>
+                                    <li>Workflows are asynchronous, while plug-ins can be either synchronous or asynchronous
+                                        and we want to synchronize the data immediately so we need to use plug-ins</li>
+                                    <li>Workflows also cannot be cancelled. This is probably necessary due to the following:<br />
+                                        <ul>
+                                            <li>You might have business logic that depends on your external data sink, and you want
+                                                to cancel an operation</li>
+                                            <li>Your destination data sink might want to accept user entries</li>
+                                            <li>Your external data sink might have other required fields other than the CRM database</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p>
+                                    See more of the <a href="/ssw/Standards/Rules/RulesToBetterMicrosoftCRMDataSynchronization.aspx#PluginsForSynchronization">
+                                        SSW Rules</a> pages.</p>
+                                <p>
+                                    Adam</p>
+                                <p>
+                                    Got a comment for Adam? <a target="_blank" href="javascript:sendEmail('4164616d436f67616e405353572e636f6d2e6175')"
+                                        onmouseover="javascript:displayStatus('4164616d436f67616e405353572e636f6d2e6175'); return true;"
+                                        onmouseout="javascript:clearStatus(); return true;">Email Adam</a>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="newsTitle">
+                                    <a name="SydneyDotnetUsergroup" id="SydneyDotnetUsergroup"></a>Sydney .NET User
+                                    Group -
+                                    <br />
+                                    The best place to learn .NET for free in Sydney</h3>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="210" valign="top">
+                                            <img src="/ssw/Images/SSRS_2008.jpg" alt="Microsoft SQL Server 2008"
+                                                height="133" width="200" />
+                                        </td>
+                                        <td valign="bottom">
+                                            <h3>
+                                                5 days to go!</h3>
+                                            <p>
+                                                <a href="/ssw/NETUG/Sydney.aspx">Sydney .NET User Group</a><br />
+                                                Wednesday 21st January 2009<br />
+                                                5:45pm - 9:00pm<br />
+                                                Microsoft, Sydney<br />
+                                                1 Epping Road, North Ryde</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    <strong>Top 15 SQL Server DBA Tasks for SQL Server 2005/2008 by <a href="http://www.adamcogan.com/">
+                                        Adam Cogan</a> and <a href="/ssw/Employees/employeesprofile.aspx?EmpID=JK">
+                                            Justin King</a></strong>
+                                </p>
+                                <p>
+                                    Examine how to automate your SQL Server 2005/2008 servers and set them on "auto-pilot"
+                                    for routine tasks. Examine how best to take advantage of the DB Maintenance utility
+                                    to automate your backups and scheduled maintenance tasks. Take a look at how to
+                                    configure your alerts and operators to get proper notifications when events occur.
+                                    Examine administering proper security, testing your restores, and routine performance
+                                    monitoring/tuning. Examine resources to help you diagnose problems as they occur
+                                    on your SQL Servers.</p>
+                                <p>
+                                    <strong>Business Continuity with Backup and Restore by <a href="http://wardyit.com/blog">
+                                        Peter Ward</a></strong>
+                                </p>
+                                <p>
+                                    The Backup and Restore commands are the most important SQL Server commands in a
+                                    Database Administrators arsenal. In the event of a system failure or user error,
+                                    the Backup and Restore commands provide the ability to recover from what otherwise
+                                    could be a catastrophe. With the release of SQL server 2005 and 2008 these commands
+                                    have been enhanced significantly. For example, the ability to take an adhoc backup
+                                    without affecting the restore sequence and the ability to revert a database from
+                                    a snapshot. In this session you will see how to utilise many of the new recovery
+                                    features as part of your SQL Server business continuity strategy.</p>
+                                <a href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','See%20You%20There%20-%20Sydney')"
+                                    onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                    onmouseout="javascript:clearStatus(); return true;" target="_blank">See You There!!!</a>
+                                | <a href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','Sorry%20I%20can%27t%20make%20it%20-%20Sydney')"
+                                    onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                    onmouseout="javascript:clearStatus(); return true;" target="_blank">Sorry I can't
+                                    make it</a>
+                                <p>
+                                    <img src="/ssw/NETUG/Images/Facebook.gif" alt="facebook" align="left" />
+                                    See the new <a href="http://www.facebook.com/group.php?gid=12452677980">facebook .NET
+                                        group</a> for the latest news.
+                                </p>
+                                <br />
+                                <p>
+                                    <img src="/ssw/NETUG/Images/LinkedIn.gif" alt="LinkedIn" />See the new <a href="http://www.linkedin.com/groups?gid=1520317&trk=hb_side_g">
+                                        Linked In .NET group</a> for latest news
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="newsTitle">
+                                    <a name="SydneyDotnetUsergroup" id="SydneyDotnetUsergroup"></a>Sydney .NET User
+                                    Group -
+                                    <br />
+                                    The best place to learn .NET for free in Sydney</h3>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="210" valign="top">
+                                            <img src="/ssw/NETUG/images/sharepoint_logo.jpg" alt="Microsoft SharePoint"
+                                                height="133" width="200" />
+                                        </td>
+                                        <td valign="bottom">
+                                            <h3>
+                                                33 days to go!</h3>
+                                            <p>
+                                                <a href="/ssw/NETUG/Sydney.aspx">Sydney .NET User Group</a><br />
+                                                Wednesday 18th February 2009<br />
+                                                5:45pm - 9:00pm<br />
+                                                Microsoft, Sydney<br />
+                                                1 Epping Road, North Ryde</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    <strong>How to implement a custom Site Map in SharePoint - RapidFire by Sergio Otoya</strong></p>
+                                <p>
+                                    Have you ever wanted to show consistent navigation elements for all Site collections
+                                    but SharePoint out of the box does not let you?. Let us show you how you can solve
+                                    this with the new features in ASP 2.0 and custom site maps. No code required, just
+                                    configuration.</p>
+                                <p>
+                                    <strong>Data View web part Tips and Tricks - RapidFire by Sergio Otoya</strong></p>
+                                <p>
+                                    When you create a Listview based on a list in sharepoint using SharePoint designer,
+                                    you are limited to only that site. If you then want to create a template out of
+                                    this site you will face some challenges because the list is bound to the List ID.
+                                    Wouldn't it be great if the dataview was bound to the Listname instead? Learn how
+                                    to in this session and also how to create a Remote list viewer. No code required,
+                                    just configuration.</p>
+                                <p>
+                                    <strong>SharePoint - follow the Yellow Brick Road to Public Web Sites by <a href="http://www.adamcogan.com/">
+                                        Adam Cogan</a></strong>
+                                </p>
+                                <p>
+                                    Come join us as we learn how the largest public SharePoint site in Australia (<a
+                                        href="http://www.WorleyParsons.com">www.WorleyParsons.com</a>) got up and running.</p>
+                                <p>
+                                    Adam Cogan of SSW will share his experience and lessons learnt on this project.
+                                    Adam will also show you how to &#8220;sexify&#8220; the look and feel of your site
+                                    (or &#8220;de-SharePointing with style&#8220;)</p>
+                                <p>
+                                    More info:</p>
+                                <ol>
+                                    <li>Why companies want SharePoint&#8217;s Web Content Management</li>
+                                    <li>How to sexify the look and feel (aka de-SharePointing with style)</li>
+                                    <li>Reducing use of tables via ASP.NET control adapters</li>
+                                    <li>Cross-browser compatibility ?the easy way with JQuery </li>
+                                    <li>How to use the Custom Navigation Control Adapters ?the golden pearl</li>
+                                    <li>Customizing SharePoint web parts</li>
+                                    <li>How to deploy (and how you can avoid three all-nighters)</li>
+                                    <li>Performance - targeting anonymous users</li>
+                                    <li>The lessons learned (aka rules)</li>
+                                </ol>
+                                <a href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','See%20You%20There%20-%20Sydney')"
+                                    onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                    onmouseout="javascript:clearStatus(); return true;" target="_blank">See You There!!!</a>
+                                | <a href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','Sorry%20I%20can%27t%20make%20it%20-%20Sydney')"
+                                    onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                    onmouseout="javascript:clearStatus(); return true;" target="_blank">Sorry I can't
+                                    make it</a>
+                                <p>
+                                    <img src="/ssw/NETUG/Images/Facebook.gif" alt="facebook" align="left" />
+                                    See the new <a href="http://www.facebook.com/group.php?gid=12452677980">facebook .NET
+                                        group</a> for the latest news.
+                                </p>
+                                <br />
+                                <p>
+                                    <img src="/ssw/NETUG/Images/LinkedIn.gif" alt="LinkedIn" />See the new <a href="http://www.linkedin.com/groups?gid=1520317&trk=hb_side_g">
+                                        LinkedIn .NET group</a> for latest news
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="newsTitle">
+                                    <a name="CanberraDotnetUsergroup" id="CanberraDotnetUsergroup"></a>Canberra .NET
+                                    User Group -
+                                    <br />
+                                    The best place to learn .NET for free in Canberra</h3>
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top" width="210">
+                                                <img src="/ssw/Images/CanbUG.jpg" alt="Canberra User Group"
+                                                    width="200" height="133" />
+                                            </td>
+                                            <td valign="bottom">
+                                                <h3>
+                                                    3 days to go!</h3>
+                                                <p>
+                                                    <a href="/ssw/NETUG/Canberra.aspx">Canberra .NET Developers User
+                                                        Group</a><br />
+                                                    Monday 19th January 2009<br />
+                                                    Lunch: 12:30pm - 1:30pm<br />
+                                                    King O'Malley's Irish Pub<br />
+                                                    131 City Walk<br />
+                                                    Canberra City<br />
+                                                    <br />
+                                                    Dinner: 4:30pm - 6:00pm
+                                                    <br />
+                                                    Microsoft Canberra Branch<br />
+                                                    Walter Turnbull Building<br />
+                                                    Level 2, 44 Sydney Ave
+                                                    <br />
+                                                    Barton ACT</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p>
+                                    <strong>Top 15 SQL Server DBA Tasks for SQL Server 2005/2008 by <a href="http://www.adamcogan.com/">
+                                        Adam Cogan</a> and <a href="/ssw/Employees/employeesprofile.aspx?EmpID=JK">
+                                            Justin King</a></strong></p>
+                                <p>
+                                    Examine how to automate your SQL Server 2005/2008 servers and set them on "auto-pilot"
+                                    for routine tasks. Examine how best to take advantage of the DB Maintenance utility
+                                    to automate your backups and scheduled maintenance tasks. Take a look at how to
+                                    configure your alerts and operators to get proper notifications when events occur.
+                                    Examine administering proper security, testing your restores, and routine performance
+                                    monitoring/tuning. Examine resources to help you diagnose problems as they occur
+                                    on your SQL Servers.</p>
+                                <a href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','See%20You%20There%20-%20Canberra')"
+                                    onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                    onmouseout="javascript:clearStatus(); return true;" target="_blank">See You There!!!</a>
+                                | <a href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','Sorry%20I%20can%27t%20make%20it%20-%20Canberra')"
+                                    onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                    onmouseout="javascript:clearStatus(); return true;" target="_blank">Sorry I can't
+                                    make it</a>
+                                <p>
+                                    <img src="/ssw/NETUG/Images/Facebook.gif" alt="facebook" align="left" />
+                                    See the new <a href="http://www.facebook.com/group.php?gid=31380367562">facebook .NET
+                                        group</a> for the latest news.
+                                </p>
+                                <br />
+                                <p>
+                                    <img src="/ssw/NETUG/Images/LinkedIn.gif" alt="LinkedIn" />See the new <a href="http://www.linkedin.com/groups?gid=1520387&trk=hb_side_g">
+                                        LinkedIn .NET group</a> for latest news
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="newsTitle">
+                                    <a name="featuredproduct" id="featuredproduct"></a>Featured Product: SSW Exchange
+                                    Reporter</h3>
+                                <p>
+                                    <a href="/ssw/ExchangeReporter/">
+                                        <img class="noborder" alt="Worley Parsons" src="/ssw/ExchangeReporter/Images/productbox.gif"
+                                            align="right" /></a><strong>View reports on email usage for your Exchange Server users
+                                                with SSW Exchange Reporter</strong></p>
+                                <p>
+                                    Is Microsoft Exchange Server an integral part of your organization? If so, SSW Exchange
+                                    Reporter provides the tools and reports you need to efficiently analyze your organizations
+                                    email usage. Built in Exchange reports range from who is sending the most emails,
+                                    to who has the largest mailbox.<br />
+                                    As new emails are sent and received, to and from your exchange server, our lightweight
+                                    windows service seamlessly extracts email messages and folder statistics to your
+                                    fast SQL Server backend. By taking advantage of SQL Servers Reporting Services,
+                                    the generated reports can easily be customized and extended while being viewed securely
+                                    from anywhere. That is why experts say that SSW Exchange Reporter is the most powerful
+                                    and the only flexible solution to understanding your organizations communications.</p>
+                                <p>
+                                    <a href="/ssw/ExchangeReporter/">More on SSW's Exchange Reporter</a></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="section">
+                                <h3 class="newsTitle">
+                                    Advertise with SSW</h3>
+                                <p>
+                                    If you would like to advertise your product or service with SSW or would like to
+                                    find out more about various advertising opportunities, please email your enquiry
+                                    to <a href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175')"
+                                        onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                        onmouseout="javascript:clearStatus(); return true;">sophiebelle</a><br />
+                                    or call: +61 2 9953 3000.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td valign="top" bgcolor="#eeeeee" id="sidebar" style="border-left: 1px #cccccc solid;
+                    border-bottom: 10px #f26522 solid;">
+                    <font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+                        <img alt="SSW Update" src="/SSW/NETUG/SSWUpdate/Images/featureImage12.jpg"
+                            width="200" height="300" class="featureimage" /></font><table width="100%" border="0"
+                                cellpadding="10" cellspacing="0">
+                                <tr>
+                                    <td bgcolor="#FFFFFF">
+                                        <h3 class="sectionTitle">
+                                            January 2009</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="section">
+                                        <h3 class="sectionTitle">
+                                            Tech Breakfast</h3>
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td width="55" valign="top">
+                                                    <img src="/ssw/NETUG/SSWUpdate/Images/Icon_techbreakfast.gif"
+                                                        alt="Join us for Tech Breakfast" height="46" width="46" />
+                                                </td>
+                                                <td valign="top">
+                                                    <strong>7 days to go </strong>
+                                                    <p>
+                                                        SYDNEY: Dynamic Data - Data entry made easy</p>
+                                                    <p>
+                                                        <font color="#666666" size="1" face="Verdana, Arial, Helvetica, sans-serif">Friday,
+                                                            23rd January 2009<br />
+                                                            8:00am-11:00am</font></p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <p>
+                                            When working with databases, we often need to create some administrative pages to
+                                            do all our CRUD operations on the tables. This can be a long and repetitive process
+                                            if you don't use a code generator. Thankfully in VS 2008 SP1 Dynamic data allows
+                                            us to create all those pages without writing a single line of code! In this session
+                                            you will also find out how to customize these admin pages with different looks and
+                                            data entry controls.</p>
+                                        <p align="right">
+                                            <a href="/ssw/Shop/BasketInsert.aspx?ProductID=TBDDAT">
+                                                <img src="/ssw/Images/Button_Register_small.gif" alt="Register Now"
+                                                    border="0" /></a></p>
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td width="55" valign="top">
+                                                    <img src="/ssw/NETUG/SSWUpdate/Images/Icon_techbreakfast.gif"
+                                                        alt="Join us for Tech Breakfast" height="46" width="46" />
+                                                </td>
+                                                <td valign="top">
+                                                    <strong>42 days to go </strong>
+                                                    <p>
+                                                        SYDNEY: Project Server 2007 integration with Team Foundation Server</p>
+                                                    <p>
+                                                        <font color="#666666" size="1">Friday, 27th February 2009<br />
+                                                            8:00am-11:00am</font></p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <p>
+                                            Streamline your project management and development cycles with Project Server 2007.
+                                            In this session we will be stepping into the roles of the Project Manager, Developer,
+                                            Account Manager and Client to see how these roles interact within a project. We
+                                            will integrate with Microsoft Team Foundation Server 2008 and the Project Server
+                                            2007 Outlook Add-in</p>
+                                        <p>
+                                            Features covered:</p>
+                                        <ul>
+                                            <li>Task tracking</li>
+                                            <li>Resource management</li>
+                                            <li>Time sheets</li>
+                                            <li>Reporting</li>
+                                        </ul>
+                                        <font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+                                            <p align="right">
+                                                <a href="/ssw/Shop/BasketInsert.aspx?ProductID=TBPS07">
+                                                    <img src="/ssw/Images/Button_Register_small.gif" alt="Register Now"
+                                                        border="0" /></a></p>
+                                        </font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="section">
+                                        <h3 class="sectionTitle">
+                                            Employment</h3>
+                                        <p>
+                                            Due to the tremendous growth that our business has experienced over the last few
+                                            months, we are seeking enthusiastic people to join the SSW team.</p>
+                                        <p>
+                                            Our Company is based in Neutral Bay which is one of the most elegant and scenic
+                                            areas of Sydney. SSW is an Australian owned progressive consulting firm specialising
+                                            in building, implementing and maintaining Microsoft .NET software applications.</p>
+                                        <p>
+                                            We are currently strongly looking for a <strong>SharePoint Developer</strong>.</p>
+                                        <p>
+                                            We are also currently looking for:</p>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="2">
+                                            <tr>
+                                                <td valign="top">
+                                                    &#8226;
+                                                </td>
+                                                <td width="100%" valign="top">
+                                                    <strong>ASP.NET, VB.NET, C#, OLAP, SharePoint Software Developer </strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    &#8226;
+                                                </td>
+                                                <td>
+                                                    <strong>Technical BDM in Melbourne, Brisbane, or Canberra</strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    &#8226;
+                                                </td>
+                                                <td valign="top">
+                                                    <strong>IT Senior Marketing Consultant (part-time)</strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    &#8226;
+                                                </td>
+                                                <td valign="top">
+                                                    <strong>Project Manager</strong>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <p>
+                                            <a href="/ssw/Employment/Employment.aspx">Read more and Apply NOW...</a></p>
+                                    </td>
+                                </tr>
+                            </table>
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+        <table align="center" width="710">
+            <tr>
+                <td class="copyright">
+                    Copyright ?SSW 1990-2009. All Rights Reserved.
+                </td>
+                <td class="proudly" align="right">
+                    Proudly developed by <a href="">SSW Sydney Web Design</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="footer" colspan="2">
+                    <table>
+                        <tr valign="top" class="footer">
+                            <td valign="top" align="center">
+                                <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','=Advertisting')"
+                                    onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                    onmouseout="javascript:clearStatus(); return true;">Advertise with SSW</a> |
+                            </td>
+                            <td valign="top" align="center">
+                                <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','Unsubscribe')"
+                                    onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                    onmouseout="javascript:clearStatus(); return true;">Unsubscribe</a> |
+                            </td>
+                            <td valign="top" align="center">
+                                <a target="_blank" href="/ssw/Events/SSWTechBreakfastprevious.aspx">
+                                    Previous SSW Updates</a> |
+                            </td>
+                            <td valign="top" align="center">
+                                <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','Got a Hot Tip to share?')"
+                                    onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                    onmouseout="javascript:clearStatus(); return true;">Got a Hot Tip to share?</a>
+                                |
+                            </td>
+                            <td valign="top" align="center">
+                                <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','About%20your%20newsletter')"
+                                    onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                    onmouseout="javascript:clearStatus(); return true;">Got a comment to make?</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </font>
+</body>
+</html>

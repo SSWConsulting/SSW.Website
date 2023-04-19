@@ -1,0 +1,778 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "//www.w3.org/TR/html4/loose.dtd">
+
+<html xmlns="https://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <!--[if gte mso 9]><xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <title>Avoiding Storms with BDD & Automated Testing</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,600italic,700italic,800,800italic'
+          rel='stylesheet' type='text/css' />
+
+    <style type="text/css">
+        /* Outlook link fix */
+
+        #outlook a {
+            padding: 0;
+        }
+
+        /* Hotmail background &amp; line height fixes */
+
+        .ExternalClass {
+            width: 100% !important;
+        }
+
+            .ExternalClass,
+            .ExternalClass p,
+            .ExternalClass span,
+            .ExternalClass font,
+            .ExternalClass td,
+            .ExternalClass div {
+                line-height: 100%;
+            }
+
+        /* Image borders &amp; formatting */
+
+        img {
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+            margin: 0 0 0 0 !important;
+        }
+
+        a img {
+            border: none;
+            margin: 0 0 0 0 !important;
+        }
+
+        /* Re-style iPhone automatic links (eg. phone numbers) */
+
+        .applelinks a {
+            color: #222222;
+            text-decoration: none;
+        }
+
+        /* Hotmail symbol fix for mobile devices */
+
+        .ExternalClass img[class^=Emoji] {
+            width: 10px !important;
+            height: 10px !important;
+            display: inline !important;
+        }
+
+        .tpl-content {
+            display: inline !important;
+        }
+
+        a:hover {
+            text-decoration: underline !important;
+        }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body style="padding: 0; margin: 0; -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; -ms-text-size-adjust: 100%; text-size-adjust: 100%;">
+    <table width="100%;" border="0" align="center" cellpadding="0" cellspacing="0">
+        <!-- Black Header -->
+        <tr>
+            <td align="center" valign="top" bgcolor="#333333">
+                <table style="width:640px;" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap100">
+                    <tr>
+                        <td align="left" valign="middle" bgcolor="#ffffff" style="height: 69px;padding:0 0 0 20px;">
+                            <a href="https://ssw.com.au/ssw/NETUG/SSWUpdate/_2021_11__Avoiding Storms with BDD and Automated Testing__.html"
+                               target="_blank">
+                                <img src="https://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/ssw-logo.png" style="width:80px;height:42px;"
+                                     alt="logo" border="0" />
+                            </a>
+                        </td>
+                        <td align="right" valign="middle" bgcolor="#ffffff" style="height: 69px;font-family: 'Open Sans',Arial, Helvetica, sans-serif; font-size:24px; color:#cc4141; font-weight:300; text-transform:uppercase; line-height:14px; padding:0 16px 0 0;">
+                            <strong style="color:#999999;font-size:30px;">[</strong>the cutting edge
+                            <strong style="color:#999999; font-size:30px;">]</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- EDIT HERE -->
+                        <td align="left" valign="middle" bgcolor="#444444" style="height:35px;font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#ffffff; font-weight:normal; line-height:14px; padding:4px 0 5px 20px;text-transform:uppercase;">
+                        Clear Communication = Great Software</title>
+                        </td>
+                        <td align="right" valign="middle" bgcolor="#444444" style="height:35px;font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#ffffff; font-weight:normal; line-height:14px; padding:4px 20px 5px 0;text-transform:uppercase;">
+                            <strong>November 2021 | </strong>
+                            <a href="https://www.ssw.com.au/ssw/netug/SSWUpdate/_2021_11__Avoiding%20Storms%20with%20BDD%20and%20Automated%20Testing__.html"
+                               target="_blank" style="color:#448ccb; text-decoration:none;">View Online</a>
+                        </td>
+                        <!-- END EDIT HERE -->
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- END Black Header -->
+        <!-- Light Grey Banner -->
+        <tr>
+            <td align="center" valign="top" bgcolor="#cccccc">
+                <table style="width:640px;" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap100">
+                    <tr>
+                        <td align="left" valign="top" bgcolor="#cccccc">
+                            <!-- EDIT HERE -->
+                            <a href="https://adamcogan.com/2021/11/05/bdd-and-automated-testing/" target="_blank">
+                                <img src="https://ssw.com.au/ssw/NETUG/SSWUpdate/images/Newsletter-Banner-BDD-and-Automated-Testing.jpg"
+                                     style="width:640px;" alt="Avoiding Storms with BDD & Automated Testing" border="0" align="left" />
+                            </a>
+                            <!-- END EDIT HERE -->
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- END Light Grey Banner -->
+        <!-- Dark Grey Content -->
+        <tr>
+            <td align="center" valign="top" bgcolor="#bbbbbb">
+                <table style="width:640px;" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap100">
+                    <tr>
+                        <td align="center" valign="top" bgcolor="#ffffff">
+                            <!-- White Events Section -->
+                            <table border="0" align="center" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td align="left" valign="top">
+                                        <table class="wrap1001" style="width:602px;" border="0" align="center" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td height="22px">&nbsp;</td>
+                                            </tr>
+                                            <!-- Blog -->
+                                            <tr>
+                                                <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#444444; font-weight:normal; padding:0 0 22px 0;">
+                                                    <!-- EDIT HERE -->
+                                                    <h2 style="font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size:28px; color:#cc4141; font-weight:300; padding:0 0 0 0; margin: 0 0 0 0;">Avoiding Storms with BDD & Automated Testing</h2>
+                                                    <p>The quicker you find a bug, the quicker it is to fix.</p>
+													<p><strong>How cool would it be to write tests in plain text?</strong> 
+													With BDD (Behavioural-Driven Development) and Gherkin syntax you can write unit test scenarios in plain text using a few key words (Given, When, Then). Plain text makes the test scenarios easy to understand, even for non-techies.</p>
+													<p><strong>How cool would it be to never have to do manual tests?</strong>
+													With automated UI testing, you can create quick ‘smoke’ tests to check your UI is working as expected using the BDD method outlined above. Matt Goldman’s video below is a great example of this.
+													<p><strong>How cool would it to be to record your tests?</strong>
+													I remember when Excel Macros got people so excited back in the day. Excel allowed the masses to click “Record a macro” and then it would write the VBA script for you. We used to use Selenium automated tested, these days we use Playwright as it is more solid. One of the other cool things about Playwright is, you can record the automation as a video. Is that awesome or is it super awesome? </p>
+													
+													
+													<a href="https://adamcogan.com/2021/11/05/bdd-and-automated-testing/" target="_blank" style="color:#448ccb; text-decoration:none;">See how you can use BDD and Automatic UI Testing on your next project</a></p>
+                                                    <!-- END EDIT HERE -->
+                                                </td>
+                                            </tr>
+                                            <!-- END Blog -->
+                                            <tr>
+                                                <td align="left" valign="top">
+                                                    <table style="width:100%;" border="0" align="left" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#444444; font-weight:normal;">- Adam Cogan, SSW Chief Architect</td>
+                                                            <td align="right" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal;">
+                                                                <strong>Got a comment for Adam?</strong>
+                                                                <br />
+                                                                <a href="https://adamcogan.com/" style="color:#448ccb; text-decoration:none;">Comment on Adam's blog</a>
+                                                                <br />
+                                                                <a href="https://twitter.com/adamcogan" style="color:#448ccb; text-decoration:none;">Tweet @adamcogan</a>
+                                                                <br />
+                                                                <a href="mailto:adamcogan@ssw.com.au" style="color:#448ccb; text-decoration:none;">Email Adam Cogan</a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <!-- Featured Video -->
+                                            <tr>
+                                                <td height="11px" align="left" valign="top">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td height="22px" align="left" valign="top" style="border-bottom:1px solid #d2d2d2">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td height="50px" align="left" valign="middle">
+                                                    <h2 style="font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#777777; font-weight:300; text-transform:uppercase; padding:0 0 0 0; margin: 0 0 0 0;">FEATURED VIDEO FROM SSW TV</h2>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" valign="top">
+                                                    <table style="width:100%;" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td style="width:211px;" align="left" valign="top">
+                                                                <!-- EDIT HERE -->
+                                                                <a href="https://youtu.be/lRYrhj9lwQk"_blank">
+                                                                    <img style="width:210px; height:120px;"
+                                                                         src="https://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Jason-T-UG-Newsletter_Thumbnail.jpg"
+                                                                         alt="Modern Web Dev with Blazor and .NET 6 | Jason Taylor">
+                                                                </a>
+                                                                <!-- END EDIT HERE -->
+                                                            </td>
+                                                            <td style="width:22px;" align="left" valign="top"></td>
+                                                            <td style="width:369px;font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;" align="left" valign="top">
+                                                                <!-- EDIT HERE -->
+                                                                <h3 style="font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size:18px; color:#cc4141; padding:0 0 0 0;margin: 0 0 0 0;font-weight:normal;">
+																Modern Web Dev with Blazor and .NET 6 | Jason Taylor
+                                                                </h3>
+																	<p>Ready to get up to speed with Blazor WebAssembly? You've picked the right time! Blazor has been running production systems for over two years now - it’s battle-tested and what’s more, Microsoft is just about to launch .NET 6 , the long-term support version of their hugely successful development platform</p>														 
+																	<p>Whether you're a student or a seasoned developer, now is the perfect time to get started. In this talk, Jason will make sure you get started on the right foot. He will demonstrate tools, components, data access, code generation, forms, validation, component libraries and more! Everything you need to build enterprise applications using Blazor WebAssembly and .NET 6.</p>
+											
+                                                                <a href="https://youtu.be/lRYrhj9lwQk" target="_blank" style="color:#448ccb; text-decoration:none;">Watch videos</a>
+                                                                </p>
+                                                                <!-- END EDIT HERE -->
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="22px" align="left" valign="top">&nbsp;</td>
+                                            </tr>
+                                            <!-- END Featured Video -->
+                                            <tr>
+                                                <td height="22px" align="left" valign="top" style="border-bottom:1px solid #d2d2d2">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td height="50px" align="left" valign="middle">
+                                                    <h2 style="font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#777777; font-weight:300; text-transform:uppercase; padding:0 0 0 0; margin: 0 0 0 0;">FEATURED TECHNOLOGY FROM SSW</h2>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <!-- Remote Consulting row -->
+                                <tr>
+                                    <td align="center" valign="top">
+                                        <table class="wrap1001" style="width:602px;" border="0" align="center" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <!-- Remote banner - FULL WIDTH -->
+                                                <td align="left" valign="top" bgcolor="#ffffff">
+                                                    <a href="https://www.ssw.com.au/ssw/Consulting/Power-Platform.aspx" target="_blank"><img src="https://www.ssw.com.au/ssw/NETUG/SSWUpdate/Images/Newsletter-Power-Platform.jpg" style="width:640px;height:230px;" alt="Power App Consulting" class="resize_img" border="0" align="left" /></a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top" bgcolor="#ffffff">&nbsp;</td>
+                                            </tr>
+
+                                            <!-- END Remote banner -->
+                                            <!-- Remote text -->
+                                            <tr>
+                                                <td align="center" valign="top">
+                                                    <table class="wrap1001" style="width:602px;" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td style="width:580px;" align="left" valign="top">
+                                                                <table style="width:100%;" border="0" cellspacing="0" cellpadding="0">
+                                                                    <tr>
+                                                                        <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#444444; font-weight:normal;">
+                                                                            <!-- EDIT HERE -->
+                                                                            <p>Power Platform can help you create solutions for all of your internal and external processes. Microsoft's Power Platform is a set of low-code applications that can be used individually to create easy-to-use business solutions. These applications can be used together and combined with Office 365 and Azure to create a smooth flow throughout your whole business, from client communication to financial analytics.</p>
+                                                                            <p><a href="https://www.ssw.com.au/ssw/Consulting/Power-Platform.aspx" target="_blank" style="color:#448ccb; text-decoration:none;">Could you be supercharging your business through Power Apps? Learn more.</a></p>
+                                                                            <!-- END EDIT HERE -->
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+
+                                                            </td>
+                                                            <td style="width:22px;" align="left" valign="top"></td>
+
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td height="22px">&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- END Power Apps row -->
+
+                                <!-- Events row -->
+                                <tr>
+                                    <td align="center" valign="top">
+                                        <table class="wrap1001" style="width:602px;" border="0" align="center" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td height="22px">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <!-- Primary Event - FULL WIDTH -->
+                                                <td align="left" valign="top" bgcolor="#ffffff">
+                                                    <a href="https://www.ssw.com.au/ssw/Events/" target="_blank"><img src="https://www.ssw.com.au/ssw/NETUG/SSWUpdate/images/Template/online-banner-newsletter-header.jpg" style="width:640px;height:100px;" alt="Online Live Events" class="resize_img" border="0" align="left" /></a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top" bgcolor="#ffffff">&nbsp;</td>
+                                            </tr>
+
+                                            <!-- END Primary Event -->
+                                            <!-- Secondary Divided Events - 2 PER ROW -->
+                                            <tr>
+                                                <td align="center" valign="top">
+                                                    <table class="wrap1001" style="width:602px;" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td height="22px">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <!-- 1st Divided Event -->
+                                                            <td style="width:290px;" align="left" valign="top">
+                                                                <table style="width:100%;" border="0" cellspacing="0" cellpadding="0">
+                                                                    <tr>
+                                                                        <td align="left" valign="top">
+                                                                           <!-- EDIT HERE -->
+                                                                            <a href="https://www.ssw.com.au/ssw/Events/Training/Clean-Architecture-Workshop.aspx" target="_blank"><img src="http://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Clean-Architecture-Workshop.jpg" style="width:290px;height:80px;" alt="The .NET 5 Superpowers border="0" /></a>
+                                                                            <!-- END EDIT HERE -->
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;padding:12px 0 19px 0;">
+                                                                            <!-- EDIT HERE -->
+																			<h3 style="font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size:18px; color:#cc4141;padding: 0 0 0 0; margin: 0 0 0 0;font-weight:normal;">2-Day Online<br>Clean Architecture Workshop</h3>
+                                                                           
+																			<p>In this 2-day hands-on workshop we will cover the best approach to building enterprise applications using Clean Architecture and .NET Core. You will be building your own application from scratch.</p>
+                                                                            <p>This hands-on workshop will provide practical guidance and recommendations. We will cover architecture, technologies, tools and frameworks.</p>
+                                                                            <p><a href="https://www.ssw.com.au/ssw/Events/Training/Clean-Architecture-Workshop.aspx" target="_blank" style="color:#448ccb; text-decoration:none;">Read more</a></p>
+																			
+																			
+                                                                            <!-- 2nd Event Date 1 -->
+                                                                    
+                                                                                        <!-- END Event Date Row -->
+                                                                                        <!-- Event Date Row -->
+                                                                                        <tr>
+                                                                                            <td align="left" valign="top" style="border-bottom:2px solid #ffffff;">
+                                                                                                <table style="width:100%;" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                                                    <tbody>
+                                                                                                        <tr>
+                                                                                                            <!-- EDIT HERE -->
+                                                                                                            <td align="center" valign="middle" bgcolor="#cccccc" style="width:54px;height:54px;font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#444444; font-weight:normal;text-transform:uppercase;">
+                                                                                                                <strong>NOV</strong>
+                                                                                                                <br>
+                                                                                                                <strong style="font-size:24px; line-height:21px;">22</strong>
+                                                                                                                <br>MON
+                                                                                                            </td>
+                                                                                                            <td align="left" valign="middle" bgcolor="#eeeeee" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal; padding:0 0 0 18px;">
+                                                                                                                Online, Australia
+                                                                                                            </td>
+                                                                                                            <!-- END EDIT HERE -->
+                                                                                                        </tr>
+                                                                                                    </tbody>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <!-- END Event Date Row -->
+																						               </tr>
+                                                                                        
+                                                                    <!-- END 1st Event Date 1 -->
+                                                                </table>
+
+                                                            </td>
+                                                            <!-- END 1st Secondary Event -->
+                                                            <td style="width:22px;" align="left" valign="top"></td>
+
+                                                             <!-- 2nd Divided Event -->
+                                                            <td style="width:290px;" align="left" valign="top">
+                                                                <table style="width:100%;" border="0" cellspacing="0" cellpadding="0">
+                                                                    <tr>
+                                                                        <td align="left" valign="top">
+                                                                           <!-- EDIT HERE -->
+                                                                            <a href="https://www.ssw.com.au/ssw/Events/Training/Angular-Workshop.aspx" target="_blank"><img src="https://ssw.com.au/ssw/NETUG/SSWUpdate/Images/SuperPower-Newsletter-Small-Angular.jpg" style="width:290px;height:80px;" alt="The Angular Workshop border="0" /></a>
+                                                                            <!-- END EDIT HERE -->
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;padding:12px 0 19px 0;">
+                                                                            <!-- EDIT HERE -->
+																			<h3 style="font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size:18px; color:#cc4141;padding: 0 0 0 0; margin: 0 0 0 0;font-weight:normal;">2-day In Person <br>Angular Workshop</h3>
+                                                                           
+																			<p>Come watch our best Angular devs build an Angular 11 application from scratch and take it all the way to an enterprise application using all the best tools and practices we use.</p>
+                                                                            <p>Don't waste weeks learning Angular, the Angular CLI, RxJS, TypeScript, ngrx, NPM, WebPack, end to end testing and unit testing. Get a jump start in just 1-day.</p>
+                                                                            <p><a href="https://www.ssw.com.au/ssw/Events/Training/Angular-Workshop.aspx" target="_blank" style="color:#448ccb; text-decoration:none;">Read more</a></p>
+																			
+																			
+																			
+                                                                            <!-- END EDIT HERE -->
+                                                                        </td>
+                                                                    </tr>
+                                                                    <!-- 2nd Event Date 1 -->
+                                                                    
+                                                                                        <!-- END Event Date Row -->
+                                                                                        <!-- Event Date Row -->
+                                                                                        <tr>
+                                                                                            <td align="left" valign="top" style="border-bottom:2px solid #ffffff;">
+                                                                                                <table style="width:100%;" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                                                    <tbody>
+                                                                                                        <tr>
+                                                                                                            <!-- EDIT HERE -->
+                                                                                                            <td align="center" valign="middle" bgcolor="#cccccc" style="width:54px;height:54px;font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#444444; font-weight:normal;text-transform:uppercase;">
+                                                                                                                <strong>FEB</strong>
+                                                                                                                <br>
+                                                                                                                <strong style="font-size:24px; line-height:21px;">3</strong>
+                                                                                                                <br>THU
+                                                                                                            </td>
+                                                                                                            <td align="left" valign="middle" bgcolor="#eeeeee" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal; padding:0 0 0 18px;">
+                                                                                                                Brisbane, Australia
+                                                                                                            </td>
+                                                                                                            <!-- END EDIT HERE -->
+                                                                                                        </tr>
+                                                                                                    </tbody>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <!-- END Event Date Row -->
+																						 <!-- Event Date Row -->
+                                                                                        <tr>
+                                                                                            <td align="left" valign="top" style="border-bottom:2px solid #ffffff;">
+                                                                                                <table style="width:100%;" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                                                    <tbody>
+                                                                                                        <tr>
+                                                                                                            <!-- EDIT HERE -->
+                                                                                                            <td align="center" valign="middle" bgcolor="#cccccc" style="width:54px;height:54px;font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#444444; font-weight:normal;text-transform:uppercase;">
+                                                                                                                <strong>FEB</strong>
+                                                                                                                <br>
+                                                                                                                <strong style="font-size:24px; line-height:21px;">7</strong>
+                                                                                                                <br>MON
+                                                                                                            </td>
+                                                                                                            <td align="left" valign="middle" bgcolor="#eeeeee" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal; padding:0 0 0 18px;">
+                                                                                                                Melbourne, Australia
+                                                                                                            </td>
+                                                                                                            <!-- END EDIT HERE -->
+                                                                                                        </tr>
+                                                                                                    </tbody>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <!-- END Event Date Row -->
+                                                                                        <!-- Event Date Row -->
+                                                                                        <tr>
+                                                                                            <td align="left" valign="top" style="border-bottom:2px solid #ffffff;">
+                                                                                                <table style="width:100%;" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                                                    <tbody>
+                                                                                                        <tr>
+                                                                                                            <!-- EDIT HERE -->
+                                                                                                            <td align="center" valign="middle" bgcolor="#cccccc" style="width:54px;height:54px;font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#444444; font-weight:normal;text-transform:uppercase;">
+                                                                                                                <strong>FEB</strong>
+                                                                                                                <br>
+                                                                                                                <strong style="font-size:24px; line-height:21px;">10</strong>
+                                                                                                                <br>THU
+                                                                                                            </td>
+                                                                                                            <td align="left" valign="middle" bgcolor="#eeeeee" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal; padding:0 0 0 18px;">
+                                                                                                                Sydney, Australia
+                                                                                                            </td>
+                                                                                                            <!-- END EDIT HERE -->
+                                                                                                        </tr>
+                                                                                                    </tbody>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                    <!-- END 2nd Event Date 1 -->
+                                                                </table>
+
+                                                            </td>
+                                                            <!-- END 1st Secondary Event -->
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Divided Events Row - Start second row -->
+
+                                            <tr>
+                                                <td align="center" valign="top">
+
+                                                    <table class="wrap1001" style="width:602px;" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td height="44px">&nbsp;</td>
+                                                        </tr>
+                                                        <tr></tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <!-- END Divided Events Row - Start second row -->
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- END Events row -->
+
+                                <tr>
+                                    <td align="left" valign="top">
+                                        <img src="https://www.ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/arrow-bg-white-top.png" style="width:640px;height:59px;" alt="bg" border="0" align="center">
+                                    </td>
+                                </tr>
+                                <!-- USER GROUPS row -->
+                                <tr>
+                                    <td align="center" valign="top" bgcolor="#eeeeee">
+                                        <table style="width:640px;" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap100">
+                                            <tr>
+                                                <td align="center" valign="top" bgcolor="#eeeeee">
+                                                    <table style="width:640px;" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap100">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="width:540px;" align="middle" valign="middle" bgcolor="#eeeeee">
+                                                                    <img src="https://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/NETUG-logo-group.png" style="width:254px;" alt="net" border="0">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="11px">&nbsp;</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                    <table style="width:640px;" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap100">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="middle" valign="middle" bgcolor="#eeeeee" style="width:540px;font-weight:bold;font-family: 'Open Sans',Arial, Helvetica, sans-serif; font-size:30px; color:#cc4141; font-weight:300; text-transform:uppercase; line-height:14px; padding:0 16px 0 0;">
+                                                                    <strong style="color:#999999;font-size:36px;">[</strong>
+                                                                    ONLINE & LIVE EVENTS
+                                                                    <strong style="color:#999999; font-size:42px;">]</strong>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="22px">&nbsp;</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td align="center" valign="top" bgcolor="#eeeeee">
+                                        <!-- Grey NETUG Section -->
+                                        <table border="0" align="center" cellpadding="0" cellspacing="0">
+                                            <!-- Sydney UG Info -->
+                                            <tr>
+                                                <td align="left" valign="top">
+                                                    <table class="wrap1001" style="width:602px;" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td height="22px">&nbsp;</td>
+                                                        </tr>
+
+                                                        <!-- Session Segment -->
+                                                        <tr>
+                                                            <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;">
+                                                                <!-- EDIT HERE -->
+                                                                <h3 style="font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size:14px; text-align:center; margin: 0px 0px 20px 0px;">Freedom User Group: We are back in the house! Now that Sydney is opening up, we are happy to announce that we can meet again in person if you're fully vaccinated (or online)!
+																<br>If you are double vaccinated and would like to visit our Sydney or Brisbane office, let us know! Email: info@ssw.com.au
+																
+                                                                <h3 style="font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size:18px; color:#cc4141;padding: 0 0 0 0; margin: 0 0 0 0;font-weight:normal;">
+                                                                Real-time analytics on tap with HTAP with Prem Radhakrishnan</h3>
+															
+																<p>Get started with Hybrid transaction/analytical processing (HTAP) in Azure. This talk will explore real time analytics in Azure without traditional ETL processes and data warehouses.</p>
+																<p>What kind of use cases can you implement with HTAP, and what does this mean for the traditional data warehousing model? Join Prem for this month's user group to find out more about this exciting possibility.</p> 
+																</tr>
+                                                        <!-- END Session Segment -->
+                                                        <!-- Presenter Segment -->
+                                                        <tr>
+                                                            <td align="left" valign="top">
+                                                                <table style="width:100%;" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                    <tr>
+                                                                        <td style="width:120px;" align="left" valign="top">
+                                                                            <!-- EDIT HERE -->
+                                                                            <br />
+                                                                            <img src="https://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Prem-Profile-Square.jpg"
+                                                                                 style="width:120px;height:115px;" alt="Prem Radhakrishnan" border="0"/>
+                                                                            <!-- END EDIT HERE -->
+                                                                        </td>
+																		
+                                                                        <td style="width:22px;" align="left" valign="top"></td>
+                                                                        <td style="width:440px;font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;" align="left"
+                                                                            valign="top">
+                                                                             <!-- EDIT HERE -->
+                                                                            <br><p><strong>Prem Radhakrishnan</strong> is a Solution Architect at SSW and brings over 12 years of enterprise software development and management experience to the SSW Team. Having worked with clients across various domains including telcom (Vodafone, Telstra), automotive (Toyota, Audi, Mercedes Benz and more), pharma (Bayer, Schering Plough) and retail (Big W, Dick Smith, Navman), Prem specialises in building bespoke solutions and platforms for his clients.</p>
+																																																									
+																			
+																			 <!-- END EDIT HERE -->
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="22px">&nbsp;</td>
+                                                        </tr>
+                                                      
+                                                        <!-- END Presenter Segment -->
+                                                        <!-- Online Session Segment -->
+                                                        <tr>
+                                                            <td align="left" valign="top">
+                                                                <table style="width:100%;" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td style="width:310px;" align="center" valign="top">
+                                                                                <a href="https://www.ssw.com.au/ssw/NETUG/Brisbane.aspx" target="_blank">
+                                                                                    <img src="https://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/NETUG-online.png" style="width:310px;height:54px;" alt="net" border="0" align="middle">
+                                                                                </a>
+                                                                            </td>
+                                                                            <td style="width:22px;" align="left" valign="top"></td>
+                                                                            <td style="width:270px;" align="left" valign="top">
+                                                                                <table style="width:100%;margin-bottom: 5px;" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td align="center" valign="middle" bgcolor="#bbbbbb" style="width:54px;height:54px;font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#444444; font-weight:normal;text-transform:uppercase;">
+                                                                                                <!-- EDIT HERE -->
+                                                                                                <strong>NOV</strong>
+                                                                                                <br>
+                                                                                                <strong style="font-size:24px; line-height:21px;">17</strong>
+                                                                                                <br>WED
+                                                                                                <!-- END EDIT HERE -->
+                                                                                            </td>
+
+                                                                                            <td align="left" valign="middle" bgcolor="#cccccc" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#444444; font-weight:normal; padding:0 0 0 18px;">
+                                                                                                <!-- EDIT HERE -->
+                                                                                                <strong>SSW Sydney, Brisbane & on the Livefeed ssw.com.au/ssw/live</strong>
+                                                                                                <!-- END EDIT HERE -->
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                <table border="0" align="left" cellpadding="0" cellspacing="0">
+                                                                                    <!-- EDIT HERE -->
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td style="width:70px;">
+                                                                                                <a href="https://www.facebook.com/events/1151315281942990" target="_blank">
+                                                                                                    <img src="https://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/btn-fb.png" style="width:65px;height:30px;" alt="fb" border="0" align="left">
+                                                                                                </a>
+                                                                                            </td>
+                                                                                            <td style="width:60px;">
+                                                                                                <a href="https://www.linkedin.com/events/6863329963060412416/" target="_blank">
+                                                                                                    <img src="https://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/btn-linkedin.png" style="width:55px;height:30px;" alt="linkedin" border="0" align="left">
+                                                                                                </a>
+                                                                                            </td>
+                                                                                            <td style="width:55px;">
+                                                                                                <a href="https://www.meetup.com/Sydney-NET-User-Group/events/280432800/" target="_blank">
+                                                                                                    <img src="https://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/btn-meetup.png" style="width:50px;height:30px;" alt="meetup" border="0" align="left">
+                                                                                                </a>
+                                                                                            <td>
+                                                                                            <td style="width:77px;">
+                                                                                                <a href="https://www.ssw.com.au/ssw/Live/" target="_blank">
+                                                                                                    <img src="https://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Template/btn-livestream.png" style="width:72px;height:30px;" alt="Livestream" border="0" align="left">
+                                                                                                </a>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <!-- END EDIT HERE -->
+                                                                                    </tbody>
+                                                                                </table>
+
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- END Online Session Segment -->
+
+                                                        <tr>
+                                                            <td height="44px">&nbsp;</td>
+                                                        </tr>
+
+                                                        <!-- END Sydney Sessions Details Segment -->
+                                                        
+                                                    </table>
+
+                                                </td>
+                                            </tr>
+                                            <!-- END Sydney UG Info -->
+                                            <tr>
+                                                <td height="22px">&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- END Dark Grey Content -->
+        <!-- Black Footer  -->
+        <tr>
+            <td align="center" valign="top" bgcolor="#333333">
+                <table style="width:640px;" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap100">
+                    <!-- White Hiring Section -->
+                    <tr>
+                        <td align="center" valign="top" bgcolor="#ffffff">
+                            <table class="wrap1001" style="width:602px;" border="0" align="center" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <td height="11px">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" valign="top" style="font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size:30px; color:#cc4141;font-weight:300;">SSW is Hiring!</td>
+                                        <td align="left" valign="top"></td>
+                                        <td align="right" valign="middle" style="height:35px;font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size:12px; color:#448ccb;font-weight:normal;">
+                                            <a href="https://www.ssw.com.au/ssw/Employment/Employment.aspx" target="_blank" style="color:#448ccb; text-decoration:none;">More SSW jobs</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:290px;font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;padding:0 0 15px 0;" align="left" valign="top">
+                                            <!-- EDIT HERE -->
+                                            <p>
+                                                <strong style="color:#777777; font-size:14px;">Cloud Architect</strong>
+                                                <br />SSW Sydney, Brisbane, Melbourne, Newcastle
+                                            <p>SSW is looking for an enthusiastic Cloud Architect with a strong understanding of DevOps and .NET</p>
+											<p>This role requires great communication skills and solid experience in delivering production-ready web solutions. Further, we encourage you to take ownership of your relationship with clients and build meaningful connections, to think critically, and create the right solution for the right job.</p>
+                                            <p><a href="https://www.ssw.com.au/ssw/Employment/Employment.aspx" target="_blank" style="color:#448ccb; text-decoration:none;">Read More</a></p>
+                                            <!-- END EDIT HERE -->
+                                        </td>
+                                        <td style="width:22px;" align="left" valign="top"></td>
+                                        <td style="width:290px;font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; font-weight:normal;padding:0 0 15px 0;" align="left" valign="top">
+                                            <!-- EDIT HERE -->
+                                            <p>
+                                                <strong style="color:#777777; font-size:14px;">Full Stack .NET Developer</strong>
+                                                <br />SSW Sydney, Brisbane, Melbourne, Newcastle 
+                                            </p>
+                                            <p>This role requires great communication skills and solid experience in delivering production-ready web solutions. You will be working with our expert developers and designers in a wide variety of exciting enterprise projects. </p>
+                                            <p>This role requires someone who can work closely with clients, think critically, and create the right solution for the right job. .NET experience is a must.</p>
+                                            <p><a href="https://www.ssw.com.au/ssw/Employment/Employment.aspx" target="_blank" style="color:#448ccb; text-decoration:none;">Read More</a></p>
+                                            <!-- END EDIT HERE -->
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- END White Hiring Section -->
+                    <!-- Footer -->
+                    <tr>
+                        <td align="left" valign="middle" style="border-bottom:1px solid #444444; padding:10px 0 10px 0;">
+                            <table style="width:100%;" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td align="left" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#7e7e7e; font-weight:normal;">Copyright © SSW 1990-2020. All Rights Reserved.</td>
+                                    <td align="right" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#7e7e7e; font-weight:normal;">
+                                        Proudly developed by <a href="https://www.ssw.com.au/" style="color:#7e7e7e; text-decoration:none;">SSW Sydney Web Design</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#7e7e7e; font-weight:normal; text-transform:uppercase;padding:10px 0 10px 0;">
+                            <a href="mailto:info@ssw.com.au?subject=Advertisting" style="color:#7e7e7e; text-decoration:none;">Advertise with SSW</a> |
+                            <a href="mailto:info@ssw.com.au?subject=Unsubscribe" target="_blank" style="color:#7e7e7e; text-decoration:none;">Unsubscribe</a> |
+                            <a href="https://www.ssw.com.au/ssw/NETUG/SSWUpdatePrevious.aspx" target="_blank" style="color:#7e7e7e; text-decoration:none;">Previous SSW Updates</a> |
+                            <a href="mailto:info@ssw.com.au?subject=Got a hot tip to share?" target="_blank" style="color:#7e7e7e; text-decoration:none;">Got a Hot Tip to share?</a> |
+                            <a href="mailto:info@ssw.com.au?subject=Got a comment?" target="_blank" style="color:#7e7e7e; text-decoration:none;">Got a comment?</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="11px">&nbsp;</td>
+                    </tr>
+                    <!-- END Footer -->
+                </table>
+            </td>
+        </tr>
+        <!-- END Black Footer -->
+    </table>
+</body>
+
+</html>

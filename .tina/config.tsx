@@ -1,4 +1,4 @@
-import { defineStaticConfig, TinaCMS, wrapFieldsWithMeta } from "tinacms";
+import { defineStaticConfig, TinaCMS } from "tinacms";
 import { consultingSchema } from "./collections/consulting";
 import { globalSchema } from "./collections/global";
 import { marketingSchema } from "./collections/marketing";

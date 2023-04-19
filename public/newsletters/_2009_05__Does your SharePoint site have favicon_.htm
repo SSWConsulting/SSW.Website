@@ -1,0 +1,573 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <script language="javascript" type="text/javascript">
+        //generate email
+        function sendEmail(encodedEmail) {
+            // do the mailto: link
+            location.href = "mailto:" + decodeEmail(encodedEmail) + "?subject=''";
+        }
+
+        //generate email with subject
+        function sendEmail(encodedEmail, emailSubject) {
+            // do the mailto: link
+            location.href = "mailto:" + decodeEmail(encodedEmail) + "?subject=" + emailSubject;
+        }
+
+        // return the decoded email address
+        function decodeEmail(encodedEmail) {
+            // holds the decoded email address
+            var email = "";
+
+            // go through and decode the email address
+            for (i = 0; i < encodedEmail.length; ) {
+                // holds each letter (2 digits)
+                var letter = "";
+                letter = encodedEmail.charAt(i) + encodedEmail.charAt(i + 1);
+
+                // build the real email address
+                email += String.fromCharCode(parseInt(letter, 16));
+                i += 2;
+            }
+
+            return email;
+        }
+
+        // display the email address in the statusbar
+        function displayStatus(encodedEmail) {
+            window.status = "mailto:" + decodeEmail(encodedEmail);
+        }
+
+        // clear the statusbar message
+        function clearStatus() {
+            window.status = "";
+        }
+    </script>
+
+    <title>SSWUpdate - Does your SharePoint site have favicon?</title>
+    <style type="text/css">
+        body
+        {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            margin: 0px;
+        }
+        h1
+        {
+            color: #a7a9ac;
+            font-size: 30px;
+        }
+        td, th
+        {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 11px;
+        }
+        .sectionTitle
+        {
+            font-family: "Century Gothic" , Arial, Verdana, Helvetica, sans-serif;
+            font-size: 20px;
+            color: #f25622;
+            font-weight: normal;
+        }
+        .newsTitle
+        {
+            color: #f25622;
+            font-size: 14px;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+        .magazineTitle
+        {
+            font-family: "Century Gothic" , Arial, Helvetica, sans-serif;
+            color: #f25622;
+            font-weight: normal;
+            font-size: 30px;
+        }
+        .section
+        {
+            border-top: 1px #cccccc dotted;
+        }
+        .copyright
+        {
+            font-weight: bold;
+            color: #999999;
+            font-size: 10px;
+        }
+        .proudly
+        {
+            font-weight: normal;
+            font-size: 9px;
+            color: #999999;
+        }
+        .proudly a
+        {
+            color: #999999;
+        }
+        .noborder
+        {
+            border: none;
+        }
+        .footer a
+        {
+            color: gray;
+        }
+        .signature
+        {
+            font-style: italic;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body bgcolor="#e7e7cf">
+    <table width="710" border="0" align="center" cellpadding="0" cellspacing="0" id="container"
+        bgcolor="white" style="border: 1px #cccccc solid; font-family: Verdana, Geneva, sans-serif;">
+        <tr>
+            <td width="100%" bgcolor="#efefef">
+                <table width="98%" border="0" cellspacing="0" cellpadding="15">
+                    <tr>
+                        <td>
+                            <strong>SSWUpdate - </strong>Does your SharePoint site have favicon?
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td width="200" valign="middle" bgcolor="#efefef" style="border-top: 4px #f26522 solid;
+                border-left: 1px #cccccc solid;">
+                <img src="/ssw/images/Gold_Certified_Partner74x35.gif" alt="Microsoft Gold Partner Logo"
+                    width="75" height="35" align="right" style="padding: 5px;" />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <table width="100%" border="0" cellspacing="0" cellpadding="20">
+                    <tr>
+                        <td>
+                            <a href="/ssw/Events/SSWTechBreakfast.aspx">
+                                <img src="/ssw/Images/SSWTechBreakfastBanner.gif" alt="SSW Tech Breakfast"
+                                    width="468" height="60" border="0" /></a>
+                            <h1>
+                                [<span class="magazineTitle"> the cutting edge</span> ]</h1>
+                            <p>
+                                G'Day Developers!</p>
+                            <p>
+                                A Favicon is a small image file included on nearly all professional developed SharePoint
+                                sites. The Favicon reflects the look and feel of the SharePoint site or the organizations
+                                logo.
+                            </p>
+                            <dl class="goodImage">
+                                <dt>
+                                    <img src="/ssw/Standards/Rules/Images/good_SP_favicon.gif" alt="Good Example" /></dt>
+                                <dd>
+                                    Figure: Good Example - Using the favicon gives your SharePoint site a very professional
+                                    look and feel.</dd>
+                            </dl>
+                            <p>
+                                Internet Explorer ("IE") 5.0 and above has a function that, if someone bookmarks
+                                the page, it will look for favicon.ico from the directory of the web page, if not
+                                found it will look for it from the root directory of the SharePoint site. Otherwise
+                                it will use the default Icon.
+                            </p>
+                            <p>
+                                To implement the favicon:</p>
+                            <ol>
+                                <li>Copy your company's .ico icon to the root of the site and rename it to <b>favicon.ico</b></li>
+                                <li>Add the yellow code between the &lt;HEAD&gt; tags in your MasterPage.master (or
+                                    regular HTML/ASPX page)</li>
+                            </ol>
+                            <p>
+                                Note: If you put the icon with the default file name of favicon.ico in the root
+                                directory of your domain, you don't need to add the following code. Because each
+                                time your Web page is added to a user's favorites, Internet Explorer automatically
+                                searches for this file from the root directory and places the icon next to all the
+                                favorites and quick links originating from your site.</p>
+                            <p>
+                                See more of the <a href="/ssw/Standards/Rules/RulesToBetterSharePoint.aspx#Favicon">
+                                    SSW Rules</a> pages.</p>
+                            <p class="signature">
+                                Adam Cogan</p>
+                            <p>
+                                Got a comment for Adam? <a target="_blank" href="javascript:sendEmail('4164616d436f67616e405353572e636f6d2e6175')"
+                                    onmouseover="javascript:displayStatus('4164616d436f67616e405353572e636f6d2e6175'); return true;"
+                                    onmouseout="javascript:clearStatus(); return true;">Email Adam</a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="newsTitle">
+                                Sydney .NET User Group -
+                                <br />
+                                The best place to learn .NET for free in Sydney</h3>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="210" valign="top">
+                                        <img src="/ssw/NETUG/SSWUpdate/images/UserGroupNov2004.jpg"
+                                            alt=".NET User Group" height="133" width="200" />
+                                    </td>
+                                    <td valign="bottom">
+                                        <h3>
+                                            6 days to go!</h3>
+                                        <p>
+                                            <a href="/ssw/NETUG/Sydney.aspx">Sydney .NET User Group</a><br />
+                                            Wednesday 20th May 2009<br />
+                                            5:45pm - 9:00pm<br />
+                                            Microsoft, Sydney<br />
+                                            1 Epping Road, North Ryde
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>
+                                <strong>Something About Mary (SharePoint and Office 2010) by <a href="http://www.adamcogan.com">
+                                    Adam Cogan</a></strong></p>
+                            <p>
+                                Come see Adam Cogan explain what works well with SharePoint and Office for Mary
+                                and the other knowledge workers.</p>
+                            <p>
+                                First you will get an overview of what is great about having SharePoint in your
+                                business.</p>
+                            <p>
+                                Then see real world examples of:</p>
+                            <ul>
+                                <li>Using SharePoint 2010 and Office 2010 together</li>
+                                <li>Where it fits with other important Microsoft products like CRM 4 and TFS</li>
+                                <li>Examples of how Word and Excel can be integrated into business processes (separate
+                                    from SharePoint), and then followed by</li>
+                                <li>Examples of how Word, Excel, PowerPoint can be combined with SharePoint to improve
+                                    visibility/searchability/versioning across the company</li>
+                                <li>Overview of how data can be synchronized between the two (eg using Access and Excel)</li>
+                                <li>Overview of what 'workflow' (really!) means</li>
+                                <li>How Office can be incorporated into company workflows with SharePoint</li>
+                                <li>Extending SharePoint with Office SharePoint Designer 2010 (free!)</li>
+                                <li>Where VBA and VSTO fit in terms of how solutions can be developed </li>
+                                <li>Examples of other interesting Office/SharePoint integrations 
+                                (eg the the Atlassian SharePoint Connector and Atlassian Office Connector)</li>
+
+                            </ul>
+                            <p>
+                                The session will be informal so there's plenty of opportunities for asking questions.
+                                This is a good chance for you to consider new ways of using Office in your company,
+                                along with pitfalls to avoid. Adam gets excited about this session because too often
+                                companies limit Office to just an email application, word processor and spreadsheet
+                                - completely missing the positive impact it can have on the entire business process.</p>
+                            <p>
+                                <strong>Data access in Microsoft CRM and SharePoint by George Doubinski</strong></p>
+                            <p>
+                                George Doubinski is going to show you how to get data in and out for two Microsoft
+                                flagship products: Microsoft CRM and Microsoft SharePoint. You will see:</p>
+                            <ul>
+                                <li>Two alter-egos attempting to do the tasks: Nancy, the ultimate end-user and Doug,
+                                    the propeller head</li>
+                                <li>Importing data from Excel spreadsheets including the relationships</li>
+                                <li>Filtering, grouping and sorting your data and exporting the results</li>
+                                <li>Techniques from point and click (Nancy) down to Visual Studio code (Doug)</li>
+                                <li>See for yourself strengths and weaknesses of Microsoft CRM and Microsoft SharePoint
+                                    in relation to external data</li>
+                            </ul>
+                            <p>
+                                To see more details and RSVP, please visit our <a href="http://www.facebook.com/group.php?gid=12452677980">
+                                    facebook .NET group</a> or our <a href="http://www.linkedin.com/groups?gid=1520317&trk=hb_side_g">
+                                        LinkedIn .NET group</a>.</p>
+                            <br />
+                            <table border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="320" align="center">
+                                        <a href="http://www.facebook.com/group.php?gid=12452677980">
+                                            <img src="/ssw/NETUG/Images/Facebook.gif" alt="facebook" class="noborder" /></a>
+                                    </td>
+                                    <td width="320" align="center">
+                                        <a href="http://www.linkedin.com/groups?gid=1520317&trk=hb_side_g">
+                                            <img src="/ssw/NETUG/Images/LinkedIn.gif" alt="LinkedIn" class="noborder" /></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="newsTitle">
+                                Canberra .NET User Group -
+                                <br />
+                                The best place to learn .NET for free in Canberra</h3>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td valign="top" width="210">
+                                        <img src="/ssw/Images/CanbUG.jpg" alt="Canberra User Group"
+                                            width="200" height="133" />
+                                    </td>
+                                    <td valign="bottom">
+                                        <h3>
+                                            11 days to go!</h3>
+                                        <p>
+                                            <a href="/ssw/NETUG/Canberra.aspx">Canberra .NET Developers User
+                                                Group</a><br />
+                                            Monday 18th May 2009</p>
+                                        <p>
+                                            Lunch: 12:30pm - 1:30pm<br />
+                                            King O'Malley's Irish Pub<br />
+                                            131 City Walk<br />
+                                            Canberra City<br />
+                                            <br />
+                                            Dinner: 4:30pm - 6:00pm
+                                            <br />
+                                            Microsoft Canberra Branch<br />
+                                            Walter Turnbull Building<br />
+                                            Level 2, 44 Sydney Ave
+                                            <br />
+                                            Barton ACT</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>
+                                <strong>Something About Mary (SharePoint and Office 2007) by <a href="http://www.AdamCogan.com/">
+                                    Adam Cogan</a></strong></p>
+                            <p>
+                                Come see Adam Cogan explain what works well with SharePoint and Office for Mary
+                                and the other knowledge workers.</p>
+                            <p>
+                                First you will get an overview of what is great about having SharePoint in your
+                                business.</p>
+                            <p>
+                                Then see real world examples of:</p>
+                            <ul>
+                                <li>Using SharePoint 2007 and Office 2007 together</li>
+                                <li>Where it fits with other important Microsoft products like CRM 4 and TFS</li>
+                                <li>Examples of how Word and Excel can be integrated into business processes (separate
+                                    from SharePoint), and then followed by</li>
+                                <li>Examples of how Word, Excel, PowerPoint can be combined with SharePoint to improve
+                                    visibility/searchability/versioning across the company</li>
+                                <li>Overview of how data can be synchronised between the two (eg using Access and Excel)</li>
+                                <li>Overview of what 'workflow' (really!) means</li>
+                                <li>How Office can be incorporated into company workflows with SharePoint</li>
+                                <li>High level examples of using/integrating Office with other products (eg VSTS integration
+                                    with Outlook)</li>
+                                <li>Where VBA and VSTO fit in terms of how solutions can be developed </li>
+                                <li>Examples of other interesting Office/SharePoint integrations (eg the <a href="http://www.atlassian.com/sharepoint/">
+                                    Atlassian SharePoint Connector</a> and <a href="http://www.atlassian.com/office/">Office
+                                        Connector</a>)</li>
+                            </ul>
+                            <p>
+                                The session will be informal so there's plenty of opportunities for asking questions.
+                                This is a good chance for you to consider new ways of using Office in your company,
+                                along with pitfalls to avoid. Adam gets excited about this session because too often
+                                companies limit Office to just an email application, word processor and spreadsheet
+                                - completely missing the positive impact it can have on the entire business process.</p>
+                            <p>
+                                To see more details and RSVP, please visit our <a href="http://www.facebook.com/group.php?gid=31380367562">
+                                    facebook .NET group</a> or our <a href="http://www.linkedin.com/groups?gid=1520387&amp;trk=hb_side_g">
+                                        LinkedIn .NET group</a>.
+                            </p>
+                            <table border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="320" align="center">
+                                        <a href="http://www.facebook.com/group.php?gid=12452677980">
+                                            <img src="/ssw/NETUG/Images/Facebook.gif" alt="facebook" class="noborder" /></a>
+                                    </td>
+                                    <td width="320" align="center">
+                                        <a href="http://www.linkedin.com/groups?gid=1520317&trk=hb_side_g">
+                                            <img src="/ssw/NETUG/Images/LinkedIn.gif" alt="LinkedIn" class="noborder" /></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="newsTitle">
+                                <a name="SharePoint101Workshop" id="A1"></a>SharePoint 101 Workshop -<br />
+                                What every business person should know about SharePoint 2007</h3>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td valign="top" style="width: 200px">
+                                        <img src="/ssw/NETUG/Images/sharepoint_logo_image.jpg" alt="SharePoint"
+                                            height="133" width="200" />
+                                    </td>
+                                    <td valign="bottom">
+                                        <p>
+                                           SharePoint 101 Workshop<br />
+                                            Wednesday 27th May 2009<br />
+                                            8:00am - 11:00am<br />
+                                            SSW Office, Sydney<br />
+                                            Suite 10, 81-91 Military Road, Neutral Bay<br />
+                                            <b>Cost: No Charge </b>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>
+                                <strong>Workshop Objective</strong></p>
+                            <p>
+                                This workshop will provide the attendees with:</p>
+                            <ul>
+                                <li>An understanding of how key features of SharePoint can enhance business processes</li>
+                                <li>An understanding of the costs, timelines, staff involvement and commitment a business
+                                    will incur when implementing SharePoint</li>
+                            </ul>
+                            <p>
+                                <strong>Workshop Outline</strong></p>
+                            <ul>
+                                <li>Why should your business use SharePoint 2007?</li>
+                                <li>Differences between Windows SharePoint Services (WSS) and Microsoft Office SharePoint
+                                    Services (MOSS)</li>
+                                <li>Explanation and demonstration of the business challenges the SharePoint feature
+                                    set solve</li>
+                                <li>SharePoint in regards to implementation, costs and timelines</li>
+                                <li>SharePoint 2007 and the User Experience (custom design)</li>
+                                <li>SharePoint Development - What if I need more than SharePoint's out of the box functionality?</li>
+                            </ul>
+                            Find out more and
+                                Register
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="newsTitle">
+                                <a name="featuredproduct" id="featuredproduct"></a>Featured Product: SSW Link Auditor</h3>
+                            <p>
+                                <a href="/ssw/LinkAuditor/">
+                                    <img class="noborder" alt="SSW Link Auditor" src="/ssw/LinkAuditor/Images/productbox.gif"
+                                        align="right" /></a><strong>Automate Your Link Validation with SSW Link Auditor</strong></p>
+                            <p>
+                                Are you finding it impossible to manage links on your ever growing website? A common
+                                problem companies face is maintaining links over ever growing web sites. SSW Link
+                                Auditor is a simple and powerful solution to the problem. This fast and effective
+                                utility keeps your website up to date, and helps to resolve intricate linking and
+                                referencing issues. An added benefit you get is an increase in Google Page Rank
+                                for your pages.
+                            </p>
+                            <p>
+                                <a href="/ssw/LinkAuditor/">More on SSW's Link Auditor</a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="newsTitle">
+                                Advertise with SSW</h3>
+                            <p>
+                                If you would like to advertise your product or service with SSW or would like to
+                                find out more about various advertising opportunities, please email your enquiry
+                                to <a href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175')"
+                                    onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                    onmouseout="javascript:clearStatus(); return true;">sophiebelle</a> or call:
+                                +61 2 9953 3000.</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top" style="border-left: 1px #cccccc solid;" bgcolor="#eeeeee">
+                <img alt="SSW Update" src="/SSW/NETUG/SSWUpdate/Images/featureImage03.jpg"
+                    width="200" height="300" class="featureimage" />
+                <table width="100%" border="0" cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td bgcolor="#FFFFFF">
+                            <h3 class="sectionTitle">
+                                May 2009</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="sectionTitle">
+                                Tech Breakfast</h3>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td width="55" valign="top">
+                                        <img src="/ssw/NETUG/SSWUpdate/Images/Icon_techbreakfast.gif"
+                                            alt="Join us for Tech Breakfast" height="46" width="46" />
+                                    </td>
+                                    <td valign="top">
+                                        <strong>15 days to go </strong>
+                                        <p>
+                                            SYDNEY: SharePoint - Yellow Brick Road</p>
+                                        <p style="color: #666666;">
+                                            Friday, 29th May 2009<br />
+                                            8:00am-11:00am</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>
+                                Come and join us as we learn how the largest public SharePoint site in Australia
+                                (www.WorleyParsons.com) got up and running.<br />
+                                Adam Cogan of SSW will share his experience and lessons learnt on this project.
+                                Adam will also show you how to &#8220;sexify&#8220; the look and feel of your website.
+                            </p>
+                            <p align="right">
+                                <a href="/ssw/Shop/BasketInsert.aspx?ProductID=TBSPYB">
+                                    <img src="/ssw/Images/Button_Register_small.gif" alt="Register Now"
+                                        border="0" /></a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="section">
+                            <h3 class="sectionTitle">
+                                Employment</h3>
+                            <p>
+                                Due to the tremendous growth that our business has experienced over the last few
+                                months, we are seeking enthusiastic people to join the SSW team.</p>
+                            <p>
+                                Our Company is based in Neutral Bay which is one of the most elegant and scenic
+                                areas of Sydney. SSW is an Australian owned progressive consulting firm specialising
+                                in building, implementing and maintaining Microsoft .NET software applications.</p>
+                            <p>
+                                We are currently strongly looking for a <strong>SharePoint Developer</strong>.</p>
+                            <p>
+                                We are also currently looking for:</p>
+                            <ul style="font-weight: bold;">
+                                <li>ASP.NET, VB.NET, C#, OLAP, SharePoint Software Developer </li>
+                                <li>Technical BDM in Melbourne, Brisbane, or Canberra</li>
+                                <li>IT Senior Marketing Consultant (part-time)</li>
+                                <li>Project Manager</li>
+                            </ul>
+                            <p>
+                                <a href="/ssw/Employment/Employment.aspx">Read more and Apply NOW...</a></p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table align="center" width="710">
+        <tr>
+            <td class="copyright">
+                Copyright &copy; SSW 1990-2009. All Rights Reserved.
+            </td>
+            <td class="proudly" align="right">
+                Proudly developed by <a href="">SSW Sydney Web Design</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table>
+                    <tr valign="top" class="footer">
+                        <td valign="top" align="center">
+                            <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','=Advertisting')"
+                                onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                onmouseout="javascript:clearStatus(); return true;">Advertise with SSW</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','Unsubscribe')"
+                                onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                onmouseout="javascript:clearStatus(); return true;">Unsubscribe</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" href="/ssw/Events/SSWTechBreakfastprevious.aspx">
+                                Previous SSW Updates</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','Got a Hot Tip to share?')"
+                                onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                onmouseout="javascript:clearStatus(); return true;">Got a Hot Tip to share?</a>
+                            |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" href="javascript:sendEmail('736f7068696562656c6c65405353572e636f6d2e6175','About%20your%20newsletter')"
+                                onmouseover="javascript:displayStatus('736f7068696562656c6c65405353572e636f6d2e6175'); return true;"
+                                onmouseout="javascript:clearStatus(); return true;">Got a comment to make?</a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

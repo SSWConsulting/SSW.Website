@@ -1,0 +1,624 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    
+<title>SSW Update - Do you format and comment your regular expressions?</title>
+    
+    <script src="/ssw/Include/jquery.js" type="text/javascript"></script>
+
+    <script src="/ssw/Include/decodeMailNew.js" type="text/javascript"></script>
+
+</head>
+
+<body bgcolor="#e7e7cf">
+<style type="text/css">
+    body {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; margin: 0px;}
+	h1 {color: #a7a9ac; font-size: 30px;}
+    td, th {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;}    
+    .sectionTitle {font-family: "Century Gothic", Arial, Verdana, Helvetica, sans-serif; font-size: 20px; color: #f25622;	font-weight: normal;}
+    .newsTitle {color: #f25622; font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif;}        
+    .magazineTitle {font-family: "Century Gothic", Arial, Helvetica, sans-serif; color: #f25622; font-weight: normal; font-size: 30px;}
+    .section {border-top: 1px #cccccc dotted;}        
+    .copyright {font-weight: bold; color: #999999;	font-size: 10px;}     
+    .proudly {font-weight: normal; font-size: 9px; color: #999999;}
+	.proudly a {color:#999999;}
+    .noborder {border: none;}
+    .footer a {color: gray;}
+	.signature {font-style:italic; font-weight:bold;}
+	dl dd {background-repeat: no-repeat;background-color: transparent;padding: 0 0 10px 20px;}
+    .goodCode dd {background-image: url(/ssw/Standards/Rules/images/Good.gif);}
+    .badCode dd {background-image: url(/ssw/Standards/Rules/images/Bad.gif);}
+    dl dt {background: #eee; border-width: 1px 1px 1px 4px; border-color: #aaa; border-style: solid; padding: 10px; margin: 10px 5px 2px 5px; font-family: Courier;}
+    
+table#BrainQuest {font-family:Verdana, Geneva, sans-serif; border: 0px white solid; border-top: 4px #B6B6B6 solid; font-size:11px; width:465px;  padding: 0; margin: 0;}
+table#BrainQuest tr.header td {background-color: #F5f5f5; color: #444444; font-size: 14px; padding: 5px 0px 10px 4px; margin: 0; border-top: 2px white solid; border-bottom: 2px white solid;}
+table#BrainQuest tr.header td span {color: #aaaaaa; font-size: 10px; text-transform:uppercase;}
+table#BrainQuest td.first {margin: 0; background:#E5E5E5 url(/ssw/images/schedulebg.png) no-repeat scroll right center; height:27px; overflow:hidden; padding:6px 8px 7px 4px; white-space:nowrap; width:100px; font-weight:bold; color: #aaa; font-size: 10px;}
+table#BrainQuest td.first span {color: Black;}
+table#BrainQuest td img {border: none;}
+table#BrainQuest td.button {text-align: center;}
+table#BrainQuest td.button a {border: none;}
+    
+    
+    
+</style>
+
+<table width="710" border="0" align="center" cellpadding="0" cellspacing="0" id="container" bgcolor="white" style="border: 1px #cccccc solid; font-family:Verdana, Geneva, sans-serif;">
+	<tr>
+		<td width="100%" bgcolor="#efefef">
+		<table width="98%" border="0" cellspacing="0" cellpadding="15">
+			<tr>
+				<td><strong>SSW Update - </strong>Do you format and comment your regular expressions?</td>
+			</tr>
+		</table>
+		</td>
+		
+      <td width="200" valign="middle" bgcolor="#efefef" style="border-top: 4px #f26522 solid; border-left: 1px #cccccc solid;">
+		<img src="/ssw/images/Gold_Certified_Partner74x35.gif" alt="Microsoft Gold Partner Logo" width="75" height="35" align="right" style="padding: 5px;" />
+      </td>
+	</tr>
+	<tr>
+		<td valign="top">
+		<table width="100%" border="0" cellspacing="0" cellpadding="20">
+			<tr>
+				<td>
+				<a href="/ssw/Events/SSWTechBreakfast.aspx">
+				<img src="/ssw/Images/SSWTechBreakfastBanner.gif" alt="SSW Tech Breakfast" width="468" height="60" border="0" /></a>
+
+				<h1>[<span class="magazineTitle">the cutting edge</span> ]</h1>
+				<p>G'Day Developers!</p>
+				 
+				 <p>
+                Regular expressions are a very powerful tool for pattern matching, but a 
+                complicated regex can be very difficult for a human to read and to comprehend. 
+                That is why, like any good code, a good regular expression must be well formatted 
+                and documented.</p>
+                
+                <p>
+                Here are some guidelines when formatting and documenting your regex:</p>
+
+                <ol>
+                <li>Keep each line under 80 characters, horizontal scrolling reduces readability.</li>
+                <li>Break long patterns into multiple lines, usually after a space or a line break.</li>
+                <li>Indent bracers to help think in the right scope.</li>
+                <li>Format complicated OR patterns into multiple blocks like a case statement.</li>
+                <li>Comment your regex on what it does, don't just translate it into English.</li>
+            	</ol>
+
+                <dl class="badCode">
+                <dt># Match &lt;BODY<br/>
+                &lt;BODY<br/>
+                # Match any non &gt; char for zero to infinite number of times<br/>
+                [^&gt;]*<br/>
+                # MATCH &gt;<br/>
+                &gt;
+                </dt>
+                <dd>
+                    Bad example: Comment that translates the regex into English.
+                </dd>
+            	</dl>
+
+                <dl class="goodCode">
+                <dt># Match the BODY tag<br/>
+                &lt;BODY<br/>
+                # Match any character in the body tag<br/>
+                [^&gt;]*<br/>
+                # Match the end BODY tag<br/>
+                &gt;
+                </dt>
+                <dd>
+                    Good example: Comment that explains the purpose of the pattern.</dd>
+            </dl>
+
+				<dl class="badCode">
+                <dt>(?six-mn:(Label|TextBox)\s+(?&lt;Name&gt;\w+).*(?&lt;Result&gt;\k&lt;Name&gt;\.TextAlign\s*=\s* 
+                    ((System\.)?Drawing\.)?ContentAlignment\.(?! 
+                    TopLeft|MiddleLeft|TopCenter|MiddleCenter)\w*)(?!(?&lt;=\k&lt;Name&gt;\.Image.*)|(?<br/>
+                    =.*\k&lt;Name&gt;\.Image)))
+                </dt>
+
+                <dd>
+                    Bad Example: Pray you never have to modify this regex.</dd>
+            </dl>
+            <dl class="goodCode">
+                <dt>(?six-mn:<br/>
+                &nbsp;&nbsp;&nbsp; # Match for Label or TextBox control<br/>
+                &nbsp;&nbsp;&nbsp; # Store name into &lt;name&gt; group<br/>
+                &nbsp;&nbsp;&nbsp; (Label|TextBox)\s+(?&lt;Name&gt;\w+).*<br/>
+                <br/>
+                &nbsp;&nbsp;&nbsp; # Match any non-standard TextAlign<br/>
+                &nbsp;&nbsp;&nbsp; # Store any match in Result group for error reporting in CA<br/>
+                &nbsp;&nbsp;&nbsp; (?&lt;Result&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Match for control's TextAlign Property<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \k&lt;Name&gt;\.TextAlign\s*=\s*<br/>
+                <br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Match for possible namespace<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ((System\.)?Drawing\.)?ContentAlignment\.<br/>
+                <br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Match any ContentAlignment that is not in the group<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (?!TopLeft|MiddleLeft|TopCenter|MiddleCenter)\w*<br/>
+                &nbsp;&nbsp;&nbsp; )<br/>
+                <br/>
+                &nbsp;&nbsp;&nbsp; # Skip any Control that has image on it<br/>
+                &nbsp;&nbsp;&nbsp; (?!<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (?&lt;=<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \k&lt;Name&gt;\.Image<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .*<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )<br/>
+                &nbsp;&nbsp;&nbsp; |<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (?=<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .*<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \k&lt;Name&gt;\.Image<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )<br/>
+                &nbsp;&nbsp;&nbsp; )<br/>
+                )
+                            </dt>
+                <dd>
+                    Good Example: Now it make sense!</dd>
+            </dl>
+
+               
+               	<p>See more of the <a href="/ssw/Standards/Rules/">
+					SSW Rules</a> pages.</p>
+                    
+				<p class="signature">Adam Cogan</p>
+				<p>Got a comment for Adam? <a target="_blank" keeptext="false" encode="4164616d436f67616e405353572e636f6d2e6175">
+                                    Email Adam</a></p>
+				</td>
+			</tr>
+						
+			<tr>
+				<td class="section">
+				<h3 class="newsTitle">Sydney .NET User Group - <br />
+				The best place to learn .NET for free in Sydney</h3>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="210" valign="top">
+						<img src="/ssw/NETUG/SSWUpdate/images/UserGroupNov2004.jpg" alt=".NET User Group" height="133" width="200" />
+                </td>
+						<td valign="bottom">
+						<h3>5 days to go!</h3>
+						<p>
+						<a href="/ssw/NETUG/Sydney.aspx">
+						Sydney .NET User Group</a><br />
+						Wednesday 20th January 2010<br />
+						5:45pm - 9:00pm<br />
+						Microsoft, Sydney<br />
+						1 Epping Road, North Ryde
+                        </p>
+					  </td>
+					</tr>
+				</table>
+				
+		<p><strong>SharePoint 2010 - Theory of Evolution
+		by <a href="https://sharepoint.ssw.com.au/AboutUs/Employees/Pages/John.aspx">John Liu</a></strong></p>				
+		
+                		
+        <p>In 2009 John Liu fought in the muddy waters of SharePoint 2007 to bring us Tips from the Trenches.<br/>
+	    This time, he&#8217;s back and this lab monkey bears great news: SharePoint 2010 is totally awesome and the same tips are now super-charged!
+</p>
+	<ol>
+		<li>Design Evolved</li>
+		<li>Content Query Web Part (CQWP) Evolved: XSLT List View (XLV) Web Part</li>
+		<li>Performance Evolved</li>
+		<li>Package Deployment Evolved</li>
+		<li>CAML is dead &#8211; long live LINQ to SharePoint!</li>
+		<li>Debugging ... streamlined</li>
+		<li>SharePoint 2010 wish list &#8211; lots of :-)</li>
+	</ol>
+				                                          			
+                <p>To see more details and RSVP, please visit our <a href="http://www.facebook.com/group.php?gid=12452677980">
+                facebook .NET group</a> or our <a href="http://www.linkedin.com/groups?gid=1520317&trk=hb_side_g">
+                LinkedIn .NET group</a>.</p><br />
+			
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="320" align="center"><a href="http://www.facebook.com/group.php?gid=12452677980"><img src="/ssw/NETUG/Images/Facebook.gif" alt="facebook" class="noborder" /></a></td>
+                    <td width="320" align="center"><a href="http://www.linkedin.com/groups?gid=1520317&trk=hb_side_g"><img src="/ssw/NETUG/Images/LinkedIn.gif" alt="LinkedIn" class="noborder" /></a></td>
+                </tr>
+                </table>
+				</td>
+			</tr>
+			
+          <tr>
+		  <td class="section">
+				<h3 class="newsTitle">Canberra .NET User Group - <br/>
+				The best place to learn .NET for free in Canberra</h3>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td valign="top" width="210">
+
+						<img src="/ssw/Images/CanbUG.jpg" alt="Canberra User Group" width="200" height="133"/></td>
+						<td valign="bottom">
+						<h3>3 days to go!</h3>
+						<p>
+						<a href="/ssw/NETUG/Canberra.aspx">
+						Canberra .NET Developers User Group</a><br/>
+						Monday 18th January 2010</p>
+
+						<p>Lunch: 12:30pm - 1:30pm<br/>
+						King O'Malley's Irish Pub<br/>
+						131 City Walk<br/>
+						Canberra City<br/><br/>
+						Dinner: 4:30pm - 6:00pm <br/>
+
+						Microsoft Canberra Branch<br/>
+						Walter Turnbull Building<br/>
+						Level 2, 44 Sydney Ave <br/>
+						Barton ACT</p>
+						</td>
+					</tr>
+				</table>
+                
+                <p><strong>SharePoint 2010 - Theory of Evolution by
+	<a href="https://sharepoint.ssw.com.au/AboutUs/Employees/Pages/John.aspx">John Liu</a></strong></p>				
+		
+                		
+        <p>In 2009 John Liu fought in the muddy waters of SharePoint 2007 to bring us Tips from the Trenches.<br/>
+	    This time, he&#8217;s back and this lab monkey bears great news: SharePoint 2010 is totally awesome and the same tips are now super-charged!
+</p>
+	<ol>
+		<li>Design Evolved</li>
+		<li>Content Query Web Part (CQWP) Evolved: XSLT List View (XLV) Web Part</li>
+		<li>Performance Evolved</li>
+		<li>Package Deployment Evolved</li>
+		<li>CAML is dead &#8211; long live LINQ to SharePoint!</li>
+		<li>Debugging ... streamlined</li>
+		<li>SharePoint 2010 wish list &#8211; lots of :-)</li>
+	</ol>
+				
+                <p>To see more details and RSVP, please visit our <a href="http://www.facebook.com/group.php?gid=31380367562">
+                facebook .NET group</a> 
+                or our <a href="http://www.linkedin.com/groups?gid=1520387&amp;trk=hb_side_g">
+                LinkedIn .NET group</a>.</p>
+				
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="320" align="center"><a href="http://www.facebook.com/group.php?gid=12452677980"><img src="/ssw/NETUG/Images/Facebook.gif" alt="facebook" class="noborder" /></a></td>
+                    <td width="320" align="center"><a href="http://www.linkedin.com/groups?gid=1520317&trk=hb_side_g"><img src="/ssw/NETUG/Images/LinkedIn.gif" alt="LinkedIn" class="noborder" /></a></td>
+                </tr>
+                </table>
+
+				</td>
+			</tr>
+			
+			<tr>
+			<td class="section">
+				<h3 class="newsTitle">
+				<a name="SSWBrainQuest" id="A1"></a>SSW Brain Quest -<br/>
+				Team Foundation Server and SharePoint 2010</h3>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						<td style="width: 210px;" valign="top">
+						<img src="/ssw/NETUG/SSWUpdate/Images/TFS_SP.jpg" alt="SharePoint" width="200" height="133"/></td>
+						<td valign="bottom">
+						<h3>13 days to go!</h3>
+						<p>
+						<a href="/ssw/Events/VisualStudio2010_TFS2010_SharePoint2010.aspx">
+						SSW Brain Quest</a><br/>
+						Full Day Event: 9:00am - 6:00pm<br/>
+						<strong>All Australian Major Cities</strong><br/>
+						28th January - Brisbane<br/>
+						9th February - Canberra<br/>
+						3rd March - Perth<br/>
+						8th March - Adelaide <br/>
+						10th March - Melbourne <br/>
+						31st March - Sydney
+						</p>
+						</td>
+					</tr>
+				</tbody></table>
+				<p>
+                                    <strong>Team Foundation Server 2010 for Successful Project Management by <a href="https://sharepoint.ssw.com.au/AboutUs/Employees/Pages/Adam.aspx">Adam Cogan</a></strong></p>
+        <p>
+        Visual Studio Ultimate (formerly Visual Studio Team System (VSTS)) and Team Foundation Server (TFS) are the cornerstones of development on the Microsoft .NET platform. 
+        These are the best tools for a project manager to have successful projects and for the developers to have a focused and smooth software development process.</p>
+
+        <p>
+        Come and see Adam Cogan, Microsoft Regional Director, VSTS Champ and Chief Architect from SSW show you:</p>
+            <ul>
+                <li>How to successfully gather requirements with User stories </li>
+                <li>The right want to use work items </li>
+                <li>The way to complete a work items and send a 'done' </li>
+                <li>Use templates for your standard work items </li>
+
+                <li>The extra work items that developers always forget </li>
+                <li>What is good and bad about Excel and Project integration </li>
+                <li>What you can use from the built in reporting as well as the Project portals available on from the SharePoint dashboard </li>
+                <li>The important reports to give your Project Manager </li>
+            </ul>
+        <p>
+        Walk away knowing how to see the project health and progress. Visual Studio Ultimate is designed to help address many of these traditional problems faced by project managers. 
+        It does so by providing a set of integrated tools to help teams improve their software development activities and to help project managers better support the software 
+        development processes.</p>
+
+        <p>
+        During this session we will cover the lifecycle of creating work items and tracking of releases using Visual Studio Ultimate and Team Foundation Server.</p>
+
+    <strong>Visual Studio 2010 Team System - An Overview </strong>
+        <p>Microsoft Visual Studio 2010 Team System is an integrated software development platform to build the mission-critical applications that businesses depend on. It extends 
+        Visual Studio's integrated and productive experience from the developer to the entire development team by delivering powerful new role-based tools for software architects, 
+        developers, testers and project managers. In this session you will see an overview of these tools and how they can improve your software development cycle. </p>
+        
+    <strong>Visual Studio 2010 Testing with Team Foundation Server (TFS) 2010 - the life of a bug </strong>
+        <p>Visual Studio 2010 makes up a large part of a .Net developers life. This session will delve into the 'life of a bug' by taking a walk in the shoes of an everyday bug 
+        from discovery to release (and the steps that make up the in between). Come along and check out the new features that will make you happier by making your code better, your 
+        job easier, and your team more productive by reducing the obstacles you face in your everyday coding life. Learn:</p>
+
+        <ul>
+            <li>What the new features for testers and developers </li>
+            <li>How you now care - even if the tester can't reproduce the bug </li>
+            <li>How to stop struggling to find the source of the bug in your code</li>
+            <li>How can you streamline the testing process and make sure you don't repeat the same bugs</li>
+            <li>How to automate more and reproduce bugs easier and discover problems sooner.</li>
+
+        </ul>
+        
+     <strong>What's new in SharePoint 2010</strong>
+        <p>In this session Adam Cogan will provide information about what is new in SharePoint 2010 and his personal favorites. The SharePoint Team has invested in many including: </p>
+        <ul>
+            <li>UX support for Silverlight and Ajax </li>
+            <li>their Web Content Management System </li>
+            <li>Digital Asset Management System (for videos) </li>
+
+            <li>Visual Studio 2010 tools for SharePoint 2010 </li>
+            <li>Developer Platform </li>
+            <li>Office 2010 integration </li>
+            <li>RESTful Web API </li>
+            <li>Tagging and Rating</li>
+        </ul>
+
+        <p>Lets see what's good and what's not.</p>
+        
+     <strong>Something About Mary (SharePoint 2010 and Office 2010)</strong>
+        <p>
+        Come see Adam Cogan explain what works well with SharePoint and Office for Mary and the other knowledge workers.</p>
+        <p>First you will get an overview of what is great about having SharePoint in your business. Then see real world examples of:</p>
+            <ul>
+                <li>Using SharePoint 2010 and Office 2010 together (Comparing with what with had with 2007)</li>
+
+                <li>Where it fits with other important Microsoft products like CRM 4 and TFS</li>
+                <li>Examples of how Word and Excel can be integrated into business processes (separate from SharePoint), and then followed by </li>
+                <li>Examples of how Word, Excel, PowerPoint can be combined with SharePoint to improve visibility/searchability/versioning across the company </li>
+                <li>Overview of how data can be synchronised between the two (eg using Access and Excel) </li>
+                <li>Overview of what 'workflow' (really!) means </li>
+                <li>How Office can be incorporated into company workflows with SharePoint </li>
+
+                <li>High level examples of using/integrating Office with other products (eg VSTS integration with Outlook) </li>
+                <li>Where VBA and VSTO fit in terms of how solutions can be developed </li>
+                <li>Examples of other interesting Office/SharePoint integrations (eg the <a href="http://www.atlassian.com/sharepoint/" target="_blank" class="external">Atlassian SharePoint Connector</a> and <a href="http://www.atlassian.com/office/" target="_blank" class="external">Office Connector</a>) </li>
+            </ul>
+        <p>This is a good chance for you to consider new ways of using Office in your company, along with pitfalls to avoid. Adam gets excited about this session because too often companies 
+        limit Office to just an email application, word processor and spreadsheet - completely missing the positive impact it can have on the entire business process.</p>
+
+ 	
+			<table id="BrainQuest" cellpadding="0" cellspacing="0">
+              <tr class="header">
+                <td><span>Price (ex GST)</span><br /></td>
+                <td><span>TFS 2010</span><br />$110</td>
+                <td><span>SHAREPOINT</span><br />$110</td>
+                <td><span>FULL DAY</span><br />$190</td>
+                <td><span>HOSTED</span><br />Microsoft</td>
+              </tr>
+              <tr>
+                <td class="first"><span>Brisbane</span><br />28 JAN 2010</td>
+                <td class="button"><a href="/ssw/Shop/BasketInsert.aspx?ProductID=BCTFS5"><img src="/ssw/images/button_miniBookNow.gif" /></a></td>
+                <td class="button"><a href="/ssw/Shop/BasketInsert.aspx?ProductID=BCSP05"><img src="/ssw/images/button_miniBookNow.gif" /></a></td>
+                <td class="button"><a href="/ssw/Shop/BasketInsert.aspx?ProductID=BCFD05"><img src="/ssw/images/button_miniBookNow.gif" /></a></td>
+                <td><a href="/ssw/events/VisualStudio2010_TFS2010_SharePoint2010.aspx#Sydney">Microsoft<br />Brisbane</a></td>
+              </tr>
+              <tr>
+                <td class="first"><span>Canberra</span><br />09 FEB 2010</td>
+                <td class="button"><a href="/ssw/Shop/BasketInsert.aspx?ProductID=BCTFS3"><img src="/ssw/images/button_miniBookNow.gif" /></a></td>
+                <td class="button"><a href="/ssw/Shop/BasketInsert.aspx?ProductID=BCSP03"><img src="/ssw/images/button_miniBookNow.gif" /></a></td>
+                <td class="button"><a href="/ssw/Shop/BasketInsert.aspx?ProductID=BCFD03"><img src="/ssw/images/button_miniBookNow.gif" /></a></td>
+                <td><a href="/ssw/events/VisualStudio2010_TFS2010_SharePoint2010.aspx#Sydney">Microsoft<br />Canberra</a></td>
+              </tr>
+              <tr>
+                <td class="first"><span>Perth</span><br />03 MAR 2010</td>
+                <td class="button"><a href="/ssw/Shop/BasketInsert.aspx?ProductID=BCTFS6"><img src="/ssw/images/button_miniBookNow.gif" /></a></td>
+                <td class="button"><a href="/ssw/Shop/BasketInsert.aspx?ProductID=BCSP06"><img src="/ssw/images/button_miniBookNow.gif" /></a></td>
+                <td class="button"><a href="/ssw/Shop/BasketInsert.aspx?ProductID=BCFD06"><img src="/ssw/images/button_miniBookNow.gif" /></a></td>
+                <td><a href="/ssw/events/VisualStudio2010_TFS2010_SharePoint2010.aspx#Sydney">Microsoft<br />Perth</a></td>
+              </tr>
+              </table>
+              <p><a href="/ssw/Events/VisualStudio2010_TFS2010_SharePoint2010.aspx">Register for other Major Cities now!</a></p>
+
+				</td>
+			</tr>		
+			
+			<tr>
+			<td class="section">
+				<h3 class="newsTitle">
+				<a name="SharePoint101Workshop" id="A1"></a>SharePoint 101 
+				Workshop -<br/>
+				What every business person should know about SharePoint 2007</h3>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						<td style="width: 210px;" valign="top">
+						<img src="/ssw/NETUG/Images/sharepoint_logo_image.jpg" alt="SharePoint" width="200" height="133"/></td>
+						<td valign="bottom">
+						<h3>40 days to go!</h3>
+						<p><a href="/ssw/SharePointForBusiness.aspx">
+						SharePoint 101 Workshop</a><br/>
+						Wednesday 24th February 2010<br/>
+						8:00am - 11:00am<br/>
+						SSW Office, Sydney<br/>
+						Suite 10, 81-91 Military Road, Neutral Bay<br/>
+                  		<b>Cost: No Charge </b>
+                		</p>
+						</td>
+					</tr>
+				</tbody></table>
+				<p><strong>Workshop Objective</strong></p>
+				<p>This workshop will provide the attendees with:</p>
+
+          	<ul>
+          		<li>An understanding of how key features of SharePoint can 
+				enhance business processes</li>
+          		<li>An understanding of the costs, timelines, staff involvement 
+				and commitment a business will incur when implementing 
+				SharePoint</li>
+          	</ul>
+ 	
+			<p><strong>Workshop Outline</strong></p>
+			<ul>
+				<li>Why should your business use SharePoint 2007?</li>
+				<li>Differences between Windows SharePoint Services (WSS) and 
+				Microsoft Office SharePoint Services (MOSS)</li>
+				<li>Explanation and demonstration of the business challenges the 
+				SharePoint feature set solve</li>
+				<li>SharePoint in regards to implementation, costs and timelines</li>
+				<li>SharePoint 2007 and the User Experience (custom design)</li>
+				<li>SharePoint Development - What if I need more than 
+				SharePoint's out of the box functionality?</li>
+			</ul>
+			<a href="/ssw/SharePointForBusiness.aspx">
+				Find out more and Register</a>
+				</td>
+			</tr>	
+			
+			<tr>
+				<td class="section">
+				<h3 class="newsTitle">
+				<a name="featuredproduct" id="featuredproduct"></a>Featured 
+				Product: SSW SQL Deploy</h3>
+                <p><a href="/ssw/SQLDeploy/">
+				<img class="noborder" alt="SSW SQL Deploy" src="/ssw/SQLDeploy/Images/productbox.gif" align="right" /></a><strong>The 
+				Easiest Way to Compare SQL Server Databases and Deploy Schema Changes</strong></p>
+				<p>SQL Deploy is the simplest way for .NET developers to synchronize backend SQL structural changes, saving manual SQL script deployment. 
+				<a href="/ssw/SQLDeploy/">Use SQL Deploy in your application to automate schema changes</a>. Full support for SQL Server 2008.</p>
+				<p><a href="/ssw/SQLDeploy/">More on 
+				SSW's SQL Deploy</a></p>
+                </td>
+			</tr>
+			<tr>
+				<td class="section">
+				<h3 class="newsTitle">Advertise with SSW</h3>
+				<p>If you would like to advertise your product or service with 
+				SSW or would like to find out more about various advertising 
+				opportunities, please email your enquiry to <a target="_blank" keeptext="false" encode="736f7068696562656c6c65405353572e636f6d2e6175">
+                                    sophiebelle</a> or call: +61 2 9953 3000.</p>
+				</td>
+			</tr>
+		</table>
+	  </td>
+		<td valign="top" style="border-left: 1px #cccccc solid;" bgcolor="#eeeeee">
+		<img alt="SSW Update" src="/SSW/NETUG/SSWUpdate/Images/featureImage10.jpg" width="200" height="300" class="featureimage" />
+        
+        <table width="100%" border="0" cellpadding="10" cellspacing="0">
+			<tr>
+				<td bgcolor="#FFFFFF">
+				<h3 class="sectionTitle">January 2010</h3>
+				</td>
+			</tr>
+			<tr>
+				
+                <td class="section">
+				<h3 class="sectionTitle">Tech Breakfast</h3>
+				
+				<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+						<td width="55" valign="top">
+						<img src="/ssw/NETUG/SSWUpdate/Images/Icon_techbreakfast.gif" alt="Join us for Tech Breakfast" height="46" width="46" /></td>
+						<td valign="top"><strong>71 days to go </strong>
+						<p>SYDNEY: Something About Mary (SharePoint and Office 2010)</p>
+						<p style="color:#666666;">Friday, 26th March 2010<br />
+						8:00am-11:00am</p>
+						</td>
+					</tr>
+				</table>
+				<p>Come and see Adam Cogan explain what works well with SharePoint and Office for Mary and the other  
+                knowledge workers.</p>
+			    <p>First you will get an overview of what is great about having SharePoint in your business.</p>
+                <p>Then see real world examples of:</p>
+                            <ul>
+                                <li>Using SharePoint 2010 and Office 2010 together</li>
+                                <li>Where it fits with other important Microsoft products like CRM 4 and TFS</li>
+                                <li>Examples of how Word and Excel can be integrated into business processes (separate from SharePoint), and then followed by</li>
+                                <li>Examples of how Word, Excel, PowerPoint can be combined with SharePoint to improve visibility/ searchability/ versioning across the company</li>
+                                <li>Overview of how data can be synchronized between SharePoint and external data sources (eg using Access and Excel)</li>
+                                <li>Overview of what 'workflow' really means!</li>
+                                <li>How Office can be incorporated into company workflows with SharePoint</li>
+                                <li>Extending SharePoint with Office SharePoint Designer 2010 (free!)</li>
+                                <li>Where VBA and VSTO fit in terms of how solutions can be developed </li>
+                                <li>Examples of other interesting Office/SharePoint integrations (eg the the Atlassian SharePoint Connector and Atlassian Office Connector)</li>
+                            </ul>
+                
+				<p>
+                   This is a good chance for you to consider new ways of using Office in your company,  
+                   along with pitfalls to avoid. Adam gets excited about this session because too often companies limit Office to just an email application, 
+                   word processor and spreadsheet - completely missing the positive impact it can have on the entire business process.</p>
+
+				<p align="right">
+				<a href="/ssw/Shop/BasketInsert.aspx?ProductID=TBSP8T">
+				<img src="/ssw/Images/Button_Register_small.gif" alt="Register Now" border="0" /></a></p>
+				</td>
+			</tr>
+			<tr>
+				<td class="section">
+				<h3 class="sectionTitle">Employment</h3>
+
+				<p>Due to the tremendous growth that our business has 
+				experienced over the last few months, we are seeking 
+				enthusiastic people to join the SSW team.</p>
+				<p>Our Company is based in Neutral Bay which is one of the most 
+				elegant and scenic areas of Sydney. SSW is an Australian owned 
+				progressive consulting firm specialising in building, 
+				implementing and maintaining Microsoft .NET software 
+				applications.</p>
+				<p>We are currently strongly looking for a <strong>SharePoint 
+				Developer</strong>.</p>
+				<p>We are also currently looking for:</p>
+                <ul style="font-weight:bold;">
+                	<li>ASP.NET, VB.NET, C#, OLAP, SharePoint Software Developer </li>
+                    <li>Technical BDM in Melbourne, Brisbane, or Canberra</li>
+                    <li>IT Senior Marketing Consultant (part-time)</li>
+                    <li>Project Manager</li>
+                </ul>
+                
+				<p><a href="/ssw/Employment/Employment.aspx">
+				Read more and Apply NOW...</a></p>
+				</td>
+			</tr>
+		</table>
+        </td>
+	</tr>
+</table>
+<table align="center" width="710">
+	<tr>
+		<td class="copyright">Copyright © SSW 1990-2010. All Rights Reserved.</td>
+		<td class="proudly" align="right">Proudly developed by <a href="">
+		SSW Sydney Web Design</a></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+		<table align="center">
+			<tr valign="top" class="footer">
+                        <td valign="top" align="center">
+                            <a target="_blank" keeptext="true" encode="736f7068696562656c6c65407373772e636f6d2e6175"
+                                emailsubject="Advertisting">Advertise with SSW</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" keeptext="true" encode="736f7068696562656c6c65407373772e636f6d2e6175"
+                                emailsubject="Unsubscribe">Unsubscribe</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" href="/ssw/Events/SSWTechBreakfastprevious.aspx">
+                                Previous SSW Updates</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" keeptext="true" encode="736f7068696562656c6c65407373772e636f6d2e6175"
+                                emailsubject="Got a Hot Tip to share?">Got a Hot Tip to share?</a> |
+                        </td>
+                        <td valign="top" align="center">
+                            <a target="_blank" keeptext="true" encode="736f7068696562656c6c65407373772e636f6d2e6175"
+                                emailsubject="About%20your%20newsletter">Got a comment to make?</a>
+                        </td>
+		</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
