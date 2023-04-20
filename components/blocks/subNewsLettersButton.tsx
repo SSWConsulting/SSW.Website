@@ -4,7 +4,7 @@ import { Template } from "tinacms";
 import { AddContactToNewslettersData } from "../../services";
 import axios from "axios";
 
-export const SubNewsLettersButton = (data) => {
+export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
 	const [email, setEmail] = React.useState<string>("");
 	const [fullName, setFullName] = React.useState<string>("");
 	const [informationMessage, setInformationMessage] =
@@ -16,7 +16,7 @@ export const SubNewsLettersButton = (data) => {
 	const handleSubscribe = async () => {
 		if (email !== "" && fullName !== "") {
 			setLoading(true);
-			setInformationMessage("Subscription to the newsletter...");
+			setInformationMessage("Subscribing to the newsletter...");
 			setIsContactAlreadyExisting(false);
 			const payLoad: AddContactToNewslettersData = {
 				Email: email,
@@ -51,7 +51,7 @@ export const SubNewsLettersButton = (data) => {
 	return (
 		<div>
 			<p className="mb-2">
-				Subscribe to our newsletter to receive NETUG updates!
+				{headerText ?? "Subscribe to our newsletter to receive NETUG updates!"}
 			</p>
 			<div className="container sm:w-full sm:max-w-full md:w-1/4">
 				<div className="mb-1">
@@ -79,7 +79,7 @@ export const SubNewsLettersButton = (data) => {
 						className="box-border flex w-1/2 cursor-pointer items-center justify-center gap-1 bg-sswRed py-2 pl-4 pr-2 font-sans uppercase text-white hover:text-gray-100 hover:opacity-95"
 						onClick={handleSubscribe}
 					>
-						{data.subNewsLettersButtonText ?? "join"}
+						{subscribeButtonText ?? "join us"}
 						<Image
 							className="inline-block align-middle leading-8"
 							src={"/images/circle-tick.png"}
@@ -106,16 +106,16 @@ export const SubNewsLettersButton = (data) => {
 export const subNewsLettersButtonSchema: Template = {
 	label: "Subscribe To NewsLetters Button",
 	name: "SubNewsLettersButton",
-	ui: {
-		itemProps: (item) => {
-			return { label: item?.header };
-		},
-	},
 	fields: [
 		{
 			type: "string",
-			label: "subscribe to news letters button text",
-			name: "subNewsLettersButtonText",
+			label: "Header text",
+			name: "headerText",
+		},
+		{
+			type: "string",
+			label: "Subscribe button text",
+			name: "subscribeButtonText",
 		},
 	],
 };
