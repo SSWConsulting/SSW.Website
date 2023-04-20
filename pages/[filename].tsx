@@ -79,9 +79,22 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const pagesListData = await client.queries.pageConnection();
+  let PageListData = await client.queries.pageConnection();
+  const allPagesListData = PageListData;
+
+  while (PageListData.data.pageConnection.pageInfo.hasNextPage) {
+    const lastCursor = PageListData.data.pageConnection.pageInfo.endCursor;
+    PageListData = await client.queries.pageConnection({
+      after: lastCursor,
+    });
+
+    allPagesListData.data.pageConnection.edges.push(
+      ...PageListData.data.pageConnection.edges
+    );
+  }
+
   return {
-    paths: pagesListData.data.pageConnection.edges.map((page) => ({
+    paths: allPagesListData.data.pageConnection.edges.map((page) => ({
       params: { filename: page.node._sys.filename },
     })),
     fallback: false,
