@@ -1,4 +1,4 @@
-name: Scheduled CodeAuditor test
+name: Weekly - CodeAuditor test
 
 # Schedule scan for SSW Website at 1pm every Monday
 on: 
