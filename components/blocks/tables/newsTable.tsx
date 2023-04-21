@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Template } from "tinacms";
 import { SSWTable } from "./sswTable";
-import newLettersList from "../../../content/newsletters_list.json";
 import { importAllJSON } from "../../../services/utils.service";
+import { transformIntToMonth } from "../../../services/date.service";
 
 export const NewsTable = () => {
 	const [tables, setTables] = useState({});
@@ -109,7 +109,7 @@ export const NewsTable = () => {
 									{table.newsletters.map((item: any) => {
 										return (
 											<tr key={item.month}>
-												<td>{item.month}</td>
+												<td>{transformIntToMonth(item.month)}</td>
 												<td>{item.description}</td>
 											</tr>
 										);

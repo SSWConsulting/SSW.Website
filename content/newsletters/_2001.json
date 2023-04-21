@@ -1,60 +1,65 @@
 {
-	"year": 2001,
-	"newsletters": [
-		{
-			"month": 1,
-			"url": "_2001_01__.NET Object Design_.htm",
-			"description": "NET Object Design"
-		},
-		{
-			"month": 2,
-			"url": "_2001_02__Microsoft SharePoint Portal Server and the Web Storage System_.htm",
-			"description": "icrosoft SharePoint Portal Server and the Web Storage System"
-		},
-		{
-			"month": 3,
-			"url": "_2001_03__Develop Client-Server Applications with Access_.htm",
-			"description": "Develop Client-Server Applications with Access"
-		},
-		{
-			"month": 4,
-			"url": "_2001_04__Using Object-Oriented Features in VS.NET_.htm",
-			"description": "Using Object-Oriented Features in VS.NET"
-		},
-		{
-			"month": 6,
-			"url": "_2001_06__Office XP - What's in it for me_.htm",
-			"description": "Office XP - What's in it for me"
-		},
-		{
-			"month": 7,
-			"url": "_2001_07__.NET in the world now_.htm",
-			"description": ".NET in the world now"
-		},
-		{
-			"month": 8,
-			"url": "_2001_08__Working in .NET_.htm",
-			"description": "Working in .NET"
-		},
-		{
-			"month": 9,
-			"url": "_2001_09__SQL Server tech breakfast double session_.htm",
-			"description": "SQL Server tech breakfast double session"
-		},
-		{
-			"month": 10,
-			"url": "_2001_10__We're looking for feedback on our upcoming projects_.htm",
-			"description": "We're looking for feedback on our upcoming projects"
-		},
-		{
-			"month": 11,
-			"url": "_2001_11__Make your specification work_.htm",
-			"description": "Make your specification work"
-		},
-		{
-			"month": 12,
-			"url": "_2001_12__XML Web Services in Visual Studio .NET_.htm",
-			"description": "XML Web Services in Visual Studio .NET"
-		}
-	]
+  "year": 2001,
+  "newsletters": [
+    {
+      "month": 12,
+      "url": "blabla.html",
+      "description": "Un autre truc"
+    },
+    {
+      "month": 1,
+      "url": "_2001_01__.NET Object Design_.htm",
+      "description": "NET Object Design"
+    },
+    {
+      "month": 2,
+      "url": "_2001_02__Microsoft SharePoint Portal Server and the Web Storage System_.htm",
+      "description": "icrosoft SharePoint Portal Server and the Web Storage System"
+    },
+    {
+      "month": 3,
+      "url": "_2001_03__Develop Client-Server Applications with Access_.htm",
+      "description": "Develop Client-Server Applications with Access"
+    },
+    {
+      "month": 4,
+      "url": "_2001_04__Using Object-Oriented Features in VS.NET_.htm",
+      "description": "Using Object-Oriented Features in VS.NET"
+    },
+    {
+      "month": 6,
+      "url": "_2001_06__Office XP - What's in it for me_.htm",
+      "description": "Office XP - What's in it for me"
+    },
+    {
+      "month": 7,
+      "url": "_2001_07__.NET in the world now_.htm",
+      "description": ".NET in the world now"
+    },
+    {
+      "month": 8,
+      "url": "_2001_08__Working in .NET_.htm",
+      "description": "Working in .NET"
+    },
+    {
+      "month": 9,
+      "url": "_2001_09__SQL Server tech breakfast double session_.htm",
+      "description": "SQL Server tech breakfast double session"
+    },
+    {
+      "month": 10,
+      "url": "_2001_10__We're looking for feedback on our upcoming projects_.htm",
+      "description": "We're looking for feedback on our upcoming projects"
+    },
+    {
+      "month": 11,
+      "url": "_2001_11__Make your specification work_.htm",
+      "description": "Make your specification work"
+    },
+    {
+      "month": 12,
+      "url": "_2001_12__XML Web Services in Visual Studio .NET_.htm",
+      "description": "XML Web Services in Visual Studio .NET"
+    }
+  ]
 }

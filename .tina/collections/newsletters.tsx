@@ -10,6 +10,11 @@ export const newsletterSchema = {
 	format: "json",
 	fields: [
 		{
+			type: "string",
+			label: "Year",
+			name: "year",
+		},
+		{
 			type: "object",
 			label: "Newsletters",
 			name: "newsletters",
@@ -18,9 +23,9 @@ export const newsletterSchema = {
 				itemProps: (item) => {
 					if (item) {
 						return {
-							label: `${stringifyMonth(item.month)} - ${transformIntToMonth(
-								item.month
-							)} - ${item.description}`,
+							label: `${item?.month} - ${transformIntToMonth(item?.month)} - ${
+								item?.description
+							}`,
 						};
 					}
 				},
