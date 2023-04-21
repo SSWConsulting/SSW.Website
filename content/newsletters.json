@@ -1,94 +1,4 @@
 {
-	"2000": [
-		{
-			"key": "month",
-			"value": "March",
-			"rowIndex": 0,
-			"type": "link",
-			"url": "_2000_02__DevCon 2000 and GST and the Developer_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "DevCon 2000 and GST and the Developer",
-			"rowIndex": 0
-		},
-		{
-			"key": "month",
-			"value": "May",
-			"rowIndex": 1,
-			"type": "link",
-			"url": "_2000_04__SQL Server 7.0 SP2_.htm"
-		},
-		{ "key": "desc", "value": "SQL Server 7.0 SP2", "rowIndex": 1 },
-		{
-			"key": "month",
-			"value": "June",
-			"rowIndex": 2,
-			"type": "link",
-			"url": "_2000_05__English Query_.htm"
-		},
-		{ "key": "desc", "value": "English Query", "rowIndex": 2 },
-		{
-			"key": "month",
-			"value": "July",
-			"rowIndex": 3,
-			"type": "link",
-			"url": "_2000_06__Visio 2000_.htm"
-		},
-		{ "key": "desc", "value": "Visio 2000", "rowIndex": 3 },
-		{
-			"key": "month",
-			"value": "August",
-			"rowIndex": 4,
-			"type": "link",
-			"url": "_2000_07__Connection Strings_.htm"
-		},
-		{ "key": "desc", "value": "Connection Strings", "rowIndex": 4 },
-		{
-			"key": "month",
-			"value": "September",
-			"rowIndex": 5,
-			"type": "link",
-			"url": "_2000_08__SQL Server 2000_.htm"
-		},
-		{ "key": "desc", "value": "SQL Server 2000", "rowIndex": 5 },
-		{
-			"key": "month",
-			"value": "October",
-			"rowIndex": 6,
-			"type": "link",
-			"url": "_2000_09__Select Statements in ADO_.htm"
-		},
-		{ "key": "desc", "value": "Select Statements in ADO", "rowIndex": 6 },
-		{
-			"key": "month",
-			"value": "November",
-			"rowIndex": 7,
-			"type": "link",
-			"url": "_2000_10__Exchange Server 2000 and what a developer needs to know_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Exchange Server 2000 and what a developer needs to know",
-			"rowIndex": 7
-		},
-		{
-			"key": "month",
-			"value": "December",
-			"rowIndex": 8,
-			"type": "link",
-			"url": "_2000_11__What makes a great spec_.htm"
-		},
-		{ "key": "desc", "value": "What makes a great spec?", "rowIndex": 8 },
-		{
-			"key": "month",
-			"value": "January",
-			"rowIndex": 9,
-			"type": "link",
-			"url": "_2000_12__Visual Studio.Net_.htm"
-		},
-		{ "key": "desc", "value": "Visual Studio.Net", "rowIndex": 9 }
-	],
 	"2001": [
 		{
 			"key": "month",
@@ -98,21 +8,11 @@
 			"url": "_2001_01__Microsoft SharePoint Portal Server and the Web Storage System_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Microsoft SharePoint Portal Server and the Web Storage System",
-			"rowIndex": 0
-		},
-		{
 			"key": "month",
 			"value": "March",
 			"rowIndex": 1,
 			"type": "link",
 			"url": "_2001_02__Develop Client-Server Applications with Access_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Develop Client-Server Applications with Access",
-			"rowIndex": 1
 		},
 		{
 			"key": "month",
@@ -122,21 +22,11 @@
 			"url": "_2001_03__Using Object-Oriented Features in VS.NET_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Using Object-Oriented Features in VS.NET",
-			"rowIndex": 2
-		},
-		{
 			"key": "month",
 			"value": "June",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2001_05__Office XP - What's in it for me_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Office XP - What's in it for me?",
-			"rowIndex": 3
 		},
 		{
 			"key": "month",
@@ -145,7 +35,6 @@
 			"type": "link",
 			"url": "_2001_06__.NET in the world now_.htm"
 		},
-		{ "key": "desc", "value": ".NET in the world now", "rowIndex": 4 },
 		{
 			"key": "month",
 			"value": "August",
@@ -153,18 +42,12 @@
 			"type": "link",
 			"url": "_2001_07__Working in .NET_.htm"
 		},
-		{ "key": "desc", "value": "Working in .NET", "rowIndex": 5 },
 		{
 			"key": "month",
 			"value": "September",
 			"rowIndex": 6,
 			"type": "link",
 			"url": "_2001_08__SQL Server tech breakfast double session_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "SQL Server tech breakfast double session",
-			"rowIndex": 6
 		},
 		{
 			"key": "month",
@@ -174,18 +57,12 @@
 			"url": "_2001_09__We're looking for feedback on our upcoming projects_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "We're looking for feedback on our upcoming projects",
-			"rowIndex": 7
-		},
-		{
 			"key": "month",
 			"value": "November",
 			"rowIndex": 8,
 			"type": "link",
 			"url": "_2001_10__Make your specification work_.htm"
 		},
-		{ "key": "desc", "value": "Make your specification work", "rowIndex": 8 },
 		{
 			"key": "month",
 			"value": "December",
@@ -194,18 +71,12 @@
 			"url": "_2001_11__XML Web Services in Visual Studio .NET_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "XML Web Services in Visual Studio .NET",
-			"rowIndex": 9
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 10,
 			"type": "link",
 			"url": "_2001_12__.NET Object Design_.htm"
-		},
-		{ "key": "desc", "value": ".NET Object Design", "rowIndex": 10 }
+		}
 	],
 	"2002": [
 		{
@@ -216,21 +87,11 @@
 			"url": "_2002_01__Is your Spec in Bite-size Pieces_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Is your Spec in Bite-size Pieces",
-			"rowIndex": 0
-		},
-		{
 			"key": "month",
 			"value": "March",
 			"rowIndex": 1,
 			"type": "link",
 			"url": "_2002_02__Is Everyone on your team a Standards Watchdog_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Is Everyone on your team a Standards Watchdog",
-			"rowIndex": 1
 		},
 		{
 			"key": "month",
@@ -239,7 +100,6 @@
 			"type": "link",
 			"url": "_2002_02__NZDevdays_MS Dev Days_.htm"
 		},
-		{ "key": "desc", "value": "NZDevdays", "rowIndex": 2 },
 		{
 			"key": "month",
 			"value": "March",
@@ -247,7 +107,6 @@
 			"type": "link",
 			"url": "_2002_02__VSNETLaunch_Special Invitation to the Microsoft Visual Studio.NET Launch Event_.htm"
 		},
-		{ "key": "desc", "value": "VSNETLaunch", "rowIndex": 3 },
 		{
 			"key": "month",
 			"value": "April",
@@ -255,7 +114,6 @@
 			"type": "link",
 			"url": "_2002_03__Techies that Talk Sense_.htm"
 		},
-		{ "key": "desc", "value": "Techies that Talk Sense", "rowIndex": 4 },
 		{
 			"key": "month",
 			"value": "May 2",
@@ -264,18 +122,12 @@
 			"url": "_2002_04_2_Special .NET User Group with Ken Getz_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Special .NET User Group with Ken Getz",
-			"rowIndex": 5
-		},
-		{
 			"key": "month",
 			"value": "May",
 			"rowIndex": 6,
 			"type": "link",
 			"url": "_2002_04__Dealing with Distractions_.htm"
 		},
-		{ "key": "desc", "value": "Dealing with Distractions", "rowIndex": 6 },
 		{
 			"key": "month",
 			"value": "June",
@@ -284,18 +136,12 @@
 			"url": "_2002_05__Do you always carry your Tool Box_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you always carry your Tool Box?",
-			"rowIndex": 7
-		},
-		{
 			"key": "month",
 			"value": "July",
 			"rowIndex": 8,
 			"type": "link",
 			"url": "_2002_06__Do you manage expectations_.htm"
 		},
-		{ "key": "desc", "value": "Do you manage expectations?", "rowIndex": 8 },
 		{
 			"key": "month",
 			"value": "August",
@@ -304,18 +150,12 @@
 			"url": "_2002_07__Do you use eXtreme Programming wisely_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you use eXtreme Programming wisely?",
-			"rowIndex": 9
-		},
-		{
 			"key": "month",
 			"value": "September",
 			"rowIndex": 10,
 			"type": "link",
 			"url": "_2002_08__Do you manage your email_.htm"
 		},
-		{ "key": "desc", "value": "Do you manage your email?", "rowIndex": 10 },
 		{
 			"key": "month",
 			"value": "October",
@@ -323,7 +163,6 @@
 			"type": "link",
 			"url": "_2002_09__Do you send Morning Goals_.htm"
 		},
-		{ "key": "desc", "value": "Do you send Morning Goals?", "rowIndex": 11 },
 		{
 			"key": "month",
 			"value": "November",
@@ -332,29 +171,18 @@
 			"url": "_2002_10__Do you follow up emails effectively_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you follow up emails effectively?",
-			"rowIndex": 12
-		},
-		{
 			"key": "month",
 			"value": "December",
 			"rowIndex": 13,
 			"type": "link",
 			"url": "_2002_11__Do you CC everyone_.htm"
 		},
-		{ "key": "desc", "value": "Do you CC everyone?", "rowIndex": 13 },
 		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 14,
 			"type": "link",
 			"url": "_2002_12__Do you investigate before writing new code_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you investigate before writing new code?",
-			"rowIndex": 14
 		}
 	],
 	"2003": [
@@ -366,21 +194,11 @@
 			"url": "_2003_01__Do you know the quickest way to fix small web errors_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you know the quickest way to fix small web errors?",
-			"rowIndex": 0
-		},
-		{
 			"key": "month",
 			"value": "March",
 			"rowIndex": 1,
 			"type": "link",
 			"url": "_2003_02__Do you think that when replying to emails it's better late than never_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you think that when replying to emails it's better late than never?",
-			"rowIndex": 1
 		},
 		{
 			"key": "month",
@@ -389,18 +207,12 @@
 			"type": "link",
 			"url": "_2003_03_2_Special Double Events Notice_.htm"
 		},
-		{ "key": "desc", "value": "Special Double Events Notice", "rowIndex": 2 },
 		{
 			"key": "month",
 			"value": "April",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2003_03__Do you avoid reviewing performance without metrics_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you avoid reviewing performance without metrics?",
-			"rowIndex": 3
 		},
 		{
 			"key": "month",
@@ -410,21 +222,11 @@
 			"url": "_2003_04__Do you use instant messenger for business_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you use instant messenger for business?",
-			"rowIndex": 4
-		},
-		{
 			"key": "month",
 			"value": "June",
 			"rowIndex": 5,
 			"type": "link",
 			"url": "_2003_05__Which third party developer tools should I use_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Which third party developer tools should I use?",
-			"rowIndex": 5
 		},
 		{
 			"key": "month",
@@ -434,21 +236,11 @@
 			"url": "_2003_06__Are you a good SQL Server DBA_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Are you a good SQL Server DBA?",
-			"rowIndex": 6
-		},
-		{
 			"key": "month",
 			"value": "August",
 			"rowIndex": 7,
 			"type": "link",
 			"url": "_2003_07__Do you manage your software consultants_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you manage your software consultants?",
-			"rowIndex": 7
 		},
 		{
 			"key": "month",
@@ -457,18 +249,12 @@
 			"type": "link",
 			"url": "_2003_08__User Group Late 1 Day.htm"
 		},
-		{ "key": "desc", "value": "User Group Late 1 Day.htm", "rowIndex": 8 },
 		{
 			"key": "month",
 			"value": "October",
 			"rowIndex": 9,
 			"type": "link",
 			"url": "_2003_09__Tom Howe speaking at User Group.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Tom Howe speaking at User Group.htm",
-			"rowIndex": 9
 		},
 		{
 			"key": "month",
@@ -478,11 +264,6 @@
 			"url": "_2003_10__Do you use the new security options in Outlook 2003_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you use the new security options in Outlook 2003?",
-			"rowIndex": 10
-		},
-		{
 			"key": "month",
 			"value": "December",
 			"rowIndex": 11,
@@ -490,21 +271,11 @@
 			"url": "_2003_11__Is your website multibrowser compatible_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Is your website multibrowser compatible",
-			"rowIndex": 11
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 12,
 			"type": "link",
 			"url": "_2003_12__Do you manage your clients expectations_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you manage your clients expectations?",
-			"rowIndex": 12
 		}
 	],
 	"2004": [
@@ -516,21 +287,11 @@
 			"url": "_2004_01__Do you always use query strings_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you always use query strings?",
-			"rowIndex": 0
-		},
-		{
 			"key": "month",
 			"value": "March",
 			"rowIndex": 1,
 			"type": "link",
 			"url": "_2004_02__Adam Cogan presenting in all states this week_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Adam Cogan presenting in all states this week",
-			"rowIndex": 1
 		},
 		{
 			"key": "month",
@@ -540,21 +301,11 @@
 			"url": "_2004_03__Do you know how to best manage your dead time_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you know how to best manage your dead time?",
-			"rowIndex": 2
-		},
-		{
 			"key": "month",
 			"value": "May",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2004_04__New anti-spam legislation in force from April 10th_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "New anti-spam legislation in force from April 10th",
-			"rowIndex": 3
 		},
 		{
 			"key": "month",
@@ -564,21 +315,11 @@
 			"url": "_2004_05__Important notes for your Data Entry Forms_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Important notes for your Data Entry Forms",
-			"rowIndex": 4
-		},
-		{
 			"key": "month",
 			"value": "July",
 			"rowIndex": 5,
 			"type": "link",
 			"url": "_2004_06__Do you enforce deadlines, have a project plan and a debrief_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you enforce deadlines, have a project plan and a debrief?",
-			"rowIndex": 5
 		},
 		{
 			"key": "month",
@@ -588,21 +329,11 @@
 			"url": "_2004_07__Dont criticize when you are in charge_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Dont criticize when you are in charge",
-			"rowIndex": 6
-		},
-		{
 			"key": "month",
 			"value": "September",
 			"rowIndex": 7,
 			"type": "link",
 			"url": "_2004_08__Do you use inherited forms for consistent behaviour_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you use inherited forms for consistent behaviour?",
-			"rowIndex": 7
 		},
 		{
 			"key": "month",
@@ -612,18 +343,12 @@
 			"url": "_2004_09__The implementation of the XML Index in Yukon_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "The implementation of the XML Index in Yukon",
-			"rowIndex": 8
-		},
-		{
 			"key": "month",
 			"value": "November MiniUpdate",
 			"rowIndex": 9,
 			"type": "link",
 			"url": "_2004_10_MiniUpdate_User Group_.htm"
 		},
-		{ "key": "desc", "value": "User Group", "rowIndex": 9 },
 		{
 			"key": "month",
 			"value": "November",
@@ -631,7 +356,6 @@
 			"type": "link",
 			"url": "_2004_10__AfricaEmail_ The African Roadshow October 2004 - Nairobi, Dar es Salaam, and Johannesburg_.htm"
 		},
-		{ "key": "desc", "value": "AfricaEmail", "rowIndex": 10 },
 		{
 			"key": "month",
 			"value": "November",
@@ -639,7 +363,6 @@
 			"type": "link",
 			"url": "_2004_10__User Group 2 Weeks Late_.htm"
 		},
-		{ "key": "desc", "value": "User Group 2 Weeks Late", "rowIndex": 11 },
 		{
 			"key": "month",
 			"value": "December",
@@ -648,21 +371,11 @@
 			"url": "_2004_11__Does backward compatibility kill good code_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Does backward compatibility kill good code",
-			"rowIndex": 12
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 13,
 			"type": "link",
 			"url": "_2004_12__Do you follow naming convention for your Boolean Property_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you follow naming convention for your Boolean Property?",
-			"rowIndex": 13
 		}
 	],
 	"2005": [
@@ -674,21 +387,11 @@
 			"url": "_2005_01__ Do you manage your Clients' expectations_.htm"
 		},
 		{
-			"key": "desc",
-			"value": " Do you manage your Clients' expectations?",
-			"rowIndex": 0
-		},
-		{
 			"key": "month",
 			"value": "March",
 			"rowIndex": 1,
 			"type": "link",
 			"url": "_2005_02__Do you refer to form controls directly_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you refer to form controls directly?",
-			"rowIndex": 1
 		},
 		{
 			"key": "month",
@@ -698,21 +401,11 @@
 			"url": "_2005_03__Move your OLAP MetaData from Access to SQL Server!_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Move your OLAP MetaData from Access to SQL Server!",
-			"rowIndex": 2
-		},
-		{
 			"key": "month",
 			"value": "May",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2005_04__Do you include version numbers in your setup filename_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you include version numbers in your setup filename?",
-			"rowIndex": 3
 		},
 		{
 			"key": "month",
@@ -722,21 +415,11 @@
 			"url": "_2005_05__Are your settings and the customizable settings, in different files_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Are your settings and the customizable settings, in different files?",
-			"rowIndex": 4
-		},
-		{
 			"key": "month",
 			"value": "July",
 			"rowIndex": 5,
 			"type": "link",
 			"url": "_2005_06__Do you believe content is king_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you believe content is king?",
-			"rowIndex": 5
 		},
 		{
 			"key": "month",
@@ -746,21 +429,11 @@
 			"url": "_2005_07__Do you follow the Banana Rule in your web pages_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you follow the Banana Rule in your web pages?",
-			"rowIndex": 6
-		},
-		{
 			"key": "month",
 			"value": "August",
 			"rowIndex": 7,
 			"type": "link",
 			"url": "_2005_07__Special .Net User Group with Kit George and Vinaya Bhushana Gattam Reddy_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Special .Net User Group with Kit George and Vinaya Bhushana Gattam Reddy",
-			"rowIndex": 7
 		},
 		{
 			"key": "month",
@@ -769,7 +442,6 @@
 			"type": "link",
 			"url": "_2005_08__Do you send morning goals_.htm"
 		},
-		{ "key": "desc", "value": "Do you send morning goals?", "rowIndex": 8 },
 		{
 			"key": "month",
 			"value": "September",
@@ -778,18 +450,12 @@
 			"url": "_2005_08__SSW Kiwi Update NZ User Groups Tech Ed_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "SSW Kiwi Update NZ User Groups Tech Ed",
-			"rowIndex": 9
-		},
-		{
 			"key": "month",
 			"value": "October 3",
 			"rowIndex": 10,
 			"type": "link",
 			"url": "_2005_09_3_Migrating to SQL_USA Special Offer_.htm"
 		},
-		{ "key": "desc", "value": "Migrating to SQL", "rowIndex": 10 },
 		{
 			"key": "month",
 			"value": "October 4",
@@ -797,7 +463,6 @@
 			"type": "link",
 			"url": "_2005_09_4_Migrating to SQL_USA_ Special Offer 2_.htm"
 		},
-		{ "key": "desc", "value": "Migrating to SQL", "rowIndex": 11 },
 		{
 			"key": "month",
 			"value": "October 5",
@@ -806,18 +471,12 @@
 			"url": "_2005_09_5_Migrating to SQL Special Offer Lumigent_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Migrating to SQL Special Offer Lumigent",
-			"rowIndex": 12
-		},
-		{
 			"key": "month",
 			"value": "October 6",
 			"rowIndex": 13,
 			"type": "link",
 			"url": "_2005_09_6_Migrating to SQL_.htm"
 		},
-		{ "key": "desc", "value": "Migrating to SQL", "rowIndex": 13 },
 		{
 			"key": "month",
 			"value": "October 7",
@@ -825,7 +484,6 @@
 			"type": "link",
 			"url": "_2005_09_7_Migrating to SQL_Special Offer_.htm"
 		},
-		{ "key": "desc", "value": "Migrating to SQL", "rowIndex": 14 },
 		{
 			"key": "month",
 			"value": "October",
@@ -834,18 +492,12 @@
 			"url": "_2005_09__Do you use enough keywords on the page_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you use enough keywords on the page?",
-			"rowIndex": 15
-		},
-		{
 			"key": "month",
 			"value": "October",
 			"rowIndex": 16,
 			"type": "link",
 			"url": "_2005_09__Migrating to SQL_Special Offer 2_.htm"
 		},
-		{ "key": "desc", "value": "Migrating to SQL", "rowIndex": 16 },
 		{
 			"key": "month",
 			"value": "October",
@@ -853,18 +505,12 @@
 			"type": "link",
 			"url": "_2005_09__Migrating to SQL_USA_.htm"
 		},
-		{ "key": "desc", "value": "Migrating to SQL", "rowIndex": 17 },
 		{
 			"key": "month",
 			"value": "November",
 			"rowIndex": 18,
 			"type": "link",
 			"url": "_2005_10__Do you refactor your code and keep methods short_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you refactor your code and keep methods short?",
-			"rowIndex": 18
 		},
 		{
 			"key": "month",
@@ -874,21 +520,11 @@
 			"url": "_2005_10__Reporting Services Training, Brisbane_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Reporting Services Training, Brisbane",
-			"rowIndex": 19
-		},
-		{
 			"key": "month",
 			"value": "November",
 			"rowIndex": 20,
 			"type": "link",
 			"url": "_2005_10__The Singapore SQL Server User Group_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "The Singapore SQL Server User Group",
-			"rowIndex": 20
 		},
 		{
 			"key": "month",
@@ -898,21 +534,11 @@
 			"url": "_2005_11_2_Brian Randell in Town for Special User Group _Tech Breakfast_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Brian Randell in Town for Special User Group ",
-			"rowIndex": 21
-		},
-		{
 			"key": "month",
 			"value": "December Mini",
 			"rowIndex": 22,
 			"type": "link",
 			"url": "_2005_11_Mini_VSLive! Sydney Don't Miss Out!_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "VSLive! Sydney Don't Miss Out!",
-			"rowIndex": 22
 		},
 		{
 			"key": "month",
@@ -922,21 +548,11 @@
 			"url": "_2005_11__Do you use email for tasks - not communication_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you use email for tasks - not communication?",
-			"rowIndex": 23
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 24,
 			"type": "link",
 			"url": "_2005_12__Do you create new databases in the default directory_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you create new databases in the default directory?",
-			"rowIndex": 24
 		}
 	],
 	"2006": [
@@ -948,21 +564,11 @@
 			"url": "_2006_01__How much intelligence in the setup.exe_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "How much intelligence in the setup.exe",
-			"rowIndex": 0
-		},
-		{
 			"key": "month",
 			"value": "March Mini",
 			"rowIndex": 1,
 			"type": "link",
 			"url": "_2006_02_Mini_See Billy Hollis doing his Advanced Data Binding 2.0 Session_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "See Billy Hollis doing his Advanced Data Binding 2.0 Session",
-			"rowIndex": 1
 		},
 		{
 			"key": "month",
@@ -972,21 +578,11 @@
 			"url": "_2006_02__Do you understand the value of consistency_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you understand the value of consistency?",
-			"rowIndex": 2
-		},
-		{
 			"key": "month",
 			"value": "April",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2006_03__Do you conduct market research via the web_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you conduct market research via the web?",
-			"rowIndex": 3
 		},
 		{
 			"key": "month",
@@ -995,18 +591,12 @@
 			"type": "link",
 			"url": "_2006_04_Mini_SSW Diagnostics New Release_.htm"
 		},
-		{ "key": "desc", "value": "SSW Diagnostics New Release", "rowIndex": 4 },
 		{
 			"key": "month",
 			"value": "May",
 			"rowIndex": 5,
 			"type": "link",
 			"url": "_2006_04__Do you avoid using one form for data entry and find navigation_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you avoid using one form for data entry and find navigation?",
-			"rowIndex": 5
 		},
 		{
 			"key": "month",
@@ -1016,21 +606,11 @@
 			"url": "_2006_05_Mini1_Making VSTS integrate into your current systems_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Making VSTS integrate into your current systems",
-			"rowIndex": 6
-		},
-		{
 			"key": "month",
 			"value": "June Mini2",
 			"rowIndex": 7,
 			"type": "link",
 			"url": "_2006_05_Mini2_Special Tech Breakfast in Brisbane _ Adam Cogan presenting Rules to Successful Projects (Part A_B)_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Special Tech Breakfast in Brisbane ",
-			"rowIndex": 7
 		},
 		{
 			"key": "month",
@@ -1040,18 +620,12 @@
 			"url": "_2006_05_Mini3_Special Offer for Tech Breakfast in Brisbane with Adam Cogan presenting Rules to successful projects _Part A _B_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Special Offer for Tech Breakfast in Brisbane with Adam Cogan presenting Rules to successful projects ",
-			"rowIndex": 8
-		},
-		{
 			"key": "month",
 			"value": "June Mini4",
 			"rowIndex": 9,
 			"type": "link",
 			"url": "_2006_05_Mini4_Special Offer_ Half Price for Tech Breakfast with Adam Cogan presenting The Best Ways To Show Your Data_.htm"
 		},
-		{ "key": "desc", "value": "Special Offer", "rowIndex": 9 },
 		{
 			"key": "month",
 			"value": "June Mini5",
@@ -1059,7 +633,6 @@
 			"type": "link",
 			"url": "_2006_05_Mini5_Early Bird Special _Discount for Tech Breakfast Visual Studio 2005 Team System_.htm"
 		},
-		{ "key": "desc", "value": "Early Bird Special ", "rowIndex": 10 },
 		{
 			"key": "month",
 			"value": "June Mini6",
@@ -1067,7 +640,6 @@
 			"type": "link",
 			"url": "_2006_05_Mini6_Complimentary Event _Adam Cogan in Hobart Tonight _ Adelaide Tomorrow!_.htm"
 		},
-		{ "key": "desc", "value": "Complimentary Event ", "rowIndex": 11 },
 		{
 			"key": "month",
 			"value": "June",
@@ -1076,29 +648,18 @@
 			"url": "_2006_05__Do you email clients as soon as you realise you will overrun your original estimate_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you email clients as soon as you realise you will overrun your original estimate?",
-			"rowIndex": 12
-		},
-		{
 			"key": "month",
 			"value": "July Mini1",
 			"rowIndex": 13,
 			"type": "link",
 			"url": "_2006_06_Mini1_NRG_SSW in association with Vic.net Users present Earning More Per Hour as a Developer_.htm"
 		},
-		{ "key": "desc", "value": "NRG", "rowIndex": 13 },
 		{
 			"key": "month",
 			"value": "July Mini2",
 			"rowIndex": 14,
 			"type": "link",
 			"url": "_2006_06_Mini2_SSW Upcoming Tech Breakfasts and Specials_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "SSW Upcoming Tech Breakfasts and Specials",
-			"rowIndex": 14
 		},
 		{
 			"key": "month",
@@ -1108,21 +669,11 @@
 			"url": "_2006_06_Mini3(English)_Special Beijing User Group with Adam Cogan_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Special Beijing User Group with Adam Cogan",
-			"rowIndex": 15
-		},
-		{
 			"key": "month",
 			"value": "July Mini3",
 			"rowIndex": 16,
 			"type": "link",
 			"url": "_2006_06_Mini3_Beijing User Group with Adam Cogan_SSW  CA and Microsoft Regional Director in Australia Making VSTS integrate into your current systems_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Beijing User Group with Adam Cogan",
-			"rowIndex": 16
 		},
 		{
 			"key": "month",
@@ -1132,21 +683,11 @@
 			"url": "_2006_06_Mini4_Chengdu User Group with Adam Cogan_SSW CA and Microsoft Regional Director in Australia Making VSTS integrate into your current systems_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Chengdu User Group with Adam Cogan",
-			"rowIndex": 17
-		},
-		{
 			"key": "month",
 			"value": "July",
 			"rowIndex": 18,
 			"type": "link",
 			"url": "_2006_06__Do you allow users to check for a new version easily_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you allow users to check for a new version easily?",
-			"rowIndex": 18
 		},
 		{
 			"key": "month",
@@ -1156,21 +697,11 @@
 			"url": "_2006_07__Do you send a Test Please email_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you send a Test Please email?",
-			"rowIndex": 19
-		},
-		{
 			"key": "month",
 			"value": "September Mini",
 			"rowIndex": 20,
 			"type": "link",
 			"url": "_2006_08_Mini_1 Day Workshop Earning More Per Hour As A Developer_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "1 Day Workshop Earning More Per Hour As A Developer",
-			"rowIndex": 20
 		},
 		{
 			"key": "month",
@@ -1180,29 +711,18 @@
 			"url": "_2006_08__Do you always fix it - or at least report it_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you always fix it - or at least report it?",
-			"rowIndex": 21
-		},
-		{
 			"key": "month",
 			"value": "October Mini",
 			"rowIndex": 22,
 			"type": "link",
 			"url": "_2006_09_Mini_Adam Cogan in Canberra_.htm"
 		},
-		{ "key": "desc", "value": "Adam Cogan in Canberra", "rowIndex": 22 },
 		{
 			"key": "month",
 			"value": "October",
 			"rowIndex": 23,
 			"type": "link",
 			"url": "_2006_09__Do you maintain verbal contact with your client_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you maintain verbal contact with your client?",
-			"rowIndex": 23
 		},
 		{
 			"key": "month",
@@ -1212,21 +732,11 @@
 			"url": "_2006_10__Microsoft Reporting Services Training_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Microsoft Reporting Services Training",
-			"rowIndex": 24
-		},
-		{
 			"key": "month",
 			"value": "December Mini",
 			"rowIndex": 25,
 			"type": "link",
 			"url": "_2006_11_Mini_SQL Server 2005 Advanced Indexing Strategies_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "SQL Server 2005 Advanced Indexing Strategies",
-			"rowIndex": 25
 		},
 		{
 			"key": "month",
@@ -1236,21 +746,11 @@
 			"url": "_2006_11__Do you always carry your toolbox_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you always carry your toolbox?",
-			"rowIndex": 26
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 27,
 			"type": "link",
 			"url": "_2006_12__Do you use email for tasks only - not communication_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you use email for tasks only - not communication?",
-			"rowIndex": 27
 		}
 	],
 	"2007": [
@@ -1262,21 +762,11 @@
 			"url": "_2007_01__Rules to Better Windows Vista Deployment_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Rules to Better Windows Vista Deployment",
-			"rowIndex": 0
-		},
-		{
 			"key": "month",
 			"value": "March",
 			"rowIndex": 1,
 			"type": "link",
 			"url": "_2007_02__Do you avoid only using source control on code_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you avoid only using source control on code?",
-			"rowIndex": 1
 		},
 		{
 			"key": "month",
@@ -1286,21 +776,11 @@
 			"url": "_2007_03__Do you provide the reason behind the rules rather than blind criticism_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you provide the reason behind the rules rather than blind criticism?",
-			"rowIndex": 2
-		},
-		{
 			"key": "month",
 			"value": "May",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2007_04__Do you know the main reasons to upsize from Access to SQL Server 2005_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you know the main reasons to upsize from Access to SQL Server 2005?",
-			"rowIndex": 3
 		},
 		{
 			"key": "month",
@@ -1310,21 +790,11 @@
 			"url": "_2007_05__Do you know who has authority_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you know who has authority?",
-			"rowIndex": 4
-		},
-		{
 			"key": "month",
 			"value": "July",
 			"rowIndex": 5,
 			"type": "link",
 			"url": "_2007_06__Do you implement an error logger_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you implement an error logger?",
-			"rowIndex": 5
 		},
 		{
 			"key": "month",
@@ -1334,21 +804,11 @@
 			"url": "_2007_07__Do you know that you should never throw an exception using System.Exception_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you know that you should never throw an exception using System.Exception?",
-			"rowIndex": 6
-		},
-		{
 			"key": "month",
 			"value": "September",
 			"rowIndex": 7,
 			"type": "link",
 			"url": "_2007_08__Do you comment and brand your code_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you comment and brand your code?",
-			"rowIndex": 7
 		},
 		{
 			"key": "month",
@@ -1358,21 +818,11 @@
 			"url": "_2007_09__Do you use appropriate and user-friendly icons_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you use appropriate and user-friendly icons?",
-			"rowIndex": 8
-		},
-		{
 			"key": "month",
 			"value": "November NZ",
 			"rowIndex": 9,
 			"type": "link",
 			"url": "_2007_10_NZ_Do you use appropriate and user-friendly icons_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you use appropriate and user-friendly icons?",
-			"rowIndex": 9
 		},
 		{
 			"key": "month",
@@ -1381,7 +831,6 @@
 			"type": "link",
 			"url": "_2007_10__Cycling to Wagga Wagga_.htm"
 		},
-		{ "key": "desc", "value": "Cycling to Wagga Wagga", "rowIndex": 10 },
 		{
 			"key": "month",
 			"value": "December",
@@ -1390,21 +839,11 @@
 			"url": "_2007_11__What sort of primary keys do you use - Natural or Surrogate_ .htm"
 		},
 		{
-			"key": "desc",
-			"value": "What sort of primary keys do you use - Natural or Surrogate?",
-			"rowIndex": 11
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 12,
 			"type": "link",
 			"url": "_2007_12__Do you know what unit tests to write and how many_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you know what unit tests to write and how many?",
-			"rowIndex": 12
 		}
 	],
 	"2008": [
@@ -1416,21 +855,11 @@
 			"url": "_2008_01__Do you use inherited forms for consistent behaviour_ .htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you use inherited forms for consistent behaviour?",
-			"rowIndex": 0
-		},
-		{
 			"key": "month",
 			"value": "March",
 			"rowIndex": 1,
 			"type": "link",
 			"url": "_2008_02__Do you know how Google ranks pages_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you know how Google ranks pages?",
-			"rowIndex": 1
 		},
 		{
 			"key": "month",
@@ -1439,18 +868,12 @@
 			"type": "link",
 			"url": "_2008_03_UNSW_University Presentation.htm"
 		},
-		{ "key": "desc", "value": "University Presentation.htm", "rowIndex": 2 },
 		{
 			"key": "month",
 			"value": "April",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2008_03__Do you conduct a Specification Review_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you conduct a Specification Review?",
-			"rowIndex": 3
 		},
 		{
 			"key": "month",
@@ -1460,21 +883,11 @@
 			"url": "_2008_04__Do you create a separate virtual directory for Admin access_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you create a separate virtual directory for Admin access?",
-			"rowIndex": 4
-		},
-		{
 			"key": "month",
 			"value": "May",
 			"rowIndex": 5,
 			"type": "link",
 			"url": "_2008_04__University of New South Wales Presentation_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "University of New South Wales Presentation",
-			"rowIndex": 5
 		},
 		{
 			"key": "month",
@@ -1484,21 +897,11 @@
 			"url": "_2008_05__Do you turn on undo disks for testing purposes_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you turn on undo disks for testing purposes?",
-			"rowIndex": 6
-		},
-		{
 			"key": "month",
 			"value": "June",
 			"rowIndex": 7,
 			"type": "link",
 			"url": "_2008_05__Macquarie University Presentation_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Macquarie University Presentation",
-			"rowIndex": 7
 		},
 		{
 			"key": "month",
@@ -1508,21 +911,11 @@
 			"url": "_2008_06__Do you make sure that the database structure is automatically handled via 3 buttons_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you make sure that the database structure is automatically handled via 3 buttons?",
-			"rowIndex": 8
-		},
-		{
 			"key": "month",
 			"value": "August",
 			"rowIndex": 9,
 			"type": "link",
 			"url": "_2008_07__Why is it great to work in SSW today_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Why is it great to work in SSW today",
-			"rowIndex": 9
 		},
 		{
 			"key": "month",
@@ -1532,21 +925,11 @@
 			"url": "_2008_08__Do you run web tests on your website (for load and automated testing)_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you run web tests on your website (for load and automated testing)?",
-			"rowIndex": 10
-		},
-		{
 			"key": "month",
 			"value": "October",
 			"rowIndex": 11,
 			"type": "link",
 			"url": "_2008_09__Do you assume catastrophic failure before touching a server_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you assume catastrophic failure before touching a server?",
-			"rowIndex": 11
 		},
 		{
 			"key": "month",
@@ -1555,18 +938,12 @@
 			"type": "link",
 			"url": "_2008_10_NZ_Dunedin User Group_.htm"
 		},
-		{ "key": "desc", "value": "Dunedin User Group", "rowIndex": 12 },
 		{
 			"key": "month",
 			"value": "November NZ",
 			"rowIndex": 13,
 			"type": "link",
 			"url": "_2008_10_NZ_University of Otago Presentation_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "University of Otago Presentation",
-			"rowIndex": 13
 		},
 		{
 			"key": "month",
@@ -1576,21 +953,11 @@
 			"url": "_2008_10__Do you use setup and set up correctly_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you use setup and set up correctly?",
-			"rowIndex": 14
-		},
-		{
 			"key": "month",
 			"value": "December",
 			"rowIndex": 15,
 			"type": "link",
 			"url": "_2008_11__Do you keep chunks of work small_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you keep chunks of work small?",
-			"rowIndex": 15
 		},
 		{
 			"key": "month",
@@ -1600,11 +967,6 @@
 			"url": "_2008_12_NZ_SQL PASS Community Connect Event_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "SQL PASS Community Connect Event",
-			"rowIndex": 16
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 17,
@@ -1612,21 +974,11 @@
 			"url": "_2008_12__Do you know the best way to demo Microsoft CRM 4 to clients_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you know the best way to demo Microsoft CRM 4 to clients?",
-			"rowIndex": 17
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 18,
 			"type": "link",
 			"url": "_2008_12__Special visit from Jonas the Silverlight guru!_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Special visit from Jonas the Silverlight guru!",
-			"rowIndex": 18
 		}
 	],
 	"2009": [
@@ -1638,21 +990,11 @@
 			"url": "_2009_01__Do you use CRM Plug-ins for data synchronization_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you use CRM Plug-ins for data synchronization?",
-			"rowIndex": 0
-		},
-		{
 			"key": "month",
 			"value": "March Tech Breakfast",
 			"rowIndex": 1,
 			"type": "link",
 			"url": "_2009_02_Tech Breakfast_Dynamic Data - Data entry made easy_.html"
-		},
-		{
-			"key": "desc",
-			"value": "Dynamic Data - Data entry made easy",
-			"rowIndex": 1
 		},
 		{
 			"key": "month",
@@ -1662,21 +1004,11 @@
 			"url": "_2009_03_Tech Breakfast_Dynamic Data - Data entry made easy_.html"
 		},
 		{
-			"key": "desc",
-			"value": "Dynamic Data - Data entry made easy",
-			"rowIndex": 2
-		},
-		{
 			"key": "month",
 			"value": "May",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2009_04__Is your version number meaningful_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Is your version number meaningful",
-			"rowIndex": 3
 		},
 		{
 			"key": "month",
@@ -1686,21 +1018,11 @@
 			"url": "_2009_05__Does your SharePoint site have favicon_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Does your SharePoint site have favicon",
-			"rowIndex": 4
-		},
-		{
 			"key": "month",
 			"value": "July",
 			"rowIndex": 5,
 			"type": "link",
 			"url": "_2009_06__Do you comment each property and method_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you comment each property and method?",
-			"rowIndex": 5
 		},
 		{
 			"key": "month",
@@ -1710,21 +1032,11 @@
 			"url": "_2009_07__Do you keep chunks of work small_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you keep chunks of work small?",
-			"rowIndex": 6
-		},
-		{
 			"key": "month",
 			"value": "September",
 			"rowIndex": 7,
 			"type": "link",
 			"url": "_2009_08__Do you use more meaningful names than Hungarian short form_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you use more meaningful names than Hungarian short form?",
-			"rowIndex": 7
 		},
 		{
 			"key": "month",
@@ -1734,21 +1046,11 @@
 			"url": "_2009_09_NZ_North Shore .NET User Group by Adam Cogan_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "North Shore .NET User Group by Adam Cogan",
-			"rowIndex": 8
-		},
-		{
 			"key": "month",
 			"value": "October",
 			"rowIndex": 9,
 			"type": "link",
 			"url": "_2009_09__Do you know why you choose Windows Forms_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you know why you choose Windows Forms?",
-			"rowIndex": 9
 		},
 		{
 			"key": "month",
@@ -1758,21 +1060,11 @@
 			"url": "_2009_10__Do you use the MVVM pattern instead of spaghetti design in your silverlight and WPF projects_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you use the MVVM pattern instead of spaghetti design in your silverlight and WPF projects?",
-			"rowIndex": 10
-		},
-		{
 			"key": "month",
 			"value": "December Mini",
 			"rowIndex": 11,
 			"type": "link",
 			"url": "_2009_11_Mini_Sharepoint Workshop and TFS 2010_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Sharepoint Workshop and TFS 2010",
-			"rowIndex": 11
 		},
 		{
 			"key": "month",
@@ -1782,21 +1074,11 @@
 			"url": "_2009_11__Does backward compatibility kill good code_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Does backward compatibility kill good code",
-			"rowIndex": 12
-		},
-		{
 			"key": "month",
 			"value": "January Mini",
 			"rowIndex": 13,
 			"type": "link",
 			"url": "_2009_12_Mini_SSW Brain Quest Adelaide- Team Foundation Server and SharePoint 2010_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "SSW Brain Quest Adelaide- Team Foundation Server and SharePoint 2010",
-			"rowIndex": 13
 		},
 		{
 			"key": "month",
@@ -1806,21 +1088,11 @@
 			"url": "_2009_12_Mini_SSW Brain Quest Melbourne- Team Foundation Server and SharePoint 2010_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "SSW Brain Quest Melbourne- Team Foundation Server and SharePoint 2010",
-			"rowIndex": 14
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 15,
 			"type": "link",
 			"url": "_2009_12__Do you know the three important sites for when you're stuck_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you know the three important sites for when you're stuck?",
-			"rowIndex": 15
 		}
 	],
 	"2010": [
@@ -1832,21 +1104,11 @@
 			"url": "_2010_01_Mini_SSW Brain Quest Brisbane- Team Foundation Server and SharePoint 2010_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "SSW Brain Quest Brisbane- Team Foundation Server and SharePoint 2010",
-			"rowIndex": 0
-		},
-		{
 			"key": "month",
 			"value": "February Mini",
 			"rowIndex": 1,
 			"type": "link",
 			"url": "_2010_01_Mini_SSW Brain Quest Sydney- Team Foundation Server and SharePoint 2010_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "SSW Brain Quest Sydney- Team Foundation Server and SharePoint 2010",
-			"rowIndex": 1
 		},
 		{
 			"key": "month",
@@ -1856,21 +1118,11 @@
 			"url": "_2010_01__Do you format and comment your regular expressions_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you format and comment your regular expressions?",
-			"rowIndex": 2
-		},
-		{
 			"key": "month",
 			"value": "March Mini",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2010_02_Mini_SSW Brain Quest Perth- Team Foundation Server and SharePoint 2010_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "SSW Brain Quest Perth- Team Foundation Server and SharePoint 2010",
-			"rowIndex": 3
 		},
 		{
 			"key": "month",
@@ -1879,18 +1131,12 @@
 			"type": "link",
 			"url": "_2010_02_Mini_UTS Short Courses_.htm"
 		},
-		{ "key": "desc", "value": "UTS Short Courses", "rowIndex": 4 },
 		{
 			"key": "month",
 			"value": "March",
 			"rowIndex": 5,
 			"type": "link",
 			"url": "_2010_02__Do you know the benefits of using source control_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you know the benefits of using source control?",
-			"rowIndex": 5
 		},
 		{
 			"key": "month",
@@ -1900,21 +1146,11 @@
 			"url": "_2010_03_Mini_SSW Brain Quest Adelaide- Team Foundation Server and SharePoint 2010_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "SSW Brain Quest Adelaide- Team Foundation Server and SharePoint 2010",
-			"rowIndex": 6
-		},
-		{
 			"key": "month",
 			"value": "April Mini",
 			"rowIndex": 7,
 			"type": "link",
 			"url": "_2010_03_Mini_SSW Brain Quest Melbourne- Team Foundation Server and SharePoint 2010_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "SSW Brain Quest Melbourne- Team Foundation Server and SharePoint 2010",
-			"rowIndex": 7
 		},
 		{
 			"key": "month",
@@ -1924,21 +1160,11 @@
 			"url": "_2010_03_Mini_SSW Brain Quest Sydney- Team Foundation Server and SharePoint 2010_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "SSW Brain Quest Sydney- Team Foundation Server and SharePoint 2010",
-			"rowIndex": 8
-		},
-		{
 			"key": "month",
 			"value": "April",
 			"rowIndex": 9,
 			"type": "link",
 			"url": "_2010_03__11 Great Events Coming-VersionResend-DoNotAddtoXMLList.htm"
-		},
-		{
-			"key": "desc",
-			"value": "11 Great Events Coming-VersionResend-DoNotAddtoXMLList.htm",
-			"rowIndex": 9
 		},
 		{
 			"key": "month",
@@ -1947,18 +1173,12 @@
 			"type": "link",
 			"url": "_2010_03__11 Great Events Coming_.htm"
 		},
-		{ "key": "desc", "value": "11 Great Events Coming", "rowIndex": 10 },
 		{
 			"key": "month",
 			"value": "April",
 			"rowIndex": 11,
 			"type": "link",
 			"url": "_2010_03__Make a separate database for your Data Warehouse_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Make a separate database for your Data Warehouse",
-			"rowIndex": 11
 		},
 		{
 			"key": "month",
@@ -1968,21 +1188,11 @@
 			"url": "_2010_04_Mini_SSW Brain Quest Canberra- Team Foundation Server and SharePoint 2010_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "SSW Brain Quest Canberra- Team Foundation Server and SharePoint 2010",
-			"rowIndex": 12
-		},
-		{
 			"key": "month",
 			"value": "May",
 			"rowIndex": 13,
 			"type": "link",
 			"url": "_2010_04__Where appropriate do you use text rather than images_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Where appropriate do you use text rather than images",
-			"rowIndex": 13
 		},
 		{
 			"key": "month",
@@ -1991,18 +1201,12 @@
 			"type": "link",
 			"url": "_2010_05__Steve Forte Day_.htm"
 		},
-		{ "key": "desc", "value": "Steve Forte Day", "rowIndex": 14 },
 		{
 			"key": "month",
 			"value": "July Mini",
 			"rowIndex": 15,
 			"type": "link",
 			"url": "_2010_06_Mini_SSW Scrum and Brain Quest in Milan_London _Team Foundation Server and SharePoint 2010_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "SSW Scrum and Brain Quest in Milan",
-			"rowIndex": 15
 		},
 		{
 			"key": "month",
@@ -2012,29 +1216,18 @@
 			"url": "_2010_06__Professional Scrum Developer Training_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Professional Scrum Developer Training",
-			"rowIndex": 16
-		},
-		{
 			"key": "month",
 			"value": "August",
 			"rowIndex": 17,
 			"type": "link",
 			"url": "_2010_07__ChinaPSDEDM_.htm"
 		},
-		{ "key": "desc", "value": "ChinaPSDEDM", "rowIndex": 17 },
 		{
 			"key": "month",
 			"value": "August",
 			"rowIndex": 18,
 			"type": "link",
 			"url": "_2010_07__Do you know that developers should do all their custom work in their own SharePoint development environment_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you know that developers should do all their custom work in their own SharePoint development environment?",
-			"rowIndex": 18
 		},
 		{
 			"key": "month",
@@ -2044,29 +1237,18 @@
 			"url": "_2010_08__Do you know how to create nice URLs using ASP.NET 4_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you know how to create nice URLs using ASP.NET 4?",
-			"rowIndex": 19
-		},
-		{
 			"key": "month",
 			"value": "October Mini",
 			"rowIndex": 20,
 			"type": "link",
 			"url": "_2010_09_Mini_Visual Studio 2010 Training_.htm"
 		},
-		{ "key": "desc", "value": "Visual Studio 2010 Training", "rowIndex": 20 },
 		{
 			"key": "month",
 			"value": "October",
 			"rowIndex": 21,
 			"type": "link",
 			"url": "_2010_09__Do you know the best way to take SharePoint data offline_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you know the best way to take SharePoint data offline?",
-			"rowIndex": 21
 		},
 		{
 			"key": "month",
@@ -2076,21 +1258,11 @@
 			"url": "_2010_10__Are your settings and the customizable settings in different files_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Are your settings and the customizable settings in different files?",
-			"rowIndex": 22
-		},
-		{
 			"key": "month",
 			"value": "December",
 			"rowIndex": 23,
 			"type": "link",
 			"url": "_2010_11__SSW Silverlight application goes live for DispatchKing_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "SSW Silverlight application goes live for DispatchKing",
-			"rowIndex": 23
 		},
 		{
 			"key": "month",
@@ -2099,18 +1271,12 @@
 			"type": "link",
 			"url": "_2010_12_Mini_SSW Scrum Training in USA_.htm"
 		},
-		{ "key": "desc", "value": "SSW Scrum Training in USA", "rowIndex": 24 },
 		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 25,
 			"type": "link",
 			"url": "_2010_12__Do you add the image and the text of the error message for SEO_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Do you add the image and the text of the error message for SEO?",
-			"rowIndex": 25
 		}
 	],
 	"2011": [
@@ -2122,18 +1288,12 @@
 			"url": "_2011_01__Do you realize that when it comes to interface design less is more_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Do you realize that when it comes to interface design less is more?",
-			"rowIndex": 0
-		},
-		{
 			"key": "month",
 			"value": "March Mini",
 			"rowIndex": 1,
 			"type": "link",
 			"url": "_2011_02_Mini_SSW Scrum Training in USA_.htm"
 		},
-		{ "key": "desc", "value": "SSW Scrum Training in USA", "rowIndex": 1 },
 		{
 			"key": "month",
 			"value": "March",
@@ -2141,18 +1301,12 @@
 			"type": "link",
 			"url": "_2011_02__SharePoint 101_.htm"
 		},
-		{ "key": "desc", "value": "SharePoint 101", "rowIndex": 2 },
 		{
 			"key": "month",
 			"value": "April Mini",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2011_03_Mini_New Zealand Visual Studio ALM Conference _.htm"
-		},
-		{
-			"key": "desc",
-			"value": "New Zealand Visual Studio ALM Conference ",
-			"rowIndex": 3
 		},
 		{
 			"key": "month",
@@ -2162,21 +1316,11 @@
 			"url": "_2011_03__Telerik Australia event - Focus on Developer Productivity_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Telerik Australia event - Focus on Developer Productivity",
-			"rowIndex": 4
-		},
-		{
 			"key": "month",
 			"value": "May Mini",
 			"rowIndex": 5,
 			"type": "link",
 			"url": "_2011_04_Mini_Brian Randell Microsoft Virtualization for Developers_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Brian Randell Microsoft Virtualization for Developers",
-			"rowIndex": 5
 		},
 		{
 			"key": "month",
@@ -2185,7 +1329,6 @@
 			"type": "link",
 			"url": "_2011_04__The Architect's Master Class_.htm"
 		},
-		{ "key": "desc", "value": "The Architect's Master Class", "rowIndex": 6 },
 		{
 			"key": "month",
 			"value": "June Mini",
@@ -2193,7 +1336,6 @@
 			"type": "link",
 			"url": "_2011_05_Mini_Brisbane_.htm"
 		},
-		{ "key": "desc", "value": "Brisbane", "rowIndex": 7 },
 		{
 			"key": "month",
 			"value": "June Mini",
@@ -2201,18 +1343,12 @@
 			"type": "link",
 			"url": "_2011_05_Mini_Sydney_.htm"
 		},
-		{ "key": "desc", "value": "Sydney", "rowIndex": 8 },
 		{
 			"key": "month",
 			"value": "June",
 			"rowIndex": 9,
 			"type": "link",
 			"url": "_2011_05__The Architect's Master Class Nearly Here_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "The Architect's Master Class Nearly Here",
-			"rowIndex": 9
 		},
 		{
 			"key": "month",
@@ -2222,21 +1358,11 @@
 			"url": "_2011_06__Scrumming it in New Delhi,  India_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Scrumming it in New Delhi,  India",
-			"rowIndex": 10
-		},
-		{
 			"key": "month",
 			"value": "August",
 			"rowIndex": 11,
 			"type": "link",
 			"url": "_2011_07__Highlights from the Architects Masterclass_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Highlights from the Architects Masterclass",
-			"rowIndex": 11
 		},
 		{
 			"key": "month",
@@ -2245,7 +1371,6 @@
 			"type": "link",
 			"url": "_2011_08__SSW goes virtual_.htm"
 		},
-		{ "key": "desc", "value": "SSW goes virtual", "rowIndex": 12 },
 		{
 			"key": "month",
 			"value": "October",
@@ -2254,29 +1379,18 @@
 			"url": "_2011_09__Top 8 ways to speed up your SQL Server database_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Top 8 ways to speed up your SQL Server database",
-			"rowIndex": 13
-		},
-		{
 			"key": "month",
 			"value": "November",
 			"rowIndex": 14,
 			"type": "link",
 			"url": "_2011_10__DDD is coming to Brisbane_.htm"
 		},
-		{ "key": "desc", "value": "DDD is coming to Brisbane", "rowIndex": 14 },
 		{
 			"key": "month",
 			"value": "December",
 			"rowIndex": 15,
 			"type": "link",
 			"url": "_2011_11__Learn Cutting Edge Technology with Industry Experts – SSW TV Launches_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Learn Cutting Edge Technology with Industry Experts – SSW TV Launches",
-			"rowIndex": 15
 		},
 		{
 			"key": "month",
@@ -2286,21 +1400,11 @@
 			"url": "_2011_11__SSW Special Offer - save over $2000 per ticket for PSD training course!_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "SSW Special Offer - save over $2000 per ticket for PSD training course!",
-			"rowIndex": 16
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 17,
 			"type": "link",
 			"url": "_2011_12__New 3 Day Scrum Course Launches in 2012_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "New 3 Day Scrum Course Launches in 2012",
-			"rowIndex": 17
 		}
 	],
 	"2012": [
@@ -2312,21 +1416,11 @@
 			"url": "_2012_01__What's happening at SSW in 2012_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "What's happening at SSW in 2012?",
-			"rowIndex": 0
-		},
-		{
 			"key": "month",
 			"value": "March",
 			"rowIndex": 1,
 			"type": "link",
 			"url": "_2012_02__Architecture Clinic with JuvalLöwy_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Architecture Clinic with JuvalLöwy",
-			"rowIndex": 1
 		},
 		{
 			"key": "month",
@@ -2336,21 +1430,11 @@
 			"url": "_2012_02__Architecture Clinic with JuvalL wy_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Architecture Clinic with JuvalL wy",
-			"rowIndex": 2
-		},
-		{
 			"key": "month",
 			"value": "April",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2012_03__SSW and SolidQ bringing SQL Training to Australia_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "SSW and SolidQ bringing SQL Training to Australia",
-			"rowIndex": 3
 		},
 		{
 			"key": "month",
@@ -2360,21 +1444,11 @@
 			"url": "_2012_04__Moving your Apps to Azure with Andrew Coates.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Moving your Apps to Azure with Andrew Coates.htm",
-			"rowIndex": 4
-		},
-		{
 			"key": "month",
 			"value": "May",
 			"rowIndex": 5,
 			"type": "link",
 			"url": "_2012_04__Moving your Apps to Azure with Andrew Coates_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Moving your Apps to Azure with Andrew Coates",
-			"rowIndex": 5
 		},
 		{
 			"key": "month",
@@ -2383,18 +1457,12 @@
 			"type": "link",
 			"url": "_2012_05_Mini_Tech_Breakfast CPlusPlus and Visual Studio Dev 11 Modern, Readable, Fast, Safe_.htm"
 		},
-		{ "key": "desc", "value": "Tech", "rowIndex": 6 },
 		{
 			"key": "month",
 			"value": "June",
 			"rowIndex": 7,
 			"type": "link",
 			"url": "_2012_05__MVC Training for Enterprising Developers PLUS a New Telerik NerdDinner_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "MVC Training for Enterprising Developers PLUS a New Telerik NerdDinner",
-			"rowIndex": 7
 		},
 		{
 			"key": "month",
@@ -2404,21 +1472,11 @@
 			"url": "_2012_06__Kate Gregory is coming to Australia_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Kate Gregory is coming to Australia",
-			"rowIndex": 8
-		},
-		{
 			"key": "month",
 			"value": "August",
 			"rowIndex": 9,
 			"type": "link",
 			"url": "_2012_07__Adam's European Adventure for TechEd 2012 in Amsterdam_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Adam's European Adventure for TechEd 2012 in Amsterdam",
-			"rowIndex": 9
 		},
 		{
 			"key": "month",
@@ -2427,18 +1485,12 @@
 			"type": "link",
 			"url": "_2012_08__Cars and user experiences_.htm"
 		},
-		{ "key": "desc", "value": "Cars and user experiences", "rowIndex": 10 },
 		{
 			"key": "month",
 			"value": "October",
 			"rowIndex": 11,
 			"type": "link",
 			"url": "_2012_09__Video - Successful Scrum in Action - A website upgrade for the National Australia Day Council_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Video - Successful Scrum in Action - A website upgrade for the National Australia Day Council",
-			"rowIndex": 11
 		},
 		{
 			"key": "month",
@@ -2448,11 +1500,6 @@
 			"url": "_2012_10__Learn to make software development less risky_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Learn to make software development less risky",
-			"rowIndex": 12
-		},
-		{
 			"key": "month",
 			"value": "December",
 			"rowIndex": 13,
@@ -2460,21 +1507,11 @@
 			"url": "_2012_11__Microsoft is onto something here_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Microsoft is onto something here",
-			"rowIndex": 13
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 14,
 			"type": "link",
 			"url": "_2012_12__Adam's year as a Microsoft Regional Director_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Adam's year as a Microsoft Regional Director",
-			"rowIndex": 14
 		}
 	],
 	"2013": [
@@ -2485,7 +1522,6 @@
 			"type": "link",
 			"url": "_2013_01__Celebrate 20 years with us_.htm"
 		},
-		{ "key": "desc", "value": "Celebrate 20 years with us", "rowIndex": 0 },
 		{
 			"key": "month",
 			"value": "March Mini",
@@ -2493,7 +1529,6 @@
 			"type": "link",
 			"url": "_2013_02_Mini_UTS Courses_.htm"
 		},
-		{ "key": "desc", "value": "UTS Courses", "rowIndex": 1 },
 		{
 			"key": "month",
 			"value": "March",
@@ -2501,7 +1536,6 @@
 			"type": "link",
 			"url": "_2013_02__2012 Retrospective of SSW_.htm"
 		},
-		{ "key": "desc", "value": "2012 Retrospective of SSW", "rowIndex": 2 },
 		{
 			"key": "month",
 			"value": "April",
@@ -2509,7 +1543,6 @@
 			"type": "link",
 			"url": "_2013_03__Lync 2013_.htm"
 		},
-		{ "key": "desc", "value": "Lync 2013", "rowIndex": 3 },
 		{
 			"key": "month",
 			"value": "May",
@@ -2517,18 +1550,12 @@
 			"type": "link",
 			"url": "_2013_04__Single Page Applications_.htm"
 		},
-		{ "key": "desc", "value": "Single Page Applications", "rowIndex": 4 },
 		{
 			"key": "month",
 			"value": "June",
 			"rowIndex": 5,
 			"type": "link",
 			"url": "_2013_05__Effective Product Owners Use the Business Value Field_.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Effective Product Owners Use the Business Value Field",
-			"rowIndex": 5
 		},
 		{
 			"key": "month",
@@ -2538,18 +1565,12 @@
 			"url": "_2013_06__New Features in Visual Studio 2013 and TFS 2013_.htm"
 		},
 		{
-			"key": "desc",
-			"value": "New Features in Visual Studio 2013 and TFS 2013",
-			"rowIndex": 6
-		},
-		{
 			"key": "month",
 			"value": "August",
 			"rowIndex": 7,
 			"type": "link",
 			"url": "_2013_07__A Glimpse into your ASP_NET App.htm"
 		},
-		{ "key": "desc", "value": "A Glimpse into your ASP", "rowIndex": 7 },
 		{
 			"key": "month",
 			"value": "September",
@@ -2557,7 +1578,6 @@
 			"type": "link",
 			"url": "_2013_08__TFS is huge in China_.htm"
 		},
-		{ "key": "desc", "value": "TFS is huge in China", "rowIndex": 8 },
 		{
 			"key": "month",
 			"value": "October",
@@ -2566,18 +1586,12 @@
 			"url": "_2013_09__How do we make good Product Owners__.htm"
 		},
 		{
-			"key": "desc",
-			"value": "How do we make good Product Owners",
-			"rowIndex": 9
-		},
-		{
 			"key": "month",
 			"value": "November",
 			"rowIndex": 10,
 			"type": "link",
 			"url": "_2013_10__SSW TV has a new face__.htm"
 		},
-		{ "key": "desc", "value": "SSW TV has a new face", "rowIndex": 10 },
 		{
 			"key": "month",
 			"value": "December",
@@ -2585,18 +1599,12 @@
 			"type": "link",
 			"url": "_2013_11__Fire Boot Camp__.htm"
 		},
-		{ "key": "desc", "value": "Fire Boot Camp", "rowIndex": 11 },
 		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 12,
 			"type": "link",
 			"url": "_2013_12__Adam's 2013 as a Microsoft Regional Director__.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Adam's 2013 as a Microsoft Regional Director",
-			"rowIndex": 12
 		}
 	],
 	"2014": [
@@ -2608,21 +1616,11 @@
 			"url": "_2014_01__FireBootCamp is one week away from ignition__.htm"
 		},
 		{
-			"key": "desc",
-			"value": "FireBootCamp is one week away from ignition",
-			"rowIndex": 0
-		},
-		{
 			"key": "month",
 			"value": "March",
 			"rowIndex": 1,
 			"type": "link",
 			"url": "_2014_02__FireBootCamp is up and running__.htm"
-		},
-		{
-			"key": "desc",
-			"value": "FireBootCamp is up and running",
-			"rowIndex": 1
 		},
 		{
 			"key": "month",
@@ -2632,21 +1630,11 @@
 			"url": "_2014_03__Your last chance to get a ticket to the FireBootCamp gala day__ .htm"
 		},
 		{
-			"key": "desc",
-			"value": "Your last chance to get a ticket to the FireBootCamp gala day",
-			"rowIndex": 2
-		},
-		{
 			"key": "month",
 			"value": "May",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2014_04__FireBootCamp Sydney ended successfully__.htm"
-		},
-		{
-			"key": "desc",
-			"value": "FireBootCamp Sydney ended successfully",
-			"rowIndex": 3
 		},
 		{
 			"key": "month",
@@ -2655,7 +1643,6 @@
 			"type": "link",
 			"url": "_2014_05__And the winner is__.htm"
 		},
-		{ "key": "desc", "value": "And the winner is", "rowIndex": 4 },
 		{
 			"key": "month",
 			"value": "July",
@@ -2663,18 +1650,12 @@
 			"type": "link",
 			"url": "_2014_06__Introducing the new SSW logo__.htm"
 		},
-		{ "key": "desc", "value": "Introducing the new SSW logo", "rowIndex": 5 },
 		{
 			"key": "month",
 			"value": "August",
 			"rowIndex": 6,
 			"type": "link",
 			"url": "_2014_07__Sign up to a free xamarin hack day in your local area__.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Sign up to a free xamarin hack day in your local area",
-			"rowIndex": 6
 		},
 		{
 			"key": "month",
@@ -2684,21 +1665,11 @@
 			"url": "_2014_08__Building a croquembouche in just 4 weeks__.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Building a croquembouche in just 4 weeks",
-			"rowIndex": 7
-		},
-		{
 			"key": "month",
 			"value": "October",
 			"rowIndex": 8,
 			"type": "link",
 			"url": "_2014_09__Come and see what the FireBootCamp graduates have built__.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Come and see what the FireBootCamp graduates have built",
-			"rowIndex": 8
 		},
 		{
 			"key": "month",
@@ -2708,18 +1679,12 @@
 			"url": "_2014_10_Mini_SSW Course AngularJS ASPNET MVC_.html"
 		},
 		{
-			"key": "desc",
-			"value": "SSW Course AngularJS ASPNET MVC",
-			"rowIndex": 9
-		},
-		{
 			"key": "month",
 			"value": "November",
 			"rowIndex": 10,
 			"type": "link",
 			"url": "_2014_10__Creating an ouroboros__.htm"
 		},
-		{ "key": "desc", "value": "Creating an ouroboros", "rowIndex": 10 },
 		{
 			"key": "month",
 			"value": "December",
@@ -2728,18 +1693,12 @@
 			"url": "_2014_11__Why SSW is moving to AngularJS__ .htm"
 		},
 		{
-			"key": "desc",
-			"value": "Why SSW is moving to AngularJS",
-			"rowIndex": 11
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 12,
 			"type": "link",
 			"url": "_2014_12__Adams 2014 in review__.htm"
-		},
-		{ "key": "desc", "value": "Adams 2014 in review", "rowIndex": 12 }
+		}
 	],
 	"2015": [
 		{
@@ -2750,18 +1709,12 @@
 			"url": "_2015_01__Getting 96 percent Code Reuse with Xamarin Forms__.htm"
 		},
 		{
-			"key": "desc",
-			"value": "Getting 96 percent Code Reuse with Xamarin Forms",
-			"rowIndex": 0
-		},
-		{
 			"key": "month",
 			"value": "March",
 			"rowIndex": 1,
 			"type": "link",
 			"url": "_2015_02__The Agile Olympics__.htm"
 		},
-		{ "key": "desc", "value": "The Agile Olympics", "rowIndex": 1 },
 		{
 			"key": "month",
 			"value": "April",
@@ -2770,29 +1723,18 @@
 			"url": "_2015_03__Whats new in VS 2015 and ALM 2015__ .htm"
 		},
 		{
-			"key": "desc",
-			"value": "Whats new in VS 2015 and ALM 2015?",
-			"rowIndex": 2
-		},
-		{
 			"key": "month",
 			"value": "May",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2015_04__SSW Data Onion.htm"
 		},
-		{ "key": "desc", "value": "SSW Data Onion.htm", "rowIndex": 3 },
 		{
 			"key": "month",
 			"value": "June",
 			"rowIndex": 4,
 			"type": "link",
 			"url": "_2015_05__Winning on Visual Studio Online in Australia__.htm"
-		},
-		{
-			"key": "desc",
-			"value": "Winning on Visual Studio Online in Australia",
-			"rowIndex": 4
 		},
 		{
 			"key": "month",
@@ -2802,21 +1744,11 @@
 			"url": "_2015_06__SSW is proud of another project__.htm"
 		},
 		{
-			"key": "desc",
-			"value": "SSW is proud of another project",
-			"rowIndex": 5
-		},
-		{
 			"key": "month",
 			"value": "August",
 			"rowIndex": 6,
 			"type": "link",
 			"url": "_2015_07__5 things to love about Dynamics CRM 2015__.htm"
-		},
-		{
-			"key": "desc",
-			"value": "5 things to love about Dynamics CRM 2015",
-			"rowIndex": 6
 		},
 		{
 			"key": "month",
@@ -2825,18 +1757,12 @@
 			"type": "link",
 			"url": "_2015_08__Tips for Tesla__.htm"
 		},
-		{ "key": "desc", "value": "Tips for Tesla", "rowIndex": 7 },
 		{
 			"key": "month",
 			"value": "October Mini",
 			"rowIndex": 8,
 			"type": "link",
 			"url": "_2015_09_Mini_Mooncake festival and how you can Chinafy to enter the Chinese market_.html"
-		},
-		{
-			"key": "desc",
-			"value": "Mooncake festival and how you can Chinafy to enter the Chinese market",
-			"rowIndex": 8
 		},
 		{
 			"key": "month",
@@ -2846,21 +1772,11 @@
 			"url": "_2015_09__FireBootCamp won the MAPA award for learning__.html"
 		},
 		{
-			"key": "desc",
-			"value": "FireBootCamp won the MAPA award for learning",
-			"rowIndex": 9
-		},
-		{
 			"key": "month",
 			"value": "November Mini",
 			"rowIndex": 10,
 			"type": "link",
 			"url": "_2015_10_Mini_The Angular Superpowers Tour_.html"
-		},
-		{
-			"key": "desc",
-			"value": "The Angular Superpowers Tour",
-			"rowIndex": 10
 		},
 		{
 			"key": "month",
@@ -2870,11 +1786,6 @@
 			"url": "_2015_10__The VS 2015 ebook - behind the scenes__.html"
 		},
 		{
-			"key": "desc",
-			"value": "The VS 2015 ebook - behind the scenes",
-			"rowIndex": 11
-		},
-		{
 			"key": "month",
 			"value": "December",
 			"rowIndex": 12,
@@ -2882,21 +1793,11 @@
 			"url": "_2015_11__Teaching Kids to Code in Sydney__.html"
 		},
 		{
-			"key": "desc",
-			"value": "Teaching Kids to Code in Sydney",
-			"rowIndex": 12
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 13,
 			"type": "link",
 			"url": "_2015_12__The Microsoft Band 2 user experience__.html"
-		},
-		{
-			"key": "desc",
-			"value": "The Microsoft Band 2 user experience",
-			"rowIndex": 13
 		}
 	],
 	"2016": [
@@ -2907,7 +1808,6 @@
 			"type": "link",
 			"url": "_2016_01__Adams 2015 in review__.html"
 		},
-		{ "key": "desc", "value": "Adams 2015 in review", "rowIndex": 0 },
 		{
 			"key": "month",
 			"value": "March",
@@ -2916,29 +1816,18 @@
 			"url": "_2016_02__High Fashion and Javascript Frameworks__.html"
 		},
 		{
-			"key": "desc",
-			"value": "High Fashion and Javascript Frameworks",
-			"rowIndex": 1
-		},
-		{
 			"key": "month",
 			"value": "April",
 			"rowIndex": 2,
 			"type": "link",
 			"url": "_2016_03__Finishing a Feature__.html"
 		},
-		{ "key": "desc", "value": "Finishing a Feature", "rowIndex": 2 },
 		{
 			"key": "month",
 			"value": "May",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2016_04__Angular 2.0 Should Be Your Next New Project__.html"
-		},
-		{
-			"key": "desc",
-			"value": "Angular 2.0 Should Be Your Next New Project",
-			"rowIndex": 3
 		},
 		{
 			"key": "month",
@@ -2948,21 +1837,11 @@
 			"url": "_2016_05__SharePoint 2016 - The futures so bright I gotta wear shades__.html"
 		},
 		{
-			"key": "desc",
-			"value": "SharePoint 2016 - The futures so bright I gotta wear shades",
-			"rowIndex": 4
-		},
-		{
 			"key": "month",
 			"value": "July",
 			"rowIndex": 5,
 			"type": "link",
 			"url": "_2016_06__I learnt how to train developers as quickly as possible__.html"
-		},
-		{
-			"key": "desc",
-			"value": "I learnt how to train developers as quickly as possible",
-			"rowIndex": 5
 		},
 		{
 			"key": "month",
@@ -2972,18 +1851,12 @@
 			"url": "_2016_07__How to blow 10 million dollars__.html"
 		},
 		{
-			"key": "desc",
-			"value": "How to blow 10 million dollars",
-			"rowIndex": 6
-		},
-		{
 			"key": "month",
 			"value": "September",
 			"rowIndex": 7,
 			"type": "link",
 			"url": "_2016_08__Hanselman Unplugged 2__.html"
 		},
-		{ "key": "desc", "value": "Hanselman Unplugged 2", "rowIndex": 7 },
 		{
 			"key": "month",
 			"value": "October",
@@ -2992,18 +1865,12 @@
 			"url": "_2016_09__SSW Chapel - Doing a renovation in 6 days__.html"
 		},
 		{
-			"key": "desc",
-			"value": "SSW Chapel - Doing a renovation in 6 days",
-			"rowIndex": 8
-		},
-		{
 			"key": "month",
 			"value": "November",
 			"rowIndex": 9,
 			"type": "link",
 			"url": "_2016_10__Power BI - No more guessing__.html"
 		},
-		{ "key": "desc", "value": "Power BI - No more guessing", "rowIndex": 9 },
 		{
 			"key": "month",
 			"value": "December",
@@ -3011,15 +1878,13 @@
 			"type": "link",
 			"url": "_2016_11__The SSW Getaway__.html"
 		},
-		{ "key": "desc", "value": "The SSW Getaway", "rowIndex": 10 },
 		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 11,
 			"type": "link",
 			"url": "_2016_12__How to learn Angular 2 fast__.html"
-		},
-		{ "key": "desc", "value": "How to learn Angular 2 fast", "rowIndex": 11 }
+		}
 	],
 	"2017": [
 		{
@@ -3029,7 +1894,6 @@
 			"type": "link",
 			"url": "_2017_01__Adams 2016 in review__.html"
 		},
-		{ "key": "desc", "value": "Adams 2016 in review", "rowIndex": 0 },
 		{
 			"key": "month",
 			"value": "March",
@@ -3038,29 +1902,18 @@
 			"url": "_2017_02__Its going to be a good 2017 with Visual Studio 2017__.html"
 		},
 		{
-			"key": "desc",
-			"value": "Its going to be a good 2017 with Visual Studio 2017",
-			"rowIndex": 1
-		},
-		{
 			"key": "month",
 			"value": "April",
 			"rowIndex": 2,
 			"type": "link",
 			"url": "_2017_03__26 videos in 4 days__.html"
 		},
-		{ "key": "desc", "value": "26 videos in 4 days", "rowIndex": 2 },
 		{
 			"key": "month",
 			"value": "May",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2017_04__We moved our TFS to the cloud__.html"
-		},
-		{
-			"key": "desc",
-			"value": "We moved our TFS to the cloud",
-			"rowIndex": 3
 		},
 		{
 			"key": "month",
@@ -3070,21 +1923,11 @@
 			"url": "_2017_05__Farewell Dynamics CRM 2016, Hello Dynamics 365__.html"
 		},
 		{
-			"key": "desc",
-			"value": "Farewell Dynamics CRM 2016, Hello Dynamics 365",
-			"rowIndex": 4
-		},
-		{
 			"key": "month",
 			"value": "July",
 			"rowIndex": 5,
 			"type": "link",
 			"url": "_2017_06__HoloLens - Let's build a whole new world together__.html"
-		},
-		{
-			"key": "desc",
-			"value": "HoloLens - Let's build a whole new world together",
-			"rowIndex": 5
 		},
 		{
 			"key": "month",
@@ -3094,21 +1937,11 @@
 			"url": "_2017_07__Putting the Team into Microsoft Teams__.html"
 		},
 		{
-			"key": "desc",
-			"value": "Putting the Team into Microsoft Teams",
-			"rowIndex": 6
-		},
-		{
 			"key": "month",
 			"value": "September",
 			"rowIndex": 7,
 			"type": "link",
 			"url": "_2017_08__Why were excited about .NET Core__.html"
-		},
-		{
-			"key": "desc",
-			"value": "Why were excited about .NET Core",
-			"rowIndex": 7
 		},
 		{
 			"key": "month",
@@ -3117,7 +1950,6 @@
 			"type": "link",
 			"url": "_2017_09__NDC Sydney 2017__.html"
 		},
-		{ "key": "desc", "value": "NDC Sydney 2017", "rowIndex": 8 },
 		{
 			"key": "month",
 			"value": "November",
@@ -3125,7 +1957,6 @@
 			"type": "link",
 			"url": "_2017_10__The history of dotNET__.html"
 		},
-		{ "key": "desc", "value": "The history of dotNET", "rowIndex": 9 },
 		{
 			"key": "month",
 			"value": "December",
@@ -3134,21 +1965,11 @@
 			"url": "_2017_11__From UX to CX – Improving the Customer Experience__.html"
 		},
 		{
-			"key": "desc",
-			"value": "From UX to CX – Improving the Customer Experience",
-			"rowIndex": 10
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 11,
 			"type": "link",
 			"url": "_2017_12__Introducing the SSW Chapel Melbourne - and a new user group__.html"
-		},
-		{
-			"key": "desc",
-			"value": "Introducing the SSW Chapel Melbourne - and a new user group",
-			"rowIndex": 11
 		}
 	],
 	"2018": [
@@ -3159,18 +1980,12 @@
 			"type": "link",
 			"url": "_2018_01__Adams 2017 in review__.html"
 		},
-		{ "key": "desc", "value": "Adams 2017 in review", "rowIndex": 0 },
 		{
 			"key": "month",
 			"value": "March",
 			"rowIndex": 1,
 			"type": "link",
 			"url": "_2018_02__Hey Melbourne and Brisbane youre invited to a party.html"
-		},
-		{
-			"key": "desc",
-			"value": "Hey Melbourne and Brisbane youre invited to a party.html",
-			"rowIndex": 1
 		},
 		{
 			"key": "month",
@@ -3180,18 +1995,12 @@
 			"url": "_2018_03__Learn the 4 Steps to get Users in China.html"
 		},
 		{
-			"key": "desc",
-			"value": "Learn the 4 Steps to get Users in China.html",
-			"rowIndex": 2
-		},
-		{
 			"key": "month",
 			"value": "May",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2018_04__A farewell to Brian Harry__.html"
 		},
-		{ "key": "desc", "value": "A farewell to Brian Harry", "rowIndex": 3 },
 		{
 			"key": "month",
 			"value": "June",
@@ -3200,29 +2009,18 @@
 			"url": "_2018_05__We moved our SharePoint Intranet to the Cloud__.html"
 		},
 		{
-			"key": "desc",
-			"value": "We moved our SharePoint Intranet to the Cloud",
-			"rowIndex": 4
-		},
-		{
 			"key": "month",
 			"value": "July",
 			"rowIndex": 5,
 			"type": "link",
 			"url": "_2018_06__The 9 knights of Azure.html"
 		},
-		{ "key": "desc", "value": "The 9 knights of Azure.html", "rowIndex": 5 },
 		{
 			"key": "month",
 			"value": "August Mini",
 			"rowIndex": 6,
 			"type": "link",
 			"url": "_2018_07_Mini_Security Devolution with Troy Hunt__.html"
-		},
-		{
-			"key": "desc",
-			"value": "Security Devolution with Troy Hunt",
-			"rowIndex": 6
 		},
 		{
 			"key": "month",
@@ -3232,18 +2030,12 @@
 			"url": "_2018_07__New employees - saying hello, saying goodbye__.html"
 		},
 		{
-			"key": "desc",
-			"value": "New employees - saying hello, saying goodbye",
-			"rowIndex": 7
-		},
-		{
 			"key": "month",
 			"value": "September",
 			"rowIndex": 8,
 			"type": "link",
 			"url": "_2018_08__Skin cancer - ouch__.html"
 		},
-		{ "key": "desc", "value": "Skin cancer - ouch", "rowIndex": 8 },
 		{
 			"key": "month",
 			"value": "October",
@@ -3252,18 +2044,12 @@
 			"url": "_2018_09__How to be a great software consultant__.html"
 		},
 		{
-			"key": "desc",
-			"value": "How to be a great software consultant",
-			"rowIndex": 9
-		},
-		{
 			"key": "month",
 			"value": "November",
 			"rowIndex": 10,
 			"type": "link",
 			"url": "_2018_10__NDC Sydney 2018 was awesome__.html"
 		},
-		{ "key": "desc", "value": "NDC Sydney 2018 was awesome", "rowIndex": 10 },
 		{
 			"key": "month",
 			"value": "December",
@@ -3272,21 +2058,11 @@
 			"url": "_2018_11__Weve updated our Rules to Better Angular__.html"
 		},
 		{
-			"key": "desc",
-			"value": "Weve updated our Rules to Better Angular",
-			"rowIndex": 11
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 12,
 			"type": "link",
 			"url": "_2018_12__Luckin Coffee vs Starbucks - A Luckin Success in China__.html"
-		},
-		{
-			"key": "desc",
-			"value": "Luckin Coffee vs Starbucks - A Luckin Success in China",
-			"rowIndex": 12
 		}
 	],
 	"2019": [
@@ -3297,18 +2073,12 @@
 			"type": "link",
 			"url": "_2019_01__Adams 2018 in review__.html"
 		},
-		{ "key": "desc", "value": "Adams 2018 in review", "rowIndex": 0 },
 		{
 			"key": "month",
 			"value": "March",
 			"rowIndex": 1,
 			"type": "link",
 			"url": "_2019_02__5 lessons in leadership from reluctant leader David Neal __.html"
-		},
-		{
-			"key": "desc",
-			"value": "5 lessons in leadership from reluctant leader David Neal ",
-			"rowIndex": 1
 		},
 		{
 			"key": "month",
@@ -3318,21 +2088,11 @@
 			"url": "_2019_03__Azure DevOps wishlist auto-tagging Project Languages and Technologies__.html"
 		},
 		{
-			"key": "desc",
-			"value": "Azure DevOps wishlist auto-tagging Project Languages and Technologies",
-			"rowIndex": 2
-		},
-		{
 			"key": "month",
 			"value": "May",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2019_04__China - Coming to a Town Near You__.html"
-		},
-		{
-			"key": "desc",
-			"value": "China - Coming to a Town Near You",
-			"rowIndex": 3
 		},
 		{
 			"key": "month",
@@ -3342,21 +2102,11 @@
 			"url": "_2019_06__Risky attempt to move a big motorbike up some stairs… It seemed like a good idea__.html"
 		},
 		{
-			"key": "desc",
-			"value": "Risky attempt to move a big motorbike up some stairs… It seemed like a good idea",
-			"rowIndex": 4
-		},
-		{
 			"key": "month",
 			"value": "August",
 			"rowIndex": 5,
 			"type": "link",
 			"url": "_2019_07__BREAST-Improving Radiologists’ Ability to Detect Breast Cancer__.html"
-		},
-		{
-			"key": "desc",
-			"value": "BREAST-Improving Radiologists’ Ability to Detect Breast Cancer",
-			"rowIndex": 5
 		},
 		{
 			"key": "month",
@@ -3366,11 +2116,6 @@
 			"url": "_2019_09__I like big bots and I cannot lie, 5 ways bots can change your life__.html"
 		},
 		{
-			"key": "desc",
-			"value": "I like big bots and I cannot lie, 5 ways bots can change your life",
-			"rowIndex": 6
-		},
-		{
 			"key": "month",
 			"value": "December",
 			"rowIndex": 7,
@@ -3378,21 +2123,11 @@
 			"url": "_2019_11__SSW had fun at NDC – gotta catch ’em all!__.html"
 		},
 		{
-			"key": "desc",
-			"value": "SSW had fun at NDC – gotta catch ’em all!",
-			"rowIndex": 7
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 8,
 			"type": "link",
 			"url": "_2019_12__8 Tips to Strengthen Your DevOps (Project KNOWnoise)__.html"
-		},
-		{
-			"key": "desc",
-			"value": "8 Tips to Strengthen Your DevOps (Project KNOWnoise)",
-			"rowIndex": 8
 		}
 	],
 	"2020": [
@@ -3403,7 +2138,6 @@
 			"type": "link",
 			"url": "_2020_01__Adam's 2019 in Review__.html"
 		},
-		{ "key": "desc", "value": "Adam's 2019 in Review", "rowIndex": 0 },
 		{
 			"key": "month",
 			"value": "March",
@@ -3411,18 +2145,12 @@
 			"type": "link",
 			"url": "_2020_02__Introducing SSW.People!__.html"
 		},
-		{ "key": "desc", "value": "Introducing SSW.People!", "rowIndex": 1 },
 		{
 			"key": "month",
 			"value": "April",
 			"rowIndex": 2,
 			"type": "link",
 			"url": "_2020_03__Technology in a Pandemic - Helping Control Coronavirus__.html"
-		},
-		{
-			"key": "desc",
-			"value": "Technology in a Pandemic - Helping Control Coronavirus",
-			"rowIndex": 2
 		},
 		{
 			"key": "month",
@@ -3432,21 +2160,11 @@
 			"url": "_2020_04__Coronavirus - See what we are doing at SSW__.html"
 		},
 		{
-			"key": "desc",
-			"value": "Coronavirus - See what we are doing at SSW",
-			"rowIndex": 3
-		},
-		{
 			"key": "month",
 			"value": "June",
 			"rowIndex": 4,
 			"type": "link",
 			"url": "_2020_05__Working from home - romance or drama__.html"
-		},
-		{
-			"key": "desc",
-			"value": "Working from home - romance or drama",
-			"rowIndex": 4
 		},
 		{
 			"key": "month",
@@ -3456,21 +2174,11 @@
 			"url": "_2020_06__Connecting Through Video-How To Engage Customers__.html"
 		},
 		{
-			"key": "desc",
-			"value": "Connecting Through Video-How To Engage Customers",
-			"rowIndex": 5
-		},
-		{
 			"key": "month",
 			"value": "August",
 			"rowIndex": 6,
 			"type": "link",
 			"url": "_2020_07__I am on cloud 9 - SSW has migrated to Dynamics 365 Sales Cloud Version 9__.html"
-		},
-		{
-			"key": "desc",
-			"value": "I am on cloud 9 - SSW has migrated to Dynamics 365 Sales Cloud Version 9",
-			"rowIndex": 6
 		},
 		{
 			"key": "month",
@@ -3480,21 +2188,11 @@
 			"url": "_2020_08__Pull Request Approved - Using GitHub as a CMS__.html"
 		},
 		{
-			"key": "desc",
-			"value": "Pull Request Approved - Using GitHub as a CMS",
-			"rowIndex": 7
-		},
-		{
 			"key": "month",
 			"value": "October",
 			"rowIndex": 8,
 			"type": "link",
 			"url": "_2020_09__Google Search - Australia no longer feeling lucky__.html"
-		},
-		{
-			"key": "desc",
-			"value": "Google Search - Australia no longer feeling lucky",
-			"rowIndex": 8
 		},
 		{
 			"key": "month",
@@ -3504,11 +2202,6 @@
 			"url": "_2020_10__8 Tips to Better Architecture Diagrams__.html"
 		},
 		{
-			"key": "desc",
-			"value": "8 Tips to Better Architecture Diagrams",
-			"rowIndex": 9
-		},
-		{
 			"key": "month",
 			"value": "December",
 			"rowIndex": 10,
@@ -3516,21 +2209,11 @@
 			"url": "_2020_11__NDC 2020 - Breaking the Virtual Barrier__.html"
 		},
 		{
-			"key": "desc",
-			"value": "NDC 2020 - Breaking the Virtual Barrier",
-			"rowIndex": 10
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 11,
 			"type": "link",
 			"url": "_2020_12__GitBook – You Can Document Everything!__.html"
-		},
-		{
-			"key": "desc",
-			"value": "GitBook – You Can Document Everything!",
-			"rowIndex": 11
 		}
 	],
 	"2021": [
@@ -3542,21 +2225,11 @@
 			"url": "_2021_01__Reflecting on 2020 – Embracing Change__.html"
 		},
 		{
-			"key": "desc",
-			"value": "Reflecting on 2020 – Embracing Change",
-			"rowIndex": 0
-		},
-		{
 			"key": "month",
 			"value": "March",
 			"rowIndex": 1,
 			"type": "link",
 			"url": "_2021_02__Technical-Debt-Can-you-pay-it-back__.html"
-		},
-		{
-			"key": "desc",
-			"value": "Technical-Debt-Can-you-pay-it-back",
-			"rowIndex": 1
 		},
 		{
 			"key": "month",
@@ -3566,21 +2239,11 @@
 			"url": "_2021_03__SSW-Newcastle-now-open-We-are-coding-by-the-sea__.html"
 		},
 		{
-			"key": "desc",
-			"value": "SSW-Newcastle-now-open-We-are-coding-by-the-sea",
-			"rowIndex": 2
-		},
-		{
 			"key": "month",
 			"value": "May",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2021_04__Powering a Business with Low-Code__.html"
-		},
-		{
-			"key": "desc",
-			"value": "Powering a Business with Low-Code",
-			"rowIndex": 3
 		},
 		{
 			"key": "month",
@@ -3590,21 +2253,11 @@
 			"url": "_2021_05__8 Important Updates to The Scrum Guide__.html"
 		},
 		{
-			"key": "desc",
-			"value": "8 Important Updates to The Scrum Guide",
-			"rowIndex": 4
-		},
-		{
 			"key": "month",
 			"value": "July",
 			"rowIndex": 5,
 			"type": "link",
 			"url": "_2021_06__Keeping Secrets - How to make your code more secure__.html"
-		},
-		{
-			"key": "desc",
-			"value": "Keeping Secrets - How to make your code more secure",
-			"rowIndex": 5
 		},
 		{
 			"key": "month",
@@ -3614,21 +2267,11 @@
 			"url": "_2021_07__Video killed the Bibliophile - Video vs Books__.html"
 		},
 		{
-			"key": "desc",
-			"value": "Video killed the Bibliophile - Video vs Books",
-			"rowIndex": 6
-		},
-		{
 			"key": "month",
 			"value": "September",
 			"rowIndex": 7,
 			"type": "link",
 			"url": "_2021_08__The Power of Multi-select – Multiple Options on Data Entry Forms__.html"
-		},
-		{
-			"key": "desc",
-			"value": "The Power of Multi-select – Multiple Options on Data Entry Forms",
-			"rowIndex": 7
 		},
 		{
 			"key": "month",
@@ -3638,21 +2281,11 @@
 			"url": "_2021_09__Going handsfree in Office 365 – You should be using Dictate__.html"
 		},
 		{
-			"key": "desc",
-			"value": "Going handsfree in Office 365 – You should be using Dictate",
-			"rowIndex": 8
-		},
-		{
 			"key": "month",
 			"value": "November",
 			"rowIndex": 9,
 			"type": "link",
 			"url": "_2021_10__Avoiding a Jurassic problem – 7 tips for handling errors, before they bite__.html"
-		},
-		{
-			"key": "desc",
-			"value": "Avoiding a Jurassic problem – 7 tips for handling errors, before they bite",
-			"rowIndex": 9
 		},
 		{
 			"key": "month",
@@ -3662,21 +2295,11 @@
 			"url": "_2021_11__Avoiding Storms with BDD and Automated Testing__.html"
 		},
 		{
-			"key": "desc",
-			"value": "Avoiding Storms with BDD and Automated Testing",
-			"rowIndex": 10
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 11,
 			"type": "link",
 			"url": "_2021_12__5 Tips for GitHub Issues and Projects__.html"
-		},
-		{
-			"key": "desc",
-			"value": "5 Tips for GitHub Issues and Projects",
-			"rowIndex": 11
 		}
 	],
 	"2022": [
@@ -3687,7 +2310,6 @@
 			"type": "link",
 			"url": "_2022_01__Adam's 2021 Year in Review__.html"
 		},
-		{ "key": "desc", "value": "Adam's 2021 Year in Review", "rowIndex": 0 },
 		{
 			"key": "month",
 			"value": "March",
@@ -3695,18 +2317,12 @@
 			"type": "link",
 			"url": "_2022_02__Speaking Up About Fairness__.html"
 		},
-		{ "key": "desc", "value": "Speaking Up About Fairness", "rowIndex": 1 },
 		{
 			"key": "month",
 			"value": "April",
 			"rowIndex": 2,
 			"type": "link",
 			"url": "_2022_03__Helping Each Other in the Workplace__.html"
-		},
-		{
-			"key": "desc",
-			"value": "Helping Each Other in the Workplace",
-			"rowIndex": 2
 		},
 		{
 			"key": "month",
@@ -3716,21 +2332,11 @@
 			"url": "_2022_04__10 Security Tips for CEOs and SysAdmins__.html"
 		},
 		{
-			"key": "desc",
-			"value": "10 Security Tips for CEOs and SysAdmins",
-			"rowIndex": 3
-		},
-		{
 			"key": "month",
 			"value": "June",
 			"rowIndex": 4,
 			"type": "link",
 			"url": "_2022_05__Tech World on TikTok – Is it for you__.html"
-		},
-		{
-			"key": "desc",
-			"value": "Tech World on TikTok – Is it for you",
-			"rowIndex": 4
 		},
 		{
 			"key": "month",
@@ -3740,21 +2346,11 @@
 			"url": "_2022_06__Clean Low Code – How to keep your Power Automate Flows lean and clean__.html"
 		},
 		{
-			"key": "desc",
-			"value": "Clean Low Code – How to keep your Power Automate Flows lean and clean",
-			"rowIndex": 5
-		},
-		{
 			"key": "month",
 			"value": "August",
 			"rowIndex": 6,
 			"type": "link",
 			"url": "_2022_07__NDC Conference Melbourne - We're Back In Person__.html"
-		},
-		{
-			"key": "desc",
-			"value": "NDC Conference Melbourne - We're Back In Person",
-			"rowIndex": 6
 		},
 		{
 			"key": "month",
@@ -3764,21 +2360,11 @@
 			"url": "_2022_08__A Electrical Nasty Shock - 5 Tips to Avoid them__.html"
 		},
 		{
-			"key": "desc",
-			"value": "A Electrical Nasty Shock - 5 Tips to Avoid them",
-			"rowIndex": 7
-		},
-		{
 			"key": "month",
 			"value": "October",
 			"rowIndex": 8,
 			"type": "link",
 			"url": "_2022_09__User Journey Mapping - What It Is, How To Do It and Why You Need To__.html"
-		},
-		{
-			"key": "desc",
-			"value": "User Journey Mapping - What It Is, How To Do It and Why You Need To?",
-			"rowIndex": 8
 		},
 		{
 			"key": "month",
@@ -3788,11 +2374,6 @@
 			"url": "_2022_10__How AI Can Help You Kickstart Your Blog__.html"
 		},
 		{
-			"key": "desc",
-			"value": "How AI Can Help You Kickstart Your Blog",
-			"rowIndex": 9
-		},
-		{
 			"key": "month",
 			"value": "December",
 			"rowIndex": 10,
@@ -3800,21 +2381,11 @@
 			"url": "_2022_11__That’s a wrap! NDC Sydney, SSW Retreat and Brainstorming Day 2022__.html"
 		},
 		{
-			"key": "desc",
-			"value": "That’s a wrap! NDC Sydney, SSW Retreat and Brainstorming Day 2022",
-			"rowIndex": 10
-		},
-		{
 			"key": "month",
 			"value": "January",
 			"rowIndex": 11,
 			"type": "link",
 			"url": "_2022_12__GitHub Copilot - A developers friend or foe__.html"
-		},
-		{
-			"key": "desc",
-			"value": "GitHub Copilot - A developers friend or foe",
-			"rowIndex": 11
 		}
 	],
 	"2023": [
@@ -3826,21 +2397,11 @@
 			"url": "_2023_01__Adams 2022 - A Year in Review__.html"
 		},
 		{
-			"key": "desc",
-			"value": "Adams 2022 - A Year in Review",
-			"rowIndex": 0
-		},
-		{
 			"key": "month",
 			"value": "March",
 			"rowIndex": 1,
 			"type": "link",
 			"url": "_2023_02__5 Key Video Production Editing Terms (aka speak the lingo of a videographer)!__.html"
-		},
-		{
-			"key": "desc",
-			"value": "5 Key Video Production Editing Terms (aka speak the lingo of a videographer)!",
-			"rowIndex": 1
 		},
 		{
 			"key": "month",
@@ -3850,21 +2411,11 @@
 			"url": "_2023_03__Managing your Azure Costs – How to Avoid Ballooning Budgets__.html"
 		},
 		{
-			"key": "desc",
-			"value": "Managing your Azure Costs – How to Avoid Ballooning Budgets",
-			"rowIndex": 2
-		},
-		{
 			"key": "month",
 			"value": "May",
 			"rowIndex": 3,
 			"type": "link",
 			"url": "_2023_04__Introducing SSW’s Cultural Exchange__.html"
-		},
-		{
-			"key": "desc",
-			"value": "Introducing SSW’s Cultural Exchange",
-			"rowIndex": 3
 		}
 	]
 }

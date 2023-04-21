@@ -1,3 +1,8 @@
+import {
+	transformIntToMonth,
+	stringifyMonth,
+} from "../../services/date.service";
+
 export const newsletterSchema = {
 	label: "Newsletters",
 	name: "newsletters",
@@ -11,42 +16,32 @@ export const newsletterSchema = {
 			list: true,
 			ui: {
 				itemProps: (item) => {
-					console.log(item);
-					if (!item.url || item.url === "") {
-						return { label: `${item.value} (Table infos)` };
+					if (item) {
+						return {
+							label: `${stringifyMonth(item.month)} - ${transformIntToMonth(
+								item.month
+							)} - ${item.description}`,
+						};
 					}
-					return { label: `${item.url} (HTML infos)` };
 				},
 			},
 			fields: [
 				{
-					type: "string",
-					name: "key",
-					label: "Key",
-					required: true,
-				},
-				{
-					type: "string",
-					name: "value",
-					label: "Value",
-					required: true,
-				},
-				{
 					type: "number",
-					name: "rowIndex",
-					label: "Row Index",
-					required: true,
-				},
-				{
-					type: "string",
-					name: "type",
-					label: "Type",
+					name: "month",
+					label: "Month",
 					required: true,
 				},
 				{
 					type: "string",
 					name: "url",
 					label: "Url",
+					required: true,
+				},
+				{
+					type: "string",
+					name: "description",
+					label: "Description",
 					required: true,
 				},
 			],
