@@ -36,25 +36,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: ".nvmrc"
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        shell: bash
-        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
-
-      - uses: actions/cache@v3
-        with:
-          path: |
-            ${{ steps.yarn-cache-dir-path.outputs.dir }}
-            ${{ github.workspace }}/.next/cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
         with:
@@ -86,14 +67,14 @@ jobs:
             ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
             ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
           build-args: |
-            NEXT_PUBLIC_GOOGLE_GTM_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID }}
-            NEXT_PUBLIC_GITHUB_RUN_DATE: ${{ steps.date.outputs.date }}
-            NEXT_PUBLIC_GITHUB_RUN_ID: ${{ github.run_id }}
-            NEXT_PUBLIC_GITHUB_RUN_NUMBER: ${{ github.run_number }}
-            NEXT_PUBLIC_GITHUB_REPOSITORY: ${{ github.repository }}
-            NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
-            NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref || github.ref_name }}
-            NEXT_PUBLIC_ZENDESK_CHAT_KEY: ${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY }}
-            GOOGLE_RECAPTCHA_KEY: ${{ secrets.GOOGLE_RECAPTCHA_KEY }}
-            TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-            SITE_URL: https://ssw.com.au
+            NEXT_PUBLIC_GOOGLE_GTM_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID }}
+            NEXT_PUBLIC_GITHUB_RUN_DATE=${{ steps.date.outputs.date }}
+            NEXT_PUBLIC_GITHUB_RUN_ID=${{ github.run_id }}
+            NEXT_PUBLIC_GITHUB_RUN_NUMBER=${{ github.run_number }}
+            NEXT_PUBLIC_GITHUB_REPOSITORY=${{ github.repository }}
+            NEXT_PUBLIC_TINA_CLIENT_ID=${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
+            NEXT_PUBLIC_TINA_BRANCH=${{ github.head_ref || github.ref_name }}
+            NEXT_PUBLIC_ZENDESK_CHAT_KEY=${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY }}
+            GOOGLE_RECAPTCHA_KEY=${{ secrets.GOOGLE_RECAPTCHA_KEY }}
+            TINA_TOKEN=${{ secrets.TINA_TOKEN }}
+            SITE_URL=https://ssw.com.au
