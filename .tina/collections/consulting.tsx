@@ -145,6 +145,12 @@ export const consultingSchema: Collection = {
 		// @ts-ignore
 		seoSchema,
 		{
+			type: "string",
+			label: "Title",
+			name: "title",
+			required: true
+		},
+		{
 			type: "object",
 			label: "CTA Header",
 			name: "booking",
@@ -168,18 +174,6 @@ export const consultingSchema: Collection = {
 					type: "image",
 					label: "Video Background",
 					name: "videoBackground",
-				},
-			],
-		},
-		{
-			type: "object",
-			label: "Solution",
-			name: "solution",
-			fields: [
-				{
-					type: "string",
-					label: "Project",
-					name: "project",
 				},
 			],
 		},

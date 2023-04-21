@@ -60,7 +60,7 @@ export default function ConsultingPage(
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}
             suffix={data.global.breadcrumbSuffix}
-            title={data.consulting.seo?.title}
+            title={data.consulting.title}
           />
         </Section>
         <Section className="w-full" color="black">
@@ -136,7 +136,7 @@ export default function ConsultingPage(
               dangerouslySetInnerHTML={{
                 __html: parseCallToAction(
                   data.consulting.callToAction || "Talk to us about your {{TITLE}} project",
-                  data.consulting.solution?.project
+                  data.consulting.title
                 ),
               }}
             ></h1>
