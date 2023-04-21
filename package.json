@@ -73,9 +73,9 @@
   },
   "resolutions": {
     "final-form": "4.20.1",
-    "@types/react": "18.0.0",
+    "@types/react": "^18.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
-  "packageManager": "yarn@3.5.0"
+  "packageManager": "yarn@1.22.19"
 }
