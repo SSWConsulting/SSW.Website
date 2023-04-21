@@ -181,6 +181,7 @@ export const getStaticProps = async ({ params }) => {
       variables: tinaProps.variables,
       testimonial: testimonial,
     },
+    revalidate: 60,
   };
 };
 
@@ -202,7 +203,7 @@ export const getStaticPaths = async () => {
     paths: allPagesListData.data.officesConnection.edges.map((page) => ({
       params: { filename: page.node._sys.filename },
     })),
-    fallback: false,
+    fallback: "blocking",
   };
 };
 

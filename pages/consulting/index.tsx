@@ -273,6 +273,7 @@ export const getStaticProps = async () => {
     props: {
       ...tinaProps,
     },
+    revalidate: 60,
   };
 };
 

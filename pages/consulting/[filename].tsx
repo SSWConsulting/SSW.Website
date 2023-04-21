@@ -233,6 +233,7 @@ export const getStaticProps = async ({ params }) => {
       },
       seo,
     },
+    revalidate: 60,
   };
 };
 
@@ -256,7 +257,7 @@ export const getStaticPaths = async () => {
     paths: allPagesListData.data.consultingConnection.edges.map((page) => ({
       params: { filename: page.node._sys.filename },
     })),
-    fallback: false,
+    fallback: "blocking",
   };
 };
 

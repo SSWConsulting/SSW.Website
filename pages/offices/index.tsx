@@ -143,6 +143,7 @@ export const getStaticProps = async () => {
       variables: tinaProps.variables,
       testimonial: testimonial,
     },
+    revalidate: 60,
   };
 };
 
