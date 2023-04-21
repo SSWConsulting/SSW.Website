@@ -8,7 +8,6 @@ import {
 import { globalSchema } from "./collections/global";
 import { marketingSchema } from "./collections/marketing";
 import { officeSchema } from "./collections/offices";
-import { opportunitiesSchema } from "./collections/opportunities";
 import { pagesSchema } from "./collections/pages";
 import { technologiesSchema } from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";

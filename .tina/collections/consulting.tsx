@@ -146,7 +146,7 @@ export const consultingSchema: Collection = {
 		seoSchema,
 		{
 			type: "object",
-			label: "Booking",
+			label: "CTA Header",
 			name: "booking",
 			fields: [
 				{
@@ -184,43 +184,11 @@ export const consultingSchema: Collection = {
 			],
 		},
 		{
-			type: "string",
-			label: "Call to Action",
-			description:
-				'Technology title inserted via {{TITLE}}. E.g. "Talk to us about your {{TITLE}} project"',
-			name: "callToAction",
-			required: false,
-		},
-		{
-			type: "object",
-			label: "Testimonial Categories",
-			name: "testimonialCategories",
-			list: true,
-			fields: [
-				{
-					type: "reference",
-					label: "Testimonial Category",
-					name: "testimonialCategory",
-					collections: ["testimonialCategories"],
-				},
-			],
-		},
-		{
 			type: "rich-text",
 			label: "Body",
 			name: "_body",
 			templates: [...Schemas.pageBlocks],
 			isBody: true,
-		},
-		{
-			type: "object",
-			list: true,
-			name: "afterBody",
-			label: "After body",
-			ui: {
-				visualSelector: true,
-			},
-			templates: [...Schemas.pageBlocks],
 		},
 		{
 			type: "object",
@@ -289,6 +257,30 @@ export const consultingSchema: Collection = {
 							name: "url",
 						},
 					],
+				},
+			],
+		},
+		{
+			type: "object",
+			list: true,
+			name: "afterBody",
+			label: "After body",
+			ui: {
+				visualSelector: true,
+			},
+			templates: [...Schemas.pageBlocks],
+		},
+		{
+			type: "object",
+			label: "Testimonial Categories",
+			name: "testimonialCategories",
+			list: true,
+			fields: [
+				{
+					type: "reference",
+					label: "Testimonial Category",
+					name: "testimonialCategory",
+					collections: ["testimonialCategories"],
 				},
 			],
 		},
@@ -367,6 +359,14 @@ export const consultingSchema: Collection = {
 					],
 				},
 			],
+		},
+		{
+			type: "string",
+			label: "CTA Footer title",
+			description:
+				'By default this will use: "Talk to us about your {{TITLE}} project". Title is sourced from Solution > Project',
+			name: "callToAction",
+			required: false,
 		},
 	],
 };

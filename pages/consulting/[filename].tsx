@@ -135,7 +135,7 @@ export default function ConsultingPage(
             <h1
               dangerouslySetInnerHTML={{
                 __html: parseCallToAction(
-                  data.consulting.callToAction,
+                  data.consulting.callToAction || "Talk to us about your {{TITLE}} project",
                   data.consulting.solution?.project
                 ),
               }}
@@ -155,11 +155,7 @@ export default function ConsultingPage(
   );
 }
 
-const parseCallToAction = (content: string, project: string) => {
-  const replacement = `<span class="text-sswRed">${project}</span>`;
-
-  return content?.replace("{{TITLE}}", replacement);
-};
+const parseCallToAction = (content: string, project: string) => content?.replace("{{TITLE}}", `<span class="text-sswRed">${project}</span>`);
 
 export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.consultingContentQuery({
