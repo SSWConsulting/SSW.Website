@@ -185,9 +185,21 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const pagesListData = await client.queries.officesConnection();
+  let PageListData = await client.queries.officesConnection();
+  const allPagesListData = PageListData;
+
+  while (PageListData.data.officesConnection.pageInfo.hasNextPage) {
+    const lastCursor = PageListData.data.officesConnection.pageInfo.endCursor;
+    PageListData = await client.queries.officesConnection({
+      after: lastCursor,
+    });
+
+    allPagesListData.data.officesConnection.edges.push(
+      ...PageListData.data.officesConnection.edges
+    );
+  }
   return {
-    paths: pagesListData.data.officesConnection.edges.map((page) => ({
+    paths: allPagesListData.data.officesConnection.edges.map((page) => ({
       params: { filename: page.node._sys.filename },
     })),
     fallback: false,
