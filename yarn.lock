@@ -1964,7 +1964,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/open-sans@npm:^4.5.14":
+"@fontsource/open-sans@npm:4.5.14":
   version: 4.5.14
   resolution: "@fontsource/open-sans@npm:4.5.14"
   checksum: 72059637d20d91520538364ead685854a4adca1d630c763e7a37438e9680e43477d0d81105fd96bc9a67a34c6703d2c58b1c187f6a26ccabf30dfd903abdfc6a
@@ -2027,7 +2027,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/fontawesome-svg-core@npm:^6.4.0":
+"@fortawesome/fontawesome-svg-core@npm:6.4.0":
   version: 6.4.0
   resolution: "@fortawesome/fontawesome-svg-core@npm:6.4.0"
   dependencies:
@@ -2036,7 +2036,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/free-solid-svg-icons@npm:^6.4.0":
+"@fortawesome/free-solid-svg-icons@npm:6.4.0":
   version: 6.4.0
   resolution: "@fortawesome/free-solid-svg-icons@npm:6.4.0"
   dependencies:
@@ -2045,7 +2045,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/react-fontawesome@npm:^0.2.0":
+"@fortawesome/react-fontawesome@npm:0.2.0":
   version: 0.2.0
   resolution: "@fortawesome/react-fontawesome@npm:0.2.0"
   dependencies:
@@ -2437,7 +2437,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@headlessui/tailwindcss@npm:^0.1.3":
+"@headlessui/tailwindcss@npm:0.1.3":
   version: 0.1.3
   resolution: "@headlessui/tailwindcss@npm:0.1.3"
   peerDependencies:
@@ -2680,7 +2680,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:13.3.0, @next/eslint-plugin-next@npm:^13.3.0":
+"@next/eslint-plugin-next@npm:13.3.0":
   version: 13.3.0
   resolution: "@next/eslint-plugin-next@npm:13.3.0"
   dependencies:
@@ -3651,7 +3651,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@svgr/webpack@npm:^7.0.0":
+"@svgr/webpack@npm:7.0.0":
   version: 7.0.0
   resolution: "@svgr/webpack@npm:7.0.0"
   dependencies:
@@ -3694,7 +3694,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/typography@npm:^0.5.9":
+"@tailwindcss/typography@npm:0.5.9, @tailwindcss/typography@npm:^0.5.9":
   version: 0.5.9
   resolution: "@tailwindcss/typography@npm:0.5.9"
   dependencies:
@@ -3762,7 +3762,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tinacms/cli@npm:^1.5.6":
+"@tinacms/cli@npm:1.5.6":
   version: 1.5.6
   resolution: "@tinacms/cli@npm:1.5.6"
   dependencies:
@@ -3999,63 +3999,63 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tinacms/starter@workspace:."
   dependencies:
-    "@fontsource/open-sans": ^4.5.14
-    "@fortawesome/fontawesome-svg-core": ^6.4.0
-    "@fortawesome/free-solid-svg-icons": ^6.4.0
-    "@fortawesome/react-fontawesome": ^0.2.0
+    "@fontsource/open-sans": 4.5.14
+    "@fortawesome/fontawesome-svg-core": 6.4.0
+    "@fortawesome/free-solid-svg-icons": 6.4.0
+    "@fortawesome/react-fontawesome": 0.2.0
     "@headlessui/react": 1.7.14
-    "@headlessui/tailwindcss": ^0.1.3
-    "@next/eslint-plugin-next": ^13.3.0
-    "@svgr/webpack": ^7.0.0
-    "@tailwindcss/typography": ^0.5.9
-    "@tinacms/cli": ^1.5.6
-    "@types/js-cookie": ^3.0.3
-    "@types/node": ^18.15.13
-    "@types/react": ^18.0.37
-    "@types/styled-components": ^5.1.26
-    "@typescript-eslint/eslint-plugin": ^5.59.0
-    "@typescript-eslint/parser": ^5.59.0
-    animate-css-grid: ^1.5.1
-    aos: ^2.3.4
-    autoprefixer: ^10.4.14
-    axios: ^1.3.6
-    classnames: ^2.3.2
-    date-fns: ^2.29.3
-    dayjs: ^1.11.7
-    eslint: ^8.38.0
-    eslint-config-next: ^13.3.0
-    eslint-plugin-tailwindcss: ^3.11.0
-    formik: ^2.2.9
-    markdown-it: ^13.0.1
-    markdown-it-multimd-table: ^4.2.1
-    next: ^13.3.0
-    next-seo: ^6.0.0
-    next-sitemap: ^4.0.7
-    nextjs-breadcrumbs2: ^2.0.4
-    postcss: ^8.4.23
-    postcss-import: ^15.1.0
-    postcss-nesting: ^11.2.2
-    prettier: ^2.8.7
-    prettier-plugin-tailwindcss: ^0.2.7
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-google-recaptcha: ^2.1.0
-    react-icons: ^4.8.0
-    react-is: ^18.2.0
-    react-player: ^2.12.0
-    react-responsive-carousel: ^3.2.23
-    react-responsive-modal: ^6.4.1
-    react-tooltip: ^5.10.4
-    sharp: ^0.32.0
-    ssw.megamenu: ^3.1.1
-    styled-components: ^5.3.9
-    styled-jsx: ^5.1.2
-    tailwindcss: ^3.3.1
-    tailwindcss-gradients: ^3.0.0
-    tinacms: ^1.4.6
-    typescript: ^5.0.3
-    usehooks-ts: ^2.9.1
-    yup: ^0.32.11
+    "@headlessui/tailwindcss": 0.1.3
+    "@next/eslint-plugin-next": 13.3.0
+    "@svgr/webpack": 7.0.0
+    "@tailwindcss/typography": 0.5.9
+    "@tinacms/cli": 1.5.6
+    "@types/js-cookie": 3.0.3
+    "@types/node": 18.15.13
+    "@types/react": 18.0.37
+    "@types/styled-components": 5.1.26
+    "@typescript-eslint/eslint-plugin": 5.59.0
+    "@typescript-eslint/parser": 5.59.0
+    animate-css-grid: 1.5.1
+    aos: 2.3.4
+    autoprefixer: 10.4.14
+    axios: 1.3.6
+    classnames: 2.3.2
+    date-fns: 2.29.3
+    dayjs: 1.11.7
+    eslint: 8.38.0
+    eslint-config-next: 13.3.0
+    eslint-plugin-tailwindcss: 3.11.0
+    formik: 2.2.9
+    markdown-it: 13.0.1
+    markdown-it-multimd-table: 4.2.1
+    next: 13.3.0
+    next-seo: 6.0.0
+    next-sitemap: 4.0.7
+    nextjs-breadcrumbs2: 2.0.4
+    postcss: 8.4.23
+    postcss-import: 15.1.0
+    postcss-nesting: 11.2.2
+    prettier: 2.8.7
+    prettier-plugin-tailwindcss: 0.2.7
+    react: 18.2.0
+    react-dom: 18.2.0
+    react-google-recaptcha: 2.1.0
+    react-icons: 4.8.0
+    react-is: 18.2.0
+    react-player: 2.12.0
+    react-responsive-carousel: 3.2.23
+    react-responsive-modal: 6.4.1
+    react-tooltip: 5.11.1
+    sharp: 0.32.0
+    ssw.megamenu: 3.1.1
+    styled-components: 5.3.9
+    styled-jsx: 5.1.2
+    tailwindcss: 3.3.1
+    tailwindcss-gradients: 3.0.0
+    tinacms: 1.4.6
+    typescript: 5.0.4
+    usehooks-ts: 2.9.1
+    yup: 0.32.11
   languageName: unknown
   linkType: soft
 
@@ -4280,7 +4280,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/js-cookie@npm:^3.0.3":
+"@types/js-cookie@npm:3.0.3":
   version: 3.0.3
   resolution: "@types/js-cookie@npm:3.0.3"
   checksum: 927254ec37ce4fbe4d9d54f53a446b4351259799d9933db5808ddb7c430396aa2496bdd0a4e47e1b56048ffbec98645cbd4daa9e3ed9a6fff55e25eb640fcb15
@@ -4347,7 +4347,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.15.13":
+"@types/node@npm:18.15.13":
   version: 18.15.13
   resolution: "@types/node@npm:18.15.13"
   checksum: 79cc5a2b5f98e8973061a4260a781425efd39161a0e117a69cd089603964816c1a14025e1387b4590c8e82d05133b7b4154fa53a7dffb3877890a66145e76515
@@ -4387,14 +4387,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.0.0":
-  version: 18.0.28
-  resolution: "@types/react@npm:18.0.28"
+"@types/react@npm:18.0.0":
+  version: 18.0.0
+  resolution: "@types/react@npm:18.0.0"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: e752df961105e5127652460504785897ca6e77259e0da8f233f694f9e8f451cde7fa0709d4456ade0ff600c8ce909cfe29f9b08b9c247fa9b734e126ec53edd7
+  checksum: 8a9769e2cabe335c86179881577e6ca32f3a6abdd5adbe2d498e48b78d532130da828a53ef25f21915179da454654b811292e0a8191c8a81af3bf4b05f5673bd
   languageName: node
   linkType: hard
 
@@ -4412,7 +4412,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/styled-components@npm:^5.1.26":
+"@types/styled-components@npm:5.1.26":
   version: 5.1.26
   resolution: "@types/styled-components@npm:5.1.26"
   dependencies:
@@ -4446,7 +4446,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.59.0":
+"@typescript-eslint/eslint-plugin@npm:5.59.0":
   version: 5.59.0
   resolution: "@typescript-eslint/eslint-plugin@npm:5.59.0"
   dependencies:
@@ -4470,6 +4470,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/parser@npm:5.59.0":
+  version: 5.59.0
+  resolution: "@typescript-eslint/parser@npm:5.59.0"
+  dependencies:
+    "@typescript-eslint/scope-manager": 5.59.0
+    "@typescript-eslint/types": 5.59.0
+    "@typescript-eslint/typescript-estree": 5.59.0
+    debug: ^4.3.4
+  peerDependencies:
+    eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 1a442d6b776fc1dca4fe104bac77eae0a59b807ba11cef00dec8f5dbbc0fb4e5fc10519eac03dd94d52e4dd6d814800d0e5c0a3bd43eefce80d829c65ba47ad0
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/parser@npm:^5.42.0":
   version: 5.56.0
   resolution: "@typescript-eslint/parser@npm:5.56.0"
@@ -4484,23 +4501,6 @@ __metadata:
     typescript:
       optional: true
   checksum: eb25490290bd5e22f9c42603dedc0d2d8ee845553e3cf48ea377bd5dc22440d3463f8b84be637b6a2b37cd9ea56b21e4e43007a0a69998948d9c8965c03fe1aa
-  languageName: node
-  linkType: hard
-
-"@typescript-eslint/parser@npm:^5.59.0":
-  version: 5.59.0
-  resolution: "@typescript-eslint/parser@npm:5.59.0"
-  dependencies:
-    "@typescript-eslint/scope-manager": 5.59.0
-    "@typescript-eslint/types": 5.59.0
-    "@typescript-eslint/typescript-estree": 5.59.0
-    debug: ^4.3.4
-  peerDependencies:
-    eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: 1a442d6b776fc1dca4fe104bac77eae0a59b807ba11cef00dec8f5dbbc0fb4e5fc10519eac03dd94d52e4dd6d814800d0e5c0a3bd43eefce80d829c65ba47ad0
   languageName: node
   linkType: hard
 
@@ -5432,7 +5432,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"animate-css-grid@npm:^1.5.1":
+"animate-css-grid@npm:1.5.1":
   version: 1.5.1
   resolution: "animate-css-grid@npm:1.5.1"
   dependencies:
@@ -5497,7 +5497,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aos@npm:^2.3.4":
+"aos@npm:2.3.4":
   version: 2.3.4
   resolution: "aos@npm:2.3.4"
   dependencies:
@@ -5738,7 +5738,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.4.14":
+"autoprefixer@npm:10.4.14":
   version: 10.4.14
   resolution: "autoprefixer@npm:10.4.14"
   dependencies:
@@ -5779,7 +5779,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.3.6":
+"axios@npm:1.3.6":
   version: 1.3.6
   resolution: "axios@npm:1.3.6"
   dependencies:
@@ -6575,7 +6575,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classnames@npm:^2.2.5, classnames@npm:^2.3.0, classnames@npm:^2.3.1, classnames@npm:^2.3.2":
+"classnames@npm:2.3.2, classnames@npm:^2.2.5, classnames@npm:^2.3.0, classnames@npm:^2.3.1":
   version: 2.3.2
   resolution: "classnames@npm:2.3.2"
   checksum: 2c62199789618d95545c872787137262e741f9db13328e216b093eea91c85ef2bfb152c1f9e63027204e2559a006a92eb74147d46c800a9f96297ae1d9f96f4e
@@ -7131,7 +7131,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^2.21.1, date-fns@npm:^2.29.3":
+"date-fns@npm:2.29.3, date-fns@npm:^2.21.1":
   version: 2.29.3
   resolution: "date-fns@npm:2.29.3"
   checksum: e01cf5b62af04e05dfff921bb9c9933310ed0e1ae9a81eb8653452e64dc841acf7f6e01e1a5ae5644d0337e9a7f936175fd2cb6819dc122fdd9c5e86c56be484
@@ -7145,7 +7145,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.11.7":
+"dayjs@npm:1.11.7":
   version: 1.11.7
   resolution: "dayjs@npm:1.11.7"
   checksum: 5003a7c1dd9ed51385beb658231c3548700b82d3548c0cfbe549d85f2d08e90e972510282b7506941452c58d32136d6362f009c77ca55381a09c704e9f177ebb
@@ -8138,7 +8138,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-next@npm:^13.3.0":
+"eslint-config-next@npm:13.3.0":
   version: 13.3.0
   resolution: "eslint-config-next@npm:13.3.0"
   dependencies:
@@ -8287,7 +8287,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-tailwindcss@npm:^3.11.0":
+"eslint-plugin-tailwindcss@npm:3.11.0":
   version: 3.11.0
   resolution: "eslint-plugin-tailwindcss@npm:3.11.0"
   dependencies:
@@ -8326,7 +8326,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.38.0":
+"eslint@npm:8.38.0":
   version: 8.38.0
   resolution: "eslint@npm:8.38.0"
   dependencies:
@@ -8896,7 +8896,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"formik@npm:^2.2.9":
+"formik@npm:2.2.9":
   version: 2.2.9
   resolution: "formik@npm:2.2.9"
   dependencies:
@@ -11232,10 +11232,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-it-multimd-table@npm:^4.2.1":
+"markdown-it-multimd-table@npm:4.2.1":
   version: 4.2.1
   resolution: "markdown-it-multimd-table@npm:4.2.1"
   checksum: a494d9485fe4b69c37bdf363be1d4243113c2f73b1c5cbb533764c9ffae5b7f3b8f43c9a6c4a147c87368388bbce04dc63fac00bd36cb1000200643ae48eaa43
+  languageName: node
+  linkType: hard
+
+"markdown-it@npm:13.0.1":
+  version: 13.0.1
+  resolution: "markdown-it@npm:13.0.1"
+  dependencies:
+    argparse: ^2.0.1
+    entities: ~3.0.1
+    linkify-it: ^4.0.1
+    mdurl: ^1.0.1
+    uc.micro: ^1.0.5
+  bin:
+    markdown-it: bin/markdown-it.js
+  checksum: faf5891d389dc433bcf21d3fbff2009beb044b42b117c92f4848899780ca1a2282a209e3ff4672db4afed726a7248304ec473e6e242a7d6498af7113d31974e7
   languageName: node
   linkType: hard
 
@@ -11251,21 +11266,6 @@ __metadata:
   bin:
     markdown-it: bin/markdown-it.js
   checksum: 890555711c1c00fa03b936ca2b213001a3b9b37dea140d8445ae4130ce16628392aad24b12e2a0a9935336ca5951f2957a38f4e5309a2e38eab44e25ff32a41e
-  languageName: node
-  linkType: hard
-
-"markdown-it@npm:^13.0.1":
-  version: 13.0.1
-  resolution: "markdown-it@npm:13.0.1"
-  dependencies:
-    argparse: ^2.0.1
-    entities: ~3.0.1
-    linkify-it: ^4.0.1
-    mdurl: ^1.0.1
-    uc.micro: ^1.0.5
-  bin:
-    markdown-it: bin/markdown-it.js
-  checksum: faf5891d389dc433bcf21d3fbff2009beb044b42b117c92f4848899780ca1a2282a209e3ff4672db4afed726a7248304ec473e6e242a7d6498af7113d31974e7
   languageName: node
   linkType: hard
 
@@ -12774,7 +12774,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-seo@npm:^6.0.0":
+"next-seo@npm:6.0.0":
   version: 6.0.0
   resolution: "next-seo@npm:6.0.0"
   peerDependencies:
@@ -12785,7 +12785,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-sitemap@npm:^4.0.7":
+"next-sitemap@npm:4.0.7":
   version: 4.0.7
   resolution: "next-sitemap@npm:4.0.7"
   dependencies:
@@ -12801,7 +12801,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:^13.3.0":
+"next@npm:13.3.0":
   version: 13.3.0
   resolution: "next@npm:13.3.0"
   dependencies:
@@ -12861,7 +12861,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nextjs-breadcrumbs2@npm:^2.0.4":
+"nextjs-breadcrumbs2@npm:2.0.4":
   version: 2.0.4
   resolution: "nextjs-breadcrumbs2@npm:2.0.4"
   peerDependencies:
@@ -13547,6 +13547,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-import@npm:15.1.0":
+  version: 15.1.0
+  resolution: "postcss-import@npm:15.1.0"
+  dependencies:
+    postcss-value-parser: ^4.0.0
+    read-cache: ^1.0.0
+    resolve: ^1.1.7
+  peerDependencies:
+    postcss: ^8.0.0
+  checksum: 7bd04bd8f0235429009d0022cbf00faebc885de1d017f6d12ccb1b021265882efc9302006ba700af6cab24c46bfa2f3bc590be3f9aee89d064944f171b04e2a3
+  languageName: node
+  linkType: hard
+
 "postcss-import@npm:^14.1.0":
   version: 14.1.0
   resolution: "postcss-import@npm:14.1.0"
@@ -13557,19 +13570,6 @@ __metadata:
   peerDependencies:
     postcss: ^8.0.0
   checksum: cd45d406e90f67cdab9524352e573cc6b4462b790934a05954e929a6653ebd31288ceebc8ce3c3ed7117ae672d9ebbec57df0bceec0a56e9b259c2e71d47ca86
-  languageName: node
-  linkType: hard
-
-"postcss-import@npm:^15.1.0":
-  version: 15.1.0
-  resolution: "postcss-import@npm:15.1.0"
-  dependencies:
-    postcss-value-parser: ^4.0.0
-    read-cache: ^1.0.0
-    resolve: ^1.1.7
-  peerDependencies:
-    postcss: ^8.0.0
-  checksum: 7bd04bd8f0235429009d0022cbf00faebc885de1d017f6d12ccb1b021265882efc9302006ba700af6cab24c46bfa2f3bc590be3f9aee89d064944f171b04e2a3
   languageName: node
   linkType: hard
 
@@ -13624,7 +13624,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-nesting@npm:^11.2.2":
+"postcss-nesting@npm:11.2.2":
   version: 11.2.2
   resolution: "postcss-nesting@npm:11.2.2"
   dependencies:
@@ -13674,6 +13674,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss@npm:8.4.23":
+  version: 8.4.23
+  resolution: "postcss@npm:8.4.23"
+  dependencies:
+    nanoid: ^3.3.6
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 8bb9d1b2ea6e694f8987d4f18c94617971b2b8d141602725fedcc2222fdc413b776a6e1b969a25d627d7b2681ca5aabb56f59e727ef94072e1b6ac8412105a2f
+  languageName: node
+  linkType: hard
+
 "postcss@npm:^8.0.9, postcss@npm:^8.4.14, postcss@npm:^8.4.21, postcss@npm:^8.4.4":
   version: 8.4.21
   resolution: "postcss@npm:8.4.21"
@@ -13682,17 +13693,6 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: e39ac60ccd1542d4f9d93d894048aac0d686b3bb38e927d8386005718e6793dbbb46930f0a523fe382f1bbd843c6d980aaea791252bf5e176180e5a4336d9679
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.4.23":
-  version: 8.4.23
-  resolution: "postcss@npm:8.4.23"
-  dependencies:
-    nanoid: ^3.3.6
-    picocolors: ^1.0.0
-    source-map-js: ^1.0.2
-  checksum: 8bb9d1b2ea6e694f8987d4f18c94617971b2b8d141602725fedcc2222fdc413b776a6e1b969a25d627d7b2681ca5aabb56f59e727ef94072e1b6ac8412105a2f
   languageName: node
   linkType: hard
 
@@ -13725,7 +13725,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-tailwindcss@npm:^0.2.7":
+"prettier-plugin-tailwindcss@npm:0.2.7":
   version: 0.2.7
   resolution: "prettier-plugin-tailwindcss@npm:0.2.7"
   peerDependencies:
@@ -13780,21 +13780,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier@npm:2.8.7":
+  version: 2.8.7
+  resolution: "prettier@npm:2.8.7"
+  bin:
+    prettier: bin-prettier.js
+  checksum: fdc8f2616f099f5f0d685907f4449a70595a0fc1d081a88919604375989e0d5e9168d6121d8cc6861f21990b31665828e00472544d785d5940ea08a17660c3a6
+  languageName: node
+  linkType: hard
+
 "prettier@npm:^2.2.1, prettier@npm:^2.7.1":
   version: 2.8.6
   resolution: "prettier@npm:2.8.6"
   bin:
     prettier: bin-prettier.js
   checksum: 8ac94fa67aec0e65743ea15ebf954ef2f1e52638abd129dc04e8b49e8bb3224c0233c98df6b5c98efd31bd2a43866590486559438ee4ead09dc81be389068572
-  languageName: node
-  linkType: hard
-
-"prettier@npm:^2.8.7":
-  version: 2.8.7
-  resolution: "prettier@npm:2.8.7"
-  bin:
-    prettier: bin-prettier.js
-  checksum: fdc8f2616f099f5f0d685907f4449a70595a0fc1d081a88919604375989e0d5e9168d6121d8cc6861f21990b31665828e00472544d785d5940ea08a17660c3a6
   languageName: node
   linkType: hard
 
@@ -14207,7 +14207,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-google-recaptcha@npm:^2.1.0":
+"react-google-recaptcha@npm:2.1.0":
   version: 2.1.0
   resolution: "react-google-recaptcha@npm:2.1.0"
   dependencies:
@@ -14219,7 +14219,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-icons@npm:^4.3.1, react-icons@npm:^4.8.0":
+"react-icons@npm:4.8.0, react-icons@npm:^4.3.1":
   version: 4.8.0
   resolution: "react-icons@npm:4.8.0"
   peerDependencies:
@@ -14235,17 +14235,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-is@npm:18.2.0":
+  version: 18.2.0
+  resolution: "react-is@npm:18.2.0"
+  checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1, react-is@npm:^16.7.0, react-is@npm:^16.8.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
-  languageName: node
-  linkType: hard
-
-"react-is@npm:^18.2.0":
-  version: 18.2.0
-  resolution: "react-is@npm:18.2.0"
-  checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
   languageName: node
   linkType: hard
 
@@ -14259,7 +14259,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-player@npm:^2.12.0":
+"react-player@npm:2.12.0":
   version: 2.12.0
   resolution: "react-player@npm:2.12.0"
   dependencies:
@@ -14337,7 +14337,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-responsive-carousel@npm:^3.2.23":
+"react-responsive-carousel@npm:3.2.23":
   version: 3.2.23
   resolution: "react-responsive-carousel@npm:3.2.23"
   dependencies:
@@ -14348,7 +14348,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-responsive-modal@npm:^6.4.1":
+"react-responsive-modal@npm:6.4.1":
   version: 6.4.1
   resolution: "react-responsive-modal@npm:6.4.1"
   dependencies:
@@ -14440,16 +14440,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-tooltip@npm:^5.10.4":
-  version: 5.10.4
-  resolution: "react-tooltip@npm:5.10.4"
+"react-tooltip@npm:5.11.1":
+  version: 5.11.1
+  resolution: "react-tooltip@npm:5.11.1"
   dependencies:
     "@floating-ui/dom": ^1.0.0
     classnames: ^2.3.0
   peerDependencies:
     react: ">=16.14.0"
     react-dom: ">=16.14.0"
-  checksum: 9ae83e7f2c82ba0d3dd5be0901b32a24810ce3089d9f39b97e5f7a5a452acb174d2f3d87353fa23603208bd60daa21848cb42cd2ea324854017ae50fd96d42e9
+  checksum: 6ace7614d85774d9d90879a7bb2e23928c560b79b6b5cdef660ae02c1367aef1084af3e8446e8750116da5b40cd3f18869263951677b806bfd8d7e54d32dd35d
   languageName: node
   linkType: hard
 
@@ -15308,7 +15308,7 @@ remark-mdx@next:
   languageName: node
   linkType: hard
 
-"sharp@npm:^0.32.0":
+"sharp@npm:0.32.0":
   version: 0.32.0
   resolution: "sharp@npm:0.32.0"
   dependencies:
@@ -15689,7 +15689,7 @@ remark-mdx@next:
   languageName: node
   linkType: hard
 
-"ssw.megamenu@npm:^3.1.1":
+"ssw.megamenu@npm:3.1.1":
   version: 3.1.1
   resolution: "ssw.megamenu@npm:3.1.1"
   peerDependencies:
@@ -15919,7 +15919,7 @@ remark-mdx@next:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^5.3.9":
+"styled-components@npm:5.3.9":
   version: 5.3.9
   resolution: "styled-components@npm:5.3.9"
   dependencies:
@@ -15957,7 +15957,7 @@ remark-mdx@next:
   languageName: node
   linkType: hard
 
-"styled-jsx@npm:^5.1.2":
+"styled-jsx@npm:5.1.2":
   version: 5.1.2
   resolution: "styled-jsx@npm:5.1.2"
   dependencies:
@@ -16077,7 +16077,7 @@ remark-mdx@next:
   languageName: node
   linkType: hard
 
-"tailwindcss-gradients@npm:^3.0.0":
+"tailwindcss-gradients@npm:3.0.0":
   version: 3.0.0
   resolution: "tailwindcss-gradients@npm:3.0.0"
   dependencies:
@@ -16087,7 +16087,7 @@ remark-mdx@next:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.2.7, tailwindcss@npm:^3.3.1":
+"tailwindcss@npm:3.3.1, tailwindcss@npm:^3.2.7":
   version: 3.3.1
   resolution: "tailwindcss@npm:3.3.1"
   dependencies:
@@ -16206,7 +16206,7 @@ remark-mdx@next:
   languageName: node
   linkType: hard
 
-"tinacms@npm:1.4.6, tinacms@npm:^1.4.6":
+"tinacms@npm:1.4.6":
   version: 1.4.6
   resolution: "tinacms@npm:1.4.6"
   dependencies:
@@ -16550,6 +16550,16 @@ remark-mdx@next:
   languageName: node
   linkType: hard
 
+"typescript@npm:5.0.4":
+  version: 5.0.4
+  resolution: "typescript@npm:5.0.4"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 82b94da3f4604a8946da585f7d6c3025fff8410779e5bde2855ab130d05e4fd08938b9e593b6ebed165bda6ad9292b230984f10952cf82f0a0ca07bbeaa08172
+  languageName: node
+  linkType: hard
+
 "typescript@npm:^4.6.4":
   version: 4.9.5
   resolution: "typescript@npm:4.9.5"
@@ -16560,13 +16570,13 @@ remark-mdx@next:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.0.3":
-  version: 5.0.3
-  resolution: "typescript@npm:5.0.3"
+"typescript@patch:typescript@5.0.4#~builtin<compat/typescript>":
+  version: 5.0.4
+  resolution: "typescript@patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=85af82"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 3cce0576d218cb4277ff8b6adfef1a706e9114a98b4261a38ad658a7642f1b274a8396394f6cbff8c0ba852996d7ed2e233e9b8431d5d55ac7c2f6fea645af02
+  checksum: bb309d320c59a26565fb3793dba550576ab861018ff3fd1b7fccabbe46ae4a35546bc45f342c0a0b6f265c801ccdf64ffd68f548f117ceb7f0eac4b805cd52a9
   languageName: node
   linkType: hard
 
@@ -16577,16 +16587,6 @@ remark-mdx@next:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: ab417a2f398380c90a6cf5a5f74badd17866adf57f1165617d6a551f059c3ba0a3e4da0d147b3ac5681db9ac76a303c5876394b13b3de75fdd5b1eaa06181c9d
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@^5.0.3#~builtin<compat/typescript>":
-  version: 5.0.3
-  resolution: "typescript@patch:typescript@npm%3A5.0.3#~builtin<compat/typescript>::version=5.0.3&hash=85af82"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 5580367025ff7ee1f2a61e5affdbddccfe6e893bc662aa33fefdbf12de7e493173fa7d47475e9e15121828691004c4ed13bcd115e57866baed97b54c60954e1c
   languageName: node
   linkType: hard
 
@@ -17087,7 +17087,7 @@ remark-mdx@next:
   languageName: node
   linkType: hard
 
-"usehooks-ts@npm:^2.9.1":
+"usehooks-ts@npm:2.9.1":
   version: 2.9.1
   resolution: "usehooks-ts@npm:2.9.1"
   peerDependencies:
@@ -17573,7 +17573,7 @@ remark-mdx@next:
   languageName: node
   linkType: hard
 
-"yup@npm:^0.32.0, yup@npm:^0.32.11, yup@npm:^0.32.9":
+"yup@npm:0.32.11, yup@npm:^0.32.0, yup@npm:^0.32.9":
   version: 0.32.11
   resolution: "yup@npm:0.32.11"
   dependencies:

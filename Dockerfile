@@ -1,17 +1,6 @@
-# Install dependencies only when needed
-FROM node:19-alpine AS deps
-RUN corepack enable
+FROM node:19-alpine AS builder
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
 RUN apk add --no-cache libc6-compat
-WORKDIR /app
-
-# Install dependencies based on the preferred package manager
-COPY package.json yarn.lock* ./
-RUN yarn --frozen-lockfile
-
-
-# Rebuild the source code only when needed
-FROM node:19-alpine AS builder
 RUN corepack enable
 
 # Build requires some environment variables -> source them as build args
@@ -44,7 +33,6 @@ ARG SITE_URL
 ENV SITE_URL ${SITE_URL}
 
 WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # Next.js collects completely anonymous telemetry data about general usage.
@@ -54,6 +42,7 @@ COPY . .
 
 # was hitting memory limit during build with default heap size
 ENV NODE_OPTIONS="--max-old-space-size=8192"
+RUN yarn install --immutable
 RUN yarn build
 
 # If using npm comment out above and use below instead
