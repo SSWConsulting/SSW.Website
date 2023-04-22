@@ -12,6 +12,7 @@ import { GoogleMapsWrapper } from "./googleMapsWrapper";
 import { InternalCarousel } from "./internalCarousel";
 import { NewsTable } from "./tables/newsTable";
 import { SubNewsLettersButton } from "./subNewsLettersButton";
+import { NewslettersTable } from "./newslettersTable";
 
 export const componentRenderer: Components<{
 	ClientLogos: Record<string, never>;
@@ -94,6 +95,9 @@ export const componentRenderer: Components<{
 		}[];
 	};
 	NewsTable: Record<string, never>;
+	NewslettersTable: {
+		headerText: string;
+	};
 	SubNewsLettersButton: {
 		subNewsLettersButtonText: string;
 	};
@@ -110,5 +114,6 @@ export const componentRenderer: Components<{
 	GoogleMaps: (props) => <GoogleMapsWrapper {...props} />,
 	InternalCarousel: (props) => <InternalCarousel data={props} />,
 	NewsTable: () => <NewsTable />,
+	NewslettersTable: (props) => <NewslettersTable data={props} />,
 	SubNewsLettersButton: (props) => <SubNewsLettersButton data={props} />,
 };

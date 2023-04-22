@@ -17,6 +17,7 @@ import { citationBlockSchema } from "./citation";
 import { subNewsLettersButtonSchema } from "./subNewsLettersButton";
 import { googleMapsSchema } from "./googleMapsWrapper";
 import { newsTableBlockSchema } from "./tables/newsTable";
+import { newslettersTableSchema } from "./newslettersTable";
 
 export const pageBlocks: Template[] = [
 	aboutUsBlockSchema,
@@ -36,6 +37,7 @@ export const pageBlocks: Template[] = [
 	googleMapsSchema,
 	internalCarouselBlockSchema,
 	newsTableBlockSchema,
+	newslettersTableSchema,
 ];
 
 export * from "./aboutUs";
@@ -50,6 +52,7 @@ export * from "./customImage";
 export * from "./googleMapsWrapper";
 export * from "./hero";
 export * from "./tables/newsTable";
+export * from "./newslettersTable";
 export * from "./serviceCards";
 export * from "./subNewsLettersButton";
 export * from "./tables/sswTable";

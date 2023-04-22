@@ -1,7 +1,4 @@
-import {
-	transformIntToMonth,
-	stringifyMonth,
-} from "../../services/date.service";
+import { transformIntToMonth } from "../../services/date.service";
 
 export const newsletterSchema = {
 	label: "Newsletters",
@@ -12,7 +9,7 @@ export const newsletterSchema = {
 		{
 			type: "string",
 			label: "Year",
-			name: "year",
+			name: "newsletters_year",
 		},
 		{
 			type: "object",
