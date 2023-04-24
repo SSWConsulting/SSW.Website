@@ -6,7 +6,7 @@ import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import MicrosoftPanel from "../../components/offices/microsoftPanel";
 import TestimonialPanel from "../../components/offices/testimonialPanel";
-import { Flag } from "../../components/util/flag";
+import { Flag } from "../../components/blocks/flag";
 import layoutData from "../../content/global/index.json";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 
