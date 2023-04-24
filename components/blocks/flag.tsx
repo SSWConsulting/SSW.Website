@@ -3,7 +3,8 @@ import { sswCountries } from "../util/constants/country";
 import { Template } from "tinacms";
 
 export const Flag = ({ country }) => {
-  const { flagUrl } = sswCountries.find((item) => item.label === country);
+  const countryObj = sswCountries.find((item) => item.label === country);
+  const flagUrl = countryObj?.flagUrl || sswCountries[0].flagUrl;
 
   return (
     <>
@@ -20,7 +21,7 @@ export const Flag = ({ country }) => {
 
 export const flagSchema: Template = {
   name: "Flag",
-  label: "Flag image for a given country",
+  label: "Flag Image",
   fields: [
     {
       type: "string",
