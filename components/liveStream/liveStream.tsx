@@ -299,7 +299,6 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
 								id={eventDescriptionCollapseId}
 								ref={collapsableEventDescriptionRefCallback}
 								className={classNames(
-									"prose",
 									{ "max-h-70": collapseMap[eventDescriptionCollapseId] },
 									{ "max-h-screen": !collapseMap[eventDescriptionCollapseId] },
 									{
@@ -385,7 +384,6 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
 									<div className="col-span-5">
 										<p className="mb-3 font-bold">{speakerInfo.Title}</p>
 										<p
-											className="prose-sm"
 											dangerouslySetInnerHTML={{
 												__html: speakerInfo.PresenterShortDescription,
 											}}

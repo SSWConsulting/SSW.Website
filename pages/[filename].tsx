@@ -86,13 +86,26 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-    const pagesListData = await client.queries.pageConnection();
-    return {
-        paths: pagesListData.data.pageConnection.edges.map((page) => ({
-            params: { filename: page.node._sys.filename },
-        })),
-        fallback: false,
-    };
+  let PageListData = await client.queries.pageConnection();
+  const allPagesListData = PageListData;
+
+  while (PageListData.data.pageConnection.pageInfo.hasNextPage) {
+    const lastCursor = PageListData.data.pageConnection.pageInfo.endCursor;
+    PageListData = await client.queries.pageConnection({
+      after: lastCursor,
+    });
+
+    allPagesListData.data.pageConnection.edges.push(
+      ...PageListData.data.pageConnection.edges
+    );
+  }
+
+  return {
+    paths: allPagesListData.data.pageConnection.edges.map((page) => ({
+      params: { filename: page.node._sys.filename },
+    })),
+    fallback: false,
+  };
 };
 
 export type AsyncReturnType<T extends (...args: any) => Promise<any>> = // eslint-disable-line @typescript-eslint/no-explicit-any
