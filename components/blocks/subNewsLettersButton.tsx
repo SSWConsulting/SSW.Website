@@ -1,48 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Template } from "tinacms";
-import { AddContactToNewslettersData } from "../../services";
 import axios from "axios";
 
+/**
+ * A component for subscribing to newsletters.
+ * @param headerText - The text to display above the form.
+ * @param subscribeButtonText - The text to display on the subscribe button.
+ */
 export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
-	const [email, setEmail] = React.useState<string>("");
-	const [fullName, setFullName] = React.useState<string>("");
-	const [informationMessage, setInformationMessage] =
-		React.useState<string>("");
-	const [isContactAlreadyExisting, setIsContactAlreadyExisting] =
-		React.useState<boolean>(false);
-	const [loading, setLoading] = React.useState(false);
+	const [email, setEmail] = useState("");
+	const [fullName, setFullName] = useState("");
+	const [infoMessage, setInfoMessage] = useState("");
+	const [isContactExisting, setIsContactExisting] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
 
 	const handleSubscribe = async () => {
-		if (email !== "" && fullName !== "") {
-			setLoading(true);
-			setInformationMessage("Subscribing to the newsletter...");
-			setIsContactAlreadyExisting(false);
-			const payLoad: AddContactToNewslettersData = {
-				Email: email,
-				FullName: fullName,
-			};
-			try {
-				const addContactToNewsLettersResult = await axios.post(
-					"/api/add-contact-to-newsletters",
-					payLoad
-				);
-				setInformationMessage(addContactToNewsLettersResult.data.message);
-			} catch (error) {
-				setInformationMessage(error.response.data.message);
-				setIsContactAlreadyExisting(true);
-			}
-			setLoading(false);
+		if (email === "" || fullName === "") return;
+
+		setIsLoading(true);
+		setInfoMessage("Subscribing to the newsletter...");
+		setIsContactExisting(false);
+
+		const payload = {
+			Email: email,
+			FullName: fullName,
+		};
+
+		try {
+			const response = await axios.post(
+				"/api/add-contact-to-newsletters",
+				payload
+			);
+			setInfoMessage(response.data.message);
+		} catch (err) {
+			setInfoMessage(err.response.data.message);
+			setIsContactExisting(true);
 		}
+
+		setIsLoading(false);
 	};
 
-	const handleOnEmailChange = (
+	const handleEmailChange = (
 		event: React.ChangeEvent<HTMLInputElement>
 	): void => {
 		setEmail(event.target.value);
 	};
 
-	const handleOnNameChange = (
+	const handleNameChange = (
 		event: React.ChangeEvent<HTMLInputElement>
 	): void => {
 		setFullName(event.target.value);
@@ -58,7 +63,7 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
 						id="fullName"
 						type="text"
 						placeholder="Your Full Name"
-						onChange={handleOnNameChange}
+						onChange={handleNameChange}
 						value={fullName}
 					/>
 				</div>
@@ -68,7 +73,7 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
 						id="email"
 						type="email"
 						placeholder="Your Email"
-						onChange={handleOnEmailChange}
+						onChange={handleEmailChange}
 						value={email}
 					/>
 				</div>
@@ -89,11 +94,11 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
 				</div>
 				<p
 					className={`mt-2 flex justify-center text-sm ${
-						isContactAlreadyExisting ? "text-sswRed" : "text-green-500"
+						isContactExisting ? "text-sswRed" : "text-green-500"
 					}`}
 				>
-					<span className={loading ? "text-gray-500" : ""}>
-						{informationMessage}
+					<span className={isLoading ? "text-gray-500" : ""}>
+						{infoMessage}
 					</span>
 				</p>
 			</div>
