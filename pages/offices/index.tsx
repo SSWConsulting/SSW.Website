@@ -20,7 +20,6 @@ export default function OfficeIndex(
   });
 
   const offices = data?.map((office) => office.office);
-  console.log(offices);
 
   return (
     offices && (
@@ -139,8 +138,6 @@ export const getStaticProps = async () => {
     testimonialResult.data.testimonialsConnection.Testimonials;
   const testimonial =
     testimonials[Math.floor(Math.random() * testimonials.length)].Testimonial;
-
-  console.log(tinaProps);
 
   return {
     props: {
