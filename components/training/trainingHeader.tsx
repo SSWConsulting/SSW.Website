@@ -11,6 +11,8 @@ const TrainingHeader = ({ data }) => {
             className="flex h-full flex-col items-center border-b-8 border-sswRed bg-white bg-cover bg-no-repeat lg:block"
             style={{ backgroundImage: `url(${data?.heroBackground})` }}
         >
+            {/* Tailwind shorthand breaks styling */}
+            {/* eslint-disable-next-line tailwindcss/enforces-shorthand */}
             <Container className={"flex-1 pb-0 pt-0 md:pb-12"}>
                 <div className={`px-6 lg:flex lg:px-8 lg:pb-24 ${!data?.person ? "justify-center text-center" : "text-center lg:text-left"}`}>
                     <div className={`mx-auto flex max-w-2xl flex-col items-center pt-8 lg:mx-0 lg:max-w-3xl lg:items-start ${!data?.person && "lg:items-center"}`}>
