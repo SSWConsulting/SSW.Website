@@ -24,13 +24,13 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
 	}, [hasLoaded]);
 
 	const loadNewsletters = () => {
-		const newslettersContext = require.context(
+		const newsletterFiles = require.context(
 			"../../content/newsletters",
 			true,
 			/\.json$/
 		);
 
-		const allNewsletters = importAllJSON(newslettersContext);
+		const allNewsletters = importAllJSON(newsletterFiles);
 
 		const newslettersData = Object.values(allNewsletters).map(
 			({ newsletters, newsletters_year }) => ({
@@ -39,7 +39,17 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
 			})
 		);
 
-		setNewsletters(newslettersData.reverse());
+		const sortedNewslettersData = newslettersData.map((item) => {
+			const sortedNewsletters = item.newsletters.sort(
+				(a, b) => a.month - b.month
+			);
+			return {
+				newsletters: sortedNewsletters,
+				year: item.year,
+			};
+		});
+
+		setNewsletters(sortedNewslettersData.reverse());
 		setHasLoaded(true);
 	};
 
