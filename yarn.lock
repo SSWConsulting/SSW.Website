@@ -4061,7 +4061,7 @@ __metadata:
     react-player: ^2.12.0
     react-responsive-carousel: ^3.2.23
     react-responsive-modal: ^6.4.1
-    react-tooltip: ^5.10.4
+    react-tooltip: ^5.11.1
     sharp: ^0.32.0
     ssw.megamenu: ^3.1.1
     styled-components: ^5.3.9
@@ -14501,16 +14501,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-tooltip@npm:^5.10.4":
-  version: 5.10.4
-  resolution: "react-tooltip@npm:5.10.4"
+"react-tooltip@npm:^5.11.1":
+  version: 5.11.1
+  resolution: "react-tooltip@npm:5.11.1"
   dependencies:
     "@floating-ui/dom": ^1.0.0
     classnames: ^2.3.0
   peerDependencies:
     react: ">=16.14.0"
     react-dom: ">=16.14.0"
-  checksum: 9ae83e7f2c82ba0d3dd5be0901b32a24810ce3089d9f39b97e5f7a5a452acb174d2f3d87353fa23603208bd60daa21848cb42cd2ea324854017ae50fd96d42e9
+  checksum: 6ace7614d85774d9d90879a7bb2e23928c560b79b6b5cdef660ae02c1367aef1084af3e8446e8750116da5b40cd3f18869263951677b806bfd8d7e54d32dd35d
   languageName: node
   linkType: hard
 
