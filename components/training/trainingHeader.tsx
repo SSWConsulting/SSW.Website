@@ -2,7 +2,6 @@ import Image from "next/image";
 import classNames from "classnames";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
-import { ImArrowUpRight2 } from "react-icons/im";
 import { Carousel } from "react-responsive-carousel";
 import styles from "./training.module.css";
 
@@ -12,7 +11,7 @@ const TrainingHeader = ({ data }) => {
             className="flex h-full flex-col items-center border-b-8 border-sswRed bg-white bg-cover bg-no-repeat lg:block"
             style={{ backgroundImage: `url(${data?.heroBackground})` }}
         >
-            <Container className={"flex-1 pt-0"}>
+            <Container className={"flex-1 pb-0 pt-0 md:pb-12"}>
                 <div className={`px-6 lg:flex lg:px-8 lg:pb-24 ${!data?.person ? "justify-center text-center" : "text-center lg:text-left"}`}>
                     <div className={`mx-auto flex max-w-2xl flex-col items-center pt-8 lg:mx-0 lg:max-w-3xl lg:items-start ${!data?.person && "lg:items-center"}`}>
                         <div className="mt-15 flex max-w-2xl flex-col text-white sm:text-6xl">
@@ -22,9 +21,9 @@ const TrainingHeader = ({ data }) => {
                         <div className={`${data?.secondaryTagline ? "mt-10" : ""}`}>
                             <button
                                 className="flex items-center gap-2 rounded bg-sswRed px-5 py-2.5 text-sm font-normal text-white shadow-sm"
+                                onClick={() => window.open(`${data.link.url}` || "", "_blank")}
                             >
-                                Apply Now
-                                <ImArrowUpRight2 />
+                                {data.link.linkText}
                             </button>
                         </div>
                     </div>
@@ -32,7 +31,7 @@ const TrainingHeader = ({ data }) => {
             </Container>
             {data?.person &&
                 <Image
-                className={classNames(styles["carouselSubject"], "max-w-screen-md sm:max-w-full block lg:absolute lg:bottom-0 lg:right-5 xl:right-44")}
+                    className={classNames(styles["carouselSubject"], "max-w-screen-md sm:max-w-full block lg:absolute lg:bottom-0 lg:right-5 xl:right-44")}
                     src={data?.person}
                     alt="person"
                     width={900}
@@ -51,6 +50,7 @@ export const TrainingCarousel = ({ data }) => {
             showThumbs={false}
             showStatus={false}
             showArrows={false}
+            swipeable={false}
             stopOnHover
             renderIndicator={createCarouselIndicator}
         >
