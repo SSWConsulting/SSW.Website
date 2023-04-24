@@ -12,12 +12,10 @@ import { customImageBlockSchema } from "./customImage";
 import { clientLogosBlockSchema } from "./clientLogos";
 import { videoEmbedBlockSchema } from "./videoEmbed";
 import { columnLayoutBlockSchema } from "./columnLayout";
-import { sswTableBlockSchema } from "./tables/sswTable";
 import { citationBlockSchema } from "./citation";
 import { subNewsLettersButtonSchema } from "./subNewsLettersButton";
 import { googleMapsSchema } from "./googleMapsWrapper";
-import { newsTableBlockSchema } from "./tables/newsTable";
-import { newslettersTableSchema } from "./newslettersTable";
+import { newslettersTableBlockSchema } from "./newslettersTable";
 
 export const pageBlocks: Template[] = [
 	aboutUsBlockSchema,
@@ -32,12 +30,10 @@ export const pageBlocks: Template[] = [
 	columnLayoutBlockSchema,
 	videoEmbedBlockSchema,
 	citationBlockSchema,
-	sswTableBlockSchema,
 	subNewsLettersButtonSchema,
 	googleMapsSchema,
 	internalCarouselBlockSchema,
-	newsTableBlockSchema,
-	newslettersTableSchema,
+	newslettersTableBlockSchema,
 ];
 
 export * from "./aboutUs";
@@ -51,10 +47,8 @@ export * from "./clientLogos";
 export * from "./customImage";
 export * from "./googleMapsWrapper";
 export * from "./hero";
-export * from "./tables/newsTable";
 export * from "./newslettersTable";
 export * from "./serviceCards";
 export * from "./subNewsLettersButton";
-export * from "./tables/sswTable";
 export * from "./upcomingEvents";
 export * from "./videoEmbed";

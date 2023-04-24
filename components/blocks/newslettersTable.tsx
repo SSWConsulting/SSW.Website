@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Template } from "tinacms";
-import { NewsletterContent, Newsletters } from "../../models/Newsletters";
+import { Newsletters } from "../../models/Newsletters";
 import { importAllJSON } from "../../services/utils.service";
 import { transformIntToMonth } from "../../services/date.service";
 
@@ -53,27 +53,31 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
 		setHasLoaded(true);
 	};
 
-	const renderTable = (table: { newsletters: Newsletters[]; year: string }) => (
-		<table key={table.year}>
+	const renderTable = ({ newsletters, year }) => (
+		<table key={year} className="w-full">
 			<thead>
 				<tr>
-					<th>{table.year}</th>
-					<th>Description</th>
+					<th className="w-1/6 bg-gray-300 py-1 px-3" align="left">
+						{year}
+					</th>
+					<th className="w-5/6 bg-gray-300 py-1 px-3" align="left">
+						Description
+					</th>
 				</tr>
 			</thead>
 			<tbody>
-				{table.newsletters.map((item: NewsletterContent) => (
-					<tr key={item.month}>
-						<td>
+				{newsletters.map(({ url, month, description }) => (
+					<tr key={url} className="bg-gray-125">
+						<td className="border-1 border-white py-1 px-3">
 							<a
-								href={`/newsletters/${table.year}/${item.url}`}
+								href={`/newsletters/${year}/${url}`}
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								{transformIntToMonth(item.month)}
+								{transformIntToMonth(month)}
 							</a>
 						</td>
-						<td>{item.description}</td>
+						<td className="border-1 border-white py-1 px-3">{description}</td>
 					</tr>
 				))}
 			</tbody>
@@ -82,13 +86,17 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
 
 	return (
 		<>
-			<h2>{data.headerText}</h2>
-			{newsletters.map(renderTable)}
+			<h2 className="mt-5 mb-3 text-2xl text-sswRed">{data.headerText}</h2>
+			{hasLoaded ? (
+				newsletters.map(renderTable)
+			) : (
+				<p className="text-xl">Loading Newsletters...</p>
+			)}
 		</>
 	);
 };
 
-export const newslettersTableSchema: Template = {
+export const newslettersTableBlockSchema: Template = {
 	name: "NewslettersTable",
 	label: "Newsletters Table",
 	fields: [

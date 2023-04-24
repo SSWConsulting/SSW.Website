@@ -6,11 +6,9 @@ import { VideoEmbed } from "./videoEmbed";
 import { ColumnLayout } from "./columnLayout";
 import { Carousel } from "./carousel";
 import { TableLayout } from "./tableLayout";
-import { SSWTable } from "./tables/sswTable";
 import { Citation } from "./citation";
 import { GoogleMapsWrapper } from "./googleMapsWrapper";
 import { InternalCarousel } from "./internalCarousel";
-import { NewsTable } from "./tables/newsTable";
 import { SubNewsLettersButton } from "./subNewsLettersButton";
 import { NewslettersTable } from "./newslettersTable";
 
@@ -45,34 +43,6 @@ export const componentRenderer: Components<{
 	TableLayout: {
 		mdxTable: string;
 	};
-	SSWTable: {
-		title: string;
-		classNames: {
-			head: string;
-			body: string;
-			title: string;
-			container: string;
-		};
-		columns: Record<
-			number,
-			{
-				label: string;
-				key: string;
-				className: string;
-				align: string;
-			}
-		>;
-		data: Record<
-			number,
-			{
-				key: string;
-				value: string;
-				rowIndex: number;
-				type: string;
-				url: string;
-			}
-		>;
-	};
 	Citation: {
 		article: string;
 		author: string;
@@ -94,12 +64,12 @@ export const componentRenderer: Components<{
 			name: string;
 		}[];
 	};
-	NewsTable: Record<string, never>;
 	NewslettersTable: {
 		headerText: string;
 	};
 	SubNewsLettersButton: {
-		subNewsLettersButtonText: string;
+		subscribeButtonText: string;
+		headerText: string;
 	};
 }> = {
 	VideoEmbed: (props) => <VideoEmbed data={props} />,
@@ -109,11 +79,9 @@ export const componentRenderer: Components<{
 	ColumnLayout: (props) => <ColumnLayout data={props} />,
 	Carousel: (props) => <Carousel data={props} />,
 	TableLayout: (props) => <TableLayout data={props} />,
-	SSWTable: (props) => <SSWTable {...props} />,
 	Citation: (props) => <Citation {...props} />,
 	GoogleMaps: (props) => <GoogleMapsWrapper {...props} />,
 	InternalCarousel: (props) => <InternalCarousel data={props} />,
-	NewsTable: () => <NewsTable />,
 	NewslettersTable: (props) => <NewslettersTable data={props} />,
-	SubNewsLettersButton: (props) => <SubNewsLettersButton data={props} />,
+	SubNewsLettersButton: (props) => <SubNewsLettersButton {...props} />,
 };

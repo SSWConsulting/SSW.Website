@@ -50,9 +50,7 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
 
 	return (
 		<div>
-			<p className="mb-2">
-				{headerText ?? "Subscribe to our newsletter to receive NETUG updates!"}
-			</p>
+			<p className="mb-2">{headerText}</p>
 			<div className="container sm:w-full sm:max-w-full md:w-1/4">
 				<div className="mb-1">
 					<input
@@ -79,7 +77,7 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
 						className="box-border flex w-1/2 cursor-pointer items-center justify-center gap-1 bg-sswRed py-2 pl-4 pr-2 font-sans uppercase text-white hover:text-gray-100 hover:opacity-95"
 						onClick={handleSubscribe}
 					>
-						{subscribeButtonText ?? "join us"}
+						{subscribeButtonText}
 						<Image
 							className="inline-block align-middle leading-8"
 							src={"/images/circle-tick.png"}
@@ -104,8 +102,8 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
 };
 
 export const subNewsLettersButtonSchema: Template = {
-	label: "Subscribe To NewsLetters Button",
 	name: "SubNewsLettersButton",
+	label: "Subscribe To NewsLetters Button",
 	fields: [
 		{
 			type: "string",

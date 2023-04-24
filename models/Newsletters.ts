@@ -1,10 +1,8 @@
 export interface Newsletters {
-	newsletters: NewsletterContent[];
+	newsletters: {
+		description: string;
+		month: number;
+		url: string;
+	}[];
 	newsletters_year: string;
-}
-
-export interface NewsletterContent {
-	description: string;
-	month: number;
-	url: string;
 }
