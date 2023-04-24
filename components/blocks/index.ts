@@ -18,7 +18,7 @@ import { videoEmbedBlockSchema } from "./videoEmbed";
 import { tableBlockSchema } from "./tableLayout";
 import { dynamicColumnsSchema } from "./dynamicColumns";
 import { fixedColumnsSchema } from "./fixedColumns";
-import { flagSchema } from "../util/flag";
+import { flagSchema } from "./flag";
 
 export const pageBlocks: Template[] = [
   aboutUsBlockSchema,
@@ -52,7 +52,7 @@ export * from "./content";
 export * from "./contentCard";
 export * from "./customImage";
 export * from "./fixedColumns";
-export * from "../util/flag";
+export * from "./flag";
 export * from "./googleMapsWrapper";
 export * from "./hero";
 export * from "./serviceCards";
