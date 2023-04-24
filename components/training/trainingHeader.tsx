@@ -33,7 +33,7 @@ const TrainingHeader = ({ data }) => {
             </Container>
             {data?.person &&
                 <Image
-                    className={classNames(styles["carouselSubject"], "max-w-screen-md sm:max-w-full block lg:absolute lg:bottom-0 lg:right-5 xl:right-44")}
+                    className={classNames(styles["carouselSubject"], "max-w-screen-md sm:max-w-full block lg:absolute lg:bottom-0 lg:right-5 xl:right-80")}
                     src={data?.person}
                     alt="person"
                     width={900}
