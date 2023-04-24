@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Template } from "tinacms";
-import { Newsletters } from "../../models/Newsletters";
 import { importAllJSON } from "../../services/utils.service";
 import { transformIntToMonth } from "../../services/date.service";
+import { Newsletters } from "../../.tina/__generated__/types";
 
 /**
  * Render a table of newsletters.
