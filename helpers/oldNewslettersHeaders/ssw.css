@@ -2,7 +2,7 @@
 	behavior: url("./iepngfix.htc");
 }
 body {
-	background-image: url("../../public/images/background_dna.gif");
+	background-image: url("/public/images/background_dna.gif");
 	background-repeat: repeat-x;
 	background-position: top;
 	background-color: #555555;
@@ -154,7 +154,7 @@ div.section {
 	clear: both;
 }
 #subPane .section h1 {
-	background-image: url("../../public/images/box_header.gif");
+	background-image: url("/public/images/box_header.gif");
 	background-repeat: no-repeat;
 	display: block;
 	padding: 0 0 0 20px;
@@ -181,7 +181,7 @@ div.section {
 	margin: 0;
 	padding: 0 0 0 10px;
 	font-size: 0.85em;
-	background-image: url("../../public/images/bullet_square.gif");
+	background-image: url("/public/images/bullet_square.gif");
 	background-position: 0 9px;
 	background-repeat: no-repeat;
 	color: #333;
@@ -397,7 +397,7 @@ p.presenter {
 	padding-top: 20px;
 }
 #nav {
-	background-image: url("../../public/images/bg_nav.gif");
+	background-image: url("/public/images/bg_nav.gif");
 	background-repeat: repeat-x;
 	height: 117px;
 }
@@ -498,11 +498,11 @@ div#headerMenu {
 	margin: 0;
 }
 #subpage .WebsiteDesign {
-	background: url("../../public/images/header_ux.jpg") no-repeat;
+	background: url("/public/images/header_ux.jpg") no-repeat;
 }
 
 #subpage .ConsultingOptions {
-	background: url("../../public/images/header_scrum_temp.png") no-repeat;
+	background: url("/public/images/header_scrum_temp.png") no-repeat;
 	height: 208px;
 	padding: 35px 20px 40px 475px;
 	margin: 0;
@@ -532,7 +532,7 @@ div#headerMenu {
 	margin-bottom: 20px;
 }
 #subpage #titleUX ul li {
-	background-image: url("../../public/images/bullet_square.gif");
+	background-image: url("/public/images/bullet_square.gif");
 	background-position: 0 9px;
 	background-repeat: no-repeat;
 	padding-left: 15px;
@@ -557,7 +557,7 @@ div#headerMenu {
 	color: inherit;
 }
 #showcase ul.tech li {
-	background-image: url("../../public/images/bullet_square.gif");
+	background-image: url("/public/images/bullet_square.gif");
 	background-position: 0 9px;
 	background-repeat: no-repeat;
 	margin-left: 1.5em;
@@ -1715,11 +1715,10 @@ img.regist_grey {
 }
 /*seperate css from imgRight by using presenter's name to switch between class*/
 .joe {
-	background: transparent url("../../public/images/hover_joe.jpg") no-repeat 0 0;
+	background: transparent url("/public/images/hover_joe.jpg") no-repeat 0 0;
 }
 .adam {
-	background: transparent url("../../public/images/video_Adam.jpg") no-repeat 0
-		0;
+	background: transparent url("/public/images/video_Adam.jpg") no-repeat 0 0;
 }
 
 #subpage a.imgRight {
@@ -2261,7 +2260,7 @@ img.edgeright {
 	padding: 0;
 	display: block;
 	border-width: 0;
-	background: #fdfdfd url("../../public/images/panel_bg.jpg") repeat-x;
+	background: #fdfdfd url("/public/images/panel_bg.jpg") repeat-x;
 	width: 445px;
 	padding: 25px 10px 0 30px;
 	height: 480px;
@@ -2278,7 +2277,7 @@ img.edgeright {
 #maincontentFull #tabs ul.ui-tabs-nav li {
 	margin-left: 0;
 	padding: 0;
-	background: #fff url("../../public/images/list_bg.jpg") no-repeat;
+	background: #fff url("/public/images/list_bg.jpg") no-repeat;
 	border-top: 1px solid #e5e5e5;
 }
 
@@ -2295,7 +2294,7 @@ img.edgeright {
 	color: #3a66cc;
 }
 #maincontentFull #tabs ul.ui-tabs-nav li.ui-state-active {
-	background: transparent url("../../public/images/tab_active.png") no-repeat;
+	background: transparent url("/public/images/tab_active.png") no-repeat;
 	width: 276px;
 	display: block;
 	border-top: 1px dotted transparent;
@@ -2630,7 +2629,7 @@ ul.homepage-special-list li:hover {
 }
 
 ul.homepage-special-list li h3 {
-	background: url("../../public/images/homepage_services.jpg") repeat scroll 0 0
+	background: url("/public/images/homepage_services.jpg") repeat scroll 0 0
 		transparent;
 	border-color: #aaaaaa #ffffff #ffffff #aaaaaa;
 	border-style: solid;
@@ -2926,8 +2925,8 @@ a#homepage-products {
 
 #maincontent .eventpast ul > li strong {
 	float: left;
-	background: url("../../public/images/schedulebg.png") no-repeat scroll right
-		center #e5e5e5;
+	background: url("/public/images/schedulebg.png") no-repeat scroll right center
+		#e5e5e5;
 	padding: 5px 15px;
 	width: 120px;
 	font-size: 12px;
@@ -3053,7 +3052,7 @@ a.directions {
 }
 
 .contactForm a.button {
-	background: url("../../public/images/button.png") no-repeat scroll right top
+	background: url("/public/images/button.png") no-repeat scroll right top
 		transparent;
 	border: 0 none !important;
 	color: white;
@@ -3070,7 +3069,7 @@ a.directions {
 }
 
 .contactForm a.button span {
-	background: url("../../public/images/button.png") no-repeat scroll left top
+	background: url("/public/images/button.png") no-repeat scroll left top
 		transparent;
 	display: inline-block;
 	height: 30px;
@@ -3111,7 +3110,7 @@ input[type="password"] {
 }
 
 .creditcard {
-	background: url("../../public/images/creditcards.png") no-repeat scroll right
+	background: url("/public/images/creditcards.png") no-repeat scroll right
 		center transparent;
 	color: #666666;
 	display: inline-block;
@@ -3124,8 +3123,8 @@ input[type="password"] {
 }
 
 #maincontent ul.greenTicks li {
-	background: url("../../public/images/tick_small.png") no-repeat scroll left
-		center transparent;
+	background: url("/public/images/tick_small.png") no-repeat scroll left center
+		transparent;
 	padding: 3px 5px 3px 30px;
 }
 
@@ -3200,11 +3199,11 @@ th span.auServerMini {
 }
 
 th span.usServerMini {
-	background-image: url("../../public/images/smallflag_us.png");
+	background-image: url("/public/images/smallflag_us.png");
 }
 
 th span.auServerMini {
-	background-image: url("../../public/images/smallflag_au.png");
+	background-image: url("/public/images/smallflag_au.png");
 }
 
 th span.usServer,
@@ -3217,30 +3216,30 @@ th span.auServer {
 }
 
 th span.usServer {
-	background-image: url("../../public/images/flag_us.png");
+	background-image: url("/public/images/flag_us.png");
 }
 
 th span.auServer {
-	background-image: url("../../public/images/flag_au.png");
+	background-image: url("/public/images/flag_au.png");
 }
 
 .VS2008 {
-	background: url("../../public/images/VS2008Icon.png") no-repeat scroll 0 3px
+	background: url("/public/images/VS2008Icon.png") no-repeat scroll 0 3px
 		transparent;
 	margin-left: 4px;
 	padding-left: 24px;
 }
 
 .VS2010 {
-	background: url("../../public/images/VS2008Icon.png") no-repeat scroll 0 3px
+	background: url("/public/images/VS2008Icon.png") no-repeat scroll 0 3px
 		transparent;
 	padding-left: 24px;
 	margin-left: 4px;
 }
 
 .mainTestimonial {
-	background: url("../../public/images/mainTestimonial_bg.png") no-repeat scroll
-		5px 20px #f8f8f8;
+	background: url("/public/images/mainTestimonial_bg.png") no-repeat scroll 5px
+		20px #f8f8f8;
 	font-size: 14px;
 	line-height: 20px;
 	margin-top: -15px;
@@ -3356,27 +3355,27 @@ th span.auServer {
 	margin: 20px auto;
 	padding: 10px 0;
 	clear: both;
-	background: transparent url("../../public/images/testimonial_top.png")
-		no-repeat top left;
+	background: transparent url("/public/images/testimonial_top.png") no-repeat
+		top left;
 }
 
 .testimonials-bg {
-	background: transparent url("../../public/images/testimonial_repeat.png")
-		repeat-y top left;
+	background: transparent url("/public/images/testimonial_repeat.png") repeat-y
+		top left;
 	font-size: 12px;
 	font-style: italic;
 	padding-left: 10px;
 }
 
 .testimonials-content {
-	background: transparent url("../../public/images/testimonial_quote.png")
-		no-repeat top left;
+	background: transparent url("/public/images/testimonial_quote.png") no-repeat
+		top left;
 	padding: 10px 20px 0px 50px;
 }
 
 .testimonials-content-bottom {
-	background: transparent url("../../public/images/testimonial_bottom.png")
-		no-repeat top left;
+	background: transparent url("/public/images/testimonial_bottom.png") no-repeat
+		top left;
 	height: 25px;
 }
 
@@ -3417,8 +3416,7 @@ th span.auServer {
 }
 
 .testimonials-logo {
-	background: url("../../public/images/testimonial_logo.png") no-repeat right
-		top;
+	background: url("/public/images/testimonial_logo.png") no-repeat right top;
 	width: 67px;
 	height: 57px;
 	float: right;
@@ -3429,7 +3427,7 @@ th span.auServer {
 }
 
 #subpage div.CMS-buttons a {
-	background-image: url("../../public/images/CMS-buttons.jpg");
+	background-image: url("/public/images/CMS-buttons.jpg");
 	width: 205px;
 	height: 94px;
 	display: block;
@@ -3589,7 +3587,7 @@ div.CMS-buttons a.CMS-DNN:focus {
 }
 
 #headerMenu li.Popular {
-	background: url("../../public/images/popular.png") no-repeat 120px;
+	background: url("/public/images/popular.png") no-repeat 120px;
 }
 
 #headerMenu .NoChild .rsmLink:hover {
@@ -3642,13 +3640,11 @@ div.CMS-buttons a.CMS-DNN:focus {
 	font-weight: bold;
 	font-size: 13px;
 	text-decoration: none !important;
-	background: transparent url("../../public/images/button.png") no-repeat right
-		top;
+	background: transparent url("/public/images/button.png") no-repeat right top;
 }
 
 #Newsletter a.button span {
-	background: transparent url("../../public/images/button.png") no-repeat left
-		top;
+	background: transparent url("/public/images/button.png") no-repeat left top;
 	height: 30px;
 	line-height: 29px;
 	margin: 0 0 0 -5px;
@@ -3671,7 +3667,7 @@ div.scrum-flow {
 }
 
 div.scrum-flow-one {
-	background: url("../../public/images/ScrumFlow-1.png") top left;
+	background: url("/public/images/ScrumFlow-1.png") top left;
 	width: 171px;
 	height: 108px;
 	display: inline-block;
@@ -3682,11 +3678,11 @@ div.scrum-flow-one {
 }
 
 div.scrum-flow div.scrum-flow-one:hover {
-	background: url("../../public/images/ScrumFlow-1.png") bottom left;
+	background: url("/public/images/ScrumFlow-1.png") bottom left;
 }
 
 div.scrum-flow-two {
-	background: url("../../public/images/ScrumFlow-2.png") top left;
+	background: url("/public/images/ScrumFlow-2.png") top left;
 	width: 172px;
 	height: 108px;
 	position: relative;
@@ -3699,11 +3695,11 @@ div.scrum-flow-two {
 }
 
 div.scrum-flow div.scrum-flow-two:hover {
-	background: url("../../public/images/ScrumFlow-2.png") bottom left;
+	background: url("/public/images/ScrumFlow-2.png") bottom left;
 }
 
 div.scrum-flow-three {
-	background: url("../../public/images/ScrumFlow-3.png") top left;
+	background: url("/public/images/ScrumFlow-3.png") top left;
 	width: 173px;
 	height: 108px;
 	position: relative;
@@ -3716,11 +3712,11 @@ div.scrum-flow-three {
 }
 
 div.scrum-flow div.scrum-flow-three:hover {
-	background: url("../../public/images/ScrumFlow-3.png") bottom left;
+	background: url("/public/images/ScrumFlow-3.png") bottom left;
 }
 
 div.scrum-flow-four {
-	background: url("../../public/images/ScrumFlow-4.png") top left;
+	background: url("/public/images/ScrumFlow-4.png") top left;
 	width: 173px;
 	height: 108px;
 	position: relative;
@@ -3733,11 +3729,11 @@ div.scrum-flow-four {
 }
 
 div.scrum-flow div.scrum-flow-four:hover {
-	background: url("../../public/images/ScrumFlow-4.png") bottom left;
+	background: url("/public/images/ScrumFlow-4.png") bottom left;
 }
 
 div.scrum-flow-five {
-	background: url("../../public/images/ScrumFlow-5.png") top left;
+	background: url("/public/images/ScrumFlow-5.png") top left;
 	width: 153px;
 	height: 108px;
 	position: absolute;
@@ -3752,7 +3748,7 @@ div.scrum-flow-five {
 }
 
 div.scrum-flow div.scrum-flow-five:hover {
-	background: url("../../public/images/ScrumFlow-5.png") bottom left;
+	background: url("/public/images/ScrumFlow-5.png") bottom left;
 }
 
 #maincontentFull .scrum #tabs ul.ui-tabs-nav {
