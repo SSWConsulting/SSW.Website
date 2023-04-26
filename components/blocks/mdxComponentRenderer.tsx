@@ -11,6 +11,8 @@ import { GoogleMapsWrapper } from "./googleMapsWrapper";
 import { DynamicColumns } from "./dynamicColumns";
 import { FixedColumns } from "./fixedColumns";
 import { InternalCarousel } from "./internalCarousel";
+import { TabsLayoutView } from "./tabsLayout";
+import { RenderBookingButton } from "./bookingButton";
 import { Flag } from "./flag";
 
 export const componentRenderer: Components<{
@@ -81,6 +83,17 @@ export const componentRenderer: Components<{
       name: string;
     }[];
   };
+  TabsLayout: {
+    tab1: string;
+    heading1: string;
+    tab1Body: string;
+    tab2: string;
+    heading2: string;
+    tab2Body: string;
+  };
+  bookingButton: {
+    btnText: string;
+  };
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -95,4 +108,6 @@ export const componentRenderer: Components<{
   DynamicColumns: (props) => <DynamicColumns data={props} />,
   FixedColumns: (props) => <FixedColumns data={props} />,
   InternalCarousel: (props) => <InternalCarousel data={props} />,
+  TabsLayout: (props) => <TabsLayoutView data={props} />,
+  bookingButton: (props) => <RenderBookingButton data={props} />,
 };
