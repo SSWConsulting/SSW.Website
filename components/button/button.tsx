@@ -14,10 +14,6 @@ const Button = ({
     props["className"],
     defaultClass
   );
-  console.log(
-    "🚀 ~ file: button.tsx:12 ~ Button ~ buttonClassName:",
-    buttonClassName
-  );
 
   return (
     <button

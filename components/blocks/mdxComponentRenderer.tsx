@@ -12,7 +12,7 @@ import { DynamicColumns } from "./dynamicColumns";
 import { FixedColumns } from "./fixedColumns";
 import { InternalCarousel } from "./internalCarousel";
 import { FixedTabsLayout } from "./fixedTabsLayout";
-import { RenderBookingButton } from "./bookingButton";
+import { CustomBookingButton } from "./customBookingButton";
 import { Flag } from "./flag";
 
 export const componentRenderer: Components<{
@@ -91,7 +91,7 @@ export const componentRenderer: Components<{
     heading2: string;
     tab2Body: string;
   };
-  bookingButton: {
+  CustomBookingButton: {
     btnText: string;
   };
 }> = {
@@ -109,5 +109,5 @@ export const componentRenderer: Components<{
   FixedColumns: (props) => <FixedColumns data={props} />,
   InternalCarousel: (props) => <InternalCarousel data={props} />,
   FixedTabsLayout: (props) => <FixedTabsLayout data={props} />,
-  bookingButton: (props) => <RenderBookingButton data={props} />,
+  CustomBookingButton: (props) => <CustomBookingButton data={props} />,
 };

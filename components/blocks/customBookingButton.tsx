@@ -4,11 +4,11 @@ import { Template } from "tinacms";
 
 import classNames from "classnames";
 
-export const RenderBookingButton = ({ data }) => {
+export const CustomBookingButton = ({ data }) => {
   const { btnText } = data;
-  const bookingButtonText = "Book a FREE Initial Meeting";
+  const bookingButtonText = data.bookingText ?? "Book a FREE Initial Meeting";
 
-  const btnClicked = () => {
+  const onBtnClicked = () => {
     const bookingButton = document.querySelector("button");
     if (bookingButton.innerText === bookingButtonText) {
       bookingButton.click();
@@ -21,7 +21,7 @@ export const RenderBookingButton = ({ data }) => {
       <Button
         ripple
         className={classNames("mx-auto mt-14 w-96 max-w-full p-3")}
-        onClick={btnClicked}
+        onClick={onBtnClicked}
         data-aos="fade-up"
       >
         {btnText}
@@ -30,9 +30,9 @@ export const RenderBookingButton = ({ data }) => {
   );
 };
 
-export const bookingButtonSchema: Template = {
-  name: "bookingButton",
-  label: "Button Text",
+export const CustomBookingButtonSchema: Template = {
+  name: "CustomBookingButton",
+  label: "Custom Booking Button",
   ui: {
     previewSrc: "/blocks/hero.png",
     itemProps: (item) => ({ label: item?.btnText }),

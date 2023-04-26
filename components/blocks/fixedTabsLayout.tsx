@@ -7,7 +7,7 @@ import {
 } from "@material-tailwind/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { videoEmbedBlockSchema } from "./videoEmbed";
-import { bookingButtonSchema } from "./bookingButton";
+import { CustomBookingButtonSchema } from "./customBookingButton";
 import Button from "../button/button";
 import { componentRenderer } from "./mdxComponentRenderer";
 
@@ -16,9 +16,15 @@ import { useEffect, useRef, useState } from "react";
 
 import classNames from "classnames";
 
+const fixedTabsBlocks: Template[] = [
+  videoEmbedBlockSchema,
+  CustomBookingButtonSchema,
+];
+
 export const FixedTabsLayout = ({ data }) => {
   const [selectedTab, setSelectedTab] = useState("");
   const firstTabReference = useRef(null);
+  const bodyTextColor = "text-white"
 
   const onTabClicked = (selectedTab) => {
     setSelectedTab(selectedTab);
@@ -31,11 +37,11 @@ export const FixedTabsLayout = ({ data }) => {
 
   return (
     <Tabs id="custom-animation" value="html">
-      <TabsBody>{renderTabPanels(data, true)}</TabsBody>
+      <TabsBody>{renderTabPanels(data, bodyTextColor, true)}</TabsBody>
       <TabsHeader
         className="bg-transparent"
         indicatorProps={{
-          className: "bg-white-500 shadow-none text-white",
+          className: "bg-transparent",
         }}
       >
         <Tab
@@ -54,26 +60,22 @@ export const FixedTabsLayout = ({ data }) => {
           {renderTabButton(data.secondTab, selectedTab)}
         </Tab>
       </TabsHeader>
-      <TabsBody>{renderTabPanels(data)}</TabsBody>
+      <TabsBody>{renderTabPanels(data, bodyTextColor)}</TabsBody>
     </Tabs>
   );
 };
 
-const renderTabPanels = (data, isHeading = false) => {
+const renderTabPanels = (data, textColor, isHeading = false) => {
   return (
     <>
-      <TabPanel
-        className="text-white"
-        key={data.firstTab}
-        value={data.firstTab}
-      >
+      <TabPanel className={textColor} key={data.firstTab} value={data.firstTab}>
         <TinaMarkdown
           content={isHeading ? data.firstHeading : data.firstBody}
           components={componentRenderer}
         />
       </TabPanel>
       <TabPanel
-        className="text-white"
+        className={textColor}
         key={data.secondTab}
         value={data.secondTab}
       >
@@ -92,7 +94,7 @@ const renderTabButton = (tab, selectedTab) => {
       <Button
         ripple
         className={classNames(
-          "mx-auto w-96 max-w-full bg-white p-3 text-red-500 opacity-100"
+          "mx-auto w-96 max-w-full bg-white p-3 text-red-500"
         )}
         defaultClass={selectedTab == tab ? "opacity-100" : "opacity-40"}
       >
@@ -115,13 +117,13 @@ export const fixedTabsLayoutSchema: Template = {
       type: "rich-text",
       name: "firstHeading",
       label: "First Heading",
-      templates: [videoEmbedBlockSchema, bookingButtonSchema],
+      templates: [...fixedTabsBlocks],
     },
     {
       type: "rich-text",
       name: "firstBody",
       label: "First Body",
-      templates: [videoEmbedBlockSchema, bookingButtonSchema],
+      templates: [...fixedTabsBlocks],
     },
     {
       type: "string",
@@ -132,13 +134,13 @@ export const fixedTabsLayoutSchema: Template = {
       type: "rich-text",
       name: "secondHeading",
       label: "Second Heading",
-      templates: [videoEmbedBlockSchema, bookingButtonSchema],
+      templates: [...fixedTabsBlocks],
     },
     {
       type: "rich-text",
       name: "secondBody",
       label: "Second Body",
-      templates: [videoEmbedBlockSchema, bookingButtonSchema],
+      templates: [...fixedTabsBlocks],
     },
   ],
 };
