@@ -20,7 +20,7 @@ export const CustomBookingButton = ({ data }) => {
     <div className={classNames("flex w-full flex-col items-center", "mt-1")}>
       <Button
         ripple
-        className={classNames("mx-auto mt-14 w-96 max-w-full p-3")}
+        className={classNames("mx-auto mt-7 w-96 max-w-full p-3")}
         onClick={onBtnClicked}
         data-aos="fade-up"
       >
