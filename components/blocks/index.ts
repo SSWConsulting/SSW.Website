@@ -18,6 +18,7 @@ import { videoEmbedBlockSchema } from "./videoEmbed";
 import { tableBlockSchema } from "./tableLayout";
 import { dynamicColumnsSchema } from "./dynamicColumns";
 import { fixedColumnsSchema } from "./fixedColumns";
+import { flagSchema } from "./flag";
 
 export const pageBlocks: Template[] = [
   aboutUsBlockSchema,
@@ -29,6 +30,7 @@ export const pageBlocks: Template[] = [
   contentBlockSchema,
   contentCardBlockSchema,
   customImageBlockSchema,
+  flagSchema,
   googleMapsSchema,
   heroBlockSchema,
   serviceCardsBlockSchema,
@@ -50,6 +52,7 @@ export * from "./content";
 export * from "./contentCard";
 export * from "./customImage";
 export * from "./fixedColumns";
+export * from "./flag";
 export * from "./googleMapsWrapper";
 export * from "./hero";
 export * from "./serviceCards";
