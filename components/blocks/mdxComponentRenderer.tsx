@@ -11,7 +11,7 @@ import { GoogleMapsWrapper } from "./googleMapsWrapper";
 import { DynamicColumns } from "./dynamicColumns";
 import { FixedColumns } from "./fixedColumns";
 import { InternalCarousel } from "./internalCarousel";
-import { TabsLayoutView } from "./tabsLayout";
+import { FixedTabsLayout } from "./fixedTabsLayout";
 import { RenderBookingButton } from "./bookingButton";
 import { Flag } from "./flag";
 
@@ -83,7 +83,7 @@ export const componentRenderer: Components<{
       name: string;
     }[];
   };
-  TabsLayout: {
+  FixedTabsLayout: {
     tab1: string;
     heading1: string;
     tab1Body: string;
@@ -108,6 +108,6 @@ export const componentRenderer: Components<{
   DynamicColumns: (props) => <DynamicColumns data={props} />,
   FixedColumns: (props) => <FixedColumns data={props} />,
   InternalCarousel: (props) => <InternalCarousel data={props} />,
-  TabsLayout: (props) => <TabsLayoutView data={props} />,
+  FixedTabsLayout: (props) => <FixedTabsLayout data={props} />,
   bookingButton: (props) => <RenderBookingButton data={props} />,
 };

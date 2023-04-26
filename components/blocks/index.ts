@@ -19,7 +19,7 @@ import { tableBlockSchema } from "./tableLayout";
 import { dynamicColumnsSchema } from "./dynamicColumns";
 import { fixedColumnsSchema } from "./fixedColumns";
 import { flagSchema } from "./flag";
-import { tabsLayout } from "./tabsLayout";
+import { fixedTabsLayoutSchema } from "./fixedTabsLayout";
 
 export const pageBlocks: Template[] = [
   aboutUsBlockSchema,
@@ -41,7 +41,7 @@ export const pageBlocks: Template[] = [
   videoEmbedBlockSchema,
   fixedColumnsSchema,
   internalCarouselBlockSchema,
-  tabsLayout,
+  fixedTabsLayoutSchema,
 ];
 
 export * from "./aboutUs";
