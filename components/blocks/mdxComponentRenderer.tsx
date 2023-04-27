@@ -36,13 +36,9 @@ export const componentRenderer: Components<{
     title: string;
     numberOfEvents: number;
   };
-  ColumnLayout: {
+  VerticalImageLayout: {
     src: string;
     message: string;
-  };
-  VerticalImageLayout: {
-      src: string;
-      message: string;
   };
   Carousel: {
     items: {
