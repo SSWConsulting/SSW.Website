@@ -13,15 +13,18 @@ export const HorizontalImageLayout = ({ images }) => {
 
   return (
     <div className="md:grid md:grid-cols-12 md:gap-x-8">
-      {images.map(({ imageLink, message, ...props }: any, index: Key) => (
-        <div key={index} className="col-span-4 relative">{imageLink ? (
-          <a href={imageLink} target="_blank" rel="noopener noreferrer">
+      {images.map(({ imageLink, message, ...props }, index: Key) => (
+        <div key={index} className="relative col-span-4">
+          {imageLink ? (
+            <a href={imageLink} target="_blank" rel="noopener noreferrer">
+              <RawImage {...props} />
+            </a>
+          ) : (
             <RawImage {...props} />
-          </a>) : (
-          <RawImage {...props} />
-        )}
+          )}
           {message}
-        </div>))}
+        </div>
+      ))}
     </div>
   );
 };

@@ -65,7 +65,7 @@ export default function EducationalIndex(
       description: string;
       buttonText: string;
     };
-    BookingForm: {};
+    BookingForm: Record<string, never>;
     ContactUs: {
       buttonText: string;
       link: string;
