@@ -1,14 +1,14 @@
 import { defineStaticConfig, TinaCMS } from "tinacms";
 import {
-  consultingSchema,
   consultingCategorySchema,
-  consultingTagSchema,
   consultingIndexSchema,
+  consultingSchema,
+  consultingTagSchema,
 } from "./collections/consulting";
+import { educationalSchema } from "./collections/educational";
 import { globalSchema } from "./collections/global";
 import { marketingSchema } from "./collections/marketing";
 import { officeSchema } from "./collections/offices";
-import { opportunitiesSchema } from "./collections/opportunities";
 import { pagesSchema } from "./collections/pages";
 import { technologiesSchema } from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
@@ -54,6 +54,7 @@ const config = defineStaticConfig({
       testimonialCategoriesSchema,
       technologiesSchema,
       officeSchema,
+      educationalSchema,
     ],
   },
 });

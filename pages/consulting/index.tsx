@@ -1,25 +1,26 @@
-import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/router";
+import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffectOnce, useHover } from "usehooks-ts";
-import classNames from "classnames";
-import { MdLiveHelp } from "react-icons/md";
+import { useRouter } from "next/router";
+import { useEffect, useRef, useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
+import { MdLiveHelp } from "react-icons/md";
+import { useEffectOnce, useHover } from "usehooks-ts";
 
 import { wrapGrid } from "animate-css-grid";
 
-import { client } from "../../.tina/__generated__/client";
 import { useTina } from "tinacms/dist/react";
+import { client } from "../../.tina/__generated__/client";
 
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { SEO } from "../../components/util/seo";
+import { AsyncReturnType } from "../[filename]";
 
 const allServices = "All SSW Services";
 
-export default function OfficeIndex(
+export default function ConsultingIndex(
   props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
   const gridRef = useRef(null);
@@ -275,6 +276,3 @@ export const getStaticProps = async () => {
     },
   };
 };
-
-export type AsyncReturnType<T extends (...args: any) => Promise<any>> = // eslint-disable-line @typescript-eslint/no-explicit-any
-  T extends (...args: any) => Promise<infer R> ? R : any; // eslint-disable-line @typescript-eslint/no-explicit-any

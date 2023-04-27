@@ -1,14 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { client } from "../../.tina/__generated__/client";
 import { useTina } from "tinacms/dist/react";
+import { client } from "../../.tina/__generated__/client";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Layout } from "../../components/layout";
-import { Container } from "../../components/util/container";
 import MicrosoftPanel from "../../components/offices/microsoftPanel";
 import TestimonialPanel from "../../components/offices/testimonialPanel";
+import { Container } from "../../components/util/container";
 import { Flag } from "../../components/util/flag";
 import layoutData from "../../content/global/index.json";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { AsyncReturnType } from "../[filename]";
 
 export default function OfficeIndex(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -145,6 +146,3 @@ export const getStaticProps = async () => {
     },
   };
 };
-
-export type AsyncReturnType<T extends (...args: any) => Promise<any>> = // eslint-disable-line @typescript-eslint/no-explicit-any
-  T extends (...args: any) => Promise<infer R> ? R : any; // eslint-disable-line @typescript-eslint/no-explicit-any
