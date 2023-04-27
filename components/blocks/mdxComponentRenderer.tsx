@@ -3,7 +3,7 @@ import { UpcomingEvents } from "./upcomingEvents";
 import { ClientLogos } from "./clientLogos";
 import { CustomImage } from "./customImage";
 import { VideoEmbed } from "./videoEmbed";
-import { ColumnLayout } from "./columnLayout";
+import { VerticalImageLayout } from "./verticalImageLayout";
 import { Carousel } from "./carousel";
 import { TableLayout } from "./tableLayout";
 import { AgreementForm } from "../terms-and-conditions/agreementForm";
@@ -35,7 +35,7 @@ export const componentRenderer: Components<{
 		title: string;
 		numberOfEvents: number;
 	};
-	ColumnLayout: {
+	VerticalImageLayout: {
 		src: string;
 		message: string;
 	};
@@ -80,7 +80,7 @@ export const componentRenderer: Components<{
 }> = {
 	AgreementForm: (props) => <AgreementForm data={props} />,
 	ClientLogos: () => <ClientLogos />,
-	ColumnLayout: (props) => <ColumnLayout data={props} />,
+	VerticalImageLayout: (props) => <VerticalImageLayout data={props} />,
 	CustomImage: (props) => <CustomImage data={props} />,
 	UpcomingEvents: (props) => <UpcomingEvents data={props} />,
 	Carousel: (props) => <Carousel data={props} />,
