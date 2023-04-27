@@ -1,10 +1,3 @@
-import {
-  Tabs,
-  TabsHeader,
-  TabsBody,
-  Tab,
-  TabPanel,
-} from "@material-tailwind/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { videoEmbedBlockSchema } from "./videoEmbed";
 import { CustomBookingButtonSchema } from "./customBookingButton";
@@ -12,7 +5,7 @@ import Button from "../button/button";
 import { componentRenderer } from "./mdxComponentRenderer";
 
 import { Template } from "tinacms";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import classNames from "classnames";
 
@@ -23,72 +16,40 @@ const fixedTabsBlocks: Template[] = [
 
 export const FixedTabsLayout = ({ data }) => {
   const [selectedTab, setSelectedTab] = useState("");
-  const firstTabReference = useRef(null);
-  const bodyTextColor = "text-white"
 
-  const onTabClicked = (selectedTab) => {
+  const onTabBtnClicked = (selectedTab) => {
     setSelectedTab(selectedTab);
   };
 
   useEffect(() => {
-    firstTabReference.current.click();
-    onTabClicked(data.firstTab);
+    onTabBtnClicked(data.secondTab);
+  }, [data.secondTab]);
+
+  useEffect(() => {
+    onTabBtnClicked(data.firstTab);
   }, [data.firstTab]);
 
   return (
-    <Tabs id="custom-animation" value="html">
-      <TabsBody>{renderTabPanels(data, bodyTextColor, true)}</TabsBody>
-      <TabsHeader
-        className="bg-transparent"
-        indicatorProps={{
-          className: "bg-transparent",
-        }}
-      >
-        <Tab
-          onClick={() => onTabClicked(data.firstTab)}
-          ref={firstTabReference}
-          key={data.firstTab}
-          value={data.firstTab}
-        >
-          {renderTabButton(data.firstTab, selectedTab)}
-        </Tab>
-        <Tab
-          onClick={() => onTabClicked(data.secondTab)}
-          key={data.secondTab}
-          value={data.secondTab}
-        >
-          {renderTabButton(data.secondTab, selectedTab)}
-        </Tab>
-      </TabsHeader>
-      <TabsBody>{renderTabPanels(data, bodyTextColor)}</TabsBody>
-    </Tabs>
-  );
-};
-
-const renderTabPanels = (data, textColor, isHeading = false) => {
-  return (
     <>
-      <TabPanel className={textColor} key={data.firstTab} value={data.firstTab}>
-        <TinaMarkdown
-          content={isHeading ? data.firstHeading : data.firstBody}
-          components={componentRenderer}
-        />
-      </TabPanel>
-      <TabPanel
-        className={textColor}
-        key={data.secondTab}
-        value={data.secondTab}
-      >
-        <TinaMarkdown
-          content={isHeading ? data.secondHeading : data.secondBody}
-          components={componentRenderer}
-        />
-      </TabPanel>
+      {selectedTab === data.firstTab && renderTinaMarkDown(data.firstHeading)}
+      {selectedTab === data.secondTab && renderTinaMarkDown(data.secondHeading)}
+
+      <div className="my-5 flex">
+        {renderTabButton(data.firstTab, selectedTab, onTabBtnClicked)}
+        {renderTabButton(data.secondTab, selectedTab, onTabBtnClicked)}
+      </div>
+
+      {selectedTab === data.firstTab && renderTinaMarkDown(data.firstBody)}
+      {selectedTab === data.secondTab && renderTinaMarkDown(data.secondBody)}
     </>
   );
 };
 
-const renderTabButton = (tab, selectedTab) => {
+const renderTinaMarkDown = (data) => (
+  <TinaMarkdown content={data} components={componentRenderer} />
+);
+
+const renderTabButton = (tab, selectedTab, onTabBtnClicked) => {
   return (
     <div className={classNames("flex w-full flex-col items-center")}>
       <Button
@@ -97,6 +58,7 @@ const renderTabButton = (tab, selectedTab) => {
           "mx-auto w-96 max-w-full bg-white p-3 text-red-500"
         )}
         defaultClass={selectedTab == tab ? "opacity-100" : "opacity-40"}
+        onClick={() => onTabBtnClicked(tab)}
       >
         {tab}
       </Button>
