@@ -259,7 +259,6 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-						maxWidth: 0,
             lineHeight: 1.45,
             h1: {
               fontWeight: "300",
@@ -322,6 +321,7 @@ module.exports = {
       }),
       backgroundImage: {
         done: "url('/images/icons/done.png')",
+        "arrow-right": "url('/images/icons/arrow-right.png')",
         "live-banner-wait": "url('/blocks/LiveStreamBanner-Wait.png')",
         "live-banner-live": "url('/blocks/LiveStreamBanner-Live.gif')",
         "card-video": "url('/images/icons/video-icon.svg')",
