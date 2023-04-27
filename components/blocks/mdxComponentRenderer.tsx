@@ -84,7 +84,6 @@ export const componentRenderer: Components<{
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
-  ColumnLayout: (props) => <ColumnLayout data={props} />,
   VerticalImageLayout: (props) => <VerticalImageLayout data={props} />,
   CustomImage: (props) => <CustomImage data={props} />,
   Flag: (props) => <Flag country={props.country} />,
