@@ -7,7 +7,7 @@ import { Layout } from "../../components/layout";
 import MicrosoftPanel from "../../components/offices/microsoftPanel";
 import TestimonialPanel from "../../components/offices/testimonialPanel";
 import { Container } from "../../components/util/container";
-import { Flag } from "../../components/util/flag";
+import { Flag } from "../../components/blocks/flag";
 import layoutData from "../../content/global/index.json";
 import { AsyncReturnType } from "../[filename]";
 

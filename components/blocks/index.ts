@@ -10,6 +10,7 @@ import { contentCardBlockSchema } from "./contentCard";
 import { customImageBlockSchema } from "./customImage";
 import { dynamicColumnsSchema } from "./dynamicColumns";
 import { fixedColumnsSchema } from "./fixedColumns";
+import { flagSchema } from "./flag";
 import { googleMapsSchema } from "./googleMapsWrapper";
 import { heroBlockSchema } from "./hero";
 import { internalCarouselBlockSchema } from "./internalCarousel";
@@ -29,6 +30,7 @@ export const pageBlocks: Template[] = [
   contentBlockSchema,
   contentCardBlockSchema,
   customImageBlockSchema,
+  flagSchema,
   googleMapsSchema,
   heroBlockSchema,
   serviceCardsBlockSchema,
@@ -50,6 +52,7 @@ export * from "./contentCard";
 export * from "./customImage";
 export * from "./dynamicColumns";
 export * from "./fixedColumns";
+export * from "./flag";
 export * from "./googleMapsWrapper";
 export * from "./hero";
 export * from "./serviceCards";
@@ -57,3 +60,4 @@ export * from "./tableLayout";
 export * from "./upcomingEvents";
 export * from "./verticalImageLayout";
 export * from "./videoEmbed";
+
