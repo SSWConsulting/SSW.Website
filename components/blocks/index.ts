@@ -10,6 +10,7 @@ import { contentCardBlockSchema } from "./contentCard";
 import { customImageBlockSchema } from "./customImage";
 import { dynamicColumnsSchema } from "./dynamicColumns";
 import { fixedColumnsSchema } from "./fixedColumns";
+import { fixedTabsLayoutSchema } from "./fixedTabsLayout";
 import { flagSchema } from "./flag";
 import { googleMapsSchema } from "./googleMapsWrapper";
 import { heroBlockSchema } from "./hero";
@@ -40,6 +41,7 @@ export const pageBlocks: Template[] = [
   videoEmbedBlockSchema,
   fixedColumnsSchema,
   internalCarouselBlockSchema,
+  fixedTabsLayoutSchema,
 ];
 
 export * from "../terms-and-conditions/agreementForm";
