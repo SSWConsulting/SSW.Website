@@ -61,7 +61,7 @@
     "react-responsive-modal": "^6.4.1",
     "react-tooltip": "^5.11.1",
     "sharp": "^0.32.0",
-    "ssw.megamenu": "^3.1.1",
+    "ssw.megamenu": "^3.1.2",
     "styled-components": "^5.3.10",
     "styled-jsx": "^5.1.2",
     "tailwindcss": "^3.3.1",
