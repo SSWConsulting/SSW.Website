@@ -79,8 +79,6 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  console.log("CLIENT : ", client);
-  console.log("QUERIES : , ", client.queries.pageConnection());
   let PageListData = await client.queries.pageConnection();
   const allPagesListData = PageListData;
 

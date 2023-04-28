@@ -55,7 +55,7 @@ const config = defineStaticConfig({
       testimonialCategoriesSchema,
       technologiesSchema,
       officeSchema,
-      newsletterSchema
+      newsletterSchema,
     ],
   },
 });
