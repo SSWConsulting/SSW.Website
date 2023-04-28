@@ -4072,7 +4072,7 @@ __metadata:
     react-responsive-modal: ^6.4.1
     react-tooltip: ^5.11.1
     sharp: ^0.32.0
-    ssw.megamenu: ^3.1.1
+    ssw.megamenu: ^3.1.2
     styled-components: ^5.3.10
     styled-jsx: ^5.1.2
     tailwindcss: ^3.3.1
@@ -15759,13 +15759,13 @@ remark-mdx@next:
   languageName: node
   linkType: hard
 
-"ssw.megamenu@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "ssw.megamenu@npm:3.1.1"
+"ssw.megamenu@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "ssw.megamenu@npm:3.1.2"
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: ab0977783217bf03be6d98d8bef42d17b260a029d49d1c786d6eeaccead16d46dee39906c41d37f572910b353f1d3372c1c0b3879b7b2919e2f7e82ee1243244
+  checksum: f80c601386b51c36bd237173d27fd171fededc38f235712b2298a6a74f254389395c693a3a90024f5a223b4d3d2da78e169bf103d60c935a5128d250ff695519
   languageName: node
   linkType: hard
 
