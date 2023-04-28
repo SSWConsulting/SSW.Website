@@ -180,7 +180,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
 					</div>
 					{/* custom fixed width and height to have best looking and fixed size for different screens */}
 					<div
-						className={"fixed top-2 right-0 aspect-video h-56 z-videoThumbnail"}
+						className={"fixed right-0 top-2 aspect-video h-56 z-videoThumbnail"}
 						data-aos="slide-left"
 						data-aos-duration={500}
 						data-aos-anchor="#thumbnailAnchor"
@@ -292,14 +292,13 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
 				</div>
 
 				<div className="mb-4 grid grid-cols-1 gap-x-8 md:grid-cols-2">
-					<div className="bg-gray-75 py-2 px-4">
+					<div className="bg-gray-75 px-4 py-2">
 						<div>
 							<h3 className="mb-3 text-xl font-bold">About the Talk</h3>
 							<div
 								id={eventDescriptionCollapseId}
 								ref={collapsableEventDescriptionRefCallback}
 								className={classNames(
-									"prose",
 									{ "max-h-70": collapseMap[eventDescriptionCollapseId] },
 									{ "max-h-screen": !collapseMap[eventDescriptionCollapseId] },
 									{
@@ -350,7 +349,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
 							</h3>
 							<div className="grid grid-cols-3 gap-8">
 								<input
-									className="col-span-3 appearance-none rounded border-1 border-gray-300 py-2 px-3 leading-tight text-gray-700 focus:shadow focus:outline md:col-span-2"
+									className="col-span-3 appearance-none rounded border-1 border-gray-300 px-3 py-2 leading-tight text-gray-700 focus:shadow focus:outline md:col-span-2"
 									id="email"
 									type="email"
 									placeholder="Your Email"
@@ -367,7 +366,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
 						</div>
 					</div>
 
-					<div className="bg-gray-75 py-2 px-4">
+					<div className="bg-gray-75 px-4 py-2">
 						<h3 className="mb-3 text-xl font-bold">About the Speaker</h3>
 						{!!speakersInfo.length &&
 							speakersInfo.map((speakerInfo, index) => (
@@ -385,7 +384,6 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
 									<div className="col-span-5">
 										<p className="mb-3 font-bold">{speakerInfo.Title}</p>
 										<p
-											className="prose-sm"
 											dangerouslySetInnerHTML={{
 												__html: speakerInfo.PresenterShortDescription,
 											}}

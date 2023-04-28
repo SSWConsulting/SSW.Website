@@ -135,8 +135,8 @@ export const BookingForm = ({ recaptchaKey }) => {
 			)}
 		>
 			<div className="relative p-4">
-				<div className="m-0 bg-white px-6 pt-1 pb-5">
-					<h2 className="mt-1.5 mb-14 pt-1.5 !text-2xl text-sswRed">
+				<div className="m-0 bg-white px-6 pb-5 pt-1">
+					<h2 className="mb-14 mt-1.5 pt-1.5 !text-2xl text-sswRed">
 						{CONTACT_FORM_TITLE}
 					</h2>
 					{!!contactSuccess && (
@@ -253,7 +253,7 @@ export const BookingForm = ({ recaptchaKey }) => {
 								<button
 									type="submit"
 									disabled={isSubmitting}
-									className="done py-1.5 px-3"
+									className="done px-3 py-1.5"
 								>
 									SUBMIT
 								</button>

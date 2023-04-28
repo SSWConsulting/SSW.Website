@@ -71,6 +71,12 @@
 		background-position: 100%;
 	}
 
+	a.done,
+	button.done {
+		@apply inline-block cursor-pointer select-none border-none bg-sswRed bg-done bg-no-repeat pr-[30px] text-sm font-normal uppercase leading-[18px] text-white no-underline !outline-sswRed hover:!bg-[#d76969] hover:!text-white;
+		background-position: 100%;
+	}
+
 	.customTable table,
 	.customTable th,
 	.customTable td {
@@ -80,5 +86,15 @@
 
 	.customTable li {
 		list-style-type: square;
+	}
+
+	@media print {
+		.no-print,
+		.no-print * {
+			display: none !important;
+		}
+		.pagebreak {
+			page-break-before: always;
+		}
 	}
 }

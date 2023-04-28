@@ -57,24 +57,30 @@ export const Actions = ({
   };
 
   return (
-    <div className={`flex flex-wrap items-center gap-y-4 gap-x-6 ${className}`}>
+    <div className={`flex flex-wrap items-center gap-x-6 gap-y-4 ${className}`}>
       {actions &&
         actions.map(function (action, index) {
           let element = null;
           if (action.type === "button") {
             element = (
-              <Link key={index} href={action.link ? action.link : "/"} legacyBehavior>
+              <Link
+                key={index}
+                href={action.link ? action.link : "/"}
+                legacyBehavior
+              >
                 <button
                   data-tinafield={`${parentField}.${index}`}
                   className={classNames(
                     "focus:shadow-outline relative z-10 flex items-center whitespace-nowrap rounded-lg px-7 py-3 text-lg font-semibold ring-offset-2 ring-offset-current transition duration-150 ease-out focus:outline-none focus:ring-2",
-                    parentColor === "primary" ? invertedButtonColorClasses.blue : buttonColorClasses.blue
+                    parentColor === "primary"
+                      ? invertedButtonColorClasses.blue
+                      : buttonColorClasses.blue
                   )}
                 >
                   {action.label}
                   {action.icon && (
                     <BiRightArrowAlt
-                      className={"ml-1 -mr-1 h-6 w-6 opacity-80"}
+                      className={"-mr-1 ml-1 h-6 w-6 opacity-80"}
                     />
                   )}
                 </button>
@@ -83,27 +89,26 @@ export const Actions = ({
           }
           if (action.type === "link" || action.type === "linkExternal") {
             element = (
-              (<Link
+              <Link
                 key={index}
                 href={action.link ? action.link : "/"}
                 passHref
                 data-tinafield={`${parentField}.${index}`}
                 className={classNames(
                   "group inline-flex items-center text-lg font-semibold transition duration-150 ease-out",
-                  parentColor === "primary" ? "text-white hover:text-gray-50" : linkButtonColorClasses.blue
+                  parentColor === "primary"
+                    ? "text-white hover:text-gray-50"
+                    : linkButtonColorClasses.blue
                 )}
                 style={{
                   textShadow: "0 3px 7px rgba(var(--color-rgb-blue-400),0.2)",
-                }}>
-
+                }}
+              >
                 {action.label}
                 {action.icon && (
-                  <BiRightArrowAlt
-                    className={"mx-0 h-6 w-6 opacity-80"}
-                  />
+                  <BiRightArrowAlt className={"mx-0 h-6 w-6 opacity-80"} />
                 )}
-
-              </Link>)
+              </Link>
             );
           }
           return element;
