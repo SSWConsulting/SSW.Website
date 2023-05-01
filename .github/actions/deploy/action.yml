@@ -69,7 +69,7 @@ runs:
 
         if ($alreadyExists.Contains('${{ inputs.slot_name }}')) {
           Write-Host '⏩ slot already exists'
-        }else {
+        } else {
           Write-Host '👷 need to create slot'
 
           # need to create slot
