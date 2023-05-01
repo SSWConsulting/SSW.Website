@@ -1,4 +1,4 @@
-param KeyVaultName string = 'Kv-SSW-v3'
+param KeyVaultName string = 'kv-sswwebsite-v3'
 @description('Please provide a valid key name. Key names can only contain alphanumeric characters and dashes. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.')
 param SecretName string
 @secure()
