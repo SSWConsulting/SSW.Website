@@ -1,6 +1,7 @@
 param projectName string = 'sswwebsite'
 param location string = resourceGroup().location
 param tags object
+param DOCKER_REGISTRY_SERVER_URL string
 
 @allowed([
   'B1'
@@ -60,7 +61,7 @@ var appSettings = [
   }
   {
     name: 'DOCKER_REGISTRY_SERVER_URL'
-    value: 'https://acrsswwebsite.azurecr.io'
+    value: 'https://${DOCKER_REGISTRY_SERVER_URL}'
   }
 ]
 

@@ -76,6 +76,7 @@ module appService 'appService.bicep' = {
     skuCapacity: skuCapacity
     acrName: acr.outputs.acrName
     dockerImage: dockerImage
+    DOCKER_REGISTRY_SERVER_URL: acr.outputs.acrLoginServer
   }
 }
 
