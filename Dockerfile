@@ -1,4 +1,4 @@
-FROM node:19-alpine AS runner
+FROM node:20-alpine AS runner
 RUN corepack enable
 
 # Uncomment the following line in case you want to disable telemetry during runtime.
