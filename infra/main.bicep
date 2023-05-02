@@ -21,9 +21,6 @@ param location string = resourceGroup().location
 ])
 param skuName string = 'P1V2'
 
-var entropy = substring(guid(subscription().subscriptionId, resourceGroup().id), 0, 4)
-var KeyVaultName = 'kv-${projectName}-${entropy}'
-
 param roleName string = 'Key Vault Secrets User'
 
 @minValue(1)
@@ -50,7 +47,7 @@ module acr 'acr.bicep' = {
 module keyVault 'keyVault.bicep' = {
   name:'keyVault-${now}'
   params: {
-    keyVaultName: KeyVaultName
+    projectName: projectName
     location: location
   }
 }
@@ -72,7 +69,7 @@ module appService 'appService.bicep' = {
 module kVAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
   name: 'KVRoleAssignment-${now}'
   params: {
-    keyVaultName: KeyVaultName
+    keyVaultName: keyVault.outputs.keyVaultName
     principalId: appService.outputs.AppPrincipalId
     roleName: roleName
   }
