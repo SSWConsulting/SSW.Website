@@ -11,12 +11,19 @@ export const globalSchema: Collection = {
   fields: [
     {
       type: "object",
-      label: "Offices Page Index",
+      label: "Offices Index Page ",
       name: "officesIndex",
       list: true,
       ui: {
         itemProps: (item) => {
-          return { label: item?.office?.name };
+          const path = item?.office;
+          const pathComponents = path.split("/");
+          const cityNameWithExtension =
+            pathComponents[pathComponents.length - 1];
+          const cityName = cityNameWithExtension.split(".")[0];
+          return {
+            label: cityName.charAt(0).toUpperCase() + cityName.slice(1),
+          };
         },
       },
       fields: [
