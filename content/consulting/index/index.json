@@ -742,8 +742,8 @@
           "title": "Sitecore",
           "description": "A mix of powerful marketing and business features, rich development support and scalability make it the ideal solution for leading websites.",
           "logo": "/images/thumbs/thumb-sitecore.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Sitecore.aspx",
+          "page": "content/consulting/sitecore.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
