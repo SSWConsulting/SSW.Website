@@ -36,7 +36,7 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
         };
       });
 
-      setNewsletters(sortedNewslettersData.reverse());
+      setNewsletters(sortedNewslettersData?.reverse());
       setHasLoaded(true);
     });
   };
