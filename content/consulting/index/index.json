@@ -670,8 +670,8 @@
           "title": "Kentico",
           "description": "Kentico is the only fully integrated ASP.NET CMS, E-commerce, and Online Marketing platform.",
           "logo": "/images/thumbs/thumb-kentico.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Kentico.aspx",
+          "page": "content/consulting/kentico.mdx",
+          "externalUrl": "https://www.ssw.com.au/consulting/kentico",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
