@@ -688,8 +688,8 @@
           "title": "DNN - DotNetNuke",
           "description": "DNN (AKA Evoq) can be used as a web content management system (CMS) for simple web sites or as a powerful application development framework.",
           "logo": "/images/thumbs/thumb-dnn.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/DNN-DotNetNuke.aspx",
+          "page": "content/consulting/dnn-dotnetnuke.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
