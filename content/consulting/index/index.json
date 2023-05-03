@@ -760,8 +760,8 @@
           "title": "Umbraco",
           "description": "With over than 200.000 installations, Umbraco is one of the most deployed Web Content Management Systems on the Microsoft stack.",
           "logo": "/images/thumbs/thumb-umbraco.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Umbraco.aspx",
+          "page": "content/consulting/umbraco.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
