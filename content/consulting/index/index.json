@@ -724,8 +724,8 @@
           "title": "Orchard",
           "description": "A free, open source, community-focused project aimed at delivering applications and reusable components on the rock-solid ASP.NET MVC platform.",
           "logo": "/images/thumbs/thumb-orchard.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Orchard.aspx",
+          "page": "content/consulting/orchard.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
