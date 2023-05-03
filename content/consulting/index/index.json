@@ -653,7 +653,7 @@
           "description": "WordPress the most popular content management system (CMS) on the web, and is trusted by content publishers from both large and small businesses.",
           "logo": "/images/thumbs/thumb-wordpress.jpg",
           "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/WordPress.aspx",
+          "externalUrl": "https://www.ssw.com.au/consulting/wordpress",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
