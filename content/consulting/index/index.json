@@ -816,8 +816,8 @@
           "title": "On-Premises: Data Protection Manager",
           "description": "Microsoft System Center Data Protection Manager can take the stress out of backups by allowing you to control all backups from one central console.",
           "logo": "/images/thumbs/thumb-data-protection.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Data-Protection-Manager.aspx",
+          "page": "content/consulting/data-protection-manager.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/cloud-and-infrastructure.json"
