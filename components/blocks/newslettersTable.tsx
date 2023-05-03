@@ -28,7 +28,7 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
       }));
       const sortedNewslettersData = newsletters.map((item) => {
         const sortedNewsletters = item.newsletters.sort(
-          (a, b) => a.month - b.month
+          (a, b) => b.month - a.month
         );
         return {
           newsletters: sortedNewsletters,
