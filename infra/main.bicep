@@ -21,7 +21,6 @@ param location string = resourceGroup().location
 ])
 param skuName string = 'P1V2'
 
-param roleName string = 'Key Vault Secrets User'
 
 @minValue(1)
 param skuCapacity int = 1
@@ -71,11 +70,8 @@ module kVAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
   params: {
     keyVaultName: keyVault.outputs.keyVaultName
     principalId: appService.outputs.AppPrincipalId
-    roleName: roleName
+    roleName: 'Key Vault Secrets User'
   }
-  dependsOn:[
-    appService
-  ]
 }
 
 output acrLoginServer string = acr.outputs.acrLoginServer
