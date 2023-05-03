@@ -27,6 +27,9 @@ inputs:
   IMAGE_NAME:
     description: Name of the image
     required: true
+  KEY_VAULT:
+    description: Name of the Key Vault
+    required: true
   CREATE_LEAD_ENDPOINT:
     description: Lead endpoint
     required: true
@@ -120,6 +123,27 @@ runs:
             --role acrpull `
             -o none
           Write-Host '✅ acrpull role granted'
+
+          $kvId = az keyvault show `
+            --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
+            --name ${{ inputs.KEY_VAULT }} `
+            --query id `
+            --output tsv
+
+          if($kvId) {
+          Write-Host '✅ KeyVault found'
+
+          # grant access to the identity on KeyVault
+          az role assignment create `
+            --assignee-object-id $identityId `
+            --assignee-principal-type ServicePrincipal `
+            --scope $kvId `
+            --role "Key Vault Secrets User" `
+            -o none
+          Write-Host '✅ Key Vault Secrets User role granted'
+          } else {
+            Write-Host '❌ Key Vault not found'
+          }
         }
         # Apply app settings to the PR slots
         az webapp config appsettings set `
