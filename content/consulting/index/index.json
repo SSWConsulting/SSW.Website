@@ -828,8 +828,8 @@
           "title": "BackBlaze and CloudBerry",
           "description": "Backblaze has introduced a simple backup system utilizing B2 Cloud Storage which is cheap, requires little on premises infrastructure and fast to setup.",
           "logo": "/images/thumbs/thumb-backblaze.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/BackBlaze-and-CloudBerry-Backup.aspx",
+          "page": "content/consulting/backblaze-and-cloudberry-backup.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/cloud-and-infrastructure.json"
