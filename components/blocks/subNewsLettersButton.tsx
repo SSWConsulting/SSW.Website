@@ -14,11 +14,18 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
   const [lastName, setLastName] = useState("");
   const [infoMessage, setInfoMessage] = useState("");
   const [isContactExisting, setIsContactExisting] = useState(false);
+  const [allInputsFilled, setAllInputsFilled] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubscribe = async () => {
-    if (email === "" || firstName === "" || lastName === "") return;
+    setInfoMessage("");
+    if (email === "" || firstName === "" || lastName === "") {
+      setAllInputsFilled(false);
+      setInfoMessage("Please fill out all fields.");
+      return;
+    }
 
+    setAllInputsFilled(true);
     setIsLoading(true);
     setInfoMessage("Subscribing to the newsletter...");
     setIsContactExisting(false);
@@ -99,7 +106,9 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
         </div>
         <p
           className={`mt-2 flex justify-center text-sm ${
-            isContactExisting ? "text-sswRed" : "text-green-500"
+            isContactExisting || !allInputsFilled
+              ? "text-sswRed"
+              : "text-green-500"
           }`}
         >
           <span className={isLoading ? "text-gray-500" : ""}>
