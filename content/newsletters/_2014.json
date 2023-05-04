@@ -4,12 +4,12 @@
 		{
 			"month": 1,
 			"url": "_2014_01__FireBootCamp is one week away from ignition__.htm",
-			"description": "FireBootCamp is one week away from ignition_"
+			"description": "FireBootCamp is one week away from ignition"
 		},
 		{
 			"month": 2,
 			"url": "_2014_02__FireBootCamp is up and running__.htm",
-			"description": "FireBootCamp is up and running_"
+			"description": "FireBootCamp is up and running"
 		},
 		{
 			"month": 3,
@@ -19,32 +19,32 @@
 		{
 			"month": 4,
 			"url": "_2014_04__FireBootCamp Sydney ended successfully__.htm",
-			"description": "FireBootCamp Sydney ended successfully_"
+			"description": "FireBootCamp Sydney ended successfully"
 		},
 		{
 			"month": 5,
 			"url": "_2014_05__And the winner is__.htm",
-			"description": "And the winner is_"
+			"description": "And the winner is"
 		},
 		{
 			"month": 6,
 			"url": "_2014_06__Introducing the new SSW logo__.htm",
-			"description": "Introducing the new SSW logo_"
+			"description": "Introducing the new SSW logo"
 		},
 		{
 			"month": 7,
 			"url": "_2014_07__Sign up to a free xamarin hack day in your local area__.htm",
-			"description": "Sign up to a free xamarin hack day in your local area_"
+			"description": "Sign up to a free xamarin hack day in your local area"
 		},
 		{
 			"month": 8,
 			"url": "_2014_08__Building a croquembouche in just 4 weeks__.htm",
-			"description": "Building a croquembouche in just 4 weeks_"
+			"description": "Building a croquembouche in just 4 weeks"
 		},
 		{
 			"month": 9,
 			"url": "_2014_09__Come and see what the FireBootCamp graduates have built__.htm",
-			"description": "Come and see what the FireBootCamp graduates have built_"
+			"description": "Come and see what the FireBootCamp graduates have built"
 		},
 		{
 			"month": 10,
@@ -54,7 +54,7 @@
 		{
 			"month": 10,
 			"url": "_2014_10__Creating an ouroboros__.htm",
-			"description": "Creating an ouroboros_"
+			"description": "Creating an ouroboros"
 		},
 		{
 			"month": 11,
@@ -64,7 +64,7 @@
 		{
 			"month": 12,
 			"url": "_2014_12__Adams 2014 in review__.htm",
-			"description": "Adams 2014 in review_"
+			"description": "Adams 2014 in review"
 		}
 	]
 }
