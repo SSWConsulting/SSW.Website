@@ -1,6 +1,7 @@
 param roleName string
 param principalId string
 param keyVaultName string
+param slotName string = 'main'
 
 var roleIdMapping = {
   'Key Vault Administrator': '00482a5a-887f-4fb3-b363-3b7fe8e74483'
@@ -19,7 +20,7 @@ resource keyVault 'Microsoft.KeyVault/vaults@2021-10-01' existing = {
 
 
 resource addRoleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
-  name: guid(keyVault.id, roleIdMapping[roleName])
+  name: guid(keyVault.id, roleIdMapping[roleName], slotName)
   scope: keyVault
   properties: {
     roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', roleIdMapping[roleName])

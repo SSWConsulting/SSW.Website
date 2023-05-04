@@ -27,17 +27,8 @@ inputs:
   IMAGE_NAME:
     description: Name of the image
     required: true
-  KEY_VAULT:
-    description: Name of the Key Vault
-    required: true
-  CREATE_LEAD_ENDPOINT:
-    description: Lead endpoint
-    required: true
-  GOOGLE_RECAPTCHA_KEY_V2:
-    description: Google recaptcha key
-    required: true
-  GOOGLE_RECAPTCHA_SITE_KEY:
-    description: Google recaptcha site key
+  BICEP_PATH:
+    description: Path for the Bicep
     required: true
 
 outputs:
@@ -61,99 +52,25 @@ runs:
       if: github.event_name == 'pull_request'
       run: |
         # check if slot exists
-        $alreadyExists = (az webapp deployment slot list `
+        $slotList = (az webapp deployment slot list `
           --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
           --name ${{ inputs.APP_SERVICE_NAME }} `
           --query "[].name" `
           --output tsv `
         )
 
-        $alreadyExists ??= @()
+        $slotList ??= @()
 
-        if ($alreadyExists.Contains('${{ inputs.slot_name }}')) {
-          Write-Host '⏩ slot already exists'
-        } else {
-          Write-Host '👷 need to create slot'
+        $alreadyExists = if($slotList.Contains(${{ inputs.slot_name }})){$true} else {$false}
 
-          # need to create slot
-          az webapp deployment slot create `
-            --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
-            --name ${{ inputs.APP_SERVICE_NAME }} `
-            --slot ${{ inputs.slot_name }} `
-            --configuration-source ${{ inputs.APP_SERVICE_NAME }} `
-            --output none
-          Write-Host '✅ slot created'
-
-          # get slot identity
-          $identityId = az webapp identity assign `
-            --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
-            --name ${{ inputs.APP_SERVICE_NAME }} `
-            --slot ${{ inputs.slot_name }} `
-            --query principalId `
-            --output tsv
-          Write-Host '✅ identity created'
-
-          # Configure WebApp to use the Manage Identity Credentials to perform docker pull operations
-          $configId = (
-            az webapp show `
-              --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
-              --name ${{ inputs.APP_SERVICE_NAME }} `
-              --slot ${{ inputs.slot_name }} `
-              --query id `
-              --output tsv
-            ) + "/config/web"
-          az resource update `
-            --ids $configId `
-            --set properties.acrUseManagedIdentityCreds=True `
-            --output none
-          Write-Host '✅ acrUseManagedIdentityCreds set'
-
-          $acrId = az acr show `
-            --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
-            --name ${{ inputs.ACR_LOGIN_SERVER }} `
-            --query id `
-            --output tsv
-          Write-Host '✅ acr found'
-
-          # grant access to the identity on ACR
-          az role assignment create `
-            --assignee-object-id $identityId `
-            --assignee-principal-type ServicePrincipal `
-            --scope $acrId `
-            --role acrpull `
-            -o none
-          Write-Host '✅ acrpull role granted'
-
-          $kvId = az keyvault show `
-            --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
-            --name ${{ inputs.KEY_VAULT }} `
-            --query id `
-            --output tsv
-
-          if($kvId) {
-          Write-Host '✅ KeyVault found'
-
-          # grant access to the identity on KeyVault
-          az role assignment create `
-            --assignee-object-id $identityId `
-            --assignee-principal-type ServicePrincipal `
-            --scope $kvId `
-            --role "Key Vault Secrets User" `
-            -o none
-          Write-Host '✅ Key Vault Secrets User role granted'
-          } else {
-            Write-Host '❌ Key Vault not found'
-          }
-        }
-        # Apply app settings to the PR slots
-        az webapp config appsettings set `
-          --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
-          --name ${{ inputs.APP_SERVICE_NAME }} `
-          --slot ${{ inputs.slot_name }} `
-          --settings "GOOGLE_RECAPTCHA_KEY_V2=${{ inputs.GOOGLE_RECAPTCHA_KEY_V2 }}" "GOOGLE_RECAPTCHA_SITE_KEY=${{ inputs.GOOGLE_RECAPTCHA_SITE_KEY }}" "CREATE_LEAD_ENDPOINT=${{ inputs.CREATE_LEAD_ENDPOINT }}"
-
-
-        Write-Host '✅ PR - appsettings have been applied'
+        # deploy the biceps
+        az deployment group create `
+          --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
+          --template-file ${{ inputs.BICEP_PATH }} `
+          --parameters `
+            "slotName=${{ inputs.slot_name }}" `
+            "isAlreadyExit=$alreadyExists"
+        Write-Host '✅ PR - Bicep deployed'
 
     - name: AppService - Get slot URL
       shell: pwsh
@@ -182,16 +99,3 @@ runs:
         app-name: ${{ inputs.APP_SERVICE_NAME }}
         slot-name: ${{ inputs.slot_name }}
         images: ${{ inputs.ACR_LOGIN_SERVER }}/${{ inputs.IMAGE_NAME }}:${{ inputs.slot_name }}
-
-    - name: AppService - Apply Settings
-      shell: pwsh
-      id: App-Settings
-      if: inputs.slot_name == 'production'
-      run: |
-        # Settings
-        az webapp config appsettings set `
-          --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
-          --name ${{ inputs.APP_SERVICE_NAME }} `
-          --settings "GOOGLE_RECAPTCHA_KEY_V2=${{ inputs.GOOGLE_RECAPTCHA_KEY_V2 }}" "GOOGLE_RECAPTCHA_SITE_KEY=${{ inputs.GOOGLE_RECAPTCHA_SITE_KEY }}" "CREATE_LEAD_ENDPOINT=${{ inputs.CREATE_LEAD_ENDPOINT }}"
-
-        Write-Host '✅ Production - appsettings have been applied'

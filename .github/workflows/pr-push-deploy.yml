@@ -56,9 +56,7 @@ jobs:
           APP_SERVICE_NAME: ${{ env.APP_SERVICE_NAME }}
           ACR_LOGIN_SERVER: ${{ env.ACR_LOGIN_SERVER }}
           IMAGE_NAME: ${{ env.IMAGE_NAME }}
-          CREATE_LEAD_ENDPOINT: ${{ secrets.CREATE_LEAD_ENDPOINT_DEV }}
-          GOOGLE_RECAPTCHA_SITE_KEY: ${{ secrets.GOOGLE_RECAPTCHA_SITE_KEY }}
-          GOOGLE_RECAPTCHA_KEY_V2: ${{ secrets.GOOGLE_RECAPTCHA_KEY_V2 }}
+          BICEP_PATH: ${{ env.BICEP_PATH_PR }}
 
       - name: Comment on PR
         uses: mshick/add-pr-comment@v2
