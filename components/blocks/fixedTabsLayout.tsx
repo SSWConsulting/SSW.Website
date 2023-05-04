@@ -34,7 +34,7 @@ export const FixedTabsLayout = ({ data }) => {
       {selectedTab === data.firstTab && renderTinaMarkDown(data.firstHeading)}
       {selectedTab === data.secondTab && renderTinaMarkDown(data.secondHeading)}
 
-      <div className="my-5 flex">
+      <div className="flex flex-col md:my-5 md:flex-row">
         {renderTabButton(data.firstTab, selectedTab, onTabBtnClicked)}
         {renderTabButton(data.secondTab, selectedTab, onTabBtnClicked)}
       </div>
@@ -51,7 +51,7 @@ const renderTinaMarkDown = (data) => (
 
 const renderTabButton = (tab, selectedTab, onTabBtnClicked) => {
   return (
-    <div className={classNames("flex w-full flex-col items-center")}>
+    <div className={classNames("my-3 flex w-full flex-col items-center")}>
       <Button
         ripple
         className={classNames(
