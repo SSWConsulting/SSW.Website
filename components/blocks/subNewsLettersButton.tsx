@@ -61,40 +61,26 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
     setLastName(event.target.value);
   };
 
+  const inputRender = (inputValue, handleInputCallBack): JSX.Element => (
+    <div className="mb-1">
+      <input
+        className="col-span-3 w-full appearance-none rounded border-1 border-gray-300 px-3 py-2 leading-tight text-gray-700 focus:shadow focus:outline md:col-span-2"
+        id="firstName"
+        type="text"
+        placeholder="Your First Name"
+        onChange={handleInputCallBack}
+        value={inputValue}
+      />
+    </div>
+  );
+
   return (
     <div>
       <p className="mb-2">{headerText}</p>
       <div className="container sm:w-full sm:max-w-full md:w-1/4">
-        <div className="mb-1">
-          <input
-            className="col-span-3 w-full appearance-none rounded border-1 border-gray-300 px-3 py-2 leading-tight text-gray-700 focus:shadow focus:outline md:col-span-2"
-            id="firstName"
-            type="text"
-            placeholder="Your First Name"
-            onChange={handleFirstNameChange}
-            value={firstName}
-          />
-        </div>
-        <div className="mb-1">
-          <input
-            className="col-span-3 w-full appearance-none rounded border-1 border-gray-300 px-3 py-2 leading-tight text-gray-700 focus:shadow focus:outline md:col-span-2"
-            id="lastName"
-            type="text"
-            placeholder="Your Last Name"
-            onChange={handleLastNameChange}
-            value={lastName}
-          />
-        </div>
-        <div className="mb-1">
-          <input
-            className="col-span-3 w-full appearance-none rounded border-1 border-gray-300 px-3 py-2 leading-tight text-gray-700 focus:shadow focus:outline md:col-span-2"
-            id="email"
-            type="email"
-            placeholder="Your Email"
-            onChange={handleEmailChange}
-            value={email}
-          />
-        </div>
+        {inputRender(firstName, handleFirstNameChange)}
+        {inputRender(lastName, handleLastNameChange)}
+        {inputRender(email, handleEmailChange)}
         <div className="flex justify-center">
           <button
             className="box-border flex w-1/2 cursor-pointer items-center justify-center gap-1 bg-sswRed py-2 pl-4 pr-2 font-sans uppercase text-white hover:text-gray-100 hover:opacity-95"
