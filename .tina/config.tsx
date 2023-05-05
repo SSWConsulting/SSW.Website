@@ -11,6 +11,7 @@ import { officeSchema } from "./collections/offices";
 import { opportunitiesSchema } from "./collections/opportunities";
 import { pagesSchema } from "./collections/pages";
 import { technologiesSchema } from "./collections/technologies";
+import { productsIndexSchema } from "./collections/products";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
 
@@ -54,6 +55,7 @@ const config = defineStaticConfig({
       testimonialCategoriesSchema,
       technologiesSchema,
       officeSchema,
+      productsIndexSchema,
     ],
   },
 });
