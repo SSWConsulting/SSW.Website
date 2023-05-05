@@ -21,6 +21,7 @@ param location string = resourceGroup().location
 ])
 param skuName string = 'P1V2'
 
+
 @minValue(1)
 param skuCapacity int = 1
 
@@ -42,6 +43,13 @@ module acr 'acr.bicep' = {
     tags: tags
   }
 }
+module keyVault 'keyVault.bicep' = {
+  name:'keyVault-${now}'
+  params: {
+    projectName: projectName
+    location: location
+  }
+}
 
 module appService 'appService.bicep' = {
   name: 'appService-${now}'
@@ -53,6 +61,16 @@ module appService 'appService.bicep' = {
     skuCapacity: skuCapacity
     acrName: acr.outputs.acrName
     dockerImage: dockerImage
+    dockerRegistryServerURL: acr.outputs.acrLoginServer
+  }
+}
+
+module kVAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
+  name: 'KVRoleAssignment-${now}'
+  params: {
+    keyVaultName: keyVault.outputs.keyVaultName
+    principalId: appService.outputs.AppPrincipalId
+    roleName: 'Key Vault Secrets User'
   }
 }
 

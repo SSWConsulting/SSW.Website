@@ -1,7 +1,7 @@
 name: Deploy
 
 inputs:
-  AZURE_CLIENT_ID: 
+  AZURE_CLIENT_ID:
     description: client id for OIDC
     required: true
   AZURE_TENANT_ID:
@@ -27,16 +27,18 @@ inputs:
   IMAGE_NAME:
     description: Name of the image
     required: true
+  BICEP_PATH:
+    description: Path for the Bicep
+    required: true
 
 outputs:
-  url: 
+  url:
     description: URL to the environment that was deployed to
     value: ${{ steps.get-app-service-url.outputs.webapp-url }}
 
 runs:
-  using: "composite"  
+  using: "composite"
   steps:
-
     - name: Azure CLI - Login
       uses: azure/login@v1
       with:
@@ -49,71 +51,14 @@ runs:
       id: create-slot
       if: github.event_name == 'pull_request'
       run: |
-        # check if slot exists
-        $alreadyExists = (az webapp deployment slot list `
+        # deploy the biceps
+        az deployment group create `
           --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
-          --name ${{ inputs.APP_SERVICE_NAME }} `
-          --query "[].name" `
-          --output tsv `
-        )
-
-        $alreadyExists ??= @()
-
-        if ($alreadyExists.Contains('${{ inputs.slot_name }}')) {
-          Write-Host '⏩ slot already exists'
-          Return 0;
-        }
-
-        Write-Host '👷 need to create slot'
-
-        # need to create slot
-        az webapp deployment slot create `
-          --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
-          --name ${{ inputs.APP_SERVICE_NAME }} `
-          --slot ${{ inputs.slot_name }} `
-          --configuration-source ${{ inputs.APP_SERVICE_NAME }} `
-          --output none
-        Write-Host '✅ slot created'
-
-        # get slot identity
-        $identityId = az webapp identity assign `
-          --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
-          --name ${{ inputs.APP_SERVICE_NAME }} `
-          --slot ${{ inputs.slot_name }} `
-          --query principalId `
-          --output tsv
-        Write-Host '✅ identity created'
-
-        # Configure WebApp to use the Manage Identity Credentials to perform docker pull operations
-        $configId = (
-          az webapp show `
-            --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
-            --name ${{ inputs.APP_SERVICE_NAME }} `
-            --slot ${{ inputs.slot_name }} `
-            --query id `
-            --output tsv
-          ) + "/config/web"
-        az resource update `
-          --ids $configId `
-          --set properties.acrUseManagedIdentityCreds=True `
-          --output none
-        Write-Host '✅ acrUseManagedIdentityCreds set'
-
-        $acrId = az acr show `
-          --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
-          --name ${{ inputs.ACR_LOGIN_SERVER }} `
-          --query id `
-          --output tsv
-        Write-Host '✅ acr found'
-
-        # grant access to the identity on ACR
-        az role assignment create `
-          --assignee-object-id $identityId `
-          --assignee-principal-type ServicePrincipal `
-          --scope $acrId `
-          --role acrpull `
+          --template-file ${{ inputs.BICEP_PATH }} `
+          --parameters `
+            "slotName=${{ inputs.slot_name }}" `
           -o none
-        Write-Host '✅ acrpull role granted'
+        Write-Host '✅ PR - Bicep deployed'
 
     - name: AppService - Get slot URL
       shell: pwsh
