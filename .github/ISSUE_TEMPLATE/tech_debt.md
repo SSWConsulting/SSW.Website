@@ -1,6 +1,6 @@
 ---
 name: 💸  Tech Debt
-about: Report a bug
+about: Report tech debt
 title: "💸 Tech Debt - [Title]"
 labels: ''
 assignees: ''
