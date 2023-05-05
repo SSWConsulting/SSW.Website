@@ -78,8 +78,8 @@
 	}
 
 	.customTable table,
-	th,
-	td {
+	.customTable th,
+	.customTable td {
 		border: 1px solid;
 		padding: 8px;
 	}
