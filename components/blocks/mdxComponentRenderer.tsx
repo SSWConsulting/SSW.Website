@@ -7,6 +7,7 @@ import { ColumnLayout } from "./columnLayout";
 import { Carousel } from "./carousel";
 import { TableLayout } from "./tableLayout";
 import { AgreementForm } from "../terms-and-conditions/agreementForm";
+import { Citation } from "./citation";
 import { GoogleMapsWrapper } from "./googleMapsWrapper";
 import { DynamicColumns } from "./dynamicColumns";
 import { FixedColumns } from "./fixedColumns";
@@ -14,6 +15,8 @@ import { InternalCarousel } from "./internalCarousel";
 import { FixedTabsLayout } from "./fixedTabsLayout";
 import { CustomBookingButton } from "./customBookingButton";
 import { Flag } from "./flag";
+import { SubNewsLettersButton } from "./subNewsLettersButton";
+import { NewslettersTable } from "./newslettersTable";
 
 export const componentRenderer: Components<{
   ClientLogos: Record<string, never>;
@@ -71,6 +74,10 @@ export const componentRenderer: Components<{
     embedWidth: string;
     embedHeight: string;
   };
+  Citation: {
+		article: string;
+		author: string;
+	};
   InternalCarousel: {
     items: {
       label: string;
@@ -94,6 +101,13 @@ export const componentRenderer: Components<{
   CustomBookingButton: {
     btnText: string;
   };
+  NewslettersTable: {
+		headerText: string;
+	};
+	SubNewsLettersButton: {
+		subscribeButtonText: string;
+		headerText: string;
+	};
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -110,4 +124,7 @@ export const componentRenderer: Components<{
   InternalCarousel: (props) => <InternalCarousel data={props} />,
   FixedTabsLayout: (props) => <FixedTabsLayout data={props} />,
   CustomBookingButton: (props) => <CustomBookingButton data={props} />,
+  NewslettersTable: (props) => <NewslettersTable data={props} />,
+	SubNewsLettersButton: (props) => <SubNewsLettersButton {...props} />,
+	Citation: (props) => <Citation {...props} />,
 };

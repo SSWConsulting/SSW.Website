@@ -8,12 +8,12 @@ import {
 import { globalSchema } from "./collections/global";
 import { marketingSchema } from "./collections/marketing";
 import { officeSchema } from "./collections/offices";
-import { opportunitiesSchema } from "./collections/opportunities";
 import { pagesSchema } from "./collections/pages";
 import { technologiesSchema } from "./collections/technologies";
 import { productsIndexSchema } from "./collections/products";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
+import { newsletterSchema } from "./collections/newsletters";
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -56,6 +56,7 @@ const config = defineStaticConfig({
       technologiesSchema,
       officeSchema,
       productsIndexSchema,
+      newsletterSchema,
     ],
   },
 });
