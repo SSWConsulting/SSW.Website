@@ -61,14 +61,14 @@ runs:
 
         $slotList ??= @()
 
-        $alreadyExists = if($slotList.Contains(${{ inputs.slot_name }})){$true} else {$false}
+        $alreadyExists = if($slotList.Contains('${{ inputs.slot_name }}')){$true} else {$false}
 
         # deploy the biceps
         az deployment group create `
           --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
           --template-file ${{ inputs.BICEP_PATH }} `
           --parameters `
-            "slotName=${{ inputs.slot_name }}" `
+            "slotName='${{ inputs.slot_name }}'" `
             "isAlreadyExit=$alreadyExists"
         Write-Host '✅ PR - Bicep deployed'
 
