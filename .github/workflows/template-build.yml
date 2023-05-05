@@ -21,12 +21,6 @@ on:
         required: true
       NEXT_PUBLIC_ZENDESK_CHAT_KEY:
         required: true
-      NEXT_PUBLIC_GOOGLE_ANALYTICS:
-        required: true
-      NEXT_PUBLIC_HOTJAR_ID:
-        required: true
-      NEXT_PUBLIC_HOTJAR_SV:
-        required: true
 
 defaults:
   run:
