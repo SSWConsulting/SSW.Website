@@ -47,5 +47,15 @@ resource KeyVault 'Microsoft.KeyVault/vaults@2021-11-01-preview' = {
   }
 }
 
+module kVAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
+  name: 'KVRoleAssignment-techlead'
+  params: {
+    keyVaultName: KeyVault.name
+    principalId: 'a22f44fc-2871-4853-ba22-7c03b73a233b'
+    principalType: 'User'
+    roleName: 'Key Vault Secrets Officer'
+  }
+}
+
 output keyVaultName string = KeyVault.name
 

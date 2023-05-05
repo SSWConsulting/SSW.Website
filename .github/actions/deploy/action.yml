@@ -17,7 +17,6 @@ inputs:
     description: appservice name
     required: true
   slot_name:
-    type: string
     description: app service slot name
     default: production
     required: false
@@ -26,9 +25,6 @@ inputs:
     required: true
   IMAGE_NAME:
     description: Name of the image
-    required: true
-  BICEP_PATH:
-    description: Path for the Bicep
     required: true
 
 outputs:
@@ -51,10 +47,11 @@ runs:
       id: create-slot
       if: github.event_name == 'pull_request'
       run: |
-        # deploy the biceps
+        # create the environment
         az deployment group create `
+          --name ${{ inputs.slot_name }}-$timestamp `
           --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
-          --template-file ${{ inputs.BICEP_PATH }} `
+          --template-file ./infra/create-pr-environment.bicep `
           --parameters `
             "slotName=${{ inputs.slot_name }}" `
           -o none

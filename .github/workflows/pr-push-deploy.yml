@@ -56,7 +56,6 @@ jobs:
           APP_SERVICE_NAME: ${{ env.APP_SERVICE_NAME }}
           ACR_LOGIN_SERVER: ${{ env.ACR_LOGIN_SERVER }}
           IMAGE_NAME: ${{ env.IMAGE_NAME }}
-          BICEP_PATH: ${{ env.BICEP_PATH_PR }}
 
       - name: Comment on PR
         uses: mshick/add-pr-comment@v2
