@@ -68,8 +68,9 @@ runs:
           --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
           --template-file ${{ inputs.BICEP_PATH }} `
           --parameters `
-            "slotName='${{ inputs.slot_name }}'" `
-            "isAlreadyExit=$alreadyExists"
+            "slotName=${{ inputs.slot_name }}" `
+            "isAlreadyExit=$alreadyExists" `
+          -o none
         Write-Host '✅ PR - Bicep deployed'
 
     - name: AppService - Get slot URL
