@@ -15,24 +15,24 @@ export const validateToken = async ({ Recaptcha }) => {
 
   console.log(
     "🚀 ~ file: index.ts:20 ~ validateToken ~ 	process.env.GOOGLE_RECAPTCHA_KEY_v2:",
-    process.env.GOOGLE_RECAPTCHA_KEY_v2
+    process.env.GOOGLE_RECAPTCHA_KEY_V2
   );
 
   return await axios.post(
-    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_KEY_v2}&response=${Recaptcha}`
+    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_KEY_V2}&response=${Recaptcha}`
   );
 };
 
 export const addContactToNewsletters = async (
-	data: AddContactToNewslettersData
+  data: AddContactToNewslettersData
 ) =>
-	await axios.post(
-		"https://prod-31.australiasoutheast.logic.azure.com:443/workflows/f3d788bd3e6749c3a6061220947da078/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=gEBoa71GGMy7uBnpPti3i2x_pmDRp8p3vElEcLuc64U",
-		data,
-		{
-			headers: { "Content-Type": "application/json" },
-		}
-	);
+  await axios.post(
+    "https://prod-31.australiasoutheast.logic.azure.com:443/workflows/f3d788bd3e6749c3a6061220947da078/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=gEBoa71GGMy7uBnpPti3i2x_pmDRp8p3vElEcLuc64U",
+    data,
+    {
+      headers: { "Content-Type": "application/json" },
+    }
+  );
 
 export const getLiveStreamBannerInfo = async (datetime: string) => {
   const odataFilter = `$filter=Enabled ne false \
@@ -156,8 +156,8 @@ export type BookingFormSubmissionData = {
 };
 
 export type AddContactToNewslettersData = {
-	Email: string;
-	FullName: string;
+  Email: string;
+  FullName: string;
 };
 
 export interface LiveStreamBannerInfo {
