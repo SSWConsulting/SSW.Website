@@ -2,6 +2,7 @@ param location string
 param appServiceName string
 param slotName string
 param ACR_LOGIN_SERVER string
+param keyVaultName string
 
 
 var appSettings = [
@@ -19,15 +20,15 @@ var appSettings = [
   }
   {
     name: 'CREATE_LEAD_ENDPOINT'
-    value: '@Microsoft.KeyVault(SecretUri=https://tempv222.vault.azure.net/secrets/Create-Lead-Endpoint-Dev/cc1fda66c2374f1897baeaa65dc40074)'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/Create-Lead-Endpoint-Dev)'
   }
   {
     name: 'GOOGLE_RECAPTCHA_KEY_V2'
-    value: '@Microsoft.KeyVault(SecretUri=https://tempv222.vault.azure.net/secrets/Google-Recaptcha-KEY/876516e1ed224b4788065a65fb3d2a52)'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/Google-Recaptcha-KEY)'
   }
   {
     name: 'GOOGLE_RECAPTCHA_SITE_KEY'
-    value: '@Microsoft.KeyVault(SecretUri=https://tempv222.vault.azure.net/secrets/Google-Recaptcha-Site-KEY/72fd24e47c324d57b0e64cee02d03549)'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/Google-Recaptcha-Site-KEY)'
   }
 ]
 

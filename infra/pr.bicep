@@ -1,14 +1,18 @@
 param slotName string
-
 param appServiceName string = 'app-sswwebsite-9eb3'
 param location string = resourceGroup().location
 param ACR_LOGIN_SERVER string = 'acrsswwebsite.azurecr.io'
 param ACR_Name string = 'acrsswwebsite'
-param keyVaultName string = 'kv-sswwebsite-9eb3'
-
+param projectName string = 'sswwebsite'
 
 param now string = utcNow('yyyy-MM-ddTHH-mm')
-
+module keyVault 'keyVault.bicep' = {
+  name:'keyVault-${now}'
+  params: {
+    projectName: projectName
+    location: location
+  }
+}
 module appServiceSlot 'slot.bicep' = {
   name:'prSlot-${now}'
   params:{
@@ -16,6 +20,7 @@ module appServiceSlot 'slot.bicep' = {
     slotName:slotName
     appServiceName: appServiceName
     ACR_LOGIN_SERVER: ACR_LOGIN_SERVER
+    keyVaultName: keyVault.outputs.keyVaultName
   }
 }
 
@@ -32,7 +37,7 @@ module acrRoleAssignment 'acrRoleAssignment.bicep' = {
 module kVAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
   name: 'KVRoleAssignment-${now}'
   params: {
-    keyVaultName: keyVaultName
+    keyVaultName: keyVault.outputs.keyVaultName
     principalId: appServiceSlot.outputs.slotPrincipalId
     roleName: 'Key Vault Secrets User'
     slotName: slotName
