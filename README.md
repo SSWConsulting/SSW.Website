@@ -70,10 +70,6 @@ syncyarnlock -s -k
 - <http://localhost:3000/exit-admin> : log out of Tina Cloud
 - <http://localhost:4001/altair/> : GraphQL playground to test queries and browse the API documentation
 
-## About `/helpers/oldNewslettersHeaders` folder
-
-You will find all the necessary scripts and files, which were imported in old newsletter HTML headers, there.
-
 ## Pull Requests
 
 Each Pull Request will be deployed to its own staging environment, the URL to the environment is available in the PR thread.
