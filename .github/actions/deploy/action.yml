@@ -51,25 +51,12 @@ runs:
       id: create-slot
       if: github.event_name == 'pull_request'
       run: |
-        # check if slot exists
-        $slotList = (az webapp deployment slot list `
-          --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
-          --name ${{ inputs.APP_SERVICE_NAME }} `
-          --query "[].name" `
-          --output tsv `
-        )
-
-        $slotList ??= @()
-
-        $alreadyExists = if($slotList.Contains('${{ inputs.slot_name }}')){$true} else {$false}
-
         # deploy the biceps
         az deployment group create `
           --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
           --template-file ${{ inputs.BICEP_PATH }} `
           --parameters `
             "slotName=${{ inputs.slot_name }}" `
-            "isAlreadyExit=$alreadyExists" `
           -o none
         Write-Host '✅ PR - Bicep deployed'
 
