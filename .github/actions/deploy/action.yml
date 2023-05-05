@@ -54,6 +54,8 @@ runs:
           --template-file ./infra/create-pr-environment.bicep `
           --parameters `
             "slotName=${{ inputs.slot_name }}" `
+            "appServiceName=${{ inputs.APP_SERVICE_NAME }}" `
+            "acrLoginServer=${{ inputs.ACR_LOGIN_SERVER }}" `
           -o none
         Write-Host '✅ PR - Bicep deployed'
 

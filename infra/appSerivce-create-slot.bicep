@@ -1,7 +1,7 @@
 param location string
 param appServiceName string
 param slotName string
-param ACR_LOGIN_SERVER string
+param acrLoginServer string
 param keyVaultName string
 
 
@@ -16,7 +16,7 @@ var appSettings = [
   }
   {
     name: 'DOCKER_REGISTRY_SERVER_URL'
-    value: 'https://${ACR_LOGIN_SERVER}'
+    value: 'https://${acrLoginServer}'
   }
   {
     name: 'CREATE_LEAD_ENDPOINT'

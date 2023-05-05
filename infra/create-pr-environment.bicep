@@ -2,10 +2,11 @@ param projectName string = 'sswwebsite'
 param location string = resourceGroup().location
 param slotName string
 param appServiceName string
-param ACR_LOGIN_SERVER string
-param ACR_Name string
+param acrLoginServer string
 
 param now string = utcNow('yyyy-MM-ddTHH-mm')
+
+var acrName = replace(acrLoginServer, '.azurecr.io', '')
 module keyVault 'keyVault.bicep' = {
   name:'keyVault-${now}'
   params: {
@@ -19,7 +20,7 @@ module appServiceSlot 'appSerivce-create-slot.bicep' = {
     location:location
     slotName:slotName
     appServiceName: appServiceName
-    ACR_LOGIN_SERVER: ACR_LOGIN_SERVER
+    acrLoginServer: acrLoginServer
     keyVaultName: keyVault.outputs.keyVaultName
   }
 }
@@ -27,7 +28,7 @@ module appServiceSlot 'appSerivce-create-slot.bicep' = {
 module acrRoleAssignment 'acrRoleAssignment.bicep' = {
   name: '${slotName}-acrRoleAssignment-${now}'
   params: {
-    ACR_Name: ACR_Name
+    acrName: acrName
     principalId: appServiceSlot.outputs.slotPrincipalId
     roleName: 'ACR Pull'
     slotName: slotName
