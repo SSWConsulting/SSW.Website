@@ -53,7 +53,7 @@ module kVAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
     keyVaultName: KeyVault.name
     principalId: 'a22f44fc-2871-4853-ba22-7c03b73a233b'
     principalType: 'User'
-    roleName:  'Key Vault Administrator'
+    roleName:  'User Access Administrator'
   }
 }
 
