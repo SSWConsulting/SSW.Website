@@ -1,6 +1,9 @@
-param roleName string
-param principalId string
 param keyVaultName string
+
+param principalId string
+
+@allowed(['Key Vault Administrator','Key Vault Certificates Officer','Key Vault Crypto Officer','Key Vault Crypto Service Encryption User','Key Vault Crypto User','Key Vault Reader','Key Vault Secrets Officer','Key Vault Secrets User'])
+param roleName string
 
 @allowed(['Device', 'ForeignGroup', 'Group', 'ServicePrincipal', 'User'])
 param principalType string = 'ServicePrincipal'
