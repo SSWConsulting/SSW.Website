@@ -44,7 +44,7 @@ export const Carousel = ({ data }) => {
           }}
           renderIndicator={createCarouselIndicator}
         >
-          {data.items.map(createCarouselItemImage)}
+          {data.items && data.items.map(createCarouselItemImage)}
         </CarouselImplementation>
       </Container>
     </Section>
@@ -55,7 +55,7 @@ const createCarouselItemImage = ({ imgSrc, label }, index: React.Key) => {
   return (
     <div key={index}>
       <Image
-        src={imgSrc}
+        src={imgSrc ?? ""}
         alt={label}
         height={388}
         width={1080}
