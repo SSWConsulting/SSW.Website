@@ -56,7 +56,7 @@ const TimeComponent: FC<TimeComponentProps> = ({ time, identifier, className }) 
     );
 }
 
-const renderer = ({ days, hours, minutes }) => {
+const countdownRenderer = ({ days, hours, minutes }) => {
     return (
         <div className="flex items-center">
             <TimeComponent time={days} identifier="days" className="pr-1" />
@@ -76,7 +76,7 @@ export const RecurringEvent = ({ data }) => {
             <div className="my-3 flex flex-col sm:flex-row">
                 <Countdown
                     date={nextEventDate}
-                    renderer={renderer}
+                    renderer={countdownRenderer}
                 />
                 { data.applyLinkRedirect &&
                     <button

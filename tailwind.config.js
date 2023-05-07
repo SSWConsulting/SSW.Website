@@ -265,7 +265,6 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            maxWidth: 0,
             lineHeight: 1.45,
             h1: {
               fontWeight: "300",

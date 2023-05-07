@@ -6,10 +6,11 @@ import { Carousel } from "react-responsive-carousel";
 import styles from "./training.module.css";
 
 const TrainingHeader = ({ data }) => {
+    console.log(data.heroBackground)
     return (
         <Section
             className="flex h-full flex-col items-center border-b-8 border-sswRed bg-white bg-cover bg-no-repeat lg:block"
-            style={{ backgroundImage: `url(${data?.heroBackground})` }}
+            style={{ backgroundImage: `url(${data?.heroBackground || "/images/polygonBackground.png"})` }}
         >
             {/* Tailwind shorthand breaks styling */}
             {/* eslint-disable-next-line tailwindcss/enforces-shorthand */}
@@ -48,7 +49,7 @@ export const TrainingCarousel = ({ data }) => {
     return (
         <Carousel
             infiniteLoop
-            // autoPlay
+            autoPlay
             showThumbs={false}
             showStatus={false}
             showArrows={false}

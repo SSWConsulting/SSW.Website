@@ -26,6 +26,7 @@ export const componentRenderer: Components<{
     };
     RecurringEvent: {
         applyLinkRedirect: string,
+        day: string,
     };
     VerticalListItem: {
         icon: string,
