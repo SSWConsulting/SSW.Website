@@ -9,9 +9,10 @@ import { Layout } from "../components/layout";
 import { Container } from "../components/util/container";
 import { Section } from "../components/util/section";
 import { SEO } from "../components/util/seo";
+import { InferGetStaticPropsType } from "next";
 
 export default function HomePage(
-    props: AsyncReturnType<typeof getStaticProps>["props"]
+  props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const { data } = useTina({
     data: props.data,
@@ -107,6 +108,3 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
-
-export type AsyncReturnType<T extends (...args: any) => Promise<any>> = // eslint-disable-line @typescript-eslint/no-explicit-any
-    T extends (...args: any) => Promise<infer R> ? R : any; // eslint-disable-line @typescript-eslint/no-explicit-any
