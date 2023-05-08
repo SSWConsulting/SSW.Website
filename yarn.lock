@@ -3843,7 +3843,7 @@ __metadata:
     "@tinacms/cli": ^1.5.6
     "@types/js-cookie": ^3.0.3
     "@types/node": ^18.16.0
-    "@types/react": ^18.2.0
+    "@types/react": ^18.2.6
     "@types/styled-components": ^5.1.26
     "@typescript-eslint/eslint-plugin": ^5.57.1
     "@typescript-eslint/parser": ^5.58.0
@@ -3878,7 +3878,7 @@ __metadata:
     react-responsive-carousel: ^3.2.23
     react-responsive-modal: ^6.4.1
     react-tooltip: ^5.11.1
-    sharp: ^0.32.0
+    sharp: ^0.32.1
     ssw.megamenu: ^3.1.2
     styled-components: ^5.3.10
     styled-jsx: ^5.1.2
@@ -15220,7 +15220,7 @@ remark-mdx@next:
   languageName: node
   linkType: hard
 
-"sharp@npm:^0.32.0":
+"sharp@npm:^0.32.1":
   version: 0.32.1
   resolution: "sharp@npm:0.32.1"
   dependencies:
