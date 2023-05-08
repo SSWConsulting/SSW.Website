@@ -14,6 +14,10 @@ export const validateToken = async ({ Recaptcha }) => {
   console.log("🚀 ~ file: index.ts:10 ~ validateToken ~ Recaptcha:", Recaptcha);
 
   console.log(
+    "🚀 ~ file: index.ts:17 ~ validateToken ~ process.env.GOOGLE_RECAPTCHA_SITE_KEY:",
+    process.env.GOOGLE_RECAPTCHA_SITE_KEY
+  );
+  console.log(
     "🚀 ~ file: index.ts:20 ~ validateToken ~ 	process.env.GOOGLE_RECAPTCHA_KEY_v2:",
     process.env.GOOGLE_RECAPTCHA_KEY_V2
   );
