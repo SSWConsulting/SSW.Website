@@ -17,7 +17,6 @@ import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
 import { InferGetStaticPropsType } from "next";
-import { AsyncReturnType } from "../[filename]";
 
 const allServices = "All SSW Services";
 
