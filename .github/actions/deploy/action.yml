@@ -26,9 +26,6 @@ inputs:
   IMAGE_NAME:
     description: Name of the image
     required: true
-  BICEP_PATH:
-    description: Path for the Bicep
-    required: true
 
 outputs:
   url:

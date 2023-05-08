@@ -1,27 +1,12 @@
 import axios, { AxiosResponse } from "axios";
 
 export const createLead = async (data: BookingFormSubmissionData) => {
-  console.log(
-    "🚀 ~ file: index.ts:5 ~ createLead ~ process.env.CREATE_LEAD_ENDPOINT:",
-    process.env.CREATE_LEAD_ENDPOINT
-  );
   return await axios.post(process.env.CREATE_LEAD_ENDPOINT, data, {
     headers: { "Content-Type": "application/json" },
   });
 };
 
-export const validateToken = async ({ Recaptcha }) => {
-  console.log("🚀 ~ file: index.ts:10 ~ validateToken ~ Recaptcha:", Recaptcha);
-
-  console.log(
-    "🚀 ~ file: index.ts:17 ~ validateToken ~ process.env.GOOGLE_RECAPTCHA_SITE_KEY:",
-    process.env.GOOGLE_RECAPTCHA_SITE_KEY
-  );
-  console.log(
-    "🚀 ~ file: index.ts:20 ~ validateToken ~ 	process.env.GOOGLE_RECAPTCHA_KEY_v2:",
-    process.env.GOOGLE_RECAPTCHA_KEY_V2
-  );
-
+export const validateRecaptcha = async ({ Recaptcha }) => {
   return await axios.post(
     `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_KEY_V2}&response=${Recaptcha}`
   );
