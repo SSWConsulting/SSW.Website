@@ -23,6 +23,19 @@ import { tableBlockSchema } from "./tableLayout";
 import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { videoEmbedBlockSchema } from "./videoEmbed";
+import { tableBlockSchema } from "./tableLayout";
+import { dynamicColumnsSchema } from "./dynamicColumns";
+import { fixedColumnsSchema } from "./fixedColumns";
+import { verticalListItemSchema } from "./verticalListItem";
+import { trainingLearningOutcomeSchema } from "../training/trainingLearningOutcome";
+import { trainingInformationSchema } from "../training/trainingInformation";
+import { recurringEventSchema } from "./recurringEvent";
+import { flagSchema } from "./flag";
+import { fixedTabsLayoutSchema } from "./fixedTabsLayout";
+import { columnLayoutBlockSchema } from "./columnLayout";
+import { citationBlockSchema } from "./citation";
+import { subNewsLettersButtonSchema } from "./subNewsLettersButton";
+import { newslettersTableBlockSchema } from "./newslettersTable";
 
 export const pageBlocks: Template[] = [
   aboutUsBlockSchema,
@@ -44,6 +57,10 @@ export const pageBlocks: Template[] = [
   videoEmbedBlockSchema,
   fixedColumnsSchema,
   internalCarouselBlockSchema,
+  verticalListItemSchema,
+  trainingLearningOutcomeSchema,
+  trainingInformationSchema,
+  recurringEventSchema,
   fixedTabsLayoutSchema,
   citationBlockSchema,
   subNewsLettersButtonSchema,
@@ -71,3 +88,7 @@ export * from "./tableLayout";
 export * from "./upcomingEvents";
 export * from "./verticalImageLayout";
 export * from "./videoEmbed";
+export * from "./verticalListItem";
+export * from "../training/trainingLearningOutcome";
+export * from "../training/trainingInformation";
+export * from "./recurringEvent";

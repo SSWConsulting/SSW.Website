@@ -13,6 +13,7 @@ import { pagesSchema } from "./collections/pages";
 import { technologiesSchema } from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
+import { trainingSchema } from "./collections/training";
 import { newsletterSchema } from "./collections/newsletters";
 
 const config = defineStaticConfig({
@@ -55,6 +56,7 @@ const config = defineStaticConfig({
       testimonialCategoriesSchema,
       technologiesSchema,
       officeSchema,
+      trainingSchema,
       educationalSchema,
       newsletterSchema,
     ],

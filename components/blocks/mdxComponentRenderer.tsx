@@ -12,6 +12,10 @@ import { GoogleMapsWrapper } from "./googleMapsWrapper";
 import { DynamicColumns } from "./dynamicColumns";
 import { FixedColumns } from "./fixedColumns";
 import { InternalCarousel } from "./internalCarousel";
+import { VerticalListItem } from "./verticalListItem";
+import TrainingInformation from "../training/trainingInformation";
+import { TrainingLearningOutcome } from "../training/trainingLearningOutcome";
+import { RecurringEvent } from "./recurringEvent";
 import { FixedTabsLayout } from "./fixedTabsLayout";
 import { CustomBookingButton } from "./customBookingButton";
 import { Flag } from "./flag";
@@ -25,6 +29,26 @@ export const componentRenderer: Components<{
     alt: string;
     height: number;
     width: number;
+  };
+  RecurringEvent: {
+    applyLinkRedirect: string;
+    day: string;
+  };
+  VerticalListItem: {
+    icon: string;
+    content: string;
+  };
+  TrainingInformation: {
+    body: string;
+    header: string;
+  };
+  TrainingLearningOutcome: {
+    header: string;
+    listItems: {
+      content: TinaMarkdownContent | TinaMarkdownContent[];
+      icon: string;
+      title: string;
+    }[];
   };
   DynamicColumns: {
     colBody: TinaMarkdownContent;
@@ -40,6 +64,10 @@ export const componentRenderer: Components<{
   UpcomingEvents: {
     title: string;
     numberOfEvents: number;
+  };
+  ColumnLayout: {
+    src: string;
+    message: string;
   };
   VerticalImageLayout: {
     src: string;
@@ -74,10 +102,6 @@ export const componentRenderer: Components<{
     embedWidth: string;
     embedHeight: string;
   };
-  Citation: {
-		article: string;
-		author: string;
-	};
   InternalCarousel: {
     items: {
       label: string;
@@ -102,16 +126,21 @@ export const componentRenderer: Components<{
     btnText: string;
   };
   NewslettersTable: {
-		headerText: string;
-	};
-	SubNewsLettersButton: {
-		subscribeButtonText: string;
-		headerText: string;
-	};
+    headerText: string;
+  };
+  SubNewsLettersButton: {
+    subscribeButtonText: string;
+    headerText: string;
+  };
+  Citation: {
+    article: string;
+    author: string;
+  };
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
   VerticalImageLayout: (props) => <VerticalImageLayout data={props} />,
+  ColumnLayout: (props) => <ColumnLayout data={props} />,
   CustomImage: (props) => <CustomImage data={props} />,
   Flag: (props) => <Flag country={props.country} />,
   UpcomingEvents: (props) => <UpcomingEvents data={props} />,
@@ -122,9 +151,13 @@ export const componentRenderer: Components<{
   DynamicColumns: (props) => <DynamicColumns data={props} />,
   FixedColumns: (props) => <FixedColumns data={props} />,
   InternalCarousel: (props) => <InternalCarousel data={props} />,
+  VerticalListItem: (props) => <VerticalListItem data={props} />,
+  TrainingInformation: (props) => <TrainingInformation data={props} />,
+  TrainingLearningOutcome: (props) => <TrainingLearningOutcome data={props} />,
+  RecurringEvent: (props) => <RecurringEvent data={props} />,
   FixedTabsLayout: (props) => <FixedTabsLayout data={props} />,
   CustomBookingButton: (props) => <CustomBookingButton data={props} />,
   NewslettersTable: (props) => <NewslettersTable data={props} />,
-	SubNewsLettersButton: (props) => <SubNewsLettersButton {...props} />,
-	Citation: (props) => <Citation {...props} />,
+  SubNewsLettersButton: (props) => <SubNewsLettersButton {...props} />,
+  Citation: (props) => <Citation {...props} />,
 };
