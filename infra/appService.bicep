@@ -65,15 +65,15 @@ var appSettings = [
   }
   {
     name: 'CREATE_LEAD_ENDPOINT'
-    value: '@Microsoft.KeyVault(SecretUri=https://kv-sswwebsite-9eb3.vault.azure.net/secrets/Create-Lead-Endpoint-PROD/cc1fda66c2374f1897baeaa65dc40074)'
+    value: '@Microsoft.KeyVault(SecretUri=https://kv-sswwebsite-9eb3.vault.azure.net/secrets/Create-Lead-Endpoint-PROD)'
   }
   {
     name: 'GOOGLE_RECAPTCHA_KEY_V2'
-    value: '@Microsoft.KeyVault(SecretUri=https://kv-sswwebsite-9eb3.vault.azure.net/secrets/GOOGLE-RECAPTCHA-KEY/cc1fda66c2374f1897baeaa65dc40074)'
+    value: '@Microsoft.KeyVault(SecretUri=https://kv-sswwebsite-9eb3.vault.azure.net/secrets/GOOGLE-RECAPTCHA-KEY)'
   }
   {
     name: 'GOOGLE_RECAPTCHA_SITE_KEY'
-    value: '@Microsoft.KeyVault(SecretUri=https://kv-sswwebsite-9eb3.vault.azure.net/secrets/Google-Recaptcha-Site-KEY/72fd24e47c324d57b0e64cee02d03549)'
+    value: '@Microsoft.KeyVault(SecretUri=https://kv-sswwebsite-9eb3.vault.azure.net/secrets/Google-Recaptcha-Site-KEY)'
   }
 ]
 

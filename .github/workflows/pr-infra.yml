@@ -23,6 +23,8 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      BICEP_PATH: ./infra/main.bicep
     steps:
       - uses: actions/checkout@v3
 

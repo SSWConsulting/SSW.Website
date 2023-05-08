@@ -1,6 +1,7 @@
 import { transformIntToMonth } from "../../services/date.service";
+import type { Collection } from "tinacms";
 
-export const newsletterSchema = {
+export const newsletterSchema: Collection = {
   label: "Newsletters",
   name: "newsletters",
   path: "content/newsletters",
