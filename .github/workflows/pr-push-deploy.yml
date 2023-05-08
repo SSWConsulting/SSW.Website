@@ -3,10 +3,10 @@ name: PR - build and deploy to slot
 on:
   pull_request:
     branches:
-    - main
+      - main
   workflow_dispatch:
 
-concurrency: 
+concurrency:
   group: ci-${{ github.event.number }}-${{ github.workflow }}
   cancel-in-progress: true
 
@@ -24,7 +24,7 @@ jobs:
       id-token: write
       contents: read
     secrets: inherit
-  
+
   pr-deploy:
     name: Deploy to slot
     needs: build
@@ -63,7 +63,7 @@ jobs:
           message: |
             Deployed changes to <${{ steps.deploy.outputs.url }}>
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token-user-login: 'github-actions[bot]'
+          repo-token-user-login: "github-actions[bot]"
           allow-repeats: true
 
   pagespeedInsights:
@@ -75,7 +75,7 @@ jobs:
     steps:
       - uses: wicksipedia/pagespeed-insights@main
         id: pagespeed-insights
-        with:          
+        with:
           url: ${{ needs.pr-deploy.outputs.url }}
           categories: |
             accessibility
@@ -100,5 +100,5 @@ jobs:
 
             View the full report <https://pagespeed.web.dev/report?url=${{ needs.pr-deploy.outputs.url }}>
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token-user-login: 'github-actions[bot]'
+          repo-token-user-login: "github-actions[bot]"
           allow-repeats: true

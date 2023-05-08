@@ -4,7 +4,7 @@ import { useState } from "react";
 const Button = ({
   children,
   ripple,
-  defaultClass = "bg-sswRed text-white",
+  defaultClass = "bg-sswRed text-white rounded",
   ...props
 }) => {
   const [hover, setHover] = useState(false);

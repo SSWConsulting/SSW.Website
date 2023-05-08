@@ -10,6 +10,9 @@ import { BuiltOnAzure } from "./blocks/builtOnAzure";
 import { CustomImage } from "./blocks/customImage";
 import { ClientLogos } from "./blocks/clientLogos";
 import { ColumnLayout } from "./blocks/columnLayout";
+import { VerticalListItem } from "./blocks/verticalListItem";
+import { TrainingInformation } from "./training/trainingInformation";
+import { TrainingLearningOutcome } from "./training/trainingLearningOutcome";
 
 const componentMap = {
 	AboutUs: AboutUs,
@@ -22,6 +25,9 @@ const componentMap = {
 	ClientLogos: ClientLogos,
 	ColumnLayout: ColumnLayout,
 	ContentCard: ContentCard,
+  VerticalListItem:  VerticalListItem,
+  TrainingInformation:  TrainingInformation,
+  TrainingLearningOutcome: TrainingLearningOutcome
 };
 
 export const Blocks = ({ prefix, blocks }) => {
