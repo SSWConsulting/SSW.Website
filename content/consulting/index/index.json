@@ -118,7 +118,7 @@
           "description": "Jamstack is a modern web development architecture based on client-side JavaScript, reusable APIs and prebuilt Markup. It's used on SSW Rules and SSW People.",
           "logo": "/images/thumbs/thumb-jamstack.jpg",
           "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Jamstack.aspx",
+          "externalUrl": "https://www.ssw.com.au/consulting/jamstack",
           "tags": [
             {
               "tag": "content/consulting/tag/consulting.json"
@@ -652,8 +652,8 @@
           "title": "WordPress",
           "description": "WordPress the most popular content management system (CMS) on the web, and is trusted by content publishers from both large and small businesses.",
           "logo": "/images/thumbs/thumb-wordpress.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/WordPress.aspx",
+          "page": "content/consulting/wordpress.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
@@ -670,8 +670,8 @@
           "title": "Kentico",
           "description": "Kentico is the only fully integrated ASP.NET CMS, E-commerce, and Online Marketing platform.",
           "logo": "/images/thumbs/thumb-kentico.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Kentico.aspx",
+          "page": "content/consulting/kentico.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
@@ -688,8 +688,8 @@
           "title": "DNN - DotNetNuke",
           "description": "DNN (AKA Evoq) can be used as a web content management system (CMS) for simple web sites or as a powerful application development framework.",
           "logo": "/images/thumbs/thumb-dnn.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/DNN-DotNetNuke.aspx",
+          "page": "content/consulting/dnn-dotnetnuke.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
@@ -706,8 +706,8 @@
           "title": "Sitefinity",
           "description": "Sitefinity's mix of benefits for marketers, IT managers, Developers and designers make it the ideal choice for medium sized businesses.",
           "logo": "/images/thumbs/thumb-sitefinity.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Sitefinity.aspx",
+          "page": "content/consulting/sitefinity.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
@@ -724,8 +724,8 @@
           "title": "Orchard",
           "description": "A free, open source, community-focused project aimed at delivering applications and reusable components on the rock-solid ASP.NET MVC platform.",
           "logo": "/images/thumbs/thumb-orchard.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Orchard.aspx",
+          "page": "content/consulting/orchard.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
@@ -742,8 +742,8 @@
           "title": "Sitecore",
           "description": "A mix of powerful marketing and business features, rich development support and scalability make it the ideal solution for leading websites.",
           "logo": "/images/thumbs/thumb-sitecore.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Sitecore.aspx",
+          "page": "content/consulting/sitecore.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
@@ -760,8 +760,8 @@
           "title": "Umbraco",
           "description": "With over than 200.000 installations, Umbraco is one of the most deployed Web Content Management Systems on the Microsoft stack.",
           "logo": "/images/thumbs/thumb-umbraco.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Umbraco.aspx",
+          "page": "content/consulting/umbraco.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
@@ -816,8 +816,8 @@
           "title": "On-Premises: Data Protection Manager",
           "description": "Microsoft System Center Data Protection Manager can take the stress out of backups by allowing you to control all backups from one central console.",
           "logo": "/images/thumbs/thumb-data-protection.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Data-Protection-Manager.aspx",
+          "page": "content/consulting/data-protection-manager.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/cloud-and-infrastructure.json"
@@ -828,8 +828,8 @@
           "title": "BackBlaze and CloudBerry",
           "description": "Backblaze has introduced a simple backup system utilizing B2 Cloud Storage which is cheap, requires little on premises infrastructure and fast to setup.",
           "logo": "/images/thumbs/thumb-backblaze.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/BackBlaze-and-CloudBerry-Backup.aspx",
+          "page": "content/consulting/backblaze-and-cloudberry-backup.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/cloud-and-infrastructure.json"

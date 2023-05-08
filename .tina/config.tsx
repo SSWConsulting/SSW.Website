@@ -13,6 +13,7 @@ import { pagesSchema } from "./collections/pages";
 import { technologiesSchema } from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
+import { newsletterSchema } from "./collections/newsletters";
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -55,6 +56,7 @@ const config = defineStaticConfig({
       technologiesSchema,
       officeSchema,
       educationalSchema,
+      newsletterSchema,
     ],
   },
 });

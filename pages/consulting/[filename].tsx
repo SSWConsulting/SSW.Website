@@ -18,10 +18,12 @@ import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
+import { Blocks } from "../../components/blocks-renderer";
+import { InferGetStaticPropsType } from "next";
 import { AsyncReturnType } from "../[filename]";
 
 export default function ConsultingPage(
-  props: AsyncReturnType<typeof getStaticProps>["props"]
+  props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const { data } = useTina({
     data: props.data,

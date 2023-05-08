@@ -16,12 +16,13 @@ import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
+import { InferGetStaticPropsType } from "next";
 import { AsyncReturnType } from "../[filename]";
 
 const allServices = "All SSW Services";
 
 export default function ConsultingIndex(
-  props: AsyncReturnType<typeof getStaticProps>["props"]
+  props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const gridRef = useRef(null);
   const { data } = useTina({

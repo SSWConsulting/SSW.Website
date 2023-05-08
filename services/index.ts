@@ -10,6 +10,17 @@ export const createLead = async (data: BookingFormSubmissionData) => {
 	);
 };
 
+export const addContactToNewsletters = async (
+	data: AddContactToNewslettersData
+) =>
+	await axios.post(
+		"https://prod-31.australiasoutheast.logic.azure.com:443/workflows/f3d788bd3e6749c3a6061220947da078/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=gEBoa71GGMy7uBnpPti3i2x_pmDRp8p3vElEcLuc64U",
+		data,
+		{
+			headers: { "Content-Type": "application/json" },
+		}
+	);
+
 export const getLiveStreamBannerInfo = async (datetime: string) => {
 	const odataFilter = `$filter=Enabled ne false \
 and EndDateTime ge datetime'${datetime}'\
@@ -129,6 +140,11 @@ export type BookingFormSubmissionData = {
 	EmailSubject: string;
 	EmailBody: string;
 	Note?: string | null;
+};
+
+export type AddContactToNewslettersData = {
+	Email: string;
+	FullName: string;
 };
 
 export interface LiveStreamBannerInfo {
