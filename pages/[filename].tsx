@@ -1,6 +1,7 @@
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../.tina/__generated__/client";
+import { pageBlocks } from "../components/blocks";
 import { Blocks } from "../components/blocks-renderer";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { componentRenderer } from "../components/blocks/mdxComponentRenderer";
@@ -17,7 +18,13 @@ export default function HomePage(
     data: props.data,
     query: props.query,
     variables: props.variables,
-  });
+  }); 
+  
+  // Here due to components attempting to access pageBlock items before
+  // they are initialised
+  if (!pageBlocks) {
+    return null;
+  }
 
   const removeExtension = (file: string) => {
     return file.split(".")[0];
@@ -67,16 +74,16 @@ export default function HomePage(
 }
 
 export const getStaticProps = async ({ params }) => {
-  const tinaProps = await client.queries.contentQuery({
-    relativePath: `${params.filename}.mdx`,
-  });
-  return {
-    props: {
-      data: tinaProps.data,
-      query: tinaProps.query,
-      variables: tinaProps.variables,
-    },
-  };
+    const tinaProps = await client.queries.contentQuery({
+        relativePath: `${params.filename}.mdx`,
+    });
+    return {
+        props: {
+            data: tinaProps.data,
+            query: tinaProps.query,
+            variables: tinaProps.variables,
+        },
+    };
 };
 
 export const getStaticPaths = async () => {

@@ -20,7 +20,7 @@ export const VideoModal = ({ children = null, url }) => {
                     />
                 </div>
             </Popup>
-            <div onClick={toggleModal}>
+            <div onClick={toggleModal} className="overflow-hidden rounded hover:cursor-pointer">
                 <div className="relative mx-auto aspect-video">
                     <ReactPlayer
                         light
