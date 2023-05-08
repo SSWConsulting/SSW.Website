@@ -9,9 +9,10 @@ import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { SEO } from "../../components/util/seo";
+import { InferGetStaticPropsType } from "next";
 
 export default function ProductsIndex(
-  props: AsyncReturnType<typeof getStaticProps>["props"]
+  props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const gridRef = useRef(null);
   const { data } = useTina({
@@ -26,7 +27,6 @@ export default function ProductsIndex(
   useEffect(() => {
     // extract the data we need from the tina result
     const processedData = processData(data);
-    console.log(processedData);
     setProductsList(processedData.productsList);
     setSeo(processedData.seo);
   }, [data]);
@@ -111,6 +111,3 @@ export const getStaticProps = async () => {
     },
   };
 };
-
-export type AsyncReturnType<T extends (...args: any) => Promise<any>> = // eslint-disable-line @typescript-eslint/no-explicit-any
-  T extends (...args: any) => Promise<infer R> ? R : any; // eslint-disable-line @typescript-eslint/no-explicit-any

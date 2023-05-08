@@ -46,34 +46,3 @@ export const productsIndexSchema: Collection = {
 		},
 	],
 };
-
-export const productsSchema: Collection = {
-	label: "Product Cards",
-	name: "products",
-	format: "mdx",
-	path: "content/products",
-	fields: [
-		{
-			type: "string",
-			label: "Name",
-			name: "name",
-			isTitle: true,
-			required: true,
-		},
-		{
-			type: "string",
-			label: "URL",
-			name: "url",
-		},
-		{
-			type: "string",
-			label: "Description",
-			name: "description",
-		},
-		{
-			type: "image",
-			label: "Thumbnail",
-			name: "thumbnail",
-		}
-	],
-};
