@@ -25,9 +25,9 @@ const componentMap = {
 	ClientLogos: ClientLogos,
 	ColumnLayout: ColumnLayout,
 	ContentCard: ContentCard,
-    VerticalListItem:  VerticalListItem,
-    TrainingInformation:  TrainingInformation,
-    TrainingLearningOutcome: TrainingLearningOutcome
+  VerticalListItem:  VerticalListItem,
+  TrainingInformation:  TrainingInformation,
+  TrainingLearningOutcome: TrainingLearningOutcome
 };
 
 export const Blocks = ({ prefix, blocks }) => {
