@@ -1,6 +1,8 @@
 import type { Template } from "tinacms";
 
 import { agreementFormBlockSchema } from "../terms-and-conditions/agreementForm";
+import { trainingInformationSchema } from "../training/trainingInformation";
+import { trainingLearningOutcomeSchema } from "../training/trainingLearningOutcome";
 import { aboutUsBlockSchema } from "./aboutUs";
 import { builtOnAzureBlockSchema } from "./builtOnAzure";
 import { carouselBlockSchema } from "./carousel";
@@ -17,25 +19,14 @@ import { googleMapsSchema } from "./googleMapsWrapper";
 import { heroBlockSchema } from "./hero";
 import { internalCarouselBlockSchema } from "./internalCarousel";
 import { newslettersTableBlockSchema } from "./newslettersTable";
+import { recurringEventSchema } from "./recurringEvent";
 import { serviceCardsBlockSchema } from "./serviceCards";
 import { subNewsLettersButtonSchema } from "./subNewsLettersButton";
 import { tableBlockSchema } from "./tableLayout";
 import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
-import { videoEmbedBlockSchema } from "./videoEmbed";
-import { tableBlockSchema } from "./tableLayout";
-import { dynamicColumnsSchema } from "./dynamicColumns";
-import { fixedColumnsSchema } from "./fixedColumns";
 import { verticalListItemSchema } from "./verticalListItem";
-import { trainingLearningOutcomeSchema } from "../training/trainingLearningOutcome";
-import { trainingInformationSchema } from "../training/trainingInformation";
-import { recurringEventSchema } from "./recurringEvent";
-import { flagSchema } from "./flag";
-import { fixedTabsLayoutSchema } from "./fixedTabsLayout";
-import { columnLayoutBlockSchema } from "./columnLayout";
-import { citationBlockSchema } from "./citation";
-import { subNewsLettersButtonSchema } from "./subNewsLettersButton";
-import { newslettersTableBlockSchema } from "./newslettersTable";
+import { videoEmbedBlockSchema } from "./videoEmbed";
 
 export const pageBlocks: Template[] = [
   aboutUsBlockSchema,
@@ -68,6 +59,8 @@ export const pageBlocks: Template[] = [
 ];
 
 export * from "../terms-and-conditions/agreementForm";
+export * from "../training/trainingInformation";
+export * from "../training/trainingLearningOutcome";
 export * from "./aboutUs";
 export * from "./builtOnAzure";
 export * from "./carousel";
@@ -82,13 +75,11 @@ export * from "./flag";
 export * from "./googleMapsWrapper";
 export * from "./hero";
 export * from "./newslettersTable";
+export * from "./recurringEvent";
 export * from "./serviceCards";
 export * from "./subNewsLettersButton";
 export * from "./tableLayout";
 export * from "./upcomingEvents";
 export * from "./verticalImageLayout";
-export * from "./videoEmbed";
 export * from "./verticalListItem";
-export * from "../training/trainingLearningOutcome";
-export * from "../training/trainingInformation";
-export * from "./recurringEvent";
+export * from "./videoEmbed";

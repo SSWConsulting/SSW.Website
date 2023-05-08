@@ -65,10 +65,6 @@ export const componentRenderer: Components<{
     title: string;
     numberOfEvents: number;
   };
-  ColumnLayout: {
-    src: string;
-    message: string;
-  };
   VerticalImageLayout: {
     src: string;
     message: string;
@@ -140,7 +136,6 @@ export const componentRenderer: Components<{
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
   VerticalImageLayout: (props) => <VerticalImageLayout data={props} />,
-  ColumnLayout: (props) => <ColumnLayout data={props} />,
   CustomImage: (props) => <CustomImage data={props} />,
   Flag: (props) => <Flag country={props.country} />,
   UpcomingEvents: (props) => <UpcomingEvents data={props} />,

@@ -15,9 +15,10 @@ import { Layout } from "../../components/layout";
 import ReactPlayer from "../../components/reactPlayer/reactPlayer";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
+import { InferGetStaticPropsType } from "next";
 
 export default function EducationalIndex(
-  props: InferGetStaticPropsType<typeof getStaticProps>["props"]
+  props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const { data } = useTina({
     query: props.query,
