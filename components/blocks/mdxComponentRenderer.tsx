@@ -78,6 +78,9 @@ export const componentRenderer: Components<{
         }[];
         backgroundColor: string;
     };
+    Flag: {
+        country: string;
+    };
     TableLayout: {
         mdxTable: string;
     };
@@ -108,32 +111,33 @@ export const componentRenderer: Components<{
         }[];
     };
     FixedTabsLayout: {
-      tab1: string;
-      heading1: string;
-      tab1Body: string;
-      tab2: string;
-      heading2: string;
-      tab2Body: string;
+        tab1: string;
+        heading1: string;
+        tab1Body: string;
+        tab2: string;
+        heading2: string;
+        tab2Body: string;
     };
     CustomBookingButton: {
-      btnText: string;
+        btnText: string;
     };
     NewslettersTable: {
-      headerText: string;
+        headerText: string;
     };
     SubNewsLettersButton: {
-      subscribeButtonText: string;
-      headerText: string;
+        subscribeButtonText: string;
+        headerText: string;
     };
     Citation: {
-      article: string;
-      author: string;
+        article: string;
+        author: string;
     };
 }> = {
     AgreementForm: (props) => <AgreementForm data={props} />,
     ClientLogos: () => <ClientLogos />,
     ColumnLayout: (props) => <ColumnLayout data={props} />,
     CustomImage: (props) => <CustomImage data={props} />,
+    Flag: (props) => <Flag country={props.country} />,
     UpcomingEvents: (props) => <UpcomingEvents data={props} />,
     Carousel: (props) => <Carousel data={props} />,
     TableLayout: (props) => <TableLayout data={props} />,
