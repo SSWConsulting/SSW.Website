@@ -1975,6 +1975,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@graphql-codegen/plugin-helpers@latest":
+  version: 4.2.0
+  resolution: "@graphql-codegen/plugin-helpers@npm:4.2.0"
+  dependencies:
+    "@graphql-tools/utils": ^9.0.0
+    change-case-all: 1.0.15
+    common-tags: 1.8.2
+    import-from: 4.0.0
+    lodash: ~4.17.0
+    tslib: ~2.5.0
+  peerDependencies:
+    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+  checksum: 5d26adc132026916db061d23b06fc2c329f372f19ecf56e39bd2b30082bff642f2030cd6dc0bad8d2d3ab781c1e145384e040310a479b83d85ec804b2983646d
+  languageName: node
+  linkType: hard
+
 "@graphql-codegen/plugin-helpers@npm:^2.6.2":
   version: 2.7.2
   resolution: "@graphql-codegen/plugin-helpers@npm:2.7.2"
@@ -2004,22 +2020,6 @@ __metadata:
   peerDependencies:
     graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
   checksum: 4d0c615738570681b5ffd3c07305a35d6aa3e5fd87c9199c0a670b95529ab865b1df978ce584d5b415107a567ac484e56a48db129a6d1d2eb8a254fbd3260e39
-  languageName: node
-  linkType: hard
-
-"@graphql-codegen/plugin-helpers@npm:latest":
-  version: 4.2.0
-  resolution: "@graphql-codegen/plugin-helpers@npm:4.2.0"
-  dependencies:
-    "@graphql-tools/utils": ^9.0.0
-    change-case-all: 1.0.15
-    common-tags: 1.8.2
-    import-from: 4.0.0
-    lodash: ~4.17.0
-    tslib: ~2.5.0
-  peerDependencies:
-    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-  checksum: 5d26adc132026916db061d23b06fc2c329f372f19ecf56e39bd2b30082bff642f2030cd6dc0bad8d2d3ab781c1e145384e040310a479b83d85ec804b2983646d
   languageName: node
   linkType: hard
 
@@ -2122,15 +2122,15 @@ __metadata:
   linkType: hard
 
 "@graphql-inspector/core@npm:^4.0.0":
-  version: 4.2.2
-  resolution: "@graphql-inspector/core@npm:4.2.2"
+  version: 4.2.1
+  resolution: "@graphql-inspector/core@npm:4.2.1"
   dependencies:
     dependency-graph: 0.11.0
     object-inspect: 1.12.3
     tslib: 2.5.0
   peerDependencies:
     graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
-  checksum: 08853d7ef99806b6428002439d10137bc1034cf8dec93f92e783f72bbfaed9c9a46566ccb39b39ba5b109bce70ba35d06c40d6cf7e6dfbd8831d51aa8ec5607c
+  checksum: c61fe312e23920ef3a18f240e9b7d8ad285a28ef6d1357bbd879874a484fa1a73cb1bb9c844dbf69ec3a7b125b355b9bc8efe7dd63a37021f0906761999c1bc5
   languageName: node
   linkType: hard
 
@@ -3843,7 +3843,7 @@ __metadata:
     "@tinacms/cli": ^1.5.6
     "@types/js-cookie": ^3.0.3
     "@types/node": ^18.16.0
-    "@types/react": ^18.2.6
+    "@types/react": ^18.2.0
     "@types/styled-components": ^5.1.26
     "@typescript-eslint/eslint-plugin": ^5.57.1
     "@typescript-eslint/parser": ^5.58.0
@@ -3878,7 +3878,7 @@ __metadata:
     react-responsive-carousel: ^3.2.23
     react-responsive-modal: ^6.4.1
     react-tooltip: ^5.11.1
-    sharp: ^0.32.1
+    sharp: ^0.32.0
     ssw.megamenu: ^3.1.2
     styled-components: ^5.3.10
     styled-jsx: ^5.1.2
@@ -9893,7 +9893,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-core-module@npm:^2.11.0, is-core-module@npm:^2.12.0, is-core-module@npm:^2.5.0, is-core-module@npm:^2.9.0":
+"is-core-module@npm:^2.11.0, is-core-module@npm:^2.5.0, is-core-module@npm:^2.9.0":
   version: 2.12.0
   resolution: "is-core-module@npm:2.12.0"
   dependencies:
@@ -14659,6 +14659,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+remark-mdx@next:
+  version: 2.0.0-rc.2
+  resolution: "remark-mdx@npm:2.0.0-rc.2"
+  dependencies:
+    mdast-util-mdx: ^1.0.0
+    micromark-extension-mdxjs: ^1.0.0
+  checksum: 344517fe28d3089369b13e759a90460fabd4a5c37a8c7d5362ab5271d8c04edb2ada870a00aff3475946eb039688e55e7542e3ac2b98ce77b35cf2f981f0773a
+  languageName: node
+  linkType: hard
+
 "remark-mdx@npm:2.3.0":
   version: 2.3.0
   resolution: "remark-mdx@npm:2.3.0"
@@ -14666,16 +14676,6 @@ __metadata:
     mdast-util-mdx: ^2.0.0
     micromark-extension-mdxjs: ^1.0.0
   checksum: 98486986c5b6f6a8321eb2f3b13c70fcd5644821428c77b7bfeb5ee5d4605b9761b322b2f6b531e83883cd2d5bc7bc4623427149aee00e1eba012f538b3d5627
-  languageName: node
-  linkType: hard
-
-"remark-mdx@npm:next":
-  version: 2.0.0-rc.2
-  resolution: "remark-mdx@npm:2.0.0-rc.2"
-  dependencies:
-    mdast-util-mdx: ^1.0.0
-    micromark-extension-mdxjs: ^1.0.0
-  checksum: 344517fe28d3089369b13e759a90460fabd4a5c37a8c7d5362ab5271d8c04edb2ada870a00aff3475946eb039688e55e7542e3ac2b98ce77b35cf2f981f0773a
   languageName: node
   linkType: hard
 
@@ -14840,15 +14840,15 @@ __metadata:
   linkType: hard
 
 "resolve@npm:^1.1.7, resolve@npm:^1.10.0, resolve@npm:^1.14.2, resolve@npm:^1.22.1, resolve@npm:^1.22.2":
-  version: 1.22.3
-  resolution: "resolve@npm:1.22.3"
+  version: 1.22.2
+  resolution: "resolve@npm:1.22.2"
   dependencies:
-    is-core-module: ^2.12.0
+    is-core-module: ^2.11.0
     path-parse: ^1.0.7
     supports-preserve-symlinks-flag: ^1.0.0
   bin:
     resolve: bin/resolve
-  checksum: fb834b81348428cb545ff1b828a72ea28feb5a97c026a1cf40aa1008352c72811ff4d4e71f2035273dc536dcfcae20c13604ba6283c612d70fa0b6e44519c374
+  checksum: 7e5df75796ebd429445d102d5824482ee7e567f0070b2b45897b29bb4f613dcbc262e0257b8aeedb3089330ccaea0d6a0464df1a77b2992cf331dcda0f4cb549
   languageName: node
   linkType: hard
 
@@ -14866,15 +14866,15 @@ __metadata:
   linkType: hard
 
 "resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.2#~builtin<compat/resolve>":
-  version: 1.22.3
-  resolution: "resolve@patch:resolve@npm%3A1.22.3#~builtin<compat/resolve>::version=1.22.3&hash=c3c19d"
+  version: 1.22.2
+  resolution: "resolve@patch:resolve@npm%3A1.22.2#~builtin<compat/resolve>::version=1.22.2&hash=c3c19d"
   dependencies:
-    is-core-module: ^2.12.0
+    is-core-module: ^2.11.0
     path-parse: ^1.0.7
     supports-preserve-symlinks-flag: ^1.0.0
   bin:
     resolve: bin/resolve
-  checksum: ad59734723b596d0891321c951592ed9015a77ce84907f89c9d9307dd0c06e11a67906a3e628c4cae143d3e44898603478af0ddeb2bba3f229a9373efe342665
+  checksum: 66cc788f13b8398de18eb4abb3aed90435c84bb8935953feafcf7231ba4cd191b2c10b4a87b1e9681afc34fb138c705f91f7330ff90bfa36f457e5584076a2b8
   languageName: node
   linkType: hard
 
@@ -15220,7 +15220,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sharp@npm:^0.32.1":
+"sharp@npm:^0.32.0":
   version: 0.32.1
   resolution: "sharp@npm:0.32.1"
   dependencies:
