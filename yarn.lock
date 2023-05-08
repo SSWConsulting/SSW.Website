@@ -4043,7 +4043,7 @@ __metadata:
     "@tinacms/cli": ^1.5.6
     "@types/js-cookie": ^3.0.3
     "@types/node": ^18.16.0
-    "@types/react": ^18.2.0
+    "@types/react": ^18.2.6
     "@types/styled-components": ^5.1.26
     "@typescript-eslint/eslint-plugin": ^5.57.1
     "@typescript-eslint/parser": ^5.58.0
