@@ -92,15 +92,14 @@ jobs:
         run: |
           # Assign the Role
 
-          $uid=(az account show --query id -o tsv)
           az deployment group create `
             --name ${{ env.KEY_VAULT }}-$timestamp `
             --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
             --template-file ./infra/keyVaultRoleAssignment.bicep `
             --parameters `
               "keyVaultName=${{ env.KEY_VAULT }}" `
-              "principalId=$uid" `
-              "principalType=User" `
+              "principalId=${{ secrets.AZURE_SP_OBJECTID }}" `
+              "principalType=ServicePrincipal" `
               "roleName=Key Vault Secrets User" `
             -o none
           Write-Host '✅ KV Role Assigned'
