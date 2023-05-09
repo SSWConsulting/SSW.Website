@@ -86,12 +86,28 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: Azure Key Vault Secret
-        uses: Azure/get-keyvault-secrets@v1
-        with:
-          keyvault: ${{ env.KEY_VAULT }}
-          secrets: "Google-Recaptcha-Site-KEY"
-          id: KeyVaultSecrets
+      - name: KeyVault - Get Secret
+        shell: pwsh
+        id: KeyVaultSecrets
+        run: |
+          # Assign the Role
+
+          $uid=(az account show --query id -o tsv)
+          az deployment group create `
+            --name ${{ env.KEY_VAULT }}-$timestamp `
+            --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }}
+            --template-file ./infra/keyVaultRoleAssignment.bicep `
+            --parameters `
+              "keyVaultName=${{ env.KEY_VAULT }}" `
+              "principalId=$uid" `
+              "principalType=User" `
+              "roleName='Key Vault Secrets User'" `
+            -o none
+          Write-Host '✅ KV Role Assigned'
+
+          # Get the Secret
+          $SiteKey = (az keyvault secret show --name Google-Recaptcha-Site-KEY --vault-name ${{ env.KEY_VAULT}} ) -o tsv`
+          Write-Host '✅ KV Secret'
 
       - run: yarn build
         env:
@@ -108,7 +124,7 @@ jobs:
           NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref || github.ref_name }}
           NEXT_PUBLIC_ZENDESK_CHAT_KEY: ${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY }}
           GOOGLE_RECAPTCHA_KEY: ${{ secrets.GOOGLE_RECAPTCHA_KEY }}
-          GOOGLE_RECAPTCHA_SITE_KEY: ${{ steps.KeyVaultSecrets.outputs.Google-Recaptcha-Site-KEY }}
+          GOOGLE_RECAPTCHA_SITE_KEY: ${{ steps.KeyVaultSecrets.outputs.SiteKey }}
           KEY_VAULT: ${{ env.KEY_VAULT }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
           SITE_URL: https://ssw.com.au
