@@ -26,6 +26,9 @@ inputs:
   IMAGE_NAME:
     description: Name of the image
     required: true
+  AZURE_SERVICE_PRINCIPAL_OBJECT_ID:
+    description: Object Id of Service Principal
+    required: true
 
 outputs:
   url:
@@ -56,6 +59,7 @@ runs:
             "slotName=${{ inputs.slot_name }}" `
             "appServiceName=${{ inputs.APP_SERVICE_NAME }}" `
             "acrLoginServer=${{ inputs.ACR_LOGIN_SERVER }}" `
+            "servicePrincipalObjectId=${{ inputs.AZURE_SERVICE_PRINCIPAL_OBJECT_ID }}" `
           -o none
         Write-Host '✅ PR - Bicep deployed'
 

@@ -90,20 +90,6 @@ jobs:
         shell: pwsh
         id: KeyVaultSecrets
         run: |
-          # KV - Role Assignment to SP
-
-          az deployment group create `
-            --name ${{ env.KEY_VAULT }}-${{ steps.date.outputs.date }} `
-            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
-            --template-file ./infra/keyVaultRoleAssignment.bicep `
-            --parameters `
-              "keyVaultName=${{ env.KEY_VAULT }}" `
-              "principalId=${{ secrets.AZURE_SERVICE_PRINCIPAL_OBJECT_ID }}" `
-              "principalType=ServicePrincipal" `
-              "roleName=Key Vault Secrets User" `
-            -o none
-          Write-Host '✅ SP - kv role assigned'
-
           # KV - Secret
           $GoogleRecaptchaSiteKey = (az keyvault secret show --name Google-Recaptcha-Site-KEY --vault-name ${{ env.KEY_VAULT}} --query value -o tsv)
           echo "GoogleRecaptchaSiteKey=$GoogleRecaptchaSiteKey" >> $env:GITHUB_OUTPUT

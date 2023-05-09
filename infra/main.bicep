@@ -1,5 +1,6 @@
 param projectName string = 'sswwebsite'
 param location string = resourceGroup().location
+param servicePrincipalObjectId string
 
 @allowed([
   'B1'
@@ -69,6 +70,15 @@ module kVAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
   params: {
     keyVaultName: keyVault.outputs.keyVaultName
     principalId: appService.outputs.AppPrincipalId
+    roleName: 'Key Vault Secrets User'
+  }
+}
+
+module KVServicePrincipalRoleAssignment 'keyVaultRoleAssignment.bicep' = {
+  name: 'KVServicePrincipalRoleAssignment-${now}'
+  params: {
+    keyVaultName: keyVault.outputs.keyVaultName
+    principalId: servicePrincipalObjectId
     roleName: 'Key Vault Secrets User'
   }
 }
