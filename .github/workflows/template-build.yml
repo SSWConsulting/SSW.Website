@@ -106,7 +106,7 @@ jobs:
           Write-Host '✅ KV Role Assigned'
 
           # Get the Secret
-          $SiteKey = (az keyvault secret show --name Google-Recaptcha-Site-KEY --vault-name ${{ env.KEY_VAULT}} ) -o tsv`
+          $SiteKey = (az keyvault secret show --name Google-Recaptcha-Site-KEY --vault-name ${{ env.KEY_VAULT}} -o tsv) `
           Write-Host '✅ KV Secret'
 
       - run: yarn build
