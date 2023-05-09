@@ -101,7 +101,7 @@ jobs:
               "keyVaultName=${{ env.KEY_VAULT }}" `
               "principalId=$uid" `
               "principalType=User" `
-              "roleName='Key Vault Secrets User'" `
+              "roleName=Key Vault Secrets User" `
             -o none
           Write-Host '✅ KV Role Assigned'
 
