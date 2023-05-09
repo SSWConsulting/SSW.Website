@@ -106,8 +106,7 @@ jobs:
 
           # KV - Secret
           $SiteKey = (az keyvault secret show --name Google-Recaptcha-Site-KEY --vault-name ${{ env.KEY_VAULT}} -o tsv)
-          echo "::set-env name=SITE_KEY::$SiteKey"
-          Write-Host '✅ kv secret fetched'
+          Write-Host "SiteKey = $SiteKey"
 
       - run: yarn build
         env:
@@ -124,7 +123,7 @@ jobs:
           NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref || github.ref_name }}
           NEXT_PUBLIC_ZENDESK_CHAT_KEY: ${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY }}
           GOOGLE_RECAPTCHA_KEY: ${{ secrets.GOOGLE_RECAPTCHA_KEY }}
-          GOOGLE_RECAPTCHA_SITE_KEY: ${{ steps.KeyVaultSecrets.outputs.SITE_KEY }}
+          GOOGLE_RECAPTCHA_SITE_KEY: ${{ steps.KeyVaultSecrets.outputs.SiteKey }}
           KEY_VAULT: ${{ env.KEY_VAULT }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
           SITE_URL: https://ssw.com.au
