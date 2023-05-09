@@ -106,7 +106,8 @@ jobs:
 
           # KV - Secret
           $SiteKey = (az keyvault secret show --name Google-Recaptcha-Site-KEY --vault-name ${{ env.KEY_VAULT}} --query value -o tsv)
-          Write-Host "##vso[task.setvariable variable=SiteKey;isOutput=true]$SiteKey"
+          echo "SiteKey=$SiteKey" >> $env:GITHUB_OUTPUT
+          Write-Host '✅ KV - Secret retrieved'
 
       - run: yarn build
         env:
