@@ -93,7 +93,7 @@ jobs:
           # KV - Role Assignment to SP
 
           az deployment group create `
-            --name ${{ env.KEY_VAULT }}-$timestamp `
+            --name ${{ env.KEY_VAULT }}-${{ steps.date.outputs.date }} `
             --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
             --template-file ./infra/keyVaultRoleAssignment.bicep `
             --parameters `
