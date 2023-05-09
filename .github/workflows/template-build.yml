@@ -95,7 +95,7 @@ jobs:
           $uid=(az account show --query id -o tsv)
           az deployment group create `
             --name ${{ env.KEY_VAULT }}-$timestamp `
-            --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }}
+            --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
             --template-file ./infra/keyVaultRoleAssignment.bicep `
             --parameters `
               "keyVaultName=${{ env.KEY_VAULT }}" `
