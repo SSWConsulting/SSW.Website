@@ -79,6 +79,20 @@ jobs:
 
       - run: yarn install
 
+      - name: Azure CLI - Login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Azure Key Vault Secret
+        uses: Azure/get-keyvault-secrets@v1
+        with:
+          keyvault: ${{ env.KEY_VAULT }}
+          secrets: "Google-Recaptcha-Site-KEY"
+          id: KeyVaultSecrets
+
       - run: yarn build
         env:
           NODE_OPTIONS: --max_old_space_size=8192
@@ -94,17 +108,10 @@ jobs:
           NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref || github.ref_name }}
           NEXT_PUBLIC_ZENDESK_CHAT_KEY: ${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY }}
           GOOGLE_RECAPTCHA_KEY: ${{ secrets.GOOGLE_RECAPTCHA_KEY }}
-          GOOGLE_RECAPTCHA_SITE_KEY: ${{ secrets.GOOGLE_RECAPTCHA_SITE_KEY }}
+          GOOGLE_RECAPTCHA_SITE_KEY: ${{ steps.KeyVaultSecrets.outputs.Google-Recaptcha-Site-KEY }}
           KEY_VAULT: ${{ env.KEY_VAULT }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
           SITE_URL: https://ssw.com.au
-
-      - name: Azure CLI - Login
-        uses: azure/login@v1
-        with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: ACR - Login
         run: |
