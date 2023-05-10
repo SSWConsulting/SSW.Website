@@ -3,6 +3,7 @@ param location string = resourceGroup().location
 param slotName string
 param appServiceName string
 param acrLoginServer string
+param servicePrincipalObjectId string
 
 param now string = utcNow('yyyy-MM-ddTHH-mm')
 
@@ -43,4 +44,14 @@ module kVAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
     roleName: 'Key Vault Secrets User'
   }
 }
+
+module KVServicePrincipalRoleAssignment 'keyVaultRoleAssignment.bicep' = {
+  name: '${slotName}-KVServicePrincipalRoleAssignment-${now}'
+  params: {
+    keyVaultName: keyVault.outputs.keyVaultName
+    principalId: servicePrincipalObjectId
+    roleName: 'Key Vault Secrets User'
+  }
+}
+
 

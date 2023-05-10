@@ -52,3 +52,4 @@ jobs:
           APP_SERVICE_NAME: ${{ env.APP_SERVICE_NAME }}
           ACR_LOGIN_SERVER: ${{ env.ACR_LOGIN_SERVER }}
           IMAGE_NAME: ${{ env.IMAGE_NAME }}
+          AZURE_SERVICE_PRINCIPAL_OBJECT_ID: ${{ secrets.AZURE_SERVICE_PRINCIPAL_OBJECT_ID }}
