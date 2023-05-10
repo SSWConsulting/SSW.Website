@@ -91,32 +91,11 @@ export default function EducationalIndex(
         <h4 className="mb-3 mt-6">{title}</h4>
         <p className="mb-4">{description}</p>
         <div className="flex justify-center">
-          <div className="pt-1">
-            <Image
-              src="/images/icons/IconPdf.png"
-              alt="Whitepaper PDF"
-              width="15"
-              height="11"
-            />
-          </div>
           <DownloadWhitepaperLink>
             <Button ripple className="done mx-2 !h-10 pl-3">
               {buttonText}
             </Button>
           </DownloadWhitepaperLink>
-
-          <div className="pt-1">
-            <Image
-              src="/images/icons/external.gif"
-              alt="You are now leaving SSW"
-              width="15"
-              height="11"
-              data-tooltip-id="external"
-              data-tooltip-content="You are now leaving SSW"
-              data-tooltip-place="bottom"
-            />
-            <Tooltip id="external" className="z-tooltip" />
-          </div>
         </div>
       </div>
     ),
