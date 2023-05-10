@@ -3,19 +3,13 @@ name: PR - Delete Environment when PR is closed
 on:
   pull_request:
     types: [closed]
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: "Pull request number"
-        required: true
-        default: ""
 
 defaults:
   run:
     shell: pwsh
 
 env:
-  SLOT_NAME: pr-${{  github.event.inputs.environment || github.event.number }}
+  SLOT_NAME: pr-${{ github.event.number }}
 
 permissions:
   id-token: write
