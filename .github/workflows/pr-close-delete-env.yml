@@ -3,6 +3,12 @@ name: PR - Delete Environment when PR is closed
 on:
   pull_request:
     types: [closed]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Pull request number"
+        required: true
+        default: ""
 
 defaults:
   run:
