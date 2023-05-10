@@ -34,7 +34,7 @@ jobs:
 
       - name: Build
         run: |
-          az bicep build --file ${{ env.BICEP_PATH }} --parameters "servicePrincipalObjectId=${{ secrets.AZURE_SERVICE_PRINCIPAL_OBJECT_ID}}"
+          az bicep build --file ${{ env.BICEP_PATH }}
 
       - name: Azure CLI - Login
         uses: azure/login@v1
@@ -54,4 +54,5 @@ jobs:
           az deployment group create `
             --name $timestamp `
             --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
-            --template-file ${{ env.BICEP_PATH }}
+            --template-file ${{ env.BICEP_PATH }} `
+            --parameters "servicePrincipalObjectId=${{ secrets.AZURE_SERVICE_PRINCIPAL_OBJECT_ID }}"
