@@ -6,17 +6,16 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: "Environment to delete"
+        description: "Pull request number"
         required: true
-        default: "PR #1234"
+        default: ""
 
 defaults:
   run:
     shell: pwsh
 
 env:
-  ENVIRONMENT_NAME: "PR #${{ github.event.inputs.environment }}"
-  SLOT_NAME: pr-${{ github.event.number }}
+  SLOT_NAME: pr-${{  github.event.inputs.environment == '' && github.event.number || github.event.inputs.environment }}
 
 permissions:
   id-token: write
