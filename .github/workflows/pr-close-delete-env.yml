@@ -3,13 +3,19 @@ name: PR - Delete Environment when PR is closed
 on:
   pull_request:
     types: [closed]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environment to delete"
+        required: true
+        default: "PR #1234"
 
 defaults:
   run:
     shell: pwsh
 
 env:
-  ENVIRONMENT_NAME: "PR #${{ github.event.number }}"
+  ENVIRONMENT_NAME: "PR #${{ github.event.inputs.environment }}"
   SLOT_NAME: pr-${{ github.event.number }}
 
 permissions:
@@ -63,8 +69,8 @@ jobs:
           Write-Host '✅ acrpull role deleted'
 
           $kvId = az keyvault show `
-            --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
-            --name ${{ inputs.KEY_VAULT }} `
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
+            --name ${{ env.KEY_VAULT }} `
             --query id `
             --output tsv
 
