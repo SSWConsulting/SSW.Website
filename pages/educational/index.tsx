@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Tooltip } from "react-tooltip";
 import { useTina } from "tinacms/dist/react";
 import { Components, TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../.tina/__generated__/client";
