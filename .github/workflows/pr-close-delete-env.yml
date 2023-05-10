@@ -15,7 +15,7 @@ defaults:
     shell: pwsh
 
 env:
-  SLOT_NAME: pr-${{  github.event.inputs.environment || github.event.number }}
+  SLOT_NAME: pr-${{ github.event.number }}
 
 permissions:
   id-token: write
@@ -78,8 +78,7 @@ jobs:
 
           # grant access to the identity on KeyVault
           az role assignment delete `
-            --assignee-object-id $identityId `
-            --assignee-principal-type ServicePrincipal `
+            --assignee $identityId `
             --scope $kvId `
             --role "Key Vault Secrets User" `
             -o none
