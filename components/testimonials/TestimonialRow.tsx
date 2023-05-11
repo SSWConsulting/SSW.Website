@@ -7,7 +7,7 @@ export const TestimonialRow = ({ testimonialsResult }) => {
   return (
     <Container size="custom">
       <h2 className="mb-8 text-center">
-        What do people <span className="text-sswRed">Say</span>?
+        What do people <span className="text-sswRed">say</span>?
       </h2>
       <div className="grid gap-6 md:grid-cols-3">
         {testimonialsResult?.map((testimonial, i) => (
