@@ -122,6 +122,46 @@
 			"url": "https://www.meetup.com/Sydney-NET-User-Group/"
 		}
 	],
+	"clients": {
+		"clientsList": [
+			{
+				"clientName": "allianz",
+				"imageUrl": "/images/clientLogos/allianz.jpg"
+			},
+			{
+				"clientName": "carnival",
+				"imageUrl": "/images/clientLogos/carnival.jpg"
+			},
+			{
+				"clientName": "cisco",
+				"imageUrl": "/images/clientLogos/cisco.jpg"
+			},
+			{
+				"clientName": "commonwealthbank",
+				"imageUrl": "/images/clientLogos/commbank.jpg"
+			},
+			{
+				"clientName": "symantec",
+				"imageUrl": "/images/clientLogos/symatec.jpg"
+			},
+			{
+				"clientName": "domain",
+				"imageUrl": "/images/clientLogos/domain.jpg"
+			},
+			{
+				"clientName": "eventcinemas",
+				"imageUrl": "/images/clientLogos/events.jpg"
+			},
+			{
+				"clientName": "microsoft",
+				"imageUrl": "/images/clientLogos/microsoft.jpg"
+			},
+			{
+				"clientName": "toll",
+				"imageUrl": "/images/clientLogos/toll.jpg"
+			}
+		]
+	},
 	"apps": {
 		"sswRewards": {
 			"link": {
