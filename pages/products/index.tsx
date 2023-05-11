@@ -33,7 +33,7 @@ export default function ProductsIndex(
 
   return (
     <Layout>
-      <SEO seo={{ ...seo, canonical: "/products" }} />
+      <SEO seo={seo} />
       <Container className="mb-10 flex-1 pt-2">
         <Breadcrumbs path={"/products"} suffix="" title={"Products"} />
         <h1 className="mb-0 py-0 text-3xl">SSW Products</h1>
