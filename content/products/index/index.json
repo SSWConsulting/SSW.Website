@@ -8,49 +8,49 @@
       "name": "SugarLearning",
       "url": "https://sugarlearning.com/",
       "description": "The next generation on-boarding & induction tool for smart companies.",
-      "logo": "/images/thumb-SugarLearning.jpg"
+      "logo": "/images/thumbs/thumb-SugarLearning.jpg"
     },
     {
       "name": "TimePro",
       "url": "https://sswtimepro.com/",
       "description": "TimePro offers everything an enterprise needs, such as invoicing, receipting, and time sheeting.",
-      "logo": "/images/thumb-TimePro.jpg"
+      "logo": "/images/thumbs/thumb-TimePro.jpg"
     },
     {
       "name": "SophieBot",
       "url": "https://sswsophie.com/sophiebot",
       "description": "Awesome bots for enterprises giving you an advantage in finding and automatically entering data using advanced business grade artificial intelligence.",
-      "logo": "/images/thumb-SophieBot.jpg"
+      "logo": "/images/thumbs/thumb-SophieBot.jpg"
     },
     {
       "name": "SophieHub",
       "url": "https://sswsophie.com/",
       "description": "A Smart Environment System which shows user specific information based on the user it detects to help clients and employees.",
-      "logo": "/images/thumb-Sophie.jpg"
+      "logo": "/images/thumbs/thumb-Sophie.jpg"
     },
     {
       "name": "CodeAuditor",
       "url": "https://codeauditor.com/",
       "description": "Scan any website for broken links and HTML Issues.",
-      "logo": "/images/thumb-CodeAuditor.jpg"
+      "logo": "/images/thumbs/thumb-CodeAuditor.jpg"
     },
     {
       "name": "LinkAuditor",
       "url": "https://sswlinkauditor.com/",
       "description": "Automatically locate broken links on your websites.",
-      "logo": "/images/thumb-LinkAuditor.jpg"
+      "logo": "/images/thumbs/thumb-LinkAuditor.jpg"
     },
     {
       "name": "SmashingBarrier",
       "url": "https://smashingbarrier.com/",
       "description": "SmashingBarrier is an user control that integrates with web applications, allowing users to send feature requests or issue reports directly into related team projects.",
-      "logo": "/images/thumb-SmashingBarrier.jpg"
+      "logo": "/images/thumbs/thumb-SmashingBarrier.jpg"
     },
     {
       "name": "SSW Rewards",
       "url": "https://www.ssw.com.au/ssw/Rewards",
       "description": "Scan SSW QR codes, earn SSW Points, claim rewards, and win prizes!",
-      "logo": "/images/thumb-Rewards.jpg"
+      "logo": "/images/thumbs/thumb-Rewards.jpg"
     }
   ]
 }
