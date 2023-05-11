@@ -26,6 +26,13 @@ module appServiceSlot 'appSerivce-create-slot.bicep' = {
   }
 }
 
+module appInsight 'appInsight.bicep' = {
+  name: '${slotName}-appInsight-${now}'
+  params: {
+    projectName: projectName
+    location:location
+  }
+}
 module acrRoleAssignment 'acrRoleAssignment.bicep' = {
   name: '${slotName}-acrRoleAssignment-${now}'
   params: {
@@ -35,6 +42,7 @@ module acrRoleAssignment 'acrRoleAssignment.bicep' = {
     slotName: slotName
   }
 }
+
 
 module kVAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
   name: '${slotName}-KVRoleAssignment-${now}'

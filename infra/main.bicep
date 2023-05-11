@@ -65,6 +65,14 @@ module appService 'appService.bicep' = {
   }
 }
 
+module appInsight 'appInsight.bicep' = {
+  name: 'appInsight-${now}'
+  params: {
+    projectName: projectName
+    location:location
+  }
+}
+
 module kVAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
   name: 'KVRoleAssignment-${now}'
   params: {
