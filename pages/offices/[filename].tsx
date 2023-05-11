@@ -15,6 +15,7 @@ import MicrosoftPanel from "../../components/offices/microsoftPanel";
 import TestimonialPanel from "../../components/offices/testimonialPanel";
 import ContactPanel from "../../components/offices/contactPanel";
 import { InferGetStaticPropsType } from "next";
+import { removeExtension } from "../../services/utils.service";
 
 export default function OfficePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -24,10 +25,6 @@ export default function OfficePage(
     query: props.query,
     variables: props.variables,
   });
-
-  const removeExtension = (file: string) => {
-    return file.split(".")[0];
-  };
 
   return (
     <>
