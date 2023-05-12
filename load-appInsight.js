@@ -2,7 +2,7 @@ let appInsights = require("applicationinsights");
 
 appInsights
   .setup(
-    "InstrumentationKey=678d37bd-bf60-4659-ba18-af565629f076;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/"
+    "InstrumentationKey=9fce8146-edbc-46d4-8542-74da9fb75503;IngestionEndpoint=https://australiaeast-1.in.applicationinsights.azure.com/;LiveEndpoint=https://australiaeast.livediagnostics.monitor.azure.com/"
   )
   .setAutoCollectConsole(true)
   .setAutoCollectDependencies(true)

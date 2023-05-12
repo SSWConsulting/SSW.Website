@@ -19,4 +19,4 @@ COPY --chown=nextjs:nodejs .next/standalone ./
 COPY --chown=nextjs:nodejs .next/static ./.next/static
 COPY --chown=nextjs:nodejs load-appInsight.js ./
 
-CMD ["node", "--require", "load-appInsight.js", "server.js"]
+CMD ["node", "--require", "./load-appInsight.js", "server.js"]
