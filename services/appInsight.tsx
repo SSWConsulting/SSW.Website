@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ApplicationInsights } from "@microsoft/applicationinsights-web";
 import {
   ReactPlugin,
@@ -7,11 +7,12 @@ import {
 } from "@microsoft/applicationinsights-react-js";
 import { createBrowserHistory } from "history";
 
-let browserHistory;
+let browserHistory = null;
 if (typeof document !== "undefined") {
   browserHistory = createBrowserHistory();
 }
 const reactPlugin = new ReactPlugin();
+
 const appInsights = new ApplicationInsights({
   config: {
     instrumentationKey: process.env.NEXT_PUBLIC_APP_INSIGHT,
@@ -28,9 +29,11 @@ const appInsights = new ApplicationInsights({
   },
 });
 
-console.log(appInsights.loadAppInsights());
-
 const AzureAppInsights = ({ children }) => {
+  useEffect(() => {
+    console.log(appInsights.loadAppInsights());
+  }, []);
+
   return (
     <AppInsightsContext.Provider value={reactPlugin}>
       {children}
