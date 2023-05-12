@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { createLead, validateRecaptcha } from "../../services";
+import * as appInsight from "applicationinsights";
 
 export default async function handler(
   req: NextApiRequest,
@@ -16,6 +17,9 @@ export default async function handler(
         "🚀 ~ file: validate-token.ts:15 ~ validition.data.data:",
         recaptchaResponse.data
       );
+      appInsight.defaultClient.trackException({
+        exception: new Error(JSON.stringify(req.body)),
+      });
       res.status(200).json(recaptchaResponse.data);
     }
   } else {
