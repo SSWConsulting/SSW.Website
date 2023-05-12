@@ -17,8 +17,13 @@ export default async function handler(
         "🚀 ~ file: validate-token.ts:15 ~ validition.data.data:",
         recaptchaResponse.data
       );
-      appInsight.defaultClient.trackException({
-        exception: new Error(JSON.stringify(req.body)),
+
+      const response = {
+        error: recaptchaResponse.data,
+        lead: req.body
+      }
+      appInsight.defaultClient?.trackException({
+        exception: new Error(json.response),
       });
       res.status(200).json(recaptchaResponse.data);
     }

@@ -17,9 +17,6 @@ const appInsights = new ApplicationInsights({
   config: {
     instrumentationKey: process.env.NEXT_PUBLIC_APP_INSIGHT,
     enableAutoRouteTracking: true,
-    enableCorsCorrelation: true,
-    enableRequestHeaderTracking: true,
-    enableResponseHeaderTracking: true,
     enableAjaxPerfTracking: true,
     isBrowserLinkTrackingEnabled: true,
     extensions: [reactPlugin],
