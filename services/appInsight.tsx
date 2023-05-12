@@ -15,7 +15,7 @@ const reactPlugin = new ReactPlugin();
 
 const appInsights = new ApplicationInsights({
   config: {
-    instrumentationKey: process.env.NEXT_PUBLIC_APP_INSIGHT,
+    instrumentationKey: process.env.NEXT_PUBLIC_APP_INSIGHT_INSTRUMENTATION_KEY,
     enableAutoRouteTracking: true,
     enableAjaxPerfTracking: true,
     isBrowserLinkTrackingEnabled: true,

@@ -20,10 +20,10 @@ export default async function handler(
 
       const response = {
         error: recaptchaResponse.data,
-        lead: req.body
-      }
+        lead: req.body,
+      };
       appInsight.defaultClient?.trackException({
-        exception: new Error(json.response),
+        exception: new Error(JSON.stringify(response)),
       });
       res.status(200).json(recaptchaResponse.data);
     }
