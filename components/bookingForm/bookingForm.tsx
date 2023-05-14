@@ -97,7 +97,7 @@ export const BookingForm = ({ recaptchaKey }) => {
       sourceWebPageURL
     );
 
-    const functionName = { "Function Name": "Create-Lead" };
+    const method = { "Method": "Create-Lead" };
     actions.setSubmitting(false);
 
     await axios
@@ -105,7 +105,7 @@ export const BookingForm = ({ recaptchaKey }) => {
       .then((response) => {
         if (response.data && !response.data.success) {
           response.data = { ...response.data, data };
-          appInsights.trackException(response.data, functionName);
+          appInsights.trackException(response.data, method);
           setInvalidReptcha("Invalid ReCaptcha!");
         } else {
           onSuccess();
