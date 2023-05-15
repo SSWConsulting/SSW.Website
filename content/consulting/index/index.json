@@ -176,6 +176,9 @@
           "page": "content/consulting/azure.mdx",
           "tags": [
             {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
               "tag": "content/consulting/tag/website-development.json"
             }
           ]
