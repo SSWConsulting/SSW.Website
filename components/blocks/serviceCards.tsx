@@ -110,7 +110,7 @@ const SmallCards = ({ title, cards }) => {
               <div className="flex flex-1 flex-col items-center px-2 py-8 pb-4 sm:justify-center md:flex-row md:pb-8">
                 <Image
                   className=""
-                  src={card.imgSrc}
+                  src={card.imgSrc ?? ""}
                   width="50"
                   height="50"
                   alt=""
