@@ -49,9 +49,6 @@
           "page": "content/consulting/react.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/consulting.json"
-            },
-            {
               "tag": "content/consulting/tag/application-development.json"
             },
             {
