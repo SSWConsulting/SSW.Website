@@ -15,7 +15,7 @@ const reactPlugin = new ReactPlugin();
 
 const appInsights = new ApplicationInsights({
   config: {
-    instrumentationKey: process.env.NEXT_PUBLIC_APP_INSIGHT_INSTRUMENTATION_KEY,
+    instrumentationKey: process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING,
     enableAutoRouteTracking: true,
     enableAjaxPerfTracking: true,
     isBrowserLinkTrackingEnabled: true,
@@ -28,7 +28,7 @@ const appInsights = new ApplicationInsights({
 
 const AzureAppInsights = ({ children }) => {
   useEffect(() => {
-    console.log(appInsights.loadAppInsights());
+    appInsights.loadAppInsights();
   }, []);
 
   return (
