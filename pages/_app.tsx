@@ -43,9 +43,12 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <DefaultSeo {...NEXT_SEO_DEFAULT} />
-      <AzureAppInsights>
-        <Component {...pageProps} />
-      </AzureAppInsights>
+      {!isDev && (
+        <AzureAppInsights>
+          <Component {...pageProps} />
+        </AzureAppInsights>
+      )}
+      {isDev && <Component {...pageProps} />}
       <ZendeskButton zendeskKey={zendesk} />
       <Analytics />
     </>

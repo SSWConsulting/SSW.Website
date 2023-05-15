@@ -105,7 +105,7 @@ export const BookingForm = ({ recaptchaKey }) => {
       .then((response) => {
         if (response.data && !response.data.success) {
           response.data = { ...response.data, data };
-          appInsights.trackException(response.data, method);
+          appInsights?.trackException(response.data, method);
           setInvalidReptcha("Invalid ReCaptcha!");
         } else {
           onSuccess();
@@ -113,7 +113,7 @@ export const BookingForm = ({ recaptchaKey }) => {
       })
       .catch((err) => {
         err.data = data;
-        appInsights.trackException(err, method);
+        appInsights?.trackException(err, method);
         console.error(err);
         return alert("Failed to create lead in CRM");
       });
