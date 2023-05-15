@@ -34,3 +34,4 @@ resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2022-10
   }
 
 output applicationInsightsId string = applicationInsights.id
+output appInsightConnectionString string = applicationInsights.properties.ConnectionString

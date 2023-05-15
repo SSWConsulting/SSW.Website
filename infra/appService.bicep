@@ -2,6 +2,7 @@ param projectName string = 'sswwebsite'
 param location string = resourceGroup().location
 param tags object
 param dockerRegistryServerURL string
+param appInsightConnectionString string
 
 @allowed([
   'B1'
@@ -77,7 +78,7 @@ var appSettings = [
   }
   {
     name: 'APP_INSIGHT_CONNECTION_STRING'
-    value: 'InstrumentationKey=9fce8146-edbc-46d4-8542-74da9fb75503;IngestionEndpoint=https://australiaeast-1.in.applicationinsights.azure.com/;LiveEndpoint=https://australiaeast.livediagnostics.monitor.azure.com/'
+    value: appInsightConnectionString
   }
 ]
 

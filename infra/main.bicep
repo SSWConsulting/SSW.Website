@@ -50,6 +50,13 @@ module keyVault 'keyVault.bicep' = {
     location: location
   }
 }
+module appInsight 'appInsight.bicep' = {
+  name: 'appInsight-${now}'
+  params: {
+    projectName: projectName
+    location:location
+  }
+}
 
 module appService 'appService.bicep' = {
   name: 'appService-${now}'
@@ -62,16 +69,10 @@ module appService 'appService.bicep' = {
     acrName: acr.outputs.acrName
     dockerImage: dockerImage
     dockerRegistryServerURL: acr.outputs.acrLoginServer
+    appInsightConnectionString: appInsight.outputs.appInsightConnectionString
   }
 }
 
-module appInsight 'appInsight.bicep' = {
-  name: 'appInsight-${now}'
-  params: {
-    projectName: projectName
-    location:location
-  }
-}
 
 module kVAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
   name: 'KVRoleAssignment-${now}'
