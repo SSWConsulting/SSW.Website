@@ -120,13 +120,13 @@
           "page": "content/consulting/enterprise-reporting.mdx",
           "tags": [
             {
+              "tag": "content/consulting/tag/database-development.json"
+            },
+            {
               "tag": "content/consulting/tag/website-development.json"
             },
             {
               "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/consulting.json"
             }
           ]
         },
