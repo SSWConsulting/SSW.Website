@@ -21,6 +21,8 @@ on:
         required: true
       NEXT_PUBLIC_ZENDESK_CHAT_KEY:
         required: true
+      NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING:
+        required: true
 
 defaults:
   run:
