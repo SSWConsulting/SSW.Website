@@ -600,10 +600,7 @@
           "page": "content/consulting/microsoft-365.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/consulting.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/platform-development.json"
             }
           ]
         }
