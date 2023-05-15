@@ -97,7 +97,7 @@ export const BookingForm = ({ recaptchaKey }) => {
       sourceWebPageURL
     );
 
-    const method = { "Method": "Create-Lead" };
+    const method = { Method: "Create-Lead-UI" };
     actions.setSubmitting(false);
 
     await axios
@@ -112,6 +112,8 @@ export const BookingForm = ({ recaptchaKey }) => {
         }
       })
       .catch((err) => {
+        err.data = data;
+        appInsights.trackException(err, method);
         console.error(err);
         return alert("Failed to create lead in CRM");
       });
