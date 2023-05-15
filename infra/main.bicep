@@ -82,7 +82,7 @@ module kVAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
   }
 }
 
-module KVServicePrincipalRoleAssignment 'keyVaultRoleAssignment.bicep' = {
+module kVServicePrincipalRoleAssignment 'keyVaultRoleAssignment.bicep' = {
   name: 'KVServicePrincipalRoleAssignment-${now}'
   params: {
     keyVaultName: keyVault.outputs.keyVaultName
