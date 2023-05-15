@@ -15,6 +15,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = (props) => {
 			<NextBreadcrumbs
 				replaceCharacterList={[
 					{ from: "consulting", to: "Services" },
+					{ from: "products", to: "Products" },
 					{ from: "offices", to: "Offices" },
 					{ from: props.path, to: `${props.title}` },
 				]}
