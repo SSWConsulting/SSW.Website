@@ -109,13 +109,7 @@
           "externalUrl": "https://www.ssw.com.au/consulting/jamstack",
           "tags": [
             {
-              "tag": "content/consulting/tag/consulting.json"
-            },
-            {
               "tag": "content/consulting/tag/website-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/cms.json"
             }
           ]
         },
