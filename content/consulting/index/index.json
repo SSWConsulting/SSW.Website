@@ -316,12 +316,6 @@
           "page": "content/consulting/microsoft-hololens.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/mobile-development.json"
-            },
-            {
               "tag": "content/consulting/tag/consulting.json"
             }
           ]
