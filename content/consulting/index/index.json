@@ -561,6 +561,9 @@
           "page": "content/consulting/power-platform.mdx",
           "tags": [
             {
+              "tag": "content/consulting/tag/platform-development.json"
+            },
+            {
               "tag": "content/consulting/tag/database-development.json"
             }
           ]
