@@ -138,12 +138,6 @@
           "tags": [
             {
               "tag": "content/consulting/tag/database-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
             }
           ]
         },
