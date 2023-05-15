@@ -18,8 +18,9 @@ export const ClientLogos = () => {
     return (
         <div className="flex flex-wrap justify-center gap-6">
             {
-                Object.keys(clients).map(client =>
+                Object.keys(clients).map((client, index) =>
                     <Image
+                        key={index}
                         src={`/images/clientLogos/${clients[client]}`}
                         alt={client}
                         height={50}
