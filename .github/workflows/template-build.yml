@@ -115,6 +115,8 @@ jobs:
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
           SITE_URL: https://ssw.com.au
 
+      - run: yarn postbuild
+
       - name: ACR - Login
         run: |
           az acr login --name ${{ env.ACR_LOGIN_SERVER }}
