@@ -59,14 +59,14 @@ const BigCards = ({ title, cards }) => {
             } hover:opacity-80`}
           >
             <Link
-              href={card.link}
+              href={card.link ?? ""}
               className="unstyled flex grow text-left text-white"
             >
               <div className="flex grow flex-col">
                 <div className="absolute flex-1 self-end">
                   <Image
                     className="opacity-50"
-                    src={card.imgSrc}
+                    src={card.imgSrc ?? ""}
                     width="100"
                     height="100"
                     alt=""
@@ -103,11 +103,14 @@ const SmallCards = ({ title, cards }) => {
               bgColor[card.color]
             } hover:opacity-80`}
           >
-            <Link href={card.link} className="unstyled flex h-full flex-col">
+            <Link
+              href={card.link ?? ""}
+              className="unstyled flex h-full flex-col"
+            >
               <div className="flex flex-1 flex-col items-center px-2 py-8 pb-4 sm:justify-center md:flex-row md:pb-8">
                 <Image
                   className=""
-                  src={card.imgSrc}
+                  src={card.imgSrc ?? ""}
                   width="50"
                   height="50"
                   alt=""
