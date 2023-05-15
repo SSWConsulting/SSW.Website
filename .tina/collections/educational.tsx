@@ -72,7 +72,7 @@ const bookingFormBlockSchema: Template = {
       ui: {
         component: () => (
           <p>
-            This is a placeholder block for
+            This is a placeholder block for&nbsp;
             <span className="font-bold">Consulting Enquiry Form</span>
           </p>
         ),

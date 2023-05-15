@@ -15,6 +15,7 @@ import ReactPlayer from "../../components/reactPlayer/reactPlayer";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
 import { InferGetStaticPropsType } from "next";
+import layoutData from "../../content/global/index.json";
 
 export default function EducationalIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -25,7 +26,16 @@ export default function EducationalIndex(
     data: props.data,
   });
 
+  const removeExtension = (file: string) => {
+    return file.split(".")[0];
+  };
+
+  const ensureEndsWith = (text: string | undefined | null, suffix: string) => {
+    return (text?.endsWith(suffix) || false) ? text : text + suffix;
+  }
+
   const node = getNode(data);
+  node.seo && (node.seo.canonical = `${ensureEndsWith(layoutData.header.url, "/")}educational`);
   const PComponent = ({ children }) => <p className="mb-3">{children}</p>;
   const SolutionElements = ({ solutions }) => {
     const solutionPropsMap = ({ solutionImage, name, description }) => ({
@@ -117,7 +127,7 @@ export default function EducationalIndex(
 
   return (
     <Layout>
-      <SEO seo={{ ...node.seo, canonical: "/educational" }} />
+      <SEO seo={node.seo} />
       <Container className="flex-1" size="custom">
         <DownloadWhitepaperLink>
           <Image
@@ -129,9 +139,9 @@ export default function EducationalIndex(
           />
         </DownloadWhitepaperLink>
         <Breadcrumbs
-          path={"educational"}
+          path={removeExtension(node._sys.relativePath)}
           suffix=""
-          title={"SSW Consulting Educational - Sydney, Brisbane, Melbourne"}
+          title={node.seo.title}
         />
         <h1 className="mb-1 py-0 text-3xl">SSW Educational</h1>
         <h2 className="!mt-1 pt-0 text-md font-light">
