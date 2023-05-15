@@ -75,6 +75,10 @@ var appSettings = [
     name: 'GOOGLE_RECAPTCHA_SITE_KEY'
     value: '@Microsoft.KeyVault(SecretUri=https://kv-sswwebsite-9eb3.vault.azure.net/secrets/Google-Recaptcha-Site-KEY)'
   }
+  {
+    name: 'APP_INSIGHT_CONNECTION_STRING'
+    value: 'InstrumentationKey=9fce8146-edbc-46d4-8542-74da9fb75503;IngestionEndpoint=https://australiaeast-1.in.applicationinsights.azure.com/;LiveEndpoint=https://australiaeast.livediagnostics.monitor.azure.com/'
+  }
 ]
 
 resource appService 'Microsoft.Web/sites@2022-03-01' = {

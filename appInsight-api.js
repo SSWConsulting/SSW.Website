@@ -1,11 +1,9 @@
-if (
-  typeof process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING !== "undefined"
-) {
+if (typeof process.env.APP_INSIGHT_CONNECTION_STRING !== "undefined") {
   let appInsights = require("applicationinsights");
 
   appInsights
     // eslint-disable-next-line no-undef
-    .setup(process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING)
+    .setup(process.env.APP_INSIGHT_CONNECTION_STRING)
     .setAutoCollectConsole(true)
     .setAutoCollectExceptions(true)
     .setAutoCollectRequests(true)
