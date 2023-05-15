@@ -91,6 +91,9 @@
           "page": "content/consulting/desktop-development.mdx",
           "tags": [
             {
+              "tag": "content/consulting/tag/mobile-development.json"
+            },
+            {
               "tag": "content/consulting/tag/website-development.json"
             },
             {
