@@ -575,6 +575,9 @@
           "page": "content/consulting/sharepoint.mdx",
           "tags": [
             {
+              "tag": "content/consulting/tag/platform-development.json"
+            },
+            {
               "tag": "content/consulting/tag/website-development.json"
             }
           ]
