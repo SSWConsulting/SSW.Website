@@ -2520,12 +2520,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:13.4.1, @next/eslint-plugin-next@npm:^13.3.1":
+"@next/eslint-plugin-next@npm:13.4.1":
   version: 13.4.1
   resolution: "@next/eslint-plugin-next@npm:13.4.1"
   dependencies:
     glob: 7.1.7
   checksum: fff59da7aa7838e6cb1f19f33b1c5265f0e4ea5a910a7702f2fadbf76c3387dceb388230cd7f9ce810db73c3b78b2342e77a0dbf77f4560eecf85905adb5f671
+  languageName: node
+  linkType: hard
+
+"@next/eslint-plugin-next@npm:^13.4.2":
+  version: 13.4.2
+  resolution: "@next/eslint-plugin-next@npm:13.4.2"
+  dependencies:
+    glob: 7.1.7
+  checksum: be6d258eedeb52c120796076b0243d3b2f051e84b43990a4a61ab2e26e143982641e97c71ad7c657e9bb1054a7fe12eebb91e4b76dfc99953c859eff01ee9c89
   languageName: node
   linkType: hard
 
@@ -3850,7 +3859,7 @@ __metadata:
     "@fortawesome/react-fontawesome": ^0.2.0
     "@headlessui/react": 1.7.14
     "@headlessui/tailwindcss": ^0.1.3
-    "@next/eslint-plugin-next": ^13.3.1
+    "@next/eslint-plugin-next": ^13.4.2
     "@svgr/webpack": ^7.0.0
     "@tailwindcss/typography": ^0.5.9
     "@tinacms/cli": ^1.5.12
