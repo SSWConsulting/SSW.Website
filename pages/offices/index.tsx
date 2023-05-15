@@ -1,15 +1,15 @@
+import { InferGetStaticPropsType } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { client } from "../../.tina/__generated__/client";
 import { useTina } from "tinacms/dist/react";
+import { client } from "../../.tina/__generated__/client";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { Flag } from "../../components/blocks/flag";
 import { Layout } from "../../components/layout";
-import { Container } from "../../components/util/container";
 import MicrosoftPanel from "../../components/offices/microsoftPanel";
 import TestimonialPanel from "../../components/offices/testimonialPanel";
-import { Flag } from "../../components/blocks/flag";
+import { Container } from "../../components/util/container";
 import layoutData from "../../content/global/index.json";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
-import { InferGetStaticPropsType } from "next";
 
 export default function OfficeIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>

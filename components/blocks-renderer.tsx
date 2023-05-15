@@ -9,7 +9,7 @@ import { UpcomingEvents } from "./blocks/upcomingEvents";
 import { BuiltOnAzure } from "./blocks/builtOnAzure";
 import { CustomImage } from "./blocks/customImage";
 import { ClientLogos } from "./blocks/clientLogos";
-import { ColumnLayout } from "./blocks/columnLayout";
+import { VerticalImageLayout } from "./blocks/verticalImageLayout";
 import { VerticalListItem } from "./blocks/verticalListItem";
 import { TrainingInformation } from "./training/trainingInformation";
 import { TrainingLearningOutcome } from "./training/trainingLearningOutcome";
@@ -23,7 +23,7 @@ const componentMap = {
   BuiltOnAzure: BuiltOnAzure,
   CustomImage: CustomImage,
   ClientLogos: ClientLogos,
-  ColumnLayout: ColumnLayout,
+  VerticalImageLayout: VerticalImageLayout,
   ContentCard: ContentCard,
   VerticalListItem: VerticalListItem,
   TrainingInformation: TrainingInformation,
@@ -39,7 +39,7 @@ export const Blocks = ({ prefix, blocks }) => {
 };
 
 const renderBlock = (prefix, block, i): JSX.Element => {
-  const component = componentMap[block?.__typename?.replace(prefix, "")];
+  const component = componentMap[block.__typename?.replace(prefix, "")];
 
   if (!component) {
     return null;
