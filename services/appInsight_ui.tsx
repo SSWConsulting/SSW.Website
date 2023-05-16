@@ -8,17 +8,19 @@ import {
 import { createBrowserHistory } from "history";
 
 let browserHistory = null;
-if (typeof document !== "undefined") {
+
+if (typeof document != "undefined") {
   browserHistory = createBrowserHistory();
 }
 
-const isDev = process.env.NODE_ENV === "development";
-
 const reactPlugin = new ReactPlugin();
+
+const appInsightConnString =
+  process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING;
 
 const appInsights = new ApplicationInsights({
   config: {
-    instrumentationKey: process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING,
+    instrumentationKey: appInsightConnString,
     enableAutoRouteTracking: true,
     enableAjaxPerfTracking: true,
     isBrowserLinkTrackingEnabled: true,
@@ -31,8 +33,11 @@ const appInsights = new ApplicationInsights({
 
 const AzureAppInsights = ({ children }) => {
   useEffect(() => {
-    if(!isDev)
-    appInsights.loadAppInsights();
+    if (appInsightConnString) {
+      appInsights.loadAppInsights();
+    } else {
+      console.log("Client side logging is not turned on!");
+    }
   }, []);
 
   return (
