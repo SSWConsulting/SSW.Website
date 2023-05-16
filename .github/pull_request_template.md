@@ -3,7 +3,7 @@
 Fixes #{{ ISSUE NUMBER }}
 
 Affected routes:
-- <!-- E.g. `/offices/brisbane  -->
+- <!-- E.g. `/offices/brisbane`  -->
 
 Add done video, screenshots
 
