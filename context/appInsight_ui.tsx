@@ -15,7 +15,8 @@ if (typeof document != "undefined") {
 
 const reactPlugin = new ReactPlugin();
 
-const appInsightConnString = process.env.APP_INSIGHT_CONNECTION_STRING;
+const appInsightConnString =
+  process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING;
 
 const appInsights = new ApplicationInsights({
   config: {

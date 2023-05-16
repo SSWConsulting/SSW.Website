@@ -21,8 +21,6 @@ on:
         required: true
       NEXT_PUBLIC_ZENDESK_CHAT_KEY:
         required: true
-      APP_INSIGHT_CONNECTION_STRING:
-        required: true
 
 defaults:
   run:
@@ -95,6 +93,18 @@ jobs:
           echo "GoogleRecaptchaSiteKey=$GoogleRecaptchaSiteKey" >> $env:GITHUB_OUTPUT
           Write-Host '✅ KV - Secret retrieved'
 
+      - name: AppInsight - Connection Strings
+        shell: pwsh
+        id: AppInsight
+        run: |
+          # AppInsight - Connection String
+
+          $AppInsightName = if ("${{ inputs.tag }}" -ieq "production") { "${{ env.APP_INSIGHT_PROD }}" } else { "${{ env.APP_INSIGHT_DEV }}" }
+
+          $AppInsightConnectionString = (az monitor app-insights component show --resource-group ${{ env.AZURE_RESOURCE_GROUP }} --app @AppInsightName --query connectionString -o tsv)
+          echo "AppInsightConnectionString=$AppInsightConnectionString" >> $env:GITHUB_OUTPUT
+          Write-Host '✅ AppInsight - Connection String retrieved'
+
       - run: yarn install
 
       - run: yarn build
@@ -114,7 +124,7 @@ jobs:
           GOOGLE_RECAPTCHA_KEY: ${{ secrets.GOOGLE_RECAPTCHA_KEY }}
           GOOGLE_RECAPTCHA_SITE_KEY: ${{ steps.KeyVaultSecrets.outputs.GoogleRecaptchaSiteKey }}
           KEY_VAULT: ${{ env.KEY_VAULT }}
-          APP_INSIGHT_CONNECTION_STRING: ${{ secrets.APP_INSIGHT_CONNECTION_STRING }}
+          NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING: ${{ steps.AppInsight.AppInsightConnectionString }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
           SITE_URL: https://ssw.com.au
 
