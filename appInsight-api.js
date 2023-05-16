@@ -1,4 +1,4 @@
-if (typeof process.env.APP_INSIGHT_CONNECTION_STRING !== "undefined") {
+if (!!process.env.APP_INSIGHT_CONNECTION_STRING) {
   let appInsights = require("applicationinsights");
 
   appInsights
