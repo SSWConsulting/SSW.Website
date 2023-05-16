@@ -8,7 +8,7 @@ import {
 import { educationalSchema } from "./collections/educational";
 import { globalSchema } from "./collections/global";
 import { marketingSchema } from "./collections/marketing";
-import { officeSchema } from "./collections/offices";
+import { officeSchema, officeIndexSchema } from "./collections/offices";
 import { pagesSchema } from "./collections/pages";
 import { technologiesSchema } from "./collections/technologies";
 import { productsIndexSchema } from "./collections/products";
@@ -57,6 +57,7 @@ const config = defineStaticConfig({
       testimonialCategoriesSchema,
       technologiesSchema,
       officeSchema,
+      officeIndexSchema,
       productsIndexSchema,
       trainingSchema,
       educationalSchema,
