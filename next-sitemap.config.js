@@ -11,6 +11,7 @@ module.exports = {
       {
         userAgent: "*",
         allow: "/",
+        disallow: "/404",
       },
     ],
     additionalSitemaps: [
