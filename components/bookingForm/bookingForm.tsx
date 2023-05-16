@@ -97,15 +97,14 @@ export const BookingForm = ({ recaptchaKey }) => {
       sourceWebPageURL
     );
 
-    const method = { Method: "Create-Lead-UI" };
+    const method = { Method: "Create-Lead-UI", Payload: data };
     actions.setSubmitting(false);
 
     await axios
       .post("/api/create-lead", data)
       .then((response) => {
         if (response.data && !response.data.success) {
-          response.data = { ...response.data, data };
-          appInsights?.trackException(response.data, method);
+          appInsights?.trackException({ exception: response.data }, method);
           setInvalidReptcha("Invalid ReCaptcha!");
         } else {
           onSuccess();
@@ -113,7 +112,7 @@ export const BookingForm = ({ recaptchaKey }) => {
       })
       .catch((err) => {
         err.data = data;
-        appInsights?.trackException(err, method);
+        appInsights?.trackException({ exception: err }, method);
         console.error(err);
         return alert("Failed to create lead in CRM");
       });

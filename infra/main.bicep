@@ -70,6 +70,7 @@ module appService 'appService.bicep' = {
     dockerImage: dockerImage
     dockerRegistryServerURL: acr.outputs.acrLoginServer
     appInsightConnectionString: appInsight.outputs.appInsightConnectionString
+    keyVaultName: keyVault.outputs.keyVaultName
   }
 }
 

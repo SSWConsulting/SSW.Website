@@ -15,12 +15,11 @@ if (typeof document != "undefined") {
 
 const reactPlugin = new ReactPlugin();
 
-const appInsightConnString =
-  process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING;
+const appInsightConnString = process.env.APP_INSIGHT_CONNECTION_STRING;
 
 const appInsights = new ApplicationInsights({
   config: {
-    instrumentationKey: appInsightConnString,
+    connectionString: appInsightConnString,
     enableAutoRouteTracking: true,
     enableAjaxPerfTracking: true,
     isBrowserLinkTrackingEnabled: true,
@@ -34,7 +33,10 @@ const appInsights = new ApplicationInsights({
 const AzureAppInsights = ({ children }) => {
   useEffect(() => {
     if (appInsightConnString) {
-      appInsights.loadAppInsights();
+      console.log(
+        "🚀 ~ file: appInsight_ui.tsx:38 ~ useEffect ~ appInsights.loadAppInsights();:",
+        appInsights.loadAppInsights()
+      );
     } else {
       console.log("Client side logging is not turned on!");
     }

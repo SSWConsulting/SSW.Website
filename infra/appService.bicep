@@ -3,6 +3,7 @@ param location string = resourceGroup().location
 param tags object
 param dockerRegistryServerURL string
 param appInsightConnectionString string
+param keyVaultName string
 
 @allowed([
   'B1'
@@ -66,15 +67,15 @@ var appSettings = [
   }
   {
     name: 'CREATE_LEAD_ENDPOINT'
-    value: '@Microsoft.KeyVault(SecretUri=https://kv-sswwebsite-9eb3.vault.azure.net/secrets/Create-Lead-Endpoint-PROD)'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/Create-Lead-Endpoint-PROD)'
   }
   {
     name: 'GOOGLE_RECAPTCHA_KEY_V2'
-    value: '@Microsoft.KeyVault(SecretUri=https://kv-sswwebsite-9eb3.vault.azure.net/secrets/GOOGLE-RECAPTCHA-KEY)'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/GOOGLE-RECAPTCHA-KEY)'
   }
   {
     name: 'GOOGLE_RECAPTCHA_SITE_KEY'
-    value: '@Microsoft.KeyVault(SecretUri=https://kv-sswwebsite-9eb3.vault.azure.net/secrets/Google-Recaptcha-Site-KEY)'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/Google-Recaptcha-Site-KEY)'
   }
   {
     name: 'APP_INSIGHT_CONNECTION_STRING'
