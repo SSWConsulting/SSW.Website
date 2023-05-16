@@ -33,10 +33,7 @@ const appInsights = new ApplicationInsights({
 const AzureAppInsights = ({ children }) => {
   useEffect(() => {
     if (appInsightConnString) {
-      console.log(
-        "🚀 ~ file: appInsight_ui.tsx:38 ~ useEffect ~ appInsights.loadAppInsights();:",
-        appInsights.loadAppInsights()
-      );
+      appInsights.loadAppInsights();
     } else {
       console.log("Client side logging is not turned on!");
     }
