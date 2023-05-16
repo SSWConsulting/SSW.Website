@@ -18,5 +18,8 @@
     {
       "office": "content/offices/hangzhou.mdx"
     }
-  ]
+  ],
+  "seo": {
+    "title": "Our Offices"
+  }
 }

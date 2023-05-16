@@ -78,6 +78,17 @@ query technologyCardContentQuery($cardNames: [String!]) {
 
 query officeIndexQuery($relativePath: String!) {
   officeIndex(relativePath: $relativePath) {
+    seo {
+      title
+      description
+      canonical
+      images {
+        url
+        width
+        height
+        alt
+      }
+    }
     officesIndex {
       office {
         ... on Offices {

@@ -11,33 +11,6 @@ export const globalSchema: Collection = {
   fields: [
     {
       type: "object",
-      label: "Offices Index Page ",
-      name: "officesIndex",
-      list: true,
-      ui: {
-        itemProps: (item) => {
-          const path = item?.office;
-          const pathComponents = path.split("/");
-          const cityNameWithExtension =
-            pathComponents[pathComponents.length - 1];
-          const cityName = cityNameWithExtension.split(".")[0];
-          return {
-            label: cityName.charAt(0).toUpperCase() + cityName.slice(1),
-          };
-        },
-      },
-      fields: [
-        {
-          type: "reference",
-          label: "Office",
-          name: "office",
-          collections: ["offices"],
-          required: true,
-        },
-      ],
-    },
-    {
-      type: "object",
       label: "Header",
       name: "header",
       fields: [

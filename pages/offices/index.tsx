@@ -10,6 +10,7 @@ import MicrosoftPanel from "../../components/offices/microsoftPanel";
 import TestimonialPanel from "../../components/offices/testimonialPanel";
 import { Container } from "../../components/util/container";
 import layoutData from "../../content/global/index.json";
+import { SEO } from "../../components/util/seo";
 
 export default function OfficeIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -20,12 +21,13 @@ export default function OfficeIndex(
     data: props.data,
   });
 
+  const seo = props.seo;
   const offices = data?.map((office) => office.office);
 
   return (
     offices && (
       <Layout>
-        {/* TODO: SEO */}
+        <SEO seo={seo} />
         <Container className="flex-1 pt-2">
           <Breadcrumbs
             path={"/offices"}
@@ -133,7 +135,6 @@ export const getStaticProps = async () => {
   const tinaProps = await client.queries.officeIndexQuery({
     relativePath: "officesIndex.json",
   });
-
   const testimonialResult = await client.queries.allTestimonialsQuery();
   const testimonials =
     testimonialResult.data.testimonialsConnection.Testimonials;
@@ -146,6 +147,7 @@ export const getStaticProps = async () => {
       query: tinaProps.query,
       variables: tinaProps.variables,
       testimonial: testimonial,
+      seo: tinaProps.data.officeIndex.seo,
     },
   };
 };
