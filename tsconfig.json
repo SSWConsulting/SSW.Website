@@ -1,27 +1,28 @@
 {
-	"compilerOptions": {
-		"target": "ES2015",
-		"lib": ["dom", "dom.iterable", "esnext"],
-		"allowJs": true,
-		"skipLibCheck": true,
-		"strict": false,
-		"forceConsistentCasingInFileNames": true,
-		"noEmit": true,
-		"esModuleInterop": true,
-		"module": "esnext",
-		"moduleResolution": "node",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"jsx": "preserve",
-		"incremental": true
-	},
-	"exclude": ["node_modules"],
-	"include": [
-		"next-env.d.ts",
-		"**/*.ts",
-		"**/*.tsx",
-		".forestry/types.ts",
-		".forestry/config.ts",
-		"next-sitemap.config.ts"
-	]
+  "compilerOptions": {
+    "target": "ES2015",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true
+  },
+  "exclude": ["node_modules"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".forestry/types.ts",
+    ".forestry/config.ts",
+    "next-sitemap.config.ts",
+    "pages/load-appInsight.js"
+  ]
 }
