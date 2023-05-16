@@ -19,7 +19,7 @@ module keyVault 'keyVault.bicep' = {
 module appInsight 'appInsight.bicep' = {
   name: '${slotName}-appInsight-${now}'
   params: {
-    projectName: '${projectName}-slot'
+    projectName: '${projectName}-dev'
     location:location
   }
 }
