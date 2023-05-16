@@ -98,7 +98,7 @@ jobs:
         id: AppInsight
         run: |
           # AppInsight - Connection String
-
+          az config set extension.use_dynamic_install=yes_without_prompt
           $AppInsightName = if ("${{ inputs.tag }}" -ieq "production") { "${{ env.APP_INSIGHT_PROD }}" } else { "${{ env.APP_INSIGHT_DEV }}" }
 
           $AppInsightConnectionString = (az monitor app-insights component show --resource-group ${{ env.AZURE_RESOURCE_GROUP }} --app @AppInsightName --query connectionString -o tsv)
