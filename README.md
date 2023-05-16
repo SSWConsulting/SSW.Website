@@ -43,6 +43,28 @@ Build the project:
 yarn build
 ```
 
+## Get Started with Dev Container
+
+### How to
+
+1. Open Command Palette in VSCode
+
+```vscode
+> Dev Containers: Reopen in Container
+```
+
+2. Develop as you would normally
+
+### **Don't want to use Dev Container any more?**
+
+1. Close VSCode connected with the Dev Container
+2. Open project folder on host machine
+3. Remove node_modules and reinstall dependencies
+
+```bash
+yarn install
+```
+
 ## Updating the project's dependencies
 
 ```bash
