@@ -1,6 +1,6 @@
 Fixes #{{ ISSUE NUMBER }}
 
-Effected routes:
+Affected routes:
 - <!-- E.g. `/offices/brisbane  -->
 
 Add done video, screenshots
