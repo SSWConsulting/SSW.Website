@@ -11,6 +11,9 @@ let browserHistory = null;
 if (typeof document !== "undefined") {
   browserHistory = createBrowserHistory();
 }
+
+const isDev = process.env.NODE_ENV === "development";
+
 const reactPlugin = new ReactPlugin();
 
 const appInsights = new ApplicationInsights({
@@ -28,6 +31,7 @@ const appInsights = new ApplicationInsights({
 
 const AzureAppInsights = ({ children }) => {
   useEffect(() => {
+    if(!isDev)
     appInsights.loadAppInsights();
   }, []);
 
