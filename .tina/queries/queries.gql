@@ -77,7 +77,7 @@ query technologyCardContentQuery($cardNames: [String!]) {
 }
 
 query officeIndexQuery($relativePath: String!) {
-  global(relativePath: $relativePath) {
+  officeIndex(relativePath: $relativePath) {
     officesIndex {
       office {
         ... on Offices {

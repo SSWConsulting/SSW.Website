@@ -131,7 +131,7 @@ export default function OfficeIndex(
 
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.officeIndexQuery({
-    relativePath: "index.json",
+    relativePath: "officesIndex.json",
   });
 
   const testimonialResult = await client.queries.allTestimonialsQuery();
@@ -142,7 +142,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      data: tinaProps.data.global.officesIndex,
+      data: tinaProps.data.officeIndex.officesIndex,
       query: tinaProps.query,
       variables: tinaProps.variables,
       testimonial: testimonial,
