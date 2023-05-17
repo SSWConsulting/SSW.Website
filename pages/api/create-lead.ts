@@ -1,6 +1,19 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { createLead, validateRecaptcha } from "../../services";
 import * as appInsight from "applicationinsights";
+import { BookingFormSubmissionData } from "../../services";
+import axios from "axios";
+
+const createLead = async (data: BookingFormSubmissionData) => {
+  return await axios.post(process.env.CREATE_LEAD_ENDPOINT, data, {
+    headers: { "Content-Type": "application/json" },
+  });
+};
+
+const validateRecaptcha = async ({ Recaptcha }) => {
+  return await axios.post(
+    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_KEY_V2}&response=${Recaptcha}`
+  );
+};
 
 export default async function handler(
   req: NextApiRequest,

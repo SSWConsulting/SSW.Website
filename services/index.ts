@@ -1,17 +1,5 @@
 import axios, { AxiosResponse } from "axios";
 
-export const createLead = async (data: BookingFormSubmissionData) => {
-  return await axios.post(process.env.CREATE_LEAD_ENDPOINT, data, {
-    headers: { "Content-Type": "application/json" },
-  });
-};
-
-export const validateRecaptcha = async ({ Recaptcha }) => {
-  return await axios.post(
-    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_KEY_V2}&response=${Recaptcha}`
-  );
-};
-
 export const addContactToNewsletters = async (
   data: AddContactToNewslettersData
 ) =>

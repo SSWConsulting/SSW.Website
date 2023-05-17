@@ -200,6 +200,17 @@
       "category": "content/consulting/category/consulting.json",
       "pages": [
         {
+          "title": "ChatGPT & GPT-4",
+          "description": "GPT and ChatGPT are ground-breaking AI language models that can revolutionize the way businesses communicate, automate tasks, and streamline processes.",
+          "logo": "/images/thumbs/thumb-gpt.jpg",
+          "page": "content/consulting/gpt.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
           "title": "Remote Work",
           "description": "Put the tools in place to allow your employees to work from home including Teams, cloud migration, VPN, training, and more.",
           "logo": "/images/thumbs/thumb-remote.jpg",
