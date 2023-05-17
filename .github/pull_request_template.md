@@ -3,9 +3,10 @@
 Fixes #{{ ISSUE NUMBER }}
 
 Affected routes:
+
 - <!-- E.g. `/offices/brisbane`  -->
 
 Add done video, screenshots
 
-<!-- As per rule {{ TODO: ADD RULE URL }} -->
-<!-- Call someone to review your changes to get them merged ASAP -->
+<!-- As per rule https://www.ssw.com.au/rules/over-the-shoulder-prs -->
+<!-- Getting the PR merged is part of the PBI - Call someone to review your changes to get them merged ASAP -->
