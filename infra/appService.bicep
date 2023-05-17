@@ -78,7 +78,7 @@ var appSettings = [
     value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/Google-Recaptcha-Site-KEY)'
   }
   {
-    name: 'APP_INSIGHT_CONNECTION_STRING'
+    name: 'NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING'
     value: appInsightConnectionString
   }
 ]
