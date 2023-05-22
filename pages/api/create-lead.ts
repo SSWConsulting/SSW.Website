@@ -31,8 +31,8 @@ export default async function handler(
     if (recaptchaResponse && recaptchaResponse.data.success === true) {
       const createLeadRes = await createLead(req.body);
 
-      if (createLeadRes.status !== 200) {
-        logData.error = createLeadRes;
+      if (createLeadRes.status !== 202) {
+        logData.error = createLeadRes.statusText;
         appInsight.defaultClient?.trackException({
           exception: new Error(JSON.stringify(logData)),
         });
