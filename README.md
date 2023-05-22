@@ -99,7 +99,7 @@ Each Pull Request will be deployed to its own staging environment, the URL to th
 ## Getting Help
 
 - [Email SSW](mailto:info@ssw.com.au) to schedule a call.
-- Reach out through the chat widget on [ssw.com.au](https://ssw.com.au)
+- Reach out through the chat widget on [ssw.com.au](https://www.ssw.com.au)
 
 - Visit the [documentation](https://tina.io/docs/) to learn about Tina.
 - [Join the Tina Discord](https://discord.gg/zumN63Ybpf) to share feedback for Tina to improve.

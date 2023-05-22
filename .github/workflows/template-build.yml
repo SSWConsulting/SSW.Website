@@ -113,7 +113,7 @@ jobs:
           GOOGLE_RECAPTCHA_SITE_KEY: ${{ steps.KeyVaultSecrets.outputs.GoogleRecaptchaSiteKey }}
           KEY_VAULT: ${{ env.KEY_VAULT }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-          SITE_URL: https://ssw.com.au
+          SITE_URL: https://www.ssw.com.au
 
       - name: ACR - Login
         run: |
