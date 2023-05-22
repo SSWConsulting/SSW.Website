@@ -19,7 +19,7 @@ and CalendarType eq 'User Groups'\
 &$top=1`;
 
   return await axios.get<LiveStreamBannerInfo[]>(
-    "https://ssw.com.au/ssw/SharePointEventsService.aspx",
+    "https://www.ssw.com.au/ssw/SharePointEventsService.aspx",
     {
       params: { odataFilter: encodeURIComponent(odataFilter) },
     }
@@ -33,7 +33,7 @@ and EndDateTime gt datetime'${datetime}'\
 &$top=${top}`;
 
   const res = await axios.get<EventInfo[]>(
-    "https://ssw.com.au/ssw/SharePointEventsService.aspx",
+    "https://www.ssw.com.au/ssw/SharePointEventsService.aspx",
     {
       params: { odataFilter: encodeURIComponent(odataFilter) },
     }
@@ -49,7 +49,7 @@ export const getLiveStreamWidgetInfo = async (eventId: string) => {
 &$select=*,InternalPresenters/EMail&$expand=InternalPresenters/Id`;
 
   const eventsRes = await axios.get<LiveStreamWidgetInfo[]>(
-    "https://ssw.com.au/ssw/SharePointEventsService.aspx",
+    "https://www.ssw.com.au/ssw/SharePointEventsService.aspx",
     {
       params: { odataFilter: encodeURIComponent(odataFilter) },
     }
@@ -77,7 +77,7 @@ export const getSpeakersInfo = async (ids?: string[], emails?: string[]) => {
       .join(" or ")}`;
 
     const externalSpeakersRes = await axios.get<SpeakerInfo[]>(
-      "https://ssw.com.au/ssw/SharePointExternalSpeakersService.aspx",
+      "https://www.ssw.com.au/ssw/SharePointExternalSpeakersService.aspx",
       {
         params: { odataFilter: encodeURIComponent(externalSpeakerFilter) },
       }
@@ -91,7 +91,7 @@ export const getSpeakersInfo = async (ids?: string[], emails?: string[]) => {
     await Promise.all(
       emails.map(async (email) => {
         const internalSpeakerRes = await axios.get<InternalSpeakerInfo>(
-          "https://ssw.com.au/ssw/CRMService.aspx",
+          "https://www.ssw.com.au/ssw/CRMService.aspx",
           {
             params: { odata: encodeURIComponent(email) },
           }

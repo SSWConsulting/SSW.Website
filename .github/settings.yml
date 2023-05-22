@@ -10,7 +10,7 @@ repository:
   description: Generator for ssw.com.au
 
   # A URL with more information about the repository
-  homepage: https://ssw.com.au
+  homepage: https://www.ssw.com.au
 
   # A comma-separated list of topics to set on the repository
   topics: github, nextjs
@@ -60,29 +60,29 @@ repository:
 # Labels: define labels for Issues and Pull Requests
 labels:
   - name: Good First Issue
-    color: '#7057FF'
+    color: "#7057FF"
 
-  - name: 'Type: Bug'
+  - name: "Type: Bug"
     color: FF2222
     description: A problem with existing functionality
 
-  - name: 'Type: DevOps'
+  - name: "Type: DevOps"
     color: 1D76DB
     description: Setting up of DevOps processes e.g. GitHub Actions, Azure DevOps Pipelines etc
 
-  - name: 'Type: Documentation'
+  - name: "Type: Documentation"
     color: BABABA
     description: Updating documentation (e.g. README, Wiki, Guides etc.)
 
-  - name: 'Type: Feature'
+  - name: "Type: Feature"
     color: 6DFF6D
     description: A suggested idea for this project
 
-  - name: 'Type: Refactor'
+  - name: "Type: Refactor"
     color: 0E8A16
     description: A code quality improvement e.g. Tech debt
 
-  - name: 'Type: Dependencies'
+  - name: "Type: Dependencies"
     color: FF2222
     description: Dependabot found some dependencies to upgrade
 
@@ -107,12 +107,12 @@ collaborators:
 
 # See https://docs.github.com/en/rest/reference/teams#add-or-update-team-repository-permissions for available options
 teams:
-    # The permission to grant the team. Can be one of:
-    # * `pull` - can pull, but not push to or administer this repository.
-    # * `push` - can pull and push, but not administer this repository.
-    # * `admin` - can pull, push and administer this repository.
-    # * `maintain` - Recommended for project managers who need to manage the repository without access to sensitive or destructive actions.
-    # * `triage` - Recommended for contributors who need to proactively manage issues and pull requests without write access.
+  # The permission to grant the team. Can be one of:
+  # * `pull` - can pull, but not push to or administer this repository.
+  # * `push` - can pull and push, but not administer this repository.
+  # * `admin` - can pull, push and administer this repository.
+  # * `maintain` - Recommended for project managers who need to manage the repository without access to sensitive or destructive actions.
+  # * `triage` - Recommended for contributors who need to proactively manage issues and pull requests without write access.
   - name: sswdesigners
     permission: push
   - name: sswdevelopers
@@ -141,11 +141,11 @@ branches:
         strict: false
         # Required. The list of status checks to require in order to merge into this branch
         contexts:
-        - 'Check linked issues'
-        - 'dependency-review'
-        - 'Deploy to slot'
-        - 'lint-code'
-        - 'lint-infra'
+          - "Check linked issues"
+          - "dependency-review"
+          - "Deploy to slot"
+          - "lint-code"
+          - "lint-infra"
       # Required. Enforce all configured restrictions for administrators. Set to true to enforce required status checks for repository administrators. Set to null to disable.
       enforce_admins: true
       # Prevent merge commits from being pushed to matching branches
