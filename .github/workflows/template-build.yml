@@ -77,8 +77,6 @@ jobs:
         run: |
           echo "date=$(Get-Date -Format yyyy-MM-ddThh:mm:ssZ -AsUtc)" >> $env:GITHUB_OUTPUT
 
-      - run: yarn install
-
       - name: Azure CLI - Login
         uses: azure/login@v1
         with:
@@ -86,7 +84,7 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: KeyVault - Secrets
+      - name: keyVault - Secrets
         shell: pwsh
         id: KeyVaultSecrets
         run: |
@@ -94,6 +92,20 @@ jobs:
           $GoogleRecaptchaSiteKey = (az keyvault secret show --name Google-Recaptcha-Site-KEY --vault-name ${{ env.KEY_VAULT}} --query value -o tsv)
           echo "GoogleRecaptchaSiteKey=$GoogleRecaptchaSiteKey" >> $env:GITHUB_OUTPUT
           Write-Host '✅ KV - Secret retrieved'
+
+      - name: AppInsight - Connection Strings
+        shell: pwsh
+        id: AppInsight
+        run: |
+          # AppInsight - Connection String
+          az config set extension.use_dynamic_install=yes_without_prompt
+          $AppInsightName = if ("${{ inputs.tag }}" -ieq "production") { "${{ env.APP_INSIGHT_PROD }}" } else { "${{ env.APP_INSIGHT_DEV }}" }
+
+          $AppInsightConnectionString = (az monitor app-insights component show --resource-group ${{ env.AZURE_RESOURCE_GROUP }} --app $AppInsightName --query connectionString -o tsv)
+          echo "AppInsightConnectionString=$AppInsightConnectionString" >> $env:GITHUB_OUTPUT
+          Write-Host '✅ AppInsight - Connection String retrieved'
+
+      - run: yarn install
 
       - run: yarn build
         env:
@@ -112,6 +124,7 @@ jobs:
           GOOGLE_RECAPTCHA_KEY: ${{ secrets.GOOGLE_RECAPTCHA_KEY }}
           GOOGLE_RECAPTCHA_SITE_KEY: ${{ steps.KeyVaultSecrets.outputs.GoogleRecaptchaSiteKey }}
           KEY_VAULT: ${{ env.KEY_VAULT }}
+          NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING: ${{ steps.AppInsight.outputs.AppInsightConnectionString }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
           SITE_URL: https://www.ssw.com.au
 
