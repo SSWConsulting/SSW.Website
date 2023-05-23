@@ -17,5 +17,6 @@ ENV PORT 3000
 COPY --chown=nextjs:nodejs public ./public
 COPY --chown=nextjs:nodejs .next/standalone ./
 COPY --chown=nextjs:nodejs .next/static ./.next/static
+COPY --chown=nextjs:nodejs appInsight-api.js ./
 
-CMD ["node", "server.js"]
+CMD ["node", "--require", "./appInsight-api.js", "server.js"]

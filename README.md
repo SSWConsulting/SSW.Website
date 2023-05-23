@@ -43,6 +43,28 @@ Build the project:
 yarn build
 ```
 
+## Get Started with Dev Container
+
+### How to
+
+1. Open Command Palette in VSCode
+
+```vscode
+> Dev Containers: Reopen in Container
+```
+
+2. Develop as you would normally
+
+### **Don't want to use Dev Container any more?**
+
+1. Close VSCode connected with the Dev Container
+2. Open project folder on host machine
+3. Remove node_modules and reinstall dependencies
+
+```bash
+yarn install
+```
+
 ## Updating the project's dependencies
 
 ```bash
@@ -77,7 +99,7 @@ Each Pull Request will be deployed to its own staging environment, the URL to th
 ## Getting Help
 
 - [Email SSW](mailto:info@ssw.com.au) to schedule a call.
-- Reach out through the chat widget on [ssw.com.au](https://ssw.com.au)
+- Reach out through the chat widget on [ssw.com.au](https://www.ssw.com.au)
 
 - Visit the [documentation](https://tina.io/docs/) to learn about Tina.
 - [Join the Tina Discord](https://discord.gg/zumN63Ybpf) to share feedback for Tina to improve.

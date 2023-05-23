@@ -15,20 +15,22 @@ const clients = {
 };
 
 export const ClientLogos = () => {
-  return (
-    <div className="flex flex-wrap justify-center gap-6">
-      {Object.keys(clients).map((client) => (
-        <Image
-          src={`/images/clientLogos/${clients[client]}`}
-          alt={client}
-          height={50}
-          width={200}
-          className="my-4 max-w-full rounded-lg"
-          key={client}
-        />
-      ))}
-    </div>
-  );
+    return (
+        <div className="flex flex-wrap justify-center gap-6">
+            {
+                Object.keys(clients).map((client, index) =>
+                    <Image
+                        key={index}
+                        src={`/images/clientLogos/${clients[client]}`}
+                        alt={client}
+                        height={50}
+                        width={200}
+                        className="my-4 max-w-full rounded-lg"
+                    />
+                )
+            }
+        </div>
+    );
 };
 
 export const clientLogosBlockSchema: Template = {
