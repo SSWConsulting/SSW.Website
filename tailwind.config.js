@@ -280,6 +280,9 @@ module.exports = {
               fontWeight: "300",
               marginBottom: "7px",
             },
+            a: {
+              fontWeight: "300"
+            },
             p: {
               marginBottom: "10px",
             },
