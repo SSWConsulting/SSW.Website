@@ -3,6 +3,7 @@ param appServiceName string
 param slotName string
 param acrLoginServer string
 param keyVaultName string
+param appInsightConnectionString string
 
 
 var appSettings = [
@@ -29,6 +30,10 @@ var appSettings = [
   {
     name: 'GOOGLE_RECAPTCHA_SITE_KEY'
     value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/Google-Recaptcha-Site-KEY)'
+  }
+  {
+    name: 'NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING'
+    value: appInsightConnectionString
   }
 ]
 

@@ -16,9 +16,9 @@ module.exports = {
     ],
     additionalSitemaps: [
       // TODO: add sitemaps for other sites when they are available
-      // 'https://ssw.com.au/people/sitemap.xml',
-      // 'https://ssw.com.au/rules/sitemap.xml',
-      "https://ssw.com.au/ssw/sitemap.xml"
+      // 'https://www.ssw.com.au/people/sitemap.xml',
+      // 'https://www.ssw.com.au/rules/sitemap.xml',
+      "https://www.ssw.com.au/ssw/sitemap.xml",
     ],
   },
-}
+};
