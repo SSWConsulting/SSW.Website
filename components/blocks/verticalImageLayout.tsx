@@ -3,7 +3,7 @@ import type { Template } from "tinacms";
 import Image from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-export const ColumnLayout = ({ data }) => {
+export const VerticalImageLayout = ({ data }) => {
   const RawImage = () => (
     <Image
       src={data.imageSrc}
@@ -31,9 +31,9 @@ export const ColumnLayout = ({ data }) => {
   );
 };
 
-export const columnLayoutBlockSchema: Template = {
-  name: "ColumnLayout",
-  label: "Column Layout",
+export const verticalImageLayoutBlockSchema: Template = {
+  name: "VerticalImageLayout",
+  label: "Vertical Image Layout",
   fields: [
     {
       type: "image",

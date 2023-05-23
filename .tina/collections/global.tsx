@@ -68,8 +68,8 @@ export const globalSchema: Collection = {
     },
     {
       type: "object",
-      label: "Offices",
-      name: "offices",
+      label: "Home Page Office Index",
+      name: "homePageOfficeList",
       list: true,
       ui: {
         itemProps: (item) => {

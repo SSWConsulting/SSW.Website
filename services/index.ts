@@ -1,17 +1,5 @@
 import axios, { AxiosResponse } from "axios";
 
-export const createLead = async (data: BookingFormSubmissionData) => {
-  return await axios.post(process.env.CREATE_LEAD_ENDPOINT, data, {
-    headers: { "Content-Type": "application/json" },
-  });
-};
-
-export const validateRecaptcha = async ({ Recaptcha }) => {
-  return await axios.post(
-    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_KEY_V2}&response=${Recaptcha}`
-  );
-};
-
 export const addContactToNewsletters = async (
   data: AddContactToNewslettersData
 ) =>
@@ -31,7 +19,7 @@ and CalendarType eq 'User Groups'\
 &$top=1`;
 
   return await axios.get<LiveStreamBannerInfo[]>(
-    "https://ssw.com.au/ssw/SharePointEventsService.aspx",
+    "https://www.ssw.com.au/ssw/SharePointEventsService.aspx",
     {
       params: { odataFilter: encodeURIComponent(odataFilter) },
     }
@@ -45,7 +33,7 @@ and EndDateTime gt datetime'${datetime}'\
 &$top=${top}`;
 
   const res = await axios.get<EventInfo[]>(
-    "https://ssw.com.au/ssw/SharePointEventsService.aspx",
+    "https://www.ssw.com.au/ssw/SharePointEventsService.aspx",
     {
       params: { odataFilter: encodeURIComponent(odataFilter) },
     }
@@ -61,7 +49,7 @@ export const getLiveStreamWidgetInfo = async (eventId: string) => {
 &$select=*,InternalPresenters/EMail&$expand=InternalPresenters/Id`;
 
   const eventsRes = await axios.get<LiveStreamWidgetInfo[]>(
-    "https://ssw.com.au/ssw/SharePointEventsService.aspx",
+    "https://www.ssw.com.au/ssw/SharePointEventsService.aspx",
     {
       params: { odataFilter: encodeURIComponent(odataFilter) },
     }
@@ -89,7 +77,7 @@ export const getSpeakersInfo = async (ids?: string[], emails?: string[]) => {
       .join(" or ")}`;
 
     const externalSpeakersRes = await axios.get<SpeakerInfo[]>(
-      "https://ssw.com.au/ssw/SharePointExternalSpeakersService.aspx",
+      "https://www.ssw.com.au/ssw/SharePointExternalSpeakersService.aspx",
       {
         params: { odataFilter: encodeURIComponent(externalSpeakerFilter) },
       }
@@ -103,7 +91,7 @@ export const getSpeakersInfo = async (ids?: string[], emails?: string[]) => {
     await Promise.all(
       emails.map(async (email) => {
         const internalSpeakerRes = await axios.get<InternalSpeakerInfo>(
-          "https://ssw.com.au/ssw/CRMService.aspx",
+          "https://www.ssw.com.au/ssw/CRMService.aspx",
           {
             params: { odata: encodeURIComponent(email) },
           }

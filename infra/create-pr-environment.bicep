@@ -15,6 +15,14 @@ module keyVault 'keyVault.bicep' = {
     location: location
   }
 }
+
+module appInsight 'appInsight.bicep' = {
+  name: '${slotName}-appInsight-${now}'
+  params: {
+    projectName: '${projectName}-dev'
+    location:location
+  }
+}
 module appServiceSlot 'appSerivce-create-slot.bicep' = {
   name:'${slotName}-create-slot-${now}'
   params:{
@@ -23,6 +31,7 @@ module appServiceSlot 'appSerivce-create-slot.bicep' = {
     appServiceName: appServiceName
     acrLoginServer: acrLoginServer
     keyVaultName: keyVault.outputs.keyVaultName
+    appInsightConnectionString: appInsight.outputs.appInsightConnectionString
   }
 }
 
@@ -36,6 +45,7 @@ module acrRoleAssignment 'acrRoleAssignment.bicep' = {
   }
 }
 
+
 module kVAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
   name: '${slotName}-KVRoleAssignment-${now}'
   params: {
@@ -45,7 +55,7 @@ module kVAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
   }
 }
 
-module KVServicePrincipalRoleAssignment 'keyVaultRoleAssignment.bicep' = {
+module kVServicePrincipalRoleAssignment 'keyVaultRoleAssignment.bicep' = {
   name: '${slotName}-KVServicePrincipalRoleAssignment-${now}'
   params: {
     keyVaultName: keyVault.outputs.keyVaultName

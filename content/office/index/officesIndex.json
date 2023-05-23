@@ -1,0 +1,25 @@
+{
+  "officesIndex": [
+    {
+      "office": "content/offices/sydney.mdx"
+    },
+    {
+      "office": "content/offices/brisbane.mdx"
+    },
+    {
+      "office": "content/offices/melbourne.mdx"
+    },
+    {
+      "office": "content/offices/newcastle.mdx"
+    },
+    {
+      "office": "content/offices/strasbourg.mdx"
+    },
+    {
+      "office": "content/offices/hangzhou.mdx"
+    }
+  ],
+  "seo": {
+    "title": "Our Offices"
+  }
+}
