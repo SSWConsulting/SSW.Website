@@ -206,6 +206,9 @@
           "page": "content/consulting/gpt.mdx",
           "tags": [
             {
+              "tag": "content/consulting/tag/ai-development.json"
+            },
+            {
               "tag": "content/consulting/tag/consulting.json"
             }
           ]

@@ -18,7 +18,7 @@ import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
 import { InferGetStaticPropsType } from "next";
 
-const allServices = "All SSW Services";
+const allServices = {name: "All SSW Services", order: null};
 
 export default function ConsultingIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -32,7 +32,7 @@ export default function ConsultingIndex(
 
   const router = useRouter();
   const getSelectedTagFromQuery = (): string => {
-    let parsedTag = allServices;
+    let parsedTag = allServices.name;
     if (router.query.tag) {
       const { tag } = router.query;
 
@@ -77,7 +77,7 @@ export default function ConsultingIndex(
       {
         pathname: router.basePath,
         query:
-          selectedTag === allServices
+          selectedTag === allServices.name
             ? {}
             : {
                 tag: selectedTag.replace(" ", "-"),
@@ -245,20 +245,35 @@ const processData = (data) => {
             title: p.title,
             description: p.description,
             logo: p.logo,
-            tags: [allServices, ...p.tags.map((t) => t.tag.name)],
+            tags: [allServices.name, ...p.tags.map((t) => t.tag.name)],
+            tagsOrder: [
+              allServices ,
+              ...p.tags.map((t) => ({
+                name: t.tag.name,
+                order: t.tag.order,
+              })),
+            ],
           };
         }),
       };
     });
 
-  const tags = [
-    ...new Set(
-      categories
-        .map((c) => c.pages?.map((p) => p.tags).flat())
-        .flat()
-        .filter((x) => !!x)
-    ),
-  ];
+  const distinctTags = categories
+    .map((c) => c.pages?.map((p) => p.tagsOrder).flat())
+    .flat()
+    .reduce((accumulator, tag) => {
+      const existingTag = accumulator.find((t) => t.name === tag.name);
+      if (!existingTag) {
+        accumulator.push(tag);
+      }
+      return accumulator;
+    }, []);
+
+  const sortedTags = distinctTags
+    .sort((a, b) => a.order - b.order)
+    .map((tag) => tag.name);
+
+  const tags = sortedTags;
 
   return {
     categories,
