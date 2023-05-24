@@ -3,15 +3,15 @@ import type { Template } from "tinacms";
 import Image from "next/image";
 
 const clients = {
-    "allianz": "allianz.jpg",
-    "carnival": "carnival.jpg",
-    "cisco": "cisco.jpg",
-    "commonwealthbank": "commbank.jpg",
-    "symantec": "symatec.jpg",
-    "domain": "domain.jpg",
-    "eventcinemas": "events.jpg",
-    "microsoft": "microsoft.jpg",
-    "toll": "toll.jpg",
+  allianz: "allianz.jpg",
+  carnival: "carnival.jpg",
+  cisco: "cisco.jpg",
+  commonwealthbank: "commbank.jpg",
+  symantec: "symatec.jpg",
+  domain: "domain.jpg",
+  eventcinemas: "events.jpg",
+  microsoft: "microsoft.jpg",
+  toll: "toll.jpg",
 };
 
 export const ClientLogos = () => {
@@ -34,15 +34,15 @@ export const ClientLogos = () => {
 };
 
 export const clientLogosBlockSchema: Template = {
-    name: "ClientLogos",
-    label: "Client Logos",
-    // Todo: Find a way to have no fields - the one below is to satisfy compiler
-    fields: [
-        {
-            type: "string",
-            label: "Alt text",
-            name: "altText",
-            required: true,
-        },
-    ],
+  name: "ClientLogos",
+  label: "Client Logos",
+  // Todo: Find a way to have no fields - the one below is to satisfy compiler
+  fields: [
+    {
+      type: "string",
+      label: "Alt text",
+      name: "altText",
+      required: true,
+    },
+  ],
 };
