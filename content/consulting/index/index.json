@@ -1,6 +1,16 @@
 {
   "categories": [
     {
+      "category": "content/consulting/category/ai-development.json",
+      "pages": [
+        {
+          "title": "test",
+          "description": "test",
+          "page": "content/consulting/CMS.mdx"
+        }
+      ]
+    },
+    {
       "category": "content/consulting/category/development-teams.json",
       "pages": [
         {
