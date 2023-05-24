@@ -1,20 +1,6 @@
 {
   "categories": [
     {
-      "category": "content/consulting/category/ai-development.json",
-      "pages": [
-        {
-          "title": "test",
-          "page": "content/consulting/access-database-upsizing.mdx"
-        },
-        {
-          "title": "test",
-          "description": "test",
-          "page": "content/consulting/CMS.mdx"
-        }
-      ]
-    },
-    {
       "category": "content/consulting/category/development-teams.json",
       "pages": [
         {
@@ -211,7 +197,7 @@
       ]
     },
     {
-      "category": "content/consulting/category/consulting.json",
+      "category": "content/consulting/category/ai-development.json",
       "pages": [
         {
           "title": "ChatGPT & GPT-4",
@@ -221,12 +207,25 @@
           "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/consulting.json"
             }
           ]
         },
+        {
+          "title": "Machine Learning & AI",
+          "description": "Enable better decisions based on data. Now computers can understand and learn on their own.",
+          "logo": "/images/thumbs/thumb-machinelearning.jpg",
+          "page": "content/consulting/artificial-intelligence.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/ai-development.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "content/consulting/category/consulting.json",
+      "pages": [
         {
           "title": "Remote Work",
           "description": "Put the tools in place to allow your employees to work from home including Teams, cloud migration, VPN, training, and more.",
@@ -343,20 +342,6 @@
           "logo": "/images/thumbs/thumb-hololens.jpg",
           "page": "content/consulting/microsoft-hololens.mdx",
           "tags": [
-            {
-              "tag": "content/consulting/tag/consulting.json"
-            }
-          ]
-        },
-        {
-          "title": "Machine Learning & AI",
-          "description": "Enable better decisions based on data. Now computers can understand and learn on their own.",
-          "logo": "/images/thumbs/thumb-machinelearning.jpg",
-          "page": "content/consulting/artificial-intelligence.mdx",
-          "tags": [
-            {
-              "tag": "content/consulting/tag/ai-development.json"
-            },
             {
               "tag": "content/consulting/tag/consulting.json"
             }
