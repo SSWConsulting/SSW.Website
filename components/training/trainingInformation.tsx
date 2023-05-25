@@ -17,7 +17,7 @@ const TrainingInformationItem: FC<TrainingInformationItemProps> = ({
   body,
 }) => {
   return (
-    <div className="flex flex-col text-center lg:text-left">
+    <div className="flex flex-col text-center text-base lg:text-left">
       <h1
         className="mt-0 pt-0"
         dangerouslySetInnerHTML={{ __html: header }}
