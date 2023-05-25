@@ -32,6 +32,7 @@ module.exports = {
       "social-github": "#2C2C2C",
       "social-meetup": "#f05664",
       sswRed: "#cc4141",
+      sswBlack: "#333333",
       azure: "#007fff",
       gray: {
         50: "#f9f9f9",
@@ -280,8 +281,12 @@ module.exports = {
               fontWeight: "300",
               marginBottom: "7px",
             },
+            a: {
+              fontWeight: "300"
+            },
             p: {
               marginBottom: "10px",
+              color: theme("colors.sswBlack")
             },
             hr: {
               margin: "30px 0",
@@ -327,6 +332,7 @@ module.exports = {
       }),
       backgroundImage: {
         done: "url('/images/icons/done.png')",
+        "arrow-right": "url('/images/icons/arrow-right.png')",
         "live-banner-wait": "url('/blocks/LiveStreamBanner-Wait.png')",
         "live-banner-live": "url('/blocks/LiveStreamBanner-Live.gif')",
         "card-video": "url('/images/icons/video-icon.svg')",

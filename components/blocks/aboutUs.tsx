@@ -92,7 +92,7 @@ const States = {
 };
 
 export const AboutUs = ({ data }) => {
-  const offices = layoutData.offices;
+  const offices = layoutData.homePageOfficeList;
   const [selectedOffice, setSelectedOffice] = useState(null);
   const [officeBeingHovered, setOfficeBeingHovered] = useState(null);
   const [stateBeingHovered, setStateBeingHovered] = useState(null);

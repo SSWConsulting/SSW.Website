@@ -27,4 +27,5 @@ export const NEXT_SEO_DEFAULT: NextSeoProps = {
 		site: layoutData.header.url,
 		cardType: "summary_large_image",
 	},
+	additionalMetaTags: [{ property: "keywords", content: ".NET, Web, Mobile, CRM, SharePoint, Azure, Power BI, Angular, React, Blazor, Office 365, Dynamics" }],
 };

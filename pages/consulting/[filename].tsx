@@ -3,21 +3,21 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { client } from "../../.tina/__generated__/client";
 import { BuiltOnAzure, ClientLogos } from "../../components/blocks";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { Blocks } from "../../components/blocks-renderer";
 import { Booking } from "../../components/blocks/booking";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import BookingButton from "../../components/bookingButton/bookingButton";
-import { Layout } from "../../components/layout";
-import { Marketing } from "../../components/marketing/Marketing";
 import { MediaCardProps } from "../../components/consulting/mediaCard/mediaCard";
 import MediaCards from "../../components/consulting/mediaCard/mediaCards";
+import { Layout } from "../../components/layout";
+import { Marketing } from "../../components/marketing/Marketing";
 import TechnologyCards from "../../components/technologyCard/technologyCards";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import { Blocks } from "../../components/blocks-renderer";
 import { InferGetStaticPropsType } from "next";
 import { removeExtension } from "../../services/utils.service";
 

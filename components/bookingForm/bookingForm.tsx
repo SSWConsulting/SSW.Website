@@ -20,6 +20,7 @@ import { ValidationSchema } from "./validationSchema";
 
 import { Open_Sans } from "next/font/google";
 import classNames from "classnames";
+import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 
 const openSans = Open_Sans({
   variable: "--open-sans-font",
@@ -32,6 +33,7 @@ export const BookingForm = ({ recaptchaKey }) => {
   const [country, setCountry] = useState("");
   const [activeInputLabel, setActiveInputLabel] = useState({});
   const router = useRouter();
+  const appInsights = useAppInsightsContext();
 
   const initialFormValues = {
     fullName: "",
@@ -94,18 +96,23 @@ export const BookingForm = ({ recaptchaKey }) => {
       contactReCaptcha,
       sourceWebPageURL
     );
+
+    const method = { Method: "Create-Lead-UI", Payload: data };
     actions.setSubmitting(false);
 
     await axios
       .post("/api/create-lead", data)
       .then((response) => {
         if (response.data && !response.data.success) {
+          appInsights?.trackException({ exception: response.data }, method);
           setInvalidReptcha("Invalid ReCaptcha!");
         } else {
           onSuccess();
         }
       })
       .catch((err) => {
+        err.data = data;
+        appInsights?.trackException({ exception: err }, method);
         console.error(err);
         return alert("Failed to create lead in CRM");
       });

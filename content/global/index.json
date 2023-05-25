@@ -1,134 +1,154 @@
 {
-	"header": {
-		"name": "SSW Consulting - Sydney, Brisbane, Melbourne, Newcastle",
-		"title": "SSW Consulting - .NET, Web, Mobile, CRM, SharePoint, Azure, Power BI, Angular, React, Office 365 and Dynamics",
-		"description": "30+ years of Microsoft software and web development experience in Australia, France and China. We build with Angular, React, .NET, Azure, Dynamics 365 CRM.",
-		"url": "https://www.ssw.com.au/",
-		"site_name": "SSW Consulting",
-		"alternate_site_name": "SSW"
-	},
-	"aboutUs": {
-		"video": {
-			"url": "https://www.youtube.com/embed/2G7z2mF7Onk",
-			"thumbnailUrl": "https://i.ytimg.com/vi/2G7z2mF7Onk/maxresdefault.jpg"
-		}
-	},
-	"breadcrumbSuffix": "SSW Consulting - Sydney, Brisbane, Melbourne, Newcastle",
-	"bookingButtonText": "Book a FREE Initial Meeting",
-	"offices": [
-		{
-			"url": "/offices/sydney",
-			"name": "SSW Sydney Office",
-			"streetAddress": "Level 1, 81 - 91 Military Road",
-			"suburb": "Neutral Bay",
-			"addressLocality": "Sydney",
-			"addressRegion": "NSW",
-			"addressCountry": "Australia",
-			"postalCode": 2089,
-			"phone": "+61 2 9953 3000",
-			"hours": "9am - 6pm AEST",
-			"days": "Monday - Friday"
-		},
-		{
-			"url": "/offices/brisbane",
-			"name": "SSW Brisbane Office",
-			"streetAddress": "Level 1, 471 Adelaide Street",
-			"suburb": "",
-			"addressLocality": "Brisbane",
-			"addressRegion": "QLD",
-			"addressCountry": "Australia",
-			"postalCode": 4000,
-			"phone": "+61 7 3077 7081",
-			"hours": "9am - 6pm AEST",
-			"days": "Monday - Friday"
-		},
-		{
-			"url": "/offices/melbourne",
-			"name": "SSW Melbourne Office",
-			"streetAddress": "Level 1, 370 Little Bourke Street",
-			"suburb": "",
-			"addressLocality": "Melbourne",
-			"addressRegion": "VIC",
-			"addressCountry": "Australia",
-			"postalCode": 3000,
-			"phone": "+61 3 9005 2034",
-			"hours": "9am - 6pm AEST",
-			"days": "Monday - Friday"
-		},
-		{
-			"url": "/offices/newcastle",
-			"name": "SSW Newcastle Office",
-			"streetAddress": "432 Hunter St",
-			"suburb": "",
-			"addressLocality": "Newcastle",
-			"addressRegion": "NSW",
-			"addressCountry": "Australia",
-			"postalCode": 2300,
-			"phone": "+61 2 9953 3000",
-			"hours": "9am - 6pm AEST",
-			"days": "Monday - Friday"
-		}
-	],
-	"bookingPhone": "+61 2 9953 3000",
-	"socials": [
-		{
-			"type": "phone",
-			"title": "Call us",
-			"url": "tel:+61299533000",
-			"linkText": "CALL US"
-		},
-		{
-			"type": "youtube",
-			"title": "SSW on YouTube",
-			"url": "https://www.youtube.com/user/sswtechtalks/",
-			"username": "sswtechtalks"
-		},
-		{
-			"type": "linkedin",
-			"title": "SSW on LinkedIn",
-			"url": "https://www.linkedin.com/company/ssw/"
-		},
-		{
-			"type": "facebook",
-			"title": "SSW on Facebook",
-			"url": "https://www.facebook.com/SSW.page"
-		},
-		{
-			"type": "instagram",
-			"title": "SSW on Instagram",
-			"url": "https://www.instagram.com/ssw_tv",
-			"username": "ssw_tv"
-		},
-		{
-			"type": "twitter",
-			"title": "SSW on Twitter",
-			"url": "https://twitter.com/SSW_TV",
-			"username": "SSW_TV"
-		},
-		{
-			"type": "tiktok",
-			"title": "SSW on TikTok",
-			"url": "https://www.tiktok.com/@ssw_tv",
-			"username": "ssw_tv"
-		},
-		{
-			"type": "github",
-			"title": "SSW on GitHub",
-			"url": "https://www.github.com/sswconsulting",
-			"username": "sswconsulting"
-		},
-		{
-			"type": "meetup",
-			"url": "https://www.meetup.com/Sydney-NET-User-Group/"
-		}
-	],
-	"apps": {
-		"sswRewards": {
-			"link": {
-				"appStore": "https://apps.apple.com/au/app/ssw-rewards/id1482994853",
-				"googlePlay": "https://play.google.com/store/apps/details?id=com.ssw.consulting&hl=en&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
-			}
-		}
-	},
-	"youtubeChannelLink": "https://www.youtube.com/@SSWTV"
+  "header": {
+    "name": "SSW Consulting - Sydney, Brisbane, Melbourne, Newcastle",
+    "title": "SSW - Enterprise Software Development",
+    "description": "30+ years of Microsoft software and web development experience in Australia, France and China. We build with Angular, React, .NET, Azure, Dynamics 365 CRM.",
+    "url": "https://www.ssw.com.au/",
+    "site_name": "SSW - Enterprise Software Development",
+    "alternate_site_name": "SSW"
+  },
+  "aboutUs": {
+    "video": {
+      "url": "https://www.youtube.com/embed/2G7z2mF7Onk",
+      "thumbnailUrl": "https://i.ytimg.com/vi/2G7z2mF7Onk/maxresdefault.jpg"
+    }
+  },
+  "breadcrumbSuffix": "SSW Consulting - Sydney, Brisbane, Melbourne, Newcastle",
+  "bookingButtonText": "Book a FREE Initial Meeting",
+  "homePageOfficeList": [
+    {
+      "url": "/offices/sydney",
+      "name": "SSW Sydney Office",
+      "streetAddress": "Level 1, 81 - 91 Military Road",
+      "suburb": "Neutral Bay",
+      "addressLocality": "Sydney",
+      "addressRegion": "NSW",
+      "addressCountry": "Australia",
+      "postalCode": 2089,
+      "phone": "+61 2 9953 3000",
+      "hours": "9am - 6pm AEST",
+      "days": "Monday - Friday"
+    },
+    {
+      "url": "/offices/brisbane",
+      "name": "SSW Brisbane Office",
+      "streetAddress": "Level 1, 471 Adelaide Street",
+      "suburb": "",
+      "addressLocality": "Brisbane",
+      "addressRegion": "QLD",
+      "addressCountry": "Australia",
+      "postalCode": 4000,
+      "phone": "+61 7 3077 7081",
+      "hours": "9am - 6pm AEST",
+      "days": "Monday - Friday"
+    },
+    {
+      "url": "/offices/melbourne",
+      "name": "SSW Melbourne Office",
+      "streetAddress": "Level 1, 370 Little Bourke Street",
+      "suburb": "",
+      "addressLocality": "Melbourne",
+      "addressRegion": "VIC",
+      "addressCountry": "Australia",
+      "postalCode": 3000,
+      "phone": "+61 3 9005 2034",
+      "hours": "9am - 6pm AEST",
+      "days": "Monday - Friday"
+    },
+    {
+      "url": "/offices/newcastle",
+      "name": "SSW Newcastle Office",
+      "streetAddress": "432 Hunter St",
+      "suburb": "",
+      "addressLocality": "Newcastle",
+      "addressRegion": "NSW",
+      "addressCountry": "Australia",
+      "postalCode": 2300,
+      "phone": "+61 2 9953 3000",
+      "hours": "9am - 6pm AEST",
+      "days": "Monday - Friday"
+    }
+  ],
+  "bookingPhone": "+61 2 9953 3000",
+  "socials": [
+    {
+      "type": "phone",
+      "title": "Call us",
+      "url": "tel:+61299533000",
+      "linkText": "CALL US"
+    },
+    {
+      "type": "youtube",
+      "title": "SSW on YouTube",
+      "url": "https://www.youtube.com/user/sswtechtalks/",
+      "username": "sswtechtalks"
+    },
+    {
+      "type": "linkedin",
+      "title": "SSW on LinkedIn",
+      "url": "https://www.linkedin.com/company/ssw/"
+    },
+    {
+      "type": "facebook",
+      "title": "SSW on Facebook",
+      "url": "https://www.facebook.com/SSW.page"
+    },
+    {
+      "type": "instagram",
+      "title": "SSW on Instagram",
+      "url": "https://www.instagram.com/ssw_tv",
+      "username": "ssw_tv"
+    },
+    {
+      "type": "twitter",
+      "title": "SSW on Twitter",
+      "url": "https://twitter.com/SSW_TV",
+      "username": "SSW_TV"
+    },
+    {
+      "type": "tiktok",
+      "title": "SSW on TikTok",
+      "url": "https://www.tiktok.com/@ssw_tv",
+      "username": "ssw_tv"
+    },
+    {
+      "type": "github",
+      "title": "SSW on GitHub",
+      "url": "https://www.github.com/sswconsulting",
+      "username": "sswconsulting"
+    },
+    {
+      "type": "meetup",
+      "url": "https://www.meetup.com/Sydney-NET-User-Group/"
+    }
+  ],
+  "apps": {
+    "sswRewards": {
+      "link": {
+        "appStore": "https://apps.apple.com/au/app/ssw-rewards/id1482994853",
+        "googlePlay": "https://play.google.com/store/apps/details?id=com.ssw.consulting&hl=en&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+      }
+    }
+  },
+  "youtubeChannelLink": "https://www.youtube.com/@SSWTV",
+  "officesIndex": [
+    {
+      "office": "content/offices/sydney.mdx"
+    },
+    {
+      "office": "content/offices/brisbane.mdx"
+    },
+    {
+      "office": "content/offices/melbourne.mdx"
+    },
+    {
+      "office": "content/offices/newcastle.mdx"
+    },
+    {
+      "office": "content/offices/hangzhou.mdx"
+    },
+    {
+      "office": "content/offices/strasbourg.mdx"
+    }
+  ]
 }
