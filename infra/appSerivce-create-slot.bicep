@@ -35,6 +35,10 @@ var appSettings = [
     name: 'NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING'
     value: appInsightConnectionString
   }
+  {
+    name: 'NEWSLETTERS_ENDPOINT'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/Newsletters-Endpoint-Dev)'
+  }
 ]
 
 
