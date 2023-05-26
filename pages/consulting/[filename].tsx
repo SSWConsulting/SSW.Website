@@ -19,6 +19,7 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { InferGetStaticPropsType } from "next";
+import { removeExtension } from "../../services/utils.service";
 
 export default function ConsultingPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -28,10 +29,6 @@ export default function ConsultingPage(
     query: props.query,
     variables: props.variables,
   });
-
-  const removeExtension = (file: string) => {
-    return file.split(".")[0];
-  };
 
   const technologyCardDocs =
     props.technologyCards.data.technologiesConnection.edges.map((n) => n.node);
