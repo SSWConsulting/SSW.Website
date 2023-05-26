@@ -2,9 +2,9 @@ import React, { FC } from "react";
 import NextBreadcrumbs from "nextjs-breadcrumbs2";
 
 interface BreadcrumbsProps {
-	path: string;
-	suffix: string;
-	title: string;
+  path: string;
+  suffix: string;
+  title: string;
 }
 
 export const Breadcrumbs: FC<BreadcrumbsProps> = (props) => {
@@ -17,6 +17,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = (props) => {
 					{ from: "consulting", to: "Services" },
 					{ from: "products", to: "Products" },
 					{ from: "offices", to: "Offices" },
+					{ from: "training", to: "Training" },
 					{ from: props.path, to: `${props.title}` },
 				]}
 				activeItemClassName={listItemStyling}

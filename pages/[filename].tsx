@@ -10,6 +10,7 @@ import { Container } from "../components/util/container";
 import { Section } from "../components/util/section";
 import { SEO } from "../components/util/seo";
 import { InferGetStaticPropsType } from "next";
+import { removeExtension } from "../services/utils.service";
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -18,17 +19,13 @@ export default function HomePage(
     data: props.data,
     query: props.query,
     variables: props.variables,
-  }); 
-  
+  });
+
   // Here due to components attempting to access pageBlock items before
   // they are initialised
   if (!pageBlocks) {
     return null;
   }
-
-  const removeExtension = (file: string) => {
-    return file.split(".")[0];
-  };
 
   const contentClass = data.page.sideBar
     ? "max-w-full md:col-span-3 prose"
@@ -74,16 +71,16 @@ export default function HomePage(
 }
 
 export const getStaticProps = async ({ params }) => {
-    const tinaProps = await client.queries.contentQuery({
-        relativePath: `${params.filename}.mdx`,
-    });
-    return {
-        props: {
-            data: tinaProps.data,
-            query: tinaProps.query,
-            variables: tinaProps.variables,
-        },
-    };
+  const tinaProps = await client.queries.contentQuery({
+    relativePath: `${params.filename}.mdx`,
+  });
+  return {
+    props: {
+      data: tinaProps.data,
+      query: tinaProps.query,
+      variables: tinaProps.variables,
+    },
+  };
 };
 
 export const getStaticPaths = async () => {
