@@ -3,34 +3,32 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { client } from "../../.tina/__generated__/client";
 import { BuiltOnAzure, ClientLogos } from "../../components/blocks";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { Blocks } from "../../components/blocks-renderer";
 import { Booking } from "../../components/blocks/booking";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import BookingButton from "../../components/bookingButton/bookingButton";
-import { Layout } from "../../components/layout";
-import { Marketing } from "../../components/marketing/Marketing";
 import { MediaCardProps } from "../../components/consulting/mediaCard/mediaCard";
 import MediaCards from "../../components/consulting/mediaCard/mediaCards";
+import { Layout } from "../../components/layout";
+import { Marketing } from "../../components/marketing/Marketing";
 import TechnologyCards from "../../components/technologyCard/technologyCards";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import { Blocks } from "../../components/blocks-renderer";
+import { InferGetStaticPropsType } from "next";
+import { removeExtension } from "../../services/utils.service";
 
 export default function ConsultingPage(
-  props: AsyncReturnType<typeof getStaticProps>["props"]
+  props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const { data } = useTina({
     data: props.data,
     query: props.query,
     variables: props.variables,
   });
-
-  const removeExtension = (file: string) => {
-    return file.split(".")[0];
-  };
 
   const technologyCardDocs =
     props.technologyCards.data.technologiesConnection.edges.map((n) => n.node);
@@ -49,7 +47,7 @@ export default function ConsultingPage(
 
   const bookingButtonProps = {
     buttonText: data.global.bookingButtonText,
-    recaptchaKey: props.env["GOOGLE_RECAPTCHA_KEY"],
+    recaptchaKey: props.env["GOOGLE_RECAPTCHA_SITE_KEY"],
   };
 
   return (
@@ -229,7 +227,8 @@ export const getStaticProps = async ({ params }) => {
       technologyCards: technologyCardsProps,
       marketingData: marketingSection.data,
       env: {
-        GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY || null,
+        GOOGLE_RECAPTCHA_SITE_KEY:
+          process.env.GOOGLE_RECAPTCHA_SITE_KEY || null,
       },
       seo,
     },
@@ -259,6 +258,3 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
-
-export type AsyncReturnType<T extends (...args: any) => Promise<any>> = // eslint-disable-line @typescript-eslint/no-explicit-any
-  T extends (...args: any) => Promise<infer R> ? R : any; // eslint-disable-line @typescript-eslint/no-explicit-any

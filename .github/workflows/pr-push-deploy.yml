@@ -3,10 +3,10 @@ name: PR - build and deploy to slot
 on:
   pull_request:
     branches:
-    - main
+      - main
   workflow_dispatch:
 
-concurrency: 
+concurrency:
   group: ci-${{ github.event.number }}-${{ github.workflow }}
   cancel-in-progress: true
 
@@ -24,7 +24,7 @@ jobs:
       id-token: write
       contents: read
     secrets: inherit
-  
+
   pr-deploy:
     name: Deploy to slot
     needs: build
@@ -56,6 +56,7 @@ jobs:
           APP_SERVICE_NAME: ${{ env.APP_SERVICE_NAME }}
           ACR_LOGIN_SERVER: ${{ env.ACR_LOGIN_SERVER }}
           IMAGE_NAME: ${{ env.IMAGE_NAME }}
+          AZURE_SERVICE_PRINCIPAL_OBJECT_ID: ${{ secrets.AZURE_SERVICE_PRINCIPAL_OBJECT_ID }}
 
       - name: Comment on PR
         uses: mshick/add-pr-comment@v2
@@ -63,7 +64,7 @@ jobs:
           message: |
             Deployed changes to <${{ steps.deploy.outputs.url }}>
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token-user-login: 'github-actions[bot]'
+          repo-token-user-login: "github-actions[bot]"
           allow-repeats: true
 
   pagespeedInsights:
@@ -75,7 +76,7 @@ jobs:
     steps:
       - uses: wicksipedia/pagespeed-insights@main
         id: pagespeed-insights
-        with:          
+        with:
           url: ${{ needs.pr-deploy.outputs.url }}
           categories: |
             accessibility
@@ -100,5 +101,5 @@ jobs:
 
             View the full report <https://pagespeed.web.dev/report?url=${{ needs.pr-deploy.outputs.url }}>
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token-user-login: 'github-actions[bot]'
+          repo-token-user-login: "github-actions[bot]"
           allow-repeats: true

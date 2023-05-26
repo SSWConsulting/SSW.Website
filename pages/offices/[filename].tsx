@@ -4,29 +4,27 @@ import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../.tina/__generated__/client";
 
+import { BuiltOnAzure } from "../../components/blocks";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
-import { Container } from "../../components/util/container";
-import { BuiltOnAzure } from "../../components/blocks";
-import { Section } from "../../components/util/section";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
-import { SEO } from "../../components/util/seo";
+import ContactPanel from "../../components/offices/contactPanel";
 import MicrosoftPanel from "../../components/offices/microsoftPanel";
 import TestimonialPanel from "../../components/offices/testimonialPanel";
-import ContactPanel from "../../components/offices/contactPanel";
+import { Container } from "../../components/util/container";
+import { Section } from "../../components/util/section";
+import { SEO } from "../../components/util/seo";
+import { InferGetStaticPropsType } from "next";
+import { removeExtension } from "../../services/utils.service";
 
 export default function OfficePage(
-  props: AsyncReturnType<typeof getStaticProps>["props"]
+  props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const { data } = useTina({
     data: props.data,
     query: props.query,
     variables: props.variables,
   });
-
-  const removeExtension = (file: string) => {
-    return file.split(".")[0];
-  };
 
   return (
     <>
@@ -205,6 +203,3 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
-
-export type AsyncReturnType<T extends (...args: any) => Promise<any>> = // eslint-disable-line @typescript-eslint/no-explicit-any
-  T extends (...args: any) => Promise<infer R> ? R : any; // eslint-disable-line @typescript-eslint/no-explicit-any

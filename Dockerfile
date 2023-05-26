@@ -1,4 +1,4 @@
-FROM node:19-alpine AS runner
+FROM node:20-alpine AS runner
 RUN corepack enable
 
 # Uncomment the following line in case you want to disable telemetry during runtime.
@@ -17,5 +17,6 @@ ENV PORT 3000
 COPY --chown=nextjs:nodejs public ./public
 COPY --chown=nextjs:nodejs .next/standalone ./
 COPY --chown=nextjs:nodejs .next/static ./.next/static
+COPY --chown=nextjs:nodejs appInsight-api.js ./
 
-CMD ["node", "server.js"]
+CMD ["node", "--require", "./appInsight-api.js", "server.js"]

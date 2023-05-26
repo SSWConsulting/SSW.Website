@@ -24,9 +24,6 @@
               "tag": "content/consulting/tag/application-development.json"
             },
             {
-              "tag": "content/consulting/tag/website-development.json"
-            },
-            {
               "tag": "content/consulting/tag/mobile-development.json"
             }
           ]
@@ -42,9 +39,6 @@
             },
             {
               "tag": "content/consulting/tag/website-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/consulting.json"
             }
           ]
         },
@@ -54,9 +48,6 @@
           "logo": "/images/thumbs/thumb-react.jpg",
           "page": "content/consulting/react.mdx",
           "tags": [
-            {
-              "tag": "content/consulting/tag/consulting.json"
-            },
             {
               "tag": "content/consulting/tag/application-development.json"
             },
@@ -76,9 +67,6 @@
             },
             {
               "tag": "content/consulting/tag/website-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/consulting.json"
             }
           ]
         },
@@ -93,9 +81,6 @@
             },
             {
               "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/consulting.json"
             }
           ]
         },
@@ -105,6 +90,9 @@
           "logo": "/images/thumbs/thumb-windows8.jpg",
           "page": "content/consulting/desktop-development.mdx",
           "tags": [
+            {
+              "tag": "content/consulting/tag/mobile-development.json"
+            },
             {
               "tag": "content/consulting/tag/website-development.json"
             },
@@ -118,16 +106,10 @@
           "description": "Jamstack is a modern web development architecture based on client-side JavaScript, reusable APIs and prebuilt Markup. It's used on SSW Rules and SSW People.",
           "logo": "/images/thumbs/thumb-jamstack.jpg",
           "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Jamstack.aspx",
+          "externalUrl": "https://www.ssw.com.au/consulting/jamstack",
           "tags": [
             {
-              "tag": "content/consulting/tag/consulting.json"
-            },
-            {
               "tag": "content/consulting/tag/website-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/cms.json"
             }
           ]
         },
@@ -138,7 +120,13 @@
           "page": "content/consulting/enterprise-reporting.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/consulting.json"
+              "tag": "content/consulting/tag/database-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/application-development.json"
             }
           ]
         },
@@ -150,12 +138,6 @@
           "tags": [
             {
               "tag": "content/consulting/tag/database-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
             }
           ]
         },
@@ -184,9 +166,6 @@
             },
             {
               "tag": "content/consulting/tag/website-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/consulting.json"
             }
           ]
         },
@@ -197,7 +176,10 @@
           "page": "content/consulting/azure.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/consulting.json"
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
             }
           ]
         },
@@ -209,9 +191,33 @@
           "tags": [
             {
               "tag": "content/consulting/tag/database-development.json"
-            },
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "content/consulting/category/ai-development.json",
+      "pages": [
+        {
+          "title": "ChatGPT & GPT-4",
+          "description": "GPT and ChatGPT are ground-breaking AI language models that can revolutionize the way businesses communicate, automate tasks, and streamline processes.",
+          "logo": "/images/thumbs/thumb-gpt.jpg",
+          "page": "content/consulting/gpt.mdx",
+          "tags": [
             {
-              "tag": "content/consulting/tag/consulting.json"
+              "tag": "content/consulting/tag/ai-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Machine Learning & AI",
+          "description": "Enable better decisions based on data. Now computers can understand and learn on their own.",
+          "logo": "/images/thumbs/thumb-machinelearning.jpg",
+          "page": "content/consulting/artificial-intelligence.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/ai-development.json"
             }
           ]
         }
@@ -238,13 +244,7 @@
           "page": "content/consulting/chinafy-app.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
-            },
-            {
               "tag": "content/consulting/tag/consulting.json"
-            },
-            {
-              "tag": "content/consulting/tag/application-development.json"
             }
           ]
         },
@@ -343,29 +343,6 @@
           "page": "content/consulting/microsoft-hololens.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/mobile-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/consulting.json"
-            }
-          ]
-        },
-        {
-          "title": "Machine Learning & AI",
-          "description": "Enable better decisions based on data. Now computers can understand and learn on their own.",
-          "logo": "/images/thumbs/thumb-machinelearning.jpg",
-          "page": "content/consulting/artificial-intelligence.mdx",
-          "tags": [
-            {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
-            },
-            {
               "tag": "content/consulting/tag/consulting.json"
             }
           ]
@@ -378,9 +355,6 @@
           "tags": [
             {
               "tag": "content/consulting/tag/consulting.json"
-            },
-            {
-              "tag": "content/consulting/tag/application-development.json"
             }
           ]
         },
@@ -544,9 +518,6 @@
             },
             {
               "tag": "content/consulting/tag/video.json"
-            },
-            {
-              "tag": "content/consulting/tag/consulting.json"
             }
           ]
         },
@@ -592,7 +563,7 @@
           "page": "content/consulting/azure.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/consulting.json"
+              "tag": "content/consulting/tag/platform-development.json"
             }
           ]
         },
@@ -602,6 +573,9 @@
           "logo": "/images/thumbs/thumb-power-platform.jpg",
           "page": "content/consulting/power-platform.mdx",
           "tags": [
+            {
+              "tag": "content/consulting/tag/platform-development.json"
+            },
             {
               "tag": "content/consulting/tag/database-development.json"
             }
@@ -614,6 +588,9 @@
           "page": "content/consulting/sharepoint.mdx",
           "tags": [
             {
+              "tag": "content/consulting/tag/platform-development.json"
+            },
+            {
               "tag": "content/consulting/tag/website-development.json"
             }
           ]
@@ -625,7 +602,7 @@
           "page": "content/consulting/dynamics-365.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/consulting.json"
+              "tag": "content/consulting/tag/platform-development.json"
             }
           ]
         },
@@ -636,10 +613,7 @@
           "page": "content/consulting/microsoft-365.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/consulting.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/platform-development.json"
             }
           ]
         }
@@ -652,14 +626,11 @@
           "title": "WordPress",
           "description": "WordPress the most popular content management system (CMS) on the web, and is trusted by content publishers from both large and small businesses.",
           "logo": "/images/thumbs/thumb-wordpress.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/WordPress.aspx",
+          "page": "content/consulting/wordpress.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -670,14 +641,11 @@
           "title": "Kentico",
           "description": "Kentico is the only fully integrated ASP.NET CMS, E-commerce, and Online Marketing platform.",
           "logo": "/images/thumbs/thumb-kentico.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Kentico.aspx",
+          "page": "content/consulting/kentico.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -688,14 +656,11 @@
           "title": "DNN - DotNetNuke",
           "description": "DNN (AKA Evoq) can be used as a web content management system (CMS) for simple web sites or as a powerful application development framework.",
           "logo": "/images/thumbs/thumb-dnn.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/DNN-DotNetNuke.aspx",
+          "page": "content/consulting/dnn-dotnetnuke.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -706,14 +671,11 @@
           "title": "Sitefinity",
           "description": "Sitefinity's mix of benefits for marketers, IT managers, Developers and designers make it the ideal choice for medium sized businesses.",
           "logo": "/images/thumbs/thumb-sitefinity.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Sitefinity.aspx",
+          "page": "content/consulting/sitefinity.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -724,14 +686,11 @@
           "title": "Orchard",
           "description": "A free, open source, community-focused project aimed at delivering applications and reusable components on the rock-solid ASP.NET MVC platform.",
           "logo": "/images/thumbs/thumb-orchard.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Orchard.aspx",
+          "page": "content/consulting/orchard.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -742,14 +701,11 @@
           "title": "Sitecore",
           "description": "A mix of powerful marketing and business features, rich development support and scalability make it the ideal solution for leading websites.",
           "logo": "/images/thumbs/thumb-sitecore.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Sitecore.aspx",
+          "page": "content/consulting/sitecore.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -760,14 +716,11 @@
           "title": "Umbraco",
           "description": "With over than 200.000 installations, Umbraco is one of the most deployed Web Content Management Systems on the Microsoft stack.",
           "logo": "/images/thumbs/thumb-umbraco.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Umbraco.aspx",
+          "page": "content/consulting/umbraco.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/website-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -786,7 +739,7 @@
           "page": "content/consulting/network-architecture.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/consulting.json"
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
             }
           ]
         },
@@ -797,7 +750,7 @@
           "page": "content/consulting/powershell.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/consulting.json"
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
             }
           ]
         },
@@ -816,8 +769,8 @@
           "title": "On-Premises: Data Protection Manager",
           "description": "Microsoft System Center Data Protection Manager can take the stress out of backups by allowing you to control all backups from one central console.",
           "logo": "/images/thumbs/thumb-data-protection.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Data-Protection-Manager.aspx",
+          "page": "content/consulting/data-protection-manager.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/cloud-and-infrastructure.json"
@@ -828,8 +781,8 @@
           "title": "BackBlaze and CloudBerry",
           "description": "Backblaze has introduced a simple backup system utilizing B2 Cloud Storage which is cheap, requires little on premises infrastructure and fast to setup.",
           "logo": "/images/thumbs/thumb-backblaze.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Consulting/BackBlaze-and-CloudBerry-Backup.aspx",
+          "page": "content/consulting/backblaze-and-cloudberry-backup.mdx",
+          "externalUrl": "",
           "tags": [
             {
               "tag": "content/consulting/tag/cloud-and-infrastructure.json"
@@ -843,7 +796,7 @@
           "page": "content/consulting/backup-recovery.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/consulting.json"
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
             }
           ]
         },
@@ -854,7 +807,7 @@
           "page": "content/consulting/microsoft-teams.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/consulting.json"
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
             }
           ]
         },
@@ -865,7 +818,7 @@
           "page": "content/consulting/video-conferencing.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/consulting.json"
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
             }
           ]
         },
@@ -876,7 +829,7 @@
           "page": "content/consulting/service-desk.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/consulting.json"
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
             }
           ]
         },
@@ -887,7 +840,7 @@
           "page": "content/consulting/support-plans.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/consulting.json"
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
             }
           ]
         }

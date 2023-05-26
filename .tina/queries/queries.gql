@@ -19,6 +19,13 @@ query officeContentQuery($relativePath: String!) {
   }
 }
 
+query trainingContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  training(relativePath: $relativePath) {
+    ...TrainingParts
+  }
+}
+
 query allTestimonialsQuery {
   testimonialsConnection {
     Testimonials: edges {
@@ -73,5 +80,38 @@ query employmentPageQuery($relativePath: String!) {
   ...LayoutQueryFragment
   employment(relativePath: $relativePath) {
     ...EmploymentParts
+  }
+}
+
+query officeIndexQuery($relativePath: String!) {
+  officeIndex(relativePath: $relativePath) {
+    seo {
+      title
+      description
+      canonical
+      images {
+        url
+        width
+        height
+        alt
+      }
+    }
+    officesIndex {
+      office {
+        ... on Offices {
+          url
+          name
+          streetAddress
+          suburb
+          addressLocality
+          addressRegion
+          addressCountry
+          postalCode
+          phone
+          days
+          thumbnail
+        }
+      }
+    }
   }
 }

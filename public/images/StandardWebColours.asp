@@ -1,0 +1,2904 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+<HEAD>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<TITLE>216 CROSS-PLATFORM BROWSER-SAFE COLOURS</TITLE>
+<Link rel="stylesheet" type="text/css" href="/ssw/Include/sswmenu.css">
+<script language="JavaScript" src="/ssw/Include/incCheckemail.js"></script>
+</head>
+<body TOPMARGIN="0" LEFTMARGIN="0" MARGINWIDTH="0" MARGINHEIGHT="0" TEXT="#000000" ALINK="#003399" LINK="#003399" VLINK="#003399" >
+<bgsound id="sound" > 
+<TABLE WIDTH="100%" BGCOLOR=white BORDER=0 CELLSPACING=0 CELLPADDING=0>
+  <TR> 
+    <TD><IMG src="/ssw/Images/imgSSWsmall.GIF" name=Image1 ><IMG height=45 src="/ssw/Images/hd_2.gif" width=200 ></TD>
+  </TR>
+</TABLE>
+		<script language="JavaScript" src="/ssw/Include/IncNavTop.js" type="text/javascript"></script>
+
+<SCRIPT language=JavaScript type=text/javascript>
+		  showToolbar();
+		  updateIt();
+</SCRIPT>
+<!-- end heading//-->
+
+<p>
+
+<BR><H3>The OFFICIAL 216 CROSS-PLATFORM BROWSER-SAFE COLOURS</H3>
+
+<P>
+
+
+</CENTER>
+
+<P>
+
+<CENTER>
+	<TABLE BORDER=0 WIDTH=87% CELLPADDING=5 CELLSPACING=5>
+
+<TR>
+	<TD ALIGN=CENTER BGCOLOR="#0099CC" COLSPAN=2>
+	<B>The Official 216 Cross-Platform Browser-Safe Colour Chart</B>
+	</TD>
+</TR>
+
+<TR>
+
+<TD ALIGN=CENTER BGCOLOR="#0099CC"><B>HTML<BR>Colour Values</B></TD>
+
+<TD>This is the hexadecimal colour information that can be entered into an html document so that the colour in the RRGGBB format can be reproduced where <B>R</B>, <B>G</B> and <B>B</B> range from 0 to F (00=0; FF=255)</TD>
+
+</TR>
+
+<TR>
+
+<TD ALIGN=CENTER BGCOLOR="#0099CC"><B>RGB<BR>Colour Values</B></TD>
+
+<TD>These are the three-digit colour values for each of the <B>red</B>, <B>green</B> and <B>blue</B> components in eight-bit per colour notation (0-255)</TD>
+
+</TR>
+
+<TR>
+
+<TD ALIGN=CENTER BGCOLOR="#0099CC"><B>CMYK<BR>Colour Values</B></TD>
+
+<TD>This is the percentage of <B>cyan</B> , <B>magenta</B> , <B>yellow</B> and <B>black</B></TD>
+
+</TR>
+
+	</TABLE>
+</CENTER>
+
+<P><BR>
+
+<CENTER>
+	<TABLE BORDER=1 WIDTH="97%" CELLPADDING=10 CELLSPACING=3>
+
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#FFFFCC">
+	
+	<B>HTML:
+	<BR>FFFFCC</B>
+	<P>R=255
+	<BR>G=255
+	<BR>B=204
+	<P>C=0
+	<BR>M=0
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FFFF99">
+	
+	<B>HTML:
+	<BR>FFFF99</B>
+	<P>R=255
+	<BR>G=255
+	<BR>B=153
+	<P>C=0
+	<BR>M=0
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FFFF66">
+	
+	<B>HTML:
+	<BR>FFFF66</B>
+	<P>R=255
+	<BR>G=255
+	<BR>B=102
+	<P>C=0
+	<BR>M=0
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FFFF33">
+	
+	<B>HTML:
+	<BR>FFFF33</B>
+	<P>R=255
+	<BR>G=255
+	<BR>B=51
+	<P>C=0
+	<BR>M=0
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FFFF00">
+	
+	<B>HTML:
+	<BR>FFFF00</B>
+	<P>R=255
+	<BR>G=255
+	<BR>B=0
+	<P>C=0
+	<BR>M=0
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CCCC00">
+	
+	<B>HTML:
+	<BR>CCCC00</B>
+	<P>R=204
+	<BR>G=204
+	<BR>B=0
+	<P>C=20
+	<BR>M=20
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+</TR>
+<!--1 to 6-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#FFCC66">
+	
+	<B>HTML:
+	<BR>FFCC66</B>
+	<P>R=255
+	<BR>G=204
+	<BR>B=102
+	<P>C=0
+	<BR>M=20
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FFCC00">
+	
+	<B>HTML:
+	<BR>FFCC00</B>
+	<P>R=255
+	<BR>G=204
+	<BR>B=0
+	<P>C=0
+	<BR>M=20
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FFCC33">
+	
+	<B>HTML:
+	<BR>FFCC33</B>
+	<P>R=255
+	<BR>G=204
+	<BR>B=51
+	<P>C=0
+	<BR>M=20
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CC9900">
+	
+	<B>HTML:
+	<BR>CC9900</B>
+	<P>R=204
+	<BR>G=153
+	<BR>B=0
+	<P>C=20
+	<BR>M=40
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CC9933">
+	
+	<B>HTML:
+	<BR>CC9933</B>
+	<P>R=204
+	<BR>G=153
+	<BR>B=51
+	<P>C=20
+	<BR>M=40
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#996600">
+	
+	<B>HTML:
+	<BR>996600</B>
+	<P>R=153
+	<BR>G=102
+	<BR>B=0
+	<P>C=40
+	<BR>M=60
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+</TR>
+<!--7 to 12-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#FF9900">
+	
+	<B>HTML:
+	<BR>FF9900</B>
+	<P>R=255
+	<BR>G=153
+	<BR>B=0
+	<P>C=0
+	<BR>M=40
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FF9933">
+	
+	<B>HTML:
+	<BR>FF9933</B>
+	<P>R=255
+	<BR>G=153
+	<BR>B=51
+	<P>C=0
+	<BR>M=40
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CC9966">
+	
+	<B>HTML:
+	<BR>CC9966</B>
+	<P>R=204
+	<BR>G=153
+	<BR>B=102
+	<P>C=20
+	<BR>M=40
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CC6600">
+	
+	<B>HTML:
+	<BR>CC6600</B>
+	<P>R=204
+	<BR>G=102
+	<BR>B=0
+	<P>C=20
+	<BR>M=60
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#996633">
+	
+	<B>HTML:
+	<BR>996633</B>
+	<P>R=153
+	<BR>G=102
+	<BR>B=51
+	<P>C=40
+	<BR>M=60
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#663300">
+	
+	<B>HTML:
+	<BR>663300</B>
+	<P>R=102
+	<BR>G=51
+	<BR>B=0
+	<P>C=60
+	<BR>M=80
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+</TR>
+<!--13 to 18-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#FFCC99">
+	
+	<B>HTML:
+	<BR>FFCC99</B>
+	<P>R=255
+	<BR>G=204
+	<BR>B=153
+	<P>C=0
+	<BR>M=20
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FF9966">
+	
+	<B>HTML:
+	<BR>FF9966</B>
+	<P>R=255
+	<BR>G=153
+	<BR>B=102
+	<P>C=0
+	<BR>M=40
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FF6600">
+	
+	<B>HTML:
+	<BR>FF6600</B>
+	<P>R=255
+	<BR>G=102
+	<BR>B=0
+	<P>C=0
+	<BR>M=60
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CC6633">
+	
+	<B>HTML:
+	<BR>CC6633</B>
+	<P>R=204
+	<BR>G=102
+	<BR>B=51
+	<P>C=20
+	<BR>M=60
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#993300">
+	
+	<B>HTML:
+	<BR>993300</B>
+	<P>R=153
+	<BR>G=51
+	<BR>B=0
+	<P>C=40
+	<BR>M=80
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#660000">
+	
+	<B>HTML:
+	<BR>660000</B>
+	<P>R=102
+	<BR>G=0
+	<BR>B=0
+	<P>C=60
+	<BR>M=100
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+</TR>
+<!--19 to 24-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#FF6633">
+	
+	<B>HTML:
+	<BR>FF6633</B>
+	<P>R=255
+	<BR>G=102
+	<BR>B=51
+	<P>C=0
+	<BR>M=60
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CC3300">
+	
+	<B>HTML:
+	<BR>CC3300</B>
+	<P>R=204
+	<BR>G=51
+	<BR>B=0
+	<P>C=20
+	<BR>M=80
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FF3300">
+	
+	<B>HTML:
+	<BR>FF3300</B>
+	<P>R=255
+	<BR>G=51
+	<BR>B=0
+	<P>C=0
+	<BR>M=80
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FF0000">
+	
+	<B>HTML:
+	<BR>FF0000</B>
+	<P>R=255
+	<BR>G=51
+	<BR>B=0
+	<P>C=0
+	<BR>M=80
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CC0000">
+	
+	<B>HTML:
+	<BR>CC0000</B>
+	<P>R=204
+	<BR>G=0
+	<BR>B=0
+	<P>C=20
+	<BR>M=100
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#990000">
+	
+	<B>HTML:
+	<BR>990000</B>
+	<P>R=153
+	<BR>G=0
+	<BR>B=0
+	<P>C=40
+	<BR>M=100
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+</TR>
+<!--25 to 30-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#FFCCCC">
+	
+	<B>HTML:
+	<BR>FFCCCC</B>
+	<P>R=255
+	<BR>G=204
+	<BR>B=204
+	<P>C=0
+	<BR>M=20
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FF9999">
+	
+	<B>HTML:
+	<BR>FF9999</B>
+	<P>R=255
+	<BR>G=153
+	<BR>B=153
+	<P>C=0
+	<BR>M=40
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FF6666">
+	
+	<B>HTML:
+	<BR>FF6666</B>
+	<P>R=255
+	<BR>G=102
+	<BR>B=102
+	<P>C=0
+	<BR>M=60
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FF3333">
+	
+	<B>HTML:
+	<BR>FF3333</B>
+	<P>R=255
+	<BR>G=51
+	<BR>B=51
+	<P>C=0
+	<BR>M=80
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="FF0033#">
+	
+	<B>HTML:
+	<BR>FF0033</B>
+	<P>R=255
+	<BR>G=0
+	<BR>B=51
+	<P>C=0
+	<BR>M=100
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CC0033">
+	
+	<B>HTML:
+	<BR>CC0033</B>
+	<P>R=204
+	<BR>G=0
+	<BR>B=51
+	<P>C=20
+	<BR>M=100
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+</TR>
+<!--31 to 36-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#CC9999">
+	
+	<B>HTML:
+	<BR>CC9999</B>
+	<P>R=204
+	<BR>G=153
+	<BR>B=153
+	<P>C=20
+	<BR>M=40
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CC6666">
+	
+	<B>HTML:
+	<BR>CC6666</B>
+	<P>R=204
+	<BR>G=102
+	<BR>B=102
+	<P>C=20
+	<BR>M=40
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CC3333">
+	
+	<B>HTML:
+	<BR>CC3333</B>
+	<P>R=204
+	<BR>G=51
+	<BR>B=51
+	<P>C=20
+	<BR>M=80
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#993333">
+	
+	<B>HTML:
+	<BR>993333</B>
+	<P>R=153
+	<BR>G=51
+	<BR>B=51
+	<P>C=40
+	<BR>M=80
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#990033">
+	
+	<B>HTML:
+	<BR>990033</B>
+	<P>R=153
+	<BR>G=0
+	<BR>B=51
+	<P>C=40
+	<BR>M=100
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#330000">
+	
+	<B>HTML:
+	<BR>330000</B>
+	<P>R=51
+	<BR>G=0
+	<BR>B=0
+	<P>C=80
+	<BR>M=100
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+</TR>
+<!--37 to 42-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#FF6699">
+	
+	<B>HTML:
+	<BR>FF6699</B>
+	<P>R=255
+	<BR>G=102
+	<BR>B=153
+	<P>C=0
+	<BR>M=60
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FF3366">
+	
+	<B>HTML:
+	<BR>FF3366</B>
+	<P>R=255
+	<BR>G=51
+	<BR>B=102
+	<P>C=0
+	<BR>M=80
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FF0066">
+	
+	<B>HTML:
+	<BR>FF0066</B>
+	<P>R=255
+	<BR>G=0
+	<BR>B=102
+	<P>C=0
+	<BR>M=100
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CC3366">
+	
+	<B>HTML:
+	<BR>CC3366</B>
+	<P>R=204
+	<BR>G=51
+	<BR>B=102
+	<P>C=20
+	<BR>M=80
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#996666">
+	
+	<B>HTML:
+	<BR>996666</B>
+	<P>R=153
+	<BR>G=102
+	<BR>B=102
+	<P>C=40
+	<BR>M=60
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#663333">
+	
+	<B>HTML:
+	<BR>663333</B>
+	<P>R=102
+	<BR>G=51
+	<BR>B=51
+	<P>C=60
+	<BR>M=80
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+</TR>
+<!--43 to 48-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#FF99CC">
+	
+	<B>HTML:
+	<BR>FF99CC</B>
+	<P>R=255
+	<BR>G=153
+	<BR>B=204
+	<P>C=0
+	<BR>M=40
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FF3399">
+	
+	<B>HTML:
+	<BR>FF3399</B>
+	<P>R=255
+	<BR>G=51
+	<BR>B=153
+	<P>C=0
+	<BR>M=80
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FF0099">
+	
+	<B>HTML:
+	<BR>FF0099</B>
+	<P>R=255
+	<BR>G=0
+	<BR>B=153
+	<P>C=0
+	<BR>M=100
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CC0066">
+	
+	<B>HTML:
+	<BR>CC0066</B>
+	<P>R=204
+	<BR>G=0
+	<BR>B=102
+	<P>C=20
+	<BR>M=100
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#993366">
+	
+	<B>HTML:
+	<BR>993366</B>
+	<P>R=153
+	<BR>G=51
+	<BR>B=102
+	<P>C=40
+	<BR>M=80
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#660033">
+	
+	<B>HTML:
+	<BR>660033</B>
+	<P>R=102
+	<BR>G=0
+	<BR>B=51
+	<P>C=60
+	<BR>M=100
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+</TR>
+<!--49 to 54-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#FF66CC">
+	
+	<B>HTML:
+	<BR>FF66CC</B>
+	<P>R=255
+	<BR>G=102
+	<BR>B=204
+	<P>C=0
+	<BR>M=60
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FF00CC">
+	
+	<B>HTML:
+	<BR>FF00CC</B>
+	<P>R=255
+	<BR>G=0
+	<BR>B=204
+	<P>C=0
+	<BR>M=100
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FF33CC">
+	
+	<B>HTML:
+	<BR>FF33CC</B>
+	<P>R=255
+	<BR>G=51
+	<BR>B=102
+	<P>C=0
+	<BR>M=80
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CC6699">
+	
+	<B>HTML:
+	<BR>CC6699</B>
+	<P>R=204
+	<BR>G=102
+	<BR>B=153
+	<P>C=20
+	<BR>M=60
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CC0099">
+	
+	<B>HTML:
+	<BR>CC0099</B>
+	<P>R=204
+	<BR>G=0
+	<BR>B=153
+	<P>C=20
+	<BR>M=100
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#990066">
+	
+	<B>HTML:
+	<BR>990066</B>
+	<P>R=153
+	<BR>G=0
+	<BR>B=102
+	<P>C=40
+	<BR>M=100
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+</TR>
+<!--55 to 60-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#FFCCFF">
+	
+	<B>HTML:
+	<BR>FFCCFF</B>
+	<P>R=255
+	<BR>G=204
+	<BR>B=255
+	<P>C=0
+	<BR>M=20
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FF99FF">
+	
+	<B>HTML:
+	<BR>FF99FF</B>
+	<P>R=255
+	<BR>G=153
+	<BR>B=255
+	<P>C=0
+	<BR>M=40
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FF66FF">
+	
+	<B>HTML:
+	<BR>FF66FF</B>
+	<P>R=255
+	<BR>G=102
+	<BR>B=255
+	<P>C=0
+	<BR>M=60
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FF33FF">
+	
+	<B>HTML:
+	<BR>FF33FF</B>
+	<P>R=255
+	<BR>G=51
+	<BR>B=255
+	<P>C=0
+	<BR>M=80
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#FF00FF">
+	
+	<B>HTML:
+	<BR>FF00FF</B>
+	<P>R=255
+	<BR>G=0
+	<BR>B=255
+	<P>C=0
+	<BR>M=100
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CC3399">
+	
+	<B>HTML:
+	<BR>CC3399</B>
+	<P>R=204
+	<BR>G=51
+	<BR>B=153
+	<P>C=20
+	<BR>M=80
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+</TR>
+<!--61 to 66-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#CC99CC">
+	
+	<B>HTML:
+	<BR>CC99CC</B>
+	<P>R=204
+	<BR>G=153
+	<BR>B=204
+	<P>C=20
+	<BR>M=40
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CC66CC">
+	
+	<B>HTML:
+	<BR>CC66CC</B>
+	<P>R=204
+	<BR>G=102
+	<BR>B=204
+	<P>C=20
+	<BR>M=60
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CC00CC">
+	
+	<B>HTML:
+	<BR>CC00CC</B>
+	<P>R=204
+	<BR>G=0
+	<BR>B=204
+	<P>C=20
+	<BR>M=60
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CC33CC">
+	
+	<B>HTML:
+	<BR>CC33CC</B>
+	<P>R=204
+	<BR>G=51
+	<BR>B=204
+	<P>C=20
+	<BR>M=80
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#990099">
+	
+	<B>HTML:
+	<BR>990099</B>
+	<P>R=153
+	<BR>G=0
+	<BR>B=153
+	<P>C=40
+	<BR>M=100
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#993399">
+	
+	<B>HTML:
+	<BR>993399</B>
+	<P>R=153
+	<BR>G=51
+	<BR>B=153
+	<P>C=40
+	<BR>M=80
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+</TR>
+<!--67 to 72-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#CC99FF">
+	
+	<B>HTML:
+	<BR>CC99FF</B>
+	<P>R=204
+	<BR>G=153
+	<BR>B=255
+	<P>C=20
+	<BR>M=40
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#9933CC">
+	
+	<B>HTML:
+	<BR>9933CC</B>
+	<P>R=153
+	<BR>G=51
+	<BR>B=204
+	<P>C=40
+	<BR>M=80
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#9933FF">
+	
+	<B>HTML:
+	<BR>9933FF</B>
+	<P>R=153
+	<BR>G=51
+	<BR>B=255
+	<P>C=40
+	<BR>M=80
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#9900FF">
+	
+	<B>HTML:
+	<BR>9900FF</B>
+	<P>R=153
+	<BR>G=0
+	<BR>B=255
+	<P>C=40
+	<BR>M=100
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#660099">
+	
+	<B>HTML:
+	<BR>660099</B>
+	<P>R=102
+	<BR>G=0
+	<BR>B=153
+	<P>C=60
+	<BR>M=100
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#663366">
+	
+	<B>HTML:
+	<BR>663366</B>
+	<P>R=102
+	<BR>G=51
+	<BR>B=102
+	<P>C=60
+	<BR>M=80
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+</TR>
+<!--73 to 78-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#9966CC">
+	
+	<B>HTML:
+	<BR>9966CC</B>
+	<P>R=153
+	<BR>G=102
+	<BR>B=204
+	<P>C=40
+	<BR>M=60
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#9966FF">
+	
+	<B>HTML:
+	<BR>9966FF</B>
+	<P>R=153
+	<BR>G=102
+	<BR>B=255
+	<P>C=40
+	<BR>M=60
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#6600CC">
+	
+	<B>HTML:
+	<BR>6600CC</B>
+	<P>R=102
+	<BR>G=0
+	<BR>B=204
+	<P>C=60
+	<BR>M=100
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#6633CC">
+	
+	<B>HTML:
+	<BR>6633CC</B>
+	<P>R=102
+	<BR>G=51
+	<BR>B=204
+	<P>C=60
+	<BR>M=80
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#663399">
+	
+	<B>HTML:
+	<BR>663399</B>
+	<P>R=102
+	<BR>G=51
+	<BR>B=153
+	<P>C=60
+	<BR>M=80
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#330033">
+	
+	<B>HTML:
+	<BR>330033</B>
+	<P>R=51
+	<BR>G=0
+	<BR>B=51
+	<P>C=80
+	<BR>M=100
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+</TR>
+<!--79 to 84-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#CCCCFF">
+	
+	<B>HTML:
+	<BR>CCCCFF</B>
+	<P>R=204
+	<BR>G=204
+	<BR>B=255
+	<P>C=20
+	<BR>M=20
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#9999FF">
+	
+	<B>HTML:
+	<BR>9999FF</B>
+	<P>R=153
+	<BR>G=153
+	<BR>B=255
+	<P>C=40
+	<BR>M=40
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#6633FF">
+	
+	<B>HTML:
+	<BR>6633FF</B>
+	<P>R=102
+	<BR>G=51
+	<BR>B=255
+	<P>C=60
+	<BR>M=80
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#6600FF">
+	
+	<B>HTML:
+	<BR>6600FF</B>
+	<P>R=102
+	<BR>G=0
+	<BR>B=255
+	<P>C=60
+	<BR>M=100
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#330099">
+	
+	<B>HTML:
+	<BR>330099</B>
+	<P>R=51
+	<BR>G=0
+	<BR>B=153
+	<P>C=80
+	<BR>M=100
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#330066">
+	
+	<B>HTML:
+	<BR>330066</B>
+	<P>R=51
+	<BR>G=0
+	<BR>B=102
+	<P>C=80
+	<BR>M=100
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+</TR>
+<!--85 to 90-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#9999CC">
+	
+	<B>HTML:
+	<BR>9999CC</B>
+	<P>R=153
+	<BR>G=153
+	<BR>B=204
+	<P>C=40
+	<BR>M=40
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#6666FF">
+	
+	<B>HTML:
+	<BR>6666FF</B>
+	<P>R=102
+	<BR>G=102
+	<BR>B=255
+	<P>C=60
+	<BR>M=60
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#6666CC">
+	
+	<B>HTML:
+	<BR>6666CC</B>
+	<P>R=102
+	<BR>G=102
+	<BR>B=204
+	<P>C=60
+	<BR>M=60
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#666699">
+	
+	<B>HTML:
+	<BR>666699</B>
+	<P>R=102
+	<BR>G=102
+	<BR>B=153
+	<P>C=60
+	<BR>M=60
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#333399">
+	
+	<B>HTML:
+	<BR>333399</B>
+	<P>R=51
+	<BR>G=51
+	<BR>B=153
+	<P>C=80
+	<BR>M=80
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#333366">
+	
+	<B>HTML:
+	<BR>333366</B>
+	<P>R=51
+	<BR>G=51
+	<BR>B=102
+	<P>C=80
+	<BR>M=80
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 91 to 96-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#3333FF">
+	
+	<B>HTML:
+	<BR>3333FF</B>
+	<P>R=51
+	<BR>G=51
+	<BR>B=255
+	<P>C=80
+	<BR>M=80
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#3300FF">
+	
+	<B>HTML:
+	<BR>3300FF</B>
+	<P>R=51
+	<BR>G=0
+	<BR>B=255
+	<P>C=80
+	<BR>M=100
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#3300CC">
+	
+	<B>HTML:
+	<BR>3300CC</B>
+	<P>R=51
+	<BR>G=0
+	<BR>B=204
+	<P>C=80
+	<BR>M=100
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#3333CC">
+	
+	<B>HTML:
+	<BR>3333CC</B>
+	<P>R=51
+	<BR>G=51
+	<BR>B=204
+	<P>C=80
+	<BR>M=80
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#000099">
+	
+	<B>HTML:
+	<BR>000099</B>
+	<P>R=0
+	<BR>G=0
+	<BR>B=153
+	<P>C=100
+	<BR>M=100
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#000066">
+	
+	<B>HTML:
+	<BR>000066</B>
+	<P>R=0
+	<BR>G=0
+	<BR>B=102
+	<P>C=100
+	<BR>M=100
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 97 to 103-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#6699FF">
+	
+	<B>HTML:
+	<BR>6699FF</B>
+	<P>R=102
+	<BR>G=153
+	<BR>B=255
+	<P>C=60
+	<BR>M=40
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#3366FF">
+	
+	<B>HTML:
+	<BR>3366FF</B>
+	<P>R=51
+	<BR>G=102
+	<BR>B=255
+	<P>C=80
+	<BR>M=60
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#0000FF">
+	
+	<B>HTML:
+	<BR>0000FF</B>
+	<P>R=0
+	<BR>G=0
+	<BR>B=255
+	<P>C=100
+	<BR>M=100
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#0000CC">
+	
+	<B>HTML:
+	<BR>0000CC</B>
+	<P>R=0
+	<BR>G=0
+	<BR>B=204
+	<P>C=100
+	<BR>M=100
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#0033CC">
+	
+	<B>HTML:
+	<BR>0033CC</B>
+	<P>R=0
+	<BR>G=51
+	<BR>B=204
+	<P>C=100
+	<BR>M=80
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#000033">
+	
+	<B>HTML:
+	<BR>000033</B>
+	<P>R=0
+	<BR>G=0
+	<BR>B=51
+	<P>C=100
+	<BR>M=100
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 104 to 110-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#0066FF">
+	
+	<B>HTML:
+	<BR>0066FF</B>
+	<P>R=0
+	<BR>G=102
+	<BR>B=255
+	<P>C=100
+	<BR>M=60
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#0066CC">
+	
+	<B>HTML:
+	<BR>0066CC</B>
+	<P>R=0
+	<BR>G=102
+	<BR>B=204
+	<P>C=100
+	<BR>M=60
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#3366CC">
+	
+	<B>HTML:
+	<BR>3366CC</B>
+	<P>R=51
+	<BR>G=102
+	<BR>B=204
+	<P>C=80
+	<BR>M=60
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#0033FF">
+	
+	<B>HTML:
+	<BR>0033FF</B>
+	<P>R=0
+	<BR>G=51
+	<BR>B=255
+	<P>C=100
+	<BR>M=80
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#003399">
+	
+	<B>HTML:
+	<BR>003399</B>
+	<P>R=0
+	<BR>G=51
+	<BR>B=153
+	<P>C=100
+	<BR>M=80
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#003366">
+	
+	<B>HTML:
+	<BR>003366</B>
+	<P>R=0
+	<BR>G=51
+	<BR>B=102
+	<P>C=100
+	<BR>M=80
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 111 to 117-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#99CCFF">
+	
+	<B>HTML:
+	<BR>99CCFF</B>
+	<P>R=153
+	<BR>G=204
+	<BR>B=255
+	<P>C=40
+	<BR>M=20
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#3399FF">
+	
+	<B>HTML:
+	<BR>3399FF</B>
+	<P>R=51
+	<BR>G=153
+	<BR>B=255
+	<P>C=80
+	<BR>M=40
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#0099FF">
+	
+	<B>HTML:
+	<BR>0099FF</B>
+	<P>R=0
+	<BR>G=153
+	<BR>B=255
+	<P>C=100
+	<BR>M=40
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#6699CC">
+	
+	<B>HTML:
+	<BR>6699CC</B>
+	<P>R=102
+	<BR>G=153
+	<BR>B=204
+	<P>C=60
+	<BR>M=40
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#336699">
+	
+	<B>HTML:
+	<BR>336699</B>
+	<P>R=51
+	<BR>G=102
+	<BR>B=153
+	<P>C=80
+	<BR>M=60
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#006699">
+	
+	<B>HTML:
+	<BR>006699</B>
+	<P>R=0
+	<BR>G=102
+	<BR>B=153
+	<P>C=100
+	<BR>M=60
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 118 to 124-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#66CCFF">
+	
+	<B>HTML:
+	<BR>66CCFF</B>
+	<P>R=102
+	<BR>G=204
+	<BR>B=255
+	<P>C=60
+	<BR>M=20
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#33CCFF">
+	
+	<B>HTML:
+	<BR>33CCFF</B>
+	<P>R=51
+	<BR>G=204
+	<BR>B=255
+	<P>C=80
+	<BR>M=20
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#00CCFF">
+	
+	<B>HTML:
+	<BR>00CCFF</B>
+	<P>R=0
+	<BR>G=204
+	<BR>B=255
+	<P>C=100
+	<BR>M=20
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#3399CC">
+	
+	<B>HTML:
+	<BR>3399CC</B>
+	<P>R=51
+	<BR>G=153
+	<BR>B=204
+	<P>C=80
+	<BR>M=40
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#0099CC">
+	
+	<B>HTML:
+	<BR>0099CC</B>
+	<P>R=0
+	<BR>G=153
+	<BR>B=204
+	<P>C=100
+	<BR>M=40
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#003333">
+	
+	<B>HTML:
+	<BR>003333</B>
+	<P>R=0
+	<BR>G=51
+	<BR>B=51
+	<P>C=100
+	<BR>M=80
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 126 to 132-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#99CCCC">
+	
+	<B>HTML:
+	<BR>99CCCC</B>
+	<P>R=153
+	<BR>G=204
+	<BR>B=204
+	<P>C=40
+	<BR>M=20
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#66CCCC">51
+	
+	<B>HTML:
+	<BR>66CCCC</B>
+	<P>R=102
+	<BR>G=204
+	<BR>B=204
+	<P>C=60
+	<BR>M=20
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#339999">
+	
+	<B>HTML:
+	<BR>339999</B>
+	<P>R=51
+	<BR>G=153
+	<BR>B=153
+	<P>C=60
+	<BR>M=20
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#669999">
+	
+	<B>HTML:
+	<BR>669999</B>
+	<P>R=102
+	<BR>G=153
+	<BR>B=153
+	<P>C=60
+	<BR>M=40
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#006666">
+	
+	<B>HTML:
+	<BR>006666</B>
+	<P>R=0
+	<BR>G=102
+	<BR>B=102
+	<P>C=100
+	<BR>M=60
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#336666">
+	
+	<B>HTML:
+	<BR>336666</B>
+	<P>R=51
+	<BR>G=102
+	<BR>B=102
+	<P>C=80
+	<BR>M=60
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 133 to 139-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#CCFFFF">
+	
+	<B>HTML:
+	<BR>CCFFFF</B>
+	<P>R=204
+	<BR>G=255
+	<BR>B=255
+	<P>C=20
+	<BR>M=0
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#99FFFF">
+	
+	<B>HTML:
+	<BR>99FFFF</B>
+	<P>R=153
+	<BR>G=255
+	<BR>B=255
+	<P>C=40
+	<BR>M=0
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#66FFFF">
+	
+	<B>HTML:
+	<BR>66FFFF</B>
+	<P>R=102
+	<BR>G=255
+	<BR>B=255
+	<P>C=60
+	<BR>M=0
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#33FFFF">
+	
+	<B>HTML:
+	<BR>33FFFF</B>
+	<P>R=51
+	<BR>G=255
+	<BR>B=255
+	<P>C=80
+	<BR>M=0
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#00FFFF">
+	
+	<B>HTML:
+	<BR>00FFFF</B>
+	<P>R=0
+	<BR>G=255
+	<BR>B=255
+	<P>C=100
+	<BR>M=0
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#00CCCC">
+	
+	<B>HTML:
+	<BR>00CCCC</B>
+	<P>R=0
+	<BR>G=204
+	<BR>B=204
+	<P>C=100
+	<BR>M=20
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 140 to 146-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#99FFCC">
+	
+	<B>HTML:
+	<BR>99FFCC</B>
+	<P>R=153
+	<BR>G=255
+	<BR>B=204
+	<P>C=40
+	<BR>M=0
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#66FFCC">
+	
+	<B>HTML:
+	<BR>66FFCC</B>
+	<P>R=102
+	<BR>G=255
+	<BR>B=204
+	<P>C=60
+	<BR>M=0
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#33FFCC">
+	
+	<B>HTML:
+	<BR>33FFCC</B>
+	<P>R=51
+	<BR>G=255
+	<BR>B=204
+	<P>C=80
+	<BR>M=0
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#00FFCC">
+	
+	<B>HTML:
+	<BR>00FFCC</B>
+	<P>R=0
+	<BR>G=255
+	<BR>B=204
+	<P>C=100
+	<BR>M=0
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#33CCCC">
+	
+	<B>HTML:
+	<BR>33CCCC</B>
+	<P>R=51
+	<BR>G=204
+	<BR>B=204
+	<P>C=80
+	<BR>M=20
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#009999">
+	
+	<B>HTML:
+	<BR>009999</B>
+	<P>R=0
+	<BR>G=153
+	<BR>B=153
+	<P>C=100
+	<BR>M=40
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 147 to 153-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#66CC99">
+	
+	<B>HTML:
+	<BR>66CC99</B>
+	<P>R=102
+	<BR>G=204
+	<BR>B=153
+	<P>C=60
+	<BR>M=20
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#33CC99">
+	
+	<B>HTML:
+	<BR>33CC99</B>
+	<P>R=51
+	<BR>G=204
+	<BR>B=153
+	<P>C=80
+	<BR>M=20
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#00CC99">
+	
+	<B>HTML:
+	<BR>00CC99</B>
+	<P>R=0
+	<BR>G=204
+	<BR>B=153
+	<P>C=100
+	<BR>M=20
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#339966">
+	
+	<B>HTML:
+	<BR>339966</B>
+	<P>R=51
+	<BR>G=153
+	<BR>B=102
+	<P>C=80
+	<BR>M=40
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#009966">
+	
+	<B>HTML:
+	<BR>009966</B>
+	<P>R=0
+	<BR>G=153
+	<BR>B=102
+	<P>C=100
+	<BR>M=40
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#006633">
+	
+	<B>HTML:
+	<BR>006633</B>
+	<P>R=0
+	<BR>G=102
+	<BR>B=51
+	<P>C=100
+	<BR>M=60
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 154 to 160-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#66FF99">
+	
+	<B>HTML:
+	<BR>66FF99</B>
+	<P>R=102
+	<BR>G=255
+	<BR>B=153
+	<P>C=60
+	<BR>M=0
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#33FF99">
+	
+	<B>HTML:
+	<BR>33FF99</B>
+	<P>R=51
+	<BR>G=255
+	<BR>B=153
+	<P>C=100
+	<BR>M=0
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#00FF99">
+	
+	<B>HTML:
+	<BR>00FF99</B>
+	<P>R=0
+	<BR>G=255
+	<BR>B=153
+	<P>C=100
+	<BR>M=0
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#33CC66">
+	
+	<B>HTML:
+	<BR>33CC66</B>
+	<P>R=51
+	<BR>G=204
+	<BR>B=102
+	<P>C=80
+	<BR>M=20
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#00CC66">
+	
+	<B>HTML:
+	<BR>00CC66</B>
+	<P>R=0
+	<BR>G=204
+	<BR>B=102
+	<P>C=100
+	<BR>M=20
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#009933">
+	
+	<B>HTML:
+	<BR>009933</B>
+	<P>R=0
+	<BR>G=153
+	<BR>B=51
+	<P>C=100
+	<BR>M=40
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 161 to 167-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#99FF99">
+	
+	<B>HTML:
+	<BR>99FF99</B>
+	<P>R=153
+	<BR>G=255
+	<BR>B=153
+	<P>C=40
+	<BR>M=0
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#66FF66">
+	
+	<B>HTML:
+	<BR>66FF66</B>
+	<P>R=102
+	<BR>G=255
+	<BR>B=102
+	<P>C=60
+	<BR>M=0
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#33FF66">
+	
+	<B>HTML:
+	<BR>33FF66</B>
+	<P>R=51
+	<BR>G=251
+	<BR>B=102
+	<P>C=80
+	<BR>M=0
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#00FF66">
+	
+	<B>HTML:
+	<BR>00FF66</B>
+	<P>R=0
+	<BR>G=255
+	<BR>B=102
+	<P>C=100
+	<BR>M=0
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#339933">
+	
+	<B>HTML:
+	<BR>339933</B>
+	<P>R=51
+	<BR>G=153
+	<BR>B=51
+	<P>C=80
+	<BR>M=40
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#006600">
+	
+	<B>HTML:
+	<BR>006600</B>
+	<P>R=0
+	<BR>G=102
+	<BR>B=0
+	<P>C=100
+	<BR>M=60
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 168 to 174-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#CCFFCC">
+	
+	<B>HTML:
+	<BR>CCFFCC</B>
+	<P>R=204
+	<BR>G=255
+	<BR>B=204
+	<P>C=20
+	<BR>M=0
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#99CC99">
+	
+	<B>HTML:
+	<BR>99CC99</B>
+	<P>R=153
+	<BR>G=204
+	<BR>B=153
+	<P>C=40
+	<BR>M=20
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#66CC66">
+	
+	<B>HTML:
+	<BR>66CC66</B>
+	<P>R=102
+	<BR>G=204
+	<BR>B=102
+	<P>C=60
+	<BR>M=20
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#669966">
+	
+	<B>HTML:
+	<BR>669966</B>
+	<P>R=102
+	<BR>G=153
+	<BR>B=102
+	<P>C=60
+	<BR>M=40
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#336633">
+	
+	<B>HTML:
+	<BR>336633</B>
+	<P>R=51
+	<BR>G=102
+	<BR>B=51
+	<P>C=80
+	<BR>M=60
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#003300">
+	
+	<B>HTML:
+	<BR>003300</B>
+	<P>R=0
+	<BR>G=51
+	<BR>B=0
+	<P>C=100
+	<BR>M=80
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 175 to 180-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#33FF33">
+	
+	<B>HTML:
+	<BR>33FF33</B>
+	<P>R=51
+	<BR>G=255
+	<BR>B=51
+	<P>C=80
+	<BR>M=0
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#00FF33">
+	
+	<B>HTML:
+	<BR>00FF33</B>
+	<P>R=0
+	<BR>G=255
+	<BR>B=51
+	<P>C=100
+	<BR>M=0
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#00FF00">
+	
+	<B>HTML:
+	<BR>00FF00</B>
+	<P>R=2
+	<BR>G=255
+	<BR>B=0
+	<P>C=100
+	<BR>M=0
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#00CC00">
+	
+	<B>HTML:
+	<BR>00CC00</B>
+	<P>R=0
+	<BR>G=204
+	<BR>B=0
+	<P>C=100
+	<BR>M=20
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#33CC33">
+	
+	<B>HTML:
+	<BR>33CC33</B>
+	<P>R=51
+	<BR>G=204
+	<BR>B=51
+	<P>C=80
+	<BR>M=20
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#00CC33">
+	
+	<B>HTML:
+	<BR>00CC33</B>
+	<P>R=0
+	<BR>G=204
+	<BR>B=51
+	<P>C=100
+	<BR>M=20
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 181 to 186-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#66FF00">
+	
+	<B>HTML:
+	<BR>66FF00</B>
+	<P>R=102
+	<BR>G=255
+	<BR>B=0
+	<P>C=60
+	<BR>M=0
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#66FF33">
+	
+	<B>HTML:
+	<BR>66FF33</B>
+	<P>R=102
+	<BR>G=255
+	<BR>B=51
+	<P>C=60
+	<BR>M=0
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#33FF00">
+	
+	<B>HTML:
+	<BR>33FF00</B>
+	<P>R=51
+	<BR>G=255
+	<BR>B=0
+	<P>C=80
+	<BR>M=0
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#33CC00">
+	
+	<B>HTML:
+	<BR>33CC00</B>
+	<P>R=51
+	<BR>G=204
+	<BR>B=0
+	<P>C=80
+	<BR>M=20
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#339900">
+	
+	<B>HTML:
+	<BR>339900</B>
+	<P>R=51
+	<BR>G=153
+	<BR>B=0
+	<P>C=80
+	<BR>M=40
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#009900">
+	
+	<B>HTML:
+	<BR>009900</B>
+	<P>R=0
+	<BR>G=153
+	<BR>B=0
+	<P>C=100
+	<BR>M=40
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 187 to 192-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#CCFF99">
+	
+	<B>HTML:
+	<BR>CCFF99</B>
+	<P>R=204
+	<BR>G=255
+	<BR>B=153
+	<P>C=20
+	<BR>M=0
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#99FF66">
+	
+	<B>HTML:
+	<BR>99FF66</B>
+	<P>R=153
+	<BR>G=255
+	<BR>B=102
+	<P>C=40
+	<BR>M=0
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#66CC00">
+	
+	<B>HTML:
+	<BR>66CC00</B>
+	<P>R=102
+	<BR>G=204
+	<BR>B=0
+	<P>C=60
+	<BR>M=20
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#66CC33">
+	
+	<B>HTML:
+	<BR>66CC33</B>
+	<P>R=102
+	<BR>G=204
+	<BR>B=51
+	<P>C=60
+	<BR>M=20
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#669933">
+	
+	<B>HTML:
+	<BR>669933</B>
+	<P>R=102
+	<BR>G=153
+	<BR>B=51
+	<P>C=60
+	<BR>M=40
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#336600">
+	
+	<B>HTML:
+	<BR>336600</B>
+	<P>R=51
+	<BR>G=102
+	<BR>B=0
+	<P>C=80
+	<BR>M=60
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 193 to 198-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#99FF00">
+	
+	<B>HTML:
+	<BR>99FF00</B>
+	<P>R=153
+	<BR>G=255
+	<BR>B=0
+	<P>C=40
+	<BR>M=0
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#99FF33">
+	
+	<B>HTML:
+	<BR>99FF33</B>
+	<P>R=153
+	<BR>G=255
+	<BR>B=51
+	<P>C=40
+	<BR>M=0
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#99CC66">
+	
+	<B>HTML:
+	<BR>99CC66</B>
+	<P>R=153
+	<BR>G=204
+	<BR>B=102
+	<P>C=40
+	<BR>M=20
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#99CC00">
+	
+	<B>HTML:
+	<BR>99CC00</B>
+	<P>R=153
+	<BR>G=204
+	<BR>B=0
+	<P>C=40
+	<BR>M=20
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#99CC33">
+	
+	<B>HTML:
+	<BR>99CC33</B>
+	<P>R=153
+	<BR>G=204
+	<BR>B=51
+	<P>C=40
+	<BR>M=20
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#669900">
+	
+	<B>HTML:
+	<BR>669900</B>
+	<P>R=102
+	<BR>G=153
+	<BR>B=0
+	<P>C=60
+	<BR>M=40
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 199 to 204-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#CCFF66">
+	
+	<B>HTML:
+	<BR>CCFF66</B>
+	<P>R=204
+	<BR>G=255
+	<BR>B=102
+	<P>C=20
+	<BR>M=0
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CCFF00">
+	
+	<B>HTML:
+	<BR>CCFF00</B>
+	<P>R=204
+	<BR>G=255
+	<BR>B=0
+	<P>C=20
+	<BR>M=0
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CCFF33">
+	
+	<B>HTML:
+	<BR>CCFF33</B>
+	<P>R=204
+	<BR>G=255
+	<BR>B=51
+	<P>C=20
+	<BR>M=80
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CCCC99">
+	
+	<B>HTML:
+	<BR>CCCC99</B>
+	<P>R=204
+	<BR>G=204
+	<BR>B=153
+	<P>C=20
+	<BR>M=20
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#666633">
+	
+	<B>HTML:
+	<BR>666633</B>
+	<P>R=102
+	<BR>G=102
+	<BR>B=51
+	<P>C=60
+	<BR>M=60
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#333300">
+	
+	<B>HTML:
+	<BR>333300</B>
+	<P>R=51
+	<BR>G=51
+	<BR>B=0
+	<P>C=80
+	<BR>M=80
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 205 to 210-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#CCCC66">
+	
+	<B>HTML:
+	<BR>CCCC66</B>
+	<P>R=204
+	<BR>G=204
+	<BR>B=102
+	<P>C=20
+	<BR>M=20
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CCCC33">
+	
+	<B>HTML:
+	<BR>CCCC33</B>
+	<P>R=204
+	<BR>G=204
+	<BR>B=51
+	<P>C=20
+	<BR>M=20
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#999966">
+	
+	<B>HTML:
+	<BR>999966</B>
+	<P>R=153
+	<BR>G=153
+	<BR>B=102
+	<P>C=40
+	<BR>M=40
+	<BR>Y=60
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#999933">
+	
+	<B>HTML:
+	<BR>999933</B>
+	<P>R=153
+	<BR>G=153
+	<BR>B=51
+	<P>C=40
+	<BR>M=40
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#999900">
+	
+	<B>HTML:
+	<BR>999900</B>
+	<P>R=153
+	<BR>G=153
+	<BR>B=0
+	<P>C=40
+	<BR>M=40
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#666600">
+	
+	<B>HTML:
+	<BR>666600</B>
+	<P>R=102
+	<BR>G=102
+	<BR>B=0
+	<P>C=60
+	<BR>M=60
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+</TR>
+<!--colors 211 to 216-->
+<TR>
+	<TD VALIGN=TOP BGCOLOR="#FFFFFF">
+	
+	<B>HTML:
+	<BR>FFFFFF</B>
+	<P>R=255
+	<BR>G=255
+	<BR>B=255
+	<P>C=0
+	<BR>M=0
+	<BR>Y=0
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#CCCCCC">
+	
+	<B>HTML:
+	<BR>CCCCCC</B>
+	<P>R=204
+	<BR>G=204
+	<BR>B=204
+	<P>C=20
+	<BR>M=20
+	<BR>Y=20
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#999999">
+	
+	<B>HTML:
+	<BR>999999</B>
+	<P>R=153
+	<BR>G=153
+	<BR>B=153
+	<P>C=40
+	<BR>M=40
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#666666">
+	
+	<B>HTML:
+	<BR>666666</B>
+	<P>R=102
+	<BR>G=102
+	<BR>B=102
+	<P>C=40
+	<BR>M=40
+	<BR>Y=40
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#333333">
+	
+	<B>HTML:
+	<BR>333333</B>
+	<P>R=51
+	<BR>G=51
+	<BR>B=51
+	<P>C=80
+	<BR>M=80
+	<BR>Y=80
+	<BR>K=0
+	</TD>
+
+	<TD VALIGN=TOP BGCOLOR="#000000">
+	
+	<B>HTML:
+	<BR>000000</B>
+	<P>R=0
+	<BR>G=0
+	<BR>B=0
+	<P>C=100
+	<BR>M=100
+	<BR>Y=100
+	<BR>K=0
+	</TD>
+</TR>
+
+	</TABLE>
+</CENTER>
+
+<P><BR>
+
+<CENTER>
+
+
+
+
+<P>
+
+
+
+
+<P>
+
+
+
+</CENTER>
+<!--#include virtual="/ssw/Include/FooterSSW.htm"-->
+</BODY>
+
+</HTML>

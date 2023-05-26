@@ -1,0 +1,12 @@
+13/4/2004 
+Version 2 Done by JV
+
+This new icon is:
+* transparent 
+* high definition (8 and 32 bit) 
+* The above means it will supports other colour pallets (eg. 16, 256 colour and 24 bit colour) 
+
+Used Photoshop to master the icon
+Used Illustrator to edit the icon
+
+See \\bee\ssw\Images\SSWLogo\MasterOfLogoAndIcons

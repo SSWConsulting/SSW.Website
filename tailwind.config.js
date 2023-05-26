@@ -32,6 +32,7 @@ module.exports = {
       "social-github": "#2C2C2C",
       "social-meetup": "#f05664",
       sswRed: "#cc4141",
+      sswBlack: "#333333",
       azure: "#007fff",
       gray: {
         50: "#f9f9f9",
@@ -108,6 +109,7 @@ module.exports = {
       2: "2px",
       3: "3px",
       4: "4px",
+      8: "8px",
     },
     extend: {
       gridTemplateRows: {
@@ -221,7 +223,12 @@ module.exports = {
           "Helvetica",
           "sans-serif",
         ],
-        body: ["Arial", "Helvetica Neue", "Helvetica", "sans-serif"],
+        helvetica: [
+          "Helvetica Neue",
+          "Helvetica",
+          "sans-serif",
+        ],
+        body: ["var(--open-sans-font)", "Helvetica Neue", "Helvetica", "sans-serif"],
       },
       animation: {
         "more-bounce": "more-bounce 2s infinite",
@@ -259,7 +266,6 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-						maxWidth: 0,
             lineHeight: 1.45,
             h1: {
               fontWeight: "300",
@@ -275,8 +281,12 @@ module.exports = {
               fontWeight: "300",
               marginBottom: "7px",
             },
+            a: {
+              fontWeight: "300"
+            },
             p: {
               marginBottom: "10px",
+              color: theme("colors.sswBlack")
             },
             hr: {
               margin: "30px 0",
@@ -322,6 +332,7 @@ module.exports = {
       }),
       backgroundImage: {
         done: "url('/images/icons/done.png')",
+        "arrow-right": "url('/images/icons/arrow-right.png')",
         "live-banner-wait": "url('/blocks/LiveStreamBanner-Wait.png')",
         "live-banner-live": "url('/blocks/LiveStreamBanner-Live.gif')",
         "card-video": "url('/images/icons/video-icon.svg')",

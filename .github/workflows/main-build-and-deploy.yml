@@ -6,7 +6,7 @@ on:
       - main
   workflow_dispatch:
 
-concurrency: 
+concurrency:
   group: main
 
 permissions:
@@ -20,7 +20,7 @@ jobs:
     with:
       tag: production
     secrets: inherit
-  
+
   deploy-to-prod:
     name: Deploy to Production
     needs: build
@@ -32,7 +32,6 @@ jobs:
       id-token: write
       contents: read
     steps:
-
       - uses: actions/checkout@v3
 
       - name: Load .env file
@@ -53,3 +52,4 @@ jobs:
           APP_SERVICE_NAME: ${{ env.APP_SERVICE_NAME }}
           ACR_LOGIN_SERVER: ${{ env.ACR_LOGIN_SERVER }}
           IMAGE_NAME: ${{ env.IMAGE_NAME }}
+          AZURE_SERVICE_PRINCIPAL_OBJECT_ID: ${{ secrets.AZURE_SERVICE_PRINCIPAL_OBJECT_ID }}

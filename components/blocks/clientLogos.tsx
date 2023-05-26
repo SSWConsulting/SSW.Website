@@ -1,37 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import type { Template } from "tinacms";
 import Image from "next/image";
+import client from "../../.tina/__generated__/client";
 
 export const ClientLogos = () => {
+  const [clientsData, setclientsData] = useState([]);
+
+  useEffect(() => {
+    loadClientsData();
+  }, []);
+
+  const loadClientsData = () => {
+    client.queries.globalConnection().then((data) => {
+      const clientsData =
+        data.data.globalConnection.edges[0].node.clients.clientsList;
+      setclientsData(clientsData);
+    });
+  };
+
   return (
-    <div className="grid grid-cols-3">
-      <figure className="col-span-3 text-center md:col-auto">
-        <Image
-          src="/images/clientLogos/clients1.png"
-          alt="Client logo 1"
-          height={50}
-          width={380}
-          className="mx-auto max-w-full"
-        />
-      </figure>
-      <figure className="col-span-3 text-center md:col-auto">
-        <Image
-          src="/images/clientLogos/clients2.png"
-          alt="Client logo 2"
-          height={50}
-          width={380}
-          className="mx-auto max-w-full"
-        />
-      </figure>
-      <figure className="col-span-3 text-center md:col-auto">
-        <Image
-          src="/images/clientLogos/clients3.png"
-          alt="Client logo 3"
-          height={50}
-          width={380}
-          className="mx-auto max-w-full"
-        />
-      </figure>
+    <div className="flex flex-wrap justify-center gap-6">
+      {clientsData.length &&
+        clientsData.map((client) => (
+          <Image
+            key={client.clientName}
+            src={client.imageUrl}
+            alt={client}
+            height={50}
+            width={200}
+            className="my-4 max-w-full rounded-lg"
+          />
+        ))}
     </div>
   );
 };

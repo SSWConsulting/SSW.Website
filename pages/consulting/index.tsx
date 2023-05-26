@@ -1,26 +1,27 @@
-import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/router";
+import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffectOnce, useHover } from "usehooks-ts";
-import classNames from "classnames";
-import { MdLiveHelp } from "react-icons/md";
+import { useRouter } from "next/router";
+import { useEffect, useRef, useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
+import { MdLiveHelp } from "react-icons/md";
+import { useEffectOnce, useHover } from "usehooks-ts";
 
 import { wrapGrid } from "animate-css-grid";
 
-import { client } from "../../.tina/__generated__/client";
 import { useTina } from "tinacms/dist/react";
+import { client } from "../../.tina/__generated__/client";
 
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { SEO } from "../../components/util/seo";
+import { InferGetStaticPropsType } from "next";
 
-const allServices = "All SSW Services";
+const allServices = {name: "All SSW Services", order: null};
 
-export default function OfficeIndex(
-  props: AsyncReturnType<typeof getStaticProps>["props"]
+export default function ConsultingIndex(
+  props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const gridRef = useRef(null);
   const { data } = useTina({
@@ -31,7 +32,7 @@ export default function OfficeIndex(
 
   const router = useRouter();
   const getSelectedTagFromQuery = (): string => {
-    let parsedTag = allServices;
+    let parsedTag = allServices.name;
     if (router.query.tag) {
       const { tag } = router.query;
 
@@ -76,7 +77,7 @@ export default function OfficeIndex(
       {
         pathname: router.basePath,
         query:
-          selectedTag === allServices
+          selectedTag === allServices.name
             ? {}
             : {
                 tag: selectedTag.replace(" ", "-"),
@@ -244,20 +245,35 @@ const processData = (data) => {
             title: p.title,
             description: p.description,
             logo: p.logo,
-            tags: [allServices, ...p.tags.map((t) => t.tag.name)],
+            tags: [allServices.name, ...p.tags.map((t) => t.tag.name)],
+            tagsOrder: [
+              allServices ,
+              ...p.tags.map((t) => ({
+                name: t.tag.name,
+                order: t.tag.order,
+              })),
+            ],
           };
         }),
       };
     });
 
-  const tags = [
-    ...new Set(
-      categories
-        .map((c) => c.pages?.map((p) => p.tags).flat())
-        .flat()
-        .filter((x) => !!x)
-    ),
-  ];
+  const distinctTags = categories
+    .map((c) => c.pages?.map((p) => p.tagsOrder).flat())
+    .flat()
+    .reduce((accumulator, tag) => {
+      const existingTag = accumulator.find((t) => t.name === tag.name);
+      if (!existingTag) {
+        accumulator.push(tag);
+      }
+      return accumulator;
+    }, []);
+
+  const sortedTags = distinctTags
+    .sort((a, b) => a.order - b.order)
+    .map((tag) => tag.name);
+
+  const tags = sortedTags;
 
   return {
     categories,
@@ -275,6 +291,3 @@ export const getStaticProps = async () => {
     },
   };
 };
-
-export type AsyncReturnType<T extends (...args: any) => Promise<any>> = // eslint-disable-line @typescript-eslint/no-explicit-any
-  T extends (...args: any) => Promise<infer R> ? R : any; // eslint-disable-line @typescript-eslint/no-explicit-any

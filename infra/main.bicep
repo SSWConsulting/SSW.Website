@@ -1,6 +1,6 @@
-
 param projectName string = 'sswwebsite'
 param location string = resourceGroup().location
+param servicePrincipalObjectId string
 
 @allowed([
   'B1'
@@ -20,6 +20,7 @@ param location string = resourceGroup().location
   'P3V3'
 ])
 param skuName string = 'P1V2'
+
 
 @minValue(1)
 param skuCapacity int = 1
@@ -42,6 +43,20 @@ module acr 'acr.bicep' = {
     tags: tags
   }
 }
+module keyVault 'keyVault.bicep' = {
+  name:'keyVault-${now}'
+  params: {
+    projectName: projectName
+    location: location
+  }
+}
+module appInsight 'appInsight.bicep' = {
+  name: 'appInsight-${now}'
+  params: {
+    projectName: projectName
+    location:location
+  }
+}
 
 module appService 'appService.bicep' = {
   name: 'appService-${now}'
@@ -53,6 +68,28 @@ module appService 'appService.bicep' = {
     skuCapacity: skuCapacity
     acrName: acr.outputs.acrName
     dockerImage: dockerImage
+    dockerRegistryServerURL: acr.outputs.acrLoginServer
+    appInsightConnectionString: appInsight.outputs.appInsightConnectionString
+    keyVaultName: keyVault.outputs.keyVaultName
+  }
+}
+
+
+module kVAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
+  name: 'KVRoleAssignment-${now}'
+  params: {
+    keyVaultName: keyVault.outputs.keyVaultName
+    principalId: appService.outputs.AppPrincipalId
+    roleName: 'Key Vault Secrets User'
+  }
+}
+
+module kVServicePrincipalRoleAssignment 'keyVaultRoleAssignment.bicep' = {
+  name: 'KVServicePrincipalRoleAssignment-${now}'
+  params: {
+    keyVaultName: keyVault.outputs.keyVaultName
+    principalId: servicePrincipalObjectId
+    roleName: 'Key Vault Secrets User'
   }
 }
 
