@@ -5,13 +5,9 @@ import axios from "axios";
 export const addContactToNewsletters = async (
   data: AddContactToNewslettersData
 ) =>
-  await axios.post(
-    "https://prod-25.australiasoutheast.logic.azure.com:443/workflows/f2aabcc6c95e4a43a2002fe6b3b6103c/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=rk7o9zjStbS_FPJqEQfd8UTpqaw-QT4hOFR5BPKnENU",
-    data,
-    {
-      headers: { "Content-Type": "application/json" },
-    }
-  );
+  await axios.post(process.env.NEWSLETTERS_ENDPOINT, data, {
+    headers: { "Content-Type": "application/json" },
+  });
 
 export default async function handler(
   req: NextApiRequest,
