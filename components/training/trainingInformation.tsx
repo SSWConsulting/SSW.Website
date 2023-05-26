@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, Key } from "react";
 import type { Template } from "tinacms";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
@@ -34,13 +34,15 @@ export const TrainingInformation = ({ data }) => {
     <Section color="white">
       <Container className={"flex-1 p-0"}>
         <div className="grid grid-cols-1 justify-between py-10 lg:grid-cols-3">
-          {data.trainingInformationItems?.map((item, key) => (
-            <TrainingInformationItem
-              key={item.body}
-              header={item.header}
-              body={item.body}
-            />
-          ))}
+          {data.trainingInformationItems?.map(
+            (item: TrainingInformationItemProps, key: Key) => (
+              <TrainingInformationItem
+                key={key}
+                header={item.header}
+                body={item.body}
+              />
+            )
+          )}
         </div>
       </Container>
     </Section>
