@@ -28,7 +28,7 @@
     "postcss-import": "^15.1.0",
     "postcss-nesting": "^11.2.2",
     "prettier": "^2.8.7",
-    "prettier-plugin-tailwindcss": "^0.2.8"
+    "prettier-plugin-tailwindcss": "^0.3.0"
   },
   "dependencies": {
     "@fontsource/open-sans": "^4.5.14",
