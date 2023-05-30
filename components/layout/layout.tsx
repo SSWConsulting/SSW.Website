@@ -44,11 +44,11 @@ export const Layout = ({ children, className = "" }) => {
         )}
       </Head>
       <Theme>
-        {/* <style jsx global>{`
+        <style jsx global>{`
           :root {
             --open-sans-font: ${openSans.style.fontFamily};
           }
-        `}</style> */}
+        `}</style>
         <div
           className={classNames(
             "flex min-h-screen flex-col font-sans",
