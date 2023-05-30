@@ -14,7 +14,7 @@
 }
 
 .form-control {
-  @apply block w-full appearance-none font-normal leading-normal placeholder:text-gray-550;
+  @apply block w-full appearance-none font-normal leading-normal placeholder:text-gray-500;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .form-control,
