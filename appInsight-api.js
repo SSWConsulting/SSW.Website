@@ -11,5 +11,5 @@ if (!!process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING) {
     .setSendLiveMetrics(true);
   appInsights.start();
 } else {
-  console.log("Server Side logging is not turned on!");
+  console.log("🚨 App Insights - Server Side logging is not turned on!");
 }
