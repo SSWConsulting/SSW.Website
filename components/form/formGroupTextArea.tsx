@@ -1,20 +1,17 @@
 import classNames from "classnames";
 import { ErrorMessage, Field, FieldHookConfig, useField } from "formik";
-import { ChangeEvent, ChangeEventHandler, VFC } from "react";
+import { ChangeEvent, ChangeEventHandler } from "react";
 import { FormGroupProps } from "./formGroupTypes";
 import styles from "./formGroup.module.css";
 
-const FormGroupTextArea: VFC<
-  FieldHookConfig<string> &
-    FormGroupProps<HTMLTextAreaElement>
-> = ({
+const FormGroupTextArea = ({
   label,
   activeLabelClass,
   fieldClass,
   errorMessageClass,
   handleChange,
   ...props
-}) => {
+}: FieldHookConfig<string> & FormGroupProps<HTMLTextAreaElement>) => {
   const [field, meta] = useField(props);
 
   !props.placeholder && (props.placeholder = label);
@@ -48,7 +45,7 @@ const FormGroupTextArea: VFC<
       <small>Maximum 2000 characters</small>
       <ErrorMessage
         name={field.name}
-        className={errorMessageClass || styles["invalid-feedback"]}
+        className={styles["invalid-feedback"]}
         component="div"
       />
     </div>
