@@ -4,6 +4,4 @@ export interface RecaptchaContextType {
   recaptchaKey?: string;
 }
 
-export const RecaptchaContext = createContext<RecaptchaContextType>({
-  recaptchaKey: "asdasdasd",
-});
+export const RecaptchaContext = createContext<RecaptchaContextType>(null);
