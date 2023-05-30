@@ -7,7 +7,7 @@ import { Blocks } from "../../components/blocks-renderer";
 import { Booking } from "../../components/blocks/booking";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
-import BookingButton from "../../components/bookingButton/bookingButton";
+import { BookingButton } from "../../components/bookingButton/bookingButton";
 import { MediaCardProps } from "../../components/consulting/mediaCard/mediaCard";
 import MediaCards from "../../components/consulting/mediaCard/mediaCards";
 import { Layout } from "../../components/layout";
@@ -48,6 +48,7 @@ export default function ConsultingPage(
 
   const bookingButtonProps = {
     buttonText: data.global.bookingButtonText,
+    recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY,
   };
 
   return (

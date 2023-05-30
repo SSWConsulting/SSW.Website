@@ -8,15 +8,22 @@ import {
   RecaptchaContext,
   RecaptchaContextType,
 } from "../../context/RecaptchaContext";
+import { Template } from "tinacms";
 
-const BookingButton: FC<{
+export interface BookingButtonProps {
   buttonText?: string;
   containerClass?: string;
   buttonClass?: string;
-}> = ({ buttonText, containerClass, buttonClass }) => {
+}
+
+export const BookingButton = ({
+  buttonText,
+  containerClass,
+  buttonClass,
+}: BookingButtonProps) => {
   const [isVisible, setIsVisible] = useState(false);
-  const showBookingForm = () => setIsVisible(!isVisible);
-  
+  const showBookingForm = () => setIsVisible((curr) => !curr);
+
   const { recaptchaKey } = useContext<RecaptchaContextType>(RecaptchaContext);
 
   const bookingPhone = layoutData.bookingPhone;
@@ -39,14 +46,38 @@ const BookingButton: FC<{
       <h2 className="mx-auto max-w-full text-center">
         or call us on {bookingPhone}
       </h2>
-      <Popup
-        isVisible={isVisible}
-        onClose={setIsVisible}
-      >
+      <Popup isVisible={isVisible} onClose={setIsVisible}>
         <BookingForm recaptchaKey={recaptchaKey} />
       </Popup>
     </div>
   );
 };
 
-export default BookingButton;
+export const BookingButtonSchema: Template = {
+  name: "BookingButton",
+  label: "Booking Button",
+  ui: {
+    previewSrc: "/blocks/hero.png",
+    itemProps: (item) => ({ label: item?.btnText }),
+  },
+  fields: [
+    {
+      type: "string",
+      label: "Button Text",
+      name: "buttonText",
+      required: false,
+    },
+    {
+      type: "string",
+      label: "Container CSS class",
+      name: "containerClass",
+      required: false,
+    },
+    {
+      type: "string",
+      label: "Button CSS class",
+      name: "buttonClass",
+      required: false,
+    },
+  ],
+};
