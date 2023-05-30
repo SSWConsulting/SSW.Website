@@ -1,6 +1,5 @@
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { videoEmbedBlockSchema } from "./videoEmbed";
-import { CustomBookingButtonSchema } from "./customBookingButton";
 import Button from "../button/button";
 import { componentRenderer } from "./mdxComponentRenderer";
 
@@ -8,10 +7,11 @@ import { Template } from "tinacms";
 import { useEffect, useState } from "react";
 
 import classNames from "classnames";
+import { BookingButtonSchema } from "../bookingButton/bookingButton";
 
 const fixedTabsBlocks: Template[] = [
   videoEmbedBlockSchema,
-  CustomBookingButtonSchema,
+  BookingButtonSchema,
 ];
 
 export const FixedTabsLayout = ({ data }) => {
