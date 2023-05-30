@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import Head from "next/head";
-import { Open_Sans } from "next/font/google";
 import { useRouter } from "next/router";
 import { classNames } from "tinacms";
 import { Header } from "./header";
@@ -10,13 +9,9 @@ import { MenuBar } from "ssw.megamenu";
 import { LiveStream } from "../liveStream/liveStream";
 import { LiveStreamBanner } from "../liveStream/liveStreamBanner";
 import { useLiveStreamProps } from "../liveStream/useLiveStreamProps";
+import { openSans } from "../util/fonts";
 
 import layoutData from "../../content/global/index.json";
-
-export const openSans = Open_Sans({
-  variable: "--open-sans-font",
-  subsets: ["latin"],
-});
 
 const structuredData = {
   "@context": "https://schema.org",

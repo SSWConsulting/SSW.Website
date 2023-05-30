@@ -20,7 +20,7 @@ import { ValidationSchema } from "./validationSchema";
 
 import classNames from "classnames";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
-import { openSans } from "../layout/layout";
+import { openSans } from "../util/fonts";
 
 export const BookingForm = ({ recaptchaKey }) => {
   //Show FormStates and Active label
