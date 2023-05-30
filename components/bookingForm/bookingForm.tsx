@@ -18,7 +18,6 @@ import {
 import { bookingFormSubmissionData } from "./bookingFormSubmissionData";
 import { ValidationSchema } from "./validationSchema";
 
-import classNames from "classnames";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import {
   RecaptchaContext,
