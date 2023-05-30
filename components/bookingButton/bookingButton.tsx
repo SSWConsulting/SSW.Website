@@ -17,7 +17,7 @@ export const BookingButton = ({
   containerClass,
   buttonClass,
 }: BookingButtonProps) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
   const showBookingForm = () => setIsVisible((curr) => !curr);
 
   const bookingPhone = layoutData.bookingPhone;
@@ -63,13 +63,13 @@ export const BookingButtonSchema: Template = {
     },
     {
       type: "string",
-      label: "Container CSS class",
+      label: "Container CSS classes",
       name: "containerClass",
       required: false,
     },
     {
       type: "string",
-      label: "Button CSS class",
+      label: "Button CSS classes",
       name: "buttonClass",
       required: false,
     },

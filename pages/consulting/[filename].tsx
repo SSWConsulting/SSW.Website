@@ -47,8 +47,7 @@ export default function ConsultingPage(
     })) || [];
 
   const bookingButtonProps = {
-    buttonText: data.global.bookingButtonText,
-    recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY,
+    buttonText: data.global.bookingButtonText
   };
 
   return (
