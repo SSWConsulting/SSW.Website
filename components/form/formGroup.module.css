@@ -1,16 +1,16 @@
 .invalid-feedback {
-  @apply mt-1 hidden w-full text-xs text-red-550;
+  @apply mt-1 hidden w-full text-xs text-red-500;
 }
 .is-invalid ~ .invalid-feedback {
   @apply block;
 }
 
 .field-wrapper label {
-  @apply absolute -top-[10px] -left-[10px] ml-[2px] bg-[length:100%_10px] bg-center bg-no-repeat px-[3px] text-[12px] font-normal text-[#999] opacity-0 transition-all duration-100 ease-linear;
+  @apply absolute -left-[10px] -top-[10px] ml-[2px] bg-[length:100%_10px] bg-center bg-no-repeat px-[3px] text-[12px] font-normal text-[#999] opacity-0 transition-all duration-100 ease-linear;
   background-image: linear-gradient(to bottom, #fff, #fff);
 }
 .field-wrapper label.show {
-  @apply -top-[17px] -left-[5px] bg-transparent opacity-100;
+  @apply -left-[5px] -top-[17px] bg-transparent opacity-100;
 }
 
 .form-control {
@@ -18,7 +18,6 @@
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .form-control,
-
 .form-select {
   @apply rounded-none !border-0 outline-none;
 }
