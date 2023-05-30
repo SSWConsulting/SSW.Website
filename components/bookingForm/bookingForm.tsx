@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Form, Formik } from "formik";
 import { useRouter } from "next/router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useContext, useMemo, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import FormGroupInput from "../form/formGroupInput";
 import FormGroupSelect from "../form/formGroupSelect";
@@ -20,8 +20,14 @@ import { ValidationSchema } from "./validationSchema";
 
 import classNames from "classnames";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
+import {
+  RecaptchaContext,
+  RecaptchaContextType,
+} from "../../context/RecaptchaContext";
 
-export const BookingForm = ({ recaptchaKey }) => {
+export const BookingForm = () => {
+  const { recaptchaKey } = useContext<RecaptchaContextType>(RecaptchaContext);
+
   //Show FormStates and Active label
   const [contactSuccess, setContactSuccess] = useState(false);
   const [country, setCountry] = useState("");

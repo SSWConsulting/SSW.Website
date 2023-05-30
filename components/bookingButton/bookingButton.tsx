@@ -4,10 +4,6 @@ import Button from "../button/button";
 import Popup from "../popup/popup";
 import layoutData from "../../content/global/index.json";
 import classNames from "classnames";
-import {
-  RecaptchaContext,
-  RecaptchaContextType,
-} from "../../context/RecaptchaContext";
 import { Template } from "tinacms";
 
 export interface BookingButtonProps {
@@ -23,8 +19,6 @@ export const BookingButton = ({
 }: BookingButtonProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const showBookingForm = () => setIsVisible((curr) => !curr);
-
-  const { recaptchaKey } = useContext<RecaptchaContextType>(RecaptchaContext);
 
   const bookingPhone = layoutData.bookingPhone;
 
@@ -47,7 +41,7 @@ export const BookingButton = ({
         or call us on {bookingPhone}
       </h2>
       <Popup isVisible={isVisible} onClose={setIsVisible}>
-        <BookingForm recaptchaKey={recaptchaKey} />
+        <BookingForm />
       </Popup>
     </div>
   );
