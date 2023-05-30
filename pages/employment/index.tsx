@@ -15,9 +15,10 @@ import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { Blocks } from "../../components/blocks-renderer";
 import { HeaderButton } from "../../components/button/headerButton";
+import { InferGetStaticPropsType } from "next";
 
 export default function EmploymentPage(
-  props: AsyncReturnType<typeof getStaticProps>["props"]
+  props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const { data } = useTina({
     data: props.data,
@@ -157,6 +158,3 @@ export const getStaticProps = async ({ params }) => {
     },
   };
 };
-
-export type AsyncReturnType<T extends (...args: any) => Promise<any>> = // eslint-disable-line @typescript-eslint/no-explicit-any
-  T extends (...args: any) => Promise<infer R> ? R : any; // eslint-disable-line @typescript-eslint/no-explicit-any

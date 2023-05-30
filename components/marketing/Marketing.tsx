@@ -7,7 +7,7 @@ export const Marketing = (props) => {
   const content = props.content.marketing;
 
   if (!content) {
-    return <div />;
+    return <></>;
   }
 
   return (
