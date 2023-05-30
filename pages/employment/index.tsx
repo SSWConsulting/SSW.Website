@@ -6,18 +6,15 @@ import { BuiltOnAzure, ClientLogos } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Booking } from "../../components/blocks/booking";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
-import BookingButton from "../../components/bookingButton/bookingButton";
 import { Layout } from "../../components/layout";
 import { Marketing } from "../../components/marketing/Marketing";
-import { MediaCardProps } from "../../components/consulting/mediaCard/mediaCard";
-import MediaCards from "../../components/consulting/mediaCard/mediaCards";
 import TechnologyCards from "../../components/technologyCard/technologyCards";
-import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { Blocks } from "../../components/blocks-renderer";
+import { HeaderButton } from "../../components/button/headerButton";
 
 export default function EmploymentPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -54,7 +51,7 @@ export default function EmploymentPage(
         </Section>
         <Section className="w-full" color="black">
           <Booking {...data.employment.booking}>
-            {/* <BookingButton {...bookingButtonProps} /> */}
+            <HeaderButton>Check out our current opportunities</HeaderButton>
           </Booking>
         </Section>
         <Section

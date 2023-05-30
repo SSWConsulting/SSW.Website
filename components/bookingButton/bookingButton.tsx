@@ -5,6 +5,7 @@ import Popup from "../popup/popup";
 import layoutData from "../../content/global/index.json";
 import classNames from "classnames";
 import { Template } from "tinacms";
+import { HeaderButton } from "../button/headerButton";
 
 export interface BookingButtonProps {
   buttonText?: string;
@@ -29,14 +30,12 @@ export const BookingButton = ({
         containerClass
       )}
     >
-      <Button
-        ripple
-        className={classNames("mx-auto mt-14 w-96 max-w-full p-3", buttonClass)}
+      <HeaderButton
+        className={classNames(buttonClass, "w-96")}
         onClick={showBookingForm}
-        data-aos="fade-up"
       >
         {buttonText}
-      </Button>
+      </HeaderButton>
       <h2 className="mx-auto max-w-full text-center">
         or call us on {bookingPhone}
       </h2>
