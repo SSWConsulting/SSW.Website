@@ -45,7 +45,7 @@ const FormGroupTextArea = ({
       <small>Maximum 2000 characters</small>
       <ErrorMessage
         name={field.name}
-        className={errorMessageClass}
+        className={errorMessageClass || styles["invalid-feedback"]}
         component="div"
       />
     </div>
