@@ -20,7 +20,6 @@ import { ValidationSchema } from "./validationSchema";
 
 import classNames from "classnames";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
-import { openSans } from "../util/fonts";
 
 export const BookingForm = ({ recaptchaKey }) => {
   //Show FormStates and Active label
@@ -142,7 +141,7 @@ export const BookingForm = ({ recaptchaKey }) => {
 
   return (
     <div
-      className={classNames("rounded-none bg-gray-125", openSans.className)}
+      className={classNames("rounded-none bg-gray-125")}
     >
       <div className="relative p-4">
         <div className="m-0 bg-white px-6 pb-5 pt-1">

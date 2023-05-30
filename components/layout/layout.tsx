@@ -9,7 +9,6 @@ import { MenuBar } from "ssw.megamenu";
 import { LiveStream } from "../liveStream/liveStream";
 import { LiveStreamBanner } from "../liveStream/liveStreamBanner";
 import { useLiveStreamProps } from "../liveStream/useLiveStreamProps";
-import { openSans } from "../util/fonts";
 
 import layoutData from "../../content/global/index.json";
 
@@ -42,7 +41,6 @@ export const Layout = ({ children, className = "" }) => {
         <div
           className={classNames(
             "flex min-h-screen flex-col font-sans",
-            openSans.variable,
             className
           )}
         >
