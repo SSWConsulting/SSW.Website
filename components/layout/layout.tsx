@@ -11,7 +11,12 @@ import { LiveStreamBanner } from "../liveStream/liveStreamBanner";
 import { useLiveStreamProps } from "../liveStream/useLiveStreamProps";
 
 import layoutData from "../../content/global/index.json";
-import { openSans } from "../util/fonts";
+import { Open_Sans } from "next/font/google";
+
+export const openSans = Open_Sans({
+  variable: "--open-sans-font",
+  subsets: ["latin"],
+});
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -39,6 +44,11 @@ export const Layout = ({ children, className = "" }) => {
         )}
       </Head>
       <Theme>
+        <style jsx global>{`
+          :root {
+            --open-sans-font: ${openSans.style.fontFamily};
+          }
+        `}</style>
         <div
           className={classNames(
             "flex min-h-screen flex-col font-sans",

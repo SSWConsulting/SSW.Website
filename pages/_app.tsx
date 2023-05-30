@@ -16,7 +16,6 @@ const zendesk = process.env.NEXT_PUBLIC_ZENDESK_CHAT_KEY;
 // Hack as per https://stackoverflow.com/a/66575373 to stop font awesome icons breaking
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import AzureAppInsights from "../context/app-insight-client";
-import { openSans } from "../components/util/fonts";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -43,11 +42,6 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <>
-      <style jsx global>{`
-        :root {
-          --open-sans-font: ${openSans.variable}
-        }
-      `}</style>
       <DefaultSeo {...NEXT_SEO_DEFAULT} />
       <AzureAppInsights>
         <Component {...pageProps} />
