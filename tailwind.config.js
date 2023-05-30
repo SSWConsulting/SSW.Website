@@ -281,6 +281,9 @@ module.exports = {
               fontWeight: "300",
               marginBottom: "7px",
             },
+            strong: {
+              color: theme("colors.sswBlack")
+            },
             a: {
               fontWeight: "300"
             },
