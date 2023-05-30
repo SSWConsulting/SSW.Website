@@ -1,4 +1,4 @@
-import { FC, useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { BookingForm } from "../bookingForm/bookingForm";
 import Button from "../button/button";
 import Popup from "../popup/popup";
