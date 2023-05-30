@@ -13,7 +13,7 @@ import { useLiveStreamProps } from "../liveStream/useLiveStreamProps";
 
 import layoutData from "../../content/global/index.json";
 
-const openSans = Open_Sans({
+export const openSans = Open_Sans({
   variable: "--open-sans-font",
   subsets: ["latin"],
 });
