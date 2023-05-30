@@ -11,6 +11,7 @@ import { LiveStreamBanner } from "../liveStream/liveStreamBanner";
 import { useLiveStreamProps } from "../liveStream/useLiveStreamProps";
 
 import layoutData from "../../content/global/index.json";
+import { openSans } from "../util/fonts";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -41,6 +42,7 @@ export const Layout = ({ children, className = "" }) => {
         <div
           className={classNames(
             "flex min-h-screen flex-col font-sans",
+            openSans.className,
             className
           )}
         >

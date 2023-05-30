@@ -20,6 +20,8 @@ import { ValidationSchema } from "./validationSchema";
 
 import classNames from "classnames";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
+import { openSans } from "../util/fonts";
+import Head from "next/head";
 
 export const BookingForm = ({ recaptchaKey }) => {
   //Show FormStates and Active label
@@ -143,7 +145,10 @@ export const BookingForm = ({ recaptchaKey }) => {
     <div
       className={classNames("rounded-none bg-gray-125")}
     >
-      <div className="relative p-4">
+      <style jsx>{`
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+      `}</style>
+      <div className="relative p-4" style={{ fontFamily: "Open Sans" }}>
         <div className="m-0 bg-white px-6 pb-5 pt-1">
           <h2 className="mb-14 mt-1.5 pt-1.5 !text-2xl text-sswRed">
             {CONTACT_FORM_TITLE}
