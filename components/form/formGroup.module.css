@@ -1,5 +1,5 @@
 .invalid-feedback {
-  @apply mt-1 hidden w-full text-xs text-red-550;
+  @apply mt-2 hidden w-full text-xs text-red-550;
 }
 .is-invalid ~ .invalid-feedback {
   @apply block;
