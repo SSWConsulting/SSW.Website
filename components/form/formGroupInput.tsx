@@ -47,7 +47,7 @@ const FormGroupInput: FC<
       </Field>
       <ErrorMessage
         name={field.name}
-        className={styles["invalid-feedback"]}
+        className={errorMessageClass}
         component="div"
       />
     </div>

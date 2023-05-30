@@ -53,7 +53,7 @@ const FormGroupSelect: FC<
       </Field>
       <ErrorMessage
         name={props.name}
-        className={styles["invalid-feedback"]}
+        className={errorMessageClass}
         component="div"
       />
     </div>
