@@ -109,7 +109,7 @@ export default function EducationalIndex(
       </div>
     ),
     BookingForm: () => (
-      <BookingForm recaptchaKey={props.env["GOOGLE_RECAPTCHA_KEY"]} />
+      <BookingForm />
     ),
     ContactUs: ({ buttonText, link }) => (
       <div className="mb-16 flex justify-center">
