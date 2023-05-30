@@ -21,8 +21,6 @@ const FormGroupSelect: FC<
   ...props
 }) => {
   const [field, meta] = useField(props);
-  
-  !errorMessageClass && (errorMessageClass = styles["invalid-feedback"]);
 
   return (
       <div className={styles["field-wrapper"]}>
@@ -55,7 +53,7 @@ const FormGroupSelect: FC<
       </Field>
       <ErrorMessage
         name={props.name}
-        className={classNames(styles["invalid-feedback"], errorMessageClass)}
+        className={errorMessageClass || styles["invalid-feedback"]}
         component="div"
       />
     </div>

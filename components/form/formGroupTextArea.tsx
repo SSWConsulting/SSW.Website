@@ -48,7 +48,7 @@ const FormGroupTextArea: VFC<
       <small>Maximum 2000 characters</small>
       <ErrorMessage
         name={field.name}
-        className={classNames(styles["invalid-feedback"], errorMessageClass)}
+        className={errorMessageClass || styles["invalid-feedback"]}
         component="div"
       />
     </div>
