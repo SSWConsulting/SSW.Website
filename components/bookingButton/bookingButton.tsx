@@ -1,20 +1,24 @@
-import { FC, useState } from "react";
+import { FC, useContext, useState } from "react";
 import { BookingForm } from "../bookingForm/bookingForm";
 import Button from "../button/button";
 import Popup from "../popup/popup";
 import layoutData from "../../content/global/index.json";
 import classNames from "classnames";
+import {
+  RecaptchaContext,
+  RecaptchaContextType,
+} from "../../context/RecaptchaContext";
 
 const BookingButton: FC<{
   buttonText?: string;
-  recaptchaKey?: string;
   containerClass?: string;
   buttonClass?: string;
-}> = ({ buttonText, recaptchaKey, containerClass, buttonClass }) => {
+}> = ({ buttonText, containerClass, buttonClass }) => {
   const [isVisible, setIsVisible] = useState(false);
   const showBookingForm = () => setIsVisible(!isVisible);
+  
+  const { recaptchaKey } = useContext<RecaptchaContextType>(RecaptchaContext);
 
-  const bookingForm = <BookingForm recaptchaKey={recaptchaKey} />;
   const bookingPhone = layoutData.bookingPhone;
 
   return (
@@ -38,8 +42,9 @@ const BookingButton: FC<{
       <Popup
         isVisible={isVisible}
         onClose={setIsVisible}
-        children={bookingForm}
-      />
+      >
+        <BookingForm recaptchaKey={recaptchaKey} />
+      </Popup>
     </div>
   );
 };
