@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import Head from "next/head";
-import { Open_Sans } from "next/font/google";
 import { useRouter } from "next/router";
 import { classNames } from "tinacms";
 import { Header } from "./header";
@@ -12,8 +11,9 @@ import { LiveStreamBanner } from "../liveStream/liveStreamBanner";
 import { useLiveStreamProps } from "../liveStream/useLiveStreamProps";
 
 import layoutData from "../../content/global/index.json";
+import { Open_Sans } from "next/font/google";
 
-const openSans = Open_Sans({
+export const openSans = Open_Sans({
   variable: "--open-sans-font",
   subsets: ["latin"],
 });
@@ -44,10 +44,16 @@ export const Layout = ({ children, className = "" }) => {
         )}
       </Head>
       <Theme>
+        {/* Ensures next/font CSS variable is accessible for all components */}
+        <style jsx global>{`
+          :root {
+            --open-sans-font: ${openSans.style.fontFamily};
+          }
+        `}</style>
         <div
           className={classNames(
             "flex min-h-screen flex-col font-sans",
-            openSans.variable,
+            openSans.className,
             className
           )}
         >

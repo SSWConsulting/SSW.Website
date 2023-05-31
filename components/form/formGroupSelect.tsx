@@ -21,11 +21,6 @@ const FormGroupSelect: FC<
   ...props
 }) => {
   const [field, meta] = useField(props);
-  
-  fieldClass = classNames(fieldClass || styles["form-select"],
-    !!meta.error && styles["is-invalid"],
-  );
-  !errorMessageClass && (errorMessageClass = styles["invalid-feedback"]);
 
   return (
       <div className={styles["field-wrapper"]}>
@@ -45,7 +40,9 @@ const FormGroupSelect: FC<
             <select
               {...field}
               {...props}
-              className={fieldClass}
+              className={classNames(fieldClass || styles["form-select"],
+                !!meta.error && styles["is-invalid"],
+              )}
               onChange={selectOnChange}
               onClick={handleClick}
             >
@@ -56,7 +53,7 @@ const FormGroupSelect: FC<
       </Field>
       <ErrorMessage
         name={props.name}
-        className={errorMessageClass}
+        className={errorMessageClass || styles["invalid-feedback"]}
         component="div"
       />
     </div>

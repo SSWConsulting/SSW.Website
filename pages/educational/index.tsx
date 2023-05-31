@@ -16,6 +16,7 @@ import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
 import { InferGetStaticPropsType } from "next";
 import layoutData from "../../content/global/index.json";
+import { RecaptchaContext } from "../../context/RecaptchaContext";
 
 export default function EducationalIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -31,11 +32,15 @@ export default function EducationalIndex(
   };
 
   const ensureEndsWith = (text: string | undefined | null, suffix: string) => {
-    return (text?.endsWith(suffix) || false) ? text : text + suffix;
-  }
+    return text?.endsWith(suffix) || false ? text : text + suffix;
+  };
 
   const node = getNode(data);
-  node.seo && (node.seo.canonical = `${ensureEndsWith(layoutData.header.url, "/")}educational`);
+  node.seo &&
+    (node.seo.canonical = `${ensureEndsWith(
+      layoutData.header.url,
+      "/"
+    )}educational`);
   const PComponent = ({ children }) => <p className="mb-3">{children}</p>;
   const SolutionElements = ({ solutions }) => {
     const solutionPropsMap = ({ solutionImage, name, description }) => ({
@@ -108,9 +113,7 @@ export default function EducationalIndex(
         </div>
       </div>
     ),
-    BookingForm: () => (
-      <BookingForm recaptchaKey={props.env["GOOGLE_RECAPTCHA_KEY"]} />
-    ),
+    BookingForm: () => <BookingForm />,
     ContactUs: ({ buttonText, link }) => (
       <div className="mb-16 flex justify-center">
         <a href={link}>
@@ -126,33 +129,40 @@ export default function EducationalIndex(
   };
 
   return (
-    <Layout>
-      <SEO seo={node.seo} />
-      <Container className="flex-1" size="custom">
-        <DownloadWhitepaperLink>
-          <Image
-            src={node.bannerImg}
-            width={1312}
-            height={0}
-            alt="SSW Educational Banner"
-            sizes="100vw"
+    <RecaptchaContext.Provider
+      value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
+    >
+      <Layout>
+        <SEO seo={node.seo} />
+        <Container className="flex-1" size="custom">
+          <DownloadWhitepaperLink>
+            <Image
+              src={node.bannerImg}
+              width={1312}
+              height={0}
+              alt="SSW Educational Banner"
+              sizes="100vw"
+            />
+          </DownloadWhitepaperLink>
+          <Breadcrumbs
+            path={removeExtension(node._sys.relativePath)}
+            suffix=""
+            title={node.seo.title}
           />
-        </DownloadWhitepaperLink>
-        <Breadcrumbs
-          path={removeExtension(node._sys.relativePath)}
-          suffix=""
-          title={node.seo.title}
-        />
-        <h1 className="mb-1 py-0 text-3xl">SSW Educational</h1>
-        <h2 className="!mt-1 pt-0 text-md font-light">
-          Customised Technology Solutions
-        </h2>
-        <div className="mb-4 mt-15">
-          <TinaMarkdown components={educationalRenderer} content={node._body} />
-        </div>
-      </Container>
-      <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
-    </Layout>
+          <h1 className="mb-1 py-0 text-3xl">SSW Educational</h1>
+          <h2 className="!mt-1 pt-0 text-md font-light">
+            Customised Technology Solutions
+          </h2>
+          <div className="mb-4 mt-15">
+            <TinaMarkdown
+              components={educationalRenderer}
+              content={node._body}
+            />
+          </div>
+        </Container>
+        <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+      </Layout>
+    </RecaptchaContext.Provider>
   );
 }
 
@@ -171,7 +181,7 @@ export const getStaticProps = async () => {
     props: {
       ...tinaProps,
       env: {
-        GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY || null,
+        GOOGLE_RECAPTCHA_SITE_KEY: process.env.GOOGLE_RECAPTCHA_SITE_KEY || null,
       },
     },
   };

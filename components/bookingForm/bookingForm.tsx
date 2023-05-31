@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Form, Formik } from "formik";
 import { useRouter } from "next/router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useContext, useMemo, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import FormGroupInput from "../form/formGroupInput";
 import FormGroupSelect from "../form/formGroupSelect";
@@ -18,16 +18,15 @@ import {
 import { bookingFormSubmissionData } from "./bookingFormSubmissionData";
 import { ValidationSchema } from "./validationSchema";
 
-import { Open_Sans } from "next/font/google";
-import classNames from "classnames";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
+import {
+  RecaptchaContext,
+  RecaptchaContextType,
+} from "../../context/RecaptchaContext";
 
-const openSans = Open_Sans({
-  variable: "--open-sans-font",
-  subsets: ["latin"],
-});
+export const BookingForm = () => {
+  const { recaptchaKey } = useContext<RecaptchaContextType>(RecaptchaContext);
 
-export const BookingForm = ({ recaptchaKey }) => {
   //Show FormStates and Active label
   const [contactSuccess, setContactSuccess] = useState(false);
   const [country, setCountry] = useState("");
@@ -146,12 +145,7 @@ export const BookingForm = ({ recaptchaKey }) => {
   const statesDefaultOption = getDefaultOption(FORM_INPUT.States);
 
   return (
-    <div
-      className={classNames(
-        "rounded-none bg-gray-125 font-sans",
-        openSans.variable
-      )}
-    >
+    <div className="rounded-none bg-gray-125 font-sans">
       <div className="relative p-4">
         <div className="m-0 bg-white px-6 pb-5 pt-1">
           <h2 className="mb-14 mt-1.5 pt-1.5 !text-2xl text-sswRed">

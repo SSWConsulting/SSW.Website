@@ -27,6 +27,7 @@ import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
+import { bookingButtonSchema } from "../bookingButton/bookingButton";
 
 export const pageBlocks: Template[] = [
   aboutUsBlockSchema,
@@ -56,6 +57,7 @@ export const pageBlocks: Template[] = [
   citationBlockSchema,
   subNewsLettersButtonSchema,
   newslettersTableBlockSchema,
+  bookingButtonSchema,
 ];
 
 export * from "../terms-and-conditions/agreementForm";
@@ -83,3 +85,4 @@ export * from "./upcomingEvents";
 export * from "./verticalImageLayout";
 export * from "./verticalListItem";
 export * from "./videoEmbed";
+export * from "../bookingButton/bookingButton";
