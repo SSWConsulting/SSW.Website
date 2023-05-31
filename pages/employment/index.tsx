@@ -71,7 +71,7 @@ export default function EmploymentPage(
               />
               <Benefits data={data.employment.benefits} />
               {data.employment.benefitsBody && (
-                <TinaMarkdown content={data.employment.benefitsBody} />
+                <TinaMarkdown content={data.employment.benefitsBody} components={componentRenderer} />
               )}
             </div>
           </div>

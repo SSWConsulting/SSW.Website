@@ -5,6 +5,7 @@ interface HeaderButtonProps {
   children?: React.ReactNode
   onClick?: Function
   className?: string
+  link?: string
 }
 
 export const HeaderButton = ({ children, onClick, className }: HeaderButtonProps) => {
