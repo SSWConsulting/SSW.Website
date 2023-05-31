@@ -70,6 +70,9 @@ export default function EmploymentPage(
                 content={data.employment._body}
               />
               <Benefits data={data.employment.benefits} />
+              {data.employment.benefitsBody && (
+                <TinaMarkdown content={data.employment.benefitsBody} />
+              )}
             </div>
           </div>
         </Section>

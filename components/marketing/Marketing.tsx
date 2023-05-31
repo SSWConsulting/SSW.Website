@@ -2,6 +2,9 @@ import { Container } from "../util/container";
 import { Section } from "../util/section";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { VideoModal } from "../videoModal";
+import { componentRenderer } from "../blocks/mdxComponentRenderer";
+
+export const sides = ["left", "right"];
 
 export const Marketing = (props) => {
   const content = props.content.marketing;
@@ -21,12 +24,20 @@ export const Marketing = (props) => {
           dangerouslySetInnerHTML={{ __html: content?.title }}
         ></h1>
         <div className="my-8 flex flex-col justify-between md:flex-row">
+          {content.textSide === sides[0] && (
+            <div className="mt-16 w-full pb-0 text-left font-sans text-md text-white md:ml-10 md:mt-0 md:w-1/3">
+              <TinaMarkdown content={content?.body} />
+            </div>
+          )}
           <div className="mx-auto w-full md:w-1/2">
-            <VideoModal url={content?.videoUrl} />
+            <TinaMarkdown content={content?.mediaComponent} components={componentRenderer}  />
           </div>
-          <div className="mt-16 w-full pb-0 text-left font-sans text-md text-white md:ml-10 md:mt-0 md:w-1/3">
-            <TinaMarkdown content={content?.body} />
-          </div>
+          {content.textSide === sides[1] && (
+            <div className="mt-16 w-full pb-0 text-left font-sans text-md text-white md:ml-10 md:mt-0 md:w-1/3">
+              <TinaMarkdown content={content?.body} />
+            </div>
+          )}
+          
         </div>
       </Container>
     </Section>

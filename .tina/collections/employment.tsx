@@ -164,6 +164,12 @@ export const employmentSchema: Collection = {
       ],
     },
     {
+      type: "rich-text",
+      label: "After benefits body",
+      name: "benefitsBody",
+      templates: [...Schemas.pageBlocks],
+    },
+    {
       type: "object",
       label: "Technologies",
       name: "technologies",
