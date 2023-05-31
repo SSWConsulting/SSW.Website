@@ -849,5 +849,55 @@
   ],
   "seo": {
     "title": "SSW Consulting Services | Over 25 years of experience developing awesome solutions on top of Angular, React, Blazor, .NET, Azure, GitHub, DevOps (was VSTS/TFS), Power Apps, Power Automate, Power BI, SharePoint, Dynamics and SQL Server"
-  }
+  },
+  "sidebar": [
+    {
+      "label": "All SSW Services",
+      "tag": "content/consulting/tag/all-ssw-services.json"
+    },
+    {
+      "label": "Website Development",
+      "tag": "content/consulting/tag/website-development.json"
+    },
+    {
+      "label": "Application Development",
+      "tag": "content/consulting/tag/application-development.json"
+    },
+    {
+      "label": "Mobile Development",
+      "tag": "content/consulting/tag/mobile-development.json"
+    },
+    {
+      "label": "Database Development",
+      "tag": "content/consulting/tag/database-development.json"
+    },
+    {
+      "label": "AI Development",
+      "tag": "content/consulting/tag/ai-development.json"
+    },
+    {
+      "label": "Design",
+      "tag": "content/consulting/tag/design.json"
+    },
+    {
+      "label": "Video",
+      "tag": "content/consulting/tag/video.json"
+    },
+    {
+      "label": "Platform Development",
+      "tag": "content/consulting/tag/platform-development.json"
+    },
+    {
+      "label": "Content Management Systems (CMS)",
+      "tag": "content/consulting/tag/cms.json"
+    },
+    {
+      "label": "Cloud and Infrastructure",
+      "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+    },
+    {
+      "label": "Other SSW Services",
+      "tag": "content/consulting/tag/consulting.json"
+    }
+  ]
 }

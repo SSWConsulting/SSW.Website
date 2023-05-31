@@ -13,6 +13,30 @@ export const consultingIndexSchema: Collection = {
     seoSchema,
     {
       type: "object",
+      label: "Sidebar",
+      name: "sidebar",
+      list: true,
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.label };
+        },
+      },
+      fields: [
+        {
+          type: "string",
+          label: "Label",
+          name: "label",
+        },
+        {
+          type: "reference",
+          label: "Associated Tag",
+          name: "tag",
+          collections: ["consultingTag"],
+        },
+      ],
+    },
+    {
+      type: "object",
       label: "Categories",
       name: "categories",
       list: true,
@@ -127,11 +151,6 @@ export const consultingTagSchema: Collection = {
       type: "string",
       label: "Name",
       name: "name",
-    },
-    {
-      type: "number",
-      label: "Display Order",
-      name: "order",
     },
   ],
 };
