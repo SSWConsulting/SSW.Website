@@ -1,20 +1,25 @@
-import { FC, useState } from "react";
+import { useState } from "react";
 import { BookingForm } from "../bookingForm/bookingForm";
 import Button from "../button/button";
 import Popup from "../popup/popup";
 import layoutData from "../../content/global/index.json";
 import classNames from "classnames";
+import { Template } from "tinacms";
 
-const BookingButton: FC<{
+export interface BookingButtonProps {
   buttonText?: string;
-  recaptchaKey?: string;
   containerClass?: string;
   buttonClass?: string;
-}> = ({ buttonText, recaptchaKey, containerClass, buttonClass }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const showBookingForm = () => setIsVisible(!isVisible);
+}
 
-  const bookingForm = <BookingForm recaptchaKey={recaptchaKey} />;
+export const BookingButton = ({
+  buttonText,
+  containerClass,
+  buttonClass,
+}: BookingButtonProps) => {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const showBookingForm = () => setIsVisible((curr) => !curr);
+
   const bookingPhone = layoutData.bookingPhone;
 
   return (
@@ -35,13 +40,26 @@ const BookingButton: FC<{
       <h2 className="mx-auto max-w-full text-center">
         or call us on {bookingPhone}
       </h2>
-      <Popup
-        isVisible={isVisible}
-        onClose={setIsVisible}
-        children={bookingForm}
-      />
+      <Popup isVisible={isVisible} onClose={setIsVisible}>
+        <BookingForm />
+      </Popup>
     </div>
   );
 };
 
-export default BookingButton;
+export const bookingButtonSchema: Template = {
+  name: "BookingButton",
+  label: "Booking Button",
+  ui: {
+    previewSrc: "/blocks/hero.png",
+    itemProps: (item) => ({ label: item?.btnText }),
+  },
+  fields: [
+    {
+      type: "string",
+      label: "Button Text",
+      name: "buttonText",
+      required: false,
+    },
+  ],
+};

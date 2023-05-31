@@ -9,6 +9,8 @@ import { Container } from "../../components/util/container";
 import VideoCards, { VideoCardProps } from "../../components/util/videoCards";
 import { TrainingCarousel } from "../../components/training/trainingHeader";
 import { Blocks } from "../../components/blocks-renderer";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { removeExtension } from "../../services/utils.service";
 
 export default function TrainingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
@@ -30,16 +32,22 @@ export default function TrainingPage(
       <SEO seo={data.training.seo} />
       <Layout>
         <TrainingCarousel data={data.training.trainingHeaderCarousel} />
+        <Container className="pt-2">
+          <Breadcrumbs
+            path={removeExtension(props.variables.relativePath)}
+            suffix={data.global.breadcrumbSuffix}
+            title={data.training.seo.title}
+          />
 
-        <Blocks prefix="Training_body" blocks={data.training._body} />
+          <Blocks prefix="Training_body" blocks={data.training._body} />
 
-        <VideoCards
-          cardProps={videoCardProps}
-          channelLink={data.training.videos?.channelLink}
-          defaultChannelLink={data.global.youtubeChannelLink}
-        />
+          <VideoCards
+            cardProps={videoCardProps}
+            channelLink={data.training.videos?.channelLink}
+            defaultChannelLink={data.global.youtubeChannelLink}
+          />
 
-        {/*
+          {/*
                     Blocked while waiting for testimonials
 
                 <Section color="white" className="">
@@ -50,24 +58,25 @@ export default function TrainingPage(
                     </Container>
                 </Section> */}
 
-        <Section color="white">
-          <Container className={"flex-1 pt-0"}>
-            <div className="flex flex-col items-center pb-15 text-center">
-              <h2>
-                Trusted by more than <span className="text-sswRed">1400+</span>{" "}
-                clients in the world
-              </h2>
-              <p className="max-w-3xl text-lg font-light text-gray-500">
-                Our software developers & consultants have delivered the best in
-                the business to more than 1,400 clients in 15 countries. Read
-                more
-              </p>
-            </div>
-            <ClientLogos />
-          </Container>
-        </Section>
+          <Section color="white">
+            <Container className={"flex-1 pt-0"}>
+              <div className="flex flex-col items-center pb-15 text-center">
+                <h2>
+                  Trusted by more than{" "}
+                  <span className="text-sswRed">1400+</span> clients in the
+                  world
+                </h2>
+                <p className="max-w-3xl text-lg font-light text-gray-500">
+                  Our software developers & consultants have delivered the best
+                  in the business to more than 1,400 clients in 15 countries.
+                  Read more
+                </p>
+              </div>
+              <ClientLogos />
+            </Container>
+          </Section>
 
-        {/*
+          {/*
                     Blocked by: https://github.com/SSWConsulting/SSW.Website-v3/issues/282
 
                     <Section
@@ -87,6 +96,7 @@ export default function TrainingPage(
                         </div>
                     </Container>
             </Section>*/}
+        </Container>
       </Layout>
     </>
   );

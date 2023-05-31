@@ -17,10 +17,10 @@ import TrainingInformation from "../training/trainingInformation";
 import { TrainingLearningOutcome } from "../training/trainingLearningOutcome";
 import { RecurringEvent } from "./recurringEvent";
 import { FixedTabsLayout } from "./fixedTabsLayout";
-import { CustomBookingButton } from "./customBookingButton";
 import { Flag } from "./flag";
 import { SubNewsLettersButton } from "./subNewsLettersButton";
 import { NewslettersTable } from "./newslettersTable";
+import { BookingButton } from "../bookingButton/bookingButton";
 
 export const componentRenderer: Components<{
   ClientLogos: Record<string, never>;
@@ -118,8 +118,8 @@ export const componentRenderer: Components<{
     heading2: string;
     tab2Body: string;
   };
-  CustomBookingButton: {
-    btnText: string;
+  BookingButton: {
+    buttonText: string;
   };
   NewslettersTable: {
     headerText: string;
@@ -151,7 +151,7 @@ export const componentRenderer: Components<{
   TrainingLearningOutcome: (props) => <TrainingLearningOutcome data={props} />,
   RecurringEvent: (props) => <RecurringEvent data={props} />,
   FixedTabsLayout: (props) => <FixedTabsLayout data={props} />,
-  CustomBookingButton: (props) => <CustomBookingButton data={props} />,
+  BookingButton: (props) => <BookingButton {...props} />,
   NewslettersTable: (props) => <NewslettersTable data={props} />,
   SubNewsLettersButton: (props) => <SubNewsLettersButton {...props} />,
   Citation: (props) => <Citation {...props} />,

@@ -192,5 +192,37 @@ export const globalSchema: Collection = {
         },
       ],
     },
+    {
+      type: "object",
+      label: "Clients",
+      name: "clients",
+      fields: [
+        {
+          type: "object",
+          label: "Clients List",
+          name: "clientsList",
+          list: true,
+          ui: {
+            itemProps: (item) => {
+              return { label: item?.clientName };
+            },
+          },
+          fields: [
+            {
+              type: "string",
+              label: "Client Name",
+              name: "clientName",
+            },
+            {
+              type: "string",
+              label: "Image URL",
+              name: "imageUrl",
+              description:
+                "The path of the image from the project root (most of the time, '/images/...')",
+            },
+          ],
+        },
+      ],
+    },
   ],
 };

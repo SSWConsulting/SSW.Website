@@ -8,6 +8,12 @@ import axios from "axios";
  * @param headerText - The text to display above the form.
  * @param subscribeButtonText - The text to display on the subscribe button.
  */
+const placeholder = {
+  firstName: "Your First Name",
+  lastName: "Your Last Name",
+  email: "Your Email",
+};
+
 export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -41,6 +47,7 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
         "/api/add-contact-to-newsletters",
         payload
       );
+      resetForm();
       setInfoMessage(response.data.message);
     } catch (err) {
       setInfoMessage(err.response.data.message);
@@ -48,6 +55,12 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
     }
 
     setIsLoading(false);
+  };
+
+  const resetForm = () => {
+    setFirstName("");
+    setLastName("");
+    setEmail("");
   };
 
   const handleEmailChange = (
@@ -68,13 +81,18 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
     setLastName(event.target.value);
   };
 
-  const inputRender = (inputValue, handleInputCallBack): JSX.Element => (
+  const inputRender = (
+    inputValue,
+    placeholder,
+    id,
+    handleInputCallBack
+  ): JSX.Element => (
     <div className="mb-1">
       <input
         className="col-span-3 w-full appearance-none rounded border-1 border-gray-300 px-3 py-2 leading-tight text-gray-700 focus:shadow focus:outline md:col-span-2"
-        id="firstName"
+        id={id}
         type="text"
-        placeholder="Your First Name"
+        placeholder={placeholder}
         onChange={handleInputCallBack}
         value={inputValue}
       />
@@ -85,9 +103,24 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
     <div>
       <p className="mb-2">{headerText}</p>
       <div className="container sm:w-full sm:max-w-full md:w-1/4">
-        {inputRender(firstName, handleFirstNameChange)}
-        {inputRender(lastName, handleLastNameChange)}
-        {inputRender(email, handleEmailChange)}
+        {inputRender(
+          firstName,
+          placeholder.firstName,
+          Object.keys(placeholder)[0],
+          handleFirstNameChange
+        )}
+        {inputRender(
+          lastName,
+          placeholder.lastName,
+          Object.keys(placeholder)[1],
+          handleLastNameChange
+        )}
+        {inputRender(
+          email,
+          placeholder.email,
+          Object.keys(placeholder)[2],
+          handleEmailChange
+        )}
         <div className="flex justify-center">
           <button
             className="box-border flex w-1/2 cursor-pointer items-center justify-center gap-1 bg-sswRed py-2 pl-4 pr-2 font-sans uppercase text-white hover:text-gray-100 hover:opacity-95"
