@@ -20,10 +20,7 @@ import { FixedTabsLayout } from "./fixedTabsLayout";
 import { Flag } from "./flag";
 import { SubNewsLettersButton } from "./subNewsLettersButton";
 import { NewslettersTable } from "./newslettersTable";
-import {
-  BookingButton,
-  BookingButtonProps,
-} from "../bookingButton/bookingButton";
+import { BookingButton } from "../bookingButton/bookingButton";
 
 export const componentRenderer: Components<{
   ClientLogos: Record<string, never>;
@@ -121,7 +118,9 @@ export const componentRenderer: Components<{
     heading2: string;
     tab2Body: string;
   };
-  BookingButton: BookingButtonProps;
+  BookingButton: {
+    buttonText: string;
+  };
   NewslettersTable: {
     headerText: string;
   };

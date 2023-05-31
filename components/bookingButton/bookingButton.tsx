@@ -47,7 +47,7 @@ export const BookingButton = ({
   );
 };
 
-export const BookingButtonSchema: Template = {
+export const bookingButtonSchema: Template = {
   name: "BookingButton",
   label: "Booking Button",
   ui: {
@@ -59,18 +59,6 @@ export const BookingButtonSchema: Template = {
       type: "string",
       label: "Button Text",
       name: "buttonText",
-      required: false,
-    },
-    {
-      type: "string",
-      label: "Container CSS classes",
-      name: "containerClass",
-      required: false,
-    },
-    {
-      type: "string",
-      label: "Button CSS classes",
-      name: "buttonClass",
       required: false,
     },
   ],

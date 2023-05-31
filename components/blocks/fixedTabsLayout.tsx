@@ -7,11 +7,11 @@ import { Template } from "tinacms";
 import { useEffect, useState } from "react";
 
 import classNames from "classnames";
-import { BookingButtonSchema } from "../bookingButton/bookingButton";
+import { bookingButtonSchema } from "../bookingButton/bookingButton";
 
 const fixedTabsBlocks: Template[] = [
   videoEmbedBlockSchema,
-  BookingButtonSchema,
+  bookingButtonSchema,
 ];
 
 export const FixedTabsLayout = ({ data }) => {
