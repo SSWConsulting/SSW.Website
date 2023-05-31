@@ -5,7 +5,7 @@ import Popup from "../popup/popup";
 import layoutData from "../../content/global/index.json";
 import classNames from "classnames";
 import { Template } from "tinacms";
-import { HeaderButton } from "../button/headerButton";
+import { UtilityButton } from "../button/utilityButton";
 
 export interface BookingButtonProps {
   buttonText?: string;
@@ -30,12 +30,11 @@ export const BookingButton = ({
         containerClass
       )}
     >
-      <HeaderButton
+      <UtilityButton
         className={classNames(buttonClass, "w-96")}
         onClick={showBookingForm}
-      >
-        {buttonText}
-      </HeaderButton>
+        buttonText={buttonText}
+      />
       <h2 className="mx-auto max-w-full text-center">
         or call us on {bookingPhone}
       </h2>

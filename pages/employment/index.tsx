@@ -14,7 +14,7 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { Blocks } from "../../components/blocks-renderer";
-import { HeaderButton } from "../../components/button/headerButton";
+import { UtilityButton } from "../../components/button/utilityButton";
 import { InferGetStaticPropsType } from "next";
 
 export default function EmploymentPage(
@@ -52,7 +52,7 @@ export default function EmploymentPage(
         </Section>
         <Section className="w-full" color="black">
           <Booking {...data.employment.booking}>
-            <HeaderButton>Check out our current opportunities</HeaderButton>
+            <UtilityButton buttonText="Check out our current opportunities" />
           </Booking>
         </Section>
         <Section
