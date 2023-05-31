@@ -44,6 +44,7 @@ export const Layout = ({ children, className = "" }) => {
         )}
       </Head>
       <Theme>
+        {/* Ensures next/font CSS variable is accessible for all components */}
         <style jsx global>{`
           :root {
             --open-sans-font: ${openSans.style.fontFamily};
