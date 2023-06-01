@@ -281,6 +281,12 @@ module.exports = {
               fontWeight: "300",
               marginBottom: "7px",
             },
+            h4: {
+              color: theme("colors.sswBlack")
+            },
+            strong: {
+              color: theme("colors.sswBlack")
+            },
             a: {
               fontWeight: "300"
             },
