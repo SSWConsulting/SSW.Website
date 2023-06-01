@@ -18,7 +18,7 @@ import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
 import { InferGetStaticPropsType } from "next";
 
-const allServices = {name: "All SSW Services", order: null};
+const allServices = "All SSW Services";
 
 export default function ConsultingIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -32,7 +32,7 @@ export default function ConsultingIndex(
 
   const router = useRouter();
   const getSelectedTagFromQuery = (): string => {
-    let parsedTag = allServices.name;
+    let parsedTag = allServices;
     if (router.query.tag) {
       const { tag } = router.query;
 
@@ -69,7 +69,7 @@ export default function ConsultingIndex(
 
   useEffect(() => {
     // when the selected tag changes, update the querystring
-    if (!tags.includes(selectedTag)) {
+    if (!tags.some((x) => x.name === selectedTag)) {
       return;
     }
 
@@ -77,10 +77,10 @@ export default function ConsultingIndex(
       {
         pathname: router.basePath,
         query:
-          selectedTag === allServices.name
+          selectedTag === allServices
             ? {}
             : {
-                tag: selectedTag.replace(" ", "-"),
+                tag: selectedTag?.replace(" ", "-"),
               },
       },
       undefined,
@@ -105,10 +105,11 @@ export default function ConsultingIndex(
               <MdLiveHelp className="mr-2 inline-block" />I am looking for...
             </h3>
             <ul className="list-none">
-              {tags.map((tag) => (
+              {tags?.map((tag) => (
                 <Tag
-                  key={tag}
-                  tag={tag}
+                  label={tag.label}
+                  key={tag.name}
+                  tag={tag.name}
                   selectedTag={selectedTag}
                   setSelectedTag={setSelectedTag}
                 />
@@ -135,7 +136,7 @@ export default function ConsultingIndex(
   );
 }
 
-const Tag = ({ tag, selectedTag, setSelectedTag }) => {
+const Tag = ({ label, tag, selectedTag, setSelectedTag }) => {
   const isSelected = tag === selectedTag;
   const hoverRef = useRef(null);
   const hovered = useHover(hoverRef);
@@ -159,7 +160,7 @@ const Tag = ({ tag, selectedTag, setSelectedTag }) => {
       >
         {(isSelected || hovered) && <BsArrowRightCircle />}
       </div>
-      <span className="truncate">{tag}</span>
+      <span className="truncate">{label}</span>
     </li>
   );
 };
@@ -245,35 +246,18 @@ const processData = (data) => {
             title: p.title,
             description: p.description,
             logo: p.logo,
-            tags: [allServices.name, ...p.tags.map((t) => t.tag.name)],
-            tagsOrder: [
-              allServices ,
-              ...p.tags.map((t) => ({
-                name: t.tag.name,
-                order: t.tag.order,
-              })),
-            ],
+            tags: [allServices, ...p.tags.map((t) => t.tag.name)],
           };
         }),
       };
     });
 
-  const distinctTags = categories
-    .map((c) => c.pages?.map((p) => p.tagsOrder).flat())
-    .flat()
-    .reduce((accumulator, tag) => {
-      const existingTag = accumulator.find((t) => t.name === tag.name);
-      if (!existingTag) {
-        accumulator.push(tag);
-      }
-      return accumulator;
-    }, []);
-
-  const sortedTags = distinctTags
-    .sort((a, b) => a.order - b.order)
-    .map((tag) => tag.name);
-
-  const tags = sortedTags;
+  const tags = node.sidebar?.map((item) => {
+    return {
+      label: item.label,
+      name: item.tag?.name,
+    };
+  });
 
   return {
     categories,
