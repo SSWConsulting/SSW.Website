@@ -574,7 +574,7 @@ div#headerMenu {
 /*jQuery light box*/
 #showcase .popeye {
 	float: right;
-	background: url(../../public/images/showcases/thum_template.jpg) no-repeat;
+	background: url(../../public/images/Newsletters/showcases/thum_template.jpg) no-repeat;
 	/*overflow:auto;    fallback popeye is scrolling! */
 	height: 235px; /* set to max height of fallback popeye */
 }
@@ -2892,7 +2892,7 @@ a#homepage-products {
 }
 
 .consulting-image {
-	background: transparent url(../../public/images/showcases/thum_template.jpg)
+	background: transparent url(../../public/images/Newsletters/showcases/thum_template.jpg)
 		no-repeat;
 	padding: 5px 10px 20px 5px;
 	float: right;
