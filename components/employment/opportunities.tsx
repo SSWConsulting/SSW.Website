@@ -28,41 +28,34 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
   const [filteredOpportunities, setFilteredOpportunities] = useState<OpportunityType[]>([...opportunities]);
 
   useEffect(() => {
-    const filtered = opportunities.filter((opportunity) => 
+    const filtered = opportunities.filter(opportunity => 
       (selectedLocation === -1 || opportunity.locations.includes(locations[selectedLocation])) &&
       (selectedType === -1 || opportunity.employmentType === employmentType[selectedType]) &&
       (selectedStatus === -1 || opportunity.status === jobStatus[selectedStatus])
     );
     setFilteredOpportunities(filtered);
-    console.log(filtered, selectedLocation, selectedType, selectedStatus);
   }, [selectedLocation, selectedType, selectedStatus]);
 
   return (
     <div className="flex flex-row">
       <div className="shrink-0 basis-64">
         <h3>I am looking for...</h3>
-        <div onClick={() => setSelectedLocation(-1)}>
-          <strong>All Locations</strong>
-        </div>
-        {locations.map((location, index) => (
-          <div onClick={() => setSelectedLocation(index)} key={index}>{location}</div>
+        
+        <FilterOption index={-1} setSelected={setSelectedLocation}><strong>All Locations</strong></FilterOption>
+        {locations.map((status, index) => (
+          <FilterOption key={index} index={index} setSelected={setSelectedLocation}>{status}</FilterOption>
         ))}
-        <div onClick={() => setSelectedType(-1)}>
-          <strong>All Types</strong>
-        </div>
-        {employmentType.map((type, index) => (
-          <div onClick={() => setSelectedType(index)} key={index}>
-            {type}
-          </div>
+
+        <FilterOption index={-1} setSelected={setSelectedType}><strong>All Types</strong></FilterOption>
+        {employmentType.map((status, index) => (
+          <FilterOption key={index} index={index} setSelected={setSelectedType}>{status}</FilterOption>
         ))}
-        <div onClick={() => setSelectedStatus(-1)}>
-          <strong>All Positions</strong>
-        </div>
+        
+        <FilterOption index={-1} setSelected={setSelectedStatus}><strong>All Positions</strong></FilterOption>
         {jobStatus.map((status, index) => (
-          <div onClick={() => setSelectedStatus(index)} key={index}>
-            {status}
-          </div>
+          <FilterOption key={index} index={index} setSelected={setSelectedStatus}>{status}</FilterOption>
         ))}
+
       </div>
       <div className="grow">
         <h3>Available Positions</h3>
@@ -73,6 +66,16 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
     </div>
   );
 };
+
+const FilterOption = ({ index, children, setSelected }) => {
+  return (
+    <div className="w-full hover:text-sswRed">
+      <button onClick={() => setSelected(index)}>
+        {children}
+      </button>
+    </div>
+  )
+}
 
 interface OpportunityDropdownProps {
   opportunity: OpportunityType;
