@@ -32,11 +32,15 @@ export default function EducationalIndex(
   };
 
   const ensureEndsWith = (text: string | undefined | null, suffix: string) => {
-    return (text?.endsWith(suffix) || false) ? text : text + suffix;
-  }
+    return text?.endsWith(suffix) || false ? text : text + suffix;
+  };
 
   const node = getNode(data);
-  node.seo && (node.seo.canonical = `${ensureEndsWith(layoutData.header.url, "/")}educational`);
+  node.seo &&
+    (node.seo.canonical = `${ensureEndsWith(
+      layoutData.header.url,
+      "/"
+    )}educational`);
   const PComponent = ({ children }) => <p className="mb-3">{children}</p>;
   const SolutionElements = ({ solutions }) => {
     const solutionPropsMap = ({ solutionImage, name, description }) => ({
@@ -109,9 +113,7 @@ export default function EducationalIndex(
         </div>
       </div>
     ),
-    BookingForm: () => (
-      <BookingForm />
-    ),
+    BookingForm: () => <BookingForm />,
     ContactUs: ({ buttonText, link }) => (
       <div className="mb-16 flex justify-center">
         <a href={link}>
@@ -152,7 +154,10 @@ export default function EducationalIndex(
             Customised Technology Solutions
           </h2>
           <div className="mb-4 mt-15">
-            <TinaMarkdown components={educationalRenderer} content={node._body} />
+            <TinaMarkdown
+              components={educationalRenderer}
+              content={node._body}
+            />
           </div>
         </Container>
         <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />

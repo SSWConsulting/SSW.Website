@@ -28,10 +28,12 @@ import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
 import { utilityButtonSchema } from "../button/utilityButton";
+import { bookingButtonSchema } from "../bookingButton/bookingButton";
 
 export const pageBlocks: Template[] = [
   aboutUsBlockSchema,
   agreementFormBlockSchema,
+  bookingButtonSchema,
   builtOnAzureBlockSchema,
   carouselBlockSchema,
   citationBlockSchema,
@@ -86,3 +88,4 @@ export * from "../button/utilityButton";
 export * from "./verticalImageLayout";
 export * from "./verticalListItem";
 export * from "./videoEmbed";
+export * from "../bookingButton/bookingButton";
