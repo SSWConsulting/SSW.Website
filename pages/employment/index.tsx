@@ -2,7 +2,7 @@ import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { client } from "../../.tina/__generated__/client";
-import { BuiltOnAzure, ClientLogos } from "../../components/blocks";
+import { BuiltOnAzure, ClientLogos, FixedColumns } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Booking } from "../../components/blocks/booking";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
@@ -58,7 +58,7 @@ export default function EmploymentPage(
         <Section
           color="black"
           className={`
-            prose-consulting
+            prose-employment
             border-y-4 border-y-sswRed
             text-center`}
         >
@@ -76,31 +76,18 @@ export default function EmploymentPage(
             </div>
           </div>
         </Section>
-        <Section className="mb-16">
-          <Container padding="px-4" className="flex w-full flex-wrap">
+        <Section className="mb-16 text-center prose-employment">
+          <Container padding="px-4" className="w-full">
             {data.employment.afterBody ? (
-              <div>
-                <Blocks
-                  prefix={"ConsultingAfterBody"}
-                  blocks={data.employment.afterBody}
+                <TinaMarkdown
+                  content={data.employment.afterBody}
+                  components={componentRenderer}
                 />
-              </div>
             ) : (
               <></>
             )}
           </Container>
         </Section>
-        {!!techCards.length && (
-          <Section className="pb-16 text-center">
-            <Container padding="px-4">
-              <TechnologyCards
-                techHeader={data.employment.technologies.header}
-                techSubheading={data.employment.technologies.subheading}
-                techCards={techCards}
-              />
-            </Container>
-          </Section>
-        )}
         <Marketing content={props.marketingData} />
         <Section className="!bg-gray-75 pb-25 text-center">
           <Container size="custom" className="w-full">
@@ -109,7 +96,7 @@ export default function EmploymentPage(
               We may still be a match! Tell us why you want to join the SSW
               team.
             </p>
-            {/* <BookingButton {...bookingButtonProps} /> */}
+            <UtilityButton buttonText="Send email to apply!" link="mailto:pennywalker@ssw.com.au?subject=Employment" />
           </Container>
         </Section>
         <Section>

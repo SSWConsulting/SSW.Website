@@ -84,13 +84,9 @@ export const employmentSchema: Collection = {
       isBody: true,
     },
     {
-      type: "object",
-      list: true,
-      name: "afterBody",
+      type: "rich-text",
       label: "After body",
-      ui: {
-        visualSelector: true,
-      },
+      name: "afterBody",
       templates: [...Schemas.pageBlocks],
     },
     {

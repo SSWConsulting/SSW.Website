@@ -329,6 +329,38 @@ module.exports = {
             },
           },
         },
+        employment: {
+          css: {
+            h1: {
+              "> strong": {
+                color: theme("colors.sswRed"),
+              },
+            },
+            "p": {
+              fontWeight: theme("fontWeight.light"),
+              margin: "0 auto",
+              padding: "20px 0",
+            },
+            "p > img": {
+              margin: "0 auto",
+            },
+            "ul": {
+              listStyle: "square",
+            },
+            "ul > li": {
+              textAlign: "left",
+              display: "list-item",
+              margin: "1em 1em 1em 2em",
+              "> div::before": {
+                color: theme("colors.sswRed"),
+                content: "\u25A0",
+                fontFamily: "Arial Black",
+                marginLeft: "-1em",
+                width: "1em",
+              },
+            },
+          },
+        },
       }),
       backgroundImage: {
         done: "url('/images/icons/done.png')",

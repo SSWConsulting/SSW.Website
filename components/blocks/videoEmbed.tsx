@@ -32,6 +32,7 @@ export const videoEmbedBlockSchema: Template = {
 		{
 			type: "string",
 			label: "Width",
+			description: "Default is 75%",
 			name: "videoWidth",
 			required: false,
 			options: [
