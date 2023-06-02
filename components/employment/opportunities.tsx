@@ -28,25 +28,26 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
   const [filteredOpportunities, setFilteredOpportunities] = useState<OpportunityType[]>([...opportunities]);
 
   useEffect(() => {
-    const filtered = opportunities.filter((opportunity) => {
-      (selectedLocation !== -1 || opportunity.locations.includes(locations[selectedLocation])) &&
-      (selectedType !== -1 || opportunity.employmentType === employmentType[selectedType]) &&
-      (selectedStatus !== -1 || opportunity.status === jobStatus[selectedStatus])
-    })
+    const filtered = opportunities.filter((opportunity) => 
+      (selectedLocation === -1 || opportunity.locations.includes(locations[selectedLocation])) &&
+      (selectedType === -1 || opportunity.employmentType === employmentType[selectedType]) &&
+      (selectedStatus === -1 || opportunity.status === jobStatus[selectedStatus])
+    );
     setFilteredOpportunities(filtered);
+    console.log(filtered, selectedLocation, selectedType, selectedStatus);
   }, [selectedLocation, selectedType, selectedStatus]);
 
   return (
     <div className="flex flex-row">
       <div className="shrink-0 basis-64">
         <h3>I am looking for...</h3>
-        <div>
+        <div onClick={() => setSelectedLocation(-1)}>
           <strong>All Locations</strong>
         </div>
         {locations.map((location, index) => (
           <div onClick={() => setSelectedLocation(index)} key={index}>{location}</div>
         ))}
-        <div>
+        <div onClick={() => setSelectedType(-1)}>
           <strong>All Types</strong>
         </div>
         {employmentType.map((type, index) => (
@@ -54,7 +55,7 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
             {type}
           </div>
         ))}
-        <div>
+        <div onClick={() => setSelectedStatus(-1)}>
           <strong>All Positions</strong>
         </div>
         {jobStatus.map((status, index) => (
