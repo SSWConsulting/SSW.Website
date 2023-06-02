@@ -81,6 +81,13 @@ query employmentPageQuery($relativePath: String!) {
   employment(relativePath: $relativePath) {
     ...EmploymentParts
   }
+  opportunitiesConnection {
+    edges {
+      node {
+        ...OpportunitiesParts
+      }
+    }
+  }
 }
 
 query officeIndexQuery($relativePath: String!) {

@@ -14,7 +14,7 @@ import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { UtilityButton } from "../../components/button/utilityButton";
 import { InferGetStaticPropsType } from "next";
-import { Opportunities } from "../../components/employment/opportunities";
+import { Opportunities, OpportunityType } from "../../components/employment/opportunities";
 
 export default function EmploymentPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -28,6 +28,16 @@ export default function EmploymentPage(
   const removeExtension = (file: string) => {
     return file.split(".")[0];
   };
+
+  const opportunities: OpportunityType[] = data.opportunitiesConnection.edges.map((opportunity) => {
+    return {
+      title: opportunity.node.title,
+      employmentType: opportunity.node.employmentType,
+      status: opportunity.node.status,
+      locations: opportunity.node.locations,
+      description: opportunity.node._body,
+    }
+  });
 
   return (
     <>
@@ -81,7 +91,7 @@ export default function EmploymentPage(
         <Marketing content={props.marketingData} />
         <Section className="!bg-gray-75 pb-25 text-center">
           <Container size="custom" className="w-full">
-            <Opportunities opportunities={[]} />
+            <Opportunities opportunities={opportunities} />
             <h1>Don't fit any of the available positions?</h1>
             <p className="text-lg">
               We may still be a match! Tell us why you want to join the SSW

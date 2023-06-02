@@ -2,13 +2,15 @@ import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text"
 import { locations } from "../util/constants/opportunity"
 
 interface OpportunitiesProps {
-  opportunities: {
-    title: string
-    employmentType: string
-    status: string
-    locations: string[]
-    description: TinaMarkdownContent
-  }[]
+  opportunities: OpportunityType[]
+}
+
+export interface OpportunityType {
+  title: string
+  employmentType: string
+  status: string
+  locations: string[]
+  description: TinaMarkdownContent
 }
 
 export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
