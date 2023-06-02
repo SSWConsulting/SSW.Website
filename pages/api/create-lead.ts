@@ -62,10 +62,7 @@ export default async function handler(
               STEP.PA_FLOW
             );
           }
-
-          res
-            .status(createLeadFlow.status)
-            .json({ message: "Lead successfully submitted!" });
+          res.status(createLeadFlow.status).json({ success: true });
         } else {
           throw new CustomError(
             JSON.stringify(recaptchaValidation.data),
