@@ -43,40 +43,6 @@ export const employmentSchema: Collection = {
       ],
     },
     {
-      type: "object",
-      label: "Solution",
-      name: "solution",
-      fields: [
-        {
-          type: "string",
-          label: "Project",
-          name: "project",
-        },
-      ],
-    },
-    {
-      type: "string",
-      label: "Call to Action",
-      description:
-        'Technology title inserted via {{TITLE}}. E.g. "Talk to us about your {{TITLE}} project"',
-      name: "callToAction",
-      required: false,
-    },
-    {
-      type: "object",
-      label: "Testimonial Categories",
-      name: "testimonialCategories",
-      list: true,
-      fields: [
-        {
-          type: "reference",
-          label: "Testimonial Category",
-          name: "testimonialCategory",
-          collections: ["testimonialCategories"],
-        },
-      ],
-    },
-    {
       type: "rich-text",
       label: "Body",
       name: "_body",
@@ -164,82 +130,6 @@ export const employmentSchema: Collection = {
       label: "After benefits body",
       name: "benefitsBody",
       templates: [...Schemas.pageBlocks],
-    },
-    {
-      type: "object",
-      label: "Technologies",
-      name: "technologies",
-      fields: [
-        {
-          type: "string",
-          label: "Header",
-          name: "header",
-        },
-        {
-          type: "string",
-          label: "Subheading",
-          name: "subheading",
-        },
-        {
-          type: "object",
-          label: "Technology Cards",
-          name: "technologyCards",
-          ui: {
-            itemProps: (item) => ({
-              label: item?.technologyCard,
-            }),
-          },
-          list: true,
-          fields: [
-            {
-              type: "reference",
-              label: "Technology Card",
-              name: "technologyCard",
-              collections: ["technologies"],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      type: "object",
-      label: "Media cards",
-      name: "medias",
-      fields: [
-        {
-          type: "string",
-          label: "Header",
-          name: "header",
-        },
-        {
-          type: "object",
-          label: "Media Cards",
-          name: "mediaCards",
-          list: true,
-          fields: [
-            {
-              type: "string",
-              label: "Type",
-              name: "type",
-              options: [
-                {
-                  value: "video",
-                  label: "Video",
-                },
-                {
-                  value: "blog",
-                  label: "Blog",
-                },
-              ],
-            },
-            {
-              type: "rich-text",
-              label: "Content",
-              name: "content",
-            },
-          ],
-        },
-      ],
     },
   ],
 };

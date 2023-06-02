@@ -89,9 +89,19 @@ export default function EmploymentPage(
           </Container>
         </Section>
         <Marketing content={props.marketingData} />
-        <Section className="!bg-gray-75 pb-25 text-center">
+        <Section className="!block">
+          <Container size="custom" className="w-full text-center prose-employment">
+            <h1 className="text-center">Current <strong>opportunities</strong></h1>
+            <p>You will be working with expert Microsoft stack developers and designers in a wide variety of exciting corporate projects.
+            The main reasons people choose to work at SSW are the great culture, the cool client projects, and the cutting edge tech stack.
+            SSW is unlike any place you've ever worked at.</p>
+          </Container>
           <Container size="custom" className="w-full">
             <Opportunities opportunities={opportunities} />
+          </Container>
+        </Section>
+        <Section className="!bg-gray-75 pb-25 text-center">
+          <Container size="custom" className="w-full">
             <h1>Don't fit any of the available positions?</h1>
             <p className="text-lg">
               We may still be a match! Tell us why you want to join the SSW
