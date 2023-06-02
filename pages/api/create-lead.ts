@@ -66,14 +66,16 @@ export default async function handler(
         } else {
           throw new CustomError(
             JSON.stringify(recaptchaValidation.data),
-            HttpStatusCode.OK,
+            recaptchaValidation.status,
             req.body,
             appInsight.Contracts.SeverityLevel.Error,
             STEP.GOOGLE_RECAPTCHA
           );
         }
       } else {
-        throw new Error("Recaptcha not found!");
+        res
+          .status(HttpStatusCode.OK)
+          .json({ message: "Recaptcha not found!", success: false });
       }
     } else {
       throw new Error("Unsupported method");
