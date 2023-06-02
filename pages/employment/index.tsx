@@ -2,20 +2,19 @@ import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { client } from "../../.tina/__generated__/client";
-import { BuiltOnAzure, ClientLogos, FixedColumns } from "../../components/blocks";
+import { BuiltOnAzure } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Booking } from "../../components/blocks/booking";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
 import { Marketing } from "../../components/marketing/Marketing";
-import TechnologyCards from "../../components/technologyCard/technologyCards";
 import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import { Blocks } from "../../components/blocks-renderer";
 import { UtilityButton } from "../../components/button/utilityButton";
 import { InferGetStaticPropsType } from "next";
+import { Opportunities } from "../../components/employment/opportunities";
 
 export default function EmploymentPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -29,15 +28,6 @@ export default function EmploymentPage(
   const removeExtension = (file: string) => {
     return file.split(".")[0];
   };
-
-  const technologyCardDocs =
-    props.technologyCards.data.technologiesConnection.edges.map((n) => n.node);
-  const techCards =
-    data.employment.technologies?.technologyCards?.map((c) => ({
-      ...technologyCardDocs.find(
-        (n) => !!n.name && n.name === c.technologyCard?.name
-      ),
-    })) || [];
 
   return (
     <>
@@ -91,6 +81,7 @@ export default function EmploymentPage(
         <Marketing content={props.marketingData} />
         <Section className="!bg-gray-75 pb-25 text-center">
           <Container size="custom" className="w-full">
+            <Opportunities opportunities={[]} />
             <h1>Don't fit any of the available positions?</h1>
             <p className="text-lg">
               We may still be a match! Tell us why you want to join the SSW
@@ -107,7 +98,7 @@ export default function EmploymentPage(
   );
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async () => {
   const tinaProps = await client.queries.employmentPageQuery({
     relativePath: "index.mdx",
   });
@@ -118,18 +109,6 @@ export const getStaticProps = async ({ params }) => {
     seo.canonical = canonical;
   }
 
-  const technologyCardNames =
-    tinaProps.data.employment.technologies?.technologyCards?.reduce<string[]>(
-      (pre, cur) => {
-        !!cur.technologyCard?.name && pre.push(cur.technologyCard.name);
-        return pre;
-      },
-      []
-    ) || [];
-  const technologyCardsProps = await client.queries.technologyCardContentQuery({
-    cardNames: technologyCardNames,
-  });
-
   const marketingSection = await client.queries.marketing({
     relativePath: "/dressing-down.mdx",
   });
@@ -139,11 +118,7 @@ export const getStaticProps = async ({ params }) => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
-      technologyCards: technologyCardsProps,
       marketingData: marketingSection.data,
-      env: {
-        GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY || null,
-      },
       seo,
     },
   };
