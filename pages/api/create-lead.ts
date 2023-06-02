@@ -21,9 +21,9 @@ const createLead = async (data: BookingFormSubmissionData) => {
       const axiosError = error as AxiosError;
 
       throw new CustomError(
-        axiosError.cause,
+        JSON.stringify(axiosError.cause),
         HttpStatusCode.NotFound,
-        data,
+        JSON.stringify(data),
         appInsight.Contracts.SeverityLevel.Critical,
         STEP.PA_FLOW_AXIOS
       );
@@ -57,7 +57,7 @@ export default async function handler(
             throw new CustomError(
               JSON.stringify(createLeadFlow.data),
               createLeadFlow.status,
-              req.body,
+              JSON.stringify(req.body),
               appInsight.Contracts.SeverityLevel.Critical,
               STEP.PA_FLOW
             );
@@ -67,7 +67,7 @@ export default async function handler(
           throw new CustomError(
             JSON.stringify(recaptchaValidation.data),
             recaptchaValidation.status,
-            req.body,
+            JSON.stringify(req.body),
             appInsight.Contracts.SeverityLevel.Error,
             STEP.GOOGLE_RECAPTCHA
           );

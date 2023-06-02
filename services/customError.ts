@@ -1,13 +1,13 @@
 export class CustomError extends Error {
   statusCode: number;
-  requestBody: any;
+  requestBody: string;
   severity: number;
   method: string;
 
   constructor(
-    message: any,
+    message: string,
     statusCode: number,
-    requestBody?: any,
+    requestBody?: string,
     severity?: number,
     method?: string
   ) {
