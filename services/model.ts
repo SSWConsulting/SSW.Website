@@ -19,7 +19,7 @@ export interface PA_FLOW_Data {
 }
 
 export enum STAGE {
-  PA_FLOW_AXIOS = "Power Automate flow - Axio",
+  PA_FLOW_AXIOS = "Power Automate flow - Axios",
   PA_FLOW = "Power Automate flow",
   GOOGLE_RECAPTCHA = "Google - Recaptcha",
 }
