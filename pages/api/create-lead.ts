@@ -1,43 +1,16 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import * as appInsight from "applicationinsights";
-import { BookingFormSubmissionData, HttpStatusCode } from "../../services";
+
+import {
+  HttpStatusCode,
+  STAGE,
+  PowerAutomate_Endpoint,
+} from "../../services/model";
+
+import { PA_FLOW } from "../../services/power-automate-flow";
+import { GoogleRecaptcha } from "../../services/google-recaptcha";
+
 import { CustomError } from "../../services/customError";
-import axios, { AxiosError } from "axios";
-
-enum STEP {
-  PA_FLOW_AXIOS = "Power Automate flow - Axio",
-  PA_FLOW = "Power Automate flow",
-  GOOGLE_RECAPTCHA = "Google - Recaptcha",
-}
-
-const createLead = async (data: BookingFormSubmissionData) => {
-  try {
-    const response = await axios.post(process.env.CREATE_LEAD_ENDPOINT, data, {
-      headers: { "Content-Type": "application/json" },
-    });
-    return response;
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      const axiosError = error as AxiosError;
-
-      throw new CustomError(
-        JSON.stringify(axiosError.cause),
-        HttpStatusCode.NotFound,
-        JSON.stringify(data),
-        appInsight.Contracts.SeverityLevel.Critical,
-        STEP.PA_FLOW_AXIOS
-      );
-    } else {
-      throw new Error(error);
-    }
-  }
-};
-
-const validateRecaptcha = async (Recaptcha) => {
-  return await axios.post(
-    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_KEY_V2}&response=${Recaptcha}`
-  );
-};
 
 export default async function handler(
   req: NextApiRequest,
@@ -47,11 +20,16 @@ export default async function handler(
     if (req.method === "POST") {
       const { Recaptcha } = req.body;
       if (Recaptcha) {
-        const recaptchaValidation = await validateRecaptcha(Recaptcha);
+        const recaptchaValidation = await GoogleRecaptcha.validateRecaptcha(
+          Recaptcha
+        );
         // const recaptchaValidation = { data: { success: true } }; uncomment this to bypass recaptcha for testing purpose
 
         if (recaptchaValidation && recaptchaValidation.data.success) {
-          const createLeadFlow = await createLead(req.body);
+          const createLeadFlow = await PA_FLOW.invokePowerAutomateFlow(
+            req.body,
+            process.env.CREATE_LEAD_ENDPOINT
+          );
 
           if (createLeadFlow.status !== HttpStatusCode.Accepted) {
             throw new CustomError(
@@ -59,7 +37,7 @@ export default async function handler(
               createLeadFlow.status,
               JSON.stringify(req.body),
               appInsight.Contracts.SeverityLevel.Critical,
-              STEP.PA_FLOW
+              STAGE.PA_FLOW
             );
           }
           res.status(createLeadFlow.status).json({ success: true });
@@ -69,7 +47,7 @@ export default async function handler(
             recaptchaValidation.status,
             JSON.stringify(req.body),
             appInsight.Contracts.SeverityLevel.Error,
-            STEP.GOOGLE_RECAPTCHA
+            STAGE.GOOGLE_RECAPTCHA
           );
         }
       } else {
@@ -85,7 +63,7 @@ export default async function handler(
       appInsight.defaultClient?.trackException({
         exception: new Error(error.message),
         properties: {
-          Method: `Create lead API - ${error.method}`,
+          Method: `${PowerAutomate_Endpoint.CREATE_LEAD} - ${error.method}`,
           RequestBody: error.requestBody,
           Status: error.statusCode,
         },
