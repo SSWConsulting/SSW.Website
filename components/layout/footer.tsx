@@ -42,7 +42,7 @@ const CopyrightInfo = () => (
     </div>
     <div>
       <Link
-        href="https://github.com/SSWConsulting/SSW.Website-v3/issues/new/choose"
+        href="https://github.com/SSWConsulting/SSW.Website/issues/new/choose"
         target="_blank"
       >
         FEEDBACK TO SSW
