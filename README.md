@@ -1,8 +1,8 @@
-# SSW.Website v3
+# SSW.Website
 
 ![SSW Banner](https://user-images.githubusercontent.com/17246482/213943898-d3d7268c-0636-4469-ad47-4052302cf567.png)
 
-This repository is a v3 of the SSW.Website. This website uses NextJS with TinaCMS.
+This repository is a v3 of the zzSSW.Website. This website uses NextJS with TinaCMS.
 
 ## See the important Documents
 
