@@ -3,6 +3,9 @@ name: PR - Lint PR
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+    paths-ignore:
+      - 'content/**'
+      - 'public/**'
 
 concurrency: 
   group: ci-${{ github.event.number }}

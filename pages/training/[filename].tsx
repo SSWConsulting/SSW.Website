@@ -77,7 +77,7 @@ export default function TrainingPage(
           </Section>
 
           {/*
-                    Blocked by: https://github.com/SSWConsulting/SSW.Website-v3/issues/282
+                    Blocked by: https://github.com/SSWConsulting/SSW.Website/issues/282
 
                     <Section
                     color="darkgray"
