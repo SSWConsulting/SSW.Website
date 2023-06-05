@@ -6,13 +6,13 @@ This repository is a v3 of the SSW.Website. This website uses NextJS with TinaCM
 
 ## See the important Documents
 
-- [Instructions - Compile (F5 Experience)](<https://github.com/SSWConsulting/SSW.Website-v3/wiki/Instructions---Compile-(F5-Experience)>)
-- [Instructions - Deployment](https://github.com/SSWConsulting/SSW.Website-v3/wiki/Instructions---Deployment)
-- [Business](https://github.com/SSWConsulting/SSW.Website-v3/wiki/Business)
-- [Technologies and Architecture](https://github.com/SSWConsulting/SSW.Website-v3/wiki/Technologies-and-Architecture)
-- [Alternative Solutions Considered](https://github.com/SSWConsulting/SSW.Website-v3/wiki/Alternative-Solutions-Considered)
-- [Definition of Done](https://github.com/SSWConsulting/SSW.Website-v3/wiki/Definition-of-Done)
-- [Definition of Ready](https://github.com/SSWConsulting/SSW.Website-v3/wiki/Definition-of-Ready)
+- [Instructions - Compile (F5 Experience)](<https://github.com/SSWConsulting/SSW.Website/wiki/Instructions---Compile-(F5-Experience)>)
+- [Instructions - Deployment](https://github.com/SSWConsulting/SSW.Website/wiki/Instructions---Deployment)
+- [Business](https://github.com/SSWConsulting/SSW.Website/wiki/Business)
+- [Technologies and Architecture](https://github.com/SSWConsulting/SSW.Website/wiki/Technologies-and-Architecture)
+- [Alternative Solutions Considered](https://github.com/SSWConsulting/SSW.Website/wiki/Alternative-Solutions-Considered)
+- [Definition of Done](https://github.com/SSWConsulting/SSW.Website/wiki/Definition-of-Done)
+- [Definition of Ready](https://github.com/SSWConsulting/SSW.Website/wiki/Definition-of-Ready)
 
 ## Architecture Overview
 
