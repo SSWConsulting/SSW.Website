@@ -35,25 +35,26 @@ export const Footer = () => {
 
 const Divider = () => <span className="px-2">|</span>;
 
-const CopyrightInfo = () => (
-  <>
-    <div>
-      &copy; Copyright SSW 1990-{new Date().getFullYear()}. All Rights Reserved.
-    </div>
-    <div>
-      <Link
-        href="https://github.com/SSWConsulting/SSW.Website/issues/new/choose"
-        target="_blank"
-      >
-        FEEDBACK TO SSW
-      </Link>
-      <Divider />
-      <Link href="https://www.ssw.com.au/ssw/Standards/Forms/ConsultingOrderTermsConditions.aspx">
-        TERMS AND CONDITIONS
-      </Link>
-    </div>
-  </>
-);
+const CopyrightInfo = () => {
+  const chooseIssueURL = `${process.env.NEXT_PUBLIC_GITHUB_REPOSITORY}/issues/new/choose`;
+  return (
+    <>
+      <div>
+        &copy; Copyright SSW 1990-{new Date().getFullYear()}. All Rights
+        Reserved.
+      </div>
+      <div>
+        <Link href={chooseIssueURL} target="_blank">
+          FEEDBACK TO SSW
+        </Link>
+        <Divider />
+        <Link href="https://www.ssw.com.au/ssw/Standards/Forms/ConsultingOrderTermsConditions.aspx">
+          TERMS AND CONDITIONS
+        </Link>
+      </div>
+    </>
+  );
+};
 
 const DeploymentInfo = () => {
   const deploymentDate = process.env.NEXT_PUBLIC_GITHUB_RUN_DATE
