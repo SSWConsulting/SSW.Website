@@ -130,7 +130,7 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
             <Image
               className="inline-block align-middle leading-8"
               style={{ margin: 0 }}
-              src={"/images/circle-tick.png"}
+              src={"/images/icons/circle-tick.png"}
               alt="circle-tick"
               height={24}
               width={24}
