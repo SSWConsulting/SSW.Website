@@ -91,6 +91,18 @@ const OfficeLayout = ({ office }) => {
         <></>
       )}
       <h2 id="Directions">SSW {office.addressLocality} Directions</h2>
+      <h4>
+        <a href={office.directionsUrl}>
+          <Image
+            src="/images/icons/map-pin.svg"
+            alt="Map pin icon"
+            height={16}
+            width={16}
+            className="my-0 mr-1.5 inline-block"
+          />
+          {`${office.streetAddress}, ${office.suburb}, ${office.addressRegion} ${office.postalCode}, ${office.addressCountry}`}
+        </a>
+      </h4>
       <TinaMarkdown
         components={componentRenderer}
         content={office.directions}
