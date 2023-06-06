@@ -36,7 +36,7 @@ export const Footer = () => {
 const Divider = () => <span className="px-2">|</span>;
 
 const CopyrightInfo = () => {
-  const chooseIssueURL = `${process.env.NEXT_PUBLIC_GITHUB_REPOSITORY}/issues/new/choose`;
+  const chooseIssueURL = `https://github.com/${process.env.NEXT_PUBLIC_GITHUB_REPOSITORY}/issues/new/choose`;
   return (
     <>
       <div>

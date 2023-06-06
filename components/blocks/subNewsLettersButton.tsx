@@ -50,7 +50,12 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
       resetForm();
       setInfoMessage(response.data.message);
     } catch (err) {
-      setInfoMessage(err.response.data.message);
+      if (err.response.status === 409) {
+        // 409 when contact already exists
+        setInfoMessage(JSON.parse(err.response.data.message).message);
+      } else {
+        setInfoMessage("Oops! Something went wrong.");
+      }
       setIsContactExisting(true);
     }
 
@@ -130,7 +135,7 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
             <Image
               className="inline-block align-middle leading-8"
               style={{ margin: 0 }}
-              src={"/images/circle-tick.png"}
+              src={"/images/icons/circle-tick.png"}
               alt="circle-tick"
               height={24}
               width={24}
