@@ -46,7 +46,7 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
         
         <h3><Image 
           alt="Question Mark" 
-          src="/images/Employment/question.png" 
+          src="/images/employment/question.png" 
           height={16} 
           width={16} 
           className="inline"
@@ -100,10 +100,33 @@ interface FilterOptionProps {
 }
 
 const FilterOption = ({ index, children, setSelected, className }: FilterOptionProps) => {
+  const [hovered, setHovered] = useState<boolean>(false);
+
   return (
-    <div className={classNames("w-full cursor-pointer	 hover:text-sswRed hover:bg-gray-200", className)} onClick={() => setSelected(index)}>
-      {children}
+    <div className="w-48 inline-block hover:bg-gray-200 m-1 rounded-sm cursor-pointer hover:text-sswRed" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+      <Transition
+        className="inline"
+        show={hovered || index === -1}
+        enter="transition-opacity duration-75"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-150"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <Image 
+          alt="Arrow" 
+          src="/images/employment/arrow.png" 
+          height={10} 
+          width={10} 
+          className="inline mr-4"
+        />
+      </Transition>
+      <span className={classNames(" ", className)} onClick={() => setSelected(index)}>
+        {children}
+      </span>
     </div>
+    
   )
 }
 
