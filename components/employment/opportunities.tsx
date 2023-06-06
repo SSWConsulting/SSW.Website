@@ -76,11 +76,12 @@ interface FilterGroupProps {
 const FilterGroup = ({ selected, setSelected, options, allText }: FilterGroupProps) => {
   return (
     <>
-      <FilterOption index={-1} setSelected={setSelected} className={selected === -1 ? "font-bold" : ""}>{allText}</FilterOption>
+      <FilterOption index={-1} selected={selected} setSelected={setSelected} className={selected === -1 ? "font-bold" : ""}>{allText}</FilterOption>
       {options.map((curr, index) => (
         <FilterOption 
           key={index} 
           index={index} 
+          selected={selected}
           setSelected={setSelected}
           className={selected === index ? "font-bold" : ""}
         >
@@ -94,19 +95,20 @@ const FilterGroup = ({ selected, setSelected, options, allText }: FilterGroupPro
 
 interface FilterOptionProps {
   index: number;
+  selected: number;
   setSelected: (index: number) => void;
   children?: React.ReactNode;
   className?: string;
 }
 
-const FilterOption = ({ index, children, setSelected, className }: FilterOptionProps) => {
+const FilterOption = ({ index, children, selected, setSelected, className }: FilterOptionProps) => {
   const [hovered, setHovered] = useState<boolean>(false);
 
   return (
-    <div className="w-64 inline-block hover:bg-gray-200 m-1 rounded-sm cursor-pointer hover:text-sswRed" onClick={() => setSelected(index)} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+    <div className="w-64 inline-block hover:bg-gray-200 m-0.5 py-1 rounded-sm cursor-pointer hover:text-sswRed" onClick={() => setSelected(index)} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
       <Transition
         className="inline"
-        show={hovered || index === -1}
+        show={hovered || index === selected}
         enter="transition-opacity duration-1000"
         enterFrom="opacity-0"
         enterTo="opacity-100"
@@ -119,10 +121,10 @@ const FilterOption = ({ index, children, setSelected, className }: FilterOptionP
           src="/images/employment/arrow.png" 
           height={10} 
           width={10} 
-          className="inline mr-4"
+          className="absolute ml-1 m-2"
         />
       </Transition>
-      <span className={classNames(" ", className)} >
+      <span className={classNames("ml-6", className)} >
         {children}
       </span>
     </div>
@@ -153,42 +155,44 @@ const OpportunityDropdown = ({ opportunity, className, visible }: OpportunityDro
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <div className={classNames("clear-both my-3 w-full transition-opacity", visible ? "opacity-100" : "opacity-0", className)}>
-          <div
-            className="cursor-pointer relative clear-both inline-block w-full border-1 border-gray-300 bg-gray-75 px-4 py-2 hover:bg-white"
-            onClick={() => setIsOpened((curr) => !curr)}
-          >
-            <h2 className="my-0 text-base">
-              {opportunity.title}
+        <div className={classNames("my-3 w-full", className)}>
+          <Disclosure>
+            <Disclosure.Button
+              className="cursor-pointer relative clear-both inline-block w-full border-1 border-gray-300 bg-gray-75 px-4 py-2 hover:bg-white"
+              onClick={() => setIsOpened((curr) => !curr)}
+            >
+              <h2 className="my-0 text-base float-left">
+                {opportunity.title}
+              </h2>
               <span className="float-right">
                 <FaMapMarkerAlt className="inline" />{" "}
                 {opportunity.locations.join(", ")}
               </span>
-            </h2>
-          </div>
-          <div className="clear-left"></div>
-          <Transition
-            show={isOpened}
-            enter="transition duration-100 ease-out"
-            enterFrom="transform scale-95 opacity-0"
-            enterTo="transform scale-100 opacity-100"
-            leave="transition duration-75 ease-out"
-            leaveFrom="transform scale-100 opacity-100"
-            leaveTo="transform scale-95 opacity-0"
-          >
-            <div className="border-1 border-gray-300 p-4">
-              <section className="prose max-w-full">
-                <TinaMarkdown content={opportunity.description} components={componentRenderer} />
-              </section>
-              <UtilityButton
-                className="mx-auto my-10 flex items-center"
-                buttonText="Apply Now"
-                link={sanitiseMailto(
-                  `mailto:pennywalker@ssw.com.au?subject=Employment application for ${opportunity.title}`
-                )}
-              />
-            </div>
-          </Transition>
+            </Disclosure.Button>
+            
+            <Transition
+              show={isOpened}
+              enter="transition duration-100 ease-out"
+              enterFrom="transform scale-95 opacity-0"
+              enterTo="transform scale-100 opacity-100"
+              leave="transition duration-75 ease-out"
+              leaveFrom="transform scale-100 opacity-100"
+              leaveTo="transform scale-95 opacity-0"
+            >
+              <Disclosure.Panel className="border-1 border-gray-300 p-4">
+                <section className="prose max-w-full">
+                  <TinaMarkdown content={opportunity.description} components={componentRenderer} />
+                </section>
+                <UtilityButton
+                  className="mx-auto my-10 flex items-center"
+                  buttonText="Apply Now"
+                  link={sanitiseMailto(
+                    `mailto:pennywalker@ssw.com.au?subject=Employment application for ${opportunity.title}`
+                  )}
+                />
+              </Disclosure.Panel>
+            </Transition>
+          </Disclosure>
         </div>
       </Transition>
     )
