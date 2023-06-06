@@ -1,4 +1,5 @@
 import type { Collection } from "tinacms";
+import * as Schemas from "../../components/blocks";
 import {
   locations,
   jobStatus,
@@ -42,6 +43,7 @@ export const opportunitiesSchema: Collection = {
       label: "Description",
       name: "_body",
       isBody: true,
+      templates: [...Schemas.pageBlocks],
     },
   ],
 };
