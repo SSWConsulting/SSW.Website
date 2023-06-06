@@ -10,7 +10,7 @@ import { UtilityButton } from "../blocks";
 import classNames from "classnames";
 import Image from "next/image";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
-import { Transition } from "@headlessui/react";
+import { Disclosure, Transition } from "@headlessui/react";
 
 interface OpportunitiesProps {
   opportunities: OpportunityType[];
@@ -41,8 +41,8 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
   }, [selectedLocation, selectedType, selectedStatus]);
 
   return (
-    <div className="flex flex-row">
-      <div className="shrink-0 basis-64">
+    <div className="flex flex-row mb-10">
+      <div className="shrink-0 basis-64 mr-16">
         
         <h3><Image 
           alt="Question Mark" 
@@ -103,14 +103,14 @@ const FilterOption = ({ index, children, setSelected, className }: FilterOptionP
   const [hovered, setHovered] = useState<boolean>(false);
 
   return (
-    <div className="w-48 inline-block hover:bg-gray-200 m-1 rounded-sm cursor-pointer hover:text-sswRed" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+    <div className="w-64 inline-block hover:bg-gray-200 m-1 rounded-sm cursor-pointer hover:text-sswRed" onClick={() => setSelected(index)} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
       <Transition
         className="inline"
         show={hovered || index === -1}
-        enter="transition-opacity duration-75"
+        enter="transition-opacity duration-1000"
         enterFrom="opacity-0"
         enterTo="opacity-100"
-        leave="transition-opacity duration-150"
+        leave="transition-opacity duration-1000"
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
@@ -122,7 +122,7 @@ const FilterOption = ({ index, children, setSelected, className }: FilterOptionP
           className="inline mr-4"
         />
       </Transition>
-      <span className={classNames(" ", className)} onClick={() => setSelected(index)}>
+      <span className={classNames(" ", className)} >
         {children}
       </span>
     </div>
@@ -138,7 +138,6 @@ interface OpportunityDropdownProps {
 
 const OpportunityDropdown = ({ opportunity, className, visible }: OpportunityDropdownProps) => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
-  const [hidden, setHidden] = useState<boolean>(false);
 
   const sanitiseMailto = (title: string) => {
     return title.replace("&", "%26");
@@ -147,16 +146,16 @@ const OpportunityDropdown = ({ opportunity, className, visible }: OpportunityDro
   return ((
     <Transition
         show={visible}
-        enter="transition-opacity duration-75"
+        enter="transition-opacity duration-500"
         enterFrom="opacity-0"
         enterTo="opacity-100"
-        leave="transition-opacity duration-150"
+        leave="transition-opacity duration-500"
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
         <div className={classNames("clear-both my-3 w-full transition-opacity", visible ? "opacity-100" : "opacity-0", className)}>
           <div
-            className="relative clear-both inline-block w-full border-1 border-gray-300 bg-gray-75 px-4 py-2 hover:bg-white"
+            className="cursor-pointer relative clear-both inline-block w-full border-1 border-gray-300 bg-gray-75 px-4 py-2 hover:bg-white"
             onClick={() => setIsOpened((curr) => !curr)}
           >
             <h2 className="my-0 text-base">
@@ -168,7 +167,15 @@ const OpportunityDropdown = ({ opportunity, className, visible }: OpportunityDro
             </h2>
           </div>
           <div className="clear-left"></div>
-          {isOpened && (
+          <Transition
+            show={isOpened}
+            enter="transition duration-100 ease-out"
+            enterFrom="transform scale-95 opacity-0"
+            enterTo="transform scale-100 opacity-100"
+            leave="transition duration-75 ease-out"
+            leaveFrom="transform scale-100 opacity-100"
+            leaveTo="transform scale-95 opacity-0"
+          >
             <div className="border-1 border-gray-300 p-4">
               <section className="prose max-w-full">
                 <TinaMarkdown content={opportunity.description} components={componentRenderer} />
@@ -181,7 +188,7 @@ const OpportunityDropdown = ({ opportunity, className, visible }: OpportunityDro
                 )}
               />
             </div>
-          )}
+          </Transition>
         </div>
       </Transition>
     )
