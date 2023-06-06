@@ -1,6 +1,5 @@
 import axios from "axios";
 import { Form, Formik } from "formik";
-import { useRouter } from "next/router";
 import { useEffect, useContext, useMemo, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import FormGroupInput from "../form/formGroupInput";
@@ -32,7 +31,6 @@ export const BookingForm = () => {
   const [contactSuccess, setContactSuccess] = useState(false);
   const [country, setCountry] = useState("");
   const [activeInputLabel, setActiveInputLabel] = useState({});
-  const router = useRouter();
   const appInsights = useAppInsightsContext();
 
   const initialFormValues = {
