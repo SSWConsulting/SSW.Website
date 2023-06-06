@@ -28,7 +28,7 @@ export const Carousel = ({ data }) => {
   };
 
   return (
-    <Section className="hidden md:flex" color={data.backgroundColor}>
+    <Section className="hidden sm:flex" color={data.backgroundColor}>
       <Container size="custom" className="w-full">
         <CarouselImplementation
           autoPlay={true}
