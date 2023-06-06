@@ -17,6 +17,7 @@ import {
 } from "../util/constants";
 import { bookingFormSubmissionData } from "./bookingFormSubmissionData";
 import { ValidationSchema } from "./validationSchema";
+import Popup from "../popup/popup";
 
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import {
@@ -120,10 +121,6 @@ export const BookingForm = () => {
   const onSuccess = () => {
     setInvalidReptcha("");
     setContactSuccess(true);
-    setTimeout(function () {
-      setContactSuccess(false);
-      router.push("/thankyou/");
-    }, 1000);
   };
 
   const getCommonFieldProps = (fieldName: string) => ({
@@ -151,17 +148,31 @@ export const BookingForm = () => {
           <h2 className="mb-14 mt-1.5 pt-1.5 !text-2xl text-sswRed">
             {CONTACT_FORM_TITLE}
           </h2>
-          {!!contactSuccess && (
+          <Popup isVisible={contactSuccess} onClose={setContactSuccess}>
             <div
               className={
-                "relative mb-8 rounded border-1 border-solid border-green-100 bg-green-50 p-4 text-green-900"
+                "rounded bg-white font-sans"
               }
-              role="alert"
             >
-              An email has been sent to the SSW Sales team and someone will be
-              in contact with you soon
+              <div className="p-4">
+                <div className="m-0 px-6 pb-5 pt-1 text-lg font-bold">
+                  Submitted
+                </div>
+                <div className="m-0 px-6 pb-5 pt-1">
+                  Thank you, your form has been submitted successfully. We will be in contact as soon as possible
+                  In the meantime, check out our other services and meet our amazing team.
+                </div>
+                <div className="px-6 text-end">
+                  <button
+                    className="bg-sswRed px-3 py-1.5 text-white"
+                    onClick={() => setContactSuccess(false)}
+                  >
+                    OK
+                  </button>
+                </div>
+              </div>
             </div>
-          )}
+          </Popup>
 
           <Formik
             validationSchema={schema}
