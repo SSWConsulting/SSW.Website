@@ -50,7 +50,12 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
       resetForm();
       setInfoMessage(response.data.message);
     } catch (err) {
-      setInfoMessage(err.response.data.message);
+      if (err.response.status === 409) {
+        // 409 when contact already exists
+        setInfoMessage(JSON.parse(err.response.data.message).message);
+      } else {
+        setInfoMessage("Oops! Something went wrong.");
+      }
       setIsContactExisting(true);
     }
 

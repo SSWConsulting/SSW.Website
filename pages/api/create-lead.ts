@@ -1,51 +1,80 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import * as appInsight from "applicationinsights";
-import { BookingFormSubmissionData } from "../../services";
-import axios from "axios";
 
-const createLead = async (data: BookingFormSubmissionData) => {
-  return await axios.post(process.env.CREATE_LEAD_ENDPOINT, data, {
-    headers: { "Content-Type": "application/json" },
-  });
-};
+import {
+  HttpStatusCode,
+  STAGE,
+  PowerAutomate_Endpoint,
+} from "../../services/model";
 
-const validateRecaptcha = async ({ Recaptcha }) => {
-  return await axios.post(
-    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_KEY_V2}&response=${Recaptcha}`
-  );
-};
+import { PA_FLOW } from "../../services/power-automate-flow";
+import { GoogleRecaptcha } from "../../services/google-recaptcha";
+
+import { CustomError } from "../../services/customError";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method === "POST") {
-    const recaptchaResponse = await validateRecaptcha(req.body);
+  try {
+    if (req.method === "POST") {
+      const { Recaptcha } = req.body;
+      if (Recaptcha) {
+        const recaptchaValidation = await GoogleRecaptcha.validateRecaptcha(
+          Recaptcha
+        );
+        // const recaptchaValidation = { data: { success: true } }; uncomment this to bypass recaptcha for testing purpose
 
-    const logData = {
-      error: recaptchaResponse.data,
-      lead: req.body,
-      method: "Create-lead-API",
-    };
+        if (recaptchaValidation && recaptchaValidation.data.success) {
+          const createLeadFlow = await PA_FLOW.invokePowerAutomateFlow(
+            req.body,
+            process.env.CREATE_LEAD_ENDPOINT
+          );
 
-    if (recaptchaResponse && recaptchaResponse.data.success === true) {
-      const createLeadRes = await createLead(req.body);
-
-      if (createLeadRes.status !== 202) {
-        logData.error = createLeadRes.statusText;
-        appInsight.defaultClient?.trackException({
-          exception: new Error(JSON.stringify(logData)),
-        });
+          if (createLeadFlow.status !== HttpStatusCode.Accepted) {
+            throw new CustomError(
+              JSON.stringify(createLeadFlow.data),
+              createLeadFlow.status,
+              JSON.stringify(req.body),
+              appInsight.Contracts.SeverityLevel.Critical,
+              STAGE.PA_FLOW
+            );
+          }
+          res.status(createLeadFlow.status).json({ success: true });
+        } else {
+          throw new CustomError(
+            JSON.stringify(recaptchaValidation.data),
+            recaptchaValidation.status,
+            JSON.stringify(req.body),
+            appInsight.Contracts.SeverityLevel.Error,
+            STAGE.GOOGLE_RECAPTCHA
+          );
+        }
+      } else {
+        res
+          .status(HttpStatusCode.OK)
+          .json({ message: "Recaptcha not found!", success: false });
       }
-
-      res.status(createLeadRes.status).json(createLeadRes.data);
     } else {
-      appInsight.defaultClient?.trackException({
-        exception: new Error(JSON.stringify(logData)),
-      });
-      res.status(200).json(recaptchaResponse.data);
+      throw new Error("Unsupported method");
     }
-  } else {
-    res.status(405).json({ message: "Unsupported method" });
+  } catch (error) {
+    if (error instanceof CustomError) {
+      appInsight.defaultClient?.trackException({
+        exception: new Error(error.message),
+        properties: {
+          Method: `${PowerAutomate_Endpoint.CREATE_LEAD} - ${error.method}`,
+          RequestBody: error.requestBody,
+          Status: error.statusCode,
+        },
+        severity: error.severity,
+      });
+
+      res.status(error.statusCode).json({ message: error.message });
+    } else {
+      res
+        .status(HttpStatusCode.MethodNotAllowed)
+        .json({ message: error.message });
+    }
   }
 }
