@@ -24,12 +24,13 @@ export const officeIndexSchema: Collection = {
           if (!item || !item.office) {
             return { label };
           }
-        
+
           const path = item.office;
           const pathComponents = path.split("/");
           const fileName = pathComponents[pathComponents.length - 1];
           const cityName = fileName.split(".")[0];
-          const cityNameCapitalized = cityName.charAt(0).toUpperCase() + cityName.slice(1);
+          const cityNameCapitalized =
+            cityName.charAt(0).toUpperCase() + cityName.slice(1);
 
           return {
             label: cityNameCapitalized,
@@ -169,6 +170,11 @@ export const officeSchema: Collection = {
       label: "Map Image",
       name: "map",
       templates: [...Schemas.pageBlocks],
+    },
+    {
+      type: "string",
+      label: "Directions URL",
+      name: "directionsUrl",
     },
     {
       type: "rich-text",
