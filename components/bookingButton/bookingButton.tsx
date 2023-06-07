@@ -41,7 +41,7 @@ export const BookingButton = ({
         or call us on {bookingPhone}
       </h2>
       <Popup isVisible={isVisible} onClose={setIsVisible}>
-        <BookingForm />
+        <BookingForm onClose={setIsVisible} />
       </Popup>
     </div>
   );
