@@ -192,7 +192,8 @@ const OpportunityDropdown = ({ opportunity, className, visible }: OpportunityDro
               </h2>
               <span className="md:float-right">
                 <FaMapMarkerAlt className="inline" />{" "}
-                {opportunity.locations?.join(", ")}
+                {opportunity.locations?.join(", ")} 
+                {opportunity.status === jobStatus[1] && (<strong> *FILLED*</strong>)}
               </span>
             </Disclosure.Button>
             

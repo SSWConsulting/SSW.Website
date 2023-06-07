@@ -24,9 +24,9 @@ export const UtilityButton = ({ buttonText, onClick, className, link }: UtilityB
 
   if (link) {
     return (
-      <Link href={link} className="unstyled no-underline">
+      <a href={link} className="unstyled no-underline">
         {baseComponent}
-      </Link>
+      </a>
     )
   }
 

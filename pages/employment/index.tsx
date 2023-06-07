@@ -67,7 +67,7 @@ export default function EmploymentPage(
         </Section>
         <Section className="w-full" color="black">
           <Booking {...data.employment.booking}>
-            <UtilityButton buttonText="Check out our current opportunities" />
+            <UtilityButton buttonText="Check out our current opportunities" link="#available" />
           </Booking>
         </Section>
         <Section
@@ -105,7 +105,7 @@ export default function EmploymentPage(
         )}
         <Marketing content={props.marketingData} />
         
-        <Section className="!block">
+        <Section className="!block" id="available">
           {data.employment.opportunitiesBody && (
             <Container size="custom" className="w-full text-center prose-employment">
               <TinaMarkdown content={data.employment.opportunitiesBody} components={componentRenderer} />
