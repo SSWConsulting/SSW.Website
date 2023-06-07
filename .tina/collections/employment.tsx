@@ -109,6 +109,12 @@ export const employmentSchema: Collection = {
       templates: [...Schemas.pageBlocks],
     },
     {
+      type: "rich-text",
+      label: "Opportunities body",
+      name: "opportunitiesBody",
+      templates: [...Schemas.pageBlocks],
+    },
+    {
       type: "object",
       label: "Opportunities",
       name: "opportunities",
@@ -137,6 +143,12 @@ export const employmentSchema: Collection = {
           collections: ["opportunities"],
         }
       ],
+    },
+    {
+      type: "rich-text",
+      label: "Call to action body",
+      name: "callToActionBody",
+      templates: [...Schemas.pageBlocks],
     }
   ],
 };

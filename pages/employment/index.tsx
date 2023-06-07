@@ -35,6 +35,7 @@ export default function EmploymentPage(
       employmentType: o.opportunityRef.employmentType,
       status: o.opportunityRef.status,
       locations: o.opportunityRef.locations,
+      hideApply: o.opportunityRef.hideApply,
       description: o.opportunityRef._body,
     }
   });
@@ -76,38 +77,33 @@ export default function EmploymentPage(
             </div>
           </div>
         </Section>
-        <Section className="mb-16 text-center prose-employment">
-          <Container padding="px-4" className="w-full">
-            {data.employment.afterBody ? (
-                <TinaMarkdown
-                  content={data.employment.afterBody}
-                  components={componentRenderer}
-                />
-            ) : (
-              <></>
-            )}
-          </Container>
-        </Section>
+        {data.employment.afterBody ? (
+          <Section className="mb-16 text-center prose-employment">
+            <Container padding="px-4" className="w-full">
+                  <TinaMarkdown
+                    content={data.employment.afterBody}
+                    components={componentRenderer}
+                  />
+            </Container>
+          </Section>
+        ) : (
+          <></>
+        )}
         <Marketing content={props.marketingData} />
+        
         <Section className="!block">
-          <Container size="custom" className="w-full text-center prose-employment">
-            <h1 className="text-center">Current <strong>opportunities</strong></h1>
-            <p>You will be working with expert Microsoft stack developers and designers in a wide variety of exciting corporate projects.
-            The main reasons people choose to work at SSW are the great culture, the cool client projects, and the cutting edge tech stack.
-            SSW is unlike any place you've ever worked at.</p>
-          </Container>
+          {data.employment.opportunitiesBody && (
+            <Container size="custom" className="w-full text-center prose-employment">
+              <TinaMarkdown content={data.employment.opportunitiesBody} components={componentRenderer} />
+            </Container>
+          )}
           <Container size="custom" className="w-full">
             <Opportunities opportunities={opportunities} />
           </Container>
         </Section>
         <Section className="!bg-gray-75 pb-25 text-center">
           <Container size="custom" className="w-full">
-            <h1>Don't fit any of the available positions?</h1>
-            <p className="text-lg">
-              We may still be a match! Tell us why you want to join the SSW
-              team.
-            </p>
-            <UtilityButton buttonText="Send email to apply!" link="mailto:pennywalker@ssw.com.au?subject=Employment" />
+            <TinaMarkdown content={data.employment.callToActionBody} components={componentRenderer} />
           </Container>
         </Section>
         <Section>

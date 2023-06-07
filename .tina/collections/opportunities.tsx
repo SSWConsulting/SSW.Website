@@ -39,6 +39,11 @@ export const opportunitiesSchema: Collection = {
       options: locations.map((location) => location),
     },
     {
+      type: "boolean",
+      label: "Hide Apply Button",
+      name: "hideApply",
+    },
+    {
       type: "rich-text",
       label: "Description",
       name: "_body",

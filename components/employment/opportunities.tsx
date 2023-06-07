@@ -21,6 +21,7 @@ export interface OpportunityType {
   employmentType: string;
   status: string;
   locations: string[];
+  hideApply?: boolean;
   description: TinaMarkdownContent;
 }
 
@@ -183,13 +184,15 @@ const OpportunityDropdown = ({ opportunity, className, visible }: OpportunityDro
                 <section className="prose max-w-full">
                   <TinaMarkdown content={opportunity.description} components={componentRenderer} />
                 </section>
-                <UtilityButton
-                  className="mx-auto my-10 flex items-center"
-                  buttonText="Apply Now"
-                  link={sanitiseMailto(
-                    `mailto:pennywalker@ssw.com.au?subject=Employment application for ${opportunity.title}`
-                  )}
-                />
+                {!opportunity.hideApply && (
+                  <UtilityButton
+                    className="mx-auto my-10 flex items-center"
+                    buttonText="Apply Now"
+                    link={sanitiseMailto(
+                      `mailto:pennywalker@ssw.com.au?subject=Employment application for ${opportunity.title}`
+                    )}
+                  />
+                )}
               </Disclosure.Panel>
             </Transition>
           </Disclosure>
