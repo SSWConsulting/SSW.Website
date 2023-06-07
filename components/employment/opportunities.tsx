@@ -58,10 +58,35 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
         <FilterGroup selected={selectedStatus} setSelected={setSelectedStatus} options={jobStatus} allText="All Positions" />
       </div>
       <div className="grow">
-        <h3>Available Positions</h3>
-        {opportunities.map((opportunity, index) => (
-          <OpportunityDropdown visible={!!filteredOpportunities.find(o => o.title === opportunity.title)} key={index} opportunity={opportunity} />
-        ))}
+        {(selectedStatus !== 1 && !!filteredOpportunities.find(o => o.status === jobStatus[0])) && (
+          <>
+            <h3>Available Positions</h3>
+            {opportunities.filter(o => o.status === jobStatus[0]).map((opportunity, index) => (
+              <OpportunityDropdown 
+                visible={!!filteredOpportunities.find(o => o.title === opportunity.title)} 
+                key={index} 
+                opportunity={opportunity} 
+              />
+            ))}
+          </>
+        )}
+
+        {(selectedStatus !== 0 && !!filteredOpportunities.find(o => o.status === jobStatus[1])) && (
+          <>
+            <h3>Filled Positions</h3>
+            {opportunities.filter(o => o.status === jobStatus[1]).map((opportunity, index) => (
+              <OpportunityDropdown 
+                visible={!!filteredOpportunities.find(o => o.title === opportunity.title)} 
+                key={index} 
+                opportunity={opportunity} 
+              />
+            ))}
+          </>
+        )}
+
+        {filteredOpportunities.length === 0 && (
+          <p className="text-gray-500">No positions found.</p> 
+        )}
       </div>
     </div>
   );
@@ -167,7 +192,7 @@ const OpportunityDropdown = ({ opportunity, className, visible }: OpportunityDro
               </h2>
               <span className="md:float-right">
                 <FaMapMarkerAlt className="inline" />{" "}
-                {opportunity.locations.join(", ")}
+                {opportunity.locations?.join(", ")}
               </span>
             </Disclosure.Button>
             

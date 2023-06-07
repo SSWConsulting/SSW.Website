@@ -15,6 +15,7 @@ import { SEO } from "../../components/util/seo";
 import { UtilityButton } from "../../components/button/utilityButton";
 import { InferGetStaticPropsType } from "next";
 import { Opportunities, OpportunityType } from "../../components/employment/opportunities";
+import { jobStatus } from "../../components/util/constants/opportunity";
 
 export default function EmploymentPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -29,7 +30,7 @@ export default function EmploymentPage(
     return file.split(".")[0];
   };
 
-  const opportunities: OpportunityType[] = data.employment.opportunities.map((o) => {
+  const chosenOpportunities: OpportunityType[] = data.employment.opportunities.map((o) => {
     return {
       title: o.opportunityRef.title,
       employmentType: o.opportunityRef.employmentType,
@@ -39,6 +40,19 @@ export default function EmploymentPage(
       description: o.opportunityRef._body,
     }
   });
+
+  const filledOpportunities: OpportunityType[] = data.opportunitiesConnection?.edges.filter(o => o.node.status === jobStatus[1]).map((o) => {
+    return {
+      title: o.node.title,
+      employmentType: o.node.employmentType,
+      status: o.node.status,
+      locations: o.node.locations,
+      hideApply: o.node.hideApply,
+      description: o.node._body,
+    }
+  });
+
+  const opportunities: OpportunityType[] = chosenOpportunities.concat(filledOpportunities);
 
   return (
     <>
@@ -118,8 +132,6 @@ export const getStaticProps = async () => {
   const tinaProps = await client.queries.employmentPageQuery({
     relativePath: "index.mdx",
   });
-
-  console.log(tinaProps.data.employment.opportunities);
 
   const canonical = `${tinaProps.data.global.header.url}employment`;
   const seo = tinaProps.data.employment.seo;
