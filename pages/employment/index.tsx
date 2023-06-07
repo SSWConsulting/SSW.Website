@@ -29,13 +29,13 @@ export default function EmploymentPage(
     return file.split(".")[0];
   };
 
-  const opportunities: OpportunityType[] = data.opportunitiesConnection.edges.map((opportunity) => {
+  const opportunities: OpportunityType[] = data.employment.opportunities.map((o) => {
     return {
-      title: opportunity.node.title,
-      employmentType: opportunity.node.employmentType,
-      status: opportunity.node.status,
-      locations: opportunity.node.locations,
-      description: opportunity.node._body,
+      title: o.opportunityRef.title,
+      employmentType: o.opportunityRef.employmentType,
+      status: o.opportunityRef.status,
+      locations: o.opportunityRef.locations,
+      description: o.opportunityRef._body,
     }
   });
 
@@ -122,6 +122,8 @@ export const getStaticProps = async () => {
   const tinaProps = await client.queries.employmentPageQuery({
     relativePath: "index.mdx",
   });
+
+  console.log(tinaProps.data.employment.opportunities);
 
   const canonical = `${tinaProps.data.global.header.url}employment`;
   const seo = tinaProps.data.employment.seo;

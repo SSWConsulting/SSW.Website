@@ -30,7 +30,7 @@ export const Marketing = (props) => {
             </div>
           )}
           <div className="mx-auto w-full md:w-1/2">
-            <TinaMarkdown content={content?.mediaComponent} components={componentRenderer}  />
+            <TinaMarkdown content={content?.mediaComponent} components={componentRenderer} />
           </div>
           {content.textSide === sides[1] && (
             <div className="mt-16 w-full pb-0 text-left font-sans text-md text-white md:ml-10 md:mt-0 md:w-1/3">

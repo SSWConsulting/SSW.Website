@@ -100,29 +100,6 @@ export const employmentSchema: Collection = {
             },
           ],
         },
-        {
-          type: "object",
-          label: "Rule",
-          name: "rule",
-          list: true,
-          ui: {
-            itemProps: (item) => {
-              return { label: item?.name };
-            },
-          },
-          fields: [
-            {
-              type: "string",
-              label: "Name",
-              name: "name",
-            },
-            {
-              type: "string",
-              label: "URL",
-              name: "url",
-            },
-          ],
-        },
       ],
     },
     {
@@ -131,5 +108,35 @@ export const employmentSchema: Collection = {
       name: "benefitsBody",
       templates: [...Schemas.pageBlocks],
     },
+    {
+      type: "object",
+      label: "Opportunities",
+      name: "opportunities",
+      list: true,
+      required: true,
+      ui: {
+        itemProps: (item) => {
+
+          const path = item.opportunityRef;
+
+          if (!path) return ({ label: "Opportunity" });
+
+          const pathComponents = path.split("/");
+          const fileName = pathComponents[pathComponents.length - 1];
+          const positionName = fileName.split(".")[0];
+          const spacesName = positionName.replace("-", " ");
+
+          return { label: spacesName };
+        }
+      },
+      fields: [
+        {
+          type: "reference",  
+          label: "Opportunity document",
+          name: "opportunityRef",
+          collections: ["opportunities"],
+        }
+      ],
+    }
   ],
 };

@@ -27,7 +27,7 @@ export interface OpportunityType {
 export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
   const [selectedLocation, setSelectedLocation] = useState<number>(-1);
   const [selectedType, setSelectedType] = useState<number>(-1);
-  const [selectedStatus, setSelectedStatus] = useState<number>(-1);
+  const [selectedStatus, setSelectedStatus] = useState<number>(0);
 
   const [filteredOpportunities, setFilteredOpportunities] = useState<OpportunityType[]>([...opportunities]);
 
@@ -41,10 +41,10 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
   }, [selectedLocation, selectedType, selectedStatus]);
 
   return (
-    <div className="flex flex-row mb-10">
-      <div className="shrink-0 basis-64 mr-16">
+    <div className="md:flex md:flex-row mb-10">
+      <div className="md:shrink-0 md:basis-64 md:mr-16">
         
-        <h3><Image 
+        <h3 className="mb-4"><Image 
           alt="Question Mark" 
           src="/images/employment/question.png" 
           height={16} 
@@ -75,7 +75,7 @@ interface FilterGroupProps {
 
 const FilterGroup = ({ selected, setSelected, options, allText }: FilterGroupProps) => {
   return (
-    <>
+    <div>
       <FilterOption index={-1} selected={selected} setSelected={setSelected} className={selected === -1 ? "font-bold" : ""}>{allText}</FilterOption>
       {options.map((curr, index) => (
         <FilterOption 
@@ -89,7 +89,7 @@ const FilterGroup = ({ selected, setSelected, options, allText }: FilterGroupPro
         </FilterOption>
       ))}
       <hr />
-    </>
+    </div>
   )
 }
 
@@ -105,7 +105,7 @@ const FilterOption = ({ index, children, selected, setSelected, className }: Fil
   const [hovered, setHovered] = useState<boolean>(false);
 
   return (
-    <div className="w-64 inline-block hover:bg-gray-200 m-0.5 py-1 rounded-sm cursor-pointer hover:text-sswRed" onClick={() => setSelected(index)} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+    <div className="w-64 inline-block hover:bg-gray-100 m-0.5 py-1 rounded-md cursor-pointer hover:text-sswRed" onClick={() => setSelected(index)} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
       <Transition
         className="inline"
         show={hovered || index === selected}
@@ -130,7 +130,7 @@ const FilterOption = ({ index, children, selected, setSelected, className }: Fil
     </div>
     
   )
-}
+};
 
 interface OpportunityDropdownProps {
   opportunity: OpportunityType;
@@ -161,10 +161,10 @@ const OpportunityDropdown = ({ opportunity, className, visible }: OpportunityDro
               className="cursor-pointer relative clear-both inline-block w-full border-1 border-gray-300 bg-gray-75 px-4 py-2 hover:bg-white"
               onClick={() => setIsOpened((curr) => !curr)}
             >
-              <h2 className="my-0 text-base float-left">
+              <h2 className="my-0 text-base md:float-left">
                 {opportunity.title}
               </h2>
-              <span className="float-right">
+              <span className="md:float-right">
                 <FaMapMarkerAlt className="inline" />{" "}
                 {opportunity.locations.join(", ")}
               </span>
