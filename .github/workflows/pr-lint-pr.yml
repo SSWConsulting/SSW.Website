@@ -3,9 +3,6 @@ name: PR - Lint PR
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-    paths-ignore:
-      - 'content/**'
-      - 'public/**'
 
 concurrency: 
   group: ci-${{ github.event.number }}
@@ -19,12 +16,31 @@ jobs:
   pr-lint:
     runs-on: ubuntu-latest
     name: Check linked issues
+
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Check if the PR modifies files outside content/public
+        id: check-modified-files
+        run: |
+          modified_files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }})
+          should_skip=true
+
+          for file in $modified_files; do
+            if [[ $file != content/* && $file != public/* ]]; then
+              should_skip=false
+              break
+            fi
+          done
+
+          echo "should_skip=$should_skip" >> $GITHUB_ENV
 
       - uses: nearform/github-action-check-linked-issues@v1.4.14
         id: check-linked-issues
         with:
           exclude-branches: "dependabot/**"
+        if: env.should_skip == 'false'
       
       - name: Generate summary
         run: |
