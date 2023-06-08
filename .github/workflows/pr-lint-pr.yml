@@ -21,27 +21,21 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - name: Check if the PR modifies files outside content/public
-        id: check-modified-files
-        run: |
-          modified_files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }})
-          should_skip=true
-
-          for file in $modified_files; do
-            if [[ $file != content/* && $file != public/* ]]; then
-              should_skip=false
-              break
-            fi
-          done
-
-          echo "should_skip=$should_skip" >> $GITHUB_ENV
+      - name: Check for non-content/public changes
+        id: changes
+        uses: dorny/paths-filter@v2
+        with:
+          filters: |
+            nonContentPublic:
+              - '!content/**'
+              - '!public/**'
 
       - uses: nearform/github-action-check-linked-issues@v1.4.14
         id: check-linked-issues
         with:
           exclude-branches: "dependabot/**"
-        if: env.should_skip == 'false'
-      
+        if: steps.changes.outputs.nonContentPublic == 'true'
+
       - name: Generate summary
         run: |
           echo "Found ${{ steps.check-linked-issues.outputs.linked_issues_count }} issues linked to PR" >> $GITHUB_STEP_SUMMARY
