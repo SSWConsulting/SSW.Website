@@ -3,9 +3,6 @@ name: PR - Lint PR
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-    paths-ignore:
-      - 'content/**'
-      - 'public/**'
 
 concurrency: 
   group: ci-${{ github.event.number }}
@@ -19,13 +16,26 @@ jobs:
   pr-lint:
     runs-on: ubuntu-latest
     name: Check linked issues
+
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Check for non-content/public changes
+        id: changes
+        uses: dorny/paths-filter@v2
+        with:
+          filters: |
+            nonContentPublic:
+              - '!content/**'
+              - '!public/**'
 
       - uses: nearform/github-action-check-linked-issues@v1.4.14
         id: check-linked-issues
         with:
           exclude-branches: "dependabot/**"
-      
+        if: steps.changes.outputs.nonContentPublic == 'true'
+
       - name: Generate summary
         run: |
           echo "Found ${{ steps.check-linked-issues.outputs.linked_issues_count }} issues linked to PR" >> $GITHUB_STEP_SUMMARY
