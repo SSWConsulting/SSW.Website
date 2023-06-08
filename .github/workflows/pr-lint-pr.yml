@@ -21,20 +21,20 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - name: Check for non-content/public changes
+      - name: Check paths
         id: changes
         uses: dorny/paths-filter@v2
         with:
           filters: |
-            nonContentPublic:
-              - '!content/**'
-              - '!public/**'
-
+            content:
+              - 'content/**'
+            public:
+              - 'public/**'
       - uses: nearform-actions/github-action-check-linked-issues@v1.4.14
         id: check-linked-issues
         with:
           exclude-branches: "dependabot/**"
-        if: steps.changes.outputs.nonContentPublic == 'true'
+        if: steps.changes.outputs.content == 'false' || steps.changes.outputs.public == 'false'
 
       - name: Generate summary
         run: |
