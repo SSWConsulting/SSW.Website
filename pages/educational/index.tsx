@@ -18,6 +18,8 @@ import { InferGetStaticPropsType } from "next";
 import layoutData from "../../content/global/index.json";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
 import { FaFileDownload } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function EducationalIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -27,6 +29,18 @@ export default function EducationalIndex(
     variables: props.variables,
     data: props.data,
   });
+
+  const showSuccessToast = () => {
+    toast.success("Thank you, your form has been submitted successfully. We will be in contact as soon as possible.", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: false,
+      theme: "light",
+    });
+  }
 
   const removeExtension = (file: string) => {
     return file.split(".")[0];
@@ -115,7 +129,7 @@ export default function EducationalIndex(
         </div>
       </div>
     ),
-    BookingForm: () => <BookingForm />,
+    BookingForm: () => <BookingForm showSuccessToast={showSuccessToast} />,
     ContactUs: ({ buttonText, link }) => (
       <div className="mb-16 flex justify-center">
         <a href={link}>
@@ -164,6 +178,7 @@ export default function EducationalIndex(
         </Container>
         <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
       </Layout>
+      <ToastContainer />
     </RecaptchaContext.Provider>
   );
 }

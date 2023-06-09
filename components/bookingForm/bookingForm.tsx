@@ -24,14 +24,14 @@ import {
   RecaptchaContextType,
 } from "../../context/RecaptchaContext";
 
-export const BookingForm = ({ onClose }) => {
+export const BookingForm = (props) => {
   const { recaptchaKey } = useContext<RecaptchaContextType>(RecaptchaContext);
 
   //Show FormStates and Active label
-  const [contactSuccess, setContactSuccess] = useState(false);
   const [country, setCountry] = useState("");
   const [activeInputLabel, setActiveInputLabel] = useState({});
   const appInsights = useAppInsightsContext();
+  const { onClose, showSuccessToast } = props;
 
   const initialFormValues = {
     fullName: "",
@@ -106,6 +106,7 @@ export const BookingForm = ({ onClose }) => {
           setInvalidReptcha("Invalid ReCaptcha!");
         } else {
           onSuccess();
+          actions.resetForm(initialFormValues);
         }
       })
       .catch((err) => {
@@ -118,7 +119,10 @@ export const BookingForm = ({ onClose }) => {
 
   const onSuccess = () => {
     setInvalidReptcha("");
-    setContactSuccess(true);
+    if (onClose !== undefined) {
+      onClose();
+    }
+    showSuccessToast();
   };
 
   const getCommonFieldProps = (fieldName: string) => ({
@@ -143,28 +147,9 @@ export const BookingForm = ({ onClose }) => {
     <div className="rounded-none bg-gray-125 font-sans">
       <div className="relative p-4">
         <div className="m-0 bg-white px-6 pb-5 pt-1">
-          {contactSuccess && <div>
-            <div className="pb-5 text-lg font-bold">
-              Submitted
-            </div>
-            <div className="pb-5 pt-1">
-              Thank you, your form has been submitted successfully. <br />
-              We will be in contact as soon as possible.In the meantime, check out our other services and meet our amazing team.
-            </div>
-            <div className="text-end">
-              <button
-                className="bg-sswRed px-3 py-1.5 text-white"
-                onClick={() => onClose((curr) => !curr)}
-              >
-                OK
-              </button>
-            </div>
-          </div>}
-
           <h2 className="mb-14 mt-1.5 pt-1.5 !text-2xl text-sswRed">
             {CONTACT_FORM_TITLE}
           </h2>
-
           <Formik
             validationSchema={schema}
             initialValues={initialFormValues}
