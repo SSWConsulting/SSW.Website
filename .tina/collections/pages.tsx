@@ -17,13 +17,6 @@ export const pagesSchema: Collection = {
     },
   },
   fields: [
-    {
-      type: "string",
-      label: "Title",
-      name: "title",
-      isTitle: true,
-      required: true,
-    },
     // @ts-ignore
     seoSchema,
     {
