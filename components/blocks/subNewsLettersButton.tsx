@@ -9,8 +9,8 @@ import axios from "axios";
  * @param subscribeButtonText - The text to display on the subscribe button.
  */
 const placeholder = {
-  firstName: "Your First Name",
-  lastName: "Your Last Name",
+  firstName: "First Name",
+  lastName: "Last Name",
   email: "Your Email",
 };
 
@@ -105,8 +105,8 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
   );
 
   return (
-    <div>
-      <p className="mb-2">{headerText}</p>
+    <div className="flex flex-row justify-center">
+      <h2 className="font-helvetica text-4xl font-medium text-sswBlack" dangerouslySetInnerHTML={{ __html: headerText }}></h2>
       <div className="container sm:w-full sm:max-w-full md:w-1/4">
         {inputRender(
           firstName,
@@ -143,11 +143,10 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
           </button>
         </div>
         <p
-          className={`mt-2 flex justify-center text-sm ${
-            isContactExisting || !allInputsFilled
-              ? "text-sswRed"
-              : "text-green-500"
-          }`}
+          className={`mt-2 flex justify-center text-sm ${isContactExisting || !allInputsFilled
+            ? "text-sswRed"
+            : "text-green-500"
+            }`}
         >
           <span className={isLoading ? "text-gray-500" : ""}>
             {infoMessage}
