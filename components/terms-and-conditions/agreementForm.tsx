@@ -2,6 +2,7 @@ import React from "react";
 import { Template } from "tinacms";
 import { sectionColors } from "../util/constants/styles";
 import classnames from "classnames";
+import { FaPrint } from "react-icons/fa";
 
 export const AgreementForm = ({ data }) => {
   const sectionColorCss =
@@ -23,10 +24,11 @@ export const AgreementForm = ({ data }) => {
       <hr />
       <div className="flex justify-center">
         <button
-          className="done mx-auto my-4 px-3 py-2"
+          className="done mx-auto my-4 flex px-3 py-2"
           onClick={() => window.print()}
           type="submit"
         >
+          <FaPrint className="m-icon" />
           Print and sign
         </button>
       </div>
@@ -45,17 +47,17 @@ const FormField = ({ label, id, placeholder, resizeable }) => {
         </label>
       </div>
       <div className="inline-flex w-full md:grow">
-        {resizeable
-          ? <textarea className={classnames(classes, "resize-y")}></textarea>
-          : <input
-              className={classes}
-              type="text"
-              id={id}
-              name={id}
-              placeholder={placeholder}
-            />
-        }
-        
+        {resizeable ? (
+          <textarea className={classnames(classes, "resize-y")}></textarea>
+        ) : (
+          <input
+            className={classes}
+            type="text"
+            id={id}
+            name={id}
+            placeholder={placeholder}
+          />
+        )}
       </div>
     </div>
   );
@@ -104,8 +106,8 @@ export const agreementFormBlockSchema: Template = {
           type: "boolean",
           label: "Resizeable",
           name: "resizeable",
-          required: true
-        }
+          required: true,
+        },
       ],
     },
   ],
