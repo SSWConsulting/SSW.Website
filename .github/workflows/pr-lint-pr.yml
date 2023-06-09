@@ -27,14 +27,13 @@ jobs:
         with:
           filters: |
             content:
-              - 'content/**'
-            public:
-              - 'public/**'
+              - '!content/**'
+              - '!public/**'
       - uses: nearform-actions/github-action-check-linked-issues@v1.4.14
         id: check-linked-issues
         with:
           exclude-branches: "dependabot/**"
-        if: steps.changes.outputs.content == 'false' || steps.changes.outputs.public == 'false'
+        if: steps.changes.outputs.content
 
       - name: Generate summary
         run: |
