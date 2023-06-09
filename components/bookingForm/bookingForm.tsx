@@ -5,6 +5,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import FormGroupInput from "../form/formGroupInput";
 import FormGroupSelect from "../form/formGroupSelect";
 import FormGroupTextArea from "../form/formGroupTextArea";
+import { FaRegCheckCircle } from "react-icons/fa";
 import {
   ACTIVE_INPUT,
   AUSTRALIA,
@@ -160,126 +161,127 @@ export const BookingForm = ({ onClose }) => {
             </div>
           </div>}
 
-          {!contactSuccess && <div>
-            <h2 className="mb-14 mt-1.5 pt-1.5 !text-2xl text-sswRed">
-              {CONTACT_FORM_TITLE}
-            </h2>
-            <Formik
-              validationSchema={schema}
-              initialValues={initialFormValues}
-              onSubmit={handleOnSubmit}
-            >
-              {({ values, isSubmitting }) => (
-                <Form noValidate>
-                  <FormGroupInput
-                    label={ACTIVE_INPUT.FullName}
-                    type="text"
-                    {...getCommonFieldProps(FORM_INPUT.FullName)}
-                  />
+          <h2 className="mb-14 mt-1.5 pt-1.5 !text-2xl text-sswRed">
+            {CONTACT_FORM_TITLE}
+          </h2>
 
-                  <FormGroupInput
-                    label={ACTIVE_INPUT.Email}
-                    type="email"
-                    {...getCommonFieldProps(FORM_INPUT.Email)}
-                  />
+          <Formik
+            validationSchema={schema}
+            initialValues={initialFormValues}
+            onSubmit={handleOnSubmit}
+          >
+            {({ values, isSubmitting }) => (
+              <Form noValidate>
+                <FormGroupInput
+                  label={ACTIVE_INPUT.FullName}
+                  type="text"
+                  {...getCommonFieldProps(FORM_INPUT.FullName)}
+                />
 
-                  <FormGroupInput
-                    label={ACTIVE_INPUT.Phone}
-                    type="phone"
-                    {...getCommonFieldProps(FORM_INPUT.Phone)}
-                  />
+                <FormGroupInput
+                  label={ACTIVE_INPUT.Email}
+                  type="email"
+                  {...getCommonFieldProps(FORM_INPUT.Email)}
+                />
 
+                <FormGroupInput
+                  label={ACTIVE_INPUT.Phone}
+                  type="phone"
+                  {...getCommonFieldProps(FORM_INPUT.Phone)}
+                />
+
+                <FormGroupSelect
+                  label={ACTIVE_INPUT.Location}
+                  {...getCommonFieldProps(locationDefaultOption.name)}
+                  handleChange={(field, e) => {
+                    setCountry(e.currentTarget.value);
+                    handleActiveInputLabel(field.name, e.currentTarget.value);
+                  }}
+                >
+                  <option className="hidden" value="">
+                    {locationDefaultOption.value}
+                  </option>
+                  {FormCountriesList.map((country) => (
+                    <option
+                      className="cursor-pointer !p-1"
+                      key={country.value}
+                      value={country.value}
+                    >
+                      {country.label}
+                    </option>
+                  ))}
+                </FormGroupSelect>
+
+                {isShowStates ? (
                   <FormGroupSelect
-                    label={ACTIVE_INPUT.Location}
-                    {...getCommonFieldProps(locationDefaultOption.name)}
-                    handleChange={(field, e) => {
-                      setCountry(e.currentTarget.value);
-                      handleActiveInputLabel(field.name, e.currentTarget.value);
-                    }}
+                    label={ACTIVE_INPUT.States}
+                    {...getCommonFieldProps(statesDefaultOption.name)}
                   >
                     <option className="hidden" value="">
-                      {locationDefaultOption.value}
+                      {statesDefaultOption.value}
                     </option>
-                    {FormCountriesList.map((country) => (
+                    {AustralianStatesList.map((state) => (
                       <option
+                        key={state.value}
+                        value={state.value}
                         className="cursor-pointer !p-1"
-                        key={country.value}
-                        value={country.value}
                       >
-                        {country.label}
+                        {state.label}
                       </option>
                     ))}
                   </FormGroupSelect>
-
-                  {isShowStates ? (
-                    <FormGroupSelect
-                      label={ACTIVE_INPUT.States}
-                      {...getCommonFieldProps(statesDefaultOption.name)}
-                    >
-                      <option className="hidden" value="">
-                        {statesDefaultOption.value}
-                      </option>
-                      {AustralianStatesList.map((state) => (
-                        <option
-                          key={state.value}
-                          value={state.value}
-                          className="cursor-pointer !p-1"
-                        >
-                          {state.label}
-                        </option>
-                      ))}
-                    </FormGroupSelect>
-                  ) : (
-                    <input
-                      type="hidden"
-                      name={statesDefaultOption.name}
-                      value={(values.states = STATE_DEFAULT_VALUE)}
-                    />
-                  )}
-
-                  <FormGroupInput
-                    label={ACTIVE_INPUT.Company}
-                    {...getCommonFieldProps(FORM_INPUT.Company)}
+                ) : (
+                  <input
+                    type="hidden"
+                    name={statesDefaultOption.name}
+                    value={(values.states = STATE_DEFAULT_VALUE)}
                   />
+                )}
 
-                  <FormGroupTextArea
-                    label={ACTIVE_INPUT.Note}
-                    placeholder="How can we help you?"
-                    rows={4}
-                    maxLength={2000}
-                    {...getCommonFieldProps(FORM_INPUT.Note)}
-                  />
+                <FormGroupInput
+                  label={ACTIVE_INPUT.Company}
+                  {...getCommonFieldProps(FORM_INPUT.Company)}
+                />
 
-                  <div className="mb-4 w-full overflow-x-auto">
-                    <div className="h-22 w-88">
-                      {recaptchaKey && (
-                        <ReCAPTCHA
-                          sitekey={recaptchaKey}
-                          onChange={(value) => {
-                            setContactReCaptcha(value);
-                          }}
-                        />
-                      )}
-                    </div>
-                    {invalidRecaptcha && (
-                      <span className="text-sm text-red-600">
-                        {invalidRecaptcha}
-                      </span>
+                <FormGroupTextArea
+                  label={ACTIVE_INPUT.Note}
+                  placeholder="How can we help you?"
+                  rows={4}
+                  maxLength={2000}
+                  {...getCommonFieldProps(FORM_INPUT.Note)}
+                />
+
+                <div className="mb-4 w-full overflow-x-auto">
+                  <div className="h-22 w-88">
+                    {recaptchaKey && (
+                      <ReCAPTCHA
+                        sitekey={recaptchaKey}
+                        onChange={(value) => {
+                          setContactReCaptcha(value);
+                        }}
+                      />
                     )}
                   </div>
-
+                  {invalidRecaptcha && (
+                    <span className="text-sm text-red-600">
+                      {invalidRecaptcha}
+                    </span>
+                  )}
+                </div>
+                {isSubmitting}
+                <div className="flex justify-end">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="done px-3 py-1.5"
+                    className="done flex w-full sm:w-auto"
                   >
+                    <FaRegCheckCircle className="m-icon" />
                     SUBMIT
                   </button>
-                </Form>
-              )}
-            </Formik>
-          </div>
-          }
+                </div>
+              </Form>
+            )}
+          </Formik>
         </div>
       </div>
     </div>
