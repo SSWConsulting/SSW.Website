@@ -1,4 +1,4 @@
-import { defineStaticConfig, TinaCMS } from "tinacms";
+import { defineStaticConfig, TinaCMS, useCMS, wrapFieldsWithMeta } from "tinacms";
 import {
   consultingCategorySchema,
   consultingIndexSchema,
@@ -16,6 +16,7 @@ import { testimonialCategoriesSchema } from "./collections/testimonialCategories
 import { testimonialSchema } from "./collections/testimonials";
 import { trainingSchema } from "./collections/training";
 import { newsletterSchema } from "./collections/newsletters";
+import { newsletterCopySchema } from "./collections/newsletters-copy";
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -33,7 +34,7 @@ const config = defineStaticConfig({
     // this is the config for the tina cloud media store
     tina: {
       publicFolder: "public",
-      mediaRoot: "images",
+      mediaRoot: "uploads",
     },
   },
   build: {
@@ -62,6 +63,7 @@ const config = defineStaticConfig({
       trainingSchema,
       educationalSchema,
       newsletterSchema,
+      newsletterCopySchema,
     ],
   },
 });
