@@ -25,14 +25,15 @@ export const BookingButton = ({
   const bookingPhone = layoutData.bookingPhone;
 
   const showSuccessToast = () => {
-    toast.success("Thank you, your form has been submitted successfully. We will be in contact as soon as possible.", {
-      position: "top-center",
+    toast.success(<div className="text-left">Form submitted. We'll be in contact as soon as possible.</div>, {
+      position: "top-right",
       autoClose: 5000,
       hideProgressBar: true,
       closeOnClick: false,
       pauseOnHover: true,
       draggable: false,
-      theme: "light",
+      theme: "dark",
+      pauseOnFocusLoss: false
     });
   }
 
