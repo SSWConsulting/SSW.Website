@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { Layout } from "../components/layout";
 import { Container } from "../components/util/container";
+import { FaUsers, FaGlobe } from "react-icons/fa";
 
 const ThankyouPage = () => {
   const textContentClass = "px-[100px] text-lg mb-4";
-  const doneButtonClass = "done p-3";
+  const doneButtonClass = "done p-3 inline-flex";
 
   return (
     <Layout className="bg-gray-75">
@@ -29,6 +30,7 @@ const ThankyouPage = () => {
                 SSW can help your business in many ways:
               </p>
               <Link href="/consulting/Default.aspx" className={doneButtonClass}>
+                <FaGlobe className="m-icon" />
                 SSW Consulting
               </Link>
             </div>
@@ -37,6 +39,7 @@ const ThankyouPage = () => {
                 Want to know more about our consultants:
               </p>{" "}
               <Link href="/people/" className={doneButtonClass}>
+                <FaUsers className="m-icon" />
                 SSW People
               </Link>
             </div>

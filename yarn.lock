@@ -2842,10 +2842,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:13.4.4":
-  version: 13.4.4
-  resolution: "@next/env@npm:13.4.4"
-  checksum: 9ab9b9ac4e5920cb9911273a776a5e2564844ac735a9c483bf584e090a7f534ce4a8fcda313132d338837e634513f680885c6b4ee811d5175db1b98b0bba4b35
+"@next/env@npm:13.4.5":
+  version: 13.4.5
+  resolution: "@next/env@npm:13.4.5"
+  checksum: bdde73b6f1304fe2f275cbe26d8c447f66701f89afbe6b6a0c489f2dfaa8decc18a1728720c239f6c5dd3bf63a77a324e11105ff9a6cebf72c16ed478dffa9f0
   languageName: node
   linkType: hard
 
@@ -2858,65 +2858,65 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-arm64@npm:13.4.4":
-  version: 13.4.4
-  resolution: "@next/swc-darwin-arm64@npm:13.4.4"
+"@next/swc-darwin-arm64@npm:13.4.5":
+  version: 13.4.5
+  resolution: "@next/swc-darwin-arm64@npm:13.4.5"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-x64@npm:13.4.4":
-  version: 13.4.4
-  resolution: "@next/swc-darwin-x64@npm:13.4.4"
+"@next/swc-darwin-x64@npm:13.4.5":
+  version: 13.4.5
+  resolution: "@next/swc-darwin-x64@npm:13.4.5"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-gnu@npm:13.4.4":
-  version: 13.4.4
-  resolution: "@next/swc-linux-arm64-gnu@npm:13.4.4"
+"@next/swc-linux-arm64-gnu@npm:13.4.5":
+  version: 13.4.5
+  resolution: "@next/swc-linux-arm64-gnu@npm:13.4.5"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-musl@npm:13.4.4":
-  version: 13.4.4
-  resolution: "@next/swc-linux-arm64-musl@npm:13.4.4"
+"@next/swc-linux-arm64-musl@npm:13.4.5":
+  version: 13.4.5
+  resolution: "@next/swc-linux-arm64-musl@npm:13.4.5"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-gnu@npm:13.4.4":
-  version: 13.4.4
-  resolution: "@next/swc-linux-x64-gnu@npm:13.4.4"
+"@next/swc-linux-x64-gnu@npm:13.4.5":
+  version: 13.4.5
+  resolution: "@next/swc-linux-x64-gnu@npm:13.4.5"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-musl@npm:13.4.4":
-  version: 13.4.4
-  resolution: "@next/swc-linux-x64-musl@npm:13.4.4"
+"@next/swc-linux-x64-musl@npm:13.4.5":
+  version: 13.4.5
+  resolution: "@next/swc-linux-x64-musl@npm:13.4.5"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-win32-arm64-msvc@npm:13.4.4":
-  version: 13.4.4
-  resolution: "@next/swc-win32-arm64-msvc@npm:13.4.4"
+"@next/swc-win32-arm64-msvc@npm:13.4.5":
+  version: 13.4.5
+  resolution: "@next/swc-win32-arm64-msvc@npm:13.4.5"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-win32-ia32-msvc@npm:13.4.4":
-  version: 13.4.4
-  resolution: "@next/swc-win32-ia32-msvc@npm:13.4.4"
+"@next/swc-win32-ia32-msvc@npm:13.4.5":
+  version: 13.4.5
+  resolution: "@next/swc-win32-ia32-msvc@npm:13.4.5"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@next/swc-win32-x64-msvc@npm:13.4.4":
-  version: 13.4.4
-  resolution: "@next/swc-win32-x64-msvc@npm:13.4.4"
+"@next/swc-win32-x64-msvc@npm:13.4.5":
+  version: 13.4.5
+  resolution: "@next/swc-win32-x64-msvc@npm:13.4.5"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -4235,22 +4235,22 @@ __metadata:
     "@types/react": ^18.2.6
     "@types/styled-components": ^5.1.26
     "@typescript-eslint/eslint-plugin": ^5.59.8
-    "@typescript-eslint/parser": ^5.59.7
+    "@typescript-eslint/parser": ^5.59.9
     animate-css-grid: ^1.5.1
     aos: ^2.3.4
-    applicationinsights: ^2.6.0
+    applicationinsights: ^2.7.0
     autoprefixer: ^10.4.14
     axios: ^1.3.6
     classnames: ^2.3.2
     date-fns: ^2.29.3
-    dayjs: ^1.11.7
+    dayjs: ^1.11.8
     eslint: ^8.39.0
     eslint-config-next: ^13.4.1
     eslint-plugin-tailwindcss: ^3.12.1
     formik: ^2.4.0
     markdown-it: ^13.0.1
     markdown-it-multimd-table: ^4.2.2
-    next: ^13.4.3
+    next: ^13.4.5
     next-seo: ^6.0.0
     next-sitemap: ^4.0.7
     nextjs-breadcrumbs2: ^2.0.4
@@ -4275,61 +4275,12 @@ __metadata:
     styled-jsx: ^5.1.2
     tailwindcss: 3.3.2
     tailwindcss-gradients: ^3.0.0
-    tinacms: ^1.5.6
+    tinacms: ^1.5.8
     typescript: ^5.1.3
     usehooks-ts: ^2.9.1
     yup: ^0.32.11
   languageName: unknown
   linkType: soft
-
-"@tinacms/toolkit@npm:1.7.2":
-  version: 1.7.2
-  resolution: "@tinacms/toolkit@npm:1.7.2"
-  dependencies:
-    "@floating-ui/dom": ^0.1.7
-    "@floating-ui/react-dom": ^0.3.3
-    "@headlessui/react": ^1.5.0
-    "@heroicons/react": ^1.0.5
-    "@monaco-editor/react": 4.4.5
-    "@react-aria/i18n": ^3.3.4
-    "@react-aria/listbox": 3.3.0
-    "@react-hook/window-size": ^3.0.7
-    "@react-types/combobox": ^3.2.0
-    "@react-types/shared": ^3.10.0
-    "@sambego/storybook-styles": ^1.0.0
-    "@tinacms/sharedctx": 1.0.1
-    "@udecode/plate-headless": ^14.0.2
-    atob: 2.1.2
-    color-string: ^1.5.3
-    final-form: ^4.20.2
-    final-form-arrays: ^3.0.1
-    final-form-set-field-data: ^1.0.2
-    is-hotkey: ^0.2.0
-    lodash.get: ^4.4.2
-    moment: 2.29.4
-    monaco-editor: 0.31.0
-    prism-react-renderer: ^1.3.5
-    prismjs: ^1.28.0
-    prop-types: 15.7.2
-    react-beautiful-dnd: ^13.1.0
-    react-color: ^2.17.3
-    react-datetime: ^2.16.3
-    react-dropzone: 14.2.3
-    react-final-form: ^6.3.0
-    react-icons: ^4.3.1
-    react-onclickoutside: ^6.12.2
-    slate: ^0.81.1
-    slate-history: ^0.66.0
-    slate-hyperscript: ^0.77.0
-    slate-react: ^0.81.0
-    webfontloader: 1.6.28
-  peerDependencies:
-    react: ">=16.14"
-    react-dom: ">=16.14"
-    react-is: ">=16.14.0"
-  checksum: f9473feb46b0d60cbc451cf8b8f6f5304b0825c28a6f8470e8bc7b633f344b38a6b3acf663cb514dcf9212ea7f303a65c566287451ae468a03b4db20fc5f3a7c
-  languageName: node
-  linkType: hard
 
 "@tinacms/toolkit@npm:1.7.4":
   version: 1.7.4
@@ -4735,7 +4686,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.42.0, @typescript-eslint/parser@npm:^5.59.7":
+"@typescript-eslint/parser@npm:^5.42.0":
   version: 5.59.8
   resolution: "@typescript-eslint/parser@npm:5.59.8"
   dependencies:
@@ -4749,6 +4700,23 @@ __metadata:
     typescript:
       optional: true
   checksum: bac9f09d8552086ceb882a7b87ce4d98dfaa41579249216c75d97e3fc07af33cddc4cbbd07a127a5823c826a258882643aaf658bec19cb2a434002b55c5f0d12
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/parser@npm:^5.59.9":
+  version: 5.59.9
+  resolution: "@typescript-eslint/parser@npm:5.59.9"
+  dependencies:
+    "@typescript-eslint/scope-manager": 5.59.9
+    "@typescript-eslint/types": 5.59.9
+    "@typescript-eslint/typescript-estree": 5.59.9
+    debug: ^4.3.4
+  peerDependencies:
+    eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 69b07d0a5bc6e1d24d23916c057ea9f2f53a0e7fb6dabadff92987c299640edee2c013fb93269322c7124e87b5c515529001397eae33006dfb40e1dcdf1902d7
   languageName: node
   linkType: hard
 
@@ -5763,9 +5731,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"applicationinsights@npm:^2.6.0":
-  version: 2.6.0
-  resolution: "applicationinsights@npm:2.6.0"
+"applicationinsights@npm:^2.7.0":
+  version: 2.7.0
+  resolution: "applicationinsights@npm:2.7.0"
   dependencies:
     "@azure/core-auth": ^1.4.0
     "@azure/core-rest-pipeline": 1.10.1
@@ -5785,7 +5753,7 @@ __metadata:
   peerDependenciesMeta:
     applicationinsights-native-metrics:
       optional: true
-  checksum: c72361fcc523a8568da8377b67445a01ed3f95a86647e36ed1d8b8f87626b4646d12ab75ea33753a51469f245e5683623ac6350fa8ae70b17ac081949c47c9e2
+  checksum: c4644ecd2e4871eb63604bc7294d9b6e7a3c0a8ae03304733627f61a5b993273adfc78b9f083da0c8503786396b70f47a106df3061dc97867e5b50fcc518968a
   languageName: node
   linkType: hard
 
@@ -7465,10 +7433,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.11.7":
-  version: 1.11.7
-  resolution: "dayjs@npm:1.11.7"
-  checksum: 5003a7c1dd9ed51385beb658231c3548700b82d3548c0cfbe549d85f2d08e90e972510282b7506941452c58d32136d6362f009c77ca55381a09c704e9f177ebb
+"dayjs@npm:^1.11.8":
+  version: 1.11.8
+  resolution: "dayjs@npm:1.11.8"
+  checksum: 4fe04b6df98ba6e5f89b49d80bba603cbf01e21a1b4a24ecb163c94c0ba5324a32ac234a139cee654f89d5277a2bcebca5347e6676c28a0a6d1a90f1d34a42b8
   languageName: node
   linkType: hard
 
@@ -9602,6 +9570,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"glob-to-regexp@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "glob-to-regexp@npm:0.4.1"
+  checksum: e795f4e8f06d2a15e86f76e4d92751cf8bbfcf0157cea5c2f0f35678a8195a750b34096b1256e436f0cebc1883b5ff0888c47348443e69546a5a87f9e1eb1167
+  languageName: node
+  linkType: hard
+
 "glob@npm:7.1.6":
   version: 7.1.6
   resolution: "glob@npm:7.1.6"
@@ -9718,7 +9693,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graceful-fs@npm:^4.1.6, graceful-fs@npm:^4.2.0, graceful-fs@npm:^4.2.4, graceful-fs@npm:^4.2.6":
+"graceful-fs@npm:^4.1.2, graceful-fs@npm:^4.1.6, graceful-fs@npm:^4.2.0, graceful-fs@npm:^4.2.4, graceful-fs@npm:^4.2.6":
   version: 4.2.11
   resolution: "graceful-fs@npm:4.2.11"
   checksum: ac85f94da92d8eb6b7f5a8b20ce65e43d66761c55ce85ac96df6865308390da45a8d3f0296dd3a663de65d30ba497bd46c696cc1e248c72b13d6d567138a4fc7
@@ -13501,25 +13476,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:^13.4.3":
-  version: 13.4.4
-  resolution: "next@npm:13.4.4"
+"next@npm:^13.4.5":
+  version: 13.4.5
+  resolution: "next@npm:13.4.5"
   dependencies:
-    "@next/env": 13.4.4
-    "@next/swc-darwin-arm64": 13.4.4
-    "@next/swc-darwin-x64": 13.4.4
-    "@next/swc-linux-arm64-gnu": 13.4.4
-    "@next/swc-linux-arm64-musl": 13.4.4
-    "@next/swc-linux-x64-gnu": 13.4.4
-    "@next/swc-linux-x64-musl": 13.4.4
-    "@next/swc-win32-arm64-msvc": 13.4.4
-    "@next/swc-win32-ia32-msvc": 13.4.4
-    "@next/swc-win32-x64-msvc": 13.4.4
+    "@next/env": 13.4.5
+    "@next/swc-darwin-arm64": 13.4.5
+    "@next/swc-darwin-x64": 13.4.5
+    "@next/swc-linux-arm64-gnu": 13.4.5
+    "@next/swc-linux-arm64-musl": 13.4.5
+    "@next/swc-linux-x64-gnu": 13.4.5
+    "@next/swc-linux-x64-musl": 13.4.5
+    "@next/swc-win32-arm64-msvc": 13.4.5
+    "@next/swc-win32-ia32-msvc": 13.4.5
+    "@next/swc-win32-x64-msvc": 13.4.5
     "@swc/helpers": 0.5.1
     busboy: 1.6.0
     caniuse-lite: ^1.0.30001406
     postcss: 8.4.14
     styled-jsx: 5.1.1
+    watchpack: 2.4.0
     zod: 3.21.4
   peerDependencies:
     "@opentelemetry/api": ^1.1.0
@@ -13555,7 +13531,7 @@ __metadata:
       optional: true
   bin:
     next: dist/bin/next
-  checksum: d84686f3ca313c57d283872a2946a5c18ecd656c4235ad879cbaa0f2f2886c9bcff94656ff07c4998fa672f40023978235150ce760e4c5b1edab6feaa7ed9fa9
+  checksum: 428bf846dc2465be9b5dcd0788e6bfc162393ddad01a3b45c40f7baf58fd10e5004c18aa2f2eebe6aa7bd8ed8baaae08c0f6d54c6f735bb9af87b87d01f17622
   languageName: node
   linkType: hard
 
@@ -16935,7 +16911,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tinacms@npm:1.5.8":
+"tinacms@npm:1.5.8, tinacms@npm:^1.5.8":
   version: 1.5.8
   resolution: "tinacms@npm:1.5.8"
   dependencies:
@@ -16964,38 +16940,6 @@ __metadata:
     react-dom: ">=16.14.0"
     react-is: ^16.13.1 || <18.0.0
   checksum: 7a21ef9a47db23154222379d9fb555c955ffffb8da42eda0796f3d4ceafe2d91abc0af181ef910281b929e27e06bb65b7be42f6dd1765638b6a3925fd9d473e5
-  languageName: node
-  linkType: hard
-
-"tinacms@npm:^1.5.6":
-  version: 1.5.6
-  resolution: "tinacms@npm:1.5.6"
-  dependencies:
-    "@graphql-inspector/core": ^4.0.0
-    "@graphql-tools/relay-operation-optimizer": ^6.4.1
-    "@headlessui/react": ^1.5.0
-    "@heroicons/react": ^1.0.4
-    "@react-hook/window-size": ^3.0.7
-    "@tinacms/schema-tools": 1.4.4
-    "@tinacms/sharedctx": 1.0.1
-    "@tinacms/toolkit": 1.7.2
-    crypto-js: ^4.0.0
-    encoding: 0.1.13
-    fetch-ponyfill: ^7.1.0
-    final-form: 4.20.1
-    graphql: 15.8.0
-    graphql-tag: ^2.11.0
-    lodash.set: ^4.3.2
-    prism-react-renderer: ^1.3.5
-    react-icons: ^4.3.1
-    react-router-dom: 6.3.0
-    yup: ^0.32.0
-    zod: ^3.14.3
-  peerDependencies:
-    react: ">=16.14.0"
-    react-dom: ">=16.14.0"
-    react-is: ^16.13.1 || <18.0.0
-  checksum: 4fff416b925a6dec2a0a915aae069109e9cdfd46196cc680a269f94045c084a8ffddce89d9171f4921fa5b298c4c014ce6f10574a3546de1de335a88ed33124f
   languageName: node
   linkType: hard
 
@@ -18056,6 +18000,16 @@ __metadata:
   dependencies:
     makeerror: 1.0.12
   checksum: ad7a257ea1e662e57ef2e018f97b3c02a7240ad5093c392186ce0bcf1f1a60bbadd520d073b9beb921ed99f64f065efb63dfc8eec689a80e569f93c1c5d5e16c
+  languageName: node
+  linkType: hard
+
+"watchpack@npm:2.4.0":
+  version: 2.4.0
+  resolution: "watchpack@npm:2.4.0"
+  dependencies:
+    glob-to-regexp: ^0.4.1
+    graceful-fs: ^4.1.2
+  checksum: 23d4bc58634dbe13b86093e01c6a68d8096028b664ab7139d58f0c37d962d549a940e98f2f201cecdabd6f9c340338dc73ef8bf094a2249ef582f35183d1a131
   languageName: node
   linkType: hard
 
