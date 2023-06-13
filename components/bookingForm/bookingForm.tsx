@@ -7,6 +7,7 @@ import FormGroupInput from "../form/formGroupInput";
 import FormGroupSelect from "../form/formGroupSelect";
 import FormGroupTextArea from "../form/formGroupTextArea";
 import { FaRegCheckCircle } from "react-icons/fa";
+import { Spinner } from "../spinner/spinner";
 import {
   ACTIVE_INPUT,
   AUSTRALIA,
@@ -58,6 +59,7 @@ export const BookingForm = () => {
 
   //ReCaptcha
   const [contactReCaptcha, setContactReCaptcha] = useState("");
+  const [loading, setLoading] = useState(false);
 
   //returns true if country is Australia
   const handleStates = (country: string) => {
@@ -97,6 +99,7 @@ export const BookingForm = () => {
       sourceWebPageURL
     );
 
+    setLoading(true);
     const method = { Method: "Create-Lead-UI", Payload: data };
     actions.setSubmitting(false);
 
@@ -109,11 +112,13 @@ export const BookingForm = () => {
         } else {
           onSuccess();
         }
+        setLoading(false);
       })
       .catch((err) => {
         err.data = data;
         appInsights?.trackException({ exception: err }, method);
         console.error(err);
+        setLoading(false);
         return alert("Failed to create lead in CRM");
       });
   };
@@ -121,6 +126,7 @@ export const BookingForm = () => {
   const onSuccess = () => {
     setInvalidReptcha("");
     setContactSuccess(true);
+    setLoading(false);
     setTimeout(function () {
       setContactSuccess(false);
       router.push("/thankyou/");
@@ -271,11 +277,19 @@ export const BookingForm = () => {
                 <div className="flex justify-end">
                   <button
                     type="submit"
-                    disabled={isSubmitting}
-                    className="done flex w-full sm:w-auto"
+                    disabled={loading}
+                    className={`done flex w-full sm:w-auto ${
+                      loading
+                        ? "cursor-not-allowed opacity-50"
+                        : "cursor-pointer opacity-100"
+                    }`}
                   >
-                    <FaRegCheckCircle className="m-icon" />
-                    SUBMIT
+                    {loading ? (
+                      <Spinner />
+                    ) : (
+                      <FaRegCheckCircle className="m-icon" />
+                    )}
+                    {loading ? "Processing" : "SUBMIT"}
                   </button>
                 </div>
               </Form>
