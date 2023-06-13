@@ -6,6 +6,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import FormGroupInput from "../form/formGroupInput";
 import FormGroupSelect from "../form/formGroupSelect";
 import FormGroupTextArea from "../form/formGroupTextArea";
+import { FaRegCheckCircle } from "react-icons/fa";
 import {
   ACTIVE_INPUT,
   AUSTRALIA,
@@ -145,9 +146,9 @@ export const BookingForm = () => {
   const statesDefaultOption = getDefaultOption(FORM_INPUT.States);
 
   return (
-    <div className="rounded-none bg-gray-125 font-sans">
-      <div className="relative p-4">
-        <div className="m-0 bg-white px-6 pb-5 pt-1">
+    <div className="rounded bg-white font-sans">
+      <div className="relative rounded p-2">
+        <div className="m-0 rounded bg-white px-6 pb-5 pt-1">
           <h2 className="mb-14 mt-1.5 pt-1.5 !text-2xl text-sswRed">
             {CONTACT_FORM_TITLE}
           </h2>
@@ -266,14 +267,17 @@ export const BookingForm = () => {
                     </span>
                   )}
                 </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="done px-3 py-1.5"
-                >
-                  SUBMIT
-                </button>
+                {isSubmitting}
+                <div className="flex justify-end">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="done flex w-full sm:w-auto"
+                  >
+                    <FaRegCheckCircle className="m-icon" />
+                    SUBMIT
+                  </button>
+                </div>
               </Form>
             )}
           </Formik>

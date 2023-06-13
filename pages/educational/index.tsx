@@ -17,6 +17,7 @@ import { SEO } from "../../components/util/seo";
 import { InferGetStaticPropsType } from "next";
 import layoutData from "../../content/global/index.json";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
+import { FaFileDownload } from "react-icons/fa";
 
 export default function EducationalIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -106,7 +107,8 @@ export default function EducationalIndex(
         <p className="mb-4">{description}</p>
         <div className="flex justify-center">
           <DownloadWhitepaperLink>
-            <Button ripple className="done mx-2 !h-10 pl-3">
+            <Button ripple className="done mx-2 inline-flex !h-10 pl-3">
+              <FaFileDownload className="m-icon" />
               {buttonText}
             </Button>
           </DownloadWhitepaperLink>
@@ -181,7 +183,8 @@ export const getStaticProps = async () => {
     props: {
       ...tinaProps,
       env: {
-        GOOGLE_RECAPTCHA_SITE_KEY: process.env.GOOGLE_RECAPTCHA_SITE_KEY || null,
+        GOOGLE_RECAPTCHA_SITE_KEY:
+          process.env.GOOGLE_RECAPTCHA_SITE_KEY || null,
       },
     },
   };
