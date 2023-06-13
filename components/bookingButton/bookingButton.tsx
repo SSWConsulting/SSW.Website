@@ -5,8 +5,8 @@ import Popup from "../popup/popup";
 import layoutData from "../../content/global/index.json";
 import classNames from "classnames";
 import { Template } from "tinacms";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+import SuccessToast from "../successToast/successToast";
 
 export interface BookingButtonProps {
   buttonText?: string;
@@ -25,16 +25,7 @@ export const BookingButton = ({
   const bookingPhone = layoutData.bookingPhone;
 
   const showSuccessToast = () => {
-    toast.success(<div className="text-left">Form submitted. We'll be in contact as soon as possible.</div>, {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: true,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: false,
-      theme: "dark",
-      pauseOnFocusLoss: false
-    });
+    toast.success(<div className="text-left">Form submitted. We'll be in contact as soon as possible.</div>);
   }
 
   return (
@@ -58,7 +49,7 @@ export const BookingButton = ({
       <Popup isVisible={isVisible} onClose={setIsVisible}>
         <BookingForm onClose={setIsVisible} showSuccessToast={showSuccessToast} />
       </Popup>
-      <ToastContainer />
+      <SuccessToast />
     </div>
   );
 };
