@@ -6,8 +6,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import FormGroupInput from "../form/formGroupInput";
 import FormGroupSelect from "../form/formGroupSelect";
 import FormGroupTextArea from "../form/formGroupTextArea";
-import { FaRegCheckCircle } from "react-icons/fa";
-import { Spinner } from "../spinner/spinner";
+import { FaRegCheckCircle, FaSpinner } from "react-icons/fa";
 import {
   ACTIVE_INPUT,
   AUSTRALIA,
@@ -285,7 +284,7 @@ export const BookingForm = () => {
                     }`}
                   >
                     {loading ? (
-                      <Spinner />
+                      <FaSpinner className="m-icon animate-spin" />
                     ) : (
                       <FaRegCheckCircle className="m-icon" />
                     )}
