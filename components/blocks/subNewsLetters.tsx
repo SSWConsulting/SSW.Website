@@ -15,7 +15,7 @@ const placeholder = {
   email: "Your Email",
 };
 
-export const SubNewsLettersButton = ({ headerText, subscribeButtonText, subscribeSubTitle }) => {
+export const SubNewsLetters = ({ headerText, subscribeButtonText, subscribeSubTitle }) => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -163,9 +163,9 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText, subscrib
   );
 };
 
-export const subNewsLettersButtonSchema: Template = {
-  name: "SubNewsLettersButton",
-  label: "Subscribe To NewsLetters Button",
+export const subNewsLettersSchema: Template = {
+  name: "SubNewsLetters",
+  label: "Subscribe To NewsLetters",
   fields: [
     {
       type: "string",
