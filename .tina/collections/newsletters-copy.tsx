@@ -76,5 +76,15 @@ export const newsletterCopySchema: Collection = {
 				}
 			}
 		},
+		{
+			type: "image",
+			label: "Newsletter images",
+			name: "images",
+			parse: (media) => { 
+				console.log(media);
+				return `/uploads/images/${media}`;
+			},
+			uploadDir: () => "/public/uploads/images",
+		}
   ],
 };
