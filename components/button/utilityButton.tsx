@@ -1,11 +1,10 @@
 import classNames from "classnames"
 import Button from "./button"
-import Link from "next/link"
 import { Template } from "tinacms"
 
 interface UtilityButtonProps {
   buttonText?: string
-  onClick?: Function
+  onClick?: () => void
   className?: string
   link?: string
 }

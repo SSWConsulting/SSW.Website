@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { BookingForm } from "../bookingForm/bookingForm";
-import Button from "../button/button";
 import Popup from "../popup/popup";
 import layoutData from "../../content/global/index.json";
 import classNames from "classnames";

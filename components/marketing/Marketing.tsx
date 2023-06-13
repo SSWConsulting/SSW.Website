@@ -1,7 +1,6 @@
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { VideoModal } from "../videoModal";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 
 export const sides = ["left", "right"];

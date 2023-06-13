@@ -14,7 +14,10 @@ import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { UtilityButton } from "../../components/button/utilityButton";
 import { InferGetStaticPropsType } from "next";
-import { Opportunities, OpportunityType } from "../../components/employment/opportunities";
+import {
+  Opportunities,
+  OpportunityType,
+} from "../../components/employment/opportunities";
 import { jobStatus } from "../../components/util/constants/opportunity";
 
 export default function EmploymentPage(
@@ -30,29 +33,34 @@ export default function EmploymentPage(
     return file.split(".")[0];
   };
 
-  const chosenOpportunities: OpportunityType[] = data.employment.opportunities.map((o) => {
-    return {
-      title: o.opportunityRef.title,
-      employmentType: o.opportunityRef.employmentType,
-      status: o.opportunityRef.status,
-      locations: o.opportunityRef.locations,
-      hideApply: o.opportunityRef.hideApply,
-      description: o.opportunityRef._body,
-    }
-  });
+  const chosenOpportunities: OpportunityType[] =
+    data.employment.opportunities.map((o) => {
+      return {
+        title: o.opportunityRef.title,
+        employmentType: o.opportunityRef.employmentType,
+        status: o.opportunityRef.status,
+        locations: o.opportunityRef.locations,
+        hideApply: o.opportunityRef.hideApply,
+        description: o.opportunityRef._body,
+      };
+    });
 
-  const filledOpportunities: OpportunityType[] = data.opportunitiesConnection?.edges.filter(o => o.node.status === jobStatus[1]).map((o) => {
-    return {
-      title: o.node.title,
-      employmentType: o.node.employmentType,
-      status: o.node.status,
-      locations: o.node.locations,
-      hideApply: o.node.hideApply,
-      description: o.node._body,
-    }
-  });
+  const filledOpportunities: OpportunityType[] =
+    data.opportunitiesConnection?.edges
+      .filter((o) => o.node.status === jobStatus[1])
+      .map((o) => {
+        return {
+          title: o.node.title,
+          employmentType: o.node.employmentType,
+          status: o.node.status,
+          locations: o.node.locations,
+          hideApply: o.node.hideApply,
+          description: o.node._body,
+        };
+      });
 
-  const opportunities: OpportunityType[] = chosenOpportunities.concat(filledOpportunities);
+  const opportunities: OpportunityType[] =
+    chosenOpportunities.concat(filledOpportunities);
 
   return (
     <>
@@ -67,7 +75,10 @@ export default function EmploymentPage(
         </Section>
         <Section className="w-full" color="black">
           <Booking {...data.employment.booking}>
-            <UtilityButton buttonText="Check out our current opportunities" link="#available" />
+            <UtilityButton
+              buttonText="Check out our current opportunities"
+              link="#available"
+            />
           </Booking>
         </Section>
         <Section
@@ -86,29 +97,38 @@ export default function EmploymentPage(
               />
               <Benefits data={data.employment.benefits} />
               {data.employment.benefitsBody && (
-                <TinaMarkdown content={data.employment.benefitsBody} components={componentRenderer} />
+                <TinaMarkdown
+                  content={data.employment.benefitsBody}
+                  components={componentRenderer}
+                />
               )}
             </div>
           </div>
         </Section>
         {data.employment.afterBody ? (
-          <Section className="mb-16 text-center prose-employment">
+          <Section className="prose-employment mb-16 text-center">
             <Container padding="px-4" className="w-full">
-                  <TinaMarkdown
-                    content={data.employment.afterBody}
-                    components={componentRenderer}
-                  />
+              <TinaMarkdown
+                content={data.employment.afterBody}
+                components={componentRenderer}
+              />
             </Container>
           </Section>
         ) : (
           <></>
         )}
         <Marketing content={props.marketingData} />
-        
+
         <Section className="!block" id="available">
           {data.employment.opportunitiesBody && (
-            <Container size="custom" className="w-full text-center prose-employment">
-              <TinaMarkdown content={data.employment.opportunitiesBody} components={componentRenderer} />
+            <Container
+              size="custom"
+              className="prose-employment w-full text-center"
+            >
+              <TinaMarkdown
+                content={data.employment.opportunitiesBody}
+                components={componentRenderer}
+              />
             </Container>
           )}
           <Container size="custom" className="w-full">
@@ -117,7 +137,10 @@ export default function EmploymentPage(
         </Section>
         <Section className="!bg-gray-75 pb-25 text-center">
           <Container size="custom" className="w-full">
-            <TinaMarkdown content={data.employment.callToActionBody} components={componentRenderer} />
+            <TinaMarkdown
+              content={data.employment.callToActionBody}
+              components={componentRenderer}
+            />
           </Container>
         </Section>
         <Section>
