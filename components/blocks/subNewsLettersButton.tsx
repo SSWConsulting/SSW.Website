@@ -7,6 +7,7 @@ import axios from "axios";
  * A component for subscribing to newsletters.
  * @param headerText - The text to display above the form.
  * @param subscribeButtonText - The text to display on the subscribe button.
+ * @param subscribeSubTitle - The text to display below the headerText.
  */
 const placeholder = {
   firstName: "First Name",
@@ -14,7 +15,7 @@ const placeholder = {
   email: "Your Email",
 };
 
-export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
+export const SubNewsLettersButton = ({ headerText, subscribeButtonText, subscribeSubTitle }) => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -92,9 +93,9 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
     id,
     handleInputCallBack
   ): JSX.Element => (
-    <div className="mb-1">
+    <div className="mx-1 mb-1 h-14">
       <input
-        className="col-span-3 w-full appearance-none rounded border-1 border-gray-300 px-3 py-2 leading-tight text-gray-700 focus:shadow focus:outline md:col-span-2"
+        className="col-span-3 h-full w-full appearance-none rounded border-1 border-gray-300 px-3 py-2 leading-tight text-gray-700 focus:shadow focus:outline md:col-span-2"
         id={id}
         type="text"
         placeholder={placeholder}
@@ -105,9 +106,11 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
   );
 
   return (
-    <div className="flex flex-row justify-center">
-      <h2 className="font-helvetica text-4xl font-medium text-sswBlack" dangerouslySetInnerHTML={{ __html: headerText }}></h2>
-      <div className="container sm:w-full sm:max-w-full md:w-1/4">
+    <div className="flex flex-col items-center justify-center">
+      <h2 className="mb-2 mt-6 font-helvetica text-4xl font-medium text-sswBlack" dangerouslySetInnerHTML={{ __html: headerText }}></h2>
+      <div className="mb-5 text-base text-sswBlack">{subscribeSubTitle}</div>
+      <div className="container flex justify-center sm:w-full sm:max-w-full md:w-3/4">
+        {/* <div className=""> */}
         {inputRender(
           firstName,
           placeholder.firstName,
@@ -120,15 +123,18 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
           Object.keys(placeholder)[1],
           handleLastNameChange
         )}
-        {inputRender(
-          email,
-          placeholder.email,
-          Object.keys(placeholder)[2],
-          handleEmailChange
-        )}
-        <div className="flex justify-center">
+        <span className="w-80">
+          {inputRender(
+            email,
+            placeholder.email,
+            Object.keys(placeholder)[2],
+            handleEmailChange
+          )}
+        </span>
+        {/* </div> */}
+        <div className="flex w-32 justify-center">
           <button
-            className="box-border flex w-1/2 cursor-pointer items-center justify-center gap-1 bg-sswRed py-2 pl-4 pr-2 font-sans uppercase text-white hover:text-gray-100 hover:opacity-95"
+            className="box-border flex cursor-pointer items-center justify-center gap-1 rounded-md bg-sswRed py-2 pl-4 pr-2 font-sans uppercase text-white hover:text-gray-100 hover:opacity-95"
             onClick={handleSubscribe}
           >
             {subscribeButtonText}
@@ -170,6 +176,11 @@ export const subNewsLettersButtonSchema: Template = {
       type: "string",
       label: "Subscribe button text",
       name: "subscribeButtonText",
+    },
+    {
+      type: "string",
+      label: "Subscribe sub title",
+      name: "subscribeSubTitle",
     },
   ],
 };

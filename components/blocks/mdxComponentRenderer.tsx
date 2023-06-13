@@ -127,6 +127,7 @@ export const componentRenderer: Components<{
   SubNewsLettersButton: {
     subscribeButtonText: string;
     headerText: string;
+    subscribeSubTitle: string;
   };
   Citation: {
     article: string;
