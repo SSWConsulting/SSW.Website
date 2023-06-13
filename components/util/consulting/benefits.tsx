@@ -6,31 +6,31 @@ import classNames from "classnames";
 const BenefitCard = ({ className, data, aosType }) => {
 	const { image, title, description, linkURL, linkName } = data;
 	return (
-		<article
-			className={classNames("px-14 py-11", className)}
-			data-aos={aosType}
-		>
-			<figure className="relative mx-auto h-40 w-40 select-none md:float-left">
-				{image && (
-					<Image src={image} sizes="100vw" fill alt={title || "benefit icon"} />
-				)}
-			</figure>
+    <article
+      className={classNames("px-14 py-11", className)}
+      data-aos={aosType}
+    >
+      <figure className="relative mx-auto h-40 w-40 select-none md:float-left">
+        {image && (
+          <Image src={image} sizes="100vw" fill alt={title || "benefit icon"} />
+        )}
+      </figure>
 
-			<h4 className="mb-2 mt-4 text-center text-xl font-medium uppercase leading-snug md:text-left">
-				{title}
-			</h4>
-			<article>
-				<section className="mx-auto w-full max-w-full p-0 text-center text-sm font-light leading-normal prose-p:m-0 prose-p:first-of-type:pt-0 prose-strong:font-bold md:text-left md:text-md">
-					<TinaMarkdown content={description} />
-				</section>
-				{linkURL && (
-					<a className="text-white no-underline" href={linkURL}>
-						{linkName}
-					</a>
-				)}
-			</article>
-		</article>
-	);
+      <h4 className="mb-2 mt-4 text-center text-xl font-medium uppercase leading-snug md:text-left">
+        {title}
+      </h4>
+      <article>
+        <section className="mx-auto w-full max-w-full p-0 text-center text-sm font-light leading-normal prose-p:m-0 prose-p:first-of-type:pt-0 prose-strong:font-bold prose-li:m-0 md:text-left md:text-md">
+          <TinaMarkdown content={description} />
+        </section>
+        {linkURL && (
+          <a className="text-white no-underline" href={linkURL}>
+            {linkName}
+          </a>
+        )}
+      </article>
+    </article>
+  );
 };
 
 export const Benefits = ({ data }) => {
