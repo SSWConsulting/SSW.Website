@@ -5,7 +5,7 @@ import { FaUsers, FaGlobe } from "react-icons/fa";
 
 const ThankyouPage = () => {
   const textContentClass = "px-[100px] text-lg mb-4";
-  const doneButtonClass = "done p-3 inline-flex";
+  const doneButtonClass = "done p-3 inline-flex cursor-pointer";
 
   return (
     <Layout className="bg-gray-75">
