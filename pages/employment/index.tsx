@@ -36,12 +36,12 @@ export default function EmploymentPage(
   const chosenOpportunities: OpportunityType[] =
     data.employment.opportunities.map((o) => {
       return {
-        title: o.opportunityRef.title,
-        employmentType: o.opportunityRef.employmentType,
-        status: o.opportunityRef.status,
-        locations: o.opportunityRef.locations,
-        hideApply: o.opportunityRef.hideApply,
-        description: o.opportunityRef._body,
+        title: o?.opportunityRef?.title,
+        employmentType: o?.opportunityRef?.employmentType,
+        status: o?.opportunityRef?.status,
+        locations: o?.opportunityRef?.locations,
+        hideApply: o?.opportunityRef?.hideApply,
+        description: o?.opportunityRef?._body,
       };
     });
 
