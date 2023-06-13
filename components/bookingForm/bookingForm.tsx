@@ -1,6 +1,5 @@
 import axios from "axios";
 import { Form, Formik } from "formik";
-import { useRouter } from "next/router";
 import { useEffect, useContext, useMemo, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import FormGroupInput from "../form/formGroupInput";
@@ -25,15 +24,14 @@ import {
   RecaptchaContextType,
 } from "../../context/RecaptchaContext";
 
-export const BookingForm = () => {
+export const BookingForm = (props) => {
   const { recaptchaKey } = useContext<RecaptchaContextType>(RecaptchaContext);
 
   //Show FormStates and Active label
-  const [contactSuccess, setContactSuccess] = useState(false);
   const [country, setCountry] = useState("");
   const [activeInputLabel, setActiveInputLabel] = useState({});
-  const router = useRouter();
   const appInsights = useAppInsightsContext();
+  const { onClose, showSuccessToast } = props;
 
   const initialFormValues = {
     fullName: "",
@@ -110,6 +108,7 @@ export const BookingForm = () => {
           setInvalidReptcha("Invalid ReCaptcha!");
         } else {
           onSuccess();
+          actions.resetForm(initialFormValues);
         }
         setLoading(false);
       })
@@ -124,12 +123,11 @@ export const BookingForm = () => {
 
   const onSuccess = () => {
     setInvalidReptcha("");
-    setContactSuccess(true);
+    if (onClose !== undefined) {
+      onClose();
+    }
+    showSuccessToast();
     setLoading(false);
-    setTimeout(function () {
-      setContactSuccess(false);
-      router.push("/thankyou/");
-    }, 1000);
   };
 
   const getCommonFieldProps = (fieldName: string) => ({
@@ -151,24 +149,12 @@ export const BookingForm = () => {
   const statesDefaultOption = getDefaultOption(FORM_INPUT.States);
 
   return (
-    <div className="rounded bg-white font-sans">
-      <div className="relative rounded p-2">
-        <div className="m-0 rounded bg-white px-6 pb-5 pt-1">
+    <div className="rounded-none bg-gray-125 font-sans">
+      <div className="relative p-4">
+        <div className="m-0 bg-white px-6 pb-5 pt-1">
           <h2 className="mb-14 mt-1.5 pt-1.5 !text-2xl text-sswRed">
             {CONTACT_FORM_TITLE}
           </h2>
-          {!!contactSuccess && (
-            <div
-              className={
-                "relative mb-8 rounded border-1 border-solid border-green-100 bg-green-50 p-4 text-green-900"
-              }
-              role="alert"
-            >
-              An email has been sent to the SSW Sales team and someone will be
-              in contact with you soon
-            </div>
-          )}
-
           <Formik
             validationSchema={schema}
             initialValues={initialFormValues}
