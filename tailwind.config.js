@@ -223,12 +223,13 @@ module.exports = {
           "Helvetica",
           "sans-serif",
         ],
-        helvetica: [
+        helvetica: ["Helvetica Neue", "Helvetica", "sans-serif"],
+        body: [
+          "var(--open-sans-font)",
           "Helvetica Neue",
           "Helvetica",
           "sans-serif",
         ],
-        body: ["var(--open-sans-font)", "Helvetica Neue", "Helvetica", "sans-serif"],
       },
       animation: {
         "more-bounce": "more-bounce 2s infinite",
@@ -282,17 +283,17 @@ module.exports = {
               marginBottom: "7px",
             },
             h4: {
-              color: theme("colors.sswBlack")
+              color: theme("colors.sswBlack"),
             },
             strong: {
-              color: theme("colors.sswBlack")
+              color: theme("colors.sswBlack"),
             },
             a: {
-              fontWeight: "300"
+              fontWeight: "300",
             },
             p: {
               marginBottom: "10px",
-              color: theme("colors.sswBlack")
+              color: theme("colors.sswBlack"),
             },
             hr: {
               margin: "30px 0",
@@ -313,8 +314,10 @@ module.exports = {
             },
             "p, ul": {
               fontWeight: theme("fontWeight.light"),
-              margin: "0 auto",
-              padding: "20px 0",
+              fontSize: "1.125rem",
+              lineHeight: "1.75rem",
+              margin: "1rem auto",
+              padding: "0",
             },
             "p > img": {
               margin: "0 auto",
