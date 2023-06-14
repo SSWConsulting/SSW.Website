@@ -74,10 +74,22 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-      - name: Run 50 seconds delay
-        uses: jakejarvis/wait-action@v0.1.1
-        with:
-          time: "50s"
+      - name: Run Slot Check
+        run: |
+          $slotURL = ${{ needs.pr-deploy.outputs.url }}
+          $delaySeconds = 30
+
+          while ($true) {
+              $response = Invoke-WebRequest -Uri $slotURL -Method Head
+
+              if ($response.StatusCode -eq 200) {
+                  Write-Host "✅ Slot is Ready now."
+                  break
+              }
+
+              Write-Host "❌Slot is not ready yet. Retrying in $delaySeconds seconds..."
+              Start-Sleep -Seconds $delaySeconds
+          }
 
       - uses: wicksipedia/pagespeed-insights@main
         id: pagespeed-insights
