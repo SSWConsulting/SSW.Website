@@ -74,9 +74,6 @@
     @apply mr-2;
   }
 
-  .sswSpinner {
-    @apply mr-2 h-4 w-4 animate-spin fill-sswRed text-white dark:text-gray-600;
-  }
   .customTable table,
   .customTable th,
   .customTable td {
