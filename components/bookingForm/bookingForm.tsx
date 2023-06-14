@@ -5,7 +5,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import FormGroupInput from "../form/formGroupInput";
 import FormGroupSelect from "../form/formGroupSelect";
 import FormGroupTextArea from "../form/formGroupTextArea";
-import { FaRegCheckCircle } from "react-icons/fa";
+import { FaRegCheckCircle, FaSpinner } from "react-icons/fa";
 import {
   ACTIVE_INPUT,
   AUSTRALIA,
@@ -56,6 +56,7 @@ export const BookingForm = (props) => {
 
   //ReCaptcha
   const [contactReCaptcha, setContactReCaptcha] = useState("");
+  const [loading, setLoading] = useState(false);
 
   //returns true if country is Australia
   const handleStates = (country: string) => {
@@ -95,6 +96,7 @@ export const BookingForm = (props) => {
       sourceWebPageURL
     );
 
+    setLoading(true);
     const method = { Method: "Create-Lead-UI", Payload: data };
     actions.setSubmitting(false);
 
@@ -108,11 +110,13 @@ export const BookingForm = (props) => {
           onSuccess();
           actions.resetForm(initialFormValues);
         }
+        setLoading(false);
       })
       .catch((err) => {
         err.data = data;
         appInsights?.trackException({ exception: err }, method);
         console.error(err);
+        setLoading(false);
         return alert("Failed to create lead in CRM");
       });
   };
@@ -123,6 +127,7 @@ export const BookingForm = (props) => {
       onClose();
     }
     showSuccessToast();
+    setLoading(false);
   };
 
   const getCommonFieldProps = (fieldName: string) => ({
@@ -144,9 +149,9 @@ export const BookingForm = (props) => {
   const statesDefaultOption = getDefaultOption(FORM_INPUT.States);
 
   return (
-    <div className="rounded-none bg-gray-125 font-sans">
-      <div className="relative p-4">
-        <div className="m-0 bg-white px-6 pb-5 pt-1">
+    <div className="rounded bg-white font-sans">
+      <div className="relative rounded p-2">
+        <div className="m-0 rounded bg-white px-6 pb-5 pt-1">
           <h2 className="mb-14 mt-1.5 pt-1.5 !text-2xl text-sswRed">
             {CONTACT_FORM_TITLE}
           </h2>
@@ -257,11 +262,19 @@ export const BookingForm = (props) => {
                 <div className="flex justify-end">
                   <button
                     type="submit"
-                    disabled={isSubmitting}
-                    className="done flex w-full sm:w-auto"
+                    disabled={loading}
+                    className={`done flex w-full sm:w-auto ${
+                      loading
+                        ? "cursor-not-allowed opacity-50"
+                        : "cursor-pointer opacity-100"
+                    }`}
                   >
-                    <FaRegCheckCircle className="m-icon" />
-                    SUBMIT
+                    {loading ? (
+                      <FaSpinner className="m-icon animate-spin" />
+                    ) : (
+                      <FaRegCheckCircle className="m-icon" />
+                    )}
+                    {loading ? "Processing" : "SUBMIT"}
                   </button>
                 </div>
               </Form>
