@@ -74,6 +74,11 @@ jobs:
     permissions:
       pull-requests: write
     steps:
+      - name: Run 50 seconds delay
+        uses: jakejarvis/wait-action@v0.1.1
+        with:
+          time: "50s"
+
       - uses: wicksipedia/pagespeed-insights@main
         id: pagespeed-insights
         with:
