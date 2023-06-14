@@ -78,17 +78,27 @@ jobs:
         run: |
           $slotURL = "${{ needs.pr-deploy.outputs.url }}"
           $delaySeconds = 30
+          $maxWaitSecs = 300
+          $totalDelay = 0
 
           while ($true) {
+            try {
               $response = Invoke-WebRequest -Uri $slotURL -Method Head
 
               if ($response.StatusCode -eq 200) {
                   Write-Host "✅ Slot is Ready now."
                   break
               }
+              elseif($totalDelay -ge $maxWaitSecs) {
+                  Write-Host "⛔ Maximum wait time exceeded. Slot readiness not achieved."
+                  break
+              }
 
+            } catch {
               Write-Host "❌Slot is not ready yet. Retrying in $delaySeconds seconds..."
+              $totalDelay += $delaySeconds
               Start-Sleep -Seconds $delaySeconds
+            }
           }
 
       - uses: wicksipedia/pagespeed-insights@main
