@@ -29,7 +29,7 @@ export const Carousel = ({ data }) => {
 
   return (
     <Section
-      className={`${data.showOnMobileDevices ? "" : "hidden"} md:flex`}
+      className={`${data.showOnMobileDevices ? "flex" : "hidden md:flex"}`}
       color={data.backgroundColor}
     >
       <Container size="custom" className="w-full">
