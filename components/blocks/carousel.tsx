@@ -28,7 +28,10 @@ export const Carousel = ({ data }) => {
   };
 
   return (
-    <Section className="hidden sm:flex" color={data.backgroundColor}>
+    <Section
+      className={`${data.showOnMobileDevices ? "" : "hidden"} md:flex`}
+      color={data.backgroundColor}
+    >
       <Container size="custom" className="w-full">
         <CarouselImplementation
           autoPlay={true}
@@ -150,6 +153,11 @@ export const carouselBlockSchema: Template = {
         { label: "Red", value: "red" },
         { label: "Black", value: "black" },
       ],
+    },
+    {
+      type: "boolean",
+      label: "Show on mobile devices",
+      name: "showOnMobileDevices",
     },
   ],
 };
