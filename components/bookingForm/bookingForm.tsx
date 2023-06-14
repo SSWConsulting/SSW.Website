@@ -149,9 +149,9 @@ export const BookingForm = (props) => {
   const statesDefaultOption = getDefaultOption(FORM_INPUT.States);
 
   return (
-    <div className="rounded-none bg-gray-125 font-sans">
-      <div className="relative p-4">
-        <div className="m-0 bg-white px-6 pb-5 pt-1">
+    <div className="rounded bg-white font-sans">
+      <div className="relative rounded p-2">
+        <div className="m-0 rounded bg-white px-6 pb-5 pt-1">
           <h2 className="mb-14 mt-1.5 pt-1.5 !text-2xl text-sswRed">
             {CONTACT_FORM_TITLE}
           </h2>
