@@ -76,7 +76,7 @@ jobs:
     steps:
       - name: Run Slot Check
         run: |
-          $slotURL = ${{ needs.pr-deploy.outputs.url }}
+          $slotURL = "${{ needs.pr-deploy.outputs.url }}"
           $delaySeconds = 30
 
           while ($true) {
