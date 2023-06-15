@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import { Template } from "tinacms";
 import axios from "axios";
 import { FaRegCheckCircle } from "react-icons/fa";
