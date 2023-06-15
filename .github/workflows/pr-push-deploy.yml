@@ -101,7 +101,7 @@ jobs:
             }
           }
 
-      - uses: wicksipedia/pagespeed-insights@main
+      - uses: amankumarrr/pagespeed-insights@main
         id: pagespeed-insights
         with:
           url: ${{ needs.pr-deploy.outputs.url }}
