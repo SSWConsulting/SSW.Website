@@ -1,10 +1,10 @@
 export const Locations = [
-	"All",
-	"Sydney",
-	"Brisbane",
-	"Melbourne",
-	"Newcastle",
-	"China",
+  "All",
+  "Sydney",
+  "Brisbane",
+  "Melbourne",
+  "Newcastle",
+  "China",
 ];
 
 export const Employment_Type = ["Contract", "Permanent", "Work Experience"];

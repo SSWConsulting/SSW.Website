@@ -1,11 +1,6 @@
 import Link from "next/link";
 
-const DeploymentLink = ({
-  deploymentDate,
-  repo,
-  runId,
-  deploymentNumber,
-}) => {
+const DeploymentLink = ({ deploymentDate, repo, runId, deploymentNumber }) => {
   return (
     <span>
       Last deployed {deploymentDate} (Build #{" "}

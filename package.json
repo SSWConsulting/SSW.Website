@@ -8,7 +8,8 @@
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "start": "tinacms build && node_modules/next/dist/bin/next start -p $PORT",
     "export": "npm run build && next export",
-    "lint": "eslint . --ext .ts,.tsx"
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint-fix": "eslint . --fix --ext .ts,.tsx"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.4.4",

@@ -4,21 +4,21 @@
  * @returns The name of the month.
  */
 export const transformIntToMonth = (monthNumber: number): string => {
-	const months = [
-		"January",
-		"February",
-		"March",
-		"April",
-		"May",
-		"June",
-		"July",
-		"August",
-		"September",
-		"October",
-		"November",
-		"December",
-	];
-	return months[monthNumber - 1];
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  return months[monthNumber - 1];
 };
 
 /**
@@ -28,6 +28,6 @@ export const transformIntToMonth = (monthNumber: number): string => {
  * @returns A string representation of the month.
  */
 export const stringifyMonth = (month: number): string => {
-	const monthString = month.toString().padStart(2, "0");
-	return monthString;
+  const monthString = month.toString().padStart(2, "0");
+  return monthString;
 };
