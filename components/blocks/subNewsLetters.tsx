@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Template } from "tinacms";
 import axios from "axios";
+import { FaRegCheckCircle } from "react-icons/fa";
 
 /**
  * A component for subscribing to newsletters.
@@ -12,7 +13,7 @@ import axios from "axios";
 const placeholder = {
   firstName: "First Name",
   lastName: "Last Name",
-  email: "Your Email",
+  email: "Email",
 };
 
 export const SubNewsLetters = ({ headerText, subscribeButtonText, subscribeSubTitle }) => {
@@ -93,7 +94,7 @@ export const SubNewsLetters = ({ headerText, subscribeButtonText, subscribeSubTi
     id,
     handleInputCallBack
   ): JSX.Element => (
-    <div className="mx-1 mb-1 h-14">
+    <div className="mb-3 h-14 sm:mx-1">
       <input
         className="col-span-3 h-full w-full appearance-none rounded border-1 border-gray-300 px-3 py-2 leading-tight text-gray-700 focus:shadow focus:outline md:col-span-2"
         id={id}
@@ -107,23 +108,26 @@ export const SubNewsLetters = ({ headerText, subscribeButtonText, subscribeSubTi
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <h2 className="mb-2 mt-6 font-helvetica text-4xl font-medium text-sswBlack" dangerouslySetInnerHTML={{ __html: headerText }}></h2>
-      <div className="mb-5 text-base text-sswBlack">{subscribeSubTitle}</div>
-      <div className="container flex justify-center sm:w-full sm:max-w-full md:w-3/4">
-        {/* <div className=""> */}
-        {inputRender(
-          firstName,
-          placeholder.firstName,
-          Object.keys(placeholder)[0],
-          handleFirstNameChange
-        )}
-        {inputRender(
-          lastName,
-          placeholder.lastName,
-          Object.keys(placeholder)[1],
-          handleLastNameChange
-        )}
-        <span className="w-80">
+      <h2 className="mb-2 mt-6 text-center font-helvetica text-4xl font-medium text-sswBlack" dangerouslySetInnerHTML={{ __html: headerText }}></h2>
+      <div className="mb-5 text-center text-base text-sswBlack">{subscribeSubTitle}</div>
+      <div className="container flex flex-wrap justify-center sm:w-full sm:max-w-full md:w-3/4">
+        <span className="w-full sm:w-52">
+          {inputRender(
+            firstName,
+            placeholder.firstName,
+            Object.keys(placeholder)[0],
+            handleFirstNameChange
+          )}
+        </span>
+        <span className="w-full sm:w-52">
+          {inputRender(
+            lastName,
+            placeholder.lastName,
+            Object.keys(placeholder)[1],
+            handleLastNameChange
+          )}
+        </span>
+        <span className="w-full sm:w-80">
           {inputRender(
             email,
             placeholder.email,
@@ -131,21 +135,13 @@ export const SubNewsLetters = ({ headerText, subscribeButtonText, subscribeSubTi
             handleEmailChange
           )}
         </span>
-        {/* </div> */}
         <div className="flex w-32 justify-center">
           <button
-            className="box-border flex cursor-pointer items-center justify-center gap-1 rounded-md bg-sswRed py-2 pl-4 pr-2 font-sans uppercase text-white hover:text-gray-100 hover:opacity-95"
             onClick={handleSubscribe}
+            className="done flex h-14 w-full sm:w-auto"
           >
+            <FaRegCheckCircle className="m-icon" />
             {subscribeButtonText}
-            <Image
-              className="inline-block align-middle leading-8"
-              style={{ margin: 0 }}
-              src={"/images/icons/circle-tick.png"}
-              alt="circle-tick"
-              height={24}
-              width={24}
-            />
           </button>
         </div>
         <p
