@@ -5,7 +5,7 @@ import { videoEmbedBlockSchema } from "./videoEmbed";
 
 export const ContentCard = ({ data }) => {
   const component = (
-    <article className="relative mx-auto my-5 w-full border-b-2 border-solid border-sswRed bg-gray-75 p-10 text-center">
+    <article className="relative mx-auto my-5 h-full w-full border-b-2 border-solid border-sswRed bg-gray-75 p-10 text-center">
       <TinaMarkdown content={data.content} components={componentRenderer} />
     </article>
   );
@@ -16,8 +16,7 @@ export const ContentCard = ({ data }) => {
 
   return (
     <>
-      {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
-      <div className="prose-ul-li:grid-6 prose max-w-full grow prose-p:text-justify prose-strong:text-sswRed prose-ul:grid prose-ul:grid-flow-col prose-ul:grid-rows-12 prose-ul:text-left descendant-div:!m-0">
+      <div className="prose max-w-full grow prose-p:text-justify">
         {component}
       </div>
     </>
