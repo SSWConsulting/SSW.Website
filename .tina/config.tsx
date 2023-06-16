@@ -1,4 +1,4 @@
-import { defineStaticConfig, TinaCMS, useCMS, wrapFieldsWithMeta } from "tinacms";
+import { defineStaticConfig, TinaCMS } from "tinacms";
 import {
   consultingCategorySchema,
   consultingIndexSchema,
@@ -17,7 +17,6 @@ import { testimonialSchema } from "./collections/testimonials";
 import { employmentSchema } from "./collections/employment";
 import { trainingSchema } from "./collections/training";
 import { newsletterSchema } from "./collections/newsletters";
-import { newsletterCopySchema } from "./collections/newsletters-copy";
 import { opportunitiesSchema } from "./collections/opportunities";
 
 const config = defineStaticConfig({
@@ -67,7 +66,6 @@ const config = defineStaticConfig({
       trainingSchema,
       educationalSchema,
       newsletterSchema,
-      newsletterCopySchema,
     ],
   },
 });
