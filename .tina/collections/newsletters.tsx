@@ -36,10 +36,15 @@ export const newsletterSchema: Collection = {
           required: true,
         },
         {
-          type: "string",
-          name: "url",
-          label: "Url",
+          type: "image",
+          name: "file",
+          label: "HTML File",
           required: true,
+          // @ts-ignore
+          uploadDir: (formValues) => {
+            console.log(formValues);
+            return `newsletters/${formValues.newsletters_year}`;
+          },
         },
         {
           type: "string",

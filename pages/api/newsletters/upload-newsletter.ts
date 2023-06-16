@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   if (process.env.NODE_ENV === "development" || (user && user.verified)) {
     await new Promise((resolve, reject) => {
       const form = new formidable.IncomingForm();
-      form.uploadDir = './public/uploads';
+      form.uploadDir = "./public/uploads";
       form.keepExtensions = true;
     
       form.parse(req, async (err, fields, files) => {

@@ -30,7 +30,7 @@ export const newsletterCopySchema: Collection = {
 			parse: (media) => { 
 				return `/uploads/images/${media}`;
 			},
-			uploadDir: () => "/public/uploads/newsletters/images",
+			uploadDir: () => "/public/images/Newsletters/",
 		}
   ],
 };

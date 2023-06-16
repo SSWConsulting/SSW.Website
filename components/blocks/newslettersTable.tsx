@@ -54,11 +54,11 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
         </tr>
       </thead>
       <tbody>
-        {newsletters.map(({ url, month, description }) => (
-          <tr key={url} className="bg-gray-125">
+        {newsletters.map(({ file, month, description }) => (
+          <tr key={file} className="bg-gray-125">
             <td className="border-1 border-white px-3 py-1">
               <a
-                href={`/newsletters/${year}/${url}`}
+                href={file}
                 target="_blank"
                 rel="noopener noreferrer"
               >
