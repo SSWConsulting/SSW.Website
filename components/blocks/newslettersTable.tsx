@@ -27,17 +27,17 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
         newsletters: edge.node.newsletters,
         newsletters_year: edge.node.newsletters_year,
       }));
-      const sortedNewslettersData = newsletters.map((item) => {
-        const sortedNewsletters = item.newsletters.sort(
+      const sortedNewslettersYears = newsletters.map((item) => {
+        const sortedNewslettersMonths = item.newsletters.sort(
           (a, b) => b.month - a.month
         );
         return {
-          newsletters: sortedNewsletters,
+          newsletters: sortedNewslettersMonths,
           year: item.newsletters_year,
         };
       });
 
-      setNewsletters(sortedNewslettersData?.reverse());
+      setNewsletters(sortedNewslettersYears?.reverse());
       setHasLoaded(true);
     });
   };
