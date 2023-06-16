@@ -27,37 +27,39 @@ import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
+import { utilityButtonSchema } from "../button/utilityButton";
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
 
 export const pageBlocks: Template[] = [
   aboutUsBlockSchema,
   agreementFormBlockSchema,
+  bookingButtonSchema,
   builtOnAzureBlockSchema,
   carouselBlockSchema,
+  citationBlockSchema,
   clientLogosBlockSchema,
-  verticalImageLayoutBlockSchema,
   contentBlockSchema,
   contentCardBlockSchema,
   customImageBlockSchema,
+  dynamicColumnsSchema,
   flagSchema,
+  fixedColumnsSchema,
+  fixedTabsLayoutSchema,
   googleMapsSchema,
   heroBlockSchema,
-  serviceCardsBlockSchema,
-  tableBlockSchema,
-  dynamicColumnsSchema,
-  upcomingEventsBlockSchema,
-  videoEmbedBlockSchema,
-  fixedColumnsSchema,
   internalCarouselBlockSchema,
-  verticalListItemSchema,
-  trainingLearningOutcomeSchema,
-  trainingInformationSchema,
-  recurringEventSchema,
-  fixedTabsLayoutSchema,
-  citationBlockSchema,
-  subNewsLettersSchema,
   newslettersTableBlockSchema,
-  bookingButtonSchema,
+  recurringEventSchema,
+  serviceCardsBlockSchema,
+  subNewsLettersSchema,
+  tableBlockSchema,
+  trainingInformationSchema,
+  trainingLearningOutcomeSchema,
+  upcomingEventsBlockSchema,
+  utilityButtonSchema,
+  verticalImageLayoutBlockSchema,
+  verticalListItemSchema,
+  videoEmbedBlockSchema
 ];
 
 export * from "../terms-and-conditions/agreementForm";
@@ -82,6 +84,7 @@ export * from "./serviceCards";
 export * from "./subNewsLetters";
 export * from "./tableLayout";
 export * from "./upcomingEvents";
+export * from "../button/utilityButton";
 export * from "./verticalImageLayout";
 export * from "./verticalListItem";
 export * from "./videoEmbed";
