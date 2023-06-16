@@ -18,7 +18,7 @@ import { TrainingLearningOutcome } from "../training/trainingLearningOutcome";
 import { RecurringEvent } from "./recurringEvent";
 import { FixedTabsLayout } from "./fixedTabsLayout";
 import { Flag } from "./flag";
-import { SubNewsLettersButton } from "./subNewsLettersButton";
+import { SubNewsLetters } from "./subNewsLetters";
 import { NewslettersTable } from "./newslettersTable";
 import { BookingButton } from "../bookingButton/bookingButton";
 import { UtilityButton } from "../button/utilityButton";
@@ -126,7 +126,7 @@ export const componentRenderer: Components<{
   NewslettersTable: {
     headerText: string;
   };
-  SubNewsLettersButton: {
+  SubNewsLetters: {
     subscribeButtonText: string;
     headerText: string;
   };
@@ -162,7 +162,7 @@ export const componentRenderer: Components<{
   FixedTabsLayout: (props) => <FixedTabsLayout data={props} />,
   BookingButton: (props) => <BookingButton {...props} />,
   NewslettersTable: (props) => <NewslettersTable data={props} />,
-  SubNewsLettersButton: (props) => <SubNewsLettersButton {...props} />,
+  SubNewsLetters: (props) => <SubNewsLetters {...props} />,
   Citation: (props) => <Citation {...props} />,
   UtilityButton: (props) => <UtilityButton {...props} />,
   ContentCard: (props) => <ContentCard data={props} />,

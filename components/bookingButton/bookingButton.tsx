@@ -5,6 +5,8 @@ import layoutData from "../../content/global/index.json";
 import classNames from "classnames";
 import { Template } from "tinacms";
 import { UtilityButton } from "../button/utilityButton";
+import { toast } from "react-toastify";
+import SuccessToast from "../successToast/successToast";
 
 export interface BookingButtonProps {
   buttonText?: string;
@@ -22,6 +24,10 @@ export const BookingButton = ({
 
   const bookingPhone = layoutData.bookingPhone;
 
+  const showSuccessToast = () => {
+    toast.success(<div className="text-left">Form submitted. We'll be in contact as soon as possible.</div>);
+  }
+
   return (
     <div
       className={classNames(
@@ -38,8 +44,9 @@ export const BookingButton = ({
         or call us on {bookingPhone}
       </h2>
       <Popup isVisible={isVisible} onClose={setIsVisible}>
-        <BookingForm />
+        <BookingForm onClose={setIsVisible} showSuccessToast={showSuccessToast} />
       </Popup>
+      <SuccessToast />
     </div>
   );
 };
