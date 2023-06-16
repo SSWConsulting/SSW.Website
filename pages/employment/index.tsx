@@ -75,9 +75,9 @@ export default function EmploymentPage(
         </Section>
         <Section className="w-full" color="black">
           <Booking {...data.employment.booking}>
-            <UtilityButton
-              buttonText={data.employment.booking.buttonText}
-              link="#available"
+            <TinaMarkdown
+              content={data?.employment?.booking?.bookingBody}
+              components={componentRenderer}
             />
           </Booking>
         </Section>

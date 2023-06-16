@@ -31,9 +31,10 @@ export const employmentSchema: Collection = {
           name: "subTitle",
         },
         {
-          type: "string",
-          label: "Button Text",
-          name: "buttonText",
+          type: "rich-text",
+          label: "Booking body",
+          name: "bookingBody",
+          templates: [...Schemas.pageBlocks],
         },
         {
           type: "image",
@@ -122,10 +123,9 @@ export const employmentSchema: Collection = {
       required: true,
       ui: {
         itemProps: (item) => {
-
           const path = item.opportunityRef;
 
-          if (!path) return ({ label: "Opportunity" });
+          if (!path) return { label: "Opportunity" };
 
           const pathComponents = path.split("/");
           const fileName = pathComponents[pathComponents.length - 1];
@@ -133,15 +133,15 @@ export const employmentSchema: Collection = {
           const spacesName = positionName.replace("-", " ");
 
           return { label: spacesName };
-        }
+        },
       },
       fields: [
         {
-          type: "reference",  
+          type: "reference",
           label: "Opportunity document",
           name: "opportunityRef",
           collections: ["opportunities"],
-        }
+        },
       ],
     },
     {
@@ -149,6 +149,6 @@ export const employmentSchema: Collection = {
       label: "Call to action body",
       name: "callToActionBody",
       templates: [...Schemas.pageBlocks],
-    }
+    },
   ],
 };
