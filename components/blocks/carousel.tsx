@@ -40,6 +40,7 @@ export const Carousel = ({ data }) => {
           showThumbs={false}
           showStatus={false}
           stopOnHover={true}
+          interval={data.delay * 1000} // Converting it to Seconds
           onClickItem={(x) => {
             if (data.items[x].link) {
               openItem(data.items[x]);
@@ -153,6 +154,12 @@ export const carouselBlockSchema: Template = {
         { label: "Red", value: "red" },
         { label: "Black", value: "black" },
       ],
+    },
+    {
+      type: "number",
+      label: "Delay (Seconds)",
+      name: "delay",
+      required: true,
     },
     {
       type: "boolean",
