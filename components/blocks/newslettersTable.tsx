@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Template } from "tinacms";
 import { transformIntToMonth } from "../../services/date.service";
 import client from "../../.tina/__generated__/client";
+import { FaSpinner } from "react-icons/fa";
 
 /**
  * Render a table of newsletters.
@@ -78,7 +79,7 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
       {hasLoaded ? (
         newsletters.map(renderTable)
       ) : (
-        <p className="text-xl">Loading Newsletters...</p>
+        <><p className="flex items-center text-xl"><FaSpinner className="m-icon animate-spin" />  Loading Newsletters...</p></>
       )}
     </>
   );

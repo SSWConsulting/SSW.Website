@@ -122,3 +122,9 @@ query officeIndexQuery($relativePath: String!) {
     }
   }
 }
+
+query newslettersQuery {
+  newsletters {
+    ...NewslettersParts
+  }
+}

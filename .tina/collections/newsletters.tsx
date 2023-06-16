@@ -47,6 +47,16 @@ export const newsletterSchema: Collection = {
           },
         },
         {
+          type: "image",
+          name: "images",
+          label: "Images (optional)",
+          list: true,
+          description: "Only add images that have not been used before. There is no need to add images to the /images/newsletters directory if they have already been used in a previous newsletter",
+          required: false,
+          // @ts-ignore
+          uploadDir: () => "images/newsletters" 
+        },
+        {
           type: "string",
           name: "description",
           label: "Description",
