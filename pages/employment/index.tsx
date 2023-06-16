@@ -12,7 +12,6 @@ import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import { UtilityButton } from "../../components/button/utilityButton";
 import { InferGetStaticPropsType } from "next";
 import {
   Opportunities,
