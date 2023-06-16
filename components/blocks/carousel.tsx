@@ -9,6 +9,8 @@ import { Carousel as CarouselImplementation } from "react-responsive-carousel";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
+const sliderDelay = 8000; //8 seconds
+
 export const Carousel = ({ data }) => {
   const router = useRouter();
 
@@ -40,6 +42,7 @@ export const Carousel = ({ data }) => {
           showThumbs={false}
           showStatus={false}
           stopOnHover={true}
+          interval={sliderDelay}
           onClickItem={(x) => {
             if (data.items[x].link) {
               openItem(data.items[x]);
