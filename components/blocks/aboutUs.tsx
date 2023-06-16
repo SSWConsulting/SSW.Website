@@ -15,7 +15,7 @@ import { VideoModal } from "../videoModal";
 
 dayjs.extend(timezone);
 dayjs.extend(utc);
-
+ 
 const DAY_KEYS = {
   Sunday: 0,
   Monday: 1,

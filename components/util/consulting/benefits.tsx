@@ -20,7 +20,7 @@ const BenefitCard = ({ className, data, aosType }) => {
         {title}
       </h4>
       <article>
-        <section className="mx-auto w-full max-w-full p-0 text-center text-sm font-light leading-normal prose-p:m-0 prose-p:first-of-type:pt-0 prose-strong:font-bold md:text-left md:text-md">
+        <section className="mx-auto w-full max-w-full p-0 text-center text-sm font-light leading-normal prose-p:m-0 prose-p:first-of-type:pt-0 prose-strong:font-bold prose-li:m-0 md:text-left md:text-md">
           <TinaMarkdown content={description} />
         </section>
         {linkURL && (

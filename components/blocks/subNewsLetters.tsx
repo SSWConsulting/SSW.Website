@@ -14,7 +14,7 @@ const placeholder = {
   email: "Your Email",
 };
 
-export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
+export const SubNewsLetters = ({ headerText, subscribeButtonText }) => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -143,11 +143,10 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
           </button>
         </div>
         <p
-          className={`mt-2 flex justify-center text-sm ${
-            isContactExisting || !allInputsFilled
-              ? "text-sswRed"
-              : "text-green-500"
-          }`}
+          className={`mt-2 flex justify-center text-sm ${isContactExisting || !allInputsFilled
+            ? "text-sswRed"
+            : "text-green-500"
+            }`}
         >
           <span className={isLoading ? "text-gray-500" : ""}>
             {infoMessage}
@@ -158,9 +157,9 @@ export const SubNewsLettersButton = ({ headerText, subscribeButtonText }) => {
   );
 };
 
-export const subNewsLettersButtonSchema: Template = {
-  name: "SubNewsLettersButton",
-  label: "Subscribe To NewsLetters Button",
+export const subNewsLettersSchema: Template = {
+  name: "SubNewsLetters",
+  label: "Subscribe To NewsLetters",
   fields: [
     {
       type: "string",
