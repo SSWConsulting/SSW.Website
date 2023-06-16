@@ -78,6 +78,7 @@ export const componentRenderer: Components<{
       openIn: string;
       imgSrc: string;
     }[];
+    delay: number;
     backgroundColor: string;
   };
   Flag: {
