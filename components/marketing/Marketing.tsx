@@ -8,8 +8,6 @@ export const sides = ["left", "right"];
 export const Marketing = (props) => {
   const content = props.content.marketing;
 
-  
-
   if (!content) {
     return <></>;
   }

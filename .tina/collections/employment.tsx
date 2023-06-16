@@ -50,12 +50,6 @@ export const employmentSchema: Collection = {
       isBody: true,
     },
     {
-      type: "rich-text",
-      label: "After body",
-      name: "afterBody",
-      templates: [...Schemas.pageBlocks],
-    },
-    {
       type: "object",
       label: "Benefits",
       name: "benefits",
@@ -106,6 +100,12 @@ export const employmentSchema: Collection = {
       type: "rich-text",
       label: "After benefits body",
       name: "benefitsBody",
+      templates: [...Schemas.pageBlocks],
+    },
+    {
+      type: "rich-text",
+      label: "After body",
+      name: "afterBody",
       templates: [...Schemas.pageBlocks],
     },
     {
