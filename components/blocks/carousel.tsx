@@ -159,6 +159,7 @@ export const carouselBlockSchema: Template = {
       type: "number",
       label: "Delay (Seconds)",
       name: "delay",
+      required: true,
     },
     {
       type: "boolean",
