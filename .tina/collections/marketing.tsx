@@ -1,4 +1,6 @@
 import type { Collection } from "tinacms";
+import { sides } from "../../components/marketing/Marketing";
+import * as Schemas from "../../components/blocks";
 
 export const marketingSchema: Collection = {
 	label: "Marketing",
@@ -19,10 +21,11 @@ export const marketingSchema: Collection = {
 			required: true,
 		},
 		{
-			type: "string",
-			label: "Marketing video URL",
-			name: "videoUrl",
+			type: "rich-text",
+			label: "Marketing media column",
+			name: "mediaComponent",
 			required: true,
+			templates: [...Schemas.pageBlocks],
 		},
 		{
 			type: "rich-text",
@@ -30,5 +33,12 @@ export const marketingSchema: Collection = {
 			name: "body",
 			isBody: true,
 		},
+		{
+			type: "string", 
+			label: "Text side",
+			name: "textSide",
+			options: sides,
+			required: true,
+		}
 	],
 };

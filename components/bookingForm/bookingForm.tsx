@@ -1,12 +1,11 @@
 import axios from "axios";
 import { Form, Formik } from "formik";
-import { useRouter } from "next/router";
 import { useEffect, useContext, useMemo, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import FormGroupInput from "../form/formGroupInput";
 import FormGroupSelect from "../form/formGroupSelect";
 import FormGroupTextArea from "../form/formGroupTextArea";
-import { FaRegCheckCircle } from "react-icons/fa";
+import { FaRegCheckCircle, FaSpinner } from "react-icons/fa";
 import {
   ACTIVE_INPUT,
   AUSTRALIA,
@@ -25,15 +24,14 @@ import {
   RecaptchaContextType,
 } from "../../context/RecaptchaContext";
 
-export const BookingForm = () => {
+export const BookingForm = (props) => {
   const { recaptchaKey } = useContext<RecaptchaContextType>(RecaptchaContext);
 
   //Show FormStates and Active label
-  const [contactSuccess, setContactSuccess] = useState(false);
   const [country, setCountry] = useState("");
   const [activeInputLabel, setActiveInputLabel] = useState({});
-  const router = useRouter();
   const appInsights = useAppInsightsContext();
+  const { onClose, showSuccessToast } = props;
 
   const initialFormValues = {
     fullName: "",
@@ -58,6 +56,7 @@ export const BookingForm = () => {
 
   //ReCaptcha
   const [contactReCaptcha, setContactReCaptcha] = useState("");
+  const [loading, setLoading] = useState(false);
 
   //returns true if country is Australia
   const handleStates = (country: string) => {
@@ -97,6 +96,7 @@ export const BookingForm = () => {
       sourceWebPageURL
     );
 
+    setLoading(true);
     const method = { Method: "Create-Lead-UI", Payload: data };
     actions.setSubmitting(false);
 
@@ -108,23 +108,26 @@ export const BookingForm = () => {
           setInvalidReptcha("Invalid ReCaptcha!");
         } else {
           onSuccess();
+          actions.resetForm(initialFormValues);
         }
+        setLoading(false);
       })
       .catch((err) => {
         err.data = data;
         appInsights?.trackException({ exception: err }, method);
         console.error(err);
+        setLoading(false);
         return alert("Failed to create lead in CRM");
       });
   };
 
   const onSuccess = () => {
     setInvalidReptcha("");
-    setContactSuccess(true);
-    setTimeout(function () {
-      setContactSuccess(false);
-      router.push("/thankyou/");
-    }, 1000);
+    if (onClose !== undefined) {
+      onClose();
+    }
+    showSuccessToast();
+    setLoading(false);
   };
 
   const getCommonFieldProps = (fieldName: string) => ({
@@ -152,18 +155,6 @@ export const BookingForm = () => {
           <h2 className="mb-14 mt-1.5 pt-1.5 !text-2xl text-sswRed">
             {CONTACT_FORM_TITLE}
           </h2>
-          {!!contactSuccess && (
-            <div
-              className={
-                "relative mb-8 rounded border-1 border-solid border-green-100 bg-green-50 p-4 text-green-900"
-              }
-              role="alert"
-            >
-              An email has been sent to the SSW Sales team and someone will be
-              in contact with you soon
-            </div>
-          )}
-
           <Formik
             validationSchema={schema}
             initialValues={initialFormValues}
@@ -271,11 +262,19 @@ export const BookingForm = () => {
                 <div className="flex justify-end">
                   <button
                     type="submit"
-                    disabled={isSubmitting}
-                    className="done flex w-full sm:w-auto"
+                    disabled={loading}
+                    className={`done flex w-full sm:w-auto ${
+                      loading
+                        ? "cursor-not-allowed opacity-50"
+                        : "cursor-pointer opacity-100"
+                    }`}
                   >
-                    <FaRegCheckCircle className="m-icon" />
-                    SUBMIT
+                    {loading ? (
+                      <FaSpinner className="m-icon animate-spin" />
+                    ) : (
+                      <FaRegCheckCircle className="m-icon" />
+                    )}
+                    {loading ? "Processing" : "SUBMIT"}
                   </button>
                 </div>
               </Form>

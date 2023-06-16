@@ -21,43 +21,45 @@ import { internalCarouselBlockSchema } from "./internalCarousel";
 import { newslettersTableBlockSchema } from "./newslettersTable";
 import { recurringEventSchema } from "./recurringEvent";
 import { serviceCardsBlockSchema } from "./serviceCards";
-import { subNewsLettersButtonSchema } from "./subNewsLettersButton";
+import { subNewsLettersSchema } from "./subNewsLetters";
 import { tableBlockSchema } from "./tableLayout";
 import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
+import { utilityButtonSchema } from "../button/utilityButton";
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
 
 export const pageBlocks: Template[] = [
   aboutUsBlockSchema,
   agreementFormBlockSchema,
+  bookingButtonSchema,
   builtOnAzureBlockSchema,
   carouselBlockSchema,
+  citationBlockSchema,
   clientLogosBlockSchema,
-  verticalImageLayoutBlockSchema,
   contentBlockSchema,
   contentCardBlockSchema,
   customImageBlockSchema,
+  dynamicColumnsSchema,
   flagSchema,
+  fixedColumnsSchema,
+  fixedTabsLayoutSchema,
   googleMapsSchema,
   heroBlockSchema,
-  serviceCardsBlockSchema,
-  tableBlockSchema,
-  dynamicColumnsSchema,
-  upcomingEventsBlockSchema,
-  videoEmbedBlockSchema,
-  fixedColumnsSchema,
   internalCarouselBlockSchema,
-  verticalListItemSchema,
-  trainingLearningOutcomeSchema,
-  trainingInformationSchema,
-  recurringEventSchema,
-  fixedTabsLayoutSchema,
-  citationBlockSchema,
-  subNewsLettersButtonSchema,
   newslettersTableBlockSchema,
-  bookingButtonSchema,
+  recurringEventSchema,
+  serviceCardsBlockSchema,
+  subNewsLettersSchema,
+  tableBlockSchema,
+  trainingInformationSchema,
+  trainingLearningOutcomeSchema,
+  upcomingEventsBlockSchema,
+  utilityButtonSchema,
+  verticalImageLayoutBlockSchema,
+  verticalListItemSchema,
+  videoEmbedBlockSchema
 ];
 
 export * from "../terms-and-conditions/agreementForm";
@@ -79,9 +81,10 @@ export * from "./hero";
 export * from "./newslettersTable";
 export * from "./recurringEvent";
 export * from "./serviceCards";
-export * from "./subNewsLettersButton";
+export * from "./subNewsLetters";
 export * from "./tableLayout";
 export * from "./upcomingEvents";
+export * from "../button/utilityButton";
 export * from "./verticalImageLayout";
 export * from "./verticalListItem";
 export * from "./videoEmbed";

@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -30,6 +29,7 @@ const TechnologyCard: FC<TechnologyCardProps> = ({
 				) : (
 					<h2>{name}</h2>
 				)}
+				{/* eslint-disable-next-line tailwindcss/no-custom-classname */}
 				<div className="prose-ul-li:grid-6 prose max-w-full grow prose-p:text-justify prose-strong:text-sswRed prose-ul:grid prose-ul:grid-flow-col prose-ul:grid-rows-12 prose-ul:text-left descendant-div:!m-0">
 					<TinaMarkdown content={body} />
 				</div>

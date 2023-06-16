@@ -76,6 +76,20 @@ query technologyCardContentQuery($cardNames: [String!]) {
   }
 }
 
+query employmentPageQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  employment(relativePath: $relativePath) {
+    ...EmploymentParts
+  }
+  opportunitiesConnection {
+    edges {
+      node {
+        ...OpportunitiesParts
+      }
+    }
+  }
+}
+
 query officeIndexQuery($relativePath: String!) {
   officeIndex(relativePath: $relativePath) {
     seo {
