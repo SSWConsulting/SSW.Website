@@ -11,7 +11,6 @@ import TestimonialPanel from "../../components/offices/testimonialPanel";
 import { Container } from "../../components/util/container";
 import layoutData from "../../content/global/index.json";
 import { SEO } from "../../components/util/seo";
-import { useCMS } from "tinacms";
 
 export default function OfficeIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
