@@ -76,7 +76,7 @@ export default function EmploymentPage(
         <Section className="w-full" color="black">
           <Booking {...data.employment.booking}>
             <UtilityButton
-              buttonText="Check out our current opportunities"
+              buttonText={data.employment.booking.buttonText}
               link="#available"
             />
           </Booking>
