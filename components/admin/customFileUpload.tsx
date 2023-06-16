@@ -1,7 +1,7 @@
 import { useCMS, Input, Button } from "tinacms";
 import * as React from "react";
 
-export const CustomFileUpload = ({ input, meta, field }) => {
+export const CustomFileUpload = ({ input, /* meta, field */ }) => {
 
   const cms = useCMS();
   
@@ -21,11 +21,12 @@ export const CustomFileUpload = ({ input, meta, field }) => {
     if (!file) return;
     
     setFileName(file.name);
-    console.log(file);
     await cms.media.persist([{ directory: "newsletters", file: file }])
-    cms.media.store.list({ directory: "newsletters" }).then((res) => {
-      console.log(res);
-    })
+
+    // Example - Gets the list of newsletters - not needed for this component, good to store code example for later use
+    // cms.media.store.list({ directory: "newsletters" }).then((res) => {
+    //   console.log(res);
+    // })
   }
 
   return (
