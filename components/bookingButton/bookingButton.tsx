@@ -25,8 +25,12 @@ export const BookingButton = ({
   const bookingPhone = layoutData.bookingPhone;
 
   const showSuccessToast = () => {
-    toast.success(<div className="text-left">Form submitted. We'll be in contact as soon as possible.</div>);
-  }
+    toast.success(
+      <div className="text-left">
+        Form submitted. We'll be in contact as soon as possible.
+      </div>
+    );
+  };
 
   return (
     <div
@@ -47,7 +51,10 @@ export const BookingButton = ({
         or call us on {bookingPhone}
       </h2>
       <Popup isVisible={isVisible} onClose={setIsVisible}>
-        <BookingForm onClose={setIsVisible} showSuccessToast={showSuccessToast} />
+        <BookingForm
+          onClose={setIsVisible}
+          showSuccessToast={showSuccessToast}
+        />
       </Popup>
       <SuccessToast />
     </div>

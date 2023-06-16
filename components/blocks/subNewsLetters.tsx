@@ -143,10 +143,11 @@ export const SubNewsLetters = ({ headerText, subscribeButtonText }) => {
           </button>
         </div>
         <p
-          className={`mt-2 flex justify-center text-sm ${isContactExisting || !allInputsFilled
-            ? "text-sswRed"
-            : "text-green-500"
-            }`}
+          className={`mt-2 flex justify-center text-sm ${
+            isContactExisting || !allInputsFilled
+              ? "text-sswRed"
+              : "text-green-500"
+          }`}
         >
           <span className={isLoading ? "text-gray-500" : ""}>
             {infoMessage}
