@@ -13,7 +13,7 @@ export const UtilityButton = ({ buttonText, onClick, className, link }: UtilityB
   const baseComponent = (
     <Button
       ripple
-      className={classNames("mx-auto mt-14 max-w-full p-3", className)}
+      className={classNames("mx-auto mt-8 max-w-full p-3", className)}
       onClick={onClick}
       data-aos="fade-up"
     >

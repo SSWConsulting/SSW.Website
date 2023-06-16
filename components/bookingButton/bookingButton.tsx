@@ -36,7 +36,7 @@ export const BookingButton = ({
       )}
     >
       <UtilityButton
-        className={classNames(buttonClass, "w-96")}
+        className={classNames(buttonClass, "mt-14 w-96")}
         onClick={showBookingForm}
         buttonText={buttonText}
       />
@@ -44,7 +44,10 @@ export const BookingButton = ({
         or call us on {bookingPhone}
       </h2>
       <Popup isVisible={isVisible} onClose={setIsVisible}>
-        <BookingForm onClose={setIsVisible} showSuccessToast={showSuccessToast} />
+        <BookingForm
+          onClose={setIsVisible}
+          showSuccessToast={showSuccessToast}
+        />
       </Popup>
       <SuccessToast />
     </div>
