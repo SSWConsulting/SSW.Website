@@ -140,7 +140,8 @@ export const getStaticProps = async ({ params }) => {
       variables: tinaProps.variables,
       testimonialResult: testimonialsResult,
       env: {
-        GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY || null,
+        GOOGLE_RECAPTCHA_SITE_KEY:
+          process.env.GOOGLE_RECAPTCHA_SITE_KEY || null,
       },
     },
     revalidate: 10,

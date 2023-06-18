@@ -5,7 +5,7 @@ export class GoogleRecaptcha {
   SiteVerficationURL: string;
 
   constructor(recaptcha: string) {
-    this.GOOGLE_RECAPTCHA_KEY = process.env.GOOGLE_RECAPTCHA_KEY_V2;
+    this.GOOGLE_RECAPTCHA_KEY = process.env.GOOGLE_RECAPTCHA_KEY;
     this.SiteVerficationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${this.GOOGLE_RECAPTCHA_KEY}&response=${recaptcha}`;
   }
 
