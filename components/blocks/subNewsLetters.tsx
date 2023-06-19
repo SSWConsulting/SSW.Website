@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Template } from "tinacms";
 import axios from "axios";
-import { FaRegCheckCircle } from "react-icons/fa";
+import { FaRegCheckCircle, FaSpinner } from "react-icons/fa";
 
 /**
  * A component for subscribing to newsletters.
@@ -109,7 +109,7 @@ export const SubNewsLetters = ({ headerText, subscribeButtonText, subscribeSubTi
     <div className="flex flex-col items-center justify-center">
       <h2 className="mb-2 mt-6 text-center font-helvetica text-4xl font-medium text-sswBlack" dangerouslySetInnerHTML={{ __html: headerText }}></h2>
       <div className="mb-5 text-center text-base text-sswBlack">{subscribeSubTitle}</div>
-      <div className="container flex flex-wrap justify-center sm:w-full sm:max-w-full md:w-3/4">
+      <div className="container flex flex-wrap justify-center sm:w-full sm:max-w-full md:w-full">
         <span className="w-full sm:w-52">
           {inputRender(
             firstName,
@@ -137,23 +137,32 @@ export const SubNewsLetters = ({ headerText, subscribeButtonText, subscribeSubTi
         <div className="flex w-32 justify-center">
           <button
             onClick={handleSubscribe}
-            className="done flex h-14 w-full sm:w-auto"
+            disabled={isLoading}
+            className={`done flex h-14 w-full sm:w-auto ${isLoading
+              ? "cursor-not-allowed opacity-50"
+              : "cursor-pointer opacity-100"
+              }`}
           >
-            <FaRegCheckCircle className="m-icon" />
+            {isLoading ? (
+              <FaSpinner className="m-icon animate-spin" />
+            ) : (
+              <FaRegCheckCircle className="m-icon" />
+            )}
             {subscribeButtonText}
           </button>
         </div>
-        <p
-          className={`mt-2 flex justify-center text-sm ${isContactExisting || !allInputsFilled
-            ? "text-sswRed"
-            : "text-green-500"
-            }`}
-        >
-          <span className={isLoading ? "text-gray-500" : ""}>
-            {infoMessage}
-          </span>
-        </p>
+
       </div>
+      <p
+        className={`mt-2 flex justify-center text-sm ${isContactExisting || !allInputsFilled
+          ? "text-sswRed"
+          : "text-green-500"
+          }`}
+      >
+        <span className={isLoading ? "text-gray-500" : ""}>
+          {infoMessage}
+        </span>
+      </p>
     </div>
   );
 };
