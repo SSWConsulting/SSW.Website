@@ -3056,7 +3056,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/applicationinsights-web@npm:^2.8.5":
+"@microsoft/applicationinsights-web@npm:2.8.14":
   version: 2.8.14
   resolution: "@microsoft/applicationinsights-web@npm:2.8.14"
   dependencies:
@@ -4554,7 +4554,7 @@ __metadata:
     "@headlessui/react": 1.7.14
     "@headlessui/tailwindcss": ^0.1.3
     "@microsoft/applicationinsights-react-js": ^3.4.2
-    "@microsoft/applicationinsights-web": ^2.8.5
+    "@microsoft/applicationinsights-web": 2.8.14
     "@next/eslint-plugin-next": ^13.4.6
     "@svgr/webpack": ^8.0.1
     "@tailwindcss/typography": ^0.5.9
