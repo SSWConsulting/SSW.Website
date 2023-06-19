@@ -130,6 +130,7 @@ export const componentRenderer: Components<{
   SubNewsLetters: {
     subscribeButtonText: string;
     headerText: string;
+    subscribeSubTitle: string;
   };
   Citation: {
     article: string;
