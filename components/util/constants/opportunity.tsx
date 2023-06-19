@@ -1,5 +1,4 @@
-export const Locations = [
-	"All",
+export const locations = [
 	"Sydney",
 	"Brisbane",
 	"Melbourne",
@@ -7,6 +6,6 @@ export const Locations = [
 	"China",
 ];
 
-export const Employment_Type = ["Contract", "Permanent", "Work Experience"];
+export const employmentType = ["Contract", "Permanent", "Work Experience"];
 
-export const Job_Status = ["Available", "Filled"];
+export const jobStatus = ["Available", "Filled"];

@@ -1,10 +1,14 @@
 import React from "react";
 import type { Template } from "tinacms";
 import { VideoModal } from "../videoModal";
+import classNames from "classnames";
 
 export const VideoEmbed = ({ data }) => {
+	const width = data.videoWidth || "w-3/4";
+	const margin = data.removeMargin ? "" : "m-8" ;
+
   return (
-    <div className="relative m-8 mx-auto aspect-video w-3/4">
+    <div className={classNames("relative mx-auto aspect-video", width, margin)}>
       <VideoModal
         url={data.url}
       />
@@ -25,5 +29,36 @@ export const videoEmbedBlockSchema: Template = {
 			name: "url",
 			required: true,
 		},
+		{
+			type: "string",
+			label: "Width",
+			description: "Default is 75%",
+			name: "videoWidth",
+			required: false,
+			options: [
+				{
+					value: "w-full",
+					label: "100%"
+				},
+				{
+					value: "w-3/4",
+					label: "75%"
+				},
+				{
+					value: "w-1/2",
+					label: "50%"
+				},
+				{
+					value: "w-1/4",
+					label: "25%"
+				},
+			]
+		},
+		{
+			type: "boolean",
+			label: "Remove margin",
+			name: "removeMargin",
+			required: false,
+		}
 	],
 };

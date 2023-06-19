@@ -1,7 +1,7 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: "✨ - [Title]"
+title: "✨ [Title]"
 labels: ''
 assignees: ''
 
