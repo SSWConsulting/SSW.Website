@@ -21,7 +21,7 @@ jobs:
     name: Check linked issues
     steps:
 
-      - uses: nearform/github-action-check-linked-issues@v1.4.15
+      - uses: nearform/github-action-check-linked-issues@v1.4.16
         id: check-linked-issues
         with:
           exclude-branches: "dependabot/**"
