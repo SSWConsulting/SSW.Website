@@ -4,10 +4,10 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
     paths-ignore:
-      - 'content/**'
-      - 'public/**'
+      - "content/**"
+      - "public/**"
 
-concurrency: 
+concurrency:
   group: ci-${{ github.event.number }}
   cancel-in-progress: true
 
@@ -20,12 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     name: Check linked issues
     steps:
-
-      - uses: nearform/github-action-check-linked-issues@v1.4.14
+      - uses: nearform-actions/github-action-check-linked-issues@v1.4.16
         id: check-linked-issues
         with:
           exclude-branches: "dependabot/**"
-      
+
       - name: Generate summary
         run: |
           echo "Found ${{ steps.check-linked-issues.outputs.linked_issues_count }} issues linked to PR" >> $GITHUB_STEP_SUMMARY

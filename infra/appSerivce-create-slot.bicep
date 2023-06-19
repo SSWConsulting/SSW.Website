@@ -24,7 +24,7 @@ var appSettings = [
     value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/Create-Lead-Endpoint-Dev)'
   }
   {
-    name: 'GOOGLE_RECAPTCHA_KEY_V2'
+    name: 'GOOGLE_RECAPTCHA_KEY'
     value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/Google-Recaptcha-KEY)'
   }
   {

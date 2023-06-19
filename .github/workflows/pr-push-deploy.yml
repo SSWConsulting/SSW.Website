@@ -84,6 +84,8 @@ jobs:
             performance
             SEO
           strategy: mobile
+          delayBetweenRetries: 30000
+          maximumNumberOfRetries: 4
           key: ${{ secrets.PAGESPEED_INSIGHTS_API_KEY }}
 
       - name: Comment on PR with insights
