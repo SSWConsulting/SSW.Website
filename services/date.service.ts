@@ -6,7 +6,7 @@ import { months } from "../components/util/constants";
  * @returns The name of the month.
  */
 export const transformIntToMonth = (monthNumber: number): string => {
-	return months[monthNumber - 1];
+  return months[monthNumber - 1];
 };
 
 /**
