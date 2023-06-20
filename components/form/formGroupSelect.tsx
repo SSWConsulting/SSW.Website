@@ -1,16 +1,11 @@
 import classNames from "classnames";
 import { ErrorMessage, Field, FieldHookConfig, useField } from "formik";
-import {
-  ChangeEvent,
-  ChangeEventHandler,
-  FC
-} from "react";
+import { ChangeEvent, ChangeEventHandler, FC } from "react";
 import { FormGroupProps } from "./formGroupTypes";
 import styles from "./formGroup.module.css";
 
 const FormGroupSelect: FC<
-  FieldHookConfig<string> &
-    FormGroupProps<HTMLSelectElement>
+  FieldHookConfig<string> & FormGroupProps<HTMLSelectElement>
 > = ({
   label,
   activeLabelClass,
@@ -23,8 +18,11 @@ const FormGroupSelect: FC<
   const [field, meta] = useField(props);
 
   return (
-      <div className={styles["field-wrapper"]}>
-      <label htmlFor={props.id || props.name} className={styles[activeLabelClass]}>
+    <div className={styles["field-wrapper"]}>
+      <label
+        htmlFor={props.id || props.name}
+        className={styles[activeLabelClass]}
+      >
         {label}
       </label>
       <Field name={field.name}>
@@ -40,8 +38,9 @@ const FormGroupSelect: FC<
             <select
               {...field}
               {...props}
-              className={classNames(fieldClass || styles["form-select"],
-                !!meta.error && styles["is-invalid"],
+              className={classNames(
+                fieldClass || styles["form-select"],
+                !!meta.error && styles["is-invalid"]
               )}
               onChange={selectOnChange}
               onClick={handleClick}

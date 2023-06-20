@@ -47,7 +47,7 @@ export default function ConsultingPage(
     })) || [];
 
   const bookingButtonProps = {
-    buttonText: data.global.bookingButtonText
+    buttonText: data.global.bookingButtonText,
   };
 
   return (

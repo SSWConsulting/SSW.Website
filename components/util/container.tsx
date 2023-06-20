@@ -27,15 +27,13 @@ export const Container = ({
 
   return (
     <div
-      className={
-        classNames(
-          "mx-auto",
-          padding,
-          widthClass[width],
-          verticalPadding[size],
-          className
-        )
-      }
+      className={classNames(
+        "mx-auto",
+        padding,
+        widthClass[width],
+        verticalPadding[size],
+        className
+      )}
       {...props}
     >
       {children}
