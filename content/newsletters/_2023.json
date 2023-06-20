@@ -2,6 +2,15 @@
   "newsletters_year": "2023",
   "newsletters": [
     {
+      "month": 5,
+      "file": "/images/newsletter-uploads/2023/Test.html",
+      "images": [
+        "/images/0202MSVSNETLaunchEvent.gif",
+        "/images/0108MSTechEd.gif"
+      ],
+      "description": "Introducing SSW’s Cultural Exchange"
+    },
+    {
       "month": 1,
       "file": "/images/newsletter-uploads/2023/_2023_01__Adams 2022 - A Year in Review__.html",
       "description": "Adams 2022 - A Year in Review"
