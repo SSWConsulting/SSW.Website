@@ -42,6 +42,10 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
     });
   };
 
+  const removeTinaFromUrl = (input: string) => {
+    return input.replace(/^https:\/\/assets\.tina\.io\/[^/]+\//, "");
+  };
+
   const renderTable = ({ newsletters, year }) => (
     <table key={year} className="m-0 w-full">
       <thead>
@@ -59,7 +63,7 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
           <tr key={file} className="bg-gray-125">
             <td className="border-1 border-white px-3 py-1">
               <a
-                href={file}
+                href={removeTinaFromUrl(file)}
                 target="_blank"
                 rel="noopener noreferrer"
               >
