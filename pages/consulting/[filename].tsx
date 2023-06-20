@@ -1,4 +1,4 @@
-import { useTina } from "tinacms/dist/react";
+import { useTina, tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { client } from "../../.tina/__generated__/client";
@@ -47,7 +47,7 @@ export default function ConsultingPage(
     })) || [];
 
   const bookingButtonProps = {
-    buttonText: data.global.bookingButtonText
+    buttonText: data.global.bookingButtonText,
   };
 
   return (
@@ -77,7 +77,10 @@ export default function ConsultingPage(
         >
           <a id="more" />
           <div className="w-full bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
-            <div className="mx-auto max-w-9xl px-4">
+            <div
+              data-tina-field={tinaField(data.consulting, "_body")}
+              className="mx-auto max-w-9xl px-4"
+            >
               <TinaMarkdown
                 components={componentRenderer}
                 content={data.consulting._body}
@@ -133,6 +136,7 @@ export default function ConsultingPage(
         <Section className="!bg-gray-75 pb-25 text-center">
           <Container size="custom" className="w-full">
             <h1
+              data-tina-field={tinaField(data.consulting, "solution")}
               dangerouslySetInnerHTML={{
                 __html: parseCallToAction(
                   data.consulting.callToAction,
