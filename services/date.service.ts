@@ -1,24 +1,12 @@
+import { months } from "../components/util/constants";
+
 /**
  * Returns the name of the month for a given number.
  * @param monthNumber - The number of the month (1-12).
  * @returns The name of the month.
  */
 export const transformIntToMonth = (monthNumber: number): string => {
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  return months[monthNumber - 1];
+	return months[monthNumber - 1];
 };
 
 /**

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { BookingForm } from "../bookingForm/bookingForm";
-import Button from "../button/button";
 import Popup from "../popup/popup";
 import layoutData from "../../content/global/index.json";
 import classNames from "classnames";
 import { Template } from "tinacms";
+import { UtilityButton } from "../button/utilityButton";
 import { toast } from "react-toastify";
 import SuccessToast from "../successToast/successToast";
 
@@ -39,14 +39,11 @@ export const BookingButton = ({
         containerClass
       )}
     >
-      <Button
-        ripple
-        className={classNames("mx-auto mt-14 w-96 max-w-full p-3", buttonClass)}
+      <UtilityButton
+        className={classNames(buttonClass, "mt-14 w-96")}
         onClick={showBookingForm}
-        data-aos="fade-up"
-      >
-        {buttonText}
-      </Button>
+        buttonText={buttonText}
+      />
       <h2 className="mx-auto max-w-full text-center">
         or call us on {bookingPhone}
       </h2>

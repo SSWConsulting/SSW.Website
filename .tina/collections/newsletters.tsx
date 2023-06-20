@@ -36,10 +36,24 @@ export const newsletterSchema: Collection = {
           required: true,
         },
         {
-          type: "string",
-          name: "url",
-          label: "Url",
+          type: "image",
+          name: "file",
+          label: "HTML File",
           required: true,
+          // @ts-ignore
+          uploadDir: (formValues) => {
+            return `newsletter-uploads/${formValues.newsletters_year}`;
+          },
+        },
+        {
+          type: "image",
+          name: "images",
+          label: "Images (optional)",
+          list: true,
+          description:
+            "Must be saved in images/Newsletters. Only add images that have not been used before. There is no need to add images to the /images/newsletters directory if they have already been used in a previous newsletter",
+          // @ts-ignore
+          uploadDir: () => "Newsletters",
         },
         {
           type: "string",

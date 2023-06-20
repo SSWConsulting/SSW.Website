@@ -21,6 +21,8 @@ import { Flag } from "./flag";
 import { SubNewsLetters } from "./subNewsLetters";
 import { NewslettersTable } from "./newslettersTable";
 import { BookingButton } from "../bookingButton/bookingButton";
+import { UtilityButton } from "../button/utilityButton";
+import { ContentCard } from "./contentCard";
 
 export const componentRenderer: Components<{
   ClientLogos: Record<string, never>;
@@ -76,6 +78,7 @@ export const componentRenderer: Components<{
       openIn: string;
       imgSrc: string;
     }[];
+    delay: number;
     backgroundColor: string;
   };
   Flag: {
@@ -127,11 +130,19 @@ export const componentRenderer: Components<{
   SubNewsLetters: {
     subscribeButtonText: string;
     headerText: string;
+    subscribeSubTitle: string;
   };
   Citation: {
     article: string;
     author: string;
   };
+  UtilityButton: {
+    buttonText: string;
+    link: string;
+  },
+  ContentCard: {
+    content: TinaMarkdownContent
+  }
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -155,4 +166,6 @@ export const componentRenderer: Components<{
   NewslettersTable: (props) => <NewslettersTable data={props} />,
   SubNewsLetters: (props) => <SubNewsLetters {...props} />,
   Citation: (props) => <Citation {...props} />,
+  UtilityButton: (props) => <UtilityButton {...props} />,
+  ContentCard: (props) => <ContentCard data={props} />,
 };
