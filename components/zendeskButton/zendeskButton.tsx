@@ -8,7 +8,7 @@ const ZDwidgetOpen = "ZD-widgetOpen";
 
 const zendeskLoaded = () => {
   const xframe = document.querySelector(
-    "iframe[title='Button·to·launch·messaging·window']"
+    "iframe[title='Button to launch messaging window']"
   ) as HTMLIFrameElement;
   return !!xframe;
 };
