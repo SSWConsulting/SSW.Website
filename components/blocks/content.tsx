@@ -15,10 +15,10 @@ const alignmentClasses = {
 };
 
 const sizeClasses = {
-  "sm": "prose-sm",
-  "base": "prose-base",
-  "lg": "prose-lg",
-  "xl": "prose-xl",
+  sm: "prose-sm",
+  base: "prose-base",
+  lg: "prose-lg",
+  xl: "prose-xl",
   "2xl": "prose-2xl",
 };
 
@@ -28,7 +28,9 @@ export const Content = ({ data }) => {
   return (
     <Section color={data.backgroundColor}>
       <Container size="medium" className={classNames("prose", alignment, size)}>
-        {data.title && <h2 className="pb-5 pt-16 text-3xl font-light">{data.title}</h2>}
+        {data.title && (
+          <h2 className="pb-5 pt-16 text-3xl font-light">{data.title}</h2>
+        )}
         <TinaMarkdown content={data.content} components={componentRenderer} />
       </Container>
     </Section>
@@ -54,10 +56,7 @@ export const contentBlockSchema: Template = {
       type: "rich-text",
       label: "Content",
       name: "content",
-      templates: [
-        customImageBlockSchema,
-        clientLogosBlockSchema,
-      ]
+      templates: [customImageBlockSchema, clientLogosBlockSchema],
     },
     {
       type: "string",

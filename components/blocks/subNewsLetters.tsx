@@ -15,7 +15,11 @@ const placeholder = {
   email: "Email",
 };
 
-export const SubNewsLetters = ({ headerText, subscribeButtonText, subscribeSubTitle }) => {
+export const SubNewsLetters = ({
+  headerText,
+  subscribeButtonText,
+  subscribeSubTitle,
+}) => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -107,8 +111,13 @@ export const SubNewsLetters = ({ headerText, subscribeButtonText, subscribeSubTi
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <h2 className="mb-2 mt-6 text-center font-helvetica text-4xl font-medium text-sswBlack" dangerouslySetInnerHTML={{ __html: headerText }}></h2>
-      <div className="mb-5 text-center text-base text-sswBlack">{subscribeSubTitle}</div>
+      <h2
+        className="mb-2 mt-6 text-center font-helvetica text-4xl font-medium text-sswBlack"
+        dangerouslySetInnerHTML={{ __html: headerText }}
+      ></h2>
+      <div className="mb-5 text-center text-base text-sswBlack">
+        {subscribeSubTitle}
+      </div>
       <div className="container flex flex-wrap justify-center sm:w-full sm:max-w-full md:w-full">
         <span className="w-full sm:w-52">
           {inputRender(
@@ -138,10 +147,11 @@ export const SubNewsLetters = ({ headerText, subscribeButtonText, subscribeSubTi
           <button
             onClick={handleSubscribe}
             disabled={isLoading}
-            className={`done flex h-14 w-full sm:w-auto ${isLoading
-              ? "cursor-not-allowed opacity-50"
-              : "cursor-pointer opacity-100"
-              }`}
+            className={`done flex h-14 w-full sm:w-auto ${
+              isLoading
+                ? "cursor-not-allowed opacity-50"
+                : "cursor-pointer opacity-100"
+            }`}
           >
             {isLoading ? (
               <FaSpinner className="m-icon animate-spin" />
@@ -151,17 +161,15 @@ export const SubNewsLetters = ({ headerText, subscribeButtonText, subscribeSubTi
             {subscribeButtonText}
           </button>
         </div>
-
       </div>
       <p
-        className={`mt-2 flex justify-center text-sm ${isContactExisting || !allInputsFilled
-          ? "text-sswRed"
-          : "text-green-500"
-          }`}
+        className={`mt-2 flex justify-center text-sm ${
+          isContactExisting || !allInputsFilled
+            ? "text-sswRed"
+            : "text-green-500"
+        }`}
       >
-        <span className={isLoading ? "text-gray-500" : ""}>
-          {infoMessage}
-        </span>
+        <span className={isLoading ? "text-gray-500" : ""}>{infoMessage}</span>
       </p>
     </div>
   );

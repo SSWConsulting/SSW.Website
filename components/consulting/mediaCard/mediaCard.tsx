@@ -17,9 +17,9 @@ const MediaCard: FC<MediaCardProps> = ({ type, content }) => {
     <div
       data-aos="flip-left"
       className={classNames(
-        "mx-3.5 mb-15 mt-5 flex h-full flex-col border-b-2 border-solid border-sswRed bg-gray-75 py-11 px-16",
-        "bg-no-repeat bg-right-bottom-4 bg-[length:30px_25px]",
-        bgImagesClasses[type],
+        "mx-3.5 mb-15 mt-5 flex h-full flex-col border-b-2 border-solid border-sswRed bg-gray-75 px-16 py-11",
+        "bg-[length:30px_25px] bg-right-bottom-4 bg-no-repeat",
+        bgImagesClasses[type]
       )}
     >
       <TinaMarkdown content={content} />

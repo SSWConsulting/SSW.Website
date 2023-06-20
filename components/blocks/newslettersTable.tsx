@@ -86,7 +86,11 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
       {hasLoaded ? (
         newsletters.map(renderTable)
       ) : (
-        <><p className="flex items-center text-xl"><FaSpinner className="m-icon animate-spin" />  Loading Newsletters...</p></>
+        <>
+          <p className="flex items-center text-xl">
+            <FaSpinner className="m-icon animate-spin" /> Loading Newsletters...
+          </p>
+        </>
       )}
     </>
   );

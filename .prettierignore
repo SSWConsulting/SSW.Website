@@ -1,3 +1,6 @@
 .tina/__generated__
+.next
+node_modules
 content
-public/newsletters
+public
+.yarn
