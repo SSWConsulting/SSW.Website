@@ -45,7 +45,7 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
   const removeTinaFromUrl = (input: string) => {
     if (process.env.NODE_ENV === "development") return input;
     return (
-      "/images" + input.replace(/^https:\/\/assets\.tina\.io\/[^/]+\//, "")
+      "/images/" + input.replace(/^https:\/\/assets\.tina\.io\/[^/]+\//, "")
     );
   };
 
