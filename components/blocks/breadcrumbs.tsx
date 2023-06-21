@@ -6,7 +6,7 @@ interface BreadcrumbsProps {
   path: string;
   suffix: string;
   title: string;
-  seoSchema: {
+  seoSchema?: {
     title?: string;
   };
 }
