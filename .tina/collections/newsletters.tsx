@@ -1,5 +1,5 @@
-import { transformIntToMonth } from "../../services/date.service";
 import type { Collection } from "tinacms";
+import { transformIntToMonth } from "../../services/date.service";
 
 export const newsletterSchema: Collection = {
   label: "Newsletters",
@@ -42,7 +42,7 @@ export const newsletterSchema: Collection = {
           required: true,
           // @ts-ignore
           uploadDir: (formValues) => {
-            return `newsletters/${formValues.newsletters_year}`;
+            return `newsletter-uploads/${formValues.newsletters_year}`;
           },
         },
         {
@@ -50,9 +50,10 @@ export const newsletterSchema: Collection = {
           name: "images",
           label: "Images (optional)",
           list: true,
-          description: "Must be saved in images/Newsletters. Only add images that have not been used before. There is no need to add images to the /images/newsletters directory if they have already been used in a previous newsletter",
+          description:
+            "Must be saved in images/Newsletters. Only add images that have not been used before. There is no need to add images to the /images/newsletters directory if they have already been used in a previous newsletter",
           // @ts-ignore
-          uploadDir: () => "images/Newsletters"
+          uploadDir: () => "Newsletters",
         },
         {
           type: "string",

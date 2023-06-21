@@ -23,16 +23,14 @@ export const Marketing = (props) => {
           dangerouslySetInnerHTML={{ __html: content?.title }}
         ></h1>
         <div className="my-8 flex flex-col justify-between md:flex-row">
-          {content.textSide === sides[0] && (
-            <TextCol body={content?.body} />
-          )}
+          {content.textSide === sides[0] && <TextCol body={content?.body} />}
           <div className="mx-auto w-full md:w-1/2">
-            <TinaMarkdown content={content?.mediaComponent} components={componentRenderer} />
+            <TinaMarkdown
+              content={content?.mediaComponent}
+              components={componentRenderer}
+            />
           </div>
-          {content.textSide === sides[1] && (
-            <TextCol body={content?.body} />
-          )}
-          
+          {content.textSide === sides[1] && <TextCol body={content?.body} />}
         </div>
       </Container>
     </Section>
@@ -45,4 +43,4 @@ const TextCol = ({ body }) => {
       <TinaMarkdown content={body} />
     </div>
   );
-}
+};

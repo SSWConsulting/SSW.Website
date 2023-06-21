@@ -12,7 +12,7 @@ export default function FourOhFour() {
         className={classNames(
           "w-full",
           "select-none",
-          "bg-[url('/images/404/broken-chain.png')] bg-center sm:bg-bottom bg-no-repeat"
+          "bg-[url('/images/404/broken-chain.png')] bg-center bg-no-repeat sm:bg-bottom"
         )}
       >
         <div className="flex min-h-screen-4/5 flex-col sm:flex-row">
@@ -34,10 +34,11 @@ export default function FourOhFour() {
 
               <div className="my-4 bg-gray-200 px-5 py-4">
                 Learn more about{" "}
-                <Link href="/rules/404-useful-error-page" className="text-sswRed no-underline">
-                  
-                    having a useful 404 error page
-                  
+                <Link
+                  href="/rules/404-useful-error-page"
+                  className="text-sswRed no-underline"
+                >
+                  having a useful 404 error page
                 </Link>
                 .
               </div>

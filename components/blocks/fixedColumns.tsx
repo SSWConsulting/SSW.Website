@@ -14,10 +14,16 @@ export const FixedColumns = ({ data }: FixedColumnsProps) => {
   return (
     <div className="grid md:grid-cols-2 md:gap-6">
       <div>
-        <TinaMarkdown content={data.firstColBody} components={componentRenderer} />
+        <TinaMarkdown
+          content={data.firstColBody}
+          components={componentRenderer}
+        />
       </div>
       <div>
-        <TinaMarkdown content={data.secondColBody} components={componentRenderer} />
+        <TinaMarkdown
+          content={data.secondColBody}
+          components={componentRenderer}
+        />
       </div>
     </div>
   );
@@ -32,14 +38,14 @@ export const fixedColumnsSchema: Template = {
       label: "First column text",
       name: "firstColBody",
       required: true,
-      templates: [contentCardBlockSchema]
+      templates: [contentCardBlockSchema],
     },
     {
       type: "rich-text",
       label: "Second column text",
       name: "secondColBody",
       required: true,
-      templates: [contentCardBlockSchema]
+      templates: [contentCardBlockSchema],
     },
   ],
 };

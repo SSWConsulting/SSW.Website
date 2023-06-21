@@ -1,25 +1,27 @@
 
 
 {
-	"root": true,
-	"parser": "@typescript-eslint/parser",
-	"plugins": ["@typescript-eslint", "tailwindcss"],
-	"extends": [
-		"eslint:recommended",
-		"plugin:@typescript-eslint/eslint-recommended",
-		"plugin:@typescript-eslint/recommended",
-		"plugin:@next/next/recommended",
-		"plugin:tailwindcss/recommended"
-	],
-	"rules": {
-		"quotes": ["error", "double"],
-		"tailwindcss/no-arbitrary-value": "error",
-		"tailwindcss/no-custom-classname": [
-			"error",
-			{
-				"whitelist": ["g\\-yt.+", "legend"]
-			}
-		]
-	},
-	"reportUnusedDisableDirectives": true
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "tailwindcss"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@next/next/recommended",
+    "plugin:tailwindcss/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "quotes": ["error", "double"],
+    "tailwindcss/no-arbitrary-value": "error",
+    "tailwindcss/no-custom-classname": [
+      "error",
+      {
+        "whitelist": ["g\\-yt.+", "legend"]
+      }
+    ],
+    "prettier/prettier": "error"
+  },
+  "reportUnusedDisableDirectives": true
 }

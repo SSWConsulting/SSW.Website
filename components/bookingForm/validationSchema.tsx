@@ -1,5 +1,8 @@
 import * as yup from "yup";
-import { STATE_DEFAULT_VALUE, VALIDATION_ERROR_MESSAGE } from "../util/constants";
+import {
+  STATE_DEFAULT_VALUE,
+  VALIDATION_ERROR_MESSAGE,
+} from "../util/constants";
 
 export const ValidationSchema = (isShowStates: boolean, isShareForm: boolean) =>
   yup.object().shape({

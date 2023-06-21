@@ -17,7 +17,7 @@ const Popup = ({ isVisible, onClose, children, className = "" }) => {
             "sm:max-w-2xl sm:m-5 sm:p-5",
             "w-full mx-0",
             "shadow-none bg-black/0",
-            className
+            className,
           ]),
         }}
         animationDuration={700}

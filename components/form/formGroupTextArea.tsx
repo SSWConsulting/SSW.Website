@@ -18,7 +18,10 @@ const FormGroupTextArea = ({
 
   return (
     <div className={styles["field-wrapper"]}>
-      <label htmlFor={props.id || props.name} className={styles[activeLabelClass]}>
+      <label
+        htmlFor={props.id || props.name}
+        className={styles[activeLabelClass]}
+      >
         {label}
       </label>
       <Field name={field.name}>
@@ -34,8 +37,9 @@ const FormGroupTextArea = ({
             <textarea
               {...field}
               {...props}
-              className={classNames(fieldClass || styles["form-control"],
-                !!meta.error && styles["is-invalid"],
+              className={classNames(
+                fieldClass || styles["form-control"],
+                !!meta.error && styles["is-invalid"]
               )}
               onChange={textAreaOnChange}
             />
