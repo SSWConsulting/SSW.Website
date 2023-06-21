@@ -21,6 +21,8 @@ import { SEO } from "../../components/util/seo";
 import { InferGetStaticPropsType } from "next";
 import { removeExtension } from "../../services/utils.service";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
+import { ReactElement } from "react";
+import ReactDOMServer from "react-dom/server";
 
 export default function ConsultingPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -133,11 +135,12 @@ export default function ConsultingPage(
         <Section className="!bg-gray-75 pb-25 text-center">
           <Container size="custom" className="w-full">
             <h1
-              data-tina-field={tinaField(data.consulting, "solution")}
+              data-tina-field={tinaField(data.consulting, "callToAction")}
               dangerouslySetInnerHTML={{
                 __html: parseCallToAction(
                   data.consulting.callToAction,
-                  data.consulting.solution?.project
+                  data.consulting.solution?.project,
+                  data.consulting.solution
                 ),
               }}
             ></h1>
@@ -156,10 +159,21 @@ export default function ConsultingPage(
   );
 }
 
-const parseCallToAction = (content: string, project: string) => {
-  const replacement = `<span class="text-sswRed">${project}</span>`;
+const parseCallToAction = (
+  content: string,
+  project: string,
+  data: { project?: string }
+) => {
+  const HTMLelement: ReactElement = (
+    <span className="text-sswRed" data-tina-field={tinaField(data, "project")}>
+      {project}
+    </span>
+  );
 
-  return content?.replace("{{TITLE}}", replacement);
+  return content.replace(
+    "{{TITLE}}",
+    ReactDOMServer.renderToString(HTMLelement)
+  );
 };
 
 export const getStaticProps = async ({ params }) => {
