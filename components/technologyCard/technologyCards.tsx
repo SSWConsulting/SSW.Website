@@ -16,14 +16,15 @@ const TechnologyCards = (props) => {
         <h4 data-tina-field={tinaField(props, "subheading")}>{subheading}</h4>
       )}
       <div className="grid grid-cols-1 gap-y-10 md:grid-cols-2">
-        {technologyCards?.map((card) => {
+        {technologyCards?.map((card, index) => {
           const { technologyCard } = card;
           return (
-            <TechnologyCard
-              key={technologyCard?.name}
+            <div
               className={_className}
-              {...technologyCard}
-            />
+              data-tina-field={tinaField(props, `technologyCards[${index}]`)}
+            >
+              <TechnologyCard key={technologyCard?.name} {...technologyCard} />
+            </div>
           );
         })}
       </div>
