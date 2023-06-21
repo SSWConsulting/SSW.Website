@@ -6,10 +6,12 @@
     "typescript",
     "typescriptreact"
   ],
-  // Code actions on save better so this should be false. The order preserved with code actions
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   // Runs Prettier, then ESLint
-  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
+  "editor.codeActionsOnSave": [
+    "source.organizeImports",
+    "source.fixAll.eslint"
+  ],
   "editor.formatOnPaste": false,
   "editor.tabSize": 2
 }
