@@ -71,7 +71,10 @@ export const Benefits = ({ data }) => {
       {rule && rule.name != "" && (
         <p>
           {rule?.map((aRule, index) => (
-            <span key={index}>
+            <span
+              key={index}
+              data-tina-field={tinaField(data, `rule[${index}]`)}
+            >
               {index === 0 ? "Have a look at " : " and "}
               <a
                 key={index}
