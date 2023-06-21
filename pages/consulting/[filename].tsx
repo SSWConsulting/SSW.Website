@@ -61,6 +61,7 @@ export default function ConsultingPage(
             path={removeExtension(props.variables.relativePath)}
             suffix={data.global.breadcrumbSuffix}
             title={data.consulting.seo?.title}
+            seoSchema={data.consulting.seo}
           />
         </Section>
         <Section className="w-full" color="black">
