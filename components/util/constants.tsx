@@ -67,6 +67,7 @@ export const ACTIVE_INPUT = {
   ReferredFullName: "Referred Full Name",
   ReferredEmail: "Referred Email",
   None: "",
+  ReferralSource: "Referral Source",
 };
 
 //FORMS INPUTS
@@ -83,6 +84,7 @@ export const FORM_INPUT = {
   ReferredFullName: "referredFullName",
   ReferredEmail: "referredEmail",
   None: "",
+  ReferralSource: "referralSource",
 };
 
 //Australian all States list

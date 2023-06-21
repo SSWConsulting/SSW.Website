@@ -1,11 +1,11 @@
 import axios from "axios";
 import { Form, Formik } from "formik";
-import { useEffect, useContext, useMemo, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { FaRegCheckCircle, FaSpinner } from "react-icons/fa";
 import FormGroupInput from "../form/formGroupInput";
 import FormGroupSelect from "../form/formGroupSelect";
 import FormGroupTextArea from "../form/formGroupTextArea";
-import { FaRegCheckCircle, FaSpinner } from "react-icons/fa";
 import {
   ACTIVE_INPUT,
   AUSTRALIA,
@@ -231,6 +231,12 @@ export const BookingForm = (props) => {
                 <FormGroupInput
                   label={ACTIVE_INPUT.Company}
                   {...getCommonFieldProps(FORM_INPUT.Company)}
+                />
+
+                <FormGroupInput
+                  label={ACTIVE_INPUT.ReferralSource}
+                  placeholder="How did you hear about us?"
+                  {...getCommonFieldProps(FORM_INPUT.ReferralSource)}
                 />
 
                 <FormGroupTextArea
