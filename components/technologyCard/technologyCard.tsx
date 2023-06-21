@@ -28,10 +28,10 @@ const TechnologyCard: FC<TechnologyCardProps> = (props) => {
         ) : (
           <h2 data-tina-field={tinaField(props, "name")}>{name}</h2>
         )}
-        {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
+
         <div
           data-tina-field={tinaField(props, "body")}
-          className="prose-ul-li:grid-6 prose max-w-full grow prose-p:text-justify prose-strong:text-sswRed prose-ul:grid prose-ul:grid-flow-col prose-ul:grid-rows-12 prose-ul:text-left descendant-div:!m-0"
+          className="prose max-w-full grow prose-p:text-justify prose-strong:text-sswRed prose-ul:grid prose-ul:grid-flow-col prose-ul:grid-rows-12 prose-ul:text-left descendant-div:!m-0"
         >
           <TinaMarkdown content={body} />
         </div>
