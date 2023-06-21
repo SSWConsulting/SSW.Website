@@ -115,11 +115,7 @@ export default function ConsultingPage(
         {!!techCards.length && (
           <Section className="pb-16 text-center">
             <Container padding="px-4">
-              <TechnologyCards
-                techHeader={data.consulting.technologies.header}
-                techSubheading={data.consulting.technologies.subheading}
-                techCards={techCards}
-              />
+              <TechnologyCards {...data.consulting.technologies} />
             </Container>
           </Section>
         )}

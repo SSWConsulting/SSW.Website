@@ -3,14 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { TechnologyCardProps } from "./technologyCardTypes";
+import { tinaField } from "tinacms/dist/react";
 
-const TechnologyCard: FC<TechnologyCardProps> = ({
-  name,
-  readMoreSlug,
-  thumbnail,
-  body,
-  className,
-}) => {
+const TechnologyCard: FC<TechnologyCardProps> = (props) => {
+  const { name, readMoreSlug, thumbnail, body, className } = props;
   return (
     <div className={className}>
       <article
@@ -18,7 +14,10 @@ const TechnologyCard: FC<TechnologyCardProps> = ({
         data-aos="flip-left"
       >
         {thumbnail ? (
-          <figure className="relative h-24">
+          <figure
+            className="relative h-24"
+            data-tina-field={tinaField(props, "thumbnail")}
+          >
             <Image
               src={thumbnail || "/images/ssw-logo.svg"}
               alt={thumbnail ? name : "SSW Consulting"}
@@ -27,14 +26,21 @@ const TechnologyCard: FC<TechnologyCardProps> = ({
             ></Image>
           </figure>
         ) : (
-          <h2>{name}</h2>
+          <h2 data-tina-field={tinaField(props, "name")}>{name}</h2>
         )}
         {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
-        <div className="prose-ul-li:grid-6 prose max-w-full grow prose-p:text-justify prose-strong:text-sswRed prose-ul:grid prose-ul:grid-flow-col prose-ul:grid-rows-12 prose-ul:text-left descendant-div:!m-0">
+        <div
+          data-tina-field={tinaField(props, "body")}
+          className="prose-ul-li:grid-6 prose max-w-full grow prose-p:text-justify prose-strong:text-sswRed prose-ul:grid prose-ul:grid-flow-col prose-ul:grid-rows-12 prose-ul:text-left descendant-div:!m-0"
+        >
           <TinaMarkdown content={body} />
         </div>
         {readMoreSlug && (
-          <Link className="text-md" href={readMoreSlug}>
+          <Link
+            className="text-md"
+            href={readMoreSlug}
+            data-tina-field={tinaField(props, "readMoreSlug")}
+          >
             Read More
           </Link>
         )}
