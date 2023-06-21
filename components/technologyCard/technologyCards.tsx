@@ -20,7 +20,7 @@ const TechnologyCards = (props) => {
           const { technologyCard } = card;
           return (
             <TechnologyCard
-              key={technologyCard.name}
+              key={technologyCard?.name}
               className={_className}
               {...technologyCard}
             />
