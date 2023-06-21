@@ -126,6 +126,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@azure/msal-common@npm:13.0.0":
+  version: 13.0.0
+  resolution: "@azure/msal-common@npm:13.0.0"
+  checksum: 89f56f9fbf0edffa6023d46c6970dd37a9ad571b7d2952fdef41950ec2f3b4b3fd22d9841e2caaf52619ad97ab415ed22c30797cdb896f459eb665d3d97f778a
+  languageName: node
+  linkType: hard
+
+"@azure/msal-node@npm:1.17.2":
+  version: 1.17.2
+  resolution: "@azure/msal-node@npm:1.17.2"
+  dependencies:
+    "@azure/msal-common": 13.0.0
+    jsonwebtoken: ^9.0.0
+    uuid: ^8.3.0
+  checksum: 5ac809dae6b02ab7de2aafb85733501ba6c3268f1d9371bc857215dad9d47e4f6e10b3e58ebda49504b375c96934761e9734acc241d3bc34d3b4cdeaabdf102e
+  languageName: node
+  linkType: hard
+
 "@azure/opentelemetry-instrumentation-azure-sdk@npm:^1.0.0-beta.3":
   version: 1.0.0-beta.3
   resolution: "@azure/opentelemetry-instrumentation-azure-sdk@npm:1.0.0-beta.3"
@@ -3081,6 +3099,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@microsoft/microsoft-graph-types@npm:2.31.0":
+  version: 2.31.0
+  resolution: "@microsoft/microsoft-graph-types@npm:2.31.0"
+  checksum: a2f7f74cc030ef53f9b8a2738ab60acdf218ca63ff9dbe1e07a871dbfad273786d30563a1a6cd514910eb3f5e1baf5214228e26a782f7b05eb7627976d25f5fb
+  languageName: node
+  linkType: hard
+
 "@monaco-editor/loader@npm:^1.3.2":
   version: 1.3.3
   resolution: "@monaco-editor/loader@npm:1.3.3"
@@ -3322,6 +3347,73 @@ __metadata:
     picocolors: ^1.0.0
     tslib: ^2.5.0
   checksum: 654682860272541a40485b01e0763b155ec31faeba85b2c51e38b59c4ff1f8918c37b87b5ecbda3ff482d8486eba086e92b991fe4a8ed62efbbbdf83c0f64409
+  languageName: node
+  linkType: hard
+
+"@pnp/core@npm:3.16.0":
+  version: 3.16.0
+  resolution: "@pnp/core@npm:3.16.0"
+  dependencies:
+    tslib: 2.4.1
+  checksum: fc91a02fc96ff0a4e4d68e8fd63870d45df0b44643415377f68e40a61747496a7226c3736f1f586980b19616d156e264b2c170a2673a754f258c039d3c2a9a48
+  languageName: node
+  linkType: hard
+
+"@pnp/graph@npm:3.16.0, @pnp/graph@npm:^3.16.0":
+  version: 3.16.0
+  resolution: "@pnp/graph@npm:3.16.0"
+  dependencies:
+    "@microsoft/microsoft-graph-types": 2.31.0
+    "@pnp/core": 3.16.0
+    "@pnp/queryable": 3.16.0
+    tslib: 2.5.0
+  checksum: a0a808368bf8d9ea7a7534ed1d5c906693e6cb47f63251f46a9cfbd6afc058bd55695bfb6622c2d2380ec4a8853e64f220538d8eb2a02f51eabefb9f36e12f4f
+  languageName: node
+  linkType: hard
+
+"@pnp/logging@npm:3.16.0":
+  version: 3.16.0
+  resolution: "@pnp/logging@npm:3.16.0"
+  dependencies:
+    tslib: 2.4.1
+  checksum: 7bf831fbc4c3582e0c9fc3c935f3383e85ffb5b12ec2a6afca3806df4b24a88d03595d25f7358e23d6adcc4aa0e398b72e030f62870eb27a5a35a8b394191297
+  languageName: node
+  linkType: hard
+
+"@pnp/nodejs@npm:^3.16.0":
+  version: 3.16.0
+  resolution: "@pnp/nodejs@npm:3.16.0"
+  dependencies:
+    "@azure/msal-node": 1.17.2
+    "@pnp/core": 3.16.0
+    "@pnp/graph": 3.16.0
+    "@pnp/logging": 3.16.0
+    "@pnp/queryable": 3.16.0
+    "@pnp/sp": 3.16.0
+    node-fetch: 3.3.0
+    tslib: 2.4.1
+  checksum: 2582c62e1544da562bd12911695ad8de1fe31984a4614d47567dbaafd9871bb0758a230bdc9b051717b04623059f3b934e737f42d5e6570c887d2a492f28c95c
+  languageName: node
+  linkType: hard
+
+"@pnp/queryable@npm:3.16.0":
+  version: 3.16.0
+  resolution: "@pnp/queryable@npm:3.16.0"
+  dependencies:
+    "@pnp/core": 3.16.0
+    tslib: 2.4.1
+  checksum: ad87053c0bebe5afcd9af84f83437a2963fe25bfe6d0cc75eeb336276ec168f5128fc5a60e830a7111a9ef65ddd9dcf8423467fb7a2685d649ccc956932164a9
+  languageName: node
+  linkType: hard
+
+"@pnp/sp@npm:3.16.0, @pnp/sp@npm:^3.16.0":
+  version: 3.16.0
+  resolution: "@pnp/sp@npm:3.16.0"
+  dependencies:
+    "@pnp/core": 3.16.0
+    "@pnp/queryable": 3.16.0
+    tslib: 2.4.1
+  checksum: a02a5a0037cbf6712c9f0ae085dce6a7a7218f0f328b183f0e7baaafa39affe35d0f7e6e26450b1ede49c1b99a2b93e314ec0a3b99727a8a50b6a738da530f81
   languageName: node
   linkType: hard
 
@@ -4556,6 +4648,9 @@ __metadata:
     "@microsoft/applicationinsights-react-js": ^3.4.2
     "@microsoft/applicationinsights-web": 2.8.14
     "@next/eslint-plugin-next": ^13.4.6
+    "@pnp/graph": ^3.16.0
+    "@pnp/nodejs": ^3.16.0
+    "@pnp/sp": ^3.16.0
     "@svgr/webpack": ^8.0.1
     "@tailwindcss/typography": ^0.5.9
     "@tinacms/cli": ^1.5.19
@@ -6864,6 +6959,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"buffer-equal-constant-time@npm:1.0.1":
+  version: 1.0.1
+  resolution: "buffer-equal-constant-time@npm:1.0.1"
+  checksum: 80bb945f5d782a56f374b292770901065bad21420e34936ecbe949e57724b4a13874f735850dd1cc61f078773c4fb5493a41391e7bda40d1fa388d6bd80daaab
+  languageName: node
+  linkType: hard
+
 "buffer-from@npm:^1.0.0":
   version: 1.1.2
   resolution: "buffer-from@npm:1.1.2"
@@ -7900,6 +8002,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"data-uri-to-buffer@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "data-uri-to-buffer@npm:4.0.1"
+  checksum: 0d0790b67ffec5302f204c2ccca4494f70b4e2d940fea3d36b09f0bb2b8539c2e86690429eb1f1dc4bcc9e4df0644193073e63d9ee48ac9fce79ec1506e4aa4c
+  languageName: node
+  linkType: hard
+
 "dataloader@npm:^2.0.0":
   version: 2.2.2
   resolution: "dataloader@npm:2.2.2"
@@ -8405,6 +8514,15 @@ __metadata:
   peerDependencies:
     react: ">=16.12.0"
   checksum: c623dc436f332fefddc332b42ca4a267b3f5b47aaf1372a61212678d7ecbe22698fdb63f61373bcbd3773fa526eb4f210cf7f044cd5642b689dbd37ba27e9aaf
+  languageName: node
+  linkType: hard
+
+"ecdsa-sig-formatter@npm:1.0.11":
+  version: 1.0.11
+  resolution: "ecdsa-sig-formatter@npm:1.0.11"
+  dependencies:
+    safe-buffer: ^5.0.1
+  checksum: 207f9ab1c2669b8e65540bce29506134613dd5f122cccf1e6a560f4d63f2732d427d938f8481df175505aad94583bcb32c688737bb39a6df0625f903d6d93c03
   languageName: node
   linkType: hard
 
@@ -9619,6 +9737,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fetch-blob@npm:^3.1.2, fetch-blob@npm:^3.1.4":
+  version: 3.2.0
+  resolution: "fetch-blob@npm:3.2.0"
+  dependencies:
+    node-domexception: ^1.0.0
+    web-streams-polyfill: ^3.0.3
+  checksum: f19bc28a2a0b9626e69fd7cf3a05798706db7f6c7548da657cbf5026a570945f5eeaedff52007ea35c8bcd3d237c58a20bf1543bc568ab2422411d762dd3d5bf
+  languageName: node
+  linkType: hard
+
 "fetch-ponyfill@npm:^7.1.0":
   version: 7.1.0
   resolution: "fetch-ponyfill@npm:7.1.0"
@@ -9822,6 +9950,15 @@ __metadata:
   version: 0.2.2
   resolution: "format@npm:0.2.2"
   checksum: 646a60e1336250d802509cf24fb801e43bd4a70a07510c816fa133aa42cdbc9c21e66e9cc0801bb183c5b031c9d68be62e7fbb6877756e52357850f92aa28799
+  languageName: node
+  linkType: hard
+
+"formdata-polyfill@npm:^4.0.10":
+  version: 4.0.10
+  resolution: "formdata-polyfill@npm:4.0.10"
+  dependencies:
+    fetch-blob: ^3.1.2
+  checksum: 82a34df292afadd82b43d4a740ce387bc08541e0a534358425193017bf9fb3567875dc5f69564984b1da979979b70703aa73dee715a17b6c229752ae736dd9db
   languageName: node
   linkType: hard
 
@@ -11813,6 +11950,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jsonwebtoken@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "jsonwebtoken@npm:9.0.0"
+  dependencies:
+    jws: ^3.2.2
+    lodash: ^4.17.21
+    ms: ^2.1.1
+    semver: ^7.3.8
+  checksum: b9181cecf9df99f1dc0253f91ba000a1aa4d91f5816d1608c0dba61a5623726a0bfe200b51df25de18c1a6000825d231ad7ce2788aa54fd48dcb760ad9eb9514
+  languageName: node
+  linkType: hard
+
 "jsx-ast-utils@npm:^2.4.1 || ^3.0.0, jsx-ast-utils@npm:^3.3.3":
   version: 3.3.3
   resolution: "jsx-ast-utils@npm:3.3.3"
@@ -11820,6 +11969,27 @@ __metadata:
     array-includes: ^3.1.5
     object.assign: ^4.1.3
   checksum: a2ed78cac49a0f0c4be8b1eafe3c5257a1411341d8e7f1ac740debae003de04e5f6372bfcfbd9d082e954ffd99aac85bcda85b7c6bc11609992483f4cdc0f745
+  languageName: node
+  linkType: hard
+
+"jwa@npm:^1.4.1":
+  version: 1.4.1
+  resolution: "jwa@npm:1.4.1"
+  dependencies:
+    buffer-equal-constant-time: 1.0.1
+    ecdsa-sig-formatter: 1.0.11
+    safe-buffer: ^5.0.1
+  checksum: ff30ea7c2dcc61f3ed2098d868bf89d43701605090c5b21b5544b512843ec6fd9e028381a4dda466cbcdb885c2d1150f7c62e7168394ee07941b4098e1035e2f
+  languageName: node
+  linkType: hard
+
+"jws@npm:^3.2.2":
+  version: 3.2.2
+  resolution: "jws@npm:3.2.2"
+  dependencies:
+    jwa: ^1.4.1
+    safe-buffer: ^5.0.1
+  checksum: f0213fe5b79344c56cd443428d8f65c16bf842dc8cb8f5aed693e1e91d79c20741663ad6eff07a6d2c433d1831acc9814e8d7bada6a0471fbb91d09ceb2bf5c2
   languageName: node
   linkType: hard
 
@@ -14244,6 +14414,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-domexception@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "node-domexception@npm:1.0.0"
+  checksum: ee1d37dd2a4eb26a8a92cd6b64dfc29caec72bff5e1ed9aba80c294f57a31ba4895a60fd48347cf17dd6e766da0ae87d75657dfd1f384ebfa60462c2283f5c7f
+  languageName: node
+  linkType: hard
+
 "node-fetch@npm:2, node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.11, node-fetch@npm:~2.6.1":
   version: 2.6.11
   resolution: "node-fetch@npm:2.6.11"
@@ -14255,6 +14432,17 @@ __metadata:
     encoding:
       optional: true
   checksum: 249d0666a9497553384d46b5ab296ba223521ac88fed4d8a17d6ee6c2efb0fc890f3e8091cafe7f9fba8151a5b8d925db2671543b3409a56c3cd522b468b47b3
+  languageName: node
+  linkType: hard
+
+"node-fetch@npm:3.3.0":
+  version: 3.3.0
+  resolution: "node-fetch@npm:3.3.0"
+  dependencies:
+    data-uri-to-buffer: ^4.0.0
+    fetch-blob: ^3.1.4
+    formdata-polyfill: ^4.0.10
+  checksum: e9936908d2783d3c48a038e187f8062de294d75ef43ec8ab812d7cbd682be2b67605868758d2e9cad6103706dcfe4a9d21d78f6df984e8edf10e7a5ce2e665f8
   languageName: node
   linkType: hard
 
@@ -16653,6 +16841,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"semver@npm:^7.3.8":
+  version: 7.5.2
+  resolution: "semver@npm:7.5.2"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: 3fdf5d1e6f170fe8bcc41669e31787649af91af7f54f05c71d0865bb7aa27e8b92f68b3e6b582483e2c1c648008bc84249d2cd86301771fe5cbf7621d1fe5375
+  languageName: node
+  linkType: hard
+
 "send@npm:0.18.0":
   version: 0.18.0
   resolution: "send@npm:0.18.0"
@@ -17979,6 +18178,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:2.4.1, tslib@npm:~2.4.0":
+  version: 2.4.1
+  resolution: "tslib@npm:2.4.1"
+  checksum: 19480d6e0313292bd6505d4efe096a6b31c70e21cf08b5febf4da62e95c265c8f571f7b36fcc3d1a17e068032f59c269fab3459d6cd3ed6949eafecf64315fca
+  languageName: node
+  linkType: hard
+
 "tslib@npm:2.5.0":
   version: 2.5.0
   resolution: "tslib@npm:2.5.0"
@@ -17997,13 +18203,6 @@ __metadata:
   version: 2.5.2
   resolution: "tslib@npm:2.5.2"
   checksum: 4d3c1e238b94127ed0e88aa0380db3c2ddae581dc0f4bae5a982345e9f50ee5eda90835b8bfba99b02df10a5734470be197158c36f9129ac49fdc14a6a9da222
-  languageName: node
-  linkType: hard
-
-"tslib@npm:~2.4.0":
-  version: 2.4.1
-  resolution: "tslib@npm:2.4.1"
-  checksum: 19480d6e0313292bd6505d4efe096a6b31c70e21cf08b5febf4da62e95c265c8f571f7b36fcc3d1a17e068032f59c269fab3459d6cd3ed6949eafecf64315fca
   languageName: node
   linkType: hard
 
@@ -18892,6 +19091,13 @@ __metadata:
   dependencies:
     defaults: ^1.0.3
   checksum: 814e9d1ddcc9798f7377ffa448a5a3892232b9275ebb30a41b529607691c0491de47cba426e917a4d08ded3ee7e9ba2f3fe32e62ee3cd9c7d3bafb7754bd553c
+  languageName: node
+  linkType: hard
+
+"web-streams-polyfill@npm:^3.0.3":
+  version: 3.2.1
+  resolution: "web-streams-polyfill@npm:3.2.1"
+  checksum: b119c78574b6d65935e35098c2afdcd752b84268e18746606af149e3c424e15621b6f1ff0b42b2676dc012fc4f0d313f964b41a4b5031e525faa03997457da02
   languageName: node
   linkType: hard
 
