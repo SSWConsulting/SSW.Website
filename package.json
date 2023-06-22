@@ -34,6 +34,7 @@
     "prettier-plugin-tailwindcss": "^0.3.0"
   },
   "dependencies": {
+    "@azure/msal-node": "^1.17.3",
     "@fontsource/open-sans": "^4.5.14",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
@@ -43,6 +44,7 @@
     "@microsoft/applicationinsights-react-js": "^3.4.2",
     "@microsoft/applicationinsights-web": "2.8.14",
     "@pnp/graph": "^3.16.0",
+    "@pnp/msaljsclient": "^3.16.0",
     "@pnp/nodejs": "^3.16.0",
     "@pnp/sp": "^3.16.0",
     "@tailwindcss/typography": "^0.5.9",
