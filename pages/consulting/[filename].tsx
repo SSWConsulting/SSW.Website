@@ -1,6 +1,9 @@
-import { useTina } from "tinacms/dist/react";
+import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+import { InferGetStaticPropsType } from "next";
+import { ReactElement } from "react";
+import ReactDOMServer from "react-dom/server";
 import { client } from "../../.tina/__generated__/client";
 import { BuiltOnAzure, ClientLogos } from "../../components/blocks";
 import { Blocks } from "../../components/blocks-renderer";
@@ -18,9 +21,8 @@ import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import { InferGetStaticPropsType } from "next";
-import { removeExtension } from "../../services/utils.service";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
+import { removeExtension } from "../../services/utils.service";
 
 export default function ConsultingPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -61,6 +63,7 @@ export default function ConsultingPage(
             path={removeExtension(props.variables.relativePath)}
             suffix={data.global.breadcrumbSuffix}
             title={data.consulting.seo?.title}
+            seoSchema={data.consulting.seo}
           />
         </Section>
         <Section className="w-full" color="black">
@@ -77,7 +80,10 @@ export default function ConsultingPage(
         >
           <a id="more" />
           <div className="w-full bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
-            <div className="mx-auto max-w-9xl px-4">
+            <div
+              data-tina-field={tinaField(data.consulting, "_body")}
+              className="mx-auto max-w-9xl px-4"
+            >
               <TinaMarkdown
                 components={componentRenderer}
                 content={data.consulting._body}
@@ -112,11 +118,7 @@ export default function ConsultingPage(
         {!!techCards.length && (
           <Section className="pb-16 text-center">
             <Container padding="px-4">
-              <TechnologyCards
-                techHeader={data.consulting.technologies.header}
-                techSubheading={data.consulting.technologies.subheading}
-                techCards={techCards}
-              />
+              <TechnologyCards {...data.consulting.technologies} />
             </Container>
           </Section>
         )}
@@ -133,10 +135,12 @@ export default function ConsultingPage(
         <Section className="!bg-gray-75 pb-25 text-center">
           <Container size="custom" className="w-full">
             <h1
+              data-tina-field={tinaField(data.consulting, "callToAction")}
               dangerouslySetInnerHTML={{
                 __html: parseCallToAction(
                   data.consulting.callToAction,
-                  data.consulting.solution?.project
+                  data.consulting.solution?.project,
+                  data.consulting.solution
                 ),
               }}
             ></h1>
@@ -155,10 +159,24 @@ export default function ConsultingPage(
   );
 }
 
-const parseCallToAction = (content: string, project: string) => {
-  const replacement = `<span class="text-sswRed">${project}</span>`;
+const parseCallToAction = (
+  content: string,
+  project: string,
+  data: { project?: string }
+) => {
+  const HTMLelement: ReactElement = (
+    <span
+      className="text-sswRed"
+      {...(data ? { "data-tina-field": tinaField(data, "project") } : {})}
+    >
+      {project}
+    </span>
+  );
 
-  return content?.replace("{{TITLE}}", replacement);
+  return content?.replace(
+    "{{TITLE}}",
+    ReactDOMServer.renderToString(HTMLelement)
+  );
 };
 
 export const getStaticProps = async ({ params }) => {
