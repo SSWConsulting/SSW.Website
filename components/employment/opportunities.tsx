@@ -1,16 +1,16 @@
+import { Disclosure, Transition } from "@headlessui/react";
+import classNames from "classnames";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { UtilityButton } from "../blocks";
+import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import {
   employmentType,
   jobStatus,
   locations,
 } from "../util/constants/opportunity";
-import { useEffect, useState } from "react";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { UtilityButton } from "../blocks";
-import classNames from "classnames";
-import Image from "next/image";
-import { componentRenderer } from "../blocks/mdxComponentRenderer";
-import { Disclosure, Transition } from "@headlessui/react";
 
 interface OpportunitiesProps {
   opportunities: OpportunityType[];

@@ -1,9 +1,9 @@
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import {
-  locations,
-  jobStatus,
   employmentType,
+  jobStatus,
+  locations,
 } from "../../components/util/constants/opportunity";
 
 export const opportunitiesSchema: Collection = {

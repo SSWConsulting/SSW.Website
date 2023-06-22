@@ -4,13 +4,12 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact",
+    "typescriptreact"
   ],
-  // Code actions on save better, order preserved
   "editor.formatOnSave": true,
   // Runs Prettier, then ESLint
   "editor.codeActionsOnSave": [
-    "source.formatDocument",
+    "source.organizeImports",
     "source.fixAll.eslint"
   ],
   "editor.formatOnPaste": false,
