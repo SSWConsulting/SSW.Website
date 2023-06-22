@@ -1,5 +1,5 @@
 .vs/
- 
+
 # dependencies
 /node_modules
 /.pnp
@@ -37,3 +37,4 @@ yarn-error.log*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+public/admin/.gitignore
