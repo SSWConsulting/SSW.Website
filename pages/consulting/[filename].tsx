@@ -1,6 +1,9 @@
-import { useTina, tinaField } from "tinacms/dist/react";
+import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+import { InferGetStaticPropsType } from "next";
+import { ReactElement } from "react";
+import ReactDOMServer from "react-dom/server";
 import { client } from "../../.tina/__generated__/client";
 import { BuiltOnAzure, ClientLogos } from "../../components/blocks";
 import { Blocks } from "../../components/blocks-renderer";
@@ -18,11 +21,8 @@ import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import { InferGetStaticPropsType } from "next";
-import { removeExtension } from "../../services/utils.service";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
-import { ReactElement } from "react";
-import ReactDOMServer from "react-dom/server";
+import { removeExtension } from "../../services/utils.service";
 
 export default function ConsultingPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -63,7 +63,6 @@ export default function ConsultingPage(
             path={removeExtension(props.variables.relativePath)}
             suffix={data.global.breadcrumbSuffix}
             title={data.consulting.seo?.title}
-            seoSchema={data.consulting.seo}
           />
         </Section>
         <Section className="w-full" color="black">
@@ -165,12 +164,15 @@ const parseCallToAction = (
   data: { project?: string }
 ) => {
   const HTMLelement: ReactElement = (
-    <span className="text-sswRed" data-tina-field={tinaField(data, "project")}>
+    <span
+      className="text-sswRed"
+      {...(data ? { "data-tina-field": tinaField(data, "project") } : {})}
+    >
       {project}
     </span>
   );
 
-  return content.replace(
+  return content?.replace(
     "{{TITLE}}",
     ReactDOMServer.renderToString(HTMLelement)
   );

@@ -1,21 +1,17 @@
-import React, { FC } from "react";
 import NextBreadcrumbs from "nextjs-breadcrumbs2";
-import { tinaField } from "tinacms/dist/react";
+import { FC } from "react";
 
 interface BreadcrumbsProps {
   path: string;
   suffix: string;
   title: string;
-  seoSchema?: {
-    title?: string;
-  };
 }
 
 export const Breadcrumbs: FC<BreadcrumbsProps> = (props) => {
   const listItemStyling =
     "breadcrumb_item inline text-xs text-gray-700 no-underline not-first:before:content-bread not-first:before:px-2 before:list-none";
   return (
-    <div data-tina-field={tinaField(props.seoSchema, "title")}>
+    <div>
       <NextBreadcrumbs
         replaceCharacterList={[
           { from: "consulting", to: "Services" },
