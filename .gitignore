@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+public/admin/.gitignore
 
 # testing
 /coverage
@@ -37,4 +38,4 @@ yarn-error.log*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-public/admin/.gitignore
+
