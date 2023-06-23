@@ -1,9 +1,9 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import { AddContactToNewslettersData } from "../../services";
 import * as appInsight from "applicationinsights";
+import { NextApiRequest, NextApiResponse } from "next";
+import { AddContactToNewslettersData } from "../../services/events";
 
-import { PA_FLOW } from "../../services/power-automate-flow";
 import { PowerAutomate_Endpoint } from "../../services/model";
+import { PA_FLOW } from "../../services/power-automate-flow";
 
 import axios from "axios";
 import { CustomError } from "../../services/customError";

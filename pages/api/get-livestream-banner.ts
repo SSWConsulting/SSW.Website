@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { getLiveStreamBannerInfo } from "../../services";
+import { getLiveStreamBannerInfo } from "../../services/events";
 
 export default async function handler(
   req: NextApiRequest,

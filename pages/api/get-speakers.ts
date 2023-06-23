@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { getSpeakersInfo } from "../../services";
+import { getSpeakersInfo } from "../../services/events";
 
 export default async function handler(
   req: NextApiRequest,

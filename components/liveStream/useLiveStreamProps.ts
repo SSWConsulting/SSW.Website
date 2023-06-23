@@ -1,7 +1,7 @@
 import axios from "axios";
 import dayjs from "dayjs";
 import { useEffect, useRef, useState } from "react";
-import { LiveStreamBannerInfo } from "../../services";
+import { LiveStreamBannerInfo } from "../../services/events";
 
 export type LiveStreamProps = {
   countdownMins: number;

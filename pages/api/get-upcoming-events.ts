@@ -1,21 +1,21 @@
 import * as msal from "@azure/msal-node";
 import { NextApiRequest, NextApiResponse } from "next";
+import { EventInfo } from "../../services/events";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   if (req.method === "GET") {
-    // const datetimeParam = req.query["datetime"];
-    // const topCountParam = +req.query["top"];
-    // if (typeof datetimeParam !== "string" || !topCountParam) {
-    //   res.status(401).json({ message: "Unsupported query param" });
-    // }
+    const datetimeParam = req.query["datetime"];
+    const topCountParam = +req.query["top"];
+    if (typeof datetimeParam !== "string" || !topCountParam) {
+      res.status(401).json({ message: "Unsupported query param" });
+    }
 
-    const odataFilter =
-      "$filter=fields/Enabled ne false\
+    const odataFilter = `$filter=fields/Enabled ne false\
       &$orderby=fields/StartDateTime desc\
-      &$top=10";
+      &$top=${topCountParam}`;
 
     const siteId =
       "sswcom.sharepoint.com,8b375f80-d2e4-42a5-9ed3-54a3cfeb61b5,732990a3-6822-4895-b68a-3653da9f5910";
@@ -34,11 +34,11 @@ export default async function handler(
     );
 
     const eventsBody = await eventsRes.json();
-    const events = eventsBody.value.map((item) => {
+    const events: EventInfo[] = eventsBody.value.map((item) => {
       return item.fields;
     });
 
-    res.status(200).send(events);
+    res.status(200).json(events);
   } else {
     res.status(405).json({ message: "Unsupported method" });
   }

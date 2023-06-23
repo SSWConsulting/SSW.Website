@@ -1,4 +1,4 @@
-import { BookingFormSubmissionData } from "../../services";
+import { BookingFormSubmissionData } from "../../services/events";
 
 export const bookingFormSubmissionData = (
   values,

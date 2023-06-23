@@ -1,8 +1,11 @@
-import axios, { AxiosError } from "axios";
-import { BookingFormSubmissionData, AddContactToNewslettersData } from "./";
-import { HttpStatusCode, STAGE } from "./model";
-import { CustomError } from "./customError";
 import * as appInsight from "applicationinsights";
+import axios, { AxiosError } from "axios";
+import { CustomError } from "./customError";
+import {
+  AddContactToNewslettersData,
+  BookingFormSubmissionData,
+} from "./events";
+import { HttpStatusCode, STAGE } from "./model";
 
 export class PA_FLOW {
   static invokePowerAutomateFlow = async (

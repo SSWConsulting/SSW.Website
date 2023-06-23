@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
 
 import axios from "axios";
-import { EventInfo, LiveStreamBannerInfo } from "../../services";
+import { EventInfo, LiveStreamBannerInfo } from "../../services/events";
 
 dayjs.extend(utc);
 dayjs.extend(isBetween);

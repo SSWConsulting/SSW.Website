@@ -8,7 +8,7 @@ import { FaEnvelope } from "react-icons/fa";
 import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
 import layoutData from "../../content/global/index.json";
-import { LiveStreamWidgetInfo, SpeakerInfo } from "../../services";
+import { LiveStreamWidgetInfo, SpeakerInfo } from "../../services/events";
 import ReactPlayer from "../reactPlayer/reactPlayer";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
 import { LiveStreamProps } from "./useLiveStreamProps";
