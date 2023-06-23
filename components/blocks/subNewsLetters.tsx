@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Template } from "tinacms";
 import axios from "axios";
+import React, { useState } from "react";
 import { FaRegCheckCircle, FaSpinner } from "react-icons/fa";
+import { Template } from "tinacms";
 
 /**
  * A component for subscribing to newsletters.
@@ -15,10 +15,17 @@ const placeholder = {
   email: "Email",
 };
 
+const Default = {
+  headerText:
+    "Subscribe to the <span class='font-bold text-sswRed'>SSW Newsletter</span",
+  subscribeButtonText: "Subscribe",
+  subscribeSubTitle: "Stay tuned for SSW News & upcoming events",
+};
+
 export const SubNewsLetters = ({
-  headerText,
-  subscribeButtonText,
-  subscribeSubTitle,
+  headerText = Default.headerText,
+  subscribeButtonText = Default.subscribeButtonText,
+  subscribeSubTitle = Default.subscribeSubTitle,
 }) => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
