@@ -1,6 +1,4 @@
 import * as msal from "@azure/msal-node";
-import { BearerToken } from "@pnp/queryable";
-import { spfi } from "@pnp/sp";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
@@ -19,71 +17,89 @@ export default async function handler(
     //   &$orderby=StartDateTime asc\
     //   &$top=${topCountParam}`;
 
+    const odataFilter =
+      "$filter=fields/Enabled ne false\
+      &$orderby=fields/StartDateTime desc\
+      &$top=10";
+
     // const upcomingEventsRes: { status: number, data: EventInfo[] } = await getUpcomingEvents(
     //   <string>datetimeParam,
     //   topCountParam
     // );
 
-    // const authRes = await fetch(
-    //   `https://login.microsoft.com/${process.env.MICROSOFT_OAUTH_TENANT_ID}/oauth2/v2.0/token`,
-    //   {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/x-www-form-urlencoded",
-    //     },
-    //     body: new URLSearchParams({
-    //       client_id: process.env.MICROSOFT_OAUTH_CLIENT_ID,
-    //       scope: "https://sswcom.sharepoint.com/Sites.Read.All",
-    //       client_secret: process.env.MICROSOFT_OAUTH_CLIENT_SECRET,
-    //       grant_type: "client_credentials",
-    //     }),
-    //   }
-    // );
+    const siteId =
+      "sswcom.sharepoint.com,8b375f80-d2e4-42a5-9ed3-54a3cfeb61b5,732990a3-6822-4895-b68a-3653da9f5910";
+    const listId = "5502e86d-ad16-4eb4-a41c-ac33c9a08382";
 
-    const clientConfig = {
-      auth: {
-        clientId: process.env.MICROSOFT_OAUTH_CLIENT_ID,
-        authority: `https://login.microsoftonline.com/${process.env.MICROSOFT_OAUTH_TENANT_ID}`,
-        clientSecret: process.env.MICROSOFT_OAUTH_CLIENT_SECRET,
-      },
-    };
+    const token = await getToken();
+    const eventsRes = await fetch(
+      `https://graph.microsoft.com/v1.0/sites/${siteId}/lists/${listId}/items?expand=fields&${odataFilter}`,
+      {
+        headers: {
+          Authorization: "Bearer " + token,
+          Accept: "application/json",
+          Prefer: "HonorNonIndexedQueriesWarningMayFailRandomly",
+        },
+      }
+    );
 
-    const clientApp = new msal.ConfidentialClientApplication(clientConfig);
+    const eventBody = await eventsRes.json();
 
-    try {
-      const authParams = {
-        scopes: ["https://sswcom.sharepoint.com/.default"],
-      };
+    res.status(200).send(eventBody);
 
-      const authRes = await clientApp.acquireTokenByClientCredential(
-        authParams
-      );
+    // try {
+    //   const authParams = {
+    //     scopes: ["https://sswcom.sharepoint.com/.default"],
+    //   };
 
-      const sp = await spfi("https://sswcom.sharepoint.com/sites/Events").using(
-        BearerToken(authRes.accessToken)
-      );
+    //   const authRes = await clientApp.acquireTokenByClientCredential(
+    //     authParams
+    //   );
 
-      //const eventsList = await sp.get().lists.getByTitle("Events").items.get();
-      console.log(authRes);
+    //   const sp = await spfi("https://sswcom.sharepoint.com/sites/Events").using(
+    //     BearerToken(authRes.accessToken)
+    //   );
 
-      // const eventsListRes = await fetch(
-      //   "https://sswcom.sharepoint.com/sites/Events/_api/web/lists/getbytitle('Events')/items",
-      //   {
-      //     headers: {
-      //       Authorization: "Bearer " + "authRes.accessToken",
-      //       Accept: "application/json;odata=nometadata",
-      //     },
-      //   }
-      // );
+    //   //const eventsList = await sp.get().lists.getByTitle("Events").items.get();
 
-      // console.log(await eventsListRes.json());
-      // const eventsList = await eventsListRes.json();
-      res.status(200).send(authRes);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: true });
-    }
+    //   // const eventsListRes = await fetch(
+    //   //   "https://sswcom.sharepoint.com/sites/Events/_api/web/lists/getbytitle('Events')/items",
+    //   //   {
+    //   //     headers: {
+    //   //       Authorization: "Bearer " + "authRes.accessToken",
+    //   //       Accept: "application/json;odata=nometadata",
+    //   //     },
+    //   //   }
+    //   // );
+
+    //   // console.log(await eventsListRes.json());
+    //   // const eventsList = await eventsListRes.json();
+    //   res.status(200).send(authRes);
+    // } catch (error) {
+    //   console.error(error);
+    //   res.status(500).json({ error: true });
+    // }
   } else {
     res.status(405).json({ message: "Unsupported method" });
   }
 }
+
+const getToken = async () => {
+  const clientConfig = {
+    auth: {
+      clientId: process.env.MICROSOFT_OAUTH_CLIENT_ID,
+      authority: `https://login.microsoftonline.com/${process.env.MICROSOFT_OAUTH_TENANT_ID}`,
+      clientSecret: process.env.MICROSOFT_OAUTH_CLIENT_SECRET,
+    },
+  };
+
+  const clientApp = new msal.ConfidentialClientApplication(clientConfig);
+
+  const authParams = {
+    scopes: ["https://graph.microsoft.com/.default"],
+  };
+
+  const authRes = await clientApp.acquireTokenByClientCredential(authParams);
+
+  return authRes?.accessToken;
+};
