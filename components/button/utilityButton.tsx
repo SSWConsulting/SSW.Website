@@ -1,15 +1,20 @@
-import classNames from "classnames"
-import Button from "./button"
-import { Template } from "tinacms"
+import classNames from "classnames";
+import Button from "./button";
+import { Template } from "tinacms";
 
 interface UtilityButtonProps {
-  buttonText?: string
-  onClick?: () => void
-  className?: string
-  link?: string
+  buttonText?: string;
+  onClick?: () => void;
+  className?: string;
+  link?: string;
 }
 
-export const UtilityButton = ({ buttonText, onClick, className, link }: UtilityButtonProps) => {
+export const UtilityButton = ({
+  buttonText,
+  onClick,
+  className,
+  link,
+}: UtilityButtonProps) => {
   const baseComponent = (
     <Button
       ripple
@@ -32,7 +37,7 @@ export const UtilityButton = ({ buttonText, onClick, className, link }: UtilityB
   }
 
   return baseComponent;
-}
+};
 
 export const utilityButtonSchema: Template = {
   name: "UtilityButton",
@@ -54,6 +59,6 @@ export const utilityButtonSchema: Template = {
       label: "Link",
       name: "link",
       required: false,
-    }
+    },
   ],
 };

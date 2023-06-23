@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Template } from "tinacms";
 import { transformIntToMonth } from "../../services/date.service";
 import client from "../../.tina/__generated__/client";
+import { FaSpinner } from "react-icons/fa";
 
 /**
  * Render a table of newsletters.
@@ -26,19 +27,26 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
         newsletters: edge.node.newsletters,
         newsletters_year: edge.node.newsletters_year,
       }));
-      const sortedNewslettersData = newsletters.map((item) => {
-        const sortedNewsletters = item.newsletters.sort(
+      const sortedNewslettersYears = newsletters.map((item) => {
+        const sortedNewslettersMonths = item.newsletters.sort(
           (a, b) => b.month - a.month
         );
         return {
-          newsletters: sortedNewsletters,
+          newsletters: sortedNewslettersMonths,
           year: item.newsletters_year,
         };
       });
 
-      setNewsletters(sortedNewslettersData?.reverse());
+      setNewsletters(sortedNewslettersYears?.reverse());
       setHasLoaded(true);
     });
+  };
+
+  const removeTinaFromUrl = (input: string) => {
+    if (process.env.NODE_ENV === "development") return input;
+    return (
+      "/images/" + input.replace(/^https:\/\/assets\.tina\.io\/[^/]+\//, "")
+    );
   };
 
   const renderTable = ({ newsletters, year }) => (
@@ -54,11 +62,11 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
         </tr>
       </thead>
       <tbody>
-        {newsletters.map(({ url, month, description }) => (
-          <tr key={url} className="bg-gray-125">
+        {newsletters.map(({ file, month, description }) => (
+          <tr key={file} className="bg-gray-125">
             <td className="border-1 border-white px-3 py-1">
               <a
-                href={`/newsletters/${year}/${url}`}
+                href={removeTinaFromUrl(file)}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -78,7 +86,11 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
       {hasLoaded ? (
         newsletters.map(renderTable)
       ) : (
-        <p className="text-xl">Loading Newsletters...</p>
+        <>
+          <p className="flex items-center text-xl">
+            <FaSpinner className="m-icon animate-spin" /> Loading Newsletters...
+          </p>
+        </>
       )}
     </>
   );

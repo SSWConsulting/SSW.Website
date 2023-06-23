@@ -2,6 +2,7 @@
 	"recommendations": [
 		"bradlc.vscode-tailwindcss",
 		"esbenp.prettier-vscode",
-		"graphql.vscode-graphql"
+		"graphql.vscode-graphql",
+		"dbaeumer.vscode-eslint"
 	]
 }
