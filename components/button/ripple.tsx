@@ -1,8 +1,8 @@
-import classNames from "classnames"
+import classNames from "classnames";
 
 interface RippleProps {
-  className?: string
-  hover?: boolean
+  className?: string;
+  hover?: boolean;
 }
 
 export const Ripple = ({ className, hover }: RippleProps) => {
@@ -14,5 +14,5 @@ export const Ripple = ({ className, hover }: RippleProps) => {
         className
       )}
     />
-  )
-}
+  );
+};

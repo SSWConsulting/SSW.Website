@@ -3,22 +3,22 @@
   "newsletters": [
     {
       "month": 1,
-      "url": "_2023_01__Adams 2022 - A Year in Review__.html",
+      "file": "/images/newsletter-uploads/2023/_2023_01__Adams 2022 - A Year in Review__.html",
       "description": "Adams 2022 - A Year in Review"
     },
     {
       "month": 2,
-      "url": "_2023_02__5 Key Video Production Editing Terms (aka speak the lingo of a videographer)!__.html",
+      "file": "/images/newsletter-uploads/2023/_2023_02__5 Key Video Production Editing Terms (aka speak the lingo of a videographer)!__.html",
       "description": "5 Key Video Production Editing Terms (aka speak the lingo of a videographer)!"
     },
     {
       "month": 3,
-      "url": "_2023_03__Managing your Azure Costs – How to Avoid Ballooning Budgets__.html",
+      "file": "/images/newsletter-uploads/2023/_2023_03__Managing your Azure Costs – How to Avoid Ballooning Budgets__.html",
       "description": "Managing your Azure Costs – How to Avoid Ballooning Budgets"
     },
     {
       "month": 4,
-      "url": "_2023_04__Introducing SSW’s Cultural Exchange__.html",
+      "file": "/images/newsletter-uploads/2023/_2023_04__Introducing SSW’s Cultural Exchange__.html",
       "description": "Introducing SSW’s Cultural Exchange"
     }
   ]

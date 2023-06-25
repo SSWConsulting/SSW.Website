@@ -25,7 +25,7 @@ const Button = ({
       onMouseLeave={() => setHover(false)}
     >
       {children}
-      {ripple && <Ripple hover={hover} /> }
+      {ripple && <Ripple hover={hover} />}
     </button>
   );
 };

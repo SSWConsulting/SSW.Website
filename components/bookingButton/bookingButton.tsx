@@ -25,8 +25,12 @@ export const BookingButton = ({
   const bookingPhone = layoutData.bookingPhone;
 
   const showSuccessToast = () => {
-    toast.success(<div className="text-left">Form submitted. We'll be in contact as soon as possible.</div>);
-  }
+    toast.success(
+      <div className="text-left">
+        Form submitted. We'll be in contact as soon as possible.
+      </div>
+    );
+  };
 
   return (
     <div

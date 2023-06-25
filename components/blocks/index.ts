@@ -61,7 +61,7 @@ export const pageBlocks: Template[] = [
   utilityButtonSchema,
   verticalImageLayoutBlockSchema,
   verticalListItemSchema,
-  videoEmbedBlockSchema
+  videoEmbedBlockSchema,
 ];
 
 export * from "../terms-and-conditions/agreementForm";

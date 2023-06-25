@@ -47,9 +47,7 @@ export default function ProductsIndex(
               className="grid grid-cols-1 gap-2 lg:grid-cols-2"
             >
               {productsList.map((product) => (
-                <PageCard
-                  page={product}
-                />
+                <PageCard page={product} />
               ))}
             </div>
           </div>
@@ -61,9 +59,7 @@ export default function ProductsIndex(
 
 const PageCard = ({ page }) => {
   return (
-    <div
-      className="relative bg-white p-3 hover:bg-gray-50"
-    >
+    <div className="relative bg-white p-3 hover:bg-gray-50">
       <div className="flex">
         <div className="shrink-0">
           {page.logo && (
@@ -103,7 +99,6 @@ const processData = (data) => {
 
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.productsIndexConnection();
-
 
   return {
     props: {

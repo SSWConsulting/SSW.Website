@@ -143,10 +143,10 @@ export const componentRenderer: Components<{
   UtilityButton: {
     buttonText: string;
     link: string;
-  },
+  };
   ContentCard: {
-    content: TinaMarkdownContent
-  }
+    content: TinaMarkdownContent;
+  };
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
