@@ -19,6 +19,7 @@ import { RecurringEvent } from "./recurringEvent";
 import { FixedTabsLayout } from "./fixedTabsLayout";
 import { Flag } from "./flag";
 import { SubNewsLetters } from "./subNewsLetters";
+import { Subscribe } from "./subscribe";
 import { NewslettersTable } from "./newslettersTable";
 import { BookingButton } from "../bookingButton/bookingButton";
 import { UtilityButton } from "../button/utilityButton";
@@ -132,6 +133,9 @@ export const componentRenderer: Components<{
     headerText: string;
     subscribeSubTitle: string;
   };
+  Subscribe: {
+    background: string;
+  };
   Citation: {
     article: string;
     author: string;
@@ -165,6 +169,7 @@ export const componentRenderer: Components<{
   BookingButton: (props) => <BookingButton {...props} />,
   NewslettersTable: (props) => <NewslettersTable data={props} />,
   SubNewsLetters: (props) => <SubNewsLetters {...props} />,
+  Subscribe: () => <Subscribe />,
   Citation: (props) => <Citation {...props} />,
   UtilityButton: (props) => <UtilityButton {...props} />,
   ContentCard: (props) => <ContentCard data={props} />,

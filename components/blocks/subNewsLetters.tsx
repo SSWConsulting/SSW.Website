@@ -107,7 +107,7 @@ export const SubNewsLetters = ({ headerText, subscribeButtonText, subscribeSubTi
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <h2 className="mb-2 mt-6 text-center font-helvetica text-4xl font-medium text-sswBlack" dangerouslySetInnerHTML={{ __html: headerText }}></h2>
+      <h2 className="mb-2 mt-6 text-center font-helvetica text-4xl font-medium text-white" dangerouslySetInnerHTML={{ __html: headerText }}></h2>
       <div className="mb-5 text-center text-base text-sswBlack">{subscribeSubTitle}</div>
       <div className="container flex flex-wrap justify-center sm:w-full sm:max-w-full md:w-full">
         <span className="w-full sm:w-52">

@@ -22,6 +22,7 @@ import { newslettersTableBlockSchema } from "./newslettersTable";
 import { recurringEventSchema } from "./recurringEvent";
 import { serviceCardsBlockSchema } from "./serviceCards";
 import { subNewsLettersSchema } from "./subNewsLetters";
+import { subscribeSchema } from "./subscribe";
 import { tableBlockSchema } from "./tableLayout";
 import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
@@ -52,6 +53,7 @@ export const pageBlocks: Template[] = [
   recurringEventSchema,
   serviceCardsBlockSchema,
   subNewsLettersSchema,
+  subscribeSchema,
   tableBlockSchema,
   trainingInformationSchema,
   trainingLearningOutcomeSchema,
@@ -82,6 +84,7 @@ export * from "./newslettersTable";
 export * from "./recurringEvent";
 export * from "./serviceCards";
 export * from "./subNewsLetters";
+export * from "./subscribe";
 export * from "./tableLayout";
 export * from "./upcomingEvents";
 export * from "../button/utilityButton";
