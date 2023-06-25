@@ -50,10 +50,16 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
   };
 
   const renderTable = ({ newsletters, year }) => (
-    <table key={year} className="mb-3 mt-0 w-full border-separate border-spacing-y-3">
+    <table
+      key={year}
+      className="mb-3 mt-0 w-full border-separate border-spacing-y-3"
+    >
       <thead>
         <tr>
-          <th className="mx-4 w-1/6 rounded-l bg-gray-100 px-3 py-1" align="left">
+          <th
+            className="mx-4 w-1/6 rounded-l bg-gray-100 px-3 py-1"
+            align="left"
+          >
             {year}
           </th>
           <th className="w-0 bg-gray-100">
@@ -88,7 +94,9 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
 
   return (
     <>
-      <h2 className="mb-3 mt-5 text-center text-4xl font-bold text-sswRed">{data.headerText}</h2>
+      <h2 className="mb-3 mt-5 text-center text-4xl font-bold text-sswRed">
+        {data.headerText}
+      </h2>
       {hasLoaded ? (
         newsletters.map(renderTable)
       ) : (

@@ -154,10 +154,11 @@ export const SubNewsLetters = ({
           <button
             onClick={handleSubscribe}
             disabled={isLoading}
-            className={`done flex h-14 w-full sm:w-auto ${isLoading
+            className={`done flex h-14 w-full sm:w-auto ${
+              isLoading
                 ? "cursor-not-allowed opacity-50"
                 : "cursor-pointer opacity-100"
-              }`}
+            }`}
           >
             {isLoading ? (
               <FaSpinner className="m-icon animate-spin" />
@@ -169,10 +170,11 @@ export const SubNewsLetters = ({
         </div>
       </div>
       <p
-        className={`mt-2 flex justify-center text-sm ${isContactExisting || !allInputsFilled
+        className={`mt-2 flex justify-center text-sm ${
+          isContactExisting || !allInputsFilled
             ? "text-sswRed"
             : "text-green-500"
-          }`}
+        }`}
       >
         <span className={isLoading ? "text-gray-500" : ""}>{infoMessage}</span>
       </p>
