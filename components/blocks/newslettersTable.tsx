@@ -71,7 +71,7 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
         </tr>
       </thead>
       <tbody>
-        {newsletters.map(({ file, url, month, description }) => (
+        {newsletters.map(({ file, month, description }) => (
           <tr key={file} className="mx-4 bg-gray-50">
             <td className="rounded-l px-3 py-1">
               <a
