@@ -4,11 +4,11 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import { FC, useEffect, useState } from "react";
-import { FaEnvelope } from "react-icons/fa";
 import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
 import layoutData from "../../content/global/index.json";
 import { LiveStreamWidgetInfo, SpeakerInfo } from "../../services/events";
+import { SubNewsLetters } from "../blocks/subNewsLetters";
 import ReactPlayer from "../reactPlayer/reactPlayer";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
 import { LiveStreamProps } from "./useLiveStreamProps";
@@ -346,28 +346,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
                 excludeMobile={[SocialTypes.phone]}
               />
             </div>
-
-            <div className="mt-17">
-              <h3 className="mb-3 font-bold">
-                Get notified about news & future events
-              </h3>
-              <div className="grid grid-cols-3 gap-8">
-                <input
-                  className="col-span-3 appearance-none rounded border-1 border-gray-300 px-3 py-2 leading-tight text-gray-700 focus:shadow focus:outline md:col-span-2"
-                  id="email"
-                  type="email"
-                  placeholder="Your Email"
-                />
-                {/* TODO: Implement subscribe function */}
-                <a
-                  href="#"
-                  className="col-span-3 flex h-11 items-center justify-center rounded-md bg-sswRed align-middle leading-4 text-white !no-underline hover:!text-gray-125 md:col-span-1"
-                >
-                  <FaEnvelope className="mr-2" />
-                  Subscribe
-                </a>
-              </div>
-            </div>
+            <SubNewsLetters />
           </div>
 
           <div className="bg-gray-75 px-4 py-2">

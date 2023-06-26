@@ -4,6 +4,9 @@ param projectName string
 var entropy = substring(guid(subscription().subscriptionId, resourceGroup().id), 0, 4)
 var keyVaultName = 'kv-${projectName}-${entropy}'
 
+var tags = {
+  'cost-category': 'core'
+}
 
 @description('Specifies whether the key vault is a standard vault or a premium vault.')
 @allowed([
@@ -30,6 +33,7 @@ param tenantId string = subscription().tenantId
 resource KeyVault 'Microsoft.KeyVault/vaults@2021-11-01-preview' = {
   name: keyVaultName
   location: location
+  tags: tags
   properties: {
     enabledForDeployment: enabledForDeployment
     enabledForDiskEncryption: enabledForDiskEncryption

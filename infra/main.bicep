@@ -30,9 +30,12 @@ param dockerImage string = 'sswwebsite'
 
 param now string = utcNow('yyyy-MM-ddTHH-mm')
 
-var tags = {
-  // change this to 'core' when you are ready to deploy to production
-  'cost-category': 'dev/test'
+var core = {
+  'cost-category': 'core'
+}
+
+var value = {
+  'cost-category': 'value'
 }
 
 module acr 'acr.bicep' = {
@@ -40,7 +43,6 @@ module acr 'acr.bicep' = {
   params: {
     projectName: projectName
     location: location
-    tags: tags
   }
 }
 module keyVault 'keyVault.bicep' = {
@@ -55,6 +57,7 @@ module appInsight 'appInsight.bicep' = {
   params: {
     projectName: projectName
     location:location
+    tags:value
   }
 }
 
@@ -63,7 +66,7 @@ module appService 'appService.bicep' = {
   params: {
     projectName: projectName
     location: location
-    tags: tags
+    tags: core
     skuName: skuName
     skuCapacity: skuCapacity
     acrName: acr.outputs.acrName
