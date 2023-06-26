@@ -14,6 +14,7 @@ export default async function handler(
       typeof emailsParam === "string" ? [emailsParam] : emailsParam;
 
     const speakersInfo = await getSpeakersInfo(ids, emails);
+    console.log(speakersInfo);
     res.status(200).json(speakersInfo);
   } else {
     res.status(405).json({ message: "Unsupported method" });

@@ -53,12 +53,16 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
         return;
       }
 
+      console.log(event.Id);
+
       const widgetInfoRes = await axios.get<LiveStreamWidgetInfo>(
         "/api/get-livestream-widget",
         {
           params: { eventId: event.Id },
         }
       );
+
+      console.log(widgetInfoRes.data);
 
       if (widgetInfoRes.status === 200 && widgetInfoRes.data) {
         setWidgetInfo(widgetInfoRes.data);
@@ -103,7 +107,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
         } else {
           speakersInfo.push({
             Title: widgetInfoRes.data.Presenter,
-            PresenterProfileLink: widgetInfoRes.data.PresenterProfileUrl.Url,
+            PresenterProfileLink: widgetInfoRes?.data?.PresenterProfileUrl?.Url,
           });
         }
         setSpeakersInfo(speakersInfo);

@@ -26,6 +26,7 @@ export const UpcomingEvents = ({ data }) => {
       const res = await axios.get<EventInfo[]>("/api/get-upcoming-events", {
         params: { datetime: datetime.toISOString(), top: data.numberOfEvents },
       });
+      console.log(res.data);
       setLoading(false);
 
       if (res?.status !== 200 || !res.data.length) return;
