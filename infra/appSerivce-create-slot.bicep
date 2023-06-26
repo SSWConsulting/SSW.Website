@@ -4,6 +4,7 @@ param slotName string
 param acrLoginServer string
 param keyVaultName string
 param appInsightConnectionString string
+param tags object
 
 
 var appSettings = [
@@ -50,6 +51,7 @@ resource prSlot 'Microsoft.Web/sites/slots@2021-02-01' = {
   name: slotName
   parent: prodSlot
   location: location
+  tags:tags
   identity: {
     type: 'SystemAssigned'
   }

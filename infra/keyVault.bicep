@@ -1,5 +1,6 @@
 @description('Specifies the name of the key vault.')
 param projectName string
+param tags object
 
 var entropy = substring(guid(subscription().subscriptionId, resourceGroup().id), 0, 4)
 var keyVaultName = 'kv-${projectName}-${entropy}'
@@ -30,6 +31,7 @@ param tenantId string = subscription().tenantId
 resource KeyVault 'Microsoft.KeyVault/vaults@2021-11-01-preview' = {
   name: keyVaultName
   location: location
+  tags: tags
   properties: {
     enabledForDeployment: enabledForDeployment
     enabledForDiskEncryption: enabledForDiskEncryption

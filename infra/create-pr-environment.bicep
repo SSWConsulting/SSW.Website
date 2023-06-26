@@ -7,12 +7,21 @@ param servicePrincipalObjectId string
 
 param now string = utcNow('yyyy-MM-ddTHH-mm')
 
+var dev = {
+  'cost-category': 'dev/test'
+}
+
+var core = {
+  'cost-category': 'core'
+}
+
 var acrName = replace(acrLoginServer, '.azurecr.io', '')
 module keyVault 'keyVault.bicep' = {
   name:'keyVault-${now}'
   params: {
     projectName: projectName
     location: location
+    tags: core
   }
 }
 
@@ -20,7 +29,8 @@ module appInsight 'appInsight.bicep' = {
   name: '${slotName}-appInsight-${now}'
   params: {
     projectName: '${projectName}-dev'
-    location:location
+    location: location
+    tags: dev
   }
 }
 module appServiceSlot 'appSerivce-create-slot.bicep' = {
@@ -32,6 +42,7 @@ module appServiceSlot 'appSerivce-create-slot.bicep' = {
     acrLoginServer: acrLoginServer
     keyVaultName: keyVault.outputs.keyVaultName
     appInsightConnectionString: appInsight.outputs.appInsightConnectionString
+    tags: dev
   }
 }
 
