@@ -43,7 +43,6 @@ module acr 'acr.bicep' = {
   params: {
     projectName: projectName
     location: location
-    tags: core
   }
 }
 module keyVault 'keyVault.bicep' = {
@@ -51,7 +50,6 @@ module keyVault 'keyVault.bicep' = {
   params: {
     projectName: projectName
     location: location
-    tags:core
   }
 }
 module appInsight 'appInsight.bicep' = {

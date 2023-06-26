@@ -1,6 +1,9 @@
 param projectName string = 'sswwebsite'
 param location string = resourceGroup().location
-param tags object
+
+var tags = {
+  'cost-category': 'core'
+}
 
 resource acr 'Microsoft.ContainerRegistry/registries@2021-09-01' = {
   name: 'acr${projectName}'

@@ -21,7 +21,6 @@ module keyVault 'keyVault.bicep' = {
   params: {
     projectName: projectName
     location: location
-    tags: core
   }
 }
 

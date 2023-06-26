@@ -1,10 +1,12 @@
 @description('Specifies the name of the key vault.')
 param projectName string
-param tags object
 
 var entropy = substring(guid(subscription().subscriptionId, resourceGroup().id), 0, 4)
 var keyVaultName = 'kv-${projectName}-${entropy}'
 
+var tags = {
+  'cost-category': 'core'
+}
 
 @description('Specifies whether the key vault is a standard vault or a premium vault.')
 @allowed([
