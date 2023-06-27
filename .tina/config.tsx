@@ -6,18 +6,18 @@ import {
   consultingTagSchema,
 } from "./collections/consulting";
 import { educationalSchema } from "./collections/educational";
+import { employmentSchema } from "./collections/employment";
 import { globalSchema } from "./collections/global";
 import { marketingSchema } from "./collections/marketing";
-import { officeSchema, officeIndexSchema } from "./collections/offices";
+import { newsletterSchema } from "./collections/newsletters";
+import { officeIndexSchema, officeSchema } from "./collections/offices";
+import { opportunitiesSchema } from "./collections/opportunities";
 import { pagesSchema } from "./collections/pages";
-import { technologiesSchema } from "./collections/technologies";
 import { productsIndexSchema } from "./collections/products";
+import { technologiesSchema } from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
-import { employmentSchema } from "./collections/employment";
 import { trainingSchema } from "./collections/training";
-import { newsletterSchema } from "./collections/newsletters";
-import { opportunitiesSchema } from "./collections/opportunities";
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -35,7 +35,7 @@ const config = defineStaticConfig({
     // this is the config for the tina cloud media store
     tina: {
       publicFolder: "public",
-      mediaRoot: "",
+      mediaRoot: "images",
     },
   },
   build: {
