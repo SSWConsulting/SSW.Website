@@ -1,3 +1,4 @@
+import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 import { isEmail } from "validator";
@@ -34,10 +35,23 @@ export default async function handler(
       const speakersInfo = await getSpeakersInfo(ids, emails);
       res.status(200).json(speakersInfo);
     } catch (err) {
+      const properties = {
+        Request: "GET /api/get-speakers",
+        Status: 500,
+        FailedSharePointRequest: false,
+      };
+
       if (err instanceof AxiosError) {
         console.error(err.response.data);
+        properties.Status = err.response.status;
+        properties.FailedSharePointRequest = true;
       }
-      console.error(err);
+
+      appInsights.defaultClient.trackException({
+        exception: err,
+        properties,
+        severity: appInsights.Contracts.SeverityLevel.Error,
+      });
       res.status(500).json({ message: err.message });
     }
   } else {
