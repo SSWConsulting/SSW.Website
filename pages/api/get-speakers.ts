@@ -7,23 +7,32 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "GET") {
-    const idsParam = req.query["ids"];
-    const emailsParam = req.query["emails"];
+    const idsParam = req.query.ids;
+    const emailsParam = req.query.emails;
 
-    const ids = typeof idsParam === "string" ? [idsParam] : idsParam;
+    console.log(idsParam);
+
+    const ids: number[] =
+      typeof idsParam === "string"
+        ? [parseInt(idsParam)]
+        : idsParam.map((id) => parseInt(id));
+
+    if (ids.some((id) => isNaN(id))) {
+      res.status(400).json({ message: "Invalid speaker id" });
+      return;
+    }
+
     const emails =
       typeof emailsParam === "string" ? [emailsParam] : emailsParam;
 
     try {
       const speakersInfo = await getSpeakersInfo(ids, emails);
-      console.log(speakersInfo);
       res.status(200).json(speakersInfo);
     } catch (err) {
       if (err instanceof AxiosError) {
         console.error(err.response.data);
       }
       res.status(500).json({ message: err.message });
-      return;
     }
   } else {
     res.status(405).json({ message: "Unsupported method" });

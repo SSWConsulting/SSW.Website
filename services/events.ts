@@ -45,7 +45,7 @@ export const getEvents = async (odataFilter: string): Promise<EventInfo[]> => {
   return events || [];
 };
 
-export const getSpeakersInfo = async (ids?: string[], emails?: string[]) => {
+export const getSpeakersInfo = async (ids?: number[], emails?: string[]) => {
   const speakers: SpeakerInfo[] = [];
 
   if (ids?.length) {

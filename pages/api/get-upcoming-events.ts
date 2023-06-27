@@ -1,3 +1,4 @@
+import { AxiosError } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 import { getEvents } from "../../services/events";
 
@@ -21,8 +22,11 @@ export default async function handler(
     try {
       const events = await getEvents(odataFilter);
       res.status(200).json(events);
-    } catch (error) {
-      res.status(500).json({ message: error.message });
+    } catch (err) {
+      if (err instanceof AxiosError) {
+        console.error(err.response.data);
+      }
+      res.status(500).json({ message: err.message });
     }
   } else {
     res.status(405).json({ message: "Unsupported method" });
