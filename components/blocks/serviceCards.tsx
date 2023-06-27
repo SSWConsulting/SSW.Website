@@ -1,6 +1,6 @@
-import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { tinaField } from "tinacms/dist/react";
 
 import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -18,40 +18,56 @@ const bgColor = {
 export const ServiceCards = ({ data }) => {
   return (
     <Section color={data.backgroundColor}>
-      <Container size="custom">
+      <Container
+        size="custom"
+        data-tina-field={tinaField(data, serviceCards.bigCardsLabel)}
+      >
         <div className="py-4">
-          <BigCards title={data.bigCardsLabel} cards={data.bigCards} />
+          <BigCards
+            title={data.bigCardsLabel}
+            cards={data.bigCards}
+            schema={data}
+          />
         </div>
 
         <div className="py-4">
-          <SmallCards title={data.smallCardsLabel} cards={data.smallCards} />
+          <SmallCards
+            title={data.smallCardsLabel}
+            cards={data.smallCards}
+            schema={data}
+          />
         </div>
 
-        <Links links={data.links} />
+        <Links links={data.links} schema={data} />
       </Container>
     </Section>
   );
 };
 
-const Label = ({ text }) => {
+const Label = ({ text, schema, cardLabel }) => {
   return (
     <div
       className={`absolute text-left text-xxxs font-normal uppercase text-white ${bgColor["darkgray"]} w-fit p-2 z-badge`}
+      data-tina-field={tinaField(schema, cardLabel)}
     >
       {text}
     </div>
   );
 };
 
-const BigCards = ({ title, cards }) => {
+const BigCards = ({ title, cards, schema }) => {
   return (
     <>
-      <Label text={title} />
+      <Label
+        text={title}
+        schema={schema}
+        cardLabel={serviceCards.bigCardsLabel}
+      />
       <ul
         role="list"
         className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4"
       >
-        {cards.map((card) => (
+        {cards.map((card, index) => (
           <li
             key={card.title}
             className={`col-span-1 flex flex-col divide-y divide-gray-200 text-center shadow ${
@@ -73,11 +89,24 @@ const BigCards = ({ title, cards }) => {
                   />
                 </div>
                 <div className="relative flex grow flex-col p-8">
-                  <h3 className="flex pb-3 text-2xl font-thin lg:pt-8">
+                  <h3
+                    className="flex pb-3 text-2xl font-thin lg:pt-8"
+                    data-tina-field={tinaField(
+                      schema.bigCards[index],
+                      serviceCards.bigCards.title
+                    )}
+                  >
                     {card.title}
                   </h3>
                   <div className="grow"></div>
-                  <TinaMarkdown content={card.description} />
+                  <span
+                    data-tina-field={tinaField(
+                      schema.bigCards[index],
+                      serviceCards.bigCards.description
+                    )}
+                  >
+                    <TinaMarkdown content={card.description} />
+                  </span>
                 </div>
               </div>
             </Link>
@@ -88,15 +117,19 @@ const BigCards = ({ title, cards }) => {
   );
 };
 
-const SmallCards = ({ title, cards }) => {
+const SmallCards = ({ title, cards, schema }) => {
   return (
     <>
-      <Label text={title} />
+      <Label
+        text={title}
+        schema={schema}
+        cardLabel={serviceCards.smallCardsLabel}
+      />
       <ul
         role="list"
         className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4"
       >
-        {cards.map((card) => (
+        {cards.map((card, index) => (
           <li
             key={card.title}
             className={`col-span-1 flex flex-col divide-y divide-gray-200 text-center shadow ${
@@ -108,14 +141,27 @@ const SmallCards = ({ title, cards }) => {
               className="unstyled flex h-full flex-col"
             >
               <div className="flex flex-1 flex-col items-center px-2 py-8 pb-4 sm:justify-center md:flex-row md:pb-8">
-                <Image
-                  className=""
-                  src={card.imgSrc ?? ""}
-                  width="50"
-                  height="50"
-                  alt=""
-                />
-                <h3 className="unstyled mt-1 pt-2 text-sm font-light text-white md:m-5">
+                <span
+                  data-tina-field={tinaField(
+                    schema.smallCards[index],
+                    serviceCards.smallCards.imgSrc
+                  )}
+                >
+                  <Image
+                    className=""
+                    src={card.imgSrc ?? ""}
+                    width="50"
+                    height="50"
+                    alt=""
+                  />{" "}
+                </span>
+                <h3
+                  data-tina-field={tinaField(
+                    schema.smallCards[index],
+                    serviceCards.smallCards.title
+                  )}
+                  className="unstyled mt-1 pt-2 text-sm font-light text-white md:m-5"
+                >
                   {card.title}
                 </h3>
               </div>
@@ -127,7 +173,7 @@ const SmallCards = ({ title, cards }) => {
   );
 };
 
-const Links = ({ links }) => {
+const Links = ({ links, schema }) => {
   return (
     <div className="flex flex-wrap items-center justify-between gap-6 py-3">
       {links.map((card, i) => (
@@ -135,12 +181,39 @@ const Links = ({ links }) => {
           key={i}
           href={card.link ?? ""}
           className="unstyled inline-flex items-center rounded border-1 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
+          data-tina-field={tinaField(schema.links[i], serviceCards.links.label)}
         >
           {card.label}
         </Link>
       ))}
     </div>
   );
+};
+
+export const serviceCards = {
+  bigCardsLabel: "bigCardsLabel",
+  bigCards: {
+    value: "bigCards",
+    title: "title",
+    description: "description",
+    color: "color",
+    link: "link",
+    imgSrc: "imgSrc",
+  },
+  smallCardsLabel: "smallCardsLabel",
+  smallCards: {
+    value: "smallCards",
+    title: "title",
+    link: "link",
+    color: "color",
+    imgSrc: "imgSrc",
+  },
+  links: {
+    value: "links",
+    label: "label",
+    link: "link",
+  },
+  backgroundColor: "backgroundColor",
 };
 
 export const serviceCardsBlockSchema: Template = {
@@ -153,11 +226,11 @@ export const serviceCardsBlockSchema: Template = {
     {
       type: "string",
       label: "Big Cards Label",
-      name: "bigCardsLabel",
+      name: serviceCards.bigCardsLabel,
     },
     {
       label: "Big Cards",
-      name: "bigCards",
+      name: serviceCards.bigCards.value,
       type: "object",
       list: true,
       ui: {
@@ -168,22 +241,22 @@ export const serviceCardsBlockSchema: Template = {
         {
           type: "string",
           label: "Title",
-          name: "title",
+          name: serviceCards.bigCards.title,
         },
         {
           type: "rich-text",
           label: "Description",
-          name: "description",
+          name: serviceCards.bigCards.description,
         },
         {
           type: "string",
           label: "URL",
-          name: "link",
+          name: serviceCards.bigCards.link,
         },
         {
           type: "string",
           label: "Color",
-          name: "color",
+          name: serviceCards.bigCards.color,
           options: [
             { label: "Red", value: "red" },
             { label: "Light Gray", value: "lightgray" },
@@ -194,18 +267,18 @@ export const serviceCardsBlockSchema: Template = {
         {
           type: "image",
           label: "Image",
-          name: "imgSrc",
+          name: serviceCards.bigCards.imgSrc,
         },
       ],
     },
     {
       type: "string",
       label: "Small Cards Label",
-      name: "smallCardsLabel",
+      name: serviceCards.smallCardsLabel,
     },
     {
       label: "Small Cards",
-      name: "smallCards",
+      name: serviceCards.smallCards.value,
       type: "object",
       list: true,
       ui: {
@@ -216,17 +289,17 @@ export const serviceCardsBlockSchema: Template = {
         {
           type: "string",
           label: "Title",
-          name: "title",
+          name: serviceCards.smallCards.title,
         },
         {
           type: "string",
           label: "URL",
-          name: "link",
+          name: serviceCards.smallCards.link,
         },
         {
           type: "string",
           label: "Color",
-          name: "color",
+          name: serviceCards.smallCards.color,
           options: [
             { label: "Red", value: "red" },
             { label: "Light Gray", value: "lightgray" },
@@ -237,13 +310,13 @@ export const serviceCardsBlockSchema: Template = {
         {
           type: "image",
           label: "Image",
-          name: "imgSrc",
+          name: serviceCards.smallCards.imgSrc,
         },
       ],
     },
     {
       label: "Links",
-      name: "links",
+      name: serviceCards.links.value,
       type: "object",
       list: true,
       ui: {
@@ -254,19 +327,19 @@ export const serviceCardsBlockSchema: Template = {
         {
           type: "string",
           label: "Label",
-          name: "label",
+          name: serviceCards.links.label,
         },
         {
           type: "string",
           label: "URL",
-          name: "link",
+          name: serviceCards.links.link,
         },
       ],
     },
     {
       type: "string",
       label: "Background Color",
-      name: "backgroundColor",
+      name: serviceCards.backgroundColor,
       options: [
         { label: "Default", value: "default" },
         { label: "Light Gray", value: "lightgray" },
