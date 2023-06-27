@@ -7,7 +7,7 @@ import { FC, useEffect, useState } from "react";
 import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
 import layoutData from "../../content/global/index.json";
-import { LiveStreamWidgetInfo, SpeakerInfo } from "../../services/events";
+import { SpeakerInfo } from "../../services/events";
 import { SubNewsLetters } from "../blocks/subNewsLetters";
 import ReactPlayer from "../reactPlayer/reactPlayer";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
@@ -16,7 +16,6 @@ import { LiveStreamProps } from "./useLiveStreamProps";
 export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
   const eventDescriptionCollapseId = "eventDescription";
 
-  const [widgetInfo, setWidgetInfo] = useState<LiveStreamWidgetInfo>();
   const [speakersInfo, setSpeakersInfo] = useState<SpeakerInfo[]>([]);
   const [youtubeUrls, setYoutubeUrls] = useState<{
     videoUrl?: string;
@@ -53,71 +52,55 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
         return;
       }
 
-      console.log(event.Id);
+      setYoutubeUrls({
+        videoUrl: `https://www.youtube.com/embed/${event.YouTubeId}?rel=0&autoplay=1`,
+        chatUrl: `https://www.youtube.com/live_chat?v=${event.YouTubeId}&embed_domain=${window.location.hostname}`,
+        liveStreamUrl: `https://www.youtube.com/watch?v=${event.YouTubeId}`,
+      });
 
-      const widgetInfoRes = await axios.get<LiveStreamWidgetInfo>(
-        "/api/get-livestream-widget",
-        {
-          params: { eventId: event.Id },
-        }
-      );
+      const ids: string[] = [];
+      const emails: string[] = [];
 
-      console.log(widgetInfoRes.data);
-
-      if (widgetInfoRes.status === 200 && widgetInfoRes.data) {
-        setWidgetInfo(widgetInfoRes.data);
-
-        setYoutubeUrls({
-          videoUrl: `https://www.youtube.com/embed/${widgetInfoRes.data.YouTubeId}?rel=0&autoplay=1`,
-          chatUrl: `https://www.youtube.com/live_chat?v=${widgetInfoRes.data.YouTubeId}&embed_domain=${window.location.hostname}`,
-          liveStreamUrl: `https://www.youtube.com/watch?v=${widgetInfoRes.data.YouTubeId}`,
-        });
-
-        const ids: string[] = [];
-        const emails: string[] = [];
-
-        if (widgetInfoRes.data.ExternalPresentersId?.results?.length) {
-          ids.push(...widgetInfoRes.data.ExternalPresentersId.results);
-        }
-
-        if (widgetInfoRes.data.InternalPresenters?.results?.length) {
-          emails.push(
-            ...widgetInfoRes.data.InternalPresenters.results.map((i) => i.EMail)
-          );
-        }
-
-        const speakersInfo: SpeakerInfo[] = [];
-
-        if (ids.length || emails.length) {
-          const idsParam = ids.map((id) => `ids=${id}`).join("&");
-          const emailsParam = emails
-            .map((email) => `emails=${email}`)
-            .join("&");
-
-          const remoteSpeakersInfoRes = await axios.get<SpeakerInfo[]>(
-            `/api/get-speakers?${idsParam}&${emailsParam}`
-          );
-
-          if (
-            remoteSpeakersInfoRes.status === 200 &&
-            remoteSpeakersInfoRes.data.length
-          ) {
-            speakersInfo.push(...remoteSpeakersInfoRes.data);
-          }
-        } else {
-          speakersInfo.push({
-            Title: widgetInfoRes.data.Presenter,
-            PresenterProfileLink: widgetInfoRes?.data?.PresenterProfileUrl?.Url,
-          });
-        }
-        setSpeakersInfo(speakersInfo);
+      if (event.ExternalPresenters.length) {
+        const presenterIds = event.ExternalPresenters.map((presenter) =>
+          presenter.LookupId.toString()
+        );
+        ids.push(...presenterIds);
       }
+
+      if (event.InternalPresenters?.results?.length) {
+        emails.push(...event.InternalPresenters.results.map((i) => i.EMail));
+      }
+
+      const speakersInfo: SpeakerInfo[] = [];
+
+      if (ids.length || emails.length) {
+        const idsParam = ids.map((id) => `ids=${id}`).join("&");
+        const emailsParam = emails.map((email) => `emails=${email}`).join("&");
+
+        const remoteSpeakersInfoRes = await axios.get<SpeakerInfo[]>(
+          `/api/get-speakers?${idsParam}&${emailsParam}`
+        );
+
+        if (
+          remoteSpeakersInfoRes.status === 200 &&
+          remoteSpeakersInfoRes.data.length
+        ) {
+          speakersInfo.push(...remoteSpeakersInfoRes.data);
+        }
+      } else {
+        speakersInfo.push({
+          Title: event.Presenter,
+          PresenterProfileLink: event?.PresenterProfileUrl?.Url,
+        });
+      }
+      setSpeakersInfo(speakersInfo);
     };
 
     fetchLiveStreamInfo();
   }, [isLive, event]);
 
-  if (!widgetInfo) {
+  if (!event) {
     return <></>;
   }
 
@@ -138,7 +121,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
           <span className="hidden pr-2 sm:inline">Subscribe to SSW TV</span>
           <div
             className="g-ytsubscribe"
-            data-channelid={widgetInfo.ChannelId}
+            data-channelid="UCBFgwtV9lIIhvoNh0xoQ7Pg"
             data-layout="default"
             data-count="default"
           ></div>
@@ -310,9 +293,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
                   }
                 )}
                 dangerouslySetInnerHTML={{
-                  __html:
-                    widgetInfo.EventDescription ||
-                    widgetInfo.EventShortDescription,
+                  __html: event.EventDescription || event.EventShortDescription,
                 }}
               ></div>
               {eventDescriptionCollapsable && (

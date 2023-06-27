@@ -70,7 +70,7 @@ const renderEvent = (e: EventInfo) => {
     !e.Url.Url.includes("ssw.com.au") || e.Url.Url.includes("/ssw/redirect");
 
   return (
-    <article key={e.Id} className="flex">
+    <article key={e.id} className="flex">
       <div className="flex min-w-fit items-center">
         <Link href={e.Thumbnail.Url}>
           <Image

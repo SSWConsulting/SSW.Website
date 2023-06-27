@@ -1,3 +1,4 @@
+import { AxiosError } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 import { getSpeakersInfo } from "../../services/events";
 
@@ -13,9 +14,17 @@ export default async function handler(
     const emails =
       typeof emailsParam === "string" ? [emailsParam] : emailsParam;
 
-    const speakersInfo = await getSpeakersInfo(ids, emails);
-    console.log(speakersInfo);
-    res.status(200).json(speakersInfo);
+    try {
+      const speakersInfo = await getSpeakersInfo(ids, emails);
+      console.log(speakersInfo);
+      res.status(200).json(speakersInfo);
+    } catch (err) {
+      if (err instanceof AxiosError) {
+        console.error(err.response.data);
+      }
+      res.status(500).json({ message: err.message });
+      return;
+    }
   } else {
     res.status(405).json({ message: "Unsupported method" });
   }

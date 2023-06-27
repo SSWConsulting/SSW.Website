@@ -9,20 +9,23 @@ export default async function handler(
     const datetimeParam = req.query["datetime"];
     const topCountParam = req.query["top"];
     if (typeof datetimeParam !== "string" || !topCountParam) {
-      res.status(401).json({ message: "Unsupported query param" });
+      res.status(400).json({ message: "Unsupported query param" });
+      return;
     }
 
     const odataFilter = `$filter=fields/Enabled ne false \
-      and fields/EndDateTime gt ${datetimeParam as string}\
-      &$orderby=fields/StartDateTime desc\
+      and fields/EndDateTime gt '${datetimeParam as string}'\
+      &$orderby=fields/StartDateTime asc\
       &$top=${topCountParam as string}`;
 
-    const events = await getEvents(odataFilter);
-
-    res.status(200).json(events);
-  } else if (req.method == "POST") {
-    res.json(await getToken());
-    return;
+    try {
+      const events = await getEvents(odataFilter);
+      res.status(200).json(events);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  } else if (req.method === "POST") {
+    res.status(200).send(await getToken());
   } else {
     res.status(405).json({ message: "Unsupported method" });
   }
