@@ -8,9 +8,14 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "GET") {
-    const datetimeParam = req.query["datetime"];
+    const datetimeParam = req.query.datetime;
     if (typeof datetimeParam !== "string") {
       res.status(400).json({ message: "Unsupported query param" });
+      return;
+    }
+
+    if (new Date(datetimeParam as string) instanceof Date === false) {
+      res.status(400).json({ message: "Invalid datetime" });
       return;
     }
 

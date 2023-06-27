@@ -7,17 +7,28 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "GET") {
-    const datetimeParam = req.query["datetime"];
-    const topCountParam = req.query["top"];
+    const datetimeParam = req.query.datetime;
+    const topCountParam = req.query.top;
     if (typeof datetimeParam !== "string" || !topCountParam) {
       res.status(400).json({ message: "Unsupported query param" });
+      return;
+    }
+
+    const topCount = parseInt(topCountParam as string);
+    if (isNaN(topCount)) {
+      res.status(400).json({ message: "Invalid top count" });
+      return;
+    }
+
+    if (new Date(datetimeParam as string) instanceof Date === false) {
+      res.status(400).json({ message: "Invalid datetime" });
       return;
     }
 
     const odataFilter = `$filter=fields/Enabled ne false \
       and fields/EndDateTime gt '${datetimeParam as string}'\
       &$orderby=fields/StartDateTime asc\
-      &$top=${topCountParam as string}`;
+      &$top=${topCount}`;
 
     try {
       const events = await getEvents(odataFilter);

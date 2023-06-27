@@ -1,5 +1,6 @@
 import { AxiosError } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
+import { isEmail } from "validator";
 import { getSpeakersInfo } from "../../services/events";
 
 export default async function handler(
@@ -10,20 +11,24 @@ export default async function handler(
     const idsParam = req.query.ids;
     const emailsParam = req.query.emails;
 
-    console.log(idsParam);
-
+    // We know that ids are numbers of type string, e.g. "123", so we can validate query ids like this
     const ids: number[] =
       typeof idsParam === "string"
         ? [parseInt(idsParam)]
         : idsParam.map((id) => parseInt(id));
 
-    if (ids.some((id) => isNaN(id))) {
+    if (ids?.some((id) => isNaN(id))) {
       res.status(400).json({ message: "Invalid speaker id" });
       return;
     }
 
     const emails =
       typeof emailsParam === "string" ? [emailsParam] : emailsParam;
+
+    if (emails?.some((email) => !isEmail(email))) {
+      res.status(400).json({ message: "Invalid email provided" });
+      return;
+    }
 
     try {
       const speakersInfo = await getSpeakersInfo(ids, emails);
@@ -32,6 +37,7 @@ export default async function handler(
       if (err instanceof AxiosError) {
         console.error(err.response.data);
       }
+      console.error(err);
       res.status(500).json({ message: err.message });
     }
   } else {
