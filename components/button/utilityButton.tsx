@@ -18,7 +18,10 @@ export const UtilityButton = ({
   const baseComponent = (
     <Button
       ripple
-      className={classNames("mx-auto mt-8 max-w-full px-10 py-3", className)}
+      className={classNames(
+        "mx-auto mt-8 h-auto max-w-full px-10 py-3",
+        className
+      )}
       onClick={onClick}
       data-aos="fade-up"
     >
