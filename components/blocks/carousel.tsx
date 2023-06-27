@@ -1,6 +1,7 @@
-import * as React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import * as React from "react";
+import { tinaField } from "tinacms/dist/react";
 
 import type { Template } from "tinacms";
 
@@ -32,7 +33,11 @@ export const Carousel = ({ data }) => {
       className={`${data.showOnMobileDevices ? "flex" : "hidden md:flex"}`}
       color={data.backgroundColor}
     >
-      <Container size="custom" className="w-full">
+      <Container
+        size="custom"
+        className="w-full"
+        data-tina-field={tinaField(data, carouselBlock.delay)}
+      >
         <CarouselImplementation
           autoPlay={true}
           infiniteLoop={true}
@@ -48,16 +53,26 @@ export const Carousel = ({ data }) => {
           }}
           renderIndicator={createCarouselIndicator}
         >
-          {data.items && data.items.map(createCarouselItemImage)}
+          {data.items &&
+            data.items.map((props, index: React.Key) =>
+              createCarouselItemImage(props, index, data)
+            )}
         </CarouselImplementation>
       </Container>
     </Section>
   );
 };
 
-const createCarouselItemImage = ({ imgSrc, label }, index: React.Key) => {
+const createCarouselItemImage = (props, index: React.Key, carouselSchema) => {
+  const { imgSrc, label } = props;
   return (
-    <div key={index}>
+    <div
+      key={index}
+      data-tina-field={tinaField(
+        carouselSchema,
+        carouselBlock.items.value + `[${index}]`
+      )}
+    >
       <Image
         src={imgSrc ?? ""}
         alt={label}
@@ -96,6 +111,16 @@ const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
   );
 };
 
+export const carouselBlock = {
+  items: {
+    value: "items",
+    label: "label",
+    link: "link",
+    imgSrc: "imgSrc",
+  },
+  delay: "delay",
+};
+
 export const carouselBlockSchema: Template = {
   name: "Carousel",
   label: "Carousel",
@@ -105,7 +130,7 @@ export const carouselBlockSchema: Template = {
   fields: [
     {
       label: "Items",
-      name: "items",
+      name: carouselBlock.items.value,
       type: "object",
       list: true,
       ui: {
@@ -120,12 +145,12 @@ export const carouselBlockSchema: Template = {
         {
           type: "string",
           label: "Label",
-          name: "label",
+          name: carouselBlock.items.label,
         },
         {
           type: "string",
           label: "URL",
-          name: "link",
+          name: carouselBlock.items.link,
         },
         {
           type: "string",
@@ -140,7 +165,7 @@ export const carouselBlockSchema: Template = {
         {
           type: "image",
           label: "Image",
-          name: "imgSrc",
+          name: carouselBlock.items.imgSrc,
         },
       ],
     },
@@ -158,7 +183,7 @@ export const carouselBlockSchema: Template = {
     {
       type: "number",
       label: "Delay (Seconds)",
-      name: "delay",
+      name: carouselBlock.delay,
       required: true,
     },
     {

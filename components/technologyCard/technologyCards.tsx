@@ -1,6 +1,6 @@
+import { tinaField } from "tinacms/dist/react";
 import TechnologyCard from "./technologyCard";
 import { TechnologyCardsProps } from "./technologyCardTypes";
-import { tinaField } from "tinacms/dist/react";
 
 const TechnologyCards = (props) => {
   const { header, subheading, technologyCards }: TechnologyCardsProps = props;
@@ -22,6 +22,7 @@ const TechnologyCards = (props) => {
             <div
               className={_className}
               data-tina-field={tinaField(props, `technologyCards[${index}]`)}
+              key={index}
             >
               <TechnologyCard key={technologyCard?.name} {...technologyCard} />
             </div>
