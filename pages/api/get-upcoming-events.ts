@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { getEvents, getToken } from "../../services/events";
+import { getEvents } from "../../services/events";
 
 export default async function handler(
   req: NextApiRequest,
@@ -24,8 +24,6 @@ export default async function handler(
     } catch (error) {
       res.status(500).json({ message: error.message });
     }
-  } else if (req.method === "POST") {
-    res.status(200).send(await getToken());
   } else {
     res.status(405).json({ message: "Unsupported method" });
   }
