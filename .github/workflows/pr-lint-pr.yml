@@ -25,9 +25,11 @@ jobs:
             content:
               - 'content/**'
               - 'public/**'
+              - '.github/**'
             other:
               - '!content/**'
               - '!public/**'
+              - '!.github/**'
 
       - name: For Testing
         run: echo ${{steps.changes.outputs.content}} - ${{steps.changes.outputs.other}}
