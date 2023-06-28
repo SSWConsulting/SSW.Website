@@ -25,13 +25,12 @@ jobs:
             content:
               - 'content/**'
               - 'public/**'
-              - '.github/**'
 
       - name: For Testing
         run: echo ${{steps.changes.outputs.content}}
 
       - uses: nearform-actions/github-action-check-linked-issues@v1.4.16
-        if: ${{ github.event.pull_request.head.ref != 'content/' && github.event.pull_request.head.ref != 'pr-link-issue' && github.event.pull_request.head.ref != '.github/' }}
+        if: ${{ steps.changes.outputs.content == 'true'}}
         id: check-linked-issues
         with:
           exclude-branches: "dependabot/**"
