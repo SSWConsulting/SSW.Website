@@ -25,9 +25,11 @@ const structuredData = {
   url: layoutData.header.url,
 };
 
-const DynamicLiveStream = dynamic(
+const DynamicLiveStreamWidget = dynamic(
   () => {
-    return import("../liveStream/liveStream").then((mod) => mod.LiveStream);
+    return import("../liveStream/liveStreamWidget").then(
+      (mod) => mod.LiveStreamWidget
+    );
   },
   {
     loading: () => <></>,
@@ -82,7 +84,7 @@ export const Layout = ({ children, className = "" }) => {
             <div className="mx-auto max-w-9xl px-6 sm:px-8">
               <Header />
               <MenuBar />
-              <DynamicLiveStream {...liveStreamProps} />
+              <DynamicLiveStreamWidget {...liveStreamProps} />
             </div>
           </header>
           <main className="grow bg-white">{children}</main>

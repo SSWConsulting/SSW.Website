@@ -13,7 +13,7 @@ import ReactPlayer from "../reactPlayer/reactPlayer";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
 import { LiveStreamProps } from "./useLiveStreamProps";
 
-export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
+export const LiveStreamWidget: FC<LiveStreamProps> = ({ isLive, event }) => {
   const eventDescriptionCollapseId = "eventDescription";
 
   const [speakersInfo, setSpeakersInfo] = useState<SpeakerInfo[]>([]);
@@ -262,14 +262,6 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
               >
                 Take the Survey
               </a>
-              <div className="pt-3">
-                <Image
-                  src="/images/icons/external.gif"
-                  alt="Link to external site"
-                  width="15"
-                  height="11"
-                />
-              </div>
             </div>
           </div>
         </div>
