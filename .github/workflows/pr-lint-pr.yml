@@ -33,9 +33,9 @@ jobs:
           $HasDiff = $SourceDiff.Length -gt 0
 
           # Set the output named "docs_changed"
-          Write-Host "docs_changed=$HasDiff" >> GITHUB_OUTPUT
-          Write-Host "docs=$diff" >> GITHUB_OUTPUT
-          Write-Host "docs_s=$SourceDiff" >> GITHUB_OUTPUT
+          echo "docs_changed=$HasDiff" >> $env:GITHUB_OUTPUT
+          echo "docs=$diff" >> $env:GITHUB_OUTPUT
+          echo "docs_s=$SourceDiff" >> $env:GITHUB_OUTPUT
 
       - name: For Testing
         run: echo ${{steps.check_file_changed.outputs.docs_changed}} - ${{steps.check_file_changed.outputs.docs}} - ${{steps.check_file_changed.outputs.docs_s}}
