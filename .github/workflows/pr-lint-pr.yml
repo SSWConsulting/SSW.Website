@@ -29,7 +29,6 @@ jobs:
             other_changes:
               - '!content/**'
               - '!public/**'
-              - '!.github/**'
 
       - name: For Testing
         run: echo ${{steps.changes.outputs.content_changes}} - ${{steps.changes.outputs.other_changes}}
