@@ -26,8 +26,6 @@ jobs:
               - 'content/**'
               - 'public/**'
             other_changes:
-              - '!content/**'
-              - '!public/**'
               - '!.github/**'
 
       - name: For Testing
