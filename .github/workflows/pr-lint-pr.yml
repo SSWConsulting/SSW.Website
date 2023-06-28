@@ -22,20 +22,20 @@ jobs:
         uses: dorny/paths-filter@v2
         with:
           filters: |
-            content:
+            content_changes:
               - 'content/**'
               - 'public/**'
               - '.github/**'
-            other:
+            other_changes:
               - '!content/**'
               - '!public/**'
               - '!.github/**'
 
       - name: For Testing
-        run: echo ${{steps.changes.outputs.content}} - ${{steps.changes.outputs.other}}
+        run: echo ${{steps.changes.outputs.content_changes}} - ${{steps.changes.outputs.other_changes}}
 
       - uses: nearform-actions/github-action-check-linked-issues@v1.4.16
-        if: ${{ steps.changes.outputs.content == 'true'}}
+        if: ${{steps.changes.outputs.other_changes == 'true'}}
         id: check-linked-issues
         with:
           exclude-branches: "dependabot/**"
