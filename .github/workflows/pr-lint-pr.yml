@@ -28,16 +28,13 @@ jobs:
         id: check_file_changed
         run: |
           # Diff HEAD with the previous commit
-          $diff = (git diff --name-only HEAD^ HEAD)
-
+          $diff = git diff --name-only HEAD^ HEAD
           # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
-          $SourceDiff = $diff | Where-Object { $_ -notmatch '^content/' -and $_ -notmatch '^public/' -and $_ -notmatch '^.github/' }
+          $SourceDiff = $diff | Where-Object { $_ -notmatch '^content/' -or $_ -notmatch '^public/' or $_ -notmatch '^.github/' }
           $HasDiff = $SourceDiff.Length -gt 0
-
           # Set the output named "docs_changed"
-          echo "docs_changed=$HasDiff" >> $env:GITHUB_OUTPUT
-          echo "docs=$diff" >> $env:GITHUB_OUTPUT
-          echo "docs_s=$SourceDiff" >> $env:GITHUB_OUTPUT
+          Write-Host "::set-output name=docs_changed::$HasDiff"
+          Write-Host "::set-output name=docs::$diff"
 
       - name: For Testing
         run: echo ${{steps.check_file_changed.outputs.docs_changed}} - ${{steps.check_file_changed.outputs.docs}} - ${{steps.check_file_changed.outputs.docs_s}}
