@@ -35,9 +35,10 @@ jobs:
           # Set the output named "docs_changed"
           Write-Host "::set-output name=docs_changed::$HasDiff"
           Write-Host "::set-output name=docs::$diff"
+          Write-Host "::set-output name=docs_s::$SourceDiff"
 
       - name: For Testing
-        run: echo ${{steps.check_file_changed.outputs.docs_changed}} - ${{steps.check_file_changed.outputs.docs}}
+        run: echo ${{steps.check_file_changed.outputs.docs_changed}} - ${{steps.check_file_changed.outputs.docs}} - - ${{steps.check_file_changed.outputs.docs_s}}
 
       - uses: nearform-actions/github-action-check-linked-issues@v1.4.16
         if: ${{steps.changes.outputs.other_changes == 'true'}}
