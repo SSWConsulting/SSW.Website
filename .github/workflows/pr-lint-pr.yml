@@ -17,21 +17,27 @@ jobs:
     runs-on: ubuntu-latest
     name: Check linked issues
     steps:
-      - name: Check paths
-        id: changes
-        uses: dorny/paths-filter@v2
+      - uses: actions/checkout@v2
         with:
-          filters: |
-            content_changes:
-              - 'content/**'
-              - 'public/**'
-            other_changes:
-              - '!content/**'
-            other_changes2:
-              - '!public/**'
+          # Checkout as many commits as needed for the diff
+          fetch-depth: 2
+      - shell: pwsh
+        # Give an id to the step, so we can reference it later
+        id: check_file_changed
+        run: |
+          # Diff HEAD with the previous commit
+          $diff = git diff --name-only HEAD^ HEAD
+
+          # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
+          $SourceDiff = $diff | Where-Object { $_ -notmatch '^content/' -or $_ -notmatch '^public/' or $_ -notmatch '^.github/' }
+          $HasDiff = $SourceDiff.Length -gt 0
+
+          # Set the output named "docs_changed"
+          Write-Host "::set-output name=docs_changed::$HasDiff"
+          Write-Host "::set-output name=docs::$diff"
 
       - name: For Testing
-        run: echo ${{steps.changes.outputs.content_changes}} - ${{steps.changes.outputs.other_changes}} - ${{steps.changes.outputs.other_changes2}}
+        run: echo ${{steps.check_file_changed.outputs.docs_changed}} - ${{steps.check_file_changed.outputs.docs}}
 
       - uses: nearform-actions/github-action-check-linked-issues@v1.4.16
         if: ${{steps.changes.outputs.other_changes == 'true'}}
