@@ -259,20 +259,20 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
                 href="https://www.ssw.com.au/ssw/NETUG/EvaluationSurvey.aspx"
                 target="_blank"
                 className="mr-2 flex h-11 w-full items-center justify-center rounded-md bg-sswRed text-white !no-underline hover:!text-gray-125 md:w-72"
+                data-tooltip-id="external"
+                data-tooltip-content="You are now leaving SSW"
+                data-tooltip-place="bottom"
               >
                 Take the Survey
               </a>
+              <Tooltip id="external" className="z-tooltip" />
               <div className="pt-3">
                 <Image
                   src="/images/icons/external.gif"
-                  alt="You are now leaving SSW"
+                  alt="Link to external site"
                   width="15"
                   height="11"
-                  data-tooltip-id="external"
-                  data-tooltip-content="You are now leaving SSW"
-                  data-tooltip-place="bottom"
                 />
-                <Tooltip id="external" className="z-tooltip" />
               </div>
             </div>
           </div>
@@ -293,7 +293,8 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
                   }
                 )}
                 dangerouslySetInnerHTML={{
-                  __html: event.EventDescription || event.EventShortDescription,
+                  __html:
+                    event?.EventDescription || event?.EventShortDescription,
                 }}
               ></div>
               {eventDescriptionCollapsable && (
