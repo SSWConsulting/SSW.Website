@@ -27,6 +27,16 @@ export const getToken = async () => {
 };
 
 export const getEvents = async (odataFilter: string): Promise<EventInfo[]> => {
+  if (
+    process.env.NODE_ENV === "development" &&
+    !process.env.MICROSOFT_OAUTH_TENANT_ID
+  ) {
+    console.warn(
+      "⚠️ You are missing the SharePoint environment variables. Please see the .env.example file for the required variables."
+    );
+    return [];
+  }
+
   const token = await getToken();
 
   const eventsRes = await axios.get<{ value: { fields: EventInfo }[] }>(
@@ -47,6 +57,16 @@ export const getEvents = async (odataFilter: string): Promise<EventInfo[]> => {
 
 export const getSpeakersInfo = async (ids?: number[], emails?: string[]) => {
   const speakers: SpeakerInfo[] = [];
+
+  if (
+    process.env.NODE_ENV === "development" &&
+    !process.env.MICROSOFT_OAUTH_TENANT_ID
+  ) {
+    console.warn(
+      "⚠️ You are missing the SharePoint environment variables required for speakers. Please see the .env.example file for the required variables."
+    );
+    return [];
+  }
 
   if (ids?.length) {
     const token = await getToken();
