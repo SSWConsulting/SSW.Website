@@ -78,16 +78,10 @@ export const Layout = ({ children, className = "" }) => {
           )}
         >
           <header className="no-print">
-            {/* <Suspense fallback={<></>}>
-              <LiveStreamBanner {...liveStreamProps} />
-            </Suspense> */}
             <DynamicLiveStreamBanner {...liveStreamProps} />
             <div className="mx-auto max-w-9xl px-6 sm:px-8">
               <Header />
               <MenuBar />
-              {/* <Suspense fallback={<></>}>
-                <LiveStream {...liveStreamProps} />
-              </Suspense> */}
               <DynamicLiveStream {...liveStreamProps} />
             </div>
           </header>
