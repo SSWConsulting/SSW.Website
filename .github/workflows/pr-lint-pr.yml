@@ -25,9 +25,12 @@ jobs:
             content:
               - 'content/**'
               - 'public/**'
+            other:
+              - '!content/**'
+              - '!public/**'
 
       - name: For Testing
-        run: echo ${{steps.changes.outputs.content}}
+        run: echo ${{steps.changes.outputs.content}} - ${{steps.changes.outputs.other}}
 
       - uses: nearform-actions/github-action-check-linked-issues@v1.4.16
         if: ${{ steps.changes.outputs.content == 'true'}}
