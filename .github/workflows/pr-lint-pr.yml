@@ -41,7 +41,7 @@ jobs:
         run: echo ${{steps.check_file_changed.outputs.docs_changed}} - ${{steps.check_file_changed.outputs.docs}} - ${{steps.check_file_changed.outputs.docs_s}}
 
       - uses: nearform-actions/github-action-check-linked-issues@v1.4.16
-        if: ${{steps.changes.outputs.other_changes == 'true'}}
+        if: ${{steps.check_file_changed.outputs.docs_changed == 'True' }}
         id: check-linked-issues
         with:
           exclude-branches: "dependabot/**"
