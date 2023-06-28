@@ -26,10 +26,12 @@ jobs:
               - 'content/**'
               - 'public/**'
             other_changes:
-              - '!.github/**'
+              - '!content/**'
+            other_changes2:
+              - '!public/**'
 
       - name: For Testing
-        run: echo ${{steps.changes.outputs.content_changes}} - ${{steps.changes.outputs.other_changes}}
+        run: echo ${{steps.changes.outputs.content_changes}} - ${{steps.changes.outputs.other_changes}} - ${{steps.changes.outputs.other_changes2}}
 
       - uses: nearform-actions/github-action-check-linked-issues@v1.4.16
         if: ${{steps.changes.outputs.other_changes == 'true'}}
