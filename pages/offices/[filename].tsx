@@ -4,6 +4,7 @@ import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../.tina/__generated__/client";
 
+import { InferGetStaticPropsType } from "next";
 import { BuiltOnAzure } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
@@ -14,8 +15,7 @@ import TestimonialPanel from "../../components/offices/testimonialPanel";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import { InferGetStaticPropsType } from "next";
-import { removeExtension } from "../../services/utils.service";
+import { removeExtension } from "../../services/client/utils.service";
 
 export default function OfficePage(
   props: InferGetStaticPropsType<typeof getStaticProps>

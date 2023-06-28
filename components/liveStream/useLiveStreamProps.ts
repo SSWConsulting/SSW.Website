@@ -1,83 +1,73 @@
 import axios from "axios";
 import dayjs from "dayjs";
-import { useEffect, useRef, useState } from "react";
-import { LiveStreamBannerInfo } from "../../services";
+import { useEffect, useState } from "react";
+import { EventInfo } from "../../services/server/events";
 
 export type LiveStreamProps = {
   countdownMins: number;
   liveStreamDelayMinutes: number;
   isLive: boolean;
-  event?: LiveStreamBannerInfo;
+  event?: EventInfo;
 };
 
-export function useLiveStreamProps(intervalMinutes?: number): LiveStreamProps {
-  !intervalMinutes && (intervalMinutes = 1);
+const INTERVAL_MINUTES = 1;
 
+export function useLiveStreamProps(): LiveStreamProps {
   const [countdownMins, setCountdownMins] = useState<number>();
-  const [event, setEvent] = useState<LiveStreamBannerInfo>();
+  const [event, setEvent] = useState<EventInfo>();
   const [isLive, setIsLive] = useState(false);
   const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
 
-  const timer = useRef<NodeJS.Timer>();
-  const shouldCountdown = useRef<boolean>();
-
   useEffect(() => {
     const fetchEvent = async () => {
-      const rightnow = dayjs().utc();
+      const res = await axios.get<EventInfo[]>("/api/get-livestream-banner");
 
-      if (
-        (!event && countdownMins === undefined) ||
-        (!!event && rightnow.isAfter(event.EndDateTime))
-      ) {
-        const res = await axios.get<LiveStreamBannerInfo[]>(
-          "/api/get-livestream-banner",
-          {
-            params: { datetime: rightnow.toISOString() },
-          }
-        );
+      if (res?.status !== 200 || !res?.data?.length) {
+        setIsLive(false);
+        setEvent(undefined);
 
-        if (res?.status !== 200 || !res.data.length) {
-          setIsLive(false);
-          setEvent(undefined);
-          shouldCountdown.current = false;
-
-          return;
-        }
-
-        const latestEvent = res.data[0];
-        setEvent(latestEvent);
-
-        const liveDelay = latestEvent.SSW_LiveStreamDelayMinutes ?? 0;
-        !liveStreamDelayMinutes &&
-          latestEvent.SSW_DelayedLiveStreamStart &&
-          setLiveStreamDelayMinutes(liveDelay);
-        const start = dayjs(latestEvent.StartDateTime).add(liveDelay, "minute");
-        setCountdownMins(start.diff(rightnow, "minute"));
-
-        shouldCountdown.current = true;
+        return;
       }
 
-      setIsLive(
-        countdownMins <= 0 && !!event && rightnow.isBefore(event.EndDateTime)
-      );
+      setEvent(res.data[0]);
     };
 
     fetchEvent();
-  }, [countdownMins]);
+  }, []);
 
   useEffect(() => {
-    if (!timer.current) {
-      timer.current = setInterval(() => {
-        setCountdownMins((countdownMins) =>
-          shouldCountdown.current
-            ? countdownMins - intervalMinutes
-            : countdownMins
-        );
-      }, intervalMinutes * 60 * 1000 || 60000);
+    if (!event?.StartDateTime || !event?.EndDateTime) {
+      return;
     }
 
-    return () => clearInterval(timer.current);
-  }, [intervalMinutes]);
+    const rightnow = dayjs().utc();
+
+    const liveDelay = event.SSW_LiveStreamDelayMinutes ?? 0;
+    if (!liveStreamDelayMinutes && event.SSW_DelayedLiveStreamStart) {
+      setLiveStreamDelayMinutes(liveDelay);
+    }
+
+    const start = dayjs(event.StartDateTime).add(liveDelay, "minute");
+    const minsToStart = start.diff(rightnow, "minute");
+    setCountdownMins(minsToStart);
+
+    const timer = setInterval(() => {
+      setCountdownMins((countdownMins) => {
+        if (!countdownMins) return minsToStart;
+        return countdownMins - INTERVAL_MINUTES;
+      });
+    }, INTERVAL_MINUTES * 60 * 1000);
+
+    return () => clearInterval(timer);
+  }, [event]);
+
+  useEffect(() => {
+    const rightnow = dayjs().utc();
+
+    setIsLive(
+      countdownMins <= 0 && !!event && rightnow.isBefore(event?.EndDateTime)
+    );
+  }, [countdownMins, event]);
 
   return {
     countdownMins,

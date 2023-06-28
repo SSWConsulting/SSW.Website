@@ -1,22 +1,59 @@
+import * as appInsights from "applicationinsights";
+import { AxiosError } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
-import { getUpcomingEvents } from "../../services";
+import { getEvents } from "../../services/server/events";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   if (req.method === "GET") {
-    const datetimeParam = req.query["datetime"];
-    const topCountParam = +req.query["top"];
+    const datetimeParam = req.query.datetime;
+    const topCountParam = req.query.top;
     if (typeof datetimeParam !== "string" || !topCountParam) {
-      res.status(401).json({ message: "Unsupported query param" });
+      res.status(400).json({ message: "Unsupported query param" });
+      return;
     }
 
-    const upcomingEventsRes = await getUpcomingEvents(
-      <string>datetimeParam,
-      topCountParam
-    );
-    res.status(upcomingEventsRes.status).json(upcomingEventsRes.data);
+    const topCount = parseInt(topCountParam as string);
+    if (isNaN(topCount)) {
+      res.status(400).json({ message: "Invalid top count" });
+      return;
+    }
+
+    if (new Date(datetimeParam as string) instanceof Date === false) {
+      res.status(400).json({ message: "Invalid datetime" });
+      return;
+    }
+
+    const odataFilter = `$filter=fields/Enabled ne false \
+      and fields/EndDateTime gt '${datetimeParam as string}'\
+      &$orderby=fields/StartDateTime asc\
+      &$top=${topCount}`;
+
+    try {
+      const events = await getEvents(odataFilter);
+      res.status(200).json(events);
+    } catch (err) {
+      const properties = {
+        Request: "GET /api/get-upcoming-events",
+        Status: 500,
+        FailedSharePointRequest: false,
+      };
+
+      if (err instanceof AxiosError) {
+        console.error(err.response.data);
+        properties.Status = err.response.status;
+        properties.FailedSharePointRequest = true;
+      }
+
+      appInsights.defaultClient.trackException({
+        exception: err,
+        properties,
+        severity: appInsights.Contracts.SeverityLevel.Error,
+      });
+      res.status(500).json({ message: err.message });
+    }
   } else {
     res.status(405).json({ message: "Unsupported method" });
   }
