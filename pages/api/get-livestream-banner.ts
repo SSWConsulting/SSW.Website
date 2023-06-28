@@ -9,19 +9,10 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "GET") {
-    const datetimeParam = req.query.datetime;
-    if (typeof datetimeParam !== "string") {
-      res.status(400).json({ message: "Unsupported query param" });
-      return;
-    }
-
-    if (new Date(datetimeParam as string) instanceof Date === false) {
-      res.status(400).json({ message: "Invalid datetime" });
-      return;
-    }
+    const isoTime = new Date().toISOString();
 
     const odataFilter = `$filter=fields/Enabled ne false \
-    and fields/EndDateTime ge '${datetimeParam as string}'\
+    and fields/EndDateTime ge '${isoTime}'\
     and fields/CalendarType eq 'User Groups'\
     &$orderby=fields/StartDateTime asc\
     &$top=1`;

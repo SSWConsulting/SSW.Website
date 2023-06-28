@@ -19,12 +19,8 @@ export function useLiveStreamProps(): LiveStreamProps {
   const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
 
   useEffect(() => {
-    const rightnow = dayjs().utc();
-
     const fetchEvent = async () => {
-      const res = await axios.get<EventInfo[]>("/api/get-livestream-banner", {
-        params: { datetime: rightnow.toISOString() },
-      });
+      const res = await axios.get<EventInfo[]>("/api/get-livestream-banner");
 
       if (res?.status !== 200 || !res?.data?.length) {
         setIsLive(false);
@@ -34,10 +30,6 @@ export function useLiveStreamProps(): LiveStreamProps {
       }
 
       setEvent(res.data[0]);
-
-      setIsLive(
-        countdownMins <= 0 && !!event && rightnow.isBefore(event?.EndDateTime)
-      );
     };
 
     fetchEvent();
@@ -68,6 +60,14 @@ export function useLiveStreamProps(): LiveStreamProps {
 
     return () => clearInterval(timer);
   }, [event]);
+
+  useEffect(() => {
+    const rightnow = dayjs().utc();
+
+    setIsLive(
+      countdownMins <= 0 && !!event && rightnow.isBefore(event?.EndDateTime)
+    );
+  }, [countdownMins, event]);
 
   return {
     countdownMins,
