@@ -7,7 +7,7 @@ import { FC, useEffect, useState } from "react";
 import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
 import layoutData from "../../content/global/index.json";
-import { SpeakerInfo } from "../../services/events";
+import { SpeakerInfo } from "../../services/server/events";
 import { SubNewsLetters } from "../blocks/subNewsLetters";
 import ReactPlayer from "../reactPlayer/reactPlayer";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";

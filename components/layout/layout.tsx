@@ -1,17 +1,17 @@
-import { Suspense } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { classNames } from "tinacms";
-import { Header } from "./header";
-import { Footer } from "./footer";
-import { Theme } from "./theme";
+import { Suspense } from "react";
 import { MenuBar } from "ssw.megamenu";
+import { classNames } from "tinacms";
 import { LiveStream } from "../liveStream/liveStream";
 import { LiveStreamBanner } from "../liveStream/liveStreamBanner";
 import { useLiveStreamProps } from "../liveStream/useLiveStreamProps";
+import { Footer } from "./footer";
+import { Header } from "./header";
+import { Theme } from "./theme";
 
-import layoutData from "../../content/global/index.json";
 import { Open_Sans } from "next/font/google";
+import layoutData from "../../content/global/index.json";
 
 export const openSans = Open_Sans({
   variable: "--open-sans-font",
@@ -26,6 +26,15 @@ const structuredData = {
   description: layoutData.header.description,
   url: layoutData.header.url,
 };
+
+// const DynamicLiveStream = dynamic(
+//   () => {
+//     return import("../liveStream/liveStream").then((mod) => mod.LiveStream);
+//   },
+//   {
+//     loading: () => <></>,
+//   }
+// );
 
 export const Layout = ({ children, className = "" }) => {
   const liveStreamProps = useLiveStreamProps();
@@ -67,6 +76,7 @@ export const Layout = ({ children, className = "" }) => {
               <Suspense fallback={<></>}>
                 <LiveStream {...liveStreamProps} />
               </Suspense>
+              {/* <DynamicLiveStream {...liveStreamProps} /> */}
             </div>
           </header>
           <main className="grow bg-white">{children}</main>

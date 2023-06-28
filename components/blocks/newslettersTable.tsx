@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import { Template } from "tinacms";
 import client from "../../.tina/__generated__/client";
-import { transformIntToMonth } from "../../services/date.service";
+import { transformIntToMonth } from "../../services/client/date.service";
 
 /**
  * Render a table of newsletters.

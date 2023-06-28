@@ -22,7 +22,7 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
-import { removeExtension } from "../../services/utils.service";
+import { removeExtension } from "../../services/client/utils.service";
 
 export default function ConsultingPage(
   props: InferGetStaticPropsType<typeof getStaticProps>

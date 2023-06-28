@@ -1,12 +1,12 @@
 import * as appInsight from "applicationinsights";
 import { NextApiRequest, NextApiResponse } from "next";
-import { AddContactToNewslettersData } from "../../services/events";
+import { AddContactToNewslettersData } from "../../services/server/events";
 
 import { PowerAutomate_Endpoint } from "../../services/model";
-import { PA_FLOW } from "../../services/power-automate-flow";
+import { PA_FLOW } from "../../services/server/power-automate-flow";
 
 import axios from "axios";
-import { CustomError } from "../../services/customError";
+import { CustomError } from "../../services/server/customError";
 
 export const addContactToNewsletters = async (
   data: AddContactToNewslettersData

@@ -1,16 +1,16 @@
 import { useTina } from "tinacms/dist/react";
 
 import { client } from "../../.tina/__generated__/client";
-import { Layout } from "../../components/layout";
-import { SEO } from "../../components/util/seo";
-import { Section } from "../../components/util/section";
 import { ClientLogos } from "../../components/blocks";
-import { Container } from "../../components/util/container";
-import VideoCards, { VideoCardProps } from "../../components/util/videoCards";
-import { TrainingCarousel } from "../../components/training/trainingHeader";
 import { Blocks } from "../../components/blocks-renderer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
-import { removeExtension } from "../../services/utils.service";
+import { Layout } from "../../components/layout";
+import { TrainingCarousel } from "../../components/training/trainingHeader";
+import { Container } from "../../components/util/container";
+import { Section } from "../../components/util/section";
+import { SEO } from "../../components/util/seo";
+import VideoCards, { VideoCardProps } from "../../components/util/videoCards";
+import { removeExtension } from "../../services/client/utils.service";
 
 export default function TrainingPage(
   props: AsyncReturnType<typeof getStaticProps>["props"]

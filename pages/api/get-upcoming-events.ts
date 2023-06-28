@@ -1,7 +1,7 @@
 import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
-import { getEvents } from "../../services/events";
+import { getEvents } from "../../services/server/events";
 
 export default async function handler(
   req: NextApiRequest,

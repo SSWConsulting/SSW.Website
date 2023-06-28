@@ -1,3 +1,4 @@
+import { InferGetStaticPropsType } from "next";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../.tina/__generated__/client";
@@ -9,8 +10,7 @@ import { Layout } from "../components/layout";
 import { Container } from "../components/util/container";
 import { Section } from "../components/util/section";
 import { SEO } from "../components/util/seo";
-import { InferGetStaticPropsType } from "next";
-import { removeExtension } from "../services/utils.service";
+import { removeExtension } from "../services/client/utils.service";
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
