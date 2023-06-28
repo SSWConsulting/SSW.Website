@@ -25,7 +25,6 @@ jobs:
             content_changes:
               - 'content/**'
               - 'public/**'
-              - '.github/**'
             other_changes:
               - '!content/**'
               - '!public/**'
