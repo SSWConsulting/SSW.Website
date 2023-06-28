@@ -53,9 +53,9 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
       }
 
       setYoutubeUrls({
-        videoUrl: `https://www.youtube.com/embed/${event.YouTubeId}?rel=0&autoplay=1`,
-        chatUrl: `https://www.youtube.com/live_chat?v=${event.YouTubeId}&embed_domain=${window.location.hostname}`,
-        liveStreamUrl: `https://www.youtube.com/watch?v=${event.YouTubeId}`,
+        videoUrl: `https://www.youtube.com/embed/${event?.YouTubeId}?rel=0&autoplay=1`,
+        chatUrl: `https://www.youtube.com/live_chat?v=${event?.YouTubeId}&embed_domain=${window.location.hostname}`,
+        liveStreamUrl: `https://www.youtube.com/watch?v=${event?.YouTubeId}`,
       });
 
       const ids: string[] = [];
