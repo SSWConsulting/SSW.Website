@@ -22,6 +22,9 @@ jobs:
       #         fetch-depth: 2
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          # Checkout as many commits as needed for the diff
+          fetch-depth: 2
 
       - shell: pwsh
         # Give an id to the step, so we can reference it later
@@ -29,12 +32,15 @@ jobs:
         run: |
           # Diff HEAD with the previous commit
           $diff = git diff --name-only HEAD^ HEAD
+
           # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
           $SourceDiff = $diff | Where-Object { $_ -notmatch '^content/' -and $_ -notmatch '^public/' -and $_ -notmatch '^.github/' }
           $HasDiff = $SourceDiff.Length -gt 0
+
           # Set the output named "docs_changed"
           Write-Host "::set-output name=docs_changed::$HasDiff"
           Write-Host "::set-output name=docs::$diff"
+          Write-Host "::set-output name=docs_s::$SourceDiff"
 
       - name: For Testing
         run: echo ${{steps.check_file_changed.outputs.docs_changed}} - ${{steps.check_file_changed.outputs.docs}} - ${{steps.check_file_changed.outputs.docs_s}}
