@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { BookingForm } from "../bookingForm/bookingForm";
-import Popup from "../popup/popup";
-import layoutData from "../../content/global/index.json";
 import classNames from "classnames";
-import { Template } from "tinacms";
-import { UtilityButton } from "../button/utilityButton";
+import { useState } from "react";
 import { toast } from "react-toastify";
+import { Template } from "tinacms";
+import layoutData from "../../content/global/index.json";
+import { BookingForm } from "../bookingForm/bookingForm";
+import { UtilityButton } from "../button/utilityButton";
+import Popup from "../popup/popup";
 import SuccessToast from "../successToast/successToast";
 
 export interface BookingButtonProps {
@@ -40,7 +40,7 @@ export const BookingButton = ({
       )}
     >
       <UtilityButton
-        className={classNames(buttonClass, "mt-14 w-96")}
+        className={classNames(buttonClass, "mt-14")}
         onClick={showBookingForm}
         buttonText={buttonText}
       />
