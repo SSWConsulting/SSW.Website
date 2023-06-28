@@ -3,9 +3,6 @@ name: PR - Lint PR
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-    paths-ignore:
-      - "content/**"
-      - "public/**"
 
 concurrency:
   group: ci-${{ github.event.number }}
@@ -21,6 +18,7 @@ jobs:
     name: Check linked issues
     steps:
       - uses: nearform-actions/github-action-check-linked-issues@v1.4.16
+        if: ${{ github.event.pull_request.head.ref != 'content/' && github.event.pull_request.head.ref != 'public/' }}
         id: check-linked-issues
         with:
           exclude-branches: "dependabot/**"
