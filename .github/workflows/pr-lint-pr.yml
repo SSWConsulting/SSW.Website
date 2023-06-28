@@ -18,9 +18,9 @@ jobs:
     name: Check linked issues
     steps:
       - uses: actions/checkout@v2
-        with:
-          # Checkout as many commits as needed for the diff
-          fetch-depth: 2
+      #        with:
+      # Checkout as many commits as needed for the diff
+      #         fetch-depth: 2
       - shell: pwsh
         # Give an id to the step, so we can reference it later
         id: check_file_changed
