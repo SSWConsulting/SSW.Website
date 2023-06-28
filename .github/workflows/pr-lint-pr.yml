@@ -23,9 +23,9 @@ jobs:
         with:
           filters: |
             content:
-              - '!content/**'
-              - '!public/**'
-              - '!.github/**'
+              - 'content/**'
+              - 'public/**'
+              - '.github/**'
 
       - name: For Testing
         run: echo ${{steps.changes.outputs.content}}
