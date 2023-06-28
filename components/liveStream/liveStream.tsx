@@ -61,7 +61,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
       const ids: string[] = [];
       const emails: string[] = [];
 
-      if (event.ExternalPresenters.length) {
+      if (event.ExternalPresenters?.length) {
         const presenterIds = event.ExternalPresenters.map((presenter) =>
           presenter.LookupId.toString()
         );
@@ -100,7 +100,7 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
     fetchLiveStreamInfo();
   }, [isLive, event]);
 
-  if (!event) {
+  if ((!isLive && !router.query.liveStream) || !event) {
     return <></>;
   }
 

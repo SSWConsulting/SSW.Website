@@ -1,15 +1,13 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { Suspense } from "react";
 import { MenuBar } from "ssw.megamenu";
 import { classNames } from "tinacms";
-import { LiveStream } from "../liveStream/liveStream";
-import { LiveStreamBanner } from "../liveStream/liveStreamBanner";
 import { useLiveStreamProps } from "../liveStream/useLiveStreamProps";
 import { Footer } from "./footer";
 import { Header } from "./header";
 import { Theme } from "./theme";
 
+import dynamic from "next/dynamic";
 import { Open_Sans } from "next/font/google";
 import layoutData from "../../content/global/index.json";
 
@@ -27,14 +25,27 @@ const structuredData = {
   url: layoutData.header.url,
 };
 
-// const DynamicLiveStream = dynamic(
-//   () => {
-//     return import("../liveStream/liveStream").then((mod) => mod.LiveStream);
-//   },
-//   {
-//     loading: () => <></>,
-//   }
-// );
+const DynamicLiveStream = dynamic(
+  () => {
+    return import("../liveStream/liveStream").then((mod) => mod.LiveStream);
+  },
+  {
+    loading: () => <></>,
+    ssr: false,
+  }
+);
+
+const DynamicLiveStreamBanner = dynamic(
+  () => {
+    return import("../liveStream/liveStreamBanner").then(
+      (mod) => mod.LiveStreamBanner
+    );
+  },
+  {
+    loading: () => <></>,
+    ssr: false,
+  }
+);
 
 export const Layout = ({ children, className = "" }) => {
   const liveStreamProps = useLiveStreamProps();
@@ -67,16 +78,17 @@ export const Layout = ({ children, className = "" }) => {
           )}
         >
           <header className="no-print">
-            <Suspense fallback={<></>}>
+            {/* <Suspense fallback={<></>}>
               <LiveStreamBanner {...liveStreamProps} />
-            </Suspense>
+            </Suspense> */}
+            <DynamicLiveStreamBanner {...liveStreamProps} />
             <div className="mx-auto max-w-9xl px-6 sm:px-8">
               <Header />
               <MenuBar />
-              <Suspense fallback={<></>}>
+              {/* <Suspense fallback={<></>}>
                 <LiveStream {...liveStreamProps} />
-              </Suspense>
-              {/* <DynamicLiveStream {...liveStreamProps} /> */}
+              </Suspense> */}
+              <DynamicLiveStream {...liveStreamProps} />
             </div>
           </header>
           <main className="grow bg-white">{children}</main>
