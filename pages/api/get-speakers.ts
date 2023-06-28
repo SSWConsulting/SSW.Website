@@ -1,7 +1,7 @@
 import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
-import { isEmail } from "validator";
+import { isEmail } from "../../helpers/validator";
 import { getSpeakersInfo } from "../../services/server/events";
 
 export default async function handler(
