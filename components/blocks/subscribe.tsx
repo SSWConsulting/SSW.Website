@@ -5,9 +5,8 @@ import { SubNewsLetters } from "./subNewsLetters";
 export const Subscribe = () => {
   return (
     <div
-      // eslint-disable-next-line tailwindcss/no-arbitrary-value
       className={
-        "flex h-80 w-full items-center bg-[url('/images/thumbs/subscribeBackground.png')] bg-cover bg-center bg-no-repeat text-center font-light after:absolute"
+        "flex h-80 w-full items-center bg-subscribeBackground bg-cover bg-center bg-no-repeat text-center font-light after:absolute"
       }
     >
       <Container padding="px-4" className="w-full z-content">
