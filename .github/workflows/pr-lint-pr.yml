@@ -17,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Check linked issues
     steps:
+      - name: For Testing
+        run: echo ${{github.event.pull_request.head.ref}}
+
       - uses: nearform-actions/github-action-check-linked-issues@v1.4.16
         if: ${{ github.event.pull_request.head.ref != 'content/' && github.event.pull_request.head.ref != 'public/' && github.event.pull_request.head.ref != '.github/' }}
         id: check-linked-issues
