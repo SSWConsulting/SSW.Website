@@ -28,20 +28,13 @@ jobs:
           # Diff HEAD with the previous commit
           $diff = git diff --name-only HEAD^ HEAD
 
-          # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
-          $SourceDiff = $diff | Where-Object { $_ -notmatch '^content/' -and $_ -notmatch '^public/' -and $_ -notmatch '^.github/' }
+          $SourceDiff = $diff | Where-Object { $_ -notmatch '^content/' -and $_ -notmatch '^public/' }
           $HasDiff = $SourceDiff.Length -gt 0
 
-          # Set the output named "docs_changed"
-          echo "docs_changed=$HasDiff" >> $env:GITHUB_OUTPUT
-          echo "docs=$diff" >> $env:GITHUB_OUTPUT
-          echo "docs_s=$SourceDiff" >> $env:GITHUB_OUTPUT
-
-      - name: For Testing
-        run: echo ${{steps.check_file_changed.outputs.docs_changed}} - ${{steps.check_file_changed.outputs.docs}} - ${{steps.check_file_changed.outputs.docs_s}}
+          echo "hasNonContentChanges=$HasDiff" >> $env:GITHUB_OUTPUT
 
       - uses: nearform-actions/github-action-check-linked-issues@v1.4.16
-        if: ${{steps.check_file_changed.outputs.docs_changed == 'True' }}
+        if: ${{steps.check_file_changed.outputs.hasNonContentChanges == 'True' }}
         id: check-linked-issues
         with:
           exclude-branches: "dependabot/**"
