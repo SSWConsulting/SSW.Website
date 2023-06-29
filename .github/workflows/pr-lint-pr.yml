@@ -22,7 +22,7 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: 🔎Checking non-content changes
+      - name: Checking non-content changes - 🔎
         shell: pwsh
         id: check_file_changed
         run: |
@@ -35,7 +35,7 @@ jobs:
           echo "hasNonContentChanges=$HasDiff" >> $env:GITHUB_OUTPUT
           echo "sourceDiff=$SourceDiff" >> $env:GITHUB_OUTPUT
 
-      - name: Non-content files
+      - name: Non-content files - 📂
         run: echo ${{steps.check_file_changed.outputs.sourceDiff}}
 
       - uses: nearform-actions/github-action-check-linked-issues@v1.4.16
