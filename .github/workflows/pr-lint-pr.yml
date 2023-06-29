@@ -37,11 +37,12 @@ jobs:
 
       - name: Non-content files - 📂
         run: |
-          if [[ -z "${{ steps.check_file_changed.outputs.sourceDiff }}" ]]; then
-            echo "🤷Content Change - Skipping next step"
-          else
+          if ( ([string]::IsNullOrEmpty(" ${{ steps.check_file_changed.outputs.sourceDiff }} "))) {
+            echo "🤷Content Change - 🏃Skipping next step"
+          }
+          else {
             echo "${{ steps.check_file_changed.outputs.sourceDiff }}"
-          fi
+          }
 
       - uses: nearform-actions/github-action-check-linked-issues@v1.4.16
         if: ${{steps.check_file_changed.outputs.hasNonContentChanges == 'True' }}
