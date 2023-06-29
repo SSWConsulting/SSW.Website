@@ -37,8 +37,9 @@ jobs:
 
       - name: Non-content files - 📂
         run: |
+          # Source Difference
           if ( ([string]::IsNullOrEmpty(" ${{ steps.check_file_changed.outputs.sourceDiff }} "))) {
-            echo "🤷Content Change - 🏃Skipping next step"
+            echo "❌Content Change only - 🏃Skipping next step"
           }
           else {
             echo "${{ steps.check_file_changed.outputs.sourceDiff }}"
