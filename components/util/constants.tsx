@@ -47,6 +47,7 @@ export const VALIDATION_ERROR_MESSAGE = {
   NOTE: "A message is required.",
   REFERRED_FULL_NAME: "Please enter referred name",
   REFERRED_EMAIL: "Please enter referred email",
+  REFERRAL_SOURCE: "Please select referral source.",
 };
 export const VALIDATION_SUCCESS_MESSAGE = "Looks good!";
 

@@ -13,8 +13,8 @@ import {
   CONTACT_FORM_TITLE,
   FORM_INPUT,
   FormCountriesList,
-  STATE_DEFAULT_VALUE,
   ReferralSourceList,
+  STATE_DEFAULT_VALUE,
 } from "../util/constants";
 import { bookingFormSubmissionData } from "./bookingFormSubmissionData";
 import { ValidationSchema } from "./validationSchema";
@@ -45,6 +45,7 @@ export const BookingForm = (props) => {
     referredCompany: "",
     referredFullName: "",
     referredEmail: "",
+    referralSource: "",
   };
 
   //Condition to avoid SSR (Server-Side Rendering) for getting page path
@@ -239,13 +240,12 @@ export const BookingForm = (props) => {
 
                 <FormGroupSelect
                   label={ACTIVE_INPUT.ReferralSource}
-                  placeholder="How did you hear about us?"
+                  name={FORM_INPUT.ReferralSource}
                   {...getCommonFieldProps(referralSourcesDefaultOption.name)}
-                  handleChange={(field, e) => {
-                    setCountry(e.currentTarget.value);
-                    handleActiveInputLabel(field.name, e.currentTarget.value);
-                  }}
                 >
+                  <option className="hidden" value="">
+                    How did you hear about us?
+                  </option>
                   {ReferralSourceList.map((source) => {
                     return (
                       <option
