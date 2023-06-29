@@ -14,6 +14,7 @@ import {
   FORM_INPUT,
   FormCountriesList,
   STATE_DEFAULT_VALUE,
+  ReferralSourceList,
 } from "../util/constants";
 import { bookingFormSubmissionData } from "./bookingFormSubmissionData";
 import { ValidationSchema } from "./validationSchema";
@@ -147,6 +148,9 @@ export const BookingForm = (props) => {
   };
   const locationDefaultOption = getDefaultOption(FORM_INPUT.Location);
   const statesDefaultOption = getDefaultOption(FORM_INPUT.States);
+  const referralSourcesDefaultOption = getDefaultOption(
+    FORM_INPUT.ReferralSource
+  );
 
   return (
     <div className="rounded bg-white font-sans">
@@ -233,11 +237,27 @@ export const BookingForm = (props) => {
                   {...getCommonFieldProps(FORM_INPUT.Company)}
                 />
 
-                <FormGroupInput
+                <FormGroupSelect
                   label={ACTIVE_INPUT.ReferralSource}
                   placeholder="How did you hear about us?"
-                  {...getCommonFieldProps(FORM_INPUT.ReferralSource)}
-                />
+                  {...getCommonFieldProps(referralSourcesDefaultOption.name)}
+                  handleChange={(field, e) => {
+                    setCountry(e.currentTarget.value);
+                    handleActiveInputLabel(field.name, e.currentTarget.value);
+                  }}
+                >
+                  {ReferralSourceList.map((source) => {
+                    return (
+                      <option
+                        className="cursor-pointer !p-1"
+                        key={source.value}
+                        value={source.value}
+                      >
+                        {source.label}
+                      </option>
+                    );
+                  })}
+                </FormGroupSelect>
 
                 <FormGroupTextArea
                   label={ACTIVE_INPUT.Note}
