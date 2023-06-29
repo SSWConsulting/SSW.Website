@@ -1,19 +1,21 @@
 import { useTina } from "tinacms/dist/react";
 
+import { InferGetStaticPropsType } from "next";
 import { client } from "../../.tina/__generated__/client";
-import { Layout } from "../../components/layout";
-import { SEO } from "../../components/util/seo";
-import { Section } from "../../components/util/section";
 import { ClientLogos } from "../../components/blocks";
-import { Container } from "../../components/util/container";
-import VideoCards, { VideoCardProps } from "../../components/util/videoCards";
-import { TrainingCarousel } from "../../components/training/trainingHeader";
 import { Blocks } from "../../components/blocks-renderer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { Layout } from "../../components/layout";
+import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
+import { TrainingCarousel } from "../../components/training/trainingHeader";
+import { Container } from "../../components/util/container";
+import { Section } from "../../components/util/section";
+import { SEO } from "../../components/util/seo";
+import VideoCards, { VideoCardProps } from "../../components/util/videoCards";
 import { removeExtension } from "../../services/utils.service";
 
 export default function TrainingPage(
-  props: AsyncReturnType<typeof getStaticProps>["props"]
+  props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const { data } = useTina({
     data: props.data,
@@ -47,16 +49,13 @@ export default function TrainingPage(
             defaultChannelLink={data.global.youtubeChannelLink}
           />
 
-          {/*
-                    Blocked while waiting for testimonials
-
-                <Section color="white" className="">
-                    <Container className={"flex-1 pt-0"}>
-                        <div className="mx-auto flex max-w-9xl flex-col items-center">
-                            <TestimonialRow testimonialsResult={props.testimonialResult} />
-                        </div>
-                    </Container>
-                </Section> */}
+          <Section color="white" className="">
+            <Container className={"flex-1 pt-0"}>
+              <div className="mx-auto flex max-w-9xl flex-col items-center">
+                <TestimonialRow testimonialsResult={props.testimonialResult} />
+              </div>
+            </Container>
+          </Section>
 
           <Section color="white">
             <Container className={"flex-1 pt-0"}>
@@ -107,44 +106,25 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.mdx`,
   });
 
-  const testimonials = await client.queries.testimonalsQuery();
+  const testimonials = await client.queries.testimonalsQuery({
+    categories: "Internship",
+  });
 
-  let testimonialsResult = testimonials.data.testimonialsConnection.edges.map(
+  const testimonialsResult = testimonials.data.testimonialsConnection.edges.map(
     (t) => t.node
   );
-
-  testimonialsResult = testimonialsResult.sort(() => 0.5 - Math.random());
-
-  // Adds general testimonials if not filled by testimonials with matching categories
-  if (testimonialsResult.length < 3) {
-    const generalTestimonials = await client.queries.testimonalsQuery({
-      categories: "General",
-    });
-
-    const generalTestimonialsResult =
-      generalTestimonials.data.testimonialsConnection.edges.map((t) => t.node);
-
-    const randomGeneral = generalTestimonialsResult.sort(
-      () => 0.5 - Math.random()
-    );
-    testimonialsResult.push(...randomGeneral);
-  }
-
-  testimonialsResult = testimonialsResult.slice(0, 3);
-  testimonialsResult.map((testimonial) => (testimonial.rating = 5));
 
   return {
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
-      testimonialResult: testimonialsResult,
+      testimonialResult: testimonialsResult || [],
       env: {
         GOOGLE_RECAPTCHA_SITE_KEY:
           process.env.GOOGLE_RECAPTCHA_SITE_KEY || null,
       },
     },
-    revalidate: 10,
   };
 };
 
@@ -157,6 +137,3 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
-
-export type AsyncReturnType<T extends (...args: any) => Promise<any>> = // eslint-disable-line @typescript-eslint/no-explicit-any
-  T extends (...args: any) => Promise<infer R> ? R : any; // eslint-disable-line @typescript-eslint/no-explicit-any
