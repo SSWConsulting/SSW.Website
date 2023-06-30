@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { classNames } from "tinacms";
+import { Template, classNames } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const VerticalListItem = ({ data }) => {
@@ -40,7 +40,7 @@ export const VerticalListItem = ({ data }) => {
   );
 };
 
-export const verticalListItemSchema = {
+export const verticalListItemSchema: Template = {
   label: "List Item",
   name: "VerticalListItem",
   fields: [
