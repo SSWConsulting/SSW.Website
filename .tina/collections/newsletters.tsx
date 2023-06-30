@@ -20,7 +20,7 @@ format: "json",
       ui: {
         itemProps: (item) => {
           return {
-            label: item
+            label: item?.month && item?.description
               ? `${item?.month} - ${transformIntToMonth(item?.month)} - ${
                   item?.description
                 }`
