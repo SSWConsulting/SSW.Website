@@ -2,7 +2,7 @@ import { useTina } from "tinacms/dist/react";
 
 import { InferGetStaticPropsType } from "next";
 import { client } from "../../.tina/__generated__/client";
-import { ClientLogos } from "../../components/blocks";
+import { ClientLogos, SubNewsLetters } from "../../components/blocks";
 import { Blocks } from "../../components/blocks-renderer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Layout } from "../../components/layout";
@@ -41,8 +41,8 @@ export default function TrainingPage(
             title={data.training.seo.title}
           />
 
-          <h1 className="py-0 text-center text-2xl text-sswRed">
-            SSW Internship
+          <h1 className="py-0 text-center text-5xl ">
+            <span className="text-sswRed">SSW</span> Internship
           </h1>
           <Blocks prefix="Training_body" blocks={data.training._body} />
 
@@ -98,6 +98,12 @@ export default function TrainingPage(
                         </div>
                     </Container>
             </Section>*/}
+
+          <SubNewsLetters
+            headerText="Subscribe to get notified about <span class='text-sswRed'>SSW training programs</span>"
+            subscribeButtonText="Subscribe"
+            subscribeSubTitle="Get the most popular courses from our developers"
+          />
         </Container>
       </Layout>
     </>
