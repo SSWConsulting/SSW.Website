@@ -32,7 +32,7 @@ jobs:
           $SourceDiff = $diff | Where-Object { $_ -notmatch '^content/' -and $_ -notmatch '^public/' }
           $HasDiff = $SourceDiff.Length -gt 0
 
-          echo "hasNonContentChanges=$HasDiff" >> $env:GITHUB_OUTPUT
+          echo "hasCodeChanges=$HasDiff" >> $env:GITHUB_OUTPUT
           echo "sourceDiff=$SourceDiff" >> $env:GITHUB_OUTPUT
 
       - name: Non-content files - 📂
@@ -46,7 +46,7 @@ jobs:
           }
 
       - uses: nearform-actions/github-action-check-linked-issues@v1.4.16
-        if: ${{steps.check_file_changed.outputs.hasNonContentChanges == 'True' }}
+        if: ${{steps.check_file_changed.outputs.hasCodeChanges == 'True' }}
         id: check-linked-issues
         with:
           exclude-branches: "dependabot/**"
