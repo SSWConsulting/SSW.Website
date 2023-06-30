@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { useTina } from "tinacms/dist/react";
+import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../.tina/__generated__/client";
 
@@ -34,6 +34,7 @@ export default function OfficePage(
           <div className="mx-auto max-w-9xl px-6 sm:px-8">
             <div className="h-auto w-auto">
               <Image
+                data-tina-field={tinaField(data.offices, "coverImg")}
                 width={1320}
                 height={485}
                 src={data.offices.coverImg}
@@ -76,11 +77,14 @@ const OfficeLayout = ({ office }) => {
   return (
     <div className="prose max-w-full">
       <h2>About Us</h2>
-      <TinaMarkdown components={componentRenderer} content={office.aboutUs} />
+      <div data-tina-field={tinaField(office, "aboutUs")}>
+        <TinaMarkdown components={componentRenderer} content={office.aboutUs} />
+      </div>
       {office.map ? (
         <>
           <h2>SSW {office.addressLocality} Map</h2>
           <Image
+            data-tina-field={tinaField(office, "map")}
             src={office.map}
             width={1920}
             height={1080}
@@ -92,7 +96,10 @@ const OfficeLayout = ({ office }) => {
       )}
       <h2 id="Directions">SSW {office.addressLocality} Directions</h2>
       <h4>
-        <a href={office.directionsUrl}>
+        <a
+          data-tina-field={tinaField(office, "directionsUrl")}
+          href={office.directionsUrl}
+        >
           <Image
             src="/images/icons/map-pin.svg"
             alt="Map pin icon"
@@ -103,32 +110,43 @@ const OfficeLayout = ({ office }) => {
           {`${office.streetAddress}, ${office.suburb}, ${office.addressRegion} ${office.postalCode}, ${office.addressCountry}`}
         </a>
       </h4>
-      <TinaMarkdown
-        components={componentRenderer}
-        content={office.directions}
-      />
+      <div data-tina-field={tinaField(office, "directions")}>
+        <TinaMarkdown
+          components={componentRenderer}
+          content={office.directions}
+        />
+      </div>
       {office.parking.children.length > 0 && (
         <>
           <h2>Parking</h2>
-          <TinaMarkdown
-            components={componentRenderer}
-            content={office.parking}
-          />
+          <div data-tina-field={tinaField(office, "parking")}>
+            <TinaMarkdown
+              components={componentRenderer}
+              content={office.parking}
+            />
+          </div>
         </>
       )}
       {office.publicTransport.children.length > 0 && (
         <>
           <h2>Public Transport</h2>
-          <TinaMarkdown
-            components={componentRenderer}
-            content={office.publicTransport}
-          />
+          <div data-tina-field={tinaField(office, "publicTransport")}>
+            <TinaMarkdown
+              components={componentRenderer}
+              content={office.publicTransport}
+            />
+          </div>
         </>
       )}
       {office.team.children.length > 0 ? (
         <>
-          <h2>The SSW {office.addressLocality} Team</h2>
-          <TinaMarkdown components={componentRenderer} content={office.team} />
+          <div data-tina-field={tinaField(office, "team")}>
+            <h2>The SSW {office.addressLocality} Team</h2>
+            <TinaMarkdown
+              components={componentRenderer}
+              content={office.team}
+            />
+          </div>
         </>
       ) : (
         <></>
@@ -145,7 +163,12 @@ const OfficeLayout = ({ office }) => {
       {office._body.children.length > 0 && (
         <>
           <hr />
-          <TinaMarkdown components={componentRenderer} content={office._body} />
+          <div data-tina-field={tinaField(office, "_body")}>
+            <TinaMarkdown
+              components={componentRenderer}
+              content={office._body}
+            />
+          </div>
         </>
       )}
     </div>
@@ -155,18 +178,7 @@ const OfficeLayout = ({ office }) => {
 const SidePanel = ({ office, testimonial }) => {
   return (
     <div className="prose max-w-full">
-      <ContactPanel
-        phone={office.phone}
-        streetAddress={office.streetAddress}
-        suburb={office.suburb}
-        addressLocality={office.addressLocality}
-        addressRegion={office.addressRegion}
-        postalCode={office.postalCode}
-        addressCountry={office.addressCountry}
-        sideImg={office.sideImg}
-        sidebarSecondaryPlace={office.sidebarSecondaryPlace}
-      />
-
+      <ContactPanel office={office} />
       <MicrosoftPanel />
       <TestimonialPanel testimonial={testimonial} />
     </div>
