@@ -50,8 +50,8 @@ export default function HomePage(
         <Container className={"flex-1 pt-4"}>
           <div className="gap-4 md:grid md:grid-cols-5">
             <div
-              data-tina-field={tinaField(data.page, "_body")}
               className={contentClass}
+              data-tina-field={tinaField(data.page, "_body")}
             >
               <TinaMarkdown
                 components={componentRenderer}
