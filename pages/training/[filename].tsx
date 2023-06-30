@@ -41,6 +41,9 @@ export default function TrainingPage(
             title={data.training.seo.title}
           />
 
+          <h1 className="py-0 text-center text-2xl text-sswRed">
+            SSW Internship
+          </h1>
           <Blocks prefix="Training_body" blocks={data.training._body} />
 
           <VideoCards
