@@ -1,14 +1,16 @@
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import dayjs from "dayjs";
-import timezone from "dayjs/plugin/timezone";
-import utc from "dayjs/plugin/utc";
 import { Container } from "../util/container";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
 
 dayjs.extend(timezone);
 dayjs.extend(utc);
+dayjs.extend(relativeTime);
 
 export const Footer = () => {
   return (
