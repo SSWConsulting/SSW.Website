@@ -1,5 +1,5 @@
-import { transformIntToMonth } from "../../services/date.service";
 import type { Collection } from "tinacms";
+import { transformIntToMonth } from "../../services/client/date.service";
 
 export const newsletterSchema: Collection = {
   label: "Newsletters",

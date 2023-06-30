@@ -1,4 +1,5 @@
-import { useTina } from "tinacms/dist/react";
+import { InferGetStaticPropsType } from "next";
+import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../.tina/__generated__/client";
 import { pageBlocks } from "../components/blocks";
@@ -9,8 +10,7 @@ import { Layout } from "../components/layout";
 import { Container } from "../components/util/container";
 import { Section } from "../components/util/section";
 import { SEO } from "../components/util/seo";
-import { InferGetStaticPropsType } from "next";
-import { removeExtension } from "../services/utils.service";
+import { removeExtension } from "../services/client/utils.service";
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -49,7 +49,10 @@ export default function HomePage(
         <Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
         <Container className={"flex-1 pt-4"}>
           <div className="gap-4 md:grid md:grid-cols-5">
-            <div className={contentClass}>
+            <div
+              className={contentClass}
+              data-tina-field={tinaField(data.page, "_body")}
+            >
               <TinaMarkdown
                 components={componentRenderer}
                 content={data.page._body}
