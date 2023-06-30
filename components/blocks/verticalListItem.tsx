@@ -33,7 +33,7 @@ export const VerticalListItem = ({ data }) => {
       </div>
       <ul className="list-disc pl-20 marker:text-sswRed">
         {data.subListItems?.map((item) => (
-          <li>{item}</li>
+          <li className="pb-1">{item}</li>
         ))}
       </ul>
     </div>
