@@ -342,7 +342,11 @@ export const LiveStream: FC<LiveStreamProps> = ({ isLive, event }) => {
                 excludeMobile={[SocialTypes.phone]}
               />
             </div>
-            <SubNewsLetters />
+            <SubNewsLetters
+              headerText="<span class='mix-blend-difference mr-3'>Subscribe to the</span><span class='font-bold text-sswRed'>SSW Newsletter</span>"
+              subscribeButtonText="Subscribe"
+              subscribeSubTitle="Stay tuned for SSW News & upcoming events."
+            />
           </div>
 
           <div className="bg-gray-75 px-4 py-2">
