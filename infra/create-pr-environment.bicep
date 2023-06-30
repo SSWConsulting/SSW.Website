@@ -11,10 +11,6 @@ var dev = {
   'cost-category': 'dev/test'
 }
 
-var core = {
-  'cost-category': 'core'
-}
-
 var acrName = replace(acrLoginServer, '.azurecr.io', '')
 module keyVault 'keyVault.bicep' = {
   name:'keyVault-${now}'
