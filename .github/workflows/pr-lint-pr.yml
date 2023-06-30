@@ -30,6 +30,7 @@ jobs:
           $diff = git diff --name-only HEAD^ HEAD
 
           # TODO: Next time we need to modify which directories we ignore, break this out to a variable which is easy to configure
+
           $SourceDiff = $diff | Where-Object { $_ -notmatch '^content/' -and $_ -notmatch '^public/' }
           $HasDiff = $SourceDiff.Length -gt 0
 

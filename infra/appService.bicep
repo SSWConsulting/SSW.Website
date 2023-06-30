@@ -85,6 +85,30 @@ var appSettings = [
     name: 'NEWSLETTERS_ENDPOINT'
     value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/Newsletters-Endpoint-PROD)'
   }
+  {
+    name: 'MICROSOFT_OAUTH_TENANT_ID'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/MICROSOFT-OAUTH-TENANT-ID)'
+  }
+  {
+    name: 'MICROSOFT_OAUTH_CLIENT_ID'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/MICROSOFT-OAUTH-CLIENT-ID)'
+  }
+  {
+    name: 'MICROSOFT_OAUTH_CLIENT_SECRET'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/MICROSOFT-OAUTH-CLIENT-SECRET)'
+  }
+  {
+    name: 'SHAREPOINT_SITE_ID'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/SHAREPOINT-SITE-ID)'
+  }
+  {
+    name: 'SHAREPOINT_EVENTS_LIST_ID'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/SHAREPOINT-EVENTS-LIST-ID)'
+  }
+  {
+    name: 'SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/SHAREPOINT-EXTERNAL-PRESENTERS-LIST-ID)'
+  }
 ]
 
 resource appService 'Microsoft.Web/sites@2022-03-01' = {

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import classNames from "classnames";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
@@ -6,6 +5,7 @@ import isBetween from "dayjs/plugin/isBetween";
 import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
 import countdownTextFormat from "../../helpers/countdownTextFormat";
@@ -54,33 +54,31 @@ export const LiveStreamBanner: FC<LiveStreamProps> = ({
     );
   }, [countdownMins, event]);
 
-  if (!event?.StartDateTime) return <></>;
-
-  if (showBanner) {
-    const liveText = "Streaming live now.";
-    return (
-      <div className="w-full bg-gray-900">
-        <Link className="unstyled" href="/live">
-          <div
-            className={classNames(
-              "mx-auto max-w-9xl bg-gray-900 bg-right-top bg-no-repeat px-6 py-1 uppercase sm:px-8",
-              isLive ? "md:bg-live-banner-live" : "md:bg-live-banner-wait"
-            )}
-          >
-            <h1 className="m-0 py-0 text-xl font-light text-gray-300">
-              {event.Title}
-            </h1>
-            <p className="py-0 text-xs text-white">
-              <span className="block text-sswRed">
-                {isLive ? liveText : countdownText}
-              </span>
-              {!isLive && scheduledTimeText(dayjs(event.StartDateTime))}
-            </p>
-          </div>
-        </Link>
-      </div>
-    );
-  } else {
+  if (!event?.StartDateTime || !showBanner) {
     return <></>;
   }
+
+  const liveText = "Streaming live now.";
+  return (
+    <div className="w-full bg-gray-900">
+      <Link className="unstyled" href="/live">
+        <div
+          className={classNames(
+            "mx-auto max-w-9xl bg-gray-900 bg-right-top bg-no-repeat px-6 py-1 uppercase sm:px-8",
+            isLive ? "md:bg-live-banner-live" : "md:bg-live-banner-wait"
+          )}
+        >
+          <h1 className="m-0 py-0 text-xl font-light text-gray-300">
+            {event.Title}
+          </h1>
+          <p className="py-0 text-xs text-white">
+            <span className="block text-sswRed">
+              {isLive ? liveText : countdownText}
+            </span>
+            {!isLive && scheduledTimeText(dayjs(event.StartDateTime))}
+          </p>
+        </div>
+      </Link>
+    </div>
+  );
 };
