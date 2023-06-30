@@ -1,16 +1,16 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import * as appInsight from "applicationinsights";
+import { NextApiRequest, NextApiResponse } from "next";
 
 import {
   HttpStatusCode,
-  STAGE,
   PowerAutomate_Endpoint,
+  STAGE,
 } from "../../services/model";
 
-import { PA_FLOW } from "../../services/power-automate-flow";
-import { GoogleRecaptcha } from "../../services/google-recaptcha";
+import { GoogleRecaptcha } from "../../services/server/google-recaptcha";
+import { PA_FLOW } from "../../services/server/power-automate-flow";
 
-import { CustomError } from "../../services/customError";
+import { CustomError } from "../../services/server/customError";
 
 export default async function handler(
   req: NextApiRequest,

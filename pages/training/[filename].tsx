@@ -12,7 +12,7 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import VideoCards, { VideoCardProps } from "../../components/util/videoCards";
-import { removeExtension } from "../../services/utils.service";
+import { removeExtension } from "../../services/client/utils.service";
 
 export default function TrainingPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
