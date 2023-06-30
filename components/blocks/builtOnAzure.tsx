@@ -1,7 +1,7 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Template } from "tinacms";
+import { tinaField } from "tinacms/dist/react";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
@@ -11,6 +11,7 @@ export const BuiltOnAzure = ({ data }) => {
       <Container className="text-lg">
         <Link
           href="/consulting/azure"
+          data-tina-field={tinaField(data, builtOnAzureBlock.backgroundColor)}
           className="unstyled flex items-center justify-center hover:border-azure hover:text-azure"
         >
           <Image
@@ -26,6 +27,10 @@ export const BuiltOnAzure = ({ data }) => {
       </Container>
     </Section>
   );
+};
+
+export const builtOnAzureBlock = {
+  backgroundColor: "backgroundColor",
 };
 
 export const builtOnAzureBlockSchema: Template = {

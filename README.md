@@ -13,6 +13,7 @@ This repository is a v3 of the zzSSW.Website. This website uses NextJS with Tina
 - [Alternative Solutions Considered](https://github.com/SSWConsulting/SSW.Website/wiki/Alternative-Solutions-Considered)
 - [Definition of Done](https://github.com/SSWConsulting/SSW.Website/wiki/Definition-of-Done)
 - [Definition of Ready](https://github.com/SSWConsulting/SSW.Website/wiki/Definition-of-Ready)
+- [SSW Website - Power Automate flows](https://github.com/SSWConsulting/SSW.Website/wiki/Power-Automate-Flows)
 
 ## Architecture Overview
 

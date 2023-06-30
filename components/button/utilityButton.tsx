@@ -1,6 +1,6 @@
 import classNames from "classnames";
-import Button from "./button";
 import { Template } from "tinacms";
+import Button from "./button";
 
 interface UtilityButtonProps {
   buttonText?: string;
@@ -18,7 +18,10 @@ export const UtilityButton = ({
   const baseComponent = (
     <Button
       ripple
-      className={classNames("mx-auto mt-8 max-w-full p-3", className)}
+      className={classNames(
+        "mx-auto mt-8 h-auto max-w-full px-10 py-3",
+        className
+      )}
       onClick={onClick}
       data-aos="fade-up"
     >
