@@ -40,7 +40,7 @@ jobs:
         run: |
           # Source Difference
           if ( ([string]::IsNullOrEmpty(" ${{ steps.check_file_changed.outputs.sourceDiff }} "))) {
-            echo "✅Content Changes - 🏃Skipping next step"
+            echo "🏃 content change only - skipping lint action"
           }
           else {
             echo "${{ steps.check_file_changed.outputs.sourceDiff }}"
