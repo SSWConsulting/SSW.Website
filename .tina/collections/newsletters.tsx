@@ -5,7 +5,7 @@ export const newsletterSchema: Collection = {
   label: "Newsletters",
   name: "newsletters",
   path: "content/newsletters",
-  format: "json",
+format: "json",
   fields: [
     {
       type: "string",

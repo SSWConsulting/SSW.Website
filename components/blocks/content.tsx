@@ -1,11 +1,11 @@
-import React from "react";
-import { Template } from "tinacms";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 import classNames from "classnames";
+import { Template } from "tinacms";
+import { tinaField } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
-import { customImageBlockSchema } from "./customImage";
 import { clientLogosBlockSchema } from "./clientLogos";
+import { customImageBlockSchema } from "./customImage";
 import { componentRenderer } from "./mdxComponentRenderer";
 
 const alignmentClasses = {
@@ -26,15 +26,25 @@ export const Content = ({ data }) => {
   const alignment = alignmentClasses[data.align] ?? alignmentClasses.left;
   const size = sizeClasses[data.size] ?? sizeClasses.base;
   return (
-    <Section color={data.backgroundColor}>
+    <Section
+      color={data.backgroundColor}
+      data-tina-field={tinaField(data, contentBlock.title)}
+    >
       <Container size="medium" className={classNames("prose", alignment, size)}>
         {data.title && (
           <h2 className="pb-5 pt-16 text-3xl font-light">{data.title}</h2>
         )}
-        <TinaMarkdown content={data.content} components={componentRenderer} />
+        <span data-tina-field={tinaField(data, contentBlock.content)}>
+          <TinaMarkdown content={data.content} components={componentRenderer} />
+        </span>
       </Container>
     </Section>
   );
+};
+
+export const contentBlock = {
+  title: "title",
+  content: "content",
 };
 
 export const contentBlockSchema: Template = {
@@ -50,12 +60,12 @@ export const contentBlockSchema: Template = {
     {
       type: "string",
       label: "Title",
-      name: "title",
+      name: contentBlock.title,
     },
     {
       type: "rich-text",
       label: "Content",
-      name: "content",
+      name: contentBlock.content,
       templates: [customImageBlockSchema, clientLogosBlockSchema],
     },
     {
