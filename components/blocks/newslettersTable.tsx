@@ -50,21 +50,30 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
   };
 
   const renderTable = ({ newsletters, year }) => (
-    <table key={year} className="m-0 w-full">
+    <table
+      key={year}
+      className="mb-3 mt-0 w-full border-separate border-spacing-y-3"
+    >
       <thead>
         <tr>
-          <th className="w-1/6 bg-gray-300 px-3 py-1" align="left">
+          <th
+            className="mx-4 w-1/6 rounded-l bg-gray-100 px-3 py-1"
+            align="left"
+          >
             {year}
           </th>
-          <th className="w-5/6 bg-gray-300 px-3 py-1" align="left">
+          <th className="w-0 bg-gray-100">
+            <div className="h-3 w-px bg-gray-300"></div>
+          </th>
+          <th className="w-5/6 rounded-r bg-gray-100 px-3 py-1" align="left">
             Description
           </th>
         </tr>
       </thead>
       <tbody>
         {newsletters.map(({ file, month, description }) => (
-          <tr key={file} className="bg-gray-125">
-            <td className="border-1 border-white px-3 py-1">
+          <tr key={file} className="mx-4 bg-gray-50">
+            <td className="rounded-l px-3 py-1">
               <a
                 href={removeTinaFromUrl(file)}
                 target="_blank"
@@ -73,7 +82,10 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
                 {transformIntToMonth(month)}
               </a>
             </td>
-            <td className="border-1 border-white px-3 py-1">{description}</td>
+            <td>
+              <div className="h-3 w-px bg-gray-300"></div>
+            </td>
+            <td className="rounded-r px-3 py-1">{description}</td>
           </tr>
         ))}
       </tbody>
@@ -82,7 +94,9 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
 
   return (
     <>
-      <h2 className="mb-3 mt-5 text-2xl text-sswRed">{data.headerText}</h2>
+      <h2 className="mb-3 mt-5 text-center text-4xl font-bold text-sswRed">
+        {data.headerText}
+      </h2>
       {hasLoaded ? (
         newsletters.map(renderTable)
       ) : (

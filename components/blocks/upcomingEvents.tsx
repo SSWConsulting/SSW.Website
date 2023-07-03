@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
+import { tinaField } from "tinacms/dist/react";
 
 import axios from "axios";
 import { EventInfo, LiveStreamBannerInfo } from "../../services/server/events";
@@ -45,7 +46,12 @@ export const UpcomingEvents = ({ data }) => {
 
   return (
     <div className="prose max-w-none">
-      <h1 className="pb-5 font-light">{data.title}</h1>
+      <h1
+        data-tina-field={tinaField(data, upcomingEventsBlock.title)}
+        className="pb-5 font-light"
+      >
+        {data.title}
+      </h1>
       <div className="not-prose">
         <div className="max-h-150 grow overflow-x-hidden overflow-y-scroll border-2 bg-gray-100">
           {loading ? <p>Loading...</p> : events.map(renderEvent)}
@@ -102,6 +108,10 @@ const renderEvent = (e: EventInfo) => {
       </div>
     </article>
   );
+};
+
+export const upcomingEventsBlock = {
+  title: "title",
 };
 
 export const upcomingEventsBlockSchema: Template = {
