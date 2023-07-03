@@ -18,7 +18,7 @@ jobs:
     name: Check linked issues
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 2
 
@@ -40,14 +40,14 @@ jobs:
       - name: Non-content files - 📂
         run: |
           # Source Difference
-          if ( ([string]::IsNullOrEmpty(" ${{ steps.check_file_changed.outputs.sourceDiff }} "))) {
+          if ( ([string]::IsNullOrEmpty("${{ steps.check_file_changed.outputs.sourceDiff }}"))) {
             echo "🏃 content change only - skipping lint action"
           }
           else {
             echo "${{ steps.check_file_changed.outputs.sourceDiff }}"
           }
 
-      - uses: nearform-actions/github-action-check-linked-issues@v1.4.16
+      - uses: nearform-actions/github-action-check-linked-issues@v1.4.17
         if: ${{steps.check_file_changed.outputs.hasCodeChanges == 'True' }}
         id: check-linked-issues
         with:
