@@ -1,4 +1,4 @@
-name: Main - Infra Check - Build and deploy
+name: PR - Test Main Infra - Build and deploy
 
 on:
   pull_request:
