@@ -1,6 +1,9 @@
+import { InferGetStaticPropsType } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { useTina } from "tinacms/dist/react";
+import { FaFileDownload } from "react-icons/fa";
+import { toast } from "react-toastify";
+import { tinaField, useTina } from "tinacms/dist/react";
 import { Components, TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../.tina/__generated__/client";
 import { EducationalConnectionQuery } from "../../.tina/__generated__/types";
@@ -12,14 +15,11 @@ import { BookingForm } from "../../components/bookingForm/bookingForm";
 import Button from "../../components/button/button";
 import { Layout } from "../../components/layout";
 import ReactPlayer from "../../components/reactPlayer/reactPlayer";
+import SuccessToast from "../../components/successToast/successToast";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
-import { InferGetStaticPropsType } from "next";
 import layoutData from "../../content/global/index.json";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
-import { FaFileDownload } from "react-icons/fa";
-import { toast } from "react-toastify";
-import SuccessToast from "../../components/successToast/successToast";
 
 export default function EducationalIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -148,13 +148,15 @@ export default function EducationalIndex(
         <SEO seo={node.seo} />
         <Container className="flex-1" size="custom">
           <DownloadWhitepaperLink>
-            <Image
-              src={node.bannerImg}
-              width={1312}
-              height={0}
-              alt="SSW Educational Banner"
-              sizes="100vw"
-            />
+            <div data-tina-field={tinaField(node, "bannerImg")}>
+              <Image
+                src={node.bannerImg}
+                width={1312}
+                height={0}
+                alt="SSW Educational Banner"
+                sizes="100vw"
+              />
+            </div>
           </DownloadWhitepaperLink>
           <Breadcrumbs
             path={removeExtension(node._sys.relativePath)}
@@ -165,7 +167,10 @@ export default function EducationalIndex(
           <h2 className="!mt-1 pt-0 text-md font-light">
             Customised Technology Solutions
           </h2>
-          <div className="mb-4 mt-15">
+          <div
+            className="mb-4 mt-15"
+            data-tina-field={tinaField(node, "_body")}
+          >
             <TinaMarkdown
               components={educationalRenderer}
               content={node._body}
