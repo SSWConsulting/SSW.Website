@@ -60,7 +60,6 @@ jobs:
             --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
             --template-file ${{ env.BICEP_PATH }} `
             --parameters `
-               "slotName= production" `
                "appServiceName=${{ env.APP_SERVICE_NAME }}" `
                "acrLoginServer=${{ env.ACR_LOGIN_SERVER }}" `
                "servicePrincipalObjectId=${{ secrets.AZURE_SERVICE_PRINCIPAL_OBJECT_ID }}" `
