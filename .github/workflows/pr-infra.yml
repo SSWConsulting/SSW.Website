@@ -1,7 +1,7 @@
-name: Main - Infra - Build and deploy
+name: Main - Infra Check - Build and deploy
 
 on:
-  push:
+  pull_request:
     branches:
       - main
     paths:
@@ -10,7 +10,8 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: main-infra
+  group: ci-${{ github.event.number }}-${{ github.workflow }}
+  cancel-in-progress: true
 
 defaults:
   run:
@@ -58,3 +59,9 @@ jobs:
             --name $timestamp `
             --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
             --template-file ${{ env.BICEP_PATH }}
+            --parameters `
+               "slotName= production `
+               "appServiceName=${{ env.APP_SERVICE_NAME }}" `
+               "acrLoginServer=${{ env.ACR_LOGIN_SERVER }}" `
+               "servicePrincipalObjectId=${{ secrets.AZURE_SERVICE_PRINCIPAL_OBJECT_ID }}" `
+            -o none
