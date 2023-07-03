@@ -58,7 +58,7 @@ jobs:
             --what-if `
             --name $timestamp `
             --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
-            --template-file ${{ env.BICEP_PATH }}
+            --template-file ${{ env.BICEP_PATH }} `
             --parameters `
                "slotName= production `
                "appServiceName=${{ env.APP_SERVICE_NAME }}" `
