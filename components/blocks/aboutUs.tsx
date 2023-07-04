@@ -1,7 +1,5 @@
 import classNames from "classnames";
 import dayjs from "dayjs";
-import timezone from "dayjs/plugin/timezone";
-import utc from "dayjs/plugin/utc";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
@@ -13,9 +11,6 @@ import layoutData from "../../content/global/index.json";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import { VideoModal } from "../videoModal";
-
-dayjs.extend(timezone);
-dayjs.extend(utc);
 
 const DAY_KEYS = {
   Sunday: 0,

@@ -1,21 +1,10 @@
 import classNames from "classnames";
 import dayjs from "dayjs";
-import advancedFormat from "dayjs/plugin/advancedFormat";
-import isBetween from "dayjs/plugin/isBetween";
-import relativeTime from "dayjs/plugin/relativeTime";
-import timezone from "dayjs/plugin/timezone";
-import utc from "dayjs/plugin/utc";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
 import countdownTextFormat from "../../helpers/countdownTextFormat";
 import { LiveStreamProps } from "./useLiveStreamProps";
-
-dayjs.extend(utc);
-dayjs.extend(isBetween);
-dayjs.extend(relativeTime);
-dayjs.extend(advancedFormat);
-dayjs.extend(timezone);
 
 export const LiveStreamBanner: FC<LiveStreamProps> = ({
   countdownMins,
