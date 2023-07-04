@@ -2,7 +2,7 @@ import { useTina } from "tinacms/dist/react";
 
 import { InferGetStaticPropsType } from "next";
 import { client } from "../../.tina/__generated__/client";
-import { ClientLogos, SubNewsLetters } from "../../components/blocks";
+import { ClientLogos, Subscribe } from "../../components/blocks";
 import { Blocks } from "../../components/blocks-renderer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Layout } from "../../components/layout";
@@ -98,13 +98,8 @@ export default function TrainingPage(
                         </div>
                     </Container>
             </Section>*/}
-
-          <SubNewsLetters
-            headerText="Subscribe to get notified about <span class='text-sswRed'>SSW training programs</span>"
-            subscribeButtonText="Subscribe"
-            subscribeSubTitle="Get the most popular courses from our developers"
-          />
         </Container>
+        <Subscribe />
       </Layout>
     </>
   );
