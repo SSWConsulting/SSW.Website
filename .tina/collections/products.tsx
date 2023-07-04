@@ -41,6 +41,7 @@ export const productsIndexSchema: Collection = {
           type: "image",
           label: "Logo",
           name: "logo",
+          // @ts-ignore
           uploadDir: () => "/products",
         },
       ],

@@ -38,6 +38,8 @@ export const verticalImageLayoutBlockSchema: Template = {
       type: "image",
       label: "Image",
       name: "imageSrc",
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       uploadDir: () => "/verticalImageLayout/",
     },
     {
