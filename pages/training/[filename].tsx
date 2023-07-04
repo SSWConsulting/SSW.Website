@@ -1,10 +1,12 @@
 import { useTina } from "tinacms/dist/react";
 
 import { InferGetStaticPropsType } from "next";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../.tina/__generated__/client";
-import { ClientLogos, Subscribe } from "../../components/blocks";
+import { ClientLogos } from "../../components/blocks";
 import { Blocks } from "../../components/blocks-renderer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { TrainingCarousel } from "../../components/training/trainingHeader";
@@ -77,29 +79,11 @@ export default function TrainingPage(
               <ClientLogos />
             </Container>
           </Section>
-
-          {/*
-                    Blocked by: https://github.com/SSWConsulting/SSW.Website/issues/282
-
-                    <Section
-                    color="darkgray"
-                    style={{ backgroundImage: "url(/images/polygonBackground.png)" }}
-                >
-                    <Container className={"flex flex-1 flex-col items-center pt-15 text-center"}>
-                        <p className="text-3xl font-light text-white">Subscribe to get notified about <span className="text-sswRed">SSW training programs</span></p>
-                        <p className="text-base text-gray-500">Get the most popular courses from our developers</p>
-
-                        <div className="flex flex-col items-center pb-12 pt-8 md:flex-row">
-                            <input type="text" className="mr-5 w-96 bg-gray-800 px-5 py-3 text-white" placeholder="Enter your email" />
-                            <button className="mt-5 flex w-36 items-center bg-sswRed px-5 py-3 text-white md:mt-0">
-                                <HiMail color="white" />
-                                <span className="ml-2">Subscribe</span>
-                            </button>
-                        </div>
-                    </Container>
-            </Section>*/}
         </Container>
-        <Subscribe />
+        <TinaMarkdown
+          content={data.training.footer}
+          components={componentRenderer}
+        />
       </Layout>
     </>
   );

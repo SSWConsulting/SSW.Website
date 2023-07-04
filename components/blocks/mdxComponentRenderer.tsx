@@ -1,29 +1,29 @@
 import { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
-import { UpcomingEvents } from "./upcomingEvents";
-import { ClientLogos } from "./clientLogos";
-import { CustomImage } from "./customImage";
-import { VideoEmbed } from "./videoEmbed";
-import { VerticalImageLayout } from "./verticalImageLayout";
-import { Carousel } from "./carousel";
-import { TableLayout } from "./tableLayout";
-import { AgreementForm } from "../terms-and-conditions/agreementForm";
-import { Citation } from "./citation";
-import { GoogleMapsWrapper } from "./googleMapsWrapper";
-import { DynamicColumns } from "./dynamicColumns";
-import { FixedColumns } from "./fixedColumns";
-import { InternalCarousel } from "./internalCarousel";
-import { VerticalListItem } from "./verticalListItem";
-import TrainingInformation from "../training/trainingInformation";
-import { TrainingLearningOutcome } from "../training/trainingLearningOutcome";
-import { RecurringEvent } from "./recurringEvent";
-import { FixedTabsLayout } from "./fixedTabsLayout";
-import { Flag } from "./flag";
-import { SubNewsLetters } from "./subNewsLetters";
-import { Subscribe } from "./subscribe";
-import { NewslettersTable } from "./newslettersTable";
 import { BookingButton } from "../bookingButton/bookingButton";
 import { UtilityButton } from "../button/utilityButton";
+import { AgreementForm } from "../terms-and-conditions/agreementForm";
+import TrainingInformation from "../training/trainingInformation";
+import { TrainingLearningOutcome } from "../training/trainingLearningOutcome";
+import { Carousel } from "./carousel";
+import { Citation } from "./citation";
+import { ClientLogos } from "./clientLogos";
 import { ContentCard } from "./contentCard";
+import { CustomImage } from "./customImage";
+import { DynamicColumns } from "./dynamicColumns";
+import { FixedColumns } from "./fixedColumns";
+import { FixedTabsLayout } from "./fixedTabsLayout";
+import { Flag } from "./flag";
+import { GoogleMapsWrapper } from "./googleMapsWrapper";
+import { InternalCarousel } from "./internalCarousel";
+import { NewslettersTable } from "./newslettersTable";
+import { RecurringEvent } from "./recurringEvent";
+import { SubNewsLetters, SubNewsLettersProps } from "./subNewsLetters";
+import { Subscribe, SubscribeProps } from "./subscribe";
+import { TableLayout } from "./tableLayout";
+import { UpcomingEvents } from "./upcomingEvents";
+import { VerticalImageLayout } from "./verticalImageLayout";
+import { VerticalListItem } from "./verticalListItem";
+import { VideoEmbed } from "./videoEmbed";
 
 export const componentRenderer: Components<{
   ClientLogos: Record<string, never>;
@@ -128,14 +128,8 @@ export const componentRenderer: Components<{
   NewslettersTable: {
     headerText: string;
   };
-  SubNewsLetters: {
-    subscribeButtonText: string;
-    headerText: string;
-    subscribeSubTitle: string;
-  };
-  Subscribe: {
-    background: string;
-  };
+  SubNewsLetters: SubNewsLettersProps;
+  Subscribe: SubscribeProps;
   Citation: {
     article: string;
     author: string;
@@ -169,7 +163,7 @@ export const componentRenderer: Components<{
   BookingButton: (props) => <BookingButton {...props} />,
   NewslettersTable: (props) => <NewslettersTable data={props} />,
   SubNewsLetters: (props) => <SubNewsLetters {...props} />,
-  Subscribe: () => <Subscribe />,
+  Subscribe: (props) => <Subscribe {...props} />,
   Citation: (props) => <Citation {...props} />,
   UtilityButton: (props) => <UtilityButton {...props} />,
   ContentCard: (props) => <ContentCard data={props} />,

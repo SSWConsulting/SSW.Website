@@ -3,12 +3,6 @@ import React, { useState } from "react";
 import { FaRegCheckCircle, FaSpinner } from "react-icons/fa";
 import { Template } from "tinacms";
 
-/**
- * A component for subscribing to newsletters.
- * @param headerText - The text to display above the form.
- * @param subscribeButtonText - The text to display on the subscribe button.
- * @param subscribeSubTitle - The text to display below the headerText.
- */
 const placeholder = {
   firstName: "First Name",
   lastName: "Last Name",
@@ -22,11 +16,23 @@ const Default = {
   subscribeSubTitle: "Stay tuned for SSW News & upcoming events",
 };
 
+export type SubNewsLettersProps = {
+  headerText?: string;
+  subscribeButtonText?: string;
+  subscribeSubTitle?: string;
+};
+
+/**
+ * A component for subscribing to newsletters.
+ * @param headerText - The text to display above the form.
+ * @param subscribeButtonText - The text to display on the subscribe button.
+ * @param subscribeSubTitle - The text to display below the headerText.
+ */
 export const SubNewsLetters = ({
   headerText = Default.headerText,
   subscribeButtonText = Default.subscribeButtonText,
   subscribeSubTitle = Default.subscribeSubTitle,
-}) => {
+}: SubNewsLettersProps) => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -184,7 +190,7 @@ export const SubNewsLetters = ({
 
 export const subNewsLettersSchema: Template = {
   name: "SubNewsLetters",
-  label: "Subscribe To NewsLetters",
+  label: "Subscribe To Newsletters (Short Width)",
   fields: [
     {
       type: "string",
