@@ -1,14 +1,14 @@
 import { Template } from "tinacms";
 import { Container } from "../util/container";
-import { SubNewsLetters } from "./subNewsLetters";
+import { SubNewsLettersForm } from "./subNewsletterForm";
 
-export type SubscribeProps = {
+export type SubNewsletterRowProps = {
   headerText?: string;
   subscribeButtonText?: string;
   subscribeSubTitle?: string;
 };
 
-export const Subscribe = (props: SubscribeProps) => {
+export const SubNewsletterRow = (props: SubNewsletterRowProps) => {
   return (
     <div
       className={
@@ -16,7 +16,7 @@ export const Subscribe = (props: SubscribeProps) => {
       }
     >
       <Container padding="px-4" className="w-full">
-        <SubNewsLetters
+        <SubNewsLettersForm
           headerText={`<span class='mix-blend-difference mr-3'>${props.headerText}</span>`}
           subscribeButtonText={props.subscribeButtonText || "Sign Up"}
           subscribeSubTitle={props.subscribeSubTitle}
@@ -28,13 +28,15 @@ export const Subscribe = (props: SubscribeProps) => {
 
 export const subscribeSchema: Template = {
   name: "Subscribe",
-  label: "Subscribe To Newsletters (Full width)",
+  label: "Subscribe To Newsletters Row",
   fields: [
-    {
-      type: "string",
-      label: "Background",
-      name: "background",
-    },
+    // TODO - Add background select between white background and image background
+    // {
+    //   type: "string",
+    //   label: "Background",
+    //   name: "background",
+    //   required: false,
+    // },
     {
       type: "string",
       label: "Override Header Text",

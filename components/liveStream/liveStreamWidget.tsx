@@ -9,7 +9,7 @@ import { Tooltip } from "react-tooltip";
 import layoutData from "../../content/global/index.json";
 import { SpeakerInfo } from "../../services/server/events";
 import ReactPlayer from "../reactPlayer/reactPlayer";
-import { SubNewsLetters } from "../subNewsletter/subNewsLetters";
+import { SubNewsLettersForm } from "../subNewsletter/subNewsletterForm";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
 import { LiveStreamProps } from "./useLiveStreamProps";
 
@@ -316,7 +316,7 @@ export const LiveStreamWidget: FC<LiveStreamProps> = ({ isLive, event }) => {
                 excludeMobile={[SocialTypes.phone]}
               />
             </div>
-            <SubNewsLetters
+            <SubNewsLettersForm
               headerText="<span class='mix-blend-difference mr-3'>Subscribe to the</span><span class='font-bold text-sswRed'>SSW Newsletter</span>"
               subscribeButtonText="Subscribe"
               subscribeSubTitle="Stay tuned for SSW News & upcoming events."

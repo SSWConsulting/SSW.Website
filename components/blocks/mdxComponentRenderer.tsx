@@ -1,10 +1,13 @@
 import { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { BookingButton } from "../bookingButton/bookingButton";
 import { UtilityButton } from "../button/utilityButton";
+import {
+  SubNewsletterRow,
+  SubNewsletterRowProps,
+} from "../subNewsletter/subNewsletterRow";
 import { AgreementForm } from "../terms-and-conditions/agreementForm";
 import TrainingInformation from "../training/trainingInformation";
 import { TrainingLearningOutcome } from "../training/trainingLearningOutcome";
-import { Subscribe, SubscribeProps } from "./../subNewsletter/subscribe";
 import { Carousel } from "./carousel";
 import { Citation } from "./citation";
 import { ClientLogos } from "./clientLogos";
@@ -127,7 +130,7 @@ export const componentRenderer: Components<{
   NewslettersTable: {
     headerText: string;
   };
-  Subscribe: SubscribeProps;
+  SubNewletterRow: SubNewsletterRowProps;
   Citation: {
     article: string;
     author: string;
@@ -160,7 +163,7 @@ export const componentRenderer: Components<{
   FixedTabsLayout: (props) => <FixedTabsLayout data={props} />,
   BookingButton: (props) => <BookingButton {...props} />,
   NewslettersTable: (props) => <NewslettersTable data={props} />,
-  Subscribe: (props) => <Subscribe {...props} />,
+  SubNewletterRow: (props) => <SubNewsletterRow {...props} />,
   Citation: (props) => <Citation {...props} />,
   UtilityButton: (props) => <UtilityButton {...props} />,
   ContentCard: (props) => <ContentCard data={props} />,
