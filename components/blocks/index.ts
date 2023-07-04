@@ -1,6 +1,9 @@
 import type { Template } from "tinacms";
 
+import { bookingButtonSchema } from "../bookingButton/bookingButton";
+import { utilityButtonSchema } from "../button/utilityButton";
 import { agreementFormBlockSchema } from "../terms-and-conditions/agreementForm";
+import { eventBookingSchema } from "../training/eventBooking";
 import { trainingInformationSchema } from "../training/trainingInformation";
 import { trainingLearningOutcomeSchema } from "../training/trainingLearningOutcome";
 import { aboutUsBlockSchema } from "./aboutUs";
@@ -28,8 +31,6 @@ import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
-import { utilityButtonSchema } from "../button/utilityButton";
-import { bookingButtonSchema } from "../bookingButton/bookingButton";
 
 export const pageBlocks: Template[] = [
   aboutUsBlockSchema,
@@ -62,9 +63,13 @@ export const pageBlocks: Template[] = [
   verticalImageLayoutBlockSchema,
   verticalListItemSchema,
   videoEmbedBlockSchema,
+  eventBookingSchema,
 ];
 
+export * from "../bookingButton/bookingButton";
+export * from "../button/utilityButton";
 export * from "../terms-and-conditions/agreementForm";
+export * from "../training/eventBooking";
 export * from "../training/trainingInformation";
 export * from "../training/trainingLearningOutcome";
 export * from "./aboutUs";
@@ -87,8 +92,6 @@ export * from "./subNewsLetters";
 export * from "./subscribe";
 export * from "./tableLayout";
 export * from "./upcomingEvents";
-export * from "../button/utilityButton";
 export * from "./verticalImageLayout";
 export * from "./verticalListItem";
 export * from "./videoEmbed";
-export * from "../bookingButton/bookingButton";
