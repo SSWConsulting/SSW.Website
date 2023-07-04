@@ -3,7 +3,7 @@ import moment from "moment";
 import { FC } from "react";
 import { MdLocationOn } from "react-icons/md";
 import type { Template } from "tinacms";
-import { Event, EventBookingType, EventModel } from "./eventBookingType";
+import { EventBookingType, EventModel } from "./eventBookingType";
 
 export const EventBooking: FC<EventBookingType> = ({ data }) => {
   return (
@@ -11,7 +11,12 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
       {<EventHeader duration={data.duration} price={data.price} />}
       <div className="mb-2 grid grid-cols-12">
         {data.eventList?.map((event, index) => (
-          <EventCard key={index} {...event} />
+          <EventCard
+            key={index}
+            event={event}
+            count={data.eventList.length}
+            index={index}
+          />
         ))}
       </div>
       <div className="bg-gray-400 py-1 text-center text-white">
@@ -22,11 +27,14 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
   );
 };
 
-const EventCard: FC<Event> = (event) => {
+const EventCard = ({ event, count, index }) => {
   return (
     <div
       className={classNames(
-        "col-span-12 gap-2 border-b-8 border-white  bg-gray-100 py-3 pl-5 text-lg last:border-b-0 last:border-r-0 md:col-span-4 md:border-b-0 md:border-r-8"
+        "col-span-12 gap-2 border-b-8 border-white  bg-gray-100 py-3 pl-5 text-lg last:border-b-0 last:border-r-0 md:border-b-0 md:border-r-8",
+        getColSpanClass(count, index),
+        addTopBorder(index),
+        removeLastRightBorder(index)
       )}
     >
       <span className="font-bold capitalize">{event.city}</span>
@@ -55,6 +63,37 @@ const EventCard: FC<Event> = (event) => {
       </div>
     </div>
   );
+};
+
+const getColSpanClass = (count, index) => {
+  if (count === 3) {
+    return "md:col-span-4";
+  } else if (count === 2) {
+    return "md:col-span-6";
+  } else if (count === 1) {
+    return "md:col-span-12";
+  } else {
+    // For counts greater than 3, calculate the column span class based on index and count > 3
+
+    if ((index + 1) % 3 === 0) {
+      // e.g number of items are 6 (3 items in a row each col-span-4)
+      return "md:col-span-4 last:md:col-span-4";
+    } else if ((index + 1) % 3 === 1) {
+      // e.g number of items are 4 (1 item in a row (col-span-12))
+      return "md:col-span-4 last:md:col-span-12";
+    } else {
+      // e.g number of items are 5 (2 items (col-span-4) && (col-span-8))
+      return "md:col-span-4 last:md:col-span-8";
+    }
+  }
+};
+
+const addTopBorder = (index) => {
+  return index > 2 ? "border-white md:border-t-8" : "";
+};
+
+const removeLastRightBorder = (index) => {
+  return (index + 1) % 3 == 0 ? "md:border-r-0" : "";
 };
 
 const EventHeader = ({ duration, price }) => {

@@ -22,7 +22,7 @@ export default function TrainingPage(
   });
 
   const videoCardProps =
-    data.training.videos?.videoCards?.map<VideoCardProps>((m) => ({
+    data?.training.videos?.videoCards?.map<VideoCardProps>((m) => ({
       title: m.title,
       link: m.link,
     })) || [];
