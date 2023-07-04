@@ -20,6 +20,12 @@ export const trainingSchema: Collection = {
     // @ts-ignore
     trainingHeaderSchema,
     {
+      type: "string",
+      name: "title",
+      label: "Title",
+      required: true,
+    },
+    {
       type: "object",
       list: true,
       name: "_body",

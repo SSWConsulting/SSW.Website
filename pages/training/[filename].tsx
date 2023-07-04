@@ -43,9 +43,11 @@ export default function TrainingPage(
             title={data.training.seo.title}
           />
 
-          <h1 className="py-0 text-center text-5xl font-semibold">
-            <span className="text-sswRed">SSW</span> Internship
-          </h1>
+          <h1
+            className="py-0 text-center text-5xl font-semibold"
+            dangerouslySetInnerHTML={{ __html: data.training.title }}
+          />
+
           <Blocks prefix="Training_body" blocks={data.training._body} />
 
           <VideoCards
