@@ -67,16 +67,25 @@ export const officeSchema: Collection = {
       type: "image",
       label: "Cover Image",
       name: "coverImg",
+      // @ts-ignore
+      uploadDir: (args) => `/offices/${args.addressLocality}`
     },
     {
       type: "image",
       label: "Thumbnail",
       name: "thumbnail",
+      // @ts-ignore
+      uploadDir: () => "/offices/thumbnails"
     },
     {
       type: "image",
       label: "Sidebar Image",
       name: "sideImg",
+      // @ts-ignore
+      uploadDir: (args) => {
+        console.log(args)
+        return `/offices/${args.addressLocality}`
+      }
     },
     {
       type: "string",
@@ -169,6 +178,8 @@ export const officeSchema: Collection = {
       type: "image",
       label: "Map Image",
       name: "map",
+      // @ts-ignore
+      uploadDir: (args) => `/offices/${args.addressLocality}`,
       templates: [...Schemas.pageBlocks],
     },
     {

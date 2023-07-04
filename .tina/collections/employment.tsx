@@ -1,5 +1,5 @@
-import * as Schemas from "../../components/blocks";
 import { Collection } from "tinacms";
+import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 
 export const employmentSchema: Collection = {
@@ -40,6 +40,8 @@ export const employmentSchema: Collection = {
           type: "image",
           label: "Video Background",
           name: "videoBackground",
+          // @ts-ignore
+          uploadDir: () => "/",
         },
       ],
     },
@@ -70,6 +72,8 @@ export const employmentSchema: Collection = {
               type: "image",
               label: "Image URL",
               name: "image",
+              // @ts-ignore
+              uploadDir: () => "/benefits",
             },
             {
               type: "string",

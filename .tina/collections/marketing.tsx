@@ -1,6 +1,6 @@
 import type { Collection } from "tinacms";
-import { sides } from "../../components/marketing/Marketing";
 import * as Schemas from "../../components/blocks";
+import { sides } from "../../components/marketing/Marketing";
 
 export const marketingSchema: Collection = {
 	label: "Marketing",
@@ -19,6 +19,8 @@ export const marketingSchema: Collection = {
 			label: "Background image",
 			name: "backgroundImage",
 			required: true,
+			// @ts-ignore
+			uploadDir: () => "/",
 		},
 		{
 			type: "rich-text",
@@ -34,7 +36,7 @@ export const marketingSchema: Collection = {
 			isBody: true,
 		},
 		{
-			type: "string", 
+			type: "string",
 			label: "Text side",
 			name: "textSide",
 			options: sides,

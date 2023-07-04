@@ -1,8 +1,8 @@
-import Image from "next/image";
 import classNames from "classnames";
+import Image from "next/image";
+import { Carousel } from "react-responsive-carousel";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
-import { Carousel } from "react-responsive-carousel";
 import styles from "./training.module.css";
 
 const TrainingHeader = ({ data }) => {
@@ -134,11 +134,13 @@ export const trainingHeaderSchema = {
           label: "Hero Background",
           name: "heroBackground",
           required: true,
+          uploadDir: () => "/",
         },
         {
           type: "image",
           label: "Person",
           name: "person",
+          uploadDir: () => "people",
         },
         {
           type: "object",
