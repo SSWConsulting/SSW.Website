@@ -9,7 +9,7 @@ import { useEffectOnce, useHover } from "usehooks-ts";
 
 import { wrapGrid } from "animate-css-grid";
 
-import { useTina } from "tinacms/dist/react";
+import { tinaField, useTina } from "tinacms/dist/react";
 import { client } from "../../.tina/__generated__/client";
 
 import { InferGetStaticPropsType } from "next";
@@ -123,11 +123,13 @@ export default function ConsultingIndex(
               ref={gridRef}
               className="grid grid-cols-1 gap-2 lg:grid-cols-2"
             >
-              {categories.map((category) => (
+              {categories.map((category, index) => (
                 <Category
+                  tinaData={data}
                   key={category.name}
                   category={category}
                   selectedTag={selectedTag}
+                  index={index}
                 />
               ))}
             </div>
@@ -167,7 +169,7 @@ const Tag = ({ label, tag, selectedTag, setSelectedTag }) => {
   );
 };
 
-const Category = ({ category, selectedTag }) => {
+const Category = ({ tinaData, category, selectedTag, index }) => {
   const pages = category.pages.map((page) => {
     return {
       ...page,
@@ -185,7 +187,16 @@ const Category = ({ category, selectedTag }) => {
         {/* animate-css-grid requires a single element at this level */}
         <div>
           <hr className="my-5 border-gray-100" />
-          <h2 className="mt-0 text-sswRed">{category.name}</h2>
+          <h2
+            className="mt-0 text-sswRed"
+            data-tina-field={tinaField(
+              tinaData.consultingIndexConnection.edges[0].node.categories[index]
+                .category,
+              "name"
+            )}
+          >
+            {category.name}
+          </h2>
         </div>
       </div>
       {pages.map((page) => (
@@ -273,7 +284,9 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      ...tinaProps,
+      data: tinaProps.data,
+      query: tinaProps.query,
+      variables: tinaProps.variables,
     },
   };
 };
