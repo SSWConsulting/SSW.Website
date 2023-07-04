@@ -3,9 +3,6 @@ name: PR - Lint PR
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-    paths-ignore:
-      - "content/**"
-      - "public/**"
 
 concurrency:
   group: ci-${{ github.event.number }}
@@ -20,7 +17,38 @@ jobs:
     runs-on: ubuntu-latest
     name: Check linked issues
     steps:
-      - uses: nearform-actions/github-action-check-linked-issues@v1.4.16
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Checking non-content changes - 🔎
+        shell: pwsh
+        id: check_file_changed
+        run: |
+          # Diff HEAD with the previous commit
+          $diff = git diff --name-only HEAD^ HEAD
+
+          # TODO: Next time we need to modify which directories we ignore, break this out to a variable which is easy to configure
+
+          $SourceDiff = $diff | Where-Object { $_ -notmatch '^content/' -and $_ -notmatch '^public/' }
+          $HasDiff = $SourceDiff.Length -gt 0
+
+          echo "hasCodeChanges=$HasDiff" >> $env:GITHUB_OUTPUT
+          echo "sourceDiff=$SourceDiff" >> $env:GITHUB_OUTPUT
+
+      - name: Non-content files - 📂
+        run: |
+          # Source Difference
+          if ( ([string]::IsNullOrEmpty("${{ steps.check_file_changed.outputs.sourceDiff }}"))) {
+            echo "🏃 content change only - skipping lint action"
+          }
+          else {
+            echo "${{ steps.check_file_changed.outputs.sourceDiff }}"
+          }
+
+      - uses: nearform-actions/github-action-check-linked-issues@v1.4.17
+        if: ${{steps.check_file_changed.outputs.hasCodeChanges == 'True' }}
         id: check-linked-issues
         with:
           exclude-branches: "dependabot/**"

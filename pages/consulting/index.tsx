@@ -12,11 +12,12 @@ import { wrapGrid } from "animate-css-grid";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../../.tina/__generated__/client";
 
+import { InferGetStaticPropsType } from "next";
+import { Blocks } from "../../components/blocks-renderer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
-import { InferGetStaticPropsType } from "next";
 
 const allServices = "All SSW Services";
 
@@ -97,6 +98,7 @@ export default function ConsultingIndex(
     <Layout>
       <SEO seo={{ ...seo, canonical: "/consulting" }} />
       <Container className="flex-1 pt-2">
+        <Blocks prefix={"ConsultingAfterBody"} blocks={[]} />
         <Breadcrumbs path={"/consulting"} suffix="" title={"Services"} />
         <h1 className="pt-0 text-3xl">Consulting Services</h1>
         <div className="flex flex-col md:flex-row">

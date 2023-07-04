@@ -5,10 +5,10 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import "react-responsive-modal/styles.css";
 import "react-tooltip/dist/react-tooltip.css";
+import "ssw.megamenu/dist/style.css";
 import { Analytics } from "../components/layout/analytics";
 import * as gtag from "../lib/gtag";
 import { NEXT_SEO_DEFAULT } from "../next-seo.config";
-import "ssw.megamenu/dist/style.css";
 import "../styles.css";
 
 import ZendeskButton from "../components/zendeskButton/zendeskButton";
@@ -16,6 +16,20 @@ const zendesk = process.env.NEXT_PUBLIC_ZENDESK_CHAT_KEY;
 // Hack as per https://stackoverflow.com/a/66575373 to stop font awesome icons breaking
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import AzureAppInsights from "../context/app-insight-client";
+
+// DayJS module addition as per https://github.com/iamkun/dayjs/issues/1577
+import dayjs from "dayjs";
+import advancedFormat from "dayjs/plugin/advancedFormat";
+import isBetween from "dayjs/plugin/isBetween";
+import relativeTime from "dayjs/plugin/relativeTime";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
+
+dayjs.extend(relativeTime);
+dayjs.extend(timezone);
+dayjs.extend(utc);
+dayjs.extend(advancedFormat);
+dayjs.extend(isBetween);
 
 const isDev = process.env.NODE_ENV === "development";
 
