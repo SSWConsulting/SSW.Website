@@ -1,23 +1,23 @@
-import { useTina } from "tinacms/dist/react";
+import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+import { InferGetStaticPropsType } from "next";
 import { client } from "../../.tina/__generated__/client";
 import { BuiltOnAzure } from "../../components/blocks";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Booking } from "../../components/blocks/booking";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
-import { Layout } from "../../components/layout";
-import { Marketing } from "../../components/marketing/Marketing";
-import { Benefits } from "../../components/util/consulting/benefits";
-import { Container } from "../../components/util/container";
-import { Section } from "../../components/util/section";
-import { SEO } from "../../components/util/seo";
-import { InferGetStaticPropsType } from "next";
 import {
   Opportunities,
   OpportunityType,
 } from "../../components/employment/opportunities";
+import { Layout } from "../../components/layout";
+import { Marketing } from "../../components/marketing/Marketing";
 import { jobStatus } from "../../components/util/constants/opportunity";
+import { Benefits } from "../../components/util/consulting/benefits";
+import { Container } from "../../components/util/container";
+import { Section } from "../../components/util/section";
+import { SEO } from "../../components/util/seo";
 
 export default function EmploymentPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -74,10 +74,17 @@ export default function EmploymentPage(
         </Section>
         <Section className="w-full" color="black">
           <Booking {...data.employment.booking}>
-            <TinaMarkdown
-              content={data?.employment?.booking?.bookingBody}
-              components={componentRenderer}
-            />
+            <div
+              data-tina-field={tinaField(
+                data?.employment?.booking,
+                "bookingBody"
+              )}
+            >
+              <TinaMarkdown
+                content={data?.employment?.booking?.bookingBody}
+                components={componentRenderer}
+              />
+            </div>
           </Booking>
         </Section>
         <Section
@@ -90,16 +97,22 @@ export default function EmploymentPage(
           <a id="more" />
           <div className="w-full bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
             <div className="mx-auto max-w-9xl px-4">
-              <TinaMarkdown
-                components={componentRenderer}
-                content={data.employment._body}
-              />
+              <div data-tina-field={tinaField(data.employment, "_body")}>
+                <TinaMarkdown
+                  components={componentRenderer}
+                  content={data.employment._body}
+                />
+              </div>
               <Benefits data={data.employment.benefits} />
               {data.employment.benefitsBody && (
-                <TinaMarkdown
-                  content={data.employment.benefitsBody}
-                  components={componentRenderer}
-                />
+                <div
+                  data-tina-field={tinaField(data.employment, "benefitsBody")}
+                >
+                  <TinaMarkdown
+                    content={data.employment.benefitsBody}
+                    components={componentRenderer}
+                  />
+                </div>
               )}
             </div>
           </div>
@@ -107,10 +120,12 @@ export default function EmploymentPage(
         {data.employment.afterBody ? (
           <Section className="prose-employment mb-16 text-center">
             <Container padding="px-4" className="w-full">
-              <TinaMarkdown
-                content={data.employment.afterBody}
-                components={componentRenderer}
-              />
+              <div data-tina-field={tinaField(data.employment, "afterBody")}>
+                <TinaMarkdown
+                  content={data.employment.afterBody}
+                  components={componentRenderer}
+                />
+              </div>
             </Container>
           </Section>
         ) : (
@@ -124,10 +139,17 @@ export default function EmploymentPage(
               size="custom"
               className="prose-employment w-full text-center"
             >
-              <TinaMarkdown
-                content={data.employment.opportunitiesBody}
-                components={componentRenderer}
-              />
+              <div
+                data-tina-field={tinaField(
+                  data.employment,
+                  "opportunitiesBody"
+                )}
+              >
+                <TinaMarkdown
+                  content={data.employment.opportunitiesBody}
+                  components={componentRenderer}
+                />
+              </div>
             </Container>
           )}
           <Container size="custom" className="w-full">
@@ -136,10 +158,14 @@ export default function EmploymentPage(
         </Section>
         <Section className="!bg-gray-75 pb-25 text-center">
           <Container size="custom" className="w-full">
-            <TinaMarkdown
-              content={data.employment.callToActionBody}
-              components={componentRenderer}
-            />
+            <div
+              data-tina-field={tinaField(data.employment, "callToActionBody")}
+            >
+              <TinaMarkdown
+                content={data.employment.callToActionBody}
+                components={componentRenderer}
+              />
+            </div>
           </Container>
         </Section>
         <Section>
