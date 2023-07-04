@@ -166,6 +166,7 @@ export const carouselBlockSchema: Template = {
           type: "image",
           label: "Image",
           name: carouselBlock.items.imgSrc,
+          uploadDir: () => "/images/carousel",
         },
       ],
     },
