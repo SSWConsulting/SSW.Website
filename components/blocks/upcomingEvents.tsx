@@ -1,7 +1,5 @@
 import dayjs from "dayjs";
-import isBetween from "dayjs/plugin/isBetween";
-import relativeTime from "dayjs/plugin/relativeTime";
-import utc from "dayjs/plugin/utc";
+// import relativeTime from "dayjs/plugin/relativeTime";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -10,10 +8,6 @@ import { tinaField } from "tinacms/dist/react";
 
 import axios from "axios";
 import { EventInfo, LiveStreamBannerInfo } from "../../services/server/events";
-
-dayjs.extend(utc);
-dayjs.extend(isBetween);
-dayjs.extend(relativeTime);
 
 export const UpcomingEvents = ({ data }) => {
   const [events, setEvents] = useState([]);
