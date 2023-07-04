@@ -31,10 +31,10 @@ const EventCard = ({ event, count, index }) => {
   return (
     <div
       className={classNames(
-        "col-span-12 gap-2 border-b-8 border-white  bg-gray-100 py-3 pl-5 text-lg last:border-b-0 last:border-r-0 md:border-b-0 md:border-r-8",
+        "col-span-12 gap-2 border-b-8 border-white  bg-gray-100 py-3 pl-5 text-lg last:border-b-0 last:border-r-0 md:border-b-0",
         getColSpanClass(count, index),
-        addTopBorder(index),
-        removeLastRightBorder(index)
+        addTopBorderForSecondRow(index),
+        addRightBorder(index)
       )}
     >
       <span className="font-bold capitalize">{event.city}</span>
@@ -88,12 +88,12 @@ const getColSpanClass = (count, index) => {
   }
 };
 
-const addTopBorder = (index) => {
+const addTopBorderForSecondRow = (index) => {
   return index > 2 ? "border-white md:border-t-8" : "";
 };
 
-const removeLastRightBorder = (index) => {
-  return (index + 1) % 3 == 0 ? "md:border-r-0" : "";
+const addRightBorder = (index) => {
+  return (index + 1) % 3 != 0 ? "md:border-r-8" : "";
 };
 
 const EventHeader = ({ duration, price }) => {
