@@ -1,10 +1,9 @@
 import classNames from "classnames";
 import moment from "moment";
-import Link from "next/link";
 import { FC } from "react";
 import { MdLocationOn } from "react-icons/md";
 import type { Template } from "tinacms";
-import { EventBookingType } from "./eventBookingType";
+import { Event, EventBookingType, EventModel } from "./eventBookingType";
 
 export const EventBooking: FC<EventBookingType> = ({ data }) => {
   return (
@@ -12,20 +11,20 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
       {<EventHeader duration={data.duration} price={data.price} />}
       <div className="mb-2 grid grid-cols-12">
         {data.eventList?.map((event, index) => (
-          <EventCard event={event} index={index} />
+          <EventCard key={index} {...event} />
         ))}
       </div>
       <div className="bg-gray-400 py-1 text-center text-white">
-        Hosted by <span className="font-bold">SSW</span>
+        {EventModel.HOSTED_BY}{" "}
+        <span className="font-bold">{EventModel.SSW}</span>
       </div>
     </>
   );
 };
 
-const EventCard = ({ event, index }) => {
+const EventCard: FC<Event> = (event) => {
   return (
     <div
-      key={index}
       className={classNames(
         "col-span-12 gap-2 border-b-8 border-white  bg-gray-100 py-3 pl-5 text-lg last:border-b-0 last:border-r-0 md:col-span-4 md:border-b-0 md:border-r-8"
       )}
@@ -35,19 +34,23 @@ const EventCard = ({ event, index }) => {
         {" "}
         {event.date && moment(event.date).format("Do (ddd) MMMM YYYY")}
       </div>
-      <div className=" py-0.5 text-xs uppercase text-gray-500">9AM - 5PM</div>
+      <div className=" py-0.5 text-xs uppercase text-gray-500">
+        {EventModel.TIMINGS}
+      </div>
       <div className="py-1">
-        <Link
+        <a
           href={event.bookingURL == null ? "" : event.bookingURL}
           className="done inline-flex cursor-pointer p-3"
+          target="_blank"
         >
-          Book Now
-        </Link>
+          {EventModel.BOOKING_BTN_TEXT}
+        </a>
       </div>
       <div className="py-1 text-xs">
         <a className="flex items-center !no-underline" href="#location">
           <MdLocationOn className="m-icon" />
-          SSW<span className="ml-1 capitalize">{event.city}</span>
+          {EventModel.SSW}
+          <span className="ml-1 capitalize">{event.city}</span>
         </a>
       </div>
     </div>
@@ -59,13 +62,18 @@ const EventHeader = ({ duration, price }) => {
     <div className="mt-2 border-t-2 border-gray-400 bg-gray-100">
       <div className="mb-2 grid grid-cols-12">
         <div className="col-span-4 px-3  py-2 text-lg sm:col-span-2">
-          <div className=" text-xs uppercase text-gray-500">Duration</div>
-          {duration} Day
+          <div className=" text-xs uppercase text-gray-500">
+            {EventModel.DURATION}
+          </div>
+          {duration} {EventModel.DAY}
         </div>
         <div className="col-span-1 h-5/6 items-center self-center border-r-1 border-gray-300"></div>
         <div className="col-span-7 px-3 py-2 text-lg sm:col-span-9">
-          <div className="text-xs uppercase text-gray-500">Price</div>${price}{" "}
-          inc GST
+          <div className="text-xs uppercase text-gray-500">
+            {EventModel.PRICE}
+          </div>
+          {EventModel.CURRENCY}
+          {price} {EventModel.INCLUDE_GST}
         </div>
       </div>
     </div>
