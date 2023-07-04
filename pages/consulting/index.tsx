@@ -94,6 +94,8 @@ export default function ConsultingIndex(
     wrapGrid(gridRef.current);
   });
 
+  const tinaData = data.consultingIndexConnection.edges[0].node;
+
   return (
     <Layout>
       <SEO seo={{ ...seo, canonical: "/consulting" }} />
@@ -109,10 +111,7 @@ export default function ConsultingIndex(
             <ul className="list-none">
               {tags?.map((tag, index) => (
                 <div
-                  data-tina-field={tinaField(
-                    data.consultingIndexConnection.edges[0].node.sidebar[index],
-                    "label"
-                  )}
+                  data-tina-field={tinaField(tinaData.sidebar[index], "label")}
                 >
                   <Tag
                     label={tag.label}
@@ -132,7 +131,7 @@ export default function ConsultingIndex(
             >
               {categories.map((category, index) => (
                 <Category
-                  tinaData={data}
+                  tinaData={tinaData}
                   key={category.name}
                   category={category}
                   selectedTag={selectedTag}
@@ -186,8 +185,7 @@ const Category = ({ tinaData, category, selectedTag, index }) => {
 
   const categoryVisible = pages.some((page) => page.isVisible);
 
-  const tinaCategory =
-    tinaData.consultingIndexConnection.edges[0].node.categories[index];
+  const tinaCategory = tinaData.categories[index];
 
   return (
     <>
