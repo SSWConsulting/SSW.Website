@@ -268,6 +268,7 @@ export const serviceCardsBlockSchema: Template = {
           type: "image",
           label: "Image",
           name: serviceCards.bigCards.imgSrc,
+          uploadDir: () => "/service-cards/",
         },
       ],
     },

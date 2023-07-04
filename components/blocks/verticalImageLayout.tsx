@@ -1,6 +1,5 @@
-import React from "react";
-import type { Template } from "tinacms";
 import Image from "next/image";
+import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const VerticalImageLayout = ({ data }) => {
@@ -39,6 +38,7 @@ export const verticalImageLayoutBlockSchema: Template = {
       type: "image",
       label: "Image",
       name: "imageSrc",
+      uploadDir: () => "/verticalImageLayout/",
     },
     {
       type: "string",
