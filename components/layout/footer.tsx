@@ -1,12 +1,9 @@
 import dayjs from "dayjs";
-// import relativeTime from "dayjs/plugin/relativeTime";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "../util/container";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
-
-// dayjs.extend(relativeTime);
 
 export const Footer = () => {
   return (
