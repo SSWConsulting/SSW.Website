@@ -17,7 +17,7 @@ export const Subscribe = (props: SubscribeProps) => {
     >
       <Container padding="px-4" className="w-full">
         <SubNewsLetters
-          headerText={props.headerText}
+          headerText={`<span class='mix-blend-difference mr-3'>${props.headerText}</span>`}
           subscribeButtonText={props.subscribeButtonText || "Sign Up"}
           subscribeSubTitle={props.subscribeSubTitle}
         />

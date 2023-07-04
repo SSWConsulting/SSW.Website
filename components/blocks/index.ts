@@ -1,5 +1,8 @@
 import type { Template } from "tinacms";
 
+import { bookingButtonSchema } from "../bookingButton/bookingButton";
+import { utilityButtonSchema } from "../button/utilityButton";
+import { subscribeSchema } from "../subNewsletter/subscribe";
 import { agreementFormBlockSchema } from "../terms-and-conditions/agreementForm";
 import { trainingInformationSchema } from "../training/trainingInformation";
 import { trainingLearningOutcomeSchema } from "../training/trainingLearningOutcome";
@@ -21,15 +24,11 @@ import { internalCarouselBlockSchema } from "./internalCarousel";
 import { newslettersTableBlockSchema } from "./newslettersTable";
 import { recurringEventSchema } from "./recurringEvent";
 import { serviceCardsBlockSchema } from "./serviceCards";
-import { subNewsLettersSchema } from "./subNewsLetters";
-import { subscribeSchema } from "./subscribe";
 import { tableBlockSchema } from "./tableLayout";
 import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
-import { utilityButtonSchema } from "../button/utilityButton";
-import { bookingButtonSchema } from "../bookingButton/bookingButton";
 
 export const pageBlocks: Template[] = [
   aboutUsBlockSchema,
@@ -52,7 +51,6 @@ export const pageBlocks: Template[] = [
   newslettersTableBlockSchema,
   recurringEventSchema,
   serviceCardsBlockSchema,
-  subNewsLettersSchema,
   subscribeSchema,
   tableBlockSchema,
   trainingInformationSchema,
@@ -64,6 +62,9 @@ export const pageBlocks: Template[] = [
   videoEmbedBlockSchema,
 ];
 
+export * from "../bookingButton/bookingButton";
+export * from "../button/utilityButton";
+export * from "../subNewsletter/subscribe";
 export * from "../terms-and-conditions/agreementForm";
 export * from "../training/trainingInformation";
 export * from "../training/trainingLearningOutcome";
@@ -83,12 +84,8 @@ export * from "./hero";
 export * from "./newslettersTable";
 export * from "./recurringEvent";
 export * from "./serviceCards";
-export * from "./subNewsLetters";
-export * from "./subscribe";
 export * from "./tableLayout";
 export * from "./upcomingEvents";
-export * from "../button/utilityButton";
 export * from "./verticalImageLayout";
 export * from "./verticalListItem";
 export * from "./videoEmbed";
-export * from "../bookingButton/bookingButton";

@@ -4,6 +4,7 @@ import { UtilityButton } from "../button/utilityButton";
 import { AgreementForm } from "../terms-and-conditions/agreementForm";
 import TrainingInformation from "../training/trainingInformation";
 import { TrainingLearningOutcome } from "../training/trainingLearningOutcome";
+import { Subscribe, SubscribeProps } from "./../subNewsletter/subscribe";
 import { Carousel } from "./carousel";
 import { Citation } from "./citation";
 import { ClientLogos } from "./clientLogos";
@@ -17,8 +18,6 @@ import { GoogleMapsWrapper } from "./googleMapsWrapper";
 import { InternalCarousel } from "./internalCarousel";
 import { NewslettersTable } from "./newslettersTable";
 import { RecurringEvent } from "./recurringEvent";
-import { SubNewsLetters, SubNewsLettersProps } from "./subNewsLetters";
-import { Subscribe, SubscribeProps } from "./subscribe";
 import { TableLayout } from "./tableLayout";
 import { UpcomingEvents } from "./upcomingEvents";
 import { VerticalImageLayout } from "./verticalImageLayout";
@@ -128,7 +127,6 @@ export const componentRenderer: Components<{
   NewslettersTable: {
     headerText: string;
   };
-  SubNewsLetters: SubNewsLettersProps;
   Subscribe: SubscribeProps;
   Citation: {
     article: string;
@@ -162,7 +160,6 @@ export const componentRenderer: Components<{
   FixedTabsLayout: (props) => <FixedTabsLayout data={props} />,
   BookingButton: (props) => <BookingButton {...props} />,
   NewslettersTable: (props) => <NewslettersTable data={props} />,
-  SubNewsLetters: (props) => <SubNewsLetters {...props} />,
   Subscribe: (props) => <Subscribe {...props} />,
   Citation: (props) => <Citation {...props} />,
   UtilityButton: (props) => <UtilityButton {...props} />,
