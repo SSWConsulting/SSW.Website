@@ -107,14 +107,21 @@ export default function ConsultingIndex(
               <MdLiveHelp className="mr-2 inline-block" />I am looking for...
             </h3>
             <ul className="list-none">
-              {tags?.map((tag) => (
-                <Tag
-                  label={tag.label}
-                  key={tag.name}
-                  tag={tag.name}
-                  selectedTag={selectedTag}
-                  setSelectedTag={setSelectedTag}
-                />
+              {tags?.map((tag, index) => (
+                <div
+                  data-tina-field={tinaField(
+                    data.consultingIndexConnection.edges[0].node.sidebar[index],
+                    "label"
+                  )}
+                >
+                  <Tag
+                    label={tag.label}
+                    key={tag.name}
+                    tag={tag.name}
+                    selectedTag={selectedTag}
+                    setSelectedTag={setSelectedTag}
+                  />
+                </div>
               ))}
             </ul>
           </div>
@@ -179,6 +186,9 @@ const Category = ({ tinaData, category, selectedTag, index }) => {
 
   const categoryVisible = pages.some((page) => page.isVisible);
 
+  const tinaCategory =
+    tinaData.consultingIndexConnection.edges[0].node.categories[index];
+
   return (
     <>
       <div
@@ -189,24 +199,26 @@ const Category = ({ tinaData, category, selectedTag, index }) => {
           <hr className="my-5 border-gray-100" />
           <h2
             className="mt-0 text-sswRed"
-            data-tina-field={tinaField(
-              tinaData.consultingIndexConnection.edges[0].node.categories[index]
-                .category,
-              "name"
-            )}
+            data-tina-field={tinaField(tinaCategory.category, "name")}
           >
             {category.name}
           </h2>
         </div>
       </div>
-      {pages.map((page) => (
-        <PageCard key={page.title} page={page} />
+      {pages.map((page, pageIndex) => (
+        <PageCard
+          key={page.title}
+          page={page}
+          category={tinaCategory}
+          pageIndex={pageIndex}
+        />
       ))}
     </>
   );
 };
 
-const PageCard = ({ page }) => {
+const PageCard = ({ page, category, pageIndex }) => {
+  console.log(category);
   return (
     <div
       className={classNames(
@@ -227,7 +239,10 @@ const PageCard = ({ page }) => {
             />
           )}
         </div>
-        <div className="min-w-0 flex-1">
+        <div
+          className="min-w-0 flex-1"
+          data-tina-field={tinaField(category?.pages[pageIndex], "description")}
+        >
           <Link href={page.url} className="unstyled">
             <span className="absolute inset-0" aria-hidden="true" />
             <h3 className="mb-2 mt-0 text-lg text-sswRed">{page.title}</h3>
