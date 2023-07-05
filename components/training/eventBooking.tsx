@@ -87,6 +87,7 @@ const EventCard = ({ event, count, index, schema }) => {
           href={event.bookingURL == null ? "" : event.bookingURL}
           className="done inline-flex cursor-pointer p-3"
           target="_blank"
+          rel="noopener noreferrer"
         >
           {EventModel.BOOKING_BTN_TEXT}
         </a>
