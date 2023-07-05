@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import moment from "moment";
+import dayjs from "dayjs";
 import { FC } from "react";
 import { MdLocationOn } from "react-icons/md";
 import type { Template } from "tinacms";
@@ -71,7 +71,7 @@ const EventCard = ({ event, count, index, schema }) => {
         )}
       >
         {" "}
-        {event.date && moment(event.date).format("Do (ddd) MMMM YYYY")}
+        {event.date && dayjs(event.date).format("Do (ddd) MMMM YYYY")}
       </div>
       <div className=" py-0.5 text-xs uppercase text-gray-500">
         {EventModel.TIMINGS}
