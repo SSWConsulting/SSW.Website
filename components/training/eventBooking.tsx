@@ -177,7 +177,7 @@ export const eventBookingBlock = {
 
 export const eventBookingSchema: Template = {
   name: eventBookingBlock.eventBooking,
-  label: "Events",
+  label: "Events Booking",
   fields: [
     {
       type: "number",
