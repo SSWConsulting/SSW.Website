@@ -26,8 +26,8 @@ export const SubNewsletterRow = (props: SubNewsletterRowProps) => {
   );
 };
 
-export const subscribeSchema: Template = {
-  name: "Subscribe",
+export const subNewsletterRowSchema: Template = {
+  name: "SubNewsletterRow",
   label: "Subscribe To Newsletters Row",
   fields: [
     // TODO - Add background select between white background and image background

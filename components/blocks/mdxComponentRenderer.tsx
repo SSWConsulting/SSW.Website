@@ -130,7 +130,7 @@ export const componentRenderer: Components<{
   NewslettersTable: {
     headerText: string;
   };
-  SubNewletterRow: SubNewsletterRowProps;
+  SubNewsletterRow: SubNewsletterRowProps;
   Citation: {
     article: string;
     author: string;
@@ -163,7 +163,7 @@ export const componentRenderer: Components<{
   FixedTabsLayout: (props) => <FixedTabsLayout data={props} />,
   BookingButton: (props) => <BookingButton {...props} />,
   NewslettersTable: (props) => <NewslettersTable data={props} />,
-  SubNewletterRow: (props) => <SubNewsletterRow {...props} />,
+  SubNewsletterRow: (props) => <SubNewsletterRow {...props} />,
   Citation: (props) => <Citation {...props} />,
   UtilityButton: (props) => <UtilityButton {...props} />,
   ContentCard: (props) => <ContentCard data={props} />,
