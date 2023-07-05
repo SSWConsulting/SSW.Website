@@ -1,14 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { FaRegCheckCircle, FaSpinner } from "react-icons/fa";
-import { Template } from "tinacms";
 
-/**
- * A component for subscribing to newsletters.
- * @param headerText - The text to display above the form.
- * @param subscribeButtonText - The text to display on the subscribe button.
- * @param subscribeSubTitle - The text to display below the headerText.
- */
 const placeholder = {
   firstName: "First Name",
   lastName: "Last Name",
@@ -22,11 +15,23 @@ const Default = {
   subscribeSubTitle: "Stay tuned for SSW News & upcoming events",
 };
 
-export const SubNewsLetters = ({
+export type SubNewsLettersFormProps = {
+  headerText?: string;
+  subscribeButtonText?: string;
+  subscribeSubTitle?: string;
+};
+
+/**
+ * A component for subscribing to newsletters.
+ * @param headerText - The text to display above the form.
+ * @param subscribeButtonText - The text to display on the subscribe button.
+ * @param subscribeSubTitle - The text to display below the headerText.
+ */
+export const SubNewsLettersForm = ({
   headerText = Default.headerText,
   subscribeButtonText = Default.subscribeButtonText,
   subscribeSubTitle = Default.subscribeSubTitle,
-}) => {
+}: SubNewsLettersFormProps) => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -180,26 +185,4 @@ export const SubNewsLetters = ({
       </p>
     </div>
   );
-};
-
-export const subNewsLettersSchema: Template = {
-  name: "SubNewsLetters",
-  label: "Subscribe To NewsLetters",
-  fields: [
-    {
-      type: "string",
-      label: "Header text",
-      name: "headerText",
-    },
-    {
-      type: "string",
-      label: "Subscribe button text",
-      name: "subscribeButtonText",
-    },
-    {
-      type: "string",
-      label: "Subscribe sub title",
-      name: "subscribeSubTitle",
-    },
-  ],
 };
