@@ -19,6 +19,8 @@ export const testimonialSchema: Collection = {
       label: "Avatar",
       name: "avatar",
       required: true,
+      // @ts-ignore
+      uploadDir: () => "testimonialAvatars",
     },
     {
       type: "string",
