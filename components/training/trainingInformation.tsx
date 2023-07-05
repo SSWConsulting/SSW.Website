@@ -1,11 +1,11 @@
 import { FC, Key } from "react";
 import type { Template } from "tinacms";
-import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
-import { Section } from "../util/section";
-import { Container } from "../util/container";
-import { verticalListItemSchema } from "../blocks/verticalListItem";
+import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { recurringEventSchema } from "../blocks/recurringEvent";
+import { verticalListItemSchema } from "../blocks/verticalListItem";
+import { Container } from "../util/container";
+import { Section } from "../util/section";
 
 export type TrainingInformationItemProps = {
   header: string;
@@ -18,10 +18,10 @@ const TrainingInformationItem: FC<TrainingInformationItemProps> = ({
 }) => {
   return (
     <div className="flex flex-col text-center text-base lg:text-left">
-      <h1
-        className="mt-0 pt-0"
+      <h3
+        className="my-0 py-0 text-3xl"
         dangerouslySetInnerHTML={{ __html: header }}
-      ></h1>
+      ></h3>
       <div className="w-full items-center p-5 text-left sm:w-3/4 lg:w-full">
         <TinaMarkdown components={componentRenderer} content={body} />
       </div>
@@ -32,8 +32,8 @@ const TrainingInformationItem: FC<TrainingInformationItemProps> = ({
 export const TrainingInformation = ({ data }) => {
   return (
     <Section color="white">
-      <Container className={"flex-1 p-0"}>
-        <div className="grid grid-cols-1 justify-between py-10 lg:grid-cols-3">
+      <Container size={"xsmall"} className={"flex-1 pb-12"}>
+        <div className="grid grid-cols-1 justify-between lg:grid-cols-3">
           {data.trainingInformationItems?.map(
             (item: TrainingInformationItemProps, key: Key) => (
               <TrainingInformationItem

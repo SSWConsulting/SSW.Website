@@ -1,9 +1,8 @@
 import type { NumberField } from "@tinacms/schema-tools/dist/types/index";
 
-import React from "react";
-import { wrapFieldsWithMeta } from "tinacms";
-import { AiFillStar } from "react-icons/ai";
 import classNames from "classnames";
+import { AiFillStar } from "react-icons/ai";
+import { wrapFieldsWithMeta } from "tinacms";
 
 export const Rating = ({ className, rating }) => {
   if (rating < 0) {
@@ -30,6 +29,7 @@ export const ratingSchema: NumberField = {
   type: "number",
   label: "Rating",
   name: "rating",
+  description: "Rating from 0 to 5. Rating of -1 means no rating.",
   // As per https://tina.io/docs/extending-tina/custom-field-components/#custom-component-example
   ui: {
     parse: (val) => Number(val),
