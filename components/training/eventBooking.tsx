@@ -6,6 +6,15 @@ import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { EventBookingType, EventModel } from "./eventBookingType";
 
+const classes = {
+  mdColSpan4: "md:col-span-4",
+  mdColSpan6: "md:col-span-6",
+  mdColSpan12: "md:col-span-12",
+  lastMdColSpan4: "last:md:col-span-4",
+  lastMdColSpan8: "last:md:col-span-8",
+  lastMdColSpan12: "last:md:col-span-12",
+};
+
 export const EventBooking: FC<EventBookingType> = ({ data }) => {
   return (
     <>
@@ -95,23 +104,23 @@ const EventCard = ({ event, count, index, schema }) => {
 
 const getColSpanClass = (count, index) => {
   if (count === 3) {
-    return "md:col-span-4";
+    return classes.mdColSpan4;
   } else if (count === 2) {
-    return "md:col-span-6";
+    return classes.mdColSpan6;
   } else if (count === 1) {
-    return "md:col-span-12";
+    return classes.mdColSpan12;
   } else {
     // For counts greater than 3, calculate the column span class based on index and count > 3
 
     if ((index + 1) % 3 === 0) {
       // e.g number of items are 6 (3 items in a row each col-span-4)
-      return "md:col-span-4 last:md:col-span-4";
+      return classes.mdColSpan4 + classes.lastMdColSpan4;
     } else if ((index + 1) % 3 === 1) {
       // e.g number of items are 4 (1 item in a row (col-span-12))
-      return "md:col-span-4 last:md:col-span-12";
+      return classes.mdColSpan4 + classes.lastMdColSpan12;
     } else {
       // e.g number of items are 5 (2 items (col-span-4) && (col-span-8))
-      return "md:col-span-4 last:md:col-span-8";
+      return classes.mdColSpan4 + classes.lastMdColSpan8;
     }
   }
 };
