@@ -2,14 +2,6 @@
   "newsletters_year": "2023",
   "newsletters": [
     {
-      "month": 7,
-      "file": "/images/newsletter-uploads/2023/Test.html",
-      "images": [
-        "/images/brisbane-newsletter-image.jpg"
-      ],
-      "description": "A great newsletter"
-    },
-    {
       "month": 1,
       "file": "/images/newsletter-uploads/2023/_2023_01__Adams 2022 - A Year in Review__.html",
       "description": "Adams 2022 - A Year in Review"
