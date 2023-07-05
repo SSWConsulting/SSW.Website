@@ -17,7 +17,9 @@ export const SubNewsletterRow = (props: SubNewsletterRowProps) => {
     >
       <Container padding="px-4" className="w-full">
         <SubNewsLettersForm
-          headerText={`<span class='mix-blend-difference mr-3'>${props.headerText}</span>`}
+          headerText={
+            props.headerText && `<span class=''>${props.headerText}</span>`
+          }
           subscribeButtonText={props.subscribeButtonText || "Sign Up"}
           subscribeSubTitle={props.subscribeSubTitle}
         />
