@@ -1,11 +1,11 @@
 import axios from "axios";
 import { Form, Formik } from "formik";
-import { useEffect, useContext, useMemo, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { FaRegCheckCircle, FaSpinner } from "react-icons/fa";
 import FormGroupInput from "../form/formGroupInput";
 import FormGroupSelect from "../form/formGroupSelect";
 import FormGroupTextArea from "../form/formGroupTextArea";
-import { FaRegCheckCircle, FaSpinner } from "react-icons/fa";
 import {
   ACTIVE_INPUT,
   AUSTRALIA,
@@ -13,6 +13,7 @@ import {
   CONTACT_FORM_TITLE,
   FORM_INPUT,
   FormCountriesList,
+  ReferralSourceList,
   STATE_DEFAULT_VALUE,
 } from "../util/constants";
 import { bookingFormSubmissionData } from "./bookingFormSubmissionData";
@@ -44,6 +45,7 @@ export const BookingForm = (props) => {
     referredCompany: "",
     referredFullName: "",
     referredEmail: "",
+    referralSource: "",
   };
 
   //Condition to avoid SSR (Server-Side Rendering) for getting page path
@@ -147,6 +149,9 @@ export const BookingForm = (props) => {
   };
   const locationDefaultOption = getDefaultOption(FORM_INPUT.Location);
   const statesDefaultOption = getDefaultOption(FORM_INPUT.States);
+  const referralSourcesDefaultOption = getDefaultOption(
+    FORM_INPUT.ReferralSource
+  );
 
   return (
     <div className="rounded bg-white font-sans">
@@ -232,6 +237,27 @@ export const BookingForm = (props) => {
                   label={ACTIVE_INPUT.Company}
                   {...getCommonFieldProps(FORM_INPUT.Company)}
                 />
+
+                <FormGroupSelect
+                  label={ACTIVE_INPUT.ReferralSource}
+                  name={FORM_INPUT.ReferralSource}
+                  {...getCommonFieldProps(referralSourcesDefaultOption.name)}
+                >
+                  <option className="hidden" value="">
+                    How did you hear about us?
+                  </option>
+                  {ReferralSourceList.map((source) => {
+                    return (
+                      <option
+                        className="cursor-pointer !p-1"
+                        key={source.value}
+                        value={source.value}
+                      >
+                        {source.label}
+                      </option>
+                    );
+                  })}
+                </FormGroupSelect>
 
                 <FormGroupTextArea
                   label={ACTIVE_INPUT.Note}

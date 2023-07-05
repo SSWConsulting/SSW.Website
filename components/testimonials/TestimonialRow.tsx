@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { Container } from "../util/container";
 import { Rating } from "../util/consulting/rating";
+import { Container } from "../util/container";
 
 export const TestimonialRow = ({ testimonialsResult }) => {
   return (
@@ -36,8 +36,12 @@ const TestimonialCard = ({ testimonial }) => {
       <Rating className="mx-auto mt-8" rating={testimonial?.rating} />
       <p className="mt-4 min-h-24">
         {testimonial?.name}
-        {", "}
-        <span className="font-semibold">{testimonial?.company}</span>
+        {testimonial?.company && (
+          <>
+            {", "}
+            <span className="font-semibold">{testimonial?.company}</span>
+          </>
+        )}
       </p>
       <div className="mt-2 text-sm text-gray-900">
         <TinaMarkdown content={testimonial?.body} />

@@ -8,6 +8,11 @@ export const consultingIndexSchema: Collection = {
   name: "consultingIndex",
   path: "content/consulting/index",
   format: "json",
+  ui: {
+    router: ({ document }) => {
+      return "/consulting";
+    },
+  },
   fields: [
     // @ts-ignore
     seoSchema,
