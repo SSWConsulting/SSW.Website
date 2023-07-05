@@ -1,17 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { tinaField } from "tinacms/dist/react";
 
-const ContactPanel = ({
-  phone,
-  streetAddress,
-  suburb,
-  addressLocality,
-  addressRegion,
-  postalCode,
-  addressCountry,
-  sideImg,
-  sidebarSecondaryPlace,
-}) => (
+const ContactPanel = ({ office }) => (
   <>
     <h3>Contact Us</h3>
     <p>
@@ -23,36 +14,64 @@ const ContactPanel = ({
     <p>
       Give us a call on
       <br />
-      <strong>{phone}</strong>
+      <span data-tina-field={tinaField(office, "phone")}>
+        <strong>{office.phone}</strong>
+      </span>
     </p>
 
     <p>
       Find us at
       <br />
       <strong>
-        {streetAddress} <br />
-        {suburb}, {addressRegion} {postalCode} <br />
-        {addressCountry}
+        <span data-tina-field={tinaField(office, "streetAddress")}>
+          {office.streetAddress}
+        </span>{" "}
+        <br />
+        <span data-tina-field={tinaField(office, "suburb")}>
+          {office.suburb}
+        </span>
+        ,{" "}
+        <span data-tina-field={tinaField(office, "addressRegion")}>
+          {office.addressRegion}
+        </span>{" "}
+        <span data-tina-field={tinaField(office, "postalCode")}>
+          {office.postalCode}
+        </span>{" "}
+        <br />
+        <span data-tina-field={tinaField(office, "addressCountry")}>
+          {office.addressCountry}
+        </span>
       </strong>
     </p>
 
     <p>
       {"Learn more on "}
-      <Link href={`https://sswchapel.com.au/${addressLocality}`}>
+      <Link href={`https://sswchapel.com.au/${office.addressLocality}`}>
         SSW Chapel
       </Link>
-      {!!sidebarSecondaryPlace && (
+      {!!office.sidebarSecondaryPlace && (
         <>
           {" and "}
-          <Link href={sidebarSecondaryPlace.url}>
-            {sidebarSecondaryPlace.name}
-          </Link>
+          <span
+            data-tina-field={tinaField(office.sidebarSecondaryPlace, "url")}
+          >
+            <Link href={office.sidebarSecondaryPlace.url}>
+              {office.sidebarSecondaryPlace.name}
+            </Link>
+          </span>
         </>
       )}
     </p>
 
-    {sideImg && (
-      <Image src={sideImg} width={285} height={160} alt="Sidebar Image" />
+    {office.sideImg && (
+      <div data-tina-field={tinaField(office, "sideImg")}>
+        <Image
+          src={office.sideImg}
+          width={285}
+          height={160}
+          alt="Sidebar Image"
+        />
+      </div>
     )}
   </>
 );
