@@ -22,9 +22,6 @@ export const VerticalListItem = ({ data }) => {
         </div>
       </div>
       <div className="pl-20 marker:text-sswRed child:!list-disc">
-        {/* {data.subListItems?.map((item) => (
-          <li className="pb-1">{item}</li>
-        ))} */}
         <TinaMarkdown content={data.afterBody} />
       </div>
     </div>
