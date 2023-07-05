@@ -54,50 +54,60 @@ const EventCard = ({ event, count, index, schema }) => {
         addRightBorder(index)
       )}
     >
-      <span
-        className="font-bold capitalize"
-        data-tina-field={tinaField(
-          schema.eventList[index],
-          eventBookingBlock.eventList.city
-        )}
-      >
-        {event.city}
-      </span>
-      <div
-        className=" py-0.5 text-xs uppercase text-gray-500"
-        data-tina-field={tinaField(
-          schema.eventList[index],
-          eventBookingBlock.eventList.date
-        )}
-      >
-        {" "}
-        {event.date && dayjs(event.date).format("Do (ddd) MMMM YYYY")}
-      </div>
-      <div className=" py-0.5 text-xs uppercase text-gray-500">
-        {EventModel.TIMINGS}
-      </div>
-      <div
-        className="py-1"
-        data-tina-field={tinaField(
-          schema.eventList[index],
-          eventBookingBlock.eventList.bookingURL
-        )}
-      >
-        <a
-          href={event.bookingURL == null ? "" : event.bookingURL}
-          className="done inline-flex cursor-pointer p-3"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {EventModel.BOOKING_BTN_TEXT}
-        </a>
-      </div>
-      <div className="py-1 text-xs">
-        <a className="flex items-center !no-underline" href="#location">
-          <MdLocationOn className="m-icon" />
-          {EventModel.SSW}
-          <span className="ml-1 capitalize">{event.city}</span>
-        </a>
+      <div className="mb-2 grid grid-cols-12">
+        <div className="col-span-6 md:col-span-12">
+          <span
+            className="font-bold capitalize"
+            data-tina-field={tinaField(
+              schema.eventList[index],
+              eventBookingBlock.eventList.city
+            )}
+          >
+            {event.city}
+          </span>
+          <div
+            className=" py-0.5 text-xs uppercase text-gray-500"
+            data-tina-field={tinaField(
+              schema.eventList[index],
+              eventBookingBlock.eventList.date
+            )}
+          >
+            {" "}
+            {event.date && dayjs(event.date).format("Do (ddd) MMMM YYYY")}
+          </div>
+          <div className=" py-0.5 text-xs uppercase text-gray-500">
+            {EventModel.TIMINGS}
+          </div>
+        </div>
+        <div className="col-span-6  items-center  pr-4 md:col-span-12 md:pr-0">
+          <div
+            className="py-1 text-end md:text-start"
+            data-tina-field={tinaField(
+              schema.eventList[index],
+              eventBookingBlock.eventList.bookingURL
+            )}
+          >
+            <a
+              href={event.bookingURL == null ? "" : event.bookingURL}
+              className="done inline-flex cursor-pointer"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {EventModel.BOOKING_BTN_TEXT}
+            </a>
+
+            <div className=" py-1 pr-0 text-xs ">
+              <a
+                className="flex items-center justify-end !no-underline md:justify-start"
+                href="#location"
+              >
+                <MdLocationOn className="m-icon" />
+                {EventModel.SSW}
+                <span className="ml-1 capitalize">{event.city}</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
