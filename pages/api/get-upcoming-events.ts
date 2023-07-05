@@ -3,14 +3,19 @@ import { AxiosError } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 import { getEvents } from "../../services/server/events";
 
+const CACHE_MINS = 60;
+const CACHE_KEY = "upcoming-events";
+
+import NodeCache from "node-cache";
+const cache = new NodeCache({ stdTTL: CACHE_MINS * 60 });
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   if (req.method === "GET") {
-    const datetimeParam = req.query.datetime;
     const topCountParam = req.query.top;
-    if (typeof datetimeParam !== "string" || !topCountParam) {
+    if (!topCountParam) {
       res.status(400).json({ message: "Unsupported query param" });
       return;
     }
@@ -21,19 +26,27 @@ export default async function handler(
       return;
     }
 
-    if (new Date(datetimeParam as string) instanceof Date === false) {
-      res.status(400).json({ message: "Invalid datetime" });
-      return;
-    }
+    const startOfDay = new Date();
+    startOfDay.setHours(0, 0, 0, 0);
 
     const odataFilter = `$filter=fields/Enabled ne false \
-      and fields/EndDateTime gt '${datetimeParam as string}'\
+      and fields/EndDateTime gt '${startOfDay.toISOString()}'\
       &$orderby=fields/StartDateTime asc\
       &$top=${topCount}`;
 
     try {
-      const events = await getEvents(odataFilter);
-      res.status(200).json(events);
+      const cachedEvents = cache.get(`${CACHE_KEY}-${topCount}`);
+      if (cachedEvents == undefined) {
+        console.log("cache miss");
+        const events = await getEvents(odataFilter);
+        cache.set(`${CACHE_KEY}-${topCount}`, events, CACHE_MINS * 60);
+
+        res.setHeader("Cache-Control", `s-maxage=${CACHE_MINS * 60}`);
+        return res.status(200).json(events);
+      }
+
+      res.setHeader("Cache-Control", `s-maxage=${CACHE_MINS * 60}`);
+      res.status(200).json(cachedEvents);
     } catch (err) {
       const properties = {
         Request: "GET /api/get-upcoming-events",

@@ -33,6 +33,8 @@ export default async function handler(
 
     try {
       const speakersInfo = await getSpeakersInfo(ids, emails);
+
+      res.setHeader("Cache-Control", "s-maxage=3600");
       res.status(200).json(speakersInfo);
     } catch (err) {
       const properties = {
