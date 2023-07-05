@@ -104,8 +104,8 @@
         {
           "title": "Jamstack (Static Sites with Gatsby/Next.js)",
           "description": "Jamstack is a modern web development architecture based on client-side JavaScript, reusable APIs and prebuilt Markup. It's used on SSW Rules and SSW People.",
-          "logo": "/images/thumbs/thumb-jamstack.jpg",
-          "page": "content/consulting/access-database-upsizing.mdx",
+          "logo": "/images/thumbs/thumb-jamstack-pink.png",
+          "page": "content/consulting/jamstack.mdx",
           "externalUrl": "https://www.ssw.com.au/consulting/jamstack",
           "tags": [
             {
@@ -273,7 +273,7 @@
         {
           "title": "ALM + GitHub + Azure DevOps",
           "description": "Azure DevOps, GitHub, Visual Studio, and VS Code provide the backbone for delivering software continuously. Manage large teams and codebases with ease.",
-          "logo": "/images/thumbs/thumb-vs.jpg",
+          "logo": "/images/thumbs/thumb-visual-studio.jpg",
           "page": "content/consulting/alm-azure-devops.mdx",
           "tags": [
             {
@@ -361,7 +361,7 @@
         {
           "title": "Access Database Upsizing",
           "description": "If you are experiencing connection, speed and data corruption issues with Microsoft Access, then there is a way to solve them all.",
-          "logo": "/images/thumbs/thumb-access.jpg",
+          "logo": "/images/thumbs/thumb-access-2023.png",
           "page": "content/consulting/access-database-upsizing.mdx",
           "tags": [
             {
@@ -559,7 +559,7 @@
         {
           "title": "Microsoft Azure",
           "description": "Enables you to build and run highly available applications without focusing on the infrastructure. Azure makes it easy, scalable, and cheap... for others it is difficult and expensive :)",
-          "logo": "/images/thumbs/thumb-azure.jpg",
+          "logo": "/images/thumbs/thumb-azure-2023.png",
           "page": "content/consulting/azure.mdx",
           "tags": [
             {
@@ -584,7 +584,7 @@
         {
           "title": "SharePoint",
           "description": "The premier content management to store all documents & records. SSW helps enterprises customize and develop SharePoint often powered by the SharePoint Framework (aka SPFx) with React.",
-          "logo": "/images/thumbs/thumb-sharepoint.jpg",
+          "logo": "/images/thumbs/thumb-sharepoint-2023.png",
           "page": "content/consulting/sharepoint.mdx",
           "tags": [
             {
@@ -609,7 +609,7 @@
         {
           "title": "Microsoft 365 (was Office 365)",
           "description": "The Office you know plus extra tools will help you work better together, all based on the cloud.",
-          "logo": "/images/thumbs/thumb-office.jpg",
+          "logo": "/images/thumbs/thumb-microsoft-365-2023.png",
           "page": "content/consulting/microsoft-365.mdx",
           "tags": [
             {
@@ -803,7 +803,7 @@
         {
           "title": "Microsoft Teams",
           "description": "Teams is the premier Office 365 chat, collaboration and phone system from Microsoft.",
-          "logo": "/images/thumbs/thumb-teams.jpg",
+          "logo": "/images/thumbs/thumb-teams-2023.png",
           "page": "content/consulting/microsoft-teams.mdx",
           "tags": [
             {

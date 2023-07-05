@@ -166,6 +166,9 @@ export const carouselBlockSchema: Template = {
           type: "image",
           label: "Image",
           name: carouselBlock.items.imgSrc,
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          uploadDir: () => "/carousel",
         },
       ],
     },

@@ -9,14 +9,15 @@ import { useEffectOnce, useHover } from "usehooks-ts";
 
 import { wrapGrid } from "animate-css-grid";
 
-import { useTina } from "tinacms/dist/react";
+import { tinaField, useTina } from "tinacms/dist/react";
 import { client } from "../../.tina/__generated__/client";
 
+import { InferGetStaticPropsType } from "next";
+import { Blocks } from "../../components/blocks-renderer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
-import { InferGetStaticPropsType } from "next";
 
 const allServices = "All SSW Services";
 
@@ -93,10 +94,13 @@ export default function ConsultingIndex(
     wrapGrid(gridRef.current);
   });
 
+  const tinaData = data.consultingIndexConnection.edges[0].node;
+
   return (
     <Layout>
       <SEO seo={{ ...seo, canonical: "/consulting" }} />
       <Container className="flex-1 pt-2">
+        <Blocks prefix={"ConsultingAfterBody"} blocks={[]} />
         <Breadcrumbs path={"/consulting"} suffix="" title={"Services"} />
         <h1 className="pt-0 text-3xl">Consulting Services</h1>
         <div className="flex flex-col md:flex-row">
@@ -105,14 +109,18 @@ export default function ConsultingIndex(
               <MdLiveHelp className="mr-2 inline-block" />I am looking for...
             </h3>
             <ul className="list-none">
-              {tags?.map((tag) => (
-                <Tag
-                  label={tag.label}
-                  key={tag.name}
-                  tag={tag.name}
-                  selectedTag={selectedTag}
-                  setSelectedTag={setSelectedTag}
-                />
+              {tags?.map((tag, index) => (
+                <div
+                  data-tina-field={tinaField(tinaData.sidebar[index], "label")}
+                >
+                  <Tag
+                    label={tag.label}
+                    key={tag.name}
+                    tag={tag.name}
+                    selectedTag={selectedTag}
+                    setSelectedTag={setSelectedTag}
+                  />
+                </div>
               ))}
             </ul>
           </div>
@@ -121,11 +129,13 @@ export default function ConsultingIndex(
               ref={gridRef}
               className="grid grid-cols-1 gap-2 lg:grid-cols-2"
             >
-              {categories.map((category) => (
+              {categories.map((category, index) => (
                 <Category
+                  tinaData={tinaData}
                   key={category.name}
                   category={category}
                   selectedTag={selectedTag}
+                  index={index}
                 />
               ))}
             </div>
@@ -165,7 +175,7 @@ const Tag = ({ label, tag, selectedTag, setSelectedTag }) => {
   );
 };
 
-const Category = ({ category, selectedTag }) => {
+const Category = ({ tinaData, category, selectedTag, index }) => {
   const pages = category.pages.map((page) => {
     return {
       ...page,
@@ -175,6 +185,8 @@ const Category = ({ category, selectedTag }) => {
 
   const categoryVisible = pages.some((page) => page.isVisible);
 
+  const tinaCategory = tinaData.categories[index];
+
   return (
     <>
       <div
@@ -183,17 +195,28 @@ const Category = ({ category, selectedTag }) => {
         {/* animate-css-grid requires a single element at this level */}
         <div>
           <hr className="my-5 border-gray-100" />
-          <h2 className="mt-0 text-sswRed">{category.name}</h2>
+          <h2
+            className="mt-0 text-sswRed"
+            data-tina-field={tinaField(tinaCategory.category, "name")}
+          >
+            {category.name}
+          </h2>
         </div>
       </div>
-      {pages.map((page) => (
-        <PageCard key={page.title} page={page} />
+      {pages.map((page, pageIndex) => (
+        <PageCard
+          key={page.title}
+          page={page}
+          category={tinaCategory}
+          pageIndex={pageIndex}
+        />
       ))}
     </>
   );
 };
 
-const PageCard = ({ page }) => {
+const PageCard = ({ page, category, pageIndex }) => {
+  console.log(category);
   return (
     <div
       className={classNames(
@@ -214,7 +237,10 @@ const PageCard = ({ page }) => {
             />
           )}
         </div>
-        <div className="min-w-0 flex-1">
+        <div
+          className="min-w-0 flex-1"
+          data-tina-field={tinaField(category?.pages[pageIndex], "description")}
+        >
           <Link href={page.url} className="unstyled">
             <span className="absolute inset-0" aria-hidden="true" />
             <h3 className="mb-2 mt-0 text-lg text-sswRed">{page.title}</h3>
@@ -271,7 +297,9 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      ...tinaProps,
+      data: tinaProps.data,
+      query: tinaProps.query,
+      variables: tinaProps.variables,
     },
   };
 };

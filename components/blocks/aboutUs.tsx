@@ -1,20 +1,16 @@
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import type { Template } from "tinacms";
-import dayjs from "dayjs";
-import timezone from "dayjs/plugin/timezone";
-import utc from "dayjs/plugin/utc";
 import classNames from "classnames";
+import dayjs from "dayjs";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import type { Template } from "tinacms";
 
 import { BiChevronRightCircle } from "react-icons/bi";
 
+import { tinaField } from "tinacms/dist/react";
+import layoutData from "../../content/global/index.json";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
-import layoutData from "../../content/global/index.json";
 import { VideoModal } from "../videoModal";
-
-dayjs.extend(timezone);
-dayjs.extend(utc);
 
 const DAY_KEYS = {
   Sunday: 0,
@@ -105,7 +101,10 @@ export const AboutUs = ({ data }) => {
 
   return (
     <Section color={data.backgroundColor}>
-      <Container className="w-full">
+      <Container
+        className="w-full"
+        data-tina-field={tinaField(data, aboutUsBlock.backgroundColor)}
+      >
         <div className="grid grid-cols-3 gap-6">
           <TV className="col-span-3 max-md:hidden sm:col-span-1" />
           <div className="col-span-3 md:col-span-2">
@@ -389,6 +388,10 @@ const Map = ({
       </svg>
     </div>
   );
+};
+
+export const aboutUsBlock = {
+  backgroundColor: "backgroundColor",
 };
 
 export const aboutUsBlockSchema: Template = {

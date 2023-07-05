@@ -381,6 +381,7 @@ module.exports = {
         benefits: "url('/consulting/mvc-benefits-bg.jpg')",
         "video-mask": "url('/images/video-mask.png')",
         polygons: "url('/images/polygonBackground.png')",
+        subscribeBackground: "url('/images/thumbs/subscribeBackground.png')",
       },
     },
     linearGradientColors: {
