@@ -3,6 +3,7 @@ import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import { TweetEmbed } from "../../components/embeds/tweetEmbed";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
@@ -26,6 +27,7 @@ export default function OfficePage(
             components={componentRenderer}
           />
         </Container>
+        <TweetEmbed url="https://twitter.com/SSW_TV/status/1184008604619284482" />
       </Layout>
     </>
   );
