@@ -7,12 +7,7 @@ export const VerticalListItem = ({ data }) => {
 
   return (
     <div className="py-3">
-      <div
-        className={classNames(
-          "flex flex-row items-center"
-          // data.isSubItem ? "py-1 pl-10" : "py-3"
-        )}
-      >
+      <div className={classNames("flex flex-row items-center")}>
         {data.icon && (
           <Image
             src={data.icon || ""}
@@ -22,20 +17,16 @@ export const VerticalListItem = ({ data }) => {
             className="pr-5"
           />
         )}
-        <div
-          className={classNames(
-            "font-helvetica font-bold"
-            // data.isSubItem && "text-sm"
-          )}
-        >
+        <div className={classNames("font-helvetica font-bold")}>
           <TinaMarkdown content={data.content} />
         </div>
       </div>
-      <ul className="list-disc pl-20 marker:text-sswRed">
-        {data.subListItems?.map((item) => (
+      <div className="pl-20 marker:text-sswRed child:!list-disc">
+        {/* {data.subListItems?.map((item) => (
           <li className="pb-1">{item}</li>
-        ))}
-      </ul>
+        ))} */}
+        <TinaMarkdown content={data.afterBody} />
+      </div>
     </div>
   );
 };
@@ -64,10 +55,10 @@ export const verticalListItemSchema: Template = {
       name: "iconScale",
     },
     {
-      type: "string",
-      list: true,
-      label: "Sub-list items",
-      name: "subListItems",
+      type: "rich-text",
+      label: "After Body",
+      name: "afterBody",
+      required: false,
     },
   ],
 };
