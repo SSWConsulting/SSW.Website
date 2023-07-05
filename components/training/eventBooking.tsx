@@ -115,13 +115,13 @@ const getColSpanClass = (count, index) => {
 
     if ((index + 1) % 3 === 0) {
       // e.g number of items are 6 (3 items in a row each col-span-4)
-      return classes.mdColSpan4 + classes.lastMdColSpan4;
+      return classes.mdColSpan4 + " " + classes.lastMdColSpan4;
     } else if ((index + 1) % 3 === 1) {
       // e.g number of items are 4 (1 item in a row (col-span-12))
-      return classes.mdColSpan4 + classes.lastMdColSpan12;
+      return classes.mdColSpan4 + " " + classes.lastMdColSpan12;
     } else {
       // e.g number of items are 5 (2 items (col-span-4) && (col-span-8))
-      return classes.mdColSpan4 + classes.lastMdColSpan8;
+      return classes.mdColSpan4 + " " + classes.lastMdColSpan8;
     }
   }
 };
