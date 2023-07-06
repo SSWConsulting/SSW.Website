@@ -8,7 +8,7 @@ export const PresenterBlock = ({ data }) => {
   return (
     <Container size="custom">
       <h2
-        className="mb-8 text-center"
+        className="mb-12 text-center"
         data-tina-field={tinaField(data, presenterBlock.header)}
       >
         About our <span className="text-sswRed">{data.header}</span>
@@ -36,7 +36,7 @@ export const PresenterBlock = ({ data }) => {
             >
               <a
                 href={data.otherEvent.eventURL}
-                className="inline-flex cursor-pointer"
+                className="inline-flex cursor-pointer !no-underline hover:!underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -75,7 +75,7 @@ const PresenterCard = ({ presenter, schema, index }) => {
       </div>
       <a
         href={presenter?.presenter?.peopleProfileURL}
-        className="mt-4 min-h-16 !no-underline"
+        className="mt-4 min-h-16 !no-underline hover:!underline"
         target="_blank"
         rel="noopener noreferrer"
         data-tina-field={tinaField(schema[index].presenter.presenter, "name")}
