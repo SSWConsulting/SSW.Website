@@ -1,24 +1,39 @@
 import Image from "next/image";
 import type { Template } from "tinacms";
+import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Container } from "../util/container";
 
 export const PresenterBlock = ({ data }) => {
   return (
     <Container size="custom">
-      <h2 className="mb-8 text-center">
+      <h2
+        className="mb-8 text-center"
+        data-tina-field={tinaField(data, presenterBlock.header)}
+      >
         About our <span className="text-sswRed">{data.header}</span>
       </h2>
       <div className="grid gap-6 md:grid-cols-3">
         {data.presenterList?.map((p, i) => (
-          <PresenterCard key={i} presenter={p.presenter} />
+          <PresenterCard
+            key={i}
+            presenter={p.presenter}
+            schema={data.presenterList}
+            index={i}
+          />
         ))}
       </div>
       {data.otherEvent && (
         <div className="grid grid-cols-12 px-4 py-12 text-xl">
           <div className="col-span-12 inline-flex justify-center">
             <span className="self-center">You can also check our</span>
-            <span className="flex self-center">
+            <span
+              className="flex self-center"
+              data-tina-field={tinaField(
+                data.otherEvent,
+                presenterBlock.otherEvent.title
+              )}
+            >
               <a
                 href={data.otherEvent.eventURL}
                 className="inline-flex cursor-pointer"
@@ -36,13 +51,20 @@ export const PresenterBlock = ({ data }) => {
   );
 };
 
-const PresenterCard = ({ presenter }) => {
+const PresenterCard = ({ presenter, schema, index }) => {
+  console.log(
+    "🚀 ~ file: presenterBlock.tsx:56 ~ PresenterCard ~ schema:",
+    schema
+  );
   return (
     <div
       className="flex h-fit flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-10 text-center text-xl shadow drop-shadow md:h-full"
       data-aos="flip-right"
     >
-      <div className="flex flex-col items-center">
+      <div
+        className="flex flex-col items-center"
+        data-tina-field={tinaField(schema[index].presenter, "profileImg")}
+      >
         <Image
           alt={`Picture of ${presenter?.presenter?.name ?? "Presenter"}`}
           src={presenter?.profileImg ?? ""}
@@ -56,10 +78,14 @@ const PresenterCard = ({ presenter }) => {
         className="mt-4 min-h-16 !no-underline"
         target="_blank"
         rel="noopener noreferrer"
+        data-tina-field={tinaField(schema[index].presenter.presenter, "name")}
       >
         {presenter?.presenter?.name}
       </a>
-      <div className="mt-2 text-sm text-gray-900">
+      <div
+        className="mt-2 text-sm text-gray-900"
+        data-tina-field={tinaField(schema[index].presenter.presenter, "about")}
+      >
         <TinaMarkdown content={presenter?.about} />
       </div>
     </div>
