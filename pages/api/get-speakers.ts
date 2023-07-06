@@ -4,6 +4,12 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { isEmail } from "../../helpers/validator";
 import { getSpeakersInfo } from "../../services/server/events";
 
+const CACHE_MINS = 60;
+const CACHE_KEY = "speakers";
+
+import NodeCache from "node-cache";
+const cache = new NodeCache({ stdTTL: CACHE_MINS * 60 });
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -32,10 +38,23 @@ export default async function handler(
     }
 
     try {
-      const speakersInfo = await getSpeakersInfo(ids, emails);
+      const cachedSpeakers = cache.get(`${CACHE_KEY}-${ids}-${emails}`);
+
+      if (cachedSpeakers == undefined) {
+        const speakersInfo = await getSpeakersInfo(ids, emails);
+
+        cache.set(
+          `${CACHE_KEY}-${ids}-${emails}`,
+          speakersInfo,
+          CACHE_MINS * 60
+        );
+
+        res.setHeader("Cache-Control", "s-maxage=3600");
+        res.status(200).json(speakersInfo);
+      }
 
       res.setHeader("Cache-Control", "s-maxage=3600");
-      res.status(200).json(speakersInfo);
+      res.status(200).json(cachedSpeakers);
     } catch (err) {
       const properties = {
         Request: "GET /api/get-speakers",
