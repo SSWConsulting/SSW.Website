@@ -25,11 +25,11 @@ export const PresenterBlock = ({ data }) => {
         ))}
       </div>
       {data.otherEvent && (
-        <div className="grid grid-cols-12 px-4 py-12 text-xl">
-          <div className="col-span-12 inline-flex justify-center">
+        <div className="grid grid-cols-12 px-4 py-12 text-center text-xl">
+          <div className="col-span-12 justify-center md:inline-flex">
             <span className="self-center">You can also check our</span>
             <span
-              className="flex self-center"
+              className="flex justify-center self-center"
               data-tina-field={tinaField(
                 data.otherEvent,
                 presenterBlockConstant.otherEvent.title
