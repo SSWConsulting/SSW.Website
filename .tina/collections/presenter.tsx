@@ -1,5 +1,16 @@
 import type { Collection } from "tinacms";
 
+export const presenterSchemaConstants = {
+  value: "presenter",
+  profileImg: "profileImg",
+  presenter: {
+    value: "presenter",
+    name: "name",
+    peopleProfileURL: "peopleProfileURL",
+  },
+  about: "about",
+};
+
 export const presenterSchema: Collection = {
   label: "Presenters",
   name: "presenter",
@@ -8,29 +19,29 @@ export const presenterSchema: Collection = {
   fields: [
     {
       type: "image",
-      name: "profileImg",
+      name: presenterSchemaConstants.profileImg,
       label: "Profile Image",
     },
     {
       type: "object",
-      name: "presenter",
+      name: presenterSchemaConstants.presenter.value,
       label: "Presenter",
       fields: [
         {
           type: "string",
           label: "Full Name",
-          name: "name",
+          name: presenterSchemaConstants.presenter.name,
         },
         {
           type: "string",
           label: "People Profile URL",
-          name: "peopleProfileURL",
+          name: presenterSchemaConstants.presenter.peopleProfileURL,
         },
       ],
     },
     {
       type: "rich-text",
-      name: "about",
+      name: presenterSchemaConstants.about,
       label: "About",
     },
   ],

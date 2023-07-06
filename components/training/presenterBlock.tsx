@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { presenterSchemaConstants } from "../../.tina/collections/presenter";
 import { Container } from "../util/container";
 
 export const PresenterBlock = ({ data }) => {
@@ -9,7 +10,7 @@ export const PresenterBlock = ({ data }) => {
     <Container size="custom">
       <h2
         className="mb-12 text-center"
-        data-tina-field={tinaField(data, presenterBlock.header)}
+        data-tina-field={tinaField(data, presenterBlockConstant.header)}
       >
         About our <span className="text-sswRed">{data.header}</span>
       </h2>
@@ -31,7 +32,7 @@ export const PresenterBlock = ({ data }) => {
               className="flex self-center"
               data-tina-field={tinaField(
                 data.otherEvent,
-                presenterBlock.otherEvent.title
+                presenterBlockConstant.otherEvent.title
               )}
             >
               <a
@@ -52,10 +53,6 @@ export const PresenterBlock = ({ data }) => {
 };
 
 const PresenterCard = ({ presenter, schema, index }) => {
-  console.log(
-    "🚀 ~ file: presenterBlock.tsx:56 ~ PresenterCard ~ schema:",
-    schema
-  );
   return (
     <div
       className="flex h-fit flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-10 text-center text-xl shadow drop-shadow md:h-full"
@@ -63,7 +60,10 @@ const PresenterCard = ({ presenter, schema, index }) => {
     >
       <div
         className="flex flex-col items-center"
-        data-tina-field={tinaField(schema[index].presenter, "profileImg")}
+        data-tina-field={tinaField(
+          schema[index].presenter,
+          presenterSchemaConstants.presenter.peopleProfileURL
+        )}
       >
         <Image
           alt={`Picture of ${presenter?.presenter?.name ?? "Presenter"}`}
@@ -78,13 +78,19 @@ const PresenterCard = ({ presenter, schema, index }) => {
         className="mt-4 min-h-16 !no-underline hover:!underline"
         target="_blank"
         rel="noopener noreferrer"
-        data-tina-field={tinaField(schema[index].presenter.presenter, "name")}
+        data-tina-field={tinaField(
+          schema[index].presenter.presenter,
+          presenterSchemaConstants.presenter.name
+        )}
       >
         {presenter?.presenter?.name}
       </a>
       <div
         className="mt-2 text-sm text-gray-900"
-        data-tina-field={tinaField(schema[index].presenter.presenter, "about")}
+        data-tina-field={tinaField(
+          schema[index].presenter.presenter,
+          presenterSchemaConstants.about
+        )}
       >
         <TinaMarkdown content={presenter?.about} />
       </div>
@@ -92,7 +98,7 @@ const PresenterCard = ({ presenter, schema, index }) => {
   );
 };
 
-export const presenterBlock = {
+export const presenterBlockConstant = {
   value: "PresenterBlock",
   header: "header",
   presenterList: {
@@ -103,17 +109,17 @@ export const presenterBlock = {
 };
 
 export const presenterBlockSchema: Template = {
-  name: presenterBlock.value,
+  name: presenterBlockConstant.value,
   label: "Presenters",
   fields: [
     {
       type: "string",
       label: "Header",
-      name: presenterBlock.header,
+      name: presenterBlockConstant.header,
     },
     {
       type: "object",
-      name: presenterBlock.presenterList.value,
+      name: presenterBlockConstant.presenterList.value,
       list: true,
       ui: {
         itemProps: (item) => {
@@ -134,7 +140,7 @@ export const presenterBlockSchema: Template = {
       fields: [
         {
           type: "reference",
-          name: presenterBlock.presenterList.presenter,
+          name: presenterBlockConstant.presenterList.presenter,
           label: "Presenters",
           collections: ["presenter"],
         },
@@ -143,17 +149,17 @@ export const presenterBlockSchema: Template = {
     {
       type: "object",
       label: "Other Events",
-      name: presenterBlock.otherEvent.value,
+      name: presenterBlockConstant.otherEvent.value,
       fields: [
         {
           type: "string",
           label: "Title",
-          name: presenterBlock.otherEvent.title,
+          name: presenterBlockConstant.otherEvent.title,
         },
         {
           type: "string",
           label: "URL",
-          name: presenterBlock.otherEvent.eventURL,
+          name: presenterBlockConstant.otherEvent.eventURL,
         },
       ],
     },
