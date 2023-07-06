@@ -18,6 +18,7 @@ import { technologiesSchema } from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
 import { trainingSchema } from "./collections/training";
+import { videoProductionSchema } from "./collections/videoProduction";
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -55,6 +56,7 @@ const config = defineStaticConfig({
       consultingCategorySchema,
       consultingTagSchema,
       consultingSchema,
+      videoProductionSchema,
       testimonialSchema,
       testimonialCategoriesSchema,
       technologiesSchema,
