@@ -3,7 +3,7 @@ import layoutData from "./content/global/index.json";
 
 export const NEXT_SEO_DEFAULT: NextSeoProps = {
   defaultTitle: layoutData.header.title,
-  titleTemplate: `%s | ${layoutData.header.name}`,
+  titleTemplate: "%s",
   description: layoutData.header.description,
   themeColor: "#cc4141",
   openGraph: {
