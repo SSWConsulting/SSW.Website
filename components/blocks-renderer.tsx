@@ -14,6 +14,7 @@ import { VerticalListItem } from "./blocks/verticalListItem";
 import { EventBooking } from "./training/eventBooking";
 import { TrainingInformation } from "./training/trainingInformation";
 import { TrainingLearningOutcome } from "./training/trainingLearningOutcome";
+import { PresenterBlock } from "./training/presenterBlock";
 
 const componentMap = {
   AboutUs: AboutUs,
@@ -30,6 +31,7 @@ const componentMap = {
   TrainingInformation: TrainingInformation,
   EventBooking: EventBooking,
   TrainingLearningOutcome: TrainingLearningOutcome,
+  PresenterBlock: PresenterBlock,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
