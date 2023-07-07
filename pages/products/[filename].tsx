@@ -23,7 +23,7 @@ export default function OfficePage(
     <>
       <SEO seo={data.products.seo} />
       <Layout>
-        <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+        <Section className="mx-auto w-full max-w-9xl px-8 pt-5">
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}
             suffix={data.global.breadcrumbSuffix}
