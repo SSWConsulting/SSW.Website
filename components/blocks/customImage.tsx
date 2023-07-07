@@ -1,17 +1,29 @@
-import React from "react";
-import type { Template } from "tinacms";
 import Image from "next/image";
+import type { Template } from "tinacms";
 
 export const CustomImage = ({ data }) => {
   return (
-    <Image
-      src={data.src}
-      alt={data.altText}
-      height={data.height}
-      width={data.width}
-      className="inline-block"
-    />
+    <LinkWrapper link={data.link}>
+      <Image
+        src={data.src}
+        alt={data.altText}
+        height={data.height}
+        width={data.width}
+        className="inline-block"
+      />
+    </LinkWrapper>
   );
+};
+
+const LinkWrapper = ({ link, children }) => {
+  if (link) {
+    return (
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        {children}
+      </a>
+    );
+  }
+  return <>{children}</>;
 };
 
 export const customImageBlockSchema: Template = {
@@ -41,6 +53,12 @@ export const customImageBlockSchema: Template = {
       label: "Width",
       name: "width",
       required: true,
+    },
+    {
+      type: "string",
+      label: "Link (optional)",
+      name: "link",
+      required: false,
     },
   ],
 };

@@ -1,6 +1,7 @@
 import { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { BookingButton } from "../bookingButton/bookingButton";
 import { UtilityButton } from "../button/utilityButton";
+import { TweetEmbed, TweetEmbedProps } from "../embeds/tweetEmbed";
 import {
   SubNewsletterRow,
   SubNewsletterRowProps,
@@ -55,6 +56,7 @@ export const componentRenderer: Components<{
       title: string;
     }[];
   };
+  TweetEmbed: TweetEmbedProps;
   DynamicColumns: {
     colBody: TinaMarkdownContent;
     colCount: number;
@@ -157,6 +159,7 @@ export const componentRenderer: Components<{
   VerticalListItem: (props) => <VerticalListItem data={props} />,
   TrainingInformation: (props) => <TrainingInformation data={props} />,
   TrainingLearningOutcome: (props) => <TrainingLearningOutcome data={props} />,
+  TweetEmbed: (props) => <TweetEmbed {...props} />,
   RecurringEvent: (props) => <RecurringEvent data={props} />,
   FixedTabsLayout: (props) => <FixedTabsLayout data={props} />,
   BookingButton: (props) => <BookingButton {...props} />,

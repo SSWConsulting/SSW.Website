@@ -2,9 +2,11 @@ import type { Template } from "tinacms";
 
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
 import { utilityButtonSchema } from "../button/utilityButton";
+import { tweetEmbedSchema } from "../embeds/tweetEmbed";
 import { subNewsletterRowSchema } from "../subNewsletter/subNewsletterRow";
 import { agreementFormBlockSchema } from "../terms-and-conditions/agreementForm";
 import { eventBookingSchema } from "../training/eventBooking";
+import { presenterBlockSchema } from "../training/presenterBlock";
 import { trainingInformationSchema } from "../training/trainingInformation";
 import { trainingLearningOutcomeSchema } from "../training/trainingLearningOutcome";
 import { aboutUsBlockSchema } from "./aboutUs";
@@ -56,19 +58,23 @@ export const pageBlocks: Template[] = [
   tableBlockSchema,
   trainingInformationSchema,
   trainingLearningOutcomeSchema,
+  tweetEmbedSchema,
   upcomingEventsBlockSchema,
   utilityButtonSchema,
   verticalImageLayoutBlockSchema,
   verticalListItemSchema,
   videoEmbedBlockSchema,
   eventBookingSchema,
+  presenterBlockSchema,
 ];
 
 export * from "../bookingButton/bookingButton";
 export * from "../button/utilityButton";
+export * from "../embeds/tweetEmbed";
 export * from "../subNewsletter/subNewsletterRow";
 export * from "../terms-and-conditions/agreementForm";
 export * from "../training/eventBooking";
+export * from "../training/presenterBlock";
 export * from "../training/trainingInformation";
 export * from "../training/trainingLearningOutcome";
 export * from "./aboutUs";

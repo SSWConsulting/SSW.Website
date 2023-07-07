@@ -13,7 +13,8 @@ import { newsletterSchema } from "./collections/newsletters";
 import { officeIndexSchema, officeSchema } from "./collections/offices";
 import { opportunitiesSchema } from "./collections/opportunities";
 import { pagesSchema } from "./collections/pages";
-import { productsIndexSchema } from "./collections/products";
+import { presenterSchema } from "./collections/presenter";
+import { productsIndexSchema, productsSchema } from "./collections/products";
 import { technologiesSchema } from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
@@ -63,9 +64,11 @@ const config = defineStaticConfig({
       employmentSchema,
       officeIndexSchema,
       productsIndexSchema,
+      productsSchema,
       trainingSchema,
       educationalSchema,
       newsletterSchema,
+      presenterSchema,
     ],
   },
 });
