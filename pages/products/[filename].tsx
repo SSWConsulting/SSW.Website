@@ -2,10 +2,13 @@ import { InferGetStaticPropsType } from "next";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
+import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
+import { removeExtension } from "../../services/client/utils.service";
 
 export default function OfficePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -20,6 +23,13 @@ export default function OfficePage(
     <>
       <SEO seo={data.products.seo} />
       <Layout>
+        <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+          <Breadcrumbs
+            path={removeExtension(props.variables.relativePath)}
+            suffix={data.global.breadcrumbSuffix}
+            title={data.products.seo?.title}
+          />
+        </Section>
         <Container
           className={
             "prose flex-1 pt-4 prose-h1:!my-0 prose-h1:!pt-4 prose-h3:!mt-0 prose-img:!my-0"
