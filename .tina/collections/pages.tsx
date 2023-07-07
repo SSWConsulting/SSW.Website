@@ -35,6 +35,16 @@ export const pagesSchema: Collection = {
       templates: [...Schemas.pageBlocks],
     },
     {
+      type: "object",
+      list: true,
+      name: "bodyBlocks",
+      label: "Body blocks",
+      ui: {
+        visualSelector: true,
+      },
+      templates: [...Schemas.pageBlocks],
+    },
+    {
       type: "rich-text",
       label: "Body",
       name: "_body",
