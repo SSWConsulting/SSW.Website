@@ -8,13 +8,14 @@ import { Content } from "./blocks/content";
 import { ContentCard } from "./blocks/contentCard";
 import { CustomImage } from "./blocks/customImage";
 import { ServiceCards } from "./blocks/serviceCards";
+import { TableLayout } from "./blocks/tableLayout";
 import { UpcomingEvents } from "./blocks/upcomingEvents";
 import { VerticalImageLayout } from "./blocks/verticalImageLayout";
 import { VerticalListItem } from "./blocks/verticalListItem";
 import { EventBooking } from "./training/eventBooking";
+import { PresenterBlock } from "./training/presenterBlock";
 import { TrainingInformation } from "./training/trainingInformation";
 import { TrainingLearningOutcome } from "./training/trainingLearningOutcome";
-import { PresenterBlock } from "./training/presenterBlock";
 
 const componentMap = {
   AboutUs: AboutUs,
@@ -32,6 +33,7 @@ const componentMap = {
   EventBooking: EventBooking,
   TrainingLearningOutcome: TrainingLearningOutcome,
   PresenterBlock: PresenterBlock,
+  TableLayout: TableLayout,
 };
 
 export const Blocks = ({ prefix, blocks }) => {

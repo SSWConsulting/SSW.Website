@@ -12,9 +12,9 @@ const tableStyles = {
 export type TableLayoutProps = {
   tableStyle?: string;
   className?: string;
-  columns: string[];
   rows: {
-    cells: string[];
+    cells?: string[];
+    isHeader?: boolean;
   }[];
 };
 
@@ -30,19 +30,21 @@ export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
       <table>
         <thead>
           <tr>
-            {data?.columns?.map((column) => (
-              <th>{column}</th>
-            ))}
+            {data?.rows
+              ? data?.rows[0]?.cells?.map((column, index) => (
+                  <th key={index}>{column}</th>
+                ))
+              : null}
           </tr>
         </thead>
         <tbody>
-          {/* {data?.rows?.map((row) => (
-            <tr>
-              {row?.cell?.map((cell) => (
-                <td className={cell.column}>{cell.value}</td>
+          {data?.rows?.map((row, index) => (
+            <tr key={index}>
+              {row?.cells?.map((cell, index) => (
+                <td key={index}>{cell}</td>
               ))}
             </tr>
-          ))} */}
+          ))}
         </tbody>
       </table>
     </div>
@@ -52,10 +54,6 @@ export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
 export const tableBlockSchema: Template = {
   label: "Table Layout",
   name: "TableLayout",
-  ui: {
-    previewSrc: "/blocks/hero.png",
-    itemProps: () => ({ label: "Test" }),
-  },
   fields: [
     {
       type: "string",
@@ -66,16 +64,13 @@ export const tableBlockSchema: Template = {
       type: "object",
       label: "Rows",
       name: "rows",
-      ui: {
-        defaultItem: {},
-        itemProps: (item) => ({ label: item?.cells }),
-      },
       list: true,
       fields: [
         {
           type: "string",
           label: "Cells",
           name: "cells",
+          list: true,
         },
         {
           type: "boolean",
