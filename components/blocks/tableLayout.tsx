@@ -9,7 +9,16 @@ const tableStyles = {
     "descendant-th:border-b-sswRed [&>table>tbody>*:nth-child(even)]:bg-gray-75 descendant-th:bg-gray-75 descendant-th:border-b-sswRed descendant-table:w-full",
 };
 
-export const TableLayout = ({ data }) => {
+export type TableLayoutProps = {
+  tableStyle?: string;
+  className?: string;
+  columns: string[];
+  rows: {
+    cells: string[];
+  }[];
+};
+
+export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
   return (
     <div
       className={classNames(
@@ -43,40 +52,35 @@ export const TableLayout = ({ data }) => {
 export const tableBlockSchema: Template = {
   label: "Table Layout",
   name: "TableLayout",
+  ui: {
+    previewSrc: "/blocks/hero.png",
+    itemProps: () => ({ label: "Test" }),
+  },
   fields: [
-    {
-      label: "Table Style",
-      name: "tableStyle",
-      type: "string",
-      options: Object.keys(tableStyles).map((key) => {
-        return {
-          label: key,
-          value: key,
-        };
-      }),
-    },
     {
       type: "string",
       label: "CSS Class Name",
       name: "className",
     },
     {
-      type: "string",
-      label: "Columns",
-      name: "columns",
-      list: true,
-    },
-    {
       type: "object",
       label: "Rows",
       name: "rows",
+      ui: {
+        defaultItem: {},
+        itemProps: (item) => ({ label: item?.cells }),
+      },
       list: true,
       fields: [
         {
           type: "string",
           label: "Cells",
           name: "cells",
-          list: true,
+        },
+        {
+          type: "boolean",
+          label: "Is Header",
+          name: "isHeader",
         },
       ],
     },

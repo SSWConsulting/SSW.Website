@@ -21,7 +21,7 @@ import { GoogleMapsWrapper } from "./googleMapsWrapper";
 import { InternalCarousel } from "./internalCarousel";
 import { NewslettersTable } from "./newslettersTable";
 import { RecurringEvent } from "./recurringEvent";
-import { TableLayout } from "./tableLayout";
+import { TableLayout, TableLayoutProps } from "./tableLayout";
 import { UpcomingEvents } from "./upcomingEvents";
 import { VerticalImageLayout } from "./verticalImageLayout";
 import { VerticalListItem } from "./verticalListItem";
@@ -87,9 +87,7 @@ export const componentRenderer: Components<{
   Flag: {
     country: string;
   };
-  TableLayout: {
-    mdxTable: string;
-  };
+  TableLayout: TableLayoutProps;
   AgreementForm: {
     backgroundColor: string;
     fields: {
