@@ -94,20 +94,20 @@ export default function VideoProductionPage(
           </Container>
         </Section>
 
-        <Section className="mb-16">
-          <Container padding="px-4" className="flex w-full flex-wrap">
-            {data.videoProduction.afterBody ? (
+        {data.videoProduction.afterBody ? (
+          <Section className="mb-16">
+            <Container padding="px-4" className="flex w-full flex-wrap">
               <div>
                 <Blocks
                   prefix={"VideoProductionAfterBody"}
                   blocks={data.videoProduction.afterBody}
                 />
               </div>
-            ) : (
-              <></>
-            )}
-          </Container>
-        </Section>
+            </Container>
+          </Section>
+        ) : (
+          <></>
+        )}
 
         <Section>
           <BuiltOnAzure data={{ backgroundColor: "default" }} />
