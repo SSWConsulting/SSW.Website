@@ -120,6 +120,7 @@ export const presenterBlockSchema: Template = {
     {
       type: "object",
       name: presenterBlockConstant.presenterList.value,
+      label:"Presenters",
       list: true,
       ui: {
         itemProps: (item) => {
