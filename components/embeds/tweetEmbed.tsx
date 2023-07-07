@@ -30,7 +30,7 @@ export const TweetEmbed = (props: TweetEmbedProps) => {
   );
 };
 
-export const TweetEmbedSchema: Template = {
+export const tweetEmbedSchema: Template = {
   label: "Tweet Embed",
   name: "TweetEmbed",
   fields: [

@@ -3,7 +3,6 @@ import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
-import { TweetEmbed } from "../../components/embeds/tweetEmbed";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
@@ -21,12 +20,15 @@ export default function OfficePage(
     <>
       <SEO seo={data.products.seo} />
       <Layout>
-        <Container className={"prose flex-1 pt-4"}>
+        <Container
+          className={
+            "prose flex-1 pt-4 prose-h1:!my-0 prose-h1:!pt-4 prose-h3:!mt-0 prose-img:!my-0"
+          }
+        >
           <TinaMarkdown
             content={data.products._body}
             components={componentRenderer}
           />
-          <TweetEmbed url="https://twitter.com/SSW_TV/status/1184008604619284482" />
         </Container>
       </Layout>
     </>
