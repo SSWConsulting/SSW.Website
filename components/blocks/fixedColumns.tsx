@@ -1,8 +1,8 @@
 import type { Template } from "tinacms";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
-import { contentCardBlockSchema } from "./contentCard";
-import { customImageBlockSchema } from "./customImage";
 import { componentRenderer } from "./mdxComponentRenderer";
+
+import * as Schemas from "../../components/blocks";
 
 interface FixedColumnsProps {
   data: {
@@ -39,14 +39,14 @@ export const fixedColumnsSchema: Template = {
       label: "First column text",
       name: "firstColBody",
       required: true,
-      templates: [contentCardBlockSchema, customImageBlockSchema],
+      templates: [...Schemas.pageBlocks],
     },
     {
       type: "rich-text",
       label: "Second column text",
       name: "secondColBody",
       required: true,
-      templates: [contentCardBlockSchema, customImageBlockSchema],
+      templates: [...Schemas.pageBlocks],
     },
   ],
 };

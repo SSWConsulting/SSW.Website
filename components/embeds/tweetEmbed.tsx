@@ -24,7 +24,7 @@ export const TweetEmbed = (props: TweetEmbedProps) => {
 
   return (
     <>
-      <div dangerouslySetInnerHTML={{ __html: tweet.html }} />
+      <div dangerouslySetInnerHTML={{ __html: tweet?.html }} />
       <Script async src="https://platform.twitter.com/widgets.js" />
     </>
   );
