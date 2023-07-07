@@ -1,4 +1,5 @@
 import type { Collection } from "tinacms";
+import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 
 export const productsIndexSchema: Collection = {
@@ -45,6 +46,29 @@ export const productsIndexSchema: Collection = {
           uploadDir: () => "/products",
         },
       ],
+    },
+  ],
+};
+
+export const productsSchema: Collection = {
+  label: "Products",
+  name: "products",
+  path: "content/products",
+  format: "mdx",
+  ui: {
+    router: ({ document }) => {
+      return `/products/${document._sys.filename}`;
+    },
+  },
+  fields: [
+    // @ts-ignore
+    seoSchema,
+    {
+      type: "rich-text",
+      label: "Body",
+      name: "_body",
+      templates: [...Schemas.pageBlocks],
+      isBody: true,
     },
   ],
 };

@@ -129,3 +129,10 @@ query officeIndexQuery($relativePath: String!) {
     }
   }
 }
+
+query productContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  products(relativePath: $relativePath) {
+    ...ProductsParts
+  }
+}
