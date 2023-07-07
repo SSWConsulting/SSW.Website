@@ -15,10 +15,6 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = (props) => {
   const listItemStyling =
     "breadcrumb_item inline text-xs text-gray-700 no-underline not-first:before:content-bread not-first:before:px-2 before:list-none";
 
-  console.log("logged:" + props.path);
-  console.log("logged:" + props.title);
-  console.log("logged:" + `${props.title}`);
-
   return (
     <div
       {...(props.seoSchema
