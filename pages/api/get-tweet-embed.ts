@@ -11,7 +11,7 @@ export default async function handler(
     }
 
     const response = await fetch(
-      `https://publish.twitter.com/oembed?url=${req.query.url}`
+      `https://publish.twitter.com/oembed?url=${req.query.url}&omit_script=1`
     );
     const body = await response.json();
 
