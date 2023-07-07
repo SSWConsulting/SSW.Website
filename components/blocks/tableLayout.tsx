@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from "react";
-import type { Template } from "tinacms";
-import markdownItMultimdTable from "markdown-it-multimd-table";
-import MarkdownIt from "markdown-it";
 import classNames from "classnames";
+import type { Template } from "tinacms";
 
 const tableStyles = {
   none: "",
@@ -13,16 +10,6 @@ const tableStyles = {
 };
 
 export const TableLayout = ({ data }) => {
-  const [mdxTableString, setMdxTableString] = useState("");
-
-  useEffect(() => {
-    const md = new MarkdownIt().use(markdownItMultimdTable, {
-      multiline: true,
-    });
-    const html = md.render(data.mdxTable);
-    setMdxTableString(html);
-  }, [data]);
-
   return (
     <div
       className={classNames(
@@ -30,19 +17,30 @@ export const TableLayout = ({ data }) => {
         data.className,
         tableStyles[data.tableStyle]
       )}
-      dangerouslySetInnerHTML={{ __html: mdxTableString }}
-    />
+    >
+      <table>
+        <thead>
+          {data.columns.map((column) => (
+            <tr>{column}</tr>
+          ))}
+        </thead>
+        <tbody>
+          {data.rows.map((row) => (
+            <tr>
+              {row.cell.map((cell) => (
+                <td className={cell.column}>{cell.value}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
 export const tableBlockSchema: Template = {
   label: "Table Layout",
   name: "TableLayout",
-  ui: {
-    itemProps: (item) => {
-      return { label: item?.mdxTable };
-    },
-  },
   fields: [
     {
       label: "Table Style",
@@ -62,11 +60,44 @@ export const tableBlockSchema: Template = {
     },
     {
       type: "string",
-      label: "Table",
-      name: "mdxTable",
-      ui: {
-        component: "textarea",
-      },
+      label: "Columns",
+      name: "columns",
+      list: true,
+    },
+    {
+      type: "object",
+      label: "Rows",
+      name: "rows",
+      fields: [
+        {
+          type: "object",
+          label: "Cell",
+          name: "cell",
+          fields: [
+            {
+              type: "string",
+              label: "Column",
+              name: "column",
+              required: true,
+              ui: {
+                validate: (value, allValues) => {
+                  if (!allValues.columns.includes(value)) {
+                    return "Invalid column";
+                  }
+                },
+              },
+            },
+            {
+              type: "string",
+              label: "Value",
+              name: "value",
+              required: true,
+            },
+          ],
+          list: true,
+        },
+      ],
+      list: true,
     },
   ],
 };
