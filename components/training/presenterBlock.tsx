@@ -55,7 +55,7 @@ export const PresenterBlock = ({ data }) => {
 const PresenterCard = ({ presenter, schema, index }) => {
   return (
     <div
-      className="flex h-fit flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-10 text-center text-xl shadow md:h-full"
+      className="flex h-fit flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-10 text-center text-xl md:h-full"
       data-aos="flip-right"
     >
       <div
