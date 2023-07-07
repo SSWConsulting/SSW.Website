@@ -55,6 +55,7 @@ export const bookingFormSubmissionData = (
     SourceWebPageURL: sourceWebPageURL,
     EmailSubject: subject,
     EmailBody: body + "The associated CRM lead is ",
+    ReferralSource: values.referralSource,
   };
 
   return data;
