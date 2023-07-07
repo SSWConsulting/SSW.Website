@@ -79,7 +79,7 @@ const PresenterCard = ({ presenter, schema, index }) => {
         target="_blank"
         rel="noopener noreferrer"
         data-tina-field={tinaField(
-          schema[index].presenter.presenter,
+          schema[index].presenter?.presenter,
           presenterSchemaConstants.presenter.name
         )}
       >
@@ -88,7 +88,7 @@ const PresenterCard = ({ presenter, schema, index }) => {
       <div
         className="mt-2 text-sm text-gray-900"
         data-tina-field={tinaField(
-          schema[index].presenter.presenter,
+          schema[index].presenter?.presenter,
           presenterSchemaConstants.about
         )}
       >
@@ -120,7 +120,7 @@ export const presenterBlockSchema: Template = {
     {
       type: "object",
       name: presenterBlockConstant.presenterList.value,
-      label:"Presenters",
+      label: "Presenters",
       list: true,
       ui: {
         itemProps: (item) => {
