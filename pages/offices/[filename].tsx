@@ -140,8 +140,8 @@ const OfficeLayout = ({ office }) => {
       )}
       {office.team.children.length > 0 ? (
         <>
+          <h2>The SSW {office.addressLocality} Team</h2>
           <div data-tina-field={tinaField(office, "team")}>
-            <h2>The SSW {office.addressLocality} Team</h2>
             <TinaMarkdown
               components={componentRenderer}
               content={office.team}

@@ -1,18 +1,20 @@
 import React from "react";
 import { AboutUs } from "./blocks/aboutUs";
 
+import { BuiltOnAzure } from "./blocks/builtOnAzure";
 import { Carousel } from "./blocks/carousel";
+import { ClientLogos } from "./blocks/clientLogos";
 import { Content } from "./blocks/content";
 import { ContentCard } from "./blocks/contentCard";
+import { CustomImage } from "./blocks/customImage";
 import { ServiceCards } from "./blocks/serviceCards";
 import { UpcomingEvents } from "./blocks/upcomingEvents";
-import { BuiltOnAzure } from "./blocks/builtOnAzure";
-import { CustomImage } from "./blocks/customImage";
-import { ClientLogos } from "./blocks/clientLogos";
 import { VerticalImageLayout } from "./blocks/verticalImageLayout";
 import { VerticalListItem } from "./blocks/verticalListItem";
+import { EventBooking } from "./training/eventBooking";
 import { TrainingInformation } from "./training/trainingInformation";
 import { TrainingLearningOutcome } from "./training/trainingLearningOutcome";
+import { PresenterBlock } from "./training/presenterBlock";
 
 const componentMap = {
   AboutUs: AboutUs,
@@ -27,7 +29,9 @@ const componentMap = {
   ContentCard: ContentCard,
   VerticalListItem: VerticalListItem,
   TrainingInformation: TrainingInformation,
+  EventBooking: EventBooking,
   TrainingLearningOutcome: TrainingLearningOutcome,
+  PresenterBlock: PresenterBlock,
 };
 
 export const Blocks = ({ prefix, blocks }) => {

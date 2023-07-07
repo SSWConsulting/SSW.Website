@@ -47,6 +47,7 @@ export const VALIDATION_ERROR_MESSAGE = {
   NOTE: "A message is required.",
   REFERRED_FULL_NAME: "Please enter referred name",
   REFERRED_EMAIL: "Please enter referred email",
+  REFERRAL_SOURCE: "Please select referral source.",
 };
 export const VALIDATION_SUCCESS_MESSAGE = "Looks good!";
 
@@ -67,6 +68,7 @@ export const ACTIVE_INPUT = {
   ReferredFullName: "Referred Full Name",
   ReferredEmail: "Referred Email",
   None: "",
+  ReferralSource: "Referral Source",
 };
 
 //FORMS INPUTS
@@ -83,6 +85,7 @@ export const FORM_INPUT = {
   ReferredFullName: "referredFullName",
   ReferredEmail: "referredEmail",
   None: "",
+  ReferralSource: "referralSource",
 };
 
 //Australian all States list
@@ -135,3 +138,27 @@ export const months = [
   "November",
   "December",
 ];
+
+export const ReferralSource = {
+  Conference: 8,
+  Google: 1,
+  ["Government Suppliers List"]: 20,
+  ["Outbound Call"]: 15,
+  ["Repeat Business"]: 4,
+  [".NET User Group"]: 3,
+  ["SSW Training Event"]: 2,
+  Referral: 12,
+  Signage: 7,
+  ["Yellow Pages"]: 9,
+  ["SSW TV"]: 17,
+  Webinars: 16,
+  ["Other search engines"]: 10,
+  Other: 14,
+};
+
+export const ReferralSourceList = Object.keys(ReferralSource).map((key) => {
+  return {
+    label: key,
+    value: ReferralSource[key as keyof typeof ReferralSource],
+  };
+});
