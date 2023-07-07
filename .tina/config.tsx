@@ -8,6 +8,7 @@ import {
 import { educationalSchema } from "./collections/educational";
 import { employmentSchema } from "./collections/employment";
 import { globalSchema } from "./collections/global";
+import { locationSchema } from "./collections/location";
 import { marketingSchema } from "./collections/marketing";
 import { newsletterSchema } from "./collections/newsletters";
 import { officeIndexSchema, officeSchema } from "./collections/offices";
@@ -68,6 +69,7 @@ const config = defineStaticConfig({
       educationalSchema,
       newsletterSchema,
       presenterSchema,
+      locationSchema,
     ],
   },
 });
