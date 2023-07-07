@@ -37,7 +37,6 @@ export default async function handler(
     try {
       const cachedEvents = cache.get(`${CACHE_KEY}-${topCount}`);
       if (cachedEvents == undefined) {
-        console.log("cache miss");
         const events = await getEvents(odataFilter);
         cache.set(`${CACHE_KEY}-${topCount}`, events, CACHE_MINS * 60);
 

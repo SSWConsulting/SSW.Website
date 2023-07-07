@@ -14,8 +14,6 @@ export const UpcomingEvents = ({ data }) => {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const datetime = dayjs().startOf("day").utc();
-
       setLoading(true);
       const res = await axios.get<EventInfo[]>("/api/get-upcoming-events", {
         params: { top: data.numberOfEvents },
