@@ -2,13 +2,13 @@ import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 import { isEmail } from "../../helpers/validator";
+
+import { cache } from "../../services/server/cacheService";
 import { getSpeakersInfo } from "../../services/server/events";
 
 const CACHE_MINS = 60;
+const CACHE_SECS = CACHE_MINS * 60;
 const CACHE_KEY = "speakers";
-
-import NodeCache from "node-cache";
-const cache = new NodeCache({ stdTTL: CACHE_MINS * 60 });
 
 export default async function handler(
   req: NextApiRequest,
@@ -43,17 +43,13 @@ export default async function handler(
       if (cachedSpeakers == undefined) {
         const speakersInfo = await getSpeakersInfo(ids, emails);
 
-        cache.set(
-          `${CACHE_KEY}-${ids}-${emails}`,
-          speakersInfo,
-          CACHE_MINS * 60
-        );
+        cache.set(`${CACHE_KEY}-${ids}-${emails}`, speakersInfo, CACHE_SECS);
 
-        res.setHeader("Cache-Control", "s-maxage=3600");
+        res.setHeader("Cache-Control", `s-maxage=${CACHE_SECS}`);
         res.status(200).json(speakersInfo);
       }
 
-      res.setHeader("Cache-Control", "s-maxage=3600");
+      res.setHeader("Cache-Control", `s-maxage=${CACHE_SECS}`);
       res.status(200).json(cachedSpeakers);
     } catch (err) {
       const properties = {

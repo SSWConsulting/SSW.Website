@@ -1,13 +1,13 @@
 import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
+
+import { cache } from "../../services/server/cacheService";
 import { getEvents } from "../../services/server/events";
 
 const CACHE_MINS = 60;
+const CACHE_SECS = CACHE_MINS * 60;
 const CACHE_KEY = "upcoming-events";
-
-import NodeCache from "node-cache";
-const cache = new NodeCache({ stdTTL: CACHE_MINS * 60 });
 
 export default async function handler(
   req: NextApiRequest,
@@ -38,13 +38,13 @@ export default async function handler(
       const cachedEvents = cache.get(`${CACHE_KEY}-${topCount}`);
       if (cachedEvents == undefined) {
         const events = await getEvents(odataFilter);
-        cache.set(`${CACHE_KEY}-${topCount}`, events, CACHE_MINS * 60);
+        cache.set(`${CACHE_KEY}-${topCount}`, events, CACHE_SECS);
 
-        res.setHeader("Cache-Control", `s-maxage=${CACHE_MINS * 60}`);
+        res.setHeader("Cache-Control", `s-maxage=${CACHE_SECS}`);
         return res.status(200).json(events);
       }
 
-      res.setHeader("Cache-Control", `s-maxage=${CACHE_MINS * 60}`);
+      res.setHeader("Cache-Control", `s-maxage=${CACHE_SECS}`);
       res.status(200).json(cachedEvents);
     } catch (err) {
       const properties = {
