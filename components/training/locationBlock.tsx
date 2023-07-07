@@ -45,35 +45,34 @@ const LocationCard = ({ location, count, index, schema }) => {
         addRightBorder(index)
       )}
     >
-      <div className="mb-2 grid grid-cols-12">
+      <div className=" grid grid-cols-12">
         <div className="col-span-12">
           <div className="inline-flex items-center text-sm">
             <MdLocationOn className="m-icon" />
             <span className="font-bold capitalize">{location.header}</span>
           </div>
-          <div className=" py-0.5 text-xs uppercase text-gray-500">
+          <div className=" py-0.5 text-xs capitalize text-gray-500">
             {" "}
             {location.level}
           </div>
-          <div className=" py-0.5 text-xs uppercase text-gray-500">
+          <div className=" py-0.5 text-xs capitalize text-gray-500">
             {location.address}
           </div>
-          <div className=" py-0.5 text-xs uppercase text-gray-500">
+          <div className=" py-0.5 text-xs capitalize text-gray-500">
             {location.state}
-          </div>
+          </div>{" "}
         </div>
-        <div className="col-span-12  items-center  pr-4 md:col-span-12 md:pr-0">
-          <div className="py-1 md:text-start">
-            <a
-              href={location.directionURL == null ? "" : location.directionURL}
-              className="inline-flex cursor-pointer items-center text-xl !no-underline hover:!underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLocationArrow className="m-icon" />
-              Directions
-            </a>
-          </div>
+
+        <div className="py-1 text-xs">
+          <a
+            href={location.directionURL == null ? "" : location.directionURL}
+            className="inline-flex cursor-pointer items-center !no-underline hover:!underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLocationArrow className="m-icon" />
+            Directions
+          </a>
         </div>
       </div>
     </div>
