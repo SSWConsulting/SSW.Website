@@ -39,7 +39,7 @@ export default async function handler(
       res.status(200).json(cachedEvents);
     } catch (err) {
       const properties = {
-        Request: "GET /api/get-upcoming-events",
+        Request: "GET /api/get-livestream-banner",
         Status: 500,
         FailedSharePointRequest: false,
       };
