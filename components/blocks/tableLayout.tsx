@@ -20,18 +20,20 @@ export const TableLayout = ({ data }) => {
     >
       <table>
         <thead>
-          {data.columns.map((column) => (
-            <tr>{column}</tr>
-          ))}
+          <tr>
+            {data?.columns?.map((column) => (
+              <th>{column}</th>
+            ))}
+          </tr>
         </thead>
         <tbody>
-          {data.rows.map((row) => (
+          {/* {data?.rows?.map((row) => (
             <tr>
-              {row.cell.map((cell) => (
+              {row?.cell?.map((cell) => (
                 <td className={cell.column}>{cell.value}</td>
               ))}
             </tr>
-          ))}
+          ))} */}
         </tbody>
       </table>
     </div>
@@ -68,36 +70,15 @@ export const tableBlockSchema: Template = {
       type: "object",
       label: "Rows",
       name: "rows",
+      list: true,
       fields: [
         {
-          type: "object",
-          label: "Cell",
-          name: "cell",
-          fields: [
-            {
-              type: "string",
-              label: "Column",
-              name: "column",
-              required: true,
-              ui: {
-                validate: (value, allValues) => {
-                  if (!allValues.columns.includes(value)) {
-                    return "Invalid column";
-                  }
-                },
-              },
-            },
-            {
-              type: "string",
-              label: "Value",
-              name: "value",
-              required: true,
-            },
-          ],
+          type: "string",
+          label: "Cells",
+          name: "cells",
           list: true,
         },
       ],
-      list: true,
     },
   ],
 };
