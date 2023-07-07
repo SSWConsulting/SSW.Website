@@ -1,3 +1,4 @@
+import * as appInsights from "applicationinsights";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
@@ -10,14 +11,24 @@ export default async function handler(
       return;
     }
 
-    const response = await fetch(
-      `https://publish.twitter.com/oembed?url=${req.query.url}&omit_script=1`
-    );
-    const body = await response.json();
+    try {
+      const response = await fetch(
+        `https://publish.twitter.com/oembed?url=${req.query.url}&omit_script=1`
+      );
+      const body = await response.json();
 
-    console.log(body);
-
-    res.status(200).json(body);
+      res.status(200).json(body);
+    } catch (err) {
+      appInsights.defaultClient.trackException({
+        properties: {
+          Request: "GET /api/get-tweet-embed",
+          Status: 500,
+        },
+        exception: err,
+        severity: appInsights.Contracts.SeverityLevel.Error,
+      });
+      res.status(500).json({ message: err.message });
+    }
   } else {
     res.status(405).json({ message: "Unsupported method" });
   }
