@@ -26,8 +26,8 @@ export default function OfficePage(
             content={data.products._body}
             components={componentRenderer}
           />
+          <TweetEmbed url="https://twitter.com/SSW_TV/status/1184008604619284482" />
         </Container>
-        <TweetEmbed url="https://twitter.com/SSW_TV/status/1184008604619284482" />
       </Layout>
     </>
   );

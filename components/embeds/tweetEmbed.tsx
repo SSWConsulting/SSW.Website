@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { useEffect, useState } from "react";
 import { Template } from "tinacms";
 
@@ -13,7 +14,7 @@ export const TweetEmbed = (props: TweetEmbedProps) => {
   const [tweet, setTweet] = useState<Tweet>(null);
 
   useEffect(() => {
-    fetch(`https://publish.twitter.com/oembed?url=${props.url}`)
+    fetch(`/api/get-tweet-embed?url=${encodeURIComponent(props.url)}`)
       .then((res) => res.json())
       .then((json) => setTweet(json))
       .catch((err) => console.error(err));
@@ -21,7 +22,12 @@ export const TweetEmbed = (props: TweetEmbedProps) => {
 
   if (!tweet) return <></>;
 
-  return <div dangerouslySetInnerHTML={{ __html: tweet.html }} />;
+  return (
+    <>
+      <div dangerouslySetInnerHTML={{ __html: tweet.html }} />
+      <Script async src="https://platform.twitter.com/widgets.js" />
+    </>
+  );
 };
 
 export const TweetEmbedSchema: Template = {
