@@ -1,7 +1,7 @@
 import type { Collection } from "tinacms";
 
 export const locationSchemaConstants = {
-  value: "location",
+  value: "locations",
   header: "header",
   level: "level",
   address: "address",
