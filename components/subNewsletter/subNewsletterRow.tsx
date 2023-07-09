@@ -12,7 +12,7 @@ export const SubNewsletterRow = (props: SubNewsletterRowProps) => {
   return (
     <div
       className={
-        "flex h-80 w-full items-center bg-subscribeBackground bg-cover bg-center bg-no-repeat text-center font-light after:absolute"
+        "flex h-min w-full items-center bg-subscribeBackground bg-cover bg-center bg-no-repeat text-center font-light after:absolute sm:h-80"
       }
     >
       <Container padding="px-4" className="w-full">
