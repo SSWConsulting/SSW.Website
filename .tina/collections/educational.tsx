@@ -18,6 +18,8 @@ const educationalSolutionsBlockSchema: Template = {
           label: "Image",
           name: "solutionImage",
           required: true,
+          // @ts-ignore
+          uploadDir: () => "/educational",
         },
         {
           type: "string",
@@ -112,7 +114,7 @@ export const educationalSchema: Collection = {
       name: "bannerImg",
       required: true,
       // @ts-ignore
-      uploadDir: () => "/educational"
+      uploadDir: () => "/educational",
     },
     {
       type: "image",
@@ -120,7 +122,7 @@ export const educationalSchema: Collection = {
       name: "whitepaperFile",
       required: true,
       // @ts-ignore
-      uploadDir: () => "/files"
+      uploadDir: () => "/files",
     },
     {
       type: "rich-text",
