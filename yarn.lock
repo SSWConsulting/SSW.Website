@@ -2724,7 +2724,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@headlessui/react@npm:1.7.14, @headlessui/react@npm:^1.5.0":
+"@headlessui/react@npm:1.7.15":
+  version: 1.7.15
+  resolution: "@headlessui/react@npm:1.7.15"
+  dependencies:
+    client-only: ^0.0.1
+  peerDependencies:
+    react: ^16 || ^17 || ^18
+    react-dom: ^16 || ^17 || ^18
+  checksum: f2d11d58499ddf1362a40d84d92b7db932adaccc3596f44f1eead642258280f124497f2b329cee6e04801818bb2e66c42d752ee05f40f8b5239c2f692128e568
+  languageName: node
+  linkType: hard
+
+"@headlessui/react@npm:^1.5.0":
   version: 1.7.14
   resolution: "@headlessui/react@npm:1.7.14"
   dependencies:
@@ -3147,6 +3159,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@next/env@npm:^13.4.3":
+  version: 13.4.9
+  resolution: "@next/env@npm:13.4.9"
+  checksum: 625f01571ac5dabbb90567a987fdc16eca86cd9cfd592edabf7d3e3024972cd83564d53202293163851b85fa643f846a5757c8696a3c44315c98dae5b634f122
+  languageName: node
+  linkType: hard
+
 "@next/eslint-plugin-next@npm:13.4.4":
   version: 13.4.4
   resolution: "@next/eslint-plugin-next@npm:13.4.4"
@@ -3156,12 +3175,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:^13.4.7":
-  version: 13.4.7
-  resolution: "@next/eslint-plugin-next@npm:13.4.7"
+"@next/eslint-plugin-next@npm:^13.4.9":
+  version: 13.4.9
+  resolution: "@next/eslint-plugin-next@npm:13.4.9"
   dependencies:
     glob: 7.1.7
-  checksum: 7c9d6d3a44355dfda06982057a309502284add7d9e7a375782e24551f8faab726b7d4d260a053182f536f0928bf5b9c26b81267c437dc3e716a7acd70fd5b1a3
+  checksum: d57f1246fac54173c47a065404ba7237cfd6618648db4effbcdb30b5578b99edb3a2593df13ca617aa63c40e5e1336551089c506b2168a69a6cf8d5d7d045c0b
   languageName: node
   linkType: hard
 
@@ -4734,12 +4753,12 @@ __metadata:
     "@fortawesome/fontawesome-svg-core": ^6.4.0
     "@fortawesome/free-solid-svg-icons": ^6.4.0
     "@fortawesome/react-fontawesome": ^0.2.0
-    "@headlessui/react": 1.7.14
+    "@headlessui/react": 1.7.15
     "@headlessui/tailwindcss": ^0.1.3
     "@microsoft/applicationinsights-react-js": ^3.4.2
     "@microsoft/applicationinsights-web": 2.8.14
     "@next/bundle-analyzer": ^13.4.9
-    "@next/eslint-plugin-next": ^13.4.7
+    "@next/eslint-plugin-next": ^13.4.9
     "@svgr/webpack": ^8.0.1
     "@tailwindcss/typography": ^0.5.9
     "@tinacms/cli": ^1.5.19
@@ -4767,9 +4786,9 @@ __metadata:
     markdown-it-multimd-table: ^4.2.2
     next: ^13.4.7
     next-seo: ^6.1.0
-    next-sitemap: ^4.0.7
+    next-sitemap: ^4.1.8
     nextjs-breadcrumbs2: ^2.0.4
-    postcss: ^8.4.21
+    postcss: ^8.4.25
     postcss-import: ^15.1.0
     postcss-nesting: ^11.2.2
     prettier: 2.8.8
@@ -4782,7 +4801,7 @@ __metadata:
     react-is: ^18.2.0
     react-player: ^2.12.0
     react-responsive-carousel: ^3.2.23
-    react-responsive-modal: ^6.4.1
+    react-responsive-modal: ^6.4.2
     react-toastify: ^9.1.3
     react-tooltip: ^5.16.1
     sharp: ^0.32.1
@@ -14600,20 +14619,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-sitemap@npm:^4.0.7":
-  version: 4.1.3
-  resolution: "next-sitemap@npm:4.1.3"
+"next-sitemap@npm:^4.1.8":
+  version: 4.1.8
+  resolution: "next-sitemap@npm:4.1.8"
   dependencies:
     "@corex/deepmerge": ^4.0.43
+    "@next/env": ^13.4.3
     fast-glob: ^3.2.12
     minimist: ^1.2.8
   peerDependencies:
-    "@next/env": "*"
     next: "*"
   bin:
     next-sitemap: bin/next-sitemap.mjs
     next-sitemap-cjs: bin/next-sitemap.cjs
-  checksum: de9b292dffdafcaf0a1cd661471f34892aaad37820b613d6776f04a30ab5b1ead21b79890dcfdfb2de72e0f12d052674ffe165692f5b106495759f3d9cf5141e
+  checksum: 787e7d1f310ad4caec6bb683db6d7c5b45cc71b729b59cd5e93b60bf72354eae04853c11fc88f1dafa23504083a945c6dd717c1f7d6f7501ba54111ef6e9c5ae
   languageName: node
   linkType: hard
 
@@ -15610,6 +15629,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss@npm:^8.4.25":
+  version: 8.4.25
+  resolution: "postcss@npm:8.4.25"
+  dependencies:
+    nanoid: ^3.3.6
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 9ed3ab8af43ad5210c28f56f916fd9b8c9f94fbeaebbf645dcf579bc28bdd8056c2a7ecc934668d399b81fedb6128f0c4b299f931e50454964bc911c25a3a0a2
+  languageName: node
+  linkType: hard
+
 "prebuild-install@npm:^7.1.0, prebuild-install@npm:^7.1.1":
   version: 7.1.1
   resolution: "prebuild-install@npm:7.1.1"
@@ -16286,9 +16316,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-responsive-modal@npm:^6.4.1":
-  version: 6.4.1
-  resolution: "react-responsive-modal@npm:6.4.1"
+"react-responsive-modal@npm:^6.4.2":
+  version: 6.4.2
+  resolution: "react-responsive-modal@npm:6.4.2"
   dependencies:
     "@bedrock-layout/use-forwarded-ref": ^1.3.1
     body-scroll-lock: ^3.1.5
@@ -16296,7 +16326,7 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18
     react-dom: ^16.8.0 || ^17 || ^18
-  checksum: b4b4a076f60de949983097eedefe6a95248c3ed5e026e113f889623266bbc04fa8b39155aba77f825f68d3bec9366fb9f0e5c19e00a97b0e534c028bdc266969
+  checksum: 4a00e13f88dc6d5929a0c69817e7369604b1cf541d11e2dc108a5d072a3d1c95ca28c3d8edf8897b3f4a3c5dbc17ccfba5b48963ed8c607edce2878c8fc42b50
   languageName: node
   linkType: hard
 

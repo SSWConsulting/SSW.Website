@@ -6,6 +6,7 @@ import { tweetEmbedSchema } from "../embeds/tweetEmbed";
 import { subNewsletterRowSchema } from "../subNewsletter/subNewsletterRow";
 import { agreementFormBlockSchema } from "../terms-and-conditions/agreementForm";
 import { eventBookingSchema } from "../training/eventBooking";
+import { locationBlockSchema } from "../training/locationBlock";
 import { presenterBlockSchema } from "../training/presenterBlock";
 import { trainingInformationSchema } from "../training/trainingInformation";
 import { trainingLearningOutcomeSchema } from "../training/trainingLearningOutcome";
@@ -66,6 +67,7 @@ export const pageBlocks: Template[] = [
   videoEmbedBlockSchema,
   eventBookingSchema,
   presenterBlockSchema,
+  locationBlockSchema,
 ];
 
 export * from "../bookingButton/bookingButton";
