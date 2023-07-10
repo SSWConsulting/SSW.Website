@@ -7,7 +7,7 @@ import { Container } from "../util/container";
 export const LocationBlock = ({ data }) => {
   return (
     <Container size="custom" id="location">
-      <h4 className="py-2 text-sswRed">Location Venues</h4>
+      <h4 className="py-2 text-sswRed">{data.title}</h4>
       <div className="mb-2 grid grid-cols-12">
         {data.locationList?.map((location, index) => (
           <LocationCard
@@ -53,13 +53,13 @@ const LocationCard = ({ location, count, index, schema }) => {
           </div>
           <div className=" py-0.5 text-xs capitalize text-gray-500">
             {" "}
-            {location.level}
+            {location.addressLine1}
           </div>
           <div className=" py-0.5 text-xs capitalize text-gray-500">
-            {location.address}
+            {location.addressLine2}
           </div>
           <div className=" py-0.5 text-xs capitalize text-gray-500">
-            {location.state}
+            {location.addressLine3}
           </div>{" "}
         </div>
 
@@ -89,6 +89,7 @@ const addRightBorder = (index) => {
 
 export const locationBlockConstant = {
   value: "LocationBlock",
+  title: "title",
   locationList: { value: "locationList", location: "location" },
   chapelWebsite: {
     value: "chapelWebsite",
@@ -101,6 +102,11 @@ export const locationBlockSchema: Template = {
   name: locationBlockConstant.value,
   label: "Locations",
   fields: [
+    {
+      type: "string",
+      name: locationBlockConstant.title,
+      label: "title",
+    },
     {
       type: "object",
       label: "Location List",

@@ -3,9 +3,9 @@ import type { Collection } from "tinacms";
 export const locationSchemaConstants = {
   value: "locations",
   header: "header",
-  level: "level",
-  address: "address",
-  state: "state",
+  addressLine1: "addressLine1",
+  addressLine2: "addressLine2",
+  addressLine3: "addressLine3",
   directionURL: "directionURL",
 };
 
@@ -22,18 +22,18 @@ export const locationSchema: Collection = {
     },
     {
       type: "string",
-      name: locationSchemaConstants.level,
-      label: "Level",
+      name: locationSchemaConstants.addressLine1,
+      label: "Address Line 1",
     },
     {
       type: "string",
-      name: locationSchemaConstants.address,
-      label: "Address",
+      name: locationSchemaConstants.addressLine2,
+      label: "Address Line 2",
     },
     {
       type: "string",
-      name: locationSchemaConstants.state,
-      label: "State",
+      name: locationSchemaConstants.addressLine3,
+      label: "Address Line 3",
     },
     {
       type: "string",
