@@ -4765,7 +4765,7 @@ __metadata:
     react-is: ^18.2.0
     react-player: ^2.12.0
     react-responsive-carousel: ^3.2.23
-    react-responsive-modal: ^6.4.1
+    react-responsive-modal: ^6.4.2
     react-toastify: ^9.1.3
     react-tooltip: ^5.16.1
     sharp: ^0.32.1
@@ -16149,9 +16149,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-responsive-modal@npm:^6.4.1":
-  version: 6.4.1
-  resolution: "react-responsive-modal@npm:6.4.1"
+"react-responsive-modal@npm:^6.4.2":
+  version: 6.4.2
+  resolution: "react-responsive-modal@npm:6.4.2"
   dependencies:
     "@bedrock-layout/use-forwarded-ref": ^1.3.1
     body-scroll-lock: ^3.1.5
@@ -16159,7 +16159,7 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18
     react-dom: ^16.8.0 || ^17 || ^18
-  checksum: b4b4a076f60de949983097eedefe6a95248c3ed5e026e113f889623266bbc04fa8b39155aba77f825f68d3bec9366fb9f0e5c19e00a97b0e534c028bdc266969
+  checksum: 4a00e13f88dc6d5929a0c69817e7369604b1cf541d11e2dc108a5d072a3d1c95ca28c3d8edf8897b3f4a3c5dbc17ccfba5b48963ed8c607edce2878c8fc42b50
   languageName: node
   linkType: hard
 
