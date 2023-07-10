@@ -1,4 +1,5 @@
 const config = {
+  productionBrowserSourceMaps: true,
   i18n: {
     locales: ["en"],
     defaultLocale: "en",
