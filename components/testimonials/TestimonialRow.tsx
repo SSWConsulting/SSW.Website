@@ -21,7 +21,7 @@ export const TestimonialRow = ({ testimonialsResult }) => {
 const TestimonialCard = ({ testimonial }) => {
   return (
     <div
-      className="flex flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-10 text-center text-xl drop-shadow sm:h-96 md:h-full"
+      className="flex flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-8 text-center text-xl drop-shadow sm:h-96 md:h-full md:p-10"
       data-aos="flip-right"
     >
       <div className="flex flex-col items-center">

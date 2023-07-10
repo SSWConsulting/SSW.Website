@@ -36,7 +36,7 @@ export default function TrainingPage(
       <SEO seo={data.training.seo} />
       <Layout>
         <TrainingCarousel data={data.training.trainingHeaderCarousel} />
-        <Container className="pt-2">
+        <Container padding={"md:px-8 px-2"} className="pt-2">
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}
             suffix={data.global.breadcrumbSuffix}
@@ -57,7 +57,7 @@ export default function TrainingPage(
           />
 
           <Section color="white" className="">
-            <Container className={"flex-1 pt-0"}>
+            <Container padding={"md:px-8 px-2"} className={"flex-1 pt-0"}>
               <div className="mx-auto flex max-w-9xl flex-col items-center">
                 <TestimonialRow testimonialsResult={props.testimonialResult} />
               </div>
@@ -65,7 +65,7 @@ export default function TrainingPage(
           </Section>
 
           <Section color="white">
-            <Container className={"flex-1 pt-0"}>
+            <Container padding={"md:px-8 px-4"} className={"flex-1 pt-0"}>
               <div className="flex flex-col items-center pb-15 text-center">
                 <h2>
                   Trusted by more than{" "}
