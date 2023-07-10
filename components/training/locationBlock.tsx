@@ -52,7 +52,7 @@ const LocationCard = ({ location, index, schema }) => {
   return (
     <div
       className={classNames(
-        "col-span-12 gap-2 border-b-8 border-white bg-gray-100  py-3 pl-5 text-lg last:border-b-0 last:border-r-0 md:col-span-3 md:border-b-0",
+        "col-span-12 gap-2 border-b-8 border-white bg-gray-100 py-3 pl-5 text-lg last:border-b-0 last:border-r-0 md:col-span-3 md:border-b-0",
         addTopBorderForSecondRow(index),
         addRightBorder(index)
       )}
