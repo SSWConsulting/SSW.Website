@@ -134,13 +134,13 @@ export const trainingHeaderSchema = {
           label: "Hero Background",
           name: "heroBackground",
           required: true,
-          uploadDir: () => "/background/",
+          uploadDir: () => "/background",
         },
         {
           type: "image",
           label: "Person",
           name: "person",
-          uploadDir: () => "/people/",
+          uploadDir: () => "/people",
         },
         {
           type: "object",
