@@ -8,13 +8,13 @@
       "name": "SugarLearning",
       "url": "https://sugarlearning.com/",
       "description": "The next generation on-boarding & induction tool for smart companies.",
-      "logo": "/images/thumbs/thumb-SugarLearning.jpg"
+      "logo": "/images/products/thumb-SugarLearning.jpg"
     },
     {
       "name": "TimePro",
       "url": "https://sswtimepro.com/",
       "description": "TimePro offers everything an enterprise needs, such as invoicing, receipting, and time sheeting.",
-      "logo": "/images/thumbs/thumb-TimePro.jpg"
+      "logo": "/images/products/thumb-TimePro.jpg"
     },
     {
       "name": "SophieBot",
@@ -32,25 +32,25 @@
       "name": "CodeAuditor",
       "url": "https://codeauditor.com/",
       "description": "Scan any website for broken links and HTML Issues.",
-      "logo": "/images/thumbs/thumb-CodeAuditor.jpg"
+      "logo": "/images/products/thumb-CodeAuditor.jpg"
     },
     {
       "name": "LinkAuditor",
       "url": "https://sswlinkauditor.com/",
       "description": "Automatically locate broken links on your websites.",
-      "logo": "/images/thumbs/thumb-LinkAuditor.jpg"
+      "logo": "/images/products/thumb-LinkAuditor.jpg"
     },
     {
       "name": "SmashingBarrier",
       "url": "https://smashingbarrier.com/",
       "description": "SmashingBarrier is an user control that integrates with web applications, allowing users to send feature requests or issue reports directly into related team projects.",
-      "logo": "/images/thumbs/thumb-SmashingBarrier.jpg"
+      "logo": "/images/products/thumb-SmashingBarrier.jpg"
     },
     {
       "name": "SSW Rewards",
       "url": "https://www.ssw.com.au/ssw/Rewards",
       "description": "Scan SSW QR codes, earn SSW Points, claim rewards, and win prizes!",
-      "logo": "/images/thumbs/thumb-Rewards.jpg"
+      "logo": "/images/products/thumb-Rewards.jpg"
     }
   ]
 }
