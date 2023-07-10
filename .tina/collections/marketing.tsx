@@ -20,7 +20,7 @@ export const marketingSchema: Collection = {
 			name: "backgroundImage",
 			required: true,
 			// @ts-ignore
-			uploadDir: () => "/",
+			uploadDir: () => "/marketings",
 		},
 		{
 			type: "rich-text",
