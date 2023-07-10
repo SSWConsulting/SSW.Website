@@ -1,19 +1,26 @@
 import { FaGlobe, FaLocationArrow } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import { classNames, type Template } from "tinacms";
+import { tinaField } from "tinacms/dist/react";
 import { locationSchemaConstants } from "../../.tina/collections/location";
 import { Container } from "../util/container";
+
+const NumberOfLocationInRow = 4;
 
 export const LocationBlock = ({ data }) => {
   return (
     <Container size="custom" id="location">
-      <h4 className="py-2 text-sswRed">{data.title}</h4>
+      <h4
+        className="py-2 text-sswRed"
+        data-tina-field={tinaField(data, locationBlockConstant.title)}
+      >
+        {data.title}
+      </h4>
       <div className="mb-2 grid grid-cols-12">
         {data.locationList?.map((location, index) => (
           <LocationCard
             key={index}
             location={location.location}
-            count={data.locationList.length}
             index={index}
             schema={data}
           />
@@ -27,16 +34,21 @@ export const LocationBlock = ({ data }) => {
           rel="noopener noreferrer"
         >
           <FaGlobe className="m-icon" />
-          {data.chapelWebsite.title}
+          <span
+            data-tina-field={tinaField(
+              data.chapelWebsite,
+              locationBlockConstant.chapelWebsite.title
+            )}
+          >
+            {data.chapelWebsite.title}
+          </span>
         </a>
       </div>
     </Container>
   );
 };
 
-const sad = locationSchemaConstants;
-
-const LocationCard = ({ location, count, index, schema }) => {
+const LocationCard = ({ location, index, schema }) => {
   return (
     <div
       className={classNames(
@@ -47,18 +59,42 @@ const LocationCard = ({ location, count, index, schema }) => {
     >
       <div className=" grid grid-cols-12">
         <div className="col-span-12">
-          <div className="inline-flex items-center text-sm">
+          <div
+            className="inline-flex items-center text-sm"
+            data-tina-field={tinaField(
+              schema.locationList[index].location,
+              locationSchemaConstants.header
+            )}
+          >
             <MdLocationOn className="m-icon" />
             <span className="font-bold capitalize">{location.header}</span>
           </div>
-          <div className=" py-0.5 text-xs capitalize text-gray-500">
+          <div
+            className=" py-0.5 text-xs capitalize text-gray-500"
+            data-tina-field={tinaField(
+              schema.locationList[index].location,
+              locationSchemaConstants.addressLine1
+            )}
+          >
             {" "}
             {location.addressLine1}
           </div>
-          <div className=" py-0.5 text-xs capitalize text-gray-500">
+          <div
+            className=" py-0.5 text-xs capitalize text-gray-500"
+            data-tina-field={tinaField(
+              schema.locationList[index].location,
+              locationSchemaConstants.addressLine2
+            )}
+          >
             {location.addressLine2}
           </div>
-          <div className=" py-0.5 text-xs capitalize text-gray-500">
+          <div
+            className=" py-0.5 text-xs capitalize text-gray-500"
+            data-tina-field={tinaField(
+              schema.locationList[index].location,
+              locationSchemaConstants.addressLine3
+            )}
+          >
             {location.addressLine3}
           </div>{" "}
         </div>
@@ -69,6 +105,10 @@ const LocationCard = ({ location, count, index, schema }) => {
             className="inline-flex cursor-pointer items-center !no-underline hover:!underline"
             target="_blank"
             rel="noopener noreferrer"
+            data-tina-field={tinaField(
+              schema.locationList[index].location,
+              locationSchemaConstants.directionURL
+            )}
           >
             <FaLocationArrow className="m-icon" />
             Directions
@@ -80,11 +120,11 @@ const LocationCard = ({ location, count, index, schema }) => {
 };
 
 const addTopBorderForSecondRow = (index) => {
-  return index > 3 ? "border-white md:border-t-8" : "";
+  return index > NumberOfLocationInRow - 1 ? "border-white md:border-t-8" : "";
 };
 
 const addRightBorder = (index) => {
-  return (index + 1) % 4 != 0 ? "md:border-r-8" : "";
+  return (index + 1) % NumberOfLocationInRow != 0 ? "md:border-r-8" : "";
 };
 
 export const locationBlockConstant = {
