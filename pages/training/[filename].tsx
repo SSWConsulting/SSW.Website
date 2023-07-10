@@ -36,7 +36,7 @@ export default function TrainingPage(
       <SEO seo={data.training.seo} />
       <Layout>
         <TrainingCarousel data={data.training.trainingHeaderCarousel} />
-        <Container padding={"md:px-8 px-2"} className="pt-2">
+        <Container padding={"md:px-8 px-0"} className="pt-2">
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}
             suffix={data.global.breadcrumbSuffix}
