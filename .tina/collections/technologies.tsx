@@ -24,7 +24,6 @@ export const technologiesSchema: Collection = {
 			name: "thumbnail",
 			// @ts-ignore
 			uploadDir: () => "/thumbs",
-			// TODO image not exists
 		},
 		{
 			type: "rich-text",
