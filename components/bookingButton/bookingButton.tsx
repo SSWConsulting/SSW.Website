@@ -1,12 +1,16 @@
 import classNames from "classnames";
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { Template } from "tinacms";
 import layoutData from "../../content/global/index.json";
-import { BookingForm } from "../bookingForm/bookingForm";
 import { UtilityButton } from "../button/utilityButton";
 import Popup from "../popup/popup";
 import SuccessToast from "../successToast/successToast";
+
+const BookingForm = dynamic(() => import("../bookingForm/bookingForm").then(
+  (mod) => mod.BookingForm
+));
 
 export interface BookingButtonProps {
   buttonText?: string;
