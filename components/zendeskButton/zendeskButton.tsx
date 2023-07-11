@@ -70,6 +70,7 @@ const ZendeskButton = ({ zendeskKey }) => {
         </button>
         {open && (
           <Script
+            async
             src={`https://static.zdassets.com/ekr/snippet.js?key=${zendeskKey}`}
             id="ze-snippet"
             strategy="afterInteractive"

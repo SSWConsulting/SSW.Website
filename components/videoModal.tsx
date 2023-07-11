@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useState } from "react";
+import { FaPlayCircle } from "react-icons/fa";
 import { getYouTubeId } from "../helpers/embeds";
 
 const YouTubeEmbed = dynamic(
@@ -55,15 +56,9 @@ export const VideoModal = ({ children = null, url }) => {
 
 const PlayArrow = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="white"
-      width="72px"
-      height="72px"
-      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-    >
-      <path d="M8 5v14l11-7z" />
-    </svg>
+    <FaPlayCircle
+      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white text-sswRed"
+      size={70}
+    />
   );
 };
