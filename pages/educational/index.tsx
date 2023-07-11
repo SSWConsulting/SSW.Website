@@ -13,8 +13,8 @@ import { HorizontalImageLayout } from "../../components/blocks/horizontalImageLa
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { BookingForm } from "../../components/bookingForm/bookingForm";
 import Button from "../../components/button/button";
+import { YouTubeEmbed } from "../../components/embeds/youtubeEmbed";
 import { Layout } from "../../components/layout";
-import ReactPlayer from "../../components/reactPlayer/reactPlayer";
 import SuccessToast from "../../components/successToast/successToast";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
@@ -107,7 +107,12 @@ export default function EducationalIndex(
     VideoEmbed: ({ url }) => (
       <div className="relative h-0 overflow-hidden pb-9/16">
         <div className="absolute h-full w-full">
-          <ReactPlayer url={url} width="100%" height="100%" controls={true} />
+          <YouTubeEmbed
+            className="absolute left-0 top-0"
+            width="100%"
+            height="100%"
+            url={url}
+          />
         </div>
       </div>
     ),
