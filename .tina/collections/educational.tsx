@@ -3,39 +3,6 @@ import { Collection, Template } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 
-const educationalSolutionsBlockSchema: Template = {
-  name: "Solutions",
-  label: "Educational Solutions",
-  fields: [
-    {
-      type: "object",
-      label: "Educational Solutions",
-      name: "educationalSolutions",
-      list: true,
-      fields: [
-        {
-          type: "image",
-          label: "Image",
-          name: "solutionImage",
-          required: true,
-        },
-        {
-          type: "string",
-          label: "Name",
-          name: "name",
-          required: true,
-        },
-        {
-          type: "string",
-          label: "Description",
-          name: "description",
-          required: true,
-        },
-      ],
-    },
-  ],
-};
-
 const educationalSolutionsRowSchema: Template = {
   name: "SolutionsRow",
   label: "Educational Solutions Row",
@@ -181,11 +148,10 @@ export const educationalSchema: Collection = {
       name: "_body",
       templates: [
         ...Schemas.pageBlocks,
-        educationalSolutionsBlockSchema,
+        educationalSolutionsRowSchema,
         whitepaperBlockSchema,
         bookingFormBlockSchema,
         contactUsBlockSchema,
-        educationalSolutionsRowSchema,
       ],
       isBody: true,
     },
