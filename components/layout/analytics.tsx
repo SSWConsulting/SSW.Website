@@ -4,7 +4,7 @@ const gtmId = process.env.NEXT_PUBLIC_GOOGLE_GTM_ID;
 
 export const Analytics = () => {
   return (
-    <Script id="google-tag-manager" strategy="lazyOnload">
+    <Script id="google-tag-manager" strategy="worker">
       {`
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

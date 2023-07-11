@@ -1,5 +1,8 @@
 const config = {
   productionBrowserSourceMaps: true,
+  experimental: {
+    nextScriptWorkers: true,
+  },
   i18n: {
     locales: ["en"],
     defaultLocale: "en",
