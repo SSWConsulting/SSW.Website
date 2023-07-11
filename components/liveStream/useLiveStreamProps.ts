@@ -69,9 +69,7 @@ export function useLiveStreamProps(): LiveStreamProps {
     setIsLive(
       countdownMins <= 0 && !!event && rightnow.isBefore(event?.EndDateTime)
     );
-  }, [countdownMins, event]);
 
-  useEffect(() => {
     setShowBanner(
       !!event &&
         dayjs().isBetween(
