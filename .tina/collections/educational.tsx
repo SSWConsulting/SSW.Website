@@ -11,6 +11,8 @@ const educationalSolutionsRowSchema: Template = {
       type: "image",
       label: "1st Card Image",
       name: "imgSrc1",
+      // @ts-ignore
+      uploadDir: () => "/educational",
     },
     {
       type: "string",
@@ -26,6 +28,8 @@ const educationalSolutionsRowSchema: Template = {
       type: "image",
       label: "2nd Card Image",
       name: "imgSrc2",
+      // @ts-ignore
+      uploadDir: () => "/educational",
     },
     {
       type: "string",
@@ -41,6 +45,8 @@ const educationalSolutionsRowSchema: Template = {
       type: "image",
       label: "3rd Card Image",
       name: "imgSrc3",
+      // @ts-ignore
+      uploadDir: () => "/educational",
     },
     {
       type: "string",
@@ -141,12 +147,16 @@ export const educationalSchema: Collection = {
       label: "Banner Image",
       name: "bannerImg",
       required: true,
+      // @ts-ignore
+      uploadDir: () => "/educational",
     },
     {
       type: "image",
       label: "Whitepaper File",
       name: "whitepaperFile",
       required: true,
+      // @ts-ignore
+      uploadDir: () => "/files",
     },
     {
       type: "rich-text",

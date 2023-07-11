@@ -85,6 +85,8 @@ export const consultingIndexSchema: Collection = {
               type: "image",
               label: "Logo",
               name: "logo",
+              // @ts-ignore
+              uploadDir: () => "/thumbs",
             },
             {
               type: "reference",
@@ -197,6 +199,8 @@ export const consultingSchema: Collection = {
           type: "image",
           label: "Video Background",
           name: "videoBackground",
+          // @ts-ignore
+          uploadDir: () => "/videos",
         },
       ],
     },
@@ -271,6 +275,8 @@ export const consultingSchema: Collection = {
               type: "image",
               label: "Image URL",
               name: "image",
+              // @ts-ignore
+              uploadDir: () => "/benefits",
             },
             {
               type: "string",
