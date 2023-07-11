@@ -70,6 +70,7 @@ const ZendeskButton = ({ zendeskKey }) => {
           <Script
             src={`https://static.zdassets.com/ekr/snippet.js?key=${zendeskKey}`}
             id="ze-snippet"
+            strategy="lazyOnload"
           />
         )}
       </>
