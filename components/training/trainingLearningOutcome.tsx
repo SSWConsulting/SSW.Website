@@ -1,11 +1,11 @@
+import { FC } from "react";
+import type { Template } from "tinacms";
+import { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { Container } from "../util/container";
-import { Section } from "../util/section";
 import HorizontalList, {
   HorizontalListItemProps,
 } from "../util/horizontalList";
-import type { Template } from "tinacms";
-import { FC } from "react";
-import { TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { Section } from "../util/section";
 
 export type TrainingLearningOutcomeProps = {
   data: {
@@ -73,6 +73,9 @@ export const trainingLearningOutcomeSchema: Template = {
           type: "image",
           label: "Icon",
           name: "icon",
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          uploadDir: () => "/logos",
         },
       ],
     },
