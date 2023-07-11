@@ -31,6 +31,20 @@ export const trainingSchema: Collection = {
     },
     {
       type: "object",
+      label: "Testimonial Categories",
+      name: "categories",
+      list: true,
+      fields: [
+        {
+          type: "reference",
+          label: "Testimonial Category",
+          name: "category",
+          collections: ["testimonialCategories"],
+        },
+      ],
+    },
+    {
+      type: "object",
       list: true,
       name: "_body",
       label: "Body",

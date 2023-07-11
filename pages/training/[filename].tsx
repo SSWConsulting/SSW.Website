@@ -101,13 +101,22 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.mdx`,
   });
 
-  const testimonials = await client.queries.testimonalsQuery({
-    categories: "Internship",
-  });
+  let testimonialsResult = undefined;
+  const categories =
+    tinaProps.data.training?.categories?.map(
+      (category) => category.category.name
+    ) || [];
 
-  const testimonialsResult = testimonials.data.testimonialsConnection.edges.map(
-    (t) => t.node
-  );
+  if (categories.length != 0) {
+    const testimonials = await client.queries.testimonalsQuery({
+      categories,
+    });
+    testimonialsResult = testimonials.data.testimonialsConnection.edges.map(
+      (t) => t.node
+    );
+    testimonialsResult = testimonialsResult.sort(() => 0.5 - Math.random());
+    testimonialsResult = testimonialsResult.slice(0, 3);
+  }
 
   return {
     props: {
