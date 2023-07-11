@@ -1,20 +1,16 @@
 import { InferGetStaticPropsType } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { FaFileDownload } from "react-icons/fa";
-import { toast } from "react-toastify";
 import { tinaField, useTina } from "tinacms/dist/react";
-import { Components, TinaMarkdown } from "tinacms/dist/rich-text";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../.tina/__generated__/client";
 import { EducationalConnectionQuery } from "../../.tina/__generated__/types";
 import { BuiltOnAzure } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
-import { HorizontalImageLayout } from "../../components/blocks/horizontalImageLayout";
-import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
-import { BookingForm } from "../../components/bookingForm/bookingForm";
-import Button from "../../components/button/button";
+import {
+  DownloadWhitepaperLink,
+  educationalRenderer,
+} from "../../components/blocks/educationalRenderer";
 import { Layout } from "../../components/layout";
-import ReactPlayer from "../../components/reactPlayer/reactPlayer";
 import SuccessToast from "../../components/successToast/successToast";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
@@ -30,14 +26,6 @@ export default function EducationalIndex(
     data: props.data,
   });
 
-  const showSuccessToast = () => {
-    toast.success(
-      <div className="text-left">
-        Form submitted. We'll be in contact as soon as possible.
-      </div>
-    );
-  };
-
   const removeExtension = (file: string) => {
     return file.split(".")[0];
   };
@@ -52,93 +40,6 @@ export default function EducationalIndex(
       layoutData.header.url,
       "/"
     )}educational`);
-  const PComponent = ({ children }) => <p className="mb-3">{children}</p>;
-  const SolutionElements = ({ solutions }) => {
-    const solutionPropsMap = ({ solutionImage, name, description }) => ({
-      imageSrc: solutionImage,
-      altText: name,
-      height: 360,
-      width: 124,
-      message: (
-        <>
-          <h4 className="mb-2 mt-5 text-sm font-bold">{name}</h4>
-          <PComponent children={description} />
-        </>
-      ),
-    });
-    return <HorizontalImageLayout images={solutions.map(solutionPropsMap)} />;
-  };
-
-  const DownloadWhitepaperLink = ({ children }) => (
-    <Link href={node.whitepaperFile} passHref legacyBehavior>
-      <a target="_blank">{children}</a>
-    </Link>
-  );
-  const educationalRenderer: Components<{
-    Solutions: {
-      educationalSolutions: {
-        solutionImage: string;
-        name: string;
-        description: string;
-      }[];
-    };
-    VideoEmbed: {
-      url: string;
-    };
-    Whitepaper: {
-      title: string;
-      description: string;
-      buttonText: string;
-    };
-    BookingForm: Record<string, never>;
-    ContactUs: {
-      buttonText: string;
-      link: string;
-    };
-  }> = {
-    ...componentRenderer,
-    h3: ({ children }) => (
-      <h3 className="mb-3 mt-10 text-sswRed">{children}</h3>
-    ),
-    p: PComponent,
-    Solutions: ({ educationalSolutions }) => (
-      <SolutionElements solutions={educationalSolutions} />
-    ),
-    VideoEmbed: ({ url }) => (
-      <div className="relative h-0 overflow-hidden pb-9/16">
-        <div className="absolute h-full w-full">
-          <ReactPlayer url={url} width="100%" height="100%" controls={true} />
-        </div>
-      </div>
-    ),
-    Whitepaper: ({ title, description, buttonText }) => (
-      <div className="mt-4 border-1 border-gray-300 bg-gray-125 px-6 py-4">
-        <h4 className="mb-3 mt-6">{title}</h4>
-        <p className="mb-4">{description}</p>
-        <div className="flex justify-center">
-          <DownloadWhitepaperLink>
-            <Button ripple className="done mx-2 inline-flex !h-10 pl-3">
-              <FaFileDownload className="m-icon" />
-              {buttonText}
-            </Button>
-          </DownloadWhitepaperLink>
-        </div>
-      </div>
-    ),
-    BookingForm: () => <BookingForm showSuccessToast={showSuccessToast} />,
-    ContactUs: ({ buttonText, link }) => (
-      <div className="mb-16 flex justify-center">
-        <a href={link}>
-          <Button
-            ripple
-            className="!h-10 !bg-gray-900 bg-arrow-right bg-right bg-no-repeat pl-3 pr-8 text-sm"
-          >
-            {buttonText}
-          </Button>
-        </a>
-      </div>
-    ),
-  };
 
   return (
     <RecaptchaContext.Provider
@@ -147,7 +48,7 @@ export default function EducationalIndex(
       <Layout>
         <SEO seo={node.seo} />
         <Container className="flex-1" size="custom">
-          <DownloadWhitepaperLink>
+          <DownloadWhitepaperLink whitepaperFile={node.whitepaperFile}>
             <div data-tina-field={tinaField(node, "bannerImg")}>
               <Image
                 src={node.bannerImg}
