@@ -48,7 +48,7 @@ export const seoSchema = {
       ui: {
         validate: (value) => {
           if (value.length > 70) {
-            return "Title should be less than 70 characters";
+            return "Title should be 70 characters or less";
           }
         },
       },
@@ -61,7 +61,7 @@ export const seoSchema = {
       ui: {
         validate: (value) => {
           if (value.length > 150) {
-            return "Description should be less than 150 characters";
+            return "Description should be 150 characters or less";
           }
         },
       },
