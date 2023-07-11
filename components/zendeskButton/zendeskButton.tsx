@@ -66,7 +66,12 @@ const ZendeskButton = ({ zendeskKey }) => {
             ></path>
           </svg>
         </button>
-        {zendeskKey && <Script src={`https://static.zdassets.com/ekr/snippet.js?key=${zendeskKey}`} id="ze-snippet" />}
+        {zendeskKey && (
+          <Script
+            src={`https://static.zdassets.com/ekr/snippet.js?key=${zendeskKey}`}
+            id="ze-snippet"
+          />
+        )}
       </>
     );
 
