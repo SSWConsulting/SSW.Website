@@ -9,7 +9,6 @@ import { client } from "../../.tina/__generated__/client";
 import { EducationalConnectionQuery } from "../../.tina/__generated__/types";
 import { BuiltOnAzure } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
-import { HorizontalImageLayout } from "../../components/blocks/horizontalImageLayout";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { SolutionsRow } from "../../components/blocks/solutionsRow";
 import { BookingForm } from "../../components/bookingForm/bookingForm";
@@ -55,35 +54,12 @@ export default function EducationalIndex(
     )}educational`);
   const PComponent = ({ children }) => <p className="mb-3">{children}</p>;
 
-  const SolutionElements = ({ solutions }) => {
-    const solutionPropsMap = ({ solutionImage, name, description }) => ({
-      imageSrc: solutionImage,
-      altText: name,
-      height: 360,
-      width: 124,
-      message: (
-        <>
-          <h4 className="mb-2 mt-5 text-sm font-bold">{name}</h4>
-          <PComponent children={description} />
-        </>
-      ),
-    });
-    return <HorizontalImageLayout images={solutions.map(solutionPropsMap)} />;
-  };
-
   const DownloadWhitepaperLink = ({ children }) => (
     <Link href={node.whitepaperFile} passHref legacyBehavior>
       <a target="_blank">{children}</a>
     </Link>
   );
   const educationalRenderer: Components<{
-    Solutions: {
-      educationalSolutions: {
-        solutionImage: string;
-        name: string;
-        description: string;
-      }[];
-    };
     VideoEmbed: {
       url: string;
     };
@@ -114,9 +90,6 @@ export default function EducationalIndex(
       <h3 className="mb-3 mt-10 text-sswRed">{children}</h3>
     ),
     p: PComponent,
-    Solutions: ({ educationalSolutions }) => (
-      <SolutionElements solutions={educationalSolutions} />
-    ),
     VideoEmbed: ({ url }) => (
       <div className="relative h-0 overflow-hidden pb-9/16">
         <div className="absolute h-full w-full">
