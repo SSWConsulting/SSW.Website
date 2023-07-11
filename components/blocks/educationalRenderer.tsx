@@ -16,6 +16,47 @@ export const DownloadWhitepaperLink = ({ whitepaperFile, children }) => (
   </Link>
 );
 
+export const ContactUs = ({ buttonText, link }) => (
+  <div className="mb-16 flex justify-center">
+    <a href={link}>
+      <Button
+        ripple
+        className="!h-10 !bg-gray-900 bg-arrow-right bg-right bg-no-repeat pl-3 pr-8 text-sm"
+      >
+        {buttonText}
+      </Button>
+    </a>
+  </div>
+);
+
+export const Whitepaper = ({
+  title,
+  description,
+  buttonText,
+  whitepaperFile,
+}) => (
+  <div className="mt-4 border-1 border-gray-300 bg-gray-125 px-6 py-4">
+    <h4 className="mb-3 mt-6">{title}</h4>
+    <p className="mb-4">{description}</p>
+    <div className="flex justify-center">
+      <DownloadWhitepaperLink whitepaperFile={whitepaperFile}>
+        <Button ripple className="done mx-2 inline-flex !h-10 pl-3">
+          <FaFileDownload className="m-icon" />
+          {buttonText}
+        </Button>
+      </DownloadWhitepaperLink>
+    </div>
+  </div>
+);
+
+export const VideoEmbed = ({ url }) => (
+  <div className="relative h-0 overflow-hidden pb-9/16">
+    <div className="absolute h-full w-full">
+      <ReactPlayer url={url} width="100%" height="100%" controls={true} />
+    </div>
+  </div>
+);
+
 const showSuccessToast = () => {
   toast.success(
     <div className="text-left">
@@ -54,39 +95,9 @@ export const educationalRenderer: Components<{
   ...componentRenderer,
   h3: ({ children }) => <h3 className="mb-3 mt-10 text-sswRed">{children}</h3>,
   p: PComponent,
-  VideoEmbed: ({ url }) => (
-    <div className="relative h-0 overflow-hidden pb-9/16">
-      <div className="absolute h-full w-full">
-        <ReactPlayer url={url} width="100%" height="100%" controls={true} />
-      </div>
-    </div>
-  ),
-  Whitepaper: ({ title, description, buttonText, whitepaperFile }) => (
-    <div className="mt-4 border-1 border-gray-300 bg-gray-125 px-6 py-4">
-      <h4 className="mb-3 mt-6">{title}</h4>
-      <p className="mb-4">{description}</p>
-      <div className="flex justify-center">
-        <DownloadWhitepaperLink whitepaperFile={whitepaperFile}>
-          <Button ripple className="done mx-2 inline-flex !h-10 pl-3">
-            <FaFileDownload className="m-icon" />
-            {buttonText}
-          </Button>
-        </DownloadWhitepaperLink>
-      </div>
-    </div>
-  ),
+  VideoEmbed: (props) => <VideoEmbed {...props} />,
+  Whitepaper: (props) => <Whitepaper {...props} />,
   BookingForm: () => <BookingForm showSuccessToast={showSuccessToast} />,
-  ContactUs: ({ buttonText, link }) => (
-    <div className="mb-16 flex justify-center">
-      <a href={link}>
-        <Button
-          ripple
-          className="!h-10 !bg-gray-900 bg-arrow-right bg-right bg-no-repeat pl-3 pr-8 text-sm"
-        >
-          {buttonText}
-        </Button>
-      </a>
-    </div>
-  ),
+  ContactUs: (props) => <ContactUs {...props} />,
   SolutionsRow: (props) => <SolutionsRow {...props} />,
 };
