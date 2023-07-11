@@ -11,6 +11,7 @@ import { BuiltOnAzure } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { HorizontalImageLayout } from "../../components/blocks/horizontalImageLayout";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import { SolutionsRow } from "../../components/blocks/solutionsRow";
 import { BookingForm } from "../../components/bookingForm/bookingForm";
 import Button from "../../components/button/button";
 import { Layout } from "../../components/layout";
@@ -53,6 +54,7 @@ export default function EducationalIndex(
       "/"
     )}educational`);
   const PComponent = ({ children }) => <p className="mb-3">{children}</p>;
+
   const SolutionElements = ({ solutions }) => {
     const solutionPropsMap = ({ solutionImage, name, description }) => ({
       imageSrc: solutionImage,
@@ -94,6 +96,17 @@ export default function EducationalIndex(
     ContactUs: {
       buttonText: string;
       link: string;
+    };
+    SolutionsRow: {
+      imgSrc1: string;
+      header1: string;
+      body1: string;
+      imgSrc2: string;
+      header2: string;
+      body2: string;
+      imgSrc3: string;
+      header3: string;
+      body3: string;
     };
   }> = {
     ...componentRenderer,
@@ -138,6 +151,7 @@ export default function EducationalIndex(
         </a>
       </div>
     ),
+    SolutionsRow: (props) => <SolutionsRow {...props} />,
   };
 
   return (

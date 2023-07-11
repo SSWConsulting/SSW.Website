@@ -36,6 +36,58 @@ const educationalSolutionsBlockSchema: Template = {
   ],
 };
 
+const educationalSolutionsRowSchema: Template = {
+  name: "SolutionsRow",
+  label: "Educational Solutions Row",
+  fields: [
+    {
+      type: "image",
+      label: "1st Card Image",
+      name: "imgSrc1",
+    },
+    {
+      type: "string",
+      label: "1st Header",
+      name: "header1",
+    },
+    {
+      type: "rich-text",
+      label: "1st Body",
+      name: "body1",
+    },
+    {
+      type: "image",
+      label: "2nd Card Image",
+      name: "imgSrc2",
+    },
+    {
+      type: "string",
+      label: "2nd Header",
+      name: "header2",
+    },
+    {
+      type: "rich-text",
+      label: "2nd Body",
+      name: "body2",
+    },
+    {
+      type: "image",
+      label: "3rd Card Image",
+      name: "imgSrc3",
+    },
+    {
+      type: "string",
+      label: "3rd Header",
+      name: "header3",
+    },
+    {
+      type: "rich-text",
+      label: "3rd Body",
+      name: "body3",
+    },
+  ],
+};
+
 const whitepaperBlockSchema: Template = {
   name: "Whitepaper",
   label: "Whitepaper",
@@ -133,6 +185,7 @@ export const educationalSchema: Collection = {
         whitepaperBlockSchema,
         bookingFormBlockSchema,
         contactUsBlockSchema,
+        educationalSolutionsRowSchema,
       ],
       isBody: true,
     },
