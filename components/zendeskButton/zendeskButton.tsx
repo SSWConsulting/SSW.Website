@@ -16,6 +16,7 @@ const zendeskLoaded = () => {
 
 const ZendeskButton = ({ zendeskKey }) => {
   const [loaded, setLoaded] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   const checkLoaded = () => {
     if (zendeskLoaded()) setLoaded(true);
@@ -28,6 +29,7 @@ const ZendeskButton = ({ zendeskKey }) => {
 
   const handleClick = () => {
     sessionStorage.setItem("ZD-widgetOpen", "true");
+    setOpen(true);
     start();
   };
 
@@ -66,11 +68,11 @@ const ZendeskButton = ({ zendeskKey }) => {
             ></path>
           </svg>
         </button>
-        {zendeskKey && (
+        {open && (
           <Script
             src={`https://static.zdassets.com/ekr/snippet.js?key=${zendeskKey}`}
             id="ze-snippet"
-            strategy="lazyOnload"
+            strategy="afterInteractive"
           />
         )}
       </>
