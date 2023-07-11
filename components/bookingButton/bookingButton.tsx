@@ -52,10 +52,12 @@ export const BookingButton = ({
         or call us on {bookingPhone}
       </h2>
       <Popup isVisible={isVisible} onClose={setIsVisible}>
-        <BookingForm
-          onClose={setIsVisible}
-          showSuccessToast={showSuccessToast}
-        />
+        {isVisible && (
+          <BookingForm
+            onClose={setIsVisible}
+            showSuccessToast={showSuccessToast}
+          />
+        )}
       </Popup>
       <SuccessToast />
     </div>

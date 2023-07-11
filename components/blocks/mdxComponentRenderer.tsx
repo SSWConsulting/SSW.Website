@@ -1,88 +1,38 @@
 import dynamic from "next/dynamic";
 import { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
-import { TweetEmbedProps } from "../embeds/tweetEmbed";
-import { SubNewsletterRowProps } from "../subNewsletter/subNewsletterRow";
 
-const BookingButton = dynamic(() =>
-  import("../bookingButton/bookingButton").then((mod) => mod.BookingButton)
-);
-const UtilityButton = dynamic(() =>
-  import("../button/utilityButton").then((mod) => mod.UtilityButton)
-);
-const TweetEmbed = dynamic(() =>
-  import("../embeds/tweetEmbed").then((mod) => mod.TweetEmbed)
-);
-const SubNewsletterRow = dynamic(() =>
-  import("../subNewsletter/subNewsletterRow").then(
-    (mod) => mod.SubNewsletterRow
-  )
-);
-const AgreementForm = dynamic(() =>
-  import("../terms-and-conditions/agreementForm").then(
-    (mod) => mod.AgreementForm
-  )
-);
-const TrainingInformation = dynamic(() =>
-  import("../training/trainingInformation").then(
-    (mod) => mod.TrainingInformation
-  )
-);
-const TrainingLearningOutcome = dynamic(() =>
-  import("../training/trainingLearningOutcome").then(
-    (mod) => mod.TrainingLearningOutcome
-  )
-);
-const Carousel = dynamic(() =>
-  import("./carousel").then((mod) => mod.Carousel)
-);
-const Citation = dynamic(() =>
-  import("./citation").then((mod) => mod.Citation)
-);
-const ClientLogos = dynamic(() =>
-  import("./clientLogos").then((mod) => mod.ClientLogos)
-);
-const ContentCard = dynamic(() =>
-  import("./contentCard").then((mod) => mod.ContentCard)
-);
-const CustomImage = dynamic(() =>
-  import("./customImage").then((mod) => mod.CustomImage)
-);
-const DynamicColumns = dynamic(() =>
-  import("./dynamicColumns").then((mod) => mod.DynamicColumns)
-);
-const FixedColumns = dynamic(() =>
-  import("./fixedColumns").then((mod) => mod.FixedColumns)
-);
-const FixedTabsLayout = dynamic(() =>
-  import("./fixedTabsLayout").then((mod) => mod.FixedTabsLayout)
-);
-const Flag = dynamic(() => import("./flag").then((mod) => mod.Flag));
-const GoogleMapsWrapper = dynamic(() =>
-  import("./googleMapsWrapper").then((mod) => mod.GoogleMapsWrapper)
-);
-const InternalCarousel = dynamic(() =>
-  import("./internalCarousel").then((mod) => mod.InternalCarousel)
-);
-const NewslettersTable = dynamic(() =>
-  import("./newslettersTable").then((mod) => mod.NewslettersTable)
-);
-const RecurringEvent = dynamic(() =>
-  import("./recurringEvent").then((mod) => mod.RecurringEvent)
-);
-const TableLayout = dynamic(() =>
-  import("./tableLayout").then((mod) => mod.TableLayout)
-);
-const UpcomingEvents = dynamic(() =>
-  import("./upcomingEvents").then((mod) => mod.UpcomingEvents)
-);
-const VerticalImageLayout = dynamic(() =>
-  import("./verticalImageLayout").then((mod) => mod.VerticalImageLayout)
-);
-const VerticalListItem = dynamic(() =>
-  import("./verticalListItem").then((mod) => mod.VerticalListItem)
-);
-const VideoEmbed = dynamic(() =>
-  import("./videoEmbed").then((mod) => mod.VideoEmbed)
+import { BookingButton } from "../bookingButton/bookingButton";
+import { UtilityButton } from "../button/utilityButton";
+import { TweetEmbed, TweetEmbedProps } from "../embeds/tweetEmbed";
+import {
+  SubNewsletterRow,
+  SubNewsletterRowProps,
+} from "../subNewsletter/subNewsletterRow";
+import { AgreementForm } from "../terms-and-conditions/agreementForm";
+import TrainingInformation from "../training/trainingInformation";
+import { TrainingLearningOutcome } from "../training/trainingLearningOutcome";
+import { Carousel } from "./carousel";
+import { Citation } from "./citation";
+import { ClientLogos } from "./clientLogos";
+import { ContentCard } from "./contentCard";
+import { CustomImage } from "./customImage";
+import { DynamicColumns } from "./dynamicColumns";
+import { FixedColumns } from "./fixedColumns";
+import { FixedTabsLayout } from "./fixedTabsLayout";
+import { Flag } from "./flag";
+import { GoogleMapsWrapper } from "./googleMapsWrapper";
+import { InternalCarousel } from "./internalCarousel";
+import { NewslettersTable } from "./newslettersTable";
+import { RecurringEvent } from "./recurringEvent";
+import { TableLayout } from "./tableLayout";
+import { UpcomingEvents } from "./upcomingEvents";
+import { VerticalImageLayout } from "./verticalImageLayout";
+import { VerticalListItem } from "./verticalListItem";
+
+// Import heavy components dynamically
+const VideoEmbed = dynamic(
+  () => import("./videoEmbed").then((mod) => mod.VideoEmbed),
+  { ssr: false }
 );
 
 export const componentRenderer: Components<{
