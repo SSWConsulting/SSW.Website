@@ -39,7 +39,7 @@ const config = {
 };
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: true,
+  enabled: process.env.BUNDLE_ANALYSE === "true",
 });
 
 module.exports = withBundleAnalyzer(config);

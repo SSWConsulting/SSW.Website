@@ -80,11 +80,11 @@ export const Layout = ({ children, className = "" }) => {
           )}
         >
           <header className="no-print">
-            {liveStreamProps.showBanner && <LiveStreamBanner {...liveStreamProps} />}
+            {(liveStreamProps.showBanner || router.query.liveBanner) && <LiveStreamBanner {...liveStreamProps} />}
             <div className="mx-auto max-w-9xl px-6 sm:px-8">
               <Header />
               <MenuBar />
-              {liveStreamProps.isLive &&  <LiveStreamWidget {...liveStreamProps} />}
+              {(liveStreamProps.isLive || router.query.liveStream) && <LiveStreamWidget {...liveStreamProps} />}
             </div>
           </header>
           <main className="grow bg-white">{children}</main>

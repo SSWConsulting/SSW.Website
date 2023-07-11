@@ -48,7 +48,7 @@ export const LiveStreamWidget: FC<LiveStreamProps> = ({ isLive, event }) => {
 
   useEffect(() => {
     const fetchLiveStreamInfo = async () => {
-      if (!isLive && !router.query.liveStream) {
+      if ((!isLive && !router.query.liveStream) || !event) {
         return;
       }
 
@@ -61,14 +61,14 @@ export const LiveStreamWidget: FC<LiveStreamProps> = ({ isLive, event }) => {
       const ids: string[] = [];
       const emails: string[] = [];
 
-      if (event.ExternalPresenters?.length) {
+      if (event?.ExternalPresenters?.length) {
         const presenterIds = event.ExternalPresenters.map((presenter) =>
           presenter.LookupId.toString()
         );
         ids.push(...presenterIds);
       }
 
-      if (event.InternalPresenters?.results?.length) {
+      if (event?.InternalPresenters?.results?.length) {
         emails.push(...event.InternalPresenters.results.map((i) => i.EMail));
       }
 
@@ -100,7 +100,7 @@ export const LiveStreamWidget: FC<LiveStreamProps> = ({ isLive, event }) => {
     fetchLiveStreamInfo();
   }, [isLive, event]);
 
-  if ((!isLive && !router.query.liveStream) || !event) {
+  if (!event) {
     return <></>;
   }
 
