@@ -8,8 +8,9 @@ import { UtilityButton } from "../button/utilityButton";
 import Popup from "../popup/popup";
 import SuccessToast from "../successToast/successToast";
 
-const BookingForm = dynamic(() =>
-  import("../bookingForm/bookingForm").then((mod) => mod.BookingForm)
+const BookingForm = dynamic(
+  () => import("../bookingForm/bookingForm").then((mod) => mod.BookingForm),
+  { ssr: false }
 );
 
 export interface BookingButtonProps {
