@@ -41,7 +41,7 @@ export default function TrainingPage(
             <Breadcrumbs
               path={removeExtension(props.variables.relativePath)}
               suffix={data.global.breadcrumbSuffix}
-              title={data.training.seo.title}
+              title={data.training?.seo?.title}
             />
           </div>
           <h1
