@@ -12,10 +12,10 @@ export const SubNewsletterRow = (props: SubNewsletterRowProps) => {
   return (
     <div
       className={
-        "flex h-min w-full items-center bg-subscribeBackground bg-cover bg-center bg-no-repeat text-center font-light after:absolute sm:h-80"
+        "flex h-min w-full items-center bg-subscribeBackground bg-cover bg-center bg-no-repeat text-center font-light after:absolute md:h-80"
       }
     >
-      <Container padding="px-4" className="w-full">
+      <Container padding="md:px-4 px-8" className="w-full">
         <SubNewsLettersForm
           headerText={props.headerText}
           subscribeButtonText={props.subscribeButtonText || "Sign Up"}

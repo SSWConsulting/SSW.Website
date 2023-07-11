@@ -5,7 +5,7 @@ export const newsletterSchema: Collection = {
   label: "Newsletters",
   name: "newsletters",
   path: "content/newsletters",
-format: "json",
+  format: "json",
   fields: [
     {
       type: "string",
@@ -20,11 +20,12 @@ format: "json",
       ui: {
         itemProps: (item) => {
           return {
-            label: item?.month && item?.description
-              ? `${item?.month} - ${transformIntToMonth(item?.month)} - ${
-                  item?.description
-                }`
-              : "New newsletter",
+            label:
+              item?.month && item?.description
+                ? `${item?.month} - ${transformIntToMonth(item?.month)} - ${
+                    item?.description
+                  }`
+                : "New newsletter",
           };
         },
       },
@@ -53,7 +54,7 @@ format: "json",
           description:
             "Must be saved in images/Newsletters. Only add images that have not been used before. There is no need to add images to the /images/newsletters directory if they have already been used in a previous newsletter",
           // @ts-ignore
-          uploadDir: () => "Newsletters",
+          uploadDir: () => "/Newsletters",
         },
         {
           type: "string",

@@ -1,5 +1,5 @@
-import * as React from "react";
 import Image from "next/image";
+import * as React from "react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import type { Template } from "tinacms";
@@ -122,6 +122,9 @@ export const internalCarouselBlockSchema: Template = {
           type: "image",
           label: "Image",
           name: "imgSrc",
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          uploadDir: () => "/carousel",
         },
       ],
     },

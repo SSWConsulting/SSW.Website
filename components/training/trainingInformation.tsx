@@ -32,7 +32,11 @@ const TrainingInformationItem: FC<TrainingInformationItemProps> = ({
 export const TrainingInformation = ({ data }) => {
   return (
     <Section color="white">
-      <Container size={"xsmall"} className={"flex-1 pb-12"}>
+      <Container
+        padding={"md:px-8 px-2"}
+        size={"xsmall"}
+        className={"flex-1 pb-12"}
+      >
         <div className="grid grid-cols-1 justify-between lg:grid-cols-3">
           {data.trainingInformationItems?.map(
             (item: TrainingInformationItemProps, key: Key) => (

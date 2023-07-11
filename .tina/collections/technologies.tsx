@@ -22,6 +22,8 @@ export const technologiesSchema: Collection = {
 			type: "image",
 			label: "Thumbnail",
 			name: "thumbnail",
+			// @ts-ignore
+			uploadDir: () => "/thumbs",
 		},
 		{
 			type: "rich-text",

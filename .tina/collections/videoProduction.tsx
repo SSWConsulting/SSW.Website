@@ -40,6 +40,8 @@ export const videoProductionSchema: Collection = {
           type: "image",
           label: "Video Background",
           name: "videoBackground",
+          // @ts-ignore
+          uploadDir: () => "/videos",
         },
       ],
     },

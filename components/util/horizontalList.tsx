@@ -68,6 +68,7 @@ export const horizontalListSchema = {
           type: "image",
           label: "Icon",
           name: "icon",
+          uploadDir: () => "/logos",
         },
       ],
     },
