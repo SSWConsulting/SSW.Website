@@ -14,18 +14,27 @@ export const VideoModal = ({ children = null, url }) => {
   const id = url ? getYouTubeId(url) : null;
 
   const [clicked, setClicked] = useState<boolean>(false);
+  const [imageSrc, setImageSrc] = useState<string>(
+    `https://img.youtube.com/vi/${id}/maxresdefault.jpg`
+  );
 
   return (
     <div>
       <div className="overflow-hidden rounded">
         <div className="relative mx-auto aspect-video h-full w-full">
           {!clicked ? (
-            <div>
+            <div className="h-full w-full " onClick={() => setClicked(true)}>
               <Image
-                src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`}
+                src={imageSrc}
                 fill
                 alt="YouTube video player"
-                onClick={() => setClicked(true)}
+                onError={() => {
+                  if (imageSrc.includes("maxresdefault")) {
+                    setImageSrc(
+                      `https://img.youtube.com/vi/${id}/mqdefault.jpg`
+                    );
+                  }
+                }}
               />
               <PlayArrow />
             </div>

@@ -1,7 +1,6 @@
-import React, { FC } from "react";
-import type { Template } from "tinacms";
-import Countdown from "react-countdown";
+import { FC, useEffect, useState } from "react";
 import { FaRegCalendarCheck } from "react-icons/fa";
+import type { Template } from "tinacms";
 
 enum DaysOfWeek {
   Monday = 7,
@@ -69,7 +68,40 @@ const TimeComponent: FC<TimeComponentProps> = ({
   );
 };
 
-const countdownRenderer = ({ days, hours, minutes }) => {
+const Countdown = ({ nextEventDate }) => {
+  const [days, setDays] = useState<number>();
+  const [hours, setHours] = useState<number>();
+  const [minutes, setMinutes] = useState<number>();
+
+  const getDifference = (date: Date): number[] => {
+    const now = new Date().getTime();
+    const distance = date.getTime() - now;
+
+    return [
+      Math.floor(distance / (1000 * 60 * 60 * 24)),
+      Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+      Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+    ];
+  };
+
+  useEffect(() => {
+    const [daysDiff, hoursDiff, minutesDiff] = getDifference(nextEventDate);
+
+    setDays(daysDiff);
+    setHours(hoursDiff);
+    setMinutes(minutesDiff);
+
+    const interval = setInterval(() => {
+      const [daysDiff, hoursDiff, minutesDiff] = getDifference(nextEventDate);
+
+      setDays(daysDiff);
+      setHours(hoursDiff);
+      setMinutes(minutesDiff);
+    }, 1000 * 60);
+
+    return () => clearInterval(interval);
+  }, [nextEventDate]);
+
   return (
     <div className="flex items-center">
       <TimeComponent time={days} identifier="days" className="pr-1" />
@@ -86,7 +118,7 @@ export const RecurringEvent = ({ data }) => {
   return (
     <div className="flex flex-col">
       <div className="my-3 flex flex-col sm:flex-row">
-        <Countdown date={nextEventDate} renderer={countdownRenderer} />
+        <Countdown nextEventDate={nextEventDate} />
         {data.applyLinkRedirect && (
           <button
             className="ml-0 mt-2 w-48 rounded bg-sswRed px-15 py-3 sm:ml-2 sm:mt-0 "
