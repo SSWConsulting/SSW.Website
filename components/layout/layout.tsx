@@ -1,7 +1,7 @@
+import classNames from "classnames";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { MenuBar } from "ssw.megamenu";
-import { classNames } from "tinacms";
 import { useLiveStreamProps } from "../liveStream/useLiveStreamProps";
 import { Footer } from "./footer";
 import { Header } from "./header";
