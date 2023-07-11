@@ -1,6 +1,7 @@
+import dynamic from "next/dynamic";
+
 import { AboutUs } from "./blocks/aboutUs";
 import { BuiltOnAzure } from "./blocks/builtOnAzure";
-import { Carousel } from "./blocks/carousel";
 import { ClientLogos } from "./blocks/clientLogos";
 import { Content } from "./blocks/content";
 import { ContentCard } from "./blocks/contentCard";
@@ -14,6 +15,13 @@ import { LocationBlock } from "./training/locationBlock";
 import { PresenterBlock } from "./training/presenterBlock";
 import { TrainingInformation } from "./training/trainingInformation";
 import { TrainingLearningOutcome } from "./training/trainingLearningOutcome";
+
+const Carousel = dynamic(
+  () => import("./blocks/carousel").then((mod) => mod.Carousel),
+  {
+    ssr: false,
+  }
+);
 
 const componentMap = {
   AboutUs,

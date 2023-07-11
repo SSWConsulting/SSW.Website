@@ -2,7 +2,7 @@ import classNames from "classnames";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 import layoutData from "../../content/global/index.json";
 import { UtilityButton } from "../button/utilityButton";
 import Popup from "../popup/popup";
