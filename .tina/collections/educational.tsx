@@ -77,6 +77,12 @@ const whitepaperBlockSchema: Template = {
       name: "buttonText",
       required: true,
     },
+    {
+      type: "image",
+      label: "Whitepaper File",
+      name: "whitepaperFile",
+      required: true,
+    },
   ],
 };
 
