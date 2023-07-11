@@ -20,12 +20,15 @@ export const VideoModal = ({ children = null, url }) => {
       <div className="overflow-hidden rounded">
         <div className="relative mx-auto aspect-video h-full w-full">
           {!clicked ? (
-            <Image
-              src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`}
-              fill
-              alt="YouTube video player"
-              onClick={() => setClicked(true)}
-            />
+            <div>
+              <Image
+                src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`}
+                fill
+                alt="YouTube video player"
+                onClick={() => setClicked(true)}
+              />
+              <PlayArrow />
+            </div>
           ) : (
             <YouTubeEmbed
               className="absolute left-0 top-0"
@@ -38,5 +41,20 @@ export const VideoModal = ({ children = null, url }) => {
         {children}
       </div>
     </div>
+  );
+};
+
+const PlayArrow = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="white"
+      width="72px"
+      height="72px"
+      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+    >
+      <path d="M8 5v14l11-7z" />
+    </svg>
   );
 };
