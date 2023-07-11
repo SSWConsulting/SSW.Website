@@ -18,7 +18,7 @@ export const YouTubeEmbed = ({
       className={className}
       width={width}
       height={height}
-      src={`https://www.youtube.com/embed/${getYouTubeId(url)}`}
+      src={`https://www.youtube.com/embed/${getYouTubeId(url || "")}`}
       title="YouTube video player"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowFullScreen

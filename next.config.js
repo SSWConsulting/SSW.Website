@@ -6,7 +6,13 @@ const config = {
   },
   poweredByHeader: false,
   images: {
-    domains: ["assets.tina.io", "i.ytimg.com", "ssw.com.au", "www.ssw.com.au"],
+    domains: [
+      "assets.tina.io",
+      "i.ytimg.com",
+      "img.youtube.com",
+      "ssw.com.au",
+      "www.ssw.com.au",
+    ],
   },
   output: "standalone", // required for Docker support
   swcMinify: false,
