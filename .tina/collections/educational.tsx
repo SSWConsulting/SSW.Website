@@ -103,6 +103,11 @@ export const educationalSchema: Collection = {
   name: "educational",
   format: "mdx",
   path: "content/educational",
+  ui: {
+    router: ({ document }) => {
+      return "/educational";
+    },
+  },
   fields: [
     // @ts-ignore
     seoSchema,
