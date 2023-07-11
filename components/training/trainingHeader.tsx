@@ -75,7 +75,7 @@ export const TrainingCarousel = ({ data }) => {
       stopOnHover
       renderIndicator={createCarouselIndicator}
     >
-      {data.trainingHeaderCarouselItem.map((item, key) => (
+      {data?.trainingHeaderCarouselItem.map((item, key) => (
         <TrainingHeader key={key} data={item} />
       ))}
     </Carousel>
