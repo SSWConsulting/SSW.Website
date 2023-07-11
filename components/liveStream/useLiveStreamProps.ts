@@ -71,11 +71,10 @@ export function useLiveStreamProps(): LiveStreamProps {
     );
   }, [countdownMins, event]);
 
-  
-
   useEffect(() => {
     setShowBanner(
-      !!event && dayjs().isBetween(
+      !!event &&
+        dayjs().isBetween(
           dayjs(event.StartShowBannerDateTime),
           dayjs(event.EndShowBannerDateTime),
           null,
