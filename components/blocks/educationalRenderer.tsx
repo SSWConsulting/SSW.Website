@@ -6,7 +6,7 @@ import { componentRenderer } from "../../components/blocks/mdxComponentRenderer"
 import { SolutionsRow } from "../../components/blocks/solutionsRow";
 import { BookingForm } from "../../components/bookingForm/bookingForm";
 import Button from "../../components/button/button";
-import ReactPlayer from "../../components/reactPlayer/reactPlayer";
+import { YouTubeEmbed } from "../embeds/youtubeEmbed";
 
 const PComponent = ({ children }) => <p className="mb-3">{children}</p>;
 
@@ -52,7 +52,7 @@ export const Whitepaper = ({
 export const VideoEmbed = ({ url }) => (
   <div className="relative h-0 overflow-hidden pb-9/16">
     <div className="absolute h-full w-full">
-      <ReactPlayer url={url} width="100%" height="100%" controls={true} />
+      <YouTubeEmbed url={url} width="100%" height="100%" />
     </div>
   </div>
 );
