@@ -7,6 +7,7 @@ export type LiveStreamProps = {
   countdownMins: number;
   liveStreamDelayMinutes: number;
   isLive: boolean;
+  showBanner: boolean;
   event?: EventInfo;
 };
 
@@ -17,6 +18,7 @@ export function useLiveStreamProps(): LiveStreamProps {
   const [event, setEvent] = useState<EventInfo>();
   const [isLive, setIsLive] = useState(false);
   const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
+  const [showBanner, setShowBanner] = useState<boolean>();
 
   useEffect(() => {
     const fetchEvent = async () => {
@@ -69,10 +71,24 @@ export function useLiveStreamProps(): LiveStreamProps {
     );
   }, [countdownMins, event]);
 
+  
+
+  useEffect(() => {
+    setShowBanner(
+      !!event && dayjs().isBetween(
+          dayjs(event.StartShowBannerDateTime),
+          dayjs(event.EndShowBannerDateTime),
+          null,
+          "[)"
+        )
+    );
+  }, [countdownMins, event]);
+
   return {
     countdownMins,
     liveStreamDelayMinutes,
     event,
     isLive,
+    showBanner,
   };
 }

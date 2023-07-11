@@ -25,7 +25,7 @@ const structuredData = {
   url: layoutData.header.url,
 };
 
-const DynamicLiveStreamWidget = dynamic(
+const LiveStreamWidget = dynamic(
   () => {
     return import("../liveStream/liveStreamWidget").then(
       (mod) => mod.LiveStreamWidget
@@ -37,7 +37,7 @@ const DynamicLiveStreamWidget = dynamic(
   }
 );
 
-const DynamicLiveStreamBanner = dynamic(
+const LiveStreamBanner = dynamic(
   () => {
     return import("../liveStream/liveStreamBanner").then(
       (mod) => mod.LiveStreamBanner
@@ -80,11 +80,11 @@ export const Layout = ({ children, className = "" }) => {
           )}
         >
           <header className="no-print">
-            <DynamicLiveStreamBanner {...liveStreamProps} />
+            {liveStreamProps.showBanner && <LiveStreamBanner {...liveStreamProps} />}
             <div className="mx-auto max-w-9xl px-6 sm:px-8">
               <Header />
               <MenuBar />
-              <DynamicLiveStreamWidget {...liveStreamProps} />
+              {liveStreamProps.isLive &&  <LiveStreamWidget {...liveStreamProps} />}
             </div>
           </header>
           <main className="grow bg-white">{children}</main>
