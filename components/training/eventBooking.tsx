@@ -22,6 +22,7 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
         <EventHeader
           duration={data.duration}
           price={data.price}
+          earlyBirdPrice={data.earlyBirdPrice}
           schema={data}
         />
       }
@@ -144,7 +145,7 @@ const addRightBorder = (index) => {
   return (index + 1) % 3 != 0 ? "md:border-r-8" : "";
 };
 
-const EventHeader = ({ duration, price, schema }) => {
+const EventHeader = ({ duration, price, earlyBirdPrice, schema }) => {
   return (
     <div className="mt-2 border-t-2 border-gray-400 bg-gray-100">
       <div className="mb-2 grid grid-cols-12">
@@ -165,8 +166,23 @@ const EventHeader = ({ duration, price, schema }) => {
           <div className="text-xs uppercase text-gray-500">
             {EventModel.PRICE}
           </div>
-          {EventModel.CURRENCY}
-          <span>{price}</span> {EventModel.INCLUDE_GST}
+          <span
+            className={classNames({
+              "text-gray-450 line-through":
+                earlyBirdPrice !== undefined &&
+                earlyBirdPrice !== null &&
+                earlyBirdPrice !== -1,
+            })}
+          >
+            {EventModel.CURRENCY}
+            {price}
+          </span>{" "}
+          {earlyBirdPrice !== undefined &&
+          earlyBirdPrice !== null &&
+          earlyBirdPrice !== -1
+            ? `${EventModel.CURRENCY}${earlyBirdPrice} (${EventModel.EARLY_BIRD})`
+            : ""}{" "}
+          {EventModel.INCLUDE_GST}
         </div>
       </div>
     </div>
@@ -177,6 +193,7 @@ export const eventBookingBlock = {
   eventBooking: "EventBooking",
   duration: "duration",
   price: "price",
+  earlyBirdPrice: "earlyBirdPrice",
   eventList: {
     value: "eventList",
     city: "city",
@@ -198,6 +215,11 @@ export const eventBookingSchema: Template = {
       type: "number",
       label: "Price",
       name: eventBookingBlock.price,
+    },
+    {
+      type: "number",
+      label: "Early Bird Price",
+      name: eventBookingBlock.earlyBirdPrice,
     },
     {
       type: "object",
