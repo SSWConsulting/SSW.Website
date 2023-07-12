@@ -1,4 +1,3 @@
-import { Partytown } from "@builder.io/partytown/react";
 import Head from "next/head";
 
 const gtmId = process.env.NEXT_PUBLIC_GOOGLE_GTM_ID;
@@ -6,7 +5,6 @@ const gtmId = process.env.NEXT_PUBLIC_GOOGLE_GTM_ID;
 export const Analytics = () => {
   return (
     <Head>
-      <Partytown debug={false} forward={["gtag", "dataLayer.push"]} />
       <script id="google-tag-manager" type="text/partytown">
         {`
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

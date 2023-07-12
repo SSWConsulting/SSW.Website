@@ -1,6 +1,8 @@
+import { Partytown } from "@builder.io/partytown/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { DefaultSeo } from "next-seo";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import "react-responsive-modal/styles.css";
@@ -56,6 +58,9 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <>
+      <Head>
+        <Partytown debug={true} forward={["gtag", "dataLayer.push"]} />
+      </Head>
       <DefaultSeo {...NEXT_SEO_DEFAULT} />
       <AzureAppInsights>
         <Component {...pageProps} />
