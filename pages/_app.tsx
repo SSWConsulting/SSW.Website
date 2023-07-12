@@ -60,12 +60,12 @@ const App = ({ Component, pageProps }) => {
     <>
       <Head>
         <Partytown
-          debug={true}
+          debug={false}
           forward={["gtag", "dataLayer.push"]}
           resolveUrl={(url, location, type) => {
             if (type === "script") {
               const proxiedUrl = new URL(
-                `https://app-sswwebsite-9eb3-pr-1006.azurewebsites.net/api/proxy?url=${encodeURIComponent(
+                `${location.origin}/api/proxy?url=${encodeURIComponent(
                   url.toString()
                 )}`
               );
