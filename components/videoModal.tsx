@@ -24,7 +24,10 @@ export const VideoModal = ({ children = null, url }) => {
       <div className="overflow-hidden rounded">
         <div className="relative mx-auto aspect-video h-full w-full">
           {!clicked ? (
-            <div className="h-full w-full " onClick={() => setClicked(true)}>
+            <div
+              className="h-full w-full cursor-pointer"
+              onClick={() => setClicked(true)}
+            >
               <Image
                 src={imageSrc}
                 fill
