@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { useEffect, useState } from "react";
 import { useMaxRetries } from "./useMaxRetries";
 
@@ -15,6 +16,7 @@ const zendeskLoaded = () => {
 
 const ZendeskButton = ({ zendeskKey }) => {
   const [loaded, setLoaded] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   const checkLoaded = () => {
     if (zendeskLoaded()) setLoaded(true);
@@ -25,17 +27,9 @@ const ZendeskButton = ({ zendeskKey }) => {
     interval: 200,
   });
 
-  const loadZendesk = () => {
-    if (!zendeskKey || zendeskKey === "undefined") return;
-    const script = document.createElement("script");
-    script.setAttribute("id", "ze-snippet");
-    script.src = `https://static.zdassets.com/ekr/snippet.js?key=${zendeskKey}`;
-    document.getElementsByTagName("body")[0].appendChild(script);
-  };
-
   const handleClick = () => {
     sessionStorage.setItem("ZD-widgetOpen", "true");
-    loadZendesk();
+    setOpen(true);
     start();
   };
 
@@ -45,35 +39,44 @@ const ZendeskButton = ({ zendeskKey }) => {
 
     const widgetOpen = sessionStorage.getItem(ZDwidgetOpen);
     if (widgetOpen === "true" && !loaded) {
-      loadZendesk();
       start();
     }
   }, []);
 
   if (!loaded)
     return (
-      <button
-        className={styles["zendesk-button"]}
-        role="button"
-        aria-label="zendesk"
-        onClick={handleClick}
-      >
-        <svg
-          width="60%"
-          height="60%"
-          viewBox="0 0 24 24"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
+      <>
+        <button
+          className={styles["zendesk-button"]}
+          role="button"
+          aria-label="zendesk"
+          onClick={handleClick}
         >
-          <path
-            fill="rgb(255,255,255)"
-            d="M10,18 L6,22 L6,18 L10,18 Z M17,6 C19.7614237,6 22,8.23857625 22,11 C22,13.7614237 19.7614237,16 17,16 L17,16 L7,16 C4.23857625,16 2,13.7614237 2,11 C2,8.23857625 4.23857625,6 7,6 L7,6 Z"
-            id="🎨icon-fill"
-            transform="translate(12.000000, 14.000000) scale(-1, 1) translate(-12.000000, -14.000000) "
-          ></path>
-        </svg>
-      </button>
+          <svg
+            width="60%"
+            height="60%"
+            viewBox="0 0 24 24"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+          >
+            <path
+              fill="rgb(255,255,255)"
+              d="M10,18 L6,22 L6,18 L10,18 Z M17,6 C19.7614237,6 22,8.23857625 22,11 C22,13.7614237 19.7614237,16 17,16 L17,16 L7,16 C4.23857625,16 2,13.7614237 2,11 C2,8.23857625 4.23857625,6 7,6 L7,6 Z"
+              id="🎨icon-fill"
+              transform="translate(12.000000, 14.000000) scale(-1, 1) translate(-12.000000, -14.000000) "
+            ></path>
+          </svg>
+        </button>
+        {open && (
+          <Script
+            async
+            src={`https://static.zdassets.com/ekr/snippet.js?key=${zendeskKey}`}
+            id="ze-snippet"
+            strategy="afterInteractive"
+          />
+        )}
+      </>
     );
 
   return null;
