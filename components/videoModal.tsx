@@ -45,6 +45,7 @@ export const VideoModal = ({ children = null, url }) => {
               url={url || ""}
               width={"100%"}
               height={"100%"}
+              autoplay={true}
             />
           )}
         </div>
