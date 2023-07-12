@@ -74,13 +74,17 @@ const Countdown = ({ nextEventDate }) => {
   const [minutes, setMinutes] = useState<number>();
 
   const getDifference = (date: Date): number[] => {
+    const MINUTE = 1000 * 60;
+    const HOUR = MINUTE * 60;
+    const DAY = HOUR * 24;
+
     const now = new Date().getTime();
-    const distance = date.getTime() - now;
+    const difference = date.getTime() - now;
 
     return [
-      Math.floor(distance / (1000 * 60 * 60 * 24)),
-      Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-      Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+      Math.floor(difference / DAY),
+      Math.floor((difference % DAY) / HOUR),
+      Math.floor((difference % HOUR) / MINUTE),
     ];
   };
 
