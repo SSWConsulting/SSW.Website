@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "@azure/msal-node": "^1.17.3",
+    "@builder.io/partytown": "^0.8.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@headlessui/react": "1.7.15",
     "@headlessui/tailwindcss": "^0.1.3",
