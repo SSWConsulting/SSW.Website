@@ -7,6 +7,11 @@ export const VerticalListItem = ({ data }) => {
 
   return (
     <div className="py-3">
+      {data.header && (
+        <div className="py-3 text-left">
+          <h3 className="text-sswRed">{data.header}</h3>
+        </div>
+      )}
       <div className={classNames("flex flex-row items-center")}>
         {data.icon && (
           <Image
@@ -32,6 +37,11 @@ export const verticalListItemSchema: Template = {
   label: "List Item",
   name: "VerticalListItem",
   fields: [
+    {
+      type: "string",
+      label: "Header",
+      name: "header",
+    },
     {
       type: "rich-text",
       label: "Content",
