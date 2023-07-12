@@ -65,13 +65,15 @@ const PresenterCard = ({ presenter, schema, index }) => {
           presenterSchemaConstants.presenter.peopleProfileURL
         )}
       >
-        <Image
-          alt={`Picture of ${presenter?.presenter?.name ?? "Presenter"}`}
-          src={presenter?.profileImg ?? ""}
-          height={120}
-          width={120}
-          className="h-32 w-32 rounded-full"
-        />
+        <span className="h-32 w-32 overflow-hidden rounded-full">
+          <Image
+            alt={`Picture of ${presenter?.presenter?.name ?? "Presenter"}`}
+            src={presenter?.profileImg ?? ""}
+            height={120}
+            width={120}
+            className="w-32"
+          />
+        </span>
       </div>
       <a
         href={presenter?.presenter?.peopleProfileURL}
