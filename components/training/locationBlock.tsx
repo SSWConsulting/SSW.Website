@@ -28,7 +28,7 @@ export const LocationBlock = ({ data }) => {
       </div>{" "}
       <div className="  py-1 text-center uppercase">
         <a
-          href={data.chapelWebsite.URL == null ? "" : data.chapelWebsite.URL}
+          href={data.chapelWebsite?.URL == null ? "" : data.chapelWebsite.URL}
           className="inline-flex cursor-pointer items-center !no-underline hover:!underline"
           target="_blank"
           rel="noopener noreferrer"
@@ -40,7 +40,7 @@ export const LocationBlock = ({ data }) => {
               locationBlockConstant.chapelWebsite.title
             )}
           >
-            {data.chapelWebsite.title}
+            {data.chapelWebsite?.title}
           </span>
         </a>
       </div>
