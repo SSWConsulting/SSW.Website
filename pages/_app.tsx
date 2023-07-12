@@ -65,7 +65,7 @@ const App = ({ Component, pageProps }) => {
           resolveUrl={(url, location, type) => {
             if (type === "script") {
               const proxiedUrl = new URL(
-                `http://localhost:3000/api/proxy?url=${encodeURIComponent(
+                `https://app-sswwebsite-9eb3-pr-1006.azurewebsites.net/api/proxy?url=${encodeURIComponent(
                   url.toString()
                 )}`
               );
