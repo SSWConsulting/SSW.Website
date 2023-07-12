@@ -4,15 +4,24 @@ import { object, string } from "yup";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const proxySchema = object({
-      url: string().required().url(),
-    });
-
-    const { url } = await proxySchema.validate(req.query, { strict: true });
+    let { url } = req.query;
 
     if (!url) {
       return res.status(400).json({ message: "URL parameter is required" });
     }
+
+    const parsedUrl = decodeURIComponent(url as string);
+
+    const proxySchema = object({
+      url: string().required().url(),
+    });
+
+    const proxyReq = await proxySchema.validate(
+      { url: parsedUrl },
+      { strict: true }
+    );
+
+    url = proxyReq.url;
 
     const response = await axios.get(url.toString(), {
       headers: {

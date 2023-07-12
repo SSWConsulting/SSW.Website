@@ -61,13 +61,26 @@ const App = ({ Component, pageProps }) => {
       <Head>
         <Partytown
           debug={false}
-          forward={["gtag", "dataLayer.push"]}
+          forward={["gtag", "dataLayer.push", "_hsq.push, fbq"]}
           resolveUrl={(url, location, type) => {
-            if (type === "script") {
-              const proxiedUrl = new URL(
-                `${location.origin}/api/proxy?url=${encodeURIComponent(
-                  url.toString()
-                )}`
+            console.log(url.hostname);
+            const proxiedUrls = [
+              "connect.facebook.net",
+              "google-analytics.com",
+              "doubleclick.net",
+              "snap.licdn.com",
+              "static.hotjar.com",
+              "cdn3l.ink",
+              "googleads.g.doubleclick.net",
+              "js.hs-analytics.net",
+              "www.google.com",
+            ];
+
+            if (proxiedUrls.includes(url.hostname)) {
+              const proxiedUrl = new URL(`${location.origin}/api/proxy`);
+              proxiedUrl.searchParams.append(
+                "url",
+                encodeURIComponent(url.href)
               );
               return proxiedUrl;
             }
