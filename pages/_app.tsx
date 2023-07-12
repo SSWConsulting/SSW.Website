@@ -59,7 +59,21 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <Partytown debug={true} forward={["gtag", "dataLayer.push"]} />
+        <Partytown
+          debug={true}
+          forward={["gtag", "dataLayer.push"]}
+          resolveUrl={(url, location, type) => {
+            if (type === "script") {
+              const proxiedUrl = new URL(
+                `http://localhost:3000/api/proxy?url=${encodeURIComponent(
+                  url.toString()
+                )}`
+              );
+              return proxiedUrl;
+            }
+            return url;
+          }}
+        />
       </Head>
       <DefaultSeo {...NEXT_SEO_DEFAULT} />
       <AzureAppInsights>
