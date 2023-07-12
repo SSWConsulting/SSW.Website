@@ -66,10 +66,7 @@ const App = ({ Component, pageProps }) => {
             console.log(url.hostname);
             const proxiedUrls = [
               "connect.facebook.net",
-              "google-analytics.com",
-              "doubleclick.net",
               "snap.licdn.com",
-              "static.hotjar.com",
               "cdn3l.ink",
               "googleads.g.doubleclick.net",
               "js.hs-analytics.net",
