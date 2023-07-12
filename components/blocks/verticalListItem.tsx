@@ -17,11 +17,11 @@ export const VerticalListItem = ({ data }) => {
             className="pr-5"
           />
         )}
-        <div className={classNames("font-helvetica font-bold")}>
+        <div className={classNames("text-left font-helvetica font-bold")}>
           <TinaMarkdown content={data.content} />
         </div>
       </div>
-      <div className="pl-20 marker:text-sswRed child:!list-disc">
+      <div className="pl-20 text-left marker:text-sswRed child:!list-disc">
         <TinaMarkdown content={data.afterBody} />
       </div>
     </div>
