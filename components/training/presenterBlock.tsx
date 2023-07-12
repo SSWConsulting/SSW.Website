@@ -70,7 +70,7 @@ const PresenterCard = ({ presenter, schema, index }) => {
           src={presenter?.profileImg ?? ""}
           height={120}
           width={120}
-          className="rounded-full"
+          className="h-32 w-32 rounded-full"
         />
       </div>
       <a
