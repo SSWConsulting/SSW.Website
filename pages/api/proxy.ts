@@ -1,10 +1,14 @@
-// pages/api/proxy.js
 import axios from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
+import { object, string } from "yup";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const { url } = req.query;
+    const proxySchema = object({
+      url: string().required().url(),
+    });
+
+    const { url } = await proxySchema.validate(req.query, { strict: true });
 
     if (!url) {
       return res.status(400).json({ message: "URL parameter is required" });
