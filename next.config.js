@@ -1,5 +1,4 @@
 const config = {
-  productionBrowserSourceMaps: true,
   experimental: {
     nextScriptWorkers: true,
   },
