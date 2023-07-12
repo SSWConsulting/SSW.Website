@@ -1,7 +1,7 @@
+import classNames from "classnames";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { MenuBar } from "ssw.megamenu";
-import { classNames } from "tinacms";
 import { useLiveStreamProps } from "../liveStream/useLiveStreamProps";
 import { Footer } from "./footer";
 import { Header } from "./header";
@@ -25,7 +25,7 @@ const structuredData = {
   url: layoutData.header.url,
 };
 
-const DynamicLiveStreamWidget = dynamic(
+const LiveStreamWidget = dynamic(
   () => {
     return import("../liveStream/liveStreamWidget").then(
       (mod) => mod.LiveStreamWidget
@@ -37,7 +37,7 @@ const DynamicLiveStreamWidget = dynamic(
   }
 );
 
-const DynamicLiveStreamBanner = dynamic(
+const LiveStreamBanner = dynamic(
   () => {
     return import("../liveStream/liveStreamBanner").then(
       (mod) => mod.LiveStreamBanner
@@ -80,11 +80,15 @@ export const Layout = ({ children, className = "" }) => {
           )}
         >
           <header className="no-print">
-            <DynamicLiveStreamBanner {...liveStreamProps} />
+            {(liveStreamProps.showBanner || router.query.liveBanner) && (
+              <LiveStreamBanner {...liveStreamProps} />
+            )}
             <div className="mx-auto max-w-9xl px-6 sm:px-8">
               <Header />
               <MenuBar />
-              <DynamicLiveStreamWidget {...liveStreamProps} />
+              {(liveStreamProps.isLive || router.query.liveStream) && (
+                <LiveStreamWidget {...liveStreamProps} />
+              )}
             </div>
           </header>
           <main className="grow bg-white">{children}</main>
