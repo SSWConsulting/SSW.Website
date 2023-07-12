@@ -25,4 +25,5 @@ export const EventModel = {
   DURATION: "Duration",
   INCLUDE_GST: "inc GST",
   DAY: "Day",
+  EARLY_BIRD: "Early Bird",
 };
