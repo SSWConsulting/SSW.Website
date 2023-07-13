@@ -2,7 +2,7 @@ export type EventBookingType = {
   data: {
     duration?: number | null;
     price?: number | null;
-    earlyBirdPrice?: number | null;
+    discountPrice?: string | null;
     eventList?: Event[];
   };
 };
@@ -20,7 +20,7 @@ export const EventModel = {
   TIMINGS: "9AM - 5PM",
   BOOKING_BTN_TEXT: "Book Now",
   PRICE: "Price",
-  EARLY_BIRD: "Early Bird",
+  DISCOUNT_PRICE: "Discount Price",
   DURATION: "Duration",
   INCLUDE_GST: "inc GST",
   DAY: "Day",

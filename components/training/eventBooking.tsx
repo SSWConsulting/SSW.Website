@@ -6,6 +6,10 @@ import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { EventBookingType, EventModel } from "./eventBookingType";
 
+const isEmpty = (value) => {
+  return value === undefined || value === null || value.length == 0;
+};
+
 const classes = {
   mdColSpan4: "md:col-span-4",
   mdColSpan6: "md:col-span-6",
@@ -22,7 +26,7 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
         <EventHeader
           duration={data.duration}
           price={data.price}
-          earlyBirdPrice={data.earlyBirdPrice}
+          discountPrice={data.discountPrice}
           schema={data}
         />
       }
@@ -145,7 +149,7 @@ const addRightBorder = (index) => {
   return (index + 1) % 3 != 0 ? "md:border-r-8" : "";
 };
 
-const EventHeader = ({ duration, price, earlyBirdPrice, schema }) => {
+const EventHeader = ({ duration, price, discountPrice, schema }) => {
   return (
     <div className="mt-2 border-t-2 border-gray-400 bg-gray-100">
       <div className="mb-2 grid grid-cols-12">
@@ -168,20 +172,15 @@ const EventHeader = ({ duration, price, earlyBirdPrice, schema }) => {
           </div>
           <span
             className={classNames({
-              "text-gray-450 line-through":
-                earlyBirdPrice !== undefined &&
-                earlyBirdPrice !== null &&
-                earlyBirdPrice !== -1,
+              "text-gray-450 line-through": !isEmpty(discountPrice),
             })}
           >
             {EventModel.CURRENCY}
             {price}
           </span>{" "}
-          {earlyBirdPrice !== undefined &&
-          earlyBirdPrice !== null &&
-          earlyBirdPrice !== -1
-            ? `${EventModel.CURRENCY}${earlyBirdPrice} (${EventModel.EARLY_BIRD})`
-            : ""}{" "}
+          {isEmpty(discountPrice)
+            ? ""
+            : `${EventModel.CURRENCY}${discountPrice}`}{" "}
           {EventModel.INCLUDE_GST}
         </div>
       </div>
@@ -193,7 +192,8 @@ export const eventBookingBlock = {
   eventBooking: "EventBooking",
   duration: "duration",
   price: "price",
-  earlyBirdPrice: "earlyBirdPrice",
+  discountPrice: "discountPrice",
+  suffix: "suffix",
   eventList: {
     value: "eventList",
     city: "city",
@@ -217,9 +217,9 @@ export const eventBookingSchema: Template = {
       name: eventBookingBlock.price,
     },
     {
-      type: "number",
-      label: "Early Bird Price",
-      name: eventBookingBlock.earlyBirdPrice,
+      type: "string",
+      label: "Discount Price",
+      name: eventBookingBlock.discountPrice,
     },
     {
       type: "object",
