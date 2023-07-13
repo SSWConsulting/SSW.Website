@@ -57,13 +57,17 @@ export default function TrainingPage(
             defaultChannelLink={data.global.youtubeChannelLink}
           />
 
-          <Section color="white" className="">
-            <Container padding={"md:px-8 px-2"} className={"flex-1 pt-0"}>
-              <div className="mx-auto flex max-w-9xl flex-col items-center">
-                <TestimonialRow testimonialsResult={props.testimonialResult} />
-              </div>
-            </Container>
-          </Section>
+          {data.training.showTestimonials && (
+            <Section color="white" className="">
+              <Container padding={"md:px-8 px-2"} className={"flex-1 pt-0"}>
+                <div className="mx-auto flex max-w-9xl flex-col items-center">
+                  <TestimonialRow
+                    testimonialsResult={props.testimonialResult}
+                  />
+                </div>
+              </Container>
+            </Section>
+          )}
 
           <Section color="white">
             <Container padding={"md:px-8 px-4"} className={"flex-1 pt-0"}>
