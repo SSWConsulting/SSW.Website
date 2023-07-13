@@ -41,7 +41,7 @@ const componentMap = {
   TrainingLearningOutcome,
   PresenterBlock,
   LocationBlock,
-  Agenda: Agenda
+  Agenda: Agenda,
 };
 
 export const Blocks = ({ prefix, blocks }) => {

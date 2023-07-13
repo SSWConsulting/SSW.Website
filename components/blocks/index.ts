@@ -69,7 +69,7 @@ export const pageBlocks: Template[] = [
   eventBookingSchema,
   presenterBlockSchema,
   locationBlockSchema,
-  agendaSchema
+  agendaSchema,
 ];
 
 export * from "../bookingButton/bookingButton";
@@ -102,4 +102,3 @@ export * from "./upcomingEvents";
 export * from "./verticalImageLayout";
 export * from "./verticalListItem";
 export * from "./videoEmbed";
-
