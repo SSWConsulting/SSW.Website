@@ -47,7 +47,7 @@ export const Agenda = ({ data }) => {
         className={"flex-1 pb-12"}
       >
       <h3
-        className={classNames("my-0 py-0 text-3xl text-center md:text-left", alignmentClasses[data.align], textColorClasses[data.textColor])}
+        className={classNames("my-0 py-5 text-3xl text-center md:text-left", alignmentClasses[data.align], textColorClasses[data.textColor])}
         dangerouslySetInnerHTML={{ __html: data.header }}
       ></h3>
         <div className={classNames("grid grid-cols-1 justify-between px-4 md:px-0", getGridColumns(data?.agendaItemList.length))}>
