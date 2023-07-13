@@ -11,6 +11,7 @@ import { presenterBlockSchema } from "../training/presenterBlock";
 import { trainingInformationSchema } from "../training/trainingInformation";
 import { trainingLearningOutcomeSchema } from "../training/trainingLearningOutcome";
 import { aboutUsBlockSchema } from "./aboutUs";
+import { agendaSchema } from "./agenda";
 import { builtOnAzureBlockSchema } from "./builtOnAzure";
 import { carouselBlockSchema } from "./carousel";
 import { citationBlockSchema } from "./citation";
@@ -68,6 +69,7 @@ export const pageBlocks: Template[] = [
   eventBookingSchema,
   presenterBlockSchema,
   locationBlockSchema,
+  agendaSchema,
 ];
 
 export * from "../bookingButton/bookingButton";

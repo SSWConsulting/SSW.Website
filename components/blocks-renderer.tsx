@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 
 import { AboutUs } from "./blocks/aboutUs";
+import { Agenda } from "./blocks/agenda";
 import { BuiltOnAzure } from "./blocks/builtOnAzure";
 import { ClientLogos } from "./blocks/clientLogos";
 import { Content } from "./blocks/content";
@@ -40,6 +41,7 @@ const componentMap = {
   TrainingLearningOutcome,
   PresenterBlock,
   LocationBlock,
+  Agenda: Agenda,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
