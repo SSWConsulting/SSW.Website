@@ -26,6 +26,7 @@ import isBetween from "dayjs/plugin/isBetween";
 import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
+import { proxiedWhitelist } from "../components/util/constants/partytown";
 
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
@@ -62,18 +63,8 @@ const App = ({ Component, pageProps }) => {
         <Partytown
           debug={false}
           forward={["gtag", "dataLayer.push", "_hsq.push, fbq"]}
-          resolveUrl={(url, location, type) => {
-            console.log(url.hostname);
-            const proxiedUrls = [
-              "connect.facebook.net",
-              "snap.licdn.com",
-              "cdn3l.ink",
-              "googleads.g.doubleclick.net",
-              "js.hs-analytics.net",
-              "www.google.com",
-            ];
-
-            if (proxiedUrls.includes(url.hostname)) {
+          resolveUrl={(url, location) => {
+            if (proxiedWhitelist.includes(url.hostname)) {
               const proxiedUrl = new URL(`${location.origin}/api/proxy`);
               proxiedUrl.searchParams.append(
                 "url",

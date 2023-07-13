@@ -5,6 +5,7 @@ const gtmId = process.env.NEXT_PUBLIC_GOOGLE_GTM_ID;
 export const Analytics = () => {
   return (
     <Head>
+      {/* eslint-disable-next-line @next/next/next-script-for-ga */}
       <script
         id="google-tag-manager"
         type="text/partytown"

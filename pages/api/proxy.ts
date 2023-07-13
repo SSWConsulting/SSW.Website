@@ -1,6 +1,7 @@
 import axios from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 import { object, string } from "yup";
+import { proxiedWhitelist } from "../../components/util/constants/partytown";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -22,6 +23,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     );
 
     url = proxyReq.url;
+
+    const urlObj = new URL(url);
+    if (!proxiedWhitelist.includes(urlObj.hostname)) {
+      return res.status(400).json({
+        message: "URL is not in the whitelist",
+      });
+    }
 
     const response = await axios.get(url.toString(), {
       headers: {
