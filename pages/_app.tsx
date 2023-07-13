@@ -1,8 +1,6 @@
-import { Partytown } from "@builder.io/partytown/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { DefaultSeo } from "next-seo";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import "react-responsive-modal/styles.css";
@@ -26,7 +24,6 @@ import isBetween from "dayjs/plugin/isBetween";
 import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
-import { proxiedWhitelist } from "../components/util/constants/partytown";
 
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
@@ -59,29 +56,12 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <>
-      <Head>
-        <Partytown
-          debug={false}
-          forward={["gtag", "dataLayer.push", "_hsq.push, fbq"]}
-          resolveUrl={(url, location) => {
-            if (proxiedWhitelist.includes(url.hostname)) {
-              const proxiedUrl = new URL(`${location.origin}/api/proxy`);
-              proxiedUrl.searchParams.append(
-                "url",
-                encodeURIComponent(url.href)
-              );
-              return proxiedUrl;
-            }
-            return url;
-          }}
-        />
-      </Head>
+      <Analytics />
       <DefaultSeo {...NEXT_SEO_DEFAULT} />
       <AzureAppInsights>
         <Component {...pageProps} />
       </AzureAppInsights>
       <ZendeskButton zendeskKey={zendesk} />
-      <Analytics />
     </>
   );
 };
