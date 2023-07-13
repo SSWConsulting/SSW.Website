@@ -1,61 +1,129 @@
-import Image from "next/image";
-import { Template, classNames } from "tinacms";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { classNames, type Template } from "tinacms";
 
-export const Agenda = ({ data }) => {
-  const iconScale = data?.iconScale || 1;
+import { FC, Key } from "react";
+import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import { verticalListItemSchema } from "../blocks/verticalListItem";
+import { Container } from "../util/container";
+import { Section } from "../util/section";
 
+
+const alignmentClasses = {
+  center: "text-center",
+  right: "text-right",
+};
+
+const textColorClasses = {
+  red: "text-sswRed",
+  grey: "text-gray-500"
+};
+
+
+export type AgendaItemProps = {
+  body: TinaMarkdownContent[];
+};
+
+const AgendaItem: FC<AgendaItemProps> = ({
+  body,
+}) => {
   return (
-    <div className="py-3">
-      <div className={classNames("flex flex-row items-center")}>
-        {data.icon && (
-          <Image
-            src={data.icon || ""}
-            alt={`${data.title} icon`}
-            width={65 * iconScale}
-            height={65 * iconScale}
-            className="pr-5"
-          />
-        )}
-        <div className={classNames("font-helvetica font-bold")}>
-          <TinaMarkdown content={data.content} />
-        </div>
-      </div>
-      <div className="pl-20 marker:text-sswRed child:!list-disc">
-        <TinaMarkdown content={data.afterBody} />
+    <div className="flex flex-col text-center text-base lg:text-left">
+
+      <div className="w-full items-center p-5 text-left sm:w-3/4 lg:w-full">
+        <TinaMarkdown components={componentRenderer} content={body} />
       </div>
     </div>
   );
 };
+
+export const Agenda = ({ data }) => {
+  return (
+    <Section color="white">
+      <Container
+        padding={"md:px-8 px-2"}
+        size={"xsmall"}
+        className={"flex-1 pb-12"}
+      >
+      <h3
+        className={classNames("my-0 py-0 text-3xl ", alignmentClasses[data.align], textColorClasses[data.textColor])}
+        dangerouslySetInnerHTML={{ __html: data.header }}
+      ></h3>
+        <div className={classNames("grid grid-cols-1 justify-between", getGridColumns(data?.agendaItemList.length))}>
+          {data?.agendaItemList?.map(
+            (item: AgendaItemProps, key: Key) => (
+              <AgendaItem
+                key={key}
+                body={item.body}
+              />
+            )
+          )}
+        </div>
+      </Container>
+    </Section>
+  );
+};
+
+const getGridColumns = (length)=>{
+  if(length === 1)
+  return "md:grid-cols-1"
+  else if(length === 2)
+  return "md:grid-cols-2"
+  else
+  return "md:grid-cols-3"
+}
 
 export const agendaSchema: Template = {
   label: "Agenda",
   name: "Agenda",
   fields: [
     {
-      type: "rich-text",
-      label: "Content",
-      name: "content",
-      isBody: true,
+      type: "string",
+      label: "Header",
+      name: "header",
     },
     {
-      type: "image",
-      label: "Icon",
-      name: "icon",
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      uploadDir: () => "/icons",
+      type: "string",
+      label: "Align Header",
+      name: "align",
+      options: [
+        { label: "Center", value: "center" },
+        { label: "Right", value: "right" },
+      ],
     },
     {
-      type: "number",
-      label: "Icon Scale",
-      name: "iconScale",
+      type: "string",
+      label: "Header Color",
+      name: "textColor",
+      options: [
+        { label: "Red", value: "red" },
+        { label: "Grey", value: "grey" },
+      ],
     },
     {
-      type: "rich-text",
-      label: "After Body",
-      name: "afterBody",
-      required: false,
+      type: "object",
+      label: "Agenda Items",
+      name: "agendaItemList",
+      ui:{
+        itemProps(item) {
+          return {label:item?.placeholder}
+        },
+      },
+      list: true,
+      fields: [
+        {
+          type: "string",
+          label: "Placeholder Text",
+          name: "placeholder",
+        },
+        {
+          type: "rich-text",
+          label: "Body",
+          name: "body",
+          templates: [verticalListItemSchema],
+        },
+      ],
     },
   ],
 };
+
+export default Agenda;
