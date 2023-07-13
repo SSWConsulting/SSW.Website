@@ -7,10 +7,10 @@ export const Analytics = () => {
   return (
     <Head>
       <Partytown
-        debug={true}
+        debug={false}
         forward={["gtag", "dataLayer.push", "_hsq.push, fbq"]}
         resolveUrl={(url, location, type) => {
-          console.log("whack", url, location);
+          console.log(url);
 
           const proxiedWhitelist = [
             "connect.facebook.net",
@@ -22,9 +22,10 @@ export const Analytics = () => {
           ];
 
           if (
-            type === "script" &&
-            !url.pathname.includes("gtm.js") &&
-            proxiedWhitelist.includes(url.hostname)
+            (type === "script" &&
+              !url.pathname.includes("gtm.js") &&
+              proxiedWhitelist.includes(url.hostname)) ||
+            url.href.includes("https://www.google-analytics.com/analytics.js")
           ) {
             const proxiedUrl = new URL(
               "https://cdn.builder.io/api/v1/proxy-api"
