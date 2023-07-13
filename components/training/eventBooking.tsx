@@ -6,6 +6,14 @@ import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { EventBookingType, EventModel } from "./eventBookingType";
 
+const isEmpty = (value) => {
+  return (
+    value === undefined ||
+    value === null ||
+    (typeof value == "number" && value <= 0)
+  );
+};
+
 const classes = {
   mdColSpan4: "md:col-span-4",
   mdColSpan6: "md:col-span-6",
@@ -22,6 +30,8 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
         <EventHeader
           duration={data.duration}
           price={data.price}
+          discountPrice={data.discountPrice}
+          discountNote={data.discountNote}
           schema={data}
         />
       }
@@ -144,7 +154,13 @@ const addRightBorder = (index) => {
   return (index + 1) % 3 != 0 ? "md:border-r-8" : "";
 };
 
-const EventHeader = ({ duration, price, schema }) => {
+const EventHeader = ({
+  duration,
+  price,
+  discountPrice,
+  discountNote,
+  schema,
+}) => {
   return (
     <div className="mt-2 border-t-2 border-gray-400 bg-gray-100">
       <div className="mb-2 grid grid-cols-12">
@@ -165,8 +181,18 @@ const EventHeader = ({ duration, price, schema }) => {
           <div className="text-xs uppercase text-gray-500">
             {EventModel.PRICE}
           </div>
-          {EventModel.CURRENCY}
-          <span>{price}</span> {EventModel.INCLUDE_GST}
+          <span
+            className={classNames({
+              "text-gray-450 line-through": !isEmpty(discountPrice),
+            })}
+          >
+            {EventModel.CURRENCY}
+            {price}
+          </span>{" "}
+          {isEmpty(discountPrice)
+            ? ""
+            : `${EventModel.CURRENCY}${discountPrice} ${discountNote ?? ""} `}
+          {EventModel.INCLUDE_GST}
         </div>
       </div>
     </div>
@@ -177,6 +203,9 @@ export const eventBookingBlock = {
   eventBooking: "EventBooking",
   duration: "duration",
   price: "price",
+  discountPrice: "discountPrice",
+  discountNote: "discountNote",
+  suffix: "suffix",
   eventList: {
     value: "eventList",
     city: "city",
@@ -198,6 +227,16 @@ export const eventBookingSchema: Template = {
       type: "number",
       label: "Price",
       name: eventBookingBlock.price,
+    },
+    {
+      type: "number",
+      label: "Discount Price",
+      name: eventBookingBlock.discountPrice,
+    },
+    {
+      type: "string",
+      label: "Discount Note",
+      name: eventBookingBlock.discountNote,
     },
     {
       type: "object",
