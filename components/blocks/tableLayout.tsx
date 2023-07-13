@@ -12,16 +12,19 @@ const tableStyles = {
     "descendant-th:border-b-sswRed [&>table>tbody>*:nth-child(even)]:bg-gray-75 descendant-th:bg-gray-75 descendant-th:border-b-sswRed descendant-table:w-full",
 };
 
+const md = new MarkdownIt().use(markdownItMultimdTable, {
+  multiline: true,
+});
+
 export const TableLayout = ({ data }) => {
   const [mdxTableString, setMdxTableString] = useState("");
 
   useEffect(() => {
-    const md = new MarkdownIt().use(markdownItMultimdTable, {
-      multiline: true,
-    });
-    const html = md.render(data.mdxTable);
+    const html = md.render(data.mdxTable ?? "");
     setMdxTableString(html);
   }, [data]);
+
+  console.log(data);
 
   return (
     <div
