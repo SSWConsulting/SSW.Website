@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import type { Template } from "tinacms";
-import markdownItMultimdTable from "markdown-it-multimd-table";
-import MarkdownIt from "markdown-it";
 import classNames from "classnames";
+import MarkdownIt from "markdown-it";
+import markdownItMultimdTable from "markdown-it-multimd-table";
+import { useEffect, useState } from "react";
+import type { Template } from "tinacms";
 
 const tableStyles = {
   none: "",
@@ -59,6 +59,25 @@ export const tableBlockSchema: Template = {
       type: "string",
       label: "CSS Class Name",
       name: "className",
+    },
+    {
+      type: "object",
+      label: "Table Presets",
+      name: "tablePresets",
+      list: true,
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.preset };
+        },
+      },
+      fields: [
+        {
+          label: "Table Preset",
+          name: "preset",
+          type: "reference",
+          collections: ["presets"],
+        },
+      ],
     },
     {
       type: "string",

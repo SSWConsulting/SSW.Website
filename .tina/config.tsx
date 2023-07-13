@@ -15,6 +15,7 @@ import { officeIndexSchema, officeSchema } from "./collections/offices";
 import { opportunitiesSchema } from "./collections/opportunities";
 import { pagesSchema } from "./collections/pages";
 import { presenterSchema } from "./collections/presenter";
+import { presetsCategorySchema, presetsSchema } from "./collections/presets";
 import { productsIndexSchema, productsSchema } from "./collections/products";
 import { technologiesSchema } from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
@@ -73,6 +74,8 @@ const config = defineStaticConfig({
       presenterSchema,
       locationSchema,
       industrySchema,
+      presetsSchema,
+      presetsCategorySchema,
     ],
   },
 });

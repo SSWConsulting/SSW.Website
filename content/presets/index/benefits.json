@@ -1,0 +1,5 @@
+{
+  "name": "benefits",
+  "category": "table",
+  "className": "mt-5 flex justify-center descendant-tr:align-top descendant-ul:list-disc descendant-li:ml-6"
+}
