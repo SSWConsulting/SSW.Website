@@ -28,7 +28,7 @@ export const LocationBlock = ({ data }) => {
       </div>{" "}
       <div className="py-1 text-center uppercase">
         <a
-          href={data.chapelWebsite?.URL == null ? "" : data.chapelWebsite.URL}
+          href={!data.chapelWebsite?.URL ? "" : data.chapelWebsite.URL}
           className="inline-flex cursor-pointer items-center !no-underline hover:!underline"
           target="_blank"
           rel="noopener noreferrer"
@@ -101,7 +101,7 @@ const LocationCard = ({ location, index, schema }) => {
 
         <div className="py-1 text-xs">
           <a
-            href={location?.directionURL == null ? "" : location.directionURL}
+            href={!location?.directionURL ? "" : location.directionURL}
             className="inline-flex cursor-pointer items-center !no-underline hover:!underline"
             target="_blank"
             rel="noopener noreferrer"

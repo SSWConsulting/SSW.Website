@@ -1,10 +1,10 @@
-import { FC } from "react";
 import Image from "next/image";
+import { FC } from "react";
 import { FaPlayCircle } from "react-icons/fa";
-import { Section } from "./section";
-import { Container } from "./container";
 import Button from "../button/button";
 import { VideoModal } from "../videoModal";
+import { Container } from "./container";
+import { Section } from "./section";
 
 export type VideoCardProps = {
   link: string;

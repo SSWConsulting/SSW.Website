@@ -8,7 +8,7 @@ import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
 import layoutData from "../../content/global/index.json";
 import { SpeakerInfo } from "../../services/server/events";
-import ReactPlayer from "../reactPlayer/reactPlayer";
+import { YouTubeEmbed } from "../embeds/youtubeEmbed";
 import { SubNewsLettersForm } from "../subNewsletter/subNewsletterForm";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
 import { LiveStreamProps } from "./useLiveStreamProps";
@@ -48,7 +48,7 @@ export const LiveStreamWidget: FC<LiveStreamProps> = ({ isLive, event }) => {
 
   useEffect(() => {
     const fetchLiveStreamInfo = async () => {
-      if (!isLive && !router.query.liveStream) {
+      if ((!isLive && !router.query.liveStream) || !event) {
         return;
       }
 
@@ -61,14 +61,14 @@ export const LiveStreamWidget: FC<LiveStreamProps> = ({ isLive, event }) => {
       const ids: string[] = [];
       const emails: string[] = [];
 
-      if (event.ExternalPresenters?.length) {
+      if (event?.ExternalPresenters?.length) {
         const presenterIds = event.ExternalPresenters.map((presenter) =>
           presenter.LookupId.toString()
         );
         ids.push(...presenterIds);
       }
 
-      if (event.InternalPresenters?.results?.length) {
+      if (event?.InternalPresenters?.results?.length) {
         emails.push(...event.InternalPresenters.results.map((i) => i.EMail));
       }
 
@@ -100,7 +100,7 @@ export const LiveStreamWidget: FC<LiveStreamProps> = ({ isLive, event }) => {
     fetchLiveStreamInfo();
   }, [isLive, event]);
 
-  if ((!isLive && !router.query.liveStream) || !event) {
+  if (!event) {
     return <></>;
   }
 
@@ -156,11 +156,10 @@ export const LiveStreamWidget: FC<LiveStreamProps> = ({ isLive, event }) => {
           <div id="thumbnailAnchor" className="col-span-3 md:col-span-2">
             <div className="relative h-0 pt-9/16">
               <div className="absolute top-0 h-full w-full">
-                <ReactPlayer
+                <YouTubeEmbed
                   url={youtubeUrls.videoUrl}
                   width="100%"
                   height="100%"
-                  controls={true}
                 />
               </div>
             </div>
@@ -173,11 +172,10 @@ export const LiveStreamWidget: FC<LiveStreamProps> = ({ isLive, event }) => {
             data-aos-anchor="#thumbnailAnchor"
             data-aos-anchor-placement="bottom-top"
           >
-            <ReactPlayer
+            <YouTubeEmbed
               url={youtubeUrls.videoUrl}
               width="100%"
               height="100%"
-              controls={true}
             />
           </div>
           <div className="hidden h-full sm:col-span-3 sm:block md:col-span-1">
