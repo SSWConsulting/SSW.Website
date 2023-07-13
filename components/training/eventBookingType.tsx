@@ -2,7 +2,8 @@ export type EventBookingType = {
   data: {
     duration?: number | null;
     price?: number | null;
-    discountPrice?: string | null;
+    discountPrice?: number | null;
+    discountNote?: string | null;
     eventList?: Event[];
   };
 };

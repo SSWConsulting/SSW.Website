@@ -7,7 +7,11 @@ import { tinaField } from "tinacms/dist/react";
 import { EventBookingType, EventModel } from "./eventBookingType";
 
 const isEmpty = (value) => {
-  return value === undefined || value === null || value.length == 0;
+  return (
+    value === undefined ||
+    value === null ||
+    (typeof value == "number" && value <= 0)
+  );
 };
 
 const classes = {
@@ -27,6 +31,7 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
           duration={data.duration}
           price={data.price}
           discountPrice={data.discountPrice}
+          discountNote={data.discountNote}
           schema={data}
         />
       }
@@ -149,7 +154,13 @@ const addRightBorder = (index) => {
   return (index + 1) % 3 != 0 ? "md:border-r-8" : "";
 };
 
-const EventHeader = ({ duration, price, discountPrice, schema }) => {
+const EventHeader = ({
+  duration,
+  price,
+  discountPrice,
+  discountNote,
+  schema,
+}) => {
   return (
     <div className="mt-2 border-t-2 border-gray-400 bg-gray-100">
       <div className="mb-2 grid grid-cols-12">
@@ -180,7 +191,7 @@ const EventHeader = ({ duration, price, discountPrice, schema }) => {
           </span>{" "}
           {isEmpty(discountPrice)
             ? ""
-            : `${EventModel.CURRENCY}${discountPrice}`}{" "}
+            : `${EventModel.CURRENCY}${discountPrice} ${discountNote ?? ""} `}
           {EventModel.INCLUDE_GST}
         </div>
       </div>
@@ -193,6 +204,7 @@ export const eventBookingBlock = {
   duration: "duration",
   price: "price",
   discountPrice: "discountPrice",
+  discountNote: "discountNote",
   suffix: "suffix",
   eventList: {
     value: "eventList",
@@ -217,9 +229,14 @@ export const eventBookingSchema: Template = {
       name: eventBookingBlock.price,
     },
     {
-      type: "string",
+      type: "number",
       label: "Discount Price",
       name: eventBookingBlock.discountPrice,
+    },
+    {
+      type: "string",
+      label: "Discount Note",
+      name: eventBookingBlock.discountNote,
     },
     {
       type: "object",
