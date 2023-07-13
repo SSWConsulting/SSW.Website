@@ -54,7 +54,7 @@ export const Agenda = ({ data }) => {
         <div
           className={classNames(
             "grid grid-cols-1 justify-between px-4 md:px-0",
-            getGridColumns(data?.agendaItemList.length)
+            getGridColumns(data?.agendaItemList?.length)
           )}
         >
           {data?.agendaItemList?.map((item: AgendaItemProps, key: Key) => (
