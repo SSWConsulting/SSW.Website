@@ -1,6 +1,7 @@
 import { classNames, type Template } from "tinacms";
 
 import { FC, Key } from "react";
+import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { verticalListItemSchema } from "../blocks/verticalListItem";
@@ -48,6 +49,7 @@ export const Agenda = ({ data }) => {
             textColorClasses[data.textColor]
           )}
           dangerouslySetInnerHTML={{ __html: data.header }}
+          data-tina-field={tinaField(data, agendaBlockConstant.header)}
         ></h3>
         <div
           className={classNames(
@@ -70,19 +72,31 @@ const getGridColumns = (length) => {
   else return "lg:grid-cols-3 md:grid-cols-2";
 };
 
+export const agendaBlockConstant = {
+  value: "Agenda",
+  header: "header",
+  align: "align",
+  textColor: "textColor",
+  agendaItemList: {
+    value: "agendaItemList",
+    placeholder: "placeholder",
+    body: "body",
+  },
+};
+
 export const agendaSchema: Template = {
   label: "Agenda",
-  name: "Agenda",
+  name: agendaBlockConstant.value,
   fields: [
     {
       type: "string",
       label: "Header",
-      name: "header",
+      name: agendaBlockConstant.header,
     },
     {
       type: "string",
       label: "Align Header",
-      name: "align",
+      name: agendaBlockConstant.align,
       options: [
         { label: "Center", value: "center" },
         { label: "Right", value: "right" },
@@ -92,7 +106,7 @@ export const agendaSchema: Template = {
     {
       type: "string",
       label: "Header Color",
-      name: "textColor",
+      name: agendaBlockConstant.textColor,
       options: [
         { label: "Red", value: "red" },
         { label: "Grey", value: "grey" },
@@ -102,7 +116,7 @@ export const agendaSchema: Template = {
     {
       type: "object",
       label: "Agenda Items",
-      name: "agendaItemList",
+      name: agendaBlockConstant.agendaItemList.value,
       ui: {
         itemProps(item) {
           return { label: item?.placeholder };
@@ -113,12 +127,12 @@ export const agendaSchema: Template = {
         {
           type: "string",
           label: "Placeholder Text",
-          name: "placeholder",
+          name: agendaBlockConstant.agendaItemList.placeholder,
         },
         {
           type: "rich-text",
           label: "Body",
-          name: "body",
+          name: agendaBlockConstant.agendaItemList.body,
           templates: [verticalListItemSchema],
         },
       ],
