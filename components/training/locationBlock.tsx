@@ -28,7 +28,7 @@ export const LocationBlock = ({ data }) => {
       </div>{" "}
       <div className="  py-1 text-center uppercase">
         <a
-          href={data.chapelWebsite.URL == null ? "" : data.chapelWebsite.URL}
+          href={!data.chapelWebsite?.URL ? "" : data.chapelWebsite.URL}
           className="inline-flex cursor-pointer items-center !no-underline hover:!underline"
           target="_blank"
           rel="noopener noreferrer"
@@ -40,7 +40,7 @@ export const LocationBlock = ({ data }) => {
               locationBlockConstant.chapelWebsite.title
             )}
           >
-            {data.chapelWebsite.title}
+            {data.chapelWebsite?.title}
           </span>
         </a>
       </div>
@@ -67,7 +67,7 @@ const LocationCard = ({ location, index, schema }) => {
             )}
           >
             <MdLocationOn className="m-icon" />
-            <span className="font-bold capitalize">{location.header}</span>
+            <span className="font-bold capitalize">{location?.header}</span>
           </div>
           <div
             className=" py-0.5 text-xs capitalize text-gray-500"
@@ -77,7 +77,7 @@ const LocationCard = ({ location, index, schema }) => {
             )}
           >
             {" "}
-            {location.addressLine1}
+            {location?.addressLine1}
           </div>
           <div
             className=" py-0.5 text-xs capitalize text-gray-500"
@@ -86,7 +86,7 @@ const LocationCard = ({ location, index, schema }) => {
               locationSchemaConstants.addressLine2
             )}
           >
-            {location.addressLine2}
+            {location?.addressLine2}
           </div>
           <div
             className=" py-0.5 text-xs capitalize text-gray-500"
@@ -95,13 +95,13 @@ const LocationCard = ({ location, index, schema }) => {
               locationSchemaConstants.addressLine3
             )}
           >
-            {location.addressLine3}
+            {location?.addressLine3}
           </div>{" "}
         </div>
 
         <div className="py-1 text-xs">
           <a
-            href={location.directionURL == null ? "" : location.directionURL}
+            href={!location?.directionURL ? "" : location.directionURL}
             className="inline-flex cursor-pointer items-center !no-underline hover:!underline"
             target="_blank"
             rel="noopener noreferrer"
