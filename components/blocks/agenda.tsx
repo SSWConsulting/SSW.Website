@@ -9,13 +9,15 @@ import { Section } from "../util/section";
 
 
 const alignmentClasses = {
-  center: "text-center",
-  right: "text-right",
+  center: "md:!text-center",
+  right: "md:!text-right",
+    left: "md:!text-left",
 };
 
 const textColorClasses = {
   red: "text-sswRed",
-  grey: "text-gray-500"
+  grey: "text-gray-500",
+  default: ""
 };
 
 
@@ -29,7 +31,7 @@ const AgendaItem: FC<AgendaItemProps> = ({
   return (
     <div className="flex flex-col text-center text-base lg:text-left">
 
-      <div className="w-full items-center p-5 text-left sm:w-3/4 lg:w-full">
+      <div className="w-full items-center lg:p-5 md:py-5 md:pl-4 text-left sm:w-3/4 lg:w-full">
         <TinaMarkdown components={componentRenderer} content={body} />
       </div>
     </div>
@@ -45,10 +47,10 @@ export const Agenda = ({ data }) => {
         className={"flex-1 pb-12"}
       >
       <h3
-        className={classNames("my-0 py-0 text-3xl ", alignmentClasses[data.align], textColorClasses[data.textColor])}
+        className={classNames("my-0 py-0 text-3xl text-center md:text-left", alignmentClasses[data.align], textColorClasses[data.textColor])}
         dangerouslySetInnerHTML={{ __html: data.header }}
       ></h3>
-        <div className={classNames("grid grid-cols-1 justify-between", getGridColumns(data?.agendaItemList.length))}>
+        <div className={classNames("grid grid-cols-1 justify-between px-4 md:px-0", getGridColumns(data?.agendaItemList.length))}>
           {data?.agendaItemList?.map(
             (item: AgendaItemProps, key: Key) => (
               <AgendaItem
@@ -65,11 +67,11 @@ export const Agenda = ({ data }) => {
 
 const getGridColumns = (length)=>{
   if(length === 1)
-  return "md:grid-cols-1"
+  return "lg:grid-cols-1"
   else if(length === 2)
-  return "md:grid-cols-2"
+  return "lg:grid-cols-2"
   else
-  return "md:grid-cols-3"
+  return "lg:grid-cols-3 md:grid-cols-2"
 }
 
 export const agendaSchema: Template = {
@@ -88,6 +90,7 @@ export const agendaSchema: Template = {
       options: [
         { label: "Center", value: "center" },
         { label: "Right", value: "right" },
+        { label: "Left", value: "left" },
       ],
     },
     {
@@ -97,6 +100,7 @@ export const agendaSchema: Template = {
       options: [
         { label: "Red", value: "red" },
         { label: "Grey", value: "grey" },
+        { label: "Default", value: "default" },
       ],
     },
     {
