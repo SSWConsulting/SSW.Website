@@ -10,8 +10,6 @@ export const Analytics = () => {
         debug={false}
         forward={["gtag", "dataLayer.push", "_hsq.push, fbq"]}
         resolveUrl={(url, location, type) => {
-          console.log(url);
-
           const proxiedWhitelist = [
             "connect.facebook.net",
             "snap.licdn.com",
