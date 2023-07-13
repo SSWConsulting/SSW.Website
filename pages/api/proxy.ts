@@ -19,16 +19,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       return res.status(400).json({ message: "URL parameter is required" });
     }
 
-    const parsedUrl = decodeURIComponent(url as string);
+    console.log(url);
 
     const proxySchema = object({
       url: string().required().url(),
     });
 
-    const proxyReq = await proxySchema.validate(
-      { url: parsedUrl },
-      { strict: true }
-    );
+    const proxyReq = await proxySchema.validate({ url: url }, { strict: true });
 
     url = proxyReq.url;
 

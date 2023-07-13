@@ -26,7 +26,9 @@ export const Analytics = () => {
             !url.pathname.includes("gtm.js") &&
             proxiedWhitelist.includes(url.hostname)
           ) {
-            const proxiedUrl = new URL("http://localhost:3000/api/proxy");
+            const proxiedUrl = new URL(
+              "https://cdn.builder.io/api/v1/proxy-api"
+            );
             proxiedUrl.searchParams.append("url", url.href);
             return proxiedUrl;
           }
