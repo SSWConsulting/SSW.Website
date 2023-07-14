@@ -24,9 +24,12 @@ export const TableLayout = ({ data }) => {
         categories: ["table"],
         name: presetNames,
       });
-      const presetClassNames = presets.data.presetsConnection.edges.map(
-        (p) => p.node.className
+      const orderedPresetNodes = presets.data.presetsConnection.edges.sort(
+        (a, b) =>
+          presetNames.indexOf(a.node.name) - presetNames.indexOf(b.node.name)
       );
+      console.log(orderedPresetNodes);
+      const presetClassNames = orderedPresetNodes.map((p) => p.node.className);
       setTableClasses(presetClassNames);
     }
 
