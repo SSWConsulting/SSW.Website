@@ -42,3 +42,6 @@ yarn-error.log*
 # Next bundle analyser
 /analyze
 
+# Partytown lib files
+/public/~partytown
+

@@ -56,12 +56,12 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <>
+      <Analytics />
       <DefaultSeo {...NEXT_SEO_DEFAULT} />
       <AzureAppInsights>
         <Component {...pageProps} />
       </AzureAppInsights>
       <ZendeskButton zendeskKey={zendesk} />
-      <Analytics />
     </>
   );
 };

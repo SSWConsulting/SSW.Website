@@ -3,8 +3,9 @@
   "version": "1.22.19",
   "private": true,
   "scripts": {
-    "dev": "tinacms dev -c \"node --require ./appInsight-api.js node_modules/next/dist/bin/next dev\"",
-    "build": "tinacms build && next build && next-sitemap --config next-sitemap.config.js",
+    "dev": "npm run partytown && tinacms dev -c \"node --require ./appInsight-api.js node_modules/next/dist/bin/next dev\"",
+    "build": "npm run partytown && tinacms build && next build && next-sitemap --config next-sitemap.config.js",
+    "partytown": "partytown copylib public/~partytown",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "start": "tinacms build && node_modules/next/dist/bin/next start -p $PORT",
     "export": "npm run build && next export",
