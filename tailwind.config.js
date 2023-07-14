@@ -6,7 +6,7 @@ module.exports = {
   mode: "jit",
   content: [
     "./components/**/*.{js,ts,jsx,tsx}",
-    "./content/**/*.mdx",
+    "./content/**/*.{mdx,json}",
     "./pages/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "class",
