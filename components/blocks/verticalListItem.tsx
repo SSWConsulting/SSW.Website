@@ -38,11 +38,6 @@ export const verticalListItemSchema: Template = {
   name: "VerticalListItem",
   fields: [
     {
-      type: "string",
-      label: "Header",
-      name: "header",
-    },
-    {
       type: "rich-text",
       label: "Content",
       name: "content",
