@@ -8,7 +8,19 @@ export const Analytics = () => {
     <Head>
       <Partytown
         debug={false}
-        forward={["gtag", "dataLayer.push", "_hsq.push, fbq"]}
+        logScriptExecution
+        logSendBeaconRequests
+        forward={[
+          "gtag",
+          "dataLayer.push",
+          "_hsq.push, fbq, __tag_assistant_forwarder",
+          "hj",
+          "hjBootstrap",
+          "hjBootstrapCalled",
+          "hjLazyModules",
+          "hjSiteSettings",
+          "_hjSettings",
+        ]}
         resolveUrl={(url, location, type) => {
           const proxiedWhitelist = [
             "connect.facebook.net",
