@@ -23,7 +23,6 @@ export const trainingSchema: Collection = {
       type: "string",
       name: "title",
       label: "Title",
-      required: true,
     },
     {
       type: "boolean",
