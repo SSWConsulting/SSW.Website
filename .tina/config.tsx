@@ -5,7 +5,6 @@ import {
   consultingSchema,
   consultingTagSchema,
 } from "./collections/consulting";
-import { educationalSchema } from "./collections/educational";
 import { employmentSchema } from "./collections/employment";
 import { globalSchema } from "./collections/global";
 import { industrySchema } from "./collections/industry";
@@ -70,7 +69,6 @@ const config = defineStaticConfig({
       productsIndexSchema,
       productsSchema,
       trainingSchema,
-      educationalSchema,
       newsletterSchema,
       presenterSchema,
       locationSchema,
