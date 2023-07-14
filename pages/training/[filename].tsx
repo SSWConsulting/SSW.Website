@@ -61,7 +61,10 @@ export default function TrainingPage(
           <Section color="white" className="">
             <Container padding={"md:px-8 px-2"} className={"flex-1 pt-0"}>
               <div className="mx-auto flex max-w-9xl flex-col items-center">
-                <TestimonialRow testimonialsResult={props.testimonialResult} />
+                <TestimonialRow
+                  testimonialsResult={props.testimonialResult}
+                  tagline={data.training.testimonials?.tagline}
+                />
               </div>
             </Container>
           </Section>

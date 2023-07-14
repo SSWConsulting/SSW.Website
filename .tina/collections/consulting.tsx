@@ -2,6 +2,7 @@ import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 
 import type { Collection } from "tinacms";
+import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
 
 export const consultingIndexSchema: Collection = {
   label: "Consulting - Index",
@@ -175,6 +176,8 @@ export const consultingSchema: Collection = {
   fields: [
     // @ts-ignore
     seoSchema,
+    // @ts-ignore
+    testimonialRowSchema,
     {
       type: "object",
       label: "Booking",
