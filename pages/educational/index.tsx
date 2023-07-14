@@ -8,8 +8,8 @@ import { BuiltOnAzure } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import {
   DownloadWhitepaperLink,
-  educationalRenderer,
-} from "../../components/blocks/educationalRenderer";
+  industryRenderer,
+} from "../../components/blocks/industryRenderer";
 import { Layout } from "../../components/layout";
 import SuccessToast from "../../components/successToast/successToast";
 import { Container } from "../../components/util/container";
@@ -72,10 +72,7 @@ export default function EducationalIndex(
             className="mb-4 mt-15"
             data-tina-field={tinaField(node, "_body")}
           >
-            <TinaMarkdown
-              components={educationalRenderer}
-              content={node._body}
-            />
+            <TinaMarkdown components={industryRenderer} content={node._body} />
           </div>
         </Container>
         <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
