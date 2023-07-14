@@ -143,3 +143,21 @@ query industryContentQuery($relativePath: String!) {
     ...IndustryParts
   }
 }
+
+query presetsQuery($categories: [String!], $name: [String!]) {
+  presetsConnection(
+    filter: {
+      categories: {
+        category: { presetsCategory: { name: { in: $categories } } }
+      }
+      name: { in: $name }
+    }
+  ) {
+    edges {
+      node {
+        name
+        className
+      }
+    }
+  }
+}

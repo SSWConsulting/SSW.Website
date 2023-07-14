@@ -124,8 +124,7 @@ benefits:
 ## How long does this normally take?
 
 <TableLayout
-  tableStyle="basicBorder"
-  className="mt-5 flex justify-center descendant-tr:align-top descendant-ul:list-disc descendant-li:ml-6"
+  tablePresets={[{ preset: 'content/presets/index/basic.json' }, { preset: 'content/presets/index/benefits.json' }]}
   mdxTable="
   | Client time commitment | SSW time commitment   |
   |:-----------------------|:----------------------|
