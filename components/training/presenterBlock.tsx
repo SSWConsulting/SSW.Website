@@ -14,7 +14,7 @@ export const PresenterBlock = ({ data }) => {
       >
         About our <span className="text-sswRed">{data.header}</span>
       </h2>
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="flex flex-row flex-wrap justify-center gap-4 md:gap-4">
         {data.presenterList?.map((p, i) => (
           <PresenterCard
             key={i}
@@ -29,7 +29,7 @@ export const PresenterBlock = ({ data }) => {
           <div className="col-span-12 justify-center md:inline-flex">
             <span className="self-center">You can also check our</span>
             <span
-              className="flex justify-center self-center"
+              className="flex justify-center gap-2 self-center"
               data-tina-field={tinaField(
                 data.otherEvent,
                 presenterBlockConstant.otherEvent.title
@@ -55,7 +55,8 @@ export const PresenterBlock = ({ data }) => {
 const PresenterCard = ({ presenter, schema, index }) => {
   return (
     <div
-      className="flex h-fit flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-10 text-center text-xl md:h-full"
+      // eslint-disable-next-line tailwindcss/no-arbitrary-value
+      className="flex h-fit flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-10 text-center text-xl md:h-[680px] md:w-96"
       data-aos="flip-right"
     >
       <div
