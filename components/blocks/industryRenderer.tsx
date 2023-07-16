@@ -8,8 +8,6 @@ import { YouTubeEmbed } from "../embeds/youtubeEmbed";
 import { componentRenderer } from "./mdxComponentRenderer";
 import { SolutionsRow } from "./solutionsRow";
 
-const PComponent = ({ children }) => <p className="mb-3">{children}</p>;
-
 export const DownloadWhitepaperLink = ({ whitepaperFile, children }) => (
   <Link href={whitepaperFile} passHref legacyBehavior>
     <a target="_blank">{children}</a>
@@ -93,8 +91,6 @@ export const industryRenderer: Components<{
   };
 }> = {
   ...componentRenderer,
-  h3: ({ children }) => <h3 className="mb-3 mt-10 text-sswRed">{children}</h3>,
-  p: PComponent,
   VideoEmbed: (props) => <VideoEmbed {...props} />,
   Whitepaper: (props) => <Whitepaper {...props} />,
   BookingForm: () => <BookingForm showSuccessToast={showSuccessToast} />,

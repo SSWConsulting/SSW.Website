@@ -376,6 +376,14 @@ module.exports = {
             ul: {
               listStyle: "square",
             },
+            h3: {
+              marginBottom: "0.75em",
+              marginTop: "2.5em",
+              color: theme("colors.sswRed"),
+            },
+            p: {
+              marginBottom: "0.75em",
+            },
             "ul > li": {
               textAlign: "left",
               display: "list-item",
