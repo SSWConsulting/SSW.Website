@@ -77,7 +77,7 @@ export const Layout = ({ children, className = "" }) => {
         />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#cc4141" />
-        <meta name="msapplication-TileColor" content="#b91d47" />
+        <meta name="msapplication-TileColor" content="#cc4141" />
         <meta name="theme-color" content="#ffffff" />
 
         {router.query.filename === "home" && (
