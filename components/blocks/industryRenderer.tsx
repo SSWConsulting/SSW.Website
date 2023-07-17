@@ -2,13 +2,11 @@ import Link from "next/link";
 import { FaFileDownload } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { Components } from "tinacms/dist/rich-text";
-import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
-import { SolutionsRow } from "../../components/blocks/solutionsRow";
-import { BookingForm } from "../../components/bookingForm/bookingForm";
-import Button from "../../components/button/button";
+import { BookingForm } from "../bookingForm/bookingForm";
+import Button from "../button/button";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
-
-const PComponent = ({ children }) => <p className="mb-3">{children}</p>;
+import { componentRenderer } from "./mdxComponentRenderer";
+import { SolutionsRow } from "./solutionsRow";
 
 export const DownloadWhitepaperLink = ({ whitepaperFile, children }) => (
   <Link href={whitepaperFile} passHref legacyBehavior>
@@ -65,7 +63,7 @@ const showSuccessToast = () => {
   );
 };
 
-export const educationalRenderer: Components<{
+export const industryRenderer: Components<{
   VideoEmbed: {
     url: string;
   };
@@ -93,8 +91,6 @@ export const educationalRenderer: Components<{
   };
 }> = {
   ...componentRenderer,
-  h3: ({ children }) => <h3 className="mb-3 mt-10 text-sswRed">{children}</h3>,
-  p: PComponent,
   VideoEmbed: (props) => <VideoEmbed {...props} />,
   Whitepaper: (props) => <Whitepaper {...props} />,
   BookingForm: () => <BookingForm showSuccessToast={showSuccessToast} />,

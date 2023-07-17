@@ -5,9 +5,9 @@ import {
   consultingSchema,
   consultingTagSchema,
 } from "./collections/consulting";
-import { educationalSchema } from "./collections/educational";
 import { employmentSchema } from "./collections/employment";
 import { globalSchema } from "./collections/global";
+import { industrySchema } from "./collections/industry";
 import { locationSchema } from "./collections/location";
 import { marketingSchema } from "./collections/marketing";
 import { newsletterSchema } from "./collections/newsletters";
@@ -69,10 +69,10 @@ const config = defineStaticConfig({
       productsIndexSchema,
       productsSchema,
       trainingSchema,
-      educationalSchema,
       newsletterSchema,
       presenterSchema,
       locationSchema,
+      industrySchema,
     ],
   },
 });

@@ -371,6 +371,36 @@ module.exports = {
             },
           },
         },
+        industry: {
+          css: {
+            img: {
+              marginTop: "1em",
+            },
+            h3: {
+              marginBottom: "0.75em",
+              marginTop: "1.5em",
+              color: theme("colors.sswRed"),
+            },
+            p: {
+              marginBottom: "0.75em",
+            },
+            ul: {
+              listStyle: "square",
+            },
+            "ul > li": {
+              textAlign: "left",
+              display: "list-item",
+              margin: "1em 1em 1em 2em",
+              "> div::before": {
+                color: theme("colors.sswRed"),
+                content: "\u25A0",
+                fontFamily: "Arial Black",
+                marginLeft: "-1em",
+                width: "1em",
+              },
+            },
+          },
+        },
       }),
       backgroundImage: {
         done: "url('/images/icons/done.png')",
