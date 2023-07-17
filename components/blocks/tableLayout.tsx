@@ -14,9 +14,9 @@ export const TableLayout = ({ data }) => {
   const [tableClasses, setTableClasses] = useState([]);
   const [mdxTableString, setMdxTableString] = useState("");
 
-  const presetNames = data.tablePresets.map((preset) =>
-    path.basename(preset.preset, ".json")
-  );
+  const presetNames = data.tablePresets
+    .filter((preset) => preset.preset)
+    .map((preset) => path.basename(preset.preset, ".json"));
 
   useEffect(() => {
     async function init() {
