@@ -9687,7 +9687,7 @@ var presetsSchema = {
   ]
 };
 var presetsCategorySchema = {
-  label: "Presets - Categories",
+  label: "Presets (\u26A0\uFE0FDEV ONLY) - Categories",
   name: "presetsCategory",
   path: "content/presets/category",
   format: "json",

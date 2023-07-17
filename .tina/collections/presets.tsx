@@ -43,7 +43,7 @@ export const presetsSchema: Collection = {
 }
 
 export const presetsCategorySchema: Collection = {
-  label: "Presets - Categories",
+  label: "Presets (⚠️DEV ONLY) - Categories",
   name: "presetsCategory",
   path: "content/presets/category",
   format: "json",
