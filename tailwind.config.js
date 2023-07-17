@@ -373,16 +373,19 @@ module.exports = {
         },
         industry: {
           css: {
-            ul: {
-              listStyle: "square",
+            img: {
+              marginTop: "1em",
             },
             h3: {
               marginBottom: "0.75em",
-              marginTop: "2.5em",
+              marginTop: "1.5em",
               color: theme("colors.sswRed"),
             },
             p: {
               marginBottom: "0.75em",
+            },
+            ul: {
+              listStyle: "square",
             },
             "ul > li": {
               textAlign: "left",

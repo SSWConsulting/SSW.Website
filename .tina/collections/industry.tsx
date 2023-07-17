@@ -145,8 +145,13 @@ export const industrySchema: Collection = {
     {
       type: "string",
       label: "Page heading",
-      name: "pageHeading",
+      name: "heading",
       required: true,
+    },
+    {
+      type: "string",
+      label: "Page Subheading",
+      name: "subHeading",
     },
     {
       type: "image",
