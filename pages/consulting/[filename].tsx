@@ -104,7 +104,10 @@ export default function ConsultingPage(
             ) : (
               <></>
             )}
-            <TestimonialRow testimonialsResult={props.testimonialsResult} />
+            <TestimonialRow
+              testimonialsResult={props.testimonialsResult}
+              tagline={data.consulting.testimonials?.tagline}
+            />
             <BookingButton {...bookingButtonProps} containerClass="mt-20" />
           </Container>
         </Section>

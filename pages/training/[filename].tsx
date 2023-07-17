@@ -63,6 +63,7 @@ export default function TrainingPage(
                 <div className="mx-auto flex max-w-9xl flex-col items-center">
                   <TestimonialRow
                     testimonialsResult={props.testimonialResult}
+                    tagline={data.training.testimonials?.tagline}
                   />
                 </div>
               </Container>
