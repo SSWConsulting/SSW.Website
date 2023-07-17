@@ -28,7 +28,6 @@ export const TableLayout = ({ data }) => {
         (a, b) =>
           presetNames.indexOf(a.node.name) - presetNames.indexOf(b.node.name)
       );
-      console.log(orderedPresetNodes);
       const presetClassNames = orderedPresetNodes.map((p) => p.node.className);
       setTableClasses(presetClassNames);
     }
