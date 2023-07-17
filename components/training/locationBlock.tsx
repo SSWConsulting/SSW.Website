@@ -9,7 +9,7 @@ const NumberOfLocationInRow = 4;
 
 export const LocationBlock = ({ data }) => {
   return (
-    <Container size="custom" id="location">
+    <Container padding="md:px-8 px-6" size="custom" id="location">
       <h4
         className="py-2 text-sswRed"
         data-tina-field={tinaField(data, locationBlockConstant.title)}
@@ -26,7 +26,7 @@ export const LocationBlock = ({ data }) => {
           />
         ))}
       </div>{" "}
-      <div className="  py-1 text-center uppercase">
+      <div className="py-1 text-center uppercase">
         <a
           href={!data.chapelWebsite?.URL ? "" : data.chapelWebsite.URL}
           className="inline-flex cursor-pointer items-center !no-underline hover:!underline"
@@ -145,7 +145,7 @@ export const locationBlockSchema: Template = {
     {
       type: "string",
       name: locationBlockConstant.title,
-      label: "title",
+      label: "Title",
     },
     {
       type: "object",

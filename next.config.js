@@ -1,7 +1,4 @@
 const config = {
-  experimental: {
-    nextScriptWorkers: true,
-  },
   i18n: {
     locales: ["en"],
     defaultLocale: "en",

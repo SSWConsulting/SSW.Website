@@ -2,8 +2,6 @@ import Image from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const SolutionsRow = (props) => {
-  const renderTinaMarkDown = (data) => <TinaMarkdown content={data} />;
-
   const RawImage = ({ img, altText }) => (
     <Image src={img} alt={altText} className="!static !h-auto !w-full" fill />
   );
@@ -12,7 +10,7 @@ export const SolutionsRow = (props) => {
     <div className="relative col-span-4">
       <RawImage img={imgSrc} altText={header} />
       <h4 className="mb-2 mt-5 text-sm font-bold">{header}</h4>
-      <p className="mb-3">{renderTinaMarkDown(body)}</p>
+      <TinaMarkdown content={body} />
     </div>
   );
 

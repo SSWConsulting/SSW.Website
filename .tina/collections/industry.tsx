@@ -3,16 +3,16 @@ import { Collection, Template } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 
-const educationalSolutionsRowSchema: Template = {
+const industrySolutionsRowSchema: Template = {
   name: "SolutionsRow",
-  label: "Educational Solutions Row",
+  label: "Industry Solutions Row",
   fields: [
     {
       type: "image",
       label: "1st Card Image",
       name: "imgSrc1",
       // @ts-ignore
-      uploadDir: () => "/educational",
+      uploadDir: () => "/industry",
     },
     {
       type: "string",
@@ -29,7 +29,7 @@ const educationalSolutionsRowSchema: Template = {
       label: "2nd Card Image",
       name: "imgSrc2",
       // @ts-ignore
-      uploadDir: () => "/educational",
+      uploadDir: () => "/industry",
     },
     {
       type: "string",
@@ -46,7 +46,7 @@ const educationalSolutionsRowSchema: Template = {
       label: "3rd Card Image",
       name: "imgSrc3",
       // @ts-ignore
-      uploadDir: () => "/educational",
+      uploadDir: () => "/industry",
     },
     {
       type: "string",
@@ -129,32 +129,42 @@ const contactUsBlockSchema: Template = {
   ],
 };
 
-export const educationalSchema: Collection = {
-  label: "Educational - Index",
-  name: "educational",
+export const industrySchema: Collection = {
+  label: "Industry Pages",
+  name: "industry",
   format: "mdx",
-  path: "content/educational",
+  path: "content/industry",
   ui: {
     router: ({ document }) => {
-      return "/educational";
+      return `/industry/${document._sys.filename}`;
     },
   },
   fields: [
     // @ts-ignore
     seoSchema,
     {
+      type: "string",
+      label: "Page heading",
+      name: "heading",
+      required: true,
+    },
+    {
+      type: "string",
+      label: "Page Subheading",
+      name: "subHeading",
+    },
+    {
       type: "image",
       label: "Banner Image",
       name: "bannerImg",
       required: true,
       // @ts-ignore
-      uploadDir: () => "/educational",
+      uploadDir: () => "/industry",
     },
     {
       type: "image",
       label: "Whitepaper File",
       name: "whitepaperFile",
-      required: true,
       // @ts-ignore
       uploadDir: () => "/files",
     },
@@ -164,7 +174,7 @@ export const educationalSchema: Collection = {
       name: "_body",
       templates: [
         ...Schemas.pageBlocks,
-        educationalSolutionsRowSchema,
+        industrySolutionsRowSchema,
         whitepaperBlockSchema,
         bookingFormBlockSchema,
         contactUsBlockSchema,

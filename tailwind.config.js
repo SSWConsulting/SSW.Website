@@ -129,6 +129,7 @@ module.exports = {
       height: {
         22: "5.5rem",
         62: "15.5rem",
+        172: "43rem",
       },
       width: {
         88: "22rem",
@@ -345,7 +346,7 @@ module.exports = {
                 color: theme("colors.sswRed"),
               },
             },
-            "p": {
+            p: {
               fontWeight: theme("fontWeight.light"),
               margin: "0 auto",
               padding: "20px 0",
@@ -353,7 +354,37 @@ module.exports = {
             "p > img": {
               margin: "0 auto",
             },
-            "ul": {
+            ul: {
+              listStyle: "square",
+            },
+            "ul > li": {
+              textAlign: "left",
+              display: "list-item",
+              margin: "1em 1em 1em 2em",
+              "> div::before": {
+                color: theme("colors.sswRed"),
+                content: "\u25A0",
+                fontFamily: "Arial Black",
+                marginLeft: "-1em",
+                width: "1em",
+              },
+            },
+          },
+        },
+        industry: {
+          css: {
+            img: {
+              marginTop: "1em",
+            },
+            h3: {
+              marginBottom: "0.75em",
+              marginTop: "1.5em",
+              color: theme("colors.sswRed"),
+            },
+            p: {
+              marginBottom: "0.75em",
+            },
+            ul: {
               listStyle: "square",
             },
             "ul > li": {

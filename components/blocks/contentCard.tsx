@@ -1,6 +1,7 @@
 import { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { componentRenderer } from "./mdxComponentRenderer";
+import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
 
 export const ContentCard = ({ data }) => {
@@ -43,7 +44,7 @@ export const contentCardBlockSchema: Template = {
       type: "rich-text",
       label: "Content",
       name: "content",
-      templates: [videoEmbedBlockSchema],
+      templates: [videoEmbedBlockSchema, verticalListItemSchema],
     },
   ],
 };

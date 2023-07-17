@@ -37,12 +37,16 @@ const TrainingHeader = ({ data }) => {
               </span>
             </div>
             <div className={`${data?.secondaryTagline ? "mt-10" : ""}`}>
-              <button
-                className="flex items-center gap-2 rounded bg-sswRed px-5 py-2.5 text-sm font-normal text-white shadow-sm"
-                onClick={() => window.open(`${data.link.url}` || "", "_blank")}
-              >
-                {data.link.linkText}
-              </button>
+              {data.link && (
+                <button
+                  className="flex items-center gap-2 rounded bg-sswRed px-5 py-2.5 text-sm font-normal text-white shadow-sm"
+                  onClick={() =>
+                    window.open(`${data.link?.url}` || "", "_blank")
+                  }
+                >
+                  {data.link?.linkText}
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -73,9 +77,11 @@ export const TrainingCarousel = ({ data }) => {
       showArrows={false}
       swipeable={false}
       stopOnHover
-      renderIndicator={createCarouselIndicator}
+      renderIndicator={
+        data?.trainingHeaderCarouselItem.length > 1 && createCarouselIndicator
+      }
     >
-      {data.trainingHeaderCarouselItem.map((item, key) => (
+      {data?.trainingHeaderCarouselItem.map((item, key) => (
         <TrainingHeader key={key} data={item} />
       ))}
     </Carousel>
