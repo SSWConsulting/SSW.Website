@@ -7,8 +7,8 @@ export const CustomImage = ({ data }) => {
       <Image
         src={data.src}
         alt={data.altText}
-        height={data.height}
-        width={data.width}
+        height={data.height ?? 400}
+        width={data.width ?? 400}
         className="inline-block"
       />
     </LinkWrapper>
