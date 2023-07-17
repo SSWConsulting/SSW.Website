@@ -4,6 +4,7 @@ import { FC } from "react";
 import { MdLocationOn } from "react-icons/md";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
+import { Container } from "../util/container";
 import { EventBookingType, EventModel } from "./eventBookingType";
 
 const isEmpty = (value) => {
@@ -25,7 +26,7 @@ const classes = {
 
 export const EventBooking: FC<EventBookingType> = ({ data }) => {
   return (
-    <>
+    <Container padding="md:px-8 px-6">
       {
         <EventHeader
           duration={data.duration}
@@ -50,7 +51,7 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
         {EventModel.HOSTED_BY}{" "}
         <span className="font-bold">{EventModel.SSW}</span>
       </div>
-    </>
+    </Container>
   );
 };
 

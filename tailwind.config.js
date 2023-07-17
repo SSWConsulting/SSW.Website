@@ -129,6 +129,7 @@ module.exports = {
       height: {
         22: "5.5rem",
         62: "15.5rem",
+        172: "43rem",
       },
       width: {
         88: "22rem",
@@ -345,7 +346,7 @@ module.exports = {
                 color: theme("colors.sswRed"),
               },
             },
-            "p": {
+            p: {
               fontWeight: theme("fontWeight.light"),
               margin: "0 auto",
               padding: "20px 0",
@@ -353,7 +354,7 @@ module.exports = {
             "p > img": {
               margin: "0 auto",
             },
-            "ul": {
+            ul: {
               listStyle: "square",
             },
             "ul > li": {
