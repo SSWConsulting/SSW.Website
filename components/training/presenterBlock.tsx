@@ -55,8 +55,7 @@ export const PresenterBlock = ({ data }) => {
 const PresenterCard = ({ presenter, schema, index }) => {
   return (
     <div
-      // eslint-disable-next-line tailwindcss/no-arbitrary-value
-      className="flex h-fit flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-10 text-center text-xl md:h-[680px] md:w-96"
+      className="flex h-fit flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-10 text-center text-xl md:h-172 md:w-96"
       data-aos="flip-right"
     >
       <div
