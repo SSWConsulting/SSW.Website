@@ -60,7 +60,7 @@ export default function IndustryPage(
             suffix=""
             title={pageData.seo.title}
           />
-          <h1 className="mb-1 py-0 text-3xl">SSW Industry</h1>
+          <h1 className="mb-1 py-0 text-3xl">{pageData?.pageHeading}</h1>
           <h2 className="!mt-1 pt-0 text-md font-light">
             Customised Technology Solutions
           </h2>

@@ -143,6 +143,12 @@ export const industrySchema: Collection = {
     // @ts-ignore
     seoSchema,
     {
+      type: "string",
+      label: "Page heading",
+      name: "pageHeading",
+      required: true,
+    },
+    {
       type: "image",
       label: "Banner Image",
       name: "bannerImg",
