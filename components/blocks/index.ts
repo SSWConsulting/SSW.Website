@@ -6,10 +6,12 @@ import { tweetEmbedSchema } from "../embeds/tweetEmbed";
 import { subNewsletterRowSchema } from "../subNewsletter/subNewsletterRow";
 import { agreementFormBlockSchema } from "../terms-and-conditions/agreementForm";
 import { eventBookingSchema } from "../training/eventBooking";
+import { locationBlockSchema } from "../training/locationBlock";
 import { presenterBlockSchema } from "../training/presenterBlock";
 import { trainingInformationSchema } from "../training/trainingInformation";
 import { trainingLearningOutcomeSchema } from "../training/trainingLearningOutcome";
 import { aboutUsBlockSchema } from "./aboutUs";
+import { agendaSchema } from "./agenda";
 import { builtOnAzureBlockSchema } from "./builtOnAzure";
 import { carouselBlockSchema } from "./carousel";
 import { citationBlockSchema } from "./citation";
@@ -66,6 +68,8 @@ export const pageBlocks: Template[] = [
   videoEmbedBlockSchema,
   eventBookingSchema,
   presenterBlockSchema,
+  locationBlockSchema,
+  agendaSchema,
 ];
 
 export * from "../bookingButton/bookingButton";

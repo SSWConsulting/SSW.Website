@@ -3,6 +3,7 @@ import * as Schemas from "../../components/blocks";
 import { trainingHeaderSchema } from "../../components/training/trainingHeader";
 import { seoSchema } from "../../components/util/seo";
 import { videoCardSchema } from "../../components/util/videoCards";
+import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
 
 export const trainingSchema: Collection = {
   label: "Training Pages",
@@ -19,11 +20,17 @@ export const trainingSchema: Collection = {
     seoSchema,
     // @ts-ignore
     trainingHeaderSchema,
+    // @ts-ignore
+    testimonialRowSchema,
     {
       type: "string",
       name: "title",
       label: "Title",
-      required: true,
+    },
+    {
+      type: "boolean",
+      name: "showTestimonials",
+      label: "Show Testimonials",
     },
     {
       type: "object",

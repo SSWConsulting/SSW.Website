@@ -36,13 +36,14 @@ export default function TrainingPage(
       <SEO seo={data.training.seo} />
       <Layout>
         <TrainingCarousel data={data.training.trainingHeaderCarousel} />
-        <Container className="pt-2">
-          <Breadcrumbs
-            path={removeExtension(props.variables.relativePath)}
-            suffix={data.global.breadcrumbSuffix}
-            title={data.training.seo.title}
-          />
-
+        <Container padding={"md:px-8 px-0"} className="pt-2">
+          <div className="px-8 md:px-8">
+            <Breadcrumbs
+              path={removeExtension(props.variables.relativePath)}
+              suffix={data.global.breadcrumbSuffix}
+              title={data.training?.seo?.title}
+            />
+          </div>
           <h1
             className="py-0 text-center text-5xl font-semibold"
             dangerouslySetInnerHTML={{ __html: data.training.title }}
@@ -56,16 +57,21 @@ export default function TrainingPage(
             defaultChannelLink={data.global.youtubeChannelLink}
           />
 
-          <Section color="white" className="">
-            <Container className={"flex-1 pt-0"}>
-              <div className="mx-auto flex max-w-9xl flex-col items-center">
-                <TestimonialRow testimonialsResult={props.testimonialResult} />
-              </div>
-            </Container>
-          </Section>
+          {data.training.showTestimonials && (
+            <Section color="white" className="">
+              <Container padding={"md:px-8 px-2"} className={"flex-1 pt-0"}>
+                <div className="mx-auto flex max-w-9xl flex-col items-center">
+                  <TestimonialRow
+                    testimonialsResult={props.testimonialResult}
+                    tagline={data.training.testimonials?.tagline}
+                  />
+                </div>
+              </Container>
+            </Section>
+          )}
 
           <Section color="white">
-            <Container className={"flex-1 pt-0"}>
+            <Container padding={"md:px-8 px-4"} className={"flex-1 pt-0"}>
               <div className="flex flex-col items-center pb-15 text-center">
                 <h2>
                   Trusted by more than{" "}

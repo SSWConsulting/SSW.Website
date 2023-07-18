@@ -3,35 +3,60 @@ import { Collection, Template } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 
-const educationalSolutionsBlockSchema: Template = {
-  name: "Solutions",
-  label: "Educational Solutions",
+const industrySolutionsRowSchema: Template = {
+  name: "SolutionsRow",
+  label: "Industry Solutions Row",
   fields: [
     {
-      type: "object",
-      label: "Educational Solutions",
-      name: "educationalSolutions",
-      list: true,
-      fields: [
-        {
-          type: "image",
-          label: "Image",
-          name: "solutionImage",
-          required: true,
-        },
-        {
-          type: "string",
-          label: "Name",
-          name: "name",
-          required: true,
-        },
-        {
-          type: "string",
-          label: "Description",
-          name: "description",
-          required: true,
-        },
-      ],
+      type: "image",
+      label: "1st Card Image",
+      name: "imgSrc1",
+      // @ts-ignore
+      uploadDir: () => "/industry",
+    },
+    {
+      type: "string",
+      label: "1st Header",
+      name: "header1",
+    },
+    {
+      type: "rich-text",
+      label: "1st Body",
+      name: "body1",
+    },
+    {
+      type: "image",
+      label: "2nd Card Image",
+      name: "imgSrc2",
+      // @ts-ignore
+      uploadDir: () => "/industry",
+    },
+    {
+      type: "string",
+      label: "2nd Header",
+      name: "header2",
+    },
+    {
+      type: "rich-text",
+      label: "2nd Body",
+      name: "body2",
+    },
+    {
+      type: "image",
+      label: "3rd Card Image",
+      name: "imgSrc3",
+      // @ts-ignore
+      uploadDir: () => "/industry",
+    },
+    {
+      type: "string",
+      label: "3rd Header",
+      name: "header3",
+    },
+    {
+      type: "rich-text",
+      label: "3rd Body",
+      name: "body3",
     },
   ],
 };
@@ -56,6 +81,12 @@ const whitepaperBlockSchema: Template = {
       type: "string",
       label: "Button Text",
       name: "buttonText",
+      required: true,
+    },
+    {
+      type: "image",
+      label: "Whitepaper File",
+      name: "whitepaperFile",
       required: true,
     },
   ],
@@ -98,25 +129,44 @@ const contactUsBlockSchema: Template = {
   ],
 };
 
-export const educationalSchema: Collection = {
-  label: "Educational - Index",
-  name: "educational",
+export const industrySchema: Collection = {
+  label: "Industry Pages",
+  name: "industry",
   format: "mdx",
-  path: "content/educational",
+  path: "content/industry",
+  ui: {
+    router: ({ document }) => {
+      return `/industry/${document._sys.filename}`;
+    },
+  },
   fields: [
     // @ts-ignore
     seoSchema,
+    {
+      type: "string",
+      label: "Page heading",
+      name: "heading",
+      required: true,
+    },
+    {
+      type: "string",
+      label: "Page Subheading",
+      name: "subHeading",
+    },
     {
       type: "image",
       label: "Banner Image",
       name: "bannerImg",
       required: true,
+      // @ts-ignore
+      uploadDir: () => "/industry",
     },
     {
       type: "image",
       label: "Whitepaper File",
       name: "whitepaperFile",
-      required: true,
+      // @ts-ignore
+      uploadDir: () => "/files",
     },
     {
       type: "rich-text",
@@ -124,7 +174,7 @@ export const educationalSchema: Collection = {
       name: "_body",
       templates: [
         ...Schemas.pageBlocks,
-        educationalSolutionsBlockSchema,
+        industrySolutionsRowSchema,
         whitepaperBlockSchema,
         bookingFormBlockSchema,
         contactUsBlockSchema,

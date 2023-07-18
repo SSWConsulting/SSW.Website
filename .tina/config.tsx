@@ -5,9 +5,10 @@ import {
   consultingSchema,
   consultingTagSchema,
 } from "./collections/consulting";
-import { educationalSchema } from "./collections/educational";
 import { employmentSchema } from "./collections/employment";
 import { globalSchema } from "./collections/global";
+import { industrySchema } from "./collections/industry";
+import { locationSchema } from "./collections/location";
 import { marketingSchema } from "./collections/marketing";
 import { newsletterSchema } from "./collections/newsletters";
 import { officeIndexSchema, officeSchema } from "./collections/offices";
@@ -19,6 +20,7 @@ import { technologiesSchema } from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
 import { trainingSchema } from "./collections/training";
+import { videoProductionSchema } from "./collections/videoProduction";
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -56,6 +58,7 @@ const config = defineStaticConfig({
       consultingCategorySchema,
       consultingTagSchema,
       consultingSchema,
+      videoProductionSchema,
       testimonialSchema,
       testimonialCategoriesSchema,
       technologiesSchema,
@@ -66,9 +69,10 @@ const config = defineStaticConfig({
       productsIndexSchema,
       productsSchema,
       trainingSchema,
-      educationalSchema,
       newsletterSchema,
       presenterSchema,
+      locationSchema,
+      industrySchema,
     ],
   },
 });

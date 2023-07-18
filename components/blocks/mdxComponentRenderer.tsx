@@ -1,5 +1,6 @@
+import dynamic from "next/dynamic";
 import { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
-import { BookingButton } from "../bookingButton/bookingButton";
+
 import { UtilityButton } from "../button/utilityButton";
 import { TweetEmbed, TweetEmbedProps } from "../embeds/tweetEmbed";
 import {
@@ -9,7 +10,6 @@ import {
 import { AgreementForm } from "../terms-and-conditions/agreementForm";
 import TrainingInformation from "../training/trainingInformation";
 import { TrainingLearningOutcome } from "../training/trainingLearningOutcome";
-import { Carousel } from "./carousel";
 import { Citation } from "./citation";
 import { ClientLogos } from "./clientLogos";
 import { ContentCard } from "./contentCard";
@@ -19,14 +19,41 @@ import { FixedColumns } from "./fixedColumns";
 import { FixedTabsLayout } from "./fixedTabsLayout";
 import { Flag } from "./flag";
 import { GoogleMapsWrapper } from "./googleMapsWrapper";
-import { InternalCarousel } from "./internalCarousel";
 import { NewslettersTable } from "./newslettersTable";
 import { RecurringEvent } from "./recurringEvent";
-import { TableLayout, TableLayoutProps } from "./tableLayout";
+import { TableLayoutProps } from "./tableLayout";
 import { UpcomingEvents } from "./upcomingEvents";
 import { VerticalImageLayout } from "./verticalImageLayout";
 import { VerticalListItem } from "./verticalListItem";
-import { VideoEmbed } from "./videoEmbed";
+
+const Carousel = dynamic(
+  () => import("./carousel").then((mod) => mod.Carousel),
+  {
+    ssr: false,
+  }
+);
+
+const InternalCarousel = dynamic(
+  () => import("./internalCarousel").then((mod) => mod.InternalCarousel),
+  { ssr: false }
+);
+
+const BookingButton = dynamic(
+  () =>
+    import("../bookingButton/bookingButton").then((mod) => mod.BookingButton),
+  { ssr: false }
+);
+
+const TableLayout = dynamic(
+  () => import("./tableLayout").then((mod) => mod.TableLayout),
+  { ssr: false }
+);
+
+// Import heavy components dynamically
+const VideoEmbed = dynamic(
+  () => import("./videoEmbed").then((mod) => mod.VideoEmbed),
+  { ssr: false }
+);
 
 export const componentRenderer: Components<{
   ClientLogos: Record<string, never>;

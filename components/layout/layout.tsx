@@ -1,7 +1,7 @@
+import classNames from "classnames";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { MenuBar } from "ssw.megamenu";
-import { classNames } from "tinacms";
 import { useLiveStreamProps } from "../liveStream/useLiveStreamProps";
 import { Footer } from "./footer";
 import { Header } from "./header";
@@ -25,7 +25,7 @@ const structuredData = {
   url: layoutData.header.url,
 };
 
-const DynamicLiveStreamWidget = dynamic(
+const LiveStreamWidget = dynamic(
   () => {
     return import("../liveStream/liveStreamWidget").then(
       (mod) => mod.LiveStreamWidget
@@ -37,7 +37,7 @@ const DynamicLiveStreamWidget = dynamic(
   }
 );
 
-const DynamicLiveStreamBanner = dynamic(
+const LiveStreamBanner = dynamic(
   () => {
     return import("../liveStream/liveStreamBanner").then(
       (mod) => mod.LiveStreamBanner
@@ -58,6 +58,28 @@ export const Layout = ({ children, className = "" }) => {
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#cc4141" />
+        <meta name="msapplication-TileColor" content="#cc4141" />
+        <meta name="theme-color" content="#ffffff" />
+
         {router.query.filename === "home" && (
           <script
             type="application/ld+json"
@@ -80,11 +102,15 @@ export const Layout = ({ children, className = "" }) => {
           )}
         >
           <header className="no-print">
-            <DynamicLiveStreamBanner {...liveStreamProps} />
+            {(liveStreamProps.showBanner || router.query.liveBanner) && (
+              <LiveStreamBanner {...liveStreamProps} />
+            )}
             <div className="mx-auto max-w-9xl px-6 sm:px-8">
               <Header />
               <MenuBar />
-              <DynamicLiveStreamWidget {...liveStreamProps} />
+              {(liveStreamProps.isLive || router.query.liveStream) && (
+                <LiveStreamWidget {...liveStreamProps} />
+              )}
             </div>
           </header>
           <main className="grow bg-white">{children}</main>

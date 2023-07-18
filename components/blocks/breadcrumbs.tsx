@@ -14,6 +14,7 @@ interface BreadcrumbsProps {
 export const Breadcrumbs: FC<BreadcrumbsProps> = (props) => {
   const listItemStyling =
     "breadcrumb_item inline text-xs text-gray-700 no-underline not-first:before:content-bread not-first:before:px-2 before:list-none";
+
   return (
     <div
       {...(props.seoSchema
@@ -27,6 +28,9 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = (props) => {
           { from: "offices", to: "Offices" },
           { from: "training", to: "Training" },
           { from: "employment", to: "Employment" },
+          { from: "video-production", to: "Video Production" },
+          { from: "Training-videos", to: "Training Videos" },
+          { from: "industry", to: "Industry" },
           { from: props.path, to: `${props.title}` },
         ]}
         activeItemClassName={listItemStyling}

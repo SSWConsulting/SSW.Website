@@ -12,6 +12,13 @@ query consultingContentQuery($relativePath: String!) {
   }
 }
 
+query videoProductionContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  videoProduction(relativePath: $relativePath) {
+    ...VideoProductionParts
+  }
+}
+
 query officeContentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   offices(relativePath: $relativePath) {
@@ -127,5 +134,12 @@ query productContentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   products(relativePath: $relativePath) {
     ...ProductsParts
+  }
+}
+
+query industryContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  industry(relativePath: $relativePath) {
+    ...IndustryParts
   }
 }
