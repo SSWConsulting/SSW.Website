@@ -10,7 +10,7 @@ const tableStyles = {
 };
 
 export type TableLayoutProps = {
-  tableStyle?: string;
+  tableStyle?: "basicBorder" | "styled" | "none";
   className?: string;
   rows: {
     cells?: string[];

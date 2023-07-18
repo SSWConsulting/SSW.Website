@@ -7,7 +7,7 @@ export const Analytics = () => {
   return (
     <Head>
       <Partytown
-        debug={false}
+        debug={true}
         logScriptExecution
         logSendBeaconRequests
         forward={[
