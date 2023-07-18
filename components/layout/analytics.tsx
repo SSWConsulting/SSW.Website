@@ -20,6 +20,7 @@ export const Analytics = () => {
           "hjLazyModules",
           "hjSiteSettings",
           "_hjSettings",
+          "clarity",
         ]}
         resolveUrl={(url, location, type) => {
           const proxiedWhitelist = [
