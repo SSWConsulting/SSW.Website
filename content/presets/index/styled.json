@@ -1,9 +1,0 @@
-{
-  "name": "styled",
-  "className": "descendant-th:border-b-sswRed [&>table>tbody>*:nth-child(even)]:bg-gray-75 descendant-th:bg-gray-75 descendant-th:border-b-sswRed descendant-table:w-full",
-  "categories": [
-    {
-      "category": "content/presets/category/table.json"
-    }
-  ]
-}

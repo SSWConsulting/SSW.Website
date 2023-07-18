@@ -1,9 +1,0 @@
-{
-  "name": "benefits",
-  "className": "mt-5 flex justify-center descendant-tr:align-top descendant-ul:list-disc descendant-li:ml-6",
-  "categories": [
-    {
-      "category": "content/presets/category/table.json"
-    }
-  ]
-}
