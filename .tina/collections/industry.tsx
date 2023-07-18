@@ -154,6 +154,11 @@ export const industrySchema: Collection = {
       name: "subHeading",
     },
     {
+      type: "boolean",
+      name: "showBreadcrumb",
+      label: "Show Breadcrumb",
+    },
+    {
       type: "image",
       label: "Banner Image",
       name: "bannerImg",
