@@ -13,8 +13,8 @@ export type TableLayoutProps = {
   tableStyle?: "basicBorder" | "styled" | "none";
   className?: string;
   rows: {
-    cells?: string[];
-    isHeader?: boolean;
+    cells: string[];
+    isHeader: boolean;
   }[];
 };
 
@@ -71,6 +71,7 @@ export const tableBlockSchema: Template = {
           label: "Cells",
           name: "cells",
           list: true,
+          required: true,
         },
         {
           type: "boolean",
