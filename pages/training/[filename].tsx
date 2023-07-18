@@ -37,13 +37,15 @@ export default function TrainingPage(
       <Layout>
         <TrainingCarousel data={data.training.trainingHeaderCarousel} />
         <Container padding={"md:px-8 px-0"} className="pt-2">
-          <div className="px-8 md:px-8">
-            <Breadcrumbs
-              path={removeExtension(props.variables.relativePath)}
-              suffix={data.global.breadcrumbSuffix}
-              title={data.training?.seo?.title}
-            />
-          </div>
+          {data.training.showBreadcrumb && (
+            <div className="px-8 md:px-8">
+              <Breadcrumbs
+                path={removeExtension(props.variables.relativePath)}
+                suffix={data.global.breadcrumbSuffix}
+                title={data.training?.seo?.title}
+              />
+            </div>
+          )}
           <h1
             className="py-0 text-center text-5xl font-semibold"
             dangerouslySetInnerHTML={{ __html: data.training.title }}
