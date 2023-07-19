@@ -4,19 +4,19 @@ import { Section } from "../util/section";
 const EventsHeader = ({ data }) => {
   return (
     <Section
-      className="flex h-full flex-col items-center border-b-8 border-sswRed bg-white bg-cover bg-no-repeat lg:block"
+      className="flex h-102 items-center justify-center border-b-8 border-sswRed bg-white bg-cover bg-no-repeat"
       style={{
         backgroundImage: `url(${
           data?.heroBackground || "/images/polygonBackground.png"
         })`,
       }}
     >
-      <div className="flex max-w-2xl ">
+      <div className="flex max-w-2xl lg:max-w-3xl">
         <Image
-          src={data?.centeredImg}
+          src={data?.imgOverlay}
           alt={data?.altText}
           height={400}
-          width={400}
+          width={680}
         />
       </div>
     </Section>
@@ -35,9 +35,14 @@ export const eventsHeaderSchema = {
       uploadDir: () => "/background",
     },
     {
+      type: "string",
+      label: "Alt Text",
+      name: "altText",
+    },
+    {
       type: "image",
-      label: "Centered Image",
-      name: "centeredImg",
+      label: "Image Overlay",
+      name: "imgOverlay",
       uploadDir: () => "/background",
     },
   ],
