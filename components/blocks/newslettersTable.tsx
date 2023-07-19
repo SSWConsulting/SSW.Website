@@ -50,7 +50,10 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
   };
 
   const renderTable = ({ newsletters, year }) => (
-    <table key={year} className="mb-3 mt-0 w-full border-separate">
+    <table
+      key={year}
+      className="mb-3 mt-0 w-full border-separate border-spacing-y-3"
+    >
       <thead>
         <tr>
           <th
