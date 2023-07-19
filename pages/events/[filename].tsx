@@ -7,9 +7,9 @@ import { ClientLogos } from "../../components/blocks";
 import { Blocks } from "../../components/blocks-renderer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import EventsHeader from "../../components/events/eventsHeader";
 import { Layout } from "../../components/layout";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
-import { TrainingCarousel } from "../../components/training/trainingHeader";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
@@ -36,7 +36,7 @@ export default function EventsPage(
       <SEO seo={data.events.seo} />
       <Layout>
         <div data-tina-field={tinaField(data.events, "trainingHeaderCarousel")}>
-          <TrainingCarousel data={data.events.trainingHeaderCarousel} />
+          <EventsHeader data={data.events.eventHeader} />
         </div>
         <Container padding={"md:px-8 px-0"} className="pt-2">
           {data.events.showBreadcrumb && (

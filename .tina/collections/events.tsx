@@ -1,7 +1,7 @@
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
+import { eventsHeaderSchema } from "../../components/events/eventsHeader";
 import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
-import { trainingHeaderSchema } from "../../components/training/trainingHeader";
 import { seoSchema } from "../../components/util/seo";
 import { videoCardSchema } from "../../components/util/videoCards";
 
@@ -20,7 +20,7 @@ export const eventsSchema: Collection = {
     // @ts-ignore
     seoSchema,
     // @ts-ignore
-    trainingHeaderSchema,
+    eventsHeaderSchema,
     // @ts-ignore
     testimonialRowSchema,
     {
