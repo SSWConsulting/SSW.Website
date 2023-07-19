@@ -15,52 +15,42 @@ const TrainingHeader = ({ data }) => {
         })`,
       }}
     >
-      <div className="flex max-w-2xl ">
-        <Image
-          src={data?.centeredImg}
-          alt={data.altText}
-          height={400}
-          width={400}
-        />
-      </div>
       {/* Tailwind shorthand breaks styling */}
-      {}
-      {data.tagline && (
-        <Container className={"flex-1 py-0 md:pb-12"}>
+      {/* eslint-disable-next-line tailwindcss/enforces-shorthand */}
+      <Container className={"flex-1 pb-0 pt-0 md:pb-12"}>
+        <div
+          className={`px-6 lg:flex lg:px-8 lg:pb-24 ${
+            !data?.person
+              ? "justify-center text-center"
+              : "text-center lg:text-left"
+          }`}
+        >
           <div
-            className={`px-6 lg:flex lg:px-8 lg:pb-24 ${
-              !data?.person
-                ? "justify-center text-center"
-                : "text-center lg:text-left"
+            className={`mx-auto flex max-w-2xl flex-col items-center pt-8 lg:mx-0 lg:max-w-3xl lg:items-start ${
+              !data?.person && "lg:items-center"
             }`}
           >
-            <div
-              className={`mx-auto flex max-w-2xl flex-col items-center pt-8 lg:mx-0 lg:max-w-3xl lg:items-start ${
-                !data?.person && "lg:items-center"
-              }`}
-            >
-              <div className="mt-15 flex max-w-2xl flex-col text-white sm:text-6xl">
-                <span className="text-4xl font-medium">{data?.tagline}</span>
-                <span className="text-5xl font-semibold text-sswRed">
-                  {data?.secondaryTagline}
-                </span>
-              </div>
-              <div className={`${data?.secondaryTagline ? "mt-10" : ""}`}>
-                {data.link && (
-                  <button
-                    className="flex items-center gap-2 rounded bg-sswRed px-5 py-2.5 text-sm font-normal text-white shadow-sm"
-                    onClick={() =>
-                      window.open(`${data.link?.url}` || "", "_blank")
-                    }
-                  >
-                    {data.link?.linkText}
-                  </button>
-                )}
-              </div>
+            <div className="mt-15 flex max-w-2xl flex-col text-white sm:text-6xl">
+              <span className="text-4xl font-medium">{data?.tagline}</span>
+              <span className="text-5xl font-semibold text-sswRed">
+                {data?.secondaryTagline}
+              </span>
+            </div>
+            <div className={`${data?.secondaryTagline ? "mt-10" : ""}`}>
+              {data.link && (
+                <button
+                  className="flex items-center gap-2 rounded bg-sswRed px-5 py-2.5 text-sm font-normal text-white shadow-sm"
+                  onClick={() =>
+                    window.open(`${data.link?.url}` || "", "_blank")
+                  }
+                >
+                  {data.link?.linkText}
+                </button>
+              )}
             </div>
           </div>
-        </Container>
-      )}
+        </div>
+      </Container>
       {data?.person && (
         <Image
           className={classNames(
@@ -138,6 +128,7 @@ export const trainingHeaderSchema = {
           type: "string",
           label: "Tagline",
           name: "tagline",
+          required: true,
         },
         {
           type: "string",
@@ -156,12 +147,6 @@ export const trainingHeaderSchema = {
           label: "Person",
           name: "person",
           uploadDir: () => "/people",
-        },
-        {
-          type: "image",
-          label: "Centered Image",
-          name: "centeredImg",
-          uploadDir: () => "/background",
         },
         {
           type: "object",
