@@ -26,7 +26,7 @@ const classes = {
 
 export const EventBooking: FC<EventBookingType> = ({ data }) => {
   return (
-    <Container padding="md:px-8 px-6">
+    <Container padding="md:px-8 px-6 py-8">
       {
         <EventHeader
           duration={data.duration}

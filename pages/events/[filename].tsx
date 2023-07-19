@@ -35,7 +35,7 @@ export default function EventsPage(
     <>
       <SEO seo={data.events.seo} />
       <Layout>
-        <div data-tina-field={tinaField(data.events, "trainingHeaderCarousel")}>
+        <div data-tina-field={tinaField(data.events, "eventHeader")}>
           <EventsHeader data={data.events.eventHeader} />
         </div>
         <Container padding={"md:px-8 px-0"} className="pt-2">
@@ -46,16 +46,18 @@ export default function EventsPage(
             >
               <Breadcrumbs
                 path={removeExtension(props.variables.relativePath)}
-                suffix={data.global.breadcrumbSuffix}
+                suffix={data.global?.breadcrumbSuffix}
                 title={data.events?.seo?.title}
               />
             </div>
           )}
-          <h1
-            data-tina-field={tinaField(data.events, "title")}
-            className="py-0 text-center text-5xl font-semibold"
-            dangerouslySetInnerHTML={{ __html: data.events.title }}
-          />
+          {data.events.title && (
+            <h1
+              data-tina-field={tinaField(data.events, "title")}
+              className="py-0 text-center text-5xl font-semibold"
+              dangerouslySetInnerHTML={{ __html: data.events.title }}
+            />
+          )}
 
           <Blocks prefix="Events_body" blocks={data.events._body} />
 
