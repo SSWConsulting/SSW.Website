@@ -33,7 +33,7 @@ const LiveStreamWidget = dynamic(
   },
   {
     loading: () => <></>,
-    ssr: false,
+    ssr: true,
   }
 );
 
@@ -45,7 +45,7 @@ const LiveStreamBanner = dynamic(
   },
   {
     loading: () => <></>,
-    ssr: false,
+    ssr: true,
   }
 );
 
