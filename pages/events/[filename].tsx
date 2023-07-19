@@ -26,62 +26,60 @@ export default function EventsPage(
   });
 
   const videoCardProps =
-    data?.training.videos?.videoCards?.map<VideoCardProps>((m) => ({
+    data?.events.videos?.videoCards?.map<VideoCardProps>((m) => ({
       title: m.title,
       link: m.link,
     })) || [];
 
   return (
     <>
-      <SEO seo={data.training.seo} />
+      <SEO seo={data.events.seo} />
       <Layout>
-        <div
-          data-tina-field={tinaField(data.training, "trainingHeaderCarousel")}
-        >
-          <TrainingCarousel data={data.training.trainingHeaderCarousel} />
+        <div data-tina-field={tinaField(data.events, "trainingHeaderCarousel")}>
+          <TrainingCarousel data={data.events.trainingHeaderCarousel} />
         </div>
         <Container padding={"md:px-8 px-0"} className="pt-2">
-          {data.training.showBreadcrumb && (
+          {data.events.showBreadcrumb && (
             <div
-              data-tina-field={tinaField(data.training.seo, "title")}
+              data-tina-field={tinaField(data.events.seo, "title")}
               className="px-8 md:px-8"
             >
               <Breadcrumbs
                 path={removeExtension(props.variables.relativePath)}
                 suffix={data.global.breadcrumbSuffix}
-                title={data.training?.seo?.title}
+                title={data.events?.seo?.title}
               />
             </div>
           )}
           <h1
-            data-tina-field={tinaField(data.training, "title")}
+            data-tina-field={tinaField(data.events, "title")}
             className="py-0 text-center text-5xl font-semibold"
-            dangerouslySetInnerHTML={{ __html: data.training.title }}
+            dangerouslySetInnerHTML={{ __html: data.events.title }}
           />
 
-          <Blocks prefix="Training_body" blocks={data.training._body} />
+          <Blocks prefix="Events_body" blocks={data.events._body} />
 
-          <div data-tina-field={tinaField(data.training, "videos")}>
+          <div data-tina-field={tinaField(data.events, "videos")}>
             <VideoCards
               cardProps={videoCardProps}
-              channelLink={data.training.videos?.channelLink}
-              defaultChannelLink={data.global.youtubeChannelLink}
+              channelLink={data.events.videos?.channelLink}
+              defaultChannelLink={data?.global?.youtubeChannelLink}
             />
           </div>
 
-          {data.training.showTestimonials && (
+          {data.events.showTestimonials && (
             <Section color="white" className="">
               <Container padding={"md:px-8 px-2"} className={"flex-1 pt-0"}>
                 <div
                   data-tina-field={tinaField(
-                    data.training.testimonials,
+                    data.events.testimonials,
                     "tagline"
                   )}
                   className="mx-auto flex max-w-9xl flex-col items-center"
                 >
                   <TestimonialRow
                     testimonialsResult={props.testimonialResult}
-                    tagline={data.training.testimonials?.tagline}
+                    tagline={data.events.testimonials?.tagline}
                   />
                 </div>
               </Container>
@@ -106,9 +104,9 @@ export default function EventsPage(
             </Container>
           </Section>
         </Container>
-        <div data-tina-field={tinaField(data.training, "footer")}>
+        <div data-tina-field={tinaField(data.events, "footer")}>
           <TinaMarkdown
-            content={data.training.footer}
+            content={data.events.footer}
             components={componentRenderer}
           />
         </div>
@@ -118,7 +116,7 @@ export default function EventsPage(
 }
 
 export const getStaticProps = async ({ params }) => {
-  const tinaProps = await client.queries.trainingContentQuery({
+  const tinaProps = await client.queries.events({
     relativePath: `${params.filename}.mdx`,
   });
 
@@ -145,9 +143,9 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const pagesListData = await client.queries.trainingConnection();
+  const pagesListData = await client.queries.eventsConnection();
   return {
-    paths: pagesListData.data.trainingConnection.edges.map((page) => ({
+    paths: pagesListData.data.eventsConnection.edges.map((page) => ({
       params: { filename: page.node._sys.filename },
     })),
     fallback: false,
