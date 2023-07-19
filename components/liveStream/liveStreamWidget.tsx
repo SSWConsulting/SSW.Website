@@ -7,6 +7,7 @@ import { FC, useEffect, useState } from "react";
 import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
 import layoutData from "../../content/global/index.json";
+import { getYouTubeId } from "../../helpers/embeds";
 import { SpeakerInfo } from "../../services/server/events";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
 import { SubNewsLettersForm } from "../subNewsletter/subNewsletterForm";
@@ -157,7 +158,7 @@ export const LiveStreamWidget: FC<LiveStreamProps> = ({ isLive, event }) => {
             <div className="relative h-0 pt-9/16">
               <div className="absolute top-0 h-full w-full">
                 <YouTubeEmbed
-                  url={youtubeUrls.videoUrl}
+                  id={getYouTubeId(youtubeUrls?.videoUrl)}
                   width="100%"
                   height="100%"
                 />
@@ -173,7 +174,7 @@ export const LiveStreamWidget: FC<LiveStreamProps> = ({ isLive, event }) => {
             data-aos-anchor-placement="bottom-top"
           >
             <YouTubeEmbed
-              url={youtubeUrls.videoUrl}
+              id={getYouTubeId(youtubeUrls?.videoUrl)}
               width="100%"
               height="100%"
             />
