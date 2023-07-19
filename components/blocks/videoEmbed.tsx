@@ -25,7 +25,7 @@ export const videoEmbedBlockSchema: Template = {
       label: "Video URL",
       name: "url",
       description:
-        "Only YouTube URLs are supported. To embed videos from other sources, please raise an issue",
+        "Only YouTube and Vimeo URLs are supported. To embed videos from other sources, please raise an issue",
       required: true,
     },
     {
