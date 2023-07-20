@@ -99,7 +99,6 @@ export default function EventsPage(
                 <p className="max-w-3xl text-lg font-light text-gray-500">
                   Our software developers & consultants have delivered the best
                   in the business to more than 1,400 clients in 15 countries.
-                  Read more
                 </p>
               </div>
               <ClientLogos />
