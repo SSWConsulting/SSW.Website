@@ -21,6 +21,9 @@ export const TableLayout = ({ data }) => {
     const md = new MarkdownIt().use(markdownItMultimdTable, {
       multiline: true,
     });
+
+    if (!data.mdxTable) return;
+
     const html = md.render(data.mdxTable);
     setMdxTableString(html);
   }, [data]);
