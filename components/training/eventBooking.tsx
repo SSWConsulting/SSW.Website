@@ -113,8 +113,9 @@ const EventCard = ({ event, count, index, schema }) => {
                 href="#location"
               >
                 <MdLocationOn className="m-icon" />
-                {EventModel.SSW}
-                <span className="ml-1 capitalize">{event.city}</span>
+                <span className="capitalize">
+                  {EventModel.SSW} {event.city}
+                </span>
               </a>
             </div>
           </div>
