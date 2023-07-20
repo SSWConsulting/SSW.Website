@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FaFileDownload } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { Components } from "tinacms/dist/rich-text";
+import { getYouTubeId } from "../../helpers/embeds";
 import { BookingForm } from "../bookingForm/bookingForm";
 import Button from "../button/button";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
@@ -50,7 +51,7 @@ export const Whitepaper = ({
 export const VideoEmbed = ({ url }) => (
   <div className="relative h-0 overflow-hidden pb-9/16">
     <div className="absolute h-full w-full">
-      <YouTubeEmbed url={url} width="100%" height="100%" />
+      <YouTubeEmbed id={getYouTubeId(url)} width="100%" height="100%" />
     </div>
   </div>
 );
