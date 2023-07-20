@@ -32,11 +32,11 @@ jobs:
           # TODO: Next time we need to modify which directories we ignore, break this out to a variable which is easy to configure
 
           $SourceDiff = $diff | Where-Object { $_ -notmatch '^content/' -and $_ -notmatch '^public/' }
-          $SourceDiff -replace '"', ""
+          $cleanedString = $SourceDiff -replace '[‘’“”]', '"'
           $HasDiff = $SourceDiff.Length -gt 0
 
           echo "hasCodeChanges=$HasDiff" >> $env:GITHUB_OUTPUT
-          echo "sourceDiff=$SourceDiff" >> $env:GITHUB_OUTPUT
+          echo "sourceDiff=$cleanedString" >> $env:GITHUB_OUTPUT
 
       - name: Non-content files - 📂
         run: |
