@@ -48,8 +48,6 @@ export const VideoModal = ({ children = null, url }) => {
       const id = getVimeoId(url);
       setVideoId(id);
       getVimeoData(id).then((res) => {
-        console.log(res);
-        console.log(res[0].thumbnail_large);
         setImageSrc(res[0].thumbnail_large);
       });
     }
