@@ -29,7 +29,7 @@ export const LocationBlock = ({ data }) => {
       <div className="py-4 text-center uppercase">
         <a
           href={!data.chapelWebsite?.URL ? "" : data.chapelWebsite.URL}
-          className="inline-flex cursor-pointer items-center !no-underline hover:!underline"
+          className="sswUnderline inline-flex cursor-pointer items-center"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -102,7 +102,7 @@ const LocationCard = ({ location, index, schema }) => {
         <div className="py-1 text-xs">
           <a
             href={!location?.directionURL ? "" : location.directionURL}
-            className="inline-flex cursor-pointer items-center !no-underline hover:!underline"
+            className="sswUnderline inline-flex cursor-pointer items-center"
             target="_blank"
             rel="noopener noreferrer"
             data-tina-field={tinaField(

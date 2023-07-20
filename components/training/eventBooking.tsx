@@ -109,7 +109,7 @@ const EventCard = ({ event, count, index, schema }) => {
 
             <div className=" py-1 pr-0 text-xs ">
               <a
-                className="flex items-center justify-end !no-underline md:justify-start"
+                className="sswUnderline flex items-center justify-end md:justify-start"
                 href="#location"
               >
                 <MdLocationOn className="m-icon" />
