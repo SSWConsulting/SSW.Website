@@ -3,7 +3,7 @@ import { seoSchema } from "../../components/util/seo";
 
 import type { Collection } from "tinacms";
 import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
-import { benefitsField, bookingField } from "./shared-fields";
+import { benefitsField } from "./shared-fields";
 
 export const consultingIndexSchema: Collection = {
   label: "Consulting - Index",
@@ -179,7 +179,35 @@ export const consultingSchema: Collection = {
     seoSchema,
     // @ts-ignore
     testimonialRowSchema,
-    bookingField,
+    {
+      type: "object",
+      label: "Booking",
+      name: "booking",
+      fields: [
+        {
+          type: "string",
+          label: "Title",
+          name: "title",
+        },
+        {
+          type: "string",
+          label: "Subtitle",
+          name: "subTitle",
+        },
+        {
+          type: "string",
+          label: "Button Text",
+          name: "buttonText",
+        },
+        {
+          type: "image",
+          label: "Video Background",
+          name: "videoBackground",
+          // @ts-ignore
+          uploadDir: () => "/videos",
+        },
+      ],
+    },
     {
       type: "object",
       label: "Solution",

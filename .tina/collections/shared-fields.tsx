@@ -1,5 +1,4 @@
 import { TinaField } from "tinacms";
-import * as Schemas from "../../components/blocks";
 
 export const benefitsField: TinaField = {
   type: "object",
@@ -70,37 +69,6 @@ export const benefitsField: TinaField = {
           name: "url",
         },
       ],
-    },
-  ],
-};
-
-export const bookingField: TinaField = {
-  type: "object",
-  label: "Booking",
-  name: "booking",
-  fields: [
-    {
-      type: "string",
-      label: "Title",
-      name: "title",
-    },
-    {
-      type: "string",
-      label: "Subtitle",
-      name: "subTitle",
-    },
-    {
-      type: "rich-text",
-      label: "Booking body",
-      name: "bookingBody",
-      templates: [...Schemas.pageBlocks],
-    },
-    {
-      type: "image",
-      label: "Video Background",
-      name: "videoBackground",
-      // @ts-ignore
-      uploadDir: () => "/videos",
     },
   ],
 };
