@@ -9,7 +9,7 @@ import axios from "axios";
 import { EventInfo, LiveStreamBannerInfo } from "../../services/server/events";
 
 export const UpcomingEvents = ({ data }) => {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState<EventInfo[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -130,7 +130,7 @@ export const upcomingEventsBlockSchema: Template = {
 };
 
 const formatBannerDate = (bannerInfo: LiveStreamBannerInfo) => {
-  if (!bannerInfo.StartDateTime || !bannerInfo.EndDateTime) return null;
+  if (!bannerInfo.StartDateTime || !bannerInfo.EndDateTime) return "";
 
   // NOTE: Omit ddd for brevity if it's next year's event
   const dateformat =
