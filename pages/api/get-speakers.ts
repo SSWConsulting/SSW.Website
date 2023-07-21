@@ -2,7 +2,13 @@ import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 import { isEmail } from "../../helpers/validator";
+
+import { cache } from "../../services/server/cacheService";
 import { getSpeakersInfo } from "../../services/server/events";
+
+const CACHE_MINS = 60;
+const CACHE_SECS = CACHE_MINS * 60;
+const CACHE_KEY = "speakers";
 
 export default async function handler(
   req: NextApiRequest,
@@ -32,8 +38,19 @@ export default async function handler(
     }
 
     try {
-      const speakersInfo = await getSpeakersInfo(ids, emails);
-      res.status(200).json(speakersInfo);
+      const cachedSpeakers = cache.get(`${CACHE_KEY}-${ids}-${emails}`);
+
+      if (cachedSpeakers == undefined) {
+        const speakersInfo = await getSpeakersInfo(ids, emails);
+
+        cache.set(`${CACHE_KEY}-${ids}-${emails}`, speakersInfo, CACHE_SECS);
+
+        res.setHeader("Cache-Control", `s-maxage=${CACHE_SECS}`);
+        res.status(200).json(speakersInfo);
+      }
+
+      res.setHeader("Cache-Control", `s-maxage=${CACHE_SECS}`);
+      res.status(200).json(cachedSpeakers);
     } catch (err) {
       const properties = {
         Request: "GET /api/get-speakers",
