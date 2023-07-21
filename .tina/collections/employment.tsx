@@ -1,7 +1,7 @@
 import { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
-import { benefitsField } from "./shared-fields";
+import { benefitsFields } from "./shared-fields";
 
 export const employmentSchema: Collection = {
   label: "Employment Pages",
@@ -53,7 +53,25 @@ export const employmentSchema: Collection = {
       templates: [...Schemas.pageBlocks],
       isBody: true,
     },
-    benefitsField,
+    {
+      type: "object",
+      label: "Benefits",
+      name: "benefits",
+      fields: [
+        {
+          type: "object",
+          list: true,
+          label: "benefit list",
+          name: "benefitList",
+          ui: {
+            itemProps: (item) => {
+              return { label: item?.title };
+            },
+          },
+          fields: benefitsFields,
+        },
+      ],
+    },
     {
       type: "rich-text",
       label: "After benefits body",
