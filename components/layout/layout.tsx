@@ -121,13 +121,13 @@ export const Layout = ({ children, className = "" }) => {
         >
           <header className="no-print">
             {(showBanner || router.query.liveBanner) && (
-              <LiveStreamBanner {...liveStreamProps} />
+              <LiveStreamBanner {...liveStreamProps} isLive={isLive} />
             )}
             <div className="mx-auto max-w-9xl px-6 sm:px-8">
               <Header />
               <MenuBar />
               {(isLive || router.query.liveStream) && (
-                <LiveStreamWidget {...liveStreamProps} />
+                <LiveStreamWidget {...liveStreamProps} isLive={isLive} />
               )}
             </div>
           </header>
