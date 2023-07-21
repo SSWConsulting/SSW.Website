@@ -18,6 +18,7 @@ import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
+import { getLiveStreamInfo } from "../../services/server/events";
 
 export default function EmploymentPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -64,7 +65,7 @@ export default function EmploymentPage(
   return (
     <>
       <SEO seo={props.seo} />
-      <Layout>
+      <Layout event={props.liveStreamEvent}>
         <Section className="mx-auto w-full max-w-9xl px-8 py-5">
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}
@@ -177,6 +178,8 @@ export default function EmploymentPage(
 }
 
 export const getStaticProps = async () => {
+  const events = await getLiveStreamInfo();
+
   const tinaProps = await client.queries.employmentPageQuery({
     relativePath: "index.mdx",
   });
@@ -198,6 +201,8 @@ export const getStaticProps = async () => {
       variables: tinaProps.variables,
       marketingData: marketingSection.data,
       seo,
+      liveStreamEvent: events[0],
     },
+    revalidate: 60,
   };
 };

@@ -11,6 +11,7 @@ import { Container } from "../components/util/container";
 import { Section } from "../components/util/section";
 import { SEO } from "../components/util/seo";
 import { removeExtension } from "../services/client/utils.service";
+import { getLiveStreamInfo } from "../services/server/events";
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -34,7 +35,7 @@ export default function HomePage(
   return (
     <>
       <SEO seo={data.page.seo} />
-      <Layout>
+      <Layout event={props.liveStreamEvent}>
         {data.page.breadcrumbs ? (
           <Section className="mx-auto -mb-20 w-full max-w-9xl px-8 py-5">
             <Breadcrumbs
@@ -74,6 +75,8 @@ export default function HomePage(
 }
 
 export const getStaticProps = async ({ params }) => {
+  const events = await getLiveStreamInfo();
+
   const tinaProps = await client.queries.contentQuery({
     relativePath: `${params.filename}.mdx`,
   });
@@ -82,7 +85,9 @@ export const getStaticProps = async ({ params }) => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
+      liveStreamEvent: events[0],
     },
+    revalidate: 60,
   };
 };
 

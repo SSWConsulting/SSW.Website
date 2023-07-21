@@ -15,6 +15,7 @@ import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
 import { removeExtension } from "../../services/client/utils.service";
+import { getLiveStreamInfo } from "../../services/server/events";
 
 export default function IndustryPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -31,7 +32,7 @@ export default function IndustryPage(
     <RecaptchaContext.Provider
       value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
     >
-      <Layout>
+      <Layout event={props.liveStreamEvent}>
         <SEO seo={pageData.seo} />
         <Container className="prose-industry flex-1" size="custom">
           {pageData.whitepaperFile ? (
@@ -84,6 +85,8 @@ export default function IndustryPage(
 }
 
 export const getStaticProps = async ({ params }) => {
+  const events = await getLiveStreamInfo();
+
   const tinaProps = await client.queries.industryContentQuery({
     relativePath: `${params.filename}.mdx`,
   });
@@ -97,7 +100,9 @@ export const getStaticProps = async ({ params }) => {
         GOOGLE_RECAPTCHA_SITE_KEY:
           process.env.GOOGLE_RECAPTCHA_SITE_KEY || null,
       },
+      liveStreamEvent: events[0],
     },
+    revalidate: 60,
   };
 };
 

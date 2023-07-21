@@ -23,6 +23,7 @@ import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
 import { removeExtension } from "../../services/client/utils.service";
+import { getLiveStreamInfo } from "../../services/server/events";
 
 export default function ConsultingPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -57,7 +58,7 @@ export default function ConsultingPage(
       value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
     >
       <SEO seo={props.seo} />
-      <Layout>
+      <Layout event={props.liveStreamEvent}>
         <Section className="mx-auto w-full max-w-9xl px-8 py-5">
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}
@@ -183,6 +184,8 @@ const parseCallToAction = (
 };
 
 export const getStaticProps = async ({ params }) => {
+  const events = await getLiveStreamInfo();
+
   const tinaProps = await client.queries.consultingContentQuery({
     relativePath: `${params.filename}.mdx`,
   });
@@ -254,7 +257,9 @@ export const getStaticProps = async ({ params }) => {
           process.env.GOOGLE_RECAPTCHA_SITE_KEY || null,
       },
       seo,
+      liveStreamEvent: events[0],
     },
+    revalidate: 60,
   };
 };
 

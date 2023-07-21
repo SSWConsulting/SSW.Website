@@ -15,6 +15,7 @@ import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import VideoCards, { VideoCardProps } from "../../components/util/videoCards";
 import { removeExtension } from "../../services/client/utils.service";
+import { getLiveStreamInfo } from "../../services/server/events";
 
 export default function TrainingPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -34,7 +35,7 @@ export default function TrainingPage(
   return (
     <>
       <SEO seo={data.training.seo} />
-      <Layout>
+      <Layout event={props.liveStreamEvent}>
         <div
           data-tina-field={tinaField(data.training, "trainingHeaderCarousel")}
         >
@@ -117,6 +118,8 @@ export default function TrainingPage(
 }
 
 export const getStaticProps = async ({ params }) => {
+  const events = await getLiveStreamInfo();
+
   const tinaProps = await client.queries.trainingContentQuery({
     relativePath: `${params.filename}.mdx`,
   });
@@ -139,7 +142,9 @@ export const getStaticProps = async ({ params }) => {
         GOOGLE_RECAPTCHA_SITE_KEY:
           process.env.GOOGLE_RECAPTCHA_SITE_KEY || null,
       },
+      liveStreamEvent: events[0],
     },
+    revalidate: 60,
   };
 };
 

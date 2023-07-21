@@ -19,6 +19,7 @@ import { RecaptchaContext } from "../../../context/RecaptchaContext";
 import { removeExtension } from "../../../services/client/utils.service";
 
 import ReactDOMServer from "react-dom/server";
+import { getLiveStreamInfo } from "../../../services/server/events";
 
 export default function VideoProductionPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -38,7 +39,7 @@ export default function VideoProductionPage(
       value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
     >
       <SEO seo={props.seo} />
-      <Layout>
+      <Layout event={props.liveStreamEvent}>
         <Section className="mx-auto w-full max-w-9xl px-8 py-5">
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}
@@ -138,6 +139,8 @@ const parseCallToAction = (
 };
 
 export const getStaticProps = async ({ params }) => {
+  const events = await getLiveStreamInfo();
+
   const tinaProps = await client.queries.videoProductionContentQuery({
     relativePath: `${params.filename}.mdx`,
   });
@@ -158,7 +161,9 @@ export const getStaticProps = async ({ params }) => {
           process.env.GOOGLE_RECAPTCHA_SITE_KEY || null,
       },
       seo,
+      liveStreamEvent: events[0],
     },
+    revalidate: 60,
   };
 };
 

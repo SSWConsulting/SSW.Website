@@ -11,6 +11,7 @@ import dayjs from "dayjs";
 import dynamic from "next/dynamic";
 import { Open_Sans } from "next/font/google";
 import layoutData from "../../content/global/index.json";
+import { EventInfo } from "../../services/server/events";
 
 export const openSans = Open_Sans({
   variable: "--open-sans-font",
@@ -50,8 +51,14 @@ const LiveStreamBanner = dynamic(
   }
 );
 
-export const Layout = ({ children, className = "" }) => {
-  const liveStreamProps = useLiveStreamProps();
+type LayoutProps = {
+  className?: string;
+  children: React.ReactNode;
+  event?: EventInfo;
+};
+
+export const Layout = ({ children, className = "", event }: LayoutProps) => {
+  const liveStreamProps = useLiveStreamProps(event);
   const router = useRouter();
 
   const rightnow = dayjs().utc();
@@ -59,14 +66,14 @@ export const Layout = ({ children, className = "" }) => {
   const isLive =
     liveStreamProps?.countdownMins &&
     liveStreamProps?.countdownMins <= 0 &&
-    !!liveStreamProps?.event &&
-    rightnow.isBefore(liveStreamProps?.event?.EndDateTime);
+    !!event &&
+    rightnow.isBefore(event?.EndDateTime);
 
   const showBanner =
-    !!liveStreamProps?.event &&
+    !!event &&
     dayjs().isBetween(
-      dayjs(liveStreamProps?.event.StartShowBannerDateTime),
-      dayjs(liveStreamProps?.event.EndShowBannerDateTime),
+      dayjs(event.StartShowBannerDateTime),
+      dayjs(event.EndShowBannerDateTime),
       null,
       "[)"
     );
@@ -121,13 +128,21 @@ export const Layout = ({ children, className = "" }) => {
         >
           <header className="no-print">
             {(showBanner || router.query.liveBanner) && (
-              <LiveStreamBanner {...liveStreamProps} isLive={isLive} />
+              <LiveStreamBanner
+                {...liveStreamProps}
+                isLive={isLive}
+                event={event}
+              />
             )}
             <div className="mx-auto max-w-9xl px-6 sm:px-8">
               <Header />
               <MenuBar />
               {(isLive || router.query.liveStream) && (
-                <LiveStreamWidget {...liveStreamProps} isLive={isLive} />
+                <LiveStreamWidget
+                  {...liveStreamProps}
+                  isLive={isLive}
+                  event={event}
+                />
               )}
             </div>
           </header>

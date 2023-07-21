@@ -1,4 +1,3 @@
-import axios from "axios";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { EventInfo } from "../../services/server/events";
@@ -6,33 +5,16 @@ import { EventInfo } from "../../services/server/events";
 export type LiveStreamProps = {
   countdownMins?: number;
   liveStreamDelayMinutes: number;
-  event?: EventInfo;
 };
 
 const INTERVAL_MINUTES = 1;
 
-export function useLiveStreamProps(): LiveStreamProps {
+export function useLiveStreamProps(event: EventInfo): LiveStreamProps {
   const [countdownMins, setCountdownMins] = useState<number>();
-  const [event, setEvent] = useState<EventInfo>();
   const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
 
   useEffect(() => {
-    const fetchEvent = async () => {
-      const res = await axios.get<EventInfo[]>("/api/get-livestream-banner");
-
-      if (res?.status !== 200 || !res?.data?.length) {
-        setEvent(undefined);
-
-        return;
-      }
-
-      setEvent(res.data[0]);
-    };
-
-    fetchEvent();
-  }, []);
-
-  useEffect(() => {
+    console.log(event);
     if (!event?.StartDateTime || !event?.EndDateTime) {
       return;
     }
@@ -61,6 +43,5 @@ export function useLiveStreamProps(): LiveStreamProps {
   return {
     countdownMins,
     liveStreamDelayMinutes,
-    event,
   };
 }

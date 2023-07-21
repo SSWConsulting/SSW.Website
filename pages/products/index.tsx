@@ -1,15 +1,16 @@
-import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
-import { client } from "../../.tina/__generated__/client";
 import { useTina } from "tinacms/dist/react";
+import { client } from "../../.tina/__generated__/client";
 
+import { InferGetStaticPropsType } from "next";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { SEO } from "../../components/util/seo";
-import { InferGetStaticPropsType } from "next";
+import { getLiveStreamInfo } from "../../services/server/events";
 
 export default function ProductsIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -32,7 +33,7 @@ export default function ProductsIndex(
   }, [data]);
 
   return (
-    <Layout>
+    <Layout event={props.liveStreamEvent}>
       <SEO seo={seo} />
       <Container className="mb-10 flex-1 pt-2">
         <Breadcrumbs path={"/products"} suffix="" title={"Products"} />
@@ -98,11 +99,15 @@ const processData = (data) => {
 };
 
 export const getStaticProps = async () => {
+  const events = await getLiveStreamInfo();
+
   const tinaProps = await client.queries.productsIndexConnection();
 
   return {
     props: {
       ...tinaProps,
+      liveStreamEvent: events[0],
     },
+    revalidate: 60,
   };
 };

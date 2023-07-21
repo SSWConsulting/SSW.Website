@@ -16,6 +16,7 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { removeExtension } from "../../services/client/utils.service";
+import { getLiveStreamInfo } from "../../services/server/events";
 
 export default function OfficePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -29,7 +30,7 @@ export default function OfficePage(
   return (
     <>
       <SEO seo={data.offices.seo} />
-      <Layout>
+      <Layout event={props.liveStreamEvent}>
         {data.offices.coverImg ? (
           <div className="mx-auto max-w-9xl px-6 sm:px-8">
             <div className="h-auto w-auto">
@@ -186,6 +187,8 @@ const SidePanel = ({ office, testimonial }) => {
 };
 
 export const getStaticProps = async ({ params }) => {
+  const events = await getLiveStreamInfo();
+
   const tinaProps = await client.queries.officeContentQuery({
     relativePath: `${params.filename}.mdx`,
   });
@@ -202,7 +205,9 @@ export const getStaticProps = async ({ params }) => {
       query: tinaProps.query,
       variables: tinaProps.variables,
       testimonial: testimonial,
+      liveStreamEvent: events[0],
     },
+    revalidate: 60,
   };
 };
 

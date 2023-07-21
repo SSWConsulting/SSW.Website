@@ -1,5 +1,6 @@
 import * as msal from "@azure/msal-node";
-import axios from "axios";
+import * as appInsights from "applicationinsights";
+import axios, { AxiosError } from "axios";
 
 const SITE_ID = process.env.SHAREPOINT_SITE_ID;
 const EVENTS_LIST_ID = process.env.SHAREPOINT_EVENTS_LIST_ID;
@@ -53,6 +54,41 @@ export const getEvents = async (odataFilter: string): Promise<EventInfo[]> => {
   const events: EventInfo[] = eventsRes.data.value.map((item) => item.fields);
 
   return events || [];
+};
+
+export const getLiveStreamInfo = async () => {
+  const isoTime = new Date().toISOString();
+
+  const odataFilter = `$filter=fields/Enabled ne false \
+    and fields/EndDateTime ge '${isoTime}'\
+    and fields/CalendarType eq 'User Groups'\
+    &$orderby=fields/StartDateTime asc\
+    &$top=1`;
+
+  try {
+    const bannerInfo: EventInfo[] = await getEvents(odataFilter);
+    return bannerInfo;
+  } catch (err) {
+    const properties = {
+      Request: "GET /api/get-livestream-banner",
+      Status: 500,
+      FailedSharePointRequest: false,
+    };
+
+    if (err instanceof AxiosError) {
+      console.error(err.response.data);
+      properties.Status = err.response.status;
+      properties.FailedSharePointRequest = true;
+    }
+
+    appInsights?.defaultClient?.trackException({
+      exception: err,
+      properties,
+      severity: appInsights.Contracts.SeverityLevel.Error,
+    });
+
+    return [];
+  }
 };
 
 export const getSpeakersInfo = async (ids?: number[], emails?: string[]) => {

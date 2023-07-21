@@ -9,6 +9,7 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { removeExtension } from "../../services/client/utils.service";
+import { getLiveStreamInfo } from "../../services/server/events";
 
 export default function OfficePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -22,7 +23,7 @@ export default function OfficePage(
   return (
     <>
       <SEO seo={data.products.seo} />
-      <Layout>
+      <Layout event={props.liveStreamEvent}>
         <Section className="mx-auto w-full max-w-9xl px-8 pt-5">
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}
@@ -46,6 +47,8 @@ export default function OfficePage(
 }
 
 export const getStaticProps = async ({ params }) => {
+  const events = await getLiveStreamInfo();
+
   const tinaProps = await client.queries.productContentQuery({
     relativePath: `${params.filename}.mdx`,
   });
@@ -55,7 +58,9 @@ export const getStaticProps = async ({ params }) => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
+      liveStreamEvent: events[0],
     },
+    revalidate: 60,
   };
 };
 

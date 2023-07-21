@@ -17,6 +17,7 @@ import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
+import { getLiveStreamInfo } from "../../services/server/events";
 
 const allServices = "All SSW Services";
 
@@ -96,7 +97,7 @@ export default function ConsultingIndex(
   const tinaData = data.consultingIndexConnection.edges[0].node;
 
   return (
-    <Layout>
+    <Layout event={props.liveStreamEvent}>
       <SEO seo={{ ...seo, canonical: "/consulting" }} />
       <Container className="flex-1 pt-2">
         <Breadcrumbs path={"/consulting"} suffix="" title={"Services"} />
@@ -291,6 +292,8 @@ const processData = (data) => {
 };
 
 export const getStaticProps = async () => {
+  const events = await getLiveStreamInfo();
+
   const tinaProps = await client.queries.consultingIndexConnection();
 
   return {
@@ -298,6 +301,8 @@ export const getStaticProps = async () => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
+      liveStreamEvent: events[0],
     },
+    revalidate: 60,
   };
 };

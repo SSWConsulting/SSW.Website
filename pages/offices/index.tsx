@@ -9,8 +9,9 @@ import { Layout } from "../../components/layout";
 import MicrosoftPanel from "../../components/offices/microsoftPanel";
 import TestimonialPanel from "../../components/offices/testimonialPanel";
 import { Container } from "../../components/util/container";
-import layoutData from "../../content/global/index.json";
 import { SEO } from "../../components/util/seo";
+import layoutData from "../../content/global/index.json";
+import { getLiveStreamInfo } from "../../services/server/events";
 
 export default function OfficeIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -26,7 +27,7 @@ export default function OfficeIndex(
 
   return (
     offices && (
-      <Layout>
+      <Layout event={props.liveStreamEvent}>
         <SEO seo={seo} />
         <Container className="flex-1 pt-2">
           <Breadcrumbs
@@ -132,6 +133,8 @@ export default function OfficeIndex(
 }
 
 export const getStaticProps = async () => {
+  const events = await getLiveStreamInfo();
+
   const tinaProps = await client.queries.officeIndexQuery({
     relativePath: "officesIndex.json",
   });
@@ -148,6 +151,8 @@ export const getStaticProps = async () => {
       variables: tinaProps.variables,
       testimonial: testimonial,
       seo: tinaProps.data.officeIndex.seo,
+      liveStreamEvent: events[0],
     },
+    revalidate: 60,
   };
 };

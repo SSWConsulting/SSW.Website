@@ -5,7 +5,7 @@ import { Container } from "../components/util/container";
 
 export default function FourOhFour() {
   return (
-    <Layout>
+    <Layout event={props.liveStreamEvent}>
       <Container
         width="large"
         size="custom"
