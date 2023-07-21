@@ -4,6 +4,17 @@ import { Template } from "tinacms";
 import client from "../../.tina/__generated__/client";
 import { transformIntToMonth } from "../../services/client/date.service";
 
+type NewsletterYearsType = {
+  newsletters?: NewsletterType[];
+  year?: string;
+};
+
+type NewsletterType = {
+  file?: string;
+  month?: number;
+  description?: string;
+};
+
 /**
  * Render a table of newsletters.
  * @param data The data for the table.
@@ -12,7 +23,7 @@ import { transformIntToMonth } from "../../services/client/date.service";
 export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
   data,
 }) => {
-  const [newsletters, setNewsletters] = useState([]);
+  const [newsletters, setNewsletters] = useState<NewsletterYearsType[]>([]);
   const [hasLoaded, setHasLoaded] = useState(false);
 
   useEffect(() => {
@@ -23,21 +34,30 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
 
   const loadNewsletters = () => {
     client.queries.newslettersConnection().then((data) => {
-      const newsletters = data.data.newslettersConnection.edges.map((edge) => ({
-        newsletters: edge.node.newsletters,
-        newsletters_year: edge.node.newsletters_year,
-      }));
-      const sortedNewslettersYears = newsletters.map((item) => {
-        const sortedNewslettersMonths = item.newsletters.sort(
-          (a, b) => b.month - a.month
-        );
-        return {
-          newsletters: sortedNewslettersMonths,
-          year: item.newsletters_year,
-        };
-      });
+      const newsletters = data.data?.newslettersConnection?.edges?.map(
+        (edge) => ({
+          newsletters: edge?.node?.newsletters,
+          newsletters_year: edge?.node?.newsletters_year,
+        })
+      );
+      const sortedNewslettersYears: NewsletterYearsType[] =
+        newsletters?.map((item) => {
+          const sortedNewslettersMonths: NewsletterType[] =
+            item?.newsletters
+              ?.filter((newsletter) => !!newsletter && !!newsletter.month)
+              ?.map((newsletter) => ({
+                file: newsletter?.file || "",
+                month: newsletter?.month || 0,
+                description: newsletter?.description || "",
+              }))
+              ?.sort((a, b) => b.month - a.month) || [];
+          return {
+            newsletters: sortedNewslettersMonths,
+            year: item?.newsletters_year || undefined,
+          };
+        }) || [];
 
-      setNewsletters(sortedNewslettersYears?.reverse());
+      setNewsletters(sortedNewslettersYears);
       setHasLoaded(true);
     });
   };

@@ -34,7 +34,7 @@ const convertStringToDayOfWeek = (day: string): DaysOfWeek => {
 };
 
 type TimeComponentProps = {
-  time: number;
+  time?: number;
   identifier: string;
   className?: string;
 };
