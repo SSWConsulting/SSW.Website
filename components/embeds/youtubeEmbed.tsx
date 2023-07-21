@@ -1,10 +1,8 @@
-import { getYouTubeId } from "../../helpers/embeds";
-
 type YouTubeEmbedProps = {
   className?: string;
   width: string;
   height: string;
-  url: string;
+  id: string;
   autoplay?: boolean;
 };
 
@@ -12,7 +10,7 @@ export const YouTubeEmbed = ({
   className,
   width,
   height,
-  url,
+  id,
   autoplay,
 }: YouTubeEmbedProps) => {
   return (
@@ -20,7 +18,7 @@ export const YouTubeEmbed = ({
       className={className}
       width={width}
       height={height}
-      src={`https://www.youtube.com/embed/${getYouTubeId(url || "")}?autoplay=${
+      src={`https://www.youtube.com/embed/${id || ""}?autoplay=${
         autoplay ? 1 : 0
       }`}
       title="YouTube video player"
