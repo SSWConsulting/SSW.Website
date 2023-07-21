@@ -3,7 +3,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Script from "next/script";
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
 import layoutData from "../../content/global/index.json";
@@ -14,7 +14,11 @@ import { SubNewsLettersForm } from "../subNewsletter/subNewsletterForm";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
 import { LiveStreamProps } from "./useLiveStreamProps";
 
-export const LiveStreamWidget: FC<LiveStreamProps> = ({ isLive, event }) => {
+type LiveStreamWidgetProps = {
+  isLive?: boolean;
+} & LiveStreamProps;
+
+export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
   const eventDescriptionCollapseId = "eventDescription";
 
   const [speakersInfo, setSpeakersInfo] = useState<SpeakerInfo[]>([]);
