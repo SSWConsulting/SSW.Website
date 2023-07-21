@@ -3,6 +3,7 @@ import { seoSchema } from "../../components/util/seo";
 
 import type { Collection } from "tinacms";
 import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
+import { benefitsFields } from "./shared-fields";
 
 export const consultingIndexSchema: Collection = {
   label: "Consulting - Index",
@@ -273,37 +274,7 @@ export const consultingSchema: Collection = {
               return { label: item?.title };
             },
           },
-          fields: [
-            {
-              type: "image",
-              label: "Image URL",
-              name: "image",
-              // @ts-ignore
-              uploadDir: () => "/benefits",
-            },
-            {
-              type: "string",
-              label: "Title",
-              name: "title",
-            },
-            {
-              type: "rich-text",
-              label: "Description",
-              name: "description",
-            },
-            {
-              type: "string",
-              required: false,
-              label: "linkName",
-              name: "linkName",
-            },
-            {
-              type: "string",
-              required: false,
-              label: "linkURL",
-              name: "linkURL",
-            },
-          ],
+          fields: benefitsFields,
         },
         {
           type: "object",
