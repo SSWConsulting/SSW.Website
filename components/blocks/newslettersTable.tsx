@@ -57,7 +57,7 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
           };
         }) || [];
 
-      setNewsletters(sortedNewslettersYears);
+      setNewsletters(sortedNewslettersYears.reverse());
       setHasLoaded(true);
     });
   };
