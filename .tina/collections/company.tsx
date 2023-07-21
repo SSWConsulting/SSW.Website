@@ -33,5 +33,47 @@ export const companySchema: Collection = {
       },
       templates: [...Schemas.pageBlocks],
     },
+    {
+      type: "object",
+      label: "History Cards",
+      name: "historyCards",
+      list: true,
+      fields: [
+        {
+          type: "number",
+          label: "Year",
+          name: "year",
+        },
+        {
+          type: "string",
+          label: "Title",
+          name: "title",
+        },
+        {
+          type: "string",
+          label: "Location",
+          name: "location",
+          options: [
+            {
+              value: "Australia",
+              label: "Australia",
+            },
+            {
+              value: "France",
+              label: "France",
+            },
+            {
+              value: "China",
+              label: "China",
+            },
+          ],
+        },
+        {
+          type: "rich-text",
+          label: "Description",
+          name: "description",
+        },
+      ],
+    },
   ],
 };

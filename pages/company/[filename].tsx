@@ -8,6 +8,8 @@ import { removeExtension } from "../../services/client/utils.service";
 import { useTina } from "tinacms/dist/react";
 import { BuiltOnAzure } from "../../components/blocks";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
+import HistoryTimeline from "../../components/company/historyTimeline";
+import { HistoryTimelineCardProps } from "../../components/company/historyTimelineCard";
 
 export default function CompanyPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -17,6 +19,14 @@ export default function CompanyPage(
     query: props.query,
     variables: props.variables,
   });
+
+  const historyCardProps =
+    data.company?.historyCards?.map<HistoryTimelineCardProps>((m) => ({
+      year: m.year,
+      title: m.title,
+      location: m.location as HistoryTimelineCardProps["location"],
+      description: m.description,
+    })) || [];
 
   return (
     <div>
@@ -33,7 +43,13 @@ export default function CompanyPage(
               seoSchema={data.company.seo}
             />
           </Section>
-
+          {data.company.historyCards?.length > 0 ? (
+            <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+              <HistoryTimeline cardProps={historyCardProps} />
+            </Section>
+          ) : (
+            <></>
+          )}
           <Section>
             <BuiltOnAzure data={{ backgroundColor: "default" }} />
           </Section>
