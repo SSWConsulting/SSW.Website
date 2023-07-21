@@ -270,7 +270,7 @@ export const serviceCardsBlockSchema: Template = {
           name: serviceCards.bigCards.imgSrc,
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          uploadDir: () => "/service-cards/",
+          uploadDir: () => "/service-cards",
         },
       ],
     },
@@ -314,6 +314,9 @@ export const serviceCardsBlockSchema: Template = {
           type: "image",
           label: "Image",
           name: serviceCards.smallCards.imgSrc,
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          uploadDir: () => "/service-cards",
         },
       ],
     },

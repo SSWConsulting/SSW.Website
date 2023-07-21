@@ -1,7 +1,6 @@
-import React from "react";
+import classNames from "classnames";
 import type { Template } from "tinacms";
 import { VideoModal } from "../videoModal";
-import classNames from "classnames";
 
 export const VideoEmbed = ({ data }) => {
   const width = data.videoWidth || "w-3/4";
@@ -25,6 +24,8 @@ export const videoEmbedBlockSchema: Template = {
       type: "string",
       label: "Video URL",
       name: "url",
+      description:
+        "Only YouTube and Vimeo URLs are supported. To embed videos from other sources, please raise an issue",
       required: true,
     },
     {

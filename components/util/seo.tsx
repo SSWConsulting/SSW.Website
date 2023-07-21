@@ -1,4 +1,3 @@
-import React from "react";
 import { NextSeo, NextSeoProps } from "next-seo";
 import { NEXT_SEO_DEFAULT } from "../../next-seo.config";
 
@@ -44,14 +43,28 @@ export const seoSchema = {
   fields: [
     {
       type: "string",
-      label: "Title",
+      label: "Title (70 characters)",
       name: "title",
+      ui: {
+        validate: (value) => {
+          if (value && value.length > 70) {
+            return "Title should be 70 characters or less";
+          }
+        },
+      },
     },
     {
       type: "string",
-      label: "Description",
+      label: "Description (150 characters)",
       name: "description",
       component: "textarea",
+      ui: {
+        validate: (value) => {
+          if (value && value.length > 150) {
+            return "Description should be 150 characters or less";
+          }
+        },
+      },
     },
     {
       type: "string",

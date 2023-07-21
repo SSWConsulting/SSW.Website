@@ -5,19 +5,23 @@ import {
   consultingSchema,
   consultingTagSchema,
 } from "./collections/consulting";
-import { educationalSchema } from "./collections/educational";
 import { employmentSchema } from "./collections/employment";
+import { eventsSchema } from "./collections/events";
 import { globalSchema } from "./collections/global";
+import { industrySchema } from "./collections/industry";
+import { locationSchema } from "./collections/location";
 import { marketingSchema } from "./collections/marketing";
 import { newsletterSchema } from "./collections/newsletters";
 import { officeIndexSchema, officeSchema } from "./collections/offices";
 import { opportunitiesSchema } from "./collections/opportunities";
 import { pagesSchema } from "./collections/pages";
-import { productsIndexSchema } from "./collections/products";
+import { presenterSchema } from "./collections/presenter";
+import { productsIndexSchema, productsSchema } from "./collections/products";
 import { technologiesSchema } from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
 import { trainingSchema } from "./collections/training";
+import { videoProductionSchema } from "./collections/videoProduction";
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -55,6 +59,7 @@ const config = defineStaticConfig({
       consultingCategorySchema,
       consultingTagSchema,
       consultingSchema,
+      videoProductionSchema,
       testimonialSchema,
       testimonialCategoriesSchema,
       technologiesSchema,
@@ -63,9 +68,13 @@ const config = defineStaticConfig({
       employmentSchema,
       officeIndexSchema,
       productsIndexSchema,
+      productsSchema,
       trainingSchema,
-      educationalSchema,
       newsletterSchema,
+      presenterSchema,
+      locationSchema,
+      industrySchema,
+      eventsSchema,
     ],
   },
 });

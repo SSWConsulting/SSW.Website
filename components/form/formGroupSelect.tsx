@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import { ErrorMessage, Field, FieldHookConfig, useField } from "formik";
 import { ChangeEvent, ChangeEventHandler, FC } from "react";
-import { FormGroupProps } from "./formGroupTypes";
 import styles from "./formGroup.module.css";
+import { FormGroupProps } from "./formGroupTypes";
 
 const FormGroupSelect: FC<
   FieldHookConfig<string> & FormGroupProps<HTMLSelectElement>

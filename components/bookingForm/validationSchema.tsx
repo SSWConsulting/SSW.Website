@@ -15,6 +15,9 @@ export const ValidationSchema = (isShowStates: boolean, isShareForm: boolean) =>
           .string()
           .notOneOf([STATE_DEFAULT_VALUE, ""], VALIDATION_ERROR_MESSAGE.STATES)
       : yup.string(),
+    referralSource: yup
+      .string()
+      .required(VALIDATION_ERROR_MESSAGE.REFERRAL_SOURCE),
     note: isShareForm
       ? yup.string()
       : yup.string().required(VALIDATION_ERROR_MESSAGE.NOTE),

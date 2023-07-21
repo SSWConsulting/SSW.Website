@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import dayjs from "dayjs";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
 import countdownTextFormat from "../../helpers/countdownTextFormat";
 import { LiveStreamProps } from "./useLiveStreamProps";
@@ -12,9 +11,7 @@ export const LiveStreamBanner: FC<LiveStreamProps> = ({
   isLive,
   event,
 }) => {
-  const router = useRouter();
   const [countdownText, setCountdownText] = useState("");
-  const [showBanner, setShowBanner] = useState<boolean>();
 
   const scheduledTimeText = (startDateTime: dayjs.Dayjs) => {
     const sydStartTime = startDateTime.tz("Australia/Sydney").format("h:mm a");
@@ -30,20 +27,9 @@ export const LiveStreamBanner: FC<LiveStreamProps> = ({
   useEffect(() => {
     const formattedCountdown = countdownTextFormat(countdownMins);
     setCountdownText(`Airing in ${formattedCountdown}. `);
+  }, [countdownMins]);
 
-    setShowBanner(
-      !!event &&
-        (!!router.query.liveBanner ||
-          dayjs().isBetween(
-            dayjs(event.StartShowBannerDateTime),
-            dayjs(event.EndShowBannerDateTime),
-            null,
-            "[)"
-          ))
-    );
-  }, [countdownMins, event]);
-
-  if (!event?.StartDateTime || !showBanner) {
+  if (!event?.StartDateTime) {
     return <></>;
   }
 

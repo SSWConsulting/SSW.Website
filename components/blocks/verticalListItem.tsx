@@ -7,6 +7,11 @@ export const VerticalListItem = ({ data }) => {
 
   return (
     <div className="py-3">
+      {data.header && (
+        <div className="py-3 text-left">
+          <h3 className="text-sswRed">{data.header}</h3>
+        </div>
+      )}
       <div className={classNames("flex flex-row items-center")}>
         {data.icon && (
           <Image
@@ -17,11 +22,11 @@ export const VerticalListItem = ({ data }) => {
             className="pr-5"
           />
         )}
-        <div className={classNames("font-helvetica font-bold")}>
+        <div className={classNames("text-left font-helvetica font-bold")}>
           <TinaMarkdown content={data.content} />
         </div>
       </div>
-      <div className="pl-20 marker:text-sswRed child:!list-disc">
+      <div className="pl-20 text-left marker:text-sswRed child:!list-disc">
         <TinaMarkdown content={data.afterBody} />
       </div>
     </div>
@@ -44,7 +49,7 @@ export const verticalListItemSchema: Template = {
       name: "icon",
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      uploadDir: () => "icons",
+      uploadDir: () => "/icons",
     },
     {
       type: "number",

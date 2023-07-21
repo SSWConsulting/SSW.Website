@@ -3,12 +3,13 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Rating } from "../util/consulting/rating";
 import { Container } from "../util/container";
 
-export const TestimonialRow = ({ testimonialsResult }) => {
+export const TestimonialRow = ({ testimonialsResult, tagline }) => {
   return (
     <Container size="custom">
-      <h2 className="mb-8 text-center">
+      <h2 className="mb-2 text-center">
         What do people <span className="text-sswRed">say</span>?
       </h2>
+      <p className="mb-8 text-center">{tagline}</p>
       <div className="grid gap-6 md:grid-cols-3">
         {testimonialsResult?.map((testimonial, i) => (
           <TestimonialCard key={i} testimonial={testimonial} />
@@ -21,7 +22,7 @@ export const TestimonialRow = ({ testimonialsResult }) => {
 const TestimonialCard = ({ testimonial }) => {
   return (
     <div
-      className="flex flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-10 text-center text-xl drop-shadow sm:h-96 md:h-full"
+      className="flex flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-8 text-center text-xl drop-shadow sm:h-96 md:h-full md:p-10"
       data-aos="flip-right"
     >
       <div className="flex flex-col items-center">
@@ -48,4 +49,17 @@ const TestimonialCard = ({ testimonial }) => {
       </div>
     </div>
   );
+};
+
+export const testimonialRowSchema = {
+  type: "object",
+  label: "Testimonials",
+  name: "testimonials",
+  fields: [
+    {
+      type: "string",
+      label: "Tagline",
+      name: "tagline",
+    },
+  ],
 };

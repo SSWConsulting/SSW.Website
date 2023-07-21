@@ -2,6 +2,7 @@ import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 
 import type { Collection } from "tinacms";
+import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
 
 export const consultingIndexSchema: Collection = {
   label: "Consulting - Index",
@@ -85,6 +86,8 @@ export const consultingIndexSchema: Collection = {
               type: "image",
               label: "Logo",
               name: "logo",
+              // @ts-ignore
+              uploadDir: () => "/thumbs",
             },
             {
               type: "reference",
@@ -173,6 +176,8 @@ export const consultingSchema: Collection = {
   fields: [
     // @ts-ignore
     seoSchema,
+    // @ts-ignore
+    testimonialRowSchema,
     {
       type: "object",
       label: "Booking",
@@ -197,6 +202,8 @@ export const consultingSchema: Collection = {
           type: "image",
           label: "Video Background",
           name: "videoBackground",
+          // @ts-ignore
+          uploadDir: () => "/videos",
         },
       ],
     },
@@ -271,6 +278,8 @@ export const consultingSchema: Collection = {
               type: "image",
               label: "Image URL",
               name: "image",
+              // @ts-ignore
+              uploadDir: () => "/benefits",
             },
             {
               type: "string",

@@ -1,8 +1,8 @@
-import React from "react";
-import { AboutUs } from "./blocks/aboutUs";
+import dynamic from "next/dynamic";
 
+import { AboutUs } from "./blocks/aboutUs";
+import { Agenda } from "./blocks/agenda";
 import { BuiltOnAzure } from "./blocks/builtOnAzure";
-import { Carousel } from "./blocks/carousel";
 import { ClientLogos } from "./blocks/clientLogos";
 import { Content } from "./blocks/content";
 import { ContentCard } from "./blocks/contentCard";
@@ -12,24 +12,36 @@ import { UpcomingEvents } from "./blocks/upcomingEvents";
 import { VerticalImageLayout } from "./blocks/verticalImageLayout";
 import { VerticalListItem } from "./blocks/verticalListItem";
 import { EventBooking } from "./training/eventBooking";
+import { LocationBlock } from "./training/locationBlock";
+import { PresenterBlock } from "./training/presenterBlock";
 import { TrainingInformation } from "./training/trainingInformation";
 import { TrainingLearningOutcome } from "./training/trainingLearningOutcome";
 
+const Carousel = dynamic(
+  () => import("./blocks/carousel").then((mod) => mod.Carousel),
+  {
+    ssr: false,
+  }
+);
+
 const componentMap = {
-  AboutUs: AboutUs,
-  Carousel: Carousel,
-  Content: Content,
-  ServiceCards: ServiceCards,
-  UpcomingEvents: UpcomingEvents,
-  BuiltOnAzure: BuiltOnAzure,
-  CustomImage: CustomImage,
-  ClientLogos: ClientLogos,
-  VerticalImageLayout: VerticalImageLayout,
-  ContentCard: ContentCard,
-  VerticalListItem: VerticalListItem,
-  TrainingInformation: TrainingInformation,
-  EventBooking: EventBooking,
-  TrainingLearningOutcome: TrainingLearningOutcome,
+  AboutUs,
+  Carousel,
+  Content,
+  ServiceCards,
+  UpcomingEvents,
+  BuiltOnAzure,
+  CustomImage,
+  ClientLogos,
+  VerticalImageLayout,
+  ContentCard,
+  VerticalListItem,
+  TrainingInformation,
+  EventBooking,
+  TrainingLearningOutcome,
+  PresenterBlock,
+  LocationBlock,
+  Agenda: Agenda,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
@@ -41,9 +53,9 @@ export const Blocks = ({ prefix, blocks }) => {
 };
 
 const renderBlock = (prefix, block, i): JSX.Element => {
-  const component = componentMap[block.__typename?.replace(prefix, "")];
+  const Component = componentMap[block.__typename?.replace(prefix, "")];
 
-  if (!component) {
+  if (!Component) {
     return null;
   }
 
@@ -52,7 +64,7 @@ const renderBlock = (prefix, block, i): JSX.Element => {
 
   return (
     <div className="contents" data-tinafield={field} key={i + block.__typename}>
-      {React.createElement(component, { ...blockProps })}
+      <Component {...blockProps} />
     </div>
   );
 };

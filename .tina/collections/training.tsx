@@ -1,5 +1,6 @@
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
+import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
 import { trainingHeaderSchema } from "../../components/training/trainingHeader";
 import { seoSchema } from "../../components/util/seo";
 import { videoCardSchema } from "../../components/util/videoCards";
@@ -19,11 +20,22 @@ export const trainingSchema: Collection = {
     seoSchema,
     // @ts-ignore
     trainingHeaderSchema,
+    // @ts-ignore
+    testimonialRowSchema,
     {
       type: "string",
       name: "title",
       label: "Title",
-      required: true,
+    },
+    {
+      type: "boolean",
+      name: "showBreadcrumb",
+      label: "Show Breadcrumb",
+    },
+    {
+      type: "boolean",
+      name: "showTestimonials",
+      label: "Show Testimonials",
     },
     {
       type: "object",
