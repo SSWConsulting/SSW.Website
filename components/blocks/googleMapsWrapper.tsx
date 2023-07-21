@@ -7,16 +7,19 @@ interface GoogleMapsWrapperProps {
   embedHeight: string;
 }
 
-export const GoogleMapsWrapper: FC<GoogleMapsWrapperProps> = (props) =>
-  props.embedUrl && (
-    <iframe
-      src={props.embedUrl}
-      width={props.embedWidth || "100%"}
-      height={props.embedHeight || "600px"}
-      style={{ border: 0 }}
-      allowFullScreen
-    ></iframe>
-  );
+export const GoogleMapsWrapper: FC<GoogleMapsWrapperProps> = (props) => (
+  <>
+    {props.embedUrl && (
+      <iframe
+        src={props.embedUrl}
+        width={props.embedWidth || "100%"}
+        height={props.embedHeight || "600px"}
+        style={{ border: 0 }}
+        allowFullScreen
+      ></iframe>
+    )}
+  </>
+);
 
 export const googleMapsSchema: Template = {
   label: "Google Maps",
