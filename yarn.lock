@@ -4641,7 +4641,7 @@ __metadata:
     next-sitemap: ^4.1.8
     nextjs-breadcrumbs2: ^2.0.4
     node-cache: ^5.1.2
-    postcss: ^8.4.25
+    postcss: ^8.4.27
     postcss-import: ^15.1.0
     postcss-nesting: ^11.2.2
     prettier: 2.8.8
@@ -13109,6 +13109,17 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: 9ed3ab8af43ad5210c28f56f916fd9b8c9f94fbeaebbf645dcf579bc28bdd8056c2a7ecc934668d399b81fedb6128f0c4b299f931e50454964bc911c25a3a0a2
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.4.27":
+  version: 8.4.27
+  resolution: "postcss@npm:8.4.27"
+  dependencies:
+    nanoid: ^3.3.6
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 1cdd0c298849df6cd65f7e646a3ba36870a37b65f55fd59d1a165539c263e9b4872a402bf4ed1ca1bc31f58b68b2835545e33ea1a23b161a1f8aa6d5ded81e78
   languageName: node
   linkType: hard
 
