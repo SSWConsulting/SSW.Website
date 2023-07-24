@@ -28,12 +28,12 @@ jobs:
         run: |
           # Diff HEAD with the previous commit
           $diff = git diff --name-only HEAD^ HEAD
-          $newDiff = $diff -replace '["'']', ''
-          echo $newDiff
+          $diff = $diff -replace '["'']', ''
+          echo $diff
 
           # TODO: Next time we need to modify which directories we ignore, break this out to a variable which is easy to configure
 
-          $SourceDiff = $newDiff | Where-Object { $_ -notmatch '^content/' -and $_ -notmatch '^public/' }
+          $SourceDiff = $diff | Where-Object { $_ -notmatch '^content/' -and $_ -notmatch '^public/' }
           echo $SourceDiff
           $cleanedString = $SourceDiff -replace '[‘’“”]', '"'
           $HasDiff = $SourceDiff.Length -gt 0
@@ -45,7 +45,7 @@ jobs:
         run: |
           # Source Difference
           echo ${{ steps.check_file_changed.outputs.sourceDiff }}
-          if ( ([string]::IsNullOrEmpty(`'${{ steps.check_file_changed.outputs.sourceDiff }}'`))) {
+          if ( ([string]::IsNullOrEmpty("${{ steps.check_file_changed.outputs.sourceDiff }}"))) {
             echo "🏃 content change only - skipping lint action"
           }
           else {
