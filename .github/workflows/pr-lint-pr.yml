@@ -27,24 +27,18 @@ jobs:
         id: check_file_changed
         run: |
           # Diff HEAD with the previous commit
-          $diff = git diff --name-only HEAD^ HEAD
-          $diff = $diff -replace '["'']', ''
-          echo $diff
 
           # TODO: Next time we need to modify which directories we ignore, break this out to a variable which is easy to configure
 
           $SourceDiff = $diff | Where-Object { $_ -notmatch '^content/' -and $_ -notmatch '^public/' }
-          echo $SourceDiff
-          $cleanedString = $SourceDiff -replace '[‘’“”]', '"'
           $HasDiff = $SourceDiff.Length -gt 0
 
           echo "hasCodeChanges=$HasDiff" >> $env:GITHUB_OUTPUT
-          echo "sourceDiff=$cleanedString" >> $env:GITHUB_OUTPUT
+          echo "sourceDiff=$SourceDiff" >> $env:GITHUB_OUTPUT
 
       - name: Non-content files - 📂
         run: |
           # Source Difference
-          echo ${{ steps.check_file_changed.outputs.sourceDiff }}
           if ( ([string]::IsNullOrEmpty("${{ steps.check_file_changed.outputs.sourceDiff }}"))) {
             echo "🏃 content change only - skipping lint action"
           }
