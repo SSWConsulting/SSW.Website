@@ -27,6 +27,7 @@ jobs:
         id: check_file_changed
         run: |
           # Diff HEAD with the previous commit
+          $diff = git diff --name-only HEAD^ HEAD
 
           # TODO: Next time we need to modify which directories we ignore, break this out to a variable which is easy to configure
 
