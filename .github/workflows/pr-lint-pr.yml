@@ -28,7 +28,7 @@ jobs:
         run: |
           # Diff HEAD with the previous commit
           $diff = git diff --name-only HEAD^ HEAD
-          $diff = $diff -replace '["'']', ''
+          $diff = $diff -replace '["'']', ''  #Clean-up for the file paths of the newsletter's images.(i.e double & single quotes)
 
           # TODO: Next time we need to modify which directories we ignore, break this out to a variable which is easy to configure
 
