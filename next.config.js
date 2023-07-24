@@ -11,6 +11,7 @@ const config = {
       "img.youtube.com",
       "ssw.com.au",
       "www.ssw.com.au",
+      "i.vimeocdn.com",
     ],
   },
   output: "standalone", // required for Docker support

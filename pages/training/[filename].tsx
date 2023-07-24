@@ -1,4 +1,4 @@
-import { useTina } from "tinacms/dist/react";
+import { tinaField, useTina } from "tinacms/dist/react";
 
 import { InferGetStaticPropsType } from "next";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -35,32 +35,50 @@ export default function TrainingPage(
     <>
       <SEO seo={data.training.seo} />
       <Layout>
-        <TrainingCarousel data={data.training.trainingHeaderCarousel} />
+        <div
+          data-tina-field={tinaField(data.training, "trainingHeaderCarousel")}
+        >
+          <TrainingCarousel data={data.training.trainingHeaderCarousel} />
+        </div>
         <Container padding={"md:px-8 px-0"} className="pt-2">
-          <div className="px-8 md:px-8">
-            <Breadcrumbs
-              path={removeExtension(props.variables.relativePath)}
-              suffix={data.global.breadcrumbSuffix}
-              title={data.training?.seo?.title}
-            />
-          </div>
+          {data.training.showBreadcrumb && (
+            <div
+              data-tina-field={tinaField(data.training.seo, "title")}
+              className="px-8 md:px-8"
+            >
+              <Breadcrumbs
+                path={removeExtension(props.variables.relativePath)}
+                suffix={data.global.breadcrumbSuffix}
+                title={data.training?.seo?.title}
+              />
+            </div>
+          )}
           <h1
+            data-tina-field={tinaField(data.training, "title")}
             className="py-0 text-center text-5xl font-semibold"
             dangerouslySetInnerHTML={{ __html: data.training.title }}
           />
 
           <Blocks prefix="Training_body" blocks={data.training._body} />
 
-          <VideoCards
-            cardProps={videoCardProps}
-            channelLink={data.training.videos?.channelLink}
-            defaultChannelLink={data.global.youtubeChannelLink}
-          />
+          <div data-tina-field={tinaField(data.training, "videos")}>
+            <VideoCards
+              cardProps={videoCardProps}
+              channelLink={data.training.videos?.channelLink}
+              defaultChannelLink={data.global.youtubeChannelLink}
+            />
+          </div>
 
           {data.training.showTestimonials && (
             <Section color="white" className="">
               <Container padding={"md:px-8 px-2"} className={"flex-1 pt-0"}>
-                <div className="mx-auto flex max-w-9xl flex-col items-center">
+                <div
+                  data-tina-field={tinaField(
+                    data.training.testimonials,
+                    "tagline"
+                  )}
+                  className="mx-auto flex max-w-9xl flex-col items-center"
+                >
                   <TestimonialRow
                     testimonialsResult={props.testimonialResult}
                     tagline={data.training.testimonials?.tagline}
@@ -81,17 +99,18 @@ export default function TrainingPage(
                 <p className="max-w-3xl text-lg font-light text-gray-500">
                   Our software developers & consultants have delivered the best
                   in the business to more than 1,400 clients in 15 countries.
-                  Read more
                 </p>
               </div>
               <ClientLogos />
             </Container>
           </Section>
         </Container>
-        <TinaMarkdown
-          content={data.training.footer}
-          components={componentRenderer}
-        />
+        <div data-tina-field={tinaField(data.training, "footer")}>
+          <TinaMarkdown
+            content={data.training.footer}
+            components={componentRenderer}
+          />
+        </div>
       </Layout>
     </>
   );

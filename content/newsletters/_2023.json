@@ -20,6 +20,21 @@
       "month": 4,
       "file": "/images/newsletter-uploads/2023/_2023_04__Introducing SSW’s Cultural Exchange__.html",
       "description": "Introducing SSW’s Cultural Exchange"
+    },
+    {
+      "month": 5,
+      "file": "/images/newsletter-uploads/2023/_2023_05__Unleash the Power of ChatGPT - SSW's Ultimate Cheat Sheet__.html",
+      "description": "Unleash the Power of ChatGPT - SSW’s Ultimate Cheat Sheet"
+    },
+    {
+      "month": 6,
+      "file": "/images/newsletter-uploads/2023/_2023_06__NDC Oslo – Introducing the best of ChatGPT and Open AI API to the Vikings__.html",
+      "description": "NDC Oslo - Introducing the best of ChatGPT & Open AI API to the Vikings"
+    },
+    {
+      "month": 7,
+      "file": "/images/newsletter-uploads/2023/_2023_07__Microsoft Fabric – Unifying your Data Analytics__.html",
+      "description": "Microsoft Fabric - Unifying your Data Analytics"
     }
   ]
 }
