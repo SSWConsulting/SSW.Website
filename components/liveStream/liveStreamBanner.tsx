@@ -1,16 +1,20 @@
 import classNames from "classnames";
 import dayjs from "dayjs";
 import Link from "next/link";
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import countdownTextFormat from "../../helpers/countdownTextFormat";
 import { LiveStreamProps } from "./useLiveStreamProps";
 
-export const LiveStreamBanner: FC<LiveStreamProps> = ({
+type LiveStreamBannerProps = {
+  isLive?: boolean;
+} & LiveStreamProps;
+
+export const LiveStreamBanner = ({
   countdownMins,
   liveStreamDelayMinutes,
   isLive,
   event,
-}) => {
+}: LiveStreamBannerProps) => {
   const [countdownText, setCountdownText] = useState("");
 
   const scheduledTimeText = (startDateTime: dayjs.Dayjs) => {

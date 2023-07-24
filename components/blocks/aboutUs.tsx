@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import dayjs from "dayjs";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { Template } from "tinacms";
 
 import { BiChevronRightCircle } from "react-icons/bi";
@@ -87,17 +87,15 @@ const States = {
   },
 };
 
-export const AboutUs = ({ data }) => {
-  const offices = layoutData.homePageOfficeList;
-  const [selectedOffice, setSelectedOffice] = useState(null);
-  const [officeBeingHovered, setOfficeBeingHovered] = useState(null);
-  const [stateBeingHovered, setStateBeingHovered] = useState(null);
+const offices = layoutData.homePageOfficeList;
+const defaultOffice = offices.find((o) => o.addressLocality === "Sydney");
 
-  useEffect(() => {
-    const defaultOffice = offices.find((o) => o.addressLocality === "Sydney");
-    setSelectedOffice(defaultOffice);
-    setStateBeingHovered(defaultOffice.addressRegion);
-  }, []);
+export const AboutUs = ({ data }) => {
+  const [selectedOffice, setSelectedOffice] = useState(defaultOffice);
+  const [officeBeingHovered, setOfficeBeingHovered] = useState({});
+  const [stateBeingHovered, setStateBeingHovered] = useState<string>(
+    defaultOffice?.addressRegion || ""
+  );
 
   return (
     <Section color={data.backgroundColor}>

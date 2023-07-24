@@ -4,10 +4,8 @@ import { useEffect, useState } from "react";
 import { EventInfo } from "../../services/server/events";
 
 export type LiveStreamProps = {
-  countdownMins: number;
+  countdownMins?: number;
   liveStreamDelayMinutes: number;
-  isLive: boolean;
-  showBanner: boolean;
   event?: EventInfo;
 };
 
@@ -16,16 +14,13 @@ const INTERVAL_MINUTES = 1;
 export function useLiveStreamProps(): LiveStreamProps {
   const [countdownMins, setCountdownMins] = useState<number>();
   const [event, setEvent] = useState<EventInfo>();
-  const [isLive, setIsLive] = useState(false);
   const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
-  const [showBanner, setShowBanner] = useState<boolean>();
 
   useEffect(() => {
     const fetchEvent = async () => {
       const res = await axios.get<EventInfo[]>("/api/get-livestream-banner");
 
       if (res?.status !== 200 || !res?.data?.length) {
-        setIsLive(false);
         setEvent(undefined);
 
         return;
@@ -63,29 +58,9 @@ export function useLiveStreamProps(): LiveStreamProps {
     return () => clearInterval(timer);
   }, [event]);
 
-  useEffect(() => {
-    const rightnow = dayjs().utc();
-
-    setIsLive(
-      countdownMins <= 0 && !!event && rightnow.isBefore(event?.EndDateTime)
-    );
-
-    setShowBanner(
-      !!event &&
-        dayjs().isBetween(
-          dayjs(event.StartShowBannerDateTime),
-          dayjs(event.EndShowBannerDateTime),
-          null,
-          "[)"
-        )
-    );
-  }, [countdownMins, event]);
-
   return {
     countdownMins,
     liveStreamDelayMinutes,
     event,
-    isLive,
-    showBanner,
   };
 }

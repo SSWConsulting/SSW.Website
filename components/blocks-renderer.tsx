@@ -56,7 +56,7 @@ const renderBlock = (prefix, block, i): JSX.Element => {
   const Component = componentMap[block.__typename?.replace(prefix, "")];
 
   if (!Component) {
-    return null;
+    return <></>;
   }
 
   const field = `blocks.${i}`;

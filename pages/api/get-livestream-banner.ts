@@ -2,7 +2,12 @@ import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 
+import { cache } from "../../services/server/cacheService";
 import { getEvents } from "../../services/server/events";
+
+const CACHE_MINS = 60;
+const CACHE_SECS = CACHE_MINS * 60;
+const CACHE_KEY = "banner-events";
 
 export default async function handler(
   req: NextApiRequest,
@@ -18,11 +23,21 @@ export default async function handler(
     &$top=1`;
 
     try {
-      const bannerInfoRes = await getEvents(odataFilter);
-      res.status(200).json(bannerInfoRes);
+      const cachedEvents = cache.get(CACHE_KEY);
+
+      if (cachedEvents == undefined) {
+        const bannerInfoRes = await getEvents(odataFilter);
+        cache.set(CACHE_KEY, bannerInfoRes, CACHE_SECS);
+
+        res.setHeader("Cache-Control", `s-maxage=${CACHE_SECS}`);
+        return res.status(200).json(bannerInfoRes);
+      }
+
+      res.setHeader("Cache-Control", `s-maxage=${CACHE_SECS}`);
+      res.status(200).json(cachedEvents);
     } catch (err) {
       const properties = {
-        Request: "GET /api/get-upcoming-events",
+        Request: "GET /api/get-livestream-banner",
         Status: 500,
         FailedSharePointRequest: false,
       };
@@ -33,11 +48,12 @@ export default async function handler(
         properties.FailedSharePointRequest = true;
       }
 
-      appInsights.defaultClient.trackException({
+      appInsights?.defaultClient?.trackException({
         exception: err,
         properties,
         severity: appInsights.Contracts.SeverityLevel.Error,
       });
+
       res.status(500).json({ message: "SharePoint event request failed" });
     }
   } else {

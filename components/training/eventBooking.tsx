@@ -26,7 +26,7 @@ const classes = {
 
 export const EventBooking: FC<EventBookingType> = ({ data }) => {
   return (
-    <Container padding="md:px-8 px-6">
+    <Container padding="md:px-8 px-6 py-8">
       {
         <EventHeader
           duration={data.duration}
@@ -109,12 +109,13 @@ const EventCard = ({ event, count, index, schema }) => {
 
             <div className=" py-1 pr-0 text-xs ">
               <a
-                className="flex items-center justify-end !no-underline md:justify-start"
+                className="sswUnderline flex items-center justify-end md:justify-start"
                 href="#location"
               >
                 <MdLocationOn className="m-icon" />
-                {EventModel.SSW}
-                <span className="ml-1 capitalize">{event.city}</span>
+                <span className="capitalize">
+                  {EventModel.SSW} {event.city}
+                </span>
               </a>
             </div>
           </div>

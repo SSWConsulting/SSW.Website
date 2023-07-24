@@ -37,7 +37,7 @@ export const PresenterBlock = ({ data }) => {
             >
               <a
                 href={data.otherEvent.eventURL}
-                className="inline-flex cursor-pointer !no-underline hover:!underline"
+                className="sswUnderline inline-flex cursor-pointer"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -77,7 +77,7 @@ const PresenterCard = ({ presenter, schema, index }) => {
       </div>
       <a
         href={presenter?.presenter?.peopleProfileURL}
-        className="mt-4 min-h-16 !no-underline hover:!underline"
+        className="sswUnderline mt-4 min-h-16"
         target="_blank"
         rel="noopener noreferrer"
         data-tina-field={tinaField(

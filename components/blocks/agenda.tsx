@@ -8,12 +8,6 @@ import { verticalListItemSchema } from "../blocks/verticalListItem";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
-const alignmentClasses = {
-  center: "md:!text-center",
-  right: "md:!text-right",
-  left: "md:!text-left",
-};
-
 const textColorClasses = {
   red: "text-sswRed",
   grey: "text-gray-500",
@@ -40,17 +34,16 @@ export const Agenda = ({ data }) => {
       <Container
         padding={"md:px-8 px-2"}
         size={"xsmall"}
-        className={"flex-1 pb-12"}
+        className={"flex-1 pb-8"}
       >
-        <h3
+        <h2
           className={classNames(
-            "my-0 py-5 text-center text-3xl md:text-left",
-            alignmentClasses[data.align],
+            "my-8 text-center",
             textColorClasses[data.textColor]
           )}
           dangerouslySetInnerHTML={{ __html: data.header }}
           data-tina-field={tinaField(data, agendaBlockConstant.header)}
-        ></h3>
+        ></h2>
         <div
           className={classNames(
             "grid grid-cols-1 justify-between px-4 md:px-0",
@@ -92,16 +85,6 @@ export const agendaSchema: Template = {
       type: "string",
       label: "Header",
       name: agendaBlockConstant.header,
-    },
-    {
-      type: "string",
-      label: "Align Header",
-      name: agendaBlockConstant.align,
-      options: [
-        { label: "Center", value: "center" },
-        { label: "Right", value: "right" },
-        { label: "Left", value: "left" },
-      ],
     },
     {
       type: "string",
