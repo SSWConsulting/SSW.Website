@@ -80,6 +80,10 @@
     text-decoration-thickness: 1px;
   }
 
+  .sswUnderline:hover {
+    text-decoration-color: #cc4141;
+  }
+
   .customTable table,
   .customTable th,
   .customTable td {
