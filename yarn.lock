@@ -4655,7 +4655,7 @@ __metadata:
     react-toastify: ^9.1.3
     react-tooltip: ^5.18.0
     source-map-explorer: ^2.5.3
-    ssw.megamenu: ^3.1.3
+    ssw.megamenu: ^3.1.4
     tailwindcss: 3.3.2
     tailwindcss-gradients: ^3.0.0
     tinacms: ^1.5.17
@@ -14753,13 +14753,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ssw.megamenu@npm:^3.1.3":
-  version: 3.1.3
-  resolution: "ssw.megamenu@npm:3.1.3"
+"ssw.megamenu@npm:^3.1.4":
+  version: 3.1.4
+  resolution: "ssw.megamenu@npm:3.1.4"
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 730bab17e4f4b4f09a6e4aea0df9834f3cbea6ab8c0bf0252a83cf7ba23157a7fc548eb1899497c5326eefaeaa40437bfb3730de4722b0e1ddb2ab614f58ffcf
+  checksum: 0d32e1a4b2f66e76b937e8cc45c3e7b153283c7198d5ec2344dbbbba7db2554032c6f4b309e0cdc3ab2186cd5a7beff7eed9388a46d923d6c01f4e7ea5f14b1a
   languageName: node
   linkType: hard
 
