@@ -28,12 +28,12 @@ jobs:
         run: |
           # Diff HEAD with the previous commit
           $diff = git diff --name-only HEAD^ HEAD
-          $newDiff = $diff -replace '"', ''
+          $newDiff = $diff -replace '["'']', ''
           echo $newDiff
 
           # TODO: Next time we need to modify which directories we ignore, break this out to a variable which is easy to configure
 
-          $SourceDiff = $diff | Where-Object { $_ -notmatch '^content/' -and $_ -notmatch '^public/' }
+          $SourceDiff = $newDiff | Where-Object { $_ -notmatch '^content/' -and $_ -notmatch '^public/' }
           echo $SourceDiff
           $cleanedString = $SourceDiff -replace '[‘’“”]', '"'
           $HasDiff = $SourceDiff.Length -gt 0
