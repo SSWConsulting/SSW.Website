@@ -21,6 +21,8 @@ export const presenterSchema: Collection = {
       type: "image",
       name: presenterSchemaConstants.profileImg,
       label: "Profile Image",
+      // @ts-ignore
+      uploadDir: () => "/people",
     },
     {
       type: "object",
