@@ -8,6 +8,7 @@ import { client } from "../../.tina/__generated__/client";
 import { InferGetStaticPropsType } from "next";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Layout } from "../../components/layout";
+import { isrRevalidateTime } from "../../components/util/constants/config";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
 import { getLiveStreamInfo } from "../../services/server/events";
@@ -108,6 +109,6 @@ export const getStaticProps = async () => {
       ...tinaProps,
       liveStreamEvent: events[0],
     },
-    revalidate: 60,
+    revalidate: isrRevalidateTime,
   };
 };

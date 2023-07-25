@@ -5,6 +5,7 @@ import client from "../../.tina/__generated__/client";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
+import { isrRevalidateTime } from "../../components/util/constants/config";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
@@ -60,7 +61,7 @@ export const getStaticProps = async ({ params }) => {
       variables: tinaProps.variables,
       liveStreamEvent: events[0],
     },
-    revalidate: 60,
+    revalidate: isrRevalidateTime,
   };
 };
 

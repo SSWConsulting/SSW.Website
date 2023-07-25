@@ -16,7 +16,6 @@ export function useLiveStreamProps(event: EventInfo): LiveStreamProps {
   const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
 
   useEffect(() => {
-    console.log(event);
     if (!event?.StartDateTime || !event?.EndDateTime) {
       return;
     }

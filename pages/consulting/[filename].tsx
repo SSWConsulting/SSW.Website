@@ -17,6 +17,7 @@ import { Layout } from "../../components/layout";
 import { Marketing } from "../../components/marketing/Marketing";
 import TechnologyCards from "../../components/technologyCard/technologyCards";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
+import { isrRevalidateTime } from "../../components/util/constants/config";
 import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
@@ -259,7 +260,7 @@ export const getStaticProps = async ({ params }) => {
       seo,
       liveStreamEvent: events[0],
     },
-    revalidate: 60,
+    revalidate: isrRevalidateTime,
   };
 };
 

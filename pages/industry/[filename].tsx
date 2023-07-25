@@ -11,6 +11,7 @@ import {
 } from "../../components/blocks/industryRenderer";
 import { Layout } from "../../components/layout";
 import SuccessToast from "../../components/successToast/successToast";
+import { isrRevalidateTime } from "../../components/util/constants/config";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
@@ -102,7 +103,7 @@ export const getStaticProps = async ({ params }) => {
       },
       liveStreamEvent: events[0],
     },
-    revalidate: 60,
+    revalidate: isrRevalidateTime,
   };
 };
 

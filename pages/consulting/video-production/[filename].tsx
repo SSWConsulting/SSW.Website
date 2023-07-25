@@ -19,6 +19,7 @@ import { RecaptchaContext } from "../../../context/RecaptchaContext";
 import { removeExtension } from "../../../services/client/utils.service";
 
 import ReactDOMServer from "react-dom/server";
+import { isrRevalidateTime } from "../../../components/util/constants/config";
 import { getLiveStreamInfo } from "../../../services/server/events";
 
 export default function VideoProductionPage(
@@ -163,7 +164,7 @@ export const getStaticProps = async ({ params }) => {
       seo,
       liveStreamEvent: events[0],
     },
-    revalidate: 60,
+    revalidate: isrRevalidateTime,
   };
 };
 

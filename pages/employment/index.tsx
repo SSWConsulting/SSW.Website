@@ -13,6 +13,7 @@ import {
 } from "../../components/employment/opportunities";
 import { Layout } from "../../components/layout";
 import { Marketing } from "../../components/marketing/Marketing";
+import { isrRevalidateTime } from "../../components/util/constants/config";
 import { jobStatus } from "../../components/util/constants/opportunity";
 import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
@@ -203,6 +204,6 @@ export const getStaticProps = async () => {
       seo,
       liveStreamEvent: events[0],
     },
-    revalidate: 60,
+    revalidate: isrRevalidateTime,
   };
 };

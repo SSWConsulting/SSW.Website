@@ -8,6 +8,7 @@ import { Flag } from "../../components/blocks/flag";
 import { Layout } from "../../components/layout";
 import MicrosoftPanel from "../../components/offices/microsoftPanel";
 import TestimonialPanel from "../../components/offices/testimonialPanel";
+import { isrRevalidateTime } from "../../components/util/constants/config";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
 import layoutData from "../../content/global/index.json";
@@ -153,6 +154,6 @@ export const getStaticProps = async () => {
       seo: tinaProps.data.officeIndex.seo,
       liveStreamEvent: events[0],
     },
-    revalidate: 60,
+    revalidate: isrRevalidateTime,
   };
 };

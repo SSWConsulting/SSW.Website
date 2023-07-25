@@ -10,6 +10,7 @@ import { componentRenderer } from "../../components/blocks/mdxComponentRenderer"
 import { Layout } from "../../components/layout";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { TrainingCarousel } from "../../components/training/trainingHeader";
+import { isrRevalidateTime } from "../../components/util/constants/config";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
@@ -144,7 +145,7 @@ export const getStaticProps = async ({ params }) => {
       },
       liveStreamEvent: events[0],
     },
-    revalidate: 60,
+    revalidate: isrRevalidateTime,
   };
 };
 
