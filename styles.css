@@ -81,7 +81,7 @@
   }
 
   .sswUnderline:hover {
-    text-decoration-color: #cc4141;
+    @apply decoration-sswRed;
   }
 
   .customTable table,
