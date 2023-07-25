@@ -1,10 +1,12 @@
 import dayjs from "dayjs";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { EventInfo } from "../../services/server/events";
 
 export type LiveStreamProps = {
   countdownMins?: number;
   liveStreamDelayMinutes: number;
+  isLive?: boolean;
+  showBanner?: boolean;
 };
 
 const INTERVAL_MINUTES = 1;
@@ -40,8 +42,32 @@ export function useLiveStreamProps(event: EventInfo): LiveStreamProps {
     return () => clearInterval(timer);
   }, [event]);
 
+  const isLive = useMemo(() => {
+    const rightnow = dayjs().utc();
+    return (
+      countdownMins &&
+      countdownMins <= 0 &&
+      !!event &&
+      rightnow.isBefore(event?.EndDateTime)
+    );
+  }, [event, countdownMins]);
+
+  const showBanner = useMemo(() => {
+    return (
+      !!event &&
+      dayjs().isBetween(
+        dayjs(event.StartShowBannerDateTime),
+        dayjs(event.EndShowBannerDateTime),
+        null,
+        "[)"
+      )
+    );
+  }, [event]);
+
   return {
     countdownMins,
     liveStreamDelayMinutes,
+    showBanner,
+    isLive,
   };
 }

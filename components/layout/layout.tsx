@@ -7,7 +7,6 @@ import { Footer } from "./footer";
 import { Header } from "./header";
 import { Theme } from "./theme";
 
-import dayjs from "dayjs";
 import dynamic from "next/dynamic";
 import { Open_Sans } from "next/font/google";
 import layoutData from "../../content/global/index.json";
@@ -61,23 +60,6 @@ export const Layout = ({ children, className = "", event }: LayoutProps) => {
   const liveStreamProps = useLiveStreamProps(event);
   const router = useRouter();
 
-  const rightnow = dayjs().utc();
-
-  const isLive =
-    liveStreamProps?.countdownMins &&
-    liveStreamProps?.countdownMins <= 0 &&
-    !!event &&
-    rightnow.isBefore(event?.EndDateTime);
-
-  const showBanner =
-    !!event &&
-    dayjs().isBetween(
-      dayjs(event.StartShowBannerDateTime),
-      dayjs(event.EndShowBannerDateTime),
-      null,
-      "[)"
-    );
-
   return (
     <>
       <Head>
@@ -127,22 +109,14 @@ export const Layout = ({ children, className = "", event }: LayoutProps) => {
           )}
         >
           <header className="no-print">
-            {(showBanner || router.query.liveBanner) && (
-              <LiveStreamBanner
-                {...liveStreamProps}
-                isLive={isLive}
-                event={event}
-              />
+            {(liveStreamProps?.showBanner || router.query.liveBanner) && (
+              <LiveStreamBanner {...liveStreamProps} event={event} />
             )}
             <div className="mx-auto max-w-9xl px-6 sm:px-8">
               <Header />
               <MenuBar />
-              {(isLive || router.query.liveStream) && (
-                <LiveStreamWidget
-                  {...liveStreamProps}
-                  isLive={isLive}
-                  event={event}
-                />
+              {(liveStreamProps?.isLive || router.query.liveStream) && (
+                <LiveStreamWidget {...liveStreamProps} event={event} />
               )}
             </div>
           </header>
