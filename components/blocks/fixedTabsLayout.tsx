@@ -1,10 +1,10 @@
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { videoEmbedBlockSchema } from "./videoEmbed";
 import Button from "../button/button";
 import { componentRenderer } from "./mdxComponentRenderer";
+import { videoEmbedBlockSchema } from "./videoEmbed";
 
-import { Template } from "tinacms";
 import { useEffect, useState } from "react";
+import type { Template } from "tinacms";
 
 import classNames from "classnames";
 import { bookingButtonSchema } from "../bookingButton/bookingButton";

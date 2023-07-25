@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { componentRenderer } from "./mdxComponentRenderer";
 import { verticalListItemSchema } from "./verticalListItem";

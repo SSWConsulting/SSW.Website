@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 import Button from "./button";
 
 interface UtilityButtonProps {
