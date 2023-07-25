@@ -1,5 +1,6 @@
+import classNames from "classnames";
 import Image from "next/image";
-import { Template, classNames } from "tinacms";
+import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const VerticalListItem = ({ data }) => {
