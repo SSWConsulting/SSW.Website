@@ -66,6 +66,12 @@ export const tableBlockSchema: Template = {
       name: "className",
     },
     {
+      type: "string",
+      label: "Table Headers",
+      name: "headers",
+      list: true,
+    },
+    {
       type: "object",
       label: "Rows",
       name: "rows",
@@ -81,13 +87,20 @@ export const tableBlockSchema: Template = {
               type: "string",
               label: "Value",
               name: "cellValue",
+              required: true,
             },
           ],
-        },
-        {
-          type: "boolean",
-          label: "Is Header",
-          name: "isHeader",
+          ui: {
+            validate: (value, data) => {
+              console.log(value);
+              if ((value?.length || 0) <= (data?.headers?.length || 0)) {
+                return "Must have at least as many cells as headers";
+              }
+            },
+            itemProps: (item) => ({
+              label: item?.cellValue || "New cell (click to enter value)",
+            }),
+          },
         },
       ],
     },
