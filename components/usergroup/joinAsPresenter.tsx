@@ -1,6 +1,6 @@
 import { Template } from "tinacms";
 
-const Avatar = ({ img }: { img?: string }) => {
+const Avatar = ({ img }) => {
   return (
     <div className="w-56">
       <svg viewBox="0 0 220 250" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,23 +18,17 @@ const Avatar = ({ img }: { img?: string }) => {
   );
 };
 
-export const JoinAsPresenter = ({
-  img,
-  link,
-}: {
-  img?: string;
-  link?: string;
-}) => {
+export const JoinAsPresenter = ({ data }) => {
   return (
     <div className="flex flex-row items-center gap-3 font-helvetica">
       <div>
-        <Avatar img={img} />
+        <Avatar img={data?.img} />
       </div>
       <div className="text-center">
         <div className="text-xl leading-7">Join us as a Presenter</div>
         <button
           className="mt-6 h-10 rounded-md bg-sswRed px-4 py-2 text-md leading-3 text-white"
-          onClick={() => window.open(link, "_blank").focus}
+          onClick={() => window.open(data?.link ?? "", "_blank").focus}
         >
           Learn more
         </button>

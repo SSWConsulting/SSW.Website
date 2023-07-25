@@ -10,6 +10,9 @@ import { locationBlockSchema } from "../training/locationBlock";
 import { presenterBlockSchema } from "../training/presenterBlock";
 import { trainingInformationSchema } from "../training/trainingInformation";
 import { trainingLearningOutcomeSchema } from "../training/trainingLearningOutcome";
+import { joinAsPresenterSchema } from "../usergroup/joinAsPresenter";
+import { joinGithubSchema } from "../usergroup/joinGithub";
+import { organizerSchema } from "../usergroup/organizer";
 import { aboutUsBlockSchema } from "./aboutUs";
 import { agendaSchema } from "./agenda";
 import { builtOnAzureBlockSchema } from "./builtOnAzure";
@@ -70,6 +73,9 @@ export const pageBlocks: Template[] = [
   presenterBlockSchema,
   locationBlockSchema,
   agendaSchema,
+  organizerSchema,
+  joinGithubSchema,
+  joinAsPresenterSchema,
 ];
 
 export * from "../bookingButton/bookingButton";
@@ -81,6 +87,9 @@ export * from "../training/eventBooking";
 export * from "../training/presenterBlock";
 export * from "../training/trainingInformation";
 export * from "../training/trainingLearningOutcome";
+export * from "../usergroup/joinAsPresenter";
+export * from "../usergroup/joinGithub";
+export * from "../usergroup/organizer";
 export * from "./aboutUs";
 export * from "./builtOnAzure";
 export * from "./carousel";
