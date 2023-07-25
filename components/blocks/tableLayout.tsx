@@ -12,6 +12,7 @@ const tableStyles = {
 };
 
 export type TableLayoutProps = {
+  headers: string[];
   tableStyle?: string;
   className?: string;
   rows: {
@@ -33,10 +34,8 @@ export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
       <table>
         <thead>
           <tr>
-            {data?.rows ? (
-              data?.rows[0]?.cells?.map((cell, index) => (
-                <th key={index}>{cell?.cellValue}</th>
-              ))
+            {data?.headers ? (
+              data?.headers?.map((cell, index) => <th key={index}>{cell}</th>)
             ) : (
               <></>
             )}
@@ -92,7 +91,6 @@ export const tableBlockSchema: Template = {
           ],
           ui: {
             validate: (value, data) => {
-              console.log(value);
               if ((value?.length || 0) <= (data?.headers?.length || 0)) {
                 return "Must have at least as many cells as headers";
               }
