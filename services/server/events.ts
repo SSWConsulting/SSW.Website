@@ -56,7 +56,7 @@ export const getEvents = async (odataFilter: string): Promise<EventInfo[]> => {
   return events || [];
 };
 
-export const getLiveStreamInfo = async () => {
+export const getLiveStreamInfo = async (): Promise<EventInfo[]> => {
   const isoTime = new Date().toISOString();
 
   const odataFilter = `$filter=fields/Enabled ne false \
@@ -87,7 +87,7 @@ export const getLiveStreamInfo = async () => {
       severity: appInsights.Contracts.SeverityLevel.Error,
     });
 
-    return [];
+    throw err;
   }
 };
 
