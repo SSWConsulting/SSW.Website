@@ -80,6 +80,10 @@
     text-decoration-thickness: 1px;
   }
 
+  .sswUnderline:hover {
+    @apply decoration-sswRed;
+  }
+
   .customTable table,
   .customTable th,
   .customTable td {
