@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Template } from "tinacms";
+import { tinaField } from "tinacms/dist/react";
 
 export const JoinGithub = ({ data }) => {
   return (
@@ -11,8 +12,14 @@ export const JoinGithub = ({ data }) => {
         height={80}
         className="mx-auto"
       />
-      <div className="text-center text-md text-white">{data?.title}</div>
+      <div
+        className="text-center text-md text-white"
+        data-tina-field={tinaField(data, "title")}
+      >
+        {data?.title}
+      </div>
       <button
+        data-tina-field={tinaField(data, "link")}
         onClick={() => window.open(data?.link ?? "", "_blank").focus}
         className="h-12 w-max rounded-md bg-sswRed px-4 py-2 text-md leading-3 text-white"
       >

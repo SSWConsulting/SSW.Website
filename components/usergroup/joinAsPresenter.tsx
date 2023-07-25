@@ -1,4 +1,5 @@
 import { Template } from "tinacms";
+import { tinaField } from "tinacms/dist/react";
 
 const Avatar = ({ img }) => {
   return (
@@ -21,12 +22,13 @@ const Avatar = ({ img }) => {
 export const JoinAsPresenter = ({ data }) => {
   return (
     <div className="flex flex-row items-center gap-3 font-helvetica">
-      <div>
+      <div data-tina-field={tinaField(data, "img")}>
         <Avatar img={data?.img} />
       </div>
       <div className="text-center">
         <div className="text-xl leading-7">Join us as a Presenter</div>
         <button
+          data-tina-field={tinaField(data, "link")}
           className="mt-6 h-10 rounded-md bg-sswRed px-4 py-2 text-md leading-3 text-white"
           onClick={() => window.open(data?.link ?? "", "_blank").focus}
         >
