@@ -11,14 +11,16 @@ const EventsHeader = ({ data }) => {
         })`,
       }}
     >
-      <div className="flex max-w-2xl lg:max-w-3xl">
-        <Image
-          src={data?.imgOverlay}
-          alt={data?.altText}
-          height={400}
-          width={680}
-        />
-      </div>
+      {data?.imgOverlay && (
+        <div className="flex max-w-2xl lg:max-w-3xl">
+          <Image
+            src={data.imgOverlay}
+            alt={data?.altText}
+            height={400}
+            width={680}
+          />
+        </div>
+      )}
     </Section>
   );
 };
