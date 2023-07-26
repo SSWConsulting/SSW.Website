@@ -25,17 +25,16 @@ export type TableLayoutProps = {
 
 export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
   return (
-    <div
-      className={classNames(
-        "not-prose child-table:border-1 descendant-th:border-1 descendant-th:border-gray-75  descendant-th:py-2 descendant-th:pl-2 descendant-td:border-y-1 descendant-td:py-1.5 descendant-td:pl-2",
-        tableStyles[data.tableStyle]
-      )}
-    >
-      <table>
+    <div className={classNames("not-prose", tableStyles[data.tableStyle])}>
+      <table className="border-1">
         <thead>
           <tr>
             {data?.headers ? (
-              data?.headers?.map((cell, index) => <th key={index}>{cell}</th>)
+              data?.headers?.map((cell, index) => (
+                <th className="border-1 border-gray-75 py-2 pl-2" key={index}>
+                  {cell}
+                </th>
+              ))
             ) : (
               <></>
             )}
@@ -46,6 +45,11 @@ export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
             <tr key={index}>
               {row?.cells?.map((cell, index) => (
                 <td
+                  className={classNames(
+                    index === 0 ? "text-left font-bold" : "text-center",
+                    row?.isHeader ? "font-bold" : "",
+                    "border-y-1 py-1.5 pl-2"
+                  )}
                   key={index}
                   dangerouslySetInnerHTML={{ __html: cell?.cellValue || "" }}
                 />
@@ -110,6 +114,11 @@ export const tableBlockSchema: Template = {
           },
         },
       ],
+      ui: {
+        itemProps: (item) => ({
+          label: item?.cells[0]?.cellValue || "New row (click to enter values)",
+        }),
+      },
     },
   ],
 };
