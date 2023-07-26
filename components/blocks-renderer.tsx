@@ -44,10 +44,10 @@ const componentMap = {
   TrainingLearningOutcome,
   PresenterBlock,
   LocationBlock,
-  Agenda: Agenda,
-  Organizer: Organizer,
-  JoinGithub: JoinGithub,
-  JoinAsPresenter: JoinAsPresenter,
+  Agenda,
+  Organizer,
+  JoinGithub,
+  JoinAsPresenter,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
