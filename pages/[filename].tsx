@@ -76,20 +76,6 @@ export default function HomePage(
 }
 
 export const getStaticProps = async ({ params }) => {
-  console.log(
-    "Are the Microsoft variables fixed here?" +
-      process.env.MICROSOFT_OAUTH_TENANT_ID +
-      ", " +
-      process.env.MICROSOFT_OAUTH_CLIENT_ID +
-      ", " +
-      process.env.MICROSOFT_OAUTH_CLIENT_SECRET +
-      ", " +
-      process.env.SHAREPOINT_SITE_ID +
-      ", " +
-      process.env.SHAREPOINT_EVENTS_LIST_ID +
-      ", " +
-      process.env.SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID
-  );
   const events = await getLiveStreamInfo();
 
   const tinaProps = await client.queries.contentQuery({

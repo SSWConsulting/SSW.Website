@@ -97,14 +97,6 @@ jobs:
           $SHAREPOINT_EVENTS_LIST_ID = (az keyvault secret show --name SHAREPOINT-EVENTS-LIST-ID --vault-name ${{ env.KEY_VAULT }} --query value -o tsv)
           $SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID = (az keyvault secret show --name SHAREPOINT-EXTERNAL-PRESENTERS-LIST-ID --vault-name ${{ env.KEY_VAULT }} --query value -o tsv)
 
-          echo $GoogleRecaptchaSiteKey
-          echo $MICROSOFT_OAUTH_TENANT_ID
-          echo $MICROSOFT_OAUTH_CLIENT_ID
-          echo $MICROSOFT_OAUTH_CLIENT_SECRET
-          echo $SHAREPOINT_SITE_ID
-          echo $SHAREPOINT_EVENTS_LIST_ID
-          echo $SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID
-
           echo "GoogleRecaptchaSiteKey=$GoogleRecaptchaSiteKey" >> $env:GITHUB_OUTPUT
           echo "MICROSOFT_OAUTH_TENANT_ID=$MICROFT_OAUTH_TENANT_ID" >> $env:GITHUB_OUTPUT
           echo "MICROSOFT_OAUTH_CLIENT_ID=$MICROFT_OAUTH_CLIENT_ID" >> $env:GITHUB_OUTPUT
