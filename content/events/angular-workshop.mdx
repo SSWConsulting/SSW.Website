@@ -1,0 +1,113 @@
+---
+seo:
+  title: The Angular 2-Day Workshop
+  description: >-
+    Now that you've seen what Angular is capable of, it's time to get into
+    learning-by-doing
+eventHeader:
+  heroBackground: /images/background/polygonBackground.png
+  altText: 'Angular Workshop '
+  imgOverlay: /images/background/Angular-Workshop.png
+footer: ''
+_body:
+  - duration: 2
+    price: 440
+    eventList:
+      - city: Sydney
+        date: 2022-09-27T14:00:00.000Z
+        bookingURL: 'https://www.eventbrite.com.au/e/159774743559'
+      - city: Melbourne
+        date: 2022-09-25T14:00:00.000Z
+        bookingURL: 'https://www.eventbrite.com.au/e/80425553997'
+      - city: Brisbane
+        date: 2022-09-19T14:00:00.000Z
+        bookingURL: 'https://www.eventbrite.com.au/e/159766360485'
+    _template: EventBooking
+  - header: Presenters
+    presenterList:
+      - presenter: content/presenters/jean-thirion.mdx
+      - presenter: content/presenters/matt-wicks.mdx
+      - presenter: content/presenters/luke-cook.mdx
+    otherEvent:
+      title: 1-Day Angular SuperPowers Tour.
+      eventURL: 'https://www.ssw.com.au/events/angular-superpowers-tour'
+    _template: PresenterBlock
+  - prose: true
+    centerAlignedText: true
+    content: >
+      All of our SSW offices are a COVID safe environment and guests will be
+      required to wash their hands on arrival and use hand sanitizer to keep
+      everyone healthy.
+
+
+      ### In this 2-Day Angular Workshop you will be building your own apps from
+      scratch
+
+
+      In this workshop we will build a CRM application with Angular using
+      components, services, dependency injection, forms, Angular modules and
+      lazy loaded routes. We will then cover unit tests and using the redux
+      pattern with the ngrx library.
+
+
+      By the end of this workshop you will have built a working Angular
+      applications you can extend into an enterprise application. You will also
+      walk away with the source code and the course material. So join us to
+      learn to build great enterprise applications with Angular.
+
+
+      <VerticalListItem
+        afterBody={<>
+          * Two days tuition with awesome experienced Angular developers
+          * Full course material which will be updated as Angular is updated
+          * Full source code for the apps you will build for later reference and to be used as best practice
+        </>}
+        content={<>
+          ### What's included in this workshop?
+        </>}
+      />
+    _template: ContentCard
+  - header: Agenda
+    textColor: red
+    agendaItemList:
+      - placeholder: Day 1
+        body: |
+          <VerticalListItem
+            content={<>
+              Day 1
+            </>}
+            icon="/images/icons/university_hat.png"
+            afterBody={<>
+              * Setup and Tooling
+              * Introduction to Angular
+              * Getting Started with the Angular CLI
+              * Components and component communication
+              * Debugging an application
+              * Services and dependency injection
+              * Introduction to RxJs
+              * Angular template and reactive forms
+            </>}
+          />
+      - placeholder: Day 2
+        body: |
+          <VerticalListItem
+            afterBody={<>
+              * Using HTTP Requests to talk to the server
+              * State management
+              * Architecture and Angular modules
+              * Routing
+              * Lazy loading routes
+              * Bundling and deployment
+              * Unit and e2e testing
+              * Introduction to the Redux pattern
+              * Implementing Redux pattern with NgRx
+            </>}
+            content={<>
+              Day 2
+            </>}
+            icon="/images/icons/university_hat.png"
+          />
+    _template: Agenda
+---
+
+
