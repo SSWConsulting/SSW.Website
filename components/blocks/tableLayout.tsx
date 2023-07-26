@@ -13,7 +13,7 @@ const tableStyles = {
 
 export type TableLayoutProps = {
   headers: string[];
-  tableStyle?: string;
+  tableStyle?: "none" | "basicBorder" | "styled" | "benefits";
   className?: string;
   rows: {
     cells: {
@@ -45,7 +45,10 @@ export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
           {data?.rows?.map((row, index) => (
             <tr key={index}>
               {row?.cells?.map((cell, index) => (
-                <td key={index}>{cell?.cellValue}</td>
+                <td
+                  key={index}
+                  dangerouslySetInnerHTML={{ __html: cell?.cellValue || "" }}
+                />
               ))}
             </tr>
           ))}
@@ -60,9 +63,15 @@ export const tableBlockSchema: Template = {
   name: "TableLayout",
   fields: [
     {
+      label: "Table Style",
+      name: "tableStyle",
       type: "string",
-      label: "CSS Class Name",
-      name: "className",
+      options: Object.keys(tableStyles).map((key) => {
+        return {
+          label: key,
+          value: key,
+        };
+      }),
     },
     {
       type: "string",
