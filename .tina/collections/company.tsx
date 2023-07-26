@@ -25,17 +25,8 @@ export const companySchema: Collection = {
     },
     {
       type: "object",
-      list: true,
-      name: "afterBody",
-      label: "After body",
-      ui: {
-        visualSelector: true,
-      },
-      templates: [...Schemas.pageBlocks],
-    },
-    {
-      type: "object",
       label: "History Cards",
+      description: "Cards for the timeline on the History page.",
       name: "historyCards",
       list: true,
       fields: [
