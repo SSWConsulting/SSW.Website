@@ -28,7 +28,7 @@ const ZendeskButton = ({ zendeskKey }) => {
   });
 
   const handleClick = () => {
-    sessionStorage.setItem("ZD-widgetOpen", "true");
+    sessionStorage.setItem(ZDwidgetOpen, "true");
     setOpen(true);
     start();
   };
@@ -40,6 +40,7 @@ const ZendeskButton = ({ zendeskKey }) => {
     const widgetOpen = sessionStorage.getItem(ZDwidgetOpen);
     if (widgetOpen === "true" && !loaded) {
       start();
+      setOpen(true);
     }
   }, []);
 
