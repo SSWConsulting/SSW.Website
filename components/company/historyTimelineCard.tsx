@@ -19,14 +19,14 @@ const HistoryTimelineCard: FC<HistoryTimelineCardProps> = ({
   const flagUrl = sswCountries.find((f) => f.label === location)?.flagUrl;
 
   return (
-    <div className="flex gap-3 even:flex-row-reverse">
+    // &:nth-child(even/odd) selects every even/odd card in the timeline, >*:nth-child(n) then selects the nth child of the card (either the body or the year)
+    // eslint-disable-next-line tailwindcss/no-arbitrary-value
+    <div className="flex even:flex-row-reverse [&:nth-child(even)>*:nth-child(2)]:rounded-e [&:nth-child(even)>*:nth-child(3)]:rounded-s [&:nth-child(odd)>*:nth-child(2)]:rounded-s [&:nth-child(odd)>*:nth-child(3)]:rounded-e">
       <div className="flex-1 p-6"></div>
-      <div className="inline-flex h-full flex-initial flex-col rounded-2xl bg-sswRed px-12 text-3xl text-white shadow">
-        <div className="flex-1"></div>
+      <div className="flex h-full flex-initial flex-col justify-center bg-sswRed px-12 text-3xl text-white">
         <p className="font-bold">{year}</p>
-        <div className="flex-1"></div>
       </div>
-      <div className="flex-1 rounded-2xl bg-gray-100 p-6 shadow">
+      <div className="flex-1 bg-gray-100 p-6">
         <h5 className="mb-1 font-bold">
           {title}
           {location ? (
