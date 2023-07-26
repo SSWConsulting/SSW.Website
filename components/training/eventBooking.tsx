@@ -184,7 +184,7 @@ const EventHeader = ({
           <div className=" text-xs uppercase text-gray-500">
             {EventModel.DURATION}
           </div>
-          {duration} {EventModel.DAY}
+          {duration} {EventModel.DAY + (duration > 1 ? "s" : "")}
         </div>
         <div className="col-span-1 h-5/6 items-center self-center border-r-1 border-gray-300"></div>
         <div
