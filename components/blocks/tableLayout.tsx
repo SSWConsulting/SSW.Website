@@ -109,6 +109,7 @@ export const tableBlockSchema: Template = {
               label: "Value",
               name: "cellValue",
               required: true,
+              // @ts-expect-error this is a bug in the types
               component: "textarea",
             },
           ],
