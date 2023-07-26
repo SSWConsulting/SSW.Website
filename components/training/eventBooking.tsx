@@ -43,6 +43,7 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
             event={event}
             count={data.eventList.length}
             index={index}
+            duration={data?.duration}
             schema={data}
           />
         ))}
@@ -55,7 +56,7 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
   );
 };
 
-const EventCard = ({ event, count, index, schema }) => {
+const EventCard = ({ event, count, index, duration, schema }) => {
   return (
     <div
       className={classNames(
@@ -86,7 +87,7 @@ const EventCard = ({ event, count, index, schema }) => {
                 )}
               >
                 {" "}
-                {event.date && dayjs(event.date).format("Do (ddd) MMMM YYYY")}
+                <EventDates duration={duration ?? 0} date={event.date} />
               </div>
               <div className=" py-0.5 text-xs uppercase text-gray-500">
                 {EventModel.TIMINGS}
@@ -165,6 +166,24 @@ const addTopBorderForSecondRow = (index) => {
 
 const addRightBorder = (index) => {
   return (index + 1) % 3 != 0 ? "md:border-r-8" : "";
+};
+
+const EventDates = ({ duration, date }) => {
+  const startDate = dayjs(date);
+  const endDate = startDate.add(duration, "day");
+
+  const eventDateRange = () => (
+    <>
+      {startDate.format("Do")} - {endDate.format("Do MMMM YYYY")}
+      <div>
+        ({startDate.format("ddd")} - {endDate.format("ddd")})
+      </div>
+    </>
+  );
+
+  const eventDate = () => startDate.format("Do (ddd) MMMM YYYY");
+
+  return <>{duration === 1 ? eventDate() : eventDateRange()}</>;
 };
 
 const EventHeader = ({
@@ -269,7 +288,7 @@ export const eventBookingSchema: Template = {
         },
         {
           type: "datetime",
-          label: "Date",
+          label: "Start Date",
           name: eventBookingBlock.eventList.date,
           ui: {
             timeFormat: "MM:DD:YY",
