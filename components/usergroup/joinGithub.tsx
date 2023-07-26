@@ -4,7 +4,7 @@ import { tinaField } from "tinacms/dist/react";
 
 export const JoinGithub = ({ data }) => {
   return (
-    <div className="flex flex-col items-center justify-center gap-y-3 rounded-xl bg-gray-900 bg-arcBackground bg-right-bottom bg-no-repeat px-11 py-5 text-center font-helvetica">
+    <div className="flex flex-col items-center justify-center gap-y-3 rounded-xl bg-gray-900 bg-arcBackground bg-bottom bg-no-repeat px-11 py-5 text-center font-helvetica">
       <Image
         src={"/images/badges/Github-Badge.svg"}
         alt="github image"
