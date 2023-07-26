@@ -36,7 +36,16 @@ export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
         <thead>
           <tr>
             {data?.headers ? (
-              data?.headers?.map((cell, index) => <th key={index}>{cell}</th>)
+              data?.headers?.map((cell, index) => (
+                <th
+                  className={
+                    index === 0 && data?.firstColBold ? "text-left" : ""
+                  }
+                  key={index}
+                >
+                  {cell}
+                </th>
+              ))
             ) : (
               <></>
             )}
@@ -82,7 +91,7 @@ export const tableBlockSchema: Template = {
       }),
     },
     {
-      label: "First column bolded",
+      label: "First column bolded + left aligned",
       name: "firstColBold",
       type: "boolean",
       required: false,
