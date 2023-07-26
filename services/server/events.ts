@@ -30,14 +30,14 @@ export const getToken = async () => {
 export const getEvents = async (odataFilter: string): Promise<EventInfo[]> => {
   if (
     !process.env.MICROSOFT_OAUTH_TENANT_ID ||
-    !process.env.MICROSOFT_OAUTH_TENANT_ID ||
+    !process.env.MICROSOFT_OAUTH_CLIENT_ID ||
     !process.env.MICROSOFT_OAUTH_CLIENT_SECRET
   ) {
     console.warn(
       "⚠️ You are missing the SharePoint environment variables. Please see the .env.example file for the required variables." +
         !!process.env.MICROSOFT_OAUTH_TENANT_ID +
         ", " +
-        !!process.env.MICROSOFT_OAUTH_TENANT_ID +
+        !!process.env.MICROSOFT_OAUTH_CLIENT_ID +
         ", " +
         !!process.env.MICROSOFT_OAUTH_CLIENT_SECRET
     );

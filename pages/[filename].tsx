@@ -80,7 +80,7 @@ export const getStaticProps = async ({ params }) => {
     "Are the Microsoft variables fixed here?" +
       process.env.MICROSOFT_OAUTH_TENANT_ID +
       ", " +
-      process.env.MICROSOFT_OAUTH_TENANT_ID +
+      process.env.MICROSOFT_OAUTH_CLIENT_ID +
       ", " +
       process.env.MICROSOFT_OAUTH_CLIENT_SECRET +
       ", " +
