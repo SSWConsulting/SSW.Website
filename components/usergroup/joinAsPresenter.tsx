@@ -1,20 +1,35 @@
+import Image from "next/image";
 import { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 
 const Avatar = ({ img }) => {
   return (
-    <div className="w-56">
-      <svg viewBox="0 0 220 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#E9E9E9" d="M220,250 v-105 A110,105 0 1,0 110,250 Z" />
+    <div className="relative h-62 w-56">
+      <svg
+        viewBox="0 0 224 248"
+        xmlns="http://www.w3.org/2000/svg"
+        width="100%"
+        height="100%"
+      >
+        <path fill="#E9E9E9" d="M224,248 v-106 A112,106 0 1,0 112,248 Z" />
         <defs>
           <clipPath id="shape">
-            <path d="M220,250 V0 H0 V145 A110,105 0 0,0 110,250 Z" />
+            <path d="M224,248 V0 H0 V142 A112,106 0 0,0 112,248 Z" />
           </clipPath>
         </defs>
-        {img ? (
-          <image href={img} width={220} clipPath="url(#shape)"></image>
-        ) : null}
       </svg>
+
+      {img && (
+        <Image
+          alt="Picture of Presenter"
+          src={img}
+          className="object-contain"
+          fill={true}
+          style={{
+            clipPath: "url(#shape)",
+          }}
+        />
+      )}
     </div>
   );
 };
