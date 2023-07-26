@@ -124,6 +124,12 @@ jobs:
           GOOGLE_RECAPTCHA_SITE_KEY: ${{ steps.KeyVaultSecrets.outputs.GoogleRecaptchaSiteKey }}
           KEY_VAULT: ${{ env.KEY_VAULT }}
           NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING: ${{ steps.AppInsight.outputs.AppInsightConnectionString }}
+          MICROSOFT_OAUTH_TENANT_ID: ${{ steps.AppInsight.outputs.MICROSOFT_OAUTH_TENANT_ID }}
+          MICROSOFT_OAUTH_CLIENT_ID: ${{ steps.AppInsight.outputs.MICROSOFT_OAUTH_CLIENT_ID }}
+          MICROSOFT_OAUTH_CLIENT_SECRET: ${{ steps.AppInsight.outputs.MICROSOFT_OAUTH_CLIENT_SECRET }}
+          SHAREPOINT_SITE_ID: ${{ steps.AppInsight.outputs.SHAREPOINT_SITE_ID }}
+          SHAREPOINT_EVENTS_LIST_ID: ${{ steps.AppInsight.outputs.SHAREPOINT_EVENTS_LIST_ID }}
+          SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID: ${{ steps.AppInsight.outputs.SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
           SITE_URL: https://www.ssw.com.au
 
