@@ -150,3 +150,10 @@ query industryContentQuery($relativePath: String!) {
     ...IndustryParts
   }
 }
+
+query eventsContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  events(relativePath: $relativePath) {
+    ...EventsParts
+  }
+}

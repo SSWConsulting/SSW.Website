@@ -9,16 +9,14 @@ import axios from "axios";
 import { EventInfo, LiveStreamBannerInfo } from "../../services/server/events";
 
 export const UpcomingEvents = ({ data }) => {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState<EventInfo[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const datetime = dayjs().startOf("day").utc();
-
       setLoading(true);
       const res = await axios.get<EventInfo[]>("/api/get-upcoming-events", {
-        params: { datetime: datetime.toISOString(), top: data.numberOfEvents },
+        params: { top: data.numberOfEvents },
       });
       setLoading(false);
 
@@ -132,7 +130,7 @@ export const upcomingEventsBlockSchema: Template = {
 };
 
 const formatBannerDate = (bannerInfo: LiveStreamBannerInfo) => {
-  if (!bannerInfo.StartDateTime || !bannerInfo.EndDateTime) return null;
+  if (!bannerInfo.StartDateTime || !bannerInfo.EndDateTime) return "";
 
   // NOTE: Omit ddd for brevity if it's next year's event
   const dateformat =

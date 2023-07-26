@@ -10,12 +10,12 @@ const NumberOfLocationInRow = 4;
 export const LocationBlock = ({ data }) => {
   return (
     <Container padding="md:px-8 px-6" size="custom" id="location">
-      <h4
-        className="py-2 text-sswRed"
+      <h2
+        className="my-6 py-2 text-center text-sswRed"
         data-tina-field={tinaField(data, locationBlockConstant.title)}
       >
         {data.title}
-      </h4>
+      </h2>
       <div className="mb-2 grid grid-cols-12">
         {data.locationList?.map((location, index) => (
           <LocationCard
@@ -26,10 +26,10 @@ export const LocationBlock = ({ data }) => {
           />
         ))}
       </div>{" "}
-      <div className="py-1 text-center uppercase">
+      <div className="py-4 text-center uppercase">
         <a
           href={!data.chapelWebsite?.URL ? "" : data.chapelWebsite.URL}
-          className="inline-flex cursor-pointer items-center !no-underline hover:!underline"
+          className="sswUnderline inline-flex cursor-pointer items-center"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -102,7 +102,7 @@ const LocationCard = ({ location, index, schema }) => {
         <div className="py-1 text-xs">
           <a
             href={!location?.directionURL ? "" : location.directionURL}
-            className="inline-flex cursor-pointer items-center !no-underline hover:!underline"
+            className="sswUnderline inline-flex cursor-pointer items-center"
             target="_blank"
             rel="noopener noreferrer"
             data-tina-field={tinaField(

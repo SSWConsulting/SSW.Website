@@ -73,6 +73,17 @@
     @apply mr-2;
   }
 
+  .sswUnderline {
+    text-decoration: underline;
+    text-decoration-color: #aaa;
+    text-decoration-style: solid;
+    text-decoration-thickness: 1px;
+  }
+
+  .sswUnderline:hover {
+    @apply decoration-sswRed;
+  }
+
   .customTable table,
   .customTable th,
   .customTable td {

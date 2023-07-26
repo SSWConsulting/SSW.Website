@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { componentRenderer } from "./mdxComponentRenderer";
@@ -17,7 +18,14 @@ export const ContentCard = ({ data }) => {
 
   return (
     <>
-      <div className="prose max-w-full grow prose-p:text-justify">
+      <div
+        className={classNames(
+          "prose max-w-full grow",
+          data.centerAlignedText
+            ? "prose-p:text-center"
+            : "prose-p:text-justify"
+        )}
+      >
         {component}
       </div>
     </>
@@ -39,6 +47,11 @@ export const contentCardBlockSchema: Template = {
       type: "boolean",
       label: "Prose",
       name: "prose",
+    },
+    {
+      type: "boolean",
+      label: "Centered Aligned Text",
+      name: "centerAlignedText",
     },
     {
       type: "rich-text",

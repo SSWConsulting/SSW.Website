@@ -1,23 +1,10 @@
-import React, { useEffect, useState } from "react";
-import type { Template } from "tinacms";
 import Image from "next/image";
-import client from "../../.tina/__generated__/client";
+import type { Template } from "tinacms";
+import layoutData from "../../content/global/index.json";
+
+const clientsData = layoutData.clients.clientsList;
 
 export const ClientLogos = () => {
-  const [clientsData, setclientsData] = useState([]);
-
-  useEffect(() => {
-    loadClientsData();
-  }, []);
-
-  const loadClientsData = () => {
-    client.queries.globalConnection().then((data) => {
-      const clientsData =
-        data.data.globalConnection.edges[0].node.clients.clientsList;
-      setclientsData(clientsData);
-    });
-  };
-
   return (
     <div className="flex flex-wrap justify-center gap-6">
       {clientsData.length &&
@@ -25,7 +12,7 @@ export const ClientLogos = () => {
           <Image
             key={client.clientName}
             src={client.imageUrl}
-            alt={client}
+            alt={client.clientName + " logo"}
             height={50}
             width={200}
             className="my-4 max-w-full rounded-lg"
