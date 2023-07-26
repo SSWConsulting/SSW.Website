@@ -13,6 +13,7 @@ const tableStyles = {
 
 export type TableLayoutProps = {
   headers: string[];
+  firstColBold?: boolean;
   tableStyle?: "none" | "basicBorder" | "styled" | "benefits";
   className?: string;
   rows: {
@@ -47,7 +48,9 @@ export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
               {row?.cells?.map((cell, index) => (
                 <td
                   className={classNames(
-                    index === 0 ? "text-left font-bold" : "text-center",
+                    index === 0 && data?.firstColBold
+                      ? "text-left font-bold"
+                      : "text-center",
                     row?.isHeader ? "font-bold" : ""
                   )}
                   key={index}
@@ -78,6 +81,12 @@ export const tableBlockSchema: Template = {
       }),
     },
     {
+      label: "First column bolded",
+      name: "firstColBold",
+      type: "boolean",
+      required: false,
+    },
+    {
       type: "string",
       label: "Table Headers",
       name: "headers",
@@ -100,6 +109,7 @@ export const tableBlockSchema: Template = {
               label: "Value",
               name: "cellValue",
               required: true,
+              component: "textarea",
             },
           ],
           ui: {
