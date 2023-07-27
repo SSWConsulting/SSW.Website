@@ -169,6 +169,7 @@ const addRightBorder = (index) => {
 };
 
 const EventDates = ({ duration, date }) => {
+  // this will return date fragment if the duration is equal to 1 => (28TH (WED) AUGUST 2023) or (this 28TH - 30TH SEPTEMBER 2022 \n (WED - FRI))
   const startDate = dayjs(date);
   const endDate = startDate.add(duration - 1, "day"); // subtracting a day because it includes the start date as well
 
