@@ -170,7 +170,7 @@ const addRightBorder = (index) => {
 
 const EventDates = ({ duration, date }) => {
   const startDate = dayjs(date);
-  const endDate = startDate.add(duration, "day");
+  const endDate = startDate.add(duration - 1, "day"); // subtracting a day because it includes the start date as well
 
   const eventDateRange = () => (
     <>
