@@ -1,6 +1,6 @@
 export type EventBookingType = {
   data: {
-    duration?: number | null;
+    eventDurationInDays?: number | null;
     price?: number | null;
     discountPrice?: number | null;
     discountNote?: string | null;
