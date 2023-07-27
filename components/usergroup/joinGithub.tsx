@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 
@@ -18,13 +19,14 @@ export const JoinGithub = ({ data }) => {
       >
         {data?.title}
       </div>
-      <button
+      <Link
+        href={data?.link ?? "/"}
+        target="_blank"
         data-tina-field={tinaField(data, "link")}
-        onClick={() => window.open(data?.link ?? "", "_blank").focus}
-        className="h-12 w-max rounded-md bg-sswRed px-4 py-2 text-md leading-3 text-white"
+        className="unstyled h-12 w-max rounded-md bg-sswRed px-4 py-2 text-md text-white"
       >
         Join the crowd
-      </button>
+      </Link>
     </div>
   );
 };
