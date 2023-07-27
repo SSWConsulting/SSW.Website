@@ -29,7 +29,7 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
     <Container padding="md:px-8 px-6 py-8">
       {
         <EventHeader
-          duration={data.duration}
+          eventDurationInDays={data.eventDurationInDays}
           price={data.price}
           discountPrice={data.discountPrice}
           discountNote={data.discountNote}
@@ -43,7 +43,7 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
             event={event}
             count={data.eventList.length}
             index={index}
-            duration={data?.duration}
+            eventDurationInDays={data?.eventDurationInDays}
             schema={data}
           />
         ))}
@@ -56,7 +56,7 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
   );
 };
 
-const EventCard = ({ event, count, index, duration, schema }) => {
+const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
   return (
     <div
       className={classNames(
@@ -87,7 +87,10 @@ const EventCard = ({ event, count, index, duration, schema }) => {
                 )}
               >
                 {" "}
-                <EventDates duration={duration ?? 0} date={event.date} />
+                <EventDates
+                  eventDurationInDays={eventDurationInDays ?? 0}
+                  date={event.date}
+                />
               </div>
               <div className=" py-0.5 text-xs uppercase text-gray-500">
                 {EventModel.TIMINGS}
@@ -168,27 +171,29 @@ const addRightBorder = (index) => {
   return (index + 1) % 3 != 0 ? "md:border-r-8" : "";
 };
 
-const EventDates = ({ duration, date }) => {
-  // this will return date fragment if the duration is equal to 1 => (28TH (WED) AUGUST 2023) or (this 28TH - 30TH SEPTEMBER 2022 \n (WED - FRI))
+const EventDates = ({ eventDurationInDays, date }) => {
+  // this will return date fragment if the eventDurationInDays is equal to 1 => (28TH (WED) AUGUST 2023) or (this 28TH - 30TH SEPTEMBER 2022 \n (WED - FRI))
   const startDate = dayjs(date);
-  const endDate = startDate.add(duration - 1, "day"); // subtracting a day because it includes the start date as well
+  const endDate = startDate.add(eventDurationInDays - 1, "day"); // subtracting a day because it includes the start date as well
 
-  const eventDateRange = () => (
+  return (
     <>
-      {startDate.format("Do")} - {endDate.format("Do MMMM YYYY")}
-      <div>
-        ({startDate.format("ddd")} - {endDate.format("ddd")})
-      </div>
+      {eventDurationInDays === 1 ? (
+        startDate.format("Do (ddd) MMMM YYYY")
+      ) : (
+        <>
+          {startDate.format("Do")} - {endDate.format("Do MMMM YYYY")}
+          <div>
+            ({startDate.format("ddd")} - {endDate.format("ddd")})
+          </div>
+        </>
+      )}
     </>
   );
-
-  const eventDate = () => startDate.format("Do (ddd) MMMM YYYY");
-
-  return <>{duration === 1 ? eventDate() : eventDateRange()}</>;
 };
 
 const EventHeader = ({
-  duration,
+  eventDurationInDays,
   price,
   discountPrice,
   discountNote,
@@ -198,13 +203,17 @@ const EventHeader = ({
     <div className="mt-2 border-t-2 border-gray-400 bg-gray-100">
       <div className="mb-2 grid grid-cols-12">
         <div
-          data-tina-field={tinaField(schema, eventBookingBlock.duration)}
+          data-tina-field={tinaField(
+            schema,
+            eventBookingBlock.eventDurationInDays
+          )}
           className="col-span-4 px-3  py-2 text-lg sm:col-span-2"
         >
           <div className=" text-xs uppercase text-gray-500">
             {EventModel.DURATION}
           </div>
-          {duration} {EventModel.DAY + (duration > 1 ? "s" : "")}
+          {eventDurationInDays}{" "}
+          {EventModel.DAY + (eventDurationInDays > 1 ? "s" : "")}
         </div>
         <div className="col-span-1 h-5/6 items-center self-center border-r-1 border-gray-300"></div>
         <div
@@ -234,7 +243,7 @@ const EventHeader = ({
 
 export const eventBookingBlock = {
   eventBooking: "EventBooking",
-  duration: "duration",
+  eventDurationInDays: "eventDurationInDays",
   price: "price",
   discountPrice: "discountPrice",
   discountNote: "discountNote",
@@ -253,8 +262,8 @@ export const eventBookingSchema: Template = {
   fields: [
     {
       type: "number",
-      label: "Duration",
-      name: eventBookingBlock.duration,
+      label: "Duration (In Days)",
+      name: eventBookingBlock.eventDurationInDays,
     },
     {
       type: "number",
