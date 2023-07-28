@@ -414,6 +414,7 @@ module.exports = {
         "video-mask": "url('/images/video-mask.png')",
         polygons: "url('/images/background/polygonBackground.png')",
         subscribeBackground: "url('/images/thumbs/subscribeBackground.png')",
+        arcBackground: "url('/images/background/arcBackground.png')",
       },
     },
     linearGradientColors: {
