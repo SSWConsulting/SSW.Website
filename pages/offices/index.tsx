@@ -141,9 +141,11 @@ export const getStaticProps = async () => {
   const testimonial =
     testimonials[Math.floor(Math.random() * testimonials.length)].Testimonial;
 
-  const canonical = "/offices";
-  if (tinaProps.data.officeIndex.seo) {
-    tinaProps.data.officeIndex.seo.canonical = canonical;
+  if (
+    tinaProps.data.officeIndex.seo &&
+    !tinaProps.data.officeIndex.seo.canonical
+  ) {
+    tinaProps.data.officeIndex.seo.canonical = "/offices";
   }
 
   return {

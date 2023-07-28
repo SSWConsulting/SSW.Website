@@ -181,10 +181,9 @@ export const getStaticProps = async () => {
     relativePath: "index.mdx",
   });
 
-  const canonical = `${tinaProps.data.global.header.url}employment`;
   const seo = tinaProps.data.employment.seo;
-  if (seo) {
-    seo.canonical = canonical;
+  if (seo && !seo.canonical) {
+    seo.canonical = `${tinaProps.data.global.header.url}employment`;
   }
 
   const marketingSection = await client.queries.marketing({

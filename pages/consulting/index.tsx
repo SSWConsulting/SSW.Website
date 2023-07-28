@@ -49,14 +49,12 @@ export default function ConsultingIndex(
   const [selectedTag, setSelectedTag] = useState(getSelectedTagFromQuery());
   const [categories, setCategories] = useState([]);
   const [tags, setTags] = useState([]);
-  const [seo, setSeo] = useState(null);
 
   useEffect(() => {
     // extract the data we need from the tina result
     const processedData = processData(data);
     setCategories(processedData.categories);
     setTags(processedData.tags);
-    setSeo(processedData.seo);
   }, [data]);
 
   useEffect(() => {
@@ -97,7 +95,7 @@ export default function ConsultingIndex(
 
   return (
     <Layout>
-      <SEO seo={{ ...seo, canonical: "/consulting" }} />
+      <SEO seo={{ ...props.seo, canonical: "/consulting" }} />
       <Container className="flex-1 pt-2">
         <Breadcrumbs path={"/consulting"} suffix="" title={"Services"} />
         <h1 className="pt-0 text-3xl">Consulting Services</h1>
@@ -293,11 +291,17 @@ const processData = (data) => {
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.consultingIndexConnection();
 
+  const seo = tinaProps.data.consultingIndexConnection.edges[0].node.seo;
+  if (seo && !seo.canonical) {
+    seo.canonical = "/consulting";
+  }
+
   return {
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
+      seo,
     },
   };
 };

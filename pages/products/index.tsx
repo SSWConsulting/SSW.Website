@@ -22,18 +22,16 @@ export default function ProductsIndex(
   });
 
   const [productsList, setProductsList] = useState([]);
-  const [seo, setSeo] = useState(null);
 
   useEffect(() => {
     // extract the data we need from the tina result
     const processedData = processData(data);
     setProductsList(processedData.productsList);
-    setSeo(processedData.seo);
   }, [data]);
 
   return (
     <Layout>
-      <SEO seo={seo} />
+      <SEO seo={props.seo} />
       <Container className="mb-10 flex-1 pt-2">
         <Breadcrumbs path={"/products"} suffix="" title={"Products"} />
         <h1 className="mb-0 py-0 text-3xl">SSW Products</h1>
@@ -100,15 +98,15 @@ const processData = (data) => {
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.productsIndexConnection();
 
-  const canonical = "/products";
   const seo = tinaProps.data.productsIndexConnection.edges[0].node.seo;
-  if (seo) {
-    seo.canonical = canonical;
+  if (seo && !seo.canonical) {
+    seo.canonical = "/products";
   }
 
   return {
     props: {
       ...tinaProps,
+      seo,
     },
   };
 };
