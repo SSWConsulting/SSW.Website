@@ -98,6 +98,7 @@ query employmentPageQuery($relativePath: String!) {
 }
 
 query officeIndexQuery($relativePath: String!) {
+  ...LayoutQueryFragment
   officeIndex(relativePath: $relativePath) {
     seo {
       title

@@ -145,7 +145,7 @@ export const getStaticProps = async () => {
     tinaProps.data.officeIndex.seo &&
     !tinaProps.data.officeIndex.seo.canonical
   ) {
-    tinaProps.data.officeIndex.seo.canonical = "/offices";
+    tinaProps.data.officeIndex.seo.canonical = `${tinaProps.data.global.header.url}/offices`;
   }
 
   return {

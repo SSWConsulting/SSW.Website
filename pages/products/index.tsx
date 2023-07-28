@@ -98,9 +98,13 @@ const processData = (data) => {
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.productsIndexConnection();
 
+  const globalData = await client.queries.global({
+    relativePath: "index.json",
+  });
+
   const seo = tinaProps.data.productsIndexConnection.edges[0].node.seo;
   if (seo && !seo.canonical) {
-    seo.canonical = "/products";
+    seo.canonical = `${globalData.data.global.header.url}/products`;
   }
 
   return {

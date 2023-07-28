@@ -291,9 +291,13 @@ const processData = (data) => {
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.consultingIndexConnection();
 
+  const globalData = await client.queries.global({
+    relativePath: "index.json",
+  });
+
   const seo = tinaProps.data.consultingIndexConnection.edges[0].node.seo;
   if (seo && !seo.canonical) {
-    seo.canonical = "/consulting";
+    seo.canonical = `${globalData.data.global.header.url}/consulting`;
   }
 
   return {
