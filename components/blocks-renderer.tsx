@@ -16,6 +16,9 @@ import { LocationBlock } from "./training/locationBlock";
 import { PresenterBlock } from "./training/presenterBlock";
 import { TrainingInformation } from "./training/trainingInformation";
 import { TrainingLearningOutcome } from "./training/trainingLearningOutcome";
+import { JoinAsPresenter } from "./usergroup/joinAsPresenter";
+import { JoinGithub } from "./usergroup/joinGithub";
+import { Organizer } from "./usergroup/organizer";
 
 const Carousel = dynamic(
   () => import("./blocks/carousel").then((mod) => mod.Carousel),
@@ -41,7 +44,10 @@ const componentMap = {
   TrainingLearningOutcome,
   PresenterBlock,
   LocationBlock,
-  Agenda: Agenda,
+  Agenda,
+  Organizer,
+  JoinGithub,
+  JoinAsPresenter,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
