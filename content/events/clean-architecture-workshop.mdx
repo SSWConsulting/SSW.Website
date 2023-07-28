@@ -42,23 +42,18 @@ _body:
   - header: Agenda
     textColor: red
     agendaItemList:
-      - placeholder: Clean Testing
+      - placeholder: Clean Architecture Basics
         body: |
           <VerticalListItem
-            afterBody={<>
-              * Introduction to Testing in the SSW.CleanArchitecture template
-              * Unit Tests
-              * xUnit
-              * FluentAssertions
-              * NSubstitute
-              * Integration Tests
-              * Easily create Databases using Test Containers
-              * Architecture Tests
-            </>}
             content={<>
-              Clean Testing
+              Clean Architecture Basics
             </>}
-            icon="1"
+            afterBody={<>
+              * See the pain of a badly architected solution
+              * Hands-on Refactor to Clean Architecture
+              * Learn the core principles of Clean Architecture
+            </>}
+            icon="/images/icons/1-icon.png"
           />
       - placeholder: Clean Architecture Applied
         body: |
@@ -66,7 +61,7 @@ _body:
             content={<>
               Clean Architecture Applied
             </>}
-            icon="2"
+            icon="/images/icons/2-icon.png"
             afterBody={<>
               * Introduction to the SSW.Clean Architecture Template
               * Build a .NET Web API using:
@@ -87,18 +82,23 @@ _body:
               * Add a GraphQL Presentation Layer
             </>}
           />
-      - placeholder: Clean Architecture Basics
+      - placeholder: Clean Testing
         body: |
           <VerticalListItem
-            content={<>
-              Clean Architecture Basics
-            </>}
             afterBody={<>
-              * See the pain of a badly architected solution
-              * Hands-on Refactor to Clean Architecture
-              * Learn the core principles of Clean Architecture
+              * Introduction to Testing in the SSW.CleanArchitecture template
+              * Unit Tests
+              * xUnit
+              * FluentAssertions
+              * NSubstitute
+              * Integration Tests
+              * Easily create Databases using Test Containers
+              * Architecture Tests
             </>}
-            icon="3"
+            content={<>
+              Clean Testing
+            </>}
+            icon="/images/icons/3-icon.png"
           />
     _template: Agenda
   - title: Location Venues
@@ -112,6 +112,7 @@ _body:
       URL: 'http://sswchapel.com.au/'
     _template: LocationBlock
 ---
+
 
 
 
