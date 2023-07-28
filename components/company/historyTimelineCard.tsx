@@ -29,7 +29,7 @@ const HistoryTimelineCard: FC<HistoryTimelineCardProps> = ({
       <div className="flex-1 bg-gray-100 p-6">
         <h5 className="mb-1 font-bold">
           {title}
-          {location ? (
+          {location && (
             <span className="mx-2 inline-block">
               <Image
                 src={flagUrl}
@@ -38,8 +38,6 @@ const HistoryTimelineCard: FC<HistoryTimelineCardProps> = ({
                 width={24}
               />
             </span>
-          ) : (
-            <></>
           )}
         </h5>
         <TinaMarkdown content={description} />
