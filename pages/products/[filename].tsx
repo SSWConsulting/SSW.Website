@@ -50,6 +50,11 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.mdx`,
   });
 
+  const canonical = `${tinaProps.data.global.header.url}products/${params.filename}`;
+  if (tinaProps.data.products.seo) {
+    tinaProps.data.products.seo.canonical = canonical;
+  }
+
   return {
     props: {
       data: tinaProps.data,

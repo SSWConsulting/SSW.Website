@@ -9,8 +9,8 @@ import { Layout } from "../../components/layout";
 import MicrosoftPanel from "../../components/offices/microsoftPanel";
 import TestimonialPanel from "../../components/offices/testimonialPanel";
 import { Container } from "../../components/util/container";
-import layoutData from "../../content/global/index.json";
 import { SEO } from "../../components/util/seo";
+import layoutData from "../../content/global/index.json";
 
 export default function OfficeIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -140,6 +140,11 @@ export const getStaticProps = async () => {
     testimonialResult.data.testimonialsConnection.Testimonials;
   const testimonial =
     testimonials[Math.floor(Math.random() * testimonials.length)].Testimonial;
+
+  const canonical = "/offices";
+  if (tinaProps.data.officeIndex.seo) {
+    tinaProps.data.officeIndex.seo.canonical = canonical;
+  }
 
   return {
     props: {

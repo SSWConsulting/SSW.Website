@@ -196,6 +196,11 @@ export const getStaticProps = async ({ params }) => {
   const testimonial =
     testimonials[Math.floor(Math.random() * testimonials.length)].Testimonial;
 
+  const canonical = `${tinaProps.data.global.header.url}offices/${params.filename}`;
+  if (tinaProps.data.offices.seo) {
+    tinaProps.data.offices.seo.canonical = canonical;
+  }
+
   return {
     props: {
       data: tinaProps.data,

@@ -129,6 +129,11 @@ export const getStaticProps = async ({ params }) => {
     (t) => t.node
   );
 
+  const canonical = `${tinaProps.data.global.header.url}events/${params.filename}`;
+  if (tinaProps.data.events.seo) {
+    tinaProps.data.events.seo.canonical = canonical;
+  }
+
   return {
     props: {
       data: tinaProps.data,
