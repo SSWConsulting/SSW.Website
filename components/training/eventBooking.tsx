@@ -128,7 +128,7 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
                 >
                   <MdLocationOn className="m-icon" />
                   <span className="capitalize">
-                    {EventModel.SSW} {event.city}
+                    {EventModel.SSW} {event.city?.split(" ")[0]}
                   </span>
                 </a>
               </div>
