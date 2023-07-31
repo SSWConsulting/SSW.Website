@@ -219,10 +219,9 @@ export const getStaticProps = async ({ params }) => {
 
   testimonialsResult = testimonialsResult.slice(0, 3);
 
-  const canonical = `${tinaProps.data.global.header.url}consulting/${params.filename}`;
   const seo = tinaProps.data.consulting.seo;
-  if (seo) {
-    seo.canonical = canonical;
+  if (seo && !seo.canonical) {
+    seo.canonical = `${tinaProps.data.global.header.url}consulting/${params.filename}`;
   }
 
   const technologyCardNames =
