@@ -11,6 +11,12 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
+    listStyleType: {
+      disc: "disc",
+      decimal: "decimal",
+      square: "square",
+      roman: "upper-roman",
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
@@ -292,6 +298,10 @@ module.exports = {
             },
             a: {
               fontWeight: "300",
+              textDecoration: "underline",
+              textDecorationColor: "#aaa",
+              textDecorationStyle: "solid",
+              textDecorationThickness: "1px",
             },
             p: {
               marginBottom: "10px",
