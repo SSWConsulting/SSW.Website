@@ -2536,12 +2536,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@headlessui/tailwindcss@npm:^0.1.3":
-  version: 0.1.3
-  resolution: "@headlessui/tailwindcss@npm:0.1.3"
+"@headlessui/tailwindcss@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@headlessui/tailwindcss@npm:0.2.0"
   peerDependencies:
     tailwindcss: ^3.0
-  checksum: 65a2cfdf8560d83824fa8d350ea9799b95bc79aefa7c20b4be7c73cd285de8d3d652b26f2cfdb82d225d8d922e28ca898179bdaf6a0f7b88408e6ad831808959
+  checksum: a75799102729d74c080ec3d604fd4d9dea86eda08424062a7f6d6870033f372cd389898147662b5eb1a039fb4e19a1132f52d9da7b5c1c6077b28ed98bf9e8f1
   languageName: node
   linkType: hard
 
@@ -4615,7 +4615,7 @@ __metadata:
     "@builder.io/partytown": ^0.8.0
     "@fortawesome/fontawesome-svg-core": ^6.4.0
     "@headlessui/react": 1.7.15
-    "@headlessui/tailwindcss": ^0.1.3
+    "@headlessui/tailwindcss": ^0.2.0
     "@microsoft/applicationinsights-react-js": ^3.4.2
     "@microsoft/applicationinsights-web": 2.8.14
     "@next/bundle-analyzer": ^13.4.9
