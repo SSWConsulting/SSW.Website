@@ -16,6 +16,7 @@ module.exports = {
       decimal: "decimal",
       square: "square",
       roman: "upper-roman",
+      none: "none",
     },
     colors: {
       transparent: "transparent",
