@@ -1,7 +1,9 @@
+import classNames from "classnames";
 import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { FaUser, FaUsers } from "react-icons/fa";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 
@@ -44,7 +46,7 @@ export const UpcomingEvents = ({ data }) => {
         {data.title}
       </h1>
       <div className="not-prose">
-        <div className="max-h-150 grow overflow-x-hidden overflow-y-scroll border-2 bg-gray-100">
+        <div className="max-h-150 grow overflow-x-hidden overflow-y-scroll">
           {loading ? <p>Loading...</p> : events.map(renderEvent)}
         </div>
         <div className="mt-3 flex flex-row-reverse">
@@ -66,38 +68,58 @@ const renderEvent = (e: EventInfo) => {
     !e.Url.Url.includes("ssw.com.au") || e.Url.Url.includes("/ssw/redirect");
 
   return (
-    <article key={e.id} className="flex">
-      <div className="flex min-w-fit items-center">
-        <Link href={e.Thumbnail.Url}>
-          <Image
-            src={e.Thumbnail.Url}
-            alt={`${e.Title} logo`}
-            width={100}
-            height={100}
-          />
-        </Link>
-      </div>
-      <div className="flex flex-col justify-center px-6">
-        <time className="uppercase">
-          <span className="text-xs">{e.FormattedDate}</span>
-          <span className="ml-2 inline-flex items-center rounded-md bg-gray-700 px-1.5 font-bold text-white">
-            {e.RelativeDate}
-          </span>
-        </time>
-        <h2 className="m-0 py-1 text-sm">
-          <Link
-            href={e.Url.Url}
-            className="unstyled text-sm font-bold text-sswRed"
-            target={isExternalLink ? "_blank" : "_self"}
-          >
-            {e.Title}
+    <>
+      <article
+        key={e.id}
+        className="my-2 grid max-w-md grid-cols-12 rounded-lg border-1 border-gray-200 bg-white p-2 shadow dark:border-gray-700 dark:bg-gray-800"
+      >
+        <div className="col-span-9 justify-center px-3">
+          <h2 className="m-0 py-1 text-sm">
+            <Link
+              href={e.Url.Url}
+              className="unstyled text-sm font-bold text-black"
+              target={isExternalLink ? "_blank" : "_self"}
+            >
+              {e.Title}
+            </Link>
+          </h2>
+          <time className="my-1 flex">
+            <span
+              className={classNames(
+                "inline-flex items-center rounded-sm px-1.5 py-0.5 text-xxs uppercase text-white",
+                e.RelativeDate == "now running" ? "bg-green-400" : "bg-sswRed"
+              )}
+            >
+              {e.RelativeDate}
+            </span>
+            <span className="ml-2 text-xxs text-gray-500">
+              {e.FormattedDate}
+            </span>
+          </time>
+          {!!e.Presenter && (
+            <span className="mt-1 inline-flex items-center text-xxs text-black">
+              {e.Presenter.includes("and") || e.Presenter.includes("&") ? (
+                <FaUsers className="m-icon" />
+              ) : (
+                <FaUser className="m-icon" />
+              )}
+              {e.Presenter}
+            </span>
+          )}
+        </div>
+        <div className="col-span-3 flex items-center">
+          <Link href={e.Thumbnail.Url}>
+            <Image
+              className={"rounded-md"}
+              src={e.Thumbnail.Url}
+              alt={`${e.Title} logo`}
+              width={90}
+              height={90}
+            />
           </Link>
-        </h2>
-        {!!e.Presenter && (
-          <span className="whitespace-nowrap text-xs">{e.Presenter}</span>
-        )}
-      </div>
-    </article>
+        </div>
+      </article>
+    </>
   );
 };
 
@@ -135,7 +157,7 @@ const formatBannerDate = (bannerInfo: LiveStreamBannerInfo) => {
   // NOTE: Omit ddd for brevity if it's next year's event
   const dateformat =
     dayjs(bannerInfo.StartDateTime).year() === dayjs().year()
-      ? "ddd MMM D"
+      ? "MMM D"
       : "MMM D YYYY";
 
   const isOneDayEvent = dayjs(bannerInfo.StartDateTime)
