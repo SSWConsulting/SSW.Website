@@ -1,4 +1,4 @@
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 import { Container } from "../util/container";
 import { SubNewsLettersForm } from "./subNewsletterForm";
 

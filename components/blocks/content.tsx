@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Container } from "../util/container";

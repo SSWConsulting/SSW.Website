@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { customImageBlockSchema } from "./customImage";
 import { componentRenderer } from "./mdxComponentRenderer";
