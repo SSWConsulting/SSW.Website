@@ -298,7 +298,6 @@ module.exports = {
               color: theme("colors.sswBlack"),
             },
             a: {
-              fontWeight: "300",
               textDecoration: "underline",
               textDecorationColor: "#aaa",
               textDecorationStyle: "solid",
