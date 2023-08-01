@@ -1,15 +1,15 @@
-import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
-import { client } from "../../.tina/__generated__/client";
 import { useTina } from "tinacms/dist/react";
+import { client } from "../../.tina/__generated__/client";
 
+import { InferGetStaticPropsType } from "next";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { SEO } from "../../components/util/seo";
-import { InferGetStaticPropsType } from "next";
 
 export default function ProductsIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -22,18 +22,16 @@ export default function ProductsIndex(
   });
 
   const [productsList, setProductsList] = useState([]);
-  const [seo, setSeo] = useState(null);
 
   useEffect(() => {
     // extract the data we need from the tina result
     const processedData = processData(data);
     setProductsList(processedData.productsList);
-    setSeo(processedData.seo);
   }, [data]);
 
   return (
     <Layout>
-      <SEO seo={seo} />
+      <SEO seo={props.seo} />
       <Container className="mb-10 flex-1 pt-2">
         <Breadcrumbs path={"/products"} suffix="" title={"Products"} />
         <h1 className="mb-0 py-0 text-3xl">SSW Products</h1>
@@ -100,9 +98,19 @@ const processData = (data) => {
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.productsIndexConnection();
 
+  const globalData = await client.queries.global({
+    relativePath: "index.json",
+  });
+
+  const seo = tinaProps.data.productsIndexConnection.edges[0].node.seo;
+  if (seo && !seo.canonical) {
+    seo.canonical = `${globalData.data.global.header.url}/products`;
+  }
+
   return {
     props: {
       ...tinaProps,
+      seo,
     },
   };
 };

@@ -142,10 +142,9 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.mdx`,
   });
 
-  const canonical = `${tinaProps.data.global.header.url}consulting/video-production/${params.filename}`;
   const seo = tinaProps.data.videoProduction.seo;
-  if (seo) {
-    seo.canonical = canonical;
+  if (seo && !seo.canonical) {
+    seo.canonical = `${tinaProps.data.global.header.url}consulting/video-production/${params.filename}`;
   }
 
   return {

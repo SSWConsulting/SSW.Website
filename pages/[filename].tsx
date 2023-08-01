@@ -77,6 +77,11 @@ export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.contentQuery({
     relativePath: `${params.filename}.mdx`,
   });
+
+  if (tinaProps.data.page.seo && !tinaProps.data.page.seo.canonical) {
+    tinaProps.data.page.seo.canonical = `${tinaProps.data.global.header.url}${params.filename}`;
+  }
+
   return {
     props: {
       data: tinaProps.data,

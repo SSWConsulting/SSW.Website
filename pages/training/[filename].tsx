@@ -41,7 +41,8 @@ export default function TrainingPage(
           <TrainingCarousel data={data.training.trainingHeaderCarousel} />
         </div>
         <Container padding={"md:px-8 px-0"} className="pt-2">
-          {data.training.showBreadcrumb && (
+          {(data.training.seo?.showBreadcrumb === null ||
+            data.training.seo?.showBreadcrumb) && (
             <div
               data-tina-field={tinaField(data.training.seo, "title")}
               className="px-8 md:px-8"
@@ -128,6 +129,10 @@ export const getStaticProps = async ({ params }) => {
   const testimonialsResult = testimonials.data.testimonialsConnection.edges.map(
     (t) => t.node
   );
+
+  if (tinaProps.data.training.seo && !tinaProps.data.training.seo.canonical) {
+    tinaProps.data.training.seo.canonical = `${tinaProps.data.global.header.url}training/${params.filename}`;
+  }
 
   return {
     props: {

@@ -19,6 +19,13 @@ query videoProductionContentQuery($relativePath: String!) {
   }
 }
 
+query companyContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  company(relativePath: $relativePath) {
+    ...CompanyParts
+  }
+}
+
 query officeContentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   offices(relativePath: $relativePath) {
@@ -98,6 +105,7 @@ query employmentPageQuery($relativePath: String!) {
 }
 
 query officeIndexQuery($relativePath: String!) {
+  ...LayoutQueryFragment
   officeIndex(relativePath: $relativePath) {
     seo {
       title
