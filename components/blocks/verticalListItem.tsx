@@ -12,7 +12,7 @@ export const VerticalListItem = ({ data }) => {
           <h3 className="text-sswRed">{data.header}</h3>
         </div>
       )}
-      <div className={classNames("flex flex-row items-center font-helvetica")}>
+      <div className="flex flex-row items-center font-helvetica">
         {data.icon ? (
           <Image
             src={data.icon || ""}
