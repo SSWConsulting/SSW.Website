@@ -55,12 +55,15 @@ export default function IndustryPage(
               sizes="100vw"
             />
           )}
-          {pageData.showBreadcrumb && (
+          {pageData.seo?.showBreadcrumb === null ||
+          pageData.seo?.showBreadcrumb ? (
             <Breadcrumbs
               path={removeExtension(props.variables.relativePath)}
               suffix=""
               title={pageData.seo.title}
             />
+          ) : (
+            <></>
           )}
           <h1 className="mb-1 py-0 text-3xl">{pageData?.heading}</h1>
           <h2 className="!mt-1 pt-0 text-md font-light">

@@ -1,4 +1,3 @@
-import React from "react";
 import { Collection, Template } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
@@ -152,11 +151,6 @@ export const industrySchema: Collection = {
       type: "string",
       label: "Page Subheading",
       name: "subHeading",
-    },
-    {
-      type: "boolean",
-      name: "showBreadcrumb",
-      label: "Show Breadcrumb",
     },
     {
       type: "image",
