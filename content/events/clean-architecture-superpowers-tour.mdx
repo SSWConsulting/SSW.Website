@@ -1,0 +1,110 @@
+---
+title: ''
+seo:
+  title: The Clean Architecture Superpowers Tour
+  description: >
+    The best approach to building enterprise applications using Clean
+    Architecture and .NET
+_body:
+  - eventDurationInDays: 1
+    price: 99
+    eventList:
+      - city: Brisbane
+        date: 2023-04-17T16:00:00.000Z
+        bookingURL: >-
+          https://www.eventbrite.com.au/e/clean-architecture-superpowers-sydneyonline-tickets-150670855585
+      - city: Melbourne
+        date: 2023-04-19T16:00:00.000Z
+        bookingURL: >-
+          https://www.eventbrite.com.au/e/clean-architecture-superpowers-sydneyonline-tickets-150670855585
+      - city: Sydney
+        date: 2023-04-20T20:21:00.000Z
+        bookingURL: >-
+          https://www.eventbrite.com.au/e/clean-architecture-superpowers-sydneyonline-tickets-150670855585
+    _template: EventBooking
+  - header: presenters
+    presenterList:
+      - presenter: content/presenters/daniel-mackay.mdx
+      - presenter: content/presenters/luke-parker.mdx
+    otherEvent:
+      title: 2-Day Clean Architecture Workshop.
+      eventURL: 'https://www.ssw.com.au/events/clean-architecture-workshop'
+    _template: PresenterBlock
+  - prose: true
+    centerAlignedText: true
+    content: "We will be running this course\_in-person\_from SSW Chapel venues,\_as well as ONLINE\_for those who can't physically join us.\n\nIn this 1-day course we will cover the best approach to building enterprise applications using Clean Architecture and .NET.\n\n## Introduction\n\nThe explosive growth of web frameworks and the demands of users have changed the approach to building enterprise applications. Many challenges exist and just getting started can be a daunting prospect. Let's change that now.\n\nThis superpowers will provide practical guidance and recommendations. We will cover architecture, technologies, tools and frameworks. We will examine strategies for organizing your projects, folders and files. We will design a system that is simple to build and maintain - now and well into the future.\n\nYou will leave this 1-day course having developed the foundation and structure for your next enterprise application, along with the knowledge to take your enterprise application development to the next level.\n\n<CustomImage src=\"/images/verticalImageLayout/clean-architecture-diagram.png\" height={400} width={490} altText=\"clean architecture diagram\" />\n\n## Who Should Attend\n\nAll developers who would like to learn more about Clean Architecture and / or .NET.\n\nExperience: Knows C#\n"
+    _template: ContentCard
+  - header: Agenda
+    textColor: red
+    agendaItemList:
+      - placeholder: Part 1
+        body: |
+          <VerticalListItem
+            index={1}
+            content={<>
+              Getting Started
+            </>}
+            afterBody={<>
+              * Create a new Web API with ASP.NET Core
+              * Building a Data Model with EF Core
+              * Creating ASP.NET Core Web API Controllers
+              * Adding API Help Pages with OpenAPI
+            </>}
+          />
+      - placeholder: Part 2
+        body: |
+          <VerticalListItem
+            index={2}
+            content={<>
+              Beyond the Basics
+            </>}
+            afterBody={<>
+              * Architecture & Design
+              * Implementing CQRS with MediatR
+              * Building High Performance Queries with EF Core
+              * Simplifying Object-Object Mappings with AutoMapper
+              * Advanced Validation with FluentValidation
+              * Managing Unhandled Exceptions
+              * Unit Testing Application Logic
+            </>}
+          />
+      - placeholder: Part 3
+        body: |
+          <VerticalListItem
+            index={3}
+            content={<>
+              Advanced Topics
+            </>}
+            afterBody={<>
+              * Working with ASP.NET Core Identity
+              * Improved Logging with MediatR
+              * Automating OpenAPI Specification and Client Generation
+              * Health Monitoring with ASP.NET Core Health Checks
+            </>}
+          />
+    _template: Agenda
+  - title: Location Venues
+    locationList:
+      - location: content/locations/ssw-chapel-brisbane.mdx
+      - location: content/locations/ssw-chapel-melbourne.mdx
+      - location: content/locations/ssw-chapel-newcastle.mdx
+      - location: content/locations/ssw-chapel-sydney.mdx
+    chapelWebsite:
+      title: SSW Chapel Website
+      URL: 'http://sswchapel.com.au/'
+    _template: LocationBlock
+eventHeader:
+  heroBackground: /images/background/polygonBackground.png
+  imgOverlay: /images/background/DevSuperPowers-Cleanarchitecture.png
+footer: ''
+---
+
+
+
+
+
+
+
+
+
+

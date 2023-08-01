@@ -32,12 +32,11 @@ _body:
       - presenter: content/presenters/luke-parker.mdx
     otherEvent:
       title: 1-Day Clean Architecture Superpowers Tour.
-      eventURL: >-
-        https://www.ssw.com.au/ssw/Events/Training/Clean-Architecture-Superpowers-Tour.aspx
+      eventURL: 'https://www.ssw.com.au/events/clean-architecture-superpowers-tour'
     _template: PresenterBlock
   - prose: true
     centerAlignedText: true
-    content: "We will be running this course\_in-person\_from SSW Chapel venues,\_as well as ONLINE\_for those who can't physically join us.\n\nIn this hands-on workshop we will cover the best approach to building enterprise applications using Clean Architecture and .NET 7. You will be building your own application from scratch.\n\nPLEASE ENSURE YOU PURCHASE THE CORRECT TICKET - THERE IS\_1 FOR IN-PERSON\_&\_1 FOR ONLINE ATTENDANCE.\n\n## Introduction\n\nThe explosive growth of web frameworks and the demands of users have changed the approach to building enterprise applications. Many challenges exist and just getting started can be a daunting prospect. Let's change that now.\n\nThis hands-on workshop will provide practical guidance and recommendations. We will cover architecture, technologies, tools and frameworks. We will examine strategies for organizing your projects, folders and files. We will design a system that is simple to build and maintain - now and well into the future.\n\nYou will leave this hands-on workshop having developed the foundation and structure for your next enterprise application, along with the knowledge to take your enterprise application development to the next level.\n\n<CustomImage src=\"/images/verticalImageLayout/clean-architecture-diagram.png\" altText=\"clean architecture diagram\" height={800} width={980} />\n\n## Who Should Attend\n\nAll developers who would like to learn more about Clean Architecture and/or .NET.\n\nExperience: Knows C#\n\n## Computer Setup\n\nYou will need a computer with the latest versions of the following tools installed:\n\n.NET 7 SDK (latest)\n\nWSL2\n\nDocker Desktop\n\nVisual Studio 2022 / JetBrains Rider / VS Code\n"
+    content: "We will be running this course\_in-person\_from SSW Chapel venues,\_as well as ONLINE\_for those who can't physically join us.\n\nIn this hands-on workshop we will cover the best approach to building enterprise applications using Clean Architecture and .NET 7. You will be building your own application from scratch.\n\nPLEASE ENSURE YOU PURCHASE THE CORRECT TICKET - THERE IS\_1 FOR IN-PERSON\_&\_1 FOR ONLINE ATTENDANCE.\n\n## Introduction\n\nThe explosive growth of web frameworks and the demands of users have changed the approach to building enterprise applications. Many challenges exist and just getting started can be a daunting prospect. Let's change that now.\n\nThis hands-on workshop will provide practical guidance and recommendations. We will cover architecture, technologies, tools and frameworks. We will examine strategies for organizing your projects, folders and files. We will design a system that is simple to build and maintain - now and well into the future.\n\nYou will leave this hands-on workshop having developed the foundation and structure for your next enterprise application, along with the knowledge to take your enterprise application development to the next level.\n\n<CustomImage src=\"/images/verticalImageLayout/clean-architecture-diagram.png\" altText=\"clean architecture diagram\" height={400} width={490} />\n\n## Who Should Attend\n\nAll developers who would like to learn more about Clean Architecture and/or .NET.\n\nExperience: Knows C#\n\n## Computer Setup\n\nYou will need a computer with the latest versions of the following tools installed:\n\n.NET 7 SDK (latest)\n\nWSL2\n\nDocker Desktop\n\nVisual Studio 2022 / JetBrains Rider / VS Code\n"
     _template: ContentCard
   - header: Agenda
     textColor: red
@@ -45,6 +44,8 @@ _body:
       - placeholder: Clean Architecture Basics
         body: |
           <VerticalListItem
+            index={1}
+            icon=""
             content={<>
               Clean Architecture Basics
             </>}
@@ -53,31 +54,24 @@ _body:
               * Hands-on Refactor to Clean Architecture
               * Learn the core principles of Clean Architecture
             </>}
-            icon="/images/icons/1-icon.png"
           />
       - placeholder: Clean Architecture Applied
         body: |
           <VerticalListItem
+            index={2}
+            icon=""
             content={<>
               Clean Architecture Applied
             </>}
-            icon="/images/icons/2-icon.png"
             afterBody={<>
               * Introduction to the SSW.Clean Architecture Template
               * Build a .NET Web API using:
-              
-              Minimal APIs
-              
-              Strongly Typed IDs
-              
-              MediatR and CQRS
-              
-              Application & Integration Events
-              
-              Domain Driven Design
-              
-              Specifications
-              
+                * Minimal APIs
+                * Strongly Typed IDs
+                * MediatR and CQRS
+                * Application & Integration Events
+                * Domain Driven Design
+                * Specifications
               * Discuss trade-offs when building an application
               * Add a GraphQL Presentation Layer
             </>}
@@ -85,6 +79,8 @@ _body:
       - placeholder: Clean Testing
         body: |
           <VerticalListItem
+            index={3}
+            icon=""
             afterBody={<>
               * Introduction to Testing in the SSW.CleanArchitecture template
               * Unit Tests
@@ -98,7 +94,6 @@ _body:
             content={<>
               Clean Testing
             </>}
-            icon="/images/icons/3-icon.png"
           />
     _template: Agenda
   - title: Location Venues
@@ -112,6 +107,9 @@ _body:
       URL: 'http://sswchapel.com.au/'
     _template: LocationBlock
 ---
+
+
+
 
 
 
