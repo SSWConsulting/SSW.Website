@@ -1,9 +1,9 @@
 name: Weekly - CodeAuditor test
 
 # Schedule scan for SSW Website at 1pm every Monday
-on: 
+on:
   schedule:
-  - cron: "0 13 * * 0"
+    - cron: "0 13 * * 0"
 
   workflow_dispatch:
 
@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 'SSW CodeAuditor - Check broken links and performance'
+      - name: "SSW CodeAuditor - Check broken links and performance"
         continue-on-error: true
-        run: 'docker container run --cap-add=SYS_ADMIN sswconsulting/codeauditor --token ${{ secrets.CODEAUDITOR_TOKEN }} --url https://www.ssw.com.au/ --maxthread 200'
+        run: "docker container run --cap-add=SYS_ADMIN sswconsulting/codeauditor --token ${{ secrets.CODEAUDITOR_TOKEN }} --url https://app-sswwebsite-9eb3.azurewebsites.net/ --maxthread 200"
