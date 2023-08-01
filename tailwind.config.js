@@ -11,6 +11,13 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
+    listStyleType: {
+      disc: "disc",
+      decimal: "decimal",
+      square: "square",
+      roman: "upper-roman",
+      none: "none",
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
@@ -291,7 +298,10 @@ module.exports = {
               color: theme("colors.sswBlack"),
             },
             a: {
-              fontWeight: "300",
+              textDecoration: "underline",
+              textDecorationColor: "#aaa",
+              textDecorationStyle: "solid",
+              textDecorationThickness: "1px",
             },
             p: {
               marginBottom: "10px",

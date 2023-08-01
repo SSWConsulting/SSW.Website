@@ -121,9 +121,9 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
                 {EventModel.BOOKING_BTN_TEXT}
               </a>
 
-              <div className=" py-1 pr-0 text-xs ">
+              <div className="prose py-1 pr-0 text-xs">
                 <a
-                  className="sswUnderline flex items-center justify-end md:justify-start"
+                  className="flex items-center justify-end font-normal md:justify-start"
                   href="#location"
                 >
                   <MdLocationOn className="m-icon" />

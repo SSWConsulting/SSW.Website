@@ -69,19 +69,12 @@
     @apply items-center justify-center rounded border-none bg-sswRed px-4 py-3 align-middle text-sm font-normal uppercase leading-[18px] text-white no-underline !outline-sswRed hover:!bg-[#8e2c2c] hover:!text-white;
   }
 
-  .m-icon {
-    @apply mr-2;
-  }
-
-  .sswUnderline {
-    text-decoration: underline;
-    text-decoration-color: #aaa;
-    text-decoration-style: solid;
-    text-decoration-thickness: 1px;
-  }
-
-  .sswUnderline:hover {
+  a:hover {
     @apply decoration-sswRed;
+  }
+
+  .m-icon {
+    @apply mr-1;
   }
 
   .customTable table,
