@@ -1,6 +1,7 @@
+import classNames from "classnames";
 import { FaGlobe, FaLocationArrow } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
-import { classNames, type Template } from "tinacms";
+import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { locationSchemaConstants } from "../../.tina/collections/location";
 import { Container } from "../util/container";

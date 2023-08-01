@@ -1,8 +1,7 @@
-import React from "react";
-import { Template } from "tinacms";
-import { sectionColors } from "../util/constants/styles";
 import classnames from "classnames";
 import { FaPrint } from "react-icons/fa";
+import type { Template } from "tinacms";
+import { sectionColors } from "../util/constants/styles";
 
 export const AgreementForm = ({ data }) => {
   const sectionColorCss =

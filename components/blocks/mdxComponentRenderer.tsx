@@ -21,6 +21,7 @@ import { Flag } from "./flag";
 import { GoogleMapsWrapper } from "./googleMapsWrapper";
 import { NewslettersTable } from "./newslettersTable";
 import { RecurringEvent } from "./recurringEvent";
+import { TableLayout, TableLayoutProps } from "./tableLayout";
 import { UpcomingEvents } from "./upcomingEvents";
 import { VerticalImageLayout } from "./verticalImageLayout";
 import { VerticalListItem } from "./verticalListItem";
@@ -40,11 +41,6 @@ const InternalCarousel = dynamic(
 const BookingButton = dynamic(
   () =>
     import("../bookingButton/bookingButton").then((mod) => mod.BookingButton),
-  { ssr: false }
-);
-
-const TableLayout = dynamic(
-  () => import("./tableLayout").then((mod) => mod.TableLayout),
   { ssr: false }
 );
 
@@ -115,9 +111,7 @@ export const componentRenderer: Components<{
   Flag: {
     country: string;
   };
-  TableLayout: {
-    mdxTable: string;
-  };
+  TableLayout: TableLayoutProps;
   AgreementForm: {
     backgroundColor: string;
     fields: {

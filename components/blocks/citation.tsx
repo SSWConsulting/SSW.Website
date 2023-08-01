@@ -1,5 +1,4 @@
-import React from "react";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 
 export const Citation = ({ article, author }) => {
   return (
