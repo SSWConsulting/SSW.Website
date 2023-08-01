@@ -3,12 +3,18 @@ import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FaUser, FaUsers } from "react-icons/fa";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 
 import axios from "axios";
 import { EventInfo, LiveStreamBannerInfo } from "../../services/server/events";
+
+const EventStatus = {
+  TODAY: "today",
+  NOW_RUNNING: "now running",
+};
+
+EventStatus;
 
 export const UpcomingEvents = ({ data }) => {
   const [events, setEvents] = useState<EventInfo[]>([]);
@@ -71,9 +77,9 @@ const renderEvent = (e: EventInfo) => {
     <>
       <article
         key={e.id}
-        className="my-2 grid max-w-md grid-cols-12 rounded-lg border-1 border-gray-200 bg-white p-2 shadow dark:border-gray-700 dark:bg-gray-800"
+        className="my-2 grid grid-cols-4 rounded border-1 border-gray-200 bg-white p-2 shadow dark:border-gray-700 dark:bg-gray-800"
       >
-        <div className="col-span-9 justify-center px-3">
+        <div className="col-span-3 justify-center px-3">
           <h2 className="m-0 py-1 text-sm">
             <Link
               href={e.Url.Url}
@@ -86,8 +92,11 @@ const renderEvent = (e: EventInfo) => {
           <time className="my-1 flex">
             <span
               className={classNames(
-                "inline-flex items-center rounded-sm px-1.5 py-0.5 text-xxs uppercase text-white",
-                e.RelativeDate == "now running" ? "bg-green-400" : "bg-sswRed"
+                "inline-flex items-center rounded-sm px-1.5 py-0.5 text-xxs uppercase",
+                e.RelativeDate == EventStatus.NOW_RUNNING ||
+                  e.RelativeDate == EventStatus.TODAY // Now running for the two days events and today is for the single day
+                  ? "bg-green-400 text-black"
+                  : "bg-sswRed text-white"
               )}
             >
               {e.RelativeDate}
@@ -98,16 +107,11 @@ const renderEvent = (e: EventInfo) => {
           </time>
           {!!e.Presenter && (
             <span className="mt-1 inline-flex items-center text-xxs text-black">
-              {e.Presenter.includes("and") || e.Presenter.includes("&") ? (
-                <FaUsers className="m-icon" />
-              ) : (
-                <FaUser className="m-icon" />
-              )}
               {e.Presenter}
             </span>
           )}
         </div>
-        <div className="col-span-3 flex items-center">
+        <div className="col-span-1 flex items-center justify-center">
           <Link href={e.Thumbnail.Url}>
             <Image
               className={"rounded-md"}
@@ -175,14 +179,14 @@ const formatRelativeBannerDate = (bannerInfo: LiveStreamBannerInfo) => {
   const end = dayjs(bannerInfo.EndDateTime);
 
   if (now.isBetween(start, end)) {
-    return "now running";
+    return EventStatus.NOW_RUNNING;
   }
 
   const isSameDay = now.startOf("day").isSame(start.startOf("day"));
 
   const days = start.diff(now, "d");
   if (days === 0 && isSameDay) {
-    return "today";
+    return EventStatus.TODAY;
   } else if (days > 0) {
     return `${days} ${days === 1 ? "day" : "days"} to go`;
   } else {
