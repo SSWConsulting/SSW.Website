@@ -72,6 +72,11 @@ export const seoSchema = {
       name: "canonical",
     },
     {
+      type: "boolean",
+      name: "showBreadcrumb",
+      label: "Show Breadcrumb",
+    },
+    {
       label: "Images",
       name: "images",
       list: true,

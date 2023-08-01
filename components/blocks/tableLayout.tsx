@@ -1,52 +1,83 @@
 import classNames from "classnames";
-import MarkdownIt from "markdown-it";
-import markdownItMultimdTable from "markdown-it-multimd-table";
-import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
 
 const tableStyles = {
   none: "",
   basicBorder:
-    "descendant-table:border-1 descendant-table:border-solid descendant-table:p-2 descendant-th:border-1 descendant-th:border-solid descendant-th:p-2 descendant-td:border-1 descendant-td:border-solid descendant-td:p-2",
+    "descendant-table:p-2 descendant-th:border-1 descendant-th:border-solid descendant-th:p-2 descendant-td:border-1 descendant-td:border-solid descendant-td:p-2",
   styled:
     "descendant-th:border-b-sswRed [&>table>tbody>*:nth-child(even)]:bg-gray-75 descendant-th:bg-gray-75 descendant-th:border-b-sswRed descendant-table:w-full",
   benefits:
-    "descendant-table:border-1 descendant-table:border-solid descendant-table:p-2 descendant-th:border-1 descendant-th:border-solid descendant-th:p-2 descendant-td:border-1 descendant-td:border-solid descendant-td:p-2 mt-5 flex justify-center descendant-tr:align-top descendant-ul:list-square descendant-li:ml-6",
+    "descendant-table:p-2 descendant-th:border-1 descendant-th:border-solid descendant-th:p-2 descendant-td:border-1 descendant-td:border-solid descendant-td:p-2 mt-5 flex justify-center descendant-tr:align-top",
 };
 
-export const TableLayout = ({ data }) => {
-  const [mdxTableString, setMdxTableString] = useState("");
+export type TableLayoutProps = {
+  headers: string[];
+  firstColBold?: boolean;
+  tableStyle?: "none" | "basicBorder" | "styled" | "benefits";
+  className?: string;
+  rows: {
+    cells: {
+      cellValue: string;
+    }[];
+    isHeader: boolean;
+  }[];
+};
 
-  useEffect(() => {
-    const md = new MarkdownIt().use(markdownItMultimdTable, {
-      multiline: true,
-    });
-
-    if (!data.mdxTable) return;
-
-    const html = md.render(data.mdxTable);
-    setMdxTableString(html);
-  }, [data]);
-
+export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
   return (
     <div
       className={classNames(
-        "not-prose child-table:border-1 descendant-th:border-1 descendant-th:border-gray-75  descendant-th:py-2 descendant-th:pl-2 descendant-td:border-y-1 descendant-td:py-1.5 descendant-td:pl-2",
+        "not-prose descendant-th:border-1 descendant-th:border-gray-75 descendant-th:py-2 descendant-th:pl-2 descendant-td:border-y-1 descendant-td:py-1.5 descendant-td:pl-2",
         tableStyles[data.tableStyle]
       )}
-      dangerouslySetInnerHTML={{ __html: mdxTableString }}
-    />
+    >
+      <table className="border-1 border-solid">
+        <thead>
+          <tr>
+            {data?.headers ? (
+              data?.headers?.map((cell, index) => (
+                <th
+                  className={
+                    index === 0 && data?.firstColBold ? "text-left" : ""
+                  }
+                  key={index}
+                >
+                  {cell}
+                </th>
+              ))
+            ) : (
+              <></>
+            )}
+          </tr>
+        </thead>
+        <tbody>
+          {data?.rows?.map((row, index) => (
+            <tr key={index}>
+              {row?.cells?.map((cell, index) => (
+                <td
+                  className={classNames(
+                    index === 0 && data?.firstColBold
+                      ? "text-left font-bold"
+                      : "text-center",
+                    row?.isHeader ? "font-bold" : "",
+                    "whitespace-pre-wrap"
+                  )}
+                  key={index}
+                  dangerouslySetInnerHTML={{ __html: cell?.cellValue || "" }}
+                />
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
 export const tableBlockSchema: Template = {
   label: "Table Layout",
   name: "TableLayout",
-  ui: {
-    itemProps: (item) => {
-      return { label: item?.mdxTable };
-    },
-  },
   fields: [
     {
       label: "Table Style",
@@ -60,11 +91,54 @@ export const tableBlockSchema: Template = {
       }),
     },
     {
+      label: "First column bolded + left aligned",
+      name: "firstColBold",
+      type: "boolean",
+      required: false,
+    },
+    {
       type: "string",
-      label: "Table",
-      name: "mdxTable",
+      label: "Table Headers",
+      name: "headers",
+      list: true,
+    },
+    {
+      type: "object",
+      label: "Rows",
+      name: "rows",
+      list: true,
+      fields: [
+        {
+          type: "object",
+          label: "Cells",
+          name: "cells",
+          list: true,
+          fields: [
+            {
+              type: "string",
+              label: "Value",
+              name: "cellValue",
+              required: true,
+              // @ts-expect-error This is a valid field, but Tina's type definition doesn't include it
+              component: "textarea",
+            },
+          ],
+          ui: {
+            validate: (value, data) => {
+              if ((value?.length || 0) <= (data?.headers?.length || 0)) {
+                return "Must have at least as many cells as headers";
+              }
+            },
+            itemProps: (item) => ({
+              label: item?.cellValue || "New cell (click to enter value)",
+            }),
+          },
+        },
+      ],
       ui: {
-        component: "textarea",
+        itemProps: (item) => ({
+          label: item?.cells[0]?.cellValue || "New row (click to enter values)",
+        }),
       },
     },
   ],

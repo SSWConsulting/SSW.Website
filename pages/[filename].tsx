@@ -47,7 +47,7 @@ export default function HomePage(
           <></>
         )}
         <Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
-        <Container className={"flex-1 pt-4"}>
+        <Container className="flex-1 pt-4">
           <div className="gap-4 md:grid md:grid-cols-5">
             <div
               className={contentClass}
@@ -77,6 +77,11 @@ export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.contentQuery({
     relativePath: `${params.filename}.mdx`,
   });
+
+  if (tinaProps.data.page.seo && !tinaProps.data.page.seo.canonical) {
+    tinaProps.data.page.seo.canonical = `${tinaProps.data.global.header.url}${params.filename}`;
+  }
+
   return {
     props: {
       data: tinaProps.data,

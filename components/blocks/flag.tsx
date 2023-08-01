@@ -1,6 +1,6 @@
 import Image from "next/image";
+import type { Template } from "tinacms";
 import { sswCountries } from "../util/constants/country";
-import { Template } from "tinacms";
 
 export const Flag = ({ country }) => {
   const countryObj = sswCountries.find((item) => item.label === country);

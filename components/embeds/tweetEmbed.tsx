@@ -1,6 +1,6 @@
 import Script from "next/script";
 import { useEffect, useState } from "react";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 
 export type TweetEmbedProps = {
   url: string;

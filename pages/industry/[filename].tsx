@@ -55,12 +55,15 @@ export default function IndustryPage(
               sizes="100vw"
             />
           )}
-          {pageData.showBreadcrumb && (
+          {pageData.seo?.showBreadcrumb === null ||
+          pageData.seo?.showBreadcrumb ? (
             <Breadcrumbs
               path={removeExtension(props.variables.relativePath)}
               suffix=""
               title={pageData.seo.title}
             />
+          ) : (
+            <></>
           )}
           <h1 className="mb-1 py-0 text-3xl">{pageData?.heading}</h1>
           <h2 className="!mt-1 pt-0 text-md font-light">
@@ -87,6 +90,10 @@ export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.industryContentQuery({
     relativePath: `${params.filename}.mdx`,
   });
+
+  if (tinaProps.data.industry.seo && !tinaProps.data.industry.seo.canonical) {
+    tinaProps.data.industry.seo.canonical = `${tinaProps.data.global.header.url}industry/${params.filename}`;
+  }
 
   return {
     props: {

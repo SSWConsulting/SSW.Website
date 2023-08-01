@@ -29,11 +29,6 @@ export const trainingSchema: Collection = {
     },
     {
       type: "boolean",
-      name: "showBreadcrumb",
-      label: "Show Breadcrumb",
-    },
-    {
-      type: "boolean",
       name: "showTestimonials",
       label: "Show Testimonials",
     },

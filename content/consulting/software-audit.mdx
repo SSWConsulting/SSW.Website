@@ -125,15 +125,16 @@ benefits:
 
 <TableLayout
   tableStyle="benefits"
-  mdxTable="
-  | Client time commitment | SSW time commitment   |
-  |:-----------------------|:----------------------|
-  | 8 hours | 16 hours |
-  | - Initial meeting  | - Initial meeting with client | \
-  | - Available for contact  | - Perform the Software Audit | \
-  | - Final presentation  | - Prepare for final presentation | \
-  | | - Present findings and documentation to client |
-  "
+  headers={["Client time commitment", "SSW time commitment"]}
+  rows={[
+    { cells: [{ cellValue: "8 hours" }, { cellValue: "16 hours" }] },
+    {
+      cells: [
+        { cellValue: "- Initial meeting\n - Available for contact\n- Final presentation" },
+        { cellValue: "- Initial meeting with client\n - Perform the Software Audit\n - Prepare for final presentation\n - Present findings and documentation to client" }
+      ]
+    },
+  ]}
 />
 
 ## SSW Software Audit Services can help in:
