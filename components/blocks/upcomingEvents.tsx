@@ -45,12 +45,12 @@ export const UpcomingEvents = ({ data }) => {
 
   return (
     <div className="prose max-w-none">
-      <h1
+      <h2
         data-tina-field={tinaField(data, upcomingEventsBlock.title)}
-        className="pb-5 font-light"
+        className="pb-2 text-3xl/6 font-normal text-black"
       >
         {data.title}
-      </h1>
+      </h2>
       <div className="not-prose">
         <div className="max-h-150 grow">
           {loading ? <p>Loading...</p> : events.map(renderEvent)}
@@ -95,8 +95,8 @@ const renderEvent = (e: EventInfo) => {
                 "inline-flex items-center rounded-sm px-1.5 py-0.5 text-xxs uppercase",
                 e.RelativeDate == EventStatus.NOW_RUNNING ||
                   e.RelativeDate == EventStatus.TODAY // Now running for the two days events and today is for the single day
-                  ? "bg-green-400 text-black"
-                  : "bg-sswRed text-white"
+                  ? "bg-sswRed text-white"
+                  : "bg-gray-25 text-black"
               )}
             >
               {e.RelativeDate}

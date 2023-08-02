@@ -28,8 +28,8 @@ export default function HomePage(
   }
 
   const contentClass = data.page.sideBar
-    ? "max-w-full md:col-span-3 prose"
-    : "max-w-full md:col-span-5 prose";
+    ? "max-w-full md:col-span-3 prose prose-h2:text-3xl/6 prose-h2:text-black prose-h2:font-normal"
+    : "max-w-full md:col-span-5 prose prose-h2:text-3xl/6 prose-h2:text-black prose-h2:font-normal";
 
   return (
     <>
@@ -48,7 +48,7 @@ export default function HomePage(
         )}
         <Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
         <Container className={"flex-1 pt-4"}>
-          <div className="gap-4 md:grid md:grid-cols-5">
+          <div className="gap-20 pt-3 md:grid md:grid-cols-5">
             <div
               className={contentClass}
               data-tina-field={tinaField(data.page, "_body")}

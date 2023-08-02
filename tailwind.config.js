@@ -36,6 +36,7 @@ module.exports = {
       sswBlack: "#333333",
       azure: "#007fff",
       gray: {
+        25: "#e9e9e9",
         50: "#f9f9f9",
         100: "#f2f2f2",
         200: "#dfdfdf",
