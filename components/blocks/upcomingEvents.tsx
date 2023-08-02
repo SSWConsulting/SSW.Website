@@ -52,16 +52,16 @@ export const UpcomingEvents = ({ data }) => {
         {data.title}
       </h1>
       <div className="not-prose">
-        <div className="max-h-150 grow overflow-x-hidden overflow-y-scroll">
+        <div className="max-h-150 grow">
           {loading ? <p>Loading...</p> : events.map(renderEvent)}
         </div>
         <div className="mt-3 flex flex-row-reverse">
           {/* TODO: Update link after implement this page */}
           <Link
             href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all"
-            className="unstyled inline-flex items-center rounded border-1 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
+            className="unstyled rounded bg-sswRed px-3 py-2 text-xs font-normal text-white hover:bg-sswDarkRed"
           >
-            More Events
+            See more events
           </Link>
         </div>
       </div>
@@ -77,7 +77,7 @@ const renderEvent = (e: EventInfo) => {
     <>
       <article
         key={e.id}
-        className="my-2 grid grid-cols-4 rounded border-1 border-gray-200 bg-white p-2 shadow dark:border-gray-700 dark:bg-gray-800"
+        className="my-2.5 grid grid-cols-4 rounded border-1 border-gray-300 bg-white p-2 shadow dark:border-gray-700 dark:bg-gray-800"
       >
         <div className="col-span-3 justify-center px-3">
           <h2 className="m-0 py-1 text-sm">

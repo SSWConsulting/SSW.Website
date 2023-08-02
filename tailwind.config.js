@@ -32,6 +32,7 @@ module.exports = {
       "social-github": "#2C2C2C",
       "social-meetup": "#f05664",
       sswRed: "#cc4141",
+      sswDarkRed: "#8e2c2c",
       sswBlack: "#333333",
       azure: "#007fff",
       gray: {
