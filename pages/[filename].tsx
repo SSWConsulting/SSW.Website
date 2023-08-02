@@ -47,7 +47,7 @@ export default function HomePage(
           <></>
         )}
         <Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
-        <Container className={"flex-1 pt-4"}>
+        <Container className={"flex-1"}>
           <div className="gap-20 pt-3 md:grid md:grid-cols-5">
             <div
               className={contentClass}
