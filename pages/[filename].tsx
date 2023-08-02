@@ -28,8 +28,8 @@ export default function HomePage(
   }
 
   const contentClass = data.page.sideBar
-    ? "max-w-full md:col-span-3 prose prose-h2:text-3xl/6 prose-h2:text-black prose-h2:font-normal"
-    : "max-w-full md:col-span-5 prose prose-h2:text-3xl/6 prose-h2:text-black prose-h2:font-normal";
+    ? "max-w-full md:col-span-3 prose prose-h2:text-3xl/9 prose-h2:text-black prose-h2:font-normal"
+    : "max-w-full md:col-span-5 prose prose-h2:text-3xl/9 prose-h2:text-black prose-h2:font-normal";
 
   return (
     <>
@@ -59,7 +59,7 @@ export default function HomePage(
               />
             </div>
             {!!data.page.sideBar && (
-              <div className="md:col-span-2">
+              <div className="mt-5 md:col-span-2 md:mt-0">
                 <Blocks prefix="PageSideBar" blocks={data.page.sideBar} />
               </div>
             )}

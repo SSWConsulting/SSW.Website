@@ -44,18 +44,18 @@ export const UpcomingEvents = ({ data }) => {
   }, []);
 
   return (
-    <div className="prose max-w-none">
+    <div className="prose mt-5 max-w-none sm:my-0 ">
       <h2
         data-tina-field={tinaField(data, upcomingEventsBlock.title)}
-        className="pb-2 text-3xl/6 font-normal text-black"
+        className="pb-1.5 text-3xl/9 font-normal text-black"
       >
         {data.title}
       </h2>
       <div className="not-prose">
-        <div className="max-h-150 grow">
+        <div className="grow">
           {loading ? <p>Loading...</p> : events.map(renderEvent)}
         </div>
-        <div className="mt-3 flex flex-row-reverse">
+        <div className="mt-3 flex flex-row-reverse justify-center sm:justify-start">
           {/* TODO: Update link after implement this page */}
           <Link
             href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all"
@@ -111,7 +111,7 @@ const renderEvent = (e: EventInfo) => {
             </span>
           )}
         </div>
-        <div className="col-span-1 flex items-center justify-center">
+        <div className="col-span-1 flex items-center justify-center sm:mr-2 sm:justify-end">
           <Link href={e.Thumbnail.Url}>
             <Image
               className={"rounded-md"}
