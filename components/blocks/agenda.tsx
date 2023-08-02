@@ -1,5 +1,6 @@
-import { classNames, type Template } from "tinacms";
+import type { Template } from "tinacms";
 
+import classNames from "classnames";
 import { FC, Key } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";

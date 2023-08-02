@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Template, classNames } from "tinacms";
+import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const VerticalListItem = ({ data }) => {
@@ -12,7 +12,7 @@ export const VerticalListItem = ({ data }) => {
           <h3 className="text-sswRed">{data.header}</h3>
         </div>
       )}
-      <div className={classNames("flex flex-row items-center font-helvetica")}>
+      <div className="flex flex-row items-center font-helvetica">
         {data.icon ? (
           <Image
             src={data.icon || ""}
@@ -33,11 +33,11 @@ export const VerticalListItem = ({ data }) => {
             </div>
           </div>
         ) : null}
-        <div className={classNames("text-left font-helvetica font-bold")}>
+        <div className="text-left font-helvetica font-bold">
           <TinaMarkdown content={data.content} />
         </div>
       </div>
-      <div className="pl-20 text-left marker:text-sswRed child-ul:!ml-0 descendant-ul:ml-6 descendant-ul:!list-disc">
+      <div className="pl-20 text-left marker:text-sswRed child-ul:!ml-0 descendant-ul:ml-6 descendant-ul:!list-square">
         <TinaMarkdown content={data.afterBody} />
       </div>
     </div>

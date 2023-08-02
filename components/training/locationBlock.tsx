@@ -1,6 +1,7 @@
+import classNames from "classnames";
 import { FaGlobe, FaLocationArrow } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
-import { classNames, type Template } from "tinacms";
+import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { locationSchemaConstants } from "../../.tina/collections/location";
 import { Container } from "../util/container";
@@ -26,10 +27,10 @@ export const LocationBlock = ({ data }) => {
           />
         ))}
       </div>{" "}
-      <div className="py-4 text-center uppercase">
+      <div className="prose max-w-none py-4 text-center uppercase">
         <a
           href={!data.chapelWebsite?.URL ? "" : data.chapelWebsite.URL}
-          className="sswUnderline inline-flex cursor-pointer items-center"
+          className="inline-flex cursor-pointer items-center font-normal"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -99,10 +100,10 @@ const LocationCard = ({ location, index, schema }) => {
           </div>{" "}
         </div>
 
-        <div className="py-1 text-xs">
+        <div className="prose py-1 text-xs">
           <a
             href={!location?.directionURL ? "" : location.directionURL}
-            className="sswUnderline inline-flex cursor-pointer items-center"
+            className="inline-flex cursor-pointer items-center font-normal"
             target="_blank"
             rel="noopener noreferrer"
             data-tina-field={tinaField(
