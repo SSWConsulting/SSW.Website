@@ -4,6 +4,8 @@
 
 This repository is a v3 of the zzSSW.Website. This website uses NextJS with TinaCMS.
 
+[SSW Website - Editing with TinaCMS](https://www.youtube.com/watch?v=K0WVfM7yCKg&t=9s)
+
 ## See the important Documents
 
 - [Instructions - Compile (F5 Experience)](<https://github.com/SSWConsulting/SSW.Website/wiki/Instructions---Compile-(F5-Experience)>)
