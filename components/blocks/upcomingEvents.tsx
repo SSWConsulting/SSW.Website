@@ -74,19 +74,17 @@ const renderEvent = (e: EventInfo) => {
     !e.Url.Url.includes("ssw.com.au") || e.Url.Url.includes("/ssw/redirect");
 
   return (
-    <>
-      <Link
-        href={e.Url.Url}
-        className="unstyled no-underline"
-        target={isExternalLink ? "_blank" : "_self"}
-      >
-        <article
-          key={e.id}
-          className="my-2.5 grid grid-cols-4 rounded border-1 border-gray-300 bg-white p-2 shadow hover:border-sswBlack dark:border-gray-700 dark:bg-gray-800"
-        >
-          <div className="col-span-3 justify-center px-3">
-            <h2 className="m-0 py-1 text-sm font-bold text-black">{e.Title}</h2>
-            <time className="my-1 flex items-center">
+    <Link
+      href={e.Url.Url}
+      className="unstyled no-underline"
+      target={isExternalLink ? "_blank" : "_self"}
+      key={e.id}
+    >
+      <article className="my-2.5 grid grid-cols-4 rounded border-1 border-gray-300 bg-white p-2 shadow hover:border-sswBlack dark:border-gray-700 dark:bg-gray-800">
+        <div className="col-span-3 justify-center px-3">
+          <h2 className="m-0 py-1 text-sm font-bold text-black">{e.Title}</h2>
+          <time className="my-1 flex items-center">
+            {e.RelativeDate && (
               <span
                 className={classNames(
                   "inline-flex items-center rounded-sm px-1.5 py-0.5 text-xxs uppercase",
@@ -98,30 +96,33 @@ const renderEvent = (e: EventInfo) => {
               >
                 {e.RelativeDate}
               </span>
-              <span className="ml-2 text-xxs text-gray-500">
-                {e.FormattedDate}
-              </span>
-            </time>
-            {!!e.Presenter && (
-              <span className="mt-1 inline-flex items-center text-xxs text-black">
-                {e.Presenter}
-              </span>
             )}
-          </div>
-          <div className="col-span-1 flex items-center justify-center sm:mr-2 sm:justify-end">
-            <Link href={e.Thumbnail.Url}>
-              <Image
-                className={"rounded-md"}
-                src={e.Thumbnail.Url}
-                alt={`${e.Title} logo`}
-                width={90}
-                height={90}
-              />
-            </Link>
-          </div>
-        </article>
-      </Link>
-    </>
+            <span
+              className={classNames(
+                "text-xxs text-gray-500",
+                e.RelativeDate ? "ml-2" : ""
+              )}
+            >
+              {e.FormattedDate}
+            </span>
+          </time>
+          {!!e.Presenter && (
+            <span className="mt-1 inline-flex items-center text-xxs text-black">
+              {e.Presenter}
+            </span>
+          )}
+        </div>
+        <div className="col-span-1 flex items-center justify-center sm:mr-2 sm:justify-end">
+          <Image
+            className={"rounded-md"}
+            src={e.Thumbnail.Url}
+            alt={`${e.Title} logo`}
+            width={90}
+            height={90}
+          />
+        </div>
+      </article>
+    </Link>
   );
 };
 

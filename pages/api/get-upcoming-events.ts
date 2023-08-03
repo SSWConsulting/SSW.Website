@@ -9,6 +9,10 @@ const CACHE_MINS = 60;
 const CACHE_SECS = CACHE_MINS * 60;
 const CACHE_KEY = "upcoming-events";
 
+const isCacheOutdated = async (cacheEvents) => {
+  return cacheEvents.some((event) => event.EndDateTime < Date.now());
+};
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -36,7 +40,11 @@ export default async function handler(
 
     try {
       const cachedEvents = cache.get(`${CACHE_KEY}-${topCount}`);
-      if (cachedEvents == undefined) {
+
+      if (
+        cachedEvents == undefined ||
+        (cachedEvents && isCacheOutdated(cachedEvents))
+      ) {
         const events = await getEvents(odataFilter);
         cache.set(`${CACHE_KEY}-${topCount}`, events, CACHE_SECS);
 
