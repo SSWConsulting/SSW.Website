@@ -14,8 +14,6 @@ const EventStatus = {
   NOW_RUNNING: "now running",
 };
 
-EventStatus;
-
 export const UpcomingEvents = ({ data }) => {
   const [events, setEvents] = useState<EventInfo[]>([]);
   const [loading, setLoading] = useState(false);
