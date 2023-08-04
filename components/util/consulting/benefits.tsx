@@ -41,7 +41,7 @@ const BenefitCard = (props) => {
         {linkURL && (
           <a
             data-tina-field={tinaField(props.data, "linkName")}
-            className="text-white no-underline"
+            className="text-left text-white"
             href={linkURL}
           >
             {linkName}
