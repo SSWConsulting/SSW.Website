@@ -132,6 +132,7 @@ resource appService 'Microsoft.Web/sites@2022-03-01' = {
       minTlsVersion: '1.2'
       linuxFxVersion: 'DOCKER|${acr.properties.loginServer}/${dockerImage}:production'
     }
+    clientAffinityEnabled: false
   }
 }
 
