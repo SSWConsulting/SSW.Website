@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,6 +8,11 @@ import { tinaField } from "tinacms/dist/react";
 
 import axios from "axios";
 import { EventInfo, LiveStreamBannerInfo } from "../../services/server/events";
+
+const EventStatus = {
+  TODAY: "today",
+  NOW_RUNNING: "now running",
+};
 
 export const UpcomingEvents = ({ data }) => {
   const [events, setEvents] = useState<EventInfo[]>([]);
@@ -36,24 +42,24 @@ export const UpcomingEvents = ({ data }) => {
   }, []);
 
   return (
-    <div className="prose max-w-none">
-      <h1
+    <div className="prose mt-5 max-w-none sm:my-0 ">
+      <h2
         data-tina-field={tinaField(data, upcomingEventsBlock.title)}
-        className="pb-5 font-light"
+        className="pb-1.5 text-3xl/9 font-normal text-black"
       >
         {data.title}
-      </h1>
+      </h2>
       <div className="not-prose">
-        <div className="max-h-150 grow overflow-x-hidden overflow-y-scroll border-2 bg-gray-100">
+        <div className="grow">
           {loading ? <p>Loading...</p> : events.map(renderEvent)}
         </div>
-        <div className="mt-3 flex flex-row-reverse">
+        <div className="mt-3 flex flex-row-reverse justify-center sm:justify-start">
           {/* TODO: Update link after implement this page */}
           <Link
             href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all"
-            className="unstyled inline-flex items-center rounded border-1 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
+            className="unstyled rounded bg-sswRed px-3 py-2 text-xs font-normal text-white hover:bg-sswDarkRed"
           >
-            More Events
+            See more events
           </Link>
         </div>
       </div>
@@ -66,38 +72,55 @@ const renderEvent = (e: EventInfo) => {
     !e.Url.Url.includes("ssw.com.au") || e.Url.Url.includes("/ssw/redirect");
 
   return (
-    <article key={e.id} className="flex">
-      <div className="flex min-w-fit items-center">
-        <Link href={e.Thumbnail.Url}>
+    <Link
+      href={e.Url.Url}
+      className="unstyled no-underline"
+      target={isExternalLink ? "_blank" : "_self"}
+      key={e.id}
+    >
+      <article className="my-2.5 grid grid-cols-4 rounded border-1 border-gray-300 bg-white p-2 shadow hover:border-sswBlack dark:border-gray-700 dark:bg-gray-800">
+        <div className="col-span-3 justify-center px-3">
+          <h2 className="m-0 py-1 text-sm font-bold text-black">{e.Title}</h2>
+          <time className="my-1 flex items-center">
+            {e.RelativeDate && (
+              <span
+                className={classNames(
+                  "inline-flex items-center rounded-sm px-1.5 py-0.5 text-xxs uppercase",
+                  e.RelativeDate == EventStatus.NOW_RUNNING ||
+                    e.RelativeDate == EventStatus.TODAY // Now running for the two days events and today is for the single day
+                    ? "bg-sswRed text-white"
+                    : "bg-gray-25 text-black"
+                )}
+              >
+                {e.RelativeDate}
+              </span>
+            )}
+            <span
+              className={classNames(
+                "text-xxs text-gray-500",
+                e.RelativeDate ? "ml-2" : ""
+              )}
+            >
+              {e.FormattedDate}
+            </span>
+          </time>
+          {!!e.Presenter && (
+            <span className="mt-1 inline-flex items-center text-xxs text-black">
+              {e.Presenter}
+            </span>
+          )}
+        </div>
+        <div className="col-span-1 flex items-center justify-center sm:mr-2 sm:justify-end">
           <Image
+            className={"rounded-md"}
             src={e.Thumbnail.Url}
             alt={`${e.Title} logo`}
-            width={100}
-            height={100}
+            width={90}
+            height={90}
           />
-        </Link>
-      </div>
-      <div className="flex flex-col justify-center px-6">
-        <time className="uppercase">
-          <span className="text-xs">{e.FormattedDate}</span>
-          <span className="ml-2 inline-flex items-center rounded-md bg-gray-700 px-1.5 font-bold text-white">
-            {e.RelativeDate}
-          </span>
-        </time>
-        <h2 className="m-0 py-1 text-sm">
-          <Link
-            href={e.Url.Url}
-            className="unstyled text-sm font-bold text-sswRed"
-            target={isExternalLink ? "_blank" : "_self"}
-          >
-            {e.Title}
-          </Link>
-        </h2>
-        {!!e.Presenter && (
-          <span className="whitespace-nowrap text-xs">{e.Presenter}</span>
-        )}
-      </div>
-    </article>
+        </div>
+      </article>
+    </Link>
   );
 };
 
@@ -135,7 +158,7 @@ const formatBannerDate = (bannerInfo: LiveStreamBannerInfo) => {
   // NOTE: Omit ddd for brevity if it's next year's event
   const dateformat =
     dayjs(bannerInfo.StartDateTime).year() === dayjs().year()
-      ? "ddd MMM D"
+      ? "MMM D"
       : "MMM D YYYY";
 
   const isOneDayEvent = dayjs(bannerInfo.StartDateTime)
@@ -153,14 +176,14 @@ const formatRelativeBannerDate = (bannerInfo: LiveStreamBannerInfo) => {
   const end = dayjs(bannerInfo.EndDateTime);
 
   if (now.isBetween(start, end)) {
-    return "now running";
+    return EventStatus.NOW_RUNNING;
   }
 
   const isSameDay = now.startOf("day").isSame(start.startOf("day"));
 
   const days = start.diff(now, "d");
   if (days === 0 && isSameDay) {
-    return "today";
+    return EventStatus.TODAY;
   } else if (days > 0) {
     return `${days} ${days === 1 ? "day" : "days"} to go`;
   } else {

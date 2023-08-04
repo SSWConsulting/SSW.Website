@@ -29,7 +29,7 @@ export const PresenterBlock = ({ data }) => {
           <div className="col-span-12 justify-center md:inline-flex">
             <span className="self-center">You can also check our</span>
             <span
-              className="flex justify-center gap-2 self-center"
+              className="prose flex justify-center gap-2 self-center"
               data-tina-field={tinaField(
                 data.otherEvent,
                 presenterBlockConstant.otherEvent.title
@@ -37,7 +37,7 @@ export const PresenterBlock = ({ data }) => {
             >
               <a
                 href={data.otherEvent.eventURL}
-                className="sswUnderline inline-flex cursor-pointer"
+                className="inline-flex cursor-pointer text-xl font-normal"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -55,11 +55,11 @@ export const PresenterBlock = ({ data }) => {
 const PresenterCard = ({ presenter, schema, index }) => {
   return (
     <div
-      className="flex h-fit flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-10 text-center text-xl md:h-172 md:w-96"
+      className="prose flex h-fit flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-10 text-center text-xl md:h-172 md:w-96"
       data-aos="flip-right"
     >
       <div
-        className="flex flex-col items-center"
+        className="not-prose flex flex-col items-center"
         data-tina-field={tinaField(
           schema[index].presenter,
           presenterSchemaConstants.presenter.peopleProfileURL
@@ -77,7 +77,7 @@ const PresenterCard = ({ presenter, schema, index }) => {
       </div>
       <a
         href={presenter?.presenter?.peopleProfileURL}
-        className="sswUnderline mt-4 min-h-16"
+        className="mt-4 min-h-16 font-normal"
         target="_blank"
         rel="noopener noreferrer"
         data-tina-field={tinaField(

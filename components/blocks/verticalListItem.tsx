@@ -37,7 +37,7 @@ export const VerticalListItem = ({ data }) => {
           <TinaMarkdown content={data.content} />
         </div>
       </div>
-      <div className="pl-20 text-left marker:text-sswRed child-ul:!ml-0 descendant-ul:ml-6 descendant-ul:!list-disc">
+      <div className="pl-20 text-left marker:text-sswRed child-ul:!ml-0 descendant-ul:ml-6 descendant-ul:!list-square">
         <TinaMarkdown content={data.afterBody} />
       </div>
     </div>
