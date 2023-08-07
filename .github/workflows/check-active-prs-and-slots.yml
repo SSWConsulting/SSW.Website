@@ -25,6 +25,11 @@ jobs:
       - name: Check Active PRs and Slots
         uses: actions/checkout@v2
 
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v2
+        with:
+          path: ./.github
+
       - name: Azure CLI - Login
         uses: azure/login@v1
         with:
