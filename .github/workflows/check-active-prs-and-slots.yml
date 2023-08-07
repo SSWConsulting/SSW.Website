@@ -35,7 +35,8 @@ jobs:
       - name: Get Deployment Slots Count
         id: slots
         run: |
-          $slots_count=$(az webapp deployment slot list --name ${{ env.APP_SERVICE_NAME }} --resource-group ${{env.AZURE_RESOURCE_GROUP }} )
+          echo ${{ env.APP_SERVICE_NAME }} and ${{env.AZURE_RESOURCE_GROUP }}
+          $slots_count=$(az webapp deployment slot list --name `${{ env.APP_SERVICE_NAME }}` --resource-group `${{env.AZURE_RESOURCE_GROUP }}` )
           echo $slots_count
           echo "slots_count=$slots_count" >> $env:GITHUB_OUTPUT
         env:
