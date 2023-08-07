@@ -9,6 +9,14 @@ on:
     branches:
       - main
 
+defaults:
+  run:
+    shell: pwsh
+
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   check-pr-slots:
     runs-on: ubuntu-latest
