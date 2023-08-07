@@ -40,7 +40,7 @@ jobs:
       - name: Get Deployment Slots Count
         id: slots
         run: |
-          $slots_count=$(az webapp deployment slot list --name ${{ env.APP_SERVICE_NAME }} --resource-group ${{env.AZURE_RESOURCE_GROUP }} --query '[].name' | jq '. | length')
+          $slots_count=$(az webapp deployment slot list --name ${{ env.APP_SERVICE_NAME }} --resource-group ${{env.AZURE_RESOURCE_GROUP }} --query '[].name' --output tsv)
           echo $slots_count
           echo "slots_count=$slots_count" >> $env:GITHUB_OUTPUT
         env:
@@ -50,14 +50,13 @@ jobs:
         id: PRs
         run: |
           $active_prs=$(curl -s "https://api.github.com/repos/SSWConsulting/SSW.Website/pulls?state=open" | jq -r '.[].number')
-          echo $active_prs
           echo "active_prs=$active_prs" >> $env:GITHUB_OUTPUT
 
       - name: Check Active PRs and Slots
         run: |
           $PRsCount = "${{ steps.PRs.outputs.active_prs }}" -split ' '
-          echo $PRsCount.Length
-          if ( $PRsCount.Length -eq ${{ steps.slots.outputs.slots_count }} ) {
+          $SlotsCount = "${{ steps.slots.outputs.slots_count }}" -split ' '
+          if ( $PRsCount.Length -eq $SlotsCount.Length ) {
             echo "✅ - Number of slots are equal to number of active PRs"
           }
           else{
