@@ -74,5 +74,5 @@ jobs:
         if: ${{steps.AreEqualSlots.outputs.AreSlotsEqual == 'False' }}
         run: |
           # Compare the arrays to find differences
-          $missingSlots = "${{steps.AreEqualSlots.outputs.SlotsArray }}" + "$${{steps.AreEqualSlots.outputs.PRsArray }}" |  Select-Object -Unique
-          Write-Host "Missing numbers: $($missingSlots -join ' ')"
+          $missingSlots = "${{steps.AreEqualSlots.outputs.SlotsArray }}" + "$${{steps.AreEqualSlots.outputs.PRsArray }}" | Get-Unique
+          Write-Host "Missing numbers: $($missingSlots -join 'pr-')"
