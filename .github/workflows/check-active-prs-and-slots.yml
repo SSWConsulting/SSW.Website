@@ -53,12 +53,21 @@ jobs:
           echo "active_prs=$active_prs" >> $env:GITHUB_OUTPUT
 
       - name: Check Active PRs and Slots
+        id: AreEqualSlots
         run: |
           $PRsCount = "${{ steps.PRs.outputs.active_prs }}" -split ' '
           $SlotsCount = "${{ steps.slots.outputs.slots_count }}" -split ' '
-          if ( $PRsCount.Length -eq $SlotsCount.Length ) {
+          $AreSlotsEqual = $PRsCount.Length -eq $SlotsCount.Length
+
+          if ( $AreSlotsEqual ) {
             echo "✅ - Number of slots are equal to number of active PRs"
           }
           else{
             echo "❌ - Number of slots are not equal to number of active PRs"
+            echo "AreSlotsEqual=$AreSlotsEqual" >> $env:GITHUB_OUTPUT
           }
+
+      - name: List of Slots that need to be deleted
+        if: ${{steps.AreEqualSlots.outputs.AreSlotsEqual == 'False' }}
+        run: |
+          echo ${{steps.AreEqualSlots.outputs.AreSlotsEqual }}
