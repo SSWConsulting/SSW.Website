@@ -55,9 +55,9 @@ jobs:
 
       - name: Check Active PRs and Slots
         run: |
-          $PRsCount = @(${{ steps.PRs.outputs.active_prs }}) | Measure-Object | Select-Object -ExpandProperty Count
-          echo $PRsCount
-          if ( $PRsCount -eq ${{ steps.slots.outputs.slots_count }} ) {
+          $PRsCount = "${{ steps.PRs.outputs.active_prs }}" -split ' '
+          echo $PRsCount.Length
+          if ( $PRsCount.Length -eq ${{ steps.slots.outputs.slots_count }} ) {
             echo "✅ - Number of slots are equal to number of active PRs"
           }
           else{
