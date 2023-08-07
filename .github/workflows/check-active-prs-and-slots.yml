@@ -1,0 +1,46 @@
+name: Check Active PRs and Slots
+
+#on:
+#  schedule:
+#    - cron: "0 0 * * 3" # Schedule to run every Wednesday at midnight UTC
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-pr-slots:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Active PRs and Slots
+        uses: actions/checkout@v2
+
+      - name: Azure CLI - Login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Get Deployment Slots Count
+        id: slots
+        run: |
+          $slots_count=$(az webapp deployment slot list --name ${{ env.APP_SERVICE_NAME }} --resource-group ${{env.AZURE_RESOURCE_GROUP }} --query '[].name' | jq '. | length')
+          echo $slots_count
+          echo "slots_count=$slots_count" >> $env:GITHUB_OUTPUT
+        env:
+          AZURE_CORE_OUTPUT: json
+
+      - name: Get Active PRs Count
+        id: PRs
+        run: |
+          $active_prs=$(curl -s "https://api.github.com/repos/your-org/your-repo/pulls?state=open" | jq '. | length')
+          echo $active_prs
+          echo "active_prs=$active_prs" >> $env:GITHUB_OUTPUT
+
+      - name: Run the script to check PRs and Slots
+        run: |
+
+          echo ${{ steps.PRs.outputs.active_prs }} and ${{ steps.slots.outputs.slots_count }}
