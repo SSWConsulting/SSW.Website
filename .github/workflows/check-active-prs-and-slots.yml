@@ -55,6 +55,7 @@ jobs:
       - name: Check Active PRs and Slots
         id: AreEqualSlots
         run: |
+          # Comparing the number of Slots and PRs
           $PRsArray = "${{ steps.PRs.outputs.active_prs }}" -split ' ' | ForEach-Object { [int]$_ }
           $SlotsArray = "${{ steps.slots.outputs.slots_count }}" -split ' ' | ForEach-Object { [int]$_ }
           $AreSlotsEqual = $PRsArray.Length -eq $SlotsArray.Length
