@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check Active PRs and Slots
+      - name: Checking out
         uses: actions/checkout@v2
 
       - name: Load .env file
@@ -54,7 +54,12 @@ jobs:
           echo $active_prs
           echo "active_prs=$active_prs" >> $env:GITHUB_OUTPUT
 
-      - name: Run the script to check PRs and Slots
+      - name: Check Active PRs and Slots
         run: |
-
           echo ${{ steps.PRs.outputs.active_prs }} and ${{ steps.slots.outputs.slots_count }}
+          if ( ${{ steps.PRs.outputs.active_prs }} -eq ${{ steps.slots.outputs.slots_count }} ) {
+            echo "✅ - Number of slots are equal to number of active PRs"
+          }
+          else{
+            echo "❌ - Number of slots are not equal to number of active PRs"
+          }
