@@ -35,7 +35,7 @@ jobs:
       - name: Get Deployment Slots Count
         id: slots
         run: |
-          $slots_count=$(az webapp deployment slot list --name ${{ env.APP_SERVICE_NAME }} --resource-group ${{env.AZURE_RESOURCE_GROUP }} --query '[].name' | jq '. | length')
+          $slots_count=$(az webapp deployment slot list --name ${{ env.APP_SERVICE_NAME }} --resource-group ${{env.AZURE_RESOURCE_GROUP }} --query name | jq '. | length')
           echo $slots_count
           echo "slots_count=$slots_count" >> $env:GITHUB_OUTPUT
         env:
@@ -44,7 +44,7 @@ jobs:
       - name: Get Active PRs Count
         id: PRs
         run: |
-          $active_prs=$(curl -s "https://api.github.com/repos/your-org/your-repo/pulls?state=open" | jq '. | length')
+          $active_prs=$(curl -s "https://api.github.com/repos/SSWConsulting/SSW.Website/pulls?state=open" | jq '. | length')
           echo $active_prs
           echo "active_prs=$active_prs" >> $env:GITHUB_OUTPUT
 
