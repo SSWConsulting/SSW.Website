@@ -22,9 +22,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checking out
-        uses: actions/checkout@v2
-
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
         with:
@@ -40,7 +37,6 @@ jobs:
       - name: Get Deployment Slots Count
         id: slots
         run: |
-          echo ${{ env.APP_SERVICE_NAME }} and ${{env.AZURE_RESOURCE_GROUP }}
           $slots_count=$(az webapp deployment slot list --name ${{ env.APP_SERVICE_NAME }} --resource-group ${{env.AZURE_RESOURCE_GROUP }} --query '[].name' | jq '. | length')
           echo $slots_count
           echo "slots_count=$slots_count" >> $env:GITHUB_OUTPUT
@@ -50,14 +46,13 @@ jobs:
       - name: Get Active PRs Count
         id: PRs
         run: |
-          $active_prs=$(curl -s "https://api.github.com/repos/SSWConsulting/SSW.Website/pulls?state=open" | jq '. | length')
+          $active_prs=$(curl -s "https://api.github.com/repos/SSWConsulting/SSW.Website/pulls?state=open" | jq -r '.[].number')
           echo $active_prs
           echo "active_prs=$active_prs" >> $env:GITHUB_OUTPUT
 
       - name: Check Active PRs and Slots
         run: |
-          echo ${{ steps.PRs.outputs.active_prs }} and ${{ steps.slots.outputs.slots_count }}
-          if ( ${{ steps.PRs.outputs.active_prs }} -eq ${{ steps.slots.outputs.slots_count }} ) {
+          if ( ${{ steps.PRs.outputs.active_prs.Count }} -eq ${{ steps.slots.outputs.slots_count }} ) {
             echo "✅ - Number of slots are equal to number of active PRs"
           }
           else{
