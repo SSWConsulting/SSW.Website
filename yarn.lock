@@ -4658,7 +4658,7 @@ __metadata:
     react-responsive-carousel: ^3.2.23
     react-responsive-modal: ^6.4.2
     react-toastify: ^9.1.3
-    react-tooltip: ^5.18.0
+    react-tooltip: ^5.20.0
     source-map-explorer: ^2.5.3
     ssw.megamenu: ^3.1.4
     tailwindcss: 3.3.2
@@ -13782,16 +13782,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-tooltip@npm:^5.18.0":
-  version: 5.18.0
-  resolution: "react-tooltip@npm:5.18.0"
+"react-tooltip@npm:^5.20.0":
+  version: 5.20.0
+  resolution: "react-tooltip@npm:5.20.0"
   dependencies:
     "@floating-ui/dom": ^1.0.0
     classnames: ^2.3.0
   peerDependencies:
     react: ">=16.14.0"
     react-dom: ">=16.14.0"
-  checksum: 3d650e729c73a02ac366584b45ada93b07422a5ba158b8c98aa064ab5186522013cd14057f622bf91a6726ac8d99bd4511a2f148c9b42239501b357490ade64d
+  checksum: c332a4d0e4859f7a2f68c7f6d582f7aeceb4771b9302f27d7089f38b12a7a6c45cb4ea0dd56b32e904ae62424d6fe248382a41f562595b702f35fd1fe9dee47c
   languageName: node
   linkType: hard
 
