@@ -1,114 +1,128 @@
 import { default as classNames, default as cs } from "classnames";
-import { memo, useRef } from "react";
+import Link from "next/link";
+import { SVGAttributes, useRef } from "react";
 import { Template } from "tinacms";
-import { useElementSize, useHover } from "usehooks-ts";
-import styles from "./latestTech.module.css";
+import { useHover } from "usehooks-ts";
 
-const WaveBg = memo(() => {
-  return (
-    <svg
-      width="100%"
-      height="100%"
-      viewBox="0 0 768 170"
-      preserveAspectRatio="none"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g id="bg">
-        <path
-          d="M-3.78906 70.6063C0.161537 79.7717 22.4745 98.2921 80.1217 99.0506C152.181 99.9988 201.01 70.6063 255.054 77.2433C309.098 83.8803 372.15 138.399 502.994 125.125C633.838 111.851 674.71 22.8191 707.793 7.08066C732.208 -4.53414 759.941 8.97695 768 13.2436"
-          stroke="#F5F5F5"
-          strokeWidth="4"
-        />
-        <path
-          d="M-3.78906 90.1795C0.161537 99.3449 22.4745 117.865 80.1217 118.624C152.181 119.572 201.01 90.1795 255.054 96.8166C309.098 103.454 372.15 157.972 502.994 144.698C633.838 131.424 674.71 42.3924 707.793 26.6539C732.208 15.0391 759.941 28.5502 768 32.8168"
-          stroke="#F5F5F5"
-          strokeWidth="4"
-        />
-        <path
-          d="M-3.78906 110.902C0.161537 120.068 22.4745 138.588 80.1217 139.347C152.181 140.295 201.01 110.902 255.054 117.539C309.098 124.176 372.15 178.695 502.994 165.421C633.838 152.146 674.71 63.115 707.793 47.3766C732.208 35.7618 759.941 49.2728 768 53.5395"
-          stroke="#F5F5F5"
-          strokeWidth="4"
-        />
-      </g>
-    </svg>
-  );
-});
+const Badge = (
+  props: {
+    name?: string;
+    size?: number;
+    cx: number;
+    cy: number;
+    rotate?: number;
+    img?: string;
+  } & SVGAttributes<SVGCircleElement>
+) => {
+  const { name, size, cx, cy, rotate, img, ...rest } = props;
+  const edge = +Math.sqrt(2).toFixed(1) * size;
 
-const Badge = ({
-  name,
-  size,
-  cx,
-  cy,
-}: {
-  name?: string;
-  size?: number;
-  cx: number;
-  cy: number;
-}) => {
   return (
     <g
-      id={name}
-      width={size}
-      height={size}
-      viewBox={`0 0 ${size * 2} ${size * 2}`}
-      className={cs("cursor-pointer")}
+      transform={`rotate(${rotate ?? 0} ${cx} ${cy})`}
+      className={cs("animate-badge-bounce cursor-pointer")}
     >
-      <circle cx={cx} cy={cy} r={size} fill="white"></circle>
+      <defs>
+        <pattern
+          id={`${name}-image`}
+          patternContentUnits="objectBoundingBox"
+          height="100%"
+          width="100%"
+        >
+          <image height={1} width={1} xlinkHref={img}></image>
+        </pattern>
+      </defs>
+      <circle
+        id={name}
+        aria-label={name}
+        {...rest}
+        cx={cx}
+        cy={cy}
+        r={size}
+        fill="white"
+      ></circle>
+      <rect
+        x={cx - edge / 2}
+        y={cy - edge / 2}
+        width={edge}
+        height={edge}
+        fill={`url(#${name}-image)`}
+      />
     </g>
   );
 };
 
-const FloatingBadges = () => {
-  const [sizeRef, { width, height }] = useElementSize();
+export const LatestTech = ({ data }) => {
   const ref = useRef(null);
   const isHover = useHover(ref);
 
   return (
-    <div
-      className="absolute inset-0 overflow-hidden"
-      ref={(el: HTMLDivElement) => {
-        ref.current = el;
-        sizeRef(el);
-      }}
-    >
-      <svg
-        width="2600"
-        height="100%"
-        className={classNames(
-          styles.badge,
-          !isHover ? styles.start : styles.pause
-        )}
+    <div className="relative h-70 overflow-hidden bg-gray-50 p-6">
+      <span className="relative z-10 font-helvetica text-3xl font-medium text-sswRed">
+        We talk about <Link href={data?.link ?? ""}>latest tech</Link>
+      </span>
+      <div
+        className="absolute -bottom-3 -left-4 h-62 w-full select-none bg-waveBackground bg-contain bg-left bg-no-repeat"
+        ref={(el: HTMLDivElement) => {
+          ref.current = el;
+        }}
       >
-        <g id="badges" x={0} y={0}>
-          <Badge name="azure" size={40} cx={40} cy={150} />
-          <Badge name="powerapp" size={30} cx={140} cy={220} />
-          <Badge name="angular" size={50} cx={240} cy={145} />
-          <Badge name="azure-devops" size={35} cx={330} cy={225} />
-          <Badge name="react" size={35} cx={350} cy={100} />
-          <Badge name="sheet?" size={35} cx={435} cy={200} />
-          <Badge name="blazor" size={40} cx={510} cy={100} />
-          <Badge name="gpt" size={50} cx={610} cy={220} />
-          <Badge name="h5" size={30} cx={720} cy={150} />
-          <Badge name="angular2" size={30} cx={780} cy={90} />
-          <Badge name="maui" size={30} cx={840} cy={200} />
-          <Badge name="1" size={40} cx={950} cy={150} />
-          <Badge name="2" size={30} cx={1050} cy={220} />
-          <Badge name="3" size={50} cx={1150} cy={145} />
-          <Badge name="4" size={35} cx={1240} cy={225} />
-          <Badge name="5" size={40} cx={1260} cy={100} />
-        </g>
-        <use xlinkHref="#badges" x={1300} y={0} />
-      </svg>
-    </div>
-  );
-};
-
-export const LatestTech = () => {
-  return (
-    <div className="relative h-64 max-w-7xl bg-gray-50">
-      <WaveBg />
-      <FloatingBadges />
+        <svg viewBox="0 0 788 248" className={classNames("h-62 max-w-3xl")}>
+          <g id="badges">
+            <Badge
+              size={35}
+              cx={35}
+              cy={140}
+              rotate={-11}
+              name="azure"
+              img={"/images/badges/Azure_Badge.png"}
+            />
+            <Badge
+              name="powerapp"
+              size={25}
+              cx={114}
+              cy={207}
+              rotate={-8.5}
+              img="/images/badges/PowerApp_Badge.png"
+            />
+            <Badge
+              name="angular"
+              size={43}
+              cx={190}
+              cy={135}
+              rotate={-5}
+              img="/images/badges/Angular_Badge.png"
+            />
+            <Badge name="azure-devops" size={30} cx={291} cy={215} />
+            <Badge
+              name="react"
+              size={34}
+              cx={320}
+              cy={80}
+              img="/images/badges/React_Badge.png"
+            />
+            <Badge
+              name="sharepoint"
+              size={31}
+              cx={406}
+              cy={183}
+              rotate={19.5}
+              img="/images/badges/Sharepoint_Badge.png"
+            />
+            <Badge
+              name="blazor"
+              size={41}
+              cx={478}
+              cy={60}
+              img="/images/badges/Blazor_Badge.png"
+            />
+            <Badge name="gpt" size={38} cx={547} cy={208} />
+            <Badge name="h5" size={29} cx={625} cy={119} />
+            <Badge name="angular2" size={29} cx={689} cy={46} />
+            <Badge name="maui" size={29} cx={737} cy={163} rotate={-12} />
+          </g>
+        </svg>
+      </div>
     </div>
   );
 };
@@ -119,9 +133,26 @@ export const latestTechSchema: Template = {
   fields: [
     {
       type: "string",
-      label: "name",
-      name: "name",
-      required: false,
+      label: "Latest Tech Link",
+      name: "link",
+    },
+    {
+      type: "object",
+      list: true,
+      label: "Badges",
+      name: "badges",
+      fields: [
+        {
+          type: "string",
+          label: "Name",
+          name: "name",
+        },
+        {
+          type: "image",
+          label: "Image",
+          name: "image",
+        },
+      ],
     },
   ],
 };
