@@ -96,4 +96,5 @@ jobs:
         with:
           workflow: pr-close-delete-env
           repo: SSWConsulting/SSW.Website
+          ref: refs/heads/main
           inputs: '{ "pullRequestId": "${{ steps.listOfSlots.outputs.SlotsWithoutPRArray }}" }'
