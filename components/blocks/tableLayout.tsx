@@ -32,9 +32,9 @@ export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
         tableStyles[data.tableStyle]
       )}
     >
-      <table className="border-1 border-solid">
+      <table>
         <thead>
-          <tr>
+          <tr className="border-1 border-solid">
             {data?.headers ? (
               data?.headers?.map((cell, index) => (
                 <th
@@ -53,14 +53,24 @@ export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
         </thead>
         <tbody>
           {data?.rows?.map((row, index) => (
-            <tr className={row?.isHeader && "!bg-red-100"} key={index}>
+            <tr
+              className={classNames(
+                row?.isHeader ? "border-0 !bg-red-100" : "border-1 border-solid"
+              )}
+              key={index}
+            >
               {row?.cells?.map((cell, index) => (
                 <td
                   className={classNames(
                     index === 0 && data?.firstColBold
-                      ? "text-left font-bold"
+                      ? "text-left"
                       : "text-center",
-                    row?.isHeader ? "!bg-red-100 font-bold" : "",
+                    index === 0 &&
+                      data?.firstColBold &&
+                      !row?.isHeader &&
+                      "font-semibold",
+                    row?.isHeader &&
+                      "border-0 !bg-white pt-8 text-lg font-bold",
                     "whitespace-pre-wrap"
                   )}
                   key={index}
