@@ -41,7 +41,7 @@ export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
                   className={
                     index === 0 && data?.firstColBold ? "text-left" : ""
                   }
-                  key={index}
+                  key={`header-${index}`}
                 >
                   {cell}
                 </th>
@@ -73,7 +73,7 @@ export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
                       "border-0 !bg-white pt-8 text-lg font-bold",
                     "whitespace-pre-wrap"
                   )}
-                  key={index}
+                  key={`row-${index}`}
                   colSpan={
                     index === row.cells.length - 1
                       ? data.headers.length - row.cells.length + 1
@@ -142,7 +142,6 @@ export const tableBlockSchema: Template = {
               const pathArr = field?.name?.split(".");
               // Remove the last 3 elements in the array to get the path to the table
               pathArr?.splice(pathArr?.length - 3, 3);
-              console.log(pathArr);
               let currentObj = allValues;
 
               for (const currPath of pathArr) {
