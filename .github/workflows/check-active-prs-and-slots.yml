@@ -93,4 +93,4 @@ jobs:
       - name: Invoke the flow to delete the Slot
         uses: ./.github/workflows/pr-close-delete-env.yml
         with:
-          pullRequestId: ${{ steps.listOfSlots.outputs.SlotsWithoutPRArray }}
+          pullRequestId: ${{ toJSON(steps.listOfSlots.outputs.SlotsWithoutPRArray) }}
