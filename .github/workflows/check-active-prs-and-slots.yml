@@ -72,8 +72,8 @@ jobs:
         if: ${{steps.AreEqualSlots.outputs.AreSlotsEqual == 'False' }}
         run: |
           # Compare the arrays to find differences
-          $Slots = ${{ steps.slots.outputs.slots_count }}
-          $PRs = ${{ steps.PRs.outputs.active_prs }}
+          $Slots = "${{ steps.slots.outputs.slots_count }}"
+          $PRs = "${{ steps.PRs.outputs.active_prs }}"
 
           # Split the strings into arrays of numbers
           $SlotsArray = $Slots -split ' '
