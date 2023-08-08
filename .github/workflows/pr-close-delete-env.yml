@@ -21,7 +21,7 @@ defaults:
     shell: pwsh
 
 env:
-  SLOT_NAME: pr-${{ github.event.number || inputs.pullRequestId }}
+  SLOT_NAME: pr-${{ inputs.pullRequestId || github.event.number }}
 
 permissions:
   id-token: write
