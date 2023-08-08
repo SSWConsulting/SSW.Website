@@ -81,7 +81,7 @@ jobs:
 
           # Find the values present in $string2 but not in $string1
           $SlotsWithoutPR = $SlotsArray | Where-Object { $_ -notin $PRArray }
-          if ( SlotsWithoutPR.Length -gt 0 ) {
+          if ( $SlotsWithoutPR.Length -gt 0 ) {
             $SlotsWithoutPRArray = $SlotsWithoutPRs -join ' '
             Write-Host "⚡- These slots need to be deleted : $SlotsWithoutPRArray"
           } else {
