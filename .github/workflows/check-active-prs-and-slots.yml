@@ -95,13 +95,13 @@ jobs:
         run: |
           $slotIds = "${{steps.listOfSlots.outputs.SlotsWithoutPRArray}}" -split ' '
           $firstSlotId = $slotIds[0]
-          curl -X POST \
-          -header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-          -header "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/SSWConsulting/SSW.Website/actions/workflows/pr-close-delete-env/dispatches \
-          -d '{
-            "inputs": {
-              "pullRequestId": $firstSlotId
-            }
+          curl -X POST `
+          -headers "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" `
+          -headers "Accept: application/vnd.github.v3+json" `
+          https://api.github.com/repos/SSWConsulting/SSW.Website/actions/workflows/pr-close-delete-env/dispatches `
+          -d '{ `
+            "inputs": { `
+              "pullRequestId": $firstSlotId `
+            } `
           }'
           Write-Host "✅ - Flow for deleting the slot has been successfully triggered!"
