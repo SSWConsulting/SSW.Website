@@ -87,6 +87,7 @@ jobs:
           if ( $SlotsWithoutPR.Length -gt 0 ) {
             $SlotsWithoutPRArray = $SlotsWithoutPR -join ' '
             Write-Host "⚡- These slots need to be deleted : $SlotsWithoutPRArray"
+            echo $SlotsWithoutPRArray
             echo "SlotsWithoutPRArray=$SlotsWithoutPRArray" >> $env:GITHUB_OUTPUT
           } else {
             Write-Host "✅ - Some PRs have not their slot deployed!"
@@ -94,9 +95,9 @@ jobs:
 
   deleteSlot:
     name: Invoking the flow to delete slots
-    if: ( ${{ needs.check-pr-slots.outputs.SlotsWithoutPRArray.Length }} -gt 0)
-    uses: ./.github/workflows/pr-close-delete-env.yml
     needs: check-pr-slots
+    if: ${{ needs.check-pr-slots.outputs.SlotsWithoutPRArray }} != ''
+    uses: ./.github/workflows/pr-close-delete-env.yml
     with:
       pullRequestId: ${{ needs.check-pr-slots.outputs.SlotsWithoutPRArray }}
     permissions:
