@@ -1,9 +1,13 @@
 name: Check Active PRs and Slots
 
+#on:
+#  schedule:
+#    - cron: "34 11 * * 2" # Schedule to run every Wednesday at 7 UTC
+#  workflow_dispatch:
 on:
-  schedule:
-    - cron: "34 11 * * 2" # Schedule to run every Wednesday at 7 UTC
-  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
 
 defaults:
   run:
@@ -65,6 +69,7 @@ jobs:
           }
 
       - name: List of Slots that need to be deleted
+        id: listOfSlots
         if: ${{steps.AreEqualSlots.outputs.AreSlotsEqual == 'False' }}
         run: |
           # Compare the arrays to find differences
@@ -80,6 +85,23 @@ jobs:
           if ( $SlotsWithoutPR.Length -gt 0 ) {
             $SlotsWithoutPRArray = $SlotsWithoutPR -join ' '
             Write-Host "⚡- These slots need to be deleted : $SlotsWithoutPRArray"
+            echo "SlotsWithoutPRArray=$SlotsWithoutPRArray" >> $env:GITHUB_OUTPUT
           } else {
             Write-Host "✅ - Some PRs have not their slot deployed!"
           }
+
+      - name: Trigger Delete Workflow
+        if: ${{steps.listOfSlots.outputs.SlotsWithoutPRArray.Length}} -gt 0
+        run: |
+          $slotIds = "${{steps.listOfSlots.outputs.SlotsWithoutPRArray}}" -split ' '
+          $firstSlotId = $slotIds[0]
+          curl -X POST \
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/SSWConsulting/SSW.Website/actions/workflows/pr-close-delete-env/dispatches \
+          -d '{
+            "inputs": {
+              "pullRequestId": $firstSlotId
+            }
+          }'
+          Write-Host "✅ - Flow for deleting the slot has been successfully triggered!"

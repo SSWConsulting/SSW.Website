@@ -5,7 +5,7 @@ on:
     types: [closed]
   workflow_dispatch:
     inputs:
-      environment:
+      pullRequestId:
         description: "Pull request number"
         required: true
         default: ""
@@ -15,7 +15,7 @@ defaults:
     shell: pwsh
 
 env:
-  SLOT_NAME: pr-${{ github.event.number }}
+  SLOT_NAME: pr-${{ github.event.number || inputs.pullRequestId }}
 
 permissions:
   id-token: write
