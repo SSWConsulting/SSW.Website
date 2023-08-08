@@ -337,9 +337,10 @@ module.exports = {
               margin: "0 auto",
             },
             "ul > li": {
-              display: "block",
-              fontWeight: theme("fontWeight.bold"),
-              margin: "2em 3rem 0 3rem",
+              display: "list-item",
+              margin: "2rem 0",
+              listStyle: "inside",
+              listStyleType: "square",
               "> div::before": {
                 color: theme("colors.sswRed"),
                 content: "\u25A0",
@@ -348,6 +349,18 @@ module.exports = {
                 fontWeight: theme("fontWeight.bold"),
                 marginLeft: "-1em",
                 width: "1em",
+              },
+              "> div": {
+                display: "inline",
+              },
+            },
+            "ol > li": {
+              display: "list-item",
+              margin: "2rem 0",
+              listStyle: "inside",
+              listStyleType: "decimal",
+              "> div": {
+                display: "inline",
               },
             },
           },
