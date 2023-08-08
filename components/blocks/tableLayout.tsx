@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { type Template } from "tinacms";
+import type { Template } from "tinacms";
 
 const tableStyles = {
   none: "",
