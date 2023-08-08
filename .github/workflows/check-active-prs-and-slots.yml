@@ -94,7 +94,7 @@ jobs:
         if: ${{steps.listOfSlots.outputs.SlotsWithoutPRArray.Length}} -gt 0
         uses: benc-uk/workflow-dispatch@v1
         with:
-          workflow: pr-close-delete-env
+          workflow: pr-close-delete-env.yml
           repo: SSWConsulting/SSW.Website
           ref: refs/heads/main
           inputs: '{ "pullRequestId": "${{ steps.listOfSlots.outputs.SlotsWithoutPRArray }}" }'
