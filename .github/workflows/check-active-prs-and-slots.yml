@@ -56,8 +56,8 @@ jobs:
         id: AreEqualSlots
         run: |
           # Comparing the number of Slots and PRs
-          $PRsArray = "${{ steps.PRs.outputs.active_prs }}" -split ' ' | ForEach-Object { [int]$_ }
-          $SlotsArray = "${{ steps.slots.outputs.slots_count }}" -split ' ' | ForEach-Object { [int]$_ }
+          $PRsArray = "${{ steps.PRs.outputs.active_prs }}" -split ' '
+          $SlotsArray = "${{ steps.slots.outputs.slots_count }}" -split ' '
           $AreSlotsEqual = $PRsArray.Length -eq $SlotsArray.Length
 
           if ( $AreSlotsEqual ) {
@@ -66,13 +66,24 @@ jobs:
           else {
             echo "❌ - Number of slots are not equal to number of active PRs"
             echo "AreSlotsEqual=$AreSlotsEqual" >> $env:GITHUB_OUTPUT
-            echo "SlotsArray=$SlotsArray" >> $env:GITHUB_OUTPUT
-            echo "PRsArray=$PRsArray" >> $env:GITHUB_OUTPUT
           }
 
       - name: List of Slots that need to be deleted
         if: ${{steps.AreEqualSlots.outputs.AreSlotsEqual == 'False' }}
         run: |
           # Compare the arrays to find differences
-          $missingSlots = "${{steps.AreEqualSlots.outputs.SlotsArray }}" + "$${{steps.AreEqualSlots.outputs.PRsArray }}" | Get-Unique
-          Write-Host "Missing numbers: $($missingSlots -join 'pr-')"
+          $Slots = ${{ steps.slots.outputs.slots_count }}
+          $PRs = ${{ steps.PRs.outputs.active_prs }}
+
+          # Split the strings into arrays of numbers
+          $SlotsArray = $Slots -split ' '
+          $PRArray = $PRs -split ' '
+
+          # Find the values present in $string2 but not in $string1
+          $SlotsWithoutPR = $SlotsArray | Where-Object { $_ -notin $PRArray }
+          if ( SlotsWithoutPR.Length -gt 0 ) {
+            $SlotsWithoutPRArray = $SlotsWithoutPRs -join ' '
+            Write-Host "⚡- These slots need to be deleted : $SlotsWithoutPRArray"
+          } else {
+            Write-Host "✅ - Some PRs have not their slot!"
+          }
