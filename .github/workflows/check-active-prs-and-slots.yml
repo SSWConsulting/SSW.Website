@@ -40,9 +40,9 @@ jobs:
       - name: Get Deployment Slots Count
         id: slots
         run: |
-          $slots_count=$(az webapp deployment slot list --name ${{ env.APP_SERVICE_NAME }} --resource-group ${{env.AZURE_RESOURCE_GROUP }} --query '[].name' --output tsv | sed 's/pr-//g')
-          echo $slots_count
-          echo "slots_count=$slots_count" >> $env:GITHUB_OUTPUT
+          $slots = $(az webapp deployment slot list --name ${{ env.APP_SERVICE_NAME }} --resource-group ${{env.AZURE_RESOURCE_GROUP }} --query '[].name' --output tsv | sed 's/pr-//g')
+          echo $slots
+          echo "slots=$slots" >> $env:GITHUB_OUTPUT
         env:
           AZURE_CORE_OUTPUT: json
 
@@ -57,7 +57,7 @@ jobs:
         run: |
           # Comparing the number of Slots and PRs
           $PRsArray = "${{ steps.PRs.outputs.active_prs }}" -split ' '
-          $SlotsArray = "${{ steps.slots.outputs.slots_count }}" -split ' '
+          $SlotsArray = "${{ steps.slots.outputs.slots }}" -split ' '
           $AreSlotsEqual = $PRsArray.Length -eq $SlotsArray.Length
 
           if ( $AreSlotsEqual ) {
@@ -72,7 +72,7 @@ jobs:
         if: ${{steps.AreEqualSlots.outputs.AreSlotsEqual == 'False' }}
         run: |
           # Compare the arrays to find differences
-          $Slots = "${{ steps.slots.outputs.slots_count }}"
+          $Slots = "${{ steps.slots.outputs.slots }}"
           $PRs = "${{ steps.PRs.outputs.active_prs }}"
 
           # Split the strings into arrays of numbers
@@ -82,8 +82,8 @@ jobs:
           # Find the values present in $string2 but not in $string1
           $SlotsWithoutPR = $SlotsArray | Where-Object { $_ -notin $PRArray }
           if ( $SlotsWithoutPR.Length -gt 0 ) {
-            $SlotsWithoutPRArray = $SlotsWithoutPRs -join ' '
+            $SlotsWithoutPRArray = $SlotsWithoutPR -join ' '
             Write-Host "⚡- These slots need to be deleted : $SlotsWithoutPRArray"
           } else {
-            Write-Host "✅ - Some PRs have not their slot!"
+            Write-Host "✅ - Some PRs have not their slot deployed!"
           }
