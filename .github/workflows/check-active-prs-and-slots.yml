@@ -21,7 +21,7 @@ jobs:
   check-pr-slots:
     runs-on: ubuntu-latest
     outputs:
-      SlotsWithoutPRArray: ${{ steps.listOfSlots.outputs.SlotsWithoutPRArray }}
+      SlotsWithoutPRArray: ${{ steps.listOfSlots.outputs.SlotID }}
 
     steps:
       - name: Checking out
@@ -88,7 +88,8 @@ jobs:
             $SlotsWithoutPRArray = $SlotsWithoutPR -join ' '
             Write-Host "⚡- These slots need to be deleted : $SlotsWithoutPRArray"
             echo $SlotsWithoutPRArray
-            echo "SlotsWithoutPRArray=$SlotsWithoutPRArray" >> $env:GITHUB_OUTPUT
+            $SlotIDs = $SlotsWithoutPRArray -split ' '
+            echo "SlotID=$SlotIDs[0]" >> $env:GITHUB_OUTPUT
           } else {
             Write-Host "✅ - Some PRs have not their slot deployed!"
           }
@@ -97,10 +98,10 @@ jobs:
     name: Invoking the flow to delete slots
     needs:
       - check-pr-slots
-    if: needs.check-pr-slots.outputs.SlotsWithoutPRArray != ''
+    if: needs.check-pr-slots.outputs.SlotID != ''
     uses: ./.github/workflows/pr-close-delete-env.yml
     with:
-      pullRequestId: ${{ needs.check-pr-slots.outputs.SlotsWithoutPRArray }}
+      pullRequestId: ${{ needs.check-pr-slots.outputs.SlotID }}
     permissions:
       id-token: write
       contents: read
