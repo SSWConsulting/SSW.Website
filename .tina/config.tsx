@@ -23,7 +23,7 @@ import { pagesSchema } from "./collections/pages";
 import { paymentDetailsSchema } from "./collections/payment-details";
 import { presenterSchema } from "./collections/presenter";
 import { productsIndexSchema, productsSchema } from "./collections/products";
-import { technologiesSchema } from "./collections/technologies";
+import { technologiesSchema, technologyBadgesSchema } from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
 import { trainingSchema } from "./collections/training";
@@ -86,6 +86,7 @@ const config = defineStaticConfig({
       companyIndexSchema,
       eventsIndexSchema,
       paymentDetailsSchema,
+      technologyBadgesSchema,
     ],
   },
 });

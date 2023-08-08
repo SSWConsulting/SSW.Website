@@ -33,3 +33,55 @@ export const technologiesSchema: Collection = {
     },
   ],
 };
+
+export const technologyBadgesSchema: Collection = {
+  label: "Technology Badges",
+  name: "technologyBadges",
+  format: "json",
+  path: "content/technologyBadges",
+  fields: [
+    {
+      type: "object",
+      label: "Technology Badges List",
+      name: "badgesList",
+      list: true,
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.name };
+        },
+      },
+      fields: [
+        {
+          type: "string",
+          label: "Name",
+          name: "name",
+          isTitle: true,
+          required: true,
+        },
+        {
+          type: "string",
+          label: "URL",
+          name: "url",
+        },
+        {
+          type: "image",
+          label: "Badge image",
+          name: "imgURL",
+          required: true,
+          // @ts-ignore
+          uploadDir: () => "/badges",
+        },
+        {
+          type: "boolean",
+          label: "Image size",
+          name: "largeIcon",
+        },
+        {
+          type: "string",
+          label: "Background Color",
+          name: "fill",
+        },
+      ],
+    },
+  ],
+};
