@@ -95,8 +95,9 @@ jobs:
 
   deleteSlot:
     name: Invoking the flow to delete slots
-    needs: check-pr-slots
-    if: ${{ needs.check-pr-slots.outputs.SlotsWithoutPRArray }} != ''
+    needs:
+      - check-pr-slots
+    if: needs.check-pr-slots.outputs.SlotsWithoutPRArray != ''
     uses: ./.github/workflows/pr-close-delete-env.yml
     with:
       pullRequestId: ${{ needs.check-pr-slots.outputs.SlotsWithoutPRArray }}
