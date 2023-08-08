@@ -20,6 +20,8 @@ permissions:
 jobs:
   check-pr-slots:
     runs-on: ubuntu-latest
+    outputs:
+      SlotsWithoutPRArray: ${{ steps.listOfSlots.outputs.SlotsWithoutPRArray }}
 
     steps:
       - name: Checking out
@@ -90,7 +92,12 @@ jobs:
             Write-Host "✅ - Some PRs have not their slot deployed!"
           }
 
-      - name: Invoke the flow to delete the Slot
-        uses: ./.github/workflows/pr-close-delete-env.yml
-        with:
-          pullRequestId: ${{ toJSON(steps.listOfSlots.outputs.SlotsWithoutPRArray) }}
+  deleteSlot:
+    name: Invoking the flow to delete slots
+    uses: ./.github/workflows/pr-close-delete-env.yml
+    needs: check-pr-slots
+    with:
+      pullRequestId: ${{ needs.check-pr-slots.outputs.SlotsWithoutPRArray }}
+    permissions:
+      id-token: write
+      contents: read
