@@ -90,18 +90,10 @@ jobs:
             Write-Host "✅ - Some PRs have not their slot deployed!"
           }
 
-      - name: Trigger Delete Workflow
+      - name: Invoking Delete Workflow
         if: ${{steps.listOfSlots.outputs.SlotsWithoutPRArray.Length}} -gt 0
-        run: |
-          $slotIds = "${{steps.listOfSlots.outputs.SlotsWithoutPRArray}}" -split ' '
-          $firstSlotId = $slotIds[0]
-          curl -X POST `
-          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" `
-          -H "Accept: application/vnd.github.v3+json" `
-          https://api.github.com/repos/SSWConsulting/SSW.Website/actions/workflows/pr-close-delete-env/dispatches `
-          -d '{ `
-            "inputs": { `
-              "pullRequestId": $firstSlotId `
-            } `
-          }'
-          Write-Host "✅ - Flow for deleting the slot has been successfully triggered!"
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: pr-close-delete-env
+          repo: SSWConsulting/SSW.Website
+          inputs: '{ "pullRequestId": "${{ steps.listOfSlots.outputs.SlotsWithoutPRArray }}" }'
