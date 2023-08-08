@@ -90,9 +90,7 @@ jobs:
             Write-Host "✅ - Some PRs have not their slot deployed!"
           }
 
-      - name: Invoking Delete Workflow
-        if: ${{steps.listOfSlots.outputs.SlotsWithoutPRArray.Length}} -gt 0
-        uses: benc-uk/workflow-dispatch@v1
+      - name: Invoke the flow to delete the Slot
+        uses: ./.github/workflows/pr-close-delete-env.yml
         with:
-          workflow: pr-close-delete-env.yml
-          ref: refs/heads/main
+          pullRequestId: ${{ steps.listOfSlots.outputs.SlotsWithoutPRArray }}

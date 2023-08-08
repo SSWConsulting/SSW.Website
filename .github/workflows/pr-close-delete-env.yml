@@ -9,6 +9,12 @@ on:
         description: "Pull request number"
         required: true
         default: ""
+  workflow_call:
+    inputs:
+      pullRequestId:
+        type: string
+        description: "Slot ID"
+        required: true
 
 defaults:
   run:
