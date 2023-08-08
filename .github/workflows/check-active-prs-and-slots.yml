@@ -1,8 +1,8 @@
 name: Check Active PRs and Slots
 
 on:
-  schedule:
-    - cron: "0 10 * * 3" # Schedule to run every Wednesday at 10 UTC
+  #  schedule:
+  #    - cron: "0 10 * * 3" # Schedule to run every Wednesday at 10 UTC
   workflow_dispatch:
     inputs:
       environment:
