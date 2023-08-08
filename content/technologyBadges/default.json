@@ -3,57 +3,58 @@
     {
       "name": "azure",
       "url": "https://sugarlearning.com/",
-      "image": "/images/badges/Azure_Badge.png"
+      "imgURL": "/images/badges/Azure_Badge.png"
     },
     {
       "name": "powerapp",
       "url": "https://sswtimepro.com/",
-      "image": "/images/badges/PowerApp_Badge.png"
+      "imgURL": "/images/badges/PowerApp_Badge.png"
     },
     {
       "name": "angular",
       "url": "https://sswsophie.com/sophiebot",
-      "image": "/images/badges/Angular_Badge.png"
+      "imgURL": "/images/badges/Angular_Badge.png",
+      "largeIcon": true
     },
     {
       "name": "azureDevops",
       "url": "https://sswsophie.com/sophiebot",
-      "image": "/images/badges/Angular_Badge.png"
+      "imgURL": "/images/products/ssw-rewards.jpeg"
     },
     {
       "name": "react",
       "url": "https://sswsophie.com/",
-      "image": "/images/badges/React_Badge.png"
+      "imgURL": "/images/badges/React_Badge.png"
     },
     {
       "name": "sharepoint",
       "url": "https://codeauditor.com/",
-      "image": "/images/badges/Sharepoint_Badge.png"
+      "imgURL": "/images/badges/Sharepoint_Badge.png"
     },
     {
       "name": "blazor",
       "url": "https://sswlinkauditor.com/",
-      "image": "/images/badges/Blazor_Badge.png"
+      "imgURL": "/images/badges/Blazor_Badge.png"
     },
     {
       "name": "chatgpt",
       "url": "https://smashingbarrier.com/",
-      "image": "/images/products/ssw-rewards.jpeg"
+      "imgURL": "/images/products/ssw-rewards.jpeg"
     },
     {
       "name": "h5",
       "url": "https://ssw.com.au/products/rewards",
-      "image": "/images/products/ssw-rewards.jpeg"
+      "imgURL": "/images/products/ssw-rewards.jpeg"
     },
     {
       "name": "vue",
       "url": "https://ssw.com.au/products/rewards",
-      "image": "/images/products/ssw-rewards.jpeg"
+      "imgURL": "/images/products/ssw-rewards.jpeg"
     },
     {
       "name": "maui",
       "url": "https://ssw.com.au/products/rewards",
-      "image": "/images/products/ssw-rewards.jpeg"
+      "imgURL": "/images/products/ssw-rewards.jpeg"
     }
   ]
 }
