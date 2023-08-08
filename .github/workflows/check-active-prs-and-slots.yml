@@ -96,4 +96,3 @@ jobs:
         with:
           workflow: pr-close-delete-env.yml
           ref: refs/heads/main
-          inputs: '{ "pullRequestId": "${{ steps.listOfSlots.outputs.SlotsWithoutPRArray }}" }'
