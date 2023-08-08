@@ -94,6 +94,7 @@ jobs:
 
   deleteSlot:
     name: Invoking the flow to delete slots
+    if: ( ${{ needs.check-pr-slots.outputs.SlotsWithoutPRArray.Length }} -gt 0)
     uses: ./.github/workflows/pr-close-delete-env.yml
     needs: check-pr-slots
     with:
@@ -101,3 +102,4 @@ jobs:
     permissions:
       id-token: write
       contents: read
+    secrets: inherit
