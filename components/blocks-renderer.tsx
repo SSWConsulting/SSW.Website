@@ -53,7 +53,6 @@ const componentMap = {
 };
 
 export const Blocks = ({ prefix, blocks }) => {
-  console.log(blocks);
   return (
     <div>
       {blocks ? (
