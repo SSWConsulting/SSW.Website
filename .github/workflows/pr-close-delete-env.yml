@@ -35,8 +35,7 @@ jobs:
     steps:
       - id: set-matrix
         run: |
-          echo $slots = ${{ env.SLOT_NAME }}
-          echo $slots
+          $slots = ${{ env.SLOT_NAME }}
           echo "matrix=${slots}" >> $env:GITHUB_OUTPUT
 
   delete-slot:
