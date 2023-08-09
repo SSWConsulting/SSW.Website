@@ -90,7 +90,7 @@ jobs:
             $SlotIDs = $SlotsWithoutPR -split ' '
             $ListOfSlots = $SlotsWithoutPR -join ' '
             Write-Host "⚡- These slots need to be deleted : $ListOfSlots"
-            $SingleSlotID = toJSON($SlotIDs)
+            $SingleSlotID = $ListOfSlots
 
             #TODO: Currently, we are passing single id, should be passed as an array of IDs
             echo "SlotID=$SingleSlotID" >> $env:GITHUB_OUTPUT
@@ -105,7 +105,7 @@ jobs:
     if: needs.check-pr-slots.outputs.SlotID != '' && needs.check-pr-slots.outputs.AreSlotsEqual == 'False'
     uses: ./.github/workflows/pr-close-delete-env.yml
     with:
-      pullRequestIdFromFlow: ${{ needs.check-pr-slots.outputs.SlotID }}
+      pullRequestIdFromFlow: ${{ toJson(needs.check-pr-slots.outputs.SlotID) }}
     permissions:
       id-token: write
       contents: read
