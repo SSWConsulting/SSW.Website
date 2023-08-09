@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { MdLiveHelp } from "react-icons/md";
 import { FilterGroup, type FilterGroupProps } from "./FilterGroup";
 
 interface FilterBlockProps {
@@ -11,14 +11,7 @@ export const FilterBlock = ({ groups, children }: FilterBlockProps) => {
     <div className="mb-10 md:flex md:flex-row">
       <div className="md:mr-16 md:shrink-0 md:basis-64">
         <h3 className="mb-4">
-          <Image
-            alt="Question Mark"
-            src="/images/Employment/question.png"
-            height={16}
-            width={16}
-            className="inline"
-          />{" "}
-          I am looking for...
+          <MdLiveHelp className="inline text-sswRed" /> I am looking for...
         </h3>
 
         {groups.map((group, index) => (

@@ -45,7 +45,7 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
           opportunity.status === jobStatus[selectedStatus])
     );
     setFilteredOpportunities(filtered);
-  }, [selectedLocation, selectedType, selectedStatus]);
+  }, [opportunities, selectedLocation, selectedType, selectedStatus]);
 
   return (
     <FilterBlock

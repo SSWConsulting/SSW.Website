@@ -1,7 +1,7 @@
 import { Transition } from "@headlessui/react";
 import classNames from "classnames";
-import Image from "next/image";
 import { useState } from "react";
+import { BsArrowRightCircle } from "react-icons/bs";
 
 export interface FilterGroupProps {
   selected: number;
@@ -66,25 +66,27 @@ const FilterOption = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <Transition
-        className="inline"
-        show={hovered || index === selected}
-        enter="transition-opacity duration-1000"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="transition-opacity duration-1000"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
-      >
-        <Image
-          alt="Arrow"
-          src="/images/Employment/arrow.png"
-          height={10}
-          width={10}
-          className="absolute m-2 ml-1"
-        />
-      </Transition>
-      <span className={classNames("ml-6", className)}>{children}</span>
+      <div className="inline-block h-3.5 w-6 text-sswRed">
+        <Transition
+          show={hovered || index === selected}
+          enter="transition-opacity transition-transform duration-300"
+          enterFrom="opacity-0 -translate-x-2"
+          enterTo="opacity-100 translate-x-0"
+          leave="transition-opacity duration-300"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          {/* <Image
+            alt="Arrow"
+            src="/images/Employment/arrow.png"
+            height={10}
+            width={10}
+            className="absolute m-2 ml-1"
+          /> */}
+          <BsArrowRightCircle />
+        </Transition>
+      </div>
+      <span className={classNames("", className)}>{children}</span>
     </div>
   );
 };
