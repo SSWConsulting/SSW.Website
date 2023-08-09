@@ -62,6 +62,12 @@ jobs:
           path: ./.github
           load-mode: strict
 
+      - name: Set build tag as env
+        run: |
+          # NODE_ENV - BUILD_TAG
+          $BUILD_TAG = "${{ inputs.tag }}"
+          echo $env:BUILD_TAG=$BUILD_TAG
+
       - uses: DamianReeves/write-file-action@master
         name: Make site unindexable
         if: github.event_name == 'pull_request'

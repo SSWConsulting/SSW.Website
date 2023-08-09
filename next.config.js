@@ -28,7 +28,8 @@ const config = {
   },
   compiler: {
     removeConsole:
-      process.env.NODE_ENV === "production"
+      process.env.NODE_ENV === "production" &&
+        process.env.BUILD_TAG === "production"
         ? {
           exclude: ["error", "warn"],
         }
