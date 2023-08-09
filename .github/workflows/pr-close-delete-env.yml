@@ -31,7 +31,7 @@ jobs:
   settingMatrix:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      matrix: ${{ toJson(steps.set-matrix.outputs.matrix) }}
     steps:
       - id: set-matrix
         run: |
@@ -44,7 +44,7 @@ jobs:
     needs: settingMatrix
     strategy:
       matrix:
-        SLOT_NAME: ${{ needs.settingMatrix.outputs.matrix }}
+        SLOT_NAME: ${{ fromJson(needs.settingMatrix.outputs.matrix) }}
 
     steps:
       - uses: actions/checkout@v3
