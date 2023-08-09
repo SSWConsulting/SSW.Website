@@ -92,7 +92,11 @@ export default function EventsIndexPage(
                 {filteredEvents.map((event) => (
                   <div key={event.Id}>
                     <h2>{event.Title}</h2>
-                    <p>{event.Description}</p>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: event.EventShortDescription,
+                      }}
+                    />
                   </div>
                 ))}
               </FilterBlock>
