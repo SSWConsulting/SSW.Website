@@ -93,7 +93,7 @@ jobs:
             $SingleSlotID = $ListOfSlots
 
             #TODO: Currently, we are passing single id, should be passed as an array of IDs
-            echo "SlotID=$SingleSlotID" >> $env:GITHUB_OUTPUT
+            echo "SlotID=[\"${SingleSlotID//', '/\",\"}\"]" >> $env:GITHUB_OUTPUT
           } else {
             Write-Host "✅ - Some PRs have not their slot deployed!"
           }
