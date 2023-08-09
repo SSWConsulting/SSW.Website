@@ -41,7 +41,6 @@ jobs:
       - id: just-for-output
         run: |
           echo '${{ steps.set-matrix.outputs.matrix }}'
-          echo '${{ fromJson('{\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}')}}'
 
   delete-slot:
     runs-on: ubuntu-latest
