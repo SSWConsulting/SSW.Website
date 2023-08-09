@@ -62,7 +62,7 @@ jobs:
 
           $SlotsWithoutPR = $SlotList | Where-Object { $_ -notin $PRList }
 
-          $AreSlotsEqual = SlotsWithoutPR.Length -eq 0
+          $AreSlotsEqual = $SlotsWithoutPR.Length -eq 0
 
           if ( $AreSlotsEqual ) {
             echo "✅ - Number of slots are equal to number of active PRs"
