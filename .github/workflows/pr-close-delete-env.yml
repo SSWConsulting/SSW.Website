@@ -35,10 +35,9 @@ jobs:
     steps:
       - id: set-matrix
         run: |
-          $slots = '${{ env.SLOT_NAME }}'
+          $slots = `${{ env.SLOT_NAME }}`
           $slot2 = $slots -replace '\\"', ''
-          $slot3 = $slot2 -replace "'", ""
-          echo "matrix=${slot3}" >> $env:GITHUB_OUTPUT
+          echo "matrix=${slot2}" >> $env:GITHUB_OUTPUT
 
       - id: just-for-output
         run: |
