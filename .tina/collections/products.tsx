@@ -7,6 +7,12 @@ export const productsIndexSchema: Collection = {
   name: "productsIndex",
   path: "content/products/index",
   format: "json",
+  ui: {
+    allowedActions: {
+      create: false,
+      delete: false,
+    },
+  },
   fields: [
     // @ts-ignore
     seoSchema,

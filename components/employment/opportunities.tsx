@@ -1,11 +1,11 @@
 import { Disclosure, Transition } from "@headlessui/react";
 import classNames from "classnames";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { UtilityButton } from "../blocks";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
+import { FilterBlock } from "../filter/FilterBlock";
 import {
   employmentType,
   jobStatus,
@@ -48,170 +48,72 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
   }, [selectedLocation, selectedType, selectedStatus]);
 
   return (
-    <div className="mb-10 md:flex md:flex-row">
-      <div className="md:mr-16 md:shrink-0 md:basis-64">
-        <h3 className="mb-4">
-          <Image
-            alt="Question Mark"
-            src="/images/Employment/question.png"
-            height={16}
-            width={16}
-            className="inline"
-          />{" "}
-          I am looking for...
-        </h3>
-
-        <FilterGroup
-          selected={selectedLocation}
-          setSelected={setSelectedLocation}
-          options={locations}
-          allText="All Locations"
-        />
-        <FilterGroup
-          selected={selectedType}
-          setSelected={setSelectedType}
-          options={employmentType}
-          allText="All Types"
-        />
-        <FilterGroup
-          selected={selectedStatus}
-          setSelected={setSelectedStatus}
-          options={jobStatus}
-          allText="All Positions"
-        />
-      </div>
-      <div className="grow">
-        {selectedStatus !== 1 &&
-          !!filteredOpportunities.find((o) => o.status === jobStatus[0]) && (
-            <>
-              <h3>Available Positions</h3>
-              {opportunities
-                .filter((o) => o.status === jobStatus[0])
-                .map((opportunity, index) => (
-                  <OpportunityDropdown
-                    visible={
-                      !!filteredOpportunities.find(
-                        (o) => o.title === opportunity.title
-                      )
-                    }
-                    key={index}
-                    opportunity={opportunity}
-                  />
-                ))}
-            </>
-          )}
-
-        {selectedStatus !== 0 &&
-          !!filteredOpportunities.find((o) => o.status === jobStatus[1]) && (
-            <>
-              <h3>Filled Positions</h3>
-              {opportunities
-                .filter((o) => o.status === jobStatus[1])
-                .map((opportunity, index) => (
-                  <OpportunityDropdown
-                    visible={
-                      !!filteredOpportunities.find(
-                        (o) => o.title === opportunity.title
-                      )
-                    }
-                    key={index}
-                    opportunity={opportunity}
-                  />
-                ))}
-            </>
-          )}
-
-        {filteredOpportunities.length === 0 && (
-          <p className="text-gray-500">No positions found.</p>
-        )}
-      </div>
-    </div>
-  );
-};
-
-interface FilterGroupProps {
-  selected: number;
-  setSelected: (index: number) => void;
-  allText: string;
-  options: Array<string>;
-}
-
-const FilterGroup = ({
-  selected,
-  setSelected,
-  options,
-  allText,
-}: FilterGroupProps) => {
-  return (
-    <div>
-      <FilterOption
-        index={-1}
-        selected={selected}
-        setSelected={setSelected}
-        className={selected === -1 ? "font-bold" : ""}
-      >
-        {allText}
-      </FilterOption>
-      {options.map((curr, index) => (
-        <FilterOption
-          key={index}
-          index={index}
-          selected={selected}
-          setSelected={setSelected}
-          className={selected === index ? "font-bold" : ""}
-        >
-          {curr}
-        </FilterOption>
-      ))}
-      <hr />
-    </div>
-  );
-};
-
-interface FilterOptionProps {
-  index: number;
-  selected: number;
-  setSelected: (index: number) => void;
-  children?: React.ReactNode;
-  className?: string;
-}
-
-const FilterOption = ({
-  index,
-  children,
-  selected,
-  setSelected,
-  className,
-}: FilterOptionProps) => {
-  const [hovered, setHovered] = useState<boolean>(false);
-
-  return (
-    <div
-      className="m-0.5 inline-block w-64 cursor-pointer rounded-md py-1 hover:bg-gray-100 hover:text-sswRed"
-      onClick={() => setSelected(index)}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+    <FilterBlock
+      groups={[
+        {
+          selected: selectedLocation,
+          setSelected: setSelectedLocation,
+          options: locations,
+          allText: "All Locations",
+        },
+        {
+          selected: selectedType,
+          setSelected: setSelectedType,
+          options: employmentType,
+          allText: "All Types",
+        },
+        {
+          selected: selectedStatus,
+          setSelected: setSelectedStatus,
+          options: jobStatus,
+          allText: "All Positions",
+        },
+      ]}
     >
-      <Transition
-        className="inline"
-        show={hovered || index === selected}
-        enter="transition-opacity duration-1000"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="transition-opacity duration-1000"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
-      >
-        <Image
-          alt="Arrow"
-          src="/images/Employment/arrow.png"
-          height={10}
-          width={10}
-          className="absolute m-2 ml-1"
-        />
-      </Transition>
-      <span className={classNames("ml-6", className)}>{children}</span>
-    </div>
+      {selectedStatus !== 1 &&
+        !!filteredOpportunities.find((o) => o.status === jobStatus[0]) && (
+          <>
+            <h3>Available Positions</h3>
+            {opportunities
+              .filter((o) => o.status === jobStatus[0])
+              .map((opportunity, index) => (
+                <OpportunityDropdown
+                  visible={
+                    !!filteredOpportunities.find(
+                      (o) => o.title === opportunity.title
+                    )
+                  }
+                  key={index}
+                  opportunity={opportunity}
+                />
+              ))}
+          </>
+        )}
+
+      {selectedStatus !== 0 &&
+        !!filteredOpportunities.find((o) => o.status === jobStatus[1]) && (
+          <>
+            <h3>Filled Positions</h3>
+            {opportunities
+              .filter((o) => o.status === jobStatus[1])
+              .map((opportunity, index) => (
+                <OpportunityDropdown
+                  visible={
+                    !!filteredOpportunities.find(
+                      (o) => o.title === opportunity.title
+                    )
+                  }
+                  key={index}
+                  opportunity={opportunity}
+                />
+              ))}
+          </>
+        )}
+
+      {filteredOpportunities.length === 0 && (
+        <p className="text-gray-500">No positions found.</p>
+      )}
+    </FilterBlock>
   );
 };
 
