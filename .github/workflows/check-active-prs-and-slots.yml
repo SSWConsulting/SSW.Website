@@ -1,13 +1,13 @@
 name: Check Active PRs and Slots
 
-on:
-  schedule:
-    - cron: "0 12 */3 * *" # Schedule to run every 3rd day at 12 PM UTC
-  workflow_dispatch:
-#on:   Uncomment this and comment the one above to test it on Pull request
-#  pull_request:
-#    branches:
-#      - main
+#on:
+#  schedule:
+#    - cron: "0 12 */3 * *" # Schedule to run every 3rd day at 12 PM UTC
+#  workflow_dispatch:
+on: #Uncomment this and comment the one above to test it on Pull request
+  pull_request:
+    branches:
+      - main
 
 defaults:
   run:
@@ -58,7 +58,7 @@ jobs:
         id: comparision
         run: |
           # Comparing the number of Slots and PRs
-          $PRList = "${{ steps.PRList.outputs.active_prs }}" -split ' '
+          $PRList =  "${{ steps.PRList.outputs.active_prs }}" -split ' '
           $SlotList = "${{ steps.slotList.outputs.slots }}" -split ' '
 
           $SlotsWithoutPR = $SlotList | Where-Object { $_ -notin $PRList }
@@ -73,14 +73,16 @@ jobs:
           }
           echo "AreSlotsEqual=$AreSlotsEqual" >> $env:GITHUB_OUTPUT
 
-      - name: List of Slots that need to be deleted
+      - name: List of Slots that need to be deleted #if:###{{steps.comparision.outputs.AreSlotsEqual == 'False' }}
         id: listOfSlots
-        if: ${{steps.comparision.outputs.AreSlotsEqual == 'False' }}
         run: |
           # Split the strings into arrays of numbers
 
-          $SlotList = "${{ steps.slotList.outputs.slots }}" -split ' '
-          $PRList = "${{ steps.PRList.outputs.active_prs }}" -split ' '
+          $zzSlotList = "${{ steps.slotList.outputs.slots }}" -split ' '
+          $zzPRList = "${{ steps.PRList.outputs.active_prs }}" -split ' '
+
+          $SlotList = "1165 1174 1190 1183 1112 1111" -split ' '
+          $PRList = "1190 1183 1174 1165" -split ' '
 
           # Find the values present in $string2 but not in $string1
           $SlotsWithoutPR = $SlotList | Where-Object { $_ -notin $PRList }
@@ -88,7 +90,7 @@ jobs:
             $SlotIDs = $SlotsWithoutPR -split ' '
             $ListOfSlots = $SlotsWithoutPR -join ' '
             Write-Host "⚡- These slots need to be deleted : $ListOfSlots"
-            $SingleSlotID = $SlotIDs[0]
+            $SingleSlotID = toJSON($SlotIDs)
 
             #TODO: Currently, we are passing single id, should be passed as an array of IDs
             echo "SlotID=$SingleSlotID" >> $env:GITHUB_OUTPUT
