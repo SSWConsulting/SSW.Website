@@ -94,7 +94,7 @@ jobs:
             $JsonWithBackslash = $JSONSlotIDs -replace '"', '\"'
             echo $JsonWithBackslash
             #TODO: Currently, we are passing single id, should be passed as an array of IDs
-            echo "SlotID=${JsonWithBackslash}" >> $env:GITHUB_OUTPUT
+            echo "SlotID=${JsonWithBackslash}" >> $GITHUB_OUTPUT
           } else {
             Write-Host "✅ - Some PRs have not their slot deployed!"
           }
