@@ -70,8 +70,8 @@ jobs:
           }
           else {
             echo "❌ - Number of slots are not equal to number of active PRs"
-            echo "AreSlotsEqual=$AreSlotsEqual" >> $env:GITHUB_OUTPUT
           }
+          echo "AreSlotsEqual=$AreSlotsEqual" >> $env:GITHUB_OUTPUT
 
       - name: List of Slots that need to be deleted
         id: listOfSlots
