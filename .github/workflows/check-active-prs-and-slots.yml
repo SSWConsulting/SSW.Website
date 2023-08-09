@@ -105,7 +105,7 @@ jobs:
     if: needs.check-pr-slots.outputs.SlotID != '' && needs.check-pr-slots.outputs.AreSlotsEqual == 'False'
     uses: ./.github/workflows/pr-close-delete-env.yml
     with:
-      pullRequestId: ${{ needs.check-pr-slots.outputs.SlotID }}
+      pullRequestIdFromFlow: ${{ needs.check-pr-slots.outputs.SlotID }}
     permissions:
       id-token: write
       contents: read
