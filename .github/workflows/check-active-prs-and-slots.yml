@@ -84,13 +84,12 @@ jobs:
           # Find the values present in $string2 but not in $string1
           $SlotsWithoutPR = $SlotList | Where-Object { $_ -notin $PRList }
           if ( $SlotsWithoutPR.Length -gt 0 ) {
-            $FirstSlotID = $SlotsWithoutPR[0]
             $ListOfSlots = $SlotsWithoutPR -join ' '
             Write-Host "⚡- These slots need to be deleted : $ListOfSlots"
+            $SingleSlotID = $ListOfSlots[0]
 
             #TODO: Currently, we are passing single id, should be passed as an array of IDs
-            echo SlotsWithoutPR[0]
-            echo "SlotID=$FirstSlotID" >> $env:GITHUB_OUTPUT
+            echo "SlotID=$SingleSlotID" >> $env:GITHUB_OUTPUT
           } else {
             Write-Host "✅ - Some PRs have not their slot deployed!"
           }
