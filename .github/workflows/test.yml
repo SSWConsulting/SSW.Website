@@ -1,0 +1,34 @@
+name: Test PR for Matrix
+
+#on:
+#  schedule:
+#    - cron: "0 12 */3 * *" # Schedule to run every 3rd day at 12 PM UTC
+#  workflow_dispatch:
+on:
+  pull_request:
+    branches:
+      - main
+
+defaults:
+  run:
+    shell: pwsh
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - id: set-matrix
+        run: echo "matrix={\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}" >> $GITHUB_OUTPUT
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJSON(needs.job1.outputs.matrix) }}
+    steps:
+      - run: echo Build
