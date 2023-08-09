@@ -37,7 +37,7 @@ jobs:
         run: |
           echo $slots = ${{ env.SLOT_NAME }} -split ' '
           echo $slots
-          echo "$slots" >> $GITHUB_OUTPUT
+          echo "slots=${{ env.SLOT_NAME }}" >> $GITHUB_OUTPUT
 
   delete-slot:
     runs-on: ubuntu-latest
