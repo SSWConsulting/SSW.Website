@@ -31,14 +31,14 @@ jobs:
   settingMatrix:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ toJson(steps.set-matrix.outputs.matrix) }}
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - id: set-matrix
         run: |
           $slots = '${{ env.SLOT_NAME }}' -join ','
           $slot2 = $slots -replace '\\"', ''
           $slot3 = $slot2 -replace ',',', '
-          echo "matrix=${slot3}" >> $env:GITHUB_OUTPUT
+          echo "matrix={\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}" >> $GITHUB_OUTPUT
 
       - id: just-for-output
         run: |
@@ -49,7 +49,7 @@ jobs:
     needs: settingMatrix
     strategy:
       matrix:
-        SLOT_NAME: ${{ fromJson(needs.settingMatrix.outputs.matrix) }}
+        SLOT_NAME: ${{fromJson(needs.settingMatrix.outputs.matrix)}}
 
     steps:
       - uses: actions/checkout@v3
