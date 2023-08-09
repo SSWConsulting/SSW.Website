@@ -17,16 +17,34 @@ interface BadgeProps {
   imgURL?: string;
   largeIcon?: boolean;
   fill?: string;
+  duration?: number;
+  bounceDown?: boolean;
 }
 
 const Badge = (props: SVGBadgeProps) => {
-  const { size, cx, cy, rotate, name, imgURL, largeIcon, fill } = props;
+  const {
+    size,
+    cx,
+    cy,
+    rotate,
+    name,
+    imgURL,
+    largeIcon,
+    fill,
+    duration,
+    bounceDown,
+  } = props;
   const edge = +Math.sqrt(2).toFixed(1) * size;
 
   return (
     <g
       transform={`rotate(${rotate ?? 0} ${cx} ${cy})`}
-      className={cs("animate-badge-bounce cursor-pointer")}
+      className={cs(
+        "cursor-pointer",
+        { "animate-badge-bounce-up": !bounceDown },
+        { "animate-badge-bounce-down": bounceDown },
+        `duration-[${duration ?? 3000}ms]`
+      )}
     >
       <circle
         id={name}

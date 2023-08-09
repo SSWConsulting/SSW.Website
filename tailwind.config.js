@@ -245,7 +245,8 @@ module.exports = {
       },
       animation: {
         "more-bounce": "more-bounce 2s infinite",
-        "badge-bounce": "badge-bounce 3s infinite",
+        "badge-bounce-up": "badge-bounce-up 3s infinite",
+        "badge-bounce-down": "badge-bounce-down 3s infinite",
         ripple: "ripple-out 0.75s",
         "ripple-pseudo": "ripple-out-pseudo 0.75s",
       },
@@ -255,9 +256,13 @@ module.exports = {
           "40%": { transform: "translateY(-30px)" },
           "60%": { transform: "translateY(-15px)" },
         },
-        "badge-bounce": {
+        "badge-bounce-up": {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
+        },
+        "badge-bounce-down": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(10px)" },
         },
         "ripple-out": {
           "0%": { width: "0%" },

@@ -73,13 +73,26 @@ export const technologyBadgesSchema: Collection = {
         },
         {
           type: "boolean",
-          label: "Image size",
+          label: "Large Icon",
           name: "largeIcon",
         },
         {
           type: "string",
           label: "Background Color",
           name: "fill",
+          ui: {
+            component: "color",
+          },
+        },
+        {
+          type: "number",
+          label: "Animation duration",
+          name: "duration",
+        },
+        {
+          type: "boolean",
+          label: "Bounce down",
+          name: "bounceDown",
         },
       ],
     },
