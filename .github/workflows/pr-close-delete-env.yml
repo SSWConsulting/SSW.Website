@@ -37,14 +37,14 @@ jobs:
         run: |
           echo $slots = ${{ env.SLOT_NAME }} -split ' '
           echo $slots
-          echo "[${{ env.SLOT_NAME }}"] >> $GITHUB_OUTPUT
+          echo "matrix=[${{ env.SLOT_NAME }}"] >> $GITHUB_OUTPUT
 
   delete-slot:
     runs-on: ubuntu-latest
     needs: settingMatrix
     strategy:
       matrix:
-        SLOT_NAME: [11, 12]
+        SLOT_NAME: ${{ needs.settingMatrix.outputs.matrix }}
 
     steps:
       - uses: actions/checkout@v3
