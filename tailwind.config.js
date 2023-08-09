@@ -245,8 +245,10 @@ module.exports = {
       },
       animation: {
         "more-bounce": "more-bounce 2s infinite",
-        "badge-bounce-up": "badge-bounce-up 3s infinite",
-        "badge-bounce-down": "badge-bounce-down 3s infinite",
+        "badge-bounce-up":
+          "badge-bounce-up var(--animate-duration, 3s) infinite",
+        "badge-bounce-down":
+          "badge-bounce-down var(--animate-duration, 3s) infinite",
         ripple: "ripple-out 0.75s",
         "ripple-pseudo": "ripple-out-pseudo 0.75s",
       },

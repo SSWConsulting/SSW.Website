@@ -43,9 +43,11 @@ const Badge = (props: SVGBadgeProps) => {
       className={cs(
         "cursor-pointer",
         { "animate-badge-bounce-up": !bounceDown },
-        { "animate-badge-bounce-down": bounceDown },
-        `duration-[${duration ?? 3000}ms]`
+        { "animate-badge-bounce-down": bounceDown }
       )}
+      style={{
+        animationDuration: `${duration ?? 3000}ms`,
+      }}
     >
       <circle
         id={name}
