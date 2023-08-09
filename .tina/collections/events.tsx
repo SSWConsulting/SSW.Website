@@ -10,6 +10,9 @@ export const eventsSchema: Collection = {
   name: "events",
   format: "mdx",
   path: "content/events",
+  match: {
+    exclude: "index/**/**",
+  },
   ui: {
     router: ({ document }) => {
       console.log(document);
@@ -59,7 +62,7 @@ export const eventsSchema: Collection = {
   ],
 };
 
-const eventsIndexSchema = {
+export const eventsIndexSchema: Collection = {
   label: "Events Index Page",
   name: "eventsIndex",
   format: "mdx",
