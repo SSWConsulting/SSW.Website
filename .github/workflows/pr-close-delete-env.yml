@@ -38,7 +38,7 @@ jobs:
           $slots = '${{ env.SLOT_NAME }}' -join ','
           $slot2 = $slots -replace '\\"', ''
           $slot3 = $slot2 -replace ',',', '
-          echo "matrix={\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}" >> $env:GITHUB_OUTPUT
+          echo "matrix=["112","113"]" >> $env:GITHUB_OUTPUT
 
       - id: just-for-output
         run: |
