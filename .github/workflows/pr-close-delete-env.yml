@@ -37,7 +37,7 @@ jobs:
         run: |
           $slots = '${{ env.SLOT_NAME }}' -join ','
           $slot2 = $slots -replace '\\"', ''
-          $slot3 = $slot2 | ConvertFrom-Json
+          $slot3 = $slot2 -replace ',',', '
           echo "matrix=${slot3}" >> $env:GITHUB_OUTPUT
 
       - id: just-for-output
