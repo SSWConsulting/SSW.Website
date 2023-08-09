@@ -103,16 +103,19 @@ export default function EventsIndexPage(
               {filteredEvents?.map((event, index) => (
                 <div key={index} className="mb-20">
                   <div className="flex flex-row">
-                    <Image
-                      className="mr-3"
-                      height={100}
-                      width={100}
-                      alt={event.Thumbnail.Description}
-                      src={event.Thumbnail.Url}
-                    />
+                    <div className="mr-3">
+                      <Image
+                        height={100}
+                        width={100}
+                        alt={event.Thumbnail.Description}
+                        src={event.Thumbnail.Url}
+                      />
+                    </div>
                     <div>
-                      <h2 className="mt-1 no-underline">
-                        <a href={event.Url.Url}>{event.Title}</a>
+                      <h2 className="mt-1">
+                        <a className="!no-underline" href={event.Url.Url}>
+                          {event.Title}
+                        </a>
                       </h2>
                       <EventsRelativeBox
                         relativeDate={formatRelativeEventDate(
