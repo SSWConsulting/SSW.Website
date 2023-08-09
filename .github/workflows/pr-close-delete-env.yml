@@ -31,12 +31,7 @@ jobs:
   settingMatrix:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
-    steps:
-      - id: set-matrix
-        run: |
-          $slots = ${{ env.SLOT_NAME }}
-          echo "matrix=$slots" >> $GITHUB_OUTPUT
+      matrix: ${{ env.SLOT_NAME }}
 
   delete-slot:
     runs-on: ubuntu-latest
