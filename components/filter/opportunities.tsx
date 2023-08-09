@@ -5,12 +5,12 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { UtilityButton } from "../blocks";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
-import { FilterBlock } from "../filter/FilterBlock";
 import {
   employmentType,
   jobStatus,
   locations,
 } from "../util/constants/opportunity";
+import { FilterBlock } from "./FilterBlock";
 
 interface OpportunitiesProps {
   opportunities: OpportunityType[];
