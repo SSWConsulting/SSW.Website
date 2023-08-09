@@ -6,14 +6,14 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
 
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import { EventsRelativeBox } from "../../components/events/components";
 import { FilterBlock } from "../../components/filter/FilterBlock";
 import { FilterGroupProps } from "../../components/filter/FilterGroup";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
-import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
+import { formatEventDate, formatRelativeEventDate } from "../../helpers/dates";
 import { EventInfo } from "../../services/server/events";
-import { formatRelativeEventDate } from "../../helpers/dates";
 
 export default function EventsIndexPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -89,50 +89,57 @@ export default function EventsIndexPage(
     <>
       <SEO seo={data.eventsIndex.seo} />
       <Layout>
-        <Section color="white">
-          <Container>
-            <FilterBlock groups={filters}>
-              <div>
-                <div className="prose-h1:pt-0">
-                  {data?.eventsIndex?.body && (
-                    <TinaMarkdown
-                      content={data.eventsIndex.body}
-                      components={componentRenderer}
-                    />
-                  )}
-                </div>
-                {filteredEvents?.map((event, index) => (
-                  <div key={index} className="mb-20">
-                    <div className="flex flex-row">
-                      <Image
-                        className="mr-3"
-                        height={100}
-                        width={100}
-                        alt={event.Thumbnail.Description}
-                        src={event.Thumbnail.Url}
-                      />
-                      <div>
-                        <h2 className="mt-1">{event.Title}</h2>
-                        <time>
-                          <span>{formatRelativeEventDate()}</span>
-                        </time>
-                      </div>
-                    </div>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: event.EventShortDescription,
-                      }}
-                    />
-                  </div>
-                ))}
+        <Container>
+          <FilterBlock groups={filters}>
+            <div>
+              <div className="prose-h1:pt-0">
+                {data?.eventsIndex?.body && (
+                  <TinaMarkdown
+                    content={data.eventsIndex.body}
+                    components={componentRenderer}
+                  />
+                )}
               </div>
-            </FilterBlock>
+              {filteredEvents?.map((event, index) => (
+                <div key={index} className="mb-20">
+                  <div className="flex flex-row">
+                    <Image
+                      className="mr-3"
+                      height={100}
+                      width={100}
+                      alt={event.Thumbnail.Description}
+                      src={event.Thumbnail.Url}
+                    />
+                    <div>
+                      <h2 className="mt-1 no-underline">
+                        <a href={event.Url.Url}>{event.Title}</a>
+                      </h2>
+                      <EventsRelativeBox
+                        relativeDate={formatRelativeEventDate(
+                          event.StartDateTime,
+                          event.EndDateTime
+                        )}
+                        formattedDate={formatEventDate(
+                          event.StartDateTime,
+                          event.EndDateTime
+                        )}
+                      />
+                    </div>
+                  </div>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: event.EventShortDescription,
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          </FilterBlock>
 
-            <pre>
-              <code>{JSON.stringify(events)}</code>
-            </pre>
-          </Container>
-        </Section>
+          <pre>
+            <code>{JSON.stringify(events)}</code>
+          </pre>
+        </Container>
       </Layout>
     </>
   );
