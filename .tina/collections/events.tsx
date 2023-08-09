@@ -58,3 +58,27 @@ export const eventsSchema: Collection = {
     videoCardSchema,
   ],
 };
+
+const eventsIndexSchema = {
+  label: "Events Index Page",
+  name: "eventsIndex",
+  format: "mdx",
+  path: "content/events/index",
+  ui: {
+    allowedActions: {
+      create: false,
+      delete: false,
+    },
+  },
+  fields: [
+    // @ts-ignore
+    seoSchema,
+    {
+      type: "rich-text",
+      name: "body",
+      label: "Body",
+      templates: [...Schemas.pageBlocks],
+      isBody: true,
+    },
+  ],
+};
