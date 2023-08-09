@@ -103,7 +103,7 @@ jobs:
     name: Invoking PR Close/Delete
     needs:
       - check-pr-slots #Adding second check to avoid running this flow for the second time when SlotID is already in the memory
-    if: needs.check-pr-slots.outputs.SlotID != '' && needs.check-pr-slots.outputs.AreSlotsEqual == 'False'
+    if: needs.check-pr-slots.outputs.SlotID != ''
     uses: ./.github/workflows/pr-close-delete-env.yml
     with:
       pullRequestIdFromFlow: ${{ toJson(needs.check-pr-slots.outputs.SlotID) }}
