@@ -90,7 +90,7 @@ jobs:
             $SlotIDs = $SlotsWithoutPR -split ' '
             $ListOfSlots = $SlotsWithoutPR -join ', '
             Write-Host "⚡- These slots need to be deleted : $ListOfSlots"
-            $JSONSlotIDs = $SlotIDs | ConvertTo-Json
+            $JSONSlotIDs = @{slots=$SlotIDs} | ConvertTo-Json
             echo $JSONSlotIDs
             #TODO: Currently, we are passing single id, should be passed as an array of IDs
             echo "SlotID=${JSONSlotIDs}" >> $env:GITHUB_OUTPUT
