@@ -21,7 +21,7 @@ jobs:
   check-pr-slots:
     runs-on: ubuntu-latest
     outputs:
-      SlotsWithoutPRArray: ${{ steps.listOfSlots.outputs.SlotID }}
+      SlotID: ${{ steps.listOfSlots.outputs.SlotID }}
 
     steps:
       - name: Checking out
