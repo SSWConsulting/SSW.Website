@@ -1,13 +1,13 @@
 name: Check Active PRs and Slots
 
-#on:
-#  schedule:
-#    - cron: "34 11 * * 2" # Schedule to run every Wednesday at 7 UTC
-#  workflow_dispatch:
 on:
-  pull_request:
-    branches:
-      - main
+  schedule:
+    - cron: "0 12 */3 * *" # Schedule to run every 4rd day at 12 PM UTC
+  workflow_dispatch:
+#on:   Uncomment this and comment the one above to test it on Pull request
+#  pull_request:
+#    branches:
+#      - main
 
 defaults:
   run:
