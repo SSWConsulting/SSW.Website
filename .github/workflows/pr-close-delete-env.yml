@@ -44,7 +44,7 @@ jobs:
     needs: settingMatrix
     strategy:
       matrix:
-        SLOT_NAME: ${{ fromJSON(needs.settingMatrix.outputs.matrix) }}
+        SLOT_NAME: ${{ needs.settingMatrix.outputs.matrix }}
 
     steps:
       - uses: actions/checkout@v3
