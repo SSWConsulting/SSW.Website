@@ -93,7 +93,7 @@ jobs:
             $JSONSlotIDs = $SlotIDs | ConvertTo-Json
             echo $JSONSlotIDs
             #TODO: Currently, we are passing single id, should be passed as an array of IDs
-            echo "SlotID=$JSONSlotIDs" >> $env:GITHUB_OUTPUT
+            echo "SlotID=${JSONSlotIDs}" >> $env:GITHUB_OUTPUT
           } else {
             Write-Host "✅ - Some PRs have not their slot deployed!"
           }
