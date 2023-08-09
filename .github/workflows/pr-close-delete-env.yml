@@ -37,14 +37,14 @@ jobs:
         run: |
           echo $slots = ${{ env.SLOT_NAME }}
           echo $slots
-          echo "matrix=$slots" >> $env:GITHUB_OUTPUT
+          echo "matrix=${{ env.SLOT_NAME }}" >> $env:GITHUB_OUTPUT
 
   delete-slot:
     runs-on: ubuntu-latest
     needs: settingMatrix
     strategy:
       matrix:
-        SLOT_NAME: ${{ fromJson(needs.settingMatrix.outputs.matrix) }}
+        SLOT_NAME: ${{ fromJson(needs.settingMatrix.outputs.matrix.slots) }}
 
     steps:
       - uses: actions/checkout@v3
