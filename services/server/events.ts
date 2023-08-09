@@ -176,6 +176,8 @@ export interface LiveStreamWidgetInfo extends LiveStreamBannerInfo {
 }
 
 export interface EventInfo extends LiveStreamWidgetInfo {
+  Category_f5a9cf4c_x002d_8228_x00: string; // Category, SharePoint formatted name
+  CalendarType: string;
   Url: {
     Description: string;
     Url: string;

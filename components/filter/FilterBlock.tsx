@@ -18,7 +18,7 @@ export const FilterBlock = ({ groups, children }: FilterBlockProps) => {
           <FilterGroup key={index} {...group} />
         ))}
       </div>
-      <div className="grow">{children}</div>
+      <div className="min-w-0 max-w-full shrink grow ">{children}</div>
     </div>
   );
 };

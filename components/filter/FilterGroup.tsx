@@ -17,7 +17,7 @@ export const FilterGroup = ({
   allText,
 }: FilterGroupProps) => {
   return (
-    <div>
+    <div className="flex flex-col">
       <FilterOption
         index={-1}
         selected={selected}
@@ -26,7 +26,7 @@ export const FilterGroup = ({
       >
         {allText}
       </FilterOption>
-      {options.map((curr, index) => (
+      {options?.map((curr, index) => (
         <FilterOption
           key={index}
           index={index}

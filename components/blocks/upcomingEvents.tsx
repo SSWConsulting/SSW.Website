@@ -1,18 +1,17 @@
+import axios from "axios";
 import classNames from "classnames";
-import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 
-import axios from "axios";
-import { EventInfo, LiveStreamBannerInfo } from "../../services/server/events";
-
-const EventStatus = {
-  TODAY: "today",
-  NOW_RUNNING: "now running",
-};
+import {
+  EventStatus,
+  formatEventDate,
+  formatRelativeEventDate,
+} from "../../helpers/dates";
+import { EventInfo } from "../../services/server/events";
 
 export const UpcomingEvents = ({ data }) => {
   const [events, setEvents] = useState<EventInfo[]>([]);
@@ -31,8 +30,11 @@ export const UpcomingEvents = ({ data }) => {
       !!res.data &&
         Array.isArray(res.data) &&
         res.data.forEach((b) => {
-          b.FormattedDate = formatBannerDate(b);
-          b.RelativeDate = formatRelativeBannerDate(b);
+          b.FormattedDate = formatEventDate(b.StartDateTime, b.EndDateTime);
+          b.RelativeDate = formatRelativeEventDate(
+            b.StartDateTime,
+            b.EndDateTime
+          );
         });
 
       setEvents(res.data);
@@ -150,43 +152,4 @@ export const upcomingEventsBlockSchema: Template = {
       name: "numberOfEvents",
     },
   ],
-};
-
-const formatBannerDate = (bannerInfo: LiveStreamBannerInfo) => {
-  if (!bannerInfo.StartDateTime || !bannerInfo.EndDateTime) return "";
-
-  // NOTE: Omit ddd for brevity if it's next year's event
-  const dateformat =
-    dayjs(bannerInfo.StartDateTime).year() === dayjs().year()
-      ? "MMM D"
-      : "MMM D YYYY";
-
-  const isOneDayEvent = dayjs(bannerInfo.StartDateTime)
-    .startOf("day")
-    .isSame(dayjs(bannerInfo.EndDateTime).startOf("day"));
-  const startDate = dayjs(bannerInfo.StartDateTime).format(dateformat);
-  const endDate = dayjs(bannerInfo.EndDateTime).format(dateformat);
-
-  return isOneDayEvent ? startDate : `${startDate} - ${endDate}`;
-};
-
-const formatRelativeBannerDate = (bannerInfo: LiveStreamBannerInfo) => {
-  const now = dayjs();
-  const start = dayjs(bannerInfo.StartDateTime);
-  const end = dayjs(bannerInfo.EndDateTime);
-
-  if (now.isBetween(start, end)) {
-    return EventStatus.NOW_RUNNING;
-  }
-
-  const isSameDay = now.startOf("day").isSame(start.startOf("day"));
-
-  const days = start.diff(now, "d");
-  if (days === 0 && isSameDay) {
-    return EventStatus.TODAY;
-  } else if (days > 0) {
-    return `${days} ${days === 1 ? "day" : "days"} to go`;
-  } else {
-    return "";
-  }
 };

@@ -1,8 +1,10 @@
 import { InferGetStaticPropsType } from "next";
+import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
+
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { FilterBlock } from "../../components/filter/FilterBlock";
 import { FilterGroupProps } from "../../components/filter/FilterGroup";
@@ -10,6 +12,8 @@ import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
+import { EventInfo } from "../../services/server/events";
+import { formatRelativeEventDate } from "../../helpers/dates";
 
 export default function EventsIndexPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -20,7 +24,7 @@ export default function EventsIndexPage(
     variables: props.variables,
   });
 
-  const [events, setEvents] = useState(undefined);
+  const [events, setEvents] = useState<EventInfo[]>(undefined);
 
   const [filterControls, setFilterControls] = useState<number[]>([-1, -1]);
 
@@ -47,7 +51,7 @@ export default function EventsIndexPage(
       {
         selected: filterControls[0],
         setSelected: (value) => setFilterControls((curr) => [value, curr[1]]),
-        options: options.formats,
+        options: options.categories,
         allText: "All Technology",
       },
       {
@@ -87,11 +91,33 @@ export default function EventsIndexPage(
       <Layout>
         <Section color="white">
           <Container>
-            {filters && filteredEvents && (
-              <FilterBlock groups={filters}>
-                {filteredEvents.map((event) => (
-                  <div key={event.Id}>
-                    <h2>{event.Title}</h2>
+            <FilterBlock groups={filters}>
+              <div>
+                <div className="prose-h1:pt-0">
+                  {data?.eventsIndex?.body && (
+                    <TinaMarkdown
+                      content={data.eventsIndex.body}
+                      components={componentRenderer}
+                    />
+                  )}
+                </div>
+                {filteredEvents?.map((event, index) => (
+                  <div key={index} className="mb-20">
+                    <div className="flex flex-row">
+                      <Image
+                        className="mr-3"
+                        height={100}
+                        width={100}
+                        alt={event.Thumbnail.Description}
+                        src={event.Thumbnail.Url}
+                      />
+                      <div>
+                        <h2 className="mt-1">{event.Title}</h2>
+                        <time>
+                          <span>{formatRelativeEventDate()}</span>
+                        </time>
+                      </div>
+                    </div>
                     <p
                       dangerouslySetInnerHTML={{
                         __html: event.EventShortDescription,
@@ -99,20 +125,12 @@ export default function EventsIndexPage(
                     />
                   </div>
                 ))}
-              </FilterBlock>
-            )}
-
-            {data?.eventsIndex?.body && (
-              <TinaMarkdown
-                content={data.eventsIndex.body}
-                components={componentRenderer}
-              />
-            )}
+              </div>
+            </FilterBlock>
 
             <pre>
               <code>{JSON.stringify(events)}</code>
             </pre>
-            <button onClick={() => setEvents([])}>Hello</button>
           </Container>
         </Section>
       </Layout>
