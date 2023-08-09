@@ -86,7 +86,8 @@ jobs:
             Write-Host "⚡- These slots need to be deleted : $ListOfSlots"
 
             #TODO: Currently, we are passing single id, should be passed as an array of IDs
-            echo "SlotID = $SlotsWithoutPR[0]" >> $env:GITHUB_OUTPUT
+            echo SlotsWithoutPR[0]
+            echo "SlotID=$SlotsWithoutPR[0]" >> $env:GITHUB_OUTPUT
           } else {
             Write-Host "✅ - Some PRs have not their slot deployed!"
           }
