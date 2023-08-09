@@ -76,13 +76,6 @@ const FilterOption = ({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          {/* <Image
-            alt="Arrow"
-            src="/images/Employment/arrow.png"
-            height={10}
-            width={10}
-            className="absolute m-2 ml-1"
-          /> */}
           <BsArrowRightCircle />
         </Transition>
       </div>
