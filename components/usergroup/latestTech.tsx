@@ -1,6 +1,7 @@
 import { default as cs } from "classnames";
+import { sampleSize } from "lodash";
 import Link from "next/link";
-import { SVGAttributes } from "react";
+import { SVGAttributes, useEffect, useState } from "react";
 import { Template } from "tinacms";
 
 interface SVGBadgeProps
@@ -162,15 +163,21 @@ const svgBadgesLayout = [
 ];
 
 const FloatingBadges = ({ badges }: { badges: BadgeProps[] }) => {
+  const [shuffleBadges, setShuffleBadges] = useState([]);
+
+  useEffect(() => {
+    setShuffleBadges(sampleSize(badges, 11));
+  }, []);
+
   return (
     <div className="absolute -bottom-3 -left-4 h-62 w-full select-none bg-waveBackground bg-contain bg-left bg-no-repeat">
       <svg viewBox="0 0 788 248" className={cs("h-62 max-w-3xl")}>
         <g id="badges">
           {svgBadgesLayout.map((badgeLayoutProps, index) => (
             <Badge
-              key={`${badges[index]?.name}-${index}`}
+              key={`${shuffleBadges[index]?.name}-${index}`}
               {...badgeLayoutProps}
-              {...(Array.isArray(badges) ? badges[index] : {})}
+              {...(Array.isArray(shuffleBadges) ? shuffleBadges[index] : {})}
             />
           ))}
         </g>
