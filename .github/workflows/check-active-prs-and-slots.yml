@@ -22,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       SlotID: ${{ steps.listOfSlots.outputs.SlotID }}
+      AreSlotsEqual: ${{steps.comparision.outputs.AreSlotsEqual }}
 
     steps:
       - name: Checking out
@@ -98,8 +99,8 @@ jobs:
   invokeDeleteSlot:
     name: Invoking PR Close/Delete
     needs:
-      - check-pr-slots
-    if: needs.check-pr-slots.outputs.SlotID != ''
+      - check-pr-slots #Adding second check to avoid running this flow for the second time when SlotID is already in the memory
+    if: needs.check-pr-slots.outputs.SlotID != '' && needs.check-pr-slots.outputs.AreSlotsEqual == 'False'
     uses: ./.github/workflows/pr-close-delete-env.yml
     with:
       pullRequestId: ${{ needs.check-pr-slots.outputs.SlotID }}
