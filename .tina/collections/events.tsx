@@ -63,7 +63,7 @@ export const eventsSchema: Collection = {
 };
 
 export const eventsIndexSchema: Collection = {
-  label: "Events Index Page",
+  label: "Events - Index",
   name: "eventsIndex",
   format: "mdx",
   path: "content/events/index",
@@ -71,6 +71,9 @@ export const eventsIndexSchema: Collection = {
     allowedActions: {
       create: false,
       delete: false,
+    },
+    router: () => {
+      return `/events`;
     },
   },
   fields: [
