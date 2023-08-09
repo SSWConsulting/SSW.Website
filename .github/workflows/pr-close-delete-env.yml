@@ -31,7 +31,7 @@ jobs:
   settingMatrix:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      matrix: ${{ toJson(steps.set-matrix.outputs.matrix) }}
     steps:
       - id: set-matrix
         run: |
