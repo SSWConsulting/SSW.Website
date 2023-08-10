@@ -80,9 +80,6 @@ jobs:
           $SlotList = "${{ steps.slotList.outputs.slots }}" -split ' '
           $PRList = "${{ steps.PRList.outputs.active_prs }}" -split ' '
 
-          $zzSlotList = "1165 1174 1190 1183 1112" -split ' '
-          $zzPRList = "1190 1183 1174 1165" -split ' '
-
           # Find the slots present in $SlotList but their PR doesn't exist in $PRList
           $SlotsWithoutPR = $SlotList | Where-Object { $_ -notin $PRList }
 
@@ -91,7 +88,7 @@ jobs:
             Write-Host "⚡- These slots need to be deleted : $ListOfSlots"
             echo "SlotIDs=$ListOfSlots" >> $env:GITHUB_OUTPUT
           } else {
-            Write-Host "✅ - Some PRs have not their slot deployed!"
+            Write-Host "✅ - Some PRs have not their slot deployed! - 🏃 Skipping next job"
           }
 
   invokeDeleteSlot:

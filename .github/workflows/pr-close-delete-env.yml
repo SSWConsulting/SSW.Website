@@ -28,7 +28,7 @@ permissions:
   contents: read
 
 jobs:
-  setting-up-slot-IDs:
+  setting-up-slot-ids:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
@@ -56,10 +56,10 @@ jobs:
 
   delete-slot:
     runs-on: ubuntu-latest
-    needs: setting-up-slot-IDs
+    needs: setting-up-slot-ids
     strategy:
       matrix:
-        SLOT_NAME: ${{fromJson(needs.setting-up-slot-IDs.outputs.matrix)}}
+        SLOT_NAME: ${{fromJson(needs.setting-up-slot-ids.outputs.matrix)}}
 
     steps:
       - uses: actions/checkout@v3
