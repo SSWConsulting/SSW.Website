@@ -53,4 +53,4 @@ jobs:
           ACR_LOGIN_SERVER: ${{ env.ACR_LOGIN_SERVER }}
           IMAGE_NAME: ${{ env.IMAGE_NAME }}
           AZURE_SERVICE_PRINCIPAL_OBJECT_ID: ${{ secrets.AZURE_SERVICE_PRINCIPAL_OBJECT_ID }}
-#slotTest-1
+#slotTest-2
