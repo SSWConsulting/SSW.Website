@@ -92,9 +92,9 @@ jobs:
             Write-Host "⚡- These slots need to be deleted : $ListOfSlots"
             $JSONSlotIDs = $SlotIDs | ConvertTo-Json -Compress
             $JsonWithBackslash = $JSONSlotIDs -replace '"', '\"'
-            echo $JsonWithBackslash
+            echo $JSONSlotIDs
             #TODO: Currently, we are passing single id, should be passed as an array of IDs
-            echo "SlotID=${JsonWithBackslash}" >> $env:GITHUB_OUTPUT
+            echo "SlotID=$(JSONSlotIDs)" >> $env:GITHUB_OUTPUT
           } else {
             Write-Host "✅ - Some PRs have not their slot deployed!"
           }
