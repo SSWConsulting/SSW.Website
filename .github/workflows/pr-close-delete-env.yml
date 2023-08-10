@@ -42,10 +42,14 @@ jobs:
             $slotsArrayInJson = $slotsArray | ConvertTo-Json -Compress
             echo "matrix=$slotsArrayInJson" >> $env:GITHUB_OUTPUT
           } else {
-            # When we have a single slot ID, Adding extra space at the tail to split it into an array
+            # When we have a single slot ID,
+            # Adding extra space at the tail to split it into an array
+
             $slotsArray = '${{ env.SLOT_NAME }} ' -split ' '
             $slotsArrayInJson = $slotsArray | ConvertTo-Json -Compress
+
             # Removing the extra space now e.g [slotID,""]
+
             $filteredSlotID = $slotsArrayInJson.Replace(',""', '')
             echo "matrix=$filteredSlotID" >> $env:GITHUB_OUTPUT
           }

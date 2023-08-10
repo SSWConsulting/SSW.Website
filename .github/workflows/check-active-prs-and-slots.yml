@@ -80,7 +80,7 @@ jobs:
           $zzSlotList = "${{ steps.slotList.outputs.slots }}" -split ' '
           $zzPRList = "${{ steps.PRList.outputs.active_prs }}" -split ' '
 
-          $SlotList = "1165 1174 1190 1183 1112 1111" -split ' '
+          $SlotList = "1165 1174 1190 1183 1112" -split ' '
           $PRList = "1190 1183 1174 1165" -split ' '
 
           # Find the slots present in $SlotList but their PR doesn't exist in $PRList
