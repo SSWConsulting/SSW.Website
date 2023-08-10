@@ -38,7 +38,7 @@ jobs:
           $slotsArray = '${{ env.SLOT_NAME }}' -split ' '
           $SlotsInJson = $slotsArray | ConvertTo-Json -Compress
           echo $SlotsInJson
-          echo "matrix=$(SlotsInJson)" >> $env:GITHUB_OUTPUT
+          echo "matrix=$SlotsInJson" >> $env:GITHUB_OUTPUT
 
       - id: just-for-output
         run: |
