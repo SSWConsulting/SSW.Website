@@ -68,14 +68,14 @@ export const officeSchema: Collection = {
       label: "Cover Image",
       name: "coverImg",
       // @ts-ignore
-      uploadDir: (args) => `/offices/${args.addressLocality}`
+      uploadDir: (args) => `/offices/${args.addressLocality}`,
     },
     {
       type: "image",
       label: "Thumbnail",
       name: "thumbnail",
       // @ts-ignore
-      uploadDir: () => "/offices/thumbnails"
+      uploadDir: () => "offices/thumbnails",
     },
     {
       type: "image",
@@ -83,9 +83,9 @@ export const officeSchema: Collection = {
       name: "sideImg",
       // @ts-ignore
       uploadDir: (args) => {
-        console.log(args)
-        return `/offices/${args.addressLocality}`
-      }
+        console.log(args);
+        return `/offices/${args.addressLocality}`;
+      },
     },
     {
       type: "string",

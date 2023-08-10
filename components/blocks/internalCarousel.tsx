@@ -124,7 +124,7 @@ export const internalCarouselBlockSchema: Template = {
           name: "imgSrc",
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          uploadDir: () => "/carousel",
+          uploadDir: () => "carousel",
         },
       ],
     },

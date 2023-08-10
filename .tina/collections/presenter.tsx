@@ -22,7 +22,7 @@ export const presenterSchema: Collection = {
       name: presenterSchemaConstants.profileImg,
       label: "Profile Image",
       // @ts-ignore
-      uploadDir: () => "/people",
+      uploadDir: () => "people",
     },
     {
       type: "object",
