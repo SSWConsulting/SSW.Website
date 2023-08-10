@@ -46,12 +46,9 @@ jobs:
 
   azure-login-and-checkout:
     runs-on: ubuntu-latest
-
+    needs: settingMatrix
     steps:
       - uses: actions/checkout@v3
-
-      - run: |
-          echo matrix Slot - ${{ matrix.SLOT_NAME }}
 
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
@@ -67,7 +64,10 @@ jobs:
 
   delete-slot:
     runs-on: ubuntu-latest
-    needs: settingMatrix
+    needs:
+      - settingMatrix
+      - azure-login-and-checkout
+
     strategy:
       matrix:
         SLOT_NAME: ${{fromJson(needs.settingMatrix.outputs.matrix)}}
