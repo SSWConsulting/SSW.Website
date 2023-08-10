@@ -21,7 +21,7 @@ jobs:
   check-pr-slots:
     runs-on: ubuntu-latest
     outputs:
-      SlotID: ${{ steps.listOfSlots.outputs.SlotID }}
+      SlotIDs: ${{ steps.listOfSlots.outputs.SlotIDs }}
       AreSlotsEqual: ${{steps.comparision.outputs.AreSlotsEqual }}
 
     steps:
@@ -45,8 +45,6 @@ jobs:
         run: |
           $slots = $(az webapp deployment slot list --name ${{ env.APP_SERVICE_NAME }} --resource-group ${{env.AZURE_RESOURCE_GROUP }} --query '[].name' --output tsv | sed 's/pr-//g')
           echo "slots=$slots" >> $env:GITHUB_OUTPUT
-        env:
-          AZURE_CORE_OUTPUT: json
 
       - name: Get list of active PRs
         id: PRList
@@ -71,9 +69,10 @@ jobs:
           else {
             echo "❌ - Number of slots are not equal to number of active PRs"
           }
-          echo "AreSlotsEqual=$AreSlotsEqual" >> $env:GITHUB_OUTPUT
+          echo "AreSlotsEqual='False'" >> $env:GITHUB_OUTPUT
 
-      - name: List of Slots that need to be deleted #if:###{{steps.comparision.outputs.AreSlotsEqual == 'False' }}
+      - name: List of Slots that need to be deleted
+        if: ${{ steps.comparision.outputs.AreSlotsEqual == 'False' }}
         id: listOfSlots
         run: |
           # Split the strings into arrays of numbers
@@ -84,17 +83,13 @@ jobs:
           $SlotList = "1165 1174 1190 1183 1112 1111" -split ' '
           $PRList = "1190 1183 1174 1165" -split ' '
 
-          # Find the values present in $string2 but not in $string1
+          # Find the slots present in $SlotList but their PR doesn't exist in $PRList
           $SlotsWithoutPR = $SlotList | Where-Object { $_ -notin $PRList }
+
           if ( $SlotsWithoutPR.Length -gt 0 ) {
-            $SlotIDs = $SlotsWithoutPR -split ' '
             $ListOfSlots = $SlotsWithoutPR -join ' '
             Write-Host "⚡- These slots need to be deleted : $ListOfSlots"
-            $JSONSlotIDs = $SlotIDs | ConvertTo-Json -Compress
-            $JsonWithBackslash = $JSONSlotIDs -replace '"', '\"'
-            echo $JSONSlotIDs
-            #TODO: Currently, we are passing single id, should be passed as an array of IDs
-            echo "SlotID=$ListOfSlots" >> $env:GITHUB_OUTPUT
+            echo "SlotIDs=$ListOfSlots" >> $env:GITHUB_OUTPUT
           } else {
             Write-Host "✅ - Some PRs have not their slot deployed!"
           }
@@ -103,10 +98,10 @@ jobs:
     name: Invoking PR Close/Delete
     needs:
       - check-pr-slots #Adding second check to avoid running this flow for the second time when SlotID is already in the memory
-    if: needs.check-pr-slots.outputs.SlotID != ''
+    if: needs.check-pr-slots.outputs.SlotIDs != '' && needs.check-pr-slots.outputs.AreSlotsEqual == 'False'
     uses: ./.github/workflows/pr-close-delete-env.yml
     with:
-      pullRequestIdFromFlow: ${{ needs.check-pr-slots.outputs.SlotID }}
+      pullRequestIdFromFlow: ${{ needs.check-pr-slots.outputs.SlotIDs }}
     permissions:
       id-token: write
       contents: read
