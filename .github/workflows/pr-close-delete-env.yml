@@ -28,12 +28,13 @@ permissions:
   contents: read
 
 jobs:
-  settingUpSlotIDs:
+  setting-up-slot-IDs:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - id: set-matrix
+        # Converting slots into JSON Formatted Array
         run: |
           $slotsArray = '${{ env.SLOT_NAME }}' -split ' '
           $slotsArrayInJson = $slotsArray | ConvertTo-Json -Compress
@@ -41,10 +42,10 @@ jobs:
 
   delete-slot:
     runs-on: ubuntu-latest
-    needs: settingUpSlotIDs
+    needs: setting-up-slot-IDs
     strategy:
       matrix:
-        SLOT_NAME: ${{fromJson(needs.settingUpSlotIDs.outputs.matrix)}}
+        SLOT_NAME: ${{fromJson(needs.setting-up-slot-IDs.outputs.matrix)}}
 
     steps:
       - uses: actions/checkout@v3
