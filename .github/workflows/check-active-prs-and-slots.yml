@@ -69,7 +69,7 @@ jobs:
           else {
             echo "❌ - Number of slots are not equal to number of active PRs"
           }
-          echo "AreSlotsEqual=false" >> $env:GITHUB_OUTPUT
+          echo "AreSlotsEqual=$AreSlotsEqual" >> $env:GITHUB_OUTPUT
 
       - name: List of Slots that need to be deleted
         if: ${{ steps.comparision.outputs.AreSlotsEqual == 'False' }}
@@ -77,11 +77,11 @@ jobs:
         run: |
           # Split the strings into arrays of numbers
 
-          $zzSlotList = "${{ steps.slotList.outputs.slots }}" -split ' '
-          $zzPRList = "${{ steps.PRList.outputs.active_prs }}" -split ' '
+          $SlotList = "${{ steps.slotList.outputs.slots }}" -split ' '
+          $PRList = "${{ steps.PRList.outputs.active_prs }}" -split ' '
 
-          $SlotList = "1165 1174 1190 1183 1112" -split ' '
-          $PRList = "1190 1183 1174 1165" -split ' '
+          $zzSlotList = "1165 1174 1190 1183 1112" -split ' '
+          $zzPRList = "1190 1183 1174 1165" -split ' '
 
           # Find the slots present in $SlotList but their PR doesn't exist in $PRList
           $SlotsWithoutPR = $SlotList | Where-Object { $_ -notin $PRList }
