@@ -5,15 +5,15 @@ on:
     types: [closed]
   workflow_dispatch:
     inputs:
-      pullRequestId:
+      slotID:
         description: "Pull request number"
         required: true
         default: ""
   workflow_call:
     inputs:
-      pullRequestIdFromFlow:
+      slotIDs:
         type: string
-        description: "Slot ID"
+        description: "Slot IDs"
         required: true
 
 defaults:
@@ -21,14 +21,14 @@ defaults:
     shell: pwsh
 
 env:
-  SLOT_NAME: ${{ inputs.pullRequestIdFromFlow || inputs.pullRequestId || github.event.number }}
+  SLOT_NAME: ${{ inputs.slotIDs || inputs.slotID || github.event.number }}
   SLOT_PREFIX: pr-
 permissions:
   id-token: write
   contents: read
 
 jobs:
-  settingMatrix:
+  settingUpSlotIDs:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
@@ -36,26 +36,18 @@ jobs:
       - id: set-matrix
         run: |
           $slotsArray = '${{ env.SLOT_NAME }}' -split ' '
-          $SlotsInJson = $slotsArray | ConvertTo-Json -Compress
-          echo $SlotsInJson
-          echo "matrix=$SlotsInJson" >> $env:GITHUB_OUTPUT
-
-      - id: just-for-output
-        run: |
-          echo '${{ steps.set-matrix.outputs.matrix }}'
+          $slotsArrayInJson = $slotsArray | ConvertTo-Json -Compress
+          echo "matrix=$slotsArrayInJson" >> $env:GITHUB_OUTPUT
 
   delete-slot:
     runs-on: ubuntu-latest
-    needs: settingMatrix
+    needs: settingUpSlotIDs
     strategy:
       matrix:
-        SLOT_NAME: ${{fromJson(needs.settingMatrix.outputs.matrix)}}
+        SLOT_NAME: ${{fromJson(needs.settingUpSlotIDs.outputs.matrix)}}
 
     steps:
       - uses: actions/checkout@v3
-
-      - run: |
-          echo matrix Slot - ${{ matrix.SLOT_NAME }}
 
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
@@ -69,7 +61,7 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID  }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: Cleanup ACRPull & KeyVault permission
+      - name: Cleanup ACR Pull & Key Vault permission
         run: |
           $acrId = az acr show `
             --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
