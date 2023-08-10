@@ -33,12 +33,22 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - id: set-matrix
-        # Converting slots into JSON Formatted Array
+      - name: Converting slots into JSON Formatted Array
+        id: set-matrix
         run: |
-          $slotsArray = '${{ env.SLOT_NAME }}' -split ' '
-          $slotsArrayInJson = $slotsArray | ConvertTo-Json -Compress
-          echo "matrix=$slotsArrayInJson" >> $env:GITHUB_OUTPUT
+          # When we have a list of IDs
+          if('${{ env.SLOT_NAME }}'.Contains(' ')){
+            $slotsArray = '${{ env.SLOT_NAME }}' -split ' '
+            $slotsArrayInJson = $slotsArray | ConvertTo-Json -Compress
+            echo "matrix=$slotsArrayInJson" >> $env:GITHUB_OUTPUT
+          } else {
+            # When we have a single slot ID, Adding extra space at the tail to split it into an array
+            $slotsArray = '${{ env.SLOT_NAME }} ' -split ' '
+            $slotsArrayInJson = $slotsArray | ConvertTo-Json -Compress
+            # Removing the extra space now e.g [slotID,""]
+            $filteredSlotID = $slotsArrayInJson.Replace(',""', '')
+            echo "matrix=$filteredSlotID" >> $env:GITHUB_OUTPUT
+          }
 
   delete-slot:
     runs-on: ubuntu-latest
