@@ -62,12 +62,6 @@ jobs:
           path: ./.github
           load-mode: strict
 
-      - name: Set build tag as env
-        run: |
-          # NODE_ENV - BUILD_TAG
-          $BUILD_TAG = "${{ inputs.tag }}"
-          echo $env:BUILD_TAG=$BUILD_TAG
-
       - uses: DamianReeves/write-file-action@master
         name: Make site unindexable
         if: github.event_name == 'pull_request'
@@ -132,6 +126,7 @@ jobs:
           NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING: ${{ steps.AppInsight.outputs.AppInsightConnectionString }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
           SITE_URL: https://www.ssw.com.au
+          BUILD_TAG: "${{ inputs.tag }}"
 
       - name: ACR - Login
         run: |
