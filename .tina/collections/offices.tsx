@@ -81,7 +81,7 @@ export const officeSchema: Collection = {
       label: "Thumbnail",
       name: "thumbnail",
       // @ts-ignore
-      uploadDir: () => "/offices/thumbnails",
+      uploadDir: () => "offices/thumbnails",
     },
     {
       type: "image",
