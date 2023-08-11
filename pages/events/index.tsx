@@ -92,7 +92,14 @@ export default function EventsIndexPage(
       <Layout>
         <Container>
           <FilterBlock
-            sidebarChildren={<h3>Video On Demand</h3>}
+            sidebarChildren={
+              <div className="descendant-img:py-3">
+                <TinaMarkdown
+                  content={data.eventsIndex.sidebarBody}
+                  components={componentRenderer}
+                />
+              </div>
+            }
             groups={filters}
           >
             <div>
