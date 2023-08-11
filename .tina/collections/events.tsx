@@ -86,5 +86,15 @@ export const eventsIndexSchema: Collection = {
       templates: [...Schemas.pageBlocks],
       isBody: true,
     },
+    {
+      type: "object",
+      list: true,
+      name: "afterEvents",
+      label: "After Events",
+      ui: {
+        visualSelector: true,
+      },
+      templates: [...Schemas.pageBlocks],
+    },
   ],
 };

@@ -4,9 +4,14 @@ import { FilterGroup, type FilterGroupProps } from "./FilterGroup";
 interface FilterBlockProps {
   groups: FilterGroupProps[];
   children: React.ReactNode;
+  sidebarChildren?: React.ReactNode;
 }
 
-export const FilterBlock = ({ groups, children }: FilterBlockProps) => {
+export const FilterBlock = ({
+  groups,
+  children,
+  sidebarChildren,
+}: FilterBlockProps) => {
   return (
     <div className="mb-10 md:flex md:flex-row">
       <div className="md:mr-16 md:shrink-0 md:basis-64">
@@ -14,9 +19,17 @@ export const FilterBlock = ({ groups, children }: FilterBlockProps) => {
           <MdLiveHelp className="inline text-sswRed" /> I am looking for...
         </h3>
 
-        {groups.map((group, index) => (
-          <FilterGroup key={index} {...group} />
-        ))}
+        {groups?.length > 0 ? (
+          <>
+            {groups.map((group, index) => (
+              <FilterGroup key={index} {...group} />
+            ))}
+          </>
+        ) : (
+          <p>Loading...</p>
+        )}
+
+        {sidebarChildren && <div className="mt-8">{sidebarChildren}</div>}
       </div>
       <div className="min-w-0 max-w-full shrink grow ">{children}</div>
     </div>

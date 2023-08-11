@@ -5,6 +5,7 @@ import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
 
+import { Blocks } from "../../components/blocks-renderer";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { EventsRelativeBox } from "../../components/events/components";
 import { FilterBlock } from "../../components/filter/FilterBlock";
@@ -90,9 +91,12 @@ export default function EventsIndexPage(
       <SEO seo={data.eventsIndex.seo} />
       <Layout>
         <Container>
-          <FilterBlock groups={filters}>
+          <FilterBlock
+            sidebarChildren={<h3>Video On Demand</h3>}
+            groups={filters}
+          >
             <div>
-              <div className="prose-h1:pt-0">
+              <div className="prose-h1:pt-0 prose-h1:font-semibold">
                 {data?.eventsIndex?.body && (
                   <TinaMarkdown
                     content={data.eventsIndex.body}
@@ -100,49 +104,73 @@ export default function EventsIndexPage(
                   />
                 )}
               </div>
-              {filteredEvents?.map((event, index) => (
-                <div key={index} className="mb-20">
-                  <div className="flex flex-row">
-                    <div className="mr-3">
-                      <Image
-                        height={100}
-                        width={100}
-                        alt={event.Thumbnail.Description}
-                        src={event.Thumbnail.Url}
+              {filteredEvents ? (
+                <>
+                  {filteredEvents?.map((event, index) => (
+                    <div key={index} className="mb-20">
+                      <div className="mb-8 flex flex-row">
+                        <div className="mr-3">
+                          <Image
+                            className="rounded-md"
+                            height={100}
+                            width={100}
+                            alt={event.Thumbnail.Description}
+                            src={event.Thumbnail.Url}
+                          />
+                        </div>
+                        <div>
+                          <h2 className="mt-1 font-semibold">
+                            <a className="!no-underline" href={event.Url.Url}>
+                              {event.Title}
+                            </a>
+                          </h2>
+                          <EventsRelativeBox
+                            relativeDate={formatRelativeEventDate(
+                              event.StartDateTime,
+                              event.EndDateTime
+                            )}
+                            formattedDate={formatEventDate(
+                              event.StartDateTime,
+                              event.EndDateTime
+                            )}
+                          />
+                          <div>
+                            {event.CalendarType && (
+                              <>
+                                <strong>Type:</strong> {event.CalendarType}{" "}
+                              </>
+                            )}
+                            {event.Presenter && (
+                              <>
+                                <strong>Presenter: </strong>
+                                {event.Presenter}
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: event.EventShortDescription,
+                        }}
+                        className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline"
                       />
+                      <a href={event.Url.Url}>
+                        <p className="prose pt-3">Find out more...</p>
+                      </a>
                     </div>
-                    <div>
-                      <h2 className="mt-1">
-                        <a className="!no-underline" href={event.Url.Url}>
-                          {event.Title}
-                        </a>
-                      </h2>
-                      <EventsRelativeBox
-                        relativeDate={formatRelativeEventDate(
-                          event.StartDateTime,
-                          event.EndDateTime
-                        )}
-                        formattedDate={formatEventDate(
-                          event.StartDateTime,
-                          event.EndDateTime
-                        )}
-                      />
-                    </div>
-                  </div>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: event.EventShortDescription,
-                    }}
-                  />
-                </div>
-              ))}
+                  ))}
+                </>
+              ) : (
+                <p>Loading...</p>
+              )}
             </div>
           </FilterBlock>
-
-          <pre>
-            <code>{JSON.stringify(events)}</code>
-          </pre>
         </Container>
+        <Blocks
+          prefix="EventsIndexAfterEvents"
+          blocks={data.eventsIndex.afterEvents}
+        />
       </Layout>
     </>
   );
