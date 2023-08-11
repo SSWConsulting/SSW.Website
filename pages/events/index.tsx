@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
+import Image from "next/image";
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -29,7 +30,7 @@ export default function EventsIndexPage(
     variables: props.variables,
   });
 
-  const [selectedTime, setSelectedTime] = useState(0);
+  const [pastSelected, setPastSelected] = useState<boolean>(false);
 
   const { events, filters, filteredEvents } = useEvents(
     `/api/get-upcoming-events?top=${NUM_EVENTS}`
@@ -55,18 +56,18 @@ export default function EventsIndexPage(
                 />
               </div>
             }
-            groups={selectedTime ? filters : pastFilters}
+            groups={!pastSelected ? filters : pastFilters}
           >
             <Tab.Group>
               <Tab.List className="mb-8 flex flex-row">
                 <Tab as={Fragment}>
                   {({ selected }) => {
-                    setSelectedTime(selected ? 1 : 0);
+                    setPastSelected(!selected);
                     return (
                       <button
                         className={classNames(
-                          "flex-grow border-b-2 border-sswRed py-2 uppercase tracking-widest",
-                          selected ? "  bg-gray-25" : ""
+                          "flex-grow border-b-2 border-b-sswRed py-2 uppercase tracking-widest",
+                          selected && "bg-gray-25"
                         )}
                       >
                         Upcoming Events
@@ -76,12 +77,12 @@ export default function EventsIndexPage(
                 </Tab>
                 <Tab as={Fragment}>
                   {({ selected }) => {
-                    setSelectedTime(selected ? 0 : 1);
+                    setPastSelected(selected);
                     return (
                       <button
                         className={classNames(
                           "flex-grow border-b-2 border-b-sswRed py-2 uppercase tracking-widest",
-                          selected ? "  bg-gray-25" : ""
+                          selected && "bg-gray-25"
                         )}
                       >
                         Past Events
@@ -168,12 +169,8 @@ const useEvents = (apiUrl: string) => {
 
   useEffect(() => {
     fetch(apiUrl)
-      .then((res) => {
-        console.log(res);
-        return res.json();
-      })
+      .then((res) => res.json())
       .then((json) => {
-        console.log(json);
         setEvents(json);
       })
       .catch((err) => console.error(err));
@@ -255,7 +252,7 @@ const Event = ({
       <div className="mb-20">
         <div className="mb-8 flex flex-row">
           <div className="mr-3 shrink-0">
-            <img
+            <Image
               className="rounded-md"
               height={100}
               width={100}
