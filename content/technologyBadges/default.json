@@ -1,60 +1,127 @@
 {
   "badgesList": [
     {
-      "name": "azure",
-      "url": "https://sugarlearning.com/",
-      "imgURL": "/images/badges/Azure_Badge.png"
+      "name": "Azure",
+      "url": "https://ssw.com.au/consulting/azure",
+      "imgURL": "/images/badges/Azure.png"
     },
     {
-      "name": "powerapp",
-      "url": "https://sswtimepro.com/",
-      "imgURL": "/images/badges/PowerApp_Badge.png"
+      "name": "PowerPlatform",
+      "url": "https://ssw.com.au/consulting/power-platform",
+      "imgURL": "/images/badges/PowerPlatform.png"
     },
     {
-      "name": "angular",
-      "url": "https://sswsophie.com/sophiebot",
-      "imgURL": "/images/badges/Angular_Badge.png",
-      "largeIcon": true
+      "name": "Angular",
+      "url": "https://ssw.com.au/consulting/angular",
+      "imgURL": "/images/badges/Angular.png"
     },
     {
-      "name": "azureDevops",
-      "url": "https://sswsophie.com/sophiebot",
-      "imgURL": "/images/products/ssw-rewards.jpeg"
+      "name": "Azure Devops",
+      "url": "https://ssw.com.au/consulting/alm-azure-devops",
+      "imgURL": "/images/badges/Devops.png"
     },
     {
-      "name": "react",
-      "url": "https://sswsophie.com/",
-      "imgURL": "/images/badges/React_Badge.png"
+      "name": "React",
+      "url": "https://ssw.com.au/consulting/react",
+      "imgURL": "/images/badges/React.png"
     },
     {
-      "name": "sharepoint",
-      "url": "https://codeauditor.com/",
-      "imgURL": "/images/badges/Sharepoint_Badge.png"
+      "name": "Sharepoint",
+      "url": "https://ssw.com.au/consulting/sharepoint",
+      "imgURL": "/images/badges/Sharepoint.png"
     },
     {
-      "name": "blazor",
-      "url": "https://sswlinkauditor.com/",
-      "imgURL": "/images/badges/Blazor_Badge.png"
+      "name": "Blazor",
+      "url": "https://ssw.com.au/consulting/blazor",
+      "imgURL": "/images/badges/Blazor.png"
     },
     {
-      "name": "chatgpt",
-      "url": "https://smashingbarrier.com/",
-      "imgURL": "/images/products/ssw-rewards.jpeg"
+      "name": "ChatGPT",
+      "url": "https://ssw.com.au/consulting/gpt",
+      "imgURL": "/images/badges/ChatGPT.png"
     },
     {
-      "name": "h5",
-      "url": "https://ssw.com.au/products/rewards",
-      "imgURL": "/images/products/ssw-rewards.jpeg"
+      "name": "Html",
+      "url": "https://ssw.com.au/consulting/mobile-application-development",
+      "imgURL": "/images/badges/Html.png"
     },
     {
-      "name": "vue",
-      "url": "https://ssw.com.au/products/rewards",
-      "imgURL": "/images/products/ssw-rewards.jpeg"
+      "name": "VUE",
+      "url": "https://ssw.com.au/consulting/vue",
+      "imgURL": "/images/badges/VUE.png"
     },
     {
-      "name": "maui",
-      "url": "https://ssw.com.au/products/rewards",
-      "imgURL": "/images/products/ssw-rewards.jpeg"
+      "name": "MAUI",
+      "url": "https://ssw.com.au/consulting/desktop-development",
+      "imgURL": "/images/badges/MAUI.png"
+    }
+  ],
+  "layouts": [
+    {
+      "size": 70,
+      "left": 0,
+      "top": 105,
+      "rotate": -11
+    },
+    {
+      "size": 50,
+      "left": 89,
+      "top": 182,
+      "rotate": -8.5
+    },
+    {
+      "size": 86,
+      "left": 147,
+      "top": 92,
+      "rotate": -5
+    },
+    {
+      "size": 60,
+      "left": 261,
+      "top": 185,
+      "rotate": 0
+    },
+    {
+      "size": 68,
+      "left": 286,
+      "top": 46,
+      "rotate": 0
+    },
+    {
+      "size": 62,
+      "left": 375,
+      "top": 152,
+      "rotate": 19.5
+    },
+    {
+      "size": 82,
+      "left": 437,
+      "top": 19,
+      "rotate": 0
+    },
+    {
+      "size": 76,
+      "left": 509,
+      "top": 170,
+      "rotate": 0
+    },
+    {
+      "size": 58,
+      "left": 596,
+      "top": 90,
+      "rotate": 0
+    },
+    {
+      "size": 58,
+      "left": 660,
+      "top": 17,
+      "rotate": 0
+    },
+    {
+      "size": 58,
+      "left": 708,
+      "top": 134,
+      "rotate": -12
     }
   ]
 }

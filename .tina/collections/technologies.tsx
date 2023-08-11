@@ -96,5 +96,33 @@ export const technologyBadgesSchema: Collection = {
         },
       ],
     },
+    {
+      type: "object",
+      label: "Technology Badges Layout",
+      name: "layouts",
+      list: true,
+      fields: [
+        {
+          type: "number",
+          label: "Left",
+          name: "left",
+        },
+        {
+          type: "number",
+          label: "Top",
+          name: "top",
+        },
+        {
+          type: "number",
+          label: "Size",
+          name: "size",
+        },
+        {
+          type: "number",
+          label: "Rotate",
+          name: "rotate",
+        },
+      ],
+    },
   ],
 };

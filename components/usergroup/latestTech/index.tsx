@@ -2,10 +2,24 @@ import { sampleSize } from "lodash";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Template } from "tinacms";
-import { divLayout } from "./constants";
-import { DIVBadge } from "./divBadge";
+import { Badge } from "./badge";
 
-const FloatingBadges = ({ badges }: { badges: BadgeProps[] }) => {
+import type { BadgeProps } from "./badge";
+
+export interface Layout {
+  size: number;
+  left: number;
+  top: number;
+  rotate: number;
+}
+
+const FloatingBadges = ({
+  badges,
+  layouts,
+}: {
+  badges: BadgeProps[];
+  layouts: Layout[];
+}) => {
   const [shuffleBadges, setShuffleBadges] = useState([]);
 
   useEffect(() => {
@@ -15,11 +29,11 @@ const FloatingBadges = ({ badges }: { badges: BadgeProps[] }) => {
   return (
     <div className="absolute -bottom-3 -left-4 h-62 w-full select-none bg-waveBackground bg-contain bg-left bg-no-repeat">
       <div className="flex flex-wrap justify-center">
-        {divLayout.map((badgeLayoutProps, index) => (
-          <DIVBadge
+        {layouts.map((layout, index) => (
+          <Badge
             key={`${shuffleBadges[index]?.name}-${index} `}
-            {...badgeLayoutProps}
-            {...(Array.isArray(shuffleBadges) ? shuffleBadges[index] : {})}
+            layout={layout}
+            {...shuffleBadges[index]}
           />
         ))}
       </div>
@@ -40,7 +54,10 @@ export const LatestTech = ({ data }) => {
           latest tech
         </Link>
       </span>
-      <FloatingBadges badges={data?.badges.badgesList ?? []} />
+      <FloatingBadges
+        badges={data?.badges?.badgesList ?? []}
+        layouts={data?.badges?.layouts ?? []}
+      />
     </div>
   );
 };
