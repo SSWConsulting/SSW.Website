@@ -2,7 +2,8 @@ name: Check Active PRs and Slots
 
 on:
   schedule:
-    - cron: "0 12 * * MON" # Schedule to run on every Monday at 12 PM UTC
+    # Monday at 12 PM UTC - https://cron.help/#0_12_*_*_MON
+    - cron: "0 12 * * MON"
   workflow_dispatch:
 
 defaults:
