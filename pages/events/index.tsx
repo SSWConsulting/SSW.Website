@@ -116,7 +116,7 @@ export default function EventsIndexPage(
                   {filteredEvents?.map((event, index) => (
                     <div key={index} className="mb-20">
                       <div className="mb-8 flex flex-row">
-                        <div className="mr-3">
+                        <div className="mr-3 shrink-0">
                           <Image
                             className="rounded-md"
                             height={100}
@@ -126,7 +126,7 @@ export default function EventsIndexPage(
                           />
                         </div>
                         <div>
-                          <h2 className="mt-1 font-semibold">
+                          <h2 className="mt-0 font-semibold">
                             <a className="!no-underline" href={event.Url.Url}>
                               {event.Title}
                             </a>
