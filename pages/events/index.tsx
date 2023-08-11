@@ -20,6 +20,26 @@ import { formatEventDate, formatRelativeEventDate } from "../../helpers/dates";
 import { EventInfo } from "../../services/server/events";
 
 const NUM_EVENTS = 15;
+const NUM_PAST_EVENTS = 100;
+
+const CITY_MAP = {
+  Sydney: {
+    name: "SSW Chapel Sydney",
+    url: "https://sswchapel.com.au/Sydney",
+  },
+  Brisbane: {
+    name: "SSW Chapel Brisbane",
+    url: "https://sswchapel.com.au/Brisbane",
+  },
+  Melbourne: {
+    name: "SSW Chapel Melbourne",
+    url: "https://sswchapel.com.au/Melbourne",
+  },
+  Newcastle: {
+    name: "SSW Chapel Newcastle",
+    url: "https://sswchapel.com.au/Newcastle",
+  },
+};
 
 export default function EventsIndexPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -40,7 +60,7 @@ export default function EventsIndexPage(
     events: pastEvents,
     filters: pastFilters,
     filteredEvents: pastFilteredEvents,
-  } = useEvents(`/api/get-past-events?top=${100}`);
+  } = useEvents(`/api/get-past-events?top=${NUM_PAST_EVENTS}`);
 
   return (
     <>
@@ -202,6 +222,7 @@ const EventsList = ({ events, filteredEvents }: EventsListProps) => {
               endDateTime={event.EndDateTime}
               type={event.CalendarType}
               presenter={event.Presenter}
+              location={event.City}
             />
           ))}
         </>
@@ -225,6 +246,7 @@ interface EventProps {
   endDateTime: Date;
   type?: string;
   presenter?: string;
+  location?: string;
 }
 
 const Event = ({
@@ -238,6 +260,7 @@ const Event = ({
   endDateTime,
   type,
   presenter,
+  location,
 }: EventProps) => {
   return (
     <Transition
@@ -261,15 +284,17 @@ const Event = ({
             />
           </div>
           <div>
-            <h2 className="mt-0 font-semibold">
+            <h2 className="my-0 font-semibold">
               <a className="!no-underline" href={url}>
                 {title}
               </a>
             </h2>
+
             <EventsRelativeBox
               relativeDate={formatRelativeEventDate(startDateTime, endDateTime)}
               formattedDate={formatEventDate(startDateTime, endDateTime)}
             />
+
             <div>
               {type && (
                 <>
@@ -281,6 +306,12 @@ const Event = ({
                   <strong>Presenter: </strong>
                   {presenter}
                 </>
+              )}
+              {location && CITY_MAP[location] && (
+                <span className="ml-3">
+                  <strong>Location: </strong>
+                  <a href={CITY_MAP[location].url}>{CITY_MAP[location].name}</a>
+                </span>
               )}
             </div>
           </div>
