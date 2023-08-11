@@ -10,7 +10,7 @@ import { Container } from "../util/container";
 
 export const InternalCarousel = ({ data }) => {
   return (
-    <Container size="custom" className="px-0 md:w-3/4">
+    <Container size="custom" className="px-0 descendant-li:!list-none md:w-3/4">
       <CarouselImplementation
         autoPlay={true}
         infiniteLoop={true}
