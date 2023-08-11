@@ -40,7 +40,12 @@ jobs:
       - name: Get list of deployed Slots
         id: slotList
         run: |
-          $slots = $(az webapp deployment slot list --name ${{ env.APP_SERVICE_NAME }} --resource-group ${{env.AZURE_RESOURCE_GROUP }} --query '[].name' --output tsv | sed 's/pr-//g')
+          $slots = $(az webapp deployment slot list `
+            --name ${{ env.APP_SERVICE_NAME }} `
+            --resource-group ${{env.AZURE_RESOURCE_GROUP }} `
+            --query '[].name' `
+            --output tsv | `
+            sed 's/pr-//g')
           echo "slots=$slots" >> $env:GITHUB_OUTPUT
 
       - name: Get list of active PRs
