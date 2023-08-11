@@ -34,7 +34,7 @@ export const eventsHeaderSchema = {
       type: "image",
       label: "Hero Background",
       name: "heroBackground",
-      uploadDir: () => "/background",
+      uploadDir: () => "background",
     },
     {
       type: "string",
@@ -45,7 +45,7 @@ export const eventsHeaderSchema = {
       type: "image",
       label: "Image Overlay",
       name: "imgOverlay",
-      uploadDir: () => "/background",
+      uploadDir: () => "background",
     },
   ],
 };

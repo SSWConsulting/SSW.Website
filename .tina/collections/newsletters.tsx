@@ -54,7 +54,7 @@ export const newsletterSchema: Collection = {
           description:
             "Must be saved in images/Newsletters. Only add images that have not been used before. There is no need to add images to the /images/newsletters directory if they have already been used in a previous newsletter",
           // @ts-ignore
-          uploadDir: () => "/Newsletters",
+          uploadDir: () => "Newsletters",
         },
         {
           type: "string",
