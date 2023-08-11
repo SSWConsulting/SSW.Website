@@ -1,11 +1,11 @@
+import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
-import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
 
-import { Transition } from "@headlessui/react";
+import { Tab, Transition } from "@headlessui/react";
 import { FaSpinner } from "react-icons/fa";
 import { Blocks } from "../../components/blocks-renderer";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
@@ -29,6 +29,91 @@ export default function EventsIndexPage(
     variables: props.variables,
   });
 
+  const [selectedTime, setSelectedTime] = useState(0);
+
+  const { events, filters, filteredEvents } = useEvents(
+    `/api/get-upcoming-events?top=${NUM_EVENTS}`
+  );
+
+  const {
+    events: pastEvents,
+    filters: pastFilters,
+    filteredEvents: pastFilteredEvents,
+  } = useEvents(`/api/get-past-events?top=${100}`);
+
+  return (
+    <>
+      <SEO seo={data.eventsIndex.seo} />
+      <Layout>
+        <Container>
+          <FilterBlock
+            sidebarChildren={
+              <div className="descendant-img:py-3">
+                <TinaMarkdown
+                  content={data.eventsIndex.sidebarBody}
+                  components={componentRenderer}
+                />
+              </div>
+            }
+            groups={selectedTime ? filters : pastFilters}
+          >
+            <Tab.Group>
+              <Tab.List className="mb-8 flex flex-row">
+                <Tab as={Fragment}>
+                  {({ selected }) => {
+                    setSelectedTime(selected ? 1 : 0);
+                    return (
+                      <button
+                        className={classNames(
+                          "flex-grow border-b-2 border-sswRed py-2 uppercase tracking-widest",
+                          selected ? "  bg-gray-25" : ""
+                        )}
+                      >
+                        Upcoming Events
+                      </button>
+                    );
+                  }}
+                </Tab>
+                <Tab as={Fragment}>
+                  {({ selected }) => {
+                    setSelectedTime(selected ? 0 : 1);
+                    return (
+                      <button
+                        className={classNames(
+                          "flex-grow border-b-2 border-b-sswRed py-2 uppercase tracking-widest",
+                          selected ? "  bg-gray-25" : ""
+                        )}
+                      >
+                        Past Events
+                      </button>
+                    );
+                  }}
+                </Tab>
+              </Tab.List>
+              <Tab.Panels>
+                <Tab.Panel>
+                  <EventsList events={events} filteredEvents={filteredEvents} />
+                </Tab.Panel>
+                <Tab.Panel>
+                  <EventsList
+                    events={pastEvents}
+                    filteredEvents={pastFilteredEvents}
+                  />
+                </Tab.Panel>
+              </Tab.Panels>
+            </Tab.Group>
+          </FilterBlock>
+        </Container>
+        <Blocks
+          prefix="EventsIndexAfterEvents"
+          blocks={data.eventsIndex.afterEvents}
+        />
+      </Layout>
+    </>
+  );
+}
+
+const useEvents = (apiUrl: string) => {
   const [events, setEvents] = useState<EventInfo[]>(undefined);
 
   const [filterControls, setFilterControls] = useState<number[]>([-1, -1]);
@@ -52,7 +137,7 @@ export default function EventsIndexPage(
   const filters = useMemo<FilterGroupProps[]>(() => {
     if (!events) return [];
 
-    const test: FilterGroupProps[] = [
+    const groups: FilterGroupProps[] = [
       {
         selected: filterControls[0],
         setSelected: (value) => setFilterControls((curr) => [value, curr[1]]),
@@ -67,7 +152,7 @@ export default function EventsIndexPage(
       },
     ];
 
-    return test;
+    return groups;
   }, [filterControls, options]);
 
   const filteredEvents = useMemo(() => {
@@ -82,74 +167,55 @@ export default function EventsIndexPage(
   }, [events, filterControls]);
 
   useEffect(() => {
-    fetch(`/api/get-upcoming-events?top=${NUM_EVENTS}`)
-      .then((res) => res.json())
+    fetch(apiUrl)
+      .then((res) => {
+        console.log(res);
+        return res.json();
+      })
       .then((json) => {
         console.log(json);
         setEvents(json);
-      });
+      })
+      .catch((err) => console.error(err));
   }, []);
 
-  return (
-    <>
-      <SEO seo={data.eventsIndex.seo} />
-      <Layout>
-        <Container>
-          <FilterBlock
-            sidebarChildren={
-              <div className="descendant-img:py-3">
-                <TinaMarkdown
-                  content={data.eventsIndex.sidebarBody}
-                  components={componentRenderer}
-                />
-              </div>
-            }
-            groups={filters}
-          >
-            <div>
-              <div className="prose-h1:pt-0 prose-h1:font-semibold">
-                {data?.eventsIndex?.body && (
-                  <TinaMarkdown
-                    content={data.eventsIndex.body}
-                    components={componentRenderer}
-                  />
-                )}
-              </div>
-              {filteredEvents ? (
-                <>
-                  {events?.map((event, index) => (
-                    <Event
-                      key={index}
-                      visible={!!filteredEvents?.find((e) => e.id === event.id)}
-                      title={event.Title}
-                      url={event.Url.Url}
-                      description={event.EventShortDescription}
-                      imageUrl={event.Thumbnail.Url}
-                      imageAlt={event.Thumbnail.Description}
-                      startDateTime={event.StartDateTime}
-                      endDateTime={event.EndDateTime}
-                      type={event.CalendarType}
-                      presenter={event.Presenter}
-                    />
-                  ))}
-                </>
-              ) : (
-                <p className="flex flex-row text-xl">
-                  <FaSpinner className="m-icon animate-spin" /> Loading
-                  Events...
-                </p>
-              )}
-            </div>
-          </FilterBlock>
-        </Container>
-        <Blocks
-          prefix="EventsIndexAfterEvents"
-          blocks={data.eventsIndex.afterEvents}
-        />
-      </Layout>
-    </>
-  );
+  return { events, filters, filteredEvents };
+};
+
+interface EventsListProps {
+  events: EventInfo[];
+  filteredEvents: EventInfo[];
 }
+
+const EventsList = ({ events, filteredEvents }: EventsListProps) => {
+  return (
+    <div>
+      {filteredEvents ? (
+        <>
+          {events?.map((event, index) => (
+            <Event
+              key={index}
+              visible={!!filteredEvents?.find((e) => e.id === event.id)}
+              title={event.Title}
+              url={event.Url.Url}
+              description={event.EventShortDescription}
+              imageUrl={event.Thumbnail.Url}
+              imageAlt={event.Thumbnail.Description}
+              startDateTime={event.StartDateTime}
+              endDateTime={event.EndDateTime}
+              type={event.CalendarType}
+              presenter={event.Presenter}
+            />
+          ))}
+        </>
+      ) : (
+        <p className="flex flex-row text-xl">
+          <FaSpinner className="m-icon animate-spin" /> Loading Events...
+        </p>
+      )}
+    </div>
+  );
+};
 
 interface EventProps {
   visible?: boolean;
@@ -189,7 +255,7 @@ const Event = ({
       <div className="mb-20">
         <div className="mb-8 flex flex-row">
           <div className="mr-3 shrink-0">
-            <Image
+            <img
               className="rounded-md"
               height={100}
               width={100}
