@@ -1,10 +1,9 @@
-import { default as cs } from "classnames";
 import { sampleSize } from "lodash";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Template } from "tinacms";
-import { svgLayout } from "./constants";
-import { SVGBadge } from "./svgBadge";
+import { divLayout } from "./constants";
+import { DIVBadge } from "./divBadge";
 
 const FloatingBadges = ({ badges }: { badges: BadgeProps[] }) => {
   const [shuffleBadges, setShuffleBadges] = useState([]);
@@ -15,17 +14,15 @@ const FloatingBadges = ({ badges }: { badges: BadgeProps[] }) => {
 
   return (
     <div className="absolute -bottom-3 -left-4 h-62 w-full select-none bg-waveBackground bg-contain bg-left bg-no-repeat">
-      <svg viewBox="0 0 788 248" className={cs("h-62 max-w-3xl")}>
-        <g id="badges">
-          {svgLayout.map((badgeLayoutProps, index) => (
-            <SVGBadge
-              key={`${shuffleBadges[index]?.name} -${index} `}
-              {...badgeLayoutProps}
-              {...(Array.isArray(shuffleBadges) ? shuffleBadges[index] : {})}
-            />
-          ))}
-        </g>
-      </svg>
+      <div className="flex flex-wrap justify-center">
+        {divLayout.map((badgeLayoutProps, index) => (
+          <DIVBadge
+            key={`${shuffleBadges[index]?.name}-${index} `}
+            {...badgeLayoutProps}
+            {...(Array.isArray(shuffleBadges) ? shuffleBadges[index] : {})}
+          />
+        ))}
+      </div>
     </div>
   );
 };

@@ -9,8 +9,8 @@ interface SVGBadgeProps
 
 interface DivBadgeProps extends BadgeProps {
   size?: number;
-  x: number;
-  y: number;
+  left: number;
+  top: number;
   rotate?: number;
 }
 

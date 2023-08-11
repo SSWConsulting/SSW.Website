@@ -66,3 +66,12 @@ export const svgLayout = [
     rotate: -12,
   },
 ];
+
+export const divLayout = Object.values(svgLayout).map((item) => {
+  return {
+    size: item.size * 2,
+    left: item.cx - item.size,
+    top: item.cy - item.size,
+    rotate: item.rotate,
+  };
+});
