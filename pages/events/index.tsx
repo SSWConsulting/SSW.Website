@@ -5,6 +5,7 @@ import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
 
+import { FaSpinner } from "react-icons/fa";
 import { Blocks } from "../../components/blocks-renderer";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { EventsRelativeBox } from "../../components/events/components";
@@ -169,7 +170,10 @@ export default function EventsIndexPage(
                   ))}
                 </>
               ) : (
-                <p>Loading...</p>
+                <p className="flex flex-row text-xl">
+                  <FaSpinner className="m-icon animate-spin" /> Loading
+                  Events...
+                </p>
               )}
             </div>
           </FilterBlock>
