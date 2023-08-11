@@ -5,6 +5,9 @@ on:
     # Monday at 12 PM UTC - https://cron.help/#0_12_*_*_MON
     - cron: "0 12 * * MON"
   workflow_dispatch:
+  pull_request:
+    branches:
+      - main
 
 defaults:
   run:
@@ -18,8 +21,8 @@ jobs:
   check-pr-slots:
     runs-on: ubuntu-latest
     outputs:
-      SlotIDs: ${{ steps.listOfSlots.outputs.SlotIDs }}
-      AreSlotsEqual: ${{steps.comparision.outputs.AreSlotsEqual }}
+      slotIDs: ${{ steps.listOfSlots.outputs.slotIDs }}
+      slotsExistThatRequireDeletion: ${{steps.comparision.outputs.slotsExistThatRequireDeletion }}
 
     steps:
       - name: Checking out
@@ -61,46 +64,34 @@ jobs:
           $PRList =  "${{ steps.PRList.outputs.active_prs }}" -split ' '
           $SlotList = "${{ steps.slotList.outputs.slots }}" -split ' '
 
-          $SlotsWithoutPR = $SlotList | Where-Object { $_ -notin $PRList }
+          $slotsExistThatRequireDeletion = $SlotList | Where-Object { $_ -notin $PRList }
+          $slotsExistThatRequireDeletion ='111 112'
 
-          $AreSlotsEqual = $SlotsWithoutPR.Length -eq 0
-
-          if ( $AreSlotsEqual ) {
-            echo "✅ - Number of slots are equal to number of active PRs"
+          if ( $slotsExistThatRequireDeletion.Length -eq 0 ) {
+            echo "✅ - Number of slots are equal to number of active PRs - 🏃 Skipping next step"
           }
           else {
             echo "❌ - Number of slots are not equal to number of active PRs"
           }
-          echo "AreSlotsEqual=$AreSlotsEqual" >> $env:GITHUB_OUTPUT
+          echo "slotsExistThatRequireDeletion='$slotsExistThatRequireDeletion'" >> $env:GITHUB_OUTPUT
 
-      - name: List of Slots that need to be deleted
-        if: ${{ steps.comparision.outputs.AreSlotsEqual == 'False' }}
+      - name: List of slots that need to be deleted
+        if: ${{ steps.comparision.outputs.slotsExistThatRequireDeletion.Length > 0 }}
         id: listOfSlots
         run: |
-          # Split the strings into arrays of numbers
-
-          $SlotList = "${{ steps.slotList.outputs.slots }}" -split ' '
-          $PRList = "${{ steps.PRList.outputs.active_prs }}" -split ' '
-
-          # Find the slots present in $SlotList but their PR doesn't exist in $PRList
-          $SlotsWithoutPR = $SlotList | Where-Object { $_ -notin $PRList }
-
-          if ( $SlotsWithoutPR.Length -gt 0 ) {
-            $ListOfSlots = $SlotsWithoutPR -join ' '
-            Write-Host "⚡- These slots need to be deleted : $ListOfSlots"
-            echo "SlotIDs=$ListOfSlots" >> $env:GITHUB_OUTPUT
-          } else {
-            Write-Host "✅ - Some PRs have not their slot deployed! - 🏃 Skipping next job"
-          }
+          # Slots that need to be deleted
+          $slotsExistThatRequireDeletion = '${{steps.comparision.outputs.slotsExistThatRequireDeletion }}'
+          Write-Host "⚡- These slots need to be deleted : $slotsExistThatRequireDeletion"
+          echo "slotIDs=$slotsExistThatRequireDeletion" >> $env:GITHUB_OUTPUT
 
   invokeDeleteSlot:
     name: Invoking PR Close/Delete
     needs:
-      - check-pr-slots #Adding second check to avoid running this flow for the second time when SlotID is already in the memory
-    if: needs.check-pr-slots.outputs.SlotIDs != '' && needs.check-pr-slots.outputs.AreSlotsEqual == 'False'
+      - check-pr-slots #Adding second check to avoid running this flow for the second time when slotID is already in the memory
+    if: needs.check-pr-slots.outputs.SlotIDs != '' && needs.check-pr-slots.outputs.slotsExistThatRequireDeletion.Length > 0
     uses: ./.github/workflows/pr-close-delete-env.yml
     with:
-      slotIDs: ${{ needs.check-pr-slots.outputs.SlotIDs }}
+      slotIDs: ${{ needs.check-pr-slots.outputs.slotIDs }}
     permissions:
       id-token: write
       contents: read
