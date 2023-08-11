@@ -5,6 +5,7 @@ import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
 
+import { Transition } from "@headlessui/react";
 import { FaSpinner } from "react-icons/fa";
 import { Blocks } from "../../components/blocks-renderer";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
@@ -114,59 +115,20 @@ export default function EventsIndexPage(
               </div>
               {filteredEvents ? (
                 <>
-                  {filteredEvents?.map((event, index) => (
-                    <div key={index} className="mb-20">
-                      <div className="mb-8 flex flex-row">
-                        <div className="mr-3 shrink-0">
-                          <Image
-                            className="rounded-md"
-                            height={100}
-                            width={100}
-                            alt={event.Thumbnail.Description}
-                            src={event.Thumbnail.Url}
-                          />
-                        </div>
-                        <div>
-                          <h2 className="mt-0 font-semibold">
-                            <a className="!no-underline" href={event.Url.Url}>
-                              {event.Title}
-                            </a>
-                          </h2>
-                          <EventsRelativeBox
-                            relativeDate={formatRelativeEventDate(
-                              event.StartDateTime,
-                              event.EndDateTime
-                            )}
-                            formattedDate={formatEventDate(
-                              event.StartDateTime,
-                              event.EndDateTime
-                            )}
-                          />
-                          <div>
-                            {event.CalendarType && (
-                              <>
-                                <strong>Type:</strong> {event.CalendarType}{" "}
-                              </>
-                            )}
-                            {event.Presenter && (
-                              <>
-                                <strong>Presenter: </strong>
-                                {event.Presenter}
-                              </>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: event.EventShortDescription,
-                        }}
-                        className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline"
-                      />
-                      <a href={event.Url.Url}>
-                        <p className="prose pt-3">Find out more...</p>
-                      </a>
-                    </div>
+                  {events?.map((event, index) => (
+                    <Event
+                      key={index}
+                      visible={!!filteredEvents?.find((e) => e.id === event.id)}
+                      title={event.Title}
+                      url={event.Url.Url}
+                      description={event.EventShortDescription}
+                      imageUrl={event.Thumbnail.Url}
+                      imageAlt={event.Thumbnail.Description}
+                      startDateTime={event.StartDateTime}
+                      endDateTime={event.EndDateTime}
+                      type={event.CalendarType}
+                      presenter={event.Presenter}
+                    />
                   ))}
                 </>
               ) : (
@@ -186,6 +148,91 @@ export default function EventsIndexPage(
     </>
   );
 }
+
+interface EventProps {
+  visible?: boolean;
+  title: string;
+  url: string;
+  description?: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  startDateTime: Date;
+  endDateTime: Date;
+  type?: string;
+  presenter?: string;
+}
+
+const Event = ({
+  visible,
+  title,
+  url,
+  description,
+  imageUrl,
+  imageAlt,
+  startDateTime,
+  endDateTime,
+  type,
+  presenter,
+}: EventProps) => {
+  return (
+    <Transition
+      show={!!visible}
+      enter="transition duration-100 ease-out"
+      enterFrom="transform scale-95 opacity-0"
+      enterTo="transform scale-100 opacity-100"
+      leave="transition duration-75 ease-out"
+      leaveFrom="transform scale-100 opacity-100"
+      leaveTo="transform scale-95 opacity-0"
+    >
+      <div className="mb-20">
+        <div className="mb-8 flex flex-row">
+          <div className="mr-3 shrink-0">
+            <Image
+              className="rounded-md"
+              height={100}
+              width={100}
+              alt={imageAlt}
+              src={imageUrl}
+            />
+          </div>
+          <div>
+            <h2 className="mt-0 font-semibold">
+              <a className="!no-underline" href={url}>
+                {title}
+              </a>
+            </h2>
+            <EventsRelativeBox
+              relativeDate={formatRelativeEventDate(startDateTime, endDateTime)}
+              formattedDate={formatEventDate(startDateTime, endDateTime)}
+            />
+            <div>
+              {type && (
+                <>
+                  <strong>Type:</strong> {type}{" "}
+                </>
+              )}
+              {presenter && (
+                <>
+                  <strong>Presenter: </strong>
+                  {presenter}
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: description,
+          }}
+          className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline"
+        />
+        <a href={url}>
+          <p className="prose pt-3">Find out more...</p>
+        </a>
+      </div>
+    </Transition>
+  );
+};
 
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.eventsIndexContentQuery({
