@@ -18,6 +18,8 @@ import { SEO } from "../../components/util/seo";
 import { formatEventDate, formatRelativeEventDate } from "../../helpers/dates";
 import { EventInfo } from "../../services/server/events";
 
+const NUM_EVENTS = 15;
+
 export default function EventsIndexPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
@@ -80,7 +82,7 @@ export default function EventsIndexPage(
   }, [events, filterControls]);
 
   useEffect(() => {
-    fetch(`/api/get-upcoming-events?top=${5}`)
+    fetch(`/api/get-upcoming-events?top=${NUM_EVENTS}`)
       .then((res) => res.json())
       .then((json) => {
         console.log(json);
