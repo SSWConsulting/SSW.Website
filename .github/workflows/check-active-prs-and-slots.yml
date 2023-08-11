@@ -75,6 +75,10 @@ jobs:
           }
           echo "slotsExistThatRequireDeletion=$slotsExistThatRequireDeletion" >> $env:GITHUB_OUTPUT
 
+      - name: Slots
+        run: |
+          echo  ${{ steps.comparision.outputs.slotsExistThatRequireDeletion }}
+
       - name: List of slots that need to be deleted
         if: ${{ steps.comparision.outputs.slotsExistThatRequireDeletion.Length > 0 }}
         id: listOfSlots
