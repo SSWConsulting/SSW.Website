@@ -73,11 +73,13 @@ jobs:
           else {
             echo "❌ - Number of slots are not equal to number of active PRs"
           }
-          echo "slotsExistThatRequireDeletion=$slotsExistThatRequireDeletion" >> $env:GITHUB_OUTPUT
+          echo "slotsExistThatRequireDeletion='$slotsExistThatRequireDeletion'" >> $env:GITHUB_OUTPUT
 
       - name: Slots
         run: |
           echo  ${{ steps.comparision.outputs.slotsExistThatRequireDeletion }}
+          echo  ${{ steps.comparision.outputs.slotsExistThatRequireDeletion.Length }}
+          echo  ${{ steps.comparision.outputs.slotsExistThatRequireDeletion.type }}
 
       - name: List of slots that need to be deleted
         if: ${{ steps.comparision.outputs.slotsExistThatRequireDeletion.Length > 0 }}
