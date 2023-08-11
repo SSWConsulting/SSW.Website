@@ -8,6 +8,7 @@ import { Content } from "./blocks/content";
 import { ContentCard } from "./blocks/contentCard";
 import { CustomImage } from "./blocks/customImage";
 import { ServiceCards } from "./blocks/serviceCards";
+import { TableLayout } from "./blocks/tableLayout";
 import { UpcomingEvents } from "./blocks/upcomingEvents";
 import { VerticalImageLayout } from "./blocks/verticalImageLayout";
 import { VerticalListItem } from "./blocks/verticalListItem";
@@ -44,6 +45,7 @@ const componentMap = {
   TrainingLearningOutcome,
   PresenterBlock,
   LocationBlock,
+  TableLayout,
   Agenda,
   Organizer,
   JoinGithub,
@@ -53,12 +55,23 @@ const componentMap = {
 export const Blocks = ({ prefix, blocks }) => {
   return (
     <div>
-      {blocks ? blocks.map((block, i) => renderBlock(prefix, block, i)) : null}
+      {blocks ? (
+        blocks.map((block, i) => (
+          <Block
+            key={i + block.__typename}
+            block={block}
+            prefix={prefix}
+            i={i}
+          />
+        ))
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
 
-const renderBlock = (prefix, block, i): JSX.Element => {
+const Block = ({ prefix, block, i }) => {
   const Component = componentMap[block.__typename?.replace(prefix, "")];
 
   if (!Component) {
@@ -69,7 +82,7 @@ const renderBlock = (prefix, block, i): JSX.Element => {
   const blockProps = { data: block, parentField: field };
 
   return (
-    <div className="contents" data-tinafield={field} key={i + block.__typename}>
+    <div className="contents" data-tinafield={field}>
       <Component {...blockProps} />
     </div>
   );
