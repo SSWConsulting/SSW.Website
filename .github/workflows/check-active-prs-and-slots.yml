@@ -49,7 +49,7 @@ jobs:
           echo "slots=$slots" >> $env:GITHUB_OUTPUT
 
       - name: Get list of active PRs
-        id: PRList
+        id: prList
         run: |
           $active_prs=$(curl -s "https://api.github.com/repos/SSWConsulting/SSW.Website/pulls?state=open" | jq -r '.[].number')
           echo "active_prs=$active_prs" >> $env:GITHUB_OUTPUT
