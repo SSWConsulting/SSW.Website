@@ -72,19 +72,6 @@ export const technologyBadgesSchema: Collection = {
           uploadDir: () => "/badges",
         },
         {
-          type: "boolean",
-          label: "Large Icon",
-          name: "largeIcon",
-        },
-        {
-          type: "string",
-          label: "Background Color",
-          name: "fill",
-          ui: {
-            component: "color",
-          },
-        },
-        {
           type: "number",
           label: "Animation duration",
           name: "duration",

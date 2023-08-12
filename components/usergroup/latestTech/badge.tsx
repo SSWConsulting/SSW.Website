@@ -5,17 +5,15 @@ import { Layout } from ".";
 export interface BadgeProps {
   layout: Layout;
   name?: string;
+  url?: string;
   imgURL?: string;
-  largeIcon?: boolean;
-  fill?: string;
   duration?: number;
   bounceDown?: boolean;
 }
 
 export const Badge = (props: BadgeProps) => {
-  const { imgURL, largeIcon, name, duration, bounceDown } = props;
+  const { imgURL, url, name, duration, bounceDown } = props;
   const { left, top, size, rotate } = props.layout;
-  const inscribedSize = Math.ceil(0.7 * size);
 
   return (
     <div
@@ -32,6 +30,7 @@ export const Badge = (props: BadgeProps) => {
         width: `${size}px`,
         animationDuration: `${duration ?? 3000}ms`,
       }}
+      onClick={() => window.open(url, "_blank")}
     >
       {imgURL && (
         <Image
@@ -39,8 +38,8 @@ export const Badge = (props: BadgeProps) => {
             rotate: `${rotate ?? 0}deg`,
           }}
           alt={`${name} icon`}
-          width={largeIcon ? size : inscribedSize}
-          height={largeIcon ? size : inscribedSize}
+          width={size}
+          height={size}
           src={imgURL}
         />
       )}
