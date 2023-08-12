@@ -19,7 +19,6 @@ import { LocationBlock } from "./training/locationBlock";
 import { PresenterBlock } from "./training/presenterBlock";
 import { TrainingInformation } from "./training/trainingInformation";
 import { TrainingLearningOutcome } from "./training/trainingLearningOutcome";
-import { LatestTech } from "./usergroup/latestTech";
 
 const Carousel = dynamic(
   () => import("./blocks/carousel").then((mod) => mod.Carousel),
@@ -56,7 +55,6 @@ const componentMap = {
   BookingButton,
   PaymentBlock,
   ClientList,
-  LatestTech,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
