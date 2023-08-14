@@ -4631,7 +4631,7 @@ __metadata:
     eslint-config-prettier: ^8.8.0
     eslint-plugin-prettier: ^4.2.1
     eslint-plugin-tailwindcss: ^3.13.0
-    formik: ^2.4.0
+    formik: ^2.4.3
     next: ^13.4.12
     next-seo: ^6.1.0
     next-sitemap: ^4.1.8
@@ -9214,9 +9214,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"formik@npm:^2.4.0":
-  version: 2.4.1
-  resolution: "formik@npm:2.4.1"
+"formik@npm:^2.4.3":
+  version: 2.4.3
+  resolution: "formik@npm:2.4.3"
   dependencies:
     deepmerge: ^2.1.1
     hoist-non-react-statics: ^3.3.0
@@ -9224,10 +9224,10 @@ __metadata:
     lodash-es: ^4.17.21
     react-fast-compare: ^2.0.1
     tiny-warning: ^1.0.2
-    tslib: ^1.10.0
+    tslib: ^2.0.0
   peerDependencies:
     react: ">=16.8.0"
-  checksum: c4238b81c7780b3772f2ef2a439f676822f5c4a944de45505fd15eaf8dd84051420c91ce2ccc72da047d89e2ab630a76c992719de643fe3f302fb4af948d4bbc
+  checksum: d98dabfce97beb5cf2ff10bdaff61e0cb9e1d29090cfcad706efc793d06674cfe65299d432d32518a2756a58b6b6bfe85ceec8b47b4f5f9dcc375bcd7a37107a
   languageName: node
   linkType: hard
 
