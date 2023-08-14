@@ -65,22 +65,24 @@ jobs:
           $SlotList = "${{ steps.slotList.outputs.slots }}" -split ' '
 
           $slotsExistThatRequireDeletion = $SlotList | Where-Object { $_ -notin $PRList }
-          # $slotsExistThatRequireDeletion ='111 112'
+          $slotsExistThatRequireDeletion ='111 112'
+          $slotsNeedDeletion = $slotsExistThatRequireDeletion.Length -gt 0
 
-          if ( $slotsExistThatRequireDeletion.Length -eq 0 ) {
+          if ( ! $slotsNeedDeletion ) {
             echo "✅ - Number of slots are equal to number of active PRs - 🏃 Skipping next step"
           }
           else {
             echo "❌ - Number of slots are not equal to number of active PRs"
           }
           echo "slotsExistThatRequireDeletion='$slotsExistThatRequireDeletion'" >> $env:GITHUB_OUTPUT
+          echo "slotsNeedDeletion=$slotsNeedDeletion" >> $env:GITHUB_OUTPUT
 
       - name: Slots
         run: |
           echo  ${{ steps.comparision.outputs.slotsExistThatRequireDeletion }}
 
       - name: List of slots that need to be deleted
-        if: ${{ steps.comparision.outputs.slotsExistThatRequireDeletion }}
+        if: ${{ steps.comparision.outputs.slotsNeedDeletion == 'True' }}
         id: listOfSlots
         run: |
           # Slots that need to be deleted
