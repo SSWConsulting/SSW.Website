@@ -69,7 +69,7 @@ jobs:
           $SlotList = "${{ steps.slotList.outputs.slots }}" -split ' '
 
           $slotsExistThatRequireDeletion = $SlotList | Where-Object { $_ -notin $PRList }
-          $slotsExistThatRequireDeletion ='111 112'
+          # $slotsExistThatRequireDeletion ='111 112'
           $slotsNeedDeletion = $slotsExistThatRequireDeletion.Length -gt 0
 
           if ( ! $slotsNeedDeletion ) {
