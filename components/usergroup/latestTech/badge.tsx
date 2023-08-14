@@ -14,6 +14,7 @@ export interface BadgeProps {
 export const Badge = (props: BadgeProps) => {
   const { imgURL, url, name, duration, bounceDown } = props;
   const { left, top, size, rotate } = props.layout;
+  const cssProperties = { "--animate-duration": `${duration ?? 3000}ms` };
 
   return (
     <div
@@ -28,7 +29,7 @@ export const Badge = (props: BadgeProps) => {
         top: top,
         height: `${size}px`,
         width: `${size}px`,
-        animationDuration: `${duration ?? 3000}ms`,
+        ...cssProperties,
       }}
       onClick={() => window.open(url, "_blank")}
     >

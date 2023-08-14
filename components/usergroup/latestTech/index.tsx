@@ -2,6 +2,7 @@ import { sampleSize } from "lodash";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Template } from "tinacms";
+import { tinaField } from "tinacms/dist/react";
 import { Badge } from "./badge";
 
 import type { BadgeProps } from "./badge";
@@ -24,14 +25,14 @@ const FloatingBadges = ({
 
   useEffect(() => {
     setShuffleBadges(sampleSize(badges, 11));
-  }, []);
+  }, [badges]);
 
   return (
     <div className="absolute -bottom-3 -left-4 h-62 w-full select-none bg-waveBackground bg-contain bg-left bg-no-repeat">
       <div className="flex flex-wrap justify-center">
         {layouts.map((layout, index) => (
           <Badge
-            key={`${shuffleBadges[index]?.name}-${index} `}
+            key={`${shuffleBadges[index]?.name}-${index}`}
             layout={layout}
             {...shuffleBadges[index]}
           />
@@ -44,7 +45,10 @@ const FloatingBadges = ({
 export const LatestTech = ({ data }) => {
   return (
     <div className="relative h-70 overflow-hidden bg-gray-50 p-6">
-      <span className="relative z-10 font-helvetica text-3xl font-medium text-sswRed">
+      <span
+        className="relative z-10 font-helvetica text-3xl font-medium text-sswRed"
+        data-tina-field={tinaField(data, "link")}
+      >
         We talk about{" "}
         <Link
           className="text-sswRed decoration-sswRed"
