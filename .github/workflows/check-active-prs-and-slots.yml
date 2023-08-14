@@ -68,7 +68,7 @@ jobs:
 
           $slotsExistThatRequireDeletion = $slotList | Where-Object { $_ -notin $prList }
           $slotsNeedDeletion = $slotsExistThatRequireDeletion.Length -gt 0
-          $slotsExistThatRequireDeletion=["112","344"]
+          $slotsExistThatRequireDeletion='["112","344"]'
 
           if ( ! $slotsNeedDeletion ) {
             echo "✅ - Number of slots are equal to number of active PRs - 🏃 Skipping next step"
@@ -86,7 +86,7 @@ jobs:
     if: needs.check-pr-slots.outputs.slotsExistThatRequireDeletion != ''
     uses: ./.github/workflows/pr-close-delete-env.yml
     with:
-      slotIDs: ${{ needs.check-pr-slots.outputs.slotsExistThatRequireDeletion }}
+      slotIDs: ${{ toJson(needs.check-pr-slots.outputs.slotsExistThatRequireDeletion) }}
     permissions:
       id-token: write
       contents: read

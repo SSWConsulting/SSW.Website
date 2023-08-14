@@ -36,7 +36,8 @@ jobs:
       - name: Converting slots into JSON Formatted Array
         id: set-matrix
         run: |
-          $slotIDs = '${{ env.SLOT_NAME }}' -split ' '
+          $slotIDs = ${{ env.SLOT_NAME }} -split ' '
+          echo $slotIDs
           $slotIDsInJSonArray = ConvertTo-Json -Compress @($slotIDs)
           echo "matrix=$slotIDsInJSonArray" >> $env:GITHUB_OUTPUT
 
