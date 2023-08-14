@@ -22,6 +22,7 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
+import { GetTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { removeExtension } from "../../services/client/utils.service";
 
 export default function ConsultingPage(
@@ -192,32 +193,10 @@ export const getStaticProps = async ({ params }) => {
       (category) => category.testimonialCategory.name
     ) || [];
 
-  const testimonials = await client.queries.testimonalsQuery({
+  const testimonialsResult = await GetTestimonialsByCategories(
     categories,
-  });
-
-  let testimonialsResult = testimonials.data.testimonialsConnection.edges.map(
-    (t) => t.node
+    null
   );
-
-  testimonialsResult = testimonialsResult.sort(() => 0.5 - Math.random());
-
-  // Adds general testimonials if not filled by testimonials with matching categories
-  if (testimonialsResult.length < 3) {
-    const generalTestimonials = await client.queries.testimonalsQuery({
-      categories: "General",
-    });
-
-    const generalTestimonialsResult =
-      generalTestimonials.data.testimonialsConnection.edges.map((t) => t.node);
-
-    const randomGeneral = generalTestimonialsResult.sort(
-      () => 0.5 - Math.random()
-    );
-    testimonialsResult.push(...randomGeneral);
-  }
-
-  testimonialsResult = testimonialsResult.slice(0, 3);
 
   const seo = tinaProps.data.consulting.seo;
   if (seo && !seo.canonical) {

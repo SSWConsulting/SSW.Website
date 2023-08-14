@@ -43,6 +43,25 @@ export const eventsSchema: Collection = {
     },
     {
       type: "object",
+      label: "Testimonial Categories",
+      name: "testimonialCategories",
+      ui: {
+        itemProps(item) {
+          return { label: item.testimonialCategory }
+        },
+      },
+      list: true,
+      fields: [
+        {
+          type: "reference",
+          label: "Testimonial Category",
+          name: "testimonialCategory",
+          collections: ["testimonialCategories"],
+        },
+      ],
+    },
+    {
+      type: "object",
       list: true,
       name: "_body",
       label: "Body",
