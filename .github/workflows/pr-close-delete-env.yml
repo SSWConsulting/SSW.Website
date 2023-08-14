@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       slotID:
-        description: "Pull request number (Add multiple IDs seperated by a space)"
+        description: "Pull request number"
         required: true
         default: ""
   workflow_call:
