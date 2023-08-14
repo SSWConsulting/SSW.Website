@@ -5,9 +5,6 @@ on:
     # Monday at 12 PM UTC - https://cron.help/#0_12_*_*_MON
     - cron: "0 12 * * MON"
   workflow_dispatch:
-  pull_request:
-    branches:
-      - main
 
 env:
   GH_TOKEN: ${{ github.token }}
@@ -68,7 +65,6 @@ jobs:
 
           $slotsExistThatRequireDeletion = $slotList | Where-Object { $_ -notin $prList }
           $slotsNeedDeletion = $slotsExistThatRequireDeletion.Length -gt 0
-          $slotsExistThatRequireDeletion='112'
 
           if ( ! $slotsNeedDeletion ) {
             echo "✅ - Number of slots are equal to number of active PRs - 🏃 Skipping next step"
