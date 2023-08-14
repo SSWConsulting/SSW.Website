@@ -24,8 +24,7 @@ jobs:
   check-pr-slots:
     runs-on: ubuntu-latest
     outputs:
-      slotIDs: ${{ steps.listOfSlots.outputs.slotIDs }}
-      slotsNeedDeletion: ${{steps.comparision.outputs.slotsNeedDeletion }}
+      slotsExistThatRequireDeletion: ${{ steps.comparision.outputs.slotsExistThatRequireDeletion }}
 
     steps:
       - name: Checking out
@@ -58,7 +57,6 @@ jobs:
         id: prList
         run: |
           $active_prs=$(gh pr list --state open --json number | jq -r '.[].number')
-          echo $active_prs
           echo "active_prs=$active_prs" >> $env:GITHUB_OUTPUT
 
       - name: Compare PRs with Slots
@@ -69,7 +67,7 @@ jobs:
           $slotList = "${{ steps.slotList.outputs.slots }}" -split ' '
 
           $slotsExistThatRequireDeletion = $slotList | Where-Object { $_ -notin $prList }
-          # $slotsExistThatRequireDeletion ='111 112'
+          $slotsExistThatRequireDeletion = '111'
           $slotsNeedDeletion = $slotsExistThatRequireDeletion.Length -gt 0
 
           if ( ! $slotsNeedDeletion ) {
@@ -77,28 +75,18 @@ jobs:
           }
           else {
             echo "❌ - Number of slots are not equal to number of active PRs"
+            Write-Host "⚡- These slots need to be deleted : $slotsExistThatRequireDeletion"
           }
           echo "slotsExistThatRequireDeletion=$slotsExistThatRequireDeletion" >> $env:GITHUB_OUTPUT
-          echo "slotsNeedDeletion=$slotsNeedDeletion" >> $env:GITHUB_OUTPUT
-
-      - name: List of slots that need to be deleted
-        if: ${{ steps.comparision.outputs.slotsNeedDeletion == 'True' }}
-        id: listOfSlots
-        run: |
-          # Slots that need to be deleted
-          $slotsExistThatRequireDeletion = ${{steps.comparision.outputs.slotsExistThatRequireDeletion }}
-
-          Write-Host "⚡- These slots need to be deleted : $slotsExistThatRequireDeletion"
-          echo "slotIDs=$slotsExistThatRequireDeletion" >> $env:GITHUB_OUTPUT
 
   invokeDeleteSlot:
     name: Invoking PR Close/Delete
     needs:
-      - check-pr-slots #Adding second check to avoid running this flow for the second time when slotID is already in the memory
-    if: needs.check-pr-slots.outputs.SlotIDs != '' && needs.check-pr-slots.outputs.slotsNeedDeletion == 'True'
+      - check-pr-slots #Adding second check to avoid running this flow
+    if: needs.check-pr-slots.outputs.slotsExistThatRequireDeletion != ''
     uses: ./.github/workflows/pr-close-delete-env.yml
     with:
-      slotIDs: ${{ needs.check-pr-slots.outputs.slotIDs }}
+      slotIDs: ${{ needs.check-pr-slots.outputs.slotsExistThatRequireDeletion }}
     permissions:
       id-token: write
       contents: read
