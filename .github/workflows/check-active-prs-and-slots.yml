@@ -54,7 +54,8 @@ jobs:
       - name: Get list of active PRs
         id: prList
         run: |
-          $active_prs=$(curl -s "https://api.github.com/repos/SSWConsulting/SSW.Website/pulls?state=open" | jq -r '.[].number')
+          $active_prs=$(gh pr list --state open | awk '{print $1}')
+          echo $active_prs
           echo "active_prs=$active_prs" >> $env:GITHUB_OUTPUT
 
       - name: Compare PRs with Slots
