@@ -31,15 +31,7 @@ jobs:
   setting-up-slot-ids:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
-    steps:
-      - name: Converting slots into JSON Formatted Array
-        id: set-matrix
-        run: |
-          $slotIDs = '${{ fromJson(env.SLOT_NAME) }}'
-          echo $slotIDs
-          $slotIDsInJSonArray = ConvertTo-Json -Compress @($slotIDs)
-          echo "matrix=$slotIDsInJSonArray" >> $env:GITHUB_OUTPUT
+      matrix: ${{ fromJson(env.SLOT_NAME) }}
 
   delete-slot:
     runs-on: ubuntu-latest
