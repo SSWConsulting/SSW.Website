@@ -10,11 +10,5 @@
   // Runs Prettier, then ESLint
   "editor.codeActionsOnSave": ["source.fixAll.eslint", "source.sortImports"],
   "editor.formatOnPaste": false,
-  "editor.tabSize": 2,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "editor.tabSize": 2
 }
