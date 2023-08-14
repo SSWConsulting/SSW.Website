@@ -86,7 +86,7 @@ jobs:
     if: needs.check-pr-slots.outputs.slotsExistThatRequireDeletion != ''
     uses: ./.github/workflows/pr-close-delete-env.yml
     with:
-      slotIDs: ${{ toJson(needs.check-pr-slots.outputs.slotsExistThatRequireDeletion) }}
+      slotIDs: ${{ needs.check-pr-slots.outputs.slotsExistThatRequireDeletion }}
     permissions:
       id-token: write
       contents: read
