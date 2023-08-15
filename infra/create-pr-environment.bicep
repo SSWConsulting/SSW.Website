@@ -70,4 +70,11 @@ module kVServicePrincipalRoleAssignment 'keyVaultRoleAssignment.bicep' = {
   }
 }
 
+module featureFlag 'featureFlag.bicep' = {
+  name: '${slotName}-featureFlag-${now}'
+  params: {
+
+  }
+}
+
 

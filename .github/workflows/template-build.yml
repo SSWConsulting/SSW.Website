@@ -105,6 +105,19 @@ jobs:
           echo "AppInsightConnectionString=$AppInsightConnectionString" >> $env:GITHUB_OUTPUT
           Write-Host '✅ AppInsight - Connection String retrieved'
 
+      # It's not a secret, can be a feature flag or env
+      - name: AppConfig - Get FeatureFlag RemoveConsole
+        shell: pwsh
+        id: AppConfig
+        run: |
+          # AppConfig - Remove Console
+          az config set extension.use_dynamic_install=yes_without_prompt
+          $AppConfigName = if ("${{ inputs.tag }}" -ieq "production") { "${{ env.APP_CONFIG_PROD }}" } else { "${{ env.APP_CONFIG_DEV }}" }
+
+          $FeatureFlagRemoveConsole = (az appconfig feature show --name $AppConfigName --feature RemoveConsole --query currentValue -o tsv)
+          echo "FeatureFlagRemoveConsole=$FeatureFlagRemoveConsole" >> $env:GITHUB_OUTPUT
+          Write-Host '✅ FeatureFlag - RemoveConsole retrieved'
+
       - run: yarn install
 
       - run: yarn build
@@ -126,7 +139,6 @@ jobs:
           NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING: ${{ steps.AppInsight.outputs.AppInsightConnectionString }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
           SITE_URL: https://www.ssw.com.au
-          BUILD_TAG: "${{ inputs.tag }}"
 
       - name: ACR - Login
         run: |
