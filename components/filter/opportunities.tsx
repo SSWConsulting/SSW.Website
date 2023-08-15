@@ -172,7 +172,7 @@ const OpportunityDropdown = ({
             leaveTo="transform scale-95 opacity-0"
           >
             <Disclosure.Panel className="border-1 border-gray-300 p-4">
-              <section className="prose max-w-full">
+              <section className="prose max-w-full descendant-ul:!list-square">
                 <TinaMarkdown
                   content={opportunity.description}
                   components={componentRenderer}
