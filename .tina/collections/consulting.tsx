@@ -14,6 +14,10 @@ export const consultingIndexSchema: Collection = {
     router: ({ document }) => {
       return "/consulting";
     },
+    allowedActions: {
+      create: false,
+      delete: false,
+    },
   },
   fields: [
     // @ts-ignore

@@ -10,7 +10,7 @@ import { componentRenderer } from "../../components/blocks/mdxComponentRenderer"
 import {
   Opportunities,
   OpportunityType,
-} from "../../components/employment/opportunities";
+} from "../../components/filter/opportunities";
 import { Layout } from "../../components/layout";
 import { Marketing } from "../../components/marketing/Marketing";
 import { jobStatus } from "../../components/util/constants/opportunity";

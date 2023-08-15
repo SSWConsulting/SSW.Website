@@ -9,6 +9,12 @@ export const officeIndexSchema: Collection = {
   name: "officeIndex",
   path: "content/office/index",
   format: "json",
+  ui: {
+    allowedActions: {
+      create: false,
+      delete: false,
+    },
+  },
   fields: [
     // @ts-ignore
     seoSchema,

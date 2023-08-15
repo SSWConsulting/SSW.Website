@@ -158,3 +158,10 @@ query eventsContentQuery($relativePath: String!) {
     ...EventsParts
   }
 }
+
+query eventsIndexContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  eventsIndex(relativePath: $relativePath) {
+    ...EventsIndexParts
+  }
+}
