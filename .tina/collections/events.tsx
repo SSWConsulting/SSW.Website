@@ -42,6 +42,16 @@ export const eventsSchema: Collection = {
       label: "Show Testimonials",
     },
     {
+      type: "object",
+      list: true,
+      name: "_body",
+      label: "Body",
+      ui: {
+        visualSelector: true,
+      },
+      templates: [...Schemas.pageBlocks],
+    },
+    {
       type: "rich-text",
       name: "footer",
       label: "Footer",
@@ -74,13 +84,6 @@ export const eventsIndexSchema: Collection = {
       name: "sidebarBody",
       label: "Sidebar Body",
       templates: [...Schemas.pageBlocks],
-    },
-    {
-      type: "rich-text",
-      name: "body",
-      label: "Body",
-      templates: [...Schemas.pageBlocks],
-      isBody: true,
     },
     {
       type: "object",
