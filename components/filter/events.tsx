@@ -183,13 +183,17 @@ const EventsList = ({ events, filteredEvents }: EventsListProps) => {
     <div>
       {filteredEvents ? (
         <>
-          {events?.map((event, index) => (
-            <Event
-              key={index}
-              visible={!!filteredEvents?.find((e) => e.id === event.id)}
-              event={event}
-            />
-          ))}
+          {filteredEvents.length > 0 ? (
+            events?.map((event, index) => (
+              <Event
+                key={index}
+                visible={!!filteredEvents?.find((e) => e.id === event.id)}
+                event={event}
+              />
+            ))
+          ) : (
+            <h3>No events found matching the filters</h3>
+          )}
         </>
       ) : (
         <p className="flex flex-row text-xl">
