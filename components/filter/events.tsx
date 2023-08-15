@@ -67,8 +67,8 @@ export const EventsFilter = ({ sidebarBody }: EventsFilterProps) => {
               return (
                 <button
                   className={classNames(
-                    "flex-grow border-b-2 border-b-sswRed py-2 uppercase tracking-widest",
-                    selected && "bg-gray-25"
+                    "flex-grow border-b-2 border-b-sswRed py-2 uppercase tracking-widest hover:bg-gray-100",
+                    selected ? "bg-gray-100" : "hover:bg-gray-50"
                   )}
                 >
                   Upcoming Events
@@ -83,7 +83,7 @@ export const EventsFilter = ({ sidebarBody }: EventsFilterProps) => {
                 <button
                   className={classNames(
                     "flex-grow border-b-2 border-b-sswRed py-2 uppercase tracking-widest",
-                    selected && "bg-gray-25"
+                    selected ? "bg-gray-100" : "hover:bg-gray-50"
                   )}
                 >
                   Past Events
