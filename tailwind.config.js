@@ -284,6 +284,7 @@ module.exports = {
               margin: "1rem 0",
               padding: "60px 0 20px 0",
               lineHeight: 1.2,
+              color: theme("colors.sswBlack"),
             },
             h2: {
               fontWeight: "300",
@@ -292,6 +293,7 @@ module.exports = {
             h3: {
               fontWeight: "300",
               marginBottom: "7px",
+              color: theme("colors.sswBlack"),
             },
             h4: {
               color: theme("colors.sswBlack"),
@@ -304,6 +306,7 @@ module.exports = {
               textDecorationColor: "#aaa",
               textDecorationStyle: "solid",
               textDecorationThickness: "1px",
+              color: theme("colors.sswBlack"),
             },
             p: {
               marginBottom: "10px",
