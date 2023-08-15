@@ -221,10 +221,10 @@ const Event = ({ visible, event }: EventProps) => {
       leaveTo="transform scale-95 opacity-0"
     >
       <div className="mb-20">
-        <div className="mb-8 flex flex-row">
+        <div className="mb-8 flex max-md:flex-col md:flex-row">
           <div className="mr-3 shrink-0">
             <Image
-              className="rounded-md"
+              className="rounded-md max-md:pb-3"
               height={100}
               width={100}
               alt={event.Thumbnail.Description}
