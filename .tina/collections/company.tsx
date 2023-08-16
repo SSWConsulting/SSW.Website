@@ -68,3 +68,81 @@ export const companySchema: Collection = {
     },
   ],
 };
+
+export const companyIndexSchema: Collection = {
+  label: "Company - Index",
+  name: "companyIndex",
+  format: "mdx",
+  path: "content/company/index",
+  ui: {
+    router: ({ document }) => {
+      return `/company/`;
+    },
+  },
+  fields: [
+    {
+      type: "object",
+      label: "Header Image",
+      name: "headerImage",
+      fields: [
+        {
+          type: "image",
+          label: "Hero Background",
+          name: "heroBackground",
+          // @ts-ignore
+          uploadDir: () => "background",
+        },
+        {
+          type: "string",
+          label: "Alt Text",
+          name: "altText",
+        },
+        {
+          type: "image",
+          label: "Image Overlay",
+          name: "imgOverlay",
+          // @ts-ignore
+          uploadDir: () => "background",
+        },
+      ],
+    },
+    // @ts-ignore
+    seoSchema,
+    {
+      type: "rich-text",
+      label: "Body",
+      name: "_body",
+      templates: [...Schemas.pageBlocks],
+      isBody: true,
+    },
+    {
+      type: "object",
+      label: "Pages",
+      description: "Cards for the timeline on the History page.",
+      name: "companyPages",
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.title };
+        },
+      },
+      list: true,
+      fields: [
+        {
+          type: "string",
+          label: "Title",
+          name: "title",
+        },
+        {
+          type: "rich-text",
+          label: "Body",
+          name: "body",
+        },
+        {
+          type: "string",
+          label: "Page URL",
+          name: "pageURL",
+        },
+      ],
+    },
+  ],
+};

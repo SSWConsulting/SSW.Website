@@ -1,4 +1,5 @@
 import { defineStaticConfig, TinaCMS } from "tinacms";
+import { companyIndexSchema, companySchema } from "./collections/company";
 import {
   consultingCategorySchema,
   consultingIndexSchema,
@@ -22,7 +23,6 @@ import { testimonialCategoriesSchema } from "./collections/testimonialCategories
 import { testimonialSchema } from "./collections/testimonials";
 import { trainingSchema } from "./collections/training";
 import { videoProductionSchema } from "./collections/videoProduction";
-import {companySchema} from "./collections/company";
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -77,6 +77,7 @@ const config = defineStaticConfig({
       industrySchema,
       companySchema,
       eventsSchema,
+      companyIndexSchema
     ],
   },
 });
