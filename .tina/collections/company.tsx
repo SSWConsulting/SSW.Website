@@ -8,6 +8,9 @@ export const companySchema: Collection = {
   name: "company",
   format: "mdx",
   path: "content/company",
+  match: {
+    exclude: "index/**",
+  },
   ui: {
     router: ({ document }) => {
       return `/company/${document._sys.filename}`;
