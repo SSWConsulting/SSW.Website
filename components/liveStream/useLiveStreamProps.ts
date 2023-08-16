@@ -48,15 +48,12 @@ export function useLiveStreamProps(): LiveStreamProps {
     const minsToStart = start.diff(rightnow, "minute");
     setCountdownMins(minsToStart);
 
-    const timer = setInterval(
-      () => {
-        setCountdownMins((countdownMins) => {
-          if (!countdownMins) return minsToStart;
-          return countdownMins - INTERVAL_MINUTES;
-        });
-      },
-      INTERVAL_MINUTES * 60 * 1000
-    );
+    const timer = setInterval(() => {
+      setCountdownMins((countdownMins) => {
+        if (!countdownMins) return minsToStart;
+        return countdownMins - INTERVAL_MINUTES;
+      });
+    }, INTERVAL_MINUTES * 60 * 1000);
 
     return () => clearInterval(timer);
   }, [event]);
