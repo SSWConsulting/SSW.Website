@@ -35,7 +35,10 @@ export default function CompanyIndexPage(
       <Layout>
         {data.companyIndex.headerImage?.heroBackground && (
           <Section className="mx-auto  hidden w-full sm:block ">
-            <CompanyHeader data={data.companyIndex.headerImage} />
+            <CompanyHeader
+              data={data.companyIndex.headerImage}
+              schema={data.companyIndex.headerImage}
+            />
           </Section>
         )}
         {data.companyIndex.seo?.showBreadcrumb === null ||
@@ -61,7 +64,10 @@ export default function CompanyIndexPage(
         )}
         {data.companyIndex.companyPages?.length > 0 ? (
           <Section className="mx-auto max-w-9xl px-8">
-            <CompanyPages cardProps={companyPageProps} />
+            <CompanyPages
+              cardProps={companyPageProps}
+              schema={data.companyIndex.companyPages}
+            />
           </Section>
         ) : (
           <></>
