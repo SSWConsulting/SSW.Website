@@ -60,7 +60,7 @@ export default function CompanyIndexPage(
           </Section>
         )}
         {data.companyIndex.companyPages?.length > 0 ? (
-          <Section className="mx-auto w-full max-w-9xl px-8">
+          <Section className="mx-auto max-w-9xl px-8">
             <CompanyPages cardProps={companyPageProps} />
           </Section>
         ) : (

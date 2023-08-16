@@ -8,7 +8,9 @@ const CompanyPages: FC<{
   const cards = cardProps.map((p, i) => <CompanyPageCard key={i} {...p} />);
 
   return (
-    <div className="mb-2 grid grid-cols-1 gap-3 md:grid-cols-2">{cards}</div>
+    <div className="mb-2 grid w-full grid-cols-1 gap-3 md:grid-cols-2">
+      {cards}
+    </div>
   );
 };
 
