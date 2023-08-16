@@ -7,9 +7,9 @@ export const companySchema: Collection = {
   label: "Company Pages",
   name: "company",
   format: "mdx",
-  path: "content/company",
+  path: "content/company/",
   match: {
-    exclude: "index/**",
+    exclude: "index/**/**",
   },
   ui: {
     router: ({ document }) => {
@@ -78,7 +78,7 @@ export const companyIndexSchema: Collection = {
   format: "mdx",
   path: "content/company/index",
   ui: {
-    router: ({ document }) => {
+    router: () => {
       return `/company/`;
     },
   },
