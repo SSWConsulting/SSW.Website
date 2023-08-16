@@ -430,6 +430,17 @@ module.exports = {
             },
           },
         },
+        opportunity: {
+          css: {
+            ul: {
+              listStyle: "square",
+            },
+            "ul > li > *:last-child": {
+              marginBottom: "0",
+              marginTop: "0",
+            },
+          },
+        },
       }),
       backgroundImage: {
         done: "url('/images/icons/done.png')",
