@@ -76,7 +76,7 @@ export default function CompanyIndexPage(
 
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.companyIndexContentQuery({
-    relativePath: "home.mdx",
+    relativePath: "index.mdx",
   });
 
   const seo = tinaProps.data.companyIndex.seo;
