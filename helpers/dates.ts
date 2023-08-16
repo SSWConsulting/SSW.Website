@@ -1,0 +1,43 @@
+import dayjs from "dayjs";
+
+export const EventStatus = {
+  TODAY: "today",
+  NOW_RUNNING: "now running",
+};
+
+export const formatEventDate = (start: Date, end: Date) => {
+  if (!start || !end) return "";
+
+  // NOTE: Omit ddd for brevity if it's next year's event
+  const dateformat =
+    dayjs(start).year() === dayjs().year() ? "MMM D" : "MMM D YYYY";
+
+  const isOneDayEvent = dayjs(start)
+    .startOf("day")
+    .isSame(dayjs(end).startOf("day"));
+  const startDate = dayjs(start).format(dateformat);
+  const endDate = dayjs(end).format(dateformat);
+
+  return isOneDayEvent ? startDate : `${startDate} - ${endDate}`;
+};
+
+export const formatRelativeEventDate = (startDate: Date, endDate: Date) => {
+  const now = dayjs();
+  const start = dayjs(startDate);
+  const end = dayjs(endDate);
+
+  if (now.isBetween(start, end)) {
+    return EventStatus.NOW_RUNNING;
+  }
+
+  const isSameDay = now.startOf("day").isSame(start.startOf("day"));
+
+  const days = start.diff(now, "d");
+  if (days === 0 && isSameDay) {
+    return EventStatus.TODAY;
+  } else if (days > 0) {
+    return `${days} ${days === 1 ? "day" : "days"} to go`;
+  } else {
+    return "";
+  }
+};
