@@ -79,7 +79,7 @@ export const companyIndexSchema: Collection = {
   path: "content/company/index",
   ui: {
     router: () => {
-      return `/company/`;
+      return `/company`;
     },
   },
   fields: [
