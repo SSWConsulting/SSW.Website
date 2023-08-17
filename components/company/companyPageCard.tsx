@@ -19,8 +19,8 @@ const CompanyPageCard = ({ data, schema, index }) => {
       target="_blank"
       key={pageURL}
     >
-      <article className="col-span-1 h-fit w-full rounded border-1 border-gray-300 bg-white p-4 shadow hover:border-sswBlack  dark:border-gray-700 dark:bg-gray-800 sm:h-44">
-        <div className="prose">
+      <article className="col-span-1 h-full w-full rounded border-1 border-gray-300 bg-white px-8 py-4 shadow hover:border-sswBlack  dark:border-gray-700 dark:bg-gray-800 ">
+        <div className="prose prose-h2:text-3xl/9 prose-h2:font-normal">
           <h2
             className="my-1"
             data-tina-field={tinaField(
@@ -31,7 +31,7 @@ const CompanyPageCard = ({ data, schema, index }) => {
             {title}
           </h2>
           <div
-            className=" "
+            className="prose-p:mt-0"
             data-tina-field={tinaField(
               schema[index],
               companyIndexSchemaConstants.companyPages.body
