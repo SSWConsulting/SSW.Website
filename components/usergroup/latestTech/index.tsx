@@ -1,3 +1,4 @@
+import cs from "classnames";
 import { sampleSize } from "lodash";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -51,7 +52,9 @@ export const LatestTech = ({ data }) => {
       >
         We talk about{" "}
         <Link
-          className="text-sswRed decoration-sswRed"
+          className={cs("text-sswRed decoration-sswRed", {
+            "unstyled cursor-default": !data?.link,
+          })}
           href={data?.link ?? ""}
           target="_blank"
         >
