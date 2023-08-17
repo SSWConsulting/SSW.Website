@@ -1,9 +1,14 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { companyIndexSchemaConstants } from "../../.tina/collections/company";
 import { Section } from "../util/section";
 
 const CompanyHeader = ({ data, schema }) => {
+  const [overlaySize, setOverLaySize] = useState(0);
+  useEffect(() => {
+    setOverLaySize(data.size);
+  }, [data.size]);
   return (
     <Section
       className="flex h-102 items-center justify-center border-b-8 border-sswRed bg-white bg-cover bg-no-repeat"
@@ -29,7 +34,7 @@ const CompanyHeader = ({ data, schema }) => {
             src={data.imgOverlay}
             alt={data?.altText}
             height={400}
-            width={460}
+            width={overlaySize ?? 460}
           />
         </div>
       )}

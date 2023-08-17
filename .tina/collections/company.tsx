@@ -79,6 +79,7 @@ export const companyIndexSchemaConstants = {
     heroBackground: "heroBackground",
     altText: "altText",
     imgOverlay: "imgOverlay",
+    size: "size",
   },
   _body: "_body",
   companyPages: {
@@ -123,6 +124,11 @@ export const companyIndexSchema: Collection = {
           name: companyIndexSchemaConstants.headerImage.imgOverlay,
           // @ts-ignore
           uploadDir: () => "background",
+        },
+        {
+          type: "number",
+          label: "Size (Default w-460px)",
+          name: companyIndexSchemaConstants.headerImage.size,
         },
       ],
     },
