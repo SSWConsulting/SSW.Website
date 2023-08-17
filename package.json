@@ -36,7 +36,7 @@
     "source-map-explorer": "^2.5.3"
   },
   "dependencies": {
-    "@azure/msal-node": "^1.18.1",
+    "@azure/msal-node": "^1.17.2",
     "@builder.io/partytown": "^0.8.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@headlessui/react": "1.7.15",
