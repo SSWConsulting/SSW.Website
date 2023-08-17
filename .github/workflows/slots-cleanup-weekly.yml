@@ -1,4 +1,4 @@
-name: Check Active PRs and Slots
+name: Weekly app service slot cleanup
 
 on:
   schedule:
