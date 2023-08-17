@@ -10,6 +10,9 @@ export const eventsSchema: Collection = {
   name: "events",
   format: "mdx",
   path: "content/events",
+  match: {
+    exclude: "index/**/**",
+  },
   ui: {
     router: ({ document }) => {
       console.log(document);
@@ -56,5 +59,41 @@ export const eventsSchema: Collection = {
     },
     // @ts-ignore
     videoCardSchema,
+  ],
+};
+
+export const eventsIndexSchema: Collection = {
+  label: "Events - Index",
+  name: "eventsIndex",
+  format: "mdx",
+  path: "content/events/index",
+  ui: {
+    allowedActions: {
+      create: false,
+      delete: false,
+    },
+    router: () => {
+      return `/events`;
+    },
+  },
+  fields: [
+    // @ts-ignore
+    seoSchema,
+    {
+      type: "rich-text",
+      name: "sidebarBody",
+      label: "Sidebar Body",
+      templates: [...Schemas.pageBlocks],
+    },
+    {
+      type: "object",
+      list: true,
+      name: "afterEvents",
+      label: "After Events",
+      ui: {
+        visualSelector: true,
+      },
+      templates: [...Schemas.pageBlocks],
+    },
   ],
 };

@@ -12,6 +12,7 @@ const config = {
       "ssw.com.au",
       "www.ssw.com.au",
       "i.vimeocdn.com",
+      "secure-content.meetupstatic.com",
     ],
   },
   output: "standalone", // required for Docker support

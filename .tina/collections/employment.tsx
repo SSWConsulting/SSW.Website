@@ -42,7 +42,7 @@ export const employmentSchema: Collection = {
           label: "Video Background",
           name: "videoBackground",
           // @ts-ignore
-          uploadDir: () => "/videos",
+          uploadDir: () => "videos",
         },
       ],
     },

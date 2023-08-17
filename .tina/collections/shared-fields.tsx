@@ -6,7 +6,7 @@ export const benefitsFields: TinaField[] = [
     label: "Image URL",
     name: "image",
     // @ts-ignore
-    uploadDir: () => "/benefits",
+    uploadDir: () => "benefits",
   },
   {
     type: "string",

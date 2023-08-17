@@ -36,7 +36,7 @@ const socialStyles = new Map<
     SocialTypes.phone,
     {
       icon: FaPhone,
-      bgClassName: "bg-social-phone",
+      bgClassName: "bg-sswRed",
     },
   ],
   [

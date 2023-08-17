@@ -20,7 +20,7 @@ export const testimonialSchema: Collection = {
       name: "avatar",
       required: true,
       // @ts-ignore
-      uploadDir: () => "/testimonialAvatars",
+      uploadDir: () => "testimonialAvatars",
     },
     {
       type: "string",

@@ -14,6 +14,10 @@ export const consultingIndexSchema: Collection = {
     router: ({ document }) => {
       return "/consulting";
     },
+    allowedActions: {
+      create: false,
+      delete: false,
+    },
   },
   fields: [
     // @ts-ignore
@@ -88,7 +92,7 @@ export const consultingIndexSchema: Collection = {
               label: "Logo",
               name: "logo",
               // @ts-ignore
-              uploadDir: () => "/thumbs",
+              uploadDir: () => "thumbs",
             },
             {
               type: "reference",
@@ -204,7 +208,7 @@ export const consultingSchema: Collection = {
           label: "Video Background",
           name: "videoBackground",
           // @ts-ignore
-          uploadDir: () => "/videos",
+          uploadDir: () => "videos",
         },
       ],
     },
