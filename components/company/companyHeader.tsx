@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
+import { companyIndexSchemaConstants } from "../../.tina/collections/company";
 import { Section } from "../util/section";
 
 const CompanyHeader = ({ data, schema }) => {
@@ -11,12 +12,18 @@ const CompanyHeader = ({ data, schema }) => {
           data?.heroBackground || "/images/polygonBackground.png"
         })`,
       }}
-      data-tina-field={tinaField(schema, "heroBackground")}
+      data-tina-field={tinaField(
+        schema,
+        companyIndexSchemaConstants.headerImage.heroBackground
+      )}
     >
       {data?.imgOverlay && (
         <div
           className="flex max-w-2xl lg:max-w-3xl"
-          data-tina-field={tinaField(schema, "imgOverlay")}
+          data-tina-field={tinaField(
+            schema,
+            companyIndexSchemaConstants.headerImage.imgOverlay
+          )}
         >
           <Image
             src={data.imgOverlay}

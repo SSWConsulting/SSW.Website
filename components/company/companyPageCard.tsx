@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { companyIndexSchemaConstants } from "../../.tina/collections/company";
 
 export type CompanyIndexProps = {
   title: string;
@@ -22,11 +23,20 @@ const CompanyPageCard = ({ data, schema, index }) => {
         <div className="prose">
           <h2
             className="my-1"
-            data-tina-field={tinaField(schema[index], "title")}
+            data-tina-field={tinaField(
+              schema[index],
+              companyIndexSchemaConstants.companyPages.title
+            )}
           >
             {title}
           </h2>
-          <div className=" " data-tina-field={tinaField(schema[index], "body")}>
+          <div
+            className=" "
+            data-tina-field={tinaField(
+              schema[index],
+              companyIndexSchemaConstants.companyPages.body
+            )}
+          >
             <TinaMarkdown content={body} />
           </div>
         </div>

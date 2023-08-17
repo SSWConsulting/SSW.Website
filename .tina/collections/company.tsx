@@ -72,9 +72,26 @@ export const companySchema: Collection = {
   ],
 };
 
+export const companyIndexSchemaConstants = {
+  value: "companyIndex",
+  headerImage: {
+    value: "headerImage",
+    heroBackground: "heroBackground",
+    altText: "altText",
+    imgOverlay: "imgOverlay",
+  },
+  _body: "_body",
+  companyPages: {
+    value: "companyPages",
+    title: "title",
+    body: "body",
+    pageURL: "pageURL",
+  },
+};
+
 export const companyIndexSchema: Collection = {
   label: "Company - Index",
-  name: "companyIndex",
+  name: companyIndexSchemaConstants.value,
   format: "mdx",
   path: "content/company/index",
   ui: {
@@ -86,24 +103,24 @@ export const companyIndexSchema: Collection = {
     {
       type: "object",
       label: "Header Image",
-      name: "headerImage",
+      name: companyIndexSchemaConstants.headerImage.value,
       fields: [
         {
           type: "image",
           label: "Hero Background",
-          name: "heroBackground",
+          name: companyIndexSchemaConstants.headerImage.heroBackground,
           // @ts-ignore
           uploadDir: () => "background",
         },
         {
           type: "string",
           label: "Alt Text",
-          name: "altText",
+          name: companyIndexSchemaConstants.headerImage.altText,
         },
         {
           type: "image",
           label: "Image Overlay",
-          name: "imgOverlay",
+          name: companyIndexSchemaConstants.headerImage.imgOverlay,
           // @ts-ignore
           uploadDir: () => "background",
         },
@@ -114,7 +131,7 @@ export const companyIndexSchema: Collection = {
     {
       type: "rich-text",
       label: "Body",
-      name: "_body",
+      name: companyIndexSchemaConstants._body,
       templates: [...Schemas.pageBlocks],
       isBody: true,
     },
@@ -122,7 +139,7 @@ export const companyIndexSchema: Collection = {
       type: "object",
       label: "Pages",
       description: "Cards for the timeline on the History page.",
-      name: "companyPages",
+      name: companyIndexSchemaConstants.companyPages.value,
       ui: {
         itemProps: (item) => {
           return { label: item?.title };
@@ -133,17 +150,17 @@ export const companyIndexSchema: Collection = {
         {
           type: "string",
           label: "Title",
-          name: "title",
+          name: companyIndexSchemaConstants.companyPages.title,
         },
         {
           type: "rich-text",
           label: "Body",
-          name: "body",
+          name: companyIndexSchemaConstants.companyPages.body,
         },
         {
           type: "string",
           label: "Page URL",
-          name: "pageURL",
+          name: companyIndexSchemaConstants.companyPages.pageURL,
         },
       ],
     },
