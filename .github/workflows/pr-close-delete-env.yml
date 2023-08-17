@@ -36,6 +36,7 @@ jobs:
       - name: Converting slots into JSON Formatted Array
         id: set-matrix
         run: |
+          # TODO: Tech Debt - need to use it as JSON instead of space delimited - Github issue - https://github.com/SSWConsulting/SSW.Website/issues/1228
           $slotIDs = '${{ env.SLOT_NAME }}' -split ' '
           $slotIDsInJSonArray = ConvertTo-Json -Compress @($slotIDs)
           echo "matrix=$slotIDsInJSonArray" >> $env:GITHUB_OUTPUT
