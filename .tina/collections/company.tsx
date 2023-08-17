@@ -78,8 +78,7 @@ export const companyIndexSchemaConstants = {
     value: "headerImage",
     heroBackground: "heroBackground",
     altText: "altText",
-    imgOverlay: "imgOverlay",
-    size: "size",
+    txtOverlay: "txtOverlay",
   },
   _body: "_body",
   companyPages: {
@@ -119,16 +118,11 @@ export const companyIndexSchema: Collection = {
           name: companyIndexSchemaConstants.headerImage.altText,
         },
         {
-          type: "image",
-          label: "Image Overlay",
-          name: companyIndexSchemaConstants.headerImage.imgOverlay,
+          type: "string",
+          label: "Text Overlay",
+          name: companyIndexSchemaConstants.headerImage.txtOverlay,
           // @ts-ignore
           uploadDir: () => "background",
-        },
-        {
-          type: "number",
-          label: "Size (Default w-460px)",
-          name: companyIndexSchemaConstants.headerImage.size,
         },
       ],
     },

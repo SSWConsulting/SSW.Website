@@ -1,14 +1,8 @@
-import Image from "next/image";
-import { useEffect, useState } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { companyIndexSchemaConstants } from "../../.tina/collections/company";
 import { Section } from "../util/section";
 
 const CompanyHeader = ({ data, schema }) => {
-  const [overlaySize, setOverLaySize] = useState(0);
-  useEffect(() => {
-    setOverLaySize(data.size);
-  }, [data.size]);
   return (
     <Section
       className="flex h-102 items-center justify-center border-b-8 border-sswRed bg-white bg-cover bg-no-repeat"
@@ -22,20 +16,15 @@ const CompanyHeader = ({ data, schema }) => {
         companyIndexSchemaConstants.headerImage.heroBackground
       )}
     >
-      {data?.imgOverlay && (
+      {data?.txtOverlay && (
         <div
-          className="flex max-w-2xl lg:max-w-3xl"
+          className="flex max-w-2xl text-white lg:max-w-3xl"
           data-tina-field={tinaField(
             schema,
-            companyIndexSchemaConstants.headerImage.imgOverlay
+            companyIndexSchemaConstants.headerImage.txtOverlay
           )}
         >
-          <Image
-            src={data.imgOverlay}
-            alt={data?.altText}
-            height={400}
-            width={overlaySize ?? 460}
-          />
+          <h1 className="text-white">{data.txtOverlay}</h1>
         </div>
       )}
     </Section>
