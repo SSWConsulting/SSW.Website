@@ -74,6 +74,7 @@ export const companySchema: Collection = {
 
 export const companyIndexSchemaConstants = {
   value: "companyIndex",
+  title: "title",
   headerImage: {
     value: "headerImage",
     heroBackground: "heroBackground",
@@ -128,6 +129,11 @@ export const companyIndexSchema: Collection = {
     },
     // @ts-ignore
     seoSchema,
+    {
+      type: "string",
+      label: "Title",
+      name: companyIndexSchemaConstants.title,
+    },
     {
       type: "rich-text",
       label: "Body",
