@@ -94,12 +94,12 @@ export default function TrainingPage(
               <div className="flex flex-col items-center pb-15 text-center">
                 <h2>
                   Trusted by more than{" "}
-                  <span className="text-sswRed">1400+</span> clients in the
+                  <span className="text-sswRed">1000+</span> clients in the
                   world
                 </h2>
                 <p className="max-w-3xl text-lg font-light text-gray-500">
                   Our software developers & consultants have delivered the best
-                  in the business to more than 1,400 clients in 15 countries.
+                  in the business to more than 1,000 clients in 15 countries.
                 </p>
               </div>
               <ClientLogos />
