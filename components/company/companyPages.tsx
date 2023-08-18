@@ -7,7 +7,7 @@ const CompanyPages = ({ cardProps, schema }) => {
   ));
 
   return (
-    <div className="mb-2 grid w-full grid-cols-1 gap-3 md:grid-cols-2">
+    <div className="mx-auto mb-2 grid w-full max-w-9xl grid-cols-1 gap-3 rounded p-8 md:grid-cols-2">
       {cards}
     </div>
   );

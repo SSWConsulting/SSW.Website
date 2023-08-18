@@ -52,7 +52,7 @@ export default function CompanyIndexPage(
               />
             </Section>
           ))}
-        <Section className="mx-auto my-2 w-full max-w-8xl px-1">
+        <Section className="mx-auto w-full max-w-9xl px-8 pb-4 pt-2">
           <h1
             className="mt-0 py-2"
             data-tina-field={tinaField(data.companyIndex, "title")}
@@ -71,7 +71,7 @@ export default function CompanyIndexPage(
           </Section>
         )}
         {data.companyIndex.companyPages?.length > 0 ? (
-          <Section className="mx-auto max-w-9xl px-8">
+          <Section className="mx-auto !bg-gray-100 px-8">
             <CompanyPages
               cardProps={companyPageProps}
               schema={data.companyIndex.companyPages}

@@ -13,12 +13,7 @@ const CompanyPageCard = ({ data, schema, index }) => {
   const { title, pageURL, body } = data;
 
   return (
-    <Link
-      href={pageURL ?? ""}
-      className="unstyled no-underline"
-      target="_blank"
-      key={pageURL}
-    >
+    <Link href={pageURL ?? ""} className="unstyled no-underline" key={pageURL}>
       <article className="col-span-1 h-full w-full rounded border-1 border-gray-300 bg-white px-8 py-4 shadow hover:border-sswBlack  dark:border-gray-700 dark:bg-gray-800 ">
         <div className="prose prose-h2:text-3xl/9 prose-h2:font-normal">
           <h2
