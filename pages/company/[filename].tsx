@@ -20,8 +20,6 @@ export default function CompanyPage(
     variables: props.variables,
   });
 
-  console.log("🚀 ~ file: [filename].tsx:24 ~ data.company:", data.company);
-
   const historyCardProps =
     data.company?.historyCards?.map<HistoryTimelineCardProps>((m) => ({
       year: m.year,
