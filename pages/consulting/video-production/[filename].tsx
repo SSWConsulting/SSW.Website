@@ -50,7 +50,7 @@ export default function VideoProductionPage(
 
         <Section className="w-full" color="black">
           <Booking {...data.videoProduction.booking}>
-            <BookingButton {...bookingButtonProps} />
+            <BookingButton data={bookingButtonProps} />
           </Booking>
         </Section>
 
@@ -90,7 +90,7 @@ export default function VideoProductionPage(
               Jump on a call with one of our Account Managers to discuss how we
               can help you.
             </p>
-            <BookingButton {...bookingButtonProps} />
+            <BookingButton data={bookingButtonProps} />
           </Container>
         </Section>
 

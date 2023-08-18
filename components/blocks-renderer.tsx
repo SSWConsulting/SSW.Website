@@ -28,6 +28,12 @@ const Carousel = dynamic(
   }
 );
 
+const BookingButton = dynamic(
+  () =>
+    import("./bookingButton/bookingButton").then((mod) => mod.BookingButton),
+  { ssr: false }
+);
+
 const componentMap = {
   AboutUs,
   Carousel,
@@ -50,6 +56,7 @@ const componentMap = {
   Organizer,
   JoinGithub,
   JoinAsPresenter,
+  BookingButton,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
