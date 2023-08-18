@@ -127,10 +127,7 @@ export const getStaticProps = async ({ params }) => {
       (category) => category.testimonialCategory.name
     ) || [];
 
-  const testimonialsResult = await GetTestimonialsByCategories(
-    categories,
-    "Internship"
-  );
+  const testimonialsResult = await GetTestimonialsByCategories(categories);
 
   if (tinaProps.data.events.seo && !tinaProps.data.events.seo.canonical) {
     tinaProps.data.events.seo.canonical = `${tinaProps.data.global.header.url}events/${params.filename}`;

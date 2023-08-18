@@ -1,9 +1,6 @@
 import client from "../.tina/__generated__/client";
 
-export const GetTestimonialsByCategories = async (
-  categories: string[],
-  defaultCategory?: string
-) => {
+export const GetTestimonialsByCategories = async (categories: string[]) => {
   const testimonials = await client.queries.testimonalsQuery({
     categories,
   });
@@ -15,7 +12,7 @@ export const GetTestimonialsByCategories = async (
   // Adds default/general testimonials if not filled by any testimonial with matching categories
   if (testimonialsResult.length === 0) {
     const generalTestimonials = await client.queries.testimonalsQuery({
-      categories: defaultCategory ?? "General",
+      categories: "General",
     });
 
     const generalTestimonialsResult =
