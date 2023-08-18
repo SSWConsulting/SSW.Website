@@ -13,7 +13,6 @@ import {
 } from "../../components/filter/opportunities";
 import { Layout } from "../../components/layout";
 import { Marketing } from "../../components/marketing/Marketing";
-import { jobStatus } from "../../components/util/constants/opportunity";
 import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
@@ -37,29 +36,30 @@ export default function EmploymentPage(
       return {
         title: o?.opportunityRef?.title,
         employmentType: o?.opportunityRef?.employmentType,
-        status: o?.opportunityRef?.status,
+        status: "Available",
         locations: o?.opportunityRef?.locations,
         hideApply: o?.opportunityRef?.hideApply,
         description: o?.opportunityRef?._body,
       };
     });
 
-  const filledOpportunities: OpportunityType[] =
-    data.opportunitiesConnection?.edges
-      .filter((o) => o.node.status === jobStatus[1])
-      .map((o) => {
-        return {
-          title: o.node.title,
-          employmentType: o.node.employmentType,
-          status: o.node.status,
-          locations: o.node.locations,
-          hideApply: o.node.hideApply,
-          description: o.node._body,
-        };
-      });
-
   const opportunities: OpportunityType[] =
-    chosenOpportunities.concat(filledOpportunities);
+    data.opportunitiesConnection?.edges.map((o) => {
+      const status = chosenOpportunities.some(
+        (chosen) => chosen.title === o.node.title
+      )
+        ? "Available"
+        : "Filled";
+
+      return {
+        title: o.node.title,
+        employmentType: o.node.employmentType,
+        status,
+        locations: o.node.locations,
+        hideApply: o.node.hideApply,
+        description: o.node._body,
+      };
+    });
 
   return (
     <>

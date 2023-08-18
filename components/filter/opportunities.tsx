@@ -16,10 +16,12 @@ interface OpportunitiesProps {
   opportunities: OpportunityType[];
 }
 
+type statusTuple = typeof jobStatus;
+
 export interface OpportunityType {
   title: string;
   employmentType: string;
-  status: string;
+  status: statusTuple[number];
   locations: string[];
   hideApply?: boolean;
   description: TinaMarkdownContent;
