@@ -20,17 +20,25 @@ export const companySchema: Collection = {
     // @ts-ignore
     seoSchema,
     {
-      type: "rich-text",
-      label: "Body",
+      type: "object",
+      list: true,
       name: "_body",
+      label: "Blocks",
       templates: [...Schemas.pageBlocks],
-      isBody: true,
+      ui: {
+        visualSelector: true,
+      },
     },
     {
       type: "object",
       label: "History Cards",
       description: "Cards for the timeline on the History page.",
       name: "historyCards",
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.year };
+        },
+      },
       list: true,
       fields: [
         {

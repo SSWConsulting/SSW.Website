@@ -1,16 +1,15 @@
 import { InferGetStaticPropsType } from "next";
+import { useTina } from "tinacms/dist/react";
 import client from "../../.tina/__generated__/client";
-import { SEO } from "../../components/util/seo";
-import { Layout } from "../../components/layout";
-import { Section } from "../../components/util/section";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
-import { removeExtension } from "../../services/client/utils.service";
-import { tinaField, useTina } from "tinacms/dist/react";
 import { BuiltOnAzure } from "../../components/blocks";
+import { Blocks } from "../../components/blocks-renderer";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import HistoryTimeline from "../../components/company/historyTimeline";
 import { HistoryTimelineCardProps } from "../../components/company/historyTimelineCard";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import { Layout } from "../../components/layout";
+import { Section } from "../../components/util/section";
+import { SEO } from "../../components/util/seo";
+import { removeExtension } from "../../services/client/utils.service";
 
 export default function CompanyPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -20,6 +19,8 @@ export default function CompanyPage(
     query: props.query,
     variables: props.variables,
   });
+
+  console.log("🚀 ~ file: [filename].tsx:24 ~ data.company:", data.company);
 
   const historyCardProps =
     data.company?.historyCards?.map<HistoryTimelineCardProps>((m) => ({
@@ -34,34 +35,22 @@ export default function CompanyPage(
       <SEO seo={props.seo} />
       <Layout>
         {data.company.seo?.showBreadcrumb === null ||
-        data.company.seo?.showBreadcrumb ? (
-          <Section className="mx-auto w-full max-w-9xl px-8 py-5">
-            <Breadcrumbs
-              path={removeExtension(props.variables.relativePath)}
-              suffix={data.global.breadcrumbSuffix}
-              title={data.company.seo?.title}
-              seoSchema={data.company.seo}
-            />
-          </Section>
-        ) : (
-          <></>
-        )}
-        {data.company._body.children.length > 0 && (
-          <Section className="mx-auto w-full max-w-9xl px-8 py-5">
-            <div data-tina-field={tinaField(data.company, "_body")}>
-              <TinaMarkdown
-                components={componentRenderer}
-                content={data.company._body}
+          (data.company.seo?.showBreadcrumb && (
+            <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+              <Breadcrumbs
+                path={removeExtension(props.variables.relativePath)}
+                suffix={data.global.breadcrumbSuffix}
+                title={data.company.seo?.title}
+                seoSchema={data.company.seo}
               />
-            </div>
-          </Section>
-        )}
-        {data.company.historyCards?.length > 0 ? (
+            </Section>
+          ))}
+
+        <Blocks prefix="Company_body" blocks={data.company._body} />
+        {data.company.historyCards?.length > 0 && (
           <Section className="mx-auto w-full max-w-9xl px-8 py-5">
             <HistoryTimeline cardProps={historyCardProps} />
           </Section>
-        ) : (
-          <></>
         )}
         <Section>
           <BuiltOnAzure data={{ backgroundColor: "default" }} />
