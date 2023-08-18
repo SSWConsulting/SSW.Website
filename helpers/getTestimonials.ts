@@ -1,8 +1,8 @@
 import client from "../.tina/__generated__/client";
 
 export const GetTestimonialsByCategories = async (
-  categories,
-  defaultCategory
+  categories: string[],
+  defaultCategory?: string
 ) => {
   const testimonials = await client.queries.testimonalsQuery({
     categories,

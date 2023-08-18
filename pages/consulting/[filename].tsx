@@ -193,10 +193,7 @@ export const getStaticProps = async ({ params }) => {
       (category) => category.testimonialCategory.name
     ) || [];
 
-  const testimonialsResult = await GetTestimonialsByCategories(
-    categories,
-    null
-  );
+  const testimonialsResult = await GetTestimonialsByCategories(categories);
 
   const seo = tinaProps.data.consulting.seo;
   if (seo && !seo.canonical) {
