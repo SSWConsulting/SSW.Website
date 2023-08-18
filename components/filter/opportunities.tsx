@@ -73,11 +73,11 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
       ]}
     >
       {selectedStatus !== 1 &&
-        !!filteredOpportunities.find((o) => o.status === jobStatus[0]) && (
+        filteredOpportunities.some((o) => o.status === "Available") && (
           <>
             <h3>Available Positions</h3>
             {opportunities
-              .filter((o) => o.status === jobStatus[0])
+              .filter((o) => o.status === "Available")
               .map((opportunity, index) => (
                 <OpportunityDropdown
                   visible={
@@ -93,11 +93,11 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
         )}
 
       {selectedStatus !== 0 &&
-        !!filteredOpportunities.find((o) => o.status === jobStatus[1]) && (
+        filteredOpportunities.some((o) => o.status === "Filled") && (
           <>
             <h3>Filled Positions</h3>
             {opportunities
-              .filter((o) => o.status === jobStatus[1])
+              .filter((o) => o.status === "Filled")
               .map((opportunity, index) => (
                 <OpportunityDropdown
                   visible={
@@ -139,10 +139,10 @@ const OpportunityDropdown = ({
   return (
     <Transition
       show={visible}
-      enter="transition-opacity duration-500"
+      enter="transition-opacity duration-300"
       enterFrom="opacity-0"
       enterTo="opacity-100"
-      leave="transition-opacity duration-500"
+      leave="transition-opacity duration-300"
       leaveFrom="opacity-100"
       leaveTo="opacity-0"
     >
@@ -158,9 +158,7 @@ const OpportunityDropdown = ({
             <span className="md:float-right">
               <FaMapMarkerAlt className="inline" />{" "}
               {opportunity.locations?.join(", ")}
-              {opportunity.status === jobStatus[1] && (
-                <strong> *FILLED*</strong>
-              )}
+              {opportunity.status === "Filled" && <strong> *FILLED*</strong>}
             </span>
           </Disclosure.Button>
 

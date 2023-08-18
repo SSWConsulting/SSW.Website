@@ -17,6 +17,7 @@ import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
+import { removeExtension } from "../../services/client/utils.service";
 
 export default function EmploymentPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -27,26 +28,10 @@ export default function EmploymentPage(
     variables: props.variables,
   });
 
-  const removeExtension = (file: string) => {
-    return file.split(".")[0];
-  };
-
-  const chosenOpportunities: OpportunityType[] =
-    data.employment.opportunities.map((o) => {
-      return {
-        title: o?.opportunityRef?.title,
-        employmentType: o?.opportunityRef?.employmentType,
-        status: "Available",
-        locations: o?.opportunityRef?.locations,
-        hideApply: o?.opportunityRef?.hideApply,
-        description: o?.opportunityRef?._body,
-      };
-    });
-
   const opportunities: OpportunityType[] =
     data.opportunitiesConnection?.edges.map((o) => {
-      const status = chosenOpportunities.some(
-        (chosen) => chosen.title === o.node.title
+      const status = data.employment.opportunities.some(
+        (chosen) => chosen.opportunityRef.title === o.node.title
       )
         ? "Available"
         : "Filled";
