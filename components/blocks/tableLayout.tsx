@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import * as React from "react";
-import { TextArea, useCMS, wrapFieldsWithMeta, type Template } from "tinacms";
+import { TextArea, wrapFieldsWithMeta, type Template } from "tinacms";
 
 const tableStyles = {
   none: "",
@@ -157,7 +157,6 @@ export const tableBlockSchema: Template = {
           ],
           ui: {
             itemProps: (item) => {
-              console.log(useCMS());
               return {
                 label: item?.cellValue || "New cell (click to enter value)",
               };
