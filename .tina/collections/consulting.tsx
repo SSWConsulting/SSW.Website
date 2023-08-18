@@ -236,6 +236,11 @@ export const consultingSchema: Collection = {
       type: "object",
       label: "Testimonial Categories",
       name: "testimonialCategories",
+      ui: {
+        itemProps(item) {
+          return { label: item.testimonialCategory ?? "Select your testimonial category" }
+        },
+      },
       list: true,
       fields: [
         {

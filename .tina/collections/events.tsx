@@ -47,7 +47,7 @@ export const eventsSchema: Collection = {
       name: "testimonialCategories",
       ui: {
         itemProps(item) {
-          return { label: item.testimonialCategory }
+          return { label: item.testimonialCategory ?? "Select your testimonial category" }
         },
       },
       list: true,
