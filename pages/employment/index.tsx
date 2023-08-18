@@ -13,6 +13,10 @@ import {
 } from "../../components/filter/opportunities";
 import { Layout } from "../../components/layout";
 import { Marketing } from "../../components/marketing/Marketing";
+import type {
+  EmploymentType,
+  Locations,
+} from "../../components/util/constants/opportunity";
 import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
@@ -38,9 +42,9 @@ export default function EmploymentPage(
 
       return {
         title: o.node.title,
-        employmentType: o.node.employmentType,
+        employmentType: o.node.employmentType as EmploymentType,
         status,
-        locations: o.node.locations,
+        locations: o.node.locations as Locations,
         hideApply: o.node.hideApply,
         description: o.node._body,
       };

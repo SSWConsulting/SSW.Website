@@ -6,6 +6,9 @@ import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { UtilityButton } from "../blocks";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import {
+  EmploymentType,
+  JobStatus,
+  Locations,
   employmentType,
   jobStatus,
   locations,
@@ -16,13 +19,11 @@ interface OpportunitiesProps {
   opportunities: OpportunityType[];
 }
 
-type statusTuple = typeof jobStatus;
-
 export interface OpportunityType {
   title: string;
-  employmentType: string;
-  status: statusTuple[number];
-  locations: string[];
+  employmentType: EmploymentType;
+  status: JobStatus;
+  locations: Locations;
   hideApply?: boolean;
   description: TinaMarkdownContent;
 }
