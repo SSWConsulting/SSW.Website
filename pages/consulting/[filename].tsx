@@ -53,6 +53,11 @@ export default function ConsultingPage(
     buttonText: data.global.bookingButtonText,
   };
 
+  const categories =
+    data.consulting.testimonialCategories
+      ?.filter((category) => !!category?.testimonialCategory)
+      .map((category) => category.testimonialCategory.name) ?? [];
+
   return (
     <RecaptchaContext.Provider
       value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
@@ -107,6 +112,7 @@ export default function ConsultingPage(
             )}
             <TestimonialRow
               testimonialsResult={props.testimonialsResult}
+              categories={categories}
               tagline={data.consulting.testimonials?.tagline}
             />
             <BookingButton {...bookingButtonProps} containerClass="mt-20" />

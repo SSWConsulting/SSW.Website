@@ -1,7 +1,6 @@
-import { tinaField, useEditState, useTina } from "tinacms/dist/react";
+import { tinaField, useTina } from "tinacms/dist/react";
 
 import { InferGetStaticPropsType } from "next";
-import { useEffect, useState } from "react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../.tina/__generated__/client";
 import { ClientLogos } from "../../components/blocks";
@@ -27,27 +26,10 @@ export default function EventsPage(
     variables: props.variables,
   });
 
-  const [testimonialResult, setTestimonialResult] = useState(
-    props.testimonialResult
-  );
-
-  const { edit } = useEditState();
-
-  useEffect(() => {
-    async function getTestimonials() {
-      const categories =
-        data?.events?.testimonialCategories
-          ?.filter((category) => !!category?.testimonialCategory)
-          .map((category) => category.testimonialCategory.name) ?? [];
-
-      const testimonials = await GetTestimonialsByCategories(categories);
-
-      setTestimonialResult(testimonials);
-    }
-    if (edit) {
-      getTestimonials();
-    }
-  }, [edit, data?.events?.testimonialCategories]);
+  const categories =
+    data.events.testimonialCategories
+      ?.filter((category) => !!category?.testimonialCategory)
+      .map((category) => category.testimonialCategory.name) ?? [];
 
   const videoCardProps =
     data?.events.videos?.videoCards?.map<VideoCardProps>((m) => ({
@@ -104,7 +86,8 @@ export default function EventsPage(
                   className="mx-auto flex max-w-9xl flex-col items-center"
                 >
                   <TestimonialRow
-                    testimonialsResult={testimonialResult}
+                    testimonialsResult={props.testimonialResult}
+                    categories={categories}
                     tagline={data.events.testimonials?.tagline}
                   />
                 </div>
