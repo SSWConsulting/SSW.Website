@@ -1,6 +1,8 @@
 import Image from "next/image";
 import type { Template } from "tinacms";
+import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { paymentDetailsBlockConstant } from "../../.tina/collections/payment-details";
 
 export type PaymentBlockProps = {
   bankName: string;
@@ -22,6 +24,8 @@ export const PaymentBlockConstants = {
   ACN: "ACN",
 };
 
+paymentDetailsBlockConstant;
+
 export const PaymentBlock = ({ data }) => {
   if (!data.payments) return <></>;
 
@@ -32,37 +36,104 @@ export const PaymentBlock = ({ data }) => {
 
   return (
     <div className="prose mx-auto mb-2 w-full max-w-9xl p-8 text-center">
-      <h2>{title}</h2>
-      <p>{subTitle}</p>
+      <h2 data-tina-field={tinaField(data, paymentBlockConstants.title)}>
+        {title}
+      </h2>
+      <p data-tina-field={tinaField(data, paymentBlockConstants.subTitle)}>
+        {subTitle}
+      </p>
       <div className="mx-auto my-4 grid max-w-4xl grid-cols-3 gap-0.5 py-4 text-left">
         <div className={headerClass}>{PaymentBlockConstants.BANK_NAME}</div>
-        <div className={bodyClass}>{payments.bankName}</div>
+        <div
+          className={bodyClass}
+          data-tina-field={tinaField(
+            data.payments,
+            paymentDetailsBlockConstant.bankName
+          )}
+        >
+          {payments.bankName}
+        </div>
         <div className={headerClass}>{PaymentBlockConstants.ACCOUNT_NAME}</div>
-        <div className={bodyClass}>{payments.accountName}</div>
+        <div
+          className={bodyClass}
+          data-tina-field={tinaField(
+            data.payments,
+            paymentDetailsBlockConstant.accountName
+          )}
+        >
+          {payments.accountName}
+        </div>
         <div className={headerClass}>{PaymentBlockConstants.BSB_NUMBER}</div>
-        <div className={bodyClass}>{payments.bsbNumber}</div>
+        <div
+          className={bodyClass}
+          data-tina-field={tinaField(
+            data.payments,
+            paymentDetailsBlockConstant.bsbNumber
+          )}
+        >
+          {payments.bsbNumber}
+        </div>
         <div className={headerClass}>
           {PaymentBlockConstants.ACCOUNT_NUMBER}
         </div>
-        <div className={bodyClass}>{payments.accountNumber}</div>
+        <div
+          className={bodyClass}
+          data-tina-field={tinaField(
+            data.payments,
+            paymentDetailsBlockConstant.accountNumber
+          )}
+        >
+          {payments.accountNumber}
+        </div>
         <div className={headerClass}>{PaymentBlockConstants.SWIFT_NUMBER}</div>
-        <div className={bodyClass}>{payments.swiftNumber}</div>
+        <div
+          className={bodyClass}
+          data-tina-field={tinaField(
+            data.payments,
+            paymentDetailsBlockConstant.swiftNumber
+          )}
+        >
+          {payments.swiftNumber}
+        </div>
         <div className={headerClass}>{PaymentBlockConstants.ABN}</div>
-        <div className={bodyClass}>{payments.abn}</div>
+        <div
+          className={bodyClass}
+          data-tina-field={tinaField(
+            data.payments,
+            paymentDetailsBlockConstant.abn
+          )}
+        >
+          {payments.abn}
+        </div>
         <div className={headerClass}>{PaymentBlockConstants.ACN}</div>
-        <div className={bodyClass}>{payments.acn}</div>
+        <div
+          className={bodyClass}
+          data-tina-field={tinaField(
+            data.payments,
+            paymentDetailsBlockConstant.acn
+          )}
+        >
+          {payments.acn}
+        </div>
       </div>
-      <p className="mx-auto max-w-4xl">
+      <p
+        className="mx-auto max-w-4xl"
+        data-tina-field={tinaField(data, paymentBlockConstants.footer)}
+      >
         <TinaMarkdown content={data.footer} />
       </p>
       {creditImgSrc && (
-        <Image
-          src={creditImgSrc}
-          alt={altText}
-          height={150}
-          className={"mx-auto my-3"}
-          width={150}
-        />
+        <span
+          data-tina-field={tinaField(data, paymentBlockConstants.creditImgSrc)}
+        >
+          <Image
+            src={creditImgSrc}
+            alt={altText}
+            height={150}
+            className={"mx-auto my-3"}
+            width={150}
+          />
+        </span>
       )}
     </div>
   );

@@ -1,5 +1,5 @@
 import { InferGetStaticPropsType } from "next";
-import { useTina } from "tinacms/dist/react";
+import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
 import { BuiltOnAzure } from "../../components/blocks";
@@ -50,13 +50,19 @@ export default function CompanyPage(
               </Section>
             ))}
           {data.company.title && (
-            <Section className="mx-auto w-full max-w-9xl px-8">
+            <Section
+              className="mx-auto w-full max-w-9xl px-8"
+              data-tina-field={tinaField(data.company, "title")}
+            >
               <h1 className="mt-0 py-2">{data.company.title}</h1>
             </Section>
           )}
           {data.company.subTitle && (
             <Section className="prose mx-auto !block w-full max-w-9xl px-8">
-              <TinaMarkdown content={data.company.subTitle} />
+              <TinaMarkdown
+                content={data.company.subTitle}
+                data-tina-field={tinaField(data.company, "subTitle")}
+              />
             </Section>
           )}
 
