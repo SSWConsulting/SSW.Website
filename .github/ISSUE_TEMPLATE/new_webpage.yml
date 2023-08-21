@@ -5,6 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
+        @camillars @sethdailyssw
         Fill out the below fields with information about your new page:
   - type: input
     id: cc
