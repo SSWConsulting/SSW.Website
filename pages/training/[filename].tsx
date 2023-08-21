@@ -44,17 +44,17 @@ export default function TrainingPage(
         <Container padding={"md:px-8 px-0"} className="pt-2">
           {(data.training.seo?.showBreadcrumb === null ||
             data.training.seo?.showBreadcrumb) && (
-              <div
-                data-tina-field={tinaField(data.training.seo, "title")}
-                className="px-8 md:px-8"
-              >
-                <Breadcrumbs
-                  path={removeExtension(props.variables.relativePath)}
-                  suffix={data.global.breadcrumbSuffix}
-                  title={data.training?.seo?.title}
-                />
-              </div>
-            )}
+            <div
+              data-tina-field={tinaField(data.training.seo, "title")}
+              className="px-8 md:px-8"
+            >
+              <Breadcrumbs
+                path={removeExtension(props.variables.relativePath)}
+                suffix={data.global.breadcrumbSuffix}
+                title={data.training?.seo?.title}
+              />
+            </div>
+          )}
           <h1
             data-tina-field={tinaField(data.training, "title")}
             className="py-0 text-center text-5xl font-semibold"
