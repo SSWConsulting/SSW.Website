@@ -35,7 +35,7 @@ export default function EmploymentPage(
   const opportunities: OpportunityType[] =
     data.opportunitiesConnection?.edges.map((o) => {
       const status = data.employment.opportunities.some(
-        (chosen) => chosen.opportunityRef.title === o.node.title
+        (chosen) => chosen?.opportunityRef?.title === o?.node?.title
       )
         ? "Available"
         : "Filled";
