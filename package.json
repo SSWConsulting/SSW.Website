@@ -18,7 +18,7 @@
     "@svgr/webpack": "^8.0.1",
     "@tinacms/cli": "^1.5.25",
     "@types/js-cookie": "^3.0.3",
-    "@types/node": "^20.3.3",
+    "@types/node": "^20.5.1",
     "@types/react": "^18.2.18",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.2.1",
