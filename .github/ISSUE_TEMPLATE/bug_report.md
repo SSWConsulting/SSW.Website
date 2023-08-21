@@ -1,7 +1,7 @@
 ---
 name: 🐛 Bug Report
 about: Report a bug
-title: "🐛 [Title]"
+title: "🐛 {{ TITLE }}"
 labels: 'Type: Bug'
 assignees: ''
 
