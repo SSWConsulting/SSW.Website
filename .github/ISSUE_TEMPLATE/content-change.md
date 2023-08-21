@@ -1,7 +1,7 @@
 ---
 name: 📄 Content change
 about: Create a report to help us improve content
-title: '📄 [Title]'
+title: '📄 {{ TITLE }}'
 labels: ''
 assignees: ''
 
