@@ -1,7 +1,7 @@
 ---
 name: 💸  Tech Debt
 about: Report tech debt
-title: "💸 Tech Debt - [Title]"
+title: "💸 {{ TITLE }} "
 labels: ''
 assignees: ''
 ---
