@@ -8,10 +8,7 @@
   ],
   "editor.formatOnSave": true,
   // Runs Prettier, then ESLint
-  "editor.codeActionsOnSave": [
-    "source.organizeImports",
-    "source.fixAll.eslint"
-  ],
+  "editor.codeActionsOnSave": ["source.fixAll.eslint", "source.sortImports"],
   "editor.formatOnPaste": false,
   "editor.tabSize": 2
 }
