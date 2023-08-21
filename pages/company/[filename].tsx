@@ -9,6 +9,7 @@ import { HistoryTimelineCardProps } from "../../components/company/historyTimeli
 import { Layout } from "../../components/layout";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
+import { RecaptchaContext } from "../../context/RecaptchaContext";
 import { removeExtension } from "../../services/client/utils.service";
 
 export default function CompanyPage(
@@ -29,32 +30,37 @@ export default function CompanyPage(
     })) || [];
 
   return (
-    <div>
-      <SEO seo={props.seo} />
-      <Layout>
-        {data.company.seo?.showBreadcrumb === null ||
-          (data.company.seo?.showBreadcrumb && (
-            <Section className="mx-auto w-full max-w-9xl px-8 py-5">
-              <Breadcrumbs
-                path={removeExtension(props.variables.relativePath)}
-                suffix={data.global.breadcrumbSuffix}
-                title={data.company.seo?.title}
-                seoSchema={data.company.seo}
-              />
-            </Section>
-          ))}
+    <RecaptchaContext.Provider
+      value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
+    >
+      <div>
+        <SEO seo={props.seo} />
 
-        <Blocks prefix="Company_body" blocks={data.company._body} />
-        {data.company.historyCards?.length > 0 && (
-          <Section className="mx-auto w-full max-w-9xl px-8 py-5">
-            <HistoryTimeline cardProps={historyCardProps} />
+        <Layout>
+          {data.company.seo?.showBreadcrumb === null ||
+            (data.company.seo?.showBreadcrumb && (
+              <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+                <Breadcrumbs
+                  path={removeExtension(props.variables.relativePath)}
+                  suffix={data.global.breadcrumbSuffix}
+                  title={data.company.seo?.title}
+                  seoSchema={data.company.seo}
+                />
+              </Section>
+            ))}
+
+          <Blocks prefix="Company_body" blocks={data.company._body} />
+          {data.company.historyCards?.length > 0 && (
+            <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+              <HistoryTimeline cardProps={historyCardProps} />
+            </Section>
+          )}
+          <Section>
+            <BuiltOnAzure data={{ backgroundColor: "default" }} />
           </Section>
-        )}
-        <Section>
-          <BuiltOnAzure data={{ backgroundColor: "default" }} />
-        </Section>
-      </Layout>
-    </div>
+        </Layout>
+      </div>
+    </RecaptchaContext.Provider>
   );
 }
 
