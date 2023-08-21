@@ -20,6 +20,16 @@ export const companySchema: Collection = {
     // @ts-ignore
     seoSchema,
     {
+      type: "string",
+      name: "title",
+      label: "Title",
+    },
+    {
+      type: "rich-text",
+      name: "subTitle",
+      label: "Sub Title",
+    },
+    {
       type: "object",
       list: true,
       name: "_body",

@@ -1,5 +1,6 @@
 import { InferGetStaticPropsType } from "next";
 import { useTina } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
 import { BuiltOnAzure } from "../../components/blocks";
 import { Blocks } from "../../components/blocks-renderer";
@@ -48,6 +49,16 @@ export default function CompanyPage(
                 />
               </Section>
             ))}
+          {data.company.title && (
+            <Section className="mx-auto w-full max-w-9xl px-8">
+              <h1 className="mt-0 py-2">{data.company.title}</h1>
+            </Section>
+          )}
+          {data.company.subTitle && (
+            <Section className="prose mx-auto !block w-full max-w-9xl px-8">
+              <TinaMarkdown content={data.company.subTitle} />
+            </Section>
+          )}
 
           <Blocks prefix="Company_body" blocks={data.company._body} />
           {data.company.historyCards?.length > 0 && (
