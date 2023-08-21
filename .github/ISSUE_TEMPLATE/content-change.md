@@ -1,5 +1,5 @@
 ---
-name: Content change
+name: 📄 Content change
 about: Create a report to help us improve content
 title: '📄 [Title]'
 labels: ''
