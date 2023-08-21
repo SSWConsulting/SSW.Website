@@ -25,6 +25,12 @@ query companyContentQuery($relativePath: String!) {
     ...CompanyParts
   }
 }
+query companyIndexContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  companyIndex(relativePath: $relativePath) {
+    ...CompanyIndexParts
+  }
+}
 
 query officeContentQuery($relativePath: String!) {
   ...LayoutQueryFragment
@@ -156,5 +162,12 @@ query eventsContentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   events(relativePath: $relativePath) {
     ...EventsParts
+  }
+}
+
+query eventsIndexContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  eventsIndex(relativePath: $relativePath) {
+    ...EventsIndexParts
   }
 }

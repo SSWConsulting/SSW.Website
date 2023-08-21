@@ -75,7 +75,7 @@ export const trainingLearningOutcomeSchema: Template = {
           name: "icon",
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          uploadDir: () => "/logos",
+          uploadDir: () => "logos",
         },
       ],
     },
