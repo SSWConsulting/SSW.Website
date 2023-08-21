@@ -25,7 +25,7 @@ jobs:
 
     steps:
       - name: Checking out
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
