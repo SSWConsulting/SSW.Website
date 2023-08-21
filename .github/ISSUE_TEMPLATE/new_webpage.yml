@@ -1,6 +1,6 @@
 name: ✨ New Webpage
 description: Start here to request a new page
-title: "✨ {{ TITLE }} "
+title: "📄 {{ TITLE }} "
 body:
   - type: markdown
     attributes:
