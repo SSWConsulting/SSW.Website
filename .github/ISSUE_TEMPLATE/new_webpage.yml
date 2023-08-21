@@ -1,5 +1,5 @@
 name: ✨ New Webpage
-description: Start here to request/create a new page
+description: Start here to request a new page
 title: "✨ [Title] "
 body:
   - type: markdown
