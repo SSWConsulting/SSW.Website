@@ -1,18 +1,13 @@
-import classNames from "classnames";
-import dayjs from "dayjs";
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 
-import axios from "axios";
-import { EventInfo, LiveStreamBannerInfo } from "../../services/server/events";
-
-const EventStatus = {
-  TODAY: "today",
-  NOW_RUNNING: "now running",
-};
+import { formatEventDate, formatRelativeEventDate } from "../../helpers/dates";
+import { EventInfo } from "../../services/server/events";
+import { EventsRelativeBox } from "../events/components";
 
 export const UpcomingEvents = ({ data }) => {
   const [events, setEvents] = useState<EventInfo[]>([]);
@@ -31,8 +26,11 @@ export const UpcomingEvents = ({ data }) => {
       !!res.data &&
         Array.isArray(res.data) &&
         res.data.forEach((b) => {
-          b.FormattedDate = formatBannerDate(b);
-          b.RelativeDate = formatRelativeBannerDate(b);
+          b.FormattedDate = formatEventDate(b.StartDateTime, b.EndDateTime);
+          b.RelativeDate = formatRelativeEventDate(
+            b.StartDateTime,
+            b.EndDateTime
+          );
         });
 
       setEvents(res.data);
@@ -81,29 +79,10 @@ const renderEvent = (e: EventInfo) => {
       <article className="my-2.5 grid grid-cols-4 rounded border-1 border-gray-300 bg-white p-2 shadow hover:border-sswBlack dark:border-gray-700 dark:bg-gray-800">
         <div className="col-span-3 justify-center px-3">
           <h2 className="m-0 py-1 text-sm font-bold text-black">{e.Title}</h2>
-          <time className="my-1 flex items-center">
-            {e.RelativeDate && (
-              <span
-                className={classNames(
-                  "inline-flex items-center rounded-sm px-1.5 py-0.5 text-xxs uppercase",
-                  e.RelativeDate == EventStatus.NOW_RUNNING ||
-                    e.RelativeDate == EventStatus.TODAY // Now running for the two days events and today is for the single day
-                    ? "bg-sswRed text-white"
-                    : "bg-gray-25 text-black"
-                )}
-              >
-                {e.RelativeDate}
-              </span>
-            )}
-            <span
-              className={classNames(
-                "text-xxs text-gray-500",
-                e.RelativeDate ? "ml-2" : ""
-              )}
-            >
-              {e.FormattedDate}
-            </span>
-          </time>
+          <EventsRelativeBox
+            relativeDate={e.RelativeDate}
+            formattedDate={e.FormattedDate}
+          />
           {!!e.Presenter && (
             <span className="mt-1 inline-flex items-center text-xxs text-black">
               {e.Presenter}
@@ -150,43 +129,4 @@ export const upcomingEventsBlockSchema: Template = {
       name: "numberOfEvents",
     },
   ],
-};
-
-const formatBannerDate = (bannerInfo: LiveStreamBannerInfo) => {
-  if (!bannerInfo.StartDateTime || !bannerInfo.EndDateTime) return "";
-
-  // NOTE: Omit ddd for brevity if it's next year's event
-  const dateformat =
-    dayjs(bannerInfo.StartDateTime).year() === dayjs().year()
-      ? "MMM D"
-      : "MMM D YYYY";
-
-  const isOneDayEvent = dayjs(bannerInfo.StartDateTime)
-    .startOf("day")
-    .isSame(dayjs(bannerInfo.EndDateTime).startOf("day"));
-  const startDate = dayjs(bannerInfo.StartDateTime).format(dateformat);
-  const endDate = dayjs(bannerInfo.EndDateTime).format(dateformat);
-
-  return isOneDayEvent ? startDate : `${startDate} - ${endDate}`;
-};
-
-const formatRelativeBannerDate = (bannerInfo: LiveStreamBannerInfo) => {
-  const now = dayjs();
-  const start = dayjs(bannerInfo.StartDateTime);
-  const end = dayjs(bannerInfo.EndDateTime);
-
-  if (now.isBetween(start, end)) {
-    return EventStatus.NOW_RUNNING;
-  }
-
-  const isSameDay = now.startOf("day").isSame(start.startOf("day"));
-
-  const days = start.diff(now, "d");
-  if (days === 0 && isSameDay) {
-    return EventStatus.TODAY;
-  } else if (days > 0) {
-    return `${days} ${days === 1 ? "day" : "days"} to go`;
-  } else {
-    return "";
-  }
 };

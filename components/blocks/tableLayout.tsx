@@ -1,5 +1,6 @@
 import classNames from "classnames";
-import type { Template } from "tinacms";
+import * as React from "react";
+import { TextArea, wrapFieldsWithMeta, type Template } from "tinacms";
 
 const tableStyles = {
   none: "",
@@ -18,9 +19,9 @@ export type TableLayoutProps = {
   className?: string;
   rows: {
     cells: {
-      cellValue: string;
+      cellValue?: string;
     }[];
-    isHeader: boolean;
+    isHeader?: boolean;
   }[];
 };
 
@@ -32,9 +33,9 @@ export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
         tableStyles[data.tableStyle]
       )}
     >
-      <table className="border-1 border-solid">
+      <table>
         <thead>
-          <tr>
+          <tr className="border-1 border-solid">
             {data?.headers ? (
               data?.headers?.map((cell, index) => (
                 <th
@@ -53,17 +54,32 @@ export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
         </thead>
         <tbody>
           {data?.rows?.map((row, index) => (
-            <tr key={index}>
+            <tr
+              className={classNames(
+                row?.isHeader ? "border-0 !bg-red-100" : "border-1 border-solid"
+              )}
+              key={index}
+            >
               {row?.cells?.map((cell, index) => (
                 <td
                   className={classNames(
                     index === 0 && data?.firstColBold
-                      ? "text-left font-bold"
+                      ? "text-left"
                       : "text-center",
-                    row?.isHeader ? "font-bold" : "",
+                    index === 0 &&
+                      data?.firstColBold &&
+                      !row?.isHeader &&
+                      "font-semibold",
+                    row?.isHeader &&
+                      "border-0 !bg-white pt-8 text-lg font-bold",
                     "whitespace-pre-wrap"
                   )}
                   key={index}
+                  colSpan={
+                    index === row.cells.length - 1
+                      ? data.headers.length - row.cells.length + 1
+                      : 1
+                  }
                   dangerouslySetInnerHTML={{ __html: cell?.cellValue || "" }}
                 />
               ))}
@@ -83,12 +99,7 @@ export const tableBlockSchema: Template = {
       label: "Table Style",
       name: "tableStyle",
       type: "string",
-      options: Object.keys(tableStyles).map((key) => {
-        return {
-          label: key,
-          value: key,
-        };
-      }),
+      options: Object.keys(tableStyles),
     },
     {
       label: "First column bolded + left aligned",
@@ -119,27 +130,89 @@ export const tableBlockSchema: Template = {
               label: "Value",
               name: "cellValue",
               required: true,
-              // @ts-expect-error This is a valid field, but Tina's type definition doesn't include it
-              component: "textarea",
+              // @ts-expect-error component is a valid field, but Tina's type definition doesn't include it
+              component: wrapFieldsWithMeta(({ field, input, tinaForm }) => {
+                const tableObj = getTableFieldFromForm(
+                  field,
+                  tinaForm.finalForm.getState().values,
+                  5
+                );
+
+                const pathArr = field?.name?.split(".");
+                const headerIndex = parseInt(pathArr[7]);
+                let headerText = undefined;
+                if (!isNaN(headerIndex)) {
+                  headerText = tableObj.headers[headerIndex];
+                }
+
+                return (
+                  <>
+                    {headerText && <p>Cell value for "{headerText}":</p>}
+                    <TextArea {...input} />
+                  </>
+                );
+              }),
+              //component: "textarea",
             },
           ],
           ui: {
-            validate: (value, data) => {
-              if ((value?.length || 0) <= (data?.headers?.length || 0)) {
-                return "Must have at least as many cells as headers";
+            itemProps: (item) => {
+              return {
+                label: item?.cellValue || "New cell (click to enter value)",
+              };
+            },
+            validate: (values, allValues, meta, field) => {
+              const tableObj = getTableFieldFromForm(field, allValues, 3);
+
+              if (!tableObj) {
+                console.error("Invalid path for table cell value");
+                return undefined;
+              }
+
+              const headerLength = tableObj.headers?.length;
+              if (headerLength < values?.length) {
+                return `Too many cells for the number of headers, reduce the number of cells to ${headerLength}`;
               }
             },
-            itemProps: (item) => ({
-              label: item?.cellValue || "New cell (click to enter value)",
-            }),
           },
+        },
+        {
+          type: "boolean",
+          label: "Is Heading",
+          name: "isHeader",
+          required: false,
         },
       ],
       ui: {
-        itemProps: (item) => ({
-          label: item?.cells[0]?.cellValue || "New row (click to enter values)",
-        }),
+        itemProps: (item) => {
+          if (item?.cells?.length) {
+            return {
+              label:
+                item?.cells[0]?.cellValue || "New row (click to enter values)",
+            };
+          } else {
+            return { label: "New row" };
+          }
+        },
       },
     },
   ],
+};
+
+const getTableFieldFromForm = (field, allValues, index: number) => {
+  const pathArr = field?.name?.split(".");
+  // Remove the last 3 elements in the array to get the path to the table
+  pathArr?.splice(pathArr?.length - index, index);
+  let currentObj = allValues;
+
+  for (const currPath of pathArr) {
+    if (currentObj && currentObj[currPath]) {
+      currentObj = currentObj[currPath];
+    } else {
+      console.error("Invalid path for table cell value");
+      return undefined;
+    }
+  }
+
+  return currentObj;
 };

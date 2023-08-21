@@ -284,6 +284,7 @@ module.exports = {
               margin: "1rem 0",
               padding: "60px 0 20px 0",
               lineHeight: 1.2,
+              color: theme("colors.sswBlack"),
             },
             h2: {
               fontWeight: "300",
@@ -292,6 +293,7 @@ module.exports = {
             h3: {
               fontWeight: "300",
               marginBottom: "7px",
+              color: theme("colors.sswBlack"),
             },
             h4: {
               color: theme("colors.sswBlack"),
@@ -304,6 +306,7 @@ module.exports = {
               textDecorationColor: "#aaa",
               textDecorationStyle: "solid",
               textDecorationThickness: "1px",
+              color: theme("colors.sswBlack"),
             },
             p: {
               marginBottom: "10px",
@@ -337,9 +340,10 @@ module.exports = {
               margin: "0 auto",
             },
             "ul > li": {
-              display: "block",
-              fontWeight: theme("fontWeight.bold"),
-              margin: "2em 3rem 0 3rem",
+              display: "list-item",
+              margin: "2rem 0",
+              listStyle: "inside",
+              listStyleType: "square",
               "> div::before": {
                 color: theme("colors.sswRed"),
                 content: "\u25A0",
@@ -348,6 +352,18 @@ module.exports = {
                 fontWeight: theme("fontWeight.bold"),
                 marginLeft: "-1em",
                 width: "1em",
+              },
+              "> div": {
+                display: "inline",
+              },
+            },
+            "ol > li": {
+              display: "list-item",
+              margin: "2rem 0",
+              listStyle: "inside",
+              listStyleType: "decimal",
+              "> div": {
+                display: "inline",
               },
             },
           },
@@ -411,6 +427,17 @@ module.exports = {
                 marginLeft: "-1em",
                 width: "1em",
               },
+            },
+          },
+        },
+        opportunity: {
+          css: {
+            ul: {
+              listStyle: "square",
+            },
+            "ul > li > *:last-child": {
+              marginBottom: "0",
+              marginTop: "0",
             },
           },
         },

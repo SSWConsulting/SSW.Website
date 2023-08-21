@@ -1,0 +1,89 @@
+name: Weekly app service slot cleanup
+
+on:
+  schedule:
+    # Monday at 12 PM UTC - https://cron.help/#0_12_*_*_MON
+    - cron: "0 12 * * MON"
+  workflow_dispatch:
+
+env:
+  GH_TOKEN: ${{ github.token }}
+
+defaults:
+  run:
+    shell: pwsh
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  check-pr-slots:
+    runs-on: ubuntu-latest
+    outputs:
+      slotsExistThatRequireDeletion: ${{ steps.comparision.outputs.slotsExistThatRequireDeletion }}
+
+    steps:
+      - name: Checking out
+        uses: actions/checkout@v3
+
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v2
+        with:
+          path: ./.github
+
+      - name: Azure CLI - Login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Get list of deployed Slots
+        id: slotList
+        run: |
+          $slots = $(az webapp deployment slot list `
+            --name ${{ env.APP_SERVICE_NAME }} `
+            --resource-group ${{env.AZURE_RESOURCE_GROUP }} `
+            --query '[].name' `
+            --output tsv | `
+            sed 's/pr-//g')
+          echo "slots=$slots" >> $env:GITHUB_OUTPUT
+
+      - name: Get list of active PRs
+        id: prList
+        run: |
+          $active_prs=$(gh pr list --state open --json number | jq -r '.[].number')
+          echo "active_prs=$active_prs" >> $env:GITHUB_OUTPUT
+
+      - name: Compare PRs with Slots
+        id: comparision
+        run: |
+          # Comparing the number of Slots and PRs
+          $prList =  "${{ steps.PRList.outputs.active_prs }}" -split ' '
+          $slotList = "${{ steps.slotList.outputs.slots }}" -split ' '
+
+          $slotsExistThatRequireDeletion = $slotList | Where-Object { $_ -notin $prList }
+          $slotsNeedDeletion = $slotsExistThatRequireDeletion.Length -gt 0
+
+          if ( ! $slotsNeedDeletion ) {
+            echo "✅ - Number of slots are equal to number of active PRs - 🏃 Skipping next step"
+          }
+          else {
+            echo "❌ - Number of slots are not equal to number of active PRs"
+            Write-Host "⚡- These slots need to be deleted : $slotsExistThatRequireDeletion"
+          }
+          echo "slotsExistThatRequireDeletion=$slotsExistThatRequireDeletion" >> $env:GITHUB_OUTPUT
+
+  invokeDeleteSlot:
+    name: Invoking PR Close/Delete
+    needs:
+      - check-pr-slots #Adding second check to avoid running this flow
+    if: needs.check-pr-slots.outputs.slotsExistThatRequireDeletion != ''
+    uses: ./.github/workflows/pr-close-delete-env.yml
+    with:
+      slotIDs: ${{ needs.check-pr-slots.outputs.slotsExistThatRequireDeletion }}
+    permissions:
+      id-token: write
+      contents: read
+    secrets: inherit

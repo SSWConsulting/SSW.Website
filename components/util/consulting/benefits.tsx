@@ -7,19 +7,22 @@ const BenefitCard = (props) => {
   const { image, title, description, linkURL, linkName } = props.data;
   return (
     <article
-      className={classNames("px-14 py-11", props.className)}
+      className={classNames(
+        "px-14 py-11 max-md:mx-auto md:flex",
+        props.className
+      )}
       data-aos={props.aosType}
     >
       <figure
         data-tina-field={tinaField(props.data, "image")}
-        className="relative mr-5 select-none md:float-left"
+        className="relative mx-auto select-none md:mr-5"
       >
         {image && (
           <Image
-            className="mx-auto"
+            className="mx-auto max-w-max"
             src={image}
-            width={140}
-            height={140}
+            width={120}
+            height={120}
             alt={title || "benefit icon"}
           />
         )}
@@ -34,18 +37,20 @@ const BenefitCard = (props) => {
         </h4>
         <section
           data-tina-field={tinaField(props.data, "description")}
-          className="mx-auto w-full max-w-full p-0 text-center text-sm font-light leading-normal prose-p:m-0 prose-p:first-of-type:pt-0 prose-strong:font-bold prose-li:m-0 md:text-left md:text-md"
+          className="mx-auto w-full max-w-full p-0 text-center text-sm font-light leading-normal prose-p:m-0 prose-p:first-of-type:pt-0 prose-strong:font-bold prose-ul:list-disc prose-li:m-0 prose-li:list-item prose-li:font-normal md:text-left md:text-md"
         >
           <TinaMarkdown content={description} />
         </section>
         {linkURL && (
-          <a
-            data-tina-field={tinaField(props.data, "linkName")}
-            className="text-white no-underline"
-            href={linkURL}
-          >
-            {linkName}
-          </a>
+          <p className="pt-4 text-left">
+            <a
+              data-tina-field={tinaField(props.data, "linkName")}
+              className="text-left text-white"
+              href={linkURL}
+            >
+              {linkName}
+            </a>
+          </p>
         )}
       </article>
     </article>

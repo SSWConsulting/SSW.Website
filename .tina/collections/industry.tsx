@@ -11,7 +11,7 @@ const industrySolutionsRowSchema: Template = {
       label: "1st Card Image",
       name: "imgSrc1",
       // @ts-ignore
-      uploadDir: () => "/industry",
+      uploadDir: () => "industry",
     },
     {
       type: "string",
@@ -28,7 +28,7 @@ const industrySolutionsRowSchema: Template = {
       label: "2nd Card Image",
       name: "imgSrc2",
       // @ts-ignore
-      uploadDir: () => "/industry",
+      uploadDir: () => "industry",
     },
     {
       type: "string",
@@ -45,7 +45,7 @@ const industrySolutionsRowSchema: Template = {
       label: "3rd Card Image",
       name: "imgSrc3",
       // @ts-ignore
-      uploadDir: () => "/industry",
+      uploadDir: () => "industry",
     },
     {
       type: "string",
@@ -158,14 +158,14 @@ export const industrySchema: Collection = {
       name: "bannerImg",
       required: true,
       // @ts-ignore
-      uploadDir: () => "/industry",
+      uploadDir: () => "industry",
     },
     {
       type: "image",
       label: "Whitepaper File",
       name: "whitepaperFile",
       // @ts-ignore
-      uploadDir: () => "/files",
+      uploadDir: () => "files",
     },
     {
       type: "rich-text",

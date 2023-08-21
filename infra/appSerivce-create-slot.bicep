@@ -85,6 +85,7 @@ resource prSlot 'Microsoft.Web/sites/slots@2021-02-01' = {
       appSettings: appSettings
       acrUseManagedIdentityCreds: true
     }
+    clientAffinityEnabled: false
   }
 }
 
