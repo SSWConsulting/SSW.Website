@@ -10,7 +10,7 @@ body:
   - type: input
     id: cc
     attributes:
-      label: 1. People in the loop
+      label: 1. People in the loop:
       description: "@ tag the people involved/cc'd"
       placeholder: "{{ PERSON THIS TASK IS FROM }}, {{ PERSON YOU ARE GIVING THIS TASK }}"
       value: 
@@ -19,7 +19,7 @@ body:
   - type: input
     id: template
     attributes:
-      label: 2. Style/format
+      label: 2. Page template to copy:
       description: Link a design template or a page to copy (e.g. a Consulting page or a Training page).
       placeholder: "{{ PAGE TEMPLATE LINK }}"
       value:
@@ -28,7 +28,7 @@ body:
   - type: input
     id: URI
     attributes:
-      label: 3. URI
+      label: 3. URI:
       description: "Details: Concise and including keywords. Use [kebab case](https://www.ssw.com.au/rules/use-dashes-in-urls) (e.g. use-dashes-and-lowercase). 
       
       Length: [As short as possible](https://www.ssw.com.au/rules/create-friendly-short-urls/)"
@@ -39,7 +39,7 @@ body:
   - type: input
     id: title
     attributes:
-      label: 4. Title
+      label: 4. Title:
       description: "Details: Must read well and include keywords (Google-able).
       
       Length: Must be under 60 characters"  
@@ -50,7 +50,7 @@ body:
   - type: textarea
     id: meta
     attributes:
-      label: 5. Meta description
+      label: 5. Meta description:
       description: "Details: For search engines - summary of the page using the important keywords.
       
       Length: under 150 characters. 
@@ -63,7 +63,7 @@ body:
   - type: textarea
     id: related
     attributes:
-      label: 6. Related URLs
+      label: 6. Related URLs:
       description: If applicable, related pages on the SSW website.
       placeholder: "{{ RELATED URLS }}"
       value:
@@ -72,7 +72,7 @@ body:
   - type: textarea
     id: content
     attributes:
-      label: 7. Content
+      label: 7. Content:
       description: "Follow these guidelines:  
 
       
