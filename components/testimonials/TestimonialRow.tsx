@@ -33,7 +33,7 @@ export const TestimonialRow = ({
         What do people <span className="text-sswRed">say</span>?
       </h2>
       <p className="mb-8 text-center">{tagline}</p>
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid justify-center gap-6 md:grid-cols-autoFit3">
         {testimonialResult?.map((testimonial, i) => (
           <TestimonialCard key={i} testimonial={testimonial} />
         ))}
