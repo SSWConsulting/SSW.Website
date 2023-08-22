@@ -1,7 +1,9 @@
+import * as appInsights from "applicationinsights";
 import { InferGetStaticPropsType } from "next";
 import { useTina } from "tinacms/dist/react";
 import client from "../../.tina/__generated__/client";
 
+import { AxiosError } from "axios";
 import { Blocks } from "../../components/blocks-renderer";
 import { EventsFilter } from "../../components/filter/events";
 import { Layout } from "../../components/layout";
@@ -56,8 +58,34 @@ export const getStaticProps = async () => {
       &$orderby=fields/StartDateTime desc\
       &$top=${100}`;
 
-  const events = await getEvents(odataFilter);
-  const pastEvents = await getEvents(pastOdataFilter);
+  let events, pastEvents;
+  try {
+    events = await getEvents(odataFilter);
+    pastEvents = await getEvents(pastOdataFilter);
+  } catch (err) {
+    const properties = {
+      Request: "GET /events",
+      Status: 500,
+      FailedSharePointRequest: false,
+    };
+
+    if (err instanceof AxiosError) {
+      console.error(err.response.data);
+      properties.Status = err.response.status;
+      properties.FailedSharePointRequest = true;
+    }
+
+    appInsights.defaultClient.trackException({
+      exception: err,
+      properties,
+      severity: appInsights.Contracts.SeverityLevel.Error,
+    });
+
+    console.error(err);
+
+    events = [];
+    pastEvents = [];
+  }
 
   return {
     props: {
