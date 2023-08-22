@@ -29,8 +29,9 @@ export const PaymentBlock = ({ data }) => {
 
   const { title, subTitle, creditImgSrc, altText } = data;
   const payments: PaymentBlockProps = data.payments;
-  const headerClass = "col-span-1 bg-gray-300 px-4 py-0.5 font-bold";
-  const bodyClass = "col-span-2 bg-gray-100 px-4 py-0.5";
+  const headerClass =
+    "col-span-1 bg-gray-300 px-4 py-0.5 font-bold flex items-center";
+  const bodyClass = "col-span-2 bg-gray-100 px-4 py-0.5 flex items-center";
 
   return (
     <div className="prose mx-auto mb-2 w-full max-w-9xl p-8 text-center">
