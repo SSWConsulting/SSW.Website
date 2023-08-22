@@ -1,5 +1,6 @@
 import { Tab, Transition } from "@headlessui/react";
 import classNames from "classnames";
+import Head from "next/head";
 import Image from "next/image";
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
@@ -306,10 +307,12 @@ const Event = ({ visible, event }: EventProps) => {
           <p className="prose pt-3">Find out more...</p>
         </a>
       </Transition>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
-      />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
+        />
+      </Head>
     </>
   );
 };
