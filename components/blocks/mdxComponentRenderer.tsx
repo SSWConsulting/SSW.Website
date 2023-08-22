@@ -184,7 +184,7 @@ export const componentRenderer: Components<{
   TweetEmbed: (props) => <TweetEmbed {...props} />,
   RecurringEvent: (props) => <RecurringEvent data={props} />,
   FixedTabsLayout: (props) => <FixedTabsLayout data={props} />,
-  BookingButton: (props) => <BookingButton {...props} />,
+  BookingButton: (props) => <BookingButton data={props} />,
   NewslettersTable: (props) => <NewslettersTable data={props} />,
   SubNewsletterRow: (props) => <SubNewsletterRow {...props} />,
   Citation: (props) => <Citation {...props} />,
