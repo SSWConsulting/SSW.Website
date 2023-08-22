@@ -24,8 +24,6 @@ export const PaymentBlockConstants = {
   ACN: "ACN",
 };
 
-paymentDetailsBlockConstant;
-
 export const PaymentBlock = ({ data }) => {
   if (!data.payments) return <></>;
 
