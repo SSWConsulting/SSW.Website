@@ -3,6 +3,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
+import { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { formatEventDate, formatRelativeEventDate } from "../../helpers/dates";
 import { EventInfo } from "../../services/server/events";
@@ -210,17 +211,33 @@ interface EventProps {
 }
 
 const Event = ({ visible, event }: EventProps) => {
+  const eventJsonLd: WithContext<Event> = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: event.Title,
+    image: event.Thumbnail.Url,
+    startDate: new Date(event.StartDateTime).toISOString(),
+    endDate: new Date(event.EndDateTime).toISOString(),
+    description: event.EventDescription,
+    location: {
+      "@type": "Place",
+      name: CITY_MAP[event.City].name,
+      url: CITY_MAP[event.City].url,
+    },
+  };
+
   return (
-    <Transition
-      show={!!visible}
-      enter="transition duration-100 ease-out"
-      enterFrom="transform scale-95 opacity-0"
-      enterTo="transform scale-100 opacity-100"
-      leave="transition duration-75 ease-out"
-      leaveFrom="transform scale-100 opacity-100"
-      leaveTo="transform scale-95 opacity-0"
-    >
-      <div className="mb-20">
+    <>
+      <Transition
+        className="mb-20"
+        show={!!visible}
+        enter="transition duration-100 ease-out"
+        enterFrom="transform scale-95 opacity-0"
+        enterTo="transform scale-100 opacity-100"
+        leave="transition duration-75 ease-out"
+        leaveFrom="transform scale-100 opacity-100"
+        leaveTo="transform scale-95 opacity-0"
+      >
         <div className="mb-8 flex max-md:flex-col md:flex-row">
           <div className="mr-3 shrink-0">
             <Image
@@ -281,7 +298,11 @@ const Event = ({ visible, event }: EventProps) => {
         <a href={event.Url.Url}>
           <p className="prose pt-3">Find out more...</p>
         </a>
-      </div>
-    </Transition>
+      </Transition>
+      <script
+        type="ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
+      />
+    </>
   );
 };

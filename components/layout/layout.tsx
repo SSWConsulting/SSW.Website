@@ -10,6 +10,7 @@ import { Theme } from "./theme";
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
 import { Open_Sans } from "next/font/google";
+import { WebSite, WithContext } from "schema-dts";
 import layoutData from "../../content/global/index.json";
 
 export const openSans = Open_Sans({
@@ -17,7 +18,7 @@ export const openSans = Open_Sans({
   subsets: ["latin"],
 });
 
-const structuredData = {
+const structuredData: WithContext<WebSite> = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: layoutData.header.site_name,
