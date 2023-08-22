@@ -1,17 +1,40 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useEditState } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { GetTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { Rating } from "../util/consulting/rating";
 import { Container } from "../util/container";
 
-export const TestimonialRow = ({ testimonialsResult, tagline }) => {
+export const TestimonialRow = ({
+  testimonialsResult,
+  tagline,
+  categories = [],
+}) => {
+  const [testimonialResult, setTestimonialResult] =
+    useState(testimonialsResult);
+
+  const { edit } = useEditState();
+
+  useEffect(() => {
+    async function getTestimonials() {
+      const testimonials = await GetTestimonialsByCategories(categories);
+
+      setTestimonialResult(testimonials);
+    }
+    if (edit) {
+      getTestimonials();
+    }
+  }, [edit, categories]);
+
   return (
     <Container size="custom">
       <h2 className="mb-2 text-center">
         What do people <span className="text-sswRed">say</span>?
       </h2>
       <p className="mb-8 text-center">{tagline}</p>
-      <div className="grid gap-6 md:grid-cols-3">
-        {testimonialsResult?.map((testimonial, i) => (
+      <div className="grid justify-center gap-6 md:grid-cols-autoFit3">
+        {testimonialResult?.map((testimonial, i) => (
           <TestimonialCard key={i} testimonial={testimonial} />
         ))}
       </div>
