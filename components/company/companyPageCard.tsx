@@ -10,7 +10,7 @@ export type CompanyIndexProps = {
 };
 
 const CompanyPageCard = ({ data, schema, index }) => {
-  const { title, pageURL, body } = data;
+  const { title, pageURL, body }: CompanyIndexProps = data;
 
   return (
     <Link href={pageURL ?? ""} className="unstyled no-underline" key={pageURL}>

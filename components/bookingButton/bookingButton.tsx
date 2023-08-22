@@ -19,11 +19,8 @@ export interface BookingButtonProps {
   buttonClass?: string;
 }
 
-export const BookingButton = ({
-  buttonText,
-  containerClass,
-  buttonClass,
-}: BookingButtonProps) => {
+export const BookingButton = ({ data }) => {
+  const { containerClass, buttonClass, buttonText }: BookingButtonProps = data;
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const showBookingForm = () => setIsVisible((curr) => !curr);
 
