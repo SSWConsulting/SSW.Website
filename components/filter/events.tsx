@@ -1,6 +1,5 @@
 import { Tab, Transition } from "@headlessui/react";
 import classNames from "classnames";
-import Head from "next/head";
 import Image from "next/image";
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
@@ -16,7 +15,15 @@ import { FilterGroupProps } from "./FilterGroup";
 const NUM_EVENTS = 15;
 const NUM_PAST_EVENTS = 100;
 
-const CITY_MAP = {
+type CityMapType = Record<
+  string,
+  {
+    name: string;
+    url: string;
+  }
+>;
+
+const CITY_MAP: CityMapType = {
   Sydney: {
     name: "SSW Chapel Sydney",
     url: "https://sswchapel.com.au/Sydney",
