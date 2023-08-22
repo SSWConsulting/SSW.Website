@@ -7,7 +7,7 @@ export interface FilterGroupProps {
   selected: number;
   setSelected: (index: number) => void;
   allText: string;
-  options: string[];
+  options: string[] | Readonly<string[]>;
 }
 
 export const FilterGroup = ({
