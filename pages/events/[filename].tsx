@@ -14,6 +14,7 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import VideoCards, { VideoCardProps } from "../../components/util/videoCards";
+import { GetTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { removeExtension } from "../../services/client/utils.service";
 
 export default function EventsPage(
@@ -24,6 +25,11 @@ export default function EventsPage(
     query: props.query,
     variables: props.variables,
   });
+
+  const categories =
+    data.events.testimonialCategories
+      ?.filter((category) => !!category?.testimonialCategory)
+      .map((category) => category.testimonialCategory.name) ?? [];
 
   const videoCardProps =
     data?.events.videos?.videoCards?.map<VideoCardProps>((m) => ({
@@ -81,6 +87,7 @@ export default function EventsPage(
                 >
                   <TestimonialRow
                     testimonialsResult={props.testimonialResult}
+                    categories={categories}
                     tagline={data.events.testimonials?.tagline}
                   />
                 </div>
@@ -121,13 +128,12 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.mdx`,
   });
 
-  const testimonials = await client.queries.testimonalsQuery({
-    categories: "Internship",
-  });
+  const categories =
+    tinaProps.data.events?.testimonialCategories?.map(
+      (category) => category.testimonialCategory.name
+    ) || [];
 
-  const testimonialsResult = testimonials.data.testimonialsConnection.edges.map(
-    (t) => t.node
-  );
+  const testimonialsResult = await GetTestimonialsByCategories(categories);
 
   if (tinaProps.data.events.seo && !tinaProps.data.events.seo.canonical) {
     tinaProps.data.events.seo.canonical = `${tinaProps.data.global.header.url}events/${params.filename}`;

@@ -14,6 +14,7 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import VideoCards, { VideoCardProps } from "../../components/util/videoCards";
+import { GetTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { removeExtension } from "../../services/client/utils.service";
 
 export default function TrainingPage(
@@ -82,6 +83,7 @@ export default function TrainingPage(
                 >
                   <TestimonialRow
                     testimonialsResult={props.testimonialResult}
+                    categories={["Internship"]}
                     tagline={data.training.testimonials?.tagline}
                   />
                 </div>
@@ -122,13 +124,7 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.mdx`,
   });
 
-  const testimonials = await client.queries.testimonalsQuery({
-    categories: "Internship",
-  });
-
-  const testimonialsResult = testimonials.data.testimonialsConnection.edges.map(
-    (t) => t.node
-  );
+  const testimonialsResult = await GetTestimonialsByCategories(["Internship"]);
 
   if (tinaProps.data.training.seo && !tinaProps.data.training.seo.canonical) {
     tinaProps.data.training.seo.canonical = `${tinaProps.data.global.header.url}training/${params.filename}`;
