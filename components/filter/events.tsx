@@ -219,7 +219,6 @@ const Event = ({ visible, event }: EventProps) => {
     image: event.Thumbnail.Url,
     startDate: new Date(event.StartDateTime).toISOString(),
     endDate: new Date(event.EndDateTime).toISOString(),
-    description: event.EventDescription,
     location: {
       "@type": "Place",
       name: CITY_MAP[event.City].name,
@@ -300,12 +299,10 @@ const Event = ({ visible, event }: EventProps) => {
           <p className="prose pt-3">Find out more...</p>
         </a>
       </Transition>
-      <Head>
-        <script
-          type="ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
-        />
-      </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
+      />
     </>
   );
 };
