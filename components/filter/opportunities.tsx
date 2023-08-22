@@ -15,6 +15,9 @@ import {
 } from "../util/constants/opportunity";
 import { FilterBlock } from "./FilterBlock";
 
+const AVAILABLE = jobStatus[0];
+const FILLED = jobStatus[1];
+
 interface OpportunitiesProps {
   opportunities: OpportunityType[];
 }
@@ -74,11 +77,11 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
       ]}
     >
       {selectedStatus !== 1 &&
-        filteredOpportunities.some((o) => o.status === "Available") && (
+        filteredOpportunities.some((o) => o.status === AVAILABLE) && (
           <>
             <h3>Available Positions</h3>
             {opportunities
-              .filter((o) => o.status === "Available")
+              .filter((o) => o.status === AVAILABLE)
               .map((opportunity, index) => (
                 <OpportunityDropdown
                   visible={
@@ -94,11 +97,11 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
         )}
 
       {selectedStatus !== 0 &&
-        filteredOpportunities.some((o) => o.status === "Filled") && (
+        filteredOpportunities.some((o) => o.status === FILLED) && (
           <>
             <h3>Filled Positions</h3>
             {opportunities
-              .filter((o) => o.status === "Filled")
+              .filter((o) => o.status === FILLED)
               .map((opportunity, index) => (
                 <OpportunityDropdown
                   visible={
@@ -159,7 +162,7 @@ const OpportunityDropdown = ({
             <span className="md:float-right">
               <FaMapMarkerAlt className="inline" />{" "}
               {opportunity.locations?.join(", ")}
-              {opportunity.status === "Filled" && <strong> *FILLED*</strong>}
+              {opportunity.status === FILLED && <strong> *FILLED*</strong>}
             </span>
           </Disclosure.Button>
 

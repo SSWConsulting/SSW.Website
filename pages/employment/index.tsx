@@ -13,15 +13,19 @@ import {
 } from "../../components/filter/opportunities";
 import { Layout } from "../../components/layout";
 import { Marketing } from "../../components/marketing/Marketing";
-import type {
-  EmploymentType,
-  Locations,
+import {
+  jobStatus,
+  type EmploymentType,
+  type Locations,
 } from "../../components/util/constants/opportunity";
 import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { removeExtension } from "../../services/client/utils.service";
+
+const AVAILABLE = jobStatus[0];
+const FILLED = jobStatus[1];
 
 export default function EmploymentPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -37,8 +41,8 @@ export default function EmploymentPage(
       const status = data.employment.opportunities.some(
         (chosen) => chosen?.opportunityRef?.title === o?.node?.title
       )
-        ? "Available"
-        : "Filled";
+        ? AVAILABLE
+        : FILLED;
 
       return {
         title: o.node.title,
