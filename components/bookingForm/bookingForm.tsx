@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Form, Formik } from "formik";
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { FaRegCheckCircle, FaSpinner } from "react-icons/fa";
 import FormGroupInput from "../form/formGroupInput";
@@ -20,13 +20,10 @@ import { bookingFormSubmissionData } from "./bookingFormSubmissionData";
 import { ValidationSchema } from "./validationSchema";
 
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
-import {
-  RecaptchaContext,
-  RecaptchaContextType,
-} from "../../context/RecaptchaContext";
+import { useRecaptcha } from "../../context/RecaptchaContext";
 
 export const BookingForm = (props) => {
-  const { recaptchaKey } = useContext<RecaptchaContextType>(RecaptchaContext);
+  const { recaptchaKey } = useRecaptcha();
 
   //Show FormStates and Active label
   const [country, setCountry] = useState("");
@@ -269,14 +266,12 @@ export const BookingForm = (props) => {
 
                 <div className="mb-4 w-full overflow-x-auto">
                   <div className="h-22 w-88">
-                    {recaptchaKey && (
-                      <ReCAPTCHA
-                        sitekey={recaptchaKey}
-                        onChange={(value) => {
-                          setContactReCaptcha(value);
-                        }}
-                      />
-                    )}
+                    <ReCAPTCHA
+                      sitekey={recaptchaKey}
+                      onChange={(value) => {
+                        setContactReCaptcha(value);
+                      }}
+                    />
                   </div>
                   {invalidRecaptcha && (
                     <span className="text-sm text-red-600">

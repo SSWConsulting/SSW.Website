@@ -1,7 +1,15 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
 export interface RecaptchaContextType {
-  recaptchaKey?: string;
+  recaptchaKey: string;
 }
 
 export const RecaptchaContext = createContext<RecaptchaContextType>(null);
+
+export const useRecaptcha = () => {
+  const value = useContext(RecaptchaContext);
+  if (!value || !value.recaptchaKey) {
+    throw new Error("useRecaptcha must be used within a RecaptchaProvider");
+  }
+  return value;
+};
