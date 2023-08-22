@@ -7,6 +7,7 @@ import { EventsFilter } from "../../components/filter/events";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
+import { getEvents } from "../../services/server/events";
 
 export default function EventsIndexPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -22,7 +23,11 @@ export default function EventsIndexPage(
       <SEO seo={data.eventsIndex.seo} />
       <Layout>
         <Container>
-          <EventsFilter sidebarBody={data.eventsIndex.sidebarBody} />
+          <EventsFilter
+            events={props.events}
+            pastEvents={props.pastEvents}
+            sidebarBody={data.eventsIndex.sidebarBody}
+          />
         </Container>
         <Blocks
           prefix="EventsIndexAfterEvents"
@@ -38,11 +43,30 @@ export const getStaticProps = async () => {
     relativePath: "index.mdx",
   });
 
+  const startOfDay = new Date();
+  startOfDay.setHours(0, 0, 0, 0);
+
+  const odataFilter = `$filter=fields/Enabled ne false \
+      and fields/EndDateTime gt '${startOfDay.toISOString()}'\
+      &$orderby=fields/StartDateTime asc\
+      &$top=${15}`;
+
+  const pastOdataFilter = `$filter=fields/Enabled ne false \
+      and fields/StartDateTime lt '${startOfDay.toISOString()}'\
+      &$orderby=fields/StartDateTime desc\
+      &$top=${100}`;
+
+  const events = await getEvents(odataFilter);
+  const pastEvents = await getEvents(pastOdataFilter);
+
   return {
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
+      events,
+      pastEvents,
     },
+    revalidate: 60 * 60,
   };
 };

@@ -2,7 +2,7 @@ import { Tab, Transition } from "@headlessui/react";
 import classNames from "classnames";
 import Head from "next/head";
 import Image from "next/image";
-import { Fragment, useEffect, useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
@@ -12,9 +12,6 @@ import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { EventsRelativeBox } from "../events/components";
 import { FilterBlock } from "./FilterBlock";
 import { FilterGroupProps } from "./FilterGroup";
-
-const NUM_EVENTS = 15;
-const NUM_PAST_EVENTS = 100;
 
 type CityMapType = Record<
   string,
@@ -45,20 +42,21 @@ const CITY_MAP: CityMapType = {
 
 interface EventsFilterProps {
   sidebarBody: TinaMarkdownContent;
+  events: EventInfo[];
+  pastEvents: EventInfo[];
 }
 
-export const EventsFilter = ({ sidebarBody }: EventsFilterProps) => {
+export const EventsFilter = ({
+  sidebarBody,
+  events,
+  pastEvents,
+}: EventsFilterProps) => {
   const [pastSelected, setPastSelected] = useState<boolean>(false);
 
-  const { events, filters, filteredEvents } = useEvents(
-    `/api/get-upcoming-events?top=${NUM_EVENTS}`
-  );
+  const { filters, filteredEvents } = useEvents(events);
 
-  const {
-    events: pastEvents,
-    filters: pastFilters,
-    filteredEvents: pastFilteredEvents,
-  } = useEvents(`/api/get-past-events?top=${NUM_PAST_EVENTS}`);
+  const { filters: pastFilters, filteredEvents: pastFilteredEvents } =
+    useEvents(pastEvents);
 
   return (
     <FilterBlock
@@ -118,9 +116,7 @@ export const EventsFilter = ({ sidebarBody }: EventsFilterProps) => {
   );
 };
 
-const useEvents = (apiUrl: string) => {
-  const [events, setEvents] = useState<EventInfo[]>(undefined);
-
+const useEvents = (events: EventInfo[]) => {
   const [filterControls, setFilterControls] = useState<number[]>([-1, -1]);
 
   const options = useMemo(() => {
@@ -171,16 +167,7 @@ const useEvents = (apiUrl: string) => {
     );
   }, [events, filterControls]);
 
-  useEffect(() => {
-    fetch(apiUrl)
-      .then((res) => res.json())
-      .then((json) => {
-        setEvents(json);
-      })
-      .catch((err) => console.error(err));
-  }, []);
-
-  return { events, filters, filteredEvents };
+  return { filters, filteredEvents };
 };
 
 interface EventsListProps {
@@ -229,8 +216,8 @@ const Event = ({ visible, event }: EventProps) => {
     endDate: new Date(event.EndDateTime).toISOString(),
     location: {
       "@type": "Place",
-      name: CITY_MAP[event.City].name,
-      url: CITY_MAP[event.City].url,
+      name: CITY_MAP[event.City]?.name,
+      url: CITY_MAP[event.City]?.url,
     },
   };
 
@@ -286,11 +273,11 @@ const Event = ({ visible, event }: EventProps) => {
                   {event.Presenter}
                 </>
               )}
-              {location && CITY_MAP[event.City] && (
+              {event.City && CITY_MAP[event.City] && (
                 <span className="ml-3">
                   <strong>Location: </strong>
-                  <a href={CITY_MAP[event.City].url}>
-                    {CITY_MAP[event.City].name}
+                  <a href={CITY_MAP[event.City]?.url}>
+                    {CITY_MAP[event.City]?.name}
                   </a>
                 </span>
               )}
