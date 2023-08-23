@@ -1,11 +1,10 @@
-import cs from "classnames";
 import { sampleSize } from "lodash";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { Badge } from "./badge";
 
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { BadgeProps } from "./badge";
 
 export interface Layout {
@@ -48,18 +47,9 @@ export const LatestTech = ({ data }) => {
     <div className="relative h-70 overflow-hidden bg-gray-50 p-6">
       <span
         className="relative z-10 font-helvetica text-3xl font-medium text-sswRed"
-        data-tina-field={tinaField(data, "link")}
+        data-tina-field={tinaField(data, "content")}
       >
-        We talk about{" "}
-        <Link
-          className={cs("text-sswRed decoration-sswRed", {
-            "unstyled cursor-default": !data?.link,
-          })}
-          href={data?.link ?? ""}
-          target="_blank"
-        >
-          latest tech
-        </Link>
+        <TinaMarkdown content={data?.content} />
       </span>
       <FloatingBadges
         badges={data?.badges?.badgesList ?? []}
@@ -74,9 +64,9 @@ export const latestTechSchema: Template = {
   label: "Latest Tech",
   fields: [
     {
-      type: "string",
-      label: "Latest Tech Link",
-      name: "link",
+      type: "rich-text",
+      label: "Latest Tech Content",
+      name: "content",
     },
     {
       type: "reference",
