@@ -17,6 +17,7 @@ export const TweetEmbed = (props: TweetEmbedProps) => {
     fetch(`/api/get-tweet-embed?url=${encodeURIComponent(props.url)}`)
       .then((res) => res.json())
       .then((json) => setTweet(json))
+      // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
   }, []);
 
