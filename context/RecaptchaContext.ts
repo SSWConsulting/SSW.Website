@@ -6,10 +6,19 @@ interface RecaptchaContextType {
 
 export const RecaptchaContext = createContext<RecaptchaContextType>(null);
 
-export const useRecaptcha = () => {
+interface useRecaptchaType {
+  recaptchaKey: string;
+  error?: string;
+}
+
+export const useRecaptcha = (): useRecaptchaType => {
   const value = useContext(RecaptchaContext);
+  let error;
   if (!value || !value.recaptchaKey) {
-    throw new Error("useRecaptcha must be used within a RecaptchaProvider");
+    const errorText = "useRecaptcha must be used within a RecaptchaProvider";
+
+    if (process.env.NODE_ENV !== "production") throw new Error(errorText);
+    error = errorText;
   }
-  return value;
+  return { recaptchaKey: value?.recaptchaKey || "", error };
 };

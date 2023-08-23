@@ -21,6 +21,7 @@ import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
+import { RecaptchaContext } from "../../context/RecaptchaContext";
 import { GetTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { removeExtension } from "../../services/client/utils.service";
 
@@ -58,7 +59,9 @@ export default function ConsultingPage(
       .map((category) => category.testimonialCategory.name) ?? [];
 
   return (
-    <>
+    <RecaptchaContext.Provider
+      value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
+    >
       <SEO seo={props.seo} />
       <Layout>
         <Section className="mx-auto w-full max-w-9xl px-8 py-5">
@@ -164,7 +167,7 @@ export default function ConsultingPage(
           <BuiltOnAzure data={{ backgroundColor: "default" }} />
         </Section>
       </Layout>
-    </>
+    </RecaptchaContext.Provider>
   );
 }
 
