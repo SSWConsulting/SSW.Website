@@ -2,7 +2,7 @@ import { Tab, Transition } from "@headlessui/react";
 import classNames from "classnames";
 import Head from "next/head";
 import Image from "next/image";
-import { Fragment, useMemo, useState } from "react";
+import { Fragment, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
@@ -10,11 +10,11 @@ import {
   formatEventLongDate,
   formatRelativeEventDate,
 } from "../../helpers/dates";
+import { useEvents } from "../../hooks/useEvents";
 import { EventInfo } from "../../services/server/events";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { EventsRelativeBox } from "../events/components";
 import { FilterBlock } from "./FilterBlock";
-import { FilterGroupProps } from "./FilterGroup";
 
 type CityMapType = Record<
   string,
@@ -117,60 +117,6 @@ export const EventsFilter = ({
       </Tab.Group>
     </FilterBlock>
   );
-};
-
-const useEvents = (events: EventInfo[]) => {
-  const [filterControls, setFilterControls] = useState<number[]>([-1, -1]);
-
-  const options = useMemo(() => {
-    const categories =
-      events
-        ?.map((event) => event.Category_f5a9cf4c_x002d_8228_x00)
-        ?.filter((value, index, self) => self.indexOf(value) === index)
-        ?.sort() || [];
-
-    const formats =
-      events
-        ?.map((event) => event.CalendarType)
-        ?.filter((value, index, self) => self.indexOf(value) === index)
-        ?.sort() || [];
-
-    return { categories, formats };
-  }, [events]);
-
-  const filters = useMemo<FilterGroupProps[]>(() => {
-    if (!events) return [];
-
-    const groups: FilterGroupProps[] = [
-      {
-        selected: filterControls[0],
-        setSelected: (value) => setFilterControls((curr) => [value, curr[1]]),
-        options: options.categories,
-        allText: "All Technology",
-      },
-      {
-        selected: filterControls[1],
-        setSelected: (value) => setFilterControls((curr) => [curr[0], value]),
-        options: options.formats,
-        allText: "All Formats",
-      },
-    ];
-
-    return groups;
-  }, [filterControls, options]);
-
-  const filteredEvents = useMemo(() => {
-    return events?.filter(
-      (event) =>
-        (filterControls[0] === -1 ||
-          event.Category_f5a9cf4c_x002d_8228_x00 ===
-            options.categories[filterControls[0]]) &&
-        (filterControls[1] === -1 ||
-          event.CalendarType === options.formats[filterControls[1]])
-    );
-  }, [events, filterControls]);
-
-  return { filters, filteredEvents };
 };
 
 interface EventsListProps {

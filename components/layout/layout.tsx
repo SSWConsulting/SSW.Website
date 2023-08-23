@@ -2,7 +2,7 @@ import classNames from "classnames";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { MenuBar } from "ssw.megamenu";
-import { useLiveStreamProps } from "../liveStream/useLiveStreamProps";
+import { useLiveStreamProps } from "../../hooks/useLiveStreamProps";
 import { Footer } from "./footer";
 import { Header } from "./header";
 import { Theme } from "./theme";
