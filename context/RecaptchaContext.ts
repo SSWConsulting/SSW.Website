@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 
-export interface RecaptchaContextType {
+interface RecaptchaContextType {
   recaptchaKey: string;
 }
 
