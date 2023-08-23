@@ -4,7 +4,9 @@ import { useTina } from "tinacms/dist/react";
 import client from "../../.tina/__generated__/client";
 
 import { AxiosError } from "axios";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Blocks } from "../../components/blocks-renderer";
+import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { EventsFilter } from "../../components/filter/events";
 import { Layout } from "../../components/layout";
 import { isrTime } from "../../components/util/constants/config";
@@ -25,7 +27,14 @@ export default function EventsIndexPage(
     <>
       <SEO seo={data.eventsIndex.seo} />
       <Layout>
-        <Container>
+        <Container size="small">
+          <div>
+            <h1 className="mt-0 pt-0">SSW Events</h1>
+            <TinaMarkdown
+              content={data.eventsIndex._body}
+              components={componentRenderer}
+            />
+          </div>
           <EventsFilter
             events={props.events}
             pastEvents={props.pastEvents}
@@ -86,6 +95,10 @@ export const getStaticProps = async () => {
 
     events = [];
     pastEvents = [];
+  }
+
+  if (!tinaProps.data.eventsIndex.seo.canonical) {
+    tinaProps.data.eventsIndex.seo.canonical = `${tinaProps.data.global.header.url}events`;
   }
 
   return {

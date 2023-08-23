@@ -13,45 +13,9 @@ import { useEvents } from "../../hooks/useEvents";
 import { EventInfo } from "../../services/server/events";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { EventsRelativeBox } from "../events/components";
+import { CITY_MAP } from "../util/constants/country";
 import { sswOrganisation } from "../util/constants/json-ld";
 import { FilterBlock } from "./FilterBlock";
-
-type CityMapType = Record<
-  string,
-  {
-    name: string;
-    url: string;
-    state: string;
-    country: string;
-  }
->;
-
-const CITY_MAP: CityMapType = {
-  Sydney: {
-    name: "SSW Chapel Sydney",
-    url: "https://sswchapel.com.au/Sydney",
-    state: "NSW",
-    country: "Australia",
-  },
-  Brisbane: {
-    name: "SSW Chapel Brisbane",
-    url: "https://sswchapel.com.au/Brisbane",
-    state: "QLD",
-    country: "Australia",
-  },
-  Melbourne: {
-    name: "SSW Chapel Melbourne",
-    url: "https://sswchapel.com.au/Melbourne",
-    state: "VIC",
-    country: "Australia",
-  },
-  Newcastle: {
-    name: "SSW Chapel Newcastle",
-    url: "https://sswchapel.com.au/Newcastle",
-    state: "NSW",
-    country: "Australia",
-  },
-};
 
 interface EventsFilterProps {
   sidebarBody: TinaMarkdownContent;
