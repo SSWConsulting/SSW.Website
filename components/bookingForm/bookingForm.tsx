@@ -24,7 +24,6 @@ import {
   RecaptchaContext,
   RecaptchaContextType,
 } from "../../context/RecaptchaContext";
-import logger from "../../services/global/logger";
 
 export const BookingForm = (props) => {
   const { recaptchaKey } = useContext<RecaptchaContextType>(RecaptchaContext);
@@ -118,7 +117,7 @@ export const BookingForm = (props) => {
       .catch((err) => {
         err.data = data;
         appInsights?.trackException({ exception: err }, method);
-        logger.error(err);
+        console.error(err);
         setLoading(false);
         return alert("Failed to create lead in CRM");
       });

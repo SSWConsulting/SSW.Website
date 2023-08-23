@@ -2,7 +2,6 @@ import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 
-import logger from "../../services/global/logger";
 import { cache } from "../../services/server/cacheService";
 import { getEvents } from "../../services/server/events";
 
@@ -49,7 +48,7 @@ export default async function handler(
       res.setHeader("Cache-Control", `s-maxage=${CACHE_SECS}`);
       res.status(200).json(cachedEvents);
     } catch (err) {
-      logger.error(err);
+      console.error(err);
       const properties = {
         Request: "GET /api/get-past-events",
         Status: 500,
@@ -57,7 +56,7 @@ export default async function handler(
       };
 
       if (err instanceof AxiosError) {
-        logger.error(err.response.data);
+        console.error(err.response.data);
         properties.Status = err.response.status;
         properties.FailedSharePointRequest = true;
       }

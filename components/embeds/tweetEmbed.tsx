@@ -1,7 +1,6 @@
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
-import logger from "../../services/global/logger";
 
 export type TweetEmbedProps = {
   url: string;
@@ -18,7 +17,7 @@ export const TweetEmbed = (props: TweetEmbedProps) => {
     fetch(`/api/get-tweet-embed?url=${encodeURIComponent(props.url)}`)
       .then((res) => res.json())
       .then((json) => setTweet(json))
-      .catch((err) => logger.error(err));
+      .catch((err) => console.error(err));
   }, []);
 
   if (!tweet) return <></>;
