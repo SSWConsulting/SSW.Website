@@ -2,6 +2,7 @@ import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 
+import logger from "../../services/global/logger";
 import { cache } from "../../services/server/cacheService";
 import { getEvents } from "../../services/server/events";
 
@@ -62,7 +63,7 @@ export default async function handler(
       };
 
       if (err instanceof AxiosError) {
-        console.error(err.response.data);
+        logger.error(err.response.data);
         properties.Status = err.response.status;
         properties.FailedSharePointRequest = true;
       }

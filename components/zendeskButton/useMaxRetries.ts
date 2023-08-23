@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import logger from "../../services/global/logger";
 
 export function useMaxRetries(
   fn: () => void | Promise<void>,
@@ -38,7 +39,7 @@ export function useMaxRetries(
       fnRef.current();
     } catch (error) {
       if (countRef.current < min) {
-        console.error(`RETRYING ${error}`);
+        logger.error(`RETRYING ${error}`);
       } else {
         clearTask();
       }

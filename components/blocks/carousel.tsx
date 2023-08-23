@@ -7,6 +7,7 @@ import type { Template } from "tinacms";
 
 import { Carousel as CarouselImplementation } from "react-responsive-carousel";
 
+import logger from "../../services/global/logger";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
@@ -24,7 +25,7 @@ export const Carousel = ({ data }) => {
       window.open(link, "_blank");
       return;
     } else {
-      console.log(`unknown openIn value '${openIn}'`);
+      logger.error(`unknown openIn value '${openIn}'`);
     }
   };
 

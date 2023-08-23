@@ -3,6 +3,7 @@ import { AxiosError } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 import { isEmail } from "../../helpers/validator";
 
+import logger from "../../services/global/logger";
 import { cache } from "../../services/server/cacheService";
 import { getSpeakersInfo } from "../../services/server/events";
 
@@ -59,7 +60,7 @@ export default async function handler(
       };
 
       if (err instanceof AxiosError) {
-        console.error(err.response.data);
+        logger.error(err.response.data);
         properties.Status = err.response.status;
         properties.FailedSharePointRequest = true;
       }

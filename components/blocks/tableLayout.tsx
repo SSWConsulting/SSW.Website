@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import * as React from "react";
 import { TextArea, wrapFieldsWithMeta, type Template } from "tinacms";
+import logger from "../../services/global/logger";
 
 const tableStyles = {
   none: "",
@@ -165,7 +166,7 @@ export const tableBlockSchema: Template = {
               const tableObj = getTableFieldFromForm(field, allValues, 3);
 
               if (!tableObj) {
-                console.error("Invalid path for table cell value");
+                logger.error("Invalid path for table cell value");
                 return undefined;
               }
 
@@ -209,7 +210,7 @@ const getTableFieldFromForm = (field, allValues, index: number) => {
     if (currentObj && currentObj[currPath]) {
       currentObj = currentObj[currPath];
     } else {
-      console.error("Invalid path for table cell value");
+      logger.error("Invalid path for table cell value");
       return undefined;
     }
   }

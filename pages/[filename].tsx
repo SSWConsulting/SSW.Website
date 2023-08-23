@@ -11,10 +11,12 @@ import { Container } from "../components/util/container";
 import { Section } from "../components/util/section";
 import { SEO } from "../components/util/seo";
 import { removeExtension } from "../services/client/utils.service";
+// import logger from "../services/global/logger";
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
+  // logger.debug("debug");
   const { data } = useTina({
     data: props.data,
     query: props.query,

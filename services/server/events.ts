@@ -1,5 +1,6 @@
 import * as msal from "@azure/msal-node";
 import axios from "axios";
+import logger from "../global/logger";
 
 const SITE_ID = process.env.SHAREPOINT_SITE_ID;
 const EVENTS_LIST_ID = process.env.SHAREPOINT_EVENTS_LIST_ID;
@@ -31,7 +32,7 @@ export const getEvents = async (odataFilter: string): Promise<EventInfo[]> => {
     process.env.NODE_ENV === "development" &&
     !process.env.MICROSOFT_OAUTH_TENANT_ID
   ) {
-    console.warn(
+    logger.warn(
       "⚠️ You are missing the SharePoint environment variables. Please see the .env.example file for the required variables."
     );
     return [];
@@ -62,7 +63,7 @@ export const getSpeakersInfo = async (ids?: number[], emails?: string[]) => {
     process.env.NODE_ENV === "development" &&
     !process.env.MICROSOFT_OAUTH_TENANT_ID
   ) {
-    console.warn(
+    logger.warn(
       "⚠️ You are missing the SharePoint environment variables required for speakers. Please see the .env.example file for the required variables."
     );
     return [];
