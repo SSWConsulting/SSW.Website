@@ -7,6 +7,7 @@ import { AxiosError } from "axios";
 import { Blocks } from "../../components/blocks-renderer";
 import { EventsFilter } from "../../components/filter/events";
 import { Layout } from "../../components/layout";
+import { isrTime } from "../../components/util/constants/config";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
 import { getEvents } from "../../services/server/events";
@@ -95,6 +96,6 @@ export const getStaticProps = async () => {
       events,
       pastEvents,
     },
-    revalidate: 60 * 60,
+    revalidate: isrTime,
   };
 };
