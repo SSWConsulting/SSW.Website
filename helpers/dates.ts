@@ -21,6 +21,25 @@ export const formatEventDate = (start: Date, end: Date) => {
   return isOneDayEvent ? startDate : `${startDate} - ${endDate}`;
 };
 
+export const formatEventLongDate = (start: Date, end: Date) => {
+  if (!start || !end) return "";
+
+  const dateformat = "dddd, MMMM D, YYYY h:mm A";
+
+  const isOneDayEvent = dayjs(start)
+    .startOf("day")
+    .isSame(dayjs(end).startOf("day"));
+
+  const startDate = dayjs(start).format(dateformat);
+  const endDate = dayjs(end).format(dateformat);
+
+  if (isOneDayEvent) {
+    return `${startDate} - ${dayjs(end).format("h:mm A")}`;
+  } else {
+    return `${startDate} - ${endDate}`;
+  }
+};
+
 export const formatRelativeEventDate = (startDate: Date, endDate: Date) => {
   const now = dayjs();
   const start = dayjs(startDate);
