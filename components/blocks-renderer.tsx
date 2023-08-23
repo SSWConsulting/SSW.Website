@@ -7,6 +7,7 @@ import { ClientLogos } from "./blocks/clientLogos";
 import { Content } from "./blocks/content";
 import { ContentCard } from "./blocks/contentCard";
 import { CustomImage } from "./blocks/customImage";
+import { PaymentBlock } from "./blocks/payment-block";
 import { ServiceCards } from "./blocks/serviceCards";
 import { TableLayout } from "./blocks/tableLayout";
 import { UpcomingEvents } from "./blocks/upcomingEvents";
@@ -26,6 +27,12 @@ const Carousel = dynamic(
   {
     ssr: false,
   }
+);
+
+const BookingButton = dynamic(
+  () =>
+    import("./bookingButton/bookingButton").then((mod) => mod.BookingButton),
+  { ssr: false }
 );
 
 const componentMap = {
@@ -50,6 +57,8 @@ const componentMap = {
   Organizer,
   JoinGithub,
   JoinAsPresenter,
+  BookingButton,
+  PaymentBlock,
 };
 
 export const Blocks = ({ prefix, blocks }) => {

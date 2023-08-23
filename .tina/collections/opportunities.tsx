@@ -27,12 +27,6 @@ export const opportunitiesSchema: Collection = {
     },
     {
       type: "string",
-      label: "Status",
-      name: "status",
-      options: jobStatus.map((status) => status),
-    },
-    {
-      type: "string",
       list: true,
       label: "Locations",
       name: "locations",

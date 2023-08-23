@@ -20,17 +20,35 @@ export const companySchema: Collection = {
     // @ts-ignore
     seoSchema,
     {
+      type: "string",
+      name: "title",
+      label: "Title",
+    },
+    {
       type: "rich-text",
-      label: "Body",
+      name: "subTitle",
+      label: "Sub Title",
+    },
+    {
+      type: "object",
+      list: true,
       name: "_body",
+      label: "Blocks",
       templates: [...Schemas.pageBlocks],
-      isBody: true,
+      ui: {
+        visualSelector: true,
+      },
     },
     {
       type: "object",
       label: "History Cards",
       description: "Cards for the timeline on the History page.",
       name: "historyCards",
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.year };
+        },
+      },
       list: true,
       fields: [
         {

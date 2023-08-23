@@ -4,7 +4,10 @@ import Image from "next/image";
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
-import { formatEventDate, formatRelativeEventDate } from "../../helpers/dates";
+import {
+  formatEventLongDate,
+  formatRelativeEventDate,
+} from "../../helpers/dates";
 import { EventInfo } from "../../services/server/events";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { EventsRelativeBox } from "../events/components";
@@ -243,7 +246,7 @@ const Event = ({ visible, event }: EventProps) => {
                 event.StartDateTime,
                 event.EndDateTime
               )}
-              formattedDate={formatEventDate(
+              formattedDate={formatEventLongDate(
                 event.StartDateTime,
                 event.EndDateTime
               )}

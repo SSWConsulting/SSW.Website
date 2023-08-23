@@ -71,7 +71,7 @@ export default function ConsultingPage(
         </Section>
         <Section className="w-full" color="black">
           <Booking {...data.consulting.booking}>
-            <BookingButton {...bookingButtonProps} />
+            <BookingButton data={bookingButtonProps} />
           </Booking>
         </Section>
         <Section
@@ -112,7 +112,9 @@ export default function ConsultingPage(
               categories={categories}
               tagline={data.consulting.testimonials?.tagline}
             />
-            <BookingButton {...bookingButtonProps} containerClass="mt-20" />
+            <BookingButton
+              data={{ ...bookingButtonProps, containerClass: "mt-20" }}
+            />
           </Container>
         </Section>
         <Marketing content={props.marketingData} />
@@ -155,7 +157,7 @@ export default function ConsultingPage(
               Jump on a call with one of our Account Managers to discuss how we
               can help you.
             </p>
-            <BookingButton {...bookingButtonProps} />
+            <BookingButton data={bookingButtonProps} />
           </Container>
         </Section>
         <Section>

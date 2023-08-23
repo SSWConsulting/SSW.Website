@@ -13,11 +13,19 @@ import {
 } from "../../components/filter/opportunities";
 import { Layout } from "../../components/layout";
 import { Marketing } from "../../components/marketing/Marketing";
-import { jobStatus } from "../../components/util/constants/opportunity";
+import {
+  jobStatus,
+  type EmploymentType,
+  type Locations,
+} from "../../components/util/constants/opportunity";
 import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
+import { removeExtension } from "../../services/client/utils.service";
+
+const AVAILABLE = jobStatus[0];
+const FILLED = jobStatus[1];
 
 export default function EmploymentPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -28,38 +36,23 @@ export default function EmploymentPage(
     variables: props.variables,
   });
 
-  const removeExtension = (file: string) => {
-    return file.split(".")[0];
-  };
+  const opportunities: OpportunityType[] =
+    data.opportunitiesConnection?.edges.map((o) => {
+      const status = data.employment.opportunities.some(
+        (chosen) => chosen?.opportunityRef?.title === o?.node?.title
+      )
+        ? AVAILABLE
+        : FILLED;
 
-  const chosenOpportunities: OpportunityType[] =
-    data.employment.opportunities.map((o) => {
       return {
-        title: o?.opportunityRef?.title,
-        employmentType: o?.opportunityRef?.employmentType,
-        status: o?.opportunityRef?.status,
-        locations: o?.opportunityRef?.locations,
-        hideApply: o?.opportunityRef?.hideApply,
-        description: o?.opportunityRef?._body,
+        title: o.node.title,
+        employmentType: o.node.employmentType as EmploymentType,
+        status,
+        locations: o.node.locations as Locations,
+        hideApply: o.node.hideApply,
+        description: o.node._body,
       };
     });
-
-  const filledOpportunities: OpportunityType[] =
-    data.opportunitiesConnection?.edges
-      .filter((o) => o.node.status === jobStatus[1])
-      .map((o) => {
-        return {
-          title: o.node.title,
-          employmentType: o.node.employmentType,
-          status: o.node.status,
-          locations: o.node.locations,
-          hideApply: o.node.hideApply,
-          description: o.node._body,
-        };
-      });
-
-  const opportunities: OpportunityType[] =
-    chosenOpportunities.concat(filledOpportunities);
 
   return (
     <>
