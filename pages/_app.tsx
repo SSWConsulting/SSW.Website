@@ -61,7 +61,7 @@ const App = ({ Component, pageProps }) => {
       <AzureAppInsights>
         <Component {...pageProps} />
       </AzureAppInsights>
-      <ZendeskButton zendeskKey={zendesk} />
+      <ZendeskButton />
     </>
   );
 };
