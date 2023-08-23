@@ -13,7 +13,7 @@ import "../styles.css";
 
 import ZendeskButton from "../components/zendeskButton/zendeskButton";
 import AzureAppInsights from "../context/app-insight-client";
-const zendesk = process.env.NEXT_PUBLIC_ZENDESK_CHAT_KEY;
+// const zendesk = process.env.NEXT_PUBLIC_ZENDESK_CHAT_KEY;
 // Hack as per https://stackoverflow.com/a/66575373 to stop font awesome icons breaking
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
