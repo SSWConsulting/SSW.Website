@@ -9,10 +9,11 @@ import { Blocks } from "../../components/blocks-renderer";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { EventsFilter } from "../../components/filter/events";
 import { Layout } from "../../components/layout";
-import { isrTime } from "../../components/util/constants/config";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
 import { getEvents } from "../../services/server/events";
+
+const ISR_TIME = 60 * 60; // 1 hour
 
 export default function EventsIndexPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -109,6 +110,6 @@ export const getStaticProps = async () => {
       events,
       pastEvents,
     },
-    revalidate: isrTime,
+    revalidate: ISR_TIME,
   };
 };
