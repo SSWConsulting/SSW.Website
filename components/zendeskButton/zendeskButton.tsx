@@ -1,17 +1,15 @@
 import Script from "next/script";
 
-const ZendeskButton = () => {
+const ChatBaseBot = () => {
   return (
     <>
       <Script
         async
         src="https://www.chatbase.co/embed.min.js"
-        id="8ZT43FdIerlr8zuOP7D5s"
+        id={process.env.CHATBASE_BOT_ID}
       />
     </>
   );
-
-  return null;
 };
 
-export default ZendeskButton;
+export default ChatBaseBot;
