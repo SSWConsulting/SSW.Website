@@ -2,11 +2,18 @@ import classNames from "classnames";
 import type { Template } from "tinacms";
 import Button from "./button";
 
+const sizes = {
+  small: "px-4 py-2 text-sm",
+  medium: "px-10 py-3 text-base",
+  large: "px-8 py-4 text-lg",
+} as const;
+
 interface UtilityButtonProps {
   buttonText?: string;
   onClick?: () => void;
   className?: string;
   link?: string;
+  size?: keyof typeof sizes;
 }
 
 export const UtilityButton = ({
@@ -14,12 +21,14 @@ export const UtilityButton = ({
   onClick,
   className,
   link,
+  size,
 }: UtilityButtonProps) => {
   const baseComponent = (
     <Button
       ripple
       className={classNames(
-        "mx-auto mt-8 h-auto max-w-full px-10 py-3",
+        "mx-auto mt-8 h-auto max-w-full",
+        sizes[size ?? "medium"],
         className
       )}
       onClick={onClick}

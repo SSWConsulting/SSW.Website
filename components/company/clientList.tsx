@@ -1,5 +1,6 @@
 import type { Template } from "tinacms";
-import { TinaMarkdownContent } from "tinacms/dist/rich-text";
+import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
+import * as Schemas from "../../components/blocks";
 import { ClientsFilter } from "../filter/clients";
 import { Container } from "../util/container";
 
@@ -71,7 +72,7 @@ export const clientListSchema: Template = {
           label: "Name",
         },
         {
-          type: "string",
+          type: "image",
           name: "logo",
           label: "Logo",
         },
@@ -79,6 +80,7 @@ export const clientListSchema: Template = {
           type: "rich-text",
           name: "content",
           label: "Content",
+          templates: [Schemas.utilityButtonSchema],
         },
         {
           type: "reference",
