@@ -1,5 +1,6 @@
-import React from "react";
+import classNames from "classnames";
 import Link from "next/link";
+import React, { useEffect, useState } from "react";
 import { IconType } from "react-icons";
 import {
   FaFacebookF,
@@ -12,7 +13,6 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import classNames from "classnames";
 
 import layoutData from "../../content/global/index.json";
 
@@ -103,7 +103,18 @@ export interface SocialIconsParams {
   excludeMobile?: SocialTypes[];
 }
 
+export const isMobileDeviceAgent = () => {
+  return /Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile/.test(
+    window.navigator.userAgent
+  );
+};
+
 export const SocialIcons = (data?: SocialIconsParams) => {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const detectMobile = isMobileDeviceAgent();
+    setIsMobile(detectMobile);
+  }, []);
   return (
     <div
       className={classNames(
@@ -128,10 +139,14 @@ export const SocialIcons = (data?: SocialIconsParams) => {
           !hideOnMobile &&
           Object.values(SocialTypes).length - data.excludeMobile?.length === 1;
 
+        const URL =
+          social.desktopSpecificURL && !isMobile
+            ? social.desktopSpecificURL
+            : social.url;
         return (
           <Link
             key={social.type}
-            href={social.url}
+            href={URL}
             className={classNames(
               "unstyled flex h-12 cursor-pointer items-center justify-center rounded-lg text-xl hover:bg-gray-900 hover:bg-none",
               styling.bgClassName,

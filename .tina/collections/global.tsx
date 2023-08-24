@@ -190,6 +190,11 @@ export const globalSchema: Collection = {
           label: "Text",
           name: "linkText",
         },
+        {
+          type: "string",
+          label: "Desktop Specific URL",
+          name: "desktopSpecificURL",
+        },
       ],
     },
     {
