@@ -190,3 +190,17 @@ export const companyIndexSchema: Collection = {
     },
   ],
 };
+
+export const clientsCategorySchema: Collection = {
+  label: "Company - Client categories",
+  name: "clientCategories",
+  path: "content/company/clientCategories",
+  format: "json",
+  fields: [
+    {
+      type: "string",
+      label: "Name",
+      name: "name",
+    },
+  ],
+};

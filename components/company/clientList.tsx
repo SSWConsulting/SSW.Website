@@ -26,6 +26,20 @@ export const clientListSchema: Template = {
   fields: [
     {
       type: "object",
+      name: "categories",
+      label: "Categories",
+      list: true,
+      fields: [
+        {
+          type: "reference",
+          name: "category",
+          label: "Category",
+          collections: ["clientCategories"],
+        },
+      ],
+    },
+    {
+      type: "object",
       name: "clients",
       label: "Clients list",
       list: true,
@@ -44,6 +58,12 @@ export const clientListSchema: Template = {
           type: "rich-text",
           name: "content",
           label: "Content",
+        },
+        {
+          type: "reference",
+          name: "category",
+          label: "Category",
+          collections: ["clientCategories"],
         },
       ],
     },
