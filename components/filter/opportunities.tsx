@@ -13,7 +13,7 @@ import {
   jobStatus,
   locations,
 } from "../util/constants/opportunity";
-import { FilterBlock } from "./FilterBlock";
+import { FilterBlock, NO_SELECTION } from "./FilterBlock";
 
 const AVAILABLE = jobStatus[0];
 const FILLED = jobStatus[1];
@@ -43,11 +43,11 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
   useEffect(() => {
     const filtered = opportunities.filter(
       (opportunity) =>
-        (selectedLocation === -1 ||
+        (selectedLocation === NO_SELECTION ||
           opportunity.locations.includes(locations[selectedLocation])) &&
-        (selectedType === -1 ||
+        (selectedType === NO_SELECTION ||
           opportunity.employmentType === employmentType[selectedType]) &&
-        (selectedStatus === -1 ||
+        (selectedStatus === NO_SELECTION ||
           opportunity.status === jobStatus[selectedStatus])
     );
     setFilteredOpportunities(filtered);

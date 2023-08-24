@@ -1,6 +1,8 @@
 import { MdLiveHelp } from "react-icons/md";
 import { FilterGroup, type FilterGroupProps } from "./FilterGroup";
 
+export const NO_SELECTION = -1;
+
 interface FilterBlockProps {
   groups: FilterGroupProps[];
   children: React.ReactNode;
