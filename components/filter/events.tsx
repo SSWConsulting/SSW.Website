@@ -1,57 +1,39 @@
 import { Tab, Transition } from "@headlessui/react";
 import classNames from "classnames";
 import Image from "next/image";
-import { Fragment, useEffect, useMemo, useState } from "react";
+import { Fragment, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
+import { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import {
   formatEventLongDate,
   formatRelativeEventDate,
 } from "../../helpers/dates";
+import { useEvents } from "../../hooks/useEvents";
 import { EventInfo } from "../../services/server/events";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { EventsRelativeBox } from "../events/components";
+import { CITY_MAP } from "../util/constants/country";
+import { sswOrganisation } from "../util/constants/json-ld";
 import { FilterBlock } from "./FilterBlock";
-import { FilterGroupProps } from "./FilterGroup";
-
-const NUM_EVENTS = 15;
-const NUM_PAST_EVENTS = 100;
-
-const CITY_MAP = {
-  Sydney: {
-    name: "SSW Chapel Sydney",
-    url: "https://sswchapel.com.au/Sydney",
-  },
-  Brisbane: {
-    name: "SSW Chapel Brisbane",
-    url: "https://sswchapel.com.au/Brisbane",
-  },
-  Melbourne: {
-    name: "SSW Chapel Melbourne",
-    url: "https://sswchapel.com.au/Melbourne",
-  },
-  Newcastle: {
-    name: "SSW Chapel Newcastle",
-    url: "https://sswchapel.com.au/Newcastle",
-  },
-};
 
 interface EventsFilterProps {
   sidebarBody: TinaMarkdownContent;
+  events: EventInfo[];
+  pastEvents: EventInfo[];
 }
 
-export const EventsFilter = ({ sidebarBody }: EventsFilterProps) => {
+export const EventsFilter = ({
+  sidebarBody,
+  events,
+  pastEvents,
+}: EventsFilterProps) => {
   const [pastSelected, setPastSelected] = useState<boolean>(false);
 
-  const { events, filters, filteredEvents } = useEvents(
-    `/api/get-upcoming-events?top=${NUM_EVENTS}`
-  );
+  const { filters, filteredEvents } = useEvents(events);
 
-  const {
-    events: pastEvents,
-    filters: pastFilters,
-    filteredEvents: pastFilteredEvents,
-  } = useEvents(`/api/get-past-events?top=${NUM_PAST_EVENTS}`);
+  const { filters: pastFilters, filteredEvents: pastFilteredEvents } =
+    useEvents(pastEvents);
 
   return (
     <FilterBlock
@@ -111,71 +93,6 @@ export const EventsFilter = ({ sidebarBody }: EventsFilterProps) => {
   );
 };
 
-const useEvents = (apiUrl: string) => {
-  const [events, setEvents] = useState<EventInfo[]>(undefined);
-
-  const [filterControls, setFilterControls] = useState<number[]>([-1, -1]);
-
-  const options = useMemo(() => {
-    const categories =
-      events
-        ?.map((event) => event.Category_f5a9cf4c_x002d_8228_x00)
-        ?.filter((value, index, self) => self.indexOf(value) === index)
-        ?.sort() || [];
-
-    const formats =
-      events
-        ?.map((event) => event.CalendarType)
-        ?.filter((value, index, self) => self.indexOf(value) === index)
-        ?.sort() || [];
-
-    return { categories, formats };
-  }, [events]);
-
-  const filters = useMemo<FilterGroupProps[]>(() => {
-    if (!events) return [];
-
-    const groups: FilterGroupProps[] = [
-      {
-        selected: filterControls[0],
-        setSelected: (value) => setFilterControls((curr) => [value, curr[1]]),
-        options: options.categories,
-        allText: "All Technology",
-      },
-      {
-        selected: filterControls[1],
-        setSelected: (value) => setFilterControls((curr) => [curr[0], value]),
-        options: options.formats,
-        allText: "All Formats",
-      },
-    ];
-
-    return groups;
-  }, [filterControls, options]);
-
-  const filteredEvents = useMemo(() => {
-    return events?.filter(
-      (event) =>
-        (filterControls[0] === -1 ||
-          event.Category_f5a9cf4c_x002d_8228_x00 ===
-            options.categories[filterControls[0]]) &&
-        (filterControls[1] === -1 ||
-          event.CalendarType === options.formats[filterControls[1]])
-    );
-  }, [events, filterControls]);
-
-  useEffect(() => {
-    fetch(apiUrl)
-      .then((res) => res.json())
-      .then((json) => {
-        setEvents(json);
-      })
-      .catch((err) => console.error(err));
-  }, []);
-
-  return { events, filters, filteredEvents };
-};
-
 interface EventsListProps {
   events: EventInfo[];
   filteredEvents: EventInfo[];
@@ -213,17 +130,43 @@ interface EventProps {
 }
 
 const Event = ({ visible, event }: EventProps) => {
+  const eventJsonLd: WithContext<Event> = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: event.Title,
+    image: event.Thumbnail.Url,
+    startDate: new Date(event.StartDateTime).toISOString(),
+    endDate: new Date(event.EndDateTime).toISOString(),
+    location: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: CITY_MAP[event.City]?.name,
+        addressRegion: CITY_MAP[event.City]?.state,
+        addressCountry: CITY_MAP[event.City]?.country,
+      },
+      name: CITY_MAP[event.City]?.name,
+      url: CITY_MAP[event.City]?.url,
+    },
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: "https://schema.org/MixedEventAttendanceMode",
+    description: event.Url.Description,
+    performer: sswOrganisation,
+    organizer: sswOrganisation,
+  };
+
   return (
-    <Transition
-      show={!!visible}
-      enter="transition duration-100 ease-out"
-      enterFrom="transform scale-95 opacity-0"
-      enterTo="transform scale-100 opacity-100"
-      leave="transition duration-75 ease-out"
-      leaveFrom="transform scale-100 opacity-100"
-      leaveTo="transform scale-95 opacity-0"
-    >
-      <div className="mb-20">
+    <>
+      <Transition
+        className="mb-20"
+        show={!!visible}
+        enter="transition duration-100 ease-out"
+        enterFrom="transform scale-95 opacity-0"
+        enterTo="transform scale-100 opacity-100"
+        leave="transition duration-75 ease-out"
+        leaveFrom="transform scale-100 opacity-100"
+        leaveTo="transform scale-95 opacity-0"
+      >
         <div className="mb-8 flex max-md:flex-col md:flex-row">
           <div className="mr-3 shrink-0">
             <Image
@@ -264,11 +207,11 @@ const Event = ({ visible, event }: EventProps) => {
                   {event.Presenter}
                 </>
               )}
-              {location && CITY_MAP[event.City] && (
+              {event.City && CITY_MAP[event.City] && (
                 <span className="ml-3">
                   <strong>Location: </strong>
-                  <a href={CITY_MAP[event.City].url}>
-                    {CITY_MAP[event.City].name}
+                  <a href={CITY_MAP[event.City]?.url}>
+                    {CITY_MAP[event.City]?.name}
                   </a>
                 </span>
               )}
@@ -284,7 +227,11 @@ const Event = ({ visible, event }: EventProps) => {
         <a href={event.Url.Url}>
           <p className="prose pt-3">Find out more...</p>
         </a>
-      </div>
-    </Transition>
+      </Transition>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
+      />
+    </>
   );
 };
