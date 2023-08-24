@@ -50,7 +50,7 @@ const VideoEmbed = dynamic(
   { ssr: false }
 );
 
-export const componentRenderer: Components<{
+interface ComponentMap {
   ClientLogos: Record<string, never>;
   CustomImage: {
     src: string;
@@ -164,7 +164,9 @@ export const componentRenderer: Components<{
   ContentCard: {
     content: TinaMarkdownContent;
   };
-}> = {
+}
+
+export const componentRenderer: Components<ComponentMap> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
   VerticalImageLayout: (props) => <VerticalImageLayout data={props} />,
