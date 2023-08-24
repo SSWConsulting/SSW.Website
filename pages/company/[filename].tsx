@@ -23,7 +23,7 @@ export default function CompanyPage(
   });
 
   const historyCardProps =
-    data.company?.historyCards?.map<HistoryTimelineCardProps>((m) => ({
+    data?.company?.historyCards?.map<HistoryTimelineCardProps>((m) => ({
       year: m.year,
       title: m.title,
       location: m.location as HistoryTimelineCardProps["location"],

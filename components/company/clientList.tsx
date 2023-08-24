@@ -1,6 +1,7 @@
 import type { Template } from "tinacms";
 import { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { ClientsFilter } from "../filter/clients";
+import { Container } from "../util/container";
 
 export type ClientDisplay = {
   name: string;
@@ -12,12 +13,27 @@ export type ClientDisplay = {
 type ClientListProps = {
   data: {
     clients: ClientDisplay[];
+    categories: {
+      category: {
+        id?: string;
+        name?: string;
+      };
+    }[];
   };
 };
 
-export const ClientList = ({ data: { clients } }: ClientListProps) => {
-  console.log(clients);
-  return <ClientsFilter clients={clients} />;
+export const ClientList = ({
+  data: { clients, categories },
+}: ClientListProps) => {
+  console.log(categories);
+  const clientCategories = categories.map(
+    (category) => category?.category?.name
+  );
+  return (
+    <Container>
+      <ClientsFilter clients={clients} categories={clientCategories} />
+    </Container>
+  );
 };
 
 export const clientListSchema: Template = {
@@ -37,6 +53,11 @@ export const clientListSchema: Template = {
           collections: ["clientCategories"],
         },
       ],
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.category };
+        },
+      },
     },
     {
       type: "object",

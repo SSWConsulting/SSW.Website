@@ -5,25 +5,26 @@ import { type FilterGroupProps } from "./FilterGroup";
 
 type ClientsFilterProps = {
   clients: ClientDisplay[];
+  categories: string[];
 };
 
-export const ClientsFilter = ({ clients }: ClientsFilterProps) => {
+export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
   const [selected, setSelected] = useState(-1);
 
   const filteredClients = useMemo(() => {
     return clients;
   }, [clients, selected]);
 
-  const categories: FilterGroupProps = {
+  const groups: FilterGroupProps = {
     selected,
     setSelected,
-    options: ["Test, test, Testt"],
+    options: categories,
     allText: "All SSW Clients",
   };
   return (
-    <FilterBlock groups={[categories]}>
-      {filteredClients.map((client) => {
-        return <p>{JSON.stringify(client)}</p>;
+    <FilterBlock groups={[groups]}>
+      {filteredClients.map((client, index) => {
+        return <p key={index}>{JSON.stringify(client)}</p>;
       })}
     </FilterBlock>
   );
