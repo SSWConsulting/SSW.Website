@@ -138,6 +138,10 @@ export const SocialIcons = (data?: SocialIconsParams) => {
           social.desktopSpecificURL && !isMobileDetected
             ? social.desktopSpecificURL
             : social.url;
+        const TEXT =
+          social.desktopSpecificLinkText && !isMobileDetected
+            ? social.desktopSpecificLinkText
+            : social.linkText;
         return (
           <Link
             key={social.type}
@@ -159,9 +163,9 @@ export const SocialIcons = (data?: SocialIconsParams) => {
               className={classNames({ "text-3xl": !social.linkText })}
               color="white"
             />
-            {social.linkText && (
+            {TEXT && (
               <span className="ml-2 inline text-base font-bold text-white">
-                {social.linkText}
+                {TEXT}
               </span>
             )}
           </Link>
