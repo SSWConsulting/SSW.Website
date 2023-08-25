@@ -156,7 +156,7 @@ export const SocialIcons = (data?: SocialIconsParams) => {
               { "flex-grow sm:flex-grow-0": growOnMobile }
             )}
             title={social.title}
-            target={social.openInSameWindow ? "_selft" : "_blank"}
+            target={social.openInSameWindow ? "_self" : "_blank"}
             rel="noreferrer nofollow"
           >
             <styling.icon
