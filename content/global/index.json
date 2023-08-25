@@ -77,7 +77,7 @@
       "url": "tel:+61299533000",
       "linkText": "CALL US",
       "desktopSpecificLinkText": "CONTACT US",
-      "desktopSpecificURL": "https://ssw.com.au/company/contact-us",
+      "desktopSpecificURL": "/company/contact-us",
       "openInSameWindow": true
     },
     {
