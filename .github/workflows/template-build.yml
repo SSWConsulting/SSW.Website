@@ -21,8 +21,6 @@ on:
         required: true
       NEXT_PUBLIC_ZENDESK_CHAT_KEY:
         required: true
-      NEXT_PUBLIC_CHATBASE_BOT_ID:
-        required: true
 
 defaults:
   run:
@@ -145,7 +143,7 @@ jobs:
           KEY_VAULT: ${{ env.KEY_VAULT }}
           NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING: ${{ steps.AppInsight.outputs.AppInsightConnectionString }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-          NEXT_PUBLIC_CHATBASE_BOT_ID: ${{ secrets.NEXT_PUBLIC_CHATBASE_BOT_ID }}
+          NEXT_PUBLIC_CHATBASE_BOT_ID: ${{ env.NEXT_PUBLIC_CHATBASE_BOT_ID }}
           SITE_URL: https://www.ssw.com.au
 
       - name: ACR - Login
