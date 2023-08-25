@@ -1,7 +1,9 @@
 import classNames from "classnames";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { isMobile } from "react-device-detect";
 import { IconType } from "react-icons";
+
 import {
   FaFacebookF,
   FaGithub,
@@ -103,17 +105,10 @@ export interface SocialIconsParams {
   excludeMobile?: SocialTypes[];
 }
 
-export const isMobileDeviceAgent = () => {
-  return /Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile/.test(
-    window.navigator.userAgent
-  );
-};
-
 export const SocialIcons = (data?: SocialIconsParams) => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobileDetected, setIsMobileDetected] = useState(false);
   useEffect(() => {
-    const detectMobile = isMobileDeviceAgent();
-    setIsMobile(detectMobile);
+    setIsMobileDetected(isMobile);
   }, []);
   return (
     <div
@@ -140,7 +135,7 @@ export const SocialIcons = (data?: SocialIconsParams) => {
           Object.values(SocialTypes).length - data.excludeMobile?.length === 1;
 
         const URL =
-          social.desktopSpecificURL && !isMobile
+          social.desktopSpecificURL && !isMobileDetected
             ? social.desktopSpecificURL
             : social.url;
         return (
