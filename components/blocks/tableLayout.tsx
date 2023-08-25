@@ -165,6 +165,7 @@ export const tableBlockSchema: Template = {
               const tableObj = getTableFieldFromForm(field, allValues, 3);
 
               if (!tableObj) {
+                // eslint-disable-next-line no-console
                 console.error("Invalid path for table cell value");
                 return undefined;
               }
@@ -209,6 +210,7 @@ const getTableFieldFromForm = (field, allValues, index: number) => {
     if (currentObj && currentObj[currPath]) {
       currentObj = currentObj[currPath];
     } else {
+      // eslint-disable-next-line no-console
       console.error("Invalid path for table cell value");
       return undefined;
     }

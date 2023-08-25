@@ -14,6 +14,7 @@
   ],
   "rules": {
     "quotes": ["error", "double"],
+    "no-console": "error",
     "tailwindcss/no-arbitrary-value": "error",
     "tailwindcss/no-custom-classname": [
       "error",

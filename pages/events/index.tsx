@@ -81,6 +81,7 @@ export const getStaticProps = async () => {
     };
 
     if (err instanceof AxiosError) {
+      // eslint-disable-next-line no-console
       console.error(err.response.data);
       properties.Status = err.response.status;
       properties.FailedSharePointRequest = true;
@@ -92,6 +93,7 @@ export const getStaticProps = async () => {
       severity: appInsights.Contracts.SeverityLevel.Error,
     });
 
+    // eslint-disable-next-line no-console
     console.error(err);
 
     events = [];
