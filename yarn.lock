@@ -15134,56 +15134,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-"thread-stream@npm:^2.0.0":
-  version: 2.4.0
-  resolution: "thread-stream@npm:2.4.0"
-  dependencies:
-    real-require: ^0.2.0
-  checksum: 09b2daba1902ad5a8bca9adc97ae143ea7377292d4998b129ed625eb2d00be79d9fd77e1dc9480f7ae5f7b214b16dff849b7cd88090ff9fba8a3977574555a79
-  languageName: node
-  linkType: hard
-
 "tinacms@npm:1.5.20, tinacms@npm:^1.5.20":
   version: 1.5.20
   resolution: "tinacms@npm:1.5.20"
-=======
-"tinacms@npm:1.5.16":
-  version: 1.5.16
-  resolution: "tinacms@npm:1.5.16"
-  dependencies:
-    "@graphql-inspector/core": ^4.0.0
-    "@headlessui/react": ^1.5.0
-    "@heroicons/react": ^1.0.4
-    "@react-hook/window-size": ^3.0.7
-    "@tinacms/schema-tools": 1.4.8
-    "@tinacms/search": 1.0.6
-    "@tinacms/sharedctx": 1.0.1
-    "@tinacms/toolkit": 1.7.12
-    crypto-js: ^4.0.0
-    encoding: 0.1.13
-    fetch-ponyfill: ^7.1.0
-    final-form: 4.20.1
-    graphql: 15.8.0
-    graphql-tag: ^2.11.0
-    lodash.set: ^4.3.2
-    prism-react-renderer: ^2.0.6
-    react-icons: ^4.3.1
-    react-router-dom: 6.3.0
-    yup: ^0.32.0
-    zod: ^3.14.3
-  peerDependencies:
-    react: ">=16.14.0"
-    react-dom: ">=16.14.0"
-    react-is: ^16.13.1 || <18.0.0
-  checksum: 725ed5305457984a5c89b5160ee2d3f68732577dc2300a5b5b0af60c2269fc665072c478dca47dc63a683cc6ec6e5798ee7f181f51fb3ce4e62c7bff50db20df
-  languageName: node
-  linkType: hard
-
-"tinacms@npm:^1.5.18":
-  version: 1.5.18
-  resolution: "tinacms@npm:1.5.18"
->>>>>>> 1c94f3dc (Revert "Add pino logger and change logger level based on url")
   dependencies:
     "@floating-ui/dom": ^1.4.4
     "@floating-ui/react-dom": ^2.0.1
