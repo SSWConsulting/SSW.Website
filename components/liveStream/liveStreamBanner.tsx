@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import countdownTextFormat from "../../helpers/countdownTextFormat";
-import { LiveStreamProps } from "./useLiveStreamProps";
+import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 
 type LiveStreamBannerProps = {
   isLive?: boolean;

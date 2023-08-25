@@ -8,11 +8,11 @@ import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
 import layoutData from "../../content/global/index.json";
 import { getYouTubeId } from "../../helpers/embeds";
+import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 import { SpeakerInfo } from "../../services/server/events";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
 import { SubNewsLettersForm } from "../subNewsletter/subNewsletterForm";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
-import { LiveStreamProps } from "./useLiveStreamProps";
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;
