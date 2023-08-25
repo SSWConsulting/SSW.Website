@@ -200,6 +200,11 @@ export const globalSchema: Collection = {
           label: "Desktop Specific URL",
           name: "desktopSpecificURL",
         },
+        {
+          type: "boolean",
+          label: "Open in same Window",
+          name: "openInSameWindow",
+        },
       ],
     },
     {
