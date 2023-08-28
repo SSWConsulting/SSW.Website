@@ -36,7 +36,14 @@ export const ratingSchema: NumberField = {
     parse: (val) => Number(val),
 
     // wrapping our component in wrapFieldsWithMeta renders our label & description.
-    component: wrapFieldsWithMeta(({ input }) => {
+    component: wrapFieldsWithMeta(({ field, input, meta, form }) => {
+      React.useEffect(() => {
+        if (!isNaN(input.value)) {
+          form.initialize({ ...form.getState().values, rating: -1 })
+        }
+      }, [])
+
+
       return (
         <div>
           <input
@@ -54,5 +61,8 @@ export const ratingSchema: NumberField = {
         </div>
       );
     }),
+    validate(value: any, field: any) {
+      if (field.required && typeof value !== 'number') return 'Required'
+    },
   },
 };
