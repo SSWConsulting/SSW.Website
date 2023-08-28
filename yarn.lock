@@ -2939,12 +2939,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/bundle-analyzer@npm:^13.4.13":
-  version: 13.4.13
-  resolution: "@next/bundle-analyzer@npm:13.4.13"
+"@next/bundle-analyzer@npm:^13.4.19":
+  version: 13.4.19
+  resolution: "@next/bundle-analyzer@npm:13.4.19"
   dependencies:
     webpack-bundle-analyzer: 4.7.0
-  checksum: 2e6f32410fbb98c497a6b52dbd201e35f35c3fc2cbbe935e04559f8dfc9011ccc6bf08608e40a115ac06562a0d14212b347b527729db228ff6db9daa3b238d71
+  checksum: 562ff4c21ae0b2a8061b7a5faac282319e8d197678138442151ab0de4af5a6e27b0900b5779d24df5758a9da45c5d5445e1ba3a35ea7507288965fa9fdcec53b
   languageName: node
   linkType: hard
 
@@ -4490,7 +4490,7 @@ __metadata:
     "@headlessui/tailwindcss": ^0.2.0
     "@microsoft/applicationinsights-react-js": ^3.4.2
     "@microsoft/applicationinsights-web": 2.8.14
-    "@next/bundle-analyzer": ^13.4.13
+    "@next/bundle-analyzer": ^13.4.19
     "@next/eslint-plugin-next": ^13.4.12
     "@svgr/webpack": ^8.1.0
     "@tailwindcss/typography": ^0.5.9
