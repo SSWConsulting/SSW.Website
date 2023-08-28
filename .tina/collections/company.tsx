@@ -7,7 +7,10 @@ export const companySchema: Collection = {
   label: "Company Pages",
   name: "company",
   format: "mdx",
-  path: "content/company",
+  path: "content/company/",
+  match: {
+    exclude: "index/**/**",
+  },
   ui: {
     router: ({ document }) => {
       return `/company/${document._sys.filename}`;
@@ -17,17 +20,35 @@ export const companySchema: Collection = {
     // @ts-ignore
     seoSchema,
     {
+      type: "string",
+      name: "title",
+      label: "Title",
+    },
+    {
       type: "rich-text",
-      label: "Body",
+      name: "subTitle",
+      label: "Sub Title",
+    },
+    {
+      type: "object",
+      list: true,
       name: "_body",
+      label: "Blocks",
       templates: [...Schemas.pageBlocks],
-      isBody: true,
+      ui: {
+        visualSelector: true,
+      },
     },
     {
       type: "object",
       label: "History Cards",
       description: "Cards for the timeline on the History page.",
       name: "historyCards",
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.year };
+        },
+      },
       list: true,
       fields: [
         {
@@ -63,6 +84,107 @@ export const companySchema: Collection = {
           type: "rich-text",
           label: "Description",
           name: "description",
+        },
+      ],
+    },
+  ],
+};
+
+export const companyIndexSchemaConstants = {
+  value: "companyIndex",
+  title: "title",
+  headerImage: {
+    value: "headerImage",
+    heroBackground: "heroBackground",
+    altText: "altText",
+    txtOverlay: "txtOverlay",
+  },
+  _body: "_body",
+  companyPages: {
+    value: "companyPages",
+    title: "title",
+    body: "body",
+    pageURL: "pageURL",
+  },
+};
+
+export const companyIndexSchema: Collection = {
+  label: "Company - Index",
+  name: companyIndexSchemaConstants.value,
+  format: "mdx",
+  path: "content/company/index",
+  ui: {
+    router: () => {
+      return `/company`;
+    },
+  },
+  fields: [
+    {
+      type: "object",
+      label: "Header Image",
+      name: companyIndexSchemaConstants.headerImage.value,
+      fields: [
+        {
+          type: "image",
+          label: "Hero Background",
+          name: companyIndexSchemaConstants.headerImage.heroBackground,
+          // @ts-ignore
+          uploadDir: () => "background",
+        },
+        {
+          type: "string",
+          label: "Alt Text",
+          name: companyIndexSchemaConstants.headerImage.altText,
+        },
+        {
+          type: "string",
+          label: "Text Overlay",
+          name: companyIndexSchemaConstants.headerImage.txtOverlay,
+          // @ts-ignore
+          uploadDir: () => "background",
+        },
+      ],
+    },
+    // @ts-ignore
+    seoSchema,
+    {
+      type: "string",
+      label: "Title",
+      name: companyIndexSchemaConstants.title,
+    },
+    {
+      type: "rich-text",
+      label: "Body",
+      name: companyIndexSchemaConstants._body,
+      templates: [...Schemas.pageBlocks],
+      isBody: true,
+    },
+    {
+      type: "object",
+      label: "Pages",
+      description: "Cards for the timeline on the History page.",
+      name: companyIndexSchemaConstants.companyPages.value,
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.title };
+        },
+      },
+      list: true,
+      fields: [
+        {
+          type: "string",
+          label: "Title",
+          name: companyIndexSchemaConstants.companyPages.title,
+        },
+        {
+          type: "rich-text",
+          label: "Body",
+          name: companyIndexSchemaConstants.companyPages.body,
+        },
+        {
+          type: "string",
+          label: "Page URL",
+          name: companyIndexSchemaConstants.companyPages.pageURL,
         },
       ],
     },

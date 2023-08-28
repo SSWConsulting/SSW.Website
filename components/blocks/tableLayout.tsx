@@ -1,5 +1,6 @@
 import classNames from "classnames";
-import type { Template } from "tinacms";
+import * as React from "react";
+import { TextArea, wrapFieldsWithMeta, type Template } from "tinacms";
 
 const tableStyles = {
   none: "",
@@ -41,7 +42,7 @@ export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
                   className={
                     index === 0 && data?.firstColBold ? "text-left" : ""
                   }
-                  key={`header-${index}`}
+                  key={index}
                 >
                   {cell}
                 </th>
@@ -73,7 +74,7 @@ export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
                       "border-0 !bg-white pt-8 text-lg font-bold",
                     "whitespace-pre-wrap"
                   )}
-                  key={`row-${index}`}
+                  key={index}
                   colSpan={
                     index === row.cells.length - 1
                       ? data.headers.length - row.cells.length + 1
@@ -129,36 +130,47 @@ export const tableBlockSchema: Template = {
               label: "Value",
               name: "cellValue",
               required: true,
-              // @ts-expect-error This is a valid field, but Tina's type definition doesn't include it
-              component: "textarea",
+              // @ts-expect-error component is a valid field, but Tina's type definition doesn't include it
+              component: wrapFieldsWithMeta(({ field, input, tinaForm }) => {
+                const tableObj = getTableFieldFromForm(
+                  field,
+                  tinaForm.finalForm.getState().values,
+                  5
+                );
+
+                const pathArr = field?.name?.split(".");
+                const headerIndex = parseInt(pathArr[7]);
+                let headerText = undefined;
+                if (!isNaN(headerIndex)) {
+                  headerText = tableObj.headers[headerIndex];
+                }
+
+                return (
+                  <>
+                    {headerText && <p>Cell value for "{headerText}":</p>}
+                    <TextArea {...input} />
+                  </>
+                );
+              }),
+              //component: "textarea",
             },
           ],
           ui: {
-            itemProps: (item) => ({
-              label: item?.cellValue || "New cell (click to enter value)",
-            }),
+            itemProps: (item) => {
+              return {
+                label: item?.cellValue || "New cell (click to enter value)",
+              };
+            },
             validate: (values, allValues, meta, field) => {
-              // @ts-expect-error This is a valid field, but Tina's type definition doesn't include it
-              const pathArr = field?.name?.split(".");
-              // Remove the last 3 elements in the array to get the path to the table
-              pathArr?.splice(pathArr?.length - 3, 3);
-              let currentObj = allValues;
+              const tableObj = getTableFieldFromForm(field, allValues, 3);
 
-              for (const currPath of pathArr) {
-                if (currentObj && currentObj[currPath]) {
-                  currentObj = currentObj[currPath];
-                } else {
-                  console.error("Invalid path for table cell value");
-                  return undefined;
-                }
-              }
-
-              if (!currentObj) {
+              if (!tableObj) {
+                // eslint-disable-next-line no-console
                 console.error("Invalid path for table cell value");
                 return undefined;
               }
 
-              const headerLength = currentObj.headers?.length;
+              const headerLength = tableObj.headers?.length;
               if (headerLength < values?.length) {
                 return `Too many cells for the number of headers, reduce the number of cells to ${headerLength}`;
               }
@@ -186,4 +198,23 @@ export const tableBlockSchema: Template = {
       },
     },
   ],
+};
+
+const getTableFieldFromForm = (field, allValues, index: number) => {
+  const pathArr = field?.name?.split(".");
+  // Remove the last 3 elements in the array to get the path to the table
+  pathArr?.splice(pathArr?.length - index, index);
+  let currentObj = allValues;
+
+  for (const currPath of pathArr) {
+    if (currentObj && currentObj[currPath]) {
+      currentObj = currentObj[currPath];
+    } else {
+      // eslint-disable-next-line no-console
+      console.error("Invalid path for table cell value");
+      return undefined;
+    }
+  }
+
+  return currentObj;
 };

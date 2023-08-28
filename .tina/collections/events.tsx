@@ -43,6 +43,28 @@ export const eventsSchema: Collection = {
     },
     {
       type: "object",
+      label: "Testimonial Categories",
+      name: "testimonialCategories",
+      ui: {
+        itemProps(item) {
+          return {
+            label:
+              item.testimonialCategory ?? "Select your testimonial category",
+          };
+        },
+      },
+      list: true,
+      fields: [
+        {
+          type: "reference",
+          label: "Testimonial Category",
+          name: "testimonialCategory",
+          collections: ["testimonialCategories"],
+        },
+      ],
+    },
+    {
+      type: "object",
       list: true,
       name: "_body",
       label: "Body",
@@ -79,6 +101,13 @@ export const eventsIndexSchema: Collection = {
   fields: [
     // @ts-ignore
     seoSchema,
+    {
+      type: "rich-text",
+      name: "_body",
+      label: "Body",
+      templates: [...Schemas.pageBlocks],
+      isBody: true,
+    },
     {
       type: "rich-text",
       name: "sidebarBody",

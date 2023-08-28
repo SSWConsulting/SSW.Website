@@ -24,6 +24,7 @@ export const Carousel = ({ data }) => {
       window.open(link, "_blank");
       return;
     } else {
+      // eslint-disable-next-line no-console
       console.log(`unknown openIn value '${openIn}'`);
     }
   };

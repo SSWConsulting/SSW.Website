@@ -14,6 +14,7 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import VideoCards, { VideoCardProps } from "../../components/util/videoCards";
+import { GetTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { removeExtension } from "../../services/client/utils.service";
 
 export default function TrainingPage(
@@ -82,6 +83,7 @@ export default function TrainingPage(
                 >
                   <TestimonialRow
                     testimonialsResult={props.testimonialResult}
+                    categories={["Internship"]}
                     tagline={data.training.testimonials?.tagline}
                   />
                 </div>
@@ -94,12 +96,12 @@ export default function TrainingPage(
               <div className="flex flex-col items-center pb-15 text-center">
                 <h2>
                   Trusted by more than{" "}
-                  <span className="text-sswRed">1400+</span> clients in the
+                  <span className="text-sswRed">1000+</span> clients in the
                   world
                 </h2>
                 <p className="max-w-3xl text-lg font-light text-gray-500">
                   Our software developers & consultants have delivered the best
-                  in the business to more than 1,400 clients in 15 countries.
+                  in the business to more than 1,000 clients in 15 countries.
                 </p>
               </div>
               <ClientLogos />
@@ -122,13 +124,7 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.mdx`,
   });
 
-  const testimonials = await client.queries.testimonalsQuery({
-    categories: "Internship",
-  });
-
-  const testimonialsResult = testimonials.data.testimonialsConnection.edges.map(
-    (t) => t.node
-  );
+  const testimonialsResult = await GetTestimonialsByCategories(["Internship"]);
 
   if (tinaProps.data.training.seo && !tinaProps.data.training.seo.canonical) {
     tinaProps.data.training.seo.canonical = `${tinaProps.data.global.header.url}training/${params.filename}`;

@@ -6,11 +6,17 @@ import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { UtilityButton } from "../blocks";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import {
+  EmploymentType,
+  JobStatus,
+  Locations,
   employmentType,
   jobStatus,
   locations,
 } from "../util/constants/opportunity";
-import { FilterBlock } from "./FilterBlock";
+import { FilterBlock, NO_SELECTION } from "./FilterBlock";
+
+const AVAILABLE = jobStatus[0];
+const FILLED = jobStatus[1];
 
 interface OpportunitiesProps {
   opportunities: OpportunityType[];
@@ -18,9 +24,9 @@ interface OpportunitiesProps {
 
 export interface OpportunityType {
   title: string;
-  employmentType: string;
-  status: string;
-  locations: string[];
+  employmentType: EmploymentType;
+  status: JobStatus;
+  locations: Locations;
   hideApply?: boolean;
   description: TinaMarkdownContent;
 }
@@ -37,11 +43,11 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
   useEffect(() => {
     const filtered = opportunities.filter(
       (opportunity) =>
-        (selectedLocation === -1 ||
+        (selectedLocation === NO_SELECTION ||
           opportunity.locations.includes(locations[selectedLocation])) &&
-        (selectedType === -1 ||
+        (selectedType === NO_SELECTION ||
           opportunity.employmentType === employmentType[selectedType]) &&
-        (selectedStatus === -1 ||
+        (selectedStatus === NO_SELECTION ||
           opportunity.status === jobStatus[selectedStatus])
     );
     setFilteredOpportunities(filtered);
@@ -71,11 +77,11 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
       ]}
     >
       {selectedStatus !== 1 &&
-        !!filteredOpportunities.find((o) => o.status === jobStatus[0]) && (
+        filteredOpportunities.some((o) => o.status === AVAILABLE) && (
           <>
             <h3>Available Positions</h3>
             {opportunities
-              .filter((o) => o.status === jobStatus[0])
+              .filter((o) => o.status === AVAILABLE)
               .map((opportunity, index) => (
                 <OpportunityDropdown
                   visible={
@@ -91,11 +97,11 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
         )}
 
       {selectedStatus !== 0 &&
-        !!filteredOpportunities.find((o) => o.status === jobStatus[1]) && (
+        filteredOpportunities.some((o) => o.status === FILLED) && (
           <>
             <h3>Filled Positions</h3>
             {opportunities
-              .filter((o) => o.status === jobStatus[1])
+              .filter((o) => o.status === FILLED)
               .map((opportunity, index) => (
                 <OpportunityDropdown
                   visible={
@@ -137,10 +143,10 @@ const OpportunityDropdown = ({
   return (
     <Transition
       show={visible}
-      enter="transition-opacity duration-500"
+      enter="transition-opacity duration-300"
       enterFrom="opacity-0"
       enterTo="opacity-100"
-      leave="transition-opacity duration-500"
+      leave="transition-opacity duration-300"
       leaveFrom="opacity-100"
       leaveTo="opacity-0"
     >
@@ -156,9 +162,7 @@ const OpportunityDropdown = ({
             <span className="md:float-right">
               <FaMapMarkerAlt className="inline" />{" "}
               {opportunity.locations?.join(", ")}
-              {opportunity.status === jobStatus[1] && (
-                <strong> *FILLED*</strong>
-              )}
+              {opportunity.status === FILLED && <strong> *FILLED*</strong>}
             </span>
           </Disclosure.Button>
 
@@ -172,7 +176,7 @@ const OpportunityDropdown = ({
             leaveTo="transform scale-95 opacity-0"
           >
             <Disclosure.Panel className="border-1 border-gray-300 p-4">
-              <section className="prose max-w-full">
+              <section className="prose prose-opportunity max-w-full">
                 <TinaMarkdown
                   content={opportunity.description}
                   components={componentRenderer}

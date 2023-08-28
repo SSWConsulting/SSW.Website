@@ -30,6 +30,7 @@ import { googleMapsSchema } from "./googleMapsWrapper";
 import { heroBlockSchema } from "./hero";
 import { internalCarouselBlockSchema } from "./internalCarousel";
 import { newslettersTableBlockSchema } from "./newslettersTable";
+import { paymentBlockSchema } from "./payment-block";
 import { recurringEventSchema } from "./recurringEvent";
 import { serviceCardsBlockSchema } from "./serviceCards";
 import { tableBlockSchema } from "./tableLayout";
@@ -76,6 +77,7 @@ export const pageBlocks: Template[] = [
   organizerSchema,
   joinGithubSchema,
   joinAsPresenterSchema,
+  paymentBlockSchema,
 ];
 
 export * from "../bookingButton/bookingButton";

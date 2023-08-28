@@ -1,16 +1,17 @@
 import { InferGetStaticPropsType } from "next";
-import client from "../../.tina/__generated__/client";
-import { SEO } from "../../components/util/seo";
-import { Layout } from "../../components/layout";
-import { Section } from "../../components/util/section";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
-import { removeExtension } from "../../services/client/utils.service";
 import { tinaField, useTina } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import client from "../../.tina/__generated__/client";
 import { BuiltOnAzure } from "../../components/blocks";
+import { Blocks } from "../../components/blocks-renderer";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import HistoryTimeline from "../../components/company/historyTimeline";
 import { HistoryTimelineCardProps } from "../../components/company/historyTimelineCard";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import { Layout } from "../../components/layout";
+import { Section } from "../../components/util/section";
+import { SEO } from "../../components/util/seo";
+import { RecaptchaContext } from "../../context/RecaptchaContext";
+import { removeExtension } from "../../services/client/utils.service";
 
 export default function CompanyPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -30,44 +31,53 @@ export default function CompanyPage(
     })) || [];
 
   return (
-    <div>
-      <SEO seo={props.seo} />
-      <Layout>
-        {data.company.seo?.showBreadcrumb === null ||
-        data.company.seo?.showBreadcrumb ? (
-          <Section className="mx-auto w-full max-w-9xl px-8 py-5">
-            <Breadcrumbs
-              path={removeExtension(props.variables.relativePath)}
-              suffix={data.global.breadcrumbSuffix}
-              title={data.company.seo?.title}
-              seoSchema={data.company.seo}
-            />
-          </Section>
-        ) : (
-          <></>
-        )}
-        {data.company._body.children.length > 0 && (
-          <Section className="mx-auto w-full max-w-9xl px-8 py-5">
-            <div data-tina-field={tinaField(data.company, "_body")}>
+    <RecaptchaContext.Provider
+      value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
+    >
+      <div>
+        <SEO seo={props.seo} />
+
+        <Layout>
+          {data.company.seo?.showBreadcrumb === null ||
+            (data.company.seo?.showBreadcrumb && (
+              <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+                <Breadcrumbs
+                  path={removeExtension(props.variables.relativePath)}
+                  suffix={data.global.breadcrumbSuffix}
+                  title={data.company.seo?.title}
+                  seoSchema={data.company.seo}
+                />
+              </Section>
+            ))}
+          {data.company.title && (
+            <Section
+              className="mx-auto w-full max-w-9xl px-8"
+              data-tina-field={tinaField(data.company, "title")}
+            >
+              <h1 className="mt-0 py-2">{data.company.title}</h1>
+            </Section>
+          )}
+          {data.company.subTitle && (
+            <Section className="prose mx-auto !block w-full max-w-9xl px-8">
               <TinaMarkdown
-                components={componentRenderer}
-                content={data.company._body}
+                content={data.company.subTitle}
+                data-tina-field={tinaField(data.company, "subTitle")}
               />
-            </div>
+            </Section>
+          )}
+
+          <Blocks prefix="Company_body" blocks={data.company._body} />
+          {data.company.historyCards?.length > 0 && (
+            <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+              <HistoryTimeline cardProps={historyCardProps} />
+            </Section>
+          )}
+          <Section>
+            <BuiltOnAzure data={{ backgroundColor: "default" }} />
           </Section>
-        )}
-        {data.company.historyCards?.length > 0 ? (
-          <Section className="mx-auto w-full max-w-9xl px-8 py-5">
-            <HistoryTimeline cardProps={historyCardProps} />
-          </Section>
-        ) : (
-          <></>
-        )}
-        <Section>
-          <BuiltOnAzure data={{ backgroundColor: "default" }} />
-        </Section>
-      </Layout>
-    </div>
+        </Layout>
+      </div>
+    </RecaptchaContext.Provider>
   );
 }
 

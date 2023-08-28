@@ -22,6 +22,7 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
+import { GetTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { removeExtension } from "../../services/client/utils.service";
 
 export default function ConsultingPage(
@@ -52,6 +53,11 @@ export default function ConsultingPage(
     buttonText: data.global.bookingButtonText,
   };
 
+  const categories =
+    data.consulting.testimonialCategories
+      ?.filter((category) => !!category?.testimonialCategory)
+      .map((category) => category.testimonialCategory.name) ?? [];
+
   return (
     <RecaptchaContext.Provider
       value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
@@ -68,7 +74,7 @@ export default function ConsultingPage(
         </Section>
         <Section className="w-full" color="black">
           <Booking {...data.consulting.booking}>
-            <BookingButton {...bookingButtonProps} />
+            <BookingButton data={bookingButtonProps} />
           </Booking>
         </Section>
         <Section
@@ -106,9 +112,12 @@ export default function ConsultingPage(
             )}
             <TestimonialRow
               testimonialsResult={props.testimonialsResult}
+              categories={categories}
               tagline={data.consulting.testimonials?.tagline}
             />
-            <BookingButton {...bookingButtonProps} containerClass="mt-20" />
+            <BookingButton
+              data={{ ...bookingButtonProps, containerClass: "mt-20" }}
+            />
           </Container>
         </Section>
         <Marketing content={props.marketingData} />
@@ -151,7 +160,7 @@ export default function ConsultingPage(
               Jump on a call with one of our Account Managers to discuss how we
               can help you.
             </p>
-            <BookingButton {...bookingButtonProps} />
+            <BookingButton data={bookingButtonProps} />
           </Container>
         </Section>
         <Section>
@@ -192,32 +201,7 @@ export const getStaticProps = async ({ params }) => {
       (category) => category.testimonialCategory.name
     ) || [];
 
-  const testimonials = await client.queries.testimonalsQuery({
-    categories,
-  });
-
-  let testimonialsResult = testimonials.data.testimonialsConnection.edges.map(
-    (t) => t.node
-  );
-
-  testimonialsResult = testimonialsResult.sort(() => 0.5 - Math.random());
-
-  // Adds general testimonials if not filled by testimonials with matching categories
-  if (testimonialsResult.length < 3) {
-    const generalTestimonials = await client.queries.testimonalsQuery({
-      categories: "General",
-    });
-
-    const generalTestimonialsResult =
-      generalTestimonials.data.testimonialsConnection.edges.map((t) => t.node);
-
-    const randomGeneral = generalTestimonialsResult.sort(
-      () => 0.5 - Math.random()
-    );
-    testimonialsResult.push(...randomGeneral);
-  }
-
-  testimonialsResult = testimonialsResult.slice(0, 3);
+  const testimonialsResult = await GetTestimonialsByCategories(categories);
 
   const seo = tinaProps.data.consulting.seo;
   if (seo && !seo.canonical) {

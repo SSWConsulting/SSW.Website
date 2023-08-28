@@ -1,6 +1,9 @@
-import React from "react";
+import classNames from "classnames";
 import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { isMobile } from "react-device-detect";
 import { IconType } from "react-icons";
+
 import {
   FaFacebookF,
   FaGithub,
@@ -12,7 +15,6 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import classNames from "classnames";
 
 import layoutData from "../../content/global/index.json";
 
@@ -36,7 +38,7 @@ const socialStyles = new Map<
     SocialTypes.phone,
     {
       icon: FaPhone,
-      bgClassName: "bg-social-phone",
+      bgClassName: "bg-sswRed",
     },
   ],
   [
@@ -104,6 +106,10 @@ export interface SocialIconsParams {
 }
 
 export const SocialIcons = (data?: SocialIconsParams) => {
+  const [isMobileDetected, setIsMobileDetected] = useState(false);
+  useEffect(() => {
+    setIsMobileDetected(isMobile);
+  }, []);
   return (
     <div
       className={classNames(
@@ -128,10 +134,18 @@ export const SocialIcons = (data?: SocialIconsParams) => {
           !hideOnMobile &&
           Object.values(SocialTypes).length - data.excludeMobile?.length === 1;
 
+        const URL =
+          social.desktopSpecificURL && !isMobileDetected
+            ? social.desktopSpecificURL
+            : social.url;
+        const TEXT =
+          social.desktopSpecificLinkText && !isMobileDetected
+            ? social.desktopSpecificLinkText
+            : social.linkText;
         return (
           <Link
             key={social.type}
-            href={social.url}
+            href={URL}
             className={classNames(
               "unstyled flex h-12 cursor-pointer items-center justify-center rounded-lg text-xl hover:bg-gray-900 hover:bg-none",
               styling.bgClassName,
@@ -142,16 +156,16 @@ export const SocialIcons = (data?: SocialIconsParams) => {
               { "flex-grow sm:flex-grow-0": growOnMobile }
             )}
             title={social.title}
-            target="_blank"
+            target={social.openInSameWindow ? "_self" : "_blank"}
             rel="noreferrer nofollow"
           >
             <styling.icon
               className={classNames({ "text-3xl": !social.linkText })}
               color="white"
             />
-            {social.linkText && (
+            {TEXT && (
               <span className="ml-2 inline text-base font-bold text-white">
-                {social.linkText}
+                {TEXT}
               </span>
             )}
           </Link>
