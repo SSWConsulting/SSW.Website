@@ -1,8 +1,8 @@
-import { sampleSize } from "lodash";
 import { useEffect, useState } from "react";
 import { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { Badge } from "./badge";
+import { BadgesLayout } from "./constants";
 
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { BadgeProps } from "./badge";
@@ -15,17 +15,20 @@ export interface Layout {
 }
 
 const FloatingBadges = ({
+  random,
   badges,
   layouts,
 }: {
+  random: boolean;
   badges: BadgeProps[];
   layouts: Layout[];
 }) => {
   const [shuffleBadges, setShuffleBadges] = useState([]);
 
   useEffect(() => {
-    setShuffleBadges(sampleSize(badges, 11));
-  }, [badges]);
+    const badgesList = random ? badges.sort(() => Math.random() - 0.5) : badges;
+    setShuffleBadges(badgesList);
+  }, [badges, random]);
 
   return (
     <div className="absolute -bottom-3 -left-4 h-62 w-full select-none bg-waveBackground bg-contain bg-left bg-no-repeat">
@@ -52,8 +55,9 @@ export const LatestTech = ({ data }) => {
         <TinaMarkdown content={data?.content} />
       </span>
       <FloatingBadges
+        random={data?.badges?.random ?? false}
         badges={data?.badges?.badgesList ?? []}
-        layouts={data?.badges?.layouts ?? []}
+        layouts={BadgesLayout}
       />
     </div>
   );
@@ -65,7 +69,7 @@ export const latestTechSchema: Template = {
   fields: [
     {
       type: "rich-text",
-      label: "Latest Tech Content",
+      label: "Content",
       name: "content",
     },
     {
