@@ -4,6 +4,7 @@ const ChatBaseBot = () => {
   const ChatBotId = process.env.NEXT_PUBLIC_CHATBASE_BOT_ID;
 
   if (!ChatBotId) {
+    // eslint-disable-next-line no-console
     console.log("ChatBot ID is not provided!!");
   }
   return (
