@@ -78,6 +78,11 @@ export const technologyBadgesSchema: Collection = {
         },
         {
           type: "number",
+          label: "Badge image rotation",
+          name: "rotate",
+        },
+        {
+          type: "number",
           label: "Animation duration",
           name: "duration",
         },

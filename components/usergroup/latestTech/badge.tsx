@@ -7,12 +7,13 @@ export interface BadgeProps {
   name?: string;
   url?: string;
   imgURL?: string;
+  rotate?: number;
   duration?: number;
   bounceDown?: boolean;
 }
 
 export const Badge = (props: BadgeProps) => {
-  const { imgURL, url, name, duration, bounceDown } = props;
+  const { imgURL, rotate: imgRotate, url, name, duration, bounceDown } = props;
   const { left, top, size, rotate } = props.layout;
   const cssProperties = { "--animate-duration": `${duration ?? 3000}ms` };
 
@@ -29,6 +30,7 @@ export const Badge = (props: BadgeProps) => {
         top: top,
         height: `${size}px`,
         width: `${size}px`,
+        rotate: `${rotate ?? 0}deg`,
         ...cssProperties,
       }}
       onClick={() => window.open(url, "_blank")}
@@ -36,7 +38,7 @@ export const Badge = (props: BadgeProps) => {
       {imgURL && (
         <Image
           style={{
-            rotate: `${rotate ?? 0}deg`,
+            rotate: `${imgRotate ?? 0}deg`,
           }}
           alt={`${name} icon`}
           width={size}
