@@ -1,3 +1,4 @@
+import cs from "classnames";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useEditState } from "tinacms/dist/react";
@@ -35,7 +36,12 @@ export const TestimonialRow = ({
         What do people <span className="text-sswRed">say</span>?
       </h2>
       <p className="mb-8 text-center">{tagline}</p>
-      <div className="grid justify-center gap-6 md:grid-cols-autoFit3">
+      <div
+        className={cs(
+          "grid justify-center gap-6",
+          `md:grid-cols-${testimonialResult?.length ?? 3}`
+        )}
+      >
         {testimonialResult?.map((testimonial, i) => (
           <TestimonialCard key={i} testimonial={testimonial} />
         ))}

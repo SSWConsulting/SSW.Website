@@ -124,9 +124,6 @@ module.exports = {
       gridTemplateRows: {
         12: "repeat(12, minmax(min-content, 0fr))",
       },
-      gridTemplateColumns: {
-        autoFit3: "repeat(auto-fit, minmax(0, 30%))",
-      },
       backgroundPosition: {
         "right-bottom-4": "right 1rem bottom 1rem",
       },
