@@ -212,7 +212,6 @@ const Category = ({ tinaData, category, selectedTag, index }) => {
 };
 
 const PageCard = ({ page, category, pageIndex }) => {
-  console.log(category);
   return (
     <div
       className={classNames(
