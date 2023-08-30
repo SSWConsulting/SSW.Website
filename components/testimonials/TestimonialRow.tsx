@@ -51,9 +51,10 @@ const TestimonialCard = ({ testimonial }) => {
       <div className="flex flex-col items-center">
         <Image
           alt={`Picture of ${testimonial?.name} as an avatar`}
-          src={testimonial?.avatar ?? ""}
+          src={testimonial?.avatar ?? "/images/thumbs/avatar-thumbnail.png"}
           height={120}
           width={120}
+          quality={90}
           className="rounded-full"
         />
       </div>
