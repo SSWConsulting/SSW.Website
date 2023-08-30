@@ -1,4 +1,5 @@
 import type { NumberField } from "@tinacms/schema-tools/dist/types/index";
+import * as React from "react";
 
 import classNames from "classnames";
 import { AiFillStar } from "react-icons/ai";

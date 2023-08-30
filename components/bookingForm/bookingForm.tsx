@@ -117,6 +117,7 @@ export const BookingForm = (props) => {
       .catch((err) => {
         err.data = data;
         appInsights?.trackException({ exception: err }, method);
+        // eslint-disable-next-line no-console
         console.error(err);
         setLoading(false);
         return alert("Failed to create lead in CRM");

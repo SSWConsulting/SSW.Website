@@ -190,6 +190,21 @@ export const globalSchema: Collection = {
           label: "Text",
           name: "linkText",
         },
+        {
+          type: "string",
+          label: "Desktop Specific Link Text",
+          name: "desktopSpecificLinkText",
+        },
+        {
+          type: "string",
+          label: "Desktop Specific URL",
+          name: "desktopSpecificURL",
+        },
+        {
+          type: "boolean",
+          label: "Open in same Window",
+          name: "openInSameWindow",
+        },
       ],
     },
     {

@@ -38,6 +38,7 @@ export function useMaxRetries(
       fnRef.current();
     } catch (error) {
       if (countRef.current < min) {
+        // eslint-disable-next-line no-console
         console.error(`RETRYING ${error}`);
       } else {
         clearTask();
