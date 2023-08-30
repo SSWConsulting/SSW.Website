@@ -4,21 +4,25 @@ import * as Schemas from "../../components/blocks";
 import { ClientsFilter } from "../filter/clients";
 import { Container } from "../util/container";
 
+export type Category = {
+  id: string;
+  name: string;
+};
+
 export type ClientDisplay = {
   name: string;
   logo: string;
   content: TinaMarkdownContent;
-  categories: string[];
+  categories: {
+    category: Category;
+  }[];
 };
 
 type ClientListProps = {
   data: {
     clients: ClientDisplay[];
     categories: {
-      category: {
-        id?: string;
-        name?: string;
-      };
+      category: Category;
     }[];
   };
 };
@@ -26,7 +30,7 @@ type ClientListProps = {
 export const ClientList = ({
   data: { clients, categories },
 }: ClientListProps) => {
-  console.log(categories);
+  console.log(clients);
   const clientCategories = categories.map(
     (category) => category?.category?.name
   );
@@ -56,7 +60,10 @@ export const clientListSchema: Template = {
       ],
       ui: {
         itemProps: (item) => {
-          return { label: item?.category };
+          return {
+            label:
+              item?.category || "New category (click to select a category)",
+          };
         },
       },
     },
@@ -65,6 +72,11 @@ export const clientListSchema: Template = {
       name: "clients",
       label: "Clients list",
       list: true,
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.name };
+        },
+      },
       fields: [
         {
           type: "string",
@@ -87,10 +99,23 @@ export const clientListSchema: Template = {
           ],
         },
         {
-          type: "reference",
-          name: "category",
-          label: "Category",
-          collections: ["clientCategories"],
+          type: "object",
+          name: "categories",
+          label: "Categories",
+          list: true,
+          ui: {
+            itemProps: (item) => {
+              return { label: item?.category?.name };
+            },
+          },
+          fields: [
+            {
+              type: "reference",
+              name: "category",
+              label: "Category",
+              collections: ["clientCategories"],
+            },
+          ],
         },
       ],
     },

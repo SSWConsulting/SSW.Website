@@ -1,4 +1,5 @@
 import { Transition } from "@headlessui/react";
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
@@ -18,8 +19,8 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
     if (selected === -1) return clients;
 
     const category = categories[selected];
-    return clients.filter((client) =>
-      client.categories.find((c) => c === category)
+    return clients.filter(
+      (client) => client.categories?.find((c) => c.category.id === category)
     );
   }, [clients, selected]);
 
@@ -34,8 +35,9 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
       {clients.map((client, index) => {
         return (
           <Transition
+            className="w-full"
             key={index}
-            show={filteredClients.some((c) => c.name === client.name)}
+            show={filteredClients?.some((c) => c.name === client.name)}
             enter="transition-opacity duration-300"
             enterFrom="opacity-0"
             enterTo="opacity-100"
@@ -44,10 +46,20 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
             leaveTo="opacity-0"
           >
             <h2>{client.name}</h2>
-            <TinaMarkdown
-              content={client.content}
-              components={componentRenderer}
-            />
+            <div>
+              <div className="float-left mr-4 border-r-1 p-8">
+                <Image
+                  src={client.logo || ""}
+                  alt={client.name}
+                  width={100}
+                  height={100}
+                />
+              </div>
+              <TinaMarkdown
+                content={client.content}
+                components={componentRenderer}
+              />
+            </div>
           </Transition>
         );
       })}
