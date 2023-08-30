@@ -76,6 +76,7 @@ export const utilityButtonSchema: Template = {
       label: "Size",
       name: "size",
       required: false,
+      options: Object.keys(sizes),
     },
   ],
 };

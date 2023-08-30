@@ -8,7 +8,7 @@ export type ClientDisplay = {
   name: string;
   logo: string;
   content: TinaMarkdownContent;
-  category: string;
+  categories: string[];
 };
 
 type ClientListProps = {
@@ -80,7 +80,11 @@ export const clientListSchema: Template = {
           type: "rich-text",
           name: "content",
           label: "Content",
-          templates: [Schemas.utilityButtonSchema],
+          templates: [
+            Schemas.utilityButtonSchema,
+            Schemas.videoEmbedBlockSchema,
+            Schemas.customImageBlockSchema,
+          ],
         },
         {
           type: "reference",
