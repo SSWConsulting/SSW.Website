@@ -156,34 +156,6 @@
           ]
         },
         {
-          "title": "Bots",
-          "description": "Awesome bots gives you an advantage in finding and automatically entering data for your business with advanced artificial intelligence.",
-          "logo": "/images/thumbs/thumb-azure-bot-icon.jpg",
-          "page": "content/consulting/bots.mdx",
-          "tags": [
-            {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
-            }
-          ]
-        },
-        {
-          "title": "Azure Cognitive Services",
-          "description": "Make your existing applications smarter. Add Artificial Intelligence APIs like vision, speech, language and knowledge capability to your apps.",
-          "logo": "/images/thumbs/thumb-azurecognitiveservices.jpg",
-          "page": "content/consulting/azure.mdx",
-          "tags": [
-            {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
-            }
-          ]
-        },
-        {
           "title": "Azure Synapse",
           "description": "A limitless analytics service that brings together enterprise data warehousing and Big Data analytics. It gives you the freedom to query data on your terms, using either serverless or dedicated resources at scale.",
           "logo": "/images/thumbs/thumb-azuresynapse.jpg",
@@ -218,6 +190,34 @@
           "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Azure Cognitive Services",
+          "description": "Make your existing applications smarter. Add Artificial Intelligence APIs like vision, speech, language and knowledge capability to your apps.",
+          "logo": "/images/thumbs/thumb-azurecognitiveservices.jpg",
+          "page": "content/consulting/azure.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Bots",
+          "description": "Awesome bots gives you an advantage in finding and automatically entering data for your business with advanced artificial intelligence.",
+          "logo": "/images/thumbs/thumb-azure-bot-icon.jpg",
+          "page": "content/consulting/bots.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
             }
           ]
         }
