@@ -474,6 +474,27 @@ module.exports = {
     require("tailwindcss-gradients"),
     require("@headlessui/tailwindcss")({ prefix: "ui" }),
 
+    // Use flex-basis with gap
+    plugin(function ({ matchUtilities, theme }) {
+      const values = {};
+      Object.entries(theme("flexBasis")).forEach(([basis, basisValue]) => {
+        Object.entries(theme("gap")).forEach(([gap, gapValue]) => {
+          values[`${basis}-${gap}`] = `${basisValue} ${gapValue}`;
+        });
+      });
+
+      matchUtilities(
+        {
+          basis_gap: (value) => ({
+            flexBasis: `calc(${value.split(" ")[0]} - ${value.split(" ")[1]})`,
+          }),
+        },
+        {
+          values: values,
+        }
+      );
+    }),
+
     // taken from https://github.com/tailwindlabs/tailwindcss/discussions/2156#discussioncomment-1283105
     plugin(function ({ addVariant, e }) {
       addVariant("not-first", ({ modifySelectors, separator }) => {

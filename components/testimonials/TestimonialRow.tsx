@@ -1,4 +1,3 @@
-import cs from "classnames";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useEditState } from "tinacms/dist/react";
@@ -36,12 +35,7 @@ export const TestimonialRow = ({
         What do people <span className="text-sswRed">say</span>?
       </h2>
       <p className="mb-8 text-center">{tagline}</p>
-      <div
-        className={cs(
-          "grid justify-center gap-6",
-          `md:grid-cols-${testimonialResult?.length ?? 3}`
-        )}
-      >
+      <div className="flex w-full flex-row flex-wrap items-stretch justify-center gap-6">
         {testimonialResult?.map((testimonial, i) => (
           <TestimonialCard key={i} testimonial={testimonial} />
         ))}
@@ -53,7 +47,7 @@ export const TestimonialRow = ({
 const TestimonialCard = ({ testimonial }) => {
   return (
     <div
-      className="flex flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-8 text-center text-xl drop-shadow sm:h-96 md:h-full md:p-10"
+      className="flex grow flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-8 text-center text-xl drop-shadow sm:h-96 sm:w-full md:h-auto md:max-w-sm md:p-10 md:basis_gap-1/3-6"
       data-aos="flip-right"
     >
       <div className="flex flex-col items-center">
