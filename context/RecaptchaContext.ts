@@ -1,4 +1,3 @@
-import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import { createContext, useContext } from "react";
 
 interface RecaptchaContextType {
@@ -14,15 +13,10 @@ interface useRecaptchaType {
 
 export const useRecaptcha = (): useRecaptchaType => {
   const value = useContext(RecaptchaContext);
-  const appInsights = useAppInsightsContext();
+  let error = undefined;
 
-  let error;
   if (!value || !value.recaptchaKey) {
-    const errorText = "useRecaptcha must be used within a RecaptchaProvider";
-
-    appInsights?.trackException({ exception: new Error("bad") });
-
-    error = errorText;
+    error = "Recaptcha key not provided.";
   }
   return { recaptchaKey: value?.recaptchaKey || "", error };
 };

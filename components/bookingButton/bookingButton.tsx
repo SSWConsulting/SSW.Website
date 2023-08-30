@@ -28,7 +28,7 @@ export const BookingButton = ({ data }) => {
   const { error: recaptchaError } = useRecaptcha();
 
   if (recaptchaError) {
-    alert("Failed to load recaptcha key.");
+    toast.error("Failed to load recaptcha key.");
   }
 
   const bookingPhone = layoutData.bookingPhone;

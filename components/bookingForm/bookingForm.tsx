@@ -3,6 +3,7 @@ import { Form, Formik } from "formik";
 import { useEffect, useMemo, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { FaRegCheckCircle, FaSpinner } from "react-icons/fa";
+import { toast } from "react-toastify";
 import FormGroupInput from "../form/formGroupInput";
 import FormGroupSelect from "../form/formGroupSelect";
 import FormGroupTextArea from "../form/formGroupTextArea";
@@ -32,7 +33,7 @@ export const BookingForm = (props) => {
   const { onClose, showSuccessToast } = props;
 
   if (recaptchaError) {
-    alert("Failed to load recaptcha key.");
+    toast.error("Failed to load recaptcha key.");
   }
 
   const initialFormValues = {
