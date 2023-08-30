@@ -1,14 +1,27 @@
 import classNames from "classnames";
 import type { Template } from "tinacms";
+import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { customImageBlockSchema } from "./customImage";
 import { componentRenderer } from "./mdxComponentRenderer";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
 
-export const ContentCard = ({ data }) => {
+type ContentCardProps = {
+  data: {
+    content: TinaMarkdownContent;
+    prose?: boolean;
+    centerAlignedText?: boolean;
+  };
+};
+
+export const ContentCard = ({ data }: ContentCardProps) => {
   const component = (
-    <article className="relative mx-auto my-5 h-full w-full border-b-2 border-solid border-sswRed bg-gray-75 p-10 text-center">
+    <article
+      className={classNames(
+        "relative mx-auto my-5 h-full w-full border-b-2 border-solid border-sswRed bg-gray-75 p-10"
+      )}
+    >
       <TinaMarkdown content={data.content} components={componentRenderer} />
     </article>
   );
@@ -22,9 +35,7 @@ export const ContentCard = ({ data }) => {
       <div
         className={classNames(
           "prose max-w-full grow",
-          data.centerAlignedText
-            ? "prose-p:text-center"
-            : "prose-p:text-justify"
+          data.centerAlignedText ? "text-center" : "text-justify"
         )}
       >
         {component}

@@ -13,6 +13,7 @@ interface UtilityButtonProps {
   className?: string;
   link?: string;
   size?: keyof typeof sizes;
+  noAnimate?: boolean;
 }
 
 export const UtilityButton = ({
@@ -21,6 +22,7 @@ export const UtilityButton = ({
   className,
   link,
   size,
+  noAnimate,
 }: UtilityButtonProps) => {
   const baseComponent = (
     <Button
@@ -31,7 +33,7 @@ export const UtilityButton = ({
         className
       )}
       onClick={onClick}
-      data-aos="fade-up"
+      data-aos={noAnimate ? undefined : "fade-up"}
     >
       {buttonText}
     </Button>
@@ -77,6 +79,12 @@ export const utilityButtonSchema: Template = {
       name: "size",
       required: false,
       options: Object.keys(sizes),
+    },
+    {
+      type: "boolean",
+      label: "No Animation",
+      name: "noAnimate",
+      required: false,
     },
   ],
 };

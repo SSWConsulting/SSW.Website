@@ -11,8 +11,10 @@ export type Category = {
 
 export type ClientDisplay = {
   name: string;
-  logo: string;
+  logo?: string;
+  logoUrl?: string;
   content: TinaMarkdownContent;
+  caseStudyUrl?: string;
   categories: {
     category: Category;
   }[];
@@ -89,6 +91,11 @@ export const clientListSchema: Template = {
           label: "Logo",
         },
         {
+          type: "string",
+          name: "logoUrl",
+          label: "Logo URL",
+        },
+        {
           type: "rich-text",
           name: "content",
           label: "Content",
@@ -96,7 +103,13 @@ export const clientListSchema: Template = {
             Schemas.utilityButtonSchema,
             Schemas.videoEmbedBlockSchema,
             Schemas.customImageBlockSchema,
+            Schemas.contentCardBlockSchema,
           ],
+        },
+        {
+          type: "string",
+          name: "caseStudyUrl",
+          label: "Case study URL",
         },
         {
           type: "object",
