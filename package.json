@@ -43,7 +43,7 @@
     "@headlessui/tailwindcss": "^0.2.0",
     "@microsoft/applicationinsights-react-js": "^3.4.2",
     "@microsoft/applicationinsights-web": "2.8.14",
-    "@next/bundle-analyzer": "^13.4.13",
+    "@next/bundle-analyzer": "^13.4.19",
     "@tailwindcss/typography": "^0.5.9",
     "animate-css-grid": "^1.5.1",
     "aos": "^2.3.4",
