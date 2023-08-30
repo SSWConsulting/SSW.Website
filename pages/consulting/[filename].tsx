@@ -59,9 +59,7 @@ export default function ConsultingPage(
       .map((category) => category.testimonialCategory.name) ?? [];
 
   return (
-    <RecaptchaContext.Provider
-      value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
-    >
+    <>
       <SEO seo={props.seo} />
       <Layout>
         <Section className="mx-auto w-full max-w-9xl px-8 py-5">
@@ -167,7 +165,7 @@ export default function ConsultingPage(
           <BuiltOnAzure data={{ backgroundColor: "default" }} />
         </Section>
       </Layout>
-    </RecaptchaContext.Provider>
+    </>
   );
 }
 

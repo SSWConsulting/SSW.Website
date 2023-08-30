@@ -23,13 +23,17 @@ import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import { useRecaptcha } from "../../context/RecaptchaContext";
 
 export const BookingForm = (props) => {
-  const { recaptchaKey, error } = useRecaptcha();
+  const { recaptchaKey, error: recaptchaError } = useRecaptcha();
 
   //Show FormStates and Active label
   const [country, setCountry] = useState("");
   const [activeInputLabel, setActiveInputLabel] = useState({});
   const appInsights = useAppInsightsContext();
   const { onClose, showSuccessToast } = props;
+
+  if (recaptchaError) {
+    alert("Failed to load recaptcha key.");
+  }
 
   const initialFormValues = {
     fullName: "",
@@ -153,8 +157,8 @@ export const BookingForm = (props) => {
   return (
     <div className="rounded bg-white font-sans">
       <div className="relative rounded p-2">
-        {error ? (
-          <div className="text-red-600">{error}</div>
+        {recaptchaError ? (
+          <div className="text-red-600">{recaptchaError}</div>
         ) : (
           <div className="m-0 rounded bg-white px-6 pb-5 pt-1">
             <h2 className="mb-14 mt-1.5 pt-1.5 !text-2xl text-sswRed">
