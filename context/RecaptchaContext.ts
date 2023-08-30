@@ -11,6 +11,8 @@ interface useRecaptchaType {
   error?: string;
 }
 
+export const recaptchaToastId = "recaptcha-toast";
+
 export const useRecaptcha = (): useRecaptchaType => {
   const value = useContext(RecaptchaContext);
   let error = undefined;

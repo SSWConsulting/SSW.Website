@@ -21,7 +21,7 @@ import { bookingFormSubmissionData } from "./bookingFormSubmissionData";
 import { ValidationSchema } from "./validationSchema";
 
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
-import { useRecaptcha } from "../../context/RecaptchaContext";
+import { recaptchaToastId, useRecaptcha } from "../../context/RecaptchaContext";
 
 export const BookingForm = (props) => {
   const { recaptchaKey, error: recaptchaError } = useRecaptcha();
@@ -33,7 +33,7 @@ export const BookingForm = (props) => {
   const { onClose, showSuccessToast } = props;
 
   if (recaptchaError) {
-    toast.error("Failed to load recaptcha key.");
+    toast.error("Failed to load recaptcha key.", { toastId: recaptchaToastId });
   }
 
   const initialFormValues = {
