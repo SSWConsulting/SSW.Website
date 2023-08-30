@@ -4,6 +4,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import type { Template } from "tinacms";
 import layoutData from "../../content/global/index.json";
+import { recaptchaToastId, useRecaptcha } from "../../context/RecaptchaContext";
 import { UtilityButton } from "../button/utilityButton";
 import Popup from "../popup/popup";
 import SuccessToast from "../successToast/successToast";
@@ -23,6 +24,12 @@ export const BookingButton = ({ data }) => {
   const { containerClass, buttonClass, buttonText }: BookingButtonProps = data;
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const showBookingForm = () => setIsVisible((curr) => !curr);
+
+  const { error: recaptchaError } = useRecaptcha();
+
+  if (recaptchaError) {
+    toast.error("Failed to load recaptcha key.", { toastId: recaptchaToastId });
+  }
 
   const bookingPhone = layoutData.bookingPhone;
 
