@@ -51,11 +51,11 @@ export const useEvents = (events: EventInfo[]) => {
   const filteredEvents = useMemo(() => {
     return events?.filter(
       (event) =>
-        (filterControls[0] === NO_SELECTION ||
+        (filterControls.technology === NO_SELECTION ||
           event.Category_f5a9cf4c_x002d_8228_x00 ===
-            options.categories[filterControls[0]]) &&
-        (filterControls[1] === NO_SELECTION ||
-          event.CalendarType === options.formats[filterControls[1]])
+            options.categories[filterControls.technology]) &&
+        (filterControls.format === NO_SELECTION ||
+          event.CalendarType === options.formats[filterControls.format])
     );
   }, [events, filterControls]);
 
