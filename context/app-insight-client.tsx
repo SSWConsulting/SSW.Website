@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-import { ApplicationInsights } from "@microsoft/applicationinsights-web";
 import {
+  AppInsightsContext,
   ReactPlugin,
   withAITracking,
-  AppInsightsContext,
 } from "@microsoft/applicationinsights-react-js";
+import { ApplicationInsights } from "@microsoft/applicationinsights-web";
 import { createBrowserHistory } from "history";
+import React, { useEffect } from "react";
 
 let browserHistory = null;
 
@@ -36,6 +36,7 @@ const AzureAppInsights = ({ children }) => {
     if (appInsightConnString) {
       appInsights.loadAppInsights();
     } else {
+      // eslint-disable-next-line no-console
       console.log("Client side logging is not turned on!");
     }
   }, []);

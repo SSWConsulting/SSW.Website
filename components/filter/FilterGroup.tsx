@@ -2,6 +2,7 @@ import { Transition } from "@headlessui/react";
 import classNames from "classnames";
 import { useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
+import { NO_SELECTION } from "./FilterBlock";
 
 export interface FilterGroupProps {
   selected: number;
@@ -22,7 +23,7 @@ export const FilterGroup = ({
         index={-1}
         selected={selected}
         setSelected={setSelected}
-        className={selected === -1 ? "font-bold" : ""}
+        className={selected === NO_SELECTION ? "font-bold" : ""}
       >
         {allText}
       </FilterOption>
