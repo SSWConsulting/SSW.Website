@@ -24,7 +24,17 @@ const VimeoEmbed = dynamic(
   }
 );
 
-export const VideoModal = ({ children = null, url, overflow }) => {
+type VideoModalProps = {
+  children?: React.ReactNode;
+  url: string;
+  overflow?: boolean;
+};
+
+export const VideoModal = ({
+  children = null,
+  url,
+  overflow,
+}: VideoModalProps) => {
   const [videoId, setVideoId] = useState<string>();
   const [clicked, setClicked] = useState<boolean>(false);
   const [imageSrc, setImageSrc] = useState<string>("");
