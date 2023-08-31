@@ -8,7 +8,7 @@ const sizes = {
 } as const;
 
 interface UtilityButtonProps {
-  buttonText?: string;
+  buttonText?: string | JSX.Element;
   onClick?: () => void;
   className?: string;
   link?: string;

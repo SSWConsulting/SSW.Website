@@ -15,6 +15,7 @@ export type ClientDisplay = {
   logoUrl?: string;
   content: TinaMarkdownContent;
   caseStudyUrl?: string;
+  showStuck?: boolean;
   categories: {
     category: Category;
   }[];
@@ -109,6 +110,11 @@ export const clientListSchema: Template = {
           type: "string",
           name: "caseStudyUrl",
           label: "Case study URL",
+        },
+        {
+          type: "boolean",
+          name: "showStuck",
+          label: "Show 'Are you stuck?' button",
         },
         {
           type: "object",

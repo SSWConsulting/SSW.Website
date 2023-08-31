@@ -1,6 +1,7 @@
 import { Transition } from "@headlessui/react";
 import Image from "next/image";
 import { useMemo, useState } from "react";
+import { BsArrowRightCircle } from "react-icons/bs";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { UtilityButton } from "../blocks";
 import { LinkWrapper } from "../blocks/customImage";
@@ -47,7 +48,7 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <h2>{client.name}</h2>
+            <h2 className="mb-4 mt-0">{client.name}</h2>
             <div className="">
               {client.logo && (
                 <div className="float-left mb-5 mr-4 block border-r-1 p-4">
@@ -68,15 +69,36 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
                 />
               </div>
             </div>
-            {client.caseStudyUrl && (
-              <UtilityButton
-                className="clear-both"
-                size="small"
-                link={client.caseStudyUrl}
-                buttonText="Read the case study"
-                noAnimate
-              />
-            )}
+            <div className="flex flex-row">
+              {client.caseStudyUrl && (
+                <UtilityButton
+                  className="clear-both mr-4 inline"
+                  size="small"
+                  link={client.caseStudyUrl}
+                  buttonText={
+                    <>
+                      Read the case study
+                      <BsArrowRightCircle className="ml-1 inline" />
+                    </>
+                  }
+                  noAnimate
+                />
+              )}
+              {client.showStuck && (
+                <UtilityButton
+                  className="clear-both"
+                  size="small"
+                  link="https://www.ssw.com.au/SSW/Consulting/Are-You-Stuck.aspx"
+                  buttonText={
+                    <>
+                      Stuck on legacy technology?
+                      <BsArrowRightCircle className="ml-1 inline" />
+                    </>
+                  }
+                  noAnimate
+                />
+              )}
+            </div>
             <hr className="mb-4 mt-8" />
           </Transition>
         );
