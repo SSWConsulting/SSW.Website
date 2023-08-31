@@ -10,12 +10,19 @@ import {
 import { GoogleRecaptcha } from "../../services/server/google-recaptcha";
 import { PA_FLOW } from "../../services/server/power-automate-flow";
 
+import NextCors from "nextjs-cors";
 import { CustomError } from "../../services/server/customError";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  await NextCors(req, res, {
+    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+    origin: "*",
+    optionsSuccessStatus: 200,
+  });
+
   try {
     if (req.method === "POST") {
       const { Recaptcha } = req.body;

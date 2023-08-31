@@ -4517,6 +4517,7 @@ __metadata:
     next-seo: ^6.1.0
     next-sitemap: ^4.1.8
     nextjs-breadcrumbs2: ^2.0.4
+    nextjs-cors: ^2.1.2
     node-cache: ^5.1.2
     postcss: ^8.4.28
     postcss-import: ^15.1.0
@@ -12093,6 +12094,17 @@ __metadata:
     next: ^13.0.0
     react: ^18.2.0
   checksum: bffcf4c47728f6584ec3a6bfa5206876f1fa4afaf74ee8b0301cbcc27931bbede78107254d06e9dc6b35ed40a12092bb77250467959d1452e0e7d5713b781fbd
+  languageName: node
+  linkType: hard
+
+"nextjs-cors@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "nextjs-cors@npm:2.1.2"
+  dependencies:
+    cors: ^2.8.5
+  peerDependencies:
+    next: ^8.1.1-canary.54 || ^9.0.0 || ^10.0.0-0 || ^11.0.0 || ^12.0.0 || ^13.0.0
+  checksum: 92417b4367b1761c8bd3747f3f014a96f199d4101c39f64b03225913daec09f0952dd501f4381d9bee4a424cfc61921e862e7bab6970fc20810c0fbbc924d222
   languageName: node
   linkType: hard
 
