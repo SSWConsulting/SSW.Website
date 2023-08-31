@@ -66,6 +66,7 @@ export default async function handler(
       throw new Error("Unsupported method");
     }
   } catch (error) {
+    console.error(error);
     if (error instanceof CustomError) {
       appInsight.defaultClient?.trackException({
         exception: new Error(error.message),
