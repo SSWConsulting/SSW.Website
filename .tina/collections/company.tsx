@@ -27,7 +27,7 @@ export const companySchema: Collection = {
     {
       type: "rich-text",
       name: "subTitle",
-      label: "Sub Title",
+      label: "Body",
     },
     {
       type: "object",

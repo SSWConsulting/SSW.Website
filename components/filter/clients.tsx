@@ -22,7 +22,7 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
 
     const category = categories[selected];
     return clients.filter(
-      (client) => client.categories?.find((c) => c.category.id === category)
+      (client) => client.categories?.find((c) => c.category.name === category)
     );
   }, [clients, selected]);
 

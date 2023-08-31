@@ -54,7 +54,7 @@ export default function CompanyPage(
               className="mx-auto w-full max-w-9xl px-8"
               data-tina-field={tinaField(data.company, "title")}
             >
-              <h1 className="mt-0 py-2">{data.company.title}</h1>
+              <h1 className="mt-4 py-2">{data.company.title}</h1>
             </Section>
           )}
           {data.company.subTitle && (
