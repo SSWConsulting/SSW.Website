@@ -77,6 +77,7 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
                 noAnimate
               />
             )}
+            <hr className="mb-4 mt-8" />
           </Transition>
         );
       })}
