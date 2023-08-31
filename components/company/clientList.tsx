@@ -32,7 +32,6 @@ type ClientListProps = {
 export const ClientList = ({
   data: { clients, categories },
 }: ClientListProps) => {
-  console.log(clients);
   const clientCategories = categories.map(
     (category) => category?.category?.name
   );

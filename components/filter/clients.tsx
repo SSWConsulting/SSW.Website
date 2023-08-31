@@ -5,7 +5,6 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { UtilityButton } from "../blocks";
 import { LinkWrapper } from "../blocks/customImage";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
-import { VideoEmbed } from "../blocks/videoEmbed";
 import { ClientDisplay } from "../company/clientList";
 import { FilterBlock } from "./FilterBlock";
 import { type FilterGroupProps } from "./FilterGroup";
@@ -22,8 +21,8 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
     if (selected === -1) return clients;
 
     const category = categories[selected];
-    return clients.filter((client) =>
-      client.categories?.find((c) => c.category.id === category)
+    return clients.filter(
+      (client) => client.categories?.find((c) => c.category.id === category)
     );
   }, [clients, selected]);
 
@@ -38,7 +37,7 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
       {clients.map((client, index) => {
         return (
           <Transition
-            className="w-full"
+            className="flex w-full flex-col"
             key={index}
             show={filteredClients?.some((c) => c.name === client.name)}
             enter="transition-opacity duration-300"
