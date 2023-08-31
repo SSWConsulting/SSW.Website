@@ -22,8 +22,8 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
     if (selected === -1) return clients;
 
     const category = categories[selected];
-    return clients.filter(
-      (client) => client.categories?.find((c) => c.category.id === category)
+    return clients.filter((client) =>
+      client.categories?.find((c) => c.category.id === category)
     );
   }, [clients, selected]);
 
@@ -51,7 +51,7 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
             <h2>{client.name}</h2>
             <div className="">
               {client.logo && (
-                <div className="float-left mr-4 block border-r-1 p-4">
+                <div className="float-left mb-5 mr-4 block border-r-1 p-4">
                   <LinkWrapper link={client.logoUrl}>
                     <Image
                       src={client.logo || ""}
@@ -71,6 +71,7 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
             </div>
             {client.caseStudyUrl && (
               <UtilityButton
+                className="clear-both"
                 size="small"
                 link={client.caseStudyUrl}
                 buttonText="Read the case study"

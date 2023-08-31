@@ -59,7 +59,7 @@ export const VideoModal = ({ children = null, url, overflow }) => {
       <div
         className={classNames(
           "rounded",
-          overflow ? undefined : "overflow-hidden"
+          overflow ? "clear-both" : "overflow-hidden"
         )}
       >
         <div className="relative mx-auto aspect-video h-full w-full">
