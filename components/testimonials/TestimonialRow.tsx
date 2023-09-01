@@ -6,6 +6,8 @@ import { GetTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { Rating } from "../util/consulting/rating";
 import { Container } from "../util/container";
 
+const defaultAvatar = "/images/thumbs/avatar-thumbnail.png";
+
 export const TestimonialRow = ({
   testimonialsResult,
   tagline,
@@ -51,9 +53,10 @@ const TestimonialCard = ({ testimonial }) => {
       <div className="flex flex-col items-center">
         <Image
           alt={`Picture of ${testimonial?.name} as an avatar`}
-          src={testimonial?.avatar ?? ""}
+          src={testimonial?.avatar ?? defaultAvatar}
           height={120}
           width={120}
+          quality={90}
           className="rounded-full"
         />
       </div>

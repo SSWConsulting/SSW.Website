@@ -18,7 +18,7 @@ export const testimonialSchema: Collection = {
       type: "image",
       label: "Avatar",
       name: "avatar",
-      required: true,
+      required: false,
       // @ts-ignore
       uploadDir: () => "testimonialAvatars",
     },
