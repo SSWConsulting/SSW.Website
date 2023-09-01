@@ -31,7 +31,9 @@ export const ContentCard = ({ data }: ContentCardProps) => {
       <div
         className={classNames(
           "prose max-w-full grow",
-          data.centerAlignedText ? "text-center" : "text-justify"
+          data.centerAlignedText
+            ? "prose-p:text-center"
+            : "prose-p:text-justify"
         )}
       >
         {component}
