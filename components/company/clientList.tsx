@@ -1,6 +1,6 @@
 import type { Template } from "tinacms";
 import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
-import { contentCardBlockSchema } from "../../components/blocks/contentCard";
+// import { contentCardBlockSchema } from "../../components/blocks/contentCard";
 import { customImageBlockSchema } from "../../components/blocks/customImage";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
 import { utilityButtonSchema } from "../../components/button/utilityButton";
