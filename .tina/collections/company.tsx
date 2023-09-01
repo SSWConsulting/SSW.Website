@@ -30,6 +30,11 @@ export const companySchema: Collection = {
       label: "Sub Title",
     },
     {
+      type: "rich-text",
+      name: "sidebar",
+      label: "Sidebar",
+    },
+    {
       type: "object",
       list: true,
       name: "_body",
