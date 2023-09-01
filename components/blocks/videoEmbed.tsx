@@ -2,22 +2,13 @@ import classNames from "classnames";
 import type { Template } from "tinacms";
 import { VideoModal } from "../videoModal";
 
-type VideoEmbedProps = {
-  data: {
-    url: string;
-    videoWidth?: string;
-    removeMargin?: boolean;
-    overflow?: boolean;
-  };
-};
-
-export const VideoEmbed = ({ data }: VideoEmbedProps) => {
+export const VideoEmbed = ({ data }) => {
   const width = data.videoWidth || "w-3/4";
   const margin = data.removeMargin ? "" : "m-8";
 
   return (
     <div className={classNames("relative mx-auto aspect-video", width, margin)}>
-      <VideoModal url={data.url} overflow={data.overflow} />
+      <VideoModal url={data.url} />
     </div>
   );
 };
@@ -66,12 +57,6 @@ export const videoEmbedBlockSchema: Template = {
       type: "boolean",
       label: "Remove margin",
       name: "removeMargin",
-      required: false,
-    },
-    {
-      type: "boolean",
-      label: "Overflow (read more at tailwindcss.com/docs/overflow)",
-      name: "overflow",
       required: false,
     },
   ],

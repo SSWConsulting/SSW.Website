@@ -27,7 +27,7 @@ export const companySchema: Collection = {
     {
       type: "rich-text",
       name: "subTitle",
-      label: "Body",
+      label: "Sub Title",
     },
     {
       type: "object",
@@ -187,20 +187,6 @@ export const companyIndexSchema: Collection = {
           name: companyIndexSchemaConstants.companyPages.pageURL,
         },
       ],
-    },
-  ],
-};
-
-export const clientsCategorySchema: Collection = {
-  label: "Company - Client categories",
-  name: "clientCategories",
-  path: "content/company/clientCategories",
-  format: "json",
-  fields: [
-    {
-      type: "string",
-      label: "Name",
-      name: "name",
     },
   ],
 };
