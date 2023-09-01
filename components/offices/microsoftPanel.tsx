@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Template } from "tinacms";
 
 const MicrosoftPanel = () => {
   return (
@@ -28,6 +29,12 @@ const MicrosoftPanel = () => {
       </div>
     </>
   );
+};
+
+export const microsoftPanelSchema: Template = {
+  name: "MicrosoftPanel",
+  label: "Microsoft Panel",
+  fields: [],
 };
 
 export default MicrosoftPanel;

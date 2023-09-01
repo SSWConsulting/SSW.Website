@@ -5,6 +5,7 @@ import client from "../../.tina/__generated__/client";
 import { BuiltOnAzure } from "../../components/blocks";
 import { Blocks } from "../../components/blocks-renderer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import HistoryTimeline from "../../components/company/historyTimeline";
 import { HistoryTimelineCardProps } from "../../components/company/historyTimelineCard";
 import { Layout } from "../../components/layout";
@@ -58,12 +59,23 @@ export default function CompanyPage(
             </Section>
           )}
           {data.company.subTitle && (
-            <Section className="prose mx-auto !block w-full max-w-9xl px-8">
-              <TinaMarkdown
-                content={data.company.subTitle}
-                data-tina-field={tinaField(data.company, "subTitle")}
-              />
-            </Section>
+            <section className="prose mx-auto flex w-full max-w-9xl flex-row px-8">
+              <div>
+                <TinaMarkdown
+                  content={data.company.subTitle}
+                  data-tina-field={tinaField(data.company, "subTitle")}
+                  components={componentRenderer}
+                />
+              </div>
+              {data.company.sidebar && (
+                <div className="w-96">
+                  <TinaMarkdown
+                    content={data.company.sidebar}
+                    components={componentRenderer}
+                  />
+                </div>
+              )}
+            </section>
           )}
 
           <Blocks prefix="Company_body" blocks={data.company._body} />

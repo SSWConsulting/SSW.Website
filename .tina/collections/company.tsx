@@ -1,4 +1,5 @@
 import * as Schemas from "../../components/blocks";
+import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
 import { seoSchema } from "../../components/util/seo";
 
 import type { Collection } from "tinacms";
@@ -28,11 +29,13 @@ export const companySchema: Collection = {
       type: "rich-text",
       name: "subTitle",
       label: "Sub Title",
+      templates: [videoEmbedBlockSchema],
     },
     {
       type: "rich-text",
       name: "sidebar",
       label: "Sidebar",
+      required: false,
     },
     {
       type: "object",
