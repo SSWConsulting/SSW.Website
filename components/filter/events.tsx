@@ -221,7 +221,7 @@ const Event = ({ visible, event }: EventProps) => {
         </div>
         <div
           dangerouslySetInnerHTML={{
-            __html: sanitiseXSS(event.EventShortDescription),
+            __html: sanitiseXSS(event.EventShortDescription) || "",
           }}
           className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline"
         />

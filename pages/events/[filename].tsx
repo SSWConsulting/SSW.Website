@@ -63,7 +63,7 @@ export default function EventsPage(
               data-tina-field={tinaField(data.events, "title")}
               className="py-0 text-center text-5xl font-semibold"
               dangerouslySetInnerHTML={{
-                __html: sanitiseXSS(data.events.title),
+                __html: sanitiseXSS(data?.events?.title) || "",
               }}
             />
           )}
