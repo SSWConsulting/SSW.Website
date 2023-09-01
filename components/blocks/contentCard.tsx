@@ -1,11 +1,10 @@
 import classNames from "classnames";
 import type { Template } from "tinacms";
-import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
-//import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { customImageBlockSchema } from "./customImage";
-//import { componentRenderer } from "./mdxComponentRenderer";
-import { verticalListItemSchema } from "./verticalListItem";
-import { videoEmbedBlockSchema } from "./videoEmbed";
+import type { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { CustomImage, customImageBlockSchema } from "./customImage";
+import { VerticalListItem, verticalListItemSchema } from "./verticalListItem";
+import { VideoEmbed, videoEmbedBlockSchema } from "./videoEmbed";
 
 export type ContentCardProps = {
   data: {
@@ -15,10 +14,33 @@ export type ContentCardProps = {
   };
 };
 
+const contentCardComponentRenderer: Components<{
+  CustomImage: {
+    src: string;
+    alt: string;
+    height: number;
+    width: number;
+  };
+  VerticalListItem: {
+    icon: string;
+    content: string;
+  };
+  VideoEmbed: {
+    url: string;
+  };
+}> = {
+  CustomImage: (props) => <CustomImage data={props} />,
+  VerticalListItem: (props) => <VerticalListItem data={props} />,
+  VideoEmbed: (props) => <VideoEmbed data={props} />,
+};
+
 export const ContentCard = ({ data }: ContentCardProps) => {
   const component = (
     <article className="relative mx-auto my-5 h-full w-full border-b-2 border-solid border-sswRed bg-gray-75 p-10">
-      {/* <TinaMarkdown content={data.content} components={componentRenderer} /> */}
+      <TinaMarkdown
+        content={data.content}
+        components={contentCardComponentRenderer}
+      />
     </article>
   );
 
