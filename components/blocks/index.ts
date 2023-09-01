@@ -2,6 +2,7 @@ import type { Template } from "tinacms";
 
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
 import { utilityButtonSchema } from "../button/utilityButton";
+import { clientListSchema } from "../company/clientList";
 import { tweetEmbedSchema } from "../embeds/tweetEmbed";
 import { subNewsletterRowSchema } from "../subNewsletter/subNewsletterRow";
 import { agreementFormBlockSchema } from "../terms-and-conditions/agreementForm";
@@ -78,6 +79,7 @@ export const pageBlocks: Template[] = [
   joinGithubSchema,
   joinAsPresenterSchema,
   paymentBlockSchema,
+  clientListSchema,
 ];
 
 export * from "../bookingButton/bookingButton";
