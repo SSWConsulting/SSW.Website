@@ -1,6 +1,9 @@
 import type { Template } from "tinacms";
 import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
-import * as Schemas from "../../components/blocks";
+import { contentCardBlockSchema } from "../../components/blocks/contentCard";
+import { customImageBlockSchema } from "../../components/blocks/customImage";
+import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
+import { utilityButtonSchema } from "../../components/button/utilityButton";
 import { ClientsFilter } from "../filter/clients";
 import { Container } from "../util/container";
 
@@ -46,6 +49,12 @@ export const ClientList = ({
 const formatCategory = (category: string) => {
   return category?.split("/")[3].replace(".json", "");
 };
+
+const clientListBlocks: Template[] = [
+  utilityButtonSchema,
+  videoEmbedBlockSchema,
+  customImageBlockSchema,
+];
 
 export const clientListSchema: Template = {
   label: "Client List",
@@ -103,11 +112,7 @@ export const clientListSchema: Template = {
           type: "rich-text",
           name: "content",
           label: "Content",
-          templates: [
-            Schemas.utilityButtonSchema,
-            Schemas.customImageBlockSchema,
-            Schemas.contentCardBlockSchema,
-          ],
+          templates: clientListBlocks,
         },
         {
           type: "string",
