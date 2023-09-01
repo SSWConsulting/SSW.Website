@@ -17,11 +17,7 @@ type ContentCardProps = {
 
 export const ContentCard = ({ data }: ContentCardProps) => {
   const component = (
-    <article
-      className={classNames(
-        "relative mx-auto my-5 h-full w-full border-b-2 border-solid border-sswRed bg-gray-75 p-10"
-      )}
-    >
+    <article className="relative mx-auto my-5 h-full w-full border-b-2 border-solid border-sswRed bg-gray-75 p-10">
       <TinaMarkdown content={data.content} components={componentRenderer} />
     </article>
   );
