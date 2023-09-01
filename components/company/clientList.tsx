@@ -105,7 +105,6 @@ export const clientListSchema: Template = {
           label: "Content",
           templates: [
             Schemas.utilityButtonSchema,
-            Schemas.videoEmbedBlockSchema,
             Schemas.customImageBlockSchema,
             Schemas.contentCardBlockSchema,
           ],
