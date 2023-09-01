@@ -7,7 +7,7 @@ import { componentRenderer } from "./mdxComponentRenderer";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
 
-type ContentCardProps = {
+export type ContentCardProps = {
   data: {
     content: TinaMarkdownContent;
     prose?: boolean;

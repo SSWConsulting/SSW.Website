@@ -24,7 +24,7 @@ import { contentBlockSchema } from "./content";
 import { contentCardBlockSchema } from "./contentCard";
 import { customImageBlockSchema } from "./customImage";
 import { dynamicColumnsSchema } from "./dynamicColumns";
-import { fixedColumnsSchema } from "./fixedColumns";
+//import { fixedColumnsSchema } from "./fixedColumns";
 import { fixedTabsLayoutSchema } from "./fixedTabsLayout";
 import { flagSchema } from "./flag";
 import { googleMapsSchema } from "./googleMapsWrapper";
@@ -53,7 +53,7 @@ export const pageBlocks: Template[] = [
   customImageBlockSchema,
   dynamicColumnsSchema,
   flagSchema,
-  fixedColumnsSchema,
+  //fixedColumnsSchema,
   fixedTabsLayoutSchema,
   googleMapsSchema,
   heroBlockSchema,
