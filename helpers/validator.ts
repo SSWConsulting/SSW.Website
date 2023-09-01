@@ -1,4 +1,4 @@
-import { sanitize } from "isomorphic-dompurify";
+import xss from "xss";
 
 export const isEmail = (email: string): boolean => {
   // Found at https://emailregex.com/
@@ -11,5 +11,5 @@ export const isEmail = (email: string): boolean => {
 
 export const sanitiseXSS = (input: string) => {
   if (!input) return input;
-  return sanitize(input);
+  return xss(input);
 };

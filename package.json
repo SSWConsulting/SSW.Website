@@ -53,7 +53,6 @@
     "dayjs": "^1.11.8",
     "eslint-config-next": "^13.4.12",
     "formik": "^2.4.3",
-    "isomorphic-dompurify": "^1.8.0",
     "next": "^13.4.12",
     "next-seo": "^6.1.0",
     "nextjs-breadcrumbs2": "^2.0.4",
@@ -75,6 +74,7 @@
     "tinacms": "^1.5.20",
     "typescript": "^5.1.6",
     "usehooks-ts": "^2.9.1",
+    "xss": "^1.0.14",
     "yup": "^0.32.11"
   },
   "resolutions": {
