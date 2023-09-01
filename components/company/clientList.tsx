@@ -43,6 +43,10 @@ export const ClientList = ({
   );
 };
 
+const formatCategory = (category: string) => {
+  return category?.split("/")[3].replace(".json", "");
+};
+
 export const clientListSchema: Template = {
   label: "Client List",
   name: "ClientList",
@@ -62,9 +66,9 @@ export const clientListSchema: Template = {
       ],
       ui: {
         itemProps: (item) => {
+          const label = formatCategory(item?.category);
           return {
-            label:
-              item?.category || "New category (click to select a category)",
+            label: label || "New category (click to select a category)",
           };
         },
       },
@@ -123,7 +127,7 @@ export const clientListSchema: Template = {
           list: true,
           ui: {
             itemProps: (item) => {
-              return { label: item?.category?.name };
+              return { label: formatCategory(item?.category) };
             },
           },
           fields: [
