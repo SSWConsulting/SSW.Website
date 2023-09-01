@@ -2,6 +2,7 @@ import { FC, Key } from "react";
 import type { Template } from "tinacms";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import { sanitiseXSS } from "../../helpers/validator";
 import { recurringEventSchema } from "../blocks/recurringEvent";
 import { verticalListItemSchema } from "../blocks/verticalListItem";
 import { Container } from "../util/container";
@@ -20,7 +21,7 @@ const TrainingInformationItem: FC<TrainingInformationItemProps> = ({
     <div className="flex flex-col text-center text-base lg:text-left">
       <h3
         className="my-0 py-0 text-3xl"
-        dangerouslySetInnerHTML={{ __html: header }}
+        dangerouslySetInnerHTML={{ __html: sanitiseXSS(header) }}
       ></h3>
       <div className="w-full items-center p-5 text-left sm:w-3/4 lg:w-full">
         <TinaMarkdown components={componentRenderer} content={body} />

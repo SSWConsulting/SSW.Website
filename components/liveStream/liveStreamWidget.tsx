@@ -8,6 +8,7 @@ import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
 import layoutData from "../../content/global/index.json";
 import { getYouTubeId } from "../../helpers/embeds";
+import { sanitiseXSS } from "../../helpers/validator";
 import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 import { SpeakerInfo } from "../../services/server/events";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
@@ -284,8 +285,9 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                   }
                 )}
                 dangerouslySetInnerHTML={{
-                  __html:
-                    event?.EventDescription || event?.EventShortDescription,
+                  __html: sanitiseXSS(
+                    event?.EventDescription || event?.EventShortDescription
+                  ),
                 }}
               ></div>
               {eventDescriptionCollapsable && (
@@ -345,7 +347,9 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                     <p className="mb-3 font-bold">{speakerInfo.Title}</p>
                     <p
                       dangerouslySetInnerHTML={{
-                        __html: speakerInfo.PresenterShortDescription,
+                        __html: sanitiseXSS(
+                          speakerInfo.PresenterShortDescription
+                        ),
                       }}
                     />
                     {!!speakerInfo.PresenterProfileLink && (

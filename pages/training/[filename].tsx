@@ -15,6 +15,7 @@ import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import VideoCards, { VideoCardProps } from "../../components/util/videoCards";
 import { GetTestimonialsByCategories } from "../../helpers/getTestimonials";
+import { sanitiseXSS } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
 
 export default function TrainingPage(
@@ -58,7 +59,9 @@ export default function TrainingPage(
           <h1
             data-tina-field={tinaField(data.training, "title")}
             className="py-0 text-center text-5xl font-semibold"
-            dangerouslySetInnerHTML={{ __html: data.training.title }}
+            dangerouslySetInnerHTML={{
+              __html: sanitiseXSS(data.training.title),
+            }}
           />
 
           <Blocks prefix="Training_body" blocks={data.training._body} />

@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import * as React from "react";
 import { TextArea, wrapFieldsWithMeta, type Template } from "tinacms";
+import { sanitiseXSS } from "../../helpers/validator";
 
 const tableStyles = {
   none: "",
@@ -80,7 +81,9 @@ export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
                       ? data.headers.length - row.cells.length + 1
                       : 1
                   }
-                  dangerouslySetInnerHTML={{ __html: cell?.cellValue || "" }}
+                  dangerouslySetInnerHTML={{
+                    __html: sanitiseXSS(cell?.cellValue) || "",
+                  }}
                 />
               ))}
             </tr>
