@@ -1,11 +1,5 @@
 import xss, { type IFilterXSSOptions } from "xss";
 
-// const xssOptions = {
-//   whiteList: {
-//     span: ["style", "class", "data-tina-field"],
-//   },
-// };
-
 export const isEmail = (email: string): boolean => {
   // Found at https://emailregex.com/
   /* eslint-disable */
