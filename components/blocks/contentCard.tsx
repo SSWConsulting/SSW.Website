@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import type { Template } from "tinacms";
 import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+//import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { customImageBlockSchema } from "./customImage";
-import { componentRenderer } from "./mdxComponentRenderer";
+//import { componentRenderer } from "./mdxComponentRenderer";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
 
@@ -18,7 +18,7 @@ export type ContentCardProps = {
 export const ContentCard = ({ data }: ContentCardProps) => {
   const component = (
     <article className="relative mx-auto my-5 h-full w-full border-b-2 border-solid border-sswRed bg-gray-75 p-10">
-      <TinaMarkdown content={data.content} components={componentRenderer} />
+      {/* <TinaMarkdown content={data.content} components={componentRenderer} /> */}
     </article>
   );
 
@@ -68,9 +68,9 @@ export const contentCardBlockSchema: Template = {
       label: "Content",
       name: "content",
       templates: [
-        videoEmbedBlockSchema,
-        verticalListItemSchema,
         customImageBlockSchema,
+        verticalListItemSchema,
+        videoEmbedBlockSchema,
       ],
     },
   ],

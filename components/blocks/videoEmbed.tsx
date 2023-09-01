@@ -70,7 +70,7 @@ export const videoEmbedBlockSchema: Template = {
     },
     {
       type: "boolean",
-      label: "Overflow (read more at tailwindcss.com/docs/overflow)",
+      label: "Overflow - read more at tailwindcss.com/docs/overflow",
       name: "overflow",
       required: false,
     },
