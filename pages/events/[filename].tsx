@@ -15,7 +15,7 @@ import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import VideoCards, { VideoCardProps } from "../../components/util/videoCards";
 import { GetTestimonialsByCategories } from "../../helpers/getTestimonials";
-import { sanitiseXSS } from "../../helpers/validator";
+import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
 
 export default function EventsPage(
@@ -63,7 +63,7 @@ export default function EventsPage(
               data-tina-field={tinaField(data.events, "title")}
               className="py-0 text-center text-5xl font-semibold"
               dangerouslySetInnerHTML={{
-                __html: sanitiseXSS(data?.events?.title) || "",
+                __html: sanitiseXSS(data?.events?.title, spanWhitelist) || "",
               }}
             />
           )}

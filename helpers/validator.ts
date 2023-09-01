@@ -1,4 +1,10 @@
-import xss from "xss";
+import xss, { type IFilterXSSOptions } from "xss";
+
+// const xssOptions = {
+//   whiteList: {
+//     span: ["style", "class", "data-tina-field"],
+//   },
+// };
 
 export const isEmail = (email: string): boolean => {
   // Found at https://emailregex.com/
@@ -9,7 +15,11 @@ export const isEmail = (email: string): boolean => {
   return regex.test(email);
 };
 
-export const sanitiseXSS = (input: string) => {
+export const spanWhitelist = {
+  whiteList: { span: ["data-tina-field", "class"] },
+};
+
+export const sanitiseXSS = (input: string, options?: IFilterXSSOptions) => {
   if (!input) return input;
-  return xss(input);
+  return xss(input, options);
 };

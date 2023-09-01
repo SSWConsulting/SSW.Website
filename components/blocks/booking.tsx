@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { FaAngleDown } from "react-icons/fa";
 import { tinaField } from "tinacms/dist/react";
+import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { Container } from "../util/container";
-import { sanitiseXSS } from "../../helpers/validator";
 
 export const Booking: FC<{
   title?: string;
@@ -15,7 +15,9 @@ export const Booking: FC<{
       <Container padding="px-4" className="w-full z-content">
         <h1
           data-tina-field={tinaField(props, "title")}
-          dangerouslySetInnerHTML={{ __html: sanitiseXSS(props.title) || "" }}
+          dangerouslySetInnerHTML={{
+            __html: sanitiseXSS(props.title, spanWhitelist) || "",
+          }}
         ></h1>
         <h2 data-tina-field={tinaField(props, "subTitle")}>{props.subTitle}</h2>
         {props.children}

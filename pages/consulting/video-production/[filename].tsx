@@ -19,7 +19,7 @@ import { RecaptchaContext } from "../../../context/RecaptchaContext";
 import { removeExtension } from "../../../services/client/utils.service";
 
 import ReactDOMServer from "react-dom/server";
-import { sanitiseXSS } from "../../../helpers/validator";
+import { sanitiseXSS, spanWhitelist } from "../../../helpers/validator";
 
 export default function VideoProductionPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -133,7 +133,8 @@ const parseCallToAction = (
   );
 
   return sanitiseXSS(
-    content?.replace("{{TITLE}}", ReactDOMServer.renderToString(HTMLelement))
+    content?.replace("{{TITLE}}", ReactDOMServer.renderToString(HTMLelement)),
+    spanWhitelist
   );
 };
 
