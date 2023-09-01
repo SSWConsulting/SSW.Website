@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -24,17 +23,7 @@ const VimeoEmbed = dynamic(
   }
 );
 
-type VideoModalProps = {
-  children?: React.ReactNode;
-  url: string;
-  overflow?: boolean;
-};
-
-export const VideoModal = ({
-  children = null,
-  url,
-  overflow,
-}: VideoModalProps) => {
+export const VideoModal = ({ children = null, url }) => {
   const [videoId, setVideoId] = useState<string>();
   const [clicked, setClicked] = useState<boolean>(false);
   const [imageSrc, setImageSrc] = useState<string>("");
@@ -66,12 +55,7 @@ export const VideoModal = ({
 
   return (
     <div>
-      <div
-        className={classNames(
-          "rounded",
-          overflow ? "clear-both" : "overflow-hidden"
-        )}
-      >
+      <div className="overflow-hidden rounded">
         <div className="relative mx-auto aspect-video h-full w-full">
           {!clicked ? (
             <div className="h-full w-full " onClick={() => setClicked(true)}>

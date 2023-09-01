@@ -1,23 +1,14 @@
 import classNames from "classnames";
 import type { Template } from "tinacms";
-import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { customImageBlockSchema } from "./customImage";
 import { componentRenderer } from "./mdxComponentRenderer";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
 
-type ContentCardProps = {
-  data: {
-    content: TinaMarkdownContent;
-    prose?: boolean;
-    centerAlignedText?: boolean;
-  };
-};
-
-export const ContentCard = ({ data }: ContentCardProps) => {
+export const ContentCard = ({ data }) => {
   const component = (
-    <article className="relative mx-auto my-5 h-full w-full border-b-2 border-solid border-sswRed bg-gray-75 p-10">
+    <article className="relative mx-auto my-5 h-full w-full border-b-2 border-solid border-sswRed bg-gray-75 p-10 text-center">
       <TinaMarkdown content={data.content} components={componentRenderer} />
     </article>
   );

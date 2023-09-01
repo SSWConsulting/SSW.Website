@@ -13,7 +13,6 @@ import { TableLayout } from "./blocks/tableLayout";
 import { UpcomingEvents } from "./blocks/upcomingEvents";
 import { VerticalImageLayout } from "./blocks/verticalImageLayout";
 import { VerticalListItem } from "./blocks/verticalListItem";
-import { ClientList } from "./company/clientList";
 import { EventBooking } from "./training/eventBooking";
 import { LocationBlock } from "./training/locationBlock";
 import { PresenterBlock } from "./training/presenterBlock";
@@ -60,7 +59,6 @@ const componentMap = {
   JoinAsPresenter,
   BookingButton,
   PaymentBlock,
-  ClientList,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
