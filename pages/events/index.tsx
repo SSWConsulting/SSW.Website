@@ -1,10 +1,9 @@
 import * as appInsights from "applicationinsights";
+import { AxiosError } from "axios";
 import { InferGetStaticPropsType } from "next";
 import { useTina } from "tinacms/dist/react";
-import client from "../../.tina/__generated__/client";
-
-import { AxiosError } from "axios";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import client from "../../.tina/__generated__/client";
 import { Blocks } from "../../components/blocks-renderer";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { EventsFilter } from "../../components/filter/events";

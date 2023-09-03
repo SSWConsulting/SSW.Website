@@ -15,7 +15,7 @@ export const CustomImage = ({ data }) => {
   );
 };
 
-const LinkWrapper = ({ link, children }) => {
+export const LinkWrapper = ({ link, children }) => {
   if (link) {
     return (
       <a href={link} target="_blank" rel="noopener noreferrer">
