@@ -9,6 +9,7 @@ import { componentRenderer } from "../../components/blocks/mdxComponentRenderer"
 import HistoryTimeline from "../../components/company/historyTimeline";
 import { HistoryTimelineCardProps } from "../../components/company/historyTimelineCard";
 import { Layout } from "../../components/layout";
+import MicrosoftPanel from "../../components/offices/microsoftPanel";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
@@ -59,7 +60,7 @@ export default function CompanyPage(
             </Section>
           )}
           {data.company.subTitle && (
-            <section className="prose mx-auto flex w-full max-w-9xl flex-row px-8">
+            <section className="prose mx-auto w-full max-w-9xl flex-row px-8 prose-img:my-0 md:flex">
               <div>
                 <TinaMarkdown
                   content={data.company.subTitle}
@@ -68,12 +69,15 @@ export default function CompanyPage(
                 />
               </div>
               {data.company.sidebar && (
-                <div className="w-96">
-                  <TinaMarkdown
-                    content={data.company.sidebar}
-                    components={componentRenderer}
-                  />
-                </div>
+                <>
+                  <div className="max-w-sm grow-0">
+                    <MicrosoftPanel />
+                    <TinaMarkdown
+                      content={data.company.sidebar}
+                      components={componentRenderer}
+                    />
+                  </div>
+                </>
               )}
             </section>
           )}
