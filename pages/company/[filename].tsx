@@ -10,7 +10,6 @@ import HistoryTimeline from "../../components/company/historyTimeline";
 import { HistoryTimelineCardProps } from "../../components/company/historyTimelineCard";
 import { RDPanel } from "../../components/company/rdPanel";
 import { Layout } from "../../components/layout";
-import MicrosoftPanel from "../../components/offices/microsoftPanel";
 import TestimonialPanel from "../../components/offices/testimonialPanel";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
@@ -83,7 +82,11 @@ export default function CompanyPage(
                     )}
                     {data.company.sidebarTestimonial && (
                       <TestimonialPanel
-                        testimonial={{ ...data.company.sidebarTestimonial }}
+                        testimonial={{
+                          name: data.company.sidebarTestimonial.name,
+                          company: data.company.sidebarTestimonial.company,
+                          body: data.company.sidebarTestimonial.body,
+                        }}
                       />
                     )}
                     {data.company.showRdPanel && <RDPanel />}
