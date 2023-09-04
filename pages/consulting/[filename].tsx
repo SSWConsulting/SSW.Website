@@ -23,6 +23,7 @@ import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
 import { GetTestimonialsByCategories } from "../../helpers/getTestimonials";
+import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
 
 export default function ConsultingPage(
@@ -185,9 +186,9 @@ const parseCallToAction = (
     </span>
   );
 
-  return content?.replace(
-    "{{TITLE}}",
-    ReactDOMServer.renderToString(HTMLelement)
+  return sanitiseXSS(
+    content?.replace("{{TITLE}}", ReactDOMServer.renderToString(HTMLelement)),
+    spanWhitelist
   );
 };
 
