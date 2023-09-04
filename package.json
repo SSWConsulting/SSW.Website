@@ -74,6 +74,7 @@
     "tinacms": "^1.5.20",
     "typescript": "^5.1.6",
     "usehooks-ts": "^2.9.1",
+    "xss": "^1.0.14",
     "yup": "^0.32.11"
   },
   "resolutions": {

@@ -1,6 +1,7 @@
 import { FC } from "react";
 import type { Template } from "tinacms";
 import { TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { Container } from "../util/container";
 import HorizontalList, {
   HorizontalListItemProps,
@@ -34,7 +35,9 @@ export const TrainingLearningOutcome: FC<TrainingLearningOutcomeProps> = ({
         <div className="flex flex-col items-center py-10">
           <h1
             className="mb-8 mt-0 pt-0 text-center"
-            dangerouslySetInnerHTML={{ __html: data?.header }}
+            dangerouslySetInnerHTML={{
+              __html: sanitiseXSS(data?.header, spanWhitelist),
+            }}
           ></h1>
           <HorizontalList listItemProps={horizontalListProps} />
         </div>

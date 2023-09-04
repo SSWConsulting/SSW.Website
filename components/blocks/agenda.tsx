@@ -5,6 +5,7 @@ import { FC, Key } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { verticalListItemSchema } from "../blocks/verticalListItem";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
@@ -42,7 +43,9 @@ export const Agenda = ({ data }) => {
             "my-8 text-center",
             textColorClasses[data.textColor]
           )}
-          dangerouslySetInnerHTML={{ __html: data.header }}
+          dangerouslySetInnerHTML={{
+            __html: sanitiseXSS(data.header, spanWhitelist) || "",
+          }}
           data-tina-field={tinaField(data, agendaBlockConstant.header)}
         ></h2>
         <div

@@ -1,7 +1,8 @@
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
+import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { componentRenderer } from "../blocks/mdxComponentRenderer";
 
 export const sides = ["left", "right"];
 
@@ -20,7 +21,9 @@ export const Marketing = (props) => {
       <Container size="custom" className="h-full py-16 text-center">
         <h1
           className="mt-0 pt-0 text-5xl text-white"
-          dangerouslySetInnerHTML={{ __html: content?.title }}
+          dangerouslySetInnerHTML={{
+            __html: sanitiseXSS(content?.title, spanWhitelist),
+          }}
         ></h1>
         <div className="my-8 flex flex-col justify-between md:flex-row">
           {content.textSide === sides[0] && <TextCol body={content?.body} />}
