@@ -3,6 +3,7 @@ import { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 import { UtilityButton } from "../button/utilityButton";
 import { TweetEmbed, TweetEmbedProps } from "../embeds/tweetEmbed";
+import MicrosoftPanel from "../offices/microsoftPanel";
 import {
   SubNewsletterRow,
   SubNewsletterRowProps,
@@ -164,6 +165,7 @@ export const componentRenderer: Components<{
   ContentCard: {
     content: TinaMarkdownContent;
   };
+  MicrosoftPanel: Record<string, never>;
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -190,4 +192,5 @@ export const componentRenderer: Components<{
   Citation: (props) => <Citation {...props} />,
   UtilityButton: (props) => <UtilityButton {...props} />,
   ContentCard: (props) => <ContentCard data={props} />,
+  MicrosoftPanel: () => <MicrosoftPanel />,
 };

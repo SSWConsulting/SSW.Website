@@ -1,4 +1,6 @@
 import * as Schemas from "../../components/blocks";
+import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
+import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
 import { seoSchema } from "../../components/util/seo";
 
 import type { Collection } from "tinacms";
@@ -28,6 +30,26 @@ export const companySchema: Collection = {
       type: "rich-text",
       name: "subTitle",
       label: "Body",
+      templates: [videoEmbedBlockSchema],
+    },
+    {
+      type: "rich-text",
+      name: "sidebar",
+      label: "Sidebar",
+      required: false,
+      templates: [microsoftPanelSchema],
+    },
+    {
+      type: "reference",
+      name: "sidebarTestimonial",
+      label: "Sidebar Testimonial",
+      collections: ["testimonials"],
+    },
+    {
+      type: "boolean",
+      name: "showRdPanel",
+      label: "Show Regional Director Panel",
+      required: false,
     },
     {
       type: "object",
