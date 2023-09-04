@@ -8,6 +8,7 @@ type VideoEmbedProps = {
     videoWidth?: string;
     removeMargin?: boolean;
     overflow?: boolean;
+    uncentre?: boolean;
   };
 };
 
