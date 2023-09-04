@@ -34,7 +34,15 @@ const MicrosoftPanel = () => {
 export const microsoftPanelSchema: Template = {
   name: "MicrosoftPanel",
   label: "Microsoft Panel",
-  fields: [],
+  // TODO - Workaround to satisfy compiler
+  fields: [
+    {
+      type: "string",
+      label: "No need to fill this in - placeholder field",
+      name: "altText",
+      required: false,
+    },
+  ],
 };
 
 export default MicrosoftPanel;

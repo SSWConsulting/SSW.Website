@@ -8,8 +8,10 @@ import { BuiltOnAzure } from "../../components/blocks/builtOnAzure";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import HistoryTimeline from "../../components/company/historyTimeline";
 import { HistoryTimelineCardProps } from "../../components/company/historyTimelineCard";
+import { RDPanel } from "../../components/company/rdPanel";
 import { Layout } from "../../components/layout";
 import MicrosoftPanel from "../../components/offices/microsoftPanel";
+import TestimonialPanel from "../../components/offices/testimonialPanel";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
@@ -68,14 +70,23 @@ export default function CompanyPage(
                   components={componentRenderer}
                 />
               </div>
-              {data.company.sidebar && (
+              {(data.company.sidebar ||
+                data.company.sidebarTestimonial ||
+                data.company.showRdPanel) && (
                 <>
-                  <div className="max-w-sm grow-0">
-                    <MicrosoftPanel />
-                    <TinaMarkdown
-                      content={data.company.sidebar}
-                      components={componentRenderer}
-                    />
+                  <div className="max-w-sm shrink pl-16">
+                    {data.company.sidebar && (
+                      <TinaMarkdown
+                        content={data.company.sidebar}
+                        components={componentRenderer}
+                      />
+                    )}
+                    {data.company.sidebarTestimonial && (
+                      <TestimonialPanel
+                        testimonial={{ ...data.company.sidebarTestimonial }}
+                      />
+                    )}
+                    {data.company.showRdPanel && <RDPanel />}
                   </div>
                 </>
               )}

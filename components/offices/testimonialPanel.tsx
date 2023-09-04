@@ -1,6 +1,14 @@
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 
-const TestimonialPanel = ({ testimonial }) => {
+type TestimonialPanelProps = {
+  testimonial: {
+    body: TinaMarkdownContent;
+    name: string;
+    company: string;
+  };
+};
+
+const TestimonialPanel = ({ testimonial }: TestimonialPanelProps) => {
   return (
     <>
       <h3>Testimonials</h3>
