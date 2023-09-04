@@ -2,7 +2,16 @@ import classNames from "classnames";
 import type { Template } from "tinacms";
 import { VideoModal } from "../videoModal";
 
-export const VideoEmbed = ({ data }) => {
+type VideoEmbedProps = {
+  data: {
+    url: string;
+    videoWidth?: string;
+    removeMargin?: boolean;
+    overflow?: boolean;
+  };
+};
+
+export const VideoEmbed = ({ data }: VideoEmbedProps) => {
   const width = data.videoWidth || "w-3/4";
   const margin = data.removeMargin ? "" : "m-8";
   const uncentre = data.uncentre ? "" : "mx-auto";
@@ -11,7 +20,7 @@ export const VideoEmbed = ({ data }) => {
     <div
       className={classNames("relative aspect-video", width, margin, uncentre)}
     >
-      <VideoModal url={data.url} />
+      <VideoModal url={data.url} overflow={data.overflow} />
     </div>
   );
 };
@@ -66,6 +75,11 @@ export const videoEmbedBlockSchema: Template = {
       type: "boolean",
       label: "Remove centre alignment",
       name: "uncentre",
+    },
+    {
+      type: "boolean",
+      label: "Overflow - read more at tailwindcss.com/docs/overflow",
+      name: "overflow",
       required: false,
     },
   ],

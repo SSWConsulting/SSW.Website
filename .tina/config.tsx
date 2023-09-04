@@ -1,5 +1,9 @@
 import { defineStaticConfig, TinaCMS } from "tinacms";
-import { companyIndexSchema, companySchema } from "./collections/company";
+import {
+  clientsCategorySchema,
+  companyIndexSchema,
+  companySchema,
+} from "./collections/company";
 import {
   consultingCategorySchema,
   consultingIndexSchema,
@@ -77,6 +81,7 @@ const config = defineStaticConfig({
       locationSchema,
       industrySchema,
       companySchema,
+      clientsCategorySchema,
       eventsSchema,
       companyIndexSchema,
       eventsIndexSchema,

@@ -2,9 +2,9 @@ import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
-import { BuiltOnAzure } from "../../components/blocks";
 import { Blocks } from "../../components/blocks-renderer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { BuiltOnAzure } from "../../components/blocks/builtOnAzure";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import HistoryTimeline from "../../components/company/historyTimeline";
 import { HistoryTimelineCardProps } from "../../components/company/historyTimelineCard";
@@ -25,7 +25,7 @@ export default function CompanyPage(
   });
 
   const historyCardProps =
-    data.company?.historyCards?.map<HistoryTimelineCardProps>((m) => ({
+    data?.company?.historyCards?.map<HistoryTimelineCardProps>((m) => ({
       year: m.year,
       title: m.title,
       location: m.location as HistoryTimelineCardProps["location"],
@@ -56,7 +56,7 @@ export default function CompanyPage(
               className="mx-auto w-full max-w-9xl px-8"
               data-tina-field={tinaField(data.company, "title")}
             >
-              <h1 className="mt-0 py-2">{data.company.title}</h1>
+              <h1 className="mt-4 py-2">{data.company.title}</h1>
             </Section>
           )}
           {data.company.subTitle && (
