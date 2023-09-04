@@ -2,9 +2,9 @@ import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 type TestimonialPanelProps = {
   testimonial: {
-    body: TinaMarkdownContent;
-    name: string;
-    company: string;
+    body?: TinaMarkdownContent;
+    name?: string;
+    company?: string;
   };
 };
 
