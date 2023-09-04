@@ -124,9 +124,6 @@ module.exports = {
       gridTemplateRows: {
         12: "repeat(12, minmax(min-content, 0fr))",
       },
-      gridTemplateColumns: {
-        autoFit3: "repeat(auto-fit, minmax(0, 30%))",
-      },
       backgroundPosition: {
         "right-bottom-4": "right 1rem bottom 1rem",
       },
@@ -156,6 +153,7 @@ module.exports = {
         24: "6rem",
         28: "7rem",
         70: "17.5rem",
+        96: "24rem",
         158: "39.5rem",
         1025: "410px",
         "800px": "800px",
@@ -476,6 +474,27 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("tailwindcss-gradients"),
     require("@headlessui/tailwindcss")({ prefix: "ui" }),
+
+    // Use flex-basis with gap
+    plugin(function ({ matchUtilities, theme }) {
+      const values = {};
+      Object.entries(theme("flexBasis")).forEach(([basis, basisValue]) => {
+        Object.entries(theme("gap")).forEach(([gap, gapValue]) => {
+          values[`${basis}-${gap}`] = `${basisValue} ${gapValue}`;
+        });
+      });
+
+      matchUtilities(
+        {
+          basis_gap: (value) => ({
+            flexBasis: `calc(${value.split(" ")[0]} - ${value.split(" ")[1]})`,
+          }),
+        },
+        {
+          values: values,
+        }
+      );
+    }),
 
     // taken from https://github.com/tailwindlabs/tailwindcss/discussions/2156#discussioncomment-1283105
     plugin(function ({ addVariant, e }) {

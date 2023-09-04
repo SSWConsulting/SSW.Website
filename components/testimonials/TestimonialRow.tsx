@@ -35,7 +35,7 @@ export const TestimonialRow = ({
         What do people <span className="text-sswRed">say</span>?
       </h2>
       <p className="mb-8 text-center">{tagline}</p>
-      <div className="grid justify-center gap-6 md:grid-cols-autoFit3">
+      <div className="flex w-full flex-row flex-wrap items-stretch justify-center gap-6">
         {testimonialResult?.map((testimonial, i) => (
           <TestimonialCard key={i} testimonial={testimonial} />
         ))}
@@ -47,7 +47,7 @@ export const TestimonialRow = ({
 const TestimonialCard = ({ testimonial }) => {
   return (
     <div
-      className="flex flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-8 text-center text-xl drop-shadow sm:h-96 md:h-full md:p-10"
+      className="flex w-full grow flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-8 text-center text-xl drop-shadow md:min-h-96 md:max-w-sm md:grow-0 md:p-10 md:basis_gap-96-6"
       data-aos="flip-right"
     >
       <div className="flex flex-col items-center">
