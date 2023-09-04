@@ -8,15 +8,19 @@ type VideoEmbedProps = {
     videoWidth?: string;
     removeMargin?: boolean;
     overflow?: boolean;
+    uncentre?: boolean;
   };
 };
 
 export const VideoEmbed = ({ data }: VideoEmbedProps) => {
   const width = data.videoWidth || "w-3/4";
   const margin = data.removeMargin ? "" : "m-8";
+  const uncentre = data.uncentre ? "" : "mx-auto";
 
   return (
-    <div className={classNames("relative mx-auto aspect-video", width, margin)}>
+    <div
+      className={classNames("relative aspect-video", width, margin, uncentre)}
+    >
       <VideoModal url={data.url} overflow={data.overflow} />
     </div>
   );
@@ -67,6 +71,11 @@ export const videoEmbedBlockSchema: Template = {
       label: "Remove margin",
       name: "removeMargin",
       required: false,
+    },
+    {
+      type: "boolean",
+      label: "Remove centre alignment",
+      name: "uncentre",
     },
     {
       type: "boolean",

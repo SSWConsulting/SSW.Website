@@ -5,9 +5,12 @@ import client from "../../.tina/__generated__/client";
 import { Blocks } from "../../components/blocks-renderer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { BuiltOnAzure } from "../../components/blocks/builtOnAzure";
+import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import HistoryTimeline from "../../components/company/historyTimeline";
 import { HistoryTimelineCardProps } from "../../components/company/historyTimelineCard";
+import { RDPanel } from "../../components/company/rdPanel";
 import { Layout } from "../../components/layout";
+import TestimonialPanel from "../../components/offices/testimonialPanel";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
@@ -58,12 +61,39 @@ export default function CompanyPage(
             </Section>
           )}
           {data.company.subTitle && (
-            <Section className="prose mx-auto !block w-full max-w-9xl px-8">
-              <TinaMarkdown
-                content={data.company.subTitle}
-                data-tina-field={tinaField(data.company, "subTitle")}
-              />
-            </Section>
+            <section className="prose mx-auto w-full max-w-9xl flex-row px-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 md:flex">
+              <div>
+                <TinaMarkdown
+                  content={data.company.subTitle}
+                  data-tina-field={tinaField(data.company, "subTitle")}
+                  components={componentRenderer}
+                />
+              </div>
+              {(data.company.sidebar ||
+                data.company.sidebarTestimonial ||
+                data.company.showRdPanel) && (
+                <>
+                  <div className="max-w-sm shrink pl-16">
+                    {data.company.sidebar && (
+                      <TinaMarkdown
+                        content={data.company.sidebar}
+                        components={componentRenderer}
+                      />
+                    )}
+                    {data.company.sidebarTestimonial && (
+                      <TestimonialPanel
+                        testimonial={{
+                          name: data.company.sidebarTestimonial.name,
+                          company: data.company.sidebarTestimonial.company,
+                          body: data.company.sidebarTestimonial.body,
+                        }}
+                      />
+                    )}
+                    {data.company.showRdPanel && <RDPanel />}
+                  </div>
+                </>
+              )}
+            </section>
           )}
 
           <Blocks prefix="Company_body" blocks={data.company._body} />
