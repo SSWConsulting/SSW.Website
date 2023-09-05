@@ -843,6 +843,17 @@
               "tag": "content/consulting/tag/cloud-and-infrastructure.json"
             }
           ]
+        },
+        {
+          "title": "Intune",
+          "description": "Intune is a cloud-based service in the enterprise mobility management (EMM) space that helps enable your workforce to be productive while keeping your corporate data protected.",
+          "logo": "/images/thumbs/thumb-intune.png",
+          "page": "content/consulting/intune.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+            }
+          ]
         }
       ]
     }
