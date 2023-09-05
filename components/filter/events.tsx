@@ -9,6 +9,7 @@ import {
   formatEventLongDate,
   formatRelativeEventDate,
 } from "../../helpers/dates";
+import { sanitiseXSS } from "../../helpers/validator";
 import { useEvents } from "../../hooks/useEvents";
 import { EventInfo } from "../../services/server/events";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
@@ -220,7 +221,7 @@ const Event = ({ visible, event }: EventProps) => {
         </div>
         <div
           dangerouslySetInnerHTML={{
-            __html: event.EventShortDescription,
+            __html: sanitiseXSS(event.EventShortDescription) || "",
           }}
           className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline"
         />

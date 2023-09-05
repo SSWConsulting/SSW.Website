@@ -18,7 +18,7 @@ export const testimonialSchema: Collection = {
       type: "image",
       label: "Avatar",
       name: "avatar",
-      required: true,
+      required: false,
       // @ts-ignore
       uploadDir: () => "testimonialAvatars",
     },
@@ -43,6 +43,11 @@ export const testimonialSchema: Collection = {
       label: "Categories",
       name: "categories",
       list: true,
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.name ?? "Select your testimonial category" };
+        },
+      },
       fields: [
         {
           type: "reference",

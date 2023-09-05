@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { FaRegCheckCircle, FaSpinner } from "react-icons/fa";
+import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 
 const placeholder = {
   firstName: "First Name",
@@ -10,7 +11,7 @@ const placeholder = {
 
 const Default = {
   headerText:
-    "Subscribe to the <span class='font-bold text-sswRed'>SSW Newsletter</span",
+    "Subscribe to the <span class='font-bold text-sswRed'>SSW Newsletter</span>",
   subscribeButtonText: "Subscribe",
   subscribeSubTitle: "Stay tuned for SSW News & upcoming events",
 };
@@ -89,7 +90,9 @@ export const SubNewsLettersForm = ({
     <div className="flex flex-col items-center justify-center">
       <h2
         className="mb-2 mt-6 text-center font-helvetica text-4xl font-medium !text-white"
-        dangerouslySetInnerHTML={{ __html: headerText }}
+        dangerouslySetInnerHTML={{
+          __html: sanitiseXSS(headerText, spanWhitelist),
+        }}
       ></h2>
       <div className="mb-5 text-center text-base text-white mix-blend-difference">
         {subscribeSubTitle}
