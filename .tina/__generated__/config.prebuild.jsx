@@ -212,6 +212,24 @@ var init_global = __esm({
   }
 });
 
+// context/RecaptchaContext.ts
+import { createContext, useContext } from "react";
+var RecaptchaContext, recaptchaToastId, useRecaptcha;
+var init_RecaptchaContext = __esm({
+  "context/RecaptchaContext.ts"() {
+    RecaptchaContext = createContext(null);
+    recaptchaToastId = "recaptcha-toast";
+    useRecaptcha = () => {
+      const value = useContext(RecaptchaContext);
+      let error = void 0;
+      if (!value || !value.recaptchaKey) {
+        error = "Recaptcha key not provided.";
+      }
+      return { recaptchaKey: value?.recaptchaKey || "", error };
+    };
+  }
+});
+
 // components/button/ripple.tsx
 import classNames from "classnames";
 var Ripple;
@@ -270,26 +288,33 @@ var init_button = __esm({
 
 // components/button/utilityButton.tsx
 import classNames3 from "classnames";
-var UtilityButton, utilityButtonSchema;
+var sizes, UtilityButton, utilityButtonSchema;
 var init_utilityButton = __esm({
   "components/button/utilityButton.tsx"() {
     init_button();
+    sizes = {
+      small: "px-4 py-2 text-sm",
+      medium: "px-10 py-3"
+    };
     UtilityButton = ({
       buttonText,
       onClick,
       className,
-      link
+      link,
+      size,
+      noAnimate
     }) => {
       const baseComponent = React.createElement(
         button_default,
         {
           ripple: true,
           className: classNames3(
-            "mx-auto mt-8 h-auto max-w-full px-10 py-3",
+            "mx-auto mt-8 h-auto max-w-full",
+            sizes[size ?? "medium"],
             className
           ),
           onClick,
-          "data-aos": "fade-up"
+          "data-aos": noAnimate ? void 0 : "fade-up"
         },
         buttonText
       );
@@ -317,6 +342,19 @@ var init_utilityButton = __esm({
           type: "string",
           label: "Link",
           name: "link",
+          required: false
+        },
+        {
+          type: "string",
+          label: "Size",
+          name: "size",
+          required: false,
+          options: Object.keys(sizes)
+        },
+        {
+          type: "boolean",
+          label: "No Animation",
+          name: "noAnimate",
           required: false
         }
       ]
@@ -771,15 +809,6 @@ var init_validationSchema = __esm({
   }
 });
 
-// context/RecaptchaContext.ts
-import { createContext } from "react";
-var RecaptchaContext;
-var init_RecaptchaContext = __esm({
-  "context/RecaptchaContext.ts"() {
-    RecaptchaContext = createContext(null);
-  }
-});
-
 // components/bookingForm/bookingForm.tsx
 var bookingForm_exports = {};
 __export(bookingForm_exports, {
@@ -787,9 +816,10 @@ __export(bookingForm_exports, {
 });
 import axios from "axios";
 import { Form, Formik } from "formik";
-import { useContext, useEffect, useMemo, useState as useState2 } from "react";
+import { useEffect, useMemo, useState as useState2 } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { FaRegCheckCircle, FaSpinner } from "react-icons/fa";
+import { toast } from "react-toastify";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 var BookingForm;
 var init_bookingForm = __esm({
@@ -802,11 +832,14 @@ var init_bookingForm = __esm({
     init_validationSchema();
     init_RecaptchaContext();
     BookingForm = (props) => {
-      const { recaptchaKey } = useContext(RecaptchaContext);
+      const { recaptchaKey, error: recaptchaError } = useRecaptcha();
       const [country, setCountry] = useState2("");
       const [activeInputLabel, setActiveInputLabel] = useState2({});
       const appInsights = useAppInsightsContext();
       const { onClose, showSuccessToast } = props;
+      if (recaptchaError) {
+        toast.error("Failed to load recaptcha key.", { toastId: recaptchaToastId });
+      }
       const initialFormValues = {
         fullName: "",
         email: "",
@@ -899,7 +932,7 @@ var init_bookingForm = __esm({
       const referralSourcesDefaultOption = getDefaultOption(
         FORM_INPUT.ReferralSource
       );
-      return React.createElement("div", { className: "rounded bg-white font-sans" }, React.createElement("div", { className: "relative rounded p-2" }, React.createElement("div", { className: "m-0 rounded bg-white px-6 pb-5 pt-1" }, React.createElement("h2", { className: "mb-14 mt-1.5 pt-1.5 !text-2xl text-sswRed" }, CONTACT_FORM_TITLE), React.createElement(
+      return React.createElement("div", { className: "rounded bg-white font-sans" }, React.createElement("div", { className: "relative rounded p-2" }, recaptchaError ? React.createElement("div", { className: "text-red-600" }, recaptchaError) : React.createElement("div", { className: "m-0 rounded bg-white px-6 pb-5 pt-1" }, React.createElement("h2", { className: "mb-14 mt-1.5 pt-1.5 !text-2xl text-sswRed" }, CONTACT_FORM_TITLE), React.createElement(
         Formik,
         {
           validationSchema: schema,
@@ -1004,7 +1037,7 @@ var init_bookingForm = __esm({
             maxLength: 2e3,
             ...getCommonFieldProps(FORM_INPUT.Note)
           }
-        ), React.createElement("div", { className: "mb-4 w-full overflow-x-auto" }, React.createElement("div", { className: "h-22 w-88" }, recaptchaKey && React.createElement(
+        ), React.createElement("div", { className: "mb-4 w-full overflow-x-auto" }, React.createElement("div", { className: "h-22 w-88" }, React.createElement(
           ReCAPTCHA,
           {
             sitekey: recaptchaKey,
@@ -1036,11 +1069,12 @@ __export(bookingButton_exports, {
 import classNames8 from "classnames";
 import dynamic from "next/dynamic";
 import { useState as useState3 } from "react";
-import { toast } from "react-toastify";
+import { toast as toast2 } from "react-toastify";
 var BookingForm2, BookingButton, bookingButtonSchema;
 var init_bookingButton = __esm({
   "components/bookingButton/bookingButton.tsx"() {
     init_global();
+    init_RecaptchaContext();
     init_utilityButton();
     init_popup();
     init_successToast();
@@ -1052,9 +1086,13 @@ var init_bookingButton = __esm({
       const { containerClass, buttonClass, buttonText } = data;
       const [isVisible, setIsVisible] = useState3(false);
       const showBookingForm = () => setIsVisible((curr) => !curr);
+      const { error: recaptchaError } = useRecaptcha();
+      if (recaptchaError) {
+        toast2.error("Failed to load recaptcha key.", { toastId: recaptchaToastId });
+      }
       const bookingPhone = global_default.bookingPhone;
       const showSuccessToast = () => {
-        toast.success(
+        toast2.success(
           React.createElement("div", { className: "text-left" }, "Form submitted. We'll be in contact as soon as possible.")
         );
       };
@@ -1100,97 +1138,6 @@ var init_bookingButton = __esm({
           required: false
         }
       ]
-    };
-  }
-});
-
-// components/util/container.tsx
-import classNames9 from "classnames";
-var Container;
-var init_container = __esm({
-  "components/util/container.tsx"() {
-    Container = ({
-      children,
-      size = "default",
-      width = "default",
-      padding = "px-8",
-      className = "",
-      ...props
-    }) => {
-      const verticalPadding = {
-        custom: "",
-        xsmall: "py-4",
-        small: "py-8",
-        medium: "py-12",
-        large: "py-24",
-        default: "py-12"
-      };
-      const widthClass = {
-        small: "max-w-4xl",
-        medium: "max-w-5xl",
-        large: "max-w-9xl",
-        default: "max-w-9xl",
-        custom: ""
-      };
-      return React.createElement(
-        "div",
-        {
-          className: classNames9(
-            "mx-auto",
-            padding,
-            widthClass[width],
-            verticalPadding[size],
-            className
-          ),
-          ...props
-        },
-        children
-      );
-    };
-  }
-});
-
-// components/util/constants/styles.tsx
-var sectionColors;
-var init_styles = __esm({
-  "components/util/constants/styles.tsx"() {
-    sectionColors = {
-      default: "bg-white text-black",
-      lightgray: "bg-gray-100 text-black",
-      red: "bg-sswRed text-white",
-      black: "bg-black text-white"
-    };
-  }
-});
-
-// components/util/section.tsx
-import React3 from "react";
-import classNames12 from "classnames";
-var Section;
-var init_section = __esm({
-  "components/util/section.tsx"() {
-    init_styles();
-    Section = ({
-      children,
-      color = "",
-      className = "",
-      style = {},
-      id = ""
-    }) => {
-      const sectionColorCss = sectionColors[color] || sectionColors.default;
-      return React3.createElement(
-        "section",
-        {
-          id,
-          className: classNames12(
-            "body-font relative flex flex-1 overflow-hidden transition duration-150 ease-out",
-            sectionColorCss,
-            className
-          ),
-          style
-        },
-        children
-      );
     };
   }
 });
@@ -1252,8 +1199,8 @@ var vimeoEmbed_exports = {};
 __export(vimeoEmbed_exports, {
   VimeoEmbed: () => VimeoEmbed
 });
-import classNames13 from "classnames";
-import Script2 from "next/script";
+import classNames9 from "classnames";
+import Script from "next/script";
 var VimeoEmbed;
 var init_vimeoEmbed = __esm({
   "components/embeds/vimeoEmbed.tsx"() {
@@ -1261,13 +1208,13 @@ var init_vimeoEmbed = __esm({
       return React.createElement(React.Fragment, null, React.createElement(
         "iframe",
         {
-          className: classNames13(className, "h-full w-full"),
+          className: classNames9(className, "h-full w-full"),
           src: `https://player.vimeo.com/video/${id}?h=62ccd0699b&autoplay=${autoplay ? 1 : 0}&title=0&byline=0&portrait=0`,
           allow: "autoplay; fullscreen; picture-in-picture",
           allowFullScreen: true
         }
       ), React.createElement(
-        Script2,
+        Script,
         {
           src: "https://player.vimeo.com/api/player.js",
           strategy: "lazyOnload"
@@ -1278,9 +1225,10 @@ var init_vimeoEmbed = __esm({
 });
 
 // components/videoModal.tsx
+import classNames10 from "classnames";
 import dynamic2 from "next/dynamic";
-import Image6 from "next/image";
-import { useEffect as useEffect3, useState as useState6 } from "react";
+import Image3 from "next/image";
+import { useEffect as useEffect2, useState as useState4 } from "react";
 import { FaPlayCircle } from "react-icons/fa";
 var YouTubeEmbed2, VimeoEmbed2, VideoModal, PlayArrow;
 var init_videoModal = __esm({
@@ -1298,13 +1246,17 @@ var init_videoModal = __esm({
         ssr: false
       }
     );
-    VideoModal = ({ children = null, url }) => {
-      const [videoId, setVideoId] = useState6();
-      const [clicked, setClicked] = useState6(false);
-      const [imageSrc, setImageSrc] = useState6("");
+    VideoModal = ({
+      children = null,
+      url,
+      overflow
+    }) => {
+      const [videoId, setVideoId] = useState4();
+      const [clicked, setClicked] = useState4(false);
+      const [imageSrc, setImageSrc] = useState4("");
       const isYouTube = MATCH_URL_YOUTUBE.test(url);
       const isVimeo = MATCH_URL_VIMEO.test(url);
-      useEffect3(() => {
+      useEffect2(() => {
         const getVimeoData = async (id) => {
           const videoData = await fetch(
             `https://vimeo.com/api/v2/video/${id}.json`
@@ -1324,37 +1276,47 @@ var init_videoModal = __esm({
           });
         }
       }, []);
-      return React.createElement("div", null, React.createElement("div", { className: "overflow-hidden rounded" }, React.createElement("div", { className: "relative mx-auto aspect-video h-full w-full" }, !clicked ? React.createElement("div", { className: "h-full w-full ", onClick: () => setClicked(true) }, imageSrc && React.createElement(React.Fragment, null, React.createElement(
-        Image6,
+      return React.createElement("div", null, React.createElement(
+        "div",
         {
-          src: imageSrc || "",
-          fill: true,
-          alt: "Video player",
-          onError: () => {
-            if (imageSrc.includes("maxresdefault")) {
-              setImageSrc(
-                `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
-              );
+          className: classNames10(
+            "rounded",
+            overflow ? "clear-both" : "overflow-hidden"
+          )
+        },
+        React.createElement("div", { className: "relative mx-auto aspect-video h-full w-full" }, !clicked ? React.createElement("div", { className: "h-full w-full ", onClick: () => setClicked(true) }, imageSrc && React.createElement(React.Fragment, null, React.createElement(
+          Image3,
+          {
+            src: imageSrc || "",
+            fill: true,
+            alt: "Video player",
+            onError: () => {
+              if (imageSrc.includes("maxresdefault")) {
+                setImageSrc(
+                  `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
+                );
+              }
             }
           }
-        }
-      ), React.createElement(PlayArrow, null), " ")) : React.createElement(React.Fragment, null, isYouTube && React.createElement(
-        YouTubeEmbed2,
-        {
-          className: "absolute left-0 top-0",
-          id: videoId || "",
-          width: "100%",
-          height: "100%",
-          autoplay: true
-        }
-      ), isVimeo && React.createElement(
-        VimeoEmbed2,
-        {
-          className: "absolute left-0 top-0",
-          id: videoId || "",
-          autoplay: true
-        }
-      ))), children));
+        ), React.createElement(PlayArrow, null), " ")) : React.createElement(React.Fragment, null, isYouTube && React.createElement(
+          YouTubeEmbed2,
+          {
+            className: "absolute left-0 top-0",
+            id: videoId || "",
+            width: "100%",
+            height: "100%",
+            autoplay: true
+          }
+        ), isVimeo && React.createElement(
+          VimeoEmbed2,
+          {
+            className: "absolute left-0 top-0",
+            id: videoId || "",
+            autoplay: true
+          }
+        ))),
+        children
+      ));
     };
     PlayArrow = () => {
       return React.createElement(
@@ -1374,7 +1336,7 @@ __export(videoEmbed_exports, {
   VideoEmbed: () => VideoEmbed,
   videoEmbedBlockSchema: () => videoEmbedBlockSchema
 });
-import classNames14 from "classnames";
+import classNames11 from "classnames";
 var VideoEmbed, videoEmbedBlockSchema;
 var init_videoEmbed = __esm({
   "components/blocks/videoEmbed.tsx"() {
@@ -1382,7 +1344,14 @@ var init_videoEmbed = __esm({
     VideoEmbed = ({ data }) => {
       const width = data.videoWidth || "w-3/4";
       const margin = data.removeMargin ? "" : "m-8";
-      return React.createElement("div", { className: classNames14("relative mx-auto aspect-video", width, margin) }, React.createElement(VideoModal, { url: data.url }));
+      const uncentre = data.uncentre ? "" : "mx-auto";
+      return React.createElement(
+        "div",
+        {
+          className: classNames11("relative aspect-video", width, margin, uncentre)
+        },
+        React.createElement(VideoModal, { url: data.url, overflow: data.overflow })
+      );
     };
     videoEmbedBlockSchema = {
       name: "VideoEmbed",
@@ -1428,8 +1397,110 @@ var init_videoEmbed = __esm({
           label: "Remove margin",
           name: "removeMargin",
           required: false
+        },
+        {
+          type: "boolean",
+          label: "Remove centre alignment",
+          name: "uncentre"
+        },
+        {
+          type: "boolean",
+          label: "Overflow - read more at tailwindcss.com/docs/overflow",
+          name: "overflow",
+          required: false
         }
       ]
+    };
+  }
+});
+
+// components/util/container.tsx
+import classNames13 from "classnames";
+var Container;
+var init_container = __esm({
+  "components/util/container.tsx"() {
+    Container = ({
+      children,
+      size = "default",
+      width = "default",
+      padding = "px-8",
+      className = "",
+      ...props
+    }) => {
+      const verticalPadding = {
+        custom: "",
+        xsmall: "py-4",
+        small: "py-8",
+        medium: "py-12",
+        large: "py-24",
+        default: "py-12"
+      };
+      const widthClass = {
+        small: "max-w-4xl",
+        medium: "max-w-5xl",
+        large: "max-w-9xl",
+        default: "max-w-9xl",
+        custom: ""
+      };
+      return React.createElement(
+        "div",
+        {
+          className: classNames13(
+            "mx-auto",
+            padding,
+            widthClass[width],
+            verticalPadding[size],
+            className
+          ),
+          ...props
+        },
+        children
+      );
+    };
+  }
+});
+
+// components/util/constants/styles.tsx
+var sectionColors;
+var init_styles = __esm({
+  "components/util/constants/styles.tsx"() {
+    sectionColors = {
+      default: "bg-white text-black",
+      lightgray: "bg-gray-100 text-black",
+      red: "bg-sswRed text-white",
+      black: "bg-black text-white"
+    };
+  }
+});
+
+// components/util/section.tsx
+import React3 from "react";
+import classNames14 from "classnames";
+var Section;
+var init_section = __esm({
+  "components/util/section.tsx"() {
+    init_styles();
+    Section = ({
+      children,
+      color = "",
+      className = "",
+      style = {},
+      id = ""
+    }) => {
+      const sectionColorCss = sectionColors[color] || sectionColors.default;
+      return React3.createElement(
+        "section",
+        {
+          id,
+          className: classNames14(
+            "body-font relative flex flex-1 overflow-hidden transition duration-150 ease-out",
+            sectionColorCss,
+            className
+          ),
+          style
+        },
+        children
+      );
     };
   }
 });
@@ -1444,7 +1515,7 @@ __export(carousel_exports, {
 import Image10 from "next/image";
 import { useRouter } from "next/router";
 import * as React5 from "react";
-import { tinaField as tinaField5 } from "tinacms/dist/react";
+import { tinaField as tinaField2 } from "tinacms/dist/react";
 import { Carousel as CarouselImplementation } from "react-responsive-carousel";
 var Carousel, createCarouselItemImage, createCarouselIndicator, carouselBlock, carouselBlockSchema;
 var init_carousel = __esm({
@@ -1478,7 +1549,7 @@ var init_carousel = __esm({
           {
             size: "custom",
             className: "w-full",
-            "data-tina-field": tinaField5(data, carouselBlock.delay)
+            "data-tina-field": tinaField2(data, carouselBlock.delay)
           },
           React5.createElement(
             CarouselImplementation,
@@ -1510,7 +1581,7 @@ var init_carousel = __esm({
         "div",
         {
           key: index,
-          "data-tina-field": tinaField5(
+          "data-tina-field": tinaField2(
             carouselSchema,
             carouselBlock.items.value + `[${index}]`
           )
@@ -1793,10 +1864,143 @@ import { defineStaticConfig } from "tinacms";
 init_bookingButton();
 init_utilityButton();
 
+// components/blocks/contentCard.tsx
+import classNames12 from "classnames";
+import { TinaMarkdown as TinaMarkdown2 } from "tinacms/dist/rich-text";
+
+// components/blocks/customImage.tsx
+import Image from "next/image";
+var customImageBlockSchema = {
+  name: "CustomImage",
+  label: "Custom Image",
+  fields: [
+    {
+      type: "image",
+      label: "Image",
+      name: "src",
+      required: true
+    },
+    {
+      type: "string",
+      label: "Alt text",
+      name: "altText",
+      required: true
+    },
+    {
+      type: "number",
+      label: "Height",
+      name: "height",
+      required: true
+    },
+    {
+      type: "number",
+      label: "Width",
+      name: "width",
+      required: true
+    },
+    {
+      type: "string",
+      label: "Link (optional)",
+      name: "link",
+      required: false
+    }
+  ]
+};
+
+// components/blocks/verticalListItem.tsx
+import Image2 from "next/image";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+var verticalListItemSchema = {
+  label: "List Item",
+  name: "VerticalListItem",
+  fields: [
+    {
+      type: "rich-text",
+      label: "Content",
+      name: "content",
+      isBody: true
+    },
+    {
+      type: "number",
+      label: "Index number",
+      name: "index"
+    },
+    {
+      type: "image",
+      label: "Icon",
+      name: "icon",
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      uploadDir: () => "icons"
+    },
+    {
+      type: "number",
+      label: "Icon Scale",
+      name: "iconScale"
+    },
+    {
+      type: "rich-text",
+      label: "After Body",
+      name: "afterBody",
+      required: false
+    }
+  ]
+};
+
+// components/blocks/contentCard.tsx
+init_videoEmbed();
+var contentCardBlockSchema = {
+  name: "ContentCard",
+  label: "Content Card",
+  ui: {
+    previewSrc: "/blocks/content.png",
+    defaultItem: {
+      content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."
+    }
+  },
+  fields: [
+    {
+      type: "boolean",
+      label: "Prose",
+      name: "prose"
+    },
+    {
+      type: "boolean",
+      label: "Centered Aligned Text",
+      name: "centerAlignedText"
+    },
+    {
+      type: "rich-text",
+      label: "Content",
+      name: "content",
+      templates: [
+        customImageBlockSchema,
+        verticalListItemSchema,
+        videoEmbedBlockSchema
+      ]
+    }
+  ]
+};
+
+// components/company/clientList.tsx
+init_videoEmbed();
+init_utilityButton();
+
+// components/filter/clients.tsx
+import { Transition as Transition2 } from "@headlessui/react";
+import Image12 from "next/image";
+import { useMemo as useMemo2, useState as useState12 } from "react";
+import { BsArrowRightCircle as BsArrowRightCircle2 } from "react-icons/bs";
+import { TinaMarkdown as TinaMarkdown10 } from "tinacms/dist/rich-text";
+
+// components/blocks/mdxComponentRenderer.tsx
+init_utilityButton();
+import dynamic3 from "next/dynamic";
+
 // components/embeds/tweetEmbed.tsx
 import { useAppInsightsContext as useAppInsightsContext2 } from "@microsoft/applicationinsights-react-js";
-import Script from "next/script";
-import { useEffect as useEffect2, useState as useState4 } from "react";
+import Script2 from "next/script";
+import { useEffect as useEffect3, useState as useState5 } from "react";
 var tweetEmbedSchema = {
   label: "Tweet Embed",
   name: "TweetEmbed",
@@ -1810,13 +2014,32 @@ var tweetEmbedSchema = {
   ]
 };
 
+// components/offices/microsoftPanel.tsx
+import Image4 from "next/image";
+var microsoftPanelSchema = {
+  name: "MicrosoftPanel",
+  label: "Microsoft Panel",
+  // TODO - Workaround to satisfy compiler
+  fields: [
+    {
+      type: "string",
+      label: "No need to fill this in - placeholder field",
+      name: "altText",
+      required: false
+    }
+  ]
+};
+
 // components/subNewsletter/subNewsletterRow.tsx
 init_container();
 
 // components/subNewsletter/subNewsletterForm.tsx
 import axios2 from "axios";
-import React2, { useState as useState5 } from "react";
+import React2, { useState as useState6 } from "react";
 import { FaRegCheckCircle as FaRegCheckCircle2, FaSpinner as FaSpinner2 } from "react-icons/fa";
+
+// helpers/validator.ts
+import xss from "xss";
 
 // components/subNewsletter/subNewsletterRow.tsx
 var subNewsletterRowSchema = {
@@ -1898,331 +2121,74 @@ var agreementFormBlockSchema = {
   ]
 };
 
-// components/training/eventBooking.tsx
-init_container();
-import classNames10 from "classnames";
-import dayjs from "dayjs";
-import { MdLocationOn } from "react-icons/md";
-import { tinaField } from "tinacms/dist/react";
-var eventBookingBlock = {
-  eventBooking: "EventBooking",
-  eventDurationInDays: "eventDurationInDays",
-  price: "price",
-  discountPrice: "discountPrice",
-  discountNote: "discountNote",
-  suffix: "suffix",
-  eventList: {
-    value: "eventList",
-    city: "city",
-    date: "date",
-    bookingURL: "bookingURL"
-  }
-};
-var eventBookingSchema = {
-  name: eventBookingBlock.eventBooking,
-  label: "Events Booking",
-  fields: [
-    {
-      type: "number",
-      label: "Duration (In Days)",
-      name: eventBookingBlock.eventDurationInDays
-    },
-    {
-      type: "number",
-      label: "Price",
-      name: eventBookingBlock.price
-    },
-    {
-      type: "number",
-      label: "Discount Price",
-      name: eventBookingBlock.discountPrice
-    },
-    {
-      type: "string",
-      label: "Discount Note",
-      name: eventBookingBlock.discountNote
-    },
-    {
-      type: "object",
-      label: "Event",
-      name: eventBookingBlock.eventList.value,
-      ui: {
-        itemProps: (item) => {
-          return { label: item?.city };
-        }
-      },
-      list: true,
-      fields: [
-        {
-          type: "string",
-          label: "City",
-          name: eventBookingBlock.eventList.city
-        },
-        {
-          type: "datetime",
-          label: "Start Date",
-          name: eventBookingBlock.eventList.date,
-          ui: {
-            timeFormat: "MM:DD:YY"
-          }
-        },
-        {
-          type: "string",
-          label: "Booking URL",
-          name: eventBookingBlock.eventList.bookingURL
-        }
-      ]
-    }
-  ]
-};
+// components/training/trainingInformation.tsx
+import { TinaMarkdown as TinaMarkdown3 } from "tinacms/dist/rich-text";
 
-// components/training/locationBlock.tsx
-import classNames11 from "classnames";
-import { FaGlobe, FaLocationArrow } from "react-icons/fa";
-import { MdLocationOn as MdLocationOn2 } from "react-icons/md";
-import { tinaField as tinaField2 } from "tinacms/dist/react";
-
-// .tina/collections/location.tsx
-var locationSchemaConstants = {
-  value: "locations",
-  header: "header",
-  addressLine1: "addressLine1",
-  addressLine2: "addressLine2",
-  addressLine3: "addressLine3",
-  directionURL: "directionURL"
-};
-var locationSchema = {
-  label: "Locations",
-  name: locationSchemaConstants.value,
-  format: "mdx",
-  path: "content/locations",
+// components/blocks/recurringEvent.tsx
+import { useEffect as useEffect4, useState as useState7 } from "react";
+import { FaRegCalendarCheck } from "react-icons/fa";
+var recurringEventSchema = {
+  label: "Recurring Event",
+  name: "RecurringEvent",
   fields: [
     {
       type: "string",
-      name: locationSchemaConstants.header,
-      label: "Header"
+      label: "Apply Link Redirect",
+      name: "applyLinkRedirect"
     },
     {
       type: "string",
-      name: locationSchemaConstants.addressLine1,
-      label: "Address Line 1"
-    },
-    {
-      type: "string",
-      name: locationSchemaConstants.addressLine2,
-      label: "Address Line 2"
-    },
-    {
-      type: "string",
-      name: locationSchemaConstants.addressLine3,
-      label: "Address Line 3"
-    },
-    {
-      type: "string",
-      name: locationSchemaConstants.directionURL,
-      label: "Directions"
-    }
-  ]
-};
-
-// components/training/locationBlock.tsx
-init_container();
-var locationBlockConstant = {
-  value: "LocationBlock",
-  title: "title",
-  locationList: { value: "locationList", location: "location" },
-  chapelWebsite: {
-    value: "chapelWebsite",
-    title: "title",
-    URL: "URL"
-  }
-};
-var locationBlockSchema = {
-  name: locationBlockConstant.value,
-  label: "Locations",
-  fields: [
-    {
-      type: "string",
-      name: locationBlockConstant.title,
-      label: "Title"
-    },
-    {
-      type: "object",
-      label: "Location List",
-      name: locationBlockConstant.locationList.value,
-      list: true,
-      ui: {
-        itemProps: (item) => {
-          const location = item?.location;
-          if (!location)
-            return { label: "Please Attach location" };
-          const formattedLabel = location.split("/")[2].replace(".mdx", "").replace(/-/g, " ").toUpperCase();
-          return {
-            label: formattedLabel
-          };
-        }
-      },
-      fields: [
-        {
-          type: "reference",
-          collections: ["locations"],
-          label: "Location",
-          name: locationBlockConstant.locationList.location
-        }
-      ]
-    },
-    {
-      type: "object",
-      name: locationBlockConstant.chapelWebsite.value,
-      label: "Chapel Website",
-      fields: [
-        {
-          type: "string",
-          name: locationBlockConstant.chapelWebsite.title,
-          label: "Text"
-        },
-        {
-          type: "string",
-          name: locationBlockConstant.chapelWebsite.URL,
-          label: "URL"
-        }
-      ]
-    }
-  ]
-};
-
-// components/training/presenterBlock.tsx
-import Image from "next/image";
-import { tinaField as tinaField3 } from "tinacms/dist/react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
-
-// .tina/collections/presenter.tsx
-var presenterSchemaConstants = {
-  value: "presenter",
-  profileImg: "profileImg",
-  presenter: {
-    value: "presenter",
-    name: "name",
-    peopleProfileURL: "peopleProfileURL"
-  },
-  about: "about"
-};
-var presenterSchema = {
-  label: "Presenters",
-  name: "presenter",
-  format: "mdx",
-  path: "content/presenters",
-  fields: [
-    {
-      type: "image",
-      name: presenterSchemaConstants.profileImg,
-      label: "Profile Image",
-      // @ts-ignore
-      uploadDir: () => "people"
-    },
-    {
-      type: "object",
-      name: presenterSchemaConstants.presenter.value,
-      label: "Presenter",
-      fields: [
-        {
-          type: "string",
-          label: "Full Name",
-          name: presenterSchemaConstants.presenter.name
-        },
-        {
-          type: "string",
-          label: "People Profile URL",
-          name: presenterSchemaConstants.presenter.peopleProfileURL
-        }
-      ]
-    },
-    {
-      type: "rich-text",
-      name: presenterSchemaConstants.about,
-      label: "About"
-    }
-  ]
-};
-
-// components/training/presenterBlock.tsx
-init_container();
-var presenterBlockConstant = {
-  value: "PresenterBlock",
-  header: "header",
-  presenterList: {
-    value: "presenterList",
-    presenter: "presenter"
-  },
-  otherEvent: { value: "otherEvent", title: "title", eventURL: "eventURL" }
-};
-var presenterBlockSchema = {
-  name: presenterBlockConstant.value,
-  label: "Presenters",
-  fields: [
-    {
-      type: "string",
-      label: "Header",
-      name: presenterBlockConstant.header
-    },
-    {
-      type: "object",
-      name: presenterBlockConstant.presenterList.value,
-      label: "Presenters",
-      list: true,
-      ui: {
-        itemProps: (item) => {
-          const presenter = item?.presenter;
-          if (!presenter)
-            return { label: "Please Attach Presenter" };
-          const formattedLabel = presenter.split("/")[2].replace(".mdx", "").replace(/-/g, " ").toUpperCase();
-          return {
-            label: formattedLabel
-          };
-        }
-      },
-      fields: [
-        {
-          type: "reference",
-          name: presenterBlockConstant.presenterList.presenter,
-          label: "Presenters",
-          collections: ["presenter"]
-        }
-      ]
-    },
-    {
-      type: "object",
-      label: "Other Events",
-      name: presenterBlockConstant.otherEvent.value,
-      fields: [
-        {
-          type: "string",
-          label: "Title",
-          name: presenterBlockConstant.otherEvent.title
-        },
-        {
-          type: "string",
-          label: "URL",
-          name: presenterBlockConstant.otherEvent.eventURL
-        }
-      ]
+      label: "Day",
+      name: "day",
+      options: [
+        { label: "Monday", value: "monday" },
+        { label: "Tuesday", value: "tuesday" },
+        { label: "Wednesday", value: "wednesday" },
+        { label: "Thursday", value: "thursday" },
+        { label: "Friday", value: "friday" },
+        { label: "Saturday", value: "saturday" },
+        { label: "Sunday", value: "sunday" }
+      ],
+      required: true
     }
   ]
 };
 
 // components/training/trainingInformation.tsx
-import { TinaMarkdown as TinaMarkdown10 } from "tinacms/dist/rich-text";
-
-// components/blocks/mdxComponentRenderer.tsx
-init_utilityButton();
-import dynamic3 from "next/dynamic";
+init_container();
+init_section();
+var trainingInformationSchema = {
+  label: "Training Information",
+  name: "TrainingInformation",
+  fields: [
+    {
+      type: "object",
+      label: "Training Information Items",
+      name: "trainingInformationItems",
+      list: true,
+      fields: [
+        {
+          type: "string",
+          label: "Header",
+          name: "header"
+        },
+        {
+          type: "rich-text",
+          label: "Body",
+          name: "body",
+          templates: [verticalListItemSchema, recurringEventSchema]
+        }
+      ]
+    }
+  ]
+};
 
 // components/training/trainingLearningOutcome.tsx
 init_container();
 
 // components/util/horizontalList.tsx
-import Image2 from "next/image";
-import { TinaMarkdown as TinaMarkdown2 } from "tinacms/dist/rich-text";
+import Image5 from "next/image";
+import { TinaMarkdown as TinaMarkdown4 } from "tinacms/dist/rich-text";
 
 // components/training/trainingLearningOutcome.tsx
 init_section();
@@ -2286,7 +2252,7 @@ var citationBlockSchema = {
 
 // components/blocks/clientLogos.tsx
 init_global();
-import Image3 from "next/image";
+import Image6 from "next/image";
 var clientsData = global_default.clients.clientsList;
 var clientLogosBlockSchema = {
   name: "ClientLogos",
@@ -2298,124 +2264,6 @@ var clientLogosBlockSchema = {
       label: "Alt text",
       name: "altText",
       required: true
-    }
-  ]
-};
-
-// components/blocks/contentCard.tsx
-import classNames15 from "classnames";
-import { TinaMarkdown as TinaMarkdown4 } from "tinacms/dist/rich-text";
-
-// components/blocks/customImage.tsx
-import Image4 from "next/image";
-var customImageBlockSchema = {
-  name: "CustomImage",
-  label: "Custom Image",
-  fields: [
-    {
-      type: "image",
-      label: "Image",
-      name: "src",
-      required: true
-    },
-    {
-      type: "string",
-      label: "Alt text",
-      name: "altText",
-      required: true
-    },
-    {
-      type: "number",
-      label: "Height",
-      name: "height",
-      required: true
-    },
-    {
-      type: "number",
-      label: "Width",
-      name: "width",
-      required: true
-    },
-    {
-      type: "string",
-      label: "Link (optional)",
-      name: "link",
-      required: false
-    }
-  ]
-};
-
-// components/blocks/verticalListItem.tsx
-import Image5 from "next/image";
-import { TinaMarkdown as TinaMarkdown3 } from "tinacms/dist/rich-text";
-var verticalListItemSchema = {
-  label: "List Item",
-  name: "VerticalListItem",
-  fields: [
-    {
-      type: "rich-text",
-      label: "Content",
-      name: "content",
-      isBody: true
-    },
-    {
-      type: "number",
-      label: "Index number",
-      name: "index"
-    },
-    {
-      type: "image",
-      label: "Icon",
-      name: "icon",
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      uploadDir: () => "icons"
-    },
-    {
-      type: "number",
-      label: "Icon Scale",
-      name: "iconScale"
-    },
-    {
-      type: "rich-text",
-      label: "After Body",
-      name: "afterBody",
-      required: false
-    }
-  ]
-};
-
-// components/blocks/contentCard.tsx
-init_videoEmbed();
-var contentCardBlockSchema = {
-  name: "ContentCard",
-  label: "Content Card",
-  ui: {
-    previewSrc: "/blocks/content.png",
-    defaultItem: {
-      content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."
-    }
-  },
-  fields: [
-    {
-      type: "boolean",
-      label: "Prose",
-      name: "prose"
-    },
-    {
-      type: "boolean",
-      label: "Centered Aligned Text",
-      name: "centerAlignedText"
-    },
-    {
-      type: "rich-text",
-      label: "Content",
-      name: "content",
-      templates: [
-        videoEmbedBlockSchema,
-        verticalListItemSchema,
-        customImageBlockSchema
-      ]
     }
   ]
 };
@@ -2479,8 +2327,8 @@ init_button();
 import { TinaMarkdown as TinaMarkdown7 } from "tinacms/dist/rich-text";
 init_videoEmbed();
 init_bookingButton();
-import { useEffect as useEffect4, useState as useState7 } from "react";
-import classNames16 from "classnames";
+import { useEffect as useEffect5, useState as useState8 } from "react";
+import classNames15 from "classnames";
 var fixedTabsBlocks = [
   videoEmbedBlockSchema,
   bookingButtonSchema
@@ -2585,8 +2433,6338 @@ var googleMapsSchema = {
 };
 
 // components/blocks/newslettersTable.tsx
-import { useEffect as useEffect5, useState as useState8 } from "react";
+import { useEffect as useEffect6, useState as useState9 } from "react";
 import { FaSpinner as FaSpinner3 } from "react-icons/fa";
+
+// .tina/__generated__/client.ts
+import { createClient as createClient2 } from "tinacms/dist/client";
+
+// .tina/__generated__/types.ts
+import { createClient } from "tinacms/dist/client";
+function gql(strings, ...args) {
+  let str = "";
+  strings.forEach((string2, i) => {
+    str += string2 + (args[i] || "");
+  });
+  return str;
+}
+var GlobalPartsFragmentDoc = gql`
+    fragment GlobalParts on Global {
+  header {
+    __typename
+    name
+    title
+    description
+    url
+    site_name
+    alternate_site_name
+  }
+  youtubeChannelLink
+  breadcrumbSuffix
+  bookingButtonText
+  bookingPhone
+  homePageOfficeList {
+    __typename
+    url
+    name
+    streetAddress
+    suburb
+    addressLocality
+    addressRegion
+    addressCountry
+    postalCode
+    phone
+    hours
+    days
+  }
+  socials {
+    __typename
+    type
+    title
+    url
+    username
+    linkText
+    desktopSpecificLinkText
+    desktopSpecificURL
+    openInSameWindow
+  }
+  clients {
+    __typename
+    clientsList {
+      __typename
+      clientName
+      imageUrl
+    }
+  }
+}
+    `;
+var LayoutQueryFragmentFragmentDoc = gql`
+    fragment LayoutQueryFragment on Query {
+  global(relativePath: "index.json") {
+    ...GlobalParts
+  }
+}
+    ${GlobalPartsFragmentDoc}`;
+var MarketingPartsFragmentDoc = gql`
+    fragment MarketingParts on Marketing {
+  title
+  backgroundImage
+  mediaComponent
+  body
+  textSide
+}
+    `;
+var PagePartsFragmentDoc = gql`
+    fragment PageParts on Page {
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  breadcrumbs
+  beforeBody {
+    __typename
+    ... on PageBeforeBodyAboutUs {
+      backgroundColor
+    }
+    ... on PageBeforeBodyAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on PageBeforeBodyBookingButton {
+      buttonText
+    }
+    ... on PageBeforeBodyBuiltOnAzure {
+      backgroundColor
+    }
+    ... on PageBeforeBodyCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on PageBeforeBodyCitation {
+      author
+      article
+    }
+    ... on PageBeforeBodyClientLogos {
+      altText
+    }
+    ... on PageBeforeBodyContent {
+      title
+      content
+      size
+      align
+      backgroundColor
+    }
+    ... on PageBeforeBodyContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on PageBeforeBodyCustomImage {
+      src
+      altText
+      height
+      width
+      link
+    }
+    ... on PageBeforeBodyDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on PageBeforeBodyFlag {
+      country
+    }
+    ... on PageBeforeBodyFixedColumns {
+      firstColBody
+      secondColBody
+    }
+    ... on PageBeforeBodyFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on PageBeforeBodyGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on PageBeforeBodyHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on PageBeforeBodyInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on PageBeforeBodyNewslettersTable {
+      headerText
+    }
+    ... on PageBeforeBodyRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on PageBeforeBodyServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on PageBeforeBodySubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on PageBeforeBodyTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on PageBeforeBodyTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on PageBeforeBodyTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on PageBeforeBodyTweetEmbed {
+      url
+    }
+    ... on PageBeforeBodyUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on PageBeforeBodyUtilityButton {
+      buttonText
+      link
+    }
+    ... on PageBeforeBodyVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+    }
+    ... on PageBeforeBodyVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on PageBeforeBodyVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+    }
+    ... on PageBeforeBodyEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on PageBeforeBodyPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on PageBeforeBodyLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on PageBeforeBodyAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on PageBeforeBodyOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on PageBeforeBodyJoinGithub {
+      title
+      link
+    }
+    ... on PageBeforeBodyJoinAsPresenter {
+      link
+      img
+    }
+    ... on PageBeforeBodyPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+  }
+  _body
+  sideBar {
+    __typename
+    ... on PageSideBarAboutUs {
+      backgroundColor
+    }
+    ... on PageSideBarAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on PageSideBarBookingButton {
+      buttonText
+    }
+    ... on PageSideBarBuiltOnAzure {
+      backgroundColor
+    }
+    ... on PageSideBarCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on PageSideBarCitation {
+      author
+      article
+    }
+    ... on PageSideBarClientLogos {
+      altText
+    }
+    ... on PageSideBarContent {
+      title
+      content
+      size
+      align
+      backgroundColor
+    }
+    ... on PageSideBarContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on PageSideBarCustomImage {
+      src
+      altText
+      height
+      width
+      link
+    }
+    ... on PageSideBarDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on PageSideBarFlag {
+      country
+    }
+    ... on PageSideBarFixedColumns {
+      firstColBody
+      secondColBody
+    }
+    ... on PageSideBarFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on PageSideBarGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on PageSideBarHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on PageSideBarInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on PageSideBarNewslettersTable {
+      headerText
+    }
+    ... on PageSideBarRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on PageSideBarServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on PageSideBarSubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on PageSideBarTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on PageSideBarTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on PageSideBarTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on PageSideBarTweetEmbed {
+      url
+    }
+    ... on PageSideBarUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on PageSideBarUtilityButton {
+      buttonText
+      link
+    }
+    ... on PageSideBarVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+    }
+    ... on PageSideBarVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on PageSideBarVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+    }
+    ... on PageSideBarEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on PageSideBarPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on PageSideBarLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on PageSideBarAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on PageSideBarOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on PageSideBarJoinGithub {
+      title
+      link
+    }
+    ... on PageSideBarJoinAsPresenter {
+      link
+      img
+    }
+    ... on PageSideBarPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+  }
+  afterBody {
+    __typename
+    ... on PageAfterBodyAboutUs {
+      backgroundColor
+    }
+    ... on PageAfterBodyAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on PageAfterBodyBookingButton {
+      buttonText
+    }
+    ... on PageAfterBodyBuiltOnAzure {
+      backgroundColor
+    }
+    ... on PageAfterBodyCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on PageAfterBodyCitation {
+      author
+      article
+    }
+    ... on PageAfterBodyClientLogos {
+      altText
+    }
+    ... on PageAfterBodyContent {
+      title
+      content
+      size
+      align
+      backgroundColor
+    }
+    ... on PageAfterBodyContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on PageAfterBodyCustomImage {
+      src
+      altText
+      height
+      width
+      link
+    }
+    ... on PageAfterBodyDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on PageAfterBodyFlag {
+      country
+    }
+    ... on PageAfterBodyFixedColumns {
+      firstColBody
+      secondColBody
+    }
+    ... on PageAfterBodyFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on PageAfterBodyGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on PageAfterBodyHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on PageAfterBodyInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on PageAfterBodyNewslettersTable {
+      headerText
+    }
+    ... on PageAfterBodyRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on PageAfterBodyServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on PageAfterBodySubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on PageAfterBodyTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on PageAfterBodyTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on PageAfterBodyTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on PageAfterBodyTweetEmbed {
+      url
+    }
+    ... on PageAfterBodyUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on PageAfterBodyUtilityButton {
+      buttonText
+      link
+    }
+    ... on PageAfterBodyVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+    }
+    ... on PageAfterBodyVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on PageAfterBodyVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+    }
+    ... on PageAfterBodyEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on PageAfterBodyPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on PageAfterBodyLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on PageAfterBodyAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on PageAfterBodyOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on PageAfterBodyJoinGithub {
+      title
+      link
+    }
+    ... on PageAfterBodyJoinAsPresenter {
+      link
+      img
+    }
+    ... on PageAfterBodyPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+  }
+}
+    `;
+var ConsultingIndexPartsFragmentDoc = gql`
+    fragment ConsultingIndexParts on ConsultingIndex {
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  sidebar {
+    __typename
+    label
+    tag {
+      ... on ConsultingTag {
+        name
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+  }
+  categories {
+    __typename
+    category {
+      ... on ConsultingCategory {
+        name
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+    pages {
+      __typename
+      title
+      description
+      logo
+      page {
+        ... on Consulting {
+          seo {
+            __typename
+            title
+            description
+            canonical
+            showBreadcrumb
+            images {
+              __typename
+              url
+              width
+              height
+              alt
+            }
+          }
+          testimonials {
+            __typename
+            tagline
+          }
+          booking {
+            __typename
+            title
+            subTitle
+            buttonText
+            videoBackground
+          }
+          solution {
+            __typename
+            project
+          }
+          callToAction
+          testimonialCategories {
+            __typename
+            testimonialCategory {
+              ... on TestimonialCategories {
+                name
+                description
+              }
+              ... on Document {
+                _sys {
+                  filename
+                  basename
+                  breadcrumbs
+                  path
+                  relativePath
+                  extension
+                }
+                id
+              }
+            }
+          }
+          _body
+          afterBody {
+            __typename
+            ... on ConsultingAfterBodyAboutUs {
+              backgroundColor
+            }
+            ... on ConsultingAfterBodyAgreementForm {
+              backgroundColor
+              fields {
+                __typename
+                id
+                label
+                placeholder
+                resizeable
+              }
+            }
+            ... on ConsultingAfterBodyBookingButton {
+              buttonText
+            }
+            ... on ConsultingAfterBodyBuiltOnAzure {
+              backgroundColor
+            }
+            ... on ConsultingAfterBodyCarousel {
+              items {
+                __typename
+                label
+                link
+                openIn
+                imgSrc
+              }
+              backgroundColor
+              delay
+              showOnMobileDevices
+            }
+            ... on ConsultingAfterBodyCitation {
+              author
+              article
+            }
+            ... on ConsultingAfterBodyClientLogos {
+              altText
+            }
+            ... on ConsultingAfterBodyContent {
+              title
+              content
+              size
+              align
+              backgroundColor
+            }
+            ... on ConsultingAfterBodyContentCard {
+              prose
+              centerAlignedText
+              content
+            }
+            ... on ConsultingAfterBodyCustomImage {
+              src
+              altText
+              height
+              width
+              link
+            }
+            ... on ConsultingAfterBodyDynamicColumns {
+              colBody
+              colCount
+            }
+            ... on ConsultingAfterBodyFlag {
+              country
+            }
+            ... on ConsultingAfterBodyFixedColumns {
+              firstColBody
+              secondColBody
+            }
+            ... on ConsultingAfterBodyFixedTabsLayout {
+              firstTab
+              firstHeading
+              firstBody
+              secondTab
+              secondHeading
+              secondBody
+            }
+            ... on ConsultingAfterBodyGoogleMaps {
+              embedUrl
+              embedWidth
+              embedHeight
+            }
+            ... on ConsultingAfterBodyHero {
+              tagline
+              headline
+              text
+              actions {
+                __typename
+                label
+                type
+                icon
+                link
+              }
+              image {
+                __typename
+                src
+                alt
+              }
+              color
+            }
+            ... on ConsultingAfterBodyInternalCarousel {
+              items {
+                __typename
+                label
+                imgSrc
+              }
+              header
+              paragraph
+              website
+              technologies {
+                __typename
+                name
+              }
+            }
+            ... on ConsultingAfterBodyNewslettersTable {
+              headerText
+            }
+            ... on ConsultingAfterBodyRecurringEvent {
+              applyLinkRedirect
+              day
+            }
+            ... on ConsultingAfterBodyServiceCards {
+              bigCardsLabel
+              bigCards {
+                __typename
+                title
+                description
+                link
+                color
+                imgSrc
+              }
+              smallCardsLabel
+              smallCards {
+                __typename
+                title
+                link
+                color
+                imgSrc
+              }
+              links {
+                __typename
+                label
+                link
+              }
+              backgroundColor
+            }
+            ... on ConsultingAfterBodySubNewsletterRow {
+              headerText
+              subscribeButtonText
+              subscribeSubTitle
+            }
+            ... on ConsultingAfterBodyTableLayout {
+              tableStyle
+              firstColBold
+              headers
+              rows {
+                __typename
+                cells {
+                  __typename
+                  cellValue
+                }
+                isHeader
+              }
+            }
+            ... on ConsultingAfterBodyTrainingInformation {
+              trainingInformationItems {
+                __typename
+                header
+                body
+              }
+            }
+            ... on ConsultingAfterBodyTrainingLearningOutcome {
+              header
+              listItems {
+                __typename
+                title
+                content
+                icon
+              }
+            }
+            ... on ConsultingAfterBodyTweetEmbed {
+              url
+            }
+            ... on ConsultingAfterBodyUpcomingEvents {
+              title
+              numberOfEvents
+            }
+            ... on ConsultingAfterBodyUtilityButton {
+              buttonText
+              link
+            }
+            ... on ConsultingAfterBodyVerticalImageLayout {
+              imageSrc
+              altText
+              imageLink
+              height
+              width
+              message
+            }
+            ... on ConsultingAfterBodyVerticalListItem {
+              content
+              index
+              icon
+              iconScale
+              afterBody
+            }
+            ... on ConsultingAfterBodyVideoEmbed {
+              url
+              videoWidth
+              removeMargin
+            }
+            ... on ConsultingAfterBodyEventBooking {
+              eventDurationInDays
+              price
+              discountPrice
+              discountNote
+              eventList {
+                __typename
+                city
+                date
+                bookingURL
+              }
+            }
+            ... on ConsultingAfterBodyPresenterBlock {
+              header
+              presenterList {
+                __typename
+                presenter {
+                  ... on Presenter {
+                    profileImg
+                    presenter {
+                      __typename
+                      name
+                      peopleProfileURL
+                    }
+                    about
+                  }
+                  ... on Document {
+                    _sys {
+                      filename
+                      basename
+                      breadcrumbs
+                      path
+                      relativePath
+                      extension
+                    }
+                    id
+                  }
+                }
+              }
+              otherEvent {
+                __typename
+                title
+                eventURL
+              }
+            }
+            ... on ConsultingAfterBodyLocationBlock {
+              title
+              locationList {
+                __typename
+                location {
+                  ... on Locations {
+                    header
+                    addressLine1
+                    addressLine2
+                    addressLine3
+                    directionURL
+                  }
+                  ... on Document {
+                    _sys {
+                      filename
+                      basename
+                      breadcrumbs
+                      path
+                      relativePath
+                      extension
+                    }
+                    id
+                  }
+                }
+              }
+              chapelWebsite {
+                __typename
+                title
+                URL
+              }
+            }
+            ... on ConsultingAfterBodyAgenda {
+              header
+              textColor
+              agendaItemList {
+                __typename
+                placeholder
+                body
+              }
+            }
+            ... on ConsultingAfterBodyOrganizer {
+              profileImg
+              profileLink
+              name
+              position
+              content
+            }
+            ... on ConsultingAfterBodyJoinGithub {
+              title
+              link
+            }
+            ... on ConsultingAfterBodyJoinAsPresenter {
+              link
+              img
+            }
+            ... on ConsultingAfterBodyPaymentBlock {
+              title
+              subTitle
+              payments {
+                ... on PaymentDetails {
+                  bankName
+                  accountName
+                  bsbNumber
+                  accountNumber
+                  swiftNumber
+                  abn
+                  acn
+                }
+                ... on Document {
+                  _sys {
+                    filename
+                    basename
+                    breadcrumbs
+                    path
+                    relativePath
+                    extension
+                  }
+                  id
+                }
+              }
+              footer
+              creditImgSrc
+              altTxt
+            }
+          }
+          benefits {
+            __typename
+            benefitList {
+              __typename
+              image
+              title
+              description
+              linkName
+              linkURL
+            }
+            rule {
+              __typename
+              name
+              url
+            }
+          }
+          technologies {
+            __typename
+            header
+            subheading
+            technologyCards {
+              __typename
+              technologyCard {
+                ... on Technologies {
+                  name
+                  readMoreSlug
+                  thumbnail
+                  body
+                }
+                ... on Document {
+                  _sys {
+                    filename
+                    basename
+                    breadcrumbs
+                    path
+                    relativePath
+                    extension
+                  }
+                  id
+                }
+              }
+            }
+          }
+          medias {
+            __typename
+            header
+            mediaCards {
+              __typename
+              type
+              content
+            }
+          }
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      externalUrl
+      tags {
+        __typename
+        tag {
+          ... on ConsultingTag {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+var ConsultingCategoryPartsFragmentDoc = gql`
+    fragment ConsultingCategoryParts on ConsultingCategory {
+  name
+}
+    `;
+var ConsultingTagPartsFragmentDoc = gql`
+    fragment ConsultingTagParts on ConsultingTag {
+  name
+}
+    `;
+var ConsultingPartsFragmentDoc = gql`
+    fragment ConsultingParts on Consulting {
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  testimonials {
+    __typename
+    tagline
+  }
+  booking {
+    __typename
+    title
+    subTitle
+    buttonText
+    videoBackground
+  }
+  solution {
+    __typename
+    project
+  }
+  callToAction
+  testimonialCategories {
+    __typename
+    testimonialCategory {
+      ... on TestimonialCategories {
+        name
+        description
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+  }
+  _body
+  afterBody {
+    __typename
+    ... on ConsultingAfterBodyAboutUs {
+      backgroundColor
+    }
+    ... on ConsultingAfterBodyAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on ConsultingAfterBodyBookingButton {
+      buttonText
+    }
+    ... on ConsultingAfterBodyBuiltOnAzure {
+      backgroundColor
+    }
+    ... on ConsultingAfterBodyCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on ConsultingAfterBodyCitation {
+      author
+      article
+    }
+    ... on ConsultingAfterBodyClientLogos {
+      altText
+    }
+    ... on ConsultingAfterBodyContent {
+      title
+      content
+      size
+      align
+      backgroundColor
+    }
+    ... on ConsultingAfterBodyContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on ConsultingAfterBodyCustomImage {
+      src
+      altText
+      height
+      width
+      link
+    }
+    ... on ConsultingAfterBodyDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on ConsultingAfterBodyFlag {
+      country
+    }
+    ... on ConsultingAfterBodyFixedColumns {
+      firstColBody
+      secondColBody
+    }
+    ... on ConsultingAfterBodyFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on ConsultingAfterBodyGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on ConsultingAfterBodyHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on ConsultingAfterBodyInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on ConsultingAfterBodyNewslettersTable {
+      headerText
+    }
+    ... on ConsultingAfterBodyRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on ConsultingAfterBodyServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on ConsultingAfterBodySubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on ConsultingAfterBodyTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on ConsultingAfterBodyTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on ConsultingAfterBodyTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on ConsultingAfterBodyTweetEmbed {
+      url
+    }
+    ... on ConsultingAfterBodyUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on ConsultingAfterBodyUtilityButton {
+      buttonText
+      link
+    }
+    ... on ConsultingAfterBodyVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+    }
+    ... on ConsultingAfterBodyVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on ConsultingAfterBodyVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+    }
+    ... on ConsultingAfterBodyEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on ConsultingAfterBodyPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on ConsultingAfterBodyLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on ConsultingAfterBodyAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on ConsultingAfterBodyOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on ConsultingAfterBodyJoinGithub {
+      title
+      link
+    }
+    ... on ConsultingAfterBodyJoinAsPresenter {
+      link
+      img
+    }
+    ... on ConsultingAfterBodyPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+  }
+  benefits {
+    __typename
+    benefitList {
+      __typename
+      image
+      title
+      description
+      linkName
+      linkURL
+    }
+    rule {
+      __typename
+      name
+      url
+    }
+  }
+  technologies {
+    __typename
+    header
+    subheading
+    technologyCards {
+      __typename
+      technologyCard {
+        ... on Technologies {
+          name
+          readMoreSlug
+          thumbnail
+          body
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+    }
+  }
+  medias {
+    __typename
+    header
+    mediaCards {
+      __typename
+      type
+      content
+    }
+  }
+}
+    `;
+var VideoProductionPartsFragmentDoc = gql`
+    fragment VideoProductionParts on VideoProduction {
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  booking {
+    __typename
+    title
+    subTitle
+    buttonText
+    videoBackground
+  }
+  solution {
+    __typename
+    project
+  }
+  callToAction
+  _body
+  afterBody {
+    __typename
+    ... on VideoProductionAfterBodyAboutUs {
+      backgroundColor
+    }
+    ... on VideoProductionAfterBodyAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on VideoProductionAfterBodyBookingButton {
+      buttonText
+    }
+    ... on VideoProductionAfterBodyBuiltOnAzure {
+      backgroundColor
+    }
+    ... on VideoProductionAfterBodyCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on VideoProductionAfterBodyCitation {
+      author
+      article
+    }
+    ... on VideoProductionAfterBodyClientLogos {
+      altText
+    }
+    ... on VideoProductionAfterBodyContent {
+      title
+      content
+      size
+      align
+      backgroundColor
+    }
+    ... on VideoProductionAfterBodyContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on VideoProductionAfterBodyCustomImage {
+      src
+      altText
+      height
+      width
+      link
+    }
+    ... on VideoProductionAfterBodyDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on VideoProductionAfterBodyFlag {
+      country
+    }
+    ... on VideoProductionAfterBodyFixedColumns {
+      firstColBody
+      secondColBody
+    }
+    ... on VideoProductionAfterBodyFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on VideoProductionAfterBodyGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on VideoProductionAfterBodyHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on VideoProductionAfterBodyInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on VideoProductionAfterBodyNewslettersTable {
+      headerText
+    }
+    ... on VideoProductionAfterBodyRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on VideoProductionAfterBodyServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on VideoProductionAfterBodySubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on VideoProductionAfterBodyTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on VideoProductionAfterBodyTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on VideoProductionAfterBodyTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on VideoProductionAfterBodyTweetEmbed {
+      url
+    }
+    ... on VideoProductionAfterBodyUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on VideoProductionAfterBodyUtilityButton {
+      buttonText
+      link
+    }
+    ... on VideoProductionAfterBodyVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+    }
+    ... on VideoProductionAfterBodyVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on VideoProductionAfterBodyVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+    }
+    ... on VideoProductionAfterBodyEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on VideoProductionAfterBodyPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on VideoProductionAfterBodyLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on VideoProductionAfterBodyAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on VideoProductionAfterBodyOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on VideoProductionAfterBodyJoinGithub {
+      title
+      link
+    }
+    ... on VideoProductionAfterBodyJoinAsPresenter {
+      link
+      img
+    }
+    ... on VideoProductionAfterBodyPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+  }
+}
+    `;
+var TestimonialsPartsFragmentDoc = gql`
+    fragment TestimonialsParts on Testimonials {
+  name
+  avatar
+  company
+  rating
+  body
+  categories {
+    __typename
+    category {
+      ... on TestimonialCategories {
+        name
+        description
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+  }
+}
+    `;
+var TestimonialCategoriesPartsFragmentDoc = gql`
+    fragment TestimonialCategoriesParts on TestimonialCategories {
+  name
+  description
+}
+    `;
+var TechnologiesPartsFragmentDoc = gql`
+    fragment TechnologiesParts on Technologies {
+  name
+  readMoreSlug
+  thumbnail
+  body
+}
+    `;
+var OfficesPartsFragmentDoc = gql`
+    fragment OfficesParts on Offices {
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  coverImg
+  thumbnail
+  sideImg
+  url
+  name
+  streetAddress
+  suburb
+  addressLocality
+  addressRegion
+  addressCountry
+  postalCode
+  phone
+  hours
+  days
+  sidebarSecondaryPlace {
+    __typename
+    name
+    url
+  }
+  aboutUs
+  map
+  directionsUrl
+  directions
+  parking
+  publicTransport
+  team
+  photos
+  _body
+}
+    `;
+var OpportunitiesPartsFragmentDoc = gql`
+    fragment OpportunitiesParts on Opportunities {
+  title
+  employmentType
+  locations
+  hideApply
+  _body
+}
+    `;
+var EmploymentPartsFragmentDoc = gql`
+    fragment EmploymentParts on Employment {
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  booking {
+    __typename
+    title
+    subTitle
+    bookingBody
+    videoBackground
+  }
+  _body
+  benefits {
+    __typename
+    benefitList {
+      __typename
+      image
+      title
+      description
+      linkName
+      linkURL
+    }
+  }
+  benefitsBody
+  afterBody
+  opportunitiesBody
+  opportunities {
+    __typename
+    opportunityRef {
+      ... on Opportunities {
+        title
+        employmentType
+        locations
+        hideApply
+        _body
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+  }
+  callToActionBody
+}
+    `;
+var OfficeIndexPartsFragmentDoc = gql`
+    fragment OfficeIndexParts on OfficeIndex {
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  officesIndex {
+    __typename
+    office {
+      ... on Offices {
+        seo {
+          __typename
+          title
+          description
+          canonical
+          showBreadcrumb
+          images {
+            __typename
+            url
+            width
+            height
+            alt
+          }
+        }
+        coverImg
+        thumbnail
+        sideImg
+        url
+        name
+        streetAddress
+        suburb
+        addressLocality
+        addressRegion
+        addressCountry
+        postalCode
+        phone
+        hours
+        days
+        sidebarSecondaryPlace {
+          __typename
+          name
+          url
+        }
+        aboutUs
+        map
+        directionsUrl
+        directions
+        parking
+        publicTransport
+        team
+        photos
+        _body
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+  }
+}
+    `;
+var ProductsIndexPartsFragmentDoc = gql`
+    fragment ProductsIndexParts on ProductsIndex {
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  productsList {
+    __typename
+    name
+    url
+    description
+    logo
+  }
+}
+    `;
+var ProductsPartsFragmentDoc = gql`
+    fragment ProductsParts on Products {
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  _body
+}
+    `;
+var TrainingPartsFragmentDoc = gql`
+    fragment TrainingParts on Training {
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  trainingHeaderCarousel {
+    __typename
+    trainingHeaderCarouselItem {
+      __typename
+      tagline
+      secondaryTagline
+      heroBackground
+      person
+      link {
+        __typename
+        linkText
+        url
+        icon
+      }
+    }
+  }
+  testimonials {
+    __typename
+    tagline
+  }
+  title
+  showTestimonials
+  _body {
+    __typename
+    ... on Training_bodyAboutUs {
+      backgroundColor
+    }
+    ... on Training_bodyAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on Training_bodyBookingButton {
+      buttonText
+    }
+    ... on Training_bodyBuiltOnAzure {
+      backgroundColor
+    }
+    ... on Training_bodyCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on Training_bodyCitation {
+      author
+      article
+    }
+    ... on Training_bodyClientLogos {
+      altText
+    }
+    ... on Training_bodyContent {
+      title
+      content
+      size
+      align
+      backgroundColor
+    }
+    ... on Training_bodyContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on Training_bodyCustomImage {
+      src
+      altText
+      height
+      width
+      link
+    }
+    ... on Training_bodyDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on Training_bodyFlag {
+      country
+    }
+    ... on Training_bodyFixedColumns {
+      firstColBody
+      secondColBody
+    }
+    ... on Training_bodyFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on Training_bodyGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on Training_bodyHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on Training_bodyInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on Training_bodyNewslettersTable {
+      headerText
+    }
+    ... on Training_bodyRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on Training_bodyServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on Training_bodySubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on Training_bodyTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on Training_bodyTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on Training_bodyTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on Training_bodyTweetEmbed {
+      url
+    }
+    ... on Training_bodyUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on Training_bodyUtilityButton {
+      buttonText
+      link
+    }
+    ... on Training_bodyVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+    }
+    ... on Training_bodyVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on Training_bodyVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+    }
+    ... on Training_bodyEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on Training_bodyPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on Training_bodyLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on Training_bodyAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on Training_bodyOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on Training_bodyJoinGithub {
+      title
+      link
+    }
+    ... on Training_bodyJoinAsPresenter {
+      link
+      img
+    }
+    ... on Training_bodyPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+  }
+  footer
+  videos {
+    __typename
+    channelLink
+    videoCards {
+      __typename
+      title
+      link
+    }
+  }
+}
+    `;
+var NewslettersPartsFragmentDoc = gql`
+    fragment NewslettersParts on Newsletters {
+  newsletters_year
+  newsletters {
+    __typename
+    month
+    file
+    images
+    description
+  }
+}
+    `;
+var PresenterPartsFragmentDoc = gql`
+    fragment PresenterParts on Presenter {
+  profileImg
+  presenter {
+    __typename
+    name
+    peopleProfileURL
+  }
+  about
+}
+    `;
+var LocationsPartsFragmentDoc = gql`
+    fragment LocationsParts on Locations {
+  header
+  addressLine1
+  addressLine2
+  addressLine3
+  directionURL
+}
+    `;
+var IndustryPartsFragmentDoc = gql`
+    fragment IndustryParts on Industry {
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  heading
+  subHeading
+  bannerImg
+  whitepaperFile
+  _body
+}
+    `;
+var CompanyPartsFragmentDoc = gql`
+    fragment CompanyParts on Company {
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  title
+  subTitle
+  _body {
+    __typename
+    ... on Company_bodyAboutUs {
+      backgroundColor
+    }
+    ... on Company_bodyAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on Company_bodyBookingButton {
+      buttonText
+    }
+    ... on Company_bodyBuiltOnAzure {
+      backgroundColor
+    }
+    ... on Company_bodyCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on Company_bodyCitation {
+      author
+      article
+    }
+    ... on Company_bodyClientLogos {
+      altText
+    }
+    ... on Company_bodyContent {
+      title
+      content
+      size
+      align
+      backgroundColor
+    }
+    ... on Company_bodyContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on Company_bodyCustomImage {
+      src
+      altText
+      height
+      width
+      link
+    }
+    ... on Company_bodyDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on Company_bodyFlag {
+      country
+    }
+    ... on Company_bodyFixedColumns {
+      firstColBody
+      secondColBody
+    }
+    ... on Company_bodyFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on Company_bodyGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on Company_bodyHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on Company_bodyInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on Company_bodyNewslettersTable {
+      headerText
+    }
+    ... on Company_bodyRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on Company_bodyServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on Company_bodySubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on Company_bodyTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on Company_bodyTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on Company_bodyTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on Company_bodyTweetEmbed {
+      url
+    }
+    ... on Company_bodyUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on Company_bodyUtilityButton {
+      buttonText
+      link
+    }
+    ... on Company_bodyVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+    }
+    ... on Company_bodyVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on Company_bodyVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+    }
+    ... on Company_bodyEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on Company_bodyPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on Company_bodyLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on Company_bodyAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on Company_bodyOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on Company_bodyJoinGithub {
+      title
+      link
+    }
+    ... on Company_bodyJoinAsPresenter {
+      link
+      img
+    }
+    ... on Company_bodyPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+  }
+  historyCards {
+    __typename
+    year
+    title
+    location
+    description
+  }
+}
+    `;
+var EventsPartsFragmentDoc = gql`
+    fragment EventsParts on Events {
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  eventHeader {
+    __typename
+    heroBackground
+    altText
+    imgOverlay
+  }
+  testimonials {
+    __typename
+    tagline
+  }
+  title
+  showBreadcrumb
+  showTestimonials
+  testimonialCategories {
+    __typename
+    testimonialCategory {
+      ... on TestimonialCategories {
+        name
+        description
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+  }
+  _body {
+    __typename
+    ... on Events_bodyAboutUs {
+      backgroundColor
+    }
+    ... on Events_bodyAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on Events_bodyBookingButton {
+      buttonText
+    }
+    ... on Events_bodyBuiltOnAzure {
+      backgroundColor
+    }
+    ... on Events_bodyCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on Events_bodyCitation {
+      author
+      article
+    }
+    ... on Events_bodyClientLogos {
+      altText
+    }
+    ... on Events_bodyContent {
+      title
+      content
+      size
+      align
+      backgroundColor
+    }
+    ... on Events_bodyContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on Events_bodyCustomImage {
+      src
+      altText
+      height
+      width
+      link
+    }
+    ... on Events_bodyDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on Events_bodyFlag {
+      country
+    }
+    ... on Events_bodyFixedColumns {
+      firstColBody
+      secondColBody
+    }
+    ... on Events_bodyFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on Events_bodyGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on Events_bodyHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on Events_bodyInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on Events_bodyNewslettersTable {
+      headerText
+    }
+    ... on Events_bodyRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on Events_bodyServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on Events_bodySubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on Events_bodyTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on Events_bodyTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on Events_bodyTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on Events_bodyTweetEmbed {
+      url
+    }
+    ... on Events_bodyUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on Events_bodyUtilityButton {
+      buttonText
+      link
+    }
+    ... on Events_bodyVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+    }
+    ... on Events_bodyVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on Events_bodyVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+    }
+    ... on Events_bodyEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on Events_bodyPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on Events_bodyLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on Events_bodyAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on Events_bodyOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on Events_bodyJoinGithub {
+      title
+      link
+    }
+    ... on Events_bodyJoinAsPresenter {
+      link
+      img
+    }
+    ... on Events_bodyPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+  }
+  footer
+  videos {
+    __typename
+    channelLink
+    videoCards {
+      __typename
+      title
+      link
+    }
+  }
+}
+    `;
+var CompanyIndexPartsFragmentDoc = gql`
+    fragment CompanyIndexParts on CompanyIndex {
+  headerImage {
+    __typename
+    heroBackground
+    altText
+    txtOverlay
+  }
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  title
+  _body
+  companyPages {
+    __typename
+    title
+    body
+    pageURL
+  }
+}
+    `;
+var EventsIndexPartsFragmentDoc = gql`
+    fragment EventsIndexParts on EventsIndex {
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  _body
+  sidebarBody
+  afterEvents {
+    __typename
+    ... on EventsIndexAfterEventsAboutUs {
+      backgroundColor
+    }
+    ... on EventsIndexAfterEventsAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on EventsIndexAfterEventsBookingButton {
+      buttonText
+    }
+    ... on EventsIndexAfterEventsBuiltOnAzure {
+      backgroundColor
+    }
+    ... on EventsIndexAfterEventsCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on EventsIndexAfterEventsCitation {
+      author
+      article
+    }
+    ... on EventsIndexAfterEventsClientLogos {
+      altText
+    }
+    ... on EventsIndexAfterEventsContent {
+      title
+      content
+      size
+      align
+      backgroundColor
+    }
+    ... on EventsIndexAfterEventsContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on EventsIndexAfterEventsCustomImage {
+      src
+      altText
+      height
+      width
+      link
+    }
+    ... on EventsIndexAfterEventsDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on EventsIndexAfterEventsFlag {
+      country
+    }
+    ... on EventsIndexAfterEventsFixedColumns {
+      firstColBody
+      secondColBody
+    }
+    ... on EventsIndexAfterEventsFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on EventsIndexAfterEventsGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on EventsIndexAfterEventsHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on EventsIndexAfterEventsInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on EventsIndexAfterEventsNewslettersTable {
+      headerText
+    }
+    ... on EventsIndexAfterEventsRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on EventsIndexAfterEventsServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on EventsIndexAfterEventsSubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on EventsIndexAfterEventsTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on EventsIndexAfterEventsTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on EventsIndexAfterEventsTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on EventsIndexAfterEventsTweetEmbed {
+      url
+    }
+    ... on EventsIndexAfterEventsUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on EventsIndexAfterEventsUtilityButton {
+      buttonText
+      link
+    }
+    ... on EventsIndexAfterEventsVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+    }
+    ... on EventsIndexAfterEventsVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on EventsIndexAfterEventsVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+    }
+    ... on EventsIndexAfterEventsEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on EventsIndexAfterEventsPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on EventsIndexAfterEventsLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on EventsIndexAfterEventsAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on EventsIndexAfterEventsOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on EventsIndexAfterEventsJoinGithub {
+      title
+      link
+    }
+    ... on EventsIndexAfterEventsJoinAsPresenter {
+      link
+      img
+    }
+    ... on EventsIndexAfterEventsPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+  }
+}
+    `;
+var PaymentDetailsPartsFragmentDoc = gql`
+    fragment PaymentDetailsParts on PaymentDetails {
+  bankName
+  accountName
+  bsbNumber
+  accountNumber
+  swiftNumber
+  abn
+  acn
+}
+    `;
+var ContentQueryDocument = gql`
+    query contentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  page(relativePath: $relativePath) {
+    ...PageParts
+  }
+}
+    ${LayoutQueryFragmentFragmentDoc}
+${PagePartsFragmentDoc}`;
+var ConsultingContentQueryDocument = gql`
+    query consultingContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  consulting(relativePath: $relativePath) {
+    ...ConsultingParts
+  }
+}
+    ${LayoutQueryFragmentFragmentDoc}
+${ConsultingPartsFragmentDoc}`;
+var VideoProductionContentQueryDocument = gql`
+    query videoProductionContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  videoProduction(relativePath: $relativePath) {
+    ...VideoProductionParts
+  }
+}
+    ${LayoutQueryFragmentFragmentDoc}
+${VideoProductionPartsFragmentDoc}`;
+var CompanyContentQueryDocument = gql`
+    query companyContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  company(relativePath: $relativePath) {
+    ...CompanyParts
+  }
+}
+    ${LayoutQueryFragmentFragmentDoc}
+${CompanyPartsFragmentDoc}`;
+var CompanyIndexContentQueryDocument = gql`
+    query companyIndexContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  companyIndex(relativePath: $relativePath) {
+    ...CompanyIndexParts
+  }
+}
+    ${LayoutQueryFragmentFragmentDoc}
+${CompanyIndexPartsFragmentDoc}`;
+var OfficeContentQueryDocument = gql`
+    query officeContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  offices(relativePath: $relativePath) {
+    ...OfficesParts
+  }
+}
+    ${LayoutQueryFragmentFragmentDoc}
+${OfficesPartsFragmentDoc}`;
+var TrainingContentQueryDocument = gql`
+    query trainingContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  training(relativePath: $relativePath) {
+    ...TrainingParts
+  }
+}
+    ${LayoutQueryFragmentFragmentDoc}
+${TrainingPartsFragmentDoc}`;
+var AllTestimonialsQueryDocument = gql`
+    query allTestimonialsQuery {
+  testimonialsConnection {
+    Testimonials: edges {
+      Testimonial: node {
+        name
+        avatar
+        body
+        company
+        rating
+      }
+    }
+  }
+}
+    `;
+var TestimonalsQueryDocument = gql`
+    query testimonalsQuery($categories: [String!]) {
+  testimonialsConnection(
+    filter: {categories: {category: {testimonialCategories: {name: {in: $categories}}}}}
+  ) {
+    edges {
+      node {
+        name
+        avatar
+        body
+        company
+        rating
+      }
+    }
+  }
+}
+    `;
+var TechnologyCardContentQueryDocument = gql`
+    query technologyCardContentQuery($cardNames: [String!]) {
+  ...LayoutQueryFragment
+  technologiesConnection(filter: {name: {in: $cardNames}}) {
+    edges {
+      node {
+        ... on Technologies {
+          name
+          readMoreSlug
+          thumbnail
+          body
+        }
+      }
+    }
+  }
+}
+    ${LayoutQueryFragmentFragmentDoc}`;
+var EmploymentPageQueryDocument = gql`
+    query employmentPageQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  employment(relativePath: $relativePath) {
+    ...EmploymentParts
+  }
+  opportunitiesConnection {
+    edges {
+      node {
+        ...OpportunitiesParts
+      }
+    }
+  }
+}
+    ${LayoutQueryFragmentFragmentDoc}
+${EmploymentPartsFragmentDoc}
+${OpportunitiesPartsFragmentDoc}`;
+var OfficeIndexQueryDocument = gql`
+    query officeIndexQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  officeIndex(relativePath: $relativePath) {
+    seo {
+      title
+      description
+      canonical
+      images {
+        url
+        width
+        height
+        alt
+      }
+    }
+    officesIndex {
+      office {
+        ... on Offices {
+          url
+          name
+          streetAddress
+          suburb
+          addressLocality
+          addressRegion
+          addressCountry
+          postalCode
+          phone
+          days
+          thumbnail
+        }
+      }
+    }
+  }
+}
+    ${LayoutQueryFragmentFragmentDoc}`;
+var ProductContentQueryDocument = gql`
+    query productContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  products(relativePath: $relativePath) {
+    ...ProductsParts
+  }
+}
+    ${LayoutQueryFragmentFragmentDoc}
+${ProductsPartsFragmentDoc}`;
+var IndustryContentQueryDocument = gql`
+    query industryContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  industry(relativePath: $relativePath) {
+    ...IndustryParts
+  }
+}
+    ${LayoutQueryFragmentFragmentDoc}
+${IndustryPartsFragmentDoc}`;
+var EventsContentQueryDocument = gql`
+    query eventsContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  events(relativePath: $relativePath) {
+    ...EventsParts
+  }
+}
+    ${LayoutQueryFragmentFragmentDoc}
+${EventsPartsFragmentDoc}`;
+var EventsIndexContentQueryDocument = gql`
+    query eventsIndexContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  eventsIndex(relativePath: $relativePath) {
+    ...EventsIndexParts
+  }
+}
+    ${LayoutQueryFragmentFragmentDoc}
+${EventsIndexPartsFragmentDoc}`;
+var MarketingDocument = gql`
+    query marketing($relativePath: String!) {
+  marketing(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...MarketingParts
+  }
+}
+    ${MarketingPartsFragmentDoc}`;
+var MarketingConnectionDocument = gql`
+    query marketingConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: MarketingFilter) {
+  marketingConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...MarketingParts
+      }
+    }
+  }
+}
+    ${MarketingPartsFragmentDoc}`;
+var GlobalDocument = gql`
+    query global($relativePath: String!) {
+  global(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...GlobalParts
+  }
+}
+    ${GlobalPartsFragmentDoc}`;
+var GlobalConnectionDocument = gql`
+    query globalConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: GlobalFilter) {
+  globalConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...GlobalParts
+      }
+    }
+  }
+}
+    ${GlobalPartsFragmentDoc}`;
+var PageDocument = gql`
+    query page($relativePath: String!) {
+  page(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...PageParts
+  }
+}
+    ${PagePartsFragmentDoc}`;
+var PageConnectionDocument = gql`
+    query pageConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PageFilter) {
+  pageConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...PageParts
+      }
+    }
+  }
+}
+    ${PagePartsFragmentDoc}`;
+var ConsultingIndexDocument = gql`
+    query consultingIndex($relativePath: String!) {
+  consultingIndex(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ConsultingIndexParts
+  }
+}
+    ${ConsultingIndexPartsFragmentDoc}`;
+var ConsultingIndexConnectionDocument = gql`
+    query consultingIndexConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ConsultingIndexFilter) {
+  consultingIndexConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ConsultingIndexParts
+      }
+    }
+  }
+}
+    ${ConsultingIndexPartsFragmentDoc}`;
+var ConsultingCategoryDocument = gql`
+    query consultingCategory($relativePath: String!) {
+  consultingCategory(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ConsultingCategoryParts
+  }
+}
+    ${ConsultingCategoryPartsFragmentDoc}`;
+var ConsultingCategoryConnectionDocument = gql`
+    query consultingCategoryConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ConsultingCategoryFilter) {
+  consultingCategoryConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ConsultingCategoryParts
+      }
+    }
+  }
+}
+    ${ConsultingCategoryPartsFragmentDoc}`;
+var ConsultingTagDocument = gql`
+    query consultingTag($relativePath: String!) {
+  consultingTag(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ConsultingTagParts
+  }
+}
+    ${ConsultingTagPartsFragmentDoc}`;
+var ConsultingTagConnectionDocument = gql`
+    query consultingTagConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ConsultingTagFilter) {
+  consultingTagConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ConsultingTagParts
+      }
+    }
+  }
+}
+    ${ConsultingTagPartsFragmentDoc}`;
+var ConsultingDocument = gql`
+    query consulting($relativePath: String!) {
+  consulting(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ConsultingParts
+  }
+}
+    ${ConsultingPartsFragmentDoc}`;
+var ConsultingConnectionDocument = gql`
+    query consultingConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ConsultingFilter) {
+  consultingConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ConsultingParts
+      }
+    }
+  }
+}
+    ${ConsultingPartsFragmentDoc}`;
+var VideoProductionDocument = gql`
+    query videoProduction($relativePath: String!) {
+  videoProduction(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...VideoProductionParts
+  }
+}
+    ${VideoProductionPartsFragmentDoc}`;
+var VideoProductionConnectionDocument = gql`
+    query videoProductionConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: VideoProductionFilter) {
+  videoProductionConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...VideoProductionParts
+      }
+    }
+  }
+}
+    ${VideoProductionPartsFragmentDoc}`;
+var TestimonialsDocument = gql`
+    query testimonials($relativePath: String!) {
+  testimonials(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...TestimonialsParts
+  }
+}
+    ${TestimonialsPartsFragmentDoc}`;
+var TestimonialsConnectionDocument = gql`
+    query testimonialsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: TestimonialsFilter) {
+  testimonialsConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...TestimonialsParts
+      }
+    }
+  }
+}
+    ${TestimonialsPartsFragmentDoc}`;
+var TestimonialCategoriesDocument = gql`
+    query testimonialCategories($relativePath: String!) {
+  testimonialCategories(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...TestimonialCategoriesParts
+  }
+}
+    ${TestimonialCategoriesPartsFragmentDoc}`;
+var TestimonialCategoriesConnectionDocument = gql`
+    query testimonialCategoriesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: TestimonialCategoriesFilter) {
+  testimonialCategoriesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...TestimonialCategoriesParts
+      }
+    }
+  }
+}
+    ${TestimonialCategoriesPartsFragmentDoc}`;
+var TechnologiesDocument = gql`
+    query technologies($relativePath: String!) {
+  technologies(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...TechnologiesParts
+  }
+}
+    ${TechnologiesPartsFragmentDoc}`;
+var TechnologiesConnectionDocument = gql`
+    query technologiesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: TechnologiesFilter) {
+  technologiesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...TechnologiesParts
+      }
+    }
+  }
+}
+    ${TechnologiesPartsFragmentDoc}`;
+var OfficesDocument = gql`
+    query offices($relativePath: String!) {
+  offices(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...OfficesParts
+  }
+}
+    ${OfficesPartsFragmentDoc}`;
+var OfficesConnectionDocument = gql`
+    query officesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: OfficesFilter) {
+  officesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...OfficesParts
+      }
+    }
+  }
+}
+    ${OfficesPartsFragmentDoc}`;
+var OpportunitiesDocument = gql`
+    query opportunities($relativePath: String!) {
+  opportunities(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...OpportunitiesParts
+  }
+}
+    ${OpportunitiesPartsFragmentDoc}`;
+var OpportunitiesConnectionDocument = gql`
+    query opportunitiesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: OpportunitiesFilter) {
+  opportunitiesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...OpportunitiesParts
+      }
+    }
+  }
+}
+    ${OpportunitiesPartsFragmentDoc}`;
+var EmploymentDocument = gql`
+    query employment($relativePath: String!) {
+  employment(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...EmploymentParts
+  }
+}
+    ${EmploymentPartsFragmentDoc}`;
+var EmploymentConnectionDocument = gql`
+    query employmentConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: EmploymentFilter) {
+  employmentConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...EmploymentParts
+      }
+    }
+  }
+}
+    ${EmploymentPartsFragmentDoc}`;
+var OfficeIndexDocument = gql`
+    query officeIndex($relativePath: String!) {
+  officeIndex(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...OfficeIndexParts
+  }
+}
+    ${OfficeIndexPartsFragmentDoc}`;
+var OfficeIndexConnectionDocument = gql`
+    query officeIndexConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: OfficeIndexFilter) {
+  officeIndexConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...OfficeIndexParts
+      }
+    }
+  }
+}
+    ${OfficeIndexPartsFragmentDoc}`;
+var ProductsIndexDocument = gql`
+    query productsIndex($relativePath: String!) {
+  productsIndex(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ProductsIndexParts
+  }
+}
+    ${ProductsIndexPartsFragmentDoc}`;
+var ProductsIndexConnectionDocument = gql`
+    query productsIndexConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ProductsIndexFilter) {
+  productsIndexConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ProductsIndexParts
+      }
+    }
+  }
+}
+    ${ProductsIndexPartsFragmentDoc}`;
+var ProductsDocument = gql`
+    query products($relativePath: String!) {
+  products(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ProductsParts
+  }
+}
+    ${ProductsPartsFragmentDoc}`;
+var ProductsConnectionDocument = gql`
+    query productsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ProductsFilter) {
+  productsConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ProductsParts
+      }
+    }
+  }
+}
+    ${ProductsPartsFragmentDoc}`;
+var TrainingDocument = gql`
+    query training($relativePath: String!) {
+  training(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...TrainingParts
+  }
+}
+    ${TrainingPartsFragmentDoc}`;
+var TrainingConnectionDocument = gql`
+    query trainingConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: TrainingFilter) {
+  trainingConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...TrainingParts
+      }
+    }
+  }
+}
+    ${TrainingPartsFragmentDoc}`;
+var NewslettersDocument = gql`
+    query newsletters($relativePath: String!) {
+  newsletters(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...NewslettersParts
+  }
+}
+    ${NewslettersPartsFragmentDoc}`;
+var NewslettersConnectionDocument = gql`
+    query newslettersConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: NewslettersFilter) {
+  newslettersConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...NewslettersParts
+      }
+    }
+  }
+}
+    ${NewslettersPartsFragmentDoc}`;
+var PresenterDocument = gql`
+    query presenter($relativePath: String!) {
+  presenter(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...PresenterParts
+  }
+}
+    ${PresenterPartsFragmentDoc}`;
+var PresenterConnectionDocument = gql`
+    query presenterConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PresenterFilter) {
+  presenterConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...PresenterParts
+      }
+    }
+  }
+}
+    ${PresenterPartsFragmentDoc}`;
+var LocationsDocument = gql`
+    query locations($relativePath: String!) {
+  locations(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...LocationsParts
+  }
+}
+    ${LocationsPartsFragmentDoc}`;
+var LocationsConnectionDocument = gql`
+    query locationsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: LocationsFilter) {
+  locationsConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...LocationsParts
+      }
+    }
+  }
+}
+    ${LocationsPartsFragmentDoc}`;
+var IndustryDocument = gql`
+    query industry($relativePath: String!) {
+  industry(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...IndustryParts
+  }
+}
+    ${IndustryPartsFragmentDoc}`;
+var IndustryConnectionDocument = gql`
+    query industryConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: IndustryFilter) {
+  industryConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...IndustryParts
+      }
+    }
+  }
+}
+    ${IndustryPartsFragmentDoc}`;
+var CompanyDocument = gql`
+    query company($relativePath: String!) {
+  company(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...CompanyParts
+  }
+}
+    ${CompanyPartsFragmentDoc}`;
+var CompanyConnectionDocument = gql`
+    query companyConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: CompanyFilter) {
+  companyConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...CompanyParts
+      }
+    }
+  }
+}
+    ${CompanyPartsFragmentDoc}`;
+var EventsDocument = gql`
+    query events($relativePath: String!) {
+  events(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...EventsParts
+  }
+}
+    ${EventsPartsFragmentDoc}`;
+var EventsConnectionDocument = gql`
+    query eventsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: EventsFilter) {
+  eventsConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...EventsParts
+      }
+    }
+  }
+}
+    ${EventsPartsFragmentDoc}`;
+var CompanyIndexDocument = gql`
+    query companyIndex($relativePath: String!) {
+  companyIndex(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...CompanyIndexParts
+  }
+}
+    ${CompanyIndexPartsFragmentDoc}`;
+var CompanyIndexConnectionDocument = gql`
+    query companyIndexConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: CompanyIndexFilter) {
+  companyIndexConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...CompanyIndexParts
+      }
+    }
+  }
+}
+    ${CompanyIndexPartsFragmentDoc}`;
+var EventsIndexDocument = gql`
+    query eventsIndex($relativePath: String!) {
+  eventsIndex(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...EventsIndexParts
+  }
+}
+    ${EventsIndexPartsFragmentDoc}`;
+var EventsIndexConnectionDocument = gql`
+    query eventsIndexConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: EventsIndexFilter) {
+  eventsIndexConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...EventsIndexParts
+      }
+    }
+  }
+}
+    ${EventsIndexPartsFragmentDoc}`;
+var PaymentDetailsDocument = gql`
+    query paymentDetails($relativePath: String!) {
+  paymentDetails(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...PaymentDetailsParts
+  }
+}
+    ${PaymentDetailsPartsFragmentDoc}`;
+var PaymentDetailsConnectionDocument = gql`
+    query paymentDetailsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PaymentDetailsFilter) {
+  paymentDetailsConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...PaymentDetailsParts
+      }
+    }
+  }
+}
+    ${PaymentDetailsPartsFragmentDoc}`;
+function getSdk(requester) {
+  return {
+    contentQuery(variables, options) {
+      return requester(ContentQueryDocument, variables, options);
+    },
+    consultingContentQuery(variables, options) {
+      return requester(ConsultingContentQueryDocument, variables, options);
+    },
+    videoProductionContentQuery(variables, options) {
+      return requester(VideoProductionContentQueryDocument, variables, options);
+    },
+    companyContentQuery(variables, options) {
+      return requester(CompanyContentQueryDocument, variables, options);
+    },
+    companyIndexContentQuery(variables, options) {
+      return requester(CompanyIndexContentQueryDocument, variables, options);
+    },
+    officeContentQuery(variables, options) {
+      return requester(OfficeContentQueryDocument, variables, options);
+    },
+    trainingContentQuery(variables, options) {
+      return requester(TrainingContentQueryDocument, variables, options);
+    },
+    allTestimonialsQuery(variables, options) {
+      return requester(AllTestimonialsQueryDocument, variables, options);
+    },
+    testimonalsQuery(variables, options) {
+      return requester(TestimonalsQueryDocument, variables, options);
+    },
+    technologyCardContentQuery(variables, options) {
+      return requester(TechnologyCardContentQueryDocument, variables, options);
+    },
+    employmentPageQuery(variables, options) {
+      return requester(EmploymentPageQueryDocument, variables, options);
+    },
+    officeIndexQuery(variables, options) {
+      return requester(OfficeIndexQueryDocument, variables, options);
+    },
+    productContentQuery(variables, options) {
+      return requester(ProductContentQueryDocument, variables, options);
+    },
+    industryContentQuery(variables, options) {
+      return requester(IndustryContentQueryDocument, variables, options);
+    },
+    eventsContentQuery(variables, options) {
+      return requester(EventsContentQueryDocument, variables, options);
+    },
+    eventsIndexContentQuery(variables, options) {
+      return requester(EventsIndexContentQueryDocument, variables, options);
+    },
+    marketing(variables, options) {
+      return requester(MarketingDocument, variables, options);
+    },
+    marketingConnection(variables, options) {
+      return requester(MarketingConnectionDocument, variables, options);
+    },
+    global(variables, options) {
+      return requester(GlobalDocument, variables, options);
+    },
+    globalConnection(variables, options) {
+      return requester(GlobalConnectionDocument, variables, options);
+    },
+    page(variables, options) {
+      return requester(PageDocument, variables, options);
+    },
+    pageConnection(variables, options) {
+      return requester(PageConnectionDocument, variables, options);
+    },
+    consultingIndex(variables, options) {
+      return requester(ConsultingIndexDocument, variables, options);
+    },
+    consultingIndexConnection(variables, options) {
+      return requester(ConsultingIndexConnectionDocument, variables, options);
+    },
+    consultingCategory(variables, options) {
+      return requester(ConsultingCategoryDocument, variables, options);
+    },
+    consultingCategoryConnection(variables, options) {
+      return requester(ConsultingCategoryConnectionDocument, variables, options);
+    },
+    consultingTag(variables, options) {
+      return requester(ConsultingTagDocument, variables, options);
+    },
+    consultingTagConnection(variables, options) {
+      return requester(ConsultingTagConnectionDocument, variables, options);
+    },
+    consulting(variables, options) {
+      return requester(ConsultingDocument, variables, options);
+    },
+    consultingConnection(variables, options) {
+      return requester(ConsultingConnectionDocument, variables, options);
+    },
+    videoProduction(variables, options) {
+      return requester(VideoProductionDocument, variables, options);
+    },
+    videoProductionConnection(variables, options) {
+      return requester(VideoProductionConnectionDocument, variables, options);
+    },
+    testimonials(variables, options) {
+      return requester(TestimonialsDocument, variables, options);
+    },
+    testimonialsConnection(variables, options) {
+      return requester(TestimonialsConnectionDocument, variables, options);
+    },
+    testimonialCategories(variables, options) {
+      return requester(TestimonialCategoriesDocument, variables, options);
+    },
+    testimonialCategoriesConnection(variables, options) {
+      return requester(TestimonialCategoriesConnectionDocument, variables, options);
+    },
+    technologies(variables, options) {
+      return requester(TechnologiesDocument, variables, options);
+    },
+    technologiesConnection(variables, options) {
+      return requester(TechnologiesConnectionDocument, variables, options);
+    },
+    offices(variables, options) {
+      return requester(OfficesDocument, variables, options);
+    },
+    officesConnection(variables, options) {
+      return requester(OfficesConnectionDocument, variables, options);
+    },
+    opportunities(variables, options) {
+      return requester(OpportunitiesDocument, variables, options);
+    },
+    opportunitiesConnection(variables, options) {
+      return requester(OpportunitiesConnectionDocument, variables, options);
+    },
+    employment(variables, options) {
+      return requester(EmploymentDocument, variables, options);
+    },
+    employmentConnection(variables, options) {
+      return requester(EmploymentConnectionDocument, variables, options);
+    },
+    officeIndex(variables, options) {
+      return requester(OfficeIndexDocument, variables, options);
+    },
+    officeIndexConnection(variables, options) {
+      return requester(OfficeIndexConnectionDocument, variables, options);
+    },
+    productsIndex(variables, options) {
+      return requester(ProductsIndexDocument, variables, options);
+    },
+    productsIndexConnection(variables, options) {
+      return requester(ProductsIndexConnectionDocument, variables, options);
+    },
+    products(variables, options) {
+      return requester(ProductsDocument, variables, options);
+    },
+    productsConnection(variables, options) {
+      return requester(ProductsConnectionDocument, variables, options);
+    },
+    training(variables, options) {
+      return requester(TrainingDocument, variables, options);
+    },
+    trainingConnection(variables, options) {
+      return requester(TrainingConnectionDocument, variables, options);
+    },
+    newsletters(variables, options) {
+      return requester(NewslettersDocument, variables, options);
+    },
+    newslettersConnection(variables, options) {
+      return requester(NewslettersConnectionDocument, variables, options);
+    },
+    presenter(variables, options) {
+      return requester(PresenterDocument, variables, options);
+    },
+    presenterConnection(variables, options) {
+      return requester(PresenterConnectionDocument, variables, options);
+    },
+    locations(variables, options) {
+      return requester(LocationsDocument, variables, options);
+    },
+    locationsConnection(variables, options) {
+      return requester(LocationsConnectionDocument, variables, options);
+    },
+    industry(variables, options) {
+      return requester(IndustryDocument, variables, options);
+    },
+    industryConnection(variables, options) {
+      return requester(IndustryConnectionDocument, variables, options);
+    },
+    company(variables, options) {
+      return requester(CompanyDocument, variables, options);
+    },
+    companyConnection(variables, options) {
+      return requester(CompanyConnectionDocument, variables, options);
+    },
+    events(variables, options) {
+      return requester(EventsDocument, variables, options);
+    },
+    eventsConnection(variables, options) {
+      return requester(EventsConnectionDocument, variables, options);
+    },
+    companyIndex(variables, options) {
+      return requester(CompanyIndexDocument, variables, options);
+    },
+    companyIndexConnection(variables, options) {
+      return requester(CompanyIndexConnectionDocument, variables, options);
+    },
+    eventsIndex(variables, options) {
+      return requester(EventsIndexDocument, variables, options);
+    },
+    eventsIndexConnection(variables, options) {
+      return requester(EventsIndexConnectionDocument, variables, options);
+    },
+    paymentDetails(variables, options) {
+      return requester(PaymentDetailsDocument, variables, options);
+    },
+    paymentDetailsConnection(variables, options) {
+      return requester(PaymentDetailsConnectionDocument, variables, options);
+    }
+  };
+}
+var generateRequester = (client2, options) => {
+  const requester = async (doc, vars, options2) => {
+    let url = client2.apiUrl;
+    if (options2?.branch) {
+      const index = client2.apiUrl.lastIndexOf("/");
+      url = client2.apiUrl.substring(0, index + 1) + options2.branch;
+    }
+    const data = await client2.request({
+      query: doc,
+      variables: vars,
+      url
+    });
+    return { data: data?.data, query: doc, variables: vars || {} };
+  };
+  return requester;
+};
+var queries = (client2, options) => {
+  const requester = generateRequester(client2, options);
+  return getSdk(requester);
+};
+
+// .tina/__generated__/client.ts
+var client = createClient2({ url: "http://localhost:4001/graphql", token: "undefined", queries });
 
 // services/client/date.service.ts
 init_constants();
@@ -2607,38 +8785,8 @@ var newslettersTableBlockSchema = {
   ]
 };
 
-// components/blocks/recurringEvent.tsx
-import { useEffect as useEffect6, useState as useState9 } from "react";
-import { FaRegCalendarCheck } from "react-icons/fa";
-var recurringEventSchema = {
-  label: "Recurring Event",
-  name: "RecurringEvent",
-  fields: [
-    {
-      type: "string",
-      label: "Apply Link Redirect",
-      name: "applyLinkRedirect"
-    },
-    {
-      type: "string",
-      label: "Day",
-      name: "day",
-      options: [
-        { label: "Monday", value: "monday" },
-        { label: "Tuesday", value: "tuesday" },
-        { label: "Wednesday", value: "wednesday" },
-        { label: "Thursday", value: "thursday" },
-        { label: "Friday", value: "friday" },
-        { label: "Saturday", value: "saturday" },
-        { label: "Sunday", value: "sunday" }
-      ],
-      required: true
-    }
-  ]
-};
-
 // components/blocks/tableLayout.tsx
-import classNames17 from "classnames";
+import classNames16 from "classnames";
 import * as React4 from "react";
 import { TextArea, wrapFieldsWithMeta } from "tinacms";
 var tableStyles = {
@@ -2764,13 +8912,13 @@ import axios3 from "axios";
 import Image8 from "next/image";
 import Link from "next/link";
 import { useEffect as useEffect7, useState as useState10 } from "react";
-import { tinaField as tinaField4 } from "tinacms/dist/react";
+import { tinaField } from "tinacms/dist/react";
 
 // helpers/dates.ts
-import dayjs2 from "dayjs";
+import dayjs from "dayjs";
 
 // components/events/components.tsx
-import classNames18 from "classnames";
+import classNames17 from "classnames";
 
 // components/blocks/upcomingEvents.tsx
 var upcomingEventsBlockSchema = {
@@ -2864,29 +9012,427 @@ var VideoEmbed2 = dynamic3(
   { ssr: false }
 );
 
-// components/training/trainingInformation.tsx
+// components/filter/clients.tsx
+init_utilityButton();
+
+// components/filter/FilterBlock.tsx
+import { MdLiveHelp } from "react-icons/md";
+
+// components/filter/FilterGroup.tsx
+import { Transition } from "@headlessui/react";
+import classNames18 from "classnames";
+import { useState as useState11 } from "react";
+import { BsArrowRightCircle } from "react-icons/bs";
+
+// components/company/clientList.tsx
 init_container();
-init_section();
-var trainingInformationSchema = {
-  label: "Training Information",
-  name: "TrainingInformation",
+var formatCategory = (category) => {
+  return category?.split("/")[3].replace(".json", "");
+};
+var clientListBlocks = [
+  utilityButtonSchema,
+  videoEmbedBlockSchema,
+  customImageBlockSchema,
+  contentCardBlockSchema
+];
+var clientListSchema = {
+  label: "Client List",
+  name: "ClientList",
   fields: [
     {
       type: "object",
-      label: "Training Information Items",
-      name: "trainingInformationItems",
+      name: "categories",
+      label: "Categories",
+      list: true,
+      fields: [
+        {
+          type: "reference",
+          name: "category",
+          label: "Category",
+          collections: ["clientCategories"]
+        }
+      ],
+      ui: {
+        itemProps: (item) => {
+          const label = formatCategory(item?.category);
+          return {
+            label: label || "New category (click to select a category)"
+          };
+        }
+      }
+    },
+    {
+      type: "object",
+      name: "clients",
+      label: "Clients list",
+      list: true,
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.name };
+        }
+      },
+      fields: [
+        {
+          type: "string",
+          name: "name",
+          label: "Name"
+        },
+        {
+          type: "image",
+          name: "logo",
+          label: "Logo"
+        },
+        {
+          type: "string",
+          name: "logoUrl",
+          label: "Logo URL"
+        },
+        {
+          type: "rich-text",
+          name: "content",
+          label: "Content",
+          templates: [...clientListBlocks]
+        },
+        {
+          type: "string",
+          name: "caseStudyUrl",
+          label: "Case study URL"
+        },
+        {
+          type: "boolean",
+          name: "showStuck",
+          label: "Show 'Are you stuck?' button"
+        },
+        {
+          type: "object",
+          name: "categories",
+          label: "Categories",
+          list: true,
+          ui: {
+            itemProps: (item) => {
+              return { label: formatCategory(item?.category) };
+            }
+          },
+          fields: [
+            {
+              type: "reference",
+              name: "category",
+              label: "Category",
+              collections: ["clientCategories"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// components/training/eventBooking.tsx
+init_container();
+import classNames19 from "classnames";
+import dayjs2 from "dayjs";
+import { MdLocationOn } from "react-icons/md";
+import { tinaField as tinaField3 } from "tinacms/dist/react";
+var eventBookingBlock = {
+  eventBooking: "EventBooking",
+  eventDurationInDays: "eventDurationInDays",
+  price: "price",
+  discountPrice: "discountPrice",
+  discountNote: "discountNote",
+  suffix: "suffix",
+  eventList: {
+    value: "eventList",
+    city: "city",
+    date: "date",
+    bookingURL: "bookingURL"
+  }
+};
+var eventBookingSchema = {
+  name: eventBookingBlock.eventBooking,
+  label: "Events Booking",
+  fields: [
+    {
+      type: "number",
+      label: "Duration (In Days)",
+      name: eventBookingBlock.eventDurationInDays
+    },
+    {
+      type: "number",
+      label: "Price",
+      name: eventBookingBlock.price
+    },
+    {
+      type: "number",
+      label: "Discount Price",
+      name: eventBookingBlock.discountPrice
+    },
+    {
+      type: "string",
+      label: "Discount Note",
+      name: eventBookingBlock.discountNote
+    },
+    {
+      type: "object",
+      label: "Event",
+      name: eventBookingBlock.eventList.value,
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.city };
+        }
+      },
       list: true,
       fields: [
         {
           type: "string",
-          label: "Header",
-          name: "header"
+          label: "City",
+          name: eventBookingBlock.eventList.city
         },
         {
-          type: "rich-text",
-          label: "Body",
-          name: "body",
-          templates: [verticalListItemSchema, recurringEventSchema]
+          type: "datetime",
+          label: "Start Date",
+          name: eventBookingBlock.eventList.date,
+          ui: {
+            timeFormat: "MM:DD:YY"
+          }
+        },
+        {
+          type: "string",
+          label: "Booking URL",
+          name: eventBookingBlock.eventList.bookingURL
+        }
+      ]
+    }
+  ]
+};
+
+// components/training/locationBlock.tsx
+import classNames20 from "classnames";
+import { FaGlobe, FaLocationArrow } from "react-icons/fa";
+import { MdLocationOn as MdLocationOn2 } from "react-icons/md";
+import { tinaField as tinaField4 } from "tinacms/dist/react";
+
+// .tina/collections/location.tsx
+var locationSchemaConstants = {
+  value: "locations",
+  header: "header",
+  addressLine1: "addressLine1",
+  addressLine2: "addressLine2",
+  addressLine3: "addressLine3",
+  directionURL: "directionURL"
+};
+var locationSchema = {
+  label: "Locations",
+  name: locationSchemaConstants.value,
+  format: "mdx",
+  path: "content/locations",
+  fields: [
+    {
+      type: "string",
+      name: locationSchemaConstants.header,
+      label: "Header"
+    },
+    {
+      type: "string",
+      name: locationSchemaConstants.addressLine1,
+      label: "Address Line 1"
+    },
+    {
+      type: "string",
+      name: locationSchemaConstants.addressLine2,
+      label: "Address Line 2"
+    },
+    {
+      type: "string",
+      name: locationSchemaConstants.addressLine3,
+      label: "Address Line 3"
+    },
+    {
+      type: "string",
+      name: locationSchemaConstants.directionURL,
+      label: "Directions"
+    }
+  ]
+};
+
+// components/training/locationBlock.tsx
+init_container();
+var locationBlockConstant = {
+  value: "LocationBlock",
+  title: "title",
+  locationList: { value: "locationList", location: "location" },
+  chapelWebsite: {
+    value: "chapelWebsite",
+    title: "title",
+    URL: "URL"
+  }
+};
+var locationBlockSchema = {
+  name: locationBlockConstant.value,
+  label: "Locations",
+  fields: [
+    {
+      type: "string",
+      name: locationBlockConstant.title,
+      label: "Title"
+    },
+    {
+      type: "object",
+      label: "Location List",
+      name: locationBlockConstant.locationList.value,
+      list: true,
+      ui: {
+        itemProps: (item) => {
+          const location = item?.location;
+          if (!location)
+            return { label: "Please Attach location" };
+          const formattedLabel = location.split("/")[2].replace(".mdx", "").replace(/-/g, " ").toUpperCase();
+          return {
+            label: formattedLabel
+          };
+        }
+      },
+      fields: [
+        {
+          type: "reference",
+          collections: ["locations"],
+          label: "Location",
+          name: locationBlockConstant.locationList.location
+        }
+      ]
+    },
+    {
+      type: "object",
+      name: locationBlockConstant.chapelWebsite.value,
+      label: "Chapel Website",
+      fields: [
+        {
+          type: "string",
+          name: locationBlockConstant.chapelWebsite.title,
+          label: "Text"
+        },
+        {
+          type: "string",
+          name: locationBlockConstant.chapelWebsite.URL,
+          label: "URL"
+        }
+      ]
+    }
+  ]
+};
+
+// components/training/presenterBlock.tsx
+import Image13 from "next/image";
+import { tinaField as tinaField5 } from "tinacms/dist/react";
+import { TinaMarkdown as TinaMarkdown11 } from "tinacms/dist/rich-text";
+
+// .tina/collections/presenter.tsx
+var presenterSchemaConstants = {
+  value: "presenter",
+  profileImg: "profileImg",
+  presenter: {
+    value: "presenter",
+    name: "name",
+    peopleProfileURL: "peopleProfileURL"
+  },
+  about: "about"
+};
+var presenterSchema = {
+  label: "Presenters",
+  name: "presenter",
+  format: "mdx",
+  path: "content/presenters",
+  fields: [
+    {
+      type: "image",
+      name: presenterSchemaConstants.profileImg,
+      label: "Profile Image",
+      // @ts-ignore
+      uploadDir: () => "people"
+    },
+    {
+      type: "object",
+      name: presenterSchemaConstants.presenter.value,
+      label: "Presenter",
+      fields: [
+        {
+          type: "string",
+          label: "Full Name",
+          name: presenterSchemaConstants.presenter.name
+        },
+        {
+          type: "string",
+          label: "People Profile URL",
+          name: presenterSchemaConstants.presenter.peopleProfileURL
+        }
+      ]
+    },
+    {
+      type: "rich-text",
+      name: presenterSchemaConstants.about,
+      label: "About"
+    }
+  ]
+};
+
+// components/training/presenterBlock.tsx
+init_container();
+var presenterBlockConstant = {
+  value: "PresenterBlock",
+  header: "header",
+  presenterList: {
+    value: "presenterList",
+    presenter: "presenter"
+  },
+  otherEvent: { value: "otherEvent", title: "title", eventURL: "eventURL" }
+};
+var presenterBlockSchema = {
+  name: presenterBlockConstant.value,
+  label: "Presenters",
+  fields: [
+    {
+      type: "string",
+      label: "Header",
+      name: presenterBlockConstant.header
+    },
+    {
+      type: "object",
+      name: presenterBlockConstant.presenterList.value,
+      label: "Presenters",
+      list: true,
+      ui: {
+        itemProps: (item) => {
+          const presenter = item?.presenter;
+          if (!presenter)
+            return { label: "Please Attach Presenter" };
+          const formattedLabel = presenter.split("/")[2].replace(".mdx", "").replace(/-/g, " ").toUpperCase();
+          return {
+            label: formattedLabel
+          };
+        }
+      },
+      fields: [
+        {
+          type: "reference",
+          name: presenterBlockConstant.presenterList.presenter,
+          label: "Presenters",
+          collections: ["presenter"]
+        }
+      ]
+    },
+    {
+      type: "object",
+      label: "Other Events",
+      name: presenterBlockConstant.otherEvent.value,
+      fields: [
+        {
+          type: "string",
+          label: "Title",
+          name: presenterBlockConstant.otherEvent.title
+        },
+        {
+          type: "string",
+          label: "URL",
+          name: presenterBlockConstant.otherEvent.eventURL
         }
       ]
     }
@@ -2894,7 +9440,7 @@ var trainingInformationSchema = {
 };
 
 // components/usergroup/joinAsPresenter.tsx
-import Image12 from "next/image";
+import Image14 from "next/image";
 import Link2 from "next/link";
 import { tinaField as tinaField6 } from "tinacms/dist/react";
 var joinAsPresenterSchema = {
@@ -2915,7 +9461,7 @@ var joinAsPresenterSchema = {
 };
 
 // components/usergroup/joinGithub.tsx
-import Image13 from "next/image";
+import Image15 from "next/image";
 import Link3 from "next/link";
 import { tinaField as tinaField7 } from "tinacms/dist/react";
 var joinGithubSchema = {
@@ -2936,10 +9482,10 @@ var joinGithubSchema = {
 };
 
 // components/usergroup/organizer.tsx
-import Image14 from "next/image";
+import Image16 from "next/image";
 import Link4 from "next/link";
 import { tinaField as tinaField8 } from "tinacms/dist/react";
-import { TinaMarkdown as TinaMarkdown11 } from "tinacms/dist/rich-text";
+import { TinaMarkdown as TinaMarkdown12 } from "tinacms/dist/rich-text";
 var organizerSchema = {
   label: "Organizer",
   name: "organizer",
@@ -2977,10 +9523,10 @@ init_global();
 init_container();
 init_section();
 init_videoModal();
-import classNames19 from "classnames";
+import classNames21 from "classnames";
 import dayjs3 from "dayjs";
 import Link5 from "next/link";
-import { useState as useState11 } from "react";
+import { useState as useState13 } from "react";
 import { BiChevronRightCircle } from "react-icons/bi";
 import { tinaField as tinaField9 } from "tinacms/dist/react";
 var offices = global_default.homePageOfficeList;
@@ -3004,9 +9550,9 @@ var aboutUsBlockSchema = {
 };
 
 // components/blocks/agenda.tsx
-import classNames20 from "classnames";
+import classNames22 from "classnames";
 import { tinaField as tinaField10 } from "tinacms/dist/react";
-import { TinaMarkdown as TinaMarkdown12 } from "tinacms/dist/rich-text";
+import { TinaMarkdown as TinaMarkdown13 } from "tinacms/dist/rich-text";
 init_container();
 init_section();
 var agendaBlockConstant = {
@@ -3069,7 +9615,7 @@ var agendaSchema = {
 // components/blocks/builtOnAzure.tsx
 init_container();
 init_section();
-import Image15 from "next/image";
+import Image17 from "next/image";
 import Link6 from "next/link";
 import { tinaField as tinaField11 } from "tinacms/dist/react";
 var builtOnAzureBlockSchema = {
@@ -3097,9 +9643,9 @@ init_carousel();
 // components/blocks/content.tsx
 init_container();
 init_section();
-import classNames21 from "classnames";
+import classNames23 from "classnames";
 import { tinaField as tinaField12 } from "tinacms/dist/react";
-import { TinaMarkdown as TinaMarkdown13 } from "tinacms/dist/rich-text";
+import { TinaMarkdown as TinaMarkdown14 } from "tinacms/dist/rich-text";
 var contentBlock = {
   title: "title",
   content: "content"
@@ -3163,13 +9709,13 @@ var contentBlockSchema = {
 
 // components/blocks/hero.tsx
 import * as React8 from "react";
-import { TinaMarkdown as TinaMarkdown14 } from "tinacms/dist/rich-text";
+import { TinaMarkdown as TinaMarkdown15 } from "tinacms/dist/rich-text";
 
 // components/util/actions.tsx
 import Link7 from "next/link";
 import * as React7 from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
-import { classNames as classNames22 } from "tinacms";
+import { classNames as classNames24 } from "tinacms";
 
 // components/blocks/hero.tsx
 init_container();
@@ -3276,9 +9822,9 @@ var heroBlockSchema = {
 init_internalCarousel();
 
 // components/blocks/payment-block.tsx
-import Image16 from "next/image";
+import Image18 from "next/image";
 import { tinaField as tinaField13 } from "tinacms/dist/react";
-import { TinaMarkdown as TinaMarkdown15 } from "tinacms/dist/rich-text";
+import { TinaMarkdown as TinaMarkdown16 } from "tinacms/dist/rich-text";
 
 // .tina/collections/payment-details.tsx
 var paymentDetailsBlockConstant = {
@@ -3386,10 +9932,10 @@ var paymentBlockSchema = {
 // components/blocks/serviceCards.tsx
 init_container();
 init_section();
-import Image17 from "next/image";
+import Image19 from "next/image";
 import Link8 from "next/link";
 import { tinaField as tinaField14 } from "tinacms/dist/react";
-import { TinaMarkdown as TinaMarkdown16 } from "tinacms/dist/rich-text";
+import { TinaMarkdown as TinaMarkdown17 } from "tinacms/dist/rich-text";
 var serviceCards = {
   bigCardsLabel: "bigCardsLabel",
   bigCards: {
@@ -3569,6 +10115,7 @@ var pageBlocks = [
   carouselBlockSchema,
   citationBlockSchema,
   clientLogosBlockSchema,
+  clientListSchema,
   contentBlockSchema,
   contentCardBlockSchema,
   customImageBlockSchema,
@@ -3601,6 +10148,9 @@ var pageBlocks = [
   joinAsPresenterSchema,
   paymentBlockSchema
 ];
+
+// .tina/collections/company.tsx
+init_videoEmbed();
 
 // components/util/seo.tsx
 import { NextSeo } from "next-seo";
@@ -3750,7 +10300,27 @@ var companySchema = {
     {
       type: "rich-text",
       name: "subTitle",
-      label: "Sub Title"
+      label: "Body",
+      templates: [videoEmbedBlockSchema]
+    },
+    {
+      type: "rich-text",
+      name: "sidebar",
+      label: "Sidebar",
+      required: false,
+      templates: [microsoftPanelSchema]
+    },
+    {
+      type: "reference",
+      name: "sidebarTestimonial",
+      label: "Sidebar Testimonial",
+      collections: ["testimonials"]
+    },
+    {
+      type: "boolean",
+      name: "showRdPanel",
+      label: "Show Regional Director Panel",
+      required: false
     },
     {
       type: "object",
@@ -3911,16 +10481,29 @@ var companyIndexSchema = {
     }
   ]
 };
+var clientsCategorySchema = {
+  label: "Company - Client categories",
+  name: "clientCategories",
+  path: "content/company/clientCategories",
+  format: "json",
+  fields: [
+    {
+      type: "string",
+      label: "Name",
+      name: "name"
+    }
+  ]
+};
 
 // components/testimonials/TestimonialRow.tsx
-import Image18 from "next/image";
-import { useEffect as useEffect8, useState as useState12 } from "react";
+import Image20 from "next/image";
+import { useEffect as useEffect9, useState as useState14 } from "react";
 import { useEditState } from "tinacms/dist/react";
-import { TinaMarkdown as TinaMarkdown17 } from "tinacms/dist/rich-text";
+import { TinaMarkdown as TinaMarkdown18 } from "tinacms/dist/rich-text";
 
 // components/util/consulting/rating.tsx
 import * as React9 from "react";
-import classNames23 from "classnames";
+import classNames25 from "classnames";
 import { AiFillStar } from "react-icons/ai";
 import { wrapFieldsWithMeta as wrapFieldsWithMeta2 } from "tinacms";
 var ratingSchema = {
@@ -3932,7 +10515,12 @@ var ratingSchema = {
   ui: {
     parse: (val) => Number(val),
     // wrapping our component in wrapFieldsWithMeta renders our label & description.
-    component: wrapFieldsWithMeta2(({ input }) => {
+    component: wrapFieldsWithMeta2(({ input, form }) => {
+      React9.useEffect(() => {
+        if (!isNaN(input.value)) {
+          form.initialize({ ...form.getState().values, rating: -1 });
+        }
+      }, []);
       return React9.createElement("div", null, React9.createElement(
         "input",
         {
@@ -3945,7 +10533,11 @@ var ratingSchema = {
           ...input
         }
       ), React9.createElement("br", null), "Value: ", input.value);
-    })
+    }),
+    validate(value, field) {
+      if (field.required && typeof value !== "number")
+        return "Required";
+    }
   }
 };
 
@@ -4503,7 +11095,7 @@ var employmentSchema = {
 
 // components/events/eventsHeader.tsx
 init_section();
-import Image19 from "next/image";
+import Image21 from "next/image";
 var eventsHeaderSchema = {
   type: "object",
   label: "Events Header",
@@ -4534,7 +11126,7 @@ init_button();
 init_videoModal();
 init_container();
 init_section();
-import Image20 from "next/image";
+import Image22 from "next/image";
 import { FaPlayCircle as FaPlayCircle2 } from "react-icons/fa";
 var videoCardSchema = {
   type: "object",
@@ -5104,9 +11696,9 @@ var industrySchema = {
 };
 
 // components/marketing/Marketing.tsx
+import { TinaMarkdown as TinaMarkdown19 } from "tinacms/dist/rich-text";
 init_container();
 init_section();
-import { TinaMarkdown as TinaMarkdown18 } from "tinacms/dist/rich-text";
 var sides = ["left", "right"];
 
 // .tina/collections/marketing.tsx
@@ -5708,7 +12300,7 @@ var testimonialSchema = {
       type: "image",
       label: "Avatar",
       name: "avatar",
-      required: true,
+      required: false,
       // @ts-ignore
       uploadDir: () => "testimonialAvatars"
     },
@@ -5733,6 +12325,11 @@ var testimonialSchema = {
       label: "Categories",
       name: "categories",
       list: true,
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.name ?? "Select your testimonial category" };
+        }
+      },
       fields: [
         {
           type: "reference",
@@ -5748,8 +12345,8 @@ var testimonialSchema = {
 // components/training/trainingHeader.tsx
 init_container();
 init_section();
-import classNames24 from "classnames";
-import Image21 from "next/image";
+import classNames26 from "classnames";
+import Image23 from "next/image";
 import { Carousel as Carousel3 } from "react-responsive-carousel";
 var trainingHeaderSchema = {
   type: "object",
@@ -6001,6 +12598,7 @@ var config = defineStaticConfig({
       locationSchema,
       industrySchema,
       companySchema,
+      clientsCategorySchema,
       eventsSchema,
       companyIndexSchema,
       eventsIndexSchema,

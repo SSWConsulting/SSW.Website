@@ -111,6 +111,55 @@ fragment PageParts on Page {
     ... on PageBeforeBodyClientLogos {
       altText
     }
+    ... on PageBeforeBodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        showStuck
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
     ... on PageBeforeBodyContent {
       title
       content
@@ -262,6 +311,8 @@ fragment PageParts on Page {
     ... on PageBeforeBodyUtilityButton {
       buttonText
       link
+      size
+      noAnimate
     }
     ... on PageBeforeBodyVerticalImageLayout {
       imageSrc
@@ -282,6 +333,8 @@ fragment PageParts on Page {
       url
       videoWidth
       removeMargin
+      uncentre
+      overflow
     }
     ... on PageBeforeBodyEventBooking {
       eventDurationInDays
@@ -454,6 +507,55 @@ fragment PageParts on Page {
     ... on PageSideBarClientLogos {
       altText
     }
+    ... on PageSideBarClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        showStuck
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
     ... on PageSideBarContent {
       title
       content
@@ -605,6 +707,8 @@ fragment PageParts on Page {
     ... on PageSideBarUtilityButton {
       buttonText
       link
+      size
+      noAnimate
     }
     ... on PageSideBarVerticalImageLayout {
       imageSrc
@@ -625,6 +729,8 @@ fragment PageParts on Page {
       url
       videoWidth
       removeMargin
+      uncentre
+      overflow
     }
     ... on PageSideBarEventBooking {
       eventDurationInDays
@@ -796,6 +902,55 @@ fragment PageParts on Page {
     ... on PageAfterBodyClientLogos {
       altText
     }
+    ... on PageAfterBodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        showStuck
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
     ... on PageAfterBodyContent {
       title
       content
@@ -947,6 +1102,8 @@ fragment PageParts on Page {
     ... on PageAfterBodyUtilityButton {
       buttonText
       link
+      size
+      noAnimate
     }
     ... on PageAfterBodyVerticalImageLayout {
       imageSrc
@@ -967,6 +1124,8 @@ fragment PageParts on Page {
       url
       videoWidth
       removeMargin
+      uncentre
+      overflow
     }
     ... on PageAfterBodyEventBooking {
       eventDurationInDays
@@ -1251,6 +1410,55 @@ fragment ConsultingIndexParts on ConsultingIndex {
             ... on ConsultingAfterBodyClientLogos {
               altText
             }
+            ... on ConsultingAfterBodyClientList {
+              categories {
+                __typename
+                category {
+                  ... on ClientCategories {
+                    name
+                  }
+                  ... on Document {
+                    _sys {
+                      filename
+                      basename
+                      breadcrumbs
+                      path
+                      relativePath
+                      extension
+                    }
+                    id
+                  }
+                }
+              }
+              clients {
+                __typename
+                name
+                logo
+                logoUrl
+                content
+                caseStudyUrl
+                showStuck
+                categories {
+                  __typename
+                  category {
+                    ... on ClientCategories {
+                      name
+                    }
+                    ... on Document {
+                      _sys {
+                        filename
+                        basename
+                        breadcrumbs
+                        path
+                        relativePath
+                        extension
+                      }
+                      id
+                    }
+                  }
+                }
+              }
+            }
             ... on ConsultingAfterBodyContent {
               title
               content
@@ -1402,6 +1610,8 @@ fragment ConsultingIndexParts on ConsultingIndex {
             ... on ConsultingAfterBodyUtilityButton {
               buttonText
               link
+              size
+              noAnimate
             }
             ... on ConsultingAfterBodyVerticalImageLayout {
               imageSrc
@@ -1422,6 +1632,8 @@ fragment ConsultingIndexParts on ConsultingIndex {
               url
               videoWidth
               removeMargin
+              uncentre
+              overflow
             }
             ... on ConsultingAfterBodyEventBooking {
               eventDurationInDays
@@ -1742,6 +1954,55 @@ fragment ConsultingParts on Consulting {
     ... on ConsultingAfterBodyClientLogos {
       altText
     }
+    ... on ConsultingAfterBodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        showStuck
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
     ... on ConsultingAfterBodyContent {
       title
       content
@@ -1893,6 +2154,8 @@ fragment ConsultingParts on Consulting {
     ... on ConsultingAfterBodyUtilityButton {
       buttonText
       link
+      size
+      noAnimate
     }
     ... on ConsultingAfterBodyVerticalImageLayout {
       imageSrc
@@ -1913,6 +2176,8 @@ fragment ConsultingParts on Consulting {
       url
       videoWidth
       removeMargin
+      uncentre
+      overflow
     }
     ... on ConsultingAfterBodyEventBooking {
       eventDurationInDays
@@ -2166,6 +2431,55 @@ fragment VideoProductionParts on VideoProduction {
     ... on VideoProductionAfterBodyClientLogos {
       altText
     }
+    ... on VideoProductionAfterBodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        showStuck
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
     ... on VideoProductionAfterBodyContent {
       title
       content
@@ -2317,6 +2631,8 @@ fragment VideoProductionParts on VideoProduction {
     ... on VideoProductionAfterBodyUtilityButton {
       buttonText
       link
+      size
+      noAnimate
     }
     ... on VideoProductionAfterBodyVerticalImageLayout {
       imageSrc
@@ -2337,6 +2653,8 @@ fragment VideoProductionParts on VideoProduction {
       url
       videoWidth
       removeMargin
+      uncentre
+      overflow
     }
     ... on VideoProductionAfterBodyEventBooking {
       eventDurationInDays
@@ -2822,6 +3140,55 @@ fragment TrainingParts on Training {
     ... on Training_bodyClientLogos {
       altText
     }
+    ... on Training_bodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        showStuck
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
     ... on Training_bodyContent {
       title
       content
@@ -2973,6 +3340,8 @@ fragment TrainingParts on Training {
     ... on Training_bodyUtilityButton {
       buttonText
       link
+      size
+      noAnimate
     }
     ... on Training_bodyVerticalImageLayout {
       imageSrc
@@ -2993,6 +3362,8 @@ fragment TrainingParts on Training {
       url
       videoWidth
       removeMargin
+      uncentre
+      overflow
     }
     ... on Training_bodyEventBooking {
       eventDurationInDays
@@ -3204,6 +3575,48 @@ fragment CompanyParts on Company {
   }
   title
   subTitle
+  sidebar
+  sidebarTestimonial {
+    ... on Testimonials {
+      name
+      avatar
+      company
+      rating
+      body
+      categories {
+        __typename
+        category {
+          ... on TestimonialCategories {
+            name
+            description
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+    }
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+  }
+  showRdPanel
   _body {
     __typename
     ... on Company_bodyAboutUs {
@@ -3243,6 +3656,55 @@ fragment CompanyParts on Company {
     }
     ... on Company_bodyClientLogos {
       altText
+    }
+    ... on Company_bodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        showStuck
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
     }
     ... on Company_bodyContent {
       title
@@ -3395,6 +3857,8 @@ fragment CompanyParts on Company {
     ... on Company_bodyUtilityButton {
       buttonText
       link
+      size
+      noAnimate
     }
     ... on Company_bodyVerticalImageLayout {
       imageSrc
@@ -3415,6 +3879,8 @@ fragment CompanyParts on Company {
       url
       videoWidth
       removeMargin
+      uncentre
+      overflow
     }
     ... on Company_bodyEventBooking {
       eventDurationInDays
@@ -3555,6 +4021,10 @@ fragment CompanyParts on Company {
   }
 }
 
+fragment ClientCategoriesParts on ClientCategories {
+  name
+}
+
 fragment EventsParts on Events {
   seo {
     __typename
@@ -3642,6 +4112,55 @@ fragment EventsParts on Events {
     }
     ... on Events_bodyClientLogos {
       altText
+    }
+    ... on Events_bodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        showStuck
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
     }
     ... on Events_bodyContent {
       title
@@ -3794,6 +4313,8 @@ fragment EventsParts on Events {
     ... on Events_bodyUtilityButton {
       buttonText
       link
+      size
+      noAnimate
     }
     ... on Events_bodyVerticalImageLayout {
       imageSrc
@@ -3814,6 +4335,8 @@ fragment EventsParts on Events {
       url
       videoWidth
       removeMargin
+      uncentre
+      overflow
     }
     ... on Events_bodyEventBooking {
       eventDurationInDays
@@ -4045,6 +4568,55 @@ fragment EventsIndexParts on EventsIndex {
     ... on EventsIndexAfterEventsClientLogos {
       altText
     }
+    ... on EventsIndexAfterEventsClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        showStuck
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
     ... on EventsIndexAfterEventsContent {
       title
       content
@@ -4196,6 +4768,8 @@ fragment EventsIndexParts on EventsIndex {
     ... on EventsIndexAfterEventsUtilityButton {
       buttonText
       link
+      size
+      noAnimate
     }
     ... on EventsIndexAfterEventsVerticalImageLayout {
       imageSrc
@@ -4216,6 +4790,8 @@ fragment EventsIndexParts on EventsIndex {
       url
       videoWidth
       removeMargin
+      uncentre
+      overflow
     }
     ... on EventsIndexAfterEventsEventBooking {
       eventDurationInDays
