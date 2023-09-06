@@ -366,7 +366,7 @@ var init_utilityButton = __esm({
 var popup_module_default;
 var init_popup_module = __esm({
   "components/popup/popup.module.css"() {
-    popup_module_default = "./popup.module-6BC6KIGZ.css";
+    popup_module_default = "./popup.module-FIWROKEC.css";
   }
 });
 
@@ -436,7 +436,7 @@ var init_successToast = __esm({
 var formGroup_module_default;
 var init_formGroup_module = __esm({
   "components/form/formGroup.module.css"() {
-    formGroup_module_default = "./formGroup.module-5FN2Y3T3.css";
+    formGroup_module_default = "./formGroup.module-ZFP4VTLQ.css";
   }
 });
 
@@ -2571,6 +2571,55 @@ var PagePartsFragmentDoc = gql`
     ... on PageBeforeBodyClientLogos {
       altText
     }
+    ... on PageBeforeBodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        showStuck
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
     ... on PageBeforeBodyContent {
       title
       content
@@ -2722,6 +2771,8 @@ var PagePartsFragmentDoc = gql`
     ... on PageBeforeBodyUtilityButton {
       buttonText
       link
+      size
+      noAnimate
     }
     ... on PageBeforeBodyVerticalImageLayout {
       imageSrc
@@ -2742,6 +2793,8 @@ var PagePartsFragmentDoc = gql`
       url
       videoWidth
       removeMargin
+      uncentre
+      overflow
     }
     ... on PageBeforeBodyEventBooking {
       eventDurationInDays
@@ -2914,6 +2967,55 @@ var PagePartsFragmentDoc = gql`
     ... on PageSideBarClientLogos {
       altText
     }
+    ... on PageSideBarClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        showStuck
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
     ... on PageSideBarContent {
       title
       content
@@ -3065,6 +3167,8 @@ var PagePartsFragmentDoc = gql`
     ... on PageSideBarUtilityButton {
       buttonText
       link
+      size
+      noAnimate
     }
     ... on PageSideBarVerticalImageLayout {
       imageSrc
@@ -3085,6 +3189,8 @@ var PagePartsFragmentDoc = gql`
       url
       videoWidth
       removeMargin
+      uncentre
+      overflow
     }
     ... on PageSideBarEventBooking {
       eventDurationInDays
@@ -3256,6 +3362,55 @@ var PagePartsFragmentDoc = gql`
     ... on PageAfterBodyClientLogos {
       altText
     }
+    ... on PageAfterBodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        showStuck
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
     ... on PageAfterBodyContent {
       title
       content
@@ -3407,6 +3562,8 @@ var PagePartsFragmentDoc = gql`
     ... on PageAfterBodyUtilityButton {
       buttonText
       link
+      size
+      noAnimate
     }
     ... on PageAfterBodyVerticalImageLayout {
       imageSrc
@@ -3427,6 +3584,8 @@ var PagePartsFragmentDoc = gql`
       url
       videoWidth
       removeMargin
+      uncentre
+      overflow
     }
     ... on PageAfterBodyEventBooking {
       eventDurationInDays
@@ -3712,6 +3871,55 @@ var ConsultingIndexPartsFragmentDoc = gql`
             ... on ConsultingAfterBodyClientLogos {
               altText
             }
+            ... on ConsultingAfterBodyClientList {
+              categories {
+                __typename
+                category {
+                  ... on ClientCategories {
+                    name
+                  }
+                  ... on Document {
+                    _sys {
+                      filename
+                      basename
+                      breadcrumbs
+                      path
+                      relativePath
+                      extension
+                    }
+                    id
+                  }
+                }
+              }
+              clients {
+                __typename
+                name
+                logo
+                logoUrl
+                content
+                caseStudyUrl
+                showStuck
+                categories {
+                  __typename
+                  category {
+                    ... on ClientCategories {
+                      name
+                    }
+                    ... on Document {
+                      _sys {
+                        filename
+                        basename
+                        breadcrumbs
+                        path
+                        relativePath
+                        extension
+                      }
+                      id
+                    }
+                  }
+                }
+              }
+            }
             ... on ConsultingAfterBodyContent {
               title
               content
@@ -3863,6 +4071,8 @@ var ConsultingIndexPartsFragmentDoc = gql`
             ... on ConsultingAfterBodyUtilityButton {
               buttonText
               link
+              size
+              noAnimate
             }
             ... on ConsultingAfterBodyVerticalImageLayout {
               imageSrc
@@ -3883,6 +4093,8 @@ var ConsultingIndexPartsFragmentDoc = gql`
               url
               videoWidth
               removeMargin
+              uncentre
+              overflow
             }
             ... on ConsultingAfterBodyEventBooking {
               eventDurationInDays
@@ -4206,6 +4418,55 @@ var ConsultingPartsFragmentDoc = gql`
     ... on ConsultingAfterBodyClientLogos {
       altText
     }
+    ... on ConsultingAfterBodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        showStuck
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
     ... on ConsultingAfterBodyContent {
       title
       content
@@ -4357,6 +4618,8 @@ var ConsultingPartsFragmentDoc = gql`
     ... on ConsultingAfterBodyUtilityButton {
       buttonText
       link
+      size
+      noAnimate
     }
     ... on ConsultingAfterBodyVerticalImageLayout {
       imageSrc
@@ -4377,6 +4640,8 @@ var ConsultingPartsFragmentDoc = gql`
       url
       videoWidth
       removeMargin
+      uncentre
+      overflow
     }
     ... on ConsultingAfterBodyEventBooking {
       eventDurationInDays
@@ -4631,6 +4896,55 @@ var VideoProductionPartsFragmentDoc = gql`
     ... on VideoProductionAfterBodyClientLogos {
       altText
     }
+    ... on VideoProductionAfterBodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        showStuck
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
     ... on VideoProductionAfterBodyContent {
       title
       content
@@ -4782,6 +5096,8 @@ var VideoProductionPartsFragmentDoc = gql`
     ... on VideoProductionAfterBodyUtilityButton {
       buttonText
       link
+      size
+      noAnimate
     }
     ... on VideoProductionAfterBodyVerticalImageLayout {
       imageSrc
@@ -4802,6 +5118,8 @@ var VideoProductionPartsFragmentDoc = gql`
       url
       videoWidth
       removeMargin
+      uncentre
+      overflow
     }
     ... on VideoProductionAfterBodyEventBooking {
       eventDurationInDays
@@ -5297,6 +5615,55 @@ var TrainingPartsFragmentDoc = gql`
     ... on Training_bodyClientLogos {
       altText
     }
+    ... on Training_bodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        showStuck
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
     ... on Training_bodyContent {
       title
       content
@@ -5448,6 +5815,8 @@ var TrainingPartsFragmentDoc = gql`
     ... on Training_bodyUtilityButton {
       buttonText
       link
+      size
+      noAnimate
     }
     ... on Training_bodyVerticalImageLayout {
       imageSrc
@@ -5468,6 +5837,8 @@ var TrainingPartsFragmentDoc = gql`
       url
       videoWidth
       removeMargin
+      uncentre
+      overflow
     }
     ... on Training_bodyEventBooking {
       eventDurationInDays
@@ -5684,6 +6055,48 @@ var CompanyPartsFragmentDoc = gql`
   }
   title
   subTitle
+  sidebar
+  sidebarTestimonial {
+    ... on Testimonials {
+      name
+      avatar
+      company
+      rating
+      body
+      categories {
+        __typename
+        category {
+          ... on TestimonialCategories {
+            name
+            description
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+    }
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+  }
+  showRdPanel
   _body {
     __typename
     ... on Company_bodyAboutUs {
@@ -5723,6 +6136,55 @@ var CompanyPartsFragmentDoc = gql`
     }
     ... on Company_bodyClientLogos {
       altText
+    }
+    ... on Company_bodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        showStuck
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
     }
     ... on Company_bodyContent {
       title
@@ -5875,6 +6337,8 @@ var CompanyPartsFragmentDoc = gql`
     ... on Company_bodyUtilityButton {
       buttonText
       link
+      size
+      noAnimate
     }
     ... on Company_bodyVerticalImageLayout {
       imageSrc
@@ -5895,6 +6359,8 @@ var CompanyPartsFragmentDoc = gql`
       url
       videoWidth
       removeMargin
+      uncentre
+      overflow
     }
     ... on Company_bodyEventBooking {
       eventDurationInDays
@@ -6035,6 +6501,11 @@ var CompanyPartsFragmentDoc = gql`
   }
 }
     `;
+var ClientCategoriesPartsFragmentDoc = gql`
+    fragment ClientCategoriesParts on ClientCategories {
+  name
+}
+    `;
 var EventsPartsFragmentDoc = gql`
     fragment EventsParts on Events {
   seo {
@@ -6123,6 +6594,55 @@ var EventsPartsFragmentDoc = gql`
     }
     ... on Events_bodyClientLogos {
       altText
+    }
+    ... on Events_bodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        showStuck
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
     }
     ... on Events_bodyContent {
       title
@@ -6275,6 +6795,8 @@ var EventsPartsFragmentDoc = gql`
     ... on Events_bodyUtilityButton {
       buttonText
       link
+      size
+      noAnimate
     }
     ... on Events_bodyVerticalImageLayout {
       imageSrc
@@ -6295,6 +6817,8 @@ var EventsPartsFragmentDoc = gql`
       url
       videoWidth
       removeMargin
+      uncentre
+      overflow
     }
     ... on Events_bodyEventBooking {
       eventDurationInDays
@@ -6528,6 +7052,55 @@ var EventsIndexPartsFragmentDoc = gql`
     ... on EventsIndexAfterEventsClientLogos {
       altText
     }
+    ... on EventsIndexAfterEventsClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        showStuck
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
     ... on EventsIndexAfterEventsContent {
       title
       content
@@ -6679,6 +7252,8 @@ var EventsIndexPartsFragmentDoc = gql`
     ... on EventsIndexAfterEventsUtilityButton {
       buttonText
       link
+      size
+      noAnimate
     }
     ... on EventsIndexAfterEventsVerticalImageLayout {
       imageSrc
@@ -6699,6 +7274,8 @@ var EventsIndexPartsFragmentDoc = gql`
       url
       videoWidth
       removeMargin
+      uncentre
+      overflow
     }
     ... on EventsIndexAfterEventsEventBooking {
       eventDurationInDays
@@ -8308,6 +8885,61 @@ var CompanyConnectionDocument = gql`
   }
 }
     ${CompanyPartsFragmentDoc}`;
+var ClientCategoriesDocument = gql`
+    query clientCategories($relativePath: String!) {
+  clientCategories(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ClientCategoriesParts
+  }
+}
+    ${ClientCategoriesPartsFragmentDoc}`;
+var ClientCategoriesConnectionDocument = gql`
+    query clientCategoriesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ClientCategoriesFilter) {
+  clientCategoriesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ClientCategoriesParts
+      }
+    }
+  }
+}
+    ${ClientCategoriesPartsFragmentDoc}`;
 var EventsDocument = gql`
     query events($relativePath: String!) {
   events(relativePath: $relativePath) {
@@ -8715,6 +9347,12 @@ function getSdk(requester) {
     },
     companyConnection(variables, options) {
       return requester(CompanyConnectionDocument, variables, options);
+    },
+    clientCategories(variables, options) {
+      return requester(ClientCategoriesDocument, variables, options);
+    },
+    clientCategoriesConnection(variables, options) {
+      return requester(ClientCategoriesConnectionDocument, variables, options);
     },
     events(variables, options) {
       return requester(EventsDocument, variables, options);
