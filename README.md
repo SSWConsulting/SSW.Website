@@ -106,3 +106,4 @@ Each Pull Request will be deployed to its own staging environment, the URL to th
 
 - Visit the [documentation](https://tina.io/docs/) to learn about Tina.
 - [Join the Tina Discord](https://discord.gg/zumN63Ybpf) to share feedback for Tina to improve.
+- Test
