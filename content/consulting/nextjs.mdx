@@ -17,9 +17,8 @@ benefits:
       title: SEO FRIENDLY
       description: >
         Compared to a client-side rendered single page application (SPA), Next.js
-        has much better SEO capabilities. This is because the page is pre-rendered to 
-        HTML, instead of using JavaScript to insert elements onto the page, which runs
-        on the user's browser.
+        has much better SEO capabilities. Next.js uses automatic static optimisation to sender React to 
+        static HTML, instead of using JavaScript to insert elements onto the page.
     - image: /images/benefits/virtual-dom.png
       title: API ROUTES
       description: >
@@ -32,8 +31,9 @@ benefits:
       title: EDGE RUNTIME
       description: >
         Next.js APIs can optionally be deployed to the edge, meaning that API functionality
-        can be run on the edge, instead of on a Node.js server where your web app is deployed. 
-
+        can be run on a server close to the end-user, instead of on a Node.js 
+        server where your web app is deployed. This can massively speed up latency 
+        for your API calls, and speed up your web app. 
     - image: /images/benefits/stable.png
       title: REACT SERVER COMPONENTS
       description: >
@@ -44,7 +44,7 @@ benefits:
     - image: /images/benefits/stable.png
       title: AUTOMATIC OPTIMISATION
       description: >
-        
+        Next.js has built in automatic optimisation of images, fonts, and CSS.
   rule:
     - name: SSW Rules to Better Next.js
       url: 'https://www.ssw.com.au/rules/rules-to-better-nextjs/'
@@ -52,19 +52,13 @@ technologies:
   header: Related Technologies
   technologyCards:
     - technologyCard: content/technologies/nextJs.mdx
-    - technologyCard: content/technologies/jamstack.mdx
     - technologyCard: content/technologies/node-js.mdx
-    - technologyCard: content/technologies/dotnet.mdx
+    - technologyCard: content/technologies/react.mdx
 solution:
   project: Next.js
 callToAction: 'Talk to us about your {{TITLE}} project'
 seo:
   title: Enterprise Development and Consulting for Next.js Apps
-  # images:
-  #   - url: /images/consulting/open-graph/react.jpg
-  #     width: 1200
-  #     height: 629
-  #     alt: SSW React Consulting - Enterprise Software Development
 ---
 
 # Why build your Next.js web application with **SSW**?
