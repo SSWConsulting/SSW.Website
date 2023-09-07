@@ -136,10 +136,7 @@ const SmallCards = ({ title, cards, schema }) => {
               bgColor[card.color]
             } hover:opacity-80`}
           >
-            <Link
-              href={card.link ?? ""}
-              className="unstyled flex h-full flex-col"
-            >
+            <a href={card.link ?? ""} className="unstyled flex h-full flex-col">
               <div className="flex flex-1 flex-col items-center px-2 py-8 pb-4 sm:justify-center md:flex-row md:pb-8">
                 <span
                   data-tina-field={tinaField(
@@ -165,7 +162,7 @@ const SmallCards = ({ title, cards, schema }) => {
                   {card.title}
                 </h3>
               </div>
-            </Link>
+            </a>
           </li>
         ))}
       </ul>
