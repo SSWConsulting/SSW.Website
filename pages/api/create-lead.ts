@@ -19,6 +19,8 @@ export default async function handler(
   try {
     if (req.method === "POST") {
       const { Recaptcha } = req.body;
+
+      // Documentation - Create Lead - https://sswcom.sharepoint.com/:w:/r/sites/SSWDevelopers/_layouts/15/Doc.aspx?sourcedoc=%7BE8A18D9B-DE74-47EC-B836-01A5AD193DCC%7D&file=Create-lead-Flow.docx&action=default&mobileredirect=true
       if (Recaptcha) {
         const recaptchaValidation = await GoogleRecaptcha.validateRecaptcha(
           Recaptcha
