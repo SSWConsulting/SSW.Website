@@ -136,37 +136,55 @@ const SmallCards = ({ title, cards, schema }) => {
               bgColor[card.color]
             } hover:opacity-80`}
           >
-            <a href={card.link ?? ""} className="unstyled flex h-full flex-col">
-              <div className="flex flex-1 flex-col items-center px-2 py-8 pb-4 sm:justify-center md:flex-row md:pb-8">
-                <span
-                  data-tina-field={tinaField(
-                    schema.smallCards[index],
-                    serviceCards.smallCards.imgSrc
-                  )}
-                >
-                  <Image
-                    className=""
-                    src={card.imgSrc ?? ""}
-                    width="50"
-                    height="50"
-                    alt=""
-                  />{" "}
-                </span>
-                <h3
-                  data-tina-field={tinaField(
-                    schema.smallCards[index],
-                    serviceCards.smallCards.title
-                  )}
-                  className="unstyled mt-1 pt-2 text-sm font-light text-white md:m-5"
-                >
-                  {card.title}
-                </h3>
-              </div>
-            </a>
+            {card.isExternal ? (
+              <a
+                href={card.link ?? ""}
+                className="unstyled flex h-full flex-col"
+              >
+                <SmallCardContent card={card} schema={schema} index={index} />
+              </a>
+            ) : (
+              <Link
+                href={card.link ?? ""}
+                className="unstyled flex h-full flex-col"
+              >
+                <SmallCardContent card={card} schema={schema} index={index} />
+              </Link>
+            )}
           </li>
         ))}
       </ul>
     </>
+  );
+};
+
+const SmallCardContent = ({ card, schema, index }) => {
+  return (
+    <div className="flex flex-1 flex-col items-center px-2 py-8 pb-4 sm:justify-center md:flex-row md:pb-8">
+      <span
+        data-tina-field={tinaField(
+          schema.smallCards[index],
+          serviceCards.smallCards.imgSrc
+        )}
+      >
+        <Image
+          className=""
+          src={card.imgSrc ?? ""}
+          width="50"
+          height="50"
+          alt=""
+        />{" "}
+      </span>
+      <h3
+        data-tina-field={tinaField(
+          schema.smallCards[index],
+          serviceCards.smallCards.title
+        )}
+        className="unstyled mt-1 pt-2 text-sm font-light text-white md:m-5"
+      >
+        {card.title}
+      </h3>
+    </div>
   );
 };
 
@@ -204,6 +222,7 @@ export const serviceCards = {
     link: "link",
     color: "color",
     imgSrc: "imgSrc",
+    isExternal: "isExternal",
   },
   links: {
     value: "links",
@@ -314,6 +333,13 @@ export const serviceCardsBlockSchema: Template = {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           uploadDir: () => "service-cards",
+        },
+        {
+          type: "boolean",
+          label: "External Page",
+          description:
+            "Select this if the link is not part of the website. This includes SSW.Rules, and SSW.People links",
+          name: serviceCards.smallCards.isExternal,
         },
       ],
     },

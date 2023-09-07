@@ -27,6 +27,7 @@ export default function CompanyIndexPage(
       title: m.title,
       body: m.body,
       pageURL: m.pageURL,
+      isExternal: m.isExternal,
     })) || [];
 
   return (
