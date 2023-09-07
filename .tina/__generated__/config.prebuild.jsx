@@ -9402,7 +9402,7 @@ var queries = (client2, options) => {
 };
 
 // .tina/__generated__/client.ts
-var client = createClient2({ url: "http://localhost:4001/graphql", token: "undefined", queries });
+var client = createClient2({ url: "http://localhost:4001/graphql", token: "61fae421f078e9a93db10b1373494aceb93ccaa5", queries });
 
 // services/client/date.service.ts
 init_constants();
