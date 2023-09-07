@@ -213,7 +213,7 @@ export const companyIndexSchema: Collection = {
           type: "boolean",
           label: "External Page",
           description:
-            "Please select this, if the page belongs to another repository. For example: /rules, /people",
+            "Select this if the link is not part of the website. This includes SSW.Rules, and SSW.People links",
           name: companyIndexSchemaConstants.companyPages.isExternal,
         },
       ],
