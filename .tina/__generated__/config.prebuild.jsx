@@ -366,7 +366,7 @@ var init_utilityButton = __esm({
 var popup_module_default;
 var init_popup_module = __esm({
   "components/popup/popup.module.css"() {
-    popup_module_default = "./popup.module-FIWROKEC.css";
+    popup_module_default = "./popup.module-6BC6KIGZ.css";
   }
 });
 
@@ -436,7 +436,7 @@ var init_successToast = __esm({
 var formGroup_module_default;
 var init_formGroup_module = __esm({
   "components/form/formGroup.module.css"() {
-    formGroup_module_default = "./formGroup.module-ZFP4VTLQ.css";
+    formGroup_module_default = "./formGroup.module-5FN2Y3T3.css";
   }
 });
 
@@ -9402,7 +9402,7 @@ var queries = (client2, options) => {
 };
 
 // .tina/__generated__/client.ts
-var client = createClient2({ url: "http://localhost:4001/graphql", token: "undefined", queries });
+var client = createClient2({ url: "http://localhost:4001/graphql", token: "61fae421f078e9a93db10b1373494aceb93ccaa5", queries });
 
 // services/client/date.service.ts
 init_constants();
