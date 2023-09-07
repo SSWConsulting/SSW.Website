@@ -127,6 +127,7 @@ export const companyIndexSchemaConstants = {
     title: "title",
     body: "body",
     pageURL: "pageURL",
+    isExternal: "isExternal",
   },
 };
 
@@ -207,6 +208,13 @@ export const companyIndexSchema: Collection = {
           type: "string",
           label: "Page URL",
           name: companyIndexSchemaConstants.companyPages.pageURL,
+        },
+        {
+          type: "boolean",
+          label: "External Page",
+          description:
+            "Please select this, if the page belongs to another repository. For example: /rules, /people",
+          name: companyIndexSchemaConstants.companyPages.isExternal,
         },
       ],
     },
