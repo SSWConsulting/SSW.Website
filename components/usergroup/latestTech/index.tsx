@@ -74,6 +74,8 @@ export const latestTechSchema: Template = {
     },
     {
       type: "reference",
+      description: `Select a config file including a set of badges that indicate the consulting services SSW provided
+        (Create new configs in Collection "Technology Badges")`,
       collections: ["technologyBadges"],
       label: "Badges",
       name: "badges",
