@@ -54,6 +54,21 @@ export default function EmploymentPage(
       };
     });
 
+  const chosenOpportunityOrder = data.employment.opportunities
+    .map((chosen) => chosen?.opportunityRef?.title)
+    .filter(Boolean); // Filter out undefined titles
+
+  opportunities.sort((currentOpportunity, nextOpportunity) => {
+    const indexOfChosenCurrentOpportunity = chosenOpportunityOrder.indexOf(
+      currentOpportunity.title
+    );
+    const indexOfChosenNextOpportunity = chosenOpportunityOrder.indexOf(
+      nextOpportunity.title
+    );
+
+    return indexOfChosenCurrentOpportunity - indexOfChosenNextOpportunity;
+  });
+
   return (
     <>
       <SEO seo={props.seo} />
