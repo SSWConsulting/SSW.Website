@@ -2983,12 +2983,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:13.4.12, @next/eslint-plugin-next@npm:^13.4.12":
+"@next/eslint-plugin-next@npm:13.4.12":
   version: 13.4.12
   resolution: "@next/eslint-plugin-next@npm:13.4.12"
   dependencies:
     glob: 7.1.7
   checksum: a20cf430efe7602b819e69d826c33659a9c2cfa7c6162f63d91b607ff6ac9da0e79ff27f38cebd79117500640329bd107521b4874e6a2d009ddafab762885c82
+  languageName: node
+  linkType: hard
+
+"@next/eslint-plugin-next@npm:^13.4.19":
+  version: 13.4.19
+  resolution: "@next/eslint-plugin-next@npm:13.4.19"
+  dependencies:
+    glob: 7.1.7
+  checksum: d60c136e4a8d156b50d4b248eef9918bbf4bd7da293487cdf1f7bc172b07beeae4a2822798942d2f87999af86c53d871ebea592f3d6099ae23a0746d2abf7c73
   languageName: node
   linkType: hard
 
@@ -4514,7 +4523,7 @@ __metadata:
     "@microsoft/applicationinsights-react-js": ^3.4.2
     "@microsoft/applicationinsights-web": 2.8.14
     "@next/bundle-analyzer": ^13.4.19
-    "@next/eslint-plugin-next": ^13.4.12
+    "@next/eslint-plugin-next": ^13.4.19
     "@svgr/webpack": ^8.1.0
     "@tailwindcss/typography": ^0.5.9
     "@tinacms/cli": ^1.5.29
