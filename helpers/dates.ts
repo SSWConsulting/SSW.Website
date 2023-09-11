@@ -57,6 +57,7 @@ export const formatRelativeEventDate = (startDate: Date, endDate: Date) => {
   } else if (days > 0) {
     return `${days} ${days === 1 ? "day" : "days"} to go`;
   } else {
-    return "";
+    const normalisedDays = Math.abs(days);
+    return `${normalisedDays} ${normalisedDays === 1 ? "day" : "days"} ago`;
   }
 };

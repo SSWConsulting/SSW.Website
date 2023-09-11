@@ -12,7 +12,7 @@ export const PresenterBlock = ({ data }) => {
         className="mb-12 text-center"
         data-tina-field={tinaField(data, presenterBlockConstant.header)}
       >
-        About our <span className="text-sswRed">{data.header}</span>
+        <span className="text-sswRed">{data.header}</span>
       </h2>
       <div className="flex flex-row flex-wrap justify-center gap-4 md:gap-4">
         {data.presenterList?.map((p, i) => (

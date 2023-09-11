@@ -127,6 +127,7 @@ export const companyIndexSchemaConstants = {
     title: "title",
     body: "body",
     pageURL: "pageURL",
+    isExternal: "isExternal",
   },
 };
 
@@ -207,6 +208,13 @@ export const companyIndexSchema: Collection = {
           type: "string",
           label: "Page URL",
           name: companyIndexSchemaConstants.companyPages.pageURL,
+        },
+        {
+          type: "boolean",
+          label: "External Page",
+          description:
+            "Select this if the link is not part of the website. This includes SSW.Rules, and SSW.People links",
+          name: companyIndexSchemaConstants.companyPages.isExternal,
         },
       ],
     },
