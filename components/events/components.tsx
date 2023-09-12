@@ -4,11 +4,13 @@ import { EventStatus } from "../../helpers/dates";
 type EventsRelativeBoxProps = {
   relativeDate: string;
   formattedDate: string;
+  dateFontSize: string;
 };
 
 export const EventsRelativeBox = ({
   relativeDate,
   formattedDate,
+  dateFontSize,
 }: EventsRelativeBoxProps) => {
   return (
     <time className="my-1 flex items-center">
@@ -27,7 +29,8 @@ export const EventsRelativeBox = ({
       )}
       <span
         className={classNames(
-          "text-xxs text-gray-500",
+          "text-gray-500",
+          dateFontSize ? dateFontSize : "text-xxs",
           relativeDate ? "ml-2" : ""
         )}
       >

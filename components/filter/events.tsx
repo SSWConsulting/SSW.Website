@@ -194,6 +194,7 @@ const Event = ({ visible, event }: EventProps) => {
                 event.StartDateTime,
                 event.EndDateTime
               )}
+              dateFontSize="text-s"
             />
 
             <div>
