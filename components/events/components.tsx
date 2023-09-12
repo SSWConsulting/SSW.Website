@@ -30,7 +30,7 @@ export const EventsRelativeBox = ({
       <span
         className={classNames(
           "text-gray-500",
-          dateFontSize,
+          dateFontSize ? dateFontSize : "text-xxs",
           relativeDate ? "ml-2" : ""
         )}
       >
