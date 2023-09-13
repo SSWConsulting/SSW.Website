@@ -13,6 +13,7 @@ import { trainingInformationSchema } from "../training/trainingInformation";
 import { trainingLearningOutcomeSchema } from "../training/trainingLearningOutcome";
 import { joinAsPresenterSchema } from "../usergroup/joinAsPresenter";
 import { joinGithubSchema } from "../usergroup/joinGithub";
+import { latestTechSchema } from "../usergroup/latestTech";
 import { organizerSchema } from "../usergroup/organizer";
 import { aboutUsBlockSchema } from "./aboutUs";
 import { agendaSchema } from "./agenda";
@@ -80,6 +81,7 @@ export const pageBlocks: Template[] = [
   joinGithubSchema,
   joinAsPresenterSchema,
   paymentBlockSchema,
+  latestTechSchema,
 ];
 
 export * from "../bookingButton/bookingButton";
@@ -93,6 +95,7 @@ export * from "../training/trainingInformation";
 export * from "../training/trainingLearningOutcome";
 export * from "../usergroup/joinAsPresenter";
 export * from "../usergroup/joinGithub";
+export * from "../usergroup/latestTech";
 export * from "../usergroup/organizer";
 export * from "./aboutUs";
 export * from "./builtOnAzure";

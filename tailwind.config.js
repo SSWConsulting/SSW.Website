@@ -245,6 +245,10 @@ module.exports = {
       },
       animation: {
         "more-bounce": "more-bounce 2s infinite",
+        "badge-bounce-up":
+          "badge-bounce-up var(--animate-duration, 3s) infinite",
+        "badge-bounce-down":
+          "badge-bounce-down var(--animate-duration, 3s) infinite",
         ripple: "ripple-out 0.75s",
         "ripple-pseudo": "ripple-out-pseudo 0.75s",
       },
@@ -253,6 +257,14 @@ module.exports = {
           "0%, 20%, 50%, 80%, 100%": { transform: "translateY(0)" },
           "40%": { transform: "translateY(-30px)" },
           "60%": { transform: "translateY(-15px)" },
+        },
+        "badge-bounce-up": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        "badge-bounce-down": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(10px)" },
         },
         "ripple-out": {
           "0%": { width: "0%" },
@@ -455,6 +467,7 @@ module.exports = {
         polygons: "url('/images/background/polygonBackground.png')",
         subscribeBackground: "url('/images/thumbs/subscribeBackground.png')",
         arcBackground: "url('/images/background/arcBackground.png')",
+        waveBackground: "url('/images/background/waveBackground.svg')",
       },
     },
     linearGradientColors: {
