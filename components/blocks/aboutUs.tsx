@@ -97,6 +97,9 @@ export const AboutUs = ({ data }) => {
     defaultOffice?.addressRegion || ""
   );
 
+  const [mapHoveredTrigger, setMapHoveredTrigger] = useState(false);
+  const [mapClickedTrigger, setMapClickedTrigger] = useState(false);
+
   return (
     <Section color={data.backgroundColor}>
       <Container
@@ -114,6 +117,10 @@ export const AboutUs = ({ data }) => {
                 setSelectedOffice={setSelectedOffice}
                 officeBeingHovered={officeBeingHovered}
                 setStateBeingHovered={setStateBeingHovered}
+                setMapHoveredTrigger={setMapHoveredTrigger}
+                mapHoveredTrigger={mapHoveredTrigger}
+                setMapClickedTrigger={setMapClickedTrigger}
+                mapClickedTrigger={mapClickedTrigger}
               />
               <Map
                 className="hidden sm:block"
@@ -123,6 +130,8 @@ export const AboutUs = ({ data }) => {
                 stateBeingHovered={stateBeingHovered}
                 setOfficeBeingHovered={setOfficeBeingHovered}
                 setStateBeingHovered={setStateBeingHovered}
+                setMapHoveredTrigger={setMapHoveredTrigger}
+                setMapClickedTrigger={setMapClickedTrigger}
               />
             </div>
           </div>
@@ -148,6 +157,10 @@ const ContactUs = ({
   setSelectedOffice,
   officeBeingHovered,
   setStateBeingHovered,
+  setMapHoveredTrigger,
+  mapHoveredTrigger,
+  setMapClickedTrigger,
+  mapClickedTrigger,
 }) => {
   return (
     <div className={className}>
@@ -161,6 +174,10 @@ const ContactUs = ({
             setSelectedOffice={setSelectedOffice}
             officeBeingHovered={officeBeingHovered}
             setStateBeingHovered={setStateBeingHovered}
+            setMapHoveredTrigger={setMapHoveredTrigger}
+            mapHoveredTrigger={mapHoveredTrigger}
+            setMapClickedTrigger={setMapClickedTrigger}
+            mapClickedTrigger={mapClickedTrigger}
           >
             <OfficeInfo office={o} />
           </AccordionItem>
@@ -176,17 +193,31 @@ const AccordionItem = ({
   setSelectedOffice,
   officeBeingHovered,
   setStateBeingHovered,
+  setMapHoveredTrigger,
+  mapHoveredTrigger,
+  setMapClickedTrigger,
+  mapClickedTrigger,
   children,
 }) => {
   const currentlySelected =
-    office.addressLocality === selectedOffice?.addressLocality;
-  const handleSetIndex = () => {
+    (!mapClickedTrigger &&
+      office.addressLocality === selectedOffice?.addressLocality) ||
+    (mapClickedTrigger &&
+      office.addressRegion === selectedOffice?.addressRegion);
+
+  const handleSelectOffice = () => {
+    setMapClickedTrigger(false);
     if (office.addressLocality === selectedOffice?.addressLocality) {
       setSelectedOffice(null);
     } else if (!currentlySelected) {
       setSelectedOffice(office);
     }
   };
+
+  const onHover =
+    (!mapHoveredTrigger && officeBeingHovered === office) ||
+    (mapHoveredTrigger &&
+      officeBeingHovered?.addressRegion === office?.addressRegion);
 
   return (
     <li>
@@ -195,13 +226,19 @@ const AccordionItem = ({
           "group mb-2 flex cursor-pointer items-center justify-between p-2 transition-all duration-500",
           currentlySelected
             ? "bg-sswRed"
-            : officeBeingHovered === office
+            : onHover
             ? "bg-gray-600"
             : "bg-gray-400 hover:bg-gray-600"
         )}
-        onMouseEnter={() => setStateBeingHovered(office.addressRegion)}
-        onMouseLeave={() => setStateBeingHovered(null)}
-        onClick={() => handleSetIndex()}
+        onMouseEnter={() => {
+          setStateBeingHovered(office.addressRegion);
+          setMapHoveredTrigger(false);
+        }}
+        onMouseLeave={() => {
+          setStateBeingHovered(null);
+          setMapHoveredTrigger(false);
+        }}
+        onClick={() => handleSelectOffice()}
       >
         <div className="group flex cursor-pointer pl-2">
           <div className="font-sans uppercase text-white">
@@ -296,6 +333,8 @@ const Map = ({
   stateBeingHovered,
   setOfficeBeingHovered,
   setStateBeingHovered,
+  setMapHoveredTrigger,
+  setMapClickedTrigger,
 }) => {
   return (
     <div className={className}>
@@ -342,10 +381,14 @@ const Map = ({
                   className={classNames("cursor-pointer", {
                     "stroke-white stroke-1": state.inland,
                   })}
-                  onClick={() => setSelectedOffice(primaryOffice)}
+                  onClick={() => {
+                    setSelectedOffice(primaryOffice);
+                    setMapClickedTrigger(true);
+                  }}
                   onMouseOver={() => {
                     setOfficeBeingHovered(primaryOffice);
                     setStateBeingHovered(stateKey);
+                    setMapHoveredTrigger(true);
                   }}
                   onMouseLeave={() => {
                     setOfficeBeingHovered(null);
