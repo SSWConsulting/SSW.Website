@@ -5,9 +5,8 @@
 This repository is a v3 of the zzSSW.Website. This website uses NextJS with TinaCMS.
 
 **Watch the demo:**
-<a href="https://youtu.be/K0WVfM7yCKg&t=9s" target="_blank">
-![image](https://github.com/SSWConsulting/SSW.Website/assets/71385247/10ebec3f-9108-41b0-9bf4-c572ad1dd1b4)
-</a>
+
+[![image](https://github.com/SSWConsulting/SSW.Website/assets/71385247/10ebec3f-9108-41b0-9bf4-c572ad1dd1b4)](https://www.youtube.com/watch?v=K0WVfM7yCKg)
 
 ## See the important Documents
 
