@@ -6,7 +6,7 @@ This repository is a v3 of the zzSSW.Website. This website uses NextJS with Tina
 
 **Watch the demo:**
 
-[![image](https://github.com/SSWConsulting/SSW.Website/assets/71385247/10ebec3f-9108-41b0-9bf4-c572ad1dd1b4)](https://www.youtube.com/watch?v=K0WVfM7yCKg)
+[![YouTube video](https://img.youtube.com/vi/K0WVfM7yCKg/maxresdefault.jpg)](https://www.youtube.com/watch?v=K0WVfM7yCKg)
 
 ## See the important Documents
 
