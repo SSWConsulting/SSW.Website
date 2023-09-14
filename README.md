@@ -6,7 +6,7 @@ This repository is a v3 of the zzSSW.Website. This website uses NextJS with Tina
 
 **Watch the demo:**
 
-[![YouTube video](https://img.youtube.com/vi/K0WVfM7yCKg/maxresdefault.jpg)](https://www.youtube.com/watch?v=K0WVfM7yCKg)
+[![YouTube video](_docs/video-thumbnail.jpg)](https://www.youtube.com/watch?v=K0WVfM7yCKg)
 
 ## See the important Documents
 
