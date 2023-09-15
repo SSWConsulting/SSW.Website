@@ -14,6 +14,7 @@ interface UtilityButtonProps {
   link?: string;
   size?: keyof typeof sizes;
   noAnimate?: boolean;
+  uncentred?: boolean;
 }
 
 export const UtilityButton = ({
@@ -23,13 +24,15 @@ export const UtilityButton = ({
   link,
   size,
   noAnimate,
+  uncentred,
 }: UtilityButtonProps) => {
   const baseComponent = (
     <Button
       ripple
       className={classNames(
-        "mx-auto mt-8 h-auto max-w-full",
+        "mt-8 h-auto",
         sizes[size ?? "medium"],
+        uncentred ? "" : "mx-auto max-w-full",
         className
       )}
       onClick={onClick}

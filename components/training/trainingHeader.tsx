@@ -5,13 +5,27 @@ import { Container } from "../util/container";
 import { Section } from "../util/section";
 import styles from "./training.module.css";
 
-const TrainingHeader = ({ data }) => {
+type TrainingHeaderProps = {
+  data: {
+    tagline: string;
+    secondaryTagline: string;
+    heroBackground?: string;
+    person: string;
+    link: {
+      linkText: string;
+      url: string;
+      icon: string;
+    };
+  };
+};
+
+export const TrainingHeader = ({ data }: TrainingHeaderProps) => {
   return (
     <Section
       className="flex h-full flex-col items-center border-b-8 border-sswRed bg-white bg-cover bg-no-repeat lg:block"
       style={{
         backgroundImage: `url(${
-          data?.heroBackground || "/images/polygonBackground.png"
+          data?.heroBackground || "/images/background/polygonBackground.png"
         })`,
       }}
     >
