@@ -11,9 +11,12 @@ import { HistoryTimelineCardProps } from "../../components/company/historyTimeli
 import { RDPanel } from "../../components/company/rdPanel";
 import { Layout } from "../../components/layout";
 import TestimonialPanel from "../../components/offices/testimonialPanel";
+import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
+import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
+import { GetTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { removeExtension } from "../../services/client/utils.service";
 
 export default function CompanyPage(
@@ -24,6 +27,11 @@ export default function CompanyPage(
     query: props.query,
     variables: props.variables,
   });
+
+  const categories =
+    data.company.testimonialCategories
+      ?.filter((category) => !!category?.testimonialCategory)
+      .map((category) => category.testimonialCategory.name) ?? [];
 
   const historyCardProps =
     data?.company?.historyCards?.map<HistoryTimelineCardProps>((m) => ({
@@ -72,27 +80,27 @@ export default function CompanyPage(
               {(data.company.sidebar ||
                 data.company.sidebarTestimonial ||
                 data.company.showRdPanel) && (
-                <>
-                  <div className="max-w-sm shrink pl-16">
-                    {data.company.sidebar && (
-                      <TinaMarkdown
-                        content={data.company.sidebar}
-                        components={componentRenderer}
-                      />
-                    )}
-                    {data.company.sidebarTestimonial && (
-                      <TestimonialPanel
-                        testimonial={{
-                          name: data.company.sidebarTestimonial.name,
-                          company: data.company.sidebarTestimonial.company,
-                          body: data.company.sidebarTestimonial.body,
-                        }}
-                      />
-                    )}
-                    {data.company.showRdPanel && <RDPanel />}
-                  </div>
-                </>
-              )}
+                  <>
+                    <div className="max-w-sm shrink pl-16">
+                      {data.company.sidebar && (
+                        <TinaMarkdown
+                          content={data.company.sidebar}
+                          components={componentRenderer}
+                        />
+                      )}
+                      {data.company.sidebarTestimonial && (
+                        <TestimonialPanel
+                          testimonial={{
+                            name: data.company.sidebarTestimonial.name,
+                            company: data.company.sidebarTestimonial.company,
+                            body: data.company.sidebarTestimonial.body,
+                          }}
+                        />
+                      )}
+                      {data.company.showRdPanel && <RDPanel />}
+                    </div>
+                  </>
+                )}
             </section>
           )}
 
@@ -100,6 +108,25 @@ export default function CompanyPage(
           {data.company.historyCards?.length > 0 && (
             <Section className="mx-auto w-full max-w-9xl px-8 py-5">
               <HistoryTimeline cardProps={historyCardProps} />
+            </Section>
+          )}
+          {data.company.showTestimonials && (
+            <Section color="white" className="">
+              <Container padding={"md:px-8 px-2"} className={"flex-1 pt-0"}>
+                <div
+                  data-tina-field={tinaField(
+                    data.company.testimonials,
+                    "tagline"
+                  )}
+                  className="mx-auto flex max-w-9xl flex-col items-center"
+                >
+                  <TestimonialRow
+                    testimonialsResult={props.testimonialResult}
+                    categories={categories}
+                    tagline={data.company.testimonials?.tagline}
+                  />
+                </div>
+              </Container>
             </Section>
           )}
           <Section>
@@ -116,16 +143,24 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.mdx`,
   });
 
+  const categories =
+    tinaProps.data.company?.testimonialCategories?.map(
+      (category) => category.testimonialCategory.name
+    ) || [];
+
   const seo = tinaProps.data.company.seo;
   if (seo && (seo?.canonical === null || seo?.canonical === "")) {
     seo.canonical = `${tinaProps.data.global.header.url}company/${params.filename}`;
   }
+
+  const testimonialsResult = await GetTestimonialsByCategories(categories);
 
   return {
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
+      testimonialResult: testimonialsResult || [],
       env: {
         GOOGLE_RECAPTCHA_SITE_KEY:
           process.env.GOOGLE_RECAPTCHA_SITE_KEY || null,
