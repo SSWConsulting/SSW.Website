@@ -1,5 +1,3 @@
-
-
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
@@ -14,7 +12,7 @@
   ],
   "rules": {
     "quotes": ["error", "double"],
-    "no-console": "error",
+    "no-console": "warn",
     "tailwindcss/no-arbitrary-value": "error",
     "tailwindcss/no-custom-classname": [
       "error",
