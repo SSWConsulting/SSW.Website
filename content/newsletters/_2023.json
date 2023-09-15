@@ -35,6 +35,16 @@
       "month": 7,
       "file": "/images/newsletter-uploads/2023/_2023_07__Microsoft Fabric – Unifying your Data Analytics__.html",
       "description": "Microsoft Fabric - Unifying your Data Analytics"
+    },
+    {
+      "month": 8,
+      "file": "/images/newsletter-uploads/2023/_2023_08__Solving Business Puzzles with Tech A Look at SSW Melbourne’s Brainstorming Day and Retreat__.html",
+      "description": "Solving Business Puzzles with Tech - A Look at SSW Melbourne’s Brainstorming Day & Retreat"
+    },
+    {
+      "month": 9,
+      "file": "/images/newsletter-uploads/2023/_2023_09__Combine AI Models and Custom Software with Microsoft’s Semantic Kernel__.html",
+      "description": "Combine AI Models & Custom Software with Microsoft’s Semantic Kernel"
     }
   ]
 }
