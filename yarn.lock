@@ -4605,7 +4605,7 @@ __metadata:
     schema-dts: ^1.1.2
     sharp: ^0.32.5
     source-map-explorer: ^2.5.3
-    ssw.megamenu: 3.2.2
+    ssw.megamenu: 3.2.3
     tailwindcss: 3.3.3
     tailwindcss-gradients: ^3.0.0
     tinacms: ^1.5.20
@@ -14763,9 +14763,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ssw.megamenu@npm:3.2.2":
-  version: 3.2.2
-  resolution: "ssw.megamenu@npm:3.2.2"
+"ssw.megamenu@npm:3.2.3":
+  version: 3.2.3
+  resolution: "ssw.megamenu@npm:3.2.3"
   dependencies:
     "@fortawesome/fontawesome-svg-core": ^1.2.35
     "@fortawesome/free-solid-svg-icons": ^5.15.3
@@ -14774,7 +14774,7 @@ __metadata:
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: b8749fff1c682fbdb84284e4ff989598a6847578fc537660c885df72d6635cdaa50014e9cf2b4d5232ac665cf5e9f2912b00a65aedc281950564f90fd6a9da21
+  checksum: c28e93f76484aa34126caac594e703f14af48766b88b413c69f99e81db841209b4b38cf2cba0533c48d8c675ec409e09c32baa513457e0203409cc1c577c8f6d
   languageName: node
   linkType: hard
 
