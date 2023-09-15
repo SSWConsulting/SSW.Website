@@ -18,7 +18,7 @@ jobs:
     name: Check linked issues
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 2
 
@@ -48,7 +48,7 @@ jobs:
             echo "${{ steps.check_file_changed.outputs.sourceDiff }}"
           }
 
-      - uses: nearform-actions/github-action-check-linked-issues@v1.4.23
+      - uses: nearform-actions/github-action-check-linked-issues@v1.4.24
         if: ${{steps.check_file_changed.outputs.hasCodeChanges == 'True' }}
         id: check-linked-issues
         with:

@@ -224,6 +224,72 @@
       ]
     },
     {
+      "category": "content/consulting/category/platforms.json",
+      "pages": [
+        {
+          "title": "Microsoft Azure",
+          "description": "Enables you to build and run highly available applications without focusing on the infrastructure. Azure makes it easy, scalable, and cheap... for others it is difficult and expensive :)",
+          "logo": "/images/thumbs/thumb-azure-2023.png",
+          "page": "content/consulting/azure.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/platform-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Power Platform",
+          "description": "Microsoft's Power Platform is a set of low-code applications that can be used individually to create easy to use business solutions. ",
+          "logo": "/images/thumbs/thumb-power-platform.jpg",
+          "page": "content/consulting/power-platform.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/platform-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/database-development.json"
+            }
+          ]
+        },
+        {
+          "title": "SharePoint",
+          "description": "The premier content management to store all documents & records. SSW helps enterprises customize and develop SharePoint often powered by the SharePoint Framework (aka SPFx) with React.",
+          "logo": "/images/thumbs/thumb-sharepoint-2023.png",
+          "page": "content/consulting/sharepoint.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/platform-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Microsoft Dynamics 365",
+          "description": "Dynamics 365 combines existing Microsoft products such as Dynamics CRM, Dynamics NAV, and Dynamics AX into one seamless solution.",
+          "logo": "/images/thumbs/thumb-dynamics-icon.jpg",
+          "page": "content/consulting/dynamics-365.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/platform-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Microsoft 365 (was Office 365)",
+          "description": "The Office you know plus extra tools will help you work better together, all based on the cloud.",
+          "logo": "/images/thumbs/thumb-microsoft-365-2023.png",
+          "page": "content/consulting/microsoft-365.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/platform-development.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "category": "content/consulting/category/consulting.json",
       "pages": [
         {
@@ -548,72 +614,6 @@
             },
             {
               "tag": "content/consulting/tag/video.json"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "category": "content/consulting/category/platforms.json",
-      "pages": [
-        {
-          "title": "Microsoft Azure",
-          "description": "Enables you to build and run highly available applications without focusing on the infrastructure. Azure makes it easy, scalable, and cheap... for others it is difficult and expensive :)",
-          "logo": "/images/thumbs/thumb-azure-2023.png",
-          "page": "content/consulting/azure.mdx",
-          "tags": [
-            {
-              "tag": "content/consulting/tag/platform-development.json"
-            }
-          ]
-        },
-        {
-          "title": "Power Platform",
-          "description": "Microsoft's Power Platform is a set of low-code applications that can be used individually to create easy to use business solutions. ",
-          "logo": "/images/thumbs/thumb-power-platform.jpg",
-          "page": "content/consulting/power-platform.mdx",
-          "tags": [
-            {
-              "tag": "content/consulting/tag/platform-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/database-development.json"
-            }
-          ]
-        },
-        {
-          "title": "SharePoint",
-          "description": "The premier content management to store all documents & records. SSW helps enterprises customize and develop SharePoint often powered by the SharePoint Framework (aka SPFx) with React.",
-          "logo": "/images/thumbs/thumb-sharepoint-2023.png",
-          "page": "content/consulting/sharepoint.mdx",
-          "tags": [
-            {
-              "tag": "content/consulting/tag/platform-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
-            }
-          ]
-        },
-        {
-          "title": "Microsoft Dynamics 365",
-          "description": "Dynamics 365 combines existing Microsoft products such as Dynamics CRM, Dynamics NAV, and Dynamics AX into one seamless solution.",
-          "logo": "/images/thumbs/thumb-dynamics-icon.jpg",
-          "page": "content/consulting/dynamics-365.mdx",
-          "tags": [
-            {
-              "tag": "content/consulting/tag/platform-development.json"
-            }
-          ]
-        },
-        {
-          "title": "Microsoft 365 (was Office 365)",
-          "description": "The Office you know plus extra tools will help you work better together, all based on the cloud.",
-          "logo": "/images/thumbs/thumb-microsoft-365-2023.png",
-          "page": "content/consulting/microsoft-365.mdx",
-          "tags": [
-            {
-              "tag": "content/consulting/tag/platform-development.json"
             }
           ]
         }

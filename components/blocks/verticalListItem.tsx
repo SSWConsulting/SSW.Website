@@ -22,7 +22,7 @@ export const VerticalListItem = ({ data }) => {
             className="pr-5"
           />
         ) : data.index ? (
-          <div className="relative mr-5 flex h-11 w-11">
+          <div className="relative mr-5 flex h-11 shrink-0 basis-11">
             <Image
               src={"/images/icons/circle-icon.svg"}
               alt="circle"

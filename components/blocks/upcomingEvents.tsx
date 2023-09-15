@@ -82,6 +82,7 @@ const renderEvent = (e: EventInfo) => {
           <EventsRelativeBox
             relativeDate={e.RelativeDate}
             formattedDate={e.FormattedDate}
+            dateFontSize="text-xxs"
           />
           {!!e.Presenter && (
             <span className="mt-1 inline-flex items-center text-xxs text-black">
