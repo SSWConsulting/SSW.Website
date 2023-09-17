@@ -1,6 +1,13 @@
 import { InferGetStaticPropsType } from "next";
+import {
+  JoinAsPresenter,
+  JoinGithub,
+  LatestTech,
+  Organizer,
+} from "../../components/blocks";
 import { Layout } from "../../components/layout";
 import { UserGroupHeader } from "../../components/usergroup/header";
+import { Container } from "../../components/util/container";
 
 export default function NETUGPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -10,6 +17,7 @@ export default function NETUGPage(
     <>
       <Layout>
         <UserGroupHeader
+          className="font-helvetica"
           date={new Date()}
           title="Unleashing the Power of Microservices with Dapr & Azure Container"
           presenter={{
@@ -20,6 +28,76 @@ export default function NETUGPage(
           trailerUrl="https://www.youtube.com/watch?v=FNMtmBJAZ_M"
           registerUrl="https://www.meetup.com/en-AU/sydney-net-user-group/"
         />
+
+        <Container className="font-helvetica">
+          <section className="grid-cols-3 gap-8 md:grid">
+            <div className="col-span-2">
+              <h2 className="text-4xl font-semibold text-sswRed">
+                About the event
+              </h2>
+              <p className="text-lg">
+                Every month SSW hosts the Sydney .NET User Group, where
+                developers come together to learn about the latest technologies
+                from local and internationally renowned experts. Topics focus on
+                .NET and other Microsoft technologies (Azure, DevOps,
+                SharePoint, Power Platform, and more), full stack development
+                (Angular, React, Blazor), and mobile apps with .NET MAUI (was
+                Xamarin), as well as exciting opportunities to learn about the
+                latest industry trends and even tips on presenting from world
+                class speakers.
+              </p>
+            </div>
+            <div className="col-span-1">
+              <JoinGithub
+                data={{
+                  title: "Sydney .NET User Group GitHub Discussions",
+                  link: "https://google.com",
+                }}
+              />
+            </div>
+
+            <div className="col-span-1">
+              <h2 className="text-4xl font-semibold text-sswRed">
+                When & Where
+              </h2>
+              <p className="text-lg">
+                We meet on the 3rd Wednesday of every month from 6:30 pm AEST.
+              </p>
+              <p className="text-lg">
+                <a href="https://sswchapel.com.au/sydney/">SSW Chapel</a>
+              </p>
+            </div>
+
+            <div className="col-span-1">
+              <h2 className="text-4xl font-semibold text-sswRed">Agenda</h2>
+            </div>
+
+            <div className="col-span-1">
+              <h2 className="text-4xl font-semibold text-sswRed">Organiser</h2>
+              <Organizer
+                data={{
+                  image: "/images/people/matt-g-tall.png",
+                  name: "Adam Cogan",
+                  profileLink: "https://ssw.com.au/people/adam-cogan/",
+                  position: "Chief Architect at SSW",
+                }}
+              />
+            </div>
+
+            <div className="col-span-2">
+              <LatestTech />
+            </div>
+
+            <div className="col-span-1">
+              <JoinAsPresenter
+                data={{
+                  img: "/images/people/ulysses.png",
+                  link: "https://google.com",
+                }}
+              />
+            </div>
+          </section>
+        </Container>
       </Layout>
     </>
   );

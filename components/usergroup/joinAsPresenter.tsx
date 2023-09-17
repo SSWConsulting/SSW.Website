@@ -35,7 +35,14 @@ const Avatar = ({ img }) => {
   );
 };
 
-export const JoinAsPresenter = ({ data }) => {
+type JoinAsPresenterProps = {
+  data: {
+    img: string;
+    link: string;
+  };
+};
+
+export const JoinAsPresenter = ({ data }: JoinAsPresenterProps) => {
   return (
     <div className="flex flex-row items-center gap-3 font-helvetica">
       <div data-tina-field={tinaField(data, "img")}>

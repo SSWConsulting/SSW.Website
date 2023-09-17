@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import dayjs from "dayjs";
 import Image from "next/image";
 import { useMemo } from "react";
@@ -6,6 +7,7 @@ import { UtilityButton } from "../blocks";
 import { Container } from "../util/container";
 
 type UserGroupHeaderProps = {
+  className?: string;
   date: Date;
   title: string;
   presenter: {
@@ -18,6 +20,7 @@ type UserGroupHeaderProps = {
 };
 
 export const UserGroupHeader = ({
+  className,
   date,
   title,
   presenter,
@@ -31,7 +34,7 @@ export const UserGroupHeader = ({
 
   return (
     <section
-      className="border-b-8 border-sswRed"
+      className={classNames(className, "border-b-8 border-sswRed")}
       style={{
         backgroundImage: "url('/images/background/polygonBackground.png')",
       }}
@@ -39,22 +42,24 @@ export const UserGroupHeader = ({
       <Container className="flex-row pb-0 text-white md:flex">
         <div className="flex flex-col pb-10">
           <span className="text-lg">{formattedDate}</span>
-          <h1 className="pt-3 text-3xl">{title}</h1>
-          <span>
+          <h1 className="mb-2 pb-1 pt-3 text-5xl font-semibold">{title}</h1>
+          <span className="mb-4 text-lg">
             With <a href={presenter.url}>{presenter.name}</a>
           </span>
           {trailerUrl && (
-            <span className="pt-4">
-              <Image
-                className="mr-1 inline rounded-md"
-                src="https://img.youtube.com/vi/FNMtmBJAZ_M/mqdefault.jpg"
-                width={100}
-                height={100}
-                alt="Play button"
-              />
-              <BiVideo className="mx-2 inline" />
-              Watch the trailer
-            </span>
+            <a href={trailerUrl}>
+              <span className="pt-4">
+                <Image
+                  className="mr-1 inline rounded-md"
+                  src="https://img.youtube.com/vi/FNMtmBJAZ_M/mqdefault.jpg"
+                  width={100}
+                  height={100}
+                  alt="Play button"
+                />
+                <BiVideo className="mx-2 inline" />
+                Watch the trailer
+              </span>
+            </a>
           )}
           <UtilityButton
             link={registerUrl}

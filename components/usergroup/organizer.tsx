@@ -7,7 +7,6 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 export const Organizer = ({ data }) => {
   return (
     <div className="flex flex-col gap-5 font-helvetica">
-      <span className="text-4xl text-sswRed">Organizer</span>
       <div className="flex flex-row items-center gap-2">
         <div
           className="h-17 w-17 overflow-hidden rounded-full"
