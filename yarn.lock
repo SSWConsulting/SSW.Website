@@ -2124,12 +2124,49 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fortawesome/fontawesome-common-types@npm:^0.2.36":
+  version: 0.2.36
+  resolution: "@fortawesome/fontawesome-common-types@npm:0.2.36"
+  checksum: d604ac51da0b1597127fde70c64157b70ead6af7f2643ab7dfca268ef99d4ed0b4cc823afba206362422a622e389828408bec573df802bf4f02b118d0fa18dc8
+  languageName: node
+  linkType: hard
+
+"@fortawesome/fontawesome-svg-core@npm:^1.2.35":
+  version: 1.2.36
+  resolution: "@fortawesome/fontawesome-svg-core@npm:1.2.36"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": ^0.2.36
+  checksum: 3011d8c1452b5df52a62eaee8b1ec925b9fdfabcc170fd6da5eaac7cfdef56258b9292ddd06c30f03a6a8ed6faa886565211f2e469fee3c9831c32f93e9383d8
+  languageName: node
+  linkType: hard
+
 "@fortawesome/fontawesome-svg-core@npm:^6.4.2":
   version: 6.4.2
   resolution: "@fortawesome/fontawesome-svg-core@npm:6.4.2"
   dependencies:
     "@fortawesome/fontawesome-common-types": 6.4.2
   checksum: 0c0ecd9058883b128127e2b281c983ba6272be38a17577aaa2293ada58e9b1538357fe44430ded508d49ae3f5cc55aa720a0448d2b9d99689bb912d786f034e5
+  languageName: node
+  linkType: hard
+
+"@fortawesome/free-solid-svg-icons@npm:^5.15.3":
+  version: 5.15.4
+  resolution: "@fortawesome/free-solid-svg-icons@npm:5.15.4"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": ^0.2.36
+  checksum: eb037b703827ee37af3387a964afc7a190ff42a674ef46f4a6c295b634a38e849741eca78306b6423eaf3062d6ab1e7372aac5be2aec06f0fd9e8bd8110efcf9
+  languageName: node
+  linkType: hard
+
+"@fortawesome/react-fontawesome@npm:^0.1.14":
+  version: 0.1.19
+  resolution: "@fortawesome/react-fontawesome@npm:0.1.19"
+  dependencies:
+    prop-types: ^15.8.1
+  peerDependencies:
+    "@fortawesome/fontawesome-svg-core": ~1 || ~6
+    react: ">=16.x"
+  checksum: 77dbe1d5fa156a2ff4aa069d6c11f0ba1fcf43df72c9f03f1eec353d23798513a1f2773957a2bc3107fb8dc79fa606999ed91bf21659745bcc166abc4072819e
   languageName: node
   linkType: hard
 
@@ -4564,10 +4601,11 @@ __metadata:
     react-responsive-modal: ^6.4.2
     react-toastify: ^9.1.3
     react-tooltip: ^5.20.0
+    react-useportal: ^1.0.18
     schema-dts: ^1.1.2
     sharp: ^0.32.5
     source-map-explorer: ^2.5.3
-    ssw.megamenu: ^3.1.4
+    ssw.megamenu: 3.2.3
     tailwindcss: 3.3.3
     tailwindcss-gradients: ^3.0.0
     tinacms: ^1.5.20
@@ -13764,6 +13802,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-useportal@npm:^1.0.18":
+  version: 1.0.18
+  resolution: "react-useportal@npm:1.0.18"
+  dependencies:
+    use-ssr: ^1.0.25
+  peerDependencies:
+    react: ^16.8.6 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.6 || ^17.0.0 || ^18.0.0
+  checksum: b72d4a6bd521c8d139666b4a52d5b03a586652d00c7cc8899fb0d137da6eee0fb5d67c87742b6c9b31be5b045023caf0839258af9821a1f3d186460c947cdbf6
+  languageName: node
+  linkType: hard
+
 "react@npm:18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
@@ -14713,13 +14763,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ssw.megamenu@npm:^3.1.4":
-  version: 3.1.4
-  resolution: "ssw.megamenu@npm:3.1.4"
+"ssw.megamenu@npm:3.2.3":
+  version: 3.2.3
+  resolution: "ssw.megamenu@npm:3.2.3"
+  dependencies:
+    "@fortawesome/fontawesome-svg-core": ^1.2.35
+    "@fortawesome/free-solid-svg-icons": ^5.15.3
+    "@fortawesome/react-fontawesome": ^0.1.14
+    classnames: ^2.3.2
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 0d32e1a4b2f66e76b937e8cc45c3e7b153283c7198d5ec2344dbbbba7db2554032c6f4b309e0cdc3ab2186cd5a7beff7eed9388a46d923d6c01f4e7ea5f14b1a
+  checksum: c28e93f76484aa34126caac594e703f14af48766b88b413c69f99e81db841209b4b38cf2cba0533c48d8c675ec409e09c32baa513457e0203409cc1c577c8f6d
   languageName: node
   linkType: hard
 
@@ -16010,6 +16065,16 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 925d1922f9853e516eaad526b6fed1be38008073067274f0ecc3f56b17bb8ab63480140dd7c271f94150027c996cea4efe83d3e3525e8f3eda22055f6a39220b
+  languageName: node
+  linkType: hard
+
+"use-ssr@npm:^1.0.25":
+  version: 1.0.25
+  resolution: "use-ssr@npm:1.0.25"
+  peerDependencies:
+    react: ^16.13.1 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
+  checksum: 1f76b860d3592bba524a67ae8d5e21007dcf47aaadf0a08b283d57a1c7518923622bcd4d26d667f0d6b84359f06f1d9a112becd85ff75646c5ba73d06cf0287e
   languageName: node
   linkType: hard
 
