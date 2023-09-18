@@ -3,6 +3,7 @@ export const locations = [
   "Brisbane",
   "Melbourne",
   "Newcastle",
+  "France",
   "China",
 ] as const;
 export type Locations = (typeof locations)[number][];
