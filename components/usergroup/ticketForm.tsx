@@ -17,7 +17,7 @@ const validationSchema = object({
 
 export const TicketForm = () => {
   return (
-    <div className="max-w-md rounded-md bg-white p-10 font-helvetica grow">
+    <div className="max-w-md grow rounded-md bg-white p-10 font-helvetica">
       <Formik
         initialValues={{
           format: "",
@@ -66,7 +66,7 @@ export const TicketForm = () => {
 
           <button
             type="submit"
-            className="mx-auto my-4 rounded-md bg-sswRed px-4 py-3 font-semibold text-white"
+            className="mx-auto my-4 rounded-md bg-sswRed px-4 py-3 font-medium text-white"
           >
             Register for free
           </button>

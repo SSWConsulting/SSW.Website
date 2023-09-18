@@ -13,7 +13,7 @@ import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import VideoCards, { VideoCardProps } from "../../components/util/videoCards";
+import VideoCards, { VideoCardType } from "../../components/util/videoCards";
 import { GetTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
@@ -33,7 +33,7 @@ export default function EventsPage(
       .map((category) => category.testimonialCategory.name) ?? [];
 
   const videoCardProps =
-    data?.events.videos?.videoCards?.map<VideoCardProps>((m) => ({
+    data?.events.videos?.videoCards?.map<VideoCardType>((m) => ({
       title: m.title,
       link: m.link,
     })) || [];

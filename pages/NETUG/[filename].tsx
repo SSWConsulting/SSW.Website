@@ -11,6 +11,16 @@ import { UserGroupHeader } from "../../components/usergroup/header";
 import { Container } from "../../components/util/container";
 import badgesList from "../../content/technologyBadges/default.json";
 import { TicketForm } from "../../components/usergroup/ticketForm";
+import {
+  LuGraduationCap,
+  LuMessagesSquare,
+  LuPizza,
+  LuSmile,
+} from "react-icons/lu";
+import { SponsorCard } from "../../components/usergroup/sponsorCard";
+import VideoCards, { VideoCard } from "../../components/util/videoCards";
+import { FacebookPageEmbed } from "../../components/embeds/facebookPageEmbed";
+import { TwitterFeedEmbed } from "../../components/embeds/twitterFeedEmbed";
 
 const agendaStub: { time: string; text: string }[] = [
   {
@@ -28,6 +38,13 @@ const agendaStub: { time: string; text: string }[] = [
   {
     time: "8:30 PM",
     text: "Q&A and Pizza",
+  },
+];
+
+const videoCardStub = [
+  {
+    link: "https://www.youtube.com/watch?v=QYTa5aHdhh0",
+    title: "Launch your development career into space",
   },
 ];
 
@@ -52,7 +69,7 @@ export default function NETUGPage(
         />
 
         <Container className="font-helvetica">
-          <section className="grid-cols-3 gap-8 md:grid">
+          <section className="grid-cols-3 gap-10 md:grid">
             <div className="col-span-2">
               <h2 className="text-4xl font-semibold text-sswRed">
                 About the event
@@ -91,7 +108,7 @@ export default function NETUGPage(
               <GoogleMapsWrapper
                 embedHeight="150px"
                 embedWidth="100%"
-                embedUrl={`<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.2926044583883!2d151.2144539883753!3d-33.83056394807196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae97d5dce3c1%3A0xae8cb5f05af0e28d!2sSSW%20Sydney%20-%20Enterprise%20Software%20Development!5e0!3m2!1sen!2sau!4v1695000313184!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`}
+                embedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.2926044583883!2d151.2144539883753!3d-33.83056394807196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae97d5dce3c1%3A0xae8cb5f05af0e28d!2sSSW%20Sydney%20-%20Enterprise%20Software%20Development!5e0!3m2!1sen!2sau!4v1695000313184!5m2!1sen!2sau"
               />
             </div>
 
@@ -114,7 +131,7 @@ export default function NETUGPage(
               <h2 className="text-4xl font-semibold text-sswRed">Organiser</h2>
               <Organizer
                 data={{
-                  image: "/images/people/matt-g-tall.png",
+                  image: "/images/people/Adam-Cogan.jpg",
                   name: "Adam Cogan",
                   profileLink: "https://ssw.com.au/people/adam-cogan/",
                   position: "Chief Architect at SSW",
@@ -139,24 +156,78 @@ export default function NETUGPage(
 
         <section className="bg-gray-900 ">
           <Container className="py-12">
-            <div className="flex flex-row justify-between">
+            <div className="flex-row justify-between md:flex">
               <div className="text-white">
-                <h3>I'm Sold... What's Next?</h3>
-                <span>RSVP to the event and receive NETUG updates!</span>
-                <ul className="list-disc">
-                  <li>Learn latest Microsoft tech</li>
-                  <li>Build contacts</li>
-                  <li>Socialize</li>
-                  <li>Free pizza and drinks</li>
+                <div className="pb-8">
+                  <h3 className="text-4xl font-medium">
+                    I'm Sold... What's Next?
+                  </h3>
+                  <span className="text-base font-normal text-gray-50">
+                    RSVP to the event and receive NETUG updates!
+                  </span>
+                </div>
+                <ul>
+                  <li className="py-3 font-semibold">
+                    <LuGraduationCap size={40} className="mr-5 inline" />
+                    Learn latest Microsoft tech
+                  </li>
+                  <li className="py-3 font-semibold">
+                    <LuMessagesSquare size={40} className="mr-5 inline" />
+                    Build contacts
+                  </li>
+                  <li className="py-3 font-semibold">
+                    <LuSmile size={40} className="mr-5 inline" />
+                    Socialize
+                  </li>
+                  <li className="py-3 font-semibold">
+                    <LuPizza size={40} className="mr-5 inline" />
+                    Free pizza and drinks
+                  </li>
                 </ul>
+                <SponsorCard className="my-4" />
               </div>
               <TicketForm />
             </div>
           </Container>
         </section>
 
+        <section className="!font-helvetica">
+          <VideoCards
+            cardProps={videoCardStub}
+            channelLink="https://www.youtube.com/@SSWTV"
+            defaultChannelLink="https://www.youtube.com/@SSWTV"
+            theme="light"
+          />
+          <Container>
+            <div>
+              <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">
+                {videoCardStub.map((video) => (
+                  <VideoCard {...video} theme="light" />
+                ))}
+              </div>
+            </div>
+          </Container>
+        </section>
+
         <section>
-          <h1>Hello</h1>
+          <Container>
+            <div className="flex flex-col items-center">
+              <h2 className="font-helvetica text-4xl font-semibold text-sswRed">
+                Community
+              </h2>
+              <div className="w-full grid-cols-3 gap-6 md:grid">
+                <div className="col-span-1 h-96">
+                  <TwitterFeedEmbed height={384} username="SSW_TV" />
+                </div>
+                <div className="col-span-1">
+                  <FacebookPageEmbed username="SSW.page" height={384} />
+                </div>
+                <div className="col-span-1">
+                  <p>test</p>
+                </div>
+              </div>
+            </div>
+          </Container>
         </section>
       </Layout>
     </>
