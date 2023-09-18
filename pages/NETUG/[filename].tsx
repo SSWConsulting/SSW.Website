@@ -8,6 +8,26 @@ import {
 import { Layout } from "../../components/layout";
 import { UserGroupHeader } from "../../components/usergroup/header";
 import { Container } from "../../components/util/container";
+import badgesList from "../../content/technologyBadges/default.json";
+
+const agendaStub: { time: string; text: string }[] = [
+  {
+    time: "6:30 PM",
+    text: "Kick off & Live Stream",
+  },
+  {
+    time: "6:35 PM",
+    text: "Monthly Tech News",
+  },
+  {
+    time: "7:00 PM",
+    text: "Presentation",
+  },
+  {
+    time: "8:30 PM",
+    text: "Q&A and Pizza",
+  },
+];
 
 export default function NETUGPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -70,6 +90,14 @@ export default function NETUGPage(
 
             <div className="col-span-1">
               <h2 className="text-4xl font-semibold text-sswRed">Agenda</h2>
+              <div>
+                {agendaStub.map((item, index) => (
+                  <div className="flex justify-between" key={index}>
+                    <span className="text-lg">{item.time}</span>
+                    <span className="text-lg">{item.text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="col-span-1">
@@ -85,7 +113,7 @@ export default function NETUGPage(
             </div>
 
             <div className="col-span-2">
-              <LatestTech />
+              <LatestTech data={{ badges: { badgesList } }} />
             </div>
 
             <div className="col-span-1">
@@ -98,6 +126,23 @@ export default function NETUGPage(
             </div>
           </section>
         </Container>
+
+        <section className="bg-gray-900 text-white">
+          <Container>
+            <h3>I'm Sold... What's Next?</h3>
+            <span>RSVP to the event and receive NETUG updates!</span>
+            <ul className="list-disc">
+              <li>Learn latest Microsoft tech</li>
+              <li>Build contacts</li>
+              <li>Socialize</li>
+              <li>Free pizza and drinks</li>
+            </ul>
+          </Container>
+        </section>
+
+        <section>
+          <h1>Hello</h1>
+        </section>
       </Layout>
     </>
   );
