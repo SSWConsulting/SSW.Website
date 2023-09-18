@@ -44,8 +44,10 @@ export const SocialButton = ({
         style={{ backgroundColor: platforms[platform].color }}
         className="inline-flex w-full items-center rounded-lg"
       >
-        <span className="m-4">{platforms[platform].icon}</span>
-        <span className="font-helvetica font-bold text-white">{label}</span>
+        <span className="m-4 ml-8">{platforms[platform].icon}</span>
+        <span className="font-helvetica text-base font-bold text-white">
+          {label}
+        </span>
       </div>
     </a>
   );
