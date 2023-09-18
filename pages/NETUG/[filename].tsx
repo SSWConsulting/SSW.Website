@@ -213,7 +213,7 @@ export default function NETUGPage(
         <section>
           <Container>
             <div className="flex flex-col items-center">
-              <h2 className="font-helvetica text-4xl font-semibold text-sswRed">
+              <h2 className="font-helvetica text-4xl font-semibold text-sswRed mb-12">
                 Community
               </h2>
               <div className="w-full grid-cols-3 gap-6 md:grid">
