@@ -7,7 +7,7 @@ const sizes = {
   medium: "px-10 py-3",
 } as const;
 
-interface UtilityButtonProps {
+type UtilityButtonProps = {
   buttonText?: string | JSX.Element;
   onClick?: () => void;
   className?: string;
@@ -15,7 +15,7 @@ interface UtilityButtonProps {
   size?: keyof typeof sizes;
   noAnimate?: boolean;
   uncentred?: boolean;
-}
+};
 
 export const UtilityButton = ({
   buttonText,
