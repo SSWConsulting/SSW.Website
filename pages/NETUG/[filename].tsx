@@ -21,6 +21,7 @@ import { SponsorCard } from "../../components/usergroup/sponsorCard";
 import VideoCards, { VideoCard } from "../../components/util/videoCards";
 import { FacebookPageEmbed } from "../../components/embeds/facebookPageEmbed";
 import { TwitterFeedEmbed } from "../../components/embeds/twitterFeedEmbed";
+import { SocialButton } from "../../components/usergroup/socialButton";
 
 const agendaStub: { time: string; text: string }[] = [
   {
@@ -223,7 +224,30 @@ export default function NETUGPage(
                   <FacebookPageEmbed username="SSW.page" height={384} />
                 </div>
                 <div className="col-span-1">
-                  <p>test</p>
+                  <SocialButton
+                    url="https://google.com"
+                    platform="github"
+                    label="Join GitHub Discussion"
+                    className="mb-4"
+                  />
+                  <SocialButton
+                    url="https://google.com"
+                    platform="facebook"
+                    label="Join Facebook Group"
+                    className="mb-4"
+                  />
+                  <SocialButton
+                    url="https://google.com"
+                    platform="linkedin"
+                    label="Join LinkedIn Group"
+                    className="mb-4"
+                  />
+                  <SocialButton
+                    url="https://google.com"
+                    platform="meetup"
+                    label="Join Meetup Group"
+                    className="mb-4"
+                  />
                 </div>
               </div>
             </div>
