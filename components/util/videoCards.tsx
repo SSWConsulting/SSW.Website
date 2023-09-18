@@ -73,11 +73,15 @@ const VideoCards = ({
                     theme === "light" ? "text-black" : "text-white"
                   )}
                 >
-                  <span className="text-sswRed">Popular</span> videos from
+                  <span className="text-sswRed">Popular</span> videos from{" "}
                 </span>
                 <Image
                   className="mt-2 md:ml-2 md:mt-0"
-                  src={"/images/sswtv-logo.svg"}
+                  src={
+                    theme === "light"
+                      ? "/images/sswtv_logo.png"
+                      : "/images/sswtv-logo.svg"
+                  }
                   color={"black"}
                   alt={"SSW TV"}
                   height={50}

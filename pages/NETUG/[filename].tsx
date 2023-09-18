@@ -9,7 +9,7 @@ import {
 import { Layout } from "../../components/layout";
 import { UserGroupHeader } from "../../components/usergroup/header";
 import { Container } from "../../components/util/container";
-import badgesList from "../../content/technologyBadges/default.json";
+import badges from "../../content/technologyBadges/default.json";
 import { TicketForm } from "../../components/usergroup/ticketForm";
 import {
   LuGraduationCap,
@@ -22,6 +22,7 @@ import VideoCards, { VideoCard } from "../../components/util/videoCards";
 import { FacebookPageEmbed } from "../../components/embeds/facebookPageEmbed";
 import { TwitterFeedEmbed } from "../../components/embeds/twitterFeedEmbed";
 import { SocialButton } from "../../components/usergroup/socialButton";
+import client from "../../.tina/__generated__/client";
 
 const agendaStub: { time: string; text: string }[] = [
   {
@@ -132,7 +133,7 @@ export default function NETUGPage(
               <h2 className="text-4xl font-semibold text-sswRed">Organiser</h2>
               <Organizer
                 data={{
-                  image: "/images/people/Adam-Cogan.jpg",
+                  profileImg: "/images/people/Adam-Cogan.jpg",
                   name: "Adam Cogan",
                   profileLink: "https://ssw.com.au/people/adam-cogan/",
                   position: "Chief Architect at SSW",
@@ -141,7 +142,7 @@ export default function NETUGPage(
             </div>
 
             <div className="col-span-2">
-              <LatestTech data={{ badges: { badgesList } }} />
+              <LatestTech data={{ badges }} />
             </div>
 
             <div className="col-span-1">
@@ -213,7 +214,7 @@ export default function NETUGPage(
         <section>
           <Container>
             <div className="flex flex-col items-center">
-              <h2 className="font-helvetica text-4xl font-semibold text-sswRed mb-12">
+              <h2 className="mb-12 font-helvetica text-4xl font-semibold text-sswRed">
                 Community
               </h2>
               <div className="w-full grid-cols-3 gap-6 md:grid">
@@ -258,9 +259,13 @@ export default function NETUGPage(
   );
 }
 
-export const getStaticProps = ({ params }) => {
+export const getStaticProps = async ({ params }) => {
+  const testimonials = await client.queries.testimonalsQuery({
+    categories: "User-Group",
+  });
+
   return {
-    props: { filename: params.filename },
+    props: { filename: params.filename, testimonials },
   };
 };
 
