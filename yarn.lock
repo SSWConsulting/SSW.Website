@@ -4600,7 +4600,7 @@ __metadata:
     react-responsive-carousel: ^3.2.23
     react-responsive-modal: ^6.4.2
     react-toastify: ^9.1.3
-    react-tooltip: ^5.20.0
+    react-tooltip: ^5.21.4
     react-useportal: ^1.0.18
     schema-dts: ^1.1.2
     sharp: ^0.32.5
@@ -13769,16 +13769,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-tooltip@npm:^5.20.0":
-  version: 5.20.0
-  resolution: "react-tooltip@npm:5.20.0"
+"react-tooltip@npm:^5.21.4":
+  version: 5.21.4
+  resolution: "react-tooltip@npm:5.21.4"
   dependencies:
     "@floating-ui/dom": ^1.0.0
     classnames: ^2.3.0
   peerDependencies:
     react: ">=16.14.0"
     react-dom: ">=16.14.0"
-  checksum: c332a4d0e4859f7a2f68c7f6d582f7aeceb4771b9302f27d7089f38b12a7a6c45cb4ea0dd56b32e904ae62424d6fe248382a41f562595b702f35fd1fe9dee47c
+  checksum: 9b663c5d9a1472b96d3ed708ecce01052aed267dc739520c9b55389a5e42c195a6bcd0717219f260bf0dadee2452d80a7c5fa14c5c3f8b5cdc6a9174d7f42d4a
   languageName: node
   linkType: hard
 
