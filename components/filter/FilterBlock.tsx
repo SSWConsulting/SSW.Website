@@ -17,7 +17,7 @@ export const FilterBlock = ({
   return (
     <div className="mb-10 md:flex md:flex-row">
       <div className="md:mr-16 md:shrink-0 md:basis-64">
-        <h3 className="mb-4">
+        <h3 className="mb-4 text-xl">
           <MdLiveHelp className="inline text-sswRed" /> I am looking for...
         </h3>
 
