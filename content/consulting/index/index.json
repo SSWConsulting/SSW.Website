@@ -176,6 +176,11 @@
           "description": "Process mining uncovers processes in your company that can be effectively automated with artificial intelligence, so you save costs and increase your productivity.",
           "logo": "/images/thumbs/thumb-power-automate-icon.jpg",
           "page": "content/consulting/process-mining.mdx"
+           "tags": [
+            {
+              "tag": "content/consulting/tag/ai-development.json"
+            }
+          ]
         },
         {
           "title": "ChatGPT & GPT-4",
