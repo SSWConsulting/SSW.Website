@@ -26,9 +26,18 @@ body:
     validations:
       required: true
   - type: input
+    id: CRM
+    attributes:
+      label: "3. Consulting Service in CRM:"
+      description: Link the matching [consulting service from CRM](https://ssw.crm6.dynamics.com/main.aspx?appid=05daa2a9-8768-446e-b9d3-580c8a6f9b8b&pagetype=entitylist&etn=ssw_consultingservice&viewid=b400b0b8-363d-404b-bbd5-d56343c21d1f&viewType=1039). If there is no existing one for this page, you should create one. This is because each consulting page on the website needs a matching consulting service record in CRM. If you are not requesting a consulting page, write N/A.
+      placeholder: "{{ CONSULTING SERVICE URL FROM CRM }}"
+      value:
+    validations:
+      required: true
+  - type: input
     id: URI
     attributes:
-      label: "3. URI:"
+      label: "4. URI:"
       description: "Details: Concise and including keywords. Use [kebab case](https://www.ssw.com.au/rules/use-dashes-in-urls) (e.g. use-dashes-and-lowercase). 
       
       Length: [As short as possible](https://www.ssw.com.au/rules/create-friendly-short-urls/)"
@@ -39,7 +48,7 @@ body:
   - type: input
     id: title
     attributes:
-      label: "4. Title:"
+      label: "5. Title:"
       description: "Details: Must read well and include keywords (Google-able).
       
       Length: Must be under 60 characters"  
@@ -50,7 +59,7 @@ body:
   - type: textarea
     id: meta
     attributes:
-      label: "5. Meta description:"
+      label: "6. Meta description:"
       description: "Details: For search engines - summary of the page using the important keywords.
       
       Length: under 150 characters. 
@@ -63,7 +72,7 @@ body:
   - type: textarea
     id: related
     attributes:
-      label: "6. Related URLs:"
+      label: "7. Related URLs:"
       description: If applicable, related pages on the SSW website.
       placeholder: "{{ RELATED URLS }}"
       value:
@@ -72,7 +81,7 @@ body:
   - type: textarea
     id: content
     attributes:
-      label: "7. Content:"
+      label: "8. Content:"
       description: "Follow these guidelines:  
 
       
