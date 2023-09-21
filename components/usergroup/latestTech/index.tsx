@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { Badge } from "./badge";
 import { BadgesLayout } from "./constants";

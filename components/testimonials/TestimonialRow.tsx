@@ -2,25 +2,36 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useEditState } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { GetTestimonialsByCategories } from "../../helpers/getTestimonials";
+import {
+  getTestimonialsByCategories,
+  TestimonialType,
+} from "../../helpers/getTestimonials";
 import { Rating } from "../util/consulting/rating";
 import { Container } from "../util/container";
 
 const defaultAvatar = "/images/thumbs/avatar-thumbnail.png";
 
+type TestimonialRowProps = {
+  testimonialsResult: TestimonialType[];
+  tagline: string;
+  categories: string[];
+  className?: string;
+};
+
 export const TestimonialRow = ({
   testimonialsResult,
   tagline,
   categories = [],
-}) => {
+  className = "",
+}: TestimonialRowProps) => {
   const [testimonialResult, setTestimonialResult] =
-    useState(testimonialsResult);
+    useState<TestimonialType[]>(testimonialsResult);
 
   const { edit } = useEditState();
 
   useEffect(() => {
     async function getTestimonials() {
-      const testimonials = await GetTestimonialsByCategories(categories);
+      const testimonials = await getTestimonialsByCategories(categories);
 
       setTestimonialResult(testimonials);
     }
@@ -30,7 +41,7 @@ export const TestimonialRow = ({
   }, [edit, categories]);
 
   return (
-    <Container size="custom">
+    <Container size="custom" className={className}>
       <h2 className="mb-2 text-center">
         What do people <span className="text-sswRed">say</span>?
       </h2>
@@ -44,7 +55,11 @@ export const TestimonialRow = ({
   );
 };
 
-const TestimonialCard = ({ testimonial }) => {
+type TestimonialCardProps = {
+  testimonial: TestimonialType;
+};
+
+const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
   return (
     <div
       className="flex w-full grow flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-8 text-center text-xl drop-shadow md:min-h-96 md:max-w-sm md:grow-0 md:p-10 md:basis_gap-96-6"

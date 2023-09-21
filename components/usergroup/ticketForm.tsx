@@ -31,7 +31,7 @@ export const TicketForm = () => {
         }}
       >
         <Form className="flex flex-col justify-center">
-          <h3 className="text-sswRed">Get your free ticket</h3>
+          <h3 className="font-helvetica text-sswRed">Get your free ticket</h3>
           <div className="grid grid-cols-2 py-4">
             <label className="col-span-1">
               <Field name="format" type="radio" value="inPerson" />

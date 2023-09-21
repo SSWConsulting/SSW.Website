@@ -22,7 +22,7 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
-import { GetTestimonialsByCategories } from "../../helpers/getTestimonials";
+import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
 
@@ -202,7 +202,7 @@ export const getStaticProps = async ({ params }) => {
       (category) => category.testimonialCategory.name
     ) || [];
 
-  const testimonialsResult = await GetTestimonialsByCategories(categories);
+  const testimonialsResult = await getTestimonialsByCategories(categories);
 
   const seo = tinaProps.data.consulting.seo;
   if (seo && !seo.canonical) {

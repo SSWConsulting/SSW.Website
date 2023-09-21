@@ -5,7 +5,12 @@ import classNames from "classnames";
 import { AiFillStar } from "react-icons/ai";
 import { wrapFieldsWithMeta } from "tinacms";
 
-export const Rating = ({ className, rating }) => {
+type RatingProps = {
+  className?: string;
+  rating: number;
+};
+
+export const Rating = ({ className, rating }: RatingProps) => {
   if (rating < 0) {
     return <></>;
   }

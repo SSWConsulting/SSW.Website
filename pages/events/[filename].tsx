@@ -14,7 +14,7 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import VideoCards, { VideoCardType } from "../../components/util/videoCards";
-import { GetTestimonialsByCategories } from "../../helpers/getTestimonials";
+import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
 
@@ -136,7 +136,7 @@ export const getStaticProps = async ({ params }) => {
       (category) => category.testimonialCategory.name
     ) || [];
 
-  const testimonialsResult = await GetTestimonialsByCategories(categories);
+  const testimonialsResult = await getTestimonialsByCategories(categories);
 
   if (tinaProps.data.events.seo && !tinaProps.data.events.seo.canonical) {
     tinaProps.data.events.seo.canonical = `${tinaProps.data.global.header.url}events/${params.filename}`;

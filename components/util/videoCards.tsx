@@ -39,6 +39,7 @@ type VideoCardsProps = {
   channelLink: string;
   defaultChannelLink: string;
   theme?: "light" | "dark";
+  className?: string;
 };
 
 const VideoCards = ({
@@ -46,6 +47,7 @@ const VideoCards = ({
   channelLink,
   defaultChannelLink,
   theme,
+  className,
 }: VideoCardsProps) => {
   if (cardProps.length == 0) return null;
 
@@ -59,7 +61,8 @@ const VideoCards = ({
     <Section
       className={classNames(
         "py-10",
-        theme === "light" ? "bg-white" : "bg-polygons bg-cover bg-no-repeat"
+        theme === "light" ? "bg-white" : "bg-polygons bg-cover bg-no-repeat",
+        className
       )}
     >
       <Container size="default">

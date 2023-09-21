@@ -1,10 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
+import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-export const Organizer = ({ data }) => {
+type OrganizerProps = {
+  name: string;
+  profileImg?: string;
+  profileLink?: string;
+  position?: string;
+  content?: TinaMarkdownContent;
+};
+
+export const Organizer = ({ data }: { data: OrganizerProps }) => {
   return (
     <div className="flex flex-col gap-5 font-helvetica">
       <div className="flex flex-row items-center gap-2">

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 
 const Avatar = ({ img }) => {
@@ -37,8 +37,8 @@ const Avatar = ({ img }) => {
 
 type JoinAsPresenterProps = {
   data: {
-    img: string;
-    link: string;
+    img?: string;
+    link?: string;
   };
 };
 

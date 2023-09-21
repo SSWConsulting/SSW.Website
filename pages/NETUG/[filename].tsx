@@ -1,5 +1,6 @@
 import { InferGetStaticPropsType } from "next";
 import {
+  BuiltOnAzure,
   GoogleMapsWrapper,
   JoinAsPresenter,
   JoinGithub,
@@ -9,7 +10,6 @@ import {
 import { Layout } from "../../components/layout";
 import { UserGroupHeader } from "../../components/usergroup/header";
 import { Container } from "../../components/util/container";
-import badges from "../../content/technologyBadges/default.json";
 import { TicketForm } from "../../components/usergroup/ticketForm";
 import {
   LuGraduationCap,
@@ -18,32 +18,16 @@ import {
   LuSmile,
 } from "react-icons/lu";
 import { SponsorCard } from "../../components/usergroup/sponsorCard";
-import VideoCards, { VideoCard } from "../../components/util/videoCards";
+import VideoCards from "../../components/util/videoCards";
 import { FacebookPageEmbed } from "../../components/embeds/facebookPageEmbed";
 import { TwitterFeedEmbed } from "../../components/embeds/twitterFeedEmbed";
 import { SocialButton } from "../../components/usergroup/socialButton";
 import client from "../../.tina/__generated__/client";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-
-// const agendaStub: { time: string; label: string }[] = [
-//   {
-//     time: "6:30 PM",
-//     label: "Kick off & Live Stream",
-//   },
-//   {
-//     time: "6:35 PM",
-//     label: "Monthly Tech News",
-//   },
-//   {
-//     time: "7:00 PM",
-//     label: "Presentation",
-//   },
-//   {
-//     time: "8:30 PM",
-//     label: "Q&A and Pizza",
-//   },
-// ];
+import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
+import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
+import { Section } from "../../components/util/section";
 
 const videoCardStub = [
   {
@@ -80,7 +64,7 @@ export default function NETUGPage(
         <Container className="font-helvetica">
           <section className="grid-cols-3 gap-10 md:grid">
             <div className="col-span-2">
-              <h2 className="text-4xl font-semibold text-sswRed">
+              <h2 className="font-helvetica text-4xl font-medium text-sswRed">
                 About the event
               </h2>
               <div className="text-lg">
@@ -92,7 +76,7 @@ export default function NETUGPage(
             </div>
 
             <div className="col-span-1">
-              <h2 className="text-4xl font-semibold text-sswRed">
+              <h2 className="font-helvetica text-4xl font-medium text-sswRed">
                 When & Where
               </h2>
               <div className="text-lg">
@@ -110,7 +94,9 @@ export default function NETUGPage(
             </div>
 
             <div className="col-span-1">
-              <h2 className="text-4xl font-semibold text-sswRed">Agenda</h2>
+              <h2 className="font-helvetica text-4xl font-medium text-sswRed">
+                Agenda
+              </h2>
               <div>
                 {data.userGroupPage.agenda.map((item, index) => (
                   <div
@@ -125,28 +111,26 @@ export default function NETUGPage(
             </div>
 
             <div className="col-span-1">
-              <h2 className="text-4xl font-semibold text-sswRed">Organiser</h2>
+              <h2 className="font-helvetica text-4xl font-medium text-sswRed">
+                Organizer
+              </h2>
               <Organizer
                 data={{
-                  profileImg: "/images/people/Adam-Cogan.jpg",
-                  name: "Adam Cogan",
-                  profileLink: "https://ssw.com.au/people/adam-cogan/",
-                  position: "Chief Architect at SSW",
+                  profileImg: data.userGroupPage.organizer?.profileImg,
+                  name: data.userGroupPage.organizer?.name,
+                  profileLink: data.userGroupPage.organizer?.nameUrl,
+                  position: data.userGroupPage.organizer?.position,
+                  content: data.userGroupPage.organizer?.bio,
                 }}
               />
             </div>
 
             <div className="col-span-2">
-              <LatestTech data={{ badges }} />
+              <LatestTech data={data.userGroupPage.latestTech} />
             </div>
 
             <div className="col-span-1">
-              <JoinAsPresenter
-                data={{
-                  img: "/images/people/ulysses.png",
-                  link: "https://google.com",
-                }}
-              />
+              <JoinAsPresenter data={data.userGroupPage.joinUs} />
             </div>
           </section>
         </Container>
@@ -188,14 +172,15 @@ export default function NETUGPage(
           </Container>
         </section>
 
-        <section className="!font-helvetica">
+        <section className="child:!font-helvetica">
           <VideoCards
             cardProps={videoCardStub}
             channelLink="https://www.youtube.com/@SSWTV"
             defaultChannelLink="https://www.youtube.com/@SSWTV"
             theme="light"
+            className="child:!font-helvetica"
           />
-          <Container>
+          {/* <Container>
             <div>
               <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">
                 {videoCardStub.map((video, index) => (
@@ -203,7 +188,7 @@ export default function NETUGPage(
                 ))}
               </div>
             </div>
-          </Container>
+          </Container> */}
         </section>
 
         <section>
@@ -249,6 +234,22 @@ export default function NETUGPage(
             </div>
           </Container>
         </section>
+
+        <section>
+          <Container>
+            <TestimonialRow
+              testimonialsResult={props.testimonialsResult}
+              categories={["User-Group"]}
+              className="child:!font-helvetica"
+              tagline="SSW has made clients happy all over the world and we are proud to
+              share some of these experiences with you."
+            />
+          </Container>
+        </section>
+
+        <Section>
+          <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+        </Section>
       </Layout>
     </>
   );
@@ -259,9 +260,7 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.mdx`,
   });
 
-  const testimonials = await client.queries.testimonalsQuery({
-    categories: "User-Group",
-  });
+  const testimonialsResult = await getTestimonialsByCategories(["User-Group"]);
 
   return {
     props: {
@@ -269,7 +268,7 @@ export const getStaticProps = async ({ params }) => {
       query: tinaProps.query,
       variables: tinaProps.variables,
       filename: params.filename,
-      testimonials,
+      testimonialsResult,
     },
   };
 };

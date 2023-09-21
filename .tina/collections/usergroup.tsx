@@ -75,18 +75,23 @@ export const userGroupPageSchema: Collection = {
         },
         {
           type: "string",
+          label: "Position",
+          name: "position",
+        },
+        {
+          type: "string",
           label: "Name URL",
           name: "nameUrl",
         },
         {
           type: "image",
           label: "Organizer Image",
-          name: "organizerImage",
+          name: "profileImg",
         },
         {
           type: "rich-text",
           label: "Organizer Bio",
-          name: "organizerBio",
+          name: "bio",
         },
       ],
     },
