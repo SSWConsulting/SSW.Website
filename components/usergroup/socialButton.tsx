@@ -1,7 +1,7 @@
 import { SiFacebook, SiLinkedin, SiMeetup, SiGithub } from "react-icons/si";
 import classNames from "classnames";
 
-const platforms = {
+export const platforms = {
   facebook: {
     icon: <SiFacebook className="text-white" size={40} />,
     color: "#4479DE",
@@ -20,12 +20,12 @@ const platforms = {
   },
 } as const;
 
-type Platform = keyof typeof platforms;
+export type PlatformType = keyof typeof platforms;
 
 type SocialButtonProps = {
   className?: string;
   url: string;
-  platform: Platform;
+  platform: PlatformType;
   label?: string;
 };
 

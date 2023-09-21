@@ -3,8 +3,8 @@ import dayjs from "dayjs";
 import Image from "next/image";
 import { useMemo } from "react";
 import { BiVideo } from "react-icons/bi";
-import { UtilityButton } from "../blocks";
-import { Container } from "../util/container";
+import { UtilityButton } from "../../blocks";
+import { Container } from "../../util/container";
 
 type UserGroupHeaderProps = {
   className?: string;
@@ -40,7 +40,7 @@ export const UserGroupHeader = ({
       }}
     >
       <Container className="flex-row pb-0 text-white md:flex">
-        <div className="flex flex-col pb-10">
+        <div className="flex max-w-3xl flex-col pb-10">
           <span className="text-lg">{formattedDate}</span>
           <h1 className="mb-2 pb-1 pt-3 text-5xl font-semibold">{title}</h1>
           <span className="mb-4 text-lg">

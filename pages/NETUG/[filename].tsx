@@ -8,7 +8,7 @@ import {
   Organizer,
 } from "../../components/blocks";
 import { Layout } from "../../components/layout";
-import { UserGroupHeader } from "../../components/usergroup/header";
+import { UserGroupHeader } from "../../components/usergroup/sections/header";
 import { Container } from "../../components/util/container";
 import { TicketForm } from "../../components/usergroup/ticketForm";
 import {
@@ -19,15 +19,17 @@ import {
 } from "react-icons/lu";
 import { SponsorCard } from "../../components/usergroup/sponsorCard";
 import VideoCards from "../../components/util/videoCards";
-import { FacebookPageEmbed } from "../../components/embeds/facebookPageEmbed";
-import { TwitterFeedEmbed } from "../../components/embeds/twitterFeedEmbed";
-import { SocialButton } from "../../components/usergroup/socialButton";
 import client from "../../.tina/__generated__/client";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { Section } from "../../components/util/section";
+import { getEvents } from "../../services/server/events";
+import { CommunitySection } from "../../components/usergroup/sections/community";
+import { SectionRenderer } from "../../components/usergroup/sections/renderer";
+
+const ISR_TIME = 60 * 60; // 1 hour;
 
 const videoCardStub = [
   {
@@ -50,11 +52,11 @@ export default function NETUGPage(
       <Layout>
         <UserGroupHeader
           className="font-helvetica"
-          date={new Date()}
-          title="Unleashing the Power of Microservices with Dapr & Azure Container"
+          date={new Date(props.event?.StartDateTime)}
+          title={props.event?.Title}
           presenter={{
-            name: "Matt Goldman",
-            url: "https://ssw.com.au/people/matt-goldman/",
+            name: props.event?.Presenter,
+            url: props.event?.PresenterProfileUrl?.Url,
             image: "/images/people/matt-g-tall.png",
           }}
           trailerUrl="https://www.youtube.com/watch?v=FNMtmBJAZ_M"
@@ -191,49 +193,10 @@ export default function NETUGPage(
           </Container> */}
         </section>
 
-        <section>
-          <Container>
-            <div className="flex flex-col items-center">
-              <h2 className="mb-12 font-helvetica text-4xl font-semibold text-sswRed">
-                Community
-              </h2>
-              <div className="w-full grid-cols-3 gap-6 md:grid">
-                <div className="col-span-1 h-96">
-                  <TwitterFeedEmbed height={384} username="SSW_TV" />
-                </div>
-                <div className="col-span-1">
-                  <FacebookPageEmbed username="SSW.page" height={384} />
-                </div>
-                <div className="col-span-1">
-                  <SocialButton
-                    url="https://google.com"
-                    platform="github"
-                    label="Join GitHub Discussion"
-                    className="mb-4"
-                  />
-                  <SocialButton
-                    url="https://google.com"
-                    platform="facebook"
-                    label="Join Facebook Group"
-                    className="mb-4"
-                  />
-                  <SocialButton
-                    url="https://google.com"
-                    platform="linkedin"
-                    label="Join LinkedIn Group"
-                    className="mb-4"
-                  />
-                  <SocialButton
-                    url="https://google.com"
-                    platform="meetup"
-                    label="Join Meetup Group"
-                    className="mb-4"
-                  />
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
+        {/* <SectionRenderer
+          prefix="UserGroupPage"
+          blocks={data.userGroupPage.sections}
+        /> */}
 
         <section>
           <Container>
@@ -262,6 +225,12 @@ export const getStaticProps = async ({ params }) => {
 
   const testimonialsResult = await getTestimonialsByCategories(["User-Group"]);
 
+  const event = await getEvents(
+    "$filter=fields/Enabled ne false and fields/City eq 'Sydney' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc"
+  );
+
+  console.log(event[0]);
+
   return {
     props: {
       data: tinaProps.data,
@@ -269,7 +238,9 @@ export const getStaticProps = async ({ params }) => {
       variables: tinaProps.variables,
       filename: params.filename,
       testimonialsResult,
+      event: event[0] || null,
     },
+    revalidate: ISR_TIME,
   };
 };
 

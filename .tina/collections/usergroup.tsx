@@ -1,5 +1,6 @@
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
+import { pageBlocks } from "../../components/usergroup/sections/index";
 
 import type { Collection } from "tinacms";
 
@@ -106,6 +107,22 @@ export const userGroupPageSchema: Collection = {
       label: "Join Us Panel",
       name: "joinUs",
       fields: Schemas.joinAsPresenterSchema.fields,
+    },
+    {
+      type: "object",
+      list: true,
+      name: "sections",
+      label: "Sections",
+      ui: {
+        visualSelector: true,
+      },
+      templates: pageBlocks,
+    },
+    {
+      type: "string",
+      label: "City (used for SharePoint matching)",
+      name: "city",
+      required: true,
     },
   ],
 };
