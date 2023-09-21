@@ -23,25 +23,27 @@ import { FacebookPageEmbed } from "../../components/embeds/facebookPageEmbed";
 import { TwitterFeedEmbed } from "../../components/embeds/twitterFeedEmbed";
 import { SocialButton } from "../../components/usergroup/socialButton";
 import client from "../../.tina/__generated__/client";
+import { useTina } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-const agendaStub: { time: string; text: string }[] = [
-  {
-    time: "6:30 PM",
-    text: "Kick off & Live Stream",
-  },
-  {
-    time: "6:35 PM",
-    text: "Monthly Tech News",
-  },
-  {
-    time: "7:00 PM",
-    text: "Presentation",
-  },
-  {
-    time: "8:30 PM",
-    text: "Q&A and Pizza",
-  },
-];
+// const agendaStub: { time: string; label: string }[] = [
+//   {
+//     time: "6:30 PM",
+//     label: "Kick off & Live Stream",
+//   },
+//   {
+//     time: "6:35 PM",
+//     label: "Monthly Tech News",
+//   },
+//   {
+//     time: "7:00 PM",
+//     label: "Presentation",
+//   },
+//   {
+//     time: "8:30 PM",
+//     label: "Q&A and Pizza",
+//   },
+// ];
 
 const videoCardStub = [
   {
@@ -53,7 +55,12 @@ const videoCardStub = [
 export default function NETUGPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
-  console.log(props);
+  const { data } = useTina({
+    data: props.data,
+    query: props.query,
+    variables: props.variables,
+  });
+
   return (
     <>
       <Layout>
@@ -76,54 +83,42 @@ export default function NETUGPage(
               <h2 className="text-4xl font-semibold text-sswRed">
                 About the event
               </h2>
-              <p className="text-lg">
-                Every month SSW hosts the Sydney .NET User Group, where
-                developers come together to learn about the latest technologies
-                from local and internationally renowned experts. Topics focus on
-                .NET and other Microsoft technologies (Azure, DevOps,
-                SharePoint, Power Platform, and more), full stack development
-                (Angular, React, Blazor), and mobile apps with .NET MAUI (was
-                Xamarin), as well as exciting opportunities to learn about the
-                latest industry trends and even tips on presenting from world
-                class speakers.
-              </p>
+              <div className="text-lg">
+                <TinaMarkdown content={data.userGroupPage.aboutContent} />
+              </div>
             </div>
             <div className="col-span-1">
-              <JoinGithub
-                data={{
-                  title: "Sydney .NET User Group GitHub Discussions",
-                  link: "https://google.com",
-                }}
-              />
+              <JoinGithub data={data.userGroupPage.joinGithub} />
             </div>
 
             <div className="col-span-1">
               <h2 className="text-4xl font-semibold text-sswRed">
                 When & Where
               </h2>
-              <p className="text-lg">
-                We meet on the 3rd Wednesday of every month from 6:30 pm AEST.
-              </p>
-              <p className="text-lg">
-                <a href="https://sswchapel.com.au/sydney/">SSW Chapel</a>
-              </p>
-              <GoogleMapsWrapper
-                embedHeight="150px"
-                embedWidth="100%"
-                embedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.2926044583883!2d151.2144539883753!3d-33.83056394807196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae97d5dce3c1%3A0xae8cb5f05af0e28d!2sSSW%20Sydney%20-%20Enterprise%20Software%20Development!5e0!3m2!1sen!2sau!4v1695000313184!5m2!1sen!2sau"
-              />
+              <div className="text-lg">
+                <TinaMarkdown
+                  content={data.userGroupPage.whenAndWhere?.content}
+                />
+              </div>
+              {data.userGroupPage.whenAndWhere?.googleMapsEmbedUrl && (
+                <GoogleMapsWrapper
+                  embedHeight="150px"
+                  embedWidth="100%"
+                  embedUrl={data.userGroupPage.whenAndWhere.googleMapsEmbedUrl}
+                />
+              )}
             </div>
 
             <div className="col-span-1">
               <h2 className="text-4xl font-semibold text-sswRed">Agenda</h2>
               <div>
-                {agendaStub.map((item, index) => (
+                {data.userGroupPage.agenda.map((item, index) => (
                   <div
                     className="my-4 flex flex-row rounded-sm bg-gray-50 p-2"
                     key={index}
                   >
                     <span className="border-r-1 px-4 text-lg">{item.time}</span>
-                    <span className="px-4 text-lg">{item.text}</span>
+                    <span className="px-4 text-lg">{item.label}</span>
                   </div>
                 ))}
               </div>
@@ -203,8 +198,8 @@ export default function NETUGPage(
           <Container>
             <div>
               <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">
-                {videoCardStub.map((video) => (
-                  <VideoCard {...video} theme="light" />
+                {videoCardStub.map((video, index) => (
+                  <VideoCard {...video} key={index} theme="light" />
                 ))}
               </div>
             </div>
@@ -260,18 +255,36 @@ export default function NETUGPage(
 }
 
 export const getStaticProps = async ({ params }) => {
+  const tinaProps = await client.queries.userGroupPageContentQuery({
+    relativePath: `${params.filename}.mdx`,
+  });
+
   const testimonials = await client.queries.testimonalsQuery({
     categories: "User-Group",
   });
 
   return {
-    props: { filename: params.filename, testimonials },
+    props: {
+      data: tinaProps.data,
+      query: tinaProps.query,
+      variables: tinaProps.variables,
+      filename: params.filename,
+      testimonials,
+    },
   };
 };
 
-export const getStaticPaths = () => {
+export const getStaticPaths = async () => {
+  const userGroupPages = await client.queries.userGroupPageConnection();
+
+  const paths = userGroupPages.data.userGroupPageConnection.edges.map(
+    (page) => ({
+      params: { filename: page.node._sys.filename },
+    })
+  );
+
   return {
-    paths: [{ params: { filename: "sydney" } }],
+    paths,
     fallback: true,
   };
 };

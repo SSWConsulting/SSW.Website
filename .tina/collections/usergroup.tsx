@@ -24,7 +24,30 @@ export const userGroupPageSchema: Collection = {
     },
     {
       type: "object",
-      label: "Agenda",
+      label: "Join GitHub Panel",
+      name: "joinGithub",
+      fields: Schemas.joinGithubSchema.fields,
+    },
+    {
+      type: "object",
+      label: "When & Where Panel",
+      name: "whenAndWhere",
+      fields: [
+        {
+          type: "rich-text",
+          label: "Content",
+          name: "content",
+        },
+        {
+          type: "string",
+          label: "Google Maps Embed URL",
+          name: "googleMapsEmbedUrl",
+        },
+      ],
+    },
+    {
+      type: "object",
+      label: "Agenda Panel",
       name: "agenda",
       fields: [
         {
@@ -42,9 +65,42 @@ export const userGroupPageSchema: Collection = {
     },
     {
       type: "object",
+      label: "Organizer Panel",
+      name: "organizer",
+      fields: [
+        {
+          type: "string",
+          label: "Name",
+          name: "name",
+        },
+        {
+          type: "string",
+          label: "Name URL",
+          name: "nameUrl",
+        },
+        {
+          type: "image",
+          label: "Organizer Image",
+          name: "organizerImage",
+        },
+        {
+          type: "rich-text",
+          label: "Organizer Bio",
+          name: "organizerBio",
+        },
+      ],
+    },
+    {
+      type: "object",
       label: "Latest Tech",
       name: "latestTech",
       fields: Schemas.latestTechSchema.fields,
+    },
+    {
+      type: "object",
+      label: "Join Us Panel",
+      name: "joinUs",
+      fields: Schemas.joinAsPresenterSchema.fields,
     },
   ],
 };
