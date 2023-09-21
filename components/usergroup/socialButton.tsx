@@ -1,7 +1,17 @@
 import { SiFacebook, SiLinkedin, SiMeetup, SiGithub } from "react-icons/si";
 import classNames from "classnames";
 
-export const platforms = {
+export const platformList = [
+  "facebook",
+  "github",
+  "linkedin",
+  "meetup",
+] as const;
+
+export const platforms: Record<
+  (typeof platformList)[number],
+  { icon: JSX.Element; color: string }
+> = {
   facebook: {
     icon: <SiFacebook className="text-white" size={40} />,
     color: "#4479DE",
@@ -20,7 +30,7 @@ export const platforms = {
   },
 } as const;
 
-export type PlatformType = keyof typeof platforms;
+export type PlatformType = (typeof platformList)[number];
 
 type SocialButtonProps = {
   className?: string;

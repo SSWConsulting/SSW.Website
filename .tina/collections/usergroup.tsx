@@ -1,6 +1,6 @@
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
-import { pageBlocks } from "../../components/usergroup/sections/index";
+import { communitySectionBlockSchema } from "../../components/usergroup/sections/community";
 
 import type { Collection } from "tinacms";
 
@@ -113,10 +113,7 @@ export const userGroupPageSchema: Collection = {
       list: true,
       name: "sections",
       label: "Sections",
-      ui: {
-        visualSelector: true,
-      },
-      templates: pageBlocks,
+      templates: [communitySectionBlockSchema],
     },
     {
       type: "string",

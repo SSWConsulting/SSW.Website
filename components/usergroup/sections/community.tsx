@@ -1,8 +1,9 @@
 import { FacebookPageEmbed } from "../../embeds/facebookPageEmbed";
 import { TwitterFeedEmbed } from "../../embeds/twitterFeedEmbed";
 import { Container } from "../../util/container";
-import { PlatformType, SocialButton, platforms } from "../socialButton";
+import { PlatformType, SocialButton, platformList } from "../socialButton";
 import type { Template } from "tinacms";
+import * as React from "react";
 
 type CommunitySectionProps = {
   data: {
@@ -16,9 +17,7 @@ type CommunitySectionProps = {
   };
 };
 
-export const CommunitySection = ({
-  data: { twitterUsername, facebookUsername, socialButtons },
-}: CommunitySectionProps) => {
+export const CommunitySection = ({ data }: CommunitySectionProps) => {
   return (
     <section>
       <Container>
@@ -100,7 +99,7 @@ export const communitySectionBlockSchema: Template = {
           type: "string",
           label: "Platform",
           name: "platform",
-          options: Object.keys(platforms),
+          options: platformList,
         },
       ],
     },

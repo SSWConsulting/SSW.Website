@@ -26,7 +26,6 @@ import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { Section } from "../../components/util/section";
 import { getEvents } from "../../services/server/events";
-import { CommunitySection } from "../../components/usergroup/sections/community";
 import { SectionRenderer } from "../../components/usergroup/sections/renderer";
 
 const ISR_TIME = 60 * 60; // 1 hour;
@@ -193,10 +192,10 @@ export default function NETUGPage(
           </Container> */}
         </section>
 
-        {/* <SectionRenderer
+        <SectionRenderer
           prefix="UserGroupPage"
           blocks={data.userGroupPage.sections}
-        /> */}
+        />
 
         <section>
           <Container>
@@ -228,9 +227,6 @@ export const getStaticProps = async ({ params }) => {
   const event = await getEvents(
     "$filter=fields/Enabled ne false and fields/City eq 'Sydney' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc"
   );
-
-  console.log(event[0]);
-
   return {
     props: {
       data: tinaProps.data,
