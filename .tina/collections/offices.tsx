@@ -95,11 +95,6 @@ export const officeSchema: Collection = {
     },
     {
       type: "string",
-      name: "url",
-      label: "Url",
-    },
-    {
-      type: "string",
       name: "name",
       label: "Name",
       required: true,
@@ -179,6 +174,23 @@ export const officeSchema: Collection = {
       label: "About Us",
       name: "aboutUs",
       templates: [...Schemas.pageBlocks],
+    },
+    {
+      type: "object",
+      name: "visitUs",
+      label: "Visit Us",
+      fields: [
+        {
+          type: "string",
+          name: "title",
+          label: "Title",
+        },
+        {
+          type: "string",
+          name: "url",
+          label: "Url",
+        },
+      ],
     },
     {
       type: "image",

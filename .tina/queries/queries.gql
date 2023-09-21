@@ -127,7 +127,6 @@ query officeIndexQuery($relativePath: String!) {
     officesIndex {
       office {
         ... on Offices {
-          url
           name
           streetAddress
           suburb
@@ -138,6 +137,10 @@ query officeIndexQuery($relativePath: String!) {
           phone
           days
           thumbnail
+          visitUs {
+            title
+            url
+          }
         }
       }
     }
