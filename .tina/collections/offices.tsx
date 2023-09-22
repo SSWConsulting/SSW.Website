@@ -177,8 +177,8 @@ export const officeSchema: Collection = {
     },
     {
       type: "object",
-      name: "visitUs",
-      label: "Visit Us",
+      name: "localWebsiteLink",
+      label: "Local Website Link",
       fields: [
         {
           type: "string",

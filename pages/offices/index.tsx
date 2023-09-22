@@ -68,7 +68,7 @@ export default function OfficeIndex(
                   <p className="block max-sm:clear-left">
                     <Link
                       href={
-                        office.visitUs?.url ||
+                        office.localWebsiteLink?.url ||
                         `/offices/${office.addressLocality.toLowerCase()}`
                       }
                     >
