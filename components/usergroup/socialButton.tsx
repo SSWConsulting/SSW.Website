@@ -11,7 +11,7 @@ export const platformList = [
 
 export const platforms: Record<
   (typeof platformList)[number],
-  { icon: React.FC; color: string }
+  { icon: () => JSX.Element; color: string }
 > = {
   facebook: {
     icon: () => <SiFacebook className="text-white" size={40} />,
@@ -35,8 +35,8 @@ export type PlatformType = (typeof platformList)[number];
 
 type SocialButtonProps = {
   className?: string;
-  url: string;
-  platform: PlatformType;
+  url?: string;
+  platform?: PlatformType;
   label?: string;
 };
 
@@ -52,10 +52,10 @@ export const SocialButton = ({
       className={classNames("flex items-center !no-underline", className)}
     >
       <div
-        style={{ backgroundColor: platforms[platform].color }}
+        style={{ backgroundColor: platforms[platform]?.color }}
         className="inline-flex w-full items-center rounded-lg"
       >
-        <span className="m-4 ml-8">{platforms[platform].icon}</span>
+        <span className="m-4 ml-8">{platforms[platform]?.icon()}</span>
         <span className="font-helvetica text-base font-bold text-white">
           {label}
         </span>

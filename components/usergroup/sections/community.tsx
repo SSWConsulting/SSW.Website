@@ -6,18 +6,16 @@ import type { Template } from "tinacms";
 import * as React from "react";
 
 type CommunitySectionProps = {
-  data: {
-    twitterUsername?: string;
-    facebookUsername?: string;
-    socialButtons: {
-      url?: string;
-      label?: string;
-      platform?: PlatformType;
-    }[];
-  };
+  twitterUsername?: string;
+  facebookUsername?: string;
+  socialButtons: {
+    url?: string;
+    label?: string;
+    platform?: PlatformType;
+  }[];
 };
 
-export const CommunitySection = ({ data }: CommunitySectionProps) => {
+export const CommunitySection = (props: CommunitySectionProps) => {
   return (
     <section>
       <Container>
@@ -25,38 +23,30 @@ export const CommunitySection = ({ data }: CommunitySectionProps) => {
           <h2 className="mb-12 font-helvetica text-4xl font-semibold text-sswRed">
             Community
           </h2>
-          <div className="w-full grid-cols-3 gap-6 md:grid">
+          <div className="w-full grid-cols-3 gap-6 lg:grid">
             <div className="col-span-1 h-96">
-              <TwitterFeedEmbed height={384} username="SSW_TV" />
+              <TwitterFeedEmbed
+                height={384}
+                username={props?.twitterUsername || "SSW_TV"}
+              />
             </div>
             <div className="col-span-1">
-              <FacebookPageEmbed username="SSW.page" height={384} />
+              <FacebookPageEmbed
+                className=""
+                username={props?.facebookUsername || "SSW.page"}
+                height={384}
+              />
             </div>
             <div className="col-span-1">
-              <SocialButton
-                url="https://github.com/netusergroup/sydney-user-group/discussions"
-                platform="github"
-                label="Join GitHub Discussion"
-                className="mb-4"
-              />
-              <SocialButton
-                url="https://www.facebook.com/groups/NetUG/"
-                platform="facebook"
-                label="Join Facebook Group"
-                className="mb-4"
-              />
-              <SocialButton
-                url="https://www.linkedin.com/groups/1520317/"
-                platform="linkedin"
-                label="Join LinkedIn Group"
-                className="mb-4"
-              />
-              <SocialButton
-                url="https://www.meetup.com/sydney-net-user-group/join/"
-                platform="meetup"
-                label="Join Meetup Group"
-                className="mb-4"
-              />
+              {props?.socialButtons?.map((button, index) => (
+                <SocialButton
+                  key={index}
+                  url={button.url}
+                  platform={button.platform}
+                  label={button.label}
+                  className="mb-4"
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -99,9 +89,14 @@ export const communitySectionBlockSchema: Template = {
           type: "string",
           label: "Platform",
           name: "platform",
-          options: platformList,
+          options: platformList.map((e) => ({ label: e, value: e })),
         },
       ],
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.label };
+        },
+      },
     },
   ],
 };

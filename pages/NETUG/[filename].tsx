@@ -10,14 +10,6 @@ import {
 import { Layout } from "../../components/layout";
 import { UserGroupHeader } from "../../components/usergroup/sections/header";
 import { Container } from "../../components/util/container";
-import { TicketForm } from "../../components/usergroup/ticketForm";
-import {
-  LuGraduationCap,
-  LuMessagesSquare,
-  LuPizza,
-  LuSmile,
-} from "react-icons/lu";
-import { SponsorCard } from "../../components/usergroup/sponsorCard";
 import VideoCards from "../../components/util/videoCards";
 import client from "../../.tina/__generated__/client";
 import { useTina } from "tinacms/dist/react";
@@ -27,6 +19,7 @@ import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { Section } from "../../components/util/section";
 import { getEvents } from "../../services/server/events";
 import { SectionRenderer } from "../../components/usergroup/sections/renderer";
+import { ActionSection } from "../../components/usergroup/sections/action";
 
 const ISR_TIME = 60 * 60; // 1 hour;
 
@@ -136,43 +129,6 @@ export default function NETUGPage(
           </section>
         </Container>
 
-        <section className="bg-gray-900 ">
-          <Container className="py-12">
-            <div className="flex-row justify-between md:flex">
-              <div className="text-white">
-                <div className="pb-8">
-                  <h3 className="text-4xl font-medium">
-                    I'm Sold... What's Next?
-                  </h3>
-                  <span className="text-base font-normal text-gray-50">
-                    RSVP to the event and receive NETUG updates!
-                  </span>
-                </div>
-                <ul>
-                  <li className="py-3 font-semibold">
-                    <LuGraduationCap size={40} className="mr-5 inline" />
-                    Learn latest Microsoft tech
-                  </li>
-                  <li className="py-3 font-semibold">
-                    <LuMessagesSquare size={40} className="mr-5 inline" />
-                    Build contacts
-                  </li>
-                  <li className="py-3 font-semibold">
-                    <LuSmile size={40} className="mr-5 inline" />
-                    Socialize
-                  </li>
-                  <li className="py-3 font-semibold">
-                    <LuPizza size={40} className="mr-5 inline" />
-                    Free pizza and drinks
-                  </li>
-                </ul>
-                <SponsorCard className="my-4" />
-              </div>
-              <TicketForm />
-            </div>
-          </Container>
-        </section>
-
         <section className="child:!font-helvetica">
           <VideoCards
             cardProps={videoCardStub}
@@ -193,7 +149,7 @@ export default function NETUGPage(
         </section>
 
         <SectionRenderer
-          prefix="UserGroupPage"
+          prefix="UserGroupPageSections"
           blocks={data.userGroupPage.sections}
         />
 
