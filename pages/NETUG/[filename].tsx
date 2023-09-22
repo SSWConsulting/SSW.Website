@@ -68,7 +68,7 @@ export default function NETUGPage(
               <h2 className="font-helvetica text-4xl font-medium text-sswRed">
                 About the event
               </h2>
-              <div className="text-lg">
+              <div className="child-p:text-lg">
                 <TinaMarkdown content={data.userGroupPage.aboutContent} />
               </div>
             </div>
@@ -80,7 +80,7 @@ export default function NETUGPage(
               <h2 className="font-helvetica text-4xl font-medium text-sswRed">
                 When & Where
               </h2>
-              <div className="text-lg">
+              <div className="child-p:text-lg">
                 <TinaMarkdown
                   content={data.userGroupPage.whenAndWhere?.content}
                 />
@@ -206,6 +206,17 @@ export default function NETUGPage(
               tagline="SSW has made clients happy all over the world and we are proud to
               share some of these experiences with you."
             />
+          </Container>
+        </section>
+
+        <section>
+          <Container className="text-center">
+            <h2 className="font-helvetica text-4xl font-medium text-sswRed">
+              About the event
+            </h2>
+            <div className="child-p:text-lg">
+              <TinaMarkdown content={data.userGroupPage.aboutContent} />
+            </div>
           </Container>
         </section>
 

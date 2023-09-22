@@ -46,7 +46,10 @@ export const Organizer = ({ data }: { data: OrganizerProps }) => {
           </div>
         </div>
       </div>
-      <div data-tina-field={tinaField(data, "content")}>
+      <div
+        data-tina-field={tinaField(data, "content")}
+        className="child-p:text-lg"
+      >
         <TinaMarkdown content={data?.content} />
       </div>
     </div>

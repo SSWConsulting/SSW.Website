@@ -1,5 +1,6 @@
 import { SiFacebook, SiLinkedin, SiMeetup, SiGithub } from "react-icons/si";
 import classNames from "classnames";
+import * as React from "react";
 
 export const platformList = [
   "facebook",
@@ -10,22 +11,22 @@ export const platformList = [
 
 export const platforms: Record<
   (typeof platformList)[number],
-  { icon: JSX.Element; color: string }
+  { icon: React.FC; color: string }
 > = {
   facebook: {
-    icon: <SiFacebook className="text-white" size={40} />,
+    icon: () => <SiFacebook className="text-white" size={40} />,
     color: "#4479DE",
   },
   github: {
-    icon: <SiGithub className="text-white" size={40} />,
+    icon: () => <SiGithub className="text-white" size={40} />,
     color: "#212121",
   },
   linkedin: {
-    icon: <SiLinkedin className="text-white" size={40} />,
+    icon: () => <SiLinkedin className="text-white" size={40} />,
     color: "#326C9C",
   },
   meetup: {
-    icon: <SiMeetup className="text-white" size={40} />,
+    icon: () => <SiMeetup className="text-white" size={40} />,
     color: "#E35063",
   },
 } as const;
