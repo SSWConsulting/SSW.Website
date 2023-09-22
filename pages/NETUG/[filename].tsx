@@ -33,7 +33,9 @@ export default function NETUGPage(
     variables: props.variables,
   });
 
-  console.log(props.speaker);
+  const speakerDescription = props.speaker?.PresenterShortDescription.split(
+    "<br>"
+  )[0].replace("<div>​</div><div><div>", "");
 
   return (
     <>
@@ -62,17 +64,24 @@ export default function NETUGPage(
               </div>
             </div>
             <div className="col-span-1">
-              <h2 className="font-helvetica text-4xl font-medium text-sswRed">
-                Presenter
-              </h2>
-              <Organizer
-                data={{
-                  profileImg: props.speaker?.PresenterProfileImage?.Url,
-                  name: props.speaker?.Title,
-                  profileLink: props.speaker?.PresenterProfileLink,
-                }}
-                stringContent={props.speaker?.PresenterShortDescription}
-              />
+              {props.speaker && (
+                <>
+                  <h2 className="font-helvetica text-4xl font-medium text-sswRed">
+                    Presenter
+                  </h2>
+                  <div className="pb-3">
+                    <Organizer
+                      data={{
+                        profileImg: props.speaker?.PresenterProfileImage?.Url,
+                        name: props.speaker?.Title,
+                        profileLink: props.speaker?.PresenterProfileLink,
+                      }}
+                      stringContent={speakerDescription}
+                    />
+                  </div>
+                </>
+              )}
+
               <JoinGithub
                 data={data.userGroupPage.joinGithub}
                 className="pt-5"
@@ -104,7 +113,7 @@ export default function NETUGPage(
               <div>
                 {data.userGroupPage.agenda.map((item, index) => (
                   <div
-                    className="my-4 flex flex-row rounded-sm bg-gray-50 p-2"
+                    className="my-4 flex flex-row rounded-md border-1 bg-gray-50 p-2"
                     key={index}
                   >
                     <span className="border-r-1 px-4 text-lg">{item.time}</span>
@@ -187,7 +196,6 @@ export const getStaticProps = async ({ params }) => {
   );
 
   const speakers = await getSpeakersInfoFromEvent(event[0]);
-  console.log(speakers);
 
   return {
     props: {
