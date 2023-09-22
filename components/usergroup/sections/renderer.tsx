@@ -1,9 +1,11 @@
 import { ActionSection } from "./action";
 import { CommunitySection } from "./community";
+import { VideosSection } from "./videos";
 
 const componentMap = {
   ActionSection,
   CommunitySection,
+  VideosSection,
 };
 
 export const SectionRenderer = ({ prefix, blocks }) => {

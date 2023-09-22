@@ -8,13 +8,16 @@ import {
 import { SponsorCard } from "../sponsorCard";
 import { Container } from "../../util/container";
 import type { Template } from "tinacms";
+import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 type ActionSectionProps = {
   heading?: string;
+  content?: TinaMarkdownContent;
   listItems?: {
     icon: keyof typeof iconMap;
     text: string;
   }[];
+  eventSponsors?: string[];
 };
 
 const iconMap = {
@@ -37,18 +40,16 @@ const iconMap = {
 } as const;
 
 export const ActionSection = (props: ActionSectionProps) => {
-  console.log(props);
-
   return (
     <section className="bg-gray-900 ">
       <Container className="py-12">
         <div className="flex-row justify-between md:flex">
           <div className="text-white">
             <div className="pb-8">
-              <h3 className="text-4xl font-medium">I'm Sold... What's Next?</h3>
-              <span className="text-base font-normal text-gray-50">
-                RSVP to the event and receive NETUG updates!
-              </span>
+              <h3 className="text-4xl font-medium">{props.heading}</h3>
+              <div className="child-p:text-base child-p:font-normal child-p:text-gray-50">
+                <TinaMarkdown content={props.content} />
+              </div>
             </div>
             <ul>
               {props?.listItems?.map((item, index) => (
@@ -61,7 +62,13 @@ export const ActionSection = (props: ActionSectionProps) => {
                 </li>
               ))}
             </ul>
-            <SponsorCard className="my-4" />
+            <SponsorCard
+              className="my-4"
+              urls={props.eventSponsors.map((sponsor) => ({
+                src: sponsor,
+                label: "Sponsor image",
+              }))}
+            />
           </div>
           <TicketForm />
         </div>

@@ -10,7 +10,6 @@ import {
 import { Layout } from "../../components/layout";
 import { UserGroupHeader } from "../../components/usergroup/sections/header";
 import { Container } from "../../components/util/container";
-import VideoCards from "../../components/util/videoCards";
 import client from "../../.tina/__generated__/client";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -19,16 +18,9 @@ import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { Section } from "../../components/util/section";
 import { getEvents } from "../../services/server/events";
 import { SectionRenderer } from "../../components/usergroup/sections/renderer";
-import { ActionSection } from "../../components/usergroup/sections/action";
+import { VideosSection } from "../../components/usergroup/sections/videos";
 
 const ISR_TIME = 60 * 60; // 1 hour;
-
-const videoCardStub = [
-  {
-    link: "https://www.youtube.com/watch?v=QYTa5aHdhh0",
-    title: "Launch your development career into space",
-  },
-];
 
 export default function NETUGPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -128,25 +120,6 @@ export default function NETUGPage(
             </div>
           </section>
         </Container>
-
-        <section className="child:!font-helvetica">
-          <VideoCards
-            cardProps={videoCardStub}
-            channelLink="https://www.youtube.com/@SSWTV"
-            defaultChannelLink="https://www.youtube.com/@SSWTV"
-            theme="light"
-            className="child:!font-helvetica"
-          />
-          {/* <Container>
-            <div>
-              <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">
-                {videoCardStub.map((video, index) => (
-                  <VideoCard {...video} key={index} theme="light" />
-                ))}
-              </div>
-            </div>
-          </Container> */}
-        </section>
 
         <SectionRenderer
           prefix="UserGroupPageSections"

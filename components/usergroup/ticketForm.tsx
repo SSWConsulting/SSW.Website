@@ -27,7 +27,8 @@ export const TicketForm = () => {
         }}
         validationSchema={validationSchema}
         onSubmit={(values: FormValues) => {
-          console.log(values);
+          // Process form submission here
+          console.table(values);
         }}
       >
         <Form className="flex flex-col justify-center">

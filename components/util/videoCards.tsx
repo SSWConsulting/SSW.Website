@@ -8,8 +8,8 @@ import { Section } from "./section";
 import classNames from "classnames";
 
 export type VideoCardType = {
-  title: string;
-  link: string;
+  title?: string;
+  link?: string;
 };
 
 export type VideoCardProps = {
