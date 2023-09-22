@@ -46,34 +46,33 @@ export const UserGroupHeader = ({
           <span className="mb-4 text-lg">
             With <a href={presenter.url}>{presenter.name}</a>
           </span>
-          {trailerUrl && (
-            <a href={trailerUrl}>
-              <span className="pt-4">
-                <Image
-                  className="mr-1 inline rounded-md"
-                  src="https://img.youtube.com/vi/FNMtmBJAZ_M/mqdefault.jpg"
-                  width={100}
-                  height={100}
-                  alt="Play button"
-                />
-                <BiVideo className="mx-2 inline" />
-                Watch the trailer
-              </span>
-            </a>
-          )}
-          <UtilityButton
-            link={registerUrl}
-            uncentred
-            noAnimate
-            buttonText="Register for free"
-          />
+          <div className="mt-8 flex-row md:flex">
+            <UtilityButton
+              className="!mt-0"
+              link={registerUrl}
+              uncentred
+              noAnimate
+              buttonText="Register for free"
+            />
+            {trailerUrl && (
+              <a
+                href={trailerUrl}
+                className="flex flex-row items-center max-md:pt-5 md:justify-center md:pl-4"
+              >
+                <span className="text-lg">
+                  <BiVideo className="mx-2 inline" />
+                  Watch the trailer
+                </span>
+              </a>
+            )}
+          </div>
         </div>
         {presenter.image && (
           <div className="flex shrink-0 flex-col justify-end">
             <Image
               className="max-w-full align-bottom"
               src={presenter.image}
-              width={600}
+              width={500}
               height={600}
               alt={`Image of ${presenter.name}`}
             />

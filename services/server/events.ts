@@ -123,6 +123,29 @@ export const getSpeakersInfo = async (ids?: number[], emails?: string[]) => {
   return speakers;
 };
 
+export const getSpeakersInfoFromEvent = async (
+  event: EventInfo
+): Promise<SpeakerInfo[]> => {
+  const ids: number[] = [];
+
+  if (event?.ExternalPresenters?.length) {
+    const presenterIds = event.ExternalPresenters.map(
+      (presenter) => presenter.LookupId
+    );
+    ids.push(...presenterIds);
+  }
+
+  const emails: string[] = [];
+
+  if (event?.InternalPresenters?.results?.length) {
+    emails.push(...event.InternalPresenters.results.map((i) => i.EMail));
+  }
+
+  const speakers = await getSpeakersInfo(ids, emails);
+
+  return speakers;
+};
+
 export type BookingFormSubmissionData = {
   Name: string;
   Topic: string;
@@ -176,6 +199,7 @@ export interface LiveStreamWidgetInfo extends LiveStreamBannerInfo {
 }
 
 export interface EventInfo extends LiveStreamWidgetInfo {
+  Abstract: string;
   Category_f5a9cf4c_x002d_8228_x00: string; // Category, SharePoint formatted name
   CalendarType: string;
   Url: {

@@ -16,9 +16,11 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { Section } from "../../components/util/section";
-import { getEvents } from "../../services/server/events";
+import {
+  getEvents,
+  getSpeakersInfoFromEvent,
+} from "../../services/server/events";
 import { SectionRenderer } from "../../components/usergroup/sections/renderer";
-import { VideosSection } from "../../components/usergroup/sections/videos";
 
 const ISR_TIME = 60 * 60; // 1 hour;
 
@@ -30,6 +32,8 @@ export default function NETUGPage(
     query: props.query,
     variables: props.variables,
   });
+
+  console.log(props.speaker);
 
   return (
     <>
@@ -51,14 +55,28 @@ export default function NETUGPage(
           <section className="grid-cols-3 gap-10 md:grid">
             <div className="col-span-2">
               <h2 className="font-helvetica text-4xl font-medium text-sswRed">
-                About the event
+                Event Description
               </h2>
-              <div className="child-p:text-lg">
-                <TinaMarkdown content={data.userGroupPage.aboutContent} />
+              <div className="whitespace-pre-wrap text-lg">
+                {props.event?.Abstract}
               </div>
             </div>
             <div className="col-span-1">
-              <JoinGithub data={data.userGroupPage.joinGithub} />
+              <h2 className="font-helvetica text-4xl font-medium text-sswRed">
+                Presenter
+              </h2>
+              <Organizer
+                data={{
+                  profileImg: props.speaker?.PresenterProfileImage?.Url,
+                  name: props.speaker?.Title,
+                  profileLink: props.speaker?.PresenterProfileLink,
+                }}
+                stringContent={props.speaker?.PresenterShortDescription}
+              />
+              <JoinGithub
+                data={data.userGroupPage.joinGithub}
+                className="pt-5"
+              />
             </div>
 
             <div className="col-span-1">
@@ -126,6 +144,17 @@ export default function NETUGPage(
           blocks={data.userGroupPage.sections}
         />
 
+        <section className="bg-gray-900 py-8">
+          <Container className="text-center">
+            <h2 className="pb-3 font-helvetica text-4xl font-medium text-white">
+              What is the .NET User Group?
+            </h2>
+            <div className="text-white child-p:text-lg">
+              <TinaMarkdown content={data.userGroupPage.aboutContent} />
+            </div>
+          </Container>
+        </section>
+
         <section>
           <Container>
             <TestimonialRow
@@ -135,17 +164,6 @@ export default function NETUGPage(
               tagline="SSW has made clients happy all over the world and we are proud to
               share some of these experiences with you."
             />
-          </Container>
-        </section>
-
-        <section>
-          <Container className="text-center">
-            <h2 className="font-helvetica text-4xl font-medium text-sswRed">
-              About the event
-            </h2>
-            <div className="child-p:text-lg">
-              <TinaMarkdown content={data.userGroupPage.aboutContent} />
-            </div>
           </Container>
         </section>
 
@@ -162,11 +180,15 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.mdx`,
   });
 
-  const testimonialsResult = await getTestimonialsByCategories(["User-Group"]);
+  const testimonialsResult = await getTestimonialsByCategories(["User Group"]);
 
   const event = await getEvents(
-    "$filter=fields/Enabled ne false and fields/City eq 'Sydney' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc"
+    `$filter=fields/Enabled ne false and fields/EndDateTime lt '${new Date().toISOString()}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc`
   );
+
+  const speakers = await getSpeakersInfoFromEvent(event[0]);
+  console.log(speakers);
+
   return {
     props: {
       data: tinaProps.data,
@@ -175,6 +197,7 @@ export const getStaticProps = async ({ params }) => {
       filename: params.filename,
       testimonialsResult,
       event: event[0] || null,
+      speaker: speakers[0] || null,
     },
     revalidate: ISR_TIME,
   };

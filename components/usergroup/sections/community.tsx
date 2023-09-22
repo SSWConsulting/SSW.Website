@@ -32,7 +32,7 @@ export const CommunitySection = (props: CommunitySectionProps) => {
             </div>
             <div className="col-span-1">
               <FacebookPageEmbed
-                className=""
+                className="mx-auto"
                 username={props?.facebookUsername || "SSW.page"}
                 height={384}
               />

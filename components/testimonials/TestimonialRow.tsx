@@ -8,6 +8,7 @@ import {
 } from "../../helpers/getTestimonials";
 import { Rating } from "../util/consulting/rating";
 import { Container } from "../util/container";
+import classNames from "classnames";
 
 const defaultAvatar = "/images/thumbs/avatar-thumbnail.png";
 
@@ -76,16 +77,16 @@ const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
         />
       </div>
       <Rating className="mx-auto mt-8" rating={testimonial?.rating} />
-      <p className="mt-4 min-h-24">
+      <p className={classNames("mt-4", testimonial?.company && "min-h-24")}>
         {testimonial?.name}
         {testimonial?.company && (
           <>
             {", "}
-            <span className="font-semibold">{testimonial?.company}</span>
+            <span className="mb-2 font-semibold">{testimonial?.company}</span>
           </>
         )}
       </p>
-      <div className="mt-2 text-sm text-gray-900">
+      <div className="text-sm text-gray-900">
         <TinaMarkdown content={testimonial?.body} />
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { Field, Form, Formik } from "formik";
 import { object, string } from "yup";
+import classNames from "classnames";
 
 interface FormValues {
   format: "online" | "inPerson";
@@ -15,9 +16,18 @@ const validationSchema = object({
   phone: string().required("Please enter your phone number"),
 });
 
-export const TicketForm = () => {
+type TicketFormProps = {
+  className?: string;
+};
+
+export const TicketForm = ({ className }: TicketFormProps) => {
   return (
-    <div className="max-w-md grow rounded-md bg-white p-10 font-helvetica">
+    <div
+      className={classNames(
+        "max-w-md grow rounded-md bg-white p-10 font-helvetica",
+        className
+      )}
+    >
       <Formik
         initialValues={{
           format: "",
@@ -28,7 +38,7 @@ export const TicketForm = () => {
         validationSchema={validationSchema}
         onSubmit={(values: FormValues) => {
           // Process form submission here
-          console.table(values);
+          values.email;
         }}
       >
         <Form className="flex flex-col justify-center">

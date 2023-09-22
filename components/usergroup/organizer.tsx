@@ -13,7 +13,13 @@ type OrganizerProps = {
   content?: TinaMarkdownContent;
 };
 
-export const Organizer = ({ data }: { data: OrganizerProps }) => {
+export const Organizer = ({
+  data,
+  stringContent,
+}: {
+  data: OrganizerProps;
+  stringContent?: string;
+}) => {
   return (
     <div className="flex flex-col gap-5 font-helvetica">
       <div className="flex flex-row items-center gap-2">
@@ -46,11 +52,11 @@ export const Organizer = ({ data }: { data: OrganizerProps }) => {
           </div>
         </div>
       </div>
-      <div
-        data-tina-field={tinaField(data, "content")}
-        className="child-p:text-lg"
-      >
-        <TinaMarkdown content={data?.content} />
+      <div data-tina-field={tinaField(data, "content")} className="text-lg">
+        {data?.content && <TinaMarkdown content={data?.content} />}
+        {stringContent && (
+          <div dangerouslySetInnerHTML={{ __html: stringContent }} />
+        )}
       </div>
     </div>
   );

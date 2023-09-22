@@ -46,14 +46,19 @@ export const ActionSection = (props: ActionSectionProps) => {
         <div className="flex-row justify-between md:flex">
           <div className="text-white">
             <div className="pb-8">
-              <h3 className="text-4xl font-medium">{props.heading}</h3>
-              <div className="child-p:text-base child-p:font-normal child-p:text-gray-50">
+              <h3 className="font-helvetica text-4xl font-medium">
+                {props.heading}
+              </h3>
+              <div className="child:font-helvetica child-p:text-base child-p:font-normal child-p:text-gray-50">
                 <TinaMarkdown content={props.content} />
               </div>
             </div>
             <ul>
               {props?.listItems?.map((item, index) => (
-                <li className="py-3 font-semibold" key={index}>
+                <li
+                  className="py-3 font-helvetica text-lg font-semibold"
+                  key={index}
+                >
                   {iconMap[item.icon]?.icon({
                     size: 40,
                     className: "mr-5 inline",
@@ -63,14 +68,14 @@ export const ActionSection = (props: ActionSectionProps) => {
               ))}
             </ul>
             <SponsorCard
-              className="my-4"
+              className="mb-4 mt-6"
               urls={props.eventSponsors.map((sponsor) => ({
                 src: sponsor,
                 label: "Sponsor image",
               }))}
             />
           </div>
-          <TicketForm />
+          <TicketForm className="max-md:mx-auto" />
         </div>
       </Container>
     </section>
