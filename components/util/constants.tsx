@@ -88,6 +88,21 @@ export const FORM_INPUT = {
   ReferralSource: "referralSource",
 };
 
+//FORMS INPUTS
+export const FORM_INPUT_IDS = {
+  FullName: "bookingForm-fullName",
+  Email: "bookingForm-email",
+  Phone: "bookingForm-phone",
+  Location: "bookingForm-location",
+  States: "bookingForm-states",
+  Note: "bookingForm-note",
+  Company: "bookingForm-company",
+  ReferredCompany: "bookingForm-referredCompany",
+  ReferredFullName: "bookingForm-referredFullName",
+  ReferredEmail: "bookingForm-referredEmail",
+  ReferralSource: "bookingForm-referralSource",
+};
+
 //Australian all States list
 export const AustralianStatesList = [
   {

@@ -44,4 +44,6 @@ yarn-error.log*
 
 # Partytown lib files
 /public/~partytown
-
+/test-results/
+/playwright-report/
+/playwright/.cache/

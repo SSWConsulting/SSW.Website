@@ -13,6 +13,7 @@ import {
   AustralianStatesList,
   CONTACT_FORM_TITLE,
   FORM_INPUT,
+  FORM_INPUT_IDS,
   FormCountriesList,
   ReferralSourceList,
   STATE_DEFAULT_VALUE,
@@ -177,18 +178,21 @@ export const BookingForm = (props) => {
                     label={ACTIVE_INPUT.FullName}
                     type="text"
                     {...getCommonFieldProps(FORM_INPUT.FullName)}
+                    id={FORM_INPUT_IDS.FullName}
                   />
 
                   <FormGroupInput
                     label={ACTIVE_INPUT.Email}
                     type="email"
                     {...getCommonFieldProps(FORM_INPUT.Email)}
+                    id={FORM_INPUT_IDS.Email}
                   />
 
                   <FormGroupInput
                     label={ACTIVE_INPUT.Phone}
                     type="phone"
                     {...getCommonFieldProps(FORM_INPUT.Phone)}
+                    id={FORM_INPUT_IDS.Phone}
                   />
 
                   <FormGroupSelect
@@ -198,6 +202,7 @@ export const BookingForm = (props) => {
                       setCountry(e.currentTarget.value);
                       handleActiveInputLabel(field.name, e.currentTarget.value);
                     }}
+                    id={FORM_INPUT_IDS.Location}
                   >
                     <option className="hidden" value="">
                       {locationDefaultOption.value}
@@ -217,6 +222,7 @@ export const BookingForm = (props) => {
                     <FormGroupSelect
                       label={ACTIVE_INPUT.States}
                       {...getCommonFieldProps(statesDefaultOption.name)}
+                      id={FORM_INPUT_IDS.States}
                     >
                       <option className="hidden" value="">
                         {statesDefaultOption.value}
@@ -242,12 +248,14 @@ export const BookingForm = (props) => {
                   <FormGroupInput
                     label={ACTIVE_INPUT.Company}
                     {...getCommonFieldProps(FORM_INPUT.Company)}
+                    id={FORM_INPUT_IDS.Company}
                   />
 
                   <FormGroupSelect
                     label={ACTIVE_INPUT.ReferralSource}
                     name={FORM_INPUT.ReferralSource}
                     {...getCommonFieldProps(referralSourcesDefaultOption.name)}
+                    id={FORM_INPUT_IDS.ReferralSource}
                   >
                     <option className="hidden" value="">
                       How did you hear about us?
@@ -271,6 +279,7 @@ export const BookingForm = (props) => {
                     rows={4}
                     maxLength={2000}
                     {...getCommonFieldProps(FORM_INPUT.Note)}
+                    id={FORM_INPUT_IDS.Note}
                   />
 
                   <div className="mb-4 w-full overflow-x-auto">
@@ -292,6 +301,7 @@ export const BookingForm = (props) => {
                   <div className="flex justify-end">
                     <button
                       type="submit"
+                      id="bookingForm-submit"
                       disabled={loading}
                       className={`done flex w-full sm:w-auto ${
                         loading
