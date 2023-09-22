@@ -122,5 +122,11 @@ export const userGroupPageSchema: Collection = {
       name: "city",
       required: true,
     },
+    {
+      type: "image",
+      list: true,
+      label: "Technologies",
+      name: "technologyImgs",
+    },
   ],
 };
