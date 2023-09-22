@@ -60,6 +60,16 @@ export const companySchema: Collection = {
       label: "Show Testimonials",
     },
     {
+      type: "boolean",
+      name: "showAllTestimonials",
+      label: "Show All Testimonials",
+    },
+    {
+      type: "boolean",
+      name: "HideInternshipTestimonials",
+      label: "Hide Internship Testimonials from All",
+    },
+    {
       type: "object",
       label: "Testimonial Categories",
       name: "testimonialCategories",

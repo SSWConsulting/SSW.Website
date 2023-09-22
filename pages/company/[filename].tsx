@@ -2,6 +2,7 @@ import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
+import { TestimonialsList } from "../../components/blocks";
 import { Blocks } from "../../components/blocks-renderer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { BuiltOnAzure } from "../../components/blocks/builtOnAzure";
@@ -80,27 +81,27 @@ export default function CompanyPage(
               {(data.company.sidebar ||
                 data.company.sidebarTestimonial ||
                 data.company.showRdPanel) && (
-                  <>
-                    <div className="max-w-sm shrink pl-16">
-                      {data.company.sidebar && (
-                        <TinaMarkdown
-                          content={data.company.sidebar}
-                          components={componentRenderer}
-                        />
-                      )}
-                      {data.company.sidebarTestimonial && (
-                        <TestimonialPanel
-                          testimonial={{
-                            name: data.company.sidebarTestimonial.name,
-                            company: data.company.sidebarTestimonial.company,
-                            body: data.company.sidebarTestimonial.body,
-                          }}
-                        />
-                      )}
-                      {data.company.showRdPanel && <RDPanel />}
-                    </div>
-                  </>
-                )}
+                <>
+                  <div className="max-w-sm shrink pl-16">
+                    {data.company.sidebar && (
+                      <TinaMarkdown
+                        content={data.company.sidebar}
+                        components={componentRenderer}
+                      />
+                    )}
+                    {data.company.sidebarTestimonial && (
+                      <TestimonialPanel
+                        testimonial={{
+                          name: data.company.sidebarTestimonial.name,
+                          company: data.company.sidebarTestimonial.company,
+                          body: data.company.sidebarTestimonial.body,
+                        }}
+                      />
+                    )}
+                    {data.company.showRdPanel && <RDPanel />}
+                  </div>
+                </>
+              )}
             </section>
           )}
 
@@ -128,6 +129,14 @@ export default function CompanyPage(
                 </div>
               </Container>
             </Section>
+          )}
+          {data.company.showAllTestimonials && (
+            <TestimonialsList
+              data={{
+                hideInternshipTestimonials:
+                  data.company.HideInternshipTestimonials,
+              }}
+            />
           )}
           <Section>
             <BuiltOnAzure data={{ backgroundColor: "default" }} />
