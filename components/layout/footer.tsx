@@ -73,7 +73,7 @@ const DeploymentInfo = () => {
 
   return (
     <div className="text-center sm:text-left">
-      Our website is under{" "}
+      This website is under{" "}
       <Link href="https://www.ssw.com.au/rules/rules-to-better-websites-deployment">
         CONSTANT CONTINUOUS DEPLOYMENT
       </Link>
