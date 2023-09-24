@@ -28,8 +28,10 @@ body:
   - type: input
     id: CRM
     attributes:
-      label: "3. Consulting Service in CRM:"
-      description: Link the matching [consulting service from CRM](https://ssw.crm6.dynamics.com/main.aspx?appid=05daa2a9-8768-446e-b9d3-580c8a6f9b8b&pagetype=entitylist&etn=ssw_consultingservice&viewid=b400b0b8-363d-404b-bbd5-d56343c21d1f&viewType=1039). If there is no existing one for this page, you should create one. This is because each consulting page on the website needs a matching consulting service record in CRM. If you are not requesting a consulting page, write N/A.
+      label: "3. CRM Record (only for consulting service pages):"
+      description: "Link the matching [consulting service from CRM](https://ssw.crm6.dynamics.com/main.aspx?appid=05daa2a9-8768-446e-b9d3-580c8a6f9b8b&pagetype=entitylist&etn=ssw_consultingservice&viewid=b400b0b8-363d-404b-bbd5-d56343c21d1f&viewType=1039). If there is no existing one for your page yet, you must create one. Make sure your page has been approved by a [Consulting Service Master](https://ssw.crm6.dynamics.com/main.aspx?appid=05daa2a9-8768-446e-b9d3-580c8a6f9b8b&pagetype=entityrecord&etn=ssw_responsibility&id=6e5f9560-bb52-ee11-be6f-6045bd3df5b0) and put them in the 'Approved by' field.  
+      
+      If you are not requesting a consulting page, write N/A."
       placeholder: "{{ CONSULTING SERVICE URL FROM CRM }}"
       value:
     validations:
