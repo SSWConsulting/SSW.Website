@@ -46,9 +46,7 @@ const CopyrightInfo = () => {
           TERMS AND CONDITIONS
         </Link>
         <Divider />
-        <Link href="https://www.ssw.com.au/privacy">
-          PRIVACY
-        </Link>
+        <Link href="https://www.ssw.com.au/privacy">PRIVACY</Link>
       </div>
     </>
   );
