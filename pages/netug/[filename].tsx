@@ -237,7 +237,6 @@ export const getStaticPaths = async () => {
 
   const paths = userGroupPages.data.userGroupPageConnection.edges.map(
     (page) => {
-      console.log(page.node._sys.filename);
       return {
         params: { filename: page.node._sys.filename },
       };
