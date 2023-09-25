@@ -51,7 +51,7 @@ export default function NETUGPage(
               url: props.event?.PresenterProfileUrl?.Url,
               image: props.speaker?.TorsoImage?.Url || "",
             }}
-            trailerUrl="https://www.youtube.com/watch?v=FNMtmBJAZ_M"
+            trailerUrl={props.event?.TrailerUrl?.Url}
             registerUrl="https://www.meetup.com/en-AU/sydney-net-user-group/"
           />
 
