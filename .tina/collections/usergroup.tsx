@@ -61,6 +61,11 @@ export const userGroupPageSchema: Collection = {
               name: "label",
             },
           ],
+          ui: {
+            itemProps: (item) => {
+              return { label: item?.label };
+            },
+          },
           list: true,
         },
         {
