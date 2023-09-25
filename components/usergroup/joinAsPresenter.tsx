@@ -44,11 +44,14 @@ type JoinAsPresenterProps = {
 
 export const JoinAsPresenter = ({ data }: JoinAsPresenterProps) => {
   return (
-    <div className="flex flex-row items-center gap-3 font-helvetica">
-      <div data-tina-field={tinaField(data, "img")}>
+    <div className="flex-row items-center gap-3 font-helvetica lg:flex">
+      <div
+        data-tina-field={tinaField(data, "img")}
+        className="child:max-lg:mx-auto"
+      >
         <Avatar img={data?.img} />
       </div>
-      <div className="text-center">
+      <div className="text-center max-lg:pt-4">
         <div className="text-xl leading-7">Join us as a Presenter</div>
         <Link
           href={data?.link ?? "/"}

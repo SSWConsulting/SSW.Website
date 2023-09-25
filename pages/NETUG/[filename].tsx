@@ -198,11 +198,10 @@ export const getStaticProps = async ({ params }) => {
   const testimonialsResult = await getTestimonialsByCategories(["User Group"]);
 
   const event = await getEvents(
-    `$filter=fields/Enabled ne false and fields/EndDateTime lt '${new Date().toISOString()}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc`
+    `$filter=fields/Enabled ne false and fields/EndDateTime gt '${new Date().toISOString()}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc`
   );
 
   const speakers = await getSpeakersInfoFromEvent(event[0]);
-  console.log(speakers);
 
   return {
     props: {

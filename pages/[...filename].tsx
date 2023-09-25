@@ -74,12 +74,14 @@ export default function HomePage(
 }
 
 export const getStaticProps = async ({ params }) => {
+  const relativePath = params.filename.join("/");
+
   const tinaProps = await client.queries.contentQuery({
-    relativePath: `${params.filename}.mdx`,
+    relativePath: `${relativePath}.mdx`,
   });
 
   if (tinaProps.data.page.seo && !tinaProps.data.page.seo.canonical) {
-    tinaProps.data.page.seo.canonical = `${tinaProps.data.global.header.url}${params.filename}`;
+    tinaProps.data.page.seo.canonical = `${tinaProps.data.global.header.url}${relativePath}`;
   }
 
   return {
@@ -107,9 +109,11 @@ export const getStaticPaths = async () => {
   }
 
   return {
-    paths: allPagesListData.data.pageConnection.edges.map((page) => ({
-      params: { filename: page.node._sys.filename },
-    })),
+    paths: allPagesListData.data.pageConnection.edges.map((page) => {
+      return {
+        params: { filename: page.node._sys.breadcrumbs },
+      };
+    }),
     fallback: false,
   };
 };

@@ -34,7 +34,10 @@ export const UserGroupHeader = ({
 
   return (
     <section
-      className={classNames(className, "border-b-8 border-sswRed")}
+      className={classNames(
+        className,
+        "border-b-8 border-sswRed bg-cover bg-no-repeat"
+      )}
       style={{
         backgroundImage: "url('/images/background/polygonBackground.png')",
       }}
@@ -46,7 +49,7 @@ export const UserGroupHeader = ({
         <div className="flex max-w-3xl flex-col pb-10">
           <span className="pt-10 text-lg">{formattedDate}</span>
           <h1 className="mb-2 pb-1 pt-3 text-5xl font-semibold">{title}</h1>
-          <span className="mb-4 text-lg">
+          <span className="mb-12 text-lg">
             With <a href={presenter.url}>{presenter.name}</a>
           </span>
           <div className="mb-5 mt-auto flex-row md:flex">
