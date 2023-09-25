@@ -38,156 +38,171 @@ export default function NETUGPage(
     "<br>"
   )[0].replace("<div>​</div><div><div>", "");
 
-  return (
-    <>
-      <Layout>
-        <UserGroupHeader
-          className="font-helvetica"
-          date={new Date(props.event?.StartDateTime)}
-          title={props.event?.Title}
-          presenter={{
-            name: props.event?.Presenter,
-            url: props.event?.PresenterProfileUrl?.Url,
-            image: props.speaker?.TorsoImage?.Url || "",
-          }}
-          trailerUrl="https://www.youtube.com/watch?v=FNMtmBJAZ_M"
-          registerUrl="https://www.meetup.com/en-AU/sydney-net-user-group/"
-        />
+  if (data.userGroupPage.__typename === "UserGroupPageLocationPage") {
+    return (
+      <>
+        <Layout>
+          <UserGroupHeader
+            className="font-helvetica"
+            date={new Date(props.event?.StartDateTime)}
+            title={props.event?.Title}
+            presenter={{
+              name: props.event?.Presenter,
+              url: props.event?.PresenterProfileUrl?.Url,
+              image: props.speaker?.TorsoImage?.Url || "",
+            }}
+            trailerUrl="https://www.youtube.com/watch?v=FNMtmBJAZ_M"
+            registerUrl="https://www.meetup.com/en-AU/sydney-net-user-group/"
+          />
 
-        <Container className="font-helvetica">
-          <section className="grid-cols-3 gap-10 md:grid">
-            {props.event?.Abstract && (
-              <div className="col-span-2">
+          <Container className="font-helvetica">
+            <section className="grid-cols-3 gap-10 md:grid">
+              {props.event?.Abstract && (
+                <div className="col-span-2">
+                  <h2 className="font-helvetica text-4xl font-medium text-sswRed">
+                    Event Description
+                  </h2>
+                  <div className="whitespace-pre-wrap text-lg">
+                    {props.event?.Abstract}
+                  </div>
+                </div>
+              )}
+              <div className="col-span-1">
+                {props.speaker && (
+                  <>
+                    <h2 className="font-helvetica text-4xl font-medium text-sswRed">
+                      Presenter
+                    </h2>
+                    <div className="pb-3">
+                      <Organizer
+                        data={{
+                          profileImg: props.speaker?.PresenterProfileImage?.Url,
+                          name: props.speaker?.Title,
+                          profileLink: props.speaker?.PresenterProfileLink,
+                        }}
+                        stringContent={speakerDescription}
+                      />
+                    </div>
+                  </>
+                )}
+
+                <JoinGithub
+                  data={data.userGroupPage.joinGithub}
+                  className="mt-10 pt-5"
+                />
+              </div>
+
+              <div className="col-span-1">
                 <h2 className="font-helvetica text-4xl font-medium text-sswRed">
-                  Event Description
+                  When & Where
                 </h2>
-                <div className="whitespace-pre-wrap text-lg">
-                  {props.event?.Abstract}
+                <div className="child-p:text-lg">
+                  <TinaMarkdown
+                    content={data.userGroupPage.whenAndWhere?.content}
+                  />
+                </div>
+                {data.userGroupPage.whenAndWhere?.googleMapsEmbedUrl && (
+                  <GoogleMapsWrapper
+                    embedHeight="150px"
+                    embedWidth="100%"
+                    embedUrl={
+                      data.userGroupPage.whenAndWhere.googleMapsEmbedUrl
+                    }
+                  />
+                )}
+              </div>
+
+              <div className="col-span-1">
+                <h2 className="font-helvetica text-4xl font-medium text-sswRed">
+                  Agenda
+                </h2>
+                <div>
+                  {data.userGroupPage.agenda.map((item, index) => (
+                    <div
+                      className="my-4 flex flex-row rounded-md border-1 bg-gray-50 p-2"
+                      key={index}
+                    >
+                      <span className="border-r-1 px-4 text-lg">
+                        {item.time}
+                      </span>
+                      <span className="px-4 text-lg">{item.label}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-            )}
-            <div className="col-span-1">
-              {props.speaker && (
-                <>
-                  <h2 className="font-helvetica text-4xl font-medium text-sswRed">
-                    Presenter
-                  </h2>
-                  <div className="pb-3">
-                    <Organizer
-                      data={{
-                        profileImg: props.speaker?.PresenterProfileImage?.Url,
-                        name: props.speaker?.Title,
-                        profileLink: props.speaker?.PresenterProfileLink,
-                      }}
-                      stringContent={speakerDescription}
-                    />
-                  </div>
-                </>
-              )}
 
-              <JoinGithub
-                data={data.userGroupPage.joinGithub}
-                className="mt-10 pt-5"
-              />
-            </div>
-
-            <div className="col-span-1">
-              <h2 className="font-helvetica text-4xl font-medium text-sswRed">
-                When & Where
-              </h2>
-              <div className="child-p:text-lg">
-                <TinaMarkdown
-                  content={data.userGroupPage.whenAndWhere?.content}
+              <div className="col-span-1">
+                <h2 className="font-helvetica text-4xl font-medium text-sswRed">
+                  Organizer
+                </h2>
+                <Organizer
+                  data={{
+                    profileImg: data.userGroupPage.organizer?.profileImg,
+                    name: data.userGroupPage.organizer?.name,
+                    profileLink: data.userGroupPage.organizer?.nameUrl,
+                    position: data.userGroupPage.organizer?.position,
+                    content: data.userGroupPage.organizer?.bio,
+                  }}
                 />
               </div>
-              {data.userGroupPage.whenAndWhere?.googleMapsEmbedUrl && (
-                <GoogleMapsWrapper
-                  embedHeight="150px"
-                  embedWidth="100%"
-                  embedUrl={data.userGroupPage.whenAndWhere.googleMapsEmbedUrl}
-                />
-              )}
-            </div>
 
-            <div className="col-span-1">
-              <h2 className="font-helvetica text-4xl font-medium text-sswRed">
-                Agenda
-              </h2>
-              <div>
-                {data.userGroupPage.agenda.map((item, index) => (
-                  <div
-                    className="my-4 flex flex-row rounded-md border-1 bg-gray-50 p-2"
-                    key={index}
-                  >
-                    <span className="border-r-1 px-4 text-lg">{item.time}</span>
-                    <span className="px-4 text-lg">{item.label}</span>
-                  </div>
-                ))}
+              <div className="col-span-2 mt-10">
+                <LatestTech data={data.userGroupPage.latestTech} />
               </div>
-            </div>
 
-            <div className="col-span-1">
-              <h2 className="font-helvetica text-4xl font-medium text-sswRed">
-                Organizer
+              <div className="col-span-1">
+                <JoinAsPresenter data={data.userGroupPage.joinUs} />
+              </div>
+            </section>
+          </Container>
+
+          <SectionRenderer
+            prefix="UserGroupPageLocationPageSections"
+            blocks={data.userGroupPage.sections}
+          />
+
+          <section className="bg-gray-900 py-8">
+            <Container className="text-center">
+              <h2 className="mt-2 pb-3 font-helvetica text-4xl font-semibold text-white">
+                What is the{" "}
+                <span className="text-sswRed">.NET User Group?</span>
               </h2>
-              <Organizer
-                data={{
-                  profileImg: data.userGroupPage.organizer?.profileImg,
-                  name: data.userGroupPage.organizer?.name,
-                  profileLink: data.userGroupPage.organizer?.nameUrl,
-                  position: data.userGroupPage.organizer?.position,
-                  content: data.userGroupPage.organizer?.bio,
-                }}
-              />
-            </div>
-
-            <div className="col-span-2 mt-10">
-              <LatestTech data={data.userGroupPage.latestTech} />
-            </div>
-
-            <div className="col-span-1">
-              <JoinAsPresenter data={data.userGroupPage.joinUs} />
-            </div>
+              <div className="text-white child-p:text-lg">
+                <TinaMarkdown content={data.userGroupPage.aboutContent} />
+              </div>
+            </Container>
           </section>
-        </Container>
 
-        <SectionRenderer
-          prefix="UserGroupPageSections"
-          blocks={data.userGroupPage.sections}
-        />
+          <section>
+            <Container>
+              <TestimonialRow
+                testimonialsResult={props.testimonialsResult}
+                categories={["User-Group"]}
+                className="child:!font-helvetica child-h2:text-4xl child-h2:font-semibold"
+                tagline=""
+              />
+            </Container>
+          </section>
 
-        <section className="bg-gray-900 py-8">
-          <Container className="text-center">
-            <h2 className="mt-2 pb-3 font-helvetica text-4xl font-semibold text-white">
-              What is the <span className="text-sswRed">.NET User Group?</span>
-            </h2>
-            <div className="text-white child-p:text-lg">
-              <TinaMarkdown content={data.userGroupPage.aboutContent} />
-            </div>
-          </Container>
-        </section>
-
-        <section>
           <Container>
-            <TestimonialRow
-              testimonialsResult={props.testimonialsResult}
-              categories={["User-Group"]}
-              className="child:!font-helvetica child-h2:text-4xl child-h2:font-semibold"
-              tagline=""
-            />
+            <TechnologyLogos logos={data.global.technologies} />
           </Container>
-        </section>
 
-        <Container>
-          <TechnologyLogos logos={data.global.technologies} />
+          <Section>
+            <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+          </Section>
+        </Layout>
+      </>
+    );
+  } else if (data.userGroupPage.__typename === "UserGroupPageContentPage") {
+    return (
+      <Layout>
+        <Container className="prose py-4 prose-h1:pt-2" size="custom">
+          <TinaMarkdown content={data.userGroupPage.content} />
         </Container>
-
-        <Section>
-          <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
-        </Section>
       </Layout>
-    </>
-  );
+    );
+  }
 }
 
 export const getStaticProps = async ({ params }) => {

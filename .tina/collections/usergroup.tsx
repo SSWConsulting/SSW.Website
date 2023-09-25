@@ -15,118 +15,138 @@ export const userGroupPageSchema: Collection = {
       return `/netug/${document._sys.filename}`;
     },
   },
-  fields: [
-    // @ts-ignore
-    seoSchema,
+  templates: [
     {
-      type: "rich-text",
-      label: "About Content",
-      name: "aboutContent",
-      isBody: true,
-    },
-    {
-      type: "object",
-      label: "Join GitHub Panel",
-      name: "joinGithub",
-      fields: Schemas.joinGithubSchema.fields,
-    },
-    {
-      type: "object",
-      label: "When & Where Panel",
-      name: "whenAndWhere",
+      name: "locationPage",
+      label: "Location User Group Page",
       fields: [
+        // @ts-ignore
+        seoSchema,
         {
           type: "rich-text",
-          label: "Content",
-          name: "content",
+          label: "About Content",
+          name: "aboutContent",
+          isBody: true,
+        },
+        {
+          type: "object",
+          label: "Join GitHub Panel",
+          name: "joinGithub",
+          fields: Schemas.joinGithubSchema.fields,
+        },
+        {
+          type: "object",
+          label: "When & Where Panel",
+          name: "whenAndWhere",
+          fields: [
+            {
+              type: "rich-text",
+              label: "Content",
+              name: "content",
+            },
+            {
+              type: "string",
+              label: "Google Maps Embed URL",
+              name: "googleMapsEmbedUrl",
+            },
+          ],
+        },
+        {
+          type: "object",
+          label: "Agenda Panel",
+          name: "agenda",
+          fields: [
+            {
+              type: "string",
+              label: "time",
+              name: "time",
+            },
+            {
+              type: "string",
+              label: "Label",
+              name: "label",
+            },
+          ],
+          list: true,
+        },
+        {
+          type: "object",
+          label: "Organizer Panel",
+          name: "organizer",
+          fields: [
+            {
+              type: "string",
+              label: "Name",
+              name: "name",
+            },
+            {
+              type: "string",
+              label: "Position",
+              name: "position",
+            },
+            {
+              type: "string",
+              label: "Name URL",
+              name: "nameUrl",
+            },
+            {
+              type: "image",
+              label: "Organizer Image",
+              name: "profileImg",
+            },
+            {
+              type: "rich-text",
+              label: "Organizer Bio",
+              name: "bio",
+            },
+          ],
+        },
+        {
+          type: "object",
+          label: "Latest Tech",
+          name: "latestTech",
+          fields: Schemas.latestTechSchema.fields,
+        },
+        {
+          type: "object",
+          label: "Join Us Panel",
+          name: "joinUs",
+          fields: Schemas.joinAsPresenterSchema.fields,
+        },
+        {
+          type: "object",
+          list: true,
+          name: "sections",
+          label: "Sections",
+          templates: sectionPageBlocks,
         },
         {
           type: "string",
-          label: "Google Maps Embed URL",
-          name: "googleMapsEmbedUrl",
-        },
-      ],
-    },
-    {
-      type: "object",
-      label: "Agenda Panel",
-      name: "agenda",
-      fields: [
-        {
-          type: "string",
-          label: "time",
-          name: "time",
-        },
-        {
-          type: "string",
-          label: "Label",
-          name: "label",
-        },
-      ],
-      list: true,
-    },
-    {
-      type: "object",
-      label: "Organizer Panel",
-      name: "organizer",
-      fields: [
-        {
-          type: "string",
-          label: "Name",
-          name: "name",
-        },
-        {
-          type: "string",
-          label: "Position",
-          name: "position",
-        },
-        {
-          type: "string",
-          label: "Name URL",
-          name: "nameUrl",
+          label: "City (used for SharePoint matching)",
+          name: "city",
+          required: true,
         },
         {
           type: "image",
-          label: "Organizer Image",
-          name: "profileImg",
-        },
-        {
-          type: "rich-text",
-          label: "Organizer Bio",
-          name: "bio",
+          list: true,
+          label: "Technologies",
+          name: "technologyImgs",
         },
       ],
     },
     {
-      type: "object",
-      label: "Latest Tech",
-      name: "latestTech",
-      fields: Schemas.latestTechSchema.fields,
-    },
-    {
-      type: "object",
-      label: "Join Us Panel",
-      name: "joinUs",
-      fields: Schemas.joinAsPresenterSchema.fields,
-    },
-    {
-      type: "object",
-      list: true,
-      name: "sections",
-      label: "Sections",
-      templates: sectionPageBlocks,
-    },
-    {
-      type: "string",
-      label: "City (used for SharePoint matching)",
-      name: "city",
-      required: true,
-    },
-    {
-      type: "image",
-      list: true,
-      label: "Technologies",
-      name: "technologyImgs",
+      name: "contentPage",
+      label: "Content User Group Page",
+      fields: [
+        // @ts-ignore
+        seoSchema,
+        {
+          type: "rich-text",
+          name: "content",
+          label: "Content",
+          isBody: true,
+        },
+      ],
     },
   ],
 };
