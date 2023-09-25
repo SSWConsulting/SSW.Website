@@ -5,7 +5,7 @@ import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-type OrganizerProps = {
+export type OrganizerType = {
   name: string;
   profileImg?: string;
   profileLink?: string;
@@ -17,7 +17,7 @@ export const Organizer = ({
   data,
   stringContent,
 }: {
-  data: OrganizerProps;
+  data: OrganizerType;
   stringContent?: string;
 }) => {
   return (

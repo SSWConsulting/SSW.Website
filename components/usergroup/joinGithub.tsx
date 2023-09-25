@@ -4,7 +4,15 @@ import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import classNames from "classnames";
 
-export const JoinGithub = ({ data, className }) => {
+export type JoinGithubProps = {
+  data?: {
+    title?: string;
+    link?: string;
+  };
+  className?: string;
+};
+
+export const JoinGithub = ({ data, className }: JoinGithubProps) => {
   return (
     <div
       className={classNames(
