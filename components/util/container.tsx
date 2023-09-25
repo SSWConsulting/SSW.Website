@@ -22,7 +22,7 @@ type ContainerProps = {
   padding?: string;
   className?: string;
   children: React.ReactNode;
-};
+} & React.HTMLAttributes<HTMLDivElement>;
 
 export const Container = ({
   children,
