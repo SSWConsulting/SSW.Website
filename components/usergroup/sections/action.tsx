@@ -1,4 +1,3 @@
-import { TicketForm } from "../ticketForm";
 import {
   LuGraduationCap,
   LuMessagesSquare,
@@ -9,6 +8,7 @@ import { SponsorCard } from "../sponsorCard";
 import { Container } from "../../util/container";
 import type { Template } from "tinacms";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { MeetupForm } from "../meetupForm";
 
 type ActionSectionProps = {
   heading?: string;
@@ -75,7 +75,7 @@ export const ActionSection = (props: ActionSectionProps) => {
               }))}
             />
           </div>
-          <TicketForm className="max-md:mx-auto" />
+          <MeetupForm className="self-start max-md:mx-auto" />
         </div>
       </Container>
     </section>
