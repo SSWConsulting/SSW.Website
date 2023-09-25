@@ -17,14 +17,14 @@ export const VideosSection = (props: VideosSectionProps) => {
       <Container>
         <div>
           <div className="flex flex-col items-center">
-            <div className="mb-12 md:flex flex-row items-center justify-center text-center">
+            <div className="mb-12 flex-row items-center justify-center text-center md:flex">
               <h2 className="!my-0 font-helvetica text-4xl font-semibold">
                 <span className="text-sswRed">Featured Videos </span> from{" "}
               </h2>{" "}
               <Image
                 src="/images/sswtv_logo.png"
                 alt="SSW TV logo"
-                className="shrink-0 grow-0  object-contain pl-4 mx-auto"
+                className="mx-auto shrink-0 grow-0 object-contain pl-4"
                 height={50}
                 width={200}
               />
