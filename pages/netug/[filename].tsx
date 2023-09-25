@@ -198,7 +198,7 @@ export default function NETUGPage(
     return (
       <Layout>
         <Container className="prose py-4 prose-h1:pt-2" size="custom">
-          <TinaMarkdown content={data.userGroupPage.content} />
+          <TinaMarkdown content={data.userGroupPage._body} />
         </Container>
       </Layout>
     );
@@ -209,6 +209,12 @@ export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.userGroupPageContentQuery({
     relativePath: `${params.filename}.mdx`,
   });
+
+  if (!tinaProps?.data?.userGroupPage?.__typename) {
+    return {
+      notFound: true,
+    };
+  }
 
   const testimonialsResult = await getTestimonialsByCategories(["User Group"]);
 

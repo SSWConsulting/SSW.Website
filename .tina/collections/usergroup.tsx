@@ -142,8 +142,8 @@ export const userGroupPageSchema: Collection = {
         seoSchema,
         {
           type: "rich-text",
-          name: "content",
-          label: "Content",
+          name: "_body",
+          label: "Body",
           isBody: true,
         },
       ],
