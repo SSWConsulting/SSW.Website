@@ -35,17 +35,18 @@ const CopyrightInfo = () => {
   return (
     <>
       <div>
-        &copy; Copyright SSW 1990-{new Date().getFullYear()}. All Rights
-        Reserved.
+        &copy; 1990-{new Date().getFullYear()} SSW. All rights reserved.
       </div>
       <div>
         <Link href={chooseIssueURL} target="_blank">
           FEEDBACK TO SSW
         </Link>
         <Divider />
-        <Link href="https://www.ssw.com.au/ssw/Standards/Forms/ConsultingOrderTermsConditions.aspx">
+        <Link href="https://www.ssw.com.au/terms-and-conditions">
           TERMS AND CONDITIONS
         </Link>
+        <Divider />
+        <Link href="https://www.ssw.com.au/privacy">PRIVACY</Link>
       </div>
     </>
   );
@@ -70,7 +71,7 @@ const DeploymentInfo = () => {
 
   return (
     <div className="text-center sm:text-left">
-      Our website is under{" "}
+      This website is under{" "}
       <Link href="https://www.ssw.com.au/rules/rules-to-better-websites-deployment">
         CONSTANT CONTINUOUS DEPLOYMENT
       </Link>

@@ -80,6 +80,14 @@ const OfficeLayout = ({ office }) => {
       <div data-tina-field={tinaField(office, "aboutUs")}>
         <TinaMarkdown components={componentRenderer} content={office.aboutUs} />
       </div>
+      {office.localWebsiteLink?.title && (
+        <a
+          href={office.localWebsiteLink.url ?? ""}
+          data-tina-field={tinaField(office, "localWebsiteLink")}
+        >
+          {office.localWebsiteLink.title}
+        </a>
+      )}
       {office.map ? (
         <>
           <h2>SSW {office.addressLocality} Map</h2>
