@@ -45,11 +45,21 @@ export const TicketForm = ({ className }: TicketFormProps) => {
           <h3 className="font-helvetica text-sswRed">Get your free ticket</h3>
           <div className="grid grid-cols-2 py-4">
             <label className="col-span-1">
-              <Field name="format" type="radio" value="inPerson" />
+              <Field
+                name="format"
+                type="radio"
+                value="inPerson"
+                className="mr-4"
+              />
               In Person
             </label>
             <label className="col-span-1">
-              <Field name="format" type="radio" value="online" />
+              <Field
+                name="format"
+                type="radio"
+                value="online"
+                className="mr-4"
+              />
               Online
             </label>
           </div>
