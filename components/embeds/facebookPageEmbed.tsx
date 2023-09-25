@@ -1,5 +1,4 @@
 import Script from "next/script";
-import classNames from "classnames";
 
 type FacebookPageEmbedProps = {
   className?: string;
@@ -26,20 +25,23 @@ export const FacebookPageEmbed = ({
         nonce="DysWxggy"
         strategy="lazyOnload"
       />
-      <div
-        className={classNames("fb-page", className)}
-        data-href={pageUrl}
-        data-tabs="timeline"
-        data-width="300"
-        data-height={height?.toString() ?? 600}
-        data-small-header="false"
-        data-adapt-container-width="true"
-        data-hide-cover="false"
-        data-show-facepile="true"
-      >
-        <blockquote cite={pageUrl} className="fb-xfbml-parse-ignore">
-          <a href={pageUrl}>SSW</a>
-        </blockquote>
+      <div className={className}>
+        <div
+          data-lazy="true"
+          className={"fb-page mx-auto"}
+          data-href={pageUrl}
+          data-tabs="timeline"
+          data-width="500"
+          data-height={height?.toString() ?? 600}
+          data-small-header="false"
+          data-adapt-container-width="true"
+          data-hide-cover="false"
+          data-show-facepile="true"
+        >
+          <blockquote cite={pageUrl} className="fb-xfbml-parse-ignore">
+            <a href={pageUrl}>SSW</a>
+          </blockquote>
+        </div>
       </div>
     </>
   );

@@ -10,8 +10,9 @@ type TechnologyLogosProps = {
 export const TechnologyLogos = ({ logos }: TechnologyLogosProps) => {
   return (
     <div className="flex flex-wrap justify-center gap-6">
-      {logos?.map((logo) => (
+      {logos?.map((logo, index) => (
         <Image
+          key={index}
           width={200}
           height={50}
           alt={logo.name}

@@ -210,6 +210,10 @@ export interface EventInfo extends LiveStreamWidgetInfo {
     Description: string;
     Url: string;
   };
+  TrailerUrl: {
+    Description: string;
+    Url: string;
+  };
   City: string;
 }
 

@@ -23,7 +23,7 @@ export const CommunitySection = (props: CommunitySectionProps) => {
           <h2 className="mb-12 font-helvetica text-4xl font-semibold text-sswRed">
             Community
           </h2>
-          <div className="w-full grid-cols-3 gap-6 lg:grid">
+          <div className="w-full grid-cols-3 gap-6 md:grid">
             <div className="col-span-1 h-96">
               <TwitterFeedEmbed
                 height={384}
@@ -32,7 +32,7 @@ export const CommunitySection = (props: CommunitySectionProps) => {
             </div>
             <div className="col-span-1">
               <FacebookPageEmbed
-                className="mx-auto"
+                className="mx-auto w-full justify-center justify-self-center"
                 username={props?.facebookUsername || "SSW.page"}
                 height={384}
               />
