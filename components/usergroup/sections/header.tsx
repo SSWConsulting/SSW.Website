@@ -39,14 +39,17 @@ export const UserGroupHeader = ({
         backgroundImage: "url('/images/background/polygonBackground.png')",
       }}
     >
-      <Container className="flex-row pb-0 text-white md:flex">
+      <Container
+        className="flex-row justify-between py-0 text-white md:flex"
+        size="custom"
+      >
         <div className="flex max-w-3xl flex-col pb-10">
-          <span className="text-lg">{formattedDate}</span>
+          <span className="pt-10 text-lg">{formattedDate}</span>
           <h1 className="mb-2 pb-1 pt-3 text-5xl font-semibold">{title}</h1>
           <span className="mb-4 text-lg">
             With <a href={presenter.url}>{presenter.name}</a>
           </span>
-          <div className="mt-8 flex-row md:flex">
+          <div className="mb-5 mt-auto flex-row md:flex">
             <UtilityButton
               className="!mt-0"
               link={registerUrl}
@@ -68,12 +71,11 @@ export const UserGroupHeader = ({
           </div>
         </div>
         {presenter.image && (
-          <div className="flex shrink-0 flex-col justify-end">
+          <div className="flex max-w-md shrink-0 flex-col justify-end self-end max-md:mx-auto">
             <Image
-              className="max-w-full align-bottom"
+              className="!relative align-bottom"
               src={presenter.image}
-              width={500}
-              height={600}
+              fill
               alt={`Image of ${presenter.name}`}
             />
           </div>

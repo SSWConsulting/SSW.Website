@@ -220,6 +220,10 @@ export interface SpeakerInfo {
     Url: string;
   };
   PresenterShortDescription?: string;
+  TorsoImage?: {
+    Url: string;
+    Description: string;
+  };
 }
 
 export interface InternalSpeakerInfo {

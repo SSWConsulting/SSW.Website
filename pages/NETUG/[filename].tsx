@@ -21,6 +21,7 @@ import {
   getSpeakersInfoFromEvent,
 } from "../../services/server/events";
 import { SectionRenderer } from "../../components/usergroup/sections/renderer";
+import { TechnologyLogos } from "../../components/usergroup/technologyLogos";
 
 const ISR_TIME = 60 * 60; // 1 hour;
 
@@ -47,7 +48,7 @@ export default function NETUGPage(
           presenter={{
             name: props.event?.Presenter,
             url: props.event?.PresenterProfileUrl?.Url,
-            image: "/images/people/matt-g-tall.png",
+            image: props.speaker?.TorsoImage?.Url || "",
           }}
           trailerUrl="https://www.youtube.com/watch?v=FNMtmBJAZ_M"
           registerUrl="https://www.meetup.com/en-AU/sydney-net-user-group/"
@@ -55,14 +56,16 @@ export default function NETUGPage(
 
         <Container className="font-helvetica">
           <section className="grid-cols-3 gap-10 md:grid">
-            <div className="col-span-2">
-              <h2 className="font-helvetica text-4xl font-medium text-sswRed">
-                Event Description
-              </h2>
-              <div className="whitespace-pre-wrap text-lg">
-                {props.event?.Abstract}
+            {props.event?.Abstract && (
+              <div className="col-span-2">
+                <h2 className="font-helvetica text-4xl font-medium text-sswRed">
+                  Event Description
+                </h2>
+                <div className="whitespace-pre-wrap text-lg">
+                  {props.event?.Abstract}
+                </div>
               </div>
-            </div>
+            )}
             <div className="col-span-1">
               {props.speaker && (
                 <>
@@ -84,7 +87,7 @@ export default function NETUGPage(
 
               <JoinGithub
                 data={data.userGroupPage.joinGithub}
-                className="pt-5"
+                className="mt-10 pt-5"
               />
             </div>
 
@@ -138,7 +141,7 @@ export default function NETUGPage(
               />
             </div>
 
-            <div className="col-span-2">
+            <div className="col-span-2 mt-10">
               <LatestTech data={data.userGroupPage.latestTech} />
             </div>
 
@@ -155,8 +158,8 @@ export default function NETUGPage(
 
         <section className="bg-gray-900 py-8">
           <Container className="text-center">
-            <h2 className="pb-3 font-helvetica text-4xl font-medium text-white">
-              What is the .NET User Group?
+            <h2 className="mt-2 pb-3 font-helvetica text-4xl font-semibold text-white">
+              What is the <span className="text-sswRed">.NET User Group?</span>
             </h2>
             <div className="text-white child-p:text-lg">
               <TinaMarkdown content={data.userGroupPage.aboutContent} />
@@ -169,12 +172,15 @@ export default function NETUGPage(
             <TestimonialRow
               testimonialsResult={props.testimonialsResult}
               categories={["User-Group"]}
-              className="child:!font-helvetica"
-              tagline="SSW has made clients happy all over the world and we are proud to
-              share some of these experiences with you."
+              className="child:!font-helvetica child-h2:text-4xl child-h2:font-semibold"
+              tagline=""
             />
           </Container>
         </section>
+
+        <Container>
+          <TechnologyLogos logos={data.global.technologies} />
+        </Container>
 
         <Section>
           <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
@@ -196,6 +202,7 @@ export const getStaticProps = async ({ params }) => {
   );
 
   const speakers = await getSpeakersInfoFromEvent(event[0]);
+  console.log(speakers);
 
   return {
     props: {
