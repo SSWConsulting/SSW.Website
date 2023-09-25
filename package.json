@@ -50,7 +50,7 @@
     "applicationinsights": "^2.7.3",
     "axios": "^1.5.0",
     "classnames": "^2.3.2",
-    "dayjs": "^1.11.8",
+    "dayjs": "^1.11.10",
     "eslint-config-next": "^13.4.12",
     "formik": "^2.4.3",
     "next": "^13.4.12",
