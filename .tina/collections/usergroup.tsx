@@ -23,12 +23,6 @@ export const userGroupPageSchema: Collection = {
         // @ts-ignore
         seoSchema,
         {
-          type: "rich-text",
-          label: "About Content",
-          name: "aboutContent",
-          isBody: true,
-        },
-        {
           type: "object",
           label: "Join GitHub Panel",
           name: "joinGithub",
@@ -121,16 +115,10 @@ export const userGroupPageSchema: Collection = {
           templates: sectionPageBlocks,
         },
         {
-          type: "string",
-          label: "City (used for SharePoint matching)",
-          name: "city",
-          required: true,
-        },
-        {
-          type: "image",
-          list: true,
-          label: "Technologies",
-          name: "technologyImgs",
+          type: "rich-text",
+          label: "About Content",
+          name: "aboutContent",
+          isBody: true,
         },
       ],
     },
