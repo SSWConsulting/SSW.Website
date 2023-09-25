@@ -24,7 +24,7 @@ export const TicketForm = ({ className }: TicketFormProps) => {
   return (
     <div
       className={classNames(
-        "max-w-md grow rounded-md bg-white p-10 font-helvetica",
+        "max-w-md grow rounded-md bg-white p-10",
         className
       )}
     >
@@ -42,7 +42,7 @@ export const TicketForm = ({ className }: TicketFormProps) => {
         }}
       >
         <Form className="flex flex-col justify-center">
-          <h3 className="font-helvetica text-sswRed">Get your free ticket</h3>
+          <h3 className="text-sswRed">Get your free ticket</h3>
           <div className="grid grid-cols-2 py-4">
             <label className="col-span-1">
               <Field

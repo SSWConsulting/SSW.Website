@@ -44,7 +44,7 @@ type JoinAsPresenterProps = {
 
 export const JoinAsPresenter = ({ data }: JoinAsPresenterProps) => {
   return (
-    <div className="flex-row items-center gap-3 font-helvetica lg:flex">
+    <div className="flex-row items-center gap-3 lg:flex">
       <div
         data-tina-field={tinaField(data, "img")}
         className="child:max-lg:mx-auto"

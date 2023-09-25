@@ -43,7 +43,6 @@ export default function NETUGPage(
       <>
         <Layout>
           <UserGroupHeader
-            className="font-helvetica"
             date={new Date(props.event?.StartDateTime)}
             title={props.event?.Title}
             presenter={{
@@ -55,11 +54,11 @@ export default function NETUGPage(
             registerUrl="https://www.meetup.com/en-AU/sydney-net-user-group/"
           />
 
-          <Container className="font-helvetica">
+          <Container>
             <section className="grid-cols-3 gap-10 md:grid">
               {props.event?.Abstract && (
                 <div className="col-span-2">
-                  <h2 className="font-helvetica text-4xl font-medium text-sswRed">
+                  <h2 className="text-4xl font-medium text-sswRed">
                     Event Description
                   </h2>
                   <div className="whitespace-pre-wrap text-lg">
@@ -70,7 +69,7 @@ export default function NETUGPage(
               <div className="col-span-1">
                 {props.speaker && (
                   <>
-                    <h2 className="font-helvetica text-4xl font-medium text-sswRed">
+                    <h2 className="text-4xl font-medium text-sswRed">
                       Presenter
                     </h2>
                     <div className="pb-3">
@@ -93,7 +92,7 @@ export default function NETUGPage(
               </div>
 
               <div className="col-span-1">
-                <h2 className="font-helvetica text-4xl font-medium text-sswRed">
+                <h2 className="text-4xl font-medium text-sswRed">
                   When & Where
                 </h2>
                 <div className="child-p:text-lg">
@@ -113,9 +112,7 @@ export default function NETUGPage(
               </div>
 
               <div className="col-span-1">
-                <h2 className="font-helvetica text-4xl font-medium text-sswRed">
-                  Agenda
-                </h2>
+                <h2 className="text-4xl font-medium text-sswRed">Agenda</h2>
                 <div>
                   {data.userGroupPage.agenda.map((item, index) => (
                     <div
@@ -132,9 +129,7 @@ export default function NETUGPage(
               </div>
 
               <div className="col-span-1">
-                <h2 className="font-helvetica text-4xl font-medium text-sswRed">
-                  Organizer
-                </h2>
+                <h2 className="text-4xl font-medium text-sswRed">Organizer</h2>
                 <Organizer
                   data={{
                     profileImg: data.userGroupPage.organizer?.profileImg,
@@ -163,7 +158,7 @@ export default function NETUGPage(
 
           <section className="bg-gray-900 py-8">
             <Container className="text-center">
-              <h2 className="mt-2 pb-3 font-helvetica text-4xl font-semibold text-white">
+              <h2 className="mt-2 pb-3 text-4xl font-semibold text-white">
                 What is the{" "}
                 <span className="text-sswRed">.NET User Group?</span>
               </h2>
@@ -178,7 +173,7 @@ export default function NETUGPage(
               <TestimonialRow
                 testimonialsResult={props.testimonialsResult}
                 categories={["User-Group"]}
-                className="child:!font-helvetica child-h2:text-4xl child-h2:font-semibold"
+                className="child-h2:text-4xl child-h2:font-semibold"
                 tagline=""
               />
             </Container>

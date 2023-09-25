@@ -16,7 +16,7 @@ export const JoinGithub = ({ data, className }: JoinGithubProps) => {
   return (
     <div
       className={classNames(
-        "flex flex-col items-center justify-center gap-y-3 rounded-xl bg-gray-900 bg-arcBackground bg-bottom bg-no-repeat px-11 py-5 text-center font-helvetica",
+        "flex flex-col items-center justify-center gap-y-3 rounded-xl bg-gray-900 bg-arcBackground bg-bottom bg-no-repeat px-11 py-5 text-center",
         className
       )}
     >

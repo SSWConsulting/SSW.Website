@@ -21,7 +21,7 @@ export const Organizer = ({
   stringContent?: string;
 }) => {
   return (
-    <div className="flex flex-col gap-5 font-helvetica">
+    <div className="flex flex-col gap-5">
       <div className="flex flex-row items-center gap-2">
         <div
           className="h-17 w-17 overflow-hidden rounded-full"

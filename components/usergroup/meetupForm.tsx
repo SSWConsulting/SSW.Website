@@ -11,13 +11,11 @@ export const MeetupForm = ({ className, meetupUrl }: MeetupFormProps) => {
   return (
     <div
       className={classNames(
-        "max-w-md grow rounded-md bg-white p-10 font-helvetica flex flex-col justify-center",
+        "max-w-md grow rounded-md bg-white p-10 flex flex-col justify-center",
         className
       )}
     >
-      <h3 className="text-center font-helvetica text-sswRed">
-        Get your free ticket
-      </h3>
+      <h3 className="text-center text-sswRed">Get your free ticket</h3>
       <a
         href={
           meetupUrl || "https://www.meetup.com/en-AU/sydney-net-user-group/"

@@ -13,12 +13,12 @@ type VideosSectionProps = {
 
 export const VideosSection = (props: VideosSectionProps) => {
   return (
-    <section className="child:!font-helvetica">
+    <section>
       <Container>
         <div>
           <div className="flex flex-col items-center">
             <div className="mb-12 flex-row items-center justify-center text-center md:flex">
-              <h2 className="!my-0 font-helvetica text-4xl font-semibold">
+              <h2 className="!my-0 text-4xl font-semibold">
                 <span className="text-sswRed">Featured Videos </span> from{" "}
               </h2>{" "}
               <Image
