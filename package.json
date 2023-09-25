@@ -53,7 +53,7 @@
     "dayjs": "^1.11.10",
     "eslint-config-next": "^13.4.12",
     "formik": "^2.4.3",
-    "next": "^13.4.12",
+    "next": "^13.5.2",
     "next-seo": "^6.1.0",
     "nextjs-breadcrumbs2": "^2.0.4",
     "node-cache": "^5.1.2",
