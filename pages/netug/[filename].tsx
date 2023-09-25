@@ -38,7 +38,7 @@ export default function NETUGPage(
     "<br>"
   )[0].replace("<div>​</div><div><div>", "");
 
-  if (data.userGroupPage.__typename === "UserGroupPageLocationPage") {
+  if (data?.userGroupPage?.__typename === "UserGroupPageLocationPage") {
     return (
       <>
         <Layout>
@@ -194,7 +194,7 @@ export default function NETUGPage(
         </Layout>
       </>
     );
-  } else if (data.userGroupPage.__typename === "UserGroupPageContentPage") {
+  } else if (data?.userGroupPage.__typename === "UserGroupPageContentPage") {
     return (
       <Layout>
         <Container className="prose py-4 prose-h1:pt-2" size="custom">
@@ -236,9 +236,12 @@ export const getStaticPaths = async () => {
   const userGroupPages = await client.queries.userGroupPageConnection();
 
   const paths = userGroupPages.data.userGroupPageConnection.edges.map(
-    (page) => ({
-      params: { filename: page.node._sys.filename },
-    })
+    (page) => {
+      console.log(page.node._sys.filename);
+      return {
+        params: { filename: page.node._sys.filename },
+      };
+    }
   );
 
   return {
