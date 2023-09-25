@@ -4598,7 +4598,7 @@ __metadata:
     formik: ^2.4.3
     next: ^13.4.12
     next-seo: ^6.1.0
-    next-sitemap: ^4.1.8
+    next-sitemap: ^4.2.3
     nextjs-breadcrumbs2: ^2.0.4
     node-cache: ^5.1.2
     postcss: ^8.4.29
@@ -12172,9 +12172,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-sitemap@npm:^4.1.8":
-  version: 4.1.8
-  resolution: "next-sitemap@npm:4.1.8"
+"next-sitemap@npm:^4.2.3":
+  version: 4.2.3
+  resolution: "next-sitemap@npm:4.2.3"
   dependencies:
     "@corex/deepmerge": ^4.0.43
     "@next/env": ^13.4.3
@@ -12185,7 +12185,7 @@ __metadata:
   bin:
     next-sitemap: bin/next-sitemap.mjs
     next-sitemap-cjs: bin/next-sitemap.cjs
-  checksum: 787e7d1f310ad4caec6bb683db6d7c5b45cc71b729b59cd5e93b60bf72354eae04853c11fc88f1dafa23504083a945c6dd717c1f7d6f7501ba54111ef6e9c5ae
+  checksum: 322cbbf11b6549b7bd5acda98f60a4ef6bb6627e6cd5b4a9367aa8950edf6bcc90f47f4da74a18ecdd823f52c0f625b559b4165dbd27f292c731b222e38fa105
   languageName: node
   linkType: hard
 
