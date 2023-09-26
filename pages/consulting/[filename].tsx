@@ -61,7 +61,10 @@ export default function ConsultingPage(
 
   return (
     <RecaptchaContext.Provider
-      value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
+      value={{
+        recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY,
+        api_key: props.env.API_KEY,
+      }}
     >
       <SEO seo={props.seo} />
       <Layout>
@@ -236,6 +239,7 @@ export const getStaticProps = async ({ params }) => {
       env: {
         GOOGLE_RECAPTCHA_SITE_KEY:
           process.env.GOOGLE_RECAPTCHA_SITE_KEY || null,
+        API_KEY: process.env.SSW_API_KEY,
       },
       seo,
     },

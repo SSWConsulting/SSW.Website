@@ -20,9 +20,17 @@ test("Create Lead Flow", async ({ page }) => {
   await page.fill("#" + FORM_INPUT_IDS.Note, test_payload.Note);
   await page.click("#bookingForm-submit");
 
+  const successToast = "#success-toaster";
+  await page.waitForSelector(successToast);
+  const toastElement = await page.locator(successToast).first();
+  const toastText = await toastElement.textContent();
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle(
     /Enterprise Development and Consulting for Angular Apps/
+  );
+
+  await expect(toastText).toBe(
+    "Form submitted. We'll be in contact as soon as possible."
   );
 });
 

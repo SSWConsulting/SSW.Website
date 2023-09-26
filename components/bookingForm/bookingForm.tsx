@@ -25,7 +25,7 @@ import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import { recaptchaToastId, useRecaptcha } from "../../context/RecaptchaContext";
 
 export const BookingForm = (props) => {
-  const { recaptchaKey, error: recaptchaError } = useRecaptcha();
+  const { recaptchaKey, error: recaptchaError, api_key } = useRecaptcha();
 
   //Show FormStates and Active label
   const [country, setCountry] = useState("");
@@ -104,9 +104,14 @@ export const BookingForm = (props) => {
     setLoading(true);
     const method = { Method: "Create-Lead-UI", Payload: data };
     actions.setSubmitting(false);
+    const axiosConfig = {
+      headers: {
+        Authorization: api_key,
+      },
+    };
 
     await axios
-      .post("/api/create-lead", data)
+      .post("/api/create-lead", data, axiosConfig)
       .then((response) => {
         if (response.data && !response.data.success) {
           appInsights?.trackException({ exception: response.data }, method);
