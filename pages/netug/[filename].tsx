@@ -11,7 +11,7 @@ import { Layout } from "../../components/layout";
 import { UserGroupHeader } from "../../components/usergroup/sections/header";
 import { Container } from "../../components/util/container";
 import client from "../../.tina/__generated__/client";
-import { useTina } from "tinacms/dist/react";
+import { useTina, tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
@@ -22,6 +22,7 @@ import {
 } from "../../services/server/events";
 import { SectionRenderer } from "../../components/usergroup/sections/renderer";
 import { TechnologyLogos } from "../../components/usergroup/technologyLogos";
+import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 
 const ISR_TIME = 60 * 60; // 1 hour;
 
@@ -51,7 +52,7 @@ export default function NETUGPage(
               image: props.speaker?.TorsoImage?.Url || "",
             }}
             trailerUrl={props.event?.TrailerUrl?.Url}
-            registerUrl="https://www.meetup.com/en-AU/sydney-net-user-group/"
+            registerUrl={data.userGroupPage.registerUrl}
           />
 
           <Container>
@@ -95,19 +96,32 @@ export default function NETUGPage(
                 <h2 className="text-4xl font-medium text-sswRed">
                   When & Where
                 </h2>
-                <div className="child-p:text-lg">
+                <div
+                  className="child-p:text-lg"
+                  data-tina-field={tinaField(
+                    data.userGroupPage.whenAndWhere,
+                    "content"
+                  )}
+                >
                   <TinaMarkdown
                     content={data.userGroupPage.whenAndWhere?.content}
                   />
                 </div>
                 {data.userGroupPage.whenAndWhere?.googleMapsEmbedUrl && (
-                  <GoogleMapsWrapper
-                    embedHeight="150px"
-                    embedWidth="100%"
-                    embedUrl={
-                      data.userGroupPage.whenAndWhere.googleMapsEmbedUrl
-                    }
-                  />
+                  <div
+                    data-tina-field={tinaField(
+                      data.userGroupPage.whenAndWhere,
+                      "googleMapsEmbedUrl"
+                    )}
+                  >
+                    <GoogleMapsWrapper
+                      embedHeight="150px"
+                      embedWidth="100%"
+                      embedUrl={
+                        data.userGroupPage.whenAndWhere.googleMapsEmbedUrl
+                      }
+                    />
+                  </div>
                 )}
               </div>
 
@@ -119,10 +133,26 @@ export default function NETUGPage(
                       className="my-4 flex flex-row rounded-md border-1 bg-gray-50 p-2"
                       key={index}
                     >
-                      <span className="border-r-1 px-4 text-lg">
+                      <span
+                        className="border-r-1 px-4 text-lg"
+                        data-tina-field={tinaField(
+                          // @ts-expect-error some weird typing issue (works as expected above)
+                          data.userGroupPage.agenda[index],
+                          "time"
+                        )}
+                      >
                         {item.time}
                       </span>
-                      <span className="px-4 text-lg">{item.label}</span>
+                      <span
+                        className="px-4 text-lg"
+                        data-tina-field={tinaField(
+                          // @ts-expect-error some weird typing issue (works as expected above)
+                          data.userGroupPage.agenda[index],
+                          "label"
+                        )}
+                      >
+                        {item.label}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -141,7 +171,10 @@ export default function NETUGPage(
                 />
               </div>
 
-              <div className="col-span-2 mt-10">
+              <div
+                className="col-span-2 mt-10"
+                data-tina-field={tinaField(data.userGroupPage, "latestTech")}
+              >
                 <LatestTech data={data.userGroupPage.latestTech} />
               </div>
 
@@ -158,11 +191,21 @@ export default function NETUGPage(
 
           <section className="bg-gray-900 py-8">
             <Container className="text-center">
-              <h2 className="mt-2 pb-3 text-4xl font-semibold text-white">
-                What is the{" "}
-                <span className="text-sswRed">.NET User Group?</span>
-              </h2>
-              <div className="text-white child-p:text-lg">
+              <h2
+                className="mt-2 pb-3 text-4xl font-semibold text-white"
+                dangerouslySetInnerHTML={{
+                  __html: sanitiseXSS(
+                    data.userGroupPage.aboutHeader,
+                    spanWhitelist
+                  ),
+                }}
+                data-tina-field={tinaField(data.userGroupPage, "aboutHeader")}
+              />
+
+              <div
+                className="text-white child-p:text-lg"
+                data-tina-field={tinaField(data.userGroupPage, "aboutContent")}
+              >
                 <TinaMarkdown content={data.userGroupPage.aboutContent} />
               </div>
             </Container>
@@ -179,7 +222,7 @@ export default function NETUGPage(
             </Container>
           </section>
 
-          <Container>
+          <Container data-tina-field={tinaField(data.global, "technologies")}>
             <TechnologyLogos logos={data.global.technologies} />
           </Container>
 

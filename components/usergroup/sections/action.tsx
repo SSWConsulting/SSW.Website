@@ -9,6 +9,7 @@ import { Container } from "../../util/container";
 import type { Template } from "tinacms";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { MeetupForm } from "../meetupForm";
+import { tinaField } from "tinacms/dist/react";
 
 type ActionSectionProps = {
   heading?: string;
@@ -46,7 +47,12 @@ export const ActionSection = (props: ActionSectionProps) => {
         <div className="flex-row justify-between md:flex">
           <div className="text-white">
             <div className="pb-8">
-              <h3 className="text-4xl font-medium">{props.heading}</h3>
+              <h3
+                className="text-4xl font-medium"
+                data-tina-field={tinaField(props, "heading")}
+              >
+                {props.heading}
+              </h3>
               <div className="child-p:text-base child-p:font-normal child-p:text-gray-50">
                 <TinaMarkdown content={props.content} />
               </div>

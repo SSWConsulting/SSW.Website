@@ -23,6 +23,11 @@ export const userGroupPageSchema: Collection = {
         // @ts-ignore
         seoSchema,
         {
+          type: "string",
+          label: "Register URL",
+          name: "registerUrl",
+        },
+        {
           type: "object",
           label: "Join GitHub Panel",
           name: "joinGithub",
@@ -118,6 +123,11 @@ export const userGroupPageSchema: Collection = {
           name: "sections",
           label: "Sections",
           templates: sectionPageBlocks,
+        },
+        {
+          type: "string",
+          label: "About Header",
+          name: "aboutHeader",
         },
         {
           type: "rich-text",

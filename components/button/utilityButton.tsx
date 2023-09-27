@@ -89,5 +89,11 @@ export const utilityButtonSchema: Template = {
       name: "noAnimate",
       required: false,
     },
+    {
+      type: "boolean",
+      label: "Uncentred",
+      name: "uncentred",
+      required: false,
+    },
   ],
 };
