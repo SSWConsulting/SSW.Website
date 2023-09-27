@@ -50,7 +50,7 @@ jobs:
         run: |
           # KV - Secret
           $SECRET_KEY_TO_BYPASS_RECAPTCHA = (az keyvault secret show --name SECRET-KEY-TO-BYPASS-RECAPTCHA --vault-name ${{ env.KEY_VAULT }} --query value -o tsv)
-          echo "::set-env name=SECRET_KEY_TO_BYPASS_RECAPTCHA::$SECRET_KEY_TO_BYPASS_RECAPTCHA
+          echo "::set-env name=SECRET_KEY_TO_BYPASS_RECAPTCHA::$SECRET_KEY_TO_BYPASS_RECAPTCHA"
           Write-Host '✅ KV - Secret retrieved'
 
       - name: Install dependencies
