@@ -109,6 +109,10 @@ var appSettings = [
     name: 'SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID'
     value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/SHAREPOINT-EXTERNAL-PRESENTERS-LIST-ID)'
   }
+  {
+    name: 'SECRET_KEY_TO_BYPASS_RECAPTCHA'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/SECRET-KEY-TO-BYPASS-RECAPTCHA)'
+  }
 ]
 
 resource appService 'Microsoft.Web/sites@2022-03-01' = {
