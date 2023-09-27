@@ -8,6 +8,7 @@ import { recaptchaToastId, useRecaptcha } from "../../context/RecaptchaContext";
 import { UtilityButton } from "../button/utilityButton";
 import Popup from "../popup/popup";
 import SuccessToast from "../successToast/successToast";
+import { SUCCESS_MESSAGE } from "../util/constants";
 
 const BookingForm = dynamic(
   () => import("../bookingForm/bookingForm").then((mod) => mod.BookingForm),
@@ -36,7 +37,7 @@ export const BookingButton = ({ data }) => {
   const showSuccessToast = () => {
     toast.success(
       <div id="success-toaster" className="text-left">
-        Form submitted. We'll be in contact as soon as possible.
+        {SUCCESS_MESSAGE}
       </div>
     );
   };

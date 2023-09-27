@@ -177,3 +177,6 @@ export const ReferralSourceList = Object.keys(ReferralSource).map((key) => {
     value: ReferralSource[key as keyof typeof ReferralSource],
   };
 });
+
+export const SUCCESS_MESSAGE =
+  "Form submitted. We'll be in contact as soon as possible.";

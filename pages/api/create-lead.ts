@@ -12,6 +12,16 @@ import { PA_FLOW } from "../../services/server/power-automate-flow";
 
 import { CustomError } from "../../services/server/customError";
 
+const TEST_NOTE =
+  "<br><br>Hi Account Managers,<br><br> This is a weekly test email to verify that the create lead flow is working.";
+
+const Test_RECAPATCHA_VALIDATION = {
+  data: {
+    success: true,
+  },
+  status: 200,
+};
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -19,23 +29,19 @@ export default async function handler(
   try {
     if (req.method === "POST") {
       const { Recaptcha } = req.body;
-      const authToken = req.headers.authorization;
-      const byPass = authToken == process.env.SSW_API_KEY;
-      console.log(
-        "🚀 ~ file: create-lead.ts:25 ~ authToken == process.env.SSW_API_KEY:",
-        byPass
-      );
+
+      const secretNote = req.body.Note;
+      const key_matched =
+        secretNote === process.env.SECRET_KEY_TO_BYPASS_RECAPTCHA;
+
+      if (key_matched) req.body.Note = TEST_NOTE;
 
       // Documentation - Create Lead - https://sswcom.sharepoint.com/:w:/r/sites/SSWDevelopers/_layouts/15/Doc.aspx?sourcedoc=%7BE8A18D9B-DE74-47EC-B836-01A5AD193DCC%7D&file=Create-lead-Flow.docx&action=default&mobileredirect=true
-      if (Recaptcha || byPass) {
-        const recaptchaValidation = byPass
-          ? {
-              data: {
-                success: true,
-              },
-              status: 200,
-            }
+      if (Recaptcha || key_matched) {
+        const recaptchaValidation = key_matched
+          ? Test_RECAPATCHA_VALIDATION
           : await GoogleRecaptcha.validateRecaptcha(Recaptcha);
+
         // const recaptchaValidation = { data: { success: true } }; uncomment this to bypass recaptcha for testing purpose
 
         if (recaptchaValidation && recaptchaValidation.data.success) {
