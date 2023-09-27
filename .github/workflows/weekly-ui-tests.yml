@@ -1,0 +1,63 @@
+name: Weekly UI Test - Enquiry Form
+
+on:
+  #  schedule:
+  #    # Monday at 12 PM UTC - https://cron.help/#0_12_*_*_MON
+  #    - cron: "0 12 * * MON"
+  #  workflow_dispatch:
+
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  GH_TOKEN: ${{ github.token }}
+
+defaults:
+  run:
+    shell: pwsh
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  test:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v2
+        with:
+          path: ./.github
+
+      - name: Azure CLI - Login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: keyVault - Get Secret Key note
+        id: KeyVaultSecrets
+        run: |
+          # KV - Secret
+          $SECRET_KEY_TO_BYPASS_RECAPTCHA = (az keyvault secret show --name SECRET-KEY-TO-BYPASS-RECAPTCHA --vault-name ${{ env.KEY_VAULT }} --query value -o tsv)
+          echo "SECRET_KEY_TO_BYPASS_RECAPTCHA=$SECRET_KEY_TO_BYPASS_RECAPTCHA" >> $GITHUB_ENV
+          Write-Host '✅ KV - Secret retrieved'
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Install Playwright Browsers
+        run: yarn playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: yarn playwright test
