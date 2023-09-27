@@ -17,7 +17,6 @@ import {
   FormCountriesList,
   ReferralSourceList,
   STATE_DEFAULT_VALUE,
-  SUCCESS_MESSAGE,
 } from "../util/constants";
 import { bookingFormSubmissionData } from "./bookingFormSubmissionData";
 import { ValidationSchema } from "./validationSchema";
