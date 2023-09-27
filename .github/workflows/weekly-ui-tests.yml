@@ -10,6 +10,10 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      TARGET_URL:
+        type: string
+        description: "Target URL"
 
 env:
   GH_TOKEN: ${{ github.token }}
@@ -63,7 +67,7 @@ jobs:
       - name: Run Playwright tests
         run: yarn playwright test
         env:
-          TARGET_URL: ${{ env.TARGET_URL }}
+          TARGET_URL: ${{ inputs.TARGET_URL || env.TARGET_URL }}
           SECRET_KEY_TO_BYPASS_RECAPTCHA: ${{ steps.KeyVaultSecrets.outputs.SECRET_KEY_TO_BYPASS_RECAPTCHA }}
 
       - uses: actions/upload-artifact@v2
