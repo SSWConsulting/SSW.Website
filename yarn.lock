@@ -4602,6 +4602,7 @@ __metadata:
     axios: ^1.5.0
     classnames: ^2.3.2
     dayjs: ^1.11.10
+    dotenv: ^16.3.1
     eslint: ^8.49.0
     eslint-config-next: ^13.4.12
     eslint-config-prettier: ^8.8.0
