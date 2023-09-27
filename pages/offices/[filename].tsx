@@ -80,12 +80,12 @@ const OfficeLayout = ({ office }) => {
       <div data-tina-field={tinaField(office, "aboutUs")}>
         <TinaMarkdown components={componentRenderer} content={office.aboutUs} />
       </div>
-      {office.visitUs?.title && (
+      {office.localWebsiteLink?.title && (
         <a
-          href={office.visitUs.url ?? ""}
-          data-tina-field={tinaField(office, "visitUs")}
+          href={office.localWebsiteLink.url ?? ""}
+          data-tina-field={tinaField(office, "localWebsiteLink")}
         >
-          {office.visitUs.title}
+          {office.localWebsiteLink.title}
         </a>
       )}
       {office.map ? (
