@@ -50,7 +50,7 @@ jobs:
         run: |
           # KV - Secret
           $SECRET_KEY_TO_BYPASS_RECAPTCHA = (az keyvault secret show --name SECRET-KEY-TO-BYPASS-RECAPTCHA --vault-name ${{ env.KEY_VAULT }} --query value -o tsv)
-          echo "::set-env name=SECRET_KEY_TO_BYPASS_RECAPTCHA::$SECRET_KEY_TO_BYPASS_RECAPTCHA"
+          echo "SECRET_KEY_TO_BYPASS_RECAPTCHA=$SECRET_KEY_TO_BYPASS_RECAPTCHA" >> $env:GITHUB_OUTPUT
           Write-Host '✅ KV - Secret retrieved'
 
       - name: Install dependencies
@@ -61,6 +61,9 @@ jobs:
 
       - name: Run Playwright tests
         run: yarn playwright test
+        env:
+          TARGET_URL: ${{ env.TARGET_URL }}
+          SECRET_KEY_TO_BYPASS_RECAPTCHA: ${{ steps.KeyVaultSecrets.outputs.SECRET_KEY_TO_BYPASS_RECAPTCHA }}
 
       - uses: actions/upload-artifact@v2
         if: always()
