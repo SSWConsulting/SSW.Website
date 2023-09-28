@@ -125,9 +125,23 @@ export const getSpeakersInfo = async (ids?: number[], emails?: string[]) => {
 };
 
 export const getInternalSpeakers = async (): Promise<InternalSpeakerInfo[]> => {
-  const token = await getToken(["https://ssw.crm6.dynamics.com/"]);
+  const token = await getToken(["https://ssw.crm6.dynamics.com/.default"]);
+  console.log(token);
 
-  return [];
+  const internalSpeakersRes = await axios.get(
+    "https://ssw.crm6.dynamics.com/api/data/v9.2/systemusers",
+    {
+      headers: {
+        Authorization: "Bearer " + token,
+        Accept: "application/json",
+        Prefer: "HonorNonIndexedQueriesWarningMayFailRandomly",
+        "OData-MaxVersion": "4.0",
+        "OData-Version": "4.0",
+      },
+    }
+  );
+
+  return internalSpeakersRes.data;
 };
 
 export type BookingFormSubmissionData = {
