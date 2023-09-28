@@ -5,8 +5,9 @@ const SITE_ID = process.env.SHAREPOINT_SITE_ID;
 const EVENTS_LIST_ID = process.env.SHAREPOINT_EVENTS_LIST_ID;
 const EXTERNAL_PRESENTERS_LIST_ID =
   process.env.SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID;
+const SHAREPOINT_SCOPES = ["https://graph.microsoft.com/.default"];
 
-export const getToken = async () => {
+export const getToken = async (scopes: string[]) => {
   const clientConfig = {
     auth: {
       clientId: process.env.MICROSOFT_OAUTH_CLIENT_ID,
@@ -18,7 +19,7 @@ export const getToken = async () => {
   const clientApp = new msal.ConfidentialClientApplication(clientConfig);
 
   const authParams = {
-    scopes: ["https://graph.microsoft.com/.default"],
+    scopes,
   };
 
   const authRes = await clientApp.acquireTokenByClientCredential(authParams);
@@ -37,7 +38,7 @@ export const getEvents = async (odataFilter: string): Promise<EventInfo[]> => {
     return [];
   }
 
-  const token = await getToken();
+  const token = await getToken(SHAREPOINT_SCOPES);
 
   const eventsRes = await axios.get<{ value: { fields: EventInfo }[] }>(
     `https://graph.microsoft.com/v1.0/sites/${SITE_ID}/lists/${EVENTS_LIST_ID}/items?expand=fields&${odataFilter}`,
@@ -69,7 +70,7 @@ export const getSpeakersInfo = async (ids?: number[], emails?: string[]) => {
   }
 
   if (ids?.length) {
-    const token = await getToken();
+    const token = await getToken(SHAREPOINT_SCOPES);
 
     const idSpeakers: SpeakerInfo[] = await Promise.all(
       ids.map(async (id) => {
@@ -121,6 +122,12 @@ export const getSpeakersInfo = async (ids?: number[], emails?: string[]) => {
   }
 
   return speakers;
+};
+
+export const getInternalSpeakers = async (): Promise<InternalSpeakerInfo[]> => {
+  const token = await getToken(["https://ssw.crm6.dynamics.com/"]);
+
+  return [];
 };
 
 export type BookingFormSubmissionData = {
