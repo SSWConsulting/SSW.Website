@@ -6,9 +6,9 @@ on:
   schedule:
     # Monday at 7 AM UTC - https://cron.help/#0_12_*_*_MON
     - cron: "0 7 * * MON"
-  pull_request:
-    branches:
-      - main
+  #pull_request:
+  #  branches:
+  #    - main
   workflow_dispatch:
     inputs:
       TARGET_URL:
