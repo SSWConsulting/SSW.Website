@@ -12,9 +12,6 @@ import { PA_FLOW } from "../../services/server/power-automate-flow";
 
 import { CustomError } from "../../services/server/customError";
 
-const TEST_NOTE =
-  "<br><br>Hi Account Managers,<br><br> This is a weekly test email to verify that the create lead flow is working.";
-
 const Test_RECAPATCHA_VALIDATION = {
   data: {
     success: true,
@@ -30,11 +27,17 @@ export default async function handler(
     if (req.method === "POST") {
       const { Recaptcha } = req.body;
 
-      const secretNote = req.body.Note;
-      const key_matched =
-        secretNote === process.env.SECRET_KEY_TO_BYPASS_RECAPTCHA;
+      const Note = req.body.Note;
+      const key_matched = Note.includes(
+        process.env.SECRET_KEY_TO_BYPASS_RECAPTCHA
+      );
 
-      if (key_matched) req.body.Note = TEST_NOTE;
+      if (key_matched) {
+        req.body.Note = Note.replace(
+          process.env.SECRET_KEY_TO_BYPASS_RECAPTCHA,
+          ""
+        );
+      }
 
       // Documentation - Create Lead - https://sswcom.sharepoint.com/:w:/r/sites/SSWDevelopers/_layouts/15/Doc.aspx?sourcedoc=%7BE8A18D9B-DE74-47EC-B836-01A5AD193DCC%7D&file=Create-lead-Flow.docx&action=default&mobileredirect=true
       if (Recaptcha || key_matched) {

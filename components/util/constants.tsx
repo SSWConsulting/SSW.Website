@@ -88,21 +88,6 @@ export const FORM_INPUT = {
   ReferralSource: "referralSource",
 };
 
-//FORMS INPUTS
-export const FORM_INPUT_IDS = {
-  FullName: "bookingForm-fullName",
-  Email: "bookingForm-email",
-  Phone: "bookingForm-phone",
-  Location: "bookingForm-location",
-  States: "bookingForm-states",
-  Note: "bookingForm-note",
-  Company: "bookingForm-company",
-  ReferredCompany: "bookingForm-referredCompany",
-  ReferredFullName: "bookingForm-referredFullName",
-  ReferredEmail: "bookingForm-referredEmail",
-  ReferralSource: "bookingForm-referralSource",
-};
-
 //Australian all States list
 export const AustralianStatesList = [
   {
@@ -177,6 +162,3 @@ export const ReferralSourceList = Object.keys(ReferralSource).map((key) => {
     value: ReferralSource[key as keyof typeof ReferralSource],
   };
 });
-
-export const SUCCESS_MESSAGE =
-  "Form submitted. We'll be in contact as soon as possible.";

@@ -4,16 +4,16 @@ on:
   #  workflow_dispatch:
 
   schedule:
-    # Monday at 7 AM UTC - https://cron.help/#0_12_*_*_MON
-    - cron: "0 7 * * MON"
+    # Monday at 9 PM UTC and 7 AM AEST - https://cron.help/#0_21_*_*_SUN
+    - cron: "0 21 * * SUN"
   #pull_request:
   #  branches:
   #    - main
   workflow_dispatch:
     inputs:
-      TARGET_URL:
+      HOST_URL:
         type: string
-        description: "Target URL"
+        description: "Host URL"
 
 env:
   GH_TOKEN: ${{ github.token }}
@@ -32,10 +32,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version-file: ".nvmrc"
 
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
@@ -67,7 +67,7 @@ jobs:
       - name: Run Playwright tests
         run: yarn playwright test
         env:
-          TARGET_URL: ${{ inputs.TARGET_URL || env.TARGET_URL }}
+          HOST_URL: ${{ inputs.HOST_URL || env.HOST_URL }}
           SECRET_KEY_TO_BYPASS_RECAPTCHA: ${{ steps.KeyVaultSecrets.outputs.SECRET_KEY_TO_BYPASS_RECAPTCHA }}
 
       - uses: actions/upload-artifact@v2
@@ -75,4 +75,4 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report/
-          retention-days: 1
+          retention-days: 14

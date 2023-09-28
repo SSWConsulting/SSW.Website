@@ -8,7 +8,6 @@ import { recaptchaToastId, useRecaptcha } from "../../context/RecaptchaContext";
 import { UtilityButton } from "../button/utilityButton";
 import Popup from "../popup/popup";
 import SuccessToast from "../successToast/successToast";
-import { SUCCESS_MESSAGE } from "../util/constants";
 
 const BookingForm = dynamic(
   () => import("../bookingForm/bookingForm").then((mod) => mod.BookingForm),
@@ -20,6 +19,9 @@ export interface BookingButtonProps {
   containerClass?: string;
   buttonClass?: string;
 }
+
+export const SUCCESS_MESSAGE =
+  "Form submitted. We'll be in contact as soon as possible.";
 
 export const BookingButton = ({ data }) => {
   const { containerClass, buttonClass, buttonText }: BookingButtonProps = data;
