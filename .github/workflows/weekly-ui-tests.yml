@@ -1,11 +1,11 @@
 name: Weekly UI Test - Enquiry Form
 
 on:
-  #  schedule:
-  #    # Monday at 12 PM UTC - https://cron.help/#0_12_*_*_MON
-  #    - cron: "0 12 * * MON"
   #  workflow_dispatch:
 
+  schedule:
+    # Monday at 7 AM UTC - https://cron.help/#0_12_*_*_MON
+    - cron: "0 7 * * MON"
   pull_request:
     branches:
       - main
@@ -75,4 +75,4 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report/
-          retention-days: 8
+          retention-days: 1
