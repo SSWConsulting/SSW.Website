@@ -126,7 +126,6 @@ export const getSpeakersInfo = async (ids?: number[], emails?: string[]) => {
 
 export const getInternalSpeakers = async (): Promise<InternalSpeakerInfo[]> => {
   const token = await getToken(["https://ssw.crm6.dynamics.com/.default"]);
-  console.log(token);
 
   const internalSpeakersRes = await axios.get(
     "https://ssw.crm6.dynamics.com/api/data/v9.2/systemusers",
