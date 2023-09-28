@@ -14,6 +14,13 @@ const config = {
       "i.vimeocdn.com",
       "secure-content.meetupstatic.com",
     ],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**.azurewebsites.net",
+        port: "",
+      },
+    ],
   },
   output: "standalone", // required for Docker support
   swcMinify: false,
