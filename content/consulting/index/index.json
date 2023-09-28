@@ -57,20 +57,6 @@
           ]
         },
         {
-          "title": "Next.js",
-          "description": "Next.js allows you to rapidly build full-stack React applications with server-side rendering and API routes. It's fast, scalable, and SEO-friendly.",
-          "logo": "/images/thumbs/thumb-nextjs.jpg",
-          "page": "content/consulting/nextjs.mdx",
-          "tags": [
-            {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
-            }
-          ]
-        },
-        {
           "title": "Vue.js",
           "description": "Vue.js is a progressive JavaScript framework to build web interfaces and applications.",
           "logo": "/images/thumbs/thumb-vuejs.jpg",
@@ -95,6 +81,20 @@
             },
             {
               "tag": "content/consulting/tag/application-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Next.js",
+          "description": "Next.js allows you to rapidly build full-stack React applications with server-side rendering and API routes. It's fast, scalable, and SEO-friendly.",
+          "logo": "/images/thumbs/thumb-nextjs.jpg",
+          "page": "content/consulting/nextjs.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
             }
           ]
         },
