@@ -56,7 +56,6 @@
             }
           ]
         },
-        
         {
           "title": "Blazor",
           "description": "The best way to build an enterprise app blazing fast. We've seen it more than 50x faster than Angular (once it's loaded) on testing. C# with Razor pages is nicer than JavaScript.",
