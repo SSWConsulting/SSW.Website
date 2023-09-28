@@ -16,6 +16,7 @@ export const recaptchaToastId = "recaptcha-toast";
 export const useRecaptcha = (): useRecaptchaType => {
   const value = useContext(RecaptchaContext);
   let error = undefined;
+
   if (!value || !value.recaptchaKey) {
     error = "Recaptcha key not provided.";
   }

@@ -8,7 +8,7 @@ const TEST_PAYLOAD = {
   Note: process.env.SECRET_KEY_TO_BYPASS_RECAPTCHA ?? "Test",
   Country: "Australia",
   State: "100000001",
-  Email: "testing@gmail.com",
+  Email: "amankumar@ssw.com.au",
   Phone: "000000000000",
   ReferralSource: "14",
 };

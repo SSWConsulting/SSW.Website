@@ -6,7 +6,7 @@ const SuccessToast = () => {
     <div>
       <ToastContainer
         position="top-right"
-        autoClose={105000}
+        autoClose={5000}
         hideProgressBar
         newestOnTop
         closeOnClick={false}
