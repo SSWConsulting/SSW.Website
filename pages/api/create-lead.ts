@@ -12,7 +12,7 @@ import { PA_FLOW } from "../../services/server/power-automate-flow";
 
 import { CustomError } from "../../services/server/customError";
 
-const Test_RECAPATCHA_VALIDATION = {
+const RECAPATCHA_VALIDATION_SUCCESS_RESULT = {
   data: {
     success: true,
   },
@@ -42,7 +42,7 @@ export default async function handler(
       // Documentation - Create Lead - https://sswcom.sharepoint.com/:w:/r/sites/SSWDevelopers/_layouts/15/Doc.aspx?sourcedoc=%7BE8A18D9B-DE74-47EC-B836-01A5AD193DCC%7D&file=Create-lead-Flow.docx&action=default&mobileredirect=true
       if (Recaptcha || key_matched) {
         const recaptchaValidation = key_matched
-          ? Test_RECAPATCHA_VALIDATION
+          ? RECAPATCHA_VALIDATION_SUCCESS_RESULT
           : await GoogleRecaptcha.validateRecaptcha(Recaptcha);
 
         // const recaptchaValidation = { data: { success: true } }; uncomment this to bypass recaptcha for testing purpose
