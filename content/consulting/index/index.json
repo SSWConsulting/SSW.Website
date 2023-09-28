@@ -43,7 +43,7 @@
           ]
         },
         {
-          "title": "React ",
+          "title": "React",
           "description": "Easily create interactive UIs with this JavaScript library, maintained by Facebook, Instagram and a large community!",
           "logo": "/images/thumbs/thumb-react.jpg",
           "page": "content/consulting/react.mdx",
@@ -56,20 +56,7 @@
             }
           ]
         },
-        {
-          "title": "Vue.js",
-          "description": "Vue.js is a progressive JavaScript framework to build web interfaces and applications.",
-          "logo": "/images/thumbs/thumb-vuejs.jpg",
-          "page": "content/consulting/vue.mdx",
-          "tags": [
-            {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
-            }
-          ]
-        },
+        
         {
           "title": "Blazor",
           "description": "The best way to build an enterprise app blazing fast. We've seen it more than 50x faster than Angular (once it's loaded) on testing. C# with Razor pages is nicer than JavaScript.",
@@ -89,6 +76,20 @@
           "description": "Next.js allows you to rapidly build full-stack React applications with server-side rendering and API routes. It's fast, scalable, and SEO-friendly.",
           "logo": "/images/thumbs/thumb-nextjs.jpg",
           "page": "content/consulting/nextjs.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Vue.js",
+          "description": "Vue.js is a progressive JavaScript framework to build web interfaces and applications.",
+          "logo": "/images/thumbs/thumb-vuejs.jpg",
+          "page": "content/consulting/vue.mdx",
           "tags": [
             {
               "tag": "content/consulting/tag/application-development.json"
