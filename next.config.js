@@ -15,13 +15,6 @@ const config = {
       "secure-content.meetupstatic.com",
       "azurewebsites.net",
     ],
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "**.azurewebsites.net",
-        port: "",
-      },
-    ],
   },
   output: "standalone", // required for Docker support
   swcMinify: false,
