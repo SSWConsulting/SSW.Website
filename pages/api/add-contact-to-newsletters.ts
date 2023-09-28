@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { AddContactToNewslettersData } from "../../services/server/events";
 
 import { PowerAutomate_Endpoint } from "../../services/model";
-import { PA_FLOW } from "../../services/server/power-automate-flow";
+import { invokePowerAutomateFlow } from "../../services/server/power-automate-flow";
 
 import axios from "axios";
 import { CustomError } from "../../services/server/customError";
@@ -21,7 +21,7 @@ export default async function handler(
 ) {
   try {
     if (req.method === "POST") {
-      const subscribeNewsletter = await PA_FLOW.invokePowerAutomateFlow(
+      const subscribeNewsletter = await invokePowerAutomateFlow(
         req.body,
         process.env.NEWSLETTERS_ENDPOINT
       );
@@ -40,7 +40,6 @@ export default async function handler(
         },
         severity: error.severity,
       });
-
       res.status(error.statusCode).json({ message: error.message });
     } else {
       appInsight.defaultClient?.trackException({
@@ -52,7 +51,6 @@ export default async function handler(
         },
         severity: appInsight.Contracts.SeverityLevel.Error,
       });
-
       res
         .status(error.response.status)
         .json({ message: error.response.data.message });

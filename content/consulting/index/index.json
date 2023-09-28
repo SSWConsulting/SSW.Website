@@ -297,6 +297,17 @@
               "tag": "content/consulting/tag/platform-development.json"
             }
           ]
+        },
+        {
+          "title": "Microsoft Fabric",
+          "description": "Microsoft Fabric reshape how everyone accesses, manages, and acts on data and insights by connecting every data source and analytics service together - on a single, AI-powered platform.",
+          "logo": "/images/thumbs/268349809-5bd00274-c06b-4db8-b949-8c205aa8ebb7.png",
+          "page": "content/consulting/fabric.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/platform-development.json"
+            }
+          ]
         }
       ]
     },

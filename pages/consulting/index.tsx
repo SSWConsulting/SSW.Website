@@ -267,7 +267,9 @@ const processData = (data) => {
             title: p.title,
             description: p.description,
             logo: p.logo,
-            tags: [allServices, ...p.tags.map((t) => t.tag.name)],
+            tags: p.tags
+              ? [allServices, ...p.tags.map((t) => t.tag?.name)]
+              : [allServices],
           };
         }),
       };
