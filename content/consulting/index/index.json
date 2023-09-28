@@ -57,6 +57,20 @@
           ]
         },
         {
+          "title": "Next.js",
+          "description": "Next.js allows you to rapidly build full-stack React applications with server-side rendering and API routes. It's fast, scalable, and SEO-friendly.",
+          "logo": "/images/thumbs/thumb-nextjs.jpg",
+          "page": "content/consulting/nextjs.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            }
+          ]
+        },
+        {
           "title": "Vue.js",
           "description": "Vue.js is a progressive JavaScript framework to build web interfaces and applications.",
           "logo": "/images/thumbs/thumb-vuejs.jpg",
@@ -176,7 +190,7 @@
           "description": "Process mining uncovers processes in your company that can be effectively automated with artificial intelligence, so you save costs and increase your productivity.",
           "logo": "/images/thumbs/thumb-power-automate-icon.jpg",
           "page": "content/consulting/process-mining.mdx",
-           "tags": [
+          "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"
             }
