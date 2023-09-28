@@ -94,7 +94,7 @@ export const getSpeakersInfo = async (ids?: number[], emails?: string[]) => {
   }
 
   if (emails?.length) {
-    await Promise.all(
+    await Promise.allSettled(
       emails.map(async (email) => {
         const internalSpeakerRes = await axios.get<InternalSpeakerInfo>(
           "https://www.ssw.com.au/ssw/CRMService.aspx",
