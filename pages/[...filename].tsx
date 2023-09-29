@@ -28,8 +28,8 @@ export default function HomePage(
   }
 
   const contentClass = data.page.sideBar
-    ? "max-w-full md:col-span-3 prose prose-h2:text-3xl/9 prose-h2:text-black prose-h2:font-normal"
-    : "max-w-full md:col-span-5 prose prose-h2:text-3xl/9 prose-h2:text-black prose-h2:font-normal";
+    ? "max-w-full md:col-span-3 prose prose-h2:text-3xl/9 prose-h2:text-black"
+    : "max-w-full md:col-span-5 prose prose-h2:text-3xl/9 prose-h2:text-black";
 
   return (
     <>
