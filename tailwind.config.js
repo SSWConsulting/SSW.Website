@@ -300,7 +300,7 @@ module.exports = {
               color: theme("colors.sswBlack"),
             },
             h2: {
-              fontWeight: "300",
+              fontWeight: "500",
               color: theme("colors.sswRed"),
             },
             h3: {
