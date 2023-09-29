@@ -36,11 +36,8 @@ export const UserGroupHeader = ({
     <section
       className={classNames(
         className,
-        "border-b-8 border-sswRed bg-cover bg-no-repeat"
+        "bg-polygons border-b-8 border-sswRed bg-cover bg-no-repeat"
       )}
-      style={{
-        backgroundImage: "url('/images/background/polygonBackground.png')",
-      }}
     >
       <Container
         className="flex-row justify-between py-0 text-white md:flex"
@@ -56,7 +53,7 @@ export const UserGroupHeader = ({
             <UtilityButton
               className="!mt-0"
               link={registerUrl}
-              uncentred
+              uncentered
               noAnimate
               buttonText="Register for free"
             />

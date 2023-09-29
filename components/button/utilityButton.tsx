@@ -14,7 +14,7 @@ type UtilityButtonProps = {
   link?: string;
   size?: keyof typeof sizes;
   noAnimate?: boolean;
-  uncentred?: boolean;
+  uncentered?: boolean;
 };
 
 export const UtilityButton = ({
@@ -24,7 +24,7 @@ export const UtilityButton = ({
   link,
   size,
   noAnimate,
-  uncentred,
+  uncentered,
 }: UtilityButtonProps) => {
   const baseComponent = (
     <Button
@@ -32,7 +32,7 @@ export const UtilityButton = ({
       className={classNames(
         "mt-8 h-auto",
         sizes[size ?? "medium"],
-        uncentred ? "" : "mx-auto max-w-full",
+        uncentered ? "" : "mx-auto max-w-full",
         className
       )}
       onClick={onClick}
@@ -91,8 +91,8 @@ export const utilityButtonSchema: Template = {
     },
     {
       type: "boolean",
-      label: "Uncentred",
-      name: "uncentred",
+      label: "Uncentered",
+      name: "uncentered",
       required: false,
     },
   ],

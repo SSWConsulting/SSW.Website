@@ -54,6 +54,7 @@ export const Organizer = ({
       </div>
       <div data-tina-field={tinaField(data, "content")} className="text-lg">
         {data?.content && <TinaMarkdown content={data?.content} />}
+        {/* Here for the case where the content comes from SharePoint */}
         {stringContent && (
           <div dangerouslySetInnerHTML={{ __html: stringContent }} />
         )}
