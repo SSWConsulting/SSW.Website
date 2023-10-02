@@ -43,7 +43,7 @@ export default async function handler(
       if (Recaptcha || key_matched) {
         const recaptchaValidation = key_matched
           ? RECAPATCHA_VALIDATION_SUCCESS_RESULT
-          : await validateRecaptcha(Recaptcha)
+          : await validateRecaptcha(Recaptcha);
         // const recaptchaValidation = { data: { success: true } }; // uncomment this to bypass recaptcha for testing purpose
         if (recaptchaValidation && recaptchaValidation.data.success) {
           const createLeadFlow = await invokePowerAutomateFlow(
