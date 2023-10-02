@@ -27,7 +27,6 @@ export const UtilityButton = ({
   const baseComponent = (
     <Button
       ripple
-      id="bookingButton"
       className={classNames(
         "mx-auto mt-8 h-auto max-w-full",
         sizes[size ?? "medium"],
