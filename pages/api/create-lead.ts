@@ -7,8 +7,8 @@ import {
   STAGE,
 } from "../../services/model";
 
-import { GoogleRecaptcha } from "../../services/server/google-recaptcha";
-import { PA_FLOW } from "../../services/server/power-automate-flow";
+import { validateRecaptcha } from "../../services/server/google-recaptcha";
+import { invokePowerAutomateFlow } from "../../services/server/power-automate-flow";
 
 import { CustomError } from "../../services/server/customError";
 
@@ -43,16 +43,13 @@ export default async function handler(
       if (Recaptcha || key_matched) {
         const recaptchaValidation = key_matched
           ? RECAPATCHA_VALIDATION_SUCCESS_RESULT
-          : await GoogleRecaptcha.validateRecaptcha(Recaptcha);
-
-        // const recaptchaValidation = { data: { success: true } }; uncomment this to bypass recaptcha for testing purpose
-
+          : await validateRecaptcha(Recaptcha)
+        // const recaptchaValidation = { data: { success: true } }; // uncomment this to bypass recaptcha for testing purpose
         if (recaptchaValidation && recaptchaValidation.data.success) {
-          const createLeadFlow = await PA_FLOW.invokePowerAutomateFlow(
+          const createLeadFlow = await invokePowerAutomateFlow(
             req.body,
             process.env.CREATE_LEAD_ENDPOINT
           );
-
           if (createLeadFlow.status !== HttpStatusCode.Accepted) {
             throw new CustomError(
               JSON.stringify(createLeadFlow.data),
@@ -91,7 +88,6 @@ export default async function handler(
         },
         severity: error.severity,
       });
-
       res.status(error.statusCode).json({ message: error.message });
     } else {
       res
