@@ -4595,7 +4595,7 @@ __metadata:
     eslint-config-prettier: ^8.8.0
     eslint-plugin-prettier: ^5.0.0
     eslint-plugin-tailwindcss: ^3.13.0
-    formik: ^2.4.3
+    formik: ^2.4.5
     next: 13.5.2
     next-seo: ^6.1.0
     next-sitemap: ^4.2.3
@@ -4703,6 +4703,16 @@ __metadata:
     "@types/react": "*"
     hoist-non-react-statics: ^3.3.0
   checksum: 2c0778570d9a01d05afabc781b32163f28409bb98f7245c38d5eaf082416fdb73034003f5825eb5e21313044e8d2d9e1f3fe2831e345d3d1b1d20bcd12270719
+  languageName: node
+  linkType: hard
+
+"@types/hoist-non-react-statics@npm:^3.3.1":
+  version: 3.3.2
+  resolution: "@types/hoist-non-react-statics@npm:3.3.2"
+  dependencies:
+    "@types/react": "*"
+    hoist-non-react-statics: ^3.3.0
+  checksum: fe5d4b751e13f56010811fd6c4e49e53e2ccbcbbdc54bb8d86a413fbd08c5a83311bca9ef75a1a88d3ba62806711b5dea3f323c0e0f932b3a283dcebc3240238
   languageName: node
   linkType: hard
 
@@ -9284,10 +9294,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"formik@npm:^2.4.3":
-  version: 2.4.3
-  resolution: "formik@npm:2.4.3"
+"formik@npm:^2.4.5":
+  version: 2.4.5
+  resolution: "formik@npm:2.4.5"
   dependencies:
+    "@types/hoist-non-react-statics": ^3.3.1
     deepmerge: ^2.1.1
     hoist-non-react-statics: ^3.3.0
     lodash: ^4.17.21
@@ -9297,7 +9308,7 @@ __metadata:
     tslib: ^2.0.0
   peerDependencies:
     react: ">=16.8.0"
-  checksum: d98dabfce97beb5cf2ff10bdaff61e0cb9e1d29090cfcad706efc793d06674cfe65299d432d32518a2756a58b6b6bfe85ceec8b47b4f5f9dcc375bcd7a37107a
+  checksum: 316c91fc4e440094655c0d0ba47277a0f84f6082f77ae2ae959e97e2eebb8eab5b866a9e43d93a28efdae07c3f23e779da67922e2f2a1fb47d135b7346e0b5f3
   languageName: node
   linkType: hard
 
