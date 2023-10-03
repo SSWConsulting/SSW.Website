@@ -20,9 +20,6 @@ export interface BookingButtonProps {
   buttonClass?: string;
 }
 
-const SUCCESS_MESSAGE =
-  "Form submitted. We'll be in contact as soon as possible.";
-
 export const BookingButton = ({ data }) => {
   const { containerClass, buttonClass, buttonText }: BookingButtonProps = data;
   const [isVisible, setIsVisible] = useState<boolean>(false);
