@@ -28,6 +28,7 @@ export default async function handler(
       const { Recaptcha } = req.body;
 
       const Note = req.body.Note;
+      // Note: bypassing recaptcha is intended for weekly testing the lead capture form only
       const key_matched = Note.includes(
         process.env.SECRET_KEY_TO_BYPASS_RECAPTCHA
       );
