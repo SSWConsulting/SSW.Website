@@ -25,6 +25,7 @@ export default async function handler(
 ) {
   try {
     if (req.method === "POST") {
+      // this is the code to validate with the recaptcha service
       const { Recaptcha } = req.body;
 
       const Note = req.body.Note;
