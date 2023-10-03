@@ -41,6 +41,7 @@ export default async function handler(
 
       // Documentation - Create Lead - https://sswcom.sharepoint.com/:w:/r/sites/SSWDevelopers/_layouts/15/Doc.aspx?sourcedoc=%7BE8A18D9B-DE74-47EC-B836-01A5AD193DCC%7D&file=Create-lead-Flow.docx&action=default&mobileredirect=true
       if (Recaptcha || key_matched) {
+        // Recaptcha value provided by google Recaptcha API
         const recaptchaValidation = key_matched
           ? RECAPATCHA_VALIDATION_SUCCESS_RESULT
           : await validateRecaptcha(Recaptcha);

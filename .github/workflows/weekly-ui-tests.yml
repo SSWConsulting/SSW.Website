@@ -4,7 +4,7 @@ on:
   #  workflow_dispatch:
 
   schedule:
-    # Monday at 9 PM UTC and 7 AM AEST - https://cron.help/#0_21_*_*_SUN
+    # Monday at 9 PM UTC ~ 7 AM AEST - https://cron.help/#0_21_*_*_SUN
     - cron: "0 21 * * SUN"
   #pull_request:
   #  branches:
@@ -14,6 +14,7 @@ on:
       HOST_URL:
         type: string
         description: "Host URL"
+        default: "https://ssw.com.au"
 
 env:
   GH_TOKEN: ${{ github.token }}
@@ -67,7 +68,7 @@ jobs:
       - name: Run Playwright tests
         run: yarn playwright test
         env:
-          HOST_URL: ${{ inputs.HOST_URL || env.HOST_URL }}
+          HOST_URL: ${{ inputs.HOST_URL }}
           SECRET_KEY_TO_BYPASS_RECAPTCHA: ${{ steps.KeyVaultSecrets.outputs.SECRET_KEY_TO_BYPASS_RECAPTCHA }}
 
       - uses: actions/upload-artifact@v2

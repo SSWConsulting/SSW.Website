@@ -99,24 +99,9 @@ syncyarnlock -s -k
 
 ### UI Testing on local
 
-- 1 Make sure you have the following envirnoments in your `.env`
+- 1 Make sure you have `CREATE_LEAD_ENDPOINT` environment variable in your `.env` - [Follow steps to setup](https://github.com/SSWConsulting/SSW.Website/wiki/Accessing-the-Third%E2%80%90Party-APIs-Locally)
 
-  - `CREATE_LEAD_ENDPOINT` pointing to Dev environment
-  - `HOST_URL` (i.e http://localhost:3000)
-
-- 2 Install Playwrite extension
-
-  ![Playwright extension](_docs/Playwright-extension.png)
-  **Figure: Playwright extention for VS Code**
-
-- 3 Run the tests
-
-  ![Steps to run the tests](_docs/UI-TESTING.png)
-
-  **Figure: Steps to run tests in VS Code**
-
-Without extenion, you can type the following cmd to run it in terminal:
-`npx playwright test` make sure your local instance is running in the background.
+- 2 Run `npx playwright test` in your terminal and make sure your local instance is running in the background.
 
 ## Pull Requests
 

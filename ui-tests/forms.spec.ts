@@ -1,7 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { SUCCESS_MESSAGE } from "../components/bookingButton/bookingButton";
 import { FORM_INPUT } from "../components/util/constants";
-import CONSTANTS from "../content/global/index.json";
 
 const TEST_PAYLOAD = {
   Name: "🧪 Test",
@@ -17,15 +15,15 @@ const TEST_PAYLOAD = {
   ReferralSource: "14",
 };
 
-const successToast = "#success-toaster";
+const successToastId = "#success-toaster";
 const route = "/consulting/angular";
 
 test("Submit Enquiry Form", async ({ page }) => {
-  await page.goto(process.env.HOST_URL + route);
+  await page.goto(process.env.HOST_URL ?? "http://localhost:3000" + route);
 
   await page
     .getByRole("button")
-    .getByText(CONSTANTS.bookingButtonText)
+    .getByText("Book a FREE Initial Meeting")
     .first()
     .click();
 
@@ -67,9 +65,11 @@ test("Submit Enquiry Form", async ({ page }) => {
 
   await page.locator("button[type='submit']").first().click();
 
-  await page.waitForSelector(successToast);
-  const toastElement = await page.locator(successToast).first();
+  await page.waitForSelector(successToastId);
+  const toastElement = await page.locator(successToastId).first();
   const toastText = await toastElement.textContent();
 
-  await expect(toastText).toBe(SUCCESS_MESSAGE);
+  await expect(toastText).toBe(
+    "Form submitted. We'll be in contact as soon as possible."
+  );
 });

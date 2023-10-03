@@ -20,7 +20,7 @@ export interface BookingButtonProps {
   buttonClass?: string;
 }
 
-export const SUCCESS_MESSAGE =
+const SUCCESS_MESSAGE =
   "Form submitted. We'll be in contact as soon as possible.";
 
 export const BookingButton = ({ data }) => {
