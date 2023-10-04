@@ -30,15 +30,10 @@ export default async function handler(
 
       const Note = req.body.Note;
       // Note: bypassing recaptcha is intended for weekly testing the lead capture form only
-      const key_matched = Note.includes(
-        process.env.RECAPTCHA_BYPASS_SECRET
-      );
+      const key_matched = Note.includes(process.env.RECAPTCHA_BYPASS_SECRET);
 
       if (key_matched) {
-        req.body.Note = Note.replace(
-          process.env.RECAPTCHA_BYPASS_SECRET,
-          ""
-        );
+        req.body.Note = Note.replace(process.env.RECAPTCHA_BYPASS_SECRET, "");
       }
 
       // Documentation - Create Lead - https://sswcom.sharepoint.com/:w:/r/sites/SSWDevelopers/_layouts/15/Doc.aspx?sourcedoc=%7BE8A18D9B-DE74-47EC-B836-01A5AD193DCC%7D&file=Create-lead-Flow.docx&action=default&mobileredirect=true
