@@ -54,9 +54,9 @@ jobs:
         id: KeyVaultSecrets
         run: |
           # KV - Secret
-          $SECRET_KEY_TO_BYPASS_RECAPTCHA = (az keyvault secret show --name SECRET-KEY-TO-BYPASS-RECAPTCHA --vault-name ${{ env.KEY_VAULT }} --query value -o tsv)
-          echo "::add-mask::$SECRET_KEY_TO_BYPASS_RECAPTCHA"
-          echo "SECRET_KEY_TO_BYPASS_RECAPTCHA=$SECRET_KEY_TO_BYPASS_RECAPTCHA" >> $env:GITHUB_OUTPUT
+          $RECAPTCHA_BYPASS_SECRET = (az keyvault secret show --name SECRET-KEY-TO-BYPASS-RECAPTCHA --vault-name ${{ env.KEY_VAULT }} --query value -o tsv)
+          echo "::add-mask::$RECAPTCHA_BYPASS_SECRET"
+          echo "RECAPTCHA_BYPASS_SECRET=$RECAPTCHA_BYPASS_SECRET" >> $env:GITHUB_OUTPUT
           Write-Host '✅ KV - Secret retrieved'
 
       - name: Install dependencies
@@ -69,7 +69,7 @@ jobs:
         run: yarn playwright test
         env:
           HOST_URL: ${{ inputs.HOST_URL }}
-          SECRET_KEY_TO_BYPASS_RECAPTCHA: ${{ steps.KeyVaultSecrets.outputs.SECRET_KEY_TO_BYPASS_RECAPTCHA }}
+          RECAPTCHA_BYPASS_SECRET: ${{ steps.KeyVaultSecrets.outputs.RECAPTCHA_BYPASS_SECRET }}
 
       - uses: actions/upload-artifact@v2
         if: always()

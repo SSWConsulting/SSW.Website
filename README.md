@@ -101,7 +101,7 @@ syncyarnlock -s -k
 
 - 1 Make sure you have `CREATE_LEAD_ENDPOINT` environment variable in your `.env` - [Follow steps to setup](https://github.com/SSWConsulting/SSW.Website/wiki/Accessing-the-Third%E2%80%90Party-APIs-Locally)
 
-- 2 Run `npx playwright test` in your terminal and make sure your local instance is running in the background.
+- 2 Run `yarn playwright test --ui` in your terminal and make sure your local instance is running in the background.
 
 ## Pull Requests
 

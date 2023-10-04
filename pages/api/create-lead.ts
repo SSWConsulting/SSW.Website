@@ -31,12 +31,12 @@ export default async function handler(
       const Note = req.body.Note;
       // Note: bypassing recaptcha is intended for weekly testing the lead capture form only
       const key_matched = Note.includes(
-        process.env.SECRET_KEY_TO_BYPASS_RECAPTCHA
+        process.env.RECAPTCHA_BYPASS_SECRET
       );
 
       if (key_matched) {
         req.body.Note = Note.replace(
-          process.env.SECRET_KEY_TO_BYPASS_RECAPTCHA,
+          process.env.RECAPTCHA_BYPASS_SECRET,
           ""
         );
       }
