@@ -68,15 +68,18 @@ export const ActionSection = (props: ActionSectionProps) => {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className="flex flex-col">
+            <MeetupForm className="self-start max-md:mx-auto" />
+
             <SponsorCard
-              className="mb-4 mt-6"
+              className="mb-4 mt-6 items-end justify-end text-white"
               urls={props.eventSponsors.map((sponsor) => ({
                 src: sponsor,
                 label: "Sponsor image",
               }))}
             />
           </div>
-          <MeetupForm className="self-start max-md:mx-auto" />
         </div>
       </Container>
     </section>

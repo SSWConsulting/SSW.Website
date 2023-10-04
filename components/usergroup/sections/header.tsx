@@ -27,8 +27,13 @@ export const UserGroupHeader = ({
   trailerUrl,
   registerUrl,
 }: UserGroupHeaderProps) => {
+  dayjs.tz.setDefault("Australia/Sydney");
+  const timezoneSplit = dayjs.tz.guess().split("/");
+  const timezone = timezoneSplit[timezoneSplit.length - 1];
+
   const formattedDate: string = useMemo(
-    () => dayjs(date).format("ddd, D MMMM YYYY, h:mm A") + " AEST",
+    () =>
+      dayjs(date).format("ddd, D MMMM YYYY, h:mm A") + " " + timezone + " Time",
     [date]
   );
 
@@ -71,7 +76,7 @@ export const UserGroupHeader = ({
           </div>
         </div>
         {presenter.image && (
-          <div className="flex max-w-md shrink-0 flex-col justify-end self-end max-md:mx-auto">
+          <div className="flex max-w-xl shrink-0 flex-col justify-end self-end max-md:mx-auto">
             <Image
               className="!relative align-bottom"
               src={presenter.image}
