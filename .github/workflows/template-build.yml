@@ -87,8 +87,7 @@ jobs:
       - name: keyVault - Secrets
         shell: pwsh
         id: KeyVaultSecrets
-        run: |
-          .\keyvault-secrets.ps1
+        run: ./scripts/keyvault-secrets.ps1
 
       - name: AppInsight - Connection Strings
         shell: pwsh
