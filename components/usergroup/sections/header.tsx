@@ -33,15 +33,14 @@ export const UserGroupHeader = ({
   online,
   city,
 }: UserGroupHeaderProps) => {
-  dayjs.tz.setDefault(CITY_TIMEZONES[city]);
+  const formattedDate: string = useMemo(() => {
+    dayjs.tz.setDefault(CITY_TIMEZONES[city]);
 
-  const timezone = city.charAt(0).toUpperCase() + city.slice(1);
-
-  const formattedDate: string = useMemo(
-    () =>
-      dayjs(date).format("ddd, D MMMM YYYY, h:mm A") + " " + timezone + " Time",
-    [date]
-  );
+    const timezone = city.charAt(0).toUpperCase() + city.slice(1);
+    return (
+      dayjs(date).format("ddd, D MMMM YYYY, h:mm A") + " " + timezone + " Time"
+    );
+  }, [date, city]);
 
   return (
     <section
