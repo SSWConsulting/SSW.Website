@@ -5,6 +5,8 @@ import { useMemo } from "react";
 import { BiVideo } from "react-icons/bi";
 import { UtilityButton } from "../../blocks";
 import { Container } from "../../util/container";
+import { OnlineBadge } from "../onlineBadge";
+import { CITY_TIMEZONES } from "../../util/constants/country";
 
 type UserGroupHeaderProps = {
   className?: string;
@@ -17,6 +19,8 @@ type UserGroupHeaderProps = {
   };
   trailerUrl?: string;
   registerUrl: string;
+  online?: boolean;
+  city: keyof typeof CITY_TIMEZONES;
 };
 
 export const UserGroupHeader = ({
@@ -26,10 +30,12 @@ export const UserGroupHeader = ({
   presenter,
   trailerUrl,
   registerUrl,
+  online,
+  city,
 }: UserGroupHeaderProps) => {
-  dayjs.tz.setDefault("Australia/Sydney");
-  const timezoneSplit = dayjs.tz.guess().split("/");
-  const timezone = timezoneSplit[timezoneSplit.length - 1];
+  dayjs.tz.setDefault(CITY_TIMEZONES[city]);
+
+  const timezone = city.charAt(0).toUpperCase() + city.slice(1);
 
   const formattedDate: string = useMemo(
     () =>
@@ -49,7 +55,9 @@ export const UserGroupHeader = ({
         size="custom"
       >
         <div className="flex max-w-3xl flex-col pb-10">
-          <span className="pt-10 text-lg">{formattedDate}</span>
+          <div className="flex flex-row items-center pt-10 text-lg">
+            {formattedDate} <OnlineBadge online={online} />
+          </div>
           <h1 className="mb-2 pb-1 pt-3 text-5xl font-semibold">{title}</h1>
           <span className="mb-12 text-lg">
             With <a href={presenter.url}>{presenter.name}</a>
