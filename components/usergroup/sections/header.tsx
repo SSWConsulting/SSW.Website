@@ -36,9 +36,12 @@ export const UserGroupHeader = ({
   const formattedDate: string = useMemo(() => {
     dayjs.tz.setDefault(CITY_TIMEZONES[city]);
 
-    const timezone = city.charAt(0).toUpperCase() + city.slice(1);
+    const cityStr = city.charAt(0).toUpperCase() + city.slice(1);
     return (
-      dayjs(date).format("ddd, D MMMM YYYY, h:mm A") + " " + timezone + " Time"
+      dayjs(date).tz(CITY_TIMEZONES[city]).format("ddd, D MMMM YYYY, h:mm A") +
+      " " +
+      cityStr +
+      " Time"
     );
   }, [date, city]);
 
