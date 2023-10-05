@@ -3,7 +3,25 @@ import Link from "next/link";
 
 import { tinaField } from "tinacms/dist/react";
 
-const ContactPanel = ({ office }) => {
+type ContactPanelProps = {
+  office: {
+    phone: string;
+    streetAddress: string;
+    suburb: string;
+    addressLocality: string;
+    addressRegion: string;
+    postalCode: string;
+    addressCountry: string;
+    sideImg?: string;
+    sidebarSecondaryPlace?: {
+      name: string;
+      url: string;
+    };
+    chapelLink?: string;
+  };
+};
+
+const ContactPanel = ({ office }: ContactPanelProps) => {
   return (
     <>
       <h3>Contact Us</h3>
@@ -44,10 +62,13 @@ const ContactPanel = ({ office }) => {
         </strong>
       </p>
       <p>
-        {"Learn more on "}
-        <Link href={`https://sswchapel.com.au/${office.addressLocality}`}>
-          SSW Chapel
-        </Link>
+        {office.chapelLink && (
+          <span data-tina-field={tinaField(office, "chapelLink")}>
+            {"Learn more on "}
+            <Link href={office.chapelLink}>SSW Chapel</Link>
+          </span>
+        )}
+
         {!!office.sidebarSecondaryPlace && (
           <>
             {" and "}
