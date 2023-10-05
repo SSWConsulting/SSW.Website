@@ -54,6 +54,7 @@ export default function NETUGPage(
             trailerUrl={props.event?.TrailerUrl?.Url}
             registerUrl={data.userGroupPage.registerUrl}
             city={props.city}
+            online={props.city !== props.event?.City?.toLowerCase()}
           />
 
           <Container>
