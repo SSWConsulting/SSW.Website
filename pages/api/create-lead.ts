@@ -12,16 +12,36 @@ import { invokePowerAutomateFlow } from "../../services/server/power-automate-fl
 
 import { CustomError } from "../../services/server/customError";
 
+const RECAPATCHA_VALIDATION_SUCCESS_RESULT = {
+  data: {
+    success: true,
+  },
+  status: 200,
+};
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   try {
     if (req.method === "POST") {
+      // this is the code to validate with the recaptcha service
       const { Recaptcha } = req.body;
+
+      const Note = req.body.Note;
+      // Note: bypassing recaptcha is intended for weekly testing the lead capture form only
+      const key_matched = Note.includes(process.env.RECAPTCHA_BYPASS_SECRET);
+
+      if (key_matched) {
+        req.body.Note = Note.replace(process.env.RECAPTCHA_BYPASS_SECRET, "");
+      }
+
       // Documentation - Create Lead - https://sswcom.sharepoint.com/:w:/r/sites/SSWDevelopers/_layouts/15/Doc.aspx?sourcedoc=%7BE8A18D9B-DE74-47EC-B836-01A5AD193DCC%7D&file=Create-lead-Flow.docx&action=default&mobileredirect=true
-      if (Recaptcha) {
-        const recaptchaValidation = await validateRecaptcha(Recaptcha);
+      if (Recaptcha || key_matched) {
+        // Recaptcha value provided by google Recaptcha API
+        const recaptchaValidation = key_matched
+          ? RECAPATCHA_VALIDATION_SUCCESS_RESULT
+          : await validateRecaptcha(Recaptcha);
         // const recaptchaValidation = { data: { success: true } }; // uncomment this to bypass recaptcha for testing purpose
         if (recaptchaValidation && recaptchaValidation.data.success) {
           const createLeadFlow = await invokePowerAutomateFlow(
