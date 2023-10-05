@@ -87,7 +87,7 @@ jobs:
       - name: keyVault - Secrets
         shell: pwsh
         id: KeyVaultSecrets
-        run: ./scripts/keyvault-secrets.ps1 -keyvault ${{ env.KEY_VAULT }}
+        run: ./scripts/keyvault-secrets.ps1 -KEY_VAULT ${{ env.KEY_VAULT }}
 
       - name: AppInsight - Connection Strings
         shell: pwsh
