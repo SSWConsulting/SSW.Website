@@ -151,7 +151,7 @@ jobs:
           az acr login --name ${{ env.ACR_LOGIN_SERVER }}
 
       - name: Docker - Build and push
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5
         with:
           context: .
           push: true

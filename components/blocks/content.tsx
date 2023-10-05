@@ -7,6 +7,7 @@ import { Section } from "../util/section";
 import { clientLogosBlockSchema } from "./clientLogos";
 import { customImageBlockSchema } from "./customImage";
 import { componentRenderer } from "./mdxComponentRenderer";
+import { videoEmbedBlockSchema } from "./videoEmbed";
 
 const alignmentClasses = {
   left: "text-left",
@@ -66,7 +67,11 @@ export const contentBlockSchema: Template = {
       type: "rich-text",
       label: "Content",
       name: contentBlock.content,
-      templates: [customImageBlockSchema, clientLogosBlockSchema],
+      templates: [
+        customImageBlockSchema,
+        clientLogosBlockSchema,
+        videoEmbedBlockSchema,
+      ],
     },
     {
       type: "string",
