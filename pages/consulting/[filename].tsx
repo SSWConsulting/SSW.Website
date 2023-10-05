@@ -61,7 +61,9 @@ export default function ConsultingPage(
 
   return (
     <RecaptchaContext.Provider
-      value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
+      value={{
+        recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY,
+      }}
     >
       <SEO seo={props.seo} />
       <Layout>
