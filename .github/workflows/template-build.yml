@@ -85,9 +85,14 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: keyVault - Secrets
-        shell: pwsh
+        uses: theotow/keyvault-secret-azure@v1
         id: KeyVaultSecrets
-        run: ./scripts/keyvault-secrets.ps1 -KEY_VAULT ${{ env.KEY_VAULT }}
+        with:
+          key-vault-name: ${{ env.KEY_VAULT }}
+          config: |
+            {"GoogleRecaptchaSiteKey": "Google-Recaptcha-Site-KEY"}
+
+      - run: echo "${{ env.GoogleRecaptchaSiteKey }}"
 
       - name: AppInsight - Connection Strings
         shell: pwsh
@@ -117,7 +122,7 @@ jobs:
           NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
           NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref || github.ref_name }}
           NEXT_PUBLIC_ZENDESK_CHAT_KEY: ${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY }}
-          GOOGLE_RECAPTCHA_SITE_KEY: ${{ steps.KeyVaultSecrets.outputs.GoogleRecaptchaSiteKey }}
+          GOOGLE_RECAPTCHA_SITE_KEY: ${{ env.GoogleRecaptchaSiteKey }}
           MICROSOFT_OAUTH_TENANT_ID: ${{ steps.KeyVaultSecrets.outputs.MICROSOFT_OAUTH_TENANT_ID }}
           MICROSOFT_OAUTH_CLIENT_ID: ${{ steps.KeyVaultSecrets.outputs.MICROSOFT_OAUTH_CLIENT_ID }}
           MICROSOFT_OAUTH_CLIENT_SECRET: ${{ steps.KeyVaultSecrets.outputs.MICROSOFT_OAUTH_CLIENT_SECRET }}
