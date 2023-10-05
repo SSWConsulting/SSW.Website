@@ -125,7 +125,23 @@ export const getSpeakersInfo = async (ids?: number[], emails?: string[]) => {
 };
 
 export const getInternalSpeakers = async (): Promise<InternalSpeakerInfo[]> => {
-  const token = await getToken(["https://ssw.crm6.dynamics.com/.default"]);
+  const clientConfig = {
+    auth: {
+      clientId: process.env.DYNAMICS_CLIENT_ID,
+      authority: `https://login.microsoftonline.com/${process.env.MICROSOFT_OAUTH_TENANT_ID}`,
+      clientSecret: process.env.DYNAMICS_CLIENT_SECRET,
+    },
+  };
+
+  const clientApp = new msal.ConfidentialClientApplication(clientConfig);
+
+  const authParams = {
+    scopes: ["https://ssw.crm6.dynamics.com/.default"],
+  };
+
+  const authRes = await clientApp.acquireTokenByClientCredential(authParams);
+
+  const token = authRes.accessToken;
 
   const internalSpeakersRes = await axios.get(
     "https://ssw.crm6.dynamics.com/api/data/v9.2/systemusers",
@@ -133,14 +149,29 @@ export const getInternalSpeakers = async (): Promise<InternalSpeakerInfo[]> => {
       headers: {
         Authorization: "Bearer " + token,
         Accept: "application/json",
-        Prefer: "HonorNonIndexedQueriesWarningMayFailRandomly",
         "OData-MaxVersion": "4.0",
         "OData-Version": "4.0",
       },
     }
   );
 
-  return internalSpeakersRes.data;
+  if (internalSpeakersRes?.data?.value?.length > 0) {
+    const speakers: InternalSpeakerInfo[] = internalSpeakersRes.data.value.map(
+      (user) => ({
+        FirstName: user.firstname,
+        LastName: user.lastname,
+        Nickname: user.nickname,
+        PhotoURL: user.photourl,
+        GitHubURL: user.ssw_githuburl,
+        ProfileURL: user.ssw_publicprofileurl,
+        ShortDescription: user.ssw_shortdescription,
+      })
+    );
+
+    return speakers;
+  } else {
+    return [];
+  }
 };
 
 export type BookingFormSubmissionData = {
