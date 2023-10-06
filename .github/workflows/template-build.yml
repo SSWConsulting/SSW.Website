@@ -100,8 +100,6 @@ jobs:
               "SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID": "SHAREPOINT-EXTERNAL-PRESENTERS-LIST-ID"
             }
 
-      - run: echo "${{ env.GoogleRecaptchaSiteKey }}"
-
       - name: AppInsight - Connection Strings
         shell: pwsh
         id: AppInsight
