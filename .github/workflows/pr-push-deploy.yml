@@ -67,6 +67,38 @@ jobs:
           repo-token-user-login: "github-actions[bot]"
           allow-repeats: true
 
+  test:
+    name: Run Playwright tests
+    needs: pr-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v2
+        with:
+          path: ./.github
+
+      - name: Install Playwright Browsers
+        run: yarn playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: yarn playwright test images
+        env:
+          HOST_URL: ${{ needs.pr-deploy.outputs.url }}
+
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14
+
   pagespeedInsights:
     name: Run PageSpeed Insights
     needs: pr-deploy
