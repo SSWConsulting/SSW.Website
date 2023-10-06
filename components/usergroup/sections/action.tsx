@@ -69,11 +69,11 @@ export const ActionSection = (props: ActionSectionProps) => {
               ))}
             </ul>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col md:items-end">
             <MeetupForm className="self-start max-md:mx-auto" />
 
             <SponsorCard
-              className="mb-4 mt-6 items-end justify-end text-white"
+              className="mb-4 mt-6 inline-block grow-0 items-end justify-end text-white"
               urls={props.eventSponsors.map((sponsor) => ({
                 src: sponsor,
                 label: "Sponsor image",

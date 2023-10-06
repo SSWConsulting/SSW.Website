@@ -11,7 +11,7 @@ type SponsorCardProps = {
 
 export const SponsorCard = ({ className, urls }: SponsorCardProps) => {
   return (
-    <div className={classNames("inline-block rounded-md bg-sswRed", className)}>
+    <div className={classNames("rounded-md bg-sswRed", className)}>
       <div className="rounded-md bg-white">
         {urls.map((url, index) => (
           <Image

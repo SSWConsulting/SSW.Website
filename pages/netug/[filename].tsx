@@ -53,6 +53,8 @@ export default function NETUGPage(
             }}
             trailerUrl={props.event?.TrailerUrl?.Url}
             registerUrl={data.userGroupPage.registerUrl}
+            city={props.city}
+            online={props.city !== props.event?.City?.toLowerCase()}
           />
 
           <Container>
@@ -271,6 +273,7 @@ export const getStaticProps = async ({ params }) => {
       testimonialsResult,
       event: event[0] || null,
       speaker: speakers[0] || null,
+      city: params.filename,
     },
     revalidate: ISR_TIME,
   };
