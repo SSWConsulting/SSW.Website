@@ -8,7 +8,7 @@ const TechnologyCards = (props) => {
     technologyCards.length % 2 == 0 ? "" : "last-of-type:col-span-full";
 
   return (
-    <article className="bg-white text-black" data-testid="technologyCards">
+    <article className="bg-white text-black">
       <h1 data-tina-field={tinaField(props, "header")} className="mt-0">
         {header}
       </h1>

@@ -9,8 +9,17 @@ test("Images load successfully on index", async ({ page }) => {
 
   await page.goto("/", { waitUntil: "networkidle" });
 
-  await page.waitForSelector("[data-testid='clientLogos']");
-  await page.getByTestId("clientLogos").scrollIntoViewIfNeeded();
+  const sizes = await page.evaluate(() => {
+    return {
+      browserHeight: window.innerHeight,
+      pageHeight: document.body.scrollHeight,
+    };
+  });
+
+  for (let i = 0; i < sizes.pageHeight; i += sizes.browserHeight) {
+    await page.mouse.wheel(0, i);
+    await page.waitForTimeout(100);
+  }
 });
 
 test("Images load successfully on consulting page", async ({ page }) => {
@@ -22,6 +31,15 @@ test("Images load successfully on consulting page", async ({ page }) => {
 
   await page.goto("/consulting/react", { waitUntil: "networkidle" });
 
-  await page.waitForSelector("[data-testid='technologyCards']");
-  await page.getByTestId("technologyCards").scrollIntoViewIfNeeded();
+  const sizes = await page.evaluate(() => {
+    return {
+      browserHeight: window.innerHeight,
+      pageHeight: document.body.scrollHeight,
+    };
+  });
+
+  for (let i = 0; i < sizes.pageHeight; i += sizes.browserHeight) {
+    await page.mouse.wheel(0, i);
+    await page.waitForTimeout(100);
+  }
 });
