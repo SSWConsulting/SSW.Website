@@ -79,10 +79,8 @@ jobs:
         with:
           node-version-file: ".nvmrc"
 
-      - name: Load .env file
-        uses: xom9ikk/dotenv@v2
-        with:
-          path: ./.github
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
       - name: Install Playwright Browsers
         run: yarn playwright install --with-deps
