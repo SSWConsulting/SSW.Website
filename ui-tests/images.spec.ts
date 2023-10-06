@@ -9,6 +9,7 @@ test("Images load successfully on index", async ({ page }) => {
 
   await page.goto("/", { waitUntil: "networkidle" });
 
+  // Taken from https://github.com/microsoft/playwright/issues/19277
   const sizes = await page.evaluate(() => {
     return {
       browserHeight: window.innerHeight,
@@ -31,6 +32,7 @@ test("Images load successfully on consulting page", async ({ page }) => {
 
   await page.goto("/consulting/react", { waitUntil: "networkidle" });
 
+  // Taken from https://github.com/microsoft/playwright/issues/19277
   const sizes = await page.evaluate(() => {
     return {
       browserHeight: window.innerHeight,
