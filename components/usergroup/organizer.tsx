@@ -4,6 +4,7 @@ import type { Template } from "tinacms";
 import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { ReadMore } from "./readMore";
 
 export type OrganizerType = {
   name: string;
@@ -56,7 +57,7 @@ export const Organizer = ({
         {data?.content && <TinaMarkdown content={data?.content} />}
         {/* Here for the case where the content comes from SharePoint */}
         {stringContent && (
-          <div dangerouslySetInnerHTML={{ __html: stringContent }} />
+          <ReadMore text={stringContent} length={100} className="text-lg" />
         )}
       </div>
     </div>

@@ -37,7 +37,9 @@ export default function NETUGPage(
 
   const speakerDescription = props.speaker?.PresenterShortDescription.split(
     "<br>"
-  )[0].replace("<div>​</div><div><div>", "");
+  )[0]
+    .replace("<div>​</div><div><div>", "")
+    .replace(/(<([^>]+)>)/gi, "");
 
   if (data?.userGroupPage?.__typename === "UserGroupPageLocationPage") {
     return (
