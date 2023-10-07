@@ -7,7 +7,7 @@ body:
       value: |
         @camillars @sethdailyssw
         Fill out the below fields with information about your new page:
-  - type: input
+  - type: textarea
     id: cc
     attributes:
       label: "1. People in the loop:"

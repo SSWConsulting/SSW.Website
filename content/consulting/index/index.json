@@ -43,24 +43,10 @@
           ]
         },
         {
-          "title": "React ",
+          "title": "React",
           "description": "Easily create interactive UIs with this JavaScript library, maintained by Facebook, Instagram and a large community!",
           "logo": "/images/thumbs/thumb-react.jpg",
           "page": "content/consulting/react.mdx",
-          "tags": [
-            {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
-            }
-          ]
-        },
-        {
-          "title": "Vue.js",
-          "description": "Vue.js is a progressive JavaScript framework to build web interfaces and applications.",
-          "logo": "/images/thumbs/thumb-vuejs.jpg",
-          "page": "content/consulting/vue.mdx",
           "tags": [
             {
               "tag": "content/consulting/tag/application-development.json"
@@ -81,6 +67,34 @@
             },
             {
               "tag": "content/consulting/tag/application-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Next.js",
+          "description": "Next.js allows you to rapidly build full-stack React applications with server-side rendering and API routes. It's fast, scalable, and SEO-friendly.",
+          "logo": "/images/thumbs/thumb-nextjs.jpg",
+          "page": "content/consulting/nextjs.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Vue.js",
+          "description": "Vue.js is a progressive JavaScript framework to build web interfaces and applications.",
+          "logo": "/images/thumbs/thumb-vuejs.jpg",
+          "page": "content/consulting/vue.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/application-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/website-development.json"
             }
           ]
         },
@@ -176,7 +190,7 @@
           "description": "Process mining uncovers processes in your company that can be effectively automated with artificial intelligence, so you save costs and increase your productivity.",
           "logo": "/images/thumbs/thumb-power-automate-icon.jpg",
           "page": "content/consulting/process-mining.mdx",
-           "tags": [
+          "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"
             }
@@ -292,6 +306,17 @@
           "description": "The Office you know plus extra tools will help you work better together, all based on the cloud.",
           "logo": "/images/thumbs/thumb-microsoft-365-2023.png",
           "page": "content/consulting/microsoft-365.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/platform-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Microsoft Fabric",
+          "description": "Microsoft Fabric reshape how everyone accesses, manages, and acts on data and insights by connecting every data source and analytics service together - on a single, AI-powered platform.",
+          "logo": "/images/thumbs/268349809-5bd00274-c06b-4db8-b949-8c205aa8ebb7.png",
+          "page": "content/consulting/fabric.mdx",
           "tags": [
             {
               "tag": "content/consulting/tag/platform-development.json"
