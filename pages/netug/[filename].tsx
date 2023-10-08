@@ -23,6 +23,7 @@ import {
 import { SectionRenderer } from "../../components/usergroup/sections/renderer";
 import { TechnologyLogos } from "../../components/usergroup/technologyLogos";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
+import { SEO } from "../../components/util/seo";
 
 const ISR_TIME = 60 * 60; // 1 hour;
 
@@ -45,6 +46,7 @@ export default function NETUGPage(
     return (
       <>
         <Layout>
+          <SEO seo={data.userGroupPage.seo} />
           <UserGroupHeader
             date={new Date(props.event?.StartDateTime)}
             title={props.event?.Title}
