@@ -35,31 +35,30 @@ export default function NETUGPage(
     query: props.query,
     variables: props.variables,
   });
-
-  const speakerDescription = props.speaker?.PresenterShortDescription.split(
-    "<br>"
-  )[0]
-    .replace("<div>​</div><div><div>", "")
-    .replace(/(<([^>]+)>)/gi, "");
+  const speakerDescription = sanitiseXSS(
+    props.speaker?.PresenterShortDescription
+  );
 
   if (data?.userGroupPage?.__typename === "UserGroupPageLocationPage") {
     return (
       <>
         <Layout>
           <SEO seo={data.userGroupPage.seo} />
-          <UserGroupHeader
-            date={new Date(props.event?.StartDateTime)}
-            title={props.event?.Title}
-            presenter={{
-              name: props.event?.Presenter,
-              url: props.event?.PresenterProfileUrl?.Url,
-              image: props.speaker?.TorsoImage?.Url || "",
-            }}
-            trailerUrl={props.event?.TrailerUrl?.Url}
-            registerUrl={data.userGroupPage.registerUrl}
-            city={props.city}
-            online={props.city !== props.event?.City?.toLowerCase()}
-          />
+          {props.event && (
+            <UserGroupHeader
+              date={new Date(props.event?.StartDateTime)}
+              title={props.event?.Title}
+              presenter={{
+                name: props.event?.Presenter,
+                url: props.event?.PresenterProfileUrl?.Url,
+                image: props.speaker?.TorsoImage?.Url || "",
+              }}
+              trailerUrl={props.event?.TrailerUrl?.Url}
+              registerUrl={data.userGroupPage.registerUrl}
+              city={props.city}
+              online={props.city !== props.event?.City?.toLowerCase()}
+            />
+          )}
 
           <Container>
             <section className="grid-cols-3 gap-10 md:grid">

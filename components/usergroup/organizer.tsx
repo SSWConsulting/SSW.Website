@@ -57,7 +57,7 @@ export const Organizer = ({
         {data?.content && <TinaMarkdown content={data?.content} />}
         {/* Here for the case where the content comes from SharePoint */}
         {stringContent && (
-          <ReadMore text={stringContent} length={150} className="text-lg" />
+          <ReadMore text={stringContent} length={200} className="text-lg" />
         )}
       </div>
     </div>

@@ -20,7 +20,11 @@ export const ReadMore = ({ text, length, className }: ReadMoreProps) => {
 
   return (
     <div className={classNames("flex flex-col", className)}>
-      {dropdownClicked ? text : condenseContent(text, length)}{" "}
+      <div
+        dangerouslySetInnerHTML={{
+          __html: dropdownClicked ? text : condenseContent(text, length),
+        }}
+      />
       <button
         className="flex grow-0 flex-row items-center pt-2 text-sm text-gray-800"
         onClick={() => setDropdownClicked((prev) => !prev)}
