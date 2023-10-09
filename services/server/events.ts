@@ -164,8 +164,6 @@ export const getInternalSpeakers = async (
     }
   );
 
-  console.log(internalSpeakersRes.data);
-
   if (internalSpeakersRes?.data?.value?.length > 0) {
     const speakers: InternalSpeakerInfo[] = internalSpeakersRes.data.value.map(
       (user) => ({
