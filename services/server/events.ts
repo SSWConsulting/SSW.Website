@@ -107,26 +107,22 @@ export const getSpeakersInfo = async (ids?: number[], emails?: string[]) => {
   }
 
   if (emails?.length) {
-    try {
-      const internalSpeakers = await getInternalSpeakers(emails);
+    const internalSpeakers = await getInternalSpeakers(emails);
 
-      const internalSpeakersInfo: SpeakerInfo[] = internalSpeakers.map(
-        (internalSpeaker) => ({
-          Title: internalSpeaker.Nickname
-            ? `${internalSpeaker.FirstName} (${internalSpeaker.Nickname}) ${internalSpeaker.LastName}`
-            : `${internalSpeaker.FirstName} ${internalSpeaker.LastName}`,
-          PresenterProfileImage: {
-            Url: internalSpeaker.PhotoURL,
-          },
-          PresenterShortDescription: internalSpeaker.ShortDescription,
-          PresenterProfileLink: internalSpeaker.ProfileURL,
-        })
-      );
+    const internalSpeakersInfo: SpeakerInfo[] = internalSpeakers.map(
+      (internalSpeaker) => ({
+        Title: internalSpeaker.Nickname
+          ? `${internalSpeaker.FirstName} (${internalSpeaker.Nickname}) ${internalSpeaker.LastName}`
+          : `${internalSpeaker.FirstName} ${internalSpeaker.LastName}`,
+        PresenterProfileImage: {
+          Url: internalSpeaker.PhotoURL,
+        },
+        PresenterShortDescription: internalSpeaker.ShortDescription,
+        PresenterProfileLink: internalSpeaker.ProfileURL,
+      })
+    );
 
-      speakers.push(...internalSpeakersInfo);
-    } catch (err) {
-      console.error(err);
-    }
+    speakers.push(...internalSpeakersInfo);
   }
 
   return speakers;
