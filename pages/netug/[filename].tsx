@@ -177,7 +177,7 @@ export default function NETUGPage(
               </div>
 
               <div
-                className="col-span-2 mt-10"
+                className="col-span-2"
                 data-tina-field={tinaField(data.userGroupPage, "latestTech")}
               >
                 <LatestTech data={data.userGroupPage.latestTech} />
