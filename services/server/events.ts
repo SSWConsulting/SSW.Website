@@ -5,7 +5,9 @@ const SITE_ID = process.env.SHAREPOINT_SITE_ID;
 const EVENTS_LIST_ID = process.env.SHAREPOINT_EVENTS_LIST_ID;
 const EXTERNAL_PRESENTERS_LIST_ID =
   process.env.SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID;
+
 const SHAREPOINT_SCOPES = ["https://graph.microsoft.com/.default"];
+const DYNAMICS_SCOPES = ["https://ssw.crm6.dynamics.com/.default"];
 
 export const getToken = async (
   scopes: string[],
@@ -142,7 +144,7 @@ export const getInternalSpeakers = async (
   }
 
   const accessToken = await getToken(
-    ["https://ssw.crm6.dynamics.com/.default"],
+    DYNAMICS_SCOPES,
     process.env.DYNAMICS_CLIENT_ID,
     process.env.DYNAMICS_CLIENT_SECRET
   );
