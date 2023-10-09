@@ -135,6 +135,16 @@ export const getSpeakersInfo = async (ids?: number[], emails?: string[]) => {
 export const getInternalSpeakers = async (
   emails: string[]
 ): Promise<InternalSpeakerInfo[]> => {
+  if (
+    process.env.NODE_ENV === "development" &&
+    (!process.env.DYNAMICS_CLIENT_ID || !process.env.DYNAMICS_CLIENT_SECRET)
+  ) {
+    console.warn(
+      "⚠️ You are missing the Dynamics 365 environment variables required for speakers. Please see the .env.example file for the required variables."
+    );
+    return [];
+  }
+
   const accessToken = await getToken(
     ["https://ssw.crm6.dynamics.com/.default"],
     process.env.DYNAMICS_CLIENT_ID,
