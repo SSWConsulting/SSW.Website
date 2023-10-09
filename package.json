@@ -40,7 +40,7 @@
     "@azure/msal-node": "^2.1.0",
     "@builder.io/partytown": "^0.8.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@headlessui/react": "1.7.15",
+    "@headlessui/react": "1.7.17",
     "@headlessui/tailwindcss": "^0.2.0",
     "@microsoft/applicationinsights-react-js": "^3.4.2",
     "@microsoft/applicationinsights-web": "2.8.14",
