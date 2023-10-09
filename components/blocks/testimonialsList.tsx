@@ -88,7 +88,7 @@ export const TestimonialsList = ({ data: { hideInternshipTestimonials } }) => {
         </div>
       ) : (
         <>
-          <p className="flex items-center text-xl">
+          <p className="flex items-center justify-center text-xl">
             <FaSpinner className="m-icon animate-spin" />
             Loading Testimonials...
           </p>
