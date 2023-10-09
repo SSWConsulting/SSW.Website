@@ -85,7 +85,7 @@ jobs:
       - name: Install Playwright Browsers
         run: yarn playwright install --with-deps
 
-      - name: Run Playwright tests
+      - name: Run Playwright image tests
         run: yarn playwright test images
         env:
           HOST_URL: ${{ needs.pr-deploy.outputs.url }}
