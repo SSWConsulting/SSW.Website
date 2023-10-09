@@ -68,34 +68,11 @@ jobs:
           allow-repeats: true
 
   test:
-    name: Run Playwright tests
+    name: Run Playwright Tests
     needs: pr-deploy
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: ".nvmrc"
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-
-      - name: Install Playwright Browsers
-        run: yarn playwright install --with-deps
-
-      - name: Run Playwright image tests
-        run: yarn playwright test images
-        env:
-          HOST_URL: ${{ needs.pr-deploy.outputs.url }}
-
-      - uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 14
+    uses: ./.github/workflows/pr-main-ui-tests.yml
+    with:
+      deploy_url: ${{ needs.pr-deploy.outputs.url }}
 
   pagespeedInsights:
     name: Run PageSpeed Insights

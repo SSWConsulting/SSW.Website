@@ -53,3 +53,9 @@ jobs:
           ACR_LOGIN_SERVER: ${{ env.ACR_LOGIN_SERVER }}
           IMAGE_NAME: ${{ env.IMAGE_NAME }}
           AZURE_SERVICE_PRINCIPAL_OBJECT_ID: ${{ secrets.AZURE_SERVICE_PRINCIPAL_OBJECT_ID }}
+  test:
+    name: Run Playwright Tests
+    needs: deploy-to-prod
+    uses: ./.github/workflows/pr-main-ui-tests.yml
+    with:
+      deploy_url: ${{ github.env.webapp-url }}
