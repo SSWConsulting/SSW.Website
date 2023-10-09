@@ -70,7 +70,7 @@ jobs:
   test:
     name: Run Playwright Tests
     needs: pr-deploy
-    uses: ./.github/workflows/pr-main-ui-tests.yml
+    uses: ./.github/workflows/template-ui-tests.yml
     with:
       deploy_url: ${{ needs.pr-deploy.outputs.url }}
 
