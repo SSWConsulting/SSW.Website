@@ -3,7 +3,7 @@ import test, { expect } from "@playwright/test";
 test("Images load successfully on index", async ({ page }) => {
   await page.on("response", (response) => {
     if (response.request().resourceType() === "image") {
-      expect(!(response.status() >= 400)).toBeTruthy();
+      expect(response.status() < 400).toBeTruthy();
     }
   });
 
@@ -26,7 +26,7 @@ test("Images load successfully on index", async ({ page }) => {
 test("Images load successfully on consulting page", async ({ page }) => {
   await page.on("response", (response) => {
     if (response.request().resourceType() === "image") {
-      expect(!(response.status() >= 400)).toBeTruthy();
+      expect(response.status() < 400).toBeTruthy();
     }
   });
 
