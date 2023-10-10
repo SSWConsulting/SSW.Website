@@ -144,6 +144,12 @@ export const officeSchema: Collection = {
     },
     {
       type: "string",
+      label: "Chapel Link",
+      name: "chapelLink",
+      required: false,
+    },
+    {
+      type: "string",
       name: "hours",
       label: "Hours",
     },

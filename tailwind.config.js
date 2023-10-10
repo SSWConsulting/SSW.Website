@@ -333,6 +333,7 @@ module.exports = {
               backgroundColor: theme("colors.gray.100"),
               lineHeight: 1.5,
             },
+            "--tw-prose-bullets": "var(--tw-prose-body)",
           },
         },
         consulting: {

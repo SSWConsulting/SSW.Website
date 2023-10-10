@@ -35,7 +35,7 @@ export const BookingButton = ({ data }) => {
 
   const showSuccessToast = () => {
     toast.success(
-      <div className="text-left">
+      <div id="success-toaster" className="text-left">
         Form submitted. We'll be in contact as soon as possible.
       </div>
     );
