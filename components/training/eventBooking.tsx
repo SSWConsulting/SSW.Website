@@ -243,6 +243,8 @@ const EventHeader = ({
   );
 };
 
+const gstTypeOptions = ["inc GST", "+GST"];
+
 export const eventBookingBlock = {
   eventBooking: "EventBooking",
   eventDurationInDays: "eventDurationInDays",
@@ -258,8 +260,6 @@ export const eventBookingBlock = {
   },
   gstText: "gstText",
 };
-
-const gstTypeOptions = ["inc GST", "+GST"];
 
 export const eventBookingSchema: Template = {
   name: eventBookingBlock.eventBooking,
