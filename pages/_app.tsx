@@ -12,7 +12,6 @@ import { NEXT_SEO_DEFAULT } from "../next-seo.config";
 import "../styles.css";
 
 import AzureAppInsights from "../context/app-insight-client";
-const chatBaseBotId = process.env.NEXT_PUBLIC_CHATBASE_BOT_ID;
 // Hack as per https://stackoverflow.com/a/66575373 to stop font awesome icons breaking
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
@@ -23,7 +22,6 @@ import isBetween from "dayjs/plugin/isBetween";
 import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
-import ChatBaseBot from "../components/zendeskButton/chatBaseBot";
 
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
@@ -61,7 +59,6 @@ const App = ({ Component, pageProps }) => {
       <AzureAppInsights>
         <Component {...pageProps} />
       </AzureAppInsights>
-      <ChatBaseBot id={chatBaseBotId} />
     </>
   );
 };
