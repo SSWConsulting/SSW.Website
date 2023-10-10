@@ -33,6 +33,7 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
           price={data.price}
           discountPrice={data.discountPrice}
           discountNote={data.discountNote}
+          gstText={data.gstText}
           schema={data}
         />
       }
@@ -197,6 +198,7 @@ const EventHeader = ({
   price,
   discountPrice,
   discountNote,
+  gstText,
   schema,
 }) => {
   return (
@@ -234,7 +236,7 @@ const EventHeader = ({
           {isEmpty(discountPrice)
             ? ""
             : `${EventModel.CURRENCY}${discountPrice} ${discountNote ?? ""} `}
-          {EventModel.INCLUDE_GST}
+          {gstText}
         </div>
       </div>
     </div>
@@ -254,7 +256,10 @@ export const eventBookingBlock = {
     date: "date",
     bookingURL: "bookingURL",
   },
+  gstText: "gstText",
 };
+
+const gstTypeOptions = ["inc GST", "+GST"];
 
 export const eventBookingSchema: Template = {
   name: eventBookingBlock.eventBooking,
@@ -275,6 +280,13 @@ export const eventBookingSchema: Template = {
       label: "Discount Price",
       name: eventBookingBlock.discountPrice,
     },
+    {
+      type: "string",
+      name: eventBookingBlock.gstText,
+      label: "Select GST Option",
+      options: gstTypeOptions,
+    },
+
     {
       type: "string",
       label: "Discount Note",
