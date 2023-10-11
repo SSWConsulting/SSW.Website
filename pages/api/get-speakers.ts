@@ -69,7 +69,7 @@ export default async function handler(
         properties,
         severity: appInsights.Contracts.SeverityLevel.Error,
       });
-      res.status(500).json({ message: err.message });
+      res.status(500).json({ message: "Speaker request failed" });
     }
   } else {
     res.status(405).json({ message: "Unsupported method" });
