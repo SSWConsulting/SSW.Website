@@ -23,6 +23,7 @@ import {
 import { SectionRenderer } from "../../components/usergroup/sections/renderer";
 import { TechnologyLogos } from "../../components/usergroup/technologyLogos";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
+import { SEO } from "../../components/util/seo";
 
 const ISR_TIME = 60 * 60; // 1 hour;
 
@@ -34,30 +35,30 @@ export default function NETUGPage(
     query: props.query,
     variables: props.variables,
   });
-
-  const speakerDescription = props.speaker?.PresenterShortDescription.split(
-    "<br>"
-  )[0]
-    .replace("<div>​</div><div><div>", "")
-    .replace(/(<([^>]+)>)/gi, "");
+  const speakerDescription = sanitiseXSS(
+    props.speaker?.PresenterShortDescription
+  );
 
   if (data?.userGroupPage?.__typename === "UserGroupPageLocationPage") {
     return (
       <>
         <Layout>
-          <UserGroupHeader
-            date={new Date(props.event?.StartDateTime)}
-            title={props.event?.Title}
-            presenter={{
-              name: props.event?.Presenter,
-              url: props.event?.PresenterProfileUrl?.Url,
-              image: props.speaker?.TorsoImage?.Url || "",
-            }}
-            trailerUrl={props.event?.TrailerUrl?.Url}
-            registerUrl={data.userGroupPage.registerUrl}
-            city={props.city}
-            online={props.city !== props.event?.City?.toLowerCase()}
-          />
+          <SEO seo={data.userGroupPage.seo} />
+          {props.event && (
+            <UserGroupHeader
+              date={new Date(props.event?.StartDateTime)}
+              title={props.event?.Title}
+              presenter={{
+                name: props.event?.Presenter,
+                url: props.event?.PresenterProfileUrl?.Url,
+                image: props.speaker?.TorsoImage?.Url || "",
+              }}
+              trailerUrl={props.event?.TrailerUrl?.Url}
+              registerUrl={data.userGroupPage.registerUrl}
+              city={props.city}
+              online={props.city !== props.event?.City?.toLowerCase()}
+            />
+          )}
 
           <Container>
             <section className="grid-cols-3 gap-10 md:grid">
@@ -176,7 +177,7 @@ export default function NETUGPage(
               </div>
 
               <div
-                className="col-span-2 mt-10"
+                className="col-span-2"
                 data-tina-field={tinaField(data.userGroupPage, "latestTech")}
               >
                 <LatestTech data={data.userGroupPage.latestTech} />
