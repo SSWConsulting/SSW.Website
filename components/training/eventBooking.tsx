@@ -243,7 +243,7 @@ const EventHeader = ({
   );
 };
 
-const gstTypeOptions = ["inc GST", "+GST"];
+const gstTypeOptions = ["inc GST", "+ GST"];
 
 export const eventBookingBlock = {
   eventBooking: "EventBooking",
