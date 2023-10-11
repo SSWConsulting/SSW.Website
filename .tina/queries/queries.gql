@@ -174,3 +174,11 @@ query eventsIndexContentQuery($relativePath: String!) {
     ...EventsIndexParts
   }
 }
+
+query userGroupPageContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  userGroupPage(relativePath: $relativePath) {
+    ...UserGroupPageParts
+    __typename
+  }
+}

@@ -18,7 +18,7 @@ export const Badge = (props: BadgeProps) => {
   const cssProperties = { "--animate-duration": `${duration ?? 3000}ms` };
 
   return (
-    <div
+    <a
       aria-label={`Latest Tech ${name}`}
       className={cs(
         "absolute flex cursor-pointer items-center justify-center rounded-full bg-white",
@@ -33,7 +33,7 @@ export const Badge = (props: BadgeProps) => {
         rotate: `${rotate ?? 0}deg`,
         ...cssProperties,
       }}
-      onClick={() => window.open(url, "_blank")}
+      href={url}
     >
       {imgURL && (
         <Image
@@ -46,6 +46,6 @@ export const Badge = (props: BadgeProps) => {
           src={imgURL}
         />
       )}
-    </div>
+    </a>
   );
 };

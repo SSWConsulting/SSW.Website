@@ -41,9 +41,9 @@
       "imgURL": "/images/badges/ChatGPT.png"
     },
     {
-      "name": "Html",
-      "url": "https://ssw.com.au/consulting/mobile-application-development",
-      "imgURL": "/images/badges/Html.png"
+      "name": "Next.js",
+      "url": "https://ssw.com.au/consulting/nextjs",
+      "imgURL": "/images/badges/Nextjs.svg"
     },
     {
       "name": "VUE",
