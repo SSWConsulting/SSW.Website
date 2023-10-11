@@ -15,6 +15,8 @@ export const userGroupPageSchema: Collection = {
       return `/netug/${document._sys.filename}`;
     },
   },
+  description:
+    "Some of the content on this page comes from SharePoint, if you wish to edit that content please contact the marketing team (i.e. Camilla or Seth).",
   templates: [
     {
       name: "locationPage",
