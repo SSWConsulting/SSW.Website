@@ -66,6 +66,29 @@ export const getEvents = async (odataFilter: string): Promise<EventInfo[]> => {
   return events || [];
 };
 
+export const getSpeakersInfoFromEvent = async (
+  event: EventInfo
+): Promise<SpeakerInfo[]> => {
+  const ids: number[] = [];
+
+  if (event?.ExternalPresenters?.length) {
+    const presenterIds = event.ExternalPresenters.map(
+      (presenter) => presenter.LookupId
+    );
+    ids.push(...presenterIds);
+  }
+
+  const emails: string[] = [];
+
+  if (event?.InternalPresenters?.results?.length) {
+    emails.push(...event.InternalPresenters.results.map((i) => i.EMail));
+  }
+
+  const speakers = await getSpeakersInfo(ids, emails);
+
+  return speakers;
+};
+
 export const getSpeakersInfo = async (ids?: number[], emails?: string[]) => {
   const speakers: SpeakerInfo[] = [];
 
