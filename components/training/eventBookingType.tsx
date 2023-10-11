@@ -5,6 +5,7 @@ export type EventBookingType = {
     discountPrice?: number | null;
     discountNote?: string | null;
     eventList?: Event[];
+    gstText: string;
   };
 };
 
@@ -23,7 +24,6 @@ export const EventModel = {
   PRICE: "Price",
   DISCOUNT_PRICE: "Discount Price",
   DURATION: "Duration",
-  INCLUDE_GST: "inc GST",
   DAY: "Day",
   TO_BE_ASSIGNED: "TBA",
 };

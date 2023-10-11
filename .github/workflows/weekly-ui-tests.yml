@@ -13,11 +13,11 @@ on:
     inputs:
       HOST_URL:
         type: string
-        description: "Host URL"
-        default: "https://ssw.com.au"
+        description: "Host URL (default https://ssw.com.au)"
 
 env:
   GH_TOKEN: ${{ github.token }}
+  HOST_URL: ${{ inputs.HOST_URL || 'https://ssw.com.au' }}
 
 defaults:
   run:
@@ -70,10 +70,10 @@ jobs:
       - name: Run Playwright tests
         run: yarn playwright test
         env:
-          HOST_URL: ${{ inputs.HOST_URL }}
+          HOST_URL: ${{ env.HOST_URL }}
           RECAPTCHA_BYPASS_SECRET: ${{ steps.KeyVaultSecrets.outputs.RECAPTCHA_BYPASS_SECRET }}
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: always()
         with:
           name: playwright-report

@@ -6,19 +6,26 @@ const EVENTS_LIST_ID = process.env.SHAREPOINT_EVENTS_LIST_ID;
 const EXTERNAL_PRESENTERS_LIST_ID =
   process.env.SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID;
 
-export const getToken = async () => {
+const SHAREPOINT_SCOPES = ["https://graph.microsoft.com/.default"];
+const DYNAMICS_SCOPES = ["https://ssw.crm6.dynamics.com/.default"];
+
+export const getToken = async (
+  scopes: string[],
+  clientId: string,
+  clientSecret
+) => {
   const clientConfig = {
     auth: {
-      clientId: process.env.MICROSOFT_OAUTH_CLIENT_ID,
+      clientId,
       authority: `https://login.microsoftonline.com/${process.env.MICROSOFT_OAUTH_TENANT_ID}`,
-      clientSecret: process.env.MICROSOFT_OAUTH_CLIENT_SECRET,
+      clientSecret,
     },
   };
 
   const clientApp = new msal.ConfidentialClientApplication(clientConfig);
 
   const authParams = {
-    scopes: ["https://graph.microsoft.com/.default"],
+    scopes,
   };
 
   const authRes = await clientApp.acquireTokenByClientCredential(authParams);
@@ -37,7 +44,11 @@ export const getEvents = async (odataFilter: string): Promise<EventInfo[]> => {
     return [];
   }
 
-  const token = await getToken();
+  const token = await getToken(
+    SHAREPOINT_SCOPES,
+    process.env.MICROSOFT_OAUTH_CLIENT_ID,
+    process.env.MICROSOFT_OAUTH_CLIENT_SECRET
+  );
 
   const eventsRes = await axios.get<{ value: { fields: EventInfo }[] }>(
     `https://graph.microsoft.com/v1.0/sites/${SITE_ID}/lists/${EVENTS_LIST_ID}/items?expand=fields&${odataFilter}`,
@@ -69,7 +80,11 @@ export const getSpeakersInfo = async (ids?: number[], emails?: string[]) => {
   }
 
   if (ids?.length) {
-    const token = await getToken();
+    const token = await getToken(
+      SHAREPOINT_SCOPES,
+      process.env.MICROSOFT_OAUTH_CLIENT_ID,
+      process.env.MICROSOFT_OAUTH_CLIENT_SECRET
+    );
 
     const idSpeakers: SpeakerInfo[] = await Promise.all(
       ids.map(async (id) => {
@@ -94,56 +109,86 @@ export const getSpeakersInfo = async (ids?: number[], emails?: string[]) => {
   }
 
   if (emails?.length) {
-    await Promise.all(
-      emails.map(async (email) => {
-        const internalSpeakerRes = await axios.get<InternalSpeakerInfo>(
-          "https://www.ssw.com.au/ssw/CRMService.aspx",
-          {
-            params: { odata: encodeURIComponent(email) },
-          }
-        );
+    const internalSpeakers = await getInternalSpeakers(emails);
 
-        if (internalSpeakerRes.status === 200 && internalSpeakerRes.data) {
-          const internalSpeaker = internalSpeakerRes.data;
-          speakers.push({
-            Title: internalSpeaker.Nickname
-              ? `${internalSpeaker.FirstName} (${internalSpeaker.Nickname}) ${internalSpeaker.LastName}`
-              : `${internalSpeaker.FirstName} ${internalSpeaker.LastName}`,
-            PresenterProfileImage: {
-              Url: internalSpeaker.PhotoURL,
-            },
-            PresenterShortDescription: internalSpeaker.ShortDescription,
-            PresenterProfileLink: internalSpeaker.ProfileURL,
-          });
-        }
+    const internalSpeakersInfo: SpeakerInfo[] = internalSpeakers.map(
+      (internalSpeaker) => ({
+        Title: internalSpeaker.Nickname
+          ? `${internalSpeaker.FirstName} (${internalSpeaker.Nickname}) ${internalSpeaker.LastName}`
+          : `${internalSpeaker.FirstName} ${internalSpeaker.LastName}`,
+        PresenterProfileImage: {
+          Url: internalSpeaker.PhotoURL,
+        },
+        PresenterShortDescription: internalSpeaker.ShortDescription,
+        PresenterProfileLink: internalSpeaker.ProfileURL,
       })
     );
+
+    speakers.push(...internalSpeakersInfo);
   }
 
   return speakers;
 };
 
-export const getSpeakersInfoFromEvent = async (
-  event: EventInfo
-): Promise<SpeakerInfo[]> => {
-  const ids: number[] = [];
-
-  if (event?.ExternalPresenters?.length) {
-    const presenterIds = event.ExternalPresenters.map(
-      (presenter) => presenter.LookupId
+export const getInternalSpeakers = async (
+  emails: string[]
+): Promise<InternalSpeakerInfo[]> => {
+  if (
+    process.env.NODE_ENV === "development" &&
+    (!process.env.DYNAMICS_CLIENT_ID || !process.env.DYNAMICS_CLIENT_SECRET)
+  ) {
+    console.warn(
+      "⚠️ You are missing the Dynamics 365 environment variables required for speakers. Please see the .env.example file for the required variables."
     );
-    ids.push(...presenterIds);
+    return [];
   }
 
-  const emails: string[] = [];
+  const accessToken = await getToken(
+    DYNAMICS_SCOPES,
+    process.env.DYNAMICS_CLIENT_ID,
+    process.env.DYNAMICS_CLIENT_SECRET
+  );
 
-  if (event?.InternalPresenters?.results?.length) {
-    emails.push(...event.InternalPresenters.results.map((i) => i.EMail));
+  let odataFilter = "";
+
+  emails.forEach((email, index) => {
+    if (index === emails.length - 1) {
+      odataFilter += `internalemailaddress eq '${email}'`;
+    } else {
+      odataFilter += `internalemailaddress eq '${email}' or `;
+    }
+  });
+
+  const internalSpeakersRes = await axios.get(
+    "https://ssw.crm6.dynamics.com/api/data/v9.2/systemusers?$select=firstname,lastname,nickname,photourl,ssw_githuburl,ssw_publicprofileurl,ssw_shortdescription,internalemailaddress&$filter=" +
+      odataFilter,
+    {
+      headers: {
+        Authorization: "Bearer " + accessToken,
+        Accept: "application/json",
+        "OData-MaxVersion": "4.0",
+        "OData-Version": "4.0",
+      },
+    }
+  );
+
+  if (internalSpeakersRes?.data?.value?.length > 0) {
+    const speakers: InternalSpeakerInfo[] = internalSpeakersRes.data.value.map(
+      (user) => ({
+        FirstName: user.firstname,
+        LastName: user.lastname,
+        Nickname: user.nickname,
+        PhotoURL: user.photourl,
+        GitHubURL: user.ssw_githuburl,
+        ProfileURL: user.ssw_publicprofileurl,
+        ShortDescription: user.ssw_shortdescription,
+      })
+    );
+
+    return speakers;
+  } else {
+    return [];
   }
-
-  const speakers = await getSpeakersInfo(ids, emails);
-
-  return speakers;
 };
 
 export type BookingFormSubmissionData = {

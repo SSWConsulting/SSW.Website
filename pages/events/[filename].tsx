@@ -15,6 +15,7 @@ import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import VideoCards, { VideoCardType } from "../../components/util/videoCards";
 import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
+import { RecaptchaContext } from "../../context/RecaptchaContext";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
 
@@ -39,7 +40,11 @@ export default function EventsPage(
     })) || [];
 
   return (
-    <>
+    <RecaptchaContext.Provider
+      value={{
+        recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY,
+      }}
+    >
       <SEO seo={data.events.seo} />
       <Layout>
         <div data-tina-field={tinaField(data.events, "eventHeader")}>
@@ -122,7 +127,7 @@ export default function EventsPage(
           />
         </div>
       </Layout>
-    </>
+    </RecaptchaContext.Provider>
   );
 }
 
