@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { isMobile } from "react-device-detect";
+import React from "react";
 import { IconType } from "react-icons";
 
 import {
@@ -106,10 +105,6 @@ export interface SocialIconsParams {
 }
 
 export const SocialIcons = (data?: SocialIconsParams) => {
-  const [isMobileDetected, setIsMobileDetected] = useState(false);
-  useEffect(() => {
-    setIsMobileDetected(isMobile);
-  }, []);
   return (
     <div
       className={classNames(
@@ -134,18 +129,10 @@ export const SocialIcons = (data?: SocialIconsParams) => {
           !hideOnMobile &&
           Object.values(SocialTypes).length - data.excludeMobile?.length === 1;
 
-        const URL =
-          social.desktopSpecificURL && !isMobileDetected
-            ? social.desktopSpecificURL
-            : social.url;
-        const TEXT =
-          social.desktopSpecificLinkText && !isMobileDetected
-            ? social.desktopSpecificLinkText
-            : social.linkText;
         return (
           <Link
             key={social.type}
-            href={URL}
+            href={social.url}
             className={classNames(
               "unstyled flex h-12 cursor-pointer items-center justify-center rounded-lg text-xl hover:bg-gray-900 hover:bg-none",
               styling.bgClassName,
@@ -156,16 +143,15 @@ export const SocialIcons = (data?: SocialIconsParams) => {
               { "flex-grow sm:flex-grow-0": growOnMobile }
             )}
             title={social.title}
-            target={social.openInSameWindow ? "_self" : "_blank"}
             rel="noreferrer nofollow"
           >
             <styling.icon
-              className={classNames({ "text-3xl": !social.linkText })}
+              className={classNames({ "text-2xl": !social.linkText })}
               color="white"
             />
-            {TEXT && (
-              <span className="ml-2 inline text-base font-bold text-white">
-                {TEXT}
+            {social.linkText && (
+              <span className="ml-2 inline text-sm font-bold text-white">
+                {social.linkText}
               </span>
             )}
           </Link>

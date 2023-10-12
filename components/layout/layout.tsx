@@ -1,10 +1,11 @@
 import classNames from "classnames";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { MenuBar } from "ssw.megamenu";
 import { useLiveStreamProps } from "../../hooks/useLiveStreamProps";
+import { menuBarItems } from "../../mock-data/mock-data";
+import { MegaMenuLayout } from "../megamenu";
 import { Footer } from "./footer";
-import { Header } from "./header";
+// import { Header } from "./header";
 import { Theme } from "./theme";
 
 import dayjs from "dayjs";
@@ -124,12 +125,11 @@ export const Layout = ({ children, className = "" }) => {
             {(showBanner || router.query.liveBanner) && (
               <LiveStreamBanner {...liveStreamProps} isLive={isLive} />
             )}
-            <div className="mx-auto max-w-9xl px-6 sm:px-8">
-              <Header />
-              <MenuBar />
+            <div className="mx-auto max-w-9xl px-8">
               {(isLive || router.query.liveStream) && (
                 <LiveStreamWidget {...liveStreamProps} isLive={isLive} />
               )}
+              <MegaMenuLayout menuBarItems={menuBarItems} />
             </div>
           </header>
           <main className="grow bg-white">{children}</main>

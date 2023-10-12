@@ -78,6 +78,15 @@ module.exports = {
         700: "#D04017",
         800: "#C1360F",
       },
+      ssw: {
+        red: {
+          DEFAULT: "#cc4141",
+          light: "#d26e6e",
+        },
+        darkRed: "#8e2c2c",
+        black: "#333333",
+        grey: "#797979",
+      },
     },
     screens: {
       sm: "600px",
