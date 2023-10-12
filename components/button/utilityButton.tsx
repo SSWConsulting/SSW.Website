@@ -7,14 +7,15 @@ const sizes = {
   medium: "px-10 py-3",
 } as const;
 
-interface UtilityButtonProps {
+type UtilityButtonProps = {
   buttonText?: string | JSX.Element;
   onClick?: () => void;
   className?: string;
   link?: string;
   size?: keyof typeof sizes;
   noAnimate?: boolean;
-}
+  uncentered?: boolean;
+};
 
 export const UtilityButton = ({
   buttonText,
@@ -23,13 +24,15 @@ export const UtilityButton = ({
   link,
   size,
   noAnimate,
+  uncentered,
 }: UtilityButtonProps) => {
   const baseComponent = (
     <Button
       ripple
       className={classNames(
-        "mx-auto mt-8 h-auto max-w-full",
+        "mt-8 h-auto",
         sizes[size ?? "medium"],
+        uncentered ? "" : "mx-auto max-w-full",
         className
       )}
       onClick={onClick}
@@ -84,6 +87,12 @@ export const utilityButtonSchema: Template = {
       type: "boolean",
       label: "No Animation",
       name: "noAnimate",
+      required: false,
+    },
+    {
+      type: "boolean",
+      label: "Uncentered",
+      name: "uncentered",
       required: false,
     },
   ],

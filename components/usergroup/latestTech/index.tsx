@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { Badge } from "./badge";
 import { BadgesLayout } from "./constants";
@@ -47,9 +47,9 @@ const FloatingBadges = ({
 
 export const LatestTech = ({ data }) => {
   return (
-    <div className="relative h-70 overflow-hidden bg-gray-50 p-6">
+    <div className="relative h-70 overflow-hidden p-6">
       <span
-        className="relative z-10 font-helvetica text-3xl font-medium text-sswRed"
+        className="relative z-10 text-3xl font-medium text-sswRed"
         data-tina-field={tinaField(data, "content")}
       >
         <TinaMarkdown content={data?.content} />
