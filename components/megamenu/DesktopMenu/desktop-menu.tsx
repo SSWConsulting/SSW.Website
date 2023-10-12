@@ -1,11 +1,12 @@
 import { Popover } from "@headlessui/react";
 import React from "react";
 import { NavMenuItem } from "../../../models/megamanu/menuItem.model";
+import { SocialIcons, SocialTypes } from "../../util/socialIcons";
 import { CountryDropdown } from "../CountryDropdown";
-import Divider from "./divider";
+import Divider from "../divider";
+import Search from "../search";
 import { MenuItemLink } from "./menu-item-link";
 import { MenuItemWithSubmenu } from "./menu-item-with-submenu";
-import Search from "./search";
 
 export interface DesktopMenuProps {
   tagline?: string;
@@ -39,6 +40,12 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuBarItems }) => {
       </div>
 
       <div className="hidden shrink items-center justify-end lg:flex">
+        <SocialIcons
+          excludeDesktop={Object.values(SocialTypes).filter(
+            (social) => social !== SocialTypes.phone
+          )}
+          excludeMobile={Object.values(SocialTypes)}
+        />
         <Search />
         <Divider />
         <CountryDropdown />
