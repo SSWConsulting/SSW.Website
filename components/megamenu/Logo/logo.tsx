@@ -21,8 +21,9 @@ const Logo: React.FC<LogoProps> = ({ className }) => {
       <Image
         src={logoPath}
         alt="SSW - Enterprise Software Development"
-        height={100}
-        width={150}
+        height={60}
+        width={100}
+        className="h-[60px]"
         priority
       />
       <span className="sr-only">SSW</span>

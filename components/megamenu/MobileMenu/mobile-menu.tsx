@@ -1,7 +1,8 @@
 import { Dialog } from "@headlessui/react";
+import Link from "next/link";
 import React from "react";
-import { NavMenuItem } from "src/lib/models/menu.model.ts";
-import { AvailableIcons } from "../../../models/megamanu/config.consts.ts";
+import { AvailableIcons } from "../../../models/megamanu/config.consts";
+import { NavMenuItem } from "../../../models/megamanu/menuItem.model";
 import { MegaIcon } from "../MegaIcon";
 import SubMenuGroup from "../SubMenuGroup/sub-menu-group";
 
@@ -77,13 +78,13 @@ const MenuBarItems: React.FC<{
       <div className="space-y-2">
         {menuBarItems.map((item) => {
           return item.href ? (
-            <a
+            <Link
               key={item.name}
               href={item.href}
-              className="-mx-3 block w-full px-3 py-2 text-left text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+              className="-mx-3 block w-full px-3 py-2 text-left text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 unstyled"
             >
               {item.name}
-            </a>
+            </Link>
           ) : (
             <button
               key={item.name}

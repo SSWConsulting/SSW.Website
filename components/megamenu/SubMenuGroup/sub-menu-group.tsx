@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 import {
   MainMenuDefinition,
@@ -80,9 +81,9 @@ const MenuItem: React.FC<{
 
 const SubmenuItem: React.FC<SubMenuItemDefinition> = (props) => {
   return (
-    <a
+    <Link
       href={props.href}
-      className="flex items-start gap-x-3 rounded-md bg-white hover:bg-gray-50 focus:outline-none"
+      className="flex items-start gap-x-3 rounded-md bg-white hover:bg-gray-50 focus:outline-none unstyled"
     >
       {props.icon && (
         <div className="flex h-6 w-6 shrink-0 items-center justify-center text-ssw-red">
@@ -103,7 +104,7 @@ const SubmenuItem: React.FC<SubMenuItemDefinition> = (props) => {
           )}
         </span>
       </div>
-    </a>
+    </Link>
   );
 };
 
@@ -116,12 +117,12 @@ const ViewAllLink: React.FC<{ href?: string; name?: string }> = ({
   }
   return (
     <div className="flex grow flex-col-reverse items-end pt-4">
-      <a
+      <Link
         href={href}
-        className="rounded-md px-3 py-1 text-sm font-semibold leading-6 text-ssw-red hover:bg-ssw-red hover:text-white"
+        className="rounded-md px-3 py-1 text-sm font-semibold leading-6 text-ssw-red hover:bg-ssw-red hover:text-white unstyled"
       >
         {name} &rarr;
-      </a>
+      </Link>
     </div>
   );
 };

@@ -125,7 +125,7 @@ export const Layout = ({ children, className = "" }) => {
             {(showBanner || router.query.liveBanner) && (
               <LiveStreamBanner {...liveStreamProps} isLive={isLive} />
             )}
-            <div className="mx-auto max-w-9xl px-6 sm:px-8">
+            <div className="mx-auto max-w-9xl px-8">
               {(isLive || router.query.liveStream) && (
                 <LiveStreamWidget {...liveStreamProps} isLive={isLive} />
               )}

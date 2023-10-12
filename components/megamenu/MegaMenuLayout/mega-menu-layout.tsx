@@ -19,14 +19,14 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
   return (
     <div className="relative z-10 flex h-16 w-full items-center justify-center lg:h-40">
       <nav
-        className="flex h-full w-full max-w-7xl items-center justify-between gap-x-8 overflow-hidden px-6"
+        className="flex h-full w-full items-center justify-between gap-x-8 overflow-hidden px-0"
         aria-label="Global"
       >
         <div className="flex items-center">
           <Link
             href="/"
             passHref
-            className="flex items-center gap-1 whitespace-nowrap"
+            className="flex items-center gap-1 whitespace-nowrap unstyled"
           >
             <div className="flex items-center justify-center">
               <Logo className="h-16 min-w-[100px] lg:h-24" />

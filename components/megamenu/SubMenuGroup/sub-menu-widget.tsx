@@ -1,11 +1,12 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 import {
   AvailableIcons,
   AvailableWidget,
-} from "../../../models/megamanu/config.consts.ts";
+} from "../../../models/megamanu/config.consts";
 import { SideMenuItem } from "../../../models/megamanu/menuItem.model";
-import { MegaIcon } from "../MegaIcon/index.ts";
+import { MegaIcon } from "../MegaIcon";
 import FeaturedCard from "./featured-card";
 
 interface Props {
@@ -16,28 +17,28 @@ const SubMenuWidget: React.FC<Props> = ({ item }) => {
   switch (item.category) {
     case AvailableWidget.featured: {
       return (
-        <a href={item.href}>
+        <Link className="unstyled" href={item.href}>
           <FeaturedCard title={<span>{item.name}</span>}>
             {item.description}
           </FeaturedCard>
-        </a>
+        </Link>
       );
     }
     case AvailableWidget.bookNow: {
       return (
-        <a
-          className="relative flex w-full cursor-pointer items-center justify-center rounded-md bg-ssw-red font-semibold text-white hover:bg-ssw-red-light"
+        <Link
+          className="relative flex w-full cursor-pointer items-center justify-center rounded-md bg-ssw-red font-semibold text-white hover:bg-ssw-red-light unstyled"
           href={item.href}
         >
           <MegaIcon icon={AvailableIcons.phone} className="h-6" />
           <span className="ml-2 py-4">{item.name}</span>
-        </a>
+        </Link>
       );
     }
     case AvailableWidget.classicMenu:
     default: {
       return (
-        <a className="block" href={item.href}>
+        <Link className="block unstyled" href={item.href}>
           {item.name && item.description ? (
             <>
               <span className="font-bold">{item.name}</span>
@@ -48,7 +49,7 @@ const SubMenuWidget: React.FC<Props> = ({ item }) => {
               {item.name}
             </span>
           )}
-        </a>
+        </Link>
       );
     }
   }
