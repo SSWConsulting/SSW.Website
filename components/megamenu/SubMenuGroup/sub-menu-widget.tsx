@@ -1,13 +1,9 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import {
-  AvailableIcons,
-  AvailableWidget,
-} from "../../../models/megamanu/config.consts";
+import { AvailableWidget } from "../../../models/megamanu/config.consts";
 import { SideMenuItem } from "../../../models/megamanu/menuItem.model";
 import { BookingButton } from "../../blocks";
-import { MegaIcon } from "../MegaIcon";
 import FeaturedCard from "./featured-card";
 
 interface Props {
