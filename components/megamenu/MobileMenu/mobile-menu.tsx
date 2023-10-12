@@ -1,0 +1,102 @@
+import { Dialog } from "@headlessui/react";
+import React from "react";
+import { NavMenuItem } from "src/lib/models/menu.model.ts";
+import { AvailableIcons } from "../../../models/megamanu/config.consts.ts";
+import { MegaIcon } from "../MegaIcon";
+import SubMenuGroup from "../SubMenuGroup/sub-menu-group";
+
+export interface MobileMenuProps {
+  isMobileMenuOpen: boolean;
+  menuBarItems: NavMenuItem[];
+  closeMobileMenu: () => void;
+}
+
+const MobileMenu: React.FC<MobileMenuProps> = ({
+  isMobileMenuOpen,
+  menuBarItems,
+  closeMobileMenu,
+}) => {
+  const [selectedMenuItem, setSelectedMenuItem] =
+    React.useState<NavMenuItem | null>(null);
+
+  const onCloseMobileMenu = () => {
+    setSelectedMenuItem(null);
+    closeMobileMenu();
+  };
+
+  return (
+    <Dialog
+      as="div"
+      open={isMobileMenuOpen}
+      onClose={() => onCloseMobileMenu()}
+    >
+      <div className="fixed inset-0 z-10" />
+      <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div className="flex h-16 flex-row-reverse">
+          <button
+            type="button"
+            className="-m-2.5 p-2.5 text-gray-700"
+            onClick={() => onCloseMobileMenu()}
+          >
+            <span className="sr-only">Close menu</span>
+            <MegaIcon icon={AvailableIcons.xMark} className="h-6 w-6" />
+          </button>
+          {selectedMenuItem && (
+            <div className="my-auto flex grow items-center text-sm font-semibold uppercase leading-4 text-gray-700">
+              <button onClick={() => setSelectedMenuItem(null)}>
+                <MegaIcon
+                  className="h-5 w-5 flex-none text-gray-900"
+                  icon={AvailableIcons.chevronLeft}
+                />
+              </button>
+              <span className="ml-4">{selectedMenuItem.name}</span>
+            </div>
+          )}
+        </div>
+        <div className="flow-root">
+          {selectedMenuItem ? (
+            <SubMenuGroup menu={selectedMenuItem.menuGroup!} />
+          ) : (
+            <MenuBarItems
+              menuBarItems={menuBarItems}
+              setSelectedMenuItem={setSelectedMenuItem}
+            />
+          )}
+        </div>
+      </Dialog.Panel>
+    </Dialog>
+  );
+};
+
+const MenuBarItems: React.FC<{
+  menuBarItems: NavMenuItem[];
+  setSelectedMenuItem: (item: NavMenuItem) => void;
+}> = ({ menuBarItems, setSelectedMenuItem }) => {
+  return (
+    <div className="-my-6 divide-y divide-gray-500/10">
+      <div className="space-y-2">
+        {menuBarItems.map((item) => {
+          return item.href ? (
+            <a
+              key={item.name}
+              href={item.href}
+              className="-mx-3 block w-full px-3 py-2 text-left text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+            >
+              {item.name}
+            </a>
+          ) : (
+            <button
+              key={item.name}
+              className="-mx-3 block w-full px-3 py-2 text-left text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+              onClick={() => setSelectedMenuItem(item)}
+            >
+              {item.name}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default MobileMenu;

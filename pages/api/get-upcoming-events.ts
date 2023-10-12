@@ -66,7 +66,7 @@ export default async function handler(
         properties.Status = err.response.status;
         properties.FailedSharePointRequest = true;
       }
-
+      console.log("err", err);
       appInsights.defaultClient.trackException({
         exception: err,
         properties,
