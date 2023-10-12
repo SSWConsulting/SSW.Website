@@ -17,7 +17,7 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
 }) => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <div className="relative z-10 flex h-16 w-full items-center justify-center lg:h-40">
+    <div className="relative z-10 flex h-16 w-full items-center justify-center lg:h-[120px]">
       <nav
         className="flex h-full w-full items-center justify-between gap-x-8 overflow-hidden px-0"
         aria-label="Global"

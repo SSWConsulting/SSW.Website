@@ -45,7 +45,7 @@ const SubMenuWidget: React.FC<Props> = ({ item }) => {
               <p className="mt-2 text-sm">{item.description}</p>
             </>
           ) : (
-            <span className="text-sm font-normal text-ssw-black">
+            <span className="text-sm font-normal text-ssw-black pl-4">
               {item.name}
             </span>
           )}

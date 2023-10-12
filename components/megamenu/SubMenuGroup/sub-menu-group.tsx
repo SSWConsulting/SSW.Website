@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import React from "react";
+import { twMerge } from "tailwind-merge";
 import {
   MainMenuDefinition,
   NavMenuGroup,
@@ -28,7 +29,7 @@ export const SubMenuGroup: React.FC<SubMenuGroupProps> = ({ menu }) => {
 
   return (
     <>
-      <div className="mx-auto flex max-w-7xl flex-col lg:flex-row">
+      <div className="mx-auto flex max-w-9xl flex-col lg:flex-row">
         <div className="grid gap-x-4 p-4 lg:grow lg:grid-flow-col">
           {subMenuColumns.map((column, i) => (
             <div key={"column" + i} className="flex grow flex-col gap-y-4">
@@ -42,8 +43,10 @@ export const SubMenuGroup: React.FC<SubMenuGroupProps> = ({ menu }) => {
           <div className="flex flex-col gap-y-2 px-8 py-4">
             {menu.sideBarItems?.map((sideBarItem, i) => (
               <div key={i}>
-                <Heading>{sideBarItem.heading}</Heading>
-                <div className="flex flex-col gap-y-2">
+                <Heading className={i > 0 ? "pt-6" : ""}>
+                  {sideBarItem.heading}
+                </Heading>
+                <div className="flex flex-col gap-y-4">
                   {sideBarItem.items.map((item, i) => (
                     <SubMenuWidget key={i} item={item} />
                   ))}
@@ -58,18 +61,23 @@ export const SubMenuGroup: React.FC<SubMenuGroupProps> = ({ menu }) => {
 };
 
 const Heading: React.FC<{
+  className?: string;
   children: React.ReactNode;
-}> = ({ children }) => {
-  return <h3 className="pb-2 text-lg font-bold text-ssw-black">{children}</h3>;
+}> = ({ className, children }) => {
+  return (
+    <h3 className={twMerge("pb-6 text-lg font-bold text-ssw-black", className)}>
+      {children}
+    </h3>
+  );
 };
 
 const MenuItem: React.FC<{
   item: MainMenuDefinition;
 }> = ({ item }) => {
   return (
-    <div key={item.heading} className="flex flex-col last:grow">
+    <div key={item.heading} className="flex flex-col last:grow pb-4">
       <Heading>{item.heading}</Heading>
-      <div className="flex flex-col gap-y-2">
+      <div className="flex flex-col">
         {item.items.map((subItem, i) => (
           <SubmenuItem key={item.heading + i} {...subItem} />
         ))}
@@ -83,7 +91,10 @@ const SubmenuItem: React.FC<SubMenuItemDefinition> = (props) => {
   return (
     <Link
       href={props.href}
-      className="flex items-start gap-x-3 rounded-md bg-white hover:bg-gray-50 focus:outline-none unstyled"
+      className={twMerge(
+        "flex items-start gap-x-3 rounded-md bg-white hover:bg-gray-50 focus:outline-none unstyled",
+        props.description ? "p-4" : "p-2"
+      )}
     >
       {props.icon && (
         <div className="flex h-6 w-6 shrink-0 items-center justify-center text-ssw-red">
@@ -100,7 +111,9 @@ const SubmenuItem: React.FC<SubMenuItemDefinition> = (props) => {
               </p>
             </>
           ) : (
-            <p className="text-sm font-normal text-ssw-black">{props.name}</p>
+            <p className="text-sm font-normal text-ssw-black pl-4">
+              {props.name}
+            </p>
           )}
         </span>
       </div>
