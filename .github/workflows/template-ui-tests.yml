@@ -25,7 +25,7 @@ jobs:
         working-directory: ./ui-tests
 
       - name: Install Playwright Browsers
-        run: yarn playwright install --with-deps
+        run: yarn playwright install --with-deps chromium
         working-directory: ./ui-tests
 
       - name: Run Playwright image tests
