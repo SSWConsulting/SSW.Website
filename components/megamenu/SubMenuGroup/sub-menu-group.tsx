@@ -39,6 +39,8 @@ export const SubMenuGroup: React.FC<SubMenuGroupProps> = ({ menu }) => {
             </div>
           ))}
         </div>
+
+        {/* eslint-disable-next-line tailwindcss/no-arbitrary-value */}
         <div className="shrink-0 overflow-x-hidden bg-gray-50 lg:relative lg:w-[350px] lg:before:absolute lg:before:inset-0 lg:before:-z-10 lg:before:w-[1000px] lg:before:bg-gray-50">
           <div className="flex flex-col gap-y-2 px-8 py-4">
             {menu.sideBarItems?.map((sideBarItem, i) => (
@@ -75,7 +77,7 @@ const MenuItem: React.FC<{
   item: MainMenuDefinition;
 }> = ({ item }) => {
   return (
-    <div key={item.heading} className="flex flex-col last:grow pb-4">
+    <div key={item.heading} className="flex flex-col pb-4 last:grow">
       <Heading>{item.heading}</Heading>
       <div className="flex flex-col">
         {item.items.map((subItem, i) => (
@@ -111,7 +113,7 @@ const SubmenuItem: React.FC<SubMenuItemDefinition> = (props) => {
               </p>
             </>
           ) : (
-            <p className="text-sm font-normal text-ssw-black pl-4">
+            <p className="pl-4 text-sm font-normal text-ssw-black">
               {props.name}
             </p>
           )}
@@ -132,7 +134,7 @@ const ViewAllLink: React.FC<{ href?: string; name?: string }> = ({
     <div className="flex grow flex-col-reverse items-end pt-4">
       <Link
         href={href}
-        className="rounded-md px-3 py-1 text-sm font-semibold leading-6 text-ssw-red hover:bg-ssw-red hover:text-white unstyled"
+        className="unstyled rounded-md px-3 py-1 text-sm font-semibold leading-6 text-ssw-red hover:bg-ssw-red hover:text-white"
       >
         {name} &rarr;
       </Link>

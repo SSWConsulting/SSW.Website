@@ -1,8 +1,5 @@
-import SubMenuGroup, { SubMenuGroupProps } from './sub-menu-group.tsx';
+import SubMenuGroup, { SubMenuGroupProps } from "./sub-menu-group";
 
-export {
-    SubMenuGroup
-};
+export { SubMenuGroup };
 
 export type { SubMenuGroupProps };
-

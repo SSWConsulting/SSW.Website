@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { isMobile } from "react-device-detect";
+import React from "react";
 import { IconType } from "react-icons";
 
 import {
@@ -106,10 +105,6 @@ export interface SocialIconsParams {
 }
 
 export const SocialIcons = (data?: SocialIconsParams) => {
-  const [isMobileDetected, setIsMobileDetected] = useState(false);
-  useEffect(() => {
-    setIsMobileDetected(isMobile);
-  }, []);
   return (
     <div
       className={classNames(

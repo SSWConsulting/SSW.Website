@@ -1,7 +1,5 @@
-import DesktopMenu, { DesktopMenuProps } from './desktop-menu.tsx';
+import DesktopMenu, { DesktopMenuProps } from "./desktop-menu";
 
-export {
-    DesktopMenu
-};
+export { DesktopMenu };
 
 export type { DesktopMenuProps };

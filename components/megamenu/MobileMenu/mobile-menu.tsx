@@ -44,7 +44,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
             <MegaIcon icon={AvailableIcons.xMark} className="h-6 w-6" />
           </button>
           {selectedMenuItem && (
-            <div className="my-auto flex grow items-center text-sm font-semibold leading-4 text-ssw-black pl-2">
+            <div className="my-auto flex grow items-center pl-2 text-sm font-semibold leading-4 text-ssw-black">
               <button onClick={() => setSelectedMenuItem(null)}>
                 <MegaIcon
                   className="h-5 w-5 flex-none"
@@ -82,19 +82,19 @@ const MenuBarItems: React.FC<{
             <Link
               key={item.name}
               href={item.href}
-              className="flex items-center -mx-3 w-full px-3 py-2 text-left text-lg leading-7 text-gray-900 hover:bg-gray-50 unstyled"
+              className="unstyled -mx-3 flex w-full items-center px-3 py-2 text-left text-lg leading-7 text-gray-900 hover:bg-gray-50"
             >
               {item.name}
             </Link>
           ) : (
             <button
               key={item.name}
-              className="flex items-center -mx-3 w-full px-3 py-2 text-left text-lg leading-7 text-gray-900 hover:bg-gray-50"
+              className="-mx-3 flex w-full items-center px-3 py-2 text-left text-lg leading-7 text-gray-900 hover:bg-gray-50"
               onClick={() => setSelectedMenuItem(item)}
             >
               {item.name}
               <ChevronRightIcon
-                className="h-4 w-4 inline ml-2 text-gray-900"
+                className="ml-2 inline h-4 w-4 text-gray-900"
                 aria-hidden="true"
               />
             </button>

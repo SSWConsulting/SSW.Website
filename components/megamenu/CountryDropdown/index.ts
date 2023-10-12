@@ -1,5 +1,3 @@
-import CountryDropdown from './country-dropdown.tsx';
+import CountryDropdown from "./country-dropdown";
 
-export {
-    CountryDropdown
-};
+export { CountryDropdown };

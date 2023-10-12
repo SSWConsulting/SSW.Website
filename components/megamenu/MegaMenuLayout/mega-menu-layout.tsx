@@ -20,6 +20,7 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <>
+      {/* eslint-disable-next-line tailwindcss/no-arbitrary-value */}
       <div className="relative z-10 flex h-16 w-full items-center justify-center lg:h-[120px]">
         <nav
           className="flex h-full w-full items-center justify-between gap-x-8 overflow-hidden px-0"
@@ -29,11 +30,11 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
             <Link
               href="/"
               passHref
-              className="flex items-center gap-1 whitespace-nowrap unstyled"
+              className="unstyled flex items-center gap-1 whitespace-nowrap"
             >
               <div className="flex items-center justify-center">
-                <Logo className="h-16 min-w-[100px] lg:h-24" />
-                <div className="ml-4 hidden w-24 text-sm font-semibold uppercase leading-4 text-gray-700 md:block whitespace-break-spaces">
+                <Logo />
+                <div className="ml-4 hidden w-24 whitespace-break-spaces text-sm font-semibold uppercase leading-4 text-gray-700 md:block">
                   {tagline}
                 </div>
               </div>
@@ -71,7 +72,7 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
       </div>
 
       <SocialIcons
-        className="sm:hidden pb-4"
+        className="pb-4 sm:hidden"
         excludeMobile={Object.values(SocialTypes).filter(
           (social) => social !== SocialTypes.phone
         )}

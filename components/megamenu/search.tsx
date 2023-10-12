@@ -59,7 +59,7 @@ const Search: React.FC = () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-50 transition-opacity" />
+            <div className="fixed inset-0 bg-gray-500/50 transition-opacity" />
           </Transition.Child>
 
           <div className="fixed inset-0 z-10 overflow-y-auto p-8 sm:p-12 md:p-28">
@@ -72,7 +72,7 @@ const Search: React.FC = () => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="mx-auto max-w-2xl transform divide-y divide-gray-500 divide-opacity-10 overflow-hidden rounded-xl bg-white bg-opacity-80 shadow-2xl backdrop-blur backdrop-filter transition-all">
+              <Dialog.Panel className="mx-auto max-w-2xl divide-y divide-gray-500 divide-opacity-10 overflow-hidden rounded-xl bg-white/80 shadow-2xl backdrop-blur transition-all">
                 <div className="relative">
                   <MegaIcon
                     icon={AvailableIcons.magnifyingGlass}

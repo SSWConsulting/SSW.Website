@@ -1,8 +1,5 @@
-import MobileMenu, { MobileMenuProps } from './mobile-menu.tsx';
+import MobileMenu, { MobileMenuProps } from "./mobile-menu";
 
-export {
-    MobileMenu
-};
+export { MobileMenu };
 
 export type { MobileMenuProps };
-

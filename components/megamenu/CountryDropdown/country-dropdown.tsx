@@ -80,6 +80,7 @@ const CountryDropdown: React.FC = () => {
             .map((country) => (
               <a
                 key={country.country}
+                // eslint-disable-next-line tailwindcss/no-arbitrary-value
                 className="block py-2 hover:bg-gray-100 lg:min-w-[80px]"
                 href={country.url}
                 title={country.name}

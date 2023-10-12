@@ -1,7 +1,5 @@
-import MegaMenuLayout, { MegaMenuWrapperProps } from './mega-menu-layout.tsx';
+import MegaMenuLayout, { MegaMenuWrapperProps } from "./mega-menu-layout";
 
-export {
-    MegaMenuLayout
-};
+export { MegaMenuLayout };
 
 export type { MegaMenuWrapperProps };

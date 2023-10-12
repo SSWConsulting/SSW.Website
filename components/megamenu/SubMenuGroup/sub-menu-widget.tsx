@@ -27,7 +27,7 @@ const SubMenuWidget: React.FC<Props> = ({ item }) => {
     case AvailableWidget.bookNow: {
       return (
         <Link
-          className="relative flex w-full cursor-pointer items-center justify-center rounded-md bg-ssw-red font-semibold text-white hover:bg-ssw-red-light unstyled"
+          className="unstyled relative flex w-full cursor-pointer items-center justify-center rounded-md bg-ssw-red font-semibold text-white hover:bg-ssw-red-light"
           href={item.href}
         >
           <MegaIcon icon={AvailableIcons.phone} className="h-6" />
@@ -38,14 +38,14 @@ const SubMenuWidget: React.FC<Props> = ({ item }) => {
     case AvailableWidget.classicMenu:
     default: {
       return (
-        <Link className="block unstyled" href={item.href}>
+        <Link className="unstyled block" href={item.href}>
           {item.name && item.description ? (
             <>
               <span className="font-bold">{item.name}</span>
               <p className="mt-2 text-sm">{item.description}</p>
             </>
           ) : (
-            <span className="text-sm font-normal text-ssw-black pl-4">
+            <span className="pl-4 text-sm font-normal text-ssw-black">
               {item.name}
             </span>
           )}
