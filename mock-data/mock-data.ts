@@ -115,7 +115,7 @@ export const menuBarItems: NavMenuItem[] = [
             {
               name: "Book Now",
               category: "bookNow",
-              href: "#",
+              href: "/company/contact-us",
             },
           ],
         },
