@@ -30,7 +30,7 @@ export const UtilityButton = ({
     <Button
       ripple
       className={classNames(
-        "mt-8 h-auto",
+        "h-auto",
         sizes[size ?? "medium"],
         uncentered ? "" : "mx-auto max-w-full",
         className

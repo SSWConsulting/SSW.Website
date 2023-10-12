@@ -30,9 +30,10 @@ const Search: React.FC = () => {
 
   const performSearch = () => {
     if (searchTerm) {
-      window.location.href = `https://www.google.com.au/search?q=site:${
+      const searchUrl = `https://www.google.com.au/search?q=site:${
         location.hostname
       }%20${encodeURIComponent(searchTerm)}`;
+      window.open(searchUrl, "_blank");
     }
   };
 

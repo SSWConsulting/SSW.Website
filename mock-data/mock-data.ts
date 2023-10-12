@@ -13,41 +13,41 @@ export const menuBarItems: NavMenuItem[] = [
               description:
                 "Professional web development service that creates stylish, functional, user-friendly websites",
               icon: "websiteDevelopment",
-              href: "https://www.ssw.com.au/ssw/Consulting/Website-Development.aspx",
+              href: "/consulting?tag=Website-Development",
             },
             {
               name: "Application Development",
               description:
                 "Crafting innovative, reliable, and user-centric mobile applications",
               icon: "applicationDevelopment",
-              href: "https://www.ssw.com.au/ssw/Consulting/Website-Development.aspx",
+              href: "/consulting?tag=Application-Development",
             },
             {
               name: "Mobile Development",
               description: "Building cutting-edge apps for diverse platforms",
               icon: "mobileDevelopment",
-              href: "https://www.ssw.com.au/ssw/Consulting/Mobile-Development.aspx",
+              href: "/consulting?tag=Mobile-Development",
             },
             {
               name: "Al Development",
               description:
                 "Creating intelligent, data-driven solutions for businesses",
               icon: "alDevelopment",
-              href: "https://www.ssw.com.au/ssw/Consulting/AI-Development.aspx",
+              href: "/consulting?tag=AI-Development",
             },
             {
               name: "Database Development",
               description:
                 "Constructing robust, scalable, and efficient data management systems",
               icon: "databaseDevelopment",
-              href: "https://www.ssw.com.au/ssw/Consulting/Database-Development.aspx",
+              href: "/consulting?tag=Database-Development",
             },
             {
               name: "Platform Development",
               description:
                 "Delivering versatile, integrated solutions that optimize business operations",
               icon: "platformDevelopment",
-              href: "https://www.ssw.com.au/ssw/Consulting/Platform-Development.aspx",
+              href: "/consulting?tag=Platform-Development",
             },
           ],
         },
@@ -60,33 +60,33 @@ export const menuBarItems: NavMenuItem[] = [
               description:
                 "Crafting visually stunning, intuitive user intertaces for seamless experiences",
               icon: "uiUXDesign",
-              href: "https://www.ssw.com.au/ssw/Consulting/Website-Development.aspx",
+              href: "/consulting?tag=Design",
             },
             {
               name: "Video Production",
               description:
                 "Creating captivating, high-quality visual content for impactful storytelling",
               icon: "videoProduction",
-              href: "https://www.ssw.com.au/ssw/Consulting/Video-Production.aspx",
+              href: "/consulting?tag=Video",
             },
             {
               name: "Cloud and Infrastructure",
               description:
                 "Designing scalable, secure, and resilient cloud computing environments",
               icon: "cloudAndInfrastructure",
-              href: "https://www.ssw.com.au/ssw/Consulting/Cloud-and-Infrastructure.aspx",
+              href: "/consulting?tag=Cloud-and+Infrastructure",
             },
             {
               name: "Other SSW Service",
               description:
                 "SSW's other enterprise software development services",
               icon: "otherSSWService",
-              href: "https://www.ssw.com.au/ssw/Consulting/Other-Services.aspx",
+              href: "/consulting?tag=Other-SSW+Services",
             },
           ],
           viewAllLink: {
             name: "View all services",
-            href: "https://www.ssw.com.au/ssw/Consulting/",
+            href: "/consulting",
           },
         },
       ],
@@ -98,14 +98,14 @@ export const menuBarItems: NavMenuItem[] = [
               name: "ChatGPT & GPT-4",
               description: "Unlock the power of language Al for your business",
               category: "featured",
-              href: "#",
+              href: "/consulting/gpt",
             },
             {
               name: "Bring your App to China",
               description:
                 "A quick and easy solution for entry into a large and juicy market",
               category: "featured",
-              href: "#",
+              href: "/consulting/chinafy-app",
             },
           ],
         },
@@ -147,20 +147,7 @@ export const menuBarItems: NavMenuItem[] = [
               name: "CodeAuditor",
               description: "Scan any website for broken links and HTML Issues",
               icon: "codeAuditor",
-              href: "https://www.ssw.com.au/ssw/codeauditor/",
-            },
-            {
-              name: "LinkAuditor",
-              description: "Automatically locate broken links on your websites",
-              icon: "linkAuditor",
-              href: "https://www.ssw.com.au/ssw/codeauditor/",
-            },
-            {
-              name: "SmashingBarrier",
-              description:
-                "A user control to send feature requests or issue reports directly into related team projects",
-              icon: "smashingBarrier",
-              href: "https://www.ssw.com.au/ssw/codeauditor/",
+              href: "https://codeauditor.com",
             },
           ],
         },
@@ -173,14 +160,14 @@ export const menuBarItems: NavMenuItem[] = [
               description:
                 "AI-driven solution that delivers a competitive edge through its ability to find data",
               icon: "sophieBot",
-              href: "https://www.ssw.com.au/ssw/codeauditor/",
+              href: "https://sswsophie.com/sophiebot",
             },
             {
               name: "SophieHub",
               description:
                 "A Smart Environment System which shows user specific information based on the user",
               icon: "sophieHub",
-              href: "https://www.ssw.com.au/ssw/codeauditor/",
+              href: "https://sswsophie.com",
             },
           ],
         },
@@ -192,12 +179,12 @@ export const menuBarItems: NavMenuItem[] = [
               description:
                 "Scan SSW QR codes, earn SSW Points, claim rewards, and win prizes",
               icon: "sswRewards",
-              href: "https://www.sugarlearning.com/",
+              href: "/products/rewards",
             },
           ],
           viewAllLink: {
             name: "View all products",
-            href: "https://www.ssw.com.au/products/",
+            href: "/products/",
           },
         },
       ],
@@ -210,14 +197,14 @@ export const menuBarItems: NavMenuItem[] = [
               description:
                 "The next generation on-boarding & induction tool for smart companies.",
               category: "featured",
-              href: "#",
+              href: "https://www.sugarlearning.com/",
             },
             {
               name: "TimePro V2.10",
               description:
                 "TimePro offers everything an enterprise needs, such as invoicing, receipting, and time sheeting",
               category: "featured",
-              href: "#",
+              href: "https://sswtimepro.com/",
             },
           ],
         },
@@ -227,12 +214,12 @@ export const menuBarItems: NavMenuItem[] = [
             {
               name: "Knowledge Base",
               category: "classicMenu",
-              href: "#",
+              href: "https://pdi-ssw.zendesk.com/hc",
             },
             {
               name: "Report a bug",
               category: "classicMenu",
-              href: "#",
+              href: "https://www.ssw.com.au/ssw/Standards/Support/BugReportOrEnhancement.aspx",
             },
           ],
         },
@@ -248,7 +235,7 @@ export const menuBarItems: NavMenuItem[] = [
           items: [
             {
               name: "Sydney .NET UG",
-              href: "https://www.ssw.com.au/ssw/NETUG/",
+              href: "/netug/sydney",
             },
             {
               name: "Canberra .NET UG",
@@ -264,7 +251,7 @@ export const menuBarItems: NavMenuItem[] = [
             },
             {
               name: "China Fire User Group",
-              href: "https://www.ssw.com.au/ssw/NETUG/China.aspx",
+              href: "https://fireusergroup.com/",
             },
           ],
         },
@@ -274,23 +261,23 @@ export const menuBarItems: NavMenuItem[] = [
           items: [
             {
               name: "Angular Superpowers Tour",
-              href: "https://www.ssw.com.au/ssw/Events/Training/Angular-Superpowers-Tour.aspx",
+              href: "/events/angular-superpowers-tour",
             },
             {
               name: "Azure Superpowers Tour",
-              href: "https://www.ssw.com.au/ssw/Events/Training/Azure-Superpowers-Tour.aspx",
+              href: "/events/azure-superpowers-tour",
             },
             {
               name: "Clean Architecture Superpowers Tour",
-              href: "https://www.ssw.com.au/ssw/Events/Training/Clean-Architecture-Superpowers-Tour.aspx",
+              href: "/events/clean-architecture-superpowers-tour",
             },
             {
               name: ".NET Superpowers Tour",
-              href: "https://www.ssw.com.au/ssw/Events/Training/NET-Superpowers-Tour.aspx",
+              href: "/events/net-superpowers-tour",
             },
             {
               name: "Azure Super Skills",
-              href: "https://www.ssw.com.au/ssw/Events/Training/Azure-Super-Skills.aspx",
+              href: "/events/azure-superskills",
             },
           ],
         },
@@ -299,11 +286,11 @@ export const menuBarItems: NavMenuItem[] = [
           items: [
             {
               name: "Angular Workshop",
-              href: "https://www.ssw.com.au/ssw/Events/Training/Angular-Workshop.aspx",
+              href: "/events/angular-workshop",
             },
             {
               name: "Clean Architecture Workshop",
-              href: "https://www.ssw.com.au/ssw/Events/Training/Clean-Architecture-Workshop.aspx",
+              href: "/events/clean-architecture-workshop",
             },
           ],
         },
@@ -312,15 +299,15 @@ export const menuBarItems: NavMenuItem[] = [
           items: [
             {
               name: "Angular Hack Day",
-              href: "https://www.ssw.com.au/ssw/Events/HackDays/Angular-Hack-Day.aspx",
+              href: "https://angularhackday.com/",
             },
             {
               name: "MAUI Hack Day",
-              href: "https://www.ssw.com.au/ssw/Events/HackDays/MAUI-Hack-Day.aspx",
+              href: "https://mauihackday.com/",
             },
             {
               name: "AI Hack Day",
-              href: "https://www.ssw.com.au/ssw/Events/HackDays/AI-Hack-Day.aspx",
+              href: "https://aihackday.com/",
             },
           ],
         },
@@ -330,11 +317,11 @@ export const menuBarItems: NavMenuItem[] = [
           items: [
             {
               name: "Video Production & Live Streaming",
-              href: "https://www.ssw.com.au/ssw/Consulting/Video-Production.aspx",
+              href: "/consulting/video-production",
             },
             {
               name: "Conference Room for Hire",
-              href: "https://www.ssw.com.au/ssw/Consulting/Conference-Room-Hire.aspx",
+              href: "http://sswchapel.com.au/",
             },
           ],
         },
@@ -343,12 +330,12 @@ export const menuBarItems: NavMenuItem[] = [
           items: [
             {
               name: "Full Stack Developers",
-              href: "https://www.ssw.com.au/ssw/InternProgram/Full-Stack-Developers.aspx",
+              href: "/training/internship-fullstack",
             },
           ],
           viewAllLink: {
             name: "View all events & training",
-            href: "https://www.ssw.com.au/ssw/Consulting/",
+            href: "/events",
           },
         },
       ],
@@ -359,22 +346,22 @@ export const menuBarItems: NavMenuItem[] = [
             {
               name: "Newsletters",
               category: "classicMenu",
-              href: "#",
+              href: "/newsletters",
             },
             {
               name: "Past Sessions",
               category: "classicMenu",
-              href: "#",
+              href: "https://www.ssw.com.au/ssw/NETUG/PastSessions.aspx",
             },
             {
               name: "Evaluation Survey",
               category: "classicMenu",
-              href: "#",
+              href: "https://www.ssw.com.au/ssw/NETUG/Evaluation-Survey/",
             },
             {
               name: "Developer Links",
               category: "classicMenu",
-              href: "#",
+              href: "https://www.ssw.com.au/ssw/NETUG/Developerlinks.aspx",
             },
           ],
         },
@@ -390,15 +377,15 @@ export const menuBarItems: NavMenuItem[] = [
           items: [
             {
               name: "About SSW",
-              href: "https://www.ssw.com.au/ssw/Company/AboutUs.aspx",
+              href: "/company/about-us",
             },
             {
               name: "Our History",
-              href: "https://www.ssw.com.au/ssw/Company/OurHistory.aspx",
+              href: "/company/history",
             },
             {
               name: "Awards",
-              href: "https://www.ssw.com.au/ssw/Company/Awards.aspx",
+              href: "https://www.ssw.com.au/ssw/Company/Awards",
             },
           ],
         },
@@ -407,11 +394,11 @@ export const menuBarItems: NavMenuItem[] = [
           items: [
             {
               name: "Our People",
-              href: "https://www.ssw.com.au/people",
+              href: "https://www.ssw.com.au/people/",
             },
             {
-              name: "Careers",
-              href: "https://www.ssw.com.au/employment",
+              name: "Employment",
+              href: "/employment",
             },
           ],
         },
@@ -421,23 +408,23 @@ export const menuBarItems: NavMenuItem[] = [
           items: [
             {
               name: "Our Clients' Stories",
-              href: "https://www.ssw.com.au/people",
+              href: "/company/clients",
             },
             {
               name: "Testimonials",
-              href: "https://www.ssw.com.au/employment",
+              href: "https://www.ssw.com.au/ssw/Testimonials/default.aspx",
             },
             {
               name: "Finance",
-              href: "https://www.ssw.com.au/employment",
+              href: "/industry/finance",
             },
             {
               name: "Non-Profits",
-              href: "https://www.ssw.com.au/employment",
+              href: "/industry/non-profit",
             },
             {
               name: "Educational",
-              href: "https://www.ssw.com.au/employment",
+              href: "/industry/educational",
             },
           ],
         },
@@ -447,19 +434,19 @@ export const menuBarItems: NavMenuItem[] = [
           items: [
             {
               name: "News & Press",
-              href: "https://www.ssw.com.au/people",
+              href: "/company/news/",
             },
             {
               name: "SSW Blog",
-              href: "https://www.ssw.com.au/employment",
+              href: "https://blog.ssw.com.au/",
             },
             {
               name: "Adam's Blog",
-              href: "https://www.ssw.com.au/employment",
+              href: "https://adamcogan.com/",
             },
             {
               name: "Newsletters",
-              href: "https://www.ssw.com.au/employment",
+              href: "/newsletters",
             },
           ],
         },
@@ -471,12 +458,12 @@ export const menuBarItems: NavMenuItem[] = [
             {
               name: "Our Offices",
               category: "classicMenu",
-              href: "#",
+              href: "/offices",
             },
             {
               name: "Contact Us",
               category: "classicMenu",
-              href: "#",
+              href: "/company/contact-us",
             },
           ],
         },
