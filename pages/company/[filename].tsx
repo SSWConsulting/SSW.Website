@@ -17,7 +17,7 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
-import { GetTestimonialsByCategories } from "../../helpers/getTestimonials";
+import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { removeExtension } from "../../services/client/utils.service";
 
 export default function CompanyPage(
@@ -119,7 +119,7 @@ export default function CompanyPage(
                     data.company.testimonials,
                     "tagline"
                   )}
-                  className="mx-auto flex max-w-9xl flex-col items-center"
+                  className="flex max-w-9xl flex-col items-center"
                 >
                   <TestimonialRow
                     testimonialsResult={props.testimonialResult}
@@ -131,12 +131,14 @@ export default function CompanyPage(
             </Section>
           )}
           {data.company.showAllTestimonials && (
-            <TestimonialsList
-              data={{
-                hideInternshipTestimonials:
-                  data.company.HideInternshipTestimonials,
-              }}
-            />
+            <Container padding={"md:px-8 px-2"} className={"flex-1 pt-0"}>
+              <TestimonialsList
+                data={{
+                  hideInternshipTestimonials:
+                    data.company.HideInternshipTestimonials,
+                }}
+              />
+            </Container>
           )}
           <Section>
             <BuiltOnAzure data={{ backgroundColor: "default" }} />
@@ -162,7 +164,7 @@ export const getStaticProps = async ({ params }) => {
     seo.canonical = `${tinaProps.data.global.header.url}company/${params.filename}`;
   }
 
-  const testimonialsResult = await GetTestimonialsByCategories(categories);
+  const testimonialsResult = await getTestimonialsByCategories(categories);
 
   return {
     props: {

@@ -83,7 +83,7 @@ export const TestimonialsList = ({ data: { hideInternshipTestimonials } }) => {
   return (
     <>
       {hasLoaded ? (
-        <div className="mx-auto my-6 flex w-3/4 flex-row flex-wrap items-stretch justify-center gap-6">
+        <div className="mx-auto my-6 flex w-full flex-row flex-wrap items-stretch justify-center gap-6">
           {testimonials.map(TestimonialCard)}
         </div>
       ) : (
