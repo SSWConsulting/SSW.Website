@@ -1,5 +1,5 @@
-import Logo, { LogoProps, LogoSize } from "./logo";
+import Logo, { LogoSize } from "./logo";
 
 export { Logo };
 
-export type { LogoProps, LogoSize };
+export type { LogoSize };
