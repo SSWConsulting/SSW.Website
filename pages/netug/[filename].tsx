@@ -190,8 +190,8 @@ export default function NETUGPage(
           </Container>
 
           <SectionRenderer
-            prefix="UserGroupPageLocationPageSections"
-            blocks={data.userGroupPage.sections}
+            prefix="UserGroupGlobalSections"
+            blocks={data.userGroupGlobal.sections}
           />
 
           <section className="bg-gray-900 py-8">

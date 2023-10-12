@@ -1,6 +1,5 @@
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
-import { communitySectionBlockSchema } from "../../components/usergroup/sections/community";
 import { pageBlocks as sectionPageBlocks } from "../../components/usergroup/sections";
 
 import type { Collection } from "tinacms";
@@ -10,6 +9,9 @@ export const userGroupPageSchema: Collection = {
   name: "userGroupPage",
   format: "mdx",
   path: "content/netug",
+  match: {
+    exclude: "global/**/**",
+  },
   ui: {
     router: ({ document }) => {
       return `/netug/${document._sys.filename}`;
@@ -120,13 +122,6 @@ export const userGroupPageSchema: Collection = {
           fields: Schemas.joinAsPresenterSchema.fields,
         },
         {
-          type: "object",
-          list: true,
-          name: "sections",
-          label: "Sections",
-          templates: sectionPageBlocks,
-        },
-        {
           type: "string",
           label: "About Header",
           name: "aboutHeader",
@@ -152,6 +147,28 @@ export const userGroupPageSchema: Collection = {
           isBody: true,
         },
       ],
+    },
+  ],
+};
+
+export const userGroupGlobalSchema: Collection = {
+  label: "User Group Global Setttings",
+  name: "userGroupGlobal",
+  format: "json",
+  path: "content/netug/global",
+  ui: {
+    allowedActions: {
+      create: false,
+      delete: false,
+    },
+  },
+  fields: [
+    {
+      type: "object",
+      list: true,
+      name: "sections",
+      label: "Sections",
+      templates: sectionPageBlocks,
     },
   ],
 };
