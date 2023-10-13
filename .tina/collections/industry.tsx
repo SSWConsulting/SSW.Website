@@ -129,7 +129,7 @@ const contactUsBlockSchema: Template = {
 };
 
 export const industrySchema: Collection = {
-  label: "Industry Pages",
+  label: "Pages - Industry",
   name: "industry",
   format: "mdx",
   path: "content/industry",

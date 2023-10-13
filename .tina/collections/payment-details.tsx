@@ -12,7 +12,7 @@ export const paymentDetailsBlockConstant = {
 };
 
 export const paymentDetailsSchema: Collection = {
-  label: "Company - Payment Details",
+  label: "Payment Details - Company",
   name: paymentDetailsBlockConstant.value,
   format: "mdx",
   path: "content/payments",

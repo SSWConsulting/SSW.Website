@@ -7,7 +7,7 @@ import {
 } from "../../components/util/constants/opportunity";
 
 export const opportunitiesSchema: Collection = {
-  label: "Employment - Opportunities",
+  label: "Opportunities - Employment",
   name: "opportunities",
   format: "mdx",
   path: "content/opportunities",

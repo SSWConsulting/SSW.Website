@@ -4,7 +4,7 @@ import { seoSchema } from "../../components/util/seo";
 import { benefitsFields } from "./shared-fields";
 
 export const employmentSchema: Collection = {
-  label: "Employment - Index",
+  label: "Index - Employment",
   name: "employment",
   format: "mdx",
   path: "content/employment",

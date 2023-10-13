@@ -6,7 +6,7 @@ import { seoSchema } from "../../components/util/seo";
 import type { Collection } from "tinacms";
 
 export const companySchema: Collection = {
-  label: "Company Pages",
+  label: "Pages - Company",
   name: "company",
   format: "mdx",
   path: "content/company/",
@@ -132,7 +132,7 @@ export const companyIndexSchemaConstants = {
 };
 
 export const companyIndexSchema: Collection = {
-  label: "Company - Index",
+  label: "Index - Company",
   name: companyIndexSchemaConstants.value,
   format: "mdx",
   path: "content/company/index",
@@ -222,7 +222,7 @@ export const companyIndexSchema: Collection = {
 };
 
 export const clientsCategorySchema: Collection = {
-  label: "Company - Client categories",
+  label: "Client categories - Company",
   name: "clientCategories",
   path: "content/company/clientCategories",
   format: "json",

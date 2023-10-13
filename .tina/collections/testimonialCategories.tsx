@@ -1,7 +1,7 @@
 import type { Collection } from "tinacms";
 
 export const testimonialCategoriesSchema: Collection = {
-  label: "Testimonials - Categories",
+  label: "Categories - Testimonials",
   name: "testimonialCategories",
   format: "mdx",
   path: "content/testimonialCategories",

@@ -3,7 +3,7 @@ import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 
 export const productsIndexSchema: Collection = {
-  label: "Products - Index",
+  label: "Index - Products",
   name: "productsIndex",
   path: "content/products/index",
   format: "json",
@@ -57,7 +57,7 @@ export const productsIndexSchema: Collection = {
 };
 
 export const productsSchema: Collection = {
-  label: "Products",
+  label: "Pages - Products",
   name: "products",
   path: "content/products",
   format: "mdx",
