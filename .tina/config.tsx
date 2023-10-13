@@ -30,8 +30,8 @@ import {
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
 import { trainingSchema } from "./collections/training";
-import { videoProductionSchema } from "./collections/videoProduction";
 import { userGroupPageSchema } from "./collections/usergroup";
+import { videoProductionSchema } from "./collections/videoProduction";
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -65,18 +65,21 @@ const config = defineStaticConfig({
       marketingSchema,
       globalSchema,
       pagesSchema,
+      consultingSchema,
+      officeSchema,
+      companySchema,
+      eventsSchema,
+      userGroupPageSchema,
       consultingIndexSchema,
       consultingCategorySchema,
       consultingTagSchema,
-      consultingSchema,
       videoProductionSchema,
-      testimonialSchema,
       testimonialCategoriesSchema,
       technologiesSchema,
-      officeSchema,
-      opportunitiesSchema,
-      employmentSchema,
       officeIndexSchema,
+      opportunitiesSchema,
+      testimonialSchema,
+      employmentSchema,
       productsIndexSchema,
       productsSchema,
       trainingSchema,
@@ -84,14 +87,11 @@ const config = defineStaticConfig({
       presenterSchema,
       locationSchema,
       industrySchema,
-      companySchema,
-      clientsCategorySchema,
-      eventsSchema,
       companyIndexSchema,
+      clientsCategorySchema,
       eventsIndexSchema,
       paymentDetailsSchema,
       technologyBadgesSchema,
-      userGroupPageSchema,
     ],
   },
 });

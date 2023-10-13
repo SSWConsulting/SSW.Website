@@ -12,7 +12,7 @@ export const presenterSchemaConstants = {
 };
 
 export const presenterSchema: Collection = {
-  label: "Presenters",
+  label: "Events - Presenters",
   name: "presenter",
   format: "mdx",
   path: "content/presenters",

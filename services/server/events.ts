@@ -43,7 +43,11 @@ export const getEvents = async (odataFilter: string): Promise<EventInfo[]> => {
     );
     return [];
   }
-
+  process.env.MICROSOFT_OAUTH_CLIENT_ID,
+    console.log(
+      "🚀 ~ file: events.ts:47 ~ getEvents ~ process.env.MICROSOFT_OAUTH_CLIENT_ID,:",
+      process.env.MICROSOFT_OAUTH_CLIENT_ID
+    );
   const token = await getToken(
     SHAREPOINT_SCOPES,
     process.env.MICROSOFT_OAUTH_CLIENT_ID,

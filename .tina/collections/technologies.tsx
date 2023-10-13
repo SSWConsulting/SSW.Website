@@ -1,7 +1,7 @@
 import type { Collection } from "tinacms";
 
 export const technologiesSchema: Collection = {
-  label: "Technology Cards",
+  label: "Consulting - Technology Cards",
   name: "technologies",
   format: "mdx",
   path: "content/technologies",
