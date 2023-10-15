@@ -35,7 +35,7 @@ export const technologiesSchema: Collection = {
 };
 
 export const technologyBadgesSchema: Collection = {
-  label: "Technology Badges",
+  label: "Consulting - Technology Badges",
   name: "technologyBadges",
   format: "json",
   path: "content/technologyBadges",
