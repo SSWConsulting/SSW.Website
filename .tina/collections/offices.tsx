@@ -5,7 +5,7 @@ import { sswCountries } from "../../components/util/constants/country";
 import { seoSchema } from "../../components/util/seo";
 
 export const officeIndexSchema: Collection = {
-  label: "Index - Offices",
+  label: "Offices - Index",
   name: "officeIndex",
   path: "content/office/index",
   format: "json",
@@ -57,7 +57,7 @@ export const officeIndexSchema: Collection = {
 };
 
 export const officeSchema: Collection = {
-  label: "Pages - Offices",
+  label: "Offices Pages",
   name: "offices",
   format: "mdx",
   path: "content/offices",

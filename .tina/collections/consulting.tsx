@@ -6,7 +6,7 @@ import { testimonialRowSchema } from "../../components/testimonials/TestimonialR
 import { benefitsFields } from "./shared-fields";
 
 export const consultingIndexSchema: Collection = {
-  label: "Index - Consulting",
+  label: "Consulting - Index",
   name: "consultingIndex",
   path: "content/consulting/index",
   format: "json",
@@ -135,7 +135,7 @@ export const consultingIndexSchema: Collection = {
 };
 
 export const consultingCategorySchema: Collection = {
-  label: "Categories - Consulting",
+  label: "Consulting - Categories",
   name: "consultingCategory",
   path: "content/consulting/category",
   format: "json",
@@ -152,7 +152,7 @@ export const consultingCategorySchema: Collection = {
 };
 
 export const consultingTagSchema: Collection = {
-  label: "Tags - Consulting",
+  label: "Consulting - Tags",
   name: "consultingTag",
   path: "content/consulting/tag",
   format: "json",
@@ -169,7 +169,7 @@ export const consultingTagSchema: Collection = {
 };
 
 export const consultingSchema: Collection = {
-  label: "Pages - Consulting",
+  label: "Consulting Pages",
   name: "consulting",
   format: "mdx",
   path: "content/consulting",
@@ -238,10 +238,7 @@ export const consultingSchema: Collection = {
       name: "testimonialCategories",
       ui: {
         itemProps(item) {
-          return {
-            label:
-              item.testimonialCategory ?? "Select your testimonial category",
-          };
+          return { label: item.testimonialCategory ?? "Select your testimonial category" }
         },
       },
       list: true,

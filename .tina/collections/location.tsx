@@ -10,7 +10,7 @@ export const locationSchemaConstants = {
 };
 
 export const locationSchema: Collection = {
-  label: "Locations - Events",
+  label: "Events - Locations",
   name: locationSchemaConstants.value,
   format: "mdx",
   path: "content/locations",
