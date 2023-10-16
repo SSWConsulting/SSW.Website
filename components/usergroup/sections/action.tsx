@@ -53,13 +53,20 @@ export const ActionSection = (props: ActionSectionProps) => {
               >
                 {props.heading}
               </h3>
-              <div className="child-p:text-base child-p:font-normal child-p:text-gray-50">
+              <div
+                className="child-p:text-base child-p:font-normal child-p:text-gray-50"
+                data-tina-field={tinaField(props, "content")}
+              >
                 <TinaMarkdown content={props.content} />
               </div>
             </div>
             <ul>
               {props?.listItems?.map((item, index) => (
-                <li className="py-3 text-lg font-semibold" key={index}>
+                <li
+                  className="py-3 text-lg font-semibold"
+                  key={index}
+                  data-tina-field={tinaField(props.listItems[index], "text")}
+                >
                   {iconMap[item.icon]?.icon({
                     size: 40,
                     className: "mr-5 inline",
@@ -72,13 +79,18 @@ export const ActionSection = (props: ActionSectionProps) => {
           <div className="flex flex-col md:items-end">
             <MeetupForm className="self-start max-md:mx-auto" />
 
-            <SponsorCard
-              className="mb-4 mt-6 inline-block grow-0 items-end justify-end text-white"
-              urls={props.eventSponsors.map((sponsor) => ({
-                src: sponsor,
-                label: "Sponsor image",
-              }))}
-            />
+            <div
+              data-tina-field={tinaField(props, "eventSponsors")}
+              className="inline-block grow-0 items-end justify-end"
+            >
+              <SponsorCard
+                className="mb-4 mt-6 text-white"
+                urls={props.eventSponsors.map((sponsor) => ({
+                  src: sponsor,
+                  label: "Sponsor image",
+                }))}
+              />
+            </div>
           </div>
         </div>
       </Container>

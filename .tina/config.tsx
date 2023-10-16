@@ -30,7 +30,10 @@ import {
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
 import { trainingSchema } from "./collections/training";
-import { userGroupPageSchema } from "./collections/usergroup";
+import {
+  userGroupGlobalSchema,
+  userGroupPageSchema,
+} from "./collections/usergroup";
 import { videoProductionSchema } from "./collections/videoProduction";
 
 const config = defineStaticConfig({
@@ -92,6 +95,7 @@ const config = defineStaticConfig({
       industrySchema,
       newsletterSchema,
       trainingSchema,
+      userGroupGlobalSchema,
     ],
   },
 });
