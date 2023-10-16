@@ -38,6 +38,7 @@ type SocialButtonProps = {
   url?: string;
   platform?: PlatformType;
   label?: string;
+  "data-tina-field"?: string;
 };
 
 export const SocialButton = ({
@@ -45,11 +46,13 @@ export const SocialButton = ({
   url,
   platform,
   label,
+  "data-tina-field": tinaField,
 }: SocialButtonProps) => {
   return (
     <a
       href={url}
       className={classNames("flex items-center !no-underline", className)}
+      data-tina-field={tinaField}
     >
       <div
         style={{ backgroundColor: platforms[platform]?.color }}

@@ -1,0 +1,121 @@
+{
+  "sections": [
+    {
+      "heading": "I'm Sold... What's Next?",
+      "content": "RSVP to the event and receive NETUG updates!\n",
+      "listItems": [
+        {
+          "icon": "graduation",
+          "text": "Learn latest Microsoft tech"
+        },
+        {
+          "icon": "messages",
+          "text": "Build contacts"
+        },
+        {
+          "icon": "smile",
+          "text": "Socialize"
+        },
+        {
+          "icon": "pizza",
+          "text": "Free pizza and drinks"
+        }
+      ],
+      "eventSponsors": [
+        "/images/consulting/octopusdeploy-logo.png"
+      ],
+      "_template": "ActionSection"
+    },
+    {
+      "videos": [
+        {
+          "link": "https://www.youtube.com/watch?v=dMgj1MdwrRE",
+          "title": "Pick a Side - Clean vs Vertical Slice Architecture | Luke Parker"
+        },
+        {
+          "link": "https://www.youtube.com/watch?v=gZ9VabDU81A",
+          "title": "Rules to Better Chat GPT and Using the Best API Ever | Adam Cogan"
+        },
+        {
+          "link": "https://www.youtube.com/watch?v=K1t73xArqs0",
+          "title": "Beyond Passwords: The Future (and Present) of Authentication | Matt Goldman"
+        }
+      ],
+      "button": {
+        "link": "https://www.youtube.com/channel/UCBFgwtV9lIIhvoNh0xoQ7Pg",
+        "text": "Watch more on the SSW TV YouTube channel"
+      },
+      "_template": "VideosSection"
+    },
+    {
+      "heading": "Community",
+      "twitterUsername": "SSW_TV",
+      "facebookUsername": "SSW.page",
+      "socialButtons": [
+        {
+          "url": "https://github.com/netusergroup/sydney-user-group/discussions",
+          "label": "Join GitHub Discussion",
+          "platform": "github"
+        },
+        {
+          "url": "https://www.facebook.com/groups/NetUG/",
+          "label": "Join Facebook Group",
+          "platform": "facebook"
+        },
+        {
+          "url": "https://www.linkedin.com/groups/1520317/",
+          "label": "Join LinkedIn Group",
+          "platform": "linkedin"
+        },
+        {
+          "url": "https://www.meetup.com/sydney-net-user-group/join/",
+          "label": "Join Meetup Group",
+          "platform": "meetup"
+        }
+      ],
+      "_template": "CommunitySection"
+    }
+  ],
+  "technologies": [
+    {
+      "name": "Microsoft",
+      "imageUrl": "/images/logos/microsoft.jpg"
+    },
+    {
+      "name": "Visual Studio",
+      "imageUrl": "/images/logos/visualstudio.jpg"
+    },
+    {
+      "name": "Angular",
+      "imageUrl": "/images/logos/angular.jpg"
+    },
+    {
+      "name": "React",
+      "imageUrl": "/images/logos/react.jpg"
+    },
+    {
+      "name": "SharePoint",
+      "imageUrl": "/images/logos/sharepoint.jpg"
+    },
+    {
+      "name": "Next.js",
+      "imageUrl": "/images/logos/nextjs-logo.png"
+    },
+    {
+      "name": "Power BI",
+      "imageUrl": "/images/logos/powerbi.jpg"
+    },
+    {
+      "name": "Microsoft SQL Server",
+      "imageUrl": "/images/logos/sql.jpg"
+    },
+    {
+      "name": "Micorosft Dynamics 365",
+      "imageUrl": "/images/logos/dynamics.jpg"
+    },
+    {
+      "name": "Vue",
+      "imageUrl": "/images/logos/vue.jpg"
+    }
+  ]
+}

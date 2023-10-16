@@ -75,10 +75,7 @@
       "type": "phone",
       "title": "Call us",
       "url": "tel:+61299533000",
-      "linkText": "CALL US",
-      "desktopSpecificLinkText": "CONTACT US",
-      "desktopSpecificURL": "/company/contact-us",
-      "openInSameWindow": true
+      "linkText": "CALL US"
     },
     {
       "type": "youtube",
@@ -192,48 +189,6 @@
     },
     {
       "office": "content/offices/strasbourg.mdx"
-    }
-  ],
-  "technologies": [
-    {
-      "name": "Microsoft",
-      "imageUrl": "/images/logos/microsoft.jpg"
-    },
-    {
-      "name": "Visual Studio",
-      "imageUrl": "/images/logos/visualstudio.jpg"
-    },
-    {
-      "name": "Angular",
-      "imageUrl": "/images/logos/angular.jpg"
-    },
-    {
-      "name": "React",
-      "imageUrl": "/images/logos/react.jpg"
-    },
-    {
-      "name": "SharePoint",
-      "imageUrl": "/images/logos/sharepoint.jpg"
-    },
-    {
-      "name": "Next.js",
-      "imageUrl": "/images/logos/nextjs-logo.png"
-    },
-    {
-      "name": "Power BI",
-      "imageUrl": "/images/logos/powerbi.jpg"
-    },
-    {
-      "name": "Microsoft SQL Server",
-      "imageUrl": "/images/logos/sql.jpg"
-    },
-    {
-      "name": "Micorosft Dynamics 365",
-      "imageUrl": "/images/logos/dynamics.jpg"
-    },
-    {
-      "name": "Vue",
-      "imageUrl": "/images/logos/vue.jpg"
     }
   ]
 }

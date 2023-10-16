@@ -3,12 +3,17 @@ import Image from "next/image";
 import { VideoCard } from "../../util/videoCards";
 import { Container } from "../../util/container";
 import { UtilityButton } from "../../blocks";
+import { tinaField } from "tinacms/dist/react";
 
 type VideosSectionProps = {
   videos?: {
     link?: string;
     title?: string;
   }[];
+  button?: {
+    link?: string;
+    text?: string;
+  };
 };
 
 export const VideosSection = (props: VideosSectionProps) => {
@@ -31,15 +36,21 @@ export const VideosSection = (props: VideosSectionProps) => {
             </div>
             <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">
               {props.videos?.map((video, index) => (
-                <VideoCard {...video} key={index} theme="light" />
+                <div data-tina-field={tinaField(props.videos[index], "title")}>
+                  <VideoCard {...video} key={index} theme="light" />
+                </div>
               ))}
             </div>
-            <UtilityButton
-              link="https://www.youtube.com/channel/UCBFgwtV9lIIhvoNh0xoQ7Pg"
-              buttonText="Watch more on the SSW TV YouTube channel"
-              className="mx-auto text-md font-semibold"
-              noAnimate
-            />
+            {props.button && props.button.text && props.button.link && (
+              <div data-tina-field={tinaField(props.button, "text")}>
+                <UtilityButton
+                  link={props.button.link}
+                  buttonText={props.button.text}
+                  className="mx-auto text-md font-semibold"
+                  noAnimate
+                />
+              </div>
+            )}
           </div>
         </div>
       </Container>
@@ -73,6 +84,23 @@ export const videosSectionBlockSchema: Template = {
           label: item?.title,
         }),
       },
+    },
+    {
+      type: "object",
+      label: "Button options",
+      name: "button",
+      fields: [
+        {
+          type: "string",
+          label: "Link",
+          name: "link",
+        },
+        {
+          type: "string",
+          label: "Text",
+          name: "text",
+        },
+      ],
     },
   ],
 };

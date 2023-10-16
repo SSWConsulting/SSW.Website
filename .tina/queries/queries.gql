@@ -181,4 +181,7 @@ query userGroupPageContentQuery($relativePath: String!) {
     ...UserGroupPageParts
     __typename
   }
+  userGroupGlobal(relativePath: "global.json") {
+    ...UserGroupGlobalParts
+  }
 }
