@@ -170,5 +170,30 @@ export const userGroupGlobalSchema: Collection = {
       label: "Sections",
       templates: sectionPageBlocks,
     },
+    {
+      type: "object",
+      label: "Technologies",
+      name: "technologies",
+      list: true,
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.name };
+        },
+      },
+      fields: [
+        {
+          type: "string",
+          label: "Technology Name",
+          name: "name",
+        },
+        {
+          type: "string",
+          label: "Image URL",
+          name: "imageUrl",
+          description:
+            "The path of the image from the project root (most of the time, '/images/...')",
+        },
+      ],
+    },
   ],
 };

@@ -75,5 +75,47 @@
       ],
       "_template": "CommunitySection"
     }
+  ],
+  "technologies": [
+    {
+      "name": "Microsoft",
+      "imageUrl": "/images/logos/microsoft.jpg"
+    },
+    {
+      "name": "Visual Studio",
+      "imageUrl": "/images/logos/visualstudio.jpg"
+    },
+    {
+      "name": "Angular",
+      "imageUrl": "/images/logos/angular.jpg"
+    },
+    {
+      "name": "React",
+      "imageUrl": "/images/logos/react.jpg"
+    },
+    {
+      "name": "SharePoint",
+      "imageUrl": "/images/logos/sharepoint.jpg"
+    },
+    {
+      "name": "Next.js",
+      "imageUrl": "/images/logos/nextjs-logo.png"
+    },
+    {
+      "name": "Power BI",
+      "imageUrl": "/images/logos/powerbi.jpg"
+    },
+    {
+      "name": "Microsoft SQL Server",
+      "imageUrl": "/images/logos/sql.jpg"
+    },
+    {
+      "name": "Micorosft Dynamics 365",
+      "imageUrl": "/images/logos/dynamics.jpg"
+    },
+    {
+      "name": "Vue",
+      "imageUrl": "/images/logos/vue.jpg"
+    }
   ]
 }
