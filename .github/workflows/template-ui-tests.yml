@@ -1,0 +1,43 @@
+name: Deploy - UI Tests
+
+on:
+  workflow_call:
+    inputs:
+      deploy_url:
+        type: string
+        required: true
+
+jobs:
+  test:
+    name: Run Playwright tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install
+        working-directory: ./ui-tests
+
+      - name: Install Playwright Browsers
+        run: yarn playwright install --with-deps chromium
+        working-directory: ./ui-tests
+
+      - name: Run Playwright image tests
+        run: yarn playwright test images
+        env:
+          HOST_URL: ${{ inputs.deploy_url }}
+        working-directory: ./ui-tests
+
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 2

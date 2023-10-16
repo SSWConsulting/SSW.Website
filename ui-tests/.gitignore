@@ -1,0 +1,13 @@
+node_modules/
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# yarn v2
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
