@@ -222,7 +222,7 @@ export const companyIndexSchema: Collection = {
 };
 
 export const clientsCategorySchema: Collection = {
-  label: "Company - Client categories",
+  label: "Company - Client Categories",
   name: "clientCategories",
   path: "content/company/clientCategories",
   format: "json",
