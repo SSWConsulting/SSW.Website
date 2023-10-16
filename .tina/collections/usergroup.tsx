@@ -152,7 +152,7 @@ export const userGroupPageSchema: Collection = {
 };
 
 export const userGroupGlobalSchema: Collection = {
-  label: "User Group Global Setttings",
+  label: "User Groups - Sections",
   name: "userGroupGlobal",
   format: "json",
   path: "content/netug/global",
