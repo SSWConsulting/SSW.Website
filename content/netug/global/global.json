@@ -41,9 +41,14 @@
           "title": "Beyond Passwords: The Future (and Present) of Authentication | Matt Goldman"
         }
       ],
+      "button": {
+        "link": "https://www.youtube.com/channel/UCBFgwtV9lIIhvoNh0xoQ7Pg",
+        "text": "Watch more on the SSW TV YouTube channel"
+      },
       "_template": "VideosSection"
     },
     {
+      "heading": "Community",
       "twitterUsername": "SSW_TV",
       "facebookUsername": "SSW.page",
       "socialButtons": [
