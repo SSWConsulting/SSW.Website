@@ -3,7 +3,7 @@ import * as Schemas from "../../components/blocks";
 import { sides } from "../../components/marketing/Marketing";
 
 export const marketingSchema: Collection = {
-  label: "Marketing Pages",
+  label: "Marketing - Pages",
   name: "marketing",
   path: "content/marketing",
   format: "mdx",

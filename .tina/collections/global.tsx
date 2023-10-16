@@ -1,7 +1,7 @@
 import type { Collection } from "tinacms";
 
 export const globalSchema: Collection = {
-  label: "Global",
+  label: "Global - Sections",
   name: "global",
   path: "content/global",
   format: "json",

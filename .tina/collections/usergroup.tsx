@@ -1,11 +1,11 @@
 import * as Schemas from "../../components/blocks";
-import { seoSchema } from "../../components/util/seo";
 import { pageBlocks as sectionPageBlocks } from "../../components/usergroup/sections";
+import { seoSchema } from "../../components/util/seo";
 
 import type { Collection } from "tinacms";
 
 export const userGroupPageSchema: Collection = {
-  label: "User Group Pages",
+  label: "User Group - Pages",
   name: "userGroupPage",
   format: "mdx",
   path: "content/netug",

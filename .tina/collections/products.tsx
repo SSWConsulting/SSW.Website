@@ -57,7 +57,7 @@ export const productsIndexSchema: Collection = {
 };
 
 export const productsSchema: Collection = {
-  label: "Products",
+  label: "Products - Pages",
   name: "products",
   path: "content/products",
   format: "mdx",

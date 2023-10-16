@@ -57,7 +57,7 @@ export const officeIndexSchema: Collection = {
 };
 
 export const officeSchema: Collection = {
-  label: "Offices Pages",
+  label: "Offices - Pages",
   name: "offices",
   format: "mdx",
   path: "content/offices",
