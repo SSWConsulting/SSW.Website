@@ -1,7 +1,7 @@
-import classNames from "classnames";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { twMerge } from "tailwind-merge";
 import type { Template } from "tinacms";
 import layoutData from "../../content/global/index.json";
 import { recaptchaToastId, useRecaptcha } from "../../context/RecaptchaContext";
@@ -18,10 +18,16 @@ export interface BookingButtonProps {
   buttonText?: string;
   containerClass?: string;
   buttonClass?: string;
+  hideCallUs?: boolean;
 }
 
 export const BookingButton = ({ data }) => {
-  const { containerClass, buttonClass, buttonText }: BookingButtonProps = data;
+  const {
+    containerClass,
+    buttonClass,
+    buttonText,
+    hideCallUs,
+  }: BookingButtonProps = data;
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const showBookingForm = () => setIsVisible((curr) => !curr);
 
@@ -43,19 +49,18 @@ export const BookingButton = ({ data }) => {
 
   return (
     <div
-      className={classNames(
-        "flex w-full flex-col items-center",
-        containerClass
-      )}
+      className={twMerge("flex w-full flex-col items-center", containerClass)}
     >
       <UtilityButton
-        className={classNames(buttonClass, "mt-14")}
+        className={buttonClass || "mt-14"}
         onClick={showBookingForm}
         buttonText={buttonText}
       />
-      <h2 className="mx-auto max-w-full text-center">
-        or call us on {bookingPhone}
-      </h2>
+      {!hideCallUs && (
+        <h2 className="mx-auto max-w-full text-center">
+          or call us on {bookingPhone}
+        </h2>
+      )}
       <Popup isVisible={isVisible} onClose={setIsVisible}>
         {isVisible && (
           <BookingForm
