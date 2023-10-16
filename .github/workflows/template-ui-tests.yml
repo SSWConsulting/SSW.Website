@@ -20,10 +20,6 @@ jobs:
         with:
           node-version-file: ".nvmrc"
 
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-        working-directory: ./ui-tests
-
       - name: Install Playwright Browsers
         run: yarn playwright install --with-deps chromium
         working-directory: ./ui-tests

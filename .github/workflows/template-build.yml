@@ -114,8 +114,6 @@ jobs:
           echo "AppInsightConnectionString=$AppInsightConnectionString" >> $env:GITHUB_OUTPUT
           Write-Host '✅ AppInsight - Connection String retrieved'
 
-      - run: yarn install
-
       - run: yarn build
         env:
           NODE_OPTIONS: --max_old_space_size=8192

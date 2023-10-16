@@ -36,6 +36,4 @@ jobs:
         with:
           node-version-file: ".nvmrc"
 
-      - run: yarn install
-
       - run: yarn lint --max-warnings 0
