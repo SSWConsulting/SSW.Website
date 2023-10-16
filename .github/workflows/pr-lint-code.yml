@@ -35,5 +35,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: ".nvmrc"
+          cache: "yarn"
 
       - run: yarn lint --max-warnings 0
