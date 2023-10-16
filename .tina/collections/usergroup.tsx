@@ -5,7 +5,7 @@ import { seoSchema } from "../../components/util/seo";
 import type { Collection } from "tinacms";
 
 export const userGroupPageSchema: Collection = {
-  label: "User Group - Pages",
+  label: "User Groups - Pages",
   name: "userGroupPage",
   format: "mdx",
   path: "content/netug",
