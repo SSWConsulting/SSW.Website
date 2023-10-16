@@ -14,6 +14,7 @@ export type VideoCardType = {
 
 export type VideoCardProps = {
   theme: "light" | "dark";
+  "data-tina-field"?: string;
 } & VideoCardType;
 
 export const VideoCard: FC<VideoCardProps> = ({ link, title, theme }) => {

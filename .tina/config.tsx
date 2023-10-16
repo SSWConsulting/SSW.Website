@@ -31,7 +31,7 @@ import { testimonialCategoriesSchema } from "./collections/testimonialCategories
 import { testimonialSchema } from "./collections/testimonials";
 import { trainingSchema } from "./collections/training";
 import { videoProductionSchema } from "./collections/videoProduction";
-import { userGroupPageSchema } from "./collections/usergroup";
+import { userGroupPageSchema, userGroupGlobalSchema } from "./collections/usergroup";
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -92,6 +92,7 @@ const config = defineStaticConfig({
       paymentDetailsSchema,
       technologyBadgesSchema,
       userGroupPageSchema,
+      userGroupGlobalSchema,
     ],
   },
 });
