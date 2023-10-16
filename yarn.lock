@@ -3022,12 +3022,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:^13.4.19":
-  version: 13.4.19
-  resolution: "@next/eslint-plugin-next@npm:13.4.19"
+"@next/eslint-plugin-next@npm:^13.5.4":
+  version: 13.5.4
+  resolution: "@next/eslint-plugin-next@npm:13.5.4"
   dependencies:
     glob: 7.1.7
-  checksum: d60c136e4a8d156b50d4b248eef9918bbf4bd7da293487cdf1f7bc172b07beeae4a2822798942d2f87999af86c53d871ebea592f3d6099ae23a0746d2abf7c73
+  checksum: 17a502cec987768bfa99ee42d9072a9a3bdd32b32bde04bd97a04868b56252352a5c38b571ee5ee8f86ff4c27844984a3c737461ebd91d6ca32a2ce2bd5b8af2
   languageName: node
   linkType: hard
 
@@ -4664,7 +4664,7 @@ __metadata:
     "@microsoft/applicationinsights-react-js": ^3.4.2
     "@microsoft/applicationinsights-web": 2.8.14
     "@next/bundle-analyzer": ^13.4.19
-    "@next/eslint-plugin-next": ^13.4.19
+    "@next/eslint-plugin-next": ^13.5.4
     "@playwright/test": ^1.38.1
     "@svgr/webpack": ^8.1.0
     "@tailwindcss/typography": ^0.5.10
