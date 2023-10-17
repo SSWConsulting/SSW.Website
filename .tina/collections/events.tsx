@@ -6,7 +6,7 @@ import { seoSchema } from "../../components/util/seo";
 import { videoCardSchema } from "../../components/util/videoCards";
 
 export const eventsSchema: Collection = {
-  label: "Events Pages",
+  label: "Events - Pages",
   name: "events",
   format: "mdx",
   path: "content/events",
