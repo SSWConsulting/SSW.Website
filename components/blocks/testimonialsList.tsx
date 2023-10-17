@@ -1,12 +1,8 @@
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Template } from "tinacms";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
-import { Rating } from "../util/consulting/rating";
-
-const defaultAvatar = "/images/thumbs/avatar-thumbnail.png";
+import { TestimonialCard } from "./testimonialsCard";
 
 /**
  * Render a table of newsletters.
@@ -46,45 +42,13 @@ export const TestimonialsList = ({ data: { hideInternshipTestimonials } }) => {
     });
   };
 
-  const TestimonialCard = (testimonial) => {
-    return (
-      <div
-        className="flex w-full grow flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-8 text-center text-xl drop-shadow md:min-h-96 md:max-w-sm md:grow-0 md:p-10 md:basis_gap-96-6"
-        data-aos="flip-right"
-        key={testimonial?.name}
-      >
-        <div className="flex flex-col items-center">
-          <Image
-            alt={`Picture of ${testimonial?.name} as an avatar`}
-            src={testimonial?.avatar ?? defaultAvatar}
-            height={120}
-            width={120}
-            quality={90}
-            className="rounded-full"
-          />
-        </div>
-        <Rating className="mx-auto mt-8" rating={testimonial?.rating} />
-        <p className="mt-4 min-h-24">
-          {testimonial?.name}
-          {testimonial?.company && (
-            <>
-              {", "}
-              <span className="font-semibold">{testimonial?.company}</span>
-            </>
-          )}
-        </p>
-        <div className="mt-2 text-sm text-gray-900">
-          <TinaMarkdown content={testimonial?.body} />
-        </div>
-      </div>
-    );
-  };
-
   return (
     <>
       {hasLoaded ? (
         <div className="mx-auto my-6 flex w-full flex-row flex-wrap items-stretch justify-center gap-6">
-          {testimonials.map(TestimonialCard)}
+          {testimonials?.map((testimonial, i) => (
+            <TestimonialCard key={i} testimonial={testimonial} />
+          ))}
         </div>
       ) : (
         <>
@@ -99,13 +63,13 @@ export const TestimonialsList = ({ data: { hideInternshipTestimonials } }) => {
 };
 
 export const testimonialsListSchema: Template = {
-  name: "testimonialsList",
+  name: "TestimonialsList",
   label: "Testimonials List",
   fields: [
     {
-      type: "string",
-      label: "Header text",
-      name: "headerText",
+      type: "boolean",
+      label: "Hide Intership Testimonials",
+      name: "hideInternshipTestimonials",
     },
   ],
 };

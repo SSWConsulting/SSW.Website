@@ -1,4 +1,5 @@
 import * as Schemas from "../../components/blocks";
+import { testimonialsListSchema } from "../../components/blocks";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
 import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
 import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
@@ -23,7 +24,6 @@ export const companySchema: Collection = {
     // @ts-ignore
     seoSchema,
     // @ts-ignore
-    testimonialRowSchema,
     {
       type: "string",
       name: "title",
@@ -33,7 +33,7 @@ export const companySchema: Collection = {
       type: "rich-text",
       name: "subTitle",
       label: "Body",
-      templates: [videoEmbedBlockSchema],
+      templates: [videoEmbedBlockSchema, testimonialsListSchema],
     },
     {
       type: "rich-text",
@@ -58,38 +58,6 @@ export const companySchema: Collection = {
       type: "boolean",
       name: "showTestimonials",
       label: "Show Testimonials",
-    },
-    {
-      type: "boolean",
-      name: "showAllTestimonials",
-      label: "Show All Testimonials",
-    },
-    {
-      type: "boolean",
-      name: "HideInternshipTestimonials",
-      label: "Hide Internship Testimonials from All",
-    },
-    {
-      type: "object",
-      label: "Testimonial Categories",
-      name: "testimonialCategories",
-      ui: {
-        itemProps(item) {
-          return {
-            label:
-              item.testimonialCategory ?? "Select your testimonial category",
-          };
-        },
-      },
-      list: true,
-      fields: [
-        {
-          type: "reference",
-          label: "Testimonial Category",
-          name: "testimonialCategory",
-          collections: ["testimonialCategories"],
-        },
-      ],
     },
     {
       type: "object",
