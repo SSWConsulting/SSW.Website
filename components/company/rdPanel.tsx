@@ -29,7 +29,7 @@ export const RDPanel = () => {
         they tend to be very open about our products, both good and bad.
       </p>
       <p>
-        <a href="http://www.msrd.io/">
+        <a href="https://mvp.microsoft.com/en-us/RD">
           More about Microsoft Regional Director program
         </a>
       </p>
