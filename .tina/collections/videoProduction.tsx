@@ -4,7 +4,7 @@ import { seoSchema } from "../../components/util/seo";
 import type { Collection } from "tinacms";
 
 export const videoProductionSchema: Collection = {
-  label: "Consulting - Video Production Pages",
+  label: "Consulting - Video Production - Pages",
   name: "videoProduction",
   format: "mdx",
   path: "content/video-production",

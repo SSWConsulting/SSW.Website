@@ -67,6 +67,13 @@ jobs:
           repo-token-user-login: "github-actions[bot]"
           allow-repeats: true
 
+  test:
+    name: Run Playwright Tests
+    needs: pr-deploy
+    uses: ./.github/workflows/template-ui-tests.yml
+    with:
+      deploy_url: ${{ needs.pr-deploy.outputs.url }}
+
   pagespeedInsights:
     name: Run PageSpeed Insights
     needs: pr-deploy
