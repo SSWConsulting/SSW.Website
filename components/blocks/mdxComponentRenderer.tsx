@@ -167,7 +167,7 @@ export const componentRenderer: Components<{
     content: TinaMarkdownContent;
   };
   MicrosoftPanel: Record<string, never>;
-  TestimonailsList: {
+  TestimonialsList: {
     hideInternshipTestimonials: boolean;
   };
 }> = {
@@ -197,5 +197,5 @@ export const componentRenderer: Components<{
   UtilityButton: (props) => <UtilityButton {...props} />,
   ContentCard: (props) => <ContentCard data={props} />,
   MicrosoftPanel: () => <MicrosoftPanel />,
-  TestimonailsList: (props) => <TestimonialsList data={props} />,
+  TestimonialsList: (props) => <TestimonialsList data={props} />,
 };

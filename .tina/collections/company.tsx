@@ -2,7 +2,6 @@ import * as Schemas from "../../components/blocks";
 import { testimonialsListSchema } from "../../components/blocks";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
 import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
-import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
 import { seoSchema } from "../../components/util/seo";
 
 import type { Collection } from "tinacms";
