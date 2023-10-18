@@ -15,6 +15,7 @@ type UtilityButtonProps = {
   size?: keyof typeof sizes;
   noAnimate?: boolean;
   uncentered?: boolean;
+  removeTopMargin?: boolean;
 };
 
 export const UtilityButton = ({
@@ -25,14 +26,16 @@ export const UtilityButton = ({
   size,
   noAnimate,
   uncentered,
+  removeTopMargin,
 }: UtilityButtonProps) => {
   const baseComponent = (
     <Button
       ripple
       className={classNames(
-        "mt-8 h-auto",
+        "h-auto",
         sizes[size ?? "medium"],
         uncentered ? "" : "mx-auto max-w-full",
+        removeTopMargin ? "" : "mt-8",
         className
       )}
       onClick={onClick}
@@ -93,6 +96,12 @@ export const utilityButtonSchema: Template = {
       type: "boolean",
       label: "Uncentered",
       name: "uncentered",
+      required: false,
+    },
+    {
+      type: "boolean",
+      label: "Remove top margin",
+      name: "removeTopMargin",
       required: false,
     },
   ],
