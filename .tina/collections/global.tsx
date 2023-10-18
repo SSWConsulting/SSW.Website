@@ -1,7 +1,7 @@
 import type { Collection } from "tinacms";
 
 export const globalSchema: Collection = {
-  label: "Global",
+  label: "Global - Sections",
   name: "global",
   path: "content/global",
   format: "json",
@@ -236,31 +236,6 @@ export const globalSchema: Collection = {
                 "The path of the image from the project root (most of the time, '/images/...')",
             },
           ],
-        },
-      ],
-    },
-    {
-      type: "object",
-      label: "Technologies",
-      name: "technologies",
-      list: true,
-      ui: {
-        itemProps: (item) => {
-          return { label: item?.name };
-        },
-      },
-      fields: [
-        {
-          type: "string",
-          label: "Technology Name",
-          name: "name",
-        },
-        {
-          type: "string",
-          label: "Image URL",
-          name: "imageUrl",
-          description:
-            "The path of the image from the project root (most of the time, '/images/...')",
         },
       ],
     },

@@ -1,7 +1,7 @@
 import type { Collection } from "tinacms";
 
 export const technologiesSchema: Collection = {
-  label: "Technology Cards",
+  label: "Consulting - Technology Cards",
   name: "technologies",
   format: "mdx",
   path: "content/technologies",
@@ -35,7 +35,7 @@ export const technologiesSchema: Collection = {
 };
 
 export const technologyBadgesSchema: Collection = {
-  label: "Technology Badges",
+  label: "Consulting - Technology Badges",
   name: "technologyBadges",
   format: "json",
   path: "content/technologyBadges",

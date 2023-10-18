@@ -1,15 +1,17 @@
 import * as Schemas from "../../components/blocks";
-import { seoSchema } from "../../components/util/seo";
-import { communitySectionBlockSchema } from "../../components/usergroup/sections/community";
 import { pageBlocks as sectionPageBlocks } from "../../components/usergroup/sections";
+import { seoSchema } from "../../components/util/seo";
 
 import type { Collection } from "tinacms";
 
 export const userGroupPageSchema: Collection = {
-  label: "User Group Pages",
+  label: "User Groups - Pages",
   name: "userGroupPage",
   format: "mdx",
   path: "content/netug",
+  match: {
+    exclude: "global/**/**",
+  },
   ui: {
     router: ({ document }) => {
       return `/netug/${document._sys.filename}`;
@@ -120,13 +122,6 @@ export const userGroupPageSchema: Collection = {
           fields: Schemas.joinAsPresenterSchema.fields,
         },
         {
-          type: "object",
-          list: true,
-          name: "sections",
-          label: "Sections",
-          templates: sectionPageBlocks,
-        },
-        {
           type: "string",
           label: "About Header",
           name: "aboutHeader",
@@ -150,6 +145,53 @@ export const userGroupPageSchema: Collection = {
           name: "_body",
           label: "Body",
           isBody: true,
+        },
+      ],
+    },
+  ],
+};
+
+export const userGroupGlobalSchema: Collection = {
+  label: "User Groups - Sections",
+  name: "userGroupGlobal",
+  format: "json",
+  path: "content/netug/global",
+  ui: {
+    allowedActions: {
+      create: false,
+      delete: false,
+    },
+  },
+  fields: [
+    {
+      type: "object",
+      list: true,
+      name: "sections",
+      label: "Sections",
+      templates: sectionPageBlocks,
+    },
+    {
+      type: "object",
+      label: "Technologies",
+      name: "technologies",
+      list: true,
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.name };
+        },
+      },
+      fields: [
+        {
+          type: "string",
+          label: "Technology Name",
+          name: "name",
+        },
+        {
+          type: "string",
+          label: "Image URL",
+          name: "imageUrl",
+          description:
+            "The path of the image from the project root (most of the time, '/images/...')",
         },
       ],
     },

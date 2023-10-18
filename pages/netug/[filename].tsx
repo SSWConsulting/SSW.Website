@@ -190,8 +190,8 @@ export default function NETUGPage(
           </Container>
 
           <SectionRenderer
-            prefix="UserGroupPageLocationPageSections"
-            blocks={data.userGroupPage.sections}
+            prefix="UserGroupGlobalSections"
+            blocks={data.userGroupGlobal.sections}
           />
 
           <section className="bg-gray-900 py-8">
@@ -227,8 +227,10 @@ export default function NETUGPage(
             </Container>
           </section>
 
-          <Container data-tina-field={tinaField(data.global, "technologies")}>
-            <TechnologyLogos logos={data.global.technologies} />
+          <Container
+            data-tina-field={tinaField(data.userGroupGlobal, "technologies")}
+          >
+            <TechnologyLogos logos={data.userGroupGlobal.technologies} />
           </Container>
 
           <Section>
@@ -241,7 +243,10 @@ export default function NETUGPage(
     return (
       <Layout>
         <Container className="prose py-4 prose-h1:pt-2" size="custom">
-          <TinaMarkdown content={data.userGroupPage._body} />
+          <TinaMarkdown
+            content={data.userGroupPage._body}
+            data-tina-field={tinaField(data.userGroupPage, "_body")}
+          />
         </Container>
       </Layout>
     );
