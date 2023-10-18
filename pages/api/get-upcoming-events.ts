@@ -33,6 +33,9 @@ export default async function handler(
     const startOfDay = new Date();
     startOfDay.setHours(0, 0, 0, 0);
 
+    res.status(200).json(startOfDay);
+    return;
+
     const odataFilter = `$filter=fields/Enabled ne false \
       and fields/EndDateTime gt '${startOfDay.toISOString()}'\
       &$orderby=fields/StartDateTime asc\
