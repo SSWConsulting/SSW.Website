@@ -14,8 +14,8 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import VideoCards, { VideoCardType } from "../../components/util/videoCards";
-import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
+import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
 
@@ -71,6 +71,16 @@ export default function EventsPage(
                 __html: sanitiseXSS(data?.events?.title, spanWhitelist) || "",
               }}
             />
+          )}
+          {data.events.subTitle && (
+            <Container padding={"md:px-8 px-0 !py-0"}>
+              <p
+                data-tina-field={tinaField(data.events, "subTitle")}
+                className="py-0 text-center"
+              >
+                {data.events.subTitle}
+              </p>
+            </Container>
           )}
 
           <Blocks prefix="Events_body" blocks={data.events._body} />
