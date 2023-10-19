@@ -53,11 +53,6 @@ export const companySchema: Collection = {
       required: false,
     },
     {
-      type: "boolean",
-      name: "showTestimonials",
-      label: "Show Testimonials",
-    },
-    {
       type: "object",
       list: true,
       name: "_body",
