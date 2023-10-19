@@ -184,14 +184,14 @@ export default function NETUGPage(
               </div>
 
               <div className="col-span-1">
-                <JoinAsPresenter data={data.userGroupPage.joinUs} />
+                <JoinAsPresenter data={data.userGroupGlobal.joinUs} />
               </div>
             </section>
           </Container>
 
           <SectionRenderer
             prefix="UserGroupGlobalSections"
-            blocks={data.userGroupGlobal.sections}
+            blocks={data.userGroupPage.sections}
           />
 
           <section className="bg-gray-900 py-8">
