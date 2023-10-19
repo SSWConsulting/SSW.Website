@@ -188,7 +188,7 @@ const OpportunityDropdown = ({
                   buttonText="Apply Now"
                   link={`mailto:pennywalker@ssw.com.au?subject=SSW Employment Application for ${sanitiseMailto(
                     opportunity.title
-                  )}&cc=luciasirtori@ssw.com.au`}
+                  )}`}
                 />
               )}
             </Disclosure.Panel>
