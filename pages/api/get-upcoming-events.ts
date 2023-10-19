@@ -38,8 +38,8 @@ export default async function handler(
     }
 
     const startOfDay = dayjs()
-      .startOf("day")
       .tz("Australia/Sydney")
+      .startOf("day")
       .toISOString();
 
     res.status(200).json(startOfDay);
