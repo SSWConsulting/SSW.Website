@@ -10,7 +10,7 @@
           "page": "content/consulting/web-applications.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -20,9 +20,6 @@
           "logo": "/images/thumbs/thumb-mobiles-apps-icon.jpg",
           "page": "content/consulting/mobile-application-development.mdx",
           "tags": [
-            {
-              "tag": "content/consulting/tag/application-development.json"
-            },
             {
               "tag": "content/consulting/tag/mobile-development.json"
             }
@@ -35,10 +32,7 @@
           "page": "content/consulting/angular.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -49,10 +43,7 @@
           "page": "content/consulting/react.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -63,10 +54,7 @@
           "page": "content/consulting/blazor.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/application-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -77,10 +65,7 @@
           "page": "content/consulting/nextjs.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -91,10 +76,7 @@
           "page": "content/consulting/vue.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -108,10 +90,7 @@
               "tag": "content/consulting/tag/mobile-development.json"
             },
             {
-              "tag": "content/consulting/tag/website-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/application-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -123,7 +102,7 @@
           "externalUrl": "https://www.ssw.com.au/consulting/jamstack",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -137,10 +116,7 @@
               "tag": "content/consulting/tag/database-development.json"
             },
             {
-              "tag": "content/consulting/tag/website-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/application-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -162,10 +138,10 @@
           "page": "content/consulting/power-bi.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
+              "tag": "content/consulting/tag/database-development.json"
             },
             {
-              "tag": "content/consulting/tag/database-development.json"
+              "tag": "content/consulting/tag/platform-development.json"
             }
           ]
         },
@@ -225,10 +201,7 @@
           "page": "content/consulting/azure.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -239,10 +212,7 @@
           "page": "content/consulting/bots.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         }
@@ -286,7 +256,7 @@
               "tag": "content/consulting/tag/platform-development.json"
             },
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -574,16 +544,13 @@
           "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Product-Design.aspx",
           "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
               "tag": "content/consulting/tag/mobile-development.json"
             },
             {
               "tag": "content/consulting/tag/design.json"
             },
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -595,16 +562,13 @@
           "externalUrl": "",
           "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
               "tag": "content/consulting/tag/mobile-development.json"
             },
             {
               "tag": "content/consulting/tag/design.json"
             },
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -666,7 +630,7 @@
           "externalUrl": "",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -681,7 +645,7 @@
           "externalUrl": "",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -696,7 +660,7 @@
           "externalUrl": "",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -711,7 +675,7 @@
           "externalUrl": "",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -726,7 +690,7 @@
           "externalUrl": "",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -741,7 +705,7 @@
           "externalUrl": "",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -756,7 +720,7 @@
           "externalUrl": "",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -908,11 +872,7 @@
     },
     {
       "label": "Website Development",
-      "tag": "content/consulting/tag/website-development.json"
-    },
-    {
-      "label": "Application Development",
-      "tag": "content/consulting/tag/application-development.json"
+      "tag": "content/consulting/tag/web-development.json"
     },
     {
       "label": "Mobile Development",
