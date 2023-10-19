@@ -6,6 +6,7 @@ RUN corepack enable
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
+COPY .yarn ./
 COPY package.json yarn.lock* ./
 RUN yarn install
 
