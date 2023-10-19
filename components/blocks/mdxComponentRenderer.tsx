@@ -23,6 +23,7 @@ import { GoogleMapsWrapper } from "./googleMapsWrapper";
 import { NewslettersTable } from "./newslettersTable";
 import { RecurringEvent } from "./recurringEvent";
 import { TableLayout, TableLayoutProps } from "./tableLayout";
+import { TestimonialsList } from "./testimonialsList";
 import { UpcomingEvents } from "./upcomingEvents";
 import { VerticalImageLayout } from "./verticalImageLayout";
 import { VerticalListItem } from "./verticalListItem";
@@ -166,6 +167,9 @@ export const componentRenderer: Components<{
     content: TinaMarkdownContent;
   };
   MicrosoftPanel: Record<string, never>;
+  TestimonialsList: {
+    hideInternshipTestimonials: boolean;
+  };
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -193,4 +197,5 @@ export const componentRenderer: Components<{
   UtilityButton: (props) => <UtilityButton {...props} />,
   ContentCard: (props) => <ContentCard data={props} />,
   MicrosoftPanel: () => <MicrosoftPanel />,
+  TestimonialsList: (props) => <TestimonialsList data={props} />,
 };

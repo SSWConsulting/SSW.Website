@@ -1,4 +1,5 @@
 import * as Schemas from "../../components/blocks";
+import { testimonialsListSchema } from "../../components/blocks";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
 import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
 import { seoSchema } from "../../components/util/seo";
@@ -30,7 +31,7 @@ export const companySchema: Collection = {
       type: "rich-text",
       name: "subTitle",
       label: "Body",
-      templates: [videoEmbedBlockSchema],
+      templates: [videoEmbedBlockSchema, testimonialsListSchema],
     },
     {
       type: "rich-text",
