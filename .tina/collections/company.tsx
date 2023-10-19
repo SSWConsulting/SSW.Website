@@ -22,7 +22,6 @@ export const companySchema: Collection = {
   fields: [
     // @ts-ignore
     seoSchema,
-    // @ts-ignore
     {
       type: "string",
       name: "title",
