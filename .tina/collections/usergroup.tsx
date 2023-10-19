@@ -117,9 +117,10 @@ export const userGroupPageSchema: Collection = {
         },
         {
           type: "object",
-          label: "Join Us Panel",
-          name: "joinUs",
-          fields: Schemas.joinAsPresenterSchema.fields,
+          list: true,
+          name: "sections",
+          label: "Sections",
+          templates: sectionPageBlocks,
         },
         {
           type: "string",
@@ -165,10 +166,9 @@ export const userGroupGlobalSchema: Collection = {
   fields: [
     {
       type: "object",
-      list: true,
-      name: "sections",
-      label: "Sections",
-      templates: sectionPageBlocks,
+      label: "Join Us Panel",
+      name: "joinUs",
+      fields: Schemas.joinAsPresenterSchema.fields,
     },
     {
       type: "object",
