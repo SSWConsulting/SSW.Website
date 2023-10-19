@@ -1,9 +1,14 @@
+_docs
+.dockerignore
+.devcontainer
 .git
+.github
+.next
 .vscode
 .vs
-
-.dockerignore
 Dockerfile
 node_modules
 npm-debug.log
 README.md
+test-results
+ui-tests
