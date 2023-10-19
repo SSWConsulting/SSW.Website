@@ -114,35 +114,6 @@ jobs:
           echo "AppInsightConnectionString=$AppInsightConnectionString" >> $env:GITHUB_OUTPUT
           Write-Host '✅ AppInsight - Connection String retrieved'
 
-      - run: yarn install
-
-      - run: yarn build
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-          NEXT_PUBLIC_GOOGLE_GTM_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID }}
-          NEXT_PUBLIC_GOOGLE_ANALYTICS: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS }}
-          NEXT_PUBLIC_GITHUB_RUN_DATE: ${{ steps.date.outputs.date }}
-          NEXT_PUBLIC_GITHUB_RUN_ID: ${{ github.run_id }}
-          NEXT_PUBLIC_GITHUB_RUN_NUMBER: ${{ github.run_number }}
-          NEXT_PUBLIC_GITHUB_REPOSITORY: ${{ github.repository }}
-          NEXT_PUBLIC_HOTJAR_ID: ${{ secrets.NEXT_PUBLIC_HOTJAR_ID }}
-          NEXT_PUBLIC_HOTJAR_SV: ${{ secrets.NEXT_PUBLIC_HOTJAR_SV }}
-          NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
-          NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref || github.ref_name }}
-          NEXT_PUBLIC_ZENDESK_CHAT_KEY: ${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY }}
-          GOOGLE_RECAPTCHA_SITE_KEY: ${{ env.GoogleRecaptchaSiteKey }}
-          MICROSOFT_OAUTH_TENANT_ID: ${{ env.MICROSOFT_OAUTH_TENANT_ID }}
-          MICROSOFT_OAUTH_CLIENT_ID: ${{ env.MICROSOFT_OAUTH_CLIENT_ID }}
-          MICROSOFT_OAUTH_CLIENT_SECRET: ${{ env.MICROSOFT_OAUTH_CLIENT_SECRET }}
-          SHAREPOINT_SITE_ID: ${{ env.SHAREPOINT_SITE_ID }}
-          SHAREPOINT_EVENTS_LIST_ID: ${{ env.SHAREPOINT_EVENTS_LIST_ID }}
-          SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID: ${{ env.SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID }}
-          KEY_VAULT: ${{ env.KEY_VAULT }}
-          NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING: ${{ steps.AppInsight.outputs.AppInsightConnectionString }}
-          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-          NEXT_PUBLIC_CHATBASE_BOT_ID: ${{ env.NEXT_PUBLIC_CHATBASE_BOT_ID }}
-          SITE_URL: https://www.ssw.com.au
-
       - name: ACR - Login
         run: |
           az acr login --name ${{ env.ACR_LOGIN_SERVER }}
@@ -152,6 +123,31 @@ jobs:
         with:
           context: .
           push: true
+          build-args: |
+            NODE_OPTIONS=--max_old_space_size=8192
+            NEXT_PUBLIC_GOOGLE_GTM_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID }}
+            NEXT_PUBLIC_GOOGLE_ANALYTICS=${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS }}
+            NEXT_PUBLIC_GITHUB_RUN_DATE=${{ steps.date.outputs.date }}
+            NEXT_PUBLIC_GITHUB_RUN_ID=${{ github.run_id }}
+            NEXT_PUBLIC_GITHUB_RUN_NUMBER=${{ github.run_number }}
+            NEXT_PUBLIC_GITHUB_REPOSITORY=${{ github.repository }}
+            NEXT_PUBLIC_HOTJAR_ID=${{ secrets.NEXT_PUBLIC_HOTJAR_ID }}
+            NEXT_PUBLIC_HOTJAR_SV=${{ secrets.NEXT_PUBLIC_HOTJAR_SV }}
+            NEXT_PUBLIC_TINA_CLIENT_ID=${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
+            NEXT_PUBLIC_TINA_BRANCH=${{ github.head_ref || github.ref_name }}
+            NEXT_PUBLIC_ZENDESK_CHAT_KEY=${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY }}
+            GOOGLE_RECAPTCHA_SITE_KEY=${{ env.GoogleRecaptchaSiteKey }}
+            MICROSOFT_OAUTH_TENANT_ID=${{ env.MICROSOFT_OAUTH_TENANT_ID }}
+            MICROSOFT_OAUTH_CLIENT_ID=${{ env.MICROSOFT_OAUTH_CLIENT_ID }}
+            MICROSOFT_OAUTH_CLIENT_SECRET=${{ env.MICROSOFT_OAUTH_CLIENT_SECRET }}
+            SHAREPOINT_SITE_ID=${{ env.SHAREPOINT_SITE_ID }}
+            SHAREPOINT_EVENTS_LIST_ID=${{ env.SHAREPOINT_EVENTS_LIST_ID }}
+            SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID=${{ env.SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID }}
+            KEY_VAULT=${{ env.KEY_VAULT }}
+            NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING=${{ steps.AppInsight.outputs.AppInsightConnectionString }}
+            TINA_TOKEN=${{ secrets.TINA_TOKEN }}
+            NEXT_PUBLIC_CHATBASE_BOT_ID=${{ env.NEXT_PUBLIC_CHATBASE_BOT_ID }}
+            SITE_URL=https://www.ssw.com.au
           tags: |
             ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
             ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
