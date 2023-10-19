@@ -2,8 +2,12 @@ import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 
+import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
 import { cache } from "../../services/server/cacheService";
 import { getEvents } from "../../services/server/events";
+
+dayjs.extend(timezone);
 
 const CACHE_MINS = 60;
 const CACHE_SECS = CACHE_MINS * 60;
@@ -30,14 +34,16 @@ export default async function handler(
       return;
     }
 
-    const startOfDay = new Date();
-    startOfDay.setHours(0, 0, 0, 0);
+    const startOfDay = dayjs()
+      .startOf("day")
+      .tz("Australia/Sydney")
+      .toISOString();
 
     res.status(200).json(startOfDay);
     return;
 
     const odataFilter = `$filter=fields/Enabled ne false \
-      and fields/EndDateTime gt '${startOfDay.toISOString()}'\
+      and fields/EndDateTime gt '${startOfDay}'\
       &$orderby=fields/StartDateTime asc\
       &$top=${topCount}`;
 
