@@ -4,11 +4,6 @@ import type { Template } from "tinacms";
 import client from "../../.tina/__generated__/client";
 import { TestimonialCard } from "./testimonialsCard";
 
-/**
- * Render a table of newsletters.
- * @param data The data for the table.
- * @returns The table component.
- */
 export const TestimonialsList = ({ data: { hideInternshipTestimonials } }) => {
   const [testimonials, setTestimonials] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
