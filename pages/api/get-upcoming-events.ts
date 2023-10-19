@@ -4,9 +4,12 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
+
 import { cache } from "../../services/server/cacheService";
 import { getEvents } from "../../services/server/events";
 
+dayjs.extend(utc);
 dayjs.extend(timezone);
 
 const CACHE_MINS = 60;
