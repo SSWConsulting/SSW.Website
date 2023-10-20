@@ -267,7 +267,7 @@ export const getStaticProps = async ({ params }) => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore - this is a bug in the typing
   const priorityCategory =
-    tinaProps.data?.userGroupPage.testimonialCategories?.name;
+    tinaProps.data?.userGroupPage?.testimonialCategories?.name;
 
   const categories = ["User Group"];
 
