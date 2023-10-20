@@ -164,6 +164,71 @@ export const userGroupGlobalSchema: Collection = {
   },
   fields: [
     {
+      type: "string",
+      label: "Latest Tech Title",
+      name: "latestTechTitle",
+    },
+    {
+      type: "object",
+      label: "Latest Technology Badges",
+      name: "latestTechBadges",
+      fields: [
+        {
+          type: "boolean",
+          label: "Randomize",
+          name: "random",
+        },
+        {
+          type: "object",
+          label: "Badges",
+          name: "badgesList",
+          list: true,
+          ui: {
+            itemProps: (item) => {
+              return { label: item?.name };
+            },
+          },
+          fields: [
+            {
+              type: "string",
+              label: "Name",
+              name: "name",
+              isTitle: true,
+              required: true,
+            },
+            {
+              type: "string",
+              label: "URL",
+              name: "url",
+            },
+            {
+              type: "image",
+              label: "Badge image",
+              name: "imgURL",
+              required: true,
+              // @ts-ignore
+              uploadDir: () => "/badges",
+            },
+            {
+              type: "number",
+              label: "Badge image rotation",
+              name: "rotate",
+            },
+            {
+              type: "number",
+              label: "Animation duration",
+              name: "duration",
+            },
+            {
+              type: "boolean",
+              label: "Bounce down",
+              name: "bounceDown",
+            },
+          ],
+        },
+      ],
+    },
+    {
       type: "object",
       list: true,
       name: "sections",

@@ -1,4 +1,7 @@
 import { InferGetStaticPropsType } from "next";
+import { tinaField, useTina } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import client from "../../.tina/__generated__/client";
 import {
   BuiltOnAzure,
   GoogleMapsWrapper,
@@ -8,22 +11,19 @@ import {
   Organizer,
 } from "../../components/blocks";
 import { Layout } from "../../components/layout";
-import { UserGroupHeader } from "../../components/usergroup/sections/header";
-import { Container } from "../../components/util/container";
-import client from "../../.tina/__generated__/client";
-import { useTina, tinaField } from "tinacms/dist/react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
-import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
+import { UserGroupHeader } from "../../components/usergroup/sections/header";
+import { SectionRenderer } from "../../components/usergroup/sections/renderer";
+import { TechnologyLogos } from "../../components/usergroup/technologyLogos";
+import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
+import { SEO } from "../../components/util/seo";
+import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
+import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import {
   getEvents,
   getSpeakersInfoFromEvent,
 } from "../../services/server/events";
-import { SectionRenderer } from "../../components/usergroup/sections/renderer";
-import { TechnologyLogos } from "../../components/usergroup/technologyLogos";
-import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
-import { SEO } from "../../components/util/seo";
 
 const ISR_TIME = 60 * 60; // 1 hour;
 
@@ -180,6 +180,15 @@ export default function NETUGPage(
                 className="col-span-2"
                 data-tina-field={tinaField(data.userGroupPage, "latestTech")}
               >
+                <h2
+                  className="text-4xl font-medium text-sswRed"
+                  data-tina-field={tinaField(
+                    data.userGroupGlobal,
+                    "latestTechTitle"
+                  )}
+                >
+                  {data.userGroupGlobal.latestTechTitle}
+                </h2>
                 <LatestTech data={data.userGroupPage.latestTech} />
               </div>
 

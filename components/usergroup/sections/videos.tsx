@@ -1,9 +1,9 @@
-import type { Template } from "tinacms";
 import Image from "next/image";
-import { VideoCard } from "../../util/videoCards";
-import { Container } from "../../util/container";
-import { UtilityButton } from "../../blocks";
+import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
+import { UtilityButton } from "../../blocks";
+import { Container } from "../../util/container";
+import { VideoCard } from "../../util/videoCards";
 
 type VideosSectionProps = {
   videos?: {
@@ -37,7 +37,11 @@ export const VideosSection = (props: VideosSectionProps) => {
             <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">
               {props.videos?.map((video, index) => (
                 <div data-tina-field={tinaField(props.videos[index], "title")}>
-                  <VideoCard {...video} key={index} theme="light" />
+                  <VideoCard
+                    {...video}
+                    key={video.title + index}
+                    theme="light"
+                  />
                 </div>
               ))}
             </div>
