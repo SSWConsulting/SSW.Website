@@ -27,7 +27,7 @@
         },
         {
           "title": "Angular / SPA",
-          "description": "Build sexy  apps with this a TypeScript-based  application platform, open-sourced and led by Google!",
+          "description": "Build sexy web apps with this a TypeScript-based web application platform, open-sourced and led by Google!",
           "logo": "/images/thumbs/thumb-angularjs.jpg",
           "page": "content/consulting/angular.mdx",
           "tags": [
