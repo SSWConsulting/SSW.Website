@@ -1,15 +1,17 @@
-import type { Template } from "tinacms";
 import Image from "next/image";
-import { VideoCard } from "../../util/videoCards";
-import { Container } from "../../util/container";
-import { UtilityButton } from "../../blocks";
+import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
+import { UtilityButton } from "../../blocks";
+import { Container } from "../../util/container";
+import { VideoCard } from "../../util/videoCards";
+
+type VideoType = {
+  link?: string;
+  title?: string;
+};
 
 type VideosSectionProps = {
-  videos?: {
-    link?: string;
-    title?: string;
-  }[];
+  videos?: VideoType[];
   button?: {
     link?: string;
     text?: string;
@@ -17,6 +19,10 @@ type VideosSectionProps = {
 };
 
 export const VideosSection = (props: VideosSectionProps) => {
+  // const [videos, setVideos] = useState<VideoType[]>([]);
+
+  // useEffect(() => {}, []);
+
   return (
     <section>
       <Container>
@@ -64,9 +70,9 @@ export const videosSectionBlockSchema: Template = {
   fields: [
     {
       type: "object",
-      list: true,
       label: "Videos",
       name: "videos",
+      list: true,
       fields: [
         {
           type: "string",
