@@ -112,7 +112,7 @@ const TicketField = (props: TicketFieldProps) => {
         name={props.name}
         type={props.type || "text"}
         placeholder={props.placeholder}
-        className="bg-gray-50 my-3 rounded-md p-3"
+        className="my-3 rounded-md bg-gray-50 p-3"
       />
     </>
   );
