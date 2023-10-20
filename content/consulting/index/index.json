@@ -27,12 +27,12 @@
         },
         {
           "title": "Angular / SPA",
-          "description": "Build sexy web apps with this a TypeScript-based web application platform, open-sourced and led by Google!",
+          "description": "Build sexy  apps with this a TypeScript-based  application platform, open-sourced and led by Google!",
           "logo": "/images/thumbs/thumb-angularjs.jpg",
           "page": "content/consulting/angular.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/web-development.json"
+              "tag": "content/consulting/tag/-development.json"
             }
           ]
         },
@@ -43,7 +43,7 @@
           "page": "content/consulting/react.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/web-development.json"
+              "tag": "content/consulting/tag/-development.json"
             }
           ]
         },
@@ -54,7 +54,7 @@
           "page": "content/consulting/blazor.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/web-development.json"
+              "tag": "content/consulting/tag/-development.json"
             }
           ]
         },
@@ -65,18 +65,18 @@
           "page": "content/consulting/nextjs.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/web-development.json"
+              "tag": "content/consulting/tag/-development.json"
             }
           ]
         },
         {
           "title": "Vue.js",
-          "description": "Vue.js is a progressive JavaScript framework to build web interfaces and applications.",
+          "description": "Vue.js is a progressive JavaScript framework to build  interfaces and applications.",
           "logo": "/images/thumbs/thumb-vuejs.jpg",
           "page": "content/consulting/vue.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/web-development.json"
+              "tag": "content/consulting/tag/-development.json"
             }
           ]
         },
@@ -90,13 +90,13 @@
               "tag": "content/consulting/tag/mobile-development.json"
             },
             {
-              "tag": "content/consulting/tag/web-development.json"
+              "tag": "content/consulting/tag/-development.json"
             }
           ]
         },
         {
           "title": "Jamstack (Static Sites with Gatsby/Next.js)",
-          "description": "Jamstack is a modern web development architecture based on client-side JavaScript, reusable APIs and prebuilt Markup. It's used on SSW Rules and SSW People.",
+          "description": "Jamstack is a modern  development architecture based on client-side JavaScript, reusable APIs and prebuilt Markup. It's used on SSW Rules and SSW People.",
           "logo": "/images/thumbs/thumb-jamstack-pink.png",
           "page": "content/consulting/jamstack.mdx",
           "externalUrl": "https://www.ssw.com.au/consulting/jamstack",
@@ -153,6 +153,23 @@
           "tags": [
             {
               "tag": "content/consulting/tag/database-development.json"
+            }
+          ]
+        },
+        {
+          "title": ".NET 8",
+          "description": ".NET 8 is the latest LTS (Long Term Support) version of the platform. It provides enterprise functionality and cloud-native development all within a stable ecosystem backed by Microsoft.",
+          "logo": "/images/thumbs/net-8.jpg",
+          "page": "content/consulting/net-8.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/web-development.json"
+            }
+            {
+              "tag": "content/consulting/tag/mobile-development.json"
+            }
+            {
+              "tag": "content/consulting/tag/ai-development.json"
             }
           ]
         }
