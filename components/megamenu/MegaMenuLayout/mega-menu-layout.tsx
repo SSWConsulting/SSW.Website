@@ -23,7 +23,7 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
       {/* eslint-disable-next-line tailwindcss/no-arbitrary-value */}
       <div className="relative z-10 flex h-16 w-full items-center justify-center lg:h-[120px]">
         <nav
-          className="flex h-full w-full items-center justify-between gap-x-8 overflow-hidden px-0"
+          className="flex h-full w-full items-center justify-between gap-x-4 overflow-hidden px-0"
           aria-label="Global"
         >
           <div className="flex items-center">
@@ -32,10 +32,10 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
               passHref
               className="unstyled flex items-center gap-1 whitespace-nowrap"
             >
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center min-w-[4rem] max-w-[14rem]">
                 <Logo />
-                <div className="ml-4 hidden w-24 whitespace-break-spaces text-sm font-semibold uppercase leading-4 text-gray-700 md:block">
-                  {tagline}
+                <div className="w-fit whitespace-break-spaces text-sm font-semibold uppercase leading-4 text-gray-700">
+                  <span className="hidden xl:block ml-4">{tagline}</span>
                 </div>
               </div>
             </Link>
