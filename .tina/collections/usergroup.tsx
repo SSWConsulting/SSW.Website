@@ -166,6 +166,46 @@ export const userGroupGlobalSchema: Collection = {
   fields: [
     {
       type: "object",
+      label: "Videos",
+      name: "videos",
+      list: true,
+      fields: [
+        {
+          type: "string",
+          label: "Link",
+          name: "link",
+        },
+        {
+          type: "string",
+          label: "Title",
+          name: "title",
+        },
+      ],
+      ui: {
+        itemProps: (item) => ({
+          label: item?.title,
+        }),
+      },
+    },
+    {
+      type: "object",
+      label: "Featured Videos Button options",
+      name: "videosButton",
+      fields: [
+        {
+          type: "string",
+          label: "Link",
+          name: "link",
+        },
+        {
+          type: "string",
+          label: "Text",
+          name: "text",
+        },
+      ],
+    },
+    {
+      type: "object",
       label: "Join Us Panel",
       name: "joinUs",
       fields: Schemas.joinAsPresenterSchema.fields,

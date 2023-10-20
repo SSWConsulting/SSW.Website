@@ -190,7 +190,7 @@ export default function NETUGPage(
           </Container>
 
           <SectionRenderer
-            prefix="UserGroupGlobalSections"
+            prefix="UserGroupPageLocationPageSections"
             blocks={data.userGroupPage.sections}
           />
 

@@ -11,19 +11,18 @@ type VideoType = {
 };
 
 type VideosSectionProps = {
-  videos?: VideoType[];
-  button?: {
-    link?: string;
-    text?: string;
+  globalUserGroupInfo?: {
+    videos?: VideoType[];
+    videosButton?: {
+      link?: string;
+      text?: string;
+    };
   };
 };
 
 export const VideosSection = (props: VideosSectionProps) => {
-  // const [videos, setVideos] = useState<VideoType[]>([]);
+  const button = props.globalUserGroupInfo?.videosButton;
 
-  // useEffect(() => {}, []);
-
-  console.log(props);
   return (
     <section>
       <Container>
@@ -42,17 +41,27 @@ export const VideosSection = (props: VideosSectionProps) => {
               />
             </div>
             <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">
-              {props.videos?.map((video, index) => (
-                <div data-tina-field={tinaField(props.videos[index], "title")}>
+              {props.globalUserGroupInfo?.videos?.map((video, index) => (
+                <div
+                  data-tina-field={tinaField(
+                    props.globalUserGroupInfo?.videos[index],
+                    "title"
+                  )}
+                >
                   <VideoCard {...video} key={index} theme="light" />
                 </div>
               ))}
             </div>
-            {props.button && props.button.text && props.button.link && (
-              <div data-tina-field={tinaField(props.button, "text")}>
+            {button && button.text && button.link && (
+              <div
+                data-tina-field={tinaField(
+                  props.globalUserGroupInfo.videosButton,
+                  "text"
+                )}
+              >
                 <UtilityButton
-                  link={props.button.link}
-                  buttonText={props.button.text}
+                  link={button.link}
+                  buttonText={button.text}
                   className="mx-auto text-md font-semibold"
                   noAnimate
                 />
@@ -70,50 +79,11 @@ export const videosSectionBlockSchema: Template = {
   label: "Videos Section",
   fields: [
     {
-      type: "object",
-      label: "Videos",
-      name: "videos",
-      list: true,
-      fields: [
-        {
-          type: "string",
-          label: "Link",
-          name: "link",
-        },
-        {
-          type: "string",
-          label: "Title",
-          name: "title",
-        },
-      ],
-      ui: {
-        itemProps: (item) => ({
-          label: item?.title,
-        }),
-      },
-    },
-    {
       type: "reference",
       label: "Global User Group Info",
       name: "globalUserGroupInfo",
-      collection: "userGroupGlobal",
-    },
-    {
-      type: "object",
-      label: "Button options",
-      name: "button",
-      fields: [
-        {
-          type: "string",
-          label: "Link",
-          name: "link",
-        },
-        {
-          type: "string",
-          label: "Text",
-          name: "text",
-        },
-      ],
+      collections: ["userGroupGlobal"],
+      required: true,
     },
   ],
 };
