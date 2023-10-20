@@ -50,7 +50,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                 onClick={() => setSelectedMenuItem(null)}
               >
                 <MegaIcon
-                  className="h-5 w-5 mb-1 inline"
+                  className="mb-1 inline h-5 w-5"
                   icon={AvailableIcons.chevronLeft}
                 />
                 <span className="ml-2">{selectedMenuItem.name}</span>

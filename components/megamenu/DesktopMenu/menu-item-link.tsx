@@ -7,7 +7,6 @@ export const MenuItemLink: React.FC<{
   return (
     <Link
       href={item.href}
-      // eslint-disable-next-line tailwindcss/no-arbitrary-value
       className="unstyled flex items-center justify-center rounded-md px-3 py-1"
     >
       {item.name}
