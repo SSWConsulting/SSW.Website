@@ -23,6 +23,7 @@ export const VideosSection = (props: VideosSectionProps) => {
 
   // useEffect(() => {}, []);
 
+  console.log(props);
   return (
     <section>
       <Container>
