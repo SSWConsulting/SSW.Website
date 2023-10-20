@@ -8,7 +8,18 @@
   ],
   "editor.formatOnSave": true,
   // Runs Prettier, then ESLint
-  "editor.codeActionsOnSave": ["source.fixAll.eslint", "source.sortImports"],
+  "editor.codeActionsOnSave": [
+    "source.fixAll.eslint",
+    "source.sortImports"
+  ],
   "editor.formatOnPaste": false,
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  "eslint.nodePath": ".yarn/sdks",
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
