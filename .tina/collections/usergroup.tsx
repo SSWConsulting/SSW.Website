@@ -133,6 +133,12 @@ export const userGroupPageSchema: Collection = {
           name: "aboutContent",
           isBody: true,
         },
+        {
+          type: "reference",
+          label: "Priority testimonial categories",
+          name: "testimonialCategories",
+          collections: ["testimonialCategories"],
+        },
       ],
     },
     {
