@@ -44,14 +44,17 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
             <MegaIcon icon={AvailableIcons.xMark} className="h-6 w-6" />
           </button>
           {selectedMenuItem && (
-            <div className="my-auto flex grow items-center pl-2 text-sm font-semibold leading-4 text-ssw-black">
-              <button onClick={() => setSelectedMenuItem(null)}>
+            <div className="my-auto flex grow items-center pl-2">
+              <button
+                className="text-sm font-semibold leading-4 text-ssw-black"
+                onClick={() => setSelectedMenuItem(null)}
+              >
                 <MegaIcon
-                  className="h-5 w-5 flex-none"
+                  className="h-5 w-5 mb-1 inline"
                   icon={AvailableIcons.chevronLeft}
                 />
+                <span className="ml-2">{selectedMenuItem.name}</span>
               </button>
-              <span className="ml-2">{selectedMenuItem.name}</span>
             </div>
           )}
         </div>
