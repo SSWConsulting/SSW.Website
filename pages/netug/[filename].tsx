@@ -264,18 +264,19 @@ export const getStaticProps = async ({ params }) => {
     };
   }
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore - this is a bug in the typing
-  const priorityCategory =
-    tinaProps.data?.userGroupPage?.testimonialCategories?.name;
+  let testimonialsResult;
+  if (tinaProps.data.userGroupPage.__typename === "UserGroupPageContentPage") {
+    const priorityCategory =
+      tinaProps.data?.userGroupPage?.testimonialCategories?.name;
 
-  const categories = ["User Group"];
+    const categories = ["User Group"];
 
-  if (priorityCategory) {
-    categories.push(priorityCategory);
+    if (priorityCategory) {
+      categories.push(priorityCategory);
+    }
+
+    testimonialsResult = await getTestimonialsByCategories(categories);
   }
-
-  const testimonialsResult = await getTestimonialsByCategories(categories);
 
   const event = await getEvents(
     `$filter=fields/Enabled ne false and fields/EndDateTime gt '${new Date().toISOString()}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc`
