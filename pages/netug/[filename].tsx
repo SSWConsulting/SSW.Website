@@ -1,4 +1,7 @@
 import { InferGetStaticPropsType } from "next";
+import { tinaField, useTina } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import client from "../../.tina/__generated__/client";
 import {
   BuiltOnAzure,
   GoogleMapsWrapper,
@@ -8,22 +11,19 @@ import {
   Organizer,
 } from "../../components/blocks";
 import { Layout } from "../../components/layout";
-import { UserGroupHeader } from "../../components/usergroup/sections/header";
-import { Container } from "../../components/util/container";
-import client from "../../.tina/__generated__/client";
-import { useTina, tinaField } from "tinacms/dist/react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
-import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
+import { UserGroupHeader } from "../../components/usergroup/sections/header";
+import { SectionRenderer } from "../../components/usergroup/sections/renderer";
+import { TechnologyLogos } from "../../components/usergroup/technologyLogos";
+import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
+import { SEO } from "../../components/util/seo";
+import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
+import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import {
   getEvents,
   getSpeakersInfoFromEvent,
 } from "../../services/server/events";
-import { SectionRenderer } from "../../components/usergroup/sections/renderer";
-import { TechnologyLogos } from "../../components/usergroup/technologyLogos";
-import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
-import { SEO } from "../../components/util/seo";
 
 const ISR_TIME = 60 * 60; // 1 hour;
 
@@ -288,6 +288,16 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
+  // When this is true (in preview environments) don't
+  // prerender any static pages
+  // (faster builds, but slower initial page load)
+  if (process.env.SKIP_BUILD_STATIC_GENERATION) {
+    return {
+      paths: [],
+      fallback: "blocking",
+    };
+  }
+
   const userGroupPages = await client.queries.userGroupPageConnection();
 
   const paths = userGroupPages.data.userGroupPageConnection.edges.map(

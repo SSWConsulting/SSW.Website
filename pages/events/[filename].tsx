@@ -14,8 +14,8 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import VideoCards, { VideoCardType } from "../../components/util/videoCards";
-import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
+import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
 
@@ -162,6 +162,16 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
+  // When this is true (in preview environments) don't
+  // prerender any static pages
+  // (faster builds, but slower initial page load)
+  if (process.env.SKIP_BUILD_STATIC_GENERATION) {
+    return {
+      paths: [],
+      fallback: "blocking",
+    };
+  }
+
   const pagesListData = await client.queries.eventsConnection();
   return {
     paths: pagesListData.data.eventsConnection.edges.map((page) => ({
