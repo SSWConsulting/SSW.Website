@@ -265,7 +265,7 @@ export const getStaticProps = async ({ params }) => {
   }
 
   let testimonialsResult;
-  if (tinaProps.data.userGroupPage.__typename === "UserGroupPageContentPage") {
+  if (tinaProps.data.userGroupPage.__typename === "UserGroupPageLocationPage") {
     const priorityCategory =
       tinaProps.data?.userGroupPage?.testimonialCategories?.name;
 
