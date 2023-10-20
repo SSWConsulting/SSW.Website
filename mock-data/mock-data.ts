@@ -9,18 +9,11 @@ export const menuBarItems: NavMenuItem[] = [
           heading: "Development Teams",
           items: [
             {
-              name: "Website Development",
+              name: "Web Development",
               description:
                 "Professional web development service that creates stylish, functional, user-friendly websites",
               icon: "websiteDevelopment",
-              href: "/consulting?tag=Website-Development",
-            },
-            {
-              name: "Application Development",
-              description:
-                "Crafting innovative, reliable, and user-centric mobile applications",
-              icon: "applicationDevelopment",
-              href: "/consulting?tag=Application-Development",
+              href: "/consulting?tag=Web-Development",
             },
             {
               name: "Mobile Development",
@@ -29,7 +22,7 @@ export const menuBarItems: NavMenuItem[] = [
               href: "/consulting?tag=Mobile-Development",
             },
             {
-              name: "Al Development",
+              name: "AI Development",
               description:
                 "Creating intelligent, data-driven solutions for businesses",
               icon: "alDevelopment",
