@@ -264,7 +264,7 @@ export const getStaticProps = async ({ params }) => {
     };
   }
 
-  let testimonialsResult;
+  let testimonialsResult = null;
   if (tinaProps.data.userGroupPage.__typename === "UserGroupPageLocationPage") {
     const priorityCategory =
       tinaProps.data?.userGroupPage?.testimonialCategories?.name;
@@ -290,7 +290,7 @@ export const getStaticProps = async ({ params }) => {
       query: tinaProps.query,
       variables: tinaProps.variables,
       filename: params.filename,
-      testimonialsResult,
+      testimonialsResult: testimonialsResult || [],
       event: event[0] || null,
       speaker: speakers[0] || null,
       city: params.filename,
