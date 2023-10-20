@@ -96,7 +96,7 @@
         },
         {
           "title": "Jamstack (Static Sites with Gatsby/Next.js)",
-          "description": "Jamstack is a modern  development architecture based on client-side JavaScript, reusable APIs and prebuilt Markup. It's used on SSW Rules and SSW People.",
+          "description": "Jamstack is a modern web development architecture based on client-side JavaScript, reusable APIs and prebuilt Markup. It's used on SSW Rules and SSW People.",
           "logo": "/images/thumbs/thumb-jamstack-pink.png",
           "page": "content/consulting/jamstack.mdx",
           "externalUrl": "https://www.ssw.com.au/consulting/jamstack",
