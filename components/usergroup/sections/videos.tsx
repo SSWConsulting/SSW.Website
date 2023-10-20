@@ -92,6 +92,12 @@ export const videosSectionBlockSchema: Template = {
       },
     },
     {
+      type: "reference",
+      label: "Global User Group Info",
+      name: "globalUserGroupInfo",
+      collection: "userGroupGlobal",
+    },
+    {
       type: "object",
       label: "Button options",
       name: "button",
