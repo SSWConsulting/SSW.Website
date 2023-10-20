@@ -264,7 +264,16 @@ export const getStaticProps = async ({ params }) => {
     };
   }
 
-  const testimonialsResult = await getTestimonialsByCategories(["User Group"]);
+  const priorityCategory =
+    tinaProps.data?.userGroupPage?.testimonialCategories?.name;
+
+  const categories = ["User Group"];
+
+  if (priorityCategory) {
+    categories.push(priorityCategory);
+  }
+
+  const testimonialsResult = await getTestimonialsByCategories(categories);
 
   const event = await getEvents(
     `$filter=fields/Enabled ne false and fields/EndDateTime gt '${new Date().toISOString()}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc`
