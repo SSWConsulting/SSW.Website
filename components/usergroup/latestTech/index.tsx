@@ -73,8 +73,7 @@ export const latestTechSchema: Template = {
   fields: [
     {
       type: "reference",
-      description: `Select a config file including a set of badges that indicate the consulting services SSW provided
-        (Create new configs in Collection "Technology Badges")`,
+      description: "Select a config file including a set of badges",
       collections: ["userGroupGlobal"],
       label: "Badges",
       name: "badges",
