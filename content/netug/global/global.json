@@ -1,81 +1,26 @@
 {
-  "sections": [
+  "videos": [
     {
-      "heading": "I'm Sold... What's Next?",
-      "content": "RSVP to the event and receive NETUG updates!\n",
-      "listItems": [
-        {
-          "icon": "graduation",
-          "text": "Learn latest Microsoft tech"
-        },
-        {
-          "icon": "messages",
-          "text": "Build contacts"
-        },
-        {
-          "icon": "smile",
-          "text": "Socialize"
-        },
-        {
-          "icon": "pizza",
-          "text": "Free pizza and drinks"
-        }
-      ],
-      "eventSponsors": [
-        "/images/consulting/octopusdeploy-logo.png"
-      ],
-      "_template": "ActionSection"
+      "link": "https://www.youtube.com/watch?v=dMgj1MdwrRE",
+      "title": "Pick a Side - Clean vs Vertical Slice Architecture | Luke Parker"
     },
     {
-      "videos": [
-        {
-          "link": "https://www.youtube.com/watch?v=dMgj1MdwrRE",
-          "title": "Pick a Side - Clean vs Vertical Slice Architecture | Luke Parker"
-        },
-        {
-          "link": "https://www.youtube.com/watch?v=gZ9VabDU81A",
-          "title": "Rules to Better Chat GPT and Using the Best API Ever | Adam Cogan"
-        },
-        {
-          "link": "https://www.youtube.com/watch?v=K1t73xArqs0",
-          "title": "Beyond Passwords: The Future (and Present) of Authentication | Matt Goldman"
-        }
-      ],
-      "button": {
-        "link": "https://www.youtube.com/channel/UCBFgwtV9lIIhvoNh0xoQ7Pg",
-        "text": "Watch more on the SSW TV YouTube channel"
-      },
-      "_template": "VideosSection"
+      "link": "https://www.youtube.com/watch?v=gZ9VabDU81A",
+      "title": "Rules to Better Chat GPT and Using the Best API Ever | Adam Cogan"
     },
     {
-      "heading": "Community",
-      "twitterUsername": "SSW_TV",
-      "facebookUsername": "SSW.page",
-      "socialButtons": [
-        {
-          "url": "https://github.com/netusergroup/sydney-user-group/discussions",
-          "label": "Join GitHub Discussion",
-          "platform": "github"
-        },
-        {
-          "url": "https://www.facebook.com/groups/NetUG/",
-          "label": "Join Facebook Group",
-          "platform": "facebook"
-        },
-        {
-          "url": "https://www.linkedin.com/groups/1520317/",
-          "label": "Join LinkedIn Group",
-          "platform": "linkedin"
-        },
-        {
-          "url": "https://www.meetup.com/sydney-net-user-group/join/",
-          "label": "Join Meetup Group",
-          "platform": "meetup"
-        }
-      ],
-      "_template": "CommunitySection"
+      "link": "https://www.youtube.com/watch?v=K1t73xArqs0",
+      "title": "Beyond Passwords: The Future (and Present) of Authentication | Matt Goldman"
     }
   ],
+  "videosButton": {
+    "link": "https://www.youtube.com/channel/UCBFgwtV9lIIhvoNh0xoQ7Pg",
+    "text": "Watch more on the SSW TV YouTube channel"
+  },
+  "joinUs": {
+    "link": "https://ssw.com.au/netug/present",
+    "img": "/images/people/ulysses.png"
+  },
   "technologies": [
     {
       "name": "Microsoft",
