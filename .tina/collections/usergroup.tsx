@@ -117,9 +117,10 @@ export const userGroupPageSchema: Collection = {
         },
         {
           type: "object",
-          label: "Join Us Panel",
-          name: "joinUs",
-          fields: Schemas.joinAsPresenterSchema.fields,
+          list: true,
+          name: "sections",
+          label: "Sections",
+          templates: sectionPageBlocks,
         },
         {
           type: "string",
@@ -131,6 +132,12 @@ export const userGroupPageSchema: Collection = {
           label: "About Content",
           name: "aboutContent",
           isBody: true,
+        },
+        {
+          type: "reference",
+          label: "Priority testimonial categories",
+          name: "testimonialCategories",
+          collections: ["testimonialCategories"],
         },
       ],
     },
@@ -165,10 +172,49 @@ export const userGroupGlobalSchema: Collection = {
   fields: [
     {
       type: "object",
+      label: "Videos",
+      name: "videos",
       list: true,
-      name: "sections",
-      label: "Sections",
-      templates: sectionPageBlocks,
+      fields: [
+        {
+          type: "string",
+          label: "Link",
+          name: "link",
+        },
+        {
+          type: "string",
+          label: "Title",
+          name: "title",
+        },
+      ],
+      ui: {
+        itemProps: (item) => ({
+          label: item?.title,
+        }),
+      },
+    },
+    {
+      type: "object",
+      label: "Featured Videos Button options",
+      name: "videosButton",
+      fields: [
+        {
+          type: "string",
+          label: "Link",
+          name: "link",
+        },
+        {
+          type: "string",
+          label: "Text",
+          name: "text",
+        },
+      ],
+    },
+    {
+      type: "object",
+      label: "Join Us Panel",
+      name: "joinUs",
+      fields: Schemas.joinAsPresenterSchema.fields,
     },
     {
       type: "object",
