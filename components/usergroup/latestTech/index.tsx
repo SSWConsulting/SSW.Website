@@ -57,7 +57,7 @@ type LatestTechProps = {
 export const LatestTech = ({ data }: LatestTechProps) => {
   const badges = data?.badges?.latestTechBadges;
   return (
-    <div className="relative h-70 overflow-hidden p-6">
+    <div className="relative h-56 overflow-hidden px-6">
       <FloatingBadges
         random={badges?.random ?? false}
         badges={badges?.badgesList ?? []}
