@@ -240,7 +240,7 @@ export const menuBarItems: NavMenuItem[] = [
             },
             {
               name: "Brisbane Full Stack UG",
-              href: "https://www.ssw.com.au/ssw/NETUG/Brisbane.aspx",
+              href: "/netug/brisbane",
             },
             {
               name: "China Fire User Group",
