@@ -17,7 +17,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuBarItems }) => {
   return (
     <>
       <div className="hidden flex-1 lg:block">
-        <Popover.Group className="flex items-center justify-center gap-2">
+        <Popover.Group className="flex items-center justify-center text-sm font-semibold text-gray-900 outline-none">
           {menuBarItems.map((item) => {
             const submenu = item.menuGroup;
             if (submenu) {
