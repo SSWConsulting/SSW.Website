@@ -155,6 +155,23 @@
               "tag": "content/consulting/tag/database-development.json"
             }
           ]
+        },
+        {
+          "title": ".NET 8",
+          "description": ".NET 8 is the latest LTS (Long Term Support) version of the platform. It provides enterprise functionality and cloud-native development all within a stable ecosystem backed by Microsoft.",
+          "logo": "/images/thumbs/thumb-net-8.jpg",
+          "page": "content/consulting/net-8.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/web-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/mobile-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/ai-development.json"
+            }
+          ]
         }
       ]
     },

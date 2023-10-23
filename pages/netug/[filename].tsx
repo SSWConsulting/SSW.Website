@@ -1,4 +1,7 @@
 import { InferGetStaticPropsType } from "next";
+import { tinaField, useTina } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import client from "../../.tina/__generated__/client";
 import {
   BuiltOnAzure,
   GoogleMapsWrapper,
@@ -8,22 +11,19 @@ import {
   Organizer,
 } from "../../components/blocks";
 import { Layout } from "../../components/layout";
-import { UserGroupHeader } from "../../components/usergroup/sections/header";
-import { Container } from "../../components/util/container";
-import client from "../../.tina/__generated__/client";
-import { useTina, tinaField } from "tinacms/dist/react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
-import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
+import { UserGroupHeader } from "../../components/usergroup/sections/header";
+import { SectionRenderer } from "../../components/usergroup/sections/renderer";
+import { TechnologyLogos } from "../../components/usergroup/technologyLogos";
+import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
+import { SEO } from "../../components/util/seo";
+import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
+import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import {
   getEvents,
   getSpeakersInfoFromEvent,
 } from "../../services/server/events";
-import { SectionRenderer } from "../../components/usergroup/sections/renderer";
-import { TechnologyLogos } from "../../components/usergroup/technologyLogos";
-import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
-import { SEO } from "../../components/util/seo";
 
 const ISR_TIME = 60 * 60; // 1 hour;
 
@@ -133,7 +133,7 @@ export default function NETUGPage(
               <div className="col-span-1">
                 <h2 className="text-4xl font-medium text-sswRed">Agenda</h2>
                 <div>
-                  {data.userGroupPage.agenda.map((item, index) => (
+                  {data.userGroupPage.agenda?.map((item, index) => (
                     <div
                       className="my-4 flex flex-row rounded-md border-1 bg-gray-50 p-2"
                       key={index}
@@ -184,14 +184,14 @@ export default function NETUGPage(
               </div>
 
               <div className="col-span-1">
-                <JoinAsPresenter data={data.userGroupPage.joinUs} />
+                <JoinAsPresenter data={data.userGroupGlobal.joinUs} />
               </div>
             </section>
           </Container>
 
           <SectionRenderer
-            prefix="UserGroupGlobalSections"
-            blocks={data.userGroupGlobal.sections}
+            prefix="UserGroupPageLocationPageSections"
+            blocks={data.userGroupPage.sections}
           />
 
           <section className="bg-gray-900 py-8">
@@ -264,7 +264,19 @@ export const getStaticProps = async ({ params }) => {
     };
   }
 
-  const testimonialsResult = await getTestimonialsByCategories(["User Group"]);
+  let testimonialsResult = null;
+  if (tinaProps.data.userGroupPage.__typename === "UserGroupPageLocationPage") {
+    const priorityCategory =
+      tinaProps.data?.userGroupPage?.testimonialCategories?.name;
+
+    const categories = ["User Group"];
+
+    if (priorityCategory) {
+      categories.push(priorityCategory);
+    }
+
+    testimonialsResult = await getTestimonialsByCategories(categories);
+  }
 
   const event = await getEvents(
     `$filter=fields/Enabled ne false and fields/EndDateTime gt '${new Date().toISOString()}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc`
@@ -278,7 +290,7 @@ export const getStaticProps = async ({ params }) => {
       query: tinaProps.query,
       variables: tinaProps.variables,
       filename: params.filename,
-      testimonialsResult,
+      testimonialsResult: testimonialsResult || [],
       event: event[0] || null,
       speaker: speakers[0] || null,
       city: params.filename,
