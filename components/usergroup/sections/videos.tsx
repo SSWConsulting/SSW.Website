@@ -47,8 +47,9 @@ export const VideosSection = (props: VideosSectionProps) => {
                     props.globalUserGroupInfo?.videos[index],
                     "title"
                   )}
+                  key={index}
                 >
-                  <VideoCard {...video} key={index} theme="light" />
+                  <VideoCard {...video} theme="light" />
                 </div>
               ))}
             </div>
