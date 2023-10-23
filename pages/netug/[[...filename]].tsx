@@ -1,4 +1,6 @@
 import { InferGetStaticPropsType } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
@@ -10,6 +12,7 @@ import {
   LatestTech,
   Organizer,
 } from "../../components/blocks";
+import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { UserGroupHeader } from "../../components/usergroup/sections/header";
@@ -241,21 +244,31 @@ export default function NETUGPage(
     );
   } else if (data?.userGroupPage.__typename === "UserGroupPageContentPage") {
     return (
-      <Layout>
-        <Container className="prose py-4 prose-h1:pt-2" size="custom">
-          <TinaMarkdown
-            content={data.userGroupPage._body}
-            data-tina-field={tinaField(data.userGroupPage, "_body")}
-          />
-        </Container>
-      </Layout>
+      <>
+        <Layout>
+          <Container className="prose py-4 prose-h1:pt-2" size="custom">
+            <TinaMarkdown
+              content={data.userGroupPage._body}
+              components={componentRenderer}
+              data-tina-field={tinaField(data.userGroupPage, "_body")}
+            />
+          </Container>
+        </Layout>
+      </>
     );
   }
 }
 
 export const getStaticProps = async ({ params }) => {
+  let filename = params.filename;
+  if (!filename) {
+    filename = "index";
+  } else {
+    filename = filename.join("/");
+  }
+
   const tinaProps = await client.queries.userGroupPageContentQuery({
-    relativePath: `${params.filename}.mdx`,
+    relativePath: `${filename}.mdx`,
   });
 
   if (!tinaProps?.data?.userGroupPage?.__typename) {
@@ -289,14 +302,36 @@ export const getStaticProps = async ({ params }) => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
-      filename: params.filename,
       testimonialsResult: testimonialsResult || [],
       event: event[0] || null,
       speaker: speakers[0] || null,
-      city: params.filename,
+      city: filename,
     },
     revalidate: ISR_TIME,
   };
+};
+
+const EventLink = () => {
+  return (
+    <Link href={"/netug/sydney"} passHref className="!no-underline">
+      <div className="flex flex-row gap-4 rounded-lg px-4 hover:bg-gray-100">
+        <Image
+          src={"/images/events/sydney-ug-thumb.jpg"}
+          alt={"Sydney .NET User Group"}
+          width={150}
+          height={150}
+        />
+        <div>
+          <h3 className="font-semibold text-sswRed">Sydney .NET User Group</h3>
+          <p className="unstyled">
+            Every month, SSW hosts the Sydney .NET User Group where developers
+            meet to exchange ideas and listen to presentations by industry
+            experts.
+          </p>
+        </div>
+      </div>
+    </Link>
+  );
 };
 
 export const getStaticPaths = async () => {
@@ -304,8 +339,14 @@ export const getStaticPaths = async () => {
 
   const paths = userGroupPages.data.userGroupPageConnection.edges.map(
     (page) => {
+      if (page.node._sys.filename === "index") {
+        return {
+          params: { filename: [] },
+        };
+      }
+
       return {
-        params: { filename: page.node._sys.filename },
+        params: { filename: page.node._sys.breadcrumbs },
       };
     }
   );

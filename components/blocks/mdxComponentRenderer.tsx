@@ -16,6 +16,7 @@ import { ClientLogos } from "./clientLogos";
 import { ContentCard } from "./contentCard";
 import { CustomImage } from "./customImage";
 import { DynamicColumns } from "./dynamicColumns";
+import { EventLink, EventLinkProps } from "./eventLink";
 import { FixedColumns } from "./fixedColumns";
 import { FixedTabsLayout } from "./fixedTabsLayout";
 import { Flag } from "./flag";
@@ -170,6 +171,7 @@ export const componentRenderer: Components<{
   TestimonialsList: {
     hideInternshipTestimonials: boolean;
   };
+  EventLink: EventLinkProps;
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -198,4 +200,5 @@ export const componentRenderer: Components<{
   ContentCard: (props) => <ContentCard data={props} />,
   MicrosoftPanel: () => <MicrosoftPanel />,
   TestimonialsList: (props) => <TestimonialsList data={props} />,
+  EventLink: (props) => <EventLink {...props} />,
 };
