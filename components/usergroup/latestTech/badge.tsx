@@ -2,14 +2,17 @@ import cs from "classnames";
 import Image from "next/image";
 import { Layout } from ".";
 
-export interface BadgeProps {
-  layout: Layout;
+export interface BadgeType {
   name?: string;
   url?: string;
   imgURL?: string;
   rotate?: number;
   duration?: number;
   bounceDown?: boolean;
+}
+
+export interface BadgeProps extends BadgeType {
+  layout: Layout;
 }
 
 export const Badge = (props: BadgeProps) => {
