@@ -34,7 +34,7 @@ module.exports = {
       "social-youtube": "#b31217",
       "social-linkedin": "#0077b5",
       "social-facebook": "#3b5998",
-      "social-twitter": "#55acee",
+      "social-xtwitter": "#000",
       "social-tiktok": "#000",
       "social-github": "#2C2C2C",
       "social-meetup": "#f05664",
