@@ -11,10 +11,10 @@ import {
   FaMeetup,
   FaPhoneAlt as FaPhone,
   FaTiktok,
-  FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
 
+import { FaXTwitter } from "react-icons/fa6";
 import layoutData from "../../content/global/index.json";
 
 export enum SocialTypes {
@@ -24,7 +24,7 @@ export enum SocialTypes {
   facebook = "facebook",
   instagram = "instagram",
   meetup = "meetup",
-  twitter = "twitter",
+  xtwitter = "xtwitter",
   tiktok = "tiktok",
   github = "github",
 }
@@ -69,10 +69,10 @@ const socialStyles = new Map<
     },
   ],
   [
-    SocialTypes.twitter,
+    SocialTypes.xtwitter,
     {
-      icon: FaTwitter,
-      bgClassName: "bg-social-twitter",
+      icon: FaXTwitter,
+      bgClassName: "bg-social-xtwitter",
     },
   ],
   [
