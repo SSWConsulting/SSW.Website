@@ -1,8 +1,8 @@
 ---
+city: Sydney
 seo:
   title: Sydney's .NET User Group
-city: Sydney
-registerUrl: https://www.meetup.com/en-AU/sydney-net-user-group/
+registerUrl: 'https://www.meetup.com/en-AU/sydney-net-user-group/'
 joinGithub:
   title: Sydney .NET User Group GitHub Discussions
   link: 'https://github.com/netusergroup/sydney-user-group/discussions'
@@ -36,11 +36,41 @@ latestTech:
   content: |
     We talk about the latest tech
   badges: content/technologyBadges/default.json
-joinUs:
-  link: 'https://ssw.com.au/netug/present'
-  img: /images/people/ulysses.png
-_template: locationPage
+sections:
+  - heading: I'm Sold... What's Next?
+    content: |
+      RSVP to the event and receive NETUG updates!
+    listItems:
+      - icon: graduation
+        text: Learn latest Microsoft tech
+      - icon: messages
+        text: Build contacts
+      - icon: smile
+        text: Socialize
+      - icon: pizza
+        text: Free pizza and drinks
+    eventSponsors:
+      - /images/consulting/octopusdeploy-logo.png
+    _template: ActionSection
+  - globalUserGroupInfo: content/netug/global/global.json
+    _template: VideosSection
+  - socialButtons:
+      - url: 'https://github.com/netusergroup/sydney-user-group/discussions'
+        label: Join GitHub Discussion
+        platform: github
+      - url: 'https://www.facebook.com/groups/NetUG/'
+        label: Join Facebook Group
+        platform: facebook
+      - url: 'https://www.linkedin.com/groups/1520317/'
+        label: Join LinkedIn Group
+        platform: linkedin
+      - url: 'https://www.meetup.com/sydney-net-user-group/join/'
+        label: Join Meetup Group
+        platform: meetup
+    _template: CommunitySection
 aboutHeader: What is the <span class="text-sswRed">.NET User Group</span>?
+testimonialCategories: content/testimonialCategories/User-Group-Sydney.mdx
+_template: locationPage
 ---
 
-Every month SSW hosts the Sydney .NET User Group, where developers come together to learn about the latest technologies from local and internationally renowned experts. Topics focus on .NET and other Microsoft technologies (Azure, DevOps, SharePoint, Power Platform, and more), full stack development (Angular, React, Blazor), and mobile apps with .NET MAUI (was Xamarin), as well as exciting opportunities to learn about the latest industry trends and even tips on presenting from world class speakers. 
+Every month SSW hosts the Sydney .NET User Group, where developers come together to learn about the latest technologies from local and internationally renowned experts. Topics focus on .NET and other Microsoft technologies (Azure, DevOps, SharePoint, Power Platform, and more), full stack development (Angular, React, Blazor), and mobile apps with .NET MAUI (was Xamarin), as well as exciting opportunities to learn about the latest industry trends and even tips on presenting from world class speakers.
