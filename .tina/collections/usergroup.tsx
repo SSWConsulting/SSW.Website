@@ -117,9 +117,10 @@ export const userGroupPageSchema: Collection = {
         },
         {
           type: "object",
-          label: "Join Us Panel",
-          name: "joinUs",
-          fields: Schemas.joinAsPresenterSchema.fields,
+          list: true,
+          name: "sections",
+          label: "Sections",
+          templates: sectionPageBlocks,
         },
         {
           type: "string",
@@ -131,6 +132,12 @@ export const userGroupPageSchema: Collection = {
           label: "About Content",
           name: "aboutContent",
           isBody: true,
+        },
+        {
+          type: "reference",
+          label: "Priority testimonial categories",
+          name: "testimonialCategories",
+          collections: ["testimonialCategories"],
         },
       ],
     },
@@ -164,11 +171,115 @@ export const userGroupGlobalSchema: Collection = {
   },
   fields: [
     {
+      type: "string",
+      label: "Latest Tech Title",
+      name: "latestTechTitle",
+    },
+    {
       type: "object",
+      label: "Latest Technology Badges",
+      name: "latestTechBadges",
+      fields: [
+        {
+          type: "boolean",
+          label: "Randomize",
+          name: "random",
+        },
+        {
+          type: "object",
+          label: "Badges",
+          name: "badgesList",
+          list: true,
+          ui: {
+            itemProps: (item) => {
+              return { label: item?.name };
+            },
+          },
+          fields: [
+            {
+              type: "string",
+              label: "Name",
+              name: "name",
+              isTitle: true,
+              required: true,
+            },
+            {
+              type: "string",
+              label: "URL",
+              name: "url",
+            },
+            {
+              type: "image",
+              label: "Badge image",
+              name: "imgURL",
+              required: true,
+              // @ts-ignore
+              uploadDir: () => "/badges",
+            },
+            {
+              type: "number",
+              label: "Badge image rotation",
+              name: "rotate",
+            },
+            {
+              type: "number",
+              label: "Animation duration",
+              name: "duration",
+            },
+            {
+              type: "boolean",
+              label: "Bounce down",
+              name: "bounceDown",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: "object",
+      label: "Videos",
+      name: "videos",
       list: true,
-      name: "sections",
-      label: "Sections",
-      templates: sectionPageBlocks,
+      fields: [
+        {
+          type: "string",
+          label: "Link",
+          name: "link",
+        },
+        {
+          type: "string",
+          label: "Title",
+          name: "title",
+        },
+      ],
+      ui: {
+        itemProps: (item) => ({
+          label: item?.title,
+        }),
+      },
+    },
+    {
+      type: "object",
+      label: "Featured Videos Button options",
+      name: "videosButton",
+      fields: [
+        {
+          type: "string",
+          label: "Link",
+          name: "link",
+        },
+        {
+          type: "string",
+          label: "Text",
+          name: "text",
+        },
+      ],
+    },
+    {
+      type: "object",
+      label: "Join Us Panel",
+      name: "joinUs",
+      fields: Schemas.joinAsPresenterSchema.fields,
     },
     {
       type: "object",

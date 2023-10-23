@@ -4,6 +4,7 @@
     "esbenp.prettier-vscode",
     "graphql.vscode-graphql",
     "dbaeumer.vscode-eslint",
-    "ms-playwright.playwright"
+    "ms-playwright.playwright",
+    "arcanis.vscode-zipfs"
   ]
 }

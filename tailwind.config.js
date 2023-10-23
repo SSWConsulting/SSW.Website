@@ -54,7 +54,7 @@ module.exports = {
         youtube: "#b31217",
         linkedin: "#0077b5",
         facebook: "#3b5998",
-        twitter: "#55acee",
+        xtwitter: "#000",
         tiktok: "#000",
         github: "#2C2C2C",
         meetup: "#f05664",
