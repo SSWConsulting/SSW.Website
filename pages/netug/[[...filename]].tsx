@@ -1,6 +1,4 @@
 import { InferGetStaticPropsType } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
@@ -318,29 +316,6 @@ export const getStaticProps = async ({ params }) => {
     },
     revalidate: ISR_TIME,
   };
-};
-
-const EventLink = () => {
-  return (
-    <Link href={"/netug/sydney"} passHref className="!no-underline">
-      <div className="flex flex-row gap-4 rounded-lg px-4 hover:bg-gray-100">
-        <Image
-          src={"/images/events/sydney-ug-thumb.jpg"}
-          alt={"Sydney .NET User Group"}
-          width={150}
-          height={150}
-        />
-        <div>
-          <h3 className="font-semibold text-sswRed">Sydney .NET User Group</h3>
-          <p className="unstyled">
-            Every month, SSW hosts the Sydney .NET User Group where developers
-            meet to exchange ideas and listen to presentations by industry
-            experts.
-          </p>
-        </div>
-      </div>
-    </Link>
-  );
 };
 
 export const getStaticPaths = async () => {
