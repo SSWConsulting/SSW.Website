@@ -32,7 +32,7 @@ export const eventsSchema: Collection = {
       label: "Title",
     },
     {
-      type: "string",
+      type: "rich-text",
       name: "subTitle",
       label: "Sub Title",
     },

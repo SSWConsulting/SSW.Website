@@ -74,12 +74,12 @@ export default function EventsPage(
           )}
           {data.events.subTitle && (
             <Container padding={"md:px-8 px-0 !py-0"}>
-              <p
+              <div
                 data-tina-field={tinaField(data.events, "subTitle")}
                 className="py-0 text-center"
               >
-                {data.events.subTitle}
-              </p>
+                <TinaMarkdown content={data.events?.subTitle} />
+              </div>
             </Container>
           )}
 
