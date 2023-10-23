@@ -134,21 +134,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@azure/msal-common@npm:14.1.0":
-  version: 14.1.0
-  resolution: "@azure/msal-common@npm:14.1.0"
-  checksum: 4521867c8b8121dc000eb807b848bca601efe66a2f84dd9be182aae862c367f6301242305a2cf9b6e75800ceb2a7b8a24edd8bd36029e22d7fc81498597a7f8e
+"@azure/msal-common@npm:14.2.0":
+  version: 14.2.0
+  resolution: "@azure/msal-common@npm:14.2.0"
+  checksum: 537ceb34b62f87ae339721a4249270a6112ef3f116415b5c192db5671dcb9aa06fa9bbfe3e6d4979cdacdae14a7e8dd5d8205cdd18b219d24133f32ae77a8626
   languageName: node
   linkType: hard
 
-"@azure/msal-node@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "@azure/msal-node@npm:2.2.0"
+"@azure/msal-node@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@azure/msal-node@npm:2.3.0"
   dependencies:
-    "@azure/msal-common": 14.1.0
+    "@azure/msal-common": 14.2.0
     jsonwebtoken: ^9.0.0
     uuid: ^8.3.0
-  checksum: 527cac7821d9abcd5fdcc11058ce0eaaa55cf92dc856c1ebf775e144c90ba651311caa881ff8e2898e48175f54e8694706cc86ee16c5361eac5094fe48f68152
+  checksum: 9396cb15e13ba5ffd436c07e47055380437825e925a2ddbc01680a7c18f38e0d58bbfb45690f3ca5f95981bef32bba29e330eaeb6def70aba9ffc0abcc5cd9ff
   languageName: node
   linkType: hard
 
@@ -4505,7 +4505,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tinacms/starter@workspace:."
   dependencies:
-    "@azure/msal-node": ^2.2.0
+    "@azure/msal-node": ^2.3.0
     "@builder.io/partytown": ^0.8.0
     "@fortawesome/fontawesome-svg-core": ^6.4.2
     "@headlessui/react": ^1.7.17
