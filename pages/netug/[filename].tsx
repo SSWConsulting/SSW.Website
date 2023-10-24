@@ -180,6 +180,15 @@ export default function NETUGPage(
                 className="col-span-2"
                 data-tina-field={tinaField(data.userGroupPage, "latestTech")}
               >
+                <h2
+                  className="text-4xl font-medium text-sswRed"
+                  data-tina-field={tinaField(
+                    data.userGroupGlobal,
+                    "latestTechTitle"
+                  )}
+                >
+                  {data.userGroupGlobal.latestTechTitle}
+                </h2>
                 <LatestTech data={data.userGroupPage.latestTech} />
               </div>
 

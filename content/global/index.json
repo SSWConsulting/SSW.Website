@@ -75,7 +75,10 @@
       "type": "phone",
       "title": "Call us",
       "url": "tel:+61299533000",
-      "linkText": "CALL US"
+      "linkText": "CALL US",
+      "desktopSpecificLinkText": "CONTACT US",
+      "desktopSpecificURL": "/company/contact-us",
+      "openInSameWindow": true
     },
     {
       "type": "youtube",
@@ -100,8 +103,8 @@
       "username": "ssw_tv"
     },
     {
-      "type": "twitter",
-      "title": "SSW on Twitter",
+      "type": "xtwitter",
+      "title": "SSW on X",
       "url": "https://twitter.com/SSW_TV",
       "username": "SSW_TV"
     },

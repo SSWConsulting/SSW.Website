@@ -1,6 +1,8 @@
+"use client";
 import classNames from "classnames";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { isMobile } from "react-device-detect";
 import { IconType } from "react-icons";
 
 import {
@@ -11,10 +13,10 @@ import {
   FaMeetup,
   FaPhoneAlt as FaPhone,
   FaTiktok,
-  FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
 
+import { FaXTwitter } from "react-icons/fa6";
 import layoutData from "../../content/global/index.json";
 
 export enum SocialTypes {
@@ -24,7 +26,7 @@ export enum SocialTypes {
   facebook = "facebook",
   instagram = "instagram",
   meetup = "meetup",
-  twitter = "twitter",
+  xtwitter = "xtwitter",
   tiktok = "tiktok",
   github = "github",
 }
@@ -69,10 +71,10 @@ const socialStyles = new Map<
     },
   ],
   [
-    SocialTypes.twitter,
+    SocialTypes.xtwitter,
     {
-      icon: FaTwitter,
-      bgClassName: "bg-social-twitter",
+      icon: FaXTwitter,
+      bgClassName: "bg-social-xtwitter",
     },
   ],
   [
@@ -105,6 +107,11 @@ export interface SocialIconsParams {
 }
 
 export const SocialIcons = (data?: SocialIconsParams) => {
+  const [isMobileDetected, setIsMobileDetected] = useState(false);
+  useEffect(() => {
+    setIsMobileDetected(isMobile);
+  }, []);
+
   return (
     <div
       className={classNames(
@@ -129,29 +136,39 @@ export const SocialIcons = (data?: SocialIconsParams) => {
           !hideOnMobile &&
           Object.values(SocialTypes).length - data.excludeMobile?.length === 1;
 
+        const URL =
+          social.desktopSpecificURL && !isMobileDetected
+            ? social.desktopSpecificURL
+            : social.url;
+        const TEXT =
+          social.desktopSpecificLinkText && !isMobileDetected
+            ? social.desktopSpecificLinkText
+            : social.linkText;
+
         return (
           <Link
             key={social.type}
-            href={social.url}
+            href={URL}
             className={classNames(
               "unstyled flex h-12 cursor-pointer items-center justify-center rounded-lg text-xl hover:bg-gray-900 hover:bg-none",
               styling.bgClassName,
-              social.linkText ? "w-fit shrink-0" : "w-12",
-              { "px-5": social.linkText },
+              TEXT ? "w-fit shrink-0" : "w-12",
+              { "px-5": TEXT },
               { "flex sm:hidden": hideOnDesktop },
               { "hidden sm:flex": hideOnMobile },
               { "flex-grow sm:flex-grow-0": growOnMobile }
             )}
             title={social.title}
+            target={social.openInSameWindow ? "_self" : "_blank"}
             rel="noreferrer nofollow"
           >
             <styling.icon
-              className={classNames({ "text-2xl": !social.linkText })}
+              className={classNames({ "text-2xl": !TEXT })}
               color="white"
             />
-            {social.linkText && (
+            {TEXT && (
               <span className="ml-2 inline text-sm font-bold text-white">
-                {social.linkText}
+                {TEXT}
               </span>
             )}
           </Link>
