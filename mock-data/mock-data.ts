@@ -236,7 +236,7 @@ export const menuBarItems: NavMenuItem[] = [
             },
             {
               name: "Melbourne .NET UG",
-              href: "https://www.ssw.com.au/ssw/NETUG/Melbourne.aspx",
+              href: "/netug/melbourne",
             },
             {
               name: "Brisbane Full Stack UG",
