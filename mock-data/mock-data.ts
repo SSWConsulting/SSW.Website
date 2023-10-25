@@ -232,7 +232,7 @@ export const menuBarItems: NavMenuItem[] = [
             },
             {
               name: "Canberra .NET UG",
-              href: "https://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
+              href: "/netug/canberra",
             },
             {
               name: "Melbourne .NET UG",
