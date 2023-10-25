@@ -14,9 +14,8 @@ import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import VideoCards, { VideoCardType } from "../../components/util/videoCards";
-import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { RecaptchaContext } from "../../context/RecaptchaContext";
-import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
+import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { removeExtension } from "../../services/client/utils.service";
 
 export default function EventsPage(
@@ -66,11 +65,20 @@ export default function EventsPage(
           {data.events.title && (
             <h1
               data-tina-field={tinaField(data.events, "title")}
-              className="py-0 text-center text-5xl font-semibold"
-              dangerouslySetInnerHTML={{
-                __html: sanitiseXSS(data?.events?.title, spanWhitelist) || "",
-              }}
-            />
+              className="py-0 text-center text-5xl font-semibold text-sswRed"
+            >
+              {data?.events?.title}
+            </h1>
+          )}
+          {data.events.subTitle && (
+            <Container padding={"md:px-8 px-0 !py-0"}>
+              <div
+                data-tina-field={tinaField(data.events, "subTitle")}
+                className="py-0 text-left"
+              >
+                <TinaMarkdown content={data.events?.subTitle} />
+              </div>
+            </Container>
           )}
 
           <Blocks prefix="Events_body" blocks={data.events._body} />

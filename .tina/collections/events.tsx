@@ -32,6 +32,11 @@ export const eventsSchema: Collection = {
       label: "Title",
     },
     {
+      type: "rich-text",
+      name: "subTitle",
+      label: "Sub Title",
+    },
+    {
       type: "boolean",
       name: "showBreadcrumb",
       label: "Show Breadcrumb",
