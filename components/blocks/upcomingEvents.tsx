@@ -76,7 +76,7 @@ const renderEvent = (e: EventInfo) => {
       target={isExternalLink ? "_blank" : "_self"}
       key={e.id}
     >
-      <article className="my-2.5 grid grid-cols-4 rounded border-1 border-gray-300 bg-white p-2 shadow hover:border-sswBlack dark:border-gray-700 dark:bg-gray-800">
+      <article className="my-2.5 grid grid-cols-4 rounded border-1 border-gray-300 bg-white p-2 shadow hover:border-ssw-black dark:border-gray-700 dark:bg-gray-800">
         <div className="col-span-3 justify-center px-3">
           <h2 className="m-0 py-1 text-sm font-bold text-black">{e.Title}</h2>
           <EventsRelativeBox
