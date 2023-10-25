@@ -20,7 +20,7 @@ export const ContactUs = ({ buttonText, link }) => (
     <a href={link}>
       <Button
         ripple
-        className="!h-10 !bg-gray-900 bg-arrow-right bg-right bg-no-repeat pl-3 pr-8 text-sm"
+        className="!h-10 !bg-ssw-black bg-arrow-right bg-right bg-no-repeat pl-3 pr-8 text-sm"
       >
         {buttonText}
       </Button>

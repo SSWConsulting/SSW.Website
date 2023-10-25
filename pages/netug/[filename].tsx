@@ -205,7 +205,7 @@ export default function NETUGPage(
             blocks={data.userGroupPage.sections}
           />
 
-          <section className="bg-gray-900 py-8">
+          <section className="bg-ssw-black py-8">
             <Container className="text-center">
               <h2
                 className="mt-2 pb-3 text-4xl font-semibold text-white"
