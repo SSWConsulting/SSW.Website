@@ -71,6 +71,7 @@ module.exports = {
         darkRed: "#8e2c2c",
         black: "#333333",
         grey: "#797979",
+        darkGrey: "#333333",
       },
     },
     fontSize: {

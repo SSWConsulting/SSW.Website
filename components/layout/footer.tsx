@@ -7,7 +7,7 @@ import { SocialIcons, SocialTypes } from "../util/socialIcons";
 
 export const Footer = () => {
   return (
-    <footer className="no-print w-full bg-gray-900 text-xxs text-gray-300">
+    <footer className="no-print w-full bg-ssw-darkGrey text-xxs text-gray-300">
       <Container size="xsmall">
         <SocialIcons
           className="my-6 justify-center"
