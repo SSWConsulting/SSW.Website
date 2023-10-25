@@ -36,7 +36,7 @@ export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
           </>
         )}
       </p>
-      <div className="mt-2 text-sm text-gray-900">
+      <div className="mt-2 text-sm text-ssw-black">
         <TinaMarkdown content={testimonial?.body} />
       </div>
     </div>

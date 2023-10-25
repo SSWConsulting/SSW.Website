@@ -29,7 +29,7 @@ export const MenuItemWithSubmenu: React.FC<MenuItemWithSubmenuProps> = ({
         {name}
         <MegaIcon
           icon={AvailableIcons.chevronDown}
-          className="h-5 w-5 flex-none text-gray-900"
+          className="h-5 w-5 flex-none text-ssw-black"
         />
       </Popover.Button>
 

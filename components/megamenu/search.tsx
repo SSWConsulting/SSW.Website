@@ -40,7 +40,7 @@ const Search: React.FC = () => {
   return (
     <>
       <button
-        className="rounded p-4 text-gray-900 hover:bg-gray-100"
+        className="rounded p-4 text-ssw-black hover:bg-gray-100"
         onClick={() => setIsOpen(true)}
       >
         <MegaIcon
@@ -77,7 +77,7 @@ const Search: React.FC = () => {
                 <div className="relative">
                   <MegaIcon
                     icon={AvailableIcons.magnifyingGlass}
-                    className="pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-gray-900 text-opacity-40"
+                    className="pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-ssw-black text-opacity-40"
                     aria-hidden="true"
                   />
                   <form
@@ -87,7 +87,7 @@ const Search: React.FC = () => {
                     <input
                       ref={searchRef}
                       type="text"
-                      className="h-12 grow border-0 bg-transparent pl-11 text-gray-900 focus:ring-0 sm:text-sm"
+                      className="h-12 grow border-0 bg-transparent pl-11 text-ssw-black focus:ring-0 sm:text-sm"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                       placeholder="Search..."

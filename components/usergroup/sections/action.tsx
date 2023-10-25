@@ -42,7 +42,7 @@ const iconMap = {
 
 export const ActionSection = (props: ActionSectionProps) => {
   return (
-    <section className="bg-gray-900 ">
+    <section className="bg-ssw-black ">
       <Container className="py-12">
         <div className="flex-row justify-between md:flex">
           <div className="text-white">

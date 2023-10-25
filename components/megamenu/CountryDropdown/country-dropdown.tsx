@@ -56,7 +56,7 @@ const CountryDropdown: React.FC = () => {
     <Popover>
       <Popover.Button
         className={twMerge(
-          "flex items-center justify-center gap-x-1 rounded-md py-1 px-4 text-sm font-semibold text-gray-900 outline-none",
+          "flex items-center justify-center gap-x-1 rounded-md py-1 px-4 text-sm font-semibold text-ssw-black outline-none",
           "hover:bg-gray-100",
           isOpened && "bg-gray-100"
         )}
