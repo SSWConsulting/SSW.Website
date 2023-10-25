@@ -9,7 +9,7 @@ module.exports = {
     "./content/**/*.mdx",
     "./pages/**/*.{js,ts,jsx,tsx}",
   ],
-  // darkMode: "class",
+  darkMode: "class",
   theme: {
     listStyleType: {
       disc: "disc",
