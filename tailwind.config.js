@@ -9,6 +9,7 @@ module.exports = {
     "./content/**/*.mdx",
     "./pages/**/*.{js,ts,jsx,tsx}",
   ],
+  // This needs to be set to `class` or it will use OS settings https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
   darkMode: "class",
   theme: {
     listStyleType: {
