@@ -25,6 +25,6 @@ jobs:
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: ${{ inputs.subject }}
           body: ${{ inputs.body }}
-          to: harryross@ssw.com.au
+          to: HarryRoss@ssw.com.au,lukecook@ssw.com.au
           from: GitHub Exploded
           priority: high
