@@ -26,5 +26,5 @@ jobs:
           subject: ${{ inputs.subject }}
           body: ${{ inputs.body }}
           to: hazross@hotmail.com
-          from: GitHub Exploded
+          from: sophiebelle@ssw.com.au
           priority: high
