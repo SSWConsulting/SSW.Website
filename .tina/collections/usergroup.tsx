@@ -61,7 +61,7 @@ export const userGroupPageSchema: Collection = {
           fields: [
             {
               type: "string",
-              label: "time",
+              label: "Time",
               name: "time",
             },
             {
@@ -101,6 +101,8 @@ export const userGroupPageSchema: Collection = {
               type: "image",
               label: "Organizer Image",
               name: "profileImg",
+              // @ts-ignore
+              uploadDir: () => "people",
             },
             {
               type: "rich-text",

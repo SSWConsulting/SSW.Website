@@ -1,15 +1,16 @@
 import Script from "next/script";
 
-const ChatBaseBot = ({ id }) => {
-  if (!id) {
-    // eslint-disable-next-line no-console
-    console.log("ChatBot ID is not provided!!");
-    return <></>;
-  }
+const chatBaseBotId = process.env.NEXT_PUBLIC_CHATBASE_BOT_ID;
+
+const ChatBaseBot = () => {
   return (
-    <>
-      <Script src="https://www.chatbase.co/embed.min.js" id={id} defer />
-    </>
+    chatBaseBotId && (
+      <Script
+        src="https://www.chatbase.co/embed.min.js"
+        id={chatBaseBotId}
+        defer
+      />
+    )
   );
 };
 

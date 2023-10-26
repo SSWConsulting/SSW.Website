@@ -386,6 +386,14 @@ export const consultingSchema: Collection = {
               name: "content",
             },
           ],
+          ui: {
+            validate: (value, data) => {
+              // @ts-ignore
+              if (value?.some((item) => !item || !item.type || !item.content)) {
+                return "Please fill out all fields in each item";
+              }
+            },
+          },
         },
       ],
     },

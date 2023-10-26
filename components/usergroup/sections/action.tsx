@@ -4,12 +4,12 @@ import {
   LuPizza,
   LuSmile,
 } from "react-icons/lu";
-import { SponsorCard } from "../sponsorCard";
-import { Container } from "../../util/container";
 import type { Template } from "tinacms";
-import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
-import { MeetupForm } from "../meetupForm";
 import { tinaField } from "tinacms/dist/react";
+import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { Container } from "../../util/container";
+import { MeetupForm } from "../meetupForm";
+import { SponsorCard } from "../sponsorCard";
 
 type ActionSectionProps = {
   heading?: string;
@@ -42,7 +42,7 @@ const iconMap = {
 
 export const ActionSection = (props: ActionSectionProps) => {
   return (
-    <section className="bg-gray-900 ">
+    <section className="bg-ssw-black ">
       <Container className="py-12">
         <div className="flex-row justify-between md:flex">
           <div className="text-white">
@@ -83,13 +83,15 @@ export const ActionSection = (props: ActionSectionProps) => {
               data-tina-field={tinaField(props, "eventSponsors")}
               className="inline-block grow-0 items-end justify-end"
             >
-              <SponsorCard
-                className="mb-4 mt-6 text-white"
-                urls={props.eventSponsors.map((sponsor) => ({
-                  src: sponsor,
-                  label: "Sponsor image",
-                }))}
-              />
+              {props.eventSponsors && (
+                <SponsorCard
+                  className="mb-4 mt-6 text-white"
+                  urls={props.eventSponsors.map((sponsor) => ({
+                    src: sponsor,
+                    label: "Sponsor image",
+                  }))}
+                />
+              )}
             </div>
           </div>
         </div>
@@ -143,6 +145,9 @@ export const actionSectionBlockSchema: Template = {
       type: "image",
       label: "Event Sponsors",
       name: "eventSponsors",
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      uploadDir: () => "consulting",
       list: true,
     },
   ],

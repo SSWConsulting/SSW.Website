@@ -37,7 +37,7 @@
     "source-map-explorer": "^2.5.3"
   },
   "dependencies": {
-    "@azure/msal-node": "^2.2.0",
+    "@azure/msal-node": "^2.3.0",
     "@builder.io/partytown": "^0.8.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@headlessui/react": "^1.7.17",
@@ -67,7 +67,7 @@
     "react-flags-select": "^2.2.3",
     "react-google-recaptcha": "^3.1.0",
     "react-hotkeys-hook": "^4.4.1",
-    "react-icons": "^4.8.0",
+    "react-icons": "^4.11.0",
     "react-responsive-carousel": "^3.2.23",
     "react-responsive-modal": "^6.4.2",
     "react-toastify": "^9.1.3",

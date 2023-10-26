@@ -4,9 +4,9 @@ import Image from "next/image";
 import { useMemo } from "react";
 import { BiVideo } from "react-icons/bi";
 import { UtilityButton } from "../../blocks";
+import { CITY_TIMEZONES } from "../../util/constants/country";
 import { Container } from "../../util/container";
 import { OnlineBadge } from "../onlineBadge";
-import { CITY_TIMEZONES } from "../../util/constants/country";
 
 type UserGroupHeaderProps = {
   className?: string;
@@ -21,6 +21,7 @@ type UserGroupHeaderProps = {
   registerUrl: string;
   online?: boolean;
   city: keyof typeof CITY_TIMEZONES;
+  youTubeId?: string;
 };
 
 export const UserGroupHeader = ({
@@ -32,6 +33,7 @@ export const UserGroupHeader = ({
   registerUrl,
   online,
   city,
+  youTubeId,
 }: UserGroupHeaderProps) => {
   const formattedDate: string = useMemo(() => {
     dayjs.tz.setDefault(CITY_TIMEZONES[city]);
@@ -44,6 +46,12 @@ export const UserGroupHeader = ({
       " Time"
     );
   }, [date, city]);
+
+  const isPastEvent = date < new Date();
+  const buttonText = isPastEvent ? "Watch the replay" : "Register for free";
+  const link = isPastEvent
+    ? `https://www.youtube.com/watch?v=${youTubeId}`
+    : registerUrl;
 
   return (
     <section
@@ -67,10 +75,10 @@ export const UserGroupHeader = ({
           <div className="mb-5 mt-auto flex-row md:flex">
             <UtilityButton
               className="!mt-0"
-              link={registerUrl}
+              link={link}
               uncentered
               noAnimate
-              buttonText="Register for free"
+              buttonText={buttonText}
             />
             {trailerUrl && (
               <a

@@ -1,6 +1,6 @@
+import classNames from "classnames";
 import { Field, Form, Formik } from "formik";
 import { object, string } from "yup";
-import classNames from "classnames";
 
 interface FormValues {
   format: "online" | "inPerson";
@@ -112,7 +112,7 @@ const TicketField = (props: TicketFieldProps) => {
         name={props.name}
         type={props.type || "text"}
         placeholder={props.placeholder}
-        className="my-3 rounded-md bg-gray-25 p-3"
+        className="my-3 rounded-md bg-gray-50 p-3"
       />
     </>
   );

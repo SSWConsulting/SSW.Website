@@ -22,16 +22,14 @@ export const MenuItemWithSubmenu: React.FC<MenuItemWithSubmenuProps> = ({
     <>
       <Popover.Button
         className={twMerge(
-          "flex items-center justify-center gap-x-1 whitespace-nowrap rounded-md px-3 py-1 text-sm font-semibold text-gray-900 outline-none",
-          "hover:bg-gray-100",
-          "lg:min-w-[80px]",
+          "flex items-center justify-center gap-x-1 whitespace-nowrap rounded-md px-3 py-1 cursor-pointer focus:outline-none focus-visible:ring-opacity-0",
           isOpened ? "bg-gray-100" : "hover:bg-gray-100"
         )}
       >
         {name}
         <MegaIcon
           icon={AvailableIcons.chevronDown}
-          className="h-5 w-5 flex-none text-gray-900"
+          className="h-5 w-5 flex-none text-ssw-black"
         />
       </Popover.Button>
 
