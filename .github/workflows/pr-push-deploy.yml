@@ -83,6 +83,7 @@ jobs:
       body: |
         The deployment ${{ github.event.workflow.run_number }} failed. Please check the logs at 
         ${{ github.event.workflow.html_url }}
+    secrets: inherit
 
   pagespeedInsights:
     name: Run PageSpeed Insights
