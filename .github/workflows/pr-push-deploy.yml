@@ -38,6 +38,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: toko-bifrost/ms-teams-deploy-card@master
+        if: always()
+        with:
+          github-token: ${{ github.token }}
+          webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
+
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
         with:
@@ -73,17 +79,6 @@ jobs:
     uses: ./.github/workflows/template-ui-tests.yml
     with:
       deploy_url: ${{ needs.pr-deploy.outputs.url }}
-
-  send-email:
-    # TODO: Remove
-    name: Send email
-    uses: ./.github/workflows/template-send-failure-email.yml
-    with:
-      subject: SSW Website - Deployment Failed
-      body: |
-        The deployment ${{ github.event.workflow.run_number }} failed. Please check the logs at 
-        ${{ github.event.workflow.html_url }}
-    secrets: inherit
 
   pagespeedInsights:
     name: Run PageSpeed Insights
