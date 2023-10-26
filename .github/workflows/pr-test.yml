@@ -7,16 +7,29 @@ on:
     workflows: ["PR - build and deploy to slot"]
     types:
       - completed
-  workflow_dispatch:
-    inputs:
-      deploy_url:
-        type: string
-        description: "The URL to deploy to"
-        required: true
 
 jobs:
-  test:
-    name: Run Playwright Tests
-    uses: ./.github/workflows/template-ui-tests.yml
+  on-success:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Playwright Tests
+        uses: ./.github/workflows/template-ui-tests.yml
+        with:
+          deploy_url: https://ssw.com.au
+      - name: Send failure email for UI tests
+        if: ${{ failure() }}
+        uses: ./.github/workflows/template-send-failure-email.yml
+        with:
+          subject: SSW Website - UI Tests Failed
+          body: |
+            The UI tests for deployment ${{ github.event.workflow_run.run_number }} failed. Please check the logs at 
+            ${{ github.event.workflow_run.html_url }}
+
+  on-failure:
+    name: Send failure email
+    uses: ./.github/workflows/template-send-failure-email.yml
     with:
-      deploy_url: ${{ inputs.deploy_url || 'https://ssw.com.au' }}
+      subject: SSW Website - Deployment Failed
+      body: |
+        The deployment ${{ github.event.workflow_run.run_number }} failed. Please check the logs at 
+        ${{ github.event.workflow_run.html_url }}

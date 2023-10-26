@@ -1,6 +1,8 @@
 import test, { expect } from "@playwright/test";
 
 test("Images load successfully on index", async ({ page }) => {
+  await expect(false).toBeTruthy();
+
   await page.on("response", (response) => {
     if (response.request().resourceType() === "image") {
       expect(response.status() < 400).toBeTruthy();
