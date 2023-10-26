@@ -27,3 +27,4 @@ jobs:
           body: ${{ inputs.body }}
           to: harryross@ssw.com.au
           from: GitHub Exploded
+          priority: high
