@@ -35,6 +35,15 @@ jobs:
           HOST_URL: ${{ inputs.deploy_url }}
         working-directory: ./ui-tests
 
+      # TODO: Remove
+      - name: Send email
+        uses: ./.github/workflows/template-send-failure-email.yml
+        with:
+          subject: SSW Website - Deployment Failed
+          body: |
+            The deployment ${{ github.event.workflow_run.run_number }} failed. Please check the logs at 
+            ${{ github.event.workflow_run.html_url }}
+
       - uses: actions/upload-artifact@v3
         if: always()
         with:
