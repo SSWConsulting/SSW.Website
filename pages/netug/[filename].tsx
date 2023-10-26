@@ -26,6 +26,7 @@ import {
 } from "../../services/server/events";
 
 const ISR_TIME = 60 * 60; // 1 hour;
+const PAST_DAYS = 30; // 1 month
 
 export default function NETUGPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -57,6 +58,7 @@ export default function NETUGPage(
               registerUrl={data.userGroupPage.registerUrl}
               city={props.city}
               online={props.city !== props.event?.City?.toLowerCase()}
+              youTubeId={props.event?.YouTubeId}
             />
           )}
 
@@ -203,7 +205,7 @@ export default function NETUGPage(
             blocks={data.userGroupPage.sections}
           />
 
-          <section className="bg-gray-900 py-8">
+          <section className="bg-ssw-black py-8">
             <Container className="text-center">
               <h2
                 className="mt-2 pb-3 text-4xl font-semibold text-white"
@@ -287,8 +289,11 @@ export const getStaticProps = async ({ params }) => {
     testimonialsResult = await getTestimonialsByCategories(categories);
   }
 
+  const pastDate = new Date();
+  pastDate.setDate(new Date().getDate() - PAST_DAYS);
+
   const event = await getEvents(
-    `$filter=fields/Enabled ne false and fields/EndDateTime gt '${new Date().toISOString()}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc`
+    `$filter=fields/Enabled ne false and fields/EndDateTime gt '${pastDate.toISOString()}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc`
   );
 
   const speakers = await getSpeakersInfoFromEvent(event[0]);

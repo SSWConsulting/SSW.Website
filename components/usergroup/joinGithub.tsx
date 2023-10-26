@@ -1,8 +1,8 @@
+import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
-import classNames from "classnames";
 
 export type JoinGithubProps = {
   data?: {
@@ -16,7 +16,7 @@ export const JoinGithub = ({ data, className }: JoinGithubProps) => {
   return (
     <div
       className={classNames(
-        "flex flex-col items-center justify-center gap-y-3 rounded-xl bg-gray-900 bg-arcBackground bg-bottom bg-no-repeat px-11 py-5 text-center",
+        "flex flex-col items-center justify-center gap-y-3 rounded-xl bg-ssw-black bg-arcBackground bg-bottom bg-no-repeat px-11 py-5 text-center",
         className
       )}
     >

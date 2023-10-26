@@ -232,15 +232,15 @@ export const menuBarItems: NavMenuItem[] = [
             },
             {
               name: "Canberra .NET UG",
-              href: "https://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
+              href: "/netug/canberra",
             },
             {
               name: "Melbourne .NET UG",
-              href: "https://www.ssw.com.au/ssw/NETUG/Melbourne.aspx",
+              href: "/netug/melbourne",
             },
             {
               name: "Brisbane Full Stack UG",
-              href: "https://www.ssw.com.au/ssw/NETUG/Brisbane.aspx",
+              href: "/netug/brisbane",
             },
             {
               name: "China Fire User Group",
