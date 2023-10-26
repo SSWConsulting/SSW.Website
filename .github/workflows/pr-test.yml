@@ -1,0 +1,22 @@
+name: PR - Run Tests
+
+# TODO: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_run
+
+on:
+  workflow_run:
+    workflows: ["PR - build and deploy to slot"]
+    types:
+      - completed
+  workflow_dispatch:
+    inputs:
+      deploy_url:
+        type: string
+        description: "The URL to deploy to"
+        required: true
+
+jobs:
+  test:
+    name: Run Playwright Tests
+    uses: ./.github/workflows/template-ui-tests.yml
+    with:
+      deploy_url: ${{ inputs.deploy_url || 'https://ssw.com.au' }}
