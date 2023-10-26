@@ -25,6 +25,6 @@ jobs:
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: ${{ inputs.subject }}
           body: ${{ inputs.body }}
-          to: hazross@hotmail.com
+          to: HarryRoss@ssw.com.au
           from: sophiebelle@ssw.com.au
           priority: high
