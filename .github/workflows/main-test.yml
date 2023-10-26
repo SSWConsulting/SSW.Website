@@ -7,12 +7,6 @@ on:
     workflows: ["Main - build and deploy"]
     types:
       - completed
-  workflow_dispatch:
-    inputs:
-      deploy_url:
-        type: string
-        description: "The URL to deploy to"
-        required: true
 
 jobs:
   on-success:
@@ -21,7 +15,7 @@ jobs:
       - name: Run Playwright Tests
         uses: ./.github/workflows/template-ui-tests.yml
         with:
-          deploy_url: ${{ inputs.deploy_url || 'https://ssw.com.au' }}
+          deploy_url: ${{ 'https://ssw.com.au' }}
       - name: Send failure email for UI tests
         if: ${{ failure() }}
         uses: ./.github/workflows/template-send-failure-email.yml
