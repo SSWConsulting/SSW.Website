@@ -3,5 +3,22 @@
     "title": "SSW Consulting Services "
   },
   "title": "SSW Partners",
-  "subTitle": "We are Partners with big companies"
+  "subTitle": "We are Partners with big companies",
+  "partnersList": [
+    {
+      "name": "Microsoft"
+    },
+    {
+      "name": "IdentityServer"
+    },
+    {
+      "name": "Octopus"
+    },
+    {
+      "name": "Zendesk"
+    },
+    {
+      "name": "Control4"
+    }
+  ]
 }
