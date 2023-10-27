@@ -10,6 +10,7 @@ import {
   LatestTech,
   Organizer,
 } from "../../components/blocks";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
@@ -21,6 +22,7 @@ import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
+import { removeExtension } from "../../services/client/utils.service";
 import {
   getEvents,
   getSpeakersInfoFromEvent,
@@ -46,6 +48,7 @@ export default function NETUGPage(
       <>
         <Layout>
           <SEO seo={data.userGroupPage.seo} />
+
           {props.event && (
             <UserGroupHeader
               date={new Date(props.event?.StartDateTime)}
@@ -63,11 +66,19 @@ export default function NETUGPage(
             />
           )}
 
-          <Container>
+          <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+            <Breadcrumbs
+              path={removeExtension(props.variables.relativePath)}
+              suffix={data.global.breadcrumbSuffix}
+              title={data.userGroupPage.seo?.title}
+            />
+          </Section>
+
+          <Container size="custom" className="pb-8">
             <section className="grid-cols-3 gap-10 md:grid">
               {props.event?.Abstract && (
                 <div className="col-span-2">
-                  <h2 className="text-4xl font-medium text-sswRed">
+                  <h2 className="mt-0 text-4xl font-medium text-sswRed">
                     Event Description
                   </h2>
                   <div className="whitespace-pre-wrap text-lg">
@@ -78,7 +89,7 @@ export default function NETUGPage(
               <div className="col-span-1">
                 {props.speaker && (
                   <>
-                    <h2 className="text-4xl font-medium text-sswRed">
+                    <h2 className="mt-0 text-4xl font-medium text-sswRed">
                       Presenter
                     </h2>
                     <div className="pb-3">
