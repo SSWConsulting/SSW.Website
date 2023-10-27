@@ -94,7 +94,7 @@ const SubmenuItem: React.FC<SubMenuItemDefinition> = (props) => {
     <Link
       href={props.href}
       className={twMerge(
-        "flex items-start gap-x-3 rounded-md bg-white hover:bg-gray-50 focus:outline-none unstyled",
+        "flex items-start gap-x-3 rounded-md bg-white hover:bg-gray-100 focus:outline-none unstyled",
         props.description ? "p-4" : "p-2"
       )}
     >
@@ -108,7 +108,7 @@ const SubmenuItem: React.FC<SubMenuItemDefinition> = (props) => {
           {props.name && props.description ? (
             <>
               <p className="font-bold text-ssw-black">{props.name}</p>
-              <p className="mt-1 text-sm font-normal text-ssw-grey">
+              <p className="mt-1 text-sm font-normal text-ssw-gray">
                 {props.description}
               </p>
             </>

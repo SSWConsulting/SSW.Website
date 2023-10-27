@@ -1,4 +1,53 @@
 {
+  "seo": {
+    "title": "SSW Consulting Services | Over 25 years of experience developing awesome solutions on top of Angular, React, Blazor, .NET, Azure, GitHub, DevOps (was VSTS/TFS), Power Apps, Power Automate, Power BI, SharePoint, Dynamics and SQL Server"
+  },
+  "sidebar": [
+    {
+      "label": "All SSW Services",
+      "tag": "content/consulting/tag/all-ssw-services.json"
+    },
+    {
+      "label": "AI Development",
+      "tag": "content/consulting/tag/ai-development.json"
+    },
+    {
+      "label": "Website Development",
+      "tag": "content/consulting/tag/web-development.json"
+    },
+    {
+      "label": "Mobile Development",
+      "tag": "content/consulting/tag/mobile-development.json"
+    },
+    {
+      "label": "Database Development",
+      "tag": "content/consulting/tag/database-development.json"
+    },
+    {
+      "label": "Platform Development",
+      "tag": "content/consulting/tag/platform-development.json"
+    },
+    {
+      "label": "Design",
+      "tag": "content/consulting/tag/design.json"
+    },
+    {
+      "label": "Content Management Systems (CMS)",
+      "tag": "content/consulting/tag/cms.json"
+    },
+    {
+      "label": "Cloud and Infrastructure",
+      "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+    },
+    {
+      "label": "Video",
+      "tag": "content/consulting/tag/video.json"
+    },
+    {
+      "label": "Other SSW Services",
+      "tag": "content/consulting/tag/consulting.json"
+    }
+  ],
   "categories": [
     {
       "category": "content/consulting/category/development-teams.json",
@@ -178,6 +227,17 @@
     {
       "category": "content/consulting/category/ai-development.json",
       "pages": [
+        {
+          "title": "Chatbots",
+          "description": "Improve customer support with a ChatGPT-powered bot. Cost-effective, customizable, setup in 1 day. Ideal for businesses embracing advanced AI tech.",
+          "logo": "/images/thumbs/awesome-chatbot-logo.png",
+          "page": "content/consulting/chatbots.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/ai-development.json"
+            }
+          ]
+        },
         {
           "title": "Power Automate Process Mining",
           "description": "Process mining uncovers processes in your company that can be effectively automated with artificial intelligence, so you save costs and increase your productivity.",
@@ -873,55 +933,6 @@
           ]
         }
       ]
-    }
-  ],
-  "seo": {
-    "title": "SSW Consulting Services | Over 25 years of experience developing awesome solutions on top of Angular, React, Blazor, .NET, Azure, GitHub, DevOps (was VSTS/TFS), Power Apps, Power Automate, Power BI, SharePoint, Dynamics and SQL Server"
-  },
-  "sidebar": [
-    {
-      "label": "All SSW Services",
-      "tag": "content/consulting/tag/all-ssw-services.json"
-    },
-    {
-      "label": "AI Development",
-      "tag": "content/consulting/tag/ai-development.json"
-    },
-    {
-      "label": "Website Development",
-      "tag": "content/consulting/tag/web-development.json"
-    },
-    {
-      "label": "Mobile Development",
-      "tag": "content/consulting/tag/mobile-development.json"
-    },
-    {
-      "label": "Database Development",
-      "tag": "content/consulting/tag/database-development.json"
-    },
-    {
-      "label": "Platform Development",
-      "tag": "content/consulting/tag/platform-development.json"
-    },
-    {
-      "label": "Design",
-      "tag": "content/consulting/tag/design.json"
-    },
-    {
-      "label": "Content Management Systems (CMS)",
-      "tag": "content/consulting/tag/cms.json"
-    },
-    {
-      "label": "Cloud and Infrastructure",
-      "tag": "content/consulting/tag/cloud-and-infrastructure.json"
-    },
-    {
-      "label": "Video",
-      "tag": "content/consulting/tag/video.json"
-    },
-    {
-      "label": "Other SSW Services",
-      "tag": "content/consulting/tag/consulting.json"
     }
   ]
 }
