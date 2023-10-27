@@ -38,12 +38,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: toko-bifrost/ms-teams-deploy-card@master
-        if: always()
-        with:
-          github-token: ${{ github.token }}
-          webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
-
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
         with:

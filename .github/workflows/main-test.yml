@@ -18,7 +18,7 @@ jobs:
           deploy_url: ${{ 'https://ssw.com.au' }}
       - name: Send failure email for UI tests
         if: ${{ failure() }}
-        uses: ./.github/workflows/template-send-failure-email.yml
+        uses: ./.github/workflows/template-alert-failure.yml
         with:
           subject: SSW Website - UI Tests Failed
           body: |
@@ -27,7 +27,7 @@ jobs:
 
   on-failure:
     name: Send failure email
-    uses: ./.github/workflows/template-send-failure-email.yml
+    uses: ./.github/workflows/template-alert-failure.yml
     with:
       subject: SSW Website - Deployment Failed
       body: |
