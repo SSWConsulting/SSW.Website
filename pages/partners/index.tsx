@@ -21,30 +21,30 @@ export default function PartnersIndex(
     data: props.data,
   });
 
-  const [partnersList, setPartnersList] = useState([]);
+  const [partners, setPartners] = useState(null);
 
   useEffect(() => {
     // extract the data we need from the tina result
     const processedData = processData(data);
-    setPartnersList(processedData.partnersList);
+    setPartners(processedData);
   }, [data]);
 
   return (
     <Layout>
       <SEO seo={props.seo} />
       <Container className="mb-10 flex-1 pt-2">
-        <Breadcrumbs path={"/partners"} suffix="" title={"Partners"} />
-        <h1 className="mb-0 py-0 text-3xl">SSW Products</h1>
-        <h2 className="mb-4 text-md">
-          Used by thousands of customers around the world
-        </h2>
+        <Breadcrumbs path={"/Partners"} suffix="" title={"Partners"} />
+        <h1 className="mb-0 py-0 text-3xl">{partners?.title}</h1>
+        <h2 className="mb-4 text-md">{partners?.subTitle}</h2>
         <div className="flex flex-col md:flex-row">
           <div>
             <div
               ref={gridRef}
               className="grid grid-cols-1 gap-2 lg:grid-cols-2"
             >
-              {partnersList?.map((partner) => <PageCard page={partner} />)}
+              {partners?.partnersList?.map((partner) => (
+                <PageCard page={partner} />
+              ))}
             </div>
           </div>
         </div>
@@ -69,11 +69,13 @@ const PageCard = ({ page }) => {
           )}
         </div>
         <div className="min-w-0 flex-1">
-          <Link href={page.url} className="unstyled" target="_blank">
-            <span className="absolute inset-0" aria-hidden="true" />
-            <h3 className="mb-2 mt-0 text-lg text-sswRed">{page.name}</h3>
-            <p className="text-sm text-black">{page.description}</p>
-          </Link>
+          {page.url && (
+            <Link href={page.url} className="unstyled" target="_blank">
+              <span className="absolute inset-0" aria-hidden="true" />
+              <h3 className="mb-2 mt-0 text-lg text-sswRed">{page.name}</h3>
+              <p className="text-sm text-black">{page.description}</p>
+            </Link>
+          )}
         </div>
       </div>
     </div>
@@ -88,6 +90,8 @@ const processData = (data) => {
   const node = data.partnerIndexConnection.edges[0].node;
 
   return {
+    title: node.title,
+    subTitle: node.subTitle,
     partnersList: node.partnersList,
     seo: node.seo,
   };
@@ -102,7 +106,7 @@ export const getStaticProps = async () => {
 
   const seo = tinaProps.data.partnerIndexConnection.edges[0].node.seo;
   if (seo && !seo.canonical) {
-    seo.canonical = `${globalData.data.global.header.url}/partners`;
+    seo.canonical = `${globalData.data.global.header.url}/Partners`;
   }
 
   return {

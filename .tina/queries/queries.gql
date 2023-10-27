@@ -186,7 +186,7 @@ query userGroupPageContentQuery($relativePath: String!) {
   }
 }
 
-query partnersIndexContentQuery($relativePath: String!) {
+query partnerIndexContentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   partnerIndex(relativePath: $relativePath) {
     ...PartnerIndexParts

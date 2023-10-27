@@ -11,6 +11,9 @@ export const partnerIndexSchema: Collection = {
       create: false,
       delete: false,
     },
+    router: () => {
+      return `/partners`;
+    },
   },
   fields: [
     // @ts-ignore
