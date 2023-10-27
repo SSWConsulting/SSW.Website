@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 import { useTina } from "tinacms/dist/react";
@@ -7,6 +5,7 @@ import { client } from "../../.tina/__generated__/client";
 
 import { InferGetStaticPropsType } from "next";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { PageCard } from "../../components/blocks/pageCards";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
@@ -37,50 +36,19 @@ export default function PartnersIndex(
         <h1 className="mb-0 py-0 text-3xl">{partners?.title}</h1>
         <h2 className="mb-4 text-md">{partners?.subTitle}</h2>
         <div className="flex flex-col md:flex-row">
-          <div>
-            <div
-              ref={gridRef}
-              className="grid grid-cols-1 gap-2 lg:grid-cols-2"
-            >
-              {partners?.partnersList?.map((partner) => (
-                <PageCard page={partner} />
-              ))}
-            </div>
+          <div
+            ref={gridRef}
+            className="grid w-full grid-cols-1 gap-2 lg:grid-cols-2"
+          >
+            {partners?.partnersList?.map((partner) => (
+              <PageCard page={partner} />
+            ))}
           </div>
         </div>
       </Container>
     </Layout>
   );
 }
-
-const PageCard = ({ page }) => {
-  return (
-    <div className="relative bg-white p-3 hover:bg-gray-50">
-      <div className="flex">
-        <div className="shrink-0">
-          {page.logo && (
-            <Image
-              className="mr-4 aspect-square h-14 w-14 border-1 border-gray-100 md:h-28 md:w-28"
-              height={115}
-              width={115}
-              src={page.logo}
-              alt={`${page.title} logo`}
-            />
-          )}
-        </div>
-        <div className="min-w-0 flex-1">
-          {page.url && (
-            <Link href={page.url} className="unstyled" target="_blank">
-              <span className="absolute inset-0" aria-hidden="true" />
-              <h3 className="mb-2 mt-0 text-lg text-sswRed">{page.name}</h3>
-              <p className="text-sm text-black">{page.description}</p>
-            </Link>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-};
 
 const processData = (data) => {
   if (data.partnerIndexConnection.edges.length !== 1) {
