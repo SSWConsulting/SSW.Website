@@ -43,6 +43,9 @@ jobs:
         with:
           github-token: ${{ github.token }}
           webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
+          show-on-start: true
+          show-on-exit: true
+          show-on-failure: true
           timezone: Australia/Sydney
           custom-actions: |
             - text: test here
