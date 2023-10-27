@@ -12,7 +12,7 @@ import { Section } from "../util/section";
 
 const textColorClasses = {
   red: "text-sswRed",
-  grey: "text-gray-500",
+  gray: "text-gray-500",
   default: "",
 };
 
@@ -96,7 +96,7 @@ export const agendaSchema: Template = {
       name: agendaBlockConstant.textColor,
       options: [
         { label: "Red", value: "red" },
-        { label: "Grey", value: "grey" },
+        { label: "Gray", value: "gray" },
         { label: "Default", value: "default" },
       ],
     },
