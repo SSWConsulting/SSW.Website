@@ -185,3 +185,11 @@ query userGroupPageContentQuery($relativePath: String!) {
     ...UserGroupGlobalParts
   }
 }
+
+query partnersIndexContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  partnerIndex(relativePath: $relativePath) {
+    ...PartnerIndexParts
+    __typename
+  }
+}
