@@ -119,6 +119,8 @@ teams:
     permission: push
   - name: sswall
     permission: push
+  - name: ssw-website-maintainers
+    permission: maintain
 
 branches:
   - name: main
