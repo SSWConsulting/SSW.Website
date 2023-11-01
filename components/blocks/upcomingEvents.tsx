@@ -69,6 +69,13 @@ const renderEvent = (e: EventInfo) => {
   const isExternalLink =
     !e.Url.Url.includes("ssw.com.au") || e.Url.Url.includes("/ssw/redirect");
 
+  const isValidImagePath = (imageSrc) => {
+    if (!imageSrc) return false;
+    const imagPath = imageSrc.split("/").pop();
+    const numberOfDots = imagPath.match(/\./g);
+    return numberOfDots.length === 1;
+  };
+
   return (
     <Link
       href={e.Url.Url}
@@ -90,15 +97,17 @@ const renderEvent = (e: EventInfo) => {
             </span>
           )}
         </div>
-        <div className="col-span-1 flex items-center justify-center sm:mr-2 sm:justify-end">
-          <Image
-            className={"rounded-md"}
-            src={e.Thumbnail.Url}
-            alt={`${e.Title} logo`}
-            width={90}
-            height={90}
-          />
-        </div>
+        {isValidImagePath(e.Thumbnail?.Url) && (
+          <div className="col-span-1 flex items-center justify-center sm:mr-2 sm:justify-end">
+            <Image
+              className={"rounded-md"}
+              src={e.Thumbnail.Url}
+              alt={`${e.Title} logo`}
+              width={90}
+              height={90}
+            />
+          </div>
+        )}
       </article>
     </Link>
   );
