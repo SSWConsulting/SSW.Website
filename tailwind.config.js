@@ -293,6 +293,7 @@ module.exports = {
         DEFAULT: {
           css: {
             lineHeight: 1.45,
+            color: theme("colors.sswBlack"),
             h1: {
               fontWeight: "300",
               margin: "1rem 0",
@@ -324,7 +325,6 @@ module.exports = {
             },
             p: {
               marginBottom: "10px",
-              color: theme("colors.sswBlack"),
             },
             hr: {
               margin: "30px 0",
