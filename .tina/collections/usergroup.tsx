@@ -2,6 +2,7 @@ import * as Schemas from "../../components/blocks";
 import { pageBlocks as sectionPageBlocks } from "../../components/usergroup/sections";
 import { seoSchema } from "../../components/util/seo";
 
+import React from "react";
 import type { Collection } from "tinacms";
 
 export const userGroupPageSchema: Collection = {
@@ -24,6 +25,21 @@ export const userGroupPageSchema: Collection = {
       name: "locationPage",
       label: "Location User Group Page",
       fields: [
+        {
+          type: "string",
+          name: "tip",
+          label: "Tip",
+          ui: {
+            component: ({}) => {
+              return (
+                <div>
+                  Please fill out all the required labels before navigating to
+                  another form.
+                </div>
+              );
+            },
+          },
+        },
         // @ts-ignore
         seoSchema,
         {
@@ -147,6 +163,21 @@ export const userGroupPageSchema: Collection = {
       name: "contentPage",
       label: "Content User Group Page",
       fields: [
+        {
+          type: "string",
+          name: "tip",
+          label: "Tip",
+          ui: {
+            component: ({}) => {
+              return (
+                <div>
+                  Please fill out all the required labels before navigating to
+                  another form.
+                </div>
+              );
+            },
+          },
+        },
         // @ts-ignore
         seoSchema,
         {

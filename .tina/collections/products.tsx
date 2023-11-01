@@ -1,3 +1,4 @@
+import React from "react";
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
@@ -67,6 +68,21 @@ export const productsSchema: Collection = {
     },
   },
   fields: [
+    {
+      type: "string",
+      name: "tip",
+      label: "Tip",
+      ui: {
+        component: ({}) => {
+          return (
+            <div>
+              Please fill out all the required labels before navigating to
+              another form.
+            </div>
+          );
+        },
+      },
+    },
     // @ts-ignore
     seoSchema,
     {

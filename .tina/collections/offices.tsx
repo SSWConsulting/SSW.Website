@@ -1,5 +1,6 @@
 import type { Collection } from "tinacms";
 
+import React from "react";
 import * as Schemas from "../../components/blocks";
 import { sswCountries } from "../../components/util/constants/country";
 import { seoSchema } from "../../components/util/seo";
@@ -67,6 +68,21 @@ export const officeSchema: Collection = {
     },
   },
   fields: [
+    {
+      type: "string",
+      name: "tip",
+      label: "Tip",
+      ui: {
+        component: ({}) => {
+          return (
+            <div>
+              Please fill out all the required labels before navigating to
+              another form.
+            </div>
+          );
+        },
+      },
+    },
     // @ts-ignore
     seoSchema,
     {
