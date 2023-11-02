@@ -54,7 +54,7 @@ export const UpcomingEvents = ({ data }) => {
         <div className="mt-3 flex flex-row-reverse justify-center sm:justify-start">
           {/* TODO: Update link after implement this page */}
           <Link
-            href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all"
+            href="/events?tech=all&type=all"
             className="unstyled rounded bg-sswRed px-3 py-2 text-xs font-normal text-white hover:bg-sswDarkRed"
           >
             See more events
@@ -68,6 +68,13 @@ export const UpcomingEvents = ({ data }) => {
 const renderEvent = (e: EventInfo) => {
   const isExternalLink =
     !e.Url.Url.includes("ssw.com.au") || e.Url.Url.includes("/ssw/redirect");
+
+  const isValidImagePath = (imageSrc) => {
+    if (!imageSrc) return false;
+    const imagPath = imageSrc.split("/").pop();
+    const numberOfDots = imagPath.match(/\./g);
+    return numberOfDots.length === 1;
+  };
 
   return (
     <Link
@@ -90,15 +97,17 @@ const renderEvent = (e: EventInfo) => {
             </span>
           )}
         </div>
-        <div className="col-span-1 flex items-center justify-center sm:mr-2 sm:justify-end">
-          <Image
-            className={"rounded-md"}
-            src={e.Thumbnail.Url}
-            alt={`${e.Title} logo`}
-            width={90}
-            height={90}
-          />
-        </div>
+        {isValidImagePath(e.Thumbnail?.Url) && (
+          <div className="col-span-1 flex items-center justify-center sm:mr-2 sm:justify-end">
+            <Image
+              className={"rounded-md"}
+              src={e.Thumbnail.Url}
+              alt={`${e.Title} logo`}
+              width={90}
+              height={90}
+            />
+          </div>
+        )}
       </article>
     </Link>
   );

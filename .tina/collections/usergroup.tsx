@@ -154,6 +154,7 @@ export const userGroupPageSchema: Collection = {
           name: "_body",
           label: "Body",
           isBody: true,
+          templates: [...Schemas.pageBlocks],
         },
       ],
     },
