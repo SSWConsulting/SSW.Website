@@ -58,4 +58,4 @@ jobs:
     needs: deploy-to-prod
     uses: ./.github/workflows/template-ui-tests.yml
     with:
-      deploy_url: ${{ needs.deploy-to-prod.url || 'https://ssw.com.au' }}
+      deploy_url: ${{ needs.deploy.outputs.url || 'https://ssw.com.au' }}
