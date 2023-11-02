@@ -31,6 +31,8 @@ jobs:
     permissions:
       id-token: write
       contents: read
+    outputs:
+      url: ${{ steps.deploy.outputs.url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -58,4 +60,4 @@ jobs:
     needs: deploy-to-prod
     uses: ./.github/workflows/template-ui-tests.yml
     with:
-      deploy_url: ${{ needs.deploy-to-prod.url }}
+      deploy_url: ${{ needs.deploy-to-prod.outputs.url || 'https://ssw.com.au' }}
