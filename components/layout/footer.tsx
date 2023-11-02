@@ -72,7 +72,10 @@ const DeploymentInfo = () => {
   return (
     <div className="text-center sm:text-left">
       This website is under{" "}
-      <Link href="https://www.ssw.com.au/rules/rules-to-better-websites-deployment">
+      <Link
+        href="https://www.ssw.com.au/rules/rules-to-better-websites-deployment"
+        prefetch={false}
+      >
         CONSTANT CONTINUOUS DEPLOYMENT
       </Link>
       .&nbsp;
@@ -86,6 +89,7 @@ const SiteInfo = () => (
     <Link
       // TODO: Implementation
       href="https://www.ssw.com.au/ssw/MenuMap.aspx"
+      prefetch={false}
     >
       SITEMAP
     </Link>
@@ -93,6 +97,7 @@ const SiteInfo = () => (
     <Link
       // TODO: Implementation
       href="https://www.ssw.com.au/ssw/HealthCheck"
+      prefetch={false}
     >
       {/* TODO: refactor with next/image */}
       HEALTH CHECK
