@@ -97,6 +97,12 @@ syncyarnlock -s -k
 - <http://localhost:3000/exit-admin> : log out of Tina Cloud
 - <http://localhost:4001/altair/> : GraphQL playground to test queries and browse the API documentation
 
+### UI Testing on local
+
+- 1 Make sure you have `CREATE_LEAD_ENDPOINT` environment variable in your `.env` - [Follow steps to setup](https://github.com/SSWConsulting/SSW.Website/wiki/Accessing-the-Third%E2%80%90Party-APIs-Locally)
+
+- 2 Run `yarn playwright test --ui` in your terminal and make sure your local instance is running in the background.
+
 ## Pull Requests
 
 Each Pull Request will be deployed to its own staging environment, the URL to the environment is available in the PR thread.

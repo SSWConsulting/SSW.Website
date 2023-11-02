@@ -1,4 +1,3 @@
-import { FC } from "react";
 import type { Template } from "tinacms";
 
 interface GoogleMapsWrapperProps {
@@ -7,7 +6,7 @@ interface GoogleMapsWrapperProps {
   embedHeight: string;
 }
 
-export const GoogleMapsWrapper: FC<GoogleMapsWrapperProps> = (props) => (
+export const GoogleMapsWrapper = (props: GoogleMapsWrapperProps) => (
   <>
     {props.embedUrl && (
       <iframe

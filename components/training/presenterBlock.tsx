@@ -88,7 +88,7 @@ const PresenterCard = ({ presenter, schema, index }) => {
         {presenter?.presenter?.name}
       </a>
       <div
-        className="mt-2 text-sm text-gray-900"
+        className="mt-2 text-sm text-ssw-black"
         data-tina-field={tinaField(
           schema[index].presenter?.presenter,
           presenterSchemaConstants.about

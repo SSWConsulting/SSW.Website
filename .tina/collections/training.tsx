@@ -6,7 +6,7 @@ import { seoSchema } from "../../components/util/seo";
 import { videoCardSchema } from "../../components/util/videoCards";
 
 export const trainingSchema: Collection = {
-  label: "Training Pages",
+  label: "Training - Pages",
   name: "training",
   format: "mdx",
   path: "content/training",

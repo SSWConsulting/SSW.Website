@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import { Template } from "tinacms";
-import { tinaField } from "tinacms/dist/react";
+import type { Template } from "tinacms";
 import { Badge } from "./badge";
 import { BadgesLayout } from "./constants";
 
-import { TinaMarkdown } from "tinacms/dist/rich-text";
-import type { BadgeProps } from "./badge";
+import type { BadgeType } from "./badge";
 
 export interface Layout {
   size: number;
@@ -20,7 +18,7 @@ const FloatingBadges = ({
   layouts,
 }: {
   random: boolean;
-  badges: BadgeProps[];
+  badges: BadgeType[];
   layouts: Layout[];
 }) => {
   const [shuffleBadges, setShuffleBadges] = useState([]);
@@ -45,18 +43,24 @@ const FloatingBadges = ({
   );
 };
 
-export const LatestTech = ({ data }) => {
+type LatestTechProps = {
+  data?: {
+    badges?: {
+      latestTechBadges?: {
+        badgesList?: BadgeType[];
+        random?: boolean;
+      };
+    };
+  };
+};
+
+export const LatestTech = ({ data }: LatestTechProps) => {
+  const badges = data?.badges?.latestTechBadges;
   return (
-    <div className="relative h-70 overflow-hidden bg-gray-50 p-6">
-      <span
-        className="relative z-10 font-helvetica text-3xl font-medium text-sswRed"
-        data-tina-field={tinaField(data, "content")}
-      >
-        <TinaMarkdown content={data?.content} />
-      </span>
+    <div className="relative h-56 overflow-hidden px-6">
       <FloatingBadges
-        random={data?.badges?.random ?? false}
-        badges={data?.badges?.badgesList ?? []}
+        random={badges?.random ?? false}
+        badges={badges?.badgesList ?? []}
         layouts={BadgesLayout}
       />
     </div>
@@ -68,15 +72,9 @@ export const latestTechSchema: Template = {
   label: "Latest Tech",
   fields: [
     {
-      type: "rich-text",
-      label: "Content",
-      name: "content",
-    },
-    {
       type: "reference",
-      description: `Select a config file including a set of badges that indicate the consulting services SSW provided
-        (Create new configs in Collection "Technology Badges")`,
-      collections: ["technologyBadges"],
+      description: "Select a config file including a set of badges",
+      collections: ["userGroupGlobal"],
       label: "Badges",
       name: "badges",
     },

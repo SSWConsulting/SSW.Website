@@ -4,7 +4,7 @@ import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 
 export const pagesSchema: Collection = {
-  label: "Pages",
+  label: "Base - Pages",
   name: "page",
   format: "mdx",
   path: "content/pages",

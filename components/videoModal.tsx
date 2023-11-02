@@ -26,6 +26,7 @@ const VimeoEmbed = dynamic(
 
 type VideoModalProps = {
   children?: React.ReactNode;
+  className?: string;
   url: string;
   overflow?: boolean;
 };
@@ -34,6 +35,7 @@ export const VideoModal = ({
   children = null,
   url,
   overflow,
+  className,
 }: VideoModalProps) => {
   const [videoId, setVideoId] = useState<string>();
   const [clicked, setClicked] = useState<boolean>(false);
@@ -69,7 +71,8 @@ export const VideoModal = ({
       <div
         className={classNames(
           "rounded",
-          overflow ? "clear-both" : "overflow-hidden"
+          overflow ? "clear-both" : "overflow-hidden",
+          className
         )}
       >
         <div className="relative mx-auto aspect-video h-full w-full">

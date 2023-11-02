@@ -10,7 +10,7 @@ export const isEmail = (email: string): boolean => {
 };
 
 export const spanWhitelist = {
-  whiteList: { span: ["data-tina-field", "class"] },
+  whiteList: { span: ["data-tina-field", "class"], br: [] },
 };
 
 export const sanitiseXSS = (input: string, options?: IFilterXSSOptions) => {

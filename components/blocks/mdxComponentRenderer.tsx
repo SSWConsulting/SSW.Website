@@ -16,6 +16,7 @@ import { ClientLogos } from "./clientLogos";
 import { ContentCard } from "./contentCard";
 import { CustomImage } from "./customImage";
 import { DynamicColumns } from "./dynamicColumns";
+import { EventLink, EventLinkProps } from "./eventLink";
 import { FixedColumns } from "./fixedColumns";
 import { FixedTabsLayout } from "./fixedTabsLayout";
 import { Flag } from "./flag";
@@ -23,6 +24,7 @@ import { GoogleMapsWrapper } from "./googleMapsWrapper";
 import { NewslettersTable } from "./newslettersTable";
 import { RecurringEvent } from "./recurringEvent";
 import { TableLayout, TableLayoutProps } from "./tableLayout";
+import { TestimonialsList } from "./testimonialsList";
 import { UpcomingEvents } from "./upcomingEvents";
 import { VerticalImageLayout } from "./verticalImageLayout";
 import { VerticalListItem } from "./verticalListItem";
@@ -166,6 +168,10 @@ export const componentRenderer: Components<{
     content: TinaMarkdownContent;
   };
   MicrosoftPanel: Record<string, never>;
+  TestimonialsList: {
+    hideInternshipTestimonials: boolean;
+  };
+  EventLink: EventLinkProps;
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -193,4 +199,6 @@ export const componentRenderer: Components<{
   UtilityButton: (props) => <UtilityButton {...props} />,
   ContentCard: (props) => <ContentCard data={props} />,
   MicrosoftPanel: () => <MicrosoftPanel />,
+  TestimonialsList: (props) => <TestimonialsList data={props} />,
+  EventLink: (props) => <EventLink {...props} />,
 };

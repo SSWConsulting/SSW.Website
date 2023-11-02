@@ -49,3 +49,10 @@ export const CITY_MAP: CityMapType = {
     country: "Australia",
   },
 };
+
+export const CITY_TIMEZONES = {
+  sydney: "Australia/Sydney",
+  brisbane: "Australia/Brisbane",
+  melbourne: "Australia/Melbourne",
+  newcastle: "Australia/Sydney",
+} as const;

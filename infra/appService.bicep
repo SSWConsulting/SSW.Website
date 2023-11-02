@@ -109,6 +109,18 @@ var appSettings = [
     name: 'SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID'
     value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/SHAREPOINT-EXTERNAL-PRESENTERS-LIST-ID)'
   }
+  {
+    name: 'RECAPTCHA_BYPASS_SECRET'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/SECRET-KEY-TO-BYPASS-RECAPTCHA)'
+  }
+  {
+    name: 'DYNAMICS_CLIENT_ID'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/DYNAMICS-CLIENT-ID)'
+  }
+  {
+    name: 'DYNAMICS_CLIENT_SECRET'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/DYNAMICS-CLIENT-SECRET)'
+  }
 ]
 
 resource appService 'Microsoft.Web/sites@2022-03-01' = {

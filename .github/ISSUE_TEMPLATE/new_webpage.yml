@@ -7,11 +7,13 @@ body:
       value: |
         @camillars @sethdailyssw
         Fill out the below fields with information about your new page:
-  - type: input
+  - type: textarea
     id: cc
     attributes:
       label: "1. People in the loop:"
-      description: "@ tag the people involved/cc'd"
+      description: "@ tag the people involved/cc'd
+
+      ⚠️ Note: if migrating a page, @ tag the original author. If you don't know, ask Brady, Matt W, Adam, or a [State Manager](https://ssw.crm6.dynamics.com/main.aspx?appid=05daa2a9-8768-446e-b9d3-580c8a6f9b8b&pagetype=search&searchText=state+manager&searchType=0)"
       placeholder: "{{ PERSON THIS TASK IS FROM }}, {{ PERSON YOU ARE GIVING THIS TASK }}"
       value: 
     validations:
@@ -26,9 +28,20 @@ body:
     validations:
       required: true
   - type: input
+    id: CRM
+    attributes:
+      label: "3. CRM Record (only for consulting service pages):"
+      description: "Link the matching [consulting service from CRM](https://ssw.crm6.dynamics.com/main.aspx?appid=05daa2a9-8768-446e-b9d3-580c8a6f9b8b&pagetype=entitylist&etn=ssw_consultingservice&viewid=b400b0b8-363d-404b-bbd5-d56343c21d1f&viewType=1039). If there is no existing one for your page yet, you must create one. Make sure your page has been approved by a [Consulting Service Master](https://ssw.crm6.dynamics.com/main.aspx?appid=05daa2a9-8768-446e-b9d3-580c8a6f9b8b&pagetype=entityrecord&etn=ssw_responsibility&id=6e5f9560-bb52-ee11-be6f-6045bd3df5b0) and put them in the 'Approved by' field.  
+      
+      If you are not requesting a consulting page, write N/A."
+      placeholder: "{{ CONSULTING SERVICE URL FROM CRM }}"
+      value:
+    validations:
+      required: true
+  - type: input
     id: URI
     attributes:
-      label: "3. URI:"
+      label: "4. URI:"
       description: "Details: Concise and including keywords. Use [kebab case](https://www.ssw.com.au/rules/use-dashes-in-urls) (e.g. use-dashes-and-lowercase). 
       
       Length: [As short as possible](https://www.ssw.com.au/rules/create-friendly-short-urls/)"
@@ -39,7 +52,7 @@ body:
   - type: input
     id: title
     attributes:
-      label: "4. Title:"
+      label: "5. Title:"
       description: "Details: Must read well and include keywords (Google-able).
       
       Length: Must be under 60 characters"  
@@ -50,7 +63,7 @@ body:
   - type: textarea
     id: meta
     attributes:
-      label: "5. Meta description:"
+      label: "6. Meta description:"
       description: "Details: For search engines - summary of the page using the important keywords.
       
       Length: under 150 characters. 
@@ -63,7 +76,7 @@ body:
   - type: textarea
     id: related
     attributes:
-      label: "6. Related URLs:"
+      label: "7. Related URLs:"
       description: If applicable, related pages on the SSW website.
       placeholder: "{{ RELATED URLS }}"
       value:
@@ -72,7 +85,7 @@ body:
   - type: textarea
     id: content
     attributes:
-      label: "7. Content:"
+      label: "8. Content:"
       description: "Follow these guidelines:  
 
       

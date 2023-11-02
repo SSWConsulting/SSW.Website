@@ -3,12 +3,13 @@ const plugin = require("tailwindcss/plugin");
 
 /** @type {import("tailwindcss").Config} */
 module.exports = {
-  mode: "jit",
+  // mode: "jit",
   content: [
     "./components/**/*.{js,ts,jsx,tsx}",
     "./content/**/*.mdx",
     "./pages/**/*.{js,ts,jsx,tsx}",
   ],
+  // This needs to be set to `class` or it will use OS settings https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
   darkMode: "class",
   theme: {
     listStyleType: {
@@ -19,29 +20,58 @@ module.exports = {
       none: "none",
     },
     colors: {
-      transparent: "transparent",
+      inherit: "inherit",
       current: "currentColor",
-      black: colors.black,
-      white: colors.white,
+      transparent: "transparent",
+      black: "#000",
+      white: "#fff",
+      slate: colors.slate,
+      zinc: colors.zinc,
+      neutral: colors.neutral,
+      stone: colors.stone,
+      red: colors.red,
+      orange: colors.orange,
+      amber: colors.amber,
+      yellow: colors.yellow,
+      lime: colors.lime,
+      green: colors.green,
+      emerald: colors.emerald,
+      teal: colors.teal,
+      cyan: colors.cyan,
+      sky: colors.sky,
+      blue: colors.blue,
+      indigo: colors.indigo,
+      violet: colors.violet,
+      purple: colors.purple,
+      fuchsia: colors.fuchsia,
+      pink: colors.pink,
+      rose: colors.rose,
       teal: colors.cyan,
       green: colors.emerald,
       red: colors.rose,
-      purple: colors.purple,
-      pink: colors.pink,
-      yellow: colors.yellow,
-      amber: colors.amber,
-      "social-phone": "#b31217",
-      "social-youtube": "#b31217",
-      "social-linkedin": "#0077b5",
-      "social-facebook": "#3b5998",
-      "social-twitter": "#55acee",
-      "social-tiktok": "#000",
-      "social-github": "#2C2C2C",
-      "social-meetup": "#f05664",
+      social: {
+        phone: "#b31217",
+        youtube: "#b31217",
+        linkedin: "#0077b5",
+        facebook: "#3b5998",
+        xtwitter: "#000",
+        tiktok: "#000",
+        github: "#2C2C2C",
+        meetup: "#f05664",
+      },
       sswRed: "#cc4141",
       sswDarkRed: "#8e2c2c",
       sswBlack: "#333333",
       azure: "#007fff",
+      ssw: {
+        red: {
+          DEFAULT: "#cc4141",
+          light: "#d26e6e",
+        },
+        darkRed: "#8e2c2c",
+        black: "#333333",
+        gray: "#797979",
+      },
       gray: {
         25: "#e9e9e9",
         50: "#f9f9f9",
@@ -56,35 +86,6 @@ module.exports = {
         900: "#333333",
         1000: "#1c1b2e",
       },
-      blue: {
-        50: "#DCEEFF",
-        100: "#B4DBFF",
-        200: "#85C5FE",
-        300: "#4EABFE",
-        400: "#2296fe",
-        500: "#0084FF",
-        600: "#0574e4",
-        700: "#0D5DBD",
-        800: "#144696",
-        900: "#1D2C6C",
-        1000: "#241748",
-      },
-      orange: {
-        200: "#EB7752",
-        300: "#EA6C45",
-        400: "#E85C30",
-        500: "#EC4815",
-        600: "#DC4419",
-        700: "#D04017",
-        800: "#C1360F",
-      },
-    },
-    screens: {
-      sm: "600px",
-      md: "900px",
-      lg: "1200px",
-      xl: "1500px",
-      "2xl": "1800px",
     },
     fontSize: {
       xxxs: ".625rem",
@@ -292,6 +293,7 @@ module.exports = {
         DEFAULT: {
           css: {
             lineHeight: 1.45,
+            color: theme("colors.sswBlack"),
             h1: {
               fontWeight: "300",
               margin: "1rem 0",
@@ -300,7 +302,7 @@ module.exports = {
               color: theme("colors.sswBlack"),
             },
             h2: {
-              fontWeight: "300",
+              fontWeight: "500",
               color: theme("colors.sswRed"),
             },
             h3: {
@@ -323,7 +325,6 @@ module.exports = {
             },
             p: {
               marginBottom: "10px",
-              color: theme("colors.sswBlack"),
             },
             hr: {
               margin: "30px 0",
@@ -333,6 +334,7 @@ module.exports = {
               backgroundColor: theme("colors.gray.100"),
               lineHeight: 1.5,
             },
+            "--tw-prose-bullets": "var(--tw-prose-body)",
           },
         },
         consulting: {

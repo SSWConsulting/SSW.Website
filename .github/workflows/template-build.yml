@@ -36,26 +36,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: ".nvmrc"
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        shell: bash
-        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
-
-      - uses: actions/cache@v3
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: |
-            ${{ steps.yarn-cache-dir-path.outputs.dir }}
-            ${{ github.workspace }}/.next/cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
         with:
@@ -85,25 +65,22 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: keyVault - Secrets
-        shell: pwsh
+        uses: theotow/keyvault-secret-azure@v1
         id: KeyVaultSecrets
-        run: |
-          # KV - Secret
-          $GoogleRecaptchaSiteKey = (az keyvault secret show --name Google-Recaptcha-Site-KEY --vault-name ${{ env.KEY_VAULT}} --query value -o tsv)
-          $MICROSOFT_OAUTH_TENANT_ID = (az keyvault secret show --name MICROSOFT-OAUTH-TENANT-ID --vault-name ${{ env.KEY_VAULT }} --query value -o tsv)
-          $MICROSOFT_OAUTH_CLIENT_ID = (az keyvault secret show --name MICROSOFT-OAUTH-CLIENT-ID --vault-name ${{ env.KEY_VAULT }} --query value -o tsv)
-          $MICROSOFT_OAUTH_CLIENT_SECRET = (az keyvault secret show --name MICROSOFT-OAUTH-CLIENT-SECRET --vault-name ${{ env.KEY_VAULT }} --query value -o tsv)
-          $SHAREPOINT_SITE_ID = (az keyvault secret show --name SHAREPOINT-SITE-ID --vault-name ${{ env.KEY_VAULT }} --query value -o tsv)
-          $SHAREPOINT_EVENTS_LIST_ID = (az keyvault secret show --name SHAREPOINT-EVENTS-LIST-ID --vault-name ${{ env.KEY_VAULT }} --query value -o tsv)
-          $SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID = (az keyvault secret show --name SHAREPOINT-EXTERNAL-PRESENTERS-LIST-ID --vault-name ${{ env.KEY_VAULT }} --query value -o tsv)
-          echo "GoogleRecaptchaSiteKey=$GoogleRecaptchaSiteKey" >> $env:GITHUB_OUTPUT
-          echo "MICROSOFT_OAUTH_TENANT_ID=$MICROSOFT_OAUTH_TENANT_ID" >> $env:GITHUB_OUTPUT
-          echo "MICROSOFT_OAUTH_CLIENT_ID=$MICROSOFT_OAUTH_CLIENT_ID" >> $env:GITHUB_OUTPUT
-          echo "MICROSOFT_OAUTH_CLIENT_SECRET=$MICROSOFT_OAUTH_CLIENT_SECRET" >> $env:GITHUB_OUTPUT
-          echo "SHAREPOINT_SITE_ID=$SHAREPOINT_SITE_ID" >> $env:GITHUB_OUTPUT
-          echo "SHAREPOINT_EVENTS_LIST_ID=$SHAREPOINT_EVENTS_LIST_ID" >> $env:GITHUB_OUTPUT
-          echo "SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID=$SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID" >> $env:GITHUB_OUTPUT
-          Write-Host '✅ KV - Secret retrieved'
+        with:
+          key-vault-name: ${{ env.KEY_VAULT }}
+          config: |
+            {
+              "GoogleRecaptchaSiteKey": "Google-Recaptcha-Site-KEY",
+              "MICROSOFT_OAUTH_TENANT_ID": "MICROSOFT-OAUTH-TENANT-ID",
+              "MICROSOFT_OAUTH_CLIENT_ID": "MICROSOFT-OAUTH-CLIENT-ID",
+              "MICROSOFT_OAUTH_CLIENT_SECRET": "MICROSOFT-OAUTH-CLIENT-SECRET",
+              "SHAREPOINT_SITE_ID": "SHAREPOINT-SITE-ID",
+              "SHAREPOINT_EVENTS_LIST_ID": "SHAREPOINT-EVENTS-LIST-ID",
+              "SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID": "SHAREPOINT-EXTERNAL-PRESENTERS-LIST-ID",
+              "DYNAMICS_CLIENT_ID": "DYNAMICS-CLIENT-ID",
+              "DYNAMICS_CLIENT_SECRET": "DYNAMICS-CLIENT-SECRET"
+            }
 
       - name: AppInsight - Connection Strings
         shell: pwsh
@@ -117,44 +94,40 @@ jobs:
           echo "AppInsightConnectionString=$AppInsightConnectionString" >> $env:GITHUB_OUTPUT
           Write-Host '✅ AppInsight - Connection String retrieved'
 
-      - run: yarn install
-
-      - run: yarn build
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-          NEXT_PUBLIC_GOOGLE_GTM_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID }}
-          NEXT_PUBLIC_GOOGLE_ANALYTICS: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS }}
-          NEXT_PUBLIC_GITHUB_RUN_DATE: ${{ steps.date.outputs.date }}
-          NEXT_PUBLIC_GITHUB_RUN_ID: ${{ github.run_id }}
-          NEXT_PUBLIC_GITHUB_RUN_NUMBER: ${{ github.run_number }}
-          NEXT_PUBLIC_GITHUB_REPOSITORY: ${{ github.repository }}
-          NEXT_PUBLIC_HOTJAR_ID: ${{ secrets.NEXT_PUBLIC_HOTJAR_ID }}
-          NEXT_PUBLIC_HOTJAR_SV: ${{ secrets.NEXT_PUBLIC_HOTJAR_SV }}
-          NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
-          NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref || github.ref_name }}
-          NEXT_PUBLIC_ZENDESK_CHAT_KEY: ${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY }}
-          GOOGLE_RECAPTCHA_SITE_KEY: ${{ steps.KeyVaultSecrets.outputs.GoogleRecaptchaSiteKey }}
-          MICROSOFT_OAUTH_TENANT_ID: ${{ steps.KeyVaultSecrets.outputs.MICROSOFT_OAUTH_TENANT_ID }}
-          MICROSOFT_OAUTH_CLIENT_ID: ${{ steps.KeyVaultSecrets.outputs.MICROSOFT_OAUTH_CLIENT_ID }}
-          MICROSOFT_OAUTH_CLIENT_SECRET: ${{ steps.KeyVaultSecrets.outputs.MICROSOFT_OAUTH_CLIENT_SECRET }}
-          SHAREPOINT_SITE_ID: ${{ steps.KeyVaultSecrets.outputs.SHAREPOINT_SITE_ID }}
-          SHAREPOINT_EVENTS_LIST_ID: ${{ steps.KeyVaultSecrets.outputs.SHAREPOINT_EVENTS_LIST_ID }}
-          SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID: ${{ steps.KeyVaultSecrets.outputs.SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID }}
-          KEY_VAULT: ${{ env.KEY_VAULT }}
-          NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING: ${{ steps.AppInsight.outputs.AppInsightConnectionString }}
-          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-          NEXT_PUBLIC_CHATBASE_BOT_ID: ${{ env.NEXT_PUBLIC_CHATBASE_BOT_ID }}
-          SITE_URL: https://www.ssw.com.au
-
       - name: ACR - Login
         run: |
           az acr login --name ${{ env.ACR_LOGIN_SERVER }}
 
       - name: Docker - Build and push
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5
         with:
           context: .
           push: true
+          build-args: |
+            NODE_OPTIONS=--max_old_space_size=8192
+            NEXT_PUBLIC_GOOGLE_GTM_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID }}
+            NEXT_PUBLIC_GOOGLE_ANALYTICS=${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS }}
+            NEXT_PUBLIC_GITHUB_RUN_DATE=${{ steps.date.outputs.date }}
+            NEXT_PUBLIC_GITHUB_RUN_ID=${{ github.run_id }}
+            NEXT_PUBLIC_GITHUB_RUN_NUMBER=${{ github.run_number }}
+            NEXT_PUBLIC_GITHUB_REPOSITORY=${{ github.repository }}
+            NEXT_PUBLIC_HOTJAR_ID=${{ secrets.NEXT_PUBLIC_HOTJAR_ID }}
+            NEXT_PUBLIC_HOTJAR_SV=${{ secrets.NEXT_PUBLIC_HOTJAR_SV }}
+            NEXT_PUBLIC_TINA_CLIENT_ID=${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
+            NEXT_PUBLIC_TINA_BRANCH=${{ github.head_ref || github.ref_name }}
+            NEXT_PUBLIC_ZENDESK_CHAT_KEY=${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY }}
+            GOOGLE_RECAPTCHA_SITE_KEY=${{ env.GoogleRecaptchaSiteKey }}
+            MICROSOFT_OAUTH_TENANT_ID=${{ env.MICROSOFT_OAUTH_TENANT_ID }}
+            MICROSOFT_OAUTH_CLIENT_ID=${{ env.MICROSOFT_OAUTH_CLIENT_ID }}
+            MICROSOFT_OAUTH_CLIENT_SECRET=${{ env.MICROSOFT_OAUTH_CLIENT_SECRET }}
+            SHAREPOINT_SITE_ID=${{ env.SHAREPOINT_SITE_ID }}
+            SHAREPOINT_EVENTS_LIST_ID=${{ env.SHAREPOINT_EVENTS_LIST_ID }}
+            SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID=${{ env.SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID }}
+            KEY_VAULT=${{ env.KEY_VAULT }}
+            NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING=${{ steps.AppInsight.outputs.AppInsightConnectionString }}
+            TINA_TOKEN=${{ secrets.TINA_TOKEN }}
+            NEXT_PUBLIC_CHATBASE_BOT_ID=${{ env.NEXT_PUBLIC_CHATBASE_BOT_ID }}
+            SITE_URL=https://www.ssw.com.au
           tags: |
             ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
             ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}

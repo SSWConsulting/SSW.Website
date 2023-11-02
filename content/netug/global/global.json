@@ -1,0 +1,127 @@
+{
+  "latestTechTitle": "We talk about the latest tech",
+  "latestTechBadges": {
+    "badgesList": [
+      {
+        "name": "Azure",
+        "url": "https://ssw.com.au/consulting/azure",
+        "imgURL": "/images/badges/Azure.png"
+      },
+      {
+        "name": "PowerPlatform",
+        "url": "https://ssw.com.au/consulting/power-platform",
+        "imgURL": "/images/badges/PowerPlatform.png"
+      },
+      {
+        "name": "Angular",
+        "url": "https://ssw.com.au/consulting/angular",
+        "imgURL": "/images/badges/Angular.png"
+      },
+      {
+        "name": "Azure Devops",
+        "url": "https://ssw.com.au/consulting/alm-azure-devops",
+        "imgURL": "/images/badges/Devops.png"
+      },
+      {
+        "name": "React",
+        "url": "https://ssw.com.au/consulting/react",
+        "imgURL": "/images/badges/React.png"
+      },
+      {
+        "name": "Sharepoint",
+        "url": "https://ssw.com.au/consulting/sharepoint",
+        "imgURL": "/images/badges/Sharepoint.png"
+      },
+      {
+        "name": "Blazor",
+        "url": "https://ssw.com.au/consulting/blazor",
+        "imgURL": "/images/badges/Blazor.png"
+      },
+      {
+        "name": "ChatGPT",
+        "url": "https://ssw.com.au/consulting/gpt",
+        "imgURL": "/images/badges/ChatGPT.png"
+      },
+      {
+        "name": "Next.js",
+        "url": "https://ssw.com.au/consulting/nextjs",
+        "imgURL": "/images/badges/Nextjs.svg"
+      },
+      {
+        "name": "VUE",
+        "url": "https://ssw.com.au/consulting/vue",
+        "imgURL": "/images/badges/VUE.png"
+      },
+      {
+        "name": "MAUI",
+        "url": "https://ssw.com.au/consulting/desktop-development",
+        "imgURL": "/images/badges/MAUI.png"
+      }
+    ],
+    "random": false
+  },
+  "videos": [
+    {
+      "link": "https://www.youtube.com/watch?v=dMgj1MdwrRE",
+      "title": "Pick a Side - Clean vs Vertical Slice Architecture | Luke Parker"
+    },
+    {
+      "link": "https://www.youtube.com/watch?v=gZ9VabDU81A",
+      "title": "Rules to Better Chat GPT and Using the Best API Ever | Adam Cogan"
+    },
+    {
+      "link": "https://www.youtube.com/watch?v=K1t73xArqs0",
+      "title": "Beyond Passwords: The Future (and Present) of Authentication | Matt Goldman"
+    }
+  ],
+  "videosButton": {
+    "link": "https://www.youtube.com/watch?v=dMgj1MdwrRE&list=PLpiOR7CBNvlpmhfwQeIVhbqZKxV-do0wY",
+    "text": "Watch more on the SSW TV YouTube channel"
+  },
+  "joinUs": {
+    "link": "https://ssw.com.au/netug/present",
+    "img": "/images/people/ulysses.png"
+  },
+  "technologies": [
+    {
+      "name": "Microsoft",
+      "imageUrl": "/images/logos/microsoft.jpg"
+    },
+    {
+      "name": "Visual Studio",
+      "imageUrl": "/images/logos/visualstudio.jpg"
+    },
+    {
+      "name": "Angular",
+      "imageUrl": "/images/logos/angular.jpg"
+    },
+    {
+      "name": "React",
+      "imageUrl": "/images/logos/react.jpg"
+    },
+    {
+      "name": "SharePoint",
+      "imageUrl": "/images/logos/sharepoint.jpg"
+    },
+    {
+      "name": "Next.js",
+      "imageUrl": "/images/logos/nextjs-logo.png"
+    },
+    {
+      "name": "Power BI",
+      "imageUrl": "/images/logos/powerbi.jpg"
+    },
+    {
+      "name": "Microsoft SQL Server",
+      "imageUrl": "/images/logos/sql.jpg"
+    },
+    {
+      "name": "Micorosft Dynamics 365",
+      "imageUrl": "/images/logos/dynamics.jpg"
+    },
+    {
+      "name": "Vue",
+      "imageUrl": "/images/logos/vue.jpg"
+    }
+  ]
+}

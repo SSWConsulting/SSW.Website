@@ -1,6 +1,6 @@
-import React from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 import { Container } from "../util/container";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
 
@@ -41,7 +41,7 @@ const Logo = () => {
     : "/images/ssw-logo.svg";
 
   return (
-    <h4 className="flex items-center justify-center text-xl">
+    <div className="flex items-center justify-center">
       <Link
         href="/"
         passHref
@@ -58,6 +58,6 @@ const Logo = () => {
       <div className="ml-4 hidden w-24 text-sm font-semibold uppercase leading-4 text-gray-700 md:block">
         Enterprise Software Development
       </div>
-    </h4>
+    </div>
   );
 };

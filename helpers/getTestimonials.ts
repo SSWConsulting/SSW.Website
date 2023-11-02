@@ -1,6 +1,17 @@
+import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import client from "../.tina/__generated__/client";
 
-export const GetTestimonialsByCategories = async (categories: string[]) => {
+export type TestimonialType = {
+  name: string;
+  avatar?: string;
+  rating: number;
+  company?: string;
+  body?: TinaMarkdownContent;
+};
+
+export const getTestimonialsByCategories = async (
+  categories: string[]
+): Promise<TestimonialType[]> => {
   const testimonials = await client.queries.testimonalsQuery({
     categories,
   });

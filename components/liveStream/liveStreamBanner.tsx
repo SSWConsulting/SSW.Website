@@ -39,11 +39,11 @@ export const LiveStreamBanner = ({
 
   const liveText = "Streaming live now.";
   return (
-    <div className="w-full bg-gray-900">
+    <div className="w-full bg-ssw-black">
       <Link className="unstyled" href="/live">
         <div
           className={classNames(
-            "mx-auto max-w-9xl bg-gray-900 bg-right-top bg-no-repeat px-6 py-1 uppercase sm:px-8",
+            "mx-auto max-w-9xl bg-ssw-black bg-right-top bg-no-repeat px-6 py-1 uppercase sm:px-8",
             isLive ? "md:bg-live-banner-live" : "md:bg-live-banner-wait"
           )}
         >

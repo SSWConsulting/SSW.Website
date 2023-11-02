@@ -5,7 +5,7 @@ import { sswCountries } from "../../components/util/constants/country";
 import { seoSchema } from "../../components/util/seo";
 
 export const officeIndexSchema: Collection = {
-  label: "Office - Index",
+  label: "Offices - Index",
   name: "officeIndex",
   path: "content/office/index",
   format: "json",
@@ -57,7 +57,7 @@ export const officeIndexSchema: Collection = {
 };
 
 export const officeSchema: Collection = {
-  label: "Office Pages",
+  label: "Offices - Pages",
   name: "offices",
   format: "mdx",
   path: "content/offices",
@@ -92,11 +92,6 @@ export const officeSchema: Collection = {
         console.log(args);
         return `/offices/${args.addressLocality}`;
       },
-    },
-    {
-      type: "string",
-      name: "url",
-      label: "Url",
     },
     {
       type: "string",
@@ -149,6 +144,12 @@ export const officeSchema: Collection = {
     },
     {
       type: "string",
+      label: "Chapel Link",
+      name: "chapelLink",
+      required: false,
+    },
+    {
+      type: "string",
       name: "hours",
       label: "Hours",
     },
@@ -179,6 +180,23 @@ export const officeSchema: Collection = {
       label: "About Us",
       name: "aboutUs",
       templates: [...Schemas.pageBlocks],
+    },
+    {
+      type: "object",
+      name: "localWebsiteLink",
+      label: "Local Website Link",
+      fields: [
+        {
+          type: "string",
+          name: "title",
+          label: "Title",
+        },
+        {
+          type: "string",
+          name: "url",
+          label: "Url",
+        },
+      ],
     },
     {
       type: "image",

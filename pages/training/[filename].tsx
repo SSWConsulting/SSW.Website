@@ -13,8 +13,8 @@ import { TrainingCarousel } from "../../components/training/trainingHeader";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import VideoCards, { VideoCardProps } from "../../components/util/videoCards";
-import { GetTestimonialsByCategories } from "../../helpers/getTestimonials";
+import VideoCards, { VideoCardType } from "../../components/util/videoCards";
+import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
 
@@ -28,7 +28,7 @@ export default function TrainingPage(
   });
 
   const videoCardProps =
-    data?.training.videos?.videoCards?.map<VideoCardProps>((m) => ({
+    data?.training.videos?.videoCards?.map<VideoCardType>((m) => ({
       title: m.title,
       link: m.link,
     })) || [];
@@ -127,7 +127,7 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.mdx`,
   });
 
-  const testimonialsResult = await GetTestimonialsByCategories(["Internship"]);
+  const testimonialsResult = await getTestimonialsByCategories(["Internship"]);
 
   if (tinaProps.data.training.seo && !tinaProps.data.training.seo.canonical) {
     tinaProps.data.training.seo.canonical = `${tinaProps.data.global.header.url}training/${params.filename}`;

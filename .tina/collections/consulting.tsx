@@ -169,7 +169,7 @@ export const consultingTagSchema: Collection = {
 };
 
 export const consultingSchema: Collection = {
-  label: "Consulting Pages",
+  label: "Consulting - Pages",
   name: "consulting",
   format: "mdx",
   path: "content/consulting",
@@ -238,7 +238,10 @@ export const consultingSchema: Collection = {
       name: "testimonialCategories",
       ui: {
         itemProps(item) {
-          return { label: item.testimonialCategory ?? "Select your testimonial category" }
+          return {
+            label:
+              item.testimonialCategory ?? "Select your testimonial category",
+          };
         },
       },
       list: true,
@@ -383,6 +386,14 @@ export const consultingSchema: Collection = {
               name: "content",
             },
           ],
+          ui: {
+            validate: (value, data) => {
+              // @ts-ignore
+              if (value?.some((item) => !item || !item.type || !item.content)) {
+                return "Please fill out all fields in each item";
+              }
+            },
+          },
         },
       ],
     },

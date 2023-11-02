@@ -1,13 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
+import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { ReadMore } from "./readMore";
 
-export const Organizer = ({ data }) => {
+export type OrganizerType = {
+  name: string;
+  profileImg?: string;
+  profileLink?: string;
+  position?: string;
+  content?: TinaMarkdownContent;
+};
+
+export const Organizer = ({
+  data,
+  stringContent,
+}: {
+  data: OrganizerType;
+  stringContent?: string;
+}) => {
   return (
-    <div className="flex flex-col gap-5 font-helvetica">
-      <span className="text-4xl text-sswRed">Organizer</span>
+    <div className="flex flex-col gap-5">
       <div className="flex flex-row items-center gap-2">
         <div
           className="h-17 w-17 overflow-hidden rounded-full"
@@ -38,8 +53,12 @@ export const Organizer = ({ data }) => {
           </div>
         </div>
       </div>
-      <div data-tina-field={tinaField(data, "content")}>
-        <TinaMarkdown content={data?.content} />
+      <div data-tina-field={tinaField(data, "content")} className="text-lg">
+        {data?.content && <TinaMarkdown content={data?.content} />}
+        {/* Here for the case where the content comes from SharePoint */}
+        {stringContent && (
+          <ReadMore text={stringContent} length={200} className="text-lg" />
+        )}
       </div>
     </div>
   );

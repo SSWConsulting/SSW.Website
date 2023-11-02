@@ -127,7 +127,6 @@ query officeIndexQuery($relativePath: String!) {
     officesIndex {
       office {
         ... on Offices {
-          url
           name
           streetAddress
           suburb
@@ -138,6 +137,10 @@ query officeIndexQuery($relativePath: String!) {
           phone
           days
           thumbnail
+          localWebsiteLink {
+            title
+            url
+          }
         }
       }
     }
@@ -169,5 +172,16 @@ query eventsIndexContentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   eventsIndex(relativePath: $relativePath) {
     ...EventsIndexParts
+  }
+}
+
+query userGroupPageContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  userGroupPage(relativePath: $relativePath) {
+    ...UserGroupPageParts
+    __typename
+  }
+  userGroupGlobal(relativePath: "global.json") {
+    ...UserGroupGlobalParts
   }
 }

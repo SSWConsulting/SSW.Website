@@ -7,17 +7,17 @@ import { SocialIcons, SocialTypes } from "../util/socialIcons";
 
 export const Footer = () => {
   return (
-    <footer className="no-print w-full bg-gray-900 text-xxs text-gray-300">
+    <footer className="no-print w-full bg-ssw-black text-xxs text-gray-300">
       <Container size="xsmall">
+        <SocialIcons
+          className="my-6 justify-center"
+          excludeDesktop={[SocialTypes.phone]}
+          excludeMobile={[SocialTypes.phone, SocialTypes.meetup]}
+        />
+        <hr className="my-4 border-gray-800" />
         <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
           <CopyrightInfo />
         </div>
-        <hr className="my-4 border-gray-800 sm:hidden" />
-        <SocialIcons
-          className="my-6 justify-center sm:hidden"
-          excludeDesktop={Object.values(SocialTypes)}
-          excludeMobile={[SocialTypes.phone, SocialTypes.meetup]}
-        />
         <hr className="my-4 border-gray-800" />
         <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
           <DeploymentInfo />
@@ -35,17 +35,18 @@ const CopyrightInfo = () => {
   return (
     <>
       <div>
-        &copy; Copyright SSW 1990-{new Date().getFullYear()}. All Rights
-        Reserved.
+        &copy; 1990-{new Date().getFullYear()} SSW. All rights reserved.
       </div>
       <div>
         <Link href={chooseIssueURL} target="_blank">
           FEEDBACK TO SSW
         </Link>
         <Divider />
-        <Link href="https://www.ssw.com.au/ssw/Standards/Forms/ConsultingOrderTermsConditions.aspx">
+        <Link href="https://www.ssw.com.au/terms-and-conditions">
           TERMS AND CONDITIONS
         </Link>
+        <Divider />
+        <Link href="https://www.ssw.com.au/privacy">PRIVACY</Link>
       </div>
     </>
   );
@@ -70,8 +71,11 @@ const DeploymentInfo = () => {
 
   return (
     <div className="text-center sm:text-left">
-      Our website is under{" "}
-      <Link href="https://www.ssw.com.au/rules/rules-to-better-websites-deployment">
+      This website is under{" "}
+      <Link
+        href="https://www.ssw.com.au/rules/rules-to-better-websites-deployment"
+        prefetch={false}
+      >
         CONSTANT CONTINUOUS DEPLOYMENT
       </Link>
       .&nbsp;
@@ -85,6 +89,7 @@ const SiteInfo = () => (
     <Link
       // TODO: Implementation
       href="https://www.ssw.com.au/ssw/MenuMap.aspx"
+      prefetch={false}
     >
       SITEMAP
     </Link>
@@ -92,6 +97,7 @@ const SiteInfo = () => (
     <Link
       // TODO: Implementation
       href="https://www.ssw.com.au/ssw/HealthCheck"
+      prefetch={false}
     >
       {/* TODO: refactor with next/image */}
       HEALTH CHECK

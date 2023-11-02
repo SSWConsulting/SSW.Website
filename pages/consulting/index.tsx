@@ -2,7 +2,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { MdLiveHelp } from "react-icons/md";
 import { useEffectOnce, useHover } from "usehooks-ts";
@@ -172,14 +172,21 @@ const Tag = ({ label, tag, selectedTag, setSelectedTag }) => {
 };
 
 const Category = ({ tinaData, category, selectedTag, index }) => {
-  const pages = category.pages.map((page) => {
-    return {
-      ...page,
-      isVisible: page.tags.includes(selectedTag),
-    };
-  });
+  const pages = useMemo(
+    () =>
+      category.pages.map((page) => {
+        return {
+          ...page,
+          isVisible: page.tags.includes(selectedTag),
+        };
+      }),
+    [category, selectedTag]
+  );
 
-  const categoryVisible = pages.some((page) => page.isVisible);
+  const categoryVisible = useMemo(
+    () => pages.some((page) => page.isVisible),
+    [pages]
+  );
 
   const tinaCategory = tinaData.categories[index];
 
@@ -267,7 +274,9 @@ const processData = (data) => {
             title: p.title,
             description: p.description,
             logo: p.logo,
-            tags: [allServices, ...p.tags.map((t) => t.tag.name)],
+            tags: p.tags
+              ? [allServices, ...p.tags.map((t) => t.tag?.name)]
+              : [allServices],
           };
         }),
       };

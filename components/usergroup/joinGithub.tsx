@@ -1,11 +1,25 @@
+import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 
-export const JoinGithub = ({ data }) => {
+export type JoinGithubProps = {
+  data?: {
+    title?: string;
+    link?: string;
+  };
+  className?: string;
+};
+
+export const JoinGithub = ({ data, className }: JoinGithubProps) => {
   return (
-    <div className="flex flex-col items-center justify-center gap-y-3 rounded-xl bg-gray-900 bg-arcBackground bg-bottom bg-no-repeat px-11 py-5 text-center font-helvetica">
+    <div
+      className={classNames(
+        "flex flex-col items-center justify-center gap-y-3 rounded-xl bg-ssw-black bg-arcBackground bg-bottom bg-no-repeat px-11 py-5 text-center",
+        className
+      )}
+    >
       <Image
         src={"/images/badges/Github-Badge.svg"}
         alt="github image"

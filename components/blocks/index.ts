@@ -25,6 +25,7 @@ import { contentBlockSchema } from "./content";
 import { contentCardBlockSchema } from "./contentCard";
 import { customImageBlockSchema } from "./customImage";
 import { dynamicColumnsSchema } from "./dynamicColumns";
+import { eventLinkSchema } from "./eventLink";
 import { fixedColumnsSchema } from "./fixedColumns";
 import { fixedTabsLayoutSchema } from "./fixedTabsLayout";
 import { flagSchema } from "./flag";
@@ -36,6 +37,7 @@ import { paymentBlockSchema } from "./payment-block";
 import { recurringEventSchema } from "./recurringEvent";
 import { serviceCardsBlockSchema } from "./serviceCards";
 import { tableBlockSchema } from "./tableLayout";
+import { testimonialsListSchema } from "./testimonialsList";
 import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
@@ -82,6 +84,8 @@ export const pageBlocks: Template[] = [
   joinAsPresenterSchema,
   paymentBlockSchema,
   latestTechSchema,
+  testimonialsListSchema,
+  eventLinkSchema,
 ];
 
 export * from "../bookingButton/bookingButton";
@@ -106,6 +110,7 @@ export * from "./content";
 export * from "./contentCard";
 export * from "./customImage";
 export * from "./dynamicColumns";
+export * from "./eventLink";
 export * from "./fixedColumns";
 export * from "./flag";
 export * from "./googleMapsWrapper";
@@ -114,6 +119,7 @@ export * from "./newslettersTable";
 export * from "./recurringEvent";
 export * from "./serviceCards";
 export * from "./tableLayout";
+export * from "./testimonialsList";
 export * from "./upcomingEvents";
 export * from "./verticalImageLayout";
 export * from "./verticalListItem";

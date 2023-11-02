@@ -2,8 +2,15 @@ import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 
+import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
+
 import { cache } from "../../services/server/cacheService";
 import { getEvents } from "../../services/server/events";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 const CACHE_MINS = 60;
 const CACHE_SECS = CACHE_MINS * 60;
@@ -30,11 +37,13 @@ export default async function handler(
       return;
     }
 
-    const startOfDay = new Date();
-    startOfDay.setHours(0, 0, 0, 0);
+    const startOfDay = dayjs()
+      .tz("Australia/Sydney")
+      .startOf("day")
+      .toISOString();
 
     const odataFilter = `$filter=fields/Enabled ne false \
-      and fields/EndDateTime gt '${startOfDay.toISOString()}'\
+      and fields/EndDateTime gt '${startOfDay}'\
       &$orderby=fields/StartDateTime asc\
       &$top=${topCount}`;
 
@@ -66,13 +75,13 @@ export default async function handler(
         properties.Status = err.response.status;
         properties.FailedSharePointRequest = true;
       }
-
+      console.log("err", err);
       appInsights.defaultClient.trackException({
         exception: err,
         properties,
         severity: appInsights.Contracts.SeverityLevel.Error,
       });
-      res.status(500).json({ message: err.message });
+      res.status(500).json({ message: "SharePoint request failed" });
     }
   } else {
     res.status(405).json({ message: "Unsupported method" });

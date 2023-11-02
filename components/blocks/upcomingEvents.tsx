@@ -54,7 +54,7 @@ export const UpcomingEvents = ({ data }) => {
         <div className="mt-3 flex flex-row-reverse justify-center sm:justify-start">
           {/* TODO: Update link after implement this page */}
           <Link
-            href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all"
+            href="/events?tech=all&type=all"
             className="unstyled rounded bg-sswRed px-3 py-2 text-xs font-normal text-white hover:bg-sswDarkRed"
           >
             See more events
@@ -69,6 +69,13 @@ const renderEvent = (e: EventInfo) => {
   const isExternalLink =
     !e.Url.Url.includes("ssw.com.au") || e.Url.Url.includes("/ssw/redirect");
 
+  const isValidImagePath = (imageSrc) => {
+    if (!imageSrc) return false;
+    const imagPath = imageSrc.split("/").pop();
+    const numberOfDots = imagPath.match(/\./g);
+    return numberOfDots.length === 1;
+  };
+
   return (
     <Link
       href={e.Url.Url}
@@ -76,7 +83,7 @@ const renderEvent = (e: EventInfo) => {
       target={isExternalLink ? "_blank" : "_self"}
       key={e.id}
     >
-      <article className="my-2.5 grid grid-cols-4 rounded border-1 border-gray-300 bg-white p-2 shadow hover:border-sswBlack dark:border-gray-700 dark:bg-gray-800">
+      <article className="my-2.5 grid grid-cols-4 rounded border-1 border-gray-300 bg-white p-2 shadow hover:border-ssw-black dark:border-gray-700 dark:bg-gray-800">
         <div className="col-span-3 justify-center px-3">
           <h2 className="m-0 py-1 text-sm font-bold text-black">{e.Title}</h2>
           <EventsRelativeBox
@@ -90,15 +97,17 @@ const renderEvent = (e: EventInfo) => {
             </span>
           )}
         </div>
-        <div className="col-span-1 flex items-center justify-center sm:mr-2 sm:justify-end">
-          <Image
-            className={"rounded-md"}
-            src={e.Thumbnail.Url}
-            alt={`${e.Title} logo`}
-            width={90}
-            height={90}
-          />
-        </div>
+        {isValidImagePath(e.Thumbnail?.Url) && (
+          <div className="col-span-1 flex items-center justify-center sm:mr-2 sm:justify-end">
+            <Image
+              className={"rounded-md"}
+              src={e.Thumbnail.Url}
+              alt={`${e.Title} logo`}
+              width={90}
+              height={90}
+            />
+          </div>
+        )}
       </article>
     </Link>
   );

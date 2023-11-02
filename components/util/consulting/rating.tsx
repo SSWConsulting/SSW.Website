@@ -5,7 +5,12 @@ import classNames from "classnames";
 import { AiFillStar } from "react-icons/ai";
 import { wrapFieldsWithMeta } from "tinacms";
 
-export const Rating = ({ className, rating }) => {
+type RatingProps = {
+  className?: string;
+  rating: number;
+};
+
+export const Rating = ({ className, rating }: RatingProps) => {
   if (rating < 0) {
     return <></>;
   }
@@ -38,7 +43,7 @@ export const ratingSchema: NumberField = {
     // wrapping our component in wrapFieldsWithMeta renders our label & description.
     component: wrapFieldsWithMeta(({ input, form }) => {
       React.useEffect(() => {
-        if (!isNaN(input.value)) {
+        if (isNaN(input.value)) {
           form.initialize({ ...form.getState().values, rating: -1 });
         }
       }, []);
@@ -60,8 +65,9 @@ export const ratingSchema: NumberField = {
         </div>
       );
     }),
-    validate(value, field) {
-      if (field.required && typeof value !== "number") return "Required";
+    validate(value) {
+      if (typeof value !== "number") return "Rating must be a number";
+      if (value < -1 || value > 5) return "Rating must be between -1 and 5";
     },
   },
 };

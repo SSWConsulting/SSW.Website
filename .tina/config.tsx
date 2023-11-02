@@ -23,10 +23,14 @@ import { pagesSchema } from "./collections/pages";
 import { paymentDetailsSchema } from "./collections/payment-details";
 import { presenterSchema } from "./collections/presenter";
 import { productsIndexSchema, productsSchema } from "./collections/products";
-import { technologiesSchema, technologyBadgesSchema } from "./collections/technologies";
+import { technologiesSchema } from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
 import { trainingSchema } from "./collections/training";
+import {
+  userGroupGlobalSchema,
+  userGroupPageSchema,
+} from "./collections/usergroup";
 import { videoProductionSchema } from "./collections/videoProduction";
 
 const config = defineStaticConfig({
@@ -58,35 +62,36 @@ const config = defineStaticConfig({
   },
   schema: {
     collections: [
-      marketingSchema,
-      globalSchema,
       pagesSchema,
-      consultingIndexSchema,
-      consultingCategorySchema,
-      consultingTagSchema,
-      consultingSchema,
-      videoProductionSchema,
-      testimonialSchema,
-      testimonialCategoriesSchema,
-      technologiesSchema,
-      officeSchema,
-      opportunitiesSchema,
-      employmentSchema,
-      officeIndexSchema,
-      productsIndexSchema,
-      productsSchema,
-      trainingSchema,
-      newsletterSchema,
-      presenterSchema,
-      locationSchema,
-      industrySchema,
+      globalSchema,
+      companyIndexSchema,
       companySchema,
       clientsCategorySchema,
-      eventsSchema,
-      companyIndexSchema,
-      eventsIndexSchema,
       paymentDetailsSchema,
-      technologyBadgesSchema,
+      consultingIndexSchema,
+      consultingSchema,
+      videoProductionSchema,
+      consultingCategorySchema,
+      consultingTagSchema,
+      technologiesSchema,
+      employmentSchema,
+      opportunitiesSchema,
+      eventsIndexSchema,
+      eventsSchema,
+      locationSchema,
+      presenterSchema,
+      industrySchema,
+      marketingSchema,
+      newsletterSchema,
+      officeIndexSchema,
+      officeSchema,
+      productsIndexSchema,
+      productsSchema,
+      testimonialSchema,
+      testimonialCategoriesSchema,
+      trainingSchema,
+      userGroupPageSchema,
+      userGroupGlobalSchema,
     ],
   },
 });

@@ -1,4 +1,53 @@
 {
+  "seo": {
+    "title": "SSW Consulting Services | Over 25 years of experience developing awesome solutions on top of Angular, React, Blazor, .NET, Azure, GitHub, DevOps (was VSTS/TFS), Power Apps, Power Automate, Power BI, SharePoint, Dynamics and SQL Server"
+  },
+  "sidebar": [
+    {
+      "label": "All SSW Services",
+      "tag": "content/consulting/tag/all-ssw-services.json"
+    },
+    {
+      "label": "AI Development",
+      "tag": "content/consulting/tag/ai-development.json"
+    },
+    {
+      "label": "Website Development",
+      "tag": "content/consulting/tag/web-development.json"
+    },
+    {
+      "label": "Mobile Development",
+      "tag": "content/consulting/tag/mobile-development.json"
+    },
+    {
+      "label": "Database Development",
+      "tag": "content/consulting/tag/database-development.json"
+    },
+    {
+      "label": "Platform Development",
+      "tag": "content/consulting/tag/platform-development.json"
+    },
+    {
+      "label": "Design",
+      "tag": "content/consulting/tag/design.json"
+    },
+    {
+      "label": "Content Management Systems (CMS)",
+      "tag": "content/consulting/tag/cms.json"
+    },
+    {
+      "label": "Cloud and Infrastructure",
+      "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+    },
+    {
+      "label": "Video",
+      "tag": "content/consulting/tag/video.json"
+    },
+    {
+      "label": "Other SSW Services",
+      "tag": "content/consulting/tag/consulting.json"
+    }
+  ],
   "categories": [
     {
       "category": "content/consulting/category/development-teams.json",
@@ -10,7 +59,7 @@
           "page": "content/consulting/web-applications.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -20,9 +69,6 @@
           "logo": "/images/thumbs/thumb-mobiles-apps-icon.jpg",
           "page": "content/consulting/mobile-application-development.mdx",
           "tags": [
-            {
-              "tag": "content/consulting/tag/application-development.json"
-            },
             {
               "tag": "content/consulting/tag/mobile-development.json"
             }
@@ -35,38 +81,18 @@
           "page": "content/consulting/angular.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
         {
-          "title": "React ",
+          "title": "React",
           "description": "Easily create interactive UIs with this JavaScript library, maintained by Facebook, Instagram and a large community!",
           "logo": "/images/thumbs/thumb-react.jpg",
           "page": "content/consulting/react.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
-            }
-          ]
-        },
-        {
-          "title": "Vue.js",
-          "description": "Vue.js is a progressive JavaScript framework to build web interfaces and applications.",
-          "logo": "/images/thumbs/thumb-vuejs.jpg",
-          "page": "content/consulting/vue.mdx",
-          "tags": [
-            {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -77,10 +103,29 @@
           "page": "content/consulting/blazor.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
-            },
+              "tag": "content/consulting/tag/web-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Next.js",
+          "description": "Next.js allows you to rapidly build full-stack React applications with server-side rendering and API routes. It's fast, scalable, and SEO-friendly.",
+          "logo": "/images/thumbs/thumb-nextjs.jpg",
+          "page": "content/consulting/nextjs.mdx",
+          "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
+              "tag": "content/consulting/tag/web-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Vue.js",
+          "description": "Vue.js is a progressive JavaScript framework to build web interfaces and applications.",
+          "logo": "/images/thumbs/thumb-vuejs.jpg",
+          "page": "content/consulting/vue.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -94,10 +139,7 @@
               "tag": "content/consulting/tag/mobile-development.json"
             },
             {
-              "tag": "content/consulting/tag/website-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/application-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -109,7 +151,7 @@
           "externalUrl": "https://www.ssw.com.au/consulting/jamstack",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -123,10 +165,7 @@
               "tag": "content/consulting/tag/database-development.json"
             },
             {
-              "tag": "content/consulting/tag/website-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/application-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -148,10 +187,10 @@
           "page": "content/consulting/power-bi.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
+              "tag": "content/consulting/tag/database-development.json"
             },
             {
-              "tag": "content/consulting/tag/database-development.json"
+              "tag": "content/consulting/tag/platform-development.json"
             }
           ]
         },
@@ -165,6 +204,23 @@
               "tag": "content/consulting/tag/database-development.json"
             }
           ]
+        },
+        {
+          "title": ".NET 8",
+          "description": ".NET 8 is the latest LTS (Long Term Support) version of the platform. It provides enterprise functionality and cloud-native development all within a stable ecosystem backed by Microsoft.",
+          "logo": "/images/thumbs/thumb-net-8.jpg",
+          "page": "content/consulting/net-8.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/web-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/mobile-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/ai-development.json"
+            }
+          ]
         }
       ]
     },
@@ -172,11 +228,22 @@
       "category": "content/consulting/category/ai-development.json",
       "pages": [
         {
+          "title": "Chatbots",
+          "description": "Improve customer support with a ChatGPT-powered bot. Cost-effective, customizable, setup in 1 day. Ideal for businesses embracing advanced AI tech.",
+          "logo": "/images/thumbs/awesome-chatbot-logo.png",
+          "page": "content/consulting/chatbots.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/ai-development.json"
+            }
+          ]
+        },
+        {
           "title": "Power Automate Process Mining",
           "description": "Process mining uncovers processes in your company that can be effectively automated with artificial intelligence, so you save costs and increase your productivity.",
           "logo": "/images/thumbs/thumb-power-automate-icon.jpg",
           "page": "content/consulting/process-mining.mdx",
-           "tags": [
+          "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"
             }
@@ -211,10 +278,7 @@
           "page": "content/consulting/azure.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -225,10 +289,7 @@
           "page": "content/consulting/bots.mdx",
           "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         }
@@ -272,7 +333,7 @@
               "tag": "content/consulting/tag/platform-development.json"
             },
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -292,6 +353,17 @@
           "description": "The Office you know plus extra tools will help you work better together, all based on the cloud.",
           "logo": "/images/thumbs/thumb-microsoft-365-2023.png",
           "page": "content/consulting/microsoft-365.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/platform-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Microsoft Fabric",
+          "description": "Microsoft Fabric reshape how everyone accesses, manages, and acts on data and insights by connecting every data source and analytics service together - on a single, AI-powered platform.",
+          "logo": "/images/thumbs/268349809-5bd00274-c06b-4db8-b949-8c205aa8ebb7.png",
+          "page": "content/consulting/fabric.mdx",
           "tags": [
             {
               "tag": "content/consulting/tag/platform-development.json"
@@ -485,7 +557,7 @@
           "description": "We believe that everyone should have access to expert advice. SSW provides high quality hands-on training for your team.",
           "logo": "/images/thumbs/thumb-customtraining-icon.jpg",
           "page": "content/consulting/access-database-upsizing.mdx",
-          "externalUrl": "https://www.ssw.com.au/ssw/Events/Training/Training-Options.aspx",
+          "externalUrl": "https://www.ssw.com.au/events/customized-courses",
           "tags": [
             {
               "tag": "content/consulting/tag/consulting.json"
@@ -549,16 +621,13 @@
           "externalUrl": "https://www.ssw.com.au/ssw/Consulting/Product-Design.aspx",
           "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
               "tag": "content/consulting/tag/mobile-development.json"
             },
             {
               "tag": "content/consulting/tag/design.json"
             },
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -570,16 +639,13 @@
           "externalUrl": "",
           "tags": [
             {
-              "tag": "content/consulting/tag/application-development.json"
-            },
-            {
               "tag": "content/consulting/tag/mobile-development.json"
             },
             {
               "tag": "content/consulting/tag/design.json"
             },
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             }
           ]
         },
@@ -641,7 +707,7 @@
           "externalUrl": "",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -656,7 +722,7 @@
           "externalUrl": "",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -671,7 +737,7 @@
           "externalUrl": "",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -686,7 +752,7 @@
           "externalUrl": "",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -701,7 +767,7 @@
           "externalUrl": "",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -716,7 +782,7 @@
           "externalUrl": "",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -731,7 +797,7 @@
           "externalUrl": "",
           "tags": [
             {
-              "tag": "content/consulting/tag/website-development.json"
+              "tag": "content/consulting/tag/web-development.json"
             },
             {
               "tag": "content/consulting/tag/cms.json"
@@ -867,59 +933,6 @@
           ]
         }
       ]
-    }
-  ],
-  "seo": {
-    "title": "SSW Consulting Services | Over 25 years of experience developing awesome solutions on top of Angular, React, Blazor, .NET, Azure, GitHub, DevOps (was VSTS/TFS), Power Apps, Power Automate, Power BI, SharePoint, Dynamics and SQL Server"
-  },
-  "sidebar": [
-    {
-      "label": "All SSW Services",
-      "tag": "content/consulting/tag/all-ssw-services.json"
-    },
-    {
-      "label": "AI Development",
-      "tag": "content/consulting/tag/ai-development.json"
-    },
-    {
-      "label": "Website Development",
-      "tag": "content/consulting/tag/website-development.json"
-    },
-    {
-      "label": "Application Development",
-      "tag": "content/consulting/tag/application-development.json"
-    },
-    {
-      "label": "Mobile Development",
-      "tag": "content/consulting/tag/mobile-development.json"
-    },
-    {
-      "label": "Database Development",
-      "tag": "content/consulting/tag/database-development.json"
-    },
-    {
-      "label": "Platform Development",
-      "tag": "content/consulting/tag/platform-development.json"
-    },
-    {
-      "label": "Design",
-      "tag": "content/consulting/tag/design.json"
-    },
-    {
-      "label": "Content Management Systems (CMS)",
-      "tag": "content/consulting/tag/cms.json"
-    },
-    {
-      "label": "Cloud and Infrastructure",
-      "tag": "content/consulting/tag/cloud-and-infrastructure.json"
-    },
-    {
-      "label": "Video",
-      "tag": "content/consulting/tag/video.json"
-    },
-    {
-      "label": "Other SSW Services",
-      "tag": "content/consulting/tag/consulting.json"
     }
   ]
 }

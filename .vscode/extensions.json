@@ -1,8 +1,10 @@
 {
-	"recommendations": [
-		"bradlc.vscode-tailwindcss",
-		"esbenp.prettier-vscode",
-		"graphql.vscode-graphql",
-		"dbaeumer.vscode-eslint"
-	]
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "graphql.vscode-graphql",
+    "dbaeumer.vscode-eslint",
+    "ms-playwright.playwright",
+    "arcanis.vscode-zipfs"
+  ]
 }

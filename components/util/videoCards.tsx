@@ -5,16 +5,29 @@ import Button from "../button/button";
 import { VideoModal } from "../videoModal";
 import { Container } from "./container";
 import { Section } from "./section";
+import classNames from "classnames";
 
-export type VideoCardProps = {
-  link: string;
-  title: string;
+export type VideoCardType = {
+  title?: string;
+  link?: string;
 };
 
-const VideoCard: FC<VideoCardProps> = ({ link, title }) => {
+export type VideoCardProps = {
+  theme: "light" | "dark";
+  "data-tina-field"?: string;
+} & VideoCardType;
+
+export const VideoCard: FC<VideoCardProps> = ({ link, title, theme }) => {
   return (
-    <VideoModal url={link}>
-      <div className="flex h-full items-center justify-between bg-white p-5">
+    <VideoModal
+      url={link}
+      className={theme === "light" && "rounded-sm border-1 border-gray-200"}
+    >
+      <div
+        className={classNames(
+          "flex h-full items-center justify-between bg-white p-5"
+        )}
+      >
         <span className="w-3/4 text-left text-lg font-bold">{title}</span>
         <FaPlayCircle className="text-sswRed" size={40} />
       </div>
@@ -22,28 +35,58 @@ const VideoCard: FC<VideoCardProps> = ({ link, title }) => {
   );
 };
 
-const VideoCards: FC<{
-  cardProps: VideoCardProps[];
+type VideoCardsProps = {
+  cardProps: VideoCardType[];
   channelLink: string;
   defaultChannelLink: string;
-}> = ({ cardProps, channelLink, defaultChannelLink }) => {
+  theme?: "light" | "dark";
+  className?: string;
+};
+
+const VideoCards = ({
+  cardProps,
+  channelLink,
+  defaultChannelLink,
+  theme,
+  className,
+}: VideoCardsProps) => {
   if (cardProps.length == 0) return null;
 
-  const cards = cardProps.map((p, i) => <VideoCard key={i} {...p} />);
+  const cards = cardProps.map((p, i) => (
+    <VideoCard key={i} theme={theme} {...p} />
+  ));
+
+  theme ??= "dark";
 
   return (
-    <Section className="bg-polygons bg-cover bg-no-repeat py-10">
+    <Section
+      className={classNames(
+        "py-10",
+        theme === "light" ? "bg-white" : "bg-polygons bg-cover bg-no-repeat",
+        className
+      )}
+    >
       <Container size="default">
         <div className="flex flex-col items-center">
           <div className="mb-15 flex flex-col items-center">
             <div className="mb-7 items-center sm:mb-3 ">
               <h1 className="my-0 flex flex-col items-center py-0 text-center md:flex-row">
-                <span className="text-4xl text-white">
-                  <span className="text-sswRed">Popular</span> videos from
+                <span
+                  className={classNames(
+                    "text-4xl",
+                    theme === "light" ? "text-black" : "text-white"
+                  )}
+                >
+                  <span className="text-sswRed">Popular</span> videos from{" "}
                 </span>
                 <Image
                   className="mt-2 md:ml-2 md:mt-0"
-                  src={"/images/sswtv-logo.svg"}
+                  src={
+                    theme === "light"
+                      ? "/images/sswtv_logo.png"
+                      : "/images/sswtv-logo.svg"
+                  }
+                  color={"black"}
                   alt={"SSW TV"}
                   height={50}
                   width={200}
