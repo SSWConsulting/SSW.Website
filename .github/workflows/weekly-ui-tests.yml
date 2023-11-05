@@ -59,7 +59,7 @@ jobs:
           key-vault-name: ${{ env.KEY_VAULT }}
           config: |
             {
-              "RECAPTCHA_BYPASS_SECRET": "SECRET-KEY-TO-BYPASS-RECAPTCHA",
+              "RECAPTCHA_BYPASS_SECRET": "SECRET-KEY-TO-BYPASS-RECAPTCHA"
             }
 
       - name: Install dependencies
