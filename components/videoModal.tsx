@@ -31,6 +31,12 @@ type VideoModalProps = {
   overflow?: boolean;
 };
 
+const getVimeoData = async (id: string) => {
+  const videoData = await fetch(`https://vimeo.com/api/v2/video/${id}.json`);
+  const video = await videoData.json();
+  return video;
+};
+
 export const VideoModal = ({
   children = null,
   url,
@@ -45,14 +51,6 @@ export const VideoModal = ({
   const isVimeo = MATCH_URL_VIMEO.test(url);
 
   useEffect(() => {
-    const getVimeoData = async (id: string) => {
-      const videoData = await fetch(
-        `https://vimeo.com/api/v2/video/${id}.json`
-      );
-      const video = await videoData.json();
-      return video;
-    };
-
     if (isYouTube) {
       const id = getYouTubeId(url);
       setVideoId(id);
@@ -63,8 +61,11 @@ export const VideoModal = ({
       getVimeoData(id).then((res) => {
         setImageSrc(res[0].thumbnail_large);
       });
+    } else {
+      setVideoId("");
+      setImageSrc("");
     }
-  }, []);
+  }, [url]);
 
   return (
     <div>
