@@ -6,9 +6,9 @@ on:
   schedule:
     # Monday at 9 PM UTC ~> 7 AM AEST - https://cron.help/#0_21_*_*_SUN
     - cron: "0 21 * * SUN"
-  #pull_request:
-  #  branches:
-  #    - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       HOST_URL:
