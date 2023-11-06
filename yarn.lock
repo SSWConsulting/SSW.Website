@@ -2956,12 +2956,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/bundle-analyzer@npm:^13.4.19":
-  version: 13.5.6
-  resolution: "@next/bundle-analyzer@npm:13.5.6"
+"@next/bundle-analyzer@npm:^14.0.1":
+  version: 14.0.1
+  resolution: "@next/bundle-analyzer@npm:14.0.1"
   dependencies:
     webpack-bundle-analyzer: 4.7.0
-  checksum: 4308abc7f6ad35e3f3687af998313ca57749c08215bb1f2f0f2af1551badb8427800b462da408ef8d3dc60a51d547b9d175e7eacf297a5f8f7383441a926d453
+  checksum: 4274b7999641d5f1886bd3583f0da22aee33c95497e41b55e980f37ca3b7325d602dd30a8dc63b88b8c4b58863eea90766f7216edb8d187f131e38ef32c716ee
   languageName: node
   linkType: hard
 
@@ -4513,7 +4513,7 @@ __metadata:
     "@heroicons/react": ^2.0.18
     "@microsoft/applicationinsights-react-js": ^17.0.2
     "@microsoft/applicationinsights-web": 3.0.3
-    "@next/bundle-analyzer": ^13.4.19
+    "@next/bundle-analyzer": ^14.0.1
     "@next/eslint-plugin-next": ^13.5.4
     "@playwright/test": ^1.38.1
     "@svgr/webpack": ^8.1.0
