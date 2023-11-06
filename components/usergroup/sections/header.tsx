@@ -61,18 +61,33 @@ export const UserGroupHeader = ({
       )}
     >
       <Container
-        className="flex-row justify-between py-0 text-white md:flex"
+        className={classNames(
+          "flex-row  py-0 text-white md:flex",
+          presenter.image
+            ? "justify-between max-md:text-center"
+            : "text-center justify-center"
+        )}
         size="custom"
       >
         <div className="flex max-w-3xl flex-col pb-10">
-          <div className="flex flex-row items-center pt-10 text-lg">
+          <div
+            className={classNames(
+              "flex flex-row items-center pt-10 text-lg",
+              !presenter.image ? "justify-center" : "max-md:justify-center"
+            )}
+          >
             {formattedDate} <OnlineBadge online={online} />
           </div>
           <h1 className="mb-2 pb-1 pt-3 text-5xl font-semibold">{title}</h1>
           <span className="mb-12 text-lg">
             With <a href={presenter.url}>{presenter.name}</a>
           </span>
-          <div className="mb-5 mt-auto flex-row md:flex">
+          <div
+            className={classNames(
+              "mb-5 mt-auto flex-row ",
+              presenter.image ? "md:flex" : "flex items-center justify-center"
+            )}
+          >
             <UtilityButton
               className="!mt-0"
               link={link}
