@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import dayjs from "dayjs";
-import { FC } from "react";
+import { FC, useMemo } from "react";
 import { MdLocationOn } from "react-icons/md";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
@@ -174,8 +174,12 @@ const addRightBorder = (index) => {
 
 const EventDates = ({ eventDurationInDays, date }) => {
   // this will return date fragment if the eventDurationInDays is equal to 1 => (28TH (WED) AUGUST 2023) or (this 28TH - 30TH SEPTEMBER 2022 \n (WED - FRI))
-  const startDate = dayjs(date);
-  const endDate = startDate.add(eventDurationInDays - 1, "day"); // subtracting a day because it includes the start date as well
+
+  const startDate = useMemo(() => dayjs(date), [date]);
+  const endDate = useMemo(
+    () => startDate.add(eventDurationInDays - 1, "day"),
+    [eventDurationInDays, startDate]
+  );
 
   return (
     <>
