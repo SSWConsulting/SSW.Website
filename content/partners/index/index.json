@@ -1,0 +1,39 @@
+{
+  "seo": {
+    "title": "SSW Consulting Services "
+  },
+  "title": "SSW Partners",
+  "subTitle": "Our Partner Network",
+  "partnersList": [
+    {
+      "name": "Microsoft",
+      "url": "https://www.microsoft.com/",
+      "description": "Microsoft is a globally renowned technology company, known for its wide range of software, hardware, and cloud services, including Windows, Office, Azure, and Surface devices.",
+      "logo": "/images/partners/logo-microsoft.jpg"
+    },
+    {
+      "name": "IdentityServer",
+      "url": "https://duendesoftware.com/products/identityserver",
+      "description": "IdentityServer is an open-source authentication and authorization framework that helps developers secure their web applications and APIs with ease, providing a robust and customizable identity management solution.",
+      "logo": "/images/partners/logo-identityserver.jpg"
+    },
+    {
+      "name": "Octopus Deploy",
+      "url": "https://octopus.com/",
+      "description": "Octopus is a DevOps automation platform designed to simplify the deployment and management of applications. It streamlines the release process and ensures consistency in software delivery.",
+      "logo": "/images/partners/logo-octopus.jpg"
+    },
+    {
+      "name": "Zendesk",
+      "url": "https://www.zendesk.com/au/",
+      "description": "Control4 is a home automation and smart home system that enables homeowners to control and automate various aspects of their homes, such as lighting, climate, entertainment, and security, for enhanced convenience and efficiency.",
+      "logo": "/images/partners/logo-zendesk.jpg"
+    },
+    {
+      "name": "Control4",
+      "url": "https://www.control4.com/",
+      "description": "4Sight from Control4 allows you to be alerted of things at home while you're away, including the kids arriving home safely.",
+      "logo": "/images/partners/logo-control4.jpg"
+    }
+  ]
+}
