@@ -34,6 +34,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = (props) => {
           { from: "company", to: "Company" },
           { from: "events", to: "Events" },
           { from: "partners", to: "Partners" },
+          { from: "netug", to: ".NET User Group" },
           { from: props.path, to: `${props.title}` },
         ]}
         activeItemClassName={listItemStyling}

@@ -25,6 +25,7 @@ import { contentBlockSchema } from "./content";
 import { contentCardBlockSchema } from "./contentCard";
 import { customImageBlockSchema } from "./customImage";
 import { dynamicColumnsSchema } from "./dynamicColumns";
+import { eventLinkSchema } from "./eventLink";
 import { fixedColumnsSchema } from "./fixedColumns";
 import { fixedTabsLayoutSchema } from "./fixedTabsLayout";
 import { flagSchema } from "./flag";
@@ -84,6 +85,7 @@ export const pageBlocks: Template[] = [
   paymentBlockSchema,
   latestTechSchema,
   testimonialsListSchema,
+  eventLinkSchema,
 ];
 
 export * from "../bookingButton/bookingButton";
@@ -108,6 +110,7 @@ export * from "./content";
 export * from "./contentCard";
 export * from "./customImage";
 export * from "./dynamicColumns";
+export * from "./eventLink";
 export * from "./fixedColumns";
 export * from "./flag";
 export * from "./googleMapsWrapper";

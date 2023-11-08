@@ -10,6 +10,8 @@ import {
   LatestTech,
   Organizer,
 } from "../../components/blocks";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
 import { UserGroupHeader } from "../../components/usergroup/sections/header";
@@ -20,6 +22,7 @@ import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
+import { removeExtension } from "../../services/client/utils.service";
 import {
   getEvents,
   getSpeakersInfoFromEvent,
@@ -45,6 +48,7 @@ export default function NETUGPage(
       <>
         <Layout>
           <SEO seo={data.userGroupPage.seo} />
+
           {props.event && (
             <UserGroupHeader
               date={new Date(props.event?.StartDateTime)}
@@ -62,11 +66,19 @@ export default function NETUGPage(
             />
           )}
 
-          <Container>
+          <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+            <Breadcrumbs
+              path={removeExtension(props.variables.relativePath)}
+              suffix={data.global.breadcrumbSuffix}
+              title={data.userGroupPage.seo?.title}
+            />
+          </Section>
+
+          <Container size="custom" className="pb-8">
             <section className="grid-cols-3 gap-10 md:grid">
               {props.event?.Abstract && (
                 <div className="col-span-2">
-                  <h2 className="text-4xl font-medium text-sswRed">
+                  <h2 className="mt-0 text-4xl font-medium text-sswRed">
                     Event Description
                   </h2>
                   <div className="whitespace-pre-wrap text-lg">
@@ -77,7 +89,7 @@ export default function NETUGPage(
               <div className="col-span-1">
                 {props.speaker && (
                   <>
-                    <h2 className="text-4xl font-medium text-sswRed">
+                    <h2 className="mt-0 text-4xl font-medium text-sswRed">
                       Presenter
                     </h2>
                     <div className="pb-3">
@@ -200,11 +212,6 @@ export default function NETUGPage(
             </section>
           </Container>
 
-          <SectionRenderer
-            prefix="UserGroupPageLocationPageSections"
-            blocks={data.userGroupPage.sections}
-          />
-
           <section className="bg-ssw-black py-8">
             <Container className="text-center">
               <h2
@@ -226,6 +233,11 @@ export default function NETUGPage(
               </div>
             </Container>
           </section>
+
+          <SectionRenderer
+            prefix="UserGroupPageLocationPageSections"
+            blocks={data.userGroupPage.sections}
+          />
 
           <section>
             <Container>
@@ -252,21 +264,31 @@ export default function NETUGPage(
     );
   } else if (data?.userGroupPage.__typename === "UserGroupPageContentPage") {
     return (
-      <Layout>
-        <Container className="prose py-4 prose-h1:pt-2" size="custom">
-          <TinaMarkdown
-            content={data.userGroupPage._body}
-            data-tina-field={tinaField(data.userGroupPage, "_body")}
-          />
-        </Container>
-      </Layout>
+      <>
+        <Layout>
+          <Container className="prose py-4 prose-h1:pt-2" size="custom">
+            <TinaMarkdown
+              content={data.userGroupPage._body}
+              components={componentRenderer}
+              data-tina-field={tinaField(data.userGroupPage, "_body")}
+            />
+          </Container>
+        </Layout>
+      </>
     );
   }
 }
 
 export const getStaticProps = async ({ params }) => {
+  let filename = params.filename;
+  if (!filename) {
+    filename = "index";
+  } else {
+    filename = filename.join("/");
+  }
+
   const tinaProps = await client.queries.userGroupPageContentQuery({
-    relativePath: `${params.filename}.mdx`,
+    relativePath: `${filename}.mdx`,
   });
 
   if (!tinaProps?.data?.userGroupPage?.__typename) {
@@ -303,11 +325,10 @@ export const getStaticProps = async ({ params }) => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
-      filename: params.filename,
       testimonialsResult: testimonialsResult || [],
       event: event[0] || null,
       speaker: speakers[0] || null,
-      city: params.filename,
+      city: filename,
     },
     revalidate: ISR_TIME,
   };
@@ -318,14 +339,20 @@ export const getStaticPaths = async () => {
 
   const paths = userGroupPages.data.userGroupPageConnection.edges.map(
     (page) => {
+      if (page.node._sys.filename === "index") {
+        return {
+          params: { filename: [] },
+        };
+      }
+
       return {
-        params: { filename: page.node._sys.filename },
+        params: { filename: page.node._sys.breadcrumbs },
       };
     }
   );
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 };
