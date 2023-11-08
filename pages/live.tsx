@@ -1,10 +1,15 @@
-import { authorizationUrl } from "../services/server/google-auth";
+import { Layout } from "../components/layout";
 
-export default function LivePage() {
+const LivePage = () => {
   return (
-    <>
-      <div>Hello World</div>
-      <a href={authorizationUrl}>Authorize with Google </a>
-    </>
+    <Layout className="bg-gray-75">
+      <div className="!max-w-full !bg-white">
+        <span className="text-sswRed">
+          <h2>Upcoming session Details</h2>
+        </span>
+      </div>
+    </Layout>
   );
-}
+};
+
+export default LivePage;
