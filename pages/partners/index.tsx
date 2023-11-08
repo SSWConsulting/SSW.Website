@@ -52,7 +52,7 @@ export default function PartnersIndex(
 
 const processData = (data) => {
   if (data.partnerIndexConnection.edges.length !== 1) {
-    throw new Error("Expected exactly one consulting index page");
+    throw new Error("Expected exactly one partners index page");
   }
 
   const node = data.partnerIndexConnection.edges[0].node;
