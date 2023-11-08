@@ -3,30 +3,30 @@
     "title": "SSW Consulting Services "
   },
   "title": "SSW Partners",
-  "subTitle": "We are Partners with big companies",
+  "subTitle": "Our Partner Network",
   "partnersList": [
     {
       "name": "Microsoft",
       "url": "https://www.microsoft.com/",
-      "description": "Microsoft Corporation is an American multinational technology corporation headquartered in Redmond, Washington.",
+      "description": "Microsoft is a globally renowned technology company, known for its wide range of software, hardware, and cloud services, including Windows, Office, Azure, and Surface devices.",
       "logo": "/images/partners/logo-microsoft.jpg"
     },
     {
       "name": "IdentityServer",
       "url": "https://duendesoftware.com/products/identityserver",
-      "description": "IdentityServer is an officially certified implementation of OpenID Connect. Single Sign-on / Sign-out. Single sign-on (and out) over multiple application types.",
+      "description": "IdentityServer is an open-source authentication and authorization framework that helps developers secure their web applications and APIs with ease, providing a robust and customizable identity management solution.",
       "logo": "/images/partners/logo-identityserver.jpg"
     },
     {
       "name": "Octopus",
       "url": "https://octopus/",
-      "description": "Octopus is the only deployment tool with built-in multi-tenancy support. Deploy to two, ten, or thousands of customers without duplicating the deployment",
+      "description": "Octopus is a DevOps automation platform designed to simplify the deployment and management of applications. It streamlines the release process and ensures consistency in software delivery.",
       "logo": "/images/partners/logo-octopus.jpg"
     },
     {
       "name": "Zendesk",
       "url": "https://www.zendesk.com/au/",
-      "description": "Zendesk is award-winning customer service software trusted by 200K+ customers. Make customers happy via text, mobile, phone, email, live chat, social media.",
+      "description": "Control4 is a home automation and smart home system that enables homeowners to control and automate various aspects of their homes, such as lighting, climate, entertainment, and security, for enhanced convenience and efficiency.",
       "logo": "/images/partners/logo-zendesk.jpg"
     },
     {
