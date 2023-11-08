@@ -409,7 +409,7 @@ export const menuBarItems: NavMenuItem[] = [
             },
             {
               name: "Partners",
-              href: "https://www.ssw.com.au/partners",
+              href: "/partners",
             },
             {
               name: "Finance",
