@@ -3,36 +3,36 @@
     "title": "SSW Consulting Services "
   },
   "title": "SSW Partners",
-  "subTitle": "Our Partner Network",
+  "subTitle": "At SSW, we have several strategic partnerships that allow us to access knowledge, innovation and expertise around the globe.  ",
   "partnersList": [
     {
       "name": "Microsoft",
       "url": "https://www.microsoft.com/",
-      "description": "Microsoft is a globally renowned technology company, known for its wide range of software, hardware, and cloud services, including Windows, Office, Azure, and Surface devices.",
+      "description": "In 1999, SSW was recognized as a Microsoft Cloud Partner, an elite Microsoft Business Partner reserved for companies with the highest customer endorsement.   SSW has a Microsoft Regional Director, 5 MVPs and is the home of some of Australia’s leading Microsoft cloud developers and consultants. ",
       "logo": "/images/partners/logo-microsoft.jpg"
     },
     {
-      "name": "IdentityServer",
+      "name": "Identity Server (Duende Software)",
       "url": "https://duendesoftware.com/products/identityserver",
-      "description": "IdentityServer is an open-source authentication and authorization framework that helps developers secure their web applications and APIs with ease, providing a robust and customizable identity management solution.",
+      "description": "Identity Server is an open-source identity management framework that helps developers secure their web applications and APIs.   SSW partnered with Identity Server in 2019 to ensure our clients properly secure their applications, cloud or network infrastructure.",
       "logo": "/images/partners/logo-identityserver.jpg"
     },
     {
       "name": "Octopus Deploy",
       "url": "https://octopus.com/",
-      "description": "Octopus is a DevOps automation platform designed to simplify the deployment and management of applications. It streamlines the release process and ensures consistency in software delivery.",
+      "description": "Octopus Deploy is a DevOps automation platform designed to streamline the deployment and management of applications.  SSW and Octopus Deploy announced a partnership in 2023 to deliver a continuous deployment solution to its joint customers.",
       "logo": "/images/partners/logo-octopus.jpg"
     },
     {
       "name": "Zendesk",
       "url": "https://www.zendesk.com/au/",
-      "description": "Control4 is a home automation and smart home system that enables homeowners to control and automate various aspects of their homes, such as lighting, climate, entertainment, and security, for enhanced convenience and efficiency.",
+      "description": "Zendesk is a leading customer service and engagement platform that uses a mix of automation and machine learning to answer customer queries and provide high-level customer support.  SSW partnered with Zendesk in 2017 to become Zendesk’s primary Australian implementation partner. ",
       "logo": "/images/partners/logo-zendesk.jpg"
     },
     {
       "name": "Control4",
       "url": "https://www.control4.com/",
-      "description": "4Sight from Control4 allows you to be alerted of things at home while you're away, including the kids arriving home safely.",
+      "description": "Control4 is a leading smart home automation tool. The technology is designed to make homes and offices more convenient, comfortable, and secure and is known for its innovation and reliability.  SSW has implemented Control4 architecture across all of its offices and has assisted several clients in integrating the system into their offices. ",
       "logo": "/images/partners/logo-control4.jpg"
     }
   ]
