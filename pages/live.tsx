@@ -2,8 +2,10 @@
 import { InferGetStaticPropsType } from "next";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { useTina } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../.tina/__generated__/client";
 import { UtilityButton } from "../components/blocks";
+import { componentRenderer } from "../components/blocks/mdxComponentRenderer";
 import { Layout } from "../components/layout";
 import { Container } from "../components/util/container";
 
@@ -16,6 +18,16 @@ const LivePage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   return (
     <Layout>
+      <section>
+        <Container>
+          <span className="text-sswBlack">
+            <TinaMarkdown
+              components={componentRenderer}
+              content={data.live.title}
+            />
+          </span>
+        </Container>
+      </section>
       <section>
         <Container>
           <span className="text-sswRed">

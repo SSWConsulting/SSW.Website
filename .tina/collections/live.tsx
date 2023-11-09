@@ -8,7 +8,7 @@ export const liveSchema: Collection = {
   format: "mdx",
   fields: [
     {
-      type: "string",
+      type: "rich-text",
       label: "Title",
       name: "title",
     },
