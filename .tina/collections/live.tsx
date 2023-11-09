@@ -1,4 +1,5 @@
 import { Collection } from "tinacms";
+import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 
 export const liveSchema: Collection = {
@@ -6,23 +7,29 @@ export const liveSchema: Collection = {
   name: "live",
   path: "content/live",
   format: "mdx",
+  ui: {
+    router: ({ document }) => {
+      return `/live/${document._sys.filename}`;
+    },
+  },
   fields: [
-    {
-      type: "rich-text",
-      label: "Title",
-      name: "title",
-    },
-    {
-      type: "string",
-      label: "Section1",
-      name: "section1",
-    },
-    {
-      type: "string",
-      label: "Section2",
-      name: "section2",
-    },
     // @ts-ignore
     seoSchema,
+    {
+      type: "rich-text",
+      name: "title",
+      label: "Title",
+      templates: [...Schemas.pageBlocks],
+    },
+    {
+      type: "string",
+      name: "section1",
+      label: "Section1",
+    },
+    {
+      type: "string",
+      name: "section2",
+      label: "Section2",
+    },
   ],
 };
