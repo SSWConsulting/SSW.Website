@@ -1,8 +1,11 @@
 // import client from "../.tina/__generated__/client";
 import { InferGetStaticPropsType } from "next";
+import { BsArrowRightCircle } from "react-icons/bs";
 import { useTina } from "tinacms/dist/react";
 import client from "../.tina/__generated__/client";
+import { UtilityButton } from "../components/blocks";
 import { Layout } from "../components/layout";
+import { Container } from "../components/util/container";
 
 const LivePage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { data } = useTina({
@@ -11,21 +14,44 @@ const LivePage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     variables: props.variables,
   });
 
-  console.log(data);
-
   return (
-    <Layout className="bg-gray-75">
-      <div className="!max-w-full !bg-white">
-        <span className="text-sswRed">
-          <h2>Upcoming session Details</h2>
-        </span>
-      </div>
+    <Layout>
+      <section>
+        <Container>
+          <span className="text-sswRed">
+            <h2>{data.live.section1}</h2>
+          </span>
+          <div className="flex justify-center">
+            <UtilityButton
+              size="small"
+              uncentered={false}
+              link="https://www.youtube.com/channel/UCBFgwtV9lIIhvoNh0xoQ7Pg"
+              buttonText={
+                <>
+                  Visit SSW TV Channel on Youtube
+                  <BsArrowRightCircle className="ml-1 inline" />
+                </>
+              }
+              noAnimate
+            />
+          </div>
+        </Container>
+      </section>
+      <section>
+        <Container>
+          <span className="text-sswRed">
+            <h2>{data.live.section2}</h2>
+          </span>
+        </Container>
+      </section>
     </Layout>
   );
 };
 
 export const getStaticProps = async () => {
-  const tinaProps = await client.queries.liveConnection();
+  const tinaProps = await client.queries.liveContentQuery({
+    relativePath: "index.mdx",
+  });
 
   return {
     props: {

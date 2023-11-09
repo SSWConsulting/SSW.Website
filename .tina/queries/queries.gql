@@ -185,3 +185,10 @@ query userGroupPageContentQuery($relativePath: String!) {
     ...UserGroupGlobalParts
   }
 }
+
+query liveContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  live(relativePath: $relativePath) {
+    ...LiveParts
+  }
+}
