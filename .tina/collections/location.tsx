@@ -1,4 +1,5 @@
 import type { Collection } from "tinacms";
+import { tipField } from "./shared-fields";
 
 export const locationSchemaConstants = {
   value: "locations",
@@ -15,6 +16,7 @@ export const locationSchema: Collection = {
   format: "mdx",
   path: "content/locations",
   fields: [
+    tipField,
     {
       type: "string",
       name: locationSchemaConstants.header,

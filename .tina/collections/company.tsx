@@ -1,8 +1,10 @@
+import React from "react";
 import * as Schemas from "../../components/blocks";
 import { testimonialsListSchema } from "../../components/blocks";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
 import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
 import { seoSchema } from "../../components/util/seo";
+import { tipField } from "./shared-fields";
 
 import type { Collection } from "tinacms";
 
@@ -20,6 +22,7 @@ export const companySchema: Collection = {
     },
   },
   fields: [
+    tipField,
     // @ts-ignore
     seoSchema,
     {

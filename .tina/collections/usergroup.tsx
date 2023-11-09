@@ -2,7 +2,9 @@ import * as Schemas from "../../components/blocks";
 import { pageBlocks as sectionPageBlocks } from "../../components/usergroup/sections";
 import { seoSchema } from "../../components/util/seo";
 
+import React from "react";
 import type { Collection } from "tinacms";
+import { tipField } from "./shared-fields";
 
 export const userGroupPageSchema: Collection = {
   label: "User Groups - Pages",
@@ -24,6 +26,7 @@ export const userGroupPageSchema: Collection = {
       name: "locationPage",
       label: "Location User Group Page",
       fields: [
+        tipField,
         // @ts-ignore
         seoSchema,
         {
@@ -147,6 +150,7 @@ export const userGroupPageSchema: Collection = {
       name: "contentPage",
       label: "Content User Group Page",
       fields: [
+        tipField,
         // @ts-ignore
         seoSchema,
         {

@@ -1,6 +1,7 @@
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { sides } from "../../components/marketing/Marketing";
+import { tipField } from "./shared-fields";
 
 export const marketingSchema: Collection = {
   label: "Marketing - Pages",
@@ -8,6 +9,7 @@ export const marketingSchema: Collection = {
   path: "content/marketing",
   format: "mdx",
   fields: [
+    tipField,
     {
       type: "string",
       label: "Title",

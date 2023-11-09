@@ -1,4 +1,5 @@
 import type { Collection } from "tinacms";
+import { tipField } from "./shared-fields";
 
 export const paymentDetailsBlockConstant = {
   value: "paymentDetails",
@@ -17,6 +18,7 @@ export const paymentDetailsSchema: Collection = {
   format: "mdx",
   path: "content/payments",
   fields: [
+    tipField,
     {
       type: "string",
       label: "Bank Name",

@@ -1,9 +1,10 @@
+import React from "react";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 
 import type { Collection } from "tinacms";
 import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
-import { benefitsFields } from "./shared-fields";
+import { benefitsFields, tipField } from "./shared-fields";
 
 export const consultingIndexSchema: Collection = {
   label: "Consulting - Index",
@@ -179,6 +180,7 @@ export const consultingSchema: Collection = {
     },
   },
   fields: [
+    tipField,
     // @ts-ignore
     seoSchema,
     // @ts-ignore

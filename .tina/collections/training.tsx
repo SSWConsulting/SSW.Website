@@ -1,9 +1,11 @@
+import React from "react";
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
 import { trainingHeaderSchema } from "../../components/training/trainingHeader";
 import { seoSchema } from "../../components/util/seo";
 import { videoCardSchema } from "../../components/util/videoCards";
+import { tipField } from "./shared-fields";
 
 export const trainingSchema: Collection = {
   label: "Training - Pages",
@@ -16,6 +18,7 @@ export const trainingSchema: Collection = {
     },
   },
   fields: [
+    tipField,
     // @ts-ignore
     seoSchema,
     // @ts-ignore
