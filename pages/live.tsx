@@ -51,6 +51,20 @@ export default function LivePage(
         <span className="text-sswRed">
           <h2>{data.live.section2}</h2>
         </span>
+        <div className="flex justify-center">
+          <UtilityButton
+            size="small"
+            uncentered={false}
+            link="https://www.youtube.com/playlist?list=PLCFF4FD4DA9AC8CFE"
+            buttonText={
+              <>
+                Watch more on SSW TV Channel on Youtube
+                <BsArrowRightCircle className="ml-1 inline" />
+              </>
+            }
+            noAnimate
+          />
+        </div>
       </Container>
       <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
     </Layout>
