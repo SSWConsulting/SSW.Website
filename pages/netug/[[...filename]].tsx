@@ -29,7 +29,6 @@ import {
 } from "../../services/server/events";
 
 const ISR_TIME = 60 * 60; // 1 hour;
-const PAST_DAYS = 30; // 1 month
 
 export default function NETUGPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -212,11 +211,6 @@ export default function NETUGPage(
             </section>
           </Container>
 
-          <SectionRenderer
-            prefix="UserGroupPageLocationPageSections"
-            blocks={data.userGroupPage.sections}
-          />
-
           <section className="bg-ssw-black py-8">
             <Container className="text-center">
               <h2
@@ -238,6 +232,11 @@ export default function NETUGPage(
               </div>
             </Container>
           </section>
+
+          <SectionRenderer
+            prefix="UserGroupPageLocationPageSections"
+            blocks={data.userGroupPage.sections}
+          />
 
           <section>
             <Container>
@@ -311,14 +310,23 @@ export const getStaticProps = async ({ params }) => {
     testimonialsResult = await getTestimonialsByCategories(categories);
   }
 
-  const pastDate = new Date();
-  pastDate.setDate(new Date().getDate() - PAST_DAYS);
+  const currentDate = new Date().toISOString();
 
-  const event = await getEvents(
-    `$filter=fields/Enabled ne false and fields/EndDateTime gt '${pastDate.toISOString()}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc`
+  const events = await getEvents(
+    `$filter=fields/Enabled ne false and fields/EndDateTime gt '${currentDate}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime asc`
   );
 
-  const speakers = await getSpeakersInfoFromEvent(event[0]);
+  let event = events[0];
+
+  if (!event) {
+    const pastEvents = await getEvents(
+      `$filter=fields/Enabled ne false and fields/EndDateTime lt '${currentDate}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc`
+    );
+
+    event = pastEvents[0];
+  }
+
+  const speakers = await getSpeakersInfoFromEvent(event);
 
   return {
     props: {
@@ -326,7 +334,7 @@ export const getStaticProps = async ({ params }) => {
       query: tinaProps.query,
       variables: tinaProps.variables,
       testimonialsResult: testimonialsResult || [],
-      event: event[0] || null,
+      event: event || null,
       speaker: speakers[0] || null,
       city: filename,
     },
@@ -353,6 +361,6 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 };

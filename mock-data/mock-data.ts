@@ -408,6 +408,10 @@ export const menuBarItems: NavMenuItem[] = [
               href: "https://www.ssw.com.au/company/testimonials",
             },
             {
+              name: "Partners",
+              href: "/company/partners",
+            },
+            {
               name: "Finance",
               href: "/industry/finance",
             },
