@@ -17,6 +17,7 @@ export const liveSchema: Collection = {
     seoSchema,
     {
       type: "rich-text",
+      isBody: true,
       name: "title",
       label: "Title",
       templates: [...Schemas.pageBlocks],
