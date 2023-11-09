@@ -186,6 +186,14 @@ query userGroupPageContentQuery($relativePath: String!) {
   }
 }
 
+query partnerIndexContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  partnerIndex(relativePath: $relativePath) {
+    ...PartnerIndexParts
+    __typename
+  }
+}
+
 query liveContentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   live(relativePath: $relativePath) {

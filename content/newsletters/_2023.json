@@ -2,6 +2,11 @@
   "newsletters_year": "2023",
   "newsletters": [
     {
+      "month": 11,
+      "file": "/images/newsletter-uploads/2023/_2023_11__Effective Feedback When and How to Offer It__.html",
+      "description": "Effective Feedback and How to Offer It"
+    },
+    {
       "month": 1,
       "file": "/images/newsletter-uploads/2023/_2023_01__Adams 2022 - A Year in Review__.html",
       "description": "Adams 2022 - A Year in Review"
