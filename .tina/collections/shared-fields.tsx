@@ -9,7 +9,13 @@ export const tipField: TinaField = {
   label: "Tip",
   ui: {
     component: ({}) => {
-      return <div> 💡 Please fill out the "Filename" field first.</div>;
+      return (
+        <div>
+          {" "}
+          💡 Please fill out the "Filename" field first at the botton of the
+          page.
+        </div>
+      );
     },
   },
 };
