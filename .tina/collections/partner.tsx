@@ -12,7 +12,7 @@ export const partnerIndexSchema: Collection = {
       delete: false,
     },
     router: () => {
-      return `/partners`;
+      return `/company/partners`;
     },
   },
   fields: [

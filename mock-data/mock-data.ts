@@ -409,7 +409,7 @@ export const menuBarItems: NavMenuItem[] = [
             },
             {
               name: "Partners",
-              href: "/partners",
+              href: "/company/partners",
             },
             {
               name: "Finance",
