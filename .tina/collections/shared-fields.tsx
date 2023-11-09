@@ -1,4 +1,18 @@
+import React from "react";
 import { TinaField } from "tinacms";
+
+// TODO: Remove Warning message once fixed by Tina
+// Link: https://github.com/SSWConsulting/SSW.Website/issues/1404
+export const tipField: TinaField = {
+  type: "string",
+  name: "tip",
+  label: "Tip",
+  ui: {
+    component: ({}) => {
+      return <div> 💡 Please fill out the "Filename" field first.</div>;
+    },
+  },
+};
 
 export const benefitsFields: TinaField[] = [
   {

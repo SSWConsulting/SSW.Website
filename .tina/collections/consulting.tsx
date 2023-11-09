@@ -4,7 +4,7 @@ import { seoSchema } from "../../components/util/seo";
 
 import type { Collection } from "tinacms";
 import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
-import { benefitsFields } from "./shared-fields";
+import { benefitsFields, tipField } from "./shared-fields";
 
 export const consultingIndexSchema: Collection = {
   label: "Consulting - Index",
@@ -180,21 +180,7 @@ export const consultingSchema: Collection = {
     },
   },
   fields: [
-    {
-      type: "string",
-      name: "tip",
-      label: "Tip",
-      ui: {
-        component: ({}) => {
-          return (
-            <div>
-              Please fill out all the required labels before navigating to
-              another form.
-            </div>
-          );
-        },
-      },
-    },
+    tipField,
     // @ts-ignore
     seoSchema,
     // @ts-ignore

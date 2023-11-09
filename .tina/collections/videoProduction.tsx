@@ -3,6 +3,7 @@ import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 
 import type { Collection } from "tinacms";
+import { tipField } from "./shared-fields";
 
 export const videoProductionSchema: Collection = {
   label: "Consulting - Video Production - Pages",
@@ -15,21 +16,7 @@ export const videoProductionSchema: Collection = {
     },
   },
   fields: [
-    {
-      type: "string",
-      name: "tip",
-      label: "Tip",
-      ui: {
-        component: ({}) => {
-          return (
-            <div>
-              Please fill out all the required labels before navigating to
-              another form.
-            </div>
-          );
-        },
-      },
-    },
+    tipField,
     // @ts-ignore
     seoSchema,
     {

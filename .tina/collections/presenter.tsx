@@ -1,5 +1,6 @@
 import React from "react";
 import type { Collection } from "tinacms";
+import { tipField } from "./shared-fields";
 
 export const presenterSchemaConstants = {
   value: "presenter",
@@ -18,21 +19,7 @@ export const presenterSchema: Collection = {
   format: "mdx",
   path: "content/presenters",
   fields: [
-    {
-      type: "string",
-      name: "tip",
-      label: "Tip",
-      ui: {
-        component: ({}) => {
-          return (
-            <div>
-              Please fill out all the required labels before navigating to
-              another form.
-            </div>
-          );
-        },
-      },
-    },
+    tipField,
     {
       type: "image",
       name: presenterSchemaConstants.profileImg,

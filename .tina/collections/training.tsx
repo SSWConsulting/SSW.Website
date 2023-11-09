@@ -5,6 +5,7 @@ import { testimonialRowSchema } from "../../components/testimonials/TestimonialR
 import { trainingHeaderSchema } from "../../components/training/trainingHeader";
 import { seoSchema } from "../../components/util/seo";
 import { videoCardSchema } from "../../components/util/videoCards";
+import { tipField } from "./shared-fields";
 
 export const trainingSchema: Collection = {
   label: "Training - Pages",
@@ -17,21 +18,7 @@ export const trainingSchema: Collection = {
     },
   },
   fields: [
-    {
-      type: "string",
-      name: "tip",
-      label: "Tip",
-      ui: {
-        component: ({}) => {
-          return (
-            <div>
-              Please fill out all the required labels before navigating to
-              another form.
-            </div>
-          );
-        },
-      },
-    },
+    tipField,
     // @ts-ignore
     seoSchema,
     // @ts-ignore

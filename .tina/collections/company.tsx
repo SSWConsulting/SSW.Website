@@ -4,6 +4,7 @@ import { testimonialsListSchema } from "../../components/blocks";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
 import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
 import { seoSchema } from "../../components/util/seo";
+import { tipField } from "./shared-fields";
 
 import type { Collection } from "tinacms";
 
@@ -21,21 +22,7 @@ export const companySchema: Collection = {
     },
   },
   fields: [
-    {
-      type: "string",
-      name: "tip",
-      label: "Tip",
-      ui: {
-        component: ({}) => {
-          return (
-            <div>
-              Please fill out all the required labels before navigating to
-              another form.
-            </div>
-          );
-        },
-      },
-    },
+    tipField,
     // @ts-ignore
     seoSchema,
     {

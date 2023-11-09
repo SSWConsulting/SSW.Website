@@ -1,5 +1,6 @@
 import type { Collection } from "tinacms";
 import { transformIntToMonth } from "../../services/client/date.service";
+import { tipField } from "./shared-fields";
 
 export const newsletterSchema: Collection = {
   label: "Newsletters",
@@ -7,6 +8,7 @@ export const newsletterSchema: Collection = {
   path: "content/newsletters",
   format: "json",
   fields: [
+    tipField,
     {
       type: "string",
       label: "Year",
@@ -22,9 +24,9 @@ export const newsletterSchema: Collection = {
           return {
             label:
               item?.month && item?.description
-                ? `${item?.month} - ${transformIntToMonth(item?.month)} - ${
-                    item?.description
-                  }`
+                ? `${item?.month} - ${transformIntToMonth(
+                    item?.month
+                  )} - ${item?.description}`
                 : "New newsletter",
           };
         },

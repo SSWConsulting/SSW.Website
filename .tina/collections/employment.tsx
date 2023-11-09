@@ -2,7 +2,7 @@ import React from "react";
 import { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
-import { benefitsFields } from "./shared-fields";
+import { benefitsFields, tipField } from "./shared-fields";
 
 export const employmentSchema: Collection = {
   label: "Employment - Index",
@@ -15,21 +15,7 @@ export const employmentSchema: Collection = {
     },
   },
   fields: [
-    {
-      type: "string",
-      name: "tip",
-      label: "Tip",
-      ui: {
-        component: ({}) => {
-          return (
-            <div>
-              Please fill out all the required labels before navigating to
-              another form.
-            </div>
-          );
-        },
-      },
-    },
+    tipField,
     // @ts-ignore
     seoSchema,
     {
