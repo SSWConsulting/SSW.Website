@@ -1,7 +1,8 @@
+import React from "react";
 import { Collection, Template } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
-import React from "react";
+import { tipField } from "./shared-fields";
 
 const industrySolutionsRowSchema: Template = {
   name: "SolutionsRow",
@@ -140,6 +141,7 @@ export const industrySchema: Collection = {
     },
   },
   fields: [
+    tipField,
     // @ts-ignore
     seoSchema,
     {

@@ -2,6 +2,7 @@ import type { Collection } from "tinacms";
 
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
+import { tipField } from "./shared-fields";
 
 export const pagesSchema: Collection = {
   label: "Base - Pages",
@@ -17,6 +18,7 @@ export const pagesSchema: Collection = {
     },
   },
   fields: [
+    tipField,
     // @ts-ignore
     seoSchema,
     {

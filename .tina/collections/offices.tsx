@@ -1,8 +1,10 @@
 import type { Collection } from "tinacms";
 
+import React from "react";
 import * as Schemas from "../../components/blocks";
 import { sswCountries } from "../../components/util/constants/country";
 import { seoSchema } from "../../components/util/seo";
+import { tipField } from "./shared-fields";
 
 export const officeIndexSchema: Collection = {
   label: "Offices - Index",
@@ -67,6 +69,7 @@ export const officeSchema: Collection = {
     },
   },
   fields: [
+    tipField,
     // @ts-ignore
     seoSchema,
     {

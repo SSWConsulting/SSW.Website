@@ -1,6 +1,7 @@
 import type { Collection } from "tinacms";
 
 import { ratingSchema } from "../../components/util/consulting/rating";
+import { tipField } from "./shared-fields";
 
 export const testimonialSchema: Collection = {
   label: "Testimonials",
@@ -8,6 +9,7 @@ export const testimonialSchema: Collection = {
   format: "mdx",
   path: "content/testimonials",
   fields: [
+    tipField,
     {
       type: "string",
       label: "Name",

@@ -1,4 +1,5 @@
 import type { Collection } from "tinacms";
+import { tipField } from "./shared-fields";
 
 export const technologiesSchema: Collection = {
   label: "Consulting - Technology Cards",
@@ -6,6 +7,7 @@ export const technologiesSchema: Collection = {
   format: "mdx",
   path: "content/technologies",
   fields: [
+    tipField,
     {
       type: "string",
       label: "Name",

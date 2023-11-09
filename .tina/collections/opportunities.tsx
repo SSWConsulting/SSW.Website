@@ -5,6 +5,7 @@ import {
   jobStatus,
   locations,
 } from "../../components/util/constants/opportunity";
+import { tipField } from "./shared-fields";
 
 export const opportunitiesSchema: Collection = {
   label: "Employment - Opportunities",
@@ -12,6 +13,7 @@ export const opportunitiesSchema: Collection = {
   format: "mdx",
   path: "content/opportunities",
   fields: [
+    tipField,
     {
       type: "string",
       label: "Job Title",

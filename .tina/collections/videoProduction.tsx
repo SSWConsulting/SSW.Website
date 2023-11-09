@@ -1,7 +1,9 @@
+import React from "react";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 
 import type { Collection } from "tinacms";
+import { tipField } from "./shared-fields";
 
 export const videoProductionSchema: Collection = {
   label: "Consulting - Video Production - Pages",
@@ -14,6 +16,7 @@ export const videoProductionSchema: Collection = {
     },
   },
   fields: [
+    tipField,
     // @ts-ignore
     seoSchema,
     {

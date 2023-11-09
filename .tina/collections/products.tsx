@@ -1,6 +1,8 @@
+import React from "react";
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
+import { tipField } from "./shared-fields";
 
 export const productsIndexSchema: Collection = {
   label: "Products - Index",
@@ -67,6 +69,7 @@ export const productsSchema: Collection = {
     },
   },
   fields: [
+    tipField,
     // @ts-ignore
     seoSchema,
     {
