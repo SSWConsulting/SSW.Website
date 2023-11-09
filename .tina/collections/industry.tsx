@@ -1,6 +1,7 @@
 import { Collection, Template } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
+import React from "react";
 
 const industrySolutionsRowSchema: Template = {
   name: "SolutionsRow",
