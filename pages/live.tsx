@@ -66,6 +66,13 @@ export default function LivePage(
             noAnimate
           />
         </div>
+        <div>
+          {props.playListVideosLinks.map((video) => (
+            <a href={video.link} target="_blank" rel="noopener noreferrer">
+              <div>{video.title}</div>
+            </a>
+          ))}
+        </div>
       </Container>
       <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
     </Layout>
@@ -77,13 +84,38 @@ export const getStaticProps = async () => {
     relativePath: "index.mdx",
   });
 
-  await googleAuth();
+  const playlistBaseUrl = "https://www.youtube.com/playlist?list=";
+  const playListVideosBaseUrl = "https://www.youtube.com/watch?";
+
+  const playListVideosLinks = [];
+  let playListLink = "";
+
+  const res = await googleAuth();
+
+  if (res && res.items) {
+    res.items.forEach((item) => {
+      const snippet = item.snippet;
+      const title = snippet.title;
+      const playListId = snippet.playlistId;
+      const videoId = snippet.resourceId.videoId;
+
+      playListLink = playlistBaseUrl + playListId;
+      const playListVideosLink =
+        playListVideosBaseUrl + "v=" + videoId + "&lis=" + playListId;
+      playListVideosLinks.push({
+        title: title,
+        link: playListVideosLink,
+      });
+    });
+  }
 
   return {
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
+      playListLink,
+      playListVideosLinks,
     },
   };
 };
