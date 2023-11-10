@@ -9,6 +9,7 @@ import { UtilityButton } from "../components/button/utilityButton";
 import { Layout } from "../components/layout";
 import { Container } from "../components/util/container";
 import { SEO } from "../components/util/seo";
+import { googleAuth } from "../services/server/google-auth";
 
 export default function LivePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -75,6 +76,8 @@ export const getStaticProps = async () => {
   const tinaProps = await client.queries.liveContentQuery({
     relativePath: "index.mdx",
   });
+
+  await googleAuth();
 
   return {
     props: {

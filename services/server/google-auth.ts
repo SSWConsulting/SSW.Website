@@ -1,21 +1,17 @@
-import { google } from "googleapis";
+// import { JWT } from "google-auth-library";
 
-const YOUR_CLIENT_ID = process.env.GOOGLE_OAUTH_CLIENT_ID;
-const YOUR_CLIENT_SECRET = process.env.GOOGLE_OAUTH_CLIENT_SECRET;
-const YOUR_REDIRECT_URL = "http://localhost:3000";
-
-const oauth2Client = new google.auth.OAuth2(
-  YOUR_CLIENT_ID,
-  YOUR_CLIENT_SECRET,
-  YOUR_REDIRECT_URL
-);
-
-const scopes = ["https://www.googleapis.com/auth/youtube.readonly"];
-
-const authorizationUrl = oauth2Client.generateAuthUrl({
-  access_type: "offline",
-  scope: scopes,
-  include_granted_scopes: true,
-});
-
-export { authorizationUrl };
+export async function googleAuth() {
+  // const client = new JWT({
+  //   email: process.env.CLIENT_EMAIL,
+  //   key: process.env.PRIVATE_KEY,
+  //   scopes: ["https://www.googleapis.com/auth/youtube.readonly"],
+  // });
+  // console.log("HELLO WORLD 1 !!!!!");
+  // console.log(process.env.CLIENT_EMAIL);
+  // console.log(process.env.PRIVATE_KEY);
+  const url =
+    "https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&part=id&part=snippet&part=status&maxResults=100&playlistId=PLpiOR7CBNvlpmhfwQeIVhbqZKxV-do0wY&key=AIzaSyBsjR0N1zalWxBfSvZLud_-agUT7EsSLwg";
+  const res = await fetch(url);
+  // console.log("HELLO WORLD 2 !!!!!");
+  console.log(await res.json());
+}
