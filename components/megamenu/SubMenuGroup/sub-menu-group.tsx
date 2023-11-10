@@ -12,9 +12,10 @@ import SubMenuWidget from "./sub-menu-widget";
 
 export interface SubMenuGroupProps {
   menu: NavMenuGroup;
+  close: any;
 }
 
-export const SubMenuGroup: React.FC<SubMenuGroupProps> = ({ menu }) => {
+export const SubMenuGroup: React.FC<SubMenuGroupProps> = ({ menu, close }) => {
   const subMenuColumns = [];
   let currentColumn = [];
   for (const item of menu.mainItems) {
@@ -34,12 +35,11 @@ export const SubMenuGroup: React.FC<SubMenuGroupProps> = ({ menu }) => {
           {subMenuColumns.map((column, i) => (
             <div key={"column" + i} className="flex grow flex-col gap-y-4">
               {column.map((item, i) => (
-                <MenuItem key={"menuItem" + i} item={item} />
+                <MenuItem key={"menuItem" + i} item={item} close={close} />
               ))}
             </div>
           ))}
         </div>
-
         {/* eslint-disable-next-line tailwindcss/no-arbitrary-value */}
         <div className="shrink-0 overflow-x-hidden bg-gray-50 lg:relative lg:w-[350px] lg:before:absolute lg:before:inset-0 lg:before:-z-10 lg:before:w-[1000px] lg:before:bg-gray-50">
           <div className="flex flex-col gap-y-2 px-8 py-4">
@@ -75,13 +75,14 @@ const Heading: React.FC<{
 
 const MenuItem: React.FC<{
   item: MainMenuDefinition;
-}> = ({ item }) => {
+  close: any;
+}> = ({ item, close }) => {
   return (
     <div key={item.heading} className="flex flex-col pb-4 last:grow">
       <Heading>{item.heading}</Heading>
       <div className="flex flex-col">
         {item.items.map((subItem, i) => (
-          <SubmenuItem key={item.heading + i} {...subItem} />
+          <SubmenuItem key={item.heading + i} close={close} props={subItem} />
         ))}
       </div>
       <ViewAllLink {...item.viewAllLink} />
@@ -89,7 +90,7 @@ const MenuItem: React.FC<{
   );
 };
 
-const SubmenuItem: React.FC<SubMenuItemDefinition> = (props) => {
+const SubmenuItem: React.FC<SubMenuItemDefinition> = ({ close, props }) => {
   return (
     <Link
       href={props.href}
@@ -97,6 +98,7 @@ const SubmenuItem: React.FC<SubMenuItemDefinition> = (props) => {
         "flex items-start gap-x-3 rounded-md bg-white hover:bg-gray-100 focus:outline-none unstyled",
         props.description ? "p-4" : "p-2"
       )}
+      onClick={() => close()}
     >
       {props.icon && (
         <div className="flex h-6 w-6 shrink-0 items-center justify-center text-ssw-red">

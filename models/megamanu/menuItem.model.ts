@@ -13,6 +13,8 @@ export interface SubMenuItemDefinition {
   icon?: AvailableIcons | string;
   description?: string;
   href: string;
+  close: any;
+  props: any;
 }
 export interface SideMenuDefinition {
   heading: string;

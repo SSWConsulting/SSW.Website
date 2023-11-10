@@ -23,13 +23,21 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuBarItems }) => {
             if (submenu) {
               return (
                 <Popover key={item.name}>
-                  {({ open }) => (
-                    <MenuItemWithSubmenu
-                      name={item.name}
-                      menu={submenu}
-                      isOpened={open}
-                    />
-                  )}
+                  {({ open, close }) => {
+                    open;
+                    console.log(
+                      "🚀 ~ file: desktop-menu.tsx:29 ~ menuBarItems.map ~ open:",
+                      open
+                    );
+                    return (
+                      <MenuItemWithSubmenu
+                        name={item.name}
+                        menu={submenu}
+                        isOpened={open}
+                        close={close}
+                      />
+                    );
+                  }}
                 </Popover>
               );
             } else {

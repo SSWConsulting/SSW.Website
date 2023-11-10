@@ -53,11 +53,13 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
             />
             <Search />
             <Divider />
+            asdfasf
             <button
               type="button"
               className="-m-2.5 inline-flex items-center justify-center rounded-md pl-6 pr-2 text-gray-700"
               onClick={() => setMobileMenuOpen(true)}
             >
+              asdfasdfdsafasdf
               <span className="sr-only">Open main menu</span>
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
