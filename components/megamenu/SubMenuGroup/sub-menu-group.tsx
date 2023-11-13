@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
 import {
   MainMenuDefinition,
@@ -8,6 +8,7 @@ import {
   SubMenuItemDefinition,
 } from "../../../models/megamanu/menuItem.model";
 import MegaIcon from "../MegaIcon/mega-icon";
+import { ClosePopoverContext } from "./../DesktopMenu/desktop-menu";
 import SubMenuWidget from "./sub-menu-widget";
 
 export interface SubMenuGroupProps {
@@ -90,6 +91,7 @@ const MenuItem: React.FC<{
 };
 
 const SubmenuItem: React.FC<SubMenuItemDefinition> = (props) => {
+  const close = useContext(ClosePopoverContext);
   return (
     <Link
       href={props.href}
@@ -97,6 +99,7 @@ const SubmenuItem: React.FC<SubMenuItemDefinition> = (props) => {
         "flex items-start gap-x-3 rounded-md bg-white hover:bg-gray-100 focus:outline-none unstyled",
         props.description ? "p-4" : "p-2"
       )}
+      onClick={() => close()}
     >
       {props.icon && (
         <div className="flex h-6 w-6 shrink-0 items-center justify-center text-ssw-red">
