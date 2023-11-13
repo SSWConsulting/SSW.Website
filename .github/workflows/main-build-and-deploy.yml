@@ -18,7 +18,7 @@ jobs:
     name: Build and upload artifacts
     uses: ./.github/workflows/template-build.yml
     with:
-      tag: production
+      tag: staging
     secrets: inherit
 
   deploy-staging:
@@ -83,3 +83,13 @@ jobs:
               --name ${{ env.APP_SERVICE_NAME }} \
               --slot staging \
               --target-slot production
+
+      - name: Delete Staging Slot
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.53.1
+          inlineScript: |
+            az webapp deployment slot delete \
+              --resource-group ${{ env.AZURE_RESOURCE_GROUP }} \
+              --name ${{ env.APP_SERVICE_NAME }} \
+              --slot staging
