@@ -79,7 +79,7 @@ var appSettings = [
 ]
 
 
-resource prodSlot 'Microsoft.Web/sites@2022-03-01' existing =  {
+resource prodSlot 'Microsoft.Web/sites@2022-03-01' existing = {
   name: appServiceName
 }
 
