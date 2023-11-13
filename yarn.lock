@@ -4561,7 +4561,7 @@ __metadata:
     react-toastify: ^9.1.3
     react-tooltip: ^5.22.0
     react-use: ^17.4.0
-    react-useportal: ^1.0.18
+    react-useportal: ^1.0.19
     schema-dts: ^1.1.2
     sharp: ^0.32.6
     source-map-explorer: ^2.5.3
@@ -14372,15 +14372,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-useportal@npm:^1.0.18":
-  version: 1.0.18
-  resolution: "react-useportal@npm:1.0.18"
+"react-useportal@npm:^1.0.19":
+  version: 1.0.19
+  resolution: "react-useportal@npm:1.0.19"
   dependencies:
     use-ssr: ^1.0.25
   peerDependencies:
     react: ^16.8.6 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.6 || ^17.0.0 || ^18.0.0
-  checksum: b72d4a6bd521c8d139666b4a52d5b03a586652d00c7cc8899fb0d137da6eee0fb5d67c87742b6c9b31be5b045023caf0839258af9821a1f3d186460c947cdbf6
+  checksum: 2aaa9f867da839f3c9302360783efa819c6fc4cb5419758600694117459e0c6769ac7fe321418f01889559b2676067a3c25268af5b3b90077acf791fd6afada9
   languageName: node
   linkType: hard
 
