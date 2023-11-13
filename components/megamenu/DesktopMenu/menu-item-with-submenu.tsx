@@ -32,6 +32,7 @@ export const MenuItemWithSubmenu: React.FC<MenuItemWithSubmenuProps> = ({
           className="h-5 w-5 flex-none text-ssw-black"
         />
       </Popover.Button>
+
       <Transition
         as={Fragment}
         enter="transition ease-out duration-200"

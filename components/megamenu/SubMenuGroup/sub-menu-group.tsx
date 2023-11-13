@@ -40,6 +40,7 @@ export const SubMenuGroup: React.FC<SubMenuGroupProps> = ({ menu }) => {
             </div>
           ))}
         </div>
+
         {/* eslint-disable-next-line tailwindcss/no-arbitrary-value */}
         <div className="shrink-0 overflow-x-hidden bg-gray-50 lg:relative lg:w-[350px] lg:before:absolute lg:before:inset-0 lg:before:-z-10 lg:before:w-[1000px] lg:before:bg-gray-50">
           <div className="flex flex-col gap-y-2 px-8 py-4">
