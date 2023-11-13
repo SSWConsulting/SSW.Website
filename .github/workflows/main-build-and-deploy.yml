@@ -21,8 +21,8 @@ jobs:
       tag: production
     secrets: inherit
 
-  deploy-to-prod:
-    name: Deploy to Production
+  deploy-staging:
+    name: Deploy to staging slot
     needs: build
     runs-on: ubuntu-latest
     environment:
@@ -46,7 +46,7 @@ jobs:
         id: deploy
         uses: ./.github/actions/deploy
         with:
-          slot_name: production
+          slot_name: staging
           AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
           AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
           AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
@@ -57,7 +57,29 @@ jobs:
           AZURE_SERVICE_PRINCIPAL_OBJECT_ID: ${{ secrets.AZURE_SERVICE_PRINCIPAL_OBJECT_ID }}
   test:
     name: Run Playwright Tests
-    needs: deploy-to-prod
+    needs: deploy-staging
     uses: ./.github/workflows/template-ui-tests.yml
     with:
-      deploy_url: ${{ needs.deploy-to-prod.outputs.url || 'https://ssw.com.au' }}
+      deploy_url: ${{ needs.deploy-staging.outputs.url }}
+
+  swap-staging:
+    name: Swap staging with production
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Azure CLI - Login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - name: Azure CLI Swap Deployments
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.53.1
+          inlineScript: |
+            az webapp deployment slot swap \
+              --resource-group ${{ env.AZURE_RESOURCE_GROUP }} \
+              --name ${{ env.APP_SERVICE_NAME }} \
+              --slot staging \
+              --target-slot production
