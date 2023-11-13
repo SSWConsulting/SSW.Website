@@ -11,19 +11,15 @@ interface MenuItemWithSubmenuProps {
   name: string;
   menu: NavMenuGroup;
   isOpened: boolean;
-  close: any;
 }
 
 export const MenuItemWithSubmenu: React.FC<MenuItemWithSubmenuProps> = ({
   name,
   menu,
   isOpened,
-  close,
 }) => {
-  console.log("🚀 ~ file: menu-item-with-submenu.tsx:22 ~ close:", close);
   return (
     <>
-      <button onClick={() => close()}>hello</button>
       <Popover.Button
         className={twMerge(
           "flex items-center justify-center gap-x-1 whitespace-nowrap rounded-md px-3 py-1 cursor-pointer focus:outline-none focus-visible:ring-opacity-0",
@@ -47,7 +43,7 @@ export const MenuItemWithSubmenu: React.FC<MenuItemWithSubmenuProps> = ({
       >
         {/* eslint-disable-next-line tailwindcss/no-arbitrary-value */}
         <Popover.Panel className="absolute inset-x-0 top-[120px] -z-10 bg-white shadow-md shadow-gray-400">
-          <SubMenuGroup menu={menu} close={close} />
+          <SubMenuGroup menu={menu} />
         </Popover.Panel>
       </Transition>
     </>

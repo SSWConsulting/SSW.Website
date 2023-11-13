@@ -1,5 +1,5 @@
 import { Popover } from "@headlessui/react";
-import React from "react";
+import React, { createContext } from "react";
 import { NavMenuItem } from "../../../models/megamanu/menuItem.model";
 import { SocialIcons, SocialTypes } from "../../util/socialIcons";
 import { CountryDropdown } from "../CountryDropdown";
@@ -13,6 +13,8 @@ export interface DesktopMenuProps {
   menuBarItems: NavMenuItem[];
 }
 
+export const ClosePopoverContext = createContext(null);
+
 const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuBarItems }) => {
   return (
     <>
@@ -24,18 +26,14 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuBarItems }) => {
               return (
                 <Popover key={item.name}>
                   {({ open, close }) => {
-                    open;
-                    console.log(
-                      "🚀 ~ file: desktop-menu.tsx:29 ~ menuBarItems.map ~ open:",
-                      open
-                    );
                     return (
-                      <MenuItemWithSubmenu
-                        name={item.name}
-                        menu={submenu}
-                        isOpened={open}
-                        close={close}
-                      />
+                      <ClosePopoverContext.Provider value={close}>
+                        <MenuItemWithSubmenu
+                          name={item.name}
+                          menu={submenu}
+                          isOpened={open}
+                        />
+                      </ClosePopoverContext.Provider>
                     );
                   }}
                 </Popover>

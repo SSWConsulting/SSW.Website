@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
 import {
   MainMenuDefinition,
@@ -8,14 +8,14 @@ import {
   SubMenuItemDefinition,
 } from "../../../models/megamanu/menuItem.model";
 import MegaIcon from "../MegaIcon/mega-icon";
+import { ClosePopoverContext } from "./../DesktopMenu/desktop-menu";
 import SubMenuWidget from "./sub-menu-widget";
 
 export interface SubMenuGroupProps {
   menu: NavMenuGroup;
-  close: any;
 }
 
-export const SubMenuGroup: React.FC<SubMenuGroupProps> = ({ menu, close }) => {
+export const SubMenuGroup: React.FC<SubMenuGroupProps> = ({ menu }) => {
   const subMenuColumns = [];
   let currentColumn = [];
   for (const item of menu.mainItems) {
@@ -35,7 +35,7 @@ export const SubMenuGroup: React.FC<SubMenuGroupProps> = ({ menu, close }) => {
           {subMenuColumns.map((column, i) => (
             <div key={"column" + i} className="flex grow flex-col gap-y-4">
               {column.map((item, i) => (
-                <MenuItem key={"menuItem" + i} item={item} close={close} />
+                <MenuItem key={"menuItem" + i} item={item} />
               ))}
             </div>
           ))}
@@ -75,14 +75,13 @@ const Heading: React.FC<{
 
 const MenuItem: React.FC<{
   item: MainMenuDefinition;
-  close: any;
-}> = ({ item, close }) => {
+}> = ({ item }) => {
   return (
     <div key={item.heading} className="flex flex-col pb-4 last:grow">
       <Heading>{item.heading}</Heading>
       <div className="flex flex-col">
         {item.items.map((subItem, i) => (
-          <SubmenuItem key={item.heading + i} close={close} props={subItem} />
+          <SubmenuItem key={item.heading + i} {...subItem} />
         ))}
       </div>
       <ViewAllLink {...item.viewAllLink} />
@@ -90,7 +89,8 @@ const MenuItem: React.FC<{
   );
 };
 
-const SubmenuItem: React.FC<SubMenuItemDefinition> = ({ close, props }) => {
+const SubmenuItem: React.FC<SubMenuItemDefinition> = (props) => {
+  const close = useContext(ClosePopoverContext);
   return (
     <Link
       href={props.href}
