@@ -83,29 +83,23 @@ export const getStaticProps = async () => {
   const tinaProps = await client.queries.liveContentQuery({
     relativePath: "index.mdx",
   });
-
-  const playlistBaseUrl = "https://www.youtube.com/playlist?list=";
-  const playListVideosBaseUrl = "https://www.youtube.com/watch?";
-
-  const playListVideosLinks = [];
-  let playListLink = "";
-
   const res = await googleAuth();
 
+  let playListVideosLinks = [];
+
   if (res && res.items) {
-    res.items.forEach((item) => {
+    const playListVideosBaseUrl = "https://www.youtube.com/watch?v=";
+
+    playListVideosLinks = res.items.map((item) => {
       const snippet = item.snippet;
       const title = snippet.title;
       const playListId = snippet.playlistId;
       const videoId = snippet.resourceId.videoId;
 
-      playListLink = playlistBaseUrl + playListId;
-      const playListVideosLink =
-        playListVideosBaseUrl + "v=" + videoId + "&lis=" + playListId;
-      playListVideosLinks.push({
+      return {
         title: title,
-        link: playListVideosLink,
-      });
+        link: `${playListVideosBaseUrl}${videoId}&list=${playListId}`,
+      };
     });
   }
 
@@ -114,7 +108,6 @@ export const getStaticProps = async () => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
-      playListLink,
       playListVideosLinks,
     },
   };
