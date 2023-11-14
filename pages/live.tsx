@@ -9,6 +9,7 @@ import { UtilityButton } from "../components/button/utilityButton";
 import { Layout } from "../components/layout";
 import { Container } from "../components/util/container";
 import { SEO } from "../components/util/seo";
+import { VideoCard } from "../components/util/videoCards";
 import { googleAuth } from "../services/server/google-auth";
 
 export default function LivePage(
@@ -52,6 +53,13 @@ export default function LivePage(
         <span className="text-sswRed">
           <h2>{data.live.section2}</h2>
         </span>
+        <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">
+          {props.playListVideosLinks.map((video, index) => (
+            <div key={index}>
+              <VideoCard {...video} theme="light" />
+            </div>
+          ))}
+        </div>
         <div className="flex justify-center">
           <UtilityButton
             size="small"
@@ -65,13 +73,6 @@ export default function LivePage(
             }
             noAnimate
           />
-        </div>
-        <div>
-          {props.playListVideosLinks.map((video) => (
-            <a href={video.link} target="_blank" rel="noopener noreferrer">
-              <div>{video.title}</div>
-            </a>
-          ))}
         </div>
       </Container>
       <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
