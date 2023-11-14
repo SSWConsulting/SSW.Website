@@ -5,11 +5,6 @@
   },
   "productsList": [
     {
-      "name": "SSW Dory",
-      "url": "https://www.sswdory.com/",
-      "description": "Identify checked-out SharePoint pages or stale GitHub pull requests."
-    },
-    {
       "name": "SugarLearning",
       "url": "https://sugarlearning.com/",
       "description": "The next generation on-boarding & induction tool for smart companies.",
@@ -56,6 +51,12 @@
       "url": "https://ssw.com.au/products/rewards",
       "description": "Scan SSW QR codes, earn SSW Points, claim rewards, and win prizes!",
       "logo": "/images/products/ssw-rewards.jpeg"
+    },
+    {
+      "name": "SSW Dory",
+      "url": "https://www.sswdory.com/",
+      "description": "Identify checked-out SharePoint pages or stale GitHub pull requests.",
+      "logo": "/images/products/SSW-Dory.png"
     }
   ]
 }
