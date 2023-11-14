@@ -5,6 +5,11 @@
   },
   "productsList": [
     {
+      "name": "SSW Dory",
+      "url": "https://www.sswdory.com/",
+      "description": "Identify checked-out SharePoint pages or stale GitHub pull requests."
+    },
+    {
       "name": "SugarLearning",
       "url": "https://sugarlearning.com/",
       "description": "The next generation on-boarding & induction tool for smart companies.",
