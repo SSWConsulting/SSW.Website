@@ -20,15 +20,15 @@ _body:
     gstText: inc GST
     eventList:
       - city: Brisbane
-        date: 2023-04-17
+        date: 2023-04-17T00:00:00.000Z
         bookingURL: >-
           https://www.eventbrite.com.au/e/clean-architecture-superpowers-sydneyonline-tickets-150670855585
       - city: Melbourne
-        date: 2023-04-19
+        date: 2023-04-19T00:00:00.000Z
         bookingURL: >-
           https://www.eventbrite.com.au/e/clean-architecture-superpowers-sydneyonline-tickets-150670855585
       - city: Sydney
-        date: 2023-04-20
+        date: 2023-04-20T00:00:00.000Z
         bookingURL: >-
           https://www.eventbrite.com.au/e/clean-architecture-superpowers-sydneyonline-tickets-150670855585
     _template: EventBooking
@@ -47,49 +47,55 @@ _body:
   - header: Agenda
     textColor: red
     agendaItemList:
-      - placeholder: Part 1
+      - placeholder: Clean Architecture Basics
         body: |
           <VerticalListItem
             index={1}
             content={<>
-              Getting Started
+              Clean Architecture Basics
             </>}
             afterBody={<>
-              * Create a new Web API with ASP.NET Core
-              * Building a Data Model with EF Core
-              * Creating ASP.NET Core Web API Controllers
-              * Adding API Help Pages with OpenAPI
+              * See the pain of a badly architected solution
+              * Hands-on Refactor to Clean Architecture
+              * Learn the core principles of Clean Architecture
             </>}
           />
-      - placeholder: Part 2
+      - placeholder: Clean Architecture Applied
         body: |
           <VerticalListItem
             index={2}
             content={<>
-              Beyond the Basics
+              Clean Architecture Applied
             </>}
             afterBody={<>
-              * Architecture & Design
-              * Implementing CQRS with MediatR
-              * Building High Performance Queries with EF Core
-              * Simplifying Object-Object Mappings with AutoMapper
-              * Advanced Validation with FluentValidation
-              * Managing Unhandled Exceptions
-              * Unit Testing Application Logic
+              * Introduction to the SSW\.Clean Architecture Template
+              * Build a .NET Web API using:
+              * Minimal APIs
+              * Strongly Typed IDs
+              * MediatR and CQRS
+              * Application & Integration Events
+              * Domain Driven Design
+              * Specifications
+              * Discuss trade-offs when building an application
+              * Add a GraphQL Presentation Layer
             </>}
           />
-      - placeholder: Part 3
+      - placeholder: Clean Testing
         body: |
           <VerticalListItem
             index={3}
             content={<>
-              Advanced Topics
+              Clean Testing
             </>}
             afterBody={<>
-              * Working with ASP.NET Core Identity
-              * Improved Logging with MediatR
-              * Automating OpenAPI Specification and Client Generation
-              * Health Monitoring with ASP.NET Core Health Checks
+              * Introduction to Testing in the SSW\.CleanArchitecture template
+              * Unit Tests
+              * xUnit
+              * FluentAssertions
+              * NSubstitute
+              * Integration Tests
+              * Easily create Databases using Test Containers
+              * Architecture Tests
             </>}
           />
     _template: Agenda
