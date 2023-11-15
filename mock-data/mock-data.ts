@@ -285,6 +285,10 @@ export const menuBarItems: NavMenuItem[] = [
               name: "Clean Architecture Workshop",
               href: "/events/clean-architecture-workshop",
             },
+            {
+              name: "Octopus Workshop",
+              href: "/events/octopus-workshop",
+            },
           ],
         },
         {
