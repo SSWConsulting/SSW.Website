@@ -49,9 +49,13 @@ export const formatRelativeEventDate = (startDate: Date, endDate: Date) => {
     return EventStatus.NOW_RUNNING;
   }
 
-  const isSameDay = now.startOf("day").isSame(start.startOf("day"));
+  const startOfToday = now.startOf("day");
+  const startOfEventDay = start.startOf("day");
 
-  const days = start.diff(now, "d");
+  const isSameDay = startOfToday.isSame(startOfEventDay);
+
+  const days = startOfEventDay.diff(startOfToday, "d");
+
   if (days === 0 && isSameDay) {
     return EventStatus.TODAY;
   } else if (days > 0) {
