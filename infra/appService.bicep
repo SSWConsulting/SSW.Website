@@ -121,6 +121,10 @@ var appSettings = [
     name: 'DYNAMICS_CLIENT_SECRET'
     value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/DYNAMICS-CLIENT-SECRET)'
   }
+  {
+    name: 'YOUTUBE_PRIVATE_KEY'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/YOUTUBE-PRIVATE-KEY)'
+  }
 ]
 
 resource appService 'Microsoft.Web/sites@2022-03-01' = {
