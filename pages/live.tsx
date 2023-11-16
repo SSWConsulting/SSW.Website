@@ -12,7 +12,7 @@ import { Container } from "../components/util/container";
 import { SEO } from "../components/util/seo";
 import { VideoCard } from "../components/util/videoCards";
 import { getEvents, getSpeakersInfoFromEvent } from "../services/server/events";
-import { googleAuth } from "../services/server/google-auth";
+import { getYoutubePlaylist } from "../services/server/youtube";
 
 export default function LivePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -39,8 +39,8 @@ export default function LivePage(
         <div>
           {props.event?.Title && (
             <div className="col-span-2">
-              <div className="whitespace-pre-wrap text-xl font-bold">
-                Title: {props.event?.Title}
+              <div className="whitespace-pre-wrap text-xl">
+                <strong>Title:</strong> {props.event?.Title}
               </div>
             </div>
           )}
@@ -49,7 +49,7 @@ export default function LivePage(
           {props.speaker && (
             <>
               <div className="whitespace-pre-wrap text-lg">
-                Presenter: {props.speaker?.Title}
+                <strong>Presenter:</strong> {props.speaker?.Title}
               </div>
               <br />
             </>
@@ -115,7 +115,7 @@ export default function LivePage(
           <UtilityButton
             size="small"
             uncentered={false}
-            link="https://www.youtube.com/playlist?list=PLCFF4FD4DA9AC8CFE"
+            link={`https://www.youtube.com/playlist?list=${data.live.youtubePlaylistId}`}
             buttonText={
               <>
                 Watch more on SSW TV Channel on Youtube
@@ -135,7 +135,7 @@ export const getStaticProps = async () => {
   const tinaProps = await client.queries.liveContentQuery({
     relativePath: "index.mdx",
   });
-  const res = await googleAuth();
+  const res = await getYoutubePlaylist(tinaProps.data.live.youtubePlaylistId);
 
   let playListVideosLinks = [];
 
