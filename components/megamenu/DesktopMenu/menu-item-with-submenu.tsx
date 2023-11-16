@@ -2,8 +2,7 @@
 import { Popover, Transition } from "@headlessui/react";
 import React, { Fragment } from "react";
 import { twMerge } from "tailwind-merge";
-import { AvailableIcons } from "../../../models/megamenu/config.consts";
-import { NavMenuGroup } from "../../../models/megamenu/menuItem.model";
+import { NavMenuGroup } from "../../../types/megamenu";
 import { MegaIcon } from "../MegaIcon";
 import SubMenuGroup from "../SubMenuGroup/sub-menu-group";
 
@@ -28,7 +27,7 @@ export const MenuItemWithSubmenu: React.FC<MenuItemWithSubmenuProps> = ({
       >
         {name}
         <MegaIcon
-          icon={AvailableIcons.chevronDown}
+          icon="chevronDown"
           className="h-5 w-5 flex-none text-ssw-black"
         />
       </Popover.Button>

@@ -15,7 +15,7 @@ export const availableIcons = [
   "websiteDevelopment",
   "applicationDevelopment",
   "mobileDevelopment",
-  "alDevelopment",
+  "aiDevelopment",
   "databaseDevelopment",
   "platformDevelopment",
   "uiUXDesign",
@@ -32,6 +32,8 @@ export const availableIcons = [
   "sswRewards",
 ] as const;
 
+export type AvailableIcons = (typeof availableIcons)[number];
+
 export interface MainMenuDefinition {
   heading: string;
   items: SubMenuItemDefinition[];
@@ -42,7 +44,7 @@ export interface MainMenuDefinition {
 }
 export interface SubMenuItemDefinition {
   name: string;
-  icon?: (typeof availableIcons)[number];
+  icon?: AvailableIcons;
   description?: string;
   href: string;
 }
@@ -72,5 +74,5 @@ export interface NavMenuItem {
 export interface CtaMenu {
   name: string;
   href: string;
-  icon: (typeof availableIcons)[number];
+  icon: AvailableIcons;
 }

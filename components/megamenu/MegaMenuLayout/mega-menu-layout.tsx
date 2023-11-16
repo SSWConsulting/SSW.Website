@@ -1,7 +1,7 @@
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import React, { useState } from "react";
-import { NavMenuItem } from "../../../models/megamenu/menuItem.model";
+import { NavMenuItem } from "../../../types/megamenu";
 import { SocialIcons, SocialTypes } from "../../util/socialIcons";
 import DesktopMenu from "../DesktopMenu/desktop-menu";
 import Logo from "../Logo/logo";

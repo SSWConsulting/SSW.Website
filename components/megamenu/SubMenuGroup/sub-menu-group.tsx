@@ -6,7 +6,7 @@ import {
   MainMenuDefinition,
   NavMenuGroup,
   SubMenuItemDefinition,
-} from "../../../models/megamenu/menuItem.model";
+} from "../../../types/megamenu";
 import MegaIcon from "../MegaIcon/mega-icon";
 import { ClosePopoverContext } from "./../DesktopMenu/desktop-menu";
 import SubMenuWidget from "./sub-menu-widget";

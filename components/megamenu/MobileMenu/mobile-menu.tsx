@@ -2,8 +2,7 @@ import { Dialog } from "@headlessui/react";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import React from "react";
-import { AvailableIcons } from "../../../models/megamenu/config.consts";
-import { NavMenuItem } from "../../../models/megamenu/menuItem.model";
+import { NavMenuItem } from "../../../types/megamenu";
 import { MegaIcon } from "../MegaIcon";
 import SubMenuGroup from "../SubMenuGroup/sub-menu-group";
 
@@ -41,7 +40,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
             onClick={() => onCloseMobileMenu()}
           >
             <span className="sr-only">Close menu</span>
-            <MegaIcon icon={AvailableIcons.xMark} className="h-6 w-6" />
+            <MegaIcon icon="xMark" className="h-6 w-6" />
           </button>
           {selectedMenuItem && (
             <div className="my-auto flex grow items-center pl-2">
@@ -49,10 +48,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                 className="text-sm font-semibold leading-4 text-ssw-black"
                 onClick={() => setSelectedMenuItem(null)}
               >
-                <MegaIcon
-                  className="mb-1 inline h-5 w-5"
-                  icon={AvailableIcons.chevronLeft}
-                />
+                <MegaIcon className="mb-1 inline h-5 w-5" icon="chevronLeft" />
                 <span className="ml-2">{selectedMenuItem.name}</span>
               </button>
             </div>
