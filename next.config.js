@@ -70,6 +70,9 @@ const config = {
       },
     ];
   },
+  experimental: {
+    optimizePackageImports: ["tinacms"],
+  },
 };
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
