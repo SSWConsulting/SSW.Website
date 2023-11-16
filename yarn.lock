@@ -1677,15 +1677,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@builder.io/partytown@npm:^0.8.0":
-  version: 0.8.1
-  resolution: "@builder.io/partytown@npm:0.8.1"
-  bin:
-    partytown: bin/partytown.cjs
-  checksum: acf94e657bbf9ae9c076b881bf077ae0321ea40ef4a7304567718dbfe4dcd2e0ef01a62baf6a0dab5621af048c66fd7d0364a0fc4d0969c9cc827ccf43e1906d
-  languageName: node
-  linkType: hard
-
 "@codemirror/language@npm:6.0.0":
   version: 6.0.0
   resolution: "@codemirror/language@npm:6.0.0"
@@ -4513,7 +4504,6 @@ __metadata:
   resolution: "@tinacms/starter@workspace:."
   dependencies:
     "@azure/msal-node": ^2.3.0
-    "@builder.io/partytown": ^0.8.0
     "@fortawesome/fontawesome-svg-core": ^6.4.2
     "@headlessui/react": ^1.7.17
     "@headlessui/tailwindcss": ^0.2.0
