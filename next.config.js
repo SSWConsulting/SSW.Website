@@ -70,6 +70,9 @@ const config = {
       },
     ];
   },
+  experimental: {
+    optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
+  },
 };
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
