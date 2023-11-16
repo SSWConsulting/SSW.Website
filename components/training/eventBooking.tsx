@@ -312,6 +312,9 @@ export const eventBookingSchema: Template = {
           type: "datetime",
           label: "Start Date",
           name: eventBookingBlock.eventList.date,
+          ui: {
+            parse: (value) => value && value.format("YYYY-MM-DD"),
+          },
         },
         {
           type: "string",
