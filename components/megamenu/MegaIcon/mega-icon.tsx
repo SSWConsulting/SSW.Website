@@ -14,7 +14,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import React, { ReactNode } from "react";
-import { AvailableIcons } from "../../../models/megamanu/config.consts";
+import { AvailableIcons } from "../../../models/megamenu/config.consts";
 
 export interface MegaIconProps extends React.ComponentPropsWithoutRef<"span"> {
   icon: AvailableIcons | string | ReactNode;

@@ -2,8 +2,8 @@ import { Dialog } from "@headlessui/react";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import React from "react";
-import { AvailableIcons } from "../../../models/megamanu/config.consts";
-import { NavMenuItem } from "../../../models/megamanu/menuItem.model";
+import { AvailableIcons } from "../../../models/megamenu/config.consts";
+import { NavMenuItem } from "../../../models/megamenu/menuItem.model";
 import { MegaIcon } from "../MegaIcon";
 import SubMenuGroup from "../SubMenuGroup/sub-menu-group";
 

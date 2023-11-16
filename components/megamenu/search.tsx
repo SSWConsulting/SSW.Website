@@ -2,7 +2,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 import { useLocation } from "react-use";
-import { AvailableIcons } from "../../models/megamanu/config.consts";
+import { AvailableIcons } from "../../models/megamenu/config.consts";
 import { MegaIcon } from "./MegaIcon";
 
 const Search: React.FC = () => {

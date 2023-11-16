@@ -2,8 +2,8 @@
 import { Popover, Transition } from "@headlessui/react";
 import React, { Fragment } from "react";
 import { twMerge } from "tailwind-merge";
-import { AvailableIcons } from "../../../models/megamanu/config.consts";
-import { NavMenuGroup } from "../../../models/megamanu/menuItem.model";
+import { AvailableIcons } from "../../../models/megamenu/config.consts";
+import { NavMenuGroup } from "../../../models/megamenu/menuItem.model";
 import { MegaIcon } from "../MegaIcon";
 import SubMenuGroup from "../SubMenuGroup/sub-menu-group";
 

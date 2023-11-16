@@ -4,8 +4,8 @@ import React from "react";
 import {
   AvailableIcons,
   AvailableWidget,
-} from "../../../models/megamanu/config.consts";
-import { SideMenuItem } from "../../../models/megamanu/menuItem.model";
+} from "../../../models/megamenu/config.consts";
+import { SideMenuItem } from "../../../models/megamenu/menuItem.model";
 import { MegaIcon } from "../MegaIcon";
 import FeaturedCard from "./featured-card";
 

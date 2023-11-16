@@ -24,6 +24,44 @@ export const megaMenuSchema: Collection = {
           name: "name",
           label: "Name",
         },
+        {
+          type: "object",
+          name: "menuItems",
+          list: true,
+          fields: [
+            {
+              type: "string",
+              name: "name",
+            },
+            {
+              type: "string",
+              name: "url",
+            },
+          ],
+        },
+        {
+          type: "object",
+          name: "sidebarItems",
+          list: true,
+          fields: [
+            {
+              type: "string",
+              name: "name",
+            },
+            {
+              type: "string",
+              name: "description",
+            },
+            {
+              type: "string",
+              name: "category",
+            },
+            {
+              type: "string",
+              name: "url",
+            },
+          ],
+        },
       ],
     },
   ],

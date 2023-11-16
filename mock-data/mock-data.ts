@@ -1,4 +1,4 @@
-import { NavMenuItem } from "../models/megamanu/menuItem.model";
+import { NavMenuItem } from "../types/megamenu";
 
 export const menuBarItems: NavMenuItem[] = [
   {
