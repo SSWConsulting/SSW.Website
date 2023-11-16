@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        @camillars @sethdailyssw
+        @camillars @sethdailyssw @ulyssesmaclaren
         Fill out the below fields with information about your new page:
   - type: textarea
     id: cc
@@ -52,7 +52,7 @@ body:
   - type: input
     id: title
     attributes:
-      label: "5. Title:"
+      label: "5. Page Title:"
       description: "Details: Must read well and include keywords (Google-able).
       
       Length: Must be under 60 characters"  
@@ -86,7 +86,7 @@ body:
     id: content
     attributes:
       label: "8. Content:"
-      description: "Follow these guidelines:  
+      description: "Follow these guidelines (taken from the [SEO checklist](https://www.ssw.com.au/rules/seo-checklist/)):  
 
       
       **Headings** – Next to each heading, note in (parentheses) an HTML title tag - H1 for the main title (only 1 per page) H2 for subheadings, H3 etc... Each heading must include keywords.  
