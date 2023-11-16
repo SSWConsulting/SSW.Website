@@ -241,7 +241,7 @@
         {
           "title": "Power Automate Process Mining",
           "description": "Process mining uncovers processes in your company that can be effectively automated with artificial intelligence, so you save costs and increase your productivity.",
-          "logo": "",
+          "logo": "/images/thumbs/thumb-power-automate-icon.jpg",
           "page": "content/consulting/process-mining.mdx",
           "tags": [
             {
