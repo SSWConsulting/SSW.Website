@@ -8,6 +8,7 @@ import { componentRenderer } from "../components/blocks/mdxComponentRenderer";
 import { VideoEmbed } from "../components/blocks/videoEmbed";
 import { UtilityButton } from "../components/button/utilityButton";
 import { Layout } from "../components/layout";
+import { PresenterLink } from "../components/usergroup/presenterLink";
 import { Container } from "../components/util/container";
 import { SEO } from "../components/util/seo";
 import { VideoCard } from "../components/util/videoCards";
@@ -39,7 +40,7 @@ export default function LivePage(
         <div>
           {props.event?.Title && (
             <div className="col-span-2">
-              <div className="whitespace-pre-wrap text-xl font-bold">
+              <div className="whitespace-pre-wrap text-2xl font-bold">
                 {props.event?.Title}
               </div>
             </div>
@@ -48,8 +49,12 @@ export default function LivePage(
         <div>
           {props.speaker && (
             <>
-              <div className="whitespace-pre-wrap text-lg">
-                With {props.speaker?.Title}
+              <div className="pb-3 text-lg">
+                With{" "}
+                <PresenterLink
+                  name={props.speaker?.Title}
+                  profileLink={props.speaker?.PresenterProfileLink}
+                />
               </div>
               <br />
             </>
