@@ -39,8 +39,8 @@ export default function LivePage(
         <div>
           {props.event?.Title && (
             <div className="col-span-2">
-              <div className="whitespace-pre-wrap text-xl">
-                <strong>Title:</strong> {props.event?.Title}
+              <div className="whitespace-pre-wrap text-xl font-bold">
+                {props.event?.Title}
               </div>
             </div>
           )}
@@ -49,13 +49,22 @@ export default function LivePage(
           {props.speaker && (
             <>
               <div className="whitespace-pre-wrap text-lg">
-                <strong>Presenter:</strong> {props.speaker?.Title}
+                With {props.speaker?.Title}
               </div>
               <br />
             </>
           )}
         </div>
         <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-2">
+          <div>
+            {props.event?.Abstract && (
+              <div className="col-span-2">
+                <div className="whitespace-pre-wrap text-lg">
+                  {props.event?.Abstract}
+                </div>
+              </div>
+            )}
+          </div>
           <div>
             {props.event?.Url &&
               props.event?.Title &&
@@ -74,15 +83,6 @@ export default function LivePage(
                   }}
                 />
               ))}
-          </div>
-          <div>
-            {props.event?.Abstract && (
-              <div className="col-span-2">
-                <div className="whitespace-pre-wrap text-lg">
-                  {props.event?.Abstract}
-                </div>
-              </div>
-            )}
           </div>
         </div>
         <div className="flex justify-center">
