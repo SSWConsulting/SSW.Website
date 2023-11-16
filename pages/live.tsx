@@ -5,11 +5,13 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../.tina/__generated__/client";
 import { BuiltOnAzure } from "../components/blocks/builtOnAzure";
 import { componentRenderer } from "../components/blocks/mdxComponentRenderer";
+import { VideoEmbed } from "../components/blocks/videoEmbed";
 import { UtilityButton } from "../components/button/utilityButton";
 import { Layout } from "../components/layout";
 import { Container } from "../components/util/container";
 import { SEO } from "../components/util/seo";
 import { VideoCard } from "../components/util/videoCards";
+import { getEvents, getSpeakersInfoFromEvent } from "../services/server/events";
 import { googleAuth } from "../services/server/google-auth";
 
 export default function LivePage(
@@ -34,6 +36,55 @@ export default function LivePage(
         <span className="text-sswRed">
           <h2>{data.live.section1}</h2>
         </span>
+        <div>
+          {props.event?.Title && (
+            <div className="col-span-2">
+              <div className="whitespace-pre-wrap text-xl font-bold">
+                Title: {props.event?.Title}
+              </div>
+            </div>
+          )}
+        </div>
+        <div>
+          {props.speaker && (
+            <>
+              <div className="whitespace-pre-wrap text-lg">
+                Presenter: {props.speaker?.Title}
+              </div>
+              <br />
+            </>
+          )}
+        </div>
+        <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-2">
+          <div>
+            {props.event?.Url &&
+              props.event?.Title &&
+              (props.event?.TrailerUrl?.Url ? (
+                <VideoCard
+                  link={props.event.TrailerUrl.Url}
+                  title={props.event.Title}
+                  theme="light"
+                />
+              ) : (
+                <VideoEmbed
+                  data={{
+                    url: "https://www.youtube.com/watch?v=coPZ75akNYA",
+                    videoWidth: "w-full",
+                    removeMargin: true,
+                  }}
+                />
+              ))}
+          </div>
+          <div>
+            {props.event?.Abstract && (
+              <div className="col-span-2">
+                <div className="whitespace-pre-wrap text-lg">
+                  {props.event?.Abstract}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
         <div className="flex justify-center">
           <UtilityButton
             size="small"
@@ -104,12 +155,34 @@ export const getStaticProps = async () => {
     });
   }
 
+  const currentDate = new Date().toISOString();
+
+  const events = await getEvents(
+    `$filter=fields/Enabled ne false and fields/EndDateTime gt '${currentDate}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime asc`
+  );
+
+  let event = events[0];
+
+  if (!event) {
+    const pastEvents = await getEvents(
+      `$filter=fields/Enabled ne false and fields/EndDateTime lt '${currentDate}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc`
+    );
+
+    event = pastEvents[0];
+  }
+
+  const speakers = await getSpeakersInfoFromEvent(event);
+  const speaker = speakers[0];
+
   return {
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
       playListVideosLinks,
+      event: event || null,
+      speaker: speaker || null,
     },
+    revalidate: 10,
   };
 };
