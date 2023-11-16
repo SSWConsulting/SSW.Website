@@ -71,11 +71,7 @@ const config = {
     ];
   },
   experimental: {
-    optimizePackageImports: [
-      "tinacms",
-      "@fortawesome/fontawesome-svg-core",
-      "@microsoft/applicationinsights-react-js",
-    ],
+    optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
   },
 };
 
