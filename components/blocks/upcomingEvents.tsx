@@ -7,7 +7,7 @@ import { tinaField } from "tinacms/dist/react";
 
 import { formatEventDate, formatRelativeEventDate } from "../../helpers/dates";
 import { EventInfo } from "../../services/server/events";
-import { EventsRelativeBox } from "../events/components";
+import { EventsRelativeBox } from "../events/eventsRelativeBox";
 
 export const UpcomingEvents = ({ data }) => {
   const [events, setEvents] = useState<EventInfo[]>([]);
@@ -49,10 +49,13 @@ export const UpcomingEvents = ({ data }) => {
       </h2>
       <div className="not-prose">
         <div className="grow">
-          {loading ? <p>Loading...</p> : events.map(renderEvent)}
+          {loading ? (
+            <p>Loading...</p>
+          ) : (
+            events.map((event) => <UpcomingEvent event={event} />)
+          )}
         </div>
         <div className="mt-3 flex flex-row-reverse justify-center sm:justify-start">
-          {/* TODO: Update link after implement this page */}
           <Link
             href="/events?tech=all&type=all"
             className="unstyled rounded bg-sswRed px-3 py-2 text-xs font-normal text-white hover:bg-sswDarkRed"
@@ -65,44 +68,51 @@ export const UpcomingEvents = ({ data }) => {
   );
 };
 
-const renderEvent = (e: EventInfo) => {
-  const isExternalLink =
-    !e.Url.Url.includes("ssw.com.au") || e.Url.Url.includes("/ssw/redirect");
+type UpcomingEventProps = {
+  event: EventInfo;
+};
 
-  const isValidImagePath = (imageSrc) => {
-    if (!imageSrc) return false;
-    const imagPath = imageSrc.split("/").pop();
-    const numberOfDots = imagPath.match(/\./g);
-    return numberOfDots.length === 1;
-  };
+const isValidImagePath = (imageSrc) => {
+  if (!imageSrc) return false;
+  const imagPath = imageSrc.split("/").pop();
+  const numberOfDots = imagPath.match(/\./g);
+  return numberOfDots.length === 1;
+};
+
+const UpcomingEvent = ({ event }: UpcomingEventProps) => {
+  const isExternalLink =
+    !event.Url.Url.includes("ssw.com.au") ||
+    event.Url.Url.includes("/ssw/redirect");
 
   return (
     <Link
-      href={e.Url.Url}
+      href={event.Url.Url}
       className="unstyled no-underline"
       target={isExternalLink ? "_blank" : "_self"}
-      key={e.id}
+      key={event.id}
     >
       <article className="my-2.5 grid grid-cols-4 rounded border-1 border-gray-300 bg-white p-2 shadow hover:border-ssw-black dark:border-gray-700 dark:bg-gray-800">
         <div className="col-span-3 justify-center px-3">
-          <h2 className="m-0 py-1 text-sm font-bold text-black">{e.Title}</h2>
+          <h2 className="m-0 py-1 text-sm font-bold text-black">
+            {event.Title}
+          </h2>
           <EventsRelativeBox
-            relativeDate={e.RelativeDate}
-            formattedDate={e.FormattedDate}
+            relativeDate={event.RelativeDate}
+            formattedDate={event.FormattedDate}
             dateFontSize="text-xxs"
           />
-          {!!e.Presenter && (
+          {!!event.Presenter && (
             <span className="mt-1 inline-flex items-center text-xxs text-black">
-              {e.Presenter}
+              {event.Presenter}
             </span>
           )}
         </div>
-        {isValidImagePath(e.Thumbnail?.Url) && (
+        {isValidImagePath(event.Thumbnail?.Url) && (
           <div className="col-span-1 flex items-center justify-center sm:mr-2 sm:justify-end">
             <Image
               className={"rounded-md"}
-              src={e.Thumbnail.Url}
-              alt={`${e.Title} logo`}
+              src={event.Thumbnail.Url}
+              alt={`${event.Title} logo`}
               width={90}
               height={90}
             />

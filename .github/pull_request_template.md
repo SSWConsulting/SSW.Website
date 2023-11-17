@@ -6,7 +6,7 @@
 
 - Fixed #{{ ISSUE NUMBER }}
 
-- [ ] If adding a new page, I have followed the [SEO checklist](https://www.ssw.com.au/rules/seo-checklist/)
+- [ ] If adding a new page, I have followed the [📃 New Webpage](https://github.com/SSWConsulting/SSW.Website/issues/new?assignees=&labels=&projects=&template=new_webpage.yml&title=%F0%9F%93%84+%7B%7B+TITLE+%7D%7D+) issue template
 
 - [ ] Include done video or screenshots
 
