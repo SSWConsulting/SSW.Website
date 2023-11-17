@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { FaPlayCircle } from "react-icons/fa";
 import {
   MATCH_URL_VIMEO,
@@ -47,8 +47,8 @@ export const VideoModal = ({
   const [clicked, setClicked] = useState<boolean>(false);
   const [imageSrc, setImageSrc] = useState<string>("");
 
-  const isYouTube = MATCH_URL_YOUTUBE.test(url);
-  const isVimeo = MATCH_URL_VIMEO.test(url);
+  const isYouTube = useMemo(() => MATCH_URL_YOUTUBE.test(url), [url]);
+  const isVimeo = useMemo(() => MATCH_URL_VIMEO.test(url), [url]);
 
   useEffect(() => {
     if (isYouTube) {
@@ -65,7 +65,7 @@ export const VideoModal = ({
       setVideoId("");
       setImageSrc("");
     }
-  }, [url]);
+  }, [url, isYouTube, isVimeo]);
 
   return (
     <div>

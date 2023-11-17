@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { MdLiveHelp } from "react-icons/md";
-import { useEffectOnce, useHover } from "usehooks-ts";
+import { useHover } from "usehooks-ts";
 
 import { wrapGrid } from "animate-css-grid";
 
@@ -13,12 +13,28 @@ import { tinaField, useTina } from "tinacms/dist/react";
 import { client } from "../../.tina/__generated__/client";
 
 import { InferGetStaticPropsType } from "next";
+import { ParsedUrlQuery } from "querystring";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
 
 const allServices = "All SSW Services";
+
+const getSelectedTagFromQuery = (query: ParsedUrlQuery): string => {
+  let parsedTag = allServices;
+  if (query.tag) {
+    const { tag } = query;
+
+    if (tag instanceof Array) {
+      parsedTag = tag[0];
+    } else {
+      parsedTag = tag;
+    }
+    parsedTag = parsedTag.replace("-", " ");
+  }
+  return parsedTag;
+};
 
 export default function ConsultingIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -31,46 +47,13 @@ export default function ConsultingIndex(
   });
 
   const router = useRouter();
-  const getSelectedTagFromQuery = (): string => {
-    let parsedTag = allServices;
-    if (router.query.tag) {
-      const { tag } = router.query;
-
-      if (tag instanceof Array) {
-        parsedTag = tag[0];
-      } else {
-        parsedTag = tag;
-      }
-      parsedTag = parsedTag.replace("-", " ");
-    }
-    return parsedTag;
-  };
-
-  const [selectedTag, setSelectedTag] = useState(getSelectedTagFromQuery());
+  const [selectedTag, setSelectedTag] = useState(
+    getSelectedTagFromQuery(router.query)
+  );
   const [categories, setCategories] = useState([]);
   const [tags, setTags] = useState([]);
 
-  useEffect(() => {
-    // extract the data we need from the tina result
-    const processedData = processData(data);
-    setCategories(processedData.categories);
-    setTags(processedData.tags);
-  }, [data]);
-
-  useEffect(() => {
-    // as the querystring changes, update the selected tag
-    const qsTag = getSelectedTagFromQuery();
-    if (qsTag !== selectedTag) {
-      setSelectedTag(qsTag);
-    }
-  }, [router.query]);
-
-  useEffect(() => {
-    // when the selected tag changes, update the querystring
-    if (!tags.some((x) => x.name === selectedTag)) {
-      return;
-    }
-
+  if (tags.some((x) => x.name === selectedTag)) {
     router.push(
       {
         pathname: router.basePath,
@@ -84,12 +67,27 @@ export default function ConsultingIndex(
       undefined,
       { shallow: true }
     );
-  }, [selectedTag]);
+  }
 
-  useEffectOnce(() => {
+  useEffect(() => {
+    // as the querystring changes, update the selected tag
+    const qsTag = getSelectedTagFromQuery(router.query);
+    if (qsTag !== selectedTag) {
+      setSelectedTag(qsTag);
+    }
+  }, [router.query]);
+
+  useEffect(() => {
+    // extract the data we need from the tina result
+    const processedData = processData(data);
+    setCategories(processedData.categories);
+    setTags(processedData.tags);
+  }, [data]);
+
+  useEffect(() => {
     // grid animation seutp - will automatically clean itself up when dom node is removed
     wrapGrid(gridRef.current);
-  });
+  }, []);
 
   const tinaData = data.consultingIndexConnection.edges[0].node;
 
@@ -108,10 +106,10 @@ export default function ConsultingIndex(
               {tags?.map((tag, index) => (
                 <div
                   data-tina-field={tinaField(tinaData.sidebar[index], "label")}
+                  key={tag.name}
                 >
                   <Tag
                     label={tag.label}
-                    key={tag.name}
                     tag={tag.name}
                     selectedTag={selectedTag}
                     setSelectedTag={setSelectedTag}

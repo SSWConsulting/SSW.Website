@@ -2,7 +2,7 @@
 import { Popover, Transition } from "@headlessui/react";
 import React, { Fragment, useState } from "react";
 import { Au, Cn, Fr } from "react-flags-select";
-import { useEffectOnce, useLocation } from "react-use";
+import { useLocation } from "react-use";
 import { twMerge } from "tailwind-merge";
 
 const websites = [
@@ -45,12 +45,12 @@ const CountryDropdown: React.FC = () => {
   const [isOpened, setIsOpened] = useState(false);
   const [currentCountry, setCurrentCountry] = useState("AU");
 
-  useEffectOnce(() => {
+  useEffect(() => {
     const website = websites.find((w) => host?.endsWith(w.url));
     if (website) {
       setCurrentCountry(website.country);
     }
-  });
+  }, [host]);
 
   return (
     <Popover>

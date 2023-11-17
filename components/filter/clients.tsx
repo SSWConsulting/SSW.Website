@@ -25,7 +25,7 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
     return clients.filter(
       (client) => client.categories?.find((c) => c.category.name === category)
     );
-  }, [clients, selected]);
+  }, [clients, selected, categories]);
 
   const groups: FilterGroupProps = {
     selected,

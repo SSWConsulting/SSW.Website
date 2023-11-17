@@ -42,11 +42,9 @@ export const ratingSchema: NumberField = {
 
     // wrapping our component in wrapFieldsWithMeta renders our label & description.
     component: wrapFieldsWithMeta(({ input, form }) => {
-      React.useEffect(() => {
-        if (isNaN(input.value)) {
-          form.initialize({ ...form.getState().values, rating: -1 });
-        }
-      }, []);
+      if (isNaN(input.value)) {
+        form.initialize({ ...form.getState().values, rating: -1 });
+      }
 
       return (
         <div>
