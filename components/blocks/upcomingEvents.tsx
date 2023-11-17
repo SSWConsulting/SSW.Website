@@ -37,7 +37,7 @@ export const UpcomingEvents = ({ data }) => {
     };
 
     fetchEvents();
-  }, []);
+  }, [data.numberOfEvents]);
 
   return (
     <div className="prose mt-5 max-w-none sm:my-0 ">
@@ -52,7 +52,9 @@ export const UpcomingEvents = ({ data }) => {
           {loading ? (
             <p>Loading...</p>
           ) : (
-            events.map((event) => <UpcomingEvent event={event} />)
+            events.map((event, index) => (
+              <UpcomingEvent event={event} key={index} />
+            ))
           )}
         </div>
         <div className="mt-3 flex flex-row-reverse justify-center sm:justify-start">

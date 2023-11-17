@@ -42,8 +42,8 @@ export default function ProductsIndex(
             ref={gridRef}
             className="grid w-full grid-cols-1 gap-2 lg:grid-cols-2"
           >
-            {productsList.map((product) => (
-              <PageCard page={product} />
+            {productsList.map((product, index) => (
+              <PageCard page={product} key={index} />
             ))}
           </div>
         </div>

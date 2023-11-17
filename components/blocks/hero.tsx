@@ -1,6 +1,6 @@
 import * as React from "react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { Template } from "tinacms";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Actions } from "../util/actions";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
@@ -73,12 +73,15 @@ export const Hero = ({ data, parentField }) => {
             data-tinafield={`${parentField}.image`}
             className="relative row-start-1 flex justify-center lg:col-span-2"
           >
+            {/* TODO: Change to next/image */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="absolute h-auto w-full max-w-xs rounded-lg opacity-50 mix-blend-multiply blur-2xl brightness-150 saturate-200 dark:opacity-30 dark:mix-blend-hard-light dark:brightness-150 lg:max-w-none"
               src={data.image.src}
+              alt={data.image.alt}
               aria-hidden="true"
             />
+            {/* TODO: Change to next/image */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="relative z-10 h-auto w-full max-w-xs rounded-lg lg:max-w-none"

@@ -75,7 +75,7 @@ export default function ConsultingIndex(
     if (qsTag !== selectedTag) {
       setSelectedTag(qsTag);
     }
-  }, [router.query]);
+  }, [router.query, selectedTag]);
 
   useEffect(() => {
     // extract the data we need from the tina result
