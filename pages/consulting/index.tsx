@@ -1,5 +1,5 @@
 import { NextRouter, useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { MdLiveHelp } from "react-icons/md";
 
 import { wrapGrid } from "animate-css-grid";
@@ -32,21 +32,48 @@ export default function ConsultingIndex(
   const [selectedTag, setSelectedTag] = useState(
     getSelectedTagFromQuery(router.query)
   );
-  const [categories, setCategories] = useState([]);
-  const [tags, setTags] = useState([]);
+
+  const node = data.consultingIndexConnection.edges[0].node;
+
+  const categories = useMemo(() => {
+    return node.categories
+      .filter((c) => c.pages && c.pages.length > 0)
+      .map((c) => {
+        return {
+          name: c.category.name,
+          pages: c.pages.map((p) => {
+            return {
+              url:
+                p.externalUrl ||
+                p.page.id.replace("content/", "").replace(".mdx", ""),
+              title: p.title,
+              description: p.description,
+              logo: p.logo,
+              tags: p.tags
+                ? [allServices, ...p.tags.map((t) => t.tag?.name)]
+                : [allServices],
+            };
+          }),
+        };
+      });
+  }, [node]);
+
+  const tags = useMemo(
+    () =>
+      node.sidebar?.map((item) => {
+        return {
+          label: item.label,
+          name: item.tag?.name,
+        };
+      }),
+    [node]
+  );
 
   useEffect(() => {
     // as the querystring changes, update the selected tag
     const qsTag = getSelectedTagFromQuery(router.query);
     setSelectedTag(qsTag);
   }, [router.query]);
-
-  useEffect(() => {
-    // extract the data we need from the tina result
-    const processedData = processData(data);
-    setCategories(processedData.categories);
-    setTags(processedData.tags);
-  }, [data]);
 
   useEffect(() => {
     // grid animation seutp - will automatically clean itself up when dom node is removed
@@ -138,48 +165,6 @@ const updateParams = (router: NextRouter, tags, selectedTag) => {
       { shallow: true }
     );
   }
-};
-
-const processData = (data) => {
-  if (data.consultingIndexConnection.edges.length !== 1) {
-    throw new Error("Expected exactly one consulting index page");
-  }
-
-  const node = data.consultingIndexConnection.edges[0].node;
-
-  const categories = node.categories
-    .filter((c) => c.pages && c.pages.length > 0)
-    .map((c) => {
-      return {
-        name: c.category.name,
-        pages: c.pages.map((p) => {
-          return {
-            url:
-              p.externalUrl ||
-              p.page.id.replace("content/", "").replace(".mdx", ""),
-            title: p.title,
-            description: p.description,
-            logo: p.logo,
-            tags: p.tags
-              ? [allServices, ...p.tags.map((t) => t.tag?.name)]
-              : [allServices],
-          };
-        }),
-      };
-    });
-
-  const tags = node.sidebar?.map((item) => {
-    return {
-      label: item.label,
-      name: item.tag?.name,
-    };
-  });
-
-  return {
-    categories,
-    tags,
-    seo: node.seo,
-  };
 };
 
 export const getStaticProps = async () => {
