@@ -41,7 +41,7 @@ const CountryDropdown = () => {
     if (website) {
       setCurrentCountry(website.country);
     }
-  }, []);
+  }, [host]);
 
   return (
     <Popover>

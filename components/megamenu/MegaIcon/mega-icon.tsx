@@ -39,8 +39,8 @@ type IconMapType = {
 };
 
 const iconMap: IconMapType = {
-  chevronDown: (props) => <ChevronLeftIcon className={props.className} />,
-  chevronLeft: (props) => <ChevronDownIcon className={props.className} />,
+  chevronDown: (props) => <ChevronDownIcon className={props.className} />,
+  chevronLeft: (props) => <ChevronLeftIcon className={props.className} />,
   magnifyingGlass: (props) => (
     <MagnifyingGlassIcon className={props.className} />
   ),
