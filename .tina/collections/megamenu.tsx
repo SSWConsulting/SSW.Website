@@ -1,4 +1,5 @@
 import type { Collection } from "tinacms";
+import { availableIcons } from "../../types/megamenu";
 
 export const megaMenuSchema: Collection = {
   label: "Global - Mega Menu",
@@ -26,17 +27,33 @@ export const megaMenuSchema: Collection = {
         },
         {
           type: "object",
-          name: "menuItems",
-          label: "Menu Items",
+          name: "menuColumns",
+          label: "Menu Columns",
           list: true,
           fields: [
             {
-              type: "string",
-              name: "name",
-            },
-            {
-              type: "string",
-              name: "url",
+              type: "object",
+              name: "menuItems",
+              label: "Menu Items",
+              list: true,
+              fields: [
+                {
+                  type: "string",
+                  name: "name",
+                  label: "Name",
+                },
+                {
+                  type: "string",
+                  name: "url",
+                  label: "URL",
+                },
+                {
+                  type: "string",
+                  name: "icon",
+                  label: "Icon",
+                  options: [...availableIcons],
+                },
+              ],
             },
           ],
         },
