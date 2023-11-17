@@ -56,7 +56,7 @@ module.exports = {
         facebook: "#3b5998",
         xtwitter: "#000",
         tiktok: "#000",
-        github: "white",
+        github: "#fff",
         meetup: "#f05664",
       },
       sswRed: "#cc4141",
