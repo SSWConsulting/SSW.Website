@@ -1,8 +1,14 @@
 import Image from "next/image";
 import type { Template } from "tinacms";
-import { sswCountries } from "../util/constants/country";
+import { Countries, sswCountries } from "../util/constants/country";
 
-export const Flag = ({ country }) => {
+type FlagProps = {
+  country: Countries;
+  height?: number;
+  width?: number;
+};
+
+export const Flag = ({ country, height, width }: FlagProps) => {
   const countryObj = sswCountries.find((item) => item.label === country);
   const flagUrl = countryObj?.flagUrl || sswCountries[0].flagUrl;
 
@@ -11,8 +17,8 @@ export const Flag = ({ country }) => {
       <Image
         className="my-0 inline"
         src={flagUrl}
-        width={35}
-        height={35}
+        width={width || 35}
+        height={height || 35}
         alt="country"
       />
     </>

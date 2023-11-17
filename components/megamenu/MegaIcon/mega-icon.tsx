@@ -82,7 +82,6 @@ const MegaIconMapper = (props: MegaIconProps) => {
   const Icon = iconMap[props.icon];
 
   if (!Icon) {
-    console.error(props.icon);
     return <></>;
   }
 

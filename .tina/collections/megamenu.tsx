@@ -27,6 +27,7 @@ export const megaMenuSchema: Collection = {
         {
           type: "object",
           name: "menuItems",
+          label: "Menu Items",
           list: true,
           fields: [
             {

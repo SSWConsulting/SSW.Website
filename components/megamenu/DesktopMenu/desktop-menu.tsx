@@ -1,6 +1,6 @@
 import { Popover } from "@headlessui/react";
 import React, { createContext } from "react";
-import { NavMenuItem } from "../../../models/megamenu/menuItem.model";
+import { NavMenuItem } from "../../../types/megamenu";
 import { SocialIcons, SocialTypes } from "../../util/socialIcons";
 import { CountryDropdown } from "../CountryDropdown";
 import Divider from "../divider";

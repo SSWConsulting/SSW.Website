@@ -1,9 +1,11 @@
 import Link from "next/link";
 import React from "react";
 
-export const MenuItemLink: React.FC<{
+type MenuItemLinkProps = {
   item: { href?: string; name: string };
-}> = ({ item }) => {
+};
+
+export const MenuItemLink = ({ item }: MenuItemLinkProps) => {
   return (
     <Link
       href={item.href}

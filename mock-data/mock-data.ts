@@ -25,7 +25,7 @@ export const menuBarItems: NavMenuItem[] = [
               name: "AI Development",
               description:
                 "Creating intelligent, data-driven solutions for businesses",
-              icon: "alDevelopment",
+              icon: "aiDevelopment",
               href: "/consulting?tag=AI-Development",
             },
             {
