@@ -1,6 +1,6 @@
 import * as React from "react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { Template } from "tinacms";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Actions } from "../util/actions";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
@@ -77,6 +77,7 @@ export const Hero = ({ data, parentField }) => {
             <img
               className="absolute h-auto w-full max-w-xs rounded-lg opacity-50 mix-blend-multiply blur-2xl brightness-150 saturate-200 dark:opacity-30 dark:mix-blend-hard-light dark:brightness-150 lg:max-w-none"
               src={data.image.src}
+              alt={data.image.alt}
               aria-hidden="true"
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}

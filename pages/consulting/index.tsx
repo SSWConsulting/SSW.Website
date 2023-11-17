@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter, type NextRouter } from "next/router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { MdLiveHelp } from "react-icons/md";
@@ -20,6 +20,21 @@ import { SEO } from "../../components/util/seo";
 
 const allServices = "All SSW Services";
 
+const getSelectedTagFromQuery = (router: NextRouter): string => {
+  let parsedTag = allServices;
+  if (router.query.tag) {
+    const { tag } = router.query;
+
+    if (tag instanceof Array) {
+      parsedTag = tag[0];
+    } else {
+      parsedTag = tag;
+    }
+    parsedTag = parsedTag.replace("-", " ");
+  }
+  return parsedTag;
+};
+
 export default function ConsultingIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
@@ -31,22 +46,10 @@ export default function ConsultingIndex(
   });
 
   const router = useRouter();
-  const getSelectedTagFromQuery = (): string => {
-    let parsedTag = allServices;
-    if (router.query.tag) {
-      const { tag } = router.query;
 
-      if (tag instanceof Array) {
-        parsedTag = tag[0];
-      } else {
-        parsedTag = tag;
-      }
-      parsedTag = parsedTag.replace("-", " ");
-    }
-    return parsedTag;
-  };
-
-  const [selectedTag, setSelectedTag] = useState(getSelectedTagFromQuery());
+  const [selectedTag, setSelectedTag] = useState(
+    getSelectedTagFromQuery(router)
+  );
   const [categories, setCategories] = useState([]);
   const [tags, setTags] = useState([]);
 
@@ -59,7 +62,7 @@ export default function ConsultingIndex(
 
   useEffect(() => {
     // as the querystring changes, update the selected tag
-    const qsTag = getSelectedTagFromQuery();
+    const qsTag = getSelectedTagFromQuery(router);
     if (qsTag !== selectedTag) {
       setSelectedTag(qsTag);
     }
