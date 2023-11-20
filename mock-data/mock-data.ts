@@ -99,6 +99,7 @@ export const menuBarItems: NavMenuItem[] = [
                 "A quick and easy solution for entry into a large and juicy market",
               category: "featured",
               href: "/consulting/chinafy-app",
+              icon: "chinaFlag",
             },
           ],
         },

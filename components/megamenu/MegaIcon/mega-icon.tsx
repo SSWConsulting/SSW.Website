@@ -46,6 +46,47 @@ const MegaIconMapper: React.FC<MegaIconProps> = (props) => {
       return <PlayCircleIcon className={props.className} />;
     case AvailableIcons.rectangleGroup:
       return <RectangleGroupIcon className={props.className} />;
+    case AvailableIcons.chinaFlag:
+      //   return //<Chinafy className={props.className} />;
+      return (
+        <svg
+          width="27"
+          height="20"
+          viewBox="0 0 27 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={props.className}
+        >
+          <g clip-path="url(#clip0_4366_2528)">
+            <path d="M0 0H27V20H0V0Z" fill="#DE2910" />
+            <path
+              d="M3.23989 7.4L5.06236 2L6.88484 7.4L2.0249 4.1H8.09983L3.23989 7.4Z"
+              fill="#FFDE00"
+            />
+            <path
+              d="M11.1447 2.10346L9.26914 2.51397L10.5202 1.07411L10.3975 3.01197L9.35669 1.29638L11.1447 2.10346Z"
+              fill="#FFDE00"
+            />
+            <path
+              d="M13.0376 4.47281L11.1477 4.13274L12.8662 3.28481L11.9922 5.02399L11.7065 3.04399L13.0376 4.47281Z"
+              fill="#FFDE00"
+            />
+            <path
+              d="M12.7615 7.79682L11.1763 6.72501L13.0956 6.64307L11.5794 7.87894L12.1362 5.95603L12.7615 7.79682Z"
+              fill="#FFDE00"
+            />
+            <path
+              d="M10.3775 9.96839L9.33443 8.37505L11.1368 9.03161L9.25494 9.59318L10.5205 8.03188L10.3775 9.96839Z"
+              fill="#FFDE00"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_4366_2528">
+              <rect width="27" height="20" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      );
     // TODO: store the below in the content repo and fetch it from there
     case AvailableIcons.websiteDevelopment:
       return (

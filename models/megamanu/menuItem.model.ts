@@ -24,6 +24,7 @@ export interface SideMenuItem {
   description?: string;
   category: AvailableWidget | string;
   href: string;
+  icon?: AvailableIcons | string;
 }
 
 export interface NavMenuGroup {
