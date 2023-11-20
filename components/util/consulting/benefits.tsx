@@ -8,18 +8,18 @@ const BenefitCard = (props) => {
   return (
     <article
       className={classNames(
-        "px-14 py-11 max-md:mx-auto md:flex",
+        "px-14 py-11 max-md:mx-auto md:flex justify-center",
         props.className
       )}
       data-aos={props.aosType}
     >
       <figure
         data-tina-field={tinaField(props.data, "image")}
-        className="relative mx-auto select-none md:mr-5"
+        className="relative select-none md:mr-5"
       >
         {image && (
           <Image
-            className="mx-auto max-w-max"
+            className="max-w-max max-md:mx-auto"
             src={image}
             width={120}
             height={120}
@@ -42,7 +42,7 @@ const BenefitCard = (props) => {
           <TinaMarkdown content={description} />
         </section>
         {linkURL && (
-          <p className="pt-4 text-left">
+          <p className="pt-4 text-center md:text-left">
             <a
               data-tina-field={tinaField(props.data, "linkName")}
               className="text-left text-white"

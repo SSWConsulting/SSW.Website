@@ -33,7 +33,7 @@ export enum SocialTypes {
 
 const socialStyles = new Map<
   SocialTypes,
-  { icon: IconType; bgClassName: string }
+  { icon: IconType; bgClassName: string; fill?: string }
 >([
   [
     SocialTypes.phone,
@@ -89,6 +89,7 @@ const socialStyles = new Map<
     {
       icon: FaGithub,
       bgClassName: "bg-social-github",
+      fill: "black",
     },
   ],
   [
@@ -150,7 +151,7 @@ export const SocialIcons = (data?: SocialIconsParams) => {
             key={social.type}
             href={URL}
             className={classNames(
-              "unstyled flex h-12 cursor-pointer items-center justify-center rounded-lg text-xl hover:bg-ssw-black hover:bg-none",
+              "unstyled flex h-12 cursor-pointer items-center justify-center rounded-lg text-xl hover:opacity-70",
               styling.bgClassName,
               TEXT ? "w-fit shrink-0" : "w-12",
               { "px-5": TEXT },
@@ -161,10 +162,11 @@ export const SocialIcons = (data?: SocialIconsParams) => {
             title={social.title}
             target={social.openInSameWindow ? "_self" : "_blank"}
             rel="noreferrer nofollow"
+            prefetch={false}
           >
             <styling.icon
               className={classNames({ "text-2xl": !TEXT })}
-              color="white"
+              color={styling.fill ?? "white"}
             />
             {TEXT && (
               <span className="ml-2 inline text-sm font-bold text-white">
