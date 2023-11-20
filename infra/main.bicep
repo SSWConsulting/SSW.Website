@@ -61,7 +61,7 @@ module appInsight 'appInsight.bicep' = {
   }
 }
 
-module appService 'appService-main.bicep' = {
+module appService 'appService.bicep' = {
   name: 'appService-${now}'
   params: {
     projectName: projectName
