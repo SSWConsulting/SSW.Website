@@ -9,10 +9,6 @@ param tags object
 
 var appSettings = [
   {
-    name: 'APP_ENV'
-    value: 'pull-request'
-  }
-  {
     name: 'WEBSITES_ENABLE_APP_SERVICE_STORAGE'
     value: 'false'
   }

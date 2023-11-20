@@ -54,10 +54,6 @@ resource plan 'Microsoft.Web/serverfarms@2022-03-01' = {
 
 var appSettings = [
   {
-    name: 'APP_ENV'
-    value: 'production'
-  }
-  {
     name: 'WEBSITES_ENABLE_APP_SERVICE_STORAGE'
     value: 'false'
   }
