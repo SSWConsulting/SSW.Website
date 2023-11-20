@@ -47,7 +47,6 @@ const MegaIconMapper: React.FC<MegaIconProps> = (props) => {
     case AvailableIcons.rectangleGroup:
       return <RectangleGroupIcon className={props.className} />;
     case AvailableIcons.chinaFlag:
-      //   return //<Chinafy className={props.className} />;
       return (
         <svg
           width="27"
