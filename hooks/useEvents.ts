@@ -46,7 +46,7 @@ export const useEvents = (events: EventInfo[]) => {
     ];
 
     return groups;
-  }, [filterControls, options]);
+  }, [events, filterControls, options]);
 
   const filteredEvents = useMemo(() => {
     return events?.filter(
@@ -57,7 +57,7 @@ export const useEvents = (events: EventInfo[]) => {
         (filterControls.format === NO_SELECTION ||
           event.CalendarType === options.formats[filterControls.format])
     );
-  }, [events, filterControls]);
+  }, [events, options.categories, options.formats, filterControls]);
 
   return { filters, filteredEvents };
 };

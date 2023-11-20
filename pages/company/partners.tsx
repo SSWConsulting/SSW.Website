@@ -40,8 +40,8 @@ export default function PartnersIndex(
             ref={gridRef}
             className="grid w-full grid-cols-1 gap-2 lg:grid-cols-2"
           >
-            {partners?.partnersList?.map((partner) => (
-              <PageCard page={partner} />
+            {partners?.partnersList?.map((partner, index) => (
+              <PageCard page={partner} key={index} />
             ))}
           </div>
         </div>
