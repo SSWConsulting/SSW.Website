@@ -8,7 +8,8 @@ export const addNoIndexHeaders = (
     const siteUrl = new URL(process.env.SITE_URL || "https://www.ssw.com.au");
 
     if (
-      sanitizeHostname(request.nextUrl.hostname) !== sanitizeHostname(siteUrl.hostname)
+      sanitizeHostname(request.nextUrl.hostname) !==
+      sanitizeHostname(siteUrl.hostname)
     ) {
       response.headers.set("X-Robots-Tag", "noindex");
     }
