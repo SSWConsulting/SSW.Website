@@ -4523,7 +4523,7 @@ __metadata:
     "@typescript-eslint/parser": ^6.9.1
     animate-css-grid: ^1.5.1
     aos: ^2.3.4
-    applicationinsights: ^2.9.0
+    applicationinsights: ^2.9.1
     autoprefixer: ^10.4.15
     axios: ^1.6.0
     classnames: ^2.3.2
@@ -6167,9 +6167,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"applicationinsights@npm:^2.9.0":
-  version: 2.9.0
-  resolution: "applicationinsights@npm:2.9.0"
+"applicationinsights@npm:^2.9.1":
+  version: 2.9.1
+  resolution: "applicationinsights@npm:2.9.1"
   dependencies:
     "@azure/core-auth": ^1.5.0
     "@azure/core-rest-pipeline": 1.10.1
@@ -6189,7 +6189,7 @@ __metadata:
   peerDependenciesMeta:
     applicationinsights-native-metrics:
       optional: true
-  checksum: ff044bd70355c059960c2e1d47e8a32ce4df5d0ed5338bf1399663cb251b3010c1ef96cad65d062be9b7e073fa3a2fea05b24043f996b1314cc72fba7c36836f
+  checksum: c10be2a9b55dec985af044f74847a6035b00120dc3474d4851cbaa9422d454ac18fb9e243068111836b7be8767dd19d34790acce1e59887b11601a4477974fad
   languageName: node
   linkType: hard
 
