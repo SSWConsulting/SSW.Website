@@ -1,4 +1,3 @@
-import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
@@ -13,24 +12,12 @@ type Tweet = {
 
 export const TweetEmbed = (props: TweetEmbedProps) => {
   const [tweet, setTweet] = useState<Tweet>(null);
-  const appInsights = useAppInsightsContext();
 
   useEffect(() => {
     fetch(`/api/get-tweet-embed?url=${encodeURIComponent(props.url)}`)
       .then((res) => res.json())
-      .then((json) => setTweet(json))
-
-      .catch((err) => {
-        appInsights?.trackException(
-          {
-            exception: err,
-          },
-          { Method: "Get-Tweet-Embed", payload: props.url }
-        );
-        // eslint-disable-next-line no-console
-        console.error(err);
-      });
-  }, []);
+      .then((json) => setTweet(json));
+  }, [props.url]);
 
   if (!tweet) return <></>;
 

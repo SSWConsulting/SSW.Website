@@ -65,7 +65,7 @@ export const VideoModal = ({
       setVideoId("");
       setImageSrc("");
     }
-  }, [url]);
+  }, [url, isYouTube, isVimeo]);
 
   return (
     <div>
