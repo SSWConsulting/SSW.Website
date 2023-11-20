@@ -59,10 +59,6 @@ const config = {
         source: "/",
         destination: "/home",
       },
-      {
-        source: "/fullstackug/brisbane",
-        destination: "/netug/brisbane",
-      },
     ];
   },
   async redirects() {
@@ -70,11 +66,6 @@ const config = {
       {
         source: "/admin",
         destination: "/admin/index.html",
-        permanent: true,
-      },
-      {
-        source: "/netug/brisbane",
-        destination: "/fullstackug/brisbane",
         permanent: true,
       },
     ];
