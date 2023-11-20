@@ -10,37 +10,33 @@
               "menuItems": [
                 {
                   "name": "Web Development",
-                  "description":
-                    "Professional web development service that creates stylish, functional, user-friendly websites",
-                  "icon": "websiteDevelopment",
-                  "url": "/consulting?tag=Web-Development"
+                  "url": "/consulting?tag=Web-Development",
+                  "description": "Professional web development service that creates stylish, functional, user-friendly websites",
+                  "icon": "websiteDevelopment"
                 },
                 {
                   "name": "Mobile Development",
+                  "url": "/consulting?tag=Mobile-Development",
                   "description": "Building cutting-edge apps for diverse platforms",
-                  "icon": "mobileDevelopment",
-                  "url": "/consulting?tag=Mobile-Development"
+                  "icon": "mobileDevelopment"
                 },
                 {
                   "name": "AI Development",
-                  "description":
-                    "Creating intelligent, data-driven solutions for businesses",
-                  "icon": "aiDevelopment",
-                  "url": "/consulting?tag=AI-Development"
+                  "url": "/consulting?tag=AI-Development",
+                  "description": "Creating intelligent, data-driven solutions for businesses",
+                  "icon": "aiDevelopment"
                 },
                 {
                   "name": "Database Development",
-                  "description":
-                    "Constructing robust, scalable, and efficient data management systems",
-                  "icon": "databaseDevelopment",
-                  "url": "/consulting?tag=Database-Development"
+                  "url": "/consulting?tag=Database-Development",
+                  "description": "Constructing robust, scalable, and efficient data management systems",
+                  "icon": "databaseDevelopment"
                 },
                 {
                   "name": "Platform Development",
-                  "description":
-                    "Delivering versatile, integrated solutions that optimize business operations",
-                  "icon": "platformDevelopment",
-                  "url": "/consulting?tag=Platform-Development"
+                  "url": "/consulting?tag=Platform-Development",
+                  "description": "Delivering versatile, integrated solutions that optimize business operations",
+                  "icon": "platformDevelopment"
                 }
               ]
             },
@@ -49,33 +45,244 @@
               "menuItems": [
                 {
                   "name": "UI/UX Design",
+                  "url": "/consulting?tag=Design",
                   "description": "Crafting visually stunning, intuitive user intertaces for seamless experiences",
-                  "icon": "uiUXDesign",
-                  "url": "/consulting?tag=Design"
+                  "icon": "uiUXDesign"
                 },
                 {
                   "name": "Video Production",
+                  "url": "/consulting?tag=Video",
                   "description": "Creating captivating, high-quality visual content for impactful storytelling",
-                  "icon": "videoProduction",
-                  "url": "/consulting?tag=Video"
+                  "icon": "videoProduction"
                 },
                 {
                   "name": "Cloud and Infrastructure",
+                  "url": "/consulting?tag=Cloud-and+Infrastructure",
                   "description": "Designing scalable, secure, and resilient cloud computing environments",
-                  "icon": "cloudAndInfrastructure",
-                  "url": "/consulting?tag=Cloud-and+Infrastructure"
+                  "icon": "cloudAndInfrastructure"
                 },
                 {
                   "name": "Other SSW Service",
+                  "url": "/consulting?tag=Other-SSW+Services",
                   "description": "SSW's other enterprise software development services",
-                  "icon": "otherSSWService",
-                  "url": "/consulting?tag=Other-SSW+Services"
+                  "icon": "otherSSWService"
                 }
               ]
             }
           ]
         }
-      ]
+      ],
+      "viewAll": {
+        "name": "View all services",
+        "url": "/consulting"
+      }
+    },
+    {
+      "name": "Products",
+      "menuColumns": [
+        {
+          "menuColumnGroups": [
+            {
+              "name": "Web",
+              "menuItems": [
+                {
+                  "name": "SugarLearning",
+                  "description":
+                    "The next generation on-boarding & induction tool for smart companies",
+                  "icon": "sugarLearning",
+                  "url": "https://www.sugarlearning.com/"
+                },
+                {
+                  "name": "TimePro",
+                  "description":
+                    "TimePro offers everything an enterprise needs, such as invoicing, receipting, and time sheeting",
+                  "icon": "timePro",
+                  "url": "https://sswtimepro.com/"
+                },
+                {
+                  "name": "CodeAuditor",
+                  "description": "Scan any website for broken links and HTML Issues",
+                  "icon": "codeAuditor",
+                  "url": "https://codeauditor.com"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "menuColumnGroups": [
+            {
+              "name": "AI",
+              "menuItems": [
+                {
+                  "name": "SophieBot",
+                  "description":
+                    "AI-driven solution that delivers a competitive edge through its ability to find data",
+                  "icon": "sophieBot",
+                  "url": "https://sswsophie.com/sophiebot"
+                },
+                {
+                  "name": "SophieHub",
+                  "description":
+                    "A Smart Environment System which shows user specific information based on the user",
+                  "icon": "sophieHub",
+                  "url": "https://sswsophie.com"
+                }
+              ]
+            },
+            {
+              "name": "Apps",
+              "menuItems": [
+                {
+                  "name": "SSW Rewards",
+                  "description":
+                    "Scan SSW QR codes, earn SSW Points, claim rewards, and win prizes",
+                  "icon": "sswRewards",
+                  "url": "/products/rewards"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "viewAll": {
+        "name": "View all products",
+        "url": "/products"
+      }
+    },
+    {
+      "name": "Events & Training",
+      "menuColumns": [
+        {
+          "menuColumnGroups": [
+            {
+              "name": "User Groups",
+              "menuItems": [
+                {
+                  "name": "Sydney .NET UG",
+                  "url": "/netug/sydney"
+                },
+                {
+                  "name": "Canberra .NET UG",
+                  "url": "/netug/canberra"
+                },
+                {
+                  "name": "Melbourne .NET UG",
+                  "url": "/netug/melbourne"
+                },
+                {
+                  "name": "Brisbane Full Stack UG",
+                  "url": "/netug/brisbane"
+                },
+                {
+                  "name": "China Fire User Group",
+                  "url": "https://fireusergroup.com/"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "menuColumnGroups": [
+            {
+              "name": "1-Day Training",
+              "menuItems": [
+                {
+                  "name": "Angular Superpowers Tour",
+                  "url": "/events/angular-superpowers-tour"
+                },
+                {
+                  "name": "Azure Superpowers Tour",
+                  "url": "/events/azure-superpowers-tour"
+                },
+                {
+                  "name": "Clean Architecture Superpowers Tour",
+                  "url": "/events/clean-architecture-superpowers-tour"
+                },
+                {
+                  "name": ".NET Superpowers Tour",
+                  "url": "/events/net-superpowers-tour"
+                },
+                {
+                  "name": "Azure Super Skills",
+                  "url": "/events/azure-superskills"
+                }
+              ]
+            },
+            {
+              "name": "2-Day Training",
+              "menuItems": [
+                {
+                  "name": "Angular Workshop",
+                  "url": "/events/angular-workshop"
+                },
+                {
+                  "name": "Clean Architecture Workshop",
+                  "url": "/events/clean-architecture-workshop"
+                }
+              ]
+            },
+            {
+              "name": "Hack Days",
+              "menuItems": [
+                {
+                  "name": "Angular Hack Day",
+                  "url": "https://angularhackday.com/"
+                },
+                {
+                  "name": "MAUI Hack Day",
+                  "url": "https://mauihackday.com/"
+                },
+                {
+                  "name": "AI Hack Day",
+                  "url": "https://aihackday.com/"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "menuColumnGroups": [
+            {
+              "name": "Training Services",
+              "menuItems": [
+                [
+                  {
+                    "menuColumnGroups": [
+                      {
+                        "name": "Consulting",
+                        "menuItems": [
+                          {
+                            "name": "Video Production & Live Streaming",
+                            "url": "/consulting/video-production"
+                          },
+                          {
+                            "name": "Conference Room for Hire",
+                            "url": "http://sswchapel.com.au/"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "SSW Internship Programs",
+                        "menuItems": [
+                          {
+                            "name": "Full Stack Developers",
+                            "url": "/training/internship-fullstack"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "viewAll": {
+        "name": "View all events & training",
+        "url": "/events"
+      }
     }
   ]
 }

@@ -122,6 +122,21 @@ export const megaMenuSchema: Collection = {
             },
           ],
         },
+        {
+          type: "object",
+          name: "viewAll",
+          label: "View All Link",
+          fields: [
+            {
+              type: "string",
+              name: "name",
+            },
+            {
+              type: "string",
+              name: "url",
+            },
+          ],
+        },
       ],
     },
   ],
