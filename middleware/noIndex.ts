@@ -7,7 +7,7 @@ export const addNoIndexHeaders = (
   try {
     const siteUrl = new URL(process.env.SITE_URL || "https://www.ssw.com.au");
 
-    if (request.nextUrl.hostname !== siteUrl.hostname) {
+    if (sanitizeHostname(request.nextUrl.hostname) !== sanitizeHostname(siteUrl.hostname)) {
       response.headers.set("X-Robots-Tag", "noindex");
     }
   } catch (err) {
@@ -18,4 +18,12 @@ export const addNoIndexHeaders = (
 
     throw err;
   }
+};
+
+const sanitizeHostname = (hostname: string) => {
+  if (hostname.startsWith('www.')) {
+      return hostname.substring(4);
+  }
+
+  return hostname;
 };
