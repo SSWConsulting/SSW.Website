@@ -1,1 +1,81 @@
-{}
+{
+  "menuGroups": [
+    {
+      "name": "Services",
+      "menuColumns": [
+        {
+          "menuColumnGroups": [
+            {
+              "name": "Development Teams",
+              "menuItems": [
+                {
+                  "name": "Web Development",
+                  "description":
+                    "Professional web development service that creates stylish, functional, user-friendly websites",
+                  "icon": "websiteDevelopment",
+                  "url": "/consulting?tag=Web-Development"
+                },
+                {
+                  "name": "Mobile Development",
+                  "description": "Building cutting-edge apps for diverse platforms",
+                  "icon": "mobileDevelopment",
+                  "url": "/consulting?tag=Mobile-Development"
+                },
+                {
+                  "name": "AI Development",
+                  "description":
+                    "Creating intelligent, data-driven solutions for businesses",
+                  "icon": "aiDevelopment",
+                  "url": "/consulting?tag=AI-Development"
+                },
+                {
+                  "name": "Database Development",
+                  "description":
+                    "Constructing robust, scalable, and efficient data management systems",
+                  "icon": "databaseDevelopment",
+                  "url": "/consulting?tag=Database-Development"
+                },
+                {
+                  "name": "Platform Development",
+                  "description":
+                    "Delivering versatile, integrated solutions that optimize business operations",
+                  "icon": "platformDevelopment",
+                  "url": "/consulting?tag=Platform-Development"
+                }
+              ]
+            },
+            {
+              "name": "Consulting Teams",
+              "menuItems": [
+                {
+                  "name": "UI/UX Design",
+                  "description": "Crafting visually stunning, intuitive user intertaces for seamless experiences",
+                  "icon": "uiUXDesign",
+                  "url": "/consulting?tag=Design"
+                },
+                {
+                  "name": "Video Production",
+                  "description": "Creating captivating, high-quality visual content for impactful storytelling",
+                  "icon": "videoProduction",
+                  "url": "/consulting?tag=Video"
+                },
+                {
+                  "name": "Cloud and Infrastructure",
+                  "description": "Designing scalable, secure, and resilient cloud computing environments",
+                  "icon": "cloudAndInfrastructure",
+                  "url": "/consulting?tag=Cloud-and+Infrastructure"
+                },
+                {
+                  "name": "Other SSW Service",
+                  "description": "SSW's other enterprise software development services",
+                  "icon": "otherSSWService",
+                  "url": "/consulting?tag=Other-SSW+Services"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

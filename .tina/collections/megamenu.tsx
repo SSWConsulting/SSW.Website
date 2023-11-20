@@ -19,6 +19,11 @@ export const megaMenuSchema: Collection = {
       name: "menuGroups",
       label: "Menu Groups",
       list: true,
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.name };
+        },
+      },
       fields: [
         {
           type: "string",
@@ -33,25 +38,56 @@ export const megaMenuSchema: Collection = {
           fields: [
             {
               type: "object",
-              name: "menuItems",
-              label: "Menu Items",
+              name: "menuColumnGroups",
+              label: "Menu Column Groups",
               list: true,
+              ui: {
+                itemProps: (item) => {
+                  return { label: item?.name };
+                },
+              },
               fields: [
                 {
                   type: "string",
                   name: "name",
                   label: "Name",
+                  required: true,
                 },
                 {
-                  type: "string",
-                  name: "url",
-                  label: "URL",
-                },
-                {
-                  type: "string",
-                  name: "icon",
-                  label: "Icon",
-                  options: [...availableIcons],
+                  type: "object",
+                  name: "menuItems",
+                  label: "Menu Items",
+                  list: true,
+                  ui: {
+                    itemProps: (item) => {
+                      return { label: item?.name };
+                    },
+                  },
+                  fields: [
+                    {
+                      type: "string",
+                      name: "name",
+                      label: "Name",
+                      required: true,
+                    },
+                    {
+                      type: "string",
+                      name: "url",
+                      label: "URL",
+                      required: true,
+                    },
+                    {
+                      type: "string",
+                      name: "description",
+                      label: "Description",
+                    },
+                    {
+                      type: "string",
+                      name: "icon",
+                      label: "Icon",
+                      options: [...availableIcons],
+                    },
+                  ],
                 },
               ],
             },
@@ -60,6 +96,12 @@ export const megaMenuSchema: Collection = {
         {
           type: "object",
           name: "sidebarItems",
+          label: "Sidebar Items",
+          ui: {
+            itemProps: (item) => {
+              return { label: item?.name };
+            },
+          },
           list: true,
           fields: [
             {
