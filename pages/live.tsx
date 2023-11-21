@@ -1,4 +1,5 @@
 import { InferGetStaticPropsType } from "next";
+import { useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../.tina/__generated__/client";
@@ -22,6 +23,7 @@ export default function LivePage(
     query: props.query,
     variables: props.variables,
   });
+  const [visibleVideos, setVisibleVideos] = useState(9);
 
   return (
     <Layout>
@@ -106,12 +108,24 @@ export default function LivePage(
           <h2>{data.live.section2}</h2>
         </span>
         <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">
-          {props.playListVideosLinks.map((video, index) => (
-            <div key={index}>
-              <VideoCard {...video} theme="light" />
-            </div>
-          ))}
+          {props.playListVideosLinks
+            .slice(0, visibleVideos)
+            .map((video, index) => (
+              <div key={index}>
+                <VideoCard {...video} theme="light" />
+              </div>
+            ))}
         </div>
+        {props.playListVideosLinks.length > visibleVideos && (
+          <div className="flex justify-center">
+            <button
+              onClick={() => setVisibleVideos((prevCount) => prevCount + 9)}
+              className="m-8 text-sswRed underline"
+            >
+              See More
+            </button>
+          </div>
+        )}
         <div className="flex justify-center">
           <UtilityButton
             size="small"
