@@ -42,7 +42,7 @@ jobs:
           path: ./.github
           load-mode: strict
 
-      - name: Deploy to production
+      - name: Deploy to staging
         id: deploy
         uses: ./.github/actions/deploy
         with:
