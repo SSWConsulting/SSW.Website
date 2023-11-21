@@ -4556,7 +4556,6 @@ __metadata:
     prettier: 3.0.3
     prettier-plugin-tailwindcss: ^0.5.7
     react: 18.2.0
-    react-copy-to-clipboard: ^5.1.0
     react-device-detect: ^2.2.3
     react-dom: 18.2.0
     react-flags-select: ^2.2.3
@@ -13979,18 +13978,6 @@ __metadata:
   peerDependencies:
     react: "*"
   checksum: 40b49e1aa2ab27a099cc37a3fa2d5bb906b8def4dbe2d922c0e42365e386d82b03f9b06a2b29a44a51f1e114cef72e61c0ba0740581a128d951936ea4617429b
-  languageName: node
-  linkType: hard
-
-"react-copy-to-clipboard@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "react-copy-to-clipboard@npm:5.1.0"
-  dependencies:
-    copy-to-clipboard: ^3.3.1
-    prop-types: ^15.8.1
-  peerDependencies:
-    react: ^15.3.0 || 16 || 17 || 18
-  checksum: f00a4551b9b63c944a041a6ab46af5ef20ba1106b3bc25173e7ef9bffbfba17a613368682ab8820cfe8d4b3acc5335cd9ce20229145bcc1e6aa8d1db04c512e5
   languageName: node
   linkType: hard
 

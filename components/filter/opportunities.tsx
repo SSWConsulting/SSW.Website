@@ -60,10 +60,10 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
     const currentURL = window.location.href.split("#");
     if (currentURL.length > 1) {
       const id = currentURL[1];
-      const elm = document.getElementById(id);
-      if (elm) {
+      const opportunity = document.getElementById(id);
+      if (opportunity) {
         setTimeout(() => {
-          elm.click();
+          opportunity.click();
         }, 100);
       }
     }
@@ -145,43 +145,6 @@ interface OpportunityDropdownProps {
   visible: boolean;
 }
 
-const CopyTextToClipboard = ({ id, title }) => {
-  const [copiedURL, setCopiedURL] = useState("");
-
-  const showSuccessToast = (title: string) => {
-    toast.success(
-      <div className="text-left">{`${title} copied to clipboard!`}</div>
-    );
-  };
-
-  const copiedText = (title, isCopied) => {
-    if (isCopied) {
-      showSuccessToast(title);
-    }
-  };
-
-  useEffect(() => {
-    const currentURL = window.location.href.split("#")[0];
-    const newURL = currentURL + "#" + id;
-    setCopiedURL(newURL);
-  }, [id]);
-
-  return (
-    <CopyToClipboard
-      text={copiedURL}
-      onCopy={(text, result) => copiedText(title, result)}
-    >
-      <span onClick={(event) => event.stopPropagation()}>
-        <MdContentCopy
-          title="Copy Link"
-          className="ml-2 inline hover:opacity-50"
-        />
-        <SuccessToast {...{ autoClose: 1000 }} />
-      </span>
-    </CopyToClipboard>
-  );
-};
-
 const OpportunityDropdown = ({
   opportunity,
   className,
@@ -193,6 +156,10 @@ const OpportunityDropdown = ({
     return title.replace(/&/g, "%26");
   };
 
+  const appendURLWithId = (id: string) => {
+    const currentURL = window.location.href.split("#")[0];
+    window.location.href = `${currentURL}#${id}`;
+  };
   const transformTitleToId = (title?: string) =>
     title
       .toLowerCase()
@@ -215,7 +182,10 @@ const OpportunityDropdown = ({
         <Disclosure>
           <Disclosure.Button
             className="relative clear-both inline-block w-full cursor-pointer border-1 border-gray-300 bg-gray-75 px-4 py-2 hover:bg-white"
-            onClick={() => setIsOpened((curr) => !curr)}
+            onClick={() => {
+              setIsOpened((curr) => !curr);
+              appendURLWithId(transformTitleToId(opportunity.title));
+            }}
             id={transformTitleToId(opportunity.title)}
           >
             <h2 className="my-0 text-base md:float-left">
@@ -224,12 +194,6 @@ const OpportunityDropdown = ({
             <span className="flex items-center md:float-right">
               <FaMapMarkerAlt className="inline" />
               {opportunity.locations?.join(", ")}
-              {opportunity.status != FILLED && opportunity.title && (
-                <CopyTextToClipboard
-                  id={transformTitleToId(opportunity.title)}
-                  title={opportunity.title}
-                />
-              )}
               {opportunity.status === FILLED && <strong> *FILLED*</strong>}
             </span>
           </Disclosure.Button>
