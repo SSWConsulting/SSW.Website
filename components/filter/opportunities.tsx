@@ -5,7 +5,6 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { UtilityButton } from "../blocks";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
-
 import {
   EmploymentType,
   JobStatus,
@@ -53,9 +52,9 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
     );
     setFilteredOpportunities(filtered);
 
-    const currentURL = window.location.href.split("#");
-    if (currentURL.length > 1) {
-      const id = currentURL[1];
+    const onLoadURL = window.location.href.split("#");
+    if (onLoadURL.length > 1) {
+      const id = onLoadURL[1];
       const opportunity = document.getElementById(id);
       if (opportunity) {
         setTimeout(() => {
@@ -156,6 +155,7 @@ const OpportunityDropdown = ({
     const currentURL = window.location.href.split("#")[0];
     window.location.href = `${currentURL}#${id}`;
   };
+
   const transformTitleToId = (title?: string) =>
     title
       .toLowerCase()
