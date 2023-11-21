@@ -153,7 +153,7 @@ resource appService 'Microsoft.Web/sites@2022-03-01' = {
 
 resource stagingSlot 'Microsoft.Web/sites/slots@2022-09-01' = {
   parent: appService
-  name: '${productionName}-staging'
+  name: 'staging'
   location: location
   kind: kind
   identity: {
