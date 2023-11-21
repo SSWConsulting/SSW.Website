@@ -1,3 +1,4 @@
+param now string
 param projectName string = 'sswwebsite'
 param location string = resourceGroup().location
 param tags object
@@ -185,5 +186,24 @@ resource appServiceAcrPullRoleAssignment 'Microsoft.Authorization/roleAssignment
   }
 }
 
+
+module kvAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
+  name: 'KVRoleAssignment-${now}'
+  params: {
+    keyVaultName: keyVaultName
+    principalId: appService.identity.principalId
+    roleName: 'Key Vault Secrets User'
+  }
+}
+
+
+module kvSlotRoleAssignment 'keyVaultRoleAssignment.bicep' = {
+  name: 'KVRoleAssignment-${now}'
+  params: {
+    keyVaultName: keyVaultName
+    principalId: stagingSlot.identity.principalId
+    roleName: 'Key Vault Secrets User'
+  }
+}
+
 output appServiceHostName string = appService.properties.defaultHostName
-output AppPrincipalId string = appService.identity.principalId
