@@ -123,8 +123,11 @@ var appSettings = [
   }
 ]
 
+var productionName = 'app-${projectName}-${entropy}'
+var kind = 'app,linux,container'
+
 resource appService 'Microsoft.Web/sites@2022-03-01' = {
-  name: 'app-${projectName}-${entropy}'
+  name: productionName
   location: location
   kind: 'app,linux,container'
   identity: {
@@ -143,6 +146,24 @@ resource appService 'Microsoft.Web/sites@2022-03-01' = {
       http20Enabled: true
       minTlsVersion: '1.2'
       linuxFxVersion: 'DOCKER|${acr.properties.loginServer}/${dockerImage}:production'
+    }
+    clientAffinityEnabled: false
+  }
+}
+
+resource stagingSlot 'Microsoft.Web/sites/slots@2022-09-01' = {
+  name: '${productionName}-staging'
+  location: location
+  kind: kind
+  identity: {
+    type: 'SystemAssigned'
+  }
+  tags: tags
+  properties: {
+    serverFarmId: plan.id
+    siteConfig: {
+      appSettings: appSettings
+      acrUseManagedIdentityCreds: true
     }
     clientAffinityEnabled: false
   }
