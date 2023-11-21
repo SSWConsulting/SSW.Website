@@ -1,14 +1,10 @@
 import { Disclosure, Transition } from "@headlessui/react";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
-import CopyToClipboard from "react-copy-to-clipboard";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { MdContentCopy } from "react-icons/md";
-import { toast } from "react-toastify";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { UtilityButton } from "../blocks";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
-import SuccessToast from "../successToast/successToast";
 
 import {
   EmploymentType,
