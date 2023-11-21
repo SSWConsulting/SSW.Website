@@ -7,7 +7,8 @@ test("Images load successfully on index", async ({ page }) => {
     }
   });
 
-  await page.goto("/", { waitUntil: "networkidle" });
+  const response = await page.goto("/", { waitUntil: "networkidle" });
+  expect(response.ok()).toBeTruthy();
 
   // Taken from https://github.com/microsoft/playwright/issues/19277
   const sizes = await page.evaluate(() => {
@@ -30,7 +31,10 @@ test("Images load successfully on consulting page", async ({ page }) => {
     }
   });
 
-  await page.goto("/consulting/react", { waitUntil: "networkidle" });
+  const response = await page.goto("/consulting/react", {
+    waitUntil: "networkidle",
+  });
+  expect(response.ok()).toBeTruthy();
 
   // Taken from https://github.com/microsoft/playwright/issues/19277
   const sizes = await page.evaluate(() => {
