@@ -73,6 +73,12 @@ runs:
           Write-Host '⏩ we know the production url already'
           Return 0;
         }
+        elseif ("${{ inputs.slot_name }}" -ieq "staging")
+        {
+          echo "webapp-url=https://${{ inputs.APP_SERVICE_NAME }}-staging.azurewebsites.net" >> $env:GITHUB_OUTPUT
+          Write-Host '⏩ we know the staging url already'
+          Return 0;
+        }
 
         $url = az webapp config hostname list `
           --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `

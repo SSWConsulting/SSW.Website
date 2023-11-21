@@ -28,7 +28,7 @@ module appInsight 'appInsight.bicep' = {
     tags: dev
   }
 }
-module appServiceSlot 'appSerivce-create-slot.bicep' = {
+module appServiceSlot 'appService-create-pr-slot.bicep' = {
   name:'${slotName}-create-slot-${now}'
   params:{
     location:location

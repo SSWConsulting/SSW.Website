@@ -42,16 +42,6 @@ jobs:
           path: ./.github
           load-mode: strict
 
-      - uses: DamianReeves/write-file-action@master
-        name: Make site unindexable
-        if: github.event_name == 'pull_request'
-        with:
-          path: public/robots.txt
-          contents: |
-            User-agent: *
-            Disallow: /
-          write-mode: overwrite
-
       - name: Get current date
         id: date
         run: |
