@@ -186,6 +186,16 @@ resource appServiceAcrPullRoleAssignment 'Microsoft.Authorization/roleAssignment
   }
 }
 
+resource stagingSlotAcrPullRoleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
+  scope: acr
+  name: guid(acr.id, stagingSlot.id, acrPullRoleDefinitionId)
+  properties: {
+    principalId: stagingSlot.identity.principalId
+    roleDefinitionId: acrPullRoleDefinitionId
+    principalType: 'ServicePrincipal'
+  }
+}
+
 
 module kvAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
   name: 'kvAppRoleAssignment-${now}'
