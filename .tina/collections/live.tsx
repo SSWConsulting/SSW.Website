@@ -36,7 +36,7 @@ export const liveSchema: Collection = {
       type: "string",
       name: "youtubePlaylistId",
       label: "Youtube Playlist Id",
-      description: "Please refresh the page fo the playlist to be updated",
+      description: "Please refresh the page to update the playlist",
     },
   ],
 };
