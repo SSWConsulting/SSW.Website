@@ -1,13 +1,12 @@
 import { InferGetStaticPropsType } from "next";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { useTina } from "tinacms/dist/react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../.tina/__generated__/client";
 import { BuiltOnAzure } from "../components/blocks/builtOnAzure";
-import { componentRenderer } from "../components/blocks/mdxComponentRenderer";
 import { VideoEmbed } from "../components/blocks/videoEmbed";
 import { UtilityButton } from "../components/button/utilityButton";
 import { Layout } from "../components/layout";
+import { LiveHeader } from "../components/live/header";
 import { PresenterLink } from "../components/usergroup/presenterLink";
 import { Container } from "../components/util/container";
 import { SEO } from "../components/util/seo";
@@ -28,10 +27,7 @@ export default function LivePage(
     <Layout>
       <SEO seo={data.live.seo} />
       <Container size="xsmall">
-        <TinaMarkdown
-          components={componentRenderer}
-          content={data.live.title}
-        />
+        <LiveHeader {...data.live} />
       </Container>
       <Container size="xsmall">
         <span className="text-sswRed">
