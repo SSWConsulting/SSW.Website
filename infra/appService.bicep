@@ -188,7 +188,7 @@ resource appServiceAcrPullRoleAssignment 'Microsoft.Authorization/roleAssignment
 
 
 module kvAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
-  name: 'KVRoleAssignment-${now}'
+  name: 'kvAppRoleAssignment-${now}'
   params: {
     keyVaultName: keyVaultName
     principalId: appService.identity.principalId
@@ -198,7 +198,7 @@ module kvAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
 
 
 module kvSlotRoleAssignment 'keyVaultRoleAssignment.bicep' = {
-  name: 'KVRoleAssignment-${now}'
+  name: 'kvSlotRoleAssignment-${now}'
   params: {
     keyVaultName: keyVaultName
     principalId: stagingSlot.identity.principalId
