@@ -61,6 +61,7 @@
     "nextjs-breadcrumbs2": "^2.0.4",
     "node-cache": "^5.1.2",
     "react": "18.2.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "18.2.0",
     "react-flags-select": "^2.2.3",

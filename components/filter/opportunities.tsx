@@ -1,10 +1,15 @@
 import { Disclosure, Transition } from "@headlessui/react";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
+import CopyToClipboard from "react-copy-to-clipboard";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { MdContentCopy } from "react-icons/md";
+import { toast } from "react-toastify";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { UtilityButton } from "../blocks";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
+import SuccessToast from "../successToast/successToast";
+
 import {
   EmploymentType,
   JobStatus,
@@ -51,6 +56,17 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
           opportunity.status === jobStatus[selectedStatus])
     );
     setFilteredOpportunities(filtered);
+
+    const currentURL = window.location.href.split("#");
+    if (currentURL.length > 1) {
+      const id = currentURL[1];
+      const elm = document.getElementById(id);
+      if (elm) {
+        setTimeout(() => {
+          elm.click();
+        }, 100);
+      }
+    }
   }, [opportunities, selectedLocation, selectedType, selectedStatus]);
 
   return (
@@ -129,6 +145,43 @@ interface OpportunityDropdownProps {
   visible: boolean;
 }
 
+const CopyTextToClipboard = ({ id, title }) => {
+  const [copiedURL, setCopiedURL] = useState("");
+
+  const showSuccessToast = (title: string) => {
+    toast.success(
+      <div className="text-left">{`${title} copied to clipboard!`}</div>
+    );
+  };
+
+  const copiedText = (title, isCopied) => {
+    if (isCopied) {
+      showSuccessToast(title);
+    }
+  };
+
+  useEffect(() => {
+    const currentURL = window.location.href.split("#")[0];
+    const newURL = currentURL + "#" + id;
+    setCopiedURL(newURL);
+  }, [id]);
+
+  return (
+    <CopyToClipboard
+      text={copiedURL}
+      onCopy={(text, result) => copiedText(title, result)}
+    >
+      <span onClick={(event) => event.stopPropagation()}>
+        <MdContentCopy
+          title="Copy Link"
+          className="ml-2 inline hover:opacity-50"
+        />
+        <SuccessToast {...{ autoClose: 1000 }} />
+      </span>
+    </CopyToClipboard>
+  );
+};
+
 const OpportunityDropdown = ({
   opportunity,
   className,
@@ -139,6 +192,14 @@ const OpportunityDropdown = ({
   const sanitiseMailto = (title: string) => {
     return title.replace(/&/g, "%26");
   };
+
+  const transformTitleToId = (title?: string) =>
+    title
+      .toLowerCase()
+      .replace(/\s+/g, "-") // To replace spaces with '-'
+      .replace(/[^\w\s-]/g, "-") // To replace brackets and special characters with '-'
+      .replace(/-{2,}/g, "-") // To replace dashes with single dash
+      .replace(/-$/, ""); // To remove the last dash if it exists
 
   return (
     <Transition
@@ -155,13 +216,20 @@ const OpportunityDropdown = ({
           <Disclosure.Button
             className="relative clear-both inline-block w-full cursor-pointer border-1 border-gray-300 bg-gray-75 px-4 py-2 hover:bg-white"
             onClick={() => setIsOpened((curr) => !curr)}
+            id={transformTitleToId(opportunity.title)}
           >
             <h2 className="my-0 text-base md:float-left">
               {opportunity.title}
             </h2>
-            <span className="md:float-right">
-              <FaMapMarkerAlt className="inline" />{" "}
+            <span className="flex items-center md:float-right">
+              <FaMapMarkerAlt className="inline" />
               {opportunity.locations?.join(", ")}
+              {opportunity.status != FILLED && opportunity.title && (
+                <CopyTextToClipboard
+                  id={transformTitleToId(opportunity.title)}
+                  title={opportunity.title}
+                />
+              )}
               {opportunity.status === FILLED && <strong> *FILLED*</strong>}
             </span>
           </Disclosure.Button>
