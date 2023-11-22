@@ -51,6 +51,17 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
           opportunity.status === jobStatus[selectedStatus])
     );
     setFilteredOpportunities(filtered);
+
+    const onLoadURL = window.location.href.split("#");
+    if (onLoadURL.length > 1) {
+      const id = onLoadURL[1];
+      const opportunity = document.getElementById(id);
+      if (opportunity) {
+        setTimeout(() => {
+          opportunity.click();
+        }, 100);
+      }
+    }
   }, [opportunities, selectedLocation, selectedType, selectedStatus]);
 
   return (
@@ -140,6 +151,19 @@ const OpportunityDropdown = ({
     return title.replace(/&/g, "%26");
   };
 
+  const appendURLWithId = (id: string) => {
+    const currentURL = window.location.href.split("#")[0];
+    window.location.href = `${currentURL}#${id}`;
+  };
+
+  const transformTitleToId = (title?: string) =>
+    title
+      .toLowerCase()
+      .replace(/\s+/g, "-") // To replace spaces with '-'
+      .replace(/[^\w\s-]/g, "-") // To replace brackets and special characters with '-'
+      .replace(/-{2,}/g, "-") // To replace dashes with single dash
+      .replace(/-$/, ""); // To remove the last dash if it exists
+
   return (
     <Transition
       show={visible}
@@ -154,13 +178,17 @@ const OpportunityDropdown = ({
         <Disclosure>
           <Disclosure.Button
             className="relative clear-both inline-block w-full cursor-pointer border-1 border-gray-300 bg-gray-75 px-4 py-2 hover:bg-white"
-            onClick={() => setIsOpened((curr) => !curr)}
+            onClick={() => {
+              setIsOpened((curr) => !curr);
+              appendURLWithId(transformTitleToId(opportunity.title));
+            }}
+            id={transformTitleToId(opportunity.title)}
           >
             <h2 className="my-0 text-base md:float-left">
               {opportunity.title}
             </h2>
-            <span className="md:float-right">
-              <FaMapMarkerAlt className="inline" />{" "}
+            <span className="flex items-center md:float-right">
+              <FaMapMarkerAlt className="inline" />
               {opportunity.locations?.join(", ")}
               {opportunity.status === FILLED && <strong> *FILLED*</strong>}
             </span>
