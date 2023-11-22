@@ -1,10 +1,18 @@
+import * as appInsight from "applicationinsights";
 import { NextRequest, NextResponse } from "next/server";
 
 export const addNoIndexHeaders = (
   request: NextRequest,
   response: NextResponse
 ) => {
-  response.headers.set("Debug-Header-Here", JSON.stringify(request.nextUrl));
+  appInsight.defaultClient.trackEvent({
+    name: "addNoIndexHeaders",
+    properties: {
+      url: request.nextUrl.pathname,
+      hostname: request.nextUrl.hostname,
+      urlObj: JSON.stringify(request.nextUrl),
+    },
+  });
   try {
     const siteUrl = new URL(process.env.SITE_URL || "https://www.ssw.com.au");
 
@@ -13,7 +21,6 @@ export const addNoIndexHeaders = (
       sanitizeHostname(siteUrl.hostname)
     ) {
       response.headers.set("X-Robots-Tag", "noindex");
-      response.headers.set("test-header", request.nextUrl.hostname);
     }
   } catch (err) {
     // If TypeError is thrown from an invalid URL, fail gracefully
