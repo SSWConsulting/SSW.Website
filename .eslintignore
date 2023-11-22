@@ -1,2 +1,7 @@
 node_modules
 dist
+.tina/__generated__
+.next
+content
+public
+.yarn

@@ -6,7 +6,6 @@ module.exports = {
   // mode: "jit",
   content: [
     "./components/**/*.{js,ts,jsx,tsx}",
-    "./content/**/*.mdx",
     "./pages/**/*.{js,ts,jsx,tsx}",
   ],
   // This needs to be set to `class` or it will use OS settings https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
@@ -56,7 +55,7 @@ module.exports = {
         facebook: "#3b5998",
         xtwitter: "#000",
         tiktok: "#000",
-        github: "#2C2C2C",
+        github: "#fff",
         meetup: "#f05664",
       },
       sswRed: "#cc4141",

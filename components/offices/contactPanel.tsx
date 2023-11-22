@@ -26,9 +26,9 @@ const ContactPanel = ({ office }: ContactPanelProps) => {
     <>
       <h3>Contact Us</h3>
       <p>
-        Whether you're having trouble with your development process or you just
-        need us to write some awesome software, our team of experts is ready to
-        help.
+        {
+          "Whether you're having trouble with your development process or you just need us to write some awesome software, our team of experts is ready to help."
+        }
       </p>
 
       <p>

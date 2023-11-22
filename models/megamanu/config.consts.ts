@@ -34,4 +34,5 @@ export enum AvailableIcons {
   sophieBot = "sophieBot",
   sophieHub = "sophieHub",
   sswRewards = "sswRewards",
+  chinaFlag = "chinaFlag",
 }

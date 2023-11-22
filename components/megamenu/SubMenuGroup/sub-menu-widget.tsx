@@ -18,7 +18,7 @@ const SubMenuWidget: React.FC<Props> = ({ item }) => {
     case AvailableWidget.featured: {
       return (
         <Link className="unstyled" href={item.href}>
-          <FeaturedCard title={<span>{item.name}</span>}>
+          <FeaturedCard title={<span> {item.name}</span>} icon={item.icon}>
             {item.description}
           </FeaturedCard>
         </Link>

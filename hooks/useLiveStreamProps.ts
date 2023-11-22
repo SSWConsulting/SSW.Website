@@ -59,7 +59,7 @@ export function useLiveStreamProps(): LiveStreamProps {
     );
 
     return () => clearInterval(timer);
-  }, [event]);
+  }, [event, liveStreamDelayMinutes]);
 
   return {
     countdownMins,

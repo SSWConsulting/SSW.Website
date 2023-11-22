@@ -104,7 +104,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
     };
 
     fetchLiveStreamInfo();
-  }, [isLive, event]);
+  }, [isLive, event, router.query.liveStream]);
 
   if (!event) {
     return <></>;
@@ -359,7 +359,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {speakerInfo.Title}'s profile&gt;
+                        {`${speakerInfo.Title}'s profile&gt;`}
                       </a>
                     )}
                   </div>

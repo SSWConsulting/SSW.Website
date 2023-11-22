@@ -376,6 +376,17 @@
       "category": "content/consulting/category/consulting.json",
       "pages": [
         {
+          "title": "Brainstorming",
+          "description": "Transform your team's untapped ideas into business solutions with SSW's Brainstorming Days. an engaging, collaborative environment.",
+          "logo": "/images/thumbs/thumb-brainstorming.png",
+          "page": "content/consulting/brainstorming.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/consulting.json"
+            }
+          ]
+        },
+        {
           "title": "Remote Work",
           "description": "Put the tools in place to allow your employees to work from home including Teams, cloud migration, VPN, training, and more.",
           "logo": "/images/thumbs/thumb-remote.jpg",

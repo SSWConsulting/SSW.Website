@@ -1,3 +1,4 @@
+param now string
 param projectName string = 'sswwebsite'
 param location string = resourceGroup().location
 param tags object
@@ -127,8 +128,11 @@ var appSettings = [
   }
 ]
 
+var productionName = 'app-${projectName}-${entropy}'
+var kind = 'app,linux,container'
+
 resource appService 'Microsoft.Web/sites@2022-03-01' = {
-  name: 'app-${projectName}-${entropy}'
+  name: productionName
   location: location
   kind: 'app,linux,container'
   identity: {
@@ -152,6 +156,25 @@ resource appService 'Microsoft.Web/sites@2022-03-01' = {
   }
 }
 
+resource stagingSlot 'Microsoft.Web/sites/slots@2022-09-01' = {
+  parent: appService
+  name: 'staging'
+  location: location
+  kind: kind
+  identity: {
+    type: 'SystemAssigned'
+  }
+  tags: tags
+  properties: {
+    serverFarmId: plan.id
+    siteConfig: {
+      appSettings: appSettings
+      acrUseManagedIdentityCreds: true
+    }
+    clientAffinityEnabled: false
+  }
+}
+
 // Add AcrPull role so that the app service can pull images using managed identity
 
 // This is the ACR Pull Role Definition Id: https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#acrpull
@@ -167,5 +190,34 @@ resource appServiceAcrPullRoleAssignment 'Microsoft.Authorization/roleAssignment
   }
 }
 
+resource stagingSlotAcrPullRoleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
+  scope: acr
+  name: guid(acr.id, stagingSlot.id, acrPullRoleDefinitionId)
+  properties: {
+    principalId: stagingSlot.identity.principalId
+    roleDefinitionId: acrPullRoleDefinitionId
+    principalType: 'ServicePrincipal'
+  }
+}
+
+
+module kvAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
+  name: 'kvAppRoleAssignment-${now}'
+  params: {
+    keyVaultName: keyVaultName
+    principalId: appService.identity.principalId
+    roleName: 'Key Vault Secrets User'
+  }
+}
+
+
+module kvSlotRoleAssignment 'keyVaultRoleAssignment.bicep' = {
+  name: 'kvSlotRoleAssignment-${now}'
+  params: {
+    keyVaultName: keyVaultName
+    principalId: stagingSlot.identity.principalId
+    roleName: 'Key Vault Secrets User'
+  }
+}
+
 output appServiceHostName string = appService.properties.defaultHostName
-output AppPrincipalId string = appService.identity.principalId

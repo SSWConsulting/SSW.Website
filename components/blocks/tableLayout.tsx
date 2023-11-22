@@ -150,7 +150,9 @@ export const tableBlockSchema: Template = {
 
                 return (
                   <>
-                    {headerText && <p>Cell value for "{headerText}":</p>}
+                    {headerText && (
+                      <p>Cell value for &quot;{headerText}&quot;:</p>
+                    )}
                     <TextArea {...input} />
                   </>
                 );

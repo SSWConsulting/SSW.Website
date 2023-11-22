@@ -51,7 +51,7 @@ export default function FourOhFour() {
             <span className="font-sans text-3xl font-extralight text-gray-650 sm:text-5xl">
               PAGE NOT FOUND!
               <br />
-              Sorry, we couldn't find the
+              {"Sorry, we couldn't find the"}
               <br />
               page you were looking for...
             </span>
