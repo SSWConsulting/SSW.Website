@@ -27,7 +27,7 @@ export const VideoCard: FC<VideoCardProps> = ({ link, title, theme }) => {
           "flex h-full items-center justify-between bg-white p-5"
         )}
       >
-        <span className="w-3/4 text-left text-lg font-bold">{title}</span>
+        <span className="w-full text-left text-lg font-bold">{title}</span>
       </div>
     </VideoModal>
   );
