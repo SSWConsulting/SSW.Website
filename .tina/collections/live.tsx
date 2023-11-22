@@ -25,12 +25,12 @@ export const liveSchema: Collection = {
     {
       type: "string",
       name: "section1",
-      label: "Section1",
+      label: "Next User Group",
     },
     {
       type: "string",
       name: "section2",
-      label: "Section2",
+      label: "Previous User Groups",
     },
     {
       type: "string",

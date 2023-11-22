@@ -16,6 +16,7 @@ type UtilityButtonProps = {
   noAnimate?: boolean;
   uncentered?: boolean;
   removeTopMargin?: boolean;
+  isTargetBlank?: boolean;
 };
 
 export const UtilityButton = ({
@@ -27,6 +28,7 @@ export const UtilityButton = ({
   noAnimate,
   uncentered,
   removeTopMargin,
+  isTargetBlank,
 }: UtilityButtonProps) => {
   const baseComponent = (
     <Button
@@ -48,7 +50,11 @@ export const UtilityButton = ({
   if (link) {
     return (
       <div>
-        <a href={link} className="unstyled no-underline">
+        <a
+          href={link}
+          target={isTargetBlank ? "_blank" : ""}
+          className="unstyled no-underline"
+        >
           {baseComponent}
         </a>
       </div>

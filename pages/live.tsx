@@ -68,7 +68,7 @@ export default function LivePage(
               </div>
             )}
           </div>
-          <div>
+          <div className="float-left">
             {props.event?.Url &&
               props.event?.Title &&
               (props.event?.TrailerUrl?.Url ? (
@@ -100,6 +100,7 @@ export default function LivePage(
               </>
             }
             noAnimate
+            isTargetBlank={true}
           />
         </div>
       </Container>
@@ -138,6 +139,7 @@ export default function LivePage(
               </>
             }
             noAnimate
+            isTargetBlank={true}
           />
         </div>
       </Container>
