@@ -12,6 +12,8 @@ export const addNoIndexHeaders = (
       sanitizeHostname(siteUrl.hostname)
     ) {
       response.headers.set("X-Robots-Tag", "noindex");
+    } else {
+      response.headers.set("X-Robots-Tag", "index");
     }
   } catch (err) {
     // If TypeError is thrown from an invalid URL, fail gracefully
