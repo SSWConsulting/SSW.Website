@@ -31,7 +31,7 @@ export default function LivePage(
       <LiveHeader {...data.live} />
       <Container size="xsmall">
         <span className="text-sswRed">
-          <h2>{data.live.section1}</h2>
+          <h2>{data.live.nextEvent}</h2>
         </span>
         <div>
           {props.event?.Title && (
@@ -104,7 +104,7 @@ export default function LivePage(
       </Container>
       <Container size="xsmall">
         <span className="text-sswRed">
-          <h2>{data.live.section2}</h2>
+          <h2>{data.live.pastEvents}</h2>
         </span>
         <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">
           {props.playListVideosLinks
