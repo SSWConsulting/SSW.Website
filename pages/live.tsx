@@ -1,4 +1,5 @@
 import { InferGetStaticPropsType } from "next";
+import Link from "next/link";
 import { useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { useTina } from "tinacms/dist/react";
@@ -8,7 +9,6 @@ import { VideoEmbed } from "../components/blocks/videoEmbed";
 import { UtilityButton } from "../components/button/utilityButton";
 import { Layout } from "../components/layout";
 import { LiveHeader } from "../components/live/header";
-import { PresenterLink } from "../components/usergroup/presenterLink";
 import { Container } from "../components/util/container";
 import { SEO } from "../components/util/seo";
 import { VideoCard } from "../components/util/videoCards";
@@ -47,10 +47,9 @@ export default function LivePage(
             <>
               <div className="pb-3 text-lg">
                 With{" "}
-                <PresenterLink
-                  name={props.speaker?.Title}
-                  profileLink={props.speaker?.PresenterProfileLink}
-                />
+                <Link href={props.speaker?.PresenterProfileLink}>
+                  {props.speaker?.Title}
+                </Link>
               </div>
               <br />
             </>
