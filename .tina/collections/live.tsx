@@ -21,6 +21,7 @@ export const liveSchema: Collection = {
       name: "title",
       label: "Title",
       templates: [...Schemas.pageBlocks],
+      description: "Tip: Bold text is turned into Red color",
     },
     {
       type: "string",
