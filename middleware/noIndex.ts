@@ -9,12 +9,10 @@ export const addNoIndexHeaders = (
     body: request.headers.get("host"),
   });
   try {
-    const siteUrl = new URL(process.env.SITE_URL || "https://www.ssw.com.au");
+    // const siteUrl = new URL(process.env.SITE_URL || "https://www.ssw.com.au");
+    const host = request.headers.get("host");
 
-    if (
-      sanitizeHostname(request.headers.get("host")) !==
-      sanitizeHostname(siteUrl.hostname)
-    ) {
+    if (host.includes("pr") || host.includes("staging")) {
       response.headers.set("X-Robots-Tag", "noindex");
     } else {
       response.headers.set("X-Robots-Tag", "index");
@@ -30,10 +28,10 @@ export const addNoIndexHeaders = (
   }
 };
 
-const sanitizeHostname = (hostname: string) => {
-  if (hostname.startsWith("www.")) {
-    return hostname.substring(4);
-  }
+// const sanitizeHostname = (hostname: string) => {
+//   if (hostname.startsWith("www.")) {
+//     return hostname.substring(4);
+//   }
 
-  return hostname;
-};
+//   return hostname;
+// };
