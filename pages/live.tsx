@@ -98,7 +98,7 @@ export default function LivePage(
               </>
             }
             noAnimate
-            isTargetBlank={true}
+            openInNewTab={true}
           />
         </div>
       </Container>
@@ -137,7 +137,7 @@ export default function LivePage(
               </>
             }
             noAnimate
-            isTargetBlank={true}
+            openInNewTab={true}
           />
         </div>
       </Container>

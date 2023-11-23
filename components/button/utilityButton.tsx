@@ -16,7 +16,7 @@ type UtilityButtonProps = {
   noAnimate?: boolean;
   uncentered?: boolean;
   removeTopMargin?: boolean;
-  isTargetBlank?: boolean;
+  openInNewTab?: boolean;
 };
 
 export const UtilityButton = ({
@@ -28,7 +28,7 @@ export const UtilityButton = ({
   noAnimate,
   uncentered,
   removeTopMargin,
-  isTargetBlank,
+  openInNewTab,
 }: UtilityButtonProps) => {
   const baseComponent = (
     <Button
@@ -52,7 +52,7 @@ export const UtilityButton = ({
       <div>
         <a
           href={link}
-          target={isTargetBlank ? "_blank" : ""}
+          target={openInNewTab ? "_blank" : ""}
           className="unstyled no-underline"
         >
           {baseComponent}
@@ -108,6 +108,12 @@ export const utilityButtonSchema: Template = {
       type: "boolean",
       label: "Remove top margin",
       name: "removeTopMargin",
+      required: false,
+    },
+    {
+      type: "boolean",
+      label: "Open in new tab",
+      name: "openInNewTab",
       required: false,
     },
   ],
