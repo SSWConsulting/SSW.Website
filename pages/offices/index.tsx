@@ -96,7 +96,7 @@ export default function OfficeIndex(
               </div>
               <br />
               <p>
-                If you require any further information, don't hesitate to{" "}
+                {"If you require any further information, don't hesitate to "}
                 <a href="mailto:info@ssw.com.au">contact us.</a>
               </p>
               <br />

@@ -29,6 +29,13 @@ jobs:
         run: yarn playwright install --with-deps chromium
         working-directory: ./ui-tests
 
+      - name: Check that ${{ inputs.deploy_url }} is running
+        uses: jtalk/url-health-check-action@v3
+        with:
+          url: ${{ inputs.deploy_url }}
+          max-attempts: 12
+          retry-delay: 10s
+
       - name: Run Playwright image tests
         run: yarn playwright test images
         env:

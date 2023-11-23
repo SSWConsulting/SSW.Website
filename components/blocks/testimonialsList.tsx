@@ -9,33 +9,32 @@ export const TestimonialsList = ({ data: { hideInternshipTestimonials } }) => {
   const [hasLoaded, setHasLoaded] = useState(false);
 
   useEffect(() => {
+    const loadTestimonials = () => {
+      client.queries.testimonialsConnection().then((data) => {
+        const testimonials = data.data?.testimonialsConnection?.edges?.map(
+          (edge) => edge?.node
+        );
+
+        const sortedTestimonials = testimonials
+          ?.filter(
+            (testimonial) =>
+              testimonial?.categories !== null &&
+              testimonial?.categories[0]?.category.name !== "Internship"
+          )
+          ?.map((testimonial) => testimonial);
+
+        if (hideInternshipTestimonials) {
+          setTestimonials(sortedTestimonials);
+        } else {
+          setTestimonials(testimonials);
+        }
+        setHasLoaded(true);
+      });
+    };
     if (!hasLoaded) {
       loadTestimonials();
     }
-  }, [hasLoaded]);
-
-  const loadTestimonials = () => {
-    client.queries.testimonialsConnection().then((data) => {
-      const testimonials = data.data?.testimonialsConnection?.edges?.map(
-        (edge) => edge?.node
-      );
-
-      const sortedTestimonials = testimonials
-        ?.filter(
-          (testimonial) =>
-            testimonial?.categories !== null &&
-            testimonial?.categories[0]?.category.name !== "Internship"
-        )
-        ?.map((testimonial) => testimonial);
-
-      if (hideInternshipTestimonials) {
-        setTestimonials(sortedTestimonials);
-      } else {
-        setTestimonials(testimonials);
-      }
-      setHasLoaded(true);
-    });
-  };
+  }, [hasLoaded, hideInternshipTestimonials]);
 
   return (
     <>

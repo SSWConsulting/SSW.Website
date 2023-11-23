@@ -4,7 +4,7 @@ export const RDPanel = () => {
   return (
     <div className="mt-6 border-2 bg-gray-100 p-4">
       <strong>
-        SSW's Chief Architect is one of two Microsoft Regional Directors in
+        SSW&#39;s Chief Architect is one of two Microsoft Regional Directors in
         Australia!
       </strong>
       <Image
@@ -24,7 +24,7 @@ export const RDPanel = () => {
         to Microsoft.
       </p>
       <p>
-        Regional directors have gained developers' trust by providing an
+        Regional directors have gained developers&#39; trust by providing an
         objective viewpoint. Regional Directors are not Microsoft employees, so
         they tend to be very open about our products, both good and bad.
       </p>

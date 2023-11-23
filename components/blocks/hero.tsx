@@ -1,3 +1,4 @@
+import Image from "next/image";
 import * as React from "react";
 import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -73,15 +74,13 @@ export const Hero = ({ data, parentField }) => {
             data-tinafield={`${parentField}.image`}
             className="relative row-start-1 flex justify-center lg:col-span-2"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               className="absolute h-auto w-full max-w-xs rounded-lg opacity-50 mix-blend-multiply blur-2xl brightness-150 saturate-200 dark:opacity-30 dark:mix-blend-hard-light dark:brightness-150 lg:max-w-none"
               src={data.image.src}
               alt={data.image.alt}
               aria-hidden="true"
             />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               className="relative z-10 h-auto w-full max-w-xs rounded-lg lg:max-w-none"
               alt={data.image.alt}
               src={data.image.src}
