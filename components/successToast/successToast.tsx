@@ -1,12 +1,12 @@
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const SuccessToast = () => {
+const SuccessToast = (props?) => {
   return (
     <div>
       <ToastContainer
         position="top-right"
-        autoClose={5000}
+        autoClose={props?.autoClose ?? 5000}
         hideProgressBar
         newestOnTop
         closeOnClick={false}
