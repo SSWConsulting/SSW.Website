@@ -1,10 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
-import { addNoIndexHeaders } from "./middleware/noIndex";
+import { NextResponse } from "next/server";
+// import { addNoIndexHeaders } from "./middleware/noIndex";
 
-export function middleware(request: NextRequest) {
+export function middleware() {
   const response = NextResponse.next();
 
-  addNoIndexHeaders(request, response);
+  // addNoIndexHeaders(request, response);
 
   return response;
 }
