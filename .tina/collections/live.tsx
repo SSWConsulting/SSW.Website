@@ -24,13 +24,13 @@ export const liveSchema: Collection = {
     },
     {
       type: "string",
-      name: "section1",
-      label: "Next User Group",
+      name: "nextEvent",
+      label: "Next Event",
     },
     {
       type: "string",
-      name: "section2",
-      label: "Previous User Groups",
+      name: "pastEvents",
+      label: "Past Events",
     },
     {
       type: "string",
