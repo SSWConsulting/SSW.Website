@@ -28,9 +28,7 @@ export default function LivePage(
   return (
     <Layout>
       <SEO seo={data.live.seo} />
-      <Container size="xsmall">
-        <LiveHeader {...data.live} />
-      </Container>
+      <LiveHeader {...data.live} />
       <Container size="xsmall">
         <span className="text-sswRed">
           <h2>{data.live.section1}</h2>

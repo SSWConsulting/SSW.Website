@@ -19,10 +19,10 @@ export const LiveHeader = (props) => {
         <div className="flex max-w-3xl flex-col pb-10">
           <div
             className={classNames(
-              "flex flex-row items-center pt-10 text-lg max-md:justify-center"
+              "flex flex-row items-center text-lg max-md:justify-center"
             )}
           ></div>
-          <div className="mb-2 pb-1 pt-3 text-5xl font-semibold">
+          <div className="mb-2 pb-1 pt-3 text-5xl font-semibold child-h1:text-5xl child-p:text-xl descendant-strong:font-semibold descendant-strong:text-sswRed">
             {<TinaMarkdown content={title} />}
           </div>
           <div
