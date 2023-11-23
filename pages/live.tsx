@@ -28,7 +28,7 @@ export default function LivePage(
   return (
     <Layout>
       <SEO seo={data.live.seo} />
-      <LiveHeader {...data.live} />
+      <LiveHeader title={data.live.title} />
       <Container size="xsmall">
         <span className="text-sswRed">
           <h2>{data.live.nextEvent}</h2>

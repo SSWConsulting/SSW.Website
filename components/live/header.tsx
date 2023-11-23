@@ -1,8 +1,12 @@
 import classNames from "classnames";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { Container } from "../util/container";
 
-export const LiveHeader = (props) => {
+type LiveHeaderprops = {
+  title: TinaMarkdownContent;
+};
+
+export const LiveHeader = (props: LiveHeaderprops) => {
   const { title } = props;
   return (
     <section
