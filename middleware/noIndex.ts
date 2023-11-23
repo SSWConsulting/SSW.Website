@@ -16,6 +16,7 @@ export const addNoIndexHeaders = (
       response.headers.set("X-Robots-Tag", "index");
     }
   } catch (err) {
+    response.headers.set("failed", "true");
     // If TypeError is thrown from an invalid URL, fail gracefully
     if (err instanceof TypeError) {
       return;
