@@ -5,7 +5,6 @@ import { BsArrowRightCircle } from "react-icons/bs";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../.tina/__generated__/client";
 import { BuiltOnAzure } from "../components/blocks/builtOnAzure";
-import { VideoEmbed } from "../components/blocks/videoEmbed";
 import { UtilityButton } from "../components/button/utilityButton";
 import { Layout } from "../components/layout";
 import { LiveHeader } from "../components/live/header";
@@ -75,12 +74,10 @@ export default function LivePage(
                   theme="light"
                 />
               ) : (
-                <VideoEmbed
-                  data={{
-                    url: "https://www.youtube.com/watch?v=coPZ75akNYA",
-                    videoWidth: "w-full",
-                    removeMargin: true,
-                  }}
+                <VideoCard
+                  link="https://www.youtube.com/watch?v=coPZ75akNYA"
+                  title="SSW monthly User Group - Trailer"
+                  theme="light"
                 />
               ))}
           </div>
