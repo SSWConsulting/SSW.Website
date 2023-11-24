@@ -8,8 +8,12 @@ export const liveSchema: Collection = {
   path: "content/live",
   format: "mdx",
   ui: {
-    router: ({ document }) => {
-      return `/live/${document._sys.filename}`;
+    router: ({}) => {
+      return "/live";
+    },
+    allowedActions: {
+      create: false,
+      delete: false,
     },
   },
   fields: [
