@@ -5,5 +5,5 @@ test("No index header not present", async ({ page }) => {
     waitUntil: "networkidle",
   });
   expect(response.ok()).toBeTruthy();
-  expect(response.headerValue("X-Robots-Tag")).toEqual("noindex");
+  expect(await response.allHeaders["X-Robots-Tag"]).toEqual("noindex");
 });
