@@ -86,7 +86,7 @@ export default function LivePage(
           <UtilityButton
             size="small"
             uncentered={false}
-            link={`https://www.youtube.com/channel/=${data.live.sswTvButton.channelId}`}
+            link={`https://www.youtube.com/channel/${data.live.sswTvButton.channelId}`}
             buttonText={
               <>
                 {data.live.sswTvButton.name}
