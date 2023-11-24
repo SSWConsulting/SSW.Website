@@ -82,10 +82,11 @@ export const megaMenuSchema: Collection = {
                       label: "Description",
                     },
                     {
-                      type: "string",
+                      type: "image",
                       name: "icon",
                       label: "Icon",
-                      options: [...availableIcons],
+                      // @ts-ignore
+                      uploadDir: () => "/megamenu-icons",
                     },
                   ],
                 },
