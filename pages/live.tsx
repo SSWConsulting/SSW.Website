@@ -58,16 +58,14 @@ export default function LivePage(
           )}
         </div>
         <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-2">
-          <div>
+          <div className="col-span-1">
             {props.event?.Abstract && (
-              <div className="col-span-2">
-                <div className="whitespace-pre-wrap text-lg">
-                  {props.event?.Abstract}
-                </div>
+              <div className="whitespace-pre-wrap text-lg">
+                {props.event?.Abstract}
               </div>
             )}
           </div>
-          <div className="float-left">
+          <div className="col-span-1">
             {props.event?.Url &&
               props.event?.Title &&
               (props.event?.TrailerUrl?.Url ? (
