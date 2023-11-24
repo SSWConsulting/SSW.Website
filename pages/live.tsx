@@ -76,7 +76,7 @@ export default function LivePage(
               ) : (
                 <VideoCard
                   link="https://www.youtube.com/watch?v=coPZ75akNYA"
-                  title="SSW monthly User Group - Trailer"
+                  title="SSW User Group - Trailer"
                   theme="light"
                 />
               ))}
