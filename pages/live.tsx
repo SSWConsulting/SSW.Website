@@ -14,6 +14,9 @@ import { VideoCard } from "../components/util/videoCards";
 import { getEvents, getSpeakersInfoFromEvent } from "../services/server/events";
 import { getYoutubePlaylist } from "../services/server/youtube";
 
+const DEFAULT_VISIBLE_VIDEOS = 9;
+const ISR_TIME = 60 * 60;
+
 export default function LivePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
@@ -22,7 +25,7 @@ export default function LivePage(
     query: props.query,
     variables: props.variables,
   });
-  const [visibleVideos, setVisibleVideos] = useState(9);
+  const [visibleVideos, setVisibleVideos] = useState(DEFAULT_VISIBLE_VIDEOS);
 
   return (
     <Layout>
@@ -114,7 +117,11 @@ export default function LivePage(
         {props.playListVideosLinks.length > visibleVideos && (
           <div className="flex justify-center">
             <button
-              onClick={() => setVisibleVideos((prevCount) => prevCount + 9)}
+              onClick={() =>
+                setVisibleVideos(
+                  (prevCount) => prevCount + DEFAULT_VISIBLE_VIDEOS
+                )
+              }
               className="m-8 text-sswRed underline"
             >
               See More
@@ -196,6 +203,6 @@ export const getStaticProps = async () => {
       event: event || null,
       speaker: speaker || null,
     },
-    revalidate: 10,
+    revalidate: ISR_TIME,
   };
 };
