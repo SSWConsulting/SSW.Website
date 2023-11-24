@@ -62,6 +62,7 @@ jobs:
     uses: ./.github/workflows/template-ui-tests.yml
     with:
       deploy_url: ${{ needs.deploy-staging.outputs.url }}
+      tests_to_run: "images seo-main"
 
   swap-staging:
     name: Swap staging with production

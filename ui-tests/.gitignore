@@ -1,7 +1,6 @@
 node_modules/
 /test-results/
 /playwright/.cache/
-/playwright-report
 
 # yarn v2
 .yarn/*
