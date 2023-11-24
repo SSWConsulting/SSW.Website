@@ -48,6 +48,6 @@ jobs:
       - uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: ui-tests/playwright-report
+          name: playwright-report
           path: ui-tests/playwright-report/
           retention-days: 2
