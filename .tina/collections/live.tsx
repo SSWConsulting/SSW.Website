@@ -33,15 +33,43 @@ export const liveSchema: Collection = {
       label: "Next Event",
     },
     {
+      label: "SSW TV Button",
+      name: "sswTvButton",
+      type: "object",
+      fields: [
+        {
+          label: "Name",
+          name: "name",
+          type: "string",
+        },
+        {
+          label: "Channel Id",
+          name: "channelId",
+          type: "string",
+        },
+      ],
+    },
+    {
       type: "string",
       name: "pastEvents",
       label: "Past Events",
     },
     {
-      type: "string",
-      name: "youtubePlaylistId",
-      label: "Youtube Playlist Id",
-      description: "Please refresh the page to update the playlist",
+      label: "Youtube Playlist Button",
+      name: "youtubePlaylistButton",
+      type: "object",
+      fields: [
+        {
+          label: "Name",
+          name: "name",
+          type: "string",
+        },
+        {
+          label: "Playlist Id",
+          name: "playlistId",
+          type: "string",
+        },
+      ],
     },
   ],
 };

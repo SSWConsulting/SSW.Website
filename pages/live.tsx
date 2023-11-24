@@ -86,10 +86,10 @@ export default function LivePage(
           <UtilityButton
             size="small"
             uncentered={false}
-            link="https://www.youtube.com/channel/UCBFgwtV9lIIhvoNh0xoQ7Pg"
+            link={`https://www.youtube.com/channel/=${data.live.sswTvButton.channelId}`}
             buttonText={
               <>
-                Visit SSW TV Channel on Youtube
+                {data.live.sswTvButton.name}
                 <BsArrowRightCircle className="ml-1 inline" />
               </>
             }
@@ -125,10 +125,10 @@ export default function LivePage(
           <UtilityButton
             size="small"
             uncentered={false}
-            link={`https://www.youtube.com/playlist?list=${data.live.youtubePlaylistId}`}
+            link={`https://www.youtube.com/playlist?list=${data.live.youtubePlaylistButton.playlistId}`}
             buttonText={
               <>
-                Watch more on SSW TV Channel on Youtube
+                {data.live.youtubePlaylistButton.name}
                 <BsArrowRightCircle className="ml-1 inline" />
               </>
             }
@@ -146,7 +146,9 @@ export const getStaticProps = async () => {
   const tinaProps = await client.queries.liveContentQuery({
     relativePath: "index.mdx",
   });
-  const res = await getYoutubePlaylist(tinaProps.data.live.youtubePlaylistId);
+  const res = await getYoutubePlaylist(
+    tinaProps.data.live.youtubePlaylistButton.playlistId
+  );
 
   let playListVideosLinks = [];
 
