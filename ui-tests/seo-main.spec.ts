@@ -1,12 +1,14 @@
 import test, { expect } from "@playwright/test";
 
 test("No index header not present", async ({ page }) => {
-  await page.on("response", async (response) => {
-    expect(await response.headerValue("X-Robots-Tag")).toBeFalsy();
-  });
-
-  const response = await page.goto("/", {
+  await page.goto("/", {
     waitUntil: "networkidle",
   });
-  expect(response.ok()).toBeTruthy();
+
+  await page.on("response", async (response) => {
+    expect(response.ok()).toBeTruthy();
+
+    const robots = await response.headerValue("X-Robots-Tag");
+    expect(robots).toBeFalsy();
+  });
 });
