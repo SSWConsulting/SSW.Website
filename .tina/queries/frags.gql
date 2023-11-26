@@ -3,6 +3,6 @@ fragment LayoutQueryFragment on Query {
     ...GlobalParts
   }
   megamenu(relativePath: "menu.json") {
-    ...MegaMenuParts
+    ...MegamenuParts
   }
 }

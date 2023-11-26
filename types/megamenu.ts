@@ -1,38 +1,8 @@
+import { iconMap } from "../components/megamenu/MegaIcon/mega-icon";
+
 export const availableWidgets = ["classicMenu", "featured", "bookNow"] as const;
 
-export const availableIcons = [
-  "chevronLeft",
-  "chevronDown",
-  "magnifyingGlass",
-  "phone",
-  "xMark",
-  "chartPie",
-  "cursorArrowRays",
-  "fingerPrint",
-  "squaresPlus",
-  "playCircle",
-  "rectangleGroup",
-  "websiteDevelopment",
-  "applicationDevelopment",
-  "mobileDevelopment",
-  "aiDevelopment",
-  "databaseDevelopment",
-  "platformDevelopment",
-  "uiUXDesign",
-  "videoProduction",
-  "cloudAndInfrastructure",
-  "otherSSWService",
-  "sugarLearning",
-  "timePro",
-  "codeAuditor",
-  "linkAuditor",
-  "smashingBarrier",
-  "sophieBot",
-  "sophieHub",
-  "sswRewards",
-] as const;
-
-export type AvailableIcons = (typeof availableIcons)[number];
+export type AvailableIcons = keyof typeof iconMap;
 
 export interface MainMenuDefinition {
   heading: string;

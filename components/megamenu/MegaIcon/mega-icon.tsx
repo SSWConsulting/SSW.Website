@@ -15,30 +15,8 @@ import {
 } from "@heroicons/react/24/outline";
 import React from "react";
 import { AvailableIcons } from "../../../types/megamenu";
-import { AIDevelopment } from "./icons/AIDevelopment";
-import { ApplicationDevelopment } from "./icons/ApplicationDevelopment";
-import { CloudAndInfrastructure } from "./icons/CloudAndInfrastructure";
-import { CodeAuditor } from "./icons/CodeAuditor";
-import { DatabaseDevelopment } from "./icons/DatabaseDevelopment";
-import { LinkAuditor } from "./icons/LinkAuditor";
-import { MobileDevelopment } from "./icons/MobileDevelopment";
-import { OtherSSWService } from "./icons/OtherSSWService";
-import { PlatformDevelopment } from "./icons/PlatformDevelopment";
-import { SSWRewards } from "./icons/SSWRewards";
-import { SmashingBarrier } from "./icons/SmashingBarrier";
-import { SophieBot } from "./icons/SophieBot";
-import { SophieHub } from "./icons/SophieHub";
-import { SugarLearning } from "./icons/SugarLearning";
-import { TimePro } from "./icons/TimePro";
-import { UIUXDesign } from "./icons/UIUXDesign";
-import { VideoProduction } from "./icons/VideoProduction";
-import { WebsiteDevelopment } from "./icons/WebsiteDevelopment";
 
-type IconMapType = {
-  [key in AvailableIcons]: (props: { className?: string }) => JSX.Element;
-};
-
-const iconMap: IconMapType = {
+export const iconMap = {
   chevronDown: (props) => <ChevronDownIcon className={props.className} />,
   chevronLeft: (props) => <ChevronLeftIcon className={props.className} />,
   magnifyingGlass: (props) => (
@@ -54,24 +32,6 @@ const iconMap: IconMapType = {
   squaresPlus: (props) => <SquaresPlusIcon className={props.className} />,
   playCircle: (props) => <PlayCircleIcon className={props.className} />,
   rectangleGroup: (props) => <RectangleGroupIcon className={props.className} />,
-  websiteDevelopment: () => <WebsiteDevelopment />,
-  applicationDevelopment: () => <ApplicationDevelopment />,
-  mobileDevelopment: () => <MobileDevelopment />,
-  aiDevelopment: () => <AIDevelopment />,
-  databaseDevelopment: () => <DatabaseDevelopment />,
-  platformDevelopment: () => <PlatformDevelopment />,
-  videoProduction: () => <VideoProduction />,
-  sugarLearning: () => <SugarLearning />,
-  codeAuditor: () => <CodeAuditor />,
-  linkAuditor: () => <LinkAuditor />,
-  smashingBarrier: () => <SmashingBarrier />,
-  timePro: () => <TimePro />,
-  sophieBot: () => <SophieBot />,
-  sswRewards: () => <SSWRewards />,
-  sophieHub: () => <SophieHub />,
-  uiUXDesign: () => <UIUXDesign />,
-  cloudAndInfrastructure: () => <CloudAndInfrastructure />,
-  otherSSWService: () => <OtherSSWService />,
 };
 
 export interface MegaIconProps extends React.ComponentPropsWithoutRef<"span"> {

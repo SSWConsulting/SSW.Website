@@ -1,5 +1,5 @@
 import type { Collection } from "tinacms";
-import { availableIcons } from "../../types/megamenu";
+import { iconMap } from "../../components/megamenu/MegaIcon/mega-icon";
 
 export const megaMenuSchema: Collection = {
   label: "Global - Mega Menu",
@@ -87,6 +87,12 @@ export const megaMenuSchema: Collection = {
                       label: "Icon",
                       // @ts-ignore
                       uploadDir: () => "/megamenu-icons",
+                    },
+                    {
+                      type: "string",
+                      name: "icon-option",
+                      label: "Icon (optional override of above image field)",
+                      options: Object.keys(iconMap),
                     },
                   ],
                 },
