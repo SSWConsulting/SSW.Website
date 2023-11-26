@@ -1,6 +1,5 @@
 import { Dialog } from "@headlessui/react";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
-import Link from "next/link";
 import React from "react";
 import { NavMenuItem } from "../../../types/megamenu";
 import { MegaIcon } from "../MegaIcon";
@@ -78,13 +77,13 @@ const MenuBarItems: React.FC<{
       <div className="space-y-2">
         {menuBarItems.map((item) => {
           return item.href ? (
-            <Link
+            <a
               key={item.name}
               href={item.href}
               className="unstyled -mx-3 flex w-full items-center px-3 py-2 text-left text-lg leading-7 text-ssw-black hover:bg-gray-50"
             >
               {item.name}
-            </Link>
+            </a>
           ) : (
             <button
               key={item.name}

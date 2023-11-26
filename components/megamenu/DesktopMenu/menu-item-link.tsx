@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 
 type MenuItemLinkProps = {
@@ -7,11 +6,11 @@ type MenuItemLinkProps = {
 
 export const MenuItemLink = ({ item }: MenuItemLinkProps) => {
   return (
-    <Link
+    <a
       href={item.href}
       className="unstyled flex items-center justify-center rounded-md px-3 py-1"
     >
       {item.name}
-    </Link>
+    </a>
   );
 };
