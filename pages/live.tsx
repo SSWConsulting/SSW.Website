@@ -2,6 +2,7 @@ import { InferGetStaticPropsType } from "next";
 import Link from "next/link";
 import { useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../.tina/__generated__/client";
 import { BuiltOnAzure } from "../components/blocks/builtOnAzure";
@@ -123,9 +124,9 @@ export default function LivePage(
                   (prevCount) => prevCount + DEFAULT_VISIBLE_VIDEOS
                 )
               }
-              className="m-8 text-sswRed underline"
+              className="m-8 flex items-center rounded-md bg-gray-100 p-1 text-sswRed transition duration-300 hover:bg-gray-200"
             >
-              See More
+              See More <MdOutlineKeyboardArrowDown />
             </button>
           </div>
         )}
@@ -175,22 +176,6 @@ export const getStaticProps = async () => {
       };
     });
   }
-
-  // const currentDate = new Date().toISOString();
-
-  // const events = await getEvents(
-  //   `$filter=fields/Enabled ne false and fields/EndDateTime gt '${currentDate}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime asc`
-  // );
-
-  // let event = events[0];
-
-  // if (!event) {
-  //   const pastEvents = await getEvents(
-  //     `$filter=fields/Enabled ne false and fields/EndDateTime lt '${currentDate}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc`
-  //   );
-
-  //   event = pastEvents[0];
-  // }
 
   const event = await getNextEventToBeLiveStreamed();
 
