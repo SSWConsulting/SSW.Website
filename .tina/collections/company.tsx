@@ -18,7 +18,11 @@ export const companySchema: Collection = {
   },
   ui: {
     router: ({ document }) => {
-      return `/company/${document._sys.filename}`;
+      if (document._sys.template === "caseStudy") {
+        return `/company/clients/case-study/${document._sys.filename}`;
+      } else {
+        return `/company/${document._sys.filename}`;
+      }
     },
   },
   fields: [
