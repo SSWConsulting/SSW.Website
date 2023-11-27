@@ -52,7 +52,12 @@ const LiveStreamBanner = dynamic(
   }
 );
 
-export const Layout = ({ children, className = "" }) => {
+interface LayoutProps {
+  className?: string;
+  children: React.ReactNode;
+}
+
+export const Layout = ({ children, className = "" }: LayoutProps) => {
   const liveStreamProps = useLiveStreamProps();
   const router = useRouter();
 

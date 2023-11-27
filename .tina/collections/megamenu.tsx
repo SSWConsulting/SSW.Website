@@ -1,5 +1,6 @@
 import type { Collection } from "tinacms";
 import { iconMap } from "../../components/megamenu/MegaIcon/mega-icon";
+import { availableWidgets } from "../../types/megamenu";
 
 export const megaMenuSchema: Collection = {
   label: "Global - Mega Menu",
@@ -83,14 +84,14 @@ export const megaMenuSchema: Collection = {
                     },
                     {
                       type: "image",
-                      name: "icon",
+                      name: "iconImg",
                       label: "Icon",
                       // @ts-ignore
                       uploadDir: () => "/megamenu-icons",
                     },
                     {
                       type: "string",
-                      name: "icon-option",
+                      name: "icon",
                       label: "Icon (optional override of above image field)",
                       options: Object.keys(iconMap),
                     },
@@ -104,28 +105,47 @@ export const megaMenuSchema: Collection = {
           type: "object",
           name: "sidebarItems",
           label: "Sidebar Items",
-          ui: {
-            itemProps: (item) => {
-              return { label: item?.name };
-            },
-          },
           list: true,
           fields: [
             {
               type: "string",
-              name: "name",
+              name: "heading",
+              label: "Heading",
+              required: true,
             },
             {
-              type: "string",
-              name: "description",
-            },
-            {
-              type: "string",
-              name: "category",
-            },
-            {
-              type: "string",
-              name: "url",
+              type: "object",
+              name: "items",
+              label: "Items",
+              ui: {
+                itemProps: (item) => {
+                  return { label: item?.name };
+                },
+              },
+              list: true,
+              fields: [
+                {
+                  type: "string",
+                  name: "name",
+                  label: "Name",
+                },
+                {
+                  type: "string",
+                  name: "description",
+                  label: "Description",
+                },
+                {
+                  type: "string",
+                  name: "widgetType",
+                  label: "Widget Type",
+                  options: [...availableWidgets],
+                },
+                {
+                  type: "string",
+                  name: "url",
+                  label: "URL",
+                },
+              ],
             },
           ],
         },

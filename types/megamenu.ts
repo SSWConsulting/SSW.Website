@@ -1,8 +1,13 @@
 import { iconMap } from "../components/megamenu/MegaIcon/mega-icon";
 
-export const availableWidgets = ["classicMenu", "featured", "bookNow"] as const;
+export const availableWidgets = [
+  "standardLink",
+  "featured",
+  "bookNow",
+] as const;
 
 export type AvailableIcons = keyof typeof iconMap;
+export type AvailableWidgets = (typeof availableWidgets)[number];
 
 export interface MainMenuDefinition {
   heading: string;
@@ -14,7 +19,7 @@ export interface MainMenuDefinition {
 }
 export interface SubMenuItemDefinition {
   name: string;
-  icon?: AvailableIcons;
+  icon?: AvailableIcons | string;
   description?: string;
   href: string;
 }
@@ -26,7 +31,7 @@ export interface SideMenuDefinition {
 export interface SideMenuItem {
   name: string;
   description?: string;
-  category: (typeof availableWidgets)[number];
+  category: AvailableWidgets;
   href: string;
 }
 
@@ -44,5 +49,6 @@ export interface NavMenuItem {
 export interface CtaMenu {
   name: string;
   href: string;
-  icon: AvailableIcons;
+  icon?: AvailableIcons | string;
+  iconImg?: string;
 }

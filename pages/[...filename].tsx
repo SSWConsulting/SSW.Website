@@ -84,6 +84,8 @@ export const getStaticProps = async ({ params }) => {
     tinaProps.data.page.seo.canonical = `${tinaProps.data.global.header.url}${relativePath}`;
   }
 
+  console.log(tinaProps.data.megamenu);
+
   return {
     props: {
       data: tinaProps.data,
