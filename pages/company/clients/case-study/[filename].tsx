@@ -5,6 +5,7 @@ import client from "../../../../.tina/__generated__/client";
 import { BuiltOnAzure } from "../../../../components/blocks";
 import { Blocks } from "../../../../components/blocks-renderer";
 import { Breadcrumbs } from "../../../../components/blocks/breadcrumbs";
+import { componentRenderer } from "../../../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../../../components/layout";
 import { Section } from "../../../../components/util/section";
 import { SEO } from "../../../../components/util/seo";
@@ -58,6 +59,7 @@ export default function CompanyPage(
           <Section className="prose mx-auto !block w-full max-w-9xl px-8 py-0">
             <TinaMarkdown
               data-tina-field={tinaField(data.caseStudy, "content")}
+              components={componentRenderer}
               content={data.caseStudy.content}
             />
           </Section>

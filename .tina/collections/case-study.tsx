@@ -41,6 +41,7 @@ export const caseStudySchema: Collection = {
       type: "rich-text",
       label: "Content",
       name: "content",
+      templates: [...Schemas.pageBlocks],
     },
   ],
 };
