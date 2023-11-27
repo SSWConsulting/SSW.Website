@@ -3,15 +3,6 @@ import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 import { tipField } from "./shared-fields";
 
-// export const caseStSchemaConstants = {
-//   value: "locations",
-//   header: "header",
-//   addressLine1: "addressLine1",
-//   addressLine2: "addressLine2",
-//   addressLine3: "addressLine3",
-//   directionURL: "directionURL",
-// };
-
 export const caseStudySchema: Collection = {
   name: "caseStudy",
   label: "Company - Case Studies",
