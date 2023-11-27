@@ -1,4 +1,5 @@
 import { Collection } from "tinacms";
+import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 import { tipField } from "./shared-fields";
 
@@ -36,14 +37,37 @@ export const caseStudySchema: Collection = {
       name: "subHeading",
     },
     {
-      type: "string",
-      label: "Video URL",
-      name: "videoURL",
+      type: "object",
+      list: true,
+      name: "_body",
+      label: "Body",
+      ui: {
+        visualSelector: true,
+      },
+      templates: [...Schemas.pageBlocks],
     },
     {
       type: "rich-text",
-      label: "Body",
-      name: "body",
+      label: "Content",
+      name: "content",
+    },
+    {
+      type: "object",
+      label: "Related Links",
+      name: "relatedLinks",
+      list: true,
+      fields: [
+        {
+          type: "string",
+          name: "title",
+          label: "Title",
+        },
+        {
+          type: "string",
+          name: "url",
+          label: "URL",
+        },
+      ],
     },
   ],
 };

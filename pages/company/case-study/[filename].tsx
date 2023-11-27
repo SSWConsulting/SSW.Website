@@ -1,7 +1,9 @@
 import { InferGetStaticPropsType } from "next";
 import { useTina } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../../.tina/__generated__/client";
 import { BuiltOnAzure } from "../../../components/blocks";
+import { Blocks } from "../../../components/blocks-renderer";
 import { Breadcrumbs } from "../../../components/blocks/breadcrumbs";
 import { Layout } from "../../../components/layout";
 import { Section } from "../../../components/util/section";
@@ -36,11 +38,15 @@ export default function CompanyPage(
                 />
               </Section>
             ))}
-          <Section className="mx-auto w-full max-w-9xl px-8 py-0">
+          <Section className="mx-auto w-full max-w-9xl px-8 ">
             <div>
               <h1 className="p-0">{data.caseStudy.heading}</h1>
               <h2 className="p-0 text-sm">{data.caseStudy.subHeading}</h2>
             </div>
+          </Section>
+          <Blocks prefix="CaseStudy_body" blocks={data.caseStudy._body} />
+          <Section className="prose mx-auto !block w-full max-w-9xl px-8 py-0">
+            <TinaMarkdown content={data.caseStudy.content} />
           </Section>
           <Section>
             <BuiltOnAzure data={{ backgroundColor: "default" }} />
