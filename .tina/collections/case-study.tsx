@@ -51,23 +51,5 @@ export const caseStudySchema: Collection = {
       label: "Content",
       name: "content",
     },
-    {
-      type: "object",
-      label: "Related Links",
-      name: "relatedLinks",
-      list: true,
-      fields: [
-        {
-          type: "string",
-          name: "title",
-          label: "Title",
-        },
-        {
-          type: "string",
-          name: "url",
-          label: "URL",
-        },
-      ],
-    },
   ],
 };
