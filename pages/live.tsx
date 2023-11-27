@@ -124,7 +124,7 @@ export default function LivePage(
                   (prevCount) => prevCount + DEFAULT_VISIBLE_VIDEOS
                 )
               }
-              className="m-8 flex items-center rounded-md bg-gray-100 p-1 text-sswRed transition duration-300 hover:bg-gray-200"
+              className="m-8 flex items-center rounded-md bg-gray-200 p-2 font-bold text-sswRed transition duration-300 hover:bg-gray-300"
             >
               See More <MdOutlineKeyboardArrowDown />
             </button>
