@@ -1,4 +1,5 @@
 import { defineStaticConfig, TinaCMS } from "tinacms";
+import { caseStudySchema } from "./collections/case-study";
 import {
   clientsCategorySchema,
   companyIndexSchema,
@@ -69,6 +70,7 @@ const config = defineStaticConfig({
       companySchema,
       clientsCategorySchema,
       paymentDetailsSchema,
+      caseStudySchema,
       consultingIndexSchema,
       consultingSchema,
       videoProductionSchema,
