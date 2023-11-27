@@ -11,7 +11,10 @@ import { LiveHeader } from "../components/live/header";
 import { Container } from "../components/util/container";
 import { SEO } from "../components/util/seo";
 import { VideoCard } from "../components/util/videoCards";
-import { getEvents, getSpeakersInfoFromEvent } from "../services/server/events";
+import {
+  getNextEventToBeLiveStreamed,
+  getSpeakersInfoFromEvent,
+} from "../services/server/events";
 import { getYoutubePlaylist } from "../services/server/youtube";
 
 const DEFAULT_VISIBLE_VIDEOS = 9;
@@ -173,21 +176,23 @@ export const getStaticProps = async () => {
     });
   }
 
-  const currentDate = new Date().toISOString();
+  // const currentDate = new Date().toISOString();
 
-  const events = await getEvents(
-    `$filter=fields/Enabled ne false and fields/EndDateTime gt '${currentDate}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime asc`
-  );
+  // const events = await getEvents(
+  //   `$filter=fields/Enabled ne false and fields/EndDateTime gt '${currentDate}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime asc`
+  // );
 
-  let event = events[0];
+  // let event = events[0];
 
-  if (!event) {
-    const pastEvents = await getEvents(
-      `$filter=fields/Enabled ne false and fields/EndDateTime lt '${currentDate}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc`
-    );
+  // if (!event) {
+  //   const pastEvents = await getEvents(
+  //     `$filter=fields/Enabled ne false and fields/EndDateTime lt '${currentDate}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc`
+  //   );
 
-    event = pastEvents[0];
-  }
+  //   event = pastEvents[0];
+  // }
+
+  const event = await getNextEventToBeLiveStreamed();
 
   const speakers = await getSpeakersInfoFromEvent(event);
   const speaker = speakers[0];
