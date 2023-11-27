@@ -114,6 +114,7 @@ jobs:
             SHAREPOINT_SITE_ID=${{ env.SHAREPOINT_SITE_ID }}
             SHAREPOINT_EVENTS_LIST_ID=${{ env.SHAREPOINT_EVENTS_LIST_ID }}
             SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID=${{ env.SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID }}
+            YOUTUBE_PRIVATE_KEY=${{ env.YOUTUBE_PRIVATE_KEY }}
             KEY_VAULT=${{ env.KEY_VAULT }}
             NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING=${{ steps.AppInsight.outputs.AppInsightConnectionString }}
             TINA_TOKEN=${{ secrets.TINA_TOKEN }}
