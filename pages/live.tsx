@@ -42,7 +42,7 @@ export default function LivePage(
         <div>
           {props.event?.Title && (
             <div className="col-span-2">
-              <div className="whitespace-pre-wrap text-2xl font-bold">
+              <div className="whitespace-pre-wrap text-2xl font-semibold">
                 {props.event?.Title}
               </div>
             </div>
@@ -124,7 +124,7 @@ export default function LivePage(
                   (prevCount) => prevCount + DEFAULT_VISIBLE_VIDEOS
                 )
               }
-              className="m-8 flex items-center rounded-md bg-gray-200 p-2 font-bold text-sswRed transition duration-300 hover:bg-gray-300"
+              className="m-8 flex items-center rounded-md bg-gray-200 p-2 px-4 font-semibold text-sswRed transition duration-300 hover:bg-gray-300"
             >
               See More <MdOutlineKeyboardArrowDown />
             </button>
