@@ -30,6 +30,7 @@ export const megaMenuSchema: Collection = {
           type: "string",
           name: "name",
           label: "Name",
+          required: true,
         },
         {
           type: "object",
@@ -109,8 +110,8 @@ export const megaMenuSchema: Collection = {
           fields: [
             {
               type: "string",
-              name: "heading",
-              label: "Heading",
+              name: "name",
+              label: "Name",
               required: true,
             },
             {
@@ -145,6 +146,12 @@ export const megaMenuSchema: Collection = {
                   name: "url",
                   label: "URL",
                 },
+                {
+                  type: "string",
+                  name: "icon",
+                  label: "Icon",
+                  options: Object.keys(iconMap),
+                },
               ],
             },
           ],
@@ -163,6 +170,11 @@ export const megaMenuSchema: Collection = {
               name: "url",
             },
           ],
+        },
+        {
+          type: "string",
+          name: "url",
+          label: "URL (optional for single link items without a dropdown)",
         },
       ],
     },

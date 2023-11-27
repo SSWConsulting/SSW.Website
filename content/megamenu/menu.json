@@ -74,7 +74,7 @@
       ],
       "sidebarItems": [
         {
-          "heading": "Featured",
+          "name": "Featured",
           "items": [
             {
               "name": "ChatGPT & GPT-4",
@@ -94,7 +94,7 @@
           ]
         },
         {
-          "heading": "Free Initial Meeting",
+          "name": "Free Initial Meeting",
           "items": [
             {
               "name": "Book Now",
@@ -174,7 +174,7 @@
       ],
       "sidebarItems": [
         {
-          "heading": "What's New",
+          "name": "What's New",
           "items": [
             {
               "name": "SugarLearning V1.50",
@@ -193,7 +193,7 @@
           ]
         },
         {
-          "heading": "Support",
+          "name": "Support",
           "items": [
             {
               "name": "Knowledge Base",
@@ -331,31 +331,33 @@
           ]
         }
       ],
-      "sidebar": {
-        "heading": "Resources",
-        "sidebarItems": [
-          {
-            "name": "Newsletters",
-            "widgetType": "standardLink",
-            "url": "/newsletters"
-          },
-          {
-            "name": "Past Sessions",
-            "widgetType": "standardLink",
-            "url": "https://www.ssw.com.au/ssw/NETUG/PastSessions.aspx"
-          },
-          {
-            "name": "Evaluation Survey",
-            "widgetType": "standardLink",
-            "url": "https://www.ssw.com.au/ssw/NETUG/Evaluation-Survey/"
-          },
-          {
-            "name": "Developer Links",
-            "widgetType": "standardLink",
-            "url": "https://www.ssw.com.au/ssw/NETUG/Developerlinks.aspx"
-          }
-        ]
-      },
+      "sidebarItems": [
+        {
+          "name": "Resources",
+          "items": [
+            {
+              "name": "Newsletters",
+              "widgetType": "standardLink",
+              "url": "/newsletters"
+            },
+            {
+              "name": "Past Sessions",
+              "widgetType": "standardLink",
+              "url": "https://www.ssw.com.au/ssw/NETUG/PastSessions.aspx"
+            },
+            {
+              "name": "Evaluation Survey",
+              "widgetType": "standardLink",
+              "url": "https://www.ssw.com.au/ssw/NETUG/Evaluation-Survey/"
+            },
+            {
+              "name": "Developer Links",
+              "widgetType": "standardLink",
+              "url": "https://www.ssw.com.au/ssw/NETUG/Developerlinks.aspx"
+            }
+          ]
+        }
+      ],
       "viewAll": {
         "name": "View all events & training",
         "url": "/events"
@@ -459,7 +461,7 @@
       ],
       "sidebarItems": [
         {
-          "heading": "Where to find us",
+          "name": "Where to find us",
           "items": [
             {
               "name": "Our Offices",
@@ -478,6 +480,14 @@
         "name": "View all products",
         "url": "/products"
       }
+    },
+    {
+      "name": "SSW Rules",
+      "url": "https://www.ssw.com.au/rules"
+    },
+    {
+      "name": "SSW TV",
+      "url": "https://tv.ssw.com.au/"
     }
   ]
 }

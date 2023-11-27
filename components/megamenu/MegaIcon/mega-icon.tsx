@@ -16,6 +16,7 @@ import {
 import Image from "next/image";
 import React from "react";
 import { AvailableIcons } from "../../../types/megamenu";
+import { Flag } from "../../blocks";
 
 export const iconMap = {
   chevronDown: (props) => <ChevronDownIcon className={props.className} />,
@@ -33,6 +34,7 @@ export const iconMap = {
   squaresPlus: (props) => <SquaresPlusIcon className={props.className} />,
   playCircle: (props) => <PlayCircleIcon className={props.className} />,
   rectangleGroup: (props) => <RectangleGroupIcon className={props.className} />,
+  chinaFlag: () => <Flag country="China" />,
 };
 
 const MegaIconMapper = ({ icon }: { icon: AvailableIcons }) => {

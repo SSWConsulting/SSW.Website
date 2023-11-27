@@ -1,479 +1,506 @@
-import { NavMenuItem } from "../types/megamenu";
+import { NavMenuGroup } from "../types/megamenu";
 
-export const menuBarItems: NavMenuItem[] = [
+export const menuBarItems: NavMenuGroup[] = [
   {
     name: "Services",
-    menuGroup: {
-      mainItems: [
-        {
-          heading: "Development Teams",
-          items: [
-            {
-              name: "Web Development",
-              description:
-                "Professional web development service that creates stylish, functional, user-friendly websites",
-              icon: "websiteDevelopment",
-              href: "/consulting?tag=Web-Development",
-            },
-            {
-              name: "Mobile Development",
-              description: "Building cutting-edge apps for diverse platforms",
-              icon: "mobileDevelopment",
-              href: "/consulting?tag=Mobile-Development",
-            },
-            {
-              name: "AI Development",
-              description:
-                "Creating intelligent, data-driven solutions for businesses",
-              icon: "aiDevelopment",
-              href: "/consulting?tag=AI-Development",
-            },
-            {
-              name: "Database Development",
-              description:
-                "Constructing robust, scalable, and efficient data management systems",
-              icon: "databaseDevelopment",
-              href: "/consulting?tag=Database-Development",
-            },
-            {
-              name: "Platform Development",
-              description:
-                "Delivering versatile, integrated solutions that optimize business operations",
-              icon: "platformDevelopment",
-              href: "/consulting?tag=Platform-Development",
-            },
-          ],
-        },
-        "ColumnBreak",
-        {
-          heading: "Consulting Teams",
-          items: [
-            {
-              name: "UI/UX Design",
-              description:
-                "Crafting visually stunning, intuitive user intertaces for seamless experiences",
-              icon: "uiUXDesign",
-              href: "/consulting?tag=Design",
-            },
-            {
-              name: "Video Production",
-              description:
-                "Creating captivating, high-quality visual content for impactful storytelling",
-              icon: "videoProduction",
-              href: "/consulting?tag=Video",
-            },
-            {
-              name: "Cloud and Infrastructure",
-              description:
-                "Designing scalable, secure, and resilient cloud computing environments",
-              icon: "cloudAndInfrastructure",
-              href: "/consulting?tag=Cloud-and+Infrastructure",
-            },
-            {
-              name: "Other SSW Service",
-              description:
-                "SSW's other enterprise software development services",
-              icon: "otherSSWService",
-              href: "/consulting?tag=Other-SSW+Services",
-            },
-          ],
-          viewAllLink: {
-            name: "View all services",
-            href: "/consulting",
+    menuColumns: [
+      {
+        menuColumnGroups: [
+          {
+            name: "Development Teams",
+            menuItems: [
+              {
+                name: "Web Development",
+                url: "/consulting?tag=Web-Development",
+                description:
+                  "Professional web development service that creates stylish, functional, user-friendly websites",
+                iconImg: "/images/megamenu-icons/WebsiteDevelopment.svg",
+              },
+              {
+                name: "Mobile Development",
+                url: "/consulting?tag=Mobile-Development",
+                description: "Building cutting-edge apps for diverse platforms",
+                iconImg: "/images/megamenu-icons/MobileDevelopment.svg",
+              },
+              {
+                name: "AI Development",
+                url: "/consulting?tag=AI-Development",
+                description:
+                  "Creating intelligent, data-driven solutions for businesses",
+                iconImg: "/images/megamenu-icons/AIDevelopment.svg",
+              },
+              {
+                name: "Database Development",
+                url: "/consulting?tag=Database-Development",
+                description:
+                  "Constructing robust, scalable, and efficient data management systems",
+                iconImg: "/images/megamenu-icons/DatabaseDevelopment.svg",
+              },
+              {
+                name: "Platform Development",
+                url: "/consulting?tag=Platform-Development",
+                description:
+                  "Delivering versatile, integrated solutions that optimize business operations",
+                iconImg: "/images/megamenu-icons/PlatformDevelopment.svg",
+              },
+            ],
           },
-        },
-      ],
-      sideBarItems: [
-        {
-          heading: "Featured",
-          items: [
-            {
-              name: "ChatGPT & GPT-4",
-              description: "Unlock the power of language Al for your business",
-              category: "featured",
-              href: "/consulting/gpt",
-            },
-            {
-              name: "Bring your App to China",
-              description:
-                "A quick and easy solution for entry into a large and juicy market",
-              category: "featured",
-              href: "/consulting/chinafy-app",
-              icon: "chinaFlag",
-            },
-          ],
-        },
-        {
-          heading: "Free Initial Meeting",
-          items: [
-            {
-              name: "Book Now",
-              category: "bookNow",
-              href: "/company/contact-us",
-            },
-          ],
-        },
-      ],
+          {
+            name: "Consulting Teams",
+            menuItems: [
+              {
+                name: "UI/UX Design",
+                url: "/consulting?tag=Design",
+                description:
+                  "Crafting visually stunning, intuitive user intertaces for seamless experiences",
+                iconImg: "/images/megamenu-icons/UIUXDesign.svg",
+              },
+              {
+                name: "Video Production",
+                url: "/consulting?tag=Video",
+                description:
+                  "Creating captivating, high-quality visual content for impactful storytelling",
+                iconImg: "/images/megamenu-icons/VideoProduction.svg",
+              },
+              {
+                name: "Cloud and Infrastructure",
+                url: "/consulting?tag=Cloud-and+Infrastructure",
+                description:
+                  "Designing scalable, secure, and resilient cloud computing environments",
+                iconImg: "/images/megamenu-icons/CloudAndInfrastructure.svg",
+              },
+              {
+                name: "Other SSW Service",
+                url: "/consulting?tag=Other-SSW+Services",
+                description:
+                  "SSW's other enterprise software development services",
+                iconImg: "/images/megamenu-icons/OtherSSWService.svg",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    sidebarItems: [
+      {
+        name: "Featured",
+        items: [
+          {
+            name: "ChatGPT & GPT-4",
+            description: "Unlock the power of language Al for your business",
+            widgetType: "featured",
+            url: "/consulting/gpt",
+          },
+          {
+            name: "Bring your App to China",
+            description:
+              "A quick and easy solution for entry into a large and juicy market",
+            widgetType: "featured",
+            url: "/consulting/chinafy-app",
+            icon: "chinaFlag",
+          },
+        ],
+      },
+      {
+        name: "Free Initial Meeting",
+        items: [
+          {
+            name: "Book Now",
+            widgetType: "bookNow",
+            url: "/company/contact-us",
+          },
+        ],
+      },
+    ],
+    viewAll: {
+      name: "View all services",
+      url: "/consulting",
     },
   },
   {
     name: "Products",
-    menuGroup: {
-      mainItems: [
-        {
-          heading: "Web",
-          items: [
-            {
-              name: "SugarLearning",
-              description:
-                "The next generation on-boarding & induction tool for smart companies",
-              icon: "sugarLearning",
-              href: "https://www.sugarlearning.com/",
-            },
-            {
-              name: "TimePro",
-              description:
-                "TimePro offers everything an enterprise needs, such as invoicing, receipting, and time sheeting",
-              icon: "timePro",
-              href: "https://sswtimepro.com/",
-            },
-            {
-              name: "CodeAuditor",
-              description: "Scan any website for broken links and HTML Issues",
-              icon: "codeAuditor",
-              href: "https://codeauditor.com",
-            },
-          ],
-        },
-        "ColumnBreak",
-        {
-          heading: "AI",
-          items: [
-            {
-              name: "SophieBot",
-              description:
-                "AI-driven solution that delivers a competitive edge through its ability to find data",
-              icon: "sophieBot",
-              href: "https://sswsophie.com/sophiebot",
-            },
-            {
-              name: "SophieHub",
-              description:
-                "A Smart Environment System which shows user specific information based on the user",
-              icon: "sophieHub",
-              href: "https://sswsophie.com",
-            },
-          ],
-        },
-        {
-          heading: "Apps",
-          items: [
-            {
-              name: "SSW Rewards",
-              description:
-                "Scan SSW QR codes, earn SSW Points, claim rewards, and win prizes",
-              icon: "sswRewards",
-              href: "/products/rewards",
-            },
-          ],
-          viewAllLink: {
-            name: "View all products",
-            href: "/products/",
+    menuColumns: [
+      {
+        menuColumnGroups: [
+          {
+            name: "Web",
+            menuItems: [
+              {
+                name: "SugarLearning",
+                url: "https://www.sugarlearning.com/",
+                description:
+                  "The next generation on-boarding & induction tool for smart companies",
+                iconImg: "/images/megamenu-icons/SugarLearning.svg",
+              },
+              {
+                name: "TimePro",
+                url: "https://sswtimepro.com/",
+                description:
+                  "TimePro offers everything an enterprise needs, such as invoicing, receipting, and time sheeting",
+                iconImg: "/images/megamenu-icons/TimePro.svg",
+              },
+              {
+                name: "CodeAuditor",
+                url: "https://codeauditor.com",
+                description:
+                  "Scan any website for broken links and HTML Issues",
+                iconImg: "/images/megamenu-icons/CodeAuditor.svg",
+              },
+            ],
           },
-        },
-      ],
-      sideBarItems: [
-        {
-          heading: "What's New",
-          items: [
-            {
-              name: "SugarLearning V1.50",
-              description:
-                "The next generation on-boarding & induction tool for smart companies.",
-              category: "featured",
-              href: "https://www.sugarlearning.com/",
-            },
-            {
-              name: "TimePro V2.10",
-              description:
-                "TimePro offers everything an enterprise needs, such as invoicing, receipting, and time sheeting",
-              category: "featured",
-              href: "https://sswtimepro.com/",
-            },
-          ],
-        },
-        {
-          heading: "Support",
-          items: [
-            {
-              name: "Knowledge Base",
-              category: "classicMenu",
-              href: "https://pdi-ssw.zendesk.com/hc",
-            },
-            {
-              name: "Report a bug",
-              category: "classicMenu",
-              href: "https://www.ssw.com.au/ssw/Standards/Support/BugReportOrEnhancement.aspx",
-            },
-          ],
-        },
-      ],
+        ],
+      },
+      {
+        menuColumnGroups: [
+          {
+            name: "AI",
+            menuItems: [
+              {
+                name: "SophieBot",
+                url: "https://sswsophie.com/sophiebot",
+                description:
+                  "AI-driven solution that delivers a competitive edge through its ability to find data",
+                iconImg: "/images/megamenu-icons/SophieBot.svg",
+              },
+              {
+                name: "SophieHub",
+                url: "https://sswsophie.com",
+                description:
+                  "A Smart Environment System which shows user specific information based on the user",
+                iconImg: "/images/megamenu-icons/SophieHub.svg",
+              },
+            ],
+          },
+          {
+            name: "Apps",
+            menuItems: [
+              {
+                name: "SSW Rewards",
+                url: "/products/rewards",
+                description:
+                  "Scan SSW QR codes, earn SSW Points, claim rewards, and win prizes",
+                iconImg: "/images/megamenu-icons/SSWRewards.svg",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    sidebarItems: [
+      {
+        name: "What's New",
+        items: [
+          {
+            name: "SugarLearning V1.50",
+            description:
+              "The next generation on-boarding & induction tool for smart companies.",
+            widgetType: "featured",
+            url: "https://www.sugarlearning.com/",
+          },
+          {
+            name: "TimePro V2.10",
+            description:
+              "TimePro offers everything an enterprise needs, such as invoicing, receipting, and time sheeting",
+            widgetType: "featured",
+            url: "https://sswtimepro.com/",
+          },
+        ],
+      },
+      {
+        name: "Support",
+        items: [
+          {
+            name: "Knowledge Base",
+            widgetType: "standardLink",
+            url: "https://pdi-ssw.zendesk.com/hc",
+          },
+          {
+            name: "Report a bug",
+            widgetType: "standardLink",
+            url: "https://www.ssw.com.au/ssw/Standards/Support/BugReportOrEnhancement.aspx",
+          },
+        ],
+      },
+    ],
+    viewAll: {
+      name: "View all products",
+      url: "/products",
     },
   },
   {
     name: "Events & Training",
-    menuGroup: {
-      mainItems: [
-        {
-          heading: "User Groups",
-          items: [
-            {
-              name: "Sydney .NET UG",
-              href: "/netug/sydney",
-            },
-            {
-              name: "Canberra .NET UG",
-              href: "/netug/canberra",
-            },
-            {
-              name: "Melbourne .NET UG",
-              href: "/netug/melbourne",
-            },
-            {
-              name: "Brisbane Full Stack UG",
-              href: "/netug/brisbane",
-            },
-            {
-              name: "China Fire User Group",
-              href: "https://fireusergroup.com/",
-            },
-          ],
-        },
-        "ColumnBreak",
-        {
-          heading: "1-Day Training",
-          items: [
-            {
-              name: "Angular Superpowers Tour",
-              href: "/events/angular-superpowers-tour",
-            },
-            {
-              name: "Azure Superpowers Tour",
-              href: "/events/azure-superpowers-tour",
-            },
-            {
-              name: "Clean Architecture Superpowers Tour",
-              href: "/events/clean-architecture-superpowers-tour",
-            },
-            {
-              name: ".NET Superpowers Tour",
-              href: "/events/net-superpowers-tour",
-            },
-            {
-              name: "Azure Super Skills",
-              href: "/events/azure-superskills",
-            },
-          ],
-        },
-        {
-          heading: "2-Day Training",
-          items: [
-            {
-              name: "Angular Workshop",
-              href: "/events/angular-workshop",
-            },
-            {
-              name: "Clean Architecture Workshop",
-              href: "/events/clean-architecture-workshop",
-            },
-          ],
-        },
-        {
-          heading: "Hack Days",
-          items: [
-            {
-              name: "Angular Hack Day",
-              href: "https://angularhackday.com/",
-            },
-            {
-              name: "MAUI Hack Day",
-              href: "https://mauihackday.com/",
-            },
-            {
-              name: "AI Hack Day",
-              href: "https://aihackday.com/",
-            },
-          ],
-        },
-        "ColumnBreak",
-        {
-          heading: "Training Services",
-          items: [
-            {
-              name: "Video Production & Live Streaming",
-              href: "/consulting/video-production",
-            },
-            {
-              name: "Conference Room for Hire",
-              href: "http://sswchapel.com.au/",
-            },
-          ],
-        },
-        {
-          heading: "SSW Internship Programs",
-          items: [
-            {
-              name: "Full Stack Developers",
-              href: "/training/internship-fullstack",
-            },
-          ],
-          viewAllLink: {
-            name: "View all events & training",
-            href: "/events",
+    menuColumns: [
+      {
+        menuColumnGroups: [
+          {
+            name: "User Groups",
+            menuItems: [
+              {
+                name: "Sydney .NET UG",
+                url: "/netug/sydney",
+              },
+              {
+                name: "Canberra .NET UG",
+                url: "/netug/canberra",
+              },
+              {
+                name: "Melbourne .NET UG",
+                url: "/netug/melbourne",
+              },
+              {
+                name: "Brisbane Full Stack UG",
+                url: "/netug/brisbane",
+              },
+              {
+                name: "China Fire User Group",
+                url: "https://fireusergroup.com/",
+              },
+            ],
           },
-        },
-      ],
-      sideBarItems: [
-        {
-          heading: "Resources",
-          items: [
-            {
-              name: "Newsletters",
-              category: "classicMenu",
-              href: "/newsletters",
-            },
-            {
-              name: "Past Sessions",
-              category: "classicMenu",
-              href: "https://www.ssw.com.au/ssw/NETUG/PastSessions.aspx",
-            },
-            {
-              name: "Evaluation Survey",
-              category: "classicMenu",
-              href: "https://www.ssw.com.au/ssw/NETUG/Evaluation-Survey/",
-            },
-            {
-              name: "Developer Links",
-              category: "classicMenu",
-              href: "https://www.ssw.com.au/ssw/NETUG/Developerlinks.aspx",
-            },
-          ],
-        },
-      ],
+        ],
+      },
+      {
+        menuColumnGroups: [
+          {
+            name: "1-Day Training",
+            menuItems: [
+              {
+                name: "Angular Superpowers Tour",
+                url: "/events/angular-superpowers-tour",
+              },
+              {
+                name: "Azure Superpowers Tour",
+                url: "/events/azure-superpowers-tour",
+              },
+              {
+                name: "Clean Architecture Superpowers Tour",
+                url: "/events/clean-architecture-superpowers-tour",
+              },
+              {
+                name: ".NET Superpowers Tour",
+                url: "/events/net-superpowers-tour",
+              },
+              {
+                name: "Azure Super Skills",
+                url: "/events/azure-superskills",
+              },
+            ],
+          },
+          {
+            name: "2-Day Training",
+            menuItems: [
+              {
+                name: "Angular Workshop",
+                url: "/events/angular-workshop",
+              },
+              {
+                name: "Clean Architecture Workshop",
+                url: "/events/clean-architecture-workshop",
+              },
+            ],
+          },
+          {
+            name: "Hack Days",
+            menuItems: [
+              {
+                name: "Angular Hack Day",
+                url: "https://angularhackday.com/",
+              },
+              {
+                name: "MAUI Hack Day",
+                url: "https://mauihackday.com/",
+              },
+              {
+                name: "AI Hack Day",
+                url: "https://aihackday.com/",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        menuColumnGroups: [
+          {
+            name: "Training Services",
+            menuItems: [
+              {
+                name: "Video Production & Live Streaming",
+                url: "/consulting/video-production",
+              },
+              {
+                name: "Conference Room for Hire",
+                url: "http://sswchapel.com.au/",
+              },
+            ],
+          },
+          {
+            name: "SSW Internship Programs",
+            menuItems: [
+              {
+                name: "Full Stack Developers",
+                url: "/training/internship-fullstack",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    sidebarItems: [
+      {
+        name: "Resources",
+        items: [
+          {
+            name: "Newsletters",
+            widgetType: "standardLink",
+            url: "/newsletters",
+          },
+          {
+            name: "Past Sessions",
+            widgetType: "standardLink",
+            url: "https://www.ssw.com.au/ssw/NETUG/PastSessions.aspx",
+          },
+          {
+            name: "Evaluation Survey",
+            widgetType: "standardLink",
+            url: "https://www.ssw.com.au/ssw/NETUG/Evaluation-Survey/",
+          },
+          {
+            name: "Developer Links",
+            widgetType: "standardLink",
+            url: "https://www.ssw.com.au/ssw/NETUG/Developerlinks.aspx",
+          },
+        ],
+      },
+    ],
+    viewAll: {
+      name: "View all events & training",
+      url: "/events",
     },
   },
   {
     name: "About Us",
-    menuGroup: {
-      mainItems: [
-        {
-          heading: "Why Us",
-          items: [
-            {
-              name: "About SSW",
-              href: "/company/about-us",
-            },
-            {
-              name: "Our History",
-              href: "/company/history",
-            },
-            {
-              name: "Awards",
-              href: "https://www.ssw.com.au/ssw/Company/Awards",
-            },
-          ],
-        },
-        {
-          heading: "Who We Are",
-          items: [
-            {
-              name: "Our People",
-              href: "https://www.ssw.com.au/people/",
-            },
-            {
-              name: "Employment",
-              href: "/employment",
-            },
-          ],
-        },
-        "ColumnBreak",
-        {
-          heading: "Who We Work With",
-          items: [
-            {
-              name: "Our Clients' Stories",
-              href: "/company/clients",
-            },
-            {
-              name: "Testimonials",
-              href: "https://www.ssw.com.au/company/testimonials",
-            },
-            {
-              name: "Partners",
-              href: "/company/partners",
-            },
-            {
-              name: "Finance",
-              href: "/industry/finance",
-            },
-            {
-              name: "Non-Profits",
-              href: "/industry/non-profit",
-            },
-            {
-              name: "Educational",
-              href: "/industry/educational",
-            },
-          ],
-        },
-        "ColumnBreak",
-        {
-          heading: "Our Blogs",
-          items: [
-            {
-              name: "News & Press",
-              href: "/company/news/",
-            },
-            {
-              name: "SSW Blog",
-              href: "https://blog.ssw.com.au/",
-            },
-            {
-              name: "Adam's Blog",
-              href: "https://adamcogan.com/",
-            },
-            {
-              name: "Newsletters",
-              href: "/newsletters",
-            },
-          ],
-        },
-      ],
-      sideBarItems: [
-        {
-          heading: "Where to find us",
-          items: [
-            {
-              name: "Our Offices",
-              category: "classicMenu",
-              href: "/offices",
-            },
-            {
-              name: "Contact Us",
-              category: "classicMenu",
-              href: "/company/contact-us",
-            },
-          ],
-        },
-      ],
+    menuColumns: [
+      {
+        menuColumnGroups: [
+          {
+            name: "Why Us",
+            menuItems: [
+              {
+                name: "About SSW",
+                url: "/company/about-us",
+              },
+              {
+                name: "Our History",
+                url: "/company/history",
+              },
+              {
+                name: "Awards",
+                url: "https://www.ssw.com.au/ssw/Company/Awards",
+              },
+            ],
+          },
+          {
+            name: "Who We Are",
+            menuItems: [
+              {
+                name: "Our People",
+                url: "https://www.ssw.com.au/people/",
+              },
+              {
+                name: "Employment",
+                url: "/employment",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        menuColumnGroups: [
+          {
+            name: "Who We Work With",
+            menuItems: [
+              {
+                name: "Our Clients' Stories",
+                url: "/company/clients",
+              },
+              {
+                name: "Testimonials",
+                url: "https://www.ssw.com.au/company/testimonials",
+              },
+              {
+                name: "Partners",
+                url: "/company/partners",
+              },
+              {
+                name: "Finance",
+                url: "/industry/finance",
+              },
+              {
+                name: "Non-Profits",
+                url: "/industry/non-profit",
+              },
+              {
+                name: "Educational",
+                url: "/industry/educational",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        menuColumnGroups: [
+          {
+            name: "Our Blogs",
+            menuItems: [
+              {
+                name: "News & Press",
+                url: "/company/news/",
+              },
+              {
+                name: "SSW Blog",
+                url: "https://blog.ssw.com.au/",
+              },
+              {
+                name: "Adam's Blog",
+                url: "https://adamcogan.com/",
+              },
+              {
+                name: "Newsletters",
+                url: "/newsletters",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    sidebarItems: [
+      {
+        name: "Where to find us",
+        items: [
+          {
+            name: "Our Offices",
+            widgetType: "standardLink",
+            url: "/offices",
+          },
+          {
+            name: "Contact Us",
+            widgetType: "standardLink",
+            url: "/company/contact-us",
+          },
+        ],
+      },
+    ],
+    viewAll: {
+      name: "View all products",
+      url: "/products",
     },
   },
   {
     name: "SSW Rules",
-    href: "https://www.ssw.com.au/rules",
+    url: "https://www.ssw.com.au/rules",
   },
   {
     name: "SSW TV",
-    href: "https://tv.ssw.com.au",
+    url: "https://tv.ssw.com.au/",
   },
 ];

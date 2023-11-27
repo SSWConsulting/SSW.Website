@@ -9,46 +9,38 @@ export const availableWidgets = [
 export type AvailableIcons = keyof typeof iconMap;
 export type AvailableWidgets = (typeof availableWidgets)[number];
 
-export interface MainMenuDefinition {
-  heading: string;
-  items: SubMenuItemDefinition[];
-  viewAllLink?: {
+export interface NavMenuGroup {
+  name: string;
+  url?: string;
+  menuColumns?: NavMenuColumn[];
+  sidebarItems?: SidebarItem[];
+  viewAll?: {
     name: string;
-    href: string;
+    url: string;
   };
 }
-export interface SubMenuItemDefinition {
-  name: string;
-  icon?: AvailableIcons | string;
-  description?: string;
-  href: string;
-}
-export interface SideMenuDefinition {
-  heading: string;
-  items: SideMenuItem[];
+
+export interface NavMenuColumn {
+  menuColumnGroups: {
+    name: string;
+    menuItems: {
+      name: string;
+      url: string;
+      description?: string;
+      icon?: AvailableIcons;
+      iconImg?: string;
+    }[];
+  }[];
 }
 
-export interface SideMenuItem {
+export interface SidebarItem {
   name: string;
-  description?: string;
-  category: AvailableWidgets;
-  href: string;
-}
-
-export interface NavMenuGroup {
-  mainItems: (MainMenuDefinition | "ColumnBreak")[];
-  sideBarItems: SideMenuDefinition[];
-}
-
-export interface NavMenuItem {
-  name: string;
-  href?: string;
-  menuGroup?: NavMenuGroup;
-}
-
-export interface CtaMenu {
-  name: string;
-  href: string;
-  icon?: AvailableIcons | string;
-  iconImg?: string;
+  items: {
+    name: string;
+    url: string;
+    description?: string;
+    widgetType: AvailableWidgets;
+    // TODO: Fix
+    icon?: AvailableIcons;
+  }[];
 }
