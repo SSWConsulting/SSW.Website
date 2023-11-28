@@ -14,7 +14,7 @@ export const companySchema: Collection = {
   format: "mdx",
   path: "content/company/",
   match: {
-    exclude: "index/**/**",
+    include: "*",
   },
   ui: {
     router: ({ document }) => {
