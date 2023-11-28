@@ -434,7 +434,7 @@
           "title": "ALM + GitHub + Azure DevOps",
           "description": "Azure DevOps, GitHub, Visual Studio, and VS Code provide the backbone for delivering software continuously. Manage large teams and codebases with ease.",
           "logo": "/images/thumbs/thumb-visual-studio.jpg",
-          "page": "content/consulting/alm-azure-devops.mdx",
+          "page": "content/consulting/alm-tooling.mdx",
           "tags": [
             {
               "tag": "content/consulting/tag/consulting.json"
