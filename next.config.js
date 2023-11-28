@@ -68,11 +68,6 @@ const config = {
         destination: "/admin/index.html",
         permanent: true,
       },
-      {
-        source: "/company/clients/case-study",
-        destination: "/company/clients",
-        permanent: true,
-      },
     ];
   },
   experimental: {

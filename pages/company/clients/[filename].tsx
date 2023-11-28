@@ -1,16 +1,16 @@
 import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import client from "../../../../.tina/__generated__/client";
-import { BuiltOnAzure } from "../../../../components/blocks";
-import { Blocks } from "../../../../components/blocks-renderer";
-import { Breadcrumbs } from "../../../../components/blocks/breadcrumbs";
-import { componentRenderer } from "../../../../components/blocks/mdxComponentRenderer";
-import { Layout } from "../../../../components/layout";
-import { Section } from "../../../../components/util/section";
-import { SEO } from "../../../../components/util/seo";
-import { RecaptchaContext } from "../../../../context/RecaptchaContext";
-import { removeExtension } from "../../../../services/client/utils.service";
+import client from "../../../.tina/__generated__/client";
+import { BuiltOnAzure } from "../../../components/blocks";
+import { Blocks } from "../../../components/blocks-renderer";
+import { Breadcrumbs } from "../../../components/blocks/breadcrumbs";
+import { componentRenderer } from "../../../components/blocks/mdxComponentRenderer";
+import { Layout } from "../../../components/layout";
+import { Section } from "../../../components/util/section";
+import { SEO } from "../../../components/util/seo";
+import { RecaptchaContext } from "../../../context/RecaptchaContext";
+import { removeExtension } from "../../../services/client/utils.service";
 
 export default function CompanyPage(
   props: InferGetStaticPropsType<typeof getStaticProps>

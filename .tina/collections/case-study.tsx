@@ -10,7 +10,7 @@ export const caseStudySchema: Collection = {
   path: "content/company/case-study",
   ui: {
     router: ({ document }) => {
-      return `/company/clients/case-study/${document._sys.filename}`;
+      return `/company/clients/${document._sys.filename}`;
     },
   },
   fields: [
