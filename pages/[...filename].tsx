@@ -21,6 +21,8 @@ export default function HomePage(
     variables: props.variables,
   });
 
+  console.log(data.megamenu);
+
   // Here due to components attempting to access pageBlock items before
   // they are initialised
   if (!pageBlocks) {
@@ -83,8 +85,6 @@ export const getStaticProps = async ({ params }) => {
   if (tinaProps.data.page.seo && !tinaProps.data.page.seo.canonical) {
     tinaProps.data.page.seo.canonical = `${tinaProps.data.global.header.url}${relativePath}`;
   }
-
-  console.log(tinaProps.data.megamenu);
 
   return {
     props: {
