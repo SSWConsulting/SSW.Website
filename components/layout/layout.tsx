@@ -59,7 +59,6 @@ interface LayoutProps {
 }
 
 export const Layout = ({ children, menu, className = "" }: LayoutProps) => {
-  console.log(menu);
   const liveStreamProps = useLiveStreamProps();
   const router = useRouter();
 
