@@ -2,19 +2,21 @@
 import { Popover, Transition } from "@headlessui/react";
 import React, { Fragment } from "react";
 import { twMerge } from "tailwind-merge";
-import { NavMenuGroup } from "../../../types/megamenu";
+import { NavMenuColumn, Sidebar } from "../../../types/megamenu";
 import { MegaIcon } from "../MegaIcon";
 import SubMenuGroup from "../SubMenuGroup/sub-menu-group";
 
 interface MenuItemWithSubmenuProps {
   name: string;
-  menu: NavMenuGroup;
+  menuColumns: NavMenuColumn[];
+  sidebarItems: Sidebar[];
   isOpened: boolean;
 }
 
 export const MenuItemWithSubmenu: React.FC<MenuItemWithSubmenuProps> = ({
   name,
-  menu,
+  menuColumns,
+  sidebarItems,
   isOpened,
 }) => {
   return (
@@ -43,7 +45,7 @@ export const MenuItemWithSubmenu: React.FC<MenuItemWithSubmenuProps> = ({
       >
         {/* eslint-disable-next-line tailwindcss/no-arbitrary-value */}
         <Popover.Panel className="absolute inset-x-0 top-[120px] -z-10 bg-white shadow-md shadow-gray-400">
-          <SubMenuGroup menu={menu} />
+          <SubMenuGroup menuColumns={menuColumns} sidebarItems={sidebarItems} />
         </Popover.Panel>
       </Transition>
     </>

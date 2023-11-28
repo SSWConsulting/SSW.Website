@@ -129,6 +129,13 @@ export const megaMenuSchema: Collection = {
                   type: "string",
                   name: "name",
                   label: "Name",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  name: "url",
+                  label: "URL",
+                  required: true,
                 },
                 {
                   type: "string",
@@ -140,11 +147,6 @@ export const megaMenuSchema: Collection = {
                   name: "widgetType",
                   label: "Widget Type",
                   options: [...availableWidgets],
-                },
-                {
-                  type: "string",
-                  name: "url",
-                  label: "URL",
                 },
                 {
                   type: "string",
@@ -164,10 +166,12 @@ export const megaMenuSchema: Collection = {
             {
               type: "string",
               name: "name",
+              required: true,
             },
             {
               type: "string",
               name: "url",
+              required: true,
             },
           ],
         },

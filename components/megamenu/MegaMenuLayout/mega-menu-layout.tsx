@@ -1,7 +1,7 @@
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import React, { useState } from "react";
-import { NavMenuItem } from "../../../types/megamenu";
+import { NavMenuGroup } from "../../../types/megamenu";
 import { SocialIcons, SocialTypes } from "../../util/socialIcons";
 import DesktopMenu from "../DesktopMenu/desktop-menu";
 import Logo from "../Logo/logo";
@@ -10,7 +10,7 @@ import Search from "../search";
 
 export interface MegaMenuWrapperProps extends React.PropsWithChildren {
   tagline?: string;
-  menuBarItems: NavMenuItem[];
+  menuBarItems: NavMenuGroup[];
 }
 
 const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
@@ -62,7 +62,7 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <DesktopMenu tagline={tagline} menuBarItems={menuBarItems} />
+          <DesktopMenu tagline={tagline} menuGroups={menuBarItems} />
         </nav>
 
         <MobileMenu

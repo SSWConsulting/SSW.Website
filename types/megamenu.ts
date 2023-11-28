@@ -13,7 +13,7 @@ export interface NavMenuGroup {
   name: string;
   url?: string;
   menuColumns?: NavMenuColumn[];
-  sidebarItems?: SidebarItem[];
+  sidebarItems?: Sidebar[];
   viewAll?: {
     name: string;
     url: string;
@@ -21,26 +21,32 @@ export interface NavMenuGroup {
 }
 
 export interface NavMenuColumn {
-  menuColumnGroups: {
-    name: string;
-    menuItems: {
-      name: string;
-      url: string;
-      description?: string;
-      icon?: AvailableIcons;
-      iconImg?: string;
-    }[];
-  }[];
+  menuColumnGroups?: NavMenuColumnGroup[];
+}
+
+export interface NavMenuColumnGroup {
+  name: string;
+  menuItems?: NavMenuColumnGroupItem[];
+}
+
+export interface NavMenuColumnGroupItem {
+  name: string;
+  url: string;
+  description?: string;
+  icon?: AvailableIcons | string;
+  iconImg?: string;
+}
+
+export interface Sidebar {
+  name: string;
+  items?: SidebarItem[];
 }
 
 export interface SidebarItem {
   name: string;
-  items: {
-    name: string;
-    url: string;
-    description?: string;
-    widgetType: AvailableWidgets;
-    // TODO: Fix
-    icon?: AvailableIcons;
-  }[];
+  url: string;
+  description?: string;
+  widgetType?: AvailableWidgets | string;
+  // TODO: Fix
+  icon?: AvailableIcons | string;
 }

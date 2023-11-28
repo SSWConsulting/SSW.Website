@@ -1,6 +1,6 @@
 import { Popover } from "@headlessui/react";
 import React, { createContext } from "react";
-import { NavMenuItem } from "../../../types/megamenu";
+import { NavMenuGroup } from "../../../types/megamenu";
 import { SocialIcons, SocialTypes } from "../../util/socialIcons";
 import { CountryDropdown } from "../CountryDropdown";
 import Divider from "../divider";
@@ -10,27 +10,27 @@ import { MenuItemWithSubmenu } from "./menu-item-with-submenu";
 
 export interface DesktopMenuProps {
   tagline?: string;
-  menuBarItems: NavMenuItem[];
+  menuGroups: NavMenuGroup[];
 }
 
-export const ClosePopoverContext = createContext(null);
+export const ClosePopoverContext = createContext<(() => void) | null>(null);
 
-const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuBarItems }) => {
+const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuGroups }) => {
   return (
     <>
       <div className="hidden flex-1 lg:block">
         <Popover.Group className="flex items-center justify-center text-sm font-semibold text-ssw-black outline-none">
-          {menuBarItems.map((item) => {
-            const submenu = item.menuGroup;
-            if (submenu) {
+          {menuGroups.map((group) => {
+            if (group.menuColumns && group.menuColumns.length > 0) {
               return (
-                <Popover key={item.name}>
+                <Popover key={group.name}>
                   {({ open, close }) => {
                     return (
                       <ClosePopoverContext.Provider value={close}>
                         <MenuItemWithSubmenu
-                          name={item.name}
-                          menu={submenu}
+                          name={group.name}
+                          menuColumns={group.menuColumns}
+                          sidebarItems={group.sidebarItems}
                           isOpened={open}
                         />
                       </ClosePopoverContext.Provider>
@@ -38,8 +38,16 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuBarItems }) => {
                   }}
                 </Popover>
               );
+            } else if (group.url) {
+              return (
+                <MenuItemLink
+                  name={group.name}
+                  href={group.url}
+                  key={group.name}
+                />
+              );
             } else {
-              return <MenuItemLink item={item} key={item.name} />;
+              return <></>;
             }
           })}
         </Popover.Group>

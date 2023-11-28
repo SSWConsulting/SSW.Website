@@ -2,7 +2,6 @@ import classNames from "classnames";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useLiveStreamProps } from "../../hooks/useLiveStreamProps";
-import { menuBarItems } from "../../mock-data/mock-data";
 import { MegaMenuLayout } from "../megamenu";
 import { Footer } from "./footer";
 // import { Header } from "./header";
@@ -13,6 +12,7 @@ import dynamic from "next/dynamic";
 import { Open_Sans } from "next/font/google";
 import { WebSite, WithContext } from "schema-dts";
 import layoutData from "../../content/global/index.json";
+import { NavMenuGroup } from "../../types/megamenu";
 
 export const openSans = Open_Sans({
   variable: "--open-sans-font",
@@ -54,10 +54,12 @@ const LiveStreamBanner = dynamic(
 
 interface LayoutProps {
   className?: string;
+  menu: NavMenuGroup[];
   children: React.ReactNode;
 }
 
-export const Layout = ({ children, className = "" }: LayoutProps) => {
+export const Layout = ({ children, menu, className = "" }: LayoutProps) => {
+  console.log(menu);
   const liveStreamProps = useLiveStreamProps();
   const router = useRouter();
 
@@ -128,13 +130,13 @@ export const Layout = ({ children, className = "" }: LayoutProps) => {
         >
           <header className="no-print">
             {(showBanner || router.query.liveBanner) && (
-              <LiveStreamBanner {...liveStreamProps} isLive={isLive} />
+              <LiveStreamBanner {...liveStreamProps} isLive={!!isLive} />
             )}
             <div className="mx-auto max-w-9xl px-8">
               {(isLive || router.query.liveStream) && (
-                <LiveStreamWidget {...liveStreamProps} isLive={isLive} />
+                <LiveStreamWidget {...liveStreamProps} isLive={!!isLive} />
               )}
-              <MegaMenuLayout menuBarItems={menuBarItems} />
+              <MegaMenuLayout menuBarItems={menu} />
             </div>
           </header>
           <main className="grow bg-white">{children}</main>

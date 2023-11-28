@@ -39,7 +39,11 @@
                   "iconImg": "/images/megamenu-icons/PlatformDevelopment.svg"
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "menuColumnGroups": [
             {
               "name": "Consulting Teams",
               "menuItems": [

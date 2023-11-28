@@ -1,13 +1,13 @@
 import { Dialog } from "@headlessui/react";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import React from "react";
-import { NavMenuItem } from "../../../types/megamenu";
+import { NavMenuGroup } from "../../../types/megamenu";
 import { MegaIcon } from "../MegaIcon";
 import SubMenuGroup from "../SubMenuGroup/sub-menu-group";
 
 export interface MobileMenuProps {
   isMobileMenuOpen: boolean;
-  menuBarItems: NavMenuItem[];
+  menuBarItems: NavMenuGroup[];
   closeMobileMenu: () => void;
 }
 
@@ -17,7 +17,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
   closeMobileMenu,
 }) => {
   const [selectedMenuItem, setSelectedMenuItem] =
-    React.useState<NavMenuItem | null>(null);
+    React.useState<NavMenuGroup | null>(null);
 
   const onCloseMobileMenu = () => {
     setSelectedMenuItem(null);
@@ -54,8 +54,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
           )}
         </div>
         <div className="flow-root">
-          {selectedMenuItem ? (
-            <SubMenuGroup menu={selectedMenuItem.menuGroup!} />
+          {selectedMenuItem &&
+          selectedMenuItem.menuColumns &&
+          selectedMenuItem.sidebarItems ? (
+            <SubMenuGroup
+              menuColumns={selectedMenuItem.menuColumns}
+              sidebarItems={selectedMenuItem.sidebarItems}
+            />
           ) : (
             <MenuBarItems
               menuBarItems={menuBarItems}
@@ -69,17 +74,17 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 };
 
 const MenuBarItems: React.FC<{
-  menuBarItems: NavMenuItem[];
-  setSelectedMenuItem: (item: NavMenuItem) => void;
+  menuBarItems: NavMenuGroup[];
+  setSelectedMenuItem: (item: NavMenuGroup) => void;
 }> = ({ menuBarItems, setSelectedMenuItem }) => {
   return (
     <div className="-my-6 divide-y divide-gray-500/10 pl-6">
       <div className="space-y-2">
         {menuBarItems.map((item) => {
-          return item.href ? (
+          return item.url ? (
             <a
               key={item.name}
-              href={item.href}
+              href={item.url}
               className="unstyled -mx-3 flex w-full items-center px-3 py-2 text-left text-lg leading-7 text-ssw-black hover:bg-gray-50"
             >
               {item.name}

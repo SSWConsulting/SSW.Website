@@ -68,14 +68,15 @@ const MegaIcon: React.FC<MegaIconProps> = ({ icon, iconImg, ...props }) => {
   }
 
   return (
-    <>
+    <span className={props.className}>
       <Image
         src={iconImg}
         alt={iconImg}
-        className={props.className}
+        height={24}
+        width={24}
         aria-hidden="true"
       />
-    </>
+    </span>
   );
 };
 
