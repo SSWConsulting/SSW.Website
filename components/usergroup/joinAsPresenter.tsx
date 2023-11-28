@@ -57,7 +57,7 @@ export const JoinAsPresenter = ({ data }: JoinAsPresenterProps) => {
           href={data?.link ?? "/"}
           target="_blank"
           data-tina-field={tinaField(data, "link")}
-          className="unstyled mx-auto mt-6 block h-10 w-max rounded-md bg-sswRed px-4 py-2 text-md leading-6 text-white"
+          className="unstyled mx-auto mt-6 block h-10 w-max rounded-md bg-sswRed px-4 py-2 text-base leading-6 text-white"
         >
           Learn more
         </Link>

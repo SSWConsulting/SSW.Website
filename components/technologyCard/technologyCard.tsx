@@ -1,9 +1,9 @@
-import { FC } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { FC } from "react";
+import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { TechnologyCardProps } from "./technologyCardTypes";
-import { tinaField } from "tinacms/dist/react";
 
 const TechnologyCard: FC<TechnologyCardProps> = (props) => {
   const { name, readMoreSlug, thumbnail, body } = props;
@@ -36,7 +36,7 @@ const TechnologyCard: FC<TechnologyCardProps> = (props) => {
       </div>
       {readMoreSlug && (
         <Link
-          className="text-md"
+          className="text-base"
           href={readMoreSlug}
           data-tina-field={tinaField(props, "readMoreSlug")}
         >

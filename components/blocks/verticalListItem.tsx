@@ -28,7 +28,7 @@ export const VerticalListItem = ({ data }) => {
               alt="circle"
               fill={true}
             />
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-md font-bold text-sswRed">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-base font-bold text-sswRed">
               {data.index}
             </div>
           </div>
