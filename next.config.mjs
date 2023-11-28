@@ -82,4 +82,4 @@ const withBundleAnalyzer = bundleAnalyser({
   enabled: process.env.BUNDLE_ANALYSE === "true",
 });
 
-module.exports = withBundleAnalyzer(config);
+export default withBundleAnalyzer(config);
