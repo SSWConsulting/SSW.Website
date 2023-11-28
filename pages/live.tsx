@@ -2,7 +2,6 @@ import { InferGetStaticPropsType } from "next";
 import Link from "next/link";
 import { useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../.tina/__generated__/client";
 import { BuiltOnAzure } from "../components/blocks/builtOnAzure";
@@ -18,7 +17,7 @@ import {
 } from "../services/server/events";
 import { getYoutubePlaylist } from "../services/server/youtube";
 
-const DEFAULT_VISIBLE_VIDEOS = 9;
+const DEFAULT_VISIBLE_VIDEOS = 6;
 const ISR_TIME = 60 * 60;
 
 export default function LivePage(
@@ -29,7 +28,7 @@ export default function LivePage(
     query: props.query,
     variables: props.variables,
   });
-  const [visibleVideos, setVisibleVideos] = useState(DEFAULT_VISIBLE_VIDEOS);
+  const [visibleVideos] = useState(DEFAULT_VISIBLE_VIDEOS);
 
   return (
     <Layout>
@@ -116,20 +115,6 @@ export default function LivePage(
               </div>
             ))}
         </div>
-        {props.playListVideosLinks.length > visibleVideos && (
-          <div className="flex justify-center">
-            <button
-              onClick={() =>
-                setVisibleVideos(
-                  (prevCount) => prevCount + DEFAULT_VISIBLE_VIDEOS
-                )
-              }
-              className="m-8 flex items-center rounded-md bg-gray-200 p-2 px-4 font-semibold text-sswRed transition duration-300 hover:bg-gray-300"
-            >
-              See More <MdOutlineKeyboardArrowDown />
-            </button>
-          </div>
-        )}
         <div className="flex justify-center">
           <UtilityButton
             size="small"
