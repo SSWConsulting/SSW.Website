@@ -28,7 +28,7 @@ export const JoinGithub = ({ data, className }: JoinGithubProps) => {
         className="mx-auto"
       />
       <div
-        className="text-center text-md text-white"
+        className="text-center text-base text-white"
         data-tina-field={tinaField(data, "title")}
       >
         {data?.title}
@@ -37,7 +37,7 @@ export const JoinGithub = ({ data, className }: JoinGithubProps) => {
         href={data?.link ?? "/"}
         target="_blank"
         data-tina-field={tinaField(data, "link")}
-        className="unstyled h-12 w-max rounded-md bg-sswRed px-4 py-2 text-md text-white"
+        className="unstyled h-12 w-max rounded-md bg-sswRed px-4 py-2 text-base text-white"
       >
         Join the crowd
       </Link>

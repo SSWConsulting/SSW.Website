@@ -10,6 +10,8 @@
   html,
   body {
     @apply scroll-smooth;
+    /* see https://github.com/SSWConsulting/SSW.Website/issues/1147 */
+    font-size: 18px;
   }
 
   h1,
