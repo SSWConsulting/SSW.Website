@@ -18,7 +18,7 @@ export default function FourOhFour() {
         <div className="flex min-h-screen-4/5 flex-col sm:flex-row">
           <div className="px-7 pt-7">
             <p className="text-center">
-              <span className="font-sans text-12xl font-extrabold leading-none text-sswRed sm:text-16xl">
+              <span className="font-sans text-9xl font-extrabold leading-none text-sswRed">
                 404
               </span>
             </p>
@@ -51,9 +51,7 @@ export default function FourOhFour() {
             <span className="font-sans text-3xl font-extralight text-gray-650 sm:text-5xl">
               PAGE NOT FOUND!
               <br />
-              {"Sorry, we couldn't find the"}
-              <br />
-              page you were looking for...
+              Sorry, we couldn&apos;t find the page you were looking for...
             </span>
           </div>
         </div>

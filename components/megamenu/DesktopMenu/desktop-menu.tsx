@@ -9,7 +9,6 @@ import { MenuItemLink } from "./menu-item-link";
 import { MenuItemWithSubmenu } from "./menu-item-with-submenu";
 
 export interface DesktopMenuProps {
-  tagline?: string;
   menuGroups: NavMenuGroup[];
 }
 
@@ -18,7 +17,7 @@ export const ClosePopoverContext = createContext<(() => void) | null>(null);
 const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuGroups }) => {
   return (
     <>
-      <div className="hidden flex-1 lg:block">
+      <div className="hidden flex-1 xl:block">
         <Popover.Group className="flex items-center justify-center text-sm font-semibold text-ssw-black outline-none">
           {menuGroups.map((group) => {
             if (group.menuColumns && group.menuColumns.length > 0) {
@@ -53,7 +52,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuGroups }) => {
         </Popover.Group>
       </div>
 
-      <div className="hidden shrink items-center justify-end lg:flex">
+      <div className="hidden shrink items-center justify-end xl:flex">
         <SocialIcons
           excludeDesktop={Object.values(SocialTypes).filter(
             (social) => social !== SocialTypes.phone

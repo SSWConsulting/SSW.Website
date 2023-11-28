@@ -34,7 +34,7 @@ export default function ProductsIndex(
       <Container className="mb-10 flex-1 pt-2">
         <Breadcrumbs path={"/products"} suffix="" title={"Products"} />
         <h1 className="mb-0 py-0 text-3xl">SSW Products</h1>
-        <h2 className="mb-4 text-md">
+        <h2 className="mb-4 text-base">
           Used by thousands of customers around the world
         </h2>
         <div className="flex flex-col md:flex-row">

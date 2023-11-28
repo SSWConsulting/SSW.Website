@@ -47,7 +47,7 @@ export const ServiceCards = ({ data }) => {
 const Label = ({ text, schema, cardLabel }) => {
   return (
     <div
-      className={`absolute text-left text-xxxs font-normal uppercase text-white ${bgColor["darkgray"]} w-fit p-2 z-badge`}
+      className={`absolute text-left text-xxs font-normal uppercase text-white ${bgColor["darkgray"]} w-fit p-2 z-badge`}
       data-tina-field={tinaField(schema, cardLabel)}
     >
       {text}

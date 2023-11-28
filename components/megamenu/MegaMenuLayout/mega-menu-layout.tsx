@@ -41,7 +41,7 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
               </div>
             </Link>
           </div>
-          <div className="flex items-center lg:hidden">
+          <div className="flex items-center xl:hidden">
             <SocialIcons
               className="max-sm:hidden"
               excludeMobile={Object.values(SocialTypes).filter(
@@ -62,7 +62,7 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <DesktopMenu tagline={tagline} menuGroups={menuBarItems} />
+          <DesktopMenu menuGroups={menuBarItems} />
         </nav>
 
         <MobileMenu

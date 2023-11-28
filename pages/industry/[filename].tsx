@@ -66,7 +66,7 @@ export default function IndustryPage(
             <></>
           )}
           <h1 className="mb-1 py-0 text-3xl">{pageData?.heading}</h1>
-          <h2 className="!mt-1 pt-0 text-md font-light">
+          <h2 className="!mt-1 pt-0 text-base font-light">
             {pageData?.subHeading}
           </h2>
           <div
