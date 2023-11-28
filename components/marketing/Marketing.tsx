@@ -42,7 +42,7 @@ export const Marketing = (props) => {
 
 const TextCol = ({ body }) => {
   return (
-    <div className="mt-16 w-full pb-0 text-left font-sans text-md text-white md:ml-10 md:mt-0 md:w-1/3">
+    <div className="mt-16 w-full pb-0 text-left font-sans text-base text-white md:ml-10 md:mt-0 md:w-1/3">
       <TinaMarkdown content={body} />
     </div>
   );
