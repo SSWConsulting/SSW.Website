@@ -60,20 +60,21 @@ const MegaIcon: React.FC<MegaIconProps> = ({ icon, iconImg, ...props }) => {
 
   if (!iconImg) {
     return (
-      <>
+      <span {...props}>
         <span className="sr-only">{icon}</span>
-        <MegaIconMapper aria-hidden="true" icon={icon} {...props} />
-      </>
+        <MegaIconMapper aria-hidden="true" icon={icon} />
+      </span>
     );
   }
 
   return (
     <div>
       <Image
-        fill
         className="h-6 w-6"
         src={iconImg}
         alt={iconImg}
+        width={20}
+        height={20}
         aria-hidden="true"
       />
     </div>
