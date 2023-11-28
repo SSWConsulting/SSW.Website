@@ -1,23 +1,25 @@
 import { InferGetStaticPropsType } from "next";
 import Link from "next/link";
-import { useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../.tina/__generated__/client";
+import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { BuiltOnAzure } from "../components/blocks/builtOnAzure";
 import { UtilityButton } from "../components/button/utilityButton";
 import { Layout } from "../components/layout";
 import { LiveHeader } from "../components/live/header";
 import { Container } from "../components/util/container";
+import { Section } from "../components/util/section";
 import { SEO } from "../components/util/seo";
 import { VideoCard } from "../components/util/videoCards";
+import { removeExtension } from "../services/client/utils.service";
 import {
   getNextEventToBeLiveStreamed,
   getSpeakersInfoFromEvent,
 } from "../services/server/events";
 import { getYoutubePlaylist } from "../services/server/youtube";
 
-const DEFAULT_VISIBLE_VIDEOS = 6;
+const VISIBLE_VIDEOS_COUNT = 6;
 const ISR_TIME = 60 * 60;
 
 export default function LivePage(
@@ -28,15 +30,21 @@ export default function LivePage(
     query: props.query,
     variables: props.variables,
   });
-  const [visibleVideos] = useState(DEFAULT_VISIBLE_VIDEOS);
 
   return (
     <Layout>
       <SEO seo={data.live.seo} />
       <LiveHeader title={data.live.title} />
+      <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+        <Breadcrumbs
+          path={removeExtension(props.variables.relativePath)}
+          suffix={data.global.breadcrumbSuffix}
+          title={data.live.seo?.title}
+        />
+      </Section>
       <Container size="xsmall">
         <span className="text-sswRed">
-          <h2>{data.live.nextEvent}</h2>
+          <h2 className="mt-0">{data.live.nextEvent}</h2>
         </span>
         <div>
           {props.event?.Title && (
@@ -107,13 +115,11 @@ export default function LivePage(
           <h2>{data.live.pastEvents}</h2>
         </span>
         <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">
-          {props.playListVideosLinks
-            .slice(0, visibleVideos)
-            .map((video, index) => (
-              <div key={index}>
-                <VideoCard {...video} theme="light" />
-              </div>
-            ))}
+          {props.playListVideosLinks.map((video, index) => (
+            <div key={index}>
+              <VideoCard {...video} theme="light" />
+            </div>
+          ))}
         </div>
         <div className="flex justify-center">
           <UtilityButton
@@ -140,41 +146,24 @@ export const getStaticProps = async () => {
   const tinaProps = await client.queries.liveContentQuery({
     relativePath: "index.mdx",
   });
-  const res = await getYoutubePlaylist(
-    tinaProps.data.live.youtubePlaylistButton.playlistId
-  );
-
-  let playListVideosLinks = [];
-
-  if (res && res.items) {
-    const playListVideosBaseUrl = "https://www.youtube.com/watch?v=";
-
-    playListVideosLinks = res.items.map((item) => {
-      const snippet = item.snippet;
-      const title = snippet.title;
-      const playListId = snippet.playlistId;
-      const videoId = snippet.resourceId.videoId;
-
-      return {
-        title: title,
-        link: `${playListVideosBaseUrl}${videoId}&list=${playListId}`,
-      };
-    });
-  }
 
   const event = await getNextEventToBeLiveStreamed();
-
   const speakers = await getSpeakersInfoFromEvent(event);
   const speaker = speakers[0];
+
+  const playListVideosLinks = await getYoutubePlaylist(
+    tinaProps.data.live.youtubePlaylistButton.playlistId,
+    VISIBLE_VIDEOS_COUNT
+  );
 
   return {
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
-      playListVideosLinks,
       event: event || null,
       speaker: speaker || null,
+      playListVideosLinks,
     },
     revalidate: ISR_TIME,
   };
