@@ -10,15 +10,15 @@ export const Footer = () => {
     <footer className="no-print w-full bg-ssw-black text-xxs text-gray-300">
       <Container size="xsmall">
         <SocialIcons
-          className="my-6 justify-center"
+          className="mb-3 mt-2 justify-center"
           excludeDesktop={[SocialTypes.phone]}
           excludeMobile={[SocialTypes.phone, SocialTypes.meetup]}
         />
-        <hr className="my-4 border-gray-800" />
+        <hr className="my-2 border-gray-800" />
         <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
           <CopyrightInfo />
         </div>
-        <hr className="my-4 border-gray-800" />
+        <hr className="my-2 border-gray-800" />
         <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
           <DeploymentInfo />
           <SiteInfo />
