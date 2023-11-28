@@ -8,6 +8,7 @@ import { Flag } from "../../components/blocks/flag";
 import { Layout } from "../../components/layout";
 import MicrosoftPanel from "../../components/offices/microsoftPanel";
 import TestimonialPanel from "../../components/offices/testimonialPanel";
+import { Countries } from "../../components/util/constants/country";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
 import layoutData from "../../content/global/index.json";
@@ -22,11 +23,11 @@ export default function OfficeIndex(
   });
 
   const seo = props.seo;
-  const offices = data?.map((office) => office.office);
+  const offices = data.officeIndex.officesIndex?.map((office) => office.office);
 
   return (
     offices && (
-      <Layout>
+      <Layout menu={data.megamenu.menuGroups}>
         <SEO seo={seo} />
         <Container className="flex-1 pt-2">
           <Breadcrumbs
@@ -43,7 +44,7 @@ export default function OfficeIndex(
                   <span>
                     <h2 className="mt-0 text-sswRed">
                       {`${office.addressLocality} | ${office.addressCountry}`}{" "}
-                      <Flag country={office.addressCountry} />
+                      <Flag country={office.addressCountry as Countries} />
                     </h2>
                   </span>
                   {office.thumbnail ? (
@@ -150,7 +151,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      data: tinaProps.data.officeIndex.officesIndex,
+      data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
       testimonial: testimonial,

@@ -31,7 +31,7 @@ export default function IndustryPage(
     <RecaptchaContext.Provider
       value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
     >
-      <Layout>
+      <Layout menu={data.megamenu.menuGroups}>
         <SEO seo={pageData.seo} />
         <Container className="prose-industry flex-1" size="custom">
           {pageData.whitepaperFile ? (

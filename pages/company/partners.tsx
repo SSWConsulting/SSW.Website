@@ -29,7 +29,7 @@ export default function PartnersIndex(
   }, [data]);
 
   return (
-    <Layout>
+    <Layout menu={data.megamenu.menuGroups}>
       <SEO seo={props.seo} />
       <Container className="mb-10 flex-1 pt-2">
         <Breadcrumbs path={"/Partners"} suffix="" title={"Partners"} />

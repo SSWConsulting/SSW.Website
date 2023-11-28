@@ -29,7 +29,7 @@ export default function ProductsIndex(
   }, [data]);
 
   return (
-    <Layout>
+    <Layout menu={data.megamenu.menuGroups}>
       <SEO seo={props.seo} />
       <Container className="mb-10 flex-1 pt-2">
         <Breadcrumbs path={"/products"} suffix="" title={"Products"} />
@@ -66,15 +66,11 @@ const processData = (data) => {
 };
 
 export const getStaticProps = async () => {
-  const tinaProps = await client.queries.productsIndexConnection();
+  const tinaProps = await client.queries.productsIndexQuery();
 
-  const globalData = await client.queries.global({
-    relativePath: "index.json",
-  });
-
-  const seo = tinaProps.data.productsIndexConnection.edges[0].node.seo;
+  const seo = tinaProps.data.productsIndex.seo;
   if (seo && !seo.canonical) {
-    seo.canonical = `${globalData.data.global.header.url}/products`;
+    seo.canonical = `${tinaProps.data.global.header.url}/products`;
   }
 
   return {

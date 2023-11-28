@@ -45,7 +45,7 @@ export default function NETUGPage(
   if (data?.userGroupPage?.__typename === "UserGroupPageLocationPage") {
     return (
       <>
-        <Layout>
+        <Layout menu={data.megamenu.menuGroups}>
           <SEO seo={data.userGroupPage.seo} />
 
           {props.event && (
@@ -264,7 +264,7 @@ export default function NETUGPage(
   } else if (data?.userGroupPage.__typename === "UserGroupPageContentPage") {
     return (
       <>
-        <Layout>
+        <Layout menu={data.megamenu.menuGroups}>
           <Container className="prose py-4 prose-h1:pt-2" size="custom">
             <TinaMarkdown
               content={data.userGroupPage._body}
