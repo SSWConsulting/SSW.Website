@@ -101,10 +101,10 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
           <EventsRelativeBox
             relativeDate={event.RelativeDate}
             formattedDate={event.FormattedDate}
-            dateFontSize="text-xxs"
+            dateFontSize="text-xs"
           />
           {!!event.Presenter && (
-            <span className="mt-1 inline-flex items-center text-xxs text-black">
+            <span className="mt-1 inline-flex items-center text-xs text-black">
               {event.Presenter}
             </span>
           )}
