@@ -17,7 +17,7 @@ export const EventsRelativeBox = ({
       {relativeDate && (
         <span
           className={classNames(
-            "inline-flex items-center rounded-sm px-1.5 py-0.5 text-xxs uppercase",
+            "inline-flex items-center rounded-sm px-1.5 py-0.5 text-xs uppercase",
             relativeDate == EventStatus.NOW_RUNNING ||
               relativeDate == EventStatus.TODAY // Now running for the two days events and today is for the single day
               ? "bg-sswRed text-white"
@@ -30,7 +30,7 @@ export const EventsRelativeBox = ({
       <span
         className={classNames(
           "text-gray-500",
-          dateFontSize ? dateFontSize : "text-xxs",
+          dateFontSize ? dateFontSize : "text-xs",
           relativeDate ? "ml-2" : ""
         )}
       >
