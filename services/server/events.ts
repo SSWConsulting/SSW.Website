@@ -66,6 +66,26 @@ export const getEvents = async (odataFilter: string): Promise<EventInfo[]> => {
   return events || [];
 };
 
+export const getNextEventToBeLiveStreamed = async (): Promise<EventInfo> => {
+  const currentDate = new Date().toISOString();
+
+  const events = await getEvents(
+    `$filter=fields/Enabled ne false and fields/EndDateTime gt '${currentDate}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime asc`
+  );
+
+  let event = events[0];
+
+  if (!event) {
+    const pastEvents = await getEvents(
+      `$filter=fields/Enabled ne false and fields/EndDateTime lt '${currentDate}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc`
+    );
+
+    event = pastEvents[0];
+  }
+
+  return event;
+};
+
 export const getSpeakersInfoFromEvent = async (
   event: EventInfo
 ): Promise<SpeakerInfo[]> => {
