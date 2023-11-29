@@ -25,6 +25,12 @@ query companyContentQuery($relativePath: String!) {
     ...CompanyParts
   }
 }
+query caseStudyContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  caseStudy(relativePath: $relativePath) {
+    ...CaseStudyParts
+  }
+}
 query companyIndexContentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   companyIndex(relativePath: $relativePath) {

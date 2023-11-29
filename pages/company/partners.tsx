@@ -34,7 +34,7 @@ export default function PartnersIndex(
       <Container className="mb-10 flex-1 pt-2">
         <Breadcrumbs path={"/Partners"} suffix="" title={"Partners"} />
         <h1 className="mb-0 py-0 text-3xl">{partners?.title}</h1>
-        <h2 className="mb-4 text-md">{partners?.subTitle}</h2>
+        <h2 className="mb-4 text-base">{partners?.subTitle}</h2>
         <div className="flex flex-col md:flex-row">
           <div
             ref={gridRef}
