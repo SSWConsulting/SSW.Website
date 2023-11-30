@@ -29,7 +29,7 @@ export default function ProductsIndex(
   }, [data]);
 
   return (
-    <Layout menu={data.megamenu.menuGroups}>
+    <Layout menu={data.megamenu}>
       <SEO seo={props.seo} />
       <Container className="mb-10 flex-1 pt-2">
         <Breadcrumbs path={"/products"} suffix="" title={"Products"} />

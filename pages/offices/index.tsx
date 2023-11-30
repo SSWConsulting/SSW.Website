@@ -27,7 +27,7 @@ export default function OfficeIndex(
 
   return (
     offices && (
-      <Layout menu={data.megamenu.menuGroups}>
+      <Layout menu={data.megamenu}>
         <SEO seo={seo} />
         <Container className="flex-1 pt-2">
           <Breadcrumbs

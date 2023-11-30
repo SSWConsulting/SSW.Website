@@ -210,9 +210,9 @@ query userGroupPageContentQuery($relativePath: String!) {
   }
 }
 
-query partnerIndexContentQuery($relativePath: String!) {
+query partnerIndexQuery {
   ...LayoutQueryFragment
-  partnerIndex(relativePath: $relativePath) {
+  partnerIndex(relativePath: "index.json") {
     ...PartnerIndexParts
     __typename
   }

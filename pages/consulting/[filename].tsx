@@ -66,7 +66,7 @@ export default function ConsultingPage(
       }}
     >
       <SEO seo={props.seo} />
-      <Layout menu={data.megamenu.menuGroups}>
+      <Layout menu={data.megamenu}>
         <Section className="mx-auto w-full max-w-9xl px-8 py-5">
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}

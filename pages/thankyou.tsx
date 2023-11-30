@@ -12,7 +12,7 @@ const ThankyouPage = (
   const doneButtonClass = "done p-3 inline-flex cursor-pointer";
 
   return (
-    <Layout className="bg-gray-75" menu={props.data.megamenu.menuGroups}>
+    <Layout className="bg-gray-75" menu={props.data.megamenu}>
       <div className="!max-w-full !bg-white">
         <Container padding="px-4" className="pb-8 text-center">
           <h1>

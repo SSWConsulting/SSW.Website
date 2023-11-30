@@ -20,6 +20,7 @@ export const megaMenuSchema: Collection = {
       name: "menuGroups",
       label: "Menu Groups",
       list: true,
+      required: true,
       ui: {
         itemProps: (item) => {
           return { label: item?.name };

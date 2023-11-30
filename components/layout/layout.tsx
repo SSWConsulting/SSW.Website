@@ -54,7 +54,9 @@ const LiveStreamBanner = dynamic(
 
 interface LayoutProps {
   className?: string;
-  menu: NavMenuGroup[];
+  menu: {
+    menuGroups: NavMenuGroup[];
+  };
   children: React.ReactNode;
 }
 

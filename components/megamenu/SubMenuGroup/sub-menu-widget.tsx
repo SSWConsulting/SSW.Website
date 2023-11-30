@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { SidebarItem } from "../../../types/megamenu";
+import { AvailableIcons, SidebarItem } from "../../../types/megamenu";
 import { MegaIcon } from "../MegaIcon";
 import FeaturedCard from "./featured-card";
 
@@ -14,7 +14,10 @@ const SubMenuWidget: React.FC<SubMenuWidgetProps> = ({ item }) => {
     case "featured": {
       return (
         <Link className="unstyled" href={item.url}>
-          <FeaturedCard title={<span> {item.name}</span>} icon={item.icon}>
+          <FeaturedCard
+            title={<span> {item.name}</span>}
+            icon={item.icon as AvailableIcons}
+          >
             {item.description}
           </FeaturedCard>
         </Link>

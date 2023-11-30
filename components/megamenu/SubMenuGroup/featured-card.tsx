@@ -1,9 +1,10 @@
 import React, { PropsWithChildren } from "react";
+import { AvailableIcons } from "../../../types/megamenu";
 import { MegaIcon } from "../MegaIcon";
 
 interface FeaturedCardProps extends PropsWithChildren {
   title: React.ReactNode;
-  icon?: string;
+  icon?: AvailableIcons;
 }
 
 const FeaturedCard = (props: FeaturedCardProps) => {

@@ -22,7 +22,7 @@ export default function OfficePage(
   return (
     <>
       <SEO seo={data.products.seo} />
-      <Layout menu={data.megamenu.menuGroups}>
+      <Layout menu={data.megamenu}>
         <Section className="mx-auto w-full max-w-9xl px-8 pt-5">
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}

@@ -81,7 +81,7 @@ export default function ConsultingIndex(
   }, []);
 
   return (
-    <Layout menu={data.megamenu.menuGroups}>
+    <Layout menu={data.megamenu}>
       <SEO seo={{ ...props.seo, canonical: "/consulting" }} />
       <Container className="flex-1 pt-2">
         <Breadcrumbs path={"/consulting"} suffix="" title={"Services"} />

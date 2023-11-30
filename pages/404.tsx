@@ -9,7 +9,7 @@ export default function FourOhFour(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   return (
-    <Layout menu={props.data.megamenu.menuGroups}>
+    <Layout menu={props.data.megamenu}>
       <Container
         width="large"
         size="custom"
