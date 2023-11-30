@@ -60,7 +60,10 @@ export default function LivePage(
             <>
               <div className="pb-3 text-lg">
                 With{" "}
-                <Link href={props.speaker?.PresenterProfileLink}>
+                <Link
+                  href={props.speaker?.PresenterProfileLink}
+                  target="_blank"
+                >
                   {props.speaker?.Title}
                 </Link>
               </div>
