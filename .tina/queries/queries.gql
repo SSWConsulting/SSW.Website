@@ -217,3 +217,10 @@ query partnerIndexContentQuery($relativePath: String!) {
     __typename
   }
 }
+
+query liveContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  live(relativePath: $relativePath) {
+    ...LiveParts
+  }
+}

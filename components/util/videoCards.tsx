@@ -1,11 +1,10 @@
+import classNames from "classnames";
 import Image from "next/image";
 import { FC } from "react";
-import { FaPlayCircle } from "react-icons/fa";
 import Button from "../button/button";
 import { VideoModal } from "../videoModal";
 import { Container } from "./container";
 import { Section } from "./section";
-import classNames from "classnames";
 
 export type VideoCardType = {
   title?: string;
@@ -28,8 +27,7 @@ export const VideoCard: FC<VideoCardProps> = ({ link, title, theme }) => {
           "flex h-full items-center justify-between bg-white p-5"
         )}
       >
-        <span className="w-3/4 text-left text-lg font-bold">{title}</span>
-        <FaPlayCircle className="text-sswRed" size={40} />
+        <span className="w-full text-left text-lg font-bold">{title}</span>
       </div>
     </VideoModal>
   );
