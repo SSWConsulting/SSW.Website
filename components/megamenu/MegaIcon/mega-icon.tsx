@@ -37,22 +37,30 @@ export const iconMap = {
   chinaFlag: () => <Flag country="China" />,
 };
 
-const MegaIconMapper = ({ icon }: { icon: AvailableIcons }) => {
+const MegaIconMapper = ({
+  icon,
+  className,
+}: {
+  icon: AvailableIcons;
+  className?: string;
+}) => {
   const Icon = iconMap[icon];
 
   if (!Icon) {
     return <></>;
   }
 
-  return <Icon icon={icon} />;
+  return <Icon icon={icon} className={className} />;
 };
 
-export interface MegaIconProps extends React.ComponentPropsWithoutRef<"span"> {
+export interface MegaIconProps {
+  // TODO: implement below intended solution extends React.ComponentPropsWithoutRef<"span"> {
   iconImg?: string;
   icon?: AvailableIcons;
+  className?: string;
 }
 
-const MegaIcon: React.FC<MegaIconProps> = ({ icon, iconImg, ...props }) => {
+const MegaIcon: React.FC<MegaIconProps> = ({ icon, iconImg, className }) => {
   //if icon is an SVGElement, just return it with props spread into it
   // if (icon instanceof SVGElement) {
   //   return <span {...props}>{icon}</span>;
@@ -60,10 +68,10 @@ const MegaIcon: React.FC<MegaIconProps> = ({ icon, iconImg, ...props }) => {
 
   if (!iconImg) {
     return (
-      <span {...props}>
+      <>
         <span className="sr-only">{icon}</span>
-        <MegaIconMapper aria-hidden="true" icon={icon} />
-      </span>
+        <MegaIconMapper aria-hidden="true" icon={icon} className={className} />
+      </>
     );
   }
 
