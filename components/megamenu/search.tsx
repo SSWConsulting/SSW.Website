@@ -42,7 +42,7 @@ const Search: React.FC = () => {
         className="rounded p-4 text-ssw-black hover:bg-gray-100"
         onClick={() => setIsOpen(true)}
       >
-        <MegaIcon icon="magnifyingGlass" className="h-5 w-5" title="Search" />
+        <MegaIcon icon="magnifyingGlass" className="h-5 w-5" />
       </button>
       <Transition.Root show={isOpen} as={Fragment} appear>
         <Dialog as="div" className="relative z-10" onClose={setIsOpen}>
