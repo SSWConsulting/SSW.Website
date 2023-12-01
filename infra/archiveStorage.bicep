@@ -21,3 +21,9 @@ resource storage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   }
   kind: 'BlobStorage'
 }
+
+resource enableStaticSite 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
+  name: 'enableStaticSite'
+  location: location
+  kind: 'AzurePowerShell'
+}
