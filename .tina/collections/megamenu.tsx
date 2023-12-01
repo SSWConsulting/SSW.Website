@@ -38,6 +38,13 @@ export const megaMenuSchema: Collection = {
           name: "menuColumns",
           label: "Menu Columns",
           list: true,
+          ui: {
+            itemProps: (item) => {
+              return {
+                label: (item?.menuColumnGroups[0]?.name || "") + " Column",
+              };
+            },
+          },
           fields: [
             {
               type: "object",
@@ -108,6 +115,11 @@ export const megaMenuSchema: Collection = {
           name: "sidebarItems",
           label: "Sidebar Items",
           list: true,
+          ui: {
+            itemProps: (item) => {
+              return { label: item?.name };
+            },
+          },
           fields: [
             {
               type: "string",
