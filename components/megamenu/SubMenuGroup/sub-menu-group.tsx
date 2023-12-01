@@ -8,6 +8,7 @@ import {
   NavMenuColumnGroup,
   NavMenuColumnGroupItem,
   Sidebar,
+  ViewAll,
 } from "../../../types/megamenu";
 import MegaIcon from "../MegaIcon/mega-icon";
 import { ClosePopoverContext } from "./../DesktopMenu/desktop-menu";
@@ -16,11 +17,13 @@ import SubMenuWidget from "./sub-menu-widget";
 export interface SubMenuGroupProps {
   menuColumns: NavMenuColumn[];
   sidebarItems: Sidebar[];
+  viewAll?: ViewAll;
 }
 
 export const SubMenuGroup: React.FC<SubMenuGroupProps> = ({
   menuColumns,
   sidebarItems,
+  viewAll,
 }) => {
   return (
     <>
@@ -28,8 +31,16 @@ export const SubMenuGroup: React.FC<SubMenuGroupProps> = ({
         <div className="grid gap-x-4 p-4 lg:grow lg:grid-flow-col">
           {menuColumns.map((column, i) => (
             <div key={"column" + i} className="flex grow flex-col gap-y-4">
-              {column.menuColumnGroups?.map((item, i) => (
-                <MenuItem key={"menuItem" + i} item={item} />
+              {column.menuColumnGroups?.map((item, j) => (
+                <MenuItem
+                  key={"menuItem" + i}
+                  item={item}
+                  viewAll={viewAll}
+                  showViewAll={
+                    i === menuColumns.length - 1 &&
+                    j == column.menuColumnGroups.length - 1
+                  }
+                />
               ))}
             </div>
           ))}
@@ -70,7 +81,9 @@ const Heading: React.FC<{
 
 const MenuItem: React.FC<{
   item: NavMenuColumnGroup;
-}> = ({ item: { name, menuItems } }) => {
+  viewAll?: ViewAll;
+  showViewAll: boolean;
+}> = ({ item: { name, menuItems }, viewAll, showViewAll }) => {
   return (
     <div key={name} className="flex flex-col pb-4 last:grow">
       <Heading>{name}</Heading>
@@ -79,8 +92,9 @@ const MenuItem: React.FC<{
           <LinkItem key={name + i} link={subItem} />
         ))}
       </div>
-      {/* TODO: FIX */}
-      {/* <ViewAllLink {...item.viewAllLink} /> */}
+      {showViewAll && viewAll && (
+        <ViewAllLink href={viewAll.url} name={viewAll.name} />
+      )}
     </div>
   );
 };
@@ -131,23 +145,23 @@ const LinkItem: React.FC<{ link: NavMenuColumnGroupItem }> = ({
   );
 };
 
-// const ViewAllLink: React.FC<{ href?: string; name?: string }> = ({
-//   name,
-//   href,
-// }) => {
-//   if (!name || !href) {
-//     return <></>;
-//   }
-//   return (
-//     <div className="flex grow flex-col-reverse items-end pt-4">
-//       <Link
-//         href={href}
-//         className="unstyled rounded-md px-3 py-1 text-sm font-semibold leading-6 text-ssw-red hover:bg-ssw-red hover:text-white"
-//       >
-//         {name} &rarr;
-//       </Link>
-//     </div>
-//   );
-// };
+const ViewAllLink: React.FC<{ href?: string; name?: string }> = ({
+  name,
+  href,
+}) => {
+  if (!name || !href) {
+    return <></>;
+  }
+  return (
+    <div className="flex grow flex-col-reverse items-end self-end pt-4">
+      <Link
+        href={href}
+        className="unstyled rounded-md px-3 py-1 text-sm font-semibold leading-6 text-ssw-red hover:bg-ssw-red hover:text-white"
+      >
+        {name} &rarr;
+      </Link>
+    </div>
+  );
+};
 
 export default SubMenuGroup;

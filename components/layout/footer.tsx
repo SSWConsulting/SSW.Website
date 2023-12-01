@@ -99,7 +99,6 @@ const SiteInfo = () => (
       href="https://www.ssw.com.au/ssw/HealthCheck"
       prefetch={false}
     >
-      {/* TODO: refactor with next/image */}
       HEALTH CHECK
       <Image
         src="/images/health-check.png"

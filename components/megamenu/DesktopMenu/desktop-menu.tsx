@@ -31,6 +31,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuGroups }) => {
                           menuColumns={group.menuColumns}
                           sidebarItems={group.sidebarItems}
                           isOpened={open}
+                          viewAll={group.viewAll}
                         />
                       </ClosePopoverContext.Provider>
                     );

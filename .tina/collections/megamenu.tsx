@@ -179,11 +179,13 @@ export const megaMenuSchema: Collection = {
             {
               type: "string",
               name: "name",
+              label: "Text",
               required: true,
             },
             {
               type: "string",
               name: "url",
+              label: "URL",
               required: true,
             },
           ],

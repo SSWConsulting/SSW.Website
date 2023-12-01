@@ -14,10 +14,7 @@ export interface NavMenuGroup {
   url?: string;
   menuColumns?: NavMenuColumn[];
   sidebarItems?: Sidebar[];
-  viewAll?: {
-    name: string;
-    url: string;
-  };
+  viewAll?: ViewAll;
 }
 
 export interface NavMenuColumn {
@@ -47,6 +44,10 @@ export interface SidebarItem {
   url: string;
   description?: string;
   widgetType?: AvailableWidgets | string;
-  // TODO: Fix
   icon?: AvailableIcons | string;
+}
+
+export interface ViewAll {
+  name: string;
+  url: string;
 }
