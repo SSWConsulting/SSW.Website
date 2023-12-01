@@ -87,5 +87,13 @@ module kVServicePrincipalRoleAssignment 'keyVaultRoleAssignment.bicep' = {
   }
 }
 
+module websiteArchive 'archiveStorage.bicep' = {
+  name: 'websiteArchive-${now}'
+  params: {
+    now: now
+    location: location
+  }
+}
+
 output acrLoginServer string = acr.outputs.acrLoginServer
 output appServiceHostName string = appService.outputs.appServiceHostName
