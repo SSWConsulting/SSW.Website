@@ -13,7 +13,7 @@ param location string = resourceGroup().location
 ])
 param skuName string = 'Standard_LRS'
 
-resource storage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
+resource blobStorage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   name: 'storageaccount-${now}'
   location: location
   sku: {
@@ -26,4 +26,30 @@ resource enableStaticSite 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
   name: 'enableStaticSite'
   location: location
   kind: 'AzurePowerShell'
+  identity: {
+    type: 'SystemAssigned'
+  }
+  properties: {
+    azPowerShellVersion: '3.0'
+    scriptContent: loadTextContent('./scripts/enable-static-site.ps1')
+    retentionInterval: 'PT24H'
+    environmentVariables: [
+      {
+        name: 'IndexDocumentPath'
+        value: 'index.html'
+      }
+      {
+        name: 'ErrorDocument404Path'
+        value: '404.html'
+      }
+      {
+        name: 'ResourceGroupName'
+        value: resourceGroup().name
+      }
+      {
+        name: 'StorageAccountName'
+        value: blobStorage.name
+      }
+    ]
+  }
 }
