@@ -200,9 +200,9 @@ export const getStaticProps = async ({ params }) => {
   });
 
   const categories =
-    tinaProps.data.consulting?.testimonialCategories?.map(
-      (category) => category.testimonialCategory.name
-    ) || [];
+    tinaProps.data.consulting?.testimonialCategories
+      ?.map((category) => category?.testimonialCategory?.name)
+      .filter((item) => !!item) || [];
 
   const testimonialsResult = await getTestimonialsByCategories(categories);
 
