@@ -152,7 +152,6 @@ module.exports = {
       },
       fontSize: {
         xxs: ["0.65rem", { lineHeight: "1rem" }],
-        xs: ["0.85rem"],
       },
       animation: {
         "more-bounce": "more-bounce 2s infinite",
