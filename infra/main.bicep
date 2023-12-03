@@ -56,8 +56,8 @@ module appInsight 'appInsight.bicep' = {
   name: 'appInsight-${now}'
   params: {
     projectName: projectName
-    location:location
-    tags:value
+    location: location
+    tags: value
   }
 }
 

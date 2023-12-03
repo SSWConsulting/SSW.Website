@@ -1,6 +1,10 @@
 param now string
 param location string = resourceGroup().location
 
+var tags = {
+  'cost-category': 'core'
+}
+
 @allowed([
   'Premium_LRS'
   'Premium_ZRS'
@@ -16,6 +20,7 @@ param skuName string
 resource blobStorage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   name: 'storageaccount-${now}'
   location: location
+  tags: tags
   sku: {
     name: skuName
   }
