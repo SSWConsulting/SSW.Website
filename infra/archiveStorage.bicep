@@ -24,7 +24,49 @@ resource blobStorage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   sku: {
     name: skuName
   }
+  identity: {
+    type: 'SystemAssigned'
+  }
   kind: 'BlobStorage'
+  properties: {
+    allowBlobPublicAccess: true
+  }
+}
+
+resource blobServices 'Microsoft.Storage/storageAccounts/blobServices@2022-09-01' = {
+  name: 'default'
+  parent: blobStorage
+  properties: {
+    cors: {
+      corsRules: [
+        {
+          allowedHeaders: [
+            '*'
+          ]
+          allowedMethods: [
+            'GET'
+            'HEAD'
+            'OPTIONS'
+          ]
+          allowedOrigins: [
+            '*'
+          ]
+          exposedHeaders: [
+            '*'
+          ]
+          maxAgeInSeconds: 86400
+        }
+      ]
+    }
+  }
+}
+
+resource webContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2022-09-01' = {
+  name: '$web'
+  parent: blobServices
+  properties: {
+    publicAccess: 'Blob'
+  }
 }
 
 resource enableStaticSite 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
