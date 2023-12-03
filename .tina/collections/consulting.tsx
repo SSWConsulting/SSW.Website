@@ -253,6 +253,7 @@ export const consultingSchema: Collection = {
           label: "Testimonial Category",
           name: "testimonialCategory",
           collections: ["testimonialCategories"],
+          required: true,
         },
       ],
     },
