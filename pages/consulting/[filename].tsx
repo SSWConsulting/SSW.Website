@@ -57,7 +57,7 @@ export default function ConsultingPage(
   const categories =
     data.consulting.testimonialCategories
       ?.filter((category) => !!category?.testimonialCategory)
-      .map((category) => category.testimonialCategory.name) ?? [];
+      ?.map((category) => category.testimonialCategory.name) ?? [];
 
   return (
     <RecaptchaContext.Provider
@@ -202,7 +202,7 @@ export const getStaticProps = async ({ params }) => {
   const categories =
     tinaProps.data.consulting?.testimonialCategories
       ?.map((category) => category?.testimonialCategory?.name)
-      .filter((item) => !!item) || [];
+      ?.filter((item) => !!item) || [];
 
   const testimonialsResult = await getTestimonialsByCategories(categories);
 
