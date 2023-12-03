@@ -11,7 +11,7 @@ param location string = resourceGroup().location
   'Standard_RAGZRS'
   'Standard_ZRS'
 ])
-param skuName string = 'Standard_LRS'
+param skuName string
 
 resource blobStorage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   name: 'storageaccount-${now}'

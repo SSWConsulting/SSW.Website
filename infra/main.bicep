@@ -92,6 +92,7 @@ module websiteArchive 'archiveStorage.bicep' = {
   params: {
     now: now
     location: location
+    skuName: 'Standard_LRS'
   }
 }
 
