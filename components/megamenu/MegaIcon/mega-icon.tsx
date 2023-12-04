@@ -34,7 +34,7 @@ export const iconMap = {
   squaresPlus: (props) => <SquaresPlusIcon className={props.className} />,
   playCircle: (props) => <PlayCircleIcon className={props.className} />,
   rectangleGroup: (props) => <RectangleGroupIcon className={props.className} />,
-  chinaFlag: () => <Flag country="China" />,
+  chinaFlag: () => <Flag country="China" className="mr-2" />,
 };
 
 const MegaIconMapper = ({
