@@ -17,7 +17,7 @@ var tags = {
 param skuName string
 
 resource blobStorage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
-  name: 'storageacc-v1-archive'
+  name: 'v1archive'
   location: location
   tags: tags
   sku: {
