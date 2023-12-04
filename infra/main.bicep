@@ -90,7 +90,6 @@ module kVServicePrincipalRoleAssignment 'keyVaultRoleAssignment.bicep' = {
 module websiteArchive 'archiveStorage.bicep' = {
   name: 'websiteArchive-${now}'
   params: {
-    now: now
     location: location
     skuName: 'Standard_LRS'
   }

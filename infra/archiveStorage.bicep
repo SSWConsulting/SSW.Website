@@ -1,4 +1,3 @@
-param now string
 param location string = resourceGroup().location
 
 var tags = {
@@ -18,7 +17,7 @@ var tags = {
 param skuName string
 
 resource blobStorage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
-  name: 'storageaccount-${now}'
+  name: 'storageacc-v1-archive'
   location: location
   tags: tags
   sku: {
