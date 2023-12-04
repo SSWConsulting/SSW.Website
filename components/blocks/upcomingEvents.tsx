@@ -87,7 +87,7 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
     event.Url.Url.includes("/ssw/redirect");
 
   return (
-    <Link
+    <a
       href={event.Url.Url}
       className="unstyled no-underline"
       target={isExternalLink ? "_blank" : "_self"}
@@ -121,7 +121,7 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
           </div>
         )}
       </article>
-    </Link>
+    </a>
   );
 };
 
