@@ -14,7 +14,7 @@ export const PresenterBlock = ({ data }) => {
       >
         <span className="text-sswRed">{data.header}</span>
       </h2>
-      <div className="flex flex-row flex-wrap justify-center gap-4 md:gap-4">
+      <div className="flex flex-row flex-wrap items-stretch justify-center gap-4 md:gap-4">
         {data.presenterList?.map((p, i) => (
           <PresenterCard
             key={i}
@@ -55,7 +55,7 @@ export const PresenterBlock = ({ data }) => {
 const PresenterCard = ({ presenter, schema, index }) => {
   return (
     <div
-      className="prose flex h-fit flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-10 text-center text-xl md:h-172 md:w-96"
+      className="prose flex flex-col justify-start rounded-md border-b-4 border-b-sswRed bg-gray-100 p-10 text-center text-xl md:w-96"
       data-aos="flip-right"
     >
       <div
@@ -77,7 +77,7 @@ const PresenterCard = ({ presenter, schema, index }) => {
       </div>
       <a
         href={presenter?.presenter?.peopleProfileURL}
-        className="mt-4 min-h-16 font-normal"
+        className="mt-4 font-normal"
         target="_blank"
         rel="noopener noreferrer"
         data-tina-field={tinaField(
