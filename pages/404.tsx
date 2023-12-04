@@ -1,11 +1,15 @@
 import classNames from "classnames";
+import { InferGetStaticPropsType } from "next";
 import Link from "next/link";
+import client from "../.tina/__generated__/client";
 import { Layout } from "../components/layout";
 import { Container } from "../components/util/container";
 
-export default function FourOhFour() {
+export default function FourOhFour(
+  props: InferGetStaticPropsType<typeof getStaticProps>
+) {
   return (
-    <Layout>
+    <Layout menu={props.data.megamenu}>
       <Container
         width="large"
         size="custom"
@@ -59,3 +63,11 @@ export default function FourOhFour() {
     </Layout>
   );
 }
+
+export const getStaticProps = async () => {
+  const tinaProps = await client.queries.layoutQuery();
+
+  return {
+    props: tinaProps,
+  };
+};

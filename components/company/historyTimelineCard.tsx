@@ -1,12 +1,12 @@
-import { FC } from "react";
 import Image from "next/image";
-import { sswCountries } from "../util/constants/country";
+import { FC } from "react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { Countries, sswCountries } from "../util/constants/country";
 
 export type HistoryTimelineCardProps = {
   year: number;
   title: string;
-  location: "australia" | "france" | "china";
+  location: Countries;
   description: TinaMarkdownContent;
 };
 

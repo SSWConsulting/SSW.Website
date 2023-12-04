@@ -1,14 +1,18 @@
+import { InferGetStaticPropsType } from "next";
 import Link from "next/link";
+import { FaGlobe, FaUsers } from "react-icons/fa";
+import client from "../.tina/__generated__/client";
 import { Layout } from "../components/layout";
 import { Container } from "../components/util/container";
-import { FaUsers, FaGlobe } from "react-icons/fa";
 
-const ThankyouPage = () => {
+const ThankyouPage = (
+  props: InferGetStaticPropsType<typeof getStaticProps>
+) => {
   const textContentClass = "px-[100px] text-lg mb-4";
   const doneButtonClass = "done p-3 inline-flex cursor-pointer";
 
   return (
-    <Layout className="bg-gray-75">
+    <Layout className="bg-gray-75" menu={props.data.megamenu}>
       <div className="!max-w-full !bg-white">
         <Container padding="px-4" className="pb-8 text-center">
           <h1>
@@ -48,6 +52,14 @@ const ThankyouPage = () => {
       </div>
     </Layout>
   );
+};
+
+export const getStaticProps = async () => {
+  const tinaProps = await client.queries.layoutQuery();
+
+  return {
+    props: tinaProps,
+  };
 };
 
 export default ThankyouPage;

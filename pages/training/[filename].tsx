@@ -36,7 +36,7 @@ export default function TrainingPage(
   return (
     <>
       <SEO seo={data.training.seo} />
-      <Layout>
+      <Layout menu={data.megamenu}>
         <div
           data-tina-field={tinaField(data.training, "trainingHeaderCarousel")}
         >

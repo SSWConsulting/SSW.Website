@@ -1,14 +1,13 @@
 import { Dialog } from "@headlessui/react";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import React from "react";
-import { AvailableIcons } from "../../../models/megamanu/config.consts";
-import { NavMenuItem } from "../../../models/megamanu/menuItem.model";
+import { NavMenuGroup } from "../../../types/megamenu";
 import { MegaIcon } from "../MegaIcon";
 import SubMenuGroup from "../SubMenuGroup/sub-menu-group";
 
 export interface MobileMenuProps {
   isMobileMenuOpen: boolean;
-  menuBarItems: NavMenuItem[];
+  menuBarItems: NavMenuGroup[];
   closeMobileMenu: () => void;
 }
 
@@ -18,7 +17,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
   closeMobileMenu,
 }) => {
   const [selectedMenuItem, setSelectedMenuItem] =
-    React.useState<NavMenuItem | null>(null);
+    React.useState<NavMenuGroup | null>(null);
 
   const onCloseMobileMenu = () => {
     setSelectedMenuItem(null);
@@ -40,7 +39,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
             onClick={() => onCloseMobileMenu()}
           >
             <span className="sr-only">Close menu</span>
-            <MegaIcon icon={AvailableIcons.xMark} className="h-6 w-6" />
+            <MegaIcon icon="xMark" className="h-6 w-6" />
           </button>
           {selectedMenuItem && (
             <div className="my-auto flex grow items-center pl-2">
@@ -48,18 +47,20 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                 className="text-sm font-semibold leading-4 text-ssw-black"
                 onClick={() => setSelectedMenuItem(null)}
               >
-                <MegaIcon
-                  className="mb-1 inline h-5 w-5"
-                  icon={AvailableIcons.chevronLeft}
-                />
+                <MegaIcon className="mb-1 inline h-5 w-5" icon="chevronLeft" />
                 <span className="ml-2">{selectedMenuItem.name}</span>
               </button>
             </div>
           )}
         </div>
         <div className="flow-root">
-          {selectedMenuItem ? (
-            <SubMenuGroup menu={selectedMenuItem.menuGroup!} />
+          {selectedMenuItem &&
+          selectedMenuItem.menuColumns &&
+          selectedMenuItem.sidebarItems ? (
+            <SubMenuGroup
+              menuColumns={selectedMenuItem.menuColumns}
+              sidebarItems={selectedMenuItem.sidebarItems}
+            />
           ) : (
             <MenuBarItems
               menuBarItems={menuBarItems}
@@ -73,17 +74,17 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 };
 
 const MenuBarItems: React.FC<{
-  menuBarItems: NavMenuItem[];
-  setSelectedMenuItem: (item: NavMenuItem) => void;
+  menuBarItems: NavMenuGroup[];
+  setSelectedMenuItem: (item: NavMenuGroup) => void;
 }> = ({ menuBarItems, setSelectedMenuItem }) => {
   return (
     <div className="-my-6 divide-y divide-gray-500/10 pl-6">
       <div className="space-y-2">
         {menuBarItems.map((item) => {
-          return item.href ? (
+          return item.url ? (
             <a
               key={item.name}
-              href={item.href}
+              href={item.url}
               className="unstyled -mx-3 flex w-full items-center px-3 py-2 text-left text-lg leading-7 text-ssw-black hover:bg-gray-50"
             >
               {item.name}

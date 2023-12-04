@@ -1,7 +1,7 @@
-node_modules
-dist
 .tina/__generated__
 .next
-content
+node_modules
+dist
 public
+content
 .yarn

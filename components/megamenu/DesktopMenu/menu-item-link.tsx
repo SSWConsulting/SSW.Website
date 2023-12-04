@@ -1,14 +1,17 @@
 import React from "react";
 
-export const MenuItemLink: React.FC<{
-  item: { href?: string; name: string };
-}> = ({ item }) => {
+type MenuItemLinkProps = {
+  name: string;
+  href: string;
+};
+
+export const MenuItemLink = ({ name, href }: MenuItemLinkProps) => {
   return (
     <a
-      href={item.href}
+      href={href}
       className="unstyled flex items-center justify-center rounded-md px-3 py-1"
     >
-      {item.name}
+      {name}
     </a>
   );
 };
