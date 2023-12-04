@@ -4,10 +4,9 @@ import React, { Fragment, useEffect, useState } from "react";
 import { useLocation } from "react-use";
 import { twMerge } from "tailwind-merge";
 import { Flag } from "../../blocks";
+import { Countries } from "../../util/constants/country";
 
-type Countries = (typeof websites)[number]["country"];
-
-const websites = [
+const websites: { country: Countries; url: string }[] = [
   {
     country: "Australia",
     url: "https://www.ssw.com.au",
