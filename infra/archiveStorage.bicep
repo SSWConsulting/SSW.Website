@@ -17,14 +17,11 @@ var tags = {
 param skuName string
 
 resource blobStorage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
-  name: 'v1archive'
+  name: 'v1archive-${uniqueString(resourceGroup().id)}'
   location: location
   tags: tags
   sku: {
     name: skuName
-  }
-  identity: {
-    type: 'SystemAssigned'
   }
   kind: 'BlobStorage'
   properties: {
