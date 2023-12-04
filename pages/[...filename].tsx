@@ -34,7 +34,7 @@ export default function HomePage(
   return (
     <>
       <SEO seo={data.page.seo} />
-      <Layout>
+      <Layout menu={data.megamenu}>
         {data.page.breadcrumbs ? (
           <Section className="mx-auto -mb-20 w-full max-w-9xl px-8 py-5">
             <Breadcrumbs

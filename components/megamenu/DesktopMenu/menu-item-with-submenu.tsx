@@ -2,21 +2,24 @@
 import { Popover, Transition } from "@headlessui/react";
 import React, { Fragment } from "react";
 import { twMerge } from "tailwind-merge";
-import { AvailableIcons } from "../../../models/megamanu/config.consts";
-import { NavMenuGroup } from "../../../models/megamanu/menuItem.model";
+import { NavMenuColumn, Sidebar, ViewAll } from "../../../types/megamenu";
 import { MegaIcon } from "../MegaIcon";
 import SubMenuGroup from "../SubMenuGroup/sub-menu-group";
 
 interface MenuItemWithSubmenuProps {
   name: string;
-  menu: NavMenuGroup;
+  menuColumns: NavMenuColumn[];
+  sidebarItems: Sidebar[];
+  viewAll?: ViewAll;
   isOpened: boolean;
 }
 
 export const MenuItemWithSubmenu: React.FC<MenuItemWithSubmenuProps> = ({
   name,
-  menu,
+  menuColumns,
+  sidebarItems,
   isOpened,
+  viewAll,
 }) => {
   return (
     <>
@@ -28,7 +31,7 @@ export const MenuItemWithSubmenu: React.FC<MenuItemWithSubmenuProps> = ({
       >
         {name}
         <MegaIcon
-          icon={AvailableIcons.chevronDown}
+          icon="chevronDown"
           className="h-5 w-5 flex-none text-ssw-black"
         />
       </Popover.Button>
@@ -44,7 +47,11 @@ export const MenuItemWithSubmenu: React.FC<MenuItemWithSubmenuProps> = ({
       >
         {/* eslint-disable-next-line tailwindcss/no-arbitrary-value */}
         <Popover.Panel className="absolute inset-x-0 top-[120px] -z-10 bg-white shadow-md shadow-gray-400">
-          <SubMenuGroup menu={menu} />
+          <SubMenuGroup
+            menuColumns={menuColumns}
+            sidebarItems={sidebarItems}
+            viewAll={viewAll}
+          />
         </Popover.Panel>
       </Transition>
     </>

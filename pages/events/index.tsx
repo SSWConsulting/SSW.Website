@@ -26,7 +26,7 @@ export default function EventsIndexPage(
   return (
     <>
       <SEO seo={data.eventsIndex.seo} />
-      <Layout>
+      <Layout menu={data.megamenu}>
         <Container size="small">
           <div>
             <h1 className="mt-0 pt-0">SSW Events</h1>

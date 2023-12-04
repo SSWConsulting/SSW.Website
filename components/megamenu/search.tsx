@@ -2,7 +2,6 @@ import { Dialog, Transition } from "@headlessui/react";
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 import { useLocation } from "react-use";
-import { AvailableIcons } from "../../models/megamanu/config.consts";
 import { MegaIcon } from "./MegaIcon";
 
 const Search: React.FC = () => {
@@ -43,11 +42,7 @@ const Search: React.FC = () => {
         className="rounded p-4 text-ssw-black hover:bg-gray-100"
         onClick={() => setIsOpen(true)}
       >
-        <MegaIcon
-          icon={AvailableIcons.magnifyingGlass}
-          className="h-5 w-5"
-          title="Search"
-        />
+        <MegaIcon icon="magnifyingGlass" className="h-5 w-5" />
       </button>
       <Transition.Root show={isOpen} as={Fragment} appear>
         <Dialog as="div" className="relative z-10" onClose={setIsOpen}>
@@ -76,7 +71,7 @@ const Search: React.FC = () => {
               <Dialog.Panel className="mx-auto max-w-2xl divide-y divide-gray-500 divide-opacity-10 overflow-hidden rounded-xl bg-white/80 shadow-2xl backdrop-blur transition-all">
                 <div className="relative">
                   <MegaIcon
-                    icon={AvailableIcons.magnifyingGlass}
+                    icon="magnifyingGlass"
                     className="pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-ssw-black text-opacity-40"
                     aria-hidden="true"
                   />

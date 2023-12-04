@@ -32,7 +32,7 @@ export default function LivePage(
   });
 
   return (
-    <Layout>
+    <Layout menu={data.megamenu}>
       <SEO seo={data.live.seo} />
       <LiveHeader title={data.live.title} />
       <Section className="mx-auto w-full max-w-9xl px-8 py-5">

@@ -1,3 +1,6 @@
+import bundleAnalyser from "@next/bundle-analyzer";
+
+/** @type {import('next').NextConfig} */
 const config = {
   i18n: {
     locales: ["en"],
@@ -75,8 +78,8 @@ const config = {
   },
 };
 
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
+const withBundleAnalyzer = bundleAnalyser({
   enabled: process.env.BUNDLE_ANALYSE === "true",
 });
 
-module.exports = withBundleAnalyzer(config);
+export default withBundleAnalyzer(config);

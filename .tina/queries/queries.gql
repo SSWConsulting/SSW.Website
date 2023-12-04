@@ -1,3 +1,7 @@
+query layoutQuery {
+  ...LayoutQueryFragment
+}
+
 query contentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   page(relativePath: $relativePath) {
@@ -9,6 +13,13 @@ query consultingContentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   consulting(relativePath: $relativePath) {
     ...ConsultingParts
+  }
+}
+
+query consultingIndexQuery {
+  ...LayoutQueryFragment
+  consultingIndex(relativePath: "index.json") {
+    ...ConsultingIndexParts
   }
 }
 
@@ -160,6 +171,13 @@ query productContentQuery($relativePath: String!) {
   }
 }
 
+query productsIndexQuery {
+  ...LayoutQueryFragment
+  productsIndex(relativePath: "index.json") {
+    ...ProductsIndexParts
+  }
+}
+
 query industryContentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   industry(relativePath: $relativePath) {
@@ -192,9 +210,9 @@ query userGroupPageContentQuery($relativePath: String!) {
   }
 }
 
-query partnerIndexContentQuery($relativePath: String!) {
+query partnerIndexQuery {
   ...LayoutQueryFragment
-  partnerIndex(relativePath: $relativePath) {
+  partnerIndex(relativePath: "index.json") {
     ...PartnerIndexParts
     __typename
   }

@@ -11,6 +11,7 @@ import {
 import { AgreementForm } from "../terms-and-conditions/agreementForm";
 import TrainingInformation from "../training/trainingInformation";
 import { TrainingLearningOutcome } from "../training/trainingLearningOutcome";
+import { Countries } from "../util/constants/country";
 import { Citation } from "./citation";
 import { ClientLogos } from "./clientLogos";
 import { ContentCard } from "./contentCard";
@@ -112,7 +113,7 @@ export const componentRenderer: Components<{
     backgroundColor: string;
   };
   Flag: {
-    country: string;
+    country: Countries;
   };
   TableLayout: TableLayoutProps;
   AgreementForm: {

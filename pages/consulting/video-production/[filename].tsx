@@ -39,7 +39,7 @@ export default function VideoProductionPage(
       value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
     >
       <SEO seo={props.seo} />
-      <Layout>
+      <Layout menu={data.megamenu}>
         <Section className="mx-auto w-full max-w-9xl px-8 py-5">
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}

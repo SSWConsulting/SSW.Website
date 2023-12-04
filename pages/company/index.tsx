@@ -33,7 +33,7 @@ export default function CompanyIndexPage(
   return (
     <div>
       <SEO seo={props.seo} />
-      <Layout>
+      <Layout menu={data.megamenu}>
         {data.companyIndex.headerImage?.heroBackground && (
           <Section className="mx-auto  hidden w-full sm:block ">
             <CompanyHeader
