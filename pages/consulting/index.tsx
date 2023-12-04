@@ -1,4 +1,4 @@
-import { NextRouter, useRouter } from "next/router";
+import { useRouter, type NextRouter } from "next/router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { MdLiveHelp } from "react-icons/md";
 
@@ -33,7 +33,7 @@ export default function ConsultingIndex(
     getSelectedTagFromQuery(router.query)
   );
 
-  const node = data.consultingIndexConnection.edges[0].node;
+  const node = data.consultingIndex;
 
   const categories = useMemo(() => {
     return node.categories
@@ -80,10 +80,8 @@ export default function ConsultingIndex(
     wrapGrid(gridRef.current);
   }, []);
 
-  const tinaData = data.consultingIndexConnection.edges[0].node;
-
   return (
-    <Layout>
+    <Layout menu={data.megamenu}>
       <SEO seo={{ ...props.seo, canonical: "/consulting" }} />
       <Container className="flex-1 pt-2">
         <Breadcrumbs path={"/consulting"} suffix="" title={"Services"} />
@@ -96,7 +94,7 @@ export default function ConsultingIndex(
             <ul className="list-none">
               {tags?.map((tag, index) => (
                 <div
-                  data-tina-field={tinaField(tinaData.sidebar[index], "label")}
+                  data-tina-field={tinaField(node.sidebar[index], "label")}
                   key={tag.name}
                 >
                   <Tag
@@ -119,7 +117,7 @@ export default function ConsultingIndex(
             >
               {categories.map((category, index) => (
                 <Category
-                  tinaData={tinaData}
+                  tinaData={node}
                   key={category.name}
                   category={category}
                   selectedTag={selectedTag}
@@ -168,15 +166,11 @@ const updateParams = (router: NextRouter, tags, selectedTag) => {
 };
 
 export const getStaticProps = async () => {
-  const tinaProps = await client.queries.consultingIndexConnection();
+  const tinaProps = await client.queries.consultingIndexQuery();
 
-  const globalData = await client.queries.global({
-    relativePath: "index.json",
-  });
-
-  const seo = tinaProps.data.consultingIndexConnection.edges[0].node.seo;
+  const seo = tinaProps.data.consultingIndex.seo;
   if (seo && !seo.canonical) {
-    seo.canonical = `${globalData.data.global.header.url}/consulting`;
+    seo.canonical = `${tinaProps.data.global.header.url}/consulting`;
   }
 
   return {

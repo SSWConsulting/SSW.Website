@@ -1,49 +1,39 @@
 "use client";
 import { Popover, Transition } from "@headlessui/react";
 import React, { Fragment, useEffect, useState } from "react";
-import { Au, Cn, Fr } from "react-flags-select";
 import { useLocation } from "react-use";
 import { twMerge } from "tailwind-merge";
+import { Flag } from "../../blocks";
+import { Countries } from "../../util/constants/country";
 
-const websites = [
+const websites: { country: Countries; url: string }[] = [
   {
-    country: "AU",
-    name: "Australia",
+    country: "Australia",
     url: "https://www.ssw.com.au",
   },
   {
-    country: "CN",
-    name: "China",
+    country: "China",
     url: "https://www.ssw.com.cn",
   },
   {
-    country: "FR",
-    name: "France",
+    country: "France",
     url: "https://www.ssw.fr",
   },
-];
+] as const;
 
-const CountryFlag = (props: { country: string; className?: string }) => {
-  const countryProps = {
-    height: "2rem",
-    width: "2rem",
-  };
-  switch (props.country.toUpperCase()) {
-    case "AU":
-      return <Au className={props.className} {...countryProps} />;
-    case "CN":
-      return <Cn className={props.className} {...countryProps} />;
-    case "FR":
-      return <Fr className={props.className} {...countryProps} />;
-    default:
-      return <Au className={props.className} {...countryProps} />;
-  }
+type CountryFlagProps = {
+  country: Countries;
+  className?: string;
 };
 
-const CountryDropdown: React.FC = () => {
+const CountryFlag = (props: CountryFlagProps) => {
+  return <Flag {...props} height={32} width={32} />;
+};
+
+const CountryDropdown = () => {
   const { host } = useLocation();
   const [isOpened, setIsOpened] = useState(false);
-  const [currentCountry, setCurrentCountry] = useState("AU");
+  const [currentCountry, setCurrentCountry] = useState<Countries>("Australia");
 
   useEffect(() => {
     const website = websites.find((w) => host?.endsWith(w.url));
@@ -83,7 +73,7 @@ const CountryDropdown: React.FC = () => {
                 // eslint-disable-next-line tailwindcss/no-arbitrary-value
                 className="block py-2 hover:bg-gray-100 lg:min-w-[80px]"
                 href={country.url}
-                title={country.name}
+                title={country.country}
               >
                 <CountryFlag
                   className="inline-block"

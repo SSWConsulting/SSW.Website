@@ -27,7 +27,7 @@ export default function CompanyPage(
     >
       <div>
         <SEO seo={props.seo} />
-        <Layout>
+        <Layout menu={data.megamenu}>
           {data.caseStudy.seo?.showBreadcrumb === null ||
             (data.caseStudy.seo?.showBreadcrumb && (
               <Section className="mx-auto w-full max-w-9xl px-8 py-0">

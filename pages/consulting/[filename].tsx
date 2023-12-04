@@ -57,7 +57,7 @@ export default function ConsultingPage(
   const categories =
     data.consulting.testimonialCategories
       ?.filter((category) => !!category?.testimonialCategory)
-      .map((category) => category.testimonialCategory.name) ?? [];
+      ?.map((category) => category.testimonialCategory.name) ?? [];
 
   return (
     <RecaptchaContext.Provider
@@ -66,7 +66,7 @@ export default function ConsultingPage(
       }}
     >
       <SEO seo={props.seo} />
-      <Layout>
+      <Layout menu={data.megamenu}>
         <Section className="mx-auto w-full max-w-9xl px-8 py-5">
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}
@@ -200,9 +200,9 @@ export const getStaticProps = async ({ params }) => {
   });
 
   const categories =
-    tinaProps.data.consulting?.testimonialCategories?.map(
-      (category) => category.testimonialCategory.name
-    ) || [];
+    tinaProps.data.consulting?.testimonialCategories
+      ?.map((category) => category?.testimonialCategory?.name)
+      ?.filter((item) => !!item) || [];
 
   const testimonialsResult = await getTestimonialsByCategories(categories);
 

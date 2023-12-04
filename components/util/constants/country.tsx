@@ -11,7 +11,9 @@ export const sswCountries = [
     label: "France",
     flagUrl: "/images/logos/france-flag.svg",
   },
-];
+] as const;
+
+export type Countries = (typeof sswCountries)[number]["label"];
 
 type CityMapType = Record<
   string,

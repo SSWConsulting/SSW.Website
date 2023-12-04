@@ -18,8 +18,7 @@ const Logo: React.FC = () => {
         alt="SSW - Enterprise Software Development"
         height={60}
         width={100}
-        // eslint-disable-next-line tailwindcss/no-arbitrary-value
-        className="h-[60px]"
+        className="h-full"
         priority
       />
       <span className="sr-only">SSW</span>
