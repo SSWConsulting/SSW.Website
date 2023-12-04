@@ -28,10 +28,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
-            ["@playwright/test", "npm:1.39.0"],\
+            ["@playwright/test", "npm:1.40.1"],\
             ["@types/node", "npm:20.8.4"],\
             ["dotenv", "npm:16.3.1"],\
-            ["playwright", "npm:1.39.0"]\
+            ["playwright", "npm:1.40.1"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -80,11 +80,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@playwright/test", [\
-        ["npm:1.39.0", {\
-          "packageLocation": "./.yarn/cache/@playwright-test-npm-1.39.0-184da60c8c-e93e58fc1a.zip/node_modules/@playwright/test/",\
+        ["npm:1.40.1", {\
+          "packageLocation": "./.yarn/cache/@playwright-test-npm-1.40.1-174ee2ce77-ae094e6cb8.zip/node_modules/@playwright/test/",\
           "packageDependencies": [\
-            ["@playwright/test", "npm:1.39.0"],\
-            ["playwright", "npm:1.39.0"]\
+            ["@playwright/test", "npm:1.40.1"],\
+            ["playwright", "npm:1.40.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -957,21 +957,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["playwright", [\
-        ["npm:1.39.0", {\
-          "packageLocation": "./.yarn/cache/playwright-npm-1.39.0-0e46dd748d-96d8ca5aa2.zip/node_modules/playwright/",\
+        ["npm:1.40.1", {\
+          "packageLocation": "./.yarn/cache/playwright-npm-1.40.1-68ec3f34c0-9e36791c1b.zip/node_modules/playwright/",\
           "packageDependencies": [\
-            ["playwright", "npm:1.39.0"],\
+            ["playwright", "npm:1.40.1"],\
             ["fsevents", "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"],\
-            ["playwright-core", "npm:1.39.0"]\
+            ["playwright-core", "npm:1.40.1"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["playwright-core", [\
-        ["npm:1.39.0", {\
-          "packageLocation": "./.yarn/unplugged/playwright-core-npm-1.39.0-71d19aa951/node_modules/playwright-core/",\
+        ["npm:1.40.1", {\
+          "packageLocation": "./.yarn/unplugged/playwright-core-npm-1.40.1-d5a17fae9e/node_modules/playwright-core/",\
           "packageDependencies": [\
-            ["playwright-core", "npm:1.39.0"]\
+            ["playwright-core", "npm:1.40.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1202,10 +1202,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["ui-tests", "workspace:."],\
-            ["@playwright/test", "npm:1.39.0"],\
+            ["@playwright/test", "npm:1.40.1"],\
             ["@types/node", "npm:20.8.4"],\
             ["dotenv", "npm:16.3.1"],\
-            ["playwright", "npm:1.39.0"]\
+            ["playwright", "npm:1.40.1"]\
           ],\
           "linkType": "SOFT"\
         }]\
