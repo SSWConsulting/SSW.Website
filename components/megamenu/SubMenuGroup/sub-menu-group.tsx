@@ -3,39 +3,44 @@ import Link from "next/link";
 import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
 import {
-  MainMenuDefinition,
-  NavMenuGroup,
-  SubMenuItemDefinition,
-} from "../../../models/megamanu/menuItem.model";
+  AvailableIcons,
+  NavMenuColumn,
+  NavMenuColumnGroup,
+  NavMenuColumnGroupItem,
+  Sidebar,
+  ViewAll,
+} from "../../../types/megamenu";
 import MegaIcon from "../MegaIcon/mega-icon";
 import { ClosePopoverContext } from "./../DesktopMenu/desktop-menu";
 import SubMenuWidget from "./sub-menu-widget";
 
 export interface SubMenuGroupProps {
-  menu: NavMenuGroup;
+  menuColumns: NavMenuColumn[];
+  sidebarItems: Sidebar[];
+  viewAll?: ViewAll;
 }
 
-export const SubMenuGroup: React.FC<SubMenuGroupProps> = ({ menu }) => {
-  const subMenuColumns = [];
-  let currentColumn = [];
-  for (const item of menu.mainItems) {
-    if (item === "ColumnBreak") {
-      subMenuColumns.push(currentColumn);
-      currentColumn = [];
-    } else {
-      currentColumn.push(item);
-    }
-  }
-  subMenuColumns.push(currentColumn);
-
+export const SubMenuGroup: React.FC<SubMenuGroupProps> = ({
+  menuColumns,
+  sidebarItems,
+  viewAll,
+}) => {
   return (
     <>
       <div className="mx-auto flex max-w-9xl flex-col lg:flex-row">
         <div className="grid gap-x-4 p-4 lg:grow lg:grid-flow-col">
-          {subMenuColumns.map((column, i) => (
+          {menuColumns.map((column, i) => (
             <div key={"column" + i} className="flex grow flex-col gap-y-4">
-              {column.map((item, i) => (
-                <MenuItem key={"menuItem" + i} item={item} />
+              {column.menuColumnGroups?.map((item, j) => (
+                <MenuItem
+                  key={"menuItem" + i}
+                  item={item}
+                  viewAll={viewAll}
+                  showViewAll={
+                    i === menuColumns.length - 1 &&
+                    j == column.menuColumnGroups.length - 1
+                  }
+                />
               ))}
             </div>
           ))}
@@ -44,13 +49,13 @@ export const SubMenuGroup: React.FC<SubMenuGroupProps> = ({ menu }) => {
         {/* eslint-disable-next-line tailwindcss/no-arbitrary-value */}
         <div className="shrink-0 overflow-x-hidden bg-gray-50 lg:relative lg:w-[350px] lg:before:absolute lg:before:inset-0 lg:before:-z-10 lg:before:w-[1000px] lg:before:bg-gray-50">
           <div className="flex flex-col gap-y-2 px-8 py-4">
-            {menu.sideBarItems?.map((sideBarItem, i) => (
+            {sidebarItems?.map((sideBarItem, i) => (
               <div key={i}>
                 <Heading className={i > 0 ? "pt-6" : ""}>
-                  {sideBarItem.heading}
+                  {sideBarItem.name}
                 </Heading>
                 <div className="flex flex-col gap-y-4">
-                  {sideBarItem.items.map((item, i) => (
+                  {sideBarItem.items?.map((item, i) => (
                     <SubMenuWidget key={i} item={item} />
                   ))}
                 </div>
@@ -75,50 +80,60 @@ const Heading: React.FC<{
 };
 
 const MenuItem: React.FC<{
-  item: MainMenuDefinition;
-}> = ({ item }) => {
+  item: NavMenuColumnGroup;
+  viewAll?: ViewAll;
+  showViewAll: boolean;
+}> = ({ item: { name, menuItems }, viewAll, showViewAll }) => {
   return (
-    <div key={item.heading} className="flex flex-col pb-4 last:grow">
-      <Heading>{item.heading}</Heading>
+    <div key={name} className="flex flex-col pb-4 last:grow">
+      <Heading>{name}</Heading>
       <div className="flex flex-col">
-        {item.items.map((subItem, i) => (
-          <SubmenuItem key={item.heading + i} {...subItem} />
+        {menuItems?.map((subItem, i) => (
+          <LinkItem key={name + i} link={subItem} />
         ))}
       </div>
-      <ViewAllLink {...item.viewAllLink} />
+      {showViewAll && viewAll && (
+        <ViewAllLink href={viewAll.url} name={viewAll.name} />
+      )}
     </div>
   );
 };
 
-const SubmenuItem: React.FC<SubMenuItemDefinition> = (props) => {
+const LinkItem: React.FC<{ link: NavMenuColumnGroupItem }> = ({
+  link: { name, url, description, icon, iconImg },
+}) => {
   const close = useContext(ClosePopoverContext);
+
   return (
     <Link
-      href={props.href}
+      href={url || ""}
       className={twMerge(
         "flex items-start gap-x-3 rounded-md bg-white hover:bg-gray-100 focus:outline-none unstyled",
-        props.description ? "p-4" : "p-2"
+        description ? "p-4" : "p-2"
       )}
       onClick={() => close()}
     >
-      {props.icon && (
-        <div className="flex h-6 w-6 shrink-0 items-center justify-center text-ssw-red">
-          <MegaIcon icon={props.icon} />
+      {(icon || iconImg) && (
+        <div className="flex shrink-0 items-center justify-center text-ssw-red">
+          <MegaIcon
+            className="h-6 w-6"
+            icon={icon as AvailableIcons}
+            iconImg={iconImg}
+          />
         </div>
       )}
+
       <div className="min-w-0 flex-1">
         <span>
-          {props.name && props.description ? (
+          {name && description ? (
             <>
-              <p className="font-bold text-ssw-black">{props.name}</p>
+              <p className="font-bold text-ssw-black">{name}</p>
               <p className="mt-1 text-sm font-normal text-ssw-gray">
-                {props.description}
+                {description}
               </p>
             </>
           ) : (
-            <p className="pl-4 text-sm font-normal text-ssw-black">
-              {props.name}
-            </p>
+            <p className="pl-4 text-sm font-normal text-ssw-black">{name}</p>
           )}
         </span>
       </div>
@@ -134,7 +149,7 @@ const ViewAllLink: React.FC<{ href?: string; name?: string }> = ({
     return <></>;
   }
   return (
-    <div className="flex grow flex-col-reverse items-end pt-4">
+    <div className="flex grow flex-col-reverse items-end self-end pt-4">
       <Link
         href={href}
         className="unstyled rounded-md px-3 py-1 text-sm font-semibold leading-6 text-ssw-red hover:bg-ssw-red hover:text-white"

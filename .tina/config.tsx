@@ -18,6 +18,7 @@ import { industrySchema } from "./collections/industry";
 import { liveSchema } from "./collections/live";
 import { locationSchema } from "./collections/location";
 import { marketingSchema } from "./collections/marketing";
+import { megaMenuSchema } from "./collections/megamenu";
 import { newsletterSchema } from "./collections/newsletters";
 import { officeIndexSchema, officeSchema } from "./collections/offices";
 import { opportunitiesSchema } from "./collections/opportunities";
@@ -67,6 +68,7 @@ const config = defineStaticConfig({
     collections: [
       pagesSchema,
       globalSchema,
+      megaMenuSchema,
       companyIndexSchema,
       companySchema,
       clientsCategorySchema,

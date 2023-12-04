@@ -29,7 +29,7 @@ export default function OfficePage(
   return (
     <>
       <SEO seo={data.offices.seo} />
-      <Layout>
+      <Layout menu={data.megamenu}>
         {data.offices.coverImg ? (
           <div className="mx-auto max-w-9xl px-6 sm:px-8">
             <div className="h-auto w-auto">

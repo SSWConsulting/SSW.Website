@@ -45,7 +45,7 @@ export default function EventsPage(
       }}
     >
       <SEO seo={data.events.seo} />
-      <Layout>
+      <Layout menu={data.megamenu}>
         <div data-tina-field={tinaField(data.events, "eventHeader")}>
           <EventsHeader data={data.events.eventHeader} />
         </div>
