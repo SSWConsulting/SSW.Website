@@ -1,10 +1,6 @@
 {
   "menuGroups": [
     {
-      "name": "Cheese suppliers",
-      "url": "cheese.com"
-    },
-    {
       "name": "Services",
       "menuColumns": [
         {
@@ -123,11 +119,6 @@
             {
               "name": "Web",
               "menuItems": [
-                {
-                  "name": "SSW Dory",
-                  "url": "https://www.sswdory.com/",
-                  "description": "Make people do good PRs"
-                },
                 {
                   "name": "SugarLearning",
                   "url": "https://www.sugarlearning.com/",
