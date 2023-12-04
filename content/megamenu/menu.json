@@ -1,6 +1,10 @@
 {
   "menuGroups": [
     {
+      "name": "Cheese suppliers",
+      "url": "cheese.com"
+    },
+    {
       "name": "Services",
       "menuColumns": [
         {
