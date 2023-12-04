@@ -151,7 +151,7 @@ module.exports = {
         ],
       },
       fontSize: {
-        xxs: ["0.5rem", { lineHeight: "1rem" }],
+        xxs: ["0.65rem", { lineHeight: "1rem" }],
       },
       animation: {
         "more-bounce": "more-bounce 2s infinite",
