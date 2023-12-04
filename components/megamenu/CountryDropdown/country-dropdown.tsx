@@ -5,9 +5,9 @@ import { useLocation } from "react-use";
 import { twMerge } from "tailwind-merge";
 import { Flag } from "../../blocks";
 
-type Countries = "Australia" | "China" | "France";
+type Countries = (typeof websites)[number]["country"];
 
-const websites: { country: Countries; url: string }[] = [
+const websites = [
   {
     country: "Australia",
     url: "https://www.ssw.com.au",
@@ -20,7 +20,7 @@ const websites: { country: Countries; url: string }[] = [
     country: "France",
     url: "https://www.ssw.fr",
   },
-];
+] as const;
 
 type CountryFlagProps = {
   country: Countries;

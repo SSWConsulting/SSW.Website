@@ -104,10 +104,6 @@ const LinkItem: React.FC<{ link: NavMenuColumnGroupItem }> = ({
 }) => {
   const close = useContext(ClosePopoverContext);
 
-  if (!close) {
-    throw new Error("ClosePopoverContext is not defined");
-  }
-
   return (
     <Link
       href={url || ""}

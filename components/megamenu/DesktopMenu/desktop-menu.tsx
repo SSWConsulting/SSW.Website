@@ -12,7 +12,9 @@ export interface DesktopMenuProps {
   menuGroups: NavMenuGroup[];
 }
 
-export const ClosePopoverContext = createContext<(() => void) | null>(null);
+export const ClosePopoverContext = createContext<((...args) => void) | null>(
+  null
+);
 
 const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuGroups }) => {
   return (
