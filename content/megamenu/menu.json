@@ -1,6 +1,10 @@
 {
   "menuGroups": [
     {
+      "name": "Cheese suppliers",
+      "url": "cheese.com"
+    },
+    {
       "name": "Services",
       "menuColumns": [
         {
@@ -82,17 +86,15 @@
           "items": [
             {
               "name": "ChatGPT & GPT-4",
-              "description":
-                "Unlock the power of language Al for your business",
-              "widgetType": "featured",
-              "url": "/consulting/gpt"
+              "url": "/consulting/gpt",
+              "description": "Unlock the power of language Al for your business",
+              "widgetType": "featured"
             },
             {
               "name": "Bring your App to China",
-              "description":
-                "A quick and easy solution for entry into a large and juicy market",
-              "widgetType": "featured",
               "url": "/consulting/chinafy-app",
+              "description": "A quick and easy solution for entry into a large and juicy market",
+              "widgetType": "featured",
               "icon": "chinaFlag"
             }
           ]
@@ -102,8 +104,8 @@
           "items": [
             {
               "name": "Book Now",
-              "widgetType": "bookNow",
-              "url": "/company/contact-us"
+              "url": "/company/contact-us",
+              "widgetType": "bookNow"
             }
           ]
         }
@@ -121,6 +123,11 @@
             {
               "name": "Web",
               "menuItems": [
+                {
+                  "name": "SSW Dory",
+                  "url": "https://www.sswdory.com/",
+                  "description": "Make people do good PRs"
+                },
                 {
                   "name": "SugarLearning",
                   "url": "https://www.sugarlearning.com/",
@@ -182,17 +189,15 @@
           "items": [
             {
               "name": "SugarLearning V1.50",
-              "description":
-                "The next generation on-boarding & induction tool for smart companies.",
-              "widgetType": "featured",
-              "url": "https://www.sugarlearning.com/"
+              "url": "https://www.sugarlearning.com/",
+              "description": "The next generation on-boarding & induction tool for smart companies.",
+              "widgetType": "featured"
             },
             {
               "name": "TimePro V2.10",
-              "description":
-                "TimePro offers everything an enterprise needs, such as invoicing, receipting, and time sheeting",
-              "widgetType": "featured",
-              "url": "https://sswtimepro.com/"
+              "url": "https://sswtimepro.com/",
+              "description": "TimePro offers everything an enterprise needs, such as invoicing, receipting, and time sheeting",
+              "widgetType": "featured"
             }
           ]
         },
@@ -201,13 +206,13 @@
           "items": [
             {
               "name": "Knowledge Base",
-              "widgetType": "standardLink",
-              "url": "https://pdi-ssw.zendesk.com/hc"
+              "url": "https://pdi-ssw.zendesk.com/hc",
+              "widgetType": "standardLink"
             },
             {
               "name": "Report a bug",
-              "widgetType": "standardLink",
-              "url": "https://www.ssw.com.au/ssw/Standards/Support/BugReportOrEnhancement.aspx"
+              "url": "https://www.ssw.com.au/ssw/Standards/Support/BugReportOrEnhancement.aspx",
+              "widgetType": "standardLink"
             }
           ]
         }
@@ -341,23 +346,23 @@
           "items": [
             {
               "name": "Newsletters",
-              "widgetType": "standardLink",
-              "url": "/newsletters"
+              "url": "/newsletters",
+              "widgetType": "standardLink"
             },
             {
               "name": "Past Sessions",
-              "widgetType": "standardLink",
-              "url": "https://www.ssw.com.au/ssw/NETUG/PastSessions.aspx"
+              "url": "https://www.ssw.com.au/ssw/NETUG/PastSessions.aspx",
+              "widgetType": "standardLink"
             },
             {
               "name": "Evaluation Survey",
-              "widgetType": "standardLink",
-              "url": "https://www.ssw.com.au/ssw/NETUG/Evaluation-Survey/"
+              "url": "https://www.ssw.com.au/ssw/NETUG/Evaluation-Survey/",
+              "widgetType": "standardLink"
             },
             {
               "name": "Developer Links",
-              "widgetType": "standardLink",
-              "url": "https://www.ssw.com.au/ssw/NETUG/Developerlinks.aspx"
+              "url": "https://www.ssw.com.au/ssw/NETUG/Developerlinks.aspx",
+              "widgetType": "standardLink"
             }
           ]
         }
@@ -469,13 +474,13 @@
           "items": [
             {
               "name": "Our Offices",
-              "widgetType": "standardLink",
-              "url": "/offices"
+              "url": "/offices",
+              "widgetType": "standardLink"
             },
             {
               "name": "Contact Us",
-              "widgetType": "standardLink",
-              "url": "/company/contact-us"
+              "url": "/company/contact-us",
+              "widgetType": "standardLink"
             }
           ]
         }
