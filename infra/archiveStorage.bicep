@@ -30,6 +30,9 @@ resource blobStorage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   kind: 'BlobStorage'
   properties: {
     allowBlobPublicAccess: true
+    publicNetworkAccess: 'Enabled'
+    accessTier: 'Hot'
+    supportsHttpsTrafficOnly: true
   }
 }
 
@@ -37,6 +40,21 @@ resource blobServices 'Microsoft.Storage/storageAccounts/blobServices@2022-09-01
   name: 'default'
   parent: blobStorage
   properties: {
+    changeFeed: {
+      enabled: false
+    }
+    restorePolicy: {
+      enabled: false
+    }
+    containerDeleteRetentionPolicy: {
+      enabled: true
+      days: 7
+    }
+    deleteRetentionPolicy: {
+      allowPermanentDelete: false
+      enabled: true
+      days: 7
+    }
     cors: {
       corsRules: [
         {
@@ -65,7 +83,7 @@ resource webContainer 'Microsoft.Storage/storageAccounts/blobServices/containers
   name: '$web'
   parent: blobServices
   properties: {
-    publicAccess: 'Blob'
+    publicAccess: 'Container'
   }
 }
 
@@ -100,3 +118,5 @@ resource enableStaticSite 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
     ]
   }
 }
+
+
