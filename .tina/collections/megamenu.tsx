@@ -40,6 +40,7 @@ export const megaMenuSchema: Collection = {
           list: true,
           ui: {
             itemProps: (item) => {
+              if (!item?.menuColumnGroups) return { label: "Column" };
               return {
                 label: (item?.menuColumnGroups[0]?.name || "") + " Column",
               };
