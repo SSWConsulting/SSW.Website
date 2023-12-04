@@ -87,12 +87,21 @@ resource webContainer 'Microsoft.Storage/storageAccounts/blobServices/containers
   }
 }
 
+resource managedIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' = {
+  name: 'blob-archive-static-site-script'
+  location: location
+}
+
+
 resource enableStaticSite 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
   name: 'enableStaticSite'
   location: location
   kind: 'AzurePowerShell'
   identity: {
-    type: 'SystemAssigned'
+    type: 'UserAssigned'
+    userAssignedIdentities: {
+      '${managedIdentity.id}': {}
+    }
   }
   properties: {
     azPowerShellVersion: '3.0'
@@ -119,4 +128,4 @@ resource enableStaticSite 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
   }
 }
 
-
+output staticWebsiteUrl string = blobStorage.properties.primaryEndpoints.web
