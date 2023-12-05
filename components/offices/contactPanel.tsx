@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";
