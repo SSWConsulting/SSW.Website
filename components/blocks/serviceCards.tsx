@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
 
 import type { Template } from "tinacms";
@@ -75,7 +74,7 @@ const BigCards = ({ title, cards, schema }) => {
               bgColor[card.color]
             } hover:opacity-80`}
           >
-            <Link
+            <CustomLink
               href={card.link ?? ""}
               className="unstyled flex grow text-left text-white"
             >
@@ -110,7 +109,7 @@ const BigCards = ({ title, cards, schema }) => {
                   </span>
                 </div>
               </div>
-            </Link>
+            </CustomLink>
           </li>
         ))}
       </ul>
@@ -145,12 +144,12 @@ const SmallCards = ({ title, cards, schema }) => {
                 <SmallCardContent card={card} schema={schema} index={index} />
               </CustomLink>
             ) : (
-              <Link
+              <CustomLink
                 href={card.link ?? ""}
                 className="unstyled flex h-full flex-col"
               >
                 <SmallCardContent card={card} schema={schema} index={index} />
-              </Link>
+              </CustomLink>
             )}
           </li>
         ))}
@@ -193,14 +192,14 @@ const Links = ({ links, schema }) => {
   return (
     <div className="flex flex-wrap items-center justify-between gap-6 py-3">
       {links.map((card, i) => (
-        <Link
+        <CustomLink
           key={i}
           href={card.link ?? ""}
           className="unstyled inline-flex items-center rounded border-1 border-gray-300 bg-white px-3 py-2 text-xs font-normal leading-4 text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
           data-tina-field={tinaField(schema.links[i], serviceCards.links.label)}
         >
           {card.label}
-        </Link>
+        </CustomLink>
       ))}
     </div>
   );

@@ -6,6 +6,7 @@ interface CustomLinkProps extends PropsWithChildren {
   target?: string;
   className?: string;
   title?: string;
+  style?: React.CSSProperties;
 }
 
 const externalSSWSitePatterns = [
@@ -22,6 +23,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
   className,
   children,
   title,
+  style,
   ...props
 }) => {
   const [isExternal, setIsExternal] = useState(false);
@@ -55,12 +57,19 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
           target={target || "_blank"}
           rel="noopener noreferrer nofollow"
           title={title}
+          style={style}
           {...props}
         >
           {children}
         </a>
       ) : (
-        <Link className={className} href={href} title={title} {...props}>
+        <Link
+          className={className}
+          href={href}
+          title={title}
+          {...props}
+          style={style}
+        >
           {children}
         </Link>
       )}

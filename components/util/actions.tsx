@@ -1,7 +1,7 @@
-import Link from "next/link";
 import * as React from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { classNames } from "tinacms";
+import { CustomLink } from "../customLink";
 // import { useTheme } from "../layout";
 
 export const Actions = ({
@@ -63,11 +63,7 @@ export const Actions = ({
           let element = null;
           if (action.type === "button") {
             element = (
-              <Link
-                key={index}
-                href={action.link ? action.link : "/"}
-                legacyBehavior
-              >
+              <CustomLink key={index} href={action.link ? action.link : "/"}>
                 <button
                   data-tinafield={`${parentField}.${index}`}
                   className={classNames(
@@ -84,15 +80,14 @@ export const Actions = ({
                     />
                   )}
                 </button>
-              </Link>
+              </CustomLink>
             );
           }
           if (action.type === "link" || action.type === "linkExternal") {
             element = (
-              <Link
+              <CustomLink
                 key={index}
                 href={action.link ? action.link : "/"}
-                passHref
                 data-tinafield={`${parentField}.${index}`}
                 className={classNames(
                   "group inline-flex items-center text-lg font-semibold transition duration-150 ease-out",
@@ -108,7 +103,7 @@ export const Actions = ({
                 {action.icon && (
                   <BiRightArrowAlt className={"mx-0 h-6 w-6 opacity-80"} />
                 )}
-              </Link>
+              </CustomLink>
             );
           }
           return element;

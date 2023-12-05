@@ -4,6 +4,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { useLocation } from "react-use";
 import { twMerge } from "tailwind-merge";
 import { Flag } from "../../blocks";
+import { CustomLink } from "../../customLink";
 import { Countries } from "../../util/constants/country";
 
 const websites: { country: Countries; url: string }[] = [
@@ -68,7 +69,7 @@ const CountryDropdown = () => {
           {websites
             .filter((w) => w.country !== currentCountry)
             .map((country) => (
-              <a
+              <CustomLink
                 key={country.country}
                 // eslint-disable-next-line tailwindcss/no-arbitrary-value
                 className="block py-2 hover:bg-gray-100 lg:min-w-[80px]"
@@ -79,7 +80,7 @@ const CountryDropdown = () => {
                   className="inline-block"
                   country={country.country}
                 />
-              </a>
+              </CustomLink>
             ))}
         </Popover.Panel>
       </Transition>
