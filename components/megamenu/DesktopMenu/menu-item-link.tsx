@@ -1,4 +1,5 @@
 import React from "react";
+import { CustomLink } from "../../customLink";
 
 type MenuItemLinkProps = {
   name: string;
@@ -7,11 +8,11 @@ type MenuItemLinkProps = {
 
 export const MenuItemLink = ({ name, href }: MenuItemLinkProps) => {
   return (
-    <a
+    <CustomLink
       href={href}
       className="unstyled flex items-center justify-center rounded-md px-3 py-1"
     >
       {name}
-    </a>
+    </CustomLink>
   );
 };

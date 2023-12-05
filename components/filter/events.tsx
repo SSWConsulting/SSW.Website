@@ -13,6 +13,7 @@ import { sanitiseXSS } from "../../helpers/validator";
 import { useEvents } from "../../hooks/useEvents";
 import { EventInfo } from "../../services/server/events";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
+import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { CITY_MAP } from "../util/constants/country";
 import { sswOrganisation } from "../util/constants/json-ld";
@@ -180,9 +181,9 @@ const Event = ({ visible, event }: EventProps) => {
           </div>
           <div>
             <h2 className="my-0 font-semibold">
-              <a className="!no-underline" href={event.Url.Url}>
+              <CustomLink className="!no-underline" href={event.Url.Url}>
                 {event.Title}
-              </a>
+              </CustomLink>
             </h2>
 
             <EventsRelativeBox
@@ -212,9 +213,9 @@ const Event = ({ visible, event }: EventProps) => {
               {event.City && CITY_MAP[event.City] && (
                 <span className="ml-3">
                   <strong>Location: </strong>
-                  <a href={CITY_MAP[event.City]?.url}>
+                  <CustomLink href={CITY_MAP[event.City]?.url}>
                     {CITY_MAP[event.City]?.name}
-                  </a>
+                  </CustomLink>
                 </span>
               )}
             </div>
@@ -226,9 +227,9 @@ const Event = ({ visible, event }: EventProps) => {
           }}
           className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline"
         />
-        <a href={event.Url.Url}>
+        <CustomLink href={event.Url.Url}>
           <p className="prose pt-3">Find out more...</p>
-        </a>
+        </CustomLink>
       </Transition>
       <script
         type="application/ld+json"

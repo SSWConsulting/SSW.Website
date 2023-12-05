@@ -5,6 +5,7 @@ import { tinaField } from "tinacms/dist/react";
 import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
@@ -137,12 +138,12 @@ const SmallCards = ({ title, cards, schema }) => {
             } hover:opacity-80`}
           >
             {card.isExternal ? (
-              <a
+              <CustomLink
                 href={card.link ?? ""}
                 className="unstyled flex h-full flex-col"
               >
                 <SmallCardContent card={card} schema={schema} index={index} />
-              </a>
+              </CustomLink>
             ) : (
               <Link
                 href={card.link ?? ""}

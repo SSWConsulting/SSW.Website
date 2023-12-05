@@ -2,6 +2,7 @@ import { Dialog } from "@headlessui/react";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import { NavMenuGroup } from "../../../types/megamenu";
+import { CustomLink } from "../../customLink";
 import { MegaIcon } from "../MegaIcon";
 import SubMenuGroup from "../SubMenuGroup/sub-menu-group";
 
@@ -82,13 +83,13 @@ const MenuBarItems: React.FC<{
       <div className="space-y-2">
         {menuBarItems.map((item) => {
           return item.url ? (
-            <a
+            <CustomLink
               key={item.name}
               href={item.url}
               className="unstyled -mx-3 flex w-full items-center px-3 py-2 text-left text-lg leading-7 text-ssw-black hover:bg-gray-50"
             >
               {item.name}
-            </a>
+            </CustomLink>
           ) : (
             <button
               key={item.name}

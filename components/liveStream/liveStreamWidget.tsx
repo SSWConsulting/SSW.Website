@@ -11,6 +11,7 @@ import { getYouTubeId } from "../../helpers/embeds";
 import { sanitiseXSS } from "../../helpers/validator";
 import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 import { SpeakerInfo } from "../../services/server/events";
+import { CustomLink } from "../customLink";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
 import { SubNewsLettersForm } from "../subNewsletter/subNewsletterForm";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
@@ -188,14 +189,12 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
             <iframe width="100%" height="100%" src={youtubeUrls.chatUrl} />
           </div>
           <div className="col-span-3 block sm:hidden">
-            <a
+            <CustomLink
               href={youtubeUrls.liveStreamUrl}
               className="flex h-12 items-center justify-center bg-sswRed text-white"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Chat with us on Youtube
-            </a>
+            </CustomLink>
           </div>
         </div>
 
@@ -228,11 +227,9 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                 />
               </Tooltip>
             </a>
-            <a
+            <CustomLink
               className="inline-block"
               href={layoutData.apps.sswRewards.link.googlePlay}
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <Image
                 id="googlePlayBadge"
@@ -253,7 +250,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                   alt="SSW Reward App QR Code"
                 />
               </Tooltip>
-            </a>
+            </CustomLink>
           </div>
           <div className="text-center md:text-start">
             <p>How did we do?</p>
@@ -353,14 +350,12 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                       }}
                     />
                     {!!speakerInfo.PresenterProfileLink && (
-                      <a
+                      <CustomLink
                         className="float-right border-b-1 border-dotted border-gray-450 !no-underline"
                         href={speakerInfo.PresenterProfileLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
                       >
                         {`${speakerInfo.Title}'s profile&gt;`}
-                      </a>
+                      </CustomLink>
                     )}
                   </div>
                 </div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CustomLink } from "../customLink";
 
 export const RDPanel = () => {
   return (
@@ -29,9 +30,9 @@ export const RDPanel = () => {
         they tend to be very open about our products, both good and bad.
       </p>
       <p>
-        <a href="https://mvp.microsoft.com/en-us/RD">
+        <CustomLink href="https://mvp.microsoft.com/en-us/RD">
           More about Microsoft Regional Director program
-        </a>
+        </CustomLink>
       </p>
       <Image
         src="/images/company/mvp.png"
