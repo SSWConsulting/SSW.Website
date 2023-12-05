@@ -1,10 +1,10 @@
 import { InferGetStaticPropsType } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../../.tina/__generated__/client";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Flag } from "../../components/blocks/flag";
+import { CustomLink } from "../../components/customLink";
 import { Layout } from "../../components/layout";
 import MicrosoftPanel from "../../components/offices/microsoftPanel";
 import TestimonialPanel from "../../components/offices/testimonialPanel";
@@ -67,21 +67,21 @@ export default function OfficeIndex(
                     <strong>Phone: {office.phone}</strong>
                   </p>
                   <p className="block max-sm:clear-left">
-                    <Link
+                    <CustomLink
                       href={
                         office.localWebsiteLink?.url ||
                         `/offices/${office.addressLocality.toLowerCase()}`
                       }
                     >
                       Learn more about our {office.addressLocality} office
-                    </Link>
+                    </CustomLink>
                   </p>
                   <p className="block max-sm:clear-left">
-                    <Link
+                    <CustomLink
                       href={`${`/offices/${office.addressLocality.toLowerCase()}`}#Directions`}
                     >
                       Directions to SSW {office.addressLocality}
-                    </Link>
+                    </CustomLink>
                   </p>
                 </div>
               ))}
@@ -98,11 +98,14 @@ export default function OfficeIndex(
               <br />
               <p>
                 {"If you require any further information, don't hesitate to "}
-                <a href="mailto:info@ssw.com.au">contact us.</a>
+                <CustomLink href="mailto:info@ssw.com.au">
+                  contact us.
+                </CustomLink>
               </p>
               <br />
               <p>
-                Visit our worldwide website: <Link href="/">ssw.com</Link>.
+                Visit our worldwide website:{" "}
+                <CustomLink href="/">ssw.com</CustomLink>.
               </p>
             </div>
             <div className="md:max-w-sm md:pl-6">
@@ -111,11 +114,11 @@ export default function OfficeIndex(
                 <ul>
                   {offices.map((office) => (
                     <li key={office.addressLocality}>
-                      <Link
+                      <CustomLink
                         href={`${`/offices/${office.addressLocality.toLowerCase()}`}#Directions`}
                       >
                         {office.addressLocality}
-                      </Link>
+                      </CustomLink>
                     </li>
                   ))}
                 </ul>

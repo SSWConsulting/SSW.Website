@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Template } from "tinacms";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { CustomLink } from "../customLink";
 import { flagSchema } from "./flag";
 import { componentRenderer } from "./mdxComponentRenderer";
 
@@ -19,7 +19,7 @@ export const EventLink = ({
   content,
 }: EventLinkProps) => {
   return (
-    <Link href={link || ""} passHref className="!no-underline">
+    <CustomLink href={link || ""} className="!no-underline">
       <div className="flex flex-row gap-4 rounded-lg px-4 hover:bg-gray-100">
         {eventThumbnail && (
           <Image
@@ -33,7 +33,7 @@ export const EventLink = ({
           <TinaMarkdown content={content} components={componentRenderer} />
         </div>
       </div>
-    </Link>
+    </CustomLink>
   );
 };
 

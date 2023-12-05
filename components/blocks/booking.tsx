@@ -2,6 +2,7 @@ import { FC } from "react";
 import { FaAngleDown } from "react-icons/fa";
 import { tinaField } from "tinacms/dist/react";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
+import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 
 export const Booking: FC<{
@@ -22,12 +23,12 @@ export const Booking: FC<{
         <h2 data-tina-field={tinaField(props, "subTitle")}>{props.subTitle}</h2>
         {props.children}
         <div className="flex animate-more-bounce flex-col items-center pt-20">
-          <a
+          <CustomLink
             href="#more"
             className="cursor-default text-5xl no-underline hover:!text-gray-450"
           >
             <FaAngleDown />
-          </a>
+          </CustomLink>
         </div>
       </Container>
 

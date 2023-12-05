@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
-import Link from "next/link";
 import client from "../.tina/__generated__/client";
+import { CustomLink } from "../components/customLink";
 import { Layout } from "../components/layout";
 import { Container } from "../components/util/container";
 
@@ -30,20 +30,20 @@ export default function FourOhFour(
             <div className="mx-auto">
               <div className="my-4 bg-gray-200 px-5 py-4">
                 Visit{" "}
-                <Link href="/" className="text-sswRed no-underline">
+                <CustomLink href="/" className="text-sswRed no-underline">
                   SSW homepage
-                </Link>{" "}
+                </CustomLink>{" "}
                 to find out how we can help you.
               </div>
 
               <div className="my-4 bg-gray-200 px-5 py-4">
                 Learn more about{" "}
-                <Link
+                <CustomLink
                   href="/rules/404-useful-error-page"
                   className="text-sswRed no-underline"
                 >
                   having a useful 404 error page
-                </Link>
+                </CustomLink>
                 .
               </div>
             </div>

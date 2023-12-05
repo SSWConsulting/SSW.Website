@@ -8,6 +8,7 @@ import { InferGetStaticPropsType } from "next";
 import { BuiltOnAzure } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import { CustomLink } from "../../components/customLink";
 import { Layout } from "../../components/layout";
 import ContactPanel from "../../components/offices/contactPanel";
 import MicrosoftPanel from "../../components/offices/microsoftPanel";
@@ -81,12 +82,12 @@ const OfficeLayout = ({ office }) => {
         <TinaMarkdown components={componentRenderer} content={office.aboutUs} />
       </div>
       {office.localWebsiteLink?.title && (
-        <a
+        <CustomLink
           href={office.localWebsiteLink.url ?? ""}
           data-tina-field={tinaField(office, "localWebsiteLink")}
         >
           {office.localWebsiteLink.title}
-        </a>
+        </CustomLink>
       )}
       {office.map ? (
         <>
@@ -104,7 +105,7 @@ const OfficeLayout = ({ office }) => {
       )}
       <h2 id="Directions">SSW {office.addressLocality} Directions</h2>
       <h4>
-        <a
+        <CustomLink
           data-tina-field={tinaField(office, "directionsUrl")}
           href={office.directionsUrl}
         >
@@ -116,7 +117,7 @@ const OfficeLayout = ({ office }) => {
             className="my-0 mr-1.5 inline-block"
           />
           {`${office.streetAddress}, ${office.suburb}, ${office.addressRegion} ${office.postalCode}, ${office.addressCountry}`}
-        </a>
+        </CustomLink>
       </h4>
       <div data-tina-field={tinaField(office, "directions")}>
         <TinaMarkdown

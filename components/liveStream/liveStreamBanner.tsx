@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import dayjs from "dayjs";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import countdownTextFormat from "../../helpers/countdownTextFormat";
 import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
+import { CustomLink } from "../customLink";
 
 type LiveStreamBannerProps = {
   isLive?: boolean;
@@ -40,7 +40,7 @@ export const LiveStreamBanner = ({
   const liveText = "Streaming live now.";
   return (
     <div className="w-full bg-ssw-black">
-      <Link className="unstyled" href="/live">
+      <CustomLink className="unstyled" href="/live">
         <div
           className={classNames(
             "mx-auto max-w-9xl bg-ssw-black bg-right-top bg-no-repeat px-6 py-1 uppercase sm:px-8",
@@ -57,7 +57,7 @@ export const LiveStreamBanner = ({
             {!isLive && scheduledTimeText(dayjs(event.StartDateTime))}
           </p>
         </div>
-      </Link>
+      </CustomLink>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import Image from "next/image";
-import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
+import { CustomLink } from "../../customLink";
 
 export const PageCard = ({ page, category, pageIndex }) => {
   return (
@@ -28,11 +28,11 @@ export const PageCard = ({ page, category, pageIndex }) => {
           className="min-w-0 flex-1"
           data-tina-field={tinaField(category?.pages[pageIndex], "description")}
         >
-          <Link href={page.url} className="unstyled">
+          <CustomLink href={page.url} className="unstyled">
             <span className="absolute inset-0" aria-hidden="true" />
             <h3 className="mb-2 mt-0 text-lg text-sswRed">{page.title}</h3>
             <p className="text-sm text-black">{page.description}</p>
-          </Link>
+          </CustomLink>
         </div>
       </div>
     </div>

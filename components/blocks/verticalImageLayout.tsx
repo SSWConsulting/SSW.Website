@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { CustomLink } from "../customLink";
 
 export const VerticalImageLayout = ({ data }) => {
   const RawImage = () => (
@@ -16,9 +17,9 @@ export const VerticalImageLayout = ({ data }) => {
     <div className="md:grid md:grid-cols-12 md:gap-x-6">
       <div className="col-span-5">
         {data.imageLink ? (
-          <a href={data.imageLink} target="_blank" rel="noopener noreferrer">
+          <CustomLink href={data.imageLink}>
             <RawImage />
-          </a>
+          </CustomLink>
         ) : (
           <RawImage />
         )}

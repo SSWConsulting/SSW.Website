@@ -5,20 +5,24 @@ interface CustomLinkProps extends PropsWithChildren {
   href: string;
   target?: string;
   className?: string;
-  key?: string | null;
+  title?: string;
 }
 
 const externalSSWSitePatterns = [
   "https://ssw.com.au/people/*",
   "https://ssw.com.au/rules/*",
   "https://ssw.com.au/ssw/*",
+  "https://www.ssw.com.au/people/*",
+  "https://www.ssw.com.au/rules/*",
+  "https://www.ssw.com.au/ssw/*",
 ];
 export const CustomLink: React.FC<CustomLinkProps> = ({
   href,
   target,
   className,
-  key,
   children,
+  title,
+  ...props
 }) => {
   const [isExternal, setIsExternal] = useState(false);
 
@@ -50,12 +54,13 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
           href={href}
           target={target || "_blank"}
           rel="noopener noreferrer nofollow"
-          key={key || null}
+          title={title}
+          {...props}
         >
           {children}
         </a>
       ) : (
-        <Link className={className} href={href} key={key}>
+        <Link className={className} href={href} title={title} {...props}>
           {children}
         </Link>
       )}

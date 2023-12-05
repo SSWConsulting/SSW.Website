@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import dayjs from "dayjs";
-import Link from "next/link";
 import { useState } from "react";
 import type { Template } from "tinacms";
 
@@ -8,6 +7,7 @@ import { BiChevronRightCircle } from "react-icons/bi";
 
 import { tinaField } from "tinacms/dist/react";
 import layoutData from "../../content/global/index.json";
+import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import { VideoModal } from "../videoModal";
@@ -268,9 +268,7 @@ const OfficeInfo = ({ office }) => {
   return (
     <div className="p-4 text-sm text-black">
       <p className="prose pb-2">
-        <Link href={office.url} legacyBehavior>
-          {office.name}
-        </Link>
+        <CustomLink href={office.url}>{office.name}</CustomLink>
       </p>
       <p itemProp="address" itemType="http://schema.org/PostalAddress">
         <span itemProp="streetAddress">{office.streetAddress}</span>

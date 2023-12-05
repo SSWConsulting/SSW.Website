@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useMemo } from "react";
 import { BiVideo } from "react-icons/bi";
 import { UtilityButton } from "../../blocks";
+import { CustomLink } from "../../customLink";
 import { CITY_TIMEZONES } from "../../util/constants/country";
 import { Container } from "../../util/container";
 import { OnlineBadge } from "../onlineBadge";
@@ -80,7 +81,7 @@ export const UserGroupHeader = ({
           </div>
           <h1 className="mb-2 pb-1 pt-3 text-5xl font-semibold">{title}</h1>
           <span className="mb-12 text-lg">
-            With <a href={presenter.url}>{presenter.name}</a>
+            With <CustomLink href={presenter.url}>{presenter.name}</CustomLink>
           </span>
           <div
             className={classNames(
@@ -96,7 +97,7 @@ export const UserGroupHeader = ({
               buttonText={buttonText}
             />
             {trailerUrl && (
-              <a
+              <CustomLink
                 href={trailerUrl}
                 className="flex flex-row items-center max-md:pt-5 md:justify-center md:pl-4"
               >
@@ -104,7 +105,7 @@ export const UserGroupHeader = ({
                   <BiVideo className="mx-2 inline" />
                   Watch the trailer
                 </span>
-              </a>
+              </CustomLink>
             )}
           </div>
         </div>

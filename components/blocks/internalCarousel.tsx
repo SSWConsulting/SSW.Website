@@ -6,6 +6,7 @@ import type { Template } from "tinacms";
 
 import { Carousel as CarouselImplementation } from "react-responsive-carousel";
 
+import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 
 export const InternalCarousel = ({ data }) => {
@@ -68,9 +69,7 @@ const renderBody = ({ header, paragraph, website, technologies }) => {
       <div className="mt-2 flex justify-between text-left font-semibold text-sswRed prose-p:py-0">
         <h4>{header}</h4>
         <span className={website ? "" : "hidden"}>
-          <a href={website} target="_blank" rel="noopener noreferrer">
-            Visit Website
-          </a>
+          <CustomLink href={website}>Visit Website</CustomLink>
         </span>
       </div>
       <div className="text-left prose-p:py-2">
