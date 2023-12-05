@@ -201,11 +201,9 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
         <div className="mb-4 grid grid-cols-1 gap-x-8 md:grid-cols-2">
           <div className="text-center md:text-start">
             <p>Download the SSW Rewards app</p>
-            <a
+            <CustomLink
               className="mr-2 inline-block"
               href={layoutData.apps.sswRewards.link.appStore}
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <Image
                 id="appStoreBadge"
@@ -226,7 +224,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                   alt="SSW Reward App QR Code"
                 />
               </Tooltip>
-            </a>
+            </CustomLink>
             <CustomLink
               className="inline-block"
               href={layoutData.apps.sswRewards.link.googlePlay}
@@ -256,13 +254,12 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
             <p>How did we do?</p>
             <div className="flex">
               {/* TODO: Update link after the page is implemented */}
-              <a
+              <CustomLink
                 href="https://www.ssw.com.au/ssw/NETUG/EvaluationSurvey.aspx"
-                target="_blank"
                 className="mr-2 flex h-11 w-full items-center justify-center rounded-md bg-sswRed text-white !no-underline hover:!text-gray-125 md:w-72"
               >
                 Take the Survey
-              </a>
+              </CustomLink>
             </div>
           </div>
         </div>
