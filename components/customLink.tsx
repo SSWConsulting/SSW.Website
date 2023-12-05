@@ -43,7 +43,6 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
   };
 
   useEffect(() => {
-    console.log(href, " - ", isExternalLink());
     setIsExternal(isExternalLink());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [href]);
