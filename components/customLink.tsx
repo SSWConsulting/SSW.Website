@@ -22,8 +22,6 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
 }) => {
   const [isExternal, setIsExternal] = useState(false);
 
-  // const href = "https://ssw.com.au";
-
   const isExternalLink = (): boolean => {
     // i.e. href = https://anydomain.com.au => true | href = https://ssw.com.au/rule/* => true for SSW External Site | href = /company => false for relative path
     return (
@@ -51,7 +49,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
           className={className}
           href={href}
           target={target || "_blank"}
-          rel="noopener noreferrer"
+          rel="noopener noreferrer nofollow"
           key={key || null}
         >
           {children}
