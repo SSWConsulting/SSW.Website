@@ -37,7 +37,7 @@ export const Badge = (props: BadgeProps) => {
         rotate: `${rotate ?? 0}deg`,
         ...cssProperties,
       }}
-      href={url}
+      href={url ?? ""}
     >
       {imgURL && (
         <Image
