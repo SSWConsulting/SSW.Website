@@ -406,9 +406,7 @@ const Map = ({
                     }
                     x={state.label.x}
                     y={state.label.y}
-                    className={classNames(
-                      "cursor-pointer fill-white text-xxxs"
-                    )}
+                    className={classNames("cursor-pointer fill-white text-xxs")}
                     onClick={() => setSelectedOffice(primaryOffice)}
                     onMouseOver={() => {
                       setOfficeBeingHovered(primaryOffice);
