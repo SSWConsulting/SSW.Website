@@ -16,10 +16,10 @@ var tags = {
 ])
 param skuName string
 
-var unique = substring(uniqueString(resourceGroup().id), 0, 8)
+var unique = substring(uniqueString(resourceGroup().id), 0, 12)
 
 resource blobStorage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
-  name: 'blobsswwebsite${unique}'
+  name: 'stsswwebsite${unique}'
   location: location
   tags: tags
   sku: {
