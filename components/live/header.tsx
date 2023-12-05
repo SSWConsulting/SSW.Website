@@ -3,11 +3,12 @@ import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { Container } from "../util/container";
 
 type LiveHeaderprops = {
-  title: TinaMarkdownContent;
+  title: string;
+  subtitle: TinaMarkdownContent;
 };
 
 export const LiveHeader = (props: LiveHeaderprops) => {
-  const { title } = props;
+  const { title, subtitle } = props;
   return (
     <section
       className={classNames(
@@ -26,8 +27,10 @@ export const LiveHeader = (props: LiveHeaderprops) => {
               "flex flex-row items-center max-md:justify-center"
             )}
           ></div>
+          <h1>{title}</h1>
           <div className="mb-2 pb-1 pt-3 text-5xl child-h1:text-5xl child-h1:font-semibold child-p:text-xl descendant-strong:font-semibold descendant-strong:text-sswRed">
-            {<TinaMarkdown content={title} />}
+            {/* {title} */}
+            {<TinaMarkdown content={subtitle} />}
           </div>
           <div
             className={classNames(

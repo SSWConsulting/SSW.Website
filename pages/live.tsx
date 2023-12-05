@@ -34,7 +34,7 @@ export default function LivePage(
   return (
     <Layout menu={data.megamenu}>
       <SEO seo={data.live.seo} />
-      <LiveHeader title={data.live.title} />
+      <LiveHeader title={data.live.title} subtitle={data.live.subtitle} />
       <Section className="mx-auto w-full max-w-9xl px-8 py-5">
         <Breadcrumbs
           path={removeExtension(props.variables.relativePath)}
