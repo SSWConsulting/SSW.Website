@@ -107,7 +107,7 @@ const OfficeLayout = ({ office }) => {
       <h4>
         <CustomLink
           data-tina-field={tinaField(office, "directionsUrl")}
-          href={office.directionsUrl}
+          href={office.directionsUrl ?? ""}
         >
           <Image
             src="/images/icons/map-pin.svg"
