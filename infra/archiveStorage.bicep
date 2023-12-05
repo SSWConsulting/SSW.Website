@@ -25,6 +25,9 @@ resource blobStorage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   sku: {
     name: skuName
   }
+  identity: {
+    type: 'SystemAssigned'
+  }
   kind: 'BlobStorage'
   properties: {
     allowBlobPublicAccess: true
@@ -86,8 +89,19 @@ resource webContainer 'Microsoft.Storage/storageAccounts/blobServices/containers
 }
 
 resource managedIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' = {
-  name: 'blob-archive-static-site-script'
+  name: 'id-sswwebsite-blob-archive'
   location: location
+}
+
+resource roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
+  scope: blobStorage
+  name: guid(blobStorage.id, managedIdentity.id)
+  properties: {
+    // Storage Account Contributor
+    roleDefinitionId: '17d1049b-9a84-46fb-8f53-869881c3d3ab'
+    principalId: blobStorage.identity.principalId
+    principalType: 'ServicePrincipal'
+  }
 }
 
 
@@ -101,6 +115,10 @@ resource enableStaticSite 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
       '${managedIdentity.id}': {}
     }
   }
+  dependsOn: [
+    blobServices
+    webContainer
+  ]
   properties: {
     azPowerShellVersion: '3.0'
     scriptContent: loadTextContent('./scripts/enable-static-site.ps1')
