@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { PropsWithChildren, useEffect, useState } from "react";
+import React, { PropsWithChildren } from "react";
 
 interface CustomLinkProps extends PropsWithChildren {
   href: string;
@@ -17,6 +17,20 @@ const externalSSWSitePatterns = [
   "https://www.ssw.com.au/rules/*",
   "https://www.ssw.com.au/ssw/*",
 ];
+
+const isExternalLink = (href: string): boolean => {
+  // i.e. href = https://anydomain.com.au => true | href = https://ssw.com.au/rule/* => true for SSW External Site | href = /company => false for relative path
+  return (
+    isExternalSSWSite(href) ||
+    (href.startsWith("https://") && !href.includes("ssw.com.au")) // checking relative path and external domains i.e. /company
+  );
+};
+
+const isExternalSSWSite = (href: string): boolean => {
+  return externalSSWSitePatterns.some((pattern) =>
+    new RegExp(`^${pattern}`).test(href)
+  );
+};
 export const CustomLink: React.FC<CustomLinkProps> = ({
   href,
   target,
@@ -26,26 +40,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
   style,
   ...props
 }) => {
-  const [isExternal, setIsExternal] = useState(false);
-
-  const isExternalLink = (): boolean => {
-    // i.e. href = https://anydomain.com.au => true | href = https://ssw.com.au/rule/* => true for SSW External Site | href = /company => false for relative path
-    return (
-      isExternalSSWSite() ||
-      (href.startsWith("https://") && !href.includes("ssw.com.au")) // checking relative path and external domains i.e. /company
-    );
-  };
-
-  const isExternalSSWSite = (): boolean => {
-    return externalSSWSitePatterns.some((pattern) =>
-      new RegExp(`^${pattern}`).test(href)
-    );
-  };
-
-  useEffect(() => {
-    setIsExternal(isExternalLink());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [href]);
+  const isExternal = isExternalLink(href);
 
   return (
     <>
