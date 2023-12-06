@@ -56,8 +56,8 @@ module appInsight 'appInsight.bicep' = {
   name: 'appInsight-${now}'
   params: {
     projectName: projectName
-    location:location
-    tags:value
+    location: location
+    tags: value
   }
 }
 
@@ -84,6 +84,14 @@ module kVServicePrincipalRoleAssignment 'keyVaultRoleAssignment.bicep' = {
     keyVaultName: keyVault.outputs.keyVaultName
     principalId: servicePrincipalObjectId
     roleName: 'Key Vault Secrets User'
+  }
+}
+
+module websiteArchive 'archiveStorage.bicep' = {
+  name: 'websiteArchive-${now}'
+  params: {
+    location: location
+    skuName: 'Standard_LRS'
   }
 }
 
