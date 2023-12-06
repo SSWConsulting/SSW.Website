@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import Image from "next/image";
-import Link from "next/link";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
+import { CustomLink } from "../customLink";
 
 export type JoinGithubProps = {
   data?: {
@@ -33,14 +33,13 @@ export const JoinGithub = ({ data, className }: JoinGithubProps) => {
       >
         {data?.title}
       </div>
-      <Link
+      <CustomLink
         href={data?.link ?? "/"}
-        target="_blank"
         data-tina-field={tinaField(data, "link")}
         className="unstyled h-12 w-max rounded-md bg-sswRed px-4 py-2 text-base text-white"
       >
         Join the crowd
-      </Link>
+      </CustomLink>
     </div>
   );
 };

@@ -1,6 +1,5 @@
 "use client";
 import classNames from "classnames";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 import { IconType } from "react-icons";
@@ -18,6 +17,7 @@ import {
 
 import { FaXTwitter } from "react-icons/fa6";
 import layoutData from "../../content/global/index.json";
+import { CustomLink } from "../customLink";
 
 export enum SocialTypes {
   phone = "phone",
@@ -147,7 +147,7 @@ export const SocialIcons = (data?: SocialIconsParams) => {
             : social.linkText;
 
         return (
-          <Link
+          <CustomLink
             key={social.type}
             href={URL}
             className={classNames(
@@ -160,9 +160,6 @@ export const SocialIcons = (data?: SocialIconsParams) => {
               { "flex-grow sm:flex-grow-0": growOnMobile }
             )}
             title={social.title}
-            target={social.openInSameWindow ? "_self" : "_blank"}
-            rel="noreferrer nofollow"
-            prefetch={false}
           >
             <styling.icon
               className={classNames({ "text-2xl": !TEXT })}
@@ -173,7 +170,7 @@ export const SocialIcons = (data?: SocialIconsParams) => {
                 {TEXT}
               </span>
             )}
-          </Link>
+          </CustomLink>
         );
       })}
     </div>

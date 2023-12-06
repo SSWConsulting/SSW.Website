@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { CustomLink } from "../customLink";
 
 export const PageCard = ({ page }) => {
   return (
@@ -18,11 +18,11 @@ export const PageCard = ({ page }) => {
         </div>
         <div className="min-w-0 flex-1">
           {page.url && (
-            <Link href={page.url} className="unstyled" target="_blank">
+            <CustomLink href={page.url} className="unstyled">
               <span className="absolute inset-0" aria-hidden="true" />
               <h3 className="mb-2 mt-0 text-lg text-sswRed">{page.name}</h3>
               <p className="text-sm text-black">{page.description}</p>
-            </Link>
+            </CustomLink>
           )}
         </div>
       </div>

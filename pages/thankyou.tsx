@@ -1,7 +1,7 @@
 import { InferGetStaticPropsType } from "next";
-import Link from "next/link";
 import { FaGlobe, FaUsers } from "react-icons/fa";
 import client from "../.tina/__generated__/client";
+import { CustomLink } from "../components/customLink";
 import { Layout } from "../components/layout";
 import { Container } from "../components/util/container";
 
@@ -33,19 +33,19 @@ const ThankyouPage = (
               <p className={textContentClass}>
                 SSW can help your business in many ways:
               </p>
-              <Link href="/" className={doneButtonClass}>
+              <CustomLink href="/" className={doneButtonClass}>
                 <FaGlobe className="m-icon" />
                 SSW Consulting
-              </Link>
+              </CustomLink>
             </div>
             <div>
               <p className={textContentClass}>
                 Want to know more about our consultants:
               </p>{" "}
-              <Link href="/people/" className={doneButtonClass}>
+              <CustomLink href="/people/" className={doneButtonClass}>
                 <FaUsers className="m-icon" />
                 SSW People
-              </Link>
+              </CustomLink>
             </div>
           </div>
         </Container>

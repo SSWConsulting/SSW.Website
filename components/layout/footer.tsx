@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import Link from "next/link";
+import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
 
@@ -38,15 +38,13 @@ const CopyrightInfo = () => {
         &copy; 1990-{new Date().getFullYear()} SSW. All rights reserved.
       </div>
       <div>
-        <Link href={chooseIssueURL} target="_blank">
-          FEEDBACK TO SSW
-        </Link>
+        <CustomLink href={chooseIssueURL}>FEEDBACK TO SSW</CustomLink>
         <Divider />
-        <Link href="https://www.ssw.com.au/terms-and-conditions">
+        <CustomLink href="/terms-and-conditions">
           TERMS AND CONDITIONS
-        </Link>
+        </CustomLink>
         <Divider />
-        <Link href="https://www.ssw.com.au/privacy">PRIVACY</Link>
+        <CustomLink href="/privacy">PRIVACY</CustomLink>
       </div>
     </>
   );
@@ -72,12 +70,9 @@ const DeploymentInfo = () => {
   return (
     <div className="text-center sm:text-left">
       This website is under{" "}
-      <Link
-        href="https://www.ssw.com.au/rules/rules-to-better-websites-deployment"
-        prefetch={false}
-      >
+      <CustomLink href="https://www.ssw.com.au/rules/rules-to-better-websites-deployment">
         CONSTANT CONTINUOUS DEPLOYMENT
-      </Link>
+      </CustomLink>
       .&nbsp;
       <DynamicDeploymentLink {...deploymentLinkInfo} />
     </div>
@@ -86,18 +81,16 @@ const DeploymentInfo = () => {
 
 const SiteInfo = () => (
   <div>
-    <Link
+    <CustomLink
       // TODO: Implementation
       href="https://www.ssw.com.au/ssw/MenuMap.aspx"
-      prefetch={false}
     >
       SITEMAP
-    </Link>
+    </CustomLink>
     <Divider />
-    <Link
+    <CustomLink
       // TODO: Implementation
       href="https://www.ssw.com.au/ssw/HealthCheck"
-      prefetch={false}
     >
       HEALTH CHECK
       <Image
@@ -107,6 +100,6 @@ const SiteInfo = () => (
         width={40}
         className="inline-block pb-1 pl-2"
       />
-    </Link>
+    </CustomLink>
   </div>
 );

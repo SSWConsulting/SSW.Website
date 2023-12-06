@@ -1,4 +1,5 @@
 import Script from "next/script";
+import { CustomLink } from "../customLink";
 
 type FacebookPageEmbedProps = {
   className?: string;
@@ -39,7 +40,7 @@ export const FacebookPageEmbed = ({
           data-show-facepile="true"
         >
           <blockquote cite={pageUrl} className="fb-xfbml-parse-ignore">
-            <a href={pageUrl}>SSW</a>
+            <CustomLink href={pageUrl}>SSW</CustomLink>
           </blockquote>
         </div>
       </div>

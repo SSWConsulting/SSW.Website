@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Template } from "tinacms";
+import { CustomLink } from "../customLink";
 
 export const CustomImage = ({ data }) => {
   return (
@@ -17,11 +18,7 @@ export const CustomImage = ({ data }) => {
 
 export const LinkWrapper = ({ link, children }) => {
   if (link) {
-    return (
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        {children}
-      </a>
-    );
+    return <CustomLink href={link}>{children}</CustomLink>;
   }
   return <>{children}</>;
 };

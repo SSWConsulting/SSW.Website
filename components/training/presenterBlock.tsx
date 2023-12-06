@@ -3,6 +3,7 @@ import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { presenterSchemaConstants } from "../../.tina/collections/presenter";
+import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 
 export const PresenterBlock = ({ data }) => {
@@ -35,14 +36,12 @@ export const PresenterBlock = ({ data }) => {
                 presenterBlockConstant.otherEvent.title
               )}
             >
-              <a
+              <CustomLink
                 href={data.otherEvent.eventURL}
                 className="inline-flex cursor-pointer text-xl font-normal"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 <span className="p-2">{data.otherEvent.title}</span>
-              </a>
+              </CustomLink>
             </span>
           </div>
         </div>
@@ -75,18 +74,16 @@ const PresenterCard = ({ presenter, schema, index }) => {
           />
         </span>
       </div>
-      <a
+      <CustomLink
         href={presenter?.presenter?.peopleProfileURL}
         className="mt-4 font-normal"
-        target="_blank"
-        rel="noopener noreferrer"
         data-tina-field={tinaField(
           schema[index].presenter?.presenter,
           presenterSchemaConstants.presenter.name
         )}
       >
         {presenter?.presenter?.name}
-      </a>
+      </CustomLink>
       <div
         className="mt-2 text-sm text-ssw-black"
         data-tina-field={tinaField(

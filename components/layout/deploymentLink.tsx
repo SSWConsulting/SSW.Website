@@ -1,15 +1,15 @@
-import Link from "next/link";
+import { CustomLink } from "../customLink";
 
 const DeploymentLink = ({ deploymentDate, repo, runId, deploymentNumber }) => {
   return (
     <span>
       Last deployed {deploymentDate} (Build #{" "}
-      <Link
+      <CustomLink
         href={`https://github.com/${repo}/actions/runs/${runId}`}
         target="_blank"
       >
         {deploymentNumber}
-      </Link>
+      </CustomLink>
       )
     </span>
   );

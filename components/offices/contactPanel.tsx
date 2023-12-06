@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { tinaField } from "tinacms/dist/react";
+import { CustomLink } from "../customLink";
 
 type ContactPanelProps = {
   office: {
@@ -65,16 +65,16 @@ const ContactPanel = ({ office }: ContactPanelProps) => {
         {office.chapelLink && (
           <span data-tina-field={tinaField(office, "chapelLink")}>
             {"Learn more on "}
-            <Link href={office.chapelLink}>SSW Chapel</Link>
+            <CustomLink href={office.chapelLink}>SSW Chapel</CustomLink>
           </span>
         )}
 
         {!!office.sidebarSecondaryPlace && (
           <>
             {" and "}
-            <Link href={office.sidebarSecondaryPlace.url}>
+            <CustomLink href={office.sidebarSecondaryPlace.url}>
               {office.sidebarSecondaryPlace.name}
-            </Link>
+            </CustomLink>
           </>
         )}
       </p>

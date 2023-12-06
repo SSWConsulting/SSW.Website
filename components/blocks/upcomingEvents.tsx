@@ -1,12 +1,12 @@
 import axios from "axios";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 
 import { formatEventDate, formatRelativeEventDate } from "../../helpers/dates";
 import { EventInfo } from "../../services/server/events";
+import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
 
 export const UpcomingEvents = ({ data }) => {
@@ -58,12 +58,12 @@ export const UpcomingEvents = ({ data }) => {
           )}
         </div>
         <div className="mt-3 flex flex-row-reverse justify-center sm:justify-start">
-          <Link
+          <CustomLink
             href="/events?tech=all&type=all"
             className="unstyled rounded bg-sswRed px-3 py-2 text-xs font-normal text-white hover:bg-sswDarkRed"
           >
             See more events
-          </Link>
+          </CustomLink>
         </div>
       </div>
     </div>
@@ -82,15 +82,10 @@ const isValidImagePath = (imageSrc) => {
 };
 
 const UpcomingEvent = ({ event }: UpcomingEventProps) => {
-  const isExternalLink =
-    !event.Url.Url.includes("ssw.com.au") ||
-    event.Url.Url.includes("/ssw/redirect");
-
   return (
-    <a
+    <CustomLink
       href={event.Url.Url}
       className="unstyled no-underline"
-      target={isExternalLink ? "_blank" : "_self"}
       key={event.id}
     >
       <article className="my-2.5 grid grid-cols-4 rounded border-1 border-gray-300 bg-white p-2 shadow hover:border-ssw-black dark:border-gray-700 dark:bg-gray-800">
@@ -121,7 +116,7 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
           </div>
         )}
       </article>
-    </a>
+    </CustomLink>
   );
 };
 

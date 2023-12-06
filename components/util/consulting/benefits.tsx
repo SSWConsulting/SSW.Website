@@ -2,6 +2,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { CustomLink } from "../../customLink";
 
 const BenefitCard = (props) => {
   const { image, title, description, linkURL, linkName } = props.data;
@@ -43,13 +44,13 @@ const BenefitCard = (props) => {
         </section>
         {linkURL && (
           <p className="pt-4 text-center md:text-left">
-            <a
+            <CustomLink
               data-tina-field={tinaField(props.data, "linkName")}
               className="text-left text-white"
               href={linkURL}
             >
               {linkName}
-            </a>
+            </CustomLink>
           </p>
         )}
       </article>
@@ -86,13 +87,13 @@ export const Benefits = ({ data }) => {
               data-tina-field={tinaField(data, `rule[${index}]`)}
             >
               {index === 0 ? "Have a look at " : " and "}
-              <a
+              <CustomLink
                 key={index}
                 className="text-white no-underline "
                 href={aRule?.url}
               >
                 {aRule?.name}
-              </a>
+              </CustomLink>
             </span>
           ))}
         </p>

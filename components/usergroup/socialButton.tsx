@@ -1,6 +1,7 @@
-import { SiFacebook, SiLinkedin, SiMeetup, SiGithub } from "react-icons/si";
 import classNames from "classnames";
 import * as React from "react";
+import { SiFacebook, SiGithub, SiLinkedin, SiMeetup } from "react-icons/si";
+import { CustomLink } from "../customLink";
 
 export const platformList = [
   "facebook",
@@ -49,7 +50,7 @@ export const SocialButton = ({
   "data-tina-field": tinaField,
 }: SocialButtonProps) => {
   return (
-    <a
+    <CustomLink
       href={url}
       className={classNames("flex items-center !no-underline", className)}
       data-tina-field={tinaField}
@@ -61,6 +62,6 @@ export const SocialButton = ({
         <span className="m-4 ml-8">{platforms[platform]?.icon()}</span>
         <span className="text-base font-bold text-white">{label}</span>
       </div>
-    </a>
+    </CustomLink>
   );
 };

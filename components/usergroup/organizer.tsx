@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { Template } from "tinacms";
-import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { tinaField } from "tinacms/dist/react";
+import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { CustomLink } from "../customLink";
 import { ReadMore } from "./readMore";
 
 export type OrganizerType = {
@@ -36,7 +36,7 @@ export const Organizer = ({
           />
         </div>
         <div className="font-sans">
-          <Link
+          <CustomLink
             data-tina-field={tinaField(data, "profileLink")}
             className="cursor-pointer text-2xl underline"
             href={data?.profileLink ?? "/"}
@@ -44,7 +44,7 @@ export const Organizer = ({
             <span data-tina-field={tinaField(data, "name")}>
               {data?.name ?? ""}
             </span>
-          </Link>
+          </CustomLink>
           <div
             data-tina-field={tinaField(data, "position")}
             className="text-sm text-gray-500"
