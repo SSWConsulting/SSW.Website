@@ -29,11 +29,12 @@ export const LiveHeader = (props: LiveHeaderprops) => {
             )}
           ></div>
           <h1
+            className="text-5xl font-semibold"
             dangerouslySetInnerHTML={{
               __html: sanitiseXSS(title, spanWhitelist) || "",
             }}
           ></h1>
-          <div className="mb-2 pb-1 pt-3 text-5xl child-h1:text-5xl child-h1:font-semibold child-p:text-xl descendant-strong:font-semibold descendant-strong:text-sswRed">
+          <div className="mb-2 pb-1 pt-3 child-h1:text-5xl child-h1:font-semibold child-p:text-xl">
             {<TinaMarkdown content={subtitle} />}
           </div>
           <div
