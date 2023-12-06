@@ -41,6 +41,8 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
   ...props
 }) => {
   const isExternal = isExternalLink(href);
+  const rel =
+    isExternal && !href.includes("ssw") ? "noopener noreferrer nofollow" : "";
 
   return (
     <>
@@ -49,7 +51,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
           className={className}
           href={href}
           target={target || "_blank"}
-          rel="noopener noreferrer nofollow"
+          rel={rel}
           title={title}
           style={style}
           {...props}
