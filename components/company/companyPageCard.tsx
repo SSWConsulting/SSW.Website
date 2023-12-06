@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { companyIndexSchemaConstants } from "../../.tina/collections/company";
+import { CustomLink } from "../customLink";
 
 export type CompanyIndexProps = {
   title: string;
@@ -14,23 +14,31 @@ const CompanyPageCard = ({ data, schema, index }) => {
   const { title, pageURL, body, isExternal }: CompanyIndexProps = data;
 
   return isExternal ? (
-    <a href={pageURL ?? ""} className="unstyled no-underline" key={pageURL}>
+    <CustomLink
+      href={pageURL ?? ""}
+      className="unstyled no-underline"
+      key={pageURL}
+    >
       <CompanyPageCardContent
         title={title}
         body={body}
         schema={schema}
         index={index}
       />
-    </a>
+    </CustomLink>
   ) : (
-    <Link href={pageURL ?? ""} className="unstyled no-underline" key={pageURL}>
+    <CustomLink
+      href={pageURL ?? ""}
+      className="unstyled no-underline"
+      key={pageURL}
+    >
       <CompanyPageCardContent
         title={title}
         body={body}
         schema={schema}
         index={index}
       />
-    </Link>
+    </CustomLink>
   );
 };
 

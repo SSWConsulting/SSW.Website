@@ -4,6 +4,7 @@ import { MdLocationOn } from "react-icons/md";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { locationSchemaConstants } from "../../.tina/collections/location";
+import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 
 const NumberOfLocationInRow = 4;
@@ -28,11 +29,9 @@ export const LocationBlock = ({ data }) => {
         ))}
       </div>{" "}
       <div className="prose max-w-none py-4 text-center uppercase">
-        <a
+        <CustomLink
           href={!data.chapelWebsite?.URL ? "" : data.chapelWebsite.URL}
           className="inline-flex cursor-pointer items-center font-normal"
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <FaGlobe className="m-icon" />
           <span
@@ -43,7 +42,7 @@ export const LocationBlock = ({ data }) => {
           >
             {data.chapelWebsite?.title}
           </span>
-        </a>
+        </CustomLink>
       </div>
     </Container>
   );
@@ -101,11 +100,9 @@ const LocationCard = ({ location, index, schema }) => {
         </div>
 
         <div className="prose py-1 text-xs">
-          <a
+          <CustomLink
             href={!location?.directionURL ? "" : location.directionURL}
             className="inline-flex cursor-pointer items-center font-normal"
-            target="_blank"
-            rel="noopener noreferrer"
             data-tina-field={tinaField(
               schema.locationList[index].location,
               locationSchemaConstants.directionURL
@@ -113,7 +110,7 @@ const LocationCard = ({ location, index, schema }) => {
           >
             <FaLocationArrow className="m-icon" />
             Directions
-          </a>
+          </CustomLink>
         </div>
       </div>
     </div>

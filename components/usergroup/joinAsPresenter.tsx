@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
+import { CustomLink } from "../customLink";
 
 const Avatar = ({ img }) => {
   return (
@@ -53,14 +53,13 @@ export const JoinAsPresenter = ({ data }: JoinAsPresenterProps) => {
       </div>
       <div className="text-center max-lg:pt-4">
         <div className="text-xl leading-7">Join us as a Presenter</div>
-        <Link
+        <CustomLink
           href={data?.link ?? "/"}
-          target="_blank"
           data-tina-field={tinaField(data, "link")}
           className="unstyled mx-auto mt-6 block h-10 w-max rounded-md bg-sswRed px-4 py-2 text-base leading-6 text-white"
         >
           Learn more
-        </Link>
+        </CustomLink>
       </div>
     </div>
   );

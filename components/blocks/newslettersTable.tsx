@@ -3,6 +3,7 @@ import { FaSpinner } from "react-icons/fa";
 import type { Template } from "tinacms";
 import client from "../../.tina/__generated__/client";
 import { transformIntToMonth } from "../../services/client/date.service";
+import { CustomLink } from "../customLink";
 
 type NewsletterYearsType = {
   newsletters?: NewsletterType[];
@@ -94,13 +95,9 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
         {newsletters.map(({ file, month, description }) => (
           <tr key={file} className="mx-4 bg-gray-50">
             <td className="rounded-l px-3 py-1">
-              <a
-                href={removeTinaFromUrl(file)}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <CustomLink href={removeTinaFromUrl(file)}>
                 {transformIntToMonth(month)}
-              </a>
+              </CustomLink>
             </td>
             <td>
               <div className="h-3 w-px bg-gray-300"></div>

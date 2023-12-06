@@ -11,6 +11,7 @@ import { getYouTubeId } from "../../helpers/embeds";
 import { sanitiseXSS } from "../../helpers/validator";
 import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 import { SpeakerInfo } from "../../services/server/events";
+import { CustomLink } from "../customLink";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
 import { SubNewsLettersForm } from "../subNewsletter/subNewsletterForm";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
@@ -188,25 +189,21 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
             <iframe width="100%" height="100%" src={youtubeUrls.chatUrl} />
           </div>
           <div className="col-span-3 block sm:hidden">
-            <a
+            <CustomLink
               href={youtubeUrls.liveStreamUrl}
               className="flex h-12 items-center justify-center bg-sswRed text-white"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Chat with us on Youtube
-            </a>
+            </CustomLink>
           </div>
         </div>
 
         <div className="mb-4 grid grid-cols-1 gap-x-8 md:grid-cols-2">
           <div className="text-center md:text-start">
             <p>Download the SSW Rewards app</p>
-            <a
+            <CustomLink
               className="mr-2 inline-block"
               href={layoutData.apps.sswRewards.link.appStore}
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <Image
                 id="appStoreBadge"
@@ -227,12 +224,10 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                   alt="SSW Reward App QR Code"
                 />
               </Tooltip>
-            </a>
-            <a
+            </CustomLink>
+            <CustomLink
               className="inline-block"
               href={layoutData.apps.sswRewards.link.googlePlay}
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <Image
                 id="googlePlayBadge"
@@ -253,19 +248,18 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                   alt="SSW Reward App QR Code"
                 />
               </Tooltip>
-            </a>
+            </CustomLink>
           </div>
           <div className="text-center md:text-start">
             <p>How did we do?</p>
             <div className="flex">
               {/* TODO: Update link after the page is implemented */}
-              <a
+              <CustomLink
                 href="https://www.ssw.com.au/ssw/NETUG/EvaluationSurvey.aspx"
-                target="_blank"
                 className="mr-2 flex h-11 w-full items-center justify-center rounded-md bg-sswRed text-white !no-underline hover:!text-gray-125 md:w-72"
               >
                 Take the Survey
-              </a>
+              </CustomLink>
             </div>
           </div>
         </div>
@@ -353,14 +347,12 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                       }}
                     />
                     {!!speakerInfo.PresenterProfileLink && (
-                      <a
+                      <CustomLink
                         className="float-right border-b-1 border-dotted border-gray-450 !no-underline"
                         href={speakerInfo.PresenterProfileLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
                       >
                         {`${speakerInfo.Title}'s profile&gt;`}
-                      </a>
+                      </CustomLink>
                     )}
                   </div>
                 </div>

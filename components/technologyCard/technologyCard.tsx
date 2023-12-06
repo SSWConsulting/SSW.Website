@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import { FC } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { CustomLink } from "../customLink";
 import { TechnologyCardProps } from "./technologyCardTypes";
 
 const TechnologyCard: FC<TechnologyCardProps> = (props) => {
@@ -35,13 +35,13 @@ const TechnologyCard: FC<TechnologyCardProps> = (props) => {
         <TinaMarkdown content={body} />
       </div>
       {readMoreSlug && (
-        <Link
+        <CustomLink
           className="text-base"
           href={readMoreSlug}
           data-tina-field={tinaField(props, "readMoreSlug")}
         >
           Read More
-        </Link>
+        </CustomLink>
       )}
     </article>
   );

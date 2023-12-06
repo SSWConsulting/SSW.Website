@@ -1,6 +1,7 @@
 import cs from "classnames";
 import Image from "next/image";
 import { Layout } from ".";
+import { CustomLink } from "../../customLink";
 
 export interface BadgeType {
   name?: string;
@@ -21,7 +22,7 @@ export const Badge = (props: BadgeProps) => {
   const cssProperties = { "--animate-duration": `${duration ?? 3000}ms` };
 
   return (
-    <a
+    <CustomLink
       aria-label={`Latest Tech ${name}`}
       className={cs(
         "absolute flex cursor-pointer items-center justify-center rounded-full bg-white",
@@ -36,7 +37,7 @@ export const Badge = (props: BadgeProps) => {
         rotate: `${rotate ?? 0}deg`,
         ...cssProperties,
       }}
-      href={url}
+      href={url ?? ""}
     >
       {imgURL && (
         <Image
@@ -49,6 +50,6 @@ export const Badge = (props: BadgeProps) => {
           src={imgURL}
         />
       )}
-    </a>
+    </CustomLink>
   );
 };

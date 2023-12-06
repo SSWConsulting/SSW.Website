@@ -1,11 +1,11 @@
 import { InferGetStaticPropsType } from "next";
-import Link from "next/link";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../.tina/__generated__/client";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { BuiltOnAzure } from "../components/blocks/builtOnAzure";
 import { UtilityButton } from "../components/button/utilityButton";
+import { CustomLink } from "../components/customLink";
 import { Layout } from "../components/layout";
 import { LiveHeader } from "../components/live/header";
 import { Container } from "../components/util/container";
@@ -60,12 +60,9 @@ export default function LivePage(
             <>
               <div className="pb-3 text-lg">
                 With{" "}
-                <Link
-                  href={props.speaker?.PresenterProfileLink}
-                  target="_blank"
-                >
+                <CustomLink href={props.speaker?.PresenterProfileLink}>
                   {props.speaker?.Title}
-                </Link>
+                </CustomLink>
               </div>
               <br />
             </>

@@ -4,6 +4,7 @@ import { FC } from "react";
 import { MdLocationOn } from "react-icons/md";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
+import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { EventBookingType, EventModel } from "./eventBookingType";
 
@@ -113,17 +114,15 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
                 eventBookingBlock.eventList.bookingURL
               )}
             >
-              <a
+              <CustomLink
                 href={event.bookingURL == null ? "" : event.bookingURL}
                 className="done inline-flex cursor-pointer"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 {EventModel.BOOKING_BTN_TEXT}
-              </a>
+              </CustomLink>
 
               <div className="prose py-1 pr-0 text-xs">
-                <a
+                <CustomLink
                   className="flex items-center justify-end font-normal md:justify-start"
                   href="#location"
                 >
@@ -131,7 +130,7 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
                   <span className="capitalize">
                     {EventModel.SSW} {event.city?.split(" ")[0]}
                   </span>
-                </a>
+                </CustomLink>
               </div>
             </div>
           </div>

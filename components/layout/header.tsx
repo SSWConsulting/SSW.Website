@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
+import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { SocialIcons, SocialTypes } from "../util/socialIcons";
 
@@ -42,9 +42,8 @@ const Logo = () => {
 
   return (
     <div className="flex items-center justify-center">
-      <Link
+      <CustomLink
         href="/"
-        passHref
         className="flex items-center gap-1 whitespace-nowrap"
       >
         <Image
@@ -54,7 +53,7 @@ const Logo = () => {
           width={150}
           priority
         />
-      </Link>
+      </CustomLink>
       <div className="ml-4 hidden w-24 text-sm font-semibold uppercase leading-4 text-gray-700 md:block">
         Enterprise Software Development
       </div>

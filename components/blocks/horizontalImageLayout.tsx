@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Key } from "react";
+import { CustomLink } from "../customLink";
 
 export const HorizontalImageLayout = ({ images }) => {
   const RawImage = (props) => (
@@ -16,9 +17,9 @@ export const HorizontalImageLayout = ({ images }) => {
       {images.map(({ imageLink, message, ...props }, index: Key) => (
         <div key={index} className="relative col-span-4">
           {imageLink ? (
-            <a href={imageLink} target="_blank" rel="noopener noreferrer">
+            <CustomLink href={imageLink}>
               <RawImage {...props} />
-            </a>
+            </CustomLink>
           ) : (
             <RawImage {...props} />
           )}

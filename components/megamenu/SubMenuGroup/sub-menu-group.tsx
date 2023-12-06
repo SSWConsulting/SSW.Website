@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
 import {
@@ -105,7 +104,7 @@ const LinkItem: React.FC<{ link: NavMenuColumnGroupItem }> = ({
   const close = useContext(ClosePopoverContext);
 
   return (
-    <Link
+    <a
       href={url || ""}
       className={twMerge(
         "flex items-start gap-x-3 rounded-md bg-white hover:bg-gray-100 focus:outline-none unstyled",
@@ -137,7 +136,7 @@ const LinkItem: React.FC<{ link: NavMenuColumnGroupItem }> = ({
           )}
         </span>
       </div>
-    </Link>
+    </a>
   );
 };
 
@@ -150,12 +149,12 @@ const ViewAllLink: React.FC<{ href?: string; name?: string }> = ({
   }
   return (
     <div className="flex grow flex-col-reverse items-end self-end pt-4">
-      <Link
+      <a
         href={href}
         className="unstyled rounded-md px-3 py-1 text-sm font-semibold leading-6 text-ssw-red hover:bg-ssw-red hover:text-white"
       >
         {name} &rarr;
-      </Link>
+      </a>
     </div>
   );
 };

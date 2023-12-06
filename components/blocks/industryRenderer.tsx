@@ -1,30 +1,30 @@
-import Link from "next/link";
 import { FaFileDownload } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { Components } from "tinacms/dist/rich-text";
 import { getYouTubeId } from "../../helpers/embeds";
 import { BookingForm } from "../bookingForm/bookingForm";
 import Button from "../button/button";
+import { CustomLink } from "../customLink";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
 import { componentRenderer } from "./mdxComponentRenderer";
 import { SolutionsRow } from "./solutionsRow";
 
 export const DownloadWhitepaperLink = ({ whitepaperFile, children }) => (
-  <Link href={whitepaperFile} passHref legacyBehavior>
-    <a target="_blank">{children}</a>
-  </Link>
+  <CustomLink target={"_blank"} href={whitepaperFile}>
+    {children}
+  </CustomLink>
 );
 
 export const ContactUs = ({ buttonText, link }) => (
   <div className="mb-16 flex justify-center">
-    <a href={link}>
+    <CustomLink href={link}>
       <Button
         ripple
         className="!h-10 !bg-ssw-black bg-arrow-right bg-right bg-no-repeat pl-3 pr-8 text-sm"
       >
         {buttonText}
       </Button>
-    </a>
+    </CustomLink>
   </div>
 );
 

@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import type { Template } from "tinacms";
+import { CustomLink } from "../customLink";
 import Button from "./button";
 
 const sizes = {
@@ -50,13 +51,13 @@ export const UtilityButton = ({
   if (link) {
     return (
       <div>
-        <a
+        <CustomLink
           href={link}
           target={openInNewTab ? "_blank" : ""}
           className="unstyled no-underline"
         >
           {baseComponent}
-        </a>
+        </CustomLink>
       </div>
     );
   }
