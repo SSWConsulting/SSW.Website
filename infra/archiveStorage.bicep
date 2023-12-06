@@ -31,7 +31,7 @@ resource blobStorage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   identity: {
     type: 'SystemAssigned'
   }
-  kind: 'BlobStorage'
+  kind: 'StorageV2'
   properties: {
     allowBlobPublicAccess: true
     publicNetworkAccess: 'Enabled'
@@ -44,12 +44,6 @@ resource blobServices 'Microsoft.Storage/storageAccounts/blobServices@2022-09-01
   name: 'default'
   parent: blobStorage
   properties: {
-    changeFeed: {
-      enabled: false
-    }
-    restorePolicy: {
-      enabled: false
-    }
     containerDeleteRetentionPolicy: {
       enabled: true
       days: 7
@@ -92,7 +86,7 @@ resource webContainer 'Microsoft.Storage/storageAccounts/blobServices/containers
 }
 
 resource managedIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' = {
-  name: 'idBlobArchive'
+  name: 'id-blob-archive'
   location: location
 }
 
@@ -109,7 +103,7 @@ resource roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
 
 
 resource enableStaticSite 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
-  name: 'enableStaticSite-${unique}'
+  name: 'script-enableStaticSite'
   location: location
   kind: 'AzureCLI'
   identity: {
@@ -125,7 +119,7 @@ resource enableStaticSite 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
   ]
   properties: {
     azCliVersion: '2.53.0'
-    scriptContent: 'az storage blob service-properties update --account-name ${blobStorage.name} --static-website --404-document 404.html --index-document index.html'
+    scriptContent: 'az storage blob service-properties update --account-name ${blobStorage.name} --static-website --404-document 404.html --index-document index.html --auth-mode login'
     retentionInterval: 'PT24H'
   }
 }
