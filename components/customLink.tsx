@@ -9,14 +9,8 @@ interface CustomLinkProps extends PropsWithChildren {
   style?: React.CSSProperties;
 }
 
-const externalSSWSitePatterns = [
-  "https://ssw.com.au/people/*",
-  "https://ssw.com.au/rules/*",
-  "https://ssw.com.au/ssw/*",
-  "https://www.ssw.com.au/people/*",
-  "https://www.ssw.com.au/rules/*",
-  "https://www.ssw.com.au/ssw/*",
-];
+const externalSSWSitePatterns =
+  /^(https:\/\/(?:www\.)?ssw\.com\.au\/(?:people|rules|ssw)(?:\/|$))/;
 
 const isExternalLink = (href: string): boolean => {
   // i.e. href = https://anydomain.com.au => true | href = https://ssw.com.au/rule/* => true for SSW External Site | href = /company => false for relative path
@@ -27,10 +21,9 @@ const isExternalLink = (href: string): boolean => {
 };
 
 const isExternalSSWSite = (href: string): boolean => {
-  return externalSSWSitePatterns.some((pattern) =>
-    new RegExp(`^${pattern}`).test(href)
-  );
+  return externalSSWSitePatterns.test(href);
 };
+
 export const CustomLink: React.FC<CustomLinkProps> = ({
   href,
   target,
