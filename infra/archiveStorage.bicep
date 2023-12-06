@@ -18,6 +18,9 @@ param skuName string
 
 var unique = substring(uniqueString(resourceGroup().id), 0, 12)
 
+// Storage Account Contributor
+var roleDefinitionId = '17d1049b-9a84-46fb-8f53-869881c3d3ab'
+
 resource blobStorage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   name: 'stsswwebsite${unique}'
   location: location
@@ -89,26 +92,26 @@ resource webContainer 'Microsoft.Storage/storageAccounts/blobServices/containers
 }
 
 resource managedIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' = {
-  name: 'id-sswwebsite-blob-archive'
+  name: 'idBlobArchive'
   location: location
 }
 
 resource roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
-  scope: blobStorage
-  name: guid(blobStorage.id, managedIdentity.id)
+  name: guid(resourceGroup().id, roleDefinitionId)
+  scope: resourceGroup()
   properties: {
     // Storage Account Contributor
-    roleDefinitionId: '17d1049b-9a84-46fb-8f53-869881c3d3ab'
-    principalId: blobStorage.identity.principalId
+    roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', roleDefinitionId)
+    principalId: managedIdentity.properties.principalId
     principalType: 'ServicePrincipal'
   }
 }
 
 
 resource enableStaticSite 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
-  name: 'enableStaticSite'
+  name: 'enableStaticSite-${unique}'
   location: location
-  kind: 'AzurePowerShell'
+  kind: 'AzureCLI'
   identity: {
     type: 'UserAssigned'
     userAssignedIdentities: {
@@ -117,30 +120,13 @@ resource enableStaticSite 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
   }
   dependsOn: [
     blobServices
+    roleAssignment
     webContainer
   ]
   properties: {
-    azPowerShellVersion: '3.0'
-    scriptContent: loadTextContent('./scripts/enable-static-site.ps1')
+    azCliVersion: '2.53.0'
+    scriptContent: 'az storage blob service-properties update --account-name ${blobStorage.name} --static-website --404-document 404.html --index-document index.html'
     retentionInterval: 'PT24H'
-    environmentVariables: [
-      {
-        name: 'IndexDocumentPath'
-        value: 'index.html'
-      }
-      {
-        name: 'ErrorDocument404Path'
-        value: '404.html'
-      }
-      {
-        name: 'ResourceGroupName'
-        value: resourceGroup().name
-      }
-      {
-        name: 'StorageAccountName'
-        value: blobStorage.name
-      }
-    ]
   }
 }
 
