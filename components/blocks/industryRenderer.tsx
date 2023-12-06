@@ -10,8 +10,8 @@ import { componentRenderer } from "./mdxComponentRenderer";
 import { SolutionsRow } from "./solutionsRow";
 
 export const DownloadWhitepaperLink = ({ whitepaperFile, children }) => (
-  <CustomLink href={whitepaperFile}>
-    <a target="_blank">{children}</a>
+  <CustomLink target={"_blank"} href={whitepaperFile}>
+    {children}
   </CustomLink>
 );
 

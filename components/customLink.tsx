@@ -61,6 +61,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
       ) : (
         <Link
           className={className}
+          target={target}
           href={href}
           title={title}
           {...props}
