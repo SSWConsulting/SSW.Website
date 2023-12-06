@@ -136,21 +136,12 @@ const SmallCards = ({ title, cards, schema }) => {
               bgColor[card.color]
             } hover:opacity-80`}
           >
-            {card.isExternal ? (
-              <CustomLink
-                href={card.link ?? ""}
-                className="unstyled flex h-full flex-col"
-              >
-                <SmallCardContent card={card} schema={schema} index={index} />
-              </CustomLink>
-            ) : (
-              <CustomLink
-                href={card.link ?? ""}
-                className="unstyled flex h-full flex-col"
-              >
-                <SmallCardContent card={card} schema={schema} index={index} />
-              </CustomLink>
-            )}
+            <CustomLink
+              href={card.link ?? ""}
+              className="unstyled flex h-full flex-col"
+            >
+              <SmallCardContent card={card} schema={schema} index={index} />
+            </CustomLink>
           </li>
         ))}
       </ul>
