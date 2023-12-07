@@ -7,7 +7,7 @@ export const ExpertBlock = (props) => {
   const { header, expertList, link } = props;
   return (
     <>
-      <div className=" bg-slate-100 py-1 text-sswBlack">
+      <div className=" bg-slate-100 py-0.5 text-sswBlack">
         {header.toUpperCase()}
       </div>
       <div className="my-2 grid grid-cols-12">
@@ -18,7 +18,7 @@ export const ExpertBlock = (props) => {
         })}
       </div>
       <hr />
-      <div className="float-left mt-2 font-normal">
+      <div className=" mt-4 font-normal">
         <CustomLink href={link.url}>{link.text}</CustomLink>
       </div>
     </>
@@ -31,8 +31,8 @@ const Expert = ({ data, noOfExperts }) => {
   return (
     <div
       className={classNames(
-        "flex py-2",
-        noOfExperts > 2 ? "col-span-4" : "col-span-6"
+        "flex py-2 col-span-12 md:col-span-6",
+        noOfExperts > 2 ? "lg:col-span-4" : "lg:col-span-6"
       )}
     >
       {" "}
