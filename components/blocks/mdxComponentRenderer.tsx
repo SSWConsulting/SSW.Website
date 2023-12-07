@@ -18,6 +18,7 @@ import { ContentCard } from "./contentCard";
 import { CustomImage } from "./customImage";
 import { DynamicColumns } from "./dynamicColumns";
 import { EventLink, EventLinkProps } from "./eventLink";
+import { ExpertBlock } from "./expertBlock";
 import { FixedColumns } from "./fixedColumns";
 import { FixedTabsLayout } from "./fixedTabsLayout";
 import { Flag } from "./flag";
@@ -173,6 +174,19 @@ export const componentRenderer: Components<{
     hideInternshipTestimonials: boolean;
   };
   EventLink: EventLinkProps;
+  ExpertBlock: {
+    header: string;
+    expertList: {
+      person: string;
+      profileImage: string;
+      peopleURL: string;
+      skills: string;
+    }[];
+    link: {
+      text: string;
+      url: string;
+    };
+  };
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -202,4 +216,5 @@ export const componentRenderer: Components<{
   MicrosoftPanel: () => <MicrosoftPanel />,
   TestimonialsList: (props) => <TestimonialsList data={props} />,
   EventLink: (props) => <EventLink {...props} />,
+  ExpertBlock: (props) => <ExpertBlock {...props} />,
 };

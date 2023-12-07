@@ -4,14 +4,23 @@ import { componentRenderer } from "./mdxComponentRenderer";
 import { videoEmbedBlockSchema } from "./videoEmbed";
 
 import { useEffect, useState } from "react";
+import { RiTeamLine } from "react-icons/ri";
+import { VscPerson } from "react-icons/vsc";
 import type { Template } from "tinacms";
 
 import classNames from "classnames";
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
+import { expertBlockSchema } from "./expertBlock";
+
+export const iconMap = {
+  RiTeamLine: (props) => <RiTeamLine className={props.className} />,
+  VscPerson: (props) => <VscPerson className={props.className} />,
+};
 
 const fixedTabsBlocks: Template[] = [
   videoEmbedBlockSchema,
   bookingButtonSchema,
+  expertBlockSchema,
 ];
 
 export const FixedTabsLayout = ({ data }) => {
