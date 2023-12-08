@@ -7,8 +7,9 @@ export async function getYoutubePlaylist(
   playlistId: string,
   videosCount: number
 ): Promise<PlayListType> {
-  const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&part=id&part=snippet&part=status&maxResults=100&playlistId=${playlistId}&key=${process.env.YOUTUBE_PRIVATE_KEY}`;
+  const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&part=id&part=snippet&part=status&maxResults=100&playlistId=${playlistId}&key=AIzaSyArtxZfNPXmFma3C3y2pTol7PiQg8qou3g`;
   const res = await fetch(url);
+  console.log("🚀 ~ file: youtube.ts:12 ~ res:", res);
   const data = await res.json();
 
   if (data && data.items) {
