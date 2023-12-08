@@ -43,9 +43,24 @@ export default function LivePage(
         />
       </Section>
       <Container size="xsmall">
-        <span className="text-sswRed">
-          <h2 className="mt-0">{data.live.nextEvent}</h2>
-        </span>
+        <div className="flex items-center justify-between">
+          <h2 className="mt-0 text-sswRed">{data.live.nextEvent}</h2>
+          <UtilityButton
+            className="mx-20"
+            size="small"
+            uncentered={false}
+            removeTopMargin={true}
+            link={`https://www.youtube.com/channel/${data.live.sswTvButton.channelId}`}
+            buttonText={
+              <>
+                {data.live.sswTvButton.name}
+                <BsArrowRightCircle className="ml-1 inline" />
+              </>
+            }
+            noAnimate
+            openInNewTab={true}
+          />
+        </div>
         <div>
           {props.event?.Title && (
             <div className="col-span-2">
@@ -93,21 +108,6 @@ export default function LivePage(
                 />
               ))}
           </div>
-        </div>
-        <div className="flex justify-center">
-          <UtilityButton
-            size="small"
-            uncentered={false}
-            link={`https://www.youtube.com/channel/${data.live.sswTvButton.channelId}`}
-            buttonText={
-              <>
-                {data.live.sswTvButton.name}
-                <BsArrowRightCircle className="ml-1 inline" />
-              </>
-            }
-            noAnimate
-            openInNewTab={true}
-          />
         </div>
       </Container>
       <Container size="xsmall">
