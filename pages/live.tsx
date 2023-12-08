@@ -5,6 +5,7 @@ import { client } from "../.tina/__generated__/client";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { BuiltOnAzure } from "../components/blocks/builtOnAzure";
 import { UtilityButton } from "../components/button/utilityButton";
+import { UtilityButtonWithLogo } from "../components/button/utilityButtonWithLogo";
 import { CustomLink } from "../components/customLink";
 import { Layout } from "../components/layout";
 import { LiveHeader } from "../components/live/header";
@@ -45,7 +46,7 @@ export default function LivePage(
       <Container size="xsmall">
         <div className="flex items-center justify-between">
           <h2 className="mt-0 text-sswRed">{data.live.nextEvent}</h2>
-          <UtilityButton
+          <UtilityButtonWithLogo
             className="mx-20"
             size="small"
             uncentered={false}
