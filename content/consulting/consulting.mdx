@@ -7,7 +7,7 @@ booking:
   title: <span class="text-sswRed">Consulting</span> Options
   subTitle: Solutions that can adapt to your every need
   buttonText: ''
-  videoBackground: /images/videos/employment_background.mp4
+  videoBackground: ''
 callToAction: Talk to us about your project
 ---
 
@@ -22,9 +22,11 @@ If you are a new customer we need to schedule a free initial meeting. If you're 
     
     For example:
     
-    * [SharePoint Expert](https://www.ssw.com.au/ssw/Consulting/SharePoint.aspx)
-    * [CRM Expert](https://www.ssw.com.au/ssw/Consulting/MicrosoftCRM.aspx)
-    * [More](https://www.ssw.com.au/ssw/Consulting/Default.aspx)
+    * [AI Expert](https://www.ssw.com.au/consulting/gpt)
+    * [Angular Expert](https://www.ssw.com.au/consulting/angular)
+    * [React Expert](https://www.ssw.com.au/consulting/react)
+    * [Power Platform Expert](https://www.ssw.com.au/consulting/power-bi)
+    * [More](https://www.ssw.com.au/consulting)
     
     <ExpertBlock
     header="SOME OF OUR EXPERTS"
@@ -33,17 +35,20 @@ If you are a new customer we need to schedule a free initial meeting. If you're 
     person: "Adam Cogan",
     profileImage: "/images/people/Adam-Cogan.jpg",
     peopleURL: "https://www.ssw.com.au/people/adam-cogan",
-    skills: "Scrum Master"
+    skills:
+    "Cosmos DB | Power Automate | SQL | Markdown | Chinafy | .NET | .NET MVC | .NET Web APIs | .NET Webforms | Power BI | Scrum | Sitefinity | UX | Vue"
     },
     {
     person: "Jean Thirion",
     profileImage: "/images/people/Jean-Thirion.jpg",
     peopleURL: "https://www.ssw.com.au/people/jean-thirion",
-    skills: "Angular, React, Power Platform, AI"
+    skills:
+    ".NET | Angular | Azure | DevOps | Office 365 | React | Scrum | SharePoint | SharePoint Framework (SPFX) | CSS | Jamstack | Kendo UI | Vue"
     },
     {
     person: "Gert Marx",
-    skills: "Scrum Master + .Net",
+    skills:
+    ".NET | .NET MVC | .NET Web APIs | ASP.NET Core | Scrum | SQL | SQL Server | Blazor | Dynamics 365 - CRM | EF Core | JavaScript | Power BI | Training",
     profileImage: "/images/people/Gert-Marx.jpg",
     peopleURL: "https://www.ssw.com.au/people/gert-marx/"
     }
@@ -53,11 +58,15 @@ If you are a new customer we need to schedule a free initial meeting. If you're 
     url: "https://www.ssw.com.au/people/"
     }}
     />
+    
+    <BookingButton buttonText="Book Now" />
   </>}
-  secondTab="Book a SSW Team"
+  secondTab="Book an SSW Team"
   secondBody={<>
     Our most popular option is to get a dedicated team to complete your project.
     
     We have development teams ranging from 2 to 5 people that strive to bring you high quality software at the end of every Sprint (2 week cycle). If you've already got your own developer team, further improve the production process by booking one of our trained "Scrum Masters". They'll manage the team to bring you the best possible solution for your business.
+    
+    <BookingButton buttonText="Book Now" />
   </>}
 />

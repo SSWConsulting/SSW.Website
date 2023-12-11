@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import Image from "next/image";
 import { type Template } from "tinacms";
 import { CustomLink } from "../customLink";
@@ -7,50 +6,43 @@ export const ExpertBlock = (props) => {
   const { header, expertList, link } = props;
   return (
     <>
-      <div className=" bg-slate-100 py-0.5 text-sswBlack">
-        {header.toUpperCase()}
-      </div>
-      <div className="my-2 grid grid-cols-12">
+      <hr />
+      <h2 className="pb-12">{header.toUpperCase()}</h2>
+      <div className="flex justify-center gap-6 pb-12">
         {expertList?.map((expert, index) => {
-          return (
-            <Expert data={expert} noOfExperts={expertList.length} key={index} />
-          );
+          return <Expert data={expert} key={index} />;
         })}
       </div>
-      <hr />
-      <div className=" mt-4 font-normal">
+      <div className=" mt-4 pb-8 font-normal">
         <CustomLink href={link.url}>{link.text}</CustomLink>
       </div>
+      <hr />
     </>
   );
 };
 
-const Expert = ({ data, noOfExperts }) => {
+const Expert = ({ data }) => {
   const { person, profileImage, peopleURL, skills } = data;
 
   return (
     <div
-      className={classNames(
-        "flex py-2 col-span-12 md:col-span-6",
-        noOfExperts > 2 ? "lg:col-span-4" : "lg:col-span-6"
-      )}
+      className="flex w-full grow flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-8 text-center text-xl drop-shadow md:min-h-96 md:max-w-sm md:grow-0 md:p-10 md:basis_gap-96-6"
+      key={person}
     >
-      {" "}
-      <div>
+      <span className="h-32 w-32 self-center overflow-hidden rounded-full">
         <Image
-          src={profileImage}
-          alt={"Profile Image"}
-          height={75}
-          width={75}
-          className="rounded-sm"
+          alt={`Picture of ${person}`}
+          src={profileImage ?? ""}
+          height={120}
+          width={120}
+          className="w-32"
+          quality={90}
         />
-      </div>
-      <div className="ml-2 flex h-full flex-col justify-between">
-        <CustomLink className="text-left" href={peopleURL ?? ""}>
-          <span className="font-bold">{person}</span>
-        </CustomLink>
-        <div className="font-normal">{skills}</div>
-      </div>
+      </span>
+      <CustomLink href={peopleURL} className="mt-4 min-h-12 text-black">
+        {person}
+      </CustomLink>
+      <div className="mt-2 text-sm text-ssw-black">{skills}</div>
     </div>
   );
 };
