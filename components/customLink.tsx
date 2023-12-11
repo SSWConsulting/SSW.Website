@@ -10,7 +10,7 @@ interface CustomLinkProps extends PropsWithChildren {
 }
 
 const externalSSWSitePatterns =
-  /^(https:\/\/(?:www\.)?ssw\.com\.au\/(?:people|rules|ssw)(?:\/|$))/;
+  /^(https:\/\/(?:www\.)?ssw\.com\.au\/(?:people|rules|ssw)(?:\/|$))/i;
 
 const isExternalLink = (href: string): boolean => {
   // i.e. href = https://anydomain.com.au => true | href = https://ssw.com.au/rule/* => true for SSW External Site | href = /company => false for relative path
