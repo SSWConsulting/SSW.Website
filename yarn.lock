@@ -4290,9 +4290,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tinacms/cli@npm:^1.5.38":
-  version: 1.5.38
-  resolution: "@tinacms/cli@npm:1.5.38"
+"@tinacms/cli@npm:^1.5.39":
+  version: 1.5.39
+  resolution: "@tinacms/cli@npm:1.5.39"
   dependencies:
     "@graphql-codegen/core": ^2.1.0
     "@graphql-codegen/plugin-helpers": latest
@@ -4363,7 +4363,7 @@ __metadata:
     zod: ^3.14.3
   bin:
     tinacms: bin/tinacms
-  checksum: aece0f3c170e878d702f462fbc02efe6086ad60ac8f5c71f180c9936aea7e4a577ab388142a15ee543188834713f24f01e53c46e0f060cc6d92bdb072fa90c28
+  checksum: a29aafd120afb4e9840b96aae329686855b4f2a081a656f43b1a5149d10480f40ba836c4a839ad519c38aaabfe4eae29cf0c545d1e1b87d31a23322ae4188cd8
   languageName: node
   linkType: hard
 
@@ -4617,7 +4617,7 @@ __metadata:
     "@next/eslint-plugin-next": 14.0.2
     "@svgr/webpack": ^8.1.0
     "@tailwindcss/typography": ^0.5.10
-    "@tinacms/cli": ^1.5.38
+    "@tinacms/cli": ^1.5.39
     "@types/js-cookie": ^3.0.4
     "@types/node": ^20.8.7
     "@types/react": ^18.2.37
