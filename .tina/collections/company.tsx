@@ -14,7 +14,7 @@ export const companySchema: Collection = {
   format: "mdx",
   path: "content/company/",
   match: {
-    include: "*",
+    exclude: "@(case-study|index|clientCategories)/*",
   },
   ui: {
     router: ({ document }) => {
@@ -143,6 +143,10 @@ export const companyIndexSchema: Collection = {
   ui: {
     router: () => {
       return `/company`;
+    },
+    allowedActions: {
+      create: false,
+      delete: false,
     },
   },
   fields: [
