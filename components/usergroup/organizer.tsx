@@ -33,6 +33,7 @@ export const Organizer = ({
             src={data?.profileImg ?? ""}
             height={68}
             width={68}
+            className="h-17"
           />
         </div>
         <div className="font-sans">
