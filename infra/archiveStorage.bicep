@@ -37,6 +37,12 @@ resource blobStorage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
     publicNetworkAccess: 'Enabled'
     accessTier: 'Hot'
     supportsHttpsTrafficOnly: true
+    routingPreference: {
+      publishMicrosoftEndpoints: true
+      publishInternetEndpoints: true
+      routingChoice: 'InternetRouting'
+    }
+    minimumTlsVersion: 'TLS1_2'
   }
 }
 
