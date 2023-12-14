@@ -11,7 +11,7 @@ import { seoSchema } from "../../components/util/seo";
 import { tipField } from "./shared-fields";
 
 import type { Collection } from "tinacms";
-import { tripleColumnImageBlockSchema } from "../../components/blocks/ImageTripletsBlock";
+import { tripleColumnImageBlockSchema } from "../../components/blocks/tripleColumnImageBlock";
 
 export const companySchema: Collection = {
   label: "Company - Pages",

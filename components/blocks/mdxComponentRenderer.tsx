@@ -12,10 +12,6 @@ import { AgreementForm } from "../terms-and-conditions/agreementForm";
 import TrainingInformation from "../training/trainingInformation";
 import { TrainingLearningOutcome } from "../training/trainingLearningOutcome";
 import { Countries } from "../util/constants/country";
-import {
-  TripleColumnImageBlock,
-  TripleColumnImageBlockProps,
-} from "./ImageTripletsBlock";
 import { Citation } from "./citation";
 import { ClientLogos } from "./clientLogos";
 import { ContentCard } from "./contentCard";
@@ -30,6 +26,10 @@ import { NewslettersTable } from "./newslettersTable";
 import { RecurringEvent } from "./recurringEvent";
 import { TableLayout, TableLayoutProps } from "./tableLayout";
 import { TestimonialsList } from "./testimonialsList";
+import {
+  TripleColumnImageBlock,
+  TripleColumnImageBlockProps,
+} from "./tripleColumnImageBlock";
 import { UpcomingEvents } from "./upcomingEvents";
 import { VerticalImageLayout } from "./verticalImageLayout";
 import { VerticalListItem } from "./verticalListItem";
