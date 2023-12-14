@@ -12,6 +12,10 @@ import { AgreementForm } from "../terms-and-conditions/agreementForm";
 import TrainingInformation from "../training/trainingInformation";
 import { TrainingLearningOutcome } from "../training/trainingLearningOutcome";
 import { Countries } from "../util/constants/country";
+import {
+  TripleColumnImageBlock,
+  TripleColumnImageBlockProps,
+} from "./ImageTripletsBlock";
 import { Citation } from "./citation";
 import { ClientLogos } from "./clientLogos";
 import { ContentCard } from "./contentCard";
@@ -173,6 +177,7 @@ export const componentRenderer: Components<{
     hideInternshipTestimonials: boolean;
   };
   EventLink: EventLinkProps;
+  TripleColumnImageBlock: TripleColumnImageBlockProps;
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -202,4 +207,5 @@ export const componentRenderer: Components<{
   MicrosoftPanel: () => <MicrosoftPanel />,
   TestimonialsList: (props) => <TestimonialsList data={props} />,
   EventLink: (props) => <EventLink {...props} />,
+  TripleColumnImageBlock: (props) => <TripleColumnImageBlock {...props} />,
 };
