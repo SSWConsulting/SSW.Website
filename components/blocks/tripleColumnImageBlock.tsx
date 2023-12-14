@@ -39,7 +39,7 @@ const ImgCard = ({
   return (
     <div className="col-span-4 py-4">
       <h3 className="font-normal">{title}</h3>
-      <div className="h-4 text-xs font-normal text-slate-300">
+      <div className="h-4 text-xs font-normal text-gray-500">
         {subTitle ?? ""}
       </div>
       {imageSrc && (
