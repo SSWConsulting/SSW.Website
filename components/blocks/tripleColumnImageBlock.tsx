@@ -37,9 +37,9 @@ const ImgCard = ({
   width,
 }: ImgCardProps) => {
   return (
-    <div className="col-span-4 py-4">
+    <div className="col-span-12 py-4 md:col-span-4">
       <h3 className="font-normal">{title}</h3>
-      <div className="h-4 text-xs font-normal text-gray-500">
+      <div className="h-4 text-xs font-normal text-ssw-gray">
         {subTitle ?? ""}
       </div>
       {imageSrc && (
