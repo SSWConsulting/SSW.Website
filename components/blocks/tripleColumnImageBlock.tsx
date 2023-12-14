@@ -50,7 +50,6 @@ const ImgCard = ({
             height={isEmpty(height) ? 150 : height} // IsEmpty - Tina converts height to empty string after removing the text from the field
             width={isEmpty(width) ? 150 : width} // IsEmpty - Tina converts width to empty string after removing the text from the field
           />
-          `
         </div>
       )}
     </div>
