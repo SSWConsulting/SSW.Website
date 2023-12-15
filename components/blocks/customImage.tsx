@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { Template } from "tinacms";
 import { CustomLink } from "../customLink";
 
-type CustomImageProps = {
+export type CustomImageProps = {
   src: string;
   altText: string;
   height?: number;
