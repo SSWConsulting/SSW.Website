@@ -24,10 +24,26 @@ _body:
       - {}
     _template: EventBooking
   - agendaItemList:
-      - placeholder: Day 2
-        body: |
-          <VerticalListItem />
       - placeholder: Day 1
+        body: |
+          <VerticalListItem
+            content={<>
+              Day 1: Generative AI and LLMs
+            </>}
+            icon="/images/icons/university_hat.png"
+            afterBody={<>
+              * Machine Learning - How models are built and trained
+              * What is generative AI?
+              * Learn text, image, audio, and video generation
+              * ChatGPT, DALL-E, Midjourney, Claude, Llama
+              * Prompt engineering
+              * Tokens, prompt tuning, chain prompting, system prompts
+              * Prompt practice
+              * Understanding custom GPTs
+              * Build a custom GPT
+            </>}
+          />
+      - placeholder: Day 2
         body: |
           <VerticalListItem />
     _template: Agenda
