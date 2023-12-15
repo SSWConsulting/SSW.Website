@@ -47,7 +47,7 @@ export default function HomePage(
           <></>
         )}
         <Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
-        <Container className={"flex-1"}>
+        <Container className="flex-1">
           <div className="gap-20 pt-3 md:grid md:grid-cols-5">
             <div
               className={contentClass}
@@ -58,6 +58,7 @@ export default function HomePage(
                 content={data.page._body}
               />
             </div>
+
             {!!data.page.sideBar && (
               <div className="mt-5 md:col-span-2 md:mt-0">
                 <Blocks prefix="PageSideBar" blocks={data.page.sideBar} />
