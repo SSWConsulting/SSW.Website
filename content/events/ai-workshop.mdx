@@ -20,8 +20,14 @@ subTitle: >
   The workshop includes practical applications, starting from text and image
   generation, then development tools, to building AI assistants.
 _body:
-  - _template: EventBooking
-  - _template: Agenda
+  - eventList:
+      - {}
+    _template: EventBooking
+  - agendaItemList:
+      - placeholder: Day 1
+        body: |
+          <VerticalListItem />
+    _template: Agenda
   - _template: PresenterBlock
   - _template: Content
 footer: ''
