@@ -19,6 +19,7 @@ module.exports = {
       // 'https://www.ssw.com.au/people/sitemap.xml',
       // 'https://www.ssw.com.au/rules/sitemap.xml',
       "https://www.ssw.com.au/ssw/sitemap.xml",
+      "https://www.ssw.com.au/history/sitemap.xml",
     ],
   },
 };
