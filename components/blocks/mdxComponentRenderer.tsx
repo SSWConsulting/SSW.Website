@@ -26,6 +26,10 @@ import { NewslettersTable } from "./newslettersTable";
 import { RecurringEvent } from "./recurringEvent";
 import { TableLayout, TableLayoutProps } from "./tableLayout";
 import { TestimonialsList } from "./testimonialsList";
+import {
+  TripleColumnImageBlock,
+  TripleColumnImageBlockProps,
+} from "./tripleColumnImageBlock";
 import { UpcomingEvents } from "./upcomingEvents";
 import { VerticalImageLayout } from "./verticalImageLayout";
 import { VerticalListItem } from "./verticalListItem";
@@ -173,6 +177,7 @@ export const componentRenderer: Components<{
     hideInternshipTestimonials: boolean;
   };
   EventLink: EventLinkProps;
+  TripleColumnImageBlock: TripleColumnImageBlockProps;
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -202,4 +207,5 @@ export const componentRenderer: Components<{
   MicrosoftPanel: () => <MicrosoftPanel />,
   TestimonialsList: (props) => <TestimonialsList data={props} />,
   EventLink: (props) => <EventLink {...props} />,
+  TripleColumnImageBlock: (props) => <TripleColumnImageBlock {...props} />,
 };
