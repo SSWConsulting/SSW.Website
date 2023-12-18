@@ -1,18 +1,11 @@
-import dynamic from "next/dynamic";
-import { useState } from "react";
+import Script from "next/script";
 import { toast } from "react-toastify";
 import { twMerge } from "tailwind-merge";
 import type { Template } from "tinacms";
 import layoutData from "../../content/global/index.json";
 import { recaptchaToastId, useRecaptcha } from "../../context/RecaptchaContext";
+import { JotFormIframe } from "../../pages/jotForm-script";
 import { UtilityButton } from "../button/utilityButton";
-import Popup from "../popup/popup";
-import SuccessToast from "../successToast/successToast";
-
-const BookingForm = dynamic(
-  () => import("../bookingForm/bookingForm").then((mod) => mod.BookingForm),
-  { ssr: false }
-);
 
 export interface BookingButtonProps {
   buttonText?: string;
@@ -28,8 +21,6 @@ export const BookingButton = ({ data }) => {
     buttonText,
     hideCallUs,
   }: BookingButtonProps = data;
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-  const showBookingForm = () => setIsVisible((curr) => !curr);
 
   const { error: recaptchaError } = useRecaptcha();
 
@@ -37,40 +28,28 @@ export const BookingButton = ({ data }) => {
     toast.error("Failed to load recaptcha key.", { toastId: recaptchaToastId });
   }
 
-  const bookingPhone = layoutData.bookingPhone;
+  const JOTFORM_ID = "233468468973070"; // TODO: Process.env.JOTID
 
-  const showSuccessToast = () => {
-    toast.success(
-      <div id="success-toaster" className="text-left">
-        Form submitted. We&apos;ll be in contact as soon as possible.
-      </div>
-    );
-  };
+  const bookingPhone = layoutData.bookingPhone;
+  const jotFormClass = buttonClass ?? "mt-14" + " " + `lightbox-${JOTFORM_ID}`;
 
   return (
-    <div
-      className={twMerge("flex w-full flex-col items-center", containerClass)}
-    >
-      <UtilityButton
-        className={buttonClass || "mt-14"}
-        onClick={showBookingForm}
-        buttonText={buttonText}
-      />
-      {!hideCallUs && (
-        <h2 className="mx-auto max-w-full text-center">
-          or call us on {bookingPhone}
-        </h2>
-      )}
-      <Popup isVisible={isVisible} onClose={setIsVisible}>
-        {isVisible && (
-          <BookingForm
-            onClose={setIsVisible}
-            showSuccessToast={showSuccessToast}
-          />
+    <>
+      {" "}
+      <Script id="" type="text/javascript" defer>
+        {JotFormIframe}
+      </Script>
+      <div
+        className={twMerge("flex w-full flex-col items-center", containerClass)}
+      >
+        <UtilityButton className={jotFormClass} buttonText={buttonText} />
+        {!hideCallUs && (
+          <h2 className="mx-auto max-w-full text-center">
+            or call us on {bookingPhone}
+          </h2>
         )}
-      </Popup>
-      <SuccessToast />
-    </div>
+      </div>
+    </>
   );
 };
 

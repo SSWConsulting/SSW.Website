@@ -12,6 +12,7 @@ import dynamic from "next/dynamic";
 import { Open_Sans } from "next/font/google";
 import { WebSite, WithContext } from "schema-dts";
 import layoutData from "../../content/global/index.json";
+import { JotFormScript } from "../../pages/jotForm-script";
 import { NavMenuGroup } from "../../types/megamenu";
 
 export const openSans = Open_Sans({
@@ -114,6 +115,12 @@ export const Layout = ({ children, menu, className = "" }: LayoutProps) => {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
           />
         )}
+        <script
+          async
+          type="text/javascript"
+          src="https://form.jotform.com/static/feedback2.js"
+          id="feedback2"
+        ></script>
       </Head>
       <Theme>
         {/* Ensures next/font CSS variable is accessible for all components */}
