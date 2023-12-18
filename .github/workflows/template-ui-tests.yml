@@ -45,7 +45,7 @@ jobs:
           HOST_URL: ${{ inputs.deploy_url }}
         working-directory: ./ui-tests
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report
