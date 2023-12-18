@@ -12,7 +12,6 @@ import dynamic from "next/dynamic";
 import { Open_Sans } from "next/font/google";
 import { WebSite, WithContext } from "schema-dts";
 import layoutData from "../../content/global/index.json";
-import { JotFormScript } from "../../pages/jotForm-script";
 import { NavMenuGroup } from "../../types/megamenu";
 
 export const openSans = Open_Sans({
