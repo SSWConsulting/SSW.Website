@@ -2,7 +2,11 @@ import classNames from "classnames";
 import type { Template } from "tinacms";
 import type { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { CustomImage, customImageBlockSchema } from "./customImage";
+import {
+  CustomImage,
+  CustomImageProps,
+  customImageBlockSchema,
+} from "./customImage";
 import { VerticalListItem, verticalListItemSchema } from "./verticalListItem";
 import { VideoEmbed, videoEmbedBlockSchema } from "./videoEmbed";
 
@@ -15,12 +19,7 @@ export type ContentCardProps = {
 };
 
 const contentCardComponentRenderer: Components<{
-  CustomImage: {
-    src: string;
-    alt: string;
-    height: number;
-    width: number;
-  };
+  CustomImage: CustomImageProps;
   VerticalListItem: {
     icon: string;
     content: string;
