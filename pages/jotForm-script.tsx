@@ -21,3 +21,7 @@ export const JotFormIframe = `
           }
         }
     }`;
+
+export const JotForm = () => {
+  return <></>;
+};
