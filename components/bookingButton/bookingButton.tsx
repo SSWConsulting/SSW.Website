@@ -1,9 +1,9 @@
-import Script from "next/script";
 import { toast } from "react-toastify";
 import { twMerge } from "tailwind-merge";
 import type { Template } from "tinacms";
 import layoutData from "../../content/global/index.json";
 import { recaptchaToastId, useRecaptcha } from "../../context/RecaptchaContext";
+import JotFormScript from "../../pages/jotFormScript";
 import { UtilityButton } from "../button/utilityButton";
 
 export interface BookingButtonProps {
@@ -27,43 +27,14 @@ export const BookingButton = ({ data }) => {
     toast.error("Failed to load recaptcha key.", { toastId: recaptchaToastId });
   }
 
-  const JotFormIframe = `
-      var existingURL = window.location.href;
-      if(!window.scriptExecuted || window.href != existingURL){
-        window.scriptExecuted = true;
-        window.href = window.location.href;
-        var _sf = new JotformFeedback({
-          formId: '233468468973070',
-          base: 'https://form.jotform.com/',
-          windowTitle: 'Book an initial meeting now',
-          backgroundColor: '#BD4B47',
-          fontColor: '#FFFFFF',
-          type: '0',
-          height: 800,
-          width: 700,
-          openOnLoad: false
-        });
-
-        window.handleIFrameMessage = function(e) {
-          if (window.addEventListener) {
-              window.addEventListener("message", handleIFrameMessage, false);
-          } else if (window.attachEvent) {
-              window.attachEvent("onmessage", handleIFrameMessage);
-          }
-        }
-    }`;
-
-  const JOTFORM_ID = "233468468973070"; // TODO: Process.env.JOTID
+  const JOTFORM_ID = process.env.NEXT_PUBLIC_JOTFORM_ID;
 
   const bookingPhone = layoutData.bookingPhone;
-  const jotFormClass = buttonClass ?? "mt-14" + " " + `lightbox-${JOTFORM_ID}`;
+  const jotFormClass = buttonClass ?? "mt-14" + " " + `lightbox-${JOTFORM_ID}`; // lightbox-id class is a trigger point for the JotForm Iframe
 
   return (
     <>
-      {" "}
-      <Script id="" type="text/javascript" defer>
-        {JotFormIframe}
-      </Script>
+      <JotFormScript />
       <div
         className={twMerge("flex w-full flex-col items-center", containerClass)}
       >

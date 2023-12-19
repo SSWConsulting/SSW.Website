@@ -114,12 +114,6 @@ export const Layout = ({ children, menu, className = "" }: LayoutProps) => {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
           />
         )}
-        <script
-          async
-          type="text/javascript"
-          src="https://form.jotform.com/static/feedback2.js"
-          id="feedback2"
-        ></script>
       </Head>
       <Theme>
         {/* Ensures next/font CSS variable is accessible for all components */}
