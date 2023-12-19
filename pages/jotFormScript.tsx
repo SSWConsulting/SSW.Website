@@ -2,7 +2,7 @@ import Script from "next/script";
 
 const JotFormIframe = `
 var existingURL = window.location.href;
-if(!window.scriptExecuted || window.href != existingURL){
+if(!window.scriptExecuted || window.href != existingURL){ // This prevent from loading multiple JotForm's IFrames
   window.scriptExecuted = true;
   window.href = window.location.href;
   var _sf = new JotformFeedback({
