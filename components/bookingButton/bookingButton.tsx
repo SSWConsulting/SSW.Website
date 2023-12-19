@@ -28,8 +28,10 @@ export const BookingButton = ({ data }) => {
   }
 
   const JotFormIframe = `
-      if(!window.scriptExecuted ){
+      var existingURL = window.location.href;
+      if(!window.scriptExecuted || window.href != existingURL){
         window.scriptExecuted = true;
+        window.href = window.location.href;
         var _sf = new JotformFeedback({
           formId: '233468468973070',
           base: 'https://form.jotform.com/',
