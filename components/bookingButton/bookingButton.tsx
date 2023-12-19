@@ -27,10 +27,10 @@ export const BookingButton = ({ data }) => {
     toast.error("Failed to load recaptcha key.", { toastId: recaptchaToastId });
   }
 
-  const JOTFORM_ID = process.env.NEXT_PUBLIC_JOTFORM_ID;
-
   const bookingPhone = layoutData.bookingPhone;
-  const jotFormClass = buttonClass ?? "mt-14" + " " + `lightbox-${JOTFORM_ID}`; // lightbox-id class is a trigger point for the JotForm Iframe
+  const jotFormClass =
+    buttonClass ??
+    "mt-14" + " " + `lightbox-${process.env.NEXT_PUBLIC_JOTFORM_ID}`; // lightbox-id class is a trigger point for the JotForm IFrame
 
   return (
     <>
