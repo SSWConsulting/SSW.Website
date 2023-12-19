@@ -34,7 +34,7 @@ const JotFormScript = () => {
         src="https://form.jotform.com/static/feedback2.js"
         id="feedback2"
       />
-      <Script id="" type="text/javascript" strategy="lazyOnload">
+      <Script id="iframe-creation" type="text/javascript" strategy="lazyOnload">
         {JotFormIframe}
       </Script>
     </>
