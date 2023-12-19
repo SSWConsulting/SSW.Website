@@ -55,7 +55,7 @@
     "eslint-config-next": "14.0.3",
     "formik": "^2.4.5",
     "keyboardjs": "^2.7.0",
-    "next": "14.0.3",
+    "next": "14.0.4",
     "next-seo": "^6.4.0",
     "nextjs-breadcrumbs2": "^2.0.4",
     "node-cache": "^5.1.2",
