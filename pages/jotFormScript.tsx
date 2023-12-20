@@ -1,4 +1,5 @@
 import Script from "next/script";
+import { useState } from "react";
 
 const JotFormIframe = `
 var existingURL = window.location.href;
@@ -11,7 +12,7 @@ if(!window.scriptExecuted || window.href != existingURL){ // This prevent from l
     windowTitle: 'Book an initial meeting now',
     backgroundColor: '#BD4B47',
     fontColor: '#FFFFFF',
-    type: '0',
+    type: '1',
     height: 800,
     width: 700,
     openOnLoad: false
@@ -27,17 +28,21 @@ if(!window.scriptExecuted || window.href != existingURL){ // This prevent from l
 }`;
 
 const JotFormScript = () => {
+  const [jotFormScriptLoad, setJotFormScriptLoad] = useState(false);
   return (
     <>
       <Script
         type="text/javascript"
         src="https://form.jotform.com/static/feedback2.js"
         id="feedback2"
+        onLoad={() => setJotFormScriptLoad(true)}
       />
-      {/* this must be loaded after feedbcak2.js */}
-      <Script id="iframe-creation" type="text/javascript" strategy="lazyOnload">
-        {JotFormIframe}
-      </Script>
+      {/* this must be loaded after feedback2.js */}
+      {jotFormScriptLoad && (
+        <Script id="iframe-creation" type="text/javascript">
+          {JotFormIframe}
+        </Script>
+      )}
     </>
   );
 };
