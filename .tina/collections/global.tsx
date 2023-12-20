@@ -239,5 +239,10 @@ export const globalSchema: Collection = {
         },
       ],
     },
+    {
+      type: "string",
+      name: "jotFormId",
+      label: "JotForm Id",
+    },
   ],
 };

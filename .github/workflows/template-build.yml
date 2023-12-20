@@ -121,7 +121,6 @@ jobs:
             NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING=${{ steps.AppInsight.outputs.AppInsightConnectionString }}
             TINA_TOKEN=${{ secrets.TINA_TOKEN }}
             NEXT_PUBLIC_CHATBASE_BOT_ID=${{ env.NEXT_PUBLIC_CHATBASE_BOT_ID }}
-            NEXT_PUBLIC_JOTFORM_ID=${{ env.NEXT_PUBLIC_JOTFORM_ID }}
             SITE_URL=https://www.ssw.com.au
           tags: |
             ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}

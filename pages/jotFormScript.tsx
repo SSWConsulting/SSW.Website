@@ -1,5 +1,6 @@
 import Script from "next/script";
 import { useState } from "react";
+import defaultSetting from "../content/global/index.json";
 
 const JotFormIframe = `
 var existingURL = window.location.href;
@@ -7,7 +8,7 @@ if(!window.scriptExecuted || window.href != existingURL){ // This prevent from l
   window.scriptExecuted = true;
   window.href = window.location.href;
   var _sf = new JotformFeedback({
-    formId: '${process.env.NEXT_PUBLIC_JOTFORM_ID}',
+    formId: '${defaultSetting.jotFormId}',
     base: 'https://form.jotform.com/',
     windowTitle: 'Book an initial meeting now',
     backgroundColor: '#BD4B47',
