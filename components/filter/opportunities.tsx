@@ -188,8 +188,8 @@ const OpportunityDropdown = ({
               {opportunity.title}
             </h2>
             <span className="flex items-center md:float-right">
-              <FaMapMarkerAlt className="inline" />
-              {opportunity.locations?.join(", ")}
+              <FaMapMarkerAlt className="inline" />&nbsp;
+              {opportunity.locations?.join(", ")}&nbsp;
               {opportunity.status === FILLED && <strong> *FILLED*</strong>}
             </span>
           </Disclosure.Button>
