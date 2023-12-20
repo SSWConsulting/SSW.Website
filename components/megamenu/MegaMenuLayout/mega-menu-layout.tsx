@@ -2,7 +2,7 @@ import { Bars3Icon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import React, { useState } from "react";
 import { NavMenuGroup } from "../../../types/megamenu";
-import { SocialIcons, SocialTypes } from "../../util/socialIcons";
+import { SocialIcons } from "../../util/socialIcons";
 import DesktopMenu from "../DesktopMenu/desktop-menu";
 import Logo from "../Logo/logo";
 import MobileMenu from "../MobileMenu/mobile-menu";
@@ -44,12 +44,8 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
           <div className="flex items-center xl:hidden">
             <SocialIcons
               className="max-sm:hidden"
-              excludeMobile={Object.values(SocialTypes).filter(
-                (social) => social !== SocialTypes.phone
-              )}
-              excludeDesktop={Object.values(SocialTypes).filter(
-                (social) => social !== SocialTypes.phone
-              )}
+              excludeMobile={["phone"]}
+              excludeDesktop={["phone"]}
             />
             <Search />
             <Divider />
@@ -74,12 +70,8 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
 
       <SocialIcons
         className="pb-4 sm:hidden"
-        excludeMobile={Object.values(SocialTypes).filter(
-          (social) => social !== SocialTypes.phone
-        )}
-        excludeDesktop={Object.values(SocialTypes).filter(
-          (social) => social !== SocialTypes.phone
-        )}
+        excludeMobile={["phone"]}
+        excludeDesktop={["phone"]}
       />
     </>
   );

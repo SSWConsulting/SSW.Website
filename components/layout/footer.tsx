@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
-import { SocialIcons, SocialTypes } from "../util/socialIcons";
+import { SocialIcons } from "../util/socialIcons";
 
 export const Footer = () => {
   return (
@@ -11,8 +11,8 @@ export const Footer = () => {
       <Container size="xsmall">
         <SocialIcons
           className="mb-3 mt-2 justify-center"
-          excludeDesktop={[SocialTypes.phone]}
-          excludeMobile={[SocialTypes.phone, SocialTypes.meetup]}
+          excludeDesktop={["phone"]}
+          excludeMobile={["phone", "meetup"]}
         />
         <hr className="my-2 border-gray-800" />
         <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
