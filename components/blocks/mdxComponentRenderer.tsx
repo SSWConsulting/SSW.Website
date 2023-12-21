@@ -15,7 +15,7 @@ import { Countries } from "../util/constants/country";
 import { Citation } from "./citation";
 import { ClientLogos } from "./clientLogos";
 import { ContentCard } from "./contentCard";
-import { CustomImage } from "./customImage";
+import { CustomImage, CustomImageProps } from "./customImage";
 import { DynamicColumns } from "./dynamicColumns";
 import { EventLink, EventLinkProps } from "./eventLink";
 import { FixedColumns } from "./fixedColumns";
@@ -26,6 +26,10 @@ import { NewslettersTable } from "./newslettersTable";
 import { RecurringEvent } from "./recurringEvent";
 import { TableLayout, TableLayoutProps } from "./tableLayout";
 import { TestimonialsList } from "./testimonialsList";
+import {
+  TripleColumnImageBlock,
+  TripleColumnImageBlockProps,
+} from "./tripleColumnImageBlock";
 import { UpcomingEvents } from "./upcomingEvents";
 import { VerticalImageLayout } from "./verticalImageLayout";
 import { VerticalListItem } from "./verticalListItem";
@@ -56,12 +60,7 @@ const VideoEmbed = dynamic(
 
 export const componentRenderer: Components<{
   ClientLogos: Record<string, never>;
-  CustomImage: {
-    src: string;
-    alt: string;
-    height: number;
-    width: number;
-  };
+  CustomImage: CustomImageProps;
   RecurringEvent: {
     applyLinkRedirect: string;
     day: string;
@@ -173,6 +172,7 @@ export const componentRenderer: Components<{
     hideInternshipTestimonials: boolean;
   };
   EventLink: EventLinkProps;
+  TripleColumnImageBlock: TripleColumnImageBlockProps;
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -202,4 +202,5 @@ export const componentRenderer: Components<{
   MicrosoftPanel: () => <MicrosoftPanel />,
   TestimonialsList: (props) => <TestimonialsList data={props} />,
   EventLink: (props) => <EventLink {...props} />,
+  TripleColumnImageBlock: (props) => <TripleColumnImageBlock {...props} />,
 };

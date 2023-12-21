@@ -90,9 +90,9 @@ export default function OfficeIndex(
                 <p>
                   Our staff are ready to work remotely for any country globally.
                   We have worked for clients from the
-                  <strong> USA, Canada, the UK</strong>, and even European
-                  countries, such as <strong>France, Germany</strong>, and as
-                  far north as <strong>Sweden</strong>.
+                  <strong> USA, Canada, the UK</strong>, New Zealand, and even
+                  European countries, such as <strong>France, Germany</strong>,
+                  and as far north as <strong>Sweden</strong>.
                 </p>
               </div>
               <br />
@@ -101,11 +101,6 @@ export default function OfficeIndex(
                 <CustomLink href="mailto:info@ssw.com.au">
                   contact us.
                 </CustomLink>
-              </p>
-              <br />
-              <p>
-                Visit our worldwide website:{" "}
-                <CustomLink href="/">ssw.com</CustomLink>.
               </p>
             </div>
             <div className="md:max-w-sm md:pl-6">

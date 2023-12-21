@@ -64,13 +64,25 @@
           ]
         },
         {
-          "title": "Mobile Apps",
-          "description": "We can build your mobile app using React Native, MAUI (was Xamarin), Flutter, Cordova, PWA, or Ionic!",
-          "logo": "/images/thumbs/thumb-mobiles-apps-icon.jpg",
-          "page": "content/consulting/mobile-application-development.mdx",
+          "title": ".NET 8",
+          "description": ".NET 8 is the latest LTS (Long Term Support) version of the platform. It provides enterprise functionality and cloud-native development all within a stable ecosystem backed by Microsoft.",
+          "logo": "/images/thumbs/thumb-net-8.jpg",
+          "page": "content/consulting/net-8.mdx",
           "tags": [
             {
+              "tag": "content/consulting/tag/platform-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+            },
+            {
+              "tag": "content/consulting/tag/web-development.json"
+            },
+            {
               "tag": "content/consulting/tag/mobile-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/ai-development.json"
             }
           ]
         },
@@ -126,6 +138,17 @@
           "tags": [
             {
               "tag": "content/consulting/tag/web-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Mobile Apps",
+          "description": "We can build your mobile app using React Native, MAUI (was Xamarin), Flutter, Cordova, PWA, or Ionic!",
+          "logo": "/images/thumbs/thumb-mobiles-apps-icon.jpg",
+          "page": "content/consulting/mobile-application-development.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/mobile-development.json"
             }
           ]
         },
@@ -204,23 +227,6 @@
               "tag": "content/consulting/tag/database-development.json"
             }
           ]
-        },
-        {
-          "title": ".NET 8",
-          "description": ".NET 8 is the latest LTS (Long Term Support) version of the platform. It provides enterprise functionality and cloud-native development all within a stable ecosystem backed by Microsoft.",
-          "logo": "/images/thumbs/thumb-net-8.jpg",
-          "page": "content/consulting/net-8.mdx",
-          "tags": [
-            {
-              "tag": "content/consulting/tag/web-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/mobile-development.json"
-            },
-            {
-              "tag": "content/consulting/tag/ai-development.json"
-            }
-          ]
         }
       ]
     },
@@ -239,9 +245,9 @@
           ]
         },
         {
-          "title": "Power Automate Process Mining",
-          "description": "Process mining uncovers processes in your company that can be effectively automated with artificial intelligence, so you save costs and increase your productivity.",
-          "logo": "/images/thumbs/thumb-power-automate-icon.jpg",
+          "title": "Business Process Improvement",
+          "description": "Identify challenges, map important processes, eliminate redundancy, and add automation when needed, all with the goal of achieving more efficient workflows and cost savings.",
+          "logo": "/images/thumbs/business-process-improvement-cog.png",
           "page": "content/consulting/process-mining.mdx",
           "tags": [
             {

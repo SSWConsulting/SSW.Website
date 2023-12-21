@@ -95,7 +95,7 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
         {newsletters.map(({ file, month, description }) => (
           <tr key={file} className="mx-4 bg-gray-50">
             <td className="rounded-l px-3 py-1">
-              <CustomLink href={removeTinaFromUrl(file)}>
+              <CustomLink href={removeTinaFromUrl(file)} target="_blank">
                 {transformIntToMonth(month)}
               </CustomLink>
             </td>
