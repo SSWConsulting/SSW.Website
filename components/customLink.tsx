@@ -34,12 +34,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
   ...props
 }) => {
   const isExternal = isExternalLink(href);
-  console.log(
-    "🚀 ~ file: customLink.tsx:37 ~ isExternal: URL - ",
-    href,
-    " - ",
-    isExternal
-  );
+
   const rel =
     isExternal && !href.includes("ssw") ? "noopener noreferrer nofollow" : "";
 
