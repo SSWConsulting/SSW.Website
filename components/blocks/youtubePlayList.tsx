@@ -29,7 +29,7 @@ export const YoutubePlayListBlock = ({ props, playlistVideosLinks }) => {
   );
 };
 
-export const youtubePlayListBlockSchema: TinaField = {
+export const youtubePlayListSchema: TinaField = {
   type: "object",
   label: "Youtube Playlist",
   name: "youtubePlaylist",
@@ -62,8 +62,8 @@ export const youtubePlayListBlockSchema: TinaField = {
   ],
 };
 
-export const youtubePlayListBlockSchemaTempalte: Template = {
+export const youtubePlayListBlockSchema: Template = {
   name: "YoutubePlayListBlock",
   label: "Youtube PlayList Block",
-  fields: [youtubePlayListBlockSchema],
+  fields: [youtubePlayListSchema],
 };
