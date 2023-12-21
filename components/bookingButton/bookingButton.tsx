@@ -29,7 +29,7 @@ export const BookingButton = ({ data }) => {
 
   const bookingPhone = layoutData.bookingPhone;
   const jotFormClass =
-    buttonClass ?? "mt-14" + " " + `lightbox-${layoutData.jotFormId}`; // lightbox-id class is a trigger point for the JotForm IFrame
+    buttonClass ?? "mt-14" + " " + `lightbox-${layoutData.jotForm.id}`; // lightbox-id class is a trigger point for the JotForm IFrame
 
   return (
     <>
