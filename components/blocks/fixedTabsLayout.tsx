@@ -77,10 +77,6 @@ export const FixedTabsLayout = ({ data }) => {
 };
 
 const renderTinaMarkDown = (data, tab = 1, playListVideosLinks = []) => {
-  console.log(
-    "🚀 ~ file: fixedTabsLayout.tsx:81 ~ renderTinaMarkDown ~ playListVideosLinks:",
-    playListVideosLinks
-  );
   return (
     <>
       <TinaMarkdown content={data} components={componentRenderer} />
