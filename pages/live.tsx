@@ -4,6 +4,7 @@ import { useTina } from "tinacms/dist/react";
 import { client } from "../.tina/__generated__/client";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { BuiltOnAzure } from "../components/blocks/builtOnAzure";
+import { YoutubePlayListBlock } from "../components/blocks/youtubePlayList";
 import { UtilityButton } from "../components/button/utilityButton";
 import { CustomLink } from "../components/customLink";
 import { Layout } from "../components/layout";
@@ -110,31 +111,10 @@ export default function LivePage(
         </div>
       </Container>
       <Container size="xsmall">
-        <span className="text-sswRed">
-          <h2>{data.live.youtubePlaylist.title}</h2>
-        </span>
-        <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">
-          {props.playListVideosLinks.map((video, index) => (
-            <div key={index}>
-              <VideoCard {...video} theme="light" />
-            </div>
-          ))}
-        </div>
-        <div className="flex justify-center">
-          <UtilityButton
-            size="small"
-            uncentered={false}
-            link={`https://www.youtube.com/playlist?list=${data.live.youtubePlaylist.playlistId}`}
-            buttonText={
-              <>
-                {data.live.youtubePlaylist.textForPlayListLink}
-                <BsArrowRightCircle className="ml-1 inline" />
-              </>
-            }
-            noAnimate
-            openInNewTab={true}
-          />
-        </div>
+        <YoutubePlayListBlock
+          props={data.live.youtubePlaylist}
+          playlistVideosLinks={props.playListVideosLinks}
+        />
       </Container>
       <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
     </Layout>
