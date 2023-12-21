@@ -20,7 +20,10 @@ export const VideoCard: FC<VideoCardProps> = ({ link, title, theme }) => {
   return (
     <VideoModal
       url={link}
-      className={theme === "light" && "rounded-sm border-1 border-gray-200"}
+      className={
+        theme === "light" &&
+        "cursor-pointer rounded-sm border-1 border-gray-200"
+      }
     >
       <div
         className={classNames(
