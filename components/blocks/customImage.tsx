@@ -2,14 +2,22 @@ import Image from "next/image";
 import type { Template } from "tinacms";
 import { CustomLink } from "../customLink";
 
-export const CustomImage = ({ data }) => {
+export type CustomImageProps = {
+  src: string;
+  altText: string;
+  height?: number;
+  width?: number;
+  link?: string;
+};
+
+export const CustomImage = ({ data }: { data: CustomImageProps }) => {
   return (
     <LinkWrapper link={data.link}>
       <Image
         src={data.src}
         alt={data.altText}
-        height={data.height ?? 400}
-        width={data.width ?? 400}
+        height={data.height || 400}
+        width={data.width || 400}
         className="inline-block"
       />
     </LinkWrapper>

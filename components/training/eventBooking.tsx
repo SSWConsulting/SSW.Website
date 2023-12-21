@@ -8,11 +8,12 @@ import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { EventBookingType, EventModel } from "./eventBookingType";
 
-const isEmpty = (value) => {
+export const isEmpty = (value) => {
   return (
     value === undefined ||
     value === null ||
-    (typeof value == "number" && value <= 0)
+    (typeof value == "number" && value <= 0) ||
+    (typeof value == "string" && value === "")
   );
 };
 

@@ -20,12 +20,16 @@ export const liveSchema: Collection = {
     // @ts-ignore
     seoSchema,
     {
-      type: "rich-text",
-      isBody: true,
+      type: "string",
       name: "title",
       label: "Title",
+    },
+    {
+      type: "rich-text",
+      isBody: true,
+      name: "subtitle",
+      label: "Subtitle",
       templates: [...Schemas.pageBlocks],
-      description: "Tip: Bold text is turned into Red color",
     },
     {
       type: "string",

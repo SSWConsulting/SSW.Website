@@ -74,14 +74,9 @@ type UpcomingEventProps = {
   event: EventInfo;
 };
 
-const isValidImagePath = (imageSrc) => {
-  if (!imageSrc) return false;
-  const imagPath = imageSrc.split("/").pop();
-  const numberOfDots = imagPath.match(/\./g);
-  return numberOfDots.length === 1;
-};
-
 const UpcomingEvent = ({ event }: UpcomingEventProps) => {
+  const [imageFailed, setImageFailed] = useState<boolean>(false);
+
   return (
     <CustomLink
       href={event.Url.Url}
@@ -104,7 +99,7 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
             </span>
           )}
         </div>
-        {isValidImagePath(event.Thumbnail?.Url) && (
+        {!imageFailed && (
           <div className="col-span-1 flex items-center justify-center sm:mr-2 sm:justify-end">
             <Image
               className={"rounded-md"}
@@ -112,6 +107,7 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
               alt={`${event.Title} logo`}
               width={90}
               height={90}
+              onError={() => setImageFailed(true)}
             />
           </div>
         )}
