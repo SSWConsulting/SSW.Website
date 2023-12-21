@@ -19,7 +19,6 @@ import {
 } from "../services/server/events";
 import { getYoutubePlaylist } from "../services/server/youtube";
 
-const VISIBLE_VIDEOS_COUNT = 6;
 const ISR_TIME = 60 * 60;
 
 export default function LivePage(
@@ -112,7 +111,7 @@ export default function LivePage(
       </Container>
       <Container size="xsmall">
         <span className="text-sswRed">
-          <h2>{data.live.pastEvents}</h2>
+          <h2>{data.live.youtubePlaylist.title}</h2>
         </span>
         <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">
           {props.playListVideosLinks.map((video, index) => (
@@ -125,10 +124,10 @@ export default function LivePage(
           <UtilityButton
             size="small"
             uncentered={false}
-            link={`https://www.youtube.com/playlist?list=${data.live.youtubePlaylistButton.playlistId}`}
+            link={`https://www.youtube.com/playlist?list=${data.live.youtubePlaylist.playlistId}`}
             buttonText={
               <>
-                {data.live.youtubePlaylistButton.name}
+                {data.live.youtubePlaylist.textForPlayListLink}
                 <BsArrowRightCircle className="ml-1 inline" />
               </>
             }
@@ -152,8 +151,8 @@ export const getStaticProps = async () => {
   const speaker = speakers[0];
 
   const playListVideosLinks = await getYoutubePlaylist(
-    tinaProps.data.live.youtubePlaylistButton.playlistId,
-    VISIBLE_VIDEOS_COUNT
+    tinaProps.data.live.youtubePlaylist?.playlistId,
+    tinaProps.data.live.youtubePlaylist?.numberOfVideos
   );
 
   return {
