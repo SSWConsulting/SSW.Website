@@ -102,6 +102,8 @@ export const SocialIcons = (data?: SocialIconsProps) => {
   );
 };
 
+// TODO: This component does not adhere to the single responsibility principle (SOLID)
+// Can be fixed by separating the phone component from other social icons
 export const SocialIcon = ({
   social,
   isMobileDetected,
@@ -135,11 +137,11 @@ export const SocialIcon = ({
     // TODO: Maybe undo all of these changes they are pretty significant and Map in TS is bad
     Object.keys(SocialIcons).length - excludeMobile?.length === 1;
 
-  const URL =
+  const url =
     social.desktopSpecificURL && !isMobileDetected
       ? social.desktopSpecificURL
       : social.url;
-  const TEXT =
+  const text =
     social.desktopSpecificLinkText && !isMobileDetected
       ? social.desktopSpecificLinkText
       : social.linkText;
@@ -148,12 +150,12 @@ export const SocialIcon = ({
 
   return (
     <CustomLink
-      href={URL}
+      href={url}
       className={classNames(
         "unstyled flex h-12 cursor-pointer items-center justify-center rounded-lg text-xl hover:opacity-70",
         styling.bgClassName,
-        TEXT ? "w-fit shrink-0" : "w-12",
-        { "px-5": TEXT },
+        text ? "w-fit shrink-0" : "w-12",
+        { "px-5": text },
         { "flex sm:hidden": hideOnDesktop },
         { "hidden sm:flex": hideOnMobile },
         { "flex-grow sm:flex-grow-0": growOnMobile }
@@ -161,11 +163,11 @@ export const SocialIcon = ({
       title={social.title}
     >
       <Icon
-        className={classNames({ "text-2xl": !TEXT })}
+        className={classNames({ "text-2xl": !text })}
         color={styling.fill ?? "white"}
       />
-      {TEXT && (
-        <span className="ml-2 inline text-sm font-bold text-white">{TEXT}</span>
+      {text && (
+        <span className="ml-2 inline text-sm font-bold text-white">{text}</span>
       )}
     </CustomLink>
   );
