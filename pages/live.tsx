@@ -56,7 +56,6 @@ export default function LivePage(
               <span className="flex flex-row items-center gap-2">
                 <FaYoutube size={25} />
                 {data.live.sswTvButton.name}
-                {/* <BsArrowRightCircle className="ml-1 inline" /> */}
               </span>
             }
             noAnimate
