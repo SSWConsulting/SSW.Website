@@ -1,11 +1,11 @@
 import { InferGetStaticPropsType } from "next";
 import { BsArrowRightCircle } from "react-icons/bs";
+import { FaYoutube } from "react-icons/fa";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../.tina/__generated__/client";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { BuiltOnAzure } from "../components/blocks/builtOnAzure";
 import { UtilityButton } from "../components/button/utilityButton";
-import { UtilityButtonWithLogo } from "../components/button/utilityButtonWithLogo";
 import { CustomLink } from "../components/customLink";
 import { Layout } from "../components/layout";
 import { LiveHeader } from "../components/live/header";
@@ -46,17 +46,18 @@ export default function LivePage(
       <Container size="xsmall">
         <div className="flex items-center justify-between">
           <h2 className="mt-0 text-sswRed">{data.live.nextEvent}</h2>
-          <UtilityButtonWithLogo
+          <UtilityButton
             className="mx-20"
             size="small"
             uncentered={false}
             removeTopMargin={true}
             link={`https://www.youtube.com/channel/${data.live.sswTvButton.channelId}`}
             buttonText={
-              <>
+              <span className="flex flex-row items-center gap-2">
+                <FaYoutube size={25} />
                 {data.live.sswTvButton.name}
-                <BsArrowRightCircle className="ml-1 inline" />
-              </>
+                {/* <BsArrowRightCircle className="ml-1 inline" /> */}
+              </span>
             }
             noAnimate
             openInNewTab={true}
