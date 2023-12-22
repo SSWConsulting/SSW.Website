@@ -121,20 +121,14 @@ export const SocialIcon = ({
     excludeDesktop?.length && excludeDesktop.includes(social.type);
   const hideOnMobile =
     excludeMobile?.length && excludeMobile.includes(social.type);
-
-  if (hideOnDesktop && hideOnMobile) {
-    return null;
-  }
-
   const styling = socialStyles[social.type];
 
-  if (!styling) {
-    return null;
+  if ((hideOnDesktop && hideOnMobile) || !styling) {
+    return <></>;
   }
 
   const growOnMobile =
     !hideOnMobile &&
-    // TODO: Maybe undo all of these changes they are pretty significant and Map in TS is bad
     Object.keys(SocialIcons).length - excludeMobile?.length === 1;
 
   const url =
