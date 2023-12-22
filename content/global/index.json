@@ -67,6 +67,32 @@
       "phone": "+61 2 9953 3000",
       "hours": "9am - 6pm AEST",
       "days": "Monday - Friday"
+    },
+    {
+      "url": "/offices/hangzhou",
+      "name": "SSW Hangzhou Office",
+      "streetAddress": "Room 305, Level 3, Building 2, Star City Development Building, 406 Xintiandi Street",
+      "suburb": "",
+      "addressLocality": "Hangzhou",
+      "addressRegion": "Zhejiang",
+      "addressCountry": "China",
+      "postalCode": 310004,
+      "phone": "+86 571 8517 8910",
+      "hours": "9am - 6pm CST",
+      "days": "Monday - Friday"
+    },
+    {
+      "url": "/offices/strasbourg",
+      "name": "SSW Strasbourg Office",
+      "streetAddress": "Niveau 4 – 19 Rue du Fossé des Treize",
+      "suburb": "",
+      "addressLocality": "Strasbourg",
+      "addressRegion": "Alsace",
+      "addressCountry": "France",
+      "postalCode": 67000,
+      "phone": "+33 3 67 39 05 39",
+      "hours": "9am - 6pm CEST",
+      "days": "Monday - Friday"
     }
   ],
   "bookingPhone": "+61 2 9953 3000",

@@ -76,6 +76,7 @@ const config = {
   experimental: {
     optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
   },
+  // transpilePackages: ["rc-tween-one", "rc-tween-one/lib/plugin/SvgMorphPlugin"],
 };
 
 const withBundleAnalyzer = bundleAnalyser({
