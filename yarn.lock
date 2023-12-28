@@ -2499,12 +2499,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@heroicons/react@npm:^2.0.18":
-  version: 2.0.18
-  resolution: "@heroicons/react@npm:2.0.18"
+"@heroicons/react@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "@heroicons/react@npm:2.1.1"
   peerDependencies:
     react: ">= 16"
-  checksum: 597e8668818623d568a302e343ef06b69f62ce297c14b88c2ebbfed0c0f00cd85ec44fae33ec8a249931b4e7dcf145743ae3198095a9f4682108de5155f5f4c3
+  checksum: 5ba8add458d23f6bbb823d759181d1d7e70707d966ad14577e05bbeb17e383aef800e0df7a163f4a5ec7987dd5e9816cd5d9edc0d874984db34818600bfd5c9e
   languageName: node
   linkType: hard
 
@@ -4619,7 +4619,7 @@ __metadata:
     "@fortawesome/fontawesome-svg-core": ^6.5.1
     "@headlessui/react": ^1.7.17
     "@headlessui/tailwindcss": ^0.2.0
-    "@heroicons/react": ^2.0.18
+    "@heroicons/react": ^2.1.1
     "@microsoft/applicationinsights-react-js": ^17.0.2
     "@microsoft/applicationinsights-web": 3.0.3
     "@next/bundle-analyzer": ^14.0.1
