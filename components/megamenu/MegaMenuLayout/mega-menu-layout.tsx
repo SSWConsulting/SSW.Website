@@ -44,8 +44,8 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
           <div className="flex items-center xl:hidden">
             <SocialIcons
               className="max-sm:hidden"
-              excludeMobile={["phone"]}
-              excludeDesktop={["phone"]}
+              includeDesktop={["phone"]}
+              includeMobile={["phone"]}
             />
             <Search />
             <Divider />
@@ -70,8 +70,8 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
 
       <SocialIcons
         className="pb-4 sm:hidden"
-        excludeMobile={["phone"]}
-        excludeDesktop={["phone"]}
+        includeMobile={["phone"]}
+        includeDesktop={["phone"]}
       />
     </>
   );

@@ -73,31 +73,78 @@ const socialStyles: Record<
   },
 };
 
-export interface SocialIconsProps {
-  className?: string;
-  excludeDesktop?: SocialTypes[] | boolean;
-  excludeMobile?: SocialTypes[] | boolean;
-}
+// TODO: Fancy types
+// type IncludeAllMobile = {
+//   includeAllMobile: boolean;
+// };
 
-export const SocialIcons = (data?: SocialIconsProps) => {
+// type IncludeSomeMobile = {
+//   includeMobile: SocialTypes[];
+// };
+
+// type IncludeAllDesktop = {
+//   includeAllDesktop: boolean;
+// };
+
+// type IncludeSomeDesktop = {
+//   includeDesktop: SocialTypes[];
+// };
+
+// type SocialIconsProps = {
+//   className?: string;
+// } & (IncludeAllMobile | IncludeSomeMobile) &
+//   (IncludeAllDesktop | IncludeSomeDesktop);
+
+type SocialIconsProps = {
+  className?: string;
+  includeDesktop?: SocialTypes[];
+  includeMobile?: SocialTypes[];
+  includeAllDesktop?: boolean;
+  includeAllMobile?: boolean;
+};
+
+export const SocialIcons = ({
+  includeDesktop,
+  includeMobile,
+  includeAllDesktop,
+  includeAllMobile,
+  className,
+}: SocialIconsProps) => {
   const isMobileDetected = isMobile;
+  const growOnMobile = includeMobile?.length === 1;
+  const hideOnDesktop = includeDesktop?.length === 0 && !includeAllDesktop;
+  const hideOnMobile = includeMobile?.length === 0 && !includeAllMobile;
+
+  const icons = [
+    ...new Set([...(includeDesktop ?? []), ...(includeMobile ?? [])]),
+  ];
 
   return (
     <div
       className={classNames(
         "flex flex-grow flex-wrap gap-2 sm:flex-grow-0",
-        data?.className
+        className
       )}
     >
-      {layoutData.socials.map((social) => (
-        <SocialIcon
-          key={social.type}
-          social={social}
-          isMobileDetected={isMobileDetected}
-          excludeDesktop={data?.excludeDesktop}
-          excludeMobile={data?.excludeMobile}
-        />
-      ))}
+      {hideOnDesktop && hideOnMobile ? (
+        <></>
+      ) : (
+        icons.map((icon) => {
+          const social = layoutData.socials.find((s) => s.type === icon);
+          console.log(social);
+
+          return (
+            <SocialIcon
+              key={icon}
+              social={social}
+              isMobileDetected={isMobileDetected}
+              hideOnDesktop={hideOnDesktop}
+              hideOnMobile={hideOnMobile}
+              growOnMobile={growOnMobile}
+            />
+          );
+        })
+      )}
     </div>
   );
 };
@@ -105,8 +152,9 @@ export const SocialIcons = (data?: SocialIconsProps) => {
 type SocialIconProps = {
   social: (typeof layoutData.socials)[number];
   isMobileDetected: boolean;
-  excludeDesktop?: SocialTypes[] | boolean;
-  excludeMobile?: SocialTypes[] | boolean;
+  hideOnDesktop?: boolean;
+  hideOnMobile?: boolean;
+  growOnMobile?: boolean;
 };
 
 // TODO: This component does not adhere to the single responsibility principle (SOLID)
@@ -114,30 +162,10 @@ type SocialIconProps = {
 export const SocialIcon = ({
   social,
   isMobileDetected,
-  excludeDesktop,
-  excludeMobile,
+  hideOnDesktop,
+  hideOnMobile,
+  growOnMobile,
 }: SocialIconProps) => {
-  if (excludeDesktop === true) {
-    excludeDesktop = Object.keys(socialStyles);
-  }
-  if (excludeMobile === true) {
-    excludeMobile = Object.keys(socialStyles);
-  }
-
-  const hideOnDesktop =
-    excludeDesktop?.length && excludeDesktop.includes(social.type);
-  const hideOnMobile =
-    excludeMobile?.length && excludeMobile.includes(social.type);
-  const styling = socialStyles[social.type];
-
-  if ((hideOnDesktop && hideOnMobile) || !styling) {
-    return <></>;
-  }
-
-  const growOnMobile =
-    !hideOnMobile &&
-    Object.keys(SocialIcons).length - excludeMobile?.length === 1;
-
   const url =
     social.desktopSpecificURL && !isMobileDetected
       ? social.desktopSpecificURL
@@ -146,6 +174,8 @@ export const SocialIcon = ({
     social.desktopSpecificLinkText && !isMobileDetected
       ? social.desktopSpecificLinkText
       : social.linkText;
+
+  const styling = socialStyles[social.type];
 
   const Icon = styling.icon;
 
