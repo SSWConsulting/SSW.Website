@@ -57,7 +57,9 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuGroups }) => {
 
       <div className="hidden shrink items-center justify-end xl:flex">
         <SocialIcons
-          excludeDesktop={["phone"]}
+          excludeDesktop={(Object.keys(socialStyles) as SocialTypes[]).filter(
+            (icon) => icon !== "phone"
+          )}
           excludeMobile={Object.keys(socialStyles) as SocialTypes[]}
         />
         <Search />
