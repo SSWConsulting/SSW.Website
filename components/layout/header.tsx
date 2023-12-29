@@ -2,12 +2,11 @@ import Image from "next/image";
 import React from "react";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
-import { SocialIcons, SocialTypes } from "../util/socialIcons";
+import { SocialIcons, SocialTypes, socialStyles } from "../util/socialIcons";
 
 export const Header = () => {
-  // all SocialType values except phone
-  const excludeMobile = Object.values(SocialTypes).filter(
-    (type) => type !== SocialTypes.phone
+  const icons = (Object.keys(socialStyles) as SocialTypes[]).filter(
+    (key) => key !== "phone"
   );
 
   return (
@@ -21,10 +20,7 @@ export const Header = () => {
         <div className="sm:flex sm:items-center sm:justify-between sm:gap-2">
           <Logo />
           <div className="mt-4 flex items-center justify-center sm:mt-0">
-            <SocialIcons
-              excludeMobile={excludeMobile}
-              excludeDesktop={[SocialTypes.meetup]}
-            />
+            <SocialIcons includeMobile={["phone"]} includeDesktop={icons} />
           </div>
         </div>
       </Container>

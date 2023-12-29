@@ -30,7 +30,7 @@ export type SocialTypes =
   | "tiktok"
   | "github";
 
-const socialStyles: Record<
+export const socialStyles: Record<
   SocialTypes,
   { icon: IconType; bgClassName: string; fill?: string }
 > = {
@@ -71,7 +71,7 @@ const socialStyles: Record<
     icon: FaMeetup,
     bgClassName: "bg-social-meetup",
   },
-};
+} as const;
 
 // TODO: Fancy types
 // type IncludeAllMobile = {
@@ -97,27 +97,18 @@ const socialStyles: Record<
 
 type SocialIconsProps = {
   className?: string;
-  includeDesktop?: SocialTypes[];
-  includeMobile?: SocialTypes[];
-  includeAllDesktop?: boolean;
-  includeAllMobile?: boolean;
+  excludeDesktop?: SocialTypes[];
+  excludeMobile?: SocialTypes[];
 };
 
 export const SocialIcons = ({
-  includeDesktop,
-  includeMobile,
-  includeAllDesktop,
-  includeAllMobile,
+  excludeDesktop,
+  excludeMobile,
   className,
 }: SocialIconsProps) => {
   const isMobileDetected = isMobile;
-  const growOnMobile = includeMobile?.length === 1;
-  const hideOnDesktop = includeDesktop?.length === 0 && !includeAllDesktop;
-  const hideOnMobile = includeMobile?.length === 0 && !includeAllMobile;
-
-  const icons = [
-    ...new Set([...(includeDesktop ?? []), ...(includeMobile ?? [])]),
-  ];
+  const growOnMobile =
+    Object.keys(socialStyles).length - excludeMobile?.length === 1;
 
   return (
     <div
@@ -126,25 +117,30 @@ export const SocialIcons = ({
         className
       )}
     >
-      {hideOnDesktop && hideOnMobile ? (
-        <></>
-      ) : (
-        icons.map((icon) => {
-          const social = layoutData.socials.find((s) => s.type === icon);
-          console.log(social);
+      {layoutData.socials.map((social) => {
+        const hideOnDesktop =
+          excludeDesktop?.length &&
+          !!excludeDesktop.find((icon) => icon === social.type);
 
-          return (
-            <SocialIcon
-              key={icon}
-              social={social}
-              isMobileDetected={isMobileDetected}
-              hideOnDesktop={hideOnDesktop}
-              hideOnMobile={hideOnMobile}
-              growOnMobile={growOnMobile}
-            />
-          );
-        })
-      )}
+        const hideOnMobile =
+          excludeMobile?.length &&
+          !!excludeMobile.find((icon) => icon === social.type);
+
+        if (hideOnDesktop && hideOnMobile) {
+          return <></>;
+        }
+
+        return (
+          <SocialIcon
+            key={social.type}
+            social={social}
+            isMobileDetected={isMobileDetected}
+            hideOnDesktop={hideOnDesktop}
+            hideOnMobile={hideOnMobile}
+            growOnMobile={growOnMobile}
+          />
+        );
+      })}
     </div>
   );
 };

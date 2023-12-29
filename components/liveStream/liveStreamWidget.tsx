@@ -14,7 +14,7 @@ import { SpeakerInfo } from "../../services/server/events";
 import { CustomLink } from "../customLink";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
 import { SubNewsLettersForm } from "../subNewsletter/subNewsletterForm";
-import { SocialIcons, SocialTypes } from "../util/socialIcons";
+import { SocialIcons } from "../util/socialIcons";
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;
@@ -311,8 +311,16 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
             <div className="mt-17">
               <h4 className="font-bold">Follow us on:</h4>
               <SocialIcons
-                excludeDesktop={[SocialTypes.phone]}
-                excludeMobile={[SocialTypes.phone]}
+                includeDesktop={[
+                  "facebook",
+                  "github",
+                  "instagram",
+                  "xtwitter",
+                  "linkedin",
+                  "tiktok",
+                  "youtube",
+                ]}
+                includeAllMobile
               />
             </div>
             <SubNewsLettersForm
