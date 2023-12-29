@@ -5,7 +5,7 @@ import { Container } from "../util/container";
 import { SocialIcons, SocialTypes, socialStyles } from "../util/socialIcons";
 
 export const Header = () => {
-  const icons = (Object.keys(socialStyles) as SocialTypes[]).filter(
+  const excludeMobile = (Object.keys(socialStyles) as SocialTypes[]).filter(
     (key) => key !== "phone"
   );
 
@@ -20,7 +20,10 @@ export const Header = () => {
         <div className="sm:flex sm:items-center sm:justify-between sm:gap-2">
           <Logo />
           <div className="mt-4 flex items-center justify-center sm:mt-0">
-            <SocialIcons includeMobile={["phone"]} includeDesktop={icons} />
+            <SocialIcons
+              excludeMobile={excludeMobile}
+              excludeDesktop={["meetup"]}
+            />
           </div>
         </div>
       </Container>

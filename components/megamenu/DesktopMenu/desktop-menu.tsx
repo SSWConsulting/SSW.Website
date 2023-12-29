@@ -1,7 +1,7 @@
 import { Popover } from "@headlessui/react";
 import React, { createContext } from "react";
 import { NavMenuGroup } from "../../../types/megamenu";
-import { SocialIcons } from "../../util/socialIcons";
+import { SocialIcons, SocialTypes, socialStyles } from "../../util/socialIcons";
 import { CountryDropdown } from "../CountryDropdown";
 import Divider from "../divider";
 import Search from "../search";
@@ -56,7 +56,10 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ menuGroups }) => {
       </div>
 
       <div className="hidden shrink items-center justify-end xl:flex">
-        <SocialIcons excludeDesktop={["phone"]} excludeMobile />
+        <SocialIcons
+          excludeDesktop={["phone"]}
+          excludeMobile={Object.keys(socialStyles) as SocialTypes[]}
+        />
         <Search />
         <Divider />
         <CountryDropdown />

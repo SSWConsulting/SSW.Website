@@ -2,7 +2,7 @@ import { Bars3Icon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import React, { useState } from "react";
 import { NavMenuGroup } from "../../../types/megamenu";
-import { SocialIcons } from "../../util/socialIcons";
+import { SocialIcons, SocialTypes, socialStyles } from "../../util/socialIcons";
 import DesktopMenu from "../DesktopMenu/desktop-menu";
 import Logo from "../Logo/logo";
 import MobileMenu from "../MobileMenu/mobile-menu";
@@ -17,6 +17,10 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
   tagline = "Enterprise Software Development",
   menuBarItems,
 }) => {
+  const excludePhone = (Object.keys(socialStyles) as SocialTypes[]).filter(
+    (key) => key !== "phone"
+  );
+
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <>
@@ -44,8 +48,8 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
           <div className="flex items-center xl:hidden">
             <SocialIcons
               className="max-sm:hidden"
-              includeDesktop={["phone"]}
-              includeMobile={["phone"]}
+              excludeDesktop={excludePhone}
+              excludeMobile={excludePhone}
             />
             <Search />
             <Divider />
@@ -70,8 +74,8 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
 
       <SocialIcons
         className="pb-4 sm:hidden"
-        includeMobile={["phone"]}
-        includeDesktop={["phone"]}
+        excludeDesktop={excludePhone}
+        excludeMobile={excludePhone}
       />
     </>
   );

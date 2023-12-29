@@ -311,16 +311,8 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
             <div className="mt-17">
               <h4 className="font-bold">Follow us on:</h4>
               <SocialIcons
-                includeDesktop={[
-                  "facebook",
-                  "github",
-                  "instagram",
-                  "xtwitter",
-                  "linkedin",
-                  "tiktok",
-                  "youtube",
-                ]}
-                includeAllMobile
+                excludeDesktop={["phone"]}
+                excludeMobile={["phone"]}
               />
             </div>
             <SubNewsLettersForm

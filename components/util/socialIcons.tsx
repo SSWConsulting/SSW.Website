@@ -73,28 +73,6 @@ export const socialStyles: Record<
   },
 } as const;
 
-// TODO: Fancy types
-// type IncludeAllMobile = {
-//   includeAllMobile: boolean;
-// };
-
-// type IncludeSomeMobile = {
-//   includeMobile: SocialTypes[];
-// };
-
-// type IncludeAllDesktop = {
-//   includeAllDesktop: boolean;
-// };
-
-// type IncludeSomeDesktop = {
-//   includeDesktop: SocialTypes[];
-// };
-
-// type SocialIconsProps = {
-//   className?: string;
-// } & (IncludeAllMobile | IncludeSomeMobile) &
-//   (IncludeAllDesktop | IncludeSomeDesktop);
-
 type SocialIconsProps = {
   className?: string;
   excludeDesktop?: SocialTypes[];
