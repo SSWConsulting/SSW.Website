@@ -1,3 +1,4 @@
+import * as appInsights from "applicationinsights";
 import { NextApiRequest, NextApiResponse } from "next";
 import client from "../../.tina/__generated__/client";
 
@@ -11,7 +12,23 @@ export default async function handler(
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Cache-Control", `s-maxage=${CACHE_SECS}`);
 
-  const tinaData = await client.queries.megamenu({ relativePath: "menu.json" });
+  try {
+    const tinaData = await client.queries.megamenu({
+      relativePath: "menu.json",
+    });
 
-  res.status(200).json(tinaData.data.megamenu);
+    res.status(200).json(tinaData.data.megamenu);
+  } catch (err) {
+    appInsights?.defaultClient?.trackException({
+      exception: err,
+      properties: {
+        Request: "GET /api/get-megamenu",
+        Status: 500,
+      },
+      severity: appInsights.Contracts.SeverityLevel.Error,
+    });
+
+    console.error(err);
+    res.status(500).json({ message: "Error getting megamenu data" });
+  }
 }
