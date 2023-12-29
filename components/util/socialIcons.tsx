@@ -131,8 +131,6 @@ type SocialIconProps = {
   growOnMobile?: boolean;
 };
 
-// TODO: This component does not adhere to the single responsibility principle (SOLID)
-// Can be fixed by separating the phone component from other social icons
 export const SocialIcon = ({
   social,
   isMobileDetected,
