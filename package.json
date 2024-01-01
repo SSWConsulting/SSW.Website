@@ -43,7 +43,7 @@
     "@heroicons/react": "^2.1.1",
     "@microsoft/applicationinsights-react-js": "17.0.3",
     "@microsoft/applicationinsights-web": "3.0.7",
-    "@next/bundle-analyzer": "^14.0.1",
+    "@next/bundle-analyzer": "^14.0.4",
     "@tailwindcss/typography": "^0.5.10",
     "animate-css-grid": "^1.5.1",
     "aos": "^2.3.4",
