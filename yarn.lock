@@ -4542,7 +4542,7 @@ __metadata:
     eslint-config-next: 14.0.4
     eslint-config-prettier: ^9.1.0
     eslint-plugin-prettier: ^5.0.0
-    eslint-plugin-tailwindcss: ^3.13.0
+    eslint-plugin-tailwindcss: ^3.13.1
     formik: ^2.4.5
     keyboardjs: ^2.7.0
     next: 14.0.4
@@ -8604,15 +8604,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-tailwindcss@npm:^3.13.0":
-  version: 3.13.0
-  resolution: "eslint-plugin-tailwindcss@npm:3.13.0"
+"eslint-plugin-tailwindcss@npm:^3.13.1":
+  version: 3.13.1
+  resolution: "eslint-plugin-tailwindcss@npm:3.13.1"
   dependencies:
     fast-glob: ^3.2.5
     postcss: ^8.4.4
   peerDependencies:
     tailwindcss: ^3.3.2
-  checksum: 0ed226300b613987e59d1374c611c374add3205b73647e8ec910ad2409a2a07f9605cb7e6e7a34bda7702946681aef4a289c6b6bcf9f1357fa6bc4e0ee8f508b
+  checksum: 6be67bffca319174695b1374d8970c58a36bf1f12e5f3a5c2b613996a96e3f0d849745762af7d860adfc6bd01f9fa5789d433b8e443a870f82fd43c42046c206
   languageName: node
   linkType: hard
 
