@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
 import { cache } from "../../services/server/cacheService";
-const CACHE_HOURS = 4 * 60 * 60; // ~ 4 hours
+const CACHE_HOURS = 6 * 60 * 60; // ~ 6 hours
 
 import { getYoutubePlaylist } from "../../services/server/youtube";
 
