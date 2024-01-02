@@ -18,7 +18,6 @@ import {
   getNextEventToBeLiveStreamed,
   getSpeakersInfoFromEvent,
 } from "../services/server/events";
-import { getYoutubePlaylist } from "../services/server/youtube";
 
 const ISR_TIME = 60 * 60;
 
@@ -111,10 +110,7 @@ export default function LivePage(
         </div>
       </Container>
       <Container size="xsmall">
-        <YoutubePlayListBlock
-          props={data.live.youtubePlaylist}
-          playlistVideosLinks={props.playListVideosLinks}
-        />
+        <YoutubePlayListBlock {...data.live.youtubePlaylist} />
       </Container>
       <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
     </Layout>
@@ -130,11 +126,6 @@ export const getStaticProps = async () => {
   const speakers = await getSpeakersInfoFromEvent(event);
   const speaker = speakers[0];
 
-  const playListVideosLinks = await getYoutubePlaylist(
-    tinaProps.data.live.youtubePlaylist?.playlistId,
-    tinaProps.data.live.youtubePlaylist?.numberOfVideos
-  );
-
   return {
     props: {
       data: tinaProps.data,
@@ -142,7 +133,6 @@ export const getStaticProps = async () => {
       variables: tinaProps.variables,
       event: event || null,
       speaker: speaker || null,
-      playListVideosLinks,
     },
     revalidate: ISR_TIME,
   };

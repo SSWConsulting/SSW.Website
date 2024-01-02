@@ -22,14 +22,10 @@ export const VideoCard: FC<VideoCardProps> = ({ link, title, theme }) => {
       url={link}
       className={
         theme === "light" &&
-        "cursor-pointer rounded-sm border-1 border-gray-200"
+        "h-full !cursor-pointer rounded-sm border-1 border-gray-200"
       }
     >
-      <div
-        className={classNames(
-          "flex h-full items-center justify-between bg-white p-5"
-        )}
-      >
+      <div className={classNames("flex justify-between bg-white p-5 h-full")}>
         <span className="w-full text-left text-lg font-bold text-black">
           {title}
         </span>

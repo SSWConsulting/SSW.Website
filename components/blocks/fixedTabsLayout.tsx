@@ -9,10 +9,9 @@ import { VscPerson } from "react-icons/vsc";
 import type { Template } from "tinacms";
 
 import classNames from "classnames";
-import { getYoutubePlaylist } from "../../services/server/youtube";
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
-import { VideoCard } from "../util/videoCards";
 import { expertBlockSchema } from "./expertBlock";
+import { youtubePlayListBlockSchema } from "./youtubePlayList";
 
 export const iconMap = {
   RiTeamLine: (props) => <RiTeamLine className={props.className} />,
@@ -23,28 +22,11 @@ const fixedTabsBlocks: Template[] = [
   videoEmbedBlockSchema,
   bookingButtonSchema,
   expertBlockSchema,
+  youtubePlayListBlockSchema,
 ];
 
 export const FixedTabsLayout = ({ data }) => {
   const [selectedTab, setSelectedTab] = useState("");
-  const [playListVideosLinks, setPlayListVideosLinks] = useState([]);
-
-  useEffect(() => {
-    getPlayList();
-  }, []);
-
-  const getPlayList = async () => {
-    const videos = await getYoutubePlaylist(
-      "PLpiOR7CBNvlovBGeEB3vVhYzVWYnkFpA-",
-      6
-    );
-
-    console.log(
-      "🚀 ~ file: fixedTabsLayout.tsx:42 ~ getPlayList ~ videos:",
-      videos
-    );
-    setPlayListVideosLinks(videos);
-  };
 
   const onTabBtnClicked = (selectedTab) => {
     setSelectedTab(selectedTab);
@@ -68,27 +50,16 @@ export const FixedTabsLayout = ({ data }) => {
         {renderTabButton(data.secondTab, selectedTab, onTabBtnClicked)}
       </div>
 
-      {selectedTab === data.firstTab &&
-        renderTinaMarkDown(data.firstBody, 1, playListVideosLinks)}
-      {selectedTab === data.secondTab &&
-        renderTinaMarkDown(data.secondBody, 2, playListVideosLinks)}
+      {selectedTab === data.firstTab && renderTinaMarkDown(data.firstBody)}
+      {selectedTab === data.secondTab && renderTinaMarkDown(data.secondBody)}
     </>
   );
 };
 
-const renderTinaMarkDown = (data, tab = 1, playListVideosLinks = []) => {
+const renderTinaMarkDown = (data) => {
   return (
     <>
       <TinaMarkdown content={data} components={componentRenderer} />
-      {tab === 2 && (
-        <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">
-          {playListVideosLinks?.map((video, index) => (
-            <div key={index}>
-              <VideoCard {...video} theme="light" />
-            </div>
-          ))}
-        </div>
-      )}
     </>
   );
 };

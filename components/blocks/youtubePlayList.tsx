@@ -1,4 +1,5 @@
-import { Key } from "react";
+import axios from "axios";
+import { Key, useEffect, useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { Template, TinaField } from "tinacms";
 import { CustomLink } from "../customLink";
@@ -16,35 +17,50 @@ export type YoutubePlayListProps = {
   textForPlayListLink?: string;
 };
 
-export type YoutubePlayListBlockProps = {
-  playlistVideosLinks: VideoProps[];
-  props: YoutubePlayListProps;
-};
-export const YoutubePlayListBlock: React.FC<YoutubePlayListBlockProps> = ({
-  props,
-  playlistVideosLinks,
+export const YoutubePlayListBlock: React.FC<YoutubePlayListProps> = ({
+  title,
+  playlistId,
+  textForPlayListLink,
+  numberOfVideos,
 }) => {
+  const [playlistVideosLinkss, setPlaylistVideosLinkss] = useState([]);
+
+  const getYoutubePlaylist = async () => {
+    await axios
+      .get<VideoProps[]>("/api/get-youtube-playlist", {
+        params: {
+          playlistId: playlistId,
+          videosCount: numberOfVideos,
+        },
+      })
+      .then((response) => {
+        response;
+        setPlaylistVideosLinkss(response.data);
+      });
+  };
+  useEffect(() => {
+    getYoutubePlaylist();
+    console.log("See how many time it ran", playlistId);
+  }, []);
   return (
     <>
-      {props?.title && (
+      {title && (
         <span className="text-sswRed">
-          <h2>{props?.title}</h2>
+          <h2>{title}</h2>
         </span>
       )}
-      <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">
-        {playlistVideosLinks?.map((video: VideoProps, index: Key) => (
-          <div key={index}>
-            <VideoCard {...video} theme="light" />
-          </div>
+      <div className="grid h-full grid-cols-1 justify-center gap-8 lg:grid-cols-3">
+        {playlistVideosLinkss?.map((video: VideoProps, index: Key) => (
+          <VideoCard {...video} theme="light" key={index} />
         ))}
       </div>
-      {props?.textForPlayListLink && (
+      {textForPlayListLink && (
         <div className="flex justify-center">
           <CustomLink
-            href={`https://www.youtube.com/playlist?list=${props?.playlistId}`}
+            href={`https://www.youtube.com/playlist?list=${playlistId}`}
             className="done relative mx-2 mt-8 inline-flex overflow-hidden rounded border-none bg-sswRed pl-3 text-white"
           >
-            {props?.textForPlayListLink}
+            {textForPlayListLink}
             <BsArrowRightCircle className="ml-1 inline" />
           </CustomLink>
         </div>

@@ -34,6 +34,7 @@ import {
 import { UpcomingEvents } from "./upcomingEvents";
 import { VerticalImageLayout } from "./verticalImageLayout";
 import { VerticalListItem } from "./verticalListItem";
+import { YoutubePlayListBlock, YoutubePlayListProps } from "./youtubePlayList";
 
 const Carousel = dynamic(
   () => import("./carousel").then((mod) => mod.Carousel),
@@ -187,6 +188,9 @@ export const componentRenderer: Components<{
     };
   };
   TripleColumnImageBlock: TripleColumnImageBlockProps;
+  YoutubePlayListBlock: {
+    youtubePlaylist: YoutubePlayListProps;
+  };
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -218,4 +222,7 @@ export const componentRenderer: Components<{
   EventLink: (props) => <EventLink {...props} />,
   ExpertBlock: (props) => <ExpertBlock {...props} />,
   TripleColumnImageBlock: (props) => <TripleColumnImageBlock {...props} />,
+  YoutubePlayListBlock: (props) => (
+    <YoutubePlayListBlock {...props.youtubePlaylist} />
+  ),
 };
