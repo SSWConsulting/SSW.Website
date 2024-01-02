@@ -38,6 +38,10 @@ export const YoutubePlayListBlock: React.FC<YoutubePlayListProps> = ({
     getYoutubePlaylist();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  if (!playlistId) {
+    return <></>;
+  }
   return (
     <>
       {title && (
