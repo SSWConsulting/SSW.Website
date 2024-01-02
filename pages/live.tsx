@@ -1,5 +1,4 @@
 import { InferGetStaticPropsType } from "next";
-import { BsArrowRightCircle } from "react-icons/bs";
 import { FaYoutube } from "react-icons/fa";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../.tina/__generated__/client";
