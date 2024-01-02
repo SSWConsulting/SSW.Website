@@ -36,6 +36,7 @@ export const YoutubePlayListBlock: React.FC<YoutubePlayListProps> = ({
   };
   useEffect(() => {
     getYoutubePlaylist();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>
