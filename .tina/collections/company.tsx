@@ -2,6 +2,7 @@ import React from "react";
 import * as Schemas from "../../components/blocks";
 import {
   VerticalImageLayout,
+  fixedColumnsSchema,
   testimonialsListSchema,
   verticalImageLayoutBlockSchema,
 } from "../../components/blocks";
@@ -44,6 +45,7 @@ export const companySchema: Collection = {
         testimonialsListSchema,
         verticalImageLayoutBlockSchema,
         tripleColumnImageBlockSchema,
+        fixedColumnsSchema,
       ],
     },
     {
