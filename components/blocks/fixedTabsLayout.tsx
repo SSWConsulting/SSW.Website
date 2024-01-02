@@ -24,7 +24,7 @@ const fixedTabsBlocks: Template[] = [
   bookingButtonSchema,
   expertBlockSchema,
   youtubePlayListBlockSchema,
-  customImageBlockSchema
+  customImageBlockSchema,
 ];
 
 export const FixedTabsLayout = ({ data }) => {
