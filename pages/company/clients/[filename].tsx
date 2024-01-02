@@ -25,49 +25,47 @@ export default function CompanyPage(
     <RecaptchaContext.Provider
       value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
     >
-      <div>
-        <SEO seo={props.seo} />
-        <Layout menu={data.megamenu}>
-          {data.caseStudy.seo?.showBreadcrumb === null ||
-            (data.caseStudy.seo?.showBreadcrumb && (
-              <Section className="mx-auto w-full max-w-9xl px-8 py-0">
-                <Breadcrumbs
-                  path={removeExtension(props.variables.relativePath)}
-                  suffix={data.global.breadcrumbSuffix}
-                  title={data.caseStudy.seo?.title}
-                  seoSchema={data.caseStudy.seo}
-                />
-              </Section>
-            ))}
-          <Section className="mx-auto w-full max-w-9xl px-8 ">
-            <div>
-              <h1
-                data-tina-field={tinaField(data.caseStudy, "heading")}
-                className="p-0"
-              >
-                {data.caseStudy.heading}
-              </h1>
-              <h2
-                data-tina-field={tinaField(data.caseStudy, "subHeading")}
-                className="p-0 text-sm"
-              >
-                {data.caseStudy.subHeading}
-              </h2>
-            </div>
-          </Section>
-          <Blocks prefix="CaseStudy_body" blocks={data.caseStudy._body} />
-          <Section className="prose mx-auto !block w-full max-w-9xl px-8 py-0">
-            <TinaMarkdown
-              data-tina-field={tinaField(data.caseStudy, "content")}
-              components={componentRenderer}
-              content={data.caseStudy.content}
-            />
-          </Section>
-          <Section>
-            <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
-          </Section>
-        </Layout>
-      </div>
+      <SEO seo={props.seo} />
+      <Layout menu={data.megamenu}>
+        {data.caseStudy.seo?.showBreadcrumb === null ||
+          (data.caseStudy.seo?.showBreadcrumb && (
+            <Section className="mx-auto w-full max-w-9xl px-8 py-0">
+              <Breadcrumbs
+                path={removeExtension(props.variables.relativePath)}
+                suffix={data.global.breadcrumbSuffix}
+                title={data.caseStudy.seo?.title}
+                seoSchema={data.caseStudy.seo}
+              />
+            </Section>
+          ))}
+        <Section className="mx-auto w-full max-w-9xl px-8">
+          <div>
+            <h1
+              data-tina-field={tinaField(data.caseStudy, "heading")}
+              className="p-0"
+            >
+              {data.caseStudy.heading}
+            </h1>
+            <h2
+              data-tina-field={tinaField(data.caseStudy, "subHeading")}
+              className="p-0 text-sm"
+            >
+              {data.caseStudy.subHeading}
+            </h2>
+          </div>
+        </Section>
+        <Blocks prefix="CaseStudy_body" blocks={data.caseStudy._body} />
+        <Section className="prose mx-auto !block w-full max-w-9xl px-8 pb-16 pt-0">
+          <TinaMarkdown
+            data-tina-field={tinaField(data.caseStudy, "content")}
+            components={componentRenderer}
+            content={data.caseStudy.content}
+          />
+        </Section>
+        <Section>
+          <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+        </Section>
+      </Layout>
     </RecaptchaContext.Provider>
   );
 }
