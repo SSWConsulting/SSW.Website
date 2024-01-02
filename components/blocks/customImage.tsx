@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import Image from "next/image";
 import type { Template } from "tinacms";
 import { CustomLink } from "../customLink";
@@ -8,6 +9,7 @@ export type CustomImageProps = {
   height?: number;
   width?: number;
   link?: string;
+  customClass?: string;
 };
 
 export const CustomImage = ({ data }: { data: CustomImageProps }) => {
@@ -18,7 +20,7 @@ export const CustomImage = ({ data }: { data: CustomImageProps }) => {
         alt={data.altText}
         height={data.height || 400}
         width={data.width || 400}
-        className="inline-block"
+        className={classNames("inline-block", data.customClass ?? "")}
       />
     </LinkWrapper>
   );
@@ -63,6 +65,12 @@ export const customImageBlockSchema: Template = {
       type: "string",
       label: "Link (optional)",
       name: "link",
+      required: false,
+    },
+    {
+      type: "string",
+      label: "Custom Class (optional)",
+      name: "customClass",
       required: false,
     },
   ],

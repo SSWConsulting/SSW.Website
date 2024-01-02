@@ -10,6 +10,7 @@ import type { Template } from "tinacms";
 
 import classNames from "classnames";
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
+import { customImageBlockSchema } from "./customImage";
 import { expertBlockSchema } from "./expertBlock";
 import { youtubePlayListBlockSchema } from "./youtubePlayList";
 
@@ -23,6 +24,7 @@ const fixedTabsBlocks: Template[] = [
   bookingButtonSchema,
   expertBlockSchema,
   youtubePlayListBlockSchema,
+  customImageBlockSchema
 ];
 
 export const FixedTabsLayout = ({ data }) => {
