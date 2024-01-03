@@ -19,25 +19,31 @@ export const YoutubePlayListBlock: React.FC<YoutubePlayListProps> = ({
   textForPlayListLink,
   numberOfVideos,
 }) => {
-  const [playlistVideosLinkss, setPlaylistVideosLinkss] = useState([]);
+  const [playlistVideosLinks, setPlaylistVideosLinks] = useState([]);
 
-  const getYoutubePlaylist = async () => {
-    await axios
-      .get<PlayListType[]>("/api/get-youtube-playlist", {
-        params: {
-          playlistId: playlistId,
-          videosCount: numberOfVideos,
-        },
-      })
-      .then((response) => {
-        response;
-        setPlaylistVideosLinkss(response.data);
-      });
-  };
   useEffect(() => {
-    getYoutubePlaylist();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    const fetchPlaylist = async () => {
+      try {
+        await axios
+          .get<PlayListType[]>("/api/get-youtube-playlist", {
+            params: {
+              playlistId: playlistId,
+              videosCount: numberOfVideos,
+            },
+          })
+          .then((response) => {
+            response;
+            setPlaylistVideosLinks(response.data);
+          });
+      } catch (error) {
+        alert(error);
+      }
+    };
+
+    if (playlistId && numberOfVideos) {
+      fetchPlaylist();
+    }
+  }, [playlistId, numberOfVideos]);
 
   if (!playlistId) {
     return <></>;
@@ -50,7 +56,7 @@ export const YoutubePlayListBlock: React.FC<YoutubePlayListProps> = ({
         </span>
       )}
       <div className="grid h-full grid-cols-1 justify-center gap-8 lg:grid-cols-3">
-        {playlistVideosLinkss?.map((video: PlayListType, index: Key) => (
+        {playlistVideosLinks?.map((video: PlayListType, index: Key) => (
           <VideoCard {...video} theme="light" key={index} />
         ))}
       </div>
