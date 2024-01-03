@@ -20,6 +20,7 @@ export default async function handler(
     res.status(405).json({ message: "Unsupported method" });
     return;
   }
+
   try {
     const { playlistId, videosCount } = req.query;
 
