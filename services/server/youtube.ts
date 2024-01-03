@@ -1,4 +1,4 @@
-export type YoutubeVideoLinkType = {
+export type VideoLink = {
   title: string;
   link: string;
 };
@@ -8,7 +8,7 @@ const defaultVideoCount = 6;
 export async function getYoutubePlaylist(
   playlistId: string,
   videosCount: number
-): Promise<YoutubeVideoLinkType[]> {
+): Promise<VideoLink[]> {
   const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&part=id&part=snippet&part=status&maxResults=${
     videosCount || defaultVideoCount
   }&playlistId=${playlistId}&key=${process.env.YOUTUBE_PRIVATE_KEY}`;
