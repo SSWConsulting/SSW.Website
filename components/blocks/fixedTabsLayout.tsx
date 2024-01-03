@@ -59,11 +59,7 @@ export const FixedTabsLayout = ({ data }) => {
 };
 
 const renderTinaMarkDown = (data) => {
-  return (
-    <>
-      <TinaMarkdown content={data} components={componentRenderer} />
-    </>
-  );
+  return <TinaMarkdown content={data} components={componentRenderer} />;
 };
 
 const renderTabButton = (tab, selectedTab, onTabBtnClicked) => {
