@@ -176,7 +176,7 @@ export const componentRenderer: Components<{
   EventLink: EventLinkProps;
   ExpertBlock: ExpertBlockProps;
   TripleColumnImageBlock: TripleColumnImageBlockProps;
-  YoutubePlayListBlock: {
+  YoutubePlaylistBlock: {
     youtubePlaylist: YoutubePlaylistProps;
   };
 }> = {
@@ -210,7 +210,7 @@ export const componentRenderer: Components<{
   EventLink: (props) => <EventLink {...props} />,
   ExpertBlock: (props) => <ExpertBlock {...props} />,
   TripleColumnImageBlock: (props) => <TripleColumnImageBlock {...props} />,
-  YoutubePlayListBlock: (props) => (
+  YoutubePlaylistBlock: (props) => (
     <YoutubePlaylistBlock {...props.youtubePlaylist} />
   ),
 };

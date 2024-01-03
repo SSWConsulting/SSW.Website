@@ -16,27 +16,27 @@ export default async function handler(
   req: NextApiRequestWithParams,
   res: NextApiResponse
 ) {
-  if (req.method === "GET") {
-    try {
-      const { playlistId, videosCount } = req.query;
-
-      if (!playlistId) {
-        return res.status(400).json({ message: "Invalid PlaylistId" });
-      }
-
-      if (!cache.has(playlistId)) {
-        const playlist = await getYoutubePlaylist(playlistId, videosCount);
-        cache.set(playlistId, playlist, CACHE_HOURS);
-        res.status(200).send(playlist);
-      } else {
-        const cachedPlaylist = cache.get(playlistId);
-        res.status(200).send(cachedPlaylist);
-      }
-    } catch (error) {
-      console.error("Error occurred:", error);
-      res.status(error.statusCode).json({ message: error.message });
-    }
-  } else {
+  if (req.method !== "GET") {
     res.status(405).json({ message: "Unsupported method" });
+    return;
+  }
+  try {
+    const { playlistId, videosCount } = req.query;
+
+    if (!playlistId) {
+      return res.status(400).json({ message: "Invalid PlaylistId" });
+    }
+
+    if (!cache.has(playlistId)) {
+      const playlist = await getYoutubePlaylist(playlistId, videosCount);
+      cache.set(playlistId, playlist, CACHE_HOURS);
+      res.status(200).send(playlist);
+    } else {
+      const cachedPlaylist = cache.get(playlistId);
+      res.status(200).send(cachedPlaylist);
+    }
+  } catch (error) {
+    console.error("Error occurred:", error);
+    res.status(error.statusCode).json({ message: error.message });
   }
 }
