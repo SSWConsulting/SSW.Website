@@ -104,7 +104,7 @@ export const youtubePlaylistSchema: TinaField = {
     },
     {
       type: "string",
-      name: "textForPlayListLink",
+      name: "textForPlaylistLink",
       label: "Text for Playlist link",
     },
   ],
