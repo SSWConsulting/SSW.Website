@@ -34,7 +34,7 @@ export default async function handler(
       cache.set(cacheKey, playlist, CACHE_HOURS);
       res.status(200).send(playlist);
     } else {
-      const cachedPlaylist = cache.get(playlistId);
+      const cachedPlaylist = cache.get(cacheKey);
       res.status(200).send(cachedPlaylist);
     }
   } catch (error) {
