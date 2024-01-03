@@ -2,7 +2,7 @@ import axios from "axios";
 import { Key, useEffect, useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { Template, TinaField } from "tinacms";
-import { YoutubeVideoType } from "../../services/server/youtube";
+import { YoutubeVideoLinkType } from "../../services/server/youtube";
 import { CustomLink } from "../customLink";
 import { VideoCard } from "../util/videoCards";
 
@@ -25,7 +25,7 @@ export const YoutubePlaylistBlock: React.FC<YoutubePlaylistProps> = ({
     const fetchPlaylist = async () => {
       try {
         await axios
-          .get<YoutubeVideoType[]>("/api/get-youtube-playlist", {
+          .get<YoutubeVideoLinkType[]>("/api/get-youtube-playlist", {
             params: {
               playlistId: playlistId,
               videosCount: numberOfVideos,
@@ -56,7 +56,7 @@ export const YoutubePlaylistBlock: React.FC<YoutubePlaylistProps> = ({
         </span>
       )}
       <div className="grid h-full grid-cols-1 justify-center gap-8 lg:grid-cols-3">
-        {playlistVideosLinks?.map((video: YoutubeVideoType, index: Key) => (
+        {playlistVideosLinks?.map((video: YoutubeVideoLinkType, index: Key) => (
           <VideoCard {...video} theme="light" key={index} />
         ))}
       </div>
