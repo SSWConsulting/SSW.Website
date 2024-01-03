@@ -18,7 +18,7 @@ import { ContentCard } from "./contentCard";
 import { CustomImage, CustomImageProps } from "./customImage";
 import { DynamicColumns } from "./dynamicColumns";
 import { EventLink, EventLinkProps } from "./eventLink";
-import { ExpertBlock } from "./expertBlock";
+import { ExpertBlock, ExpertBlockProps } from "./expertBlock";
 import { FixedColumns } from "./fixedColumns";
 import { FixedTabsLayout } from "./fixedTabsLayout";
 import { Flag } from "./flag";
@@ -174,19 +174,7 @@ export const componentRenderer: Components<{
     hideInternshipTestimonials: boolean;
   };
   EventLink: EventLinkProps;
-  ExpertBlock: {
-    header: string;
-    expertList: {
-      person: string;
-      profileImage: string;
-      peopleURL: string;
-      skills: string;
-    }[];
-    link: {
-      text: string;
-      url: string;
-    };
-  };
+  ExpertBlock: ExpertBlockProps;
   TripleColumnImageBlock: TripleColumnImageBlockProps;
   YoutubePlayListBlock: {
     youtubePlaylist: YoutubePlaylistProps;

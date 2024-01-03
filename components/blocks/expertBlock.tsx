@@ -2,6 +2,20 @@ import Image from "next/image";
 import { type Template } from "tinacms";
 import { CustomLink } from "../customLink";
 
+export type ExpertBlockProps = {
+  header: string;
+  expertList: {
+    person: string;
+    profileImage: string;
+    peopleURL: string;
+    skills: string;
+  }[];
+  link: {
+    text: string;
+    url: string;
+  };
+};
+
 export const ExpertBlock = (props) => {
   const { header, expertList, link } = props;
   return (
