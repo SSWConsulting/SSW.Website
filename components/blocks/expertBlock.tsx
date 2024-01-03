@@ -25,9 +25,7 @@ const Expert = ({ data }) => {
   const { person, profileImage, peopleURL, skills } = data;
 
   return (
-    <div
-      className="flex w-full grow flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-8 text-center text-xl drop-shadow md:min-h-96 md:max-w-sm md:grow-0 md:p-10 md:basis_gap-96-6"
-    >
+    <div className="flex w-full grow flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-8 text-center text-xl drop-shadow md:min-h-96 md:max-w-sm md:grow-0 md:p-10 md:basis_gap-96-6">
       <span className="h-32 w-32 self-center overflow-hidden rounded-full">
         <Image
           alt={`Picture of ${person}`}
