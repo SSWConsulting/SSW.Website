@@ -2,18 +2,18 @@ import axios from "axios";
 import { Key, useEffect, useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { Template, TinaField } from "tinacms";
-import { PlayListType } from "../../services/server/youtube";
+import { PlaylistType } from "../../services/server/youtube";
 import { CustomLink } from "../customLink";
 import { VideoCard } from "../util/videoCards";
 
-export type YoutubePlayListProps = {
+export type YoutubePlaylistProps = {
   title?: string;
   playlistId: string;
   numberOfVideos: number;
   textForPlayListLink?: string;
 };
 
-export const YoutubePlayListBlock: React.FC<YoutubePlayListProps> = ({
+export const YoutubePlaylistBlock: React.FC<YoutubePlaylistProps> = ({
   title,
   playlistId,
   textForPlayListLink,
@@ -25,7 +25,7 @@ export const YoutubePlayListBlock: React.FC<YoutubePlayListProps> = ({
     const fetchPlaylist = async () => {
       try {
         await axios
-          .get<PlayListType[]>("/api/get-youtube-playlist", {
+          .get<PlaylistType[]>("/api/get-youtube-playlist", {
             params: {
               playlistId: playlistId,
               videosCount: numberOfVideos,
@@ -56,7 +56,7 @@ export const YoutubePlayListBlock: React.FC<YoutubePlayListProps> = ({
         </span>
       )}
       <div className="grid h-full grid-cols-1 justify-center gap-8 lg:grid-cols-3">
-        {playlistVideosLinks?.map((video: PlayListType, index: Key) => (
+        {playlistVideosLinks?.map((video: PlaylistType, index: Key) => (
           <VideoCard {...video} theme="light" key={index} />
         ))}
       </div>
@@ -75,7 +75,7 @@ export const YoutubePlayListBlock: React.FC<YoutubePlayListProps> = ({
   );
 };
 
-export const youtubePlayListSchema: TinaField = {
+export const youtubePlaylistSchema: TinaField = {
   type: "object",
   label: "Youtube Playlist",
   name: "youtubePlaylist",
@@ -111,7 +111,7 @@ export const youtubePlayListSchema: TinaField = {
 };
 
 export const youtubePlayListBlockSchema: Template = {
-  name: "YoutubePlayListBlock",
+  name: "YoutubePlaylistBlock",
   label: "Youtube PlayList Block",
-  fields: [youtubePlayListSchema],
+  fields: [youtubePlaylistSchema],
 };

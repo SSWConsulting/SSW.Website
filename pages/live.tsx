@@ -4,7 +4,7 @@ import { useTina } from "tinacms/dist/react";
 import { client } from "../.tina/__generated__/client";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { BuiltOnAzure } from "../components/blocks/builtOnAzure";
-import { YoutubePlayListBlock } from "../components/blocks/youtubePlayList";
+import { YoutubePlaylistBlock } from "../components/blocks/youtubePlayList";
 import { UtilityButton } from "../components/button/utilityButton";
 import { CustomLink } from "../components/customLink";
 import { Layout } from "../components/layout";
@@ -110,7 +110,7 @@ export default function LivePage(
         </div>
       </Container>
       <Container size="xsmall">
-        <YoutubePlayListBlock {...data.live.youtubePlaylist} />
+        <YoutubePlaylistBlock {...data.live.youtubePlaylist} />
       </Container>
       <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
     </Layout>
