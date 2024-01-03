@@ -7,7 +7,7 @@ export const ExpertBlock = (props) => {
   return (
     <>
       <hr />
-      <h2 className="pb-12">{header.toUpperCase()}</h2>
+      <h2 className="pb-12">{header && header.toUpperCase()}</h2>
       <div className="flex justify-center gap-6 pb-12">
         {expertList?.map((expert, index) => {
           return <Expert data={expert} key={index} />;
