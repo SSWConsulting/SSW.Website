@@ -16,8 +16,11 @@ export type ExpertBlockProps = {
   };
 };
 
-export const ExpertBlock = (props) => {
-  const { header, expertList, link } = props;
+export const ExpertBlock: React.FC<ExpertBlockProps> = ({
+  header,
+  expertList,
+  link,
+}) => {
   return (
     <>
       <hr />
