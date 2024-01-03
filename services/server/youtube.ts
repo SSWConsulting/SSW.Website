@@ -10,7 +10,7 @@ export async function getYoutubePlaylist(
   videosCount: number
 ): Promise<YoutubeVideoLinkType[]> {
   const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&part=id&part=snippet&part=status&maxResults=${
-    videosCount ?? defaultVideoCount
+    videosCount || defaultVideoCount
   }&playlistId=${playlistId}&key=${process.env.YOUTUBE_PRIVATE_KEY}`;
   const res = await fetch(url);
   const data = await res.json();
