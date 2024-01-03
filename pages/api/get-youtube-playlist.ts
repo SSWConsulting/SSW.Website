@@ -27,11 +27,11 @@ export default async function handler(
     if (!playlistId) {
       return res.status(400).json({ message: "Invalid PlaylistId" });
     }
-    const youtubePlaylistKey = `${playlistId}-${videosCount}`;
+    const cacheKey = `youtube-playlist-${playlistId}-${videosCount}`;
 
-    if (!cache.has(youtubePlaylistKey)) {
+    if (!cache.has(cacheKey)) {
       const playlist = await getYoutubePlaylist(playlistId, videosCount);
-      cache.set(youtubePlaylistKey, playlist, CACHE_HOURS);
+      cache.set(cacheKey, playlist, CACHE_HOURS);
       res.status(200).send(playlist);
     } else {
       const cachedPlaylist = cache.get(playlistId);
