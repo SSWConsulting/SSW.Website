@@ -14,7 +14,7 @@ export const ExpertBlock = (props) => {
         })}
       </div>
       <div className=" mt-4 pb-8 font-normal">
-        <CustomLink href={link.url}>{link.text}</CustomLink>
+        {link && <CustomLink href={link.url}>{link.text}</CustomLink>}
       </div>
       <hr />
     </>
