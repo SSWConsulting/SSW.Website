@@ -12,7 +12,7 @@ import classNames from "classnames";
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
 import { customImageBlockSchema } from "./customImage";
 import { expertBlockSchema } from "./expertBlock";
-import { youtubePlayListBlockSchema } from "./youtubePlayList";
+import { youtubePlayListBlockSchema } from "./youtubePlaylist";
 
 export const iconMap = {
   RiTeamLine: (props) => <RiTeamLine className={props.className} />,

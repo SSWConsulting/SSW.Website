@@ -4,7 +4,7 @@ import { useTina } from "tinacms/dist/react";
 import { client } from "../.tina/__generated__/client";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { BuiltOnAzure } from "../components/blocks/builtOnAzure";
-import { YoutubePlaylistBlock } from "../components/blocks/youtubePlayList";
+import { YoutubePlaylistBlock } from "../components/blocks/youtubePlaylist";
 import { UtilityButton } from "../components/button/utilityButton";
 import { CustomLink } from "../components/customLink";
 import { Layout } from "../components/layout";
