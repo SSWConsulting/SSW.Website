@@ -1,14 +1,12 @@
-export type PlaylistType = {
+export type YoutubeVideoType = {
   title: string;
   link: string;
 };
 
-type PlaylistArray = PlaylistType[];
-
 export async function getYoutubePlaylist(
   playlistId: string,
   videosCount: number
-): Promise<PlaylistArray> {
+): Promise<YoutubeVideoType[]> {
   const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&part=id&part=snippet&part=status&maxResults=100&playlistId=${playlistId}&key=${process.env.YOUTUBE_PRIVATE_KEY}`;
   const res = await fetch(url);
   const data = await res.json();
