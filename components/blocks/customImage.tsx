@@ -12,6 +12,7 @@ export type CustomImageProps = {
   customClass?: string;
 };
 
+// To Update the screenshots of PowerBi reports on Consulting Options (i.e /consulting/consulting), here is the link - https://github.com/SSWConsulting/SSW.Website/wiki/Consulting-options-%E2%80%90-Updating-screenshots
 export const CustomImage = ({ data }: { data: CustomImageProps }) => {
   return (
     <LinkWrapper link={data.link}>
