@@ -481,8 +481,8 @@
         }
       ],
       "viewAll": {
-        "name": "View all products",
-        "url": "/products"
+        "name": "",
+        "url": ""
       }
     },
     {
