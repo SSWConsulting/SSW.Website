@@ -1,5 +1,6 @@
 import { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
+import { youtubePlaylistSchema } from "../../components/blocks/youtubePlaylist";
 import { seoSchema } from "../../components/util/seo";
 
 export const liveSchema: Collection = {
@@ -53,27 +54,6 @@ export const liveSchema: Collection = {
         },
       ],
     },
-    {
-      type: "string",
-      name: "pastEvents",
-      label: "Past Events",
-    },
-    {
-      label: "Youtube Playlist Button",
-      name: "youtubePlaylistButton",
-      type: "object",
-      fields: [
-        {
-          label: "Name",
-          name: "name",
-          type: "string",
-        },
-        {
-          label: "Playlist Id",
-          name: "playlistId",
-          type: "string",
-        },
-      ],
-    },
+    youtubePlaylistSchema,
   ],
 };

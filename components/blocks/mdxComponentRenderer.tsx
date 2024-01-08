@@ -18,6 +18,7 @@ import { ContentCard } from "./contentCard";
 import { CustomImage, CustomImageProps } from "./customImage";
 import { DynamicColumns } from "./dynamicColumns";
 import { EventLink, EventLinkProps } from "./eventLink";
+import { ExpertBlock, ExpertBlockProps } from "./expertBlock";
 import { FixedColumns } from "./fixedColumns";
 import { FixedTabsLayout } from "./fixedTabsLayout";
 import { Flag } from "./flag";
@@ -33,6 +34,7 @@ import {
 import { UpcomingEvents } from "./upcomingEvents";
 import { VerticalImageLayout } from "./verticalImageLayout";
 import { VerticalListItem } from "./verticalListItem";
+import { YoutubePlaylistBlock, YoutubePlaylistProps } from "./youtubePlaylist";
 
 const Carousel = dynamic(
   () => import("./carousel").then((mod) => mod.Carousel),
@@ -172,7 +174,11 @@ export const componentRenderer: Components<{
     hideInternshipTestimonials: boolean;
   };
   EventLink: EventLinkProps;
+  ExpertBlock: ExpertBlockProps;
   TripleColumnImageBlock: TripleColumnImageBlockProps;
+  YoutubePlaylistBlock: {
+    youtubePlaylist: YoutubePlaylistProps;
+  };
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -202,5 +208,9 @@ export const componentRenderer: Components<{
   MicrosoftPanel: () => <MicrosoftPanel />,
   TestimonialsList: (props) => <TestimonialsList data={props} />,
   EventLink: (props) => <EventLink {...props} />,
+  ExpertBlock: (props) => <ExpertBlock {...props} />,
   TripleColumnImageBlock: (props) => <TripleColumnImageBlock {...props} />,
+  YoutubePlaylistBlock: (props) => (
+    <YoutubePlaylistBlock {...props.youtubePlaylist} />
+  ),
 };
