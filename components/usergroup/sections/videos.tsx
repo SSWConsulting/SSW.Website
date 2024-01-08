@@ -64,7 +64,7 @@ export const VideosSection = (props: VideosSectionProps) => {
                   link={button.link}
                   buttonText={button.text}
                   className="mx-auto text-base font-semibold"
-                  noAnimate
+                  animated
                 />
               </div>
             )}

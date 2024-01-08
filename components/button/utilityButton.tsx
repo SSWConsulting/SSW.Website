@@ -14,7 +14,7 @@ type UtilityButtonProps = {
   className?: string;
   link?: string;
   size?: keyof typeof sizes;
-  noAnimate?: boolean;
+  animated?: boolean;
   uncentered?: boolean;
   removeTopMargin?: boolean;
   openInNewTab?: boolean;
@@ -26,7 +26,7 @@ export const UtilityButton = ({
   className,
   link,
   size,
-  noAnimate,
+  animated,
   uncentered,
   removeTopMargin,
   openInNewTab,
@@ -42,7 +42,7 @@ export const UtilityButton = ({
         className
       )}
       onClick={onClick}
-      data-aos={noAnimate ? undefined : "fade-up"}
+      data-aos={animated ? "fade-up" : undefined}
     >
       {buttonText}
     </Button>
@@ -95,8 +95,8 @@ export const utilityButtonSchema: Template = {
     },
     {
       type: "boolean",
-      label: "No Animation",
-      name: "noAnimate",
+      label: "Animated",
+      name: "animated",
       required: false,
     },
     {

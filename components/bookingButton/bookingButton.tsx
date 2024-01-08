@@ -11,6 +11,7 @@ export interface BookingButtonProps {
   containerClass?: string;
   buttonClass?: string;
   hideCallUs?: boolean;
+  animated?: boolean;
 }
 
 export const BookingButton = ({ data }) => {
@@ -19,6 +20,7 @@ export const BookingButton = ({ data }) => {
     buttonClass,
     buttonText,
     hideCallUs,
+    animated = true,
   }: BookingButtonProps = data;
 
   const { error: recaptchaError } = useRecaptcha();
@@ -28,8 +30,9 @@ export const BookingButton = ({ data }) => {
   }
 
   const bookingPhone = layoutData.bookingPhone;
-  const jotFormClass =
-    buttonClass ?? "mt-14" + " " + `lightbox-${layoutData.jotForm.id}`; // lightbox-id class is a trigger point for the JotForm IFrame
+  const jotFormClass = `${buttonClass ?? "mt-14"} lightbox-${
+    layoutData.jotForm.id
+  }`; // lightbox-id class is a trigger point for the JotForm IFrame
 
   return (
     <>
@@ -37,7 +40,11 @@ export const BookingButton = ({ data }) => {
       <div
         className={twMerge("flex w-full flex-col items-center", containerClass)}
       >
-        <UtilityButton className={jotFormClass} buttonText={buttonText} />
+        <UtilityButton
+          className={jotFormClass}
+          buttonText={buttonText}
+          animated={animated}
+        />
         {!hideCallUs && (
           <h2 className="mx-auto max-w-full text-center">
             or call us on {bookingPhone}
@@ -61,6 +68,11 @@ export const bookingButtonSchema: Template = {
       label: "Button Text",
       name: "buttonText",
       required: false,
+    },
+    {
+      type: "boolean",
+      label: "Animated",
+      name: "animated",
     },
   ],
 };

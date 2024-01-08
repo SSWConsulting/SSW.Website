@@ -1,9 +1,10 @@
 import { InferGetStaticPropsType } from "next";
-import { BsArrowRightCircle } from "react-icons/bs";
+import { FaYoutube } from "react-icons/fa";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../.tina/__generated__/client";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { BuiltOnAzure } from "../components/blocks/builtOnAzure";
+import { YoutubePlaylistBlock } from "../components/blocks/youtubePlaylist";
 import { UtilityButton } from "../components/button/utilityButton";
 import { CustomLink } from "../components/customLink";
 import { Layout } from "../components/layout";
@@ -17,9 +18,7 @@ import {
   getNextEventToBeLiveStreamed,
   getSpeakersInfoFromEvent,
 } from "../services/server/events";
-import { getYoutubePlaylist } from "../services/server/youtube";
 
-const VISIBLE_VIDEOS_COUNT = 6;
 const ISR_TIME = 60 * 60;
 
 export default function LivePage(
@@ -43,9 +42,24 @@ export default function LivePage(
         />
       </Section>
       <Container size="xsmall">
-        <span className="text-sswRed">
-          <h2 className="mt-0">{data.live.nextEvent}</h2>
-        </span>
+        <div className="flex items-center justify-between">
+          <h2 className="mt-0 text-sswRed">{data.live.nextEvent}</h2>
+          <UtilityButton
+            className="mx-20"
+            size="small"
+            uncentered={false}
+            removeTopMargin={true}
+            link={`https://www.youtube.com/channel/${data.live.sswTvButton.channelId}`}
+            buttonText={
+              <span className="flex flex-row items-center gap-2">
+                <FaYoutube size={25} />
+                {data.live.sswTvButton.name}
+              </span>
+            }
+            animated
+            openInNewTab={true}
+          />
+        </div>
         <div>
           {props.event?.Title && (
             <div className="col-span-2">
@@ -94,48 +108,9 @@ export default function LivePage(
               ))}
           </div>
         </div>
-        <div className="flex justify-center">
-          <UtilityButton
-            size="small"
-            uncentered={false}
-            link={`https://www.youtube.com/channel/${data.live.sswTvButton.channelId}`}
-            buttonText={
-              <>
-                {data.live.sswTvButton.name}
-                <BsArrowRightCircle className="ml-1 inline" />
-              </>
-            }
-            noAnimate
-            openInNewTab={true}
-          />
-        </div>
       </Container>
       <Container size="xsmall">
-        <span className="text-sswRed">
-          <h2>{data.live.pastEvents}</h2>
-        </span>
-        <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">
-          {props.playListVideosLinks.map((video, index) => (
-            <div key={index}>
-              <VideoCard {...video} theme="light" />
-            </div>
-          ))}
-        </div>
-        <div className="flex justify-center">
-          <UtilityButton
-            size="small"
-            uncentered={false}
-            link={`https://www.youtube.com/playlist?list=${data.live.youtubePlaylistButton.playlistId}`}
-            buttonText={
-              <>
-                {data.live.youtubePlaylistButton.name}
-                <BsArrowRightCircle className="ml-1 inline" />
-              </>
-            }
-            noAnimate
-            openInNewTab={true}
-          />
-        </div>
+        <YoutubePlaylistBlock {...data.live.youtubePlaylist} />
       </Container>
       <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
     </Layout>
@@ -151,11 +126,6 @@ export const getStaticProps = async () => {
   const speakers = await getSpeakersInfoFromEvent(event);
   const speaker = speakers[0];
 
-  const playListVideosLinks = await getYoutubePlaylist(
-    tinaProps.data.live.youtubePlaylistButton.playlistId,
-    VISIBLE_VIDEOS_COUNT
-  );
-
   return {
     props: {
       data: tinaProps.data,
@@ -163,7 +133,6 @@ export const getStaticProps = async () => {
       variables: tinaProps.variables,
       event: event || null,
       speaker: speaker || null,
-      playListVideosLinks,
     },
     revalidate: ISR_TIME,
   };
