@@ -10,13 +10,13 @@ export type YoutubePlaylistProps = {
   title?: string;
   playlistId: string;
   numberOfVideos: number;
-  textForPlayListLink?: string;
+  textForPlaylistLink?: string;
 };
 
 export const YoutubePlaylistBlock: React.FC<YoutubePlaylistProps> = ({
   title,
   playlistId,
-  textForPlayListLink,
+  textForPlaylistLink,
   numberOfVideos,
 }) => {
   const [playlistVideosLinks, setPlaylistVideosLinks] = useState([]);
@@ -60,13 +60,13 @@ export const YoutubePlaylistBlock: React.FC<YoutubePlaylistProps> = ({
           <VideoCard {...video} theme="light" key={index} />
         ))}
       </div>
-      {textForPlayListLink && (
+      {textForPlaylistLink && (
         <div className="flex justify-center">
           <CustomLink
             href={`https://www.youtube.com/playlist?list=${playlistId}`}
             className="done relative mx-2 mt-8 inline-flex overflow-hidden rounded border-none bg-sswRed pl-3 text-white"
           >
-            {textForPlayListLink}
+            {textForPlaylistLink}
             <BsArrowRightCircle className="ml-1 inline" />
           </CustomLink>
         </div>
