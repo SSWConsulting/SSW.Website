@@ -3,16 +3,19 @@ import Image from "next/image";
 import type { Template } from "tinacms";
 import { CustomLink } from "../customLink";
 
+type textColor = "text-white" | "text-sswBlack";
+type alignment = "items-start" | "items-center" | "items-end";
+
 export type CustomImageProps = {
   src: string;
   altText: string;
-  alignment?: string;
+  alignment?: alignment;
   height?: number;
   width?: number;
   link?: string;
   customClass?: string;
   caption?: string;
-  captionColor?: string;
+  captionColor?: textColor;
 };
 
 // To Update the screenshots of PowerBi reports on Consulting Options (i.e /consulting/consulting), here is the link - https://github.com/SSWConsulting/SSW.Website/wiki/Consulting-options-%E2%80%90-Updating-screenshots
