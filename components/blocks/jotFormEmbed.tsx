@@ -1,70 +1,21 @@
-import PropTypes from "prop-types";
-import React, { useEffect } from "react";
+import React from "react";
+import { Template, TinaField } from "tinacms";
+import { number } from "yup";
 
-const JotFormEmbed = ({
-  formURL,
-  autoResize,
-  autoFocus,
-  heightOffset = 15,
-  initialHeight = 540,
-  onSubmit,
-  formID,
-  style = {},
-  ...rest
-}) => {
-  const iframeRef = React.useRef();
-  const [componentStyles, setComponentStyles] = React.useState({
-    height: initialHeight,
-    overflow: "hidden",
-    border: 0,
-    width: "100%",
-  });
-
-  return (
-    <iframe
-      ref={iframeRef}
-      src={formURL}
-      title="JotForm Form"
-      style={{
-        ...componentStyles,
-        ...style,
-      }}
-      allowTransparency="true"
-      allowFullScreen="true"
-      allow="geolocation; microphone; camera"
-      frameBorder="0"
-      scrolling="no"
-      {...rest}
-    />
-  );
+export type JotFormEmbedProps = {
+  id: string;
+  formTitle: string;
+  backgroundColor: string;
+  fontColor: string;
+  formType: string;
+  height: number;
+  number: number;
+};
+export const JotFormEmbed = (props) => {
+  return <></>;
 };
 
-const noop = () => {};
-
-JotFormEmbed.propTypes = {
-  formURL: PropTypes.string.isRequired,
-  formID: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
-  autoResize: PropTypes.bool,
-  autoFocus: PropTypes.bool,
-  heightOffset: PropTypes.number,
-  initialHeight: PropTypes.number,
-  onSubmit: PropTypes.func,
-  style: PropTypes.shape({}),
-};
-
-JotFormEmbed.defaultProps = {
-  autoResize: true,
-  formID: false,
-  autoFocus: true,
-  heightOffset: 15,
-  initialHeight: 540,
-  onSubmit: noop,
-  style: {},
-};
-
-export default JotFormEmbed;
-
-const jotForm = {
+export const jotFormSchema: TinaField = {
   type: "object",
   name: "jotForm",
   label: "JotForm",
