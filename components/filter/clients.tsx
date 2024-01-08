@@ -81,7 +81,7 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
                       <BsArrowRightCircle className="ml-1 inline" />
                     </>
                   }
-                  noAnimate
+                  animated
                 />
               )}
               {client.showStuck && (
@@ -95,7 +95,7 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
                       <BsArrowRightCircle className="ml-1 inline" />
                     </>
                   }
-                  noAnimate
+                  animated
                 />
               )}
             </div>
