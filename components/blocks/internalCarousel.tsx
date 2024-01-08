@@ -69,7 +69,7 @@ const renderBody = ({ header, paragraph, website, technologies }) => {
       <div className="mt-2 flex justify-between text-left font-semibold text-sswRed prose-p:py-0">
         <h4>{header}</h4>
         <span className={website ? "" : "hidden"}>
-          <CustomLink href={website}>Visit Website</CustomLink>
+          {website && <CustomLink href={website}>Visit Website</CustomLink>}
         </span>
       </div>
       <div className="text-left prose-p:py-2">

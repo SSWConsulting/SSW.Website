@@ -6,6 +6,7 @@ import { CustomLink } from "../customLink";
 export type CustomImageProps = {
   src: string;
   altText: string;
+  alignment?: string;
   height?: number;
   width?: number;
   link?: string;
@@ -18,7 +19,12 @@ export type CustomImageProps = {
 export const CustomImage = ({ data }: { data: CustomImageProps }) => {
   return (
     <LinkWrapper link={data.link}>
-      <div className="flex flex-col items-center">
+      <div
+        className={classNames(
+          "flex flex-col",
+          data.alignment ?? "items-center"
+        )}
+      >
         <div className="relative">
           <Image
             src={data.src}
@@ -65,6 +71,25 @@ export const customImageBlockSchema: Template = {
       label: "Alt text",
       name: "altText",
       required: true,
+    },
+    {
+      type: "string",
+      label: "Alignment",
+      name: "alignment",
+      options: [
+        {
+          label: "Left",
+          value: "items-start",
+        },
+        {
+          label: "Center",
+          value: "items-center",
+        },
+        {
+          label: "Right",
+          value: "items-end",
+        },
+      ],
     },
     {
       type: "number",
