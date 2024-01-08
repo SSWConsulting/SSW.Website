@@ -93,7 +93,7 @@ export const UserGroupHeader = ({
               className="!mt-0"
               link={link}
               uncentered
-              noAnimate
+              animated
               buttonText={buttonText}
             />
             {trailerUrl && (

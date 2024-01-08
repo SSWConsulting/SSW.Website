@@ -19,7 +19,7 @@ export interface BookingButtonProps {
   containerClass?: string;
   buttonClass?: string;
   hideCallUs?: boolean;
-  noAnimation?: boolean;
+  animated?: boolean;
 }
 
 export const BookingButton = ({ data }) => {
@@ -28,7 +28,7 @@ export const BookingButton = ({ data }) => {
     buttonClass,
     buttonText,
     hideCallUs,
-    noAnimation,
+    animated = true,
   }: BookingButtonProps = data;
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const showBookingForm = () => setIsVisible((curr) => !curr);
@@ -57,7 +57,7 @@ export const BookingButton = ({ data }) => {
         className={buttonClass || "mt-14"}
         onClick={showBookingForm}
         buttonText={buttonText}
-        noAnimate={noAnimation}
+        animated={animated}
       />
       {!hideCallUs && (
         <h2 className="mx-auto max-w-full text-center">
@@ -93,8 +93,8 @@ export const bookingButtonSchema: Template = {
     },
     {
       type: "boolean",
-      label: "No Ainmation",
-      name: "noAnimation",
+      label: "Animated",
+      name: "animated",
     },
   ],
 };

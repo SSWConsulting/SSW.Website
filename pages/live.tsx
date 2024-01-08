@@ -56,7 +56,7 @@ export default function LivePage(
                 {data.live.sswTvButton.name}
               </span>
             }
-            noAnimate
+            animated
             openInNewTab={true}
           />
         </div>
