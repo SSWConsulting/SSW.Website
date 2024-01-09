@@ -28,7 +28,7 @@ export const BookingButton = ({ data }) => {
 
   const bookingPhone = layoutData.bookingPhone;
 
-  const jotFormParams: JotFormEmbedProps = {
+  const jotFormBookingForm: JotFormEmbedProps = {
     data: {
       jotForm: {
         id: defaultSetting.jotForm.id,
@@ -48,7 +48,7 @@ export const BookingButton = ({ data }) => {
 
   return (
     <>
-      <JotFormEmbed {...jotFormParams}>
+      <JotFormEmbed {...jotFormBookingForm}>
         {!hideCallUs && (
           <h2 className="mx-auto max-w-full text-center">
             or call us on {bookingPhone}
