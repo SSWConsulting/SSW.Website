@@ -2,6 +2,7 @@ import Script from "next/script";
 import React, { PropsWithChildren, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { Template, TinaField } from "tinacms";
+import { tinaField } from "tinacms/dist/react";
 import { UtilityButton } from "../button/utilityButton";
 
 export type formType = "0" | "1" | "2";
@@ -156,6 +157,7 @@ export const JotFormEmbed: React.FC<JotFormEmbedProps> = ({
       )}
       <div
         className={twMerge("flex w-full flex-col items-center", containerClass)}
+        data-tina-field={tinaField(data, "buttonText")}
       >
         <UtilityButton
           className={jotFormButtonClass}
