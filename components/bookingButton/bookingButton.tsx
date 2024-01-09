@@ -1,10 +1,13 @@
-import { toast } from "react-toastify";
-import { twMerge } from "tailwind-merge";
 import type { Template } from "tinacms";
-import layoutData from "../../content/global/index.json";
-import { recaptchaToastId, useRecaptcha } from "../../context/RecaptchaContext";
-import JotFormScript from "../../pages/jotFormScript";
-import { UtilityButton } from "../button/utilityButton";
+import {
+  default as defaultSetting,
+  default as layoutData,
+} from "../../content/global/index.json";
+import {
+  JotFormEmbed,
+  JotFormEmbedProps,
+  formType,
+} from "../blocks/jotFormEmbed";
 
 export interface BookingButtonProps {
   buttonText?: string;
@@ -23,34 +26,35 @@ export const BookingButton = ({ data }) => {
     animated = true,
   }: BookingButtonProps = data;
 
-  const { error: recaptchaError } = useRecaptcha();
-
-  if (recaptchaError) {
-    toast.error("Failed to load recaptcha key.", { toastId: recaptchaToastId });
-  }
-
   const bookingPhone = layoutData.bookingPhone;
-  const jotFormClass = `${buttonClass ?? "mt-14"} lightbox-${
-    layoutData.jotForm.id
-  }`; // lightbox-id class is a trigger point for the JotForm IFrame
+
+  const jotFormParams: JotFormEmbedProps = {
+    data: {
+      jotForm: {
+        id: defaultSetting.jotForm.id,
+        formTitle: defaultSetting.jotForm.id,
+        backgroundColor: defaultSetting.jotForm.backgroundColor,
+        fontColor: defaultSetting.jotForm.fontColor,
+        formType: defaultSetting.jotForm.formType as formType,
+        height: defaultSetting.jotForm.height,
+        width: defaultSetting.jotForm.width,
+      },
+      containerClass: containerClass,
+      buttonClass: buttonClass,
+      buttonText: buttonText,
+      animated: animated,
+    },
+  };
 
   return (
     <>
-      <JotFormScript />
-      <div
-        className={twMerge("flex w-full flex-col items-center", containerClass)}
-      >
-        <UtilityButton
-          className={jotFormClass}
-          buttonText={buttonText}
-          animated={animated}
-        />
+      <JotFormEmbed {...jotFormParams}>
         {!hideCallUs && (
           <h2 className="mx-auto max-w-full text-center">
             or call us on {bookingPhone}
           </h2>
         )}
-      </div>
+      </JotFormEmbed>
     </>
   );
 };
