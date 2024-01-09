@@ -50,7 +50,7 @@ export const JotFormEmbed: React.FC<JotFormEmbedProps> = ({
       openOnLoad: false
     });
 
-    var ifr = document.getElementById("lightbox-233468468973070");
+    var ifr = document.getElementById("lightbox-${jotForm?.id}");
     if (ifr) {
       var src = ifr.src;
       var iframeParams = [];
