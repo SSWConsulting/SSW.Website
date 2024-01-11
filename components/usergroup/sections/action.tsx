@@ -19,6 +19,9 @@ type ActionSectionProps = {
     text: string;
   }[];
   eventSponsors?: string[];
+  registerUrl: string;
+  meetupText?: string;
+  meetupTitle?: string;
 };
 
 const iconMap = {
@@ -77,7 +80,7 @@ export const ActionSection = (props: ActionSectionProps) => {
             </ul>
           </div>
           <div className="flex flex-col md:items-end">
-            <MeetupForm className="self-start max-md:mx-auto" />
+            <MeetupForm {...props} />
 
             <div
               data-tina-field={tinaField(props, "eventSponsors")}
@@ -140,6 +143,18 @@ export const actionSectionBlockSchema: Template = {
           return { label: item?.text };
         },
       },
+    },
+    {
+      type: "string",
+      label: "Meetup Title",
+      name: "meetupTitle",
+    },
+    {
+      type: "string",
+      label: "Meetup Button",
+      name: "meetupBtnText",
+      description:
+        "Meetup Url is coming from the Register URL, it cannot be changed here",
     },
     {
       type: "image",
