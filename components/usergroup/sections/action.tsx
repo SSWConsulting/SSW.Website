@@ -148,13 +148,14 @@ export const actionSectionBlockSchema: Template = {
       type: "string",
       label: "Meetup Title",
       name: "meetupTitle",
+      description: "DEFAULT: 'Get your free ticket'",
     },
     {
       type: "string",
       label: "Meetup Button",
       name: "meetupBtnText",
       description:
-        "Meetup Url is coming from the Register URL, it cannot be changed here",
+        "DEFAULT: 'Register for free', Meetup Url is coming from the Register URL, it cannot be changed here",
     },
     {
       type: "image",
