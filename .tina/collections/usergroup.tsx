@@ -3,8 +3,27 @@ import { pageBlocks as sectionPageBlocks } from "../../components/usergroup/sect
 import { seoSchema } from "../../components/util/seo";
 
 import React from "react";
-import type { Collection } from "tinacms";
+import type { Collection, TinaField } from "tinacms";
 import { tipField } from "./shared-fields";
+
+export const bannnerDescriptionTip: TinaField = {
+  type: "string",
+  name: "bannnerDescriptionTip",
+  label: "Tip",
+  ui: {
+    component: ({}) => {
+      return (
+        <div className="whitespace-normal">
+          {" "}
+          💡 Please make sure to include present's image with dimensions 367 *
+          510, and keep the event's description within the range of 10 to 15
+          words to maintain a visually appealing layout as it expands
+          vertically.
+        </div>
+      );
+    },
+  },
+};
 
 export const userGroupPageSchema: Collection = {
   label: "User Groups - Pages",
@@ -34,6 +53,7 @@ export const userGroupPageSchema: Collection = {
           label: "Register URL",
           name: "registerUrl",
         },
+        bannnerDescriptionTip,
         {
           type: "object",
           label: "Join GitHub Panel",
