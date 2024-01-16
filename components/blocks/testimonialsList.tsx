@@ -4,9 +4,13 @@ import type { Template } from "tinacms";
 import client from "../../.tina/__generated__/client";
 import { TestimonialCard } from "./testimonialsCard";
 
-export const TestimonialsList = ({ data: { hideInternshipTestimonials } }) => {
+export const TestimonialsList = ({ data: { listOfCategoriesToHide = [] } }) => {
   const [testimonials, setTestimonials] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
+
+  const categoriesToHide = listOfCategoriesToHide?.map(
+    (category) => extractCategoryName(category?.categoryName)?.toLowerCase()
+  );
 
   useEffect(() => {
     const loadTestimonials = () => {
@@ -15,26 +19,27 @@ export const TestimonialsList = ({ data: { hideInternshipTestimonials } }) => {
           (edge) => edge?.node
         );
 
-        const sortedTestimonials = testimonials
+        const filteredTestimonials = testimonials
           ?.filter(
             (testimonial) =>
               testimonial?.categories !== null &&
-              testimonial?.categories[0]?.category.name !== "Internship"
+              !categoriesToHide.some(
+                (category) =>
+                  testimonial?.categories[0]?.category.name
+                    .toLowerCase()
+                    .includes(category)
+              )
           )
           ?.map((testimonial) => testimonial);
 
-        if (hideInternshipTestimonials) {
-          setTestimonials(sortedTestimonials);
-        } else {
-          setTestimonials(testimonials);
-        }
+        setTestimonials(filteredTestimonials);
         setHasLoaded(true);
       });
     };
     if (!hasLoaded) {
       loadTestimonials();
     }
-  }, [hasLoaded, hideInternshipTestimonials]);
+  }, [hasLoaded, categoriesToHide]);
 
   return (
     <>
@@ -56,14 +61,34 @@ export const TestimonialsList = ({ data: { hideInternshipTestimonials } }) => {
   );
 };
 
+const extractCategoryName = (category) =>
+  category?.split("/").pop().split(".")[0].split("-")[0];
+
 export const testimonialsListSchema: Template = {
   name: "TestimonialsList",
   label: "Testimonials List",
   fields: [
     {
-      type: "boolean",
-      label: "Hide Intership Testimonials",
-      name: "hideInternshipTestimonials",
+      type: "object",
+      label: "List of Categories to Hide",
+      name: "listOfCategoriesToHide",
+      ui: {
+        itemProps: (item) => {
+          const CategoryName = extractCategoryName(item?.categoryName);
+          return {
+            label: CategoryName,
+          };
+        },
+      },
+      list: true,
+      fields: [
+        {
+          type: "reference",
+          label: "Category Name",
+          name: "categoryName",
+          collections: ["testimonialCategories"],
+        },
+      ],
     },
   ],
 };

@@ -33,6 +33,7 @@ import { flagSchema } from "./flag";
 import { googleMapsSchema } from "./googleMapsWrapper";
 import { heroBlockSchema } from "./hero";
 import { internalCarouselBlockSchema } from "./internalCarousel";
+import { jotFormEmbedSchema } from "./jotFormEmbed";
 import { newslettersTableBlockSchema } from "./newslettersTable";
 import { paymentBlockSchema } from "./payment-block";
 import { recurringEventSchema } from "./recurringEvent";
@@ -87,6 +88,7 @@ export const pageBlocks: Template[] = [
   latestTechSchema,
   testimonialsListSchema,
   eventLinkSchema,
+  jotFormEmbedSchema,
   customDownloadButtonSchema,
 ];
 
@@ -117,6 +119,7 @@ export * from "./fixedColumns";
 export * from "./flag";
 export * from "./googleMapsWrapper";
 export * from "./hero";
+export * from "./jotFormEmbed";
 export * from "./newslettersTable";
 export * from "./recurringEvent";
 export * from "./serviceCards";
