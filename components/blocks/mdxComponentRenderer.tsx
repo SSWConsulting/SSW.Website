@@ -12,6 +12,7 @@ import { AgreementForm } from "../terms-and-conditions/agreementForm";
 import TrainingInformation from "../training/trainingInformation";
 import { TrainingLearningOutcome } from "../training/trainingLearningOutcome";
 import { Countries } from "../util/constants/country";
+import { CustomDownloadButton } from "./CustomDownloadButton";
 import { Citation } from "./citation";
 import { ClientLogos } from "./clientLogos";
 import { ContentCard } from "./contentCard";
@@ -171,13 +172,17 @@ export const componentRenderer: Components<{
   };
   MicrosoftPanel: Record<string, never>;
   TestimonialsList: {
-    hideInternshipTestimonials: boolean;
+    listOfCategoriesToHide?: string[] | undefined;
   };
   EventLink: EventLinkProps;
   ExpertBlock: ExpertBlockProps;
   TripleColumnImageBlock: TripleColumnImageBlockProps;
   YoutubePlaylistBlock: {
     youtubePlaylist: YoutubePlaylistProps;
+  };
+  CustomDownloadButton: {
+    btnText: string;
+    btnLink: string;
   };
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
@@ -210,6 +215,7 @@ export const componentRenderer: Components<{
   EventLink: (props) => <EventLink {...props} />,
   ExpertBlock: (props) => <ExpertBlock {...props} />,
   TripleColumnImageBlock: (props) => <TripleColumnImageBlock {...props} />,
+  CustomDownloadButton: (props) => <CustomDownloadButton data={props} />,
   YoutubePlaylistBlock: (props) => (
     <YoutubePlaylistBlock {...props.youtubePlaylist} />
   ),

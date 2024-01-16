@@ -15,6 +15,7 @@ import { joinAsPresenterSchema } from "../usergroup/joinAsPresenter";
 import { joinGithubSchema } from "../usergroup/joinGithub";
 import { latestTechSchema } from "../usergroup/latestTech";
 import { organizerSchema } from "../usergroup/organizer";
+import { customDownloadButtonSchema } from "./CustomDownloadButton";
 import { aboutUsBlockSchema } from "./aboutUs";
 import { agendaSchema } from "./agenda";
 import { builtOnAzureBlockSchema } from "./builtOnAzure";
@@ -88,6 +89,7 @@ export const pageBlocks: Template[] = [
   testimonialsListSchema,
   eventLinkSchema,
   jotFormEmbedSchema,
+  customDownloadButtonSchema,
 ];
 
 export * from "../bookingButton/bookingButton";

@@ -263,7 +263,7 @@ module.exports = {
             h4: {
               fontWeight: "500",
               lineHeight: "1.8rem",
-              margin: "0.5rem 0",
+              margin: "1.5rem 0",
               fontSize: "1.5rem",
               color: theme("colors.sswBlack"),
             },
@@ -282,6 +282,9 @@ module.exports = {
             },
             hr: {
               margin: "30px 0",
+            },
+            ul: {
+              listStyleType: "square",
             },
             pre: {
               color: theme("colors.gray.700"),

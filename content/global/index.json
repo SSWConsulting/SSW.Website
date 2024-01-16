@@ -126,16 +126,16 @@
       "url": "https://www.facebook.com/SSW.page"
     },
     {
-      "type": "instagram",
-      "title": "SSW on Instagram",
-      "url": "https://www.instagram.com/ssw_tv",
-      "username": "ssw_tv"
-    },
-    {
       "type": "xtwitter",
       "title": "SSW on X",
       "url": "https://twitter.com/SSW_TV",
       "username": "SSW_TV"
+    },
+    {
+      "type": "instagram",
+      "title": "SSW on Instagram",
+      "url": "https://www.instagram.com/ssw_tv",
+      "username": "ssw_tv"
     },
     {
       "type": "tiktok",
