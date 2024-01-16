@@ -76,7 +76,7 @@ export const VideoModal = ({
           className
         )}
       >
-        <div className="relative mx-auto aspect-video h-full w-full">
+        <div className="relative mx-auto aspect-video  w-full">
           {!clicked ? (
             <div className="h-full w-full " onClick={() => setClicked(true)}>
               {imageSrc && (

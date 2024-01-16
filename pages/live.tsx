@@ -1,10 +1,10 @@
 import { InferGetStaticPropsType } from "next";
-import { BsArrowRightCircle } from "react-icons/bs";
 import { FaYoutube } from "react-icons/fa";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../.tina/__generated__/client";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { BuiltOnAzure } from "../components/blocks/builtOnAzure";
+import { YoutubePlaylistBlock } from "../components/blocks/youtubePlaylist";
 import { UtilityButton } from "../components/button/utilityButton";
 import { CustomLink } from "../components/customLink";
 import { Layout } from "../components/layout";
@@ -18,9 +18,7 @@ import {
   getNextEventToBeLiveStreamed,
   getSpeakersInfoFromEvent,
 } from "../services/server/events";
-import { getYoutubePlaylist } from "../services/server/youtube";
 
-const VISIBLE_VIDEOS_COUNT = 6;
 const ISR_TIME = 60 * 60;
 
 export default function LivePage(
@@ -58,7 +56,7 @@ export default function LivePage(
                 {data.live.sswTvButton.name}
               </span>
             }
-            noAnimate
+            animated
             openInNewTab={true}
           />
         </div>
@@ -112,31 +110,7 @@ export default function LivePage(
         </div>
       </Container>
       <Container size="xsmall">
-        <span className="text-sswRed">
-          <h2>{data.live.pastEvents}</h2>
-        </span>
-        <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">
-          {props.playListVideosLinks.map((video, index) => (
-            <div key={index}>
-              <VideoCard {...video} theme="light" />
-            </div>
-          ))}
-        </div>
-        <div className="flex justify-center">
-          <UtilityButton
-            size="small"
-            uncentered={false}
-            link={`https://www.youtube.com/playlist?list=${data.live.youtubePlaylistButton.playlistId}`}
-            buttonText={
-              <>
-                {data.live.youtubePlaylistButton.name}
-                <BsArrowRightCircle className="ml-1 inline" />
-              </>
-            }
-            noAnimate
-            openInNewTab={true}
-          />
-        </div>
+        <YoutubePlaylistBlock {...data.live.youtubePlaylist} />
       </Container>
       <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
     </Layout>
@@ -152,11 +126,6 @@ export const getStaticProps = async () => {
   const speakers = await getSpeakersInfoFromEvent(event);
   const speaker = speakers[0];
 
-  const playListVideosLinks = await getYoutubePlaylist(
-    tinaProps.data.live.youtubePlaylistButton.playlistId,
-    VISIBLE_VIDEOS_COUNT
-  );
-
   return {
     props: {
       data: tinaProps.data,
@@ -164,7 +133,6 @@ export const getStaticProps = async () => {
       variables: tinaProps.variables,
       event: event || null,
       speaker: speaker || null,
-      playListVideosLinks,
     },
     revalidate: ISR_TIME,
   };

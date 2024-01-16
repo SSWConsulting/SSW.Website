@@ -43,6 +43,16 @@ export default function NETUGPage(
   );
 
   if (data?.userGroupPage?.__typename === "UserGroupPageLocationPage") {
+    const registerUrl = data.userGroupPage.registerUrl;
+    const sectionsIncludingRegisterUrl = data.userGroupPage.sections.map(
+      (section) =>
+        section.__typename === "UserGroupPageLocationPageSectionsActionSection"
+          ? {
+              ...section,
+              registerUrl: registerUrl,
+            }
+          : section
+    );
     return (
       <>
         <Layout menu={data.megamenu}>
@@ -235,7 +245,7 @@ export default function NETUGPage(
 
           <SectionRenderer
             prefix="UserGroupPageLocationPageSections"
-            blocks={data.userGroupPage.sections}
+            blocks={sectionsIncludingRegisterUrl}
           />
 
           <section>
