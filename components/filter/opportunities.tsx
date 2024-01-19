@@ -184,10 +184,10 @@ const OpportunityDropdown = ({
             }}
             id={transformTitleToId(opportunity.title)}
           >
-            <h2 className="my-0 text-base font-semibold md:float-left">
+            <h2 className="my-0 text-base font-semibold xl:float-left">
               {opportunity.title}
             </h2>
-            <span className="flex items-center justify-center md:float-right">
+            <span className="flex items-center justify-center xl:float-right">
               <FaMapMarkerAlt className="inline" />
               &nbsp;
               {opportunity.locations?.join(", ")}&nbsp;
