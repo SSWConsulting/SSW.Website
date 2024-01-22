@@ -82,14 +82,7 @@ export default function CompanyPage(
                     )}
                     {data.company.sidebarTestimonial && (
                       <TestimonialPanel
-                        testimonial={{
-                          name: JSON.parse(data.company.sidebarTestimonial)
-                            ?.name,
-                          company: JSON.parse(data.company.sidebarTestimonial)
-                            ?.company,
-                          body: JSON.parse(data.company.sidebarTestimonial)
-                            ?.body,
-                        }}
+                        props={data.company.sidebarTestimonial}
                       />
                     )}
                     {data.company.showRdPanel && <RDPanel />}
