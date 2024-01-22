@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { TestimonialType } from "../../helpers/getTestimonials";
 
 const defaultAvatar = "/images/thumbs/avatar-thumbnail.png";
@@ -35,9 +34,7 @@ export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
           </>
         )}
       </p>
-      <div className="mt-2 text-sm text-ssw-black">
-        <TinaMarkdown content={testimonial?.body} />
-      </div>
+      <div className="mt-2 text-sm text-ssw-black">{testimonial?.body}</div>
     </div>
   );
 };
