@@ -1,10 +1,11 @@
 import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import client from "../.tina/__generated__/client";
-
+import * as Testominials from "../content/testimonialsNew/testimonials.json";
+import { extractFileName } from "./functions";
 export type TestimonialType = {
   name: string;
   avatar?: string;
-  rating: number;
+  rating?: number | undefined;
   company?: string;
   body?: TinaMarkdownContent;
 };
@@ -12,6 +13,23 @@ export type TestimonialType = {
 export const getTestimonialsByCategories = async (
   categories: string[]
 ): Promise<TestimonialType[]> => {
+  const testimonials2 = Testominials.testimonials
+    .filter(
+      (testimonial) =>
+        testimonial.categories?.length > 0 &&
+        testimonial.categories.some((testimonialCategory) =>
+          categories.some(
+            (givenCategory) =>
+              givenCategory === extractFileName(testimonialCategory.category)
+          )
+        )
+    )
+    .map((testimonial) => ({
+      ...testimonial,
+      body: testimonial.body as unknown as TinaMarkdownContent, // Add default value for body
+    })) as TestimonialType[];
+
+  console.log("🚀 ~ categories:", testimonials2);
   const testimonials = await client.queries.testimonalsQuery({
     categories,
   });
@@ -21,7 +39,7 @@ export const getTestimonialsByCategories = async (
   );
 
   // Adds default/general testimonials if not filled by any testimonial with matching categories
-  if (testimonialsResult.length === 0) {
+  if (testimonialsResult.length === 0 || testimonials2.length === 0) {
     const generalTestimonials = await client.queries.testimonalsQuery({
       categories: "General",
     });
