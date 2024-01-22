@@ -62,3 +62,12 @@ export const getFilteredTestimonials = async (
 
   return testimonialsResult;
 };
+
+export const getTestimonialOptions = () => {
+  const testimonialOptions = Testominials.testimonials.map((testimonial) => ({
+    value: JSON.stringify(testimonial),
+    label: `${testimonial.name} - ${testimonial.company ?? ""}`,
+  }));
+
+  return testimonialOptions;
+};

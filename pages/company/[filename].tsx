@@ -83,9 +83,12 @@ export default function CompanyPage(
                     {data.company.sidebarTestimonial && (
                       <TestimonialPanel
                         testimonial={{
-                          name: data.company.sidebarTestimonial.name,
-                          company: data.company.sidebarTestimonial.company,
-                          body: data.company.sidebarTestimonial.body,
+                          name: JSON.parse(data.company.sidebarTestimonial)
+                            ?.name,
+                          company: JSON.parse(data.company.sidebarTestimonial)
+                            ?.company,
+                          body: JSON.parse(data.company.sidebarTestimonial)
+                            ?.body,
                         }}
                       />
                     )}
