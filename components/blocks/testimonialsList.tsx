@@ -1,45 +1,27 @@
 import { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Template } from "tinacms";
-import client from "../../.tina/__generated__/client";
+import { extractFileName } from "../../helpers/functions";
+import { getFilteredTestimonials } from "../../helpers/getTestimonials";
 import { TestimonialCard } from "./testimonialsCard";
 
 export const TestimonialsList = ({ data: { listOfCategoriesToHide = [] } }) => {
   const [testimonials, setTestimonials] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
 
-  const categoriesToHide = listOfCategoriesToHide?.map(
-    (category) => extractCategoryName(category?.categoryName)?.toLowerCase()
-  );
-
   useEffect(() => {
-    const loadTestimonials = () => {
-      client.queries.testimonialsConnection().then((data) => {
-        const testimonials = data.data?.testimonialsConnection?.edges?.map(
-          (edge) => edge?.node
-        );
+    const loadTestimonials = async () => {
+      const filteredTestimonials = await getFilteredTestimonials(
+        listOfCategoriesToHide
+      );
 
-        const filteredTestimonials = testimonials
-          ?.filter(
-            (testimonial) =>
-              testimonial?.categories !== null &&
-              !categoriesToHide.some(
-                (category) =>
-                  testimonial?.categories[0]?.category.name
-                    .toLowerCase()
-                    .includes(category)
-              )
-          )
-          ?.map((testimonial) => testimonial);
-
-        setTestimonials(filteredTestimonials);
-        setHasLoaded(true);
-      });
+      setTestimonials(filteredTestimonials);
+      setHasLoaded(true);
     };
     if (!hasLoaded) {
       loadTestimonials();
     }
-  }, [hasLoaded, categoriesToHide]);
+  }, [hasLoaded, listOfCategoriesToHide]);
 
   return (
     <>
@@ -61,9 +43,6 @@ export const TestimonialsList = ({ data: { listOfCategoriesToHide = [] } }) => {
   );
 };
 
-const extractCategoryName = (category) =>
-  category?.split("/").pop().split(".")[0].split("-")[0];
-
 export const testimonialsListSchema: Template = {
   name: "TestimonialsList",
   label: "Testimonials List",
@@ -74,7 +53,7 @@ export const testimonialsListSchema: Template = {
       name: "listOfCategoriesToHide",
       ui: {
         itemProps: (item) => {
-          const CategoryName = extractCategoryName(item?.categoryName);
+          const CategoryName = extractFileName(item?.categoryName);
           return {
             label: CategoryName,
           };

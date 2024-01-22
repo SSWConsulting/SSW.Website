@@ -9,22 +9,56 @@ export type TestimonialType = {
 };
 
 export const getTestimonialsByCategories = async (
-  fetchCategories: string[]
+  categories: string[],
+  isCategoriesIncluded: boolean = true
 ): Promise<TestimonialType[] | []> => {
   const testimonialsResult = Testominials.testimonials
     .filter(
       (testimonial) =>
         testimonial.categories &&
         testimonial.categories.some((testimonialCategory) =>
-          fetchCategories.length > 0
-            ? fetchCategories.some(
+          categories.length > 0 && isCategoriesIncluded
+            ? categories.some(
                 (category) =>
                   category === extractFileName(testimonialCategory.category)
               )
-            : extractFileName(testimonialCategory.category) === "General"
+            : categories.length > 0 && !isCategoriesIncluded
+              ? !categories.some(
+                  (category) =>
+                    category === extractFileName(testimonialCategory.category)
+                )
+              : extractFileName(testimonialCategory.category) === "General"
         )
     )
     .map((testimonial) => testimonial as TestimonialType);
 
   return testimonialsResult.length > 0 ? testimonialsResult.slice(0, 3) : [];
+};
+
+export const getFilteredTestimonials = async (
+  categoryRoutePaths: {
+    categoryName: string;
+  }[]
+): Promise<TestimonialType[]> => {
+  const categoryListToExclude = categoryRoutePaths?.map(
+    (category) => extractFileName(category?.categoryName)?.toLowerCase()
+  );
+
+  const testimonialsResult = Testominials.testimonials
+    .filter(
+      (testimonial) =>
+        testimonial.categories &&
+        testimonial.categories.some(
+          (testimonialCategory) =>
+            categoryListToExclude.length > 0 &&
+            !categoryListToExclude.some(
+              (category) =>
+                category ===
+                extractFileName(testimonialCategory.category)?.toLowerCase()
+            )
+        )
+    )
+    .map((testimonial) => testimonial as TestimonialType);
+
+  return testimonialsResult;
 };
