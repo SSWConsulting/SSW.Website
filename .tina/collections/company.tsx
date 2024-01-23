@@ -13,7 +13,7 @@ import { tipField } from "./shared-fields";
 
 import type { Collection } from "tinacms";
 import { tripleColumnImageBlockSchema } from "../../components/blocks/tripleColumnImageBlock";
-import { getTestimonialOptions } from "../../helpers/getTestimonials";
+import { testimonialToSelectOptions } from "../../helpers/getTestimonials";
 
 export const companySchema: Collection = {
   label: "Company - Pages",
@@ -60,7 +60,7 @@ export const companySchema: Collection = {
       type: "string",
       name: "sidebarTestimonial",
       label: "Sidebar Testimonial",
-      options: getTestimonialOptions(),
+      options: testimonialToSelectOptions(),
     },
     {
       type: "boolean",

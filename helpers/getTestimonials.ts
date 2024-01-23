@@ -63,7 +63,7 @@ export const getFilteredTestimonials = async (
   return testimonialsResult;
 };
 
-export const getTestimonialOptions = () => {
+export const testimonialToSelectOptions = () => {
   const testimonialOptions = Testominials.testimonials.map((testimonial) => ({
     value: JSON.stringify({
       name: testimonial.name,
