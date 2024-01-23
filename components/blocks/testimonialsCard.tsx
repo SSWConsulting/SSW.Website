@@ -25,7 +25,7 @@ export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
         />
       </div>
 
-      <p className="mt-4 min-h-24">
+      <p className="mt-4 min-h-16">
         {testimonial?.name}
         {testimonial?.company && (
           <>
