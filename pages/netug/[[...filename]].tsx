@@ -317,7 +317,7 @@ export const getStaticProps = async ({ params }) => {
       categories.push(priorityCategory);
     }
 
-    testimonialsResult = await getTestimonialsByCategories(categories);
+    testimonialsResult = await getTestimonialsByCategories(categories, true);
   }
 
   const currentDate = new Date().toISOString();

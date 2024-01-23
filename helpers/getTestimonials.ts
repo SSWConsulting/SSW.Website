@@ -9,7 +9,8 @@ export type TestimonialType = {
 const SSWInternalTestimonialCategories = ["internship", "brainstorming"];
 
 export const getTestimonialsByCategories = async (
-  categories: string[] = []
+  categories: string[] = [],
+  isOrdered: boolean = true
 ): Promise<TestimonialType[] | []> => {
   const testimonialsResult = testimonialList.testimonials
     .filter(
@@ -24,10 +25,13 @@ export const getTestimonialsByCategories = async (
             : extractFileName(testimonialCategory.category) === "General"
         )
     )
-    .map((testimonial) => testimonial as TestimonialType)
-    ?.slice(0, 3);
+    .map((testimonial) => testimonial as TestimonialType);
 
-  return testimonialsResult;
+  const testimonials = isOrdered
+    ? testimonialsResult
+    : testimonialsResult.sort(() => 0.5 - Math.random());
+
+  return testimonials?.slice(0, 3);
 };
 
 export const getFilteredTestimonials = async (
