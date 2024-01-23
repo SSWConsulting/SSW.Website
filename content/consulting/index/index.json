@@ -385,7 +385,7 @@
           "title": "Brainstorming",
           "description": "Transform your team's untapped ideas into business solutions with SSW's Brainstorming Days. an engaging, collaborative environment.",
           "logo": "/images/thumbs/thumb-brainstorming.png",
-          "page": "content/consulting/Brainstorming.mdx",
+          "page": "content/consulting/brainstorming.mdx",
           "tags": [
             {
               "tag": "content/consulting/tag/consulting.json"
