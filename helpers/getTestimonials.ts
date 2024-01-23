@@ -3,7 +3,6 @@ import { extractFileName } from "./functions";
 export type TestimonialType = {
   name: string;
   avatar?: string;
-  rating?: number | undefined;
   company?: string;
   body?: string;
 };
@@ -18,16 +17,17 @@ export const getTestimonialsByCategories = async (
         testimonial.categories &&
         testimonial.categories.some((testimonialCategory) =>
           categories.length > 0
-            ? categories.some(
+            ? categories.every(
                 (category) =>
                   category === extractFileName(testimonialCategory.category)
               )
             : extractFileName(testimonialCategory.category) === "General"
         )
     )
-    .map((testimonial) => testimonial as TestimonialType);
+    .map((testimonial) => testimonial as TestimonialType)
+    ?.slice(0, 3);
 
-  return testimonialsResult.length > 0 ? testimonialsResult.slice(0, 3) : [];
+  return testimonialsResult;
 };
 
 export const getFilteredTestimonials = async (
@@ -46,7 +46,7 @@ export const getFilteredTestimonials = async (
         testimonial.categories.some(
           (testimonialCategory) =>
             categoryListToExclude.length > 0 &&
-            !categoryListToExclude.some(
+            !categoryListToExclude.every(
               (category) =>
                 category ===
                 extractFileName(testimonialCategory.category)?.toLowerCase()
@@ -57,7 +57,7 @@ export const getFilteredTestimonials = async (
 
   return testimonialsResult;
 };
-export const getFilteredAndRandomTestimonial = async () => {
+export const getRandomClientTestimonial = async () => {
   const testimonialsResult = testimonialList.testimonials
     .filter(
       (testimonial) =>
@@ -65,7 +65,7 @@ export const getFilteredAndRandomTestimonial = async () => {
         testimonial.categories.some(
           (testimonialCategory) =>
             SSWInternalTestimonialCategories.length > 0 &&
-            !SSWInternalTestimonialCategories.some(
+            !SSWInternalTestimonialCategories.every(
               (category) =>
                 category ===
                 extractFileName(testimonialCategory.category)?.toLowerCase()
@@ -73,27 +73,27 @@ export const getFilteredAndRandomTestimonial = async () => {
         )
     )
     .map((testimonial) => testimonial as TestimonialType);
-  const shuffledTestimonials =
+
+  const randomTestimonial =
     testimonialsResult[Math.floor(Math.random() * testimonialsResult.length)];
 
-  return JSON.stringify({
-    name: shuffledTestimonials.name,
-    company: shuffledTestimonials.company,
-    body: shuffledTestimonials.body,
-  });
+  return ToStringify(randomTestimonial);
 };
 
 export const testimonialToSelectOptions = () => {
   const testimonialOptions = testimonialList.testimonials.map(
     (testimonial) => ({
-      value: JSON.stringify({
-        name: testimonial.name,
-        company: testimonial.company,
-        body: testimonial.body,
-      }),
+      value: ToStringify(testimonial),
       label: `${testimonial.name} - ${testimonial.company ?? ""}`,
     })
   );
 
   return testimonialOptions;
 };
+
+const ToStringify = (testimonial: TestimonialType) =>
+  JSON.stringify({
+    name: testimonial.name,
+    company: testimonial.company,
+    body: testimonial.body,
+  });

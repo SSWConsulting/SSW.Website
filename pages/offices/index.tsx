@@ -12,7 +12,7 @@ import { Countries } from "../../components/util/constants/country";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
 import layoutData from "../../content/global/index.json";
-import { getFilteredAndRandomTestimonial } from "../../helpers/getTestimonials";
+import { getRandomClientTestimonial } from "../../helpers/getTestimonials";
 
 export default function OfficeIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -135,7 +135,7 @@ export const getStaticProps = async () => {
   const tinaProps = await client.queries.officeIndexQuery({
     relativePath: "officesIndex.json",
   });
-  const testimonial = await getFilteredAndRandomTestimonial();
+  const testimonial = await getRandomClientTestimonial();
 
   if (
     tinaProps.data.officeIndex.seo &&

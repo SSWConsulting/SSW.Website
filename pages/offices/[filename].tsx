@@ -16,7 +16,7 @@ import TestimonialPanel from "../../components/offices/testimonialPanel";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import { getFilteredAndRandomTestimonial } from "../../helpers/getTestimonials";
+import { getRandomClientTestimonial } from "../../helpers/getTestimonials";
 import { removeExtension } from "../../services/client/utils.service";
 
 export default function OfficePage(
@@ -200,7 +200,7 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.mdx`,
   });
 
-  const testimonial = await getFilteredAndRandomTestimonial();
+  const testimonial = await getRandomClientTestimonial();
 
   if (tinaProps.data.offices.seo && !tinaProps.data.offices.seo.canonical) {
     tinaProps.data.offices.seo.canonical = `${tinaProps.data.global.header.url}offices/${params.filename}`;
