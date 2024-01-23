@@ -17,7 +17,7 @@ export const getTestimonialsByCategories = async (
         testimonial.categories &&
         testimonial.categories.some((testimonialCategory) =>
           categories.length > 0
-            ? categories.every(
+            ? categories.some(
                 (category) =>
                   category === extractFileName(testimonialCategory.category)
               )
@@ -46,7 +46,7 @@ export const getFilteredTestimonials = async (
         testimonial.categories.some(
           (testimonialCategory) =>
             categoryListToExclude.length > 0 &&
-            !categoryListToExclude.every(
+            !categoryListToExclude.some(
               (category) =>
                 category ===
                 extractFileName(testimonialCategory.category)?.toLowerCase()
@@ -65,7 +65,7 @@ export const getRandomClientTestimonial = async () => {
         testimonial.categories.some(
           (testimonialCategory) =>
             SSWInternalTestimonialCategories.length > 0 &&
-            !SSWInternalTestimonialCategories.every(
+            !SSWInternalTestimonialCategories.some(
               (category) =>
                 category ===
                 extractFileName(testimonialCategory.category)?.toLowerCase()
