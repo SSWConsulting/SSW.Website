@@ -20,7 +20,7 @@ export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
     >
       <div className="flex flex-col items-center">
         <Image
-          alt={`Picture of ${testimonial?.name} as an avatar`}
+          alt={`Avatar of ${testimonial?.name}`}
           src={testimonialAvatar}
           height={120}
           width={120}
