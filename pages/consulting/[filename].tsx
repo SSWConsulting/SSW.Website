@@ -204,7 +204,10 @@ export const getStaticProps = async ({ params }) => {
       ?.map((category) => category?.testimonialCategory?.name)
       ?.filter((item) => !!item) || [];
 
-  const testimonialsResult = await getTestimonialsByCategories(categories);
+  const testimonialsResult = await getTestimonialsByCategories(
+    categories,
+    false
+  );
 
   const seo = tinaProps.data.consulting.seo;
   if (seo && !seo.canonical) {
