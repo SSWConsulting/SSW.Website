@@ -1,4 +1,4 @@
-import * as Testominials from "../content/testimonials/testimonials.json";
+import testimonialList from "../content/testimonials/testimonials.json";
 import { extractFileName } from "./functions";
 export type TestimonialType = {
   name: string;
@@ -7,12 +7,12 @@ export type TestimonialType = {
   company?: string;
   body?: string;
 };
-const SSWInternalTestimonials = ["internship", "brainstorming"];
+const SSWInternalTestimonialCategories = ["internship", "brainstorming"];
 
 export const getTestimonialsByCategories = async (
   categories: string[] = []
 ): Promise<TestimonialType[] | []> => {
-  const testimonialsResult = Testominials.testimonials
+  const testimonialsResult = testimonialList.testimonials
     .filter(
       (testimonial) =>
         testimonial.categories &&
@@ -39,7 +39,7 @@ export const getFilteredTestimonials = async (
     (category) => extractFileName(category?.categoryName)?.toLowerCase()
   );
 
-  const testimonialsResult = Testominials.testimonials
+  const testimonialsResult = testimonialList.testimonials
     .filter(
       (testimonial) =>
         testimonial.categories &&
@@ -58,14 +58,14 @@ export const getFilteredTestimonials = async (
   return testimonialsResult;
 };
 export const getFilteredAndRandomTestimonial = async () => {
-  const testimonialsResult = Testominials.testimonials
+  const testimonialsResult = testimonialList.testimonials
     .filter(
       (testimonial) =>
         testimonial.categories &&
         testimonial.categories.some(
           (testimonialCategory) =>
-            SSWInternalTestimonials.length > 0 &&
-            !SSWInternalTestimonials.some(
+            SSWInternalTestimonialCategories.length > 0 &&
+            !SSWInternalTestimonialCategories.some(
               (category) =>
                 category ===
                 extractFileName(testimonialCategory.category)?.toLowerCase()
@@ -84,14 +84,16 @@ export const getFilteredAndRandomTestimonial = async () => {
 };
 
 export const testimonialToSelectOptions = () => {
-  const testimonialOptions = Testominials.testimonials.map((testimonial) => ({
-    value: JSON.stringify({
-      name: testimonial.name,
-      company: testimonial.company,
-      body: testimonial.body,
-    }),
-    label: `${testimonial.name} - ${testimonial.company ?? ""}`,
-  }));
+  const testimonialOptions = testimonialList.testimonials.map(
+    (testimonial) => ({
+      value: JSON.stringify({
+        name: testimonial.name,
+        company: testimonial.company,
+        body: testimonial.body,
+      }),
+      label: `${testimonial.name} - ${testimonial.company ?? ""}`,
+    })
+  );
 
   return testimonialOptions;
 };
