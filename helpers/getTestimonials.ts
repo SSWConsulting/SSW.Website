@@ -77,13 +77,13 @@ export const getRandomClientTestimonial = async () => {
   const randomTestimonial =
     testimonialsResult[Math.floor(Math.random() * testimonialsResult.length)];
 
-  return ToStringify(randomTestimonial);
+  return toStringify(randomTestimonial);
 };
 
 export const testimonialToSelectOptions = () => {
   const testimonialOptions = testimonialList.testimonials.map(
     (testimonial) => ({
-      value: ToStringify(testimonial),
+      value: toStringify(testimonial),
       label: `${testimonial.name} - ${testimonial.company ?? ""}`,
     })
   );
@@ -91,7 +91,7 @@ export const testimonialToSelectOptions = () => {
   return testimonialOptions;
 };
 
-const ToStringify = (testimonial: TestimonialType) =>
+const toStringify = (testimonial: TestimonialType) =>
   JSON.stringify({
     name: testimonial.name,
     company: testimonial.company,
