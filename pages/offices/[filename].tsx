@@ -200,7 +200,7 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.mdx`,
   });
 
-  const testimonials = await getFilteredAndRandomTestimonial();
+  const testimonial = await getFilteredAndRandomTestimonial();
 
   if (tinaProps.data.offices.seo && !tinaProps.data.offices.seo.canonical) {
     tinaProps.data.offices.seo.canonical = `${tinaProps.data.global.header.url}offices/${params.filename}`;
@@ -211,7 +211,7 @@ export const getStaticProps = async ({ params }) => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
-      testimonial: testimonials,
+      testimonial: testimonial,
     },
   };
 };

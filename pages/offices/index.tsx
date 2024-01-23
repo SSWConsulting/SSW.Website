@@ -12,6 +12,7 @@ import { Countries } from "../../components/util/constants/country";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
 import layoutData from "../../content/global/index.json";
+import { getFilteredAndRandomTestimonial } from "../../helpers/getTestimonials";
 
 export default function OfficeIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -119,7 +120,7 @@ export default function OfficeIndex(
                 </ul>
                 <div className="hidden sm:block">
                   <MicrosoftPanel />
-                  <TestimonialPanel testimonial={props.testimonial} />
+                  <TestimonialPanel props={props.testimonial} />
                 </div>
               </div>
             </div>
@@ -134,11 +135,7 @@ export const getStaticProps = async () => {
   const tinaProps = await client.queries.officeIndexQuery({
     relativePath: "officesIndex.json",
   });
-  const testimonialResult = await client.queries.allTestimonialsQuery();
-  const testimonials =
-    testimonialResult.data.testimonialsConnection.Testimonials;
-  const testimonial =
-    testimonials[Math.floor(Math.random() * testimonials.length)].Testimonial;
+  const testimonial = await getFilteredAndRandomTestimonial();
 
   if (
     tinaProps.data.officeIndex.seo &&
