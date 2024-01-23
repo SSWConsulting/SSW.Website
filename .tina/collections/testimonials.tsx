@@ -82,46 +82,6 @@ export const tipForReference: TinaField = {
     },
   },
 };
-var index = 1;
-
-export const testimonialsOrderableSchema: Collection = {
-  label: "Testimonials - Orderable ",
-  name: "testimonialsOrderable",
-  format: "json",
-  path: "content/testimonialsOrder",
-  ui: {
-    allowedActions: {
-      create: false,
-      delete: false,
-    },
-  },
-  fields: [
-    tipForReference,
-    {
-      type: "object",
-      label: "Testimonials",
-      name: "testimonials",
-      ui: {
-        itemProps: (item) => {
-          const fileName = extractFileName(item?.testimonialOrder);
-
-          return {
-            label: fileName,
-          };
-        },
-      },
-      list: true,
-      fields: [
-        {
-          type: "reference",
-          label: "Name",
-          name: "testimonialOrder",
-          collections: ["testimonials"],
-        },
-      ],
-    },
-  ],
-};
 
 export const testimonialsNewSchema: Collection = {
   label: "Testimonials - New ",
