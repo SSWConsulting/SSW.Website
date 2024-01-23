@@ -29,11 +29,7 @@ import { presenterSchema } from "./collections/presenter";
 import { productsIndexSchema, productsSchema } from "./collections/products";
 import { technologiesSchema } from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
-import {
-  testimonialSchema,
-  testimonialsNewSchema,
-  testimonialsOrderableSchema,
-} from "./collections/testimonials";
+import { testimonialSchema } from "./collections/testimonials";
 import { trainingSchema } from "./collections/training";
 import {
   userGroupGlobalSchema,
@@ -100,9 +96,7 @@ const config = defineStaticConfig({
       productsIndexSchema,
       productsSchema,
       testimonialSchema,
-      testimonialsOrderableSchema,
       testimonialCategoriesSchema,
-      testimonialsNewSchema,
       trainingSchema,
       userGroupPageSchema,
       userGroupGlobalSchema,

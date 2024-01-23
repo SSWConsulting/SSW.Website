@@ -1,70 +1,8 @@
 import type { Collection, TinaField } from "tinacms";
 
 import React from "react";
-import { ratingSchema } from "../../components/util/consulting/rating";
 import { extractFileName } from "../../helpers/functions";
 import { tipField } from "./shared-fields";
-
-export const testimonialSchema: Collection = {
-  label: "Testimonials",
-  name: "testimonials",
-  format: "mdx",
-  path: "content/testimonials",
-  fields: [
-    tipField,
-    {
-      type: "string",
-      label: "Name",
-      name: "name",
-      required: true,
-    },
-    {
-      type: "image",
-      label: "Avatar",
-      name: "avatar",
-      required: false,
-      // @ts-ignore
-      uploadDir: () => "testimonialAvatars",
-    },
-    {
-      type: "string",
-      label: "Company",
-      name: "company",
-      required: false,
-    },
-    {
-      ...ratingSchema,
-      required: true,
-    },
-    {
-      type: "rich-text",
-      label: "Body",
-      name: "body",
-      isBody: true,
-    },
-    {
-      type: "object",
-      label: "Categories",
-      name: "categories",
-      list: true,
-      ui: {
-        itemProps: (item) => {
-          return {
-            label: item?.category ?? "Select your testimonial category",
-          };
-        },
-      },
-      fields: [
-        {
-          type: "reference",
-          label: "Category",
-          name: "category",
-          collections: ["testimonialCategories"],
-        },
-      ],
-    },
-  ],
-};
 
 export const tipForReference: TinaField = {
   type: "string",
@@ -83,11 +21,11 @@ export const tipForReference: TinaField = {
   },
 };
 
-export const testimonialsNewSchema: Collection = {
-  label: "Testimonials - New ",
-  name: "testimonialsNew",
+export const testimonialSchema: Collection = {
+  label: "Testimonials",
+  name: "testimonials",
   format: "json",
-  path: "content/testimonialsNew",
+  path: "content/testimonials",
   ui: {
     allowedActions: {
       create: false,

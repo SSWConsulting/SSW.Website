@@ -1,4 +1,4 @@
-import * as Testominials from "../content/testimonialsNew/testimonials.json";
+import * as Testominials from "../content/testimonials/testimonials.json";
 import { extractFileName } from "./functions";
 export type TestimonialType = {
   name: string;
