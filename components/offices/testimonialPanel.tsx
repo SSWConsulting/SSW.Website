@@ -5,6 +5,7 @@ type TestimonialPanelProps = {
 };
 
 const TestimonialPanel = ({ props }) => {
+  if (!props) return <></>;
   const { body, name, company }: TestimonialPanelProps = JSON.parse(props);
   return (
     <>

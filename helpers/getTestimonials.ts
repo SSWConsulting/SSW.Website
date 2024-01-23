@@ -7,27 +7,22 @@ export type TestimonialType = {
   company?: string;
   body?: string;
 };
+const SSWInternalTestimonials = ["internship", "brainstorming"];
 
 export const getTestimonialsByCategories = async (
-  categories: string[],
-  isCategoriesIncluded: boolean = true
+  categories: string[] = []
 ): Promise<TestimonialType[] | []> => {
   const testimonialsResult = Testominials.testimonials
     .filter(
       (testimonial) =>
         testimonial.categories &&
         testimonial.categories.some((testimonialCategory) =>
-          categories.length > 0 && isCategoriesIncluded
+          categories.length > 0
             ? categories.some(
                 (category) =>
                   category === extractFileName(testimonialCategory.category)
               )
-            : categories.length > 0 && !isCategoriesIncluded
-              ? !categories.some(
-                  (category) =>
-                    category === extractFileName(testimonialCategory.category)
-                )
-              : extractFileName(testimonialCategory.category) === "General"
+            : extractFileName(testimonialCategory.category) === "General"
         )
     )
     .map((testimonial) => testimonial as TestimonialType);
@@ -61,6 +56,31 @@ export const getFilteredTestimonials = async (
     .map((testimonial) => testimonial as TestimonialType);
 
   return testimonialsResult;
+};
+export const getFilteredAndRandomTestimonial = async () => {
+  const testimonialsResult = Testominials.testimonials
+    .filter(
+      (testimonial) =>
+        testimonial.categories &&
+        testimonial.categories.some(
+          (testimonialCategory) =>
+            SSWInternalTestimonials.length > 0 &&
+            !SSWInternalTestimonials.some(
+              (category) =>
+                category ===
+                extractFileName(testimonialCategory.category)?.toLowerCase()
+            )
+        )
+    )
+    .map((testimonial) => testimonial as TestimonialType);
+  const shuffledTestimonials =
+    testimonialsResult[Math.floor(Math.random() * testimonialsResult.length)];
+
+  return JSON.stringify({
+    name: shuffledTestimonials.name,
+    company: shuffledTestimonials.company,
+    body: shuffledTestimonials.body,
+  });
 };
 
 export const testimonialToSelectOptions = () => {
