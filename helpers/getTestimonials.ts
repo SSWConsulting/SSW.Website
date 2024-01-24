@@ -9,8 +9,7 @@ export type TestimonialType = {
 const SSWInternalTestimonialCategories = ["internship", "brainstorming"];
 
 export const getTestimonialsByCategories = async (
-  categories: string[] = [],
-  isOrdered: boolean = true
+  categories: string[] = []
 ): Promise<TestimonialType[] | []> => {
   const testimonialsResult = testimonialList.testimonials
     .filter(
@@ -25,13 +24,33 @@ export const getTestimonialsByCategories = async (
             : extractFileName(testimonialCategory.category) === "General"
         )
     )
-    .map((testimonial) => testimonial as TestimonialType);
+    .map((testimonial) => testimonial as TestimonialType)
+    .slice(0, 3);
 
-  const testimonials = isOrdered
-    ? testimonialsResult
-    : testimonialsResult.sort(() => 0.5 - Math.random());
+  return testimonialsResult;
+};
 
-  return testimonials?.slice(0, 3);
+export const getRandomTestimonialsByCategory = async (
+  categories: string[] = []
+): Promise<TestimonialType[] | []> => {
+  const testimonialsResult = testimonialList.testimonials
+    .filter(
+      (testimonial) =>
+        testimonial.categories &&
+        testimonial.categories.some((testimonialCategory) =>
+          categories.length > 0
+            ? categories.some(
+                (category) =>
+                  category === extractFileName(testimonialCategory.category)
+              )
+            : extractFileName(testimonialCategory.category) === "General"
+        )
+    )
+    .map((testimonial) => testimonial as TestimonialType)
+    ?.sort(() => 0.5 - Math.random())
+    ?.slice(0, 3);
+
+  return testimonialsResult;
 };
 
 export const getFilteredTestimonials = async (
