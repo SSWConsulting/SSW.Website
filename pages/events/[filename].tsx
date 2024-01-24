@@ -74,7 +74,7 @@ export default function EventsPage(
             <Container padding={"md:px-8 px-0 !py-0"}>
               <div
                 data-tina-field={tinaField(data.events, "subTitle")}
-                className="mx-6 py-0 text-center md:text-left"
+                className="mx-6 py-0 text-center md:mx-0 md:text-left"
               >
                 <TinaMarkdown content={data.events?.subTitle} />
               </div>
