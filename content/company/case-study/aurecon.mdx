@@ -1,0 +1,122 @@
+---
+seo:
+  title: Aurecon Case Study | SSW Consulting
+  showBreadcrumb: true
+heading: Aurecon Case Study
+subHeading: SharePoint Portal
+content: >
+  ## Challenge
+
+
+  Aurecon - formerly known as Connell Wagner - identified SharePoint as the
+  product of choice to replace various Lotus Notes applications in use within
+  their business including their intranet portal. SSW were brought in to
+  architect a SharePoint farm for their user base of over 6000 employees
+  worldwide, implement the first part of their portal using best practices for
+  development and deployment, and to train their developers and support staff.
+
+
+  ## SharePoint Functionality
+
+
+  The first part of the portal to be developed was for Knowledge Groups; groups
+  of employees throughout the organization that work within a similar
+  operational area. Each Knowledge Group was to have a unique site based on a
+  template that provided the following components:
+
+
+  * Publishing functionality
+
+  * A discussion forum
+
+  * Document management
+
+  * A standard navigation and interface
+
+  * User information
+
+
+  <CustomImage src="/images/case-studies/Aurecon_Home.jpg" altText="Aurecon
+  Portal" width={940} caption="Figure: The Aurecon Knowledge Group Portal Home
+  Page" customClass="my-1" height={600} alignment="items-start" />
+
+
+  Figure: The Aurecon Knowledge Group Portal Home Page
+
+
+  SSW built a custom site definition that allowed the required functionality to
+  be provisioned when a new Knowledge Group is created. In addition, the
+  template can be reapplied to an existing site resetting configurations such as
+  permissions and navigation in the event of user corruption.
+
+
+  ## Document Management and Search
+
+
+  OpenText Enterprise Content Management (formerly known as LiveLink) was in use
+  at Aurecon, so document management within SharePoint was not required. In
+  addition, SharePoint was only required to crawl and index content within the
+  SharePoint portal. OpenText provides web parts to integrate with SharePoint to
+  allow federated search results of both OpenText and SharePoint search results.
+  SSW integrated the OpenText components within SharePoint to ensure a seamless
+  user experience was created, and there be no requirement to context switch
+  between applications when working with documents, searching, or using
+  collaboration features of SharePoint.
+
+
+  ## User Experience
+
+
+  Aurecon had specific branding guidelines that the SharePoint portal had to
+  meet. Thanks to SSW's experience in working with the SharePoint front end,
+  this did not prove difficult.
+
+
+  <CustomImage src="/images/case-studies/Aurecon_Sub.jpg" altText="Aurecon
+  Building Structure" width={980} height={600} caption="Figure: A clean
+  interface consistent with Aurecon branding guidelines" alignment="items-start"
+  customClass="my-1" />
+
+
+  ## Process
+
+
+  A best practice development environment was put in place with processes to
+  match. A SharePoint image was built which allowed for rapid rollout SharePoint
+  Virtual Machine (VM) servers:
+
+
+  * Each developer worked on an isolated SharePoint VM environment to prevent
+  deployment interference with other developers
+
+  * A Build, Verification and Testing (BVT) server was built, and build scripts
+  configured using NAnt to allow continuous integration
+
+  * The UAT SharePoint farm was built to mirror the production environment
+
+
+  Each day the SharePoint package was automatically compiled and deployed onto
+  the BVT server. Unit tests were then run to validate the deployment. Upon
+  failure of any tests, the development team was notified and forced to fix the
+  errors immediately. This process ensured that each component being built was
+  proven to be deployed and operating successfully. This in turn allowed UAT
+  deployments at the end of each iteration to run smoothly and to avoid holding
+  up the business from testing the portal.
+
+
+  ## Results
+
+
+  SSW saw the deployment of the Knowledge Group portal into production and
+  continues to work with Aurecon and their SharePoint requirements.
+
+
+  > The team from SSW had the right mix of technical expertise and functional
+  understanding of our business model to help us to realise a successful outcome
+  for our business. We also appreciated their high level of commitment and
+  professionalism during the project.
+
+
+  \- Susan Callaghan, Aurecon Project Manager
+---
+

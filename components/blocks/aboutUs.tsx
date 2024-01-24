@@ -270,8 +270,8 @@ const AccordionItem = ({
           currentlySelected
             ? "bg-sswRed"
             : onHover
-            ? "bg-gray-600"
-            : "bg-gray-400 hover:bg-gray-600"
+              ? "bg-gray-600"
+              : "bg-gray-400 hover:bg-gray-600"
         )}
         onMouseEnter={() => {
           setStateBeingHovered(office.addressRegion);

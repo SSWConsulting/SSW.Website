@@ -1,7 +1,0 @@
-/* CSS is required to override default carousel stylings as 
- * Tailwind takes a lower order precedence */
-.carouselSubject {
-    width: 470px !important;
-    display: block !important;
-}
-

@@ -1,4 +1,5 @@
 import type { Collection } from "tinacms";
+import { jotFormSchema } from "../../components/blocks/jotFormEmbed";
 
 export const globalSchema: Collection = {
   label: "Global - Sections",
@@ -239,5 +240,6 @@ export const globalSchema: Collection = {
         },
       ],
     },
+    jotFormSchema,
   ],
 };

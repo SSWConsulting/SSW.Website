@@ -1,12 +1,18 @@
 import React from "react";
 import * as Schemas from "../../components/blocks";
-import { testimonialsListSchema } from "../../components/blocks";
+import {
+  VerticalImageLayout,
+  fixedColumnsSchema,
+  testimonialsListSchema,
+  verticalImageLayoutBlockSchema,
+} from "../../components/blocks";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
 import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
 import { seoSchema } from "../../components/util/seo";
 import { tipField } from "./shared-fields";
 
 import type { Collection } from "tinacms";
+import { tripleColumnImageBlockSchema } from "../../components/blocks/tripleColumnImageBlock";
 
 export const companySchema: Collection = {
   label: "Company - Pages",
@@ -34,7 +40,13 @@ export const companySchema: Collection = {
       type: "rich-text",
       name: "subTitle",
       label: "Body",
-      templates: [videoEmbedBlockSchema, testimonialsListSchema],
+      templates: [
+        videoEmbedBlockSchema,
+        testimonialsListSchema,
+        verticalImageLayoutBlockSchema,
+        tripleColumnImageBlockSchema,
+        fixedColumnsSchema,
+      ],
     },
     {
       type: "rich-text",

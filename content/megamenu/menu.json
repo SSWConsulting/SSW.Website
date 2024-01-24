@@ -276,6 +276,10 @@
               "name": "2-Day Training",
               "menuItems": [
                 {
+                  "name": "AI Workshop",
+                  "url": "https://www.ssw.com.au/events/ai-workshop"
+                },
+                {
                   "name": "Angular Workshop",
                   "url": "/events/angular-workshop"
                 },
@@ -381,7 +385,7 @@
                 },
                 {
                   "name": "Awards",
-                  "url": "https://www.ssw.com.au/ssw/Company/Awards"
+                  "url": "https://www.ssw.com.au/company/awards"
                 }
               ]
             },
@@ -477,8 +481,8 @@
         }
       ],
       "viewAll": {
-        "name": "View all products",
-        "url": "/products"
+        "name": "",
+        "url": ""
       }
     },
     {

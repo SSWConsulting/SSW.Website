@@ -12,12 +12,14 @@ import { AgreementForm } from "../terms-and-conditions/agreementForm";
 import TrainingInformation from "../training/trainingInformation";
 import { TrainingLearningOutcome } from "../training/trainingLearningOutcome";
 import { Countries } from "../util/constants/country";
+import { CustomDownloadButton } from "./CustomDownloadButton";
 import { Citation } from "./citation";
 import { ClientLogos } from "./clientLogos";
 import { ContentCard } from "./contentCard";
-import { CustomImage } from "./customImage";
+import { CustomImage, CustomImageProps } from "./customImage";
 import { DynamicColumns } from "./dynamicColumns";
 import { EventLink, EventLinkProps } from "./eventLink";
+import { ExpertBlock, ExpertBlockProps } from "./expertBlock";
 import { FixedColumns } from "./fixedColumns";
 import { FixedTabsLayout } from "./fixedTabsLayout";
 import { Flag } from "./flag";
@@ -26,9 +28,14 @@ import { NewslettersTable } from "./newslettersTable";
 import { RecurringEvent } from "./recurringEvent";
 import { TableLayout, TableLayoutProps } from "./tableLayout";
 import { TestimonialsList } from "./testimonialsList";
+import {
+  TripleColumnImageBlock,
+  TripleColumnImageBlockProps,
+} from "./tripleColumnImageBlock";
 import { UpcomingEvents } from "./upcomingEvents";
 import { VerticalImageLayout } from "./verticalImageLayout";
 import { VerticalListItem } from "./verticalListItem";
+import { YoutubePlaylistBlock, YoutubePlaylistProps } from "./youtubePlaylist";
 
 const Carousel = dynamic(
   () => import("./carousel").then((mod) => mod.Carousel),
@@ -56,12 +63,7 @@ const VideoEmbed = dynamic(
 
 export const componentRenderer: Components<{
   ClientLogos: Record<string, never>;
-  CustomImage: {
-    src: string;
-    alt: string;
-    height: number;
-    width: number;
-  };
+  CustomImage: CustomImageProps;
   RecurringEvent: {
     applyLinkRedirect: string;
     day: string;
@@ -170,9 +172,18 @@ export const componentRenderer: Components<{
   };
   MicrosoftPanel: Record<string, never>;
   TestimonialsList: {
-    hideInternshipTestimonials: boolean;
+    listOfCategoriesToHide?: string[] | undefined;
   };
   EventLink: EventLinkProps;
+  ExpertBlock: ExpertBlockProps;
+  TripleColumnImageBlock: TripleColumnImageBlockProps;
+  YoutubePlaylistBlock: {
+    youtubePlaylist: YoutubePlaylistProps;
+  };
+  CustomDownloadButton: {
+    btnText: string;
+    btnLink: string;
+  };
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -202,4 +213,10 @@ export const componentRenderer: Components<{
   MicrosoftPanel: () => <MicrosoftPanel />,
   TestimonialsList: (props) => <TestimonialsList data={props} />,
   EventLink: (props) => <EventLink {...props} />,
+  ExpertBlock: (props) => <ExpertBlock {...props} />,
+  TripleColumnImageBlock: (props) => <TripleColumnImageBlock {...props} />,
+  CustomDownloadButton: (props) => <CustomDownloadButton data={props} />,
+  YoutubePlaylistBlock: (props) => (
+    <YoutubePlaylistBlock {...props.youtubePlaylist} />
+  ),
 };

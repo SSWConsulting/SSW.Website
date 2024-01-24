@@ -1,24 +1,20 @@
-import dynamic from "next/dynamic";
-import { useState } from "react";
-import { toast } from "react-toastify";
-import { twMerge } from "tailwind-merge";
 import type { Template } from "tinacms";
-import layoutData from "../../content/global/index.json";
-import { recaptchaToastId, useRecaptcha } from "../../context/RecaptchaContext";
-import { UtilityButton } from "../button/utilityButton";
-import Popup from "../popup/popup";
-import SuccessToast from "../successToast/successToast";
-
-const BookingForm = dynamic(
-  () => import("../bookingForm/bookingForm").then((mod) => mod.BookingForm),
-  { ssr: false }
-);
+import {
+  default as defaultSetting,
+  default as layoutData,
+} from "../../content/global/index.json";
+import {
+  JotFormEmbed,
+  JotFormEmbedProps,
+  formType,
+} from "../blocks/jotFormEmbed";
 
 export interface BookingButtonProps {
   buttonText?: string;
   containerClass?: string;
   buttonClass?: string;
   hideCallUs?: boolean;
+  animated?: boolean;
 }
 
 export const BookingButton = ({ data }) => {
@@ -27,50 +23,39 @@ export const BookingButton = ({ data }) => {
     buttonClass,
     buttonText,
     hideCallUs,
+    animated = true,
   }: BookingButtonProps = data;
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-  const showBookingForm = () => setIsVisible((curr) => !curr);
-
-  const { error: recaptchaError } = useRecaptcha();
-
-  if (recaptchaError) {
-    toast.error("Failed to load recaptcha key.", { toastId: recaptchaToastId });
-  }
 
   const bookingPhone = layoutData.bookingPhone;
 
-  const showSuccessToast = () => {
-    toast.success(
-      <div id="success-toaster" className="text-left">
-        Form submitted. We&apos;ll be in contact as soon as possible.
-      </div>
-    );
+  const jotFormBookingForm: JotFormEmbedProps = {
+    data: {
+      jotForm: {
+        id: defaultSetting.jotForm.id,
+        formTitle: defaultSetting.jotForm.id,
+        backgroundColor: defaultSetting.jotForm.backgroundColor,
+        fontColor: defaultSetting.jotForm.fontColor,
+        formType: defaultSetting.jotForm.formType as formType,
+        height: defaultSetting.jotForm.height,
+        width: defaultSetting.jotForm.width,
+      },
+      containerClass: containerClass,
+      buttonClass: buttonClass,
+      buttonText: buttonText,
+      animated: animated,
+    },
   };
-
+  //Create lead - JotForm Doc - https://sswcom.sharepoint.com/sites/SSWDevelopers/_layouts/15/doc.aspx?sourcedoc={45a11067-ef82-4dce-9b43-20812631a184}&action=edit
   return (
-    <div
-      className={twMerge("flex w-full flex-col items-center", containerClass)}
-    >
-      <UtilityButton
-        className={buttonClass || "mt-14"}
-        onClick={showBookingForm}
-        buttonText={buttonText}
-      />
-      {!hideCallUs && (
-        <h2 className="mx-auto max-w-full text-center">
-          or call us on {bookingPhone}
-        </h2>
-      )}
-      <Popup isVisible={isVisible} onClose={setIsVisible}>
-        {isVisible && (
-          <BookingForm
-            onClose={setIsVisible}
-            showSuccessToast={showSuccessToast}
-          />
+    <>
+      <JotFormEmbed {...jotFormBookingForm}>
+        {!hideCallUs && (
+          <h2 className="mx-auto max-w-full text-center">
+            or call us on {bookingPhone}
+          </h2>
         )}
-      </Popup>
-      <SuccessToast />
-    </div>
+      </JotFormEmbed>
+    </>
   );
 };
 
@@ -87,6 +72,11 @@ export const bookingButtonSchema: Template = {
       label: "Button Text",
       name: "buttonText",
       required: false,
+    },
+    {
+      type: "boolean",
+      label: "Animated",
+      name: "animated",
     },
   ],
 };

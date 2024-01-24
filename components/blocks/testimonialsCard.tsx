@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { TestimonialType } from "../../helpers/getTestimonials";
-import { Rating } from "../util/consulting/rating";
 
 const defaultAvatar = "/images/thumbs/avatar-thumbnail.png";
 
@@ -26,7 +25,7 @@ export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
           className="rounded-full"
         />
       </div>
-      <Rating className="mx-auto mt-8" rating={testimonial?.rating} />
+
       <p className="mt-4 min-h-24">
         {testimonial?.name}
         {testimonial?.company && (
