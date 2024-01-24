@@ -2,8 +2,6 @@ import type { Collection, TinaField } from "tinacms";
 
 import React from "react";
 import { extractFileName } from "../../helpers/functions";
-import { tipField } from "./shared-fields";
-
 export const tipForReference: TinaField = {
   type: "string",
   name: "tipForReference",
@@ -13,8 +11,7 @@ export const tipForReference: TinaField = {
       return (
         <div className="whitepace-normal">
           {" "}
-          💡 Testimonials will be shown in the following order, if it is not in
-          the list, it will be placed at the bottom.
+          💡 Testimonials will be shown in the following order.
         </div>
       );
     },
@@ -33,6 +30,7 @@ export const testimonialSchema: Collection = {
     },
   },
   fields: [
+    tipForReference,
     {
       type: "object",
       label: "Testimonials",
