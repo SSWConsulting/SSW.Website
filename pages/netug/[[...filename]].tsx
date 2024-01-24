@@ -44,7 +44,7 @@ export default function NETUGPage(
 
   if (data?.userGroupPage?.__typename === "UserGroupPageLocationPage") {
     const registerUrl = data.userGroupPage.registerUrl;
-    const sectionsIncludingRegisterUrl = data.userGroupPage.sections.map(
+    const sectionsIncludingRegisterUrl = data.userGroupPage.sections?.map(
       (section) =>
         section.__typename === "UserGroupPageLocationPageSectionsActionSection"
           ? {
