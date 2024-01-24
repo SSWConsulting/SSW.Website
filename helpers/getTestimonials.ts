@@ -53,7 +53,7 @@ export const getRandomTestimonialsByCategory = async (
   return testimonialsResult;
 };
 
-export const getFilteredTestimonials = async (
+export const getTestimonialsExcludingCategories = async (
   categoryRoutePaths: {
     categoryName: string;
   }[]

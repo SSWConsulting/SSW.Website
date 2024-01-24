@@ -2,18 +2,17 @@ import { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Template } from "tinacms";
 import { extractFileName } from "../../helpers/functions";
-import { getFilteredTestimonials } from "../../helpers/getTestimonials";
+import { getTestimonialsExcludingCategories } from "../../helpers/getTestimonials";
 import { TestimonialCard } from "./testimonialsCard";
 
-export const TestimonialsList = ({ data: { listOfCategoriesToHide = [] } }) => {
+export const TestimonialsList = ({ data: { excludedCategories = [] } }) => {
   const [testimonials, setTestimonials] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
 
   useEffect(() => {
     const loadTestimonials = async () => {
-      const filteredTestimonials = await getFilteredTestimonials(
-        listOfCategoriesToHide
-      );
+      const filteredTestimonials =
+        await getTestimonialsExcludingCategories(excludedCategories);
 
       setTestimonials(filteredTestimonials);
       setHasLoaded(true);
@@ -21,7 +20,7 @@ export const TestimonialsList = ({ data: { listOfCategoriesToHide = [] } }) => {
     if (!hasLoaded) {
       loadTestimonials();
     }
-  }, [hasLoaded, listOfCategoriesToHide]);
+  }, [hasLoaded, excludedCategories]);
 
   return (
     <>
@@ -49,8 +48,8 @@ export const testimonialsListSchema: Template = {
   fields: [
     {
       type: "object",
-      label: "List of Categories to Hide",
-      name: "listOfCategoriesToHide",
+      label: "Exclude Categories",
+      name: "excludedCategories",
       ui: {
         itemProps: (item) => {
           const CategoryName = extractFileName(item?.categoryName);
