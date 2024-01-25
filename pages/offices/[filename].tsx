@@ -16,7 +16,6 @@ import TestimonialPanel from "../../components/offices/testimonialPanel";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import { getRandomClientTestimonial } from "../../helpers/getTestimonials";
 import { removeExtension } from "../../services/client/utils.service";
 
 export default function OfficePage(
@@ -60,10 +59,7 @@ export default function OfficePage(
               <OfficeLayout office={data.offices} />
             </div>
             <div className="md:max-w-sm md:pl-6">
-              <SidePanel
-                office={data.offices}
-                testimonial={props.testimonial}
-              />
+              <SidePanel office={data.offices} />
             </div>
           </div>
         </Container>
@@ -185,12 +181,12 @@ const OfficeLayout = ({ office }) => {
   );
 };
 
-const SidePanel = ({ office, testimonial }) => {
+const SidePanel = ({ office }) => {
   return (
     <div className="prose max-w-full">
       <ContactPanel office={office} />
       <MicrosoftPanel />
-      <TestimonialPanel props={testimonial} />
+      <TestimonialPanel />
     </div>
   );
 };
@@ -199,8 +195,6 @@ export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.officeContentQuery({
     relativePath: `${params.filename}.mdx`,
   });
-
-  const testimonial = await getRandomClientTestimonial();
 
   if (tinaProps.data.offices.seo && !tinaProps.data.offices.seo.canonical) {
     tinaProps.data.offices.seo.canonical = `${tinaProps.data.global.header.url}offices/${params.filename}`;
@@ -211,7 +205,6 @@ export const getStaticProps = async ({ params }) => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
-      testimonial: testimonial,
     },
   };
 };

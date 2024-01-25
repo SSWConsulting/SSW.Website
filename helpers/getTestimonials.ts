@@ -80,7 +80,7 @@ export const getTestimonialsExcludingCategories = async (
 
   return testimonialsResult;
 };
-export const getRandomClientTestimonial = async () => {
+export const getRandomClientTestimonial = () => {
   const testimonialsResult = testimonialList.testimonials
     .filter(
       (testimonial) =>
@@ -100,13 +100,13 @@ export const getRandomClientTestimonial = async () => {
   const randomTestimonial =
     testimonialsResult[Math.floor(Math.random() * testimonialsResult.length)];
 
-  return toStringify(randomTestimonial);
+  return toTestimonialPanelObject(randomTestimonial);
 };
 
 export const testimonialToSelectOptions = () => {
   const testimonialOptions = testimonialList.testimonials.map(
     (testimonial) => ({
-      value: toStringify(testimonial),
+      value: `${testimonial.name.toLocaleLowerCase()}`,
       label: `${testimonial.name} - ${testimonial.company ?? ""}`,
     })
   );
@@ -114,9 +114,21 @@ export const testimonialToSelectOptions = () => {
   return testimonialOptions;
 };
 
-const toStringify = (testimonial: TestimonialType) =>
-  JSON.stringify({
-    name: testimonial.name,
-    company: testimonial.company,
-    body: testimonial.body,
-  });
+export const getTestimonialByName = (name: string) => {
+  if (!name) return null;
+
+  const testimonialResult = testimonialList.testimonials
+    .filter(
+      (testimonial) =>
+        testimonial.name && testimonial.name.toLowerCase() === name
+    )
+    .map((testimonial) => testimonial as TestimonialType)[0];
+
+  return testimonialResult ? toTestimonialPanelObject(testimonialResult) : null;
+};
+
+const toTestimonialPanelObject = (testimonial: TestimonialType) => ({
+  name: testimonial.name,
+  company: testimonial.company,
+  body: testimonial.body,
+});
