@@ -39,7 +39,10 @@ export const UserGroupHeader = ({
   const formattedDate: string = useMemo(() => {
     dayjs.tz.setDefault(CITY_TIMEZONES[city]);
 
-    const cityStr = city.charAt(0).toUpperCase() + city.slice(1);
+    const cityStr = city
+      ?.split("-")
+      .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+      .join(" ");
     return (
       dayjs(date).tz(CITY_TIMEZONES[city]).format("ddd, D MMMM YYYY, h:mm A") +
       " " +
