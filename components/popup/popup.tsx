@@ -2,14 +2,21 @@ import classNames from "classnames";
 import Modal from "react-responsive-modal";
 import styles from "./popup.module.css";
 
-const Popup = ({ isVisible, onClose, children, className = "" }) => {
+export interface PopupProps extends React.HTMLAttributes<HTMLDivElement> {
+  isVisible: boolean;
+  showCloseIcon?: boolean;
+  onClose: () => void;
+}
+
+const Popup: React.FC<PopupProps> = (props) => {
   return (
     <div>
       <Modal
-        open={isVisible}
-        onClose={onClose}
-        showCloseIcon={false}
+        open={props.isVisible}
+        onClose={props.onClose}
+        showCloseIcon={!!props.showCloseIcon}
         classNames={{
+          closeButton: styles.closeButton,
           modalAnimationIn: styles.formEnterModalAnimation,
           modalAnimationOut: styles.formLeaveModalAnimation,
           overlay: "bg-black/50",
@@ -17,13 +24,13 @@ const Popup = ({ isVisible, onClose, children, className = "" }) => {
             "sm:max-w-2xl sm:m-5 sm:p-5",
             "w-full mx-0",
             "shadow-none bg-black/0",
-            className,
+            props.className,
           ]),
         }}
         animationDuration={700}
         center
       >
-        {children}
+        {props.children}
       </Modal>
     </div>
   );
