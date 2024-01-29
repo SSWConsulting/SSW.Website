@@ -194,13 +194,5 @@
       }
     ]
   },
-  "jotForm": {
-    "id": "233468468973070",
-    "formTitle": "Book an initial meeting now",
-    "backgroundColor": "#BD4B47",
-    "fontColor": "#FFFFFF",
-    "formType": "1",
-    "height": 800,
-    "width": 700
-  }
+  "jotFormId": "233468468973070"
 }

@@ -3,11 +3,7 @@ import {
   default as defaultSetting,
   default as layoutData,
 } from "../../content/global/index.json";
-import {
-  JotFormEmbed,
-  JotFormEmbedProps,
-  formType,
-} from "../blocks/jotFormEmbed";
+import { JotFormEmbed, JotFormEmbedProps } from "../blocks/jotFormEmbed";
 
 export interface BookingButtonProps {
   buttonText?: string;
@@ -29,21 +25,11 @@ export const BookingButton = ({ data }) => {
   const bookingPhone = layoutData.bookingPhone;
 
   const jotFormBookingForm: JotFormEmbedProps = {
-    data: {
-      jotForm: {
-        id: defaultSetting.jotForm.id,
-        formTitle: defaultSetting.jotForm.id,
-        backgroundColor: defaultSetting.jotForm.backgroundColor,
-        fontColor: defaultSetting.jotForm.fontColor,
-        formType: defaultSetting.jotForm.formType as formType,
-        height: defaultSetting.jotForm.height,
-        width: defaultSetting.jotForm.width,
-      },
-      containerClass: containerClass,
-      buttonClass: buttonClass,
-      buttonText: buttonText,
-      animated: animated,
-    },
+    jotFormId: defaultSetting.jotFormId,
+    containerClass: containerClass,
+    buttonClass: buttonClass,
+    buttonText: buttonText,
+    animated: animated,
   };
   //Create lead - JotForm Doc - https://sswcom.sharepoint.com/sites/SSWDevelopers/_layouts/15/doc.aspx?sourcedoc={45a11067-ef82-4dce-9b43-20812631a184}&action=edit
   return (

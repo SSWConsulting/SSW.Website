@@ -70,7 +70,7 @@ export const Blocks = ({ prefix, blocks }) => {
         blocks.map((block, i) => (
           <Block
             key={i + block.__typename}
-            block={block}
+            blockData={block}
             prefix={prefix}
             i={i}
           />
@@ -82,15 +82,15 @@ export const Blocks = ({ prefix, blocks }) => {
   );
 };
 
-const Block = ({ prefix, block, i }) => {
-  const Component = componentMap[block.__typename?.replace(prefix, "")];
+const Block = ({ prefix, blockData, i }) => {
+  const Component = componentMap[blockData.__typename?.replace(prefix, "")];
 
   if (!Component) {
     return <></>;
   }
 
   const field = `blocks.${i}`;
-  const blockProps = { data: block, parentField: field };
+  const blockProps = { ...blockData, data: blockData, parentField: field };
 
   return (
     <div className="contents" data-tinafield={field}>

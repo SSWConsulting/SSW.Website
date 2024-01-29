@@ -115,12 +115,12 @@ export const PaymentBlock = ({ data }) => {
           {payments.acn}
         </div>
       </div>
-      <p
+      <div
         className="mx-auto max-w-4xl"
         data-tina-field={tinaField(data, paymentBlockConstants.footer)}
       >
         <TinaMarkdown content={data.footer} />
-      </p>
+      </div>
       {creditImgSrc && (
         <span
           data-tina-field={tinaField(data, paymentBlockConstants.creditImgSrc)}
