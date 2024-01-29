@@ -122,9 +122,11 @@ export const getTestimonialByName = (name: string) => {
       (testimonial) =>
         testimonial.name && testimonial.name.toLowerCase() === name
     )
-    .map((testimonial) => testimonial as TestimonialType)[0];
+    .map((testimonial) => testimonial as TestimonialType);
 
-  return testimonialResult ? toTestimonialPanelObject(testimonialResult) : null;
+  return testimonialResult.length > 0
+    ? toTestimonialPanelObject(testimonialResult[0])
+    : null;
 };
 
 const toTestimonialPanelObject = (testimonial: TestimonialType) => ({
