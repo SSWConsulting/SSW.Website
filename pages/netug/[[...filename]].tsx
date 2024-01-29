@@ -20,7 +20,7 @@ import { TechnologyLogos } from "../../components/usergroup/technologyLogos";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
+import { getRandomTestimonialsByCategory } from "../../helpers/getTestimonials";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
 import {
@@ -317,7 +317,7 @@ export const getStaticProps = async ({ params }) => {
       categories.push(priorityCategory);
     }
 
-    testimonialsResult = await getTestimonialsByCategories(categories);
+    testimonialsResult = await getRandomTestimonialsByCategory(categories);
   }
 
   const currentDate = new Date().toISOString();

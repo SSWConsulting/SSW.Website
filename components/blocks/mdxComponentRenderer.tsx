@@ -173,7 +173,7 @@ export const componentRenderer: Components<{
   };
   MicrosoftPanel: Record<string, never>;
   TestimonialsList: {
-    listOfCategoriesToHide?: string[] | undefined;
+    excludedCategories?: string[] | undefined;
   };
   EventLink: EventLinkProps;
   ExpertBlock: ExpertBlockProps;
