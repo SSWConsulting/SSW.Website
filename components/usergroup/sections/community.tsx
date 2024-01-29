@@ -1,10 +1,10 @@
+import * as React from "react";
+import type { Template } from "tinacms";
+import { tinaField } from "tinacms/dist/react";
 import { FacebookPageEmbed } from "../../embeds/facebookPageEmbed";
 import { TwitterFeedEmbed } from "../../embeds/twitterFeedEmbed";
 import { Container } from "../../util/container";
 import { PlatformType, SocialButton, platformList } from "../socialButton";
-import type { Template } from "tinacms";
-import * as React from "react";
-import { tinaField } from "tinacms/dist/react";
 
 type CommunitySectionProps = {
   heading?: string;

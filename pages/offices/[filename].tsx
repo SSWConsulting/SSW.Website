@@ -59,10 +59,7 @@ export default function OfficePage(
               <OfficeLayout office={data.offices} />
             </div>
             <div className="md:max-w-sm md:pl-6">
-              <SidePanel
-                office={data.offices}
-                testimonial={props.testimonial}
-              />
+              <SidePanel office={data.offices} />
             </div>
           </div>
         </Container>
@@ -184,12 +181,12 @@ const OfficeLayout = ({ office }) => {
   );
 };
 
-const SidePanel = ({ office, testimonial }) => {
+const SidePanel = ({ office }) => {
   return (
     <div className="prose max-w-full">
       <ContactPanel office={office} />
       <MicrosoftPanel />
-      <TestimonialPanel testimonial={testimonial} />
+      <TestimonialPanel />
     </div>
   );
 };
@@ -198,12 +195,6 @@ export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.officeContentQuery({
     relativePath: `${params.filename}.mdx`,
   });
-
-  const testimonialResult = await client.queries.allTestimonialsQuery();
-  const testimonials =
-    testimonialResult.data.testimonialsConnection.Testimonials;
-  const testimonial =
-    testimonials[Math.floor(Math.random() * testimonials.length)].Testimonial;
 
   if (tinaProps.data.offices.seo && !tinaProps.data.offices.seo.canonical) {
     tinaProps.data.offices.seo.canonical = `${tinaProps.data.global.header.url}offices/${params.filename}`;
@@ -214,7 +205,6 @@ export const getStaticProps = async ({ params }) => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
-      testimonial: testimonial,
     },
   };
 };
