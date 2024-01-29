@@ -1617,12 +1617,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.23.5":
-  version: 7.23.6
-  resolution: "@babel/runtime@npm:7.23.6"
+"@babel/runtime@npm:^7.23.7":
+  version: 7.23.9
+  resolution: "@babel/runtime@npm:7.23.9"
   dependencies:
     regenerator-runtime: ^0.14.0
-  checksum: 1a8eaf3d3a103ef5227b60ca7ab5c589118c36ca65ef2d64e65380b32a98a3f3b5b3ef96660fa0471b079a18b619a8317f3e7f03ab2b930c45282a8b69ed9a16
+  checksum: 6bbebe8d27c0c2dd275d1ac197fc1a6c00e18dab68cc7aaff0adc3195b45862bae9c4cc58975629004b0213955b2ed91e99eccb3d9b39cabea246c657323d667
   languageName: node
   linkType: hard
 
@@ -4569,7 +4569,7 @@ __metadata:
     schema-dts: ^1.1.2
     sharp: ^0.32.6
     source-map-explorer: ^2.5.3
-    tailwind-merge: ^2.2.0
+    tailwind-merge: ^2.2.1
     tailwindcss: 3.3.6
     tailwindcss-gradients: ^3.0.0
     tinacms: ^1.5.28
@@ -15854,12 +15854,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwind-merge@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "tailwind-merge@npm:2.2.0"
+"tailwind-merge@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "tailwind-merge@npm:2.2.1"
   dependencies:
-    "@babel/runtime": ^7.23.5
-  checksum: f80d31ec990792fb204e3ad5a184a4b18a8f8929c651c7067693d8ffa74c6ec9666f15f4e50c1d831a47e7dcc75e688887e34fdb734096363ad1868d9ad5778a
+    "@babel/runtime": ^7.23.7
+  checksum: fd149409b1c18f3bc57aa30ae3a0e0c7f2913636666bd920c1aceeb8798b36766be55dfec8581e63860b83c7e405700ef530952a59c828ccff0c2a401fa67f05
   languageName: node
   linkType: hard
 
