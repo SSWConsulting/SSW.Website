@@ -58,7 +58,7 @@ export const UserGroupHeader = ({
     <section
       className={classNames(
         className,
-        "bg-polygons border-b-8 border-sswRed bg-cover bg-no-repeat"
+        "bg-polygons border-b-8 border-sswRed bg-cover bg-no-repeat md:max-h-112"
       )}
     >
       <Container
@@ -110,7 +110,7 @@ export const UserGroupHeader = ({
           </div>
         </div>
         {presenter.image && (
-          <div className="flex max-w-xl shrink-0 flex-col justify-end self-end max-md:mx-auto">
+          <div className="flex max-w-xl shrink-0 flex-col justify-end self-end max-md:mx-auto md:h-112">
             <Image
               className="!relative align-bottom"
               src={presenter.image}

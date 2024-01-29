@@ -7,6 +7,7 @@ import { ClientLogos } from "./blocks/clientLogos";
 import { Content } from "./blocks/content";
 import { ContentCard } from "./blocks/contentCard";
 import { CustomImage } from "./blocks/customImage";
+import { JotFormEmbed } from "./blocks/jotFormEmbed";
 import { PaymentBlock } from "./blocks/payment-block";
 import { ServiceCards } from "./blocks/serviceCards";
 import { TableLayout } from "./blocks/tableLayout";
@@ -59,6 +60,7 @@ const componentMap = {
   ClientList,
   LatestTech,
   VideoEmbed,
+  JotFormEmbed,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
