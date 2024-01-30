@@ -85,7 +85,7 @@ ENV DYNAMICS_CLIENT_ID $DYNAMICS_CLIENT_ID
 ARG DYNAMICS_CLIENT_SECRET
 ENV DYNAMICS_CLIENT_SECRET $DYNAMICS_CLIENT_SECRET
 
-RUN yarn build
+RUN pnpm build
 
 # Production image, copy all the files and run next
 FROM node:lts-alpine AS runner
