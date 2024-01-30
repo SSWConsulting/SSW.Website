@@ -2,7 +2,6 @@ import * as React from "react";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { FacebookPageEmbed } from "../../embeds/facebookPageEmbed";
-import { TwitterFeedEmbed } from "../../embeds/twitterFeedEmbed";
 import { Container } from "../../util/container";
 import { PlatformType, SocialButton, platformList } from "../socialButton";
 
@@ -28,18 +27,20 @@ export const CommunitySection = (props: CommunitySectionProps) => {
           >
             {props.heading || "Community"}
           </h2>
-          <div className="w-full grid-cols-3 gap-6 md:grid">
+          <div className="flex w-full flex-col items-center justify-center gap-x-6 md:flex-row">
+            {/*
+            Since twitter timeline is not working, we are hiding it for now
             <div
-              className="col-span-1 h-96"
+              className="col-span-1 hidden h-96"
               data-tina-field={tinaField(props, "twitterUsername")}
             >
               <TwitterFeedEmbed
                 height={384}
                 username={props?.twitterUsername || "SSW_TV"}
               />
-            </div>
+            </div>*/}
             <div
-              className="col-span-1"
+              className="my-4 w-full text-center md:w-104"
               data-tina-field={tinaField(props, "facebookUsername")}
             >
               <FacebookPageEmbed
@@ -48,7 +49,7 @@ export const CommunitySection = (props: CommunitySectionProps) => {
                 height={384}
               />
             </div>
-            <div className="col-span-1">
+            <div className="w-full md:w-104">
               {props?.socialButtons?.map((button, index) => (
                 <SocialButton
                   data-tina-field={tinaField(

@@ -36,7 +36,7 @@ export const JoinGithub = ({ data, className }: JoinGithubProps) => {
       <CustomLink
         href={data?.link ?? "/"}
         data-tina-field={tinaField(data, "link")}
-        className="unstyled h-12 w-max rounded-md bg-sswRed px-4 py-2 text-base text-white"
+        className="unstyled flex h-12 w-max items-center rounded-md bg-sswRed px-4 py-2 text-base text-white"
       >
         Join the crowd
       </CustomLink>
