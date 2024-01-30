@@ -1,6 +1,7 @@
 import classNames from "classnames";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { sanitiseXSS } from "../../helpers/validator";
 
 type ReadMoreProps = {
   text: string;
@@ -17,12 +18,20 @@ const condenseContent = (text: string, length: number) => {
 
 export const ReadMore = ({ text, length, className }: ReadMoreProps) => {
   const [dropdownClicked, setDropdownClicked] = useState(false);
+  const [presenterIntro, setPresenterIntro] = useState("");
+
+  useEffect(() => {
+    const sanitizedText = sanitiseXSS(text);
+    setPresenterIntro(
+      dropdownClicked ? sanitizedText : condenseContent(sanitizedText, length)
+    );
+  }, [dropdownClicked, length, text]);
 
   return (
     <div className={classNames("flex flex-col", className)}>
       <div
         dangerouslySetInnerHTML={{
-          __html: dropdownClicked ? text : condenseContent(text, length),
+          __html: presenterIntro,
         }}
       />
       <button
