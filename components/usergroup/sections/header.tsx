@@ -37,7 +37,7 @@ export const UserGroupHeader = ({
   youTubeId,
 }: UserGroupHeaderProps) => {
   const formattedDate: string = useMemo(() => {
-    dayjs.tz.setDefault(CITY_TIMEZONES[city]);
+    dayjs.tz.setDefault(CITY_TIMEZONES[city.replace("-", "_")]);
 
     const cityStr = city
       ?.split("-")
