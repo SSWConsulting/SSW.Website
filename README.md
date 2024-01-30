@@ -25,7 +25,7 @@ This repository is a v3 of the zzSSW.Website. This website uses NextJS with Tina
 
 ## Requirements
 
-- Git, [Node.js Active LTS](https://nodejs.org/en/about/releases/), Yarn installed for local development.
+- Git, [Node.js Active LTS](https://nodejs.org/en/about/releases/), pnpm installed for local development.
 - A [TinaCMS](https://app.tina.io) account for live editing.
 
 ## Get Started
@@ -33,19 +33,19 @@ This repository is a v3 of the zzSSW.Website. This website uses NextJS with Tina
 Install the project's dependencies:
 
 ```bash
-yarn install
+pnpm install
 ```
 
 Run the project locally:
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 Build the project:
 
 ```bash
-yarn build
+pnpm build
 ```
 
 ## Get Started with Dev Container
@@ -67,28 +67,16 @@ yarn build
 3. Remove node_modules and reinstall dependencies
 
 ```bash
-yarn install
+pnpm install
 ```
 
 ## Updating the project's dependencies
 
 ```bash
-yarn upgrade-interactive
+pnpm outdated
 ```
 
 Test locally to make sure everything still works.
-
-To keep the `yarn.lock` file up to date, ensure syncyarnlock is installed globally:
-
-```bash
-yarn global add syncyarnlock
-```
-
-Then run:
-
-```bash
-syncyarnlock -s -k
-```
 
 ### Local URLs
 
@@ -101,7 +89,7 @@ syncyarnlock -s -k
 
 - 1 Make sure you have `CREATE_LEAD_ENDPOINT` environment variable in your `.env` - [Follow steps to setup](https://github.com/SSWConsulting/SSW.Website/wiki/Accessing-the-Third%E2%80%90Party-APIs-Locally)
 
-- 2 Run `yarn playwright test --ui` in your terminal and make sure your local instance is running in the background.
+- 2 Run `npx playwright test --ui` in your terminal and make sure your local instance is running in the background.
 
 ## Pull Requests
 
