@@ -90,33 +90,15 @@ export default function NETUGPage(
                   <h2 className="mt-0 text-4xl font-medium text-sswRed">
                     Event Description
                   </h2>
-                  <div className="whitespace-pre-wrap text-lg">
+                  <div className="whitespace-pre-wrap">
                     {props.event?.Abstract}
                   </div>
                 </div>
               )}
-              <div className="col-span-1">
-                {props.speaker && (
-                  <>
-                    <h2 className="mt-0 text-4xl font-medium text-sswRed">
-                      Presenter
-                    </h2>
-                    <div className="pb-3">
-                      <Organizer
-                        data={{
-                          profileImg: props.speaker?.PresenterProfileImage?.Url,
-                          name: props.speaker?.Title,
-                          profileLink: props.speaker?.PresenterProfileLink,
-                        }}
-                        stringContent={speakerDescription}
-                      />
-                    </div>
-                  </>
-                )}
-
+              <div className="col-span-1 py-4 md:py-0">
                 <JoinGithub
                   data={data.userGroupPage.joinGithub}
-                  className="mt-10 pt-5"
+                  className="mt-10 pt-5 md:mt-0"
                 />
               </div>
 
@@ -137,6 +119,7 @@ export default function NETUGPage(
                 </div>
                 {data.userGroupPage.whenAndWhere?.googleMapsEmbedUrl && (
                   <div
+                    className="py-4"
                     data-tina-field={tinaField(
                       data.userGroupPage.whenAndWhere,
                       "googleMapsEmbedUrl"
@@ -186,7 +169,7 @@ export default function NETUGPage(
                 </div>
               </div>
 
-              <div className="col-span-1">
+              {/* <div className="col-span-1">
                 <h2 className="text-4xl font-medium text-sswRed">Organizer</h2>
                 <Organizer
                   data={{
@@ -197,6 +180,26 @@ export default function NETUGPage(
                     content: data.userGroupPage.organizer?.bio,
                   }}
                 />
+              </div> */}
+
+              <div className="col-span-1 py-4 md:py-0">
+                {props.speaker && (
+                  <>
+                    <h2 className="text-4xl font-medium text-sswRed">
+                      Presenter
+                    </h2>
+                    <div className="pb-3">
+                      <Organizer
+                        data={{
+                          profileImg: props.speaker?.PresenterProfileImage?.Url,
+                          name: props.speaker?.Title,
+                          profileLink: props.speaker?.PresenterProfileLink,
+                        }}
+                        stringContent={speakerDescription}
+                      />
+                    </div>
+                  </>
+                )}
               </div>
 
               <div
@@ -221,24 +224,43 @@ export default function NETUGPage(
             </section>
           </Container>
 
-          <section className="bg-ssw-black py-8">
-            <Container className="text-center">
-              <h2
-                className="mt-2 pb-3 text-4xl font-semibold text-white"
-                dangerouslySetInnerHTML={{
-                  __html: sanitiseXSS(
-                    data.userGroupPage.aboutHeader,
-                    spanWhitelist
-                  ),
-                }}
-                data-tina-field={tinaField(data.userGroupPage, "aboutHeader")}
-              />
+          <section className="bg-ssw-black py-8 text-left text-white">
+            <Container className="grid-cols-3 gap-10 text-center md:grid">
+              <div className="col-span-2 text-left">
+                <h2
+                  className="mt-2 pb-3 text-4xl font-semibold text-white"
+                  dangerouslySetInnerHTML={{
+                    __html: sanitiseXSS(
+                      data.userGroupPage.aboutHeader,
+                      spanWhitelist
+                    ),
+                  }}
+                  data-tina-field={tinaField(data.userGroupPage, "aboutHeader")}
+                />
 
-              <div
-                className="text-white child-p:text-lg"
-                data-tina-field={tinaField(data.userGroupPage, "aboutContent")}
-              >
-                <TinaMarkdown content={data.userGroupPage.aboutContent} />
+                <div
+                  className="text-white child-p:text-lg"
+                  data-tina-field={tinaField(
+                    data.userGroupPage,
+                    "aboutContent"
+                  )}
+                >
+                  <TinaMarkdown content={data.userGroupPage.aboutContent} />
+                </div>
+              </div>
+              <div className="col-span-1 border-l-1 pl-8">
+                <h2 className="mt-0 text-left text-4xl font-medium text-sswRed">
+                  Organizer
+                </h2>
+                <Organizer
+                  data={{
+                    profileImg: data.userGroupPage.organizer?.profileImg,
+                    name: data.userGroupPage.organizer?.name,
+                    profileLink: data.userGroupPage.organizer?.nameUrl,
+                    position: data.userGroupPage.organizer?.position,
+                    content: data.userGroupPage.organizer?.bio,
+                  }}
+                />
               </div>
             </Container>
           </section>

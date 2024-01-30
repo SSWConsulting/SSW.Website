@@ -48,13 +48,13 @@ export const Organizer = ({
           </CustomLink>
           <div
             data-tina-field={tinaField(data, "position")}
-            className="text-sm text-gray-500"
+            className="text-sm"
           >
             {data?.position ?? ""}
           </div>
         </div>
       </div>
-      <div data-tina-field={tinaField(data, "content")} className="text-lg">
+      <div data-tina-field={tinaField(data, "content")} className="text-left">
         {data?.content && <TinaMarkdown content={data?.content} />}
         {/* Here for the case where the content comes from SharePoint */}
         {stringContent && (

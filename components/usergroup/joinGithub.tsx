@@ -23,8 +23,8 @@ export const JoinGithub = ({ data, className }: JoinGithubProps) => {
       <Image
         src={"/images/badges/Github-Badge.svg"}
         alt="github image"
-        width={80}
-        height={80}
+        width={60}
+        height={60}
         className="mx-auto"
       />
       <div
@@ -36,7 +36,7 @@ export const JoinGithub = ({ data, className }: JoinGithubProps) => {
       <CustomLink
         href={data?.link ?? "/"}
         data-tina-field={tinaField(data, "link")}
-        className="unstyled flex h-12 w-max items-center rounded-md bg-sswRed px-4 py-2 text-base text-white"
+        className="unstyled flex h-10 w-max items-center rounded-md bg-sswRed px-4 py-2 text-base text-white"
       >
         Join the crowd
       </CustomLink>
