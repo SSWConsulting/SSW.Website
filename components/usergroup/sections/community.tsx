@@ -39,7 +39,7 @@ export const CommunitySection = (props: CommunitySectionProps) => {
               />
             </div>
             <div
-              className="w-full text-center md:w-104"
+              className="my-4 w-full text-center md:w-104"
               data-tina-field={tinaField(props, "facebookUsername")}
             >
               <FacebookPageEmbed
