@@ -29,6 +29,8 @@ export const CommunitySection = (props: CommunitySectionProps) => {
             {props.heading || "Community"}
           </h2>
           <div className="flex w-full flex-col items-center justify-center gap-x-6 md:flex-row">
+            {/*
+            Since twitter timeline is not working, we are hiding it for now
             <div
               className="col-span-1 hidden h-96"
               data-tina-field={tinaField(props, "twitterUsername")}
@@ -37,7 +39,7 @@ export const CommunitySection = (props: CommunitySectionProps) => {
                 height={384}
                 username={props?.twitterUsername || "SSW_TV"}
               />
-            </div>
+            </div>*/}
             <div
               className="my-4 w-full text-center md:w-104"
               data-tina-field={tinaField(props, "facebookUsername")}
