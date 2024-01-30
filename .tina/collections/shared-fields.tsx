@@ -10,7 +10,7 @@ export const tipField: TinaField = {
   ui: {
     component: ({}) => {
       return (
-        <div>
+        <div className="whitespace-pre-wrap">
           {" "}
           💡 Please fill out the "Filename" field first at the botton of the
           page.
