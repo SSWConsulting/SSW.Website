@@ -13,6 +13,7 @@ import { tipField } from "./shared-fields";
 
 import type { Collection } from "tinacms";
 import { tripleColumnImageBlockSchema } from "../../components/blocks/tripleColumnImageBlock";
+import { testimonialToSelectOptions } from "../../helpers/getTestimonials";
 
 export const companySchema: Collection = {
   label: "Company - Pages",
@@ -56,10 +57,10 @@ export const companySchema: Collection = {
       templates: [microsoftPanelSchema],
     },
     {
-      type: "reference",
+      type: "string",
       name: "sidebarTestimonial",
       label: "Sidebar Testimonial",
-      collections: ["testimonials"],
+      options: testimonialToSelectOptions(),
     },
     {
       type: "boolean",
