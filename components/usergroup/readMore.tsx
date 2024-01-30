@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { sanitiseXSS } from "../../helpers/validator";
 
