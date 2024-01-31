@@ -17,6 +17,7 @@ RUN \
 
 # Rebuild the source code only when needed
 FROM node:lts-alpine AS builder
+RUN corepack enable
 WORKDIR /app
 
 COPY . .
@@ -84,7 +85,9 @@ ENV DYNAMICS_CLIENT_ID $DYNAMICS_CLIENT_ID
 ARG DYNAMICS_CLIENT_SECRET
 ENV DYNAMICS_CLIENT_SECRET $DYNAMICS_CLIENT_SECRET
 
-RUN npm run build
+RUN --mount=type=bind,source=".next/cache",target=/app/.next/cache
+RUN chmod -R 777 /app/.next/cache
+RUN pnpm run build
 
 # Production image, copy all the files and run next
 FROM node:lts-alpine AS runner
