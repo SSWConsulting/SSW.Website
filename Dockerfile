@@ -30,7 +30,6 @@ COPY --from=deps /app/node_modules ./node_modules
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
-
 ENV NODE_OPTIONS --max_old_space_size=8192
 ARG NEXT_PUBLIC_GOOGLE_GTM_ID
 ENV NEXT_PUBLIC_GOOGLE_GTM_ID $NEXT_PUBLIC_GOOGLE_GTM_ID
@@ -85,7 +84,7 @@ ENV DYNAMICS_CLIENT_ID $DYNAMICS_CLIENT_ID
 ARG DYNAMICS_CLIENT_SECRET
 ENV DYNAMICS_CLIENT_SECRET $DYNAMICS_CLIENT_SECRET
 
-RUN pnpm build
+RUN npm run build
 
 # Production image, copy all the files and run next
 FROM node:lts-alpine AS runner
