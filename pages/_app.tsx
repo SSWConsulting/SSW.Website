@@ -10,7 +10,8 @@ import * as gtag from "../lib/gtag";
 import { NEXT_SEO_DEFAULT } from "../next-seo.config";
 import "../styles.css";
 
-import AzureAppInsights from "../context/app-insight-client";
+import { AppInsightsProvider } from "../context/app-insight-client";
+
 // Hack as per https://stackoverflow.com/a/66575373 to stop font awesome icons breaking
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
@@ -56,9 +57,9 @@ const App = ({ Component, pageProps }) => {
     <>
       <Analytics />
       <DefaultSeo {...NEXT_SEO_DEFAULT} />
-      <AzureAppInsights>
+      <AppInsightsProvider>
         <Component {...pageProps} />
-      </AzureAppInsights>
+      </AppInsightsProvider>
       <ChatBaseBot />
     </>
   );
