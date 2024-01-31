@@ -45,6 +45,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/npm-shrinkwrap.json', '**/yarn.lock', '**/pnpm-lock.yaml') }}
 
+      - name: Ensure .next/cache exists
+        run: |
+          mkdir -p .next/cache
+
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
         with:
