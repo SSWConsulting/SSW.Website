@@ -14,6 +14,7 @@ import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
+import { ReadMore } from "../../components/usergroup/readMore";
 import { UserGroupHeader } from "../../components/usergroup/sections/header";
 import { SectionRenderer } from "../../components/usergroup/sections/renderer";
 import { TechnologyLogos } from "../../components/usergroup/technologyLogos";
@@ -29,6 +30,8 @@ import {
 } from "../../services/server/events";
 
 const ISR_TIME = 60 * 60; // 1 hour;
+
+const PREVIEW_SENTENCE_COUNT = 4; // Max number of sentences to be previewed
 
 export default function NETUGPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -91,7 +94,10 @@ export default function NETUGPage(
                     Event Description
                   </h2>
                   <div className="whitespace-pre-wrap">
-                    {props.event?.Abstract}
+                    <ReadMore
+                      text={props.event?.Abstract}
+                      previewSentenceCount={PREVIEW_SENTENCE_COUNT}
+                    />
                   </div>
                 </div>
               )}
