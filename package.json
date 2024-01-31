@@ -3,6 +3,7 @@
   "version": "1.22.19",
   "private": true,
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "tinacms dev -c \"node --require ./appInsight-api.js node_modules/next/dist/bin/next dev\"",
     "build": "tinacms build && next build && next-sitemap --config next-sitemap.config.js",
     "partytown": "partytown copylib public/~partytown",
@@ -15,6 +16,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "14.0.2",
+    "@playwright/test": "1.40.1",
     "@svgr/webpack": "^8.1.0",
     "@tinacms/cli": "^1.5.39",
     "@types/js-cookie": "^3.0.6",
@@ -28,6 +30,7 @@
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-tailwindcss": "^3.13.1",
     "next-sitemap": "^4.2.3",
+    "playwright": "1.40.1",
     "postcss": "^8.4.32",
     "postcss-import": "^15.1.0",
     "postcss-nesting": "^12.0.2",
@@ -84,6 +87,5 @@
   },
   "resolutions": {
     "final-form": "4.20.1"
-  },
-  "packageManager": "yarn@3.6.4"
+  }
 }
