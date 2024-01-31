@@ -10,7 +10,6 @@ This repository is a v3 of the zzSSW.Website. This website uses NextJS with Tina
 
 ## See the important Documents
 
-- [Instructions - Compile (F5 Experience)](<https://github.com/SSWConsulting/SSW.Website/wiki/Instructions---Compile-(F5-Experience)>)
 - [Instructions - Deployment](https://github.com/SSWConsulting/SSW.Website/wiki/Instructions---Deployment)
 - [Business](https://github.com/SSWConsulting/SSW.Website/wiki/Business)
 - [Technologies and Architecture](https://github.com/SSWConsulting/SSW.Website/wiki/Technologies-and-Architecture)
