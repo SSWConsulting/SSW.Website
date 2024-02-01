@@ -174,20 +174,6 @@ export default function NETUGPage(
                   ))}
                 </div>
               </div>
-
-              {/* <div className="col-span-1">
-                <h2 className="text-4xl font-medium text-sswRed">Organizer</h2>
-                <Organizer
-                  data={{
-                    profileImg: data.userGroupPage.organizer?.profileImg,
-                    name: data.userGroupPage.organizer?.name,
-                    profileLink: data.userGroupPage.organizer?.nameUrl,
-                    position: data.userGroupPage.organizer?.position,
-                    content: data.userGroupPage.organizer?.bio,
-                  }}
-                />
-              </div> */}
-
               <div className="col-span-1 py-4 md:py-0">
                 {props.speaker && (
                   <>

@@ -21,7 +21,6 @@ type ActionSectionProps = {
   eventSponsors?: string[];
   registerUrl: string;
   meetupText?: string;
-  meetupTitle?: string;
 };
 
 const iconMap = {
@@ -155,7 +154,7 @@ export const actionSectionBlockSchema: Template = {
       label: "Meetup Button",
       name: "meetupBtnText",
       description:
-        "DEFAULT: 'Register for free', Meetup Url is coming from the Register URL, it cannot be changed here",
+        "DEFAULT: 'Get your free ticket', Meetup Url is coming from the Register URL, it cannot be changed here",
     },
     {
       type: "image",
