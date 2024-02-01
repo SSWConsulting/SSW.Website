@@ -4,7 +4,6 @@ import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";
 
 type MeetupFormProps = {
-  meetupTitle?: string;
   meetupBtnText?: string;
   registerUrl?: string;
 };

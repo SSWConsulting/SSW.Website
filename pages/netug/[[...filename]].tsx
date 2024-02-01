@@ -241,7 +241,7 @@ export default function NETUGPage(
                 </div>
               </div>
               <div className="col-span-1 pl-0 pt-4 md:pl-8 md:pt-0">
-                <h2 className="mt-0 py-4 text-left text-4xl font-medium text-sswRed">
+                <h2 className="mt-0 py-4 text-left text-4xl font-medium text-sswRed md:pb-4 md:pt-0">
                   Organizer
                 </h2>
                 <Organizer

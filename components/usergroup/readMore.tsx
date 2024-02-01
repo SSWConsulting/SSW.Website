@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { sanitiseXSS } from "../../helpers/validator";
 
@@ -34,44 +34,38 @@ export const ReadMore = ({
   className,
   previewSentenceCount = 1,
 }: ReadMoreProps) => {
-  const [dropdownClicked, setDropdownClicked] = useState(false);
-  const [presenterIntro, setPresenterIntro] = useState("");
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [readMoreText, setReadMoreText] = useState(text);
+  const sanitizedText = sanitiseXSS(text);
 
-  const isReadMoreRequired = useMemo(() => {
-    return (
-      (length > 0 && text.length > length) ||
-      (previewSentenceCount > 1 &&
-        text.split(". ").length > previewSentenceCount)
-    );
-  }, [text, length, previewSentenceCount]);
+  const isReadMoreRequired = () =>
+    (length > 0 && text.length > length) ||
+    (previewSentenceCount > 1 &&
+      text.split(". ").length > previewSentenceCount);
+
+  const condensedText = isReadMoreRequired()
+    ? getCondensedText(sanitizedText, length, previewSentenceCount)
+    : sanitizedText;
 
   useEffect(() => {
-    const sanitizedText = sanitiseXSS(text);
-    setPresenterIntro(
-      dropdownClicked || !isReadMoreRequired
-        ? sanitizedText
-        : getCondensedText(sanitizedText, length, previewSentenceCount)
-    );
-  }, [dropdownClicked, length, previewSentenceCount, text, isReadMoreRequired]);
+    setReadMoreText(isExpanded ? sanitizedText : condensedText);
+  }, [condensedText, isExpanded, sanitizedText]);
 
   if (!text) return <></>;
-
   return (
     <div className={classNames("flex flex-col", className)}>
       <div
         dangerouslySetInnerHTML={{
-          __html: presenterIntro,
+          __html: readMoreText,
         }}
       />
-      {isReadMoreRequired && (
+      {isReadMoreRequired() && (
         <button
           className="flex grow-0 flex-row items-center pt-2 text-sm text-gray-800"
-          onClick={() => setDropdownClicked((prev) => !prev)}
+          onClick={() => setIsExpanded((prev) => !prev)}
         >
-          Read {dropdownClicked ? "less" : "more"}{" "}
-          <MdOutlineKeyboardArrowDown
-            className={dropdownClicked && "rotate-180"}
-          />
+          Read {isExpanded ? "less" : "more"}{" "}
+          <MdOutlineKeyboardArrowDown className={isExpanded && "rotate-180"} />
         </button>
       )}
     </div>
