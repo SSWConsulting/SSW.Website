@@ -1,6 +1,16 @@
 {
   "testimonials": [
     {
+      "name": "Andrew J Clark",
+      "company": "The Logistics Linchpin",
+      "body": "I wanted to let you know how great it has been working with Kiki over the last two days. Kiki's work has been outstanding and he helped me through a couple of difficult conversations with the client that could have jeopardised the whole progress of not only the implementation of Zendesk but my whole project. Everything is now on track for success thanks to Kiki's work and more particularly his ability to handle an unexpected and tense situation with calm authority.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
       "name": "Peter Dimaridis",
       "avatar": "/images/testimonialAvatars/peter-dimaridis.jpg",
       "company": "AuctionsPlus",
@@ -11,27 +21,6 @@
         },
         {
           "category": "content/testimonialCategories/Blazor.mdx"
-        }
-      ]
-    },
-    {
-      "name": "Yun Lu",
-      "avatar": "/images/testimonialAvatars/Lu.jpg",
-      "company": "LUQI Tech",
-      "body": "SSW's expertise and professionalism in software development left a deep impression on me. They brought exceptional value to our dev team, inspiring them with their punctuality and diligence. I'm grateful for their unwavering commitment to excellence and delighted to have them in our office. Thank you, SSW!\n",
-      "categories": [
-        {
-          "category": "content/testimonialCategories/Chinafy.mdx"
-        }
-      ]
-    },
-    {
-      "name": "Andrew J Clark",
-      "company": "The Logistics Linchpin",
-      "body": "I wanted to let you know how great it has been working with Kiki over the last two days. Kiki's work has been outstanding and he helped me through a couple of difficult conversations with the client that could have jeopardised the whole progress of not only the implementation of Zendesk but my whole project. Everything is now on track for success thanks to Kiki's work and more particularly his ability to handle an unexpected and tense situation with calm authority.\n",
-      "categories": [
-        {
-          "category": "content/testimonialCategories/Miscellaneous.mdx"
         }
       ]
     },
@@ -86,6 +75,17 @@
       "categories": [
         {
           "category": "content/testimonialCategories/Clean-Architecture.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Yun Lu",
+      "avatar": "/images/testimonialAvatars/Lu.jpg",
+      "company": "LUQI Tech",
+      "body": "SSW's expertise and professionalism in software development left a deep impression on me. They brought exceptional value to our dev team, inspiring them with their punctuality and diligence. I'm grateful for their unwavering commitment to excellence and delighted to have them in our office. Thank you, SSW!\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Chinafy.mdx"
         }
       ]
     },
@@ -237,16 +237,6 @@
       ]
     },
     {
-      "name": "Brady Stroud",
-      "avatar": "/images/testimonialAvatars/brady-s.jpg",
-      "body": "The SSW internship was an incredible experience. I not only sharpened my coding\r\nskills, but also acquired valuable soft skills to excel in client projects.\n",
-      "categories": [
-        {
-          "category": "content/testimonialCategories/Internship.mdx"
-        }
-      ]
-    },
-    {
       "name": "Jeoffrey Fischer",
       "avatar": "/images/testimonialAvatars/Jeoffrey-Fisher-FireBootCamp.jpg",
       "body": "The SSW internship has been a transformative experience for me! As someone without a background in programming, this opportunity not only introduced me to the essential fundamentals of coding but also provided comprehensive insights into both backend and frontend development. It's truly been the highlight of my learning journey.\n",
@@ -260,6 +250,16 @@
       "name": "Ben Neoh",
       "avatar": "/images/testimonialAvatars/ben-n.jpg",
       "body": "The SSW Internship was the perfect starting point for me with no prior knowledge.\r\nIt provided invaluable hands-on experience and helped me develop both my technical\r\nskills and soft skills.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Internship.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Brady Stroud",
+      "avatar": "/images/testimonialAvatars/brady-s.jpg",
+      "body": "The SSW internship was an incredible experience. I not only sharpened my coding\r\nskills, but also acquired valuable soft skills to excel in client projects.\n",
       "categories": [
         {
           "category": "content/testimonialCategories/Internship.mdx"
