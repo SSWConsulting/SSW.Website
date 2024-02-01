@@ -78,7 +78,7 @@ export const ActionSection = (props: ActionSectionProps) => {
               ))}
             </ul>
           </div>
-          <div className="flex flex-col md:items-end">
+          <div className="mt-8 flex flex-col md:items-center ">
             <MeetupForm {...props} />
 
             <div
