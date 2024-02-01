@@ -267,7 +267,7 @@ export default function NETUGPage(
               <TestimonialRow
                 testimonialsResult={props.testimonialsResult}
                 categories={["User-Group"]}
-                className="child-h2:text-4xl child-h2:font-semibold"
+                className="!md:px-8 !px-0 child-h2:text-4xl child-h2:font-semibold"
                 tagline=""
               />
             </Container>
