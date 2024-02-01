@@ -93,7 +93,7 @@ export const UserGroupHeader = ({
             )}
           >
             <UtilityButton
-              className="!mt-0"
+              className="!mt-0 whitespace-nowrap"
               link={link}
               uncentered
               animated
