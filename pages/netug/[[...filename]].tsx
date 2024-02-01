@@ -240,8 +240,8 @@ export default function NETUGPage(
                   <TinaMarkdown content={data.userGroupPage.aboutContent} />
                 </div>
               </div>
-              <div className="col-span-1 pl-8">
-                <h2 className="mt-0 text-left text-4xl font-medium text-sswRed">
+              <div className="col-span-1 pl-0 pt-4 md:pl-8 md:pt-0">
+                <h2 className="mt-0 py-4 text-left text-4xl font-medium text-sswRed">
                   Organizer
                 </h2>
                 <Organizer
