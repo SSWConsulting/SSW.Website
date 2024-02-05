@@ -21,7 +21,7 @@
     "@tinacms/cli": "^1.5.39",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^20.8.7",
-    "@types/react": "^18.2.48",
+    "@types/react": "^18.2.52",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.18.0",
     "autoprefixer": "^10.4.15",
