@@ -2,7 +2,6 @@ import classNames from "classnames";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useLiveStreamProps } from "../../hooks/useLiveStreamProps";
-import { MegaMenuLayout } from "../megamenu";
 import { Footer } from "./footer";
 // import { Header } from "./header";
 import { Theme } from "./theme";
@@ -50,6 +49,11 @@ const LiveStreamBanner = dynamic(
     loading: () => <></>,
     ssr: true,
   }
+);
+
+const MegaMenuLayout = dynamic(
+  () => import("ssw.megamenu").then((mod) => mod.MegaMenuLayout),
+  { loading: () => <></>, ssr: false }
 );
 
 interface LayoutProps {
@@ -137,7 +141,7 @@ export const Layout = ({ children, menu, className = "" }: LayoutProps) => {
               {(isLive || router.query.liveStream) && (
                 <LiveStreamWidget {...liveStreamProps} isLive={!!isLive} />
               )}
-              <MegaMenuLayout menuBarItems={menu.menuGroups} />
+              <MegaMenuLayout className={"af"} menuBarItems={menu.menuGroups} />
             </div>
           </header>
           <main className="grow bg-white">{children}</main>
