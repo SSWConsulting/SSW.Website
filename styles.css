@@ -8,7 +8,7 @@
   }
 
   header a {
-    @apply !no-underline hover:bg-ssw-red-light;
+    @apply !no-underline;
   }
 
   html,
