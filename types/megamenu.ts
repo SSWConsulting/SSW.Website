@@ -1,4 +1,4 @@
-import { iconMap } from "../components/megamenu/MegaIcon/mega-icon";
+import { iconMap } from "../components/icons/iconMap";
 
 export const availableWidgets = [
   "standardLink",
