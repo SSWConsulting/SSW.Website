@@ -141,7 +141,7 @@ export const Layout = ({ children, menu, className = "" }: LayoutProps) => {
               {(isLive || router.query.liveStream) && (
                 <LiveStreamWidget {...liveStreamProps} isLive={!!isLive} />
               )}
-              <MegaMenuLayout className={"af"} menuBarItems={menu.menuGroups} />
+              <MegaMenuLayout menuBarItems={menu.menuGroups} />
             </div>
           </header>
           <main className="grow bg-white">{children}</main>
