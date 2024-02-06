@@ -1,5 +1,5 @@
 import type { Collection } from "tinacms";
-import { iconMap } from "../../components/megamenu/MegaIcon/mega-icon";
+import { iconMap } from "../../components/icons/iconMap";
 import { availableWidgets } from "../../types/megamenu";
 
 export const megaMenuSchema: Collection = {
