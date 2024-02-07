@@ -95,7 +95,7 @@ Test locally to make sure everything still works.
 
 Each Pull Request will be deployed to its own staging environment, the URL to the environment is available in the PR thread.
 
-**Note** : Avoid direct edits to the mdx file; utilize TinaCMS for mdx changes. TinaCMS maps mdx files with its fields with specific characters for customized UI (e.g., rich-text field). Manual edits may result in build failures or go unnoticed during PR reviews.
+⚠️ **Warning**: Changes in the mdx files must be done with TinaCMS. This is because TinaCMS maps mdx files with its fields with specific characters for customized UI (e.g., rich-text field). So avoid direct edits as they may result in build failures or go unnoticed during PR reviews.
 
 ## Getting Help
 
