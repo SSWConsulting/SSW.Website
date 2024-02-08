@@ -51,7 +51,7 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
             <h2 className="mb-4 mt-0">{client.name}</h2>
             <div className="my-8">
               {client.logo && (
-                <div className="float-left mr-4 block border-r-1 p-4">
+                <div className="float-left mb-2 mr-4 block border-r-1 p-4">
                   <CustomLink href={client.logoUrl}>
                     <Image
                       src={client.logo || ""}
