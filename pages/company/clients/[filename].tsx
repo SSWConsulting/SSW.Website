@@ -67,7 +67,7 @@ export default function CompanyPage(
           <TechUpgrade />
         </Section>
         <Section>
-          <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+          <BuiltOnAzure data={{ backgroundColor: "transparent" }} />
         </Section>
       </Layout>
     </RecaptchaContext.Provider>
