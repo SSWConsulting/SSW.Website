@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { LinkWrapper } from "../blocks/customImage";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { UtilityButton } from "../button/utilityButton";
 import { ClientDisplay } from "../company/clientList";
