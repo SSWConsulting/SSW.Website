@@ -19,7 +19,7 @@ dependencies:
     version: 1.7.17(react-dom@18.2.0)(react@18.2.0)
   '@headlessui/tailwindcss':
     specifier: ^0.2.0
-    version: 0.2.0(tailwindcss@3.3.6)
+    version: 0.2.0(tailwindcss@3.4.1)
   '@heroicons/react':
     specifier: ^2.1.1
     version: 2.1.1(react@18.2.0)
@@ -34,7 +34,7 @@ dependencies:
     version: 14.0.4
   '@tailwindcss/typography':
     specifier: ^0.5.10
-    version: 0.5.10(tailwindcss@3.3.6)
+    version: 0.5.10(tailwindcss@3.4.1)
   animate-css-grid:
     specifier: ^1.5.1
     version: 1.5.1
@@ -123,8 +123,8 @@ dependencies:
     specifier: ^2.2.1
     version: 2.2.1
   tailwindcss:
-    specifier: 3.3.6
-    version: 3.3.6
+    specifier: 3.4.1
+    version: 3.4.1
   tailwindcss-gradients:
     specifier: ^3.0.0
     version: 3.0.0
@@ -186,7 +186,7 @@ devDependencies:
     version: 5.0.1(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1)
   eslint-plugin-tailwindcss:
     specifier: ^3.13.1
-    version: 3.13.1(tailwindcss@3.3.6)
+    version: 3.13.1(tailwindcss@3.4.1)
   next-sitemap:
     specifier: ^4.2.3
     version: 4.2.3(next@14.0.4)
@@ -2486,13 +2486,13 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  /@headlessui/tailwindcss@0.2.0(tailwindcss@3.3.6):
+  /@headlessui/tailwindcss@0.2.0(tailwindcss@3.4.1):
     resolution: {integrity: sha512-fpL830Fln1SykOCboExsWr3JIVeQKieLJ3XytLe/tt1A0XzqUthOftDmjcCYLW62w7mQI7wXcoPXr3tZ9QfGxw==}
     engines: {node: '>=10'}
     peerDependencies:
       tailwindcss: ^3.0
     dependencies:
-      tailwindcss: 3.3.6
+      tailwindcss: 3.4.1
     dev: false
 
   /@heroicons/react@1.0.6(react@17.0.2):
@@ -4601,23 +4601,23 @@ packages:
     dependencies:
       tslib: 2.6.2
 
-  /@tailwindcss/aspect-ratio@0.4.2(tailwindcss@3.3.6):
+  /@tailwindcss/aspect-ratio@0.4.2(tailwindcss@3.4.1):
     resolution: {integrity: sha512-8QPrypskfBa7QIMuKHg2TA7BqES6vhBrDLOv8Unb6FcFyd3TjKbc6lcmb9UPQHxfl24sXoJ41ux/H7qQQvfaSQ==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
-      tailwindcss: 3.3.6
+      tailwindcss: 3.4.1
     dev: true
 
-  /@tailwindcss/line-clamp@0.3.1(tailwindcss@3.3.6):
+  /@tailwindcss/line-clamp@0.3.1(tailwindcss@3.4.1):
     resolution: {integrity: sha512-pNr0T8LAc3TUx/gxCfQZRe9NB2dPEo/cedPHzUGIPxqDMhgjwNm6jYxww4W5l0zAsAddxr+XfZcqttGiFDgrGg==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
-      tailwindcss: 3.3.6
+      tailwindcss: 3.4.1
     dev: true
 
-  /@tailwindcss/typography@0.5.10(tailwindcss@3.3.6):
+  /@tailwindcss/typography@0.5.10(tailwindcss@3.4.1):
     resolution: {integrity: sha512-Pe8BuPJQJd3FfRnm6H0ulKIGoMEQS+Vq01R6M5aCrFB/ccR/shT+0kXLjouGC1gFLm9hopTFN+DMP0pfwRWzPw==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
@@ -4626,7 +4626,7 @@ packages:
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.3.6
+      tailwindcss: 3.4.1
 
   /@tinacms/app@1.2.35(@babel/core@7.23.2)(@types/node@20.8.7)(@types/react@18.2.55)(yup@0.32.11):
     resolution: {integrity: sha512-ycVA5R9OeHbScHTkU04l4sZUXSjx26vKZ1ePjUbJd09LNb2ewlC+oG2uO6N07PETfnqzwQFVIRxnj7BBULKLng==}
@@ -4646,7 +4646,7 @@ packages:
       react: 17.0.2
       react-dom: 17.0.2(react@17.0.2)
       react-router-dom: 6.3.0(react-dom@17.0.2)(react@17.0.2)
-      tailwindcss: 3.3.6
+      tailwindcss: 3.4.1
       tinacms: 1.5.28(@babel/core@7.23.2)(@types/react@18.2.55)(react-dom@17.0.2)(react@17.0.2)
       typescript: 4.9.5
       zod: 3.22.4
@@ -4689,9 +4689,9 @@ packages:
       '@graphql-tools/load': 7.8.14(graphql@15.8.0)
       '@rollup/pluginutils': 5.0.5
       '@svgr/core': 6.3.1
-      '@tailwindcss/aspect-ratio': 0.4.2(tailwindcss@3.3.6)
-      '@tailwindcss/line-clamp': 0.3.1(tailwindcss@3.3.6)
-      '@tailwindcss/typography': 0.5.10(tailwindcss@3.3.6)
+      '@tailwindcss/aspect-ratio': 0.4.2(tailwindcss@3.4.1)
+      '@tailwindcss/line-clamp': 0.3.1(tailwindcss@3.4.1)
+      '@tailwindcss/typography': 0.5.10(tailwindcss@3.4.1)
       '@tinacms/app': 1.2.35(@babel/core@7.23.2)(@types/node@20.8.7)(@types/react@18.2.55)(yup@0.32.11)
       '@tinacms/datalayer': 1.2.32(react@18.2.0)
       '@tinacms/graphql': 1.4.32(react@18.2.0)
@@ -4736,7 +4736,7 @@ packages:
       prompts: 2.4.2
       readable-stream: 4.4.2
       rollup-plugin-visualizer: 5.9.2
-      tailwindcss: 3.3.6
+      tailwindcss: 3.4.1
       tinacms: 1.5.28(@babel/core@7.23.2)(@types/react@18.2.55)(react-dom@18.2.0)(react@18.2.0)
       typanion: 3.13.0
       typescript: 4.3.5
@@ -10302,7 +10302,7 @@ packages:
       string.prototype.matchall: 4.0.10
     dev: false
 
-  /eslint-plugin-tailwindcss@3.13.1(tailwindcss@3.3.6):
+  /eslint-plugin-tailwindcss@3.13.1(tailwindcss@3.4.1):
     resolution: {integrity: sha512-2Nlgr9doO6vFAG9w4iGU0sspWXuzypfng10HTF+dFS2NterhweWtgdRvf/f7aaoOUUxVZM8wMIXzazrZ7CxyeA==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
@@ -10310,7 +10310,7 @@ packages:
     dependencies:
       fast-glob: 3.3.1
       postcss: 8.4.32
-      tailwindcss: 3.3.6
+      tailwindcss: 3.4.1
     dev: true
 
   /eslint-scope@7.2.2:
@@ -15403,8 +15403,8 @@ packages:
       lodash: 4.17.21
     dev: false
 
-  /tailwindcss@3.3.6:
-    resolution: {integrity: sha512-AKjF7qbbLvLaPieoKeTjG1+FyNZT6KaJMJPFeQyLfIp7l82ggH1fbHJSsYIvnbTFQOlkh+gBYpyby5GT1LIdLw==}
+  /tailwindcss@3.4.1:
+    resolution: {integrity: sha512-qAYmXRfk3ENzuPBakNK0SRrUDipP8NQnEY6772uDhflcQz5EhRdD7JNZxyrFHVQNCwULPBn6FNPp9brpO7ctcA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
