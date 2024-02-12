@@ -33,6 +33,7 @@ const iconMapper = (icon: keyof typeof utilIcons) => {
   return <Icon />;
 };
 
+// Any change on this component requires a thorough testing on all the places it's used
 export const UtilityButton = ({
   buttonText,
   onClick,
@@ -68,7 +69,7 @@ export const UtilityButton = ({
       <CustomLink
         href={link}
         target={openInNewTab ? "_blank" : ""}
-        className="unstyled no-underline"
+        className="unstyled block no-underline"
       >
         {baseComponent}
       </CustomLink>
