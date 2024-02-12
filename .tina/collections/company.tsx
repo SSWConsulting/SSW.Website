@@ -47,6 +47,7 @@ export const companySchema: Collection = {
         verticalImageLayoutBlockSchema,
         tripleColumnImageBlockSchema,
         fixedColumnsSchema,
+        Schemas.utilityButtonSchema,
       ],
     },
     {
@@ -66,6 +67,12 @@ export const companySchema: Collection = {
       type: "boolean",
       name: "showRdPanel",
       label: "Show Regional Director Panel",
+      required: false,
+    },
+    {
+      type: "boolean",
+      name: "showTechUpgradeBlock",
+      label: "Show Tech Upgrade Block",
       required: false,
     },
     {
