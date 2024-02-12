@@ -15,7 +15,7 @@
     "analyze": "source-map-explorer '.next/static/chunks/*.js'"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "14.0.2",
+    "@next/eslint-plugin-next": "14.1.0",
     "@playwright/test": "1.40.1",
     "@svgr/webpack": "^8.1.0",
     "@tinacms/cli": "^1.5.39",
