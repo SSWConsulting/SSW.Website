@@ -1,51 +1,40 @@
+"use client";
+
 import {
   AppInsightsContext,
   ReactPlugin,
-  withAITracking,
 } from "@microsoft/applicationinsights-react-js";
 import { ApplicationInsights } from "@microsoft/applicationinsights-web";
-import { createBrowserHistory } from "history";
-import React, { useEffect } from "react";
+import { ReactNode, useEffect, useMemo } from "react";
 
-let browserHistory = null;
-
-if (typeof document != "undefined") {
-  browserHistory = createBrowserHistory();
-}
-
-const reactPlugin = new ReactPlugin();
-
-const appInsightConnString =
-  process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING;
-
-const appInsights = new ApplicationInsights({
-  config: {
-    connectionString: appInsightConnString,
-    enableAutoRouteTracking: true,
-    enableAjaxPerfTracking: true,
-    isBrowserLinkTrackingEnabled: true,
-    extensions: [reactPlugin],
-    extensionConfig: {
-      [reactPlugin.identifier]: { history: browserHistory },
-    },
-  },
-});
-
-const AzureAppInsights = ({ children }) => {
+export function AppInsightsProvider({ children }: { children: ReactNode }) {
+  const reactPlugin = useMemo(() => new ReactPlugin(), []);
   useEffect(() => {
-    if (appInsightConnString) {
+    const appInsights = new ApplicationInsights({
+      config: {
+        connectionString: process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING,
+        extensions: [reactPlugin],
+        extensionConfig: {
+          [reactPlugin.identifier]: {},
+        },
+      },
+    });
+
+    if (appInsights.config.connectionString) {
       appInsights.loadAppInsights();
     } else {
       // eslint-disable-next-line no-console
       console.log("Client side logging is not turned on!");
     }
-  }, []);
+
+    return () => {
+      appInsights.unload();
+    };
+  }, [reactPlugin]);
 
   return (
     <AppInsightsContext.Provider value={reactPlugin}>
       {children}
     </AppInsightsContext.Provider>
   );
-};
-
-export default withAITracking(reactPlugin, AzureAppInsights);
+}

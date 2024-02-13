@@ -1,61 +1,102 @@
-import type { Collection } from "tinacms";
+import type { Collection, TinaField } from "tinacms";
 
-import { ratingSchema } from "../../components/util/consulting/rating";
-import { tipField } from "./shared-fields";
+import React from "react";
+import { extractFileName } from "../../helpers/functions";
+export const tipForReference: TinaField = {
+  type: "string",
+  name: "tipForReference",
+  label: "Tip",
+  ui: {
+    component: ({}) => {
+      return (
+        <div className="whitepace-normal">
+          {" "}
+          💡 Testimonials will be shown in the following order.
+        </div>
+      );
+    },
+  },
+};
 
 export const testimonialSchema: Collection = {
   label: "Testimonials",
   name: "testimonials",
-  format: "mdx",
+  format: "json",
   path: "content/testimonials",
+  ui: {
+    allowedActions: {
+      create: false,
+      delete: false,
+    },
+  },
   fields: [
-    tipField,
-    {
-      type: "string",
-      label: "Name",
-      name: "name",
-      required: true,
-    },
-    {
-      type: "image",
-      label: "Avatar",
-      name: "avatar",
-      required: false,
-      // @ts-ignore
-      uploadDir: () => "testimonialAvatars",
-    },
-    {
-      type: "string",
-      label: "Company",
-      name: "company",
-      required: false,
-    },
-    {
-      ...ratingSchema,
-      required: true,
-    },
-    {
-      type: "rich-text",
-      label: "Body",
-      name: "body",
-      isBody: true,
-    },
+    tipForReference,
     {
       type: "object",
-      label: "Categories",
-      name: "categories",
-      list: true,
+      label: "Testimonials",
+      name: "testimonials",
       ui: {
         itemProps: (item) => {
-          return { label: item?.name ?? "Select your testimonial category" };
+          const categories = item?.categories?.map((item) =>
+            extractFileName(item?.category)
+          );
+          const joinedCategories = categories?.join(" - ");
+          const customLabel = `${item?.name} - ${joinedCategories ?? ""}`;
+          return {
+            label: customLabel,
+          };
         },
       },
+      list: true,
       fields: [
         {
-          type: "reference",
-          label: "Category",
-          name: "category",
-          collections: ["testimonialCategories"],
+          type: "string",
+          label: "Name",
+          name: "name",
+          required: true,
+        },
+        {
+          type: "image",
+          label: "Avatar",
+          name: "avatar",
+          required: false,
+          // @ts-ignore
+          uploadDir: () => "testimonialAvatars",
+        },
+        {
+          type: "string",
+          label: "Company",
+          name: "company",
+          required: false,
+        },
+        {
+          type: "rich-text",
+          label: "Body",
+          name: "body",
+          isBody: true,
+        },
+        {
+          type: "object",
+          label: "Categories",
+          name: "categories",
+          list: true,
+          ui: {
+            itemProps: (item) => {
+              return {
+                label:
+                  extractFileName(item?.category) ??
+                  "Select your testimonial category",
+              };
+            },
+          },
+          fields: [
+            {
+              type: "reference",
+              label: "Category",
+              name: "category",
+              collections: ["testimonialCategories"],
+            },
+          ],
         },
       ],
     },

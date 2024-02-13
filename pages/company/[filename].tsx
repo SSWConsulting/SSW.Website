@@ -6,6 +6,7 @@ import { Blocks } from "../../components/blocks-renderer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { BuiltOnAzure } from "../../components/blocks/builtOnAzure";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import { TechUpgrade } from "../../components/blocks/techUpgrade";
 import HistoryTimeline from "../../components/company/historyTimeline";
 import { HistoryTimelineCardProps } from "../../components/company/historyTimelineCard";
 import { RDPanel } from "../../components/company/rdPanel";
@@ -82,11 +83,7 @@ export default function CompanyPage(
                     )}
                     {data.company.sidebarTestimonial && (
                       <TestimonialPanel
-                        testimonial={{
-                          name: data.company.sidebarTestimonial.name,
-                          company: data.company.sidebarTestimonial.company,
-                          body: data.company.sidebarTestimonial.body,
-                        }}
+                        testimonialName={data.company.sidebarTestimonial}
                       />
                     )}
                     {data.company.showRdPanel && <RDPanel />}
@@ -100,6 +97,11 @@ export default function CompanyPage(
           {data.company.historyCards?.length > 0 && (
             <Section className="mx-auto w-full max-w-9xl px-8 py-5">
               <HistoryTimeline cardProps={historyCardProps} />
+            </Section>
+          )}
+          {data.company.showTechUpgradeBlock && (
+            <Section className="mx-auto w-full  !bg-gray-75 px-8 py-5">
+              <TechUpgrade />
             </Section>
           )}
           <Section>

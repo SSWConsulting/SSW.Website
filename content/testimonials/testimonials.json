@@ -1,0 +1,464 @@
+{
+  "testimonials": [
+    {
+      "name": "Andrew J Clark",
+      "company": "The Logistics Linchpin",
+      "body": "I wanted to let you know how great it has been working with Kiki over the last two days. Kiki's work has been outstanding and he helped me through a couple of difficult conversations with the client that could have jeopardised the whole progress of not only the implementation of Zendesk but my whole project. Everything is now on track for success thanks to Kiki's work and more particularly his ability to handle an unexpected and tense situation with calm authority.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Peter Dimaridis",
+      "avatar": "/images/testimonialAvatars/peter-dimaridis.jpg",
+      "company": "AuctionsPlus",
+      "body": "We have dealt with several people at SSW from a network tech helping us with a domain issue, to a couple of graphic designers and several programmers and they have ALL been first rate.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/General.mdx"
+        },
+        {
+          "category": "content/testimonialCategories/Blazor.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Bill Johnson",
+      "company": "InfoMet Pty Ltd",
+      "body": "SSW Exchange Reporter is an essential tool for anyone trying to monitor their organizations email. We use SSW Exchange Reporter because it generates professional user friendly reports.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Justin Stafford",
+      "avatar": "/images/testimonialAvatars/justin-s.png",
+      "company": "Blueshift",
+      "body": "It's a pleasure to work with Raj, David, and SSW's team. They've done several\n\nprojects for us from development to video production - all of which we're super\n\nhappy with. I look forward to working together in the future. We see SSW as a\n\npartner, not a vendor.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Video.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Bo Searle",
+      "avatar": "",
+      "company": "Vault - Secure Sovereign Community Cloud",
+      "body": "Just wanted to quickly to let you know that David has done a expeciational job for this project. given the challenging landscape of Vault's backend, he is always happy to hear the problems we have and trying his best to work around and find a solution for us. Nothing is ever too much for him so far! I really appreciate his ability to work with a non technical person (myself) to ensure we create a desirable outcome for this project.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Ian Newmarch",
+      "avatar": "/images/testimonialAvatars/IanNewmarch.jpeg",
+      "company": "Twana",
+      "body": "Just completed an outstanding workshop on clean architecture with Luke Parker and Daniel Mackay from SSW. My team and I gained a ton of valuable insights!\n\nTheir expertise and engaging approach truly simplified complex concepts for us. We're now excited to put our new knowledge into practice.\n\nThanks, Luke Parker, Daniel Mackay, and the SSW team for this enriching experience! Highly recommended for anyone in the field.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Clean-Architecture.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Peter Coombe",
+      "avatar": "/images/testimonialAvatars/MicrosoftTeams-image.png",
+      "company": "Berkley",
+      "body": "Spent the last 2 days eating cookies, as well as learning more about clean architecture at SSW. To be honest I wasn't sure what to expect, as I think we do a pretty good job of Clean Architecture in our products. Both presenters did an amazing job and I am happy to say I walked away with quite a few learnings from the event. Now I just have a bit of homework to do on how I can apply them to improve our own products.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Clean-Architecture.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Yun Lu",
+      "avatar": "/images/testimonialAvatars/Lu.jpg",
+      "company": "LUQI Tech",
+      "body": "SSW's expertise and professionalism in software development left a deep impression on me. They brought exceptional value to our dev team, inspiring them with their punctuality and diligence. I'm grateful for their unwavering commitment to excellence and delighted to have them in our office. Thank you, SSW!\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Chinafy.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Dr. Xingjun Ma",
+      "avatar": "/images/testimonialAvatars/Ma.jpg",
+      "company": "Fudan University",
+      "body": "I fully endorse SSW's exceptional work on my computer science project at Fudan University. They demonstrated transparency, efficiency, and professionalism. Their communication skills are top-notch, fostering direct communication with everyone involved.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Chinafy.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Neil Roodyn",
+      "avatar": "/images/testimonialAvatars/Neal.jpg",
+      "company": "nsquared solutions",
+      "body": "Working with SSW on our Blazor projects has been a positive and rewarding experience. Their expertise and commitment to quality are evident.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Blazor.mdx"
+        },
+        {
+          "category": "content/testimonialCategories/Chinafy.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Christine Chang",
+      "company": "Tapp Group Limited",
+      "body": "Michael and Tiago were invaluable in aiding us to refresh and update our website. Tiago has been very patient and helpful throughout the entire process, guiding me as we worked through what was needed, being accommodating based on my limited knowledge of websites and amending as we continuously reassessed what we needed from SSW. Thank you both for the hard work and patience.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Mark Pigram",
+      "avatar": "/images/testimonialAvatars/mark-p.jpg",
+      "company": "Contracts Online",
+      "body": "It was a pleasure to have you in the office again.\n\nI continue to be impressed by the quality of work and advice you provide.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/General.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Daniel Murtagh",
+      "company": "Bell Shakespeare",
+      "body": "I just wanted to drop you a quick line to pass on my sincere thanks and appreciation for Jean's work.\r\nHe has been an absolute pleasure to work on our SharePoint development. He is polite, friendly, solutions focussed, open and honest. I have particularly appreciated his ability to take the time to understand our business needs and to implement solutions that are tailored and customised to suit our needs.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "David Blacketer",
+      "company": "Berkley IT in Asia Pacific",
+      "body": "As we are now 20 plus weeks into our projects with yourselves I wanted to express that I am very happy with the team's productivity and everyone's participation but especially impressed with Jean, Kosta and Matt Wicks.\r\nJean's management is very much on point, prompt, detailed, decisive change management, and outcome focused which is a lot of comfort to me as my time investment capability is minimal but appropriate for the project successful delivery.\r\nThe interaction and engagement across our organisations is also working well, efficient, collaborative and all things good that I want in a well-run and successful development project.\r\nComplements aside, as I have discussed with Jean, I am looking forward to continuing our engagement with this team on 3 follow-on projects already approved and a fourth likely to be approved soon, thanks!\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Eugeniu Jalba",
+      "company": "SSW Event Attendee",
+      "body": "Peter, Your great teaching skills, the very interactive session by showing the \"correct\" way of doing things (including the various alternative methods) made this class outstanding.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Francine Binns",
+      "company": "IPWEA NSW & ACT",
+      "body": "It was a pleasure working with Jayden. He was professional, accommodating, listened and advised when necessary. I've also had positive feedback from IPWEA Australasia.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Francis Kirby",
+      "company": "BioCurate",
+      "body": "I think what the team has done has been great. They've been very responsive and receptive to feedback. The platform they've generated exceeds what I'd first envisioned (i.e., is much higher quality), and of course the fact that we're well below the original cost estimate is also awesome.\r\nIn summary, I think Chris, Alex, Joseph, and yourself have done an amazing job, and I'm looking forward to the internal testing and getting the wider teams feedback.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Glenn",
+      "company": "Australian Government Organization",
+      "body": "I must say that I found Dan and Daragh a pleasure to work with. Easily the best two consultants I have worked with in IT in the last 10 years. Please pass on my positive feedback to anyone relevant at SSW.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Grant Bloxham",
+      "company": "Bstar",
+      "body": "Rebecca has been a pleasure to work with and her insights are highly valued by the Bstar team.\r\nWe started with an idea that will reshape our business and Rebecca has been able to create a user experience we believe will strongly engage our network of accountants and their SME clients.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Kiriana\tMeha Bettison",
+      "avatar": "/images/testimonialAvatars/Hearing-Australia_Kiriana.jpg",
+      "company": "Hearing Australia",
+      "body": "I thoroughly enjoyed working with SSW on developing and launching our new website. Their team brought a refreshing blend of professionalism and friendliness to the table, establishing a positive and collaborative working environment that I wish I could experience every day.\n\nWhat truly set them apart was not just their evident expertise but also their unwavering commitment to going the extra mile. SSW didn't simply deliver exceptional web development; they took the initiative to provide constant valuable support to our team. They proactively jumped in whenever a challenge arose, offering practical advice and solutions on anything from how to effectively manage and launch a website project, to comprehensive CMS training and providing technical solutions to challenges that our internal IT team were struggling to overcome. Their contribution far exceeded what would be expected of the typical client-agency relationship and I feel lucky to have partnered with them. \n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Web-Development.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Yalal Cakir",
+      "avatar": "/images/testimonialAvatars/yalalcakir.jpg",
+      "body": "My journey at the SSW FireBootCamp has truly been a game-changer. The mentors were so helpful guiding me through the realms of Angular and .NET. This internship was made enjoyable and enlightening by the connections I made with other interns and business professionals, which I will carry with me throughout my career.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Internship.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Jom Co",
+      "avatar": "/images/testimonialAvatars/jom-c.png",
+      "body": "Being someone with working experience already from more of a\r\nbusiness/functional background, this internship helped me dig\r\ninto the more nitty-gritty, roll-up-your-sleeves technical world of\r\nsoftware engineering.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Internship.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Jeoffrey Fischer",
+      "avatar": "/images/testimonialAvatars/Jeoffrey-Fisher-FireBootCamp.jpg",
+      "body": "The SSW internship has been a transformative experience for me! As someone without a background in programming, this opportunity not only introduced me to the essential fundamentals of coding but also provided comprehensive insights into both backend and frontend development. It's truly been the highlight of my learning journey.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Internship.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Ben Neoh",
+      "avatar": "/images/testimonialAvatars/ben-n.jpg",
+      "body": "The SSW Internship was the perfect starting point for me with no prior knowledge.\r\nIt provided invaluable hands-on experience and helped me develop both my technical\r\nskills and soft skills.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Internship.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Brady Stroud",
+      "avatar": "/images/testimonialAvatars/brady-s.jpg",
+      "body": "The SSW internship was an incredible experience. I not only sharpened my coding\r\nskills, but also acquired valuable soft skills to excel in client projects.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Internship.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Kathryn Elegino",
+      "body": "I'm writing to you to pass on my thanks to your team for the stellar job done. It has been a pleasure working with Jean as he is an upstanding person who genuinely cares about the work he does, and is a true master of his craft.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Ken Salan",
+      "company": "AuctionsPlus",
+      "body": "We've commenced the production release of the new Auction Platform which each of you have played a role in developing.\r\nWhile it's still in the early stages of release, so far it has been a great success. Our plan is to continue to monitor, enhance and increase its use over the coming 'busy' months, as we eventually look to phase out the existing system.\r\nIt has been a massive year of development and learning for all involved, and by all accounts, this is an application that will help set AuctionsPlus up for continued success, growth and service for years to come.\r\nOn behalf of @Angus and myself, we'd like to say congratulations and thanks for your efforts.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Louise Ridlen",
+      "company": "Gem Training Solutions",
+      "body": "GEM Training Solutions specialises in computer training in database management, template development in Microsoft PowerPoint, Word and Excel, and other training related services. We have employed SSW this year for the provision of training services, particularly in database management. The software tools used for the projects have been Microsoft Access 2000 on a Windows 2000 platform.\r\nTailored developer training services are provided professionally, competently and satisfactorily by SSW and consequently we have returned to them for further software related services.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Mark Pigram",
+      "company": "Contracts Online",
+      "body": "It was a pleasure to have you in the office again. I continue to be impressed by the quality of work and advice you provide.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Peter McCurdy",
+      "avatar": "/images/testimonialAvatars/peter-m.jpg",
+      "company": "PDS",
+      "body": "... out of all the developers I have used in the past \\[SSW] provide the most complete solutions and best outcomes.\n\nThanks for your attention to detail once again.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/General.mdx"
+        },
+        {
+          "category": "content/testimonialCategories/Blazor.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Kiri Stejko",
+      "avatar": "/images/testimonialAvatars/kiri-s.png",
+      "company": "Parents At Work",
+      "body": "SSW worked with us in the creation of demo and overview videos for our online\r\nplatform. We're very pleased with the service provided - efficient and\r\nknowledgeable. They understood our requirements very quickly.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Video.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Peter Dimaridis",
+      "avatar": "",
+      "company": "AuctionsPlus",
+      "body": "We have dealt with several people at SSW from a network tech helping us with a domain issue, to a couple of graphic designers and several programmers and they have ALL been first rate.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Project Manager",
+      "company": "Major International Holiday Company",
+      "body": "Hi Marlon, I just wanted to pass on a note to express my praise for the effort and commitment both Daragh and William put in during the upgrade process and in particular last night/this morning.\r\nThe deployment went well, although a little longer than expected, they dug in their heels and powered through all 11 hours.\r\nWe got their at the end and the business is very happy with the results.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Royce Milmlow",
+      "company": "Delta Elcom",
+      "body": "Just wanted to say a quick thank you to Andreas for his help yesterday, we really got a lot out of the day. Andreas genuinely cared and made sure we got to the result we wanted and took a genuine interest in what we were/are trying to achieve.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "S. Somasegar",
+      "company": "Microsoft",
+      "body": "Thank you for the work you've done over the last year to improve our products and help customers be successful. For those of you who were able to join me at the MVP Dinner earlier this month, I enjoyed meeting you face-to-face and very much appreciated hearing your stories. Hosting events like this one is one of my favorite parts of my role here at Microsoft.\r\nWith over 1,500 developer MVp's and fewer than 40 being recognized as an MVP of the year, you are truly one of our elite partners. Without you, we could not be as successful as we are today. To recognize the part you play, please find a token of our appreciation for all the work you do on Microsoft's behalf.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Sarah Elliott",
+      "company": "Smart Group",
+      "body": "I just want to say thank you so much for being our saviour over the past few months. Having your expertise around has put my mind at ease while we were going through some big changes. I am nervous for the road ahead but a little less nervous knowing that you have helped support and educate us as much as you could.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Seth Daily",
+      "avatar": "/images/testimonialAvatars/Seth Daily cropped.jpeg",
+      "company": "SSW",
+      "body": "Some of the companies' most modern ideas have come out of Brainstorming days.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Brainstorming.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Susan Harkins",
+      "company": "SQL Access to SQL Server",
+      "body": "Wouldn't it be useful if you could run an upsizing report before starting the entire process? Well, you can. SSW provides a wonderful tool that can be used before you upsize the database.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Philip Uren",
+      "company": "System77",
+      "body": "I was very happy with SSW's service on our recent .NET Point-of-Sale project. Some of the types of issues SSW handled adeptly were: the quality of the user interface, business requirements, legacy code and data structures, and ease of maintenance for down the track.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/General.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Todd Northrop",
+      "company": "Speednet Group",
+      "body": "Steven, You did some really tremendous work, and I would ask for your help with future problems in a heartbeat. Thank you for doing such a great job and for having such great work ethic!\r\nI will definitely be looping back with Scott Hanselman to let him know about my great experience working with you, and I'd be happy to provide a glowing recommendation should you need one in the future.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Miscellaneous.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Jeff Atwood",
+      "body": "Developers are already good at writing code. Writing reams of code just digs you deeper into an already deeply specialized skill. What I am proposing is that we spend less time coding and more time developing skills in other areas that complement our coding skills. Become a better writer. Become a better speaker. Improve your personal skills. Participate in the community. Try to spend some time talking to people instead of the compiler. That's how you distinguish yourself from your peers. And that's ultimately how you become a better software developer, too.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/User-Group.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Nick Wienholt",
+      "body": "Truly the best place to learn .NET for free in Sydney.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/User-Group-Sydney.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Troy Magennis",
+      "body": "Informative and entertaining. Lots of little snippets of lessons we would have had to learn through experience\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/User-Group.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Tylah Kapa",
+      "avatar": "/images/testimonialAvatars/Tylah Kapa cropped.jpeg",
+      "company": "SSW",
+      "body": "...sit down **and** have a bunch of fun and hack together something amazing then show it to everyone at the end of the day.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Brainstorming.mdx"
+        }
+      ]
+    }
+  ]
+}

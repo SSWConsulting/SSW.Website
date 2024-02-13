@@ -21,7 +21,7 @@ export type CustomImageProps = {
 // To Update the screenshots of PowerBi reports on Consulting Options (i.e /consulting/consulting), here is the link - https://github.com/SSWConsulting/SSW.Website/wiki/Consulting-options-%E2%80%90-Updating-screenshots
 export const CustomImage = ({ data }: { data: CustomImageProps }) => {
   return (
-    <LinkWrapper link={data.link}>
+    <CustomLink href={data.link}>
       <div
         className={classNames(
           "flex flex-col",
@@ -49,15 +49,8 @@ export const CustomImage = ({ data }: { data: CustomImageProps }) => {
           )}
         </div>
       </div>
-    </LinkWrapper>
+    </CustomLink>
   );
-};
-
-export const LinkWrapper = ({ link, children }) => {
-  if (link) {
-    return <CustomLink href={link}>{children}</CustomLink>;
-  }
-  return <>{children}</>;
 };
 
 export const customImageBlockSchema: Template = {

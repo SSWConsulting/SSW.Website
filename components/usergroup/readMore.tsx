@@ -1,39 +1,73 @@
 import classNames from "classnames";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { sanitiseXSS } from "../../helpers/validator";
 
 type ReadMoreProps = {
   text: string;
-  length: number;
+  length?: number;
+  previewSentenceCount?: number;
   className?: string;
 };
 
-const condenseContent = (text: string, length: number) => {
-  const formatted = text.split(". ")[0] + ". ...";
+const getCondensedText = (
+  text: string,
+  length: number,
+  previewSentenceCount: number
+) => {
+  const formatted = text.split(". ");
+  const selectedParagraphs = formatted.slice(0, previewSentenceCount);
+  const condensedText = selectedParagraphs.join(". ");
 
-  if (formatted.length <= length) return formatted;
-  else return formatted.slice(0, length) + "...";
+  if (length > 0 && condensedText.length <= length) {
+    return `${condensedText} . ...`;
+  } else if (length > 0) {
+    return `${condensedText.slice(0, length)}...`;
+  }
+
+  return `${condensedText}. ...`;
 };
 
-export const ReadMore = ({ text, length, className }: ReadMoreProps) => {
-  const [dropdownClicked, setDropdownClicked] = useState(false);
+export const ReadMore = ({
+  text,
+  length,
+  className,
+  previewSentenceCount = 1,
+}: ReadMoreProps) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [readMoreText, setReadMoreText] = useState(text);
+  const sanitizedText = sanitiseXSS(text);
 
+  const isReadMoreRequired = () =>
+    (length > 0 && text.length > length) ||
+    (previewSentenceCount > 1 &&
+      text.split(". ").length > previewSentenceCount);
+
+  const condensedText = isReadMoreRequired()
+    ? getCondensedText(sanitizedText, length, previewSentenceCount)
+    : sanitizedText;
+
+  useEffect(() => {
+    setReadMoreText(isExpanded ? sanitizedText : condensedText);
+  }, [condensedText, isExpanded, sanitizedText]);
+
+  if (!text) return <></>;
   return (
     <div className={classNames("flex flex-col", className)}>
       <div
         dangerouslySetInnerHTML={{
-          __html: dropdownClicked ? text : condenseContent(text, length),
+          __html: readMoreText,
         }}
       />
-      <button
-        className="flex grow-0 flex-row items-center pt-2 text-sm text-gray-800"
-        onClick={() => setDropdownClicked((prev) => !prev)}
-      >
-        Read {dropdownClicked ? "less" : "more"}{" "}
-        <MdOutlineKeyboardArrowDown
-          className={dropdownClicked && "rotate-180"}
-        />
-      </button>
+      {isReadMoreRequired() && (
+        <button
+          className="flex grow-0 flex-row items-center pt-2 text-sm text-gray-800"
+          onClick={() => setIsExpanded((prev) => !prev)}
+        >
+          Read {isExpanded ? "less" : "more"}{" "}
+          <MdOutlineKeyboardArrowDown className={isExpanded && "rotate-180"} />
+        </button>
+      )}
     </div>
   );
 };

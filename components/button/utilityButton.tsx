@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import type { Template } from "tinacms";
 import { CustomLink } from "../customLink";
 import Button from "./button";
@@ -14,18 +15,32 @@ type UtilityButtonProps = {
   className?: string;
   link?: string;
   size?: keyof typeof sizes;
+  btnIcon?: keyof typeof utilIcons;
   animated?: boolean;
   uncentered?: boolean;
   removeTopMargin?: boolean;
   openInNewTab?: boolean;
 };
 
+const utilIcons = {
+  BsArrowRightCircle: () => <BsArrowRightCircle className="ml-1 inline" />,
+  BsArrowLeftCircle: () => <BsArrowLeftCircle className="ml-1 inline" />,
+} as const;
+
+const iconMapper = (icon: keyof typeof utilIcons) => {
+  const Icon = utilIcons[icon];
+  if (!Icon) return <></>;
+  return <Icon />;
+};
+
+// Any change on this component requires a thorough testing on all the places it's used
 export const UtilityButton = ({
   buttonText,
   onClick,
   className,
   link,
   size,
+  btnIcon,
   animated,
   uncentered,
   removeTopMargin,
@@ -45,20 +60,19 @@ export const UtilityButton = ({
       data-aos={animated ? "fade-up" : undefined}
     >
       {buttonText}
+      {btnIcon && iconMapper(btnIcon)}
     </Button>
   );
 
   if (link) {
     return (
-      <div>
-        <CustomLink
-          href={link}
-          target={openInNewTab ? "_blank" : ""}
-          className="unstyled no-underline"
-        >
-          {baseComponent}
-        </CustomLink>
-      </div>
+      <CustomLink
+        href={link}
+        target={openInNewTab ? "_blank" : ""}
+        className="unstyled block no-underline"
+      >
+        {baseComponent}
+      </CustomLink>
     );
   }
 
@@ -92,6 +106,13 @@ export const utilityButtonSchema: Template = {
       name: "size",
       required: false,
       options: Object.keys(sizes),
+    },
+    {
+      type: "string",
+      label: "Icon",
+      name: "btnIcon",
+      required: false,
+      options: Object.keys(utilIcons),
     },
     {
       type: "boolean",

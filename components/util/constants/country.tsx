@@ -57,4 +57,5 @@ export const CITY_TIMEZONES = {
   brisbane: "Australia/Brisbane",
   melbourne: "Australia/Melbourne",
   newcastle: "Australia/Sydney",
+  gold_coast: "Australia/Brisbane",
 } as const;
