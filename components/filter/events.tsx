@@ -157,10 +157,15 @@ const Event = ({ visible, event }: EventProps) => {
     organizer: sswOrganisation,
   };
 
+  console.log(event);
+  const eventSite = event.Url.Url.toLowerCase()?.includes("ssw.com.au")
+    ? { name: CITY_MAP[event.City]?.name, url: CITY_MAP[event.City]?.url }
+    : { name: event.City, url: event.Url.Url };
+
   return (
     <>
       <Transition
-        className="mb-20"
+        className="mb-16 border-b-1 pb-16"
         show={!!visible}
         enter="transition duration-100 ease-out"
         enterFrom="transform scale-95 opacity-0"
@@ -213,9 +218,7 @@ const Event = ({ visible, event }: EventProps) => {
               {event.City && CITY_MAP[event.City] && (
                 <span className="ml-3">
                   <strong>Location: </strong>
-                  <CustomLink href={CITY_MAP[event.City]?.url}>
-                    {CITY_MAP[event.City]?.name}
-                  </CustomLink>
+                  <CustomLink href={eventSite.url}>{eventSite.name}</CustomLink>
                 </span>
               )}
             </div>
