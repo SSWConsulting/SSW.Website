@@ -115,7 +115,7 @@ const LinkItem: React.FC<{ link: NavMenuColumnGroupItem }> = ({
       {(icon || iconImg) && (
         <div className="flex shrink-0 items-center justify-center text-ssw-red">
           <MegaIcon
-            className="h-6 w-6"
+            className="size-6"
             icon={icon as AvailableIcons}
             iconImg={iconImg}
           />

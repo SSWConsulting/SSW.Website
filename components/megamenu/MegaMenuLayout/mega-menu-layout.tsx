@@ -23,7 +23,7 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
       {/* eslint-disable-next-line tailwindcss/no-arbitrary-value */}
       <div className="relative z-10 flex h-16 w-full items-center justify-center lg:h-[120px]">
         <nav
-          className="flex h-full w-full items-center justify-between gap-x-4 overflow-hidden px-0"
+          className="flex size-full items-center justify-between gap-x-4 overflow-hidden px-0"
           aria-label="Global"
         >
           <div className="flex items-center">
@@ -59,7 +59,7 @@ const MegaMenuLayout: React.FC<MegaMenuWrapperProps> = ({
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+              <Bars3Icon className="size-6" aria-hidden="true" />
             </button>
           </div>
           <DesktopMenu menuGroups={menuBarItems} />

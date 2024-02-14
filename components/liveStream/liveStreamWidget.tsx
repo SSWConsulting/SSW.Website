@@ -162,7 +162,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
         <div className="mb-4 grid grid-cols-3 gap-8">
           <div id="thumbnailAnchor" className="col-span-3 md:col-span-2">
             <div className="relative h-0 pt-9/16">
-              <div className="absolute top-0 h-full w-full">
+              <div className="absolute top-0 size-full">
                 <YouTubeEmbed
                   id={getYouTubeId(youtubeUrls?.videoUrl)}
                   width="100%"
