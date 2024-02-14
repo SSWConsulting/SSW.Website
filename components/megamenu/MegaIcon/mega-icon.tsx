@@ -78,7 +78,7 @@ const MegaIcon: React.FC<MegaIconProps> = ({ icon, iconImg, className }) => {
   return (
     <div>
       <Image
-        className="h-5 w-5"
+        className="size-5"
         src={iconImg}
         alt={iconImg}
         width={20}
