@@ -31,7 +31,7 @@ export const Hero = ({ data, parentField }) => {
               className="relative z-20 mb-8 inline-block px-3 py-1 font-bold tracking-wide"
             >
               {data.tagline}
-              <span className="absolute left-0 top-0 h-full w-full rounded-full bg-current opacity-7"></span>
+              <span className="absolute left-0 top-0 size-full rounded-full bg-current opacity-7"></span>
             </h2>
           )}
           {data.headline && (

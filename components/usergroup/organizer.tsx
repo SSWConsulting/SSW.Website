@@ -25,7 +25,7 @@ export const Organizer = ({
     <div className="flex flex-col gap-5">
       <div className="flex flex-row items-center gap-2">
         <div
-          className="h-17 w-17 overflow-hidden rounded-full"
+          className="size-17 overflow-hidden rounded-full"
           data-tina-field={tinaField(data, "name")}
         >
           <Image
