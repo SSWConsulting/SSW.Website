@@ -33,7 +33,7 @@ export default function OfficePage(
       <Layout menu={data.megamenu}>
         {data.offices.coverImg ? (
           <div className="mx-auto max-w-9xl px-6 sm:px-8">
-            <div className="h-auto w-auto">
+            <div className="size-auto">
               <Image
                 data-tina-field={tinaField(data.offices, "coverImg")}
                 width={1320}
