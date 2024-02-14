@@ -10,8 +10,8 @@ import dayjs from "dayjs";
 import dynamic from "next/dynamic";
 import { Open_Sans } from "next/font/google";
 import { WebSite, WithContext } from "schema-dts";
+import { NavMenuGroup } from "ssw.megamenu";
 import layoutData from "../../content/global/index.json";
-import { NavMenuGroup } from "../../types/megamenu";
 
 export const openSans = Open_Sans({
   variable: "--open-sans-font",
@@ -49,11 +49,6 @@ const LiveStreamBanner = dynamic(
     loading: () => <></>,
     ssr: true,
   }
-);
-
-const MegaMenuLayout = dynamic(
-  () => import("ssw.megamenu").then((mod) => mod.MegaMenuLayout),
-  { loading: () => <></>, ssr: false }
 );
 
 interface LayoutProps {

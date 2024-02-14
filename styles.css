@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  main a:not(.unstyled) {
+  a:not(.unstyled) {
     @apply underline transition duration-300 hover:border-sswRed hover:text-sswRed;
   }
 
