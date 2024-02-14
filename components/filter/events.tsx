@@ -157,7 +157,6 @@ const Event = ({ visible, event }: EventProps) => {
     organizer: sswOrganisation,
   };
 
-  console.log(event);
   const eventSite = event.Url.Url.toLowerCase()?.includes("ssw.com.au")
     ? { name: CITY_MAP[event.City]?.name, url: CITY_MAP[event.City]?.url }
     : { name: event.City, url: event.Url.Url };
@@ -230,7 +229,7 @@ const Event = ({ visible, event }: EventProps) => {
           }}
           className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline"
         />
-        <CustomLink href={event.Url.Url}>
+        <CustomLink href={event.Url.Url} title={event.Url.Description}>
           <p className="prose pt-3">Find out more...</p>
         </CustomLink>
       </Transition>
