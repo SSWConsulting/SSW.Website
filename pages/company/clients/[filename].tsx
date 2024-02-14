@@ -6,6 +6,7 @@ import { BuiltOnAzure } from "../../../components/blocks";
 import { Blocks } from "../../../components/blocks-renderer";
 import { Breadcrumbs } from "../../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../../components/blocks/mdxComponentRenderer";
+import { TechUpgrade } from "../../../components/blocks/techUpgrade";
 import { Layout } from "../../../components/layout";
 import { Section } from "../../../components/util/section";
 import { SEO } from "../../../components/util/seo";
@@ -62,8 +63,11 @@ export default function CompanyPage(
             content={data.caseStudy.content}
           />
         </Section>
+        <Section className="mx-auto w-full  !bg-gray-75 px-8 py-5">
+          <TechUpgrade />
+        </Section>
         <Section>
-          <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+          <BuiltOnAzure data={{ backgroundColor: "transparent" }} />
         </Section>
       </Layout>
     </RecaptchaContext.Provider>
