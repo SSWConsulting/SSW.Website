@@ -10,8 +10,9 @@ import dayjs from "dayjs";
 import dynamic from "next/dynamic";
 import { Open_Sans } from "next/font/google";
 import { WebSite, WithContext } from "schema-dts";
-import { NavMenuGroup } from "ssw.megamenu";
+import { MegaMenuLayout, NavMenuGroup } from "ssw.megamenu";
 import layoutData from "../../content/global/index.json";
+import { CustomLink } from "../customLink";
 
 export const openSans = Open_Sans({
   variable: "--open-sans-font",
@@ -136,7 +137,15 @@ export const Layout = ({ children, menu, className = "" }: LayoutProps) => {
               {(isLive || router.query.liveStream) && (
                 <LiveStreamWidget {...liveStreamProps} isLive={!!isLive} />
               )}
-              <MegaMenuLayout menuBarItems={menu.menuGroups} />
+              <MegaMenuLayout
+                menuBarItems={menu.menuGroups}
+                linkComponent={(props) => (
+                  <CustomLink
+                    {...props}
+                    className={classNames("unstyled", props.className)}
+                  />
+                )}
+              />
             </div>
           </header>
           <main className="grow bg-white">{children}</main>

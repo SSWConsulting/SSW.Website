@@ -1,6 +1,5 @@
-import { availableWidgets } from "ssw.megamenu";
+import { availableWidgets, iconMap } from "ssw.megamenu";
 import type { Collection } from "tinacms";
-import { iconMap } from "../../components/icons/iconMap";
 
 export const megaMenuSchema: Collection = {
   label: "Global - Mega Menu",
