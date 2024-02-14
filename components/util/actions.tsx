@@ -76,7 +76,7 @@ export const Actions = ({
                   {action.label}
                   {action.icon && (
                     <BiRightArrowAlt
-                      className={"-mr-1 ml-1 h-6 w-6 opacity-80"}
+                      className={"-mr-1 ml-1 size-6 opacity-80"}
                     />
                   )}
                 </button>
@@ -101,7 +101,7 @@ export const Actions = ({
               >
                 {action.label}
                 {action.icon && (
-                  <BiRightArrowAlt className={"mx-0 h-6 w-6 opacity-80"} />
+                  <BiRightArrowAlt className={"mx-0 size-6 opacity-80"} />
                 )}
               </CustomLink>
             );

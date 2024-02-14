@@ -50,7 +50,7 @@ export const Whitepaper = ({
 
 export const VideoEmbed = ({ url }) => (
   <div className="relative h-0 overflow-hidden pb-9/16">
-    <div className="absolute h-full w-full">
+    <div className="absolute size-full">
       <YouTubeEmbed id={getYouTubeId(url) || ""} width="100%" height="100%" />
     </div>
   </div>
