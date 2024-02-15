@@ -164,7 +164,7 @@ const Event = ({ visible, event }: EventProps) => {
   return (
     <>
       <Transition
-        className="mb-16 border-b-1 pb-16"
+        className="mb-10 rounded border-1 border-gray-300 bg-white p-8 shadow dark:border-gray-700 dark:bg-gray-800"
         show={!!visible}
         enter="transition duration-100 ease-out"
         enterFrom="transform scale-95 opacity-0"
@@ -229,9 +229,15 @@ const Event = ({ visible, event }: EventProps) => {
           }}
           className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline"
         />
-        <CustomLink href={event.Url.Url} title={event.Url.Description}>
-          <p className="prose pt-3">Find out more...</p>
-        </CustomLink>
+        <div className="mb-1 mt-6 p-0 text-end">
+          <CustomLink
+            href={event.Url.Url}
+            title={event.Url.Description}
+            className="unstyled rounded bg-sswGray px-3 py-2 text-xs font-normal text-white hover:bg-sswDarkGray"
+          >
+            <span className="mt-8 text-sm">Find out more...</span>
+          </CustomLink>
+        </div>
       </Transition>
       <script
         type="application/ld+json"

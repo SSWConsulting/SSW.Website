@@ -226,6 +226,8 @@ module.exports = {
         sswRed: "#cc4141",
         sswDarkRed: "#8e2c2c",
         sswBlack: "#333333",
+        sswGray: "#797979",
+        sswDarkGray: "#666666",
         azure: "#007fff",
         ssw: {
           red: {
