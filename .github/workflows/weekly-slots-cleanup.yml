@@ -1,6 +1,9 @@
 name: Weekly app service slot cleanup
 
 on:
+  pull_request:
+    branches:
+      - main
   schedule:
     # Monday at 12 PM UTC - https://cron.help/#0_12_*_*_MON
     - cron: "0 12 * * MON"
@@ -46,7 +49,7 @@ jobs:
             --name ${{ env.APP_SERVICE_NAME }} `
             --resource-group ${{env.AZURE_RESOURCE_GROUP }} `
             --query '[].name' `
-            --output tsv | `
+            --output tsv | grep -v 'staging' | `
             sed 's/pr-//g')
           echo "slots=$slots" >> $env:GITHUB_OUTPUT
 
