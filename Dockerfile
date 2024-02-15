@@ -6,13 +6,18 @@ RUN corepack enable
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-COPY .yarn ./.yarn
-COPY package.json yarn.lock .yarnrc.yml ./
-RUN yarn install
-
+# Install dependencies based on the preferred package manager
+COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
+RUN \
+  if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
+  elif [ -f package-lock.json ]; then npm ci; \
+  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --frozen-lockfile; \
+  else echo "Lockfile not found." && exit 1; \
+  fi
 
 # Rebuild the source code only when needed
 FROM node:lts-alpine AS builder
+RUN corepack enable
 WORKDIR /app
 
 COPY . .
@@ -25,7 +30,6 @@ COPY --from=deps /app/node_modules ./node_modules
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
-
 
 ENV NODE_OPTIONS --max_old_space_size=8192
 ARG NEXT_PUBLIC_GOOGLE_GTM_ID
@@ -81,7 +85,7 @@ ENV DYNAMICS_CLIENT_ID $DYNAMICS_CLIENT_ID
 ARG DYNAMICS_CLIENT_SECRET
 ENV DYNAMICS_CLIENT_SECRET $DYNAMICS_CLIENT_SECRET
 
-RUN yarn build
+RUN pnpm run build
 
 # Production image, copy all the files and run next
 FROM node:lts-alpine AS runner

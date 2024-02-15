@@ -68,58 +68,56 @@ export const VideoModal = ({
   }, [url, isYouTube, isVimeo]);
 
   return (
-    <div>
-      <div
-        className={classNames(
-          "rounded",
-          overflow ? "clear-both" : "overflow-hidden",
-          className
+    <div
+      className={classNames(
+        "rounded h-full",
+        overflow ? "clear-both" : "overflow-hidden",
+        className
+      )}
+    >
+      <div className="relative mx-auto aspect-video w-full">
+        {!clicked ? (
+          <div className="size-full" onClick={() => setClicked(true)}>
+            {imageSrc && (
+              <>
+                <Image
+                  src={imageSrc || ""}
+                  fill
+                  alt="Video player"
+                  onError={() => {
+                    if (imageSrc.includes("maxresdefault")) {
+                      setImageSrc(
+                        `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
+                      );
+                    }
+                  }}
+                />
+                <PlayArrow />{" "}
+              </>
+            )}
+          </div>
+        ) : (
+          <>
+            {isYouTube && (
+              <YouTubeEmbed
+                className="absolute left-0 top-0"
+                id={videoId || ""}
+                width={"100%"}
+                height={"100%"}
+                autoplay={true}
+              />
+            )}
+            {isVimeo && (
+              <VimeoEmbed
+                className="absolute left-0 top-0"
+                id={videoId || ""}
+                autoplay={true}
+              />
+            )}
+          </>
         )}
-      >
-        <div className="relative mx-auto aspect-video  w-full">
-          {!clicked ? (
-            <div className="h-full w-full " onClick={() => setClicked(true)}>
-              {imageSrc && (
-                <>
-                  <Image
-                    src={imageSrc || ""}
-                    fill
-                    alt="Video player"
-                    onError={() => {
-                      if (imageSrc.includes("maxresdefault")) {
-                        setImageSrc(
-                          `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
-                        );
-                      }
-                    }}
-                  />
-                  <PlayArrow />{" "}
-                </>
-              )}
-            </div>
-          ) : (
-            <>
-              {isYouTube && (
-                <YouTubeEmbed
-                  className="absolute left-0 top-0"
-                  id={videoId || ""}
-                  width={"100%"}
-                  height={"100%"}
-                  autoplay={true}
-                />
-              )}
-              {isVimeo && (
-                <VimeoEmbed
-                  className="absolute left-0 top-0"
-                  id={videoId || ""}
-                  autoplay={true}
-                />
-              )}
-            </>
-          )}
-        </div>
-        {children}
       </div>
+      {children}
     </div>
   );
 };

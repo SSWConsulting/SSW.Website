@@ -12,6 +12,7 @@ type SponsorCardProps = {
 export const SponsorCard = ({ className, urls }: SponsorCardProps) => {
   return (
     <div className={classNames("rounded-md bg-sswRed", className)}>
+      <p className="py-2 text-center text-lg font-medium">Event Sponsors</p>
       <div className="rounded-md bg-white">
         {urls.map((url, index) => (
           <Image
@@ -24,7 +25,6 @@ export const SponsorCard = ({ className, urls }: SponsorCardProps) => {
           />
         ))}
       </div>
-      <p className="py-2 text-center text-lg font-medium">Event Sponsors</p>
     </div>
   );
 };

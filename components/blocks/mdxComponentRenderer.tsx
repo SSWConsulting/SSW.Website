@@ -24,6 +24,7 @@ import { FixedColumns } from "./fixedColumns";
 import { FixedTabsLayout } from "./fixedTabsLayout";
 import { Flag } from "./flag";
 import { GoogleMapsWrapper } from "./googleMapsWrapper";
+import { JotFormEmbed, JotFormEmbedProps } from "./jotFormEmbed";
 import { NewslettersTable } from "./newslettersTable";
 import { RecurringEvent } from "./recurringEvent";
 import { TableLayout, TableLayoutProps } from "./tableLayout";
@@ -172,7 +173,7 @@ export const componentRenderer: Components<{
   };
   MicrosoftPanel: Record<string, never>;
   TestimonialsList: {
-    listOfCategoriesToHide?: string[] | undefined;
+    excludedCategories?: string[] | undefined;
   };
   EventLink: EventLinkProps;
   ExpertBlock: ExpertBlockProps;
@@ -184,6 +185,7 @@ export const componentRenderer: Components<{
     btnText: string;
     btnLink: string;
   };
+  JotFormEmbed: JotFormEmbedProps;
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -219,4 +221,5 @@ export const componentRenderer: Components<{
   YoutubePlaylistBlock: (props) => (
     <YoutubePlaylistBlock {...props.youtubePlaylist} />
   ),
+  JotFormEmbed: (props) => <JotFormEmbed {...props} />,
 };

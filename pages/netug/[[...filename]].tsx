@@ -14,13 +14,14 @@ import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
 import { TestimonialRow } from "../../components/testimonials/TestimonialRow";
+import { ReadMore } from "../../components/usergroup/readMore";
 import { UserGroupHeader } from "../../components/usergroup/sections/header";
 import { SectionRenderer } from "../../components/usergroup/sections/renderer";
 import { TechnologyLogos } from "../../components/usergroup/technologyLogos";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
-import { getTestimonialsByCategories } from "../../helpers/getTestimonials";
+import { getRandomTestimonialsByCategory } from "../../helpers/getTestimonials";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
 import {
@@ -29,6 +30,8 @@ import {
 } from "../../services/server/events";
 
 const ISR_TIME = 60 * 60; // 1 hour;
+
+const PREVIEW_SENTENCE_COUNT = 4; // Max number of sentences to be previewed
 
 export default function NETUGPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -44,7 +47,7 @@ export default function NETUGPage(
 
   if (data?.userGroupPage?.__typename === "UserGroupPageLocationPage") {
     const registerUrl = data.userGroupPage.registerUrl;
-    const sectionsIncludingRegisterUrl = data.userGroupPage.sections.map(
+    const sectionsIncludingRegisterUrl = data.userGroupPage.sections?.map(
       (section) =>
         section.__typename === "UserGroupPageLocationPageSectionsActionSection"
           ? {
@@ -90,33 +93,18 @@ export default function NETUGPage(
                   <h2 className="mt-0 text-4xl font-medium text-sswRed">
                     Event Description
                   </h2>
-                  <div className="whitespace-pre-wrap text-lg">
-                    {props.event?.Abstract}
+                  <div className="whitespace-pre-wrap">
+                    <ReadMore
+                      text={props.event?.Abstract}
+                      previewSentenceCount={PREVIEW_SENTENCE_COUNT}
+                    />
                   </div>
                 </div>
               )}
-              <div className="col-span-1">
-                {props.speaker && (
-                  <>
-                    <h2 className="mt-0 text-4xl font-medium text-sswRed">
-                      Presenter
-                    </h2>
-                    <div className="pb-3">
-                      <Organizer
-                        data={{
-                          profileImg: props.speaker?.PresenterProfileImage?.Url,
-                          name: props.speaker?.Title,
-                          profileLink: props.speaker?.PresenterProfileLink,
-                        }}
-                        stringContent={speakerDescription}
-                      />
-                    </div>
-                  </>
-                )}
-
+              <div className="col-span-1 py-4 md:py-0">
                 <JoinGithub
                   data={data.userGroupPage.joinGithub}
-                  className="mt-10 pt-5"
+                  className="mt-10 pt-5 md:mt-0"
                 />
               </div>
 
@@ -137,6 +125,7 @@ export default function NETUGPage(
                 </div>
                 {data.userGroupPage.whenAndWhere?.googleMapsEmbedUrl && (
                   <div
+                    className="py-4"
                     data-tina-field={tinaField(
                       data.userGroupPage.whenAndWhere,
                       "googleMapsEmbedUrl"
@@ -185,18 +174,24 @@ export default function NETUGPage(
                   ))}
                 </div>
               </div>
-
-              <div className="col-span-1">
-                <h2 className="text-4xl font-medium text-sswRed">Organizer</h2>
-                <Organizer
-                  data={{
-                    profileImg: data.userGroupPage.organizer?.profileImg,
-                    name: data.userGroupPage.organizer?.name,
-                    profileLink: data.userGroupPage.organizer?.nameUrl,
-                    position: data.userGroupPage.organizer?.position,
-                    content: data.userGroupPage.organizer?.bio,
-                  }}
-                />
+              <div className="col-span-1 py-4 md:py-0">
+                {props.speaker && (
+                  <>
+                    <h2 className="text-4xl font-medium text-sswRed">
+                      Presenter
+                    </h2>
+                    <div className="pb-3">
+                      <Organizer
+                        data={{
+                          profileImg: props.speaker?.PresenterProfileImage?.Url,
+                          name: props.speaker?.Title,
+                          profileLink: props.speaker?.PresenterProfileLink,
+                        }}
+                        stringContent={speakerDescription}
+                      />
+                    </div>
+                  </>
+                )}
               </div>
 
               <div
@@ -221,24 +216,43 @@ export default function NETUGPage(
             </section>
           </Container>
 
-          <section className="bg-ssw-black py-8">
-            <Container className="text-center">
-              <h2
-                className="mt-2 pb-3 text-4xl font-semibold text-white"
-                dangerouslySetInnerHTML={{
-                  __html: sanitiseXSS(
-                    data.userGroupPage.aboutHeader,
-                    spanWhitelist
-                  ),
-                }}
-                data-tina-field={tinaField(data.userGroupPage, "aboutHeader")}
-              />
+          <section className="bg-ssw-black py-8 text-left text-white">
+            <Container className="grid-cols-3 gap-10 text-center md:grid">
+              <div className="col-span-2 text-left">
+                <h2
+                  className="mt-2 pb-3 text-4xl font-semibold text-white"
+                  dangerouslySetInnerHTML={{
+                    __html: sanitiseXSS(
+                      data.userGroupPage.aboutHeader,
+                      spanWhitelist
+                    ),
+                  }}
+                  data-tina-field={tinaField(data.userGroupPage, "aboutHeader")}
+                />
 
-              <div
-                className="text-white child-p:text-lg"
-                data-tina-field={tinaField(data.userGroupPage, "aboutContent")}
-              >
-                <TinaMarkdown content={data.userGroupPage.aboutContent} />
+                <div
+                  className="text-white child-p:text-lg"
+                  data-tina-field={tinaField(
+                    data.userGroupPage,
+                    "aboutContent"
+                  )}
+                >
+                  <TinaMarkdown content={data.userGroupPage.aboutContent} />
+                </div>
+              </div>
+              <div className="col-span-1 pl-0 pt-4 md:pl-8 md:pt-0">
+                <h2 className="mt-0 py-4 text-left text-4xl font-medium text-sswRed md:pb-4 md:pt-0">
+                  Organizer
+                </h2>
+                <Organizer
+                  data={{
+                    profileImg: data.userGroupPage.organizer?.profileImg,
+                    name: data.userGroupPage.organizer?.name,
+                    profileLink: data.userGroupPage.organizer?.nameUrl,
+                    position: data.userGroupPage.organizer?.position,
+                    content: data.userGroupPage.organizer?.bio,
+                  }}
+                />
               </div>
             </Container>
           </section>
@@ -253,7 +267,7 @@ export default function NETUGPage(
               <TestimonialRow
                 testimonialsResult={props.testimonialsResult}
                 categories={["User-Group"]}
-                className="child-h2:text-4xl child-h2:font-semibold"
+                className="!md:px-8 !px-0 child-h2:text-4xl child-h2:font-semibold"
                 tagline=""
               />
             </Container>
@@ -317,7 +331,7 @@ export const getStaticProps = async ({ params }) => {
       categories.push(priorityCategory);
     }
 
-    testimonialsResult = await getTestimonialsByCategories(categories);
+    testimonialsResult = await getRandomTestimonialsByCategory(categories);
   }
 
   const currentDate = new Date().toISOString();

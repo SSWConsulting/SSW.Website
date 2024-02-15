@@ -16,7 +16,7 @@ export const PageCard = ({ page, category, pageIndex }) => {
         <div className="shrink-0">
           {page.logo && (
             <Image
-              className="mr-4 aspect-square h-14 w-14 border-1 border-gray-100 md:h-28 md:w-28"
+              className="mr-4 aspect-square size-14 border-1 border-gray-100 md:size-28"
               height={115}
               width={115}
               src={page.logo}

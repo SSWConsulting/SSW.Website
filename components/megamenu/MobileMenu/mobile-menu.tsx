@@ -40,7 +40,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
             onClick={() => onCloseMobileMenu()}
           >
             <span className="sr-only">Close menu</span>
-            <MegaIcon icon="xMark" className="h-6 w-6" />
+            <MegaIcon icon="xMark" className="size-6" />
           </button>
           {selectedMenuItem && (
             <div className="my-auto flex grow items-center pl-2">
@@ -48,7 +48,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                 className="text-sm font-semibold leading-4 text-ssw-black"
                 onClick={() => setSelectedMenuItem(null)}
               >
-                <MegaIcon className="mb-1 inline h-5 w-5" icon="chevronLeft" />
+                <MegaIcon className="mb-1 inline size-5" icon="chevronLeft" />
                 <span className="ml-2">{selectedMenuItem.name}</span>
               </button>
             </div>
@@ -98,7 +98,7 @@ const MenuBarItems: React.FC<{
             >
               {item.name}
               <ChevronRightIcon
-                className="ml-2 inline h-4 w-4 text-ssw-black"
+                className="ml-2 inline size-4 text-ssw-black"
                 aria-hidden="true"
               />
             </button>

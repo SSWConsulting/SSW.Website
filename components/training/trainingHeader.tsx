@@ -106,7 +106,7 @@ const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
   if (isSelected) {
     return (
       <li
-        className="mx-1 mb-4 inline-block h-4 w-4 rounded-3xl bg-sswRed"
+        className="mx-1 mb-4 inline-block size-4 rounded-3xl bg-sswRed"
         aria-label={`Selected: ${label} ${index + 1}`}
         title={`Selected: ${label} ${index + 1}`}
       />
@@ -114,7 +114,7 @@ const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
   }
   return (
     <li
-      className="mx-1 mb-4 inline-block h-4 w-4 rounded-3xl bg-gray-500"
+      className="mx-1 mb-4 inline-block size-4 rounded-3xl bg-gray-500"
       onClick={onClickHandler}
       onKeyDown={onClickHandler}
       value={index}

@@ -164,7 +164,7 @@ interface InputBoxProps {
 const InputBox = ({ value, placeholder, id, onChange }: InputBoxProps) => (
   <div className="mb-3 h-14 sm:mx-1">
     <input
-      className="col-span-3 h-full w-full appearance-none rounded border-1 border-gray-300 px-3 py-2 leading-tight text-gray-700 focus:shadow focus:outline md:col-span-2"
+      className="col-span-3 size-full appearance-none rounded border-1 border-gray-300 px-3 py-2 leading-tight text-gray-700 focus:shadow focus:outline md:col-span-2"
       id={id}
       type="text"
       placeholder={placeholder}
