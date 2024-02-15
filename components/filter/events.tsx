@@ -164,7 +164,7 @@ const Event = ({ visible, event }: EventProps) => {
   return (
     <>
       <Transition
-        className="mb-10 rounded border-1 border-gray-300 bg-white p-8 shadow dark:border-gray-700 dark:bg-gray-800"
+        className="mb-15 border-b-1 border-gray-300 bg-white pb-8  dark:border-gray-700 dark:bg-gray-800"
         show={!!visible}
         enter="transition duration-100 ease-out"
         enterFrom="transform scale-95 opacity-0"
