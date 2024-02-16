@@ -200,29 +200,27 @@ const Event = ({ visible, event }: EventProps) => {
 
             <div>
               {event.Presenter && (
-                <span className="mr-2 inline-block whitespace-nowrap">
-                  <strong>Presenter: </strong>
-                  {event.Presenter}{" "}
-                </span>
+                <EventDescItem
+                  label="Presenter"
+                  linkValue={event?.PresenterProfileUrl?.Url}
+                  value={event.Presenter}
+                />
               )}
               {event.City && CITY_MAP[event.City] && (
-                <span className="mr-2 inline-block whitespace-nowrap">
-                  <strong>Location: </strong>
-                  <CustomLink href={CITY_MAP[event.City]?.url}>
-                    {CITY_MAP[event.City]?.name}
-                  </CustomLink>{" "}
-                </span>
+                <EventDescItem
+                  label="Location"
+                  value={CITY_MAP[event.City]?.name}
+                  linkValue={CITY_MAP[event.City]?.url}
+                />
               )}
               {event.CalendarType && (
-                <span className="mr-2 inline-block whitespace-nowrap">
-                  <strong>Type:</strong> {event.CalendarType}
-                </span>
+                <EventDescItem label="Type" value={event.CalendarType} />
               )}
               {event.Category_f5a9cf4c_x002d_8228_x00 && (
-                <span className="mr-2 inline-block whitespace-nowrap">
-                  <strong>Category: </strong>
-                  {event.Category_f5a9cf4c_x002d_8228_x00}
-                </span>
+                <EventDescItem
+                  label="Category"
+                  value={event.Category_f5a9cf4c_x002d_8228_x00}
+                />
               )}
             </div>
           </div>
@@ -242,5 +240,21 @@ const Event = ({ visible, event }: EventProps) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
       />
     </>
+  );
+};
+
+type EventDescItemProps = { label: string; value: string; linkValue?: string };
+
+const EventDescItem = ({ label, value, linkValue }: EventDescItemProps) => {
+  return (
+    <span className="mr-2 inline-block whitespace-nowrap">
+      <strong>{label}: </strong>
+
+      {linkValue ? (
+        <CustomLink href={linkValue}>{value}</CustomLink>
+      ) : (
+        <>{value}</>
+      )}
+    </span>
   );
 };
