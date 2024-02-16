@@ -38,16 +38,13 @@ export const Carousel = ({ data }) => {
   };
 
   return (
-    <Section
-      className={`${data.showOnMobileDevices ? "flex" : "hidden md:flex"}`}
-      color={data.backgroundColor}
-    >
+    <Section className="flex" color={data.backgroundColor}>
       <Container
         size="custom"
         className="w-full"
         data-tina-field={tinaField(data, carouselBlock.delay)}
       >
-        {isBig && (
+        {(data.showOnMobileDevices || isBig) && (
           /* @ts-expect-error says incorrect but not really */
           <CarouselImplementation
             autoPlay={true}
