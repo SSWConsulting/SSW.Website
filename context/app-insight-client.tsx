@@ -16,6 +16,7 @@ export function AppInsightsProvider({ children }: { children: ReactNode }) {
         extensions: [reactPlugin],
         autoExceptionInstrumented: true,
         loggingLevelTelemetry: 1,
+        loggingLevelConsole: 1,
         extensionConfig: {
           [reactPlugin.identifier]: {},
         },
