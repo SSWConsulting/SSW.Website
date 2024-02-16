@@ -13,6 +13,7 @@ import TrainingInformation from "../training/trainingInformation";
 import { TrainingLearningOutcome } from "../training/trainingLearningOutcome";
 import { Countries } from "../util/constants/country";
 import { CustomDownloadButton } from "./CustomDownloadButton";
+import { Carousel } from "./carousel";
 import { Citation } from "./citation";
 import { ClientLogos } from "./clientLogos";
 import { ContentCard } from "./contentCard";
@@ -39,13 +40,6 @@ import { VerticalListItem } from "./verticalListItem";
 import { YoutubePlaylistBlock, YoutubePlaylistProps } from "./youtubePlaylist";
 
 // Import heavy components dynamically
-const Carousel = dynamic(
-  () => import("./carousel").then((mod) => mod.Carousel),
-  {
-    ssr: true,
-  }
-);
-
 const InternalCarousel = dynamic(
   () => import("./internalCarousel").then((mod) => mod.InternalCarousel),
   { ssr: true }
