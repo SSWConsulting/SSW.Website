@@ -38,28 +38,28 @@ import { VerticalImageLayout } from "./verticalImageLayout";
 import { VerticalListItem } from "./verticalListItem";
 import { YoutubePlaylistBlock, YoutubePlaylistProps } from "./youtubePlaylist";
 
+// Import heavy components dynamically
 const Carousel = dynamic(
   () => import("./carousel").then((mod) => mod.Carousel),
   {
-    ssr: false,
+    ssr: true,
   }
 );
 
 const InternalCarousel = dynamic(
   () => import("./internalCarousel").then((mod) => mod.InternalCarousel),
-  { ssr: false }
+  { ssr: true }
 );
 
 const BookingButton = dynamic(
   () =>
     import("../bookingButton/bookingButton").then((mod) => mod.BookingButton),
-  { ssr: false }
+  { ssr: true }
 );
 
-// Import heavy components dynamically
 const VideoEmbed = dynamic(
   () => import("./videoEmbed").then((mod) => mod.VideoEmbed),
-  { ssr: false }
+  { ssr: true }
 );
 
 export const componentRenderer: Components<{

@@ -5,13 +5,21 @@ import { tinaField } from "tinacms/dist/react";
 
 import type { Template } from "tinacms";
 
-import { Carousel as CarouselImplementation } from "react-responsive-carousel";
-
+import dynamic from "next/dynamic";
+import { useMediaQuery } from "usehooks-ts";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
+const CarouselImplementation = dynamic(
+  () => import("react-responsive-carousel").then((mod) => mod.Carousel),
+  {
+    ssr: true,
+  }
+);
+
 export const Carousel = ({ data }) => {
   const router = useRouter();
+  const isBig = useMediaQuery("(min-width: 640px)");
 
   const openItem = ({ link, openIn }) => {
     if (openIn === "newWindow") {
@@ -39,26 +47,29 @@ export const Carousel = ({ data }) => {
         className="w-full"
         data-tina-field={tinaField(data, carouselBlock.delay)}
       >
-        <CarouselImplementation
-          autoPlay={true}
-          infiniteLoop={true}
-          showArrows={false}
-          showThumbs={false}
-          showStatus={false}
-          stopOnHover={true}
-          interval={data.delay * 1000} // Converting it to Seconds
-          onClickItem={(x) => {
-            if (data.items[x].link) {
-              openItem(data.items[x]);
-            }
-          }}
-          renderIndicator={createCarouselIndicator}
-        >
-          {data.items &&
-            data.items.map((props, index: React.Key) =>
-              createCarouselItemImage(props, index, data)
-            )}
-        </CarouselImplementation>
+        {isBig && (
+          /* @ts-expect-error says incorrect but not really */
+          <CarouselImplementation
+            autoPlay={true}
+            infiniteLoop={true}
+            showArrows={false}
+            showThumbs={false}
+            showStatus={false}
+            stopOnHover={true}
+            interval={data.delay * 1000} // Converting it to Seconds
+            onClickItem={(x) => {
+              if (data.items[x].link) {
+                openItem(data.items[x]);
+              }
+            }}
+            renderIndicator={createCarouselIndicator}
+          >
+            {data.items &&
+              data.items.map((props, index: React.Key) =>
+                createCarouselItemImage(props, index, data)
+              )}
+          </CarouselImplementation>
+        )}
       </Container>
     </Section>
   );
