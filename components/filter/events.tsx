@@ -199,24 +199,30 @@ const Event = ({ visible, event }: EventProps) => {
             />
 
             <div>
+              {event.Presenter && (
+                <>
+                  <strong>Presenter: </strong>
+                  {event.Presenter}{" "}
+                </>
+              )}
+              {event.City && CITY_MAP[event.City] && (
+                <>
+                  <strong>Location: </strong>
+                  <CustomLink href={CITY_MAP[event.City]?.url}>
+                    {CITY_MAP[event.City]?.name}
+                  </CustomLink>{" "}
+                </>
+              )}
               {event.CalendarType && (
                 <>
                   <strong>Type:</strong> {event.CalendarType}{" "}
                 </>
               )}
-              {event.Presenter && (
+              {event.Category_f5a9cf4c_x002d_8228_x00 && (
                 <>
-                  <strong>Presenter: </strong>
-                  {event.Presenter}
+                  <strong>Category: </strong>
+                  {event.Category_f5a9cf4c_x002d_8228_x00}{" "}
                 </>
-              )}
-              {event.City && CITY_MAP[event.City] && (
-                <span className="ml-3">
-                  <strong>Location: </strong>
-                  <CustomLink href={CITY_MAP[event.City]?.url}>
-                    {CITY_MAP[event.City]?.name}
-                  </CustomLink>
-                </span>
               )}
             </div>
           </div>
