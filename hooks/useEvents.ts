@@ -33,14 +33,31 @@ export const useEvents = (events: EventInfo[]) => {
         selected: filterControls.technology,
         setSelected: (value) =>
           setFilterControls((curr) => ({ ...curr, technology: value })),
-        options: options.categories,
+        options: options.categories.map((category) => ({
+          label: category,
+          count: events.filter(
+            (event) =>
+              event.Category_f5a9cf4c_x002d_8228_x00 === category &&
+              (filterControls.format === NO_SELECTION ||
+                options.formats[filterControls.format] === event.CalendarType)
+          ).length,
+        })),
         allText: "All Technology",
       },
       {
         selected: filterControls.format,
         setSelected: (value) =>
           setFilterControls((curr) => ({ ...curr, format: value })),
-        options: options.formats,
+        options: options.formats.map((format) => ({
+          label: format,
+          count: events.filter(
+            (event) =>
+              event.CalendarType === format &&
+              (filterControls.technology === NO_SELECTION ||
+                options.categories[filterControls.technology] ===
+                  event.Category_f5a9cf4c_x002d_8228_x00)
+          ).length,
+        })),
         allText: "All Formats",
       },
     ];

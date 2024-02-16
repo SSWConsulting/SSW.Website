@@ -6,6 +6,7 @@ export const NO_SELECTION = -1;
 interface FilterBlockProps {
   groups: FilterGroupProps[];
   children: React.ReactNode;
+  showCount?: boolean;
   sidebarChildren?: React.ReactNode;
 }
 
@@ -13,6 +14,7 @@ export const FilterBlock = ({
   groups,
   children,
   sidebarChildren,
+  showCount,
 }: FilterBlockProps) => {
   return (
     <div className="mb-10 md:flex md:flex-row">
@@ -24,7 +26,7 @@ export const FilterBlock = ({
         {groups?.length > 0 ? (
           <>
             {groups.map((group, index) => (
-              <FilterGroup key={index} {...group} />
+              <FilterGroup key={index} {...group} showCount={showCount} />
             ))}
           </>
         ) : (
