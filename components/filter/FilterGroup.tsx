@@ -9,10 +9,9 @@ export interface FilterGroupProps {
   setSelected: (index: number) => void;
   allText: string;
   options: {
-    label: string;
-    count?: number;
+    label: string | Readonly<string>;
+    count: number;
   }[];
-  showCount?: boolean;
 }
 
 export const FilterGroup = ({
@@ -20,7 +19,6 @@ export const FilterGroup = ({
   setSelected,
   options,
   allText,
-  showCount,
 }: FilterGroupProps) => {
   return (
     <div className="flex flex-col">
@@ -40,8 +38,7 @@ export const FilterGroup = ({
           setSelected={setSelected}
           className={selected === index ? "font-bold" : ""}
         >
-          {curr.label}{" "}
-          {showCount && (curr.count || curr.count === 0) && <>({curr.count})</>}
+          {curr.label} ({curr.count})
         </FilterOption>
       ))}
       <hr />

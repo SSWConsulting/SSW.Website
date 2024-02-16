@@ -45,7 +45,6 @@ export const EventsFilter = ({
         </div>
       }
       groups={!pastSelected ? filters : pastFilters}
-      showCount
     >
       <Tab.Group>
         <Tab.List className="mb-8 flex flex-row">
