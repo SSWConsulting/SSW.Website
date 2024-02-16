@@ -14,6 +14,8 @@ export function AppInsightsProvider({ children }: { children: ReactNode }) {
       config: {
         connectionString: process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING,
         extensions: [reactPlugin],
+        autoExceptionInstrumented: true,
+        loggingLevelTelemetry: 1,
         extensionConfig: {
           [reactPlugin.identifier]: {},
         },
