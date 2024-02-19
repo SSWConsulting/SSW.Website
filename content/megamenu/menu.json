@@ -147,6 +147,12 @@
               "name": "AI",
               "menuItems": [
                 {
+                  "name": "EagleEye",
+                  "url": "https://www.ssweagleeye.com/",
+                  "description": "AI-driven solution that provides insights and patterns, boosts productivity & data-driven decisions",
+                  "iconImg": "/images/megamenu-icons/EagleEye-Icon.svg"
+                },
+                {
                   "name": "SophieBot",
                   "url": "https://sswsophie.com/sophiebot",
                   "description": "AI-driven solution that delivers a competitive edge through its ability to find data",
@@ -159,7 +165,11 @@
                   "iconImg": "/images/megamenu-icons/SophieHub.svg"
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "menuColumnGroups": [
             {
               "name": "Apps",
               "menuItems": [
