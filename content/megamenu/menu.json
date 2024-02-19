@@ -117,21 +117,6 @@
         {
           "menuColumnGroups": [
             {
-              "name": "Apps",
-              "menuItems": [
-                {
-                  "name": "SSW Rewards",
-                  "url": "/products/rewards",
-                  "description": "Scan SSW QR codes, earn SSW Points, claim rewards, and win prizes",
-                  "iconImg": "/images/megamenu-icons/SSWRewards.svg"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "menuColumnGroups": [
-            {
               "name": "Web",
               "menuItems": [
                 {
@@ -176,7 +161,7 @@
                   "name": "EagleEye",
                   "url": "https://www.ssweagleeye.com/",
                   "description": "AI-Driven solution that provides insights and patterns, boosts productivity & data-driven decisions",
-                  "iconImg": "/images/megamenu-icons/EagleEye-Icon-Color.svg"
+                  "iconImg": "/images/megamenu-icons/EagleEye-Icon.svg"
                 },
                 {
                   "name": "SophieBot",
@@ -189,6 +174,21 @@
                   "url": "https://sswsophie.com",
                   "description": "A Smart Environment System which shows user specific information based on the user",
                   "iconImg": "/images/megamenu-icons/SophieHub.svg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "menuColumnGroups": [
+            {
+              "name": "Apps",
+              "menuItems": [
+                {
+                  "name": "SSW Rewards",
+                  "url": "/products/rewards",
+                  "description": "Scan SSW QR codes, earn SSW Points, claim rewards, and win prizes",
+                  "iconImg": "/images/megamenu-icons/SSWRewards.svg"
                 }
               ]
             }
