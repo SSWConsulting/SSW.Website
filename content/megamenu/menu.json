@@ -117,6 +117,21 @@
         {
           "menuColumnGroups": [
             {
+              "name": "Apps",
+              "menuItems": [
+                {
+                  "name": "SSW Rewards",
+                  "url": "/products/rewards",
+                  "description": "Scan SSW QR codes, earn SSW Points, claim rewards, and win prizes",
+                  "iconImg": "/images/megamenu-icons/SSWRewards.svg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "menuColumnGroups": [
+            {
               "name": "Web",
               "menuItems": [
                 {
