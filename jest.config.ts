@@ -6,18 +6,65 @@
 import type { Config } from "jest";
 import nextJest from "next/jest.js";
 
-// Providing the path to your Next.js app which will enable loading next.config.js and .env files
-const createJestConfig = nextJest({ dir: "./" });
-
-// Any custom config you want to pass to Jest
-const customJestConfig = {
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
-};
-
-// createJestConfig is exported in this way to ensure that next/jest can load the Next.js configuration, which is async
-module.exports = createJestConfig(customJestConfig);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const createJestConfig = nextJest({
+  // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+  dir: "./",
+});
 
 const config: Config = {
+  collectCoverage: true,
+  // on node 14.x coverage provider v8 offers good speed and more or less good report
+  coverageProvider: "v8",
+  collectCoverageFrom: [
+    "**/*.{js,jsx,ts,tsx}",
+    "!**/*.d.ts",
+    "!**/node_modules/**",
+    "!<rootDir>/out/**",
+    "!<rootDir>/.next/**",
+    "!<rootDir>/*.config.js",
+    "!<rootDir>/coverage/**",
+  ],
+  moduleNameMapper: {
+    // Handle CSS imports (with CSS modules)
+    // https://jestjs.io/docs/webpack#mocking-css-modules
+    "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
+
+    // Handle CSS imports (without CSS modules)
+    "^.+\\.(css|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
+
+    // Handle image imports
+    // https://jestjs.io/docs/webpack#handling-static-assets
+    "^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp|svg)$/i":
+      "<rootDir>/__mocks__/fileMock.js",
+
+    // Handle module aliases
+    "^@/components/(.*)$": "<rootDir>/components/$1",
+
+    // Handle @next/font
+    "@next/font/(.*)": "<rootDir>/__mocks__/nextFontMock.js",
+    // Handle next/font
+    "next/font/(.*)": "<rootDir>/__mocks__/nextFontMock.js",
+    // Disable server-only
+    "server-only": "<rootDir>/__mocks__/empty.js",
+  },
+  // Add more setup options before each test is run
+  // setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  testPathIgnorePatterns: [
+    "<rootDir>/node_modules/",
+    "<rootDir>/.next/",
+    "<rootDir>/ui-tests",
+  ],
+  testEnvironment: "jsdom",
+  transform: {
+    // Use babel-jest to transpile tests with the next/babel preset
+    // https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object
+    "^.+\\.(js|jsx|ts|tsx)$": ["babel-jest", { presets: ["next/babel"] }],
+  },
+  transformIgnorePatterns: [
+    "/node_modules/",
+    "^.+\\.module\\.(css|sass|scss)$",
+  ],
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -31,7 +78,6 @@ const config: Config = {
   clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
-  collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   // collectCoverageFrom: undefined,
@@ -43,9 +89,6 @@ const config: Config = {
   // coveragePathIgnorePatterns: [
   //   "\\\\node_modules\\\\"
   // ],
-
-  // Indicates which provider should be used to instrument code for coverage
-  coverageProvider: "v8",
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -101,11 +144,6 @@ const config: Config = {
   //   "node"
   // ],
 
-  // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-  moduleNameMapper: {
-    "^@/components/(.*)$": "<rootDir>/components/$1",
-  },
-
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
 
@@ -159,9 +197,6 @@ const config: Config = {
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
   // snapshotSerializers: [],
 
-  // The test environment that will be used for testing
-  testEnvironment: "jsdom",
-
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
 
@@ -172,11 +207,6 @@ const config: Config = {
   // testMatch: [
   //   "**/__tests__/**/*.[jt]s?(x)",
   //   "**/?(*.)+(spec|test).[tj]s?(x)"
-  // ],
-
-  // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  // testPathIgnorePatterns: [
-  //   "\\\\node_modules\\\\"
   // ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
