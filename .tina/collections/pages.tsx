@@ -12,7 +12,7 @@ export const pagesSchema: Collection = {
   ui: {
     router: ({ document }) => {
       if (document._sys.filename === "home") {
-        return `/`;
+        return `/app-test`;
       }
       return `/${document._sys.filename}`;
     },
