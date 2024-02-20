@@ -11,7 +11,7 @@ import { Section } from "../components/util/section";
 import { SEO } from "../components/util/seo";
 import { removeExtension } from "../services/client/utils.service";
 
-const tinaField = (json: any, str: string) => {
+const tinaField = (json: unknown, str: string) => {
   return str;
 };
 
