@@ -1,5 +1,4 @@
 import { InferGetStaticPropsType } from "next";
-import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../.tina/__generated__/client";
 import { pageBlocks } from "../components/blocks";
@@ -12,15 +11,14 @@ import { Section } from "../components/util/section";
 import { SEO } from "../components/util/seo";
 import { removeExtension } from "../services/client/utils.service";
 
-export default function HomePage(
-  props: InferGetStaticPropsType<typeof getStaticProps>
-) {
-  const { data } = useTina({
-    data: props.data,
-    query: props.query,
-    variables: props.variables,
-  });
+const tinaField = (json: any, str: string) => {
+  return str;
+};
 
+export default function HomePage({
+  data,
+  ...props
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   // Here due to components attempting to access pageBlock items before
   // they are initialised
   if (!pageBlocks) {
