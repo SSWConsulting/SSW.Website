@@ -57,6 +57,12 @@
       "url": "https://www.sswdory.com/",
       "description": "Identify checked-out SharePoint pages or stale GitHub pull requests.",
       "logo": "/images/products/SSW-Dory-v2.png"
+    },
+    {
+      "name": "EagleEye",
+      "url": "https://www.ssweagleeye.com/",
+      "description": "AI-driven solution that provides insights and patterns, boosts productivity & data-driven decisions",
+      "logo": "/images/products/EagleEye-Icon-Color.png"
     }
   ]
 }
