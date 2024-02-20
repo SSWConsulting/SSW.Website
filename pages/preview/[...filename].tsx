@@ -1,22 +1,31 @@
 import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { client } from "../.tina/__generated__/client";
-import { pageBlocks } from "../components/blocks";
-import { Blocks } from "../components/blocks-renderer";
-import { Breadcrumbs } from "../components/blocks/breadcrumbs";
-import { componentRenderer } from "../components/blocks/mdxComponentRenderer";
-import { Layout } from "../components/layout";
-import { Container } from "../components/util/container";
-import { Section } from "../components/util/section";
-import { SEO } from "../components/util/seo";
-import { BasePage } from "../page-components/base";
-import { removeExtension } from "../services/client/utils.service";
+import { client } from "../../.tina/__generated__/client";
+import { pageBlocks } from "../../components/blocks";
+import { Blocks } from "../../components/blocks-renderer";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import { Layout } from "../../components/layout";
+import { Container } from "../../components/util/container";
+import { Section } from "../../components/util/section";
+import { SEO } from "../../components/util/seo";
+import { BasePage } from "../../page-components/base";
+import { removeExtension } from "../../services/client/utils.service";
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
-  return <BasePage data={props.data} variables={props.variables} />;
+  const { data } = useTina({
+    data: props.data,
+    query: props.query,
+    variables: props.variables,
+  });
+
+  // Here due to components attempting to access pageBlock items before
+  // they are initialised
+
+  return <BasePage data={data} variables={props.variables} />;
 }
 
 export const getStaticProps = async ({ params }) => {

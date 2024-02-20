@@ -11,10 +11,7 @@ export const pagesSchema: Collection = {
   path: "content/pages",
   ui: {
     router: ({ document }) => {
-      if (document._sys.filename === "home") {
-        return `/app-test`;
-      }
-      return `/${document._sys.filename}`;
+      return `/preview/${document._sys.filename}`;
     },
   },
   fields: [
