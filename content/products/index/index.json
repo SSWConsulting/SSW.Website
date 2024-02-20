@@ -41,12 +41,6 @@
       "logo": "/images/products/thumb-CodeAuditor.jpg"
     },
     {
-      "name": "LinkAuditor",
-      "url": "https://sswlinkauditor.com/",
-      "description": "Automatically locate broken links on your websites.",
-      "logo": "/images/products/thumb-LinkAuditor.jpg"
-    },
-    {
       "name": "SmashingBarrier",
       "url": "https://smashingbarrier.com/",
       "description": "SmashingBarrier is an user control that integrates with web applications, allowing users to send feature requests or issue reports directly into related team projects.",
