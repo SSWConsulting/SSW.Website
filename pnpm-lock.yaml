@@ -54,8 +54,8 @@ dependencies:
     specifier: ^1.11.10
     version: 1.11.10
   dotenv:
-    specifier: ^16.3.1
-    version: 16.3.1
+    specifier: ^16.4.4
+    version: 16.4.4
   eslint-config-next:
     specifier: 14.1.0
     version: 14.1.0(eslint@8.56.0)(typescript@5.3.3)
@@ -4920,7 +4920,7 @@ packages:
       clipanion: 3.2.1(typanion@3.13.0)
       cors: 2.8.5
       crypto-js: 4.2.0
-      dotenv: 16.3.1
+      dotenv: 16.4.4
       esbuild: 0.18.20
       express: 4.18.2
       fast-glob: 3.3.1
@@ -10064,8 +10064,8 @@ packages:
       tslib: 2.6.2
     dev: true
 
-  /dotenv@16.3.1:
-    resolution: {integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==}
+  /dotenv@16.4.4:
+    resolution: {integrity: sha512-XvPXc8XAQThSjAbY6cQ/9PcBXmFoWuw1sQ3b8HqUCR6ziGXjkTi//kB9SWa2UwqlgdAIuRqAa/9hVljzPehbYg==}
     engines: {node: '>=12'}
 
   /downshift@6.1.12(react@17.0.2):
