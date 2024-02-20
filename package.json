@@ -30,7 +30,7 @@
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-tailwindcss": "^3.14.2",
     "next-sitemap": "^4.2.3",
-    "playwright": "1.40.1",
+    "playwright": "1.41.2",
     "postcss": "^8.4.35",
     "postcss-import": "^15.1.0",
     "postcss-nesting": "^12.0.2",
