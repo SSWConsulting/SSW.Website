@@ -7,6 +7,7 @@ module.exports = {
   content: [
     "./components/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
+    "node_modules/ssw.megamenu/**/*.js",
   ],
   // This needs to be set to `class` or it will use OS settings https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
   darkMode: "class",

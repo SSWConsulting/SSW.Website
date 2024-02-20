@@ -160,11 +160,15 @@ export const carouselBlockSchema: Template = {
           type: "string",
           label: "URL",
           name: carouselBlock.items.link,
+          description:
+            "If link contains ssw.com.au, you can skip the full URL and just use the path. e.g. /services",
         },
         {
           type: "string",
           label: "Open in",
           name: "openIn",
+          description:
+            "If it is external link, please select 'New window' option.",
           options: [
             { label: "Same window", value: "sameWindow" },
             { label: "Modal", value: "modal" },
