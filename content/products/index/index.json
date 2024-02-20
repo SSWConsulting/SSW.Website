@@ -11,6 +11,12 @@
       "logo": "/images/products/thumb-SugarLearning.jpg"
     },
     {
+      "name": "EagleEye",
+      "url": "https://www.ssweagleeye.com/",
+      "description": "AI-driven solution that provides insights and patterns, boosts productivity & data-driven decisions",
+      "logo": "/images/products/EagleEye-Icon-Color-With-Space.png"
+    },
+    {
       "name": "TimePro",
       "url": "https://sswtimepro.com/",
       "description": "TimePro offers everything an enterprise needs, such as invoicing, receipting, and time sheeting.",
@@ -33,12 +39,6 @@
       "url": "https://codeauditor.com/",
       "description": "Scan any website for broken links and HTML Issues.",
       "logo": "/images/products/thumb-CodeAuditor.jpg"
-    },
-    {
-      "name": "LinkAuditor",
-      "url": "https://sswlinkauditor.com/",
-      "description": "Automatically locate broken links on your websites.",
-      "logo": "/images/products/thumb-LinkAuditor.jpg"
     },
     {
       "name": "SmashingBarrier",

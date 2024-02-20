@@ -14,6 +14,14 @@ export function AppInsightsProvider({ children }: { children: ReactNode }) {
       config: {
         connectionString: process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING,
         extensions: [reactPlugin],
+        autoExceptionInstrumented: true,
+        autoTrackPageVisitTime: true,
+        enableRequestHeaderTracking: true,
+        enableResponseHeaderTracking: true,
+        enableAjaxErrorStatusText: true,
+        distributedTracingMode: 0,
+        loggingLevelTelemetry: 1,
+        loggingLevelConsole: 1,
         extensionConfig: {
           [reactPlugin.identifier]: {},
         },
