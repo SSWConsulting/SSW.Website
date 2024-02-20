@@ -7,213 +7,215 @@ settings:
 overrides:
   final-form: 4.20.1
 
-dependencies:
-  '@azure/msal-node':
-    specifier: ^2.3.0
-    version: 2.3.0
-  '@fortawesome/fontawesome-svg-core':
-    specifier: ^6.5.1
-    version: 6.5.1
-  '@headlessui/react':
-    specifier: ^1.7.17
-    version: 1.7.17(react-dom@18.2.0)(react@18.2.0)
-  '@headlessui/tailwindcss':
-    specifier: ^0.2.0
-    version: 0.2.0(tailwindcss@3.4.1)
-  '@heroicons/react':
-    specifier: ^2.1.1
-    version: 2.1.1(react@18.2.0)
-  '@microsoft/applicationinsights-react-js':
-    specifier: 17.0.3
-    version: 17.0.3(history@5.3.0)(react@18.2.0)(tslib@2.6.2)
-  '@microsoft/applicationinsights-web':
-    specifier: 3.0.7
-    version: 3.0.7(tslib@2.6.2)
-  '@next/bundle-analyzer':
-    specifier: ^14.0.4
-    version: 14.0.4
-  '@tailwindcss/typography':
-    specifier: ^0.5.10
-    version: 0.5.10(tailwindcss@3.4.1)
-  animate-css-grid:
-    specifier: ^1.5.1
-    version: 1.5.1
-  aos:
-    specifier: ^2.3.4
-    version: 2.3.4
-  applicationinsights:
-    specifier: ^2.9.1
-    version: 2.9.1
-  axios:
-    specifier: ^1.6.7
-    version: 1.6.7
-  classnames:
-    specifier: ^2.3.2
-    version: 2.3.2
-  dayjs:
-    specifier: ^1.11.10
-    version: 1.11.10
-  dotenv:
-    specifier: ^16.4.4
-    version: 16.4.4
-  eslint-config-next:
-    specifier: 14.1.0
-    version: 14.1.0(eslint@8.56.0)(typescript@5.3.3)
-  formik:
-    specifier: ^2.4.5
-    version: 2.4.5(react@18.2.0)
-  keyboardjs:
-    specifier: ^2.7.0
-    version: 2.7.0
-  next:
-    specifier: 14.0.4
-    version: 14.0.4(@babel/core@7.23.2)(@opentelemetry/api@1.6.0)(react-dom@18.2.0)(react@18.2.0)
-  next-seo:
-    specifier: ^6.4.0
-    version: 6.4.0(next@14.0.4)(react-dom@18.2.0)(react@18.2.0)
-  nextjs-breadcrumbs2:
-    specifier: ^2.0.4
-    version: 2.0.4(next@14.0.4)(react@18.2.0)
-  node-cache:
-    specifier: ^5.1.2
-    version: 5.1.2
-  react:
-    specifier: 18.2.0
-    version: 18.2.0
-  react-device-detect:
-    specifier: ^2.2.3
-    version: 2.2.3(react-dom@18.2.0)(react@18.2.0)
-  react-dom:
-    specifier: 18.2.0
-    version: 18.2.0(react@18.2.0)
-  react-google-recaptcha:
-    specifier: ^3.1.0
-    version: 3.1.0(react@18.2.0)
-  react-hotkeys-hook:
-    specifier: ^4.4.4
-    version: 4.4.4(react-dom@18.2.0)(react@18.2.0)
-  react-icons:
-    specifier: ^5.0.1
-    version: 5.0.1(react@18.2.0)
-  react-jotform:
-    specifier: ^1.0.2
-    version: 1.0.2(react-dom@18.2.0)(react@18.2.0)
-  react-responsive-carousel:
-    specifier: ^3.2.23
-    version: 3.2.23
-  react-responsive-modal:
-    specifier: ^6.4.2
-    version: 6.4.2(react-dom@18.2.0)(react@18.2.0)
-  react-toastify:
-    specifier: ^10.0.4
-    version: 10.0.4(react-dom@18.2.0)(react@18.2.0)
-  react-tooltip:
-    specifier: ^5.25.1
-    version: 5.25.1(react-dom@18.2.0)(react@18.2.0)
-  react-use:
-    specifier: ^17.5.0
-    version: 17.5.0(react-dom@18.2.0)(react@18.2.0)
-  schema-dts:
-    specifier: ^1.1.2
-    version: 1.1.2(typescript@5.3.3)
-  sharp:
-    specifier: ^0.33.2
-    version: 0.33.2
-  ssw.megamenu:
-    specifier: ^4.2.2
-    version: 4.2.2(react-dom@18.2.0)(react@18.2.0)
-  tailwind-merge:
-    specifier: ^2.2.1
-    version: 2.2.1
-  tailwindcss:
-    specifier: 3.4.1
-    version: 3.4.1
-  tailwindcss-gradients:
-    specifier: ^3.0.0
-    version: 3.0.0
-  tinacms:
-    specifier: ^1.5.28
-    version: 1.5.28(@babel/core@7.23.2)(@types/react@18.2.55)(react-dom@18.2.0)(react@18.2.0)
-  typescript:
-    specifier: ^5.3.3
-    version: 5.3.3
-  usehooks-ts:
-    specifier: ^2.9.5
-    version: 2.9.5(react-dom@18.2.0)(react@18.2.0)
-  xss:
-    specifier: ^1.0.14
-    version: 1.0.14
-  yup:
-    specifier: ^0.32.11
-    version: 0.32.11
+importers:
 
-devDependencies:
-  '@next/eslint-plugin-next':
-    specifier: 14.1.0
-    version: 14.1.0
-  '@playwright/test':
-    specifier: 1.40.1
-    version: 1.40.1
-  '@svgr/webpack':
-    specifier: ^8.1.0
-    version: 8.1.0(typescript@5.3.3)
-  '@tinacms/cli':
-    specifier: ^1.5.39
-    version: 1.5.39(@babel/core@7.23.2)(@types/node@20.8.7)(@types/react@18.2.55)(react-dom@18.2.0)(react@18.2.0)
-  '@types/js-cookie':
-    specifier: ^3.0.6
-    version: 3.0.6
-  '@types/node':
-    specifier: ^20.8.7
-    version: 20.8.7
-  '@types/react':
-    specifier: ^18.2.55
-    version: 18.2.55
-  '@typescript-eslint/eslint-plugin':
-    specifier: ^6.13.2
-    version: 6.13.2(@typescript-eslint/parser@6.18.0)(eslint@8.56.0)(typescript@5.3.3)
-  '@typescript-eslint/parser':
-    specifier: ^6.18.0
-    version: 6.18.0(eslint@8.56.0)(typescript@5.3.3)
-  autoprefixer:
-    specifier: ^10.4.17
-    version: 10.4.17(postcss@8.4.35)
-  eslint:
-    specifier: ^8.56.0
-    version: 8.56.0
-  eslint-config-prettier:
-    specifier: ^9.1.0
-    version: 9.1.0(eslint@8.56.0)
-  eslint-plugin-prettier:
-    specifier: ^5.0.0
-    version: 5.0.1(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1)
-  eslint-plugin-tailwindcss:
-    specifier: ^3.14.2
-    version: 3.14.2(tailwindcss@3.4.1)
-  next-sitemap:
-    specifier: ^4.2.3
-    version: 4.2.3(next@14.0.4)
-  playwright:
-    specifier: 1.41.2
-    version: 1.41.2
-  postcss:
-    specifier: ^8.4.35
-    version: 8.4.35
-  postcss-import:
-    specifier: ^15.1.0
-    version: 15.1.0(postcss@8.4.35)
-  postcss-nesting:
-    specifier: ^12.0.2
-    version: 12.0.2(postcss@8.4.35)
-  prettier:
-    specifier: 3.1.1
-    version: 3.1.1
-  prettier-plugin-tailwindcss:
-    specifier: ^0.5.11
-    version: 0.5.11(prettier@3.1.1)
-  source-map-explorer:
-    specifier: ^2.5.3
-    version: 2.5.3
+  .:
+    dependencies:
+      '@azure/msal-node':
+        specifier: ^2.3.0
+        version: 2.3.0
+      '@fortawesome/fontawesome-svg-core':
+        specifier: ^6.5.1
+        version: 6.5.1
+      '@headlessui/react':
+        specifier: ^1.7.17
+        version: 1.7.17(react-dom@18.2.0)(react@18.2.0)
+      '@headlessui/tailwindcss':
+        specifier: ^0.2.0
+        version: 0.2.0(tailwindcss@3.4.1)
+      '@heroicons/react':
+        specifier: ^2.1.1
+        version: 2.1.1(react@18.2.0)
+      '@microsoft/applicationinsights-react-js':
+        specifier: 17.0.3
+        version: 17.0.3(history@5.3.0)(react@18.2.0)(tslib@2.6.2)
+      '@microsoft/applicationinsights-web':
+        specifier: 3.0.7
+        version: 3.0.7(tslib@2.6.2)
+      '@next/bundle-analyzer':
+        specifier: ^14.0.4
+        version: 14.0.4
+      '@tailwindcss/typography':
+        specifier: ^0.5.10
+        version: 0.5.10(tailwindcss@3.4.1)
+      animate-css-grid:
+        specifier: ^1.5.1
+        version: 1.5.1
+      aos:
+        specifier: ^2.3.4
+        version: 2.3.4
+      applicationinsights:
+        specifier: ^2.9.1
+        version: 2.9.1
+      axios:
+        specifier: ^1.6.7
+        version: 1.6.7
+      classnames:
+        specifier: ^2.3.2
+        version: 2.3.2
+      dayjs:
+        specifier: ^1.11.10
+        version: 1.11.10
+      dotenv:
+        specifier: ^16.4.4
+        version: 16.4.4
+      eslint-config-next:
+        specifier: 14.1.0
+        version: 14.1.0(eslint@8.56.0)(typescript@5.3.3)
+      formik:
+        specifier: ^2.4.5
+        version: 2.4.5(react@18.2.0)
+      keyboardjs:
+        specifier: ^2.7.0
+        version: 2.7.0
+      next:
+        specifier: 14.0.4
+        version: 14.0.4(@babel/core@7.23.2)(@opentelemetry/api@1.6.0)(react-dom@18.2.0)(react@18.2.0)
+      next-seo:
+        specifier: ^6.4.0
+        version: 6.4.0(next@14.0.4)(react-dom@18.2.0)(react@18.2.0)
+      nextjs-breadcrumbs2:
+        specifier: ^2.0.4
+        version: 2.0.4(next@14.0.4)(react@18.2.0)
+      node-cache:
+        specifier: ^5.1.2
+        version: 5.1.2
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-device-detect:
+        specifier: ^2.2.3
+        version: 2.2.3(react-dom@18.2.0)(react@18.2.0)
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+      react-google-recaptcha:
+        specifier: ^3.1.0
+        version: 3.1.0(react@18.2.0)
+      react-hotkeys-hook:
+        specifier: ^4.4.4
+        version: 4.4.4(react-dom@18.2.0)(react@18.2.0)
+      react-icons:
+        specifier: ^5.0.1
+        version: 5.0.1(react@18.2.0)
+      react-jotform:
+        specifier: ^1.0.2
+        version: 1.0.2(react-dom@18.2.0)(react@18.2.0)
+      react-responsive-carousel:
+        specifier: ^3.2.23
+        version: 3.2.23
+      react-responsive-modal:
+        specifier: ^6.4.2
+        version: 6.4.2(react-dom@18.2.0)(react@18.2.0)
+      react-toastify:
+        specifier: ^10.0.4
+        version: 10.0.4(react-dom@18.2.0)(react@18.2.0)
+      react-tooltip:
+        specifier: ^5.25.1
+        version: 5.25.1(react-dom@18.2.0)(react@18.2.0)
+      react-use:
+        specifier: ^17.5.0
+        version: 17.5.0(react-dom@18.2.0)(react@18.2.0)
+      schema-dts:
+        specifier: ^1.1.2
+        version: 1.1.2(typescript@5.3.3)
+      sharp:
+        specifier: ^0.33.2
+        version: 0.33.2
+      ssw.megamenu:
+        specifier: ^4.2.2
+        version: 4.2.2(react-dom@18.2.0)(react@18.2.0)
+      tailwind-merge:
+        specifier: ^2.2.1
+        version: 2.2.1
+      tailwindcss:
+        specifier: 3.4.1
+        version: 3.4.1
+      tailwindcss-gradients:
+        specifier: ^3.0.0
+        version: 3.0.0
+      tinacms:
+        specifier: ^1.5.28
+        version: 1.5.28(@babel/core@7.23.2)(@types/react@18.2.55)(react-dom@18.2.0)(react@18.2.0)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.3.3
+      usehooks-ts:
+        specifier: ^2.9.5
+        version: 2.9.5(react-dom@18.2.0)(react@18.2.0)
+      xss:
+        specifier: ^1.0.14
+        version: 1.0.14
+      yup:
+        specifier: ^0.32.11
+        version: 0.32.11
+    devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: 14.1.0
+        version: 14.1.0
+      '@playwright/test':
+        specifier: 1.41.2
+        version: 1.41.2
+      '@svgr/webpack':
+        specifier: ^8.1.0
+        version: 8.1.0(typescript@5.3.3)
+      '@tinacms/cli':
+        specifier: ^1.5.39
+        version: 1.5.39(@babel/core@7.23.2)(@types/node@20.8.7)(@types/react@18.2.55)(react-dom@18.2.0)(react@18.2.0)
+      '@types/js-cookie':
+        specifier: ^3.0.6
+        version: 3.0.6
+      '@types/node':
+        specifier: ^20.8.7
+        version: 20.8.7
+      '@types/react':
+        specifier: ^18.2.55
+        version: 18.2.55
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^6.13.2
+        version: 6.13.2(@typescript-eslint/parser@6.18.0)(eslint@8.56.0)(typescript@5.3.3)
+      '@typescript-eslint/parser':
+        specifier: ^6.18.0
+        version: 6.18.0(eslint@8.56.0)(typescript@5.3.3)
+      autoprefixer:
+        specifier: ^10.4.17
+        version: 10.4.17(postcss@8.4.35)
+      eslint:
+        specifier: ^8.56.0
+        version: 8.56.0
+      eslint-config-prettier:
+        specifier: ^9.1.0
+        version: 9.1.0(eslint@8.56.0)
+      eslint-plugin-prettier:
+        specifier: ^5.0.0
+        version: 5.0.1(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.1.1)
+      eslint-plugin-tailwindcss:
+        specifier: ^3.14.2
+        version: 3.14.2(tailwindcss@3.4.1)
+      next-sitemap:
+        specifier: ^4.2.3
+        version: 4.2.3(next@14.0.4)
+      playwright:
+        specifier: 1.41.2
+        version: 1.41.2
+      postcss:
+        specifier: ^8.4.35
+        version: 8.4.35
+      postcss-import:
+        specifier: ^15.1.0
+        version: 15.1.0(postcss@8.4.35)
+      postcss-nesting:
+        specifier: ^12.0.2
+        version: 12.0.2(postcss@8.4.35)
+      prettier:
+        specifier: 3.1.1
+        version: 3.1.1
+      prettier-plugin-tailwindcss:
+        specifier: ^0.5.11
+        version: 0.5.11(prettier@3.1.1)
+      source-map-explorer:
+        specifier: ^2.5.3
+        version: 2.5.3
 
 packages:
 
@@ -3256,12 +3258,12 @@ packages:
       tslib: 2.6.2
     dev: true
 
-  /@playwright/test@1.40.1:
-    resolution: {integrity: sha512-EaaawMTOeEItCRvfmkI9v6rBkF1svM8wjl/YPRrg2N2Wmp+4qJYkWtJsbew1szfKKDm6fPLy4YAanBhIlf9dWw==}
+  /@playwright/test@1.41.2:
+    resolution: {integrity: sha512-qQB9h7KbibJzrDpkXkYvsmiDJK14FULCCZgEcoe2AvFAS64oCirWTwzTlAYEbKaRxWs5TFesE1Na6izMv3HfGg==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
-      playwright: 1.40.1
+      playwright: 1.41.2
     dev: true
 
   /@polka/url@1.0.0-next.23:
@@ -13646,26 +13648,10 @@ packages:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
     engines: {node: '>= 6'}
 
-  /playwright-core@1.40.1:
-    resolution: {integrity: sha512-+hkOycxPiV534c4HhpfX6yrlawqVUzITRKwHAmYfmsVreltEl6fAZJ3DPfLMOODw0H3s1Itd6MDCWmP1fl/QvQ==}
-    engines: {node: '>=16'}
-    hasBin: true
-    dev: true
-
   /playwright-core@1.41.2:
     resolution: {integrity: sha512-VaTvwCA4Y8kxEe+kfm2+uUUw5Lubf38RxF7FpBxLPmGe5sdNkSg5e3ChEigaGrX7qdqT3pt2m/98LiyvU2x6CA==}
     engines: {node: '>=16'}
     hasBin: true
-    dev: true
-
-  /playwright@1.40.1:
-    resolution: {integrity: sha512-2eHI7IioIpQ0bS1Ovg/HszsN/XKNwEG1kbzSDDmADpclKc7CyqkHw7Mg2JCz/bbCxg25QUPcjksoMW7JcIFQmw==}
-    engines: {node: '>=16'}
-    hasBin: true
-    dependencies:
-      playwright-core: 1.40.1
-    optionalDependencies:
-      fsevents: 2.3.2
     dev: true
 
   /playwright@1.41.2:
