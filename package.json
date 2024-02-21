@@ -13,7 +13,8 @@
     "lint": "eslint . --ext .ts,.tsx",
     "lint-fix": "eslint . --fix --ext .ts,.tsx",
     "analyze": "source-map-explorer '.next/static/chunks/*.js'",
-    "test": "jest --ci --json --coverage --testLocationInResults --outputFile=report.json"
+    "test": "jest",
+    "test-and-coverage": "jest --ci --json --coverage --testLocationInResults"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "14.1.0",

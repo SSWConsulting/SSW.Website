@@ -13,7 +13,7 @@ const createJestConfig = nextJest({
 });
 
 const config: Config = {
-  collectCoverage: true,
+  collectCoverage: false,
   // on node 14.x coverage provider v8 offers good speed and more or less good report
   coverageProvider: "v8",
   collectCoverageFrom: [
