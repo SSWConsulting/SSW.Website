@@ -226,8 +226,6 @@ module.exports = {
         sswRed: "#cc4141",
         sswDarkRed: "#8e2c2c",
         sswBlack: "#333333",
-        sswGray: "#797979",
-        sswDarkGray: "#666666",
         azure: "#007fff",
         ssw: {
           red: {
@@ -236,7 +234,7 @@ module.exports = {
           },
           darkRed: "#8e2c2c",
           black: "#333333",
-          gray: "#797979",
+          gray: { DEFAULT: "#797979", dark: "#666666" },
         },
       },
       typography: (theme) => ({

@@ -233,7 +233,7 @@ const Event = ({ visible, event }: EventProps) => {
           <CustomLink
             href={event.Url.Url}
             title={event.Url.Description}
-            className="unstyled rounded bg-sswGray px-3 py-2 text-xs font-normal text-white hover:bg-sswDarkGray"
+            className="unstyled rounded bg-ssw-gray px-3 py-2 text-xs font-normal text-white hover:bg-ssw-gray-dark"
           >
             <span className="mt-8 text-sm">Find out more...</span>
           </CustomLink>
