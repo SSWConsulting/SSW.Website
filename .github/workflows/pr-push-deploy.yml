@@ -15,6 +15,21 @@ defaults:
     shell: pwsh
 
 jobs:
+  coverage:
+    name: Run coverage
+    runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      pull-requests: write
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+      - name: Running Test
+        run: pnpm test
+
   build:
     name: Build and upload artifacts
     uses: ./.github/workflows/template-build.yml
