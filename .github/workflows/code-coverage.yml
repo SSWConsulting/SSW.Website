@@ -20,4 +20,3 @@ jobs:
           package-manager: pnpm
           test-script: pnpm test
           working-directory: /
-          coverage-file: "./coverage/coverage-final.json"
