@@ -25,5 +25,4 @@ jobs:
           test-script: pnpm test
           coverage-file: report.json
           base-coverage-file: report.json
-          working-directory: /
           skip-step: none
