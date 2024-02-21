@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v3
@@ -30,6 +31,13 @@ jobs:
 
       - name: Run Tests & Coverage
         run: pnpm test-and-coverage --outputFile=pr-coverage/report.json
+
+      - name: Upload Coverage Report to PR
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          coverage-file: ./pr-coverage/report.json
+          base-coverage-file: ./base-coverage/report.json
 
   build:
     name: Build and upload artifacts
@@ -90,20 +98,6 @@ jobs:
     with:
       deploy_url: ${{ needs.pr-deploy.outputs.url }}
       tests_to_run: "images seo-pr"
-
-  pr-coverage-report:
-    name: Generate PR Coverage Report
-    runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-    steps:
-      - uses: actions/checkout@v3
-      - name: Upload Coverage Report to PR
-        uses: ArtiomTr/jest-coverage-report-action@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          coverage-file: ./pr-coverage/report.json
-          base-coverage-file: ./base-coverage/report.json
 
   pagespeedInsights:
     name: Run PageSpeed Insights
