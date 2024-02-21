@@ -15,12 +15,10 @@ defaults:
     shell: pwsh
 
 jobs:
-  coverage:
-    name: Run coverage
+  run-tests-and-coverage:
+    name: Run Tests and Coverage
     runs-on: ubuntu-latest
     permissions:
-      checks: write
-      pull-requests: write
       contents: write
     steps:
       - uses: actions/checkout@v4
