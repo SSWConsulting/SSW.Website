@@ -1,29 +1,25 @@
 // TODO - Migrate to ticketForm.tsx https://github.com/SSWConsulting/SSW.Website/issues/1475
 
-import classNames from "classnames";
+import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";
 
 type MeetupFormProps = {
-  className?: string;
-  meetupUrl?: string;
+  meetupBtnText?: string;
+  registerUrl?: string;
 };
 
-export const MeetupForm = ({ className, meetupUrl }: MeetupFormProps) => {
+export const MeetupForm = (props: MeetupFormProps) => {
+  const { registerUrl, meetupBtnText } = props;
   return (
-    <div
-      className={classNames(
-        "max-w-md grow rounded-md bg-white p-10 flex flex-col justify-center",
-        className
-      )}
-    >
-      <h3 className="text-center text-sswRed">Get your free ticket</h3>
+    <div className="flex w-full max-w-md flex-col justify-center self-start rounded-md bg-white p-4 max-md:mx-auto">
       <CustomLink
         href={
-          meetupUrl || "https://www.meetup.com/en-AU/sydney-net-user-group/"
+          registerUrl || "https://www.meetup.com/en-AU/sydney-net-user-group/"
         }
-        className="unstyled mx-auto my-4 rounded-md bg-sswRed px-4 py-3 font-medium text-white"
+        className="unstyled m-4 mx-auto flex h-10 items-center justify-center rounded-md bg-sswRed px-4 py-3 font-medium text-white hover:bg-sswDarkRed"
+        data-tina-field={tinaField(props, "meetupBtnText")}
       >
-        Register for free
+        {meetupBtnText || "Get your free ticket"}
       </CustomLink>
     </div>
   );

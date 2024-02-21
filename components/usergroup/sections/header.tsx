@@ -37,9 +37,12 @@ export const UserGroupHeader = ({
   youTubeId,
 }: UserGroupHeaderProps) => {
   const formattedDate: string = useMemo(() => {
-    dayjs.tz.setDefault(CITY_TIMEZONES[city]);
+    dayjs.tz.setDefault(CITY_TIMEZONES[city.replace("-", "_")]);
 
-    const cityStr = city.charAt(0).toUpperCase() + city.slice(1);
+    const cityStr = city
+      ?.split("-")
+      .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+      .join(" ");
     return (
       dayjs(date).tz(CITY_TIMEZONES[city]).format("ddd, D MMMM YYYY, h:mm A") +
       " " +
@@ -58,7 +61,7 @@ export const UserGroupHeader = ({
     <section
       className={classNames(
         className,
-        "bg-polygons border-b-8 border-sswRed bg-cover bg-no-repeat"
+        "bg-polygons border-b-8 border-sswRed bg-cover bg-no-repeat md:max-h-112"
       )}
     >
       <Container
@@ -90,10 +93,10 @@ export const UserGroupHeader = ({
             )}
           >
             <UtilityButton
-              className="!mt-0"
+              className="!mt-0 whitespace-nowrap"
               link={link}
               uncentered
-              noAnimate
+              animated
               buttonText={buttonText}
             />
             {trailerUrl && (
@@ -110,7 +113,7 @@ export const UserGroupHeader = ({
           </div>
         </div>
         {presenter.image && (
-          <div className="flex max-w-xl shrink-0 flex-col justify-end self-end max-md:mx-auto">
+          <div className="flex max-w-xl shrink-0 flex-col justify-end self-end max-md:mx-auto md:h-112">
             <Image
               className="!relative align-bottom"
               src={presenter.image}

@@ -1,0 +1,71 @@
+---
+seo:
+  title: Medibank Case Study | SSW Consulting
+  showBreadcrumb: true
+heading: Medibank Case Study
+subHeading: Creating releases from weeks to under a day
+content: >
+  ## Challenge
+
+
+  Medibank Private engage SSW to help implement ALM and DevOps for their
+  internal application development, testing and support. Their currently process
+  involved numerous manual steps and had to involved many different departments
+  to coordinate the development, deployment and testing resources for their
+  application. This was a highly inefficient process.
+
+
+  ## Technologies
+
+
+  * TFS 2015
+
+  * Lab Manager
+
+  * Test Manager
+
+  * Coded UI Tests
+
+  * Powershell
+
+  * Hyper-V
+
+  * SCVMM
+
+  * SQL Server 2008
+
+
+  ## Results
+
+
+  SSW implemented TFS with Test Manager and Lab Manager for Medibank Private.
+  This meant that when code was checked in:
+
+
+  1. An automated build was kicked off
+
+  2. Artefacts were created for the application and database upgrade scripts
+
+  3. A 3 VMs in Hyper-V was spun up where:
+     1. The windows application was deployed (Windows XP and Windows Vista)
+     2. The SQL server database was restored and upgraded to the latest schema
+  4. Automated UI tests than ran in the VM to verify there were no regressions
+
+  5. A report was sent to the test managers and they had the opportunity to jump
+  into the VM to manually test failing elements
+
+  6. If there were test failures, a bug was created with the VM details and
+  IntelliTrace logs
+
+
+  This process streamlined an automated their development pipeline from weeks to
+  create a release to under a day.
+
+
+  <CustomImage src="/images/case-studies/medibank-report.png" width={980}
+  height={400} altText="Medibank Tests" caption="Figure: The report at the end
+  of the automated testing showing the application deployed to an environment
+  and the tests that ran and failed" alignment="items-start" customClass="my-1"
+  />
+---
+

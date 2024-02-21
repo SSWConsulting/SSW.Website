@@ -20,14 +20,15 @@ export const VideoCard: FC<VideoCardProps> = ({ link, title, theme }) => {
   return (
     <VideoModal
       url={link}
-      className={theme === "light" && "rounded-sm border-1 border-gray-200"}
+      className={
+        theme === "light" &&
+        "h-full !cursor-pointer rounded-sm border-1 border-gray-200"
+      }
     >
-      <div
-        className={classNames(
-          "flex h-full items-center justify-between bg-white p-5"
-        )}
-      >
-        <span className="w-full text-left text-lg font-bold">{title}</span>
+      <div className={classNames("flex justify-between bg-white p-5 h-full")}>
+        <span className="w-full text-left text-lg font-bold text-black">
+          {title}
+        </span>
       </div>
     </VideoModal>
   );

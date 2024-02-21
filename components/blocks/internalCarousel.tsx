@@ -42,7 +42,7 @@ const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
   if (isSelected) {
     return (
       <li
-        className="mx-1 my-0 inline-block h-6 w-6 bg-sswRed md:h-7 md:w-7"
+        className="mx-1 my-0 inline-block size-6 bg-sswRed md:size-7"
         aria-label={`Selected: ${label} ${index + 1}`}
         title={`Selected: ${label} ${index + 1}`}
       />
@@ -50,7 +50,7 @@ const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
   }
   return (
     <li
-      className="mx-1 my-0 inline-block h-6 w-6 bg-gray-500 md:h-7 md:w-7"
+      className="mx-1 my-0 inline-block size-6 bg-gray-500 md:size-7"
       onClick={onClickHandler}
       onKeyDown={onClickHandler}
       value={index}
@@ -69,7 +69,7 @@ const renderBody = ({ header, paragraph, website, technologies }) => {
       <div className="mt-2 flex justify-between text-left font-semibold text-sswRed prose-p:py-0">
         <h4>{header}</h4>
         <span className={website ? "" : "hidden"}>
-          <CustomLink href={website}>Visit Website</CustomLink>
+          {website && <CustomLink href={website}>Visit Website</CustomLink>}
         </span>
       </div>
       <div className="text-left prose-p:py-2">

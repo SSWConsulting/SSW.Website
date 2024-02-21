@@ -2,6 +2,7 @@ import React from "react";
 import * as Schemas from "../../components/blocks";
 import {
   VerticalImageLayout,
+  fixedColumnsSchema,
   testimonialsListSchema,
   verticalImageLayoutBlockSchema,
 } from "../../components/blocks";
@@ -12,6 +13,7 @@ import { tipField } from "./shared-fields";
 
 import type { Collection } from "tinacms";
 import { tripleColumnImageBlockSchema } from "../../components/blocks/tripleColumnImageBlock";
+import { testimonialToSelectOptions } from "../../helpers/getTestimonials";
 
 export const companySchema: Collection = {
   label: "Company - Pages",
@@ -44,6 +46,8 @@ export const companySchema: Collection = {
         testimonialsListSchema,
         verticalImageLayoutBlockSchema,
         tripleColumnImageBlockSchema,
+        fixedColumnsSchema,
+        Schemas.utilityButtonSchema,
       ],
     },
     {
@@ -54,15 +58,21 @@ export const companySchema: Collection = {
       templates: [microsoftPanelSchema],
     },
     {
-      type: "reference",
+      type: "string",
       name: "sidebarTestimonial",
       label: "Sidebar Testimonial",
-      collections: ["testimonials"],
+      options: testimonialToSelectOptions(),
     },
     {
       type: "boolean",
       name: "showRdPanel",
       label: "Show Regional Director Panel",
+      required: false,
+    },
+    {
+      type: "boolean",
+      name: "showTechUpgradeBlock",
+      label: "Show Tech Upgrade Block",
       required: false,
     },
     {

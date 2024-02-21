@@ -91,7 +91,7 @@ const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
   if (isSelected) {
     return (
       <li
-        className="mx-1 my-0 inline-block h-7 w-7 bg-sswRed"
+        className="mx-1 my-0 inline-block size-7 bg-sswRed"
         aria-label={`Selected: ${label} ${index + 1}`}
         title={`Selected: ${label} ${index + 1}`}
       />
@@ -99,7 +99,7 @@ const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
   }
   return (
     <li
-      className="mx-1 my-0 inline-block h-7 w-7 bg-gray-500"
+      className="mx-1 my-0 inline-block size-7 bg-gray-500"
       onClick={onClickHandler}
       onKeyDown={onClickHandler}
       value={index}
@@ -152,11 +152,15 @@ export const carouselBlockSchema: Template = {
           type: "string",
           label: "URL",
           name: carouselBlock.items.link,
+          description:
+            "If link contains ssw.com.au, you can skip the full URL and just use the path. e.g. /services",
         },
         {
           type: "string",
           label: "Open in",
           name: "openIn",
+          description:
+            "If it is external link, please select 'New window' option.",
           options: [
             { label: "Same window", value: "sameWindow" },
             { label: "Modal", value: "modal" },

@@ -1,40 +1,26 @@
 import { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Template } from "tinacms";
-import client from "../../.tina/__generated__/client";
+import { extractFileName } from "../../helpers/functions";
+import { getTestimonialsExcludingCategories } from "../../helpers/getTestimonials";
 import { TestimonialCard } from "./testimonialsCard";
 
-export const TestimonialsList = ({ data: { hideInternshipTestimonials } }) => {
+export const TestimonialsList = ({ data: { excludedCategories = [] } }) => {
   const [testimonials, setTestimonials] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
 
   useEffect(() => {
-    const loadTestimonials = () => {
-      client.queries.testimonialsConnection().then((data) => {
-        const testimonials = data.data?.testimonialsConnection?.edges?.map(
-          (edge) => edge?.node
-        );
+    const loadTestimonials = async () => {
+      const filteredTestimonials =
+        await getTestimonialsExcludingCategories(excludedCategories);
 
-        const sortedTestimonials = testimonials
-          ?.filter(
-            (testimonial) =>
-              testimonial?.categories !== null &&
-              testimonial?.categories[0]?.category.name !== "Internship"
-          )
-          ?.map((testimonial) => testimonial);
-
-        if (hideInternshipTestimonials) {
-          setTestimonials(sortedTestimonials);
-        } else {
-          setTestimonials(testimonials);
-        }
-        setHasLoaded(true);
-      });
+      setTestimonials(filteredTestimonials);
+      setHasLoaded(true);
     };
     if (!hasLoaded) {
       loadTestimonials();
     }
-  }, [hasLoaded, hideInternshipTestimonials]);
+  }, [hasLoaded, excludedCategories]);
 
   return (
     <>
@@ -61,9 +47,26 @@ export const testimonialsListSchema: Template = {
   label: "Testimonials List",
   fields: [
     {
-      type: "boolean",
-      label: "Hide Intership Testimonials",
-      name: "hideInternshipTestimonials",
+      type: "object",
+      label: "Exclude Categories",
+      name: "excludedCategories",
+      ui: {
+        itemProps: (item) => {
+          const CategoryName = extractFileName(item?.categoryName);
+          return {
+            label: CategoryName,
+          };
+        },
+      },
+      list: true,
+      fields: [
+        {
+          type: "reference",
+          label: "Category Name",
+          name: "categoryName",
+          collections: ["testimonialCategories"],
+        },
+      ],
     },
   ],
 };

@@ -47,6 +47,7 @@ jobs:
             --resource-group ${{env.AZURE_RESOURCE_GROUP }} `
             --query '[].name' `
             --output tsv | `
+            grep -v 'staging' | `
             sed 's/pr-//g')
           echo "slots=$slots" >> $env:GITHUB_OUTPUT
 

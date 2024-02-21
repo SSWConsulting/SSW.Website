@@ -1,7 +1,6 @@
 import Image from "next/image";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { useState } from "react";
 import { TestimonialType } from "../../helpers/getTestimonials";
-import { Rating } from "../util/consulting/rating";
 
 const defaultAvatar = "/images/thumbs/avatar-thumbnail.png";
 
@@ -10,6 +9,9 @@ type TestimonialCardProps = {
 };
 
 export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
+  const [hasError, setHasError] = useState(false);
+  const testimonialAvatar =
+    hasError || !testimonial?.avatar ? defaultAvatar : testimonial?.avatar;
   return (
     <div
       className="flex w-full grow flex-col rounded-md border-b-4 border-b-sswRed bg-gray-100 p-8 text-center text-xl drop-shadow md:min-h-96 md:max-w-sm md:grow-0 md:p-10 md:basis_gap-96-6"
@@ -18,16 +20,17 @@ export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
     >
       <div className="flex flex-col items-center">
         <Image
-          alt={`Picture of ${testimonial?.name} as an avatar`}
-          src={testimonial?.avatar ?? defaultAvatar}
+          alt={`Avatar of ${testimonial?.name}`}
+          src={testimonialAvatar}
           height={120}
           width={120}
           quality={90}
           className="rounded-full"
+          onError={() => setHasError(true)}
         />
       </div>
-      <Rating className="mx-auto mt-8" rating={testimonial?.rating} />
-      <p className="mt-4 min-h-24">
+
+      <p className="mt-4 min-h-16">
         {testimonial?.name}
         {testimonial?.company && (
           <>
@@ -36,9 +39,7 @@ export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
           </>
         )}
       </p>
-      <div className="mt-2 text-sm text-ssw-black">
-        <TinaMarkdown content={testimonial?.body} />
-      </div>
+      <div className="mt-2 text-sm text-ssw-black">{testimonial?.body}</div>
     </div>
   );
 };

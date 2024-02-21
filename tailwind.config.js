@@ -7,6 +7,7 @@ module.exports = {
   content: [
     "./components/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
+    "node_modules/ssw.megamenu/**/*.js",
   ],
   // This needs to be set to `class` or it will use OS settings https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
   darkMode: "class",
@@ -46,10 +47,12 @@ module.exports = {
         22: "5.5rem",
         62: "15.5rem",
         102: "25.5rem",
+        112: "28rem",
         172: "43rem",
       },
       width: {
         88: "22rem",
+        104: "26rem",
       },
       minHeight: {
         4: "1rem",
@@ -241,22 +244,30 @@ module.exports = {
             lineHeight: 1.45,
             color: theme("colors.sswBlack"),
             h1: {
-              fontWeight: "300",
-              margin: "1rem 0",
-              padding: "60px 0 20px 0",
+              fontWeight: "500",
+              margin: "0.5rem 0",
+              padding: "3.75rem 0 1.25rem 0",
               lineHeight: 1.2,
               color: theme("colors.sswBlack"),
             },
             h2: {
               fontWeight: "500",
+              fontSize: "2rem",
+              lineHeight: "2.4rem",
               color: theme("colors.sswRed"),
             },
             h3: {
-              fontWeight: "300",
-              marginBottom: "7px",
+              fontWeight: "500",
+              marginBottom: "0.5rem",
+              lineHeight: "2.1rem",
+              fontSize: "1.75rem",
               color: theme("colors.sswBlack"),
             },
             h4: {
+              fontWeight: "500",
+              lineHeight: "1.8rem",
+              margin: "1.5rem 0",
+              fontSize: "1.5rem",
               color: theme("colors.sswBlack"),
             },
             strong: {
@@ -274,6 +285,9 @@ module.exports = {
             },
             hr: {
               margin: "30px 0",
+            },
+            ul: {
+              listStyleType: "square",
             },
             pre: {
               color: theme("colors.gray.700"),
