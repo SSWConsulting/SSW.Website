@@ -1,4 +1,3 @@
-import { start } from "repl";
 import {
   formatEventDate,
   formatEventLongDate,
