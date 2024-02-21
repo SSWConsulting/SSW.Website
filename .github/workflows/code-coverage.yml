@@ -19,7 +19,5 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           package-manager: pnpm
           test-script: pnpm test
-          working-directory: /
           skip-step: none
           coverage-file: ./coverage-final.json
-          base-coverage-file: ./coverage-final.json
