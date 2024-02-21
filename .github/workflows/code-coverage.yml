@@ -20,4 +20,6 @@ jobs:
           package-manager: pnpm
           test-script: pnpm test
           working-directory: /
-          skip-step: all
+          skip-step: none
+          coverage-file: ./coverage-final.json
+          base-coverage-file: ./coverage-final.json
