@@ -13,6 +13,13 @@ describe("formatEventDate", () => {
     expect(result).toBe("Feb 1");
   });
 
+  it("Single Day Event - Different year - Date format", () => {
+    const startDate = new Date(2025, 1, 1); // February 1, 2024
+    const endDate = new Date(2025, 1, 1); // February 1, 2024
+    const result = formatEventDate(startDate, endDate);
+    expect(result).toBe("Feb 1 2025");
+  });
+
   it("Mutiple Days Event - Date format", () => {
     const startDate = new Date(2024, 1, 1); // February 1, 2024
     const endDate = new Date(2024, 1, 2); // February 2, 2024
