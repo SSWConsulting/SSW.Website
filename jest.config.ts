@@ -54,6 +54,7 @@ const config: Config = {
     "<rootDir>/node_modules/",
     "<rootDir>/.next/",
     "<rootDir>/ui-tests",
+    "<rootDir>/public/",
   ],
   testEnvironment: "jsdom",
   transform: {
@@ -86,9 +87,11 @@ const config: Config = {
   coverageDirectory: "coverage",
 
   // An array of regexp pattern strings used to skip coverage collection
-  // coveragePathIgnorePatterns: [
-  //   "\\\\node_modules\\\\"
-  // ],
+  coveragePathIgnorePatterns: [
+    "\\\\node_modules\\\\",
+    "\\\\ui-tests\\\\",
+    "\\\\public\\\\",
+  ],
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -102,7 +105,7 @@ const config: Config = {
   coverageThreshold: {
     global: {
       lines: 80,
-      branches: 1,
+      branches: 80,
     },
   },
 
