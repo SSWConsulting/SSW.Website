@@ -22,11 +22,13 @@ export const productsIndexSchema: Collection = {
       type: "string",
       label: "Title",
       name: "title",
+      required: true,
     },
     {
       type: "string",
       label: "Subtitle",
       name: "subTitle",
+      required: true,
     },
     {
       type: "object",
