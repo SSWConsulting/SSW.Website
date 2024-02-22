@@ -21,7 +21,6 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-      checks: write
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v3
@@ -40,6 +39,7 @@ jobs:
           coverage-file: ./pr-coverage/report.json
           base-coverage-file: ./base-coverage/report.json
           skip-step: all
+          annotations: none
 
   build:
     name: Build and upload artifacts
