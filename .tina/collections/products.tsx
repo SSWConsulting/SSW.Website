@@ -18,8 +18,16 @@ export const productsIndexSchema: Collection = {
   fields: [
     // @ts-ignore
     seoSchema,
-    { type: "string", label: "Title", name: "title" },
-    { type: "string", label: "Subtitle", name: "subTitle" },
+    {
+      type: "string",
+      label: "Title",
+      name: "title",
+    },
+    {
+      type: "string",
+      label: "Subtitle",
+      name: "subTitle",
+    },
     {
       type: "object",
       label: "Products List",
