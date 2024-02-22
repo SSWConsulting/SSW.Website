@@ -16,11 +16,12 @@ defaults:
 
 jobs:
   run-tests-and-coverage:
-    name: Run Tests & coverage
+    name: Run tests & coverage
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
+      checks: write
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v3
