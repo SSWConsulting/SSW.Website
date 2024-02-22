@@ -2,8 +2,8 @@ import dayjs from "dayjs";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { CustomLink } from "../customLink";
+import { SocialIcons } from "../socialIcons/socialIcons";
 import { Container } from "../util/container";
-import { SocialIcons } from "../util/socialIcons";
 
 export const Footer = () => {
   return (

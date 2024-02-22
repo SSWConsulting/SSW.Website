@@ -84,7 +84,6 @@ export const SocialIcons = ({
   excludeMobile,
   className,
 }: SocialIconsProps) => {
-  const isMobileDetected = isMobile;
   const growOnMobile =
     Object.keys(socialStyles).length - excludeMobile?.length === 1;
 
@@ -112,7 +111,7 @@ export const SocialIcons = ({
           <SocialIcon
             key={social.type}
             social={social}
-            isMobileDetected={isMobileDetected}
+            isMobileDetected={isMobile}
             hideOnDesktop={hideOnDesktop}
             hideOnMobile={hideOnMobile}
             growOnMobile={growOnMobile}

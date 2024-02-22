@@ -13,8 +13,8 @@ import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 import { SpeakerInfo } from "../../services/server/events";
 import { CustomLink } from "../customLink";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
+import { SocialIcons } from "../socialIcons/socialIcons";
 import { SubNewsLettersForm } from "../subNewsletter/subNewsletterForm";
-import { SocialIcons } from "../util/socialIcons";
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;

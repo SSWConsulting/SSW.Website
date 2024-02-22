@@ -1,8 +1,12 @@
 import Image from "next/image";
 import React from "react";
 import { CustomLink } from "../customLink";
+import {
+  SocialIcons,
+  SocialTypes,
+  socialStyles,
+} from "../socialIcons/socialIcons";
 import { Container } from "../util/container";
-import { SocialIcons, SocialTypes, socialStyles } from "../util/socialIcons";
 
 export const Header = () => {
   const excludeMobile = (Object.keys(socialStyles) as SocialTypes[]).filter(
