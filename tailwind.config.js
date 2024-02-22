@@ -235,7 +235,7 @@ module.exports = {
           },
           darkRed: "#8e2c2c",
           black: "#333333",
-          gray: "#797979",
+          gray: { DEFAULT: "#797979", dark: "#666666" },
         },
       },
       typography: (theme) => ({
