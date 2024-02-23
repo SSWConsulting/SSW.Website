@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { NO_SELECTION } from "../components/filter/FilterBlock";
 import { FilterGroupProps } from "../components/filter/FilterGroup";
 import { EventInfo } from "../services/server/events";
+import { getFilterCount } from "./useFilterCount";
 
 export const useEvents = (events: EventInfo[]) => {
   const [filterControls, setFilterControls] = useState<{
@@ -25,6 +26,28 @@ export const useEvents = (events: EventInfo[]) => {
     return { categories, formats };
   }, [events]);
 
+  const filterCounts = useMemo(() => {
+    return getFilterCount(
+      events.map((event) => ({
+        Title: event.Title,
+        CalendarType: event.CalendarType,
+        Category: event.Category_f5a9cf4c_x002d_8228_x00,
+      })),
+      [
+        {
+          key: "CalendarType",
+          selected: filterControls.format,
+          options: options.formats,
+        },
+        {
+          key: "Category",
+          selected: filterControls.technology,
+          options: options.categories,
+        },
+      ]
+    );
+  }, [events, filterControls, options.formats, options.categories]);
+
   const filters = useMemo<FilterGroupProps[]>(() => {
     if (!events) return [];
 
@@ -33,45 +56,20 @@ export const useEvents = (events: EventInfo[]) => {
         selected: filterControls.technology,
         setSelected: (value) =>
           setFilterControls((curr) => ({ ...curr, technology: value })),
-        options: options.categories.map((category) => {
-          const count = events.filter(
-            (event) =>
-              event.Category_f5a9cf4c_x002d_8228_x00 === category &&
-              (filterControls.format === NO_SELECTION ||
-                options.formats[filterControls.format] === event.CalendarType)
-          ).length;
-
-          return {
-            label: category,
-            count,
-          };
-        }),
+        options: filterCounts[1],
         allText: "All Technology",
       },
       {
         selected: filterControls.format,
         setSelected: (value) =>
           setFilterControls((curr) => ({ ...curr, format: value })),
-        options: options.formats.map((format) => {
-          const count = events.filter(
-            (event) =>
-              event.CalendarType === format &&
-              (filterControls.technology === NO_SELECTION ||
-                options.categories[filterControls.technology] ===
-                  event.Category_f5a9cf4c_x002d_8228_x00)
-          ).length;
-
-          return {
-            label: format,
-            count,
-          };
-        }),
+        options: filterCounts[0],
         allText: "All Formats",
       },
     ];
 
     return groups;
-  }, [events, filterControls, options]);
+  }, [events, filterControls, filterCounts]);
 
   const filteredEvents = useMemo(() => {
     return events?.filter(
@@ -82,7 +80,7 @@ export const useEvents = (events: EventInfo[]) => {
         (filterControls.format === NO_SELECTION ||
           event.CalendarType === options.formats[filterControls.format])
     );
-  }, [events, options.categories, options.formats, filterControls]);
+  }, [events, filterControls, options.categories, options.formats]);
 
-  return { filters, filteredEvents };
+  return { filters, filteredEvents, filterCounts };
 };
