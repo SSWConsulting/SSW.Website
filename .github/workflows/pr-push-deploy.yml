@@ -36,26 +36,12 @@ jobs:
 
       - name: Upload Coverage Report to PR
         uses: ArtiomTr/jest-coverage-report-action@v2
-        id: coverage
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           coverage-file: ./pr-coverage/report.json
           base-coverage-file: ./base-coverage/report.json
           skip-step: all
           annotations: none
-          output: report-markdown
-
-      - name: Add job summary
-        run: |
-          $report_content='${{ steps.coverage.outputs.report }}'
-          "$report_content" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
-
-  write-coverage-summary:
-    needs: run-tests-and-coverage
-    name: Build and upload artifacts
-    uses: ./.github/workflows/coverage.yml
-    with:
-      report: "${{ needs.run-tests-and-coverage.outputs.report }}"
 
   build:
     name: Build and upload artifacts

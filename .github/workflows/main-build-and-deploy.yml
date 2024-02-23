@@ -30,6 +30,22 @@ jobs:
       - name: Run Tests & Coverage
         run: pnpm test-and-coverage --outputFile=base-coverage/report.json
 
+      - name: Upload Coverage Report to Main Build
+        id: coverage
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          coverage-file: ./pr-coverage/report.json
+          base-coverage-file: ./base-coverage/report.json
+          skip-step: all
+          annotations: none
+          output: report-markdown
+
+      - name: Code Coverage Report
+        run: |
+          $report_content='${{ steps.coverage.outputs.report }}'
+          "$report_content" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+
   build:
     name: Build and upload artifacts
     uses: ./.github/workflows/template-build.yml
