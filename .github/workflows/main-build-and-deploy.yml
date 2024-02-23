@@ -41,7 +41,7 @@ jobs:
           annotations: none
           output: report-markdown
 
-      - name: Code Coverage Report
+      - name: Code Coverage Summary
         run: |
           $report_content='${{ steps.coverage.outputs.report }}'
           "$report_content" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
