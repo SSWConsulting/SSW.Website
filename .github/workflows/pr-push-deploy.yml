@@ -45,15 +45,6 @@ jobs:
           annotations: none
           output: report-markdown
 
-  job-coverage-summary:
-    needs: run-tests-and-coverage
-    runs-on: ubuntu-latest
-    steps:
-      - name: Code Coverage Summary
-        run: |
-          $report_content='${{ needs.run-tests-and-coverage.outputs.report }}'
-          echo $report_content >> $GITHUB_STEP_SUMMARY
-
   build:
     name: Build and upload artifacts
     uses: ./.github/workflows/template-build.yml
@@ -152,3 +143,15 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: "github-actions[bot]"
           allow-repeats: true
+
+  coverage-summary:
+    name: Write Coverage Summary
+    needs: ["pr-deploy", "run-tests-and-coverage"]
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Code Coverage Summary
+        run: |
+          $report_content='${{ needs.run-tests-and-coverage.outputs.report }}'
+          echo $report_content >> $GITHUB_STEP_SUMMARY

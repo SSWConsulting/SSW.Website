@@ -15,3 +15,14 @@ jobs:
         run: |
           echo "Adding some Markdown content" >> $GITHUB_STEP_SUMMARY
           echo "There was an error, we need to clear the previous Markdown with some new content." > $GITHUB_STEP_SUMMARY
+
+  run-tests-and-coverage-2:
+    name: Run tests & coverage 2
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Overwrite Markdown
+        run: |
+          echo "Adding some Markdown content" >> $GITHUB_STEP_SUMMARY
+          echo "There was an error, we need to clear the previous Markdown with some new content.2 2 " > $GITHUB_STEP_SUMMARY
