@@ -30,7 +30,7 @@ jobs:
       - name: Run Tests & Coverage
         run: pnpm test-and-coverage --outputFile=base-coverage/report.json
 
-      - name: Upload Coverage Report to Main Build
+      - name: Generate Coverage Report for main Build
         id: coverage
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
