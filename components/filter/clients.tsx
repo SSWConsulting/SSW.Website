@@ -30,7 +30,12 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
   const groups: FilterGroupProps = {
     selected,
     setSelected,
-    options: categories,
+    options: categories.map((category) => ({
+      label: category,
+      count: clients.filter(
+        (client) => client.categories?.find((c) => c.category.name === category)
+      ).length,
+    })),
     allText: "All SSW Clients",
   };
   return (

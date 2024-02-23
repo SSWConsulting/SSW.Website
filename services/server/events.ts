@@ -282,6 +282,7 @@ export interface LiveStreamWidgetInfo extends LiveStreamBannerInfo {
     }[];
   };
   PresenterProfileUrl: {
+    Description: string;
     Url: string;
   };
 }
