@@ -256,7 +256,7 @@ export const globalSchema: Collection = {
     },
     {
       type: "object",
-      label: "Contact Icon (used on menu)",
+      label: "Contact Icon",
       name: "contactIcon",
       fields: [
         {
