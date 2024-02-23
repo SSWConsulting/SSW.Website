@@ -22,12 +22,12 @@ export const getFilterCount = (
             if (!secondary) break;
             if (i === index) continue;
 
-            const key = filterOptions[i].key;
+            const currentKey = filterOptions[i].key;
             const selected =
               filterOptions[i].options[filterOptions[i].selected];
 
             secondary =
-              (secondary && item[key] === selected) ||
+              (secondary && item[currentKey] === selected) ||
               filterOptions[i].selected === NO_SELECTION;
           }
 
