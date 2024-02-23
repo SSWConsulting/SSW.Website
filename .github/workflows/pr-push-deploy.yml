@@ -45,11 +45,6 @@ jobs:
           annotations: none
           output: report-markdown
 
-      - name: Generate Coverage Summary
-        uses: ./.github/workflows/coverage.yml
-        with:
-          report: ${{ steps.coverage.outputs.report }}
-
   build:
     name: Build and upload artifacts
     uses: ./.github/workflows/template-build.yml
