@@ -45,7 +45,7 @@ jobs:
 
       - name: Report on Action Run for coverage
         run: |
-          report_content="${{ steps.coverage.outputs.report }}"
+          report_content=@"${{ steps.coverage.outputs.report }}"@
           echo "Testing - How it generates the Summary" >> $GITHUB_STEP_SUMMARY
 
   build:
