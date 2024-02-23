@@ -157,10 +157,14 @@ const Event = ({ visible, event }: EventProps) => {
     organizer: sswOrganisation,
   };
 
+  const eventSite = event.Url.Url.toLowerCase()?.includes("ssw.com.au")
+    ? { name: CITY_MAP[event.City]?.name, url: CITY_MAP[event.City]?.url }
+    : { name: event.City, url: event.Url.Url };
+
   return (
     <>
       <Transition
-        className="mb-20"
+        className="mb-15 border-b-1 bg-white pb-8"
         show={!!visible}
         enter="transition duration-100 ease-out"
         enterFrom="transform scale-95 opacity-0"
@@ -209,8 +213,8 @@ const Event = ({ visible, event }: EventProps) => {
               {event.City && CITY_MAP[event.City] && (
                 <EventDescItem
                   label="Location"
-                  value={CITY_MAP[event.City]?.name}
-                  linkValue={CITY_MAP[event.City]?.url}
+                  value={eventSite.name}
+                  linkValue={eventSite.url}
                 />
               )}
               {event.CalendarType && (
@@ -231,9 +235,15 @@ const Event = ({ visible, event }: EventProps) => {
           }}
           className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline"
         />
-        <CustomLink href={event.Url.Url}>
-          <p className="prose pt-3">Find out more...</p>
-        </CustomLink>
+        <div className="mb-1 mt-6 p-0 text-end">
+          <CustomLink
+            href={event.Url.Url}
+            title={event.Url.Description}
+            className="unstyled rounded bg-ssw-gray px-3 py-2 text-xs font-normal text-white hover:bg-ssw-gray-dark"
+          >
+            <span className="mt-8 text-sm">Find out more...</span>
+          </CustomLink>
+        </div>
       </Transition>
       <script
         type="application/ld+json"
