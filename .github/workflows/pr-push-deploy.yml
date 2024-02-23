@@ -46,9 +46,8 @@ jobs:
           output: report-markdown
 
       - name: Add job summary
-        uses: jazanne/job-summary-action@v1
-        with:
-          summary: "${{ steps.coverage.outputs.report }}"
+        run: |
+          echo "::warning::'${{ steps.coverage.outputs.report }}'
 
   write-coverage-summary:
     needs: run-tests-and-coverage
