@@ -45,7 +45,7 @@ jobs:
 
       - name: Report on Action Run for coverage
         run: |
-          echo ${{ steps.coverage.outputs.report }}" >> $GITHUB_STEP_SUMMARY
+          echo "${{ steps.coverage.outputs.report }}" >> $GITHUB_STEP_SUMMARY
 
   build:
     name: Build and upload artifacts
