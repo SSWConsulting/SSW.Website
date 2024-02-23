@@ -45,6 +45,11 @@ jobs:
           annotations: none
           output: report-markdown
 
+      - name: Generate Coverage Summary
+        uses: ./.github/workflows/coverage.yml
+        with:
+          report: ${{ steps.coverage.outputs.report }}
+
   build:
     name: Build and upload artifacts
     uses: ./.github/workflows/template-build.yml
@@ -146,7 +151,8 @@ jobs:
 
   coverage-summary:
     name: Write Coverage Summary
-    needs: ["pr-deploy", "run-tests-and-coverage"]
+    needs:
+      ["pr-deploy", "run-tests-and-coverage", "ui-test", "pagespeedInsights"]
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
