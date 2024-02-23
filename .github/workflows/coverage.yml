@@ -1,0 +1,17 @@
+name: Test - Summary
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-tests-and-coverage:
+    name: Run tests & coverage
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Overwrite Markdown
+        run: |
+          echo "Adding some Markdown content" >> $GITHUB_STEP_SUMMARY
+          echo "There was an error, we need to clear the previous Markdown with some new content." > $GITHUB_STEP_SUMMARY

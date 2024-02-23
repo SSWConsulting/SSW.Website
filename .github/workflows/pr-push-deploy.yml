@@ -46,7 +46,12 @@ jobs:
       - name: Report on Action Run for coverage
         run: |
           $report_content='${{ steps.coverage.outputs.report }}'
-          echo "Testing - How it generates the Summary" >> $GITHUB_STEP_SUMMARY
+          echo $report_content >> $GITHUB_STEP_SUMMARY
+
+      - name: Overwrite Markdown
+        run: |
+          echo "Adding some Markdown content" >> $GITHUB_STEP_SUMMARY
+          echo "There was an error, we need to clear the previous Markdown with some new content." > $GITHUB_STEP_SUMMARY
 
   build:
     name: Build and upload artifacts
