@@ -8,14 +8,12 @@ export const getFilterCount = (
     options: string[];
   }[]
 ) => {
-  const keys = filterOptions.map(({ key }) => key);
-
-  const counts = filterOptions.map(({ options }, index) => {
+  const counts = filterOptions.map(({ options, key }, index) => {
     return options?.map((option) => {
       return {
         label: option,
         count: items.filter((item) => {
-          const primary = item[keys[index]] === option;
+          const primary = item[key] === option;
 
           if (!primary) return false;
 
