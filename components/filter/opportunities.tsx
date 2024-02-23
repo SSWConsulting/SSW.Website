@@ -71,12 +71,8 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
         setSelected: setSelectedLocation,
         options: locations.map((location) => ({
           label: location,
-          count: opportunities.filter(
-            (o) =>
-              o.locations.includes(location) &&
-              o.status === jobStatus[selectedStatus] &&
-              o.employmentType == employmentType[selectedType]
-          ).length,
+          count: opportunities.filter((o) => o.locations.includes(location))
+            .length,
         })),
         allText: "All Locations",
       },
@@ -85,12 +81,7 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
         setSelected: setSelectedType,
         options: employmentType.map((type) => ({
           label: type,
-          count: opportunities.filter(
-            (o) =>
-              o.employmentType === type &&
-              o.locations.includes(locations[selectedLocation]) &&
-              o.status === jobStatus[selectedStatus]
-          ).length,
+          count: opportunities.filter((o) => o.employmentType === type).length,
         })),
         allText: "All Types",
       },
@@ -99,12 +90,7 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
         setSelected: setSelectedStatus,
         options: jobStatus.map((status) => ({
           label: status,
-          count: opportunities.filter(
-            (o) =>
-              o.status === status &&
-              o.locations.includes(locations[selectedLocation]) &&
-              o.employmentType == employmentType[selectedType]
-          ).length,
+          count: opportunities.filter((o) => o.status === status).length,
         })),
         allText: "All Positions",
       },
