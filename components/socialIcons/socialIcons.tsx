@@ -84,9 +84,6 @@ export const SocialIcons = ({
   excludeMobile,
   className,
 }: SocialIconsProps) => {
-  const growOnMobile =
-    Object.keys(socialStyles).length - excludeMobile?.length === 1;
-
   return (
     <div
       className={classNames(
@@ -103,20 +100,15 @@ export const SocialIcons = ({
           excludeMobile?.length &&
           !!excludeMobile.find((icon) => icon === social.type);
 
-        if (hideOnDesktop && hideOnMobile) {
+        if (
+          (hideOnDesktop && hideOnMobile) ||
+          (isMobile && hideOnMobile) ||
+          (!isMobile && hideOnDesktop)
+        ) {
           return <></>;
         }
 
-        return (
-          <SocialIcon
-            key={social.type}
-            social={social}
-            isMobileDetected={isMobile}
-            hideOnDesktop={hideOnDesktop}
-            hideOnMobile={hideOnMobile}
-            growOnMobile={growOnMobile}
-          />
-        );
+        return <SocialIcon key={social.type} social={social} />;
       })}
     </div>
   );
@@ -124,27 +116,10 @@ export const SocialIcons = ({
 
 type SocialIconProps = {
   social: (typeof layoutData.socials)[number];
-  isMobileDetected: boolean;
-  hideOnDesktop?: boolean;
-  hideOnMobile?: boolean;
-  growOnMobile?: boolean;
 };
 
-export const SocialIcon = ({
-  social,
-  isMobileDetected,
-  hideOnDesktop,
-  hideOnMobile,
-  growOnMobile,
-}: SocialIconProps) => {
-  const url =
-    social.desktopSpecificURL && !isMobileDetected
-      ? social.desktopSpecificURL
-      : social.url;
-  const text =
-    social.desktopSpecificLinkText && !isMobileDetected
-      ? social.desktopSpecificLinkText
-      : social.linkText;
+export const SocialIcon = ({ social }: SocialIconProps) => {
+  const url = social.url;
 
   const styling = socialStyles[social.type];
 
@@ -154,23 +129,12 @@ export const SocialIcon = ({
     <CustomLink
       href={url}
       className={classNames(
-        "unstyled flex h-12 cursor-pointer items-center justify-center rounded-lg text-xl hover:opacity-70",
-        styling.bgClassName,
-        text ? "w-fit shrink-0" : "w-12",
-        { "px-5": text },
-        { "flex sm:hidden": hideOnDesktop },
-        { "hidden sm:flex": hideOnMobile },
-        { "flex-grow sm:flex-grow-0": growOnMobile }
+        "w-12 unstyled flex h-12 cursor-pointer items-center justify-center rounded-lg text-xl hover:opacity-70",
+        styling.bgClassName
       )}
       title={social.title}
     >
-      <Icon
-        className={classNames({ "text-2xl": !text })}
-        color={styling.fill ?? "white"}
-      />
-      {text && (
-        <span className="ml-2 inline text-sm font-bold text-white">{text}</span>
-      )}
+      <Icon className="text-2xl" color={styling.fill ?? "white"} />
     </CustomLink>
   );
 };

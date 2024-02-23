@@ -5,14 +5,25 @@ import { CustomLink } from "../customLink";
 
 type PhoneButtonProps = {
   className?: string;
-  hideMobile?: boolean;
+  desktop: {
+    text: string;
+    url: string;
+  };
+  mobile: {
+    text: string;
+    url: string;
+  };
 };
 
-export const PhoneButton = ({ className }: PhoneButtonProps) => {
-  const url = isMobile
-    ? "tel:+61299533000"
-    : "https://ssw.com.au/company/contact-us";
-  const text = isMobile ? "CALL US" : "CONTACT US";
+export const PhoneButton = ({
+  className,
+  mobile,
+  desktop,
+}: PhoneButtonProps) => {
+  const url =
+    (isMobile ? mobile.url : desktop.url) ||
+    "https://ssw.com.au/company/contact-us";
+  const text = (isMobile ? mobile.text : desktop.text) || "CONTACT US";
 
   return (
     <div

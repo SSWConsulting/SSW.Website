@@ -310,10 +310,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
 
             <div className="mt-17">
               <h4 className="font-bold">Follow us on:</h4>
-              <SocialIcons
-                excludeDesktop={["phone"]}
-                excludeMobile={["phone"]}
-              />
+              <SocialIcons />
             </div>
             <SubNewsLettersForm
               headerText="<span class='mix-blend-difference mr-3'>Subscribe to the</span><span class='font-bold text-sswRed'>SSW Newsletter</span>"

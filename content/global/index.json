@@ -99,15 +99,18 @@
       "days": "Monday - Friday"
     }
   ],
+  "contactIcon": {
+    "url": "tel:+61299533000",
+    "linkText": "CALL US",
+    "desktopSpecificLinkText": "CONTACT US",
+    "desktopSpecificURL": "/company/contact-us",
+    "openInSameWindow": true
+  },
   "socials": [
     {
       "type": "phone",
       "title": "Call us",
-      "url": "tel:+61299533000",
-      "linkText": "CALL US",
-      "desktopSpecificLinkText": "CONTACT US",
-      "desktopSpecificURL": "/company/contact-us",
-      "openInSameWindow": true
+      "url": "tel:+61299533000"
     },
     {
       "type": "youtube",

@@ -252,6 +252,18 @@ export const globalSchema: Collection = {
           label: "Username",
           name: "username",
         },
+      ],
+    },
+    {
+      type: "object",
+      label: "Contact Icon (used on menu)",
+      name: "contactIcon",
+      fields: [
+        {
+          type: "string",
+          label: "URL",
+          name: "url",
+        },
         {
           type: "string",
           label: "Text",

@@ -11,8 +11,7 @@ export const Footer = () => {
       <Container size="xsmall">
         <SocialIcons
           className="mb-3 mt-2 justify-center"
-          excludeDesktop={["phone"]}
-          excludeMobile={["phone", "meetup"]}
+          excludeMobile={["meetup"]}
         />
         <hr className="my-2 border-gray-800" />
         <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
