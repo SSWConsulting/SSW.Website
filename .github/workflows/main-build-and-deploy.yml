@@ -28,15 +28,15 @@ jobs:
         run: pnpm install
 
       - name: Run Tests & Coverage
-        run: pnpm test-and-coverage --outputFile=base-coverage/report.json
+        run: pnpm test-and-coverage --outputFile=coverage-report.json
 
       - name: Generate Coverage Report for main Build
         id: coverage
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          coverage-file: ./pr-coverage/report.json
-          base-coverage-file: ./base-coverage/report.json
+          coverage-file: coverage-report.json
+          base-coverage-file: coverage-report.json
           skip-step: all
           annotations: none
           output: report-markdown
