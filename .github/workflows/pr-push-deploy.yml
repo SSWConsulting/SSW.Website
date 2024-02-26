@@ -21,8 +21,6 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    outputs:
-      report: ${{ steps.coverage.outputs.report }}
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v3
@@ -32,14 +30,14 @@ jobs:
         run: pnpm install
 
       - name: Run Tests & Coverage
-        run: pnpm test-and-coverage --outputFile=pr-coverage/report.json
+        run: pnpm test-and-coverage --outputFile=coverage-report.json
 
       - name: Upload Coverage Report to PR
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          coverage-file: ./pr-coverage/report.json
-          base-coverage-file: ./base-coverage/report.json
+          coverage-file: coverage-report.json
+          base-coverage-file: coverage-report.json
           skip-step: all
           annotations: none
 
