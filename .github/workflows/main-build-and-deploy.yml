@@ -42,6 +42,7 @@ jobs:
           output: report-markdown
 
       - name: Code Coverage Summary
+        shell: pwsh
         run: |
           $report_content='${{ steps.coverage.outputs.report }}'
           "$report_content" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
