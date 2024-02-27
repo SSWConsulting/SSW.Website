@@ -108,11 +108,6 @@
   },
   "socials": [
     {
-      "type": "phone",
-      "title": "Call us",
-      "url": "tel:+61299533000"
-    },
-    {
       "type": "youtube",
       "title": "SSW on YouTube",
       "url": "https://www.youtube.com/user/sswtechtalks/",
