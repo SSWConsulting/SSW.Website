@@ -29,14 +29,13 @@ export default function HomePage(
     return null;
   }
 
-  array[5].toString();
-
   const contentClass = data.page.sideBar
     ? "max-w-full md:col-span-3 prose prose-h2:text-3xl/9 prose-h2:text-black"
     : "max-w-full md:col-span-5 prose prose-h2:text-3xl/9 prose-h2:text-black";
 
   return (
     <>
+      <button onClick={() => array[5].toString()}>test</button>
       <SEO seo={data.page.seo} />
       <Layout menu={data.megamenu}>
         {data.page.breadcrumbs ? (
