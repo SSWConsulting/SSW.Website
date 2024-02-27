@@ -1,3 +1,4 @@
+import { BookingForm } from "@/components/bookingForm/bookingForm";
 import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
 import { InferGetStaticPropsType } from "next";
@@ -25,6 +26,7 @@ export default function EventsIndexPage(
 
   return (
     <>
+      <BookingForm />
       <SEO seo={data.eventsIndex.seo} />
       <Layout menu={data.megamenu}>
         <Container size="small">
