@@ -99,6 +99,8 @@ export const videoEmbedBlockSchema: Template = {
       type: "string",
       label: "Caption",
       name: "caption",
+      description:
+        "Please adhere to https://ssw.com.au/rules/add-useful-and-concise-figure-captions/",
       required: false,
     },
   ],

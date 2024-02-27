@@ -75,6 +75,9 @@ const config = {
   },
   experimental: {
     optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
+    turbotrace: {
+      logAll: true,
+    },
   },
 };
 
