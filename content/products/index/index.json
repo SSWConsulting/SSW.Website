@@ -3,6 +3,8 @@
     "title": "SSW Consulting Services | Over 25 years of experience developing awesome solutions on top of Angular, React, Blazor, .NET, Azure, GitHub, DevOps (was VSTS/TFS), Power Apps, Power Automate, Power BI, SharePoint, Dynamics and SQL Server",
     "canonical": "/products"
   },
+  "title": "SSW Products",
+  "subTitle": "Explore the future of enterprise development with our scalable, cutting-edge products",
   "productsList": [
     {
       "name": "SugarLearning",

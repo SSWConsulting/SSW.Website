@@ -10,19 +10,25 @@ export const useEvents = (events: EventInfo[]) => {
   }>({ technology: NO_SELECTION, format: NO_SELECTION });
 
   const options = useMemo(() => {
-    const categories =
-      events
-        ?.map((event) => event.Category_f5a9cf4c_x002d_8228_x00)
-        ?.filter((value, index, self) => self.indexOf(value) === index)
-        ?.sort() || [];
+    const categoryCount: Record<string, number> = events?.reduce(
+      (acc, event) => {
+        acc[event.Category_f5a9cf4c_x002d_8228_x00] =
+          (acc[event.Category_f5a9cf4c_x002d_8228_x00] || 0) + 1;
+        return acc;
+      },
+      {}
+    );
 
-    const formats =
-      events
-        ?.map((event) => event.CalendarType)
-        ?.filter((value, index, self) => self.indexOf(value) === index)
-        ?.sort() || [];
+    const categories = Object.keys(categoryCount).sort();
 
-    return { categories, formats };
+    const formatCount: Record<string, number> = events?.reduce((acc, event) => {
+      acc[event.CalendarType] = (acc[event.CalendarType] || 0) + 1;
+      return acc;
+    }, {});
+
+    const formats = Object.keys(formatCount).sort();
+
+    return { categories, categoryCount, formats, formatCount };
   }, [events]);
 
   const filters = useMemo<FilterGroupProps[]>(() => {
@@ -33,14 +39,20 @@ export const useEvents = (events: EventInfo[]) => {
         selected: filterControls.technology,
         setSelected: (value) =>
           setFilterControls((curr) => ({ ...curr, technology: value })),
-        options: options.categories,
+        options: options.categories.map((category) => ({
+          label: category,
+          count: options.categoryCount[category],
+        })),
         allText: "All Technology",
       },
       {
         selected: filterControls.format,
         setSelected: (value) =>
           setFilterControls((curr) => ({ ...curr, format: value })),
-        options: options.formats,
+        options: options.formats.map((format) => ({
+          label: format,
+          count: options.formatCount[format],
+        })),
         allText: "All Formats",
       },
     ];
@@ -57,7 +69,7 @@ export const useEvents = (events: EventInfo[]) => {
         (filterControls.format === NO_SELECTION ||
           event.CalendarType === options.formats[filterControls.format])
     );
-  }, [events, options.categories, options.formats, filterControls]);
+  }, [events, filterControls, options.categories, options.formats]);
 
   return { filters, filteredEvents };
 };
