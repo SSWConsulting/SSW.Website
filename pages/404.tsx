@@ -5,7 +5,19 @@ import client from "../.tina/__generated__/client";
 export default function FourOhFour(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
-  return <ErrorPage code={404} menu={props.data.megamenu} />;
+  return (
+    <ErrorPage
+      code="404"
+      menu={props.data.megamenu}
+      tipText={
+        <>
+          PAGE NOT FOUND!
+          <br />
+          Sorry, we couldn&apos;t find the page you were looking for...
+        </>
+      }
+    />
+  );
 }
 
 export const getStaticProps = async () => {

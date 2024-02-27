@@ -5,15 +5,16 @@ import { Layout } from "../layout";
 import { Container } from "./container";
 
 type ErrorPageProps = {
-  menu: {
+  menu?: {
     menuGroups: NavMenuGroup[];
   };
-  code?: string | number;
+  code?: string;
+  tipText?: React.ReactNode;
 };
 
 export const ErrorPage = (props: ErrorPageProps) => {
   return (
-    <Layout menu={props.menu}>
+    <Layout menu={props.menu || { menuGroups: [] }}>
       <Container
         width="large"
         size="custom"
@@ -27,7 +28,7 @@ export const ErrorPage = (props: ErrorPageProps) => {
           <div className="px-7 pt-7">
             <p className="text-center">
               <span className="font-sans text-9xl font-extrabold leading-none text-sswRed">
-                {props.code || 404}
+                {props.code || "Error"}
               </span>
             </p>
 
@@ -40,16 +41,18 @@ export const ErrorPage = (props: ErrorPageProps) => {
                 to find out how we can help you.
               </div>
 
-              <div className="my-4 bg-gray-200 px-5 py-4">
-                Learn more about{" "}
-                <CustomLink
-                  href="/rules/404-useful-error-page"
-                  className="text-sswRed no-underline"
-                >
-                  having a useful 404 error page
-                </CustomLink>
-                .
-              </div>
+              {props.code === "404" && (
+                <div className="my-4 bg-gray-200 px-5 py-4">
+                  Learn more about{" "}
+                  <CustomLink
+                    href="/rules/404-useful-error-page"
+                    className="text-sswRed no-underline"
+                  >
+                    having a useful 404 error page
+                  </CustomLink>
+                  .
+                </div>
+              )}
             </div>
           </div>
 
@@ -57,9 +60,7 @@ export const ErrorPage = (props: ErrorPageProps) => {
 
           <div className="py-12">
             <span className="font-sans text-3xl font-extralight text-gray-650 sm:text-5xl">
-              PAGE NOT FOUND!
-              <br />
-              Sorry, we couldn&apos;t find the page you were looking for...
+              {props.tipText || "We're sorry, but something went wrong."}
             </span>
           </div>
         </div>
