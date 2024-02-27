@@ -10,7 +10,6 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaMeetup,
-  FaPhoneAlt as FaPhone,
   FaTiktok,
   FaYoutube,
 } from "react-icons/fa";
@@ -20,7 +19,6 @@ import layoutData from "../../content/global/index.json";
 import { CustomLink } from "../customLink";
 
 export type SocialTypes =
-  | "phone"
   | "youtube"
   | "linkedin"
   | "facebook"
@@ -34,10 +32,6 @@ export const socialStyles: Record<
   SocialTypes,
   { icon: IconType; bgClassName: string; fill?: string }
 > = {
-  phone: {
-    icon: FaPhone,
-    bgClassName: "bg-sswRed",
-  },
   youtube: {
     icon: FaYoutube,
     bgClassName: "bg-social-youtube",
