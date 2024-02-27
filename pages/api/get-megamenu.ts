@@ -9,6 +9,9 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  appInsights?.defaultClient.trackEvent({
+    name: "testing testing testing production",
+  });
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Cache-Control", `s-maxage=${CACHE_SECS}`);
 
