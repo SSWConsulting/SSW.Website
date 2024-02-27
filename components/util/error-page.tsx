@@ -8,7 +8,7 @@ type ErrorPageProps = {
   menu: {
     menuGroups: NavMenuGroup[];
   };
-  code?: number;
+  code?: string | number;
 };
 
 export const ErrorPage = (props: ErrorPageProps) => {
