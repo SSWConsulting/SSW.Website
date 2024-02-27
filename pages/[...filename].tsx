@@ -29,7 +29,7 @@ export default function HomePage(
     return null;
   }
 
-  console.log(array[5].toString());
+  array[5].toString();
 
   const contentClass = data.page.sideBar
     ? "max-w-full md:col-span-3 prose prose-h2:text-3xl/9 prose-h2:text-black"
