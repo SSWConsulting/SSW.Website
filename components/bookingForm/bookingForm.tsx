@@ -78,6 +78,10 @@ export const BookingForm = (props) => {
   const [invalidRecaptcha, setInvalidReptcha] = useState("");
 
   useEffect(() => {
+    appInsights?.trackEvent({ name: "test on the client side" });
+  }, [appInsights]);
+
+  useEffect(() => {
     // every time isShowState changes, recreate the schema and set it in the state
     setSchema(ValidationSchema(isShowStates, false));
   }, [isShowStates]);
