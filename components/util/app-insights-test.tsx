@@ -5,7 +5,7 @@ export const AppInsightTest = () => {
   const appInsights = useAppInsightsContext();
 
   useEffect(() => {
-    appInsights.trackEvent({ name: "testing frontend event on production" });
+    appInsights.trackEvent({ name: "testing frontend on production" });
   }, [appInsights]);
 
   return <></>;
