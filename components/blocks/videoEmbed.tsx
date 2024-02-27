@@ -9,6 +9,7 @@ type VideoEmbedProps = {
     removeMargin?: boolean;
     overflow?: boolean;
     uncentre?: boolean;
+    caption?: string;
   };
 };
 
@@ -27,6 +28,8 @@ export const VideoEmbed = ({ data }: VideoEmbedProps) => {
       )}
     >
       <VideoModal url={data.url} overflow={data.overflow} />
+      {data.caption && <p className="text-center">{data.caption}</p>}
+      <div></div>
     </div>
   );
 };
@@ -86,6 +89,12 @@ export const videoEmbedBlockSchema: Template = {
       type: "boolean",
       label: "Overflow - read more at tailwindcss.com/docs/overflow",
       name: "overflow",
+      required: false,
+    },
+    {
+      type: "string",
+      label: "Caption",
+      name: "caption",
       required: false,
     },
   ],
