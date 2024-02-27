@@ -25,6 +25,7 @@ export function AppInsightsProvider({ children }: { children: ReactNode }) {
         extensionConfig: {
           [reactPlugin.identifier]: {},
         },
+        disablePageUnloadEvents: ["unload"],
       },
     });
 
