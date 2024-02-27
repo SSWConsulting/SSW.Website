@@ -1,4 +1,3 @@
-import { AppInsightTest } from "@/components/util/app-insights-test";
 import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
 import { InferGetStaticPropsType } from "next";
@@ -26,7 +25,6 @@ export default function EventsIndexPage(
 
   return (
     <>
-      <AppInsightTest />
       <SEO seo={data.eventsIndex.seo} />
       <Layout menu={data.megamenu}>
         <Container size="small">
