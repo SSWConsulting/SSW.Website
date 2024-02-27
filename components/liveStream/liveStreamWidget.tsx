@@ -13,8 +13,8 @@ import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 import { SpeakerInfo } from "../../services/server/events";
 import { CustomLink } from "../customLink";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
+import { SocialIcons } from "../socialIcons/socialIcons";
 import { SubNewsLettersForm } from "../subNewsletter/subNewsletterForm";
-import { SocialIcons, SocialTypes } from "../util/socialIcons";
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;
@@ -310,10 +310,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
 
             <div className="mt-17">
               <h4 className="font-bold">Follow us on:</h4>
-              <SocialIcons
-                excludeDesktop={[SocialTypes.phone]}
-                excludeMobile={[SocialTypes.phone]}
-              />
+              <SocialIcons />
             </div>
             <SubNewsLettersForm
               headerText="<span class='mix-blend-difference mr-3'>Subscribe to the</span><span class='font-bold text-sswRed'>SSW Newsletter</span>"

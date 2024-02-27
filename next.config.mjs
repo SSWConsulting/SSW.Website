@@ -76,6 +76,7 @@ const config = {
   experimental: {
     optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
   },
+  productionBrowserSourceMaps: true,
 };
 
 const withBundleAnalyzer = bundleAnalyser({
