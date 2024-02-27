@@ -3,7 +3,6 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useLiveStreamProps } from "../../hooks/useLiveStreamProps";
 import { Footer } from "./footer";
-// import { Header } from "./header";
 import { Theme } from "./theme";
 
 import dayjs from "dayjs";
