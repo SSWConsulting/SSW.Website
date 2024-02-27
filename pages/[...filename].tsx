@@ -12,6 +12,8 @@ import { Section } from "../components/util/section";
 import { SEO } from "../components/util/seo";
 import { removeExtension } from "../services/client/utils.service";
 
+const array = [2, 3, 4];
+
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
@@ -26,6 +28,8 @@ export default function HomePage(
   if (!pageBlocks) {
     return null;
   }
+
+  console.log(array[5].toString());
 
   const contentClass = data.page.sideBar
     ? "max-w-full md:col-span-3 prose prose-h2:text-3xl/9 prose-h2:text-black"
