@@ -39,7 +39,22 @@ class ErrorBoundary extends React.Component<
 
   render() {
     if (this.state.hasError) {
-      return <ErrorPage />;
+      return (
+        <ErrorPage
+          tipText={
+            <>
+              CLIENT-SIDE ERROR!
+              <br />
+              We&apos;re sorry, something has gone wrong here. For help, please
+              submit a bug report issue on our GitHub at{" "}
+              <a href="https://github.com/SSWConsulting/SSW.Website/issues/new/choose">
+                github.com/SSWConsulting/SSW.Website/issues/new/choose
+              </a>
+              .
+            </>
+          }
+        />
+      );
     }
 
     return this.props.children;
