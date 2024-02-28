@@ -67,7 +67,7 @@ export const YoutubePlaylistBlock: React.FC<YoutubePlaylistProps> = (props) => {
             href={`https://www.youtube.com/playlist?list=${
               playlistButton?.link || playlistId
             }`}
-            className="done relative mx-2 mt-8 inline-flex overflow-hidden rounded border-none bg-sswRed pl-3 text-white"
+            className="done relative mx-2 mb-6 mt-8 inline-flex overflow-hidden rounded border-none bg-sswRed pl-3 text-white"
             data-aos={playlistButton.animated ? "fade-up" : undefined}
             data-tina-field={tinaField(props.playlistButton, "text")}
           >
