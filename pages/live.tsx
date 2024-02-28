@@ -45,10 +45,10 @@ export default function LivePage(
         />
       </Section>
       <Container size="xsmall">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col justify-between py-4 md:flex-row md:items-center">
           <h2 className="mt-0 text-sswRed">{data.live.nextEvent}</h2>
           <UtilityButton
-            className="mx-20"
+            className="mx-20 my-3 md:my-0"
             size="small"
             uncentered={false}
             removeTopMargin={true}
