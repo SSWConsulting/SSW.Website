@@ -244,26 +244,22 @@ export const userGroupGlobalSchema: Collection = {
     },
     {
       type: "object",
-      label: "Videos",
-      name: "videos",
-      list: true,
+      label: "Youtube Playlist",
+      name: "youtubePlaylist",
       fields: [
         {
           type: "string",
-          label: "Link",
-          name: "link",
+          label: "Playlist Id",
+          name: "playlistId",
+          required: true,
         },
         {
-          type: "string",
-          label: "Title",
-          name: "title",
+          type: "number",
+          label: "Number of videos",
+          name: "numberOfVideos",
+          required: true,
         },
       ],
-      ui: {
-        itemProps: (item) => ({
-          label: item?.title,
-        }),
-      },
     },
     {
       type: "object",

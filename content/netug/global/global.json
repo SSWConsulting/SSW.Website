@@ -1,6 +1,7 @@
 {
   "latestTechTitle": "We talk about the latest tech",
   "latestTechBadges": {
+    "random": false,
     "badgesList": [
       {
         "name": "Azure",
@@ -57,23 +58,13 @@
         "url": "https://ssw.com.au/consulting/desktop-development",
         "imgURL": "/images/badges/MAUI.png"
       }
-    ],
-    "random": false
+    ]
   },
-  "videos": [
+  "youtubePlaylist":
     {
-      "link": "https://www.youtube.com/watch?v=dMgj1MdwrRE",
-      "title": "Pick a Side - Clean vs Vertical Slice Architecture | Luke Parker"
+      "playlistId": "PLpiOR7CBNvlpmhfwQeIVhbqZKxV-do0wY",
+      "numberOfVideos": 3
     },
-    {
-      "link": "https://www.youtube.com/watch?v=gZ9VabDU81A",
-      "title": "Rules to Better Chat GPT and Using the Best API Ever | Adam Cogan"
-    },
-    {
-      "link": "https://www.youtube.com/watch?v=K1t73xArqs0",
-      "title": "Beyond Passwords: The Future (and Present) of Authentication | Matt Goldman"
-    }
-  ],
   "videosButton": {
     "link": "https://www.youtube.com/watch?v=dMgj1MdwrRE&list=PLpiOR7CBNvlpmhfwQeIVhbqZKxV-do0wY",
     "text": "Watch more on the SSW TV YouTube channel"
