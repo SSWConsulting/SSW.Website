@@ -6,14 +6,16 @@ export default function FourOhFour(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   return (
-    <ErrorPage
-      code="404"
-      menu={props.data.megamenu}
-      title="PAGE NOT FOUND!"
-      tipText={
-        <>Sorry, we couldn&apos;t find the page you were looking for...</>
-      }
-    />
+    <>
+      <ErrorPage
+        code="404"
+        menu={props.data.megamenu}
+        title="PAGE NOT FOUND!"
+        tipText={
+          <>Sorry, we couldn&apos;t find the page you were looking for...</>
+        }
+      />
+    </>
   );
 }
 
