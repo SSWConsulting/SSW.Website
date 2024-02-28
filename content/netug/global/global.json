@@ -1,7 +1,6 @@
 {
   "latestTechTitle": "We talk about the latest tech",
   "latestTechBadges": {
-    "random": false,
     "badgesList": [
       {
         "name": "Azure",
