@@ -16,6 +16,7 @@ import { AppInsightsProvider } from "../context/app-insight-client";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
 // DayJS module addition as per https://github.com/iamkun/dayjs/issues/1577
+import { ErrorBoundary } from "@/components/util/error-boundary";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
@@ -55,12 +56,14 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <>
-      <Analytics />
-      <DefaultSeo {...NEXT_SEO_DEFAULT} />
-      <AppInsightsProvider>
-        <Component {...pageProps} />
-      </AppInsightsProvider>
-      <ChatBaseBot />
+      <ErrorBoundary>
+        <Analytics />
+        <DefaultSeo {...NEXT_SEO_DEFAULT} />
+        <AppInsightsProvider>
+          <Component {...pageProps} />
+        </AppInsightsProvider>
+        <ChatBaseBot />
+      </ErrorBoundary>
     </>
   );
 };
