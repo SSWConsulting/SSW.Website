@@ -50,7 +50,8 @@ class ErrorBoundary extends React.Component<
               <a href="https://github.com/SSWConsulting/SSW.Website/issues/new/choose">
                 github.com/SSWConsulting/SSW.Website/issues/new/choose
               </a>
-              .
+              or send us an email at{" "}
+              <a href="mailto:info@ssw.com.au">info@ssw.com.au</a>.
             </>
           }
         />
