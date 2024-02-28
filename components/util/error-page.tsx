@@ -4,12 +4,17 @@ import { CustomLink } from "../customLink";
 import { Layout } from "../layout";
 import { Container } from "./container";
 
+import { Disclosure } from "@headlessui/react";
+import { BiChevronRight } from "react-icons/bi";
+
 type ErrorPageProps = {
   menu?: {
     menuGroups: NavMenuGroup[];
   };
   code?: string;
+  title?: string;
   tipText?: React.ReactNode;
+  details?: string;
 };
 
 export const ErrorPage = (props: ErrorPageProps) => {
@@ -21,10 +26,10 @@ export const ErrorPage = (props: ErrorPageProps) => {
         className={classNames(
           "w-full",
           "select-none",
-          "bg-[url('/images/404/broken-chain.png')] bg-center bg-no-repeat sm:bg-bottom"
+          "bg-[url('/images/404/broken-chain.png')] bg-center bg-no-repeat md:bg-bottom"
         )}
       >
-        <div className="flex min-h-screen-4/5 flex-col sm:flex-row">
+        <div className="flex min-h-screen-4/5 flex-col md:flex-row">
           <div className="px-7 pt-7">
             <p className="text-center">
               <span className="font-sans text-9xl font-extrabold leading-none text-sswRed">
@@ -56,12 +61,49 @@ export const ErrorPage = (props: ErrorPageProps) => {
             </div>
           </div>
 
-          <div className="hidden grow sm:block"></div>
+          <div className="hidden grow md:block"></div>
 
           <div className="py-12">
-            <span className="font-sans text-3xl font-extralight text-gray-650 sm:text-5xl">
-              {props.tipText || "We're sorry, but something went wrong."}
+            <span
+              className="font-sans text-3xl font-extralight text-gray-650 md:text-5xl"
+              style={{ wordBreak: "break-word" }}
+            >
+              <h1 className="mt-0 pb-1 pt-0 text-5xl">
+                {props.title || "We're sorry, something has gone wrong here."}
+              </h1>
+              {props.tipText || (
+                <div>
+                  <h1 className="pb-1 pt-0 text-4xl"></h1>
+                  <p className="pt-4 text-xl">
+                    For help, please submit a bug report issue on our GitHub at{" "}
+                    <a href="https://github.com/SSWConsulting/SSW.Website/issues/new/choose">
+                      github.com/SSWConsulting/SSW.Website
+                    </a>{" "}
+                    or send us an email at{" "}
+                    <a href="mailto:info@ssw.com.au">info@ssw.com.au</a>.
+                  </p>
+                </div>
+              )}
             </span>
+            {props.details && (
+              <Disclosure>
+                {({ open }) => (
+                  <>
+                    <Disclosure.Button>
+                      <div className="flex flex-row items-center font-extralight text-gray-650">
+                        See details{" "}
+                        <BiChevronRight className={open ? "rotate-90" : ""} />
+                      </div>
+                    </Disclosure.Button>
+                    <Disclosure.Panel>
+                      <pre>
+                        <code>{props.details}</code>
+                      </pre>
+                    </Disclosure.Panel>
+                  </>
+                )}
+              </Disclosure>
+            )}
           </div>
         </div>
       </Container>

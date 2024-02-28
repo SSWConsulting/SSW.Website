@@ -9,12 +9,9 @@ export default function FourOhFour(
     <ErrorPage
       code="404"
       menu={props.data.megamenu}
+      title="PAGE NOT FOUND!"
       tipText={
-        <>
-          PAGE NOT FOUND!
-          <br />
-          Sorry, we couldn&apos;t find the page you were looking for...
-        </>
+        <>Sorry, we couldn&apos;t find the page you were looking for...</>
       }
     />
   );
