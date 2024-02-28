@@ -57,7 +57,8 @@
         "url": "https://ssw.com.au/consulting/desktop-development",
         "imgURL": "/images/badges/MAUI.png"
       }
-    ]
+    ],
+    "random": false
   },
   "youtubePlaylist": {
     "playlistId": "PLpiOR7CBNvlpmhfwQeIVhbqZKxV-do0wY",
