@@ -56,14 +56,14 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <>
-      <ErrorBoundary>
-        <Analytics />
-        <DefaultSeo {...NEXT_SEO_DEFAULT} />
-        <AppInsightsProvider>
+      <Analytics />
+      <DefaultSeo {...NEXT_SEO_DEFAULT} />
+      <AppInsightsProvider>
+        <ErrorBoundary>
           <Component {...pageProps} />
-        </AppInsightsProvider>
-        <ChatBaseBot />
-      </ErrorBoundary>
+        </ErrorBoundary>
+      </AppInsightsProvider>
+      <ChatBaseBot />
     </>
   );
 };
