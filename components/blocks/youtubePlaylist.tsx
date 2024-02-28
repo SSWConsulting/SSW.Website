@@ -9,15 +9,19 @@ import { VideoCard } from "../util/videoCards";
 export type YoutubePlaylistProps = {
   title?: string;
   playlistId: string;
-  numberOfVideos: number;
-  textForPlaylistLink?: string;
+  videosCount?: number;
+  playlistButton?: {
+    text?: string;
+    link?: string;
+    animated?: boolean;
+  };
 };
 
 export const YoutubePlaylistBlock: React.FC<YoutubePlaylistProps> = ({
   title,
   playlistId,
-  textForPlaylistLink,
-  numberOfVideos,
+  videosCount,
+  playlistButton,
 }) => {
   const [playlistVideosLinks, setPlaylistVideosLinks] = useState([]);
 
@@ -28,7 +32,7 @@ export const YoutubePlaylistBlock: React.FC<YoutubePlaylistProps> = ({
           .get<VideoLink[]>("/api/get-youtube-playlist", {
             params: {
               playlistId: playlistId,
-              videosCount: numberOfVideos,
+              videosCount: videosCount,
             },
           })
           .then((response) => {
@@ -40,10 +44,10 @@ export const YoutubePlaylistBlock: React.FC<YoutubePlaylistProps> = ({
       }
     };
 
-    if (playlistId && numberOfVideos) {
+    if (playlistId && videosCount) {
       fetchPlaylist();
     }
-  }, [playlistId, numberOfVideos]);
+  }, [playlistId, videosCount]);
 
   if (!playlistId) {
     return <></>;
@@ -60,13 +64,16 @@ export const YoutubePlaylistBlock: React.FC<YoutubePlaylistProps> = ({
           <VideoCard {...video} theme="light" key={index} />
         ))}
       </div>
-      {textForPlaylistLink && (
+      {playlistButton?.text && (
         <div className="flex justify-center">
           <CustomLink
-            href={`https://www.youtube.com/playlist?list=${playlistId}`}
+            href={`https://www.youtube.com/playlist?list=${
+              playlistButton?.link || playlistId
+            }`}
             className="done relative mx-2 mt-8 inline-flex overflow-hidden rounded border-none bg-sswRed pl-3 text-white"
+            data-aos={playlistButton.animated ? "fade-up" : undefined}
           >
-            {textForPlaylistLink}
+            {playlistButton.text}
             <BsArrowRightCircle className="ml-1 inline" />
           </CustomLink>
         </div>
@@ -98,14 +105,32 @@ export const youtubePlaylistSchema: TinaField = {
     },
     {
       type: "number",
-      label: "Number of vidoes",
-      name: "numberOfVideos",
+      label: "Videos Count",
+      name: "videosCount",
       required: true,
     },
     {
-      type: "string",
-      name: "textForPlaylistLink",
-      label: "Text for Playlist link",
+      type: "object",
+      label: "Playlist Button",
+      name: "playlistButton",
+      fields: [
+        {
+          type: "string",
+          name: "text",
+          label: "Text",
+        },
+        {
+          type: "string",
+          name: "link",
+          label: "Link",
+          description: "DEFAULT: playlistId",
+        },
+        {
+          type: "boolean",
+          name: "animated",
+          label: "Animated?",
+        },
+      ],
     },
   ],
 };

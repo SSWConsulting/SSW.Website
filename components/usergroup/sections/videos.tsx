@@ -1,30 +1,24 @@
 import Image from "next/image";
 import type { Template } from "tinacms";
-import { tinaField } from "tinacms/dist/react";
-import { UtilityButton } from "../../blocks";
-import { YoutubePlaylistBlock } from "../../blocks/youtubePlaylist";
+import {
+  YoutubePlaylistBlock,
+  YoutubePlaylistProps,
+} from "../../blocks/youtubePlaylist";
 import { Container } from "../../util/container";
 
 type VideosSectionProps = {
   globalUserGroupInfo?: {
-    youtubePlaylist: {
-      playlistId: string;
-      numberOfVideos: number;
-    };
-    videosButton?: {
-      link?: string;
-      text?: string;
-    };
+    youtubePlaylist: YoutubePlaylistProps;
   };
 };
 
 export const VideosSection = (props: VideosSectionProps) => {
   const { globalUserGroupInfo } = props;
-  const button = globalUserGroupInfo?.videosButton;
 
   const youtubePlaylistProps = {
     playlistId: globalUserGroupInfo?.youtubePlaylist.playlistId,
-    numberOfVideos: globalUserGroupInfo?.youtubePlaylist.numberOfVideos,
+    videosCount: globalUserGroupInfo?.youtubePlaylist.videosCount,
+    playlistButton: globalUserGroupInfo?.youtubePlaylist.playlistButton,
   };
 
   return (
@@ -43,21 +37,6 @@ export const VideosSection = (props: VideosSectionProps) => {
           />
         </div>
         <YoutubePlaylistBlock {...youtubePlaylistProps} />
-        {button && button.text && button.link && (
-          <div
-            data-tina-field={tinaField(
-              props.globalUserGroupInfo.videosButton,
-              "text"
-            )}
-          >
-            <UtilityButton
-              link={button.link}
-              buttonText={button.text}
-              className="mx-auto text-base font-semibold"
-              animated
-            />
-          </div>
-        )}
       </div>
     </Container>
   );
