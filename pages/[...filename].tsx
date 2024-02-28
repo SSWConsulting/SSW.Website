@@ -1,4 +1,5 @@
 import { InferGetStaticPropsType } from "next";
+import Link from "next/link";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../.tina/__generated__/client";
@@ -11,8 +12,6 @@ import { Container } from "../components/util/container";
 import { Section } from "../components/util/section";
 import { SEO } from "../components/util/seo";
 import { removeExtension } from "../services/client/utils.service";
-
-const array = [2, 3, 4];
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -35,7 +34,7 @@ export default function HomePage(
 
   return (
     <>
-      <button onClick={() => array[5].toString()}>test</button>
+      <Link href="/rules">Test link here</Link>
       <SEO seo={data.page.seo} />
       <Layout menu={data.megamenu}>
         {data.page.breadcrumbs ? (
