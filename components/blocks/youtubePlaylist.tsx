@@ -2,6 +2,7 @@ import axios from "axios";
 import { Key, useEffect, useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { Template, TinaField } from "tinacms";
+import { tinaField } from "tinacms/dist/react";
 import { VideoLink } from "../../services/server/youtube";
 import { CustomLink } from "../customLink";
 import { VideoCard } from "../util/videoCards";
@@ -17,12 +18,8 @@ export type YoutubePlaylistProps = {
   };
 };
 
-export const YoutubePlaylistBlock: React.FC<YoutubePlaylistProps> = ({
-  title,
-  playlistId,
-  videosCount,
-  playlistButton,
-}) => {
+export const YoutubePlaylistBlock: React.FC<YoutubePlaylistProps> = (props) => {
+  const { title, playlistId, videosCount, playlistButton } = props;
   const [playlistVideosLinks, setPlaylistVideosLinks] = useState([]);
 
   useEffect(() => {
@@ -72,6 +69,7 @@ export const YoutubePlaylistBlock: React.FC<YoutubePlaylistProps> = ({
             }`}
             className="done relative mx-2 mt-8 inline-flex overflow-hidden rounded border-none bg-sswRed pl-3 text-white"
             data-aos={playlistButton.animated ? "fade-up" : undefined}
+            data-tina-field={tinaField(props.playlistButton, "text")}
           >
             {playlistButton.text}
             <BsArrowRightCircle className="ml-1 inline" />
@@ -123,7 +121,7 @@ export const youtubePlaylistSchema: TinaField = {
           type: "string",
           name: "link",
           label: "Link",
-          description: "DEFAULT: playlistId",
+          description: "DEFAULT: PlaylistId.",
         },
         {
           type: "boolean",

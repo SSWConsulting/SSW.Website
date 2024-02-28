@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Template } from "tinacms";
+import { tinaField } from "tinacms/dist/react";
 import {
   YoutubePlaylistBlock,
   YoutubePlaylistProps,
@@ -13,13 +14,7 @@ type VideosSectionProps = {
 };
 
 export const VideosSection = (props: VideosSectionProps) => {
-  const { globalUserGroupInfo } = props;
-
-  const youtubePlaylistProps = {
-    playlistId: globalUserGroupInfo?.youtubePlaylist.playlistId,
-    videosCount: globalUserGroupInfo?.youtubePlaylist.videosCount,
-    playlistButton: globalUserGroupInfo?.youtubePlaylist.playlistButton,
-  };
+  const youtubePlaylistProps = props.globalUserGroupInfo.youtubePlaylist;
 
   return (
     <Container>
@@ -36,7 +31,15 @@ export const VideosSection = (props: VideosSectionProps) => {
             width={200}
           />
         </div>
-        <YoutubePlaylistBlock {...youtubePlaylistProps} />
+        <section
+          data-tina-field={tinaField(
+            props.globalUserGroupInfo.youtubePlaylist,
+            "playlistId"
+          )}
+        >
+          {" "}
+          <YoutubePlaylistBlock {...youtubePlaylistProps} />
+        </section>
       </div>
     </Container>
   );
