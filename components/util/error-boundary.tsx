@@ -42,7 +42,7 @@ class ErrorBoundary extends React.Component<
       return (
         <ErrorPage
           tipText={
-            <>
+            <div>
               CLIENT-SIDE ERROR!
               <br />
               We&apos;re sorry, something has gone wrong here. For help, please
@@ -52,7 +52,7 @@ class ErrorBoundary extends React.Component<
               </a>
               or send us an email at{" "}
               <a href="mailto:info@ssw.com.au">info@ssw.com.au</a>.
-            </>
+            </div>
           }
         />
       );
