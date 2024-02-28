@@ -1,3 +1,4 @@
+import { ReadMore } from "@/components/usergroup/readMore";
 import { InferGetStaticPropsType } from "next";
 import { FaYoutube } from "react-icons/fa";
 import { useTina } from "tinacms/dist/react";
@@ -20,6 +21,8 @@ import {
 } from "../services/server/events";
 
 const ISR_TIME = 60 * 60;
+
+const PREVIEW_SENTENCE_COUNT = 9; // Max number of sentences to be previewed to match the Video height
 
 export default function LivePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -60,33 +63,30 @@ export default function LivePage(
             openInNewTab={true}
           />
         </div>
-        <div>
-          {props.event?.Title && (
-            <div className="col-span-2">
-              <div className="whitespace-pre-wrap text-2xl font-semibold">
-                {props.event?.Title}
-              </div>
+        {props.event?.Title && (
+          <div className="pb-10 pt-4">
+            <div className="whitespace-pre-wrap text-2xl font-semibold">
+              {props.event?.Title}
             </div>
-          )}
-        </div>
-        <div>
-          {props.speaker && (
-            <>
-              <div className="pb-3 text-lg">
-                With{" "}
+            {props.speaker && (
+              <div className="py-1 text-lg">
+                With
                 <CustomLink href={props.speaker?.PresenterProfileLink}>
                   {props.speaker?.Title}
                 </CustomLink>
               </div>
-              <br />
-            </>
-          )}
-        </div>
+            )}
+          </div>
+        )}
+
         <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-2">
           <div className="col-span-1">
             {props.event?.Abstract && (
               <div className="whitespace-pre-wrap text-lg">
-                {props.event?.Abstract}
+                <ReadMore
+                  text={props.event?.Abstract}
+                  previewSentenceCount={PREVIEW_SENTENCE_COUNT}
+                />
               </div>
             )}
           </div>
