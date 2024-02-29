@@ -98,7 +98,7 @@ jobs:
 
       - name: delete img
         run: |
-          az acr repository delete --name ${{ env.ACR_NAME }} --image ${{ env.ACR_NAME }}:pr-102 --yes
+          az acr repository delete --name ${{ env.ACR_NAME }} --image ${{ env.IMAGE_NAME }}:pr-102 --yes
 
   invokeDeleteImage:
     name: Invoking PR Close/Delete
