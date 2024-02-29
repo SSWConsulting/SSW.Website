@@ -223,7 +223,7 @@ const AccordionItem = ({
     <li>
       <div
         className={classNames(
-          "group mb-2 flex cursor-pointer items-center justify-between p-2 transition-all duration-500",
+          "group flex cursor-pointer items-center justify-between p-2 transition-all duration-500",
           currentlySelected
             ? "bg-sswRed"
             : onHover
@@ -254,7 +254,7 @@ const AccordionItem = ({
 
       <div
         className={classNames(
-          "overflow-hidden transition-all duration-500",
+          "overflow-hidden transition-all duration-500 mb-2 bg-white",
           currentlySelected ? "max-h-52" : "max-h-0"
         )}
       >
