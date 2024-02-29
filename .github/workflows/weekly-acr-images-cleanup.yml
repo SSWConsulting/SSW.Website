@@ -49,7 +49,8 @@ jobs:
         run: |
           $slots = az acr repository show-tags `
           --name ${{ env.ACR_NAME }} --repository ${{ env.IMAGE_NAME }} `
-          --top 10 --orderby time_desc --output json | ConvertFrom-Json
+          --orderby time_asc --output tsv
           # Filter tags that start with "pr-"
+          Write-Output "$slots"
           $filteredTags = $slots | Where-Object { $_ -like "pr-*" }
           Write-Output "$filteredTags"
