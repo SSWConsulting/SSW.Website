@@ -44,13 +44,39 @@ jobs:
         run: |
           az acr login --name ${{ env.ACR_LOGIN_SERVER }}
 
+      - name: Get list of active PRs
+        id: prList
+        run: |
+          $active_prs=$(gh pr list --state open --json number | jq -r '.[].number')
+          echo "active_prs=$active_prs" >> $env:GITHUB_OUTPUT
+
       - name: Get list of acr images
         id: imageList
         run: |
-          $slots = az acr repository show-tags `
+          $images = az acr repository show-tags `
           --name ${{ env.ACR_NAME }} --repository ${{ env.IMAGE_NAME }} `
           --orderby time_asc --output tsv
           # Filter tags that start with "pr-"
-          Write-Output "$slots"
-          $filteredTags = $slots | Where-Object { $_ -like "pr-*" }
+          $filteredTags = $images | Where-Object { $_ -like "pr-*" }
+          # Remove the "pr-" prefix from filtered tags
+          $filteredTagsWithoutPrefix = $filteredTags -replace "^pr-", ""
+          echo "filteredTags=$filteredTagsWithoutPrefix" >> $env:GITHUB_OUTPUT
           Write-Output "$filteredTags"
+
+      - name: Compare active PRs with existing docker images
+        id: comparision
+        run: |
+          # Comparing the number of images and PRs
+          $prList =  "${{ steps.PRList.outputs.active_prs }}" -split ' '
+          $imageList = "${{ steps.imageList.outputs.filteredTags }}" -split ' '
+
+          $imagesExistThatRequireDeletion = $imageList | Where-Object { $_ -notin $prList }
+          $imagesNeedDeletion = $imagesExistThatRequireDeletion.Length -gt 0
+
+          if ( ! $imagesNeedDeletion ) {
+            echo "✅ - Number of docker images are equal to number of active PRs - 🏃 Skipping next step"
+          }
+          else {
+            echo "❌ - Number of docker images are not equal to number of active PRs"
+            Write-Host "⚡- These images need to be deleted : $imagesExistThatRequireDeletion"
+          }
