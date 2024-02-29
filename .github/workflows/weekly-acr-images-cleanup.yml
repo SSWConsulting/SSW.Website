@@ -47,6 +47,7 @@ jobs:
       - name: Get list of acr images
         id: imageList
         run: |
-          $slots = az acr repository list `
-          --name ${{ env.ACR_NAME }}
+          $slots = az acr repository show-tags `
+          --name ${{ env.ACR_NAME }} --repository ${{ env.IMAGE_NAME }} `
+          --output json | ConvertFrom-Json
           Write-Output "$slots"
