@@ -23,6 +23,8 @@ permissions:
 jobs:
   check-acr-images:
     runs-on: ubuntu-latest
+    outputs:
+      imagesExistThatRequireDeletion: ${{ steps.comparision.outputs.imagesExistThatRequireDeletion }}
 
     steps:
       - name: Checking out
@@ -55,7 +57,7 @@ jobs:
         run: |
           $images = az acr repository show-tags `
           --name ${{ env.ACR_NAME }} --repository ${{ env.IMAGE_NAME }} `
-          --orderby time_asc --output tsv
+          --top 20 --orderby time_asc --output tsv
           # Filter tags that start with "pr-"
           $filteredTags = $images | Where-Object { $_ -like "pr-*" }
           # Remove the "pr-" prefix from filtered tags
@@ -80,3 +82,16 @@ jobs:
             echo "❌ - Number of docker images are not equal to number of active PRs"
             Write-Host "⚡- These images need to be deleted : $imagesExistThatRequireDeletion"
           }
+
+  invokeDeleteImage:
+    name: Invoking PR Close/Delete
+    needs:
+      - check-acr-images #Adding second check to avoid running this flow
+    if: needs.check-acr-images.outputs.imagesExistThatRequireDeletion != ''
+    uses: ./.github/workflows/delete-images.yml
+    with:
+      imageTags: ${{ toJson(needs.check-acr-images.outputs.imagesExistThatRequireDeletion) }}
+    permissions:
+      id-token: write
+      contents: read
+    secrets: inherit

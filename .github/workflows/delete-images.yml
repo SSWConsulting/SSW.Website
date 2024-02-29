@@ -1,0 +1,33 @@
+name: Testing - Delete images when PR is closed
+
+on:
+  workflow_call:
+    inputs:
+      imageTags:
+        type: string
+        description: "image IDs"
+        required: true
+
+defaults:
+  run:
+    shell: pwsh
+
+env:
+  IMAGE_TAG: ${{ inputs.imageTags }}
+  IMAGE_PREFIX: pr-
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  delete-image:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        SLOT_NAME: ${{ fromJson(inputs.imageTags) }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Showing tag
+        run: echo ${{ matrix.SLOT_NAME }}
