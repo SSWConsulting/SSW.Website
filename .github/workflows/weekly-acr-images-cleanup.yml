@@ -1,0 +1,44 @@
+name: Weekly docker image cleanup
+
+on:
+  schedule:
+    # Monday at 12 PM UTC - https://cron.help/#0_12_*_*_MON
+    - cron: "0 12 * * MON"
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+env:
+  GH_TOKEN: ${{ github.token }}
+
+defaults:
+  run:
+    shell: pwsh
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  check-pr-slots:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checking out
+        uses: actions/checkout@v4
+
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v2
+        with:
+          path: ./.github
+
+      - name: ACR - Login
+        run: |
+          az acr login --name ${{ env.ACR_LOGIN_SERVER }}
+
+      - name: Get list of acr images
+        id: imageList
+        run: |
+          $slots = $(az acr repository show-tags --name ${{ secrets.ACR_NAME }} --repository ${{ secrets.ACR_REPOSITORY }} --orderby time_desc --detail --output tsv --query "[?tags[?name=='$env:GITHUB_REF']].{tag:tags[0].name, digest:tags[0].digest}")
+          echo "$slots"
