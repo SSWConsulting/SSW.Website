@@ -51,5 +51,5 @@ jobs:
           --name ${{ env.ACR_NAME }} --repository ${{ env.IMAGE_NAME }} `
           --top 10 --orderby time_desc --output json | ConvertFrom-Json
           # Filter tags that start with "pr-"
-          $filteredTags = $tags | Where-Object { $_ -like "pr-*" }
+          $filteredTags = $slots | Where-Object { $_ -like "pr-*" }
           Write-Output "$filteredTags"
