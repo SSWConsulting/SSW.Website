@@ -82,6 +82,7 @@ jobs:
             echo "❌ - Number of docker images are not equal to number of active PRs"
             Write-Host "⚡- These images need to be deleted : $imagesExistThatRequireDeletion"
           }
+          echo "imagesExistThatRequireDeletion=$imagesExistThatRequireDeletion" >> $env:GITHUB_OUTPUT
 
   invokeDeleteImage:
     name: Invoking PR Close/Delete
