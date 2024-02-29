@@ -48,6 +48,6 @@ jobs:
         id: imageList
         run: |
           $slots = az acr repository list `
-          --name ${{ env.ACR_NAME }} --repository `
-          ${{ env.IMAGE_NAME }}
+          --name ${{ env.ACR_NAME }} `
+          --image ${{ env.IMAGE_NAME }}
           Write-Output "$slots"
