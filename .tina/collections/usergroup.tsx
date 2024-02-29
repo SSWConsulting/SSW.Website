@@ -4,6 +4,7 @@ import { seoSchema } from "../../components/util/seo";
 
 import React from "react";
 import type { Collection } from "tinacms";
+import { youtubePlaylistSchema } from "../../components/blocks/youtubePlaylist";
 import { tipField } from "./shared-fields";
 
 export const userGroupPageSchema: Collection = {
@@ -242,46 +243,7 @@ export const userGroupGlobalSchema: Collection = {
         },
       ],
     },
-    {
-      type: "object",
-      label: "Videos",
-      name: "videos",
-      list: true,
-      fields: [
-        {
-          type: "string",
-          label: "Link",
-          name: "link",
-        },
-        {
-          type: "string",
-          label: "Title",
-          name: "title",
-        },
-      ],
-      ui: {
-        itemProps: (item) => ({
-          label: item?.title,
-        }),
-      },
-    },
-    {
-      type: "object",
-      label: "Featured Videos Button options",
-      name: "videosButton",
-      fields: [
-        {
-          type: "string",
-          label: "Link",
-          name: "link",
-        },
-        {
-          type: "string",
-          label: "Text",
-          name: "text",
-        },
-      ],
-    },
+    youtubePlaylistSchema,
     {
       type: "object",
       label: "Join Us Panel",
