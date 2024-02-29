@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       imagesExistThatRequireDeletion: ${{ steps.comparision.outputs.imagesExistThatRequireDeletion }}
-
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Checking out
         uses: actions/checkout@v4
@@ -84,6 +84,18 @@ jobs:
           }
           echo "imagesExistThatRequireDeletion=$imagesExistThatRequireDeletion" >> $env:GITHUB_OUTPUT
 
+      - name: Converting slots into JSON Formatted Array
+        id: set-matrix
+        run: |
+          # TODO: Tech Debt - need to use it as JSON instead of space delimited - Github issue - https://github.com/SSWConsulting/SSW.Website/issues/1228
+          $slotIDs = '${{ steps.comparision.outputs.imagesExistThatRequireDeletion }}' -split ' '
+          $slotIDsInJSonArray = ConvertTo-Json -Compress @($slotIDs)
+          echo "matrix=$slotIDsInJSonArray" >> $env:GITHUB_OUTPUT
+
+      - name: show matrix
+        run: |
+          echo "Matrix: ${{ steps.set-matrix.outputs.matrix }}"
+
   invokeDeleteImage:
     name: Invoking PR Close/Delete
     needs:
@@ -91,7 +103,7 @@ jobs:
     if: needs.check-acr-images.outputs.imagesExistThatRequireDeletion != ''
     uses: ./.github/workflows/delete-images.yml
     with:
-      imageTags: ${{ toJson(needs.check-acr-images.outputs.imagesExistThatRequireDeletion) }}
+      imageTags: ${{ needs.check-acr-images.outputs.matrix }}
     permissions:
       id-token: write
       contents: read
