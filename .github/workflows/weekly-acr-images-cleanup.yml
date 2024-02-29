@@ -47,5 +47,7 @@ jobs:
       - name: Get list of acr images
         id: imageList
         run: |
-          $slots = $(az acr repository show-tags --name ${{ secrets.ACR_NAME }} --repository ${{ secrets.ACR_REPOSITORY }} )
-          echo "$slots"
+          $slots = az acr repository list show-tags `
+          --name ${{ secrets.ACR_NAME }} --repository `
+          ${{ secrets.ACR_REPOSITORY }}
+          Write-Output "$slots"
