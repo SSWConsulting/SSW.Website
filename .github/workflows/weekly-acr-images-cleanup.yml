@@ -47,5 +47,5 @@ jobs:
       - name: Get list of acr images
         id: imageList
         run: |
-          $slots = $(az acr repository show-tags --name ${{ secrets.ACR_NAME }} --repository ${{ secrets.ACR_REPOSITORY }} --orderby time_desc --detail --output tsv --query "[?tags[?name=='$env:GITHUB_REF']].{tag:tags[0].name, digest:tags[0].digest}")
+          $slots = $(az acr repository show-tags --name ${{ secrets.ACR_NAME }} --repository ${{ secrets.ACR_REPOSITORY }} )
           echo "$slots"
