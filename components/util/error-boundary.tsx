@@ -7,7 +7,7 @@ import { ErrorPage } from "./error-page";
 
 class ErrorBoundary extends React.Component<
   { children?: React.ReactNode },
-  { hasError: boolean; error: Error }
+  { hasError: boolean; error?: Error }
 > {
   constructor(props) {
     super(props);
