@@ -89,8 +89,8 @@ jobs:
             echo "❌ - Number of docker images are not equal to number of active PRs"
             Write-Host "⚡- These images need to be deleted : $imagesExistThatRequireDeletion"
           }
-
-          $mergedTags = $imagesExistThatRequireDeletion + '${{ steps.imageTags.outputs.tagsWithoutPRPrefix }}'
+          $non-pr-tags = "${{ steps.imageTags.outputs.tagsWithoutPRPrefix }}"
+          $mergedTags = $imagesExistThatRequireDeletion + $non-pr-tags
           $tags = $imagesExistThatRequireDeletion -split ' '
           $imageTagList = ConvertTo-Json -Compress @($tags)
 
