@@ -102,6 +102,9 @@ jobs:
            --image '${{ env.IMAGE_NAME }}:pr-2226' --query "digest" -o tsv
           Write-Host "Digest: $digest"
 
+      - name: delete pr-630
+        run: |
+          az acr repository delete -n ${{ env.ACR_NAME }} --image '${{ env.IMAGE_NAME }}:pr-630' --yes
   # invokeDeleteImage:
   #   name: Invoking delete-acr-image
   #   needs:
