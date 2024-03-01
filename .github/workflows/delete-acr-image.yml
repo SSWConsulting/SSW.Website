@@ -52,11 +52,11 @@ jobs:
 
       - name: ACR - Delete image
         run: |
-          if('${{ matrix.IMAGE_TAG }}'.Length -le 4)
+          if('${{ matrix.IMAGE_TAG }}'.Length -le 4) # PR tags contain 4 digits
           {
-            $imageTagWithPrefix = ${{ env.PREFIX }}${{ matrix.IMAGE_TAG}}
+            $imageTagWithPrefix = '${{ env.PREFIX }}${{ matrix.IMAGE_TAG}}'
           }else{
-            $imageTagWithPrefix = ${{ matrix.IMAGE_TAG }}
+            $imageTagWithPrefix = '${{ matrix.IMAGE_TAG }}'
           }
           az acr repository delete --name ${{ env.ACR_NAME }} `
           --image ${{ env.IMAGE_NAME }}:$imageTagWithPrefix --yes
