@@ -61,10 +61,14 @@ jobs:
           # Filter tags that start with "pr-"
           $filteredTags = $images | Where-Object { $_ -like "pr-*" }
 
+          # Filter tags that do not start with start with "pr-"
+          $tagsWithoutPRPrefix = $images | Where-Object { $_ -notlike "pr-*" }
+
           # Remove the "pr-" prefix from filtered tags
           $filteredTagsWithoutPrefix = $filteredTags -replace "^pr-", ""
 
           echo "filteredTags=$filteredTagsWithoutPrefix" >> $env:GITHUB_OUTPUT
+          echo "tagsWithoutPRPrefix=$tagsWithoutPRTags" >> $env:GITHUB_OUTPUT
 
       - name: Compare active PRs with existing ACR images
         id: comparison
@@ -84,6 +88,7 @@ jobs:
             Write-Host "⚡- These images need to be deleted : $imagesExistThatRequireDeletion"
           }
 
+          $mergedTags = $imagesExistThatRequireDeletion + ${{ steps.imageTags.outputs.tagsWithoutPRPrefix }}
           $tags = $imagesExistThatRequireDeletion -split ' '
           $imageTagList = ConvertTo-Json -Compress @($tags)
 
