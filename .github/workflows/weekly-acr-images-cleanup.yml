@@ -56,7 +56,7 @@ jobs:
         run: |
           $images = az acr repository show-tags `
           --name ${{ env.ACR_NAME }} --repository ${{ env.IMAGE_NAME }} `
-          --top 250 --orderby time_asc --output tsv
+          --top 250 --orderby time_asc --output tsv # Limiting to 250 tags because of the GitHub action matrix limit
 
           # Filter tags that start with "pr-"
           $filteredTags = $images | Where-Object { $_ -like "pr-*" }
@@ -65,7 +65,6 @@ jobs:
           $filteredTagsWithoutPrefix = $filteredTags -replace "^pr-", ""
 
           echo "filteredTags=$filteredTagsWithoutPrefix" >> $env:GITHUB_OUTPUT
-          Write-Output "$filteredTags"
 
       - name: Compare active PRs with existing ACR images
         id: comparison
