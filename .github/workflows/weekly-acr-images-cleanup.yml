@@ -68,7 +68,7 @@ jobs:
           $filteredTagsWithoutPrefix = $filteredTags -replace "^pr-", ""
 
           echo "filteredTags=$filteredTagsWithoutPrefix" >> $env:GITHUB_OUTPUT
-          echo "tagsWithoutPRPrefix=$tagsWithoutPRTags" >> $env:GITHUB_OUTPUT
+          echo "tagsWithoutPRPrefix=$tagsWithoutPRPrefix" >> $env:GITHUB_OUTPUT
 
       - name: Compare active PRs with existing ACR images
         id: comparison
