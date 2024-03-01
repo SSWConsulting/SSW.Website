@@ -56,9 +56,6 @@ class ErrorBoundary extends React.Component<
             this.state.error &&
             JSON.stringify(this.state.error.message, null, 2)
           }
-          // exitButtonCallback={() =>
-          //   this.setState({ ...this.state, hasError: false })
-          // }
         />
       );
     }

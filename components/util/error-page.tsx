@@ -17,6 +17,7 @@ type ErrorPageProps = {
   title?: string;
   tipText?: React.ReactNode;
   details?: string;
+  exitButtonCallback?: () => void;
 };
 
 export const ErrorPage = (props: ErrorPageProps) => {
@@ -69,6 +70,7 @@ export const ErrorPage = (props: ErrorPageProps) => {
             title={props.title}
             tipText={props.tipText}
             details={props.details}
+            exitButtonCallback={props.exitButtonCallback}
           />
         </div>
       </Container>
