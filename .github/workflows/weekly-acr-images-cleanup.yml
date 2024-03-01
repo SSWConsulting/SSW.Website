@@ -64,8 +64,6 @@ jobs:
           # Filter tags that do not start with start with "pr-"
           $tagsWithoutPRPrefix = $images | Where-Object { $_ -notlike "pr-*" }
 
-          Write-Host "$tagsWithoutPRPrefix"
-
           # Remove the "pr-" prefix from filtered tags
           $filteredTagsWithoutPrefix = $filteredTags -replace "^pr-", ""
 
@@ -90,8 +88,8 @@ jobs:
             Write-Host "⚡- These images need to be deleted : $imagesExistThatRequireDeletion"
           }
           $nonPRTags = "${{ steps.imageTags.outputs.tagsWithoutPRPrefix }}"
-          $mergedTags = $imagesExistThatRequireDeletion + $nonPRTags
-          $tags = $imagesExistThatRequireDeletion -split ' '
+          $allTags = $imagesExistThatRequireDeletion + $nonPRTags
+          $tags = $allTags -split ' '
           $imageTagList = ConvertTo-Json -Compress @($tags)
 
           echo "imageTagList=$imageTagList" >> $env:GITHUB_OUTPUT
