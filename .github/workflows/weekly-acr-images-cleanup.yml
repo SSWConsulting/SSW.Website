@@ -100,7 +100,7 @@ jobs:
           # Get the digest of the specific tag
           $digest = az acr repository show -n ${{ env.ACR_NAME }} `
            --image '${{ env.IMAGE_NAME }}:pr-2226' --query "digest" -o tsv
-          Write-Host "Digest: $digest and github sha: ${{ github.sha }}"
+          Write-Host "Digest: $digest and github sha: ${{ github.sha }} ."
 
       - name: delete pr-630
         run: |
