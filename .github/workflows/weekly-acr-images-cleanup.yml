@@ -98,9 +98,8 @@ jobs:
         id: set-outputs
         run: |
           # Get the digest of the specific tag
-          $digest = az acr manifest list-metadata --name ${{ env.ACR_NAME }} `
-          --registry ${{ env.IMAGE_NAME }} --output json `
-          --query "[?tags.contains('pr-2226')].digest" --output tsv
+          $digest = az acr manifest list --name ${{ env.ACR_NAME }} `
+          --repository ${{ env.IMAGE_NAME }} --tag "pr-2226"
           Write-Host "Digest: $digest"
 
   # invokeDeleteImage:
