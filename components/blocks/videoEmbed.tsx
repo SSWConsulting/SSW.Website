@@ -10,6 +10,7 @@ type VideoEmbedProps = {
     overflow?: boolean;
     uncentre?: boolean;
     caption?: string;
+    duration?: string;
   };
 };
 
@@ -30,7 +31,7 @@ export const VideoEmbed = ({ data }: VideoEmbedProps) => {
       <VideoModal url={data.url} overflow={data.overflow} />
       {data.caption && (
         <p className={classNames("font-bold", !uncentre && "text-centre")}>
-          {data.caption}
+          Video: {data.caption} ({data.duration})
         </p>
       )}
       <div></div>
@@ -100,8 +101,14 @@ export const videoEmbedBlockSchema: Template = {
       label: "Caption",
       name: "caption",
       description:
-        "Please adhere to https://ssw.com.au/rules/add-useful-and-concise-figure-captions/",
+        'Shows up under the video as "Video: {{ YOUR_INPUT }} ( {{ YOUR_DURATION }} )". This adheres to https://ssw.com.au/rules/add-useful-and-concise-figure-captions/',
       required: false,
+    },
+    {
+      type: "string",
+      label: "Duration",
+      name: "duration",
+      description: "See caption description",
     },
   ],
 };
