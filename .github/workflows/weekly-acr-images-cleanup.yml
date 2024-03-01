@@ -94,15 +94,24 @@ jobs:
 
           echo "imageTagList=$imageTagList" >> $env:GITHUB_OUTPUT
 
-  invokeDeleteImage:
-    name: Invoking delete-acr-image
-    needs:
-      - check-acr-images #Adding second check to avoid running this flow
-    if: needs.check-acr-images.outputs.imageTagList != '[""]'
-    uses: ./.github/workflows/delete-acr-image.yml
-    with:
-      imageTags: ${{ needs.check-acr-images.outputs.imageTagList }}
-    permissions:
-      id-token: write
-      contents: read
-    secrets: inherit
+      - name: Set outputs
+        id: set-outputs
+        run: |
+          # Get the digest of the specific tag
+          $digest = az acr manifest list-metadata --name ${{ env.ACR_NAME }} `
+          --repository ${{ env.IMAGE_NAME }} --output json `
+          --query "[?tags.contains('pr-2226')].digest" --output tsv
+          Write-Host "Digest: $digest"
+
+  # invokeDeleteImage:
+  #   name: Invoking delete-acr-image
+  #   needs:
+  #     - check-acr-images #Adding second check to avoid running this flow
+  #   if: needs.check-acr-images.outputs.imageTagList != '[""]'
+  #   uses: ./.github/workflows/delete-acr-image.yml
+  #   with:
+  #     imageTags: ${{ needs.check-acr-images.outputs.imageTagList }}
+  #   permissions:
+  #     id-token: write
+  #     contents: read
+  #   secrets: inherit
