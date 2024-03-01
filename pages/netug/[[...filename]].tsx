@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -108,7 +109,11 @@ export default function NETUGPage(
                 />
               </div>
 
-              <div className="col-span-1">
+              <div
+                className={classNames(
+                  props.speaker ? "col-span-1" : "col-span-2"
+                )}
+              >
                 <h2 className="text-4xl font-medium text-sswRed">
                   When & Where
                 </h2>
@@ -174,25 +179,23 @@ export default function NETUGPage(
                   ))}
                 </div>
               </div>
-              <div className="col-span-1 py-4 md:py-0">
-                {props.speaker && (
-                  <>
-                    <h2 className="text-4xl font-medium text-sswRed">
-                      Presenter
-                    </h2>
-                    <div className="pb-3">
-                      <Organizer
-                        data={{
-                          profileImg: props.speaker?.PresenterProfileImage?.Url,
-                          name: props.speaker?.Title,
-                          profileLink: props.speaker?.PresenterProfileLink,
-                        }}
-                        stringContent={speakerDescription}
-                      />
-                    </div>
-                  </>
-                )}
-              </div>
+              {props.speaker && (
+                <div className="col-span-1 py-4 md:py-0">
+                  <h2 className="text-4xl font-medium text-sswRed">
+                    Presenter
+                  </h2>
+                  <div className="pb-3">
+                    <Organizer
+                      data={{
+                        profileImg: props.speaker?.PresenterProfileImage?.Url,
+                        name: props.speaker?.Title,
+                        profileLink: props.speaker?.PresenterProfileLink,
+                      }}
+                      stringContent={speakerDescription}
+                    />
+                  </div>
+                </div>
+              )}
 
               <div
                 className="col-span-2"

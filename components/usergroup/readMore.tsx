@@ -10,12 +10,14 @@ type ReadMoreProps = {
   className?: string;
 };
 
+const sentenceSeparator = /\. |\.\n|\.\r|! |!\n|!\r/; // Matches "." or "!" followed by a space or a new line
+
 const getCondensedText = (
   text: string,
   length: number,
   previewSentenceCount: number
 ) => {
-  const formatted = text.split(". ");
+  const formatted = text.split(sentenceSeparator);
   const selectedParagraphs = formatted.slice(0, previewSentenceCount);
   const condensedText = selectedParagraphs.join(". ");
 
@@ -41,7 +43,7 @@ export const ReadMore = ({
   const isReadMoreRequired = () =>
     (length > 0 && text.length > length) ||
     (previewSentenceCount > 1 &&
-      text.split(". ").length > previewSentenceCount);
+      text.split(sentenceSeparator).length > previewSentenceCount);
 
   const condensedText = isReadMoreRequired()
     ? getCondensedText(sanitizedText, length, previewSentenceCount)
