@@ -2,12 +2,11 @@ import {
   AppInsightsContext,
   ReactPlugin,
 } from "@microsoft/applicationinsights-react-js";
-import { NextRouter } from "next/router";
 import React, { ErrorInfo } from "react";
-import { ErrorPage, ErrorText } from "./error-page";
+import { ErrorPage } from "./error-page";
 
 class ErrorBoundary extends React.Component<
-  { children?: React.ReactNode; },
+  { children?: React.ReactNode },
   { hasError: boolean; error: Error }
 > {
   constructor(props) {
@@ -69,4 +68,3 @@ class ErrorBoundary extends React.Component<
 }
 
 export { ErrorBoundary };
-

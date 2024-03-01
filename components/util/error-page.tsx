@@ -89,10 +89,10 @@ export const ErrorText = (props: ErrorTextProps) => {
       {props.exitButtonCallback && (
         <div className="flex justify-end">
           <button
-            className="p-2 rounded-full hover:bg-gray-200"
+            className="rounded-full p-2 hover:bg-gray-200"
             onClick={props.exitButtonCallback}
           >
-            <FaXmark className="h-6 w-6 text-gray-500" />
+            <FaXmark className="size-6 text-gray-500" />
           </button>
         </div>
       )}
