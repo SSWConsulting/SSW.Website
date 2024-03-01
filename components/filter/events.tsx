@@ -1,5 +1,4 @@
 import { Tab, Transition } from "@headlessui/react";
-import classNames from "classnames";
 import Image from "next/image";
 import { Fragment, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
@@ -46,38 +45,10 @@ export const EventsFilter = ({
       }
       groups={!pastSelected ? filters : pastFilters}
     >
-      <Tab.Group>
+      <Tab.Group onChange={(index) => setPastSelected(index === 1)}>
         <Tab.List className="mb-8 flex flex-row">
-          <Tab as={Fragment}>
-            {({ selected }) => {
-              setPastSelected(!selected);
-              return (
-                <button
-                  className={classNames(
-                    "flex-grow border-b-2 border-b-sswRed py-2 uppercase tracking-widest hover:bg-gray-100",
-                    selected ? "bg-gray-100" : "hover:bg-gray-50"
-                  )}
-                >
-                  Upcoming Events
-                </button>
-              );
-            }}
-          </Tab>
-          <Tab as={Fragment}>
-            {({ selected }) => {
-              setPastSelected(selected);
-              return (
-                <button
-                  className={classNames(
-                    "flex-grow border-b-2 border-b-sswRed py-2 uppercase tracking-widest",
-                    selected ? "bg-gray-100" : "hover:bg-gray-50"
-                  )}
-                >
-                  Past Events
-                </button>
-              );
-            }}
-          </Tab>
+          <EventTab>Upcoming Events</EventTab>
+          <EventTab>Past Events</EventTab>
         </Tab.List>
         <Tab.Panels>
           <Tab.Panel>
@@ -92,6 +63,16 @@ export const EventsFilter = ({
         </Tab.Panels>
       </Tab.Group>
     </FilterBlock>
+  );
+};
+
+const EventTab = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <Tab as={Fragment}>
+      <button className="grow border-b-2 border-b-sswRed py-2 uppercase tracking-widest hover:bg-gray-50 ui-selected:bg-gray-100">
+        {children}
+      </button>
+    </Tab>
   );
 };
 
