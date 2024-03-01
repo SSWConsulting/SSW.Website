@@ -58,6 +58,14 @@ jobs:
           }else{
             $imageTagWithPrefix = '${{ matrix.IMAGE_TAG }}'
           }
+
+          # Get the digest of the specific tag
+          $digest = az acr repository show-manifests --name ${{ env.ACR_NAME }} `
+          --repository ${{ env.IMAGE_NAME }} --output json `
+          --query "[?tags.contains('$imageTagWithPrefix')].digest" --output tsv
+
+          # Delete the digest (and all associated tags)
           az acr repository delete --name ${{ env.ACR_NAME }} `
-          --image ${{ env.IMAGE_NAME }}:$imageTagWithPrefix --yes
-          Write-Output "✅ ACR - ${{ env.IMAGE_NAME }}:$imageTagWithPrefix image deleted successfully."
+          --image ${{ env.IMAGE_NAME }} --digest $digest --yes
+
+          Write-Output "✅ ACR - image deleted with $digest digest"
