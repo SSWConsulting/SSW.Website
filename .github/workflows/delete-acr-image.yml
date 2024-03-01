@@ -1,31 +1,31 @@
-name: Testing - Delete images when PR is closed
+name: Delete - Docker image from ACR
 
 on:
   workflow_call:
     inputs:
       imageTags:
         type: string
-        description: "image IDs"
+        description: "Image Tags or PR numbers"
         required: true
   workflow_dispatch:
     inputs:
       imageTag:
-        description: "Images Tags"
+        description: "Images Tag or PR number"
         required: true
-        default: ""
+
 defaults:
   run:
     shell: pwsh
 
 env:
   IMAGE_TAG: ${{ inputs.imageTags || inputs.imageTag }}
-  IMAGE_PREFIX: pr-
+  PREFIX: pr-
 permissions:
   id-token: write
   contents: read
 
 jobs:
-  delete-image:
+  delete-acr-image:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -50,10 +50,8 @@ jobs:
         run: |
           az acr login --name ${{ env.ACR_LOGIN_SERVER }}
 
-      - name: Showing tag
-        run: echo ${{ matrix.IMAGE_TAG }}
-
-      # - name: ACR - Delete img
+      # - name: ACR - Delete image
       #   run: |
       #     az acr repository delete --name ${{ env.ACR_NAME }} `
-      #     --image ${{ env.IMAGE_NAME }}:${{ env.IMAGE_PREFIX }}${{ matrix.IMAGE_TAG}} --yes
+      #     --image ${{ env.IMAGE_NAME }}:${{ env.PREFIX }}${{ matrix.IMAGE_TAG}} --yes
+      #     Write-Output "✅ ACR - ${{ env.IMAGE_NAME }}:${{ env.PREFIX }}${{ matrix.IMAGE_TAG}} image deleted successfully."

@@ -1,4 +1,4 @@
-name: Weekly docker image cleanup
+name: Weekly ACR images cleanup
 
 on:
   schedule:
@@ -24,8 +24,7 @@ jobs:
   check-acr-images:
     runs-on: ubuntu-latest
     outputs:
-      imagesExistThatRequireDeletion: ${{ steps.comparision.outputs.imagesExistThatRequireDeletion }}
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      imageTagList: ${{ steps.comparison.outputs.imageTagList }}
     steps:
       - name: Checking out
         uses: actions/checkout@v4
@@ -42,37 +41,40 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: ACR - Login
-        run: |
-          az acr login --name ${{ env.ACR_LOGIN_SERVER }}
-
       - name: Get list of active PRs
         id: prList
         run: |
           $active_prs=$(gh pr list --state open --json number | jq -r '.[].number')
           echo "active_prs=$active_prs" >> $env:GITHUB_OUTPUT
 
-      - name: Get list of acr images
-        id: imageList
+      - name: ACR - Login
+        run: |
+          az acr login --name ${{ env.ACR_LOGIN_SERVER }}
+
+      - name: Get list of ACR image tags
+        id: imageTags
         run: |
           $images = az acr repository show-tags `
           --name ${{ env.ACR_NAME }} --repository ${{ env.IMAGE_NAME }} `
           --top 20 --orderby time_asc --output tsv
+
           # Filter tags that start with "pr-"
           $filteredTags = $images | Where-Object { $_ -like "pr-*" }
+
           # Remove the "pr-" prefix from filtered tags
           $filteredTagsWithoutPrefix = $filteredTags -replace "^pr-", ""
+
           echo "filteredTags=$filteredTagsWithoutPrefix" >> $env:GITHUB_OUTPUT
           Write-Output "$filteredTags"
 
-      - name: Compare active PRs with existing docker images
-        id: comparision
+      - name: Compare active PRs with existing ACR images
+        id: comparison
         run: |
           # Comparing the number of images and PRs
           $prList =  "${{ steps.PRList.outputs.active_prs }}" -split ' '
-          $imageList = "${{ steps.imageList.outputs.filteredTags }}" -split ' '
+          $imageTags = "${{ steps.imageTags.outputs.filteredTags }}" -split ' '
 
-          $imagesExistThatRequireDeletion = $imageList | Where-Object { $_ -notin $prList }
+          $imagesExistThatRequireDeletion = $imageTags | Where-Object { $_ -notin $prList }
           $imagesNeedDeletion = $imagesExistThatRequireDeletion.Length -gt 0
 
           if ( ! $imagesNeedDeletion ) {
@@ -82,28 +84,20 @@ jobs:
             echo "❌ - Number of docker images are not equal to number of active PRs"
             Write-Host "⚡- These images need to be deleted : $imagesExistThatRequireDeletion"
           }
-          echo "imagesExistThatRequireDeletion=$imagesExistThatRequireDeletion" >> $env:GITHUB_OUTPUT
 
-      - name: Converting slots into JSON Formatted Array
-        id: set-matrix
-        run: |
-          # TODO: Tech Debt - need to use it as JSON instead of space delimited - Github issue - https://github.com/SSWConsulting/SSW.Website/issues/1228
-          $slotIDs = '${{ steps.comparision.outputs.imagesExistThatRequireDeletion }}' -split ' '
-          $slotIDsInJSonArray = ConvertTo-Json -Compress @($slotIDs)
-          echo "matrix=$slotIDsInJSonArray" >> $env:GITHUB_OUTPUT
+          $tags = $imagesExistThatRequireDeletion -split ' '
+          $imageTagList = ConvertTo-Json -Compress @($tags)
 
-      - name: show matrix
-        run: |
-          echo "Matrix: ${{ steps.set-matrix.outputs.matrix }}"
+          echo "imageTagList=$imageTagList" >> $env:GITHUB_OUTPUT
 
   invokeDeleteImage:
-    name: Invoking PR Close/Delete
+    name: Invoking delete-acr-image.yml
     needs:
       - check-acr-images #Adding second check to avoid running this flow
-    if: needs.check-acr-images.outputs.imagesExistThatRequireDeletion != ''
-    uses: ./.github/workflows/delete-images.yml
+    if: needs.check-acr-images.outputs.imageTagList != '[""]'
+    uses: ./.github/workflows/delete-acr-image.yml
     with:
-      imageTags: ${{ needs.check-acr-images.outputs.matrix }}
+      imageTags: ${{ needs.check-acr-images.outputs.imageTagList }}
     permissions:
       id-token: write
       contents: read
