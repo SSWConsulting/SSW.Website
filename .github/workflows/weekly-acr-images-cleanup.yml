@@ -56,7 +56,7 @@ jobs:
         run: |
           $images = az acr repository show-tags `
           --name ${{ env.ACR_NAME }} --repository ${{ env.IMAGE_NAME }} `
-          --orderby time_asc --output tsv
+          --top 250 --orderby time_asc --output tsv
 
           # Filter tags that start with "pr-"
           $filteredTags = $images | Where-Object { $_ -like "pr-*" }
