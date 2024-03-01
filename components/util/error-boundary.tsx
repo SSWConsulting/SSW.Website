@@ -3,7 +3,7 @@ import {
   ReactPlugin,
 } from "@microsoft/applicationinsights-react-js";
 import React, { ErrorInfo } from "react";
-import { ErrorPage } from "./error-page";
+import { ErrorPage, ErrorText } from "./error-page";
 
 class ErrorBoundary extends React.Component<
   { children?: React.ReactNode },
@@ -39,7 +39,7 @@ class ErrorBoundary extends React.Component<
   render() {
     if (this.state.hasError) {
       return (
-        <ErrorPage
+        <ErrorText
           tipText={
             <div>
               <p className="pt-4 text-xl">
@@ -55,6 +55,9 @@ class ErrorBoundary extends React.Component<
           details={
             this.state.error &&
             JSON.stringify(this.state.error.message, null, 2)
+          }
+          exitButtonCallback={() =>
+            this.setState({ ...this.state, hasError: false })
           }
         />
       );
