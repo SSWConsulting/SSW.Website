@@ -31,7 +31,7 @@ export const VideoEmbed = ({ data }: VideoEmbedProps) => {
       <VideoModal url={data.url} overflow={data.overflow} />
       {data.caption && (
         <p className={classNames("font-bold", !uncentre && "text-centre")}>
-          Video: {data.caption} ({data.duration})
+          Video: {data.caption} {data.duration && <>({data.duration})</>}
         </p>
       )}
       <div></div>
