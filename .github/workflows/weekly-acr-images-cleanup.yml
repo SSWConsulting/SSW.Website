@@ -2,8 +2,8 @@ name: Weekly docker image cleanup
 
 on:
   schedule:
-    # Monday at 12 PM UTC - https://cron.help/#0_12_*_*_MON
-    - cron: "0 12 * * MON"
+    # Monday at 2 PM UTC - https://cron.help/#0_14_*_*_MON
+    - cron: "0 14 * * MON"
   workflow_dispatch:
   pull_request:
     branches:
@@ -95,10 +95,6 @@ jobs:
       - name: show matrix
         run: |
           echo "Matrix: ${{ steps.set-matrix.outputs.matrix }}"
-
-      - name: delete img
-        run: |
-          az acr repository delete --name ${{ env.ACR_NAME }} --image ${{ env.IMAGE_NAME }}:pr-102 --yes
 
   invokeDeleteImage:
     name: Invoking PR Close/Delete

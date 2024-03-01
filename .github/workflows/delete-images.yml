@@ -7,13 +7,18 @@ on:
         type: string
         description: "image IDs"
         required: true
-
+  workflow_dispatch:
+    inputs:
+      imageTag:
+        description: "Images Tags"
+        required: true
+        default: ""
 defaults:
   run:
     shell: pwsh
 
 env:
-  IMAGE_TAG: ${{ inputs.imageTags }}
+  IMAGE_TAG: ${{ inputs.imageTags || inputs.imageTag }}
   IMAGE_PREFIX: pr-
 permissions:
   id-token: write
@@ -24,10 +29,31 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        SLOT_NAME: ${{ fromJson(inputs.imageTags) }}
+        IMAGE_TAG: ${{ fromJson(inputs.imageTags) }}
 
     steps:
       - uses: actions/checkout@v4
 
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v2
+        with:
+          path: ./.github
+
+      - name: Azure CLI - Login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: ACR - Login
+        run: |
+          az acr login --name ${{ env.ACR_LOGIN_SERVER }}
+
       - name: Showing tag
-        run: echo ${{ matrix.SLOT_NAME }}
+        run: echo ${{ matrix.IMAGE_TAG }}
+
+      # - name: ACR - Delete img
+      #   run: |
+      #     az acr repository delete --name ${{ env.ACR_NAME }} `
+      #     --image ${{ env.IMAGE_NAME }}:${{ env.IMAGE_PREFIX }}${{ matrix.IMAGE_TAG}} --yes
