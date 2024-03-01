@@ -88,7 +88,7 @@ jobs:
             Write-Host "⚡- These images need to be deleted : $imagesExistThatRequireDeletion"
           }
           $nonPRTags = "${{ steps.imageTags.outputs.tagsWithoutPRPrefix }}"
-          $allTags = $imagesExistThatRequireDeletion + $nonPRTags
+          $allTags = $nonPRTags
           $tags = $allTags -split ' '
           $imageTagList = ConvertTo-Json -Compress @($tags)
 
