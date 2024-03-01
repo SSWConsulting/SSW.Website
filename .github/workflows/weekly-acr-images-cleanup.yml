@@ -88,7 +88,7 @@ jobs:
             Write-Host "⚡- These images need to be deleted : $imagesExistThatRequireDeletion"
           }
 
-          $mergedTags = $imagesExistThatRequireDeletion + ${{ steps.imageTags.outputs.tagsWithoutPRPrefix }}
+          $mergedTags = $imagesExistThatRequireDeletion + '${{ steps.imageTags.outputs.tagsWithoutPRPrefix }}'
           $tags = $imagesExistThatRequireDeletion -split ' '
           $imageTagList = ConvertTo-Json -Compress @($tags)
 
