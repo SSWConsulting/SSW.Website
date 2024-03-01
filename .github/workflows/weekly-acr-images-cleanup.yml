@@ -62,7 +62,7 @@ jobs:
           $filteredTags = $images | Where-Object { $_ -like "pr-*" }
 
           # Filter tags that do not start with start with "pr-"
-          $tagsWithoutPRPrefix = $images | Where-Object { $_ -notlike "pr-*" -and $_ -notmatch "staging|production"  }
+          $tagsWithoutPRPrefix = $images | Where-Object { $_ -notlike "pr-*" -and $_ -notmatch "staging|production|a21f1263dfaa4e4977595912a8cc80c95f737f98|89a9bccde9c2a407b85105e3261d17ed27006160"  }
 
           # Remove the "pr-" prefix from filtered tags
           $filteredTagsWithoutPrefix = $filteredTags -replace "^pr-", ""
