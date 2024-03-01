@@ -1,5 +1,4 @@
 import { InferGetStaticPropsType } from "next";
-import Link from "next/link";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../.tina/__generated__/client";
@@ -34,7 +33,6 @@ export default function HomePage(
 
   return (
     <>
-      <Link href="/rules">Test link here</Link>
       <SEO seo={data.page.seo} />
       <Layout menu={data.megamenu}>
         {data.page.breadcrumbs ? (
