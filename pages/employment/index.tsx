@@ -98,9 +98,9 @@ export default function EmploymentPage(
         <Section
           color="black"
           className={`
-            prose-employment
+            prose-dark
             border-y-4 border-y-sswRed
-            text-center`}
+            text-center text-white`}
         >
           <a id="more" />
           <div className="w-full bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
@@ -126,7 +126,7 @@ export default function EmploymentPage(
           </div>
         </Section>
         {data.employment.afterBody ? (
-          <Section className="prose-employment mb-16 text-center">
+          <Section className="prose-dark mb-16 text-center">
             <Container padding="px-4" className="w-full">
               <div data-tina-field={tinaField(data.employment, "afterBody")}>
                 <TinaMarkdown
@@ -143,10 +143,7 @@ export default function EmploymentPage(
 
         <Section className="!block" id="available">
           {data.employment.opportunitiesBody && (
-            <Container
-              size="custom"
-              className="prose-employment w-full text-center"
-            >
+            <Container size="custom" className="prose-dark w-full text-center">
               <div
                 data-tina-field={tinaField(
                   data.employment,

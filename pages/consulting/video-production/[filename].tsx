@@ -57,7 +57,7 @@ export default function VideoProductionPage(
 
         <Section
           className={`
-            prose-consulting
+            prose-dark
             border-y-4 border-y-sswRed
             text-center`}
         >
