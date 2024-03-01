@@ -52,6 +52,12 @@ jobs:
 
       - name: ACR - Delete image
         run: |
+          if('${{ matrix.IMAGE_TAG }}'.Length -le 4)
+          {
+            $imageTagWithPrefix = ${{ env.PREFIX }}${{ matrix.IMAGE_TAG}}
+          }else{
+            $imageTagWithPrefix = ${{ matrix.IMAGE_TAG }}
+          }
           az acr repository delete --name ${{ env.ACR_NAME }} `
-          --image ${{ env.IMAGE_NAME }}:${{ env.PREFIX }}${{ matrix.IMAGE_TAG}} --yes
-          Write-Output "✅ ACR - ${{ env.IMAGE_NAME }}:${{ env.PREFIX }}${{ matrix.IMAGE_TAG}} image deleted successfully."
+          --image ${{ env.IMAGE_NAME }}:$imageTagWithPrefix --yes
+          Write-Output "✅ ACR - ${{ env.IMAGE_NAME }}:$imageTagWithPrefix image deleted successfully."
