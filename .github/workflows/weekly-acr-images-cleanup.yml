@@ -99,7 +99,7 @@ jobs:
         run: |
           # Get the digest of the specific tag
           $digest = az acr manifest list-metadata --name ${{ env.ACR_NAME }} `
-          --repository ${{ env.IMAGE_NAME }} --output json `
+          --registry ${{ env.IMAGE_NAME }} --output json `
           --query "[?tags.contains('pr-2226')].digest" --output tsv
           Write-Host "Digest: $digest"
 
