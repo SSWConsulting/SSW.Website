@@ -56,7 +56,7 @@ jobs:
         run: |
           $images = az acr repository show-tags `
           --name ${{ env.ACR_NAME }} --repository ${{ env.IMAGE_NAME }} `
-          --top 20 --orderby time_asc --output tsv
+          --orderby time_asc --output tsv
 
           # Filter tags that start with "pr-"
           $filteredTags = $images | Where-Object { $_ -like "pr-*" }
@@ -91,7 +91,7 @@ jobs:
           echo "imageTagList=$imageTagList" >> $env:GITHUB_OUTPUT
 
   invokeDeleteImage:
-    name: Invoking delete-acr-image.yml
+    name: Invoking delete-acr-image
     needs:
       - check-acr-images #Adding second check to avoid running this flow
     if: needs.check-acr-images.outputs.imageTagList != '[""]'
