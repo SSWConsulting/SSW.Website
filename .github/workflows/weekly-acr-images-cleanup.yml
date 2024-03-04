@@ -87,9 +87,8 @@ jobs:
             echo "❌ - Number of docker images are not equal to number of active PRs"
             Write-Host "⚡- These images need to be deleted : $imagesExistThatRequireDeletion"
           }
-          $nonPRTags = "${{ steps.imageTags.outputs.tagsWithoutPRPrefix }}"
-          $allTags = $nonPRTags # + $imagesExistThatRequireDeletion
-          $tags = $allTags -split ' '
+          # Convert string into Array
+          $tags = $imagesExistThatRequireDeletion -split ' '
           $imageTagList = ConvertTo-Json -Compress @($tags)
 
           echo "imageTagList=$imageTagList" >> $env:GITHUB_OUTPUT

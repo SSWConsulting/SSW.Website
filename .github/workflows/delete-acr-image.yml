@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
     inputs:
       imageTag:
-        description: "Images Tag or PR number"
+        description: "Image Tag or PR number"
         required: true
 
 defaults:
@@ -52,7 +52,7 @@ jobs:
 
       - name: ACR - Delete image
         run: |
-          if('${{ matrix.IMAGE_TAG }}'.Length -le 4) # PR tags contain 4 digits
+          if('${{ matrix.IMAGE_TAG }}'.Length -le 4) # PR tags consist of 4 digits (i.e pr-xxxx)
           {
             $imageTagWithPrefix = '${{ env.PREFIX }}${{ matrix.IMAGE_TAG}}'
           }else{
