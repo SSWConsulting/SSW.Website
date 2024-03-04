@@ -58,8 +58,8 @@ export const getTestimonialsExcludingCategories = async (
     categoryName: string;
   }[]
 ): Promise<TestimonialType[]> => {
-  const categoryListToExclude = categoryRoutePaths?.map(
-    (category) => extractFileName(category?.categoryName)?.toLowerCase()
+  const categoryListToExclude = categoryRoutePaths?.map((category) =>
+    extractFileName(category?.categoryName)?.toLowerCase()
   );
 
   const testimonialsResult = testimonialList.testimonials
