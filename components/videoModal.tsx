@@ -81,6 +81,7 @@ export const VideoModal = ({
             {imageSrc && (
               <>
                 <Image
+                  className="!my-0"
                   src={imageSrc || ""}
                   fill
                   alt="Video player"
