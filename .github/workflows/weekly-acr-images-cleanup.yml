@@ -47,10 +47,6 @@ jobs:
           $active_prs=$(gh pr list --state open --json number | jq -r '.[].number')
           echo "active_prs=$active_prs" >> $env:GITHUB_OUTPUT
 
-      - name: ACR - Login
-        run: |
-          az acr login --name ${{ env.ACR_LOGIN_SERVER }}
-
       - name: Get list of ACR image tags
         id: imageTags
         run: |

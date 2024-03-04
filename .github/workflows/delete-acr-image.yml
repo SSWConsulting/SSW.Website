@@ -33,7 +33,8 @@ jobs:
       - name: Get image tags from input
         id: set-matrix
         run: |
-          echo "matrix='${{ env.IMAGE_TAGS }}'" >> $env:GITHUB_OUTPUT
+          $imageTags = '${{ env.IMAGE_TAGS }}'
+          echo "matrix=$imageTags" >> $env:GITHUB_OUTPUT
 
   delete-acr-image:
     runs-on: ubuntu-latest
