@@ -79,7 +79,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-responsive-modal": "^6.4.2",
     "react-toastify": "^10.0.4",
-    "react-tooltip": "^5.25.1",
+    "react-tooltip": "^5.26.3",
     "react-use": "^17.5.0",
     "schema-dts": "^1.1.2",
     "sharp": "^0.33.2",
