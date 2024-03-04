@@ -290,25 +290,14 @@ module.exports = {
             p: {
               paddingTop: "0.5em",
               paddingBottom: "0.75em",
+              fontWeight: theme("fontWeight.light"),
+              fontSize: "1.125rem",
             },
-            // "ul > li": {
-            //   textAlign: "left",
-            //   display: "list-item",
-            //   margin: "1em 1em 1em 2em",
-            // },
             "ul > li": {
               display: "list-item",
               margin: "2rem 0",
               listStyle: "inside",
               listStyleType: "square",
-              "> div::before": {
-                color: theme("colors.sswRed"),
-                content: "\u25A0",
-                display: "inline-block",
-                fontWeight: theme("fontWeight.bold"),
-                marginLeft: "-1em",
-                width: "1em",
-              },
               "> div": {
                 display: "inline",
               },
