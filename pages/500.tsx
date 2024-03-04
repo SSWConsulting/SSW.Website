@@ -14,7 +14,7 @@ export default function FiveHundred(
       appInsights.trackException({
         exception: new Error(`Error ${500}`),
         properties: {
-          Request: "GET /_error",
+          Request: "GET /500",
           Status: 500,
         },
       });
