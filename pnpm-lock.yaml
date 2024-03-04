@@ -206,8 +206,8 @@ devDependencies:
     specifier: ^4.2.3
     version: 4.2.3(next@14.1.0)
   playwright:
-    specifier: 1.41.2
-    version: 1.41.2
+    specifier: 1.42.1
+    version: 1.42.1
   postcss:
     specifier: ^8.4.35
     version: 8.4.35
@@ -15098,12 +15098,28 @@ packages:
     hasBin: true
     dev: true
 
+  /playwright-core@1.42.1:
+    resolution: {integrity: sha512-mxz6zclokgrke9p1vtdy/COWBH+eOZgYUVVU34C73M+4j4HLlQJHtfcqiqqxpP0o8HhMkflvfbquLX5dg6wlfA==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dev: true
+
   /playwright@1.41.2:
     resolution: {integrity: sha512-v0bOa6H2GJChDL8pAeLa/LZC4feoAMbSQm1/jF/ySsWWoaNItvrMP7GEkvEEFyCTUYKMxjQKaTSg5up7nR6/8A==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
       playwright-core: 1.41.2
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
+  /playwright@1.42.1:
+    resolution: {integrity: sha512-PgwB03s2DZBcNRoW+1w9E+VkLBxweib6KTXM0M3tkiT4jVxKSi6PmVJ591J+0u10LUrgxB7dLRbiJqO5s2QPMg==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dependencies:
+      playwright-core: 1.42.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
