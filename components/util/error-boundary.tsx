@@ -30,7 +30,9 @@ class ErrorBoundary extends React.Component<
       appInsights.trackException({
         exception: error,
         properties: {
-          errorInfo: JSON.stringify(errorInfo),
+          Request: `GET /${window?.location?.pathname || "unknown"}`,
+          Type: "ErrorBoundary",
+          ErrorInfo: JSON.stringify(errorInfo),
         },
       });
     }
