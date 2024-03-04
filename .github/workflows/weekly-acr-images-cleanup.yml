@@ -93,7 +93,7 @@ jobs:
     name: Invoking delete-acr-image
     needs:
       - check-acr-images #Adding second check to avoid running this flow
-    if: needs.check-acr-images.outputs.imageTagList != '[""]'
+    if: needs.check-acr-images.outputs.imageTagList != '[]'
     uses: ./.github/workflows/delete-acr-image.yml
     with:
       imageTags: ${{ needs.check-acr-images.outputs.imageTagList }}
