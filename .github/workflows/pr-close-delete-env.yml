@@ -33,13 +33,11 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - name: Converting slots into JSON Formatted Array
+      - name: Get slot ids from input
         id: set-matrix
         run: |
-          # TODO: Tech Debt - need to use it as JSON instead of space delimited - Github issue - https://github.com/SSWConsulting/SSW.Website/issues/1228
-          $slotIDs = '${{ env.SLOT_NAME }}' -split ' '
-          $slotIDsInJSonArray = ConvertTo-Json -Compress @($slotIDs)
-          echo "matrix=$slotIDsInJSonArray" >> $env:GITHUB_OUTPUT
+          $slotIDs = '${{ env.SLOT_NAME }}'
+          echo "matrix=$slotIDs" >> $env:GITHUB_OUTPUT
 
   delete-slot-and-acr-cleanup:
     runs-on: ubuntu-latest
