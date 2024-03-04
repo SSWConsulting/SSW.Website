@@ -41,7 +41,7 @@ jobs:
           $slotIDsInJSonArray = ConvertTo-Json -Compress @($slotIDs)
           echo "matrix=$slotIDsInJSonArray" >> $env:GITHUB_OUTPUT
 
-  delete-slot-permission-cleanup:
+  delete-slot-and-acr-cleanup:
     runs-on: ubuntu-latest
     needs: setting-up-slot-ids
     strategy:
@@ -109,6 +109,14 @@ jobs:
             Write-Host '❌ Key Vault not found'
           }
 
+      - name: ACR - Delete image
+        run: |
+          $imageTagWithPrefix = '${{ env.SLOT_PREFIX }}${{ matrix.SLOT_NAME}}'
+
+          az acr repository delete --name ${{ env.ACR_NAME }} `
+          --image ${{ env.IMAGE_NAME }}:$imageTagWithPrefix --yes
+          Write-Output "✅ ACR - ${{ env.IMAGE_NAME }}:$imageTagWithPrefix image deleted successfully."
+
       - name: Delete slot
         run: |
           az webapp deployment slot delete `
@@ -116,17 +124,3 @@ jobs:
             --name ${{ env.APP_SERVICE_NAME }} `
             --slot ${{ env.SLOT_PREFIX }}${{ matrix.SLOT_NAME }} `
             --output none
-
-  invokeDeleteImage:
-    name: Invoking Pdelete-acr-image
-    needs:
-      - setting-up-slot-ids
-      - delete-slot-permission-cleanup
-    if: needs.setting-up-slot-ids.outputs.matrix != '[""]'
-    uses: ./.github/workflows/delete-acr-image.yml
-    with:
-      imageTags: ${{ needs.setting-up-slot-ids.outputs.matrix }}
-    permissions:
-      id-token: write
-      contents: read
-    secrets: inherit

@@ -18,18 +18,29 @@ defaults:
     shell: pwsh
 
 env:
-  IMAGE_TAG: ${{ inputs.imageTags || inputs.imageTag }}
+  IMAGE_TAGS: ${{ inputs.imageTags || inputs.imageTag }}
   PREFIX: pr-
 permissions:
   id-token: write
   contents: read
 
 jobs:
+  setting-up-img-tags:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Get image tags from input
+        id: set-matrix
+        run: |
+          echo "matrix=${{ env.IMAGE_TAGS }}" >> $env:GITHUB_OUTPUT
+
   delete-acr-image:
     runs-on: ubuntu-latest
+    needs: setting-up-img-tags
     strategy:
       matrix:
-        IMAGE_TAG: ${{ fromJson(inputs.imageTags) }}
+        IMAGE_TAG: ${{ fromJson(needs.setting-up-img-tags.outputs.matrix) }}
 
     steps:
       - uses: actions/checkout@v4
@@ -45,10 +56,6 @@ jobs:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-
-      - name: ACR - Login
-        run: |
-          az acr login --name ${{ env.ACR_LOGIN_SERVER }}
 
       - name: ACR - Delete image
         run: |
