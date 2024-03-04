@@ -38,6 +38,14 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
+      - name: Delete all untagged images
+        run: |
+          $untaggedDigests = az acr repository show-manifests -n  ${{ env.ACR_NAME }} --repository `
+          ${{ env.IMAGE_NAME }} --query "[?tags==null].digest" -o tsv
+          #%{ az acr repository delete -n ${{ env.ACR_NAME }} -t ${{ env.IMAGE_NAME }}@$_ }
+          Write-Host "$untaggedDigests"
+          Write-Host "$untaggedDigests.Length"
+
       - name: Get list of active PRs
         id: prList
         run: |
