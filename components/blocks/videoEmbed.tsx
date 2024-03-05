@@ -21,20 +21,18 @@ export const VideoEmbed = ({ data }: VideoEmbedProps) => {
 
   return (
     <div
-      className={classNames(
-        "relative aspect-video cursor-pointer",
-        width,
-        margin,
-        uncentre
-      )}
+      className={classNames("relative aspect-video", width, margin, uncentre)}
     >
-      <VideoModal url={data.url} overflow={data.overflow} />
+      <VideoModal
+        url={data.url}
+        overflow={data.overflow}
+        className="cursor-pointer"
+      />
       {data.caption && (
         <p className={classNames("font-bold", !uncentre && "text-centre")}>
           Video: {data.caption} {data.duration && <>({data.duration})</>}
         </p>
       )}
-      <div></div>
     </div>
   );
 };
