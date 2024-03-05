@@ -15,7 +15,7 @@ import { AppInsightsProvider } from "../context/app-insight-client";
 // Hack as per https://stackoverflow.com/a/66575373 to stop font awesome icons breaking
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
-// DayJS module addition as per https://github.com/iamkun/dayjs/issues/1577
+import { ErrorBoundary } from "@/components/util/error-boundary";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
@@ -31,6 +31,7 @@ const ChatBaseBot = dynamic(
   }
 );
 
+// DayJS module addition as per https://github.com/iamkun/dayjs/issues/1577
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
 dayjs.extend(utc);
@@ -65,7 +66,9 @@ const App = ({ Component, pageProps }) => {
       <Analytics />
       <DefaultSeo {...NEXT_SEO_DEFAULT} />
       <AppInsightsProvider>
-        <Component {...pageProps} />
+        <ErrorBoundary key={router.asPath}>
+          <Component {...pageProps} />
+        </ErrorBoundary>
       </AppInsightsProvider>
       <ChatBaseBot />
     </>
