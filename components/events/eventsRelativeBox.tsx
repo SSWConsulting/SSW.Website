@@ -13,7 +13,7 @@ export const EventsRelativeBox = ({
   dateFontSize,
 }: EventsRelativeBoxProps) => {
   return (
-    <time className="my-1.5 flex items-center">
+    <time className="my-1.5 flex items-center" suppressHydrationWarning>
       {relativeDate && (
         <span
           className={classNames(
@@ -23,7 +23,6 @@ export const EventsRelativeBox = ({
               ? "bg-sswRed text-white"
               : "bg-gray-25 text-black"
           )}
-          suppressHydrationWarning
         >
           {relativeDate}
         </span>
