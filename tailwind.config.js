@@ -287,15 +287,15 @@ module.exports = {
             ul: {
               listStyleType: "square",
             },
-            p: {
+            "p, ul": {
               paddingTop: "0.5em",
-              paddingBottom: "0.75em",
+              paddingBottom: "0.6em",
               fontWeight: theme("fontWeight.light"),
               fontSize: "1.125rem",
             },
             "ul > li": {
               display: "list-item",
-              margin: "2rem 0",
+              margin: "1.5rem 0",
               listStyle: "inside",
               listStyleType: "square",
               "> div": {
