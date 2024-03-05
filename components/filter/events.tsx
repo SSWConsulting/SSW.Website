@@ -1,6 +1,7 @@
 import { Tab, Transition } from "@headlessui/react";
+import { formatEventLongDate, formatRelativeEventDate } from "helpers/dates";
 import Image from "next/image";
-import { Fragment, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { sanitiseXSS } from "../../helpers/validator";
@@ -8,6 +9,7 @@ import { useEvents } from "../../hooks/useEvents";
 import { EventInfo } from "../../services/server/events";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { CustomLink } from "../customLink";
+import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { CITY_MAP } from "../util/constants/country";
 import { FilterBlock } from "./FilterBlock";
 
@@ -133,15 +135,15 @@ const Event = ({ visible, event }: EventProps) => {
   //   ? { name: CITY_MAP[event.City]?.name, url: CITY_MAP[event.City]?.url }
   //   : { name: event.City, url: event.Url.Url };
 
-  // const relativeDate = useMemo(
-  //   () => formatRelativeEventDate(event.StartDateTime, event.EndDateTime),
-  //   [event.StartDateTime, event.EndDateTime]
-  // );
+  const relativeDate = useMemo(
+    () => formatRelativeEventDate(event.StartDateTime, event.EndDateTime),
+    [event.StartDateTime, event.EndDateTime]
+  );
 
-  // const formattedDate = useMemo(
-  //   () => formatEventLongDate(event.StartDateTime, event.EndDateTime),
-  //   [event.StartDateTime, event.EndDateTime]
-  // );
+  const formattedDate = useMemo(
+    () => formatEventLongDate(event.StartDateTime, event.EndDateTime),
+    [event.StartDateTime, event.EndDateTime]
+  );
 
   return (
     <>
@@ -172,11 +174,11 @@ const Event = ({ visible, event }: EventProps) => {
               </CustomLink>
             </h2>
 
-            {/* <EventsRelativeBox
+            <EventsRelativeBox
               relativeDate={relativeDate}
               formattedDate={formattedDate}
               dateFontSize="text-s"
-            /> */}
+            />
 
             <div>
               {event.Presenter && (
