@@ -1,6 +1,6 @@
 import { Tab, Transition } from "@headlessui/react";
 import Image from "next/image";
-import { Fragment, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
@@ -118,8 +118,8 @@ const Event = ({ visible, event }: EventProps) => {
     "@type": "Event",
     name: event.Title,
     image: event.Thumbnail.Url,
-    startDate: new Date(event.StartDateTime).toISOString(),
-    endDate: new Date(event.EndDateTime).toISOString(),
+    startDate: event.StartDateTime.toISOString(),
+    endDate: event.EndDateTime.toISOString(),
     location: {
       "@type": "Place",
       address: {
@@ -138,9 +138,19 @@ const Event = ({ visible, event }: EventProps) => {
     organizer: sswOrganisation,
   };
 
-  const eventSite = event.Url.Url.toLowerCase()?.includes("ssw.com.au")
+  const eventSite = event?.Url?.Url?.toLowerCase()?.includes("ssw.com.au")
     ? { name: CITY_MAP[event.City]?.name, url: CITY_MAP[event.City]?.url }
     : { name: event.City, url: event.Url.Url };
+
+  const relativeDate = useMemo(
+    () => formatRelativeEventDate(event.StartDateTime, event.EndDateTime),
+    [event.StartDateTime, event.EndDateTime]
+  );
+
+  const formattedDate = useMemo(
+    () => formatEventLongDate(event.StartDateTime, event.EndDateTime),
+    [event.StartDateTime, event.EndDateTime]
+  );
 
   return (
     <>
@@ -172,14 +182,8 @@ const Event = ({ visible, event }: EventProps) => {
             </h2>
 
             <EventsRelativeBox
-              relativeDate={formatRelativeEventDate(
-                event.StartDateTime,
-                event.EndDateTime
-              )}
-              formattedDate={formatEventLongDate(
-                event.StartDateTime,
-                event.EndDateTime
-              )}
+              relativeDate={relativeDate}
+              formattedDate={formattedDate}
               dateFontSize="text-s"
             />
 
