@@ -37,6 +37,13 @@ jobs:
         id: set-matrix
         run: |
           $slotIDs = '${{ env.SLOT_NAME }}'
+
+          if($slotIDs -notlike '`[*')
+          {
+            $array = $slotIDs -split " "
+            $slotIDs = ConvertTo-Json -Compress @($array)
+          }
+
           echo "matrix=$slotIDs" >> $env:GITHUB_OUTPUT
 
   delete-slot-and-acr-cleanup:
