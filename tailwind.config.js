@@ -313,23 +313,6 @@ module.exports = {
             },
           },
         },
-
-        industry: {
-          css: {
-            "ul > li": {
-              textAlign: "left",
-              display: "list-item",
-              margin: "1em 1em 1em 2em",
-              "> div::before": {
-                color: theme("colors.sswRed"),
-                content: "\u25A0",
-                fontFamily: "Arial Black",
-                marginLeft: "-1em",
-                width: "1em",
-              },
-            },
-          },
-        },
         opportunity: {
           css: {
             "ul > li > *:last-child": {

@@ -16,7 +16,7 @@ export const DownloadWhitepaperLink = ({ whitepaperFile, children }) => (
 );
 
 export const ContactUs = ({ buttonText, link }) => (
-  <div className="mb-16 flex justify-center">
+  <div className="mb-8 flex justify-center">
     <CustomLink href={link}>
       <Button
         ripple
