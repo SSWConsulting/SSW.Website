@@ -2,7 +2,6 @@ import { Tab, Transition } from "@headlessui/react";
 import Image from "next/image";
 import { Fragment, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
-import { Event } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { sanitiseXSS } from "../../helpers/validator";
 import { useEvents } from "../../hooks/useEvents";
