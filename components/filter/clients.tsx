@@ -22,8 +22,8 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
     if (selected === -1) return clients;
 
     const category = categories[selected];
-    return clients.filter(
-      (client) => client.categories?.find((c) => c.category.name === category)
+    return clients.filter((client) =>
+      client.categories?.find((c) => c.category.name === category)
     );
   }, [clients, selected, categories]);
 
@@ -32,8 +32,8 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
     setSelected,
     options: categories.map((category) => ({
       label: category,
-      count: clients.filter(
-        (client) => client.categories?.find((c) => c.category.name === category)
+      count: clients.filter((client) =>
+        client.categories?.find((c) => c.category.name === category)
       ).length,
     })),
     allText: "All SSW Clients",
