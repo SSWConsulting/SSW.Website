@@ -23,6 +23,7 @@ export const EventsRelativeBox = ({
               ? "bg-sswRed text-white"
               : "bg-gray-25 text-black"
           )}
+          suppressHydrationWarning
         >
           {relativeDate}
         </span>

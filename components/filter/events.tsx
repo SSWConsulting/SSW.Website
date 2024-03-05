@@ -136,9 +136,9 @@ const Event = ({ visible, event }: EventProps) => {
     organizer: sswOrganisation,
   };
 
-  const eventSite = event?.Url?.Url?.toLowerCase()?.includes("ssw.com.au")
-    ? { name: CITY_MAP[event.City]?.name, url: CITY_MAP[event.City]?.url }
-    : { name: event.City, url: event.Url.Url };
+  // const eventSite = event?.Url?.Url?.toLowerCase()?.includes("ssw.com.au")
+  //   ? { name: CITY_MAP[event.City]?.name, url: CITY_MAP[event.City]?.url }
+  //   : { name: event.City, url: event.Url.Url };
 
   const relativeDate = useMemo(
     () => formatRelativeEventDate(event.StartDateTime, event.EndDateTime),
@@ -196,8 +196,8 @@ const Event = ({ visible, event }: EventProps) => {
               {event.City && CITY_MAP[event.City] && (
                 <EventDescItem
                   label="Location"
-                  value={eventSite.name}
-                  linkValue={eventSite.url}
+                  value={CITY_MAP[event.City]?.name}
+                  linkValue={CITY_MAP[event.City]?.url}
                 />
               )}
               {event.CalendarType && (
