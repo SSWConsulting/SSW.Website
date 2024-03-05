@@ -118,8 +118,6 @@ const Event = ({ visible, event }: EventProps) => {
     "@type": "Event",
     name: event.Title,
     image: event.Thumbnail.Url,
-    startDate: event.StartDateTime.toISOString(),
-    endDate: event.EndDateTime.toISOString(),
     location: {
       "@type": "Place",
       address: {
