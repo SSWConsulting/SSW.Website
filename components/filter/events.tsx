@@ -1,21 +1,15 @@
 import { Tab, Transition } from "@headlessui/react";
 import Image from "next/image";
-import { Fragment, useMemo, useState } from "react";
+import { Fragment, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
-import { Event, WithContext } from "schema-dts";
+import { Event } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
-import {
-  formatEventLongDate,
-  formatRelativeEventDate,
-} from "../../helpers/dates";
 import { sanitiseXSS } from "../../helpers/validator";
 import { useEvents } from "../../hooks/useEvents";
 import { EventInfo } from "../../services/server/events";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { CustomLink } from "../customLink";
-import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { CITY_MAP } from "../util/constants/country";
-import { sswOrganisation } from "../util/constants/json-ld";
 import { FilterBlock } from "./FilterBlock";
 
 interface EventsFilterProps {
@@ -113,42 +107,42 @@ interface EventProps {
 }
 
 const Event = ({ visible, event }: EventProps) => {
-  const eventJsonLd: WithContext<Event> = {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    name: event.Title,
-    image: event.Thumbnail.Url,
-    location: {
-      "@type": "Place",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: CITY_MAP[event.City]?.name,
-        addressRegion: CITY_MAP[event.City]?.state,
-        addressCountry: CITY_MAP[event.City]?.country,
-      },
-      name: CITY_MAP[event.City]?.name,
-      url: CITY_MAP[event.City]?.url,
-    },
-    eventStatus: "https://schema.org/EventScheduled",
-    eventAttendanceMode: "https://schema.org/MixedEventAttendanceMode",
-    description: event.Url.Description,
-    performer: sswOrganisation,
-    organizer: sswOrganisation,
-  };
+  // const eventJsonLd: WithContext<Event> = {
+  //   "@context": "https://schema.org",
+  //   "@type": "Event",
+  //   name: event.Title,
+  //   image: event.Thumbnail.Url,
+  //   location: {
+  //     "@type": "Place",
+  //     address: {
+  //       "@type": "PostalAddress",
+  //       addressLocality: CITY_MAP[event.City]?.name,
+  //       addressRegion: CITY_MAP[event.City]?.state,
+  //       addressCountry: CITY_MAP[event.City]?.country,
+  //     },
+  //     name: CITY_MAP[event.City]?.name,
+  //     url: CITY_MAP[event.City]?.url,
+  //   },
+  //   eventStatus: "https://schema.org/EventScheduled",
+  //   eventAttendanceMode: "https://schema.org/MixedEventAttendanceMode",
+  //   description: event.Url.Description,
+  //   performer: sswOrganisation,
+  //   organizer: sswOrganisation,
+  // };
 
   // const eventSite = event?.Url?.Url?.toLowerCase()?.includes("ssw.com.au")
   //   ? { name: CITY_MAP[event.City]?.name, url: CITY_MAP[event.City]?.url }
   //   : { name: event.City, url: event.Url.Url };
 
-  const relativeDate = useMemo(
-    () => formatRelativeEventDate(event.StartDateTime, event.EndDateTime),
-    [event.StartDateTime, event.EndDateTime]
-  );
+  // const relativeDate = useMemo(
+  //   () => formatRelativeEventDate(event.StartDateTime, event.EndDateTime),
+  //   [event.StartDateTime, event.EndDateTime]
+  // );
 
-  const formattedDate = useMemo(
-    () => formatEventLongDate(event.StartDateTime, event.EndDateTime),
-    [event.StartDateTime, event.EndDateTime]
-  );
+  // const formattedDate = useMemo(
+  //   () => formatEventLongDate(event.StartDateTime, event.EndDateTime),
+  //   [event.StartDateTime, event.EndDateTime]
+  // );
 
   return (
     <>
@@ -179,11 +173,11 @@ const Event = ({ visible, event }: EventProps) => {
               </CustomLink>
             </h2>
 
-            <EventsRelativeBox
+            {/* <EventsRelativeBox
               relativeDate={relativeDate}
               formattedDate={formattedDate}
               dateFontSize="text-s"
-            />
+            /> */}
 
             <div>
               {event.Presenter && (
@@ -228,10 +222,10 @@ const Event = ({ visible, event }: EventProps) => {
           </CustomLink>
         </div>
       </Transition>
-      <script
+      {/* <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
-      />
+      /> */}
     </>
   );
 };
