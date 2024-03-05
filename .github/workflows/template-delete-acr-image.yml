@@ -1,4 +1,4 @@
-name: Delete - Docker image from ACR
+name: Tempalte - Delete Docker image from ACR
 
 on:
   workflow_call:
@@ -34,6 +34,13 @@ jobs:
         id: set-matrix
         run: |
           $imageTags = '${{ env.IMAGE_TAGS }}'
+
+          if($imageTags -notlike '`[*')
+          {
+            $array = $imageTags -split " "
+            $imageTags = ConvertTo-Json -Compress @($array)
+          }
+
           echo "matrix=$imageTags" >> $env:GITHUB_OUTPUT
 
   delete-acr-image:
