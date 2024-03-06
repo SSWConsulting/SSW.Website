@@ -4,6 +4,19 @@ import {
   formatRelativeEventDate,
 } from "../../helpers/dates";
 
+import dayjs from "dayjs";
+import advancedFormat from "dayjs/plugin/advancedFormat";
+import isBetween from "dayjs/plugin/isBetween";
+import relativeTime from "dayjs/plugin/relativeTime";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
+
+dayjs.extend(relativeTime);
+dayjs.extend(timezone);
+dayjs.extend(utc);
+dayjs.extend(advancedFormat);
+dayjs.extend(isBetween);
+
 describe("formatEventDate", () => {
   it("Single Day Event - Date format", () => {
     const startDate = new Date(2024, 1, 1); // February 1, 2024
