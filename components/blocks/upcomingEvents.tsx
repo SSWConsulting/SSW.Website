@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 
-import { formatEventDate, formatRelativeEventDate } from "../../helpers/dates";
+import { useFormatDates } from "hooks/useFormatDates";
 import { EventInfo } from "../../services/server/events";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
@@ -67,17 +67,7 @@ type UpcomingEventProps = {
 const UpcomingEvent = ({ event }: UpcomingEventProps) => {
   const [imageFailed, setImageFailed] = useState<boolean>(false);
 
-  const [relativeDate, setRelativeDate] = useState<string>("");
-  const [formattedDate, setFormattedDate] = useState<string>("");
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setRelativeDate(
-        formatRelativeEventDate(event.StartDateTime, event.EndDateTime)
-      );
-      setFormattedDate(formatEventDate(event.StartDateTime, event.EndDateTime));
-    }
-  }, [event.StartDateTime, event.EndDateTime]);
+  const { relativeDate, formattedDate } = useFormatDates(event, false);
 
   return (
     <CustomLink
