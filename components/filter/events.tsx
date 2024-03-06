@@ -1,7 +1,7 @@
 import { Tab, Transition } from "@headlessui/react";
 import { formatEventLongDate, formatRelativeEventDate } from "helpers/dates";
 import Image from "next/image";
-import { Fragment, useMemo, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
@@ -137,15 +137,19 @@ const Event = ({ visible, event }: EventProps) => {
     ? { name: CITY_MAP[event.City]?.name, url: CITY_MAP[event.City]?.url }
     : { name: event.City, url: event.Url.Url };
 
-  const relativeDate = useMemo(
-    () => formatRelativeEventDate(event.StartDateTime, event.EndDateTime),
-    [event.StartDateTime, event.EndDateTime]
-  );
+  const [relativeDate, setRelativeDate] = useState<string>("");
+  const [formattedDate, setFormattedDate] = useState<string>("");
 
-  const formattedDate = useMemo(
-    () => formatEventLongDate(event.StartDateTime, event.EndDateTime),
-    [event.StartDateTime, event.EndDateTime]
-  );
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setRelativeDate(
+        formatRelativeEventDate(event.StartDateTime, event.EndDateTime)
+      );
+      setFormattedDate(
+        formatEventLongDate(event.StartDateTime, event.EndDateTime)
+      );
+    }
+  }, [event.StartDateTime, event.EndDateTime]);
 
   return (
     <>

@@ -8,8 +8,8 @@ export const EventStatus = {
 export const formatEventDate = (start: Date, end: Date) => {
   if (!start || !end) return "";
 
-  const startObj = dayjs(start).tz("Australia/Sydney");
-  const endObj = dayjs(end).tz("Australia/Sydney");
+  const startObj = dayjs(start);
+  const endObj = dayjs(end);
 
   // NOTE: Omit ddd for brevity if it's next year's event
   const dateformat =
@@ -27,8 +27,8 @@ export const formatEventLongDate = (start: Date, end: Date) => {
 
   const dateformat = "dddd, MMMM D, YYYY h:mm A";
 
-  const startObj = dayjs.tz(start, "Australia/Sydney");
-  const endObj = dayjs.tz(end, "Australia/Sydney");
+  const startObj = dayjs(start);
+  const endObj = dayjs(end);
 
   const isOneDayEvent = startObj.startOf("day").isSame(endObj.startOf("day"));
 
@@ -43,9 +43,9 @@ export const formatEventLongDate = (start: Date, end: Date) => {
 };
 
 export const formatRelativeEventDate = (startDate: Date, endDate: Date) => {
-  const now = dayjs().tz("Australia/Sydney");
-  const start = dayjs(startDate).tz("Australia/Sydney");
-  const end = dayjs(endDate).tz("Australia/Sydney");
+  const now = dayjs();
+  const start = dayjs(startDate);
+  const end = dayjs(endDate);
 
   if (now.isBetween(start, end)) {
     return EventStatus.NOW_RUNNING;
