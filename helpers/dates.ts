@@ -27,8 +27,8 @@ export const formatEventLongDate = (start: Date, end: Date) => {
 
   const dateformat = "dddd, MMMM D, YYYY h:mm A";
 
-  const startObj = dayjs(start).tz("Australia/Sydney");
-  const endObj = dayjs(end).tz("Australia/Sydney");
+  const startObj = dayjs.tz(start, "Australia/Sydney");
+  const endObj = dayjs.tz(end, "Australia/Sydney");
 
   const isOneDayEvent = startObj.startOf("day").isSame(endObj.startOf("day"));
 
