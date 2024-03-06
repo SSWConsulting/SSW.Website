@@ -1,6 +1,8 @@
 import dayjs from "dayjs";
 import isBetween from "dayjs/plugin/isBetween";
+import timezone from "dayjs/plugin/timezone";
 dayjs.extend(isBetween);
+dayjs.extend(timezone);
 
 export const EventStatus = {
   TODAY: "today",
