@@ -241,50 +241,31 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            lineHeight: 1.45,
             color: theme("colors.sswBlack"),
             h1: {
+              "> strong": {
+                color: theme("colors.sswRed"),
+              },
               fontWeight: "500",
-              margin: "0.5rem 0",
-              padding: "3.75rem 0 1.25rem 0",
-              lineHeight: 1.2,
-              color: theme("colors.sswBlack"),
             },
             h2: {
               fontWeight: "500",
-              fontSize: "2rem",
-              lineHeight: "2.4rem",
               color: theme("colors.sswRed"),
             },
             h3: {
               fontWeight: "500",
-              marginBottom: "0.5rem",
-              lineHeight: "2.1rem",
-              fontSize: "1.75rem",
-              color: theme("colors.sswBlack"),
             },
             h4: {
               fontWeight: "500",
-              lineHeight: "1.8rem",
-              margin: "1.5rem 0",
-              fontSize: "1.5rem",
-              color: theme("colors.sswBlack"),
             },
-            strong: {
-              color: theme("colors.sswBlack"),
+            hr: {
+              marginTop: "1em",
+              marginBottom: "1.5em",
             },
             a: {
-              textDecoration: "underline",
               textDecorationColor: "#aaa",
               textDecorationStyle: "solid",
               textDecorationThickness: "1px",
-              color: theme("colors.sswBlack"),
-            },
-            p: {
-              marginBottom: "10px",
-            },
-            hr: {
-              margin: "30px 0",
             },
             ul: {
               listStyleType: "square",
@@ -292,42 +273,31 @@ module.exports = {
             pre: {
               color: theme("colors.gray.700"),
               backgroundColor: theme("colors.gray.100"),
-              lineHeight: 1.5,
             },
             "--tw-prose-bullets": "var(--tw-prose-body)",
           },
         },
-        consulting: {
+        dark: {
           css: {
             h1: {
               "> strong": {
                 color: theme("colors.sswRed"),
               },
             },
+            ul: {
+              listStyleType: "square",
+            },
             "p, ul": {
+              paddingTop: "0.5em",
+              paddingBottom: "0.6em",
               fontWeight: theme("fontWeight.light"),
               fontSize: "1.125rem",
-              lineHeight: "1.75rem",
-              margin: "1rem auto",
-              padding: "0",
-            },
-            "p > img": {
-              margin: "0 auto",
             },
             "ul > li": {
               display: "list-item",
-              margin: "2rem 0",
+              margin: "1.5rem 0",
               listStyle: "inside",
               listStyleType: "square",
-              "> div::before": {
-                color: theme("colors.sswRed"),
-                content: "\u25A0",
-                display: "inline-block",
-                fontFamily: "Arial Black",
-                fontWeight: theme("fontWeight.bold"),
-                marginLeft: "-1em",
-                width: "1em",
-              },
               "> div": {
                 display: "inline",
               },
@@ -343,73 +313,8 @@ module.exports = {
             },
           },
         },
-        employment: {
-          css: {
-            h1: {
-              "> strong": {
-                color: theme("colors.sswRed"),
-              },
-            },
-            p: {
-              fontWeight: theme("fontWeight.light"),
-              margin: "0 auto",
-              padding: "20px 0",
-            },
-            "p > img": {
-              margin: "0 auto",
-            },
-            ul: {
-              listStyle: "square",
-            },
-            "ul > li": {
-              textAlign: "left",
-              display: "list-item",
-              margin: "1em 1em 1em 2em",
-              "> div::before": {
-                color: theme("colors.sswRed"),
-                content: "\u25A0",
-                fontFamily: "Arial Black",
-                marginLeft: "-1em",
-                width: "1em",
-              },
-            },
-          },
-        },
-        industry: {
-          css: {
-            img: {
-              marginTop: "1em",
-            },
-            h3: {
-              marginBottom: "0.75em",
-              marginTop: "1.5em",
-              color: theme("colors.sswRed"),
-            },
-            p: {
-              marginBottom: "0.75em",
-            },
-            ul: {
-              listStyle: "square",
-            },
-            "ul > li": {
-              textAlign: "left",
-              display: "list-item",
-              margin: "1em 1em 1em 2em",
-              "> div::before": {
-                color: theme("colors.sswRed"),
-                content: "\u25A0",
-                fontFamily: "Arial Black",
-                marginLeft: "-1em",
-                width: "1em",
-              },
-            },
-          },
-        },
         opportunity: {
           css: {
-            ul: {
-              listStyle: "square",
-            },
             "ul > li > *:last-child": {
               marginBottom: "0",
               marginTop: "0",
