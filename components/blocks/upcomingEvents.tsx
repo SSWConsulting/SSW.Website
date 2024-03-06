@@ -23,16 +23,6 @@ export const UpcomingEvents = ({ data }) => {
 
       if (res?.status !== 200 || !res.data.length) return;
 
-      !!res.data &&
-        Array.isArray(res.data) &&
-        res.data.forEach((b) => {
-          b.FormattedDate = formatEventDate(b.StartDateTime, b.EndDateTime);
-          b.RelativeDate = formatRelativeEventDate(
-            b.StartDateTime,
-            b.EndDateTime
-          );
-        });
-
       setEvents(res.data);
     };
 
@@ -77,6 +67,18 @@ type UpcomingEventProps = {
 const UpcomingEvent = ({ event }: UpcomingEventProps) => {
   const [imageFailed, setImageFailed] = useState<boolean>(false);
 
+  const [relativeDate, setRelativeDate] = useState<string>("");
+  const [formattedDate, setFormattedDate] = useState<string>("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setRelativeDate(
+        formatRelativeEventDate(event.StartDateTime, event.EndDateTime)
+      );
+      setFormattedDate(formatEventDate(event.StartDateTime, event.EndDateTime));
+    }
+  }, [event.StartDateTime, event.EndDateTime]);
+
   return (
     <CustomLink
       href={event.Url.Url}
@@ -89,8 +91,8 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
             {event.Title}
           </h2>
           <EventsRelativeBox
-            relativeDate={event.RelativeDate}
-            formattedDate={event.FormattedDate}
+            relativeDate={relativeDate}
+            formattedDate={formattedDate}
             dateFontSize="text-xs"
           />
           {!!event.Presenter && (
