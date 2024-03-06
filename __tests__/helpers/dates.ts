@@ -53,7 +53,7 @@ describe("formatEventLongDate", () => {
     const endDate = dayjs
       .tz(new Date(2024, 1, 1, 0, 0, 0, 0), "Australia/Sydney")
       .toDate(); // February 1, 2024
-    console.log(startDate);
+    console.log(startDate.toDateString());
     const result = formatEventLongDate(startDate, endDate);
     expect(result).toBe("Thursday, February 1, 2024 12:00 AM - 12:00 AM");
   });
