@@ -53,6 +53,7 @@ describe("formatEventLongDate", () => {
     const endDate = new Date(2024, 1, 1, 0, 0, 0, 0).toLocaleString("en-US", {
       timeZone: "Australia/Sydney",
     }); // February 1, 2024
+    console.log(new Date(startDate));
     const result = formatEventLongDate(new Date(startDate), new Date(endDate));
     expect(result).toBe("Thursday, February 1, 2024 12:00 AM - 12:00 AM");
   });
