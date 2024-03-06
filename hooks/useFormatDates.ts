@@ -4,7 +4,7 @@ import {
   formatRelativeEventDate,
 } from "helpers/dates";
 import { useEffect, useState } from "react";
-import { EventInfo } from "services/server/events";
+import { EventInfo } from "../services/server/events";
 
 export const useFormatDates = (event: EventInfo, formatLong: boolean) => {
   const [relativeDate, setRelativeDate] = useState<string>("");
