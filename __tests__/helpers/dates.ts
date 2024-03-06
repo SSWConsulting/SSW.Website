@@ -1,3 +1,4 @@
+import { describe, expect, it } from "@jest/globals";
 import {
   formatEventDate,
   formatEventLongDate,
@@ -10,7 +11,6 @@ import isBetween from "dayjs/plugin/isBetween";
 import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
-
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
 dayjs.extend(utc);
@@ -19,15 +19,15 @@ dayjs.extend(isBetween);
 
 describe("formatEventDate", () => {
   it("Single Day Event - Date format", () => {
-    const startDate = new Date(2024, 1, 1); // February 1, 2024
-    const endDate = new Date(2024, 1, 1); // February 1, 2024
+    const startDate = new Date("2024-02-01T00:00:00.000+10:00"); // February 1, 2024
+    const endDate = new Date("2024-02-01T00:00:00.000+10:00"); // February 1, 2024
     const result = formatEventDate(startDate, endDate);
     expect(result).toBe("Feb 1");
   });
 
   it("Single Day Event - Different year - Date format", () => {
-    const startDate = new Date(2025, 1, 1); // February 1, 2024
-    const endDate = new Date(2025, 1, 1); // February 1, 2024
+    const startDate = new Date("2025-02-01T00:00:00.000+10:00"); // February 1, 2024
+    const endDate = new Date("2025-02-01T00:00:00.000+10:00"); // February 1, 2024
     const result = formatEventDate(startDate, endDate);
     expect(result).toBe("Feb 1 2025");
   });
