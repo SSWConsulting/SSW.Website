@@ -47,12 +47,13 @@ describe("formatEventDate", () => {
 
 describe("formatEventLongDate", () => {
   it("Single Day Event - Date format", () => {
-    const startDate = dayjs(new Date(2024, 1, 1))
+    const startDate = dayjs(new Date(2024, 1, 1, 0, 0, 0, 0))
       .tz("Australia/Sydney")
       .toDate(); // February 1, 2024
-    const endDate = dayjs(new Date(2024, 1, 1))
+    const endDate = dayjs(new Date(2024, 1, 1, 0, 0, 0, 0))
       .tz("Australia/Sydney")
       .toDate(); // February 1, 2024
+    console.log(startDate);
     const result = formatEventLongDate(startDate, endDate);
     expect(result).toBe("Thursday, February 1, 2024 12:00 AM - 12:00 AM");
   });
