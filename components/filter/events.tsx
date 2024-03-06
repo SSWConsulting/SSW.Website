@@ -1,5 +1,4 @@
 import { Tab, Transition } from "@headlessui/react";
-import { useFormatDates } from "hooks/useFormatDates";
 import Image from "next/image";
 import { Fragment, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
@@ -7,6 +6,7 @@ import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { sanitiseXSS } from "../../helpers/validator";
 import { useEvents } from "../../hooks/useEvents";
+import { useFormatDates } from "../../hooks/useFormatDates";
 import { EventInfo } from "../../services/server/events";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { CustomLink } from "../customLink";
