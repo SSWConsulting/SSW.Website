@@ -1,9 +1,9 @@
+import { useEffect, useState } from "react";
 import {
   formatEventDate,
   formatEventLongDate,
   formatRelativeEventDate,
-} from "helpers/dates";
-import { useEffect, useState } from "react";
+} from "../helpers/dates";
 import { EventInfo } from "../services/server/events";
 
 export const useFormatDates = (event: EventInfo, formatLong: boolean) => {
