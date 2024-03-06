@@ -7,6 +7,8 @@ import { useTina } from "tinacms/dist/react";
 import { Section } from "../../components/util/section";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { removeExtension } from "services/client/utils.service";
+import { Blocks } from "../../components/blocks-renderer";
+import { CustomLink } from "../../components/customLink";
 
 export default function LogosPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -28,6 +30,17 @@ export default function LogosPage(
           seoSchema={data.logos.seo}
         />
       </Section>
+      {data.logos?.header}
+      <Section>
+        <Blocks prefix="Logos_body" blocks={data.logos._body} />
+      </Section>
+      {data.logos?.footer?.text && (
+        <Section>
+          <CustomLink href={data.logos.footer.link}>
+            {data.logos.footer.text}
+          </CustomLink>
+        </Section>
+      )}
     </Layout>
   );
 }
