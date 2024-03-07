@@ -22,6 +22,7 @@ import { builtOnAzureBlockSchema } from "./builtOnAzure";
 import { carouselBlockSchema } from "./carousel";
 import { citationBlockSchema } from "./citation";
 import { clientLogosBlockSchema } from "./clientLogos";
+import { colorBlockSchema } from "./colorBlock";
 import { contentBlockSchema } from "./content";
 import { contentCardBlockSchema } from "./contentCard";
 import { customImageBlockSchema } from "./customImage";
@@ -90,6 +91,7 @@ export const pageBlocks: Template[] = [
   eventLinkSchema,
   jotFormEmbedSchema,
   customDownloadButtonSchema,
+  colorBlockSchema,
 ];
 
 export * from "../bookingButton/bookingButton";

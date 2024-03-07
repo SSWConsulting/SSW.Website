@@ -4,6 +4,7 @@ import { AboutUs } from "./blocks/aboutUs";
 import { Agenda } from "./blocks/agenda";
 import { BuiltOnAzure } from "./blocks/builtOnAzure";
 import { ClientLogos } from "./blocks/clientLogos";
+import { ColorBlock } from "./blocks/colorBlock";
 import { Content } from "./blocks/content";
 import { ContentCard } from "./blocks/contentCard";
 import { CustomImage } from "./blocks/customImage";
@@ -61,6 +62,7 @@ const componentMap = {
   LatestTech,
   VideoEmbed,
   JotFormEmbed,
+  ColorBlock,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
