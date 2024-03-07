@@ -17,6 +17,7 @@
     "test-and-coverage": "jest --ci --json --coverage --testLocationInResults"
   },
   "devDependencies": {
+    "@jest/globals": "^29.7.0",
     "@next/eslint-plugin-next": "14.1.0",
     "@playwright/test": "1.42.1",
     "@svgr/webpack": "^8.1.0",
