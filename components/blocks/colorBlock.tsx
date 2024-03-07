@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import type { Template } from "tinacms";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { Container } from "../util/container";
 
 export type ColorBlockProps = {
   title?: string;
@@ -9,56 +10,62 @@ export type ColorBlockProps = {
 };
 
 export type ColorRow = {
-  firstColor: string;
+  firstColor: keyof typeof sswColors;
   fText: string;
-  secondColor: string;
+  secondColor: keyof typeof sswColors;
   sText: string;
   caption?: TinaMarkdownContent;
 };
 
+const sswColors = {
+  "#CC4141": "bg-sswRed",
+  "#333333": "bg-sswBlack",
+  "#AAAAAA": "bg-ssw-gray-light",
+  "#797979": "bg-ssw-gray",
+};
+
 export const ColorBlock = ({ title, subTitle, colorRow }: ColorBlockProps) => {
-  console.log("🚀 ~ ColorBlock ~ data:", title, subTitle, colorRow);
   return (
-    <>
-      <div className="prose max-w-full">
+    <Container className="">
+      <div className="prose max-w-full prose-p:my-0.75">
         <div className="container mx-auto py-12">
           <h2>{title}</h2>
-          <p>{subTitle}</p>
+          <p className="mb-0.5">{subTitle}</p>
           <div className="grid grid-cols-1 md:grid-cols-2">
             {colorRow.map((row, index) => (
               <>
-                <ColorBlockComponentRenderer key={index} {...row} />
-                <p>
+                <ColorRow key={index} {...row} />
+                <div className="col-span-2">
                   <TinaMarkdown content={row.caption} />
-                </p>
+                </div>
               </>
             ))}
           </div>
         </div>
       </div>
+    </Container>
+  );
+};
+
+const ColorRow = ({ firstColor, fText, secondColor, sText }: ColorRow) => {
+  return (
+    <>
+      <ColorColumn bg={sswColors[`${firstColor}`]} text={fText} />
+      <ColorColumn bg={sswColors[`${secondColor}`]} text={sText} />
     </>
   );
 };
 
-const ColorBlockComponentRenderer = ({
-  firstColor,
-  fText,
-  secondColor,
-  sText,
-}: ColorRow) => {
+const ColorColumn = ({ bg, text }) => {
   return (
-    <>
-      <div className={classNames("col-span-1 h-10 md:h-80", firstColor)}>
-        <div className="flex flex-col justify-center h-full px-8">
-          <h3 className="font-bold text-white">{fText}</h3>
-        </div>
-      </div>
-      <div className={classNames("col-span-1 h-10 md:h-80", secondColor)}>
-        <div className="flex flex-col justify-center h-full px-8">
-          <h3 className="font-bold text-white">{sText}</h3>
-        </div>
-      </div>
-    </>
+    <div
+      className={classNames(
+        "col-span-1 flex flex-col justify-center h-10 items-center my-0",
+        bg
+      )}
+    >
+      <p className="text-white">{text}</p>
+    </div>
   );
 };
 
@@ -93,6 +100,7 @@ export const colorBlockSchema: Template = {
           type: "string",
           label: "First Color",
           name: "firstColor",
+          options: Object.keys(sswColors),
         },
         {
           type: "string",
@@ -104,6 +112,7 @@ export const colorBlockSchema: Template = {
           type: "string",
           label: "Second Color",
           name: "secondColor",
+          options: Object.keys(sswColors),
         },
         {
           type: "string",

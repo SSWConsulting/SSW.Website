@@ -118,6 +118,7 @@ module.exports = {
         "5/6": "83.333333%",
       },
       spacing: {
+        0.75: "0.1875rem",
         15: "60px",
         17: "4.25rem",
         25: "100px",
@@ -235,7 +236,7 @@ module.exports = {
           },
           darkRed: "#8e2c2c",
           black: "#333333",
-          gray: { DEFAULT: "#797979", dark: "#666666" },
+          gray: { DEFAULT: "#797979", dark: "#666666", light: "#AAAAAA" },
         },
       },
       typography: (theme) => ({
