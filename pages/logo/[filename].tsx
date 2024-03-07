@@ -21,7 +21,7 @@ export default function LogosPage(
   });
 
   return (
-    <Layout menu={data.megamenu}>
+    <Layout menu={data?.megamenu}>
       <SEO seo={props.seo} />
       <Container className="flex-1 pt-2">
         <Breadcrumbs
@@ -33,7 +33,7 @@ export default function LogosPage(
         <h1 className="pt-0 text-3xl">{data.logos?.header}</h1>
         <Blocks prefix="Logos_body" blocks={data.logos._body} />
         {data.logos?.footer?.text && (
-          <Section>
+          <Section className="justify-center">
             <CustomLink href={data.logos.footer.link}>
               {data.logos.footer.text}
             </CustomLink>

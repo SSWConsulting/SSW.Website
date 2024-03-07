@@ -13,6 +13,7 @@ type GridLayoutProps = {
         title: string;
       }[];
     }[];
+    showBorderBottom: boolean;
   };
 };
 
@@ -21,22 +22,24 @@ export const GridLayout = ({ data }: GridLayoutProps) => {
     <>
       {data.grids?.map((grid, i) => (
         <Container padding="pt-0" key={i}>
-          <h2>{grid.gridTitle}</h2>
-          <Section className="grid grid-cols-2 md:grid-cols-4">
+          <h2 className="text-xl text-ssw-red">{grid.gridTitle}</h2>
+          <Section className="mx-auto my-12 grid w-full grid-cols-2 gap-x-12 pl-8 md:mx-8 md:my-12 md:grid-cols-4 lg:ml-0">
             {grid.blocks?.map((block, i) => (
-              <div key={i}>
-                <h3>{block.title}</h3>
+              <Section className="flex-col items-center" key={i}>
+                <h3 className="text-lg font-light">{block.title}</h3>
                 {block.image && (
                   <Image
+                    className="align-middle"
                     src={block.image}
-                    alt={block.title}
-                    width={180}
+                    alt={`${block.title} logo`}
                     height={180}
+                    width={180}
                   />
                 )}
-              </div>
+              </Section>
             ))}
           </Section>
+          {data.showBorderBottom && <hr />}
         </Container>
       ))}
     </>
@@ -94,6 +97,11 @@ export const gridLayoutSchema: Template = {
           ],
         },
       ],
+    },
+    {
+      type: "boolean",
+      name: "showBorderBottom",
+      label: "Show Border Bottom",
     },
   ],
 };
