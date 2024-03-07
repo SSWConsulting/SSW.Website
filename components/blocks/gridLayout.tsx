@@ -23,15 +23,17 @@ export const GridLayout = ({ data }: GridLayoutProps) => {
         <Container padding="pt-0" key={i}>
           <h2>{grid.gridTitle}</h2>
           <Section className="grid grid-cols-2 md:grid-cols-4">
-            {grid.blocks.map((block, i) => (
+            {grid.blocks?.map((block, i) => (
               <div key={i}>
                 <h3>{block.title}</h3>
-                <Image
-                  src={block.image}
-                  alt={block.title}
-                  width={180}
-                  height={180}
-                />
+                {block.image && (
+                  <Image
+                    src={block.image}
+                    alt={block.title}
+                    width={180}
+                    height={180}
+                  />
+                )}
               </div>
             ))}
           </Section>
