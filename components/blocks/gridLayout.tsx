@@ -1,5 +1,7 @@
 import type { Template } from "tinacms";
 import Image from "next/image";
+import { Section } from "../util/section";
+import { Container } from "../util/container";
 
 type GridLayoutProps = {
   data: {
@@ -15,26 +17,25 @@ type GridLayoutProps = {
 };
 
 export const GridLayout = ({ data }: GridLayoutProps) => {
-  console.log("GridLayout", data);
   return (
     <>
       {data.grids?.map((grid, i) => (
-        <div key={i}>
-          <div>{grid.gridTitle}</div>
-          <div>
+        <Container padding="pt-0" key={i}>
+          <h2>{grid.gridTitle}</h2>
+          <Section className="grid grid-cols-2 md:grid-cols-4">
             {grid.blocks.map((block, i) => (
               <div key={i}>
-                <p>{block.title}</p>
+                <h3>{block.title}</h3>
                 <Image
                   src={block.image}
                   alt={block.title}
-                  width={400}
-                  height={400}
+                  width={180}
+                  height={180}
                 />
               </div>
             ))}
-          </div>
-        </div>
+          </Section>
+        </Container>
       ))}
     </>
   );

@@ -9,6 +9,7 @@ import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { removeExtension } from "services/client/utils.service";
 import { Blocks } from "../../components/blocks-renderer";
 import { CustomLink } from "../../components/customLink";
+import { Container } from "../../components/util/container";
 
 export default function LogosPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -22,25 +23,23 @@ export default function LogosPage(
   return (
     <Layout menu={data.megamenu}>
       <SEO seo={props.seo} />
-      <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+      <Container className="flex-1 pt-2">
         <Breadcrumbs
           path={removeExtension(props.variables.relativePath)}
           suffix={data.global.breadcrumbSuffix}
           title={data.logos.seo?.title}
           seoSchema={data.logos.seo}
         />
-      </Section>
-      {data.logos?.header}
-      <Section>
+        <h1 className="pt-0 text-3xl">{data.logos?.header}</h1>
         <Blocks prefix="Logos_body" blocks={data.logos._body} />
-      </Section>
-      {data.logos?.footer?.text && (
-        <Section>
-          <CustomLink href={data.logos.footer.link}>
-            {data.logos.footer.text}
-          </CustomLink>
-        </Section>
-      )}
+        {data.logos?.footer?.text && (
+          <Section>
+            <CustomLink href={data.logos.footer.link}>
+              {data.logos.footer.text}
+            </CustomLink>
+          </Section>
+        )}
+      </Container>
     </Layout>
   );
 }
