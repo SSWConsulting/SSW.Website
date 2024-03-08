@@ -9,7 +9,7 @@ export const useFetchEvents = (
     queryKey: ["events"],
     queryFn: async () => {
       const res = await axios.get<EventTrimmed[]>("/api/get-upcoming-events", {
-        params: { top: 20 },
+        params: { top: 5 },
       });
 
       return res.data;
@@ -24,7 +24,7 @@ export const useFetchPastEvents = () => {
   const { data, isLoading } = useQuery({
     queryKey: ["pastEvents"],
     queryFn: async () => {
-      const res = await fetch(`/api/get-past-events?top=${100}`);
+      const res = await fetch(`/api/get-past-events?top=${5}`);
       const data: EventTrimmed[] = await res.json();
 
       return data;
