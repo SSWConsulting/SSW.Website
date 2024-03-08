@@ -1,8 +1,21 @@
+import { describe, expect, it } from "@jest/globals";
 import {
   formatEventDate,
   formatEventLongDate,
   formatRelativeEventDate,
 } from "../../helpers/dates";
+
+import dayjs from "dayjs";
+import advancedFormat from "dayjs/plugin/advancedFormat";
+import isBetween from "dayjs/plugin/isBetween";
+import relativeTime from "dayjs/plugin/relativeTime";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
+dayjs.extend(relativeTime);
+dayjs.extend(timezone);
+dayjs.extend(utc);
+dayjs.extend(advancedFormat);
+dayjs.extend(isBetween);
 
 describe("formatEventDate", () => {
   it("Single Day Event - Date format", () => {
@@ -34,15 +47,15 @@ describe("formatEventDate", () => {
 
 describe("formatEventLongDate", () => {
   it("Single Day Event - Date format", () => {
-    const startDate = new Date(2024, 1, 1); // February 1, 2024
-    const endDate = new Date(2024, 1, 1); // February 1, 2024
+    const startDate = new Date(2024, 1, 1, 0, 0, 0, 0); // February 1, 2024
+    const endDate = new Date(2024, 1, 1, 0, 0, 0, 0); // February 1, 2024
     const result = formatEventLongDate(startDate, endDate);
     expect(result).toBe("Thursday, February 1, 2024 12:00 AM - 12:00 AM");
   });
 
   it("Mutiple Days Event - Date format", () => {
     const startDate = new Date(2024, 1, 1); // February 1, 2024
-    const endDate = new Date(2024, 1, 2); // February 2, 2024
+    const endDate = new Date(2024, 1, 2); // February 1, 2024
     const result = formatEventLongDate(startDate, endDate);
     expect(result).toBe(
       "Thursday, February 1, 2024 12:00 AM - Friday, February 2, 2024 12:00 AM"
