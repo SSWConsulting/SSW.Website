@@ -36,7 +36,7 @@ export default function HomePage({
         {data.page.breadcrumbs ? (
           <Section className="mx-auto -mb-20 w-full max-w-9xl px-8 py-5">
             <Breadcrumbs
-              path={removeExtension(props.variables.relativePath)}
+              path={removeExtension(props.relativePath)}
               suffix={data.global.breadcrumbSuffix}
               title={data.page.seo?.title}
             />
@@ -86,8 +86,7 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
       data: tinaProps.data,
-      query: tinaProps.query,
-      variables: tinaProps.variables,
+      relativePath: tinaProps.variables.relativePath,
     },
   };
 };
