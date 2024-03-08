@@ -22,6 +22,7 @@ import { PresenterBlock } from "./training/presenterBlock";
 import { TrainingInformation } from "./training/trainingInformation";
 import { TrainingLearningOutcome } from "./training/trainingLearningOutcome";
 import { LatestTech } from "./usergroup/latestTech";
+import { GridLayout } from "./blocks/gridLayout";
 
 const Carousel = dynamic(
   () => import("./blocks/carousel").then((mod) => mod.Carousel),
@@ -61,6 +62,7 @@ const componentMap = {
   LatestTech,
   VideoEmbed,
   JotFormEmbed,
+  GridLayout,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
