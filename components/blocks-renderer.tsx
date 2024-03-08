@@ -8,6 +8,7 @@ import { ColorBlock } from "./blocks/colorBlock";
 import { Content } from "./blocks/content";
 import { ContentCard } from "./blocks/contentCard";
 import { CustomImage } from "./blocks/customImage";
+import { DownloadBlock } from "./blocks/downloadBlock";
 import { JotFormEmbed } from "./blocks/jotFormEmbed";
 import { PaymentBlock } from "./blocks/payment-block";
 import { ServiceCards } from "./blocks/serviceCards";
@@ -63,6 +64,7 @@ const componentMap = {
   VideoEmbed,
   JotFormEmbed,
   ColorBlock,
+  DownloadBlock,
 };
 
 export const Blocks = ({ prefix, blocks }) => {

@@ -26,6 +26,7 @@ import { colorBlockSchema } from "./colorBlock";
 import { contentBlockSchema } from "./content";
 import { contentCardBlockSchema } from "./contentCard";
 import { customImageBlockSchema } from "./customImage";
+import { downloadBlockSchema } from "./downloadBlock";
 import { dynamicColumnsSchema } from "./dynamicColumns";
 import { eventLinkSchema } from "./eventLink";
 import { fixedColumnsSchema } from "./fixedColumns";
@@ -92,6 +93,7 @@ export const pageBlocks: Template[] = [
   jotFormEmbedSchema,
   customDownloadButtonSchema,
   colorBlockSchema,
+  downloadBlockSchema,
 ];
 
 export * from "../bookingButton/bookingButton";
