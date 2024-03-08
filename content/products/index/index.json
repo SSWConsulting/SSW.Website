@@ -3,12 +3,20 @@
     "title": "SSW Consulting Services | Over 25 years of experience developing awesome solutions on top of Angular, React, Blazor, .NET, Azure, GitHub, DevOps (was VSTS/TFS), Power Apps, Power Automate, Power BI, SharePoint, Dynamics and SQL Server",
     "canonical": "/products"
   },
+  "title": "SSW Products",
+  "subTitle": "Explore the future of enterprise development with our scalable, cutting-edge products",
   "productsList": [
     {
       "name": "SugarLearning",
       "url": "https://sugarlearning.com/",
       "description": "The next generation on-boarding & induction tool for smart companies.",
       "logo": "/images/products/thumb-SugarLearning.jpg"
+    },
+    {
+      "name": "EagleEye",
+      "url": "https://www.ssweagleeye.com/",
+      "description": "AI-driven solution that provides insights and patterns, boosts productivity & data-driven decisions",
+      "logo": "/images/products/EagleEye-Icon-Color-With-Space.png"
     },
     {
       "name": "TimePro",
@@ -33,12 +41,6 @@
       "url": "https://codeauditor.com/",
       "description": "Scan any website for broken links and HTML Issues.",
       "logo": "/images/products/thumb-CodeAuditor.jpg"
-    },
-    {
-      "name": "LinkAuditor",
-      "url": "https://sswlinkauditor.com/",
-      "description": "Automatically locate broken links on your websites.",
-      "logo": "/images/products/thumb-LinkAuditor.jpg"
     },
     {
       "name": "SmashingBarrier",

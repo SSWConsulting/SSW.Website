@@ -8,15 +8,16 @@ export const EventStatus = {
 export const formatEventDate = (start: Date, end: Date) => {
   if (!start || !end) return "";
 
+  const startObj = dayjs(start);
+  const endObj = dayjs(end);
+
   // NOTE: Omit ddd for brevity if it's next year's event
   const dateformat =
-    dayjs(start).year() === dayjs().year() ? "MMM D" : "MMM D YYYY";
+    startObj.year() === dayjs().year() ? "MMM D" : "MMM D YYYY";
 
-  const isOneDayEvent = dayjs(start)
-    .startOf("day")
-    .isSame(dayjs(end).startOf("day"));
-  const startDate = dayjs(start).format(dateformat);
-  const endDate = dayjs(end).format(dateformat);
+  const isOneDayEvent = startObj.startOf("day").isSame(endObj.startOf("day"));
+  const startDate = startObj.format(dateformat);
+  const endDate = endObj.format(dateformat);
 
   return isOneDayEvent ? startDate : `${startDate} - ${endDate}`;
 };
@@ -26,15 +27,16 @@ export const formatEventLongDate = (start: Date, end: Date) => {
 
   const dateformat = "dddd, MMMM D, YYYY h:mm A";
 
-  const isOneDayEvent = dayjs(start)
-    .startOf("day")
-    .isSame(dayjs(end).startOf("day"));
+  const startObj = dayjs(start);
+  const endObj = dayjs(end);
 
-  const startDate = dayjs(start).format(dateformat);
-  const endDate = dayjs(end).format(dateformat);
+  const isOneDayEvent = startObj.startOf("day").isSame(endObj.startOf("day"));
+
+  const startDate = startObj.format(dateformat);
+  const endDate = endObj.format(dateformat);
 
   if (isOneDayEvent) {
-    return `${startDate} - ${dayjs(end).format("h:mm A")}`;
+    return `${startDate} - ${endObj.format("h:mm A")}`;
   } else {
     return `${startDate} - ${endDate}`;
   }

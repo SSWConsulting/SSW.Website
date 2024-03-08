@@ -1,0 +1,79 @@
+name: Tempalte - Delete Docker image from ACR
+
+on:
+  workflow_call:
+    inputs:
+      imageTags:
+        type: string
+        description: "Image Tags or PR numbers"
+        required: true
+  workflow_dispatch:
+    inputs:
+      imageTag:
+        description: "Image Tag or PR number"
+        required: true
+
+defaults:
+  run:
+    shell: pwsh
+
+env:
+  IMAGE_TAGS: ${{ inputs.imageTags || inputs.imageTag }}
+  PREFIX: pr-
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  setting-up-img-tags:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Get image tags from input
+        id: set-matrix
+        run: |
+          $imageTags = '${{ env.IMAGE_TAGS }}'
+
+          if($imageTags -notlike '`[*')
+          {
+            $array = $imageTags -split " "
+            $imageTags = ConvertTo-Json -Compress @($array)
+          }
+
+          echo "matrix=$imageTags" >> $env:GITHUB_OUTPUT
+
+  delete-acr-image:
+    runs-on: ubuntu-latest
+    needs: setting-up-img-tags
+    strategy:
+      matrix:
+        IMAGE_TAG: ${{ fromJson(needs.setting-up-img-tags.outputs.matrix) }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v2
+        with:
+          path: ./.github
+
+      - name: Azure CLI - Login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: ACR - Delete image
+        run: |
+          if('${{ matrix.IMAGE_TAG }}'.Length -le 4) # PR tags consist of 4 digits (i.e pr-xxxx)
+          {
+            $imageTagWithPrefix = '${{ env.PREFIX }}${{ matrix.IMAGE_TAG}}'
+          }else{
+            $imageTagWithPrefix = '${{ matrix.IMAGE_TAG }}'
+          }
+
+          az acr repository delete --name ${{ env.ACR_NAME }} `
+          --image ${{ env.IMAGE_NAME }}:$imageTagWithPrefix --yes
+          Write-Output "✅ ACR - ${{ env.IMAGE_NAME }}:$imageTagWithPrefix image deleted successfully."

@@ -83,7 +83,7 @@ export default function ConsultingPage(
         <Section
           color="black"
           className={`
-            prose-consulting
+            prose-dark
             border-y-4 border-y-sswRed
             text-center`}
         >

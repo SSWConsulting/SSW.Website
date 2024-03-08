@@ -1,16 +1,12 @@
 import { Tab, Transition } from "@headlessui/react";
-import classNames from "classnames";
 import Image from "next/image";
 import { Fragment, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
-import { Event, WithContext } from "schema-dts";
+import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
-import {
-  formatEventLongDate,
-  formatRelativeEventDate,
-} from "../../helpers/dates";
 import { sanitiseXSS } from "../../helpers/validator";
 import { useEvents } from "../../hooks/useEvents";
+import { useFormatDates } from "../../hooks/useFormatDates";
 import { EventInfo } from "../../services/server/events";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { CustomLink } from "../customLink";
@@ -46,38 +42,10 @@ export const EventsFilter = ({
       }
       groups={!pastSelected ? filters : pastFilters}
     >
-      <Tab.Group>
+      <Tab.Group onChange={(index) => setPastSelected(index === 1)}>
         <Tab.List className="mb-8 flex flex-row">
-          <Tab as={Fragment}>
-            {({ selected }) => {
-              setPastSelected(!selected);
-              return (
-                <button
-                  className={classNames(
-                    "flex-grow border-b-2 border-b-sswRed py-2 uppercase tracking-widest hover:bg-gray-100",
-                    selected ? "bg-gray-100" : "hover:bg-gray-50"
-                  )}
-                >
-                  Upcoming Events
-                </button>
-              );
-            }}
-          </Tab>
-          <Tab as={Fragment}>
-            {({ selected }) => {
-              setPastSelected(selected);
-              return (
-                <button
-                  className={classNames(
-                    "flex-grow border-b-2 border-b-sswRed py-2 uppercase tracking-widest",
-                    selected ? "bg-gray-100" : "hover:bg-gray-50"
-                  )}
-                >
-                  Past Events
-                </button>
-              );
-            }}
-          </Tab>
+          <EventTab>Upcoming Events</EventTab>
+          <EventTab>Past Events</EventTab>
         </Tab.List>
         <Tab.Panels>
           <Tab.Panel>
@@ -92,6 +60,16 @@ export const EventsFilter = ({
         </Tab.Panels>
       </Tab.Group>
     </FilterBlock>
+  );
+};
+
+const EventTab = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <Tab as={Fragment}>
+      <button className="grow border-b-2 border-b-sswRed py-2 uppercase tracking-widest hover:bg-gray-50 ui-selected:bg-gray-100">
+        {children}
+      </button>
+    </Tab>
   );
 };
 
@@ -157,10 +135,16 @@ const Event = ({ visible, event }: EventProps) => {
     organizer: sswOrganisation,
   };
 
+  const eventSite = event?.Url?.Url?.toLowerCase()?.includes("ssw.com.au")
+    ? { name: CITY_MAP[event.City]?.name, url: CITY_MAP[event.City]?.url }
+    : { name: event.City, url: event.Url.Url };
+
+  const { formattedDate, relativeDate } = useFormatDates(event, true);
+
   return (
     <>
       <Transition
-        className="mb-20"
+        className="mb-15 border-b-1 bg-white pb-8"
         show={!!visible}
         enter="transition duration-100 ease-out"
         enterFrom="transform scale-95 opacity-0"
@@ -187,36 +171,34 @@ const Event = ({ visible, event }: EventProps) => {
             </h2>
 
             <EventsRelativeBox
-              relativeDate={formatRelativeEventDate(
-                event.StartDateTime,
-                event.EndDateTime
-              )}
-              formattedDate={formatEventLongDate(
-                event.StartDateTime,
-                event.EndDateTime
-              )}
+              relativeDate={relativeDate}
+              formattedDate={formattedDate}
               dateFontSize="text-s"
             />
 
             <div>
-              {event.CalendarType && (
-                <>
-                  <strong>Type:</strong> {event.CalendarType}{" "}
-                </>
-              )}
               {event.Presenter && (
-                <>
-                  <strong>Presenter: </strong>
-                  {event.Presenter}
-                </>
+                <EventDescItem
+                  label="Presenter"
+                  linkValue={event?.PresenterProfileUrl?.Url}
+                  value={event.Presenter}
+                />
               )}
               {event.City && CITY_MAP[event.City] && (
-                <span className="ml-3">
-                  <strong>Location: </strong>
-                  <CustomLink href={CITY_MAP[event.City]?.url}>
-                    {CITY_MAP[event.City]?.name}
-                  </CustomLink>
-                </span>
+                <EventDescItem
+                  label="Location"
+                  value={eventSite.name}
+                  linkValue={eventSite.url}
+                />
+              )}
+              {event.CalendarType && (
+                <EventDescItem label="Type" value={event.CalendarType} />
+              )}
+              {event.Category_f5a9cf4c_x002d_8228_x00 && (
+                <EventDescItem
+                  label="Category"
+                  value={event.Category_f5a9cf4c_x002d_8228_x00}
+                />
               )}
             </div>
           </div>
@@ -227,14 +209,36 @@ const Event = ({ visible, event }: EventProps) => {
           }}
           className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline"
         />
-        <CustomLink href={event.Url.Url}>
-          <p className="prose pt-3">Find out more...</p>
-        </CustomLink>
+        <div className="mb-1 mt-6 p-0 text-end">
+          <CustomLink
+            href={event.Url.Url}
+            title={event.Url.Description}
+            className="unstyled rounded bg-ssw-gray px-3 py-2 text-xs font-normal text-white hover:bg-ssw-gray-dark"
+          >
+            <span className="mt-8 text-sm">Find out more...</span>
+          </CustomLink>
+        </div>
       </Transition>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
       />
     </>
+  );
+};
+
+type EventDescItemProps = { label: string; value: string; linkValue?: string };
+
+const EventDescItem = ({ label, value, linkValue }: EventDescItemProps) => {
+  return (
+    <span className="mr-2 inline-block whitespace-nowrap">
+      <strong>{label}: </strong>
+
+      {linkValue ? (
+        <CustomLink href={linkValue}>{value}</CustomLink>
+      ) : (
+        <>{value}</>
+      )}
+    </span>
   );
 };

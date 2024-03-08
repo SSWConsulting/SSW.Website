@@ -15,6 +15,32 @@ defaults:
     shell: pwsh
 
 jobs:
+  run-tests-and-coverage:
+    name: Run tests & coverage
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run Tests & Coverage
+        run: pnpm test-and-coverage --outputFile=coverage-report.json
+
+      - name: Upload Coverage Report to PR
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          coverage-file: coverage-report.json
+          base-coverage-file: coverage-report.json
+          skip-step: all
+          annotations: none
+
   build:
     name: Build and upload artifacts
     uses: ./.github/workflows/template-build.yml
@@ -67,7 +93,7 @@ jobs:
           repo-token-user-login: "github-actions[bot]"
           allow-repeats: true
 
-  test:
+  ui-test:
     name: Run Playwright Tests
     needs: pr-deploy
     uses: ./.github/workflows/template-ui-tests.yml

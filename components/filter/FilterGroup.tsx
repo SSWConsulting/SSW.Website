@@ -8,7 +8,10 @@ export interface FilterGroupProps {
   selected: number;
   setSelected: (index: number) => void;
   allText: string;
-  options: string[] | Readonly<string[]>;
+  options: {
+    label: string | Readonly<string>;
+    count: number;
+  }[];
 }
 
 export const FilterGroup = ({
@@ -35,7 +38,7 @@ export const FilterGroup = ({
           setSelected={setSelected}
           className={selected === index ? "font-bold" : ""}
         >
-          {curr}
+          {curr.label} ({curr.count})
         </FilterOption>
       ))}
       <hr />

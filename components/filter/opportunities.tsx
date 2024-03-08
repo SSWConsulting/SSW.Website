@@ -1,6 +1,6 @@
 import { Disclosure, Transition } from "@headlessui/react";
 import classNames from "classnames";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { UtilityButton } from "../blocks";
@@ -64,29 +64,41 @@ export const Opportunities = ({ opportunities }: OpportunitiesProps) => {
     }
   }, [opportunities, selectedLocation, selectedType, selectedStatus]);
 
+  const filterGroups = useMemo(() => {
+    return [
+      {
+        selected: selectedLocation,
+        setSelected: setSelectedLocation,
+        options: locations.map((location) => ({
+          label: location,
+          count: opportunities.filter((o) => o.locations.includes(location))
+            .length,
+        })),
+        allText: "All Locations",
+      },
+      {
+        selected: selectedType,
+        setSelected: setSelectedType,
+        options: employmentType.map((type) => ({
+          label: type,
+          count: opportunities.filter((o) => o.employmentType === type).length,
+        })),
+        allText: "All Types",
+      },
+      {
+        selected: selectedStatus,
+        setSelected: setSelectedStatus,
+        options: jobStatus.map((status) => ({
+          label: status,
+          count: opportunities.filter((o) => o.status === status).length,
+        })),
+        allText: "All Positions",
+      },
+    ];
+  }, [opportunities, selectedLocation, selectedType, selectedStatus]);
+
   return (
-    <FilterBlock
-      groups={[
-        {
-          selected: selectedLocation,
-          setSelected: setSelectedLocation,
-          options: locations,
-          allText: "All Locations",
-        },
-        {
-          selected: selectedType,
-          setSelected: setSelectedType,
-          options: employmentType,
-          allText: "All Types",
-        },
-        {
-          selected: selectedStatus,
-          setSelected: setSelectedStatus,
-          options: jobStatus,
-          allText: "All Positions",
-        },
-      ]}
-    >
+    <FilterBlock groups={filterGroups}>
       {selectedStatus !== 1 &&
         filteredOpportunities.some((o) => o.status === AVAILABLE) && (
           <>

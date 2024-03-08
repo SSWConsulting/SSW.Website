@@ -1,4 +1,4 @@
-import bundleAnalyser from "@next/bundle-analyzer";
+// import bundleAnalyser from "@next/bundle-analyzer";
 
 /** @type {import('next').NextConfig} */
 const config = {
@@ -76,10 +76,11 @@ const config = {
   experimental: {
     optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
   },
+  productionBrowserSourceMaps: true,
 };
 
-const withBundleAnalyzer = bundleAnalyser({
-  enabled: process.env.BUNDLE_ANALYSE === "true",
-});
+// const withBundleAnalyzer = bundleAnalyser({
+//   enabled: process.env.BUNDLE_ANALYSE === "true",
+// });
 
-export default withBundleAnalyzer(config);
+export default config;

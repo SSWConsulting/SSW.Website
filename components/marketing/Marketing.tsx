@@ -1,4 +1,6 @@
+import { getImageProps } from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { getBackgroundImage } from "../../helpers/images";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { Container } from "../util/container";
@@ -13,12 +15,20 @@ export const Marketing = (props) => {
     return <></>;
   }
 
+  const {
+    props: { srcSet },
+  } = getImageProps({
+    src: content?.backgroundImage,
+    alt: "Marketing background",
+    height: 537,
+    width: 1920,
+  });
+
+  const backgroundImage = getBackgroundImage(srcSet);
+
   return (
-    <Section
-      style={{ backgroundImage: `url(${content?.backgroundImage})` }}
-      className="h-full bg-cover"
-    >
-      <Container size="custom" className="h-full py-16 text-center">
+    <Section style={{ backgroundImage }} className="h-full bg-cover">
+      <Container size="custom" className="h-full py-16 text-center text-white">
         <h1
           className="mt-0 pt-0 text-5xl text-white"
           dangerouslySetInnerHTML={{

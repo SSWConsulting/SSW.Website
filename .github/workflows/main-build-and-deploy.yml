@@ -14,6 +14,39 @@ permissions:
   contents: read
 
 jobs:
+  run-tests-and-coverage:
+    name: Run tests & coverage
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run Tests & Coverage
+        run: pnpm test-and-coverage --outputFile=coverage-report.json
+
+      - name: Generate Coverage Report for main Build
+        id: coverage
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          coverage-file: coverage-report.json
+          base-coverage-file: coverage-report.json
+          skip-step: all
+          annotations: none
+          output: report-markdown
+
+      - name: Code Coverage Summary
+        shell: pwsh
+        run: |
+          $report_content='${{ steps.coverage.outputs.report }}'
+          "$report_content" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+
   build:
     name: Build and upload artifacts
     uses: ./.github/workflows/template-build.yml

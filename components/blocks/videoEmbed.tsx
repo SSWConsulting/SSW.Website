@@ -9,6 +9,8 @@ type VideoEmbedProps = {
     removeMargin?: boolean;
     overflow?: boolean;
     uncentre?: boolean;
+    caption?: string;
+    duration?: string;
   };
 };
 
@@ -19,14 +21,18 @@ export const VideoEmbed = ({ data }: VideoEmbedProps) => {
 
   return (
     <div
-      className={classNames(
-        "relative aspect-video cursor-pointer",
-        width,
-        margin,
-        uncentre
-      )}
+      className={classNames("relative aspect-video", width, margin, uncentre)}
     >
-      <VideoModal url={data.url} overflow={data.overflow} />
+      <VideoModal
+        url={data.url}
+        overflow={data.overflow}
+        className="cursor-pointer"
+      />
+      {data.caption && (
+        <p className={classNames("font-bold", !uncentre && "text-centre")}>
+          Video: {data.caption} {data.duration && <>({data.duration})</>}
+        </p>
+      )}
     </div>
   );
 };
@@ -87,6 +93,20 @@ export const videoEmbedBlockSchema: Template = {
       label: "Overflow - read more at tailwindcss.com/docs/overflow",
       name: "overflow",
       required: false,
+    },
+    {
+      type: "string",
+      label: "Caption",
+      name: "caption",
+      description:
+        "Shows up under the video as 'Video: {{ YOUR_INPUT }} ( {{ YOUR_DURATION }} )'. This adheres to https://ssw.com.au/rules/add-useful-and-concise-figure-captions/",
+      required: false,
+    },
+    {
+      type: "string",
+      label: "Duration",
+      name: "duration",
+      description: "See caption description",
     },
   ],
 };

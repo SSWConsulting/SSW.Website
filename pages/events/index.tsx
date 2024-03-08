@@ -61,7 +61,7 @@ export const getStaticProps = async () => {
   const odataFilter = `$filter=fields/Enabled ne false \
       and fields/EndDateTime gt '${startOfDay.toISOString()}'\
       &$orderby=fields/StartDateTime asc\
-      &$top=${15}`;
+      &$top=${20}`;
 
   const pastOdataFilter = `$filter=fields/Enabled ne false \
       and fields/StartDateTime lt '${startOfDay.toISOString()}'\
