@@ -5,9 +5,11 @@ import { useLiveStreamProps } from "../../hooks/useLiveStreamProps";
 import { Footer } from "./footer";
 import { Theme } from "./theme";
 
+import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
 import { Open_Sans } from "next/font/google";
+import { useReportWebVitals } from "next/web-vitals";
 import { WebSite, WithContext } from "schema-dts";
 import { MegaMenuLayout, NavMenuGroup } from "ssw.megamenu";
 import layoutData from "../../content/global/index.json";
@@ -60,6 +62,16 @@ interface LayoutProps {
 }
 
 export const Layout = ({ children, menu, className = "" }: LayoutProps) => {
+  const appInsights = useAppInsightsContext();
+
+  useReportWebVitals((metric) => {
+    switch (metric.name) {
+      case "TTFB": {
+        appInsights.trackMetric({ name: "TTFB", average: metric.value }, {});
+      }
+    }
+  });
+
   const liveStreamProps = useLiveStreamProps();
   const router = useRouter();
 
