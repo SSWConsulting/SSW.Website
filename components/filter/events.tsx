@@ -2,16 +2,14 @@ import { Tab, Transition } from "@headlessui/react";
 import Image from "next/image";
 import { Fragment, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
-import type { Event, WithContext } from "schema-dts";
+import type { Event } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
-import { sanitiseXSS } from "../../helpers/validator";
 import { useEvents } from "../../hooks/useEvents";
 import { useFormatDates } from "../../hooks/useFormatDates";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { CITY_MAP } from "../util/constants/country";
-import { sswOrganisation } from "../util/constants/json-ld";
 import { FilterBlock } from "./FilterBlock";
 
 interface EventsFilterProps {
@@ -40,7 +38,7 @@ export type EventTrimmed = {
   };
   CalendarType?: string;
   Category_f5a9cf4c_x002d_8228_x00?: string;
-  EventShortDescription: string;
+  Abstract: string;
 };
 
 export const EventsFilter = ({
@@ -132,30 +130,30 @@ interface EventProps {
 }
 
 const Event = ({ visible, event }: EventProps) => {
-  const eventJsonLd: WithContext<Event> = {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    name: event.Title,
-    image: event.Thumbnail.Url,
-    startDate: new Date(event.StartDateTime).toISOString(),
-    endDate: new Date(event.EndDateTime).toISOString(),
-    location: {
-      "@type": "Place",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: CITY_MAP[event.City]?.name,
-        addressRegion: CITY_MAP[event.City]?.state,
-        addressCountry: CITY_MAP[event.City]?.country,
-      },
-      name: CITY_MAP[event.City]?.name,
-      url: CITY_MAP[event.City]?.url,
-    },
-    eventStatus: "https://schema.org/EventScheduled",
-    eventAttendanceMode: "https://schema.org/MixedEventAttendanceMode",
-    description: event.Url.Description,
-    performer: sswOrganisation,
-    organizer: sswOrganisation,
-  };
+  // const eventJsonLd: WithContext<Event> = {
+  //   "@context": "https://schema.org",
+  //   "@type": "Event",
+  //   name: event.Title,
+  //   image: event.Thumbnail.Url,
+  //   startDate: new Date(event.StartDateTime).toISOString(),
+  //   endDate: new Date(event.EndDateTime).toISOString(),
+  //   location: {
+  //     "@type": "Place",
+  //     address: {
+  //       "@type": "PostalAddress",
+  //       addressLocality: CITY_MAP[event.City]?.name,
+  //       addressRegion: CITY_MAP[event.City]?.state,
+  //       addressCountry: CITY_MAP[event.City]?.country,
+  //     },
+  //     name: CITY_MAP[event.City]?.name,
+  //     url: CITY_MAP[event.City]?.url,
+  //   },
+  //   eventStatus: "https://schema.org/EventScheduled",
+  //   eventAttendanceMode: "https://schema.org/MixedEventAttendanceMode",
+  //   description: event.Url.Description,
+  //   performer: sswOrganisation,
+  //   organizer: sswOrganisation,
+  // };
 
   const eventSite = event?.Url?.Url?.toLowerCase()?.includes("ssw.com.au")
     ? { name: CITY_MAP[event.City]?.name, url: CITY_MAP[event.City]?.url }
@@ -225,12 +223,9 @@ const Event = ({ visible, event }: EventProps) => {
             </div>
           </div>
         </div>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: sanitiseXSS(event.EventShortDescription) || "",
-          }}
-          className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline"
-        />
+        <div className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline">
+          {event.Abstract}
+        </div>
         <div className="mb-1 mt-6 p-0 text-end">
           <CustomLink
             href={event.Url.Url}
@@ -241,10 +236,10 @@ const Event = ({ visible, event }: EventProps) => {
           </CustomLink>
         </div>
       </Transition>
-      <script
+      {/* <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
-      />
+      /> */}
     </>
   );
 };
