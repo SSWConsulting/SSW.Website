@@ -10,6 +10,7 @@ type GridLayoutProps = {
       gridTitle: string;
       blocks: {
         image: string;
+        relatedImage: string;
         title: string;
       }[];
     }[];
@@ -32,6 +33,15 @@ export const GridLayout = ({ data }: GridLayoutProps) => {
                     className="align-middle"
                     src={block.image}
                     alt={`${block.title} logo`}
+                    height={180}
+                    width={180}
+                  />
+                )}
+                {block.relatedImage && (
+                  <Image
+                    className="align-middle"
+                    src={block.relatedImage}
+                    alt={`${block.title} second logo`}
                     height={180}
                     width={180}
                   />
@@ -91,6 +101,13 @@ export const gridLayoutSchema: Template = {
               type: "image",
               label: "Image",
               name: "image",
+              // @ts-expect-error tinacms types are wrong
+              uploadDir: () => "company-logos",
+            },
+            {
+              type: "image",
+              label: "Related Image",
+              name: "relatedImage",
               // @ts-expect-error tinacms types are wrong
               uploadDir: () => "company-logos",
             },
