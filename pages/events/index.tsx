@@ -6,7 +6,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
 import { Blocks } from "../../components/blocks-renderer";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
-import { EventsFilter } from "../../components/filter/events";
+import { EventTrimmed, EventsFilter } from "../../components/filter/events";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
@@ -58,17 +58,20 @@ export const getStaticProps = async () => {
   const startOfDay = new Date();
   startOfDay.setHours(0, 0, 0, 0);
 
-  const odataFilter = `$filter=fields/Enabled ne false \
-      and fields/EndDateTime gt '${startOfDay.toISOString()}'\
-      &$orderby=fields/StartDateTime asc\
+  const fields =
+    "Title,Thumbnail,StartDateTime,EndDateTime,City,Url,Presenter,PresenterProfileUrl,CalendarType,Category_f5a9cf4c_x002d_8228_x00,EventShortDescription";
+
+  const odataFilter = `$select=id&$expand=fields($select=${fields})&$filter=fields/Enabled ne false \
+      and fields/StartDateTime lt '${startOfDay.toISOString()}'\
+      &$orderby=fields/StartDateTime desc\
       &$top=${20}`;
 
-  const pastOdataFilter = `$filter=fields/Enabled ne false \
+  const pastOdataFilter = `$select=id&$expand=fields($select=${fields})&$filter=fields/Enabled ne false \
       and fields/StartDateTime lt '${startOfDay.toISOString()}'\
       &$orderby=fields/StartDateTime desc\
       &$top=${100}`;
 
-  let events, pastEvents;
+  let events: EventTrimmed[], pastEvents: EventTrimmed[];
   try {
     events = await getEvents(odataFilter);
     pastEvents = await getEvents(pastOdataFilter);
@@ -93,7 +96,7 @@ export const getStaticProps = async () => {
     });
 
     // eslint-disable-next-line no-console
-    console.error(err);
+    console.error(err.data);
 
     events = [];
     pastEvents = [];

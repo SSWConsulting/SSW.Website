@@ -11,7 +11,6 @@ import {
 } from "../../helpers/dates";
 import { sanitiseXSS } from "../../helpers/validator";
 import { useEvents } from "../../hooks/useEvents";
-import { EventInfo } from "../../services/server/events";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
@@ -21,9 +20,32 @@ import { FilterBlock } from "./FilterBlock";
 
 interface EventsFilterProps {
   sidebarBody: TinaMarkdownContent;
-  events: EventInfo[];
-  pastEvents: EventInfo[];
+  events: EventTrimmed[];
+  pastEvents: EventTrimmed[];
 }
+
+export type EventTrimmed = {
+  id: string;
+  Title: string;
+  Thumbnail: {
+    Url: string;
+    Description: string;
+  };
+  StartDateTime: Date;
+  EndDateTime: Date;
+  City: string;
+  Url: {
+    Url: string;
+    Description: string;
+  };
+  Presenter?: string;
+  PresenterProfileUrl?: {
+    Url: string;
+  };
+  CalendarType?: string;
+  Category_f5a9cf4c_x002d_8228_x00?: string;
+  EventShortDescription: string;
+};
 
 export const EventsFilter = ({
   sidebarBody,
@@ -96,8 +118,8 @@ export const EventsFilter = ({
 };
 
 interface EventsListProps {
-  events: EventInfo[];
-  filteredEvents: EventInfo[];
+  events: EventTrimmed[];
+  filteredEvents: EventTrimmed[];
 }
 
 const EventsList = ({ events, filteredEvents }: EventsListProps) => {
@@ -128,7 +150,7 @@ const EventsList = ({ events, filteredEvents }: EventsListProps) => {
 
 interface EventProps {
   visible?: boolean;
-  event: EventInfo;
+  event: EventTrimmed;
 }
 
 const Event = ({ visible, event }: EventProps) => {

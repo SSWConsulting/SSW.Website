@@ -1,9 +1,9 @@
+import { EventTrimmed } from "@/components/filter/events";
 import { useMemo, useState } from "react";
 import { NO_SELECTION } from "../components/filter/FilterBlock";
 import { FilterGroupProps } from "../components/filter/FilterGroup";
-import { EventInfo } from "../services/server/events";
 
-export const useEvents = (events: EventInfo[]) => {
+export const useEvents = (events: EventTrimmed[]) => {
   const [filterControls, setFilterControls] = useState<{
     technology: number;
     format: number;
