@@ -104,12 +104,14 @@ const config: Config = {
   // ],
 
   // An object that configures minimum threshold enforcement for coverage results
-  // coverageThreshold: {
-  //   global: {
-  //     lines: 80,
-  //     branches: 80,
-  //   },
-  // },
+  coverageThreshold: {
+    global: {
+      lines: 0,
+      branches: 9,
+      functions: 1,
+      statements: 0,
+    },
+  },
 
   // A path to a custom dependency extractor
   // dependencyExtractor: undefined,
