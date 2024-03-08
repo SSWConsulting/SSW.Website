@@ -31,21 +31,9 @@ export const logosSchema: Collection = {
       templates: [...Schemas.pageBlocks],
     },
     {
-      type: "object",
+      type: "rich-text",
       name: "footer",
       label: "Footer",
-      fields: [
-        {
-          type: "string",
-          label: "Text",
-          name: "text",
-        },
-        {
-          type: "string",
-          label: "Link",
-          name: "link",
-        },
-      ],
     }
   ],
 };

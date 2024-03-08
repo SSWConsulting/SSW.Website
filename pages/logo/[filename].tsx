@@ -1,15 +1,16 @@
-import client from "../../.tina/__generated__/client";
-import { Layout } from "../../components/layout";
 import { InferGetStaticPropsType } from "next";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+import client from "../../.tina/__generated__/client";
+import { tinaField, useTina } from "tinacms/dist/react";
+import { Layout } from "../../components/layout";
 import { SEO } from "../../components/util/seo";
-import { useTina } from "tinacms/dist/react";
 import { Section } from "../../components/util/section";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
-import { removeExtension } from "services/client/utils.service";
 import { Blocks } from "../../components/blocks-renderer";
-import { CustomLink } from "../../components/customLink";
 import { Container } from "../../components/util/container";
+import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import { removeExtension } from "services/client/utils.service";
 
 export default function LogosPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -32,11 +33,14 @@ export default function LogosPage(
         />
         <h1 className="pt-0 text-3xl">{data.logos?.header}</h1>
         <Blocks prefix="Logos_body" blocks={data.logos._body} />
-        {data.logos?.footer?.text && (
+        {data.logos?.footer && (
           <Section className="justify-center">
-            <CustomLink href={data.logos.footer.link}>
-              {data.logos.footer.text}
-            </CustomLink>
+            <div data-tina-field={tinaField(data.logos, "footer")}>
+              <TinaMarkdown
+                content={data.logos.footer}
+                components={componentRenderer}
+              />
+            </div>
           </Section>
         )}
       </Container>
