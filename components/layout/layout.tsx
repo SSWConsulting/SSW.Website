@@ -68,6 +68,11 @@ export const Layout = ({ children, menu, className = "" }: LayoutProps) => {
     switch (metric.name) {
       case "TTFB": {
         appInsights.trackMetric({ name: "TTFB", average: metric.value }, {});
+        break;
+      }
+      case "FCP": {
+        appInsights.trackMetric({ name: "FCP", average: metric.value }, {});
+        break;
       }
     }
   });
