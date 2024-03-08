@@ -28,7 +28,7 @@ export const ColorBlock = ({ title, subTitle, colorRow }: ColorBlockProps) => {
   return (
     <Container className="">
       <div className="prose max-w-full prose-p:my-0.75">
-        <div className="container mx-auto py-12">
+        <div className="container mx-auto py-4">
           <h2>{title}</h2>
           <p className="mb-0.5">{subTitle}</p>
           <div className="grid grid-cols-1 md:grid-cols-2">
