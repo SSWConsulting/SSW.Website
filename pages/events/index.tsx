@@ -59,7 +59,7 @@ export const getStaticProps = async () => {
   startOfDay.setHours(0, 0, 0, 0);
 
   const fields =
-    "Title,Thumbnail,StartDateTime,EndDateTime,City,Url,Presenter,PresenterProfileUrl,CalendarType,Category_f5a9cf4c_x002d_8228_x00,EventShortDescription";
+    "Title,Thumbnail,StartDateTime,EndDateTime,City,Url,Presenter,PresenterProfileUrl,CalendarType,Category_f5a9cf4c_x002d_8228_x00,Abstract";
 
   const odataFilter = `$select=id&$expand=fields($select=${fields})&$filter=fields/Enabled ne false \
       and fields/EndDateTime gt '${startOfDay.toISOString()}'\
