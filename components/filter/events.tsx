@@ -1,4 +1,5 @@
 import { Tab, Transition } from "@headlessui/react";
+import { useFetchPastEvents } from "hooks/useFetchEvents";
 import Image from "next/image";
 import { Fragment, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
@@ -15,7 +16,6 @@ import { FilterBlock } from "./FilterBlock";
 interface EventsFilterProps {
   sidebarBody: TinaMarkdownContent;
   events: EventTrimmed[];
-  pastEvents: EventTrimmed[];
 }
 
 export type EventTrimmed = {
@@ -38,20 +38,18 @@ export type EventTrimmed = {
   };
   CalendarType?: string;
   Category_f5a9cf4c_x002d_8228_x00?: string;
-  Abstract: string;
+  EventShortDescription: string;
 };
 
-export const EventsFilter = ({
-  sidebarBody,
-  events,
-  pastEvents,
-}: EventsFilterProps) => {
+export const EventsFilter = ({ sidebarBody, events }: EventsFilterProps) => {
   const [pastSelected, setPastSelected] = useState<boolean>(false);
 
   const { filters, filteredEvents } = useEvents(events);
 
+  const { pastEvents, isLoading } = useFetchPastEvents();
+
   const { filters: pastFilters, filteredEvents: pastFilteredEvents } =
-    useEvents(pastEvents);
+    useEvents(isLoading || !pastEvents ? [] : pastEvents);
 
   return (
     <FilterBlock
@@ -223,9 +221,10 @@ const Event = ({ visible, event }: EventProps) => {
             </div>
           </div>
         </div>
-        <div className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline">
-          {event.Abstract}
-        </div>
+        <div
+          className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline"
+          dangerouslySetInnerHTML={{ __html: event.EventShortDescription }}
+        />
         <div className="mb-1 mt-6 p-0 text-end">
           <CustomLink
             href={event.Url.Url}

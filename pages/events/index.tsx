@@ -1,6 +1,7 @@
 import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
-import { InferGetStaticPropsType } from "next";
+import { useFetchEvents } from "hooks/useFetchEvents";
+import type { InferGetStaticPropsType } from "next";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
@@ -23,6 +24,8 @@ export default function EventsIndexPage(
     variables: props.variables,
   });
 
+  const { events } = useFetchEvents(props.events);
+
   return (
     <>
       <SEO seo={data.eventsIndex.seo} />
@@ -36,8 +39,7 @@ export default function EventsIndexPage(
             />
           </div>
           <EventsFilter
-            events={props.events}
-            pastEvents={props.pastEvents}
+            events={events}
             sidebarBody={data.eventsIndex.sidebarBody}
           />
         </Container>
@@ -66,15 +68,9 @@ export const getStaticProps = async () => {
       &$orderby=fields/StartDateTime asc\
       &$top=${20}`;
 
-  const pastOdataFilter = `$select=id&$expand=fields($select=${fields})&$filter=fields/Enabled ne false \
-      and fields/StartDateTime lt '${startOfDay.toISOString()}'\
-      &$orderby=fields/StartDateTime desc\
-      &$top=${100}`;
-
-  let events: EventTrimmed[], pastEvents: EventTrimmed[];
+  let events: EventTrimmed[];
   try {
     events = await getEvents(odataFilter);
-    pastEvents = await getEvents(pastOdataFilter);
   } catch (err) {
     const properties = {
       Request: "GET /events",
@@ -96,7 +92,6 @@ export const getStaticProps = async () => {
     });
 
     events = [];
-    pastEvents = [];
   }
 
   if (!tinaProps.data.eventsIndex.seo.canonical) {
@@ -109,7 +104,6 @@ export const getStaticProps = async () => {
       query: tinaProps.query,
       variables: tinaProps.variables,
       events,
-      pastEvents,
     },
     revalidate: ISR_TIME,
   };

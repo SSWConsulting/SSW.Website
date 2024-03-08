@@ -2,7 +2,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { DefaultSeo } from "next-seo";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "react-responsive-modal/styles.css";
 import "react-tooltip/dist/react-tooltip.css";
 import { Analytics } from "../components/layout/analytics";
@@ -10,6 +10,11 @@ import * as gtag from "../lib/gtag";
 import { NEXT_SEO_DEFAULT } from "../next-seo.config";
 import "../styles.css";
 
+import {
+  HydrationBoundary,
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
 import { AppInsightsProvider } from "../context/app-insight-client";
 
 // Hack as per https://stackoverflow.com/a/66575373 to stop font awesome icons breaking
@@ -61,14 +66,20 @@ const App = ({ Component, pageProps }) => {
     AOS.init({ duration: 1200 });
   }, []);
 
+  const [queryClient] = useState(() => new QueryClient());
+
   return (
     <>
       <Analytics />
       <DefaultSeo {...NEXT_SEO_DEFAULT} />
       <AppInsightsProvider>
-        <ErrorBoundary key={router.asPath}>
-          <Component {...pageProps} />
-        </ErrorBoundary>
+        <QueryClientProvider client={queryClient}>
+          <HydrationBoundary>
+            <ErrorBoundary key={router.asPath}>
+              <Component {...pageProps} />
+            </ErrorBoundary>
+          </HydrationBoundary>
+        </QueryClientProvider>
       </AppInsightsProvider>
       <ChatBaseBot />
     </>
