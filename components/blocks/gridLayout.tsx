@@ -23,7 +23,7 @@ export const GridLayout = ({ data }: GridLayoutProps) => {
       {data.grids?.map((grid, i) => (
         <Container padding="pt-0" key={i}>
           <h2 className="text-xl text-ssw-red">{grid.gridTitle}</h2>
-          <Section className="mx-auto my-12 grid w-full grid-cols-1 gap-x-12 sm:grid-cols-1 md:my-12 md:grid-cols-2 lg:ml-0 lg:grid-cols-4">
+          <Section className="mx-auto my-12 grid w-full grid-cols-1 gap-x-12 sm:grid-cols-2 lg:ml-0 lg:grid-cols-4">
             {grid.blocks?.map((block, i) => (
               <Section className="flex-col items-center" key={i}>
                 <h3 className="text-lg font-light">{block.title}</h3>
