@@ -62,8 +62,8 @@ export const getStaticProps = async () => {
     "Title,Thumbnail,StartDateTime,EndDateTime,City,Url,Presenter,PresenterProfileUrl,CalendarType,Category_f5a9cf4c_x002d_8228_x00,EventShortDescription";
 
   const odataFilter = `$select=id&$expand=fields($select=${fields})&$filter=fields/Enabled ne false \
-      and fields/StartDateTime lt '${startOfDay.toISOString()}'\
-      &$orderby=fields/StartDateTime desc\
+      and fields/EndDateTime gt '${startOfDay.toISOString()}'\
+      &$orderby=fields/StartDateTime asc\
       &$top=${20}`;
 
   const pastOdataFilter = `$select=id&$expand=fields($select=${fields})&$filter=fields/Enabled ne false \
