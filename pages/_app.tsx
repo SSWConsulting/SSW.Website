@@ -22,7 +22,14 @@ import isBetween from "dayjs/plugin/isBetween";
 import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
-import ChatBaseBot from "../components/zendeskButton/chatBaseBot";
+import dynamic from "next/dynamic";
+
+const ChatBaseBot = dynamic(
+  () => import("../components/zendeskButton/chatBaseBot"),
+  {
+    ssr: false,
+  }
+);
 
 // DayJS module addition as per https://github.com/iamkun/dayjs/issues/1577
 dayjs.extend(relativeTime);

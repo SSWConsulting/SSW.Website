@@ -1,16 +1,12 @@
 import { Tab, Transition } from "@headlessui/react";
-import classNames from "classnames";
 import Image from "next/image";
 import { Fragment, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
-import { Event, WithContext } from "schema-dts";
+import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
-import {
-  formatEventLongDate,
-  formatRelativeEventDate,
-} from "../../helpers/dates";
 import { sanitiseXSS } from "../../helpers/validator";
 import { useEvents } from "../../hooks/useEvents";
+import { useFormatDates } from "../../hooks/useFormatDates";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
@@ -68,38 +64,10 @@ export const EventsFilter = ({
       }
       groups={!pastSelected ? filters : pastFilters}
     >
-      <Tab.Group>
+      <Tab.Group onChange={(index) => setPastSelected(index === 1)}>
         <Tab.List className="mb-8 flex flex-row">
-          <Tab as={Fragment}>
-            {({ selected }) => {
-              setPastSelected(!selected);
-              return (
-                <button
-                  className={classNames(
-                    "flex-grow border-b-2 border-b-sswRed py-2 uppercase tracking-widest hover:bg-gray-100",
-                    selected ? "bg-gray-100" : "hover:bg-gray-50"
-                  )}
-                >
-                  Upcoming Events
-                </button>
-              );
-            }}
-          </Tab>
-          <Tab as={Fragment}>
-            {({ selected }) => {
-              setPastSelected(selected);
-              return (
-                <button
-                  className={classNames(
-                    "flex-grow border-b-2 border-b-sswRed py-2 uppercase tracking-widest",
-                    selected ? "bg-gray-100" : "hover:bg-gray-50"
-                  )}
-                >
-                  Past Events
-                </button>
-              );
-            }}
-          </Tab>
+          <EventTab>Upcoming Events</EventTab>
+          <EventTab>Past Events</EventTab>
         </Tab.List>
         <Tab.Panels>
           <Tab.Panel>
@@ -114,6 +82,16 @@ export const EventsFilter = ({
         </Tab.Panels>
       </Tab.Group>
     </FilterBlock>
+  );
+};
+
+const EventTab = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <Tab as={Fragment}>
+      <button className="grow border-b-2 border-b-sswRed py-2 uppercase tracking-widest hover:bg-gray-50 ui-selected:bg-gray-100">
+        {children}
+      </button>
+    </Tab>
   );
 };
 
@@ -179,9 +157,11 @@ const Event = ({ visible, event }: EventProps) => {
     organizer: sswOrganisation,
   };
 
-  const eventSite = event.Url.Url.toLowerCase()?.includes("ssw.com.au")
+  const eventSite = event?.Url?.Url?.toLowerCase()?.includes("ssw.com.au")
     ? { name: CITY_MAP[event.City]?.name, url: CITY_MAP[event.City]?.url }
     : { name: event.City, url: event.Url.Url };
+
+  const { formattedDate, relativeDate } = useFormatDates(event, true);
 
   return (
     <>
@@ -213,14 +193,8 @@ const Event = ({ visible, event }: EventProps) => {
             </h2>
 
             <EventsRelativeBox
-              relativeDate={formatRelativeEventDate(
-                event.StartDateTime,
-                event.EndDateTime
-              )}
-              formattedDate={formatEventLongDate(
-                event.StartDateTime,
-                event.EndDateTime
-              )}
+              relativeDate={relativeDate}
+              formattedDate={formattedDate}
               dateFontSize="text-s"
             />
 
