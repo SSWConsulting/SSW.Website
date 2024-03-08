@@ -95,9 +95,6 @@ export const getStaticProps = async () => {
       severity: appInsights.Contracts.SeverityLevel.Error,
     });
 
-    // eslint-disable-next-line no-console
-    console.error(err.data);
-
     events = [];
     pastEvents = [];
   }
