@@ -1,23 +1,34 @@
 import { EventTrimmed } from "@/components/filter/events";
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 export const useFetchEvents = (
   initialData: EventTrimmed[]
 ): { events: EventTrimmed[] } => {
-  const { data: events } = useQuery({
+  const { data } = useInfiniteQuery({
     queryKey: ["events"],
-    queryFn: async () => {
+    queryFn: async ({ pageParam = 0 }) => {
       const res = await axios.get<EventTrimmed[]>("/api/get-upcoming-events", {
         params: { top: 5 },
       });
 
       return res.data;
     },
+    // @ts-expect-error not sure why this isn't listed in the types
     initialData,
+    getNextPageParam: (lastPage) => {
+      if (lastPage.length < 5) {
+        return undefined;
+      }
+
+      return lastPage[lastPage.length - 1].StartDateTime;
+    },
+    getPreviousPageParam: (firstPage) => {
+      return firstPage[0].StartDateTime;
+    },
   });
 
-  return { events };
+  return { events: data.pages[0] };
 };
 
 export const useFetchPastEvents = () => {

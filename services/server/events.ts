@@ -61,6 +61,8 @@ export const getEvents = async (odataFilter: string): Promise<EventInfo[]> => {
     }
   );
 
+  console.log(eventsRes.data);
+
   const events: EventInfo[] = eventsRes.data.value.map((item) => item.fields);
 
   return events || [];

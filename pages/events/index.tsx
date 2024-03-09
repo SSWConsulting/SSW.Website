@@ -24,8 +24,6 @@ export default function EventsIndexPage(
     variables: props.variables,
   });
 
-  const { events } = useFetchEvents(props.events);
-
   return (
     <>
       <SEO seo={data.eventsIndex.seo} />
@@ -39,7 +37,7 @@ export default function EventsIndexPage(
             />
           </div>
           <EventsFilter
-            events={events}
+            events={props.events}
             sidebarBody={data.eventsIndex.sidebarBody}
           />
         </Container>

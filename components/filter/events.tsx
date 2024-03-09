@@ -1,5 +1,5 @@
 import { Tab, Transition } from "@headlessui/react";
-import { useFetchPastEvents } from "hooks/useFetchEvents";
+import { useFetchEvents, useFetchPastEvents } from "hooks/useFetchEvents";
 import Image from "next/image";
 import { Fragment, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
@@ -41,13 +41,16 @@ export type EventTrimmed = {
   EventShortDescription: string;
 };
 
-export const EventsFilter = ({ sidebarBody, events }: EventsFilterProps) => {
+export const EventsFilter = ({
+  sidebarBody,
+  events: ssrEvents,
+}: EventsFilterProps) => {
   const [pastSelected, setPastSelected] = useState<boolean>(false);
 
+  const { events } = useFetchEvents(ssrEvents);
   const { filters, filteredEvents } = useEvents(events);
 
   const { pastEvents, isLoading } = useFetchPastEvents();
-
   const { filters: pastFilters, filteredEvents: pastFilteredEvents } =
     useEvents(isLoading || !pastEvents ? [] : pastEvents);
 
