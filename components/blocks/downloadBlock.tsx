@@ -113,7 +113,7 @@ export const downloadBlockSchema: Template = {
           type: "image",
           label: "Image",
           name: "img",
-          // @ts-ignore
+          // @ts-expect-error - tina-cms types are incorrect
           uploadDir: () => "company-logos",
         },
         {
