@@ -9,6 +9,7 @@ import { Content } from "./blocks/content";
 import { ContentCard } from "./blocks/contentCard";
 import { CustomImage } from "./blocks/customImage";
 import { DownloadBlock } from "./blocks/downloadBlock";
+import { GridLayout } from "./blocks/gridLayout";
 import { JotFormEmbed } from "./blocks/jotFormEmbed";
 import { PaymentBlock } from "./blocks/payment-block";
 import { ServiceCards } from "./blocks/serviceCards";
@@ -65,6 +66,7 @@ const componentMap = {
   JotFormEmbed,
   ColorBlock,
   DownloadBlock,
+  GridLayout,
 };
 
 export const Blocks = ({ prefix, blocks }) => {

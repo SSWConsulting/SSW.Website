@@ -33,6 +33,7 @@ import { fixedColumnsSchema } from "./fixedColumns";
 import { fixedTabsLayoutSchema } from "./fixedTabsLayout";
 import { flagSchema } from "./flag";
 import { googleMapsSchema } from "./googleMapsWrapper";
+import { gridLayoutSchema } from "./gridLayout";
 import { heroBlockSchema } from "./hero";
 import { internalCarouselBlockSchema } from "./internalCarousel";
 import { jotFormEmbedSchema } from "./jotFormEmbed";
@@ -94,6 +95,7 @@ export const pageBlocks: Template[] = [
   customDownloadButtonSchema,
   colorBlockSchema,
   downloadBlockSchema,
+  gridLayoutSchema,
 ];
 
 export * from "../bookingButton/bookingButton";
