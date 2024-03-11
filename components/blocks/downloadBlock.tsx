@@ -20,13 +20,13 @@ export type Downloads = {
 
 const bgOptions = {
   black: "bg-sswBlack",
-  grey: "bg-ssw-gray",
+  grey: "bg-gray-100",
   white: "bg-white",
 };
 
 export const DownloadBlock = ({ title, downloads }: DownloadBlockProps) => {
   return (
-    <Container>
+    <Container className="prose prose-img:my-0">
       <h2>{title}</h2>
       <div className="grid grid-cols-1 md:grid-cols-4">
         {downloads?.map((download, index) => (
@@ -47,7 +47,7 @@ const Download = ({
   return (
     <div className="col-span-1">
       <div className={classNames("text-black", "py-3 px-6")}>
-        <span>{header}</span>
+        <h3>{header}</h3>
         <div className={classNames(`${bgOptions[imgBackground]}`)}>
           <Image src={img} alt={header} height={400} width={400} />
         </div>
@@ -55,10 +55,10 @@ const Download = ({
         <div className={"bg-gray-300 p-2 font-bold"}>Download</div>
         <div
           className={classNames(
-            "grid grid-cols-2 gap-x-0.25 border-t-1 border-white text-black"
+            "grid grid-cols-2 gap-x-0.25 border-t-2 border-white text-black"
           )}
         >
-          <DownloadButton link={pngLink} text="PNG" className="border-r-2" />
+          <DownloadButton link={pngLink} text="PNG" />
           <DownloadButton link={pdfLink} text="PDF" />
         </div>
       </div>
@@ -66,9 +66,9 @@ const Download = ({
   );
 };
 
-const DownloadButton = ({ link, text, className = "" }) => {
+const DownloadButton = ({ link, text }) => {
   return (
-    <div className={classNames("col-span-1 bg-gray-200 p-4 w-full", className)}>
+    <div className={classNames("col-span-1 bg-gray-100 p-4 w-full")}>
       <CustomLink
         href={link}
         className="done inline-flex w-full cursor-pointer px-4"
