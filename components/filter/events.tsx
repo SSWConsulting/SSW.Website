@@ -3,14 +3,16 @@ import { useFetchEvents, useFetchPastEvents } from "hooks/useFetchEvents";
 import Image from "next/image";
 import { Fragment, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
-import type { Event } from "schema-dts";
+import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
+
 import { useEvents } from "../../hooks/useEvents";
 import { useFormatDates } from "../../hooks/useFormatDates";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { CITY_MAP } from "../util/constants/country";
+import { sswOrganisation } from "../util/constants/json-ld";
 import { FilterBlock } from "./FilterBlock";
 
 interface EventsFilterProps {
@@ -70,7 +72,11 @@ export const EventsFilter = ({
         </Tab.List>
         <Tab.Panels>
           <Tab.Panel>
-            <EventsList events={events} filteredEvents={filteredEvents} />
+            <EventsList
+              events={events}
+              filteredEvents={filteredEvents}
+              isUpcoming
+            />
           </Tab.Panel>
           <Tab.Panel>
             <EventsList
@@ -97,21 +103,57 @@ const EventTab = ({ children }: { children: React.ReactNode }) => {
 interface EventsListProps {
   events: EventTrimmed[];
   filteredEvents: EventTrimmed[];
+  isUpcoming?: boolean;
 }
 
-const EventsList = ({ events, filteredEvents }: EventsListProps) => {
+const EventsList = ({
+  events,
+  filteredEvents,
+  isUpcoming,
+}: EventsListProps) => {
   return (
     <div>
       {filteredEvents ? (
         <>
           {filteredEvents.length > 0 ? (
-            events?.map((event, index) => (
-              <Event
-                key={index}
-                visible={!!filteredEvents?.find((e) => e.id === event.id)}
-                event={event}
-              />
-            ))
+            events?.map((event, index) => {
+              let eventJsonLd: WithContext<Event> = undefined;
+
+              if (index < 5 && isUpcoming) {
+                eventJsonLd = {
+                  "@context": "https://schema.org",
+                  "@type": "Event",
+                  name: event.Title,
+                  image: event.Thumbnail.Url,
+                  startDate: new Date(event.StartDateTime).toISOString(),
+                  endDate: new Date(event.EndDateTime).toISOString(),
+                  location: {
+                    "@type": "Place",
+                    address: {
+                      "@type": "PostalAddress",
+                      addressLocality: CITY_MAP[event.City]?.name,
+                      addressRegion: CITY_MAP[event.City]?.state,
+                      addressCountry: CITY_MAP[event.City]?.country,
+                    },
+                    name: CITY_MAP[event.City]?.name,
+                    url: CITY_MAP[event.City]?.url,
+                  },
+                  eventStatus: "https://schema.org/EventScheduled",
+                  eventAttendanceMode:
+                    "https://schema.org/MixedEventAttendanceMode",
+                  organizer: sswOrganisation,
+                };
+              }
+
+              return (
+                <Event
+                  key={index}
+                  visible={!!filteredEvents?.find((e) => e.id === event.id)}
+                  event={event}
+                  jsonLd={eventJsonLd}
+                />
+              );
+            })
           ) : (
             <h3>No events found matching the filters</h3>
           )}
@@ -128,34 +170,10 @@ const EventsList = ({ events, filteredEvents }: EventsListProps) => {
 interface EventProps {
   visible?: boolean;
   event: EventTrimmed;
+  jsonLd?: WithContext<Event>;
 }
 
-const Event = ({ visible, event }: EventProps) => {
-  // const eventJsonLd: WithContext<Event> = {
-  //   "@context": "https://schema.org",
-  //   "@type": "Event",
-  //   name: event.Title,
-  //   image: event.Thumbnail.Url,
-  //   startDate: new Date(event.StartDateTime).toISOString(),
-  //   endDate: new Date(event.EndDateTime).toISOString(),
-  //   location: {
-  //     "@type": "Place",
-  //     address: {
-  //       "@type": "PostalAddress",
-  //       addressLocality: CITY_MAP[event.City]?.name,
-  //       addressRegion: CITY_MAP[event.City]?.state,
-  //       addressCountry: CITY_MAP[event.City]?.country,
-  //     },
-  //     name: CITY_MAP[event.City]?.name,
-  //     url: CITY_MAP[event.City]?.url,
-  //   },
-  //   eventStatus: "https://schema.org/EventScheduled",
-  //   eventAttendanceMode: "https://schema.org/MixedEventAttendanceMode",
-  //   description: event.Url.Description,
-  //   performer: sswOrganisation,
-  //   organizer: sswOrganisation,
-  // };
-
+const Event = ({ visible, event, jsonLd }: EventProps) => {
   const eventSite = event?.Url?.Url?.toLowerCase()?.includes("ssw.com.au")
     ? { name: CITY_MAP[event.City]?.name, url: CITY_MAP[event.City]?.url }
     : { name: event.City, url: event.Url.Url };
@@ -238,10 +256,12 @@ const Event = ({ visible, event }: EventProps) => {
           </CustomLink>
         </div>
       </Transition>
-      {/* <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
-      /> */}
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
     </>
   );
 };
