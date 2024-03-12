@@ -50,7 +50,8 @@ export const EventsFilter = ({
 }: EventsFilterProps) => {
   const [pastSelected, setPastSelected] = useState<boolean>(false);
 
-  const { events, fetchNextPage } = useFetchEvents(ssrEvents);
+  const { events, fetchNextPage, isFetchingNextPage } =
+    useFetchEvents(ssrEvents);
   const { filters, filteredEvents } = useEvents(events);
 
   const { pastEvents, isLoading } = useFetchPastEvents(pastSelected);
@@ -77,6 +78,7 @@ export const EventsFilter = ({
               events={events}
               filteredEvents={filteredEvents}
               isUpcoming
+              isLoadingMore={isFetchingNextPage}
             />
             <UtilityButton
               onClick={() => fetchNextPage()}
@@ -111,6 +113,7 @@ interface EventsListProps {
   filteredEvents: EventTrimmed[];
   isUpcoming?: boolean;
   isLoading?: boolean;
+  isLoadingMore?: boolean;
 }
 
 const EventsList = ({
@@ -118,6 +121,7 @@ const EventsList = ({
   filteredEvents,
   isUpcoming,
   isLoading,
+  isLoadingMore,
 }: EventsListProps) => {
   return (
     <div>
@@ -164,6 +168,11 @@ const EventsList = ({
             })
           ) : (
             <h3>No events found matching the filters</h3>
+          )}
+          {isLoadingMore && (
+            <p className="flex flex-row text-xl">
+              <FaSpinner className="m-icon animate-spin" /> Loading more...
+            </p>
           )}
         </>
       ) : (

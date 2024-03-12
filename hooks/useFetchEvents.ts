@@ -13,7 +13,7 @@ const getEvents = async ({ pageParam = 1 }) => {
 };
 
 export const useFetchEvents = (initialData: EventTrimmed[]) => {
-  const { data, fetchNextPage } = useInfiniteQuery({
+  const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery({
     queryKey: ["events"],
     queryFn: getEvents,
     initialData: { pages: [initialData], pageParams: [1] },
@@ -23,7 +23,11 @@ export const useFetchEvents = (initialData: EventTrimmed[]) => {
     },
   });
 
-  return { events: data?.pages.flat() || [], fetchNextPage };
+  return {
+    events: data?.pages.flat() || [],
+    fetchNextPage,
+    isFetchingNextPage,
+  };
 };
 
 export const useFetchPastEvents = (enabled: boolean) => {
