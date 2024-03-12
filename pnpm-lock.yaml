@@ -90,8 +90,8 @@ dependencies:
     specifier: ^3.1.0
     version: 3.1.0(react@18.2.0)
   react-hotkeys-hook:
-    specifier: ^4.4.4
-    version: 4.4.4(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^4.5.0
+    version: 4.5.0(react-dom@18.2.0)(react@18.2.0)
   react-icons:
     specifier: ^5.0.1
     version: 5.0.1(react@18.2.0)
@@ -6964,7 +6964,7 @@ packages:
       nanoid: 3.3.7
       react: 17.0.2
       react-dom: 17.0.2(react@17.0.2)
-      react-hotkeys-hook: 4.4.4(react-dom@17.0.2)(react@17.0.2)
+      react-hotkeys-hook: 4.5.0(react-dom@17.0.2)(react@17.0.2)
       slate: 0.94.1
       slate-history: 0.93.0(slate@0.94.1)
       slate-react: 0.97.2(react-dom@17.0.2)(react@17.0.2)(slate@0.94.1)
@@ -7005,7 +7005,7 @@ packages:
       nanoid: 3.3.7
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      react-hotkeys-hook: 4.4.4(react-dom@18.2.0)(react@18.2.0)
+      react-hotkeys-hook: 4.5.0(react-dom@18.2.0)(react@18.2.0)
       slate: 0.94.1
       slate-history: 0.93.0(slate@0.94.1)
       slate-react: 0.97.2(react-dom@18.2.0)(react@18.2.0)(slate@0.94.1)
@@ -15761,8 +15761,8 @@ packages:
       react-async-script: 1.2.0(react@18.2.0)
     dev: false
 
-  /react-hotkeys-hook@4.4.4(react-dom@17.0.2)(react@17.0.2):
-    resolution: {integrity: sha512-wzZmqb/Obr0ds9Myc1sIFPJ52GA/Eeg/vXBWV0HA1LvHlVAW5Va3KB0q6EZNlNSHQWscWZ2K8+6w0GYSie2o7A==}
+  /react-hotkeys-hook@4.5.0(react-dom@17.0.2)(react@17.0.2):
+    resolution: {integrity: sha512-Samb85GSgAWFQNvVt3PS90LPPGSf9mkH/r4au81ZP1yOIFayLC3QAvqTgGtJ8YEDMXtPmaVBs6NgipHO6h4Mug==}
     peerDependencies:
       react: '>=16.8.1'
       react-dom: '>=16.8.1'
@@ -15771,8 +15771,8 @@ packages:
       react-dom: 17.0.2(react@17.0.2)
     dev: true
 
-  /react-hotkeys-hook@4.4.4(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-wzZmqb/Obr0ds9Myc1sIFPJ52GA/Eeg/vXBWV0HA1LvHlVAW5Va3KB0q6EZNlNSHQWscWZ2K8+6w0GYSie2o7A==}
+  /react-hotkeys-hook@4.5.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Samb85GSgAWFQNvVt3PS90LPPGSf9mkH/r4au81ZP1yOIFayLC3QAvqTgGtJ8YEDMXtPmaVBs6NgipHO6h4Mug==}
     peerDependencies:
       react: '>=16.8.1'
       react-dom: '>=16.8.1'
@@ -17007,7 +17007,7 @@ packages:
       react: 18.2.0
       react-device-detect: 2.2.3(react-dom@18.2.0)(react@18.2.0)
       react-dom: 18.2.0(react@18.2.0)
-      react-hotkeys-hook: 4.4.4(react-dom@18.2.0)(react@18.2.0)
+      react-hotkeys-hook: 4.5.0(react-dom@18.2.0)(react@18.2.0)
       react-icons: 4.12.0(react@18.2.0)
       tailwind-merge: 2.2.1
     dev: false
