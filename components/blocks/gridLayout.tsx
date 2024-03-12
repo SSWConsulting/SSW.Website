@@ -35,7 +35,7 @@ export const GridLayout = ({ data }: GridLayoutProps) => {
         <Container padding="pt-0" key={i}>
           {grid.showGridTitle && (
             <h2
-              className={`${grid.centeredGridTitle ? "text-center text-2xl font-light" : "text-xl text-ssw-red"}`}
+              className={`${grid.centeredGridTitle ? "text-center text-2xl font-light" : "text-xl text-ssw-red"} my-3`}
             >
               {grid.gridTitle}
             </h2>
