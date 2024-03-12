@@ -5,6 +5,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import { clientLogosBlockSchema } from "./clientLogos";
+import { colorBlockSchema } from "./colorBlock";
 import { customImageBlockSchema } from "./customImage";
 import { componentRenderer } from "./mdxComponentRenderer";
 import { videoEmbedBlockSchema } from "./videoEmbed";
@@ -31,7 +32,11 @@ export const Content = ({ data }) => {
       color={data.backgroundColor}
       data-tina-field={tinaField(data, contentBlock.title)}
     >
-      <Container size="medium" className={classNames("prose", alignment, size)}>
+      <Container
+        size="medium"
+        className={classNames("prose", alignment, size)}
+        padding={data.containerClass ?? ""}
+      >
         {data.title && (
           <h2 className="pb-5 pt-16 text-3xl font-light">{data.title}</h2>
         )}
@@ -71,7 +76,13 @@ export const contentBlockSchema: Template = {
         customImageBlockSchema,
         clientLogosBlockSchema,
         videoEmbedBlockSchema,
+        colorBlockSchema,
       ],
+    },
+    {
+      type: "string",
+      label: "Custom Container Class",
+      name: "containerClass",
     },
     {
       type: "string",

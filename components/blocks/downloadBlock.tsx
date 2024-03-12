@@ -26,7 +26,7 @@ const bgOptions = {
 
 export const DownloadBlock = ({ title, downloads }: DownloadBlockProps) => {
   return (
-    <Container className="prose prose-img:my-0">
+    <Container className="prose !px-0 py-4 prose-img:my-0">
       <h2>{title}</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-4">
@@ -47,7 +47,7 @@ const Download = ({
 }: Downloads) => {
   return (
     <div className="col-span-1">
-      <div className={classNames("text-black", "py-3 px-6")}>
+      <div className={classNames("text-black py-3 md:px-6")}>
         <h3>{header}</h3>
         {img && (
           <div

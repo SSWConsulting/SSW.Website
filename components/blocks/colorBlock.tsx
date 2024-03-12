@@ -26,13 +26,13 @@ const sswColors = {
 
 export const ColorBlock = ({ title, subTitle, colorRow }: ColorBlockProps) => {
   return (
-    <Container className="">
+    <Container padding="md:px-8 px-0">
       <div className="prose max-w-full prose-p:my-0.75">
         <div className="container mx-auto py-4">
           <h2>{title}</h2>
           <p className="mb-0.5">{subTitle}</p>
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            {colorRow.map((row, index) => (
+          <div className="block grid-cols-1 md:grid md:grid-cols-2">
+            {colorRow?.map((row, index) => (
               <>
                 <ColorRow key={index} {...row} />
                 <div className="col-span-2">
@@ -50,22 +50,23 @@ export const ColorBlock = ({ title, subTitle, colorRow }: ColorBlockProps) => {
 const ColorRow = ({ firstColor, fText, secondColor, sText }: ColorRow) => {
   return (
     <>
-      <ColorColumn bg={sswColors[`${firstColor}`]} text={fText} />
-      <ColorColumn bg={sswColors[`${secondColor}`]} text={sText} />
+      <div
+        className={classNames(
+          "col-span-1 px-4 my-0 flex md:h-10 flex-col items-center justify-center",
+          sswColors[`${firstColor}`]
+        )}
+      >
+        <p className="text-white">{fText}</p>
+      </div>
+      <div
+        className={classNames(
+          "col-span-1 my-0 flex px-4 md:h-10 flex-col items-center justify-center",
+          sswColors[`${secondColor}`]
+        )}
+      >
+        <p className="text-white">{sText}</p>{" "}
+      </div>
     </>
-  );
-};
-
-const ColorColumn = ({ bg, text }) => {
-  return (
-    <div
-      className={classNames(
-        "col-span-1 flex flex-col justify-center h-10 items-center my-0",
-        bg
-      )}
-    >
-      <p className="text-white">{text}</p>
-    </div>
   );
 };
 
