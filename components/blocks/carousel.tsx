@@ -5,10 +5,16 @@ import { tinaField } from "tinacms/dist/react";
 
 import type { Template } from "tinacms";
 
-import { Carousel as CarouselImplementation } from "react-responsive-carousel";
-
+import dynamic from "next/dynamic";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
+
+const CarouselImplementation = dynamic(
+  () => import("react-responsive-carousel").then((mod) => mod.Carousel),
+  {
+    ssr: true,
+  }
+);
 
 export const Carousel = ({ data }) => {
   const router = useRouter();
@@ -36,9 +42,10 @@ export const Carousel = ({ data }) => {
     >
       <Container
         size="custom"
-        className="w-full"
+        className={/* eslint-disable-line */ "aspect-[3/1] w-full"}
         data-tina-field={tinaField(data, carouselBlock.delay)}
       >
+        {/* @ts-expect-error broken props from next/dynamic */}
         <CarouselImplementation
           autoPlay={true}
           infiniteLoop={true}
@@ -55,17 +62,32 @@ export const Carousel = ({ data }) => {
           renderIndicator={createCarouselIndicator}
         >
           {data.items &&
-            data.items.map((props, index: React.Key) =>
-              createCarouselItemImage(props, index, data)
-            )}
+            data.items.map((item, index: React.Key) => (
+              <CarouselItemImage
+                key={index + item.label}
+                imgSrc={item.imgSrc}
+                label={item.label}
+                index={item.index}
+                carouselSchema={item.carouselSchema}
+              />
+            ))}
         </CarouselImplementation>
       </Container>
     </Section>
   );
 };
 
-const createCarouselItemImage = (props, index: React.Key, carouselSchema) => {
-  const { imgSrc, label } = props;
+type CarouselItemImageProps = {
+  imgSrc: string;
+  label: string;
+  index: number;
+  // tinacms accepts any, workaround for better type safety for this component
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  carouselSchema: any;
+};
+
+const CarouselItemImage = (props: CarouselItemImageProps) => {
+  const { imgSrc, label, index, carouselSchema } = props;
   return (
     <div
       key={index}
@@ -80,6 +102,7 @@ const createCarouselItemImage = (props, index: React.Key, carouselSchema) => {
         height={388}
         width={1080}
         sizes="100vw"
+        priority
       />
       {/* `legend` required so that the carousel works properly */}
       <p className="legend sr-only">{label}</p>

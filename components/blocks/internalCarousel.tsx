@@ -1,17 +1,23 @@
-import Image from "next/image";
-import * as React from "react";
+import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-import type { Template } from "tinacms";
-
-import { Carousel as CarouselImplementation } from "react-responsive-carousel";
-
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import * as React from "react";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
+
+const CarouselImplementation = dynamic(
+  () => import("react-responsive-carousel").then((mod) => mod.Carousel),
+  {
+    ssr: true,
+  }
+);
 
 export const InternalCarousel = ({ data }) => {
   return (
     <Container size="custom" className="px-0 descendant-li:!list-none md:w-3/4">
+      {/* @ts-expect-error broken props from next/dynamic */}
       <CarouselImplementation
         autoPlay={true}
         infiniteLoop={true}
@@ -21,16 +27,22 @@ export const InternalCarousel = ({ data }) => {
         stopOnHover={true}
         renderIndicator={createCarouselIndicator}
       >
-        {data.items?.map(createCarouselItemImage)}
+        {data.items?.map((item, index) => (
+          <CarouselItemImage
+            key={index + item.label}
+            imgSrc={item.imgSrc}
+            label={item.label}
+          />
+        ))}
       </CarouselImplementation>
       {renderBody(data)}
     </Container>
   );
 };
 
-const createCarouselItemImage = ({ imgSrc, label }, index: React.Key) => {
+const CarouselItemImage = ({ imgSrc, label }) => {
   return (
-    <div key={index}>
+    <div>
       <Image src={imgSrc} alt={label} height={0} width={0} sizes="100vw" />
       {/* `legend` required so that the carousel works properly */}
       <p className="legend sr-only">{label}</p>
@@ -75,18 +87,19 @@ const renderBody = ({ header, paragraph, website, technologies }) => {
       <div className="text-left prose-p:py-2">
         <TinaMarkdown content={paragraph} />
       </div>
-      <div className="flex flex-wrap">{technologies?.map(createTechBlock)}</div>
+      <div className="flex flex-wrap">
+        {technologies?.map((tech, index) => (
+          <TechBlock name={tech.name} key={index} />
+        ))}
+      </div>
       <div className="mb-7 mt-3 h-1 w-full bg-sswRed"></div>
     </div>
   );
 };
 
-const createTechBlock = ({ name }, index: React.Key) => {
+const TechBlock = ({ name }) => {
   return (
-    <div
-      className="my-0.5 mr-1 min-w-fit bg-sswRed px-2 py-1 text-left"
-      key={index}
-    >
+    <div className="my-0.5 mr-1 min-w-fit bg-sswRed px-2 py-1 text-left">
       {name}
     </div>
   );

@@ -13,6 +13,7 @@ import TrainingInformation from "../training/trainingInformation";
 import { TrainingLearningOutcome } from "../training/trainingLearningOutcome";
 import { Countries } from "../util/constants/country";
 import { CustomDownloadButton } from "./CustomDownloadButton";
+import { Carousel } from "./carousel";
 import { Citation } from "./citation";
 import { ClientLogos } from "./clientLogos";
 import { ContentCard } from "./contentCard";
@@ -24,6 +25,7 @@ import { FixedColumns } from "./fixedColumns";
 import { FixedTabsLayout } from "./fixedTabsLayout";
 import { Flag } from "./flag";
 import { GoogleMapsWrapper } from "./googleMapsWrapper";
+import { InternalCarousel } from "./internalCarousel";
 import { JotFormEmbed, JotFormEmbedProps } from "./jotFormEmbed";
 import { NewslettersTable } from "./newslettersTable";
 import { RecurringEvent } from "./recurringEvent";
@@ -40,17 +42,6 @@ import { VideoEmbed } from "./videoEmbed";
 import { YoutubePlaylistBlock, YoutubePlaylistProps } from "./youtubePlaylist";
 
 // Import heavy components dynamically
-const Carousel = dynamic(
-  () => import("./carousel").then((mod) => mod.Carousel),
-  {
-    ssr: false,
-  }
-);
-
-const InternalCarousel = dynamic(
-  () => import("./internalCarousel").then((mod) => mod.InternalCarousel),
-  { ssr: false }
-);
 
 const BookingButton = dynamic(
   () =>
