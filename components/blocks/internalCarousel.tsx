@@ -42,7 +42,7 @@ export const InternalCarousel = ({ data }) => {
 
 const CarouselItemImage = ({ imgSrc, label }) => {
   return (
-    <div>
+    <div className="cursor-pointer">
       <Image src={imgSrc} alt={label} height={0} width={0} sizes="100vw" />
       {/* `legend` required so that the carousel works properly */}
       <p className="legend sr-only">{label}</p>
