@@ -33,7 +33,10 @@ export const getToken = async (
   return authRes?.accessToken;
 };
 
-export const getEvents = async (odataFilter: string): Promise<EventInfo[]> => {
+export const getEvents = async (
+  odataFilter: string,
+  page: number = 1
+): Promise<EventInfo[]> => {
   if (
     process.env.NODE_ENV === "development" &&
     !process.env.MICROSOFT_OAUTH_TENANT_ID
@@ -50,18 +53,23 @@ export const getEvents = async (odataFilter: string): Promise<EventInfo[]> => {
     process.env.MICROSOFT_OAUTH_CLIENT_SECRET
   );
 
-  const eventsRes = await axios.get<{ value: { fields: EventInfo }[] }>(
-    `https://graph.microsoft.com/v1.0/sites/${SITE_ID}/lists/${EVENTS_LIST_ID}/items?expand=fields&${odataFilter}`,
-    {
-      headers: {
-        Authorization: "Bearer " + token,
-        Accept: "application/json",
-        Prefer: "HonorNonIndexedQueriesWarningMayFailRandomly",
-      },
-    }
-  );
+  let eventsRes;
+  let currentUrl = `https://graph.microsoft.com/v1.0/sites/${SITE_ID}/lists/${EVENTS_LIST_ID}/items?expand=fields&${odataFilter}`;
 
-  console.log(eventsRes.data);
+  for (let i = 0; i < page; i++) {
+    eventsRes = await axios.get<{ value: { fields: EventInfo }[] }>(
+      currentUrl,
+      {
+        headers: {
+          Authorization: "Bearer " + token,
+          Accept: "application/json",
+          Prefer: "HonorNonIndexedQueriesWarningMayFailRandomly",
+        },
+      }
+    );
+
+    currentUrl = eventsRes.data["@odata.nextLink"];
+  }
 
   const events: EventInfo[] = eventsRes.data.value.map((item) => item.fields);
 

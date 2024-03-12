@@ -36,6 +36,12 @@ const ChatBaseBot = dynamic(
   }
 );
 
+const ReactQueryDevtoolsProduction = dynamic(() =>
+  import("@tanstack/react-query-devtools/production").then((d) => ({
+    default: d.ReactQueryDevtools,
+  }))
+);
+
 // DayJS module addition as per https://github.com/iamkun/dayjs/issues/1577
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
@@ -79,6 +85,12 @@ const App = ({ Component, pageProps }) => {
               <Component {...pageProps} />
             </ErrorBoundary>
           </HydrationBoundary>
+          {process.env.NODE_ENV === "development" && (
+            <ReactQueryDevtoolsProduction
+              initialIsOpen={false}
+              buttonPosition="bottom-left"
+            />
+          )}
         </QueryClientProvider>
       </AppInsightsProvider>
       <ChatBaseBot />

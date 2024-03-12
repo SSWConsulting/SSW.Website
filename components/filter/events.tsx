@@ -8,6 +8,7 @@ import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 import { useEvents } from "../../hooks/useEvents";
 import { useFormatDates } from "../../hooks/useFormatDates";
+import { UtilityButton } from "../blocks";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
@@ -49,7 +50,7 @@ export const EventsFilter = ({
 }: EventsFilterProps) => {
   const [pastSelected, setPastSelected] = useState<boolean>(false);
 
-  const { events } = useFetchEvents(ssrEvents);
+  const { events, fetchNextPage } = useFetchEvents(ssrEvents);
   const { filters, filteredEvents } = useEvents(events);
 
   const { pastEvents, isLoading } = useFetchPastEvents();
@@ -76,6 +77,10 @@ export const EventsFilter = ({
               events={events}
               filteredEvents={filteredEvents}
               isUpcoming
+            />
+            <UtilityButton
+              onClick={() => fetchNextPage()}
+              buttonText="Load More"
             />
           </Tab.Panel>
           <Tab.Panel>

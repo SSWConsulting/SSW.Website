@@ -19,14 +19,14 @@ export const useEvents = (events: EventTrimmed[]) => {
       {}
     );
 
-    const categories = Object.keys(categoryCount).sort();
+    const categories = Object.keys(categoryCount || {})?.sort() || [];
 
     const formatCount: Record<string, number> = events?.reduce((acc, event) => {
       acc[event.CalendarType] = (acc[event.CalendarType] || 0) + 1;
       return acc;
     }, {});
 
-    const formats = Object.keys(formatCount).sort();
+    const formats = Object.keys(formatCount || {}).sort();
 
     return { categories, categoryCount, formats, formatCount };
   }, [events]);
