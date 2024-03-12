@@ -81,7 +81,7 @@ export const EventsFilter = ({
               isLoadingMore={isFetchingNextPage}
             />
             <UtilityButton
-              onClick={() => fetchNextPage()}
+              onClick={() => !isFetchingNextPage && fetchNextPage()}
               buttonText="Load More"
             />
           </Tab.Panel>

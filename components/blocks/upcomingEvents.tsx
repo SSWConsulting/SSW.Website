@@ -49,7 +49,7 @@ export const UpcomingEvents = ({ data }) => {
         </div>
         <div className="mt-3 flex flex-row-reverse justify-center sm:justify-start">
           <CustomLink
-            href="/events?tech=all&type=all"
+            href="/events"
             className="unstyled rounded bg-sswRed px-3 py-2 text-xs font-normal text-white hover:bg-sswDarkRed"
           >
             See more events
