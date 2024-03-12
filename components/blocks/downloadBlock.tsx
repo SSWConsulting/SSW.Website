@@ -7,7 +7,7 @@ import { Container } from "../util/container";
 
 export type DownloadBlockProps = {
   title?: string;
-  downloads?: Downloads[];
+  downloads: Downloads[] | [];
 };
 
 export type Downloads = {
@@ -28,6 +28,7 @@ export const DownloadBlock = ({ title, downloads }: DownloadBlockProps) => {
   return (
     <Container className="prose prose-img:my-0">
       <h2>{title}</h2>
+
       <div className="grid grid-cols-1 md:grid-cols-4">
         {downloads?.map((download, index) => (
           <Download key={index} {...download} />
@@ -48,18 +49,24 @@ const Download = ({
     <div className="col-span-1">
       <div className={classNames("text-black", "py-3 px-6")}>
         <h3>{header}</h3>
-        <div className={classNames(`${bgOptions[imgBackground]}`)}>
-          <Image src={img} alt={header} height={400} width={400} />
-        </div>
-
+        {img && (
+          <div
+            className={classNames(
+              `${bgOptions[imgBackground] || "bg-white"}`,
+              "flex justify-center"
+            )}
+          >
+            <Image src={img} alt={header} height={400} width={210} />
+          </div>
+        )}
         <div className={"bg-gray-300 p-2 font-bold"}>Download</div>
         <div
           className={classNames(
             "grid grid-cols-2 gap-x-0.25 border-t-2 border-white text-black"
           )}
         >
-          <DownloadButton link={pngLink} text="PNG" />
-          <DownloadButton link={pdfLink} text="PDF" />
+          {pngLink && <DownloadButton link={pngLink} text="PNG" />}
+          {pdfLink && <DownloadButton link={pdfLink} text="PDF" />}
         </div>
       </div>
     </div>
@@ -98,7 +105,7 @@ export const downloadBlockSchema: Template = {
       ui: {
         itemProps(item) {
           return {
-            label: `${item?.header}`,
+            label: `${item?.header ?? "Download"}`,
           };
         },
       },
@@ -129,7 +136,7 @@ export const downloadBlockSchema: Template = {
         },
         {
           type: "string",
-          label: "PDF LInk",
+          label: "PDF Link",
           name: "pdfLink",
         },
       ],
