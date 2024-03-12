@@ -49,7 +49,12 @@ export const GridLayout = ({ data }: GridLayoutProps) => {
                 key={i}
               >
                 {block.showTitle && (
-                  <h3 className="text-lg font-light">{block.title}</h3>
+                  <h3
+                    className="text-lg font-light"
+                    data-tina-field={tinaField(block, "title")}
+                  >
+                    {block.title}
+                  </h3>
                 )}
                 {block.image && (
                   <Image
