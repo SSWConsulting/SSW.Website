@@ -38,7 +38,7 @@ export default function LogosPage(
           data-tina-field={tinaField(data?.logos, "header")}
           className="pt-0 text-3xl"
         >
-          {data.logos?.header}
+          {data?.logos?.header}
         </h1>
         <Blocks prefix="Logos_body" blocks={data.logos?._body} />
         {data.logos?.footer && (

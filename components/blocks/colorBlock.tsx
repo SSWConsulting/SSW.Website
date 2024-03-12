@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import type { Template } from "tinacms";
+import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { Container } from "../util/container";
 
@@ -24,13 +25,16 @@ const sswColors = {
   "#797979": "bg-ssw-gray",
 };
 
-export const ColorBlock = ({ title, subTitle, colorRow }: ColorBlockProps) => {
+export const ColorBlock = (data: ColorBlockProps) => {
+  const { title, subTitle, colorRow } = data;
   return (
     <Container padding="md:px-8 px-0">
       <div className="prose max-w-full prose-p:my-0.75">
         <div className="container mx-auto py-4">
-          <h2>{title}</h2>
-          <p className="mb-0.5">{subTitle}</p>
+          <h2 data-tina-field={tinaField(data, "title")}>{title}</h2>
+          <p data-tina-field={tinaField(data, "subTitle")} className="mb-0.5">
+            {subTitle}
+          </p>
           <div className="block grid-cols-1 md:grid md:grid-cols-2">
             {colorRow?.map((row, index) => (
               <>
@@ -47,7 +51,8 @@ export const ColorBlock = ({ title, subTitle, colorRow }: ColorBlockProps) => {
   );
 };
 
-const ColorRow = ({ firstColor, fText, secondColor, sText }: ColorRow) => {
+const ColorRow = (props: ColorRow) => {
+  const { firstColor, fText, secondColor, sText } = props;
   return (
     <>
       <div
@@ -56,7 +61,9 @@ const ColorRow = ({ firstColor, fText, secondColor, sText }: ColorRow) => {
           sswColors[`${firstColor}`]
         )}
       >
-        <p className="text-white">{fText}</p>
+        <p className="text-white" data-tina-field={tinaField(props, "fText")}>
+          {fText}
+        </p>
       </div>
       <div
         className={classNames(
@@ -64,7 +71,9 @@ const ColorRow = ({ firstColor, fText, secondColor, sText }: ColorRow) => {
           sswColors[`${secondColor}`]
         )}
       >
-        <p className="text-white">{sText}</p>{" "}
+        <p className="text-white" data-tina-field={tinaField(props, "sText")}>
+          {sText}
+        </p>{" "}
       </div>
     </>
   );
