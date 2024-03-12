@@ -45,7 +45,7 @@ export const GridLayout = ({ data }: GridLayoutProps) => {
           <Section className="mx-auto my-12 grid w-full grid-cols-1 gap-x-12 sm:grid-cols-2 lg:ml-0 lg:grid-cols-4">
             {grid.blocks?.map((block, i) => (
               <Section
-                className={`${grid.offsetGridStart && i === 0 ? "col-start-2" : ""} flex-col items-center`}
+                className={`${grid.offsetGridStart && i === 0 ? "lg:col-start-2" : ""} flex-col items-center`}
                 key={i}
               >
                 {block.showTitle && (
@@ -132,7 +132,7 @@ export const gridLayoutSchema: Template = {
         },
         {
           type: "object",
-          label: "Block",
+          label: "Blocks",
           name: "blocks",
           list: true,
           ui: {
