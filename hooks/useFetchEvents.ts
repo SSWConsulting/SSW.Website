@@ -26,7 +26,7 @@ export const useFetchEvents = (initialData: EventTrimmed[]) => {
   return { events: data?.pages.flat() || [], fetchNextPage };
 };
 
-export const useFetchPastEvents = () => {
+export const useFetchPastEvents = (enabled: boolean) => {
   const { data, isLoading } = useQuery({
     queryKey: ["pastEvents"],
     queryFn: async () => {
@@ -35,6 +35,7 @@ export const useFetchPastEvents = () => {
 
       return data;
     },
+    enabled,
   });
 
   return { pastEvents: data, isLoading };

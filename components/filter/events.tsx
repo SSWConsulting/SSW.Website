@@ -53,7 +53,7 @@ export const EventsFilter = ({
   const { events, fetchNextPage } = useFetchEvents(ssrEvents);
   const { filters, filteredEvents } = useEvents(events);
 
-  const { pastEvents, isLoading } = useFetchPastEvents();
+  const { pastEvents, isLoading } = useFetchPastEvents(pastSelected);
   const { filters: pastFilters, filteredEvents: pastFilteredEvents } =
     useEvents(isLoading || !pastEvents ? [] : pastEvents);
 
@@ -87,6 +87,7 @@ export const EventsFilter = ({
             <EventsList
               events={pastEvents}
               filteredEvents={pastFilteredEvents}
+              isLoading={isLoading}
             />
           </Tab.Panel>
         </Tab.Panels>
@@ -109,16 +110,18 @@ interface EventsListProps {
   events: EventTrimmed[];
   filteredEvents: EventTrimmed[];
   isUpcoming?: boolean;
+  isLoading?: boolean;
 }
 
 const EventsList = ({
   events,
   filteredEvents,
   isUpcoming,
+  isLoading,
 }: EventsListProps) => {
   return (
     <div>
-      {filteredEvents ? (
+      {!isLoading ? (
         <>
           {filteredEvents.length > 0 ? (
             events?.map((event, index) => {

@@ -1,6 +1,5 @@
 import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
-import { useFetchEvents } from "hooks/useFetchEvents";
 import type { InferGetStaticPropsType } from "next";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
