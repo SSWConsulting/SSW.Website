@@ -37,7 +37,7 @@ const ChatBaseBot = dynamic(
 );
 
 const ReactQueryDevtoolsProduction = dynamic(() =>
-  import("@tanstack/react-query-devtools/production").then((d) => ({
+  import("@tanstack/react-query-devtools").then((d) => ({
     default: d.ReactQueryDevtools,
   }))
 );
