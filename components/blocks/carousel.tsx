@@ -52,10 +52,10 @@ export const Carousel = ({ data }) => {
               width={1080}
               quality={10}
               sizes="100vw"
+              priority
             />
           }
         >
-          {/* @ts-expect-error broken props from next/dynamic */}
           <CarouselImplementation
             autoPlay={true}
             infiniteLoop={true}
