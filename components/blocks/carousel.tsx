@@ -94,7 +94,7 @@ const CarouselItemImage = (props: CarouselItemImageProps) => {
         height={388}
         width={1080}
         sizes="100vw"
-        priority
+        priority={index === 0}
       />
       {/* `legend` required so that the carousel works properly */}
       <p className="legend sr-only">{label}</p>
