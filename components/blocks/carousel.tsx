@@ -42,7 +42,7 @@ export const Carousel = ({ data }) => {
     >
       <Container
         size="custom"
-        className={/* eslint-disable-line */ "aspect-[3/1] w-full"}
+        className={/* eslint-disable-line */ "aspect-[1080/388] w-full"}
         data-tina-field={tinaField(data, carouselBlock.delay)}
       >
         {/* @ts-expect-error broken props from next/dynamic */}

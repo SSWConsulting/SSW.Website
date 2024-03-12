@@ -3,10 +3,12 @@ import dynamic from "next/dynamic";
 import { AboutUs } from "./blocks/aboutUs";
 import { Agenda } from "./blocks/agenda";
 import { BuiltOnAzure } from "./blocks/builtOnAzure";
+import { Carousel } from "./blocks/carousel";
 import { ClientLogos } from "./blocks/clientLogos";
 import { Content } from "./blocks/content";
 import { ContentCard } from "./blocks/contentCard";
 import { CustomImage } from "./blocks/customImage";
+import { GridLayout } from "./blocks/gridLayout";
 import { JotFormEmbed } from "./blocks/jotFormEmbed";
 import { PaymentBlock } from "./blocks/payment-block";
 import { ServiceCards } from "./blocks/serviceCards";
@@ -22,14 +24,6 @@ import { PresenterBlock } from "./training/presenterBlock";
 import { TrainingInformation } from "./training/trainingInformation";
 import { TrainingLearningOutcome } from "./training/trainingLearningOutcome";
 import { LatestTech } from "./usergroup/latestTech";
-import { GridLayout } from "./blocks/gridLayout";
-
-const Carousel = dynamic(
-  () => import("./blocks/carousel").then((mod) => mod.Carousel),
-  {
-    ssr: false,
-  }
-);
 
 const BookingButton = dynamic(
   () =>
