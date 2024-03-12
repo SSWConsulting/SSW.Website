@@ -5,14 +5,13 @@ import { tinaField } from "tinacms/dist/react";
 
 import type { Template } from "tinacms";
 
+import dynamic from "next/dynamic";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
-const CarouselImplementation = React.lazy(() =>
-  import("react-responsive-carousel").then((module) => ({
-    default: module.Carousel,
-  }))
-);
+const CarouselImplementation = dynamic(() =>
+  import("react-responsive-carousel").then((module) => (module.Carousel)
+));
 
 export const Carousel = ({ data }) => {
   const router = useRouter();
@@ -43,19 +42,7 @@ export const Carousel = ({ data }) => {
         className={/* eslint-disable-line */ "aspect-[1080/388] w-full"}
         data-tina-field={tinaField(data, carouselBlock.delay)}
       >
-        <React.Suspense
-          fallback={
-            <Image
-              src={data?.items[0]?.imgSrc ?? ""}
-              alt={data?.items[0]?.label || "Carousel image"}
-              height={388}
-              width={1080}
-              quality={10}
-              sizes="100vw"
-              priority
-            />
-          }
-        >
+          {/* @ts-expect-error next/dynamic */}
           <CarouselImplementation
             autoPlay={true}
             infiniteLoop={true}
@@ -82,7 +69,6 @@ export const Carousel = ({ data }) => {
                 />
               ))}
           </CarouselImplementation>
-        </React.Suspense>
       </Container>
     </Section>
   );
