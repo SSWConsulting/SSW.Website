@@ -18,7 +18,6 @@ type GridLayoutProps = {
         relatedImage: string;
       }[];
     }[];
-    showBorderBottom: boolean;
   };
 };
 
@@ -62,7 +61,6 @@ export const GridLayout = ({ data }: GridLayoutProps) => {
               </Section>
             ))}
           </Section>
-          {data.showBorderBottom && <hr />}
         </Container>
       ))}
     </>
@@ -147,11 +145,6 @@ export const gridLayoutSchema: Template = {
           ],
         },
       ],
-    },
-    {
-      type: "boolean",
-      name: "showBorderBottom",
-      label: "Show Border Bottom",
     },
   ],
 };

@@ -31,6 +31,11 @@ export const logosSchema: Collection = {
       templates: [...Schemas.pageBlocks],
     },
     {
+      type: "boolean",
+      name: "showBorderBottom",
+      label: "Show Border Bottom",
+    },
+    {
       type: "rich-text",
       name: "footer",
       label: "Footer",
