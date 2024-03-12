@@ -1,7 +1,12 @@
 import type { Template } from "tinacms";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { tinaField } from "tinacms/dist/react";
 import Image from "next/image";
+
 import { Section } from "../util/section";
 import { Container } from "../util/container";
+import { utilityButtonSchema } from "../button/utilityButton";
+import { componentRenderer } from "./mdxComponentRenderer";
 
 type GridLayoutProps = {
   data: {
@@ -16,6 +21,7 @@ type GridLayoutProps = {
         showTitle: boolean;
         image: string;
         relatedImage: string;
+        linkContent: any;
       }[];
     }[];
   };
@@ -58,6 +64,11 @@ export const GridLayout = ({ data }: GridLayoutProps) => {
                     width={180}
                   />
                 )}
+                <TinaMarkdown
+                  content={block.linkContent}
+                  data-tina-field={tinaField(block, "linkContent")}
+                  components={componentRenderer}
+                />
               </Section>
             ))}
           </Section>
@@ -141,6 +152,12 @@ export const gridLayoutSchema: Template = {
               name: "relatedImage",
               // @ts-expect-error tinacms types are wrong
               uploadDir: () => "company-logos",
+            },
+            {
+              type: "rich-text",
+              name: "linkContent",
+              label: "Link Content",
+              templates: [utilityButtonSchema],
             },
           ],
         },
