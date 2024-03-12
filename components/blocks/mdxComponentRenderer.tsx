@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { Components, TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 import { UtilityButton } from "../button/utilityButton";
 import { TweetEmbed, TweetEmbedProps } from "../embeds/tweetEmbed";
@@ -210,3 +210,10 @@ export const componentRenderer: Components<{
   ),
   JotFormEmbed: (props) => <JotFormEmbed {...props} />,
 };
+
+export const TinaRichText = ({ content }) => {
+  return <TinaMarkdown
+    components={componentRenderer}
+    content={content}
+  />
+}
