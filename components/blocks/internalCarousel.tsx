@@ -1,23 +1,16 @@
 import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import * as React from "react";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 
-const CarouselImplementation = dynamic(
-  () => import("react-responsive-carousel").then((mod) => mod.Carousel),
-  {
-    ssr: true,
-  }
-);
+import { Carousel as CarouselImplementation } from "react-responsive-carousel";
 
 export const InternalCarousel = ({ data }) => {
   return (
     <Container size="custom" className="px-0 descendant-li:!list-none md:w-3/4">
-      {/* @ts-expect-error broken props from next/dynamic */}
       <CarouselImplementation
         autoPlay={true}
         infiniteLoop={true}

@@ -5,16 +5,9 @@ import { tinaField } from "tinacms/dist/react";
 
 import type { Template } from "tinacms";
 
-import dynamic from "next/dynamic";
+import { Carousel as CarouselImplementation } from "react-responsive-carousel";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
-
-const CarouselImplementation = dynamic(
-  () => import("react-responsive-carousel").then((mod) => mod.Carousel),
-  {
-    ssr: true,
-  }
-);
 
 export const Carousel = ({ data }) => {
   const router = useRouter();
@@ -45,7 +38,6 @@ export const Carousel = ({ data }) => {
         className={/* eslint-disable-line */ "aspect-[1080/388] w-full"}
         data-tina-field={tinaField(data, carouselBlock.delay)}
       >
-        {/* @ts-expect-error broken props from next/dynamic */}
         <CarouselImplementation
           autoPlay={true}
           infiniteLoop={true}
