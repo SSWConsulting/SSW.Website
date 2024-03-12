@@ -79,7 +79,7 @@ const DownloadButton = ({ link, text }) => {
       <CustomLink
         href={link}
         className="done inline-flex w-full cursor-pointer px-4"
-        target="_self"
+        target="_blank"
       >
         <FaFileDownload className="m-icon" />
 
@@ -130,14 +130,18 @@ export const downloadBlockSchema: Template = {
           options: Object.keys(bgOptions),
         },
         {
-          type: "string",
+          type: "image",
           label: "PNG Link",
           name: "pngLink",
+          // @ts-expect-error - tina-cms types are incorrect
+          uploadDir: () => "company-logos/downloads/",
         },
         {
-          type: "string",
+          type: "image",
           label: "PDF Link",
           name: "pdfLink",
+          // @ts-expect-error - tina-cms types are incorrect
+          uploadDir: () => "company-logos/downloads/",
         },
       ],
     },
