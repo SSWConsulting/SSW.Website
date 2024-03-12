@@ -8,10 +8,14 @@ type GridLayoutProps = {
     title: string;
     grids: {
       gridTitle: string;
+      showGridTitle: boolean;
+      centeredGridTitle: boolean;
+      showHeaderDivider: boolean;
       blocks: {
+        title: string;
+        showTitle: boolean;
         image: string;
         relatedImage: string;
-        title: string;
       }[];
     }[];
     showBorderBottom: boolean;
@@ -23,11 +27,20 @@ export const GridLayout = ({ data }: GridLayoutProps) => {
     <>
       {data.grids?.map((grid, i) => (
         <Container padding="pt-0" key={i}>
-          <h2 className="text-xl text-ssw-red">{grid.gridTitle}</h2>
+          {grid.showGridTitle && (
+            <h2
+              className={`${grid.centeredGridTitle ? "text-center text-2xl font-light" : "text-xl text-ssw-red"}`}
+            >
+              {grid.gridTitle}
+            </h2>
+          )}
+          {grid.showHeaderDivider && <hr />}
           <Section className="mx-auto my-12 grid w-full grid-cols-1 gap-x-12 sm:grid-cols-2 lg:ml-0 lg:grid-cols-4">
             {grid.blocks?.map((block, i) => (
               <Section className="flex-col items-center" key={i}>
-                <h3 className="text-lg font-light">{block.title}</h3>
+                {block.showTitle && (
+                  <h3 className="text-lg font-light">{block.title}</h3>
+                )}
                 {block.image && (
                   <Image
                     className="align-middle"
@@ -82,6 +95,21 @@ export const gridLayoutSchema: Template = {
           name: "gridTitle",
         },
         {
+          type: "boolean",
+          label: "Show Grid Title",
+          name: "showGridTitle",
+        },
+        {
+          type: "boolean",
+          label: "Centered Grid Title",
+          name: "centeredGridTitle",
+        },
+        {
+          type: "boolean",
+          label: "Show Header Divider",
+          name: "showHeaderDivider",
+        },
+        {
           type: "object",
           label: "Block",
           name: "blocks",
@@ -96,6 +124,11 @@ export const gridLayoutSchema: Template = {
               type: "string",
               label: "Title",
               name: "title",
+            },
+            {
+              type: "boolean",
+              label: "Show Title",
+              name: "showTitle",
             },
             {
               type: "image",
