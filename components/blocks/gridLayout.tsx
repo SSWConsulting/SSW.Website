@@ -1,5 +1,5 @@
 import type { Template } from "tinacms";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { tinaField } from "tinacms/dist/react";
 import Image from "next/image";
 
@@ -21,7 +21,7 @@ type GridLayoutProps = {
         showTitle: boolean;
         image: string;
         relatedImage: string;
-        linkContent: any;
+        linkContent: TinaMarkdownContent;
       }[];
     }[];
   };
