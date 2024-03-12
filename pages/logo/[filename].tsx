@@ -1,16 +1,17 @@
 import { InferGetStaticPropsType } from "next";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-import client from "../../.tina/__generated__/client";
-import { tinaField, useTina } from "tinacms/dist/react";
-import { Layout } from "../../components/layout";
-import { SEO } from "../../components/util/seo";
-import { Section } from "../../components/util/section";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
-import { Blocks } from "../../components/blocks-renderer";
-import { Container } from "../../components/util/container";
-import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import { BuiltOnAzure } from "@/components/blocks";
+import { Blocks } from "@/components/blocks-renderer";
+import { Breadcrumbs } from "@/components/blocks/breadcrumbs";
+import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
+import { Layout } from "@/components/layout";
+import { Container } from "@/components/util/container";
+import { Section } from "@/components/util/section";
+import { SEO } from "@/components/util/seo";
 import { removeExtension } from "services/client/utils.service";
+import { tinaField, useTina } from "tinacms/dist/react";
+import client from "../../.tina/__generated__/client";
 
 export default function LogosPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -44,6 +45,9 @@ export default function LogosPage(
           </Section>
         )}
       </Container>
+      <Section className="w-full">
+        <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+      </Section>
     </Layout>
   );
 }
