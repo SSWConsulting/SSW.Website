@@ -16,6 +16,7 @@ type GridLayoutProps = {
       showGridTitle: boolean;
       centeredGridTitle: boolean;
       showHeaderDivider: boolean;
+      offsetGridStart: boolean;
       blocks: {
         title: string;
         showTitle: boolean;
@@ -42,7 +43,10 @@ export const GridLayout = ({ data }: GridLayoutProps) => {
           {grid.showHeaderDivider && <hr />}
           <Section className="mx-auto my-12 grid w-full grid-cols-1 gap-x-12 sm:grid-cols-2 lg:ml-0 lg:grid-cols-4">
             {grid.blocks?.map((block, i) => (
-              <Section className="flex-col items-center" key={i}>
+              <Section
+                className={`${grid.offsetGridStart && i === 0 ? "col-start-2" : ""} flex-col items-center`}
+                key={i}
+              >
                 {block.showTitle && (
                   <h3 className="text-lg font-light">{block.title}</h3>
                 )}
@@ -117,6 +121,11 @@ export const gridLayoutSchema: Template = {
           type: "boolean",
           label: "Show Header Divider",
           name: "showHeaderDivider",
+        },
+        {
+          type: "boolean",
+          label: "Offset Grid Start",
+          name: "offsetGridStart",
         },
         {
           type: "object",
