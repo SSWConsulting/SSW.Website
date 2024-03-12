@@ -5,15 +5,13 @@ import { tinaField } from "tinacms/dist/react";
 
 import type { Template } from "tinacms";
 
-import dynamic from "next/dynamic";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
-const CarouselImplementation = dynamic(
-  () => import("react-responsive-carousel").then((mod) => mod.Carousel),
-  {
-    ssr: true,
-  }
+const CarouselImplementation = React.lazy(() =>
+  import("react-responsive-carousel").then((module) => ({
+    default: module.Carousel,
+  }))
 );
 
 export const Carousel = ({ data }) => {
@@ -52,6 +50,7 @@ export const Carousel = ({ data }) => {
               alt={data?.items[0]?.label || "Carousel image"}
               height={388}
               width={1080}
+              quality={10}
               sizes="100vw"
             />
           }
@@ -102,7 +101,6 @@ const CarouselItemImage = (props: CarouselItemImageProps) => {
   const { imgSrc, label, index, carouselSchema } = props;
   return (
     <div
-      key={index}
       data-tina-field={tinaField(
         carouselSchema,
         carouselBlock.items.value + `[${index}]`
