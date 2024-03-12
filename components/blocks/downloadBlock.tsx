@@ -2,6 +2,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import { FaFileDownload } from "react-icons/fa";
 import type { Template } from "tinacms";
+import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 
@@ -24,10 +25,11 @@ const bgOptions = {
   white: "bg-white",
 };
 
-export const DownloadBlock = ({ title, downloads }: DownloadBlockProps) => {
+export const DownloadBlock = (data: DownloadBlockProps) => {
+  const { title, downloads } = data;
   return (
     <Container className="prose !px-0 py-4 prose-img:my-0">
-      <h2>{title}</h2>
+      <h2 data-tina-field={tinaField(data, "title")}>{title}</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-4">
         {downloads?.map((download, index) => (
@@ -38,23 +40,19 @@ export const DownloadBlock = ({ title, downloads }: DownloadBlockProps) => {
   );
 };
 
-const Download = ({
-  header,
-  img,
-  imgBackground,
-  pngLink,
-  pdfLink,
-}: Downloads) => {
+const Download = (data: Downloads) => {
+  const { header, img, imgBackground, pngLink, pdfLink } = data;
   return (
     <div className="col-span-1">
       <div className={classNames("text-black py-3 md:px-6")}>
-        <h3>{header}</h3>
+        <h3 data-tina-field={tinaField(data, "header")}> {header}</h3>
         {img && (
           <div
             className={classNames(
               `${bgOptions[imgBackground] || "bg-white"}`,
               "flex justify-center"
             )}
+            data-tina-field={tinaField(data, "img")}
           >
             <Image src={img} alt={header} height={400} width={210} />
           </div>
@@ -65,21 +63,37 @@ const Download = ({
             "grid grid-cols-2 gap-x-0.25 border-t-2 border-white text-black"
           )}
         >
-          {pngLink && <DownloadButton link={pngLink} text="PNG" />}
-          {pdfLink && <DownloadButton link={pdfLink} text="PDF" />}
+          {pngLink && (
+            <DownloadButton
+              link={pngLink}
+              text="PNG"
+              field="pngLink"
+              schema={data}
+            />
+          )}
+          {pdfLink && (
+            <DownloadButton
+              link={pdfLink}
+              text="PDF"
+              field="pdfLink"
+              schema={data}
+            />
+          )}
         </div>
       </div>
     </div>
   );
 };
 
-const DownloadButton = ({ link, text }) => {
+const DownloadButton = (data) => {
+  const { link, text, schema, field } = data;
   return (
     <div className={classNames("col-span-1 bg-gray-100 p-4 w-full")}>
       <CustomLink
         href={link}
         className="done inline-flex w-full cursor-pointer px-4"
         target="_blank"
+        data-tina-field={tinaField(schema, field)}
       >
         <FaFileDownload className="m-icon" />
 

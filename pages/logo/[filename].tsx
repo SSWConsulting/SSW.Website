@@ -34,8 +34,13 @@ export default function LogosPage(
             seoSchema={data.logos.seo}
           />
         )}
-        <h1 className="pt-0 text-3xl">{data.logos?.header}</h1>
-        <Blocks prefix="Logos_body" blocks={data.logos._body} />
+        <h1
+          data-tina-field={tinaField(data?.logos, "header")}
+          className="pt-0 text-3xl"
+        >
+          {data.logos?.header}
+        </h1>
+        <Blocks prefix="Logos_body" blocks={data.logos?._body} />
         {data.logos?.footer && (
           <Section className="justify-center">
             <div data-tina-field={tinaField(data.logos, "footer")}>
