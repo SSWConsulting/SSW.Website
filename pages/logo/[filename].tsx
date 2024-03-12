@@ -26,12 +26,14 @@ export default function LogosPage(
     <Layout menu={data?.megamenu}>
       <SEO seo={props.seo} />
       <Container className="flex-1 pt-2">
-        <Breadcrumbs
-          path={removeExtension(props.variables.relativePath)}
-          suffix={data.global.breadcrumbSuffix}
-          title={data.logos.seo?.title}
-          seoSchema={data.logos.seo}
-        />
+        {props.seo?.showBreadcrumb && (
+          <Breadcrumbs
+            path={removeExtension(props.variables.relativePath)}
+            suffix={data.global.breadcrumbSuffix}
+            title={data.logos.seo?.title}
+            seoSchema={data.logos.seo}
+          />
+        )}
         <h1 className="pt-0 text-3xl">{data.logos?.header}</h1>
         <Blocks prefix="Logos_body" blocks={data.logos._body} />
         {data.logos?.footer && (
