@@ -190,3 +190,10 @@ query liveContentQuery($relativePath: String!) {
     ...LiveParts
   }
 }
+
+query logosContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  logos(relativePath: $relativePath) {
+    ...LogosParts
+  }
+}

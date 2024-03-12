@@ -34,14 +34,6 @@
     @apply mb-0.5 mt-2.5 text-2xl;
   }
 
-  h4 {
-    @apply text-xl;
-  }
-
-  h5 {
-    @apply text-lg;
-  }
-
   h1 + h2 {
     @apply !mt-5;
   }

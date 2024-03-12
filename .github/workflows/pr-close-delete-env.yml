@@ -33,15 +33,20 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - name: Converting slots into JSON Formatted Array
+      - name: Get slot ids from input
         id: set-matrix
         run: |
-          # TODO: Tech Debt - need to use it as JSON instead of space delimited - Github issue - https://github.com/SSWConsulting/SSW.Website/issues/1228
-          $slotIDs = '${{ env.SLOT_NAME }}' -split ' '
-          $slotIDsInJSonArray = ConvertTo-Json -Compress @($slotIDs)
-          echo "matrix=$slotIDsInJSonArray" >> $env:GITHUB_OUTPUT
+          $slotIDs = '${{ env.SLOT_NAME }}'
 
-  delete-slot:
+          if($slotIDs -notlike '`[*')
+          {
+            $array = $slotIDs -split " "
+            $slotIDs = ConvertTo-Json -Compress @($array)
+          }
+
+          echo "matrix=$slotIDs" >> $env:GITHUB_OUTPUT
+
+  delete-slot-and-acr-cleanup:
     runs-on: ubuntu-latest
     needs: setting-up-slot-ids
     strategy:
@@ -57,13 +62,13 @@ jobs:
           path: ./.github
 
       - name: Azure CLI - Login
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID  }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID  }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: Cleanup ACR Pull & Key Vault permission
+      - name: Cleanup ACR and Key Vault Permissions
         run: |
           $acrId = az acr show `
             --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
@@ -109,7 +114,15 @@ jobs:
             Write-Host '❌ Key Vault not found'
           }
 
-      - name: Delete slot on staging site
+      - name: ACR - Delete image
+        run: |
+          $imageTagWithPrefix = '${{ env.SLOT_PREFIX }}${{ matrix.SLOT_NAME}}'
+
+          az acr repository delete --name ${{ env.ACR_NAME }} `
+          --image ${{ env.IMAGE_NAME }}:$imageTagWithPrefix --yes
+          Write-Output "✅ ACR - ${{ env.IMAGE_NAME }}:$imageTagWithPrefix image deleted successfully."
+
+      - name: Delete slot
         run: |
           az webapp deployment slot delete `
             --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 
-import { formatEventDate, formatRelativeEventDate } from "../../helpers/dates";
+import { useFormatDates } from "../../hooks/useFormatDates";
 import { EventInfo } from "../../services/server/events";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
@@ -22,16 +22,6 @@ export const UpcomingEvents = ({ data }) => {
       setLoading(false);
 
       if (res?.status !== 200 || !res.data.length) return;
-
-      !!res.data &&
-        Array.isArray(res.data) &&
-        res.data.forEach((b) => {
-          b.FormattedDate = formatEventDate(b.StartDateTime, b.EndDateTime);
-          b.RelativeDate = formatRelativeEventDate(
-            b.StartDateTime,
-            b.EndDateTime
-          );
-        });
 
       setEvents(res.data);
     };
@@ -77,6 +67,8 @@ type UpcomingEventProps = {
 const UpcomingEvent = ({ event }: UpcomingEventProps) => {
   const [imageFailed, setImageFailed] = useState<boolean>(false);
 
+  const { relativeDate, formattedDate } = useFormatDates(event, false);
+
   return (
     <CustomLink
       href={event.Url.Url}
@@ -89,8 +81,8 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
             {event.Title}
           </h2>
           <EventsRelativeBox
-            relativeDate={event.RelativeDate}
-            formattedDate={event.FormattedDate}
+            relativeDate={relativeDate}
+            formattedDate={formattedDate}
             dateFontSize="text-xs"
           />
           {!!event.Presenter && (

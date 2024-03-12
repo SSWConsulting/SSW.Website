@@ -1,0 +1,103 @@
+name: Weekly ACR images cleanup
+
+on:
+  schedule:
+    # Monday at 2 PM UTC - https://cron.help/#0_14_*_*_MON
+    - cron: "0 14 * * MON"
+  workflow_dispatch:
+
+env:
+  GH_TOKEN: ${{ github.token }}
+
+defaults:
+  run:
+    shell: pwsh
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  check-acr-images:
+    runs-on: ubuntu-latest
+    outputs:
+      imageTagList: ${{ steps.comparison.outputs.imageTagList }}
+    steps:
+      - name: Checking out
+        uses: actions/checkout@v4
+
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v2
+        with:
+          path: ./.github
+
+      - name: Azure CLI - Login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Delete all untagged images
+        run: |
+          $untaggedDigests = az acr manifest list-metadata -r  ${{ env.ACR_NAME }} -n `
+          ${{ env.IMAGE_NAME }} --query "[?tags==null].digest" -o tsv | `
+          %{ az acr repository delete -n ${{ env.ACR_NAME }} -t ${{ env.IMAGE_NAME }}@$_ --yes}
+          Write-Host "✅ All untagged images have been deleted"
+
+      - name: Get list of active PRs
+        id: prList
+        run: |
+          $active_prs=$(gh pr list --state open --json number | jq -r '.[].number')
+          echo "active_prs=$active_prs" >> $env:GITHUB_OUTPUT
+
+      - name: Get list of ACR image tags
+        id: imageTags
+        run: |
+          $images = az acr repository show-tags `
+          --name ${{ env.ACR_NAME }} --repository ${{ env.IMAGE_NAME }} `
+          --top 250 --orderby time_asc --output tsv # Limiting to 250 tags because of the GitHub action matrix limit
+
+          # Filter tags that start with "pr-"
+          $filteredTags = $images | Where-Object { $_ -like "pr-*" }
+
+          # Remove the "pr-" prefix from filtered tags
+          $filteredTagsWithoutPrefix = $filteredTags -replace "^pr-", ""
+
+          echo "filteredTags=$filteredTagsWithoutPrefix" >> $env:GITHUB_OUTPUT
+
+      - name: Compare active PRs with existing ACR images
+        id: comparison
+        run: |
+          # Comparing the number of images and PRs
+          $prList =  "${{ steps.PRList.outputs.active_prs }}" -split ' '
+          $imageTags = "${{ steps.imageTags.outputs.filteredTags }}" -split ' '
+
+          $imagesExistThatRequireDeletion = $imageTags | Where-Object { $_ -notin $prList }
+          $imagesNeedDeletion = $imagesExistThatRequireDeletion.Length -gt 0
+
+          if ( ! $imagesNeedDeletion ) {
+            echo "✅ - Number of docker images are equal to number of active PRs - 🏃 Skipping next step"
+          }
+          else {
+            echo "❌ - Number of docker images are not equal to number of active PRs"
+            Write-Host "⚡- These images need to be deleted : $imagesExistThatRequireDeletion"
+          }
+          # Convert string into Array
+          $tags = $imagesExistThatRequireDeletion -split ' '
+          $imageTagList = ConvertTo-Json -Compress @($tags)
+
+          echo "imageTagList=$imageTagList" >> $env:GITHUB_OUTPUT
+
+  invokeDeleteImage:
+    name: Invoking delete-acr-image
+    needs:
+      - check-acr-images #Adding second check to avoid running this flow
+    if: needs.check-acr-images.outputs.imageTagList != '[]'
+    uses: ./.github/workflows/template-delete-acr-image.yml
+    with:
+      imageTags: ${{ needs.check-acr-images.outputs.imageTagList }}
+    permissions:
+      id-token: write
+      contents: read
+    secrets: inherit

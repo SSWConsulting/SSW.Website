@@ -21,7 +21,7 @@ jobs:
   check-pr-slots:
     runs-on: ubuntu-latest
     outputs:
-      slotsExistThatRequireDeletion: ${{ steps.comparision.outputs.slotsExistThatRequireDeletion }}
+      slotList: ${{ steps.comparision.outputs.slotList }}
 
     steps:
       - name: Checking out
@@ -33,7 +33,7 @@ jobs:
           path: ./.github
 
       - name: Azure CLI - Login
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
@@ -74,16 +74,20 @@ jobs:
             echo "❌ - Number of slots are not equal to number of active PRs"
             Write-Host "⚡- These slots need to be deleted : $slotsExistThatRequireDeletion"
           }
-          echo "slotsExistThatRequireDeletion=$slotsExistThatRequireDeletion" >> $env:GITHUB_OUTPUT
+          # Convert string into Array
+          $slots = $slotsExistThatRequireDeletion -split ' '
+          $slotList = ConvertTo-Json -Compress @($slots)
+
+          echo "slotList=$slotList" >> $env:GITHUB_OUTPUT
 
   invokeDeleteSlot:
     name: Invoking PR Close/Delete
     needs:
       - check-pr-slots #Adding second check to avoid running this flow
-    if: needs.check-pr-slots.outputs.slotsExistThatRequireDeletion != ''
+    if: needs.check-pr-slots.outputs.slotList != '[]'
     uses: ./.github/workflows/pr-close-delete-env.yml
     with:
-      slotIDs: ${{ needs.check-pr-slots.outputs.slotsExistThatRequireDeletion }}
+      slotIDs: ${{ needs.check-pr-slots.outputs.slotList }}
     permissions:
       id-token: write
       contents: read

@@ -36,8 +36,10 @@ import {
 import { UpcomingEvents } from "./upcomingEvents";
 import { VerticalImageLayout } from "./verticalImageLayout";
 import { VerticalListItem } from "./verticalListItem";
+import { VideoEmbed } from "./videoEmbed";
 import { YoutubePlaylistBlock, YoutubePlaylistProps } from "./youtubePlaylist";
 
+// Import heavy components dynamically
 const Carousel = dynamic(
   () => import("./carousel").then((mod) => mod.Carousel),
   {
@@ -53,12 +55,6 @@ const InternalCarousel = dynamic(
 const BookingButton = dynamic(
   () =>
     import("../bookingButton/bookingButton").then((mod) => mod.BookingButton),
-  { ssr: false }
-);
-
-// Import heavy components dynamically
-const VideoEmbed = dynamic(
-  () => import("./videoEmbed").then((mod) => mod.VideoEmbed),
   { ssr: false }
 );
 

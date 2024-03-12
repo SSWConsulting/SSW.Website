@@ -44,6 +44,7 @@ import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
+import { gridLayoutSchema } from "./gridLayout";
 
 export const pageBlocks: Template[] = [
   aboutUsBlockSchema,
@@ -90,6 +91,7 @@ export const pageBlocks: Template[] = [
   eventLinkSchema,
   jotFormEmbedSchema,
   customDownloadButtonSchema,
+  gridLayoutSchema,
 ];
 
 export * from "../bookingButton/bookingButton";
