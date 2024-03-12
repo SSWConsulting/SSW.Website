@@ -35,6 +35,7 @@ export const GridLayout = ({ data }: GridLayoutProps) => {
         <Container padding="pt-0" key={i}>
           {grid.showGridTitle && (
             <h2
+              data-tina-field={tinaField(grid, "gridTitle")}
               className={`${grid.centeredGridTitle ? "text-center text-2xl font-light" : "text-xl text-ssw-red"} my-3`}
             >
               {grid.gridTitle}
@@ -52,6 +53,7 @@ export const GridLayout = ({ data }: GridLayoutProps) => {
                 )}
                 {block.image && (
                   <Image
+                    data-tina-field={tinaField(block, "image")}
                     className="align-middle"
                     src={block.image}
                     alt={`${block.title} logo`}
@@ -61,6 +63,7 @@ export const GridLayout = ({ data }: GridLayoutProps) => {
                 )}
                 {block.relatedImage && (
                   <Image
+                    data-tina-field={tinaField(block, "relatedImage")}
                     className="align-middle"
                     src={block.relatedImage}
                     alt={`${block.title} second logo`}
