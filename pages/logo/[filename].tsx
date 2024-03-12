@@ -26,7 +26,7 @@ export default function LogosPage(
     <Layout menu={data?.megamenu}>
       <SEO seo={props.seo} />
       <Container className="flex-1 pt-2">
-        {props.seo.showBreadcrumb && (
+        {props?.seo?.showBreadcrumb && (
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}
             suffix={data.global.breadcrumbSuffix}
