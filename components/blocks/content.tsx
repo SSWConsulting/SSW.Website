@@ -25,7 +25,7 @@ const sizeClasses = {
 };
 
 export const paddingOptions = {
-  "Mobile: No Padding": "pt-0 px-0 md:px-8",
+  "Mobile: No Padding": "p-0 md:px-8",
   "Mobile: No Top and Horizontal Padding": "pt-0 px-0 md:px-8",
 };
 
