@@ -24,6 +24,11 @@ const sizeClasses = {
   "2xl": "prose-2xl",
 };
 
+export const paddingOptions = {
+  "Mobile: No Padding": "pt-0 px-0 md:px-8",
+  "Mobile: No Top and Horizontal Padding": "pt-0 px-0 md:px-8",
+};
+
 export const Content = ({ data }) => {
   const alignment = alignmentClasses[data.align] ?? alignmentClasses.left;
   const size = sizeClasses[data.size] ?? sizeClasses.base;
@@ -35,7 +40,7 @@ export const Content = ({ data }) => {
       <Container
         size="medium"
         className={classNames("prose", alignment, size)}
-        padding={data.containerClass ?? ""}
+        padding={paddingOptions[data.paddingClass] ?? ""}
       >
         {data.title && (
           <h2 className="pb-5 pt-16 text-3xl font-light">{data.title}</h2>
@@ -81,8 +86,9 @@ export const contentBlockSchema: Template = {
     },
     {
       type: "string",
-      label: "Custom Container Class",
-      name: "containerClass",
+      label: "Container Padding",
+      name: "paddingClass",
+      options: Object.keys(paddingOptions),
     },
     {
       type: "string",
