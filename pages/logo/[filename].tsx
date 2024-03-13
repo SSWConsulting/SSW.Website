@@ -1,16 +1,17 @@
 import { InferGetStaticPropsType } from "next";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-import client from "../../.tina/__generated__/client";
-import { tinaField, useTina } from "tinacms/dist/react";
-import { Layout } from "../../components/layout";
-import { SEO } from "../../components/util/seo";
-import { Section } from "../../components/util/section";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
-import { Blocks } from "../../components/blocks-renderer";
-import { Container } from "../../components/util/container";
-import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import { Breadcrumbs } from "@/blocks/breadcrumbs";
+import { componentRenderer } from "@/blocks/mdxComponentRenderer";
+import { BuiltOnAzure } from "@/components/blocks";
+import { Blocks } from "@/components/blocks-renderer";
+import { Layout } from "@/components/layout";
+import { Container } from "@/components/util/container";
+import { Section } from "@/components/util/section";
+import { SEO } from "@/components/util/seo";
+import client from "@/tina/client";
 import { removeExtension } from "services/client/utils.service";
+import { tinaField, useTina } from "tinacms/dist/react";
 
 export default function LogosPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -25,14 +26,21 @@ export default function LogosPage(
     <Layout menu={data?.megamenu}>
       <SEO seo={props.seo} />
       <Container className="flex-1 pt-2">
-        <Breadcrumbs
-          path={removeExtension(props.variables.relativePath)}
-          suffix={data.global.breadcrumbSuffix}
-          title={data.logos.seo?.title}
-          seoSchema={data.logos.seo}
-        />
-        <h1 className="pt-0 text-3xl">{data.logos?.header}</h1>
-        <Blocks prefix="Logos_body" blocks={data.logos._body} />
+        {props?.seo?.showBreadcrumb && (
+          <Breadcrumbs
+            path={removeExtension(props.variables.relativePath)}
+            suffix={data.global.breadcrumbSuffix}
+            title={data.logos.seo?.title}
+            seoSchema={data.logos.seo}
+          />
+        )}
+        <h1
+          data-tina-field={tinaField(data?.logos, "header")}
+          className="pt-0 text-3xl"
+        >
+          {data?.logos?.header}
+        </h1>
+        <Blocks prefix="Logos_body" blocks={data.logos?._body} />
         {data.logos?.footer && (
           <Section className="justify-center">
             <div data-tina-field={tinaField(data.logos, "footer")}>
@@ -44,6 +52,9 @@ export default function LogosPage(
           </Section>
         )}
       </Container>
+      <Section className="w-full">
+        <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+      </Section>
     </Layout>
   );
 }
@@ -55,7 +66,7 @@ export const getStaticProps = async ({ params }) => {
 
   const seo = tinaProps.data.logos.seo;
   if (seo && (seo?.canonical === null || seo?.canonical === "")) {
-    seo.canonical = `${tinaProps.data.global.header.url}company/${params.filename}`;
+    seo.canonical = `${tinaProps.data.global.header.url}logo/${params.filename}`;
   }
 
   return {

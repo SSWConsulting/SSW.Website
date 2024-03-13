@@ -4,9 +4,12 @@ import { AboutUs } from "./blocks/aboutUs";
 import { Agenda } from "./blocks/agenda";
 import { BuiltOnAzure } from "./blocks/builtOnAzure";
 import { ClientLogos } from "./blocks/clientLogos";
+import { ColorBlock } from "./blocks/colorBlock";
 import { Content } from "./blocks/content";
 import { ContentCard } from "./blocks/contentCard";
 import { CustomImage } from "./blocks/customImage";
+import { DownloadBlock } from "./blocks/downloadBlock";
+import { GridLayout } from "./blocks/gridLayout";
 import { JotFormEmbed } from "./blocks/jotFormEmbed";
 import { PaymentBlock } from "./blocks/payment-block";
 import { ServiceCards } from "./blocks/serviceCards";
@@ -22,7 +25,6 @@ import { PresenterBlock } from "./training/presenterBlock";
 import { TrainingInformation } from "./training/trainingInformation";
 import { TrainingLearningOutcome } from "./training/trainingLearningOutcome";
 import { LatestTech } from "./usergroup/latestTech";
-import { GridLayout } from "./blocks/gridLayout";
 
 const Carousel = dynamic(
   () => import("./blocks/carousel").then((mod) => mod.Carousel),
@@ -62,6 +64,8 @@ const componentMap = {
   LatestTech,
   VideoEmbed,
   JotFormEmbed,
+  ColorBlock,
+  DownloadBlock,
   GridLayout,
 };
 

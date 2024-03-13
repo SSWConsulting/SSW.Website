@@ -2,6 +2,7 @@ import classNames from "classnames";
 import type { Template } from "tinacms";
 import type { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { colorBlockSchema } from "./colorBlock";
 import {
   CustomImage,
   CustomImageProps,
@@ -92,6 +93,7 @@ export const contentCardBlockSchema: Template = {
         customImageBlockSchema,
         verticalListItemSchema,
         videoEmbedBlockSchema,
+        colorBlockSchema,
       ],
     },
   ],
