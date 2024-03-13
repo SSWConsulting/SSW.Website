@@ -2,6 +2,7 @@ import classNames from "classnames";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { sswColors } from "../util/constants";
 import { Container } from "../util/container";
 
 export type ColorBlockProps = {
@@ -16,13 +17,6 @@ export type ColorRow = {
   secondColor: keyof typeof sswColors;
   sText: string;
   caption?: TinaMarkdownContent;
-};
-
-const sswColors = {
-  "#CC4141": "bg-sswRed",
-  "#333333": "bg-sswBlack",
-  "#AAAAAA": "bg-ssw-gray-light",
-  "#797979": "bg-ssw-gray",
 };
 
 export const ColorBlock = (data: ColorBlockProps) => {
