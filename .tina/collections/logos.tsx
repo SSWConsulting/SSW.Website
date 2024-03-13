@@ -25,7 +25,7 @@ export const logosSchema: Collection = {
     },
     {
       type: "rich-text",
-      label: "subHeader",
+      label: "Sub Header",
       name: "subHeader",
     },
     {
