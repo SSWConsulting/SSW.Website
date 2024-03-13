@@ -52,7 +52,11 @@ export default async function handler(
         (cachedEvents && isCacheOutdated(cachedEvents))
       ) {
         const events = await getEvents(odataFilter, query.page);
-        cache.set(`${CACHE_KEY}-${query.top}`, events, CACHE_SECS);
+        cache.set(
+          `${CACHE_KEY}-${query.top}-${query.page}`,
+          events,
+          CACHE_SECS
+        );
 
         res.setHeader("Cache-Control", `s-maxage=${CACHE_SECS}`);
         return res.status(200).json(events);
