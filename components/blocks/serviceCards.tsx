@@ -2,7 +2,6 @@ import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
 
 import type { Template } from "tinacms";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
@@ -105,7 +104,7 @@ const BigCards = ({ title, cards, schema }) => {
                       serviceCards.bigCards.description
                     )}
                   >
-                    <TinaMarkdown content={card.description} />
+                    <p>{card.description}</p>
                   </span>
                 </div>
               </div>
@@ -251,8 +250,10 @@ export const serviceCardsBlockSchema: Template = {
           name: serviceCards.bigCards.title,
         },
         {
-          type: "rich-text",
+          type: "string",
           label: "Description",
+          // @ts-expect-error weird tina error
+          component: "textarea",
           name: serviceCards.bigCards.description,
         },
         {
