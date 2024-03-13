@@ -2,14 +2,18 @@ import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 
-import { ValidationError } from "yup";
+import * as yup from "yup";
 import { cache } from "../../services/server/cacheService";
 import { getEvents } from "../../services/server/events";
-import { eventsQuerySchema } from "./get-upcoming-events";
 
 const CACHE_MINS = 60;
 const CACHE_SECS = CACHE_MINS * 60;
 const CACHE_KEY = "past-events";
+
+const querySchema = yup.object({
+  top: yup.number().required().positive().integer().lessThan(50),
+  page: yup.number().notRequired().integer().moreThan(0).lessThan(5),
+});
 
 export default async function handler(
   req: NextApiRequest,
@@ -21,7 +25,7 @@ export default async function handler(
   }
 
   try {
-    const query = await eventsQuerySchema.validate(req.query);
+    const query = await querySchema.validate(req.query);
 
     const startOfDay = new Date();
     startOfDay.setHours(0, 0, 0, 0);
@@ -70,7 +74,7 @@ export default async function handler(
       res.status(500).json({ message: "SharePoint request failed" });
     }
   } catch (err) {
-    if (!(err instanceof ValidationError)) {
+    if (!(err instanceof yup.ValidationError)) {
       return res.status(400).json({ message: "Invalid request" });
     }
     return res.status(400).json({ message: err.message });

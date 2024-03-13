@@ -17,9 +17,9 @@ const CACHE_MINS = 60;
 const CACHE_SECS = CACHE_MINS * 60;
 const CACHE_KEY = "upcoming-events";
 
-export const eventsQuerySchema = yup.object({
-  top: yup.number().required(),
-  page: yup.number().notRequired(),
+const querySchema = yup.object({
+  top: yup.number().required().positive().integer().lessThan(50),
+  page: yup.number().notRequired().integer().moreThan(0).lessThan(5),
 });
 
 export default async function handler(
@@ -32,7 +32,7 @@ export default async function handler(
   }
 
   try {
-    const query = await eventsQuerySchema.validate(req.query);
+    const query = await querySchema.validate(req.query);
 
     const startOfDay = dayjs()
       .tz("Australia/Sydney")
