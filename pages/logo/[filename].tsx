@@ -1,16 +1,16 @@
 import { InferGetStaticPropsType } from "next";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-import { removeExtension } from "services/client/utils.service";
-import { tinaField, useTina } from "tinacms/dist/react";
 import client from "../../.tina/__generated__/client";
-import { Blocks } from "../../components/blocks-renderer";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
-import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import { tinaField, useTina } from "tinacms/dist/react";
 import { Layout } from "../../components/layout";
-import { Container } from "../../components/util/container";
-import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
+import { Section } from "../../components/util/section";
+import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { Blocks } from "../../components/blocks-renderer";
+import { Container } from "../../components/util/container";
+import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import { removeExtension } from "services/client/utils.service";
 
 export default function LogosPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -52,14 +52,8 @@ export default function LogosPage(
 }
 
 export const getStaticProps = async ({ params }) => {
-  let filename = params.filename;
-  if (!filename) {
-    filename = "index";
-  } else {
-    filename = filename.join("/");
-  }
   const tinaProps = await client.queries.logosContentQuery({
-    relativePath: `${filename}.mdx`,
+    relativePath: `${params.filename}.mdx`,
   });
 
   const seo = tinaProps.data.logos.seo;
@@ -83,19 +77,10 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const pagesListData = await client.queries.logosConnection();
-  const paths = pagesListData.data.logosConnection.edges.map((page) => {
-    if (page.node._sys.filename === "index") {
-      return {
-        params: { filename: [] },
-      };
-    }
-
-    return {
-      params: { filename: page.node._sys.breadcrumbs },
-    };
-  });
   return {
-    paths: paths,
+    paths: pagesListData.data.logosConnection.edges.map((page) => ({
+      params: { filename: page.node._sys.filename },
+    })),
     fallback: false,
   };
 };
