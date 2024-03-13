@@ -20,6 +20,7 @@ import { CustomDownloadButton } from "./CustomDownloadButton";
 import { Carousel } from "./carousel";
 import { Citation } from "./citation";
 import { ClientLogos } from "./clientLogos";
+import { ColorBlock, ColorBlockProps } from "./colorBlock";
 import { ContentCard } from "./contentCard";
 import { CustomImage, CustomImageProps } from "./customImage";
 import { DynamicColumns } from "./dynamicColumns";
@@ -177,6 +178,7 @@ export const componentRenderer: Components<{
     btnLink: string;
   };
   JotFormEmbed: JotFormEmbedProps;
+  ColorBlock: ColorBlockProps;
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -213,6 +215,7 @@ export const componentRenderer: Components<{
     <YoutubePlaylistBlock {...props.youtubePlaylist} />
   ),
   JotFormEmbed: (props) => <JotFormEmbed {...props} />,
+  ColorBlock: (props) => <ColorBlock {...props} />,
 };
 
 export const TinaRichText = ({ content }) => {

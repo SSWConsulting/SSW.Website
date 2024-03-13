@@ -5,9 +5,11 @@ import { Agenda } from "./blocks/agenda";
 import { BuiltOnAzure } from "./blocks/builtOnAzure";
 import { Carousel } from "./blocks/carousel";
 import { ClientLogos } from "./blocks/clientLogos";
+import { ColorBlock } from "./blocks/colorBlock";
 import { Content } from "./blocks/content";
 import { ContentCard } from "./blocks/contentCard";
 import { CustomImage } from "./blocks/customImage";
+import { DownloadBlock } from "./blocks/downloadBlock";
 import { GridLayout } from "./blocks/gridLayout";
 import { JotFormEmbed } from "./blocks/jotFormEmbed";
 import { PaymentBlock } from "./blocks/payment-block";
@@ -56,6 +58,8 @@ const componentMap = {
   LatestTech,
   VideoEmbed,
   JotFormEmbed,
+  ColorBlock,
+  DownloadBlock,
   GridLayout,
 };
 
