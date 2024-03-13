@@ -35,15 +35,13 @@ export default function LogosPage(
         )}
         <h1 className="pt-0 text-3xl">{data.logos?.header}</h1>
         <Blocks prefix="Logos_body" blocks={data.logos._body} />
-        {data.logos.showBorderBottom && <hr className="pb-6" />}
         {data.logos?.footer && (
-          <Section className="justify-center">
-            <div data-tina-field={tinaField(data.logos, "footer")}>
-              <TinaMarkdown
-                content={data.logos.footer}
-                components={componentRenderer}
-              />
-            </div>
+          <Section className="w-full flex-col gap-6 text-center">
+            <TinaMarkdown
+              data-tina-field={tinaField(data.logos, "footer")}
+              content={data.logos.footer}
+              components={componentRenderer}
+            />
           </Section>
         )}
       </Container>
