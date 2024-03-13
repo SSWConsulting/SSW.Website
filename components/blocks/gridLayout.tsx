@@ -33,7 +33,7 @@ export const GridLayout = ({ data }: GridLayoutProps) => {
     <>
       {data.grids?.map((grid, i) => (
         <Container padding="pt-0" key={i}>
-          {grid.showGridTitle && (
+          {grid.gridTitle && grid.showGridTitle && (
             <h2
               data-tina-field={tinaField(grid, "gridTitle")}
               className={`${grid.centeredGridTitle ? "text-center text-2xl" : "text-xl text-ssw-red"} my-3`}
