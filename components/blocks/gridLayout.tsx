@@ -36,7 +36,7 @@ export const GridLayout = ({ data }: GridLayoutProps) => {
           {grid.showGridTitle && (
             <h2
               data-tina-field={tinaField(grid, "gridTitle")}
-              className={`${grid.centeredGridTitle ? "text-center text-2xl font-light" : "text-xl text-ssw-red"} my-3`}
+              className={`${grid.centeredGridTitle ? "text-center text-2xl" : "text-xl text-ssw-red"} my-3`}
             >
               {grid.gridTitle}
             </h2>
