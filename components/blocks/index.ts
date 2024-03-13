@@ -22,15 +22,18 @@ import { builtOnAzureBlockSchema } from "./builtOnAzure";
 import { carouselBlockSchema } from "./carousel";
 import { citationBlockSchema } from "./citation";
 import { clientLogosBlockSchema } from "./clientLogos";
+import { colorBlockSchema } from "./colorBlock";
 import { contentBlockSchema } from "./content";
 import { contentCardBlockSchema } from "./contentCard";
 import { customImageBlockSchema } from "./customImage";
+import { downloadBlockSchema } from "./downloadBlock";
 import { dynamicColumnsSchema } from "./dynamicColumns";
 import { eventLinkSchema } from "./eventLink";
 import { fixedColumnsSchema } from "./fixedColumns";
 import { fixedTabsLayoutSchema } from "./fixedTabsLayout";
 import { flagSchema } from "./flag";
 import { googleMapsSchema } from "./googleMapsWrapper";
+import { gridLayoutSchema } from "./gridLayout";
 import { heroBlockSchema } from "./hero";
 import { internalCarouselBlockSchema } from "./internalCarousel";
 import { jotFormEmbedSchema } from "./jotFormEmbed";
@@ -44,7 +47,6 @@ import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
-import { gridLayoutSchema } from "./gridLayout";
 
 export const pageBlocks: Template[] = [
   aboutUsBlockSchema,
@@ -91,6 +93,8 @@ export const pageBlocks: Template[] = [
   eventLinkSchema,
   jotFormEmbedSchema,
   customDownloadButtonSchema,
+  colorBlockSchema,
+  downloadBlockSchema,
   gridLayoutSchema,
 ];
 

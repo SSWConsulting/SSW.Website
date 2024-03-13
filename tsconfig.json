@@ -16,7 +16,9 @@
     "incremental": true,
     "baseUrl": "./",
     "paths": {
-      "@/components/*": ["components/*"]
+      "@/components/*": ["components/*"],
+      "@/blocks/*": ["components/blocks/*"],
+      "@/tina/*": [".tina/__generated__/*"]
     },
     "plugins": [
       {

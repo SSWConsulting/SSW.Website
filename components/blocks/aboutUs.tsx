@@ -254,7 +254,7 @@ const AccordionItem = ({
 
       <div
         className={classNames(
-          "overflow-hidden transition-all duration-500 mb-2 bg-white",
+          "mb-2 overflow-hidden bg-white transition-all duration-500",
           currentlySelected ? "max-h-52" : "max-h-0"
         )}
       >
@@ -315,7 +315,7 @@ const OpenStatus = ({ state }) => {
     <span
       className={classNames(
         statusClass,
-        "ml-2 p-1 text-xxxs font-bold uppercase text-white"
+        "text-xxxs ml-2 p-1 font-bold uppercase text-white"
       )}
     >
       {status}

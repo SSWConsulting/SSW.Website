@@ -162,3 +162,10 @@ export const ReferralSourceList = Object.keys(ReferralSource).map((key) => {
     value: ReferralSource[key as keyof typeof ReferralSource],
   };
 });
+
+export const sswColors = {
+  "#CC4141": "bg-sswRed",
+  "#333333": "bg-sswBlack",
+  "#AAAAAA": "bg-ssw-gray-light",
+  "#797979": "bg-ssw-gray",
+};

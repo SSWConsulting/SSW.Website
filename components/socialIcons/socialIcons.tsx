@@ -123,7 +123,7 @@ export const SocialIcon = ({ social }: SocialIconProps) => {
     <CustomLink
       href={url}
       className={classNames(
-        "w-12 unstyled flex h-12 cursor-pointer items-center justify-center rounded-lg text-xl hover:opacity-70",
+        "unstyled flex h-12 w-12 cursor-pointer items-center justify-center rounded-lg text-xl hover:opacity-70",
         styling.bgClassName
       )}
       title={social.title}
