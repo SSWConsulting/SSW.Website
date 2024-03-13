@@ -59,8 +59,15 @@ export default function LogosPage(
 }
 
 export const getStaticProps = async ({ params }) => {
+  let filename = params.filename;
+  if (!filename) {
+    filename = "index";
+  } else {
+    filename = filename.join("/");
+  }
+
   const tinaProps = await client.queries.logosContentQuery({
-    relativePath: `${params.filename}.mdx`,
+    relativePath: `${filename}.mdx`,
   });
 
   const seo = tinaProps.data.logos.seo;
@@ -84,10 +91,19 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const pagesListData = await client.queries.logosConnection();
+  const paths = pagesListData.data.logosConnection.edges.map((page) => {
+    if (page.node._sys.filename === "index") {
+      return {
+        params: { filename: [] },
+      };
+    }
+
+    return {
+      params: { filename: page.node._sys.breadcrumbs },
+    };
+  });
   return {
-    paths: pagesListData.data.logosConnection.edges.map((page) => ({
-      params: { filename: page.node._sys.filename },
-    })),
+    paths: paths,
     fallback: false,
   };
 };
