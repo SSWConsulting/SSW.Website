@@ -44,7 +44,7 @@ const Download = (data: Downloads) => {
   const { header, img, imgBackground, pngLink, pdfLink } = data;
   return (
     <div className="col-span-1">
-      <div className={classNames("text-black py-3 md:px-6")}>
+      <div className={classNames("py-3 text-black md:px-6")}>
         <h3 data-tina-field={tinaField(data, "header")}> {header}</h3>
         {img && (
           <div
@@ -88,7 +88,7 @@ const Download = (data: Downloads) => {
 const DownloadButton = (data) => {
   const { link, text, schema, field } = data;
   return (
-    <div className={classNames("col-span-1 bg-gray-100 p-4 w-full")}>
+    <div className={classNames("col-span-1 w-full bg-gray-100 p-4")}>
       <CustomLink
         href={link}
         className="done inline-flex w-full cursor-pointer px-4"
