@@ -9,6 +9,9 @@ export const logosSchema: Collection = {
   format: "mdx",
   ui: {
     router: ({ document }) => {
+      if (document._sys.filename === "index") {
+        return "/logo";
+      }
       return `/logo/${document._sys.filename}`;
     },
   },

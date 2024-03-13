@@ -13,12 +13,12 @@ export const LiveHeader = (props: LiveHeaderprops) => {
   return (
     <section
       className={classNames(
-        "bg-polygons border-b-8 border-sswRed bg-cover bg-no-repeat"
+        "border-b-8 border-sswRed bg-polygons bg-cover bg-no-repeat"
       )}
     >
       <Container
         className={classNames(
-          "flex-row  py-0 text-white md:flex text-center justify-center"
+          "flex-row  justify-center py-0 text-center text-white md:flex"
         )}
         size="custom"
       >
@@ -39,7 +39,7 @@ export const LiveHeader = (props: LiveHeaderprops) => {
           </div>
           <div
             className={classNames(
-              "mb-5 mt-auto flex-row flex items-center justify-center"
+              "mb-5 mt-auto flex flex-row items-center justify-center"
             )}
           ></div>
         </div>
