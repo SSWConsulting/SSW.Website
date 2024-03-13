@@ -10,8 +10,8 @@ import { Container } from "../util/container";
 import { Section } from "../util/section";
 
 const CarouselImplementation = dynamic(() =>
-  import("react-responsive-carousel").then((module) => (module.Carousel)
-));
+  import("react-responsive-carousel").then((module) => module.Carousel)
+);
 
 export const Carousel = ({ data }) => {
   const router = useRouter();
@@ -42,33 +42,33 @@ export const Carousel = ({ data }) => {
         className={/* eslint-disable-line */ "aspect-[1080/388] w-full"}
         data-tina-field={tinaField(data, carouselBlock.delay)}
       >
-          {/* @ts-expect-error next/dynamic */}
-          <CarouselImplementation
-            autoPlay={true}
-            infiniteLoop={true}
-            showArrows={false}
-            showThumbs={false}
-            showStatus={false}
-            stopOnHover={true}
-            interval={data.delay * 1000} // Converting it to Seconds
-            onClickItem={(x) => {
-              if (data.items[x].link) {
-                openItem(data.items[x]);
-              }
-            }}
-            renderIndicator={createCarouselIndicator}
-          >
-            {data.items &&
-              data.items.map((item, index: React.Key) => (
-                <CarouselItemImage
-                  key={index + item.label}
-                  imgSrc={item.imgSrc}
-                  label={item.label}
-                  index={item.index}
-                  carouselSchema={item.carouselSchema}
-                />
-              ))}
-          </CarouselImplementation>
+        {/* @ts-expect-error next/dynamic */}
+        <CarouselImplementation
+          autoPlay={true}
+          infiniteLoop={true}
+          showArrows={false}
+          showThumbs={false}
+          showStatus={false}
+          stopOnHover={true}
+          interval={data.delay * 1000} // Converting it to Seconds
+          onClickItem={(x) => {
+            if (data.items[x].link) {
+              openItem(data.items[x]);
+            }
+          }}
+          renderIndicator={createCarouselIndicator}
+        >
+          {data.items &&
+            data.items.map((item, index: React.Key) => (
+              <CarouselItemImage
+                key={index + item.label}
+                imgSrc={item.imgSrc}
+                label={item.label}
+                index={item.index}
+                carouselSchema={item.carouselSchema}
+              />
+            ))}
+        </CarouselImplementation>
       </Container>
     </Section>
   );

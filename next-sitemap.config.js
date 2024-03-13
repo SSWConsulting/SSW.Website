@@ -12,7 +12,7 @@ module.exports = {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/404", "/500", "ssw/Redirect", "ssw/CodeAuditor"],
+        disallow: ["/404", "/500", "/ssw/Redirect", "/ssw/CodeAuditor", "/ssw/Version.aspx", "/ssw/LinkAuditor"],
       },
     ],
     additionalSitemaps: [
