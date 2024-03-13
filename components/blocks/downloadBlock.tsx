@@ -16,7 +16,8 @@ export type Downloads = {
   img: string;
   imgBackground: keyof typeof bgOptions;
   pngLink: string;
-  pdfLink: string;
+  secondLink: string;
+  secondLinkText: string;
 };
 
 const bgOptions = {
@@ -41,7 +42,7 @@ export const DownloadBlock = (data: DownloadBlockProps) => {
 };
 
 const Download = (data: Downloads) => {
-  const { header, img, imgBackground, pngLink, pdfLink } = data;
+  const { header, img, imgBackground, pngLink, secondLink } = data;
   return (
     <div className="col-span-1">
       <div className={classNames("text-black py-3 md:px-6")}>
@@ -71,11 +72,11 @@ const Download = (data: Downloads) => {
               schema={data}
             />
           )}
-          {pdfLink && (
+          {secondLink && (
             <DownloadButton
-              link={pdfLink}
-              text="PDF"
-              field="pdfLink"
+              link={secondLink}
+              text={data.secondLinkText || "PDF"}
+              field="secondLink"
               schema={data}
             />
           )}
@@ -151,9 +152,16 @@ export const downloadBlockSchema: Template = {
           uploadDir: () => "company-logos/downloads/",
         },
         {
+          type: "string",
+          label: "Second Link Text",
+          name: "secondLinkText",
+          // @ts-expect-error - tina-cms types are incorrect
+          uploadDir: () => "company-logos/downloads/",
+        },
+        {
           type: "image",
-          label: "PDF Link",
-          name: "pdfLink",
+          label: "Second Link",
+          name: "secondLink",
           // @ts-expect-error - tina-cms types are incorrect
           uploadDir: () => "company-logos/downloads/",
         },
