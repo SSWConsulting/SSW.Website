@@ -81,7 +81,7 @@ export const getStaticProps = async ({ params }) => {
 
   const seo = tinaProps.data.caseStudy.seo;
   if (seo && (seo?.canonical === null || seo?.canonical === "")) {
-    seo.canonical = `${tinaProps.data.global.header.url}company/client/${params.filename}`;
+    seo.canonical = `${tinaProps.data.global.header.url}company/clients/${params.filename}`;
   }
 
   return {

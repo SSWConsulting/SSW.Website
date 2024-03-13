@@ -6,12 +6,13 @@ module.exports = {
   priority: 0.7,
   sitemapSize: 5000,
   generateRobotsTxt: true,
+  // add redirects, codeauditor
   robotsTxtOptions: {
     policies: [
       {
         userAgent: "*",
         allow: "/",
-        disallow: "/404",
+        disallow: ["/404", "/500", "ssw/Redirect", "ssw/CodeAuditor"],
       },
     ],
     additionalSitemaps: [
