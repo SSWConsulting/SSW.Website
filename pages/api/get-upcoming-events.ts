@@ -17,7 +17,7 @@ const CACHE_MINS = 60;
 const CACHE_SECS = CACHE_MINS * 60;
 const CACHE_KEY = "upcoming-events";
 
-const queryScema = yup.object({
+export const eventsQuerySchema = yup.object({
   top: yup.number().required(),
   page: yup.number().notRequired(),
 });
@@ -32,7 +32,7 @@ export default async function handler(
   }
 
   try {
-    const query = await queryScema.validate(req.query);
+    const query = await eventsQuerySchema.validate(req.query);
 
     const startOfDay = dayjs()
       .tz("Australia/Sydney")
@@ -45,7 +45,7 @@ export default async function handler(
           &$top=${query.top}`;
 
     try {
-      const cachedEvents = cache.get(`${CACHE_KEY}-${query.top}`);
+      const cachedEvents = cache.get(`${CACHE_KEY}-${query.top}-${query.page}`);
 
       if (
         cachedEvents == undefined ||
@@ -75,8 +75,6 @@ export default async function handler(
         console.error(err.response.data);
         properties.Status = err.response.status;
         properties.FailedSharePointRequest = true;
-      } else {
-        console.error(err);
       }
       appInsights.defaultClient.trackException({
         exception: err,

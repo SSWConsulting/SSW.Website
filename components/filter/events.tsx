@@ -84,15 +84,10 @@ export const EventsFilter = ({
               filteredEvents={filteredEvents}
               isUpcoming
             />
-            <UtilityButton
-              onClick={() => !isFetchingNextPage && fetchNextPage()}
-              buttonText="Load More"
+            <LoadMore
+              load={() => fetchNextPage()}
+              isLoading={isFetchingNextPage}
             />
-            {isFetchingNextPage && (
-              <p className="flex flex-row text-xl">
-                <FaSpinner className="m-icon animate-spin" /> Loading more...
-              </p>
-            )}
           </Tab.Panel>
           <Tab.Panel>
             <EventsList
@@ -100,15 +95,10 @@ export const EventsFilter = ({
               filteredEvents={pastFilteredEvents}
               isLoading={isLoading}
             />
-            <UtilityButton
-              onClick={() => !isFetchingNextPagePast && fetchNextPagePast()}
-              buttonText="Load More"
+            <LoadMore
+              load={() => fetchNextPagePast()}
+              isLoading={isFetchingNextPagePast}
             />
-            {isFetchingNextPagePast && (
-              <p className="flex flex-row text-xl">
-                <FaSpinner className="m-icon animate-spin" /> Loading more...
-              </p>
-            )}
           </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
@@ -307,5 +297,27 @@ const EventDescItem = ({ label, value, linkValue }: EventDescItemProps) => {
         <>{value}</>
       )}
     </span>
+  );
+};
+
+interface LoadMoreProps {
+  load: () => void;
+  isLoading: boolean;
+}
+
+const LoadMore = ({ load, isLoading }: LoadMoreProps) => {
+  return (
+    <div className="flex flex-col items-center">
+      <UtilityButton
+        onClick={() => !isLoading && load()}
+        buttonText="Load More"
+        className="!mt-0"
+      />
+      {isLoading && (
+        <p className="flex flex-row pt-6 text-xl">
+          <FaSpinner className="m-icon animate-spin" /> Loading more...
+        </p>
+      )}
+    </div>
   );
 };
