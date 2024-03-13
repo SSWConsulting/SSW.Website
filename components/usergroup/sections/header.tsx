@@ -61,7 +61,7 @@ export const UserGroupHeader = ({
     <section
       className={classNames(
         className,
-        "bg-polygons border-b-8 border-sswRed bg-cover bg-no-repeat md:max-h-112"
+        "md:max-h-112 border-b-8 border-sswRed bg-polygons bg-cover bg-no-repeat"
       )}
     >
       <Container
@@ -69,7 +69,7 @@ export const UserGroupHeader = ({
           "flex-row  py-0 text-white md:flex",
           presenter.image
             ? "justify-between max-md:text-center"
-            : "text-center justify-center"
+            : "justify-center text-center"
         )}
         size="custom"
       >

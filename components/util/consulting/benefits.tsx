@@ -9,7 +9,7 @@ const BenefitCard = (props) => {
   return (
     <article
       className={classNames(
-        "px-14 py-11 max-md:mx-auto md:flex justify-center",
+        "justify-center px-14 py-11 max-md:mx-auto md:flex",
         props.className
       )}
       data-aos={props.aosType}
