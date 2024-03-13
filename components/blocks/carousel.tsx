@@ -59,12 +59,12 @@ export const Carousel = ({ data }) => {
           renderIndicator={createCarouselIndicator}
         >
           {data.items &&
-            data.items.map((item, index: React.Key) => (
+            data.items.map((item, index) => (
               <CarouselItemImage
                 key={index + item.label}
                 imgSrc={item.imgSrc}
                 label={item.label}
-                index={item.index}
+                index={index}
                 carouselSchema={item.carouselSchema}
               />
             ))}
@@ -85,6 +85,7 @@ type CarouselItemImageProps = {
 
 const CarouselItemImage = (props: CarouselItemImageProps) => {
   const { imgSrc, label, index, carouselSchema } = props;
+
   return (
     <div
       data-tina-field={tinaField(
