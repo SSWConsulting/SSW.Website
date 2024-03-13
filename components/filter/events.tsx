@@ -54,7 +54,12 @@ export const EventsFilter = ({
     useFetchEvents(ssrEvents);
   const { filters, filteredEvents } = useEvents(events);
 
-  const { pastEvents, isLoading } = useFetchPastEvents(pastSelected);
+  const {
+    pastEvents,
+    isLoading,
+    fetchNextPage: fetchNextPagePast,
+    isFetchingNextPage: isFetchingNextPagePast,
+  } = useFetchPastEvents(pastSelected);
   const { filters: pastFilters, filteredEvents: pastFilteredEvents } =
     useEvents(isLoading || !pastEvents ? [] : pastEvents);
 
@@ -78,12 +83,16 @@ export const EventsFilter = ({
               events={events}
               filteredEvents={filteredEvents}
               isUpcoming
-              isLoadingMore={isFetchingNextPage}
             />
             <UtilityButton
               onClick={() => !isFetchingNextPage && fetchNextPage()}
               buttonText="Load More"
             />
+            {isFetchingNextPage && (
+              <p className="flex flex-row text-xl">
+                <FaSpinner className="m-icon animate-spin" /> Loading more...
+              </p>
+            )}
           </Tab.Panel>
           <Tab.Panel>
             <EventsList
@@ -91,6 +100,15 @@ export const EventsFilter = ({
               filteredEvents={pastFilteredEvents}
               isLoading={isLoading}
             />
+            <UtilityButton
+              onClick={() => !isFetchingNextPagePast && fetchNextPagePast()}
+              buttonText="Load More"
+            />
+            {isFetchingNextPagePast && (
+              <p className="flex flex-row text-xl">
+                <FaSpinner className="m-icon animate-spin" /> Loading more...
+              </p>
+            )}
           </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
@@ -113,7 +131,6 @@ interface EventsListProps {
   filteredEvents: EventTrimmed[];
   isUpcoming?: boolean;
   isLoading?: boolean;
-  isLoadingMore?: boolean;
 }
 
 const EventsList = ({
@@ -121,7 +138,6 @@ const EventsList = ({
   filteredEvents,
   isUpcoming,
   isLoading,
-  isLoadingMore,
 }: EventsListProps) => {
   return (
     <div>
@@ -168,11 +184,6 @@ const EventsList = ({
             })
           ) : (
             <h3>No events found matching the filters</h3>
-          )}
-          {isLoadingMore && (
-            <p className="flex flex-row text-xl">
-              <FaSpinner className="m-icon animate-spin" /> Loading more...
-            </p>
           )}
         </>
       ) : (

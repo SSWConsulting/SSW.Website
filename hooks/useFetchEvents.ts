@@ -1,12 +1,21 @@
 import { EventTrimmed } from "@/components/filter/events";
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const PAGE_LENGTH = 5;
+const PAST_PAGE_LENGTH = 10;
 
 const getEvents = async ({ pageParam = 1 }) => {
   const res = await axios.get<EventTrimmed[]>("/api/get-upcoming-events", {
     params: { top: PAGE_LENGTH, page: pageParam },
+  });
+
+  return res.data;
+};
+
+const getPastEvents = async ({ pageParam = 1 }) => {
+  const res = await axios.get<EventTrimmed[]>("/api/get-past-events", {
+    params: { top: PAST_PAGE_LENGTH, page: pageParam },
   });
 
   return res.data;
@@ -31,16 +40,21 @@ export const useFetchEvents = (initialData: EventTrimmed[]) => {
 };
 
 export const useFetchPastEvents = (enabled: boolean) => {
-  const { data, isLoading } = useQuery({
-    queryKey: ["pastEvents"],
-    queryFn: async () => {
-      const res = await fetch(`/api/get-past-events?top=${5}`);
-      const data: EventTrimmed[] = await res.json();
+  const { data, isLoading, fetchNextPage, isFetchingNextPage } =
+    useInfiniteQuery({
+      queryKey: ["pastEvents"],
+      queryFn: getPastEvents,
+      initialPageParam: 1,
+      getNextPageParam: (lastPage, allPages) => {
+        return (allPages?.length || 1) + 1;
+      },
+      enabled,
+    });
 
-      return data;
-    },
-    enabled,
-  });
-
-  return { pastEvents: data, isLoading };
+  return {
+    pastEvents: data?.pages.flat() || [],
+    isLoading,
+    fetchNextPage,
+    isFetchingNextPage,
+  };
 };
