@@ -3,7 +3,6 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { Breadcrumbs } from "@/blocks/breadcrumbs";
 import { componentRenderer } from "@/blocks/mdxComponentRenderer";
-import { BuiltOnAzure } from "@/components/blocks";
 import { Blocks } from "@/components/blocks-renderer";
 import { Layout } from "@/components/layout";
 import { Container } from "@/components/util/container";
@@ -23,7 +22,7 @@ export default function LogosPage(
   });
 
   return (
-    <Layout menu={data?.megamenu} mainClassName="relative">
+    <Layout menu={data?.megamenu} showAzureBanner>
       <SEO seo={props.seo} />
       <Container className="flex-1 pt-2">
         {props?.seo?.showBreadcrumb && (
@@ -56,9 +55,6 @@ export default function LogosPage(
           </Section>
         )}
       </Container>
-      <Section className="!absolute bottom-0 top-auto w-full">
-        <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
-      </Section>
     </Layout>
   );
 }

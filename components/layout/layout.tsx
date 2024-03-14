@@ -2,7 +2,7 @@ import classNames from "classnames";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useLiveStreamProps } from "../../hooks/useLiveStreamProps";
-import { Footer } from "./footer";
+import { Footer, PreFooter } from "./footer";
 import { Theme } from "./theme";
 
 import dayjs from "dayjs";
@@ -57,14 +57,14 @@ interface LayoutProps {
     menuGroups: NavMenuGroup[];
   };
   children: React.ReactNode;
-  mainClassName?: string;
+  showAzureBanner?: boolean | undefined;
 }
 
 export const Layout = ({
   children,
   menu,
   className = "",
-  mainClassName = "",
+  showAzureBanner,
 }: LayoutProps) => {
   const liveStreamProps = useLiveStreamProps();
   const router = useRouter();
@@ -153,9 +153,9 @@ export const Layout = ({
               />
             </div>
           </header>
-          <main className={classNames("grow bg-white", mainClassName)}>
-            {children}
-          </main>
+          <main className={classNames("grow bg-white")}>{children}</main>
+
+          {showAzureBanner && <PreFooter />}
           <Footer />
         </div>
       </Theme>
