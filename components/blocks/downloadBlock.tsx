@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import Image from "next/image";
+import { useState } from "react";
 import { FaFileDownload } from "react-icons/fa";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
@@ -43,6 +44,7 @@ export const DownloadBlock = (data: DownloadBlockProps) => {
 };
 
 const Download = (data: Downloads) => {
+  const [isImgBroken, setIsImgBroken] = useState(false);
   const {
     header,
     img,
@@ -64,7 +66,15 @@ const Download = (data: Downloads) => {
             )}
             data-tina-field={tinaField(data, "img")}
           >
-            <Image src={img} alt={header} height={400} width={210} />
+            {!isImgBroken && (
+              <Image
+                onError={() => setIsImgBroken(true)}
+                src={img}
+                alt={header}
+                height={400}
+                width={210}
+              />
+            )}
           </div>
         )}
         <div className={"bg-gray-300 p-2 font-bold"}>Download</div>
