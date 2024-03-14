@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import Image from "next/image";
+import { useState } from "react";
 import { FaFileDownload } from "react-icons/fa";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
@@ -43,6 +44,7 @@ export const DownloadBlock = (data: DownloadBlockProps) => {
 };
 
 const Download = (data: Downloads) => {
+  const [isImgBroken, setIsImgBroken] = useState(false);
   const {
     header,
     img,
@@ -52,6 +54,7 @@ const Download = (data: Downloads) => {
     secondLink,
     secondLinkText,
   } = data;
+  const imageSrc = isImgBroken ? "/images/placeholder-img.svg" : img;
   return (
     <div className="col-span-1">
       <div className={classNames("py-3 text-black md:px-6")}>
@@ -64,7 +67,13 @@ const Download = (data: Downloads) => {
             )}
             data-tina-field={tinaField(data, "img")}
           >
-            <Image src={img} alt={header} height={400} width={210} />
+            <Image
+              onError={() => setIsImgBroken(true)}
+              src={imageSrc}
+              alt={header}
+              height={400}
+              width={210}
+            />
           </div>
         )}
         <div className={"bg-gray-300 p-2 font-bold"}>Download</div>
