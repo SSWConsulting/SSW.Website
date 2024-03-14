@@ -155,9 +155,9 @@ export const downloadBlockSchema: Template = {
           type: "string",
           label: "Second Link Text",
           name: "secondLinkText",
+          description: "Defaults to PDF",
           // @ts-expect-error - tina-cms types are incorrect
           uploadDir: () => "company-logos/downloads/",
-          description: "Defaults to PDF",
         },
         {
           type: "image",
