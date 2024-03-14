@@ -23,7 +23,7 @@ export default function LogosPage(
   });
 
   return (
-    <Layout menu={data?.megamenu}>
+    <Layout menu={data?.megamenu} mainClassName="relative">
       <SEO seo={props.seo} />
       <Container className="flex-1 pt-2">
         {props?.seo?.showBreadcrumb && (
@@ -40,6 +40,11 @@ export default function LogosPage(
         >
           {data?.logos?.header}
         </h1>
+        {data.logos?.subHeader && (
+          <p data-tina-field={tinaField(data?.logos, "subHeader")}>
+            <TinaMarkdown content={data.logos?.subHeader} />
+          </p>
+        )}
         <Blocks prefix="Logos_body" blocks={data.logos?._body} />
         {data.logos?.footer && (
           <Section className="w-full flex-col gap-6 text-center">
@@ -51,7 +56,7 @@ export default function LogosPage(
           </Section>
         )}
       </Container>
-      <Section className="w-full">
+      <Section className="!absolute bottom-0 top-auto w-full">
         <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
       </Section>
     </Layout>

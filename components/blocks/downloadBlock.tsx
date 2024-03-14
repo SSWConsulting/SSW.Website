@@ -15,8 +15,10 @@ export type Downloads = {
   header: string;
   img: string;
   imgBackground: keyof typeof bgOptions;
-  pngLink: string;
-  pdfLink: string;
+  firstLink: string;
+  firstLinkText?: string;
+  secondLink: string;
+  secondLinkText?: string;
 };
 
 const bgOptions = {
@@ -41,7 +43,15 @@ export const DownloadBlock = (data: DownloadBlockProps) => {
 };
 
 const Download = (data: Downloads) => {
-  const { header, img, imgBackground, pngLink, pdfLink } = data;
+  const {
+    header,
+    img,
+    imgBackground,
+    firstLinkText,
+    firstLink,
+    secondLink,
+    secondLinkText,
+  } = data;
   return (
     <div className="col-span-1">
       <div className={classNames("py-3 text-black md:px-6")}>
@@ -63,19 +73,19 @@ const Download = (data: Downloads) => {
             "grid grid-cols-2 gap-x-0.25 border-t-2 border-white text-black"
           )}
         >
-          {pngLink && (
+          {firstLink && (
             <DownloadButton
-              link={pngLink}
-              text="PNG"
-              field="pngLink"
+              link={firstLink}
+              text={firstLinkText || "PNG"}
+              field="firstLink"
               schema={data}
             />
           )}
-          {pdfLink && (
+          {secondLink && (
             <DownloadButton
-              link={pdfLink}
-              text="PDF"
-              field="pdfLink"
+              link={secondLink}
+              text={secondLinkText || "PDF"}
+              field="secondLink"
               schema={data}
             />
           )}
@@ -145,15 +155,29 @@ export const downloadBlockSchema: Template = {
         },
         {
           type: "image",
-          label: "PNG Link",
-          name: "pngLink",
+          label: "First Link Text",
+          name: "firstLinkText",
+          description: "Defaults to PNG",
+        },
+        {
+          type: "image",
+          label: "First Link",
+          name: "firstLink",
+          // @ts-expect-error - tina-cms types are incorrect
+          uploadDir: () => "company-logos/downloads/",
+        },
+        {
+          type: "string",
+          label: "Second Link Text",
+          name: "secondLinkText",
+          description: "Defaults to PDF",
           // @ts-expect-error - tina-cms types are incorrect
           uploadDir: () => "company-logos/downloads/",
         },
         {
           type: "image",
-          label: "PDF Link",
-          name: "pdfLink",
+          label: "Second Link",
+          name: "secondLink",
           // @ts-expect-error - tina-cms types are incorrect
           uploadDir: () => "company-logos/downloads/",
         },
