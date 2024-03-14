@@ -1,9 +1,11 @@
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import { BuiltOnAzure } from "../blocks";
 import { CustomLink } from "../customLink";
 import { SocialIcons } from "../socialIcons/socialIcons";
 import { Container } from "../util/container";
+import { Section } from "../util/section";
 
 export const Footer = () => {
   return (
@@ -102,3 +104,10 @@ const SiteInfo = () => (
     </CustomLink>
   </div>
 );
+export const PreFooter = () => {
+  return (
+    <Section className="w-full flex-none">
+      <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+    </Section>
+  );
+};

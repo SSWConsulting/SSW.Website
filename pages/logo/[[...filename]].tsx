@@ -3,7 +3,6 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { Breadcrumbs } from "@/blocks/breadcrumbs";
 import { componentRenderer } from "@/blocks/mdxComponentRenderer";
-import { BuiltOnAzure } from "@/components/blocks";
 import { Blocks } from "@/components/blocks-renderer";
 import { Layout } from "@/components/layout";
 import { Container } from "@/components/util/container";
@@ -23,7 +22,7 @@ export default function LogosPage(
   });
 
   return (
-    <Layout menu={data?.megamenu}>
+    <Layout menu={data?.megamenu} showAzureBanner>
       <SEO seo={props.seo} />
       <Container className="flex-1 pt-2">
         {props?.seo?.showBreadcrumb && (
@@ -40,6 +39,11 @@ export default function LogosPage(
         >
           {data?.logos?.header}
         </h1>
+        {data.logos?.subHeader && (
+          <span data-tina-field={tinaField(data?.logos, "subHeader")}>
+            <TinaMarkdown content={data.logos?.subHeader} />
+          </span>
+        )}
         <Blocks prefix="Logos_body" blocks={data.logos?._body} />
         {data.logos?.footer && (
           <Section className="w-full flex-col gap-6 text-center">
@@ -51,9 +55,6 @@ export default function LogosPage(
           </Section>
         )}
       </Container>
-      <Section className="w-full">
-        <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
-      </Section>
     </Layout>
   );
 }
