@@ -23,7 +23,7 @@ export default function LogosPage(
   });
 
   return (
-    <Layout menu={data?.megamenu}>
+    <Layout menu={data?.megamenu} mainClassName="relative">
       <SEO seo={props.seo} />
       <Container className="flex-1 pt-2">
         {props?.seo?.showBreadcrumb && (
@@ -56,7 +56,7 @@ export default function LogosPage(
           </Section>
         )}
       </Container>
-      <Section className="w-full">
+      <Section className="!absolute bottom-0 top-auto w-full">
         <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
       </Section>
     </Layout>

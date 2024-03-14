@@ -57,9 +57,15 @@ interface LayoutProps {
     menuGroups: NavMenuGroup[];
   };
   children: React.ReactNode;
+  mainClassName?: string;
 }
 
-export const Layout = ({ children, menu, className = "" }: LayoutProps) => {
+export const Layout = ({
+  children,
+  menu,
+  className = "",
+  mainClassName = "",
+}: LayoutProps) => {
   const liveStreamProps = useLiveStreamProps();
   const router = useRouter();
 
@@ -147,7 +153,9 @@ export const Layout = ({ children, menu, className = "" }: LayoutProps) => {
               />
             </div>
           </header>
-          <main className="grow bg-white">{children}</main>
+          <main className={classNames("grow bg-white", mainClassName)}>
+            {children}
+          </main>
           <Footer />
         </div>
       </Theme>
