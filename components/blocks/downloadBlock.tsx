@@ -16,8 +16,9 @@ export type Downloads = {
   img: string;
   imgBackground: keyof typeof bgOptions;
   firstLink: string;
+  firstLinkText?: string;
   secondLink: string;
-  secondLinkText: string;
+  secondLinkText?: string;
 };
 
 const bgOptions = {
