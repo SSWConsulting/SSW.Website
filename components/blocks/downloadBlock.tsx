@@ -154,7 +154,7 @@ export const downloadBlockSchema: Template = {
           options: Object.keys(bgOptions),
         },
         {
-          type: "image",
+          type: "string",
           label: "First Link Text",
           name: "firstLinkText",
           description: "Defaults to PNG",
