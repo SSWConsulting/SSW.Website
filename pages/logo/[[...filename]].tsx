@@ -41,9 +41,9 @@ export default function LogosPage(
           {data?.logos?.header}
         </h1>
         {data.logos?.subHeader && (
-          <p data-tina-field={tinaField(data?.logos, "subHeader")}>
+          <span data-tina-field={tinaField(data?.logos, "subHeader")}>
             <TinaMarkdown content={data.logos?.subHeader} />
-          </p>
+          </span>
         )}
         <Blocks prefix="Logos_body" blocks={data.logos?._body} />
         {data.logos?.footer && (
