@@ -57,7 +57,7 @@ interface LayoutProps {
     menuGroups: NavMenuGroup[];
   };
   children: React.ReactNode;
-  showAzureBanner?: boolean | undefined;
+  showAzureBanner?: boolean;
 }
 
 export const Layout = ({
