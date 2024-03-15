@@ -1,6 +1,6 @@
 import type { Collection } from "tinacms";
-import { seoSchema } from "../../components/util/seo";
 import * as Schemas from "../../components/blocks";
+import { seoSchema } from "../../components/util/seo";
 
 export const logosSchema: Collection = {
   label: "Logos",
@@ -9,6 +9,9 @@ export const logosSchema: Collection = {
   format: "mdx",
   ui: {
     router: ({ document }) => {
+      if (document._sys.filename === "index") {
+        return "/logo";
+      }
       return `/logo/${document._sys.filename}`;
     },
   },
@@ -19,6 +22,11 @@ export const logosSchema: Collection = {
       type: "string",
       label: "Header",
       name: "header",
+    },
+    {
+      type: "rich-text",
+      label: "Sub Header",
+      name: "subHeader",
     },
     {
       type: "object",
@@ -34,6 +42,6 @@ export const logosSchema: Collection = {
       type: "rich-text",
       name: "footer",
       label: "Footer",
-    }
+    },
   ],
 };

@@ -3,7 +3,6 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { Breadcrumbs } from "@/blocks/breadcrumbs";
 import { componentRenderer } from "@/blocks/mdxComponentRenderer";
-import { BuiltOnAzure } from "@/components/blocks";
 import { Blocks } from "@/components/blocks-renderer";
 import { Layout } from "@/components/layout";
 import { Container } from "@/components/util/container";
@@ -23,7 +22,7 @@ export default function LogosPage(
   });
 
   return (
-    <Layout menu={data?.megamenu}>
+    <Layout menu={data?.megamenu} showAzureBanner>
       <SEO seo={props.seo} />
       <Container className="flex-1 pt-2">
         {props?.seo?.showBreadcrumb && (
@@ -40,28 +39,36 @@ export default function LogosPage(
         >
           {data?.logos?.header}
         </h1>
+        {data.logos?.subHeader && (
+          <span data-tina-field={tinaField(data?.logos, "subHeader")}>
+            <TinaMarkdown content={data.logos?.subHeader} />
+          </span>
+        )}
         <Blocks prefix="Logos_body" blocks={data.logos?._body} />
         {data.logos?.footer && (
-          <Section className="justify-center">
-            <div data-tina-field={tinaField(data.logos, "footer")}>
-              <TinaMarkdown
-                content={data.logos.footer}
-                components={componentRenderer}
-              />
-            </div>
+          <Section className="w-full flex-col gap-6 text-center">
+            <TinaMarkdown
+              data-tina-field={tinaField(data.logos, "footer")}
+              content={data.logos.footer}
+              components={componentRenderer}
+            />
           </Section>
         )}
       </Container>
-      <Section className="w-full">
-        <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
-      </Section>
     </Layout>
   );
 }
 
 export const getStaticProps = async ({ params }) => {
+  let filename = params.filename;
+  if (!filename) {
+    filename = "index";
+  } else {
+    filename = filename.join("/");
+  }
+
   const tinaProps = await client.queries.logosContentQuery({
-    relativePath: `${params.filename}.mdx`,
+    relativePath: `${filename}.mdx`,
   });
 
   const seo = tinaProps.data.logos.seo;
@@ -85,10 +92,19 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const pagesListData = await client.queries.logosConnection();
+  const paths = pagesListData.data.logosConnection.edges.map((page) => {
+    if (page.node._sys.filename === "index") {
+      return {
+        params: { filename: [] },
+      };
+    }
+
+    return {
+      params: { filename: page.node._sys.breadcrumbs },
+    };
+  });
   return {
-    paths: pagesListData.data.logosConnection.edges.map((page) => ({
-      params: { filename: page.node._sys.filename },
-    })),
+    paths: paths,
     fallback: false,
   };
 };

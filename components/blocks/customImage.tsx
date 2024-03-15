@@ -39,7 +39,7 @@ export const CustomImage = ({ data }: { data: CustomImageProps }) => {
           {data.caption && (
             <p
               className={classNames(
-                "font-bold text-start",
+                "text-start font-bold",
                 data.captionColor ?? ""
               )}
               style={{ maxWidth: `${data.width || 400}px` }}
