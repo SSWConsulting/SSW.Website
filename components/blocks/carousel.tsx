@@ -9,6 +9,8 @@ import dynamic from "next/dynamic";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 const CarouselImplementation = dynamic(() =>
   import("react-responsive-carousel").then((module) => module.Carousel)
 );

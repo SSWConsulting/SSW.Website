@@ -6,6 +6,8 @@ import * as React from "react";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 import { Carousel as CarouselImplementation } from "react-responsive-carousel";
 
 export const InternalCarousel = ({ data }) => {
