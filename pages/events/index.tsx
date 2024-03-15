@@ -5,6 +5,7 @@ import {
 } from "@tanstack/react-query";
 import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
+import { EVENTS_QUERY_KEY } from "hooks/useFetchEvents";
 import type { InferGetStaticPropsType } from "next";
 import { getEvents } from "services/server/events";
 import { useTina } from "tinacms/dist/react";
@@ -71,7 +72,7 @@ export const getStaticProps = async () => {
 
   try {
     await queryClient.prefetchInfiniteQuery({
-      queryKey: ["events"],
+      queryKey: [EVENTS_QUERY_KEY],
       queryFn: async ({ pageParam = 1 }) => {
         const events = await getEvents(odataFilter, pageParam);
         return events as EventTrimmed[];

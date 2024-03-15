@@ -5,7 +5,10 @@ import axios from "axios";
 const PAGE_LENGTH = 10;
 const PAST_PAGE_LENGTH = 10;
 
-export const getEvents = async ({ pageParam = 1 }) => {
+export const EVENTS_QUERY_KEY = "events";
+export const PAST_EVENTS_QUERY_KEY = "pastEvents";
+
+const getEvents = async ({ pageParam = 1 }) => {
   const res = await axios.get<EventTrimmed[]>("/api/get-upcoming-events", {
     params: { top: PAGE_LENGTH, page: pageParam },
   });
@@ -23,7 +26,7 @@ const getPastEvents = async ({ pageParam = 1 }) => {
 
 export const useFetchEvents = () => {
   const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery({
-    queryKey: ["events"],
+    queryKey: [EVENTS_QUERY_KEY],
     queryFn: getEvents,
     initialPageParam: 1,
     getNextPageParam: (lastPage, allPages) => {
@@ -41,7 +44,7 @@ export const useFetchEvents = () => {
 export const useFetchPastEvents = (enabled: boolean) => {
   const { data, isLoading, fetchNextPage, isFetchingNextPage } =
     useInfiniteQuery({
-      queryKey: ["pastEvents"],
+      queryKey: [PAST_EVENTS_QUERY_KEY],
       queryFn: getPastEvents,
       initialPageParam: 1,
       getNextPageParam: (lastPage, allPages) => {
