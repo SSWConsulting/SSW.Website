@@ -1,7 +1,8 @@
 import { Blocks } from "@/components/blocks-renderer";
+import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { InferGetStaticPropsType } from "next";
-import dynamic from "next/dynamic";
 import { tinaField, useTina } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../.tina/__generated__/client";
 import { pageBlocks } from "../components/blocks";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
@@ -10,12 +11,6 @@ import { Container } from "../components/util/container";
 import { Section } from "../components/util/section";
 import { SEO } from "../components/util/seo";
 import { removeExtension } from "../services/client/utils.service";
-
-const TinaMarkdown = dynamic(() =>
-  import("../components/blocks/mdxComponentRenderer").then(
-    (mod) => mod.TinaRichText
-  )
-);
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -58,7 +53,10 @@ export default function HomePage(
               className={contentClass}
               data-tina-field={tinaField(data.page, "_body")}
             >
-              <TinaMarkdown content={data.page._body} />
+              <TinaMarkdown
+                content={data.page._body}
+                components={componentRenderer}
+              />
             </div>
 
             {!!data.page.sideBar && (

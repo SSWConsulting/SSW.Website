@@ -1,52 +1,120 @@
 import dynamic from "next/dynamic";
-import {
-  Components,
-  TinaMarkdown,
-  TinaMarkdownContent,
-} from "tinacms/dist/rich-text";
+import { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import type { TweetEmbedProps } from "../embeds/tweetEmbed";
+import type { SubNewsletterRowProps } from "../subNewsletter/subNewsletterRow";
+import type { Countries } from "../util/constants/country";
+import type { ColorBlockProps } from "./colorBlock";
+import type { CustomImageProps } from "./customImage";
+import type { EventLinkProps } from "./eventLink";
+import type { ExpertBlockProps } from "./expertBlock";
+import type { JotFormEmbedProps } from "./jotFormEmbed";
+import type { TableLayoutProps } from "./tableLayout";
+import type { TripleColumnImageBlockProps } from "./tripleColumnImageBlock";
+import type { YoutubePlaylistProps } from "./youtubePlaylist";
 
-import { UtilityButton } from "../button/utilityButton";
-import { TweetEmbed, TweetEmbedProps } from "../embeds/tweetEmbed";
-import MicrosoftPanel from "../offices/microsoftPanel";
-import {
-  SubNewsletterRow,
-  SubNewsletterRowProps,
-} from "../subNewsletter/subNewsletterRow";
-import { AgreementForm } from "../terms-and-conditions/agreementForm";
-import TrainingInformation from "../training/trainingInformation";
-import { TrainingLearningOutcome } from "../training/trainingLearningOutcome";
-import { Countries } from "../util/constants/country";
-import { CustomDownloadButton } from "./CustomDownloadButton";
-import { Carousel } from "./carousel";
-import { Citation } from "./citation";
-import { ClientLogos } from "./clientLogos";
-import { ColorBlock, ColorBlockProps } from "./colorBlock";
-import { ContentCard } from "./contentCard";
-import { CustomImage, CustomImageProps } from "./customImage";
-import { DynamicColumns } from "./dynamicColumns";
-import { EventLink, EventLinkProps } from "./eventLink";
-import { ExpertBlock, ExpertBlockProps } from "./expertBlock";
-import { FixedColumns } from "./fixedColumns";
-import { FixedTabsLayout } from "./fixedTabsLayout";
-import { Flag } from "./flag";
-import { GoogleMapsWrapper } from "./googleMapsWrapper";
-import { InternalCarousel } from "./internalCarousel";
-import { JotFormEmbed, JotFormEmbedProps } from "./jotFormEmbed";
-import { NewslettersTable } from "./newslettersTable";
-import { RecurringEvent } from "./recurringEvent";
-import { TableLayout, TableLayoutProps } from "./tableLayout";
-import { TestimonialsList } from "./testimonialsList";
-import {
-  TripleColumnImageBlock,
-  TripleColumnImageBlockProps,
-} from "./tripleColumnImageBlock";
-import { UpcomingEvents } from "./upcomingEvents";
-import { VerticalImageLayout } from "./verticalImageLayout";
-import { VerticalListItem } from "./verticalListItem";
-import { VideoEmbed } from "./videoEmbed";
-import { YoutubePlaylistBlock, YoutubePlaylistProps } from "./youtubePlaylist";
-
-// Import heavy components dynamically
+const UtilityButton = dynamic(() =>
+  import("../button/utilityButton").then((mod) => mod.UtilityButton)
+);
+const TweetEmbed = dynamic<TweetEmbedProps>(() =>
+  import("../embeds/tweetEmbed").then((mod) => mod.TweetEmbed)
+);
+const MicrosoftPanel = dynamic(() =>
+  import("../offices/microsoftPanel").then((mod) => mod.default)
+);
+const SubNewsletterRow = dynamic<SubNewsletterRowProps>(() =>
+  import("../subNewsletter/subNewsletterRow").then(
+    (mod) => mod.SubNewsletterRow
+  )
+);
+const AgreementForm = dynamic(() =>
+  import("../terms-and-conditions/agreementForm").then(
+    (mod) => mod.AgreementForm
+  )
+);
+const TrainingInformation = dynamic(() =>
+  import("../training/trainingInformation").then((mod) => mod.default)
+);
+const TrainingLearningOutcome = dynamic(() =>
+  import("../training/trainingLearningOutcome").then(
+    (mod) => mod.TrainingLearningOutcome
+  )
+);
+const CustomDownloadButton = dynamic(() =>
+  import("./CustomDownloadButton").then((mod) => mod.CustomDownloadButton)
+);
+const Carousel = dynamic(() =>
+  import("./carousel").then((mod) => mod.Carousel)
+);
+const Citation = dynamic(() =>
+  import("./citation").then((mod) => mod.Citation)
+);
+const ClientLogos = dynamic(() =>
+  import("./clientLogos").then((mod) => mod.ClientLogos)
+);
+const ColorBlock = dynamic<ColorBlockProps>(() =>
+  import("./colorBlock").then((mod) => mod.ColorBlock)
+);
+const ContentCard = dynamic(() =>
+  import("./contentCard").then((mod) => mod.ContentCard)
+);
+const CustomImage = dynamic<{ data: CustomImageProps }>(() =>
+  import("./customImage").then((mod) => mod.CustomImage)
+);
+const DynamicColumns = dynamic(() =>
+  import("./dynamicColumns").then((mod) => mod.DynamicColumns)
+);
+const EventLink = dynamic<EventLinkProps>(() =>
+  import("./eventLink").then((mod) => mod.EventLink)
+);
+const ExpertBlock = dynamic<ExpertBlockProps>(() =>
+  import("./expertBlock").then((mod) => mod.ExpertBlock)
+);
+const FixedColumns = dynamic(() =>
+  import("./fixedColumns").then((mod) => mod.FixedColumns)
+);
+const FixedTabsLayout = dynamic(() =>
+  import("./fixedTabsLayout").then((mod) => mod.FixedTabsLayout)
+);
+const Flag = dynamic(() => import("./flag").then((mod) => mod.Flag));
+const GoogleMapsWrapper = dynamic(() =>
+  import("./googleMapsWrapper").then((mod) => mod.GoogleMapsWrapper)
+);
+const InternalCarousel = dynamic(() =>
+  import("./internalCarousel").then((mod) => mod.InternalCarousel)
+);
+const JotFormEmbed = dynamic<JotFormEmbedProps>(() =>
+  import("./jotFormEmbed").then((mod) => mod.JotFormEmbed)
+);
+const NewslettersTable = dynamic(() =>
+  import("./newslettersTable").then((mod) => mod.NewslettersTable)
+);
+const RecurringEvent = dynamic(() =>
+  import("./recurringEvent").then((mod) => mod.RecurringEvent)
+);
+const TableLayout = dynamic<{ data: TableLayoutProps }>(() =>
+  import("./tableLayout").then((mod) => mod.TableLayout)
+);
+const TestimonialsList = dynamic(() =>
+  import("./testimonialsList").then((mod) => mod.TestimonialsList)
+);
+const TripleColumnImageBlock = dynamic<TripleColumnImageBlockProps>(() =>
+  import("./tripleColumnImageBlock").then((mod) => mod.TripleColumnImageBlock)
+);
+const UpcomingEvents = dynamic(() =>
+  import("./upcomingEvents").then((mod) => mod.UpcomingEvents)
+);
+const VerticalImageLayout = dynamic(() =>
+  import("./verticalImageLayout").then((mod) => mod.VerticalImageLayout)
+);
+const VerticalListItem = dynamic(() =>
+  import("./verticalListItem").then((mod) => mod.VerticalListItem)
+);
+const VideoEmbed = dynamic(() =>
+  import("./videoEmbed").then((mod) => mod.VideoEmbed)
+);
+const YoutubePlaylistBlock = dynamic<YoutubePlaylistProps>(() =>
+  import("./youtubePlaylist").then((mod) => mod.YoutubePlaylistBlock)
+);
 
 const BookingButton = dynamic(
   () =>
@@ -216,8 +284,4 @@ export const componentRenderer: Components<{
   ),
   JotFormEmbed: (props) => <JotFormEmbed {...props} />,
   ColorBlock: (props) => <ColorBlock {...props} />,
-};
-
-export const TinaRichText = ({ content }) => {
-  return <TinaMarkdown components={componentRenderer} content={content} />;
 };
