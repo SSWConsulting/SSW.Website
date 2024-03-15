@@ -5,11 +5,9 @@ import { useLiveStreamProps } from "../../hooks/useLiveStreamProps";
 import { Footer, PreFooter } from "./footer";
 import { Theme } from "./theme";
 
-import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
 import { Open_Sans } from "next/font/google";
-import { useReportWebVitals } from "next/web-vitals";
 import { WebSite, WithContext } from "schema-dts";
 import { MegaMenuLayout, NavMenuGroup } from "ssw.megamenu";
 import layoutData from "../../content/global/index.json";
@@ -68,24 +66,6 @@ export const Layout = ({
   className = "",
   showAzureBanner,
 }: LayoutProps) => {
-  const appInsights = useAppInsightsContext();
-
-  useReportWebVitals((metric) => {
-    switch (metric.name) {
-      case "TTFB":
-      case "FCP":
-      case "LCP":
-      case "FID":
-      case "CLS":
-      case "INP":
-        appInsights.trackMetric(
-          { name: metric.name, average: metric.value },
-          {}
-        );
-        break;
-    }
-  });
-
   const liveStreamProps = useLiveStreamProps();
   const router = useRouter();
 

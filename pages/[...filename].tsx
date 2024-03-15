@@ -1,6 +1,8 @@
 import { Blocks } from "@/components/blocks-renderer";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
+import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import { InferGetStaticPropsType } from "next";
+import { useReportWebVitals } from "next/web-vitals";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../.tina/__generated__/client";
@@ -19,6 +21,24 @@ export default function HomePage(
     data: props.data,
     query: props.query,
     variables: props.variables,
+  });
+
+  const appInsights = useAppInsightsContext();
+
+  useReportWebVitals((metric) => {
+    switch (metric.name) {
+      case "TTFB":
+      case "FCP":
+      case "LCP":
+      case "FID":
+      case "CLS":
+      case "INP":
+        appInsights.trackMetric(
+          { name: metric.name, average: metric.value },
+          {}
+        );
+        break;
+    }
   });
 
   // Here due to components attempting to access pageBlock items before

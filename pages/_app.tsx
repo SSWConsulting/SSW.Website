@@ -25,7 +25,7 @@ import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import dynamic from "next/dynamic";
 
-const FIVE_MINS_MS = 1000 * 60 * 5;
+const FIVE_MINS = 1000 * 60 * 5;
 
 const ChatBaseBot = dynamic(
   () => import("../components/zendeskButton/chatBaseBot"),
@@ -34,7 +34,7 @@ const ChatBaseBot = dynamic(
   }
 );
 
-const ReactQueryDevtoolsProduction = dynamic(() =>
+const ReactQueryDevtools = dynamic(() =>
   import("@tanstack/react-query-devtools").then((d) => ({
     default: d.ReactQueryDevtools,
   }))
@@ -73,7 +73,7 @@ const App = ({ Component, pageProps }) => {
   const [queryClient] = useState(
     () =>
       new QueryClient({
-        defaultOptions: { queries: { staleTime: FIVE_MINS_MS } },
+        defaultOptions: { queries: { staleTime: FIVE_MINS } },
       })
   );
 
@@ -87,7 +87,7 @@ const App = ({ Component, pageProps }) => {
             <Component {...pageProps} />
           </ErrorBoundary>
           {process.env.NODE_ENV === "development" && (
-            <ReactQueryDevtoolsProduction
+            <ReactQueryDevtools
               initialIsOpen={false}
               buttonPosition="bottom-left"
             />

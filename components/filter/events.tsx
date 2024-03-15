@@ -16,6 +16,8 @@ import { CITY_MAP } from "../util/constants/country";
 import { sswOrganisation } from "../util/constants/json-ld";
 import { FilterBlock } from "./FilterBlock";
 
+const EVENTS_JSON_LD_LIMIT = 5;
+
 interface EventsFilterProps {
   sidebarBody: TinaMarkdownContent;
 }
@@ -39,6 +41,7 @@ export type EventTrimmed = {
     Url: string;
   };
   CalendarType?: string;
+  // TODO: Fix the name of this field
   Category_f5a9cf4c_x002d_8228_x00?: string;
   EventShortDescription: string;
 };
@@ -142,7 +145,7 @@ const EventsList = ({
             events?.map((event, index) => {
               let eventJsonLd: WithContext<Event> = undefined;
 
-              if (index < 5 && isUpcoming) {
+              if (index < EVENTS_JSON_LD_LIMIT && isUpcoming) {
                 eventJsonLd = {
                   "@context": "https://schema.org",
                   "@type": "Event",

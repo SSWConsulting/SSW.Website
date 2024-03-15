@@ -41,7 +41,7 @@ export const Carousel = ({ data }) => {
     >
       <Container
         size="custom"
-        className={/* eslint-disable-line */ "aspect-[1080/388] w-full"}
+        className={/* eslint-disable-line */ "aspect-carousel w-full"}
         data-tina-field={tinaField(data, carouselBlock.delay)}
       >
         {/* @ts-expect-error next/dynamic */}
@@ -80,9 +80,7 @@ type CarouselItemImageProps = {
   imgSrc: string;
   label: string;
   index: number;
-  // tinacms accepts any, workaround for better type safety for this component
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  carouselSchema: any;
+  carouselSchema: Record<string, unknown>;
 };
 
 const CarouselItemImage = (props: CarouselItemImageProps) => {
@@ -100,7 +98,6 @@ const CarouselItemImage = (props: CarouselItemImageProps) => {
         alt={label}
         height={388}
         width={1080}
-        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 100vw"
         priority={index === 0}
       />
       {/* `legend` required so that the carousel works properly */}
