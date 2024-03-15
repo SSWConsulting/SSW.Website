@@ -72,14 +72,17 @@ export const Layout = ({
 
   useReportWebVitals((metric) => {
     switch (metric.name) {
-      case "TTFB": {
-        appInsights.trackMetric({ name: "TTFB", average: metric.value }, {});
+      case "TTFB":
+      case "FCP":
+      case "LCP":
+      case "FID":
+      case "CLS":
+      case "INP":
+        appInsights.trackMetric(
+          { name: metric.name, average: metric.value },
+          {}
+        );
         break;
-      }
-      case "FCP": {
-        appInsights.trackMetric({ name: "FCP", average: metric.value }, {});
-        break;
-      }
     }
   });
 
