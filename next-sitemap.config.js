@@ -6,6 +6,7 @@ module.exports = {
   priority: 0.7,
   sitemapSize: 5000,
   generateRobotsTxt: true,
+  output: "standalone",
   additionalPaths: async () => {
     const otherURLs = [
       "https://www.ssw.com.au/rules/",
@@ -29,6 +30,23 @@ module.exports = {
       priority: 0.7,
       lastmod: new Date().toISOString(),
     }));
+  },
+  transform: async (config, path) => {
+    if (path.includes("/home")) {
+      return {
+        loc: path.replace("/home", "/"),
+        changefreq: config.changefreq,
+        priority: 1.0,
+        lastmod: config.lastmod || new Date().toISOString(),
+      };
+    }
+
+    return {
+      loc: path,
+      changefreq: config.changefreq,
+      priority: config.priority,
+      lastmod: config.lastmod || new Date().toISOString(),
+    };
   },
   robotsTxtOptions: {
     policies: [
