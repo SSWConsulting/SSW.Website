@@ -39,6 +39,8 @@ module.exports = {
         priority: 1.0,
         lastmod: config.lastmod || new Date().toISOString(),
       };
+    } else if (path.includes("/500") || path.includes("/404")) {
+      return null;
     }
 
     return {
