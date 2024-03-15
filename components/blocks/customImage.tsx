@@ -16,6 +16,7 @@ export type CustomImageProps = {
   customClass?: string;
   caption?: string;
   captionColor?: textColor;
+  sizes?: string;
 };
 
 // To Update the screenshots of PowerBi reports on Consulting Options (i.e /consulting/consulting), here is the link - https://github.com/SSWConsulting/SSW.Website/wiki/Consulting-options-%E2%80%90-Updating-screenshots
@@ -35,6 +36,7 @@ export const CustomImage = ({ data }: { data: CustomImageProps }) => {
             height={data.height || 400}
             width={data.width || 400}
             className={classNames("inline-block", data.customClass ?? "")}
+            sizes={data.sizes}
           />
           {data.caption && (
             <p
@@ -133,6 +135,14 @@ export const customImageBlockSchema: Template = {
           value: "text-white",
         },
       ],
+    },
+    {
+      type: "string",
+      name: "sizes",
+      label: "Sizes (optional)",
+      description:
+        "See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#sizes or https://nextjs.org/docs/pages/api-reference/components/image#sizes for more info",
+      required: false,
     },
   ],
 };
