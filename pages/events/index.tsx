@@ -63,7 +63,7 @@ export const getStaticProps = async () => {
   const odataFilter = `$select=id&$expand=fields($select=${fields})&$filter=fields/Enabled ne false \
       and fields/EndDateTime gt '${startOfDay.toISOString()}'\
       &$orderby=fields/StartDateTime asc\
-      &$top=${20}`;
+      &$top=${10}`;
 
   let events: EventTrimmed[];
   try {

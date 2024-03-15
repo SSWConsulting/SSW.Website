@@ -2,7 +2,7 @@ import { EventTrimmed } from "@/components/filter/events";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-const PAGE_LENGTH = 5;
+const PAGE_LENGTH = 10;
 const PAST_PAGE_LENGTH = 10;
 
 const getEvents = async ({ pageParam = 1 }) => {
