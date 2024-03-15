@@ -1,29 +1,38 @@
+import { useEffect, useState } from "react";
 import {
   getRandomClientTestimonial,
   getTestimonialByName,
 } from "../../helpers/getTestimonials";
 
 type TestimonialPanelProps = {
+  testimonialName?: string;
+};
+
+type Testimonial = {
   body?: string;
   name?: string;
   company?: string;
 };
 
-const TestimonialPanel = ({ testimonialName = "" }) => {
-  const testimonial: TestimonialPanelProps = testimonialName
-    ? getTestimonialByName(testimonialName)
-    : getRandomClientTestimonial();
+const TestimonialPanel = ({ testimonialName }: TestimonialPanelProps) => {
+  const [testimonial, setTestimonial] = useState<Testimonial | null>(null);
 
-  const { body, name, company }: TestimonialPanelProps = testimonial;
+  useEffect(() => {
+    setTestimonial(
+      testimonialName
+        ? getTestimonialByName(testimonialName)
+        : getRandomClientTestimonial()
+    );
+  }, [testimonialName]);
 
   return (
     <>
       <h3>Testimonials</h3>
       {testimonial ? (
         <div className="border-2 bg-gray-100 px-4 py-3">
-          {body}
+          {testimonial?.body}
           <p>
-            <strong>{name}</strong> - {company}
+            <strong>{testimonial?.name}</strong> - {testimonial?.company}
           </p>
         </div>
       ) : (
