@@ -27,6 +27,7 @@ const EventsHeader = ({ data }) => {
             alt={data?.altText}
             height={400}
             width={680}
+            priority
           />
         </div>
       )}
