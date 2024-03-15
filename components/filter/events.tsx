@@ -18,7 +18,6 @@ import { FilterBlock } from "./FilterBlock";
 
 interface EventsFilterProps {
   sidebarBody: TinaMarkdownContent;
-  events: EventTrimmed[];
 }
 
 export type EventTrimmed = {
@@ -44,14 +43,10 @@ export type EventTrimmed = {
   EventShortDescription: string;
 };
 
-export const EventsFilter = ({
-  sidebarBody,
-  events: ssrEvents,
-}: EventsFilterProps) => {
+export const EventsFilter = ({ sidebarBody }: EventsFilterProps) => {
   const [pastSelected, setPastSelected] = useState<boolean>(false);
 
-  const { events, fetchNextPage, isFetchingNextPage } =
-    useFetchEvents(ssrEvents);
+  const { events, fetchNextPage, isFetchingNextPage } = useFetchEvents();
   const { filters, filteredEvents } = useEvents(events);
 
   const {

@@ -1,6 +1,12 @@
+import {
+  HydrationBoundary,
+  QueryClient,
+  dehydrate,
+} from "@tanstack/react-query";
 import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
 import type { InferGetStaticPropsType } from "next";
+import { getEvents } from "services/server/events";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
@@ -10,7 +16,6 @@ import { EventTrimmed, EventsFilter } from "../../components/filter/events";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
-import { getEvents } from "../../services/server/events";
 
 const ISR_TIME = 60 * 60; // 1 hour
 
@@ -24,7 +29,7 @@ export default function EventsIndexPage(
   });
 
   return (
-    <>
+    <HydrationBoundary state={props.dehydratedState}>
       <SEO seo={data.eventsIndex.seo} />
       <Layout menu={data.megamenu}>
         <Container size="small">
@@ -35,17 +40,14 @@ export default function EventsIndexPage(
               components={componentRenderer}
             />
           </div>
-          <EventsFilter
-            events={props.events}
-            sidebarBody={data.eventsIndex.sidebarBody}
-          />
+          <EventsFilter sidebarBody={data.eventsIndex.sidebarBody} />
         </Container>
         <Blocks
           prefix="EventsIndexAfterEvents"
           blocks={data.eventsIndex.afterEvents}
         />
       </Layout>
-    </>
+    </HydrationBoundary>
   );
 }
 
@@ -65,9 +67,17 @@ export const getStaticProps = async () => {
       &$orderby=fields/StartDateTime asc\
       &$top=${10}`;
 
-  let events: EventTrimmed[];
+  const queryClient = new QueryClient();
+
   try {
-    events = await getEvents(odataFilter);
+    await queryClient.prefetchInfiniteQuery({
+      queryKey: ["events"],
+      queryFn: async ({ pageParam = 1 }) => {
+        const events = await getEvents(odataFilter, pageParam);
+        return events as EventTrimmed[];
+      },
+      initialPageParam: 1,
+    });
   } catch (err) {
     const properties = {
       Request: "GET /events",
@@ -87,8 +97,6 @@ export const getStaticProps = async () => {
       properties,
       severity: appInsights.Contracts.SeverityLevel.Error,
     });
-
-    events = [];
   }
 
   if (!tinaProps.data.eventsIndex.seo.canonical) {
@@ -100,7 +108,7 @@ export const getStaticProps = async () => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
-      events,
+      dehydratedState: dehydrate(queryClient),
     },
     revalidate: ISR_TIME,
   };

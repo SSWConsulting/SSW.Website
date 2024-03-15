@@ -10,11 +10,7 @@ import * as gtag from "../lib/gtag";
 import { NEXT_SEO_DEFAULT } from "../next-seo.config";
 import "../styles.css";
 
-import {
-  HydrationBoundary,
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AppInsightsProvider } from "../context/app-insight-client";
 
 // Hack as per https://stackoverflow.com/a/66575373 to stop font awesome icons breaking
@@ -28,6 +24,8 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import dynamic from "next/dynamic";
+
+const FIVE_MINS_MS = 1000 * 60 * 5;
 
 const ChatBaseBot = dynamic(
   () => import("../components/zendeskButton/chatBaseBot"),
@@ -72,7 +70,12 @@ const App = ({ Component, pageProps }) => {
     AOS.init({ duration: 1200 });
   }, []);
 
-  const [queryClient] = useState(() => new QueryClient());
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: { queries: { staleTime: FIVE_MINS_MS } },
+      })
+  );
 
   return (
     <>
@@ -80,11 +83,9 @@ const App = ({ Component, pageProps }) => {
       <DefaultSeo {...NEXT_SEO_DEFAULT} />
       <AppInsightsProvider>
         <QueryClientProvider client={queryClient}>
-          <HydrationBoundary>
-            <ErrorBoundary key={router.asPath}>
-              <Component {...pageProps} />
-            </ErrorBoundary>
-          </HydrationBoundary>
+          <ErrorBoundary key={router.asPath}>
+            <Component {...pageProps} />
+          </ErrorBoundary>
           {process.env.NODE_ENV === "development" && (
             <ReactQueryDevtoolsProduction
               initialIsOpen={false}
