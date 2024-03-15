@@ -46,7 +46,12 @@ export type EventTrimmed = {
 export const EventsFilter = ({ sidebarBody }: EventsFilterProps) => {
   const [pastSelected, setPastSelected] = useState<boolean>(false);
 
-  const { events, fetchNextPage, isFetchingNextPage } = useFetchEvents();
+  const {
+    events,
+    fetchNextPage,
+    isFetchingNextPage,
+    error: eventError,
+  } = useFetchEvents();
   const { filters, filteredEvents } = useEvents(events);
 
   const {
@@ -54,6 +59,7 @@ export const EventsFilter = ({ sidebarBody }: EventsFilterProps) => {
     isLoading,
     fetchNextPage: fetchNextPagePast,
     isFetchingNextPage: isFetchingNextPagePast,
+    error: pastEventsError,
   } = useFetchPastEvents(pastSelected);
   const { filters: pastFilters, filteredEvents: pastFilteredEvents } =
     useEvents(isLoading || !pastEvents ? [] : pastEvents);
@@ -79,10 +85,12 @@ export const EventsFilter = ({ sidebarBody }: EventsFilterProps) => {
               filteredEvents={filteredEvents}
               isUpcoming
             />
-            <LoadMore
-              load={() => fetchNextPage()}
-              isLoading={isFetchingNextPage}
-            />
+            {!eventError && (
+              <LoadMore
+                load={() => fetchNextPage()}
+                isLoading={isFetchingNextPage}
+              />
+            )}
           </Tab.Panel>
           <Tab.Panel>
             <EventsList
@@ -90,10 +98,12 @@ export const EventsFilter = ({ sidebarBody }: EventsFilterProps) => {
               filteredEvents={pastFilteredEvents}
               isLoading={isLoading}
             />
-            <LoadMore
-              load={() => fetchNextPagePast()}
-              isLoading={isFetchingNextPagePast}
-            />
+            {!pastEventsError && (
+              <LoadMore
+                load={() => fetchNextPagePast()}
+                isLoading={isFetchingNextPagePast}
+              />
+            )}
           </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>

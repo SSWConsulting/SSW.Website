@@ -12,6 +12,8 @@ import type { TableLayoutProps } from "./tableLayout";
 import type { TripleColumnImageBlockProps } from "./tripleColumnImageBlock";
 import type { YoutubePlaylistProps } from "./youtubePlaylist";
 
+import { BookingButton } from "../bookingButton/bookingButton";
+
 const UtilityButton = dynamic(() =>
   import("../button/utilityButton").then((mod) => mod.UtilityButton)
 );
@@ -114,12 +116,6 @@ const VideoEmbed = dynamic(() =>
 );
 const YoutubePlaylistBlock = dynamic<YoutubePlaylistProps>(() =>
   import("./youtubePlaylist").then((mod) => mod.YoutubePlaylistBlock)
-);
-
-const BookingButton = dynamic(
-  () =>
-    import("../bookingButton/bookingButton").then((mod) => mod.BookingButton),
-  { ssr: false }
 );
 
 export const componentRenderer: Components<{

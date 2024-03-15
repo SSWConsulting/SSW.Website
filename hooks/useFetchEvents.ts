@@ -25,7 +25,7 @@ const getPastEvents = async ({ pageParam = 1 }) => {
 };
 
 export const useFetchEvents = () => {
-  const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery({
+  const { data, fetchNextPage, isFetchingNextPage, error } = useInfiniteQuery({
     queryKey: [EVENTS_QUERY_KEY],
     queryFn: getEvents,
     initialPageParam: 1,
@@ -36,13 +36,14 @@ export const useFetchEvents = () => {
 
   return {
     events: data?.pages.flat() || [],
+    error,
     fetchNextPage,
     isFetchingNextPage,
   };
 };
 
 export const useFetchPastEvents = (enabled: boolean) => {
-  const { data, isLoading, fetchNextPage, isFetchingNextPage } =
+  const { data, isLoading, fetchNextPage, isFetchingNextPage, error } =
     useInfiniteQuery({
       queryKey: [PAST_EVENTS_QUERY_KEY],
       queryFn: getPastEvents,
@@ -55,6 +56,7 @@ export const useFetchPastEvents = (enabled: boolean) => {
 
   return {
     pastEvents: data?.pages.flat() || [],
+    error,
     isLoading,
     fetchNextPage,
     isFetchingNextPage,
