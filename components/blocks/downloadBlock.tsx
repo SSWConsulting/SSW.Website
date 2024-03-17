@@ -58,25 +58,24 @@ const Download = (data: Downloads) => {
     <div className="col-span-1">
       <div className={classNames("py-3 text-black md:px-6")}>
         <h3 data-tina-field={tinaField(data, "header")}> {header}</h3>
-        {img && (
-          <div
-            className={classNames(
-              `${bgOptions[imgBackground] || "bg-white"}`,
-              "flex justify-center"
-            )}
-            data-tina-field={tinaField(data, "img")}
-          >
-            {!isImgBroken && (
-              <Image
-                onError={() => setIsImgBroken(true)}
-                src={img}
-                alt={header}
-                height={400}
-                width={210}
-              />
-            )}
-          </div>
-        )}
+        <div
+          className={classNames(
+            `${bgOptions[imgBackground] || "bg-white"}`,
+            "flex h-32 justify-center"
+          )}
+          data-tina-field={tinaField(data, "img")}
+        >
+          {img && !isImgBroken && (
+            <Image
+              onError={() => setIsImgBroken(true)}
+              src={img}
+              alt={header}
+              height={400}
+              width={210}
+              style={{ objectFit: "none" }}
+            />
+          )}
+        </div>
         <div className={"bg-gray-300 p-2 font-bold"}>Download</div>
         <div
           className={classNames(
