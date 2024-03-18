@@ -10,7 +10,6 @@ import { Container } from "../util/container";
 import { Section } from "../util/section";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { useMediaQuery } from "usehooks-ts";
 
 const CarouselImplementation = dynamic(() =>
   import("react-responsive-carousel").then((module) => module.Carousel)
@@ -18,8 +17,6 @@ const CarouselImplementation = dynamic(() =>
 
 export const Carousel = ({ data }) => {
   const router = useRouter();
-
-  const isDesktop = useMediaQuery("(min-width: 768px)");
 
   const openItem = ({ link, openIn }) => {
     if (openIn === "newWindow") {
@@ -47,37 +44,33 @@ export const Carousel = ({ data }) => {
         className={/* eslint-disable-line */ "aspect-carousel w-full"}
         data-tina-field={tinaField(data, carouselBlock.delay)}
       >
-        {isDesktop && (
-          <>
-            {/* @ts-expect-error next/dynamic */}
-            <CarouselImplementation
-              autoPlay={true}
-              infiniteLoop={true}
-              showArrows={false}
-              showThumbs={false}
-              showStatus={false}
-              stopOnHover={true}
-              interval={data.delay * 1000} // Converting it to Seconds
-              onClickItem={(x) => {
-                if (data.items[x].link) {
-                  openItem(data.items[x]);
-                }
-              }}
-              renderIndicator={createCarouselIndicator}
-            >
-              {data.items &&
-                data.items.map((item, index) => (
-                  <CarouselItemImage
-                    key={index + item.label}
-                    imgSrc={item.imgSrc}
-                    label={item.label}
-                    index={index}
-                    carouselSchema={item.carouselSchema}
-                  />
-                ))}
-            </CarouselImplementation>
-          </>
-        )}
+        {/* @ts-expect-error next/dynamic */}
+        <CarouselImplementation
+          autoPlay={true}
+          infiniteLoop={true}
+          showArrows={false}
+          showThumbs={false}
+          showStatus={false}
+          stopOnHover={true}
+          interval={data.delay * 1000} // Converting it to Seconds
+          onClickItem={(x) => {
+            if (data.items[x].link) {
+              openItem(data.items[x]);
+            }
+          }}
+          renderIndicator={createCarouselIndicator}
+        >
+          {data.items &&
+            data.items.map((item, index) => (
+              <CarouselItemImage
+                key={index + item.label}
+                imgSrc={item.imgSrc}
+                label={item.label}
+                index={index}
+                carouselSchema={item.carouselSchema}
+              />
+            ))}
+        </CarouselImplementation>
       </Container>
     </Section>
   );
