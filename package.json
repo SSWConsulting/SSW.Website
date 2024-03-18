@@ -23,7 +23,7 @@
     "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
-    "@tinacms/cli": "^1.5.39",
+    "@tinacms/cli": "^1.5.42",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^20.8.7",
     "@types/react": "^18.2.55",
