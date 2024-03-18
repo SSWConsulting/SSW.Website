@@ -79,7 +79,7 @@ const Download = (data: Downloads) => {
         <div className={"bg-gray-300 p-2 font-bold"}>Download</div>
         <div
           className={classNames(
-            "grid grid-cols-2 gap-x-0.25 border-t-2 border-white text-black"
+            "flex gap-x-0.25 border-t-2 border-white text-black"
           )}
         >
           {firstLink && (
