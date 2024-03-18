@@ -72,7 +72,7 @@ const Download = (data: Downloads) => {
               alt={header}
               height={400}
               width={210}
-              style={{ objectFit: "none" }}
+              style={{ width: "auto", height: "100%" }}
             />
           )}
         </div>
