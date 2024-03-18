@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import dayjs from "dayjs";
-import { useState } from "react";
+import { memo, useState } from "react";
 import type { Template } from "tinacms";
 
 import { BiChevronRightCircle } from "react-icons/bi";
@@ -141,14 +141,14 @@ export const AboutUs = ({ data }) => {
   );
 };
 
-const TV = ({ className }) => {
+const TV = memo(function TV({ className }: { className?: string }) {
   return (
     <div className={className}>
       <h2 className="mt-0">tv.ssw.com</h2>
       <VideoModal url={layoutData.aboutUs.video.url} />
     </div>
   );
-};
+});
 
 const ContactUs = ({
   className,

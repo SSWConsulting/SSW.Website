@@ -3,25 +3,28 @@ import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { CustomLink } from "../customLink";
 
-export const VerticalImageLayout = ({ data }) => {
-  const RawImage = () => (
+const RawImage = ({ data }) => {
+  return (
     <Image
       src={data.imageSrc}
       alt={data.altText}
       height={data.height ?? 0}
       width={data.width ?? 0}
+      sizes={data.sizes}
     />
   );
+};
 
+export const VerticalImageLayout = ({ data }) => {
   return (
     <div className="md:grid md:grid-cols-12 md:gap-x-6">
       <div className="col-span-5">
         {data.imageLink ? (
           <CustomLink href={data.imageLink}>
-            <RawImage />
+            <RawImage data={data} />
           </CustomLink>
         ) : (
-          <RawImage />
+          <RawImage data={data} />
         )}
       </div>
       <div className="col-span-7">
@@ -71,6 +74,14 @@ export const verticalImageLayoutBlockSchema: Template = {
       label: "Message",
       name: "message",
       required: true,
+    },
+    {
+      type: "string",
+      name: "sizes",
+      label: "Sizes - Advanced (optional)",
+      description:
+        "See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#sizes or https://nextjs.org/docs/pages/api-reference/components/image#sizes for more info",
+      required: false,
     },
   ],
 };

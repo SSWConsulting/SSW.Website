@@ -127,6 +127,7 @@ export const SocialIcon = ({ social }: SocialIconProps) => {
         styling.bgClassName
       )}
       title={social.title}
+      aria-label={"Link to " + social.title}
     >
       <Icon className="text-2xl" color={styling.fill ?? "white"} />
     </CustomLink>

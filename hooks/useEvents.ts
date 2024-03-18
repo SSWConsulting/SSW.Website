@@ -1,9 +1,9 @@
+import { EventTrimmed } from "@/components/filter/events";
 import { useMemo, useState } from "react";
 import { NO_SELECTION } from "../components/filter/FilterBlock";
 import { FilterGroupProps } from "../components/filter/FilterGroup";
-import { EventInfo } from "../services/server/events";
 
-export const useEvents = (events: EventInfo[]) => {
+export const useEvents = (events: EventTrimmed[]) => {
   const [filterControls, setFilterControls] = useState<{
     technology: number;
     format: number;
@@ -19,14 +19,14 @@ export const useEvents = (events: EventInfo[]) => {
       {}
     );
 
-    const categories = Object.keys(categoryCount).sort();
+    const categories = Object.keys(categoryCount || {})?.sort() || [];
 
     const formatCount: Record<string, number> = events?.reduce((acc, event) => {
       acc[event.CalendarType] = (acc[event.CalendarType] || 0) + 1;
       return acc;
     }, {});
 
-    const formats = Object.keys(formatCount).sort();
+    const formats = Object.keys(formatCount || {}).sort();
 
     return { categories, categoryCount, formats, formatCount };
   }, [events]);

@@ -6,19 +6,71 @@ module.exports = {
   priority: 0.7,
   sitemapSize: 5000,
   generateRobotsTxt: true,
+  output: "standalone",
+  additionalPaths: async () => {
+    const otherURLs = [
+      "https://www.ssw.com.au/rules/",
+      "https://sswdigital.com/",
+      "https://sswsophie.com/sophiebot/",
+      "https://sugarlearning.com/",
+      "https://sswtimepro.com/",
+      "https://codeauditor.com/",
+      "https://sswhealthcheck.com/",
+      "https://smashingbarrier.com/",
+      "https://fireusergroup.com/",
+      "https://bettersoftwaresuggestions.com/",
+      "https://blog.ssw.com.au/",
+      "https://adamcogan.com/",
+      "https://tv.ssw.com/",
+    ];
+
+    return otherURLs.map((url) => ({
+      loc: url,
+      changefreq: "daily",
+      priority: 0.7,
+      lastmod: new Date().toISOString(),
+    }));
+  },
+  transform: async (config, path) => {
+    if (path.includes("/home")) {
+      return {
+        loc: path.replace("/home", "/"),
+        changefreq: config.changefreq,
+        priority: 1.0,
+        lastmod: config.lastmod || new Date().toISOString(),
+      };
+    } else if (path.includes("/500") || path.includes("/404")) {
+      return null;
+    }
+
+    return {
+      loc: path,
+      changefreq: config.changefreq,
+      priority: config.priority,
+      lastmod: config.lastmod || new Date().toISOString(),
+    };
+  },
   robotsTxtOptions: {
     policies: [
       {
         userAgent: "*",
         allow: "/",
-        disallow: "/404",
+        disallow: [
+          "/404",
+          "/500",
+          "/ssw/Redirect",
+          "/ssw/CodeAuditor",
+          "/ssw/Version.aspx",
+          "/ssw/LinkAuditor",
+        ],
       },
     ],
     additionalSitemaps: [
       // TODO: add sitemaps for other sites when they are available
       // 'https://www.ssw.com.au/people/sitemap.xml',
       // 'https://www.ssw.com.au/rules/sitemap.xml',
-      "https://www.ssw.com.au/ssw/sitemap.xml",
+      // Removed v1 sitemap as its a duplication of bunch of Next.js pages - coming from
+      // "https://www.ssw.com.au/ssw/sitemap.xml",
       "https://www.ssw.com.au/history/sitemap.xml",
     ],
   },

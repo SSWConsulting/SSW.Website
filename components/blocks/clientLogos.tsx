@@ -13,8 +13,9 @@ export const ClientLogos = () => {
             key={client.clientName}
             src={client.imageUrl}
             alt={client.clientName + " logo"}
-            height={50}
+            height={113}
             width={200}
+            sizes="20vw"
             className="my-4 max-w-full rounded-lg"
           />
         ))}
