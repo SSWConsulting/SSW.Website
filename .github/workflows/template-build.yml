@@ -22,6 +22,9 @@ on:
       NEXT_PUBLIC_ZENDESK_CHAT_KEY:
         required: true
 
+env:
+  PRODUCTION_TAG: staging
+
 defaults:
   run:
     shell: pwsh
@@ -79,7 +82,7 @@ jobs:
         run: |
           # AppInsight - Connection String
           az config set extension.use_dynamic_install=yes_without_prompt
-          $AppInsightName = if (("${{ inputs.tag }}" -ieq "production") -or ("${{ inputs.tag }}" -ieq "staging")) { "${{ env.APP_INSIGHT_PROD }}" } else { "${{ env.APP_INSIGHT_DEV }}" }
+          $AppInsightName = if ("${{ inputs.tag }}" -ieq "${{ env.PRODUCTION_TAG }}"") { "${{ env.APP_INSIGHT_PROD }}" } else { "${{ env.APP_INSIGHT_DEV }}" }
 
           $AppInsightConnectionString = (az monitor app-insights component show --resource-group ${{ env.AZURE_RESOURCE_GROUP }} --app $AppInsightName --query connectionString -o tsv)
           echo "AppInsightConnectionString=$AppInsightConnectionString" >> $env:GITHUB_OUTPUT
