@@ -2,6 +2,11 @@
   "newsletters_year": "2024",
   "newsletters": [
     {
+      "month": 3,
+      "file": "/images/newsletter-uploads/2024/_2024_03__.NET Migrations Made Easy__.html",
+      "description": ".NET 8 Migrations Made Easy"
+    },
+    {
       "month": 1,
       "file": "/images/newsletter-uploads/2024/_2024_01__Adams 2023 - Year in Review__.html",
       "description": "Adam’s 2023 Year in Review"
