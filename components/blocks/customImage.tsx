@@ -2,6 +2,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import type { Template } from "tinacms";
 import { CustomLink } from "../customLink";
+import { CustomClasses } from "../util/constants";
 
 type textColor = "text-white" | "text-sswBlack";
 type alignment = "items-start" | "items-center" | "items-end";
@@ -13,10 +14,9 @@ export type CustomImageProps = {
   height?: number;
   width?: number;
   link?: string;
-  customClass?: string;
+  customClass?: string | keyof typeof CustomClasses;
   caption?: string;
   captionColor?: textColor;
-  sizes?: string;
 };
 
 // To Update the screenshots of PowerBi reports on Consulting Options (i.e /consulting/consulting), here is the link - https://github.com/SSWConsulting/SSW.Website/wiki/Consulting-options-%E2%80%90-Updating-screenshots
@@ -35,8 +35,10 @@ export const CustomImage = ({ data }: { data: CustomImageProps }) => {
             alt={data.altText}
             height={data.height || 400}
             width={data.width || 400}
-            className={classNames("inline-block", data.customClass ?? "")}
-            sizes={data.sizes}
+            className={classNames(
+              "inline-block",
+              (CustomClasses[data.customClass] || data.customClass) ?? ""
+            )}
           />
           {data.caption && (
             <p
@@ -112,6 +114,7 @@ export const customImageBlockSchema: Template = {
       type: "string",
       label: "Custom Class (optional)",
       name: "customClass",
+      options: Object.keys(CustomClasses),
       required: false,
     },
     {
@@ -135,14 +138,6 @@ export const customImageBlockSchema: Template = {
           value: "text-white",
         },
       ],
-    },
-    {
-      type: "string",
-      name: "sizes",
-      label: "Sizes - Advanced (optional)",
-      description:
-        "See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#sizes or https://nextjs.org/docs/pages/api-reference/components/image#sizes for more info",
-      required: false,
     },
   ],
 };
