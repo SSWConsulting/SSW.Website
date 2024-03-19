@@ -22,9 +22,6 @@ on:
       NEXT_PUBLIC_ZENDESK_CHAT_KEY:
         required: true
 
-env:
-  PRODUCTION_TAG: staging
-
 defaults:
   run:
     shell: pwsh
