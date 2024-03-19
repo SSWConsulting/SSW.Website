@@ -3,7 +3,6 @@ import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import { InferGetStaticPropsType } from "next";
 import { useReportWebVitals } from "next/web-vitals";
-import { useEffect } from "react";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../.tina/__generated__/client";
@@ -41,12 +40,6 @@ export default function HomePage(
         break;
     }
   });
-
-  useEffect(() => {
-    appInsights.trackMetric({ name: "TEST_EVENT", average: 42 }, {});
-    // eslint-disable-next-line no-console
-    console.log("appInsights", appInsights);
-  }, [appInsights]);
 
   // Here due to components attempting to access pageBlock items before
   // they are initialised
