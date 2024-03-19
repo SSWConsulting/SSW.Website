@@ -170,7 +170,7 @@ export const sswColors = {
   "#797979": "bg-ssw-gray",
 };
 
-export const CustomClasses = {
+export const customClasses = {
   none: "",
   "Only mobile top margin (mt-6)": "mt-6 md:mt-0",
   "Top margin (mt-6)": "mt-6",
