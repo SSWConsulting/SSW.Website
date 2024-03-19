@@ -8,6 +8,7 @@ import { ClientLogos } from "./blocks/clientLogos";
 import { Content } from "./blocks/content";
 import { ContentCard } from "./blocks/contentCard";
 import { CustomImage } from "./blocks/customImage";
+import { FixedColumns } from "./blocks/fixedColumns";
 import { JotFormEmbed } from "./blocks/jotFormEmbed";
 import { ServiceCards } from "./blocks/serviceCards";
 import { TableLayout } from "./blocks/tableLayout";
@@ -94,6 +95,7 @@ const componentMap = {
   ColorBlock,
   DownloadBlock,
   GridLayout,
+  FixedColumns,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
