@@ -26,6 +26,8 @@ const bgOptions = {
   black: "bg-sswBlack",
   grey: "bg-gray-100",
   white: "bg-white",
+  darkgrey: "bg-gray-650",
+  darkgreen: "bg-[#3a4b49]",
 };
 
 export const DownloadBlock = (data: DownloadBlockProps) => {
