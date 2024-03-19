@@ -20,7 +20,7 @@ resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2022-10
   }
 }
 
-  resource applicationInsights 'Microsoft.Insights/components@2020-02-02' = {
+resource applicationInsights 'Microsoft.Insights/components@2020-02-02' = {
   name: appInsightName
   location: location
   kind: 'web'
@@ -31,7 +31,7 @@ resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2022-10
     Request_Source: 'rest'
     WorkspaceResourceId: logAnalyticsWorkspace.id
   }
-  }
+}
 
 output applicationInsightsId string = applicationInsights.id
 output appInsightConnectionString string = applicationInsights.properties.ConnectionString

@@ -38,6 +38,10 @@ var value = {
   'cost-category': 'value'
 }
 
+var dev = {
+  'cost-category': 'dev/test'
+}
+
 module acr 'acr.bicep' = {
   name: 'acr-${now}'
   params: {
@@ -58,6 +62,15 @@ module appInsight 'appInsight.bicep' = {
     projectName: projectName
     location: location
     tags: value
+  }
+}
+
+module appInsightLocal 'appInsight.bicep' = {
+  name: 'appInsight-local-${now}'
+  params: {
+    projectName: '${projectName}-local'
+    location: location
+    tags: dev
   }
 }
 
