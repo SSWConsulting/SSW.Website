@@ -139,5 +139,13 @@ export const customImageBlockSchema: Template = {
         },
       ],
     },
+    {
+      type: "string",
+      name: "sizes",
+      label: "Sizes - Advanced (optional)",
+      description:
+        "See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#sizes or https://nextjs.org/docs/pages/api-reference/components/image#sizes for more info",
+      required: false,
+    },
   ],
 };
