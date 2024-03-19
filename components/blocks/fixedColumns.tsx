@@ -7,7 +7,7 @@ import { componentRenderer } from "./mdxComponentRenderer";
 
 interface FixedColumnsProps {
   data: {
-    header?: string;
+    headerSection?: TinaMarkdownContent;
     firstColBody: TinaMarkdownContent;
     secondColBody: TinaMarkdownContent;
   };
@@ -16,7 +16,11 @@ interface FixedColumnsProps {
 export const FixedColumns = ({ data }: FixedColumnsProps) => {
   return (
     <>
-      {data.header && <h3 className="py-4">{data.header}</h3>}
+      {data.headerSection && (
+        <h3 className="py-4">
+          <TinaMarkdown content={data.headerSection} />
+        </h3>
+      )}
       <div className="grid md:grid-cols-2 md:gap-6">
         <div>
           <TinaMarkdown
@@ -40,9 +44,9 @@ export const fixedColumnsSchema: Template = {
   label: "Fixed Column Layout (2 columns)",
   fields: [
     {
-      type: "string",
-      label: "Header",
-      name: "header",
+      type: "rich-text",
+      label: "Header Section (Optional)",
+      name: "headerSection",
     },
     {
       type: "rich-text",

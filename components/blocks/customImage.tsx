@@ -2,7 +2,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import type { Template } from "tinacms";
 import { CustomLink } from "../customLink";
-import { CustomClasses } from "../util/constants";
+import { customClasses } from "../util/constants";
 
 type textColor = "text-white" | "text-sswBlack";
 type alignment = "items-start" | "items-center" | "items-end";
@@ -14,7 +14,7 @@ export type CustomImageProps = {
   height?: number;
   width?: number;
   link?: string;
-  customClass?: string | keyof typeof CustomClasses;
+  customClass?: string | keyof typeof customClasses;
   caption?: string;
   captionColor?: textColor;
   sizes?: string;
@@ -38,7 +38,7 @@ export const CustomImage = ({ data }: { data: CustomImageProps }) => {
             width={data.width || 400}
             className={classNames(
               "inline-block",
-              (CustomClasses[data.customClass] || data.customClass) ?? ""
+              (customClasses[data.customClass] || data.customClass) ?? ""
             )}
             sizes={data.sizes}
           />
@@ -116,7 +116,7 @@ export const customImageBlockSchema: Template = {
       type: "string",
       label: "Custom Class (optional)",
       name: "customClass",
-      options: Object.keys(CustomClasses),
+      options: Object.keys(customClasses),
       required: false,
     },
     {
