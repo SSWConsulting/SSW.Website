@@ -2,11 +2,6 @@
   "newsletters_year": "2023",
   "newsletters": [
     {
-      "month": 11,
-      "file": "/images/newsletter-uploads/2023/_2023_11__Effective Feedback When and How to Offer It__.html",
-      "description": "Effective Feedback and How to Offer It"
-    },
-    {
       "month": 1,
       "file": "/images/newsletter-uploads/2023/_2023_01__Adams 2022 - A Year in Review__.html",
       "description": "Adams 2022 - A Year in Review"
@@ -50,6 +45,21 @@
       "month": 9,
       "file": "/images/newsletter-uploads/2023/_2023_09__Combine AI Models and Custom Software with Microsoft’s Semantic Kernel__.html",
       "description": "Combine AI Models & Custom Software with Microsoft’s Semantic Kernel"
+    },
+    {
+      "month": 10,
+      "file": "/images/newsletter-uploads/2023/_2023_10__Unleashing GPT-Powered Website ChatBots__.html",
+      "description": "Unleashing GPT-Powered Website Chatbots"
+    },
+    {
+      "month": 11,
+      "file": "/images/newsletter-uploads/2023/_2023_11__Effective Feedback When and How to Offer It__.html",
+      "description": "Effective Feedback and How to Offer It"
+    },
+    {
+      "month": 12,
+      "file": "/images/newsletter-uploads/2023/_2023_12__.NET Aspire – The Future of Microservices made simple for .NET 8__.html",
+      "description": ".NET Aspire – The Future of Microservices made simple for .NET 8"
     }
   ]
 }
