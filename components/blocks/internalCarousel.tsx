@@ -1,13 +1,14 @@
-import Image from "next/image";
-import * as React from "react";
+import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-import type { Template } from "tinacms";
-
-import { Carousel as CarouselImplementation } from "react-responsive-carousel";
-
+import Image from "next/image";
+import * as React from "react";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
+
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+import { Carousel as CarouselImplementation } from "react-responsive-carousel";
 
 export const InternalCarousel = ({ data }) => {
   return (
@@ -21,16 +22,22 @@ export const InternalCarousel = ({ data }) => {
         stopOnHover={true}
         renderIndicator={createCarouselIndicator}
       >
-        {data.items?.map(createCarouselItemImage)}
+        {data.items?.map((item, index) => (
+          <CarouselItemImage
+            key={index + item.label}
+            imgSrc={item.imgSrc}
+            label={item.label}
+          />
+        ))}
       </CarouselImplementation>
       {renderBody(data)}
     </Container>
   );
 };
 
-const createCarouselItemImage = ({ imgSrc, label }, index: React.Key) => {
+const CarouselItemImage = ({ imgSrc, label }) => {
   return (
-    <div key={index}>
+    <div className="cursor-pointer">
       <Image src={imgSrc} alt={label} height={0} width={0} sizes="100vw" />
       {/* `legend` required so that the carousel works properly */}
       <p className="legend sr-only">{label}</p>
@@ -75,18 +82,19 @@ const renderBody = ({ header, paragraph, website, technologies }) => {
       <div className="text-left prose-p:py-2">
         <TinaMarkdown content={paragraph} />
       </div>
-      <div className="flex flex-wrap">{technologies?.map(createTechBlock)}</div>
+      <div className="flex flex-wrap">
+        {technologies?.map((tech, index) => (
+          <TechBlock name={tech.name} key={index} />
+        ))}
+      </div>
       <div className="mb-7 mt-3 h-1 w-full bg-sswRed"></div>
     </div>
   );
 };
 
-const createTechBlock = ({ name }, index: React.Key) => {
+const TechBlock = ({ name }) => {
   return (
-    <div
-      className="my-0.5 mr-1 min-w-fit bg-sswRed px-2 py-1 text-left"
-      key={index}
-    >
+    <div className="my-0.5 mr-1 min-w-fit bg-sswRed px-2 py-1 text-left">
       {name}
     </div>
   );

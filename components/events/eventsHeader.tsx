@@ -1,14 +1,23 @@
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
+import { getBackgroundImage } from "../../helpers/images";
 import { Section } from "../util/section";
 
 const EventsHeader = ({ data }) => {
+  const {
+    props: { srcSet },
+  } = getImageProps({
+    src: data?.heroBackground || "/images/polygonBackground.png",
+    alt: "Events header background",
+    height: 724,
+    width: 1728,
+  });
+  const backgroundImage = getBackgroundImage(srcSet);
+
   return (
     <Section
       className="flex h-102 items-center justify-center border-b-8 border-sswRed bg-white bg-cover bg-no-repeat"
       style={{
-        backgroundImage: `url(${
-          data?.heroBackground || "/images/polygonBackground.png"
-        })`,
+        backgroundImage,
       }}
     >
       {data?.imgOverlay && (
@@ -18,6 +27,7 @@ const EventsHeader = ({ data }) => {
             alt={data?.altText}
             height={400}
             width={680}
+            priority
           />
         </div>
       )}

@@ -2,12 +2,17 @@ import classNames from "classnames";
 import { useState } from "react";
 import { Ripple } from "./ripple";
 
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  ripple?: boolean;
+  defaultClass?: string;
+}
+
 const Button = ({
   children,
   ripple,
   defaultClass = "bg-sswRed text-white rounded",
   ...props
-}) => {
+}: ButtonProps) => {
   const [hover, setHover] = useState(false);
 
   const buttonClassName = classNames(

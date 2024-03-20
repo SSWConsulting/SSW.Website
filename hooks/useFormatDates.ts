@@ -1,12 +1,12 @@
+import { EventTrimmed } from "@/components/filter/events";
 import { useEffect, useState } from "react";
 import {
   formatEventDate,
   formatEventLongDate,
   formatRelativeEventDate,
 } from "../helpers/dates";
-import { EventInfo } from "../services/server/events";
 
-export const useFormatDates = (event: EventInfo, formatLong: boolean) => {
+export const useFormatDates = (event: EventTrimmed, formatLong: boolean) => {
   const [relativeDate, setRelativeDate] = useState<string>("");
   const [formattedDate, setFormattedDate] = useState<string>("");
 

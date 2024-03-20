@@ -20,6 +20,7 @@ type UtilityButtonProps = {
   uncentered?: boolean;
   removeTopMargin?: boolean;
   openInNewTab?: boolean;
+  disabled?: boolean;
 };
 
 const utilIcons = {
@@ -45,6 +46,7 @@ export const UtilityButton = ({
   uncentered,
   removeTopMargin,
   openInNewTab,
+  disabled,
 }: UtilityButtonProps) => {
   const baseComponent = (
     <Button
@@ -56,7 +58,7 @@ export const UtilityButton = ({
         removeTopMargin ? "" : "mt-8",
         className
       )}
-      onClick={onClick}
+      onClick={() => !disabled && onClick()}
       data-aos={animated ? "fade-up" : undefined}
     >
       {buttonText}

@@ -1,6 +1,7 @@
 import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
-import { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
+import * as yup from "yup";
 
 import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
@@ -16,26 +17,22 @@ const CACHE_MINS = 60;
 const CACHE_SECS = CACHE_MINS * 60;
 const CACHE_KEY = "upcoming-events";
 
-const isCacheOutdated = async (cacheEvents) => {
-  return cacheEvents.some((event) => event.EndDateTime < Date.now());
-};
+const querySchema = yup.object({
+  top: yup.number().required().positive().integer().lessThan(50),
+  page: yup.number().notRequired().integer().moreThan(0).lessThan(5),
+});
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method === "GET") {
-    const topCountParam = req.query.top;
-    if (!topCountParam) {
-      res.status(400).json({ message: "Unsupported query param" });
-      return;
-    }
+  if (req.method !== "GET") {
+    res.status(405).json({ message: "Unsupported method" });
+    return;
+  }
 
-    const topCount = parseInt(topCountParam as string);
-    if (isNaN(topCount)) {
-      res.status(400).json({ message: "Invalid top count" });
-      return;
-    }
+  try {
+    const query = await querySchema.validate(req.query);
 
     const startOfDay = dayjs()
       .tz("Australia/Sydney")
@@ -43,19 +40,23 @@ export default async function handler(
       .toISOString();
 
     const odataFilter = `$filter=fields/Enabled ne false \
-      and fields/EndDateTime gt '${startOfDay}'\
-      &$orderby=fields/StartDateTime asc\
-      &$top=${topCount}`;
+          and fields/EndDateTime gt '${startOfDay}'\
+          &$orderby=fields/StartDateTime asc\
+          &$top=${query.top}`;
 
     try {
-      const cachedEvents = cache.get(`${CACHE_KEY}-${topCount}`);
+      const cachedEvents = cache.get(`${CACHE_KEY}-${query.top}-${query.page}`);
 
       if (
         cachedEvents == undefined ||
         (cachedEvents && isCacheOutdated(cachedEvents))
       ) {
-        const events = await getEvents(odataFilter);
-        cache.set(`${CACHE_KEY}-${topCount}`, events, CACHE_SECS);
+        const events = await getEvents(odataFilter, query.page);
+        cache.set(
+          `${CACHE_KEY}-${query.top}-${query.page}`,
+          events,
+          CACHE_SECS
+        );
 
         res.setHeader("Cache-Control", `s-maxage=${CACHE_SECS}`);
         return res.status(200).json(events);
@@ -75,7 +76,6 @@ export default async function handler(
         properties.Status = err.response.status;
         properties.FailedSharePointRequest = true;
       }
-      console.error("err", err);
       appInsights.defaultClient.trackException({
         exception: err,
         properties,
@@ -83,7 +83,14 @@ export default async function handler(
       });
       res.status(500).json({ message: "SharePoint request failed" });
     }
-  } else {
-    res.status(405).json({ message: "Unsupported method" });
+  } catch (err) {
+    if (!(err instanceof yup.ValidationError)) {
+      return res.status(400).json({ message: "Invalid request" });
+    }
+    return res.status(400).json({ message: err.message });
   }
 }
+
+const isCacheOutdated = async (cacheEvents) => {
+  return cacheEvents.some((event) => event.EndDateTime < Date.now());
+};

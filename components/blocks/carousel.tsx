@@ -5,10 +5,15 @@ import { tinaField } from "tinacms/dist/react";
 
 import type { Template } from "tinacms";
 
-import { Carousel as CarouselImplementation } from "react-responsive-carousel";
-
+import dynamic from "next/dynamic";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
+
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+const CarouselImplementation = dynamic(() =>
+  import("react-responsive-carousel").then((module) => module.Carousel)
+);
 
 export const Carousel = ({ data }) => {
   const router = useRouter();
@@ -36,9 +41,10 @@ export const Carousel = ({ data }) => {
     >
       <Container
         size="custom"
-        className="w-full"
+        className={/* eslint-disable-line */ "aspect-carousel w-full"}
         data-tina-field={tinaField(data, carouselBlock.delay)}
       >
+        {/* @ts-expect-error next/dynamic */}
         <CarouselImplementation
           autoPlay={true}
           infiniteLoop={true}
@@ -55,20 +61,33 @@ export const Carousel = ({ data }) => {
           renderIndicator={createCarouselIndicator}
         >
           {data.items &&
-            data.items.map((props, index: React.Key) =>
-              createCarouselItemImage(props, index, data)
-            )}
+            data.items.map((item, index) => (
+              <CarouselItemImage
+                key={index + item.label}
+                imgSrc={item.imgSrc}
+                label={item.label}
+                index={index}
+                carouselSchema={item.carouselSchema}
+              />
+            ))}
         </CarouselImplementation>
       </Container>
     </Section>
   );
 };
 
-const createCarouselItemImage = (props, index: React.Key, carouselSchema) => {
-  const { imgSrc, label } = props;
+type CarouselItemImageProps = {
+  imgSrc: string;
+  label: string;
+  index: number;
+  carouselSchema: Record<string, unknown>;
+};
+
+const CarouselItemImage = (props: CarouselItemImageProps) => {
+  const { imgSrc, label, index, carouselSchema } = props;
+
   return (
     <div
-      key={index}
       data-tina-field={tinaField(
         carouselSchema,
         carouselBlock.items.value + `[${index}]`
@@ -79,7 +98,7 @@ const createCarouselItemImage = (props, index: React.Key, carouselSchema) => {
         alt={label}
         height={388}
         width={1080}
-        sizes="100vw"
+        priority={index === 0}
       />
       {/* `legend` required so that the carousel works properly */}
       <p className="legend sr-only">{label}</p>

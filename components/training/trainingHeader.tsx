@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
-import styles from "./training.module.css";
 
 type TrainingHeaderProps = {
   data: {
@@ -68,8 +68,7 @@ export const TrainingHeader = ({ data }: TrainingHeaderProps) => {
       {data?.person && (
         <Image
           className={classNames(
-            styles["carouselSubject"],
-            "block max-w-screen-md sm:max-w-full lg:absolute lg:bottom-0 lg:right-5 xl:right-80"
+            "!block !w-[470px] max-w-screen-md sm:max-w-full lg:absolute lg:bottom-0 lg:right-5 xl:right-80"
           )}
           src={data?.person}
           alt="person"

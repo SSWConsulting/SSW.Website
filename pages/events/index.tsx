@@ -1,16 +1,22 @@
+import {
+  HydrationBoundary,
+  QueryClient,
+  dehydrate,
+} from "@tanstack/react-query";
 import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
-import { InferGetStaticPropsType } from "next";
+import { EVENTS_QUERY_KEY } from "hooks/useFetchEvents";
+import type { InferGetStaticPropsType } from "next";
+import { getEvents } from "services/server/events";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import client from "../../.tina/__generated__/client";
 import { Blocks } from "../../components/blocks-renderer";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
-import { EventsFilter } from "../../components/filter/events";
+import { EventTrimmed, EventsFilter } from "../../components/filter/events";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
-import { getEvents } from "../../services/server/events";
 
 const ISR_TIME = 60 * 60; // 1 hour
 
@@ -24,7 +30,7 @@ export default function EventsIndexPage(
   });
 
   return (
-    <>
+    <HydrationBoundary state={props.dehydratedState}>
       <SEO seo={data.eventsIndex.seo} />
       <Layout menu={data.megamenu}>
         <Container size="small">
@@ -35,18 +41,14 @@ export default function EventsIndexPage(
               components={componentRenderer}
             />
           </div>
-          <EventsFilter
-            events={props.events}
-            pastEvents={props.pastEvents}
-            sidebarBody={data.eventsIndex.sidebarBody}
-          />
+          <EventsFilter sidebarBody={data.eventsIndex.sidebarBody} />
         </Container>
         <Blocks
           prefix="EventsIndexAfterEvents"
           blocks={data.eventsIndex.afterEvents}
         />
       </Layout>
-    </>
+    </HydrationBoundary>
   );
 }
 
@@ -58,20 +60,25 @@ export const getStaticProps = async () => {
   const startOfDay = new Date();
   startOfDay.setHours(0, 0, 0, 0);
 
-  const odataFilter = `$filter=fields/Enabled ne false \
+  const fields =
+    "Title,Thumbnail,StartDateTime,EndDateTime,City,Url,Presenter,PresenterProfileUrl,CalendarType,Category_f5a9cf4c_x002d_8228_x00,EventShortDescription";
+
+  const odataFilter = `$select=id&$expand=fields($select=${fields})&$filter=fields/Enabled ne false \
       and fields/EndDateTime gt '${startOfDay.toISOString()}'\
       &$orderby=fields/StartDateTime asc\
-      &$top=${20}`;
+      &$top=${10}`;
 
-  const pastOdataFilter = `$filter=fields/Enabled ne false \
-      and fields/StartDateTime lt '${startOfDay.toISOString()}'\
-      &$orderby=fields/StartDateTime desc\
-      &$top=${100}`;
+  const queryClient = new QueryClient();
 
-  let events, pastEvents;
   try {
-    events = await getEvents(odataFilter);
-    pastEvents = await getEvents(pastOdataFilter);
+    await queryClient.prefetchInfiniteQuery({
+      queryKey: [EVENTS_QUERY_KEY],
+      queryFn: async ({ pageParam = 1 }) => {
+        const events = await getEvents(odataFilter, pageParam);
+        return events as EventTrimmed[];
+      },
+      initialPageParam: 1,
+    });
   } catch (err) {
     const properties = {
       Request: "GET /events",
@@ -91,12 +98,6 @@ export const getStaticProps = async () => {
       properties,
       severity: appInsights.Contracts.SeverityLevel.Error,
     });
-
-    // eslint-disable-next-line no-console
-    console.error(err);
-
-    events = [];
-    pastEvents = [];
   }
 
   if (!tinaProps.data.eventsIndex.seo.canonical) {
@@ -108,8 +109,7 @@ export const getStaticProps = async () => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
-      events,
-      pastEvents,
+      dehydratedState: dehydrate(queryClient),
     },
     revalidate: ISR_TIME,
   };

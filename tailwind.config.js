@@ -239,6 +239,9 @@ module.exports = {
           black: "#333333",
           gray: { DEFAULT: "#797979", dark: "#666666", light: "#AAAAAA" },
         },
+        aspect: {
+          carousel: "1080/388",
+        },
       },
       typography: (theme) => ({
         DEFAULT: {
