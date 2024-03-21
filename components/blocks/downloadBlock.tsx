@@ -116,6 +116,7 @@ const DownloadButton = (data) => {
         href={link}
         className="done inline-flex w-full cursor-pointer px-4"
         target="_blank"
+        download
         data-tina-field={tinaField(schema, field)}
       >
         <FaFileDownload className="m-icon" />
