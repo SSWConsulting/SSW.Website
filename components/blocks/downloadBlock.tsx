@@ -1,11 +1,13 @@
-import classNames from "classnames";
-import Image from "next/image";
 import { useState } from "react";
+import Image from "next/image";
+import classNames from "classnames";
+import { saveAs } from "file-saver";
 import { FaFileDownload } from "react-icons/fa";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
-import { CustomLink } from "../customLink";
+
 import { Container } from "../util/container";
+import Button from "../button/button";
 
 export type DownloadBlockProps = {
   title?: string;
@@ -112,17 +114,15 @@ const DownloadButton = (data) => {
   const { link, text, schema, field } = data;
   return (
     <div className={classNames("col-span-1 w-full bg-gray-100 p-4")}>
-      <CustomLink
-        href={link}
+      <Button
         className="done inline-flex w-full cursor-pointer px-4"
-        target="_blank"
-        download
+        onClick={() => saveAs(link)}
         data-tina-field={tinaField(schema, field)}
       >
         <FaFileDownload className="m-icon" />
 
         {text}
-      </CustomLink>
+      </Button>
     </div>
   );
 };
