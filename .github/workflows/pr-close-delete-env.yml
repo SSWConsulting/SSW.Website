@@ -116,9 +116,17 @@ jobs:
 
       - name: Delete all untagged images
         run: |
-          $untaggedDigests = az acr manifest list-metadata -r  ${{ env.ACR_NAME }} -n `
-          ${{ env.IMAGE_NAME }} --query "[?tags==null].digest" -o tsv | `
-          %{ az acr repository delete -n ${{ env.ACR_NAME }} -t ${{ env.IMAGE_NAME }}@$_ --yes}
+          az acr manifest list-metadata `
+          -r ${{ env.ACR_NAME }} `
+          -n ${{ env.IMAGE_NAME }} `
+          --query "[?tags==null].digest" `
+          -o tsv | `
+          %{ `
+            az acr repository delete `
+            -n ${{ env.ACR_NAME }} `
+            -t ${{ env.IMAGE_NAME }}@$_ `
+            --yes `
+          }
           Write-Host "✅ All untagged images have been deleted"
 
       - name: ACR - Delete image
