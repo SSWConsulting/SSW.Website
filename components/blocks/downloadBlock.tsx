@@ -112,11 +112,17 @@ const Download = (data: Downloads) => {
 
 const DownloadButton = (data) => {
   const { link, text, schema, field } = data;
+  const match = link.match(/\/([^/]+)(?=\.\w+$)/);
+  const filename = match ? match[1] : "download";
   return (
     <div className={classNames("col-span-1 w-full bg-gray-100 p-4")}>
       <Button
         className="done inline-flex w-full cursor-pointer px-4"
-        onClick={() => saveAs(link)}
+        onClick={() => {
+          fetch(link)
+            .then((res) => res.blob())
+            .then((blob) => saveAs(blob, filename));
+        }}
         data-tina-field={tinaField(schema, field)}
       >
         <FaFileDownload className="m-icon" />
