@@ -319,6 +319,7 @@ const LoadMore = ({ load, isLoading }: LoadMoreProps) => {
       <UtilityButton
         onClick={() => !isLoading && load()}
         buttonText="Load More"
+        size="small"
         className="!mt-0"
       />
       {isLoading && (
