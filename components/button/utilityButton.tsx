@@ -58,7 +58,7 @@ export const UtilityButton = ({
         removeTopMargin ? "" : "mt-8",
         className
       )}
-      onClick={() => !disabled && onClick()}
+      onClick={() => !disabled && onClick && onClick()}
       data-aos={animated ? "fade-up" : undefined}
     >
       {buttonText}
