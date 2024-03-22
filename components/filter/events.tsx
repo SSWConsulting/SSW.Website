@@ -323,7 +323,7 @@ const LoadMore = ({ load, isLoading }: LoadMoreProps) => {
         className="!mt-0"
       />
       {isLoading && (
-        <p className="flex flex-row pt-6 text-xl">
+        <p className="text-md flex flex-row items-center pt-6">
           <FaSpinner className="m-icon animate-spin" /> Loading more...
         </p>
       )}
