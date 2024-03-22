@@ -10,6 +10,7 @@ import { Container } from "../util/container";
 export type DownloadBlockProps = {
   title?: string;
   downloads: Downloads[] | [];
+  bottomBorder?: boolean;
 };
 
 export type Downloads = {
@@ -31,7 +32,7 @@ const bgOptions = {
 };
 
 export const DownloadBlock = (data: DownloadBlockProps) => {
-  const { title, downloads } = data;
+  const { title, downloads, bottomBorder } = data;
   return (
     <Container className="prose !px-0 py-4 prose-img:my-0">
       <h2 data-tina-field={tinaField(data, "title")}>{title}</h2>
@@ -41,6 +42,7 @@ export const DownloadBlock = (data: DownloadBlockProps) => {
           <Download key={index} {...download} />
         ))}
       </div>
+      {bottomBorder && <hr />}
     </Container>
   );
 };
@@ -193,6 +195,11 @@ export const downloadBlockSchema: Template = {
           uploadDir: () => "company-logos/downloads/",
         },
       ],
+    },
+    {
+      type: "boolean",
+      label: "Bottom border",
+      name: "bottomBorder",
     },
   ],
 };
