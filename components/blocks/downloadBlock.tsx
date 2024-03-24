@@ -59,7 +59,7 @@ const Download = (data: Downloads) => {
     secondLinkText,
   } = data;
 
-  const srcImage = img && !isImgBroken ? img : "/images/broken-image.png";
+  const srcImage = img && !isImgBroken ? img : "/images/broken-image.jpg";
   return (
     <div className="col-span-1">
       <div className={classNames("py-3 text-black md:px-6")}>
@@ -78,7 +78,7 @@ const Download = (data: Downloads) => {
               alt={header}
               height={400}
               width={210}
-              style={{ width: "100%", height: "auto" }}
+              style={{ width: "auto", height: "100%" }}
             />
           )}
         </div>
