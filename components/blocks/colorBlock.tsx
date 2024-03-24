@@ -51,7 +51,7 @@ const ColorRow = (props: ColorRow) => {
     <>
       <div
         className={classNames(
-          "col-span-1 my-0 flex flex-col items-center justify-center px-4 md:h-10",
+          "col-span-1 my-0 flex flex-col items-center justify-center px-4",
           sswColors[`${firstColor}`]
         )}
       >
@@ -61,7 +61,7 @@ const ColorRow = (props: ColorRow) => {
       </div>
       <div
         className={classNames(
-          "col-span-1 my-0 flex flex-col items-center justify-center px-4 md:h-10",
+          "col-span-1 my-0 flex flex-col items-center justify-center px-4 ",
           sswColors[`${secondColor}`]
         )}
       >

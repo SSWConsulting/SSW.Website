@@ -58,6 +58,8 @@ const Download = (data: Downloads) => {
     secondLink,
     secondLinkText,
   } = data;
+
+  const srcImage = img && !isImgBroken ? img : "/images/broken-image.jpg";
   return (
     <div className="col-span-1">
       <div className={classNames("py-3 text-black md:px-6")}>
@@ -69,10 +71,10 @@ const Download = (data: Downloads) => {
           )}
           data-tina-field={tinaField(data, "img")}
         >
-          {img && !isImgBroken && (
+          {img && (
             <Image
               onError={() => setIsImgBroken(true)}
-              src={img}
+              src={srcImage}
               alt={header}
               height={400}
               width={210}
