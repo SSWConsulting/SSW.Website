@@ -38,7 +38,7 @@ const CopyrightInfo = () => {
       <div>
         &copy; 1990-{new Date().getFullYear()} SSW. All rights reserved.
       </div>
-      <div>
+      <div className="text-center">
         <CustomLink href={chooseIssueURL}>FEEDBACK TO SSW</CustomLink>
         <Divider />
         <CustomLink href="/terms-and-conditions">
