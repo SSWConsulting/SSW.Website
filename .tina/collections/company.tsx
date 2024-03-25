@@ -9,6 +9,7 @@ import {
   tableBlockSchema,
   customDownloadButtonSchema,
   colorBlockSchema,
+  carouselBlockSchema,
 } from "../../components/blocks";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
 import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
@@ -55,6 +56,7 @@ export const companySchema: Collection = {
         tableBlockSchema,
         customDownloadButtonSchema,
         colorBlockSchema,
+        carouselBlockSchema,
         Schemas.utilityButtonSchema,
       ],
     },
