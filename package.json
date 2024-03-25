@@ -57,7 +57,7 @@
     "@next/bundle-analyzer": "^14.0.4",
     "@tailwindcss/typography": "^0.5.10",
     "@tanstack/react-query": "^5.25.0",
-    "@tanstack/react-query-devtools": "^5.26.3",
+    "@tanstack/react-query-devtools": "^5.27.0",
     "animate-css-grid": "^1.5.1",
     "aos": "^2.3.4",
     "applicationinsights": "^2.9.5",
