@@ -40,8 +40,8 @@ export default function CompanyPage(
     >
       <div>
         <SEO seo={props.seo} />
-
         <Layout menu={data.megamenu}>
+          <Blocks prefix="CompanyBeforeBody" blocks={data.company.beforeBody} />
           {data.company.seo?.showBreadcrumb === null ||
             (data.company.seo?.showBreadcrumb && (
               <Section className="mx-auto w-full max-w-9xl px-8 py-5">

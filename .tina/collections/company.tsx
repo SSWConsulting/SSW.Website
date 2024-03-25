@@ -38,6 +38,16 @@ export const companySchema: Collection = {
     // @ts-ignore
     seoSchema,
     {
+      type: "object",
+      list: true,
+      name: "beforeBody",
+      label: "Before body",
+      ui: {
+        visualSelector: true,
+      },
+      templates: [carouselBlockSchema],
+    },
+    {
       type: "string",
       name: "title",
       label: "Title",
