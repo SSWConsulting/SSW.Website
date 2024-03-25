@@ -4,15 +4,7 @@ on:
   pull_request:
     branches:
       - main
-      inputs:
-        deploy_url:
-          description: 'URL of the deployment to test'
-          default: https://app-sswwebsite-9eb3-pr-2363.azurewebsites.net/
-          required: true
-        tests_to_run:
-          description: 'Tests to run'
-          required: true
-          default: images
+
   workflow_call:
     inputs:
       deploy_url:
@@ -21,6 +13,10 @@ on:
       tests_to_run:
         type: string
         required: true
+
+env:
+  deploy_url: ${{ inputs.deploy_url ||  'https://app-sswwebsite-9eb3-pr-2363.azurewebsites.net/'}}
+  tests_to_run: ${{ inputs.tests_to_run || 'images'}}
 
 jobs:
   test:
@@ -46,17 +42,17 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium webkit
 
-      - name: Check that ${{ inputs.deploy_url }} is running
+      - name: Check that ${{ env.deploy_url }} is running
         uses: jtalk/url-health-check-action@v4
         with:
-          url: ${{ inputs.deploy_url }}
+          url: ${{ env.deploy_url }}
           max-attempts: 12
           retry-delay: 10s
 
       - name: Run Playwright tests
-        run: npx playwright test ${{ inputs.tests_to_run }}
+        run: npx playwright test ${{ env.tests_to_run }}
         env:
-          HOST_URL: ${{ inputs.deploy_url }}
+          HOST_URL: ${{ env.deploy_url }}
 
       - uses: actions/upload-artifact@v4
         if: always()
