@@ -5,6 +5,10 @@ import {
   fixedColumnsSchema,
   testimonialsListSchema,
   verticalImageLayoutBlockSchema,
+  sectionHeaderSchema,
+  tableBlockSchema,
+  customDownloadButtonSchema,
+  colorBlockSchema,
 } from "../../components/blocks";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
 import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
@@ -47,6 +51,10 @@ export const companySchema: Collection = {
         verticalImageLayoutBlockSchema,
         tripleColumnImageBlockSchema,
         fixedColumnsSchema,
+        sectionHeaderSchema,
+        tableBlockSchema,
+        customDownloadButtonSchema,
+        colorBlockSchema,
         Schemas.utilityButtonSchema,
       ],
     },
