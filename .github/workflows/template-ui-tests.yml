@@ -1,6 +1,18 @@
 name: Deploy - UI Tests
 
 on:
+  pull_request:
+    branches:
+      - main
+      inputs:
+        deploy_url:
+          description: 'URL of the deployment to test'
+          default: https://app-sswwebsite-9eb3-pr-2363.azurewebsites.net/
+          required: true
+        tests_to_run:
+          description: 'Tests to run'
+          required: true
+          default: images
   workflow_call:
     inputs:
       deploy_url:
