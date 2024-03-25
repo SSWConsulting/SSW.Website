@@ -73,22 +73,20 @@ export default function CompanyPage(
               {(data.company.sidebar ||
                 data.company.sidebarTestimonial ||
                 data.company.showRdPanel) && (
-                <>
-                  <div className="max-w-sm shrink pl-16">
-                    {data.company.sidebar && (
-                      <TinaMarkdown
-                        content={data.company.sidebar}
-                        components={componentRenderer}
-                      />
-                    )}
-                    {data.company.sidebarTestimonial && (
-                      <TestimonialPanel
-                        testimonialName={data.company.sidebarTestimonial}
-                      />
-                    )}
-                    {data.company.showRdPanel && <RDPanel />}
-                  </div>
-                </>
+                <div className="min-w-fit max-w-sm shrink pl-16">
+                  {data.company.sidebar && (
+                    <TinaMarkdown
+                      content={data.company.sidebar}
+                      components={componentRenderer}
+                    />
+                  )}
+                  {data.company.sidebarTestimonial && (
+                    <TestimonialPanel
+                      testimonialName={data.company.sidebarTestimonial}
+                    />
+                  )}
+                  {data.company.showRdPanel && <RDPanel />}
+                </div>
               )}
             </section>
           )}
