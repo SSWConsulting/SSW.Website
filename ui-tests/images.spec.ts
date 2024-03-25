@@ -1,6 +1,6 @@
 import test, { expect } from "@playwright/test";
 
-test("Images load successfully on index", async ({ page }) => {
+test("Images load successfully on index", async ({ page, browser }) => {
   await page.on("response", (response) => {
     if (response.request().resourceType() === "image") {
       expect(response.status() < 400).toBeTruthy();
@@ -19,12 +19,19 @@ test("Images load successfully on index", async ({ page }) => {
   });
 
   for (let i = 0; i < sizes.pageHeight; i += sizes.browserHeight) {
-    await page.mouse.wheel(0, i);
+    if (browser.browserType().name() === "webkit") {
+      await page.touchscreen.tap(0, i);
+    } else {
+      await page.mouse.wheel(0, i);
+    }
     await page.waitForTimeout(100);
   }
 });
 
-test("Images load successfully on consulting page", async ({ page }) => {
+test("Images load successfully on consulting page", async ({
+  page,
+  browser,
+}) => {
   await page.on("response", (response) => {
     if (response.request().resourceType() === "image") {
       expect(response.status() < 400).toBeTruthy();
@@ -45,7 +52,11 @@ test("Images load successfully on consulting page", async ({ page }) => {
   });
 
   for (let i = 0; i < sizes.pageHeight; i += sizes.browserHeight) {
-    await page.mouse.wheel(0, i);
+    if (browser.browserType().name() === "webkit") {
+      await page.touchscreen.tap(0, i);
+    } else {
+      await page.mouse.wheel(0, i);
+    }
     await page.waitForTimeout(100);
   }
 });
