@@ -10,7 +10,7 @@ export const SectionHeader = (props: SectionHeaderProps) => {
   return (
     <h3
       id={headerText.toLowerCase().replaceAll(" ", "-")}
-      className="bg-gray-400 p-2 text-base text-white"
+      className="bg-gray-600 p-2 text-base text-white"
     >
       {headerText}
     </h3>
