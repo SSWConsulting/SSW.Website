@@ -6,7 +6,15 @@ export type SectionHeaderProps = {
 
 export const SectionHeader = (props: SectionHeaderProps) => {
   const { headerText } = props;
-  return <h3 className="bg-gray-400 p-2 text-base text-white">{headerText}</h3>;
+
+  return (
+    <h3
+      id={headerText.toLowerCase().replaceAll(" ", "-")}
+      className="bg-gray-400 p-2 text-base text-white"
+    >
+      {headerText}
+    </h3>
+  );
 };
 
 export const sectionHeaderSchema: Template = {
