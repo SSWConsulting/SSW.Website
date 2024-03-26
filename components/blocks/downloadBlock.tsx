@@ -111,17 +111,24 @@ const Download = (data: Downloads) => {
   );
 };
 
-const DownloadButton = (data) => {
+const DownloadButton = (data: {
+  link: string;
+  text: string;
+  schema: Downloads;
+  field: keyof Downloads;
+}) => {
   const { link, text, schema, field } = data;
 
   const {
     props: { src },
   } = getImageProps({ alt: "", src: link, width: 400, height: 400 });
 
+  const isPng = link.endsWith(".png");
+
   return (
     <div className={classNames("col-span-1 w-full bg-gray-100 p-4")}>
       <CustomLink
-        href={src}
+        href={isPng ? src : link}
         className="done inline-flex w-full cursor-pointer px-4"
         target="_blank"
         download
