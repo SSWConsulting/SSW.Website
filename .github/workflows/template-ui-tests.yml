@@ -9,11 +9,17 @@ on:
       tests_to_run:
         type: string
         required: true
+      reporter:
+        type: string
+        default: ""
+        required: false
 
 jobs:
   test:
     name: Run Playwright tests
     runs-on: ubuntu-latest
+    outputs:
+      status: ${{ steps.run.outputs.status }}
 
     steps:
       - uses: actions/checkout@v4
@@ -42,7 +48,10 @@ jobs:
           retry-delay: 10s
 
       - name: Run Playwright tests
-        run: npx playwright test ${{ inputs.tests_to_run }}
+        id: run
+        run: |
+          $status = npx playwright test ${{ inputs.tests_to_run }} ${{ inputs.reporter }}
+          echo "status=$status" >> $env:GITHUB_OUTPUT
         env:
           HOST_URL: ${{ inputs.deploy_url }}
 
@@ -52,3 +61,12 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 2
+
+  notify-team:
+    name: Send email notification
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Send email
+        run: |
+          echo "Playwright tests status: ${{ needs.test.outputs.status }}"
