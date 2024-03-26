@@ -319,10 +319,11 @@ const LoadMore = ({ load, isLoading }: LoadMoreProps) => {
       <UtilityButton
         onClick={() => !isLoading && load()}
         buttonText="Load More"
+        size="small"
         className="!mt-0"
       />
       {isLoading && (
-        <p className="flex flex-row pt-6 text-xl">
+        <p className="flex flex-row items-center pt-3 text-base">
           <FaSpinner className="m-icon animate-spin" /> Loading more...
         </p>
       )}

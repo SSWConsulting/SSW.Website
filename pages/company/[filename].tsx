@@ -1,6 +1,8 @@
 import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import classNames from "classnames";
+
 import client from "../../.tina/__generated__/client";
 import { Blocks } from "../../components/blocks-renderer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
@@ -40,8 +42,8 @@ export default function CompanyPage(
     >
       <div>
         <SEO seo={props.seo} />
-
         <Layout menu={data.megamenu}>
+          <Blocks prefix="CompanyBeforeBody" blocks={data.company.beforeBody} />
           {data.company.seo?.showBreadcrumb === null ||
             (data.company.seo?.showBreadcrumb && (
               <Section className="mx-auto w-full max-w-9xl px-8 py-5">
@@ -73,22 +75,24 @@ export default function CompanyPage(
               {(data.company.sidebar ||
                 data.company.sidebarTestimonial ||
                 data.company.showRdPanel) && (
-                <>
-                  <div className="max-w-sm shrink pl-16">
-                    {data.company.sidebar && (
-                      <TinaMarkdown
-                        content={data.company.sidebar}
-                        components={componentRenderer}
-                      />
-                    )}
-                    {data.company.sidebarTestimonial && (
-                      <TestimonialPanel
-                        testimonialName={data.company.sidebarTestimonial}
-                      />
-                    )}
-                    {data.company.showRdPanel && <RDPanel />}
-                  </div>
-                </>
+                <div
+                  className={classNames("max-w-sm shrink pl-16", {
+                    "min-w-96": data.company.fixedWidthSidebar,
+                  })}
+                >
+                  {data.company.sidebar && (
+                    <TinaMarkdown
+                      content={data.company.sidebar}
+                      components={componentRenderer}
+                    />
+                  )}
+                  {data.company.sidebarTestimonial && (
+                    <TestimonialPanel
+                      testimonialName={data.company.sidebarTestimonial}
+                    />
+                  )}
+                  {data.company.showRdPanel && <RDPanel />}
+                </div>
               )}
             </section>
           )}

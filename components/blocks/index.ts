@@ -47,6 +47,7 @@ import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
+import { sectionHeaderSchema } from "./sectionHeader";
 
 export const pageBlocks: Template[] = [
   aboutUsBlockSchema,
@@ -96,6 +97,7 @@ export const pageBlocks: Template[] = [
   colorBlockSchema,
   downloadBlockSchema,
   gridLayoutSchema,
+  sectionHeaderSchema,
 ];
 
 export * from "../bookingButton/bookingButton";
@@ -116,9 +118,11 @@ export * from "./builtOnAzure";
 export * from "./carousel";
 export * from "./citation";
 export * from "./clientLogos";
+export * from "./colorBlock";
 export * from "./content";
 export * from "./contentCard";
 export * from "./customImage";
+export * from "./CustomDownloadButton";
 export * from "./dynamicColumns";
 export * from "./eventLink";
 export * from "./fixedColumns";
@@ -128,6 +132,7 @@ export * from "./hero";
 export * from "./jotFormEmbed";
 export * from "./newslettersTable";
 export * from "./recurringEvent";
+export * from "./sectionHeader";
 export * from "./serviceCards";
 export * from "./tableLayout";
 export * from "./testimonialsList";
