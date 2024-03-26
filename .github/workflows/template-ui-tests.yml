@@ -52,15 +52,15 @@ jobs:
         id: run
         shell: pwsh
         run: |
-          $status = npx playwright test ${{ inputs.tests_to_run }} ${{ inputs.reporter }}
+          $status = npx playwright test ${{ inputs.tests_to_run }}
           echo "Test status: $status"
           echo "status=$status" >> $env:GITHUB_OUTPUT
         env:
           HOST_URL: ${{ inputs.deploy_url }}
 
       - uses: actions/upload-artifact@v4
-        id: artifact-report
         if: always()
+        id: artifact-report
         with:
           name: playwright-report
           path: playwright-report/
@@ -70,6 +70,7 @@ jobs:
     name: GitHub Issue
     runs-on: ubuntu-latest
     needs: test
+    if: needs.test.outputs.status != 'passed' && inputs.reporter != ''
     steps:
       - uses: actions/checkout@v4
 
