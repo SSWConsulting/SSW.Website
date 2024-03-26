@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       status: ${{ steps.run.outputs.status }}
+      artifact-id: ${{ steps.artifact-report.outputs.artifact-id }}
 
     steps:
       - uses: actions/checkout@v4
@@ -57,17 +58,24 @@ jobs:
           HOST_URL: ${{ inputs.deploy_url }}
 
       - uses: actions/upload-artifact@v4
+        id: artifact-report
         if: always()
         with:
           name: playwright-report
           path: playwright-report/
           retention-days: 2
 
-  notify-team:
-    name: Send email notification
+  create-an-issue:
+    name: GitHub Issue
     runs-on: ubuntu-latest
     needs: test
     steps:
-      - name: Send email
-        run: |
-          echo "Playwright tests status: ${{ needs.test.outputs.status }}"
+      - name: Create an Issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TITLE: "Broken Images on Homepage"
+          ARTIFACT_ID: ${{ needs.test.outputs.artifact-id }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+        with:
+          filename: .github/ISSUE_TEMPLATE/auto_bug_report.md

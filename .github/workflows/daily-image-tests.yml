@@ -20,6 +20,7 @@ defaults:
 
 jobs:
   get-env-vars:
+    name: Get env vars
     runs-on: ubuntu-latest
     outputs:
       DEPLOY_URL: ${{ steps.envs.outputs.DEPLOY_URL }}
