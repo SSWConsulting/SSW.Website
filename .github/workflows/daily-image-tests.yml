@@ -12,7 +12,6 @@ on:
 env:
   DEPLOY_URL: "https://ssw.com.au"
   TESTS_TO_RUN: "images"
-  REPORTER: "--reporter='./ui-tests/reporter.ts'"
 
 defaults:
   run:
@@ -25,14 +24,12 @@ jobs:
     outputs:
       DEPLOY_URL: ${{ steps.envs.outputs.DEPLOY_URL }}
       TESTS_TO_RUN: ${{ steps.envs.outputs.TESTS_TO_RUN }}
-      REPORTER: ${{ steps.envs.outputs.REPORTER }}
     steps:
       - name: Get env
         id: envs
         run: |
           echo "DEPLOY_URL=${{ env.DEPLOY_URL }}" >> $env:GITHUB_OUTPUT
           echo "TESTS_TO_RUN=${{env.TESTS_TO_RUN }}" >> $env:GITHUB_OUTPUT
-          echo "REPORTER=${{env.REPORTER }}" >> $env:GITHUB_OUTPUT
 
   check-broken-images:
     name: Run Playwright Tests
@@ -41,4 +38,4 @@ jobs:
     with:
       deploy_url: ${{ needs.get-env-vars.outputs.DEPLOY_URL }}
       tests_to_run: ${{ needs.get-env-vars.outputs.TESTS_TO_RUN }}
-      reporter: ${{ needs.get-env-vars.outputs.REPORTER }}
+      create-issue: true
