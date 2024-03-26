@@ -78,6 +78,11 @@ export const companySchema: Collection = {
       templates: [microsoftPanelSchema],
     },
     {
+      type: "boolean",
+      name: "fixedWidthSidebar",
+      label: "Fixed width sidebar"
+    },
+    {
       type: "string",
       name: "sidebarTestimonial",
       label: "Sidebar Testimonial",

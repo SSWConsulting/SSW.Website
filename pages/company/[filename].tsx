@@ -1,6 +1,8 @@
 import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import classNames from "classnames";
+
 import client from "../../.tina/__generated__/client";
 import { Blocks } from "../../components/blocks-renderer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
@@ -73,7 +75,11 @@ export default function CompanyPage(
               {(data.company.sidebar ||
                 data.company.sidebarTestimonial ||
                 data.company.showRdPanel) && (
-                <div className="min-w-fit max-w-sm shrink pl-16">
+                <div
+                  className={classNames("max-w-sm shrink pl-16", {
+                    "min-w-96": data.company.fixedWidthSidebar,
+                  })}
+                >
                   {data.company.sidebar && (
                     <TinaMarkdown
                       content={data.company.sidebar}
