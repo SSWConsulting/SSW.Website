@@ -7,6 +7,7 @@ interface CustomLinkProps extends PropsWithChildren {
   className?: string;
   title?: string;
   style?: React.CSSProperties;
+  download?: boolean;
 }
 
 const externalSSWSitePatterns =
@@ -31,6 +32,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
   children,
   title,
   style,
+  download,
   ...props
 }) => {
   const isExternal = isExternalLink(href);
@@ -48,6 +50,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
           rel={rel}
           title={title}
           style={style}
+          download={download}
           {...props}
         >
           {children}
@@ -58,6 +61,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
           target={target}
           href={href}
           title={title}
+          download={download}
           {...props}
           style={style}
         >
