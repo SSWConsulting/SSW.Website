@@ -13,6 +13,7 @@ import type { TripleColumnImageBlockProps } from "./tripleColumnImageBlock";
 import type { YoutubePlaylistProps } from "./youtubePlaylist";
 
 import { BookingButton } from "../bookingButton/bookingButton";
+import { SectionHeaderProps } from "./sectionHeader";
 
 const UtilityButton = dynamic(() =>
   import("../button/utilityButton").then((mod) => mod.UtilityButton)
@@ -116,6 +117,9 @@ const VideoEmbed = dynamic(() =>
 );
 const YoutubePlaylistBlock = dynamic<YoutubePlaylistProps>(() =>
   import("./youtubePlaylist").then((mod) => mod.YoutubePlaylistBlock)
+);
+const SectionHeader = dynamic(() =>
+  import("./sectionHeader").then((mod) => mod.SectionHeader)
 );
 
 export const componentRenderer: Components<{
@@ -243,6 +247,7 @@ export const componentRenderer: Components<{
   };
   JotFormEmbed: JotFormEmbedProps;
   ColorBlock: ColorBlockProps;
+  SectionHeader: SectionHeaderProps;
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -280,4 +285,5 @@ export const componentRenderer: Components<{
   ),
   JotFormEmbed: (props) => <JotFormEmbed {...props} />,
   ColorBlock: (props) => <ColorBlock {...props} />,
+  SectionHeader: (props) => <SectionHeader {...props} />,
 };
