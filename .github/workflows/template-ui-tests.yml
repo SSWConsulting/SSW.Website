@@ -53,6 +53,7 @@ jobs:
         shell: pwsh
         run: |
           $status = npx playwright test ${{ inputs.tests_to_run }} ${{ inputs.reporter }}
+          echo "Test status: $status"
           echo "status=$status" >> $env:GITHUB_OUTPUT
         env:
           HOST_URL: ${{ inputs.deploy_url }}
