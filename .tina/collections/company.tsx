@@ -5,6 +5,11 @@ import {
   fixedColumnsSchema,
   testimonialsListSchema,
   verticalImageLayoutBlockSchema,
+  sectionHeaderSchema,
+  tableBlockSchema,
+  customDownloadButtonSchema,
+  colorBlockSchema,
+  carouselBlockSchema,
 } from "../../components/blocks";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
 import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
@@ -33,6 +38,16 @@ export const companySchema: Collection = {
     // @ts-ignore
     seoSchema,
     {
+      type: "object",
+      list: true,
+      name: "beforeBody",
+      label: "Before body",
+      ui: {
+        visualSelector: true,
+      },
+      templates: [carouselBlockSchema],
+    },
+    {
       type: "string",
       name: "title",
       label: "Title",
@@ -47,6 +62,11 @@ export const companySchema: Collection = {
         verticalImageLayoutBlockSchema,
         tripleColumnImageBlockSchema,
         fixedColumnsSchema,
+        sectionHeaderSchema,
+        tableBlockSchema,
+        customDownloadButtonSchema,
+        colorBlockSchema,
+        carouselBlockSchema,
         Schemas.utilityButtonSchema,
       ],
     },
@@ -56,6 +76,11 @@ export const companySchema: Collection = {
       label: "Sidebar",
       required: false,
       templates: [microsoftPanelSchema],
+    },
+    {
+      type: "boolean",
+      name: "fixedWidthSidebar",
+      label: "Fixed width sidebar"
     },
     {
       type: "string",
