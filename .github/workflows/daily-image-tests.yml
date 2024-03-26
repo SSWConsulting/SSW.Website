@@ -22,9 +22,17 @@ jobs:
   check-broken-images:
     runs-on: ubuntu-latest
     steps:
+      - name: Checking out
+        uses: actions/checkout@v4
+
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v2
+        with:
+          path: ./.github
+
       - name: Run Playwright Tests
         uses: ./.github/workflows/template-ui-tests.yml
         with:
-          deploy_url: ${{ inputs.DEPLOY_URL }}
+          deploy_url: ${{ env.DEPLOY_URL }}
           tests_to_run: ${{ env.TESTS_TO_RUN }}
           reporter: ${{ env.REPORTER }}
