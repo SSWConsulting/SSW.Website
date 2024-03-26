@@ -10,9 +10,9 @@ on:
   workflow_dispatch:
 
 env:
-  test_to_run: "images"
-  deploy_url: "https://ssw.com.au"
-  reporter: "--reporter='./ui-tests/reporter.ts'"
+  DEPLOY_URL: "https://ssw.com.au"
+  TESTS_TO_RUN: "images"
+  REPORTER: "--reporter='./ui-tests/reporter.ts'"
 
 defaults:
   run:
@@ -20,9 +20,11 @@ defaults:
 
 jobs:
   check-broken-images:
-    name: Run Playwright Tests
-    uses: ./.github/workflows/template-ui-tests.yml
-    with:
-      deploy_url: ${{ env.deploy_url }}
-      tests_to_run: ${{ env.test_to_run }}
-      reporter: ${{ env.reporter }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Playwright Tests
+        uses: ./.github/workflows/template-ui-tests.yml
+        with:
+          deploy_url: ${{ inputs.DEPLOY_URL }}
+          tests_to_run: ${{ env.TESTS_TO_RUN }}
+          reporter: ${{ env.REPORTER }}
