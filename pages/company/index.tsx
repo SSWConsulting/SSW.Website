@@ -96,7 +96,7 @@ export const getStaticProps = async () => {
 
   const seo = tinaProps.data.companyIndex.seo;
   if (seo && (seo?.canonical === null || seo?.canonical === "")) {
-    seo.canonical = `${tinaProps.data.global.header.url}company/`;
+    seo.canonical = `${tinaProps.data.global.header.url}company`;
   }
 
   return {

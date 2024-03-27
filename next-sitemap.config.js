@@ -7,8 +7,13 @@ module.exports = {
   sitemapSize: 5000,
   generateRobotsTxt: true,
   output: "standalone",
+  trailingSlash: true,
   additionalPaths: async () => {
-    const otherURLs = ["https://blog.ssw.com.au/", "https://tv.ssw.com/"];
+    const otherURLs = [
+      "https://blog.ssw.com.au/",
+      "https://tv.ssw.com/",
+      "https://www.ssw.com.au/rules/",
+    ];
 
     return otherURLs.map((url) => ({
       loc: url,
