@@ -1,3 +1,4 @@
+import React from "react";
 import classNames from "classnames";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
@@ -31,12 +32,12 @@ export const ColorBlock = (data: ColorBlockProps) => {
           </p>
           <div className="block grid-cols-1 md:grid md:grid-cols-2">
             {colorRow?.map((row, index) => (
-              <>
-                <ColorRow key={index} {...row} />
+              <React.Fragment key={index}>
+                <ColorRow {...row} />
                 <div className="col-span-2">
                   <TinaMarkdown content={row.caption} />
                 </div>
-              </>
+              </React.Fragment>
             ))}
           </div>
         </div>
