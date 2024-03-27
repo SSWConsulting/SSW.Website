@@ -1,6 +1,9 @@
 name: Daily broken images check
 
 on:
+  pull_request:
+    branches:
+      - main
   schedule:
     # Every Weekday at 8 AM AEDT - https://cron.help/#0_21_*_*_SUN-THU
     - cron: "0 21 * * SUN-THU"
@@ -17,32 +20,14 @@ on:
         type: boolean
         required: true
 
-env:
-  DEPLOY_URL: "https://ssw.com.au"
-  TESTS_TO_RUN: "images"
-
 defaults:
   run:
     shell: pwsh
 
 jobs:
-  get-env-vars:
-    name: Get env vars
-    runs-on: ubuntu-latest
-    outputs:
-      DEPLOY_URL: ${{ steps.envs.outputs.DEPLOY_URL }}
-      TESTS_TO_RUN: ${{ steps.envs.outputs.TESTS_TO_RUN }}
-    steps:
-      - name: Get env
-        id: envs
-        run: |
-          echo "DEPLOY_URL=${{ env.DEPLOY_URL }}" >> $env:GITHUB_OUTPUT
-          echo "TESTS_TO_RUN=${{env.TESTS_TO_RUN }}" >> $env:GITHUB_OUTPUT
-
   check-broken-images:
     name: Run Playwright Tests
     uses: ./.github/workflows/template-ui-tests.yml
-    needs: get-env-vars
     with:
       deploy_url: ${{ inputs.deploy_url || 'https://ssw.com.au' }}
       tests_to_run: ${{ inputs.deploy_url || 'images'}}
