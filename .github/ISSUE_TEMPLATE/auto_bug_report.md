@@ -4,8 +4,6 @@ about: Report a bug
 title: "🐛 {{ env.TITLE }}"
 labels: "Type: Bug"
 assignees: ""
-projects: "projects/22"
-status: "Backlog - Ready"
 ---
 
 @SSWConsulting/ssw-website-maintainers
