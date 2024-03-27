@@ -53,7 +53,8 @@ jobs:
         shell: pwsh
         run: |
           $testOutput = npx playwright test ${{ inputs.tests_to_run }} # On Success - 'Running x tests using 1 worker ···· x passed'
-          $testPassed = ($testOutput -match "failed") -eq $false # On Failure - 'Running x tests using 1 worker ···· x passed, x failed'
+          $testOutputString = $testOutput.ToString()
+          $testPassed = ($testOutputString -match "failed") -eq $false # On Failure - 'Running x tests using 1 worker ···· x passed, x failed'
           Write-Host "Test ouput: $testOutput"
           Write-Host "Test passed: $testPassed"
           echo "testPassed=$testPassed" >> $env:GITHUB_OUTPUT
