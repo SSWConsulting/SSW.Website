@@ -1,13 +1,21 @@
 name: Daily broken images check
 
 on:
-  pull_request:
-    branches:
-      - main
   schedule:
     # Every Weekday at 8 AM AEDT - https://cron.help/#0_21_*_*_SUN-THU
     - cron: "0 21 * * SUN-THU"
   workflow_dispatch:
+    inputs:
+      deploy_url:
+        description: "The URL of the site to test"
+        required: true
+      tests_to_run:
+        description: "The tests to run"
+        required: true
+      create_issue:
+        description: "Create an issue if there are broken images"
+        type: boolean
+        required: true
 
 env:
   DEPLOY_URL: "https://ssw.com.au"
@@ -36,6 +44,6 @@ jobs:
     uses: ./.github/workflows/template-ui-tests.yml
     needs: get-env-vars
     with:
-      deploy_url: ${{ needs.get-env-vars.outputs.DEPLOY_URL }}
-      tests_to_run: ${{ needs.get-env-vars.outputs.TESTS_TO_RUN }}
-      create-issue: true
+      deploy_url: ${{ inputs.deploy_url || 'https://ssw.com.au' }}
+      tests_to_run: ${{ inputs.deploy_url || 'images'}}
+      create-issue: ${{ inputs.create_issue || true }}
