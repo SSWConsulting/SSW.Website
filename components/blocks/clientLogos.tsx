@@ -15,6 +15,7 @@ export const ClientLogos = () => {
             alt={client.clientName + " logo"}
             height={113}
             width={200}
+            // commented out to test whether this is breaking images on the homepage see #2368
             //sizes="20vw"
             className="my-4 max-w-full rounded-lg"
           />
