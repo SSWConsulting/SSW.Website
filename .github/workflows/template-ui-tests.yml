@@ -79,7 +79,7 @@ jobs:
     name: GitHub Issue
     runs-on: ubuntu-latest
     needs: test
-    if: needs.test.outputs.testPassed == 'True' && inputs.create-issue == true
+    if: needs.test.outputs.testPassed == 'False' && inputs.create-issue == true
     steps:
       - uses: actions/checkout@v4
 
