@@ -41,12 +41,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Create an Issue
-        uses: JasonEtco/create-an-issue@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TITLE: "Broken Images on Homepage"
-          ARTIFACT_ID: ${{ needs.check-broken-images.outputs.artifact-id }}
-          GITHUB_RUN_ID: ${{ github.run_id }}
-        with:
-          filename: .github/ISSUE_TEMPLATE/auto_bug_report.md
+      - name: Test Result
+        run: |
+          echo "Test Passed: ${{ needs.check-broken-images.outputs.testPassed }}"
+          echo "Artifacts URL: ${{ needs.check-broken-images.outputs.artifact-id }}"
