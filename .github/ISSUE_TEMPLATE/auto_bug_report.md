@@ -5,7 +5,7 @@ title: "🐛 {{ env.TITLE }}"
 labels: "Type: Bug"
 assignees: ""
 projects: "projects/22"
-  status: "Backlog - Ready"
+status: "Backlog - Ready"
 ---
 
 @SSWConsulting/ssw-website-maintainers
