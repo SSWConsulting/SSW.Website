@@ -7,7 +7,6 @@ module.exports = {
   sitemapSize: 5000,
   generateRobotsTxt: true,
   output: "standalone",
-  trailingSlash: true,
   additionalPaths: async () => {
     const otherURLs = [
       "https://blog.ssw.com.au/",
