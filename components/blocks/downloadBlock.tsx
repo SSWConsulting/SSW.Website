@@ -119,6 +119,8 @@ const DownloadButton = (data: {
 }) => {
   const { link, text, schema, field } = data;
 
+  const isPdf = link.endsWith(".pdf");
+
   const {
     props: { src },
   } = getImageProps({ alt: "", src: link, width: 400, height: 400 });
@@ -126,7 +128,7 @@ const DownloadButton = (data: {
   return (
     <div className={classNames("col-span-1 w-full bg-gray-100 p-4")}>
       <CustomLink
-        href={src}
+        href={isPdf ? link : src}
         className="done inline-flex w-full cursor-pointer px-4"
         target="_blank"
         download
