@@ -19,7 +19,7 @@ jobs:
     name: Run Playwright tests
     runs-on: ubuntu-latest
     outputs:
-      testPassed: ${{ steps.run.outputs.testPassed }}
+      testPassed: ${{ steps.failure.outputs.testPassed }}
       artifact-id: ${{ steps.artifact-report.outputs.artifact-id }}
 
     steps:
@@ -52,20 +52,16 @@ jobs:
         id: run
         shell: pwsh
         run: |
-          # On Success - 'Running x tests using 1 worker ···· x passed'
-          $testOutput = npx playwright test ${{ inputs.tests_to_run }}
+          npx playwright test ${{ inputs.tests_to_run }}
 
-          $testOutputString = $testOutput.ToString()
-
-          # Check if tests passed (i.e., no failures detected)
-          $testPassed = ($testOutputString -match "failed") -eq $false # On Failure - 'Running x tests using 1 worker ···· x passed, x failed'
-
-          Write-Host "Test ouput: $testOutput"
-          Write-Host "Test passed: $testPassed"
-
-          echo "testPassed=$testPassed" >> $env:GITHUB_OUTPUT
         env:
           HOST_URL: ${{ inputs.deploy_url }}
+
+      - name: Run on failure
+        id: failure
+        if: failure() && steps.run.outcome == 'failure'
+        run: |
+          echo "testPassed='False'" >> $env:GITHUB_OUTPUT
 
       - uses: actions/upload-artifact@v4
         if: always()
