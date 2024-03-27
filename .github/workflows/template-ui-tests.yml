@@ -52,8 +52,9 @@ jobs:
         id: run
         shell: pwsh
         run: |
-          $testOutput = npx playwright test ${{ inputs.tests_to_run }} # On Success - 'Running 4 tests using 1 worker ···· 4 passed'
-          $testPassed = ($testOutput -match "failed") -eq $false # On Failure - 'Running 4 tests using 1 worker ···· 3 passed, 1 failed'
+          $testOutput = npx playwright test ${{ inputs.tests_to_run }} # On Success - 'Running x tests using 1 worker ···· x passed'
+          $testPassed = ($testOutput -match "failed") -eq $false # On Failure - 'Running x tests using 1 worker ···· x passed, x failed'
+          echo "Test ouput: $testOutput"
           echo "Test passed: $testPassed"
           echo "testPassed=$testPassed" >> $env:GITHUB_OUTPUT
         env:
