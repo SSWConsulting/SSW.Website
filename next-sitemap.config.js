@@ -7,21 +7,12 @@ module.exports = {
   sitemapSize: 5000,
   generateRobotsTxt: true,
   output: "standalone",
+  trailingSlash: true,
   additionalPaths: async () => {
     const otherURLs = [
-      "https://www.ssw.com.au/rules/",
-      "https://sswdigital.com/",
-      "https://sswsophie.com/sophiebot/",
-      "https://sugarlearning.com/",
-      "https://sswtimepro.com/",
-      "https://codeauditor.com/",
-      "https://sswhealthcheck.com/",
-      "https://smashingbarrier.com/",
-      "https://fireusergroup.com/",
-      "https://bettersoftwaresuggestions.com/",
       "https://blog.ssw.com.au/",
-      "https://adamcogan.com/",
       "https://tv.ssw.com/",
+      "https://www.ssw.com.au/rules/",
     ];
 
     return otherURLs.map((url) => ({

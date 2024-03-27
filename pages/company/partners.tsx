@@ -41,7 +41,7 @@ export const getStaticProps = async () => {
 
   const seo = tinaProps.data.partnerIndex.seo;
   if (seo && !seo.canonical) {
-    seo.canonical = `${tinaProps.data.global.header.url}/company/partners`;
+    seo.canonical = `${tinaProps.data.global.header.url}company/partners`;
   }
 
   return {
