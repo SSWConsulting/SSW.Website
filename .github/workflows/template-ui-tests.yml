@@ -54,8 +54,8 @@ jobs:
         run: |
           $testOutput = npx playwright test ${{ inputs.tests_to_run }} # On Success - 'Running x tests using 1 worker ···· x passed'
           $testPassed = ($testOutput -match "failed") -eq $false # On Failure - 'Running x tests using 1 worker ···· x passed, x failed'
-          echo "Test ouput: $testOutput"
-          echo "Test passed: $testPassed"
+          Write-Host "Test ouput: $testOutput"
+          Write-Host "Test passed: $testPassed"
           echo "testPassed=$testPassed" >> $env:GITHUB_OUTPUT
         env:
           HOST_URL: ${{ inputs.deploy_url }}
