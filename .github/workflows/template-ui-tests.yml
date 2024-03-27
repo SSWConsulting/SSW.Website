@@ -22,7 +22,7 @@ jobs:
     name: Run Playwright tests
     runs-on: ubuntu-latest
     outputs:
-      testPassed: ${{ steps.failure.outputs.testPassed }}
+      testPassed: ${{ steps.failure.outputs.testPassed || 'True' }}
       artifact-id: ${{ steps.artifact-report.outputs.artifact-id }}
 
     steps:

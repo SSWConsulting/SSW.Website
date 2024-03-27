@@ -59,7 +59,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     environment:
-      name: staging
+      name: production
       url: ${{ steps.deploy.outputs.url }}
     permissions:
       id-token: write
