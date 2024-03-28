@@ -68,7 +68,6 @@ jobs:
         uses: xom9ikk/dotenv@v2
         with:
           path: ./.github
-          load-mode: strict
 
       - name: Deploy to slot
         uses: ./.github/actions/deploy
@@ -90,7 +89,6 @@ jobs:
           message: |
             Deployed changes to <${{ steps.deploy.outputs.url }}>
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token-user-login: "github-actions[bot]"
           allow-repeats: true
 
   ui-test:
@@ -137,5 +135,4 @@ jobs:
 
             View the full report <https://pagespeed.web.dev/report?url=${{ needs.pr-deploy.outputs.url }}>
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token-user-login: "github-actions[bot]"
           allow-repeats: true
