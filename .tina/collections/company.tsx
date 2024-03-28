@@ -81,6 +81,11 @@ export const companySchema: Collection = {
     },
     {
       type: "boolean",
+      name: "hideSidebarOnMobile",
+      label: "Hide sidebar on mobile"
+    },
+    {
+      type: "boolean",
       name: "fixedWidthSidebar",
       label: "Fixed width sidebar"
     },

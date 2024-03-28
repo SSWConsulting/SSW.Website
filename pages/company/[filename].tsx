@@ -81,10 +81,16 @@ export default function CompanyPage(
                   })}
                 >
                   {data.company.sidebar && (
-                    <TinaMarkdown
-                      content={data.company.sidebar}
-                      components={componentRenderer}
-                    />
+                    <div
+                      className={classNames("lg:block", {
+                        hidden: data.company.hideSidebarOnMobile,
+                      })}
+                    >
+                      <TinaMarkdown
+                        content={data.company.sidebar}
+                        components={componentRenderer}
+                      />
+                    </div>
                   )}
                   {data.company.sidebarTestimonial && (
                     <TestimonialPanel
