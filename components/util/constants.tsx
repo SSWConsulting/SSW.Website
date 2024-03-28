@@ -170,6 +170,17 @@ export const sswColors = {
   "#797979": "bg-ssw-gray",
 };
 
+export const productColors = {
+  "bg-platform-angular": "#DD0031",
+  "bg-platform-dotnet": "#5C2D91",
+  "bg-platform-visualstudio": "#9455CE",
+  "bg-platform-blazor": "#5C2D91",
+  "bg-platform-xamarin": "#3498DB",
+  "bg-platform-azure": "#0088D5",
+  "bg-platform-sharepoint": "#038185",
+  "bg-platform-powerbi": "#F2C811",
+};
+
 export const customClasses = {
   none: "",
   "Only mobile top margin (mt-6)": "mt-6 md:mt-0",
