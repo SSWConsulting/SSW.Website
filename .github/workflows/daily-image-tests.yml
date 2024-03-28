@@ -36,9 +36,8 @@ jobs:
     needs: check-broken-images
     if: ${{ inputs.create_issue == true && failure() }}
     steps:
-      - name: Test Result
+      - name: Test Artifacts
         run: |
-          echo "Test Passed: ${{ needs.check-broken-images.outputs.testPassed }}"
           echo "Artifacts Id: ${{ needs.check-broken-images.outputs.artifact-id }}"
 
       - name: Create an Issue
