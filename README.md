@@ -25,7 +25,7 @@ This repository is a v3 of the zzSSW.Website. This website uses NextJS with Tina
 ## Requirements
 
 - Git, [Node.js Active LTS](https://nodejs.org/en/about/releases/)
-- pnpm `corepack enable pnpm`
+- pnpm `corepack enable` (version is specified in package.json)
 - A [TinaCMS](https://app.tina.io) account for live editing.
 
 ## Get Started
