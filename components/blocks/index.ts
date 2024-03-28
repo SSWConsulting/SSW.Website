@@ -48,6 +48,7 @@ import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
 import { sectionHeaderSchema } from "./sectionHeader";
+import { flexColorBlockSchema } from "./flexColorBlock";
 
 export const pageBlocks: Template[] = [
   aboutUsBlockSchema,
@@ -98,6 +99,7 @@ export const pageBlocks: Template[] = [
   downloadBlockSchema,
   gridLayoutSchema,
   sectionHeaderSchema,
+  flexColorBlockSchema,
 ];
 
 export * from "../bookingButton/bookingButton";
@@ -127,6 +129,7 @@ export * from "./dynamicColumns";
 export * from "./eventLink";
 export * from "./fixedColumns";
 export * from "./flag";
+export * from "./flexColorBlock";
 export * from "./googleMapsWrapper";
 export * from "./hero";
 export * from "./jotFormEmbed";

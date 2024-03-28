@@ -14,6 +14,7 @@ import type { YoutubePlaylistProps } from "./youtubePlaylist";
 
 import { BookingButton } from "../bookingButton/bookingButton";
 import { SectionHeaderProps } from "./sectionHeader";
+import { FlexColorBlockProps } from "./flexColorBlock";
 
 const UtilityButton = dynamic(() =>
   import("../button/utilityButton").then((mod) => mod.UtilityButton)
@@ -79,6 +80,9 @@ const FixedTabsLayout = dynamic(() =>
   import("./fixedTabsLayout").then((mod) => mod.FixedTabsLayout)
 );
 const Flag = dynamic(() => import("./flag").then((mod) => mod.Flag));
+const FlexColorBlock = dynamic<FlexColorBlockProps>(() =>
+  import("./flexColorBlock").then((mod) => mod.FlexColorBlock)
+);
 const GoogleMapsWrapper = dynamic(() =>
   import("./googleMapsWrapper").then((mod) => mod.GoogleMapsWrapper)
 );
@@ -247,6 +251,7 @@ export const componentRenderer: Components<{
   };
   JotFormEmbed: JotFormEmbedProps;
   ColorBlock: ColorBlockProps;
+  FlexColorBlock: FlexColorBlockProps;
   SectionHeader: SectionHeaderProps;
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
@@ -285,5 +290,6 @@ export const componentRenderer: Components<{
   ),
   JotFormEmbed: (props) => <JotFormEmbed {...props} />,
   ColorBlock: (props) => <ColorBlock {...props} />,
+  FlexColorBlock: (props) => <FlexColorBlock {...props} />,
   SectionHeader: (props) => <SectionHeader {...props} />,
 };
