@@ -14,7 +14,7 @@ type Block = {
 export const ColorPalette = (props: ColorPaletteProps) => {
   const { colorBlocks } = props;
   return (
-    <div className="flex h-24 w-full">
+    <div className="flex min-h-24 w-full flex-wrap">
       {colorBlocks?.map((block, i) => (
         <div
           className={classNames(
