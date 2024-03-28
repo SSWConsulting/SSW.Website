@@ -311,6 +311,9 @@
           "page": "content/consulting/azure.mdx",
           "tags": [
             {
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+            },
+            {
               "tag": "content/consulting/tag/platform-development.json"
             }
           ]
