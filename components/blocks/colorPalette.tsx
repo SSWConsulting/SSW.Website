@@ -2,7 +2,7 @@ import { Template } from "tinacms";
 import { productColors } from "../util/constants";
 import classNames from "classnames";
 
-export type FlexColorBlockProps = {
+export type ColorPaletteProps = {
   colorBlocks: Block[];
 };
 
@@ -11,7 +11,7 @@ type Block = {
   text: string;
 };
 
-export const FlexColorBlock = (props: FlexColorBlockProps) => {
+export const ColorPalette = (props: ColorPaletteProps) => {
   const { colorBlocks } = props;
   return (
     <div className="flex h-24 w-full">
@@ -31,9 +31,9 @@ export const FlexColorBlock = (props: FlexColorBlockProps) => {
   );
 };
 
-export const flexColorBlockSchema: Template = {
-  name: "FlexColorBlock",
-  label: "Flex Color Block",
+export const colorPaletteSchema: Template = {
+  name: "ColorPalette",
+  label: "Color Palette",
   fields: [
     {
       type: "object",

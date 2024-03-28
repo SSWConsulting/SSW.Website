@@ -9,7 +9,7 @@ import {
   tableBlockSchema,
   customDownloadButtonSchema,
   colorBlockSchema,
-  flexColorBlockSchema,
+  colorPaletteSchema,
   carouselBlockSchema,
 } from "../../components/blocks";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
@@ -67,7 +67,7 @@ export const companySchema: Collection = {
         tableBlockSchema,
         customDownloadButtonSchema,
         colorBlockSchema,
-        flexColorBlockSchema,
+        colorPaletteSchema,
         carouselBlockSchema,
         Schemas.utilityButtonSchema,
       ],
