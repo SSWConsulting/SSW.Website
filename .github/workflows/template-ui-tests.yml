@@ -57,7 +57,7 @@ jobs:
 
       - name: Run Playwright tests
         id: run
-        run: npx playwright test ${{ inputs.tests_to_run }}seo-prs
+        run: npx playwright test ${{ inputs.tests_to_run }}
         env:
           HOST_URL: ${{ inputs.deploy_url }}
 
