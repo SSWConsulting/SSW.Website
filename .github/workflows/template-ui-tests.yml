@@ -65,6 +65,12 @@ jobs:
           echo " This is output of preivous job: ${{ steps.run.outcome }}"
           echo "testPassed=False" >> $env:GITHUB_OUTPUT
 
+      - name: Run on failure
+        id: failure2
+        if: failure() && steps.run.outcome == 'failure'
+        run: |
+          echo "This is going to be output: ${{ steps.failure.outputs.testPassed }}"
+
       - uses: actions/upload-artifact@v4
         if: always()
         id: artifact-report
