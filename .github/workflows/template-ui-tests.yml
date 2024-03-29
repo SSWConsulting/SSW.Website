@@ -48,7 +48,7 @@ jobs:
           retry-delay: 10s
 
       - name: Run Playwright tests
-        run: npx playwright test ${{ inputs.tests_to_run }} seo-prs
+        run: npx playwright test ${{ inputs.tests_to_run }}seo-prs
         env:
           HOST_URL: ${{ inputs.deploy_url }}
 
