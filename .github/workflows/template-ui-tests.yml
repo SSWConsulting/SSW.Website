@@ -60,6 +60,7 @@ jobs:
 
       - name: Run on failure
         id: onFailure
+        shell: pwsh
         if: failure() && steps.run.outcome == 'failure'
         run: |
           echo " This is output of preivous job: ${{ steps.run.outcome }}"
