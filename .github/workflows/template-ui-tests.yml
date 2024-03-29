@@ -21,7 +21,6 @@ jobs:
   test:
     name: Run Playwright tests
     runs-on: ubuntu-latest
-    continue-on-error: true
     outputs:
       testPassed: ${{ steps.onFailure.outputs.testPassed || 'True' }}
       artifact-id: ${{ steps.artifact-report.outputs.artifact-id }}
