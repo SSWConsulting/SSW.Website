@@ -17,12 +17,14 @@ on:
         required: true
       create_issue:
         description: "Create an issue if there are broken images"
-        default: "true"
-        required: true
-
+        type: boolean
+        default: true
 defaults:
   run:
     shell: pwsh
+
+env:
+  create_issue: ${{ github.event.inputs.create_issue || true }}
 
 jobs:
   check-broken-images:
@@ -36,19 +38,25 @@ jobs:
     name: Test Output
     runs-on: ubuntu-latest
     needs: check-broken-images
+    outputs:
+      create_issue: ${{ steps.results.outputs.create_issue }}
     steps:
       - name: Playwright Artifact
+        id: results
         run: |
           echo "Test passed : ${{ needs.check-broken-images.outputs.testPassed }}"
           echo "Artifact Id: ${{ needs.check-broken-images.outputs.artifact-id }}"
-          echo "Create Issue: ${{ inputs.create_issue }}"
-          echo "Condition: ${{ inputs.create_issue == 'true' && needs.check-broken-images.outputs.testPassed == 'False'}}"
+          echo "Create Issue: ${{ env.create_issue }}"
+          echo "Condition: ${{ env.create_issue == true && needs.check-broken-images.outputs.testPassed == 'False'}}"
+          echo "create_issue:'${{ env.create_issue }}'" >> $GITHUB_OUTPUT
 
   create-an-issue:
     name: GitHub Issue
     runs-on: ubuntu-latest
-    needs: check-broken-images
-    if: ${{ inputs.create_issue == 'true' && needs.check-broken-images.outputs.testPassed == 'False'}}
+    needs:
+      - check-broken-images
+      - test-output
+    if: ${{ needs.test-output.outputs.create_issue == true && needs.check-broken-images.outputs.testPassed == 'False'}}
     steps:
       - name: Playwright Artifact
         run: |
