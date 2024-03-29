@@ -1,6 +1,9 @@
 name: Daily broken images check
 
 on:
+  pull_request:
+    branches:
+      - main
   schedule:
     # Every Weekday at 8 AM AEDT - https://cron.help/#0_21_*_*_SUN-THU
     - cron: "0 21 * * SUN-THU"
