@@ -48,9 +48,9 @@ jobs:
           echo "Test passed : ${{ needs.check-broken-images.outputs.testPassed }}"
           echo "Artifact Id: ${{ needs.check-broken-images.outputs.artifact-id }}"
           echo "Create Issue: ${{ env.create_issue }}"
-          echo "Test Pass condition: ${{ needs.check-broken-images.outputs.testPassed == 'False'}}"
-          echo "Condition: ${{ env.create_issue && needs.check-broken-images.outputs.testPassed == 'False'}}"
-          echo "create_issue=${{ env.create_issue }}'" >> $GITHUB_OUTPUT
+          echo "Test Pass condition: ${{ needs.check-broken-images.outputs.testPassed == 'false'}}"
+          echo "Condition: ${{ env.create_issue && needs.check-broken-images.outputs.testPassed == 'false'}}"
+          echo "create_issue='${{ env.create_issue }}'" >> $GITHUB_OUTPUT
 
   create-an-issue:
     name: GitHub Issue
@@ -58,7 +58,7 @@ jobs:
     needs:
       - check-broken-images
       - test-output
-    if: ${{ needs.test-output.outputs.create_issue && needs.check-broken-images.outputs.testPassed == 'False'}}
+    if: ${{ needs.test-output.outputs.create_issue == 'true' && needs.check-broken-images.outputs.testPassed == 'false'}}
     steps:
       - name: Playwright Artifact
         run: |
