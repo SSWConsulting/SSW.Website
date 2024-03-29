@@ -57,7 +57,7 @@ jobs:
     needs:
       - check-broken-images
       - test-output
-    if: ${{ needs.test-output.outputs.create_issue == 'true' && needs.check-broken-images.outputs.testPassed == 'False'}}
+    if: ${{ needs.test-output.outputs.create_issue == true && needs.check-broken-images.outputs.testPassed == 'False'}}
     steps:
       - name: Playwright Artifact
         run: |
