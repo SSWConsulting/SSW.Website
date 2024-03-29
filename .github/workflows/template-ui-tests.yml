@@ -9,6 +9,9 @@ on:
       tests_to_run:
         type: string
         required: true
+      continue-on-failure:
+        type: boolean
+        required: false
     outputs:
       artifact-id:
         description: "Playwright Artifact ID"
@@ -21,6 +24,7 @@ jobs:
   test:
     name: Run Playwright tests
     runs-on: ubuntu-latest
+    continue-on-error: ${{ inputs.continue-on-failure || false }}
     outputs:
       testPassed: ${{ steps.onFailure.outputs.testPassed || 'True' }}
       artifact-id: ${{ steps.artifact-report.outputs.artifact-id }}

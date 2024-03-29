@@ -33,6 +33,7 @@ jobs:
     with:
       deploy_url: ${{ inputs.deploy_url || 'https://ssw.com.au' }}
       tests_to_run: ${{ inputs.tests_to_run || 'images'}}
+      continue-on-failure: true
 
   test-output:
     name: Test Output
