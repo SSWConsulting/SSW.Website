@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     outputs:
-      testPassed: ${{ steps.failure.outputs.testPassed || 'True' }}
+      testPassed: ${{ steps.onFailure.outputs.testPassed || 'True' }}
       artifact-id: ${{ steps.artifact-report.outputs.artifact-id }}
 
     steps:
@@ -59,7 +59,7 @@ jobs:
           HOST_URL: ${{ inputs.deploy_url }}
 
       - name: Run on failure
-        id: failure
+        id: onFailure
         if: failure() && steps.run.outcome == 'failure'
         run: |
           echo " This is output of preivous job: ${{ steps.run.outcome }}"
@@ -69,7 +69,7 @@ jobs:
         id: failure2
         if: failure() && steps.run.outcome == 'failure'
         run: |
-          echo "This is going to be output: ${{ steps.failure.outputs.testPassed }}"
+          echo "This is going to be output: ${{ steps.onFailure.outputs.testPassed }}"
 
       - uses: actions/upload-artifact@v4
         if: always()

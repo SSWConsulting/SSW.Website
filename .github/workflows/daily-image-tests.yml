@@ -41,6 +41,7 @@ jobs:
       - name: Playwright Artifact
         run: |
           echo "Test passed : ${{ needs.check-broken-images.outputs.testPassed }}"
+          echo "Artifact Id: ${{ needs.check-broken-images.outputs.artifact-id }}"
 
   create-an-issue:
     name: GitHub Issue
