@@ -33,6 +33,15 @@ jobs:
       deploy_url: ${{ inputs.deploy_url || 'https://ssw.com.au' }}
       tests_to_run: ${{ inputs.tests_to_run || 'images'}}
 
+  test-output:
+    name: Test Output
+    runs-on: ubuntu-latest
+    needs: check-broken-images
+    steps:
+      - name: Playwright Artifact
+        run: |
+          echo "Test passed : ${{ needs.check-broken-images.outputs.testPassed }}"
+
   create-an-issue:
     name: GitHub Issue
     runs-on: ubuntu-latest
