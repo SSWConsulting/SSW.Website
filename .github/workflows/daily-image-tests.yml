@@ -50,7 +50,7 @@ jobs:
           echo "Create Issue: ${{ env.create_issue }}"
           echo "Test Pass condition: ${{ needs.check-broken-images.outputs.testPassed == 'false'}}"
           echo "Condition: ${{ env.create_issue && needs.check-broken-images.outputs.testPassed == 'false'}}"
-          echo $create_issue=${{ env.create_issue }}
+          $create_issue=${{ env.create_issue }}
           echo "create_issue=$create_issue" >> $env:GITHUB_OUTPUT
 
   create-an-issue:
