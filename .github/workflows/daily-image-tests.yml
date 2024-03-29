@@ -40,17 +40,14 @@ jobs:
     runs-on: ubuntu-latest
     needs: check-broken-images
     outputs:
-      create_issue: ${{ steps.results.outputs.create_issue }}
+      create_issue: ${{ steps.envs.outputs.create_issue }}
     steps:
-      - name: Playwright Artifact
-        id: results
+      - name: Env variables into Output
+        id: envs
         shell: pwsh
         run: |
           echo "Test passed : ${{ needs.check-broken-images.outputs.testPassed }}"
           echo "Artifact Id: ${{ needs.check-broken-images.outputs.artifact-id }}"
-          echo "Create Issue: ${{ env.create_issue }}"
-          echo "Test Pass condition: ${{ needs.check-broken-images.outputs.testPassed == 'false'}}"
-          echo "Condition: ${{ env.create_issue && needs.check-broken-images.outputs.testPassed == 'false'}}"
           $create_issue='${{ env.create_issue }}'
           echo "create_issue=$create_issue" >> $env:GITHUB_OUTPUT
 
@@ -60,17 +57,11 @@ jobs:
     needs:
       - check-broken-images
       - test-output
-    if: ${{ needs.test-output.outputs.create_issue == 'true' && failure()}}
+    if: ${{ needs.test-output.outputs.create_issue == 'true' && needs.check-broken-images.outputs.testPassed == 'false'}}
     steps:
       - name: Playwright Artifact
         run: |
           echo "Artifact Id: ${{ needs.check-broken-images.outputs.artifact-id }}"
-
-      - name: show the value
-        run: |
-          echo " value from the above :${{ needs.test-output.outputs.create_issue }}"
-          echo " wihtout quote condition :${{ needs.test-output.outputs.create_issue == true }}"
-          echo " condition :${{ needs.test-output.outputs.create_issue == 'true' }}"
 
       # - name: Create an Issue
       #   uses: JasonEtco/create-an-issue@v2
