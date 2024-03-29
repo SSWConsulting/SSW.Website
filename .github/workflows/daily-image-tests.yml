@@ -59,11 +59,20 @@ jobs:
     needs:
       - check-broken-images
       - test-output
-    if: ${{ needs.test-output.outputs.create_issue == true && needs.check-broken-images.outputs.testPassed == 'false'}}
+    if: ${{ needs.check-broken-images.outputs.testPassed == 'false'}}
     steps:
       - name: Playwright Artifact
         run: |
           echo "Artifact Id: ${{ needs.check-broken-images.outputs.artifact-id }}"
+
+      - name: Create an Issue
+        if: ${{ needs.check-broken-images.outputs.testPassed == 'false'}}
+        uses: JasonEtco/create-an-issue@v2
+
+      - name: show the value
+        run: |
+          echo " value from the above :${{ needs.test-output.outputs.create_issue }}"
+          echo " condition :${{ needs.test-output.outputs.create_issue == true }}"
 
       # - name: Create an Issue
       #   uses: JasonEtco/create-an-issue@v2
