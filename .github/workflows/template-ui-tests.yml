@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     outputs:
-      testPassed: ${{ steps.run.outputs.testPassed || 'True' }}
+      testPassed: ${{ steps.failure.outputs.testPassed || 'True' }}
       artifact-id: ${{ steps.artifact-report.outputs.artifact-id }}
 
     steps:
