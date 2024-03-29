@@ -63,7 +63,8 @@ jobs:
         if: failure() && steps.run.outcome == 'failure'
         run: |
           echo " This is output of preivous job: ${{ steps.run.outcome }}"
-          echo "testPassed=False" >> $env:GITHUB_OUTPUT
+          $testPassed='False'
+          echo "testPassed=$testPassed" >> $env:GITHUB_OUTPUT
 
       - name: Run on failure
         id: failure2
