@@ -9,6 +9,7 @@ import {
   tableBlockSchema,
   customDownloadButtonSchema,
   colorBlockSchema,
+  colorPaletteSchema,
   carouselBlockSchema,
 } from "../../components/blocks";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
@@ -66,6 +67,7 @@ export const companySchema: Collection = {
         tableBlockSchema,
         customDownloadButtonSchema,
         colorBlockSchema,
+        colorPaletteSchema,
         carouselBlockSchema,
         Schemas.utilityButtonSchema,
       ],
@@ -76,6 +78,11 @@ export const companySchema: Collection = {
       label: "Sidebar",
       required: false,
       templates: [microsoftPanelSchema],
+    },
+    {
+      type: "boolean",
+      name: "hideSidebarOnMobile",
+      label: "Hide sidebar on mobile"
     },
     {
       type: "boolean",
