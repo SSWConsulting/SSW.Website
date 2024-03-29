@@ -13,12 +13,16 @@ on:
       artifact-id:
         description: "Playwright Artifact ID"
         value: ${{ jobs.test.outputs.artifact-id }}
+      testPassed:
+        description: "Test Passed"
+        value: ${{ jobs.test.outputs.testPassed }}
 
 jobs:
   test:
     name: Run Playwright tests
     runs-on: ubuntu-latest
     outputs:
+      testPassed: ${{ steps.run.outputs.testPassed || 'True' }}
       artifact-id: ${{ steps.artifact-report.outputs.artifact-id }}
 
     steps:
@@ -57,7 +61,7 @@ jobs:
         id: failure
         if: failure() && steps.run.outcome == 'failure'
         run: |
-          echo " This is output of preivous job ${{ steps.run.outcome }}"
+          echo " This is output of preivous job: ${{ steps.run.outcome }}"
           echo "testPassed='False'" >> $env:GITHUB_OUTPUT
 
       - uses: actions/upload-artifact@v4
