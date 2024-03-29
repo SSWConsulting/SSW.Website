@@ -36,16 +36,16 @@ jobs:
     needs: check-broken-images
     if: ${{ inputs.create_issue == true && failure() }}
     steps:
-      - name: Test Artifacts
+      - name: Playwright Artifact
         run: |
-          echo "Artifacts Id: ${{ needs.check-broken-images.outputs.artifact-id }}"
+          echo "Artifact Id: ${{ needs.check-broken-images.outputs.artifact-id }}"
 
-      - name: Create an Issue
-        uses: JasonEtco/create-an-issue@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TITLE: "Broken Images on Homepage"
-          ARTIFACT_ID: ${{ needs.check-broken-images.outputs.artifact-id }}
-          GITHUB_RUN_ID: ${{ github.run_id }}
-        with:
-          filename: .github/ISSUE_TEMPLATE/auto_bug_report.md
+      # - name: Create an Issue
+      #   uses: JasonEtco/create-an-issue@v2
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     TITLE: "Broken Images on Homepage"
+      #     ARTIFACT_ID: ${{ needs.check-broken-images.outputs.artifact-id }}
+      #     GITHUB_RUN_ID: ${{ github.run_id }}
+      #   with:
+      #     filename: .github/ISSUE_TEMPLATE/auto_bug_report.md
