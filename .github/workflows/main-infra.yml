@@ -30,7 +30,6 @@ jobs:
         uses: xom9ikk/dotenv@v2
         with:
           path: ./.github
-          load-mode: strict
 
       - name: Build
         run: |

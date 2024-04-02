@@ -9,11 +9,25 @@ on:
       tests_to_run:
         type: string
         required: true
+      continue-on-failure:
+        type: boolean
+        required: false
+    outputs:
+      artifact-id:
+        description: "Playwright Artifact ID"
+        value: ${{ jobs.test.outputs.artifact-id }}
+      testPassed:
+        description: "Test Passed"
+        value: ${{ jobs.test.outputs.testPassed }}
 
 jobs:
   test:
     name: Run Playwright tests
     runs-on: ubuntu-latest
+    continue-on-error: ${{ inputs.continue-on-failure || false }}
+    outputs:
+      testPassed: ${{ steps.onFailure.outputs.testPassed || 'true' }}
+      artifact-id: ${{ steps.artifact-report.outputs.artifact-id }}
 
     steps:
       - uses: actions/checkout@v4
@@ -42,12 +56,22 @@ jobs:
           retry-delay: 10s
 
       - name: Run Playwright tests
+        id: run
         run: npx playwright test ${{ inputs.tests_to_run }}
         env:
           HOST_URL: ${{ inputs.deploy_url }}
 
+      - name: Run on failure
+        id: onFailure
+        shell: pwsh
+        if: failure() && steps.run.outcome == 'failure'
+        run: |
+          $testPassed='false'
+          echo "testPassed=$testPassed" >> $env:GITHUB_OUTPUT
+
       - uses: actions/upload-artifact@v4
         if: always()
+        id: artifact-report
         with:
           name: playwright-report
           path: playwright-report/
