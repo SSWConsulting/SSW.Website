@@ -216,6 +216,16 @@ module.exports = {
           900: "#333333",
           1000: "#1c1b2e",
         },
+        platform: {
+          angular: "#DD0031",
+          dotnet: "#5C2D91",
+          visualstudio: "#9455CE",
+          blazor: "#5C2D91",
+          xamarin: "#3498DB",
+          azure: "#0088D5",
+          sharepoint: "#038185",
+          powerbi: "#F2C811",
+        },
         social: {
           phone: "#b31217",
           youtube: "#b31217",

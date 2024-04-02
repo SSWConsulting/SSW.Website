@@ -73,7 +73,6 @@ jobs:
         uses: xom9ikk/dotenv@v2
         with:
           path: ./.github
-          load-mode: strict
 
       - name: Deploy to staging
         id: deploy
@@ -108,7 +107,6 @@ jobs:
         uses: xom9ikk/dotenv@v2
         with:
           path: ./.github
-          load-mode: strict
 
       - name: Azure CLI - Login
         uses: azure/login@v2

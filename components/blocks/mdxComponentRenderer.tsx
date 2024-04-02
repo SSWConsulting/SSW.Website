@@ -13,6 +13,7 @@ import type { TripleColumnImageBlockProps } from "./tripleColumnImageBlock";
 import type { YoutubePlaylistProps } from "./youtubePlaylist";
 
 import { BookingButton } from "../bookingButton/bookingButton";
+import { ColorPaletteProps } from "./colorPalette";
 import { SectionHeaderProps } from "./sectionHeader";
 
 const UtilityButton = dynamic(() =>
@@ -79,6 +80,9 @@ const FixedTabsLayout = dynamic(() =>
   import("./fixedTabsLayout").then((mod) => mod.FixedTabsLayout)
 );
 const Flag = dynamic(() => import("./flag").then((mod) => mod.Flag));
+const ColorPalette = dynamic<ColorPaletteProps>(() =>
+  import("./colorPalette").then((mod) => mod.ColorPalette)
+);
 const GoogleMapsWrapper = dynamic(() =>
   import("./googleMapsWrapper").then((mod) => mod.GoogleMapsWrapper)
 );
@@ -247,6 +251,7 @@ export const componentRenderer: Components<{
   };
   JotFormEmbed: JotFormEmbedProps;
   ColorBlock: ColorBlockProps;
+  ColorPalette: ColorPaletteProps;
   SectionHeader: SectionHeaderProps;
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
@@ -285,5 +290,6 @@ export const componentRenderer: Components<{
   ),
   JotFormEmbed: (props) => <JotFormEmbed {...props} />,
   ColorBlock: (props) => <ColorBlock {...props} />,
+  ColorPalette: (props) => <ColorPalette {...props} />,
   SectionHeader: (props) => <SectionHeader {...props} />,
 };

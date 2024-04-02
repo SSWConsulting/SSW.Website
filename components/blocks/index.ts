@@ -23,6 +23,7 @@ import { carouselBlockSchema } from "./carousel";
 import { citationBlockSchema } from "./citation";
 import { clientLogosBlockSchema } from "./clientLogos";
 import { colorBlockSchema } from "./colorBlock";
+import { colorPaletteSchema } from "./colorPalette";
 import { contentBlockSchema } from "./content";
 import { contentCardBlockSchema } from "./contentCard";
 import { customImageBlockSchema } from "./customImage";
@@ -40,6 +41,7 @@ import { jotFormEmbedSchema } from "./jotFormEmbed";
 import { newslettersTableBlockSchema } from "./newslettersTable";
 import { paymentBlockSchema } from "./payment-block";
 import { recurringEventSchema } from "./recurringEvent";
+import { sectionHeaderSchema } from "./sectionHeader";
 import { serviceCardsBlockSchema } from "./serviceCards";
 import { tableBlockSchema } from "./tableLayout";
 import { testimonialsListSchema } from "./testimonialsList";
@@ -47,7 +49,6 @@ import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
-import { sectionHeaderSchema } from "./sectionHeader";
 
 export const pageBlocks: Template[] = [
   aboutUsBlockSchema,
@@ -98,6 +99,7 @@ export const pageBlocks: Template[] = [
   downloadBlockSchema,
   gridLayoutSchema,
   sectionHeaderSchema,
+  colorPaletteSchema,
 ];
 
 export * from "../bookingButton/bookingButton";
@@ -119,6 +121,7 @@ export * from "./carousel";
 export * from "./citation";
 export * from "./clientLogos";
 export * from "./colorBlock";
+export * from "./colorPalette";
 export * from "./content";
 export * from "./contentCard";
 export * from "./customImage";
