@@ -126,8 +126,8 @@ importers:
         specifier: ^0.33.2
         version: 0.33.2
       ssw.megamenu:
-        specifier: ^4.5.3
-        version: 4.5.3(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^4.5.4
+        version: 4.5.4(react-dom@18.2.0)(react@18.2.0)
       tailwind-merge:
         specifier: ^2.2.2
         version: 2.2.2
@@ -17428,8 +17428,8 @@ packages:
       better-sqlite3: 8.7.0
       module-error: 1.0.2
 
-  /ssw.megamenu@4.5.3(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-49yDRUdWbVkV0i0/7oFPe356RbYdzGe/Z45oaPzDZfslt1jAcdQA8AOif8o1u9TEVlTxo9H0JwSfo4zveZFegA==}
+  /ssw.megamenu@4.5.4(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-ZAhItXs8HXn0nYMAThAtbyHCzB4DzMI0UJhfEOXKtmE2f9KDuDSRXusP1IpkXeV9OejivKTvLfOHmD/WYN8bdQ==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
