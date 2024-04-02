@@ -12,7 +12,7 @@ import { Open_Sans } from "next/font/google";
 import { useReportWebVitals } from "next/web-vitals";
 import { WebSite, WithContext } from "schema-dts";
 import { MegaMenuLayout, NavMenuGroup } from "ssw.megamenu";
-import { header } from "../../content/global/index.json";
+import layoutData from "../../content/global/index.json";
 import { CustomLink } from "../customLink";
 
 export const openSans = Open_Sans({
@@ -23,10 +23,10 @@ export const openSans = Open_Sans({
 const structuredData: WithContext<WebSite> = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: header.site_name,
-  alternateName: header.alternate_site_name,
-  description: header.description,
-  url: header.url,
+  name: layoutData.header.site_name,
+  alternateName: layoutData.header.alternate_site_name,
+  description: layoutData.header.description,
+  url: layoutData.header.url,
 };
 
 const LiveStreamWidget = dynamic(

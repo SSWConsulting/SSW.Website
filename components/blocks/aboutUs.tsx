@@ -20,16 +20,16 @@ const DAY_KEYS = {
   Thursday: 4,
   Friday: 5,
   Saturday: 6,
-};
+} as const;
 
 const WORKING_TIME = {
   Open: 9,
   Close: 18,
-};
+} as const;
 
 const states = {
   QLD: {
-    timeZone: "Australia/Queensland",
+    timeZone: "Australia/Brisbane",
     path: [
       "m200.3,123.9 c -11.8,-0.7 -14.8,-0.8 -22.8,-1.3 0,-8.5 0,-21 0,-21 l -16,0 c 0,0 0,-39.3 0,-60 l 6,3.5 5.2,3.5 4.4,0 6,-9.8 3.4,-24.6 2.8,-5.7 c 1.6,-3.1 3.3,-6 3.9,-6.3 l 1,-0.6 1.8,4.3 c 1,2.4 2.2,6.6 2.6,9.3 0.4,2.8 1.2,7.1 1.7,9.8 l 1,4.8 4.8,0 3.2,5 2.8,11 c 1.5,6.1 3.3,11.7 4,12.5 0.6,0.8 3.4,2.9 6.2,4.6 l 5,3.2 5,10 3.8,1 1.2,5.2 11.2,14.8 1.2,7.1 c 0.7,3.9 1.5,8.7 1.9,10.8 l 0.6,3.7 -1.3,5.1 -4.6,-1.1 -1.3,1.6 c -1.6,2 -3.7,2 -4.4,0.1 l -0.6,-1.5 -2.4,0 c -1.3,0 -4.3,0.7 -6.7,1.5 -2.3,0.8 -5.4,1.4 -6.9,1.3 -1.4,-0.1 -12.3,-0.7 -24.1,-1.4 z",
     ],
@@ -39,7 +39,7 @@ const states = {
     },
   },
   NSW: {
-    timeZone: "Australia/NSW",
+    timeZone: "Australia/Sydney",
     path: [
       "m220.5,176.4 -2.4,-2.7 -2.4,-1.5 c -2.1,-0.3 -6.2,-1.1 -9.1,-1.8 l -5.4,-1.4 -8.2,-10.4 -2.8,-0.7 -2.8,-0.7 -1,-1.9 -1,-1.9 -3.9,0 -4,1.5 0,-30.9 c 5.8,0.4 22.5,1.4 25.3,1.6 l 23.5,1.4 4.8,-1.2 c 4.6,-1.1 5.7,-2.1 8.3,-2 0,0 0.9,2.3 1.9,2.8 1.1,0.5 2.5,0.1 3.7,-0.3 1.1,-0.4 2,-2 3.1,-1.8 l 2.8,0.5 -1.3,5.1 c -0.7,2.7 -2.1,7.5 -2.9,10.9 -1.8,8.3 -3.1,11.6 -5.3,13.4 l -1.8,1.5 -4.1,12.5 c -2.2,6.9 -4.2,13.5 -4.4,14.7 l -0.3,2.2",
     ],
@@ -49,7 +49,7 @@ const states = {
     },
   },
   VIC: {
-    timeZone: "Australia/Victoria",
+    timeZone: "Australia/Melbourne",
     path: [
       "m219.5,177.3 0.8,1 c 0,0.6 2.3,2.7 5,4.8 l 5,3.8 -11.4,3.4 -5.7,5.4 -6.9,-3.7 -2.8,1.4 c -1.5,0.8 -3,1.5 -3.3,1.6 -0.3,0.1 -2.3,-0.9 -4.5,-2.2 c -2.2,-1.3 -6.3,-3.1 -9,-4 l -5,-1.6 -2.3,-2 -2.1,-2.1 c 0,-9 0,-17.9 0,-26.6 l 3.9,-1.3 3.1,0 1.6,3.4 1.9,0.5 2.4,0.5 1.5,0.9 4.7,6 3.2,3.9 c 3.2,0.9 6.5,1.7 9.2,2.4 3,0.8 4.7,0.9 6.2,1 l 2.9,2.6",
     ],
@@ -300,16 +300,16 @@ const OfficeInfo = ({ office }) => {
 type Status = "Open" | "Closed" | "";
 
 type OpenStatusProps = {
-  state: State;
+  state?: State;
 };
 
 const OpenStatus = ({ state }: OpenStatusProps) => {
-  console.log(state);
   const [status, setStatus] = useState<Status>("");
   const timeZone = states[state]?.timeZone;
 
   useEffect(() => {
-    const now = dayjs.tz(timeZone);
+    const now = dayjs.utc().tz(timeZone);
+    console.log(now.format());
     const isWeekend = [DAY_KEYS.Saturday, DAY_KEYS.Sunday].some(
       (x) => x === now.day()
     );
