@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import dayjs from "dayjs";
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import type { Template } from "tinacms";
 
 import { BiChevronRightCircle } from "react-icons/bi";
@@ -27,7 +27,7 @@ const WORKING_TIME = {
   Close: 18,
 };
 
-const States = {
+const states = {
   QLD: {
     timeZone: "Australia/Queensland",
     path: [
@@ -59,33 +59,40 @@ const States = {
     },
   },
   WA: {
+    timeZone: "Australia/Perth",
     path: [
       "m38.3, 168.2 c -1.9,-0.6 -3.6,-1.1 -3.8,-1.3 -0.2,-0.2 0.8,-2.5 2.25,-5.2 1.4,-2.7 2.6,-5.5 2.6,-6.2 0,-0.8 -1.8,-4.25 -4,-7.7 -2.2,-3.5 -4,-7.1 -4,-8.1 l 0,-1.8 -6.4,-10.3 -6.4,-10.3 1.8,0 -7,-14.8 0.2,-7.3 c 0.1,-4 0.1,-8.9 0.1,-10.9 l -0.1,-3.5 5.5,-6 c 3,-3.3 5.5,-6.3 5.5,-6.7 0,-0.4 0.9,-0.8 1.9,-0.8 l 1.9,0 9.8,-6.1 13.8,-2.2 4.1,-2.6 8.4,-15 -1.2,-3 3.3,-5 1.8,1.1 4,-2.5 0,-3.1 4.6,-4.3 8.5,0 3.4,3.8 c 1.9,2.1 3.4,4.3 3.4,5 l 0,1.3 2.5,-0.6 L 97.5,33.2 c 0,38.3 0,77 0,113.8 l -4.6,1.6 -4.5,2.2 -2.3,5.6 -1.6,0.5 c -0.9,0.3 -4.8,1 -8.6,1.6 l -7,1.1 -8.2,4.9 -8.2,4.9 -5.3,0 c -2.9,0 -6.9,-0.5 -8.8,-1.1 z",
     ],
   },
   SA: {
+    timeZone: "Australia/Adelaide",
     path: [
       "m176,181 -6.8,-9.4 0.7,-3.7 0.7,-3.7 -5.6,-6 -2.2,0.8 0.7,-7.8 -1.1,0 c -1.1,0 -2.2,1.1 -4.6,4.5 l -1.4,2 1,-4.8 c 0.6,-2.7 0.8,-5 0.6,-5.3 -0.8,-0.8 -6.1,2.5 -7.9,4.8 -0.9,1.2 -1.9,2 -2.1,1.8 -0.2,-0.3 -1.6,-2.6 -3.1,-5.2 l -2.7,-4.7 -11.4,-2.6 -19.2,0.2 -5.8,2.6 C 102.7,146.2 99,147.2 99,147 l 0,-44 77,0 z",
     ],
   },
   NT: {
+    timeZone: "Australia/Darwin",
     path: [
       "m99,33 3.9,0.4 c 2,0.2 4.4,-0.5 5.5,-1 l 1.9,-1 0,-2.5 0,-2.5 -2,0 0,-4 1.9,-1.7 c 1,-0.9 1.7,-2 1.5,-2.4 l -0.5,-0.7 6.8,-4.2 11.5,-1.4 0.8,-2.4 -5.6,-3 1.7,0 c 0.9,0 2,0.4 2.3,1 0.3,0.6 1.2,0.9 1.8,0.8 0.6,-0.1 3.4,0.8 6.2,2.1 l 5,2.4 7.5,0 0,3.7 -4.2,4 1.2,3.2 -3,5.8 17,11.2 0,60.8 -61,0 z",
       "m115,8.7 -2.8,-0.4 0.8,-2.4 4.2,0 c 2.3,0 4.2,0.2 4.2,0.5 0,0.8 -2.3,3 -2.9,2.8 -0.3,-0 -1.8,-0.3 -3.4,-0.6 z",
     ],
   },
   TAS: {
+    timeZone: "Australia/Hobart",
     path: [
       "m202.7,223.9 -2.7,-3.6 -0.1,-3.4 c -0.1,-1.9 -0.4,-3.7 -0.8,-4.1 -0.4,-0.4 -0.7,-1.8 -0.7,-3.1 l 0,-2.3 1,0 c 0.6,0 2.4,0.7 4.2,1.6 l 3.1,1.6 9.6,-1.2 0,7.2 -3.4,5.8 -2.6,-1 -1.7,3 c -0.9,1.6 -2,3 -2.4,3 -0.4,0 -1.9,-1.6 -3.4,-3.6 z",
     ],
   },
   ACT: {
+    timeZone: "Australia/Sydney",
     path: [
       "m222,165.7 0.1,2.8 0.4,1.4 1,1 0.4,-0.9 0.2,2.9 2.6,1.6 1,-2.2 0,-3.6 c 0,0 -0.3,-0.5 -0.6,-1.1 0.8,-0.3 1.2,0.1 1.2,0.1 l 0.1,-3.4 1.5,-2 2.4,0.3 0.5,-1 -2.7,-1.3 c 0,0 -0.7,-1.8 -1.8,-2.4 -1.6,1.1 -4,2 -5.2,3.9 -0.4,0.7 -0.5,2.3 -0.5,2.3 z",
     ],
     inland: true,
   },
-};
+} as const;
+
+type State = keyof typeof states;
 
 const offices = layoutData.homePageOfficeList;
 const defaultOffice = offices.find((o) => o.addressLocality === "Sydney");
@@ -290,31 +297,39 @@ const OfficeInfo = ({ office }) => {
   );
 };
 
-const OpenStatus = ({ state }) => {
-  const stateInfo = States[state];
-  const now = dayjs().tz(stateInfo?.timeZone);
-  const isWeekend = [DAY_KEYS.Saturday, DAY_KEYS.Sunday].some(
-    (x) => x === now.day()
-  );
-  const currentHour = now.hour();
+type Status = "Open" | "Closed" | "";
 
-  let status, statusClass;
-  if (
-    isWeekend ||
-    currentHour < WORKING_TIME.Open ||
-    WORKING_TIME.Close < currentHour
-  ) {
-    statusClass = "bg-sswRed";
-    status = "Closed";
-  } else {
-    statusClass = "bg-green-400";
-    status = "Open";
-  }
+type OpenStatusProps = {
+  state: State;
+};
+
+const OpenStatus = ({ state }: OpenStatusProps) => {
+  console.log(state);
+  const [status, setStatus] = useState<Status>("");
+  const timeZone = states[state]?.timeZone;
+
+  useEffect(() => {
+    const now = dayjs.tz(timeZone);
+    const isWeekend = [DAY_KEYS.Saturday, DAY_KEYS.Sunday].some(
+      (x) => x === now.day()
+    );
+    const currentHour = now.hour();
+
+    if (
+      isWeekend ||
+      currentHour < WORKING_TIME.Open ||
+      WORKING_TIME.Close < currentHour
+    ) {
+      setStatus("Closed");
+    } else {
+      setStatus("Open");
+    }
+  }, [timeZone]);
 
   return (
     <span
       className={classNames(
-        statusClass,
+        { "bg-green-400": status === "Open", "bg-sswRed": status === "Closed" },
         "text-xxxs ml-2 p-1 font-bold uppercase text-white"
       )}
     >
@@ -354,8 +369,8 @@ const Map = ({
             </feMerge>
           </filter>
         </defs>
-        {Object.keys(States).map((stateKey) => {
-          const state = States[stateKey];
+        {Object.keys(states).map((stateKey) => {
+          const state = states[stateKey];
           const primaryOffice = offices.find(
             (o) => o.addressRegion === stateKey
           );
