@@ -42,8 +42,8 @@ importers:
         specifier: ^5.25.0
         version: 5.26.3(react@18.2.0)
       '@tanstack/react-query-devtools':
-        specifier: ^5.26.3
-        version: 5.26.3(@tanstack/react-query@5.26.3)(react@18.2.0)
+        specifier: ^5.27.0
+        version: 5.28.10(@tanstack/react-query@5.26.3)(react@18.2.0)
       animate-css-grid:
         specifier: ^1.5.1
         version: 1.5.1
@@ -5593,17 +5593,17 @@ packages:
     resolution: {integrity: sha512-kKv7VHIleC7cwpMS3M63mWUFFbdiRo7JZMVUyZ4z/79RZoAi7/vGTVkCrnNqyKl+zwBRkumYL+eiYtyShGZd0A==}
     dev: false
 
-  /@tanstack/query-devtools@5.24.0:
-    resolution: {integrity: sha512-pThim455t69zrZaQKa7IRkEIK8UBTS+gHVAdNfhO72Xh4rWpMc63ovRje5/n6iw63+d6QiJzVadsJVdPoodSeQ==}
+  /@tanstack/query-devtools@5.28.10:
+    resolution: {integrity: sha512-5UN629fKa5/1K/2Pd26gaU7epxRrYiT1gy+V+pW5K6hnf1DeUKK3pANSb2eHKlecjIKIhTwyF7k9XdyE2gREvQ==}
     dev: false
 
-  /@tanstack/react-query-devtools@5.26.3(@tanstack/react-query@5.26.3)(react@18.2.0):
-    resolution: {integrity: sha512-byhbST7CDC8cH1tPLPYG/lNMr/QcYMMqxG9+jayiz7H//QScp9+B7cpSItp9QPaN30fCj7pIAlbCifWDcLC4/A==}
+  /@tanstack/react-query-devtools@5.28.10(@tanstack/react-query@5.26.3)(react@18.2.0):
+    resolution: {integrity: sha512-D+SiHZTWhK2sNgBYj+xIvUOqonsKy74OLU/YHmRB5OZVLLTiekvZd12C3rKlU+WM69jid0hjEjuFqkULOMwc3A==}
     peerDependencies:
-      '@tanstack/react-query': ^5.26.3
+      '@tanstack/react-query': ^5.28.9
       react: ^18.0.0
     dependencies:
-      '@tanstack/query-devtools': 5.24.0
+      '@tanstack/query-devtools': 5.28.10
       '@tanstack/react-query': 5.26.3(react@18.2.0)
       react: 18.2.0
     dev: false
