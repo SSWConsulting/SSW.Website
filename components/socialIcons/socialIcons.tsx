@@ -1,6 +1,6 @@
 "use client";
 import classNames from "classnames";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 import { IconType } from "react-icons";
 
@@ -78,6 +78,14 @@ export const SocialIcons = ({
   excludeMobile,
   className,
 }: SocialIconsProps) => {
+  const [isOnMobile, setIsOnMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && isMobile) {
+      setIsOnMobile(true);
+    }
+  }, []);
+
   return (
     <div
       className={classNames(
@@ -85,7 +93,7 @@ export const SocialIcons = ({
         className
       )}
     >
-      {layoutData.socials.map((social) => {
+      {layoutData.socials.map((social, index) => {
         const hideOnDesktop =
           excludeDesktop?.length &&
           !!excludeDesktop.find((icon) => icon === social.type);
@@ -96,13 +104,13 @@ export const SocialIcons = ({
 
         if (
           (hideOnDesktop && hideOnMobile) ||
-          (isMobile && hideOnMobile) ||
-          (!isMobile && hideOnDesktop)
+          (isOnMobile && hideOnMobile) ||
+          (!isOnMobile && hideOnDesktop)
         ) {
-          return <></>;
+          return null;
         }
 
-        return <SocialIcon key={social.type} social={social} />;
+        return <SocialIcon key={social.type + index} social={social} />;
       })}
     </div>
   );
