@@ -1,6 +1,8 @@
 import { Blocks } from "@/components/blocks-renderer";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { InferGetStaticPropsType } from "next";
+import Head from "next/head";
+import { WebSite, WithContext } from "schema-dts";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../.tina/__generated__/client";
@@ -10,7 +12,17 @@ import { Layout } from "../components/layout";
 import { Container } from "../components/util/container";
 import { Section } from "../components/util/section";
 import { SEO } from "../components/util/seo";
+import layoutData from "../content/global/index.json";
 import { removeExtension } from "../services/client/utils.service";
+
+const structuredData: WithContext<WebSite> = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: layoutData.header.site_name,
+  alternateName: layoutData.header.alternate_site_name,
+  description: layoutData.header.description,
+  url: layoutData.header.url,
+};
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -33,6 +45,15 @@ export default function HomePage(
 
   return (
     <>
+      {props.variables?.relativePath === "home.mdx" && (
+        <Head>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          />
+        </Head>
+      )}
+
       <SEO seo={data.page.seo} />
       <Layout menu={data.megamenu}>
         {data.page.breadcrumbs ? (
