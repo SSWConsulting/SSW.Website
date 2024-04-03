@@ -8,7 +8,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:tailwindcss/recommended",
     "plugin:prettier/recommended",
-    "next/core-web-vitals"
+    "next/core-web-vitals",
   ],
   "rules": {
     "quotes": ["error", "double"],
@@ -17,15 +17,15 @@
     "tailwindcss/no-custom-classname": [
       "error",
       {
-        "whitelist": ["g\\-yt.+", "legend"]
-      }
+        "whitelist": ["g\\-yt.+", "legend"],
+      },
     ],
     "prettier/prettier": [
       "error",
       {
-        "endOfLine": "auto"
-      }
-    ]
+        "endOfLine": "auto",
+      },
+    ],
   },
-  "reportUnusedDisableDirectives": true
+  "reportUnusedDisableDirectives": true,
 }
