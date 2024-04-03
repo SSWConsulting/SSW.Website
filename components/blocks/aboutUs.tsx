@@ -309,7 +309,7 @@ const OpenStatus = ({ state }: OpenStatusProps) => {
 
   useEffect(() => {
     const now = dayjs.utc().tz(timeZone);
-    console.log(now.format());
+
     const isWeekend = [DAY_KEYS.Saturday, DAY_KEYS.Sunday].some(
       (x) => x === now.day()
     );
