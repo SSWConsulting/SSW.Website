@@ -310,19 +310,18 @@ const OpenStatus = ({ state }: OpenStatusProps) => {
   useEffect(() => {
     const now = dayjs.utc().tz(timeZone);
 
-    const isWeekend = [DAY_KEYS.Saturday, DAY_KEYS.Sunday].some(
-      (x) => x === now.day()
-    );
+    const isWeekend =
+      DAY_KEYS.Saturday === now.day() || DAY_KEYS.Sunday === now.day();
     const currentHour = now.hour();
 
     if (
-      isWeekend ||
-      currentHour < WORKING_TIME.Open ||
-      WORKING_TIME.Close < currentHour
+      !isWeekend &&
+      currentHour >= WORKING_TIME.Open &&
+      currentHour <= WORKING_TIME.Close
     ) {
-      setStatus("Closed");
-    } else {
       setStatus("Open");
+    } else {
+      setStatus("Closed");
     }
   }, [timeZone]);
 
