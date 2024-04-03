@@ -12,21 +12,20 @@ import { Layout } from "../components/layout";
 import { Container } from "../components/util/container";
 import { Section } from "../components/util/section";
 import { SEO } from "../components/util/seo";
-import layoutData from "../content/global/index.json";
 import { removeExtension } from "../services/client/utils.service";
-
-const structuredData: WithContext<WebSite> = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: layoutData.header.site_name,
-  alternateName: layoutData.header.alternate_site_name,
-  description: layoutData.header.description,
-  url: layoutData.header.url,
-};
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
+  const structuredData: WithContext<WebSite> = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: props?.data.global?.header.site_name,
+    alternateName: props?.data.global?.header?.alternate_site_name,
+    description: props?.data.global.header.description,
+    url: props?.data.global.header.url,
+  };
+
   const { data } = useTina({
     data: props.data,
     query: props.query,
