@@ -86,7 +86,7 @@ export const seoSchema = {
           return { label: item.url };
         },
         defaultItem: {
-          url: "/images/ssw-og.jpg",
+          url: "/images/ssw-default-og.jpg",
           width: 1200,
           height: 630,
           alt: "SSW Consulting - Enterprise Software Development",
