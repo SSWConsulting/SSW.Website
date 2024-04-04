@@ -58,7 +58,7 @@ const Card = (card: CardType) => {
             </div>
           )}
           <span>
-            <h2 className="m-0 pb-4 font-bold text-black">{card?.title}</h2>
+            <h3 className="m-0 pb-4 font-bold text-black">{card?.title}</h3>
           </span>
           <span>
             <TinaMarkdown content={card?.content} />
