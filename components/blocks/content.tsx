@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import { clientLogosBlockSchema } from "./clientLogos";
@@ -29,9 +29,23 @@ export const paddingOptions = {
   "Mobile: No Top and Horizontal Padding": "pt-0 px-0 md:px-8",
 };
 
-export const Content = ({ data }) => {
-  const alignment = alignmentClasses[data.align] ?? alignmentClasses.left;
-  const size = sizeClasses[data.size] ?? sizeClasses.base;
+export type ContentType = {
+  title?: string;
+  content?: TinaMarkdownContent;
+  paddingClass?: keyof typeof paddingOptions;
+  size?: keyof typeof sizeClasses;
+  align?: keyof typeof alignmentClasses;
+  backgroundColor?: string;
+};
+
+type ContentProps = { data: ContentType };
+
+export const Content = ({ data }: ContentProps) => {
+  if (!data) {
+    return <></>;
+  }
+  const alignment = alignmentClasses[data?.align] ?? alignmentClasses.left;
+  const size = sizeClasses[data?.size] ?? sizeClasses.base;
   return (
     <Section
       color={data.backgroundColor}
@@ -53,10 +67,10 @@ export const Content = ({ data }) => {
   );
 };
 
-export const contentBlock = {
+const contentBlock = {
   title: "title",
   content: "content",
-};
+} as const;
 
 export const contentBlockSchema: Template = {
   name: "Content",
