@@ -27,7 +27,7 @@ import { colorPaletteSchema } from "./colorPalette";
 import { contentBlockSchema } from "./content";
 import { contentCardBlockSchema } from "./contentCard";
 import { customImageBlockSchema } from "./customImage";
-import { domainForSaleSchema } from "./domainForSale";
+import { domainFromQuerySchema } from "./domainFromQuery";
 import { downloadBlockSchema } from "./downloadBlock";
 import { dynamicColumnsSchema } from "./dynamicColumns";
 import { eventLinkSchema } from "./eventLink";
@@ -101,7 +101,7 @@ export const pageBlocks: Template[] = [
   gridLayoutSchema,
   sectionHeaderSchema,
   colorPaletteSchema,
-  domainForSaleSchema,
+  domainFromQuerySchema,
 ];
 
 export * from "../bookingButton/bookingButton";
@@ -117,6 +117,7 @@ export * from "../usergroup/joinAsPresenter";
 export * from "../usergroup/joinGithub";
 export * from "../usergroup/latestTech";
 export * from "../usergroup/organizer";
+export * from "./CustomDownloadButton";
 export * from "./aboutUs";
 export * from "./builtOnAzure";
 export * from "./carousel";
@@ -127,8 +128,7 @@ export * from "./colorPalette";
 export * from "./content";
 export * from "./contentCard";
 export * from "./customImage";
-export * from "./CustomDownloadButton";
-export * from "./domainForSale";
+export * from "./domainFromQuery";
 export * from "./dynamicColumns";
 export * from "./eventLink";
 export * from "./fixedColumns";

@@ -68,8 +68,8 @@ const CustomImage = dynamic<{ data: CustomImageProps }>(() =>
 const DynamicColumns = dynamic(() =>
   import("./dynamicColumns").then((mod) => mod.DynamicColumns)
 );
-const DomainForSale = dynamic(() =>
-  import("./domainForSale").then((mod) => mod.DomainForSale)
+const DomainFromQuery = dynamic(() =>
+  import("./domainFromQuery").then((mod) => mod.DomainFromQuery)
 );
 const EventLink = dynamic<EventLinkProps>(() =>
   import("./eventLink").then((mod) => mod.EventLink)
@@ -258,7 +258,7 @@ export const componentRenderer: Components<{
   ColorPalette: ColorPaletteProps;
   SectionHeader: SectionHeaderProps;
   Content: ContentType;
-  DomainForSale: { showDomain: boolean };
+  DomainFromQuery: { showDomain: boolean };
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -299,5 +299,5 @@ export const componentRenderer: Components<{
   ColorPalette: (props) => <ColorPalette {...props} />,
   SectionHeader: (props) => <SectionHeader {...props} />,
   Content: (props) => <Content data={props} />,
-  DomainForSale: (props) => <DomainForSale {...props} />,
+  DomainFromQuery: (props) => <DomainFromQuery {...props} />,
 };
