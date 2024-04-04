@@ -1,4 +1,3 @@
-import { constants } from "buffer";
 import classNames from "classnames";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
