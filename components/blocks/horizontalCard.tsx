@@ -27,9 +27,9 @@ export const HorizontalCard = ({ cardList, button }: HorizontalCardProps) => {
     <Container className="flex max-w-9xl flex-col">
       {cardList?.map((card, index) => <Card key={index} {...card} />)}
       {button?.link && (
-        <div className="flex justify-start">
+        <div className="mt-2.5 flex justify-start">
           <CustomLink
-            className="unstyled rounded bg-sswRed px-3 py-2 text-xs font-normal text-white hover:bg-sswDarkRed"
+            className="unstyled rounded bg-sswRed px-3 py-2 font-normal text-white hover:bg-sswDarkRed"
             href={button.link}
           >
             {button?.text}
@@ -58,9 +58,7 @@ const Card = (card: CardType) => {
             </div>
           )}
           <span>
-            <h2 className="m-0 py-1 pb-4 font-bold text-black">
-              {card?.title}
-            </h2>
+            <h2 className="m-0 pb-4 font-bold text-black">{card?.title}</h2>
           </span>
           <span>
             <TinaMarkdown content={card?.content} />
