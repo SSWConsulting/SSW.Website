@@ -27,6 +27,7 @@ import { colorPaletteSchema } from "./colorPalette";
 import { contentBlockSchema } from "./content";
 import { contentCardBlockSchema } from "./contentCard";
 import { customImageBlockSchema } from "./customImage";
+import { domainForSaleSchema } from "./domainForSale";
 import { downloadBlockSchema } from "./downloadBlock";
 import { dynamicColumnsSchema } from "./dynamicColumns";
 import { eventLinkSchema } from "./eventLink";
@@ -100,6 +101,7 @@ export const pageBlocks: Template[] = [
   gridLayoutSchema,
   sectionHeaderSchema,
   colorPaletteSchema,
+  domainForSaleSchema,
 ];
 
 export * from "../bookingButton/bookingButton";
@@ -126,6 +128,7 @@ export * from "./content";
 export * from "./contentCard";
 export * from "./customImage";
 export * from "./CustomDownloadButton";
+export * from "./domainForSale";
 export * from "./dynamicColumns";
 export * from "./eventLink";
 export * from "./fixedColumns";
