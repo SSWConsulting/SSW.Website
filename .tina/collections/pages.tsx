@@ -63,5 +63,10 @@ export const pagesSchema: Collection = {
       },
       templates: [...Schemas.pageBlocks],
     },
+    {
+      type: "boolean",
+      name: "showAzureBanner",
+      label: "Show Azure banner above footer"
+    }
   ],
 };
