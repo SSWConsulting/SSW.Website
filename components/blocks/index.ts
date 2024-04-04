@@ -36,6 +36,7 @@ import { flagSchema } from "./flag";
 import { googleMapsSchema } from "./googleMapsWrapper";
 import { gridLayoutSchema } from "./gridLayout";
 import { heroBlockSchema } from "./hero";
+import { horizontalBlockSchema } from "./horizontalCard";
 import { internalCarouselBlockSchema } from "./internalCarousel";
 import { jotFormEmbedSchema } from "./jotFormEmbed";
 import { newslettersTableBlockSchema } from "./newslettersTable";
@@ -100,6 +101,7 @@ export const pageBlocks: Template[] = [
   gridLayoutSchema,
   sectionHeaderSchema,
   colorPaletteSchema,
+  horizontalBlockSchema,
 ];
 
 export * from "../bookingButton/bookingButton";
@@ -115,6 +117,7 @@ export * from "../usergroup/joinAsPresenter";
 export * from "../usergroup/joinGithub";
 export * from "../usergroup/latestTech";
 export * from "../usergroup/organizer";
+export * from "./CustomDownloadButton";
 export * from "./aboutUs";
 export * from "./builtOnAzure";
 export * from "./carousel";
@@ -125,7 +128,6 @@ export * from "./colorPalette";
 export * from "./content";
 export * from "./contentCard";
 export * from "./customImage";
-export * from "./CustomDownloadButton";
 export * from "./dynamicColumns";
 export * from "./eventLink";
 export * from "./fixedColumns";
