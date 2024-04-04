@@ -1,12 +1,11 @@
+import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import classNames from "classnames";
 
 import client from "../../.tina/__generated__/client";
 import { Blocks } from "../../components/blocks-renderer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
-import { BuiltOnAzure } from "../../components/blocks/builtOnAzure";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { TechUpgrade } from "../../components/blocks/techUpgrade";
 import HistoryTimeline from "../../components/company/historyTimeline";
@@ -42,7 +41,7 @@ export default function CompanyPage(
     >
       <div>
         <SEO seo={props.seo} />
-        <Layout menu={data.megamenu}>
+        <Layout menu={data.megamenu} showAzureBanner>
           <Blocks prefix="CompanyBeforeBody" blocks={data.company.beforeBody} />
           {data.company.seo?.showBreadcrumb === null ||
             (data.company.seo?.showBreadcrumb && (
@@ -111,9 +110,6 @@ export default function CompanyPage(
               <TechUpgrade />
             </Section>
           )}
-          <Section>
-            <BuiltOnAzure data={{ backgroundColor: "default" }} />
-          </Section>
         </Layout>
       </div>
     </RecaptchaContext.Provider>
