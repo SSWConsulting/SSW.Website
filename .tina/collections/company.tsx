@@ -2,15 +2,15 @@ import React from "react";
 import * as Schemas from "../../components/blocks";
 import {
   VerticalImageLayout,
-  fixedColumnsSchema,
-  testimonialsListSchema,
-  verticalImageLayoutBlockSchema,
-  sectionHeaderSchema,
-  tableBlockSchema,
-  customDownloadButtonSchema,
+  carouselBlockSchema,
   colorBlockSchema,
   colorPaletteSchema,
-  carouselBlockSchema,
+  customDownloadButtonSchema,
+  fixedColumnsSchema,
+  sectionHeaderSchema,
+  tableBlockSchema,
+  testimonialsListSchema,
+  verticalImageLayoutBlockSchema,
 } from "../../components/blocks";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
 import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
@@ -70,6 +70,7 @@ export const companySchema: Collection = {
         colorPaletteSchema,
         carouselBlockSchema,
         Schemas.utilityButtonSchema,
+        Schemas.customImageBlockSchema,
       ],
     },
     {
@@ -82,12 +83,12 @@ export const companySchema: Collection = {
     {
       type: "boolean",
       name: "hideSidebarOnMobile",
-      label: "Hide sidebar on mobile"
+      label: "Hide sidebar on mobile",
     },
     {
       type: "boolean",
       name: "fixedWidthSidebar",
-      label: "Fixed width sidebar"
+      label: "Fixed width sidebar",
     },
     {
       type: "string",
