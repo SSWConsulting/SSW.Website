@@ -14,6 +14,7 @@ import type { YoutubePlaylistProps } from "./youtubePlaylist";
 
 import { BookingButton } from "../bookingButton/bookingButton";
 import { ColorPaletteProps } from "./colorPalette";
+import { Content, ContentType } from "./content";
 import { SectionHeaderProps } from "./sectionHeader";
 
 const UtilityButton = dynamic(() =>
@@ -253,6 +254,7 @@ export const componentRenderer: Components<{
   ColorBlock: ColorBlockProps;
   ColorPalette: ColorPaletteProps;
   SectionHeader: SectionHeaderProps;
+  Content: ContentType;
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -292,4 +294,5 @@ export const componentRenderer: Components<{
   ColorBlock: (props) => <ColorBlock {...props} />,
   ColorPalette: (props) => <ColorPalette {...props} />,
   SectionHeader: (props) => <SectionHeader {...props} />,
+  Content: (props) => <Content data={props} />,
 };
