@@ -79,6 +79,13 @@ export const horizontalBlockSchema: Template = {
       label: "Cards",
       name: "cardList",
       list: true,
+      ui: {
+        itemProps(item) {
+          return {
+            label: item?.title,
+          };
+        },
+      },
       fields: [
         {
           type: "string",
