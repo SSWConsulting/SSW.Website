@@ -17,22 +17,15 @@ type HorizontalCardProps = {
     text: string;
     link: string;
   };
-  showBottomBorder: boolean;
 };
 
-export const HorizontalCard = ({
-  cardList,
-  button,
-  showBottomBorder,
-}: HorizontalCardProps) => {
+export const HorizontalCard = ({ cardList, button }: HorizontalCardProps) => {
   if (!cardList) {
     <> </>;
   }
   return (
     <Container className="flex max-w-9xl flex-col">
-      {cardList?.map((card, index) => (
-        <Card key={index} card={card} showBottomBorder={showBottomBorder} />
-      ))}
+      {cardList?.map((card, index) => <Card key={index} {...card} />)}
       {button?.link && (
         <div className="flex justify-start">
           <CustomLink
@@ -47,18 +40,13 @@ export const HorizontalCard = ({
   );
 };
 
-interface CardProps {
-  card: CardType;
-  showBottomBorder: boolean;
-}
-
-const Card = ({ card, showBottomBorder }: CardProps) => {
+const Card = (card: CardType) => {
   return (
     <CustomLink href={card?.link} className="unstyled no-underline">
-      <article className="my-2.5 rounded border-1 border-gray-300 bg-white p-2 shadow hover:border-ssw-black dark:border-gray-700 dark:bg-gray-800">
-        <div className="">
+      <article className="my-2.5 rounded border-1 border-gray-300 bg-white p-4 shadow hover:border-ssw-black dark:border-gray-700 dark:bg-gray-800">
+        <div className="block">
           {card.thumbnail && (
-            <div className="flex h-auto min-w-fit">
+            <div className="float-left pr-4">
               <Image
                 className={"rounded-md"}
                 src={card?.thumbnail}
@@ -69,12 +57,14 @@ const Card = ({ card, showBottomBorder }: CardProps) => {
               />
             </div>
           )}
-          <div className="justify-center px-3">
-            <h2 className="m-0 py-1  font-bold text-black">{card?.title}</h2>
-          </div>
-          <div className="justify-center px-3">
+          <span>
+            <h2 className="m-0 py-1 pb-4 font-bold text-black">
+              {card?.title}
+            </h2>
+          </span>
+          <span>
             <TinaMarkdown content={card?.content} />
-          </div>
+          </span>
         </div>
       </article>
     </CustomLink>
@@ -113,11 +103,6 @@ export const horizontalBlockSchema: Template = {
           name: "link",
         },
       ],
-    },
-    {
-      type: "boolean",
-      label: "Show Bottom Border",
-      name: "showBottomBorder",
     },
     {
       type: "object",
