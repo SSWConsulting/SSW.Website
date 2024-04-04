@@ -3,7 +3,6 @@ import "aos/dist/aos.css";
 import { DefaultSeo } from "next-seo";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import "react-responsive-modal/styles.css";
 import "react-tooltip/dist/react-tooltip.css";
 import { Analytics } from "../components/layout/analytics";
 import * as gtag from "../lib/gtag";
