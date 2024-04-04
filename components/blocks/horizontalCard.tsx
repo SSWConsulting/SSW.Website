@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Template } from "tinacms";
+import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
@@ -19,7 +20,8 @@ type HorizontalCardProps = {
   };
 };
 
-export const HorizontalCard = ({ cardList, button }: HorizontalCardProps) => {
+export const HorizontalCard = (props: HorizontalCardProps) => {
+  const { cardList, button } = props;
   if (!cardList) {
     <> </>;
   }
@@ -31,6 +33,7 @@ export const HorizontalCard = ({ cardList, button }: HorizontalCardProps) => {
           <CustomLink
             className="unstyled rounded bg-sswRed px-3 py-2 font-normal text-white hover:bg-sswDarkRed"
             href={button.link}
+            data-tina-field={tinaField(props, "button")}
           >
             {button?.text}
           </CustomLink>
@@ -46,7 +49,10 @@ const Card = (card: CardType) => {
       <article className="my-2.5 rounded border-1 border-gray-300 bg-white p-4 shadow hover:border-ssw-black dark:border-gray-700 dark:bg-gray-800">
         <div className="block">
           {card.thumbnail && (
-            <div className="float-left pr-4">
+            <div
+              className="float-left pr-4"
+              data-tina-field={tinaField(card, "thumbnail")}
+            >
               <Image
                 className={"rounded-md"}
                 src={card?.thumbnail}
@@ -58,9 +64,14 @@ const Card = (card: CardType) => {
             </div>
           )}
           <span>
-            <h3 className="m-0 pb-4 font-bold text-black">{card?.title}</h3>
+            <h3
+              className="m-0 pb-4 font-bold text-black"
+              data-tina-field={tinaField(card, "title")}
+            >
+              {card?.title}
+            </h3>
           </span>
-          <span>
+          <span data-tina-field={tinaField(card, "content")}>
             <TinaMarkdown content={card?.content} />
           </span>
         </div>
