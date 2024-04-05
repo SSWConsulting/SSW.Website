@@ -36,7 +36,7 @@ export default function HomePage(
       <SEO seo={data.page.seo} />
       <Layout menu={data.megamenu}>
         {data.page.breadcrumbs ? (
-          <Section className="mx-auto -mb-20 w-full max-w-9xl px-8 py-5">
+          <Section className="mx-auto mb-2 w-full max-w-9xl px-8 py-5">
             <Breadcrumbs
               path={removeExtension(props.variables.relativePath)}
               suffix={data.global.breadcrumbSuffix}
@@ -45,6 +45,28 @@ export default function HomePage(
           </Section>
         ) : (
           <></>
+        )}
+        {data.page?.title && (
+          <Section
+            className="mx-auto w-full max-w-9xl px-8"
+            data-tina-field={tinaField(data.page, "title")}
+          >
+            <h1 className="mt-4 py-2">{data.page.title}</h1>
+          </Section>
+        )}
+        {data.page?.subTitle && (
+          <Section
+            className="mx-auto w-full max-w-9xl px-8"
+            data-tina-field={tinaField(data.page, "title")}
+          >
+            <div>
+              <TinaMarkdown
+                content={data.page?.subTitle}
+                data-tina-field={tinaField(data.page, "subTitle")}
+                components={componentRenderer}
+              />
+            </div>
+          </Section>
         )}
         <Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
         <Container className="flex-1">
