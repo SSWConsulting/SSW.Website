@@ -16,6 +16,7 @@ import { BookingButton } from "../bookingButton/bookingButton";
 import { ColorPaletteProps } from "./colorPalette";
 import { Content, ContentType } from "./content";
 import { SectionHeaderProps } from "./sectionHeader";
+import { DomainFromQueryProps } from "./domainFromQuery";
 
 const UtilityButton = dynamic(() =>
   import("../button/utilityButton").then((mod) => mod.UtilityButton)
@@ -258,7 +259,7 @@ export const componentRenderer: Components<{
   ColorPalette: ColorPaletteProps;
   SectionHeader: SectionHeaderProps;
   Content: ContentType;
-  DomainFromQuery: { showDomain: boolean };
+  DomainFromQuery: DomainFromQueryProps;
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
