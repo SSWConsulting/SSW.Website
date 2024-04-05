@@ -1,12 +1,12 @@
+import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import classNames from "classnames";
 
+import { BuiltOnAzure } from "@/components/blocks";
 import client from "../../.tina/__generated__/client";
 import { Blocks } from "../../components/blocks-renderer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
-import { BuiltOnAzure } from "../../components/blocks/builtOnAzure";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { TechUpgrade } from "../../components/blocks/techUpgrade";
 import HistoryTimeline from "../../components/company/historyTimeline";
