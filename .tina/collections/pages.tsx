@@ -32,6 +32,11 @@ export const pagesSchema: Collection = {
       label: "Title",
     },
     {
+      type: "boolean",
+      name: "centeredTitle",
+      label: "Centered Title",
+    },
+    {
       type: "rich-text",
       name: "subTitle",
       label: "Sub Title",

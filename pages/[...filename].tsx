@@ -48,7 +48,9 @@ export default function HomePage(
         )}
         {data.page?.title && (
           <Section
-            className="mx-auto w-full max-w-9xl px-8"
+            className={classNames("mx-auto w-full max-w-9xl px-8", {
+              "justify-center": data.page.centeredTitle,
+            })}
             data-tina-field={tinaField(data.page, "title")}
           >
             <h1 className="mt-4 py-2">{data.page.title}</h1>
