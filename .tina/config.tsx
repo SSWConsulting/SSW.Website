@@ -17,6 +17,7 @@ import { globalSchema } from "./collections/global";
 import { industrySchema } from "./collections/industry";
 import { liveSchema } from "./collections/live";
 import { locationSchema } from "./collections/location";
+import { logosSchema } from "./collections/logos";
 import { marketingSchema } from "./collections/marketing";
 import { megaMenuSchema } from "./collections/megamenu";
 import { newsletterSchema } from "./collections/newsletters";
@@ -36,7 +37,6 @@ import {
   userGroupPageSchema,
 } from "./collections/usergroup";
 import { videoProductionSchema } from "./collections/videoProduction";
-import { logosSchema } from './collections/logos';
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,

@@ -1,9 +1,7 @@
 import { PageCard } from "@/components/blocks/pageCards";
 import { Container } from "@/components/util/container";
 
-export default function ServerPage(props) {
-  const data = props.props.data;
-
+export default function ServerPage({ data }) {
   return (
     <>
       {/* <SEO seo={props.seo} /> */}

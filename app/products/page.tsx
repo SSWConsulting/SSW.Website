@@ -16,6 +16,6 @@ export default async function ProductsIndex() {
   return isEnabled ? (
     <ClientPage props={{ ...tinaProps, seo }} />
   ) : (
-    <ServerPage props={{ ...tinaProps, seo }} />
+    <ServerPage data={tinaProps.data} />
   );
 }

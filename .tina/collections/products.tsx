@@ -14,6 +14,10 @@ export const productsIndexSchema: Collection = {
       create: false,
       delete: false,
     },
+    router: async ({ document }) => {
+      await fetch("/api/draft");
+      return "/products";
+    },
   },
   fields: [
     // @ts-ignore
@@ -76,7 +80,8 @@ export const productsSchema: Collection = {
   path: "content/products",
   format: "mdx",
   ui: {
-    router: ({ document }) => {
+    router: async ({ document }) => {
+      await fetch("/api/draft");
       return `/products/${document._sys.filename}`;
     },
   },
