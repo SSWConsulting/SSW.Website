@@ -307,11 +307,6 @@
               "name": "Hack Days",
               "menuItems": [
                 {
-                  "name": "View All Hack Days",
-                  "url": "/hackday",
-                  "description": "Hack day page "
-                },
-                {
                   "name": "Angular Hack Day",
                   "url": "https://angularhackday.com/"
                 },
@@ -322,6 +317,10 @@
                 {
                   "name": "AI Hack Day",
                   "url": "https://aihackday.com/"
+                },
+                {
+                  "name": "View All Hack Days",
+                  "url": "/hackday"
                 }
               ]
             }
