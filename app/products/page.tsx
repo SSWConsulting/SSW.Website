@@ -1,5 +1,7 @@
+import { draftMode } from "next/headers";
 import { client } from "../../.tina/__generated__/client";
-import RealPage from "./real-page";
+import ClientPage from "./ClientPage";
+import ServerPage from "./ServerPage";
 
 export default async function ProductsIndex() {
   const tinaProps = await client.queries.productsIndexQuery();
@@ -9,5 +11,11 @@ export default async function ProductsIndex() {
     seo.canonical = `${tinaProps.data.global.header.url}/products`;
   }
 
-  return <RealPage props={{ ...tinaProps, seo }} />;
+  const { isEnabled } = draftMode();
+
+  return isEnabled ? (
+    <ClientPage props={{ ...tinaProps, seo }} />
+  ) : (
+    <ServerPage props={{ ...tinaProps, seo }} />
+  );
 }
