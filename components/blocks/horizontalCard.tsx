@@ -34,6 +34,7 @@ export const HorizontalCard = (props: HorizontalCardProps) => {
             className="unstyled rounded bg-sswRed px-3 py-2 font-normal text-white hover:bg-sswDarkRed"
             href={button.link}
             data-tina-field={tinaField(props, "button")}
+            target="_blank"
           >
             {button?.text}
           </CustomLink>
