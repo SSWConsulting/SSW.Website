@@ -45,6 +45,7 @@
   "breadcrumbSuffix": "SSW Consulting - Sydney, Brisbane, Melbourne, Newcastle",
   "bookingButtonText": "Book a FREE Initial Meeting",
   "bookingPhone": "+61 2 9953 3000",
+  "defaultOGImage": "/images/ssw-default-og.jpg",
   "homePageOfficeList": [
     {
       "url": "/offices/sydney",
@@ -99,13 +100,6 @@
       "days": "Monday - Friday"
     }
   ],
-  "contactIcon": {
-    "url": "tel:+61299533000",
-    "linkText": "CALL US",
-    "desktopSpecificLinkText": "CONTACT US",
-    "desktopSpecificURL": "/company/contact-us",
-    "openInSameWindow": true
-  },
   "socials": [
     {
       "type": "youtube",
@@ -152,6 +146,13 @@
       "url": "https://www.meetup.com/Sydney-NET-User-Group/"
     }
   ],
+  "contactIcon": {
+    "url": "tel:+61299533000",
+    "linkText": "CALL US",
+    "desktopSpecificLinkText": "CONTACT US",
+    "desktopSpecificURL": "/company/contact-us",
+    "openInSameWindow": true
+  },
   "clients": {
     "clientsList": [
       {

@@ -1,4 +1,5 @@
 import { NextSeo, NextSeoProps } from "next-seo";
+import layoutData from "../../content/global/index.json";
 import { NEXT_SEO_DEFAULT } from "../../next-seo.config";
 
 export const SEO = ({ seo }) => {
@@ -86,7 +87,7 @@ export const seoSchema = {
           return { label: item.url };
         },
         defaultItem: {
-          url: "/images/ssw-default-og.jpg",
+          url: layoutData.defaultOGImage,
           width: 1200,
           height: 630,
           alt: "SSW Consulting - Enterprise Software Development",
