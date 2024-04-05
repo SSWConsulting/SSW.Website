@@ -27,6 +27,16 @@ export const pagesSchema: Collection = {
       label: "Breadcrumbs enabled",
     },
     {
+      type: "string",
+      name: "title",
+      label: "Title",
+    },
+    {
+      type: "rich-text",
+      name: "subTitle",
+      label: "Sub Title",
+    },
+    {
       type: "object",
       list: true,
       name: "beforeBody",
@@ -62,6 +72,11 @@ export const pagesSchema: Collection = {
         visualSelector: true,
       },
       templates: [...Schemas.pageBlocks],
+    },
+    {
+      type: "boolean",
+      name: "showAzureFooter",
+      label: "Show Azure Footer",
     },
   ],
 };
