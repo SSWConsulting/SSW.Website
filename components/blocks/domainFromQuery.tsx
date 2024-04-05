@@ -12,9 +12,11 @@ export const DomainFromQuery = (props: DomainFromQueryProps) => {
   const searchParams = useSearchParams();
   const domain = searchParams.get(DOMAIN_PARAM_KEY);
 
-  if (!showDomain) return null;
+  if (!showDomain || !domain) return null;
 
-  return <p className="text-center text-4xl text-ssw-red">{domain}</p>;
+  return (
+    <p className="m-0 text-center text-6xl font-bold text-ssw-red">{domain}</p>
+  );
 };
 
 export const domainFromQuerySchema: Template = {
