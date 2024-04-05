@@ -1,3 +1,5 @@
+"use client";
+
 import classNames from "classnames";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";

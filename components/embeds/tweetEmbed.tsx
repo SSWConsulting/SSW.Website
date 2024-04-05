@@ -1,3 +1,5 @@
+"use client";
+
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import type { Template } from "tinacms";

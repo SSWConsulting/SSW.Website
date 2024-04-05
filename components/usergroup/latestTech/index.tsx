@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
 import { Badge } from "./badge";

@@ -1,3 +1,5 @@
+"use client";
+
 import axios from "axios";
 import { Key, useEffect, useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";

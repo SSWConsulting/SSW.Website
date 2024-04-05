@@ -1,3 +1,5 @@
+"use client";
+
 import { Tab, Transition } from "@headlessui/react";
 import { useFetchEvents, useFetchPastEvents } from "hooks/useFetchEvents";
 import Image from "next/image";
