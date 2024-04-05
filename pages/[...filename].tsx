@@ -34,8 +34,8 @@ export default function HomePage(
   return (
     <>
       <SEO seo={data.page.seo} />
-      <Layout menu={data.megamenu}>
-        {data.page.breadcrumbs ? (
+      <Layout menu={data.megamenu} showAzureBanner={data.page.showAzureFooter}>
+        {data.page.breadcrumbs && (
           <Section className="mx-auto w-full max-w-9xl px-8 py-5">
             <Breadcrumbs
               path={removeExtension(props.variables.relativePath)}
@@ -43,8 +43,6 @@ export default function HomePage(
               title={data.page.seo?.title}
             />
           </Section>
-        ) : (
-          <></>
         )}
         {data.page?.title && (
           <Section
