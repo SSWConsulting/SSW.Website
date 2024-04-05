@@ -36,7 +36,7 @@ export default function HomePage(
       <SEO seo={data.page.seo} />
       <Layout menu={data.megamenu}>
         {data.page.breadcrumbs ? (
-          <Section className="mx-auto mb-2 w-full max-w-9xl px-8 py-5">
+          <Section className="mx-auto w-full max-w-9xl px-8 py-5">
             <Breadcrumbs
               path={removeExtension(props.variables.relativePath)}
               suffix={data.global.breadcrumbSuffix}
