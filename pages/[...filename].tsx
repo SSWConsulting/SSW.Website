@@ -48,18 +48,10 @@ export default function HomePage(
         )}
         {data.page?.title && (
           <Section
-            className={classNames("mx-auto w-full max-w-9xl px-8", {
-              "justify-center": data.page.centeredTitle,
-            })}
+            className="mx-auto w-full max-w-9xl px-8"
             data-tina-field={tinaField(data.page, "title")}
           >
-            <h1
-              className={classNames("mt-4 py-2", {
-                "text-6xl font-bold": data.page.largeTitle,
-              })}
-            >
-              {data.page.title}
-            </h1>
+            <h1 className="mt-4 py-2">{data.page.title}</h1>
           </Section>
         )}
         {data.page?.subTitle && (
@@ -77,7 +69,11 @@ export default function HomePage(
           </Section>
         )}
         <Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
-        <Container className="flex-1">
+        <Container
+          className={classNames("flex-1", {
+            "pt-0": data.page.removeBodyTopMargin,
+          })}
+        >
           <div className="gap-20 pt-3 md:grid md:grid-cols-5">
             <div
               className={classNames(contentClass, {

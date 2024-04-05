@@ -32,16 +32,6 @@ export const pagesSchema: Collection = {
       label: "Title",
     },
     {
-      type: "boolean",
-      name: "centeredTitle",
-      label: "Centered Title",
-    },
-    {
-      type: "boolean",
-      name: "largeTitle",
-      label: "Large Title",
-    },
-    {
       type: "rich-text",
       name: "subTitle",
       label: "Sub Title",
@@ -62,6 +52,11 @@ export const pagesSchema: Collection = {
       name: "_body",
       templates: [...Schemas.pageBlocks],
       isBody: true,
+    },
+    {
+      type: "boolean",
+      label: "Remove body top margin",
+      name: "removeBodyTopMargin"
     },
     {
       type: "object",
