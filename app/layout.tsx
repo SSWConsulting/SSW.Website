@@ -4,8 +4,9 @@ import classNames from "classnames";
 import { Open_Sans } from "next/font/google";
 // import Head from "next/head";
 // import { Theme } from "../components/layout/theme";
+import client from "@/tina/client";
 import "styles.css";
-import { MenuWrapper } from "./products/menuWrapper";
+import { MenuWrapper } from "./MenuWrapper";
 
 export const metadata = {
   title: "Next.js",
@@ -17,11 +18,15 @@ const openSans = Open_Sans({
   subsets: ["latin"],
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const menuData = await client.queries.megamenu({
+    relativePath: "menu.json",
+  });
+
   return (
     <html lang="en" className={openSans.className}>
       {/* <Head>
@@ -66,7 +71,7 @@ export default function RootLayout({
               {/* {(isLive || router.query.liveStream) && (
                   <LiveStreamWidget {...liveStreamProps} isLive={!!isLive} />
                 )} */}
-              <MenuWrapper />
+              <MenuWrapper menu={menuData.data.megamenu} />
             </div>
           </header>
           <main className="grow bg-white">{children}</main>
