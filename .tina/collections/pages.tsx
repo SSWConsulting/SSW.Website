@@ -54,6 +54,11 @@ export const pagesSchema: Collection = {
       templates: [...Schemas.pageBlocks],
     },
     {
+      type: "boolean",
+      name: "centeredBodyText",
+      label: "Centered body text"
+    },
+    {
       type: "object",
       list: true,
       name: "afterBody",
