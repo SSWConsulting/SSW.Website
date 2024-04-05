@@ -23,6 +23,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // TODO: Add React cache
   const menuData = await client.queries.megamenu({
     relativePath: "menu.json",
   });
@@ -71,7 +72,7 @@ export default async function RootLayout({
               {/* {(isLive || router.query.liveStream) && (
                   <LiveStreamWidget {...liveStreamProps} isLive={!!isLive} />
                 )} */}
-              <MenuWrapper menu={menuData.data.megamenu} />
+              <MenuWrapper menu={menuData.data.megamenu.menuGroups} />
             </div>
           </header>
           <main className="grow bg-white">{children}</main>
