@@ -68,6 +68,7 @@ export const pageBlocks: Template[] = [
   contentCardBlockSchema,
   customDownloadButtonSchema,
   customImageBlockSchema,
+  domainFromQuerySchema,
   downloadBlockSchema,
   dynamicColumnsSchema,
   eventBookingSchema,
