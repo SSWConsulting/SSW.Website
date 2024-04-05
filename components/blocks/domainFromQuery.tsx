@@ -15,7 +15,7 @@ export const DomainFromQuery = (props: DomainFromQueryProps) => {
   if (!showDomain || !domain) return null;
 
   return (
-    <p className="m-0 text-center text-6xl font-bold text-ssw-red">{domain}</p>
+    <p className="mt-0 text-center text-6xl font-bold text-ssw-red">{domain}</p>
   );
 };
 

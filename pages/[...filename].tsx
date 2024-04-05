@@ -53,7 +53,13 @@ export default function HomePage(
             })}
             data-tina-field={tinaField(data.page, "title")}
           >
-            <h1 className="mt-4 py-2">{data.page.title}</h1>
+            <h1
+              className={classNames("mt-4 py-2", {
+                "text-6xl font-bold": data.page.largeTitle,
+              })}
+            >
+              {data.page.title}
+            </h1>
           </Section>
         )}
         {data.page?.subTitle && (
