@@ -24,10 +24,10 @@ export type ImgCard = {
 };
 
 const GridCols = {
-  single: "xl:col-span-12",
-  double: "xl:col-span-6",
+  single: "col-span-12",
+  double: "md:col-span-6",
   triple: "lg:col-span-6 xl:col-span-4",
-  four: "lg:col-span-6 xl:col-span-3",
+  four: "md:col-span-6 lg:col-span-4 xl:col-span-3",
 } as const;
 
 export const TripleColumnImageBlock: React.FC<TripleColumnImageBlockProps> = ({
@@ -56,7 +56,7 @@ const ImgCard = ({ card, gridLayout }: ImgCardProps) => {
     <div
       className={classNames(
         "relative col-span-12 flex flex-col justify-between rounded border-1 text-center",
-        GridCols[gridLayout?.trim() ?? "triple"]
+        GridCols[gridLayout ?? "triple"]
       )}
     >
       {imageSrc && (
