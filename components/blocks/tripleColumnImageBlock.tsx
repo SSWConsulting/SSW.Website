@@ -71,12 +71,12 @@ const ImgCard = ({ card, gridLayout }: ImgCardProps) => {
       )}
       <div className="not-prose bottom-0 w-full bg-gray-50 p-4 text-center">
         <h3 className="font-bold">{title}</h3>
-        {subTitle && <span className="py-2 text-gray-400">{subTitle}</span>}
         {link?.url && (
           <CustomLink href={link.url} className="font-bold text-sswRed">
-            <h3>{link.label}</h3>
+            <h3 className="py-3">{link.label}</h3>
           </CustomLink>
         )}
+        {subTitle && <span className="py-2 text-gray-400">{subTitle}</span>}
       </div>
     </div>
   );
