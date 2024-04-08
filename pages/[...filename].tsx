@@ -3,6 +3,8 @@ import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import classNames from "classnames";
+
 import { client } from "../.tina/__generated__/client";
 import { pageBlocks } from "../components/blocks";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
@@ -67,10 +69,16 @@ export default function HomePage(
           </Section>
         )}
         <Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
-        <Container className="flex-1">
+        <Container
+          className={classNames("flex-1", {
+            "pt-0": data.page.removeBodyTopMargin,
+          })}
+        >
           <div className="gap-20 pt-3 md:grid md:grid-cols-5">
             <div
-              className={contentClass}
+              className={classNames(contentClass, {
+                "text-center": data.page.centeredBodyText,
+              })}
               data-tina-field={tinaField(data.page, "_body")}
             >
               <TinaMarkdown

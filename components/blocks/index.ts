@@ -27,6 +27,7 @@ import { colorPaletteSchema } from "./colorPalette";
 import { contentBlockSchema } from "./content";
 import { contentCardBlockSchema } from "./contentCard";
 import { customImageBlockSchema } from "./customImage";
+import { domainFromQuerySchema } from "./domainFromQuery";
 import { downloadBlockSchema } from "./downloadBlock";
 import { dynamicColumnsSchema } from "./dynamicColumns";
 import { eventLinkSchema } from "./eventLink";
@@ -67,6 +68,7 @@ export const pageBlocks: Template[] = [
   contentCardBlockSchema,
   customDownloadButtonSchema,
   customImageBlockSchema,
+  domainFromQuerySchema,
   downloadBlockSchema,
   dynamicColumnsSchema,
   eventBookingSchema,
@@ -128,6 +130,7 @@ export * from "./colorPalette";
 export * from "./content";
 export * from "./contentCard";
 export * from "./customImage";
+export * from "./domainFromQuery";
 export * from "./dynamicColumns";
 export * from "./eventLink";
 export * from "./fixedColumns";
