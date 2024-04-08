@@ -15,7 +15,7 @@ export const NEXT_SEO_DEFAULT: NextSeoProps = {
     siteName: layoutData.header.site_name,
     images: [
       {
-        url: "/images/ssw-og.jpg",
+        url: layoutData.defaultOGImage,
         width: 1200,
         height: 630,
         alt: "SSW Consulting - Enterprise Software Development",

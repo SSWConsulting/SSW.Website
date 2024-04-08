@@ -27,6 +27,16 @@ export const pagesSchema: Collection = {
       label: "Breadcrumbs enabled",
     },
     {
+      type: "string",
+      name: "title",
+      label: "Title",
+    },
+    {
+      type: "rich-text",
+      name: "subTitle",
+      label: "Sub Title",
+    },
+    {
       type: "object",
       list: true,
       name: "beforeBody",
@@ -44,6 +54,11 @@ export const pagesSchema: Collection = {
       isBody: true,
     },
     {
+      type: "boolean",
+      label: "Remove body top margin",
+      name: "removeBodyTopMargin"
+    },
+    {
       type: "object",
       list: true,
       name: "sideBar",
@@ -54,6 +69,11 @@ export const pagesSchema: Collection = {
       templates: [...Schemas.pageBlocks],
     },
     {
+      type: "boolean",
+      name: "centeredBodyText",
+      label: "Centered body text",
+    },
+    {
       type: "object",
       list: true,
       name: "afterBody",
@@ -62,6 +82,11 @@ export const pagesSchema: Collection = {
         visualSelector: true,
       },
       templates: [...Schemas.pageBlocks],
+    },
+    {
+      type: "boolean",
+      name: "showAzureFooter",
+      label: "Show Azure Footer",
     },
   ],
 };

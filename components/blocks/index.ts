@@ -27,6 +27,7 @@ import { colorPaletteSchema } from "./colorPalette";
 import { contentBlockSchema } from "./content";
 import { contentCardBlockSchema } from "./contentCard";
 import { customImageBlockSchema } from "./customImage";
+import { domainFromQuerySchema } from "./domainFromQuery";
 import { downloadBlockSchema } from "./downloadBlock";
 import { dynamicColumnsSchema } from "./dynamicColumns";
 import { eventLinkSchema } from "./eventLink";
@@ -36,6 +37,7 @@ import { flagSchema } from "./flag";
 import { googleMapsSchema } from "./googleMapsWrapper";
 import { gridLayoutSchema } from "./gridLayout";
 import { heroBlockSchema } from "./hero";
+import { horizontalBlockSchema } from "./horizontalCard";
 import { internalCarouselBlockSchema } from "./internalCarousel";
 import { jotFormEmbedSchema } from "./jotFormEmbed";
 import { newslettersTableBlockSchema } from "./newslettersTable";
@@ -52,28 +54,48 @@ import { videoEmbedBlockSchema } from "./videoEmbed";
 
 export const pageBlocks: Template[] = [
   aboutUsBlockSchema,
+  agendaSchema,
   agreementFormBlockSchema,
   bookingButtonSchema,
   builtOnAzureBlockSchema,
   carouselBlockSchema,
   citationBlockSchema,
-  clientLogosBlockSchema,
   clientListSchema,
+  clientLogosBlockSchema,
+  colorBlockSchema,
+  colorPaletteSchema,
   contentBlockSchema,
   contentCardBlockSchema,
+  customDownloadButtonSchema,
   customImageBlockSchema,
+  domainFromQuerySchema,
+  downloadBlockSchema,
   dynamicColumnsSchema,
+  eventBookingSchema,
+  eventLinkSchema,
   flagSchema,
   fixedColumnsSchema,
   fixedTabsLayoutSchema,
   googleMapsSchema,
+  gridLayoutSchema,
   heroBlockSchema,
+  horizontalBlockSchema,
   internalCarouselBlockSchema,
+  joinAsPresenterSchema,
+  joinGithubSchema,
+  jotFormEmbedSchema,
+  latestTechSchema,
+  locationBlockSchema,
   newslettersTableBlockSchema,
+  organizerSchema,
+  paymentBlockSchema,
+  presenterBlockSchema,
   recurringEventSchema,
+  sectionHeaderSchema,
   serviceCardsBlockSchema,
   subNewsletterRowSchema,
   tableBlockSchema,
+  testimonialsListSchema,
   trainingInformationSchema,
   trainingLearningOutcomeSchema,
   tweetEmbedSchema,
@@ -82,24 +104,6 @@ export const pageBlocks: Template[] = [
   verticalImageLayoutBlockSchema,
   verticalListItemSchema,
   videoEmbedBlockSchema,
-  eventBookingSchema,
-  presenterBlockSchema,
-  locationBlockSchema,
-  agendaSchema,
-  organizerSchema,
-  joinGithubSchema,
-  joinAsPresenterSchema,
-  paymentBlockSchema,
-  latestTechSchema,
-  testimonialsListSchema,
-  eventLinkSchema,
-  jotFormEmbedSchema,
-  customDownloadButtonSchema,
-  colorBlockSchema,
-  downloadBlockSchema,
-  gridLayoutSchema,
-  sectionHeaderSchema,
-  colorPaletteSchema,
 ];
 
 export * from "../bookingButton/bookingButton";
@@ -115,6 +119,7 @@ export * from "../usergroup/joinAsPresenter";
 export * from "../usergroup/joinGithub";
 export * from "../usergroup/latestTech";
 export * from "../usergroup/organizer";
+export * from "./CustomDownloadButton";
 export * from "./aboutUs";
 export * from "./builtOnAzure";
 export * from "./carousel";
@@ -125,7 +130,7 @@ export * from "./colorPalette";
 export * from "./content";
 export * from "./contentCard";
 export * from "./customImage";
-export * from "./CustomDownloadButton";
+export * from "./domainFromQuery";
 export * from "./dynamicColumns";
 export * from "./eventLink";
 export * from "./fixedColumns";

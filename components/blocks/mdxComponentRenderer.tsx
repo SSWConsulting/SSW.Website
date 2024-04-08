@@ -16,6 +16,7 @@ import { BookingButton } from "../bookingButton/bookingButton";
 import { ColorPaletteProps } from "./colorPalette";
 import { Content, ContentType } from "./content";
 import { SectionHeaderProps } from "./sectionHeader";
+import { DomainFromQueryProps } from "./domainFromQuery";
 
 const UtilityButton = dynamic(() =>
   import("../button/utilityButton").then((mod) => mod.UtilityButton)
@@ -67,6 +68,9 @@ const CustomImage = dynamic<{ data: CustomImageProps }>(() =>
 );
 const DynamicColumns = dynamic(() =>
   import("./dynamicColumns").then((mod) => mod.DynamicColumns)
+);
+const DomainFromQuery = dynamic(() =>
+  import("./domainFromQuery").then((mod) => mod.DomainFromQuery)
 );
 const EventLink = dynamic<EventLinkProps>(() =>
   import("./eventLink").then((mod) => mod.EventLink)
@@ -255,6 +259,7 @@ export const componentRenderer: Components<{
   ColorPalette: ColorPaletteProps;
   SectionHeader: SectionHeaderProps;
   Content: ContentType;
+  DomainFromQuery: DomainFromQueryProps;
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -295,4 +300,5 @@ export const componentRenderer: Components<{
   ColorPalette: (props) => <ColorPalette {...props} />,
   SectionHeader: (props) => <SectionHeader {...props} />,
   Content: (props) => <Content data={props} />,
+  DomainFromQuery: (props) => <DomainFromQuery {...props} />,
 };
