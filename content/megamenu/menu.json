@@ -256,6 +256,27 @@
                   "url": "https://fireusergroup.com/"
                 }
               ]
+            },
+            {
+              "name": "Hack Days",
+              "menuItems": [
+                {
+                  "name": "Angular Hack Day",
+                  "url": "https://angularhackday.com/"
+                },
+                {
+                  "name": "MAUI Hack Day",
+                  "url": "https://mauihackday.com/"
+                },
+                {
+                  "name": "AI Hack Day",
+                  "url": "https://aihackday.com/"
+                },
+                {
+                  "name": "View All Hack Days",
+                  "url": "/hackday"
+                }
+              ]
             }
           ]
         },
@@ -300,23 +321,6 @@
                 {
                   "name": "Clean Architecture Workshop",
                   "url": "/events/clean-architecture-workshop"
-                }
-              ]
-            },
-            {
-              "name": "Hack Days",
-              "menuItems": [
-                {
-                  "name": "Angular Hack Day",
-                  "url": "https://angularhackday.com/"
-                },
-                {
-                  "name": "MAUI Hack Day",
-                  "url": "https://mauihackday.com/"
-                },
-                {
-                  "name": "AI Hack Day",
-                  "url": "https://aihackday.com/"
                 }
               ]
             }

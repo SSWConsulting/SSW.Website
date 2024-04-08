@@ -134,6 +134,11 @@ export const globalSchema: Collection = {
       name: "bookingPhone",
     },
     {
+      type: "image",
+      label: "Default OG Image",
+      name: "defaultOGImage",
+    },
+    {
       type: "object",
       label: "Home Page Office Index",
       name: "homePageOfficeList",

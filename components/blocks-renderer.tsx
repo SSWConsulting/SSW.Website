@@ -9,6 +9,7 @@ import { Content } from "./blocks/content";
 import { ContentCard } from "./blocks/contentCard";
 import { CustomImage } from "./blocks/customImage";
 import { FixedColumns } from "./blocks/fixedColumns";
+import { HorizontalCard } from "./blocks/horizontalCard";
 import { JotFormEmbed } from "./blocks/jotFormEmbed";
 import { ServiceCards } from "./blocks/serviceCards";
 import { TableLayout } from "./blocks/tableLayout";
@@ -96,6 +97,7 @@ const componentMap = {
   DownloadBlock,
   GridLayout,
   FixedColumns,
+  HorizontalCard,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
