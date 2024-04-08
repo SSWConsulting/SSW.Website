@@ -1,14 +1,16 @@
+import classNames from "classnames";
 import Image from "next/image";
 import { Key } from "react";
-import type { Template } from "tinacms";
+import { Template } from "tinacms";
 import { CustomLink } from "../customLink";
 import { isEmpty } from "../training/eventBooking";
 
 export type TripleColumnImageBlockProps = {
-  imageList: ImgCardProps[];
+  gridLayout?: keyof typeof GridCols;
+  imageList: ImgCard[];
 };
 
-export type ImgCardProps = {
+export type ImgCard = {
   title: string;
   subTitle?: string;
   link?: {
@@ -21,29 +23,42 @@ export type ImgCardProps = {
   width?: number;
 };
 
+const GridCols = {
+  single: "xl:col-span-12",
+  double: "xl:col-span-6",
+  triple: "lg:col-span-6 xl:col-span-4",
+  four: "lg:col-span-6 xl:col-span-3",
+} as const;
+
 export const TripleColumnImageBlock: React.FC<TripleColumnImageBlockProps> = ({
   imageList,
+  gridLayout,
 }) => {
   return (
     <div className="grid grid-cols-12 gap-5 py-1">
       {imageList?.map((imageblock, index: Key) => {
-        return <ImgCard {...imageblock} key={index} />;
+        return (
+          <ImgCard card={imageblock} gridLayout={gridLayout} key={index} />
+        );
       })}
     </div>
   );
 };
 
-const ImgCard = ({
-  title,
-  subTitle,
-  imageSrc,
-  altText,
-  height,
-  width,
-  link,
-}: ImgCardProps) => {
+interface ImgCardProps {
+  card: ImgCard;
+  gridLayout: keyof typeof GridCols;
+}
+
+const ImgCard = ({ card, gridLayout }: ImgCardProps) => {
+  const { title, subTitle, imageSrc, altText, height, width, link } = card;
   return (
-    <div className="relative col-span-12 flex flex-col justify-between rounded border-1 text-center md:col-span-3">
+    <div
+      className={classNames(
+        "relative col-span-12 flex flex-col justify-between rounded border-1 text-center",
+        GridCols[gridLayout?.trim() ?? "triple"]
+      )}
+    >
       {imageSrc && (
         <div className="flex justify-center py-4">
           <Image
@@ -71,6 +86,13 @@ export const tripleColumnImageBlockSchema: Template = {
   name: "TripleColumnImageBlock",
   label: "Triple Column Image Block",
   fields: [
+    {
+      type: "string",
+      label: "Grid Columns Layout",
+      name: "gridLayout",
+      description: "Default 3 columns",
+      options: Object.keys(GridCols),
+    },
     {
       type: "object",
       label: "Image List",
