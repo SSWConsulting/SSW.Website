@@ -71,7 +71,10 @@ export default function LivePage(
             {props.speaker && (
               <div className="py-1 text-lg">
                 With
-                <CustomLink href={props.speaker?.PresenterProfileLink}>
+                <CustomLink
+                  href={props.speaker?.PresenterProfileLink}
+                  className="ml-2"
+                >
                   {props.speaker?.Title}
                 </CustomLink>
               </div>
