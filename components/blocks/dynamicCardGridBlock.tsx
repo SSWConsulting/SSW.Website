@@ -65,6 +65,7 @@ const Card = ({ card, gridLayout }: CardProps) => {
             height={isEmpty(height) ? 150 : height} // IsEmpty - Tina converts height to empty string after removing the text from the field
             width={isEmpty(width) ? 150 : width} // IsEmpty - Tina converts width to empty string after removing the text from the field
             className="object-contain"
+            sizes="75w (max-width: 768px) 25vw"
           />
         </div>
       )}
