@@ -1,3 +1,5 @@
+import "styles.css";
+
 // import { CustomLink } from "@/components/customLink";
 // import { Footer } from "@/components/layout/footer";
 import classNames from "classnames";
@@ -7,7 +9,6 @@ import { Open_Sans } from "next/font/google";
 import { Analytics } from "@/components/layout/analytics";
 import ChatBaseBot from "@/components/zendeskButton/chatBaseBot";
 import client from "@/tina/client";
-import "styles.css";
 import { MenuWrapper } from "../components/server/MenuWrapper";
 
 export const dynamic = "force-static";
