@@ -3,6 +3,10 @@ import React, { useState } from "react";
 import { FaRegCheckCircle, FaSpinner } from "react-icons/fa";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 
+const emailReg =
+  // eslint-disable-next-line no-useless-escape
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 const placeholder = {
   firstName: "First Name",
   lastName: "Last Name",
@@ -46,6 +50,11 @@ export const SubNewsLettersForm = ({
     if (email === "" || firstName === "" || lastName === "") {
       setAllInputsFilled(false);
       setInfoMessage("Please fill out all fields.");
+      return;
+    }
+
+    if (emailReg.test(email) === false) {
+      setInfoMessage("Please enter a valid email address.");
       return;
     }
 
