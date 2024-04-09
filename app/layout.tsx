@@ -9,6 +9,7 @@ import { Open_Sans } from "next/font/google";
 import { Analytics } from "@/components/layout/analytics";
 import ChatBaseBot from "@/components/zendeskButton/chatBaseBot";
 import client from "@/tina/client";
+import { Metadata } from "next";
 import { cache } from "react";
 import { MenuWrapper } from "../components/server/MenuWrapper";
 
@@ -23,6 +24,33 @@ const openSans = Open_Sans({
   subsets: ["latin"],
 });
 
+export const metadata: Metadata = {
+  icons: [
+    {
+      rel: "apple-touch-icon",
+      sizes: "180x180",
+      url: "/apple-touch-icon.png",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "32x32",
+      url: "/favicon-32x32.png",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "16x16",
+      url: "/favicon-16x16.png",
+    },
+    {
+      rel: "mask-icon",
+      color: "#cc4141",
+      url: "/safari-pinned-tab.svg",
+    },
+  ],
+};
+
 export default async function RootLayout({
   children,
 }: {
@@ -36,25 +64,7 @@ export default async function RootLayout({
       {/* <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#cc4141" />
         <meta name="msapplication-TileColor" content="#cc4141" />
         <meta name="theme-color" content="#ffffff" />
       </Head> */}
