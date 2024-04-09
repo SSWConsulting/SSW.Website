@@ -18,7 +18,7 @@ import { seoSchema } from "../../components/util/seo";
 import { tipField } from "./shared-fields";
 
 import type { Collection } from "tinacms";
-import { tripleColumnImageBlockSchema } from "../../components/blocks/tripleColumnImageBlock";
+import { dynamicCardGridBlockSchema } from "../../components/blocks/dynamicCardGridBlock";
 import { testimonialToSelectOptions } from "../../helpers/getTestimonials";
 
 export const companySchema: Collection = {
@@ -61,7 +61,7 @@ export const companySchema: Collection = {
         videoEmbedBlockSchema,
         testimonialsListSchema,
         verticalImageLayoutBlockSchema,
-        tripleColumnImageBlockSchema,
+        dynamicCardGridBlockSchema,
         fixedColumnsSchema,
         sectionHeaderSchema,
         tableBlockSchema,

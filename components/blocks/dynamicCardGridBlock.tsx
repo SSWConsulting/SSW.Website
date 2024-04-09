@@ -5,7 +5,7 @@ import { Template } from "tinacms";
 import { CustomLink } from "../customLink";
 import { isEmpty } from "../training/eventBooking";
 
-export type TripleColumnImageBlockProps = {
+export type DynamicCardGridBlockProps = {
   gridLayout?: keyof typeof GridCols;
   imageList: ImgCard[];
 };
@@ -30,27 +30,25 @@ const GridCols = {
   four: "md:col-span-6 lg:col-span-4 xl:col-span-3",
 } as const;
 
-export const TripleColumnImageBlock: React.FC<TripleColumnImageBlockProps> = ({
+export const DynamicCardGridBlock: React.FC<DynamicCardGridBlockProps> = ({
   imageList,
   gridLayout,
 }) => {
   return (
     <div className="grid grid-cols-12 gap-5 py-1">
       {imageList?.map((imageblock, index: Key) => {
-        return (
-          <ImgCard card={imageblock} gridLayout={gridLayout} key={index} />
-        );
+        return <Card card={imageblock} gridLayout={gridLayout} key={index} />;
       })}
     </div>
   );
 };
 
-interface ImgCardProps {
+interface CardProps {
   card: ImgCard;
   gridLayout: keyof typeof GridCols;
 }
 
-const ImgCard = ({ card, gridLayout }: ImgCardProps) => {
+const Card = ({ card, gridLayout }: CardProps) => {
   const { title, subTitle, imageSrc, altText, height, width, link } = card;
   return (
     <div
@@ -82,9 +80,9 @@ const ImgCard = ({ card, gridLayout }: ImgCardProps) => {
   );
 };
 
-export const tripleColumnImageBlockSchema: Template = {
-  name: "TripleColumnImageBlock",
-  label: "Triple Column Image Block",
+export const dynamicCardGridBlockSchema: Template = {
+  name: "DynamicCardGridBlock",
+  label: "Dynamic Card Grid Block",
   fields: [
     {
       type: "string",
