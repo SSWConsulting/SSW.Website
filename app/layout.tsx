@@ -9,9 +9,14 @@ import { Open_Sans } from "next/font/google";
 import { Analytics } from "@/components/layout/analytics";
 import ChatBaseBot from "@/components/zendeskButton/chatBaseBot";
 import client from "@/tina/client";
+import { cache } from "react";
 import { MenuWrapper } from "../components/server/MenuWrapper";
 
-export const dynamic = "force-static";
+const getMegamenu = cache(async () => {
+  return await client.queries.megamenu({
+    relativePath: "menu.json",
+  });
+});
 
 const openSans = Open_Sans({
   variable: "--open-sans-font",
@@ -24,9 +29,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   // TODO: Add React cache
-  const menuData = await client.queries.megamenu({
-    relativePath: "menu.json",
-  });
+  const menuData = await getMegamenu();
 
   return (
     <html lang="en" className={openSans.className}>
