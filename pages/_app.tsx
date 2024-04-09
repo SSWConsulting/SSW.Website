@@ -16,7 +16,7 @@ import { AppInsightsProvider } from "../context/app-insight-client";
 // Hack as per https://stackoverflow.com/a/66575373 to stop font awesome icons breaking
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
-import { ErrorBoundary } from "@/components/util/error-boundary";
+import { ErrorBoundary } from "@/components/util/error/error-boundary";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";

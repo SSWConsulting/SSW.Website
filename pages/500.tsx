@@ -1,4 +1,4 @@
-import { ErrorPage } from "@/components/util/error-page";
+import { ErrorPage } from "@/components/util/error/error-page";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import { InferGetStaticPropsType } from "next";
 import { useEffect } from "react";

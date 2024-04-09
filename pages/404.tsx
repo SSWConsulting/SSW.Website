@@ -1,4 +1,4 @@
-import { ErrorPage } from "@/components/util/error-page";
+import { ErrorPage } from "@/components/util/error/error-page";
 import { InferGetStaticPropsType } from "next";
 import client from "../.tina/__generated__/client";
 

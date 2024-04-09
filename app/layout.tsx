@@ -8,7 +8,7 @@ import { Analytics } from "@/components/layout/analytics";
 import ChatBaseBot from "@/components/zendeskButton/chatBaseBot";
 import client from "@/tina/client";
 import "styles.css";
-import { MenuWrapper } from "./MenuWrapper";
+import { MenuWrapper } from "../components/server/MenuWrapper";
 
 export const dynamic = "force-static";
 
