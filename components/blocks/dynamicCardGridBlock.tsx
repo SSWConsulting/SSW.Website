@@ -58,12 +58,13 @@ const Card = ({ card, gridLayout }: CardProps) => {
       )}
     >
       {imageSrc && (
-        <div className="flex justify-center py-4">
+        <div className="flex grow justify-center py-4">
           <Image
             src={imageSrc}
             alt={altText ?? ""}
             height={isEmpty(height) ? 150 : height} // IsEmpty - Tina converts height to empty string after removing the text from the field
             width={isEmpty(width) ? 150 : width} // IsEmpty - Tina converts width to empty string after removing the text from the field
+            className="object-contain"
           />
         </div>
       )}
