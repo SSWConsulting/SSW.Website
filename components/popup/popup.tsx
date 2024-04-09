@@ -1,5 +1,8 @@
 import classNames from "classnames";
+
 import Modal from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
+
 import styles from "./popup.module.css";
 
 export interface PopupProps extends React.HTMLAttributes<HTMLDivElement> {
