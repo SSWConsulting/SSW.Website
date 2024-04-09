@@ -23,7 +23,7 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
 
     const category = categories[selected];
     return clients.filter((client) =>
-      client.categories?.find((c) => c.category.name === category)
+      client.categories?.find((c) => c.category?.name === category)
     );
   }, [clients, selected, categories]);
 
@@ -33,11 +33,12 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
     options: categories.map((category) => ({
       label: category,
       count: clients.filter((client) =>
-        client.categories?.find((c) => c.category.name === category)
+        client.categories?.find((c) => c.category?.name === category)
       ).length,
     })),
     allText: "All SSW Clients",
   };
+
   return (
     <FilterBlock groups={[groups]}>
       {clients.map((client, index) => {
