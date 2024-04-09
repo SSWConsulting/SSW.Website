@@ -1,23 +1,21 @@
+import { Breadcrumbs } from "@/blocks/breadcrumbs";
+import { componentRenderer } from "@/blocks/mdxComponentRenderer";
+import { TechUpgrade } from "@/blocks/techUpgrade";
+import { Blocks } from "@/components/blocks-renderer";
+import HistoryTimeline from "@/components/company/historyTimeline";
+import { HistoryTimelineCardProps } from "@/components/company/historyTimelineCard";
+import { RDPanel } from "@/components/company/rdPanel";
+import { Layout } from "@/components/layout";
+import TestimonialPanel from "@/components/offices/testimonialPanel";
+import { Section } from "@/components/util/section";
+import { SEO } from "@/components/util/seo";
+import { RecaptchaContext } from "@/context/RecaptchaContext";
+import { removeExtension } from "@/services/client/utils.service";
+import client from "@/tina/client";
 import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-
-import { BuiltOnAzure } from "@/components/blocks";
-import client from "../../.tina/__generated__/client";
-import { Blocks } from "../../components/blocks-renderer";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
-import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
-import { TechUpgrade } from "../../components/blocks/techUpgrade";
-import HistoryTimeline from "../../components/company/historyTimeline";
-import { HistoryTimelineCardProps } from "../../components/company/historyTimelineCard";
-import { RDPanel } from "../../components/company/rdPanel";
-import { Layout } from "../../components/layout";
-import TestimonialPanel from "../../components/offices/testimonialPanel";
-import { Section } from "../../components/util/section";
-import { SEO } from "../../components/util/seo";
-import { RecaptchaContext } from "../../context/RecaptchaContext";
-import { removeExtension } from "../../services/client/utils.service";
 
 export default function CompanyPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -42,7 +40,7 @@ export default function CompanyPage(
     >
       <div>
         <SEO seo={props.seo} />
-        <Layout menu={data.megamenu}>
+        <Layout menu={data.megamenu} showAzureBanner>
           <Blocks prefix="CompanyBeforeBody" blocks={data.company.beforeBody} />
           {data.company.seo?.showBreadcrumb === null ||
             (data.company.seo?.showBreadcrumb && (
@@ -64,7 +62,12 @@ export default function CompanyPage(
             </Section>
           )}
           {data.company.subTitle && (
-            <section className="prose mx-auto w-full max-w-9xl flex-row px-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 md:flex">
+            <section
+              className={classNames(
+                "prose mx-auto w-full max-w-9xl flex-row px-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0",
+                data.company.fullWidthBody ? "" : "md:flex"
+              )}
+            >
               <div>
                 <TinaMarkdown
                   content={data.company.subTitle}
@@ -111,9 +114,6 @@ export default function CompanyPage(
               <TechUpgrade />
             </Section>
           )}
-          <Section>
-            <BuiltOnAzure data={{ backgroundColor: "default" }} />
-          </Section>
         </Layout>
       </div>
     </RecaptchaContext.Provider>

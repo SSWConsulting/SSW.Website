@@ -74,6 +74,11 @@ export const companySchema: Collection = {
       ],
     },
     {
+      type: "boolean",
+      name: "fullWidthBody",
+      label: "Full Width Body",
+    },
+    {
       type: "rich-text",
       name: "sidebar",
       label: "Sidebar",
