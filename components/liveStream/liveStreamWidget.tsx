@@ -173,7 +173,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
           </div>
           {/* custom fixed width and height to have best looking and fixed size for different screens */}
           <div
-            className={"fixed right-0 top-2 z-20 aspect-video h-56"}
+            className={"fixed right-0 top-2 aspect-video h-56 z-videoThumbnail"}
             data-aos="slide-left"
             data-aos-duration={500}
             data-aos-anchor="#thumbnailAnchor"
