@@ -1,7 +1,5 @@
-import React from "react";
 import * as Schemas from "../../components/blocks";
 import {
-  VerticalImageLayout,
   carouselBlockSchema,
   colorBlockSchema,
   colorPaletteSchema,
@@ -58,19 +56,19 @@ export const companySchema: Collection = {
       name: "subTitle",
       label: "Body",
       templates: [
-        videoEmbedBlockSchema,
-        testimonialsListSchema,
-        verticalImageLayoutBlockSchema,
+        carouselBlockSchema,
+        colorBlockSchema,
+        colorPaletteSchema,
+        customDownloadButtonSchema,
+        Schemas.customImageBlockSchema,
         dynamicCardGridBlockSchema,
         fixedColumnsSchema,
         sectionHeaderSchema,
         tableBlockSchema,
-        customDownloadButtonSchema,
-        colorBlockSchema,
-        colorPaletteSchema,
-        carouselBlockSchema,
+        testimonialsListSchema,
         Schemas.utilityButtonSchema,
-        Schemas.customImageBlockSchema,
+        verticalImageLayoutBlockSchema,
+        videoEmbedBlockSchema,
       ],
     },
     {
