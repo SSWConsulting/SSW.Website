@@ -64,7 +64,7 @@ export default function CompanyPage(
             </Section>
           )}
           {data.company.subTitle && (
-            <section className="prose mx-auto w-full max-w-9xl flex-row px-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0">
+            <section className="prose mx-auto w-full max-w-9xl flex-row px-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 md:flex">
               <div>
                 <TinaMarkdown
                   content={data.company.subTitle}
