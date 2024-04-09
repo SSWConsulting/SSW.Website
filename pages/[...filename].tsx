@@ -5,6 +5,8 @@ import Head from "next/head";
 import { WebSite, WithContext } from "schema-dts";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import classNames from "classnames";
+
 import { client } from "../.tina/__generated__/client";
 import { pageBlocks } from "../components/blocks";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
@@ -54,23 +56,49 @@ export default function HomePage(
       )}
 
       <SEO seo={data.page.seo} />
-      <Layout menu={data.megamenu}>
-        {data.page.breadcrumbs ? (
-          <Section className="mx-auto -mb-20 w-full max-w-9xl px-8 py-5">
+      <Layout menu={data.megamenu} showAzureBanner={data.page.showAzureFooter}>
+        {data.page.breadcrumbs && (
+          <Section className="mx-auto w-full max-w-9xl px-8 py-5">
             <Breadcrumbs
               path={removeExtension(props.variables.relativePath)}
               suffix={data.global.breadcrumbSuffix}
               title={data.page.seo?.title}
             />
           </Section>
-        ) : (
-          <></>
+        )}
+        {data.page?.title && (
+          <Section
+            className="mx-auto w-full max-w-9xl px-8"
+            data-tina-field={tinaField(data.page, "title")}
+          >
+            <h1 className="mt-4 py-2">{data.page.title}</h1>
+          </Section>
+        )}
+        {data.page?.subTitle && (
+          <Section
+            className="mx-auto w-full max-w-9xl px-8"
+            data-tina-field={tinaField(data.page, "title")}
+          >
+            <span>
+              <TinaMarkdown
+                content={data.page?.subTitle}
+                data-tina-field={tinaField(data.page, "subTitle")}
+                components={componentRenderer}
+              />
+            </span>
+          </Section>
         )}
         <Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
-        <Container className="flex-1">
+        <Container
+          className={classNames("flex-1", {
+            "pt-0": data.page.removeBodyTopMargin,
+          })}
+        >
           <div className="gap-20 pt-3 md:grid md:grid-cols-5">
             <div
-              className={contentClass}
+              className={classNames(contentClass, {
+                "text-center": data.page.centeredBodyText,
+              })}
               data-tina-field={tinaField(data.page, "_body")}
             >
               <TinaMarkdown
