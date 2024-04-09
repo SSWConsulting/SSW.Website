@@ -1,5 +1,7 @@
 import client from "@/tina/client";
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   let PageListData = await client.queries.productsConnection();
   const allPagesListData = PageListData;
@@ -14,9 +16,12 @@ export async function generateStaticParams() {
       ...PageListData.data.productsConnection.edges
     );
   }
-  return allPagesListData.data.productsConnection.edges.map((page) => ({
+
+  const pages = allPagesListData.data.productsConnection.edges.map((page) => ({
     filename: page.node._sys.filename,
   }));
+
+  return pages;
 }
 
 export default function ProductsIndex() {
