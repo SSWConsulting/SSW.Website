@@ -69,14 +69,19 @@ const Card = ({ card, gridLayout }: CardProps) => {
           />
         </div>
       )}
-      <div className="not-prose bottom-0 w-full bg-gray-50 p-4 text-center">
-        <h3 className="font-bold">{title}</h3>
+      <div className="not-prose bottom-0 w-full bg-gray-50 p-4 text-center md:h-24">
+        <h4 className="font-bold">{title}</h4>
         {link?.url && (
-          <CustomLink href={link.url} className="font-bold text-sswRed">
-            <h3 className="py-3">{link.label}</h3>
+          <CustomLink
+            href={link.url}
+            className="my-1 font-bold text-sswRed hover:text-sswDarkRed"
+          >
+            <h4>{link.label}</h4>
           </CustomLink>
         )}
-        {subTitle && <span className="py-2 text-gray-400">{subTitle}</span>}
+        {subTitle && (
+          <span className="flex justify-center text-gray-400">{subTitle}</span>
+        )}
       </div>
     </div>
   );

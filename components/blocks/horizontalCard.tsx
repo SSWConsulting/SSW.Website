@@ -65,12 +65,12 @@ const Card = (card: CardType) => {
             </div>
           )}
           <span>
-            <h3
+            <h4
               className="m-0 pb-4 font-bold text-black"
               data-tina-field={tinaField(card, "title")}
             >
               {card?.title}
-            </h3>
+            </h4>
           </span>
           <span data-tina-field={tinaField(card, "content")}>
             <TinaMarkdown content={card?.content} />
