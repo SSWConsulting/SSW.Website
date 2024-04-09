@@ -54,6 +54,11 @@ export const pagesSchema: Collection = {
       isBody: true,
     },
     {
+      type: "boolean",
+      label: "Remove body top margin",
+      name: "removeBodyTopMargin"
+    },
+    {
       type: "object",
       list: true,
       name: "sideBar",
@@ -62,6 +67,11 @@ export const pagesSchema: Collection = {
         visualSelector: true,
       },
       templates: [...Schemas.pageBlocks],
+    },
+    {
+      type: "boolean",
+      name: "centeredBodyText",
+      label: "Centered body text",
     },
     {
       type: "object",
