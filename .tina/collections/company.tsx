@@ -1,7 +1,5 @@
-import React from "react";
 import * as Schemas from "../../components/blocks";
 import {
-  VerticalImageLayout,
   carouselBlockSchema,
   colorBlockSchema,
   colorPaletteSchema,
@@ -18,7 +16,7 @@ import { seoSchema } from "../../components/util/seo";
 import { tipField } from "./shared-fields";
 
 import type { Collection } from "tinacms";
-import { tripleColumnImageBlockSchema } from "../../components/blocks/tripleColumnImageBlock";
+import { dynamicCardGridBlockSchema } from "../../components/blocks/dynamicCardGridBlock";
 import { testimonialToSelectOptions } from "../../helpers/getTestimonials";
 
 export const companySchema: Collection = {
@@ -58,20 +56,25 @@ export const companySchema: Collection = {
       name: "subTitle",
       label: "Body",
       templates: [
-        videoEmbedBlockSchema,
-        testimonialsListSchema,
-        verticalImageLayoutBlockSchema,
-        tripleColumnImageBlockSchema,
+        carouselBlockSchema,
+        colorBlockSchema,
+        colorPaletteSchema,
+        customDownloadButtonSchema,
+        Schemas.customImageBlockSchema,
+        dynamicCardGridBlockSchema,
         fixedColumnsSchema,
         sectionHeaderSchema,
         tableBlockSchema,
-        customDownloadButtonSchema,
-        colorBlockSchema,
-        colorPaletteSchema,
-        carouselBlockSchema,
+        testimonialsListSchema,
         Schemas.utilityButtonSchema,
-        Schemas.customImageBlockSchema,
+        verticalImageLayoutBlockSchema,
+        videoEmbedBlockSchema,
       ],
+    },
+    {
+      type: "boolean",
+      name: "fullWidthBody",
+      label: "Full Width Body",
     },
     {
       type: "rich-text",

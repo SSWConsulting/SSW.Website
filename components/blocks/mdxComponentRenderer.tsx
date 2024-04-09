@@ -5,18 +5,18 @@ import type { SubNewsletterRowProps } from "../subNewsletter/subNewsletterRow";
 import type { Countries } from "../util/constants/country";
 import type { ColorBlockProps } from "./colorBlock";
 import type { CustomImageProps } from "./customImage";
+import { DynamicCardGridBlockProps } from "./dynamicCardGridBlock";
 import type { EventLinkProps } from "./eventLink";
 import type { ExpertBlockProps } from "./expertBlock";
 import type { JotFormEmbedProps } from "./jotFormEmbed";
 import type { TableLayoutProps } from "./tableLayout";
-import type { TripleColumnImageBlockProps } from "./tripleColumnImageBlock";
 import type { YoutubePlaylistProps } from "./youtubePlaylist";
 
 import { BookingButton } from "../bookingButton/bookingButton";
 import { ColorPaletteProps } from "./colorPalette";
 import { Content, ContentType } from "./content";
-import { SectionHeaderProps } from "./sectionHeader";
 import { DomainFromQueryProps } from "./domainFromQuery";
+import { SectionHeaderProps } from "./sectionHeader";
 
 const UtilityButton = dynamic(() =>
   import("../button/utilityButton").then((mod) => mod.UtilityButton)
@@ -109,8 +109,8 @@ const TableLayout = dynamic<{ data: TableLayoutProps }>(() =>
 const TestimonialsList = dynamic(() =>
   import("./testimonialsList").then((mod) => mod.TestimonialsList)
 );
-const TripleColumnImageBlock = dynamic<TripleColumnImageBlockProps>(() =>
-  import("./tripleColumnImageBlock").then((mod) => mod.TripleColumnImageBlock)
+const DynamicCardGridBlock = dynamic<DynamicCardGridBlockProps>(() =>
+  import("./dynamicCardGridBlock").then((mod) => mod.DynamicCardGridBlock)
 );
 const UpcomingEvents = dynamic(() =>
   import("./upcomingEvents").then((mod) => mod.UpcomingEvents)
@@ -246,7 +246,7 @@ export const componentRenderer: Components<{
   };
   EventLink: EventLinkProps;
   ExpertBlock: ExpertBlockProps;
-  TripleColumnImageBlock: TripleColumnImageBlockProps;
+  DynamicCardGridBlock: DynamicCardGridBlockProps;
   YoutubePlaylistBlock: {
     youtubePlaylist: YoutubePlaylistProps;
   };
@@ -290,7 +290,7 @@ export const componentRenderer: Components<{
   TestimonialsList: (props) => <TestimonialsList data={props} />,
   EventLink: (props) => <EventLink {...props} />,
   ExpertBlock: (props) => <ExpertBlock {...props} />,
-  TripleColumnImageBlock: (props) => <TripleColumnImageBlock {...props} />,
+  DynamicCardGridBlock: (props) => <DynamicCardGridBlock {...props} />,
   CustomDownloadButton: (props) => <CustomDownloadButton data={props} />,
   YoutubePlaylistBlock: (props) => (
     <YoutubePlaylistBlock {...props.youtubePlaylist} />
