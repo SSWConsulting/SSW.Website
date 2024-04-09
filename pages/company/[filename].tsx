@@ -1,6 +1,7 @@
 import { Breadcrumbs } from "@/blocks/breadcrumbs";
 import { componentRenderer } from "@/blocks/mdxComponentRenderer";
 import { TechUpgrade } from "@/blocks/techUpgrade";
+import { BuiltOnAzure } from "@/components/blocks";
 import { Blocks } from "@/components/blocks-renderer";
 import HistoryTimeline from "@/components/company/historyTimeline";
 import { HistoryTimelineCardProps } from "@/components/company/historyTimelineCard";
@@ -40,7 +41,7 @@ export default function CompanyPage(
     >
       <div>
         <SEO seo={props.seo} />
-        <Layout menu={data.megamenu} showAzureBanner>
+        <Layout menu={data.megamenu}>
           <Blocks prefix="CompanyBeforeBody" blocks={data.company.beforeBody} />
           {data.company.seo?.showBreadcrumb === null ||
             (data.company.seo?.showBreadcrumb && (
@@ -114,6 +115,9 @@ export default function CompanyPage(
               <TechUpgrade />
             </Section>
           )}
+          <Section>
+            <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+          </Section>
         </Layout>
       </div>
     </RecaptchaContext.Provider>
