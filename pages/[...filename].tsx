@@ -1,6 +1,8 @@
 import { Blocks } from "@/components/blocks-renderer";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { InferGetStaticPropsType } from "next";
+import Head from "next/head";
+import { WebSite, WithContext } from "schema-dts";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import classNames from "classnames";
@@ -17,6 +19,15 @@ import { removeExtension } from "../services/client/utils.service";
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
+  const structuredData: WithContext<WebSite> = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: props?.data.global?.header.site_name,
+    alternateName: props?.data.global?.header?.alternate_site_name,
+    description: props?.data.global.header.description,
+    url: props?.data.global.header.url,
+  };
+
   const { data } = useTina({
     data: props.data,
     query: props.query,
@@ -35,6 +46,15 @@ export default function HomePage(
 
   return (
     <>
+      {props.variables?.relativePath === "home.mdx" && (
+        <Head>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          />
+        </Head>
+      )}
+
       <SEO seo={data.page.seo} />
       <Layout menu={data.megamenu} showAzureBanner={data.page.showAzureFooter}>
         {data.page.breadcrumbs && (
