@@ -43,6 +43,9 @@ module.exports = {
         7: ".075",
         15: ".15",
       },
+      zIndex: {
+        videoThumbnail: 11,
+      },
       height: {
         22: "5.5rem",
         62: "15.5rem",
@@ -137,7 +140,6 @@ module.exports = {
         "videoMask",
         "content",
         "badge",
-        "videoThumbnail",
         "tooltip",
       ], // ordered by z-index ascendant
       fontFamily: {
