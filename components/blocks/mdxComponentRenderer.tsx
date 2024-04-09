@@ -13,17 +13,13 @@ import type { TripleColumnImageBlockProps } from "./tripleColumnImageBlock";
 import type { YoutubePlaylistProps } from "./youtubePlaylist";
 
 import { BookingButton } from "../bookingButton/bookingButton";
+import { UtilityButton } from "../button/utilityButton";
+import { TweetEmbed } from "../embeds/tweetEmbed";
 import { ColorPaletteProps } from "./colorPalette";
 import { Content, ContentType } from "./content";
-import { SectionHeaderProps } from "./sectionHeader";
 import { DomainFromQueryProps } from "./domainFromQuery";
+import { SectionHeaderProps } from "./sectionHeader";
 
-const UtilityButton = dynamic(() =>
-  import("../button/utilityButton").then((mod) => mod.UtilityButton)
-);
-const TweetEmbed = dynamic<TweetEmbedProps>(() =>
-  import("../embeds/tweetEmbed").then((mod) => mod.TweetEmbed)
-);
 const MicrosoftPanel = dynamic(() =>
   import("../offices/microsoftPanel").then((mod) => mod.default)
 );
