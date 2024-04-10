@@ -2,6 +2,7 @@ import * as appInsights from "applicationinsights";
 import { NextApiRequest, NextApiResponse } from "next";
 import { cache } from "services/server/cacheService";
 import client from "../../.tina/__generated__/client";
+import megaMenuJson from "../../content/megamenu/menu.json";
 
 const CACHE_MINS = 60;
 const CACHE_SECS = CACHE_MINS * 60;
@@ -38,6 +39,7 @@ export default async function handler(
     });
 
     console.error(err);
-    res.status(500).json({ message: "Error getting megamenu data" });
+
+    res.status(200).json(megaMenuJson);
   }
 }
