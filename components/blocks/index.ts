@@ -38,6 +38,7 @@ import { googleMapsSchema } from "./googleMapsWrapper";
 import { gridLayoutSchema } from "./gridLayout";
 import { heroBlockSchema } from "./hero";
 import { horizontalBlockSchema } from "./horizontalCard";
+import { inlineJotFormSchema } from "../inlineJotForm/inlineJotForm";
 import { internalCarouselBlockSchema } from "./internalCarousel";
 import { jotFormEmbedSchema } from "./jotFormEmbed";
 import { newslettersTableBlockSchema } from "./newslettersTable";
@@ -80,6 +81,7 @@ export const pageBlocks: Template[] = [
   gridLayoutSchema,
   heroBlockSchema,
   horizontalBlockSchema,
+  inlineJotFormSchema,
   internalCarouselBlockSchema,
   joinAsPresenterSchema,
   joinGithubSchema,
@@ -137,6 +139,7 @@ export * from "./fixedColumns";
 export * from "./flag";
 export * from "./googleMapsWrapper";
 export * from "./hero";
+export * from "../inlineJotForm/inlineJotForm";
 export * from "./jotFormEmbed";
 export * from "./newslettersTable";
 export * from "./recurringEvent";

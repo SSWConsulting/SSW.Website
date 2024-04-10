@@ -17,6 +17,7 @@ import { ColorPaletteProps } from "./colorPalette";
 import { Content, ContentType } from "./content";
 import { DomainFromQueryProps } from "./domainFromQuery";
 import { SectionHeaderProps } from "./sectionHeader";
+import { InlineJotFormProps } from "../inlineJotForm/inlineJotForm";
 
 const UtilityButton = dynamic(() =>
   import("../button/utilityButton").then((mod) => mod.UtilityButton)
@@ -90,6 +91,9 @@ const ColorPalette = dynamic<ColorPaletteProps>(() =>
 );
 const GoogleMapsWrapper = dynamic(() =>
   import("./googleMapsWrapper").then((mod) => mod.GoogleMapsWrapper)
+);
+const InlineJotForm = dynamic(() =>
+  import("../inlineJotForm/inlineJotForm").then((mod) => mod.InlineJotForm)
 );
 const InternalCarousel = dynamic(() =>
   import("./internalCarousel").then((mod) => mod.InternalCarousel)
@@ -260,6 +264,7 @@ export const componentRenderer: Components<{
   SectionHeader: SectionHeaderProps;
   Content: ContentType;
   DomainFromQuery: DomainFromQueryProps;
+  InlineJotForm: InlineJotFormProps;
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -301,4 +306,5 @@ export const componentRenderer: Components<{
   SectionHeader: (props) => <SectionHeader {...props} />,
   Content: (props) => <Content data={props} />,
   DomainFromQuery: (props) => <DomainFromQuery {...props} />,
+  InlineJotForm: (props) => <InlineJotForm {...props} />,
 };
