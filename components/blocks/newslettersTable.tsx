@@ -1,8 +1,8 @@
-import client from "@/tina/client";
 import { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Template } from "tinacms";
 import { transformIntToMonth } from "../../services/client/date.service";
+import client from "../../tina/__generated__/client";
 import { CustomLink } from "../customLink";
 
 type NewsletterYearsType = {

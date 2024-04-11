@@ -1,8 +1,8 @@
-import { presenterSchemaConstants } from "@/tina-collections/presenter";
 import Image from "next/image";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { presenterSchemaConstants } from "../../tina/collections/presenter";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 

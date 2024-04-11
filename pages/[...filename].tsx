@@ -7,7 +7,7 @@ import { WebSite, WithContext } from "schema-dts";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-import { client } from "@/tina//client";
+import { client } from "@/tina/client";
 import { pageBlocks } from "../components/blocks";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { Layout } from "../components/layout";
