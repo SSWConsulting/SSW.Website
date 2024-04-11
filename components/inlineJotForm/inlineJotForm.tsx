@@ -3,7 +3,7 @@ import Jotform from "react-jotform";
 
 export type InlineJotFormProps = {
   jotFormId: string;
-  additionalClasses: string;
+  additionalClasses?: string;
 };
 
 export const InlineJotForm = (props: InlineJotFormProps) => {
@@ -47,6 +47,7 @@ export const inlineJotFormSchema: Template = {
       type: "string",
       name: "additionalClasses",
       label: "Additional classnames",
+      description: "Optional styling for iframe element only",
     },
   ],
 };
