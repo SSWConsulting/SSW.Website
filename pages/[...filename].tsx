@@ -1,13 +1,13 @@
 import { Blocks } from "@/components/blocks-renderer";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
+import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import { WebSite, WithContext } from "schema-dts";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import classNames from "classnames";
 
-import { client } from "../.tina/__generated__/client";
+import { client } from "@/tina//client";
 import { pageBlocks } from "../components/blocks";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { Layout } from "../components/layout";

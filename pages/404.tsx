@@ -1,6 +1,6 @@
 import { ErrorPage } from "@/components/util/error-page";
+import client from "@/tina/client";
 import { InferGetStaticPropsType } from "next";
-import client from "../.tina/__generated__/client";
 
 export default function FourOhFour(
   props: InferGetStaticPropsType<typeof getStaticProps>
