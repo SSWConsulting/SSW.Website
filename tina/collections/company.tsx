@@ -34,6 +34,7 @@ export const companySchema: Collection = {
   },
   fields: [
     tipField,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
     {
@@ -198,7 +199,7 @@ export const companyIndexSchema: Collection = {
   path: "content/company/index",
   ui: {
     router: () => {
-      return `/company`;
+      return "/company";
     },
     allowedActions: {
       create: false,
@@ -215,6 +216,7 @@ export const companyIndexSchema: Collection = {
           type: "image",
           label: "Hero Background",
           name: companyIndexSchemaConstants.headerImage.heroBackground,
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           uploadDir: () => "background",
         },
@@ -227,11 +229,13 @@ export const companyIndexSchema: Collection = {
           type: "string",
           label: "Text Overlay",
           name: companyIndexSchemaConstants.headerImage.txtOverlay,
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           uploadDir: () => "background",
         },
       ],
     },
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
     {

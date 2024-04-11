@@ -1,4 +1,3 @@
-import React from "react";
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { eventsHeaderSchema } from "../../components/events/eventsHeader";
@@ -17,16 +16,18 @@ export const eventsSchema: Collection = {
   },
   ui: {
     router: ({ document }) => {
-      console.log(document);
       return `/events/${document._sys.filename}`;
     },
   },
   fields: [
     tipField,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     eventsHeaderSchema,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     testimonialRowSchema,
     {
@@ -87,6 +88,7 @@ export const eventsSchema: Collection = {
       label: "Footer",
       templates: [...Schemas.pageBlocks],
     },
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     videoCardSchema,
   ],
@@ -103,10 +105,11 @@ export const eventsIndexSchema: Collection = {
       delete: false,
     },
     router: () => {
-      return `/events`;
+      return "/events";
     },
   },
   fields: [
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
     {

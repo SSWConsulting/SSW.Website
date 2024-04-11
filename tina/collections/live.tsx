@@ -9,7 +9,7 @@ export const liveSchema: Collection = {
   path: "content/live",
   format: "mdx",
   ui: {
-    router: ({}) => {
+    router: () => {
       return "/live";
     },
     allowedActions: {
@@ -18,6 +18,7 @@ export const liveSchema: Collection = {
     },
   },
   fields: [
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
     {

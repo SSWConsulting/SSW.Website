@@ -12,10 +12,11 @@ export const partnerIndexSchema: Collection = {
       delete: false,
     },
     router: () => {
-      return `/company/partners`;
+      return "/company/partners";
     },
   },
   fields: [
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
     {
@@ -60,6 +61,7 @@ export const partnerIndexSchema: Collection = {
           type: "image",
           label: "Logo",
           name: "logo",
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           uploadDir: () => "partners",
         },

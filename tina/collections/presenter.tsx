@@ -1,4 +1,3 @@
-import React from "react";
 import type { Collection } from "tinacms";
 import { tipField } from "./shared-fields";
 
@@ -24,6 +23,7 @@ export const presenterSchema: Collection = {
       type: "image",
       name: presenterSchemaConstants.profileImg,
       label: "Profile Image",
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       uploadDir: () => "people",
     },

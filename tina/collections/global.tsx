@@ -1,5 +1,6 @@
 import type { Collection, TinaField } from "tinacms";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const jotFormSchema: TinaField = {
   type: "object",
   name: "jotForm",

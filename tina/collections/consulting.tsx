@@ -1,4 +1,3 @@
-import React from "react";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 
@@ -12,7 +11,7 @@ export const consultingIndexSchema: Collection = {
   path: "content/consulting/index",
   format: "json",
   ui: {
-    router: ({ document }) => {
+    router: () => {
       return "/consulting";
     },
     allowedActions: {
@@ -21,6 +20,7 @@ export const consultingIndexSchema: Collection = {
     },
   },
   fields: [
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
     {
@@ -92,6 +92,7 @@ export const consultingIndexSchema: Collection = {
               type: "image",
               label: "Logo",
               name: "logo",
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               uploadDir: () => "thumbs",
             },
@@ -181,8 +182,10 @@ export const consultingSchema: Collection = {
   },
   fields: [
     tipField,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     testimonialRowSchema,
     {
@@ -209,6 +212,7 @@ export const consultingSchema: Collection = {
           type: "image",
           label: "Video Background",
           name: "videoBackground",
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           uploadDir: () => "videos",
         },
@@ -230,7 +234,7 @@ export const consultingSchema: Collection = {
       type: "string",
       label: "Call to Action",
       description:
-        'Technology title inserted via {{TITLE}}. E.g. "Talk to us about your {{TITLE}} project"',
+        "Technology title inserted via {{TITLE}}. E.g. 'Talk to us about your {{TITLE}} project'",
       name: "callToAction",
       required: false,
     },
@@ -390,7 +394,8 @@ export const consultingSchema: Collection = {
             },
           ],
           ui: {
-            validate: (value, data) => {
+            validate: (value) => {
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               if (value?.some((item) => !item || !item.type || !item.content)) {
                 return "Please fill out all fields in each item";

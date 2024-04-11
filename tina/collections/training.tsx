@@ -1,4 +1,3 @@
-import React from "react";
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
@@ -19,10 +18,13 @@ export const trainingSchema: Collection = {
   },
   fields: [
     tipField,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     trainingHeaderSchema,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     testimonialRowSchema,
     {
@@ -51,6 +53,7 @@ export const trainingSchema: Collection = {
       label: "Footer",
       templates: [...Schemas.pageBlocks],
     },
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     videoCardSchema,
   ],

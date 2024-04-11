@@ -1,6 +1,5 @@
 import type { Collection } from "tinacms";
 
-import React from "react";
 import * as Schemas from "../../components/blocks";
 import { sswCountries } from "../../components/util/constants/country";
 import { seoSchema } from "../../components/util/seo";
@@ -18,6 +17,7 @@ export const officeIndexSchema: Collection = {
     },
   },
   fields: [
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
     {
@@ -27,7 +27,7 @@ export const officeIndexSchema: Collection = {
       list: true,
       ui: {
         itemProps: (item) => {
-          let label = "Office";
+          const label = "Office";
 
           if (!item || !item.office) {
             return { label };
@@ -70,12 +70,14 @@ export const officeSchema: Collection = {
   },
   fields: [
     tipField,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
     {
       type: "image",
       label: "Cover Image",
       name: "coverImg",
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       uploadDir: (args) => `/offices/${args.addressLocality}`,
     },
@@ -83,6 +85,7 @@ export const officeSchema: Collection = {
       type: "image",
       label: "Thumbnail",
       name: "thumbnail",
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       uploadDir: () => "offices/thumbnails",
     },
@@ -90,9 +93,9 @@ export const officeSchema: Collection = {
       type: "image",
       label: "Sidebar Image",
       name: "sideImg",
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       uploadDir: (args) => {
-        console.log(args);
         return `/offices/${args.addressLocality}`;
       },
     },
@@ -205,6 +208,7 @@ export const officeSchema: Collection = {
       type: "image",
       label: "Map Image",
       name: "map",
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       uploadDir: (args) => `/offices/${args.addressLocality}`,
       templates: [...Schemas.pageBlocks],

@@ -24,6 +24,7 @@ export const technologiesSchema: Collection = {
       type: "image",
       label: "Thumbnail",
       name: "thumbnail",
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       uploadDir: () => "thumbs",
     },

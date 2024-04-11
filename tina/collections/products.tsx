@@ -1,4 +1,3 @@
-import React from "react";
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
@@ -16,6 +15,7 @@ export const productsIndexSchema: Collection = {
     },
   },
   fields: [
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
     {
@@ -62,6 +62,7 @@ export const productsIndexSchema: Collection = {
           type: "image",
           label: "Logo",
           name: "logo",
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           uploadDir: () => "products",
         },
@@ -82,6 +83,7 @@ export const productsSchema: Collection = {
   },
   fields: [
     tipField,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
     {

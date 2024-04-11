@@ -7,8 +7,9 @@ export const tipForReference: TinaField = {
   name: "tipForReference",
   label: "Tip",
   ui: {
-    component: ({}) => {
+    component: () => {
       return (
+        // eslint-disable-next-line tailwindcss/no-custom-classname
         <div className="whitepace-normal">
           {" "}
           💡 Testimonials will be shown in the following order.
@@ -60,6 +61,7 @@ export const testimonialSchema: Collection = {
           label: "Avatar",
           name: "avatar",
           required: false,
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           uploadDir: () => "testimonialAvatars",
         },

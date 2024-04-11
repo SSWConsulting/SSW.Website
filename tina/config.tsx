@@ -36,7 +36,7 @@ import {
   userGroupPageSchema,
 } from "./collections/usergroup";
 import { videoProductionSchema } from "./collections/videoProduction";
-import { logosSchema } from './collections/logos';
+import { logosSchema } from "./collections/logos";
 
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,

@@ -1,4 +1,3 @@
-import React from "react";
 import { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
@@ -10,12 +9,13 @@ export const employmentSchema: Collection = {
   format: "mdx",
   path: "content/employment",
   ui: {
-    router: ({ document }) => {
+    router: () => {
       return "/employment";
     },
   },
   fields: [
     tipField,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
     {
@@ -43,6 +43,7 @@ export const employmentSchema: Collection = {
           type: "image",
           label: "Video Background",
           name: "videoBackground",
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           uploadDir: () => "videos",
         },

@@ -12,6 +12,7 @@ const industrySolutionsRowSchema: Template = {
       type: "image",
       label: "1st Card Image",
       name: "imgSrc1",
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       uploadDir: () => "industry",
     },
@@ -29,6 +30,7 @@ const industrySolutionsRowSchema: Template = {
       type: "image",
       label: "2nd Card Image",
       name: "imgSrc2",
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       uploadDir: () => "industry",
     },
@@ -46,6 +48,7 @@ const industrySolutionsRowSchema: Template = {
       type: "image",
       label: "3rd Card Image",
       name: "imgSrc3",
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       uploadDir: () => "industry",
     },
@@ -142,6 +145,7 @@ export const industrySchema: Collection = {
   },
   fields: [
     tipField,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
     {
@@ -160,6 +164,7 @@ export const industrySchema: Collection = {
       label: "Banner Image",
       name: "bannerImg",
       required: true,
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       uploadDir: () => "industry",
     },
@@ -167,6 +172,7 @@ export const industrySchema: Collection = {
       type: "image",
       label: "Whitepaper File",
       name: "whitepaperFile",
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       uploadDir: () => "files",
     },

@@ -21,6 +21,7 @@ export const marketingSchema: Collection = {
       label: "Background image",
       name: "backgroundImage",
       required: true,
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       uploadDir: () => "marketings",
     },

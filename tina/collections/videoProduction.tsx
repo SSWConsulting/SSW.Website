@@ -1,4 +1,3 @@
-import React from "react";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 
@@ -17,6 +16,7 @@ export const videoProductionSchema: Collection = {
   },
   fields: [
     tipField,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
     {
@@ -43,6 +43,7 @@ export const videoProductionSchema: Collection = {
           type: "image",
           label: "Video Background",
           name: "videoBackground",
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           uploadDir: () => "videos",
         },
@@ -64,7 +65,7 @@ export const videoProductionSchema: Collection = {
       type: "string",
       label: "Call to Action",
       description:
-        'Technology title inserted via {{TITLE}}. E.g. "Talk to us about your {{TITLE}} project"',
+        "Technology title inserted via {{TITLE}}. E.g. 'Talk to us about your {{TITLE}} project'",
       name: "callToAction",
       required: false,
     },

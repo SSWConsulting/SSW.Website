@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import { TinaField } from "tinacms";
 
@@ -8,11 +9,11 @@ export const tipField: TinaField = {
   name: "tip",
   label: "Tip",
   ui: {
-    component: ({}) => {
+    component: () => {
       return (
         <div className="whitespace-pre-wrap">
           {" "}
-          💡 Please fill out the "Filename" field first at the botton of the
+          💡 Please fill out the 'Filename' field first at the botton of the
           page.
         </div>
       );
@@ -25,6 +26,7 @@ export const benefitsFields: TinaField[] = [
     type: "image",
     label: "Image URL",
     name: "image",
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     uploadDir: () => "benefits",
   },

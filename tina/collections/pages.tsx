@@ -12,13 +12,14 @@ export const pagesSchema: Collection = {
   ui: {
     router: ({ document }) => {
       if (document._sys.filename === "home") {
-        return `/`;
+        return "/";
       }
       return `/${document._sys.filename}`;
     },
   },
   fields: [
     tipField,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
     {
@@ -56,7 +57,7 @@ export const pagesSchema: Collection = {
     {
       type: "boolean",
       label: "Remove body top margin",
-      name: "removeBodyTopMargin"
+      name: "removeBodyTopMargin",
     },
     {
       type: "object",

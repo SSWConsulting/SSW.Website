@@ -2,7 +2,6 @@ import * as Schemas from "../../components/blocks";
 import { pageBlocks as sectionPageBlocks } from "../../components/usergroup/sections";
 import { seoSchema } from "../../components/util/seo";
 
-import React from "react";
 import type { Collection } from "tinacms";
 import { youtubePlaylistSchema } from "../../components/blocks/youtubePlaylist";
 import { tipField } from "./shared-fields";
@@ -28,6 +27,7 @@ export const userGroupPageSchema: Collection = {
       label: "Location User Group Page",
       fields: [
         tipField,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         seoSchema,
         {
@@ -105,6 +105,7 @@ export const userGroupPageSchema: Collection = {
               type: "image",
               label: "Organizer Image",
               name: "profileImg",
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               uploadDir: () => "people",
             },
@@ -152,6 +153,7 @@ export const userGroupPageSchema: Collection = {
       label: "Content User Group Page",
       fields: [
         tipField,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         seoSchema,
         {
@@ -221,6 +223,7 @@ export const userGroupGlobalSchema: Collection = {
               label: "Badge image",
               name: "imgURL",
               required: true,
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               uploadDir: () => "/badges",
             },
