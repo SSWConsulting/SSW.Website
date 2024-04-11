@@ -87,8 +87,14 @@ export default function IndustryPage(
 }
 
 export const getStaticProps = async ({ params }) => {
+  let filename = params.filename;
+  if (!filename) {
+    filename = "index";
+  } else {
+    filename = filename.join("/");
+  }
   const tinaProps = await client.queries.industryContentQuery({
-    relativePath: `${params.filename}.mdx`,
+    relativePath: `${filename}.mdx`,
   });
 
   if (tinaProps.data.industry.seo && !tinaProps.data.industry.seo.canonical) {
@@ -110,10 +116,20 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const pagesListData = await client.queries.industryConnection();
+
+  const paths = pagesListData.data.industryConnection.edges.map((page) => {
+    if (page.node._sys.filename === "index") {
+      return {
+        params: { filename: [] },
+      };
+    }
+
+    return {
+      params: { filename: page.node._sys.breadcrumbs },
+    };
+  });
   return {
-    paths: pagesListData.data.industryConnection.edges.map((page) => ({
-      params: { filename: page.node._sys.filename },
-    })),
+    paths: paths,
     fallback: false,
   };
 };

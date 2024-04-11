@@ -137,6 +137,7 @@ export const industrySchema: Collection = {
   path: "content/industry",
   ui: {
     router: ({ document }) => {
+      if (document._sys.filename === "index") return "/industry";
       return `/industry/${document._sys.filename}`;
     },
   },
