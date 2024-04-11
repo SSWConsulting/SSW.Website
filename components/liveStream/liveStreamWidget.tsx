@@ -14,11 +14,13 @@ import { SpeakerInfo } from "../../services/server/events";
 import { CustomLink } from "../customLink";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
 import { SocialIcons } from "../socialIcons/socialIcons";
-import { SubNewsLettersForm } from "../subNewsletter/subNewsletterForm";
+import { InlineJotForm } from "../blocks";
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;
 } & LiveStreamProps;
+
+const NEWSLETTER_SUBSCRIBE_JOTFORM_ID = "240991361342051";
 
 export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
   const eventDescriptionCollapseId = "eventDescription";
@@ -308,15 +310,11 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
               )}
             </div>
 
-            <div className="mt-17">
+            <div className="mb-10 mt-17">
               <h4 className="font-bold">Follow us on:</h4>
               <SocialIcons />
             </div>
-            <SubNewsLettersForm
-              headerText="<span class='mix-blend-difference mr-3'>Subscribe to the</span><span class='font-bold text-sswRed'>SSW Newsletter</span>"
-              subscribeButtonText="Subscribe"
-              subscribeSubTitle="Stay tuned for SSW News & upcoming events."
-            />
+            <InlineJotForm jotFormId={NEWSLETTER_SUBSCRIBE_JOTFORM_ID} />
           </div>
 
           <div className="bg-gray-75 px-4 py-2">
