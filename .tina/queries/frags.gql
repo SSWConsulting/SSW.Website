@@ -1,8 +1,0 @@
-fragment LayoutQueryFragment on Query {
-  global(relativePath: "index.json") {
-    ...GlobalParts
-  }
-  megamenu(relativePath: "menu.json") {
-    ...MegamenuParts
-  }
-}
