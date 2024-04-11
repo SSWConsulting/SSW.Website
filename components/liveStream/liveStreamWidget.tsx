@@ -267,52 +267,56 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
         </div>
 
         <div className="mb-4 grid grid-cols-1 gap-x-8 md:grid-cols-2">
-          <div className="bg-gray-75 px-4 py-2">
-            <div>
-              <h3 className="mb-3 text-xl font-bold">About the Talk</h3>
-              <div
-                id={eventDescriptionCollapseId}
-                ref={collapsableEventDescriptionRefCallback}
-                className={classNames(
-                  { "max-h-70": collapseMap[eventDescriptionCollapseId] },
-                  { "max-h-screen": !collapseMap[eventDescriptionCollapseId] },
-                  {
-                    "overflow-hidden": collapseMap[eventDescriptionCollapseId],
-                  }
-                )}
-                dangerouslySetInnerHTML={{
-                  __html: sanitiseXSS(
-                    event?.EventDescription || event?.EventShortDescription
-                  ),
-                }}
-              ></div>
-              {eventDescriptionCollapsable && (
+          <div>
+            <div className="mb-8 bg-gray-75 px-4 py-2">
+              <div>
+                <h3 className="mb-3 text-xl font-bold">About the Talk</h3>
                 <div
-                  className={classNames({
-                    "relative -mt-15 w-full bg-gradient-to-b from-transparent to-gray-75 pt-15":
-                      collapseMap[eventDescriptionCollapseId],
-                  })}
-                >
-                  <a
-                    className="float-right mt-4 cursor-pointer border-b-1 border-dotted border-gray-450 !no-underline"
-                    onClick={() =>
-                      setCollapseMap({
-                        [eventDescriptionCollapseId]:
-                          !collapseMap[eventDescriptionCollapseId],
-                      })
+                  id={eventDescriptionCollapseId}
+                  ref={collapsableEventDescriptionRefCallback}
+                  className={classNames(
+                    { "max-h-70": collapseMap[eventDescriptionCollapseId] },
+                    {
+                      "max-h-screen": !collapseMap[eventDescriptionCollapseId],
+                    },
+                    {
+                      "overflow-hidden":
+                        collapseMap[eventDescriptionCollapseId],
                     }
+                  )}
+                  dangerouslySetInnerHTML={{
+                    __html: sanitiseXSS(
+                      event?.EventDescription || event?.EventShortDescription
+                    ),
+                  }}
+                ></div>
+                {eventDescriptionCollapsable && (
+                  <div
+                    className={classNames({
+                      "relative -mt-15 w-full bg-gradient-to-b from-transparent to-gray-75 pt-15":
+                        collapseMap[eventDescriptionCollapseId],
+                    })}
                   >
-                    {collapseMap[eventDescriptionCollapseId]
-                      ? "More >"
-                      : "< Less"}
-                  </a>
-                </div>
-              )}
-            </div>
-
-            <div className="mb-10 mt-17">
-              <h4 className="font-bold">Follow us on:</h4>
-              <SocialIcons />
+                    <a
+                      className="float-right mt-4 cursor-pointer border-b-1 border-dotted border-gray-450 !no-underline"
+                      onClick={() =>
+                        setCollapseMap({
+                          [eventDescriptionCollapseId]:
+                            !collapseMap[eventDescriptionCollapseId],
+                        })
+                      }
+                    >
+                      {collapseMap[eventDescriptionCollapseId]
+                        ? "More >"
+                        : "< Less"}
+                    </a>
+                  </div>
+                )}
+              </div>
+              <div className="mt-17">
+                <h4 className="font-bold">Follow us on:</h4>
+                <SocialIcons />
+              </div>
             </div>
             <InlineJotForm jotFormId={NEWSLETTER_SUBSCRIBE_JOTFORM_ID} />
           </div>
