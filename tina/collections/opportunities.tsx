@@ -2,7 +2,6 @@ import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import {
   employmentType,
-  jobStatus,
   locations,
 } from "../../components/util/constants/opportunity";
 import { tipField } from "./shared-fields";
