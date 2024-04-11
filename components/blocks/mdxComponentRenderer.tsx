@@ -3,6 +3,7 @@ import { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import type { TweetEmbedProps } from "../embeds/tweetEmbed";
 import type { SubNewsletterRowProps } from "../subNewsletter/subNewsletterRow";
 import type { Countries } from "../util/constants/country";
+import { CardList } from "./cardList";
 import type { ColorBlockProps } from "./colorBlock";
 import type { CustomImageProps } from "./customImage";
 import { DynamicCardGridBlockProps } from "./dynamicCardGridBlock";
@@ -260,6 +261,10 @@ export const componentRenderer: Components<{
   SectionHeader: SectionHeaderProps;
   Content: ContentType;
   DomainFromQuery: DomainFromQueryProps;
+  CardList: {
+    industryList: { title: string; blurb: TinaMarkdownContent; url: string }[];
+    prose: string;
+  };
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -301,4 +306,5 @@ export const componentRenderer: Components<{
   SectionHeader: (props) => <SectionHeader {...props} />,
   Content: (props) => <Content data={props} />,
   DomainFromQuery: (props) => <DomainFromQuery {...props} />,
+  CardList: (props) => <CardList {...props} />,
 };

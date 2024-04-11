@@ -1,6 +1,7 @@
 import React from "react";
 import { Collection, Template } from "tinacms";
 import * as Schemas from "../../components/blocks";
+import { cardListBlockSchema } from "../../components/blocks/cardList";
 import { seoSchema } from "../../components/util/seo";
 import { tipField } from "./shared-fields";
 
@@ -181,6 +182,7 @@ export const industrySchema: Collection = {
         whitepaperBlockSchema,
         bookingFormBlockSchema,
         contactUsBlockSchema,
+        cardListBlockSchema,
       ],
       isBody: true,
     },

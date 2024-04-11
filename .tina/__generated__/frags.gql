@@ -1,0 +1,8513 @@
+fragment PageParts on Page {
+  __typename
+  tip
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  breadcrumbs
+  title
+  subTitle
+  beforeBody {
+    __typename
+    ... on PageBeforeBodyAboutUs {
+      backgroundColor
+    }
+    ... on PageBeforeBodyAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on PageBeforeBodyAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on PageBeforeBodyBookingButton {
+      buttonText
+      animated
+    }
+    ... on PageBeforeBodyBuiltOnAzure {
+      backgroundColor
+    }
+    ... on PageBeforeBodyCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on PageBeforeBodyCitation {
+      author
+      article
+    }
+    ... on PageBeforeBodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            __typename
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              __typename
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
+    ... on PageBeforeBodyClientLogos {
+      altText
+    }
+    ... on PageBeforeBodyColorBlock {
+      title
+      subTitle
+      colorRow {
+        __typename
+        firstColor
+        fText
+        secondColor
+        sText
+        caption
+      }
+    }
+    ... on PageBeforeBodyColorPalette {
+      colorBlocks {
+        __typename
+        color
+        text
+      }
+    }
+    ... on PageBeforeBodyContent {
+      title
+      content
+      paddingClass
+      size
+      align
+      backgroundColor
+    }
+    ... on PageBeforeBodyContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on PageBeforeBodyCustomDownloadButton {
+      btnText
+      btnLink
+    }
+    ... on PageBeforeBodyCustomImage {
+      src
+      altText
+      alignment
+      height
+      width
+      link
+      customClass
+      caption
+      captionColor
+      sizes
+    }
+    ... on PageBeforeBodyDomainFromQuery {
+      title
+      showDomain
+    }
+    ... on PageBeforeBodyDownloadBlock {
+      title
+      downloads {
+        __typename
+        header
+        img
+        imgBackground
+        firstLinkText
+        firstLink
+        secondLinkText
+        secondLink
+      }
+      bottomBorder
+    }
+    ... on PageBeforeBodyDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on PageBeforeBodyEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      gstText
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on PageBeforeBodyEventLink {
+      content
+      link
+      eventThumbnail
+      thumbnailAlt
+    }
+    ... on PageBeforeBodyFlag {
+      country
+    }
+    ... on PageBeforeBodyFixedColumns {
+      headerSection
+      firstColBody
+      secondColBody
+    }
+    ... on PageBeforeBodyFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on PageBeforeBodyGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on PageBeforeBodyGridLayout {
+      title
+      grids {
+        __typename
+        gridTitle
+        showGridTitle
+        centeredGridTitle
+        showHeaderDivider
+        offsetGridStart
+        blocks {
+          __typename
+          title
+          showTitle
+          image
+          relatedImage
+          linkContent
+        }
+      }
+    }
+    ... on PageBeforeBodyHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on PageBeforeBodyHorizontalCard {
+      cardList {
+        __typename
+        title
+        content
+        thumbnail
+        link
+      }
+      button {
+        __typename
+        text
+        link
+      }
+    }
+    ... on PageBeforeBodyInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on PageBeforeBodyJoinAsPresenter {
+      link
+      img
+    }
+    ... on PageBeforeBodyJoinGithub {
+      title
+      link
+    }
+    ... on PageBeforeBodyJotFormEmbed {
+      jotFormId
+      buttonText
+      containerClass
+      buttonClass
+      animated
+    }
+    ... on PageBeforeBodyLatestTech {
+      badges {
+        ... on UserGroupGlobal {
+          __typename
+          latestTechTitle
+          latestTechBadges {
+            __typename
+            random
+            badgesList {
+              __typename
+              name
+              url
+              imgURL
+              rotate
+              duration
+              bounceDown
+            }
+          }
+          youtubePlaylist {
+            __typename
+            title
+            playlistId
+            videosCount
+            playlistButton {
+              __typename
+              text
+              link
+              animated
+            }
+          }
+          joinUs {
+            __typename
+            link
+            img
+          }
+          technologies {
+            __typename
+            name
+            imageUrl
+          }
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+    }
+    ... on PageBeforeBodyLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            __typename
+            tip
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on PageBeforeBodyNewslettersTable {
+      headerText
+    }
+    ... on PageBeforeBodyOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on PageBeforeBodyPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          __typename
+          tip
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+    ... on PageBeforeBodyPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            __typename
+            tip
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on PageBeforeBodyRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on PageBeforeBodySectionHeader {
+      headerText
+    }
+    ... on PageBeforeBodyServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+        isExternal
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on PageBeforeBodySubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on PageBeforeBodyTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on PageBeforeBodyTestimonialsList {
+      excludedCategories {
+        __typename
+        categoryName {
+          ... on TestimonialCategories {
+            __typename
+            tip
+            name
+            description
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+    }
+    ... on PageBeforeBodyTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on PageBeforeBodyTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on PageBeforeBodyTweetEmbed {
+      url
+    }
+    ... on PageBeforeBodyUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on PageBeforeBodyUtilityButton {
+      buttonText
+      link
+      size
+      btnIcon
+      animated
+      uncentered
+      removeTopMargin
+      openInNewTab
+    }
+    ... on PageBeforeBodyVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+      sizes
+    }
+    ... on PageBeforeBodyVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on PageBeforeBodyVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+      uncentre
+      overflow
+      caption
+      duration
+    }
+  }
+  _body
+  removeBodyTopMargin
+  sideBar {
+    __typename
+    ... on PageSideBarAboutUs {
+      backgroundColor
+    }
+    ... on PageSideBarAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on PageSideBarAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on PageSideBarBookingButton {
+      buttonText
+      animated
+    }
+    ... on PageSideBarBuiltOnAzure {
+      backgroundColor
+    }
+    ... on PageSideBarCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on PageSideBarCitation {
+      author
+      article
+    }
+    ... on PageSideBarClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            __typename
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              __typename
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
+    ... on PageSideBarClientLogos {
+      altText
+    }
+    ... on PageSideBarColorBlock {
+      title
+      subTitle
+      colorRow {
+        __typename
+        firstColor
+        fText
+        secondColor
+        sText
+        caption
+      }
+    }
+    ... on PageSideBarColorPalette {
+      colorBlocks {
+        __typename
+        color
+        text
+      }
+    }
+    ... on PageSideBarContent {
+      title
+      content
+      paddingClass
+      size
+      align
+      backgroundColor
+    }
+    ... on PageSideBarContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on PageSideBarCustomDownloadButton {
+      btnText
+      btnLink
+    }
+    ... on PageSideBarCustomImage {
+      src
+      altText
+      alignment
+      height
+      width
+      link
+      customClass
+      caption
+      captionColor
+      sizes
+    }
+    ... on PageSideBarDomainFromQuery {
+      title
+      showDomain
+    }
+    ... on PageSideBarDownloadBlock {
+      title
+      downloads {
+        __typename
+        header
+        img
+        imgBackground
+        firstLinkText
+        firstLink
+        secondLinkText
+        secondLink
+      }
+      bottomBorder
+    }
+    ... on PageSideBarDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on PageSideBarEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      gstText
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on PageSideBarEventLink {
+      content
+      link
+      eventThumbnail
+      thumbnailAlt
+    }
+    ... on PageSideBarFlag {
+      country
+    }
+    ... on PageSideBarFixedColumns {
+      headerSection
+      firstColBody
+      secondColBody
+    }
+    ... on PageSideBarFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on PageSideBarGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on PageSideBarGridLayout {
+      title
+      grids {
+        __typename
+        gridTitle
+        showGridTitle
+        centeredGridTitle
+        showHeaderDivider
+        offsetGridStart
+        blocks {
+          __typename
+          title
+          showTitle
+          image
+          relatedImage
+          linkContent
+        }
+      }
+    }
+    ... on PageSideBarHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on PageSideBarHorizontalCard {
+      cardList {
+        __typename
+        title
+        content
+        thumbnail
+        link
+      }
+      button {
+        __typename
+        text
+        link
+      }
+    }
+    ... on PageSideBarInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on PageSideBarJoinAsPresenter {
+      link
+      img
+    }
+    ... on PageSideBarJoinGithub {
+      title
+      link
+    }
+    ... on PageSideBarJotFormEmbed {
+      jotFormId
+      buttonText
+      containerClass
+      buttonClass
+      animated
+    }
+    ... on PageSideBarLatestTech {
+      badges {
+        ... on UserGroupGlobal {
+          __typename
+          latestTechTitle
+          latestTechBadges {
+            __typename
+            random
+            badgesList {
+              __typename
+              name
+              url
+              imgURL
+              rotate
+              duration
+              bounceDown
+            }
+          }
+          youtubePlaylist {
+            __typename
+            title
+            playlistId
+            videosCount
+            playlistButton {
+              __typename
+              text
+              link
+              animated
+            }
+          }
+          joinUs {
+            __typename
+            link
+            img
+          }
+          technologies {
+            __typename
+            name
+            imageUrl
+          }
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+    }
+    ... on PageSideBarLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            __typename
+            tip
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on PageSideBarNewslettersTable {
+      headerText
+    }
+    ... on PageSideBarOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on PageSideBarPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          __typename
+          tip
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+    ... on PageSideBarPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            __typename
+            tip
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on PageSideBarRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on PageSideBarSectionHeader {
+      headerText
+    }
+    ... on PageSideBarServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+        isExternal
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on PageSideBarSubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on PageSideBarTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on PageSideBarTestimonialsList {
+      excludedCategories {
+        __typename
+        categoryName {
+          ... on TestimonialCategories {
+            __typename
+            tip
+            name
+            description
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+    }
+    ... on PageSideBarTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on PageSideBarTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on PageSideBarTweetEmbed {
+      url
+    }
+    ... on PageSideBarUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on PageSideBarUtilityButton {
+      buttonText
+      link
+      size
+      btnIcon
+      animated
+      uncentered
+      removeTopMargin
+      openInNewTab
+    }
+    ... on PageSideBarVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+      sizes
+    }
+    ... on PageSideBarVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on PageSideBarVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+      uncentre
+      overflow
+      caption
+      duration
+    }
+  }
+  centeredBodyText
+  afterBody {
+    __typename
+    ... on PageAfterBodyAboutUs {
+      backgroundColor
+    }
+    ... on PageAfterBodyAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on PageAfterBodyAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on PageAfterBodyBookingButton {
+      buttonText
+      animated
+    }
+    ... on PageAfterBodyBuiltOnAzure {
+      backgroundColor
+    }
+    ... on PageAfterBodyCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on PageAfterBodyCitation {
+      author
+      article
+    }
+    ... on PageAfterBodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            __typename
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              __typename
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
+    ... on PageAfterBodyClientLogos {
+      altText
+    }
+    ... on PageAfterBodyColorBlock {
+      title
+      subTitle
+      colorRow {
+        __typename
+        firstColor
+        fText
+        secondColor
+        sText
+        caption
+      }
+    }
+    ... on PageAfterBodyColorPalette {
+      colorBlocks {
+        __typename
+        color
+        text
+      }
+    }
+    ... on PageAfterBodyContent {
+      title
+      content
+      paddingClass
+      size
+      align
+      backgroundColor
+    }
+    ... on PageAfterBodyContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on PageAfterBodyCustomDownloadButton {
+      btnText
+      btnLink
+    }
+    ... on PageAfterBodyCustomImage {
+      src
+      altText
+      alignment
+      height
+      width
+      link
+      customClass
+      caption
+      captionColor
+      sizes
+    }
+    ... on PageAfterBodyDomainFromQuery {
+      title
+      showDomain
+    }
+    ... on PageAfterBodyDownloadBlock {
+      title
+      downloads {
+        __typename
+        header
+        img
+        imgBackground
+        firstLinkText
+        firstLink
+        secondLinkText
+        secondLink
+      }
+      bottomBorder
+    }
+    ... on PageAfterBodyDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on PageAfterBodyEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      gstText
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on PageAfterBodyEventLink {
+      content
+      link
+      eventThumbnail
+      thumbnailAlt
+    }
+    ... on PageAfterBodyFlag {
+      country
+    }
+    ... on PageAfterBodyFixedColumns {
+      headerSection
+      firstColBody
+      secondColBody
+    }
+    ... on PageAfterBodyFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on PageAfterBodyGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on PageAfterBodyGridLayout {
+      title
+      grids {
+        __typename
+        gridTitle
+        showGridTitle
+        centeredGridTitle
+        showHeaderDivider
+        offsetGridStart
+        blocks {
+          __typename
+          title
+          showTitle
+          image
+          relatedImage
+          linkContent
+        }
+      }
+    }
+    ... on PageAfterBodyHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on PageAfterBodyHorizontalCard {
+      cardList {
+        __typename
+        title
+        content
+        thumbnail
+        link
+      }
+      button {
+        __typename
+        text
+        link
+      }
+    }
+    ... on PageAfterBodyInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on PageAfterBodyJoinAsPresenter {
+      link
+      img
+    }
+    ... on PageAfterBodyJoinGithub {
+      title
+      link
+    }
+    ... on PageAfterBodyJotFormEmbed {
+      jotFormId
+      buttonText
+      containerClass
+      buttonClass
+      animated
+    }
+    ... on PageAfterBodyLatestTech {
+      badges {
+        ... on UserGroupGlobal {
+          __typename
+          latestTechTitle
+          latestTechBadges {
+            __typename
+            random
+            badgesList {
+              __typename
+              name
+              url
+              imgURL
+              rotate
+              duration
+              bounceDown
+            }
+          }
+          youtubePlaylist {
+            __typename
+            title
+            playlistId
+            videosCount
+            playlistButton {
+              __typename
+              text
+              link
+              animated
+            }
+          }
+          joinUs {
+            __typename
+            link
+            img
+          }
+          technologies {
+            __typename
+            name
+            imageUrl
+          }
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+    }
+    ... on PageAfterBodyLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            __typename
+            tip
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on PageAfterBodyNewslettersTable {
+      headerText
+    }
+    ... on PageAfterBodyOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on PageAfterBodyPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          __typename
+          tip
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+    ... on PageAfterBodyPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            __typename
+            tip
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on PageAfterBodyRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on PageAfterBodySectionHeader {
+      headerText
+    }
+    ... on PageAfterBodyServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+        isExternal
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on PageAfterBodySubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on PageAfterBodyTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on PageAfterBodyTestimonialsList {
+      excludedCategories {
+        __typename
+        categoryName {
+          ... on TestimonialCategories {
+            __typename
+            tip
+            name
+            description
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+    }
+    ... on PageAfterBodyTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on PageAfterBodyTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on PageAfterBodyTweetEmbed {
+      url
+    }
+    ... on PageAfterBodyUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on PageAfterBodyUtilityButton {
+      buttonText
+      link
+      size
+      btnIcon
+      animated
+      uncentered
+      removeTopMargin
+      openInNewTab
+    }
+    ... on PageAfterBodyVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+      sizes
+    }
+    ... on PageAfterBodyVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on PageAfterBodyVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+      uncentre
+      overflow
+      caption
+      duration
+    }
+  }
+  showAzureFooter
+}
+
+fragment GlobalParts on Global {
+  __typename
+  header {
+    __typename
+    name
+    title
+    description
+    url
+    site_name
+    alternate_site_name
+  }
+  youtubeChannelLink
+  breadcrumbSuffix
+  bookingButtonText
+  bookingPhone
+  defaultOGImage
+  homePageOfficeList {
+    __typename
+    url
+    name
+    streetAddress
+    suburb
+    addressLocality
+    addressRegion
+    addressCountry
+    postalCode
+    phone
+    hours
+    days
+  }
+  socials {
+    __typename
+    type
+    title
+    url
+    username
+  }
+  contactIcon {
+    __typename
+    url
+    linkText
+    desktopSpecificLinkText
+    desktopSpecificURL
+    openInSameWindow
+  }
+  clients {
+    __typename
+    clientsList {
+      __typename
+      clientName
+      imageUrl
+    }
+  }
+  jotFormId
+}
+
+fragment MegamenuParts on Megamenu {
+  __typename
+  menuGroups {
+    __typename
+    name
+    menuColumns {
+      __typename
+      menuColumnGroups {
+        __typename
+        name
+        menuItems {
+          __typename
+          name
+          url
+          description
+          iconImg
+          icon
+        }
+      }
+    }
+    sidebarItems {
+      __typename
+      name
+      items {
+        __typename
+        name
+        url
+        description
+        widgetType
+        icon
+      }
+    }
+    viewAll {
+      __typename
+      name
+      url
+    }
+    url
+  }
+}
+
+fragment CompanyIndexParts on CompanyIndex {
+  __typename
+  headerImage {
+    __typename
+    heroBackground
+    altText
+    txtOverlay
+  }
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  title
+  _body
+  companyPages {
+    __typename
+    title
+    body
+    pageURL
+    isExternal
+  }
+}
+
+fragment CompanyParts on Company {
+  __typename
+  tip
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  beforeBody {
+    __typename
+    ... on CompanyBeforeBodyCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+  }
+  title
+  subTitle
+  fullWidthBody
+  sidebar
+  hideSidebarOnMobile
+  fixedWidthSidebar
+  sidebarTestimonial
+  showRdPanel
+  showTechUpgradeBlock
+  _body {
+    __typename
+    ... on Company_bodyAboutUs {
+      backgroundColor
+    }
+    ... on Company_bodyAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on Company_bodyAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on Company_bodyBookingButton {
+      buttonText
+      animated
+    }
+    ... on Company_bodyBuiltOnAzure {
+      backgroundColor
+    }
+    ... on Company_bodyCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on Company_bodyCitation {
+      author
+      article
+    }
+    ... on Company_bodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            __typename
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              __typename
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
+    ... on Company_bodyClientLogos {
+      altText
+    }
+    ... on Company_bodyColorBlock {
+      title
+      subTitle
+      colorRow {
+        __typename
+        firstColor
+        fText
+        secondColor
+        sText
+        caption
+      }
+    }
+    ... on Company_bodyColorPalette {
+      colorBlocks {
+        __typename
+        color
+        text
+      }
+    }
+    ... on Company_bodyContent {
+      title
+      content
+      paddingClass
+      size
+      align
+      backgroundColor
+    }
+    ... on Company_bodyContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on Company_bodyCustomDownloadButton {
+      btnText
+      btnLink
+    }
+    ... on Company_bodyCustomImage {
+      src
+      altText
+      alignment
+      height
+      width
+      link
+      customClass
+      caption
+      captionColor
+      sizes
+    }
+    ... on Company_bodyDomainFromQuery {
+      title
+      showDomain
+    }
+    ... on Company_bodyDownloadBlock {
+      title
+      downloads {
+        __typename
+        header
+        img
+        imgBackground
+        firstLinkText
+        firstLink
+        secondLinkText
+        secondLink
+      }
+      bottomBorder
+    }
+    ... on Company_bodyDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on Company_bodyEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      gstText
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on Company_bodyEventLink {
+      content
+      link
+      eventThumbnail
+      thumbnailAlt
+    }
+    ... on Company_bodyFlag {
+      country
+    }
+    ... on Company_bodyFixedColumns {
+      headerSection
+      firstColBody
+      secondColBody
+    }
+    ... on Company_bodyFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on Company_bodyGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on Company_bodyGridLayout {
+      title
+      grids {
+        __typename
+        gridTitle
+        showGridTitle
+        centeredGridTitle
+        showHeaderDivider
+        offsetGridStart
+        blocks {
+          __typename
+          title
+          showTitle
+          image
+          relatedImage
+          linkContent
+        }
+      }
+    }
+    ... on Company_bodyHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on Company_bodyHorizontalCard {
+      cardList {
+        __typename
+        title
+        content
+        thumbnail
+        link
+      }
+      button {
+        __typename
+        text
+        link
+      }
+    }
+    ... on Company_bodyInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on Company_bodyJoinAsPresenter {
+      link
+      img
+    }
+    ... on Company_bodyJoinGithub {
+      title
+      link
+    }
+    ... on Company_bodyJotFormEmbed {
+      jotFormId
+      buttonText
+      containerClass
+      buttonClass
+      animated
+    }
+    ... on Company_bodyLatestTech {
+      badges {
+        ... on UserGroupGlobal {
+          __typename
+          latestTechTitle
+          latestTechBadges {
+            __typename
+            random
+            badgesList {
+              __typename
+              name
+              url
+              imgURL
+              rotate
+              duration
+              bounceDown
+            }
+          }
+          youtubePlaylist {
+            __typename
+            title
+            playlistId
+            videosCount
+            playlistButton {
+              __typename
+              text
+              link
+              animated
+            }
+          }
+          joinUs {
+            __typename
+            link
+            img
+          }
+          technologies {
+            __typename
+            name
+            imageUrl
+          }
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+    }
+    ... on Company_bodyLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            __typename
+            tip
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on Company_bodyNewslettersTable {
+      headerText
+    }
+    ... on Company_bodyOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on Company_bodyPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          __typename
+          tip
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+    ... on Company_bodyPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            __typename
+            tip
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on Company_bodyRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on Company_bodySectionHeader {
+      headerText
+    }
+    ... on Company_bodyServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+        isExternal
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on Company_bodySubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on Company_bodyTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on Company_bodyTestimonialsList {
+      excludedCategories {
+        __typename
+        categoryName {
+          ... on TestimonialCategories {
+            __typename
+            tip
+            name
+            description
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+    }
+    ... on Company_bodyTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on Company_bodyTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on Company_bodyTweetEmbed {
+      url
+    }
+    ... on Company_bodyUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on Company_bodyUtilityButton {
+      buttonText
+      link
+      size
+      btnIcon
+      animated
+      uncentered
+      removeTopMargin
+      openInNewTab
+    }
+    ... on Company_bodyVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+      sizes
+    }
+    ... on Company_bodyVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on Company_bodyVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+      uncentre
+      overflow
+      caption
+      duration
+    }
+  }
+  historyCards {
+    __typename
+    year
+    title
+    location
+    description
+  }
+}
+
+fragment ClientCategoriesParts on ClientCategories {
+  __typename
+  name
+}
+
+fragment PaymentDetailsParts on PaymentDetails {
+  __typename
+  tip
+  bankName
+  accountName
+  bsbNumber
+  accountNumber
+  swiftNumber
+  abn
+  acn
+}
+
+fragment CaseStudyParts on CaseStudy {
+  __typename
+  tip
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  heading
+  subHeading
+  _body {
+    __typename
+    ... on CaseStudy_bodyAboutUs {
+      backgroundColor
+    }
+    ... on CaseStudy_bodyAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on CaseStudy_bodyAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on CaseStudy_bodyBookingButton {
+      buttonText
+      animated
+    }
+    ... on CaseStudy_bodyBuiltOnAzure {
+      backgroundColor
+    }
+    ... on CaseStudy_bodyCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on CaseStudy_bodyCitation {
+      author
+      article
+    }
+    ... on CaseStudy_bodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            __typename
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              __typename
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
+    ... on CaseStudy_bodyClientLogos {
+      altText
+    }
+    ... on CaseStudy_bodyColorBlock {
+      title
+      subTitle
+      colorRow {
+        __typename
+        firstColor
+        fText
+        secondColor
+        sText
+        caption
+      }
+    }
+    ... on CaseStudy_bodyColorPalette {
+      colorBlocks {
+        __typename
+        color
+        text
+      }
+    }
+    ... on CaseStudy_bodyContent {
+      title
+      content
+      paddingClass
+      size
+      align
+      backgroundColor
+    }
+    ... on CaseStudy_bodyContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on CaseStudy_bodyCustomDownloadButton {
+      btnText
+      btnLink
+    }
+    ... on CaseStudy_bodyCustomImage {
+      src
+      altText
+      alignment
+      height
+      width
+      link
+      customClass
+      caption
+      captionColor
+      sizes
+    }
+    ... on CaseStudy_bodyDomainFromQuery {
+      title
+      showDomain
+    }
+    ... on CaseStudy_bodyDownloadBlock {
+      title
+      downloads {
+        __typename
+        header
+        img
+        imgBackground
+        firstLinkText
+        firstLink
+        secondLinkText
+        secondLink
+      }
+      bottomBorder
+    }
+    ... on CaseStudy_bodyDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on CaseStudy_bodyEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      gstText
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on CaseStudy_bodyEventLink {
+      content
+      link
+      eventThumbnail
+      thumbnailAlt
+    }
+    ... on CaseStudy_bodyFlag {
+      country
+    }
+    ... on CaseStudy_bodyFixedColumns {
+      headerSection
+      firstColBody
+      secondColBody
+    }
+    ... on CaseStudy_bodyFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on CaseStudy_bodyGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on CaseStudy_bodyGridLayout {
+      title
+      grids {
+        __typename
+        gridTitle
+        showGridTitle
+        centeredGridTitle
+        showHeaderDivider
+        offsetGridStart
+        blocks {
+          __typename
+          title
+          showTitle
+          image
+          relatedImage
+          linkContent
+        }
+      }
+    }
+    ... on CaseStudy_bodyHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on CaseStudy_bodyHorizontalCard {
+      cardList {
+        __typename
+        title
+        content
+        thumbnail
+        link
+      }
+      button {
+        __typename
+        text
+        link
+      }
+    }
+    ... on CaseStudy_bodyInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on CaseStudy_bodyJoinAsPresenter {
+      link
+      img
+    }
+    ... on CaseStudy_bodyJoinGithub {
+      title
+      link
+    }
+    ... on CaseStudy_bodyJotFormEmbed {
+      jotFormId
+      buttonText
+      containerClass
+      buttonClass
+      animated
+    }
+    ... on CaseStudy_bodyLatestTech {
+      badges {
+        ... on UserGroupGlobal {
+          __typename
+          latestTechTitle
+          latestTechBadges {
+            __typename
+            random
+            badgesList {
+              __typename
+              name
+              url
+              imgURL
+              rotate
+              duration
+              bounceDown
+            }
+          }
+          youtubePlaylist {
+            __typename
+            title
+            playlistId
+            videosCount
+            playlistButton {
+              __typename
+              text
+              link
+              animated
+            }
+          }
+          joinUs {
+            __typename
+            link
+            img
+          }
+          technologies {
+            __typename
+            name
+            imageUrl
+          }
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+    }
+    ... on CaseStudy_bodyLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            __typename
+            tip
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on CaseStudy_bodyNewslettersTable {
+      headerText
+    }
+    ... on CaseStudy_bodyOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on CaseStudy_bodyPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          __typename
+          tip
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+    ... on CaseStudy_bodyPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            __typename
+            tip
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on CaseStudy_bodyRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on CaseStudy_bodySectionHeader {
+      headerText
+    }
+    ... on CaseStudy_bodyServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+        isExternal
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on CaseStudy_bodySubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on CaseStudy_bodyTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on CaseStudy_bodyTestimonialsList {
+      excludedCategories {
+        __typename
+        categoryName {
+          ... on TestimonialCategories {
+            __typename
+            tip
+            name
+            description
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+    }
+    ... on CaseStudy_bodyTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on CaseStudy_bodyTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on CaseStudy_bodyTweetEmbed {
+      url
+    }
+    ... on CaseStudy_bodyUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on CaseStudy_bodyUtilityButton {
+      buttonText
+      link
+      size
+      btnIcon
+      animated
+      uncentered
+      removeTopMargin
+      openInNewTab
+    }
+    ... on CaseStudy_bodyVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+      sizes
+    }
+    ... on CaseStudy_bodyVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on CaseStudy_bodyVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+      uncentre
+      overflow
+      caption
+      duration
+    }
+  }
+  content
+}
+
+fragment ConsultingIndexParts on ConsultingIndex {
+  __typename
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  sidebar {
+    __typename
+    label
+    tag {
+      ... on ConsultingTag {
+        __typename
+        name
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+  }
+  categories {
+    __typename
+    category {
+      ... on ConsultingCategory {
+        __typename
+        name
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+    pages {
+      __typename
+      title
+      description
+      logo
+      page {
+        ... on Consulting {
+          __typename
+          tip
+          seo {
+            __typename
+            title
+            description
+            canonical
+            showBreadcrumb
+            images {
+              __typename
+              url
+              width
+              height
+              alt
+            }
+          }
+          testimonials {
+            __typename
+            tagline
+          }
+          booking {
+            __typename
+            title
+            subTitle
+            buttonText
+            videoBackground
+          }
+          solution {
+            __typename
+            project
+          }
+          callToAction
+          testimonialCategories {
+            __typename
+            testimonialCategory {
+              ... on TestimonialCategories {
+                __typename
+                tip
+                name
+                description
+              }
+              ... on Document {
+                _sys {
+                  filename
+                  basename
+                  breadcrumbs
+                  path
+                  relativePath
+                  extension
+                }
+                id
+              }
+            }
+          }
+          _body
+          afterBody {
+            __typename
+            ... on ConsultingAfterBodyAboutUs {
+              backgroundColor
+            }
+            ... on ConsultingAfterBodyAgenda {
+              header
+              textColor
+              agendaItemList {
+                __typename
+                placeholder
+                body
+              }
+            }
+            ... on ConsultingAfterBodyAgreementForm {
+              backgroundColor
+              fields {
+                __typename
+                id
+                label
+                placeholder
+                resizeable
+              }
+            }
+            ... on ConsultingAfterBodyBookingButton {
+              buttonText
+              animated
+            }
+            ... on ConsultingAfterBodyBuiltOnAzure {
+              backgroundColor
+            }
+            ... on ConsultingAfterBodyCarousel {
+              items {
+                __typename
+                label
+                link
+                openIn
+                imgSrc
+              }
+              backgroundColor
+              delay
+              showOnMobileDevices
+            }
+            ... on ConsultingAfterBodyCitation {
+              author
+              article
+            }
+            ... on ConsultingAfterBodyClientList {
+              categories {
+                __typename
+                category {
+                  ... on ClientCategories {
+                    __typename
+                    name
+                  }
+                  ... on Document {
+                    _sys {
+                      filename
+                      basename
+                      breadcrumbs
+                      path
+                      relativePath
+                      extension
+                    }
+                    id
+                  }
+                }
+              }
+              clients {
+                __typename
+                name
+                logo
+                logoUrl
+                content
+                caseStudyUrl
+                categories {
+                  __typename
+                  category {
+                    ... on ClientCategories {
+                      __typename
+                      name
+                    }
+                    ... on Document {
+                      _sys {
+                        filename
+                        basename
+                        breadcrumbs
+                        path
+                        relativePath
+                        extension
+                      }
+                      id
+                    }
+                  }
+                }
+              }
+            }
+            ... on ConsultingAfterBodyClientLogos {
+              altText
+            }
+            ... on ConsultingAfterBodyColorBlock {
+              title
+              subTitle
+              colorRow {
+                __typename
+                firstColor
+                fText
+                secondColor
+                sText
+                caption
+              }
+            }
+            ... on ConsultingAfterBodyColorPalette {
+              colorBlocks {
+                __typename
+                color
+                text
+              }
+            }
+            ... on ConsultingAfterBodyContent {
+              title
+              content
+              paddingClass
+              size
+              align
+              backgroundColor
+            }
+            ... on ConsultingAfterBodyContentCard {
+              prose
+              centerAlignedText
+              content
+            }
+            ... on ConsultingAfterBodyCustomDownloadButton {
+              btnText
+              btnLink
+            }
+            ... on ConsultingAfterBodyCustomImage {
+              src
+              altText
+              alignment
+              height
+              width
+              link
+              customClass
+              caption
+              captionColor
+              sizes
+            }
+            ... on ConsultingAfterBodyDomainFromQuery {
+              title
+              showDomain
+            }
+            ... on ConsultingAfterBodyDownloadBlock {
+              title
+              downloads {
+                __typename
+                header
+                img
+                imgBackground
+                firstLinkText
+                firstLink
+                secondLinkText
+                secondLink
+              }
+              bottomBorder
+            }
+            ... on ConsultingAfterBodyDynamicColumns {
+              colBody
+              colCount
+            }
+            ... on ConsultingAfterBodyEventBooking {
+              eventDurationInDays
+              price
+              discountPrice
+              gstText
+              discountNote
+              eventList {
+                __typename
+                city
+                date
+                bookingURL
+              }
+            }
+            ... on ConsultingAfterBodyEventLink {
+              content
+              link
+              eventThumbnail
+              thumbnailAlt
+            }
+            ... on ConsultingAfterBodyFlag {
+              country
+            }
+            ... on ConsultingAfterBodyFixedColumns {
+              headerSection
+              firstColBody
+              secondColBody
+            }
+            ... on ConsultingAfterBodyFixedTabsLayout {
+              firstTab
+              firstHeading
+              firstBody
+              secondTab
+              secondHeading
+              secondBody
+            }
+            ... on ConsultingAfterBodyGoogleMaps {
+              embedUrl
+              embedWidth
+              embedHeight
+            }
+            ... on ConsultingAfterBodyGridLayout {
+              title
+              grids {
+                __typename
+                gridTitle
+                showGridTitle
+                centeredGridTitle
+                showHeaderDivider
+                offsetGridStart
+                blocks {
+                  __typename
+                  title
+                  showTitle
+                  image
+                  relatedImage
+                  linkContent
+                }
+              }
+            }
+            ... on ConsultingAfterBodyHero {
+              tagline
+              headline
+              text
+              actions {
+                __typename
+                label
+                type
+                icon
+                link
+              }
+              image {
+                __typename
+                src
+                alt
+              }
+              color
+            }
+            ... on ConsultingAfterBodyHorizontalCard {
+              cardList {
+                __typename
+                title
+                content
+                thumbnail
+                link
+              }
+              button {
+                __typename
+                text
+                link
+              }
+            }
+            ... on ConsultingAfterBodyInternalCarousel {
+              items {
+                __typename
+                label
+                imgSrc
+              }
+              header
+              paragraph
+              website
+              technologies {
+                __typename
+                name
+              }
+            }
+            ... on ConsultingAfterBodyJoinAsPresenter {
+              link
+              img
+            }
+            ... on ConsultingAfterBodyJoinGithub {
+              title
+              link
+            }
+            ... on ConsultingAfterBodyJotFormEmbed {
+              jotFormId
+              buttonText
+              containerClass
+              buttonClass
+              animated
+            }
+            ... on ConsultingAfterBodyLatestTech {
+              badges {
+                ... on UserGroupGlobal {
+                  __typename
+                  latestTechTitle
+                  latestTechBadges {
+                    __typename
+                    random
+                    badgesList {
+                      __typename
+                      name
+                      url
+                      imgURL
+                      rotate
+                      duration
+                      bounceDown
+                    }
+                  }
+                  youtubePlaylist {
+                    __typename
+                    title
+                    playlistId
+                    videosCount
+                    playlistButton {
+                      __typename
+                      text
+                      link
+                      animated
+                    }
+                  }
+                  joinUs {
+                    __typename
+                    link
+                    img
+                  }
+                  technologies {
+                    __typename
+                    name
+                    imageUrl
+                  }
+                }
+                ... on Document {
+                  _sys {
+                    filename
+                    basename
+                    breadcrumbs
+                    path
+                    relativePath
+                    extension
+                  }
+                  id
+                }
+              }
+            }
+            ... on ConsultingAfterBodyLocationBlock {
+              title
+              locationList {
+                __typename
+                location {
+                  ... on Locations {
+                    __typename
+                    tip
+                    header
+                    addressLine1
+                    addressLine2
+                    addressLine3
+                    directionURL
+                  }
+                  ... on Document {
+                    _sys {
+                      filename
+                      basename
+                      breadcrumbs
+                      path
+                      relativePath
+                      extension
+                    }
+                    id
+                  }
+                }
+              }
+              chapelWebsite {
+                __typename
+                title
+                URL
+              }
+            }
+            ... on ConsultingAfterBodyNewslettersTable {
+              headerText
+            }
+            ... on ConsultingAfterBodyOrganizer {
+              profileImg
+              profileLink
+              name
+              position
+              content
+            }
+            ... on ConsultingAfterBodyPaymentBlock {
+              title
+              subTitle
+              payments {
+                ... on PaymentDetails {
+                  __typename
+                  tip
+                  bankName
+                  accountName
+                  bsbNumber
+                  accountNumber
+                  swiftNumber
+                  abn
+                  acn
+                }
+                ... on Document {
+                  _sys {
+                    filename
+                    basename
+                    breadcrumbs
+                    path
+                    relativePath
+                    extension
+                  }
+                  id
+                }
+              }
+              footer
+              creditImgSrc
+              altTxt
+            }
+            ... on ConsultingAfterBodyPresenterBlock {
+              header
+              presenterList {
+                __typename
+                presenter {
+                  ... on Presenter {
+                    __typename
+                    tip
+                    profileImg
+                    presenter {
+                      __typename
+                      name
+                      peopleProfileURL
+                    }
+                    about
+                  }
+                  ... on Document {
+                    _sys {
+                      filename
+                      basename
+                      breadcrumbs
+                      path
+                      relativePath
+                      extension
+                    }
+                    id
+                  }
+                }
+              }
+              otherEvent {
+                __typename
+                title
+                eventURL
+              }
+            }
+            ... on ConsultingAfterBodyRecurringEvent {
+              applyLinkRedirect
+              day
+            }
+            ... on ConsultingAfterBodySectionHeader {
+              headerText
+            }
+            ... on ConsultingAfterBodyServiceCards {
+              bigCardsLabel
+              bigCards {
+                __typename
+                title
+                description
+                link
+                color
+                imgSrc
+              }
+              smallCardsLabel
+              smallCards {
+                __typename
+                title
+                link
+                color
+                imgSrc
+                isExternal
+              }
+              links {
+                __typename
+                label
+                link
+              }
+              backgroundColor
+            }
+            ... on ConsultingAfterBodySubNewsletterRow {
+              headerText
+              subscribeButtonText
+              subscribeSubTitle
+            }
+            ... on ConsultingAfterBodyTableLayout {
+              tableStyle
+              firstColBold
+              headers
+              rows {
+                __typename
+                cells {
+                  __typename
+                  cellValue
+                }
+                isHeader
+              }
+            }
+            ... on ConsultingAfterBodyTestimonialsList {
+              excludedCategories {
+                __typename
+                categoryName {
+                  ... on TestimonialCategories {
+                    __typename
+                    tip
+                    name
+                    description
+                  }
+                  ... on Document {
+                    _sys {
+                      filename
+                      basename
+                      breadcrumbs
+                      path
+                      relativePath
+                      extension
+                    }
+                    id
+                  }
+                }
+              }
+            }
+            ... on ConsultingAfterBodyTrainingInformation {
+              trainingInformationItems {
+                __typename
+                header
+                body
+              }
+            }
+            ... on ConsultingAfterBodyTrainingLearningOutcome {
+              header
+              listItems {
+                __typename
+                title
+                content
+                icon
+              }
+            }
+            ... on ConsultingAfterBodyTweetEmbed {
+              url
+            }
+            ... on ConsultingAfterBodyUpcomingEvents {
+              title
+              numberOfEvents
+            }
+            ... on ConsultingAfterBodyUtilityButton {
+              buttonText
+              link
+              size
+              btnIcon
+              animated
+              uncentered
+              removeTopMargin
+              openInNewTab
+            }
+            ... on ConsultingAfterBodyVerticalImageLayout {
+              imageSrc
+              altText
+              imageLink
+              height
+              width
+              message
+              sizes
+            }
+            ... on ConsultingAfterBodyVerticalListItem {
+              content
+              index
+              icon
+              iconScale
+              afterBody
+            }
+            ... on ConsultingAfterBodyVideoEmbed {
+              url
+              videoWidth
+              removeMargin
+              uncentre
+              overflow
+              caption
+              duration
+            }
+          }
+          benefits {
+            __typename
+            benefitList {
+              __typename
+              image
+              title
+              description
+              linkName
+              linkURL
+            }
+            rule {
+              __typename
+              name
+              url
+            }
+          }
+          technologies {
+            __typename
+            header
+            subheading
+            technologyCards {
+              __typename
+              technologyCard {
+                ... on Technologies {
+                  __typename
+                  tip
+                  name
+                  readMoreSlug
+                  thumbnail
+                  body
+                }
+                ... on Document {
+                  _sys {
+                    filename
+                    basename
+                    breadcrumbs
+                    path
+                    relativePath
+                    extension
+                  }
+                  id
+                }
+              }
+            }
+          }
+          medias {
+            __typename
+            header
+            mediaCards {
+              __typename
+              type
+              content
+            }
+          }
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      externalUrl
+      tags {
+        __typename
+        tag {
+          ... on ConsultingTag {
+            __typename
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+    }
+  }
+}
+
+fragment ConsultingParts on Consulting {
+  __typename
+  tip
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  testimonials {
+    __typename
+    tagline
+  }
+  booking {
+    __typename
+    title
+    subTitle
+    buttonText
+    videoBackground
+  }
+  solution {
+    __typename
+    project
+  }
+  callToAction
+  testimonialCategories {
+    __typename
+    testimonialCategory {
+      ... on TestimonialCategories {
+        __typename
+        tip
+        name
+        description
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+  }
+  _body
+  afterBody {
+    __typename
+    ... on ConsultingAfterBodyAboutUs {
+      backgroundColor
+    }
+    ... on ConsultingAfterBodyAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on ConsultingAfterBodyAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on ConsultingAfterBodyBookingButton {
+      buttonText
+      animated
+    }
+    ... on ConsultingAfterBodyBuiltOnAzure {
+      backgroundColor
+    }
+    ... on ConsultingAfterBodyCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on ConsultingAfterBodyCitation {
+      author
+      article
+    }
+    ... on ConsultingAfterBodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            __typename
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              __typename
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
+    ... on ConsultingAfterBodyClientLogos {
+      altText
+    }
+    ... on ConsultingAfterBodyColorBlock {
+      title
+      subTitle
+      colorRow {
+        __typename
+        firstColor
+        fText
+        secondColor
+        sText
+        caption
+      }
+    }
+    ... on ConsultingAfterBodyColorPalette {
+      colorBlocks {
+        __typename
+        color
+        text
+      }
+    }
+    ... on ConsultingAfterBodyContent {
+      title
+      content
+      paddingClass
+      size
+      align
+      backgroundColor
+    }
+    ... on ConsultingAfterBodyContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on ConsultingAfterBodyCustomDownloadButton {
+      btnText
+      btnLink
+    }
+    ... on ConsultingAfterBodyCustomImage {
+      src
+      altText
+      alignment
+      height
+      width
+      link
+      customClass
+      caption
+      captionColor
+      sizes
+    }
+    ... on ConsultingAfterBodyDomainFromQuery {
+      title
+      showDomain
+    }
+    ... on ConsultingAfterBodyDownloadBlock {
+      title
+      downloads {
+        __typename
+        header
+        img
+        imgBackground
+        firstLinkText
+        firstLink
+        secondLinkText
+        secondLink
+      }
+      bottomBorder
+    }
+    ... on ConsultingAfterBodyDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on ConsultingAfterBodyEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      gstText
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on ConsultingAfterBodyEventLink {
+      content
+      link
+      eventThumbnail
+      thumbnailAlt
+    }
+    ... on ConsultingAfterBodyFlag {
+      country
+    }
+    ... on ConsultingAfterBodyFixedColumns {
+      headerSection
+      firstColBody
+      secondColBody
+    }
+    ... on ConsultingAfterBodyFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on ConsultingAfterBodyGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on ConsultingAfterBodyGridLayout {
+      title
+      grids {
+        __typename
+        gridTitle
+        showGridTitle
+        centeredGridTitle
+        showHeaderDivider
+        offsetGridStart
+        blocks {
+          __typename
+          title
+          showTitle
+          image
+          relatedImage
+          linkContent
+        }
+      }
+    }
+    ... on ConsultingAfterBodyHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on ConsultingAfterBodyHorizontalCard {
+      cardList {
+        __typename
+        title
+        content
+        thumbnail
+        link
+      }
+      button {
+        __typename
+        text
+        link
+      }
+    }
+    ... on ConsultingAfterBodyInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on ConsultingAfterBodyJoinAsPresenter {
+      link
+      img
+    }
+    ... on ConsultingAfterBodyJoinGithub {
+      title
+      link
+    }
+    ... on ConsultingAfterBodyJotFormEmbed {
+      jotFormId
+      buttonText
+      containerClass
+      buttonClass
+      animated
+    }
+    ... on ConsultingAfterBodyLatestTech {
+      badges {
+        ... on UserGroupGlobal {
+          __typename
+          latestTechTitle
+          latestTechBadges {
+            __typename
+            random
+            badgesList {
+              __typename
+              name
+              url
+              imgURL
+              rotate
+              duration
+              bounceDown
+            }
+          }
+          youtubePlaylist {
+            __typename
+            title
+            playlistId
+            videosCount
+            playlistButton {
+              __typename
+              text
+              link
+              animated
+            }
+          }
+          joinUs {
+            __typename
+            link
+            img
+          }
+          technologies {
+            __typename
+            name
+            imageUrl
+          }
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+    }
+    ... on ConsultingAfterBodyLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            __typename
+            tip
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on ConsultingAfterBodyNewslettersTable {
+      headerText
+    }
+    ... on ConsultingAfterBodyOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on ConsultingAfterBodyPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          __typename
+          tip
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+    ... on ConsultingAfterBodyPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            __typename
+            tip
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on ConsultingAfterBodyRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on ConsultingAfterBodySectionHeader {
+      headerText
+    }
+    ... on ConsultingAfterBodyServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+        isExternal
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on ConsultingAfterBodySubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on ConsultingAfterBodyTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on ConsultingAfterBodyTestimonialsList {
+      excludedCategories {
+        __typename
+        categoryName {
+          ... on TestimonialCategories {
+            __typename
+            tip
+            name
+            description
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+    }
+    ... on ConsultingAfterBodyTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on ConsultingAfterBodyTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on ConsultingAfterBodyTweetEmbed {
+      url
+    }
+    ... on ConsultingAfterBodyUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on ConsultingAfterBodyUtilityButton {
+      buttonText
+      link
+      size
+      btnIcon
+      animated
+      uncentered
+      removeTopMargin
+      openInNewTab
+    }
+    ... on ConsultingAfterBodyVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+      sizes
+    }
+    ... on ConsultingAfterBodyVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on ConsultingAfterBodyVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+      uncentre
+      overflow
+      caption
+      duration
+    }
+  }
+  benefits {
+    __typename
+    benefitList {
+      __typename
+      image
+      title
+      description
+      linkName
+      linkURL
+    }
+    rule {
+      __typename
+      name
+      url
+    }
+  }
+  technologies {
+    __typename
+    header
+    subheading
+    technologyCards {
+      __typename
+      technologyCard {
+        ... on Technologies {
+          __typename
+          tip
+          name
+          readMoreSlug
+          thumbnail
+          body
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+    }
+  }
+  medias {
+    __typename
+    header
+    mediaCards {
+      __typename
+      type
+      content
+    }
+  }
+}
+
+fragment VideoProductionParts on VideoProduction {
+  __typename
+  tip
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  booking {
+    __typename
+    title
+    subTitle
+    buttonText
+    videoBackground
+  }
+  solution {
+    __typename
+    project
+  }
+  callToAction
+  _body
+  afterBody {
+    __typename
+    ... on VideoProductionAfterBodyAboutUs {
+      backgroundColor
+    }
+    ... on VideoProductionAfterBodyAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on VideoProductionAfterBodyAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on VideoProductionAfterBodyBookingButton {
+      buttonText
+      animated
+    }
+    ... on VideoProductionAfterBodyBuiltOnAzure {
+      backgroundColor
+    }
+    ... on VideoProductionAfterBodyCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on VideoProductionAfterBodyCitation {
+      author
+      article
+    }
+    ... on VideoProductionAfterBodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            __typename
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              __typename
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
+    ... on VideoProductionAfterBodyClientLogos {
+      altText
+    }
+    ... on VideoProductionAfterBodyColorBlock {
+      title
+      subTitle
+      colorRow {
+        __typename
+        firstColor
+        fText
+        secondColor
+        sText
+        caption
+      }
+    }
+    ... on VideoProductionAfterBodyColorPalette {
+      colorBlocks {
+        __typename
+        color
+        text
+      }
+    }
+    ... on VideoProductionAfterBodyContent {
+      title
+      content
+      paddingClass
+      size
+      align
+      backgroundColor
+    }
+    ... on VideoProductionAfterBodyContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on VideoProductionAfterBodyCustomDownloadButton {
+      btnText
+      btnLink
+    }
+    ... on VideoProductionAfterBodyCustomImage {
+      src
+      altText
+      alignment
+      height
+      width
+      link
+      customClass
+      caption
+      captionColor
+      sizes
+    }
+    ... on VideoProductionAfterBodyDomainFromQuery {
+      title
+      showDomain
+    }
+    ... on VideoProductionAfterBodyDownloadBlock {
+      title
+      downloads {
+        __typename
+        header
+        img
+        imgBackground
+        firstLinkText
+        firstLink
+        secondLinkText
+        secondLink
+      }
+      bottomBorder
+    }
+    ... on VideoProductionAfterBodyDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on VideoProductionAfterBodyEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      gstText
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on VideoProductionAfterBodyEventLink {
+      content
+      link
+      eventThumbnail
+      thumbnailAlt
+    }
+    ... on VideoProductionAfterBodyFlag {
+      country
+    }
+    ... on VideoProductionAfterBodyFixedColumns {
+      headerSection
+      firstColBody
+      secondColBody
+    }
+    ... on VideoProductionAfterBodyFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on VideoProductionAfterBodyGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on VideoProductionAfterBodyGridLayout {
+      title
+      grids {
+        __typename
+        gridTitle
+        showGridTitle
+        centeredGridTitle
+        showHeaderDivider
+        offsetGridStart
+        blocks {
+          __typename
+          title
+          showTitle
+          image
+          relatedImage
+          linkContent
+        }
+      }
+    }
+    ... on VideoProductionAfterBodyHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on VideoProductionAfterBodyHorizontalCard {
+      cardList {
+        __typename
+        title
+        content
+        thumbnail
+        link
+      }
+      button {
+        __typename
+        text
+        link
+      }
+    }
+    ... on VideoProductionAfterBodyInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on VideoProductionAfterBodyJoinAsPresenter {
+      link
+      img
+    }
+    ... on VideoProductionAfterBodyJoinGithub {
+      title
+      link
+    }
+    ... on VideoProductionAfterBodyJotFormEmbed {
+      jotFormId
+      buttonText
+      containerClass
+      buttonClass
+      animated
+    }
+    ... on VideoProductionAfterBodyLatestTech {
+      badges {
+        ... on UserGroupGlobal {
+          __typename
+          latestTechTitle
+          latestTechBadges {
+            __typename
+            random
+            badgesList {
+              __typename
+              name
+              url
+              imgURL
+              rotate
+              duration
+              bounceDown
+            }
+          }
+          youtubePlaylist {
+            __typename
+            title
+            playlistId
+            videosCount
+            playlistButton {
+              __typename
+              text
+              link
+              animated
+            }
+          }
+          joinUs {
+            __typename
+            link
+            img
+          }
+          technologies {
+            __typename
+            name
+            imageUrl
+          }
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+    }
+    ... on VideoProductionAfterBodyLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            __typename
+            tip
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on VideoProductionAfterBodyNewslettersTable {
+      headerText
+    }
+    ... on VideoProductionAfterBodyOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on VideoProductionAfterBodyPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          __typename
+          tip
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+    ... on VideoProductionAfterBodyPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            __typename
+            tip
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on VideoProductionAfterBodyRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on VideoProductionAfterBodySectionHeader {
+      headerText
+    }
+    ... on VideoProductionAfterBodyServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+        isExternal
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on VideoProductionAfterBodySubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on VideoProductionAfterBodyTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on VideoProductionAfterBodyTestimonialsList {
+      excludedCategories {
+        __typename
+        categoryName {
+          ... on TestimonialCategories {
+            __typename
+            tip
+            name
+            description
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+    }
+    ... on VideoProductionAfterBodyTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on VideoProductionAfterBodyTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on VideoProductionAfterBodyTweetEmbed {
+      url
+    }
+    ... on VideoProductionAfterBodyUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on VideoProductionAfterBodyUtilityButton {
+      buttonText
+      link
+      size
+      btnIcon
+      animated
+      uncentered
+      removeTopMargin
+      openInNewTab
+    }
+    ... on VideoProductionAfterBodyVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+      sizes
+    }
+    ... on VideoProductionAfterBodyVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on VideoProductionAfterBodyVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+      uncentre
+      overflow
+      caption
+      duration
+    }
+  }
+}
+
+fragment ConsultingCategoryParts on ConsultingCategory {
+  __typename
+  name
+}
+
+fragment ConsultingTagParts on ConsultingTag {
+  __typename
+  name
+}
+
+fragment TechnologiesParts on Technologies {
+  __typename
+  tip
+  name
+  readMoreSlug
+  thumbnail
+  body
+}
+
+fragment EmploymentParts on Employment {
+  __typename
+  tip
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  booking {
+    __typename
+    title
+    subTitle
+    bookingBody
+    videoBackground
+  }
+  _body
+  benefits {
+    __typename
+    benefitList {
+      __typename
+      image
+      title
+      description
+      linkName
+      linkURL
+    }
+  }
+  benefitsBody
+  afterBody
+  opportunitiesBody
+  opportunities {
+    __typename
+    opportunityRef {
+      ... on Opportunities {
+        __typename
+        tip
+        title
+        employmentType
+        locations
+        hideApply
+        _body
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+  }
+  callToActionBody
+}
+
+fragment OpportunitiesParts on Opportunities {
+  __typename
+  tip
+  title
+  employmentType
+  locations
+  hideApply
+  _body
+}
+
+fragment EventsIndexParts on EventsIndex {
+  __typename
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  _body
+  sidebarBody
+  afterEvents {
+    __typename
+    ... on EventsIndexAfterEventsAboutUs {
+      backgroundColor
+    }
+    ... on EventsIndexAfterEventsAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on EventsIndexAfterEventsAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on EventsIndexAfterEventsBookingButton {
+      buttonText
+      animated
+    }
+    ... on EventsIndexAfterEventsBuiltOnAzure {
+      backgroundColor
+    }
+    ... on EventsIndexAfterEventsCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on EventsIndexAfterEventsCitation {
+      author
+      article
+    }
+    ... on EventsIndexAfterEventsClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            __typename
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              __typename
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
+    ... on EventsIndexAfterEventsClientLogos {
+      altText
+    }
+    ... on EventsIndexAfterEventsColorBlock {
+      title
+      subTitle
+      colorRow {
+        __typename
+        firstColor
+        fText
+        secondColor
+        sText
+        caption
+      }
+    }
+    ... on EventsIndexAfterEventsColorPalette {
+      colorBlocks {
+        __typename
+        color
+        text
+      }
+    }
+    ... on EventsIndexAfterEventsContent {
+      title
+      content
+      paddingClass
+      size
+      align
+      backgroundColor
+    }
+    ... on EventsIndexAfterEventsContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on EventsIndexAfterEventsCustomDownloadButton {
+      btnText
+      btnLink
+    }
+    ... on EventsIndexAfterEventsCustomImage {
+      src
+      altText
+      alignment
+      height
+      width
+      link
+      customClass
+      caption
+      captionColor
+      sizes
+    }
+    ... on EventsIndexAfterEventsDomainFromQuery {
+      title
+      showDomain
+    }
+    ... on EventsIndexAfterEventsDownloadBlock {
+      title
+      downloads {
+        __typename
+        header
+        img
+        imgBackground
+        firstLinkText
+        firstLink
+        secondLinkText
+        secondLink
+      }
+      bottomBorder
+    }
+    ... on EventsIndexAfterEventsDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on EventsIndexAfterEventsEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      gstText
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on EventsIndexAfterEventsEventLink {
+      content
+      link
+      eventThumbnail
+      thumbnailAlt
+    }
+    ... on EventsIndexAfterEventsFlag {
+      country
+    }
+    ... on EventsIndexAfterEventsFixedColumns {
+      headerSection
+      firstColBody
+      secondColBody
+    }
+    ... on EventsIndexAfterEventsFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on EventsIndexAfterEventsGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on EventsIndexAfterEventsGridLayout {
+      title
+      grids {
+        __typename
+        gridTitle
+        showGridTitle
+        centeredGridTitle
+        showHeaderDivider
+        offsetGridStart
+        blocks {
+          __typename
+          title
+          showTitle
+          image
+          relatedImage
+          linkContent
+        }
+      }
+    }
+    ... on EventsIndexAfterEventsHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on EventsIndexAfterEventsHorizontalCard {
+      cardList {
+        __typename
+        title
+        content
+        thumbnail
+        link
+      }
+      button {
+        __typename
+        text
+        link
+      }
+    }
+    ... on EventsIndexAfterEventsInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on EventsIndexAfterEventsJoinAsPresenter {
+      link
+      img
+    }
+    ... on EventsIndexAfterEventsJoinGithub {
+      title
+      link
+    }
+    ... on EventsIndexAfterEventsJotFormEmbed {
+      jotFormId
+      buttonText
+      containerClass
+      buttonClass
+      animated
+    }
+    ... on EventsIndexAfterEventsLatestTech {
+      badges {
+        ... on UserGroupGlobal {
+          __typename
+          latestTechTitle
+          latestTechBadges {
+            __typename
+            random
+            badgesList {
+              __typename
+              name
+              url
+              imgURL
+              rotate
+              duration
+              bounceDown
+            }
+          }
+          youtubePlaylist {
+            __typename
+            title
+            playlistId
+            videosCount
+            playlistButton {
+              __typename
+              text
+              link
+              animated
+            }
+          }
+          joinUs {
+            __typename
+            link
+            img
+          }
+          technologies {
+            __typename
+            name
+            imageUrl
+          }
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+    }
+    ... on EventsIndexAfterEventsLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            __typename
+            tip
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on EventsIndexAfterEventsNewslettersTable {
+      headerText
+    }
+    ... on EventsIndexAfterEventsOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on EventsIndexAfterEventsPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          __typename
+          tip
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+    ... on EventsIndexAfterEventsPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            __typename
+            tip
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on EventsIndexAfterEventsRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on EventsIndexAfterEventsSectionHeader {
+      headerText
+    }
+    ... on EventsIndexAfterEventsServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+        isExternal
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on EventsIndexAfterEventsSubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on EventsIndexAfterEventsTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on EventsIndexAfterEventsTestimonialsList {
+      excludedCategories {
+        __typename
+        categoryName {
+          ... on TestimonialCategories {
+            __typename
+            tip
+            name
+            description
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+    }
+    ... on EventsIndexAfterEventsTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on EventsIndexAfterEventsTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on EventsIndexAfterEventsTweetEmbed {
+      url
+    }
+    ... on EventsIndexAfterEventsUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on EventsIndexAfterEventsUtilityButton {
+      buttonText
+      link
+      size
+      btnIcon
+      animated
+      uncentered
+      removeTopMargin
+      openInNewTab
+    }
+    ... on EventsIndexAfterEventsVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+      sizes
+    }
+    ... on EventsIndexAfterEventsVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on EventsIndexAfterEventsVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+      uncentre
+      overflow
+      caption
+      duration
+    }
+  }
+}
+
+fragment EventsParts on Events {
+  __typename
+  tip
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  eventHeader {
+    __typename
+    heroBackground
+    altText
+    imgOverlay
+  }
+  testimonials {
+    __typename
+    tagline
+  }
+  title
+  subTitle
+  showBreadcrumb
+  showTestimonials
+  testimonialCategories {
+    __typename
+    testimonialCategory {
+      ... on TestimonialCategories {
+        __typename
+        tip
+        name
+        description
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+  }
+  _body {
+    __typename
+    ... on Events_bodyAboutUs {
+      backgroundColor
+    }
+    ... on Events_bodyAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on Events_bodyAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on Events_bodyBookingButton {
+      buttonText
+      animated
+    }
+    ... on Events_bodyBuiltOnAzure {
+      backgroundColor
+    }
+    ... on Events_bodyCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on Events_bodyCitation {
+      author
+      article
+    }
+    ... on Events_bodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            __typename
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              __typename
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
+    ... on Events_bodyClientLogos {
+      altText
+    }
+    ... on Events_bodyColorBlock {
+      title
+      subTitle
+      colorRow {
+        __typename
+        firstColor
+        fText
+        secondColor
+        sText
+        caption
+      }
+    }
+    ... on Events_bodyColorPalette {
+      colorBlocks {
+        __typename
+        color
+        text
+      }
+    }
+    ... on Events_bodyContent {
+      title
+      content
+      paddingClass
+      size
+      align
+      backgroundColor
+    }
+    ... on Events_bodyContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on Events_bodyCustomDownloadButton {
+      btnText
+      btnLink
+    }
+    ... on Events_bodyCustomImage {
+      src
+      altText
+      alignment
+      height
+      width
+      link
+      customClass
+      caption
+      captionColor
+      sizes
+    }
+    ... on Events_bodyDomainFromQuery {
+      title
+      showDomain
+    }
+    ... on Events_bodyDownloadBlock {
+      title
+      downloads {
+        __typename
+        header
+        img
+        imgBackground
+        firstLinkText
+        firstLink
+        secondLinkText
+        secondLink
+      }
+      bottomBorder
+    }
+    ... on Events_bodyDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on Events_bodyEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      gstText
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on Events_bodyEventLink {
+      content
+      link
+      eventThumbnail
+      thumbnailAlt
+    }
+    ... on Events_bodyFlag {
+      country
+    }
+    ... on Events_bodyFixedColumns {
+      headerSection
+      firstColBody
+      secondColBody
+    }
+    ... on Events_bodyFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on Events_bodyGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on Events_bodyGridLayout {
+      title
+      grids {
+        __typename
+        gridTitle
+        showGridTitle
+        centeredGridTitle
+        showHeaderDivider
+        offsetGridStart
+        blocks {
+          __typename
+          title
+          showTitle
+          image
+          relatedImage
+          linkContent
+        }
+      }
+    }
+    ... on Events_bodyHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on Events_bodyHorizontalCard {
+      cardList {
+        __typename
+        title
+        content
+        thumbnail
+        link
+      }
+      button {
+        __typename
+        text
+        link
+      }
+    }
+    ... on Events_bodyInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on Events_bodyJoinAsPresenter {
+      link
+      img
+    }
+    ... on Events_bodyJoinGithub {
+      title
+      link
+    }
+    ... on Events_bodyJotFormEmbed {
+      jotFormId
+      buttonText
+      containerClass
+      buttonClass
+      animated
+    }
+    ... on Events_bodyLatestTech {
+      badges {
+        ... on UserGroupGlobal {
+          __typename
+          latestTechTitle
+          latestTechBadges {
+            __typename
+            random
+            badgesList {
+              __typename
+              name
+              url
+              imgURL
+              rotate
+              duration
+              bounceDown
+            }
+          }
+          youtubePlaylist {
+            __typename
+            title
+            playlistId
+            videosCount
+            playlistButton {
+              __typename
+              text
+              link
+              animated
+            }
+          }
+          joinUs {
+            __typename
+            link
+            img
+          }
+          technologies {
+            __typename
+            name
+            imageUrl
+          }
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+    }
+    ... on Events_bodyLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            __typename
+            tip
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on Events_bodyNewslettersTable {
+      headerText
+    }
+    ... on Events_bodyOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on Events_bodyPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          __typename
+          tip
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+    ... on Events_bodyPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            __typename
+            tip
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on Events_bodyRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on Events_bodySectionHeader {
+      headerText
+    }
+    ... on Events_bodyServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+        isExternal
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on Events_bodySubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on Events_bodyTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on Events_bodyTestimonialsList {
+      excludedCategories {
+        __typename
+        categoryName {
+          ... on TestimonialCategories {
+            __typename
+            tip
+            name
+            description
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+    }
+    ... on Events_bodyTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on Events_bodyTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on Events_bodyTweetEmbed {
+      url
+    }
+    ... on Events_bodyUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on Events_bodyUtilityButton {
+      buttonText
+      link
+      size
+      btnIcon
+      animated
+      uncentered
+      removeTopMargin
+      openInNewTab
+    }
+    ... on Events_bodyVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+      sizes
+    }
+    ... on Events_bodyVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on Events_bodyVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+      uncentre
+      overflow
+      caption
+      duration
+    }
+  }
+  footer
+  videos {
+    __typename
+    channelLink
+    videoCards {
+      __typename
+      title
+      link
+    }
+  }
+}
+
+fragment LocationsParts on Locations {
+  __typename
+  tip
+  header
+  addressLine1
+  addressLine2
+  addressLine3
+  directionURL
+}
+
+fragment LogosParts on Logos {
+  __typename
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  header
+  subHeader
+  _body {
+    __typename
+    ... on Logos_bodyAboutUs {
+      backgroundColor
+    }
+    ... on Logos_bodyAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on Logos_bodyAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on Logos_bodyBookingButton {
+      buttonText
+      animated
+    }
+    ... on Logos_bodyBuiltOnAzure {
+      backgroundColor
+    }
+    ... on Logos_bodyCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on Logos_bodyCitation {
+      author
+      article
+    }
+    ... on Logos_bodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            __typename
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              __typename
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
+    ... on Logos_bodyClientLogos {
+      altText
+    }
+    ... on Logos_bodyColorBlock {
+      title
+      subTitle
+      colorRow {
+        __typename
+        firstColor
+        fText
+        secondColor
+        sText
+        caption
+      }
+    }
+    ... on Logos_bodyColorPalette {
+      colorBlocks {
+        __typename
+        color
+        text
+      }
+    }
+    ... on Logos_bodyContent {
+      title
+      content
+      paddingClass
+      size
+      align
+      backgroundColor
+    }
+    ... on Logos_bodyContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on Logos_bodyCustomDownloadButton {
+      btnText
+      btnLink
+    }
+    ... on Logos_bodyCustomImage {
+      src
+      altText
+      alignment
+      height
+      width
+      link
+      customClass
+      caption
+      captionColor
+      sizes
+    }
+    ... on Logos_bodyDomainFromQuery {
+      title
+      showDomain
+    }
+    ... on Logos_bodyDownloadBlock {
+      title
+      downloads {
+        __typename
+        header
+        img
+        imgBackground
+        firstLinkText
+        firstLink
+        secondLinkText
+        secondLink
+      }
+      bottomBorder
+    }
+    ... on Logos_bodyDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on Logos_bodyEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      gstText
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on Logos_bodyEventLink {
+      content
+      link
+      eventThumbnail
+      thumbnailAlt
+    }
+    ... on Logos_bodyFlag {
+      country
+    }
+    ... on Logos_bodyFixedColumns {
+      headerSection
+      firstColBody
+      secondColBody
+    }
+    ... on Logos_bodyFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on Logos_bodyGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on Logos_bodyGridLayout {
+      title
+      grids {
+        __typename
+        gridTitle
+        showGridTitle
+        centeredGridTitle
+        showHeaderDivider
+        offsetGridStart
+        blocks {
+          __typename
+          title
+          showTitle
+          image
+          relatedImage
+          linkContent
+        }
+      }
+    }
+    ... on Logos_bodyHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on Logos_bodyHorizontalCard {
+      cardList {
+        __typename
+        title
+        content
+        thumbnail
+        link
+      }
+      button {
+        __typename
+        text
+        link
+      }
+    }
+    ... on Logos_bodyInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on Logos_bodyJoinAsPresenter {
+      link
+      img
+    }
+    ... on Logos_bodyJoinGithub {
+      title
+      link
+    }
+    ... on Logos_bodyJotFormEmbed {
+      jotFormId
+      buttonText
+      containerClass
+      buttonClass
+      animated
+    }
+    ... on Logos_bodyLatestTech {
+      badges {
+        ... on UserGroupGlobal {
+          __typename
+          latestTechTitle
+          latestTechBadges {
+            __typename
+            random
+            badgesList {
+              __typename
+              name
+              url
+              imgURL
+              rotate
+              duration
+              bounceDown
+            }
+          }
+          youtubePlaylist {
+            __typename
+            title
+            playlistId
+            videosCount
+            playlistButton {
+              __typename
+              text
+              link
+              animated
+            }
+          }
+          joinUs {
+            __typename
+            link
+            img
+          }
+          technologies {
+            __typename
+            name
+            imageUrl
+          }
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+    }
+    ... on Logos_bodyLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            __typename
+            tip
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on Logos_bodyNewslettersTable {
+      headerText
+    }
+    ... on Logos_bodyOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on Logos_bodyPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          __typename
+          tip
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+    ... on Logos_bodyPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            __typename
+            tip
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on Logos_bodyRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on Logos_bodySectionHeader {
+      headerText
+    }
+    ... on Logos_bodyServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+        isExternal
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on Logos_bodySubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on Logos_bodyTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on Logos_bodyTestimonialsList {
+      excludedCategories {
+        __typename
+        categoryName {
+          ... on TestimonialCategories {
+            __typename
+            tip
+            name
+            description
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+    }
+    ... on Logos_bodyTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on Logos_bodyTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on Logos_bodyTweetEmbed {
+      url
+    }
+    ... on Logos_bodyUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on Logos_bodyUtilityButton {
+      buttonText
+      link
+      size
+      btnIcon
+      animated
+      uncentered
+      removeTopMargin
+      openInNewTab
+    }
+    ... on Logos_bodyVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+      sizes
+    }
+    ... on Logos_bodyVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on Logos_bodyVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+      uncentre
+      overflow
+      caption
+      duration
+    }
+  }
+  footer
+}
+
+fragment PresenterParts on Presenter {
+  __typename
+  tip
+  profileImg
+  presenter {
+    __typename
+    name
+    peopleProfileURL
+  }
+  about
+}
+
+fragment IndustryParts on Industry {
+  __typename
+  tip
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  heading
+  subHeading
+  bannerImg
+  whitepaperFile
+  _body
+}
+
+fragment LiveParts on Live {
+  __typename
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  title
+  subtitle
+  nextEvent
+  sswTvButton {
+    __typename
+    name
+    channelId
+  }
+  youtubePlaylist {
+    __typename
+    title
+    playlistId
+    videosCount
+    playlistButton {
+      __typename
+      text
+      link
+      animated
+    }
+  }
+}
+
+fragment MarketingParts on Marketing {
+  __typename
+  tip
+  title
+  backgroundImage
+  mediaComponent
+  body
+  textSide
+}
+
+fragment NewslettersParts on Newsletters {
+  __typename
+  tip
+  newsletters_year
+  newsletters {
+    __typename
+    month
+    file
+    images
+    description
+  }
+}
+
+fragment OfficeIndexParts on OfficeIndex {
+  __typename
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  officesIndex {
+    __typename
+    office {
+      ... on Offices {
+        __typename
+        tip
+        seo {
+          __typename
+          title
+          description
+          canonical
+          showBreadcrumb
+          images {
+            __typename
+            url
+            width
+            height
+            alt
+          }
+        }
+        coverImg
+        thumbnail
+        sideImg
+        name
+        streetAddress
+        suburb
+        addressLocality
+        addressRegion
+        addressCountry
+        postalCode
+        phone
+        chapelLink
+        hours
+        days
+        sidebarSecondaryPlace {
+          __typename
+          name
+          url
+        }
+        aboutUs
+        localWebsiteLink {
+          __typename
+          title
+          url
+        }
+        map
+        directionsUrl
+        directions
+        parking
+        publicTransport
+        team
+        photos
+        _body
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+  }
+}
+
+fragment OfficesParts on Offices {
+  __typename
+  tip
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  coverImg
+  thumbnail
+  sideImg
+  name
+  streetAddress
+  suburb
+  addressLocality
+  addressRegion
+  addressCountry
+  postalCode
+  phone
+  chapelLink
+  hours
+  days
+  sidebarSecondaryPlace {
+    __typename
+    name
+    url
+  }
+  aboutUs
+  localWebsiteLink {
+    __typename
+    title
+    url
+  }
+  map
+  directionsUrl
+  directions
+  parking
+  publicTransport
+  team
+  photos
+  _body
+}
+
+fragment PartnerIndexParts on PartnerIndex {
+  __typename
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  title
+  subTitle
+  partnersList {
+    __typename
+    name
+    url
+    description
+    logo
+  }
+}
+
+fragment ProductsIndexParts on ProductsIndex {
+  __typename
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  title
+  subTitle
+  productsList {
+    __typename
+    name
+    url
+    description
+    logo
+  }
+}
+
+fragment ProductsParts on Products {
+  __typename
+  tip
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  _body
+}
+
+fragment TestimonialsParts on Testimonials {
+  __typename
+  tipForReference
+  testimonials {
+    __typename
+    name
+    avatar
+    company
+    body
+    categories {
+      __typename
+      category {
+        ... on TestimonialCategories {
+          __typename
+          tip
+          name
+          description
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+    }
+  }
+}
+
+fragment TestimonialCategoriesParts on TestimonialCategories {
+  __typename
+  tip
+  name
+  description
+}
+
+fragment TrainingParts on Training {
+  __typename
+  tip
+  seo {
+    __typename
+    title
+    description
+    canonical
+    showBreadcrumb
+    images {
+      __typename
+      url
+      width
+      height
+      alt
+    }
+  }
+  trainingHeaderCarousel {
+    __typename
+    trainingHeaderCarouselItem {
+      __typename
+      tagline
+      secondaryTagline
+      heroBackground
+      person
+      link {
+        __typename
+        linkText
+        url
+        icon
+      }
+    }
+  }
+  testimonials {
+    __typename
+    tagline
+  }
+  title
+  showTestimonials
+  _body {
+    __typename
+    ... on Training_bodyAboutUs {
+      backgroundColor
+    }
+    ... on Training_bodyAgenda {
+      header
+      textColor
+      agendaItemList {
+        __typename
+        placeholder
+        body
+      }
+    }
+    ... on Training_bodyAgreementForm {
+      backgroundColor
+      fields {
+        __typename
+        id
+        label
+        placeholder
+        resizeable
+      }
+    }
+    ... on Training_bodyBookingButton {
+      buttonText
+      animated
+    }
+    ... on Training_bodyBuiltOnAzure {
+      backgroundColor
+    }
+    ... on Training_bodyCarousel {
+      items {
+        __typename
+        label
+        link
+        openIn
+        imgSrc
+      }
+      backgroundColor
+      delay
+      showOnMobileDevices
+    }
+    ... on Training_bodyCitation {
+      author
+      article
+    }
+    ... on Training_bodyClientList {
+      categories {
+        __typename
+        category {
+          ... on ClientCategories {
+            __typename
+            name
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      clients {
+        __typename
+        name
+        logo
+        logoUrl
+        content
+        caseStudyUrl
+        categories {
+          __typename
+          category {
+            ... on ClientCategories {
+              __typename
+              name
+            }
+            ... on Document {
+              _sys {
+                filename
+                basename
+                breadcrumbs
+                path
+                relativePath
+                extension
+              }
+              id
+            }
+          }
+        }
+      }
+    }
+    ... on Training_bodyClientLogos {
+      altText
+    }
+    ... on Training_bodyColorBlock {
+      title
+      subTitle
+      colorRow {
+        __typename
+        firstColor
+        fText
+        secondColor
+        sText
+        caption
+      }
+    }
+    ... on Training_bodyColorPalette {
+      colorBlocks {
+        __typename
+        color
+        text
+      }
+    }
+    ... on Training_bodyContent {
+      title
+      content
+      paddingClass
+      size
+      align
+      backgroundColor
+    }
+    ... on Training_bodyContentCard {
+      prose
+      centerAlignedText
+      content
+    }
+    ... on Training_bodyCustomDownloadButton {
+      btnText
+      btnLink
+    }
+    ... on Training_bodyCustomImage {
+      src
+      altText
+      alignment
+      height
+      width
+      link
+      customClass
+      caption
+      captionColor
+      sizes
+    }
+    ... on Training_bodyDomainFromQuery {
+      title
+      showDomain
+    }
+    ... on Training_bodyDownloadBlock {
+      title
+      downloads {
+        __typename
+        header
+        img
+        imgBackground
+        firstLinkText
+        firstLink
+        secondLinkText
+        secondLink
+      }
+      bottomBorder
+    }
+    ... on Training_bodyDynamicColumns {
+      colBody
+      colCount
+    }
+    ... on Training_bodyEventBooking {
+      eventDurationInDays
+      price
+      discountPrice
+      gstText
+      discountNote
+      eventList {
+        __typename
+        city
+        date
+        bookingURL
+      }
+    }
+    ... on Training_bodyEventLink {
+      content
+      link
+      eventThumbnail
+      thumbnailAlt
+    }
+    ... on Training_bodyFlag {
+      country
+    }
+    ... on Training_bodyFixedColumns {
+      headerSection
+      firstColBody
+      secondColBody
+    }
+    ... on Training_bodyFixedTabsLayout {
+      firstTab
+      firstHeading
+      firstBody
+      secondTab
+      secondHeading
+      secondBody
+    }
+    ... on Training_bodyGoogleMaps {
+      embedUrl
+      embedWidth
+      embedHeight
+    }
+    ... on Training_bodyGridLayout {
+      title
+      grids {
+        __typename
+        gridTitle
+        showGridTitle
+        centeredGridTitle
+        showHeaderDivider
+        offsetGridStart
+        blocks {
+          __typename
+          title
+          showTitle
+          image
+          relatedImage
+          linkContent
+        }
+      }
+    }
+    ... on Training_bodyHero {
+      tagline
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on Training_bodyHorizontalCard {
+      cardList {
+        __typename
+        title
+        content
+        thumbnail
+        link
+      }
+      button {
+        __typename
+        text
+        link
+      }
+    }
+    ... on Training_bodyInternalCarousel {
+      items {
+        __typename
+        label
+        imgSrc
+      }
+      header
+      paragraph
+      website
+      technologies {
+        __typename
+        name
+      }
+    }
+    ... on Training_bodyJoinAsPresenter {
+      link
+      img
+    }
+    ... on Training_bodyJoinGithub {
+      title
+      link
+    }
+    ... on Training_bodyJotFormEmbed {
+      jotFormId
+      buttonText
+      containerClass
+      buttonClass
+      animated
+    }
+    ... on Training_bodyLatestTech {
+      badges {
+        ... on UserGroupGlobal {
+          __typename
+          latestTechTitle
+          latestTechBadges {
+            __typename
+            random
+            badgesList {
+              __typename
+              name
+              url
+              imgURL
+              rotate
+              duration
+              bounceDown
+            }
+          }
+          youtubePlaylist {
+            __typename
+            title
+            playlistId
+            videosCount
+            playlistButton {
+              __typename
+              text
+              link
+              animated
+            }
+          }
+          joinUs {
+            __typename
+            link
+            img
+          }
+          technologies {
+            __typename
+            name
+            imageUrl
+          }
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+    }
+    ... on Training_bodyLocationBlock {
+      title
+      locationList {
+        __typename
+        location {
+          ... on Locations {
+            __typename
+            tip
+            header
+            addressLine1
+            addressLine2
+            addressLine3
+            directionURL
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      chapelWebsite {
+        __typename
+        title
+        URL
+      }
+    }
+    ... on Training_bodyNewslettersTable {
+      headerText
+    }
+    ... on Training_bodyOrganizer {
+      profileImg
+      profileLink
+      name
+      position
+      content
+    }
+    ... on Training_bodyPaymentBlock {
+      title
+      subTitle
+      payments {
+        ... on PaymentDetails {
+          __typename
+          tip
+          bankName
+          accountName
+          bsbNumber
+          accountNumber
+          swiftNumber
+          abn
+          acn
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+      footer
+      creditImgSrc
+      altTxt
+    }
+    ... on Training_bodyPresenterBlock {
+      header
+      presenterList {
+        __typename
+        presenter {
+          ... on Presenter {
+            __typename
+            tip
+            profileImg
+            presenter {
+              __typename
+              name
+              peopleProfileURL
+            }
+            about
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+      otherEvent {
+        __typename
+        title
+        eventURL
+      }
+    }
+    ... on Training_bodyRecurringEvent {
+      applyLinkRedirect
+      day
+    }
+    ... on Training_bodySectionHeader {
+      headerText
+    }
+    ... on Training_bodyServiceCards {
+      bigCardsLabel
+      bigCards {
+        __typename
+        title
+        description
+        link
+        color
+        imgSrc
+      }
+      smallCardsLabel
+      smallCards {
+        __typename
+        title
+        link
+        color
+        imgSrc
+        isExternal
+      }
+      links {
+        __typename
+        label
+        link
+      }
+      backgroundColor
+    }
+    ... on Training_bodySubNewsletterRow {
+      headerText
+      subscribeButtonText
+      subscribeSubTitle
+    }
+    ... on Training_bodyTableLayout {
+      tableStyle
+      firstColBold
+      headers
+      rows {
+        __typename
+        cells {
+          __typename
+          cellValue
+        }
+        isHeader
+      }
+    }
+    ... on Training_bodyTestimonialsList {
+      excludedCategories {
+        __typename
+        categoryName {
+          ... on TestimonialCategories {
+            __typename
+            tip
+            name
+            description
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+    }
+    ... on Training_bodyTrainingInformation {
+      trainingInformationItems {
+        __typename
+        header
+        body
+      }
+    }
+    ... on Training_bodyTrainingLearningOutcome {
+      header
+      listItems {
+        __typename
+        title
+        content
+        icon
+      }
+    }
+    ... on Training_bodyTweetEmbed {
+      url
+    }
+    ... on Training_bodyUpcomingEvents {
+      title
+      numberOfEvents
+    }
+    ... on Training_bodyUtilityButton {
+      buttonText
+      link
+      size
+      btnIcon
+      animated
+      uncentered
+      removeTopMargin
+      openInNewTab
+    }
+    ... on Training_bodyVerticalImageLayout {
+      imageSrc
+      altText
+      imageLink
+      height
+      width
+      message
+      sizes
+    }
+    ... on Training_bodyVerticalListItem {
+      content
+      index
+      icon
+      iconScale
+      afterBody
+    }
+    ... on Training_bodyVideoEmbed {
+      url
+      videoWidth
+      removeMargin
+      uncentre
+      overflow
+      caption
+      duration
+    }
+  }
+  footer
+  videos {
+    __typename
+    channelLink
+    videoCards {
+      __typename
+      title
+      link
+    }
+  }
+}
+
+fragment UserGroupPageParts on UserGroupPage {
+  __typename
+  ... on UserGroupPageLocationPage {
+    tip
+    seo {
+      __typename
+      title
+      description
+      canonical
+      showBreadcrumb
+      images {
+        __typename
+        url
+        width
+        height
+        alt
+      }
+    }
+    registerUrl
+    joinGithub {
+      __typename
+      title
+      link
+    }
+    whenAndWhere {
+      __typename
+      content
+      googleMapsEmbedUrl
+    }
+    agenda {
+      __typename
+      time
+      label
+    }
+    organizer {
+      __typename
+      name
+      position
+      nameUrl
+      profileImg
+      bio
+    }
+    latestTech {
+      __typename
+      badges {
+        ... on UserGroupGlobal {
+          __typename
+          latestTechTitle
+          latestTechBadges {
+            __typename
+            random
+            badgesList {
+              __typename
+              name
+              url
+              imgURL
+              rotate
+              duration
+              bounceDown
+            }
+          }
+          youtubePlaylist {
+            __typename
+            title
+            playlistId
+            videosCount
+            playlistButton {
+              __typename
+              text
+              link
+              animated
+            }
+          }
+          joinUs {
+            __typename
+            link
+            img
+          }
+          technologies {
+            __typename
+            name
+            imageUrl
+          }
+        }
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+      }
+    }
+    sections {
+      __typename
+      ... on UserGroupPageLocationPageSectionsActionSection {
+        heading
+        content
+        listItems {
+          __typename
+          icon
+          text
+        }
+        meetupTitle
+        meetupBtnText
+        eventSponsors
+      }
+      ... on UserGroupPageLocationPageSectionsCommunitySection {
+        heading
+        twitterUsername
+        facebookUsername
+        socialButtons {
+          __typename
+          url
+          label
+          platform
+        }
+      }
+      ... on UserGroupPageLocationPageSectionsVideosSection {
+        globalUserGroupInfo {
+          ... on UserGroupGlobal {
+            __typename
+            latestTechTitle
+            latestTechBadges {
+              __typename
+              random
+              badgesList {
+                __typename
+                name
+                url
+                imgURL
+                rotate
+                duration
+                bounceDown
+              }
+            }
+            youtubePlaylist {
+              __typename
+              title
+              playlistId
+              videosCount
+              playlistButton {
+                __typename
+                text
+                link
+                animated
+              }
+            }
+            joinUs {
+              __typename
+              link
+              img
+            }
+            technologies {
+              __typename
+              name
+              imageUrl
+            }
+          }
+          ... on Document {
+            _sys {
+              filename
+              basename
+              breadcrumbs
+              path
+              relativePath
+              extension
+            }
+            id
+          }
+        }
+      }
+    }
+    aboutHeader
+    aboutContent
+    testimonialCategories {
+      ... on TestimonialCategories {
+        __typename
+        tip
+        name
+        description
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+  }
+  ... on UserGroupPageContentPage {
+    tip
+    seo {
+      __typename
+      title
+      description
+      canonical
+      showBreadcrumb
+      images {
+        __typename
+        url
+        width
+        height
+        alt
+      }
+    }
+    _body
+  }
+}
+
+fragment UserGroupGlobalParts on UserGroupGlobal {
+  __typename
+  latestTechTitle
+  latestTechBadges {
+    __typename
+    random
+    badgesList {
+      __typename
+      name
+      url
+      imgURL
+      rotate
+      duration
+      bounceDown
+    }
+  }
+  youtubePlaylist {
+    __typename
+    title
+    playlistId
+    videosCount
+    playlistButton {
+      __typename
+      text
+      link
+      animated
+    }
+  }
+  joinUs {
+    __typename
+    link
+    img
+  }
+  technologies {
+    __typename
+    name
+    imageUrl
+  }
+}
