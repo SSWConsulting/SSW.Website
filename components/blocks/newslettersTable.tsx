@@ -1,7 +1,7 @@
+import client from "@/tina/client";
 import { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Template } from "tinacms";
-import client from "../../.tina/__generated__/client";
 import { transformIntToMonth } from "../../services/client/date.service";
 import { CustomLink } from "../customLink";
 
