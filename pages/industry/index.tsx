@@ -30,7 +30,7 @@ export default function IndustryIndex(
         )}
         <div className="flex flex-col md:flex-row">
           <div className="grid w-full grid-cols-1 gap-2 lg:grid-cols-2">
-            {data.industryIndex.productsList?.map((product, index) => (
+            {data.industryIndex.industryList?.map((product, index) => (
               <PageCard page={product} key={index} />
             ))}
           </div>
@@ -41,9 +41,7 @@ export default function IndustryIndex(
 }
 
 export const getStaticProps = async () => {
-  const tinaProps = await client.queries.industryIndexQuery({
-    relativePath: "content/industry/index.json",
-  });
+  const tinaProps = await client.queries.industryIndexQuery();
 
   const seo = tinaProps.data.industryIndex.seo;
   if (seo && !seo.canonical) {

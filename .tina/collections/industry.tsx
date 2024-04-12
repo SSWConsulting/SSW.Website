@@ -32,8 +32,8 @@ export const industryIndexSchema: Collection = {
     },
     {
       type: "object",
-      label: "Products List",
-      name: "productsList",
+      label: "Industry Project List",
+      name: "industryList",
       list: true,
       ui: {
         itemProps: (item) => {
