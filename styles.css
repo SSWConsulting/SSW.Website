@@ -48,8 +48,6 @@
 }
 
 @layer components {
-  @import "aos/dist/aos.css";
-
   .icon::before {
     @apply inline-block;
     text-rendering: auto;

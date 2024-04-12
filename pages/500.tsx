@@ -1,3 +1,4 @@
+import { Layout } from "@/components/layout";
 import { ErrorPage } from "@/components/util/error-page";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import { InferGetStaticPropsType } from "next";
@@ -22,11 +23,9 @@ export default function FiveHundred(
   }, [appInsights]);
 
   return (
-    <ErrorPage
-      code="500"
-      menu={props.data.megamenu}
-      title="INTERNAL SERVER ERROR!"
-    />
+    <Layout menu={props.data.megamenu}>
+      <ErrorPage code="500" title="INTERNAL SERVER ERROR!" />
+    </Layout>
   );
 }
 
