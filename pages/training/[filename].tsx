@@ -1,8 +1,8 @@
 import { tinaField, useTina } from "tinacms/dist/react";
 
+import { client } from "@/tina/client";
 import { InferGetStaticPropsType } from "next";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { client } from "../../.tina/__generated__/client";
 import { ClientLogos } from "../../components/blocks";
 import { Blocks } from "../../components/blocks-renderer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";

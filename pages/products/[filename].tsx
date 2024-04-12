@@ -1,7 +1,7 @@
+import client from "@/tina/client";
 import { InferGetStaticPropsType } from "next";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import client from "../../.tina/__generated__/client";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";

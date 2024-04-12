@@ -1,9 +1,9 @@
 import { Layout } from "@/components/layout";
 import { ErrorPage } from "@/components/util/error-page";
+import client from "@/tina/client";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import { InferGetStaticPropsType } from "next";
 import { useEffect } from "react";
-import client from "../.tina/__generated__/client";
 
 export default function FiveHundred(
   props: InferGetStaticPropsType<typeof getStaticProps>

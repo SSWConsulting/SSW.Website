@@ -1,0 +1,199 @@
+query layoutQuery {
+  ...LayoutQueryFragment
+}
+
+query contentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  page(relativePath: $relativePath) {
+    ...PageParts
+  }
+}
+
+query consultingContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  consulting(relativePath: $relativePath) {
+    ...ConsultingParts
+  }
+}
+
+query consultingIndexQuery {
+  ...LayoutQueryFragment
+  consultingIndex(relativePath: "index.json") {
+    ...ConsultingIndexParts
+  }
+}
+
+query videoProductionContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  videoProduction(relativePath: $relativePath) {
+    ...VideoProductionParts
+  }
+}
+
+query companyContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  company(relativePath: $relativePath) {
+    ...CompanyParts
+  }
+}
+query caseStudyContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  caseStudy(relativePath: $relativePath) {
+    ...CaseStudyParts
+  }
+}
+query companyIndexContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  companyIndex(relativePath: $relativePath) {
+    ...CompanyIndexParts
+  }
+}
+
+query officeContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  offices(relativePath: $relativePath) {
+    ...OfficesParts
+  }
+}
+
+query trainingContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  training(relativePath: $relativePath) {
+    ...TrainingParts
+  }
+}
+
+query technologyCardContentQuery($cardNames: [String!]) {
+  ...LayoutQueryFragment
+  technologiesConnection(filter: { name: { in: $cardNames } }) {
+    edges {
+      node {
+        ... on Technologies {
+          name
+          readMoreSlug
+          thumbnail
+          body
+        }
+      }
+    }
+  }
+}
+
+query employmentPageQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  employment(relativePath: $relativePath) {
+    ...EmploymentParts
+  }
+  opportunitiesConnection {
+    edges {
+      node {
+        ...OpportunitiesParts
+      }
+    }
+  }
+}
+
+query officeIndexQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  officeIndex(relativePath: $relativePath) {
+    seo {
+      title
+      description
+      canonical
+      images {
+        url
+        width
+        height
+        alt
+      }
+    }
+    officesIndex {
+      office {
+        ... on Offices {
+          name
+          streetAddress
+          suburb
+          addressLocality
+          addressRegion
+          addressCountry
+          postalCode
+          phone
+          days
+          thumbnail
+          localWebsiteLink {
+            title
+            url
+          }
+        }
+      }
+    }
+  }
+}
+
+query productContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  products(relativePath: $relativePath) {
+    ...ProductsParts
+  }
+}
+
+query productsIndexQuery {
+  ...LayoutQueryFragment
+  productsIndex(relativePath: "index.json") {
+    ...ProductsIndexParts
+  }
+}
+
+query industryContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  industry(relativePath: $relativePath) {
+    ...IndustryParts
+  }
+}
+
+query eventsContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  events(relativePath: $relativePath) {
+    ...EventsParts
+  }
+}
+
+query eventsIndexContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  eventsIndex(relativePath: $relativePath) {
+    ...EventsIndexParts
+  }
+}
+
+query userGroupPageContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  userGroupPage(relativePath: $relativePath) {
+    ...UserGroupPageParts
+    __typename
+  }
+  userGroupGlobal(relativePath: "global.json") {
+    ...UserGroupGlobalParts
+  }
+}
+
+query partnerIndexQuery {
+  ...LayoutQueryFragment
+  partnerIndex(relativePath: "index.json") {
+    ...PartnerIndexParts
+    __typename
+  }
+}
+
+query liveContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  live(relativePath: $relativePath) {
+    ...LiveParts
+  }
+}
+
+query logosContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  logos(relativePath: $relativePath) {
+    ...LogosParts
+  }
+}

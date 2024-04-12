@@ -1,8 +1,8 @@
 import { ReadMore } from "@/components/usergroup/readMore";
+import { client } from "@/tina/client";
 import { InferGetStaticPropsType } from "next";
 import { FaYoutube } from "react-icons/fa";
 import { useTina } from "tinacms/dist/react";
-import { client } from "../.tina/__generated__/client";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { BuiltOnAzure } from "../components/blocks/builtOnAzure";
 import { YoutubePlaylistBlock } from "../components/blocks/youtubePlaylist";

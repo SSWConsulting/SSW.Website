@@ -1,5 +1,5 @@
+import { companyIndexSchemaConstants } from "@/tina-collections/company";
 import { tinaField } from "tinacms/dist/react";
-import { companyIndexSchemaConstants } from "../../.tina/collections/company";
 import { Section } from "../util/section";
 
 const CompanyHeader = ({ data, schema }) => {

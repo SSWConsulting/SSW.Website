@@ -4,8 +4,8 @@ import { MdLiveHelp } from "react-icons/md";
 
 import { wrapGrid } from "animate-css-grid";
 
+import { client } from "@/tina/client";
 import { tinaField, useTina } from "tinacms/dist/react";
-import { client } from "../../.tina/__generated__/client";
 
 import { InferGetStaticPropsType } from "next";
 import { ParsedUrlQuery } from "querystring";
