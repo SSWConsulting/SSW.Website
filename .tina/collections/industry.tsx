@@ -4,7 +4,73 @@ import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 import { tipField } from "./shared-fields";
 
-const industrySolutionsRowSchema: Template = {
+export const industryIndexSchema: Collection = {
+  label: "Industry - Index",
+  name: "industryIndex",
+  path: "content/industry/index",
+  format: "json",
+  ui: {
+    allowedActions: {
+      create: false,
+      delete: false,
+    },
+  },
+  fields: [
+    // @ts-ignore
+    seoSchema,
+    {
+      type: "string",
+      label: "Title",
+      name: "title",
+      required: true,
+    },
+    {
+      type: "string",
+      label: "Subtitle",
+      name: "subTitle",
+      required: true,
+    },
+    {
+      type: "object",
+      label: "Products List",
+      name: "productsList",
+      list: true,
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.name };
+        },
+      },
+      fields: [
+        {
+          type: "string",
+          label: "Name",
+          name: "name",
+          isTitle: true,
+          required: true,
+        },
+        {
+          type: "string",
+          label: "URL",
+          name: "url",
+        },
+        {
+          type: "string",
+          label: "Description",
+          name: "description",
+        },
+        {
+          type: "image",
+          label: "Logo",
+          name: "logo",
+          // @ts-ignore
+          uploadDir: () => "products",
+        },
+      ],
+    },
+  ],
+};
+
+export const industrySolutionsRowSchema: Template = {
   name: "SolutionsRow",
   label: "Industry Solutions Row",
   fields: [
