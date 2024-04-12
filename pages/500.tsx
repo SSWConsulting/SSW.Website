@@ -1,12 +1,11 @@
 import { ErrorPage } from "@/components/util/error-page";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
-import { InferGetStaticPropsType } from "next";
+// import { InferGetStaticPropsType } from "next";
 import { useEffect } from "react";
 import client from "../.tina/__generated__/client";
 
-export default function FiveHundred(
-  props: InferGetStaticPropsType<typeof getStaticProps>
-) {
+export default function FiveHundred() {
+  // props: InferGetStaticPropsType<typeof getStaticProps>
   const appInsights = useAppInsightsContext();
 
   useEffect(() => {
@@ -21,13 +20,7 @@ export default function FiveHundred(
     }
   }, [appInsights]);
 
-  return (
-    <ErrorPage
-      code="500"
-      menu={props.data.megamenu}
-      title="INTERNAL SERVER ERROR!"
-    />
-  );
+  return <ErrorPage code="500" title="INTERNAL SERVER ERROR!" />;
 }
 
 export const getStaticProps = async () => {
