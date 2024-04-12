@@ -2,15 +2,8 @@ import {
   AppInsightsContext,
   ReactPlugin,
 } from "@microsoft/applicationinsights-react-js";
-import { Open_Sans } from "next/font/google";
 import React, { ErrorInfo } from "react";
-import { MegaMenuLayout } from "ssw.megamenu";
 import { ErrorPage } from "./error-page";
-
-const openSans = Open_Sans({
-  variable: "--open-sans-font",
-  subsets: ["latin"],
-});
 
 class ErrorBoundary extends React.Component<
   { children?: React.ReactNode },
@@ -48,10 +41,7 @@ class ErrorBoundary extends React.Component<
   render() {
     if (this.state.hasError) {
       return (
-        <div className={openSans.className}>
-          <div className="mx-auto max-w-9xl px-8">
-            <MegaMenuLayout />
-          </div>
+        <>
           <ErrorPage
             tipText={
               <div>
@@ -70,7 +60,7 @@ class ErrorBoundary extends React.Component<
               JSON.stringify(this.state.error.message, null, 2)
             }
           />
-        </div>
+        </>
       );
     }
 

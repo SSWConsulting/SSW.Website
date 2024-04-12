@@ -18,7 +18,6 @@ import { NEXT_SEO_DEFAULT } from "../next-seo.config";
 // Hack as per https://stackoverflow.com/a/66575373 to stop font awesome icons breaking
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
-import { ErrorBoundary } from "@/components/util/error-boundary";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
@@ -84,9 +83,7 @@ const App = ({ Component, pageProps }) => {
       <DefaultSeo {...NEXT_SEO_DEFAULT} />
       <AppInsightsProvider>
         <QueryClientProvider client={queryClient}>
-          <ErrorBoundary key={router.asPath}>
-            <Component {...pageProps} />
-          </ErrorBoundary>
+          <Component {...pageProps} />
           {process.env.NODE_ENV === "development" && (
             <ReactQueryDevtools
               initialIsOpen={false}
