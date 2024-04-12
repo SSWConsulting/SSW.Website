@@ -1,5 +1,4 @@
 import "aos/dist/aos.css";
-import "react-tooltip/dist/react-tooltip.css";
 import "../styles.css";
 
 import AOS from "aos";

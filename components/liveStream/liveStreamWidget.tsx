@@ -1,3 +1,5 @@
+import "react-tooltip/dist/react-tooltip.css";
+
 import axios from "axios";
 import classNames from "classnames";
 import Image from "next/image";
