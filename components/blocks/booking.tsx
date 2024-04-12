@@ -24,6 +24,7 @@ export const Booking: FC<{
         {props.children}
         <div className="flex animate-more-bounce flex-col items-center pt-20">
           <CustomLink
+            aria-label="Scroll down to learn more"
             href="#more"
             className="cursor-default text-5xl no-underline hover:!text-gray-450"
           >

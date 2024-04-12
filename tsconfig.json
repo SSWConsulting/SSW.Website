@@ -18,7 +18,9 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/blocks/*": ["components/blocks/*"],
-      "@/tina/*": [".tina/__generated__/*"]
+      "@/tina/*": [".tina/__generated__/*"],
+      "@/context/*": ["context/*"],
+      "@/services/*": ["services/*"]
     },
     "plugins": [
       {
