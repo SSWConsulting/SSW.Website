@@ -1,5 +1,4 @@
 import { InferGetStaticPropsType } from "next";
-import { relative } from "path";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../../.tina/__generated__/client";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
