@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { paymentDetailsBlockConstant } from "../../.tina/collections/payment-details";
+import { paymentDetailsBlockConstant } from "../../tina/collections/payment-details"; // TODO: Use alias - https://github.com/tinacms/tinacms/issues/4488
 
 export type PaymentBlockProps = {
   bankName: string;

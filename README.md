@@ -4,6 +4,8 @@
 
 This repository is a v3 of the zzSSW.Website. This website uses NextJS with TinaCMS.
 
+![](https://github.com/SSWConsulting/SSW.Website/actions/workflows/main-build-and-deploy.yml/badge.svg?)
+
 **Watch the demo:**
 
 [![YouTube video](_docs/video-thumbnail.png)](https://www.youtube.com/watch?v=K0WVfM7yCKg)

@@ -1,7 +1,7 @@
+import client from "@/tina/client";
 import * as appInsights from "applicationinsights";
 import { NextApiRequest, NextApiResponse } from "next";
 import { cache } from "services/server/cacheService";
-import client from "../../.tina/__generated__/client";
 import megaMenuJson from "../../content/megamenu/menu.json";
 
 const CACHE_MINS = 60;

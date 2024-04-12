@@ -41,24 +41,26 @@ class ErrorBoundary extends React.Component<
   render() {
     if (this.state.hasError) {
       return (
-        <ErrorPage
-          tipText={
-            <div>
-              <p className="pt-4 text-xl">
-                For help, please submit a bug report issue on our GitHub at{" "}
-                <a href="https://github.com/SSWConsulting/SSW.Website/issues/new/choose">
-                  github.com/SSWConsulting/SSW.Website
-                </a>{" "}
-                or send us an email at{" "}
-                <a href="mailto:info@ssw.com.au">info@ssw.com.au</a>.
-              </p>
-            </div>
-          }
-          details={
-            this.state.error &&
-            JSON.stringify(this.state.error.message, null, 2)
-          }
-        />
+        <>
+          <ErrorPage
+            tipText={
+              <div>
+                <p className="pt-4 text-xl">
+                  For help, please submit a bug report issue on our GitHub at{" "}
+                  <a href="https://github.com/SSWConsulting/SSW.Website/issues/new/choose">
+                    github.com/SSWConsulting/SSW.Website
+                  </a>{" "}
+                  or send us an email at{" "}
+                  <a href="mailto:info@ssw.com.au">info@ssw.com.au</a>.
+                </p>
+              </div>
+            }
+            details={
+              this.state.error &&
+              JSON.stringify(this.state.error.message, null, 2)
+            }
+          />
+        </>
       );
     }
 
