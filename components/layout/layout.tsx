@@ -13,7 +13,7 @@ import { useReportWebVitals } from "next/web-vitals";
 import { MegaMenuLayout, NavMenuGroup } from "ssw.megamenu";
 import { CustomLink } from "../customLink";
 
-export const openSans = Open_Sans({
+const openSans = Open_Sans({
   variable: "--open-sans-font",
   subsets: ["latin"],
 });

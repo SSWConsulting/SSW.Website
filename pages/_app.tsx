@@ -1,16 +1,19 @@
-import AOS from "aos";
 import "aos/dist/aos.css";
-import { DefaultSeo } from "next-seo";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import "react-tooltip/dist/react-tooltip.css";
-import { Analytics } from "../components/layout/analytics";
-import * as gtag from "../lib/gtag";
-import { NEXT_SEO_DEFAULT } from "../next-seo.config";
 import "../styles.css";
 
+import AOS from "aos";
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { DefaultSeo } from "next-seo";
+import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+
+import { Analytics } from "../components/layout/analytics";
 import { AppInsightsProvider } from "../context/app-insight-client";
+import * as gtag from "../lib/gtag";
+import { NEXT_SEO_DEFAULT } from "../next-seo.config";
 
 // Hack as per https://stackoverflow.com/a/66575373 to stop font awesome icons breaking
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -22,7 +25,6 @@ import isBetween from "dayjs/plugin/isBetween";
 import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
-import dynamic from "next/dynamic";
 
 const FIVE_MINS = 1000 * 60 * 5;
 
