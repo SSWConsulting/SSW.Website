@@ -1,6 +1,6 @@
+import client from "@/tina/client";
 import { InferGetStaticPropsType } from "next";
 import { FaGlobe, FaUsers } from "react-icons/fa";
-import client from "../.tina/__generated__/client";
 import { CustomLink } from "../components/customLink";
 import { Layout } from "../components/layout";
 import { Container } from "../components/util/container";

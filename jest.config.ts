@@ -92,7 +92,7 @@ const config: Config = {
     "\\\\node_modules\\\\",
     "\\\\ui-tests\\\\",
     "\\\\public\\\\",
-    "\\\\.tina\\\\",
+    "\\\\tina\\\\",
   ],
 
   // A list of reporter names that Jest uses when writing coverage reports

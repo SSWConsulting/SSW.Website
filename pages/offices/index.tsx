@@ -1,7 +1,7 @@
+import { client } from "@/tina/client";
 import { InferGetStaticPropsType } from "next";
 import Image from "next/image";
 import { useTina } from "tinacms/dist/react";
-import { client } from "../../.tina/__generated__/client";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { Flag } from "../../components/blocks/flag";
 import { CustomLink } from "../../components/customLink";
