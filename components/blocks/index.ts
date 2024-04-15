@@ -4,7 +4,6 @@ import { bookingButtonSchema } from "../bookingButton/bookingButton";
 import { utilityButtonSchema } from "../button/utilityButton";
 import { clientListSchema } from "../company/clientList";
 import { tweetEmbedSchema } from "../embeds/tweetEmbed";
-import { subNewsletterRowSchema } from "../subNewsletter/subNewsletterRow";
 import { agreementFormBlockSchema } from "../terms-and-conditions/agreementForm";
 import { eventBookingSchema } from "../training/eventBooking";
 import { locationBlockSchema } from "../training/locationBlock";
@@ -95,7 +94,6 @@ export const pageBlocks: Template[] = [
   recurringEventSchema,
   sectionHeaderSchema,
   serviceCardsBlockSchema,
-  subNewsletterRowSchema,
   tableBlockSchema,
   testimonialsListSchema,
   trainingInformationSchema,
@@ -111,7 +109,6 @@ export const pageBlocks: Template[] = [
 export * from "../bookingButton/bookingButton";
 export * from "../button/utilityButton";
 export * from "../embeds/tweetEmbed";
-export * from "../subNewsletter/subNewsletterRow";
 export * from "../terms-and-conditions/agreementForm";
 export * from "../training/eventBooking";
 export * from "../training/presenterBlock";
