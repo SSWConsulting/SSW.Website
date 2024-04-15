@@ -37,7 +37,7 @@ export const BookingButton = ({ data }) => {
       <JotFormEmbed {...jotFormBookingForm}>
         {!hideCallUs && (
           <h2 className="mx-auto max-w-full text-center">
-            or call us on {bookingPhone}
+            or call {bookingPhone}
           </h2>
         )}
       </JotFormEmbed>
