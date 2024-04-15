@@ -1,6 +1,8 @@
+import classNames from "classnames";
 import { Template } from "tinacms";
 import { productColors } from "../util/constants";
-import classNames from "classnames";
+
+const colors = require("plugins/platform-color-palette/colors")
 
 export type ColorPaletteProps = {
   colorBlocks: Block[];
@@ -12,19 +14,18 @@ type Block = {
 };
 
 export const ColorPalette = (props: ColorPaletteProps) => {
-  const { colorBlocks } = props;
   return (
     <div className="flex min-h-24 w-full flex-wrap">
-      {colorBlocks?.map((block, i) => (
+      {Object.entries<{ text: string, color: string }>(colors ?? {}).map(([k, v], i) => (
         <div
           className={classNames(
-            block.color,
+            `bg-platform-${k}`,
             "flex flex-grow flex-col items-center justify-center text-white"
           )}
           key={i}
         >
-          <div>{block.text}</div>
-          <div>{productColors[block.color]}</div>
+          <div>{v.text}</div>
+          <div>{v.color}</div>
         </div>
       ))}
     </div>
