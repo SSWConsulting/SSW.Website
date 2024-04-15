@@ -12,24 +12,6 @@ export const InlineJotForm = (props: InlineJotFormProps) => {
       className={props.additionalClasses}
       src={`https://form.jotform.com/${props.jotFormId}`}
     />
-    //   <iframe
-    //     className="bg-subscribeBackground"
-    //     id="JotFormIFrame-240991361342051"
-    //     title="DRAFT Newsletter signup form"
-    //     onLoad={updateTextColor}
-    //     ref={iFrameRef}
-    //     // allowtransparency="true"
-    //     allow="geolocation; microphone; camera; fullscreen"
-    //     src="https://form.jotform.com/240991361342051"
-    //     // frameborder="0"
-    //     scrolling="no"
-    //     style={{
-    //       minWidth: "100%",
-    //       maxWidth: "100%",
-    //       border: "none",
-    //       minHeight: "300px",
-    //     }}
-    //   ></iframe>
   );
 };
 
