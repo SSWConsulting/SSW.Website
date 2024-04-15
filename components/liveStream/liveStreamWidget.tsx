@@ -17,12 +17,11 @@ import { CustomLink } from "../customLink";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
 import { SocialIcons } from "../socialIcons/socialIcons";
 import { InlineJotForm } from "../blocks";
+import { default as globals } from "../../content/global/index.json";
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;
 } & LiveStreamProps;
-
-const NEWSLETTER_SUBSCRIBE_JOTFORM_ID = "240991361342051";
 
 export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
   const eventDescriptionCollapseId = "eventDescription";
@@ -320,7 +319,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                 <SocialIcons />
               </div>
             </div>
-            <InlineJotForm jotFormId={NEWSLETTER_SUBSCRIBE_JOTFORM_ID} />
+            <InlineJotForm jotFormId={globals.newsletterJotFormId} />
           </div>
 
           <div className="bg-gray-75 px-4 py-2">
