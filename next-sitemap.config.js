@@ -58,8 +58,8 @@ module.exports = {
     ],
     additionalSitemaps: [
       // TODO: add sitemaps for other sites when they are available
-      // 'https://www.ssw.com.au/people/sitemap.xml',
-      // 'https://www.ssw.com.au/rules/sitemap.xml',
+      "https://www.ssw.com.au/people/sitemap-index.xml",
+      "https://www.ssw.com.au/rules/sitemap-index.xml",
       // Removed v1 sitemap as its a duplication of bunch of Next.js pages - coming from
       // "https://www.ssw.com.au/ssw/sitemap.xml",
       // "https://www.ssw.com.au/history/sitemap.xml",
