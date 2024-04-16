@@ -8,10 +8,10 @@ import { Open_Sans } from "next/font/google";
 // import { Theme } from "../components/layout/theme";
 import { Analytics } from "@/components/layout/analytics";
 import ChatBaseBot from "@/components/zendeskButton/chatBaseBot";
-import client from "@/tina/client";
 import { Metadata } from "next";
 import { cache } from "react";
 import { MenuWrapper } from "../components/server/MenuWrapper";
+import client from "../tina/__generated__/client";
 
 const getMegamenu = cache(async () => {
   const data = await client.queries.megamenu({
@@ -94,7 +94,7 @@ export default async function RootLayout({
             </div>
           </header>
           <main className="grow bg-white">
-            <h1>{menuData.timestamp}</h1>
+            <h1>{menuData.timestamp.toISOString()}</h1>
             {children}
           </main>
 
