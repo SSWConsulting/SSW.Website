@@ -1,8 +1,8 @@
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+import { client } from "@/tina/client";
 import { InferGetStaticPropsType } from "next";
-import { client } from "../../.tina/__generated__/client";
 import { BuiltOnAzure } from "../../components/blocks";
 import { Booking } from "../../components/blocks/booking";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
