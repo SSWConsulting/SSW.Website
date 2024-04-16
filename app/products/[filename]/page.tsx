@@ -32,7 +32,11 @@ const getData = cache(async (filename: string) => {
   });
 });
 
-export default async function ProductsIndex({ params }) {
+export default async function ProductsIndex({
+  params,
+}: {
+  params: { filename: string };
+}) {
   const { filename } = params;
 
   const tinaProps = await getData(filename);

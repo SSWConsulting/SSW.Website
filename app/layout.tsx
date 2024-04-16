@@ -18,7 +18,7 @@ const getMegamenu = cache(async () => {
     relativePath: "menu.json",
   });
 
-  return { ...data, timestamp: new Date() };
+  return data;
 });
 
 const openSans = Open_Sans({
@@ -96,10 +96,7 @@ export default async function RootLayout({
               <MenuWrapper menu={menuData.data.megamenu.menuGroups} />
             </div>
           </header>
-          <main className="grow bg-white">
-            <h1>{menuData.timestamp.toISOString()}</h1>
-            {children}
-          </main>
+          <main className="grow bg-white">{children}</main>
 
           {/* {showAzureBanner && <PreFooter />} */}
           {/* <Footer /> */}
