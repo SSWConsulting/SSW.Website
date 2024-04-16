@@ -1,6 +1,13 @@
 const colors = require("tailwindcss/colors");
 const plugin = require("tailwindcss/plugin");
 
+// const fs = require("node:fs/promises");
+const platformColors = require('./content/palette/platform.json');
+const platform = platformColors.colors.reduce((acc, color) => {
+  acc[color.name] = color.value;
+  return acc;
+}, {})
+
 /** @type {import("tailwindcss").Config} */
 module.exports = {
   // mode: "jit",
@@ -218,6 +225,7 @@ module.exports = {
           900: "#333333",
           1000: "#1c1b2e",
         },
+        platform,
         social: {
           phone: "#b31217",
           youtube: "#b31217",
@@ -361,7 +369,6 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("tailwindcss-gradients"),
     require("@headlessui/tailwindcss")({ prefix: "ui" }),
-    require("./plugins/platform-color-palette"),
 
     // Use flex-basis with gap
     plugin(function ({ matchUtilities, theme }) {
