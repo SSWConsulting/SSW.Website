@@ -1,7 +1,7 @@
+import client from "@/tina/client";
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { cache } from "react";
-import { client } from "../../.tina/__generated__/client";
 import ClientPage from "./ClientPage";
 import ServerPage from "./ServerPage";
 
