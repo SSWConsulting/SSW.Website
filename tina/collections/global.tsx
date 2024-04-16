@@ -326,8 +326,13 @@ export const globalSchema: Collection = {
     },
     {
       type: "string",
-      name: "jotFormId",
-      label: "JotForm Id",
+      name: "bookingJotFormId",
+      label: "Booking JotForm Id",
+    },
+    {
+      type: "string",
+      name: "newsletterJotFormId",
+      label: "Newsletter JotForm Id",
     },
   ],
 };
