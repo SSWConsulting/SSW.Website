@@ -8,7 +8,7 @@ import { Open_Sans } from "next/font/google";
 // import { Theme } from "../components/layout/theme";
 import { Analytics } from "@/components/layout/analytics";
 import ChatBaseBot from "@/components/zendeskButton/chatBaseBot";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { cache } from "react";
 import { MenuWrapper } from "../components/server/MenuWrapper";
 import client from "../tina/__generated__/client";
@@ -52,6 +52,9 @@ export const metadata: Metadata = {
     },
   ],
   manifest: "/site.webmanifest",
+};
+
+export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
