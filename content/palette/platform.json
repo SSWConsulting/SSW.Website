@@ -2,42 +2,42 @@
   "colors": [
     {
       "name": "angular",
-      "value": "#DD0031",
+      "hex": "#DD0031",
       "text": "Angular"
     },
     {
       "name": "dotnet",
-      "color": "#5C2D91",
+      "hex": "#5C2D91",
       "text": ".NET"
     },
     {
       "name": "visualstudio",
-      "color": "#9455CE",
+      "hex": "#9455CE",
       "text": "Visual Studio"
     },
     {
       "name": "blazor",
-      "color": "#5C2D91",
+      "hex": "#5C2D91",
       "text": "Blazor"
     },
     {
       "name": "xamarin",
-      "color": "#3498DB",
+      "hex": "#3498DB",
       "text": "Xamarin"
     },
     {
       "name": "azure",
-      "color": "#0088D5",
+      "hex": "#0088D5",
       "text": "Azure"
     },
     {
       "name": "sharepoint",
-      "color": "#038185",
+      "hex": "#038185",
       "text": "SharePoint"
     },
     {
       "name": "powerbi",
-      "color": "#F2C811",
+      "hex": "#F2C811",
       "text": "PowerBI"
     }
   ]
