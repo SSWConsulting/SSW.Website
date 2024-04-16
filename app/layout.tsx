@@ -14,9 +14,11 @@ import { cache } from "react";
 import { MenuWrapper } from "../components/server/MenuWrapper";
 
 const getMegamenu = cache(async () => {
-  return await client.queries.megamenu({
+  const data = await client.queries.megamenu({
     relativePath: "menu.json",
   });
+
+  return { ...data, timestamp: new Date() };
 });
 
 const openSans = Open_Sans({
@@ -49,6 +51,8 @@ export const metadata: Metadata = {
       url: "/safari-pinned-tab.svg",
     },
   ],
+  manifest: "/site.webmanifest",
+  themeColor: "#ffffff",
 };
 
 export default async function RootLayout({
@@ -89,7 +93,10 @@ export default async function RootLayout({
               <MenuWrapper menu={menuData.data.megamenu.menuGroups} />
             </div>
           </header>
-          <main className="grow bg-white">{children}</main>
+          <main className="grow bg-white">
+            <h1>{menuData.timestamp}</h1>
+            {children}
+          </main>
 
           {/* {showAzureBanner && <PreFooter />} */}
           {/* <Footer /> */}
