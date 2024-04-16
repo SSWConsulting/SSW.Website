@@ -25,7 +25,7 @@ export const BookingButton = ({ data }) => {
   const bookingPhone = layoutData.bookingPhone;
 
   const jotFormBookingForm: JotFormEmbedProps = {
-    jotFormId: defaultSetting.jotFormId,
+    jotFormId: defaultSetting.bookingJotFormId,
     containerClass: containerClass,
     buttonClass: buttonClass,
     buttonText: buttonText,

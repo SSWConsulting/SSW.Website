@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
 import { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import type { TweetEmbedProps } from "../embeds/tweetEmbed";
-import type { SubNewsletterRowProps } from "../subNewsletter/subNewsletterRow";
 import type { Countries } from "../util/constants/country";
 import type { ColorBlockProps } from "./colorBlock";
 import type { CustomImageProps } from "./customImage";
@@ -19,14 +18,10 @@ import { ColorPaletteProps } from "./colorPalette";
 import { Content, ContentType } from "./content";
 import { DomainFromQueryProps } from "./domainFromQuery";
 import { SectionHeaderProps } from "./sectionHeader";
+import { InlineJotFormProps } from "../inlineJotForm/inlineJotForm";
 
 const MicrosoftPanel = dynamic(() =>
   import("../offices/microsoftPanel").then((mod) => mod.default)
-);
-const SubNewsletterRow = dynamic<SubNewsletterRowProps>(() =>
-  import("../subNewsletter/subNewsletterRow").then(
-    (mod) => mod.SubNewsletterRow
-  )
 );
 const AgreementForm = dynamic(() =>
   import("../terms-and-conditions/agreementForm").then(
@@ -86,6 +81,9 @@ const ColorPalette = dynamic<ColorPaletteProps>(() =>
 );
 const GoogleMapsWrapper = dynamic(() =>
   import("./googleMapsWrapper").then((mod) => mod.GoogleMapsWrapper)
+);
+const InlineJotForm = dynamic(() =>
+  import("../inlineJotForm/inlineJotForm").then((mod) => mod.InlineJotForm)
 );
 const InternalCarousel = dynamic(() =>
   import("./internalCarousel").then((mod) => mod.InternalCarousel)
@@ -224,7 +222,6 @@ export const componentRenderer: Components<{
   NewslettersTable: {
     headerText: string;
   };
-  SubNewsletterRow: SubNewsletterRowProps;
   Citation: {
     article: string;
     author: string;
@@ -256,6 +253,7 @@ export const componentRenderer: Components<{
   SectionHeader: SectionHeaderProps;
   Content: ContentType;
   DomainFromQuery: DomainFromQueryProps;
+  InlineJotForm: InlineJotFormProps;
 }> = {
   AgreementForm: (props) => <AgreementForm data={props} />,
   ClientLogos: () => <ClientLogos />,
@@ -278,7 +276,6 @@ export const componentRenderer: Components<{
   FixedTabsLayout: (props) => <FixedTabsLayout data={props} />,
   BookingButton: (props) => <BookingButton data={props} />,
   NewslettersTable: (props) => <NewslettersTable data={props} />,
-  SubNewsletterRow: (props) => <SubNewsletterRow {...props} />,
   Citation: (props) => <Citation {...props} />,
   UtilityButton: (props) => <UtilityButton {...props} />,
   ContentCard: (props) => <ContentCard data={props} />,
@@ -297,4 +294,5 @@ export const componentRenderer: Components<{
   SectionHeader: (props) => <SectionHeader {...props} />,
   Content: (props) => <Content data={props} />,
   DomainFromQuery: (props) => <DomainFromQuery {...props} />,
+  InlineJotForm: (props) => <InlineJotForm {...props} />,
 };

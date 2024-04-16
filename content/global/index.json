@@ -193,5 +193,6 @@
       }
     ]
   },
-  "jotFormId": "233468468973070"
+  "bookingJotFormId": "233468468973070",
+  "newsletterJotFormId": "240991361342051"
 }
