@@ -720,7 +720,15 @@
           "title": "TinaCMS",
           "description": "TinaCMS is the world's leading open source, headless CMS that is powered by Markdown and GitHub.",
           "logo": "/images/thumbs/tina-logo-icon.jpg",
-          "page": "content/consulting/tinacms.mdx"
+          "page": "content/consulting/tinacms.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/web-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/cms.json"
+            }
+          ]
         },
         {
           "title": "WordPress",
