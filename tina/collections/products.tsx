@@ -13,7 +13,7 @@ export const productsIndexSchema: Collection = {
       create: false,
       delete: false,
     },
-    router: async ({ document }) => {
+    router: async () => {
       await fetch("/api/draft");
       return "/products";
     },
