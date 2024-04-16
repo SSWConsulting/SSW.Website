@@ -1,8 +1,8 @@
+import client from "@/tina/client";
 import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import client from "../../.tina/__generated__/client";
 import {
   BuiltOnAzure,
   GoogleMapsWrapper,

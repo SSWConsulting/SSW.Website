@@ -12,8 +12,9 @@ import { Open_Sans } from "next/font/google";
 import { useReportWebVitals } from "next/web-vitals";
 import { MegaMenuLayout, NavMenuGroup } from "ssw.megamenu";
 import { CustomLink } from "../customLink";
+import { ErrorBoundary } from "../util/error-boundary";
 
-export const openSans = Open_Sans({
+const openSans = Open_Sans({
   variable: "--open-sans-font",
   subsets: ["latin"],
 });
@@ -155,10 +156,12 @@ export const Layout = ({
               />
             </div>
           </header>
-          <main className={classNames("grow bg-white")}>{children}</main>
+          <ErrorBoundary key={router.asPath}>
+            <main className={classNames("grow bg-white")}>{children}</main>
 
-          {showAzureBanner && <PreFooter />}
-          <Footer />
+            {showAzureBanner && <PreFooter />}
+            <Footer />
+          </ErrorBoundary>
         </div>
       </Theme>
     </>
