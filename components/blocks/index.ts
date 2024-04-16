@@ -4,7 +4,6 @@ import { bookingButtonSchema } from "../bookingButton/bookingButton";
 import { utilityButtonSchema } from "../button/utilityButton";
 import { clientListSchema } from "../company/clientList";
 import { tweetEmbedSchema } from "../embeds/tweetEmbed";
-import { subNewsletterRowSchema } from "../subNewsletter/subNewsletterRow";
 import { agreementFormBlockSchema } from "../terms-and-conditions/agreementForm";
 import { eventBookingSchema } from "../training/eventBooking";
 import { locationBlockSchema } from "../training/locationBlock";
@@ -38,6 +37,7 @@ import { googleMapsSchema } from "./googleMapsWrapper";
 import { gridLayoutSchema } from "./gridLayout";
 import { heroBlockSchema } from "./hero";
 import { horizontalBlockSchema } from "./horizontalCard";
+import { inlineJotFormSchema } from "../inlineJotForm/inlineJotForm";
 import { internalCarouselBlockSchema } from "./internalCarousel";
 import { jotFormEmbedSchema } from "./jotFormEmbed";
 import { newslettersTableBlockSchema } from "./newslettersTable";
@@ -80,6 +80,7 @@ export const pageBlocks: Template[] = [
   gridLayoutSchema,
   heroBlockSchema,
   horizontalBlockSchema,
+  inlineJotFormSchema,
   internalCarouselBlockSchema,
   joinAsPresenterSchema,
   joinGithubSchema,
@@ -93,7 +94,6 @@ export const pageBlocks: Template[] = [
   recurringEventSchema,
   sectionHeaderSchema,
   serviceCardsBlockSchema,
-  subNewsletterRowSchema,
   tableBlockSchema,
   testimonialsListSchema,
   trainingInformationSchema,
@@ -109,7 +109,6 @@ export const pageBlocks: Template[] = [
 export * from "../bookingButton/bookingButton";
 export * from "../button/utilityButton";
 export * from "../embeds/tweetEmbed";
-export * from "../subNewsletter/subNewsletterRow";
 export * from "../terms-and-conditions/agreementForm";
 export * from "../training/eventBooking";
 export * from "../training/presenterBlock";
@@ -137,6 +136,7 @@ export * from "./fixedColumns";
 export * from "./flag";
 export * from "./googleMapsWrapper";
 export * from "./hero";
+export * from "../inlineJotForm/inlineJotForm";
 export * from "./jotFormEmbed";
 export * from "./newslettersTable";
 export * from "./recurringEvent";
