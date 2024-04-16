@@ -160,8 +160,7 @@ export default function ConsultingPage(
               }}
             ></h1>
             <p className="text-lg">
-              Jump on a call with one of our Account Managers to discuss how we
-              can help you.
+              Connect with our Account Managers to discuss how we can help.
             </p>
             <BookingButton data={bookingButtonProps} />
           </Container>
