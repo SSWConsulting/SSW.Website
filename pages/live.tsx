@@ -1,8 +1,8 @@
 import { ReadMore } from "@/components/usergroup/readMore";
+import { client } from "@/tina/client";
 import { InferGetStaticPropsType } from "next";
 import { FaYoutube } from "react-icons/fa";
 import { useTina } from "tinacms/dist/react";
-import { client } from "../.tina/__generated__/client";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { BuiltOnAzure } from "../components/blocks/builtOnAzure";
 import { YoutubePlaylistBlock } from "../components/blocks/youtubePlaylist";
@@ -71,7 +71,10 @@ export default function LivePage(
             {props.speaker && (
               <div className="py-1 text-lg">
                 With
-                <CustomLink href={props.speaker?.PresenterProfileLink}>
+                <CustomLink
+                  href={props.speaker?.PresenterProfileLink}
+                  className="ml-2"
+                >
                   {props.speaker?.Title}
                 </CustomLink>
               </div>

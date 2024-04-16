@@ -22,7 +22,7 @@ importers:
         version: 1.7.17(react-dom@18.2.0)(react@18.2.0)
       '@headlessui/tailwindcss':
         specifier: ^0.2.0
-        version: 0.2.0(tailwindcss@3.4.1)
+        version: 0.2.0(tailwindcss@3.4.3)
       '@heroicons/react':
         specifier: ^2.1.1
         version: 2.1.1(react@18.2.0)
@@ -37,10 +37,10 @@ importers:
         version: 14.0.4
       '@next/third-parties':
         specifier: ^14.1.4
-        version: 14.1.4(next@14.1.4)(react@18.2.0)
+        version: 14.2.1(next@14.1.4)(react@18.2.0)
       '@tailwindcss/typography':
         specifier: ^0.5.10
-        version: 0.5.10(tailwindcss@3.4.1)
+        version: 0.5.10(tailwindcss@3.4.3)
       '@tanstack/react-query':
         specifier: ^5.29.0
         version: 5.29.0(react@18.2.0)
@@ -135,8 +135,8 @@ importers:
         specifier: ^2.2.2
         version: 2.2.2
       tailwindcss:
-        specifier: 3.4.1
-        version: 3.4.1(ts-node@10.9.2)
+        specifier: 3.4.3
+        version: 3.4.3(ts-node@10.9.2)
       tailwindcss-gradients:
         specifier: ^3.0.0
         version: 3.0.0
@@ -206,7 +206,7 @@ importers:
         version: 5.1.3(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.2.5)
       eslint-plugin-tailwindcss:
         specifier: ^3.14.2
-        version: 3.14.2(tailwindcss@3.4.1)
+        version: 3.14.2(tailwindcss@3.4.3)
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@20.12.2)(ts-node@10.9.2)
@@ -2989,13 +2989,13 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  /@headlessui/tailwindcss@0.2.0(tailwindcss@3.4.1):
+  /@headlessui/tailwindcss@0.2.0(tailwindcss@3.4.3):
     resolution: {integrity: sha512-fpL830Fln1SykOCboExsWr3JIVeQKieLJ3XytLe/tt1A0XzqUthOftDmjcCYLW62w7mQI7wXcoPXr3tZ9QfGxw==}
     engines: {node: '>=10'}
     peerDependencies:
       tailwindcss: ^3.0
     dependencies:
-      tailwindcss: 3.4.1(ts-node@10.9.2)
+      tailwindcss: 3.4.3(ts-node@10.9.2)
     dev: false
 
   /@heroicons/react@1.0.6(react@17.0.2):
@@ -3897,8 +3897,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@next/third-parties@14.1.4(next@14.1.4)(react@18.2.0):
-    resolution: {integrity: sha512-e/kpEFq5/ZPhHkxpJkvhMfLp3OC6KCBou0/BV8BvgjXAPgEo6sa0ZXe0l4ZEb3wcA7NIEHIpqCmjU5Z7QAHcKQ==}
+  /@next/third-parties@14.2.1(next@14.1.4)(react@18.2.0):
+    resolution: {integrity: sha512-iHVq3uHT1BLR4O8LXJ/AJeRCATnsxWNq5S223BYhrQMceMUr/5TtKIroQwJpXrbwxkOr7SFX72mZqPTXxd/TnQ==}
     peerDependencies:
       next: ^13.0.0 || ^14.0.0
       react: ^18.2.0
@@ -5583,23 +5583,23 @@ packages:
     dependencies:
       tslib: 2.6.2
 
-  /@tailwindcss/aspect-ratio@0.4.2(tailwindcss@3.4.1):
+  /@tailwindcss/aspect-ratio@0.4.2(tailwindcss@3.4.3):
     resolution: {integrity: sha512-8QPrypskfBa7QIMuKHg2TA7BqES6vhBrDLOv8Unb6FcFyd3TjKbc6lcmb9UPQHxfl24sXoJ41ux/H7qQQvfaSQ==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
-      tailwindcss: 3.4.1(ts-node@10.9.2)
+      tailwindcss: 3.4.3(ts-node@10.9.2)
     dev: true
 
-  /@tailwindcss/line-clamp@0.3.1(tailwindcss@3.4.1):
+  /@tailwindcss/line-clamp@0.3.1(tailwindcss@3.4.3):
     resolution: {integrity: sha512-pNr0T8LAc3TUx/gxCfQZRe9NB2dPEo/cedPHzUGIPxqDMhgjwNm6jYxww4W5l0zAsAddxr+XfZcqttGiFDgrGg==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
-      tailwindcss: 3.4.1(ts-node@10.9.2)
+      tailwindcss: 3.4.3(ts-node@10.9.2)
     dev: true
 
-  /@tailwindcss/typography@0.5.10(tailwindcss@3.4.1):
+  /@tailwindcss/typography@0.5.10(tailwindcss@3.4.3):
     resolution: {integrity: sha512-Pe8BuPJQJd3FfRnm6H0ulKIGoMEQS+Vq01R6M5aCrFB/ccR/shT+0kXLjouGC1gFLm9hopTFN+DMP0pfwRWzPw==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
@@ -5608,7 +5608,7 @@ packages:
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.1(ts-node@10.9.2)
+      tailwindcss: 3.4.3(ts-node@10.9.2)
 
   /@tanstack/query-core@5.29.0:
     resolution: {integrity: sha512-WgPTRs58hm9CMzEr5jpISe8HXa3qKQ8CxewdYZeVnA54JrPY9B1CZiwsCoLpLkf0dGRZq+LcX5OiJb0bEsOFww==}
@@ -5717,7 +5717,7 @@ packages:
       react: 17.0.2
       react-dom: 17.0.2(react@17.0.2)
       react-router-dom: 6.3.0(react-dom@17.0.2)(react@17.0.2)
-      tailwindcss: 3.4.1(ts-node@10.9.2)
+      tailwindcss: 3.4.3(ts-node@10.9.2)
       tinacms: 1.6.0(@babel/core@7.23.2)(@types/react@18.2.55)(react-dom@17.0.2)(react@17.0.2)
       typescript: 4.9.5
       zod: 3.22.4
@@ -5760,16 +5760,16 @@ packages:
       '@graphql-tools/load': 7.8.14(graphql@15.8.0)
       '@rollup/pluginutils': 5.0.5
       '@svgr/core': 6.3.1
-      '@tailwindcss/aspect-ratio': 0.4.2(tailwindcss@3.4.1)
-      '@tailwindcss/line-clamp': 0.3.1(tailwindcss@3.4.1)
-      '@tailwindcss/typography': 0.5.10(tailwindcss@3.4.1)
+      '@tailwindcss/aspect-ratio': 0.4.2(tailwindcss@3.4.3)
+      '@tailwindcss/line-clamp': 0.3.1(tailwindcss@3.4.3)
+      '@tailwindcss/typography': 0.5.10(tailwindcss@3.4.3)
       '@tinacms/app': 1.2.38(@babel/core@7.23.2)(@types/node@20.12.2)(@types/react@18.2.55)(ts-node@10.9.2)(yup@0.32.11)
       '@tinacms/datalayer': 1.2.33(react@18.2.0)
       '@tinacms/graphql': 1.4.33(react@18.2.0)
       '@tinacms/metrics': 1.0.2(fs-extra@9.1.0)
       '@tinacms/schema-tools': 1.4.15(react@18.2.0)(yup@0.32.11)
       '@tinacms/search': 1.0.18(react@18.2.0)(yup@0.32.11)
-      '@vitejs/plugin-react': 3.1.0(vite@4.5.2)
+      '@vitejs/plugin-react': 3.1.0(vite@4.5.3)
       ajv: 6.12.6
       altair-express-middleware: 4.0.6
       auto-bind: 4.0.0
@@ -5807,12 +5807,12 @@ packages:
       prompts: 2.4.2
       readable-stream: 4.4.2
       rollup-plugin-visualizer: 5.9.2
-      tailwindcss: 3.4.1(ts-node@10.9.2)
+      tailwindcss: 3.4.3(ts-node@10.9.2)
       tinacms: 1.6.0(@babel/core@7.23.2)(@types/react@18.2.55)(react-dom@18.2.0)(react@18.2.0)
       typanion: 3.13.0
       typescript: 4.3.5
       url-pattern: 1.0.3
-      vite: 4.5.2(@types/node@20.12.2)
+      vite: 4.5.3(@types/node@20.12.2)
       yarn: 1.22.19
       yup: 0.32.11
       zod: 3.22.4
@@ -9667,7 +9667,7 @@ packages:
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
-  /@vitejs/plugin-react@3.1.0(vite@4.5.2):
+  /@vitejs/plugin-react@3.1.0(vite@4.5.3):
     resolution: {integrity: sha512-AfgcRL8ZBhAlc3BFdigClmTUMISmmzHn7sB2h9U1odvc5U/MjWXsAaz18b/WoppUTDBzxOJwo2VdClfUcItu9g==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -9678,7 +9678,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.22.5(@babel/core@7.23.9)
       magic-string: 0.27.0
       react-refresh: 0.14.0
-      vite: 4.5.2(@types/node@20.12.2)
+      vite: 4.5.3(@types/node@20.12.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -11871,7 +11871,7 @@ packages:
       string.prototype.matchall: 4.0.10
     dev: false
 
-  /eslint-plugin-tailwindcss@3.14.2(tailwindcss@3.4.1):
+  /eslint-plugin-tailwindcss@3.14.2(tailwindcss@3.4.3):
     resolution: {integrity: sha512-fNzdf4poZP2yQC0xC2prQxMuArMSb5mnellLQvwb9HC3NcLzxs+0IVKWIg1BqUqyui0c+bbjMmhWcKUWK67SLQ==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
@@ -11879,7 +11879,7 @@ packages:
     dependencies:
       fast-glob: 3.3.1
       postcss: 8.4.38
-      tailwindcss: 3.4.1(ts-node@10.9.2)
+      tailwindcss: 3.4.3(ts-node@10.9.2)
     dev: true
 
   /eslint-scope@7.2.2:
@@ -17711,8 +17711,8 @@ packages:
       lodash: 4.17.21
     dev: false
 
-  /tailwindcss@3.4.1(ts-node@10.9.2):
-    resolution: {integrity: sha512-qAYmXRfk3ENzuPBakNK0SRrUDipP8NQnEY6772uDhflcQz5EhRdD7JNZxyrFHVQNCwULPBn6FNPp9brpO7ctcA==}
+  /tailwindcss@3.4.3(ts-node@10.9.2):
+    resolution: {integrity: sha512-U7sxQk/n397Bmx4JHbJx/iSOOv5G+II3f1kpLpY2QeUv5DcPdcTsYLlusZfq1NthHS1c1cZoyFmmkex1rzke0A==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -18770,8 +18770,8 @@ packages:
       unist-util-stringify-position: 3.0.3
       vfile-message: 3.1.4
 
-  /vite@4.5.2(@types/node@20.12.2):
-    resolution: {integrity: sha512-tBCZBNSBbHQkaGyhGCDUGqeo2ph8Fstyp6FMSvTtsXeZSPpSMGlviAOav2hxVTqFcx8Hj/twtWKsMJXNY0xI8w==}
+  /vite@4.5.3(@types/node@20.12.2):
+    resolution: {integrity: sha512-kQL23kMeX92v3ph7IauVkXkikdDRsYMGTVl5KY2E9OY4ONLvkHf04MDTbnfo6NKxZiDLWzVpP5oTa8hQD8U3dg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:

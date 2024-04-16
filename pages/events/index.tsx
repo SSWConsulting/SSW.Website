@@ -1,3 +1,4 @@
+import client from "@/tina/client";
 import {
   HydrationBoundary,
   QueryClient,
@@ -10,7 +11,6 @@ import type { InferGetStaticPropsType } from "next";
 import { getEvents } from "services/server/events";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import client from "../../.tina/__generated__/client";
 import { Blocks } from "../../components/blocks-renderer";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { EventTrimmed, EventsFilter } from "../../components/filter/events";

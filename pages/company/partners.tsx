@@ -1,5 +1,5 @@
+import { client } from "@/tina/client";
 import { useTina } from "tinacms/dist/react";
-import { client } from "../../.tina/__generated__/client";
 
 import { InferGetStaticPropsType } from "next";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";

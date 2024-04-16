@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { presenterSchemaConstants } from "../../.tina/collections/presenter";
+import { presenterSchemaConstants } from "../../tina/collections/presenter"; // TODO: Use alias - https://github.com/tinacms/tinacms/issues/4488
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 

@@ -1,8 +1,8 @@
 import Image from "next/image";
 
+import { client } from "@/tina/client";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { client } from "../../.tina/__generated__/client";
 
 import { InferGetStaticPropsType } from "next";
 import { BuiltOnAzure } from "../../components/blocks";
