@@ -717,6 +717,12 @@
       "category": "content/consulting/category/content-management-systems.json",
       "pages": [
         {
+          "title": "TinaCMS",
+          "description": "TinaCMS is the world's leading open source, headless CMS that is powered by Markdown and GitHub.",
+          "logo": "/images/thumbs/tina-logo-icon.jpg",
+          "page": "content/consulting/tinacms.mdx"
+        },
+        {
           "title": "WordPress",
           "description": "WordPress the most popular content management system (CMS) on the web, and is trusted by content publishers from both large and small businesses.",
           "logo": "/images/thumbs/thumb-wordpress.jpg",
