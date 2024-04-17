@@ -1,8 +1,51 @@
-const colors = require("tailwindcss/colors");
-const plugin = require("tailwindcss/plugin");
+import colors from "tailwindcss/colors";
+import plugin from "tailwindcss/plugin";
+
+export const platform = [
+  {
+    name: "angular",
+    text: "Angular",
+    color: "#DD0031",
+  },
+  {
+    name: "dotnet",
+    text: ".NET",
+    color: "#5C2D91",
+  },
+  {
+    name: "visualstudio",
+    text: "Visual Studio",
+    color: "#9455CE",
+  },
+  {
+    name: "blazor",
+    text: "Blazor",
+    color: "#5C2D91",
+  },
+  {
+    name: "xamarin",
+    text: "Xamarin",
+    color: "#3498DB",
+  },
+  {
+    name: "azure",
+    text: "Azure",
+    color: "#0088D5",
+  },
+  {
+    name: "sharepoint",
+    text: "SharePoint",
+    color: "#038185",
+  },
+  {
+    name: "powerbi",
+    text: "PowerBI",
+    color: "#F2C811",
+  },
+];
 
 /** @type {import("tailwindcss").Config} */
-module.exports = {
+export default {
   // mode: "jit",
   content: [
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -218,16 +261,7 @@ module.exports = {
           900: "#333333",
           1000: "#1c1b2e",
         },
-        platform: {
-          angular: "#DD0031",
-          dotnet: "#5C2D91",
-          visualstudio: "#9455CE",
-          blazor: "#5C2D91",
-          xamarin: "#3498DB",
-          azure: "#0088D5",
-          sharepoint: "#038185",
-          powerbi: "#F2C811",
-        },
+        platform: platform.reduce((acc, c) => ({ ...acc, [c.name]: c.color }), {}),
         social: {
           phone: "#b31217",
           youtube: "#b31217",
