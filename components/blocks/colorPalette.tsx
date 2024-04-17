@@ -3,7 +3,6 @@ import { Template } from "tinacms";
 import platformColors from "../util/preval/get-tailwind-platform-colors.preval";
 
 export const ColorPalette = () => {
-
   return (
     <div className="flex min-h-24 w-full flex-wrap">
       {platformColors?.map((block) => (
