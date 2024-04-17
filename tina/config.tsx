@@ -105,6 +105,14 @@ const config = defineStaticConfig({
       userGroupGlobalSchema,
     ],
   },
+  search: {
+    tina: {
+      indexerToken: process.env.TINA_SEARCH_TOKEN,
+      stopwordLanguages: ["eng"],
+    },
+    indexBatchSize: 100,
+    maxSearchIndexFieldLength: 100,
+  },
 });
 
 export default config;

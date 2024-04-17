@@ -5,15 +5,17 @@ body:
   - type: markdown
     attributes:
       value: |
-        @camillars @sethdailyssw @ulyssesmaclaren
+        @camillars @sethdailyssw @ulyssesmaclaren (these people are tagged automatically)
+
         Fill out the below fields with information about your new page:
   - type: textarea
     id: cc
     attributes:
       label: "1. People in the loop:"
-      description: "@ tag the people involved/cc'd
+      description: |
+        @ tag the people involved/cc'd
 
-      ⚠️ Note: if migrating a page, @ tag the original author. If you don't know, ask Brady, Matt W, Adam, or a [State Manager](https://ssw.crm6.dynamics.com/main.aspx?appid=05daa2a9-8768-446e-b9d3-580c8a6f9b8b&pagetype=search&searchText=state+manager&searchType=0)"
+        ⚠️ Note: if migrating a page, @ tag the original author. If you don't know, ask Brady, Matt W, Adam, or a [State Manager](https://ssw.crm6.dynamics.com/main.aspx?appid=05daa2a9-8768-446e-b9d3-580c8a6f9b8b&pagetype=search&searchText=state+manager&searchType=0)
       placeholder: "{{ PERSON THIS TASK IS FROM }}, {{ PERSON YOU ARE GIVING THIS TASK }}"
       value: 
     validations:
@@ -119,7 +121,7 @@ body:
           
           We are experts in [Power BI](https://www.ssw.com.au/consulting/power-bi). Our developers are also experienced in [database development](https://www.ssw.com.au/consulting/database-development).
      "
-      placeholder: "{{ YOUR PAGE CONTENT }}"
+      placeholder: "{{ YOUR PAGE CONTENT - EITHER LINK A DOCX OR ADD TEXT HERE}}"
       value:
     validations:
       required: true
