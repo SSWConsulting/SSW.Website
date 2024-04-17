@@ -16,6 +16,7 @@ export const industryIndexSchema: Collection = {
     },
   },
   fields: [
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
     {
@@ -62,6 +63,7 @@ export const industryIndexSchema: Collection = {
           type: "image",
           label: "Logo",
           name: "logo",
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           uploadDir: () => "products",
         },
