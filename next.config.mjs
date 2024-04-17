@@ -1,5 +1,5 @@
 import bundleAnalyser from "@next/bundle-analyzer";
-import createNextPluginPreval from "next-plugin-preval/config";
+import createNextPluginPreval from "next-plugin-preval/config.js";
 const withNextPluginPreval = createNextPluginPreval();
 
 /** @type {import('next').NextConfig} */
