@@ -37,14 +37,14 @@ export const paletteSchema: Collection = {
           label: "Color hex value",
           description: "Edit color hex value here",
           ui: {
-            component: 'color',
-          }
+            component: "color",
+          },
         },
         {
           type: "string",
           name: "text",
           label: "Display text",
-        }
+        },
       ],
     },
   ],

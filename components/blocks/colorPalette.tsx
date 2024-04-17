@@ -11,7 +11,7 @@ async function getColors(paletteName: string) {
     const json = await res.json();
     return json;
   } catch (e) {
-    console.log(e);
+    alert(e);
   }
 }
 

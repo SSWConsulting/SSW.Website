@@ -8,7 +8,7 @@ const CACHE_MINS = 60;
 const CACHE_SECS = CACHE_MINS * 60;
 
 const querySchema = yup.object({
-  paletteName: yup.string().required()
+  paletteName: yup.string().required(),
 });
 
 export default async function handler(
