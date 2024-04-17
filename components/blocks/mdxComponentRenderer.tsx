@@ -252,7 +252,7 @@ export const componentRenderer: Components<{
   };
   JotFormEmbed: JotFormEmbedProps;
   ColorBlock: ColorBlockProps;
-  ColorPalette: ColorPaletteProps;
+  ColorPalette: Record<string, never>;
   SectionHeader: SectionHeaderProps;
   Content: ContentType;
   DomainFromQuery: DomainFromQueryProps;
