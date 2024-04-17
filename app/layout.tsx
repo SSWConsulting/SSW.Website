@@ -7,11 +7,25 @@ import { Open_Sans } from "next/font/google";
 // import Head from "next/head";
 // import { Theme } from "../components/layout/theme";
 import { Analytics } from "@/components/layout/analytics";
+import { Footer } from "@/components/layout/footer/footer";
 import ChatBaseBot from "@/components/zendeskButton/chatBaseBot";
 import { Metadata, Viewport } from "next";
 import { cache } from "react";
 import { MenuWrapper } from "../components/server/MenuWrapper";
 import client from "../tina/__generated__/client";
+
+import dayjs from "dayjs";
+import advancedFormat from "dayjs/plugin/advancedFormat";
+import isBetween from "dayjs/plugin/isBetween";
+import relativeTime from "dayjs/plugin/relativeTime";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
+
+dayjs.extend(relativeTime);
+dayjs.extend(timezone);
+dayjs.extend(utc);
+dayjs.extend(advancedFormat);
+dayjs.extend(isBetween);
 
 const getMegamenu = cache(async () => {
   const data = await client.queries.megamenu({
@@ -99,7 +113,7 @@ export default async function RootLayout({
           <main className="grow bg-white">{children}</main>
 
           {/* {showAzureBanner && <PreFooter />} */}
-          {/* <Footer /> */}
+          <Footer />
         </div>
         {/* </Theme> */}
         <ChatBaseBot />

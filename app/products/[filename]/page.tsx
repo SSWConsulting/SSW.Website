@@ -2,8 +2,6 @@ import client from "@/tina/client";
 import { cache } from "react";
 import ServerPage from "./ServerPage";
 
-export const dynamicParams = false;
-
 export async function generateStaticParams() {
   const pagesData = await client.queries.productsConnection();
   // const allPagesListData = PageListData;

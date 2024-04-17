@@ -2,7 +2,8 @@ import classNames from "classnames";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useLiveStreamProps } from "../../hooks/useLiveStreamProps";
-import { Footer, PreFooter } from "./footer";
+import { Footer } from "./footer/footer";
+import { PreFooter } from "./footer/pre-footer";
 import { Theme } from "./theme";
 
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
