@@ -12,10 +12,10 @@ import type { TableLayoutProps } from "./tableLayout";
 import type { YoutubePlaylistProps } from "./youtubePlaylist";
 
 import { BookingButton } from "../bookingButton/bookingButton";
+import { InlineJotFormProps } from "../inlineJotForm/inlineJotForm";
 import { Content, ContentType } from "./content";
 import { DomainFromQueryProps } from "./domainFromQuery";
 import { SectionHeaderProps } from "./sectionHeader";
-import { InlineJotFormProps } from "../inlineJotForm/inlineJotForm";
 
 const UtilityButton = dynamic(() =>
   import("../button/utilityButton").then((mod) => mod.UtilityButton)
@@ -252,7 +252,7 @@ export const componentRenderer: Components<{
   };
   JotFormEmbed: JotFormEmbedProps;
   ColorBlock: ColorBlockProps;
-  ColorPalette: ColorPaletteProps;
+  ColorPalette: Record<string, never>;
   SectionHeader: SectionHeaderProps;
   Content: ContentType;
   DomainFromQuery: DomainFromQueryProps;
