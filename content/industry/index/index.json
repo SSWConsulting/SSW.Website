@@ -8,19 +8,19 @@
   "industryList": [
     {
       "name": "Financial",
-      "url": "https://www.ssw.com.au/industry/finance",
+      "url": "/industry/finance",
       "description": "SSW's decades of expertise in finance technology shine through in their ability to create tailored software solutions that address the unique needs and challenges of financial institutions, ensuring they remain competitive and secure in a rapidly evolving market.",
       "logo": "/images/thumbs/ssw-finance-thumbnail.jpg"
     },
     {
       "name": "Non-Profit Organizations",
-      "url": "https://www.ssw.com.au/industry/non-profit",
+      "url": "/industry/non-profit",
       "description": "SSW leverages over 3 decades of technology expertise to deliver customized, secure, and cost-effective software solutions that enhance data management, donor relations, and fundraising efforts for non-profits, helping them stay mission-focused in a complex regulatory environment.",
       "logo": "/images/products/ssw-non-profit-thumbnail.jpg"
     },
     {
       "name": "Educational",
-      "url": "https://www.ssw.com.au/industry/educational",
+      "url": "/industry/educational",
       "description": " SSW excels in enhancing student safety and welfare in educational settings by designing custom technology solutions that help schools implement critical safety measures, manage student behavior, and streamline onboarding processes, demonstrating a strong commitment to the education sector.",
       "logo": "/images/products/ssw-educational-thumbnail.jpg"
     }
