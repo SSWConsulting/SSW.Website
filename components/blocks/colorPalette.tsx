@@ -1,60 +1,32 @@
-import classNames from "classnames";
-import { useEffect, useState } from "react";
 import { Template } from "tinacms";
+import { productColors } from "../util/constants";
+import classNames from "classnames";
 
-async function getColors(paletteName: string) {
-  try {
-    const res = await fetch(
-      "/api/get-colors?" + new URLSearchParams({ paletteName })
-    );
-    if (!res.ok) {
-      return {};
-    }
-    const json = await res.json();
-    return json;
-  } catch (e) {
-    alert(e);
-  }
-}
+export type ColorPaletteProps = {
+  colorBlocks: Block[];
+};
 
-interface Palette {
-  colors:
-    | {
-        name: string;
-        text: string;
-        hex: string;
-      }[]
-    | undefined;
-}
+type Block = {
+  color: keyof typeof productColors;
+  text: string;
+};
 
-export const ColorPalette = () => {
-  const [palette, setPalette] = useState<Palette>();
-
-  const init = async () => {
-    const colors = await getColors("platform");
-    setPalette(colors);
-  };
-
-  useEffect(() => {
-    init();
-    return () => {};
-  }, []);
-
+export const ColorPalette = (props: ColorPaletteProps) => {
+  const { colorBlocks } = props;
   return (
     <div className="flex min-h-24 w-full flex-wrap">
-      {palette?.colors &&
-        palette.colors.map(({ name, text, hex }) => (
-          <div
-            key={name}
-            className={classNames(
-              `bg-platform-${name}`,
-              "flex flex-grow flex-col items-center justify-center text-white"
-            )}
-          >
-            <div>{text}</div>
-            <div>{hex}</div>
-          </div>
-        ))}
+      {colorBlocks?.map((block, i) => (
+        <div
+          className={classNames(
+            block.color,
+            "flex flex-grow flex-col items-center justify-center text-white"
+          )}
+          key={i}
+        >
+          <div>{block.text}</div>
+          <div>{productColors[block.color]}</div>
+        </div>
+      ))}
     </div>
   );
 };
@@ -64,10 +36,27 @@ export const colorPaletteSchema: Template = {
   label: "Color Palette",
   fields: [
     {
-      type: "string",
-      name: "dummy",
-      label: "Dummy",
-      required: false,
+      type: "object",
+      label: "Color Blocks",
+      name: "colorBlocks",
+      list: true,
+      ui: {
+        itemProps: (props) => ({ label: props?.text }),
+      },
+      fields: [
+        {
+          type: "string",
+          label: "Color",
+          name: "color",
+          options: Object.keys(productColors).map((color) => color),
+          // options: productColors.map((color) => color),
+        },
+        {
+          type: "string",
+          label: "Text",
+          name: "text",
+        },
+      ],
     },
   ],
 };

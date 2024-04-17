@@ -24,7 +24,6 @@ import { newsletterSchema } from "./collections/newsletters";
 import { officeIndexSchema, officeSchema } from "./collections/offices";
 import { opportunitiesSchema } from "./collections/opportunities";
 import { pagesSchema } from "./collections/pages";
-import { paletteSchema } from "./collections/palette";
 import { partnerIndexSchema } from "./collections/partner";
 import { paymentDetailsSchema } from "./collections/payment-details";
 import { presenterSchema } from "./collections/presenter";
@@ -104,7 +103,6 @@ const config = defineStaticConfig({
       trainingSchema,
       userGroupPageSchema,
       userGroupGlobalSchema,
-      paletteSchema,
     ],
   },
   search: {
