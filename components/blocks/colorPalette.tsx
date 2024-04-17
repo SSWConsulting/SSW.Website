@@ -4,7 +4,9 @@ import { Template } from "tinacms";
 
 async function getColors(paletteName: string) {
   try {
-    const res = await fetch("/api/get-colors?" + new URLSearchParams({ paletteName }));
+    const res = await fetch(
+      "/api/get-colors?" + new URLSearchParams({ paletteName })
+    );
     if (!res.ok) {
       return {};
     }
@@ -16,11 +18,13 @@ async function getColors(paletteName: string) {
 }
 
 interface Palette {
-  colors: {
-    name: string
-    text: string
-    hex: string
-  }[] | undefined
+  colors:
+    | {
+        name: string;
+        text: string;
+        hex: string;
+      }[]
+    | undefined;
 }
 
 export const ColorPalette = () => {
@@ -29,27 +33,28 @@ export const ColorPalette = () => {
   const init = async () => {
     const colors = await getColors("platform");
     setPalette(colors);
-  }
+  };
 
   useEffect(() => {
     init();
-    return () => { };
-  }, [])
+    return () => {};
+  }, []);
 
   return (
     <div className="flex min-h-24 w-full flex-wrap">
-      {palette?.colors && palette.colors.map(({ name, text, hex }) => (
-        <div
-          key={name}
-          className={classNames(
-            `bg-platform-${name}`,
-            "flex flex-grow flex-col items-center justify-center text-white"
-          )}
-        >
-          <div>{text}</div>
-          <div>{hex}</div>
-        </div>
-      ))}
+      {palette?.colors &&
+        palette.colors.map(({ name, text, hex }) => (
+          <div
+            key={name}
+            className={classNames(
+              `bg-platform-${name}`,
+              "flex flex-grow flex-col items-center justify-center text-white"
+            )}
+          >
+            <div>{text}</div>
+            <div>{hex}</div>
+          </div>
+        ))}
     </div>
   );
 };
@@ -62,7 +67,7 @@ export const colorPaletteSchema: Template = {
       type: "string",
       name: "dummy",
       label: "Dummy",
-      required: false
-    }
+      required: false,
+    },
   ],
 };
