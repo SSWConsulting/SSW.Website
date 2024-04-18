@@ -114,15 +114,10 @@ export const eventsIndexSchema: Collection = {
     seoSchema,
     {
       type: "rich-text",
-      name: "_body",
-      label: "Body",
-      templates: [...Schemas.pageBlocks],
-      isBody: true,
-    },
-    {
-      type: "rich-text",
       name: "preface",
       label: "Preface",
+      templates: [...Schemas.pageBlocks],
+      isBody: true,
     },
     {
       type: "rich-text",
