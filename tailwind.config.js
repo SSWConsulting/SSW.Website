@@ -1,58 +1,14 @@
-import colors from "tailwindcss/colors";
-import plugin from "tailwindcss/plugin";
-
-export const platform = [
-  {
-    name: "angular",
-    text: "Angular",
-    color: "#DD0031",
-  },
-  {
-    name: "dotnet",
-    text: ".NET",
-    color: "#5C2D91",
-  },
-  {
-    name: "visualstudio",
-    text: "Visual Studio",
-    color: "#9455CE",
-  },
-  {
-    name: "blazor",
-    text: "Blazor",
-    color: "#5C2D91",
-  },
-  {
-    name: "xamarin",
-    text: "Xamarin",
-    color: "#3498DB",
-  },
-  {
-    name: "azure",
-    text: "Azure",
-    color: "#0088D5",
-  },
-  {
-    name: "sharepoint",
-    text: "SharePoint",
-    color: "#038185",
-  },
-  {
-    name: "powerbi",
-    text: "PowerBI",
-    color: "#F2C811",
-  },
-];
+const colors = require("tailwindcss/colors");
+const plugin = require("tailwindcss/plugin");
 
 /** @type {import("tailwindcss").Config} */
-export default {
+module.exports = {
   // mode: "jit",
   content: [
     "./components/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "node_modules/ssw.megamenu/**/*.js",
   ],
-  safelist: [...platform.map((p) => `bg-platform-${p.name}`)],
   // This needs to be set to `class` or it will use OS settings https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
   darkMode: "class",
   theme: {
@@ -262,7 +218,16 @@ export default {
           900: "#333333",
           1000: "#1c1b2e",
         },
-        platform: platform.reduce((acc, c) => ({ ...acc, [c.name]: c.color }), {}),
+        platform: {
+          angular: "#DD0031",
+          dotnet: "#5C2D91",
+          visualstudio: "#9455CE",
+          blazor: "#5C2D91",
+          xamarin: "#3498DB",
+          azure: "#0088D5",
+          sharepoint: "#038185",
+          powerbi: "#F2C811",
+        },
         social: {
           phone: "#b31217",
           youtube: "#b31217",
