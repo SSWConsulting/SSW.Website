@@ -1,30 +1,20 @@
-import { Template } from "tinacms";
-import { productColors } from "../util/constants";
 import classNames from "classnames";
+import { Template } from "tinacms";
+import platformColors from "../util/preval/get-tailwind-platform-colors.preval";
 
-export type ColorPaletteProps = {
-  colorBlocks: Block[];
-};
-
-type Block = {
-  color: keyof typeof productColors;
-  text: string;
-};
-
-export const ColorPalette = (props: ColorPaletteProps) => {
-  const { colorBlocks } = props;
+export const ColorPalette = () => {
   return (
     <div className="flex min-h-24 w-full flex-wrap">
-      {colorBlocks?.map((block, i) => (
+      {platformColors?.map((block) => (
         <div
           className={classNames(
-            block.color,
+            block.className,
             "flex flex-grow flex-col items-center justify-center text-white"
           )}
-          key={i}
+          key={block.name}
         >
           <div>{block.text}</div>
-          <div>{productColors[block.color]}</div>
+          <div>{block.color}</div>
         </div>
       ))}
     </div>
@@ -36,27 +26,9 @@ export const colorPaletteSchema: Template = {
   label: "Color Palette",
   fields: [
     {
-      type: "object",
-      label: "Color Blocks",
-      name: "colorBlocks",
-      list: true,
-      ui: {
-        itemProps: (props) => ({ label: props?.text }),
-      },
-      fields: [
-        {
-          type: "string",
-          label: "Color",
-          name: "color",
-          options: Object.keys(productColors).map((color) => color),
-          // options: productColors.map((color) => color),
-        },
-        {
-          type: "string",
-          label: "Text",
-          name: "text",
-        },
-      ],
+      type: "string",
+      label: "Name",
+      name: "name",
     },
   ],
 };
