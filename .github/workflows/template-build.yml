@@ -124,5 +124,7 @@ jobs:
             NEXT_PUBLIC_CHATBASE_BOT_ID=${{ env.NEXT_PUBLIC_CHATBASE_BOT_ID }}
             SITE_URL=https://www.ssw.com.au
             TINA_SEARCH_TOKEN=${{ secrets.TINA_SEARCH_TOKEN }}
+            PULL_REQUEST_ID=${{ github.event.number }}
+
           tags: |
             ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}

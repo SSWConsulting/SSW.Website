@@ -61,6 +61,13 @@ const config = defineStaticConfig({
     publicFolder: "public", // The public asset folder for your framework
     outputFolder: "admin", // within the public folder
   },
+  ui: {
+    previewUrl: () => {
+      return {
+        url: `https://${process.env.APP_SERVICE_NAME}-pr-${process.env.PULL_REQUEST_ID}.azurewebsites.net/`,
+      };
+    },
+  },
   cmsCallback: (cms: TinaCMS) => {
     cms.flags.set("branch-switcher", true);
     return cms;
