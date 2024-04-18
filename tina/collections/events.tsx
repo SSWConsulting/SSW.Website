@@ -121,6 +121,11 @@ export const eventsIndexSchema: Collection = {
     },
     {
       type: "rich-text",
+      name: "preface",
+      label: "Preface",
+    },
+    {
+      type: "rich-text",
       name: "sidebarBody",
       label: "Sidebar Body",
       templates: [...Schemas.pageBlocks],

@@ -36,6 +36,7 @@ export default function EventsIndexPage(
         <Container size="small">
           <div>
             <h1 className="mt-0 pt-0">SSW Events</h1>
+            <p>{data.eventsIndex.preface}</p>
             <TinaMarkdown
               content={data.eventsIndex._body}
               components={componentRenderer}
