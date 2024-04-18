@@ -62,9 +62,15 @@ const config = defineStaticConfig({
     outputFolder: "admin", // within the public folder
   },
   ui: {
-    previewUrl: () => {
+    previewUrl: (context) => {
+      const { branch } = context;
+      const url =
+        branch === "main"
+          ? "https://www.ssw.com.au"
+          : `https://${process.env.NEXT_PUBLIC_APP_SERVICE_NAME}-pr-${process.env.NEXT_PUBLIC_PULL_REQUEST_ID}.azurewebsites.net/`;
+
       return {
-        url: `https://${process.env.APP_SERVICE_NAME}-pr-${process.env.PULL_REQUEST_ID}.azurewebsites.net/`,
+        url: url,
       };
     },
   },
