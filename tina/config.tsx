@@ -67,7 +67,7 @@ const config = defineStaticConfig({
       const url =
         branch === "main"
           ? "https://www.ssw.com.au"
-          : `https://${process.env.NEXT_PUBLIC_APP_SERVICE_NAME}-pr-${process.env.NEXT_PUBLIC_PULL_REQUEST_ID}.azurewebsites.net/`;
+          : process.env.NEXT_PUBLIC_SLOT_URL;
 
       return {
         url: url,
