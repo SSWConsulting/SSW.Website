@@ -1,3 +1,6 @@
+import headlessuiPlugin from "@headlessui/tailwindcss";
+import typographyPlugin from "@tailwindcss/typography";
+import gradientsPlugin from "tailwindcss-gradients";
 import colors from "tailwindcss/colors";
 import plugin from "tailwindcss/plugin";
 
@@ -403,9 +406,9 @@ export default {
     // extend: { typography: ["tint", "dark", "primary"] },
   },
   plugins: [
-    require("@tailwindcss/typography"),
-    require("tailwindcss-gradients"),
-    require("@headlessui/tailwindcss")({ prefix: "ui" }),
+    typographyPlugin,
+    gradientsPlugin,
+    headlessuiPlugin({ prefix: "ui" }),
 
     // Use flex-basis with gap
     plugin(function ({ matchUtilities, theme }) {
