@@ -138,3 +138,5 @@ jobs:
             TINA_SEARCH_TOKEN=${{ secrets.TINA_SEARCH_TOKEN }}
           tags: |
             ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
