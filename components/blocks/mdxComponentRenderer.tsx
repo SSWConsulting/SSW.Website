@@ -14,11 +14,10 @@ import type { YoutubePlaylistProps } from "./youtubePlaylist";
 import { BookingButton } from "../bookingButton/bookingButton";
 import { UtilityButton } from "../button/utilityButton";
 import { TweetEmbed } from "../embeds/tweetEmbed";
-import { ColorPaletteProps } from "./colorPalette";
+import { InlineJotFormProps } from "../inlineJotForm/inlineJotForm";
 import { Content, ContentType } from "./content";
 import { DomainFromQueryProps } from "./domainFromQuery";
 import { SectionHeaderProps } from "./sectionHeader";
-import { InlineJotFormProps } from "../inlineJotForm/inlineJotForm";
 
 const MicrosoftPanel = dynamic(() =>
   import("../offices/microsoftPanel").then((mod) => mod.default)
@@ -76,7 +75,7 @@ const FixedTabsLayout = dynamic(() =>
   import("./fixedTabsLayout").then((mod) => mod.FixedTabsLayout)
 );
 const Flag = dynamic(() => import("./flag").then((mod) => mod.Flag));
-const ColorPalette = dynamic<ColorPaletteProps>(() =>
+const ColorPalette = dynamic(() =>
   import("./colorPalette").then((mod) => mod.ColorPalette)
 );
 const GoogleMapsWrapper = dynamic(() =>
@@ -249,7 +248,7 @@ export const componentRenderer: Components<{
   };
   JotFormEmbed: JotFormEmbedProps;
   ColorBlock: ColorBlockProps;
-  ColorPalette: ColorPaletteProps;
+  ColorPalette: Record<string, never>;
   SectionHeader: SectionHeaderProps;
   Content: ContentType;
   DomainFromQuery: DomainFromQueryProps;
