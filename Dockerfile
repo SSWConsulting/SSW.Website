@@ -22,6 +22,7 @@ WORKDIR /app
 
 COPY . .
 COPY --from=deps /app/node_modules ./node_modules
+COPY --from=builder --chown=nextjs:nodejs /app/.next/cache ./.next/cache
 
 # Add env for production
 # COPY .docker/production/.env.local .env.local
