@@ -1,7 +1,7 @@
 import client from "@/tina/client";
+import { cache } from "react";
 import ServerPage from "./ServerPage";
 
-export const dynamic = "force-static";
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
@@ -26,13 +26,13 @@ export async function generateStaticParams() {
   return pages;
 }
 
-const getData = async (filename: string) => {
+const getData = cache(async (filename: string) => {
   const data = await client.queries.productContentQuery({
     relativePath: `${filename}.mdx`,
   });
 
   return { ...data, timestamp: new Date().toISOString() };
-};
+});
 
 export default async function ProductsIndex({
   params,
