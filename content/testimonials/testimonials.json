@@ -7,6 +7,9 @@
       "body": "I just wanted to thank you for the .NET Superpowers tour that you organized. The presentation and content were truly inspiring, and I received fantastic feedback from my colleagues at Ceridian.\n",
       "categories": [
         {
+          "category": "content/testimonialCategories/Web-Development.mdx"
+        },
+        {
           "category": "content/testimonialCategories/Training-Events.mdx"
         }
       ]
@@ -117,6 +120,9 @@
       "company": "nsquared solutions",
       "body": "Working with SSW on our Blazor projects has been a positive and rewarding experience. Their expertise and commitment to quality are evident.\n",
       "categories": [
+        {
+          "category": "content/testimonialCategories/Web-Development.mdx"
+        },
         {
           "category": "content/testimonialCategories/Blazor.mdx"
         },
