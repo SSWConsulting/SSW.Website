@@ -23,11 +23,11 @@ WORKDIR /app
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-RUN mkdir -p /app/.next/cache && chown nextjs:nodejs /app/.next/cache
-VOLUME ["/app/.next/cache"]
-
 COPY . .
 COPY --from=deps /app/node_modules ./node_modules
+
+RUN mkdir -p /app/.next/cache && chown nextjs:nodejs /app/.next/cache
+VOLUME ["/app/.next/cache"]
 
 # Add env for production
 # COPY .docker/production/.env.local .env.local
