@@ -1,7 +1,7 @@
 import client from "@/tina/client";
 import ServerPage from "./ServerPage";
 
-export const dynamic = "error";
+export const dynamic = "force-static";
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
