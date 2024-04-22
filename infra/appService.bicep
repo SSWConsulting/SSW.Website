@@ -6,6 +6,8 @@ param dockerRegistryServerURL string
 param appInsightConnectionString string
 param keyVaultName string
 
+param healthCheckPath string = '/'
+
 @allowed([
   'B1'
   'B2'
@@ -151,6 +153,7 @@ resource appService 'Microsoft.Web/sites@2022-03-01' = {
       http20Enabled: true
       minTlsVersion: '1.2'
       linuxFxVersion: 'DOCKER|${acr.properties.loginServer}/${dockerImage}:production'
+      healthCheckPath: healthCheckPath
     }
     clientAffinityEnabled: false
   }

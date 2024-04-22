@@ -100,6 +100,7 @@ resource prSlot 'Microsoft.Web/sites/slots@2021-02-01' = {
     siteConfig: {
       appSettings: appSettings
       acrUseManagedIdentityCreds: true
+      healthCheckPath: '/'
     }
     clientAffinityEnabled: false
   }
