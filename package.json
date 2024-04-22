@@ -47,7 +47,7 @@
     "ts-node": "^10.9.2"
   },
   "dependencies": {
-    "@azure/msal-node": "^2.3.0",
+    "@azure/msal-node": "^2.7.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@headlessui/react": "^1.7.18",
     "@headlessui/tailwindcss": "^0.2.0",
