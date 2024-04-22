@@ -83,11 +83,11 @@ var appSettings = [
 ]
 
 
-resource prodSlot 'Microsoft.Web/sites@2022-03-01' existing = {
+resource prodSlot 'Microsoft.Web/sites@2023-01-01' existing = {
   name: appServiceName
 }
 
-resource prSlot 'Microsoft.Web/sites/slots@2021-02-01' = {
+resource prSlot 'Microsoft.Web/sites/slots@2023-01-01' = {
   name: slotName
   parent: prodSlot
   location: location
@@ -100,7 +100,6 @@ resource prSlot 'Microsoft.Web/sites/slots@2021-02-01' = {
     siteConfig: {
       appSettings: appSettings
       acrUseManagedIdentityCreds: true
-      healthCheckPath: '/'
     }
     clientAffinityEnabled: false
   }

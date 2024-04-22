@@ -133,7 +133,7 @@ var appSettings = [
 var productionName = 'app-${projectName}-${entropy}'
 var kind = 'app,linux,container'
 
-resource appService 'Microsoft.Web/sites@2022-03-01' = {
+resource appService 'Microsoft.Web/sites@2023-01-01' = {
   name: productionName
   location: location
   kind: 'app,linux,container'
@@ -159,7 +159,7 @@ resource appService 'Microsoft.Web/sites@2022-03-01' = {
   }
 }
 
-resource stagingSlot 'Microsoft.Web/sites/slots@2022-09-01' = {
+resource stagingSlot 'Microsoft.Web/sites/slots@2023-01-01' = {
   parent: appService
   name: 'staging'
   location: location
