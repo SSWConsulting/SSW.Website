@@ -9,8 +9,8 @@ overrides:
 
 dependencies:
   '@azure/msal-node':
-    specifier: ^2.3.0
-    version: 2.3.0
+    specifier: ^2.7.0
+    version: 2.7.0
   '@fortawesome/fontawesome-svg-core':
     specifier: ^6.5.2
     version: 6.5.2
@@ -353,16 +353,16 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@azure/msal-common@14.2.0:
-    resolution: {integrity: sha512-oUYJcdpmDlgs4DPthu8J1aWmOMhQanS/On6b22bpbZl+KOfVhgoF7dKlGuqaRXyH8GgnPy+vCyOyMva3Ge9UXA==}
+  /@azure/msal-common@14.9.0:
+    resolution: {integrity: sha512-yzBPRlWPnTBeixxLNI3BBIgF5/bHpbhoRVuuDBnYjCyWRavaPUsKAHUDYLqpGkBLDciA6TCc6GOxN4/S3WiSxg==}
     engines: {node: '>=0.8.0'}
     dev: false
 
-  /@azure/msal-node@2.3.0:
-    resolution: {integrity: sha512-sgUXmbBTBUncAeeS1m399s77Cih0xQbLRvob8pfdBW45/LTfFko9V3mX41gjnPDB037Fl4hVtwJ92GVCrI7jgw==}
-    engines: {node: 18 || 20}
+  /@azure/msal-node@2.7.0:
+    resolution: {integrity: sha512-wXD8LkUvHICeSWZydqg6o8Yvv+grlBEcmLGu+QEI4FcwFendbTEZrlSygnAXXSOCVaGAirWLchca35qrgpO6Jw==}
+    engines: {node: '>=16'}
     dependencies:
-      '@azure/msal-common': 14.2.0
+      '@azure/msal-common': 14.9.0
       jsonwebtoken: 9.0.2
       uuid: 8.3.2
     dev: false
