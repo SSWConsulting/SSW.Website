@@ -1,13 +1,12 @@
 import client from "@/tina/client";
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
-import { cache } from "react";
 import ClientPage from "./ClientPage";
 import ServerPage from "./ServerPage";
 
-const getData = cache(async () => {
+const getData = async () => {
   return await client.queries.productsIndexQuery();
-});
+};
 
 export async function generateMetadata(): Promise<Metadata> {
   // TODO: Replicate logic from seo.tsx, export it from a different file so this can be reused

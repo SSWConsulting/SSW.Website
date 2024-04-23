@@ -1,5 +1,6 @@
 import client from "@/tina/client";
-import { cache } from "react";
+import { draftMode } from "next/headers";
+import ClientPage from "../ClientPage";
 import ServerPage from "./ServerPage";
 
 export const dynamicParams = false;
@@ -26,13 +27,13 @@ export async function generateStaticParams() {
   return pages;
 }
 
-const getData = cache(async (filename: string) => {
+const getData = async (filename: string) => {
   const data = await client.queries.productContentQuery({
     relativePath: `${filename}.mdx`,
   });
 
   return { ...data, timestamp: new Date().toISOString() };
-});
+};
 
 export default async function ProductsIndex({
   params,
@@ -42,11 +43,11 @@ export default async function ProductsIndex({
   const { filename } = params;
 
   const tinaProps = await getData(filename);
+  const { isEnabled } = draftMode();
 
-  return (
-    <>
-      <h1>{tinaProps.timestamp}</h1>
-      <ServerPage data={tinaProps.data} />
-    </>
+  return isEnabled ? (
+    <ClientPage props={{ ...tinaProps }} />
+  ) : (
+    <ServerPage data={tinaProps.data} />
   );
 }
