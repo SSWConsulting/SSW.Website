@@ -1,6 +1,6 @@
 import client from "@/tina/client";
 import { draftMode } from "next/headers";
-import ClientPage from "../ClientPage";
+import ClientPage from "./ClientPage";
 import ServerPage from "./ServerPage";
 
 export const dynamicParams = false;
