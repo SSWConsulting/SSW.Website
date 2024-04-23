@@ -1,14 +1,61 @@
-const colors = require("tailwindcss/colors");
-const plugin = require("tailwindcss/plugin");
+import headlessuiPlugin from "@headlessui/tailwindcss";
+import typographyPlugin from "@tailwindcss/typography";
+import gradientsPlugin from "tailwindcss-gradients";
+import colors from "tailwindcss/colors";
+import plugin from "tailwindcss/plugin";
+
+export const platform = [
+  {
+    name: "angular",
+    text: "Angular",
+    color: "#DD0031",
+  },
+  {
+    name: "dotnet",
+    text: ".NET",
+    color: "#5C2D91",
+  },
+  {
+    name: "visualstudio",
+    text: "Visual Studio",
+    color: "#9455CE",
+  },
+  {
+    name: "blazor",
+    text: "Blazor",
+    color: "#5C2D91",
+  },
+  {
+    name: "xamarin",
+    text: "Xamarin",
+    color: "#3498DB",
+  },
+  {
+    name: "azure",
+    text: "Azure",
+    color: "#0088D5",
+  },
+  {
+    name: "sharepoint",
+    text: "SharePoint",
+    color: "#038185",
+  },
+  {
+    name: "powerbi",
+    text: "PowerBI",
+    color: "#F2C811",
+  },
+];
 
 /** @type {import("tailwindcss").Config} */
-module.exports = {
+export default {
   // mode: "jit",
   content: [
     "./components/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "node_modules/ssw.megamenu/**/*.js",
   ],
+  safelist: [...platform.map((p) => `bg-platform-${p.name}`)],
   // This needs to be set to `class` or it will use OS settings https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
   darkMode: "class",
   theme: {
@@ -49,6 +96,7 @@ module.exports = {
       height: {
         22: "5.5rem",
         62: "15.5rem",
+        97: "24.25rem",
         102: "25.5rem",
         112: "28rem",
         172: "43rem",
@@ -218,16 +266,7 @@ module.exports = {
           900: "#333333",
           1000: "#1c1b2e",
         },
-        platform: {
-          angular: "#DD0031",
-          dotnet: "#5C2D91",
-          visualstudio: "#9455CE",
-          blazor: "#5C2D91",
-          xamarin: "#3498DB",
-          azure: "#0088D5",
-          sharepoint: "#038185",
-          powerbi: "#F2C811",
-        },
+        platform: platform.reduce((acc, c) => ({ ...acc, [c.name]: c.color }), {}),
         social: {
           phone: "#b31217",
           youtube: "#b31217",
@@ -368,9 +407,9 @@ module.exports = {
     // extend: { typography: ["tint", "dark", "primary"] },
   },
   plugins: [
-    require("@tailwindcss/typography"),
-    require("tailwindcss-gradients"),
-    require("@headlessui/tailwindcss")({ prefix: "ui" }),
+    typographyPlugin,
+    gradientsPlugin,
+    headlessuiPlugin({ prefix: "ui" }),
 
     // Use flex-basis with gap
     plugin(function ({ matchUtilities, theme }) {

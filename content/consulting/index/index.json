@@ -1,6 +1,7 @@
 {
   "seo": {
-    "title": "SSW Consulting Services | Over 25 years of experience developing awesome solutions on top of Angular, React, Blazor, .NET, Azure, GitHub, DevOps (was VSTS/TFS), Power Apps, Power Automate, Power BI, SharePoint, Dynamics and SQL Server"
+    "title": "SSW Consulting Services",
+    "description": "SSW offers consulting services for Web, Mobile, Design & UX. Specifically Power BI, .Net, Azure, Power Platform AI, & MAUI."
   },
   "sidebar": [
     {

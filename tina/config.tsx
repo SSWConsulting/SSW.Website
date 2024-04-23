@@ -61,6 +61,19 @@ const config = defineStaticConfig({
     publicFolder: "public", // The public asset folder for your framework
     outputFolder: "admin", // within the public folder
   },
+  ui: {
+    previewUrl: (context) => {
+      const { branch } = context;
+      const url =
+        branch === "main"
+          ? "https://www.ssw.com.au"
+          : process.env.NEXT_PUBLIC_SLOT_URL;
+
+      return {
+        url: url,
+      };
+    },
+  },
   cmsCallback: (cms: TinaCMS) => {
     cms.flags.set("branch-switcher", true);
     return cms;

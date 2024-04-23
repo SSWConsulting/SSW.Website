@@ -70,7 +70,7 @@ export default function IndustryPage(
             {pageData?.subHeading}
           </h2>
           <div
-            className="mb-4 mt-15"
+            className="mb-24 mt-15"
             data-tina-field={tinaField(pageData, "_body")}
           >
             <TinaMarkdown
