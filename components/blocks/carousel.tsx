@@ -92,13 +92,14 @@ const CarouselItemImage = (props: CarouselItemImageProps) => {
         carouselSchema,
         carouselBlock.items.value + `[${index}]`
       )}
+      className="h-97"
     >
       <Image
         src={imgSrc ?? ""}
         alt={label}
-        height={388}
-        width={1080}
+        fill
         priority={index === 0}
+        className="object-cover"
       />
       {/* `legend` required so that the carousel works properly */}
       <p className="legend sr-only">{label}</p>
