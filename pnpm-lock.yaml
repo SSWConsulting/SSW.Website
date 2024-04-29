@@ -173,8 +173,8 @@ devDependencies:
     specifier: ^15.0.2
     version: 15.0.2(react-dom@18.2.0)(react@18.2.0)
   '@tinacms/cli':
-    specifier: ^1.5.43
-    version: 1.5.43(@babel/core@7.23.9)(@types/node@20.12.2)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(ts-node@10.9.2)
+    specifier: ^1.5.44
+    version: 1.5.44(@babel/core@7.23.9)(@types/node@20.12.2)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(ts-node@10.9.2)
   '@types/js-cookie':
     specifier: ^3.0.6
     version: 3.0.6
@@ -565,7 +565,7 @@ packages:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
     dependencies:
       '@babel/core': 7.23.2
-      '@babel/helper-compilation-targets': 7.22.15
+      '@babel/helper-compilation-targets': 7.23.6
       '@babel/helper-plugin-utils': 7.22.5
       debug: 4.3.4
       lodash.debounce: 4.0.8
@@ -580,7 +580,7 @@ packages:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
     dependencies:
       '@babel/core': 7.23.9
-      '@babel/helper-compilation-targets': 7.22.15
+      '@babel/helper-compilation-targets': 7.23.6
       '@babel/helper-plugin-utils': 7.22.5
       debug: 4.3.4
       lodash.debounce: 4.0.8
@@ -597,7 +597,7 @@ packages:
     resolution: {integrity: sha512-OErEqsrxjZTJciZ4Oo+eoZqeW9UIiOcuYKRJA4ZAgV9myA+pOXhhmpfNCKjEH/auVfEYVFJ6y1Tc4r0eIApqiw==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/template': 7.22.15
+      '@babel/template': 7.23.9
       '@babel/types': 7.23.9
 
   /@babel/helper-hoist-variables@7.22.5:
@@ -758,7 +758,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/helper-function-name': 7.23.0
-      '@babel/template': 7.22.15
+      '@babel/template': 7.23.9
       '@babel/types': 7.23.9
 
   /@babel/helpers@7.23.2:
@@ -4086,7 +4086,7 @@ packages:
     resolution: {integrity: sha512-MHjT95QuipcPrpLM+8JMSzFx6eHp5Bm+4XeFDJlwsvVBjmKNiIAvasGK2fxz2WbGRlnvqehFbh07MMa7n3YJnw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
-      '@jridgewell/trace-mapping': 0.3.20
+      '@jridgewell/trace-mapping': 0.3.25
       callsites: 3.1.0
       graceful-fs: 4.2.11
     dev: true
@@ -6377,8 +6377,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: true
 
-  /@tinacms/app@1.2.39(@babel/core@7.23.9)(@types/node@20.12.2)(@types/react@18.2.79)(ts-node@10.9.2)(yup@0.32.11):
-    resolution: {integrity: sha512-q8nDzVPn9o4mAObG17K58BdoLL4+OzUAhJyZa/AYjkWySuaMalCUMfSTSE7Y4pNoY6riDTo5XMxCMrXx5dim1w==}
+  /@tinacms/app@1.2.40(@babel/core@7.23.9)(@types/node@20.12.2)(@types/react@18.2.79)(ts-node@10.9.2)(yup@0.32.11):
+    resolution: {integrity: sha512-t/TYxizZr9Bssz5uGSxBkS2hmnyZ/47wbJhN4AYNoflQcEINCTijVKeAhd4sA6+hWYTr/bGNkqYhH+DLLtbKeQ==}
     dependencies:
       '@codemirror/language': 6.0.0
       '@graphiql/toolkit': 0.8.4(@types/node@20.12.2)(graphql@15.8.0)
@@ -6396,7 +6396,7 @@ packages:
       react-dom: 17.0.2(react@17.0.2)
       react-router-dom: 6.3.0(react-dom@17.0.2)(react@17.0.2)
       tailwindcss: 3.4.3(ts-node@10.9.2)
-      tinacms: 1.6.1(@babel/core@7.23.9)(@types/react@18.2.79)(react-dom@17.0.2)(react@17.0.2)
+      tinacms: 1.6.2(@babel/core@7.23.9)(@types/react@18.2.79)(react-dom@17.0.2)(react@17.0.2)
       typescript: 4.9.5
       zod: 3.22.4
     transitivePeerDependencies:
@@ -6423,8 +6423,8 @@ packages:
       - yup
     dev: true
 
-  /@tinacms/cli@1.5.43(@babel/core@7.23.9)(@types/node@20.12.2)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(ts-node@10.9.2):
-    resolution: {integrity: sha512-HmsPLuLqPUrEOMmOgB/wLWYMZPE3Hsu1A4lbjYLEz2ho5TLozeGv/l7E2O4v/YMgkUGENt1MQhrDP1xZen5GFA==}
+  /@tinacms/cli@1.5.44(@babel/core@7.23.9)(@types/node@20.12.2)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(ts-node@10.9.2):
+    resolution: {integrity: sha512-sPIYIgOEVXgH5qzP+9U4VYUdr2xGJDsqQClovierMgfJaHdpOmNNyYOpRrRm6Xt+z9PdgslpcrFUvGe6PckIUA==}
     hasBin: true
     dependencies:
       '@graphql-codegen/core': 2.6.8(graphql@15.8.0)
@@ -6441,7 +6441,7 @@ packages:
       '@tailwindcss/aspect-ratio': 0.4.2(tailwindcss@3.4.3)
       '@tailwindcss/line-clamp': 0.3.1(tailwindcss@3.4.3)
       '@tailwindcss/typography': 0.5.10(tailwindcss@3.4.3)
-      '@tinacms/app': 1.2.39(@babel/core@7.23.9)(@types/node@20.12.2)(@types/react@18.2.79)(ts-node@10.9.2)(yup@0.32.11)
+      '@tinacms/app': 1.2.40(@babel/core@7.23.9)(@types/node@20.12.2)(@types/react@18.2.79)(ts-node@10.9.2)(yup@0.32.11)
       '@tinacms/datalayer': 1.2.33(react@18.2.0)
       '@tinacms/graphql': 1.4.33(react@18.2.0)
       '@tinacms/metrics': 1.0.2(fs-extra@9.1.0)
@@ -6486,7 +6486,7 @@ packages:
       readable-stream: 4.4.2
       rollup-plugin-visualizer: 5.9.2
       tailwindcss: 3.4.3(ts-node@10.9.2)
-      tinacms: 1.6.1(@babel/core@7.23.9)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+      tinacms: 1.6.2(@babel/core@7.23.9)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
       typanion: 3.13.0
       typescript: 4.3.5
       url-pattern: 1.0.3
@@ -10983,7 +10983,7 @@ packages:
     resolution: {integrity: sha512-ESAc/RJvGTFEzRwOTT4+lNDk/GNHMkKbNzsvT0qKRfDyyYTskxB5rnU2njIDYVxXCBHHEI1c0YwHob3WaYujOg==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
-      '@babel/template': 7.22.15
+      '@babel/template': 7.23.9
       '@babel/types': 7.23.9
       '@types/babel__core': 7.20.5
       '@types/babel__traverse': 7.20.5
@@ -18943,8 +18943,8 @@ packages:
       - supports-color
     dev: false
 
-  /tinacms@1.6.1(@babel/core@7.23.9)(@types/react@18.2.79)(react-dom@17.0.2)(react@17.0.2):
-    resolution: {integrity: sha512-3FddzJqqPUWv3Wt0kNTPIS0EsEvHYMxJPQFUCZiFP1oHj/1atbHmoy89Yr/pHsNHtu2dkzqeph+9wEvPPxI6ew==}
+  /tinacms@1.6.2(@babel/core@7.23.9)(@types/react@18.2.79)(react-dom@17.0.2)(react@17.0.2):
+    resolution: {integrity: sha512-m/F93Xhojh2vz1QU5ut7a53k6I5+R5F/BxMTNW4LuvEIvjSroXT5zee2doi1HbPoIZDWMv/oODBG8rWkmJ7WXA==}
     peerDependencies:
       react: '>=16.14.0'
       react-dom: '>=16.14.0'
@@ -19022,8 +19022,8 @@ packages:
       - supports-color
     dev: true
 
-  /tinacms@1.6.1(@babel/core@7.23.9)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-3FddzJqqPUWv3Wt0kNTPIS0EsEvHYMxJPQFUCZiFP1oHj/1atbHmoy89Yr/pHsNHtu2dkzqeph+9wEvPPxI6ew==}
+  /tinacms@1.6.2(@babel/core@7.23.9)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-m/F93Xhojh2vz1QU5ut7a53k6I5+R5F/BxMTNW4LuvEIvjSroXT5zee2doi1HbPoIZDWMv/oODBG8rWkmJ7WXA==}
     peerDependencies:
       react: '>=16.14.0'
       react-dom: '>=16.14.0'
@@ -19764,7 +19764,7 @@ packages:
     resolution: {integrity: sha512-/EH/sDgxU2eGxajKdwLCDmQ4FWq+kpi3uCmBGpw1xJtnAxEjlD8j8PEiGWpCIMIs3ciNAgH0d3TTJiUkYzyZjA==}
     engines: {node: '>=10.12.0'}
     dependencies:
-      '@jridgewell/trace-mapping': 0.3.20
+      '@jridgewell/trace-mapping': 0.3.25
       '@types/istanbul-lib-coverage': 2.0.6
       convert-source-map: 2.0.0
     dev: true
