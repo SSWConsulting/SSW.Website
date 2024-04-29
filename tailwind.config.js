@@ -48,6 +48,7 @@ export const platform = [
 ];
 
 /** @type {import("tailwindcss").Config} */
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   // mode: "jit",
   content: [
@@ -266,7 +267,10 @@ export default {
           900: "#333333",
           1000: "#1c1b2e",
         },
-        platform: platform.reduce((acc, c) => ({ ...acc, [c.name]: c.color }), {}),
+        platform: platform.reduce(
+          (acc, c) => ({ ...acc, [c.name]: c.color }),
+          {}
+        ),
         social: {
           phone: "#b31217",
           youtube: "#b31217",

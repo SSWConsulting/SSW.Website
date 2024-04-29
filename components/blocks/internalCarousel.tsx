@@ -8,7 +8,9 @@ import { Container } from "../util/container";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
+import { BsArrowRightCircle, BsYoutube } from "react-icons/bs";
 import { Carousel as CarouselImplementation } from "react-responsive-carousel";
+import { UtilityButton } from "../button/utilityButton";
 
 export const InternalCarousel = ({ data }) => {
   return (
@@ -70,13 +72,24 @@ const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
   );
 };
 
-const renderBody = ({ header, paragraph, website, technologies }) => {
+const renderBody = ({
+  header,
+  paragraph,
+  website,
+  technologies,
+  caseStudyUrl,
+  videoUrl,
+}) => {
   return (
     <div key={header} className={header ? "" : "hidden"}>
       <div className="mt-2 flex justify-between text-left font-semibold text-sswRed prose-p:py-0">
-        <h4>{header}</h4>
+        <h3>{header}</h3>
         <span className={website ? "" : "hidden"}>
-          {website && <CustomLink href={website}>Visit Website</CustomLink>}
+          {website && (
+            <CustomLink className="font-normal text-white" href={website}>
+              Visit Website
+            </CustomLink>
+          )}
         </span>
       </div>
       <div className="text-left prose-p:py-2">
@@ -87,7 +100,39 @@ const renderBody = ({ header, paragraph, website, technologies }) => {
           <TechBlock name={tech.name} key={index} />
         ))}
       </div>
-      <div className="mb-7 mt-3 h-1 w-full bg-sswRed"></div>
+      <div className="my-5 flex flex-row">
+        {caseStudyUrl && (
+          <UtilityButton
+            className="clear-both mr-4 inline"
+            size="small"
+            removeTopMargin
+            link={caseStudyUrl}
+            buttonText={
+              <>
+                See Case Study
+                <BsArrowRightCircle className="ml-1 inline" />
+              </>
+            }
+            animated
+          />
+        )}
+        {videoUrl && (
+          <UtilityButton
+            className="clear-both mr-4 inline"
+            size="small"
+            removeTopMargin
+            link={videoUrl}
+            buttonText={
+              <>
+                Watch Video
+                <BsYoutube className="ml-1 inline" />
+              </>
+            }
+            animated
+          />
+        )}
+      </div>
+      <div className="my-5 h-0.25 w-full bg-ssw-gray-dark"></div>
     </div>
   );
 };
@@ -168,6 +213,16 @@ export const internalCarouselBlockSchema: Template = {
           name: "name",
         },
       ],
+    },
+    {
+      type: "string",
+      label: "Case Study",
+      name: "caseStudyUrl",
+    },
+    {
+      type: "string",
+      label: "Video URL",
+      name: "videoUrl",
     },
   ],
 };
