@@ -34,12 +34,14 @@ export default function EventsIndexPage(
       <SEO seo={data.eventsIndex.seo} />
       <Layout menu={data.megamenu}>
         <Container size="small">
-          <div>
-            <h1 className="mt-0 pt-0">SSW Events</h1>
-            <TinaMarkdown
-              content={data.eventsIndex._body}
-              components={componentRenderer}
-            />
+          <div className="md:flex md:flex-row">
+            <h1 className="md:mr-12 md:shrink-0 md:basis-64">SSW Events</h1>
+            <div className="mt-5 min-w-0 max-w-full shrink grow overflow-auto whitespace-normal break-all pb-1 pt-15 md:mr-12 md:shrink-0 md:basis-64">
+              <TinaMarkdown
+                content={data.eventsIndex.preface}
+                components={componentRenderer}
+              />
+            </div>
           </div>
           <EventsFilter sidebarBody={data.eventsIndex.sidebarBody} />
         </Container>
