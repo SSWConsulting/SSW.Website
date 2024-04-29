@@ -2,6 +2,7 @@
 	behavior: url("./iepngfix.htc");
 }
 body {
+	background-image: url("/public/images/background_dna.gif");
 	background-repeat: repeat-x;
 	background-position: top;
 	background-color: #FFFFFF;
