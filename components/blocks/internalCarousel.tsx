@@ -100,38 +100,40 @@ const renderBody = ({
           <TechBlock name={tech.name} key={index} />
         ))}
       </div>
-      <div className="my-5 flex flex-row">
-        {caseStudyUrl && (
-          <UtilityButton
-            className="clear-both mr-4 inline"
-            size="small"
-            removeTopMargin
-            link={caseStudyUrl}
-            buttonText={
-              <>
-                See Case Study
-                <BsArrowRightCircle className="ml-1 inline" />
-              </>
-            }
-            animated
-          />
-        )}
-        {videoUrl && (
-          <UtilityButton
-            className="clear-both mr-4 inline"
-            size="small"
-            removeTopMargin
-            link={videoUrl}
-            buttonText={
-              <>
-                Watch Video
-                <BsYoutube className="ml-1 inline" />
-              </>
-            }
-            animated
-          />
-        )}
-      </div>
+      {(caseStudyUrl || videoUrl) && (
+        <div className="my-5 flex flex-row">
+          {caseStudyUrl && (
+            <UtilityButton
+              className="clear-both mr-4 inline"
+              size="small"
+              removeTopMargin
+              link={caseStudyUrl}
+              buttonText={
+                <>
+                  See Case Study
+                  <BsArrowRightCircle className="ml-1 inline" />
+                </>
+              }
+              animated
+            />
+          )}
+          {videoUrl && (
+            <UtilityButton
+              className="clear-both mr-4 inline"
+              size="small"
+              removeTopMargin
+              link={videoUrl}
+              buttonText={
+                <>
+                  Watch Video
+                  <BsYoutube className="ml-1 inline" />
+                </>
+              }
+              animated
+            />
+          )}
+        </div>
+      )}
       <div className="my-5 h-0.25 w-full bg-ssw-gray-dark"></div>
     </div>
   );
