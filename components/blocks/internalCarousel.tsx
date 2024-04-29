@@ -82,7 +82,7 @@ const renderBody = ({
 }) => {
   return (
     <div key={header} className={header ? "" : "hidden"}>
-      <div className="mt-2 flex justify-between text-left font-semibold text-sswRed prose-p:py-0">
+      <div className="mt-2 flex items-center justify-between text-left font-semibold text-sswRed prose-p:py-0">
         <h3>{header}</h3>
         <span className={website ? "" : "hidden"}>
           {website && (
