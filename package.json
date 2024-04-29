@@ -92,7 +92,7 @@
     "tailwindcss-gradients": "^3.0.0",
     "tinacms": "^1.5.28",
     "typescript": "^5.3.3",
-    "usehooks-ts": "^3.0.1",
+    "usehooks-ts": "^3.1.0",
     "xss": "^1.0.15",
     "yup": "^0.32.11"
   },
