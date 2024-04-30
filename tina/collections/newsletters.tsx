@@ -46,7 +46,7 @@ export const newsletterSchema: Collection = {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           uploadDir: (formValues) => {
-            return `newsletter-uploads/${formValues.newsletters_year}`;
+            return `/newsletter-uploads/${formValues.newsletters_year}`;
           },
         },
         {
@@ -58,7 +58,7 @@ export const newsletterSchema: Collection = {
             "Must be saved in images/Newsletters. Only add images that have not been used before. There is no need to add images to the /images/newsletters directory if they have already been used in a previous newsletter",
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          uploadDir: () => "Newsletters",
+          uploadDir: () => "/images/Newsletters",
         },
         {
           type: "string",
