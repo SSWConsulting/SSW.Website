@@ -104,7 +104,7 @@ const renderBody = ({
         <div className="my-5 flex flex-row">
           {caseStudyUrl && (
             <UtilityButton
-              className="clear-both mr-4 inline"
+              className="clear-both mr-4 flex items-center"
               size="small"
               removeTopMargin
               link={caseStudyUrl}
@@ -119,7 +119,7 @@ const renderBody = ({
           )}
           {videoUrl && (
             <UtilityButton
-              className="clear-both mr-4 inline"
+              className="clear-both mr-4 flex items-center"
               size="small"
               removeTopMargin
               link={videoUrl}
@@ -134,10 +134,14 @@ const renderBody = ({
           )}
         </div>
       )}
-      <div className="my-5 h-0.25 w-full bg-ssw-gray-dark"></div>
+      <Separator />
     </div>
   );
 };
+
+const Separator = () => (
+  <div className="my-5 h-0.25 w-full bg-ssw-gray-dark"></div>
+);
 
 const TechBlock = ({ name }) => {
   return (
