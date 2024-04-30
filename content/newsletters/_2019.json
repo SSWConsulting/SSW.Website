@@ -3,47 +3,47 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2019/_2019_01__Adams 2018 in review__.html",
+			"file": "/newsletter-uploads/2019/_2019_01__Adams 2018 in review__.html",
 			"description": "Adams 2018 in review"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2019/_2019_02__5 lessons in leadership from reluctant leader David Neal __.html",
+			"file": "/newsletter-uploads/2019/_2019_02__5 lessons in leadership from reluctant leader David Neal __.html",
 			"description": "5 lessons in leadership from reluctant leader David Neal "
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2019/_2019_03__Azure DevOps wishlist auto-tagging Project Languages and Technologies__.html",
+			"file": "/newsletter-uploads/2019/_2019_03__Azure DevOps wishlist auto-tagging Project Languages and Technologies__.html",
 			"description": "Azure DevOps wishlist auto-tagging Project Languages and Technologies"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2019/_2019_04__China - Coming to a Town Near You__.html",
+			"file": "/newsletter-uploads/2019/_2019_04__China - Coming to a Town Near You__.html",
 			"description": "China - Coming to a Town Near You"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2019/_2019_06__Risky attempt to move a big motorbike up some stairs… It seemed like a good idea__.html",
+			"file": "/newsletter-uploads/2019/_2019_06__Risky attempt to move a big motorbike up some stairs… It seemed like a good idea__.html",
 			"description": "Risky attempt to move a big motorbike up some stairs… It seemed like a good idea"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2019/_2019_07__BREAST-Improving Radiologists’ Ability to Detect Breast Cancer__.html",
+			"file": "/newsletter-uploads/2019/_2019_07__BREAST-Improving Radiologists’ Ability to Detect Breast Cancer__.html",
 			"description": "BREAST-Improving Radiologists’ Ability to Detect Breast Cancer"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2019/_2019_09__I like big bots and I cannot lie, 5 ways bots can change your life__.html",
+			"file": "/newsletter-uploads/2019/_2019_09__I like big bots and I cannot lie, 5 ways bots can change your life__.html",
 			"description": "I like big bots and I cannot lie, 5 ways bots can change your life"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2019/_2019_11__SSW had fun at NDC – gotta catch ’em all!__.html",
+			"file": "/newsletter-uploads/2019/_2019_11__SSW had fun at NDC – gotta catch ’em all!__.html",
 			"description": "SSW had fun at NDC – gotta catch ’em all!"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2019/_2019_12__8 Tips to Strengthen Your DevOps (Project KNOWnoise)__.html",
+			"file": "/newsletter-uploads/2019/_2019_12__8 Tips to Strengthen Your DevOps (Project KNOWnoise)__.html",
 			"description": "8 Tips to Strengthen Your DevOps (Project KNOWnoise)"
 		}
 	]

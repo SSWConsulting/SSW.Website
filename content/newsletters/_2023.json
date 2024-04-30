@@ -3,62 +3,62 @@
   "newsletters": [
     {
       "month": 1,
-      "file": "/images/newsletter-uploads/2023/_2023_01__Adams 2022 - A Year in Review__.html",
+      "file": "/newsletter-uploads/2023/_2023_01__Adams 2022 - A Year in Review__.html",
       "description": "Adams 2022 - A Year in Review"
     },
     {
       "month": 2,
-      "file": "/images/newsletter-uploads/2023/_2023_02__5 Key Video Production Editing Terms (aka speak the lingo of a videographer)!__.html",
+      "file": "/newsletter-uploads/2023/_2023_02__5 Key Video Production Editing Terms (aka speak the lingo of a videographer)!__.html",
       "description": "5 Key Video Production Editing Terms (aka speak the lingo of a videographer)!"
     },
     {
       "month": 3,
-      "file": "/images/newsletter-uploads/2023/_2023_03__Managing your Azure Costs – How to Avoid Ballooning Budgets__.html",
+      "file": "/newsletter-uploads/2023/_2023_03__Managing your Azure Costs – How to Avoid Ballooning Budgets__.html",
       "description": "Managing your Azure Costs – How to Avoid Ballooning Budgets"
     },
     {
       "month": 4,
-      "file": "/images/newsletter-uploads/2023/_2023_04__Introducing SSW’s Cultural Exchange__.html",
+      "file": "/newsletter-uploads/2023/_2023_04__Introducing SSW’s Cultural Exchange__.html",
       "description": "Introducing SSW’s Cultural Exchange"
     },
     {
       "month": 5,
-      "file": "/images/newsletter-uploads/2023/_2023_05__Unleash the Power of ChatGPT - SSW's Ultimate Cheat Sheet__.html",
+      "file": "/newsletter-uploads/2023/_2023_05__Unleash the Power of ChatGPT - SSW's Ultimate Cheat Sheet__.html",
       "description": "Unleash the Power of ChatGPT - SSW’s Ultimate Cheat Sheet"
     },
     {
       "month": 6,
-      "file": "/images/newsletter-uploads/2023/_2023_06__NDC Oslo – Introducing the best of ChatGPT and Open AI API to the Vikings__.html",
+      "file": "/newsletter-uploads/2023/_2023_06__NDC Oslo – Introducing the best of ChatGPT and Open AI API to the Vikings__.html",
       "description": "NDC Oslo - Introducing the best of ChatGPT & Open AI API to the Vikings"
     },
     {
       "month": 7,
-      "file": "/images/newsletter-uploads/2023/_2023_07__Microsoft Fabric – Unifying your Data Analytics__.html",
+      "file": "/newsletter-uploads/2023/_2023_07__Microsoft Fabric – Unifying your Data Analytics__.html",
       "description": "Microsoft Fabric - Unifying your Data Analytics"
     },
     {
       "month": 8,
-      "file": "/images/newsletter-uploads/2023/_2023_08__Solving Business Puzzles with Tech A Look at SSW Melbourne’s Brainstorming Day and Retreat__.html",
+      "file": "/newsletter-uploads/2023/_2023_08__Solving Business Puzzles with Tech A Look at SSW Melbourne’s Brainstorming Day and Retreat__.html",
       "description": "Solving Business Puzzles with Tech - A Look at SSW Melbourne’s Brainstorming Day & Retreat"
     },
     {
       "month": 9,
-      "file": "/images/newsletter-uploads/2023/_2023_09__Combine AI Models and Custom Software with Microsoft’s Semantic Kernel__.html",
+      "file": "/newsletter-uploads/2023/_2023_09__Combine AI Models and Custom Software with Microsoft’s Semantic Kernel__.html",
       "description": "Combine AI Models & Custom Software with Microsoft’s Semantic Kernel"
     },
     {
       "month": 10,
-      "file": "/images/newsletter-uploads/2023/_2023_10__Unleashing GPT-Powered Website ChatBots__.html",
+      "file": "/newsletter-uploads/2023/_2023_10__Unleashing GPT-Powered Website ChatBots__.html",
       "description": "Unleashing GPT-Powered Website Chatbots"
     },
     {
       "month": 11,
-      "file": "/images/newsletter-uploads/2023/_2023_11__Effective Feedback When and How to Offer It__.html",
+      "file": "/newsletter-uploads/2023/_2023_11__Effective Feedback When and How to Offer It__.html",
       "description": "Effective Feedback and How to Offer It"
     },
     {
       "month": 12,
-      "file": "/images/newsletter-uploads/2023/_2023_12__.NET Aspire – The Future of Microservices made simple for .NET 8__.html",
+      "file": "/newsletter-uploads/2023/_2023_12__.NET Aspire – The Future of Microservices made simple for .NET 8__.html",
       "description": ".NET Aspire – The Future of Microservices made simple for .NET 8"
     }
   ]

@@ -3,72 +3,72 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2004/_2004_01__Do you always use query strings_.htm",
+			"file": "/newsletter-uploads/2004/_2004_01__Do you always use query strings_.htm",
 			"description": "Do you always use query strings"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2004/_2004_02__Adam Cogan presenting in all states this week_.htm",
+			"file": "/newsletter-uploads/2004/_2004_02__Adam Cogan presenting in all states this week_.htm",
 			"description": "Adam Cogan presenting in all states this week"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2004/_2004_03__Do you know how to best manage your dead time_.htm",
+			"file": "/newsletter-uploads/2004/_2004_03__Do you know how to best manage your dead time_.htm",
 			"description": "Do you know how to best manage your dead time"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2004/_2004_04__New anti-spam legislation in force from April 10th_.htm",
+			"file": "/newsletter-uploads/2004/_2004_04__New anti-spam legislation in force from April 10th_.htm",
 			"description": "New anti-spam legislation in force from April 10th"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2004/_2004_05__Important notes for your Data Entry Forms_.htm",
+			"file": "/newsletter-uploads/2004/_2004_05__Important notes for your Data Entry Forms_.htm",
 			"description": "Important notes for your Data Entry Forms"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2004/_2004_06__Do you enforce deadlines, have a project plan and a debrief_.htm",
+			"file": "/newsletter-uploads/2004/_2004_06__Do you enforce deadlines, have a project plan and a debrief_.htm",
 			"description": "Do you enforce deadlines, have a project plan and a debrief"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2004/_2004_07__Dont criticize when you are in charge_.htm",
+			"file": "/newsletter-uploads/2004/_2004_07__Dont criticize when you are in charge_.htm",
 			"description": "Dont criticize when you are in charge"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2004/_2004_08__Do you use inherited forms for consistent behaviour_.htm",
+			"file": "/newsletter-uploads/2004/_2004_08__Do you use inherited forms for consistent behaviour_.htm",
 			"description": "Do you use inherited forms for consistent behaviour"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2004/_2004_09__The implementation of the XML Index in Yukon_.htm",
+			"file": "/newsletter-uploads/2004/_2004_09__The implementation of the XML Index in Yukon_.htm",
 			"description": "The implementation of the XML Index in Yukon"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2004/_2004_10_MiniUpdate_User Group_.htm",
+			"file": "/newsletter-uploads/2004/_2004_10_MiniUpdate_User Group_.htm",
 			"description": "MiniUpdate_User Group"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2004/_2004_10__AfricaEmail_ The African Roadshow October 2004 - Nairobi, Dar es Salaam, and Johannesburg_.htm",
+			"file": "/newsletter-uploads/2004/_2004_10__AfricaEmail_ The African Roadshow October 2004 - Nairobi, Dar es Salaam, and Johannesburg_.htm",
 			"description": "AfricaEmail_ The African Roadshow October 2004 - Nairobi, Dar es Salaam, and Johannesburg"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2004/_2004_10__User Group 2 Weeks Late_.htm",
+			"file": "/newsletter-uploads/2004/_2004_10__User Group 2 Weeks Late_.htm",
 			"description": "User Group 2 Weeks Late"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2004/_2004_11__Does backward compatibility kill good code_.htm",
+			"file": "/newsletter-uploads/2004/_2004_11__Does backward compatibility kill good code_.htm",
 			"description": "Does backward compatibility kill good code"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2004/_2004_12__Do you follow naming convention for your Boolean Property_.htm",
+			"file": "/newsletter-uploads/2004/_2004_12__Do you follow naming convention for your Boolean Property_.htm",
 			"description": "Do you follow naming convention for your Boolean Property"
 		}
 	]

@@ -3,62 +3,62 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2016/_2016_01__Adams 2015 in review__.html",
+			"file": "/newsletter-uploads/2016/_2016_01__Adams 2015 in review__.html",
 			"description": "Adams 2015 in review"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2016/_2016_02__High Fashion and Javascript Frameworks__.html",
+			"file": "/newsletter-uploads/2016/_2016_02__High Fashion and Javascript Frameworks__.html",
 			"description": "High Fashion and Javascript Frameworks"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2016/_2016_03__Finishing a Feature__.html",
+			"file": "/newsletter-uploads/2016/_2016_03__Finishing a Feature__.html",
 			"description": "Finishing a Feature"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2016/_2016_04__Angular 2.0 Should Be Your Next New Project__.html",
+			"file": "/newsletter-uploads/2016/_2016_04__Angular 2.0 Should Be Your Next New Project__.html",
 			"description": "Angular 2.0 Should Be Your Next New Project"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2016/_2016_05__SharePoint 2016 - The futures so bright I gotta wear shades__.html",
+			"file": "/newsletter-uploads/2016/_2016_05__SharePoint 2016 - The futures so bright I gotta wear shades__.html",
 			"description": "SharePoint 2016 - The futures so bright I gotta wear shades"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2016/_2016_06__I learnt how to train developers as quickly as possible__.html",
+			"file": "/newsletter-uploads/2016/_2016_06__I learnt how to train developers as quickly as possible__.html",
 			"description": "I learnt how to train developers as quickly as possible"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2016/_2016_07__How to blow 10 million dollars__.html",
+			"file": "/newsletter-uploads/2016/_2016_07__How to blow 10 million dollars__.html",
 			"description": "How to blow 10 million dollars"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2016/_2016_08__Hanselman Unplugged 2__.html",
+			"file": "/newsletter-uploads/2016/_2016_08__Hanselman Unplugged 2__.html",
 			"description": "Hanselman Unplugged 2"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2016/_2016_09__SSW Chapel - Doing a renovation in 6 days__.html",
+			"file": "/newsletter-uploads/2016/_2016_09__SSW Chapel - Doing a renovation in 6 days__.html",
 			"description": "SSW Chapel - Doing a renovation in 6 days"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2016/_2016_10__Power BI - No more guessing__.html",
+			"file": "/newsletter-uploads/2016/_2016_10__Power BI - No more guessing__.html",
 			"description": "Power BI - No more guessing"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2016/_2016_11__The SSW Getaway__.html",
+			"file": "/newsletter-uploads/2016/_2016_11__The SSW Getaway__.html",
 			"description": "The SSW Getaway"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2016/_2016_12__How to learn Angular 2 fast__.html",
+			"file": "/newsletter-uploads/2016/_2016_12__How to learn Angular 2 fast__.html",
 			"description": "How to learn Angular 2 fast"
 		}
 	]

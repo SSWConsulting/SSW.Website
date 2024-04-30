@@ -3,67 +3,67 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2013/_2013_01__Celebrate 20 years with us_.htm",
+			"file": "/newsletter-uploads/2013/_2013_01__Celebrate 20 years with us_.htm",
 			"description": "Celebrate 20 years with us"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2013/_2013_02_Mini_UTS Courses_.htm",
+			"file": "/newsletter-uploads/2013/_2013_02_Mini_UTS Courses_.htm",
 			"description": "Mini - UTS Courses"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2013/_2013_02__2012 Retrospective of SSW_.htm",
+			"file": "/newsletter-uploads/2013/_2013_02__2012 Retrospective of SSW_.htm",
 			"description": "2012 Retrospective of SSW"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2013/_2013_03__Lync 2013_.htm",
+			"file": "/newsletter-uploads/2013/_2013_03__Lync 2013_.htm",
 			"description": "Lync 2013"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2013/_2013_04__Single Page Applications_.htm",
+			"file": "/newsletter-uploads/2013/_2013_04__Single Page Applications_.htm",
 			"description": "Single Page Applications"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2013/_2013_05__Effective Product Owners Use the Business description Field_.htm",
+			"file": "/newsletter-uploads/2013/_2013_05__Effective Product Owners Use the Business description Field_.htm",
 			"description": "Effective Product Owners Use the Business description Field"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2013/_2013_06__New Features in Visual Studio 2013 and TFS 2013_.htm",
+			"file": "/newsletter-uploads/2013/_2013_06__New Features in Visual Studio 2013 and TFS 2013_.htm",
 			"description": "New Features in Visual Studio 2013 and TFS 2013"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2013/_2013_07__A Glimpse into your ASP_NET App.htm",
+			"file": "/newsletter-uploads/2013/_2013_07__A Glimpse into your ASP_NET App.htm",
 			"description": "A Glimpse into your ASP_NET App"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2013/_2013_08__TFS is huge in China_.htm",
+			"file": "/newsletter-uploads/2013/_2013_08__TFS is huge in China_.htm",
 			"description": "TFS is huge in China"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2013/_2013_09__How do we make good Product Owners__.htm",
+			"file": "/newsletter-uploads/2013/_2013_09__How do we make good Product Owners__.htm",
 			"description": "How do we make good Product Owners"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2013/_2013_10__SSW TV has a new face__.htm",
+			"file": "/newsletter-uploads/2013/_2013_10__SSW TV has a new face__.htm",
 			"description": "SSW TV has a new face"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2013/_2013_11__Fire Boot Camp__.htm",
+			"file": "/newsletter-uploads/2013/_2013_11__Fire Boot Camp__.htm",
 			"description": "Fire Boot Camp"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2013/_2013_12__Adam's 2013 as a Microsoft Regional Director__.htm",
+			"file": "/newsletter-uploads/2013/_2013_12__Adam's 2013 as a Microsoft Regional Director__.htm",
 			"description": "Adam's 2013 as a Microsoft Regional Director"
 		}
 	]

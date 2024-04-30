@@ -3,67 +3,67 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2014/_2014_01__FireBootCamp is one week away from ignition__.htm",
+			"file": "/newsletter-uploads/2014/_2014_01__FireBootCamp is one week away from ignition__.htm",
 			"description": "FireBootCamp is one week away from ignition"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2014/_2014_02__FireBootCamp is up and running__.htm",
+			"file": "/newsletter-uploads/2014/_2014_02__FireBootCamp is up and running__.htm",
 			"description": "FireBootCamp is up and running"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2014/_2014_03__Your last chance to get a ticket to the FireBootCamp gala day__ .htm",
+			"file": "/newsletter-uploads/2014/_2014_03__Your last chance to get a ticket to the FireBootCamp gala day__ .htm",
 			"description": "Your last chance to get a ticket to the FireBootCamp gala day"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2014/_2014_04__FireBootCamp Sydney ended successfully__.htm",
+			"file": "/newsletter-uploads/2014/_2014_04__FireBootCamp Sydney ended successfully__.htm",
 			"description": "FireBootCamp Sydney ended successfully"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2014/_2014_05__And the winner is__.htm",
+			"file": "/newsletter-uploads/2014/_2014_05__And the winner is__.htm",
 			"description": "And the winner is"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2014/_2014_06__Introducing the new SSW logo__.htm",
+			"file": "/newsletter-uploads/2014/_2014_06__Introducing the new SSW logo__.htm",
 			"description": "Introducing the new SSW logo"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2014/_2014_07__Sign up to a free xamarin hack day in your local area__.htm",
+			"file": "/newsletter-uploads/2014/_2014_07__Sign up to a free xamarin hack day in your local area__.htm",
 			"description": "Sign up to a free xamarin hack day in your local area"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2014/_2014_08__Building a croquembouche in just 4 weeks__.htm",
+			"file": "/newsletter-uploads/2014/_2014_08__Building a croquembouche in just 4 weeks__.htm",
 			"description": "Building a croquembouche in just 4 weeks"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2014/_2014_09__Come and see what the FireBootCamp graduates have built__.htm",
+			"file": "/newsletter-uploads/2014/_2014_09__Come and see what the FireBootCamp graduates have built__.htm",
 			"description": "Come and see what the FireBootCamp graduates have built"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2014/_2014_10_Mini_SSW Course AngularJS ASPNET MVC_.html",
+			"file": "/newsletter-uploads/2014/_2014_10_Mini_SSW Course AngularJS ASPNET MVC_.html",
 			"description": "Mini - SSW Course AngularJS ASPNET MVC"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2014/_2014_10__Creating an ouroboros__.htm",
+			"file": "/newsletter-uploads/2014/_2014_10__Creating an ouroboros__.htm",
 			"description": "Creating an ouroboros"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2014/_2014_11__Why SSW is moving to AngularJS__ .htm",
+			"file": "/newsletter-uploads/2014/_2014_11__Why SSW is moving to AngularJS__ .htm",
 			"description": "Why SSW is moving to AngularJS"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2014/_2014_12__Adams 2014 in review__.htm",
+			"file": "/newsletter-uploads/2014/_2014_12__Adams 2014 in review__.htm",
 			"description": "Adams 2014 in review"
 		}
 	]

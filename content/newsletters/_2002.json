@@ -3,77 +3,77 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2002/_2002_01__Is your Spec in Bite-size Pieces_.htm",
+			"file": "/newsletter-uploads/2002/_2002_01__Is your Spec in Bite-size Pieces_.htm",
 			"description": "Is your Spec in Bite-size Pieces"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2002/_2002_02__Is Everyone on your team a Standards Watchdog_.htm",
+			"file": "/newsletter-uploads/2002/_2002_02__Is Everyone on your team a Standards Watchdog_.htm",
 			"description": "Is Everyone on your team a Standards Watchdog"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2002/_2002_02__NZDevdays_MS Dev Days_.htm",
+			"file": "/newsletter-uploads/2002/_2002_02__NZDevdays_MS Dev Days_.htm",
 			"description": "NZDevdays_MS Dev Days"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2002/_2002_02__VSNETLaunch_Special Invitation to the Microsoft Visual Studio.NET Launch Event_.htm",
+			"file": "/newsletter-uploads/2002/_2002_02__VSNETLaunch_Special Invitation to the Microsoft Visual Studio.NET Launch Event_.htm",
 			"description": "VSNETLaunch_Special Invitation to the Microsoft Visual Studio.NET Launch Event"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2002/_2002_03__Techies that Talk Sense_.htm",
+			"file": "/newsletter-uploads/2002/_2002_03__Techies that Talk Sense_.htm",
 			"description": "Techies that Talk Sense"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2002/_2002_04_2_Special .NET User Group with Ken Getz_.htm",
+			"file": "/newsletter-uploads/2002/_2002_04_2_Special .NET User Group with Ken Getz_.htm",
 			"description": "04_2_Special .NET User Group with Ken Getz"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2002/_2002_04__Dealing with Distractions_.htm",
+			"file": "/newsletter-uploads/2002/_2002_04__Dealing with Distractions_.htm",
 			"description": "Dealing with Distractions"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2002/_2002_05__Do you always carry your Tool Box_.htm",
+			"file": "/newsletter-uploads/2002/_2002_05__Do you always carry your Tool Box_.htm",
 			"description": "Do you always carry your Tool Box"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2002/_2002_06__Do you manage expectations_.htm",
+			"file": "/newsletter-uploads/2002/_2002_06__Do you manage expectations_.htm",
 			"description": "Do you manage expectations"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2002/_2002_07__Do you use eXtreme Programming wisely_.htm",
+			"file": "/newsletter-uploads/2002/_2002_07__Do you use eXtreme Programming wisely_.htm",
 			"description": "Do you use eXtreme Programming wisely"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2002/_2002_08__Do you manage your email_.htm",
+			"file": "/newsletter-uploads/2002/_2002_08__Do you manage your email_.htm",
 			"description": "Do you manage your email"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2002/_2002_09__Do you send Morning Goals_.htm",
+			"file": "/newsletter-uploads/2002/_2002_09__Do you send Morning Goals_.htm",
 			"description": "Do you send Morning Goals"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2002/_2002_10__Do you follow up emails effectively_.htm",
+			"file": "/newsletter-uploads/2002/_2002_10__Do you follow up emails effectively_.htm",
 			"description": "Do you follow up emails effectively"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2002/_2002_11__Do you CC everyone_.htm",
+			"file": "/newsletter-uploads/2002/_2002_11__Do you CC everyone_.htm",
 			"description": "Do you CC everyone"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2002/_2002_12__Do you investigate before writing new code_.htm",
+			"file": "/newsletter-uploads/2002/_2002_12__Do you investigate before writing new code_.htm",
 			"description": "Do you investigate before writing new code"
 		}
 	]

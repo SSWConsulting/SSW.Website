@@ -3,67 +3,67 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2018/_2018_01__Adams 2017 in review__.html",
+			"file": "/newsletter-uploads/2018/_2018_01__Adams 2017 in review__.html",
 			"description": "Adams 2017 in review"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2018/_2018_02__Hey Melbourne and Brisbane youre invited to a party.html",
+			"file": "/newsletter-uploads/2018/_2018_02__Hey Melbourne and Brisbane youre invited to a party.html",
 			"description": "Hey Melbourne and Brisbane youre invited to a party"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2018/_2018_03__Learn the 4 Steps to get Users in China.html",
+			"file": "/newsletter-uploads/2018/_2018_03__Learn the 4 Steps to get Users in China.html",
 			"description": "Learn the 4 Steps to get Users in China"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2018/_2018_04__A farewell to Brian Harry__.html",
+			"file": "/newsletter-uploads/2018/_2018_04__A farewell to Brian Harry__.html",
 			"description": "A farewell to Brian Harry"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2018/_2018_05__We moved our SharePoint Intranet to the Cloud__.html",
+			"file": "/newsletter-uploads/2018/_2018_05__We moved our SharePoint Intranet to the Cloud__.html",
 			"description": "We moved our SharePoint Intranet to the Cloud"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2018/_2018_06__The 9 knights of Azure.html",
+			"file": "/newsletter-uploads/2018/_2018_06__The 9 knights of Azure.html",
 			"description": "The 9 knights of Azure"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2018/_2018_07_Mini_Security Devolution with Troy Hunt__.html",
+			"file": "/newsletter-uploads/2018/_2018_07_Mini_Security Devolution with Troy Hunt__.html",
 			"description": "Mini - Security Devolution with Troy Hunt"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2018/_2018_07__New employees - saying hello, saying goodbye__.html",
+			"file": "/newsletter-uploads/2018/_2018_07__New employees - saying hello, saying goodbye__.html",
 			"description": "New employees - saying hello, saying goodbye"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2018/_2018_08__Skin cancer - ouch__.html",
+			"file": "/newsletter-uploads/2018/_2018_08__Skin cancer - ouch__.html",
 			"description": "Skin cancer - ouch"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2018/_2018_09__How to be a great software consultant__.html",
+			"file": "/newsletter-uploads/2018/_2018_09__How to be a great software consultant__.html",
 			"description": "How to be a great software consultant"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2018/_2018_10__NDC Sydney 2018 was awesome__.html",
+			"file": "/newsletter-uploads/2018/_2018_10__NDC Sydney 2018 was awesome__.html",
 			"description": "NDC Sydney 2018 was awesome"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2018/_2018_11__Weve updated our Rules to Better Angular__.html",
+			"file": "/newsletter-uploads/2018/_2018_11__Weve updated our Rules to Better Angular__.html",
 			"description": "Weve updated our Rules to Better Angular"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2018/_2018_12__Luckin Coffee vs Starbucks - A Luckin Success in China__.html",
+			"file": "/newsletter-uploads/2018/_2018_12__Luckin Coffee vs Starbucks - A Luckin Success in China__.html",
 			"description": "Luckin Coffee vs Starbucks - A Luckin Success in China"
 		}
 	]

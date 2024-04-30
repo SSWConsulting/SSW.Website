@@ -3,92 +3,92 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2011/_2011_01__Do you realize that when it comes to interface design less is more_.htm",
+			"file": "/newsletter-uploads/2011/_2011_01__Do you realize that when it comes to interface design less is more_.htm",
 			"description": "Do you realize that when it comes to interface design less is more"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2011/_2011_02_Mini_SSW Scrum Training in USA_.htm",
+			"file": "/newsletter-uploads/2011/_2011_02_Mini_SSW Scrum Training in USA_.htm",
 			"description": "Mini - SSW Scrum Training in USA"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2011/_2011_02__SharePoint 101_.htm",
+			"file": "/newsletter-uploads/2011/_2011_02__SharePoint 101_.htm",
 			"description": "SharePoint 101"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2011/_2011_03_Mini_New Zealand Visual Studio ALM Conference _.htm",
+			"file": "/newsletter-uploads/2011/_2011_03_Mini_New Zealand Visual Studio ALM Conference _.htm",
 			"description": "Mini - New Zealand Visual Studio ALM Conference "
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2011/_2011_03__Telerik Australia event - Focus on Developer Productivity_.htm",
+			"file": "/newsletter-uploads/2011/_2011_03__Telerik Australia event - Focus on Developer Productivity_.htm",
 			"description": "Telerik Australia event - Focus on Developer Productivity"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2011/_2011_04_Mini_Brian Randell Microsoft Virtualization for Developers_.htm",
+			"file": "/newsletter-uploads/2011/_2011_04_Mini_Brian Randell Microsoft Virtualization for Developers_.htm",
 			"description": "Mini - Brian Randell Microsoft Virtualization for Developers"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2011/_2011_04__The Architect's Master Class_.htm",
+			"file": "/newsletter-uploads/2011/_2011_04__The Architect's Master Class_.htm",
 			"description": "The Architect's Master Class"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2011/_2011_05_Mini_Brisbane_.htm",
+			"file": "/newsletter-uploads/2011/_2011_05_Mini_Brisbane_.htm",
 			"description": "Mini - Brisbane"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2011/_2011_05_Mini_Sydney_.htm",
+			"file": "/newsletter-uploads/2011/_2011_05_Mini_Sydney_.htm",
 			"description": "Mini - Sydney"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2011/_2011_05__The Architect's Master Class Nearly Here_.htm",
+			"file": "/newsletter-uploads/2011/_2011_05__The Architect's Master Class Nearly Here_.htm",
 			"description": "The Architect's Master Class Nearly Here"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2011/_2011_06__Scrumming it in New Delhi,  India_.htm",
+			"file": "/newsletter-uploads/2011/_2011_06__Scrumming it in New Delhi,  India_.htm",
 			"description": "Scrumming it in New Delhi,  India"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2011/_2011_07__Highlights from the Architects Masterclass_.htm",
+			"file": "/newsletter-uploads/2011/_2011_07__Highlights from the Architects Masterclass_.htm",
 			"description": "Highlights from the Architects Masterclass"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2011/_2011_08__SSW goes virtual_.htm",
+			"file": "/newsletter-uploads/2011/_2011_08__SSW goes virtual_.htm",
 			"description": "SSW goes virtual"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2011/_2011_09__Top 8 ways to speed up your SQL Server database_.htm",
+			"file": "/newsletter-uploads/2011/_2011_09__Top 8 ways to speed up your SQL Server database_.htm",
 			"description": "Top 8 ways to speed up your SQL Server database"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2011/_2011_10__DDD is coming to Brisbane_.htm",
+			"file": "/newsletter-uploads/2011/_2011_10__DDD is coming to Brisbane_.htm",
 			"description": "DDD is coming to Brisbane"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2011/_2011_11__Learn Cutting Edge Technology with Industry Experts – SSW TV Launches_.htm",
+			"file": "/newsletter-uploads/2011/_2011_11__Learn Cutting Edge Technology with Industry Experts – SSW TV Launches_.htm",
 			"description": "Learn Cutting Edge Technology with Industry Experts – SSW TV Launches"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2011/_2011_11__SSW Special Offer - save over $2000 per ticket for PSD training course!_.htm",
+			"file": "/newsletter-uploads/2011/_2011_11__SSW Special Offer - save over $2000 per ticket for PSD training course!_.htm",
 			"description": "SSW Special Offer - save over $2000 per ticket for PSD training course!"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2011/_2011_12__New 3 Day Scrum Course Launches in 2012_.htm",
+			"file": "/newsletter-uploads/2011/_2011_12__New 3 Day Scrum Course Launches in 2012_.htm",
 			"description": "New 3 Day Scrum Course Launches in 2012"
 		}
 	]

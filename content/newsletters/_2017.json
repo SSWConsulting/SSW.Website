@@ -3,62 +3,62 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2017/_2017_01__Adams 2016 in review__.html",
+			"file": "/newsletter-uploads/2017/_2017_01__Adams 2016 in review__.html",
 			"description": "Adams 2016 in review"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2017/_2017_02__Its going to be a good 2017 with Visual Studio 2017__.html",
+			"file": "/newsletter-uploads/2017/_2017_02__Its going to be a good 2017 with Visual Studio 2017__.html",
 			"description": "Its going to be a good 2017 with Visual Studio 2017"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2017/_2017_03__26 videos in 4 days__.html",
+			"file": "/newsletter-uploads/2017/_2017_03__26 videos in 4 days__.html",
 			"description": "26 videos in 4 days"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2017/_2017_04__We moved our TFS to the cloud__.html",
+			"file": "/newsletter-uploads/2017/_2017_04__We moved our TFS to the cloud__.html",
 			"description": "We moved our TFS to the cloud"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2017/_2017_05__Farewell Dynamics CRM 2016, Hello Dynamics 365__.html",
+			"file": "/newsletter-uploads/2017/_2017_05__Farewell Dynamics CRM 2016, Hello Dynamics 365__.html",
 			"description": "Farewell Dynamics CRM 2016, Hello Dynamics 365"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2017/_2017_06__HoloLens - Let's build a whole new world together__.html",
+			"file": "/newsletter-uploads/2017/_2017_06__HoloLens - Let's build a whole new world together__.html",
 			"description": "HoloLens - Let's build a whole new world together"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2017/_2017_07__Putting the Team into Microsoft Teams__.html",
+			"file": "/newsletter-uploads/2017/_2017_07__Putting the Team into Microsoft Teams__.html",
 			"description": "Putting the Team into Microsoft Teams"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2017/_2017_08__Why were excited about .NET Core__.html",
+			"file": "/newsletter-uploads/2017/_2017_08__Why were excited about .NET Core__.html",
 			"description": "Why were excited about .NET Core"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2017/_2017_09__NDC Sydney 2017__.html",
+			"file": "/newsletter-uploads/2017/_2017_09__NDC Sydney 2017__.html",
 			"description": "NDC Sydney 2017"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2017/_2017_10__The history of dotNET__.html",
+			"file": "/newsletter-uploads/2017/_2017_10__The history of dotNET__.html",
 			"description": "The history of dotNET"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2017/_2017_11__From UX to CX – Improving the Customer Experience__.html",
+			"file": "/newsletter-uploads/2017/_2017_11__From UX to CX – Improving the Customer Experience__.html",
 			"description": "From UX to CX – Improving the Customer Experience"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2017/_2017_12__Introducing the SSW Chapel Melbourne - and a new user group__.html",
+			"file": "/newsletter-uploads/2017/_2017_12__Introducing the SSW Chapel Melbourne - and a new user group__.html",
 			"description": "Introducing the SSW Chapel Melbourne - and a new user group"
 		}
 	]

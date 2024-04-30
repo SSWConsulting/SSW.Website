@@ -3,67 +3,67 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2003/_2003_01__Do you know the quickest way to fix small web errors_.htm",
+			"file": "/newsletter-uploads/2003/_2003_01__Do you know the quickest way to fix small web errors_.htm",
 			"description": "Do you know the quickest way to fix small web errors"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2003/_2003_02__Do you think that when replying to emails it's better late than never_.htm",
+			"file": "/newsletter-uploads/2003/_2003_02__Do you think that when replying to emails it's better late than never_.htm",
 			"description": "Do you think that when replying to emails it's better late than never"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2003/_2003_03_2_Special Double Events Notice_.htm",
+			"file": "/newsletter-uploads/2003/_2003_03_2_Special Double Events Notice_.htm",
 			"description": "2_Special Double Events Notice"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2003/_2003_03__Do you avoid reviewing performance without metrics_.htm",
+			"file": "/newsletter-uploads/2003/_2003_03__Do you avoid reviewing performance without metrics_.htm",
 			"description": "Do you avoid reviewing performance without metrics"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2003/_2003_04__Do you use instant messenger for business_.htm",
+			"file": "/newsletter-uploads/2003/_2003_04__Do you use instant messenger for business_.htm",
 			"description": "Do you use instant messenger for business"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2003/_2003_05__Which third party developer tools should I use_.htm",
+			"file": "/newsletter-uploads/2003/_2003_05__Which third party developer tools should I use_.htm",
 			"description": "Which third party developer tools should I use"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2003/_2003_06__Are you a good SQL Server DBA_.htm",
+			"file": "/newsletter-uploads/2003/_2003_06__Are you a good SQL Server DBA_.htm",
 			"description": "Are you a good SQL Server DBA"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2003/_2003_07__Do you manage your software consultants_.htm",
+			"file": "/newsletter-uploads/2003/_2003_07__Do you manage your software consultants_.htm",
 			"description": "Do you manage your software consultants"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2003/_2003_08__User Group Late 1 Day.htm",
+			"file": "/newsletter-uploads/2003/_2003_08__User Group Late 1 Day.htm",
 			"description": "User Group Late 1 Day"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2003/_2003_09__Tom Howe speaking at User Group.htm",
+			"file": "/newsletter-uploads/2003/_2003_09__Tom Howe speaking at User Group.htm",
 			"description": "Tom Howe speaking at User Group"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2003/_2003_10__Do you use the new security options in Outlook 2003_.htm",
+			"file": "/newsletter-uploads/2003/_2003_10__Do you use the new security options in Outlook 2003_.htm",
 			"description": "Do you use the new security options in Outlook 2003"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2003/_2003_11__Is your website multibrowser compatible_.htm",
+			"file": "/newsletter-uploads/2003/_2003_11__Is your website multibrowser compatible_.htm",
 			"description": "Is your website multibrowser compatible"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2003/_2003_12__Do you manage your clients expectations_.htm",
+			"file": "/newsletter-uploads/2003/_2003_12__Do you manage your clients expectations_.htm",
 			"description": "Do you manage your clients expectations"
 		}
 	]

@@ -3,67 +3,67 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2012/_2012_01__What's happening at SSW in 2012_.htm",
+			"file": "/newsletter-uploads/2012/_2012_01__What's happening at SSW in 2012_.htm",
 			"description": "What's happening at SSW in 2012"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2012/_2012_02__Architecture Clinic with JuvalLowy_.htm",
+			"file": "/newsletter-uploads/2012/_2012_02__Architecture Clinic with JuvalLowy_.htm",
 			"description": "Architecture Clinic with JuvalLöwy"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2012/_2012_03__SSW and SolidQ bringing SQL Training to Australia_.htm",
+			"file": "/newsletter-uploads/2012/_2012_03__SSW and SolidQ bringing SQL Training to Australia_.htm",
 			"description": "SSW and SolidQ bringing SQL Training to Australia"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2012/_2012_04__Moving your Apps to Azure with Andrew Coates_.htm",
+			"file": "/newsletter-uploads/2012/_2012_04__Moving your Apps to Azure with Andrew Coates_.htm",
 			"description": "Moving your Apps to Azure with Andrew Coates"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2012/_2012_05_Mini_Tech_Breakfast CPlusPlus and Visual Studio Dev 11 Modern, Readable, Fast, Safe_.htm",
+			"file": "/newsletter-uploads/2012/_2012_05_Mini_Tech_Breakfast CPlusPlus and Visual Studio Dev 11 Modern, Readable, Fast, Safe_.htm",
 			"description": "Mini - Tech_Breakfast CPlusPlus and Visual Studio Dev 11 Modern, Readable, Fast, Safe"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2012/_2012_05__MVC Training for Enterprising Developers PLUS a New Telerik NerdDinner_.htm",
+			"file": "/newsletter-uploads/2012/_2012_05__MVC Training for Enterprising Developers PLUS a New Telerik NerdDinner_.htm",
 			"description": "MVC Training for Enterprising Developers PLUS a New Telerik NerdDinner"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2012/_2012_06__Kate Gregory is coming to Australia_.htm",
+			"file": "/newsletter-uploads/2012/_2012_06__Kate Gregory is coming to Australia_.htm",
 			"description": "Kate Gregory is coming to Australia"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2012/_2012_07__Adam's European Adventure for TechEd 2012 in Amsterdam_.htm",
+			"file": "/newsletter-uploads/2012/_2012_07__Adam's European Adventure for TechEd 2012 in Amsterdam_.htm",
 			"description": "Adam's European Adventure for TechEd 2012 in Amsterdam"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2012/_2012_08__Cars and user experiences_.htm",
+			"file": "/newsletter-uploads/2012/_2012_08__Cars and user experiences_.htm",
 			"description": "Cars and user experiences"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2012/_2012_09__Video - Successful Scrum in Action - A website upgrade for the National Australia Day Council_.htm",
+			"file": "/newsletter-uploads/2012/_2012_09__Video - Successful Scrum in Action - A website upgrade for the National Australia Day Council_.htm",
 			"description": "Video - Successful Scrum in Action - A website upgrade for the National Australia Day Council"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2012/_2012_10__Learn to make software development less risky_.htm",
+			"file": "/newsletter-uploads/2012/_2012_10__Learn to make software development less risky_.htm",
 			"description": "Learn to make software development less risky"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2012/_2012_11__Microsoft is onto something here_.htm",
+			"file": "/newsletter-uploads/2012/_2012_11__Microsoft is onto something here_.htm",
 			"description": "Microsoft is onto something here"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2012/_2012_12__Adam's year as a Microsoft Regional Director_.htm",
+			"file": "/newsletter-uploads/2012/_2012_12__Adam's year as a Microsoft Regional Director_.htm",
 			"description": "Adam's year as a Microsoft Regional Director"
 		}
 	]

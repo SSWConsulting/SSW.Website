@@ -3,82 +3,82 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2009/_2009_01__Do you use CRM Plug-ins for data synchronization_.htm",
+			"file": "/newsletter-uploads/2009/_2009_01__Do you use CRM Plug-ins for data synchronization_.htm",
 			"description": "Do you use CRM Plug-ins for data synchronization"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2009/_2009_02_Tech Breakfast_Dynamic Data - Data entry made easy_.html",
+			"file": "/newsletter-uploads/2009/_2009_02_Tech Breakfast_Dynamic Data - Data entry made easy_.html",
 			"description": "Tech Breakfast_Dynamic Data - Data entry made easy"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2009/_2009_03_Tech Breakfast_Dynamic Data - Data entry made easy_.html",
+			"file": "/newsletter-uploads/2009/_2009_03_Tech Breakfast_Dynamic Data - Data entry made easy_.html",
 			"description": "Tech Breakfast_Dynamic Data - Data entry made easy"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2009/_2009_04__Is your version number meaningful_.htm",
+			"file": "/newsletter-uploads/2009/_2009_04__Is your version number meaningful_.htm",
 			"description": "Is your version number meaningful"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2009/_2009_05__Does your SharePoint site have favicon_.htm",
+			"file": "/newsletter-uploads/2009/_2009_05__Does your SharePoint site have favicon_.htm",
 			"description": "Does your SharePoint site have favicon"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2009/_2009_06__Do you comment each property and method_.htm",
+			"file": "/newsletter-uploads/2009/_2009_06__Do you comment each property and method_.htm",
 			"description": "Do you comment each property and method"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2009/_2009_07__Do you keep chunks of work small_.htm",
+			"file": "/newsletter-uploads/2009/_2009_07__Do you keep chunks of work small_.htm",
 			"description": "Do you keep chunks of work small"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2009/_2009_08__Do you use more meaningful names than Hungarian short form_.htm",
+			"file": "/newsletter-uploads/2009/_2009_08__Do you use more meaningful names than Hungarian short form_.htm",
 			"description": "Do you use more meaningful names than Hungarian short form"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2009/_2009_09_NZ_North Shore .NET User Group by Adam Cogan_.htm",
+			"file": "/newsletter-uploads/2009/_2009_09_NZ_North Shore .NET User Group by Adam Cogan_.htm",
 			"description": "009_09_NZ_North Shore .NET User Group by Adam Cogan"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2009/_2009_09__Do you know why you choose Windows Forms_.htm",
+			"file": "/newsletter-uploads/2009/_2009_09__Do you know why you choose Windows Forms_.htm",
 			"description": "Do you know why you choose Windows Forms"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2009/_2009_10__Do you use the MVVM pattern instead of spaghetti design in your silverlight and WPF projects_.htm",
+			"file": "/newsletter-uploads/2009/_2009_10__Do you use the MVVM pattern instead of spaghetti design in your silverlight and WPF projects_.htm",
 			"description": "Do you use the MVVM pattern instead of spaghetti design in your silverlight and WPF projects"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2009/_2009_11_Mini_Sharepoint Workshop and TFS 2010_.htm",
+			"file": "/newsletter-uploads/2009/_2009_11_Mini_Sharepoint Workshop and TFS 2010_.htm",
 			"description": "Mini - Sharepoint Workshop and TFS 2010"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2009/_2009_11__Does backward compatibility kill good code_.htm",
+			"file": "/newsletter-uploads/2009/_2009_11__Does backward compatibility kill good code_.htm",
 			"description": "Does backward compatibility kill good code"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2009/_2009_12_Mini_SSW Brain Quest Adelaide- Team Foundation Server and SharePoint 2010_.htm",
+			"file": "/newsletter-uploads/2009/_2009_12_Mini_SSW Brain Quest Adelaide- Team Foundation Server and SharePoint 2010_.htm",
 			"description": "Mini - SSW Brain Quest Adelaide- Team Foundation Server and SharePoint 2010"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2009/_2009_12_Mini_SSW Brain Quest Melbourne- Team Foundation Server and SharePoint 2010_.htm",
+			"file": "/newsletter-uploads/2009/_2009_12_Mini_SSW Brain Quest Melbourne- Team Foundation Server and SharePoint 2010_.htm",
 			"description": "Mini - SSW Brain Quest Melbourne- Team Foundation Server and SharePoint 2010"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2009/_2009_12__Do you know the three important sites for when you're stuck_.htm",
+			"file": "/newsletter-uploads/2009/_2009_12__Do you know the three important sites for when you're stuck_.htm",
 			"description": "Do you know the three important sites for when you're stuck"
 		}
 	]

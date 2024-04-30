@@ -3,97 +3,97 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2008/_2008_01__Do you use inherited forms for consistent behaviour_ .htm",
+			"file": "/newsletter-uploads/2008/_2008_01__Do you use inherited forms for consistent behaviour_ .htm",
 			"description": "Do you use inherited forms for consistent behaviour"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2008/_2008_02__Do you know how Google ranks pages_.htm",
+			"file": "/newsletter-uploads/2008/_2008_02__Do you know how Google ranks pages_.htm",
 			"description": "Do you know how Google ranks pages"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2008/_2008_03_UNSW_University Presentation.htm",
+			"file": "/newsletter-uploads/2008/_2008_03_UNSW_University Presentation.htm",
 			"description": "UNSW_University Presentation"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2008/_2008_03__Do you conduct a Specification Review_.htm",
+			"file": "/newsletter-uploads/2008/_2008_03__Do you conduct a Specification Review_.htm",
 			"description": "Do you conduct a Specification Review"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2008/_2008_04__Do you create a separate virtual directory for Admin access_.htm",
+			"file": "/newsletter-uploads/2008/_2008_04__Do you create a separate virtual directory for Admin access_.htm",
 			"description": "Do you create a separate virtual directory for Admin access"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2008/_2008_04__University of New South Wales Presentation_.htm",
+			"file": "/newsletter-uploads/2008/_2008_04__University of New South Wales Presentation_.htm",
 			"description": "University of New South Wales Presentation"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2008/_2008_05__Do you turn on undo disks for testing purposes_.htm",
+			"file": "/newsletter-uploads/2008/_2008_05__Do you turn on undo disks for testing purposes_.htm",
 			"description": "Do you turn on undo disks for testing purposes"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2008/_2008_05__Macquarie University Presentation_.htm",
+			"file": "/newsletter-uploads/2008/_2008_05__Macquarie University Presentation_.htm",
 			"description": "Macquarie University Presentation"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2008/_2008_06__Do you make sure that the database structure is automatically handled via 3 buttons_.htm",
+			"file": "/newsletter-uploads/2008/_2008_06__Do you make sure that the database structure is automatically handled via 3 buttons_.htm",
 			"description": "Do you make sure that the database structure is automatically handled via 3 buttons"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2008/_2008_07__Why is it great to work in SSW today_.htm",
+			"file": "/newsletter-uploads/2008/_2008_07__Why is it great to work in SSW today_.htm",
 			"description": "Why is it great to work in SSW today"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2008/_2008_08__Do you run web tests on your website (for load and automated testing)_.htm",
+			"file": "/newsletter-uploads/2008/_2008_08__Do you run web tests on your website (for load and automated testing)_.htm",
 			"description": "Do you run web tests on your website (for load and automated testing)"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2008/_2008_09__Do you assume catastrophic failure before touching a server_.htm",
+			"file": "/newsletter-uploads/2008/_2008_09__Do you assume catastrophic failure before touching a server_.htm",
 			"description": "Do you assume catastrophic failure before touching a server"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2008/_2008_10_NZ_Dunedin User Group_.htm",
+			"file": "/newsletter-uploads/2008/_2008_10_NZ_Dunedin User Group_.htm",
 			"description": "NZ_Dunedin User Group"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2008/_2008_10_NZ_University of Otago Presentation_.htm",
+			"file": "/newsletter-uploads/2008/_2008_10_NZ_University of Otago Presentation_.htm",
 			"description": "NZ_University of Otago Presentation"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2008/_2008_10__Do you use setup and set up correctly_.htm",
+			"file": "/newsletter-uploads/2008/_2008_10__Do you use setup and set up correctly_.htm",
 			"description": "Do you use setup and set up correctly"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2008/_2008_11__Do you keep chunks of work small_.htm",
+			"file": "/newsletter-uploads/2008/_2008_11__Do you keep chunks of work small_.htm",
 			"description": "Do you keep chunks of work small"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2008/_2008_12_NZ_SQL PASS Community Connect Event_.htm",
+			"file": "/newsletter-uploads/2008/_2008_12_NZ_SQL PASS Community Connect Event_.htm",
 			"description": "NZ_SQL PASS Community Connect Event"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2008/_2008_12__Do you know the best way to demo Microsoft CRM 4 to clients_.htm",
+			"file": "/newsletter-uploads/2008/_2008_12__Do you know the best way to demo Microsoft CRM 4 to clients_.htm",
 			"description": "Do you know the best way to demo Microsoft CRM 4 to clients"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2008/_2008_12__Special visit from Jonas the Silverlight guru!_.htm",
+			"file": "/newsletter-uploads/2008/_2008_12__Special visit from Jonas the Silverlight guru!_.htm",
 			"description": "Special visit from Jonas the Silverlight guru!"
 		}
 	]

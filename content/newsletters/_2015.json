@@ -3,72 +3,72 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2015/_2015_01__Getting 96 percent Code Reuse with Xamarin Forms__.htm",
+			"file": "/newsletter-uploads/2015/_2015_01__Getting 96 percent Code Reuse with Xamarin Forms__.htm",
 			"description": "Getting 96 percent Code Reuse with Xamarin Forms"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2015/_2015_02__The Agile Olympics__.htm",
+			"file": "/newsletter-uploads/2015/_2015_02__The Agile Olympics__.htm",
 			"description": "The Agile Olympics"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2015/_2015_03__Whats new in VS 2015 and ALM 2015__ .htm",
+			"file": "/newsletter-uploads/2015/_2015_03__Whats new in VS 2015 and ALM 2015__ .htm",
 			"description": "Whats new in VS 2015 and ALM 2015"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2015/_2015_04__SSW Data Onion.htm",
+			"file": "/newsletter-uploads/2015/_2015_04__SSW Data Onion.htm",
 			"description": "SSW Data Onion"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2015/_2015_05__Winning on Visual Studio Online in Australia__.htm",
+			"file": "/newsletter-uploads/2015/_2015_05__Winning on Visual Studio Online in Australia__.htm",
 			"description": "Winning on Visual Studio Online in Australia"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2015/_2015_06__SSW is proud of another project__.htm",
+			"file": "/newsletter-uploads/2015/_2015_06__SSW is proud of another project__.htm",
 			"description": "SSW is proud of another project"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2015/_2015_07__5 things to love about Dynamics CRM 2015__.htm",
+			"file": "/newsletter-uploads/2015/_2015_07__5 things to love about Dynamics CRM 2015__.htm",
 			"description": "5 things to love about Dynamics CRM 2015"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2015/_2015_08__Tips for Tesla__.htm",
+			"file": "/newsletter-uploads/2015/_2015_08__Tips for Tesla__.htm",
 			"description": "Tips for Tesla"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2015/_2015_09_Mini_Mooncake festival and how you can Chinafy to enter the Chinese market_.html",
+			"file": "/newsletter-uploads/2015/_2015_09_Mini_Mooncake festival and how you can Chinafy to enter the Chinese market_.html",
 			"description": "Mini - Mooncake festival and how you can Chinafy to enter the Chinese market"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2015/_2015_09__FireBootCamp won the MAPA award for learning__.html",
+			"file": "/newsletter-uploads/2015/_2015_09__FireBootCamp won the MAPA award for learning__.html",
 			"description": "FireBootCamp won the MAPA award for learning"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2015/_2015_10_Mini_The Angular Superpowers Tour_.html",
+			"file": "/newsletter-uploads/2015/_2015_10_Mini_The Angular Superpowers Tour_.html",
 			"description": "Mini - The Angular Superpowers Tour"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2015/_2015_10__The VS 2015 ebook - behind the scenes__.html",
+			"file": "/newsletter-uploads/2015/_2015_10__The VS 2015 ebook - behind the scenes__.html",
 			"description": "The VS 2015 ebook - behind the scenes"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2015/_2015_11__Teaching Kids to Code in Sydney__.html",
+			"file": "/newsletter-uploads/2015/_2015_11__Teaching Kids to Code in Sydney__.html",
 			"description": "Teaching Kids to Code in Sydney"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2015/_2015_12__The Microsoft Band 2 user experience__.html",
+			"file": "/newsletter-uploads/2015/_2015_12__The Microsoft Band 2 user experience__.html",
 			"description": "The Microsoft Band 2 user experience"
 		}
 	]

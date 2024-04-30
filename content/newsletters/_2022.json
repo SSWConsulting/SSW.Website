@@ -3,62 +3,62 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2022/_2022_01__Adam's 2021 Year in Review__.html",
+			"file": "/newsletter-uploads/2022/_2022_01__Adam's 2021 Year in Review__.html",
 			"description": "Adam's 2021 Year in Review"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2022/_2022_02__Speaking Up About Fairness__.html",
+			"file": "/newsletter-uploads/2022/_2022_02__Speaking Up About Fairness__.html",
 			"description": "Speaking Up About Fairness"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2022/_2022_03__Helping Each Other in the Workplace__.html",
+			"file": "/newsletter-uploads/2022/_2022_03__Helping Each Other in the Workplace__.html",
 			"description": "Helping Each Other in the Workplace"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2022/_2022_04__10 Security Tips for CEOs and SysAdmins__.html",
+			"file": "/newsletter-uploads/2022/_2022_04__10 Security Tips for CEOs and SysAdmins__.html",
 			"description": "10 Security Tips for CEOs and SysAdmins"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2022/_2022_05__Tech World on TikTok – Is it for you__.html",
+			"file": "/newsletter-uploads/2022/_2022_05__Tech World on TikTok – Is it for you__.html",
 			"description": "Tech World on TikTok – Is it for you"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2022/_2022_06__Clean Low Code – How to keep your Power Automate Flows lean and clean__.html",
+			"file": "/newsletter-uploads/2022/_2022_06__Clean Low Code – How to keep your Power Automate Flows lean and clean__.html",
 			"description": "Clean Low Code – How to keep your Power Automate Flows lean and clean"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2022/_2022_07__NDC Conference Melbourne - We're Back In Person__.html",
+			"file": "/newsletter-uploads/2022/_2022_07__NDC Conference Melbourne - We're Back In Person__.html",
 			"description": "NDC Conference Melbourne - We're Back In Person"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2022/_2022_08__A Electrical Nasty Shock - 5 Tips to Avoid them__.html",
+			"file": "/newsletter-uploads/2022/_2022_08__A Electrical Nasty Shock - 5 Tips to Avoid them__.html",
 			"description": "A Electrical Nasty Shock - 5 Tips to Avoid them"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2022/_2022_09__User Journey Mapping - What It Is, How To Do It and Why You Need To__.html",
+			"file": "/newsletter-uploads/2022/_2022_09__User Journey Mapping - What It Is, How To Do It and Why You Need To__.html",
 			"description": "User Journey Mapping - What It Is, How To Do It and Why You Need To"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2022/_2022_10__How AI Can Help You Kickstart Your Blog__.html",
+			"file": "/newsletter-uploads/2022/_2022_10__How AI Can Help You Kickstart Your Blog__.html",
 			"description": "How AI Can Help You Kickstart Your Blog"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2022/_2022_11__That’s a wrap! NDC Sydney, SSW Retreat and Brainstorming Day 2022__.html",
+			"file": "/newsletter-uploads/2022/_2022_11__That’s a wrap! NDC Sydney, SSW Retreat and Brainstorming Day 2022__.html",
 			"description": "That’s a wrap! NDC Sydney, SSW Retreat and Brainstorming Day 2022"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2022/_2022_12__GitHub Copilot - A developers friend or foe__.html",
+			"file": "/newsletter-uploads/2022/_2022_12__GitHub Copilot - A developers friend or foe__.html",
 			"description": "GitHub Copilot - A developers friend or foe"
 		}
 	]

@@ -3,62 +3,62 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2021/_2021_01__Reflecting on 2020 – Embracing Change__.html",
+			"file": "/newsletter-uploads/2021/_2021_01__Reflecting on 2020 – Embracing Change__.html",
 			"description": "Reflecting on 2020 – Embracing Change"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2021/_2021_02__Technical-Debt-Can-you-pay-it-back__.html",
+			"file": "/newsletter-uploads/2021/_2021_02__Technical-Debt-Can-you-pay-it-back__.html",
 			"description": "Technical-Debt-Can-you-pay-it-back"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2021/_2021_03__SSW-Newcastle-now-open-We-are-coding-by-the-sea__.html",
+			"file": "/newsletter-uploads/2021/_2021_03__SSW-Newcastle-now-open-We-are-coding-by-the-sea__.html",
 			"description": "SSW-Newcastle-now-open-We-are-coding-by-the-sea"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2021/_2021_04__Powering a Business with Low-Code__.html",
+			"file": "/newsletter-uploads/2021/_2021_04__Powering a Business with Low-Code__.html",
 			"description": "Powering a Business with Low-Code"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2021/_2021_05__8 Important Updates to The Scrum Guide__.html",
+			"file": "/newsletter-uploads/2021/_2021_05__8 Important Updates to The Scrum Guide__.html",
 			"description": "8 Important Updates to The Scrum Guide"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2021/_2021_06__Keeping Secrets - How to make your code more secure__.html",
+			"file": "/newsletter-uploads/2021/_2021_06__Keeping Secrets - How to make your code more secure__.html",
 			"description": "Keeping Secrets - How to make your code more secure"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2021/_2021_07__Video killed the Bibliophile - Video vs Books__.html",
+			"file": "/newsletter-uploads/2021/_2021_07__Video killed the Bibliophile - Video vs Books__.html",
 			"description": "Video killed the Bibliophile - Video vs Books"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2021/_2021_08__The Power of Multi-select – Multiple Options on Data Entry Forms__.html",
+			"file": "/newsletter-uploads/2021/_2021_08__The Power of Multi-select – Multiple Options on Data Entry Forms__.html",
 			"description": "The Power of Multi-select – Multiple Options on Data Entry Forms"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2021/_2021_09__Going handsfree in Office 365 – You should be using Dictate__.html",
+			"file": "/newsletter-uploads/2021/_2021_09__Going handsfree in Office 365 – You should be using Dictate__.html",
 			"description": "Going handsfree in Office 365 – You should be using Dictate"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2021/_2021_10__Avoiding a Jurassic problem – 7 tips for handling errors, before they bite__.html",
+			"file": "/newsletter-uploads/2021/_2021_10__Avoiding a Jurassic problem – 7 tips for handling errors, before they bite__.html",
 			"description": "Avoiding a Jurassic problem – 7 tips for handling errors, before they bite"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2021/_2021_11__Avoiding Storms with BDD and Automated Testing__.html",
+			"file": "/newsletter-uploads/2021/_2021_11__Avoiding Storms with BDD and Automated Testing__.html",
 			"description": "Avoiding Storms with BDD and Automated Testing"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2021/_2021_12__5 Tips for GitHub Issues and Projects__.html",
+			"file": "/newsletter-uploads/2021/_2021_12__5 Tips for GitHub Issues and Projects__.html",
 			"description": "5 Tips for GitHub Issues and Projects"
 		}
 	]

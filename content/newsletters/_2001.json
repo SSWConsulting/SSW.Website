@@ -3,57 +3,57 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2001/_2001_01__Microsoft SharePoint Portal Server and the Web Storage System_.htm",
+			"file": "/newsletter-uploads/2001/_2001_01__Microsoft SharePoint Portal Server and the Web Storage System_.htm",
 			"description": "Microsoft SharePoint Portal Server and the Web Storage System"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2001/_2001_02__Develop Client-Server Applications with Access_.htm",
+			"file": "/newsletter-uploads/2001/_2001_02__Develop Client-Server Applications with Access_.htm",
 			"description": "Develop Client-Server Applications with Access"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2001/_2001_03__Using Object-Oriented Features in VS.NET_.htm",
+			"file": "/newsletter-uploads/2001/_2001_03__Using Object-Oriented Features in VS.NET_.htm",
 			"description": "Using Object-Oriented Features in VS.NET"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2001/_2001_05__Office XP - What's in it for me_.htm",
+			"file": "/newsletter-uploads/2001/_2001_05__Office XP - What's in it for me_.htm",
 			"description": "Office XP - What's in it for me"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2001/_2001_06__.NET in the world now_.htm",
+			"file": "/newsletter-uploads/2001/_2001_06__.NET in the world now_.htm",
 			"description": ".NET in the world now"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2001/_2001_07__Working in .NET_.htm",
+			"file": "/newsletter-uploads/2001/_2001_07__Working in .NET_.htm",
 			"description": "Working in .NET"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2001/_2001_08__SQL Server tech breakfast double session_.htm",
+			"file": "/newsletter-uploads/2001/_2001_08__SQL Server tech breakfast double session_.htm",
 			"description": "SQL Server tech breakfast double session"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2001/_2001_09__We're looking for feedback on our upcoming projects_.htm",
+			"file": "/newsletter-uploads/2001/_2001_09__We're looking for feedback on our upcoming projects_.htm",
 			"description": "We're looking for feedback on our upcoming projects"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2001/_2001_10__Make your specification work_.htm",
+			"file": "/newsletter-uploads/2001/_2001_10__Make your specification work_.htm",
 			"description": "Make your specification work"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2001/_2001_11__XML Web Services in Visual Studio .NET_.htm",
+			"file": "/newsletter-uploads/2001/_2001_11__XML Web Services in Visual Studio .NET_.htm",
 			"description": "XML Web Services in Visual Studio .NET"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2001/_2001_12__.NET Object Design_.htm",
+			"file": "/newsletter-uploads/2001/_2001_12__.NET Object Design_.htm",
 			"description": ".NET Object Design"
 		}
 	]

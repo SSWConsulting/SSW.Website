@@ -3,67 +3,67 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2007/_2007_01__Rules to Better Windows Vista Deployment_.htm",
+			"file": "/newsletter-uploads/2007/_2007_01__Rules to Better Windows Vista Deployment_.htm",
 			"description": "Rules to Better Windows Vista Deployment"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2007/_2007_02__Do you avoid only using source control on code_.htm",
+			"file": "/newsletter-uploads/2007/_2007_02__Do you avoid only using source control on code_.htm",
 			"description": "Do you avoid only using source control on code"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2007/_2007_03__Do you provide the reason behind the rules rather than blind criticism_.htm",
+			"file": "/newsletter-uploads/2007/_2007_03__Do you provide the reason behind the rules rather than blind criticism_.htm",
 			"description": "Do you provide the reason behind the rules rather than blind criticism"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2007/_2007_04__Do you know the main reasons to upsize from Access to SQL Server 2005_.htm",
+			"file": "/newsletter-uploads/2007/_2007_04__Do you know the main reasons to upsize from Access to SQL Server 2005_.htm",
 			"description": "Do you know the main reasons to upsize from Access to SQL Server 2005"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2007/_2007_05__Do you know who has authority_.htm",
+			"file": "/newsletter-uploads/2007/_2007_05__Do you know who has authority_.htm",
 			"description": "Do you know who has authority"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2007/_2007_06__Do you implement an error logger_.htm",
+			"file": "/newsletter-uploads/2007/_2007_06__Do you implement an error logger_.htm",
 			"description": "Do you implement an error logger"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2007/_2007_07__Do you know that you should never throw an exception using System.Exception_.htm",
+			"file": "/newsletter-uploads/2007/_2007_07__Do you know that you should never throw an exception using System.Exception_.htm",
 			"description": "Do you know that you should never throw an exception using System.Exception"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2007/_2007_08__Do you comment and brand your code_.htm",
+			"file": "/newsletter-uploads/2007/_2007_08__Do you comment and brand your code_.htm",
 			"description": "Do you comment and brand your code"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2007/_2007_09__Do you use appropriate and user-friendly icons_.htm",
+			"file": "/newsletter-uploads/2007/_2007_09__Do you use appropriate and user-friendly icons_.htm",
 			"description": "Do you use appropriate and user-friendly icons"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2007/_2007_10_NZ_Do you use appropriate and user-friendly icons_.htm",
+			"file": "/newsletter-uploads/2007/_2007_10_NZ_Do you use appropriate and user-friendly icons_.htm",
 			"description": "NZ_Do you use appropriate and user-friendly icons"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2007/_2007_10__Cycling to Wagga Wagga_.htm",
+			"file": "/newsletter-uploads/2007/_2007_10__Cycling to Wagga Wagga_.htm",
 			"description": "Cycling to Wagga Wagga"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2007/_2007_11__What sort of primary keys do you use - Natural or Surrogate_ .htm",
+			"file": "/newsletter-uploads/2007/_2007_11__What sort of primary keys do you use - Natural or Surrogate_ .htm",
 			"description": "What sort of primary keys do you use - Natural or Surrogate"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2007/_2007_12__Do you know what unit tests to write and how many_.htm",
+			"file": "/newsletter-uploads/2007/_2007_12__Do you know what unit tests to write and how many_.htm",
 			"description": "Do you know what unit tests to write and how many"
 		}
 	]

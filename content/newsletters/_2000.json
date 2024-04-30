@@ -3,52 +3,52 @@
 	"newsletters": [
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2000/_2000_02__DevCon 2000 and GST and the Developer_.htm",
+			"file": "/newsletter-uploads/2000/_2000_02__DevCon 2000 and GST and the Developer_.htm",
 			"description": "DevCon 2000 and GST and the Developer"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2000/_2000_04__SQL Server 7.0 SP2_.htm",
+			"file": "/newsletter-uploads/2000/_2000_04__SQL Server 7.0 SP2_.htm",
 			"description": "SQL Server 7.0 SP2"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2000/_2000_05__English Query_.htm",
+			"file": "/newsletter-uploads/2000/_2000_05__English Query_.htm",
 			"description": "English Query"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2000/_2000_06__Visio 2000_.htm",
+			"file": "/newsletter-uploads/2000/_2000_06__Visio 2000_.htm",
 			"description": "Visio 2000"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2000/_2000_07__Connection Strings_.htm",
+			"file": "/newsletter-uploads/2000/_2000_07__Connection Strings_.htm",
 			"description": "Connection Strings"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2000/_2000_08__SQL Server 2000_.htm",
+			"file": "/newsletter-uploads/2000/_2000_08__SQL Server 2000_.htm",
 			"description": "SQL Server 2000"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2000/_2000_09__Select Statements in ADO_.htm",
+			"file": "/newsletter-uploads/2000/_2000_09__Select Statements in ADO_.htm",
 			"description": "Select Statements in ADO"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2000/_2000_10__Exchange Server 2000 and what a developer needs to know_.htm",
+			"file": "/newsletter-uploads/2000/_2000_10__Exchange Server 2000 and what a developer needs to know_.htm",
 			"description": "Exchange Server 2000 and what a developer needs to know"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2000/_2000_11__What makes a great spec_.htm",
+			"file": "/newsletter-uploads/2000/_2000_11__What makes a great spec_.htm",
 			"description": "What makes a great spec"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2000/_2000_12__Visual Studio.Net_.htm",
+			"file": "/newsletter-uploads/2000/_2000_12__Visual Studio.Net_.htm",
 			"description": "Visual Studio.Net"
 		}
 	]

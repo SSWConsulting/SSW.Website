@@ -3,62 +3,62 @@
 	"newsletters": [
 		{
 			"month": 1,
-			"file": "/images/newsletter-uploads/2020/_2020_01__Adam's 2019 in Review__.html",
+			"file": "/newsletter-uploads/2020/_2020_01__Adam's 2019 in Review__.html",
 			"description": "Adam's 2019 in Review"
 		},
 		{
 			"month": 2,
-			"file": "/images/newsletter-uploads/2020/_2020_02__Introducing SSW.People!__.html",
+			"file": "/newsletter-uploads/2020/_2020_02__Introducing SSW.People!__.html",
 			"description": "Introducing SSW.People!"
 		},
 		{
 			"month": 3,
-			"file": "/images/newsletter-uploads/2020/_2020_03__Technology in a Pandemic - Helping Control Coronavirus__.html",
+			"file": "/newsletter-uploads/2020/_2020_03__Technology in a Pandemic - Helping Control Coronavirus__.html",
 			"description": "Technology in a Pandemic - Helping Control Coronavirus"
 		},
 		{
 			"month": 4,
-			"file": "/images/newsletter-uploads/2020/_2020_04__Coronavirus - See what we are doing at SSW__.html",
+			"file": "/newsletter-uploads/2020/_2020_04__Coronavirus - See what we are doing at SSW__.html",
 			"description": "Coronavirus - See what we are doing at SSW"
 		},
 		{
 			"month": 5,
-			"file": "/images/newsletter-uploads/2020/_2020_05__Working from home - romance or drama__.html",
+			"file": "/newsletter-uploads/2020/_2020_05__Working from home - romance or drama__.html",
 			"description": "Working from home - romance or drama"
 		},
 		{
 			"month": 6,
-			"file": "/images/newsletter-uploads/2020/_2020_06__Connecting Through Video-How To Engage Customers__.html",
+			"file": "/newsletter-uploads/2020/_2020_06__Connecting Through Video-How To Engage Customers__.html",
 			"description": "Connecting Through Video-How To Engage Customers"
 		},
 		{
 			"month": 7,
-			"file": "/images/newsletter-uploads/2020/_2020_07__I am on cloud 9 - SSW has migrated to Dynamics 365 Sales Cloud Version 9__.html",
+			"file": "/newsletter-uploads/2020/_2020_07__I am on cloud 9 - SSW has migrated to Dynamics 365 Sales Cloud Version 9__.html",
 			"description": "I am on cloud 9 - SSW has migrated to Dynamics 365 Sales Cloud Version 9"
 		},
 		{
 			"month": 8,
-			"file": "/images/newsletter-uploads/2020/_2020_08__Pull Request Approved - Using GitHub as a CMS__.html",
+			"file": "/newsletter-uploads/2020/_2020_08__Pull Request Approved - Using GitHub as a CMS__.html",
 			"description": "Pull Request Approved - Using GitHub as a CMS"
 		},
 		{
 			"month": 9,
-			"file": "/images/newsletter-uploads/2020/_2020_09__Google Search - Australia no longer feeling lucky__.html",
+			"file": "/newsletter-uploads/2020/_2020_09__Google Search - Australia no longer feeling lucky__.html",
 			"description": "Google Search - Australia no longer feeling lucky"
 		},
 		{
 			"month": 10,
-			"file": "/images/newsletter-uploads/2020/_2020_10__8 Tips to Better Architecture Diagrams__.html",
+			"file": "/newsletter-uploads/2020/_2020_10__8 Tips to Better Architecture Diagrams__.html",
 			"description": "8 Tips to Better Architecture Diagrams"
 		},
 		{
 			"month": 11,
-			"file": "/images/newsletter-uploads/2020/_2020_11__NDC 2020 - Breaking the Virtual Barrier__.html",
+			"file": "/newsletter-uploads/2020/_2020_11__NDC 2020 - Breaking the Virtual Barrier__.html",
 			"description": "NDC 2020 - Breaking the Virtual Barrier"
 		},
 		{
 			"month": 12,
-			"file": "/images/newsletter-uploads/2020/_2020_12__GitBook – You Can Document Everything!__.html",
+			"file": "/newsletter-uploads/2020/_2020_12__GitBook – You Can Document Everything!__.html",
 			"description": "GitBook – You Can Document Everything!"
 		}
 	]
