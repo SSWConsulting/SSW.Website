@@ -1,5 +1,5 @@
 import type { Template } from "tinacms";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 import Image from "next/image";
 import * as React from "react";
@@ -12,7 +12,23 @@ import { BsArrowRightCircle, BsYoutube } from "react-icons/bs";
 import { Carousel as CarouselImplementation } from "react-responsive-carousel";
 import { UtilityButton } from "../button/utilityButton";
 
-export const InternalCarousel = ({ data }) => {
+export type InternalCarouselProps = {
+  items: {
+    label: string;
+    imgSrc: string;
+  }[];
+  header: string;
+  paragraph?: TinaMarkdownContent;
+  website?: string;
+  caseStudyUrl?: string;
+  videoUrl?: string;
+  technologies?: {
+    name: string;
+  }[];
+};
+
+export const InternalCarousel = (props: InternalCarouselProps) => {
+  const CarouselItems: InternalCarouselProps = props;
   return (
     <Container size="custom" className="px-0 descendant-li:!list-none md:w-3/4">
       <CarouselImplementation
@@ -24,7 +40,7 @@ export const InternalCarousel = ({ data }) => {
         stopOnHover={true}
         renderIndicator={createCarouselIndicator}
       >
-        {data.items?.map((item, index) => (
+        {CarouselItems.items?.map((item, index) => (
           <CarouselItemImage
             key={index + item.label}
             imgSrc={item.imgSrc}
@@ -32,7 +48,7 @@ export const InternalCarousel = ({ data }) => {
           />
         ))}
       </CarouselImplementation>
-      {renderBody(data)}
+      {CarouselBody(CarouselItems)}
     </Container>
   );
 };
@@ -72,14 +88,14 @@ const createCarouselIndicator = (onClickHandler, isSelected, index, label) => {
   );
 };
 
-const renderBody = ({
+const CarouselBody = ({
   header,
   paragraph,
   website,
   technologies,
   caseStudyUrl,
   videoUrl,
-}) => {
+}: InternalCarouselProps) => {
   return (
     <div key={header} className={header ? "" : "hidden"}>
       <div className="mt-2 flex items-center justify-between text-left font-semibold text-sswRed prose-p:py-0">
