@@ -28,7 +28,7 @@ export const benefitsFields: TinaField[] = [
     name: "image",
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    uploadDir: () => "benefits",
+    uploadDir: () => "images/benefits",
   },
   {
     type: "string",

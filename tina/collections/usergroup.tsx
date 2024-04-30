@@ -107,7 +107,7 @@ export const userGroupPageSchema: Collection = {
               name: "profileImg",
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
-              uploadDir: () => "people",
+              uploadDir: () => "images/people",
             },
             {
               type: "rich-text",
@@ -225,7 +225,7 @@ export const userGroupGlobalSchema: Collection = {
               required: true,
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
-              uploadDir: () => "/badges",
+              uploadDir: () => "images/badges",
             },
             {
               type: "number",

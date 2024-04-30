@@ -23,7 +23,7 @@ export const marketingSchema: Collection = {
       required: true,
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      uploadDir: () => "marketings",
+      uploadDir: () => "images/marketings",
     },
     {
       type: "rich-text",

@@ -64,7 +64,7 @@ export const productsIndexSchema: Collection = {
           name: "logo",
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          uploadDir: () => "products",
+          uploadDir: () => "images/products",
         },
       ],
     },

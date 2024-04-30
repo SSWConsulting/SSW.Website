@@ -45,7 +45,7 @@ export const employmentSchema: Collection = {
           name: "videoBackground",
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          uploadDir: () => "videos",
+          uploadDir: () => "images/videos",
         },
       ],
     },

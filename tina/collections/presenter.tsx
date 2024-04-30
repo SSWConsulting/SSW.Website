@@ -25,7 +25,7 @@ export const presenterSchema: Collection = {
       label: "Profile Image",
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      uploadDir: () => "people",
+      uploadDir: () => "images/people",
     },
     {
       type: "object",

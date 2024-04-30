@@ -79,7 +79,7 @@ export const officeSchema: Collection = {
       name: "coverImg",
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      uploadDir: (args) => `/offices/${args.addressLocality}`,
+      uploadDir: (args) => `images/offices/${args.addressLocality}`,
     },
     {
       type: "image",
@@ -87,7 +87,7 @@ export const officeSchema: Collection = {
       name: "thumbnail",
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      uploadDir: () => "offices/thumbnails",
+      uploadDir: () => "images/offices/thumbnails",
     },
     {
       type: "image",
@@ -96,7 +96,7 @@ export const officeSchema: Collection = {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       uploadDir: (args) => {
-        return `/offices/${args.addressLocality}`;
+        return `images/offices/${args.addressLocality}`;
       },
     },
     {

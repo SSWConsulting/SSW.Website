@@ -97,7 +97,7 @@ export const megaMenuSchema: Collection = {
                       label: "Icon",
                       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                       // @ts-ignore
-                      uploadDir: () => "/megamenu-icons",
+                      uploadDir: () => "images/megamenu-icons",
                     },
                     {
                       type: "string",

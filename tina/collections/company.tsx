@@ -218,7 +218,7 @@ export const companyIndexSchema: Collection = {
           name: companyIndexSchemaConstants.headerImage.heroBackground,
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          uploadDir: () => "background",
+          uploadDir: () => "images/background",
         },
         {
           type: "string",
@@ -231,7 +231,7 @@ export const companyIndexSchema: Collection = {
           name: companyIndexSchemaConstants.headerImage.txtOverlay,
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          uploadDir: () => "background",
+          uploadDir: () => "images/background",
         },
       ],
     },

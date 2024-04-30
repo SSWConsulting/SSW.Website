@@ -63,7 +63,7 @@ export const partnerIndexSchema: Collection = {
           name: "logo",
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          uploadDir: () => "partners",
+          uploadDir: () => "images/partners",
         },
       ],
     },

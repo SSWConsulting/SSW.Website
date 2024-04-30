@@ -63,7 +63,7 @@ export const testimonialSchema: Collection = {
           required: false,
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          uploadDir: () => "testimonialAvatars",
+          uploadDir: () => "images/testimonialAvatars",
         },
         {
           type: "string",

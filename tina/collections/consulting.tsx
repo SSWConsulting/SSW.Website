@@ -94,7 +94,7 @@ export const consultingIndexSchema: Collection = {
               name: "logo",
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
-              uploadDir: () => "thumbs",
+              uploadDir: () => "images/thumbs",
             },
             {
               type: "reference",
@@ -214,7 +214,7 @@ export const consultingSchema: Collection = {
           name: "videoBackground",
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          uploadDir: () => "videos",
+          uploadDir: () => "images/videos",
         },
       ],
     },

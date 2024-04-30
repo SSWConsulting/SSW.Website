@@ -65,7 +65,7 @@ export const industryIndexSchema: Collection = {
           name: "logo",
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          uploadDir: () => "products",
+          uploadDir: () => "images/products",
         },
       ],
     },
@@ -82,7 +82,7 @@ export const industrySolutionsRowSchema: Template = {
       name: "imgSrc1",
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      uploadDir: () => "industry",
+      uploadDir: () => "images/industry",
     },
     {
       type: "string",
@@ -100,7 +100,7 @@ export const industrySolutionsRowSchema: Template = {
       name: "imgSrc2",
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      uploadDir: () => "industry",
+      uploadDir: () => "images/industry",
     },
     {
       type: "string",
@@ -118,7 +118,7 @@ export const industrySolutionsRowSchema: Template = {
       name: "imgSrc3",
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      uploadDir: () => "industry",
+      uploadDir: () => "images/industry",
     },
     {
       type: "string",
@@ -234,7 +234,7 @@ export const industrySchema: Collection = {
       required: true,
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      uploadDir: () => "industry",
+      uploadDir: () => "images/industry",
     },
     {
       type: "image",
@@ -242,7 +242,7 @@ export const industrySchema: Collection = {
       name: "whitepaperFile",
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      uploadDir: () => "files",
+      uploadDir: () => "images/files",
     },
     {
       type: "rich-text",
