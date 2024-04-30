@@ -51,6 +51,7 @@ export const platform = [
 export default {
   // mode: "jit",
   content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "node_modules/ssw.megamenu/**/*.js",
@@ -265,7 +266,10 @@ export default {
           900: "#333333",
           1000: "#1c1b2e",
         },
-        platform: platform.reduce((acc, c) => ({ ...acc, [c.name]: c.color }), {}),
+        platform: platform.reduce(
+          (acc, c) => ({ ...acc, [c.name]: c.color }),
+          {}
+        ),
         social: {
           phone: "#b31217",
           youtube: "#b31217",
