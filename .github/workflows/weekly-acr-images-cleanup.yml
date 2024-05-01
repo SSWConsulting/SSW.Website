@@ -41,6 +41,10 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
+      - name: ACR - Login
+        run: |
+          az acr login --name ${{ env.ACR_LOGIN_SERVER }}
+
       - name: Tag Production ACR Image
         run: |
           # Pull the staging image from ACR
