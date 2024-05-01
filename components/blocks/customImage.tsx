@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import Image from "next/image";
-import type { Template } from "tinacms";
+import type { Collection, Template } from "tinacms";
 import { CustomLink } from "../customLink";
 import { customClasses } from "../util/constants";
 
@@ -67,6 +67,9 @@ export const customImageBlockSchema: Template = {
       type: "image",
       label: "Image",
       name: "src",
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      uploadDir: () => "/images",
       required: true,
     },
     {
