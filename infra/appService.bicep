@@ -173,6 +173,7 @@ resource stagingSlot 'Microsoft.Web/sites/slots@2023-01-01' = {
     siteConfig: {
       appSettings: appSettings
       acrUseManagedIdentityCreds: true
+      healthCheckPath: healthCheckPath
     }
     clientAffinityEnabled: false
   }
