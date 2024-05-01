@@ -129,7 +129,7 @@ jobs:
           docker pull ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ env.SOURCE_IMG }}
 
           # Tag the Docker image with the production tag
-          docker tag ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ env.SOURCE_IMG}} `
+          docker tag ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ env.SOURCE_IMG}} \
           ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ env.DESTINATION_IMG }}
 
       - name: Push Production ACR Image
