@@ -3,7 +3,6 @@ _docs
 .devcontainer
 .git
 .github
-# .next
 .vscode
 .vs
 Dockerfile
