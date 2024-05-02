@@ -47,7 +47,7 @@ export const platform = [
   },
 ];
 
-/** @type {import("tailwindcss").Config} */
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   // mode: "jit",
   content: [
@@ -97,6 +97,7 @@ export default {
       height: {
         22: "5.5rem",
         62: "15.5rem",
+        97: "24.25rem",
         102: "25.5rem",
         112: "28rem",
         172: "43rem",

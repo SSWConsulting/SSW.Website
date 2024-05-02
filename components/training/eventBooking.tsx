@@ -125,7 +125,11 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
               <div className="prose py-1 pr-0 text-xs">
                 <CustomLink
                   className="flex items-center justify-end font-normal md:justify-start"
-                  href="#location"
+                  href={
+                    event.location.directionURL == null
+                      ? ""
+                      : event.location.directionURL
+                  }
                 >
                   <MdLocationOn className="m-icon" />
                   <span className="capitalize">
@@ -257,6 +261,7 @@ export const eventBookingBlock = {
     city: "city",
     date: "date",
     bookingURL: "bookingURL",
+    location: "location",
   },
   gstText: "gstText",
 };
@@ -320,6 +325,12 @@ export const eventBookingSchema: Template = {
           type: "string",
           label: "Booking URL",
           name: eventBookingBlock.eventList.bookingURL,
+        },
+        {
+          type: "reference",
+          label: "Location",
+          name: eventBookingBlock.eventList.location,
+          collections: ["locations"],
         },
       ],
     },
