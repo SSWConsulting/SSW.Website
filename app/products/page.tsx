@@ -8,6 +8,8 @@ const getData = async () => {
   return await client.queries.productsIndexQuery();
 };
 
+import { useSEO } from "hooks/useSeo";
+
 export async function generateMetadata(): Promise<Metadata> {
   // TODO: Replicate logic from seo.tsx, export it from a different file so this can be reused
   const tinaProps = await getData();
@@ -17,12 +19,11 @@ export async function generateMetadata(): Promise<Metadata> {
     seo.canonical = `${tinaProps.data.global.header.url}/products`;
   }
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { dynamicSEO } = useSEO(seo);
+
   return {
-    title: seo.title,
-    description: seo.description,
-    alternates: {
-      canonical: seo.canonical,
-    },
+    ...dynamicSEO,
   };
 }
 

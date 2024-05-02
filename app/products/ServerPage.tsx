@@ -6,9 +6,8 @@ import { tinaField } from "tinacms/dist/react";
 export default function ServerPage({ data }) {
   return (
     <>
-      {/* <SEO seo={props.seo} /> */}
       <Container className="mb-10 flex-1 pt-2">
-        {<Breadcrumbs path={"/products"} suffix="" title={"Products"} />}
+        <Breadcrumbs path={"/products"} suffix="" title={"Products"} />
         {data.productsIndex.title && (
           <h1
             data-tina-field={tinaField(data.productsIndex, "title")}

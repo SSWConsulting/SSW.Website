@@ -20,6 +20,8 @@ import isBetween from "dayjs/plugin/isBetween";
 import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
+import Head from "next/head";
+import layoutData from "../content/global/index.json";
 
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
@@ -40,7 +42,51 @@ const openSans = Open_Sans({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const DEFAULT_METADATA: Metadata = {
+  title: {
+    default: layoutData.header.title,
+    template: "%s",
+  },
+  metadataBase: new URL("http://localhost:3000"),
+  generator: "Next.js",
+  applicationName: "SSW.Website",
+  publisher: "SSW",
+  description: layoutData.header.description,
+  themeColor: "#cc4141",
+  openGraph: {
+    type: "website",
+    locale: "en_AU",
+    url: layoutData.header.url,
+    title: layoutData.header.title,
+    description: layoutData.header.description,
+    siteName: layoutData.header.site_name,
+    images: [
+      {
+        url: layoutData.defaultOGImage,
+        width: 1200,
+        height: 630,
+        alt: "SSW Consulting - Enterprise Software Development",
+      },
+    ],
+  },
+  twitter: {
+    site: layoutData.header.url,
+    card: "summary_large_image",
+  },
+  keywords: [
+    ".NET",
+    "Web",
+    "Mobile",
+    "CRM",
+    "SharePoint",
+    "Azure",
+    "Power BI",
+    "Angular",
+    "React",
+    "Blazor",
+    "Office 365",
+    "Dynamics",
+  ],
   icons: [
     {
       rel: "apple-touch-icon",
@@ -77,18 +123,17 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // TODO: Add React cache
   const menuData = await getMegamenu();
 
   return (
     <html lang="en" className={openSans.className}>
-      {/* <Head>
+      <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#cc4141" />
         <meta name="theme-color" content="#ffffff" />
-      </Head> */}
+      </Head>
       <body>
         <Analytics />
         {/* <Theme> */}
@@ -112,7 +157,6 @@ export default async function RootLayout({
           </header>
           <main className="grow bg-white">{children}</main>
 
-          {/* {showAzureBanner && <PreFooter />} */}
           <Footer />
         </div>
         {/* </Theme> */}
