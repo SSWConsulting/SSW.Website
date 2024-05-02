@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import Image from "next/image";
-import type { Collection, Template } from "tinacms";
+import type { Template } from "tinacms";
 import { CustomLink } from "../customLink";
 import { customClasses } from "../util/constants";
 
