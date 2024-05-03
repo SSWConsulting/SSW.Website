@@ -61,6 +61,8 @@ jobs:
     permissions:
       pull-requests: write
     steps:
+      - uses: actions/checkout@v4
+
       - name: Get PR title
         id: pr_title
         run: |
