@@ -1,17 +1,21 @@
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { Container } from "@/components/util/container";
+import { Section } from "@/components/util/section";
+import { removeExtension } from "@/services/client/utils.service";
+import { Breadcrumbs } from "app/components/breadcrumb";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-export default function ServerPage({ data }) {
+export default function ServerPage({ props }) {
+  const { data, variables, global } = props;
   return (
     <>
-      {/* <Section className="mx-auto w-full max-w-9xl px-8 pt-5">
+      <Section className="mx-auto w-full max-w-9xl px-8 pt-5">
         <Breadcrumbs
-          path={removeExtension(props.variables.relativePath)}
-          suffix={data.global.breadcrumbSuffix}
+          path={removeExtension(variables.relativePath)}
+          suffix={global?.breadcrumbSuffix}
           title={data.products.seo?.title}
         />
-      </Section> */}
+      </Section>
       <Container
         className={
           "prose flex-1 pt-4 prose-h1:!my-0 prose-h1:!pt-4 prose-h3:!mt-0 prose-img:!my-0"

@@ -72,6 +72,6 @@ export default async function Products({
   return isEnabled ? (
     <ClientPage props={{ ...tinaProps }} />
   ) : (
-    <ServerPage data={tinaProps.data} />
+    <ServerPage props={tinaProps} />
   );
 }
