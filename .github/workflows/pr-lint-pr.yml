@@ -60,6 +60,8 @@ jobs:
           echo "Linked issue: $success" >> $env:GITHUB_STEP_SUMMARY
           echo "success=$success" >> $env:GITHUB_OUTPUT
           echo "message=$message" >> $env:GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ github.token }}
 
       - name: Get PR title
         id: pr_title
