@@ -3,7 +3,7 @@ import { NavMenuGroup } from "ssw.megamenu";
 import { CustomLink } from "../../customLink";
 import { Layout } from "../../layout";
 import { Container } from "../container";
-import { ErrorText } from "./error-text";
+import { ErrorText } from "./error";
 
 import React from "react";
 
