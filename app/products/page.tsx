@@ -8,6 +8,7 @@ const getData = async () => {
   return await client.queries.productsIndexQuery();
 };
 
+import { DEFAULT_METADATA } from "app/layout";
 import { useSEO } from "hooks/useSeo";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -20,11 +21,9 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { dynamicSEO } = useSEO(seo);
+  const { seoProps } = useSEO(seo);
 
-  return {
-    ...dynamicSEO,
-  };
+  return { ...seoProps };
 }
 
 export default async function ProductsIndex() {
