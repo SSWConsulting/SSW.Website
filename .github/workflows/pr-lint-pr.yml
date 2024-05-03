@@ -71,6 +71,7 @@ jobs:
 
           # use gh cli to get the PR title
           PR_TITLE=$(gh pr view ${{ github.event.number }} --json title --jq '.title')
+          echo "PR title: $PR_TITLE"
 
           # check if any of the default titles are found in the PR title
           IS_DEFAULT=false
@@ -104,3 +105,21 @@ jobs:
             Check out https://www.ssw.com.au/rules/write-a-good-pull-request/ for more information
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-repeats: false
+
+  request-changes:
+    needs: [linked-issue-check, descriptive-pr-title-check]
+    runs-on: ubuntu-latest
+    name: Request changes
+    if: always()
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: ntsd/auto-request-changes-action@v3
+        if: ${{ github.event.pull_request && failure() }}
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+      - uses: hmarr/auto-approve-action@v3
+        if: ${{ github.event.pull_request && success() }}
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
