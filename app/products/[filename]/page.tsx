@@ -1,26 +1,29 @@
 import client from "@/tina/client";
+import { useSEO } from "hooks/useSeo";
+import { Metadata } from "next";
 import { draftMode } from "next/headers";
 import ClientPage from "./ClientPage";
 import ServerPage from "./ServerPage";
 
-export const dynamicParams = false;
+export const dynamicParams = false; // False will not allow Next to generate any routes on request
 
+// Equavalent to getStaticPaths in Page Routing
 export async function generateStaticParams() {
-  const pagesData = await client.queries.productsConnection();
-  // const allPagesListData = PageListData;
+  let PageListData = await client.queries.productsConnection();
+  const allPagesListData = PageListData;
 
-  // while (PageListData.data.productsConnection.pageInfo.hasNextPage) {
-  //   const lastCursor = PageListData.data.productsConnection.pageInfo.endCursor;
-  //   PageListData = await client.queries.productsConnection({
-  //     after: lastCursor,
-  //   });
+  while (PageListData.data.productsConnection.pageInfo.hasNextPage) {
+    const lastCursor = PageListData.data.productsConnection.pageInfo.endCursor;
+    PageListData = await client.queries.productsConnection({
+      after: lastCursor,
+    });
 
-  //   allPagesListData.data.productsConnection.edges.push(
-  //     ...PageListData.data.productsConnection.edges
-  //   );
-  // }
+    allPagesListData.data.productsConnection.edges.push(
+      ...PageListData.data.productsConnection.edges
+    );
+  }
 
-  const pages = pagesData.data.productsConnection.edges.map((page) => ({
+  const pages = PageListData.data.productsConnection.edges.map((page) => ({
     filename: page.node._sys.filename,
   }));
 
@@ -35,7 +38,28 @@ const getData = async (filename: string) => {
   return { ...data, timestamp: new Date().toISOString() };
 };
 
-export default async function ProductsIndex({
+type GenerateMetaDataProps = {
+  params: { filename: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata({
+  params,
+}: GenerateMetaDataProps): Promise<Metadata> {
+  const tinaProps = await getData(params.filename);
+
+  const seo = tinaProps.data.products.seo;
+  if (seo && !seo.canonical) {
+    seo.canonical = `${tinaProps.data.global.header.url}/products/${params.filename}`;
+  }
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { seoProps } = useSEO(seo);
+
+  return { ...seoProps };
+}
+
+export default async function Products({
   params,
 }: {
   params: { filename: string };
