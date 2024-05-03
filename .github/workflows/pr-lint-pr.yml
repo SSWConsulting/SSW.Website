@@ -81,8 +81,3 @@ jobs:
           PR_COMMENT: |
             A great PR needs a great descriptive title
             Check out https://www.ssw.com.au/rules/write-a-good-pull-request/ for more information
-
-      - name: Generate summary
-        if: failure()
-        run: |
-          echo "PR title was not descriptive" >> $GITHUB_STEP_SUMMARY
