@@ -8,10 +8,6 @@ concurrency:
   group: ci-${{ github.event.number }}
   cancel-in-progress: true
 
-defaults:
-  run:
-    shell: pwsh
-
 jobs:
   linked-issue-check:
     runs-on: ubuntu-latest
@@ -39,6 +35,7 @@ jobs:
           echo "sourceDiff=$SourceDiff" >> $env:GITHUB_OUTPUT
 
       - name: Non-content files - 📂
+        shell: pwsh
         run: |
           # Source Difference
           if ( ([string]::IsNullOrEmpty("${{ steps.check_file_changed.outputs.sourceDiff }}"))) {
