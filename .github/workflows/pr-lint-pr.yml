@@ -64,11 +64,20 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-      - name: Check if PR title is not default
+      - name: "Check if PR title is not default #1"
         uses: transferwise/actions-pr-checker@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NOT_CONTAINS_PATTERN: "TinaCMS content update"
+          PR_COMMENT: |
+            A great PR needs a great descriptive title
+            Check out https://www.ssw.com.au/rules/write-a-good-pull-request/ for more information
+
+      - name: "Check if PR title is not default #2"
+        uses: transferwise/actions-pr-checker@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NOT_CONTAINS_PATTERN: "Update from TinaCMS"
           PR_COMMENT: |
             A great PR needs a great descriptive title
             Check out https://www.ssw.com.au/rules/write-a-good-pull-request/ for more information
