@@ -13,7 +13,7 @@ defaults:
     shell: pwsh
 
 jobs:
-  pr-lint:
+  linked-issue-check:
     runs-on: ubuntu-latest
     name: Check linked issues
     steps:
@@ -57,3 +57,18 @@ jobs:
       - name: Generate summary
         run: |
           echo "Found ${{ steps.check-linked-issues.outputs.linked_issues_count }} issues linked to PR" >> $GITHUB_STEP_SUMMARY
+
+  descriptive-pr-title-check:
+    runs-on: ubuntu-latest
+    name: Check descriptive PR title
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Check if PR title is not default
+        uses: transferwise/actions-pr-checker@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NOT_CONTAINS_PATTERN: "TinaCMS content update"
+          PR_COMMENT: |
+            A great PR needs a great descriptive title
+            Check out https://www.ssw.com.au/rules/write-a-good-pull-request/ for more information
