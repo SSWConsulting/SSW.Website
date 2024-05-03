@@ -2,7 +2,7 @@ name: PR - Lint PR
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [opened, edited, synchronize, reopened]
 
 concurrency:
   group: ci-${{ github.event.number }}
@@ -18,9 +18,9 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Checking non-content changes - 🔎
+      - name: Checking for linked issues
         shell: pwsh
-        id: check_file_changed
+        id: check_linked_issues
         run: |
           # Diff HEAD with the previous commit
           $diff = git diff --name-only HEAD^ HEAD
@@ -28,40 +28,38 @@ jobs:
 
           # TODO: Next time we need to modify which directories we ignore, break this out to a variable which is easy to configure
 
-          $SourceDiff = $diff | Where-Object { $_ -notmatch '^content/' -and $_ -notmatch '^public/' -and $_ -notmatch '^.github/ISSUE_TEMPLATE/' }
-          $HasDiff = $SourceDiff.Length -gt 0
+          $sourceDiff = $diff | Where-Object { $_ -notmatch '^content/' -and $_ -notmatch '^public/' -and $_ -notmatch '^.github/ISSUE_TEMPLATE/' }
+          $hasCodeChanges = $sourceDiff.Length -gt 0
 
-          echo "hasCodeChanges=$HasDiff" >> $env:GITHUB_OUTPUT
-          echo "sourceDiff=$SourceDiff" >> $env:GITHUB_OUTPUT
+          echo "hasCodeChanges=$hasCodeChanges" >> $env:GITHUB_OUTPUT
+          echo "sourceDiff=$sourceDiff" >> $env:GITHUB_OUTPUT
 
-      - name: Non-content files - 📂
-        shell: pwsh
-        run: |
           # Source Difference
-          if ( ([string]::IsNullOrEmpty("${{ steps.check_file_changed.outputs.sourceDiff }}"))) {
+          if ( ([string]::IsNullOrEmpty($sourceDiff))) {
             echo "🏃 content change only - skipping lint action"
           }
           else {
-            echo "${{ steps.check_file_changed.outputs.sourceDiff }}"
+            echo $sourceDiff
           }
 
-      - uses: nearform-actions/github-action-check-linked-issues@v1.6.1
-        if: ${{steps.check_file_changed.outputs.hasCodeChanges == 'True' }}
-        id: check-linked-issues
-        with:
-          exclude-branches: "dependabot/**"
+          $success = $false
+          if ($hasCodeChanges) {
+            # use gh cli to check if PR has linked issues
+            $success = gh pr list --json linkedIssues --jq '.[].linkedIssues' | ConvertFrom-Json | Where-Object { $_ -ne $null } | ForEach-Object { $_.length -gt 0 }
+          } else {
+            $success = $true
+          }
 
-      - name: Generate summary
-        run: |
-          echo "Found ${{ steps.check-linked-issues.outputs.linked_issues_count }} issues linked to PR" >> $GITHUB_STEP_SUMMARY
+          if ($success) {
+            $message = ''
+          } else {
+            $message = 'Please make sure to link the issue(s) you are working on in the PR description.'
+          }
 
-  descriptive-pr-title-check:
-    runs-on: ubuntu-latest
-    name: Check descriptive PR title
-    permissions:
-      pull-requests: write
-    steps:
-      - uses: actions/checkout@v4
+          echo "Success: $success"
+          echo "Linked issue: $success" >> $env:GITHUB_STEP_SUMMARY
+          echo "success=$success" >> $env:GITHUB_OUTPUT
+          echo "message=$message" >> $env:GITHUB_OUTPUT
 
       - name: Get PR title
         id: pr_title
@@ -87,39 +85,28 @@ jobs:
           done
 
           if [[ $IS_DEFAULT == true ]]; then
-            echo "Found default PR title" >> $GITHUB_STEP_SUMMARY
-            # exit with a non-zero status code to fail the job
-            exit 1
+            echo "PR title looks like a default" >> $GITHUB_STEP_SUMMARY
+            echo "message=Please update the PR title to be more descriptive - Check out https://www.ssw.com.au/rules/write-a-good-pull-request/for more information" >> $GITHUB_OUTPUT
+          else
+            echo "PR title looks good" >> $GITHUB_STEP_SUMMARY
+            echo "message=" >> $GITHUB_OUTPUT
           fi
+          success=!$IS_DEFAULT
+          echo "success=$success" >> $GITHUB_OUTPUT
+          echo "message=$message" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Comment on PR with insights
-        uses: mshick/add-pr-comment@v2
-        if: always()
-        with:
-          message-success: |
-            Great PR title! 🎉
-          message-failure: |
-            A great PR needs a great descriptive title
-            Check out https://www.ssw.com.au/rules/write-a-good-pull-request/ for more information
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          allow-repeats: false
-
-  request-changes:
-    needs: [linked-issue-check, descriptive-pr-title-check]
-    runs-on: ubuntu-latest
-    name: Request changes
-    if: always()
-    permissions:
-      pull-requests: write
-    steps:
       - uses: ntsd/auto-request-changes-action@v3
         if: ${{ github.event.pull_request && failure() }}
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
+          review-message: |
+            ${{ steps.check_linked_issues.outputs.message }}
+            ${{ steps.pr_title.outputs.message }}
 
       - uses: hmarr/auto-approve-action@v3
         if: ${{ github.event.pull_request && success() }}
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
+          review-message: "LGTM 🚀"
