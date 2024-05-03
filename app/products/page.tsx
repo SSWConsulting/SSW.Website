@@ -11,7 +11,6 @@ const getData = async () => {
 import { useSEO } from "hooks/useSeo";
 
 export async function generateMetadata(): Promise<Metadata> {
-  // TODO: Replicate logic from seo.tsx, export it from a different file so this can be reused
   const tinaProps = await getData();
 
   const seo = tinaProps.data.productsIndex.seo;
