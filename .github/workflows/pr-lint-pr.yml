@@ -64,20 +64,44 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-      - name: "Check if PR title is not default #1"
-        uses: transferwise/actions-pr-checker@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NOT_CONTAINS_PATTERN: "TinaCMS content update"
-          PR_COMMENT: |
-            A great PR needs a great descriptive title
-            Check out https://www.ssw.com.au/rules/write-a-good-pull-request/ for more information
+      - name: Get PR title
+        id: pr_title
+        run: |
+          # array of default PR titles
+          DEFAULT_TITLES=("TinaCMS content update" "Update from TinaCMS")
 
-      - name: "Check if PR title is not default #2"
-        uses: transferwise/actions-pr-checker@v3
+          # use gh cli to get the PR title
+          PR_TITLE=$(gh pr view ${{ github.event.number }} --json title --jq '.title')
+
+          # check if any of the default titles are found in the PR title
+          IS_DEFAULT=false
+          for title in "${DEFAULT_TITLES[@]}"; do
+            echo "Checking if PR title contains $title"
+            if [[ $PR_TITLE == *"$title"* ]]; then
+              echo "❌"
+              IS_DEFAULT=true
+              break
+            else
+              echo "✅"
+            fi
+          done
+
+          if [[ $IS_DEFAULT == true ]]; then
+            echo "Found default PR title" >> $GITHUB_STEP_SUMMARY
+            # exit with a non-zero status code to fail the job
+            exit 1
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NOT_CONTAINS_PATTERN: "Update from TinaCMS"
-          PR_COMMENT: |
+
+      - name: Comment on PR with insights
+        uses: mshick/add-pr-comment@v2
+        if: always()
+        with:
+          message-success: |
+            Great PR title! 🎉
+          message-failure: |
             A great PR needs a great descriptive title
             Check out https://www.ssw.com.au/rules/write-a-good-pull-request/ for more information
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          allow-repeats: false
