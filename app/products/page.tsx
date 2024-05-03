@@ -8,7 +8,6 @@ const getData = async () => {
   return await client.queries.productsIndexQuery();
 };
 
-import { DEFAULT_METADATA } from "app/layout";
 import { useSEO } from "hooks/useSeo";
 
 export async function generateMetadata(): Promise<Metadata> {
