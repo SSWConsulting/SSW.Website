@@ -47,7 +47,6 @@ export const DEFAULT_METADATA: Metadata = {
     default: layoutData.header.title,
     template: "%s",
   },
-  metadataBase: new URL("http://localhost:3000"),
   generator: "Next.js",
   applicationName: "SSW.Website",
   publisher: "SSW",
