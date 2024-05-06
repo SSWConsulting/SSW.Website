@@ -84,7 +84,8 @@ const BigCards = ({ title, cards, schema }) => {
                     src={card.imgSrc ?? ""}
                     width="100"
                     height="100"
-                    alt=""
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    alt={`Icon for ${card.title}`}
                   />
                 </div>
                 <div className="relative flex grow flex-col p-8">
@@ -162,7 +163,8 @@ const SmallCardContent = ({ card, schema, index }) => {
           src={card.imgSrc ?? ""}
           width="50"
           height="50"
-          alt=""
+          sizes="(max-width: 768px) 50vw, 33vw"
+          alt={`Icon for ${card.title}`}
         />{" "}
       </span>
       <h3
