@@ -14,7 +14,7 @@ export const productsIndexSchema: Collection = {
       delete: false,
     },
     router: async () => {
-      await fetch("/api/enable-draft");
+      // await fetch("/api/enable-draft");
       return "/products";
     },
   },

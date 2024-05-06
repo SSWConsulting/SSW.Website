@@ -74,8 +74,10 @@ const config = defineStaticConfig({
       };
     },
   },
-  cmsCallback: (cms: TinaCMS) => {
+  cmsCallback: async (cms: TinaCMS) => {
     cms.flags.set("branch-switcher", true);
+    console.log("cms g", cms);
+    await fetch("/api/enable-draft");
     return cms;
   },
   schema: {
@@ -117,6 +119,17 @@ const config = defineStaticConfig({
       userGroupPageSchema,
       userGroupGlobalSchema,
     ],
+  },
+  admin: {
+    authHooks: {
+      onLogin: async ({ token }) => {
+        //  location.href = `/api/enable-draft?slug=${location.pathname}`;
+      },
+      onLogout: async () => {
+        //location.href = `/api/disable-draft?slug=${location.pathname}`;
+        console.log("logout");
+      },
+    },
   },
   search: {
     tina: {
