@@ -76,7 +76,6 @@ const config = defineStaticConfig({
   },
   cmsCallback: async (cms: TinaCMS) => {
     cms.flags.set("branch-switcher", true);
-    console.log("cms g", cms);
     await fetch("/api/enable-draft");
     return cms;
   },

@@ -70,10 +70,7 @@ export default async function Products({
   const { isEnabled } = draftMode();
 
   return isEnabled ? (
-    <>
-      {" Edit Mode"}
-      <ClientPage props={{ ...tinaProps }} />
-    </>
+    <ClientPage props={{ ...tinaProps }} />
   ) : (
     <ServerPage props={tinaProps} />
   );

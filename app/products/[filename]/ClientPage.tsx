@@ -10,10 +10,5 @@ export default function ClientPage({ props }) {
     data: props.data,
   });
 
-  return (
-    <>
-      edit mode
-      <ServerPage props={props} />
-    </>
-  );
+  return <ServerPage props={props} />;
 }

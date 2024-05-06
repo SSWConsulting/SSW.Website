@@ -10,10 +10,5 @@ export default function ClientPage({ props }) {
     data: props.data,
   });
 
-  return (
-    <>
-      Eidt mode
-      <ServerPage data={data} />
-    </>
-  );
+  return <ServerPage data={data} />;
 }

@@ -14,7 +14,6 @@ export const productsIndexSchema: Collection = {
       delete: false,
     },
     router: async () => {
-      // await fetch("/api/enable-draft");
       return "/products";
     },
   },
@@ -82,7 +81,6 @@ export const productsSchema: Collection = {
   format: "mdx",
   ui: {
     router: async ({ document }) => {
-      await fetch("/api/enable-draft");
       return `/products/${document._sys.filename}`;
     },
   },
