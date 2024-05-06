@@ -98,6 +98,7 @@ const CarouselItemImage = (props: CarouselItemImageProps) => {
         alt={label}
         height={388}
         width={1080}
+        sizes="100vw"
         priority={index === 0}
       />
       {/* `legend` required so that the carousel works properly */}
