@@ -15,8 +15,8 @@ dependencies:
     specifier: ^6.5.2
     version: 6.5.2
   '@headlessui/react':
-    specifier: ^1.7.18
-    version: 1.7.18(react-dom@18.2.0)(react@18.3.1)
+    specifier: ^1.7.19
+    version: 1.7.19(react-dom@18.2.0)(react@18.3.1)
   '@headlessui/tailwindcss':
     specifier: ^0.2.0
     version: 0.2.0(tailwindcss@3.4.3)
@@ -3247,7 +3247,7 @@ packages:
       react-dom: ^16.8.0 || ^17 || ^18
     dependencies:
       '@graphiql/toolkit': 0.8.4(@types/node@20.12.8)(graphql@15.8.0)
-      '@headlessui/react': 1.7.18(react-dom@17.0.2)(react@17.0.2)
+      '@headlessui/react': 1.7.19(react-dom@17.0.2)(react@17.0.2)
       '@radix-ui/react-dialog': 1.0.5(@types/react@18.3.1)(react-dom@17.0.2)(react@17.0.2)
       '@radix-ui/react-dropdown-menu': 2.0.6(@types/react@18.3.1)(react-dom@17.0.2)(react@17.0.2)
       '@radix-ui/react-tooltip': 1.0.7(@types/react@18.3.1)(react-dom@17.0.2)(react@17.0.2)
@@ -3611,8 +3611,8 @@ packages:
       react-dom: 17.0.2(react@17.0.2)
     dev: true
 
-  /@headlessui/react@1.7.18(react-dom@17.0.2)(react@17.0.2):
-    resolution: {integrity: sha512-4i5DOrzwN4qSgNsL4Si61VMkUcWbcSKueUV7sFhpHzQcSShdlHENE5+QBntMSRvHt8NyoFO2AGG8si9lq+w4zQ==}
+  /@headlessui/react@1.7.19(react-dom@17.0.2)(react@17.0.2):
+    resolution: {integrity: sha512-Ll+8q3OlMJfJbAKM/+/Y2q6PPYbryqNTXDbryx7SXLIDamkF6iQFbriYHga0dY44PvDhvvBWCx1Xj4U5+G4hOw==}
     engines: {node: '>=10'}
     peerDependencies:
       react: ^16 || ^17 || ^18
@@ -3624,8 +3624,8 @@ packages:
       react-dom: 17.0.2(react@17.0.2)
     dev: true
 
-  /@headlessui/react@1.7.18(react-dom@18.2.0)(react@18.3.1):
-    resolution: {integrity: sha512-4i5DOrzwN4qSgNsL4Si61VMkUcWbcSKueUV7sFhpHzQcSShdlHENE5+QBntMSRvHt8NyoFO2AGG8si9lq+w4zQ==}
+  /@headlessui/react@1.7.19(react-dom@18.2.0)(react@18.3.1):
+    resolution: {integrity: sha512-Ll+8q3OlMJfJbAKM/+/Y2q6PPYbryqNTXDbryx7SXLIDamkF6iQFbriYHga0dY44PvDhvvBWCx1Xj4U5+G4hOw==}
     engines: {node: '>=10'}
     peerDependencies:
       react: ^16 || ^17 || ^18
@@ -18434,7 +18434,7 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
-      '@headlessui/react': 1.7.18(react-dom@18.2.0)(react@18.3.1)
+      '@headlessui/react': 1.7.19(react-dom@18.2.0)(react@18.3.1)
       '@heroicons/react': 2.1.1(react@18.3.1)
       clsx: 2.1.0
       react: 18.3.1
@@ -18904,7 +18904,7 @@ packages:
       '@floating-ui/dom': 1.5.3
       '@floating-ui/react-dom': 2.0.2(react-dom@18.2.0)(react@18.3.1)
       '@graphql-inspector/core': 4.2.2(graphql@15.8.0)
-      '@headlessui/react': 1.7.18(react-dom@18.2.0)(react@18.3.1)
+      '@headlessui/react': 1.7.19(react-dom@18.2.0)(react@18.3.1)
       '@heroicons/react': 1.0.6(react@18.3.1)
       '@monaco-editor/react': 4.4.5(monaco-editor@0.31.0)(react-dom@18.2.0)(react@18.3.1)
       '@radix-ui/react-popover': 1.0.7(@types/react@18.3.1)(react-dom@18.2.0)(react@18.3.1)
@@ -18983,7 +18983,7 @@ packages:
       '@floating-ui/dom': 1.6.3
       '@floating-ui/react-dom': 2.0.2(react-dom@17.0.2)(react@17.0.2)
       '@graphql-inspector/core': 4.2.2(graphql@15.8.0)
-      '@headlessui/react': 1.7.18(react-dom@17.0.2)(react@17.0.2)
+      '@headlessui/react': 1.7.19(react-dom@17.0.2)(react@17.0.2)
       '@heroicons/react': 1.0.6(react@17.0.2)
       '@monaco-editor/react': 4.4.5(monaco-editor@0.31.0)(react-dom@17.0.2)(react@17.0.2)
       '@radix-ui/react-popover': 1.0.7(@types/react@18.3.1)(react-dom@17.0.2)(react@17.0.2)
@@ -19062,7 +19062,7 @@ packages:
       '@floating-ui/dom': 1.6.3
       '@floating-ui/react-dom': 2.0.2(react-dom@18.2.0)(react@18.3.1)
       '@graphql-inspector/core': 4.2.2(graphql@15.8.0)
-      '@headlessui/react': 1.7.18(react-dom@18.2.0)(react@18.3.1)
+      '@headlessui/react': 1.7.19(react-dom@18.2.0)(react@18.3.1)
       '@heroicons/react': 1.0.6(react@18.3.1)
       '@monaco-editor/react': 4.4.5(monaco-editor@0.31.0)(react-dom@18.2.0)(react@18.3.1)
       '@radix-ui/react-popover': 1.0.7(@types/react@18.3.1)(react-dom@18.2.0)(react@18.3.1)
