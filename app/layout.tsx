@@ -43,6 +43,7 @@ const openSans = Open_Sans({
 });
 
 export const DEFAULT_METADATA: Metadata = {
+  metadataBase: new URL(layoutData.header.url),
   title: {
     default: layoutData.header.title,
     template: "%s",
