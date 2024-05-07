@@ -1,8 +1,8 @@
 import client from "@/tina/client";
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
-import ClientPage from "./ClientPage";
-import ServerPage from "./ServerPage";
+import ProductIndex from "./product-index";
+import ProductIndexPreview from "./product-index-preview";
 
 const getData = async () => {
   return await client.queries.productsIndexQuery();
@@ -30,8 +30,8 @@ export default async function ProductsIndex() {
   const { isEnabled } = draftMode();
 
   return isEnabled ? (
-    <ClientPage props={{ ...tinaProps }} />
+    <ProductIndexPreview props={{ ...tinaProps }} />
   ) : (
-    <ServerPage data={tinaProps.data} />
+    <ProductIndex data={tinaProps.data} />
   );
 }

@@ -3,7 +3,7 @@ import { Container } from "@/components/util/container";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import { tinaField } from "tinacms/dist/react";
 
-export default function ServerPage({ data }) {
+export default function ProductIndex({ data }) {
   return (
     <>
       <Container className="mb-10 flex-1 pt-2">
