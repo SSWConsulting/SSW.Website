@@ -76,7 +76,10 @@ const config = defineStaticConfig({
   },
   cmsCallback: async (cms: TinaCMS) => {
     cms.flags.set("branch-switcher", true);
-    await fetch("/api/enable-draft");
+    // for local development, enable draft mode since we can access the Tina Edit mode without login
+    if (process.env.NODE_ENV === "development") {
+      await fetch("/api/enable-draft");
+    }
     return cms;
   },
   schema: {
@@ -121,12 +124,12 @@ const config = defineStaticConfig({
   },
   admin: {
     authHooks: {
-      onLogin: async ({ token }) => {
-        //  location.href = `/api/enable-draft?slug=${location.pathname}`;
+      onLogin: async () => {
+        await fetch("/api/enable-draft");
+        location.href = `/${location.pathname}`;
       },
       onLogout: async () => {
-        //location.href = `/api/disable-draft?slug=${location.pathname}`;
-        console.log("logout");
+        await fetch("/api/disable-draft");
       },
     },
   },
