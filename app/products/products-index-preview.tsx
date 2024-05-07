@@ -10,5 +10,5 @@ export default function ProductsIndexPreview({ props }) {
     data: props.data,
   });
 
-  return <ProductIndex data={data} />;
+  return <ProductIndex props={data} />;
 }

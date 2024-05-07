@@ -31,6 +31,6 @@ export default async function ProductsIndex() {
   return isEnabled ? (
     <ProductsIndexPreview props={{ ...tinaProps }} />
   ) : (
-    <ProductsIndexContent data={tinaProps.data} />
+    <ProductsIndexContent props={tinaProps.data} />
   );
 }
