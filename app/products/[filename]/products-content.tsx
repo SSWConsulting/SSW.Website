@@ -5,7 +5,7 @@ import { removeExtension } from "@/services/client/utils.service";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-export default function ServerPage({ props }) {
+export default function ProductsContent({ props }) {
   const { data, variables, global } = props;
   return (
     <>

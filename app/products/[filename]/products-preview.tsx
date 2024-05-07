@@ -1,14 +1,14 @@
 "use client";
 
 import { useTina } from "tinacms/dist/react";
-import ServerPage from "./ServerPage";
+import ProductsContent from "./products-content";
 
-export default function ClientPage({ props }) {
+export default function ProductsPreviwe({ props }) {
   useTina({
     query: props.query,
     variables: props.variables,
     data: props.data,
   });
 
-  return <ServerPage props={props} />;
+  return <ProductsContent props={props} />;
 }

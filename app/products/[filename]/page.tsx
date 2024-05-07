@@ -2,8 +2,8 @@ import client from "@/tina/client";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
-import ClientPage from "./ClientPage";
-import ServerPage from "./ServerPage";
+import ProductsContent from "./products-content";
+import ProductsPreview from "./products-preview";
 
 export const dynamicParams = false; // False will not allow Next to generate any routes on request
 
@@ -70,8 +70,8 @@ export default async function Products({
   const { isEnabled } = draftMode();
 
   return isEnabled ? (
-    <ClientPage props={{ ...tinaProps }} />
+    <ProductsPreview props={{ ...tinaProps }} />
   ) : (
-    <ServerPage props={tinaProps} />
+    <ProductsContent props={tinaProps} />
   );
 }
