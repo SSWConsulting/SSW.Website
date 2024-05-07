@@ -1,14 +1,13 @@
 import client from "@/tina/client";
+import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
-import ProductIndex from "./product-index";
-import ProductIndexPreview from "./product-index-preview";
+import ProductsIndexContent from "./products-index";
+import ProductsIndexPreview from "./products-index-preview";
 
 const getData = async () => {
   return await client.queries.productsIndexQuery();
 };
-
-import { useSEO } from "hooks/useSeo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const tinaProps = await getData();
@@ -30,8 +29,8 @@ export default async function ProductsIndex() {
   const { isEnabled } = draftMode();
 
   return isEnabled ? (
-    <ProductIndexPreview props={{ ...tinaProps }} />
+    <ProductsIndexPreview props={{ ...tinaProps }} />
   ) : (
-    <ProductIndex data={tinaProps.data} />
+    <ProductsIndexContent data={tinaProps.data} />
   );
 }

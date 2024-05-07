@@ -1,9 +1,9 @@
 "use client";
 
 import { useTina } from "tinacms/dist/react";
-import ProductIndex from "./product-index";
+import ProductIndex from "./products-index";
 
-export default function ProductIndexPreview({ props }) {
+export default function ProductsIndexPreview({ props }) {
   const { data } = useTina({
     query: props.query,
     variables: props.variables,
