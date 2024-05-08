@@ -26,9 +26,9 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ProductsIndex() {
   const tinaProps = await getData();
 
-  const { isEnabled } = draftMode();
+  const { isEnabled: isPreview } = draftMode();
 
-  return isEnabled ? (
+  return isPreview ? (
     <ProductsIndexPreview props={{ ...tinaProps }} />
   ) : (
     <ProductsIndexContent props={tinaProps.data} />

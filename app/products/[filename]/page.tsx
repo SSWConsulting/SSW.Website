@@ -67,9 +67,9 @@ export default async function Products({
   const { filename } = params;
 
   const tinaProps = await getData(filename);
-  const { isEnabled } = draftMode();
+  const { isEnabled: isPreview } = draftMode();
 
-  return isEnabled ? (
+  return isPreview ? (
     <ProductsPreview props={{ ...tinaProps }} />
   ) : (
     <ProductsContent props={tinaProps} />
