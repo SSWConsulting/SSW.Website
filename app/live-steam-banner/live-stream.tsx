@@ -12,12 +12,6 @@ import dynamic from "next/dynamic";
 import { PropsWithChildren, useEffect, useState } from "react";
 import { EventInfo } from "../../services/server/events";
 
-export type LiveStreamProps = {
-  countdownMins?: number;
-  liveStreamDelayMinutes: number;
-  event?: EventInfo;
-};
-
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
 dayjs.extend(utc);
@@ -48,11 +42,11 @@ const LiveStreamBanner = dynamic(
 
 const INTERVAL_MINUTES = 1;
 
-interface LiveStreamBannerProps extends PropsWithChildren {
+interface LiveStreamProps extends PropsWithChildren {
   event: EventInfo;
 }
 
-export function LiveSteamBanner({ event, children }: LiveStreamBannerProps) {
+export function LiveSteam({ event, children }: LiveStreamProps) {
   const [countdownMins, setCountdownMins] = useState<number>();
   const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
 
@@ -87,14 +81,14 @@ export function LiveSteamBanner({ event, children }: LiveStreamBannerProps) {
 
   const rightnow = dayjs().utc();
 
-  const isLive =
-    countdownMins &&
+  const isLive = true;
+  countdownMins &&
     countdownMins <= 0 &&
     !!event &&
     rightnow.isBefore(event?.EndDateTime);
 
-  const showBanner =
-    !!event &&
+  const showBanner = true;
+  !!event &&
     dayjs().isBetween(
       dayjs(event.StartShowBannerDateTime),
       dayjs(event.EndShowBannerDateTime),

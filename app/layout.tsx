@@ -23,7 +23,7 @@ import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import Head from "next/head";
 import layoutData from "../content/global/index.json";
-import { LiveSteamBanner } from "./live-steam-banner/useLiveStreamProps2";
+import { LiveSteam } from "./live-steam-banner/live-stream";
 
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
@@ -165,9 +165,9 @@ export default async function RootLayout({
           )}
         >
           <header className="no-print">
-            <LiveSteamBanner event={liveStreamData}>
+            <LiveSteam event={liveStreamData}>
               <MenuWrapper menu={menuData.data.megamenu.menuGroups} />
-            </LiveSteamBanner>
+            </LiveSteam>
           </header>
           <main className="grow bg-white">{children}</main>
 
