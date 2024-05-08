@@ -9,8 +9,8 @@ import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import dynamic from "next/dynamic";
 
+import { EventInfo } from "@/services/server/events";
 import { PropsWithChildren, useEffect, useState } from "react";
-import { EventInfo } from "../../services/server/events";
 
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);

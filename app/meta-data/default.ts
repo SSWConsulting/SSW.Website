@@ -1,5 +1,5 @@
+import layoutData from "@/content/global/index.json";
 import { Metadata } from "next";
-import layoutData from "../../content/global/index.json";
 
 export const DEFAULT: Metadata = {
   metadataBase: new URL(layoutData.header.url),

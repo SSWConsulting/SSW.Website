@@ -6,6 +6,10 @@ import { InlineJotForm } from "@/components/blocks";
 import { CustomLink } from "@/components/customLink";
 import { YouTubeEmbed } from "@/components/embeds/youtubeEmbed";
 import { SocialIcons } from "@/components/socialIcons/socialIcons";
+import layoutData, { default as globals } from "@/content/global/index.json";
+import { getYouTubeId } from "@/helpers/embeds";
+import { sanitiseXSS } from "@/helpers/validator";
+import { SpeakerInfo } from "@/services/server/events";
 import axios from "axios";
 import classNames from "classnames";
 import Image from "next/image";
@@ -14,13 +18,7 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
-import layoutData, {
-  default as globals,
-} from "../../content/global/index.json";
-import { getYouTubeId } from "../../helpers/embeds";
-import { sanitiseXSS } from "../../helpers/validator";
 import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
-import { SpeakerInfo } from "../../services/server/events";
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;
