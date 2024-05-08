@@ -11,7 +11,6 @@ export const DEFAULT: Metadata = {
   applicationName: "SSW.Website",
   publisher: "SSW",
   description: layoutData.header.description,
-  themeColor: "#cc4141",
   openGraph: {
     type: "website",
     locale: "en_AU",
