@@ -81,14 +81,14 @@ export function LiveSteam({ event, children }: LiveStreamProps) {
 
   const rightnow = dayjs().utc();
 
-  const isLive = true;
-  countdownMins &&
+  const isLive =
+    countdownMins &&
     countdownMins <= 0 &&
     !!event &&
     rightnow.isBefore(event?.EndDateTime);
 
-  const showBanner = true;
-  !!event &&
+  const showBanner =
+    !!event &&
     dayjs().isBetween(
       dayjs(event.StartShowBannerDateTime),
       dayjs(event.EndShowBannerDateTime),
