@@ -7,6 +7,12 @@
   "subTitle": "Explore the future of enterprise development with our scalable, cutting-edge products",
   "productsList": [
     {
+      "name": "TinaCMS",
+      "url": "https://www.tina.io",
+      "description": "TinaCMS is the world's leading open source, headless CMS that is powered by Markdown and GitHub",
+      "logo": "/images/products/tina-small-orange.png"
+    },
+    {
       "name": "SugarLearning",
       "url": "https://sugarlearning.com/",
       "description": "The next generation on-boarding & induction tool for smart companies.",
