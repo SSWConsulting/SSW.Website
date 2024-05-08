@@ -2,6 +2,10 @@
 
 import "react-tooltip/dist/react-tooltip.css";
 
+import { InlineJotForm } from "@/components/blocks";
+import { CustomLink } from "@/components/customLink";
+import { YouTubeEmbed } from "@/components/embeds/youtubeEmbed";
+import { SocialIcons } from "@/components/socialIcons/socialIcons";
 import axios from "axios";
 import classNames from "classnames";
 import Image from "next/image";
@@ -17,10 +21,6 @@ import { getYouTubeId } from "../../helpers/embeds";
 import { sanitiseXSS } from "../../helpers/validator";
 import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 import { SpeakerInfo } from "../../services/server/events";
-import { InlineJotForm } from "../blocks";
-import { CustomLink } from "../customLink";
-import { YouTubeEmbed } from "../embeds/youtubeEmbed";
-import { SocialIcons } from "../socialIcons/socialIcons";
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;

@@ -14,6 +14,7 @@ import { cache } from "react";
 import { MenuWrapper } from "../components/server/MenuWrapper";
 import client from "../tina/__generated__/client";
 
+import { getEvents } from "@/services/server/events";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
@@ -22,6 +23,7 @@ import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import Head from "next/head";
 import layoutData from "../content/global/index.json";
+import { LiveSteamBanner } from "./live-steam-banner/useLiveStreamProps2";
 
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
@@ -118,12 +120,30 @@ export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
+const getLiveBanner = async () => {
+  const isoTime = new Date().toISOString();
+
+  const odataFilter = `$filter=fields/Enabled ne false \
+  and fields/EndDateTime ge '${isoTime}'\
+  and fields/CalendarType eq 'User Groups'\
+  &$orderby=fields/StartDateTime asc\
+  &$top=1`;
+  const res = await getEvents(odataFilter);
+
+  if (!res?.length) {
+    return;
+  }
+
+  return res[0];
+};
+
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const menuData = await getMegamenu();
+  const liveStreamData = await getLiveBanner();
 
   return (
     <html lang="en" className={openSans.className}>
@@ -145,15 +165,9 @@ export default async function RootLayout({
           )}
         >
           <header className="no-print">
-            {/* {(showBanner || router.query.liveBanner) && (
-                <LiveStreamBanner {...liveStreamProps} isLive={!!isLive} />
-              )} */}
-            <div className="mx-auto max-w-9xl px-8">
-              {/* {(isLive || router.query.liveStream) && (
-                  <LiveStreamWidget {...liveStreamProps} isLive={!!isLive} />
-                )} */}
+            <LiveSteamBanner event={liveStreamData}>
               <MenuWrapper menu={menuData.data.megamenu.menuGroups} />
-            </div>
+            </LiveSteamBanner>
           </header>
           <main className="grow bg-white">{children}</main>
 
