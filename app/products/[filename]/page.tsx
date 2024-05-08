@@ -35,7 +35,7 @@ const getData = async (filename: string) => {
     relativePath: `${filename}.mdx`,
   });
 
-  return { ...data, timestamp: new Date().toISOString() };
+  return { ...data };
 };
 
 type GenerateMetaDataProps = {

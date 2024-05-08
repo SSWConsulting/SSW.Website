@@ -126,7 +126,6 @@ const config = defineStaticConfig({
     authHooks: {
       onLogin: async () => {
         await fetch("/api/enable-draft");
-        location.href = `${location.hostname}/${location.pathname}`;
       },
       onLogout: async () => {
         await fetch("/api/disable-draft");
