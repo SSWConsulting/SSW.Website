@@ -10,5 +10,5 @@ export default function ProductsPreview({ props }) {
     data: props.data,
   });
 
-  return <ProductsContent props={{ ...data, variables: props.variables }} />;
+  return <ProductsContent props={{ data, variables: props.variables }} />;
 }

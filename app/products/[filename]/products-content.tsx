@@ -6,14 +6,14 @@ import { Breadcrumbs } from "app/components/breadcrumb";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export default function ProductsContent({ props }) {
-  const { products, variables, global } = props;
+  const { data, variables, global } = props;
   return (
     <>
       <Section className="mx-auto w-full max-w-9xl px-8 pt-5">
         <Breadcrumbs
           path={removeExtension(variables.relativePath)}
           suffix={global?.breadcrumbSuffix}
-          title={products.seo?.title}
+          title={data.products?.seo?.title}
         />
       </Section>
       <Container
@@ -21,7 +21,10 @@ export default function ProductsContent({ props }) {
           "prose flex-1 pt-4 prose-h1:!my-0 prose-h1:!pt-4 prose-h3:!mt-0 prose-img:!my-0"
         }
       >
-        <TinaMarkdown content={products._body} components={componentRenderer} />
+        <TinaMarkdown
+          content={data.products?._body}
+          components={componentRenderer}
+        />
       </Container>
     </>
   );
