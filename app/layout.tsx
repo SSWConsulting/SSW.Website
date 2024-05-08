@@ -6,13 +6,13 @@ import classNames from "classnames";
 import { Open_Sans } from "next/font/google";
 // import Head from "next/head";
 // import { Theme } from "../components/layout/theme";
-import { Analytics } from "@/components/layout/analytics";
 import { Footer } from "@/components/layout/footer/footer";
 import { MenuWrapper } from "@/components/server/MenuWrapper";
 import ChatBaseBot from "@/components/zendeskButton/chatBaseBot";
 import { Metadata, Viewport } from "next";
 
 import { EventInfo } from "@/services/server/events";
+import { GoogleTagManager } from "@next/third-parties/google";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
@@ -62,7 +62,6 @@ export default async function RootLayout({
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <body>
-        <Analytics />
         {/* <Theme> */}
         {/* Ensures next/font CSS variable is accessible for all components */}
         <div
@@ -81,6 +80,7 @@ export default async function RootLayout({
           <Footer />
         </div>
         {/* </Theme> */}
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
         <ChatBaseBot />
       </body>
     </html>
