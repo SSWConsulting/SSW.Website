@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import * as React from "react";
 import { tinaField } from "tinacms/dist/react";
 
@@ -15,15 +17,14 @@ const CarouselImplementation = dynamic(() =>
 );
 
 export const Carousel = ({ data }) => {
-  // const router = useRouter();
+  const router = useRouter();
 
   const openItem = ({ link, openIn }) => {
     if (openIn === "newWindow") {
       window.open(link, "_blank");
       return;
     } else if (openIn === "sameWindow") {
-      // TODO: change to router
-      [].push(link);
+      router.push(link);
       return;
     } else if (openIn === "modal") {
       window.open(link, "_blank");
