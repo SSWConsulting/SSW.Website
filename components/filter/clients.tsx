@@ -1,3 +1,5 @@
+"use client";
+
 import { Transition } from "@headlessui/react";
 import Image from "next/image";
 import { useMemo, useState } from "react";

@@ -1,3 +1,5 @@
+"use client";
+
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";

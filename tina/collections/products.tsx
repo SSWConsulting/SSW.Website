@@ -13,6 +13,9 @@ export const productsIndexSchema: Collection = {
       create: false,
       delete: false,
     },
+    router: () => {
+      return "/products";
+    },
   },
   fields: [
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment

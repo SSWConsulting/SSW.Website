@@ -1,3 +1,5 @@
+"use client";
+
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import Button from "../button/button";
 import { componentRenderer } from "./mdxComponentRenderer";

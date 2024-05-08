@@ -1,4 +1,4 @@
-import { ErrorPage } from "@/components/util/error-page";
+import { ErrorPage } from "@/components/util/error/error-page";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import { NextPageContext } from "next";
 import { ErrorProps } from "next/error";
