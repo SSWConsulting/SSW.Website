@@ -13,7 +13,7 @@ export const productsIndexSchema: Collection = {
       create: false,
       delete: false,
     },
-    router: async () => {
+    router: () => {
       return "/products";
     },
   },
@@ -80,7 +80,7 @@ export const productsSchema: Collection = {
   path: "content/products",
   format: "mdx",
   ui: {
-    router: async ({ document }) => {
+    router: ({ document }) => {
       return `/products/${document._sys.filename}`;
     },
   },
