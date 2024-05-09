@@ -371,11 +371,6 @@
               "name": "Evaluation Survey",
               "url": "https://www.ssw.com.au/ssw/NETUG/Evaluation-Survey/",
               "widgetType": "standardLink"
-            },
-            {
-              "name": "Developer Links",
-              "url": "https://www.ssw.com.au/ssw/NETUG/Developerlinks.aspx",
-              "widgetType": "standardLink"
             }
           ]
         }
