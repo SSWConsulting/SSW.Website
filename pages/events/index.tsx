@@ -4,6 +4,7 @@ import {
   QueryClient,
   dehydrate,
 } from "@tanstack/react-query";
+import { useRouter } from "next/router";
 import * as appInsights from "applicationinsights";
 import { AxiosError } from "axios";
 import { EVENTS_QUERY_KEY } from "hooks/useFetchEvents";
@@ -29,6 +30,10 @@ export default function EventsIndexPage(
     variables: props.variables,
   });
 
+  const router = useRouter();
+  const defaultToPastTab =
+    new URLSearchParams(router.asPath.split(/\?/)[1]).get("past") === "1";
+
   return (
     <HydrationBoundary state={props.dehydratedState}>
       <SEO seo={data.eventsIndex.seo} />
@@ -43,7 +48,10 @@ export default function EventsIndexPage(
               />
             </div>
           </div>
-          <EventsFilter sidebarBody={data.eventsIndex.sidebarBody} />
+          <EventsFilter
+            sidebarBody={data.eventsIndex.sidebarBody}
+            defaultToPastTab={defaultToPastTab}
+          />
         </Container>
         <Blocks
           prefix="EventsIndexAfterEvents"
