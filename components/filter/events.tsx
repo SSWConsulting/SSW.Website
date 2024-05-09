@@ -22,6 +22,7 @@ const EVENTS_JSON_LD_LIMIT = 5;
 
 interface EventsFilterProps {
   sidebarBody: TinaMarkdownContent;
+  defaultToPastTab?: boolean;
 }
 
 export type EventTrimmed = {
@@ -48,8 +49,11 @@ export type EventTrimmed = {
   EventShortDescription: string;
 };
 
-export const EventsFilter = ({ sidebarBody }: EventsFilterProps) => {
-  const [pastSelected, setPastSelected] = useState<boolean>(false);
+export const EventsFilter = ({
+  sidebarBody,
+  defaultToPastTab,
+}: EventsFilterProps) => {
+  const [pastSelected, setPastSelected] = useState<boolean>(defaultToPastTab);
 
   const {
     events,
@@ -78,7 +82,10 @@ export const EventsFilter = ({ sidebarBody }: EventsFilterProps) => {
       }
       groups={!pastSelected ? filters : pastFilters}
     >
-      <Tab.Group onChange={(index) => setPastSelected(index === 1)}>
+      <Tab.Group
+        onChange={(index) => setPastSelected(index === 1)}
+        defaultIndex={defaultToPastTab ? 1 : 0}
+      >
         <Tab.List className="mb-8 flex flex-row">
           <EventTab>Upcoming Events</EventTab>
           <EventTab>Past Events</EventTab>
