@@ -364,7 +364,7 @@
             },
             {
               "name": "Past Sessions",
-              "url": "https://www.ssw.com.au/ssw/NETUG/PastSessions.aspx",
+              "url": "/events?past=1",
               "widgetType": "standardLink"
             },
             {
