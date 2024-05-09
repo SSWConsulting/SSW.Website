@@ -97,7 +97,7 @@ jobs:
     uses: ./.github/workflows/template-ui-tests.yml
     with:
       deploy_url: ${{ needs.pr-deploy.outputs.url }}
-      tests_to_run: "images seo-pr"
+      tests_to_run: "images seo-noindex"
 
   pagespeedInsights:
     name: Run PageSpeed Insights
