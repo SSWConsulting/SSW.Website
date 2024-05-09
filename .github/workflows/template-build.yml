@@ -50,9 +50,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
         with:
@@ -139,7 +136,7 @@ jobs:
             NEXT_PUBLIC_CHATBASE_BOT_ID=${{ env.NEXT_PUBLIC_CHATBASE_BOT_ID }}
             SITE_URL=https://www.ssw.com.au
             TINA_SEARCH_TOKEN=${{ secrets.TINA_SEARCH_TOKEN }}
+            cache-from: type=gha
+            cache-to: type=gha,mode=max
           tags: |
             ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
