@@ -7,6 +7,9 @@ FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
+# Create .next/cache directory and set permissions
+RUN mkdir -p /app/.next/cache && chown nextjs:nodejs /app/.next/cache
+
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 RUN \
@@ -22,9 +25,6 @@ WORKDIR /app
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-
-RUN mkdir -p /app/.next/cache && chown nextjs:nodejs /app/.next/cache
-VOLUME ["/app/.next/cache"]
 
 # Add env for production
 # COPY .docker/production/.env.local .env.local
@@ -115,6 +115,10 @@ COPY --from=builder /app/public ./public
 # Set the correct permission for prerender cache
 RUN mkdir .next
 RUN chown nextjs:nodejs .next
+
+# Set up .next/cache volume
+RUN mkdir -p /app/.next/cache && chown nextjs:nodejs /app/.next/cache
+VOLUME ["/app/.next/cache"]
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
