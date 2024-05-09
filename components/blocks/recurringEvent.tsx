@@ -1,3 +1,5 @@
+"use client";
+
 import { FC, useEffect, useState } from "react";
 import { FaRegCalendarCheck } from "react-icons/fa";
 import type { Template } from "tinacms";

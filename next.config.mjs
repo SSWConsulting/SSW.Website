@@ -4,13 +4,10 @@ const withNextPluginPreval = createNextPluginPreval();
 
 /** @type {import('next').NextConfig} */
 const config = {
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
   poweredByHeader: false,
   images: {
     deviceSizes: [384, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    minimumCacheTTL: 60,
     remotePatterns: [
       {
         protocol: "https",
@@ -78,6 +75,17 @@ const config = {
   },
   experimental: {
     optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
+    turbo: {
+      resolveExtensions: [
+        ".mdx",
+        ".tsx",
+        ".ts",
+        ".jsx",
+        ".js",
+        ".mjs",
+        ".json",
+      ],
+    },
   },
   productionBrowserSourceMaps: true,
 };

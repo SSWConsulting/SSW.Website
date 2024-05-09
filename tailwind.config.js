@@ -47,10 +47,11 @@ export const platform = [
   },
 ];
 
-/** @type {import("tailwindcss").Config} */
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   // mode: "jit",
   content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "node_modules/ssw.megamenu/**/*.js",
@@ -96,6 +97,7 @@ export default {
       height: {
         22: "5.5rem",
         62: "15.5rem",
+        97: "24.25rem",
         102: "25.5rem",
         112: "28rem",
         172: "43rem",
@@ -265,7 +267,10 @@ export default {
           900: "#333333",
           1000: "#1c1b2e",
         },
-        platform: platform.reduce((acc, c) => ({ ...acc, [c.name]: c.color }), {}),
+        platform: platform.reduce(
+          (acc, c) => ({ ...acc, [c.name]: c.color }),
+          {}
+        ),
         social: {
           phone: "#b31217",
           youtube: "#b31217",

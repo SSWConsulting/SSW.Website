@@ -2,7 +2,8 @@ import classNames from "classnames";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useLiveStreamProps } from "../../hooks/useLiveStreamProps";
-import { Footer, PreFooter } from "./footer";
+import { Footer } from "./footer/footer";
+import { PreFooter } from "./footer/pre-footer";
 import { Theme } from "./theme";
 
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
@@ -12,7 +13,7 @@ import { Open_Sans } from "next/font/google";
 import { useReportWebVitals } from "next/web-vitals";
 import { MegaMenuLayout, NavMenuGroup } from "ssw.megamenu";
 import { CustomLink } from "../customLink";
-import { ErrorBoundary } from "../util/error-boundary";
+import { ErrorBoundary } from "../util/error/error-boundary";
 
 const openSans = Open_Sans({
   variable: "--open-sans-font",

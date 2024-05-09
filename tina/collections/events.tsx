@@ -114,8 +114,8 @@ export const eventsIndexSchema: Collection = {
     seoSchema,
     {
       type: "rich-text",
-      name: "_body",
-      label: "Body",
+      name: "preface",
+      label: "Preface",
       templates: [...Schemas.pageBlocks],
       isBody: true,
     },

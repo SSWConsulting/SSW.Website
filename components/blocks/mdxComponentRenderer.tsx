@@ -12,17 +12,14 @@ import type { TableLayoutProps } from "./tableLayout";
 import type { YoutubePlaylistProps } from "./youtubePlaylist";
 
 import { BookingButton } from "../bookingButton/bookingButton";
+import { UtilityButton } from "../button/utilityButton";
+import { TweetEmbed } from "../embeds/tweetEmbed";
 import { InlineJotFormProps } from "../inlineJotForm/inlineJotForm";
 import { Content, ContentType } from "./content";
 import { DomainFromQueryProps } from "./domainFromQuery";
+import { InternalCarouselProps } from "./internalCarousel";
 import { SectionHeaderProps } from "./sectionHeader";
 
-const UtilityButton = dynamic(() =>
-  import("../button/utilityButton").then((mod) => mod.UtilityButton)
-);
-const TweetEmbed = dynamic<TweetEmbedProps>(() =>
-  import("../embeds/tweetEmbed").then((mod) => mod.TweetEmbed)
-);
 const MicrosoftPanel = dynamic(() =>
   import("../offices/microsoftPanel").then((mod) => mod.default)
 );
@@ -199,18 +196,7 @@ export const componentRenderer: Components<{
     embedWidth: string;
     embedHeight: string;
   };
-  InternalCarousel: {
-    items: {
-      label: string;
-      imgSrc: string;
-    }[];
-    header: string;
-    paragraph: string;
-    website: string;
-    technologies: {
-      name: string;
-    }[];
-  };
+  InternalCarousel: InternalCarouselProps;
   FixedTabsLayout: {
     tab1: string;
     heading1: string;
@@ -270,7 +256,7 @@ export const componentRenderer: Components<{
   GoogleMaps: (props) => <GoogleMapsWrapper {...props} />,
   DynamicColumns: (props) => <DynamicColumns data={props} />,
   FixedColumns: (props) => <FixedColumns data={props} />,
-  InternalCarousel: (props) => <InternalCarousel data={props} />,
+  InternalCarousel: (props) => <InternalCarousel {...props} />,
   VerticalListItem: (props) => <VerticalListItem data={props} />,
   TrainingInformation: (props) => <TrainingInformation data={props} />,
   TrainingLearningOutcome: (props) => <TrainingLearningOutcome data={props} />,

@@ -1,23 +1,26 @@
+"use client";
+
 import "react-tooltip/dist/react-tooltip.css";
 
 import axios from "axios";
 import classNames from "classnames";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
-import layoutData from "../../content/global/index.json";
+import layoutData, {
+  default as globals,
+} from "../../content/global/index.json";
 import { getYouTubeId } from "../../helpers/embeds";
 import { sanitiseXSS } from "../../helpers/validator";
 import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 import { SpeakerInfo } from "../../services/server/events";
+import { InlineJotForm } from "../blocks";
 import { CustomLink } from "../customLink";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
 import { SocialIcons } from "../socialIcons/socialIcons";
-import { InlineJotForm } from "../blocks";
-import { default as globals } from "../../content/global/index.json";
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;
@@ -38,7 +41,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
   const [eventDescriptionCollapsable, setEventDescriptionCollapsable] =
     useState<boolean>();
 
-  const router = useRouter();
+  const param = useSearchParams();
 
   const collapsableWidgetRefCallback = (e: HTMLDivElement) => {
     !!e &&
@@ -58,7 +61,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
 
   useEffect(() => {
     const fetchLiveStreamInfo = async () => {
-      if ((!isLive && !router.query.liveStream) || !event) {
+      if ((!isLive && !param.get("liveStream")) || !event) {
         return;
       }
 
@@ -108,7 +111,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
     };
 
     fetchLiveStreamInfo();
-  }, [isLive, event, router.query.liveStream]);
+  }, [isLive, event, param]);
 
   if (!event) {
     return <></>;
@@ -176,7 +179,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
           </div>
           {/* custom fixed width and height to have best looking and fixed size for different screens */}
           <div
-            className={"fixed right-0 top-2 z-videoThumbnail aspect-video h-56"}
+            className="fixed right-0 top-2 z-videoThumbnail aspect-video h-56"
             data-aos="slide-left"
             data-aos-duration={500}
             data-aos-anchor="#thumbnailAnchor"

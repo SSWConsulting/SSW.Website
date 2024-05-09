@@ -1,5 +1,6 @@
+"use client";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import * as React from "react";
 import { tinaField } from "tinacms/dist/react";
 
@@ -98,6 +99,7 @@ const CarouselItemImage = (props: CarouselItemImageProps) => {
         alt={label}
         height={388}
         width={1080}
+        sizes="100vw"
         priority={index === 0}
       />
       {/* `legend` required so that the carousel works properly */}

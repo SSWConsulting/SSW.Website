@@ -1,3 +1,5 @@
+"use client";
+
 import React, { PropsWithChildren, useState } from "react";
 import Jotform from "react-jotform";
 import { twMerge } from "tailwind-merge";

@@ -58,5 +58,6 @@ export const Analytics = () => {
         })(window,document,'script','dataLayer','${gtmId}');
       `}
     </Script>
+    // <GoogleTagManager gtmId={gtmId} />
   );
 };

@@ -61,8 +61,25 @@ const config = defineStaticConfig({
     publicFolder: "public", // The public asset folder for your framework
     outputFolder: "admin", // within the public folder
   },
-  cmsCallback: (cms: TinaCMS) => {
+  ui: {
+    previewUrl: (context) => {
+      const { branch } = context;
+      const url =
+        branch === "main"
+          ? "https://www.ssw.com.au"
+          : process.env.NEXT_PUBLIC_SLOT_URL;
+
+      return {
+        url: url,
+      };
+    },
+  },
+  cmsCallback: async (cms: TinaCMS) => {
     cms.flags.set("branch-switcher", true);
+    // for local development, enable draft mode since we can access the Tina Edit mode without login
+    if (process.env.NODE_ENV === "development") {
+      await fetch("/api/enable-draft");
+    }
     return cms;
   },
   schema: {
@@ -104,6 +121,16 @@ const config = defineStaticConfig({
       userGroupPageSchema,
       userGroupGlobalSchema,
     ],
+  },
+  admin: {
+    authHooks: {
+      onLogin: async () => {
+        await fetch("/api/enable-draft");
+      },
+      onLogout: async () => {
+        await fetch("/api/disable-draft");
+      },
+    },
   },
   search: {
     tina: {

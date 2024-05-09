@@ -21,7 +21,9 @@
       "@/tina/*": ["tina/__generated__/*"],
       "@/tina-collections/*": ["tina/collections/*"],
       "@/context/*": ["context/*"],
-      "@/services/*": ["services/*"]
+      "@/services/*": ["services/*"],
+      "@/content/*": ["content/*"],
+      "@/helpers/*": ["helpers/*"]
     },
     "plugins": [
       {
