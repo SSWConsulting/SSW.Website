@@ -78,10 +78,10 @@ export const ActionSection = (props: ActionSectionProps) => {
                   key={index}
                   data-tina-field={tinaField(props.listItems[index], "text")}
                 >
-                  {iconMap[item.icon]?.icon({
+                  {/* {iconMap[item.icon]?.icon({
                     size: 40,
                     className: "mr-5 inline",
-                  })}
+                  })} */}
                   {item.text}
                 </li>
               ))}
