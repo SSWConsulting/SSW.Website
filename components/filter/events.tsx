@@ -26,6 +26,7 @@ interface EventsFilterProps {
 }
 
 export type EventTrimmed = {
+  HostedAtSSW?: boolean;
   id: string;
   Title: string;
   Thumbnail: {
@@ -209,9 +210,14 @@ interface EventProps {
 }
 
 const Event = ({ visible, event, jsonLd }: EventProps) => {
-  const eventSite = event?.Url?.Url?.toLowerCase()?.includes("ssw.com.au")
-    ? { name: CITY_MAP[event.City]?.name, url: CITY_MAP[event.City]?.url }
-    : { name: event.City, url: event.Url.Url };
+  let eventSite;
+  if (event.HostedAtSSW) {
+    const { City } = event;
+    eventSite = {
+      name: CITY_MAP[City]?.name,
+      url: CITY_MAP[City]?.url,
+    };
+  } else eventSite = { name: event.City, url: event.Url.Url };
 
   const { formattedDate, relativeDate } = useFormatDates(event, true);
 
