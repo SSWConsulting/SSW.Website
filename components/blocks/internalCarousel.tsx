@@ -8,9 +8,16 @@ import { Container } from "../util/container";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import { BsArrowRightCircle, BsYoutube } from "react-icons/bs";
+import dynamic from "next/dynamic";
 import { Carousel as CarouselImplementation } from "react-responsive-carousel";
 import { UtilityButton } from "../button/utilityButton";
+
+const BsArrowRightCircle = dynamic(() =>
+  import("react-icons/bs").then((icon) => icon.BsArrowRightCircle)
+);
+const BsYoutube = dynamic(() =>
+  import("react-icons/bs").then((icon) => icon.BsYoutube)
+);
 
 export type InternalCarouselProps = {
   items: {

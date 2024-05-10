@@ -1,10 +1,17 @@
 "use client";
 
 import classNames from "classnames";
-import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
+import dynamic from "next/dynamic";
 import type { Template } from "tinacms";
 import { CustomLink } from "../customLink";
 import Button from "./button";
+
+const BsArrowRightCircle = dynamic(() =>
+  import("react-icons/bs").then((icon) => icon.BsArrowRightCircle)
+);
+const BsArrowLeftCircle = dynamic(() =>
+  import("react-icons/bs").then((icon) => icon.BsArrowLeftCircle)
+);
 
 const sizes = {
   small: "px-4 py-2 text-sm",

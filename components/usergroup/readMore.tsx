@@ -1,9 +1,14 @@
 "use client";
 
 import classNames from "classnames";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { sanitiseXSS } from "../../helpers/validator";
+
+const MdOutlineKeyboardArrowDown = dynamic(
+  () => import("react-icons/md").then((mod) => mod.MdOutlineKeyboardArrowDown),
+  { ssr: false }
+);
 
 type ReadMoreProps = {
   text: string;

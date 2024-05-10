@@ -1,7 +1,7 @@
 "use client";
 
+import { FaSpinner } from "@react-icons/all-files/fa/FaSpinner";
 import { useEffect, useState } from "react";
-import { FaSpinner } from "react-icons/fa";
 import type { Template } from "tinacms";
 import { transformIntToMonth } from "../../services/client/date.service";
 import client from "../../tina/__generated__/client"; // TODO: Use alias - https://github.com/tinacms/tinacms/issues/4488

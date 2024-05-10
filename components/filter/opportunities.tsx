@@ -1,9 +1,9 @@
 "use client";
 
 import { Disclosure, Transition } from "@headlessui/react";
+import { FaMapMarkerAlt } from "@react-icons/all-files/fa/FaMapMarkerAlt";
 import classNames from "classnames";
 import { useEffect, useMemo, useState } from "react";
-import { FaMapMarkerAlt } from "react-icons/fa";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { UtilityButton } from "../blocks";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";

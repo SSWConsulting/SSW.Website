@@ -91,7 +91,7 @@ const config = {
 };
 
 const withBundleAnalyzer = bundleAnalyser({
-  enabled: process.env.BUNDLE_ANALYSE === "true",
+  enabled: process.env.BUNDLE_ANALYSE === "false",
 });
 
 export default withNextPluginPreval(withBundleAnalyzer(config));

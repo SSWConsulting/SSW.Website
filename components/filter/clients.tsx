@@ -1,9 +1,9 @@
 "use client";
 
 import { Transition } from "@headlessui/react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useMemo, useState } from "react";
-import { BsArrowRightCircle } from "react-icons/bs";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { UtilityButton } from "../button/utilityButton";
@@ -11,6 +11,10 @@ import { ClientDisplay } from "../company/clientList";
 import { CustomLink } from "../customLink";
 import { FilterBlock } from "./FilterBlock";
 import { type FilterGroupProps } from "./FilterGroup";
+
+const BsArrowRightCircle = dynamic(() =>
+  import("react-icons/bs").then((icon) => icon.BsArrowRightCircle)
+);
 
 type ClientsFilterProps = {
   clients: ClientDisplay[];

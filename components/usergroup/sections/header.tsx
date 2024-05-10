@@ -1,8 +1,8 @@
+import { BiVideo } from "@react-icons/all-files/bi/BiVideo";
 import classNames from "classnames";
 import dayjs from "dayjs";
 import Image from "next/image";
 import { useMemo } from "react";
-import { BiVideo } from "react-icons/bi";
 import { UtilityButton } from "../../blocks";
 import { CustomLink } from "../../customLink";
 import { CITY_TIMEZONES } from "../../util/constants/country";

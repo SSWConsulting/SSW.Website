@@ -2,9 +2,13 @@
 
 import { Transition } from "@headlessui/react";
 import classNames from "classnames";
+import dynamic from "next/dynamic";
 import { useState } from "react";
-import { BsArrowRightCircle } from "react-icons/bs";
 import { NO_SELECTION } from "./FilterBlock";
+
+const BsArrowRightCircle = dynamic(() =>
+  import("react-icons/bs").then((icon) => icon.BsArrowRightCircle)
+);
 
 export interface FilterGroupProps {
   selected: number;

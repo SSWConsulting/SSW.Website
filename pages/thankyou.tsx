@@ -1,6 +1,7 @@
 import client from "@/tina/client";
+import { FaGlobe } from "@react-icons/all-files/fa/FaGlobe";
+import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
 import { InferGetStaticPropsType } from "next";
-import { FaGlobe, FaUsers } from "react-icons/fa";
 import { CustomLink } from "../components/customLink";
 import { Layout } from "../components/layout";
 import { Container } from "../components/util/container";

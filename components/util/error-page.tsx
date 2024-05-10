@@ -4,8 +4,15 @@ import { Container } from "./container";
 
 import { Disclosure } from "@headlessui/react";
 import React from "react";
-import { BiChevronRight } from "react-icons/bi";
-import { FaXmark } from "react-icons/fa6";
+
+import dynamic from "next/dynamic";
+
+const FaXmark = dynamic(() =>
+  import("react-icons/fa6").then((mod) => mod.FaXmark)
+);
+const BiChevronRight = dynamic(() =>
+  import("react-icons/bi").then((mod) => mod.BiChevronRight)
+);
 
 type ErrorPageProps = {
   code?: string;

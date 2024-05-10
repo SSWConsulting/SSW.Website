@@ -1,6 +1,6 @@
+import { MdLiveHelp } from "@react-icons/all-files/md/MdLiveHelp";
 import { useRouter, type NextRouter } from "next/router";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { MdLiveHelp } from "react-icons/md";
 
 import { wrapGrid } from "animate-css-grid";
 

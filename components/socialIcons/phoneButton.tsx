@@ -1,6 +1,6 @@
+import { FaPhoneAlt } from "@react-icons/all-files/fa/FaPhoneAlt";
 import classNames from "classnames";
 import { isMobile } from "react-device-detect";
-import { FaPhoneAlt } from "react-icons/fa";
 import { CustomLink } from "../customLink";
 
 type PhoneButtonProps = {

@@ -4,11 +4,11 @@ import "react-tooltip/dist/react-tooltip.css";
 
 import axios from "axios";
 import classNames from "classnames";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { useEffect, useState } from "react";
-import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
 import layoutData, {
   default as globals,
@@ -21,6 +21,13 @@ import { InlineJotForm } from "../blocks";
 import { CustomLink } from "../customLink";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
 import { SocialIcons } from "../socialIcons/socialIcons";
+
+const TfiAngleUp = dynamic(() =>
+  import("react-icons/tfi").then((icon) => icon.TfiAngleUp)
+);
+const TfiAngleDown = dynamic(() =>
+  import("react-icons/tfi").then((icon) => icon.TfiAngleDown)
+);
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;

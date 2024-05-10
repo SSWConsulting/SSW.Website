@@ -5,7 +5,7 @@ import dayjs from "dayjs";
 import { memo, useEffect, useState } from "react";
 import type { Template } from "tinacms";
 
-import { BiChevronRightCircle } from "react-icons/bi";
+import { BiChevronRightCircle } from "@react-icons/all-files/bi/BiChevronRightCircle";
 
 import { tinaField } from "tinacms/dist/react";
 import layoutData from "../../content/global/index.json";

@@ -1,7 +1,7 @@
 import { ReadMore } from "@/components/usergroup/readMore";
 import { client } from "@/tina/client";
+import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube";
 import { InferGetStaticPropsType } from "next";
-import { FaYoutube } from "react-icons/fa";
 import { useTina } from "tinacms/dist/react";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { BuiltOnAzure } from "../components/blocks/builtOnAzure";

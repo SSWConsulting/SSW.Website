@@ -3,9 +3,15 @@
 import { CustomLink } from "@/components/customLink";
 import { Disclosure } from "@headlessui/react";
 import classNames from "classnames";
-import { BiChevronRight } from "react-icons/bi";
-import { FaXmark } from "react-icons/fa6";
+import dynamic from "next/dynamic";
 import { Container } from "../container";
+
+const FaXmark = dynamic(() =>
+  import("react-icons/fa6").then((mod) => mod.FaXmark)
+);
+const BiChevronRight = dynamic(() =>
+  import("react-icons/bi").then((mod) => mod.BiChevronRight)
+);
 
 type ErrorPageProps = {
   code?: string;

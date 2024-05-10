@@ -1,13 +1,17 @@
 "use client";
 
 import axios from "axios";
+import dynamic from "next/dynamic";
 import { Key, useEffect, useState } from "react";
-import { BsArrowRightCircle } from "react-icons/bs";
 import { Template, TinaField } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { VideoLink } from "../../services/server/youtube";
 import { CustomLink } from "../customLink";
 import { VideoCard } from "../util/videoCards";
+
+const BsArrowRightCircle = dynamic(() =>
+  import("react-icons/bs").then((icon) => icon.BsArrowRightCircle)
+);
 
 export type YoutubePlaylistProps = {
   title?: string;

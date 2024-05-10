@@ -1,7 +1,20 @@
 import classNames from "classnames";
+import dynamic from "next/dynamic";
 import * as React from "react";
-import { SiFacebook, SiGithub, SiLinkedin, SiMeetup } from "react-icons/si";
 import { CustomLink } from "../customLink";
+
+const SiFacebook = dynamic(() =>
+  import("react-icons/si").then((icon) => icon.SiFacebook)
+);
+const SiGithub = dynamic(() =>
+  import("react-icons/si").then((icon) => icon.SiGithub)
+);
+const SiLinkedin = dynamic(() =>
+  import("react-icons/si").then((icon) => icon.SiLinkedin)
+);
+const SiMeetup = dynamic(() =>
+  import("react-icons/si").then((icon) => icon.SiMeetup)
+);
 
 export const platformList = [
   "facebook",

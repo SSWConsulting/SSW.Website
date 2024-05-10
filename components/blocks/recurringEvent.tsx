@@ -1,7 +1,7 @@
 "use client";
 
+import { FaRegCalendarCheck } from "@react-icons/all-files/fa/FaRegCalendarCheck";
 import { FC, useEffect, useState } from "react";
-import { FaRegCalendarCheck } from "react-icons/fa";
 import type { Template } from "tinacms";
 
 enum DaysOfWeek {

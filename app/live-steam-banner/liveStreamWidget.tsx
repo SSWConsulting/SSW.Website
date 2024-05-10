@@ -12,17 +12,24 @@ import { sanitiseXSS } from "@/helpers/validator";
 import { SpeakerInfo } from "@/services/server/events";
 import axios from "axios";
 import classNames from "classnames";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { useEffect, useState } from "react";
-import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
 import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;
 } & LiveStreamProps;
+
+const TfiAngleDown = dynamic(() =>
+  import("react-icons/tfi").then((mod) => mod.TfiAngleDown)
+);
+const TfiAngleUp = dynamic(() =>
+  import("react-icons/tfi").then((mod) => mod.TfiAngleUp)
+);
 
 export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
   const eventDescriptionCollapseId = "eventDescription";

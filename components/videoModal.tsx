@@ -1,10 +1,10 @@
 "use client";
 
+import { FaPlayCircle } from "@react-icons/all-files/fa/FaPlayCircle";
 import classNames from "classnames";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { FaPlayCircle } from "react-icons/fa";
 import {
   MATCH_URL_VIMEO,
   MATCH_URL_YOUTUBE,

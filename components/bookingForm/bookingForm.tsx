@@ -1,10 +1,11 @@
 "use client";
 
+import { FaRegCheckCircle } from "@react-icons/all-files/fa/FaRegCheckCircle";
+import { FaSpinner } from "@react-icons/all-files/fa/FaSpinner";
 import axios from "axios";
 import { Form, Formik } from "formik";
 import { useEffect, useMemo, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import { FaRegCheckCircle, FaSpinner } from "react-icons/fa";
 import { toast } from "react-toastify";
 import FormGroupInput from "../form/formGroupInput";
 import FormGroupSelect from "../form/formGroupSelect";

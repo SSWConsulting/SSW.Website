@@ -4,19 +4,24 @@ import React, { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 import { IconType } from "react-icons";
 
-import {
-  FaFacebookF,
-  FaGithub,
-  FaInstagram,
-  FaLinkedinIn,
-  FaMeetup,
-  FaTiktok,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram";
+import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn";
+import { FaMeetup } from "@react-icons/all-files/fa/FaMeetup";
+import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube";
 
-import { FaXTwitter } from "react-icons/fa6";
+import dynamic from "next/dynamic";
 import layoutData from "../../content/global/index.json";
 import { CustomLink } from "../customLink";
+
+const FaXTwitter = dynamic(() =>
+  import("react-icons/fa6").then((mod) => mod.FaXTwitter)
+);
+
+const FaTiktok = dynamic(() =>
+  import("react-icons/fa").then((mod) => mod.FaTiktok)
+);
 
 export type SocialTypes =
   | "youtube"
@@ -49,11 +54,11 @@ export const socialStyles: Record<
     bgClassName: "bg-gradient-tr-social-instagram",
   },
   xtwitter: {
-    icon: FaXTwitter,
+    icon: FaXTwitter as IconType,
     bgClassName: "bg-social-xtwitter",
   },
   tiktok: {
-    icon: FaTiktok,
+    icon: FaTiktok as IconType,
     bgClassName: "bg-social-tiktok",
   },
   github: {

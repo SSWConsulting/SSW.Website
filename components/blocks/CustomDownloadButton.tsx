@@ -1,4 +1,4 @@
-import { FaFileDownload } from "react-icons/fa";
+import { FaFileDownload } from "@react-icons/all-files/fa/FaFileDownload";
 import { Template } from "tinacms";
 import Button from "../button/button";
 import { CustomLink } from "../customLink";

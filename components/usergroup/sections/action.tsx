@@ -1,15 +1,23 @@
-import {
-  LuGraduationCap,
-  LuMessagesSquare,
-  LuPizza,
-  LuSmile,
-} from "react-icons/lu";
+import dynamic from "next/dynamic";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { Container } from "../../util/container";
 import { MeetupForm } from "../meetupForm";
 import { SponsorCard } from "../sponsorCard";
+
+const LuGraduationCap = dynamic(() =>
+  import("react-icons/lu").then((icon) => icon.LuGraduationCap)
+);
+const LuMessagesSquare = dynamic(() =>
+  import("react-icons/lu").then((icon) => icon.LuMessagesSquare)
+);
+const LuPizza = dynamic(() =>
+  import("react-icons/lu").then((icon) => icon.LuSmile)
+);
+const LuSmile = dynamic(() =>
+  import("react-icons/lu").then((icon) => icon.LuSmile)
+);
 
 type ActionSectionProps = {
   heading?: string;

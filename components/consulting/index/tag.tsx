@@ -1,7 +1,11 @@
 import classNames from "classnames";
+import dynamic from "next/dynamic";
 import { useRef } from "react";
-import { BsArrowRightCircle } from "react-icons/bs";
 import { useHover } from "usehooks-ts";
+
+const BsArrowRightCircle = dynamic(() =>
+  import("react-icons/bs").then((icon) => icon.BsArrowRightCircle)
+);
 
 export const Tag = ({ label, tag, selectedTag, setSelectedTag }) => {
   const isSelected = tag === selectedTag;

@@ -1,4 +1,4 @@
-import { MdLiveHelp } from "react-icons/md";
+import { MdLiveHelp } from "@react-icons/all-files/md/MdLiveHelp";
 import { FilterGroup, type FilterGroupProps } from "./FilterGroup";
 
 export const NO_SELECTION = -1;

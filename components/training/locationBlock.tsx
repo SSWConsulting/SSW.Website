@@ -1,11 +1,16 @@
+import { FaGlobe } from "@react-icons/all-files/fa/FaGlobe";
+import { FaLocationArrow } from "@react-icons/all-files/fa/FaLocationArrow";
 import classNames from "classnames";
-import { FaGlobe, FaLocationArrow } from "react-icons/fa";
-import { MdLocationOn } from "react-icons/md";
+import dynamic from "next/dynamic";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { locationSchemaConstants } from "../../tina/collections/location"; // TODO: Use alias - https://github.com/tinacms/tinacms/issues/4488
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
+
+const MdLocationOn = dynamic(() =>
+  import("react-icons/md").then((icon) => icon.MdLocationOn)
+);
 
 const NumberOfLocationInRow = 4;
 

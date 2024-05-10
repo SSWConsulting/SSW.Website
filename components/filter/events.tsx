@@ -1,10 +1,10 @@
 "use client";
 
 import { Tab, Transition } from "@headlessui/react";
+import { FaSpinner } from "@react-icons/all-files/fa/FaSpinner";
 import { useFetchEvents, useFetchPastEvents } from "hooks/useFetchEvents";
 import Image from "next/image";
 import { Fragment, useState } from "react";
-import { FaSpinner } from "react-icons/fa";
 import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 
