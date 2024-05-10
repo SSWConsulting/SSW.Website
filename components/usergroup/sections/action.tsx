@@ -14,7 +14,7 @@ const LuMessagesSquare = dynamic(() =>
   import("react-icons/lu").then((icon) => icon.LuMessagesSquare)
 );
 const LuPizza = dynamic(() =>
-  import("react-icons/lu").then((icon) => icon.LuSmile)
+  import("react-icons/lu").then((icon) => icon.LuPizza)
 );
 const LuSmile = dynamic(() =>
   import("react-icons/lu").then((icon) => icon.LuSmile)
