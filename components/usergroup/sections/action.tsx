@@ -1,3 +1,4 @@
+import { IconType } from "@react-icons/all-files/lib";
 import dynamic from "next/dynamic";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
@@ -34,19 +35,19 @@ type ActionSectionProps = {
 const iconMap = {
   graduation: {
     name: "Graduation Cap",
-    icon: LuGraduationCap,
+    icon: LuGraduationCap as IconType,
   },
   messages: {
     name: "Messages Square",
-    icon: LuMessagesSquare,
+    icon: LuMessagesSquare as IconType,
   },
   smile: {
     name: "Smile",
-    icon: LuSmile,
+    icon: LuSmile as IconType,
   },
   pizza: {
     name: "Pizza",
-    icon: LuPizza,
+    icon: LuPizza as IconType,
   },
 } as const;
 
