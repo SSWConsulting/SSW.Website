@@ -26,7 +26,7 @@ interface EventsFilterProps {
 }
 
 export type EventTrimmed = {
-  HostedAtSSW: boolean;
+  HostedAtSSW?: boolean;
   id: string;
   Title: string;
   Thumbnail: {
