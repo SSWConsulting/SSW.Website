@@ -212,7 +212,7 @@
             },
             {
               "name": "Report a bug",
-              "url": "https://www.ssw.com.au/ssw/Standards/Support/BugReportOrEnhancement.aspx",
+              "url": "https://www.ssw.com.au/rules/report-bugs-and-suggestions",
               "widgetType": "standardLink"
             }
           ]
@@ -364,17 +364,12 @@
             },
             {
               "name": "Past Sessions",
-              "url": "https://www.ssw.com.au/ssw/NETUG/PastSessions.aspx",
+              "url": "/events?past=1",
               "widgetType": "standardLink"
             },
             {
-              "name": "Evaluation Survey",
-              "url": "https://www.ssw.com.au/ssw/NETUG/Evaluation-Survey/",
-              "widgetType": "standardLink"
-            },
-            {
-              "name": "Developer Links",
-              "url": "https://www.ssw.com.au/ssw/NETUG/Developerlinks.aspx",
+              "name": "Past User Groups",
+              "url": "https://www.youtube.com/playlist?list=PLpiOR7CBNvlpmhfwQeIVhbqZKxV-do0wY",
               "widgetType": "standardLink"
             }
           ]
