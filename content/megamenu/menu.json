@@ -195,6 +195,12 @@
           "name": "What's New",
           "items": [
             {
+              "name": "TinaCMS V1.5",
+              "url": "https://www.tina.io",
+              "description": "The world's leading open source, headless CMS that is powered by Markdown and GitHub.",
+              "widgetType": "featured"
+            },
+            {
               "name": "SugarLearning V1.50",
               "url": "https://www.sugarlearning.com/",
               "description": "The next generation on-boarding & induction tool for smart companies.",
