@@ -7,6 +7,12 @@
   "subTitle": "Explore the future of enterprise development with our scalable, cutting-edge products",
   "productsList": [
     {
+      "name": "TinaCMS",
+      "url": "https://www.tina.io",
+      "description": "Tina is a fully open source headless CMS that supports Git and Markdown. It's a great choice for any website with its friendly UX and DevEx.",
+      "logo": "/images/products/tina-small-orange.png"
+    },
+    {
       "name": "SugarLearning",
       "url": "https://sugarlearning.com/",
       "description": "The next generation on-boarding & induction tool for smart companies.",
@@ -15,7 +21,7 @@
     {
       "name": "EagleEye",
       "url": "https://www.ssweagleeye.com/",
-      "description": "AI-driven solution that provides insights and patterns, boosts productivity & data-driven decisions",
+      "description": "AI-driven solution that provides insights and patterns, boosts productivity & data-driven decisions.",
       "logo": "/images/products/EagleEye-Icon-Color-With-Space.png"
     },
     {

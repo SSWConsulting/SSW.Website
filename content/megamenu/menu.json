@@ -120,6 +120,12 @@
               "name": "Web",
               "menuItems": [
                 {
+                  "name": "TinaCMS",
+                  "url": "https://www.tina.io",
+                  "description": "Tina is a fully open source headless CMS that supports Git and Markdown. It's a great choice for any website with its friendly UX and DevEx",
+                  "iconImg": "/images/megamenu-icons/TinaDefault.svg"
+                },
+                {
                   "name": "SugarLearning",
                   "url": "https://www.sugarlearning.com/",
                   "description": "The next generation on-boarding & induction tool for smart companies",
@@ -188,6 +194,12 @@
         {
           "name": "What's New",
           "items": [
+            {
+              "name": "TinaCMS V1.5",
+              "url": "https://www.tina.io",
+              "description": "The world's leading open source, headless CMS that is powered by Markdown and GitHub.",
+              "widgetType": "featured"
+            },
             {
               "name": "SugarLearning V1.50",
               "url": "https://www.sugarlearning.com/",
