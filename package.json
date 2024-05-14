@@ -27,7 +27,7 @@
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^20.12.8",
     "@types/react": "^18.3.1",
-    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
     "@typescript-eslint/parser": "^7.3.1",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
@@ -47,7 +47,7 @@
     "ts-node": "^10.9.2"
   },
   "dependencies": {
-    "@azure/msal-node": "^2.7.0",
+    "@azure/msal-node": "^2.8.1",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@headlessui/react": "^1.7.19",
     "@headlessui/tailwindcss": "^0.2.0",
