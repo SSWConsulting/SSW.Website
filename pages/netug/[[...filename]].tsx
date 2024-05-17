@@ -292,6 +292,16 @@ export default function NETUGPage(
     return (
       <>
         <Layout menu={data.megamenu}>
+          <SEO seo={data.userGroupPage.seo} />
+          {data.userGroupPage.seo.showBreadcrumb && (
+            <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+              <Breadcrumbs
+                path={removeExtension(props.variables.relativePath)}
+                suffix={data.global.breadcrumbSuffix}
+                title={data.userGroupPage.seo?.title}
+              />
+            </Section>
+          )}
           <Container className="prose py-4 prose-h1:pt-2" size="custom">
             <TinaMarkdown
               content={data.userGroupPage._body}
