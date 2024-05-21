@@ -2,11 +2,16 @@ import React from "react";
 import classNames from "classnames";
 import { wrapFieldsWithMeta } from "tinacms";
 
-export const TextInputWithCount = (max: number, textArea: boolean = false) =>
+/**
+ *
+ * @param {number} max Number of characters allowed in field
+ * @param {boolean} isTextArea Render the input as a text area. Default to false
+ * @returns jsx component of input field with live count at bottom left to be rendered in Tina editor view
+ */
+export const TextInputWithCount = (max: number, isTextArea: boolean = false) =>
   wrapFieldsWithMeta(({ input }) => (
     <div className="flex flex-col gap-2">
-      <div className="flex justify-between font-sans text-xs font-semibold text-gray-700"></div>
-      {textArea ? (
+      {isTextArea ? (
         <textarea
           // eslint-disable-next-line tailwindcss/no-custom-classname
           className="focus:shadow-outline block min-h-40 w-full resize-y rounded-md border border-gray-200 px-3 py-2 text-base text-gray-600 shadow-inner focus:border-blue-500 focus:text-gray-900"
