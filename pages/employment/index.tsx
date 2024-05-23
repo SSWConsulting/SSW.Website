@@ -1,8 +1,10 @@
+import fs from "fs/promises";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { client } from "@/tina/client";
 import { InferGetStaticPropsType } from "next";
+import { useEffect } from "react";
 import { BuiltOnAzure } from "../../components/blocks";
 import { Booking } from "../../components/blocks/booking";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
@@ -35,6 +37,15 @@ export default function EmploymentPage(
     query: props.query,
     variables: props.variables,
   });
+
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log.apply(null, [
+      props.recruitmentData.content,
+      ...props.recruitmentData.styles,
+    ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const opportunities: OpportunityType[] =
     data.opportunitiesConnection?.edges.map((o) => {
@@ -195,12 +206,16 @@ export const getStaticProps = async () => {
     relativePath: "/dressing-down.mdx",
   });
 
+  const recruitmentFile = await fs.readFile("recruitment.json", "utf-8");
+  const recruitmentData = JSON.parse(recruitmentFile);
+
   return {
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
       marketingData: marketingSection.data,
+      recruitmentData,
       seo,
     },
   };
