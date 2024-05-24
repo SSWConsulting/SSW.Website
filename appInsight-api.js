@@ -12,8 +12,9 @@ if (!!process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING) {
   appInsights.defaultClient.addTelemetryProcessor((envelope, context) => {
     if (envelope.data.baseType === "RequestData") {
       envelope.data.baseData.properties ??= {};
-      envelope.data.baseData.properties.userAgent =
-        context["http.ServerRequest"].headers["user-agent"];
+      if (context["http.ServerRequest"].headers["user-agent"])
+        envelope.data.baseData.properties.userAgent =
+          context["http.ServerRequest"].headers["user-agent"];
     }
   });
   appInsights.start();
