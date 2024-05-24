@@ -128,6 +128,10 @@ var appSettings = [
     name: 'YOUTUBE_PRIVATE_KEY'
     value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/YOUTUBE-PRIVATE-KEY)'
   }
+  {
+    name: 'WEBSITE_TIME_ZONE'
+    value: 'Australia/Sydney'
+  }
 ]
 
 var productionName = 'app-${projectName}-${entropy}'
