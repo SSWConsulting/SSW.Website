@@ -1,25 +1,30 @@
+import { addNoIndexHeaders } from "middleware/noIndex";
 import { NextRequest, NextResponse } from "next/server";
-import { addNoIndexHeaders } from "./middleware/noIndex";
+
+const IGNORED_PATH_PREFIXES = [
+  "/api/",
+  "/_next/static/",
+  "/images/",
+  "/pubic/",
+];
 
 export function middleware(request: NextRequest) {
   const response = NextResponse.next();
-
   addNoIndexHeaders(request, response);
-
   const url = request.nextUrl.clone();
-  const pathname = url.pathname.toLowerCase();
 
   // Skip middleware for API routes and static files
-  if (
-    url.pathname.startsWith("/api/") ||
-    url.pathname.startsWith("/_next/static/")
-  ) {
+  if (IGNORED_PATH_PREFIXES.some((prefix) => url.pathname.startsWith(prefix))) {
     return response;
   }
 
+  const pathname = url.pathname.toLowerCase();
+
   if (url.pathname !== pathname) {
     url.pathname = pathname;
-    return NextResponse.redirect(url);
+    const rewrittenResponse = NextResponse.rewrite(url);
+    addNoIndexHeaders(request, rewrittenResponse);
+    return rewrittenResponse;
   }
 
   return response;
