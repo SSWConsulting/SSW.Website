@@ -1,5 +1,10 @@
 import { Collection } from "tinacms";
 
+const datetimeFormat = {
+  timeFormat: "hh:mm a",
+  dateFormat: "ddd DD MMMM YYYY,",
+};
+
 export const eventSchema: Collection = {
   label: "Events - Calendar",
   name: "calendarEvents",
@@ -63,36 +68,28 @@ export const eventSchema: Collection = {
       name: "startDateTime",
       description: "Add the time of the event as it is in Sydney",
       required: true,
-      ui: {
-        timeFormat: "HH:mm",
-      },
+      ui: datetimeFormat,
     },
     {
       type: "datetime",
       label: "End Date Time",
       name: "endDateTime",
       required: true,
-      ui: {
-        timeFormat: "HH:mm",
-      },
+      ui: datetimeFormat,
     },
     {
       type: "datetime",
       label: "Start Show Banner Date Time",
       name: "startShowBannerDateTime",
       description: "Only input this value when the event has live stream",
-      ui: {
-        timeFormat: "HH:mm",
-      },
+      ui: datetimeFormat,
     },
     {
       type: "datetime",
       label: "End Show Banner Date Time",
       name: "endShowBannerDateTime",
       description: "Only input this value when the event has live stream",
-      ui: {
-        timeFormat: "HH:mm",
-      },
+      ui: datetimeFormat,
     },
     {
       type: "object",
@@ -199,9 +196,36 @@ export const eventSchema: Collection = {
         component: "textarea",
       },
     },
-    // {
-    //   // TODO: ExternalPresenters or Presenters
-    // },
+    {
+      type: "object",
+      name: "presenters",
+      label: "Presenters",
+      list: true,
+      ui: {
+        itemProps: (item) => {
+          const presenter = item?.presenters;
+          if (!presenter) return { label: "Please Attach Presenter" };
+
+          const formattedLabel = presenter
+            .split("/")[2]
+            .replace(".mdx", "")
+            .replace(/-/g, " ")
+            .toUpperCase();
+
+          return {
+            label: formattedLabel,
+          };
+        },
+      },
+      fields: [
+        {
+          type: "reference",
+          name: "presenters",
+          label: "Presenters",
+          collections: ["presenter"],
+        },
+      ],
+    },
     {
       type: "string",
       label: "Internal Note",
