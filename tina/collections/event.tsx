@@ -220,7 +220,7 @@ export const eventSchema: Collection = {
     {
       type: "number",
       label: "Live Stream Delay (Minutes)",
-      name: "liveSTteamDelay",
+      name: "liveStreamDelayMinutes",
     },
     {
       type: "object",
