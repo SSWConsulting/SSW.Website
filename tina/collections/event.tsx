@@ -42,7 +42,7 @@ export const eventSchema: Collection = {
           name: "url",
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore - upload dir not included in Tina type but works anyway
-          uploadDir: () => "verticalImageLayout",
+          uploadDir: () => "events",
           required: true,
         },
         {
@@ -95,7 +95,7 @@ export const eventSchema: Collection = {
     {
       type: "object",
       label: "Live Stream",
-      name: "liveStream",
+      name: "liveStreamUrl",
       description: "Only input these values when the event has live stream",
       fields: [
         {
