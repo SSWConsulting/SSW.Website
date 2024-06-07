@@ -5,10 +5,10 @@ const datetimeFormat = {
   dateFormat: "ddd DD MMMM YYYY,",
 };
 
-export const eventSchema: Collection = {
+export const eventsCalendarSchema: Collection = {
   label: "Events - Calendar",
-  name: "calendarEvents",
-  path: "content/event",
+  name: "eventsCalendar",
+  path: "content/events-calendar",
   format: "json",
   ui: {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -34,7 +34,6 @@ export const eventSchema: Collection = {
       type: "object",
       label: "Thumbnail",
       name: "thumbnail",
-      required: true,
       fields: [
         {
           type: "image",
@@ -43,7 +42,6 @@ export const eventSchema: Collection = {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore - upload dir not included in Tina type but works anyway
           uploadDir: () => "events",
-          required: true,
         },
         {
           type: "string",
