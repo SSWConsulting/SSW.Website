@@ -204,3 +204,23 @@ query logosContentQuery($relativePath: String!) {
     ...LogosParts
   }
 }
+
+query getPastEventsQuery($fromDate: String!) {
+  eventsCalendarConnection(
+    filter: { startDateTime: { before: $fromDate } }
+    sort: "startDateTime"
+    last: 1000
+  ) {
+    ...GetCalendarEventsParts
+  }
+}
+
+query getFutureEventsQuery($fromDate: String!) {
+  eventsCalendarConnection(
+    filter: { startDateTime: { after: $fromDate } }
+    sort: "startDateTime"
+    first: 1000
+  ) {
+    ...GetCalendarEventsParts
+  }
+}
