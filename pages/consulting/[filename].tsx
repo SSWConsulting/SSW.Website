@@ -82,10 +82,7 @@ export default function ConsultingPage(
         </Section>
         <Section
           color="black"
-          className={`
-            prose-dark
-            border-y-4 border-y-sswRed
-            text-center`}
+          className={"prose-dark border-y-4 border-y-sswRed text-center"}
         >
           <a id="more" />
           <div className="w-full bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
