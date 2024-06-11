@@ -199,8 +199,8 @@ export const eventsCalendarSchema: Collection = {
     },
     {
       type: "object",
-      name: "presenters",
-      label: "Presenters",
+      name: "presenterList",
+      label: "Presenter List",
       list: true,
       ui: {
         itemProps: (item) => {
@@ -221,8 +221,8 @@ export const eventsCalendarSchema: Collection = {
       fields: [
         {
           type: "reference",
-          name: "presenters",
-          label: "Presenters",
+          name: "presenter",
+          label: "Presenter",
           collections: ["presenter"],
         },
       ],
