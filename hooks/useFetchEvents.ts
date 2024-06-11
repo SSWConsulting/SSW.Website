@@ -1,4 +1,3 @@
-import { EventTrimmed } from "@/components/filter/events";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import axios from "axios";
 
@@ -7,6 +6,31 @@ const PAST_PAGE_LENGTH = 10;
 
 export const EVENTS_QUERY_KEY = "events";
 export const PAST_EVENTS_QUERY_KEY = "pastEvents";
+
+type EventTrimmed = {
+  HostedAtSSW?: boolean;
+  id: string;
+  Title: string;
+  Thumbnail: {
+    Url: string;
+    Description: string;
+  };
+  StartDateTime: Date;
+  EndDateTime: Date;
+  City: string;
+  Url: {
+    Url: string;
+    Description: string;
+  };
+  Presenter?: string;
+  PresenterProfileUrl?: {
+    Url: string;
+  };
+  CalendarType?: string;
+  // TODO: Fix the name of this field
+  Category_f5a9cf4c_x002d_8228_x00?: string;
+  EventShortDescription: string;
+};
 
 const getEvents = async ({ pageParam = 1 }) => {
   const res = await axios.get<EventTrimmed[]>("/api/get-upcoming-events", {

@@ -1,7 +1,6 @@
 "use client";
 
 import { Tab, Transition } from "@headlessui/react";
-import { useFetchEvents, useFetchPastEvents } from "hooks/useFetchEvents";
 import Image from "next/image";
 import { Fragment, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
@@ -17,62 +16,63 @@ import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { CITY_MAP } from "../util/constants/country";
 import { sswOrganisation } from "../util/constants/json-ld";
 import { FilterBlock } from "./FilterBlock";
+import { GetFutureEventsQueryQuery } from "../../tina/__generated__/types";
 
 const EVENTS_JSON_LD_LIMIT = 5;
 
 interface EventsFilterProps {
   sidebarBody: TinaMarkdownContent;
   defaultToPastTab?: boolean;
+  events: {
+    futureEvents: GetFutureEventsQueryQuery;
+    pastEvents: GetFutureEventsQueryQuery;
+  };
 }
 
 export type EventTrimmed = {
-  HostedAtSSW?: boolean;
-  id: string;
-  Title: string;
-  Thumbnail: {
-    Url: string;
-    Description: string;
+  hostedAtSSW?: boolean;
+  id?: string;
+  title: string;
+  thumbnail?: {
+    url?: string;
+    description?: string;
   };
-  StartDateTime: Date;
-  EndDateTime: Date;
-  City: string;
-  Url: {
-    Url: string;
-    Description: string;
-  };
-  Presenter?: string;
-  PresenterProfileUrl?: {
-    Url: string;
-  };
-  CalendarType?: string;
-  // TODO: Fix the name of this field
-  Category_f5a9cf4c_x002d_8228_x00?: string;
-  EventShortDescription: string;
+  startDateTime: Date;
+  endDateTime: Date;
+  city?: string;
+  url: string;
+  presenter?: string;
+  presenterProfileUrl?: string;
+  calendarType?: string;
+  category?: string;
+  description?: string;
 };
 
 export const EventsFilter = ({
   sidebarBody,
   defaultToPastTab,
+  events,
 }: EventsFilterProps) => {
   const [pastSelected, setPastSelected] = useState<boolean>(defaultToPastTab);
 
-  const {
-    events,
-    fetchNextPage,
-    isFetchingNextPage,
-    error: eventError,
-  } = useFetchEvents();
-  const { filters, filteredEvents } = useEvents(events);
+  const futureEvents: EventTrimmed[] =
+    events.futureEvents.eventsCalendarConnection.edges.map((event) => ({
+      ...event.node,
+      startDateTime: new Date(event.node.startDateTime),
+      endDateTime: new Date(event.node.endDateTime),
+    }));
+  const { filters: futureFilters, filteredEvents: filteredFutureEvents } =
+    useEvents(futureEvents);
 
-  const {
-    pastEvents,
-    isLoading,
-    fetchNextPage: fetchNextPagePast,
-    isFetchingNextPage: isFetchingNextPagePast,
-    error: pastEventsError,
-  } = useFetchPastEvents(pastSelected);
+  const pastEvents: EventTrimmed[] =
+    events.pastEvents.eventsCalendarConnection.edges.map((event) => ({
+      ...event.node,
+      startDateTime: new Date(event.node.startDateTime),
+      endDateTime: new Date(event.node.endDateTime),
+    }));
+
   const { filters: pastFilters, filteredEvents: pastFilteredEvents } =
-    useEvents(isLoading || !pastEvents ? [] : pastEvents);
+    useEvents(pastEvents);
 
   return (
     <FilterBlock
@@ -81,7 +81,7 @@ export const EventsFilter = ({
           <TinaMarkdown content={sidebarBody} components={componentRenderer} />
         </div>
       }
-      groups={!pastSelected ? filters : pastFilters}
+      groups={!pastSelected ? futureFilters : pastFilters}
     >
       <Tab.Group
         onChange={(index) => setPastSelected(index === 1)}
@@ -94,29 +94,19 @@ export const EventsFilter = ({
         <Tab.Panels>
           <Tab.Panel>
             <EventsList
-              events={events}
-              filteredEvents={filteredEvents}
+              events={futureEvents}
+              filteredEvents={filteredFutureEvents}
               isUpcoming
             />
-            {!eventError && (
-              <LoadMore
-                load={() => fetchNextPage()}
-                isLoading={isFetchingNextPage}
-              />
-            )}
+            {!false && <LoadMore load={() => {}} isLoading={false} />}
           </Tab.Panel>
           <Tab.Panel>
             <EventsList
               events={pastEvents}
               filteredEvents={pastFilteredEvents}
-              isLoading={isLoading}
+              isLoading={false}
             />
-            {!pastEventsError && (
-              <LoadMore
-                load={() => fetchNextPagePast()}
-                isLoading={isFetchingNextPagePast}
-              />
-            )}
+            {!false && <LoadMore load={() => {}} isLoading={false} />}
           </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
@@ -159,20 +149,20 @@ const EventsList = ({
                 eventJsonLd = {
                   "@context": "https://schema.org",
                   "@type": "Event",
-                  name: event.Title,
-                  image: event.Thumbnail.Url,
-                  startDate: new Date(event.StartDateTime).toISOString(),
-                  endDate: new Date(event.EndDateTime).toISOString(),
+                  name: event.title,
+                  image: event.thumbnail?.url,
+                  startDate: event.startDateTime?.toISOString(),
+                  endDate: event.endDateTime?.toISOString(),
                   location: {
                     "@type": "Place",
                     address: {
                       "@type": "PostalAddress",
-                      addressLocality: CITY_MAP[event.City]?.name,
-                      addressRegion: CITY_MAP[event.City]?.state,
-                      addressCountry: CITY_MAP[event.City]?.country,
+                      addressLocality: CITY_MAP[event.city]?.name,
+                      addressRegion: CITY_MAP[event.city]?.state,
+                      addressCountry: CITY_MAP[event.city]?.country,
                     },
-                    name: CITY_MAP[event.City]?.name,
-                    url: CITY_MAP[event.City]?.url,
+                    name: CITY_MAP[event.city]?.name,
+                    url: CITY_MAP[event.city]?.url,
                   },
                   eventStatus: "https://schema.org/EventScheduled",
                   eventAttendanceMode:
@@ -211,13 +201,13 @@ interface EventProps {
 
 const Event = ({ visible, event, jsonLd }: EventProps) => {
   let eventSite;
-  if (event.HostedAtSSW) {
-    const { City } = event;
+  if (event.hostedAtSSW) {
+    const { city } = event;
     eventSite = {
-      name: CITY_MAP[City]?.name,
-      url: CITY_MAP[City]?.url,
+      name: CITY_MAP[city]?.name,
+      url: CITY_MAP[city]?.url,
     };
-  } else eventSite = { name: event.City, url: event.Url.Url };
+  } else eventSite = { name: event.city, url: event.url };
 
   const { formattedDate, relativeDate } = useFormatDates(event, true);
 
@@ -239,14 +229,14 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
               className="rounded-md max-md:pb-3"
               height={100}
               width={100}
-              alt={event.Thumbnail.Description}
-              src={event.Thumbnail.Url}
+              alt={event.thumbnail?.description}
+              src={event.thumbnail?.url}
             />
           </div>
           <div>
             <h2 className="my-0 font-semibold">
-              <CustomLink className="!no-underline" href={event.Url.Url}>
-                {event.Title}
+              <CustomLink className="!no-underline" href={event.url}>
+                {event.title}
               </CustomLink>
             </h2>
 
@@ -257,40 +247,37 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
             />
 
             <div>
-              {event.Presenter && (
+              {event.presenter && (
                 <EventDescItem
                   label="Presenter"
-                  linkValue={event?.PresenterProfileUrl?.Url}
-                  value={event.Presenter}
+                  linkValue={event?.presenterProfileUrl}
+                  value={event.presenter}
                 />
               )}
-              {event.City && CITY_MAP[event.City] && (
+              {event.city && CITY_MAP[event.city] && (
                 <EventDescItem
                   label="Location"
                   value={eventSite.name}
                   linkValue={eventSite.url}
                 />
               )}
-              {event.CalendarType && (
-                <EventDescItem label="Type" value={event.CalendarType} />
+              {event.calendarType && (
+                <EventDescItem label="Type" value={event.calendarType} />
               )}
-              {event.Category_f5a9cf4c_x002d_8228_x00 && (
-                <EventDescItem
-                  label="Category"
-                  value={event.Category_f5a9cf4c_x002d_8228_x00}
-                />
+              {event.category && (
+                <EventDescItem label="Category" value={event.category} />
               )}
             </div>
           </div>
         </div>
         <div
           className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline"
-          dangerouslySetInnerHTML={{ __html: event.EventShortDescription }}
+          dangerouslySetInnerHTML={{ __html: event.description }}
         />
         <div className="mb-1 mt-6 p-0 text-end">
           <CustomLink
-            href={event.Url.Url}
-            title={event.Url.Description}
+            href={event.url}
+            title={event.title}
             className="unstyled rounded bg-ssw-gray px-3 py-2 text-xs font-normal text-white hover:bg-ssw-gray-dark"
           >
             <span className="mt-8 text-sm">Find out more...</span>
