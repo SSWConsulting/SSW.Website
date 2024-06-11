@@ -89,7 +89,7 @@ export const Benefits = ({ data }) => {
               {index === 0 ? "Have a look at " : " and "}
               <CustomLink
                 key={index}
-                className="text-white no-underline "
+                className="text-white no-underline"
                 href={aRule?.url}
               >
                 {aRule?.name}

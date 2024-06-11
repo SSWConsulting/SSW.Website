@@ -35,7 +35,7 @@ export default function CompanyIndexPage(
       <SEO seo={props.seo} />
       <Layout menu={data.megamenu}>
         {data.companyIndex.headerImage?.heroBackground && (
-          <Section className="mx-auto  hidden w-full sm:block ">
+          <Section className="mx-auto hidden w-full sm:block">
             <CompanyHeader
               data={data.companyIndex.headerImage}
               schema={data.companyIndex.headerImage}

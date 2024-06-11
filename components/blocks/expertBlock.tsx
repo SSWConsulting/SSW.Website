@@ -30,7 +30,7 @@ export const ExpertBlock: React.FC<ExpertBlockProps> = ({
           return <Expert data={expert} key={index} />;
         })}
       </div>
-      <div className=" mt-4 pb-8 font-normal">
+      <div className="mt-4 pb-8 font-normal">
         {link && <CustomLink href={link.url}>{link.text}</CustomLink>}
       </div>
       <hr />

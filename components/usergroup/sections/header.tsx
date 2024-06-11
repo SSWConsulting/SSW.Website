@@ -66,7 +66,7 @@ export const UserGroupHeader = ({
     >
       <Container
         className={classNames(
-          "flex-row  py-0 text-white md:flex",
+          "flex-row py-0 text-white md:flex",
           presenter.image
             ? "justify-between max-md:text-center"
             : "justify-center text-center"
@@ -88,7 +88,7 @@ export const UserGroupHeader = ({
           </span>
           <div
             className={classNames(
-              "mb-5 mt-auto flex-row ",
+              "mb-5 mt-auto flex-row",
               presenter.image ? "md:flex" : "flex items-center justify-center"
             )}
           >

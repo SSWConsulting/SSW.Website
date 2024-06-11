@@ -38,11 +38,11 @@ export const Hero = ({ data, parentField }) => {
             <h3
               data-tinafield={`${parentField}.headline`}
               className={
-                "relative	mb-10 w-full text-5xl font-extrabold leading-tight tracking-normal"
+                "relative mb-10 w-full text-5xl font-extrabold leading-tight tracking-normal"
               }
             >
               <span
-                className={`bg-gradient-to-r bg-clip-text text-transparent  ${
+                className={`bg-gradient-to-r bg-clip-text text-transparent ${
                   data.color === "primary"
                     ? "from-white to-gray-100"
                     : headlineColorClasses["blue"]

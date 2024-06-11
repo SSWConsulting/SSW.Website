@@ -111,7 +111,7 @@ export default function CompanyPage(
             </Section>
           )}
           {data.company.showTechUpgradeBlock && (
-            <Section className="mx-auto w-full  !bg-gray-75 px-8 py-5">
+            <Section className="mx-auto w-full !bg-gray-75 px-8 py-5">
               <TechUpgrade />
             </Section>
           )}
