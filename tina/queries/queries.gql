@@ -205,21 +205,21 @@ query logosContentQuery($relativePath: String!) {
   }
 }
 
-query getPastEventsQuery($fromDate: String!) {
+query getPastEventsQuery($fromDate: String!, $top: Float!) {
   eventsCalendarConnection(
     filter: { startDateTime: { before: $fromDate } }
     sort: "startDateTime"
-    last: 1000
+    last: $top
   ) {
     ...GetCalendarEventsParts
   }
 }
 
-query getFutureEventsQuery($fromDate: String!) {
+query getFutureEventsQuery($fromDate: String!, $top: Float!) {
   eventsCalendarConnection(
     filter: { startDateTime: { after: $fromDate } }
     sort: "startDateTime"
-    first: 1000
+    first: $top
   ) {
     ...GetCalendarEventsParts
   }
