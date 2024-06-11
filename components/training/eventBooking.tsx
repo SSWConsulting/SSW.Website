@@ -63,7 +63,7 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
   return (
     <div
       className={classNames(
-        "col-span-12 gap-2 border-b-8 border-white  bg-gray-100 py-3 pl-5 text-lg last:border-b-0 last:border-r-0 md:border-b-0",
+        "col-span-12 gap-2 border-b-8 border-white bg-gray-100 py-3 pl-5 text-lg last:border-b-0 last:border-r-0 md:border-b-0",
         getColSpanClass(count, index),
         addTopBorderForSecondRow(index),
         addRightBorder(index)
@@ -83,7 +83,7 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
           {event.date && (
             <>
               <div
-                className=" py-0.5 text-xs uppercase text-gray-500"
+                className="py-0.5 text-xs uppercase text-gray-500"
                 data-tina-field={tinaField(
                   schema.eventList[index],
                   eventBookingBlock.eventList.date
@@ -95,19 +95,19 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
                   date={event.date}
                 />
               </div>
-              <div className=" py-0.5 text-xs uppercase text-gray-500">
+              <div className="py-0.5 text-xs uppercase text-gray-500">
                 {EventModel.TIMINGS}
               </div>
             </>
           )}
           {!event.date && (
-            <div className=" py-0.5 text-xs uppercase text-gray-500">
+            <div className="py-0.5 text-xs uppercase text-gray-500">
               {EventModel.TO_BE_ASSIGNED}
             </div>
           )}
         </div>
         {event.date && (
-          <div className="col-span-6  items-center  pr-4 md:col-span-12 md:pr-0">
+          <div className="col-span-6 items-center pr-4 md:col-span-12 md:pr-0">
             <div
               className="py-1 text-end md:text-start"
               data-tina-field={tinaField(
@@ -213,9 +213,9 @@ const EventHeader = ({
             schema,
             eventBookingBlock.eventDurationInDays
           )}
-          className="col-span-4 px-3  py-2 text-lg sm:col-span-2"
+          className="col-span-4 px-3 py-2 text-lg sm:col-span-2"
         >
-          <div className=" text-xs uppercase text-gray-500">
+          <div className="text-xs uppercase text-gray-500">
             {EventModel.DURATION}
           </div>
           {eventDurationInDays}{" "}
