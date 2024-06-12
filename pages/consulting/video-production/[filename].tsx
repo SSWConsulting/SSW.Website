@@ -56,10 +56,7 @@ export default function VideoProductionPage(
         </Section>
 
         <Section
-          className={`
-            prose-dark
-            border-y-4 border-y-sswRed
-            text-center`}
+          className={"prose-dark border-y-4 border-y-sswRed text-center"}
         >
           <a id="more" />
           <div className="w-full py-12">

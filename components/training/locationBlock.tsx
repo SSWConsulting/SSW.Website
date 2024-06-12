@@ -57,7 +57,7 @@ const LocationCard = ({ location, index, schema }) => {
         addRightBorder(index)
       )}
     >
-      <div className=" grid grid-cols-12">
+      <div className="grid grid-cols-12">
         <div className="col-span-12">
           <div
             className="inline-flex items-center text-sm"
@@ -70,7 +70,7 @@ const LocationCard = ({ location, index, schema }) => {
             <span className="font-bold capitalize">{location?.header}</span>
           </div>
           <div
-            className=" py-0.5 text-xs capitalize text-gray-500"
+            className="py-0.5 text-xs capitalize text-gray-500"
             data-tina-field={tinaField(
               schema.locationList[index].location,
               locationSchemaConstants.addressLine1
@@ -80,7 +80,7 @@ const LocationCard = ({ location, index, schema }) => {
             {location?.addressLine1}
           </div>
           <div
-            className=" py-0.5 text-xs capitalize text-gray-500"
+            className="py-0.5 text-xs capitalize text-gray-500"
             data-tina-field={tinaField(
               schema.locationList[index].location,
               locationSchemaConstants.addressLine2
@@ -89,7 +89,7 @@ const LocationCard = ({ location, index, schema }) => {
             {location?.addressLine2}
           </div>
           <div
-            className=" py-0.5 text-xs capitalize text-gray-500"
+            className="py-0.5 text-xs capitalize text-gray-500"
             data-tina-field={tinaField(
               schema.locationList[index].location,
               locationSchemaConstants.addressLine3

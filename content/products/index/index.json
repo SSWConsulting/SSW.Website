@@ -8,7 +8,7 @@
   "productsList": [
     {
       "name": "TinaCMS",
-      "url": "https://www.tina.io",
+      "url": "https://tina.io",
       "description": "Tina is a fully open source headless CMS that supports Git and Markdown. It's a great choice for any website with its friendly UX and DevEx.",
       "logo": "/images/products/tina-small-orange.png"
     },

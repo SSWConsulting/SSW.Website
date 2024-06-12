@@ -1,5 +1,5 @@
-import React from "react";
 import classNames from "classnames";
+import React from "react";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
@@ -62,7 +62,7 @@ const ColorRow = (props: ColorRow) => {
       </div>
       <div
         className={classNames(
-          "col-span-1 my-0 flex flex-col items-center justify-center px-4 ",
+          "col-span-1 my-0 flex flex-col items-center justify-center px-4",
           sswColors[`${secondColor}`]
         )}
       >
