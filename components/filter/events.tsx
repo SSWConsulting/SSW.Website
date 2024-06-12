@@ -270,10 +270,11 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
             </div>
           </div>
         </div>
-        <div
-          className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline"
-          dangerouslySetInnerHTML={{ __html: event.description }}
-        />
+        <div className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline">
+          {event.description.split("\n\n").map((p) => (
+            <p>{p}</p>
+          ))}
+        </div>
         <div className="mb-1 mt-6 p-0 text-end">
           <CustomLink
             href={event.url}
