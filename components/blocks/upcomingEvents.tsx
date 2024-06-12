@@ -32,7 +32,7 @@ export const UpcomingEvents = ({ data }) => {
   }, [data.numberOfEvents]);
 
   return (
-    <div className="prose mt-5 max-w-none sm:my-0 ">
+    <div className="prose mt-5 max-w-none sm:my-0">
       <h2
         data-tina-field={tinaField(data, upcomingEventsBlock.title)}
         className="pb-1.5 text-3xl/9 font-normal text-black"

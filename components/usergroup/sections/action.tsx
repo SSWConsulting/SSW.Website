@@ -44,7 +44,7 @@ const iconMap = {
 
 export const ActionSection = (props: ActionSectionProps) => {
   return (
-    <section className="bg-ssw-black ">
+    <section className="bg-ssw-black">
       <Container className="py-12">
         <div className="flex-row justify-between md:flex">
           <div className="text-white">
@@ -78,7 +78,7 @@ export const ActionSection = (props: ActionSectionProps) => {
               ))}
             </ul>
           </div>
-          <div className="mt-8 flex flex-col md:mt-0 md:justify-center ">
+          <div className="mt-8 flex flex-col md:mt-0 md:justify-center">
             <MeetupForm {...props} />
 
             <div
