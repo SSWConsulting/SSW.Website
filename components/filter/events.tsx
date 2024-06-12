@@ -58,6 +58,7 @@ export const EventsFilter = ({
     fetchFutureNextPage,
     hasMoreFuturePages,
     isFetchingFuturePages,
+    isLoadingFuturePages,
   } = useFetchFutureEvents();
   const { filters: futureFilters, filteredEvents: filteredFutureEvents } =
     useEvents(futureEvents);
@@ -67,6 +68,7 @@ export const EventsFilter = ({
     fetchNextPastPage,
     hasMorePastPages,
     isFetchingPastPages,
+    isLoadingPastPages,
   } = useFetchPastEvents(true);
 
   const { filters: pastFilters, filteredEvents: pastFilteredEvents } =
@@ -95,6 +97,7 @@ export const EventsFilter = ({
               events={futureEvents}
               filteredEvents={filteredFutureEvents}
               isUpcoming
+              isLoading={isLoadingFuturePages}
             />
             {hasMoreFuturePages && (
               <LoadMore
@@ -107,7 +110,7 @@ export const EventsFilter = ({
             <EventsList
               events={pastEvents}
               filteredEvents={pastFilteredEvents}
-              isLoading={false}
+              isLoading={isLoadingPastPages}
             />
             {hasMorePastPages && (
               <LoadMore
@@ -279,8 +282,8 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
           </div>
         </div>
         <div className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline">
-          {event.description.split("\n\n").map((p) => (
-            <p>{p}</p>
+          {event.description.split("\n\n").map((p, i) => (
+            <p key={i}>{p}</p>
           ))}
         </div>
         <div className="mb-1 mt-6 p-0 text-end">

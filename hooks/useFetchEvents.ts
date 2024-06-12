@@ -20,14 +20,15 @@ const getFutureEvents = async ({ pageParam }) => {
 };
 
 export const useFetchFutureEvents = () => {
-  const { data, fetchNextPage, isFetchingNextPage, error } = useInfiniteQuery({
-    queryKey: [FUTURE_EVENTS_QUERY_KEY],
-    queryFn: getFutureEvents,
-    initialPageParam: undefined,
-    getNextPageParam: (lastPage) => {
-      return lastPage.eventsCalendarConnection.pageInfo.endCursor;
-    },
-  });
+  const { data, fetchNextPage, isFetchingNextPage, error, isFetching } =
+    useInfiniteQuery({
+      queryKey: [FUTURE_EVENTS_QUERY_KEY],
+      queryFn: getFutureEvents,
+      initialPageParam: undefined,
+      getNextPageParam: (lastPage) => {
+        return lastPage.eventsCalendarConnection.pageInfo.endCursor;
+      },
+    });
 
   return {
     futureEvents:
@@ -39,6 +40,7 @@ export const useFetchFutureEvents = () => {
         }))
       ) || [],
     error,
+    isLoadingFuturePages: isFetching,
     fetchFutureNextPage: fetchNextPage,
     isFetchingFuturePages: isFetchingNextPage,
     hasMoreFuturePages:
@@ -58,7 +60,7 @@ const getPastEvents = async ({ pageParam }) => {
 };
 
 export const useFetchPastEvents = (enabled: boolean) => {
-  const { data, isLoading, fetchNextPage, isFetchingNextPage, error } =
+  const { data, isFetching, fetchNextPage, isFetchingNextPage, error } =
     useInfiniteQuery({
       queryKey: [PAST_EVENTS_QUERY_KEY],
       queryFn: getPastEvents,
@@ -79,7 +81,7 @@ export const useFetchPastEvents = (enabled: boolean) => {
         }))
       ) || [],
     error,
-    isLoading,
+    isLoadingPastPages: isFetching,
     fetchNextPastPage: fetchNextPage,
     isFetchingPastPages: isFetchingNextPage,
     hasMorePastPages:
