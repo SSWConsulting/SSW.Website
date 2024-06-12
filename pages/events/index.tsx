@@ -44,7 +44,6 @@ export default function EventsIndexPage(
           <EventsFilter
             sidebarBody={data.eventsIndex.sidebarBody}
             defaultToPastTab={defaultToPastTab}
-            events={props.events}
           />
         </Container>
         <Blocks
@@ -61,18 +60,6 @@ export const getStaticProps = async () => {
     relativePath: "index.mdx",
   });
 
-  const startOfDay = new Date();
-  startOfDay.setHours(0, 0, 0, 0);
-
-  const pastEvents = await client.queries.getPastEventsQuery({
-    fromDate: startOfDay.toISOString(),
-    top: EVENT_PAGE_SIZE,
-  });
-
-  const futureEvents = await client.queries.getFutureEventsQuery({
-    fromDate: startOfDay.toISOString(),
-    top: EVENT_PAGE_SIZE,
-  });
 
   if (!tinaProps.data.eventsIndex.seo.canonical) {
     tinaProps.data.eventsIndex.seo.canonical = `${tinaProps.data.global.header.url}events`;
@@ -83,7 +70,6 @@ export const getStaticProps = async () => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
-      events: { futureEvents: futureEvents.data, pastEvents: pastEvents.data },
     },
     revalidate: ISR_TIME,
   };

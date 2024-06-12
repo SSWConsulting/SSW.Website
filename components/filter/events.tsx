@@ -16,17 +16,16 @@ import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { CITY_MAP } from "../util/constants/country";
 import { sswOrganisation } from "../util/constants/json-ld";
 import { FilterBlock } from "./FilterBlock";
-import { GetFutureEventsQueryQuery } from "../../tina/__generated__/types";
+import {
+  useFetchFutureEvents,
+  useFetchPastEvents,
+} from "../../hooks/useFetchEvents";
 
 const EVENTS_JSON_LD_LIMIT = 5;
 
 interface EventsFilterProps {
   sidebarBody: TinaMarkdownContent;
   defaultToPastTab?: boolean;
-  events: {
-    futureEvents: GetFutureEventsQueryQuery;
-    pastEvents: GetFutureEventsQueryQuery;
-  };
 }
 
 export type EventTrimmed = {
@@ -51,25 +50,24 @@ export type EventTrimmed = {
 export const EventsFilter = ({
   sidebarBody,
   defaultToPastTab,
-  events,
 }: EventsFilterProps) => {
   const [pastSelected, setPastSelected] = useState<boolean>(defaultToPastTab);
 
-  const futureEvents: EventTrimmed[] =
-    events.futureEvents.eventsCalendarConnection.edges.map((event) => ({
-      ...event.node,
-      startDateTime: new Date(event.node.startDateTime),
-      endDateTime: new Date(event.node.endDateTime),
-    }));
+  const {
+    futureEvents,
+    fetchFutureNextPage,
+    hasMoreFuturePages,
+    isFetchingFuturePages,
+  } = useFetchFutureEvents();
   const { filters: futureFilters, filteredEvents: filteredFutureEvents } =
     useEvents(futureEvents);
 
-  const pastEvents: EventTrimmed[] =
-    events.pastEvents.eventsCalendarConnection.edges.map((event) => ({
-      ...event.node,
-      startDateTime: new Date(event.node.startDateTime),
-      endDateTime: new Date(event.node.endDateTime),
-    }));
+  const {
+    pastEvents,
+    fetchNextPastPage,
+    hasMorePastPages,
+    isFetchingPastPages,
+  } = useFetchPastEvents(true);
 
   const { filters: pastFilters, filteredEvents: pastFilteredEvents } =
     useEvents(pastEvents);
@@ -98,7 +96,12 @@ export const EventsFilter = ({
               filteredEvents={filteredFutureEvents}
               isUpcoming
             />
-            {!false && <LoadMore load={() => {}} isLoading={false} />}
+            {hasMoreFuturePages && (
+              <LoadMore
+                load={fetchFutureNextPage}
+                isLoading={isFetchingFuturePages}
+              />
+            )}
           </Tab.Panel>
           <Tab.Panel>
             <EventsList
@@ -106,7 +109,12 @@ export const EventsFilter = ({
               filteredEvents={pastFilteredEvents}
               isLoading={false}
             />
-            {!false && <LoadMore load={() => {}} isLoading={false} />}
+            {hasMorePastPages && (
+              <LoadMore
+                load={fetchNextPastPage}
+                isLoading={isFetchingPastPages}
+              />
+            )}
           </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
