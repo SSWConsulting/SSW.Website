@@ -207,7 +207,7 @@ query logosContentQuery($relativePath: String!) {
 
 query getFutureEventsQuery($fromDate: String!, $top: Float!, $after: String) {
   eventsCalendarConnection(
-    filter: { startDateTime: { after: $fromDate } }
+    filter: { endDateTime: { after: $fromDate } }
     sort: "startDateTime"
     first: $top
     after: $after
