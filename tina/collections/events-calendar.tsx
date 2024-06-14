@@ -248,21 +248,9 @@ export const eventsCalendarSchema: Collection = {
       name: "liveStreamDelayMinutes",
     },
     {
-      type: "object",
+      type: "string",
       label: "Trailer",
-      name: "trailer",
-      fields: [
-        {
-          type: "string",
-          label: "URL",
-          name: "url",
-        },
-        {
-          type: "string",
-          label: "Description",
-          name: "description",
-        },
-      ],
+      name: "trailerUrl",
     },
     {
       type: "boolean",
