@@ -51,18 +51,18 @@ export function LiveSteam({ event, children }: LiveStreamProps) {
   const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
 
   useEffect(() => {
-    if (!event?.StartDateTime || !event?.EndDateTime) {
+    if (!event?.startDateTime || !event?.endDateTime) {
       return;
     }
 
     const rightnow = dayjs()?.utc();
 
-    const liveDelay = event.SSW_LiveStreamDelayMinutes ?? 0;
-    if (!liveStreamDelayMinutes && event.SSW_DelayedLiveStreamStart) {
+    const liveDelay = event.liveStreamDelayMinutes ?? 0;
+    if (!liveStreamDelayMinutes && event.delayedLiveStreamStart) {
       setLiveStreamDelayMinutes(liveDelay);
     }
 
-    const start = dayjs(event.StartDateTime).add(liveDelay, "minute");
+    const start = dayjs(event.startDateTime).add(liveDelay, "minute");
     const minsToStart = start.diff(rightnow, "minute");
     setCountdownMins(minsToStart);
 
@@ -85,13 +85,13 @@ export function LiveSteam({ event, children }: LiveStreamProps) {
     countdownMins &&
     countdownMins <= 0 &&
     !!event &&
-    rightnow.isBefore(event?.EndDateTime);
+    rightnow.isBefore(event?.endDateTime);
 
   const showBanner =
     !!event &&
     dayjs().isBetween(
-      dayjs(event.StartShowBannerDateTime),
-      dayjs(event.EndShowBannerDateTime),
+      dayjs(event.startShowBannerDateTime),
+      dayjs(event.endShowBannerDateTime),
       null,
       "[)"
     );
