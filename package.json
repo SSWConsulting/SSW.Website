@@ -65,7 +65,7 @@
     "applicationinsights": "^2.9.5",
     "axios": "^1.7.2",
     "classnames": "^2.5.1",
-    "dayjs": "^1.11.10",
+    "dayjs": "^1.11.11",
     "dotenv": "^16.4.5",
     "eslint-config-next": "14.2.3",
     "formik": "^2.4.6",
