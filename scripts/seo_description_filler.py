@@ -33,6 +33,7 @@ def export_to_xlsx(data:list[dict], filename: str):
         ws.append(list(row.values()))
     wb.save(filename)
 
+# TODO - Replace with an olm for reduced cost
 def query_meta_description_gpt(query: str) -> str:
     load_dotenv()
     client = OpenAI(
@@ -151,7 +152,7 @@ def append_description(terms_line_number_dict: dict, file: list[str], new_descri
   
 def find_mdx_with_seo():
   descriptions: list[dict] = []
-  for root, _, files in os.walk("./"):
+  for root, _, files in os.walk("../content/"):
       for file in files:
           if file.endswith('.mdx'):
             file_path = os.path.join(root, file)
