@@ -1,9 +1,6 @@
 import os
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 import time
 from dotenv import load_dotenv
@@ -35,9 +32,13 @@ def export_to_xlsx(data:list[dict], filename: str):
 
 # TODO - Replace with an olm for reduced cost
 def query_meta_description_gpt(query: str) -> str:
-    load_dotenv()
+    
+
+    openai_api_key = os.getenv("OPENAI_API_KEY")
+    if not openai_api_key:
+        raise Exception("OpenAI API key not set")
     client = OpenAI(
-       api_key = os.getenv("OPENAI_API_KEY")
+       api_key = openai_api_key
     )
     chat_completion = client.chat.completions.create(
        messages = [
@@ -71,9 +72,11 @@ def get_site_text(url):
     chrome_options.add_argument("--headless")  # Ensure the browser runs in headless mode
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
-    
+    chromedriver_path = os.getenv("CHROME_DRIVER_PATH")
+    if not chromedriver_path:
+       raise Exception("Chromedriver path not set")
     # Initialize the Chrome driver
-    service = ChromeService(executable_path="C:\\selenium\\chromedriver.exe")  # Update the path to the chromedriver
+    service = ChromeService(executable_path=chromedriver_path)  # Update the path to the chromedriver
     driver = webdriver.Chrome(service=service, options=chrome_options)
 
     try:
@@ -86,31 +89,6 @@ def get_site_text(url):
     finally:
         driver.quit()
     return page_source
-
-def save_page(url: str, save_path: str):
-  chrome_options = Options()
-  chrome_options.add_argument("--headless")  # Ensure the browser runs in headless mode
-  chrome_options.add_argument("--no-sandbox")
-  chrome_options.add_argument("--disable-dev-shm-usage")
-
-  # Initialize the Chrome driver
-  service = ChromeService(executable_path="C:\\selenium\\chromedriver.exe")  # Update the path to the chromedriver
-  driver = webdriver.Chrome(service=service, options=chrome_options)
-  try:
-  # Open the URL
-    driver.get(url)
-        # Give some extra time for JavaScript to finish executing (optional)
-    time.sleep(2)
-    page_source = driver.page_source
-    page_source = extract_text_from_html(page_source)
-        # Save the page source to a local file
-    path = "\\".join(save_path.split("\\")[:-1])
-    if not os.path.exists(path):
-      os.makedirs(path)
-    with open(save_path, 'w+', encoding='utf-8') as file:
-        file.write(page_source)
-  finally:
-        driver.quit()
 
 def find_term_line_numbers(terms: list[str], lines:list[str] ) -> dict:
     # using a dictionary to reduce the number of times the array must be traversed
@@ -151,6 +129,7 @@ def append_description(terms_line_number_dict: dict, file: list[str], new_descri
     file.insert(seo_index + 1, new_description) 
   
 def find_mdx_with_seo():
+  load_dotenv()
   descriptions: list[dict] = []
   for root, _, files in os.walk("../content/"):
       for file in files:
