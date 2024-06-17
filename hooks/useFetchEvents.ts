@@ -9,7 +9,7 @@ export const PAST_EVENTS_QUERY_KEY = "pastEvents";
 const TODAY = new Date();
 TODAY.setHours(0, 0, 0, 0);
 
-const getFutureEvents = async ({ pageParam }) => {
+export const getFutureEvents = async ({ pageParam }) => {
   const res = await client.queries.getFutureEventsQuery({
     fromDate: TODAY.toISOString(),
     top: PAGE_LENGTH,

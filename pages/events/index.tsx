@@ -9,6 +9,15 @@ import { EventsFilter } from "../../components/filter/events";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
+import {
+  HydrationBoundary,
+  QueryClient,
+  dehydrate,
+} from "@tanstack/react-query";
+import {
+  FUTURE_EVENTS_QUERY_KEY,
+  getFutureEvents,
+} from "../../hooks/useFetchEvents";
 
 const ISR_TIME = 60 * 60; // 1 hour
 
@@ -26,7 +35,7 @@ export default function EventsIndexPage(
     new URLSearchParams(router.asPath.split(/\?/)[1]).get("past") === "1";
 
   return (
-    <>
+    <HydrationBoundary state={props.dehydratedState}>
       <SEO seo={data.eventsIndex.seo} />
       <Layout menu={data.megamenu}>
         <Container size="small">
@@ -49,13 +58,21 @@ export default function EventsIndexPage(
           blocks={data.eventsIndex.afterEvents}
         />
       </Layout>
-    </>
+    </HydrationBoundary>
   );
 }
 
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.eventsIndexContentQuery({
     relativePath: "index.mdx",
+  });
+
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchInfiniteQuery({
+    queryKey: [FUTURE_EVENTS_QUERY_KEY],
+    queryFn: getFutureEvents,
+    initialPageParam: "",
   });
 
   if (!tinaProps.data.eventsIndex.seo.canonical) {
@@ -67,6 +84,7 @@ export const getStaticProps = async () => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
+      dehydratedState: dehydrate(queryClient),
     },
     revalidate: ISR_TIME,
   };
