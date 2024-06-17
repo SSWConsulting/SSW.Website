@@ -8,9 +8,6 @@ import { YouTubeEmbed } from "@/components/embeds/youtubeEmbed";
 import { SocialIcons } from "@/components/socialIcons/socialIcons";
 import layoutData, { default as globals } from "@/content/global/index.json";
 import { getYouTubeId } from "@/helpers/embeds";
-import { sanitiseXSS } from "@/helpers/validator";
-import { SpeakerInfo } from "@/services/server/events";
-import axios from "axios";
 import classNames from "classnames";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
@@ -19,6 +16,7 @@ import { useEffect, useState } from "react";
 import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
 import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;
@@ -27,7 +25,6 @@ type LiveStreamWidgetProps = {
 export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
   const eventDescriptionCollapseId = "eventDescription";
 
-  const [speakersInfo, setSpeakersInfo] = useState<SpeakerInfo[]>([]);
   const [youtubeUrls, setYoutubeUrls] = useState<{
     videoUrl?: string;
     chatUrl?: string;
@@ -64,48 +61,10 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
       }
 
       setYoutubeUrls({
-        videoUrl: `https://www.youtube.com/embed/${event?.YouTubeId}?rel=0&autoplay=1`,
-        chatUrl: `https://www.youtube.com/live_chat?v=${event?.YouTubeId}&embed_domain=${window.location.hostname}`,
-        liveStreamUrl: `https://www.youtube.com/watch?v=${event?.YouTubeId}`,
+        videoUrl: `https://www.youtube.com/embed/${event?.youTubeId}?rel=0&autoplay=1`,
+        chatUrl: `https://www.youtube.com/live_chat?v=${event?.youTubeId}&embed_domain=${window.location.hostname}`,
+        liveStreamUrl: `https://www.youtube.com/watch?v=${event?.youTubeId}`,
       });
-
-      const ids: string[] = [];
-      const emails: string[] = [];
-
-      if (event?.ExternalPresenters?.length) {
-        const presenterIds = event.ExternalPresenters.map((presenter) =>
-          presenter.LookupId.toString()
-        );
-        ids.push(...presenterIds);
-      }
-
-      if (event?.InternalPresenters?.results?.length) {
-        emails.push(...event.InternalPresenters.results.map((i) => i.EMail));
-      }
-
-      const speakersInfo: SpeakerInfo[] = [];
-
-      if (ids.length || emails.length) {
-        const idsParam = ids.map((id) => `ids=${id}`).join("&");
-        const emailsParam = emails.map((email) => `emails=${email}`).join("&");
-
-        const remoteSpeakersInfoRes = await axios.get<SpeakerInfo[]>(
-          `/api/get-speakers?${idsParam}&${emailsParam}`
-        );
-
-        if (
-          remoteSpeakersInfoRes.status === 200 &&
-          remoteSpeakersInfoRes.data.length
-        ) {
-          speakersInfo.push(...remoteSpeakersInfoRes.data);
-        }
-      } else {
-        speakersInfo.push({
-          Title: event.Presenter,
-          PresenterProfileLink: event?.PresenterProfileUrl?.Url,
-        });
-      }
-      setSpeakersInfo(speakersInfo);
     };
 
     fetchLiveStreamInfo();
@@ -286,12 +245,11 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                         collapseMap[eventDescriptionCollapseId],
                     }
                   )}
-                  dangerouslySetInnerHTML={{
-                    __html: sanitiseXSS(
-                      event?.EventDescription || event?.EventShortDescription
-                    ),
-                  }}
-                ></div>
+                >
+                  {event?.description
+                    .split("\n\n")
+                    .map((p, i) => <p key={i}>{p}</p>)}
+                </div>
                 {eventDescriptionCollapsable && (
                   <div
                     className={classNames({
@@ -325,34 +283,30 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
 
           <div className="bg-gray-75 px-4 py-2">
             <h3 className="mb-3 text-xl font-bold">About the Speaker</h3>
-            {!!speakersInfo.length &&
-              speakersInfo.map((speakerInfo, index) => (
+            {!!event?.presenterList.length &&
+              event.presenterList.map((presenter, index) => (
                 <div key={index} className="mb-8 grid grid-cols-6 gap-x-8">
                   <div className="col-span-1">
-                    {!!speakerInfo.PresenterProfileImage && (
+                    {!!presenter.presenter.profileImg && (
                       <Image
-                        src={speakerInfo.PresenterProfileImage?.Url}
-                        alt={speakerInfo.Title}
+                        src={presenter.presenter.profileImg}
+                        alt={presenter.presenter.presenter.name}
                         width={200}
                         height={200}
                       />
                     )}
                   </div>
                   <div className="col-span-5">
-                    <p className="mb-3 font-bold">{speakerInfo.Title}</p>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: sanitiseXSS(
-                          speakerInfo.PresenterShortDescription
-                        ),
-                      }}
-                    />
-                    {!!speakerInfo.PresenterProfileLink && (
+                    <p className="mb-3 font-bold">
+                      {presenter.presenter.presenter.name}
+                    </p>
+                    <TinaMarkdown content={presenter.presenter.about} />
+                    {!!presenter.presenter.presenter.peopleProfileURL && (
                       <CustomLink
                         className="float-right border-b-1 border-dotted border-gray-450 !no-underline"
-                        href={speakerInfo.PresenterProfileLink}
+                        href={presenter.presenter.presenter.peopleProfileURL}
                       >
-                        {`${speakerInfo.Title}'s profile&gt;`}
+                        {`${presenter.presenter.presenter.name}'s profile&gt;`}
                       </CustomLink>
                     )}
                   </div>
