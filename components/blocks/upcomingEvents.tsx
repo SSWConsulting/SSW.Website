@@ -106,7 +106,7 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
           <div className="col-span-1 flex items-center justify-center sm:mr-2 sm:justify-end">
             <Image
               className={"rounded-md"}
-              src={event.thumbnail.url}
+              src={event.thumbnail?.url}
               alt={`${event.title} logo`}
               width={90}
               height={90}

@@ -190,12 +190,9 @@ export const eventsCalendarSchema: Collection = {
         "Only necessary for User Groups - shown on the landing page for user groups e.g. https://www.ssw.com.au/netug/sydney Ensure this is concise enough to fit on the above page, and does not double up on any information that already exists on the page",
     },
     {
-      type: "string",
+      type: "rich-text",
       label: "Description",
       name: "description",
-      ui: {
-        component: "textarea",
-      },
     },
     {
       type: "object",

@@ -247,9 +247,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                     }
                   )}
                 >
-                  {event?.description
-                    .split("\n\n")
-                    .map((p, i) => <p key={i}>{p}</p>)}
+                  <TinaMarkdown content={event.description} />
                 </div>
                 {eventDescriptionCollapsable && (
                   <div

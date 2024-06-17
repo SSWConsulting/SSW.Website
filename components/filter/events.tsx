@@ -44,7 +44,7 @@ export type EventTrimmed = {
   presenterProfileUrl?: string;
   calendarType?: string;
   category?: string;
-  description?: string;
+  description?: TinaMarkdownContent;
 };
 
 export const EventsFilter = ({
@@ -282,9 +282,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
           </div>
         </div>
         <div className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline">
-          {event.description.split("\n\n").map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
+          <TinaMarkdown content={event?.description} />
         </div>
         <div className="mb-1 mt-6 p-0 text-end">
           <CustomLink
