@@ -127,7 +127,7 @@ export const RecurringEvent = ({ data }) => {
         <Countdown nextEventDate={nextEventDate} />
         {data.applyLinkRedirect && (
           <button
-            className="ml-0 mt-2 w-48 rounded bg-sswRed px-15 py-3 sm:ml-2 sm:mt-0 "
+            className="ml-0 mt-2 w-48 rounded bg-sswRed px-15 py-3 sm:ml-2 sm:mt-0"
             onClick={() =>
               window.open(`${data.applyLinkRedirect}` || "", "_blank")
             }
