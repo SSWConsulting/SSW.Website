@@ -49,7 +49,7 @@
   "dependencies": {
     "@azure/msal-node": "^2.9.2",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
-    "@headlessui/react": "^1.7.19",
+    "@headlessui/react": "^2.0.4",
     "@headlessui/tailwindcss": "^0.2.1",
     "@heroicons/react": "^2.1.1",
     "@marketsystems/nextjs13-appdir-breadcrumbs": "^1.0.4",
