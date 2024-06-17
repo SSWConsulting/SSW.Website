@@ -282,34 +282,37 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
           <div className="bg-gray-75 px-4 py-2">
             <h3 className="mb-3 text-xl font-bold">About the Speaker</h3>
             {!!event?.presenterList.length &&
-              event.presenterList.map((presenter, index) => (
-                <div key={index} className="mb-8 grid grid-cols-6 gap-x-8">
-                  <div className="col-span-1">
-                    {!!presenter.presenter.profileImg && (
-                      <Image
-                        src={presenter.presenter.profileImg}
-                        alt={presenter.presenter.presenter.name}
-                        width={200}
-                        height={200}
-                      />
-                    )}
+              event.presenterList.map((presenter, index) => {
+                const presenterDetails = presenter.presenter;
+                return (
+                  <div key={index} className="mb-8 grid grid-cols-6 gap-x-8">
+                    <div className="col-span-1">
+                      {!!presenterDetails.profileImg && (
+                        <Image
+                          src={presenterDetails.profileImg}
+                          alt={presenterDetails.presenter.name}
+                          width={200}
+                          height={200}
+                        />
+                      )}
+                    </div>
+                    <div className="col-span-5">
+                      <p className="mb-3 font-bold">
+                        {presenterDetails.presenter.name}
+                      </p>
+                      <TinaMarkdown content={presenterDetails.about} />
+                      {!!presenterDetails.presenter.peopleProfileURL && (
+                        <CustomLink
+                          className="float-right border-b-1 border-dotted border-gray-450 !no-underline"
+                          href={presenterDetails.presenter.peopleProfileURL}
+                        >
+                          {`${presenterDetails.presenter.name}'s profile >`}
+                        </CustomLink>
+                      )}
+                    </div>
                   </div>
-                  <div className="col-span-5">
-                    <p className="mb-3 font-bold">
-                      {presenter.presenter.presenter.name}
-                    </p>
-                    <TinaMarkdown content={presenter.presenter.about} />
-                    {!!presenter.presenter.presenter.peopleProfileURL && (
-                      <CustomLink
-                        className="float-right border-b-1 border-dotted border-gray-450 !no-underline"
-                        href={presenter.presenter.presenter.peopleProfileURL}
-                      >
-                        {`${presenter.presenter.presenter.name}'s profile&gt;`}
-                      </CustomLink>
-                    )}
-                  </div>
-                </div>
-              ))}
+                );
+              })}
           </div>
         </div>
       </div>
