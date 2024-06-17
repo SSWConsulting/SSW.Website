@@ -1,5 +1,5 @@
-import { EventTrimmed } from "@/components/filter/events";
-import client from "@/tina/client";
+import { EventTrimmed } from "../../components/filter/events";
+import client from "../../tina/__generated__/client";
 import { TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 /**

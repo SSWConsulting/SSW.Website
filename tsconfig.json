@@ -23,8 +23,7 @@
       "@/context/*": ["context/*"],
       "@/services/*": ["services/*"],
       "@/content/*": ["content/*"],
-      "@/helpers/*": ["helpers/*"],
-      "@/hooks/*": ["hooks/*"]
+      "@/helpers/*": ["helpers/*"]
     },
     "plugins": [
       {

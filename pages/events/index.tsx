@@ -3,12 +3,12 @@ import { useRouter } from "next/router";
 import type { InferGetStaticPropsType } from "next";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { Blocks } from "@/components/blocks-renderer";
-import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
-import { EventsFilter } from "@/components/filter/events";
-import { Layout } from "@/components/layout";
-import { Container } from "@/components/util/container";
-import { SEO } from "@/components/util/seo";
+import { Blocks } from "../../components/blocks-renderer";
+import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import { EventsFilter } from "../../components/filter/events";
+import { Layout } from "../../components/layout";
+import { Container } from "../../components/util/container";
+import { SEO } from "../../components/util/seo";
 import {
   HydrationBoundary,
   QueryClient,
@@ -17,7 +17,7 @@ import {
 import {
   FUTURE_EVENTS_QUERY_KEY,
   getFutureEvents,
-} from "@/hooks/useFetchEvents";
+} from "../../hooks/useFetchEvents";
 
 const ISR_TIME = 60 * 60; // 1 hour
 

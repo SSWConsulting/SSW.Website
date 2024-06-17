@@ -7,7 +7,11 @@ import { FaSpinner } from "react-icons/fa";
 import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 
-import { useEvents } from "@/hooks/useEvents";
+import { useEvents } from "../../hooks/useEvents";
+import {
+  useFetchFutureEvents,
+  useFetchPastEvents,
+} from "../../hooks/useFetchEvents";
 import { useFormatDates } from "../../hooks/useFormatDates";
 import { UtilityButton } from "../blocks";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
@@ -16,10 +20,6 @@ import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { CITY_MAP } from "../util/constants/country";
 import { sswOrganisation } from "../util/constants/json-ld";
 import { FilterBlock } from "./FilterBlock";
-import {
-  useFetchFutureEvents,
-  useFetchPastEvents,
-} from "@/hooks/useFetchEvents";
 
 const EVENTS_JSON_LD_LIMIT = 5;
 
