@@ -3,8 +3,8 @@
 import classNames from "classnames";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
-import countdownTextFormat from "../../helpers/countdownTextFormat";
-import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
+import countdownTextFormat from "@/helpers/countdownTextFormat";
+import { LiveStreamProps } from "@/hooks/useLiveStreamProps";
 import { CustomLink } from "../customLink";
 
 type LiveStreamBannerProps = {

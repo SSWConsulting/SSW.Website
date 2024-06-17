@@ -12,8 +12,8 @@ import { Tooltip } from "react-tooltip";
 import layoutData, {
   default as globals,
 } from "../../content/global/index.json";
-import { getYouTubeId } from "../../helpers/embeds";
-import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
+import { getYouTubeId } from "@/helpers/embeds";
+import { LiveStreamProps } from "@/hooks/useLiveStreamProps";
 import { InlineJotForm } from "../blocks";
 import { CustomLink } from "../customLink";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";

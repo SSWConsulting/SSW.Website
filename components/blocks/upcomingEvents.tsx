@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 
-import { useFormatDates } from "../../hooks/useFormatDates";
+import { useFormatDates } from "@/hooks/useFormatDates";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
-import client from "../../tina/__generated__/client";
+import client from "@/tina/client";
 import { EventTrimmed } from "../filter/events";
 
 export const UpcomingEvents = ({ data }) => {

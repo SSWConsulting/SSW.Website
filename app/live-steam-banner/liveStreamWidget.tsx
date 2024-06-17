@@ -15,7 +15,7 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
-import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
+import { LiveStreamProps } from "@/hooks/useLiveStreamProps";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 type LiveStreamWidgetProps = {
