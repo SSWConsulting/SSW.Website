@@ -12,8 +12,6 @@ import { SEO } from "../../components/util/seo";
 
 const ISR_TIME = 60 * 60; // 1 hour
 
-const EVENT_PAGE_SIZE = 10;
-
 export default function EventsIndexPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
@@ -59,7 +57,6 @@ export const getStaticProps = async () => {
   const tinaProps = await client.queries.eventsIndexContentQuery({
     relativePath: "index.mdx",
   });
-
 
   if (!tinaProps.data.eventsIndex.seo.canonical) {
     tinaProps.data.eventsIndex.seo.canonical = `${tinaProps.data.global.header.url}events`;
