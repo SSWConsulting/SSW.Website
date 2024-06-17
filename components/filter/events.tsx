@@ -8,7 +8,7 @@ import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 import { useEvents } from "@/hooks/useEvents";
-import { useFormatDates } from "@/hooks/useFormatDates";
+import { useFormatDates } from "../../hooks/useFormatDates";
 import { UtilityButton } from "../blocks";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { CustomLink } from "../customLink";
