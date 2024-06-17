@@ -2,10 +2,6 @@ import { EventTrimmed } from "../../components/filter/events";
 import client from "../../tina/__generated__/client";
 import { TinaMarkdownContent } from "tinacms/dist/rich-text";
 
-const SITE_ID = process.env.SHAREPOINT_SITE_ID;
-const EVENTS_LIST_ID = process.env.SHAREPOINT_EVENTS_LIST_ID;
-const EXTERNAL_PRESENTERS_LIST_ID =
-  process.env.SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID;
 
 /**
  * Querying TinaCMS event data for the next UG event
