@@ -1,0 +1,22 @@
+{
+  "title": "Dev SuperPowers: OnlineAngular 2",
+  "url": "http://tv.ssw.com/free-webinar-angular-2",
+  "thumbnail": {
+    "description": "Dev SuperPowers - Angular 2",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png"
+  },
+  "presenter": "Duncan Hunter",
+  "presenterProfileUrl": "http://tv.ssw.com/wp-content/uploads/2014/09/DuncanHunter.jpg",
+  "startDateTime": "2016-02-25T00:00:00Z",
+  "endDateTime": "2016-02-25T01:00:00Z",
+  "calendarType": "Webinars",
+  "city": "Online",
+  "enabled": true,
+  "category": "Angular",
+  "eventShortDescription": "<div class=\"ExternalClassDC77DDF884204486A17E8E6C90CBC74B\"><p><strong>\u200b\u200bAngular 2</strong></p><div>Watch Duncan Hunter build a simple Angular 2 application from scratch as he explains the many changes to the newest version of Angular 2. TypeScript, Rx.JS, components, dependency injection, routing and more have all changed in Angular2. In this video you will get up to speed with all these changes and learn to make your first Angular2 application.</div><div><br></div></div>",
+  "eventDescription": "<div class=\"ExternalClass65AC1C42469E40A2BF86E930B202F464\"><p><strong style=\"line-height&#58;1.6;\">Angular 2\u200b</strong></p><div>Watch Duncan Hunter build a simple Angular 2 application from scratch as he explains the many changes to the newest version of Angular 2. TypeScript, Rx.JS, components, dependency injection, routing and more have all changed in Angular2. In this video you will get up to speed with all these changes and learn to make your first Angular2 application.\u200b</div></div>",
+  "description": "\u200b\u200bAngular 2\n\nWatch Duncan Hunter build a simple Angular 2 application from scratch as he explains the many changes to the newest version of Angular 2. TypeScript, Rx.JS, components, dependency injection, routing and more have all changed in Angular2. In this video you will get up to speed with all these changes and learn to make your first Angular2 application.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,23 @@
+{
+  "title": "From Devs\u2019 Oops to DevOps",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power Sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2015-11-17T13:00:00Z",
+  "endDateTime": "2015-11-17T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "DevOps",
+  "categoryAnchor": "OverviewDevOps",
+  "sessionTitle": "From Devs\u2019 Oops to DevOps",
+  "sessionTitleAnchor": "FromDevsOopstoDevOps",
+  "eventShortDescription": "<div class=\"ExternalClass43AE89FA95234E28AE0E939C17621C1D\"><p>\u200b\u200bIt's probably safe to say that most development teams are Agile. But regardless of which side you are on, nothing saves you if you start off on the wrong foot. There are a lot of pitfalls before your software goes into production, and you will learn about the most common mistakes that are taken in a hurry to get a product out. Of course you won\u2019t miss out on what best practices you should follow to ensure your DevOps cycle is running like a well-oiled machine. You will also learn how great tools like TFS (for orchestration), Octopus Deploy or Release Management (for deployment), SonarQube (for managing technical debt) and Docker (for app isolation) help you in that manner.&#160;</p></div>",
+  "eventDescription": "<div class=\"ExternalClass4D90D224A904487FBBC2D07FB730B12D\"><p>\u200b\u200bIt's probably safe to say that most development teams are Agile. But regardless of which side you are on, nothing saves you if you start off on the wrong foot. There are a lot of pitfalls before your software goes into production, and you will learn about the most common mistakes that are taken in a hurry to get a product out. Of course you won\u2019t miss out on what best practices you should follow to ensure your DevOps cycle is running like a well-oiled machine. You will also learn how great tools like TFS (for orchestration), Octopus Deploy or Release Management (for deployment), SonarQube (for managing technical debt) and Docker (for app isolation) help you in that manner.&#160;\u200b\u200b</p></div>",
+  "description": "\u200b\u200bIt's probably safe to say that most development teams are Agile. But regardless of which side you are on, nothing saves you if you start off on the wrong foot. There are a lot of pitfalls before your software goes into production, and you will learn about the most common mistakes that are taken in a hurry to get a product out. Of course you won\u2019t miss out on what best practices you should follow to ensure your DevOps cycle is running like a well-oiled machine. You will also learn how great tools like TFS (for orchestration), Octopus Deploy or Release Management (for deployment), SonarQube (for managing technical debt) and Docker (for app isolation) help you in that manner.\u00a0",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

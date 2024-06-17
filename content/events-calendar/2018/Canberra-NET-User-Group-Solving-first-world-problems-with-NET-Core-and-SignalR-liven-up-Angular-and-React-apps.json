@@ -1,0 +1,22 @@
+{
+  "title": "Canberra .NET User Group: Solving first world problems with .NET Core and SignalR (liven up Angular and React apps)",
+  "url": "https://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
+  "thumbnail": {
+    "description": "Solving first world problems with .NET Core and SignalR (liven up Angular and React apps",
+    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg"
+  },
+  "presenter": "Liam Elliott",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Liam.aspx",
+  "startDateTime": "2018-07-16T07:30:00Z",
+  "endDateTime": "2018-07-16T09:30:00Z",
+  "calendarType": "User Groups",
+  "city": "Canberra",
+  "enabled": true,
+  "category": ".NET Core",
+  "eventShortDescription": "<div class=\"ExternalClass76F0C602093A4D679ABA27A924B2D7EF\"><p><strong>Canberra&#160;.NET User Group&#58;&#160; Solving first world problems with .NET Core and SignalR (liven up Angular and React apps) - presented by Liam Elliott</strong></p><p>SignalR has been around since 2013, offering real-time push notifications for our websites. This year, Microsoft gave us SignalR Core, combined all of the features of SignalR with the benefits of .NET Core.<br></p><p>Join Liam as he walks you through how easy it is to build a real-time web client in both Angular and React using SignalR and .NET Core.</p><p>About the presenter&#58;</p><p>From cutting his teeth on a Commodore 64 to hacking apart Snake in Qbasic, Liam has been obsessed with technology and computers for as long as he can remember. Starting his professional career in 2005 with .NET 2.0 and WinForms, Liam has been developing enterprise applications on the Microsoft platform for over 13 years. These days, as a Solution Architect at SSW, Liam has focused his efforts on ASP.NET Core, Angular and Azure. His latest projects make heavy use of SignalR to provide users with real-time critical feedback.<br><br></p><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassF1D40441A2A94B38860B49D5BB74B832\"><p><strong>\u200bCanberra&#160;.NET User Group&#58;&#160; Solving first world problems with .NET Core and SignalR (liven up Angular and React apps) - presented by Liam Elliott</strong></p><p>SignalR has been around since 2013, offering real-time push notifications for our websites. This year, Microsoft gave us SignalR Core, combined all of the features of SignalR with the benefits of .NET Core.</p><p>Join Liam as he walks you through how easy it is to build a real-time web client in both Angular and React using SignalR and .NET Core.</p><p>About the presenter&#58;</p><p>From cutting his teeth on a Commodore 64 to hacking apart Snake in Qbasic, Liam has been obsessed with technology and computers for as long as he can remember. Starting his professional career in 2005 with .NET 2.0 and WinForms, Liam has been developing enterprise applications on the Microsoft platform for over 13 years. These days, as a Solution Architect at SSW, Liam has focused his efforts on ASP.NET Core, Angular and Azure. His latest projects make heavy use of SignalR to provide users with real-time critical feedback.<br><br></p><div><br></div><p><br></p></div>",
+  "description": "Canberra\u00a0.NET User Group:\u00a0 Solving first world problems with .NET Core and SignalR (liven up Angular and React apps) - presented by Liam Elliott\n\nSignalR has been around since 2013, offering real-time push notifications for our websites. This year, Microsoft gave us SignalR Core, combined all of the features of SignalR with the benefits of .NET Core.\n\nJoin Liam as he walks you through how easy it is to build a real-time web client in both Angular and React using SignalR and .NET Core.\n\nAbout the presenter:\n\nFrom cutting his teeth on a Commodore 64 to hacking apart Snake in Qbasic, Liam has been obsessed with technology and computers for as long as he can remember. Starting his professional career in 2005 with .NET 2.0 and WinForms, Liam has been developing enterprise applications on the Microsoft platform for over 13 years. These days, as a Solution Architect at SSW, Liam has focused his efforts on ASP.NET Core, Angular and Azure. His latest projects make heavy use of SignalR to provide users with real-time critical feedback.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Migrating from Access Forms to .NET Windows Forms",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power Sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewVSNet",
+  "sessionTitle": "Migrating from Access Forms to .NET Windows Forms",
+  "sessionTitleAnchor": "AccessToNET",
+  "eventShortDescription": "<div class=\"ExternalClass52760631F6A447CEB92CC237AB988296\"><div><span style=\"color&#58;#ed0033;\">*Discontinued*&#160;\u200b</span>\u200b<br></div><div><br></div><div>\u200bDo you have Microsoft Access Database applications in use in your organization? Are you challenged with upgrading them to the most recent version or are you looking to move the data or reporting into SQL Server for greater reliability and scalability? If so, this session is for you. It will help you understand what your options are and how to move forward with confidence.</div></div>",
+  "eventDescription": "<div class=\"ExternalClass52760631F6A447CEB92CC237AB988296\"><div><span style=\"color&#58;#ed0033;\">*Discontinued*&#160;\u200b</span>\u200b</div><div><br></div><div>\u200bDo you have Microsoft Access Database applications in use in your organization? Are you challenged with upgrading them to the most recent version or are you looking to move the data or reporting into SQL Server for greater reliability and scalability? If so, this session is for you. It will help you understand what your options are and how to move forward with confidence.</div></div>",
+  "description": "*Discontinued*\u00a0\u200b\n\n\u200b\n\n\u200bDo you have Microsoft Access Database applications in use in your organization? Are you challenged with upgrading them to the most recent version or are you looking to move the data or reporting into SQL Server for greater reliability and scalability? If so, this session is for you. It will help you understand what your options are and how to move forward with confidence.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

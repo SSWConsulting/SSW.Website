@@ -1,0 +1,23 @@
+{
+  "title": "Techniques and practices for testing Angular 2",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2016-12-13T21:00:00Z",
+  "endDateTime": "2016-12-14T06:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Angular",
+  "categoryAnchor": "OverviewOther",
+  "sessionTitle": "Techniques and practices for testing Angular 2 ",
+  "sessionTitleAnchor": "TechniquesandpracticesfortestingAngular2 ",
+  "eventShortDescription": "<div class=\"ExternalClass8308BD0ECDF44C3FA13E3D2C2CE7B2BF\"><p>\u200bWriting frontend tests has always been hard, let us show you how to make testing easier in your Angular 2 applications.</p>From unit testing components and services to end-to-end testing your entire application, we will give you tips and techniques for testing in Angular 2.&#160;<p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass9DE9BBDA3F2A44F0B82082CBB8BBF71D\"><p>\u200bWriting frontend tests has always been hard, let us show you how to make testing easier in your Angular 2 applications.</p>From unit testing components and services to end-to-end testing your entire application, we will give you tips and techniques for testing in Angular 2.&#160;<p><br></p></div>",
+  "description": "\u200bWriting frontend tests has always been hard, let us show you how to make testing easier in your Angular 2 applications.\n\nFrom unit testing components and services to end-to-end testing your entire application, we will give you tips and techniques for testing in Angular 2.\u00a0",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

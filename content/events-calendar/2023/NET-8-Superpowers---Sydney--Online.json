@@ -1,0 +1,25 @@
+{
+  "title": ".NET 8 Superpowers - Sydney + Online",
+  "url": "https://www.ssw.com.au/events/net-superpowers-tour",
+  "thumbnail": {
+    "description": ".NET 8 Superpowers",
+    "url": "https://ssw.com.au/images/Newsletters/SuperPower-Icon-DotNet.jpg"
+  },
+  "presenter": "William Liebenberg & Daniel Mackay",
+  "presenterProfileUrl": "http://ssw.com.au/people/",
+  "startDateTime": "2023-12-07T22:00:00Z",
+  "endDateTime": "2023-12-08T06:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": ".NET Core",
+  "eventShortDescription": "<div class=\"ExternalClass21DE8B0B162543B48E732D5EA4B47B74\"><p>\u200b\u200b\u200b.NET 8&#160;is the new standard in .NET.<br><br>This is the only .NET going forward, and our experts can get you ready to use the most powerful version ever! This fast-paced one-day course covers many topics, such as web development with ASP.NET Core, data access with EF Core, automated testing, and many other enterprise topics.<br><br>You will finish the day with a solid understanding of why you should be using .NET 8&#160;and the enterprise capabilities using the new platform.<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassC56076EA47554C26A0BA8AB935A59CDB\"><p>\u200b\u200b\u200b.NET 8&#160;is the new standard in .NET.<br><br>This is the only .NET going forward, and our experts can get you ready to use the most powerful version ever! This fast-paced one-day course covers many topics, such as web development with ASP.NET Core, data access with EF Core, automated testing, and many other enterprise topics.<br><br>You will finish the day with a solid understanding of why you should be using .NET 8&#160;and the enterprise capabilities using the new platform.<br></p></div>",
+  "description": "\u200b\u200b\u200b.NET 8\u00a0is the new standard in .NET.\n\nThis is the only .NET going forward, and our experts can get you ready to use the most powerful version ever! This fast-paced one-day course covers many topics, such as web development with ASP.NET Core, data access with EF Core, automated testing, and many other enterprise topics.\n\nYou will finish the day with a solid understanding of why you should be using .NET 8\u00a0and the enterprise capabilities using the new platform.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": false
+}

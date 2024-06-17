@@ -1,0 +1,22 @@
+{
+  "title": "/serverless/DAYS Sydney",
+  "url": "https://anz.serverlessdays.io/",
+  "thumbnail": {
+    "description": "/serverless/DAYS Sydney",
+    "url": "https://ssw.com.au/images/thumbs/serverless-days.png"
+  },
+  "startDateTime": "2024-05-20T23:00:00Z",
+  "endDateTime": "2024-05-21T07:30:00Z",
+  "calendarType": "Conferences",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass0BBC4C8A5B814D2F8D219F217E2721A3\"><div><a href=\"https&#58;//anz.serverlessdays.io/sydney/\">/serverless/DAYS</a>&#160;will be an in-person event, held on 21st May at Wesley Conference Center in Sydney. It's a 1-day community-run&#160;event comprised of talks and networking among active developers and technical leaders across Australia &amp; New Zealand.<br></div><div><br></div><div>SSW &amp; Tina are proud to sponsor this event.&#160;We are hosting the after party,&#160;<a href=\"https&#58;//www.eventbrite.com.au/e/909472014277?aff=oddtdtcreator\">RSVP here</a>.<br></div>Meet us there! &#128578;<br><br>Note&#58; SSW does not host this event.<p><br></p></div>",
+  "description": "/serverless/DAYS\n\n\u00a0will be an in-person event, held on 21st May at Wesley Conference Center in Sydney. It's a 1-day community-run\u00a0event comprised of talks and networking among active developers and technical leaders across Australia & New Zealand.\n\nSSW & Tina are proud to sponsor this event.\u00a0We are hosting the after party,\u00a0\n\nRSVP here\n\n.\n\nMeet us there! \ud83d\ude42\n\nNote: SSW does not host this event.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true
+}

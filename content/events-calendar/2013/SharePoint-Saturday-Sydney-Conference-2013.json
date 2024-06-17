@@ -1,0 +1,21 @@
+{
+  "title": "SharePoint Saturday Sydney Conference 2013",
+  "url": "http://spsevents.org/worldwide/Sydney/Pages/SPSSydney2013.aspx",
+  "thumbnail": {
+    "description": "SharePoint Saturday Sydney Conference 2013",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/2011_SPS_Logo_Square.png"
+  },
+  "presenter": "Adam Cogan ",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
+  "startDateTime": "2013-10-18T22:30:00Z",
+  "endDateTime": "2013-10-19T06:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "SharePoint",
+  "eventShortDescription": "<div class=\"ExternalClass6DC6691032D549C395F0778A3D27E2C1\">\u200bAdam Cogan will be giving his presentation, &quot;Climbing the Agile Testing Ladder featuring Visual Studio 2013, TFS 2013, Microsoft Test Manager 2013, and Lab Management 2013&quot;<div><br><div>Let's do a lap around the improvements to Microsoft Test Manager and see how the world has improved with manual, exploratory, and automated testing.\u200b</div></div></div>",
+  "eventDescription": "<div class=\"ExternalClass6DC6691032D549C395F0778A3D27E2C1\">\u200bAdam Cogan will be giving his presentation, &quot;Climbing the Agile Testing Ladder featuring Visual Studio 2013, TFS 2013, Microsoft Test Manager 2013, and Lab Management 2013&quot;<div><br><div>Let's do a lap around the improvements to Microsoft Test Manager and see how the world has improved with manual, exploratory, and automated testing.</div><div>&#160;</div><div>In this session, we will&#58;</div><div>\u2022Talk about how stakeholders can start a discussion with the Feedback tool</div><div>\u2022Show how the initial testing experience is now in the web and the advanced experience is in Microsoft Test Manager</div><div>\u2022Use Visual Studio to author automated tests that can be played back against a variety of browsers</div><div>\u2022Look at a technique that will allow you to test across different devices and form factors</div><div>\u2022Explain how Lab Management setup and administration has improved dramatically</div><div>&#160;</div><div>Whether you're a tester or a developer, this session is for you.</div><p>Starts 11&#58;20am.&#160;</p></div></div>",
+  "description": "\u200bAdam Cogan will be giving his presentation, \"Climbing the Agile Testing Ladder featuring Visual Studio 2013, TFS 2013, Microsoft Test Manager 2013, and Lab Management 2013\"\n\nLet's do a lap around the improvements to Microsoft Test Manager and see how the world has improved with manual, exploratory, and automated testing.\u200b",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

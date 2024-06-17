@@ -1,0 +1,21 @@
+{
+  "title": "Xamarin HackDay - Brisbane",
+  "url": "http://xamarinhackday.com/",
+  "thumbnail": {
+    "description": "Xamarin HackDay",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png"
+  },
+  "startDateTime": "2014-09-05T23:00:00Z",
+  "endDateTime": "2014-09-06T08:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "Xamarin HackDay - Brisbane",
+  "eventShortDescription": "<div class=\"ExternalClassF5AFDDCCB8CD4C7DABE428CB532772A2\">\u200bXamarin HackDays are for Xamarin Developers or people who want to learn Xamarin.\u200b<br><br><p>There will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassA381E1B82F024D7A81BBC2060E752AC6\"><p>\u200b\u200b</p></div>",
+  "description": "\u200bXamarin HackDays are for Xamarin Developers or people who want to learn Xamarin.\u200b\n\nThere will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

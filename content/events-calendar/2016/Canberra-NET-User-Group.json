@@ -1,0 +1,25 @@
+{
+  "title": "Canberra .NET User Group",
+  "url": "https://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
+  "thumbnail": {
+    "description": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg",
+    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg"
+  },
+  "presenter": "Adam Stephensen",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/AdamS.aspx",
+  "startDateTime": "2016-07-18T07:30:00Z",
+  "endDateTime": "2016-07-18T09:30:00Z",
+  "calendarType": "User Groups",
+  "city": "Canberra",
+  "enabled": true,
+  "category": "Angular",
+  "categoryAnchor": "Angular",
+  "sessionTitle": "Canberra .NET User Group - Angular 2 War Stories",
+  "sessionTitleAnchor": "Angular2WarStories",
+  "eventShortDescription": "<div class=\"ExternalClass08728FBC4836437B8A0C07E0E0296BCF\"><p>\u200bAngular 2 War Stories - We're bringing the front line to you!&#160;<br>Presented by Adam Stephensen&#160;<br><br>Angular 2 is awesome. Performance, Mobile friendly, Flexible. Sweet ! Happy Users, Happy Developers, Happy Business. Awesome! .... but there are so many options, and so many unanswered questions.<br></p><p>This session will de-mystify Angular 2 and show you the pitfalls to avoid when building Angular 2 in production. Come see how we are doing it now on large enterprise applications.<br></p><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass9F871F05D77C4AEA98CFAF23D1CCC3C2\"><p>\u200b<span style=\"line-height&#58;1.6;\">\u200bAngular 2 War Stories - We're bringing the front line to you!&#160;</span><span style=\"line-height&#58;1.6;\">Presented by Adam Stephensen&#160;</span></p><p>Angular 2 is awesome. Performance, Mobile friendly, Flexible. Sweet! Happy Users, Happy Developers, Happy Business. Awesome! .... but there are so many options, and so many unanswered questions.<br></p><p>This session will de-mystify Angular 2 and show you the pitfalls to avoid when building Angular 2 in production. Come see how we are doing it now on large enterprise applications.<br></p><div><br><br></div><p><br></p></div>",
+  "description": "\u200bAngular 2 War Stories - We're bringing the front line to you!\u00a0\n\nPresented by Adam Stephensen\u00a0\n\nAngular 2 is awesome. Performance, Mobile friendly, Flexible. Sweet ! Happy Users, Happy Developers, Happy Business. Awesome! .... but there are so many options, and so many unanswered questions.\n\nThis session will de-mystify Angular 2 and show you the pitfalls to avoid when building Angular 2 in production. Come see how we are doing it now on large enterprise applications.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

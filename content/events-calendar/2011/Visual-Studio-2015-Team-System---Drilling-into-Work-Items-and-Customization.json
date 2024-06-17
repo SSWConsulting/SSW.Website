@@ -1,0 +1,21 @@
+{
+  "title": "Visual Studio 2015 Team System - Drilling into Work Items and Customization",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power Sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewTFS",
+  "sessionTitle": "Visual Studio 2015 Team System - Drilling into Work Items and Customization",
+  "sessionTitleAnchor": "TeamSystemDrilling",
+  "eventShortDescription": "<div class=\"ExternalClassB60CDFCC8FD74836B610C0744C002C16\">\u200bVisual Studio Team System (VSTS) and Team Foundation Server (TFS) combine to integrate the whole development cycle from initial design, testing and development as well as bug tracking and project management tools. In this session you will be taken through everything you need to know to optimize your software development cycle using VSTS&#58;<br><br><br></div>",
+  "eventDescription": "<div class=\"ExternalClassB60CDFCC8FD74836B610C0744C002C16\"><div>\u200bVisual Studio Team System (VSTS) and Team Foundation Server (TFS) combine to integrate the whole development cycle from initial design, testing and development as well as bug tracking and project management tools. In this session you will be taken through everything you need to know to optimize your software development cycle using VSTS&#58;<br><br><ul><li>How a bug tracking system will work</li><li>How TFS work items work</li><li>The missing pieces</li><li>Customizing TFS to work in your organization</li><li>Integrating work items and your bug tracking system</li><li>A review of third-party tools</li></ul></div></div>",
+  "description": "\u200bVisual Studio Team System (VSTS) and Team Foundation Server (TFS) combine to integrate the whole development cycle from initial design, testing and development as well as bug tracking and project management tools. In this session you will be taken through everything you need to know to optimize your software development cycle using VSTS:",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

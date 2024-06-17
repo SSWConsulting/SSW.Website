@@ -1,0 +1,30 @@
+{
+  "title": "Webinar: Dev Superpowers - AngularJS",
+  "url": "http://www.ssw.com.au/ssw/events/webinars/DevSuperpowers.aspx",
+  "thumbnail": {
+    "description": "Webinar: Dev Superpowers - AngularJS",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png"
+  },
+  "presenter": "Ben Cull",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Ben.aspx",
+  "startDateTime": "2014-11-27T10:00:00Z",
+  "endDateTime": "2014-11-27T11:00:00Z",
+  "startShowBannerDateTime": "2014-11-26T13:00:00Z",
+  "endShowBannerDateTime": "2014-11-27T12:00:00Z",
+  "liveStreamUrl": {
+    "description": "Webinar: Dev Superpowers - AngularJS",
+    "url": "http://www.ssw.com.au/ssw/Events/Webinars/Live.aspx"
+  },
+  "calendarType": "Webinars",
+  "city": "Online",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "Webinar: Dev Superpowers - AngularJS",
+  "sessionTitleAnchor": "Webinar: Dev Superpowers - AngularJS",
+  "eventShortDescription": "<div class=\"ExternalClass334ABC90DF2D4AF3AF9B648D3E20AC33\"><p>\u200bAngularJS is a client-side javascript framework that enables the creation of impressively dynamic user interfaces. It strives to remove the tedium of manipulating DOM elements by abstracting many common functions such as showing/hiding, updating content and injecting/removing elements. Join Ben as he transforms a rigid MVC web application into a dynamic pleasure using AngularJS.</p></div>",
+  "eventDescription": "<div class=\"ExternalClass20FF9BDF57D14CF39F632BB4469EE9C2\"><p>\u200bAngularJS is a client-side javascript framework that enables the creation of impressively dynamic user interfaces. It strives to remove the tedium of manipulating DOM elements by abstracting many common functions such as showing/hiding, updating content and injecting/removing elements. Join Ben as he transforms a rigid MVC web application into a dynamic pleasure using AngularJS.\u200b</p></div>",
+  "description": "\u200bAngularJS is a client-side javascript framework that enables the creation of impressively dynamic user interfaces. It strives to remove the tedium of manipulating DOM elements by abstracting many common functions such as showing/hiding, updating content and injecting/removing elements. Join Ben as he transforms a rigid MVC web application into a dynamic pleasure using AngularJS.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

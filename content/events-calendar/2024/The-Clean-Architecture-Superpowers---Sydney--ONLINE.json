@@ -1,0 +1,25 @@
+{
+  "title": "The Clean Architecture Superpowers - Sydney + ONLINE",
+  "url": "https://www.ssw.com.au/events/clean-architecture-superpowers-tour",
+  "thumbnail": {
+    "description": "The Clean Architecture Superpowers - Sydney + ONLINE",
+    "url": "https://ssw.com.au/images/Newsletters/SuperPowers-Icon-CleanArchitecture.jpg"
+  },
+  "presenter": "Daniel Mackay & Luke Parker",
+  "presenterProfileUrl": "https://ssw.com.au/people/",
+  "startDateTime": "2024-11-07T22:00:00Z",
+  "endDateTime": "2024-06-14T07:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassA7C8896089DD4A66AE483C151406A428\">The explosive growth of web frameworks and the demands of users have changed the approach to building enterprise applications. Many challenges exist and just getting started can be a daunting prospect. Let's change that now.<br><br>This Superpowers will provide practical guidance and recommendations. We will cover architecture, technologies, tools and frameworks. We will examine strategies for organizing your projects, folders and files. We will design a system that is simple to build and maintain - now and well into the future.<br><br><p>You will leave this Superpowers having developed the foundation and structure for your next enterprise application, along with the knowledge to take your enterprise application development to the next level.<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass77961FEA31184B8793B319D44647A86B\"><p>\u200bThe explosive growth of web frameworks and the demands of users have changed the approach to building enterprise applications. Many challenges exist and just getting started can be a daunting prospect. Let's change that now.<br></p>This Superpowers will provide practical guidance and recommendations. We will cover architecture, technologies, tools and frameworks. We will examine strategies for organizing your projects, folders and files. We will design a system that is simple to build and maintain - now and well into the future.<br><br><p>You will leave this Superpowers having developed the foundation and structure for your next enterprise application, along with the knowledge to take your enterprise application development to the next level.<br></p></div>",
+  "description": "The explosive growth of web frameworks and the demands of users have changed the approach to building enterprise applications. Many challenges exist and just getting started can be a daunting prospect. Let's change that now.\n\nThis Superpowers will provide practical guidance and recommendations. We will cover architecture, technologies, tools and frameworks. We will examine strategies for organizing your projects, folders and files. We will design a system that is simple to build and maintain - now and well into the future.\n\nYou will leave this Superpowers having developed the foundation and structure for your next enterprise application, along with the knowledge to take your enterprise application development to the next level.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": false
+}

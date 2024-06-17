@@ -1,0 +1,38 @@
+{
+  "title": "Newcastle Coders Group - Azure DevOps to GitHub - The 10 Missing Bits",
+  "url": "https://www.meetup.com/newcastle-coders-group/events/288511141/",
+  "thumbnail": {
+    "description": "Newcastle Coders Group",
+    "url": "https://www.ssw.com.au/ssw/NETUG/SSWUpdate/images/Newcastlecoders.jpg"
+  },
+  "presenter": "Adam Cogan & Matt Wicks",
+  "presenterProfileUrl": "https://www.ssw.com.au/people/matt-wicks",
+  "startDateTime": "2022-11-02T07:00:00Z",
+  "endDateTime": "2022-11-02T10:00:00Z",
+  "startShowBannerDateTime": "2022-11-01T13:00:00Z",
+  "endShowBannerDateTime": "2022-11-02T11:00:00Z",
+  "liveStreamUrl": {
+    "description": "Livestream",
+    "url": "http://www.ssw.com.au/live"
+  },
+  "calendarType": "User Groups",
+  "city": "Newcastle",
+  "enabled": true,
+  "category": "Azure",
+  "eventShortDescription": "<div class=\"ExternalClass3FACB954203B4411812DCAB8EF9A2B00\"><p>\u200b\u200bNewcastle Coders Group&#160;at the SSW Newcastle office<br></p><p>Azure DevOps to GitHub - The 10 Missing Bits with <a href=\"https&#58;//www.ssw.com.au/people/matt-wicks\">Matt Wicks</a><br></p><p>GitHub is the best engineering platform for developers, and has really matured in recent years. Still, we hear developers say &quot;I can't believe that I can't do this on GitHub, it's easy on Azure DevOps &#128293;&quot;. <br><br>In this talk, Matt Wicks will give you the top 10 things you need to know to turn those frowns upside down and make development great again. <a href=\"https&#58;//www.meetup.com/newcastle-coders-group/events/288511141/\">RSVP here.</a><br></p><br><div>Getting there&#58;<br>Public Transport&#58; The closest public transport is the civic tram stop.<br>Parking&#58; There is some on-street parking available in Civic Lane and a car park at the Wright Lane car&#160;park.<br></div></div>",
+  "eventDescription": "<div class=\"ExternalClassEC74936108EA4012BE9A3EF879C4BD32\"><p>\u200b\u200bNewcastle Coders Group&#160;at the SSW Newcastle office<br></p><p>Azure DevOps to GitHub - The 10 Missing Bits with&#160;<a href=\"https&#58;//www.ssw.com.au/people/matt-wicks\">Matt Wicks</a><br></p><p>GitHub is the best engineering platform for developers, and has really matured in recent years. Still, we hear developers say &quot;I can't believe that I can't do this on GitHub, it's easy on Azure DevOps &#128293;&quot;.<br><br>In this talk, Matt Wicks will give you the top 10 things you need to know to turn those frowns upside down and make development great again.&#160;<a href=\"https&#58;//www.meetup.com/newcastle-coders-group/events/288511141/\">RSVP here.</a><br></p><br><div>Getting there&#58;<br>Public Transport&#58; The closest public transport is the civic tram stop.<br>Parking&#58; There is some on-street&#160;parking available in Civic Lane and a car park at the Wright Lane car&#160;park.</div><p><br></p></div>",
+  "description": "\u200b\u200bNewcastle Coders Group\u00a0at the SSW Newcastle office\n\nAzure DevOps to GitHub - The 10 Missing Bits with \n\nMatt Wicks\n\nGitHub is the best engineering platform for developers, and has really matured in recent years. Still, we hear developers say \"I can't believe that I can't do this on GitHub, it's easy on Azure DevOps \ud83d\udd25\". \n\nIn this talk, Matt Wicks will give you the top 10 things you need to know to turn those frowns upside down and make development great again. \n\nRSVP here.\n\nGetting there:\n\nPublic Transport: The closest public transport is the civic tram stop.\n\nParking: There is some on-street parking available in Civic Lane and a car park at the Wright Lane car\u00a0park.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [
+    {
+      "LookupId": 24,
+      "LookupValue": "Matt Wicks"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/matt-wicks.mdx"
+    }
+  ]
+}

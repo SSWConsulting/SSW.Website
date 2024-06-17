@@ -1,0 +1,21 @@
+{
+  "title": "The Top 15 tips for Real World Windows Forms Applications (including \"What's new for Visual Studio 2015\")",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power Sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewVSNet",
+  "sessionTitle": "The Top 15 tips for Real World Windows Forms Applications (including \"What's new for Visual Studio 2015\")",
+  "sessionTitleAnchor": "RealWorldWindowsFormsApps",
+  "eventShortDescription": "<div class=\"ExternalClass5472F9DF86754198A29EB939A1216399\"><div><span style=\"color&#58;#ed0033;\">\u200b*Discontinued*</span>\u200b<br></div><div><br></div><div>\u200bCreating solid and flexible windows forms applications, only comes from experience. Learn the top 15 rules that every developer should follow when making windows applications. Adam will demonstrate techniques such as configuration management, the right and wrong way of making inherited forms and 3rd party controls. See how to benefit from user controls and effective exception management.<br><br>Also see how Windows Forms 2.0 is a giant step forward. Learn how Windows Forms 2.0 makes it easy to build professional looking applications and see demonstrations<br><br>Learn how less code is more, and how code reuse really reduces your development time.</div></div>",
+  "eventDescription": "<div class=\"ExternalClass5472F9DF86754198A29EB939A1216399\"><div><span class=\"ms-rteThemeForeColor-9-0\">\u200b*Discontinued*</span></div><div><br></div><div>Creating solid and flexible windows forms applications, only comes from experience. Learn the top 15 rules that every developer should follow when making windows applications. Adam will demonstrate techniques such as configuration management, the right and wrong way of making inherited forms and 3rd party controls. See how to benefit from user controls and effective exception management.<br><br>Also see how Windows Forms 2.0 is a giant step forward. Learn how Windows Forms 2.0 makes it easy to build professional looking applications and see demonstrations<br><br>Learn how less code is more, and how code reuse really reduces your development time.\u200b\u200b</div></div>",
+  "description": "\u200b*Discontinued*\n\n\u200b\n\n\u200bCreating solid and flexible windows forms applications, only comes from experience. Learn the top 15 rules that every developer should follow when making windows applications. Adam will demonstrate techniques such as configuration management, the right and wrong way of making inherited forms and 3rd party controls. See how to benefit from user controls and effective exception management.\n\nAlso see how Windows Forms 2.0 is a giant step forward. Learn how Windows Forms 2.0 makes it easy to build professional looking applications and see demonstrations\n\nLearn how less code is more, and how code reuse really reduces your development time.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

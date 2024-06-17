@@ -1,0 +1,20 @@
+{
+  "title": "DDD Melbourne",
+  "url": "http://www.dddmelbourne.com/",
+  "thumbnail": {
+    "description": "DDD Melbourne",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DDD-melbourne2015.jpg"
+  },
+  "startDateTime": "2016-08-12T22:00:00Z",
+  "endDateTime": "2016-08-13T08:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass5EE57A66382E4E4489721B83807B6B82\"><p>\u200bDDD Melbourne is a non profit community event run by developers, for developers &amp; will be held on Sat Aug 13th 2016.</p><p><span style=\"line-height&#58;1.6;\">Anyone can submit a session to the event and delegates then vote on the sessions they want to see.</span><span style=\"line-height&#58;1.6;\">\u200b</span><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass557B285083FD4CD4AEC7BDB5FD6EB4C1\"><div>\u200b\u200bDDD Melbourne is a non profit community event run by developers, for developers &amp; will be held on Sat Aug 13th 2016.</div><div><br></div><div>Anyone can submit a session to the event and delegates then vote on the sessions they want to see.\u200b</div></div>",
+  "description": "\u200bDDD Melbourne is a non profit community event run by developers, for developers & will be held on Sat Aug 13th 2016.\n\nAnyone can submit a session to the event and delegates then vote on the sessions they want to see.\n\n\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

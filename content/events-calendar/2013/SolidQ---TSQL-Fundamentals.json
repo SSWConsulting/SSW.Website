@@ -1,0 +1,19 @@
+{
+  "title": "SolidQ - T\u2010SQL Fundamentals",
+  "url": "http://www.ssw.com.au/ssw/Events/training/TSQL-Fundamentals.aspx",
+  "thumbnail": {
+    "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg"
+  },
+  "presenter": "Francisco A Gonz\u00e1lez D\u00edaz",
+  "startDateTime": "2013-08-01T14:00:00Z",
+  "endDateTime": "2013-08-01T14:00:00Z",
+  "calendarType": "SolidQ Courses",
+  "enabled": true,
+  "category": "SQL Server",
+  "eventShortDescription": "<div class=\"ExternalClassEEE3806C6A0C46F686245313268C2581\"><p>\u200bThis course is intended for T-SQL developers, DBAs and SQL Server power users who work with SQL Server and need to write queries and develop code using Transact-SQL\u2014SQL Server\u2019s dialect of the standard ANSI-SQL language. The course covers querying, including retrieving and modifying data, and also provides an overview of programmable objects supported by SQL Server.<br><br>\u200b<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassEEE3806C6A0C46F686245313268C2581\"><div><p>\u200bThis course is intended for T-SQL developers, DBAs and SQL Server power users who work with SQL Server and need to write queries and develop code using Transact-SQL\u2014SQL Server\u2019s dialect of the standard ANSI-SQL language. The course covers querying, including retrieving and modifying data, and also provides an overview of programmable objects supported by SQL Server.<br>This course is intended both for people who just started working with SQL Server, as well as for people with some experience (for example, developers who are not SQL-focused). Even if you are a more experienced SQL Server practitioner, if you are self-taught and gained your knowledge \u201cby the seat of your pants\u201d and are looking for more organized training to cover gaps and holes in your knowledge, this course is for you. This course doesn\u2019t get into performance discussions and advanced problems* rather focuses on the logical aspects of T-SQL. Note though that it is not merely a step-by-step course. It doesn\u2019t just focus on syntactical elements of T-SQL, rather explains the logic behind the language and its elements.<br><br>There are many aspects of SQL that are unique to this language, and are very different than other programming languages. This course will help students adopt the right state of mind and get a true understanding of the language elements. Students will learn how to think in terms of sets and follow good SQL programming practices.<br>The course is not version specific; it does, however, cover language elements that were introduced in recent versions of SQL Server. Throughout \u200bthe course the instructor will specify the version in which the elements were introduced.<br>The topics covered in the course include&#58; Background to T-SQL Querying and Programming; Single-Table Queries; Joins; Subqueries; Table Expressions; Set Operations; Pivot, Unpivot and Grouping Sets; Data Modification; Transactions; Overview of Programmable Objects.<br><br>To complement the learning experience, students will be provided with exercises that will enable them to practice what they\u2019ve learned.</p>\u200b</div></div>",
+  "description": "\u200bThis course is intended for T-SQL developers, DBAs and SQL Server power users who work with SQL Server and need to write queries and develop code using Transact-SQL\u2014SQL Server\u2019s dialect of the standard ANSI-SQL language. The course covers querying, including retrieving and modifying data, and also provides an overview of programmable objects supported by SQL Server.\n\n\u200b",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

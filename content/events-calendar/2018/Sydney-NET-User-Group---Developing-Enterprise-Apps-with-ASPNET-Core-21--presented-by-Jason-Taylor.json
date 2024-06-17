@@ -1,0 +1,29 @@
+{
+  "title": "Sydney .NET User Group - Developing Enterprise Apps with ASP.NET Core 2.1 \u2013 presented by Jason Taylor",
+  "url": "https://www.ssw.com.au/ssw/netug/sydney.aspx",
+  "thumbnail": {
+    "description": "Sydney .NET User Group - Developing Enterprise Apps with ASP.NET Core 2.1 \u2013 presented by Jason Taylor",
+    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
+  },
+  "presenter": "Jason Taylor",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/JasonTaylor.aspx",
+  "startDateTime": "2018-06-20T08:00:00Z",
+  "endDateTime": "2018-06-20T11:00:00Z",
+  "startShowBannerDateTime": "2018-06-19T15:00:00Z",
+  "endShowBannerDateTime": "2018-06-20T12:00:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET User Group - Developing Enterprise Apps with ASP.NET Core 2.1 \u2013 presented by Jason Taylor",
+    "url": "https://www.ssw.com.au/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": ".NET Core",
+  "sessionTitle": "Sydney .NET User Group - Developing Enterprise Apps with ASP.NET Core 2.1",
+  "eventShortDescription": "<div class=\"ExternalClass0DAC73E98E924ECFAA31918313C6D6CA\"><strong>Sydney&#160;.NET User Group - Developing Enterprise Apps with&#160;ASP.NET Core 2.1&#160;\u2013 presented by Jason Taylor</strong><div><br>The explosive growth of web frameworks and the demands of users have changed the approach to building web applications. Many challenges exist, and getting started can be a daunting prospect. Let's change that now.<div><br>This talk provides practical guidance and recommendations. We will cover architecture, technologies, tools, and frameworks. We will examine strategies for organizing your projects, folders and files. We will design a system that is simple to build and maintain - all the way from development to production. You leave this talk inspired and prepared to take your enterprise application development to the next level.<div><br><strong>About the presenter&#58;</strong><br>Jason is an SSW Solution Architect and full stack developer with over 17 years professional experience. He is currently specializing in teaching and building awesome applications utilizing ASP.NET Core, Entity Framework Core and Angular. Jason loves a challenge and is skilled at progressing from a proposal into a well-defined, coded, and tested solution.<br><br></div></div></div></div>",
+  "eventDescription": "<div class=\"ExternalClassA206298BF8084E29B883E042FC9F7AF0\"><div><strong>Sydney .NET User Group - Developing Enterprise Apps with ASP.NET Core 2.1 \u2013 presented by Jason Taylor</strong><br></div><div><br></div><div>The explosive growth of web frameworks and the demands of users have changed the approach to building web applications. Many challenges exist, and getting started can be a daunting prospect. Let's change that now.<br></div><div><br></div><div>This talk provides practical guidance and recommendations. We will cover architecture, technologies, tools, and frameworks. We will examine strategies for organizing your projects, folders and files. We will design a system that is simple to build and maintain - all the way from development to production. You leave this talk inspired and prepared to take your enterprise application development to the next level.</div><div><br></div><div><strong>About the presenter&#58;</strong></div><div>Jason is an SSW Solution Architect and full stack developer with over 17 years professional experience. He is currently specializing in teaching and building awesome applications utilizing ASP.NET Core, Entity Framework Core and Angular. Jason loves a challenge and is skilled at progressing from a proposal into a well-defined, coded, and tested solution.<br></div><div><br></div></div>",
+  "description": "Sydney\u00a0.NET User Group - Developing Enterprise Apps with\u00a0ASP.NET Core 2.1\u00a0\u2013 presented by Jason Taylor\n\nThe explosive growth of web frameworks and the demands of users have changed the approach to building web applications. Many challenges exist, and getting started can be a daunting prospect. Let's change that now.\n\nThis talk provides practical guidance and recommendations. We will cover architecture, technologies, tools, and frameworks. We will examine strategies for organizing your projects, folders and files. We will design a system that is simple to build and maintain - all the way from development to production. You leave this talk inspired and prepared to take your enterprise application development to the next level.\n\nAbout the presenter:\n\nJason is an SSW Solution Architect and full stack developer with over 17 years professional experience. He is currently specializing in teaching and building awesome applications utilizing ASP.NET Core, Entity Framework Core and Angular. Jason loves a challenge and is skilled at progressing from a proposal into a well-defined, coded, and tested solution.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,22 @@
+{
+  "title": "\u200bCanberra .NET user group: Get ready for modern DevOps - Danijel Malik",
+  "url": "https://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
+  "thumbnail": {
+    "description": "\u200bCanberra .NET user group: Get ready for modern DevOps - Danijel Malik",
+    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg"
+  },
+  "presenter": "Danijel Malik",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Danijel-Malik.aspx",
+  "startDateTime": "2017-07-17T07:00:00Z",
+  "endDateTime": "2017-07-17T10:30:00Z",
+  "calendarType": "User Groups",
+  "city": "Canberra",
+  "enabled": true,
+  "category": "Angular",
+  "eventShortDescription": "<div class=\"ExternalClassB0DC5E9D52994CF5AAA2634407427729\"><strong></strong><strong>\u200bCanberra&#160;.NET user group&#58; Get ready for modern DevOps - Danijel Malik</strong><br><br>Modern DevOps is a highway to greater business value and it works cross-platform. Automated deployments solved a handover problem, Application Monitoring Platforms closed the feedback and crash reporting gap, and containers made the \u201cworks on my machine\u201d stereotype real. Next mission&#58; automated environments.<div><br>In this session, Danijel will start by identifying the common bad practices to give you some quick wins. His experience starts from the smallest businesses and extends to the largest businesses including some of the largest banks. You will learn why Zero Based Infrastructure is the next step of a DevOps evolution, why Cloud is your best friend, and how to integrate this approach back into your deployment pipeline. You will walk away with a solid understanding of what Infrastructure as Code is and the main advantages, leaving you with nothing to worry about but your code.<br></div><div><br></div></div>",
+  "eventDescription": "<div class=\"ExternalClass2796FB6C9C664B6692540161C86E90FF\"><strong>\u200bCanberra&#160;.NET user group&#58; Get ready for modern DevOps - Danijel Malik</strong><br><br>Modern DevOps is a highway to greater business value and it works cross-platform. Automated deployments solved a handover problem, Application Monitoring Platforms closed the feedback and crash reporting gap, and containers made the \u201cworks on my machine\u201d stereotype real. Next mission&#58; automated environments.<div><br>In this session, Danijel will start by identifying the common bad practices to give you some quick wins. His experience starts from the smallest businesses and extends to the largest businesses including some of the largest banks. You will learn why Zero Based Infrastructure is the next step of a DevOps evolution, why Cloud is your best friend, and how to integrate this approach back into your deployment pipeline. You will walk away with a solid understanding of what Infrastructure as Code is and the main advantages, leaving you with nothing to worry about but your code.<br></div><div><br></div></div>",
+  "description": "\u200bCanberra\u00a0.NET user group: Get ready for modern DevOps - Danijel Malik\n\nModern DevOps is a highway to greater business value and it works cross-platform. Automated deployments solved a handover problem, Application Monitoring Platforms closed the feedback and crash reporting gap, and containers made the \u201cworks on my machine\u201d stereotype real. Next mission: automated environments.\n\nIn this session, Danijel will start by identifying the common bad practices to give you some quick wins. His experience starts from the smallest businesses and extends to the largest businesses including some of the largest banks. You will learn why Zero Based Infrastructure is the next step of a DevOps evolution, why Cloud is your best friend, and how to integrate this approach back into your deployment pipeline. You will walk away with a solid understanding of what Infrastructure as Code is and the main advantages, leaving you with nothing to worry about but your code.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

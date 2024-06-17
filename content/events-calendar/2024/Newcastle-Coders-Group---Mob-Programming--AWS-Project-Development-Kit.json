@@ -1,0 +1,32 @@
+{
+  "title": "Newcastle Coders Group - Mob Programming + AWS Project Development Kit",
+  "url": "https://www.meetup.com/newcastle-coders-group/events/300836558/",
+  "thumbnail": {
+    "description": "Newcastle Coders Group",
+    "url": "https://ssw.com.au/images/Newsletters/Newcastlecoders.jpg"
+  },
+  "presenter": "Mark Tranter & Klee Thomas",
+  "presenterProfileUrl": "https://www.meetup.com/newcastle-coders-group/events/300836558/",
+  "startDateTime": "2024-06-05T08:00:00Z",
+  "endDateTime": "2024-06-05T11:00:00Z",
+  "startShowBannerDateTime": "2024-06-04T14:00:00Z",
+  "endShowBannerDateTime": "2024-06-05T12:00:00Z",
+  "liveStreamUrl": {
+    "description": "Livestream",
+    "url": "http://www.ssw.com.au/live"
+  },
+  "calendarType": "User Groups",
+  "city": "Newcastle",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassFB4298F2672043509ADBE63067F0F1B5\"><p>\u200bJoin us for the \u200b\u200b\u200bNewcastle Coders Group&#160;at the&#160;<a href=\"https&#58;//www.ssw.com.au/offices/newcastle\" target=\"_blank\">SSW Newcastle office</a>!</p><p>We will have two experts presenting&#58;&#160;<br></p><strong>\u25fe Mob Programming&#160;</strong>with Klee Thomas<div><br>Are you finding that your delivery has slowed down? Do you have a lot of work in progress but struggle to get things&#160;done? Are you interested in how you can deliver more value with your existing team? Then this talk is for you.</div><div><br>In this talk, Klee will go through his experiences with mob programming and how it can be used to optimise your development process so that you're delivering value to customers, and making your team more engaged at the same time.<br><br><strong><strong>\u25fe&#160;</strong>AWS Project Development Kit&#160;</strong>with&#160;Mark Tranter<div><br>The AWS Project Development Kit (AWS PDK) provides building blocks for common patterns together with development tools to manage and build your projects.</div><div><br>The AWS PDK lets you define your projects programmatically via the expressive power of type-safe constructs. In this live-coding talk, Mark will go through using AWS PDK to build out an app in front of your eyes.<br><br><p>&#128197; RSVP&#160;<a href=\"https&#58;//www.meetup.com/newcastle-coders-group/events/300836558/\" target=\"_blank\">here</a><br><br>Getting there&#58;<br>&#128652; Public Transport&#58; The closest public transport is the civic tram stop.<br>&#127359;\ufe0f Parking&#58; There is some on-street parking available in Civic Lane and a car park at the Wright Lane car&#160;park.<br></p></div></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass98B61FACFC14459795F035A2F0159B22\"><p><br></p></div><p>\u200b</p>",
+  "description": "\u200bJoin us for the \u200b\u200b\u200bNewcastle Coders Group\u00a0at the\u00a0\n\nSSW Newcastle office\n\n!\n\nWe will have two experts presenting:\u00a0\n\n\u25fe Mob Programming\u00a0\n\nwith Klee Thomas\n\nAre you finding that your delivery has slowed down? Do you have a lot of work in progress but struggle to get things\u00a0done? Are you interested in how you can deliver more value with your existing team? Then this talk is for you.\n\nIn this talk, Klee will go through his experiences with mob programming and how it can be used to optimise your development process so that you're delivering value to customers, and making your team more engaged at the same time.\n\n\u25fe\u00a0\n\nAWS Project Development Kit\u00a0\n\nwith\u00a0Mark Tranter\n\nThe AWS Project Development Kit (AWS PDK) provides building blocks for common patterns together with development tools to manage and build your projects.\n\nThe AWS PDK lets you define your projects programmatically via the expressive power of type-safe constructs. In this live-coding talk, Mark will go through using AWS PDK to build out an app in front of your eyes.\n\n\ud83d\udcc5 RSVP\u00a0\n\nhere\n\nGetting there:\n\n\ud83d\ude8c Public Transport: The closest public transport is the civic tram stop.\n\n\ud83c\udd7f\ufe0f Parking: There is some on-street parking available in Civic Lane and a car park at the Wright Lane car\u00a0park.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "JZSJp4wCYRc",
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": false
+}

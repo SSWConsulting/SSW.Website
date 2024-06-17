@@ -1,0 +1,31 @@
+{
+  "title": "Sydney .NET user group: March",
+  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
+  "thumbnail": {
+    "description": "Sydney .NET user group: March",
+    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
+  },
+  "presenter": "Jeremy Cade",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/jeremy.aspx",
+  "startDateTime": "2016-03-16T07:30:00Z",
+  "endDateTime": "2016-03-16T09:30:00Z",
+  "startShowBannerDateTime": "2016-03-15T13:00:00Z",
+  "endShowBannerDateTime": "2016-03-16T10:00:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET user group: March",
+    "url": "https://www.ssw.com.au/ssw/NETUG/Live.aspx"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": ".NET Core",
+  "categoryAnchor": "OverviewOther",
+  "sessionTitle": "Lessons learned: ASP.NET Core 1.0 + Docker in Production",
+  "sessionTitleAnchor": "ASPNETCoreDockerInProduction",
+  "eventShortDescription": "<div class=\"ExternalClass753EB530D6D540F6B7DB03891E6A722F\"><div>Containers, while not a new technology, are still the cool new thing in the Microsoft space. But as with all technologies, there are some rough edges and things to be wary of.&#160;</div><div><br></div><div>In this talk we will step through some of the hard-fought lessons learned from running production ASP.NET Core 1.0 applications in Linux Containers on top of CoreCLR (.NET Core).&#160;</div><div><br></div></div>",
+  "eventDescription": "<div class=\"ExternalClassE67B02899D1B4F92B381B2969CD35381\"><div>\u200bContainers, while not a new technology, are still the cool new thing in the Microsoft space. But as with all technologies, there are some rough edges and things to be wary of.&#160;</div><div><br></div><div>In this talk we will step through some of the hard-fought lessons learned from running production ASP.NET Core 1.0 applications in Linux Containers on top of CoreCLR (.NET Core).&#160;</div><div><br></div></div>",
+  "description": "Containers, while not a new technology, are still the cool new thing in the Microsoft space. But as with all technologies, there are some rough edges and things to be wary of.\u00a0\n\nIn this talk we will step through some of the hard-fought lessons learned from running production ASP.NET Core 1.0 applications in Linux Containers on top of CoreCLR (.NET Core).\u00a0",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

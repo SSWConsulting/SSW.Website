@@ -1,0 +1,38 @@
+{
+  "title": "Azure Super Skills - Brisbane",
+  "url": "https://www.ssw.com.au/ssw/Events/training/azure-superskills.aspx",
+  "thumbnail": {
+    "description": "Azure Super Skills",
+    "url": "http://www.ssw.com.au/ssw/events/training/images/azure-super-skills-icon-2022.png"
+  },
+  "presenter": "William Liebenberg & Matt Wicks",
+  "presenterProfileUrl": "https://www.ssw.com.au/people/",
+  "startDateTime": "2022-12-01T22:00:00Z",
+  "endDateTime": "2022-12-02T07:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": "Azure",
+  "eventShortDescription": "<div class=\"ExternalClassA5BFC25E2B8745308414CF37310E19AF\">In this 1-day course, you will learn all the Microsoft Azure fundamentals. Get up to speed with&#160;cloud concepts, Azure services, Azure workloads, security &amp;&#160;privacy in Azure, and&#160;Azure pricing and support.<br><br>Join&#160;our top&#160;Azure experts&#160;who will walk&#160;you through all the Azure basics and beyond,&#160;using all the best tools and practices we use at SSW and for our clients.<br><br><p>By the end of this course, you will be&#160;ready to take the <a href=\"https&#58;//learn.microsoft.com/en-us/certifications/exams/az-900\">Exam AZ-900&#58; Microsoft Azure Fundamentals</a>.</p></div>",
+  "description": "In this 1-day course, you will learn all the Microsoft Azure fundamentals. Get up to speed with\u00a0cloud concepts, Azure services, Azure workloads, security &\u00a0privacy in Azure, and\u00a0Azure pricing and support.\n\nJoin\u00a0our top\u00a0Azure experts\u00a0who will walk\u00a0you through all the Azure basics and beyond,\u00a0using all the best tools and practices we use at SSW and for our clients.\n\nBy the end of this course, you will be\u00a0ready to take the \n\nExam AZ-900: Microsoft Azure Fundamentals\n\n.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [
+    {
+      "LookupId": 8,
+      "LookupValue": "William Liebenberg"
+    },
+    {
+      "LookupId": 24,
+      "LookupValue": "Matt Wicks"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/william-liebenberg.mdx"
+    },
+    {
+      "presenter": "content/presenters/matt-wicks.mdx"
+    }
+  ]
+}

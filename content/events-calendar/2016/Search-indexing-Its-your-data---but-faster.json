@@ -1,0 +1,23 @@
+{
+  "title": "Search indexing: It's your data - but faster",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2016-08-16T22:00:00Z",
+  "endDateTime": "2016-08-17T07:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "categoryAnchor": "OverviewOther",
+  "sessionTitle": "Search indexing: It's your data - but faster",
+  "sessionTitleAnchor": "Searchindexing:It'syourdata-butfaster",
+  "eventShortDescription": "<div class=\"ExternalClass13CAD47AFB7849EF9C28F52037C63282\"><p>\u200bEver wonder why Google can return results from billions of pages in a fraction of a second while your database query across mere thousands seems to drag?<br></p>In this session we'll show you how to really rock search by leveraging the capabilities of the top Open Source search index tools and libraries - either embedded within your own application or across the cloud.<br><br><br><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass0AF04EF63CE346FBB24DE7572CDAA0DE\">Ever wonder why Google can return results from billions of pages in a fraction of a second while your database query across mere thousands seems to drag?\u200b<br><br>In this session we'll show you how to really rock search by leveraging the capabilities of the top Open Source search index tools and libraries - either embedded within your own application or across the cloud.<br><br><br><p><br></p></div>",
+  "description": "\u200bEver wonder why Google can return results from billions of pages in a fraction of a second while your database query across mere thousands seems to drag?\n\nIn this session we'll show you how to really rock search by leveraging the capabilities of the top Open Source search index tools and libraries - either embedded within your own application or across the cloud.",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

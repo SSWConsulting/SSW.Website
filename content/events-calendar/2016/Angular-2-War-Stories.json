@@ -1,0 +1,23 @@
+{
+  "title": "Angular 2 War Stories",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2016-07-19T22:00:00Z",
+  "endDateTime": "2016-07-20T08:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Angular",
+  "categoryAnchor": "OverviewOther",
+  "sessionTitle": "Angular 2 War Stories",
+  "sessionTitleAnchor": "Angular2WarStories",
+  "eventShortDescription": "<div class=\"ExternalClassCC3C66C342794D5093C4EB107D01EB9F\"><table border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" style=\"width&#58;602px;\"><tbody><tr><td align=\"left\" valign=\"top\">\u200bAngular 2 is awesome. Performance, Mobile friendly, Flexible. Sweet ! Happy Users, Happy Developers, Happy Business. Awesome! .... but there are so many options, and so many unanswered questions.<br></td></tr><tr><td align=\"left\" valign=\"top\">This session will de-mystify Angular 2 and show you the pitfalls to avoid when building Angular 2 in production. Come see how we are doing it now on large enterprise applications.<br></td></tr></tbody></table><p><br></p></div><p>\u200b<br></p>",
+  "eventDescription": "<div class=\"ExternalClass82319A898C354DE98A235FEC63B04901\"><table border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" style=\"width&#58;602px;\"><tbody><tr><td align=\"left\" valign=\"top\">\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200bAngular 2 is awesome. Performance, Mobile friendly, Flexible. Sweet ! Happy Users, Happy Developers, Happy Business. Awesome! .... but there are so many options, and so many unanswered questions.<br></td></tr><tr><td align=\"left\" valign=\"top\">This session will de-mystify Angular 2 and show you the pitfalls to avoid when building Angular 2 in production. Come see how we are doing it now on large enterprise applications.<br></td></tr></tbody></table><p><br></p></div>",
+  "description": "\u200bAngular 2 is awesome. Performance, Mobile friendly, Flexible. Sweet ! Happy Users, Happy Developers, Happy Business. Awesome! .... but there are so many options, and so many unanswered questions.\n\nThis session will de-mystify Angular 2 and show you the pitfalls to avoid when building Angular 2 in production. Come see how we are doing it now on large enterprise applications.\n\n\u200b",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

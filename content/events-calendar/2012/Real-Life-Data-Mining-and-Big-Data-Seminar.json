@@ -1,0 +1,19 @@
+{
+  "title": "Real Life Data Mining and Big Data: Seminar",
+  "url": "http://www.ssw.com.au/ssw/events/training/Data-Mining-Seminar.aspx",
+  "thumbnail": {
+    "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg"
+  },
+  "presenter": "Paco Gonzlez",
+  "startDateTime": "2012-10-17T13:00:00Z",
+  "endDateTime": "2012-10-17T13:00:00Z",
+  "calendarType": "SolidQ Courses",
+  "enabled": true,
+  "category": "SQL Server",
+  "eventShortDescription": "<div class=\"ExternalClassE9135823460B4EF38BC79E05529CF954\">\u200bDuring this 1-day seminar, you will learn to design, develop, and deploy data mining solutions using SQL Server Analysis Services (SSAS). This course demonstrates design and development best practices as you build a fully working data mining solution.<br><br></div>",
+  "eventDescription": "<div class=\"ExternalClassE9135823460B4EF38BC79E05529CF954\"><div>\u200bDuring this 1-day seminar, you will learn to design, develop, and deploy data mining solutions using SQL Server Analysis Services (SSAS). This course demonstrates design and development best practices as you build a fully working data mining solution.<br><br>This seminar covers two real world case studies. 1.- Moderation solution for media companies. 2.- A shopping basket suggestion solution to increase sales.<br><br>This seminar finishes with an introduction to big data with Microsoft Hadoop</div></div>",
+  "description": "\u200bDuring this 1-day seminar, you will learn to design, develop, and deploy data mining solutions using SQL Server Analysis Services (SSAS). This course demonstrates design and development best practices as you build a fully working data mining solution.",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

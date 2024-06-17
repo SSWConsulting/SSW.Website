@@ -1,0 +1,22 @@
+{
+  "title": "NDC Minnesota: Getting Started with Machine Learning using ML.NET (half day workshop)",
+  "url": "https://ndcminnesota.com/agenda/getting-started-with-machine-learning-using-mlnet-0r7l/0jy71lj4nx6",
+  "thumbnail": {
+    "description": "NDC Minnesota",
+    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/NDC-Conferences.png"
+  },
+  "presenter": "Jernej \"JK\" Kavka",
+  "presenterProfileUrl": "https://ssw.com.au/people/jk",
+  "startDateTime": "2020-09-10T19:30:00Z",
+  "endDateTime": "2020-09-10T23:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Online",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass41284DE38CC44E36992BD3C13991C121\"><div>Want to get started with machine learning but don't know where to start? Have you got an Excel spreadsheet, SQL Database or CSV lying around and wondering if you can use it to experiment with Machine Learning? In this workshop, we'll start from a CSV exported by a service, and go all the way to an application that uses Machine Learning to make clever decisions.&#160;<br></div><div><br></div><div>We will cover&#58;</div><div> 1. What does a developer need to know about Machine Learning?</div><div>2. How does ML.NET help getting started with ML?</div><div>3. Quickly prototype a solution with ML.NET Model Builder</div><div>4. Improve solution with simple data science rules&#160;</div><div>5. Integrate a machine learning solution into your application&#160;</div><div>6. Continuously improving machine learning model and updating applications<br></div></div>",
+  "eventDescription": "<div class=\"ExternalClass5821673913654C15857FFFD6A71F8A45\"><div>\u200bWant to get started with machine learning but don't know where to start? Have you got an Excel spreadsheet, SQL Database or CSV lying around and wondering if you can use it to experiment with Machine Learning? In this workshop, we'll start from a CSV exported by a service, and go all the way to an application that uses Machine Learning to make clever decisions.&#160;<br></div><div><br></div><div>We will cover&#58;</div><div>1. What does a developer need to know about Machine Learning?</div><div>2. How does ML.NET help getting started with ML?</div><div>3. Quickly prototype a solution with ML.NET Model Builder</div><div>4. Improve solution with simple data science rules&#160;</div><div>5. Integrate a machine learning solution into your application&#160;</div><div>6. Continuously improving machine learning model and updating applications<br></div></div>",
+  "description": "Want to get started with machine learning but don't know where to start? Have you got an Excel spreadsheet, SQL Database or CSV lying around and wondering if you can use it to experiment with Machine Learning? In this workshop, we'll start from a CSV exported by a service, and go all the way to an application that uses Machine Learning to make clever decisions.\u00a0\n\nWe will cover:\n\n 1. What does a developer need to know about Machine Learning?\n\n2. How does ML.NET help getting started with ML?\n\n3. Quickly prototype a solution with ML.NET Model Builder\n\n4. Improve solution with simple data science rules\u00a0\n\n5. Integrate a machine learning solution into your application\u00a0\n\n6. Continuously improving machine learning model and updating applications",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

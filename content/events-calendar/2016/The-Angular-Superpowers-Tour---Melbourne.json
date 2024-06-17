@@ -1,0 +1,22 @@
+{
+  "title": "The Angular Superpowers Tour - Melbourne",
+  "url": "https://www.ssw.com.au/ssw/Events/Training/Angular-Superpowers-Tour-Angular-ASP-MVC-in-VS2015.aspx",
+  "thumbnail": {
+    "description": "The Angular Superpowers Tour - Melbourne",
+    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png"
+  },
+  "presenter": "Adam Stephensen",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/AdamS.aspx",
+  "startDateTime": "2016-03-15T22:00:00Z",
+  "endDateTime": "2016-03-17T06:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "Angular",
+  "eventShortDescription": "<div class=\"ExternalClass0808A4939F104A7DB37F291CEF0FA593\"><p>\u200bThis two-day workshop brings developers up-to-speed on the new features and benefits of using ASP.NET 5 and Angular 2 in Visual Studio 2015 to build awesome web applications.</p></div>",
+  "eventDescription": "<div class=\"ExternalClass17C3AB54DD98476CA2D5050FF4CF18A7\"><p>\u200bThis two-day workshop brings developers up-to-speed on the new features and benefits of using ASP.NET 5 and Angular 2 in Visual Studio 2015 to build awesome web applications.\u200b</p></div>",
+  "description": "\u200bThis two-day workshop brings developers up-to-speed on the new features and benefits of using ASP.NET 5 and Angular 2 in Visual Studio 2015 to build awesome web applications.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

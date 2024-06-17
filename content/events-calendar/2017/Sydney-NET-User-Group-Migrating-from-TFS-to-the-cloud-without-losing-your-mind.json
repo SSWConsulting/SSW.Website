@@ -1,0 +1,28 @@
+{
+  "title": "Sydney .NET User Group: Migrating from TFS to the cloud... without losing your mind",
+  "url": "https://www.ssw.com.au/ssw/netug/sydney.aspx",
+  "thumbnail": {
+    "description": "Sydney .NET User Group: Migrating from TFS to the cloud... without losing your mind ",
+    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
+  },
+  "presenter": "Danijel Malik",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Danijel-Malik.aspx",
+  "startDateTime": "2017-01-18T07:30:00Z",
+  "endDateTime": "2017-01-18T09:30:00Z",
+  "startShowBannerDateTime": "2017-01-17T15:00:00Z",
+  "endShowBannerDateTime": "2017-01-18T12:00:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET User Group: Migrating from TFS to the cloud... without losing your mind ",
+    "url": "https://www.ssw.com.au/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "eventShortDescription": "<div class=\"ExternalClass8CFB81C5A3554BD5B78C10992127B012\"><ul><li>\u200bAre you tired of upgrading and maintaining your on-premise TFS and just want to use the VSTS portal instead?&#160;<br></li><li>Is your New Years Resolution to move to VSTS ... but you don't how do you do it ?<br></li><li>Is your TFS server the only server in the office that you haven't move the cloud?<br></li><li>Are you worried about losing your TFS history when you moved to VSTS?<br></li></ul>If your answer is &quot;Yes&quot; to any of these questions, then this is the sessions for you. Danijel will save you days of headaches and research by explaining what options you have at your disposal and the issu es you will have to deal with before you can put this to bed.<p><br></p><strong>About the presenter&#58;</strong><br>Danijel is a DevOps mastermind with a broad range of technical skills and a deep desire to understand the client's business first. In his career, which includes more than 10 years of professional experience, he has built Desktop, Mobile &amp; Web projects, many of them at the Enterprise level. With an eye on the bleeding edge technologies, he is always one step ahead and loves sharing his experience at user groups and conferences. In 2013, Danijel was awarded Microsoft MVP status for Visual Studio ALM (now Visual Studio and Development Technologies) for his contributions to the community, which he has maintained every year since.<br><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassE78F2CD339854E0DB8C614D9918DFD7D\"><ul><li>\u200bAre you tired of upgrading and maintaining your on-premise TFS and just want to use the VSTS portal instead?&#160;<br></li><li>Is your New Years Resolution to move to VSTS ... but you don't how do you do it ?<br></li><li>Is your TFS server the only server in the office that you haven't move the cloud?<br></li><li>Are you worried about losing your TFS history when you moved to VSTS?<br></li></ul>If your answer is &quot;Yes&quot; to any of these questions, then this is the sessions for you. Danijel will save you days of headaches and research by explaining what options you have at your disposal and the issu es you will have to deal with before you can put this to bed.<p><br></p><strong>About the presenter&#58;</strong><br>Danijel is a DevOps mastermind with a broad range of technical skills and a deep desire to understand the client's business first. In his career, which includes more than 10 years of professional experience, he has built Desktop, Mobile &amp; Web projects, many of them at the Enterprise level. With an eye on the bleeding edge technologies, he is always one step ahead and loves sharing his experience at user groups and conferences. In 2013, Danijel was awarded Microsoft MVP status for Visual Studio ALM (now Visual Studio and Development Technologies) for his contributions to the community, which he has maintained every year since.<br><p><br></p></div>",
+  "description": "\u200bAre you tired of upgrading and maintaining your on-premise TFS and just want to use the VSTS portal instead?\u00a0\n\nIs your New Years Resolution to move to VSTS ... but you don't how do you do it ?\n\nIs your TFS server the only server in the office that you haven't move the cloud?\n\nAre you worried about losing your TFS history when you moved to VSTS?\n\nIf your answer is \"Yes\" to any of these questions, then this is the sessions for you. Danijel will save you days of headaches and research by explaining what options you have at your disposal and the issu es you will have to deal with before you can put this to bed.\n\nAbout the presenter:\n\nDanijel is a DevOps mastermind with a broad range of technical skills and a deep desire to understand the client's business first. In his career, which includes more than 10 years of professional experience, he has built Desktop, Mobile & Web projects, many of them at the Enterprise level. With an eye on the bleeding edge technologies, he is always one step ahead and loves sharing his experience at user groups and conferences. In 2013, Danijel was awarded Microsoft MVP status for Visual Studio ALM (now Visual Studio and Development Technologies) for his contributions to the community, which he has maintained every year since.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Deploying ASP.NET Core Applications including Octopus, Docker & RM",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2016-07-12T14:00:00Z",
+  "endDateTime": "2016-07-12T15:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": ".NET Core",
+  "categoryAnchor": "OverviewOther",
+  "sessionTitle": "Deploying ASP.NET Core Applications including Octopus, Docker & RM",
+  "sessionTitleAnchor": "DeployingdotNETCoreApps",
+  "eventShortDescription": "<div class=\"ExternalClass247A98A9BF4A4DE49363C02419C947FC\">\u200b\u200bASP.NET Core is a whole new world for ASP.NET developers because it opens the door to cross-platform development. However, it comes with a hefty price. Not only does it take some time before you get your head around, even deployment is now quite different.&#160;<div>So how can you bring ASP.NET Core application and DevOps under the same roof? In this session you will learn how to deploy ASP.NET Core applications to on-premises IIS, Azure and Docker without compromising the DevOps experience when using tools like Octopus Deploy and Release Management.</div><div>What to expect from the session&#58;<div><ul><li>Get an understanding of the ASP.NET Core fundamentals<br></li><li>Learn how to deploy ASP.NET Core application using Octopus Deploy<br></li><li>Learn how to deploy ASP.NET Core application using Release Management<br></li><li>Learn how to deploy to a Linux Docker Container\u200b<br></li></ul></div></div></div>",
+  "eventDescription": "<div class=\"ExternalClassF6C2E7C2D2744428B2B2BA6BF9E0A14E\">\u200b\u200bASP.NET Core is a whole new world for ASP.NET developers because it opens the door to cross-platform development. However, it comes with a hefty price. Not only does it take some time before you get your head around, even deployment is now quite different.&#160;<div>So how can you bring ASP.NET Core application and DevOps under the same roof? In this session you will learn how to deploy ASP.NET Core applications to on-premises IIS, Azure and Docker without compromising the DevOps experience when using tools like Octopus Deploy and Release Management.</div><div>What to expect from the session&#58;<div><ul><li>Get an understanding of the ASP.NET Core fundamentals<br></li><li>Learn how to deploy ASP.NET Core application using Octopus Deploy<br></li><li>Learn how to deploy ASP.NET Core application using Release Management<br></li><li>Learn how to deploy to a Linux Docker Container\u200b<br><br></li></ul></div></div></div>",
+  "description": "\u200b\u200bASP.NET Core is a whole new world for ASP.NET developers because it opens the door to cross-platform development. However, it comes with a hefty price. Not only does it take some time before you get your head around, even deployment is now quite different.\u00a0\n\nSo how can you bring ASP.NET Core application and DevOps under the same roof? In this session you will learn how to deploy ASP.NET Core applications to on-premises IIS, Azure and Docker without compromising the DevOps experience when using tools like Octopus Deploy and Release Management.\n\nWhat to expect from the session:\n\nGet an understanding of the ASP.NET Core fundamentals\n\nLearn how to deploy ASP.NET Core application using Octopus Deploy\n\nLearn how to deploy ASP.NET Core application using Release Management\n\nLearn how to deploy to a Linux Docker Container\u200b",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

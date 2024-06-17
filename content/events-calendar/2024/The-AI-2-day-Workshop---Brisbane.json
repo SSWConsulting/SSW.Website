@@ -1,0 +1,41 @@
+{
+  "title": "The AI 2-day Workshop - Brisbane",
+  "url": "https://www.ssw.com.au/events/ai-workshop",
+  "thumbnail": {
+    "description": "The AI 2-day Workshop",
+    "url": "http://ssw.com.au/images/thumbs/ai-workshop-logo.png"
+  },
+  "presenter": "Calum Simpson & Jernej Kavka",
+  "presenterProfileUrl": "http://www.ssw.com.au/people",
+  "startDateTime": "2024-05-29T23:00:00Z",
+  "endDateTime": "2024-05-31T07:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass59C9973DA8AD4399AE28291907AF7880\"><p></p></div>SSW is thoroughly exploring the evolving field of AI for software development and everyone at SSW is encouraged to use AI in their work. Since Generative AI has become widespread, developers taking advantage of it are building better software faster and SSW\u2019s&#160;productivity has risen. This 2-day&#160;workshop aims to share the knowledge of these great modern tools to help others.&#160;Developers of all skill levels with any level of AI experience.",
+  "eventDescription": "<div class=\"ExternalClass5864272A3257427BB076F66B1621F293\"><p></p></div>SSW is thoroughly exploring the evolving field of AI for software development and everyone at SSW is encouraged to use AI in their work. Since Generative AI has become widespread, developers taking advantage of it are building better software faster and SSW\u2019s&#160;productivity has risen. This 2-day&#160;workshop aims to share the knowledge of these great modern tools to help others.&#160;Developers of all skill levels with any level of AI experience.<br>",
+  "description": "SSW is thoroughly exploring the evolving field of AI for software development and everyone at SSW is encouraged to use AI in their work. Since Generative AI has become widespread, developers taking advantage of it are building better software faster and SSW\u2019s\u00a0productivity has risen. This 2-day\u00a0workshop aims to share the knowledge of these great modern tools to help others.\u00a0Developers of all skill levels with any level of AI experience.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [
+    {
+      "LookupId": 27,
+      "LookupValue": "Calum Simpson"
+    },
+    {
+      "LookupId": 13,
+      "LookupValue": "Jernej Kavka"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/calum-simpson.mdx"
+    },
+    {
+      "presenter": "content/presenters/jernej-kavka.mdx"
+    }
+  ],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30
+}

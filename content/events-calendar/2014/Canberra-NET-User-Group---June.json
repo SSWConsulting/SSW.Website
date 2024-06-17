@@ -1,0 +1,22 @@
+{
+  "title": "Canberra .NET User Group - June",
+  "url": "http://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
+  "thumbnail": {
+    "description": "Canberra .NET User Group - June",
+    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg"
+  },
+  "presenter": "Ben Cull ",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Ben.aspx",
+  "startDateTime": "2014-06-16T08:00:00Z",
+  "endDateTime": "2014-06-16T10:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Canberra",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "sessionTitle": "Make your Web Apps Accidentally Excellent using Bootstrap\u200b",
+  "eventDescription": "<div class=\"ExternalClass23D98EC35C224BC7B72FE7EA0F6661B2\"><div><strong>Make your Web Apps Accidentally Excellent using Bootstrap\u200b</strong></div><div>Bootstrap is a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development. Join me as I show you how easy it is to make use of the framework, and step beyond the &quot;just another bootstrap site&quot; look and feel.</div><div><br></div><div>I'll take you through&#58; - The benefits of using Bootstrap - How to get up and running using the latest scaffolding available in Visual Studio 2013 - Implementing some key layout designs - Hooking up icons the font-awesome way - Implementing designer themes from wrapbootstrap.com</div><div><br></div><div><strong>About the presenter</strong>&#58;</div><div>Ben Cull is a Software Architect for http&#58;//ssw.com.au. When he's not coding a million start-up ideas like http&#58;//eventdebit.com, or babbling on his blog over at http&#58;//benjii.me, you can find him brewing more beer than he can drink (come to the pub afterwards and he'll talk your head off about it).</div></div>",
+  "description": "Make your Web Apps Accidentally Excellent using Bootstrap\u200b\n\nBootstrap is a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development. Join me as I show you how easy it is to make use of the framework, and step beyond the \"just another bootstrap site\" look and feel.\n\nI'll take you through: - The benefits of using Bootstrap - How to get up and running using the latest scaffolding available in Visual Studio 2013 - Implementing some key layout designs - Hooking up icons the font-awesome way - Implementing designer themes from wrapbootstrap.com\n\nAbout the presenter\n\n:\n\nBen Cull is a Software Architect for http://ssw.com.au. When he's not coding a million start-up ideas like http://eventdebit.com, or babbling on his blog over at http://benjii.me, you can find him brewing more beer than he can drink (come to the pub afterwards and he'll talk your head off about it).",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

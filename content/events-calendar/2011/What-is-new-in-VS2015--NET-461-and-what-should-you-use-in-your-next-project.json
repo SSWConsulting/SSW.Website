@@ -1,0 +1,21 @@
+{
+  "title": "What is new in VS2015 & .NET 4.6.1... and what should you use in your next project?",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power Sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewTFS",
+  "sessionTitle": "What is new in VS2015 & .NET 4.6... and what should you use in your next project?",
+  "sessionTitleAnchor": "TFS2015DotNet46",
+  "eventShortDescription": "<div class=\"ExternalClass008F3B3ABCCD4798BF098DEB27CD71EB\">\u200bA couple of years ago Visual Studio 2012 + .NET 4 brought us exciting new features like LINQ-to-SQL, lambda expressions, auto implemented properties and anonymous types... Could things have got better?<br><br>\u200b</div>",
+  "eventDescription": "<div class=\"ExternalClass008F3B3ABCCD4798BF098DEB27CD71EB\"><div>\u200bA couple of years ago Visual Studio 2012 + .NET 4 brought us exciting new features like LINQ-to-SQL, lambda expressions, auto implemented properties and anonymous types... Could things have got better?<br><br>Yes, and in this session Adam Cogan will show you how to Boost Your Productivity with&#58;<br><br><ul><li>The important enhancements to the IDE in VS2015</li><li>The new tricks and language features in .NET 4.6.1 to keep developers coding effectively and productively</li><li>Plus a couple of things that will make your teams work better together\u200b</li></ul></div></div>",
+  "description": "\u200bA couple of years ago Visual Studio 2012 + .NET 4 brought us exciting new features like LINQ-to-SQL, lambda expressions, auto implemented properties and anonymous types... Could things have got better?\n\n\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

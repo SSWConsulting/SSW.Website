@@ -1,0 +1,21 @@
+{
+  "title": "Developing for Microsoft SharePoint 2016",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power Sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "SharePoint",
+  "categoryAnchor": "OverviewSharePoint",
+  "sessionTitle": "Developing for Microsoft SharePoint 2016",
+  "sessionTitleAnchor": "SharePoint",
+  "eventShortDescription": "<div class=\"ExternalClass6950A89767F14298B91FC0C975B97078\"><div>\u200bAdam Cogan will introduce you to the ins and outs of SharePoint 2016, including how it can help with both enterprise portal/search as well as document management solutions. You'll learn how SharePoint can provide for relatively simple development of departmental solutions. All the while, he'll illustrate these key features with lively demonstrations, examples and code!</div></div>",
+  "eventDescription": "<div class=\"ExternalClass6950A89767F14298B91FC0C975B97078\"><div>\u200bAdam Cogan will introduce you to the ins and outs of SharePoint 2016, including how it can help with both enterprise portal/search as well as document management solutions. You'll learn how SharePoint can provide for relatively simple development of departmental solutions. All the while, he'll illustrate these key features with lively demonstrations, examples and code!</div></div>",
+  "description": "\u200bAdam Cogan will introduce you to the ins and outs of SharePoint 2016, including how it can help with both enterprise portal/search as well as document management solutions. You'll learn how SharePoint can provide for relatively simple development of departmental solutions. All the while, he'll illustrate these key features with lively demonstrations, examples and code!",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

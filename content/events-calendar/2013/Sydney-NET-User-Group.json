@@ -1,0 +1,19 @@
+{
+  "title": "Sydney .NET User Group",
+  "url": "http://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
+  "thumbnail": {
+    "description": "Sydney .NET User Group ",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb_sydneyUG.jpg"
+  },
+  "presenter": "Adam Cogan ",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
+  "startDateTime": "2013-09-18T08:00:00Z",
+  "endDateTime": "2013-09-18T10:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "sessionTitle": "What's new in Visual Studio 2013 and the ALM + Team Foundation Server (TFS) 2013 story",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

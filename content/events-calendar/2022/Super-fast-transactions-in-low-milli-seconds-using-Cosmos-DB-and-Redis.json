@@ -1,0 +1,35 @@
+{
+  "title": "Super fast transactions in low milli-seconds using Cosmos DB and Redis",
+  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
+  "thumbnail": {
+    "description": ".NET User Group",
+    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
+  },
+  "presenter": "Bryden Oliver",
+  "presenterProfileUrl": "https://www.ssw.com.au/people/bryden-oliver",
+  "startDateTime": "2022-02-16T07:00:00Z",
+  "endDateTime": "2022-02-16T11:00:00Z",
+  "startShowBannerDateTime": "2022-02-15T13:00:00Z",
+  "endShowBannerDateTime": "2022-02-16T11:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Azure",
+  "eventShortDescription": "<div class=\"ExternalClass67AB574C50D540C490651DBBFDBB5AA1\"><p>\u200b<strong>February .NET User Group&#58; Super fast transactions in low milli-seconds using Cosmos DB and Redis</strong> with Bryden Oliver<br></p><p>Need a way to make your code behave like Cosmos has transactions. Let Bryden Oliver show you how he solved this problem on a large high throughput system. The end result is a cost effective, scalable and extremely performant solution.<br></p><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass22DD3B7764114B97A0DFEE84999093BE\"><p><strong></strong></p><p><strong>February .NET User Group&#58; Super fast transactions in low milli-seconds using Cosmos DB and Redis</strong>&#160;with Bryden Oliver<br></p><p>Need a way to make your code behave like&#160;Cosmos has transactions. Let Bryden Oliver show you how he solved this problem on a large high throughput system. The end result is a cost effective, scalable and extremely performant solution.<br></p><div><br><br></div><p><br></p></div>",
+  "description": "\u200b\n\nFebruary .NET User Group: Super fast transactions in low milli-seconds using Cosmos DB and Redis\n\n with Bryden Oliver\n\nNeed a way to make your code behave like Cosmos has transactions. Let Bryden Oliver show you how he solved this problem on a large high throughput system. The end result is a cost effective, scalable and extremely performant solution.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "KHkh-eqcw-4",
+  "externalPresenters": [
+    {
+      "LookupId": 14,
+      "LookupValue": "Bryden Oliver"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/bryden-oliver.mdx"
+    }
+  ]
+}

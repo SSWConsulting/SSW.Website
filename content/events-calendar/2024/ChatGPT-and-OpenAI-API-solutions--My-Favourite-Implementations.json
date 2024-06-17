@@ -1,0 +1,41 @@
+{
+  "title": "ChatGPT and OpenAI API solutions: \ud83d\udc51 My Favourite Implementations",
+  "url": "https://www.ssw.com.au/netug/melbourne",
+  "thumbnail": {
+    "description": "Melbourne .NET User Group",
+    "url": "/images/events/melbourne-ug-thumb.jpg"
+  },
+  "presenter": "Adam Cogan",
+  "presenterProfileUrl": "http://ssw.com.au/people/adam-cogan",
+  "startDateTime": "2024-03-20T07:00:00Z",
+  "endDateTime": "2024-03-20T10:00:00Z",
+  "startShowBannerDateTime": "2024-03-19T13:00:00Z",
+  "endShowBannerDateTime": "2024-03-20T11:00:00Z",
+  "liveStreamUrl": {
+    "description": "Livestream",
+    "url": "http://www.ssw.com.au/live"
+  },
+  "calendarType": "User Groups",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "Other",
+  "abstract": "In the past year, ChatGPT and the OpenAI API have gone from 0 to 100 faster than a Tesla. No one wants to be left behind. Businesses are automating tasks and having content written instantly.\r\n\r\nSome companies are suddenly \u2705 10x more productive, and some companies \u274c struggle.\r\n\r\nSSW consultants have been leveraging AI to improve client\u2019s products\u2026. And solving problems inside SSW too. Let\u2019s take a look at the best ones!\r\n\r\nThe advent of Custom GPTs has meant problems that would have taken weeks to solve before, can have production ready solutions in hours.\r\n\r\nSemantic Kernel then allows you to build enterprise solutions that take advantage of LLMs in a structured and scalable way, enabling the integration of AI into various business processes and systems.\r\n\r\nCome see SSW Chief Architect Adam Cogan show the important tips to implement AI in practical scenarios. Walk away with the answers to 2 big questions:\r\n\u25fe How to use AI to build superior software?\r\n\u25fe How to use AI to improve internal processes in your company?\r\n\r\nYou cannot afford to miss this one! This is a watershed moment for tech and has the potential to be as big an impact as the introduction of computers \u2b50",
+  "eventShortDescription": "<div class=\"ExternalClass87A4D093A06946DBB0651C0B6AF3109B\">\u200bIn the past year, ChatGPT and the OpenAI API have gone from 0 to 100 faster than a Tesla. No one wants to be left behind. Businesses are automating tasks and having content written instantly.<br><br><div>Some companies are suddenly \u2705 10x more productive, and some companies \u274c struggle.</div><div><br></div><div>SSW consultants have been leveraging AI to improve clients\u2019&#160;products\u2026. And solving problems inside SSW too. Let\u2019s take a look at the best ones!</div><div><br></div><div>The advent of Custom GPTs has meant problems that would have taken weeks to solve before, can have production-ready&#160;solutions in hours.<br></div><div><br></div><div>Semantic Kernel then allows you to build enterprise solutions that take advantage of LLMs in a structured and scalable way, enabling the integration of AI into various business processes and systems.</div><div><br></div><div>Come see SSW Chief Architect Adam Cogan show the important tips to implement AI in practical scenarios. Walk away with the answers to 2 big questions&#58;</div><div>\u25fe How to use AI to build superior software?</div><div>\u25fe How to use AI to improve internal processes in your company?</div><div><br></div><div>You cannot afford to miss this one! This is a watershed moment for tech and has the potential to be as big an impact as the introduction of computers \u2b50<br><br></div><p>--<br style=\"box-sizing&#58;border-box;border&#58;0px solid #dfdfdf;\"><br style=\"box-sizing&#58;border-box;border&#58;0px solid #dfdfdf;\">Join us in person&#160;from&#160;5pm AEST&#160;in Brisbane, or 6pm AEDT in&#160;Sydney and&#160;Melbourne&#58;<br style=\"box-sizing&#58;border-box;border&#58;0px solid #dfdfdf;\"><br style=\"box-sizing&#58;border-box;border&#58;0px solid #dfdfdf;\">SSW Sydney \u2013&#160;Watch party&#160;&#127910;<br style=\"box-sizing&#58;border-box;border&#58;0px solid #dfdfdf;\">SSW Melbourne \u2013&#160;Live &#128308;<br style=\"box-sizing&#58;border-box;border&#58;0px solid #dfdfdf;\">SSW Brisbane \u2013&#160;Watch party &#127910;<br></p></div>",
+  "description": "\u200bIn the past year, ChatGPT and the OpenAI API have gone from 0 to 100 faster than a Tesla. No one wants to be left behind. Businesses are automating tasks and having content written instantly.\n\nSome companies are suddenly \u2705 10x more productive, and some companies \u274c struggle.\n\nSSW consultants have been leveraging AI to improve clients\u2019\u00a0products\u2026. And solving problems inside SSW too. Let\u2019s take a look at the best ones!\n\nThe advent of Custom GPTs has meant problems that would have taken weeks to solve before, can have production-ready\u00a0solutions in hours.\n\nSemantic Kernel then allows you to build enterprise solutions that take advantage of LLMs in a structured and scalable way, enabling the integration of AI into various business processes and systems.\n\nCome see SSW Chief Architect Adam Cogan show the important tips to implement AI in practical scenarios. Walk away with the answers to 2 big questions:\n\n\u25fe How to use AI to build superior software?\n\n\u25fe How to use AI to improve internal processes in your company?\n\nYou cannot afford to miss this one! This is a watershed moment for tech and has the potential to be as big an impact as the introduction of computers \u2b50\n\n--\n\nJoin us in person\u00a0from\u00a05pm AEST\u00a0in Brisbane, or 6pm AEDT in\u00a0Sydney and\u00a0Melbourne:\n\nSSW Sydney \u2013\u00a0Watch party\u00a0\ud83c\udfa6\n\nSSW Melbourne \u2013\u00a0Live \ud83d\udd34\n\nSSW Brisbane \u2013\u00a0Watch party \ud83c\udfa6",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "oO_JHE3WQQo",
+  "externalPresenters": [
+    {
+      "LookupId": 32,
+      "LookupValue": "Adam Cogan"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
+    }
+  ],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30
+}

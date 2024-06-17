@@ -1,0 +1,24 @@
+{
+  "title": "The Angular 2-day Workshop - Melbourne",
+  "url": "https://www.ssw.com.au/events/angular-workshop",
+  "thumbnail": {
+    "description": "The Angular 2-day Workshop",
+    "url": "/images/Newsletters/Angular-2-0-logo.png"
+  },
+  "presenter": "Matt Wicks & Luke Cook",
+  "presenterProfileUrl": "https://ssw.com.au/people/",
+  "startDateTime": "2024-10-13T22:00:00Z",
+  "endDateTime": "2024-10-15T06:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "Angular and React",
+  "eventShortDescription": "<div class=\"ExternalClass876748F7671F4FEB84E9D67E7185B72E\"><p>\u200bIn this workshop, we will build a CRM application with Angular using components, services, dependency injection, forms, Angular modules and lazy-loaded routes. We will then cover unit tests and using the redux pattern with the NgRx library.&#160;&#160;</p><p>By the end of this workshop, you will have built a working Angular&#160;application&#160;you can extend into an enterprise application. You will also walk away with the source code and the course material. So join us to learn to build great enterprise applications with Angular.<br></p>What\u2019s included in this workshop?<br><div><ul style=\"box-sizing&#58;border-box;border&#58;0px solid #dfdfdf;list-style-position&#58;initial;list-style-image&#58;initial;margin&#58;1.25em 0px;padding&#58;0px 0px 0px 1.625em;\"><li>Two days of&#160;tuition&#160;with awesome experienced Angular developers</li><li>Full course material which will be updated as Angular is updated</li><li><p>Full source code for the apps you will build for later reference and to be used as best practice<br></p></li></ul></div><p><br></p></div>",
+  "description": "\u200bIn this workshop, we will build a CRM application with Angular using components, services, dependency injection, forms, Angular modules and lazy-loaded routes. We will then cover unit tests and using the redux pattern with the NgRx library.\u00a0\u00a0\n\nBy the end of this workshop, you will have built a working Angular\u00a0application\u00a0you can extend into an enterprise application. You will also walk away with the source code and the course material. So join us to learn to build great enterprise applications with Angular.\n\nWhat\u2019s included in this workshop?\n\nTwo days of\u00a0tuition\u00a0with awesome experienced Angular developers\n\nFull course material which will be updated as Angular is updated\n\nFull source code for the apps you will build for later reference and to be used as best practice",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true
+}

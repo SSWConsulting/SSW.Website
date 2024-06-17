@@ -1,0 +1,19 @@
+{
+  "title": "Xamarin HackDay: Sweden",
+  "url": "http://xamarinhackday.com/sweden/",
+  "thumbnail": {
+    "description": "Xamarin HackDay: Sweden",
+    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png"
+  },
+  "startDateTime": "2016-06-17T22:00:00Z",
+  "endDateTime": "2016-06-18T13:00:00Z",
+  "calendarType": "Hack Days",
+  "city": "Sweden",
+  "enabled": true,
+  "category": "Mobile",
+  "eventShortDescription": "<div class=\"ExternalClass7FB04FDEEC3F4C48AEFDA45E405012ED\"><div>\u200bXamarin HackDays are for Xamarin Developers or people who want to learn Xamarin.\u200b</div><div><br></div><div>\u200bThere will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.\u200b</div></div>",
+  "description": "\u200bXamarin HackDays are for Xamarin Developers or people who want to learn Xamarin.\u200b\n\n\u200bThere will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

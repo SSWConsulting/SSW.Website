@@ -1,0 +1,17 @@
+{
+  "title": "Xamarin HackDay - Belgium",
+  "url": "http://xamarinhackday.com/belgium/",
+  "thumbnail": {
+    "description": "Xamarin HackDay - Belgium",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png"
+  },
+  "startDateTime": "2015-02-27T21:30:00Z",
+  "endDateTime": "2015-02-28T06:30:00Z",
+  "calendarType": "Hack Days",
+  "city": "Belgium",
+  "enabled": true,
+  "category": "Mobile",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

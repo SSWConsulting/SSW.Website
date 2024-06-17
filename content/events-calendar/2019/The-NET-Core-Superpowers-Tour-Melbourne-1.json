@@ -1,0 +1,21 @@
+{
+  "title": "The .NET Core Superpowers Tour: Melbourne",
+  "url": "https://firebootcamp.com/netcore-superpower-tour/",
+  "thumbnail": {
+    "description": "The .NET Core Superpowers Tour: Melbourne",
+    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-NetCore.jpg"
+  },
+  "presenter": "Jason Taylor and Brendan Richards",
+  "startDateTime": "2019-10-30T22:00:00Z",
+  "endDateTime": "2019-10-31T07:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": ".NET Core",
+  "eventShortDescription": "<div class=\"ExternalClass4B43420C2A9E4ED68839A8F2C13B108E\"><p><span style=\"color&#58;#333333;font-family&#58;arial,sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">.</span><span style=\"color&#58;#333333;font-family&#58;arial,sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">NET Core is out and it's the most powerful and flexible version ever!</span></p><p style=\"color&#58;#333333;font-family&#58;arial,sans-serif;font-size&#58;14px;box-sizing&#58;border-box;background-color&#58;#ffffff;\">Much of the day-to-day code you write will be the same - but much of the architecture and how your project fits together has changed.</p><p style=\"color&#58;#333333;font-family&#58;arial,sans-serif;font-size&#58;14px;box-sizing&#58;border-box;background-color&#58;#ffffff;\">We will provide you with&#58;</p><ul style=\"color&#58;#333333;padding-left&#58;25px;font-family&#58;arial,sans-serif;font-size&#58;14px;margin-top&#58;0px;margin-bottom&#58;10px;margin-left&#58;0px;list-style-type&#58;square;box-sizing&#58;border-box;background-color&#58;#ffffff;\"><li style=\"padding&#58;5px 0px;box-sizing&#58;border-box;\">A solid foundation&#160;in .NET Core</li><li style=\"padding&#58;5px 0px;box-sizing&#58;border-box;\">An understanding of why you should be&#160;using .NET Core</li><li style=\"padding&#58;5px 0px;box-sizing&#58;border-box;\">The capability to build an enterprise application using the new stack&#160;&#160;\u200b\u200b</li></ul></div>",
+  "eventDescription": "<div class=\"ExternalClass4B43420C2A9E4ED68839A8F2C13B108E\"><p><span style=\"color&#58;#333333;font-family&#58;arial,sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">.</span><span style=\"color&#58;#333333;font-family&#58;arial,sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">NET Core is out and it's the most powerful and flexible version ever!</span></p><p style=\"color&#58;#333333;font-family&#58;arial,sans-serif;font-size&#58;14px;box-sizing&#58;border-box;background-color&#58;#ffffff;\">Much of the day-to-day code you write will be the same - but much of the architecture and how your project fits together has changed.</p><p style=\"color&#58;#333333;font-family&#58;arial,sans-serif;font-size&#58;14px;box-sizing&#58;border-box;background-color&#58;#ffffff;\">We will provide you with&#58;</p><ul style=\"color&#58;#333333;padding-left&#58;25px;font-family&#58;arial,sans-serif;font-size&#58;14px;margin-top&#58;0px;margin-bottom&#58;10px;margin-left&#58;0px;list-style-type&#58;square;box-sizing&#58;border-box;background-color&#58;#ffffff;\"><li style=\"padding&#58;5px 0px;box-sizing&#58;border-box;\">A solid foundation&#160;in .NET Core</li><li style=\"padding&#58;5px 0px;box-sizing&#58;border-box;\">An understanding of why you should be&#160;using .NET Core</li><li style=\"padding&#58;5px 0px;box-sizing&#58;border-box;\">The capability to build an enterprise application using the new stack&#160;&#160;\u200b<br></li></ul></div>",
+  "description": ".\n\nNET Core is out and it's the most powerful and flexible version ever!\n\nMuch of the day-to-day code you write will be the same - but much of the architecture and how your project fits together has changed.\n\nWe will provide you with:\n\nA solid foundation\u00a0in .NET Core\n\nAn understanding of why you should be\u00a0using .NET Core\n\nThe capability to build an enterprise application using the new stack\u00a0\u00a0\u200b\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

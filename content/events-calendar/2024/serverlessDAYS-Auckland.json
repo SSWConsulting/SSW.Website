@@ -1,0 +1,22 @@
+{
+  "title": "/serverless/DAYS Auckland",
+  "url": "https://anz.serverlessdays.io/",
+  "thumbnail": {
+    "description": "/serverless/DAYS Auckland",
+    "url": "https://ssw.com.au/images/thumbs/serverless-days.png"
+  },
+  "startDateTime": "2024-05-23T23:00:00Z",
+  "endDateTime": "2024-05-24T07:30:00Z",
+  "calendarType": "Conferences",
+  "city": "Auckland",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassE515B986843D4D21AC919D70C56376F1\"><div><div><a href=\"https&#58;//anz.serverlessdays.io/auckland/\">/serverless/DAYS</a>&#160;will be an in-person event, held on 24th May at the Pullman Hotel in Auckland. It's a 1-day community-run event comprised of talks and networking among active developers and technical leaders across Australia &amp; New Zealand.<br></div><div><br>SSW &amp; Tina are proud sponsors. We are hosting the after party, <a href=\"https&#58;//www.eventbrite.com.au/e/911855904557/?aff=oddtdtcreator\">RSVP here</a>.<br></div>Meet us there! &#128578;<br></div><div><br>Note&#58; SSW does not host this conference.<br><br></div><p><br><br></p></div>",
+  "description": "/serverless/DAYS\n\n\u00a0will be an in-person event, held on 24th May at the Pullman Hotel in Auckland. It's a 1-day community-run event comprised of talks and networking among active developers and technical leaders across Australia & New Zealand.\n\nSSW & Tina are proud sponsors. We are hosting the after party, \n\nRSVP here\n\n.\n\nMeet us there! \ud83d\ude42\n\nNote: SSW does not host this conference.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true
+}

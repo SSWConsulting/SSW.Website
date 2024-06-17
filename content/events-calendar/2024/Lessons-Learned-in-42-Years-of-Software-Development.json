@@ -1,0 +1,47 @@
+{
+  "title": "Lessons Learned in 42 Years of Software Development",
+  "url": "https://www.ssw.com.au/netug/brisbane",
+  "thumbnail": {
+    "description": "Brisbane Full Stack User Group",
+    "url": "/images/thumbs/thumb-brisbaneUG.jpg"
+  },
+  "presenter": "Bryden Oliver",
+  "presenterProfileUrl": "https://www.ssw.com.au/people/bryden-oliver/",
+  "startDateTime": "2024-02-21T07:00:00Z",
+  "endDateTime": "2024-02-21T09:00:00Z",
+  "startShowBannerDateTime": "2024-02-20T13:00:00Z",
+  "endShowBannerDateTime": "2024-02-21T12:00:00Z",
+  "liveStreamUrl": {
+    "description": "Live Stream",
+    "url": "http://www.ssw.com.au/live"
+  },
+  "calendarType": "User Groups",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": "DevOps",
+  "abstract": "Some people know the Microsoft technology stack really deeply and are good sniffing what will work and what won\u2019t work. Bryden Oliver has been around since the dinosaurs (in technology terms). \ud83e\udd96 Bryden has worked with punch cards all the way through to modern cloud computing. \ud83e\udd2f\r\n\r\nJoin SSW Solution Architect Bryden as he take us on a light hearted romp through all the technology trends, fashion disasters and management techniques that have come and gone over his career. Gasp, as he reminds you that you can write code in 1 kilobyte. \ud83d\ude32\r\n\r\nYou'll learn why some things work the way they do. And most importantly, Bryden will show what's new and amazing and how it builds on what has come before. He will also convince you that the key traits required to succeed in the technology field haven't changed either. You'll leave amused and energised for whatever the next decade throws at us. \u26a1\r\n\r\n",
+  "eventShortDescription": "<div class=\"ExternalClass46FFABBC14E44D2EB0B551F260B1502F\"><p>\u200bSome people know the Microsoft technology stack really deeply and are good sniffing what will work and what won't work. Bryden Oliver has been around since the dinosaurs (in technology terms). &#129430; Bryden has worked with punch cards all the way through to modern cloud computing. &#129327;<br></p><p>Join SSW Solution Architect Bryden as he take us on a light hearted romp through all the technology trends, fashion disasters and management techniques that have come and gone over his career. Gasp, as he reminds you that you can write code in 1 kilobyte. &#128562;<br></p><p>You'll learn why some things work the way they do. And most importantly, Bryden will show what's new and amazing and how it builds on what has come before. He will also convince you that the key traits required to succeed in the technology field haven't changed either. You'll leave amused and energised for whatever the next decade throws at us. \u26a1<br></p><p>--<br><br>Join us in person&#160;from&#160;5pm AEST&#160;in Brisbane, or 6pm AEDT in&#160;Sydney and&#160;Melbourne&#58;<br><br>SSW Sydney \u2013&#160;Watch party&#160;&#127910;<br>SSW Melbourne \u2013&#160;Watch party &#127910;<br>SSW Brisbane \u2013&#160;Live &#128308;<br></p><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass2994E0F804FF43F3B1A190A4036369B8\"><p>\u200bSome people know the Microsoft technology stack really deeply and are good sniffing what will work and what won't work. Bryden Oliver has been around since the dinosaurs (in technology terms). &#129430; Bryden has worked with punch cards all the way through to modern cloud computing. &#129327;<br></p><p>Join SSW Solution Architect Bryden as he take us on a light hearted romp through all the technology trends, fashion disasters and management techniques that have come and gone over his career. Gasp, as he reminds you that you can write code in 1 kilobyte. &#128562;<br></p><p>You'll learn why some things work the way they do. And most importantly, Bryden will show what's new and amazing and how it builds on what has come before. He will also convince you that the key traits required to succeed in the technology field haven't changed either. You'll leave amused and energised for whatever the next decade throws at us. \u26a1<br></p><p>--<br><br>Join us in person&#160;from&#160;5pm AEST&#160;in Brisbane, or 6pm AEDT in&#160;Sydney and&#160;Melbourne&#58;<br><br>SSW Sydney \u2013&#160;Watch party&#160;&#127910;<br>SSW Melbourne \u2013&#160;Watch party &#127910;<br>SSW Brisbane \u2013&#160;Live &#128308;<br></p><p><br></p></div>",
+  "description": "\u200bSome people know the Microsoft technology stack really deeply and are good sniffing what will work and what won't work. Bryden Oliver has been around since the dinosaurs (in technology terms). \ud83e\udd96 Bryden has worked with punch cards all the way through to modern cloud computing. \ud83e\udd2f\n\nJoin SSW Solution Architect Bryden as he take us on a light hearted romp through all the technology trends, fashion disasters and management techniques that have come and gone over his career. Gasp, as he reminds you that you can write code in 1 kilobyte. \ud83d\ude32\n\nYou'll learn why some things work the way they do. And most importantly, Bryden will show what's new and amazing and how it builds on what has come before. He will also convince you that the key traits required to succeed in the technology field haven't changed either. You'll leave amused and energised for whatever the next decade throws at us. \u26a1\n\n--\n\nJoin us in person\u00a0from\u00a05pm AEST\u00a0in Brisbane, or 6pm AEDT in\u00a0Sydney and\u00a0Melbourne:\n\nSSW Sydney \u2013\u00a0Watch party\u00a0\ud83c\udfa6\n\nSSW Melbourne \u2013\u00a0Watch party \ud83c\udfa6\n\nSSW Brisbane \u2013\u00a0Live \ud83d\udd34",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "8R9amzwvPfQ",
+  "evalFormURL": {
+    "description": "Feedback form",
+    "url": "https://forms.microsoft.com/r/xbzHKVn0En"
+  },
+  "externalPresenters": [
+    {
+      "LookupId": 14,
+      "LookupValue": "Bryden Oliver"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/bryden-oliver.mdx"
+    }
+  ],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": false
+}

@@ -1,0 +1,47 @@
+{
+  "title": "Unlocking the Full Potential: The Harmonious Dance of EF Core and SQL Server",
+  "url": "https://www.ssw.com.au/netug/brisbane",
+  "thumbnail": {
+    "description": "Brisbane Full Stack User Group",
+    "url": "/images/thumbs/thumb-brisbaneUG.jpg"
+  },
+  "presenter": "Jernej Kavka",
+  "presenterProfileUrl": "http://ssw.com.au/people/jernej-kavka",
+  "startDateTime": "2024-01-17T07:00:00Z",
+  "endDateTime": "2024-01-17T10:00:00Z",
+  "startShowBannerDateTime": "2024-01-16T13:00:00Z",
+  "endShowBannerDateTime": "2024-01-17T11:00:00Z",
+  "liveStreamUrl": {
+    "description": "Livestream",
+    "url": "http://www.ssw.com.au/live"
+  },
+  "calendarType": "User Groups",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": "Other",
+  "abstract": ".NET 8 has improved the data story with new features, waiting to be discovered. \ud83d\udd75\ufe0f\r\n\r\nLet's embark on a journey from understanding basic scaffolding to the intricacies of schema evolution and SQL debugging. It's time to be inspired by the art of database craftsmanship. \ud83e\uddd1\u200d\ud83c\udfa8",
+  "eventShortDescription": "<div class=\"ExternalClass54246B8258B544AC9E8A7E8EA4438649\"><p>\u200b.NET 8 has improved the data story with new features, waiting to be discovered. &#128373;\ufe0f</p><p>Let's embark on a journey from understanding basic scaffolding to the intricacies of schema evolution and SQL debugging. It's time to be inspired by the art of database craftsmanship. &#129489;\u200d&#127912;<br></p><p>--<br><br>Join us in person&#160;from&#160;5pm AEST&#160;in Brisbane, or 6pm AEDT in&#160;Sydney and&#160;Melbourne&#58;<br><br>SSW Sydney \u2013&#160;Watch party&#160;&#127910;<br>SSW Melbourne \u2013&#160;Watch party &#127910;<br>SSW Brisbane \u2013&#160;Live &#128308;<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass5809D49113184B42967768984BC0EE9B\"><p>.NET 8 has improved the data story with new features, waiting to be discovered. &#128373;\ufe0f</p><p>Let's embark on a journey from understanding basic scaffolding to the intricacies of schema evolution and SQL debugging. It's time to be inspired by the art of database craftsmanship. &#129489;\u200d&#127912;<br></p><p>--<br><br>Join us in person&#160;from&#160;5pm AEST&#160;in Brisbane, or 6pm AEDT in&#160;Sydney and&#160;Melbourne&#58;<br><br>SSW Sydney \u2013&#160;Watch party&#160;&#127910;<br>SSW Melbourne \u2013&#160;Watch party &#127910;<br>SSW Brisbane \u2013&#160;Live &#128308;<br></p></div>",
+  "description": "\u200b.NET 8 has improved the data story with new features, waiting to be discovered. \ud83d\udd75\ufe0f\n\nLet's embark on a journey from understanding basic scaffolding to the intricacies of schema evolution and SQL debugging. It's time to be inspired by the art of database craftsmanship. \ud83e\uddd1\u200d\ud83c\udfa8\n\n--\n\nJoin us in person\u00a0from\u00a05pm AEST\u00a0in Brisbane, or 6pm AEDT in\u00a0Sydney and\u00a0Melbourne:\n\nSSW Sydney \u2013\u00a0Watch party\u00a0\ud83c\udfa6\n\nSSW Melbourne \u2013\u00a0Watch party \ud83c\udfa6\n\nSSW Brisbane \u2013\u00a0Live \ud83d\udd34",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "R0aNp9nQevk",
+  "evalFormURL": {
+    "description": "Feedback form",
+    "url": "https://forms.microsoft.com/r/a1Fq6CGMua"
+  },
+  "externalPresenters": [
+    {
+      "LookupId": 13,
+      "LookupValue": "Jernej Kavka"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/jernej-kavka.mdx"
+    }
+  ],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": false
+}

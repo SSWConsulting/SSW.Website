@@ -1,0 +1,22 @@
+{
+  "title": "Canberra .NET user group: January",
+  "url": "https://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
+  "thumbnail": {
+    "description": "Canberra .NET user group: January",
+    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg"
+  },
+  "presenter": "Adam Stephensen",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/AdamS.aspx",
+  "startDateTime": "2016-01-18T06:30:00Z",
+  "endDateTime": "2016-01-18T08:30:00Z",
+  "calendarType": "User Groups",
+  "city": "Canberra",
+  "enabled": true,
+  "category": ".NET Core",
+  "eventShortDescription": "<div class=\"ExternalClass11BF2F655907447D946B76F70E47D582\"><div><strong>\u200bASP.NET 5 De-bamboozled - Lessons I wish someone else had learned - Adam Stephensen</strong></div><div><br></div><div>The change from ASP.NET 4 to ASP.NET 5 brings a whole lot of awesome to web development, but it\u2019s the biggest change since MVC was introduced and the learning curve is massive.&#160;</div><div><br></div><div>We shipped 2 enterprise apps on ASP.NET 5 while it was still in Beta (wow, that hurt).</div><div><br></div><div>Don\u2019t spend weeks trying to understand how to get your new project right.</div><div><br></div><div>This session isn't just 'hello world', it's the stuff we wish we'd known in those first head-scratching weeks.</div><div><br></div><div>Come along and learn what we took months to figure out in just 2 hours.</div><div><br></div><div><strong>About the presenter</strong></div><div><br></div><div>Adam Stephensen is a Solution Architect at SSW, Qld General Manager and head mentor at FireBootCamp, the gruelling 9 week boot camp for .NET developers. He loves delivering high quality, scalable, enterprise solutions. He has a passion for Scrum, Continuous Delivery, and software craftsmanship. This has led him to mentor and contribute to many .NET projects across a broad range of technologies.</div></div>",
+  "eventDescription": "<div class=\"ExternalClass8836F9AF6CCB4524BD73028656F64830\"><div><strong>\u200bASP.NET 5 De-bamboozled - Lessons I wish someone else had learned - Adam Stephensen</strong></div><div><br></div><div>The change from ASP.NET 4 to ASP.NET 5 brings a whole lot of awesome to web development, but it\u2019s the biggest change since MVC was introduced and the learning curve is massive.&#160;</div><div><br></div><div>We shipped 2 enterprise apps on ASP.NET 5 while it was still in Beta (wow, that hurt).</div><div><br></div><div>Don\u2019t spend weeks trying to understand how to get your new project right.</div><div><br></div><div>This session isn't just 'hello world', it's the stuff we wish we'd known in those first head-scratching weeks.</div><div><br></div><div>Come along and learn what we took months to figure out in just 2 hours.</div><div><br></div><div><strong>About the presenter</strong></div><div><br></div><div>Adam Stephensen is a Solution Architect at SSW, Qld General Manager and head mentor at FireBootCamp, the gruelling 9 week boot camp for .NET developers. He loves delivering high quality, scalable, enterprise solutions. He has a passion for Scrum, Continuous Delivery, and software craftsmanship. This has led him to mentor and contribute to many .NET projects across a broad range of technologies.</div></div>",
+  "description": "\u200bASP.NET 5 De-bamboozled - Lessons I wish someone else had learned - Adam Stephensen\n\nThe change from ASP.NET 4 to ASP.NET 5 brings a whole lot of awesome to web development, but it\u2019s the biggest change since MVC was introduced and the learning curve is massive.\u00a0\n\nWe shipped 2 enterprise apps on ASP.NET 5 while it was still in Beta (wow, that hurt).\n\nDon\u2019t spend weeks trying to understand how to get your new project right.\n\nThis session isn't just 'hello world', it's the stuff we wish we'd known in those first head-scratching weeks.\n\nCome along and learn what we took months to figure out in just 2 hours.\n\nAbout the presenter\n\nAdam Stephensen is a Solution Architect at SSW, Qld General Manager and head mentor at FireBootCamp, the gruelling 9 week boot camp for .NET developers. He loves delivering high quality, scalable, enterprise solutions. He has a passion for Scrum, Continuous Delivery, and software craftsmanship. This has led him to mentor and contribute to many .NET projects across a broad range of technologies.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

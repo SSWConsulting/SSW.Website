@@ -1,0 +1,40 @@
+{
+  "title": "The AI Hack Day - Melbourne",
+  "url": "https://aihackday.com/",
+  "thumbnail": {
+    "description": "The AI Hack Day - Melbourne",
+    "url": "/images/events/AIHackDaySSWEvents.jpg"
+  },
+  "presenter": "Jernej Kavka (JK) & William Liebenberg",
+  "startDateTime": "2024-07-12T23:00:00Z",
+  "endDateTime": "2024-07-13T07:00:00Z",
+  "calendarType": "Hack Days",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassE247036BAF1940DEA4D6A0A3B3A82C3D\"><p>\u200bAI Hack Days are community run events for Developers or people who want to learn AI for free.<br><br>There will be something for everyone. Experienced AI developers can share ideas with&#160;other experienced developers. If you're a&#160;beginner,&#160;then there's plenty to learn on the day.<br><br>It's recommended that attendees bring their own laptop on the day with some of the Microsoft AI and/or Machine Learning (ML) tools already setup and installed. If you've&#160;never played with AI or ML before it would be good to do a little bit of learning before the day,&#160;but it's not a requirement as all experience levels are welcome.<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassE67A9DFDA7E3486EA5D643B70144B36B\">\u200bAI Hack Days are community run events for Developers or people who want to learn AI for free.<br><br>There will be something for everyone. Experienced AI developers can share ideas with other experienced developers. If you're a beginner, then there's plenty to learn on the day.<br><br>It's recommended that attendees bring their own laptop on the day with some of the Microsoft AI and/or Machine Learning (ML) tools already setup and installed. If you've&#160;never played with AI or ML before it would be good to do a little bit of learning before the day, but it's not a requirement as all experience levels are welcome.<br></div>",
+  "description": "\u200bAI Hack Days are community run events for Developers or people who want to learn AI for free.\n\nThere will be something for everyone. Experienced AI developers can share ideas with\u00a0other experienced developers. If you're a\u00a0beginner,\u00a0then there's plenty to learn on the day.\n\nIt's recommended that attendees bring their own laptop on the day with some of the Microsoft AI and/or Machine Learning (ML) tools already setup and installed. If you've\u00a0never played with AI or ML before it would be good to do a little bit of learning before the day,\u00a0but it's not a requirement as all experience levels are welcome.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [
+    {
+      "LookupId": 13,
+      "LookupValue": "Jernej Kavka"
+    },
+    {
+      "LookupId": 8,
+      "LookupValue": "William Liebenberg"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/jernej-kavka.mdx"
+    },
+    {
+      "presenter": "content/presenters/william-liebenberg.mdx"
+    }
+  ],
+  "delayedLiveStreamStart": false,
+  "hostedAtSsw": false
+}

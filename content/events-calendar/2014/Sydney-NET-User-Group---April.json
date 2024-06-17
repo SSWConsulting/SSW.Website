@@ -1,0 +1,27 @@
+{
+  "title": "Sydney .NET User Group - April",
+  "url": "http://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
+  "thumbnail": {
+    "description": "Sydney .NET User Group - April",
+    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
+  },
+  "presenter": "Tom Griffith",
+  "startDateTime": "2014-04-16T08:00:00Z",
+  "endDateTime": "2014-04-16T10:00:00Z",
+  "startShowBannerDateTime": "2014-04-15T14:00:00Z",
+  "endShowBannerDateTime": "2014-04-16T14:00:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET User Group Live Stream ",
+    "url": "http://www.ssw.com.au/ssw/NETUG/Live.aspx"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "Twitter in the Courtroom, Defamation and Copyright Infringement on Social Media",
+  "eventDescription": "<div class=\"ExternalClassC7B6675325FF446BBBF0F9A09969197E\">\u200bPiper Alderman Partner Tom Griffith will explain how\ntraditional laws of defamation apply on social media, and will discuss how\nCourts have adapted to widespread use of social media, including in the\ncourtroom. The seminar will also cover Copyright and other intellectual\nproperty issues arising in social media.<br><br></div>",
+  "description": "\u200bPiper Alderman Partner Tom Griffith will explain how\ntraditional laws of defamation apply on social media, and will discuss how\nCourts have adapted to widespread use of social media, including in the\ncourtroom. The seminar will also cover Copyright and other intellectual\nproperty issues arising in social media.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

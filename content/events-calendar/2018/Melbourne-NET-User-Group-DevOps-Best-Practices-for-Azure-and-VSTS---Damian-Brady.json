@@ -1,0 +1,22 @@
+{
+  "title": "Melbourne .NET User Group: DevOps Best Practices for Azure and VSTS - Damian Brady",
+  "url": "https://www.ssw.com.au/ssw/NETUG/Melbourne.aspx",
+  "thumbnail": {
+    "description": "Melbourne .NET User Group: DevOps Best Practices for Azure and VSTS - Damian Brady",
+    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-melbourneUG.jpg"
+  },
+  "presenter": "Damian Brady",
+  "presenterProfileUrl": "https://damianbrady.com.au/",
+  "startDateTime": "2018-04-11T08:00:00Z",
+  "endDateTime": "2018-04-11T10:30:00Z",
+  "calendarType": "User Groups",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassB99D309468B94B4D831D7200579CE057\"><p>\u200b<strong>DevOps Best Practices for Azure and VSTS - Damian Brady </strong><br></p><div>Azure and VSTS are a match made in heaven but navigating the countless features and options can be tricky! There are many ways you can deploy an application, but what are the DevOps best practices that should be followed?<br></div><div><br></div><div>In this session, learn now to deploy safely to production on Windows or Linux, with no impact on end-user performance with Azure App Service. Learn how to leverage VSTS integration and deployment slots to create a deployment pipeline, and how Azure Application Insights can show your app is behaving in production. <br></div><p><strong><br></strong></p></div>",
+  "eventDescription": "<div class=\"ExternalClass70815A04641F42A1B1CFC5C1F5DD2EDB\"><p>\u200b<strong> DevOps Best Practices for Azure and VSTS - Damian Brady&#160;</strong><br></p><div>Azure and VSTS are a match made in heaven but navigating the countless features and options can be tricky! There are many ways you can deploy an application, but what are the DevOps best practices that should be followed?<br></div><div><br></div><div>In this session, learn&#160;now&#160;to deploy safely to production on Windows or Linux, with no impact on end-user performance with Azure App Service. Learn how to leverage VSTS integration and deployment slots to create a deployment pipeline, and how Azure Application Insights can show your app is behaving in production.&#160;<br></div><div><br><br></div><p><br></p></div>",
+  "description": "\u200b\n\nDevOps Best Practices for Azure and VSTS - Damian Brady \n\nAzure and VSTS are a match made in heaven but navigating the countless features and options can be tricky! There are many ways you can deploy an application, but what are the DevOps best practices that should be followed?\n\nIn this session, learn now to deploy safely to production on Windows or Linux, with no impact on end-user performance with Azure App Service. Learn how to leverage VSTS integration and deployment slots to create a deployment pipeline, and how Azure Application Insights can show your app is behaving in production. ",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

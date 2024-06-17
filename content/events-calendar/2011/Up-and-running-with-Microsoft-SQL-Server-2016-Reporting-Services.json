@@ -1,0 +1,21 @@
+{
+  "title": "Up and running with Microsoft SQL Server 2016 Reporting Services",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power Sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "BI and Reporting Services",
+  "categoryAnchor": "OverviewReportingServices",
+  "sessionTitle": "Up and running with Microsoft SQL Server 2016 Reporting Services",
+  "sessionTitleAnchor": "ReportingServices",
+  "eventShortDescription": "<div class=\"ExternalClassBADBDF7F92AA4EA1AE063F391FABCAE9\"><div>\u200bOK so you know about how the new powerful reporting platform from Microsoft will change the landscape of enterprise reporting. Come see Sydney based SQL Guru and MS Regional Director Adam Cogan show the developer features of this latest addition to the Microsoft SQL Server family of products. You will see real world examples of this server-based platform when used for creating, managing, and delivering both traditional, paper-oriented reports and interactive, Web-based reports. Reporting Services 2016 combines the data management capabilities of SQL Server and Microsoft Windows Server with familiar and powerful Microsoft Office System applications to deliver real-time information to support daily operations and decisions.\u200b\u200b</div></div>",
+  "eventDescription": "<div class=\"ExternalClassBADBDF7F92AA4EA1AE063F391FABCAE9\"><div>\u200bOK so you know about how the new powerful reporting platform from Microsoft will change the landscape of enterprise reporting. Come see Sydney based SQL Guru and MS Regional Director Adam Cogan show the developer features of this latest addition to the Microsoft SQL Server family of products. You will see real world examples of this server-based platform when used for creating, managing, and delivering both traditional, paper-oriented reports and interactive, Web-based reports. Reporting Services 2016 combines the data management capabilities of SQL Server and Microsoft Windows Server with familiar and powerful Microsoft Office System applications to deliver real-time information to support daily operations and decisions.\u200b</div></div>",
+  "description": "\u200bOK so you know about how the new powerful reporting platform from Microsoft will change the landscape of enterprise reporting. Come see Sydney based SQL Guru and MS Regional Director Adam Cogan show the developer features of this latest addition to the Microsoft SQL Server family of products. You will see real world examples of this server-based platform when used for creating, managing, and delivering both traditional, paper-oriented reports and interactive, Web-based reports. Reporting Services 2016 combines the data management capabilities of SQL Server and Microsoft Windows Server with familiar and powerful Microsoft Office System applications to deliver real-time information to support daily operations and decisions.\u200b\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

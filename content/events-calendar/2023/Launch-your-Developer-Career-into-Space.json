@@ -1,0 +1,39 @@
+{
+  "title": "Launch your Developer Career into Space",
+  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
+  "thumbnail": {
+    "description": "Sydney .NET User Group",
+    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
+  },
+  "presenter": "Piers Sinclair",
+  "presenterProfileUrl": "https://www.ssw.com.au/people/piers-sinclair",
+  "startDateTime": "2023-02-15T07:00:00Z",
+  "endDateTime": "2023-02-15T10:00:00Z",
+  "startShowBannerDateTime": "2023-02-14T13:00:00Z",
+  "endShowBannerDateTime": "2023-02-15T11:00:00Z",
+  "liveStreamUrl": {
+    "description": "Livestream",
+    "url": "http://www.ssw.com.au/live"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass32956DCE23134D01B86A871E202EE42F\"><p>\u200bFebruary&#160;.NET&#160;User Group&#58;&#160;Launch your developer career into space<br></p><p>Navigating the ever-changing nature of software development can be tricky, particularly for new developers. There are many different technologies and programming languages to choose from and a vast amount of information to sift through. Just look at all the platforms, websites, mobile apps, games, and everything in between; it's easy to see why newcomers will find it hard to choose. So, where do you begin? &#160;<br></p><p>Understanding the nuances of your career options is critical for making an informed decision. Piers Sinclair has been in the development industry for almost a decade, and often mentors developers just starting out or at a crossroads in their career. In this talk, Piers aims to un-boggle your mind!<br></p><p>Piers will take an in-depth look at the different disciplines in the industry, how to approach the roles you want, and the green and red flags to watch out for. He will also recommend skills and tools you can focus on to develop your career. Finally, he will build a roadmap to help you launch your career into space while avoiding space junk! &#127776;<br></p><p>--<br><br>Join us in person&#160;from 6 pm in Sydney &amp; Melbourne,&#160;or 5&#160;pm in Brisbane&#58;<br><br>SSW Sydney \u2013&#160;Live &#128308;<br>SSW Melbourne \u2013 Watch party &#127910;<br>SSW Brisbane \u2013&#160;Watch party &#127910;<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassB21B4210004A407C93A1ABA9AB721746\"><p>February&#160;.NET&#160;User Group&#58;&#160;Launch your developer career into space</p><p>Navigating the ever-changing nature of software development can be tricky, particularly for new developers. There are many different technologies and programming languages to choose from and a vast amount of information to sift through. Just look at all the platforms, websites, mobile apps, games, and everything in between; it's easy to see why newcomers will find it hard to choose. So, where do you begin? &#160;<br></p><p>Understanding the nuances of your career options is critical for making an informed decision. Piers Sinclair has been in the development industry for almost a decade, and often mentors developers just starting out or at a crossroads in their career. In this talk, Piers aims to un-boggle your mind!<br></p><p>Piers will take an in-depth look at the different disciplines in the industry, how to approach the roles you want, and the green and red flags to watch out for. He will also recommend skills and tools you can focus on to develop your career. Finally, he will build a roadmap to help you launch your career into space while avoiding space junk!&#160;&#127776;<br></p><p><br></p></div>",
+  "description": "\u200bFebruary\u00a0.NET\u00a0User Group:\u00a0Launch your developer career into space\n\nNavigating the ever-changing nature of software development can be tricky, particularly for new developers. There are many different technologies and programming languages to choose from and a vast amount of information to sift through. Just look at all the platforms, websites, mobile apps, games, and everything in between; it's easy to see why newcomers will find it hard to choose. So, where do you begin? \u00a0\n\nUnderstanding the nuances of your career options is critical for making an informed decision. Piers Sinclair has been in the development industry for almost a decade, and often mentors developers just starting out or at a crossroads in their career. In this talk, Piers aims to un-boggle your mind!\n\nPiers will take an in-depth look at the different disciplines in the industry, how to approach the roles you want, and the green and red flags to watch out for. He will also recommend skills and tools you can focus on to develop your career. Finally, he will build a roadmap to help you launch your career into space while avoiding space junk! \ud83c\udf20\n\n--\n\nJoin us in person\u00a0from 6 pm in Sydney & Melbourne,\u00a0or 5\u00a0pm in Brisbane:\n\nSSW Sydney \u2013\u00a0Live \ud83d\udd34\n\nSSW Melbourne \u2013 Watch party \ud83c\udfa6\n\nSSW Brisbane \u2013\u00a0Watch party \ud83c\udfa6",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "QYTa5aHdhh0",
+  "externalPresenters": [
+    {
+      "LookupId": 26,
+      "LookupValue": "Piers Sinclair"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/piers-sinclair.mdx"
+    }
+  ]
+}

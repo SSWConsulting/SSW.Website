@@ -1,0 +1,23 @@
+{
+  "title": "Power BI: Decisions based on facts",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2016-10-18T22:00:00Z",
+  "endDateTime": "2016-10-19T06:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "BI and Reporting Services",
+  "categoryAnchor": "OverviewReportingServices",
+  "sessionTitle": "Power BI: Decisions based on facts",
+  "sessionTitleAnchor": "PowerBI:Decisionsbasedonfacts",
+  "eventShortDescription": "<div class=\"ExternalClass4651A713F42040749E1D73F13C8060ED\"><p>\u200bSSW's General Manager, Ulysses Maclaren, will take you through his personal journey of discovery into the world of Power BI.&#160;<br></p><p>Many companies have valuable data, but the challenge is being able to easily visualize it in a way that allows you to make decisions.&#160;<br>He will show in a live demo how Power BI allows even non-technical users to produce and share invaluable reports and dashboards.&#160;<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassDBCF622715B147989E021F1199F9DEB5\"><p>\u200bSSW's General Manager, Ulysses Maclaren, will take you through his personal journey of discovery into the world of Power BI.&#160;<br></p><p>Many companies have valuable data, but the challenge is being able to easily visualize it in a way that allows you to make decisions.&#160;<br>He will show in a live demo how Power BI allows even non-technical users to produce and share invaluable reports and dashboards.&#160;<br></p></div>",
+  "description": "\u200bSSW's General Manager, Ulysses Maclaren, will take you through his personal journey of discovery into the world of Power BI.\u00a0\n\nMany companies have valuable data, but the challenge is being able to easily visualize it in a way that allows you to make decisions.\u00a0\n\nHe will show in a live demo how Power BI allows even non-technical users to produce and share invaluable reports and dashboards.\u00a0",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

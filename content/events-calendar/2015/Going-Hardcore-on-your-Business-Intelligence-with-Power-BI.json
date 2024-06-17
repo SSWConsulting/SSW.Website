@@ -1,0 +1,23 @@
+{
+  "title": "Going Hardcore on your Business Intelligence with Power BI",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2015-09-15T14:00:00Z",
+  "endDateTime": "2015-09-15T16:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "BI and Reporting Services",
+  "categoryAnchor": "OverviewReportingServices",
+  "sessionTitle": "Going Hardcore on your Business Intelligence with Power BI",
+  "sessionTitleAnchor": "BusinessIntelligencewithPowerBI",
+  "eventShortDescription": "<div class=\"ExternalClass45CD992840F54C839DE9585CC835C608\"><div>Microsoft has recently announced Power BI is now becoming generally available (GA). It\u2019s a great time to start exploring some of the advanced functionality Power BI offers. In this session Adam Cogan will quickly bring you up-to-speed with Power BI, then get straight into the cool stuff. You\u2019ll feel the fire of the Power BI Desktop App, connecting to data sources, building a data model and publishing the end result to PowerBI.com.</div><div><br></div><div>Adam will also talk about what your organisation should be doing now\u2026 how to create custom content packs, the developer options and how to extend Power BI beyond what ships in the box.</div><div><br></div><div>With the recent acquisition of Datazen by Microsoft a new product comes into the mix, Adam will take you through the features and how it fits into the BI roadmap.</div><div><br></div><div>Lights will be powering on inside all attendees\u2019 heads. Don\u2019t miss it.</div></div>",
+  "eventDescription": "<div class=\"ExternalClass53A1776B3D1C490CBEE52D66F4F1A5BF\"><div>\u200bMicrosoft has recently announced Power BI is now becoming generally available (GA). It\u2019s a great time to start exploring some of the advanced functionality Power BI offers. In this session Adam Cogan will quickly bring you up-to-speed with Power BI, then get straight into the cool stuff. You\u2019ll feel the fire of the Power BI Desktop App, connecting to data sources, building a data model and publishing the end result to PowerBI.com.</div><div><br></div><div>Adam will also talk about what your organisation should be doing now\u2026 how to create custom content packs, the developer options and how to extend Power BI beyond what ships in the box.</div><div><br></div><div>With the recent acquisition of Datazen by Microsoft a new product comes into the mix, Adam will take you through the features and how it fits into the BI roadmap.</div><div><br></div><div>Lights will be powering on inside all attendees\u2019 heads. Don\u2019t miss it.</div></div>",
+  "description": "Microsoft has recently announced Power BI is now becoming generally available (GA). It\u2019s a great time to start exploring some of the advanced functionality Power BI offers. In this session Adam Cogan will quickly bring you up-to-speed with Power BI, then get straight into the cool stuff. You\u2019ll feel the fire of the Power BI Desktop App, connecting to data sources, building a data model and publishing the end result to PowerBI.com.\n\nAdam will also talk about what your organisation should be doing now\u2026 how to create custom content packs, the developer options and how to extend Power BI beyond what ships in the box.\n\nWith the recent acquisition of Datazen by Microsoft a new product comes into the mix, Adam will take you through the features and how it fits into the BI roadmap.\n\nLights will be powering on inside all attendees\u2019 heads. Don\u2019t miss it.",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

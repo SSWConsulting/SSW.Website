@@ -1,0 +1,22 @@
+{
+  "title": "SSW DevOps SuperPowers Half Day Course - Melbourne",
+  "url": "https://www.ssw.com.au/ssw/Events/Training/DevOps-SuperPowers-VS2015-ASP-NET-vNext.aspx",
+  "thumbnail": {
+    "description": "SSW DevOps SuperPowers Half Day Course - Melbourne",
+    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/DevOpsSuperPowers-Thumb.png"
+  },
+  "presenter": "Adam Cogan",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
+  "startDateTime": "2016-09-05T23:00:00Z",
+  "endDateTime": "2016-09-06T03:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "eventShortDescription": "<div class=\"ExternalClass31949D81D7394676944586C518B56643\">\u200bThis half day training course brings developers up-to-speed on the new features and benefits of DevOps.<div><br>With detailed insight into a gathering requirements, planning, coding, testing, releasing and feedback handling, attendees will leave with a strong understanding of how to embrace DevOps in their organization regardless of the organization size.</div><div><br>This time, DevOps SuperPowers will be a bit different. We are coming after you heavily armed with three of the finest ALM experts in Australia, all Microsoft Visual Studio ALM MVPs. Rest assured that they will have plenty of war stories to tell as well as sharing with you best practices for everything between a small or an enterprise team.</div></div>",
+  "eventDescription": "<div class=\"ExternalClass5D11557701334213B3791185BEBD8BB1\">\u200b\u200bThis half day training course brings developers up-to-speed on the new features and benefits of DevOps.<div><br>With detailed insight into a gathering requirements, planning, coding, testing, releasing and feedback handling, attendees will leave with a strong understanding of how to embrace DevOps in their organization regardless of the organization size.</div><div><br>This time, DevOps SuperPowers will be a bit different. We are coming after you heavily armed with three of the finest ALM experts in Australia, all Microsoft Visual Studio ALM MVPs. Rest assured that they will have plenty of war stories to tell as well as sharing with you best practices for everything between a small or an enterprise team.</div></div>",
+  "description": "\u200bThis half day training course brings developers up-to-speed on the new features and benefits of DevOps.\n\nWith detailed insight into a gathering requirements, planning, coding, testing, releasing and feedback handling, attendees will leave with a strong understanding of how to embrace DevOps in their organization regardless of the organization size.\n\nThis time, DevOps SuperPowers will be a bit different. We are coming after you heavily armed with three of the finest ALM experts in Australia, all Microsoft Visual Studio ALM MVPs. Rest assured that they will have plenty of war stories to tell as well as sharing with you best practices for everything between a small or an enterprise team.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

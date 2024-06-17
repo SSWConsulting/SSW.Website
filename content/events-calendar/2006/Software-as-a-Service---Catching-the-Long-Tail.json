@@ -1,0 +1,24 @@
+{
+  "title": "Software as a Service - Catching the Long Tail",
+  "url": "https://www.ssw.com.au/images/newsletter-uploads/2006/_2006_10__Microsoft%20Reporting%20Services%20Training_.htm",
+  "thumbnail": {
+    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
+    "url": "/images/events/sydney-ug-thumb.jpg"
+  },
+  "presenter": "Nigel Watson",
+  "presenterProfileUrl": "https://www.linkedin.com/in/nigelwatson/",
+  "startDateTime": "2006-10-18T07:45:00Z",
+  "endDateTime": "2006-10-18T11:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass276F7A66756D42319D8F9CBF84745052\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;From small start-ups to large enterprises, software as a service (SaaS) is changing how software is designed, developed and consumed. This session discusses the business drivers behind SaaS, and then looks at how these in turn drive the architecture of SaaS solutions as opposed to 'on-premise' software. Along the way, we'll look at the technical issues that any current or prospective SaaS vendor will need to grapple with in order to successfully deliver software as a service.</span><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassB1F04F76183D4A6BA7B6EC8B10DC3CF8\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;From small start-ups to large enterprises, software as a service (SaaS) is changing how software is designed, developed and consumed. This session discusses the business drivers behind SaaS, and then looks at how these in turn drive the architecture of SaaS solutions as opposed to 'on-premise' software. Along the way, we'll look at the technical issues that any current or prospective SaaS vendor will need to grapple with in order to successfully deliver software as a service.</span><br></p></div>",
+  "description": "\u200b\n\nDescription:\n\n\u00a0From small start-ups to large enterprises, software as a service (SaaS) is changing how software is designed, developed and consumed. This session discusses the business drivers behind SaaS, and then looks at how these in turn drive the architecture of SaaS solutions as opposed to 'on-premise' software. Along the way, we'll look at the technical issues that any current or prospective SaaS vendor will need to grapple with in order to successfully deliver software as a service.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30
+}

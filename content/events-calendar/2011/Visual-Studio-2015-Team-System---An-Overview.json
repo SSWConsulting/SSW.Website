@@ -1,0 +1,21 @@
+{
+  "title": "Visual Studio 2015 Team System - An Overview",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power Sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewTFS",
+  "sessionTitle": "Visual Studio 2015 Team System - An Overview",
+  "sessionTitleAnchor": "TeamSystem",
+  "eventShortDescription": "<div class=\"ExternalClassBEAE535A18AD45F7BB00620A1650310F\"><div>\u200bMicrosoft Visual Studio 2015 Team System is an integrated software development platform to build the mission-critical applications that businesses depend on. It extends Visual Studio\u2019s integrated and productive experience from the developer to the entire development team by delivering powerful new role-based tools for software architects, developers, testers and project managers. In this session you will see an overview of these tools and how they can improve your software development cycle.\u200b\u200b</div></div>",
+  "eventDescription": "<div class=\"ExternalClassBEAE535A18AD45F7BB00620A1650310F\"><div>\u200bMicrosoft Visual Studio 2015 Team System is an integrated software development platform to build the mission-critical applications that businesses depend on. It extends Visual Studio\u2019s integrated and productive experience from the developer to the entire development team by delivering powerful new role-based tools for software architects, developers, testers and project managers. In this session you will see an overview of these tools and how they can improve your software development cycle.\u200b</div></div>",
+  "description": "\u200bMicrosoft Visual Studio 2015 Team System is an integrated software development platform to build the mission-critical applications that businesses depend on. It extends Visual Studio\u2019s integrated and productive experience from the developer to the entire development team by delivering powerful new role-based tools for software architects, developers, testers and project managers. In this session you will see an overview of these tools and how they can improve your software development cycle.\u200b\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Sydney .NET User Group: Machine Learning simplified for Developers with ML.NET - presented by Jernej \"JK\" Kavka",
+  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
+  "thumbnail": {
+    "description": "Sydney .NET User Group: Machine Learning simplified for Developers with ML.NET - presented by Jernej \"JK\" Kavka",
+    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
+  },
+  "presenter": "Jernej Kavka",
+  "startDateTime": "2019-07-17T08:00:00Z",
+  "endDateTime": "2019-07-17T10:00:00Z",
+  "liveStreamUrl": {
+    "description": "https://www.ssw.com.au/ssw/Live",
+    "url": "https://www.ssw.com.au/ssw/Live"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassC222F5DF03FF4B13B7077C8E553DABA6\"><p><strong>Sydney .NET User Group&#58; Machine Learning simplified for Developers with ML.NET - presented by Jernej &quot;JK&quot; Kavka</strong></p><p>Do you want to try machine learning, but don't want to invest too much time learning a new programming language or some other complicated API?<br><br>Microsoft recently launched ML.NET 1.1 which is a great entry point for .NET developers and to gain experience building something with Machine Learning.<br><br>With the recent release of ML.NET Model Builder, we can create machine learning models by attempting to import raw data first and over time curate the data, to get better results.<br><br>JK will show you how ML.NET works, how to leverage Model Builder, experiment with training data and what to watch out for when building models.<br><br><strong>About the Speaker&#58;</strong><br><br>Jk, is the main architect behind SSW's SophieAI&#58;&#160;<a href=\"https&#58;//sswsophie.com/\">https&#58;//sswsophie.com/</a>where he got to use his current passion for machine learning, and cognitive services.<br><br>With around 10 years of experience in software engineering, Jernej has worked on full-stack .NET development, mobile applications, and Microsoft Cognitive Services. He worked for some of Australia's largest corporations, with great customer satisfaction.\u200b<br><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassCC5BF78357EF40C294969976FB758EFD\"><p><strong>Sydney .NET User Group&#58; Machine Learning simplified for Developers with ML.NET - presented by Jernej &quot;JK&quot; Kavka</strong></p><p>Do you want to try machine learning, but don't want to invest too much time learning a new programming language or some other complicated API?<br><br>Microsoft recently launched ML.NET 1.1 which is a great entry point for .NET developers and to gain experience building something with Machine Learning.<br><br>With the recent release of ML.NET Model Builder, we can create machine learning models by attempting to import raw data first and over time curate the data, to get better results.<br><br>JK will show you how ML.NET works, how to leverage Model Builder, experiment with training data and what to watch out for when building models.<br><br><strong>About the Speaker&#58;</strong><br><br>Jk, is the main architect behind SSW's SophieAI&#58;&#160;<a href=\"https&#58;//sswsophie.com/\">https&#58;//sswsophie.com/</a>where he got to use his current passion for machine learning, and cognitive services.<br><br>With around 10 years of experience in software engineering, Jernej has worked on full-stack .NET development, mobile applications, and Microsoft Cognitive Services. He worked for some of Australia's largest corporations, with great customer satisfaction.\u200b</p></div>",
+  "description": "Sydney .NET User Group: Machine Learning simplified for Developers with ML.NET - presented by Jernej \"JK\" Kavka\n\nDo you want to try machine learning, but don't want to invest too much time learning a new programming language or some other complicated API?\n\nMicrosoft recently launched ML.NET 1.1 which is a great entry point for .NET developers and to gain experience building something with Machine Learning.\n\nWith the recent release of ML.NET Model Builder, we can create machine learning models by attempting to import raw data first and over time curate the data, to get better results.\n\nJK will show you how ML.NET works, how to leverage Model Builder, experiment with training data and what to watch out for when building models.\n\nAbout the Speaker:\n\nJk, is the main architect behind SSW's SophieAI:\u00a0\n\nhttps://sswsophie.com/\n\nwhere he got to use his current passion for machine learning, and cognitive services.\n\nWith around 10 years of experience in software engineering, Jernej has worked on full-stack .NET development, mobile applications, and Microsoft Cognitive Services. He worked for some of Australia's largest corporations, with great customer satisfaction.\u200b",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,17 @@
+{
+  "title": "DDD Sydney",
+  "url": "https://next.dddsydney.com.au/",
+  "thumbnail": {
+    "description": "DDD Sydney",
+    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/DDD-Sydney.jpg"
+  },
+  "startDateTime": "2018-08-17T22:00:00Z",
+  "endDateTime": "2018-08-18T07:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

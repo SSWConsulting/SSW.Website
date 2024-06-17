@@ -1,0 +1,18 @@
+{
+  "title": "The Angular Superpowers Tour: Melbourne",
+  "url": "https://www.ssw.com.au/ssw/Events/Training/Angular-Superpowers-Tour.aspx",
+  "thumbnail": {
+    "description": "The Angular Superpowers Tour: Melbourne",
+    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Angular.jpg"
+  },
+  "presenter": "Brendan Richards and Jean Thirion",
+  "startDateTime": "2019-03-13T14:00:00Z",
+  "endDateTime": "2019-03-14T11:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": "Angular and React",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

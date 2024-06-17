@@ -1,0 +1,21 @@
+{
+  "title": "Twelve Tips for Better Reporting Services",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power Sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "BI and Reporting Services",
+  "categoryAnchor": "OverviewReportingServices",
+  "sessionTitle": "Twelve Tips for Better Reporting Services",
+  "sessionTitleAnchor": "TwelveTips",
+  "eventShortDescription": "<div class=\"ExternalClass21E00946C20142ECBB9E09ACA434BDB1\"><div>\u200bOK so you know about how powerful this reporting platform from Microsoft is. Come see Sydney based SQL Guru and MS Regional Director Adam Cogan show the right and wrong ways to develop reports and show data to users.</div></div>",
+  "eventDescription": "<div class=\"ExternalClass21E00946C20142ECBB9E09ACA434BDB1\"><div>\u200bOK so you know about how powerful this reporting platform from Microsoft is. Come see Sydney based SQL Guru and MS Regional Director Adam Cogan show the right and wrong ways to develop reports and show data to users.</div></div>",
+  "description": "\u200bOK so you know about how powerful this reporting platform from Microsoft is. Come see Sydney based SQL Guru and MS Regional Director Adam Cogan show the right and wrong ways to develop reports and show data to users.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

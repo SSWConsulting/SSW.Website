@@ -1,0 +1,23 @@
+{
+  "title": "Using Partitioned Tables with VLDB (Very Large Database) space",
+  "url": "https://www.ssw.com.au/images/newsletter-uploads/2006/_2006_07__Do%20you%20send%20a%20Test%20Please%20email_.htm",
+  "thumbnail": {
+    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
+    "url": "/images/events/sydney-ug-thumb.jpg"
+  },
+  "presenter": "Geoff Orr",
+  "startDateTime": "2006-07-21T07:45:00Z",
+  "endDateTime": "2006-07-21T11:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassB25FA930ABA14111A89BF674623B32DF\"><p style=\"box-sizing&#58;border-box;word-break&#58;break-word;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\"><strong style=\"box-sizing&#58;border-box;\">Description&#58;</strong>&#160;Review of partitioned tables including how to create and use them, as well as how to keep active tables smaller.</p><div><br><br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassC464DC7A03D94F1BBD5031E9D443485D\"><p style=\"box-sizing&#58;border-box;word-break&#58;break-word;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\"><strong style=\"box-sizing&#58;border-box;\">Description&#58;</strong>&#160;Review of partitioned tables including how to create and use them, as well as how to keep active tables smaller.</p><div><br><br></div><p><br></p></div>",
+  "description": "Description:\n\n\u00a0Review of partitioned tables including how to create and use them, as well as how to keep active tables smaller.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30
+}

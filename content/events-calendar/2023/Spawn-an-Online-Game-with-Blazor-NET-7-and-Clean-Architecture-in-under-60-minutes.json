@@ -1,0 +1,43 @@
+{
+  "title": "Spawn an Online Game with Blazor, .NET 7 and Clean Architecture in under 60 minutes",
+  "url": "https://www.ssw.com.au/ssw/NETUG/Brisbane.aspx",
+  "thumbnail": {
+    "description": "Brisbane Full Stack User Group",
+    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-BrisbaneUG.jpg"
+  },
+  "presenter": "Luke Parker",
+  "presenterProfileUrl": "https://ssw.com.au/people/luke-parker",
+  "startDateTime": "2023-01-18T07:00:00Z",
+  "endDateTime": "2023-01-18T10:00:00Z",
+  "startShowBannerDateTime": "2023-01-17T13:00:00Z",
+  "endShowBannerDateTime": "2023-01-18T11:00:00Z",
+  "liveStreamUrl": {
+    "description": "Livestream",
+    "url": "http://www.ssw.com.au/live"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassEFAD8785D4604506B6B5BF251CAC5376\"><p>January Full Stack&#160;User Group + .NET Conf&#58;&#160;Spawn an Online\r\nGame with Blazor, .NET 7 and Clean Architecture in under 60 minutes<br></p><p>Full Stack Web Developers are commonplace, but what if you were told those very skills can directly translate to building an online game?! &#127918;<br></p><p>The video gaming industry is valued at ~$300 billion. While building a game may seem daunting, you can build the basics very quickly using transferrable skills from enterprise development experience. Should you build it in an hour? No! But can you? Yes!<br></p><p>In this fun talk, Luke Parker will show you step-by-step how to build a playable game in under 60 minutes. He will go over some basic game design, project planning, then build the game and finally\u2026 play live with the audience! Utilizing code sharing and the magic of Clean Architecture allows for very rapid app development. Also, leveraging MudBlazor as the component library lets you save time, so you can focus on what really matters.<br></p><p>This talk will equip you with all the essential tools to build your next hobby project, or possibly even help you bring in the big bucks! &#128176;&#128640;<br></p><p><span style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;background-color&#58;#ffffff;\">--<br style=\"box-sizing&#58;border-box;\"><br style=\"box-sizing&#58;border-box;\">Join us in person&#160;from 6 pm in Sydney &amp; Melbourne,&#160;or 5&#160;pm in Brisbane&#58;<br style=\"box-sizing&#58;border-box;\"><br>SSW Sydney \u2013&#160;Watch party &#127910;<br>SSW Melbourne \u2013 Watch party &#127910;<br></span>SSW Brisbane \u2013 Live &#128308;<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass8CF087961A9A42709403CE915A3FC869\"><p>\u200bJanuary Full Stack&#160;User Group + .NET Conf&#58;&#160;Spawn an Online Game with Blazor, .NET 7 and Clean Architecture in under 60 minutes<br></p><p>Full Stack Web Developers are commonplace, but what if you were told those very skills can directly translate to building an online game?!&#160;&#127918;<br></p><p>The video gaming industry is valued at ~$300 billion. While building a game may seem daunting, you can build the basics very quickly using transferrable skills from enterprise development experience. Should you build it in an hour? No! But can you? Yes!<br></p><p>In this&#160;fun talk, Luke Parker will show you step-by-step how to build a playable game in under 60 minutes. He will go over some basic game design, project planning, then build the game and finally\u2026 play live with the audience! Utilizing code sharing and the magic of Clean Architecture allows for very rapid app development. Also, leveraging MudBlazor as the component library lets you save time and to focus on what really matters.<br></p><p>This talk will equip you with all the essential tools to build your next hobby project, or possibly even help you bring in the big bucks!&#160;&#128176;&#128640;<br></p></div>",
+  "description": "January Full Stack\u00a0User Group + .NET Conf:\u00a0Spawn an Online\r\nGame with Blazor, .NET 7 and Clean Architecture in under 60 minutes\n\nFull Stack Web Developers are commonplace, but what if you were told those very skills can directly translate to building an online game?! \ud83c\udfae\n\nThe video gaming industry is valued at ~$300 billion. While building a game may seem daunting, you can build the basics very quickly using transferrable skills from enterprise development experience. Should you build it in an hour? No! But can you? Yes!\n\nIn this fun talk, Luke Parker will show you step-by-step how to build a playable game in under 60 minutes. He will go over some basic game design, project planning, then build the game and finally\u2026 play live with the audience! Utilizing code sharing and the magic of Clean Architecture allows for very rapid app development. Also, leveraging MudBlazor as the component library lets you save time, so you can focus on what really matters.\n\nThis talk will equip you with all the essential tools to build your next hobby project, or possibly even help you bring in the big bucks! \ud83d\udcb0\ud83d\ude80\n\n--\n\nJoin us in person\u00a0from 6 pm in Sydney & Melbourne,\u00a0or 5\u00a0pm in Brisbane:\n\nSSW Sydney \u2013\u00a0Watch party \ud83c\udfa6\n\nSSW Melbourne \u2013 Watch party \ud83c\udfa6\n\nSSW Brisbane \u2013 Live \ud83d\udd34",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "fTWyFmVqJ3I",
+  "evalFormURL": {
+    "description": "Leave your feedback",
+    "url": "https://forms.microsoft.com/r/QczapPPcY3"
+  },
+  "externalPresenters": [
+    {
+      "LookupId": 25,
+      "LookupValue": "Luke Parker"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/luke-parker.mdx"
+    }
+  ]
+}

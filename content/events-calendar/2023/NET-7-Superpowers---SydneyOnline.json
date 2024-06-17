@@ -1,0 +1,22 @@
+{
+  "title": ".NET 7 Superpowers - Sydney/Online",
+  "url": "https://www.ssw.com.au/ssw/Events/Training/NET-Superpowers-Tour.aspx",
+  "thumbnail": {
+    "description": ".NET 7 Superpowers - Sydney/Online",
+    "url": "https://ssw.com.au/images/Newsletters/SuperPower-Icon-DotNet.jpg"
+  },
+  "presenter": "William Liebenberg & Matt Wicks",
+  "startDateTime": "2023-04-19T23:00:00Z",
+  "endDateTime": "2023-04-20T07:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": ".NET Core",
+  "eventShortDescription": "<div class=\"ExternalClassE0CE8641CC7F40F38F209397D8F6D5FE\">\u200b.NET 7&#160;- A Unified Platform<div><div><div><br>.NET 7&#160;has replaced .NET 6&#160;and .NET Core 3.1, and is the new standard in .NET.<br><br>This is the only .NET going forward, and our experts can get you ready to use the most powerful version ever! This fast-paced one-day course covers many topics, such as web development with ASP.NET Core, data access with EF Core, automated testing, and many other enterprise topics.<br><br>You will finish the day with a solid understanding of why you should be using .NET 7&#160;and the enterprise capabilities using the new platform.<br></div></div></div><br><br><br></div>",
+  "description": "\u200b.NET 7\u00a0- A Unified Platform\n\n.NET 7\u00a0has replaced .NET 6\u00a0and .NET Core 3.1, and is the new standard in .NET.\n\nThis is the only .NET going forward, and our experts can get you ready to use the most powerful version ever! This fast-paced one-day course covers many topics, such as web development with ASP.NET Core, data access with EF Core, automated testing, and many other enterprise topics.\n\nYou will finish the day with a solid understanding of why you should be using .NET 7\u00a0and the enterprise capabilities using the new platform.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": false,
+  "hostedAtSsw": false
+}

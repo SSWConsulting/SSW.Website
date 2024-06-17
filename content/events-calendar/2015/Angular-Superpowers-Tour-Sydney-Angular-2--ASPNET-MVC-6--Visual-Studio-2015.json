@@ -1,0 +1,21 @@
+{
+  "title": "Angular Superpowers Tour: Sydney Angular 2 + ASP.NET MVC 6 + Visual Studio 2015",
+  "url": "https://www.ssw.com.au/ssw/Events/Training/Angular-Superpowers-Tour-Angular-ASP-MVC-in-VS2015.aspx",
+  "thumbnail": {
+    "description": "Angular Superpowers Tour Sydney",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png"
+  },
+  "presenter": "Adam Stephensen and Duncan Hunter",
+  "startDateTime": "2015-11-25T22:00:00Z",
+  "endDateTime": "2015-11-27T07:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Angular",
+  "eventShortDescription": "<div class=\"ExternalClassC574AB83BF32415486D1C5D095B2DDB5\"><p>\u200bThis two-day workshop brings developers up-to-speed on the new features and benefits of using ASP.NET 5 and Angular 2 in Visual Studio 2015 to build awesome web applications.</p><div><br></div><div>Everything has changed! Angular 2 and MVC 6 both involve massive changes to how we build modern web applications. Visual Studio 2015 has incorporated all the best tooling from the JavaScript community to enable awesome frontend dev-ops.</div><div><br></div><div>At SSW we have already gone through the hard work on implementing these new and exciting technologies in our projects.</div><div><br></div><div>Don't waste weeks learning gulp, bower, NPM, WebPack, Angular 2, and getting your head around all the changes from the ASP.NET team. Visual Studio 2015 is massively different but we can get you jump started in just two days.\u200b\u200b</div></div>",
+  "eventDescription": "<div class=\"ExternalClass7BBB593385114283B79ADE462EDDDEC7\"><p>\u200bThis two-day workshop brings developers up-to-speed on the new features and benefits of using ASP.NET 5 and Angular 2 in Visual Studio 2015 to build awesome web applications.</p><div><br></div><div>Everything has changed! Angular 2 and MVC 6 both involve massive changes to how we build modern web applications. Visual Studio 2015 has incorporated all the best tooling from the JavaScript community to enable awesome frontend dev-ops.</div><div><br></div><div>At SSW we have already gone through the hard work on implementing these new and exciting technologies in our projects.</div><div><br></div><div>Don't waste weeks learning gulp, bower, NPM, WebPack, Angular 2, and getting your head around all the changes from the ASP.NET team. Visual Studio 2015 is massively different but we can get you jump started in just two days.\u200b</div></div>",
+  "description": "\u200bThis two-day workshop brings developers up-to-speed on the new features and benefits of using ASP.NET 5 and Angular 2 in Visual Studio 2015 to build awesome web applications.\n\nEverything has changed! Angular 2 and MVC 6 both involve massive changes to how we build modern web applications. Visual Studio 2015 has incorporated all the best tooling from the JavaScript community to enable awesome frontend dev-ops.\n\nAt SSW we have already gone through the hard work on implementing these new and exciting technologies in our projects.\n\nDon't waste weeks learning gulp, bower, NPM, WebPack, Angular 2, and getting your head around all the changes from the ASP.NET team. Visual Studio 2015 is massively different but we can get you jump started in just two days.\u200b\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Build 2017",
+  "url": "http://build.microsoft.com/",
+  "thumbnail": {
+    "description": "Build 2017",
+    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/build-2017.jpg"
+  },
+  "startDateTime": "2017-05-09T14:00:00Z",
+  "endDateTime": "2017-05-11T14:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Seattle, Washington",
+  "enabled": true,
+  "category": "Other",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

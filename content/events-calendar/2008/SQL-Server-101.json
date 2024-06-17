@@ -1,0 +1,23 @@
+{
+  "title": "SQL Server 101",
+  "url": "https://www.ssw.com.au/images/newsletter-uploads/2008/_2008_07__Why%20is%20it%20great%20to%20work%20in%20SSW%20today_.htm",
+  "thumbnail": {
+    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
+    "url": "/images/events/sydney-ug-thumb.jpg"
+  },
+  "presenter": "Cameron Townshend",
+  "startDateTime": "2008-07-16T07:45:00Z",
+  "endDateTime": "2008-07-16T11:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass68F158CF325948959A0BF6E3C81951B4\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;Topics to cover are Intro to SQL Server for developers, Performance bottlenecks, 10 Dos and Don'ts, and Real world examples from the trenches.</span><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass007FDEF0CA0140E096FF93A228A2070A\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;Topics to cover are Intro to SQL Server for developers, Performance bottlenecks, 10 Dos and Don'ts, and Real world examples from the trenches.</span><br></p></div>",
+  "description": "\u200b\n\nDescription:\n\n\u00a0Topics to cover are Intro to SQL Server for developers, Performance bottlenecks, 10 Dos and Don'ts, and Real world examples from the trenches.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30
+}

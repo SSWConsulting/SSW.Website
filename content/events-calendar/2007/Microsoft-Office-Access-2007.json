@@ -1,0 +1,24 @@
+{
+  "title": "Microsoft Office Access 2007",
+  "url": "https://www.ssw.com.au/images/newsletter-uploads/2007/_2007_01__Rules%20to%20Better%20Windows%20Vista%20Deployment_.htm",
+  "thumbnail": {
+    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
+    "url": "/images/events/sydney-ug-thumb.jpg"
+  },
+  "presenter": "Adam Cogan",
+  "presenterProfileUrl": "https://adamcogan.com/",
+  "startDateTime": "2007-01-17T06:45:00Z",
+  "endDateTime": "2007-01-17T10:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassFF15F98D016A464CA376F300FBD7E43E\"><p style=\"box-sizing&#58;border-box;word-break&#58;break-word;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\"><strong style=\"box-sizing&#58;border-box;\">Description&#58;</strong>&#160;Adam Cogan will cover Microsoft Office Access 2007 new and improved features which can help you&#58;</p><ul style=\"box-sizing&#58;border-box;margin-top&#58;0px;margin-bottom&#58;10px;padding-left&#58;25px;margin-left&#58;0px;list-style-type&#58;square;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\"><li style=\"box-sizing&#58;border-box;padding&#58;5px 0px;\">Provide the ability to get you started quickly with prebuilt applications that can be modified or adapted to changing business needs</li><li style=\"box-sizing&#58;border-box;padding&#58;5px 0px;\">Track and report information with ease</li><li style=\"box-sizing&#58;border-box;padding&#58;5px 0px;\">Integrate Access 2007 with SharePoint</li><li style=\"box-sizing&#58;border-box;padding&#58;5px 0px;\">Collect information through forms in email or import data from external applications<br></li></ul><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass9295B368786445C89E871727705B6DE7\"><p style=\"box-sizing&#58;border-box;word-break&#58;break-word;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\"><strong style=\"box-sizing&#58;border-box;\">Description&#58;</strong>&#160;Adam Cogan will cover Microsoft Office Access 2007 new and improved features which can help you&#58;</p><ul style=\"box-sizing&#58;border-box;margin-top&#58;0px;margin-bottom&#58;10px;padding-left&#58;25px;margin-left&#58;0px;list-style-type&#58;square;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\"><li style=\"box-sizing&#58;border-box;padding&#58;5px 0px;\">Provide the ability to get you started quickly with prebuilt applications that can be modified or adapted to changing business needs</li><li style=\"box-sizing&#58;border-box;padding&#58;5px 0px;\">Track and report information with ease</li><li style=\"box-sizing&#58;border-box;padding&#58;5px 0px;\">Integrate Access 2007 with SharePoint</li><li style=\"box-sizing&#58;border-box;padding&#58;5px 0px;\">Collect information through forms in email or import data from external applications<br></li></ul><p><br></p></div>",
+  "description": "Description:\n\n\u00a0Adam Cogan will cover Microsoft Office Access 2007 new and improved features which can help you:\n\nProvide the ability to get you started quickly with prebuilt applications that can be modified or adapted to changing business needs\n\nTrack and report information with ease\n\nIntegrate Access 2007 with SharePoint\n\nCollect information through forms in email or import data from external applications",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30
+}

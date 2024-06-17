@@ -1,0 +1,23 @@
+{
+  "title": "ASP.NET Core On Linux - How To Tame a Penguin",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2017-05-16T14:00:00Z",
+  "endDateTime": "2017-05-16T16:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": ".NET Core",
+  "categoryAnchor": "OverviewOther",
+  "sessionTitle": "ASP.NET Core On Linux - How To Tame a Penguin",
+  "sessionTitleAnchor": "HowToTameAPenguin",
+  "eventShortDescription": "<div class=\"ExternalClass6499A035AD3E4A4A82455B4136080410\"><p>\u200b&quot;Microsoft Heart Linux&quot; is a big statement backed up by exciting software releases that give the .NET developer more choices than ever before. But how to get started? Brendan is a former Linux fundamentalist turned .NET Developer, and this talk will teach some essential Linux command-line basics before going on to deploy a .NET web application.<br><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassE2D471A3E39D44A0A865E5435BFD3196\"><p>\u200b&quot;Microsoft Heart Linux&quot; is a big statement backed up by exciting software releases that give the .NET developer more choices than ever before. But how to get started? Brendan is a former Linux fundamentalist turned .NET Developer, and this talk will teach some essential Linux command-line basics before going on to deploy a .NET web application.<br></p></div>",
+  "description": "\u200b\"Microsoft Heart Linux\" is a big statement backed up by exciting software releases that give the .NET developer more choices than ever before. But how to get started? Brendan is a former Linux fundamentalist turned .NET Developer, and this talk will teach some essential Linux command-line basics before going on to deploy a .NET web application.",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

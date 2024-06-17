@@ -1,0 +1,25 @@
+{
+  "title": ".NET Superpowers - Brisbane",
+  "url": "https://www.ssw.com.au/events/net-superpowers-tour",
+  "thumbnail": {
+    "description": ".NET Superpowers - Sydney + Online",
+    "url": "https://ssw.com.au/images/Newsletters/SuperPower-Icon-DotNet.jpg"
+  },
+  "presenter": "William Liebenberg & Daniel Mackay",
+  "presenterProfileUrl": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-DotNet.jpg",
+  "startDateTime": "2024-07-07T23:00:00Z",
+  "endDateTime": "2024-07-08T07:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": ".NET Core",
+  "eventShortDescription": "<div class=\"ExternalClassE456B2A7F2D441ED926AF4A36636EEAB\"><p>\u200b\u200b\u200b\u200b.NET 8&#160;is the new standard in .NET.<br><br>This is the only .NET going forward, and our experts can get you ready to use the most powerful version ever! This fast-paced one-day course covers many topics, such as web development with ASP.NET Core, data access with EF Core, automated testing, and many other enterprise topics.<br><br>You will finish the day with a solid understanding of why you should be using .NET 8&#160;and the enterprise capabilities using the new platform.<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass0D7113FA1E9D41639AC1D51429566E2E\"><p>\u200b\u200b\u200b\u200b.NET 8&#160;is the new standard in .NET.<br><br>This is the only .NET going forward, and our experts can get you ready to use the most powerful version ever! This fast-paced one-day course covers many topics, such as web development with ASP.NET Core, data access with EF Core, automated testing, and many other enterprise topics.<br><br>You will finish the day with a solid understanding of why you should be using .NET 8&#160;and the enterprise capabilities using the new platform.<br></p></div>",
+  "description": "\u200b\u200b\u200b\u200b.NET 8\u00a0is the new standard in .NET.\n\nThis is the only .NET going forward, and our experts can get you ready to use the most powerful version ever! This fast-paced one-day course covers many topics, such as web development with ASP.NET Core, data access with EF Core, automated testing, and many other enterprise topics.\n\nYou will finish the day with a solid understanding of why you should be using .NET 8\u00a0and the enterprise capabilities using the new platform.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": false
+}

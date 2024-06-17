@@ -1,0 +1,22 @@
+{
+  "title": "Canberra .NET User Group: Real-life SpendOps with Cosmos DB - presented by William Liebenberg",
+  "url": "https://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
+  "thumbnail": {
+    "description": "Canberra .NET User Group: Real-life SpendOps with Cosmos DB - presented by William Liebenberg",
+    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg"
+  },
+  "presenter": "William Liebenberg",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/WilliamLiebenberg.aspx",
+  "startDateTime": "2019-06-17T08:00:00Z",
+  "endDateTime": "2019-06-17T10:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Canberra",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass0E6CC932949C4E27897FA26DA3526708\"><p><strong>June Canberra .NET User Group&#58; Real-life SpendOps with Cosmos DB - presented by William Liebenberg</strong></p><p>Today we measure test outcomes in terms of Success or Failure. With Cosmos DB we also need factor in the effect our code changes will have on the cost of our software in production.</p><p>In this talk you will learn the secrets to optimize your Cosmos DB performance and at the same time spend as little as possible. We will look how implement and collect cost measurements and integrate them with our DevOps pipeline.</p><p><strong>About the presenter&#58;</strong><br>William Liebenberg is a Solution Architect at SSW with almost 15 years of professional experience. He loves building enterprise-grade applications and sharing what he learns along the way. Currently he specializes in Azure, .NET Core, Angular, and Azure DevOps. William also presents the SSW Azure Superpowers Tour around Australia and hosts the Melbourne .NET User Group.<br><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass4DAAA7E17E87406799B3238B58D17AB7\"><p><strong>June Canberra .NET User Group&#58; Real-life SpendOps with Cosmos DB - presented by William Liebenberg</strong></p><p>Today we measure test outcomes in terms of Success or Failure. With Cosmos DB we also need factor in the effect our code changes will have on the cost of our software in production.</p><p>In this talk you will learn the secrets to optimize your Cosmos DB performance and at the same time spend as little as possible. We will look how implement and collect cost measurements and integrate them with our DevOps pipeline.</p><p><strong>About the presenter&#58;</strong><br>William Liebenberg is a Solution Architect at SSW with almost 15 years of professional experience. He loves building enterprise-grade applications and sharing what he learns along the way. Currently he specializes in Azure, .NET Core, Angular, and Azure DevOps. William also presents the SSW Azure Superpowers Tour around Australia and hosts the Melbourne .NET User Group.\u200b<br></p></div>",
+  "description": "June Canberra .NET User Group: Real-life SpendOps with Cosmos DB - presented by William Liebenberg\n\nToday we measure test outcomes in terms of Success or Failure. With Cosmos DB we also need factor in the effect our code changes will have on the cost of our software in production.\n\nIn this talk you will learn the secrets to optimize your Cosmos DB performance and at the same time spend as little as possible. We will look how implement and collect cost measurements and integrate them with our DevOps pipeline.\n\nAbout the presenter:\n\nWilliam Liebenberg is a Solution Architect at SSW with almost 15 years of professional experience. He loves building enterprise-grade applications and sharing what he learns along the way. Currently he specializes in Azure, .NET Core, Angular, and Azure DevOps. William also presents the SSW Azure Superpowers Tour around Australia and hosts the Melbourne .NET User Group.",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

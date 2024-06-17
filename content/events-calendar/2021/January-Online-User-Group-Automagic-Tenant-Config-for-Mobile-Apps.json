@@ -1,0 +1,37 @@
+{
+  "title": "January Online User Group: Automagic Tenant Config for Mobile Apps",
+  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
+  "thumbnail": {
+    "description": "Online User Group",
+    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
+  },
+  "startDateTime": "2021-01-20T07:00:00Z",
+  "endDateTime": "2021-01-20T12:00:00Z",
+  "startShowBannerDateTime": "2021-01-19T13:00:00Z",
+  "endShowBannerDateTime": "2021-01-20T12:00:00Z",
+  "liveStreamUrl": {
+    "description": "SSW Live Feed",
+    "url": "https://www.ssw.com.au/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Online",
+  "enabled": true,
+  "category": "Mobile",
+  "eventShortDescription": "<div class=\"ExternalClassD207C418EB4B48738A80D1A371927D3D\"><div><strong>SSW User Groups January&#58; We're live streaming our&#160;User Groups for the foreseeable future - more talks for everyone!</strong><br></div><div><br></div><div>Join us ONLINE -----&gt; https&#58;//www.ssw.com.au/live<br></div><div><br></div><div><div style=\"box-sizing&#58;border-box;font-family&#58;&quot;segoe ui&quot;, system-ui, &quot;apple color emoji&quot;, &quot;segoe ui emoji&quot;, sans-serif;font-size&#58;14px;\"><strong>Automagic Tenant Config for Mobile Apps</strong></div></div><div><strong><br></strong></div><div><div style=\"box-sizing&#58;border-box;font-family&#58;&quot;segoe ui&quot;, system-ui, &quot;apple color emoji&quot;, &quot;segoe ui emoji&quot;, sans-serif;font-size&#58;14px;\">How do you get environment- or tenant-specific config into your users' hands? For consumer apps where everyone's configuration is the same, this isn't a problem. But for Enterprise apps with a unique configuration for each tenant or environment, your users need their config to get up and running.<br>\r\n\r\n<br>\r\n\r\nWhen deploying a web application to different environments or tenants, developers and sysadmins can configure those environments, either manually or with DevOps, and your users don't have to worry. With mobile or desktop apps, for managed devices we can pre-configure these using SOE or MDM tools, but deploying configuration to unmanaged devices is the real challenge.<br>\r\n\r\n<br>\r\n\r\nIn this talk, Matt looks at some different options for automating this for your users, to reduce human error and improve the UX.<br></div></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass8703E0DFB4F44A6A8F071C04147CBEB8\"><p><strong></strong></p><div><strong>SSW User Groups January&#58; We're live streaming our&#160;User Groups for the foreseeable future - more talks for everyone!</strong><br></div><div><br></div><div>Join us ONLINE -----&gt; https&#58;//www.ssw.com.au/live<br></div><div><br></div><div></div><div><div style=\"box-sizing&#58;border-box;font-family&#58;&quot;segoe ui&quot;, system-ui, &quot;apple color emoji&quot;, &quot;segoe ui emoji&quot;, sans-serif;font-size&#58;14px;\"><strong>Automagic Tenant Config for Mobile Apps</strong><br></div><strong><br></strong></div><div><div style=\"box-sizing&#58;border-box;font-family&#58;&quot;segoe ui&quot;, system-ui, &quot;apple color emoji&quot;, &quot;segoe ui emoji&quot;, sans-serif;font-size&#58;14px;\">How do you get environment- or tenant-specific config into your users' hands? For consumer apps where everyone's configuration is the same, this isn't a problem. But for Enterprise apps with a unique configuration for each tenant or environment, your users need their config to get up and running.<br><br>When deploying a web application to different environments or tenants, developers and sysadmins can configure those environments, either manually or with DevOps, and your users don't have to worry. With mobile or desktop apps, for managed devices we can pre-configure these using SOE or MDM tools, but deploying configuration to unmanaged devices is the real challenge.<br><br>In this talk, Matt looks at some different options for automating this for your users, to reduce human error and improve the UX.\u200b<br></div></div><p><br></p></div>",
+  "description": "SSW User Groups January: We're live streaming our\u00a0User Groups for the foreseeable future - more talks for everyone!\n\nJoin us ONLINE -----> https://www.ssw.com.au/live\n\nAutomagic Tenant Config for Mobile Apps\n\nHow do you get environment- or tenant-specific config into your users' hands? For consumer apps where everyone's configuration is the same, this isn't a problem. But for Enterprise apps with a unique configuration for each tenant or environment, your users need their config to get up and running.\n\n\n\n\n\r\n\r\nWhen deploying a web application to different environments or tenants, developers and sysadmins can configure those environments, either manually or with DevOps, and your users don't have to worry. With mobile or desktop apps, for managed devices we can pre-configure these using SOE or MDM tools, but deploying configuration to unmanaged devices is the real challenge.\n\n\n\n\n\r\n\r\nIn this talk, Matt looks at some different options for automating this for your users, to reduce human error and improve the UX.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "uFByLIUYy2Y",
+  "externalPresenters": [
+    {
+      "LookupId": 7,
+      "LookupValue": "Matt Goldman"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/matt-goldman.mdx"
+    }
+  ]
+}

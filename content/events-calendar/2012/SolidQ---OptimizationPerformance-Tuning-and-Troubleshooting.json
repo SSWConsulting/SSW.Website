@@ -1,0 +1,19 @@
+{
+  "title": "SolidQ - Optimization/Performance Tuning and Troubleshooting",
+  "url": "http://www.ssw.com.au/ssw/Events/training/Optimization-Performance.aspx",
+  "thumbnail": {
+    "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg"
+  },
+  "presenter": "Francisco A Gonz\u00e1lez D\u00edaz",
+  "startDateTime": "2012-09-16T14:00:00Z",
+  "endDateTime": "2012-09-20T14:00:00Z",
+  "calendarType": "SolidQ Courses",
+  "enabled": true,
+  "category": "SQL Server",
+  "eventShortDescription": "<div class=\"ExternalClass8B694CDB8BA0435C961031B486369367\"><p>\u200bThis five day intensive course is designed to give attendees a broad look at the performance tuning concepts and methods found in SQL Server 2005 and SQL Server 2008. This course is designed to prepare the SQL Server DBA for a transition to SQL Server 2005 or SQL Server 2008 while discussing best practices for a variety of performance topics that SQL Server DBAs will face in their day-to-day job functions.\u200b\u200b</p></div>",
+  "eventDescription": "<div class=\"ExternalClass8B694CDB8BA0435C961031B486369367\"><p>\u200bThis five day intensive course is designed to give attendees a broad look at the performance tuning concepts and methods found in SQL Server 2005 and SQL Server 2008. This course is designed to prepare the SQL Server DBA for a transition to SQL Server 2005 or SQL Server 2008 while discussing best practices for a variety of performance topics that SQL Server DBAs will face in their day-to-day job functions.\u200b</p></div>",
+  "description": "\u200bThis five day intensive course is designed to give attendees a broad look at the performance tuning concepts and methods found in SQL Server 2005 and SQL Server 2008. This course is designed to prepare the SQL Server DBA for a transition to SQL Server 2005 or SQL Server 2008 while discussing best practices for a variety of performance topics that SQL Server DBAs will face in their day-to-day job functions.\u200b\u200b",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

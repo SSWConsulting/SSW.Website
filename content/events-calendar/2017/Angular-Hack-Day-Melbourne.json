@@ -1,0 +1,22 @@
+{
+  "title": "Angular Hack Day: Melbourne",
+  "url": "http://angularhackday.com/melbourne",
+  "thumbnail": {
+    "description": "Angular Hack Day: Melbourne",
+    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/AHD-thumb.jpg"
+  },
+  "presenter": "Adam Stephensen",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/AdamS.aspx",
+  "startDateTime": "2017-03-24T21:30:00Z",
+  "endDateTime": "2017-03-25T06:00:00Z",
+  "calendarType": "Hack Days",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "Angular",
+  "eventShortDescription": "<div class=\"ExternalClassAA06385E29BF4AB99CD240871CD98EB7\"><p>\u200bAngular&#160;Hack Days are community run events for Angular Developers or people who want to learn AngularJS / Angular 2.0 for free.</p><div>There will be something for everyone. Experienced Angular&#160;developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.\u200b\u200b<br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassE9E7A4AC41F047D59CF3AF7394C51D4B\"><p>\u200bAngular&#160;Hack Days are community run events for Angular Developers or people who want to learn AngularJS / Angular 2.0 for free.</p><div>There will be something for everyone. Experienced Angular&#160;developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.\u200b\u200b<br></div><p><br></p></div>",
+  "description": "\u200bAngular\u00a0Hack Days are community run events for Angular Developers or people who want to learn AngularJS / Angular 2.0 for free.\n\nThere will be something for everyone. Experienced Angular\u00a0developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.\u200b\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

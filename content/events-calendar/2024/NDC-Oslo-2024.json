@@ -1,0 +1,34 @@
+{
+  "title": "NDC Oslo 2024",
+  "url": "https://ndcoslo.com/",
+  "thumbnail": {
+    "description": "NDC Oslo 2024",
+    "url": "/images/Newsletters/event-thumbnail-NDC-2024.png"
+  },
+  "presenter": "Adam Cogan",
+  "presenterProfileUrl": "http://ssw.com.au/people/adam-cogan",
+  "startDateTime": "2024-06-09T14:00:00Z",
+  "endDateTime": "2024-06-13T14:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Norway",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassEB82E417AD784BE3B96A976710D832D4\"><a href=\"https&#58;//ndcoslo.com/\">\u200bNDC Oslo 2024</a>&#160;will be an in-person event, held 10-14&#160;June&#160;2024&#160;at the Oslo&#160;Spektrum. It's a five-day event comprised of 2-days deep-dive workshops, followed by 3 conference days with multiple simultaneous tracks.<br><br><div><div>SSW &amp; Tina are proud sponsors. SSW Chief Architect + Microsoft Regional Director <a href=\"https&#58;//ndcoslo.com/speakers/adam-cogan\" target=\"_blank\">Adam Cogan</a>&#160;is one of the many&#160;speakers.<br><br></div>Meet us there! &#128578;<br></div><div><br>Note&#58; SSW does not host this conference.<br></div></div>",
+  "description": "\u200bNDC Oslo 2024\n\n\u00a0will be an in-person event, held 10-14\u00a0June\u00a02024\u00a0at the Oslo\u00a0Spektrum. It's a five-day event comprised of 2-days deep-dive workshops, followed by 3 conference days with multiple simultaneous tracks.\n\nSSW & Tina are proud sponsors. SSW Chief Architect + Microsoft Regional Director \n\nAdam Cogan\n\n\u00a0is one of the many\u00a0speakers.\n\nMeet us there! \ud83d\ude42\n\nNote: SSW does not host this conference.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [
+    {
+      "LookupId": 32,
+      "LookupValue": "Adam Cogan"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
+    }
+  ],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true
+}

@@ -1,0 +1,19 @@
+{
+  "title": "FireBootCamp Mini Enterprise Xamarin (2 Day Essentials) - Sydney",
+  "url": "http://firebootcamp.com/schedule/",
+  "thumbnail": {
+    "description": "FireBootCamp Mini Enterprise Xamarin (2 Day Essentials) - Sydney",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/firebootcamp_icon.png"
+  },
+  "startDateTime": "2015-01-28T22:00:00Z",
+  "endDateTime": "2015-01-30T07:00:00Z",
+  "calendarType": "FireBootCamp",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass21954550A1654324A62A2F2EB52D2050\"><div>\u200bFireBootCamp Mini&#58; Enterprise Xamarin Cross-platform Development (2 Day Essentials)</div><div><br></div><div>Everyone has a mobile device. If you\u2019re writing applications for the enterprise and want to supply native applications so that your users get the best experience, as well as a web application to ensure you get the best possible reach, this is the course for you.</div><div><br></div><div>In this intense 2 day course we will cover the essentials of enterprise development, and the best way to build native cross-platform applications that get you maximum code re-use. At FireBootCamp Mini&#58; Enterprise Xamarin Cross-platform Development (2 Day Essentials) we\u2019ll jam the greatest hits of our 4 week boot camp into just 2 days&#58; dependency injection, unit testing, loosely coupled cross-platform architecture, design patterns like Repository and Unit of Work, iOS and Android Fundamentals, Azure Mobile Services and Mobile Best Practices.</div><div>\u200b</div></div>",
+  "description": "\u200bFireBootCamp Mini: Enterprise Xamarin Cross-platform Development (2 Day Essentials)\n\nEveryone has a mobile device. If you\u2019re writing applications for the enterprise and want to supply native applications so that your users get the best experience, as well as a web application to ensure you get the best possible reach, this is the course for you.\n\nIn this intense 2 day course we will cover the essentials of enterprise development, and the best way to build native cross-platform applications that get you maximum code re-use. At FireBootCamp Mini: Enterprise Xamarin Cross-platform Development (2 Day Essentials) we\u2019ll jam the greatest hits of our 4 week boot camp into just 2 days: dependency injection, unit testing, loosely coupled cross-platform architecture, design patterns like Repository and Unit of Work, iOS and Android Fundamentals, Azure Mobile Services and Mobile Best Practices.\n\n\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

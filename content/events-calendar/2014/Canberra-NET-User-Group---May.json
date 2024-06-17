@@ -1,0 +1,20 @@
+{
+  "title": "Canberra .NET User Group - May",
+  "url": "http://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
+  "thumbnail": {
+    "description": "Canberra .NET User Group - May ",
+    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg"
+  },
+  "presenter": "Chris Birmele",
+  "startDateTime": "2014-05-19T08:00:00Z",
+  "endDateTime": "2014-05-19T10:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Canberra",
+  "enabled": true,
+  "category": "Other",
+  "eventDescription": "<div class=\"ExternalClassB851BF7CA1D848ADB4521B07476E7EEE\"><strong>\u200b&quot;Activating your MSDN Azure Benefits&quot; - Chris Birmele</strong><br><br>Bring all your cloud questions to this session! Did you know that MSDN subscribers have Azure credits that they can use each month to deploy virtual machines, websites and cloud services? In this interactive session, Chris Birmele will give an overview of the services available with Microsoft Azure and a walkthrough of how to activate your MSDN benefits. You\u2019ll see demos on how fast and easy it is to create your own development environments in the cloud, including&#58; web sites, VMs, automating with PowerShell, connecting to on-premises services with Service Bus and load balancing cloud services.<br><br><strong>About the presenter&#58;</strong><br>Chris Birmele is a Product Technology Specialist for Microsoft Australia, focusing on Visual Studio, TFS, Release &amp; Test Manager and increasingly all things Azure. He has 20+ years\u2019 experience with Microsoft, IBM, Rational Software, Compuware in a variety of technical roles. Originally from Zurich, Switzerland he enjoys travelling, photography and motorcycles.<br><br></div>",
+  "description": "\u200b\"Activating your MSDN Azure Benefits\" - Chris Birmele\n\nBring all your cloud questions to this session! Did you know that MSDN subscribers have Azure credits that they can use each month to deploy virtual machines, websites and cloud services? In this interactive session, Chris Birmele will give an overview of the services available with Microsoft Azure and a walkthrough of how to activate your MSDN benefits. You\u2019ll see demos on how fast and easy it is to create your own development environments in the cloud, including: web sites, VMs, automating with PowerShell, connecting to on-premises services with Service Bus and load balancing cloud services.\n\nAbout the presenter:\n\nChris Birmele is a Product Technology Specialist for Microsoft Australia, focusing on Visual Studio, TFS, Release & Test Manager and increasingly all things Azure. He has 20+ years\u2019 experience with Microsoft, IBM, Rational Software, Compuware in a variety of technical roles. Originally from Zurich, Switzerland he enjoys travelling, photography and motorcycles.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

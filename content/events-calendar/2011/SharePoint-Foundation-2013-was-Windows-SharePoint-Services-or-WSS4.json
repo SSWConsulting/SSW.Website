@@ -1,0 +1,21 @@
+{
+  "title": "SharePoint Foundation 2013 (was Windows SharePoint Services or WSS4)",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power Sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "SharePoint",
+  "categoryAnchor": "OverviewSharePoint",
+  "sessionTitle": "SharePoint Foundation 2013 (was Windows SharePoint Services or WSS4)",
+  "sessionTitleAnchor": "SharePoint Foundation 2013 (was Windows SharePoint",
+  "eventShortDescription": "<div class=\"ExternalClass7A0E8B01A5564CC19765D1C0FB7517E6\"><div><span class=\"ms-rteThemeForeColor-9-0\">*Discounted*&#160;</span></div><div><br></div><div>In this session, SSW will provide an introduction to SharePoint Foundation 2013 with the aim of evaluating its effectiveness for Enterprise Content Management (ECM).<br><br>We will also look at document and record management scenarios and taking advantage of the rich new Workflow and Content Management System.</div></div>",
+  "eventDescription": "<div class=\"ExternalClass7A0E8B01A5564CC19765D1C0FB7517E6\"><div><span class=\"ms-rteThemeForeColor-9-0\">*Discounted*&#160;</span></div><div><br></div><div>In this session, SSW will provide an introduction to SharePoint Foundation 2013 with the aim of evaluating its effectiveness for Enterprise Content Management (ECM).<br><br>We will also look at document and record management scenarios and taking advantage of the rich new Workflow and Content Management System.\u200b</div></div>",
+  "description": "*Discounted*\u00a0\n\nIn this session, SSW will provide an introduction to SharePoint Foundation 2013 with the aim of evaluating its effectiveness for Enterprise Content Management (ECM).\n\nWe will also look at document and record management scenarios and taking advantage of the rich new Workflow and Content Management System.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

@@ -1,0 +1,29 @@
+{
+  "title": "Sydney .NET user group: November",
+  "url": "http://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
+  "thumbnail": {
+    "description": "Sydney .NET user group: November",
+    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
+  },
+  "presenter": "Danijel Malik",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Danijel-Malik.aspx",
+  "startDateTime": "2015-11-18T07:30:00Z",
+  "endDateTime": "2015-11-18T09:30:00Z",
+  "startShowBannerDateTime": "2015-11-17T13:00:00Z",
+  "endShowBannerDateTime": "2015-11-18T12:00:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET user group: November",
+    "url": "https://www.ssw.com.au/ssw/NETUG/Live.aspx"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "\"From Devs\u2019 Oops to DevOps\" - Danijel Malik",
+  "eventShortDescription": "<div class=\"ExternalClass241714E06A9C4A3EA8FBEFD0A20F961C\"><p><strong>&quot;From Devs\u2019 Oops to DevOps&quot; - Danijel Malik\u200b</strong></p><p>It's probably safe to say that most development teams are Agile. But regardless of which side you are on, nothing saves you if you start off on the wrong foot. There are a lot of pitfalls before your software goes into production, and you will learn about the most common mistakes that are taken in a hurry to get a product out. Of course you won\u2019t miss out on what best practices you should follow to ensure your DevOps cycle is running like a well-oiled machine. You will also learn how great tools like TFS (for orchestration), Octopus Deploy or Release Management (for deployment), SonarQube (for managing technical debt) and Docker (for app isolation) help you in that manner.&#160;</p></div>",
+  "eventDescription": "<div class=\"ExternalClass28D01118E7AB463FAFD4ABD08E652C7D\"><p><strong>&quot;From Devs\u2019 Oops to DevOps&quot; - Danijel Malik\u200b</strong></p><p>It's probably safe to say that most development teams are Agile. But regardless of which side you are on, nothing saves you if you start off on the wrong foot. There are a lot of pitfalls before your software goes into production, and you will learn about the most common mistakes that are taken in a hurry to get a product out. Of course you won\u2019t miss out on what best practices you should follow to ensure your DevOps cycle is running like a well-oiled machine. You will also learn how great tools like TFS (for orchestration), Octopus Deploy or Release Management (for deployment), SonarQube (for managing technical debt) and Docker (for app isolation) help you in that manner.&#160;\u200b</p></div>",
+  "description": "\"From Devs\u2019 Oops to DevOps\" - Danijel Malik\u200b\n\nIt's probably safe to say that most development teams are Agile. But regardless of which side you are on, nothing saves you if you start off on the wrong foot. There are a lot of pitfalls before your software goes into production, and you will learn about the most common mistakes that are taken in a hurry to get a product out. Of course you won\u2019t miss out on what best practices you should follow to ensure your DevOps cycle is running like a well-oiled machine. You will also learn how great tools like TFS (for orchestration), Octopus Deploy or Release Management (for deployment), SonarQube (for managing technical debt) and Docker (for app isolation) help you in that manner.\u00a0",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

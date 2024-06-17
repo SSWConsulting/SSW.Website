@@ -1,0 +1,21 @@
+{
+  "title": "Visual Studio Tips and Tricks",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power Sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewVSNet",
+  "sessionTitle": "Visual Studio Tips and Tricks",
+  "sessionTitleAnchor": "VSNETTipsTricks",
+  "eventShortDescription": "<div class=\"ExternalClassAE492EC2C0984E6DAC4A924BF5F9D736\"><div>\u200bA fun fast-paced session about getting the most from the Visual Studio IDE. The Visual Studio development environment is full of new features to make developers more productive. Learn the favorite tips and tricks that our own developers use in Visual Studio. See examples of how third-party products can extend Visual Studio .NET. Learn how to take advantage of the free Web hosting feature. This session is 99.9% demo.</div></div>",
+  "eventDescription": "<div class=\"ExternalClassAE492EC2C0984E6DAC4A924BF5F9D736\"><div>\u200bA fun fast-paced session about getting the most from the Visual Studio IDE. The Visual Studio development environment is full of new features to make developers more productive. Learn the favorite tips and tricks that our own developers use in Visual Studio. See examples of how third-party products can extend Visual Studio .NET. Learn how to take advantage of the free Web hosting feature. This session is 99.9% demo.</div></div>",
+  "description": "\u200bA fun fast-paced session about getting the most from the Visual Studio IDE. The Visual Studio development environment is full of new features to make developers more productive. Learn the favorite tips and tricks that our own developers use in Visual Studio. See examples of how third-party products can extend Visual Studio .NET. Learn how to take advantage of the free Web hosting feature. This session is 99.9% demo.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

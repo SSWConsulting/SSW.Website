@@ -1,0 +1,39 @@
+{
+  "title": "Cloudy with a Chance of Mobile: .NET Everywhere with MAUI",
+  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
+  "thumbnail": {
+    "description": "Cloudy with a Chance of Mobile: .NET Everywhere with MAUI",
+    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
+  },
+  "presenter": "Matt Goldman",
+  "presenterProfileUrl": "https://www.ssw.com.au/people/matt-goldman",
+  "startDateTime": "2021-07-21T08:00:00Z",
+  "endDateTime": "2021-07-21T10:00:00Z",
+  "startShowBannerDateTime": "2021-07-20T14:00:00Z",
+  "endShowBannerDateTime": "2021-07-21T12:00:00Z",
+  "liveStreamUrl": {
+    "description": "SSW Live Feed",
+    "url": "https://www.ssw.com.au/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Online",
+  "enabled": true,
+  "category": "Mobile",
+  "eventShortDescription": "<div class=\"ExternalClassB7D57963852F4075AF6E596D15AEE447\"><div><span style=\"font-size&#58;24px;\"></span></div></div><div><span style=\"font-size&#58;24px;\"><strong>\u200bJoin us ONLINE&#160;on&#160;SSW TV \u2935</strong><br></span></div><div><a href=\"https&#58;//www.ssw.com.au/ssw/live/\" style=\"text-decoration-line&#58;underline;\"><span style=\"font-size&#58;17.3333px;\"><span style=\"color&#58;#ff0000;\">https&#58;//www.ssw.com.au/ssw/live/</span>\u200b</span></a><br style=\"font-size&#58;17.3333px;\"></div><div><br></div><a href=\"https&#58;//www.eventbrite.com.au/e/online-ug-cloudy-with-a-chance-of-mobile-net-everywhere-with-maui-tickets-162505479263?utm-campaign=social&amp;utm-content=attendeeshare&amp;utm-medium=discovery&amp;utm-term=listing&amp;utm-source=cp&amp;aff=escb\"><span style=\"font-size&#58;24px;\"><span style=\"color&#58;#ff0000;text-decoration-line&#58;underline;\">Register\u200b</span></span></a><div><div><strong style=\"font-size&#58;24px;\"><br></strong></div><div><strong style=\"font-size&#58;24px;\">Cloudy with a Chance of Mobile&#58; .NET Everywhere with MAUI with Matt Goldman</strong><br></div><div><br></div><div><strong></strong><p>When Micros\u200boft first launched .NET, the vision was to offer a viable alternative to Java and the JVM - a runtime and associated language(s) that could run anywhere. With MAUI, that original dream is becoming a reality.</p><p>Whether you're building for cloud, mobile, browser, desktop, IoT devices, servers, embedded systems...the list goes on and on - you can write code in .NET and it will run anywhere. With a dash of .NET, a pinch of Blazor, and a sprinkling of MAUI, you no longer&#160;need to React to any funny angles - you can have your .NET cake and eat it too.<br></p><p>In this talk, Matt welcomes you into his full stack .NET dream, and shows you how you can build anything&#160;in .NET, and run it everywhere.\u200b<br></p></div></div>",
+  "eventDescription": "<div class=\"ExternalClass8095F14C097344C2ADB65C6A9B294D6B\"><div><br></div></div><div><span style=\"font-size&#58;24px;\"><strong>\u200bJoin us ONLINE&#160;on&#160;SSW TV \u2935</strong><br></span></div><div><a href=\"https&#58;//www.ssw.com.au/ssw/live/\" style=\"text-decoration-line&#58;underline;\"><span style=\"font-size&#58;17.3333px;\"><span style=\"color&#58;#ff0000;\">https&#58;//www.ssw.com.au/ssw/live/</span>\u200b</span></a><br style=\"font-size&#58;17.3333px;\"></div><div><br></div><a href=\"https&#58;//www.eventbrite.com.au/e/online-ug-cloudy-with-a-chance-of-mobile-net-everywhere-with-maui-tickets-162505479263?utm-campaign=social&amp;utm-content=attendeeshare&amp;utm-medium=discovery&amp;utm-term=listing&amp;utm-source=cp&amp;aff=escb\"><span style=\"font-size&#58;24px;\"><span style=\"color&#58;#ff0000;text-decoration-line&#58;underline;\">Register\u200b</span></span></a><div><div><strong style=\"font-size&#58;24px;\"><br></strong></div><div><strong style=\"font-size&#58;24px;\">Cloudy with a Chance of Mobile&#58; .NET Everywhere with MAUI with Matt Goldman</strong><br></div><div><br></div><div><strong></strong><p>When Micros\u200boft first launched .NET, the vision was to offer a viable alternative to Java and the JVM - a runtime and associated language(s) that could run anywhere. With MAUI, that original dream is becoming a reality.</p><p>Whether you're building for cloud, mobile, browser, desktop, IoT devices, servers, embedded systems...the list goes on and on - you can write code in .NET and it will run anywhere. With a dash of .NET, a pinch of Blazor, and a sprinkling of MAUI, you no longer&#160;need to React to any funny angles - you can have your .NET cake and eat it too.<br></p><p>In this talk, Matt welcomes you into his full stack .NET dream, and shows you how you can build anything&#160;in .NET, and run it everywhere.<br></p></div></div>",
+  "description": "\u200bJoin us ONLINE\u00a0on\u00a0SSW TV \u2935\n\nhttps://www.ssw.com.au/ssw/live/\n\n\u200b\n\nRegister\u200b\n\nCloudy with a Chance of Mobile: .NET Everywhere with MAUI with Matt Goldman\n\nWhen Micros\u200boft first launched .NET, the vision was to offer a viable alternative to Java and the JVM - a runtime and associated language(s) that could run anywhere. With MAUI, that original dream is becoming a reality.\n\nWhether you're building for cloud, mobile, browser, desktop, IoT devices, servers, embedded systems...the list goes on and on - you can write code in .NET and it will run anywhere. With a dash of .NET, a pinch of Blazor, and a sprinkling of MAUI, you no longer\u00a0need to React to any funny angles - you can have your .NET cake and eat it too.\n\nIn this talk, Matt welcomes you into his full stack .NET dream, and shows you how you can build anything\u00a0in .NET, and run it everywhere.\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "ZEq8U3W7jYs",
+  "externalPresenters": [
+    {
+      "LookupId": 7,
+      "LookupValue": "Matt Goldman"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/matt-goldman.mdx"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "title": "Sydney .NET User Group - February",
+  "url": "http://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
+  "thumbnail": {
+    "description": "Sydney .NET User Group - February ",
+    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
+  },
+  "presenter": "Gerard Beckerleg",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Gerard.aspx",
+  "startDateTime": "2014-02-19T07:00:00Z",
+  "endDateTime": "2014-02-19T09:00:00Z",
+  "startShowBannerDateTime": "2014-02-18T13:00:00Z",
+  "endShowBannerDateTime": "2014-02-19T13:00:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney User Group Live Stream ",
+    "url": "http://www.ssw.com.au/ssw/NETUG/Live.aspx"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "No Estimates - Stop lying to your yourself and your customers, and stop estimating",
+  "eventShortDescription": "<div class=\"ExternalClassA1DD6780EB544157B13A8E996CAA63A0\"><div><strong>No Estimates - Stop lying to your yourself and your customers, and stop estimating</strong><br></div><div><br></div>Gerard Beckerleg will take&#160;a dive&#160;into the depths of this controversial topic and extract the most interesting ideas and raise some very difficult questions about the big white elephant in the room that is Software Estimation.<br><br></div>",
+  "eventDescription": "<div class=\"ExternalClass68AC4E89EA67401989C5CAB849164A13\"><p><strong>No Estimates - Stop lying to your yourself and your customers, and stop estimating</strong><br></p><div><br></div>Gerard Beckerleg will take&#160;a dive&#160;into the depths of this controversial topic and extract the most interesting ideas and raise some very difficult questions about the big white elephant in the room that is Software Estimation.\u200b</div>",
+  "description": "No Estimates - Stop lying to your yourself and your customers, and stop estimating\n\nGerard Beckerleg will take\u00a0a dive\u00a0into the depths of this controversial topic and extract the most interesting ideas and raise some very difficult questions about the big white elephant in the room that is Software Estimation.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

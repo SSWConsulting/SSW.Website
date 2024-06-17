@@ -1,0 +1,22 @@
+{
+  "title": "Brisbane Full Stack User Group: What I've learned from 20 years of programming in C# with Joe Albahari",
+  "url": "https://www.ssw.com.au/ssw/NETUG/Brisbane.aspx",
+  "thumbnail": {
+    "description": "Brisbane Full Stack User Group",
+    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-brisbaneUG.jpg"
+  },
+  "presenter": "Joe Albahari",
+  "presenterProfileUrl": "https://mvp.microsoft.com/en-us/PublicProfile/4021948?fullName=joe%20albahari",
+  "startDateTime": "2021-04-21T08:00:00Z",
+  "endDateTime": "2021-04-21T10:30:00Z",
+  "calendarType": "User Groups",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": ".NET Core",
+  "eventShortDescription": "<div class=\"ExternalClassC18D50C667DA4AB9A5BC1B61421A84B9\"><div><strong>\u200bJoin us at SSW Brisbane \u2013 There will be news, chats, pizza and a Live Stream from SSW TV -----&gt; www.ssw.com.au/live/</strong><br></div><div><br></div><div>Joe Albahari (Mr LinqPad) will be streaming in from Perth, come join us in person at SSW Brisbane, Level 1/471 Adelaide St Brisbane, from 6pm. You can talk to Joe directly after his presentation!</div><div><br></div><div><strong>What I've learned from 20 years of programming in C# with Joe Albahari</strong></div><div><br></div><div>In April 2001, I wrote and published my first C# program. Join me in discovering the most valuable principles that I've learned in the 20 years of C# programming that followed. We'll cover a range of topics, with plenty of samples and useful code that you can take away.</div><div><br></div><div><b>About the Speaker&#58;</b></div><div><br></div><div>Joe Albahari is a C# MVP, author of &quot;C# 9 in a Nutshell&quot;, and the creator of LINQPad. Joe has given more than 40 talks at conferences and user groups over the past 10 years.<br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass2277526930C943E0A665329F4A33DB47\"><div><strong>\u200b\u200bJoin us at SSW Brisbane \u2013 There will be news, chats, pizza and a Live Stream from SSW TV -----&gt; www.ssw.com.au/live/</strong><br></div><div><br></div><div>Joe Albahari (Mr LinqPad) will be streaming in from Perth, come join us in person at SSW Brisbane, Level 1/471 Adelaide St Brisbane, from 6pm. You can talk to Joe directly after his presentation!</div><div><br></div><div><strong>What I've learned from 20 years of programming in C# with Joe Albahari</strong></div><div><br></div><div>In April 2001, I wrote and published my first C# program. Join me in discovering the most valuable principles that I've learned in the 20 years of C# programming that followed. We'll cover a range of topics, with plenty of samples and useful code that you can take away.</div><div><br></div><div><strong>About the Speaker&#58;</strong></div><div><br></div><div>Joe Albahari is a C# MVP, author of &quot;C# 9 in a Nutshell&quot;, and the creator of LINQPad. Joe has given more than 40 talks at conferences and user groups over the past 10 years.<br></div><p><br></p></div>",
+  "description": "\u200bJoin us at SSW Brisbane \u2013 There will be news, chats, pizza and a Live Stream from SSW TV -----> www.ssw.com.au/live/\n\nJoe Albahari (Mr LinqPad) will be streaming in from Perth, come join us in person at SSW Brisbane, Level 1/471 Adelaide St Brisbane, from 6pm. You can talk to Joe directly after his presentation!\n\nWhat I've learned from 20 years of programming in C# with Joe Albahari\n\nIn April 2001, I wrote and published my first C# program. Join me in discovering the most valuable principles that I've learned in the 20 years of C# programming that followed. We'll cover a range of topics, with plenty of samples and useful code that you can take away.\n\nAbout the Speaker:\n\nJoe Albahari is a C# MVP, author of \"C# 9 in a Nutshell\", and the creator of LINQPad. Joe has given more than 40 talks at conferences and user groups over the past 10 years.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Data View web part Tips and Tricks - RapidFire",
+  "url": "https://www.ssw.com.au/ssw/NETUG/PastSessions.aspx",
+  "thumbnail": {
+    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
+    "url": "/images/events/sydney-ug-thumb.jpg"
+  },
+  "presenter": "Sergio Otoya",
+  "startDateTime": "2009-02-18T06:45:00Z",
+  "endDateTime": "2009-02-18T10:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassDF2AD7E96F4841C8A02590571D8F4272\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;When you create a Listview based on a list in SharePoint using SharePoint designer, you are limited to only that site. If you then want to create a template out of this site you will face some challenges because the list is bound to the List ID. Wouldn't it be great if the dataview was bound to the Listname instead? Learn how to in this session and also how to create a Remote list viewer. No code required, just configuration.</span><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass13897AE0473F48968EC3C078251BDA1A\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;When you create a Listview based on a list in SharePoint using SharePoint designer, you are limited to only that site. If you then want to create a template out of this site you will face some challenges because the list is bound to the List ID. Wouldn't it be great if the dataview was bound to the Listname instead? Learn how to in this session and also how to create a Remote list viewer. No code required, just configuration.</span><br></p></div>",
+  "description": "\u200b\n\nDescription:\n\n\u00a0When you create a Listview based on a list in SharePoint using SharePoint designer, you are limited to only that site. If you then want to create a template out of this site you will face some challenges because the list is bound to the List ID. Wouldn't it be great if the dataview was bound to the Listname instead? Learn how to in this session and also how to create a Remote list viewer. No code required, just configuration.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30
+}

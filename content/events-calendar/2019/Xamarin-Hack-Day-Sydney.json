@@ -1,0 +1,20 @@
+{
+  "title": "Xamarin Hack Day: Sydney",
+  "url": "http://xamarinhackday.com/",
+  "thumbnail": {
+    "description": "Xamarin Hack Day: Sydney",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png"
+  },
+  "startDateTime": "2019-05-24T23:00:00Z",
+  "endDateTime": "2019-05-25T07:00:00Z",
+  "calendarType": "Hack Days",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Mobile",
+  "eventShortDescription": "<div class=\"ExternalClass5C39DBB136934E4C812CEB71FF8AF866\"><p>\u200b\u200b\u200b\u200bWhat is Xamarin Hack Day?<br>Xamarin Hack Days are for Xamarin Developers or people who want to learn Xamarin.<br>There will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.<br>It\u2019s recommended that attendees bring their own laptop on the day with Xamarin already setup and installed. If you\u2019ve never played with Xamarin before it would be good to do a little bit of learning before the day but it\u2019s not a requirement as all are welcome.\u200b\u200b\u200b<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass3B32480166C24E219AA979F5D8EB4851\"><p>\u200b\u200b\u200b\u200bWhat is Xamarin Hack Day?<br>Xamarin Hack Days are for Xamarin Developers or people who want to learn Xamarin.<br>There will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.<br>It\u2019s recommended that attendees bring their own laptop on the day with Xamarin already setup and installed. If you\u2019ve never played with Xamarin before it would be good to do a little bit of learning before the day but it\u2019s not a requirement as all are welcome.\u200b\u200b\u200b\u200b<br></p></div>",
+  "description": "\u200b\u200b\u200b\u200bWhat is Xamarin Hack Day?\n\nXamarin Hack Days are for Xamarin Developers or people who want to learn Xamarin.\n\nThere will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.\n\nIt\u2019s recommended that attendees bring their own laptop on the day with Xamarin already setup and installed. If you\u2019ve never played with Xamarin before it would be good to do a little bit of learning before the day but it\u2019s not a requirement as all are welcome.\u200b\u200b\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,17 @@
+{
+  "title": "NDC Sydney",
+  "url": "https://ndcsydney.com/",
+  "thumbnail": {
+    "description": "NDC Sydney",
+    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/NDC-Sydney-2018.jpg"
+  },
+  "startDateTime": "2018-09-16T23:00:00Z",
+  "endDateTime": "2018-09-21T07:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

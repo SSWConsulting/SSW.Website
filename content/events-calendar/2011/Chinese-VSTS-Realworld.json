@@ -1,0 +1,21 @@
+{
+  "title": "Chinese: VSTS Realworld",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power Sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Non-English Courses",
+  "categoryAnchor": "OverviewForeign",
+  "sessionTitle": "Chinese: VSTS Realworld",
+  "sessionTitleAnchor": "ChineseVSTS",
+  "eventShortDescription": "<div class=\"ExternalClass94B60BDBA4B24DE79F271ED64C2359D4\"><div><p>\u200bDipping your toes in Visual Studio Team System isn't easy; you just don't know where to start. VSTS Realworld is designed to guide you through this learning curve with a series of real-world scenarios, covering requirements, architecture design, development, testing and build. This session lets you experience a software life cycle on Team Foundation Server and understand how to implement the process in your own team.</p></div></div>",
+  "eventDescription": "<div class=\"ExternalClass94B60BDBA4B24DE79F271ED64C2359D4\"><div><p>\u200bDipping your toes in Visual Studio Team System isn't easy; you just don't know where to start. VSTS Realworld is designed to guide you through this learning curve with a series of real-world scenarios, covering requirements, architecture design, development, testing and build. This session lets you experience a software life cycle on Team Foundation Server and understand how to implement the process in your own team.</p></div></div>",
+  "description": "\u200bDipping your toes in Visual Studio Team System isn't easy; you just don't know where to start. VSTS Realworld is designed to guide you through this learning curve with a series of real-world scenarios, covering requirements, architecture design, development, testing and build. This session lets you experience a software life cycle on Team Foundation Server and understand how to implement the process in your own team.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

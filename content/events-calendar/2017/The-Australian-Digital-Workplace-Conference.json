@@ -1,0 +1,19 @@
+{
+  "title": "The Australian Digital Workplace Conference",
+  "url": "http://www.dwcau.com.au/",
+  "thumbnail": {
+    "description": "The Australian Digital Workplace Conference",
+    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/digital-workplace-conference.jpg"
+  },
+  "presenter": "Adam Cogan",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
+  "startDateTime": "2017-08-22T23:00:00Z",
+  "endDateTime": "2017-08-24T08:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

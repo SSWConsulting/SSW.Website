@@ -1,0 +1,21 @@
+{
+  "title": "Favorite Third Party Tools for Team Foundation Server (TFS) and Visual Studio Team System (VSTS)",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power Sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewTFS",
+  "sessionTitle": "Favorite Third Party Tools for Team Foundation Server (TFS) and Visual Studio Team System (VSTS)",
+  "sessionTitleAnchor": "favoriteThirdPartyToolsTFS",
+  "eventShortDescription": "<div class=\"ExternalClassFA34FEEC6C714B2BA99F470D02214D0A\"><div>\u200bLearning the big world of Microsoft Team System can be made easier when you know the great tools that 3rd party vendors have released. These smart cookies have built some great programs and utilities.</div></div>",
+  "eventDescription": "<div class=\"ExternalClassFA34FEEC6C714B2BA99F470D02214D0A\"><div>\u200bLearning the big world of Microsoft Team System can be made easier when you know the great tools that 3rd party vendors have released. These smart cookies have built some great programs and utilities.</div></div>",
+  "description": "\u200bLearning the big world of Microsoft Team System can be made easier when you know the great tools that 3rd party vendors have released. These smart cookies have built some great programs and utilities.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

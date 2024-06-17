@@ -1,0 +1,16 @@
+{
+  "title": "DDD Brisbane",
+  "url": "http://www.dddbrisbane.com/",
+  "thumbnail": {
+    "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-dddbrisbane.jpg",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-dddbrisbane.jpg"
+  },
+  "startDateTime": "2013-12-06T21:00:00Z",
+  "endDateTime": "2013-12-07T07:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": "Other",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

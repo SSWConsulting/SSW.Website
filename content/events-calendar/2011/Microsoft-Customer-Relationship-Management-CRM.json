@@ -1,0 +1,21 @@
+{
+  "title": "Microsoft Customer Relationship Management (CRM)",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power Sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Dynamics 365",
+  "categoryAnchor": "OverviewCRM",
+  "sessionTitle": "Microsoft Customer Relationship Management (CRM)",
+  "sessionTitleAnchor": "CRM",
+  "eventShortDescription": "<div class=\"ExternalClassC34C1C005F4340D1B7408B86B574C8AC\"><div>Adam Cogan will introduce Microsoft CRM which has been designed to provide a complete suite of powerful marketing, sales, and customer service capabilities, all with a familiar and consistent user experience based on Microsoft Office and the Microsoft Office Outlook messaging and collaboration client.<br><br>The session will be broken into the following sections&#58;<br><br><ul><li>Up and Running on Microsoft CRM</li><li>Experiences with customizing and extending CRM</li><li>Using Workflow in CRM</li><li>Planning for Microsoft CRM 5</li></ul></div></div>",
+  "eventDescription": "<div class=\"ExternalClassC34C1C005F4340D1B7408B86B574C8AC\"><div>Adam Cogan will introduce Microsoft CRM which has been designed to provide a complete suite of powerful marketing, sales, and customer service capabilities, all with a familiar and consistent user experience based on Microsoft Office and the Microsoft Office Outlook messaging and collaboration client.<br><br>The session will be broken into the following sections&#58;<br><br><ul><li>Up and Running on Microsoft CRM</li><li>Experiences with customizing and extending CRM</li><li>Using Workflow in CRM</li><li>Planning for Microsoft CRM 5</li></ul></div></div>",
+  "description": "Adam Cogan will introduce Microsoft CRM which has been designed to provide a complete suite of powerful marketing, sales, and customer service capabilities, all with a familiar and consistent user experience based on Microsoft Office and the Microsoft Office Outlook messaging and collaboration client.\n\nThe session will be broken into the following sections:\n\nUp and Running on Microsoft CRM\n\nExperiences with customizing and extending CRM\n\nUsing Workflow in CRM\n\nPlanning for Microsoft CRM 5",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

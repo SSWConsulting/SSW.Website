@@ -1,0 +1,19 @@
+{
+  "title": "Newcastle Coders Group",
+  "url": "http://www.ncg.asn.au/Meetings/Visual-Studio-2013.aspx",
+  "thumbnail": {
+    "description": "Newcastle Coders Group",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb_newcastle.jpg"
+  },
+  "presenter": "Adam Cogan ",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
+  "startDateTime": "2013-08-28T08:00:00Z",
+  "endDateTime": "2013-08-28T10:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Newcastle",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "sessionTitle": "What\u2019s New for ALM in Visual Studio 2013 and Team Foundation Server 2013",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

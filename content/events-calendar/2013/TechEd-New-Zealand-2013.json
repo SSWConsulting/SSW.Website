@@ -1,0 +1,21 @@
+{
+  "title": "TechEd New Zealand 2013",
+  "url": "https://newzealand.msteched.com/",
+  "thumbnail": {
+    "description": "TechEd New Zealand 2013",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/techednewzealand2013.png"
+  },
+  "presenter": "Microsoft/Adam Cogan ",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
+  "startDateTime": "2013-09-09T23:00:00Z",
+  "endDateTime": "2013-09-13T08:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Auckland",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassCA12EBC4C3084B5BBAD4C869165AA58E\">TechEd is Microsoft's ultimate technology geek fest for IT Professionals and Enterprise Developers looking to explore a broad set of Microsoft technologies, tools, platforms and services. It's all about hands-on learning, deep product exploration, and countless opportunities to build relationships with Microsoft experts and the community.<br><br></div>",
+  "eventDescription": "<div class=\"ExternalClassCA12EBC4C3084B5BBAD4C869165AA58E\"><div>TechEd is Microsoft's ultimate technology geek fest for IT Professionals and Enterprise Developers looking to explore a broad set of Microsoft technologies, tools, platforms and services. It's all about hands-on learning, deep product exploration, and countless opportunities to build relationships with Microsoft experts and the community.<br><br><br><br>SSW is excited to announce that the presenters this year include our own Adam Cogan and Damien Brady, who will be hosting two sessions, Climbing the Agile Testing Ladder featuring Visual Studio 2013, TFS 2013, Microsoft Test Manager 2013, and Lab Management 2013 and &quot;What's New for ALM in Visual Studio 2013 and Team Foundation Server 2013.<br><br><br><br>TechEd New Zealand 2013 will be held September 10-13.</div></div>",
+  "description": "TechEd is Microsoft's ultimate technology geek fest for IT Professionals and Enterprise Developers looking to explore a broad set of Microsoft technologies, tools, platforms and services. It's all about hands-on learning, deep product exploration, and countless opportunities to build relationships with Microsoft experts and the community.",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

@@ -1,0 +1,25 @@
+{
+  "title": "The Clean Architecture 2-day Workshop - Melbourne",
+  "url": "https://www.ssw.com.au/events/clean-architecture-workshop",
+  "thumbnail": {
+    "description": "The Clean Architecture 2-day Workshop - Melbourne",
+    "url": "/images/Newsletters/Workshop-Icon-CleanArchitecture.jpg"
+  },
+  "presenter": "Daniel Mackay & Luke Parker",
+  "presenterProfileUrl": "https://ssw.com.au/people/",
+  "startDateTime": "2024-09-11T23:00:00Z",
+  "endDateTime": "2024-09-13T07:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass614443D7ED3647808F6DC4ED455A0267\"><p>\u200b\u200b\u200b\u200b\u200b\u200bIn this 2-day hands-on workshop, we will cover the best approach to building enterprise applications using Clean Architecture &amp; .NET Core.<br><br>This workshop will provide practical guidance and recommendations. We will cover architecture, technologies, tools and frameworks. We will examine strategies for organizing your projects, folders and files.<br><br>We will design a system that is simple to build and maintain - now and well into the future.<br><br>You will leave this workshop having developed the foundation and structure for your next enterprise application, along with the knowledge to take your enterprise application development to the next level.<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass4CEE2264BCAA4439A108CE62039C0B4B\"><p>\u200b\u200b\u200b\u200b\u200b\u200bIn this 2-day hands-on workshop, we will cover the best approach to building enterprise applications using Clean Architecture &amp; .NET Core.<br><br>This workshop will provide practical guidance and recommendations. We will cover architecture, technologies, tools and frameworks. We will examine strategies for organizing your projects, folders and files.<br><br>We will design a system that is simple to build and maintain - now and well into the future.<br><br>You will leave this workshop having developed the foundation and structure for your next enterprise application, along with the knowledge to take your enterprise application development to the next level.<br></p></div>",
+  "description": "\u200b\u200b\u200b\u200b\u200b\u200bIn this 2-day hands-on workshop, we will cover the best approach to building enterprise applications using Clean Architecture & .NET Core.\n\nThis workshop will provide practical guidance and recommendations. We will cover architecture, technologies, tools and frameworks. We will examine strategies for organizing your projects, folders and files.\n\nWe will design a system that is simple to build and maintain - now and well into the future.\n\nYou will leave this workshop having developed the foundation and structure for your next enterprise application, along with the knowledge to take your enterprise application development to the next level.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": false
+}

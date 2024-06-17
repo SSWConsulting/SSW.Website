@@ -1,0 +1,20 @@
+{
+  "title": "SQL Server for Developers",
+  "url": "https://www.ssw.com.au/ssw/events/Past.aspx?tech=all&type=all",
+  "thumbnail": {
+    "description": "https://www.ssw.com.au/ssw/Consulting/images/thumb-sharepoint.jpg",
+    "url": "https://www.ssw.com.au/ssw/Consulting/images/thumb-sharepoint.jpg"
+  },
+  "presenter": "Peter Gfader & Eric Phan",
+  "startDateTime": "2009-02-16T13:00:00Z",
+  "endDateTime": "2009-08-07T14:00:00Z",
+  "calendarType": "UTS Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventDescription": "<div class=\"ExternalClassD440109E3C764262AD6D6A74D858A01E\"><p>\u200bA practical course for the ICT Industry utilizing the latest SQL Server 2008 developed by Microsoft. SQL Server 2008 provides .NET integration and XML support as well as a wealth of programming enhancements. The improved security is a feature of this release. This course provides attendees with the knowledge necessary to take advantage of new features provided by SQL Server 2008. It provides a comprehensive overview of technologies, security, and design best practices with particular emphasis on hands-on skills.\u200b<br></p></div>",
+  "description": "\u200bA practical course for the ICT Industry utilizing the latest SQL Server 2008 developed by Microsoft. SQL Server 2008 provides .NET integration and XML support as well as a wealth of programming enhancements. The improved security is a feature of this release. This course provides attendees with the knowledge necessary to take advantage of new features provided by SQL Server 2008. It provides a comprehensive overview of technologies, security, and design best practices with particular emphasis on hands-on skills.\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

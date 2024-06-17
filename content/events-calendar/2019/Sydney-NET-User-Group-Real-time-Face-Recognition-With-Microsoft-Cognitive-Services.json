@@ -1,0 +1,28 @@
+{
+  "title": "Sydney .NET User Group: Real-time Face Recognition With Microsoft Cognitive Services",
+  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
+  "thumbnail": {
+    "description": "Sydney .NET User Group: Real-time Face Recognition With Microsoft Cognitive Services",
+    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
+  },
+  "presenter": "Jernej \"JK\" Kavka",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/JK.aspx",
+  "startDateTime": "2019-01-16T07:00:00Z",
+  "endDateTime": "2019-01-16T09:30:00Z",
+  "startShowBannerDateTime": "2019-01-15T14:00:00Z",
+  "endShowBannerDateTime": "2019-01-16T10:00:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET User Group: Real-time Face Recognition With Microsoft Cognitive Services",
+    "url": "https://www.ssw.com.au/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Azure",
+  "eventShortDescription": "<div class=\"ExternalClassE9C06256BFC34E6CBFC6D2AAFA7456C5\"><div>Sydney .NET User Group&#58; Real-time Face Recognition With Microsoft Cognitive Services - presented by Jernej &quot;JK&quot; Kavka</div><div><br></div><div>This session is all about Microsoft Face API in practice!</div><div><br></div><div>JK, the man behind sswSophie.com, will cover what it means to use Microsoft Cognitive Services in real-time, why offline detection libraries are essential and why you should use infrared and depth cameras like Kinect and Intel RealSense in your applications.</div><div><br></div><div>About the presenter&#58;&#160;</div><div>With around 10 years of experience in software engineering, Jernej has worked on full-stack .NET development, mobile applications, and Microsoft Cognitive Services. He worked for some of Australia's largest corporations, with great customer satisfaction.</div><div><br></div><div>Can't come in person? No worries!</div><div>We live stream the event so you can watch it from anywhere! Catch all the action live on Wednesday January 16 from 6&#58;30pm here&#58; https&#58;//www.ssw.com.au/ssw/Live <br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass6C490317C40249778580B7BA0F0D2714\"><div>Sydney .NET User Group&#58; Real-time Face Recognition With Microsoft Cognitive Services - presented by Jernej &quot;JK&quot; Kavka<br></div><div><br></div><div>This session is all about Microsoft Face API in practice!</div><div><br></div><div>JK, the man behind sswSophie.com, will cover what it means to use Microsoft Cognitive Services in real-time, why offline detection libraries are essential and why you should use infrared and depth cameras like Kinect and Intel RealSense in your applications.</div><div><br></div><div>About the presenter&#58;&#160;</div><div>With around 10 years of experience in software engineering, Jernej has worked on full-stack .NET development, mobile applications, and Microsoft Cognitive Services. He worked for some of Australia's largest corporations, with great customer satisfaction.</div><div><br></div><div>Can't come in person? No worries!</div><div>We live stream the event so you can watch it from anywhere! Catch all the action live on Wednesday January 16 from 6&#58;30pm here&#58; https&#58;//www.ssw.com.au/ssw/Live&#160;<br></div></div>",
+  "description": "Sydney .NET User Group: Real-time Face Recognition With Microsoft Cognitive Services - presented by Jernej \"JK\" Kavka\n\nThis session is all about Microsoft Face API in practice!\n\nJK, the man behind sswSophie.com, will cover what it means to use Microsoft Cognitive Services in real-time, why offline detection libraries are essential and why you should use infrared and depth cameras like Kinect and Intel RealSense in your applications.\n\nAbout the presenter:\u00a0\n\nWith around 10 years of experience in software engineering, Jernej has worked on full-stack .NET development, mobile applications, and Microsoft Cognitive Services. He worked for some of Australia's largest corporations, with great customer satisfaction.\n\nCan't come in person? No worries!\n\nWe live stream the event so you can watch it from anywhere! Catch all the action live on Wednesday January 16 from 6:30pm here: https://www.ssw.com.au/ssw/Live ",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

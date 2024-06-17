@@ -1,0 +1,28 @@
+{
+  "title": "Sydney .NET user group: Get ready for modern DevOps - Danijel Malik",
+  "url": "https://www.ssw.com.au/ssw/netug/sydney.aspx",
+  "thumbnail": {
+    "description": "Sydney .NET user group: Get ready for modern DevOps - Danijel Malik",
+    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
+  },
+  "presenter": "Danijel Malik",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Danijel-Malik.aspx",
+  "startDateTime": "2017-07-19T08:00:00Z",
+  "endDateTime": "2017-07-19T10:30:00Z",
+  "startShowBannerDateTime": "2017-07-18T14:00:00Z",
+  "endShowBannerDateTime": "2017-07-19T13:55:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET user group: Get ready for modern DevOps - Danijel Malik",
+    "url": "https://www.ssw.com.au/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassB01CFCF1FC8244DB9DCFC22E9A6AF24C\"><strong>\u200bSydney .NET user group&#58; Get ready for modern DevOps - Danijel Malik</strong><br><br>Modern DevOps is a highway to greater business value and it works cross-platform. Automated deployments solved a handover problem, Application Monitoring Platforms closed the feedback and crash reporting gap, and containers made the \u201cworks on my machine\u201d stereotype real. Next mission&#58; automated environments.<div><br>In this session, Danijel will start by identifying the common bad practices to give you some quick wins. His experience starts from the smallest businesses and extends to the largest businesses including some of the largest banks. You will learn why Zero Based Infrastructure is the next step of a DevOps evolution, why Cloud is your best friend, and how to integrate this approach back into your deployment pipeline. You will walk away with a solid understanding of what Infrastructure as Code is and the main advantages, leaving you with nothing to worry about but your code.<br></div></div>",
+  "eventDescription": "<div class=\"ExternalClass2241D8587DE64AB6B053D6698088C9E3\"><strong>\u200bSydney .NET user group&#58; Get ready for modern DevOps - Danijel Malik</strong><br><br>Modern DevOps is a highway to greater business value and it works cross-platform. Automated deployments solved a handover problem, Application Monitoring Platforms closed the feedback and crash reporting gap, and containers made the \u201cworks on my machine\u201d stereotype real. Next mission&#58; automated environments.<div><br>In this session, Danijel will start by identifying the common bad practices to give you some quick wins. His experience starts from the smallest businesses and extends to the largest businesses including some of the largest banks. You will learn why Zero Based Infrastructure is the next step of a DevOps evolution, why Cloud is your best friend, and how to integrate this approach back into your deployment pipeline. You will walk away with a solid understanding of what Infrastructure as Code is and the main advantages, leaving you with nothing to worry about but your code.<br><br></div></div>",
+  "description": "\u200bSydney .NET user group: Get ready for modern DevOps - Danijel Malik\n\nModern DevOps is a highway to greater business value and it works cross-platform. Automated deployments solved a handover problem, Application Monitoring Platforms closed the feedback and crash reporting gap, and containers made the \u201cworks on my machine\u201d stereotype real. Next mission: automated environments.\n\nIn this session, Danijel will start by identifying the common bad practices to give you some quick wins. His experience starts from the smallest businesses and extends to the largest businesses including some of the largest banks. You will learn why Zero Based Infrastructure is the next step of a DevOps evolution, why Cloud is your best friend, and how to integrate this approach back into your deployment pipeline. You will walk away with a solid understanding of what Infrastructure as Code is and the main advantages, leaving you with nothing to worry about but your code.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,20 @@
+{
+  "title": "Xamarin HackDay - Beijing",
+  "url": "http://xamarinhackday.com/beijing/",
+  "thumbnail": {
+    "description": "Xamarin HackDay - Beijing",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png"
+  },
+  "startDateTime": "2015-05-29T14:00:00Z",
+  "endDateTime": "2015-05-30T13:55:00Z",
+  "calendarType": "Hack Days",
+  "city": "Beijing",
+  "enabled": true,
+  "category": "Mobile",
+  "eventShortDescription": "<div class=\"ExternalClass47C77BE3C31D491B82EC45BF35038EF5\"><div>Xamarin HackDays are for Xamarin Developers or people who want to learn Xamarin.\u200b</div><div><br></div><div>\u200bThere will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.\u200b</div></div>",
+  "eventDescription": "<div class=\"ExternalClassA409805169604181B66F9C52BF201B83\"><div>\u200bXamarin HackDays are for Xamarin Developers or people who want to learn Xamarin.\u200b</div><div><br></div><div>\u200bThere will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.\u200b</div></div>",
+  "description": "Xamarin HackDays are for Xamarin Developers or people who want to learn Xamarin.\u200b\n\n\u200bThere will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

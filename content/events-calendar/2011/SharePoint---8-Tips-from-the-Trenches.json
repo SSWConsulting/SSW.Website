@@ -1,0 +1,21 @@
+{
+  "title": "SharePoint - 8 Tips from the Trenches",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power Sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "SharePoint",
+  "categoryAnchor": "OverviewSharePoint",
+  "sessionTitle": "SharePoint - 8 Tips from the Trenches",
+  "sessionTitleAnchor": "SPTrenches",
+  "eventShortDescription": "<div class=\"ExternalClassF5B6E3A55DAB44F8B66C50A4A084C565\"><div><a href=\"/sites/Events/AboutUs/Employees/Pages/John.aspx\">John Liu (aka Liuy)</a>&#160;rarely gets out of the hot and sticky SSW trench. Come hear his war stories dealing with SharePoint solutions. John has delivered SharePoint sites for clients such as Microsoft, WorleyParsons and the worst one&#58; Adam Cogan.<br><br>Topics he will cover are&#58;<br><br><ul><li>Getting the design right</li><li>Web Parts - All the good stuff you get for free</li><li>Performance tips for publishing sites</li><li>The dirty stuff - deployment</li><li>Less manual steps via SPConfigModification</li><li>Dark data - CAML</li><li>The 3rd party tools you need</li><li>Things needed in SharePoint 2016</li></ul></div></div>",
+  "eventDescription": "<div class=\"ExternalClassF5B6E3A55DAB44F8B66C50A4A084C565\"><div><a href=\"/sites/Events/AboutUs/Employees/Pages/John.aspx\">John Liu (aka Liuy)</a>&#160;rarely gets out of the hot and sticky SSW trench. Come hear his war stories dealing with SharePoint solutions. John has delivered SharePoint sites for clients such as Microsoft, WorleyParsons and the worst one&#58; Adam Cogan.<br><br>Topics he will cover are&#58;<br><br><ul><li>Getting the design right</li><li>Web Parts - All the good stuff you get for free</li><li>Performance tips for publishing sites</li><li>The dirty stuff - deployment</li><li>Less manual steps via SPConfigModification</li><li>Dark data - CAML</li><li>The 3rd party tools you need</li><li>Things needed in SharePoint 2016</li></ul></div></div>",
+  "description": "John Liu (aka Liuy)\n\n\u00a0rarely gets out of the hot and sticky SSW trench. Come hear his war stories dealing with SharePoint solutions. John has delivered SharePoint sites for clients such as Microsoft, WorleyParsons and the worst one: Adam Cogan.\n\nTopics he will cover are:\n\nGetting the design right\n\nWeb Parts - All the good stuff you get for free\n\nPerformance tips for publishing sites\n\nThe dirty stuff - deployment\n\nLess manual steps via SPConfigModification\n\nDark data - CAML\n\nThe 3rd party tools you need\n\nThings needed in SharePoint 2016",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

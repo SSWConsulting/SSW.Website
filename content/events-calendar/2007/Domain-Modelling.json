@@ -1,0 +1,23 @@
+{
+  "title": "Domain Modelling",
+  "url": "https://www.ssw.com.au/images/newsletter-uploads/2007/_2007_06__Do%20you%20implement%20an%20error%20logger_.htm",
+  "thumbnail": {
+    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
+    "url": "/images/events/sydney-ug-thumb.jpg"
+  },
+  "presenter": "Paul Stovell",
+  "startDateTime": "2007-06-20T07:45:00Z",
+  "endDateTime": "2007-06-20T11:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassD926F66FFCC646B6AF1E1C1C3CD81B6F\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;When we design a solution, the architecture that we implement should act as a lever, allowing us to solve the increasingly complex problems we face with minimal effort. &quot;Domain Modelling&quot;, the approach of designing applications by focussing on the natural needs of the problem domain, is one such lever; providing us with a solid, robust architecture that easily handles this ever-increasing complexity. In this session, Paul Stovell will describe a number of common but advanced domain modelling patterns, and demonstrate how they can be applied practically in .NET.</span><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassF5410C0D2EFC4AA59B0C0E27A79E998B\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;When we design a solution, the architecture that we implement should act as a lever, allowing us to solve the increasingly complex problems we face with minimal effort. &quot;Domain Modelling&quot;, the approach of designing applications by focussing on the natural needs of the problem domain, is one such lever; providing us with a solid, robust architecture that easily handles this ever-increasing complexity. In this session, Paul Stovell will describe a number of common but advanced domain modelling patterns, and demonstrate how they can be applied practically in .NET.</span><br></p></div>",
+  "description": "\u200b\n\nDescription:\n\n\u00a0When we design a solution, the architecture that we implement should act as a lever, allowing us to solve the increasingly complex problems we face with minimal effort. \"Domain Modelling\", the approach of designing applications by focussing on the natural needs of the problem domain, is one such lever; providing us with a solid, robust architecture that easily handles this ever-increasing complexity. In this session, Paul Stovell will describe a number of common but advanced domain modelling patterns, and demonstrate how they can be applied practically in .NET.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30
+}

@@ -1,0 +1,35 @@
+{
+  "title": "ONLINE or IN-Person - June Online User Group: 3 Lightning Talks (Brisbane)",
+  "url": "https://www.meetup.com/Brisbane-Full-Stack-User-Group/events/278759614/",
+  "thumbnail": {
+    "description": "ONLINE or IN-Person - June Online User Group: 3 Lightning Talks (Brisbane)",
+    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-BrisbaneUG.jpg"
+  },
+  "presenter": "Jernej \"JK\" Kavka, William Liebenberg, and Bryden Oliver",
+  "startDateTime": "2021-06-16T08:00:00Z",
+  "endDateTime": "2021-06-16T12:00:00Z",
+  "liveStreamUrl": {
+    "description": "SSW Live Feed",
+    "url": "https://www.ssw.com.au/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassA88DD1B3E3E94A8987579A199C543076\"><p>\u200bJoin us live at SSW Brisbane&#160;\u2013 There will be news, chats, pizza and a Live Stream for those who can't be there in person&#58;</p><p><br>SSW TV -----&gt;&#160;<a href=\"http&#58;//www.ssw.com.au/live/\">www.ssw.com.au/live/</a></p><p><a href=\"https&#58;//www.eventbrite.com.au/e/june-user-group-3-lightning-talks-1-big-tech-night-brisbane-tickets-159059608571\"><span style=\"font-size&#58;24px;color&#58;#ff0000;\">REGISTER</span>\u200b</a><br></p><p>For those joining us in person&#58;<br><br>6pm - Check-in, Pizza, &amp; networking<br>6&#58;30pm - Live feed kicks off with the news<br>7pm - Lightning Talks!<br><br>-----<br><br>#1 Getting the most out of your logging in .NET<br>with Jernej &quot;JK&quot; Kavka<br><br>Does setting up logging do your head in? Join JK, a battle scared logging in .NET Core veteran as he attempts to reduce your headache. Dissolve an aspirin, dim the lights, and let JK&#160;soothe your head. In this talk, you will learn easily from JK's past trials and errors and get straight into setting up logs like a Pro!<br><br>#2 Taking control of your APIs with Azure API Management<br>with William Liebenberg<br><br>In this lightning talk William covers his favourite features of Azure API Management such as the Developer Portal, Policies and Analytics and how easy it is for you to start using them to secure and monitor your own APIs. He will also highlight where Azure API Management becomes really difficult to manage and how to tackle those issues.<br><br>#3 An intro to Biceps of Steel<br>with Bryden Oliver<br><br>In this talk Bryden will cover how to create Bicep templates, how to add Managed Identities. He will then walk you through his new GitHub Repo, &quot;Biceps of Steel&quot;, with the relevant code and examples.<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass4DDA7E40B440445286623AEF18725064\"><p>\u200bJoin us live at SSW&#160;Brisbane&#160;\u2013 There will be news, chats, pizza and a Live Stream for those who can't be there in person&#58;</p><p><br>SSW TV -----&gt;&#160;<a href=\"http&#58;//www.ssw.com.au/live/\">www.ssw.com.au/live/</a></p><p><a href=\"https&#58;//www.eventbrite.com.au/e/june-user-group-3-lightning-talks-1-big-tech-night-brisbane-tickets-159059608571\"><span style=\"font-size&#58;24px;color&#58;#ff0000;\">REGISTER</span>\u200b</a><br></p><p>For those joining us in person&#58;<br><br>6pm - Check-in, Pizza, &amp; networking<br>6&#58;30pm - Live feed kicks off with the news<br>7pm - Lightning Talks!<br><br>-----<br><br>#1 Getting the most out of your logging in .NET<br>with Jernej &quot;JK&quot; Kavka<br><br>Does setting up logging do your head in? Join JK, a battle scared logging in .NET Core veteran as he attempts to reduce your headache. Dissolve an aspirin, dim the lights, and let JK&#160;soothe your head. In this talk, you will learn easily from JK's past trials and errors and get straight into setting up logs like a Pro!<br><br>#2 Taking control of your APIs with Azure API Management<br>with William Liebenberg<br><br>In this lightning talk William covers his favourite features of Azure API Management such as the Developer Portal, Policies and Analytics and how easy it is for you to start using them to secure and monitor your own APIs. He will also highlight where Azure API Management becomes really difficult to manage and how to tackle those issues.<br><br>#3 An intro to Biceps of Steel<br>with Bryden Oliver<br><br>In this talk Bryden will cover how to create Bicep templates, how to add Managed Identities. He will then walk you through his new GitHub Repo, &quot;Biceps of Steel&quot;, with the relevant code and examples.<br></p></div>",
+  "description": "\u200bJoin us live at SSW Brisbane\u00a0\u2013 There will be news, chats, pizza and a Live Stream for those who can't be there in person:\n\nSSW TV ----->\u00a0\n\nwww.ssw.com.au/live/\n\nREGISTER\n\n\u200b\n\nFor those joining us in person:\n\n6pm - Check-in, Pizza, & networking\n\n6:30pm - Live feed kicks off with the news\n\n7pm - Lightning Talks!\n\n-----\n\n#1 Getting the most out of your logging in .NET\n\nwith Jernej \"JK\" Kavka\n\nDoes setting up logging do your head in? Join JK, a battle scared logging in .NET Core veteran as he attempts to reduce your headache. Dissolve an aspirin, dim the lights, and let JK\u00a0soothe your head. In this talk, you will learn easily from JK's past trials and errors and get straight into setting up logs like a Pro!\n\n#2 Taking control of your APIs with Azure API Management\n\nwith William Liebenberg\n\nIn this lightning talk William covers his favourite features of Azure API Management such as the Developer Portal, Policies and Analytics and how easy it is for you to start using them to secure and monitor your own APIs. He will also highlight where Azure API Management becomes really difficult to manage and how to tackle those issues.\n\n#3 An intro to Biceps of Steel\n\nwith Bryden Oliver\n\nIn this talk Bryden will cover how to create Bicep templates, how to add Managed Identities. He will then walk you through his new GitHub Repo, \"Biceps of Steel\", with the relevant code and examples.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [
+    {
+      "LookupId": 8,
+      "LookupValue": "William Liebenberg"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/william-liebenberg.mdx"
+    }
+  ]
+}

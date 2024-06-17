@@ -1,0 +1,21 @@
+{
+  "title": "The Angular Superpowers Tour: Melbourne",
+  "url": "https://www.ssw.com.au/ssw/Events/Training/Angular-Superpowers-Tour.aspx",
+  "thumbnail": {
+    "description": "The Angular Superpowers Tour: Melbourne",
+    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Angular.jpg"
+  },
+  "presenter": "Brendan Richards and Jean Thirion",
+  "startDateTime": "2018-07-11T23:00:00Z",
+  "endDateTime": "2018-07-12T07:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "Angular and React",
+  "eventShortDescription": "<div class=\"ExternalClassD76B56CA8D7042B7B040F01CF20826B1\"><p>\u200b\u200bThis one-day Dev Superpower Tour brings developers up-to-speed with Angular!</p><div>Everything has changed! Angular and modern web best practices involve massive changes to how we build modern web applications.<br></div><div><br></div><div>At SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies.\u200b<br></div><div><br><br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassFB9CA3554D7A408FA5348A82FD14795A\"><p>\u200b\u200bThis one-day Dev Superpower Tour brings developers up-to-speed with Angular!</p><div>Everything has changed! Angular and modern web best practices involve massive changes to how we build modern web applications.<br></div><div><br></div><div>At SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies.\u200b<br></div><div><br>\u200b<br></div><p><br></p></div>",
+  "description": "\u200b\u200bThis one-day Dev Superpower Tour brings developers up-to-speed with Angular!\n\nEverything has changed! Angular and modern web best practices involve massive changes to how we build modern web applications.\n\nAt SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies.\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

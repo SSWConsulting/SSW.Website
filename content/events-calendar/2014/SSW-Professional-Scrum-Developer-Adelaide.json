@@ -1,0 +1,21 @@
+{
+  "title": "SSW Professional Scrum Developer: Adelaide",
+  "url": "http://www.ssw.com.au/ssw/Events/Scrum-Training-Course-3-days.aspx",
+  "thumbnail": {
+    "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb_scrum.jpg",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb_scrum.jpg"
+  },
+  "presenter": "Adam Cogan",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
+  "startDateTime": "2014-02-04T22:00:00Z",
+  "endDateTime": "2014-02-07T07:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Scrum",
+  "sessionTitle": "3 Day Training Course",
+  "eventShortDescription": "<div class=\"ExternalClass204D83A3996942D28D06281E13318000\"><div>\u200bThis Professional Scrum Developer (PSD) course is a unique and intensive three day experience for software developers. The course guides teams on how to turn product requirements into potentially shippable increments of software using the Scrum framework, Visual Studio 2012, and modern software engineering practices.&#160;</div><div><br></div></div>",
+  "eventDescription": "<div class=\"ExternalClass204D83A3996942D28D06281E13318000\"><div>\u200bThis Professional Scrum Developer (PSD) course is a unique and intensive three day experience for software developers. The course guides teams on how to turn product requirements into potentially shippable increments of software using the Scrum framework, Visual Studio 2012, and modern software engineering practices. Attendees will work in self-organizing, self-managing teams using a common instance of Visual Studio Team Foundation Server 2012 to achieve this goal.\u200b</div></div>",
+  "description": "\u200bThis Professional Scrum Developer (PSD) course is a unique and intensive three day experience for software developers. The course guides teams on how to turn product requirements into potentially shippable increments of software using the Scrum framework, Visual Studio 2012, and modern software engineering practices.\u00a0",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

@@ -1,0 +1,21 @@
+{
+  "title": "The Angular Superpowers Tour: Sydney",
+  "url": "https://www.ssw.com.au/ssw/Events/Training/Angular-Superpowers-Tour.aspx",
+  "thumbnail": {
+    "description": "The Angular Superpowers Tour: Sydney",
+    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Angular.jpg"
+  },
+  "presenter": "Brendan Richards and Jean Thirion",
+  "startDateTime": "2018-07-12T23:00:00Z",
+  "endDateTime": "2018-07-13T07:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Angular and React",
+  "eventShortDescription": "<div class=\"ExternalClassB1D858BCDB2647B68208A41CC4CF788D\"><p>\u200bThis one-day Dev Superpower Tour brings developers up-to-speed with Angular!</p><div>Everything has changed! Angular and modern web best practices involve massive changes to how we build modern web applications.<br></div><div><br></div><div>At SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies.\u200b<br></div><div><br><br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass19E32AA950B44D2EB662DB8F8435A0F6\"><p>\u200bThis one-day Dev Superpower Tour brings developers up-to-speed with Angular!</p><div>Everything has changed! Angular and modern web best practices involve massive changes to how we build modern web applications.<br></div><div><br></div><div>At SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies.\u200b<br></div><div><br><br></div><p><br></p></div>",
+  "description": "\u200bThis one-day Dev Superpower Tour brings developers up-to-speed with Angular!\n\nEverything has changed! Angular and modern web best practices involve massive changes to how we build modern web applications.\n\nAt SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies.\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

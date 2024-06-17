@@ -1,0 +1,28 @@
+{
+  "title": "Sydney .NET User Group: .NET to The Power of R1",
+  "url": "https://www.ssw.com.au/ssw/netug/sydney.aspx",
+  "thumbnail": {
+    "description": "Sydney .NET User Group",
+    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
+  },
+  "presenter": "TJ Gokcen",
+  "startDateTime": "2016-11-16T07:30:00Z",
+  "endDateTime": "2016-11-16T09:30:00Z",
+  "startShowBannerDateTime": "2016-11-15T14:00:00Z",
+  "endShowBannerDateTime": "2016-11-16T12:55:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET user group: November",
+    "url": "https://www.ssw.com.au/ssw/live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "SQL Server",
+  "sessionTitle": ".NET to The Power of R1",
+  "eventShortDescription": "<div class=\"ExternalClass3971A73FCD50427382595BF808171D24\"><p><strong>\u200b.NET to The Power of R1</strong><br></p><div>R is a language for statistical programming that is widely used among data scientists. Last year Microsoft purchased Revolution Analytics, a leading R company. As a result, Microsoft recently released Visual Studio Tools for R and announced that R is going to be included in the upcoming SQL Server 2016.<br></div><div><br></div><div>In this session, we will take a look at R from an introductory point of view and see how the power of R can be used by .NET&#160;developers. Some of the highlights are&#58;\u200b<br></div><div><ul><li>What is R and why does it matter?<br></li><li>A brief look into statistics<br></li><li>R in a nutshell<br></li><li>\u201cThere is no R in Develop, but there is one in DevelopeR\u201d. R Basics.<br></li><li>Power of R&#58; some basic examples showcasing R<br></li><li>A brief look at R in SQL Server 2016<br></li><li>Building a dashboard with ASP.NET&#160;MVC and R (getting data from SQL Server as well as the internet)\u200b\u200b<br></li></ul></div><p><strong><br></strong></p></div>",
+  "eventDescription": "<div class=\"ExternalClassEC8EF36A29F64C69B6905EBDCA6835B4\"><p>\u200b<strong>.NET to The Power of R1</strong><br></p><div>R is a language for statistical programming that is widely used among data scientists. Last year Microsoft purchased Revolution Analytics, a leading R company. As a result, Microsoft recently released Visual Studio Tools for R and announced that R is going to be included in the upcoming SQL Server 2016.<br></div><div><br></div><div>In this session, we will take a look at R from an introductory point of view and see how the power of R can be used by .NET&#160;developers. Some of the highlights are&#58;\u200b<br></div><div><ul><li>What is R and why does it matter?<br></li><li>A brief look into statistics<br></li><li>R in a nutshell<br></li><li>\u201cThere is no R in Develop, but there is one in DevelopeR\u201d. R Basics.<br></li><li>Power of R&#58; some basic examples showcasing R<br></li><li>A brief look at R in SQL Server 2016<br></li><li>Building a dashboard with ASP.NET&#160;MVC and R (getting data from SQL Server as well as the internet)\u200b<br></li></ul></div><p><br></p></div>",
+  "description": "\u200b.NET to The Power of R1\n\nR is a language for statistical programming that is widely used among data scientists. Last year Microsoft purchased Revolution Analytics, a leading R company. As a result, Microsoft recently released Visual Studio Tools for R and announced that R is going to be included in the upcoming SQL Server 2016.\n\nIn this session, we will take a look at R from an introductory point of view and see how the power of R can be used by .NET\u00a0developers. Some of the highlights are:\u200b\n\nWhat is R and why does it matter?\n\nA brief look into statistics\n\nR in a nutshell\n\n\u201cThere is no R in Develop, but there is one in DevelopeR\u201d. R Basics.\n\nPower of R: some basic examples showcasing R\n\nA brief look at R in SQL Server 2016\n\nBuilding a dashboard with ASP.NET\u00a0MVC and R (getting data from SQL Server as well as the internet)\u200b\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

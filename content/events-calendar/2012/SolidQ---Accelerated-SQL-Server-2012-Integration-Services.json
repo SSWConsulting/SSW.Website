@@ -1,0 +1,19 @@
+{
+  "title": "SolidQ - Accelerated SQL Server 2012 Integration Services",
+  "url": "http://http://www.ssw.com.au/ssw/Events/training/SQL-Server-2012-Integration-Services.aspx",
+  "thumbnail": {
+    "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg"
+  },
+  "presenter": "Paco Gonzalez",
+  "startDateTime": "2012-11-04T13:00:00Z",
+  "endDateTime": "2012-11-07T13:00:00Z",
+  "calendarType": "SolidQ Courses",
+  "enabled": true,
+  "category": "SQL Server",
+  "eventShortDescription": "<div class=\"ExternalClass21AFF75F50AB42CC8FBEB679F712AF7F\"><div>\u200bThis 4-day instructor led training focuses on developing and managing SSIS 2012 in the enterprise. In this course, you will understand how to design, develop, deploy, and operate SSIS extraction, transformation, and loading (ETL) solutions from source systems extractions, data integration, SSIS server administration and package execution.\u200b</div></div>",
+  "eventDescription": "<div class=\"ExternalClass21AFF75F50AB42CC8FBEB679F712AF7F\"><div>\u200bThis 4-day instructor led training focuses on developing and managing SSIS 2012 in the enterprise. In this course, you will understand how to design, develop, deploy, and operate SSIS extraction, transformation, and loading (ETL) solutions from source systems extractions, data integration, SSIS server administration and package execution.\u200b</div></div>",
+  "description": "\u200bThis 4-day instructor led training focuses on developing and managing SSIS 2012 in the enterprise. In this course, you will understand how to design, develop, deploy, and operate SSIS extraction, transformation, and loading (ETL) solutions from source systems extractions, data integration, SSIS server administration and package execution.\u200b",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

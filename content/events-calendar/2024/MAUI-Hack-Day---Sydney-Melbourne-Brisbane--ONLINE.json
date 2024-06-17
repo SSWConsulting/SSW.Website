@@ -1,0 +1,25 @@
+{
+  "title": "MAUI Hack Day - Sydney, Melbourne, Brisbane + ONLINE",
+  "url": "https://mauihackday.com/",
+  "thumbnail": {
+    "description": "MAUI Hack Day - Sydney, Melbourne, Brisbane + ONLINE",
+    "url": "/images/events/mauihackday-thumb.png"
+  },
+  "presenter": "Matt Goldman, Luke Parker, Anton Polkanov & Sam Basu",
+  "presenterProfileUrl": "http://mauihackday.com/experts",
+  "startDateTime": "2024-02-02T22:00:00Z",
+  "endDateTime": "2024-02-03T06:00:00Z",
+  "calendarType": "Hack Days",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Mobile",
+  "eventShortDescription": "<div class=\"ExternalClassB7F00AB846904906B76BEC989BDFE257\"><p>\u200bMAUI Hack Days (previously Xamarin Hack Days) are community-run events for .NET MAUI developers or people who want to learn MAUI for free.<br><br>There will be something for everyone. Experienced .NET&#160;MAUI developers can share ideas with other experienced developers. If you\u2019re a beginner, then there\u2019s plenty to learn on the day.<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass1A23999E77BD401FBDA79D755FB054D1\"><p>MAUI Hack Days (previously Xamarin Hack Days) are community-run events for .NET MAUI developers or people who want to learn MAUI for free.<br><br>There will be something for everyone. Experienced .NET&#160;MAUI developers can share ideas with other experienced developers. If you\u2019re a beginner, then there\u2019s plenty to learn on the day.<br></p></div>",
+  "description": "\u200bMAUI Hack Days (previously Xamarin Hack Days) are community-run events for .NET MAUI developers or people who want to learn MAUI for free.\n\nThere will be something for everyone. Experienced .NET\u00a0MAUI developers can share ideas with other experienced developers. If you\u2019re a beginner, then there\u2019s plenty to learn on the day.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": false
+}

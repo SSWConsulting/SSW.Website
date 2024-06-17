@@ -1,0 +1,23 @@
+{
+  "title": "\u200bMake your Web Apps Accidentally Excellent using Bootstrap\u200b",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power Sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2014-06-17T14:00:00Z",
+  "endDateTime": "2014-06-17T16:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewTFS",
+  "sessionTitle": "\u200bMake your Web Apps Accidentally Excellent using Bootstrap\u200b",
+  "sessionTitleAnchor": "MakeAwesomeAppsWithBootstrap",
+  "eventShortDescription": "<div class=\"ExternalClassE7B438D696CF415497ED10407A74ECD4\"><p>\u200bBootstrap is a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development. Join me as I show&#160;you how easy it is to make use of the framework, and step beyond the &quot;just another bootstrap site&quot; look and feel.<br><br>I'll take you through&#58; - The benefits of using Bootstrap - How to get up and running using the latest scaffolding available in Visual Studio 2013 - Implementing some key layout designs - Hooking up icons the font-awesome way - Implementing designer themes from wrapbootstrap.com</p></div>",
+  "eventDescription": "<div class=\"ExternalClassF38D4480B2C2488E9C357E4522408666\"><p>\u200bBootstrap is a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development. Join me as I show&#160;you how easy it is to make use of the framework, and step beyond the &quot;just another bootstrap site&quot; look and feel.<br><br>I'll take you through&#58; - The benefits of using Bootstrap - How to get up and running using the latest scaffolding available in Visual Studio 2013 - Implementing some key layout designs - Hooking up icons the font-awesome way - Implementing designer themes from wrapbootstrap.com\u200b</p></div>",
+  "description": "\u200bBootstrap is a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development. Join me as I show\u00a0you how easy it is to make use of the framework, and step beyond the \"just another bootstrap site\" look and feel.\n\nI'll take you through: - The benefits of using Bootstrap - How to get up and running using the latest scaffolding available in Visual Studio 2013 - Implementing some key layout designs - Hooking up icons the font-awesome way - Implementing designer themes from wrapbootstrap.com",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

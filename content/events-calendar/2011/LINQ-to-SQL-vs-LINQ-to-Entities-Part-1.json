@@ -1,0 +1,21 @@
+{
+  "title": "'LINQ to SQL' vs 'LINQ to Entities' (Part 1)",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power Sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Data and LINQ",
+  "categoryAnchor": "OverviewData",
+  "sessionTitle": "'LINQ to SQL' vs 'LINQ to Entities' (Part 1)",
+  "sessionTitleAnchor": "LINQtoSQL",
+  "eventShortDescription": "<div class=\"ExternalClass88EEFE66004943DBB3A8F8957DB76C8D\"><div>LINQ (Language Integrated Query) is a key innovation introduced with .NET 3.0 which brings SQL-style query expressions into VB and C#.<br><br>In this session Adam will compare 'LINQ to SQL' and 'LINQ to Entities' showing the strengths and weaknesses of each and in what situations each should be used, providing you with a roadmap of what tools/techniques should be used in what situations.<br><br>Adam's discussion will include&#58;<br><br><ul><li>Introduction to both 'LINQ to SQL' and 'LINQ to Entities'</li><li>Building models in the data designers of each framework</li><li>Mapping your database in a conceptual schema and modifying the schema</li><li>Hooking up your application to your new data layer</li><li>Show the advantages of LINQ over more traditional ADO.NET methods</li></ul>To finish Adam will build an application that uses both data layers and how easily you can make your applications data aware.</div></div>",
+  "eventDescription": "<div class=\"ExternalClass88EEFE66004943DBB3A8F8957DB76C8D\"><div>LINQ (Language Integrated Query) is a key innovation introduced with .NET 3.0 which brings SQL-style query expressions into VB and C#.<br><br>In this session Adam will compare 'LINQ to SQL' and 'LINQ to Entities' showing the strengths and weaknesses of each and in what situations each should be used, providing you with a roadmap of what tools/techniques should be used in what situations.<br><br>Adam's discussion will include&#58;<br><br><ul><li>Introduction to both 'LINQ to SQL' and 'LINQ to Entities'</li><li>Building models in the data designers of each framework</li><li>Mapping your database in a conceptual schema and modifying the schema</li><li>Hooking up your application to your new data layer</li><li>Show the advantages of LINQ over more traditional ADO.NET methods</li></ul>To finish Adam will build an application that uses both data layers and how easily you can make your applications data aware.</div></div>",
+  "description": "LINQ (Language Integrated Query) is a key innovation introduced with .NET 3.0 which brings SQL-style query expressions into VB and C#.\n\nIn this session Adam will compare 'LINQ to SQL' and 'LINQ to Entities' showing the strengths and weaknesses of each and in what situations each should be used, providing you with a roadmap of what tools/techniques should be used in what situations.\n\nAdam's discussion will include:\n\nIntroduction to both 'LINQ to SQL' and 'LINQ to Entities'\n\nBuilding models in the data designers of each framework\n\nMapping your database in a conceptual schema and modifying the schema\n\nHooking up your application to your new data layer\n\nShow the advantages of LINQ over more traditional ADO.NET methods\n\nTo finish Adam will build an application that uses both data layers and how easily you can make your applications data aware.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

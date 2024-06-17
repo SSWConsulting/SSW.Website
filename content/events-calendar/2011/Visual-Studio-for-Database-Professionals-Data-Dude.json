@@ -1,0 +1,21 @@
+{
+  "title": "Visual Studio for Database Professionals (Data Dude)",
+  "url": "http://#",
+  "thumbnail": {
+    "description": "Power Sessions",
+    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
+  },
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T14:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewTFS",
+  "sessionTitle": "Visual Studio for Database Professionals (Data Dude)",
+  "sessionTitleAnchor": "DatabaseProfessionals",
+  "eventShortDescription": "<div class=\"ExternalClassCBDC5D8B1F934AADAE306B1268A9EA1E\"><div>\u200bIn this session Adam will provide introduction to Visual Studio Team Edition for Database Professionals and will cover&#58; schema maintenance, unit testing and data generation, including a discussion on ways of extending this newly released product.</div></div>",
+  "eventDescription": "<div class=\"ExternalClassCBDC5D8B1F934AADAE306B1268A9EA1E\"><div>\u200bIn this session Adam will provide introduction to Visual Studio Team Edition for Database Professionals and will cover&#58; schema maintenance, unit testing and data generation, including a discussion on ways of extending this newly released product.</div></div>",
+  "description": "\u200bIn this session Adam will provide introduction to Visual Studio Team Edition for Database Professionals and will cover: schema maintenance, unit testing and data generation, including a discussion on ways of extending this newly released product.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

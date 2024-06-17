@@ -1,0 +1,22 @@
+{
+  "title": "Sydney .NET User Group: Azure Functions for the Enterprise - presented by Thiago Passos",
+  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
+  "thumbnail": {
+    "description": "Sydney .NET User Group: Azure Functions for the Enterprise - presented by Thiago Passos",
+    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
+  },
+  "presenter": "Thiago Passos",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Thiago.aspx",
+  "startDateTime": "2018-08-17T08:00:00Z",
+  "endDateTime": "2018-08-17T10:30:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Azure",
+  "eventShortDescription": "<div class=\"ExternalClassDCB63399036F496B9CC083375546D13A\"><div><strong>**Update&#58; the date for this event has changed! The event is now running on </strong><strong>Friday</strong><strong> August 17**&#160;</strong><br><br>Sydney .NET user group&#58; Azure Functions for the Enterprise - presented by Thiago Passos<br></div><div><br></div><div>Most people think Azure Functions are only for a tiny bit of code. They will be surprised! Why not build your whole application following best practices and only expose the endpoints through functions? In this talk, I'll present a new paradigm, a new way of thinking whilst still leveraging your existing knowledge.</div><div><br></div><div>About the presenter&#58;</div><div>Thiago Passos joined SSW in 2014 as a Senior Software Architect. He's specialized in SharePoint and .NET, preferring C#.NET over VB.NET, working on windows and web applications, including some distributed applications and web services.</div><div><br></div><div></div><div>Sorry folks, there's not going to be a live stream this month - so you'll need to come along in person!&#160;\u200b<br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassC9FF8B9854004931A7F9F1CBECDD0147\"><div><strong>**Update&#58; the date for this event has changed! The event is now running on </strong><strong>Friday</strong><strong> August 17**&#160;&#160;</strong><br></div><div><br></div><div>Sydney .NET user group&#58; Azure Functions for the Enterprise - presented by Thiago Passos<br></div><div><br></div><div>Most people think Azure Functions are only for a tiny bit of code. They will be surprised! Why not build your whole application following best practices and only expose the endpoints through functions? In this talk, I'll present a new paradigm, a new way of thinking whilst still leveraging your existing knowledge.</div><div><br></div><div>About the presenter&#58;</div><div>Thiago Passos joined SSW in 2014 as a Senior Software Architect. He's specialized in SharePoint and .NET, preferring C#.NET over VB.NET, working on windows and web applications, including some distributed applications and web services.</div><div><br></div><div></div><div>Sorry folks, there's not going to be a live stream this month - so you'll need to come along in person!&#160;\u200b<br></div><p><br></p></div>",
+  "description": "**Update: the date for this event has changed! The event is now running on \n\nFriday\n\n August 17**\u00a0\n\nSydney .NET user group: Azure Functions for the Enterprise - presented by Thiago Passos\n\nMost people think Azure Functions are only for a tiny bit of code. They will be surprised! Why not build your whole application following best practices and only expose the endpoints through functions? In this talk, I'll present a new paradigm, a new way of thinking whilst still leveraging your existing knowledge.\n\nAbout the presenter:\n\nThiago Passos joined SSW in 2014 as a Senior Software Architect. He's specialized in SharePoint and .NET, preferring C#.NET over VB.NET, working on windows and web applications, including some distributed applications and web services.\n\nSorry folks, there's not going to be a live stream this month - so you'll need to come along in person!\u00a0\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

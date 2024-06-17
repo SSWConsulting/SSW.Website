@@ -1,0 +1,24 @@
+{
+  "title": "Visual Studio for Database Professionals (Data Dude)",
+  "url": "https://www.ssw.com.au/images/newsletter-uploads/2006/_2006_11__Do%20you%20always%20carry%20your%20toolbox_.htm",
+  "thumbnail": {
+    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
+    "url": "/images/events/sydney-ug-thumb.jpg"
+  },
+  "presenter": " Adam Cogan",
+  "presenterProfileUrl": "https://adamcogan.com/",
+  "startDateTime": "2006-11-15T06:45:00Z",
+  "endDateTime": "2006-11-15T10:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass9A6634B26871462FBC3989E3C7BAAD08\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;Visual Studio Team Edition for Database Professionals delivers a market- shifting database development product designed to manage database changes, improve software quality through database testing and bring the benefits of Visual Studio Team System and life cycle development to the database professional.</span><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass5B7916339A2B4947ACC590A8A48AFD16\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;Visual Studio Team Edition for Database Professionals delivers a market- shifting database development product designed to manage database changes, improve software quality through database testing and bring the benefits of Visual Studio Team System and life cycle development to the database professional.</span><br></p></div>",
+  "description": "\u200b\n\nDescription:\n\n\u00a0Visual Studio Team Edition for Database Professionals delivers a market- shifting database development product designed to manage database changes, improve software quality through database testing and bring the benefits of Visual Studio Team System and life cycle development to the database professional.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30
+}

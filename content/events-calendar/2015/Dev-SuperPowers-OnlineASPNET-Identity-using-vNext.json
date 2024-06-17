@@ -1,0 +1,26 @@
+{
+  "title": "Dev SuperPowers: OnlineASP.NET Identity using vNext",
+  "url": "http://www.ssw.com.au/ssw/Events/Webinars/DevSuperpowers-ASP-NET-vNext.aspx",
+  "thumbnail": {
+    "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png",
+    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png"
+  },
+  "presenter": "Ben Cull",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Ben.aspx",
+  "startDateTime": "2015-05-26T14:00:00Z",
+  "endDateTime": "2015-05-28T13:00:00Z",
+  "liveStreamUrl": {
+    "description": "http://www.ssw.com.au/ssw/Live/",
+    "url": "http://www.ssw.com.au/ssw/Live/"
+  },
+  "calendarType": "Webinars",
+  "city": "Online",
+  "enabled": true,
+  "category": ".NET Core",
+  "eventShortDescription": "<div class=\"ExternalClassE53EB5A3F68643908D648B388FAAE891\"><div><strong>\u200bMake the most of ASP.NET vNext with ASP.NET Identity 2, OWIN and Dependency Injection</strong></div><div><br></div><div>Previous versions of ASP.NET Membership have left a bad taste in many developers mouths, and some are now dangerously out of date.&#160;</div><div><br></div><div>Watch Ben Cull take you through the latest, greatest and safest way to get your membership system up and running using ASP.NET Identity, OWIN and Dependency Injection.</div></div>",
+  "eventDescription": "<div class=\"ExternalClass6F447E3A689648B68D386885F2F2F580\"><div><strong>\u200b\u200bMake the most of ASP.NET vNext with ASP.NET Identity 2, OWIN and Dependency Injection</strong></div><div><br></div><div>Previous versions of ASP.NET Membership have left a bad taste in many developers mouths, and some are now dangerously out of date.&#160;</div><div><br></div><div>Watch Ben Cull take you through the latest, greatest and safest way to get your membership system up and running using ASP.NET Identity, OWIN and Dependency Injection.</div></div>",
+  "description": "\u200bMake the most of ASP.NET vNext with ASP.NET Identity 2, OWIN and Dependency Injection\n\nPrevious versions of ASP.NET Membership have left a bad taste in many developers mouths, and some are now dangerously out of date.\u00a0\n\nWatch Ben Cull take you through the latest, greatest and safest way to get your membership system up and running using ASP.NET Identity, OWIN and Dependency Injection.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

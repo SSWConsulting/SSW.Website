@@ -1,0 +1,19 @@
+{
+  "title": "Top 8 ways to speed up your database",
+  "url": "http://www.ssw.com.au/ssw/Events/Webinars/Speed-Up-SQL-Server.aspx",
+  "thumbnail": {
+    "description": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-sqlserver.jpg",
+    "url": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-sqlserver.jpg"
+  },
+  "presenter": "Daniel Hyles / Mehmet Ozdemir",
+  "startDateTime": "2011-10-06T00:00:00Z",
+  "endDateTime": "2011-10-06T01:00:00Z",
+  "calendarType": "Webinars",
+  "enabled": true,
+  "category": "SQL Server",
+  "eventShortDescription": "<div class=\"ExternalClass2BCDC981CAB84E4F8AA043105125A2DF\">Are your users starting a report and going for a coffee or a smoke while they wait? Are your users constantly complaining about timeouts when using your application?<br><br></div>",
+  "eventDescription": "<div class=\"ExternalClass2BCDC981CAB84E4F8AA043105125A2DF\"><div>Are your users starting a report and going for a coffee or a smoke while they wait? Are your users constantly complaining about timeouts when using your application?<br><br><br>If you find yourself with a sluggish database, stop pulling your hair out! In this webinar SSW will show you the top 8 methods we use to reduce the time it takes to run queries from minutes or hours to seconds.\u200b</div></div>",
+  "description": "Are your users starting a report and going for a coffee or a smoke while they wait? Are your users constantly complaining about timeouts when using your application?",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}
