@@ -195,7 +195,7 @@ export const eventsCalendarSchema: Collection = {
       list: true,
       ui: {
         itemProps: (item) => {
-          const presenter = item?.presenters;
+          const presenter = item?.presenter;
           if (!presenter) return { label: "Please Attach Presenter" };
 
           const formattedLabel = presenter
