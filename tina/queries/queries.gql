@@ -205,9 +205,18 @@ query logosContentQuery($relativePath: String!) {
   }
 }
 
-query getFutureEventsQuery($fromDate: String!, $top: Float!, $after: String, $calendarType: String) {
+query getFutureEventsQuery(
+  $fromDate: String!
+  $top: Float!
+  $after: String
+  $calendarType: String
+) {
   eventsCalendarConnection(
-    filter: { endDateTime: { after: $fromDate }, calendarType: { eq: $calendarType } }
+    filter: {
+      endDateTime: { after: $fromDate }
+      calendarType: { eq: $calendarType }
+      enabled: { eq: true }
+    }
     sort: "startDateTime"
     first: $top
     after: $after
@@ -216,9 +225,18 @@ query getFutureEventsQuery($fromDate: String!, $top: Float!, $after: String, $ca
   }
 }
 
-query getPastEventsQuery($fromDate: String!, $top: Float!, $before: String, $calendarType: String) {
+query getPastEventsQuery(
+  $fromDate: String!
+  $top: Float!
+  $before: String
+  $calendarType: String
+) {
   eventsCalendarConnection(
-    filter: { startDateTime: { before: $fromDate }, calendarType: { eq: $calendarType } }
+    filter: {
+      startDateTime: { before: $fromDate }
+      calendarType: { eq: $calendarType }
+      enabled: { eq: true }
+    }
     sort: "startDateTime"
     last: $top
     before: $before
