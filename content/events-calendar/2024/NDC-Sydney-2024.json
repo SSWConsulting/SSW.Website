@@ -1,10 +1,8 @@
 {
   "title": "NDC Sydney 2024",
   "url": "https://ndcsydney.com/",
-  "thumbnail": {
-    "description": "NDC Sydney 2024",
-    "url": "/images/Newsletters/ndc2019-event-thumb.jpg"
-  },
+  "thumbnail": "/images/Newsletters/ndc2019-event-thumb.jpg",
+  "thumbnailDescription": "NDC Sydney 2024",
   "presenterName": "Matt Goldman, William Liebenberg, Jernej Kavka, Luke Parker, Adam Cogan and more",
   "presenterProfileUrl": "https://ndcsydney.com/speakers",
   "startDateTime": "2024-02-11T22:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "Dynamics 365 for the .NET dev",
   "url": "http://#",
-  "thumbnail": {
-    "description": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
-    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
   "startDateTime": "2018-01-16T07:30:00Z",
   "endDateTime": "2018-01-17T09:00:00Z",
   "calendarType": "User Groups",

@@ -1,10 +1,8 @@
 {
   "title": "Webinar: Dev Superpowers - Xamarin",
   "url": "http://www.ssw.com.au/ssw/events/webinars/DevSuperpowers.aspx",
-  "thumbnail": {
-    "description": "Webinar: Dev Superpowers - Xamarin",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png",
+  "thumbnailDescription": "Webinar: Dev Superpowers - Xamarin",
   "presenterName": "Adam Stephensen",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/AdamS.aspx",
   "startDateTime": "2014-10-30T00:00:00Z",

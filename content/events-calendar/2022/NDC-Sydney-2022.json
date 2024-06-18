@@ -1,10 +1,8 @@
 {
   "title": "NDC Sydney 2022",
   "url": "https://ndcsydney.com/",
-  "thumbnail": {
-    "description": "NDC Sydney 2022",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/ndc2019-event-thumb.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/ndc2019-event-thumb.jpg",
+  "thumbnailDescription": "NDC Sydney 2022",
   "presenterName": "Adam Cogan, Bryden Oliver, Jason Taylor, Jernej Kavka, Matt Wicks and more",
   "presenterProfileUrl": "https://ndcsydney.com/speakers",
   "startDateTime": "2022-10-09T22:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "SSW Mastering Scrum Webinar",
   "url": "http://www.ssw.com.au/ssw/Events/Webinars/Master-Scrum.aspx",
-  "thumbnail": {
-    "description": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-scrum.jpg",
-    "url": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-scrum.jpg"
-  },
+  "thumbnail": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-scrum.jpg",
+  "thumbnailDescription": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-scrum.jpg",
   "presenterName": "Marlon Marescia / Gerard Beckerleg",
   "startDateTime": "2012-11-29T00:00:00Z",
   "endDateTime": "2012-11-29T01:00:00Z",

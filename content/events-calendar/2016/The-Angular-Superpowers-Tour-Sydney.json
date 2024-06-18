@@ -1,10 +1,8 @@
 {
   "title": "The Angular Superpowers Tour: Sydney",
   "url": "https://www.ssw.com.au/ssw/Events/Training/Angular-Superpowers-Tour.aspx",
-  "thumbnail": {
-    "description": "The Angular Superpowers Tour: Sydney",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
+  "thumbnailDescription": "The Angular Superpowers Tour: Sydney",
   "presenterName": "Adam Stephensen",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/AdamS.aspx",
   "startDateTime": "2016-11-24T22:00:00Z",

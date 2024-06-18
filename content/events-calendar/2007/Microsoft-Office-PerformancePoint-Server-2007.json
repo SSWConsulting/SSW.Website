@@ -1,10 +1,8 @@
 {
   "title": "Microsoft Office PerformancePoint Server 2007",
   "url": "https://www.ssw.com.au/images/newsletter-uploads/2007/_2007_09__Do%20you%20use%20appropriate%20and%20user-friendly%20icons_.htm",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://adamcogan.com/",
   "startDateTime": "2007-09-19T07:45:00Z",

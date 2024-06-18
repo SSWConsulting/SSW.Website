@@ -1,10 +1,8 @@
 {
   "title": "Sydney .NET user group - July",
   "url": "http://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "Sydney .NET user group - July",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET user group - July",
   "presenterName": "Filip Ekberg",
   "startDateTime": "2015-07-15T08:30:00Z",
   "endDateTime": "2015-07-15T10:30:00Z",

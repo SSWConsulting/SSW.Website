@@ -1,10 +1,8 @@
 {
   "title": "Business Continuity with Backup and Restore",
   "url": "https://www.ssw.com.au/images/newsletter-uploads/2009/_2009_01__Do%20you%20use%20CRM%20Plug-ins%20for%20data%20synchronization_.htm",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "Peter Ward",
   "startDateTime": "2009-01-19T06:45:00Z",
   "endDateTime": "2009-01-19T10:00:00Z",

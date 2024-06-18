@@ -1,10 +1,8 @@
 {
   "title": "Xamarin Hack Day: Brisbane",
   "url": "http://xamarinhackday.com//brisbane",
-  "thumbnail": {
-    "description": "Xamarin Hack Day: Brisbane",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png",
+  "thumbnailDescription": "Xamarin Hack Day: Brisbane",
   "startDateTime": "2019-08-02T23:00:00Z",
   "endDateTime": "2019-08-03T07:00:00Z",
   "calendarType": "Hack Days",

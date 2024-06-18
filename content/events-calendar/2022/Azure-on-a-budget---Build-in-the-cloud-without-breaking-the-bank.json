@@ -1,10 +1,8 @@
 {
   "title": "Azure on a budget - Build in the cloud without breaking the bank",
   "url": "https://www.ssw.com.au/ssw/NETUG/Brisbane.aspx",
-  "thumbnail": {
-    "description": "Brisbane Full Stack User Group",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-BrisbaneUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-BrisbaneUG.jpg",
+  "thumbnailDescription": "Brisbane Full Stack User Group",
   "presenterName": "Bryden Oliver",
   "presenterProfileUrl": "https://ssw.com.au/people/bryden-oliver",
   "startDateTime": "2022-12-14T07:00:00Z",

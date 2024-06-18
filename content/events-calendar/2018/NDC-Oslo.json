@@ -1,10 +1,8 @@
 {
   "title": "NDC Oslo",
   "url": "http://ndcoslo.com/",
-  "thumbnail": {
-    "description": "NDC Oslo",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/NDC-Oslo-2017.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/NDC-Oslo-2017.jpg",
+  "thumbnailDescription": "NDC Oslo",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2018-06-10T14:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "March Sydney .NET User Group: **Update! \"Preparing for COVID-19: Tips, Tricks, & Strategies for the Tech World\u201d**",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "March Sydney .NET User Group: **Update! \"Preparing for COVID-19: Tips, Tricks, & Strategies for the Tech World\u201d**",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": "March Sydney .NET User Group: **Update! \"Preparing for COVID-19: Tips, Tricks, & Strategies for the Tech World\u201d**",
   "presenterName": "Jason Taylor & Adam Cogan",
   "presenterProfileUrl": "https://www.ssw.com.au/people/jason-taylor",
   "startDateTime": "2020-03-18T07:30:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "Visual Studio Team System 2010",
   "url": "https://www.ssw.com.au/images/newsletter-uploads/2009/_2009_04__Is%20your%20version%20number%20meaningful_.htm",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "Stephen Godbold",
   "startDateTime": "2009-04-15T07:45:00Z",
   "endDateTime": "2009-04-15T11:00:00Z",

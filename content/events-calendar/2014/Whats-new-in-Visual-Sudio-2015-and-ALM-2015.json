@@ -1,10 +1,8 @@
 {
   "title": "What's new in Visual Sudio 2015 and ALM 2015",
   "url": "http://#",
-  "thumbnail": {
-    "description": "Power Sessions",
-    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
   "startDateTime": "2014-12-30T13:00:00Z",
   "endDateTime": "2014-12-30T13:00:00Z",
   "calendarType": "User Groups",

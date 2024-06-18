@@ -1,10 +1,8 @@
 {
   "title": "MAUI Hack Day - Sydney, Melbourne, Brisbane + ONLINE",
   "url": "https://mauihackday.com/",
-  "thumbnail": {
-    "description": "MAUI Hack Day - Sydney, Melbourne, Brisbane + ONLINE",
-    "url": "/images/events/mauihackday-thumb.png"
-  },
+  "thumbnail": "/images/events/mauihackday-thumb.png",
+  "thumbnailDescription": "MAUI Hack Day - Sydney, Melbourne, Brisbane + ONLINE",
   "presenterName": "Matt Goldman, Luke Parker, Anton Polkanov & Sam Basu",
   "presenterProfileUrl": "http://mauihackday.com/experts",
   "startDateTime": "2024-02-02T22:00:00Z",

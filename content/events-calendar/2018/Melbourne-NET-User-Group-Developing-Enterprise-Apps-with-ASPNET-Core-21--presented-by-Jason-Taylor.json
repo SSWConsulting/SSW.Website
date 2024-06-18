@@ -1,10 +1,8 @@
 {
   "title": "Melbourne .NET User Group: Developing Enterprise Apps with ASP.NET Core 2.1 \u2013 presented by Jason Taylor",
   "url": "https://www.ssw.com.au/ssw/NETUG/Melbourne.aspx",
-  "thumbnail": {
-    "description": "Melbourne .NET User Group: Developing Enterprise Apps with ASP.NET Core 2.1 \u2013 presented by Jason Taylor",
-    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-melbourneUG.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-melbourneUG.jpg",
+  "thumbnailDescription": "Melbourne .NET User Group: Developing Enterprise Apps with ASP.NET Core 2.1 \u2013 presented by Jason Taylor",
   "presenterName": "Jason Taylor",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/JasonTaylor.aspx",
   "startDateTime": "2018-06-13T08:00:00Z",

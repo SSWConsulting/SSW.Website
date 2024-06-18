@@ -1,10 +1,8 @@
 {
   "title": "Sydney .NET User Group: Up and running with the super-fast gRPC in .NET Core 3",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "Sydney .NET User Group: Up and running with the super-fast gRPC in .NET Core 3",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group: Up and running with the super-fast gRPC in .NET Core 3",
   "presenterName": "Liam Elliott",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Liam.aspx",
   "startDateTime": "2019-11-20T07:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "Azure Super Skills - Sydney",
   "url": "https://www.ssw.com.au/ssw/Events/training/azure-superskills.aspx",
-  "thumbnail": {
-    "description": "Azure Super Skills",
-    "url": "/images/Newsletters/Azure-super-skills.jpg"
-  },
+  "thumbnail": "/images/Newsletters/Azure-super-skills.jpg",
+  "thumbnailDescription": "Azure Super Skills",
   "presenterName": "William Liebenberg & Matt Wicks",
   "presenterProfileUrl": "https://www.ssw.com.au/people/",
   "startDateTime": "2023-04-20T23:00:00Z",

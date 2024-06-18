@@ -1,10 +1,8 @@
 {
   "title": "Sydney .NET user group: June double header - Writing unit tests + Serverless",
   "url": "https://www.ssw.com.au/ssw/netug/sydney.aspx",
-  "thumbnail": {
-    "description": "Sydney .NET user group: June double header - Writing unit tests + Serverless",
-    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET user group: June double header - Writing unit tests + Serverless",
   "presenterName": "Thiago Passos and Jason Taylor",
   "startDateTime": "2017-06-21T08:00:00Z",
   "endDateTime": "2017-06-21T10:00:00Z",

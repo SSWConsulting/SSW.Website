@@ -1,10 +1,8 @@
 {
   "title": "December Melbourne .NET User Group: A Merry Geek-mas Party & Fishbowl Presentations!",
   "url": "https://www.meetup.com/Melbourne-NET-User-Group/events/267059096/",
-  "thumbnail": {
-    "description": "December Melbourne .NET User Group: A Merry Geek-mas Party & Fishbowl Presentations!",
-    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-MelbourneUG.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-MelbourneUG.jpg",
+  "thumbnailDescription": "December Melbourne .NET User Group: A Merry Geek-mas Party & Fishbowl Presentations!",
   "presenterName": "Fish bowl Open to anyone!",
   "startDateTime": "2019-12-18T07:00:00Z",
   "endDateTime": "2019-12-18T09:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "Sydney .NET User Group: Double Header \"Add Real-time to ASP.NET Core and Serverless with Azure\" - presented by Anthony Chu & \"Azure Functions and the future of Serverless in the Enterprise\" - presented by Jeff Hollan",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "Sydney .NET User Group: Double Header \"Add Real-time to ASP.NET Core and Serverless with Azure\" - presented by Anthony Chu & \"Azure Functions and the future of Serverless in the Enterprise\" - presented by Jeff Hollan",
-    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group: Double Header \"Add Real-time to ASP.NET Core and Serverless with Azure\" - presented by Anthony Chu & \"Azure Functions and the future of Serverless in the Enterprise\" - presented by Jeff Hollan",
   "presenterName": "Anthony Chu & Jeff Hollan",
   "startDateTime": "2019-02-13T07:00:00Z",
   "endDateTime": "2019-02-13T09:00:00Z",

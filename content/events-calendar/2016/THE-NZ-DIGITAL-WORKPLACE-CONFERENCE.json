@@ -1,10 +1,8 @@
 {
   "title": "THE NZ DIGITAL WORKPLACE CONFERENCE",
   "url": "http://www.dwcnz.co.nz/",
-  "thumbnail": {
-    "description": "THE NZ DIGITAL WORKPLACE CONFERENCE",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/digital-workplace-conference.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/digital-workplace-conference.jpg",
+  "thumbnailDescription": "THE NZ DIGITAL WORKPLACE CONFERENCE",
   "startDateTime": "2016-08-08T22:00:00Z",
   "endDateTime": "2016-08-10T08:00:00Z",
   "calendarType": "Conferences",

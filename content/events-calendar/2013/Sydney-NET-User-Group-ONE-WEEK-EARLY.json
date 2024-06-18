@@ -1,10 +1,8 @@
 {
   "title": "Sydney .NET User Group *ONE WEEK EARLY*",
   "url": "http://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/hanselman-thumbnail.png",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/hanselman-thumbnail.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/hanselman-thumbnail.png",
+  "thumbnailDescription": "http://www.ssw.com.au/ssw/EventsCalendar/Images/hanselman-thumbnail.png",
   "presenterName": "Scott Hanselman ",
   "presenterProfileUrl": "http://www.hanselman.com/",
   "startDateTime": "2013-12-11T07:00:00Z",

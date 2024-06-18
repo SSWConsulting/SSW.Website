@@ -1,10 +1,8 @@
 {
   "title": "../NEW Afterparty @ SSW",
   "url": "https://www.eventbrite.com.au/e/887445813317",
-  "thumbnail": {
-    "description": "../NEW conference Newcastle",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-slashnew.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-slashnew.jpg",
+  "thumbnailDescription": "../NEW conference Newcastle",
   "presenterName": "Adam Cogan, Matt Wicks & William Liebenberg",
   "presenterProfileUrl": "https://www.ssw.com.au/people/",
   "startDateTime": "2024-05-15T07:30:00Z",

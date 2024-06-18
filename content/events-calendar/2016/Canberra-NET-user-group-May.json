@@ -1,10 +1,8 @@
 {
   "title": "Canberra .NET user group: May",
   "url": "https://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
-  "thumbnail": {
-    "description": "Canberra .NET User Group",
-    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg",
+  "thumbnailDescription": "Canberra .NET User Group",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2016-05-16T07:30:00Z",

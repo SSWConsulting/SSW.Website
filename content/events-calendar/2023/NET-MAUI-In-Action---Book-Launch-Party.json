@@ -1,10 +1,8 @@
 {
   "title": ".NET MAUI In Action - Book Launch Party",
   "url": "https://www.eventbrite.com.au/e/net-maui-in-action-book-launch-party-tickets-736269520957?aff=oddtdtcreator",
-  "thumbnail": {
-    "description": "MAUI book launch",
-    "url": "/images/events/maui-book-launch.jpg"
-  },
+  "thumbnail": "/images/events/maui-book-launch.jpg",
+  "thumbnailDescription": "MAUI book launch",
   "presenterName": "Matt Goldman",
   "presenterProfileUrl": "https://www.ssw.com.au/people/matt-goldman/",
   "startDateTime": "2023-10-19T07:00:00Z",

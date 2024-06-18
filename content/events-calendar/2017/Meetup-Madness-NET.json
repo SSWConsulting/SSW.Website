@@ -1,10 +1,8 @@
 {
   "title": "Meetup Madness: .NET",
   "url": "https://www.meetup.com/Microsoft-events-in-Australia/events/237153857/?eventId=237153857",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/ssw/EventsCalendar/Images/MS-Ignite-AU-2017.png",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/MS-Ignite-AU-2017.png"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/MS-Ignite-AU-2017.png",
+  "thumbnailDescription": "https://www.ssw.com.au/ssw/EventsCalendar/Images/MS-Ignite-AU-2017.png",
   "presenterName": "Jason Taylor, Brendan Richards, and Thiago Passos",
   "startDateTime": "2017-02-13T06:00:00Z",
   "endDateTime": "2017-02-13T08:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "FireBootCamp Ultra Enterprise MVC (9 Weeks) Sydney - August kick off",
   "url": "http://firebootcamp.com/schedule/",
-  "thumbnail": {
-    "description": "FireBootCamp Ultra Enterprise MVC (9 Weeks) Sydney - August kick off ",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/firebootcamp_icon.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/firebootcamp_icon.png",
+  "thumbnailDescription": "FireBootCamp Ultra Enterprise MVC (9 Weeks) Sydney - August kick off ",
   "startDateTime": "2016-08-14T23:00:00Z",
   "endDateTime": "2016-08-16T08:00:00Z",
   "calendarType": "FireBootCamp",

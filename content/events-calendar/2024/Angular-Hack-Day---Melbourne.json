@@ -1,10 +1,8 @@
 {
   "title": "Angular Hack Day - Melbourne",
   "url": "http://angularhackday.com",
-  "thumbnail": {
-    "description": "Angular Hack Day - Melbourne",
-    "url": "/images/events/AHD-thumb.jpg"
-  },
+  "thumbnail": "/images/events/AHD-thumb.jpg",
+  "thumbnailDescription": "Angular Hack Day - Melbourne",
   "startDateTime": "2024-11-29T22:00:00Z",
   "endDateTime": "2024-11-30T06:00:00Z",
   "calendarType": "Hack Days",

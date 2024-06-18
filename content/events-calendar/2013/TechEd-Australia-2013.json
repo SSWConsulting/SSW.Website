@@ -1,10 +1,8 @@
 {
   "title": "TechEd Australia 2013",
   "url": "http://www.microsoft.com/en-au/teched/default.aspx",
-  "thumbnail": {
-    "description": "TechEd Australia 2013",
-    "url": "http://ssw.com.au/ssw/EventsCalendar/Images/techedAU2013.png"
-  },
+  "thumbnail": "http://ssw.com.au/ssw/EventsCalendar/Images/techedAU2013.png",
+  "thumbnailDescription": "TechEd Australia 2013",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2013-09-02T23:00:00Z",

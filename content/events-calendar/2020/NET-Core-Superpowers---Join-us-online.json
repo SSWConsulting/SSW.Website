@@ -1,10 +1,8 @@
 {
   "title": ".NET Core Superpowers - Join us online!",
   "url": "https://ssw.com.au/ssw/Events/Training/Net-Core-Superpowers-Tour.aspx",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-NetCore.jpg",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-NetCore.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-NetCore.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-NetCore.jpg",
   "presenterName": "Jason Taylor and Brendan Richards",
   "startDateTime": "2020-04-28T23:00:00Z",
   "endDateTime": "2020-04-29T07:00:00Z",

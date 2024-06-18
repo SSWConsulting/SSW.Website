@@ -1,10 +1,8 @@
 {
   "title": "Diving into Team Foundation Server Extensibility",
   "url": "http://#",
-  "thumbnail": {
-    "description": "Power Sessions",
-    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
   "startDateTime": "2014-07-15T14:00:00Z",
   "endDateTime": "2014-07-15T16:00:00Z",
   "calendarType": "SSW Courses",

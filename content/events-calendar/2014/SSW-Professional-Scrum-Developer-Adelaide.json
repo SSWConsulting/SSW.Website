@@ -1,10 +1,8 @@
 {
   "title": "SSW Professional Scrum Developer: Adelaide",
   "url": "http://www.ssw.com.au/ssw/Events/Scrum-Training-Course-3-days.aspx",
-  "thumbnail": {
-    "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb_scrum.jpg",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb_scrum.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb_scrum.jpg",
+  "thumbnailDescription": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb_scrum.jpg",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2014-02-04T22:00:00Z",

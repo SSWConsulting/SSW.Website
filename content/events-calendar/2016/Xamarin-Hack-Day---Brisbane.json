@@ -1,10 +1,8 @@
 {
   "title": "Xamarin Hack Day - Brisbane",
   "url": "http://xamarinhackday.com/brisbane/",
-  "thumbnail": {
-    "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png",
+  "thumbnailDescription": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png",
   "presenterName": "Michael Ridland",
   "presenterProfileUrl": "http://www.michaelridland.com/",
   "startDateTime": "2016-09-23T23:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "Cloud Native Aspirations with .NET Aspire",
   "url": "https://www.ssw.com.au/netug/sydney",
-  "thumbnail": {
-    "description": "Sydney .NET User Group",
-    "url": "/images/thumbs/thumb-sydneyUG.jpg"
-  },
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
   "presenterName": "Matt Wicks & Rob Pearson",
   "presenterProfileUrl": "https://ssw.com.au/people/matt-wicks",
   "startDateTime": "2024-04-17T08:00:00Z",

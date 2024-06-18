@@ -1,10 +1,8 @@
 {
   "title": "The .NET Core Superpowers Tour: Brisbane",
   "url": "https://ssw.com.au/ssw/Events/Training/Net-Core-Superpowers-Tour.aspx",
-  "thumbnail": {
-    "description": "The .NET Core Superpowers Tour: Brisbane",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-NetCore.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-NetCore.jpg",
+  "thumbnailDescription": "The .NET Core Superpowers Tour: Brisbane",
   "presenterName": "Jason Taylor and Brendan Richards",
   "startDateTime": "2017-10-15T22:00:00Z",
   "endDateTime": "2017-10-16T06:00:00Z",

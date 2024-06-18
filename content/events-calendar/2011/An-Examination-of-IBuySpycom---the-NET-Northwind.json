@@ -1,10 +1,8 @@
 {
   "title": "An Examination of IBuySpy.com - the .NET Northwind",
   "url": "http://#",
-  "thumbnail": {
-    "description": "Power Sesisons",
-    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sesisons",
   "startDateTime": "2011-07-31T14:00:00Z",
   "endDateTime": "2011-07-31T15:00:00Z",
   "calendarType": "SSW Courses",

@@ -1,10 +1,8 @@
 {
   "title": "How to Plan for Database Performance Success",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "Sydney .NET User Group",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
   "presenterName": "Bryden Oliver",
   "presenterProfileUrl": "https://ssw.com.au/people/bryden-oliver",
   "startDateTime": "2023-03-15T07:00:00Z",

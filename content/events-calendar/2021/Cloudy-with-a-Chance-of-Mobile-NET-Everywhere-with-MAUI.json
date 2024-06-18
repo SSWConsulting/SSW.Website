@@ -1,10 +1,8 @@
 {
   "title": "Cloudy with a Chance of Mobile: .NET Everywhere with MAUI",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "Cloudy with a Chance of Mobile: .NET Everywhere with MAUI",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": "Cloudy with a Chance of Mobile: .NET Everywhere with MAUI",
   "presenterName": "Matt Goldman",
   "presenterProfileUrl": "https://www.ssw.com.au/people/matt-goldman",
   "startDateTime": "2021-07-21T08:00:00Z",

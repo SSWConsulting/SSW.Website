@@ -1,10 +1,8 @@
 {
   "title": "ONLINE or IN-Person - June Online User Group: 3 Lightning Talks (Brisbane)",
   "url": "https://www.meetup.com/Brisbane-Full-Stack-User-Group/events/278759614/",
-  "thumbnail": {
-    "description": "ONLINE or IN-Person - June Online User Group: 3 Lightning Talks (Brisbane)",
-    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-BrisbaneUG.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-BrisbaneUG.jpg",
+  "thumbnailDescription": "ONLINE or IN-Person - June Online User Group: 3 Lightning Talks (Brisbane)",
   "presenterName": "Jernej \"JK\" Kavka, William Liebenberg, and Bryden Oliver",
   "startDateTime": "2021-06-16T08:00:00Z",
   "endDateTime": "2021-06-16T12:00:00Z",

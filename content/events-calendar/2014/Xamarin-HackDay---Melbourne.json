@@ -1,10 +1,8 @@
 {
   "title": "Xamarin HackDay - Melbourne",
   "url": "http://xamarinhackday.com/melbourne/",
-  "thumbnail": {
-    "description": "Xamarin HackDay - Melbourne",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png",
+  "thumbnailDescription": "Xamarin HackDay - Melbourne",
   "startDateTime": "2014-11-28T21:30:00Z",
   "endDateTime": "2014-11-29T06:00:00Z",
   "calendarType": "Hack Days",

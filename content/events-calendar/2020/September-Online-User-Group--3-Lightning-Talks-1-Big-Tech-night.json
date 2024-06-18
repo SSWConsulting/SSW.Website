@@ -1,10 +1,8 @@
 {
   "title": "September Online User Group:  3 Lightning Talks, 1 Big Tech night",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "Online User Group",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": "Online User Group",
   "presenterName": "Chris Clement, Jernej \"JK\" Kavka & Gabriel George",
   "startDateTime": "2020-09-16T08:05:00Z",
   "endDateTime": "2020-09-16T11:00:00Z",

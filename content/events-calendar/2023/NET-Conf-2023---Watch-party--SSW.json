@@ -1,10 +1,8 @@
 {
   "title": ".NET Conf 2023 - Watch party @ SSW",
   "url": "https://www.eventbrite.com.au/e/net-conf-2023-ssw-tickets-746555546737?aff=oddtdtcreator",
-  "thumbnail": {
-    "description": "https://ssw.com.au/images/events/NET-Conf-2023-Thumbnail.jpg",
-    "url": "https://ssw.com.au/images/events/NET-Conf-2023-Thumbnail.jpg"
-  },
+  "thumbnail": "https://ssw.com.au/images/events/NET-Conf-2023-Thumbnail.jpg",
+  "thumbnailDescription": "https://ssw.com.au/images/events/NET-Conf-2023-Thumbnail.jpg",
   "startDateTime": "2023-11-14T22:00:00Z",
   "endDateTime": "2023-11-15T07:00:00Z",
   "calendarType": "Conferences",

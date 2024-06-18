@@ -1,10 +1,8 @@
 {
   "title": "Online User Group April - Clean Code: Clean Architecture with .NET Core",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": ".NET User Group Online",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": ".NET User Group Online",
   "presenterName": "Jason Taylor",
   "presenterProfileUrl": "https://www.ssw.com.au/people/jason-taylor",
   "startDateTime": "2020-04-15T08:30:00Z",

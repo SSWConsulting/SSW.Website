@@ -1,10 +1,8 @@
 {
   "title": "\u200bSolving first world problems with .NET Core and SignalR (liven up Angular and React apps)",
   "url": "http://#",
-  "thumbnail": {
-    "description": "\u200bSolving first world problems with .NET Core and SignalR (liven up Angular and React apps)",
-    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "\u200bSolving first world problems with .NET Core and SignalR (liven up Angular and React apps)",
   "startDateTime": "2018-07-09T14:00:00Z",
   "endDateTime": "2018-07-09T16:00:00Z",
   "calendarType": "Conferences",

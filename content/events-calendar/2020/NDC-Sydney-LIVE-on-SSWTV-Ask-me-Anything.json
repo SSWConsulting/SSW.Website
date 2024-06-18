@@ -1,10 +1,8 @@
 {
   "title": "NDC Sydney LIVE on SSWTV: Ask me Anything!",
   "url": "https://ndcsydney.com/agenda",
-  "thumbnail": {
-    "description": "NDC Sydney Online: Ask me Anything!",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/NDC-Conferences.png"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/NDC-Conferences.png",
+  "thumbnailDescription": "NDC Sydney Online: Ask me Anything!",
   "presenterName": "Special Guests from NDC Conferences",
   "presenterProfileUrl": "https://ndcsydney.com/speakers",
   "startDateTime": "2020-10-13T22:00:00Z",

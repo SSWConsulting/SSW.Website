@@ -1,10 +1,8 @@
 {
   "title": "Brisbane Full Stack User Group: Microsoft Ignite 2018 SharePoint related News and Announcements \u2013 Drinking from the firehose!",
   "url": "https://www.ssw.com.au/ssw/NETUG/Brisbane.aspx",
-  "thumbnail": {
-    "description": "Brisbane Full Stack User Group: Microsoft Ignite 2018 SharePoint related News and Announcements \u2013 Drinking from the firehose! ",
-    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-brisbaneUG.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-brisbaneUG.jpg",
+  "thumbnailDescription": "Brisbane Full Stack User Group: Microsoft Ignite 2018 SharePoint related News and Announcements \u2013 Drinking from the firehose! ",
   "presenterName": "Cameron Dwyer",
   "presenterProfileUrl": "https://twitter.com/CameronDwyer",
   "startDateTime": "2018-11-13T07:00:00Z",

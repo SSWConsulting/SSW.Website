@@ -1,10 +1,8 @@
 {
   "title": "Microsoft Atlas",
   "url": "https://www.ssw.com.au/images/newsletter-uploads/2006/_2006_09__Do%20you%20maintain%20verbal%20contact%20with%20your%20client_.htm",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "Tim Kremer",
   "startDateTime": "2006-09-20T07:45:00Z",
   "endDateTime": "2006-09-20T11:00:00Z",

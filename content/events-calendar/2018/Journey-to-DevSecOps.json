@@ -1,10 +1,8 @@
 {
   "title": "Journey to DevSecOps!",
   "url": "http://#",
-  "thumbnail": {
-    "description": "Journey to DevSecOps!",
-    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Journey to DevSecOps!",
   "presenterProfileUrl": "http://#",
   "startDateTime": "2018-03-20T13:00:00Z",
   "endDateTime": "2018-03-20T16:00:00Z",

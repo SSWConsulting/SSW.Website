@@ -1,10 +1,8 @@
 {
   "title": "Dev SuperPowers: OnlineAngular 2 - Part 2",
   "url": "http://tv.ssw.com/free-webinar-angular-2",
-  "thumbnail": {
-    "description": "Dev SuperPowers: Online<br />Angular 2 - Part 2",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png",
+  "thumbnailDescription": "Dev SuperPowers: Online<br />Angular 2 - Part 2",
   "presenterName": "Duncan Hunter",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/DuncanHunter.aspx",
   "startDateTime": "2016-03-31T00:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "\u200bCanberra .NET user group: Get ready for modern DevOps - Danijel Malik",
   "url": "https://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
-  "thumbnail": {
-    "description": "\u200bCanberra .NET user group: Get ready for modern DevOps - Danijel Malik",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg",
+  "thumbnailDescription": "\u200bCanberra .NET user group: Get ready for modern DevOps - Danijel Malik",
   "presenterName": "Danijel Malik",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Danijel-Malik.aspx",
   "startDateTime": "2017-07-17T07:00:00Z",

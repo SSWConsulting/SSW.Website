@@ -1,10 +1,8 @@
 {
   "title": "NDC { Sydney }",
   "url": "http://ndcsydney.com/",
-  "thumbnail": {
-    "description": "NDC { Sydney }",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/NDC-Sydney.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/NDC-Sydney.jpg",
+  "thumbnailDescription": "NDC { Sydney }",
   "startDateTime": "2017-08-13T14:00:00Z",
   "endDateTime": "2017-08-17T14:00:00Z",
   "calendarType": "Conferences",

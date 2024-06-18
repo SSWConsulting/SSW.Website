@@ -1,10 +1,8 @@
 {
   "title": "/serverless/DAYS Auckland",
   "url": "https://anz.serverlessdays.io/",
-  "thumbnail": {
-    "description": "/serverless/DAYS Auckland",
-    "url": "https://ssw.com.au/images/thumbs/serverless-days.png"
-  },
+  "thumbnail": "https://ssw.com.au/images/thumbs/serverless-days.png",
+  "thumbnailDescription": "/serverless/DAYS Auckland",
   "startDateTime": "2024-05-23T23:00:00Z",
   "endDateTime": "2024-05-24T07:30:00Z",
   "calendarType": "Conferences",

@@ -1,10 +1,8 @@
 {
   "title": "Newcastle Coders Group - Mob Programming + AWS Project Development Kit",
   "url": "https://www.meetup.com/newcastle-coders-group/events/300836558/",
-  "thumbnail": {
-    "description": "Newcastle Coders Group",
-    "url": "https://ssw.com.au/images/Newsletters/Newcastlecoders.jpg"
-  },
+  "thumbnail": "https://ssw.com.au/images/Newsletters/Newcastlecoders.jpg",
+  "thumbnailDescription": "Newcastle Coders Group",
   "presenterName": "Mark Tranter & Klee Thomas",
   "presenterProfileUrl": "https://www.meetup.com/newcastle-coders-group/events/300836558/",
   "startDateTime": "2024-06-05T08:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "Melbourne .NET User Group: Taking the Challenge out of Auth with OpenID Connect",
   "url": "https://www.ssw.com.au/ssw/NETUG/Melbourne.aspx",
-  "thumbnail": {
-    "description": "Melbourne .NET User Group: Taking the Challenge out of Auth with OpenID Connect ",
-    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-melbourneUG.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-melbourneUG.jpg",
+  "thumbnailDescription": "Melbourne .NET User Group: Taking the Challenge out of Auth with OpenID Connect ",
   "presenterName": "Ben Dechrai",
   "presenterProfileUrl": "https://twitter.com/bendechrai",
   "startDateTime": "2018-11-14T07:00:00Z",

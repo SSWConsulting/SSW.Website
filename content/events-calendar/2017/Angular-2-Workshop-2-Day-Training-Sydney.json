@@ -1,10 +1,8 @@
 {
   "title": "Angular 2 Workshop (2 Day Training): Sydney",
   "url": "https://firebootcamp.com/angular-2-workshop/",
-  "thumbnail": {
-    "description": "Angular 2 Workshop (2 Day Training): Sydney",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
+  "thumbnailDescription": "Angular 2 Workshop (2 Day Training): Sydney",
   "presenterName": "Adam Stephensen and Duncan Hunter",
   "startDateTime": "2017-03-15T22:00:00Z",
   "endDateTime": "2017-03-17T07:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "The Microsoft HoloLens Experience Day: Sydney",
   "url": "https://ssw.com.au/ssw/Events/HoloLens-experience.aspx",
-  "thumbnail": {
-    "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/Microsoft-HoloLens-Experience-Day.jpg",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/Microsoft-HoloLens-Experience-Day.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/Microsoft-HoloLens-Experience-Day.jpg",
+  "thumbnailDescription": "http://www.ssw.com.au/ssw/EventsCalendar/Images/Microsoft-HoloLens-Experience-Day.jpg",
   "presenterName": "Adam Cogan and Stephen Carter",
   "startDateTime": "2017-07-25T23:00:00Z",
   "endDateTime": "2017-07-26T07:00:00Z",

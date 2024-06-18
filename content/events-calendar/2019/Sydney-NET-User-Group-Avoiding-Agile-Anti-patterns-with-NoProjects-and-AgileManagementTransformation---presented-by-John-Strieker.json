@@ -1,10 +1,8 @@
 {
   "title": "Sydney .NET User Group: Avoiding Agile Anti-patterns with #NoProjects and #AgileManagementTransformation - presented by John Strieker",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "Sydney .NET User Group: Avoiding Agile Anti-patterns with #NoProjects and #AgileManagementTransformation - presented by John Strieker",
-    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group: Avoiding Agile Anti-patterns with #NoProjects and #AgileManagementTransformation - presented by John Strieker",
   "presenterName": "John Strieker",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/JohnStrieker.aspx",
   "startDateTime": "2019-02-20T07:00:00Z",

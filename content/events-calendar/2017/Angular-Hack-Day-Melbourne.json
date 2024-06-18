@@ -1,10 +1,8 @@
 {
   "title": "Angular Hack Day: Melbourne",
   "url": "http://angularhackday.com/melbourne",
-  "thumbnail": {
-    "description": "Angular Hack Day: Melbourne",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/AHD-thumb.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/AHD-thumb.jpg",
+  "thumbnailDescription": "Angular Hack Day: Melbourne",
   "presenterName": "Adam Stephensen",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/AdamS.aspx",
   "startDateTime": "2017-03-24T21:30:00Z",

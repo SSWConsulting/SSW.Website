@@ -1,10 +1,8 @@
 {
   "title": "Angular Hack Day: Melbourne",
   "url": "http://angularhackday.com/melbourne",
-  "thumbnail": {
-    "description": "Angular Hack Day: Melbourne",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/AHD-thumb.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/AHD-thumb.jpg",
+  "thumbnailDescription": "Angular Hack Day: Melbourne",
   "startDateTime": "2019-06-21T23:00:00Z",
   "endDateTime": "2019-06-22T07:00:00Z",
   "calendarType": "Hack Days",

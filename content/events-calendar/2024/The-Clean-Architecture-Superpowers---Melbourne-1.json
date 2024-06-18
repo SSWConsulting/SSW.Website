@@ -1,10 +1,8 @@
 {
   "title": "The Clean Architecture Superpowers - Melbourne",
   "url": "https://www.ssw.com.au/events/clean-architecture-superpowers-tour",
-  "thumbnail": {
-    "description": "The Clean Architecture Superpowers - Melbourne",
-    "url": "https://ssw.com.au/images/Newsletters/SuperPowers-Icon-CleanArchitecture.jpg"
-  },
+  "thumbnail": "https://ssw.com.au/images/Newsletters/SuperPowers-Icon-CleanArchitecture.jpg",
+  "thumbnailDescription": "The Clean Architecture Superpowers - Melbourne",
   "presenterName": "Daniel Mackay & Luke Parker",
   "startDateTime": "2024-11-06T13:00:00Z",
   "endDateTime": "2024-11-06T13:00:00Z",

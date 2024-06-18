@@ -1,10 +1,8 @@
 {
   "title": "NDC Melbourne 2022",
   "url": "https://ndcmelbourne.com/",
-  "thumbnail": {
-    "description": "NDC Melbourne 2022",
-    "url": "http://ssw.com.au/NETUG/SSWUPdate/Images/NDC-Melbourne-logo.jpg"
-  },
+  "thumbnail": "http://ssw.com.au/NETUG/SSWUPdate/Images/NDC-Melbourne-logo.jpg",
+  "thumbnailDescription": "NDC Melbourne 2022",
   "presenterName": "Adam Cogan, Jason Taylor, Patrick Zhao, William Liebenberg and more",
   "startDateTime": "2022-06-19T22:00:00Z",
   "endDateTime": "2022-06-24T08:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "The Azure Superpowers Tour: Brisbane",
   "url": "https://www.ssw.com.au/ssw/Events/Training/Azure-Superpowers-Tour.aspx",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg",
   "startDateTime": "2019-02-18T22:00:00Z",
   "endDateTime": "2019-02-19T06:00:00Z",
   "calendarType": "SSW Courses",

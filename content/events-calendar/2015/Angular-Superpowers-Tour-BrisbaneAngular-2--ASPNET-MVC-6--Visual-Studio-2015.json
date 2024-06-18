@@ -1,10 +1,8 @@
 {
   "title": "Angular Superpowers Tour: BrisbaneAngular 2 + ASP.NET MVC 6 + Visual Studio 2015",
   "url": "https://www.ssw.com.au/ssw/Events/Training/Angular-Superpowers-Tour-Angular-ASP-MVC-in-VS2015.aspx",
-  "thumbnail": {
-    "description": "Angular Superpowers Tour Brisbane",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
+  "thumbnailDescription": "Angular Superpowers Tour Brisbane",
   "presenterName": "Adam Stephensen and Duncan Hunter",
   "startDateTime": "2015-11-20T22:00:00Z",
   "endDateTime": "2015-11-22T07:00:00Z",

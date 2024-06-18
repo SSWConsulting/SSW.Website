@@ -1,10 +1,8 @@
 {
   "title": "No Estimates - Stop lying to your yourself and your customers, and stop estimating",
   "url": "http://#",
-  "thumbnail": {
-    "description": "Power Sessions",
-    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
   "startDateTime": "2014-02-18T13:00:00Z",
   "endDateTime": "2014-02-18T16:00:00Z",
   "calendarType": "SSW Courses",

@@ -1,10 +1,8 @@
 {
   "title": "SQL Server 2008 Real World with Spatial Data",
   "url": "https://www.ssw.com.au/images/newsletter-uploads/2008/_2008_11__Do%20you%20keep%20chunks%20of%20work%20small_.htm",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://adamcogan.com/",
   "startDateTime": "2008-11-19T06:45:00Z",

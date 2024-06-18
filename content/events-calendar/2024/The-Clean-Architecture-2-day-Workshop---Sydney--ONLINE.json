@@ -1,10 +1,8 @@
 {
   "title": "The Clean Architecture 2-day Workshop - Sydney + ONLINE",
   "url": "https://www.ssw.com.au/events/clean-architecture-workshop",
-  "thumbnail": {
-    "description": "The Clean Architecture 2-day Workshop",
-    "url": "/images/Newsletters/Workshop-Icon-CleanArchitecture.jpg"
-  },
+  "thumbnail": "/images/Newsletters/Workshop-Icon-CleanArchitecture.jpg",
+  "thumbnailDescription": "The Clean Architecture 2-day Workshop",
   "presenterName": "Daniel Mackay & Luke Parker",
   "presenterProfileUrl": "https://ssw.com.au/people/",
   "startDateTime": "2024-09-16T23:00:00Z",

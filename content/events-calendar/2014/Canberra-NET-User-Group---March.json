@@ -1,10 +1,8 @@
 {
   "title": "Canberra .NET User Group - March",
   "url": "http://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
-  "thumbnail": {
-    "description": "Canberra .NET User Group - March ",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg",
+  "thumbnailDescription": "Canberra .NET User Group - March ",
   "presenterName": "Grant Holliday ",
   "startDateTime": "2014-03-17T07:00:00Z",
   "endDateTime": "2014-03-17T09:00:00Z",

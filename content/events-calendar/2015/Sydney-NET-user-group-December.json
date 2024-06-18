@@ -1,10 +1,8 @@
 {
   "title": "Sydney .NET user group: December",
   "url": "http://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "Sydney .NET user group: December",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET user group: December",
   "presenterName": "Chris Briggs and Dave Glover",
   "startDateTime": "2015-12-16T07:30:00Z",
   "endDateTime": "2015-12-16T09:30:00Z",

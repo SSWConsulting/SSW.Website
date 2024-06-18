@@ -1,10 +1,8 @@
 {
   "title": "Migrating from TFS to the cloud... without losing your mind",
   "url": "http://#",
-  "thumbnail": {
-    "description": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
-    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
   "startDateTime": "2017-01-17T22:00:00Z",
   "endDateTime": "2017-01-18T06:00:00Z",
   "calendarType": "SSW Courses",

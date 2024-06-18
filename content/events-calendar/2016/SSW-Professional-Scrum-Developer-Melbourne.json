@@ -1,10 +1,8 @@
 {
   "title": "SSW Professional Scrum Developer: Melbourne",
   "url": "http://www.ssw.com.au/ssw/Events/Scrum-Training-Course-3-days.aspx",
-  "thumbnail": {
-    "description": "SSW Professional Scrum Developer: Melbourne",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb_scrum.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb_scrum.jpg",
+  "thumbnailDescription": "SSW Professional Scrum Developer: Melbourne",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2016-08-07T23:00:00Z",

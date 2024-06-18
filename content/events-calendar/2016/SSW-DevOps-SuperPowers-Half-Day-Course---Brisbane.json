@@ -1,10 +1,8 @@
 {
   "title": "SSW DevOps SuperPowers Half Day Course - Brisbane",
   "url": "https://www.ssw.com.au/ssw/Events/Training/DevOps-SuperPowers-VS2015-ASP-NET-vNext.aspx",
-  "thumbnail": {
-    "description": "SSW DevOps SuperPowers Half Day Course - Brisbane",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/DevOpsSuperPowers-Thumb.png"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/DevOpsSuperPowers-Thumb.png",
+  "thumbnailDescription": "SSW DevOps SuperPowers Half Day Course - Brisbane",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2016-09-04T23:00:00Z",

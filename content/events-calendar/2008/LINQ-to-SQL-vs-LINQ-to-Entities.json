@@ -1,10 +1,8 @@
 {
   "title": "\u2018LINQ to SQL\u2019 vs \u2018LINQ to Entities\u2019",
   "url": "https://www.ssw.com.au/images/newsletter-uploads/2008/_2008_06__Do%20you%20make%20sure%20that%20the%20database%20structure%20is%20automatically%20handled%20via%203%20buttons_.htm",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://adamcogan.com/",
   "startDateTime": "2008-06-18T07:45:00Z",

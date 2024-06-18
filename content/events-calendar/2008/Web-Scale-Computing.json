@@ -1,10 +1,8 @@
 {
   "title": "Web-Scale Computing",
   "url": "https://www.ssw.com.au/images/newsletter-uploads/2008/_2008_02__Do%20you%20know%20how%20Google%20ranks%20pages_.htm",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "Mike Culver",
   "startDateTime": "2008-02-27T06:45:00Z",
   "endDateTime": "2008-02-27T10:00:00Z",

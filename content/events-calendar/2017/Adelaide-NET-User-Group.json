@@ -1,10 +1,8 @@
 {
   "title": "Adelaide .NET User Group",
   "url": "https://www.meetup.com/Adelaide-dotNET/events/237357085/",
-  "thumbnail": {
-    "description": "Adelaide .NET User Group",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/adelaide-net-user-group.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/adelaide-net-user-group.jpg",
+  "thumbnailDescription": "Adelaide .NET User Group",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2017-02-09T14:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "Dev SuperPowers - Building an Onion Architecture with Entity Framework with Brendan Richards",
   "url": "http://tv.ssw.com/devsuperpowers-onionarchitecture-event-registration",
-  "thumbnail": {
-    "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png",
+  "thumbnailDescription": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png",
   "presenterName": "Brendan Richards",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Brendan.aspx",
   "startDateTime": "2015-07-22T14:00:00Z",

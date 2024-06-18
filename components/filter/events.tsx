@@ -32,10 +32,8 @@ export type EventTrimmed = {
   hostedAtSSW?: boolean;
   id?: string;
   title: string;
-  thumbnail?: {
-    url?: string;
-    description?: string;
-  };
+  thumbnail?: string;
+  thumbnailDescription?: string;
   startDateTime: Date;
   endDateTime: Date;
   city?: string;
@@ -161,7 +159,7 @@ const EventsList = ({
                   "@context": "https://schema.org",
                   "@type": "Event",
                   name: event.title,
-                  image: event.thumbnail?.url,
+                  image: event.thumbnail,
                   startDate: event.startDateTime?.toISOString(),
                   endDate: event.endDateTime?.toISOString(),
                   location: {
@@ -240,8 +238,8 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
               className="rounded-md max-md:pb-3"
               height={100}
               width={100}
-              alt={event.thumbnail?.description}
-              src={event.thumbnail?.url}
+              alt={`${event.thumbnailDescription || event.title} logo`}
+              src={event.thumbnail}
             />
           </div>
           <div>

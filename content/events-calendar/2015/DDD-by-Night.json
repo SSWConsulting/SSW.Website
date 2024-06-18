@@ -1,10 +1,8 @@
 {
   "title": "DDD by Night",
   "url": "http://dddbynight.dddmelbourne.com/",
-  "thumbnail": {
-    "description": "DDD by Night",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DDD-by-night.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DDD-by-night.jpg",
+  "thumbnailDescription": "DDD by Night",
   "startDateTime": "2015-06-04T08:00:00Z",
   "endDateTime": "2015-06-04T10:00:00Z",
   "calendarType": "Conferences",

@@ -1,10 +1,8 @@
 {
   "title": "Angular Hack Day: Sydney",
   "url": "http://angularhackday.com/",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
+  "thumbnailDescription": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2016-04-22T22:30:00Z",

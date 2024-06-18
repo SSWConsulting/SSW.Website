@@ -1,10 +1,8 @@
 {
   "title": "Brisbane Full Stack User Group: Real-life SpendOps with Cosmos DB - presented by William Liebenberg",
   "url": "https://www.ssw.com.au/ssw/NETUG/Brisbane.aspx",
-  "thumbnail": {
-    "description": "Brisbane Full Stack User Group: Real-life SpendOps with Cosmos DB - presented by William Liebenberg",
-    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-BrisbaneUG.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-BrisbaneUG.jpg",
+  "thumbnailDescription": "Brisbane Full Stack User Group: Real-life SpendOps with Cosmos DB - presented by William Liebenberg",
   "presenterName": "William Liebenberg",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/WilliamLiebenberg.aspx",
   "startDateTime": "2019-06-11T08:00:00Z",

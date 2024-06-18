@@ -1,10 +1,8 @@
 {
   "title": "The Angular Superpowers Tour - Brisbane",
   "url": "https://www.ssw.com.au/ssw/Events/Training/Angular-Superpowers-Tour.aspx",
-  "thumbnail": {
-    "description": "Angular Superpowers Tour - Brisbane",
-    "url": "/images/events/SuperPower-Icon-Angular.jpg"
-  },
+  "thumbnail": "/images/events/SuperPower-Icon-Angular.jpg",
+  "thumbnailDescription": "Angular Superpowers Tour - Brisbane",
   "presenterName": "Matt Wicks",
   "presenterProfileUrl": "http://ssw.com.au/people/",
   "startDateTime": "2024-01-14T22:00:00Z",

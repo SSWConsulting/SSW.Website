@@ -1,10 +1,8 @@
 {
   "title": "Data access in Microsoft CRM and SharePoint",
   "url": "https://www.ssw.com.au/images/newsletter-uploads/2009/_2009_05__Does%20your%20SharePoint%20site%20have%20favicon_.htm",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "George Doubinski",
   "startDateTime": "2009-05-20T07:45:00Z",
   "endDateTime": "2009-05-20T11:00:00Z",

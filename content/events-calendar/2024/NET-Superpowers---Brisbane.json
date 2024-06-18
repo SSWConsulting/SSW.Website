@@ -1,10 +1,8 @@
 {
   "title": ".NET Superpowers - Brisbane",
   "url": "https://www.ssw.com.au/events/net-superpowers-tour",
-  "thumbnail": {
-    "description": ".NET Superpowers - Sydney + Online",
-    "url": "https://ssw.com.au/images/Newsletters/SuperPower-Icon-DotNet.jpg"
-  },
+  "thumbnail": "https://ssw.com.au/images/Newsletters/SuperPower-Icon-DotNet.jpg",
+  "thumbnailDescription": ".NET Superpowers - Sydney + Online",
   "presenterName": "William Liebenberg & Daniel Mackay",
   "presenterProfileUrl": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-DotNet.jpg",
   "startDateTime": "2024-07-07T23:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "DDD Melbourne 2024",
   "url": "https://www.dddmelbourne.com/",
-  "thumbnail": {
-    "description": "DDD Melbourne 2024",
-    "url": "https://ssw.com.au/images/events/ddd-logo.png"
-  },
+  "thumbnail": "https://ssw.com.au/images/events/ddd-logo.png",
+  "thumbnailDescription": "DDD Melbourne 2024",
   "startDateTime": "2024-03-15T22:00:00Z",
   "endDateTime": "2024-03-16T10:00:00Z",
   "calendarType": "Conferences",

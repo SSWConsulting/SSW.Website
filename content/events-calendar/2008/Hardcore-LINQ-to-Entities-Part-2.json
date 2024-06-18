@@ -1,10 +1,8 @@
 {
   "title": "Hardcore LINQ to Entities (Part 2)",
   "url": "https://www.ssw.com.au/images/newsletter-uploads/2008/_2008_08__Do%20you%20run%20web%20tests%20on%20your%20website%20(for%20load%20and%20automated%20testing)_.htm",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://adamcogan.com/",
   "startDateTime": "2008-08-20T07:45:00Z",

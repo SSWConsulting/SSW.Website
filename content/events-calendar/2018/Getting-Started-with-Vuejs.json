@@ -1,10 +1,8 @@
 {
   "title": "Getting Started with Vue.js",
   "url": "http://#",
-  "thumbnail": {
-    "description": "Getting Started with Vue.js",
-    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Getting Started with Vue.js",
   "startDateTime": "2018-08-09T15:00:00Z",
   "endDateTime": "2018-08-10T07:00:00Z",
   "calendarType": "Conferences",

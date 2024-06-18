@@ -1,10 +1,8 @@
 {
   "title": "Angular Workshop (2-Day Training) - Sydney",
   "url": "https://firebootcamp.com/2-day-angular-workshop/",
-  "thumbnail": {
-    "description": "Angular Workshop (2-Day Training) - Sydney",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
+  "thumbnailDescription": "Angular Workshop (2-Day Training) - Sydney",
   "presenterName": "Jean Thirion, Matt Wicks and Luke Cook",
   "startDateTime": "2022-09-27T23:00:00Z",
   "endDateTime": "2022-09-29T07:00:00Z",

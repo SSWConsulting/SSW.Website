@@ -1,10 +1,8 @@
 {
   "title": "The Angular Superpowers Tour: Sydney",
   "url": "https://www.ssw.com.au/ssw/Events/Training/Angular-Superpowers-Tour.aspx",
-  "thumbnail": {
-    "description": "The Angular Superpowers Tour: Sydney",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Angular.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Angular.jpg",
+  "thumbnailDescription": "The Angular Superpowers Tour: Sydney",
   "presenterName": "Brendan Richards and Jean Thirion",
   "startDateTime": "2019-03-14T22:00:00Z",
   "endDateTime": "2019-03-15T06:00:00Z",

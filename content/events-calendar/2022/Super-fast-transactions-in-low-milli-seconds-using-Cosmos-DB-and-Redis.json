@@ -1,10 +1,8 @@
 {
   "title": "Super fast transactions in low milli-seconds using Cosmos DB and Redis",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": ".NET User Group",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": ".NET User Group",
   "presenterName": "Bryden Oliver",
   "presenterProfileUrl": "https://www.ssw.com.au/people/bryden-oliver",
   "startDateTime": "2022-02-16T07:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "Dev SuperPowers: OnlineIntroduction to Windows Server Containers for the .NET Developer",
   "url": "http://tv.ssw.com/free-webinar-introduction-to-windows-server-containers-for-the-net-developer",
-  "thumbnail": {
-    "description": "Dev SuperPowers - Introduction to Windows Server Containers for the .NET Developer with Jeremy Cade",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png",
+  "thumbnailDescription": "Dev SuperPowers - Introduction to Windows Server Containers for the .NET Developer with Jeremy Cade",
   "presenterName": "Jeremy Cade",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/jeremy.aspx",
   "startDateTime": "2015-10-29T00:00:00Z",

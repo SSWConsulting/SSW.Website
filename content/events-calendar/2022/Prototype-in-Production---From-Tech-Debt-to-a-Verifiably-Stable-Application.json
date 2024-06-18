@@ -1,10 +1,8 @@
 {
   "title": "Prototype in Production - From Tech Debt to a Verifiably Stable Application",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "Prototype in Production - From Tech Debt to a Verifiably Stable Application",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": "Prototype in Production - From Tech Debt to a Verifiably Stable Application",
   "presenterName": "Luke Parker",
   "presenterProfileUrl": "https://www.ssw.com.au/people/luke-parker",
   "startDateTime": "2022-04-20T08:00:00Z",

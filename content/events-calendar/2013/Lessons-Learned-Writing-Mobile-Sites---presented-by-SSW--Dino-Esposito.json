@@ -1,10 +1,8 @@
 {
   "title": "Lessons Learned Writing Mobile Sites - presented by SSW & Dino Esposito",
   "url": "http://www.ssw.com.au/ssw/Events/Webinars/Lessons-Learned-Writing-Mobile-Sites.aspx",
-  "thumbnail": {
-    "description": "SSW Webinar - Lessons learned writing mobile sites",
-    "url": "http://ssw.com.au/ssw/Events/Images/icons/thumb-webinar-dinoesposito_smaller.jpg"
-  },
+  "thumbnail": "http://ssw.com.au/ssw/Events/Images/icons/thumb-webinar-dinoesposito_smaller.jpg",
+  "thumbnailDescription": "SSW Webinar - Lessons learned writing mobile sites",
   "presenterName": "Dino Esposito",
   "startDateTime": "2013-10-15T06:00:00Z",
   "endDateTime": "2013-10-15T07:00:00Z",

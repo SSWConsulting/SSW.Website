@@ -1,10 +1,8 @@
 {
   "title": "NDC Oslo 2024",
   "url": "https://ndcoslo.com/",
-  "thumbnail": {
-    "description": "NDC Oslo 2024",
-    "url": "/images/Newsletters/event-thumbnail-NDC-2024.png"
-  },
+  "thumbnail": "/images/Newsletters/event-thumbnail-NDC-2024.png",
+  "thumbnailDescription": "NDC Oslo 2024",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "http://ssw.com.au/people/adam-cogan",
   "startDateTime": "2024-06-09T14:00:00Z",

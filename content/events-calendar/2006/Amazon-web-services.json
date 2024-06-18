@@ -1,10 +1,8 @@
 {
   "title": "Amazon web services",
   "url": "https://www.ssw.com.au/images/newsletter-uploads/2006/_2006_12__Do%20you%20use%20email%20for%20tasks%20only%20-%20not%20communication_.htm",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "Andrew Franklin",
   "startDateTime": "2006-12-20T06:45:00Z",
   "endDateTime": "2006-12-20T10:00:00Z",

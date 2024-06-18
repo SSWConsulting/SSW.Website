@@ -1,10 +1,8 @@
 {
   "title": "Azure Sydney User Group: From Paper to Power using Azure Form Recognizer",
   "url": "https://www.youtube.com/watch?v=kRWjb05VYd0&feature=youtu.be",
-  "thumbnail": {
-    "description": "SSW Speaker",
-    "url": "https://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Jernej-Kavka.jpg"
-  },
+  "thumbnail": "https://ssw.com.au/ssw/NETUG/SSWUpdate/Images/Jernej-Kavka.jpg",
+  "thumbnailDescription": "SSW Speaker",
   "presenterName": "Jernej \"JK\" Kavka",
   "presenterProfileUrl": "https://ssw.com.au/people/jk",
   "startDateTime": "2020-08-19T09:00:00Z",

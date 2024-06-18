@@ -1,10 +1,8 @@
 {
   "title": "The AI Hack Day - Sydney",
   "url": "http://aihackday.com/",
-  "thumbnail": {
-    "description": "The AI Hack Day - Sydney",
-    "url": "/images/events/AIHackDaySSWEvents.jpg"
-  },
+  "thumbnail": "/images/events/AIHackDaySSWEvents.jpg",
+  "thumbnailDescription": "The AI Hack Day - Sydney",
   "presenterName": "Jernej Kavka (JK)",
   "presenterProfileUrl": "https://www.ssw.com.au/people/jk",
   "startDateTime": "2024-07-19T23:00:00Z",

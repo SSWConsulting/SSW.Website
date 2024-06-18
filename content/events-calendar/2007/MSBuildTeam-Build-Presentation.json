@@ -1,10 +1,8 @@
 {
   "title": "MSBuild/Team Build Presentation",
   "url": "https://www.ssw.com.au/images/newsletter-uploads/2007/_2007_06__Do%20you%20implement%20an%20error%20logger_.htm",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "William Bartholomew",
   "startDateTime": "2007-06-20T07:45:00Z",
   "endDateTime": "2007-06-20T11:00:00Z",

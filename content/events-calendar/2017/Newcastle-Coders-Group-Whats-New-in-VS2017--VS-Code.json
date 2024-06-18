@@ -1,10 +1,8 @@
 {
   "title": "Newcastle Coders Group: \"What\u2019s New in VS2017 + VS Code\"",
   "url": "http://ncg.asn.au/",
-  "thumbnail": {
-    "description": "Newcastle Coders Group",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/newcastle-coders-group.png"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/newcastle-coders-group.png",
+  "thumbnailDescription": "Newcastle Coders Group",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2017-02-01T07:00:00Z",

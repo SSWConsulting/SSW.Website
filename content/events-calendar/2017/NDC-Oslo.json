@@ -1,10 +1,8 @@
 {
   "title": "NDC Oslo",
   "url": "http://ndcoslo.com/",
-  "thumbnail": {
-    "description": "NDC Oslo",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/NDC-Oslo-2017.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/NDC-Oslo-2017.jpg",
+  "thumbnailDescription": "NDC Oslo",
   "startDateTime": "2017-06-11T15:00:00Z",
   "endDateTime": "2017-06-16T10:00:00Z",
   "calendarType": "Conferences",

@@ -1,10 +1,8 @@
 {
   "title": "SolidQ - Accelerated SQL Server 2012 Integration Services",
   "url": "http://http://www.ssw.com.au/ssw/Events/training/SQL-Server-2012-Integration-Services.aspx",
-  "thumbnail": {
-    "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg",
+  "thumbnailDescription": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg",
   "presenterName": "Paco Gonzalez",
   "startDateTime": "2012-11-04T13:00:00Z",
   "endDateTime": "2012-11-07T13:00:00Z",

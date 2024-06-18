@@ -1,10 +1,8 @@
 {
   "title": "FireBootCamp: RedmondUltra Enterprise MVC (9 Weeks) - September kick off",
   "url": "http://firebootcamp.com/schedule/",
-  "thumbnail": {
-    "description": "FireBootCamp Ultra Enterprise MVC (9 Weeks) Redmond - September kick off ",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/firebootcamp_icon.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/firebootcamp_icon.png",
+  "thumbnailDescription": "FireBootCamp Ultra Enterprise MVC (9 Weeks) Redmond - September kick off ",
   "startDateTime": "2016-09-11T23:00:00Z",
   "endDateTime": "2016-09-13T08:00:00Z",
   "calendarType": "FireBootCamp",

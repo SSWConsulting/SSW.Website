@@ -1,10 +1,8 @@
 {
   "title": "Angular Superpowers Tour: Brisbane",
   "url": "https://firebootcamp.com/angular-superpower-tour/",
-  "thumbnail": {
-    "description": "Angular Superpowers Tour: Brisbane",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
+  "thumbnailDescription": "Angular Superpowers Tour: Brisbane",
   "presenterName": "Brendan Richards & Jean Thirion",
   "startDateTime": "2019-09-09T23:00:00Z",
   "endDateTime": "2019-09-10T08:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "6 Design Patterns that Every Developer Should Know",
   "url": "https://www.ssw.com.au/ssw/NETUG/PastSessions.aspx",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "Justin King",
   "startDateTime": "2009-03-18T06:45:00Z",
   "endDateTime": "2009-03-18T10:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "December Online User Group: Transform your Power BI Dashboards with Custom Visuals built in React",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "Online User Group",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": "Online User Group",
   "presenterName": "Prem Radhakrishnan",
   "presenterProfileUrl": "https://www.ssw.com.au/people/prem-radhakrishnan",
   "startDateTime": "2020-12-16T07:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "Put the top hat on your SharePoint 2016 server with PowerBI",
   "url": "http://#",
-  "thumbnail": {
-    "description": "Power sessions",
-    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power sessions",
   "startDateTime": "2016-05-11T08:00:00Z",
   "endDateTime": "2016-05-11T09:00:00Z",
   "calendarType": "SSW Courses",

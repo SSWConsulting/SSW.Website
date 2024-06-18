@@ -1,10 +1,8 @@
 {
   "title": "How to keep your email tidy with AI",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "Sydney .NET User Group",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
   "presenterName": "Jernej Kavka (JK)",
   "presenterProfileUrl": "https://www.ssw.com.au/people/jk",
   "startDateTime": "2022-10-19T07:00:00Z",

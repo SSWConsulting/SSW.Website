@@ -1,10 +1,8 @@
 {
   "title": "AI Hack Day - Brisbane",
   "url": "https://aihackday.com/brisbane/",
-  "thumbnail": {
-    "description": "AI Hack Day - Brisbane",
-    "url": "/images/events/AIHackDaySSWEvents.jpg"
-  },
+  "thumbnail": "/images/events/AIHackDaySSWEvents.jpg",
+  "thumbnailDescription": "AI Hack Day - Brisbane",
   "presenterName": "N\ufeffick Curran & Jernej Kavka (JK) ",
   "presenterProfileUrl": "https://ssw.com.au/people/",
   "startDateTime": "2024-09-27T23:00:00Z",

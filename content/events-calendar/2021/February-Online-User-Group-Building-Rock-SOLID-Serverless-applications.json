@@ -1,10 +1,8 @@
 {
   "title": "February Online User Group: Building Rock SOLID Serverless applications",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "Online User Group",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": "Online User Group",
   "presenterName": "William Liebenberg",
   "startDateTime": "2021-02-17T07:00:00Z",
   "endDateTime": "2021-02-17T12:00:00Z",

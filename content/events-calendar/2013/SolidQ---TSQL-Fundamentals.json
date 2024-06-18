@@ -1,10 +1,8 @@
 {
   "title": "SolidQ - T\u2010SQL Fundamentals",
   "url": "http://www.ssw.com.au/ssw/Events/training/TSQL-Fundamentals.aspx",
-  "thumbnail": {
-    "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg",
+  "thumbnailDescription": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg",
   "presenterName": "Francisco A Gonz\u00e1lez D\u00edaz",
   "startDateTime": "2013-08-01T14:00:00Z",
   "endDateTime": "2013-08-01T14:00:00Z",

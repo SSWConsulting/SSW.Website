@@ -1,10 +1,8 @@
 {
   "title": "Canberra .NET User Group: Real-time Face Recognition With Microsoft Cognitive Services",
   "url": "https://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
-  "thumbnail": {
-    "description": "Canberra .NET User Group: Real-time Face Recognition With Microsoft Cognitive Services ",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg",
+  "thumbnailDescription": "Canberra .NET User Group: Real-time Face Recognition With Microsoft Cognitive Services ",
   "presenterName": "Jernej \"JK\" Kavka",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/JK.aspx",
   "startDateTime": "2019-01-14T06:00:00Z",

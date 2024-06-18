@@ -1,10 +1,8 @@
 {
   "title": "*IN-PERSON and ONLINE* Sydney BuildWatchParty: Great Scott! 2 Microsoft hours with The Guthrie + The Hanselman",
   "url": "https://www.meetup.com/Sydney-NET-User-Group/events/278434224/",
-  "thumbnail": {
-    "description": "*IN-PERSON and ONLINE* Sydney BuildWatchParty: Great Scott! 2 Microsoft hours with The Guthrie + The Hanselman",
-    "url": "https://www.ssw.com.au/ssw/eventscalendar/Images/Microsoft-Square-Logo.png"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/eventscalendar/Images/Microsoft-Square-Logo.png",
+  "thumbnailDescription": "*IN-PERSON and ONLINE* Sydney BuildWatchParty: Great Scott! 2 Microsoft hours with The Guthrie + The Hanselman",
   "presenterName": "Scott Guthrie, Scott Hanselman, Rajesh Jha, and Kevin Scott",
   "startDateTime": "2021-06-03T06:00:00Z",
   "endDateTime": "2021-06-03T10:00:00Z",

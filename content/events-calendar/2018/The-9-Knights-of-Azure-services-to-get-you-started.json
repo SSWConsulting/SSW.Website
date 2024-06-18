@@ -1,10 +1,8 @@
 {
   "title": "The 9 Knights of Azure: services to get you started",
   "url": "http://#",
-  "thumbnail": {
-    "description": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
-    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
   "startDateTime": "2018-01-15T13:00:00Z",
   "endDateTime": "2018-01-15T15:00:00Z",
   "calendarType": "User Groups",

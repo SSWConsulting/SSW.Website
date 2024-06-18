@@ -1,10 +1,8 @@
 {
   "title": "Clean Architecture in .NET MAUI and ASP.NET Core",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "Sydney .NET User Group",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
   "presenterName": "Matt Goldman",
   "presenterProfileUrl": "https://www.ssw.com.au/people/matt-goldman",
   "startDateTime": "2022-11-16T07:00:00Z",

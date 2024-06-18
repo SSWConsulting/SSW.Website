@@ -1,10 +1,8 @@
 {
   "title": "MAUI Hack Day - Sydney, Melbourne, Brisbane + ONLINE",
   "url": "http://mauihackday.com/",
-  "thumbnail": {
-    "description": "MAUI Hack Day - Sydney, Melbourne, Brisbane + ONLINE",
-    "url": "/images/events/mauihackday-thumb.png"
-  },
+  "thumbnail": "/images/events/mauihackday-thumb.png",
+  "thumbnailDescription": "MAUI Hack Day - Sydney, Melbourne, Brisbane + ONLINE",
   "presenterName": "Matt Goldman, Brady Stroud, Sam Basu, Jack Pettit & more",
   "presenterProfileUrl": "http://mauihackday.com/experts",
   "startDateTime": "2023-04-14T14:00:00Z",

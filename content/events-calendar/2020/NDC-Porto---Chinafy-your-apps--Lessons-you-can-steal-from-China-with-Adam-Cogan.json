@@ -1,10 +1,8 @@
 {
   "title": "NDC Porto - Chinafy your apps + Lessons you can steal from China with Adam Cogan",
   "url": "https://ndcporto.com/talk/chinafy-your-apps-lessons-you-can-steal-from-china/",
-  "thumbnail": {
-    "description": "https://ndcporto.com/speaker/adam-cogan",
-    "url": "https://ndcporto.com/images/speaker/adam-cogan.png"
-  },
+  "thumbnail": "https://ndcporto.com/images/speaker/adam-cogan.png",
+  "thumbnailDescription": "https://ndcporto.com/speaker/adam-cogan",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://www.ssw.com.au/people/adam-cogan",
   "startDateTime": "2020-04-23T10:40:00Z",

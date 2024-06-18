@@ -1,10 +1,8 @@
 {
   "title": "DDD Brisbane 2023",
   "url": "https://www.dddbrisbane.com/",
-  "thumbnail": {
-    "description": "DDD Brisbane",
-    "url": "https://ssw.com.au/images/thumbs/thumb-ddd-brisbane.png"
-  },
+  "thumbnail": "https://ssw.com.au/images/thumbs/thumb-ddd-brisbane.png",
+  "thumbnailDescription": "DDD Brisbane",
   "presenterName": "Bryden Oliver, Jernej Kavka, Luke Parker and William Liebenberg ",
   "presenterProfileUrl": "http://ssw.com.au/people",
   "startDateTime": "2023-12-01T21:00:00Z",

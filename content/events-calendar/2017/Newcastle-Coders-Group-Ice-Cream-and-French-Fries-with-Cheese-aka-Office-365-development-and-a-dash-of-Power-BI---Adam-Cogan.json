@@ -1,10 +1,8 @@
 {
   "title": "Newcastle Coders Group: Ice Cream and French Fries with Cheese (a.k.a. Office 365 development and a dash of Power BI) - Adam Cogan",
   "url": "https://www.meetup.com/Newcastle-Coders-Group/events/241753696/",
-  "thumbnail": {
-    "description": "Newcastle Coders Group: Ice Cream and French Fries with Cheese (a.k.a. Office 365 development and a dash of Power BI) - Adam Cogan",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/newcastle-coders-group.png"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/newcastle-coders-group.png",
+  "thumbnailDescription": "Newcastle Coders Group: Ice Cream and French Fries with Cheese (a.k.a. Office 365 development and a dash of Power BI) - Adam Cogan",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2017-09-06T08:00:00Z",

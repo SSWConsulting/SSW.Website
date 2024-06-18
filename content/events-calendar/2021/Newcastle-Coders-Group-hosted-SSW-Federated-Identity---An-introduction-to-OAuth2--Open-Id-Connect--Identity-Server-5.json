@@ -1,10 +1,8 @@
 {
   "title": "Newcastle Coders Group, hosted @SSW: Federated Identity:  \ud83d\udd11 An introduction to OAuth2 \u2014> Open Id Connect \u2014> Identity Server 5",
   "url": "https://www.meetup.com/Newcastle-Coders-Group/",
-  "thumbnail": {
-    "description": "http://www.ssw.com.au/ssw/Images/Newcastle.jpg",
-    "url": "http://www.ssw.com.au/ssw/Images/Newcastle.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/Images/Newcastle.jpg",
+  "thumbnailDescription": "http://www.ssw.com.au/ssw/Images/Newcastle.jpg",
   "presenterName": "Anthony Ngyuen & Adam Cogan",
   "presenterProfileUrl": "https://www.ssw.com.au/people/",
   "startDateTime": "2021-03-10T07:00:00Z",

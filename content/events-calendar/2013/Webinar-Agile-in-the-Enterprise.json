@@ -1,10 +1,8 @@
 {
   "title": "Webinar: Agile in the Enterprise",
   "url": "http://www.ssw.com.au/ssw/Events/Webinars/8-Month-Software-Development-Retrospective.aspx",
-  "thumbnail": {
-    "description": "Agile in the Enterprise Webinar ",
-    "url": "http://www.ssw.com.au/ssw/Events/Webinars/Images/thumbs/thumb-webinar-lessons-from-the-real-world-115.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/Events/Webinars/Images/thumbs/thumb-webinar-lessons-from-the-real-world-115.jpg",
+  "thumbnailDescription": "Agile in the Enterprise Webinar ",
   "presenterName": "Keith Longworth and Gerard Beckerleg",
   "startDateTime": "2013-10-24T00:00:00Z",
   "endDateTime": "2013-10-24T01:00:00Z",

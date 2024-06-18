@@ -1,10 +1,8 @@
 {
   "title": "Webinar: Dev Superpowers - SignalR",
   "url": "http://www.ssw.com.au/ssw/events/webinars/DevSuperpowers.aspx",
-  "thumbnail": {
-    "description": "Webinar: Dev Superpowers - SignalR",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png",
+  "thumbnailDescription": "Webinar: Dev Superpowers - SignalR",
   "presenterName": "David Burela",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/David-Burela.aspx",
   "startDateTime": "2014-07-24T01:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "MAUI Hack Day (previously Xamarin)",
   "url": "https://mauihackday.com/",
-  "thumbnail": {
-    "description": "MAUI Hack Day - ONLINE",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/mauihackday-thumb.png"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/mauihackday-thumb.png",
+  "thumbnailDescription": "MAUI Hack Day - ONLINE",
   "presenterName": "Matt Goldman, Brady Stroud, Jack Pettit, Alec Tucker, Kym Phillpotts, Sam Basu",
   "presenterProfileUrl": "https://www.ssw.com.au/people/matt-goldman",
   "startDateTime": "2022-11-04T22:00:00Z",

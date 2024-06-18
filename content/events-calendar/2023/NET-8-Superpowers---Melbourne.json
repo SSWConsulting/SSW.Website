@@ -1,10 +1,8 @@
 {
   "title": ".NET 8 Superpowers - Melbourne",
   "url": "https://www.ssw.com.au/events/net-superpowers-tour",
-  "thumbnail": {
-    "description": ".NET 8 Superpowers",
-    "url": "https://ssw.com.au/images/Newsletters/SuperPower-Icon-DotNet.jpg"
-  },
+  "thumbnail": "https://ssw.com.au/images/Newsletters/SuperPower-Icon-DotNet.jpg",
+  "thumbnailDescription": ".NET 8 Superpowers",
   "presenterName": "William Liebenberg and Daniel Mackay",
   "presenterProfileUrl": "https://www.ssw.com.au/people/",
   "startDateTime": "2023-12-04T22:00:00Z",

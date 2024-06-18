@@ -1,10 +1,8 @@
 {
   "title": "Building data-centric applications in Silverlight 2",
   "url": "https://www.ssw.com.au/images/newsletter-uploads/2008/_2008_12__Do%20you%20know%20the%20best%20way%20to%20demo%20Microsoft%20CRM%204%20to%20clients_.htm",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "Jonas Folles",
   "startDateTime": "2008-12-10T06:45:00Z",
   "endDateTime": "2008-12-10T10:00:00Z",

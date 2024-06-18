@@ -1,10 +1,8 @@
 {
   "title": "Sydney .NET User Group: Solving first world problems with .NET Core and SignalR (liven up Angular and React apps)",
   "url": "http://https://www.ssw.com.au/ssw/netug/sydney.aspx",
-  "thumbnail": {
-    "description": "Sydney .NET User Group: Solving first world problems with .NET Core and SignalR (liven up Angular and React apps)",
-    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group: Solving first world problems with .NET Core and SignalR (liven up Angular and React apps)",
   "presenterName": "Liam Elliott",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Liam.aspx",
   "startDateTime": "2018-07-18T08:30:00Z",

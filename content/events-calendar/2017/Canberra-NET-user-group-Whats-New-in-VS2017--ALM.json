@@ -1,10 +1,8 @@
 {
   "title": "Canberra .NET user group: What\u2019s New in VS2017 + ALM",
   "url": "https://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
-  "thumbnail": {
-    "description": "Canberra .NET user group: What\u2019s New in VS2017 + ALM",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg",
+  "thumbnailDescription": "Canberra .NET user group: What\u2019s New in VS2017 + ALM",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2017-02-08T06:30:00Z",

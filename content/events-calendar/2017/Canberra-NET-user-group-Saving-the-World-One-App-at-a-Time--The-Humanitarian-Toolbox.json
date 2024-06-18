@@ -1,10 +1,8 @@
 {
   "title": "Canberra .NET user group: \u200bSaving the World One App at a Time \u2013 The Humanitarian Toolbox",
   "url": "https://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
-  "thumbnail": {
-    "description": "Canberra .NET user group: \u200bSaving the World One App at a Time \u2013 The Humanitarian Toolbox",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg",
+  "thumbnailDescription": "Canberra .NET user group: \u200bSaving the World One App at a Time \u2013 The Humanitarian Toolbox",
   "presenterName": "Richard Campbell ",
   "presenterProfileUrl": "https://twitter.com/richcampbell",
   "startDateTime": "2017-08-07T07:30:00Z",

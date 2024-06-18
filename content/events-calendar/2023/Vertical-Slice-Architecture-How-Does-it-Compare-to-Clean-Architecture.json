@@ -1,10 +1,8 @@
 {
   "title": "Vertical Slice Architecture: How Does it Compare to Clean Architecture",
   "url": "https://www.ssw.com.au/ssw/NETUG/Brisbane.aspx",
-  "thumbnail": {
-    "description": "Brisbane Full Stack User Group",
-    "url": "/images/thumbs/thumb-brisbaneUG.jpg"
-  },
+  "thumbnail": "/images/thumbs/thumb-brisbaneUG.jpg",
+  "thumbnailDescription": "Brisbane Full Stack User Group",
   "presenterName": "Luke Parker",
   "presenterProfileUrl": "http://ssw.com.au/people/luke-parker",
   "startDateTime": "2023-09-20T08:00:00Z",

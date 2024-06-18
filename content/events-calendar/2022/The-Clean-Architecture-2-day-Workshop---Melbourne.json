@@ -1,10 +1,8 @@
 {
   "title": "The Clean Architecture 2-day Workshop - Melbourne",
   "url": "https://www.ssw.com.au/ssw/Events/Training/Clean-Architecture-Workshop.aspx",
-  "thumbnail": {
-    "description": "The Clean Architecture 2-day Workshop - Melbourne",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Workshop-Icon-CleanArchitecture.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Workshop-Icon-CleanArchitecture.jpg",
+  "thumbnailDescription": "The Clean Architecture 2-day Workshop - Melbourne",
   "presenterName": "Jason Taylor & William Liebenberg",
   "presenterProfileUrl": "https://www.ssw.com.au/people/jason-taylor",
   "startDateTime": "2022-08-21T23:00:00Z",

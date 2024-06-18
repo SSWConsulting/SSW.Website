@@ -1,10 +1,8 @@
 {
   "title": "Sydney. NET User Group: What I've learned from 20 years of programming in C# with Joe Albahari",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "Sydney .NET User Group",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
   "presenterName": "Joe Albahari",
   "presenterProfileUrl": "https://mvp.microsoft.com/en-us/PublicProfile/4021948?fullName=joe%20albahari",
   "startDateTime": "2021-04-21T08:00:00Z",

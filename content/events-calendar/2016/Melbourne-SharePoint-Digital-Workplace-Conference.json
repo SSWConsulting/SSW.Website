@@ -1,10 +1,8 @@
 {
   "title": "Melbourne SharePoint/ Digital Workplace Conference",
   "url": "http://www.sharethepoint.com/conferences/australia/",
-  "thumbnail": {
-    "description": "Melbourne SharePoint/ Digital Workplace Conference",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/digital-workplace-conference.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/digital-workplace-conference.jpg",
+  "thumbnailDescription": "Melbourne SharePoint/ Digital Workplace Conference",
   "startDateTime": "2016-04-27T14:00:00Z",
   "endDateTime": "2016-04-28T14:00:00Z",
   "calendarType": "Conferences",

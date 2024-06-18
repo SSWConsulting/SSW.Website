@@ -1,10 +1,8 @@
 {
   "title": "Sydney .NET user group - January",
   "url": "http://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "Sydney .NET user group - January",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET user group - January",
   "presenterName": "Danijel Malik",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Danijel-Malik.aspx",
   "startDateTime": "2015-01-21T07:00:00Z",

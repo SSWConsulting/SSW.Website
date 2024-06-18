@@ -1,10 +1,8 @@
 {
   "title": "Xamarin HackDay - Beijing",
   "url": "http://xamarinhackday.com/beijing/",
-  "thumbnail": {
-    "description": "Xamarin HackDay - Beijing",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png",
+  "thumbnailDescription": "Xamarin HackDay - Beijing",
   "startDateTime": "2015-05-29T14:00:00Z",
   "endDateTime": "2015-05-30T13:55:00Z",
   "calendarType": "Hack Days",

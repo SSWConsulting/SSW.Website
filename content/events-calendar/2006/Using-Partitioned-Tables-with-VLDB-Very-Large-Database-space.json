@@ -1,10 +1,8 @@
 {
   "title": "Using Partitioned Tables with VLDB (Very Large Database) space",
   "url": "https://www.ssw.com.au/images/newsletter-uploads/2006/_2006_07__Do%20you%20send%20a%20Test%20Please%20email_.htm",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "Geoff Orr",
   "startDateTime": "2006-07-21T07:45:00Z",
   "endDateTime": "2006-07-21T11:00:00Z",

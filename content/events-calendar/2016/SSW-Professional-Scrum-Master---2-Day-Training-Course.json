@@ -1,10 +1,8 @@
 {
   "title": "SSW Professional Scrum Master - 2 Day Training Course",
   "url": "https://www.ssw.com.au/ssw/events/training/Scrum-Master-Training-Course-NDC-special.aspx",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/ssw/Events/Training/Images/Banner-Scrum-NDC.png",
-    "url": "https://www.ssw.com.au/ssw/events/training/Images/thumbs/thumb-professional-scrum-course.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/events/training/Images/thumbs/thumb-professional-scrum-course.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/ssw/Events/Training/Images/Banner-Scrum-NDC.png",
   "presenterName": "Martin Hinshelwood",
   "presenterProfileUrl": "https://nkdagility.com/company/about-martin-hinshelwood/",
   "startDateTime": "2016-07-27T23:00:00Z",

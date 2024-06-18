@@ -1,10 +1,8 @@
 {
   "title": "Sydney .NET User Group - Adam Cogan",
   "url": "http://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
-  "thumbnail": {
-    "description": "Sydney .NET User Group - Adam Cogan",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group - Adam Cogan",
   "presenterName": "Adam Cogan ",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2015-05-18T08:00:00Z",

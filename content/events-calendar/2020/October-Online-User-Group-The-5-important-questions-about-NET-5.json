@@ -1,10 +1,8 @@
 {
   "title": "October Online User Group: The 5 important questions about .NET 5",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "Online User Group",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": "Online User Group",
   "presenterName": "Brendan Richards",
   "presenterProfileUrl": "https://ssw.com.au/people/brendan-richards/",
   "startDateTime": "2020-10-21T06:00:00Z",

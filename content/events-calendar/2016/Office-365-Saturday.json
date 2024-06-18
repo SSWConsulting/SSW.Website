@@ -1,10 +1,8 @@
 {
   "title": "Office 365 Saturday",
   "url": "http://www.o365saturdayaustralia.com/brisbane",
-  "thumbnail": {
-    "description": "https://sswcom.sharepoint.com/sites/Events/PublishingImages/o365satthumb.jpg",
-    "url": "https://sswcom.sharepoint.com/sites/Events/PublishingImages/o365satthumb.jpg"
-  },
+  "thumbnail": "https://sswcom.sharepoint.com/sites/Events/PublishingImages/o365satthumb.jpg",
+  "thumbnailDescription": "https://sswcom.sharepoint.com/sites/Events/PublishingImages/o365satthumb.jpg",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2016-07-22T14:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "Melbourne .NET User Group: Infrastructure as Code with Terraform on Azure",
   "url": "https://www.meetup.com/Melbourne-NET-User-Group/events/254926583/",
-  "thumbnail": {
-    "description": "Melbourne .NET User Group",
-    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-melbourneUG.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-melbourneUG.jpg",
+  "thumbnailDescription": "Melbourne .NET User Group",
   "presenterName": "Tom Harvey",
   "presenterProfileUrl": "https://twitter.com/tombuildsstuff",
   "startDateTime": "2018-09-26T08:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "Melbourne .NET user group: Azure Functions for the Enterprise - presented by Thiago Passos",
   "url": "https://www.ssw.com.au/ssw/NETUG/Melbourne.aspx",
-  "thumbnail": {
-    "description": "Melbourne .NET user group: Azure Functions for the Enterprise - presented by Thiago Passos",
-    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-melbourneUG.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-melbourneUG.jpg",
+  "thumbnailDescription": "Melbourne .NET user group: Azure Functions for the Enterprise - presented by Thiago Passos",
   "presenterName": "Thiago Passos",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Thiago.aspx",
   "startDateTime": "2018-08-08T08:00:00Z",

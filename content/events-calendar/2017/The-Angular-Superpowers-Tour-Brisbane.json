@@ -1,10 +1,8 @@
 {
   "title": "The Angular Superpowers Tour: Brisbane",
   "url": "https://www.ssw.com.au/ssw/Events/Training/Angular-Superpowers-Tour.aspx",
-  "thumbnail": {
-    "description": "The Angular Superpowers Tour: Brisbane",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Angular.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Angular.jpg",
+  "thumbnailDescription": "The Angular Superpowers Tour: Brisbane",
   "presenterName": "Adam Stephensen and Duncan Hunter",
   "startDateTime": "2017-04-26T23:00:00Z",
   "endDateTime": "2017-04-27T07:00:00Z",

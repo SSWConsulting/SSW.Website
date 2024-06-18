@@ -1,10 +1,8 @@
 {
   "title": "The AI Hack Day - Melbourne",
   "url": "https://aihackday.com/",
-  "thumbnail": {
-    "description": "The Ai Hack Day - Melbourne",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/AIHackDaySSWEvents.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/AIHackDaySSWEvents.jpg",
+  "thumbnailDescription": "The Ai Hack Day - Melbourne",
   "presenterName": "William Liebenberg, Jk Kavka & Patrick Zhao",
   "startDateTime": "2020-01-31T22:00:00Z",
   "endDateTime": "2020-02-01T06:00:00Z",

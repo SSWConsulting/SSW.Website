@@ -1,10 +1,8 @@
 {
   "title": "The Clean Architecture Superpowers",
   "url": "https://www.ssw.com.au/ssw/Events/Training/Clean-Architecture-Superpowers-Tour.aspx",
-  "thumbnail": {
-    "description": "The Clean Architecture Superpowers",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPowers-Icon-CleanArchitecture.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPowers-Icon-CleanArchitecture.jpg",
+  "thumbnailDescription": "The Clean Architecture Superpowers",
   "presenterName": "Jason Taylor",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/JasonTaylor.aspx",
   "startDateTime": "2020-02-24T22:00:00Z",

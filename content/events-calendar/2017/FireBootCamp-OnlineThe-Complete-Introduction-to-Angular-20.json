@@ -1,10 +1,8 @@
 {
   "title": "FireBootCamp: Online\"The Complete Introduction to Angular 2.0\"",
   "url": "https://firebootcamp.com/angular2webinar",
-  "thumbnail": {
-    "description": "FireBootCamp Webinar",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/firebootcamp_icon.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/firebootcamp_icon.png",
+  "thumbnailDescription": "FireBootCamp Webinar",
   "presenterName": "Adam Stephensen",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/PublishingImages/adamS_info.jpg",
   "startDateTime": "2017-01-11T00:00:00Z",

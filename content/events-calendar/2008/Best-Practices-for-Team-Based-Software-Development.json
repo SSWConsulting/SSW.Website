@@ -1,10 +1,8 @@
 {
   "title": "Best Practices for Team-Based Software Development",
   "url": "https://www.ssw.com.au/images/newsletter-uploads/2008/_2008_01__Do%20you%20use%20inherited%20forms%20for%20consistent%20behaviour_%20.htm",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "Anthony Borton",
   "startDateTime": "2008-01-16T06:45:00Z",
   "endDateTime": "2008-01-16T10:00:00Z",

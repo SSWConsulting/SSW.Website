@@ -1,10 +1,8 @@
 {
   "title": "Coding with Ghosts - The Hidden Helpers in Software Engineering",
   "url": "https://www.ssw.com.au/netug/brisbane",
-  "thumbnail": {
-    "description": "Brisbane Full Stack User Group",
-    "url": "/images/thumbs/thumb-brisbaneUG.jpg"
-  },
+  "thumbnail": "/images/thumbs/thumb-brisbaneUG.jpg",
+  "thumbnailDescription": "Brisbane Full Stack User Group",
   "presenterName": "Gordon Beeming",
   "presenterProfileUrl": "https://www.ssw.com.au/people/gordon-beeming",
   "startDateTime": "2023-12-13T07:00:00Z",

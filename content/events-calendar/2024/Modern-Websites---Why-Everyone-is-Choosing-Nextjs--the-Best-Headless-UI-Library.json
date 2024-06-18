@@ -1,10 +1,8 @@
 {
   "title": "Modern Websites - Why Everyone is Choosing Next.js & the Best Headless UI Library",
   "url": "https://www.ssw.com.au/netug/brisbane",
-  "thumbnail": {
-    "description": "Brisbane Full Stack User Group",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-BrisbaneUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-BrisbaneUG.jpg",
+  "thumbnailDescription": "Brisbane Full Stack User Group",
   "presenterName": "Jack Pettit",
   "presenterProfileUrl": "https://www.ssw.com.au/people/jack-pettit/",
   "startDateTime": "2024-06-19T08:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": ".NET 7 Superpowers - Brisbane",
   "url": "https://www.ssw.com.au/ssw/Events/Training/NET-Superpowers-Tour.aspx",
-  "thumbnail": {
-    "description": ".NET 7 Superpowers - Brisbane",
-    "url": "https://ssw.com.au/images/Newsletters/SuperPower-Icon-DotNet.jpg"
-  },
+  "thumbnail": "https://ssw.com.au/images/Newsletters/SuperPower-Icon-DotNet.jpg",
+  "thumbnailDescription": ".NET 7 Superpowers - Brisbane",
   "presenterName": "William Liebenberg & Daniel Mackay",
   "startDateTime": "2023-04-12T23:00:00Z",
   "endDateTime": "2023-04-13T07:00:00Z",

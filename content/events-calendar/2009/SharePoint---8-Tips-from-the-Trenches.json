@@ -1,10 +1,8 @@
 {
   "title": "SharePoint - 8 Tips from the Trenches",
   "url": "https://www.ssw.com.au/images/newsletter-uploads/2009/_2009_06__Do%20you%20comment%20each%20property%20and%20method_.htm",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "John Liu",
   "startDateTime": "2009-06-17T07:45:00Z",
   "endDateTime": "2009-06-17T08:00:00Z",

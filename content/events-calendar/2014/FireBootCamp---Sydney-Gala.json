@@ -1,10 +1,8 @@
 {
   "title": "FireBootCamp - Sydney Gala",
   "url": "http://firebootcamp.com/",
-  "thumbnail": {
-    "description": "FireBootCamp",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/firebootcamp_icon.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/firebootcamp_icon.png",
+  "thumbnailDescription": "FireBootCamp",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2014-03-20T22:00:00Z",

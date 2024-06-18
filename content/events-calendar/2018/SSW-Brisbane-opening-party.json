@@ -1,10 +1,8 @@
 {
   "title": "SSW Brisbane opening party",
   "url": "https://www.eventbrite.com.au/e/ssw-brisbane-opening-party-learn-how-the-best-developers-build-their-profile-tickets-42414060597",
-  "thumbnail": {
-    "description": "SSW Brisbane opening party",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Icon_SSWBrisbane-Office_Launch.png"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Icon_SSWBrisbane-Office_Launch.png",
+  "thumbnailDescription": "SSW Brisbane opening party",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2018-02-16T07:00:00Z",

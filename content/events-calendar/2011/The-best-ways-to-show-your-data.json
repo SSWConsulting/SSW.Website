@@ -1,10 +1,8 @@
 {
   "title": "The best ways to show your data",
   "url": "http://#",
-  "thumbnail": {
-    "description": "Power Sessions",
-    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
   "startDateTime": "2011-07-31T14:00:00Z",
   "endDateTime": "2011-07-31T15:00:00Z",
   "calendarType": "SSW Courses",

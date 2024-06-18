@@ -1,10 +1,8 @@
 {
   "title": "Going Hardcore on your Business Intelligence with Power BI",
   "url": "http://#",
-  "thumbnail": {
-    "description": "Power sessions",
-    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power sessions",
   "startDateTime": "2015-09-15T14:00:00Z",
   "endDateTime": "2015-09-15T16:00:00Z",
   "calendarType": "SSW Courses",

@@ -1,10 +1,8 @@
 {
   "title": "Angular Workshop (2-Day Training) - Brisbane",
   "url": "https://www.ssw.com.au/events/angular-workshop",
-  "thumbnail": {
-    "description": "Hands-on workshop",
-    "url": "/images/Newsletters/Angular-2-0-logo.png"
-  },
+  "thumbnail": "/images/Newsletters/Angular-2-0-logo.png",
+  "thumbnailDescription": "Hands-on workshop",
   "presenterName": "Jean Thirion, Matt Wicks and Luke Cook",
   "startDateTime": "2023-11-06T22:00:00Z",
   "endDateTime": "2023-11-08T06:00:00Z",

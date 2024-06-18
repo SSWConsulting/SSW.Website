@@ -1,10 +1,8 @@
 {
   "title": "DDD Melbourne",
   "url": "https://www.dddmelbourne.com/",
-  "thumbnail": {
-    "description": "DDD Melbourne ",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/ddd-melbourne.png"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/ddd-melbourne.png",
+  "thumbnailDescription": "DDD Melbourne ",
   "startDateTime": "2018-09-14T22:00:00Z",
   "endDateTime": "2018-09-15T10:00:00Z",
   "calendarType": "Conferences",

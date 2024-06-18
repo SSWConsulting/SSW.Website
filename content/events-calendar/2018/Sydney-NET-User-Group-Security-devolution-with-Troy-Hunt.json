@@ -1,10 +1,8 @@
 {
   "title": "Sydney .NET User Group: Security devolution with Troy Hunt",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "Sydney .NET User Group: Security devolution with Troy Hunt",
-    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group: Security devolution with Troy Hunt",
   "presenterName": "Troy Hunt",
   "presenterProfileUrl": "https://www.troyhunt.com/",
   "startDateTime": "2018-07-25T08:00:00Z",

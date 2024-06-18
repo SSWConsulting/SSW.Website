@@ -1,10 +1,8 @@
 {
   "title": "SQL Server 101",
   "url": "https://www.ssw.com.au/images/newsletter-uploads/2008/_2008_07__Why%20is%20it%20great%20to%20work%20in%20SSW%20today_.htm",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "Cameron Townshend",
   "startDateTime": "2008-07-16T07:45:00Z",
   "endDateTime": "2008-07-16T11:00:00Z",

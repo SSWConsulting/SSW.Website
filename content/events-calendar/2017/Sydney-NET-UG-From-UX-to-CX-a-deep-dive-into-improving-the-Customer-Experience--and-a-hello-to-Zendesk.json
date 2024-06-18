@@ -1,10 +1,8 @@
 {
   "title": "Sydney .NET UG: From UX to CX: a deep dive into improving the Customer Experience \u2013 and a hello to Zendesk!",
   "url": "https://www.ssw.com.au/ssw/netug/sydney.aspx",
-  "thumbnail": {
-    "description": "Sydney .NET UG: From UX to CX: a deep dive into improving the Customer Experience \u2013 and a hello to Zendesk!",
-    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET UG: From UX to CX: a deep dive into improving the Customer Experience \u2013 and a hello to Zendesk!",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2017-10-18T07:00:00Z",

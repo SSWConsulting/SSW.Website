@@ -1,10 +1,8 @@
 {
   "title": "Flexing Your Biceps with Azure",
   "url": "https://www.ssw.com.au/ssw/NETUG/Melbourne.aspx",
-  "thumbnail": {
-    "description": "Melbourne .NET User Group",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-MelbourneUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-MelbourneUG.jpg",
+  "thumbnailDescription": "Melbourne .NET User Group",
   "presenterName": "William Liebenberg",
   "presenterProfileUrl": "https://www.ssw.com.au/people/william-liebenberg/",
   "startDateTime": "2022-08-17T08:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "The Azure Superpowers Tour - In-Person (Newcastle) & Online!",
   "url": "https://www.ssw.com.au/ssw/Events/Training/Azure-Superpowers-Tour.aspx",
-  "thumbnail": {
-    "description": "Azure Superpower Tour: Newcastle",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg",
+  "thumbnailDescription": "Azure Superpower Tour: Newcastle",
   "presenterName": "Adam Cogan, Matt Wicks & William Liebenberg",
   "startDateTime": "2021-07-03T23:00:00Z",
   "endDateTime": "2021-07-04T07:00:00Z",

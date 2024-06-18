@@ -1,10 +1,8 @@
 {
   "title": "How to implement a custom Site Map in SharePoint - RapidFire",
   "url": "https://www.ssw.com.au/ssw/NETUG/PastSessions.aspx",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "Sergio Otoya",
   "startDateTime": "2009-02-18T06:45:00Z",
   "endDateTime": "2009-02-18T10:00:00Z",

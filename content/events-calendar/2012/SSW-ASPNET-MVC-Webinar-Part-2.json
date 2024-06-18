@@ -1,10 +1,8 @@
 {
   "title": "SSW ASP.NET MVC Webinar (Part 2)",
   "url": "http://www.ssw.com.au/ssw/Events/Webinars/MVC-Dont_use_Web_Forms_again.aspx",
-  "thumbnail": {
-    "description": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-aspnet-2.jpg",
-    "url": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-aspnet-2.jpg"
-  },
+  "thumbnail": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-aspnet-2.jpg",
+  "thumbnailDescription": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-aspnet-2.jpg",
   "presenterName": "Adam Stephensen ",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/AdamS.aspx",
   "startDateTime": "2012-10-02T01:00:00Z",

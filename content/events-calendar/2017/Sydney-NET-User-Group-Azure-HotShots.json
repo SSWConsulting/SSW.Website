@@ -1,10 +1,8 @@
 {
   "title": "Sydney .NET User Group: Azure HotShots",
   "url": "https://www.ssw.com.au/ssw/netug/sydney.aspx",
-  "thumbnail": {
-    "description": "Sydney .NET User Group: Azure HotShots ",
-    "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group: Azure HotShots ",
   "presenterName": "Adam Stephensen and Thiago Passos",
   "startDateTime": "2017-09-20T08:00:00Z",
   "endDateTime": "2017-09-20T10:30:00Z",

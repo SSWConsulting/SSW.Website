@@ -1,10 +1,8 @@
 {
   "title": "Blast off with Blazor! - Supercharged Enterprise UIs using AntDesign",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "TBA - Placeholder for Blazor Talk",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": "TBA - Placeholder for Blazor Talk",
   "presenterName": "Luke Parker",
   "presenterProfileUrl": "https://www.ssw.com.au/people/luke-parker",
   "startDateTime": "2021-09-15T08:00:00Z",

@@ -1,10 +1,8 @@
 {
   "title": "Azure real-time analytics (look mum, no warehouse!) *In Person & Online*",
   "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": {
-    "description": "Azure real-time analytics (look mum, no warehouse!)",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": "Azure real-time analytics (look mum, no warehouse!)",
   "presenterName": "Prem Radhakrishnan",
   "startDateTime": "2021-11-17T07:00:00Z",
   "endDateTime": "2021-11-17T09:30:00Z",

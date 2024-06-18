@@ -1,10 +1,8 @@
 {
   "title": "The AI Hack Day - Melbourne",
   "url": "https://aihackday.com/",
-  "thumbnail": {
-    "description": "The AI Hack Day - Melbourne",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/AIHackDaySSWEvents.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/AIHackDaySSWEvents.jpg",
+  "thumbnailDescription": "The AI Hack Day - Melbourne",
   "presenterName": "Jk Kavka & Patrick Zhao",
   "startDateTime": "2022-07-08T23:00:00Z",
   "endDateTime": "2022-07-09T07:00:00Z",

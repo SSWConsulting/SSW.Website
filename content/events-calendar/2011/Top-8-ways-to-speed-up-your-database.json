@@ -1,10 +1,8 @@
 {
   "title": "Top 8 ways to speed up your database",
   "url": "http://www.ssw.com.au/ssw/Events/Webinars/Speed-Up-SQL-Server.aspx",
-  "thumbnail": {
-    "description": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-sqlserver.jpg",
-    "url": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-sqlserver.jpg"
-  },
+  "thumbnail": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-sqlserver.jpg",
+  "thumbnailDescription": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-sqlserver.jpg",
   "presenterName": "Daniel Hyles / Mehmet Ozdemir",
   "startDateTime": "2011-10-06T00:00:00Z",
   "endDateTime": "2011-10-06T01:00:00Z",

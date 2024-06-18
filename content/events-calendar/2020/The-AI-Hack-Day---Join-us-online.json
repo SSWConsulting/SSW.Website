@@ -1,10 +1,8 @@
 {
   "title": "The AI Hack Day - Join us online!",
   "url": "https://aihackday.com/",
-  "thumbnail": {
-    "description": "The AI Hack Day - Sydney",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/AIHackDaySSWEvents.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/AIHackDaySSWEvents.jpg",
+  "thumbnailDescription": "The AI Hack Day - Sydney",
   "presenterName": "William Liebenberg, Jk Kavka & Patrick Zhao",
   "startDateTime": "2020-06-12T23:00:00Z",
   "endDateTime": "2020-06-13T07:00:00Z",

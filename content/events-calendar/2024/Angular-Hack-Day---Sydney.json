@@ -1,10 +1,8 @@
 {
   "title": "Angular Hack Day - Sydney",
   "url": "http://angularhackday.com/",
-  "thumbnail": {
-    "description": "Angular Hack Day - Sydney",
-    "url": "/images/events/AHD-thumb.jpg"
-  },
+  "thumbnail": "/images/events/AHD-thumb.jpg",
+  "thumbnailDescription": "Angular Hack Day - Sydney",
   "startDateTime": "2024-08-09T23:00:00Z",
   "endDateTime": "2024-08-10T07:00:00Z",
   "calendarType": "Hack Days",

@@ -1,10 +1,8 @@
 {
   "title": "Angular Hack Day - Brisbane",
   "url": "http://angularhackday.com/",
-  "thumbnail": {
-    "description": "Angular Hack Day",
-    "url": "/images/events/AHD-thumb.jpg"
-  },
+  "thumbnail": "/images/events/AHD-thumb.jpg",
+  "thumbnailDescription": "Angular Hack Day",
   "presenterName": "Jernej Kavka",
   "presenterProfileUrl": "https://ssw.com.au/people/",
   "startDateTime": "2024-11-15T22:00:00Z",

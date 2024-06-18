@@ -1,10 +1,8 @@
 {
   "title": "SSW Melbourne opening party",
   "url": "https://www.eventbrite.com.au/e/ssw-melbourne-opening-party-learn-how-the-best-developers-build-their-profile-tickets-42440280020",
-  "thumbnail": {
-    "description": "SSW Melbourne opening party",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Icon_SSWMelbourne-Office_Launch.png"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Icon_SSWMelbourne-Office_Launch.png",
+  "thumbnailDescription": "SSW Melbourne opening party",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2018-02-15T07:00:00Z",

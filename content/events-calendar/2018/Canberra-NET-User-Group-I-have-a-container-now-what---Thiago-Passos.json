@@ -1,10 +1,8 @@
 {
   "title": "Canberra .NET User Group: I have a container... now what? - Thiago Passos",
   "url": "https://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
-  "thumbnail": {
-    "description": "Canberra .NET User Group: I have a container... now what? - Thiago Passos",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg",
+  "thumbnailDescription": "Canberra .NET User Group: I have a container... now what? - Thiago Passos",
   "presenterName": "Thiago Passos",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Thiago.aspx",
   "startDateTime": "2018-02-19T06:30:00Z",

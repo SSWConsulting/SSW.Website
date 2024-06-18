@@ -1,10 +1,8 @@
 {
   "title": "Lessons Learned in 42 Years of Software Development",
   "url": "https://www.ssw.com.au/netug/brisbane",
-  "thumbnail": {
-    "description": "Brisbane Full Stack User Group",
-    "url": "/images/thumbs/thumb-brisbaneUG.jpg"
-  },
+  "thumbnail": "/images/thumbs/thumb-brisbaneUG.jpg",
+  "thumbnailDescription": "Brisbane Full Stack User Group",
   "presenterName": "Bryden Oliver",
   "presenterProfileUrl": "https://www.ssw.com.au/people/bryden-oliver/",
   "startDateTime": "2024-02-21T07:00:00Z",

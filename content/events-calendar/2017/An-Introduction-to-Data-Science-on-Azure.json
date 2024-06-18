@@ -1,10 +1,8 @@
 {
   "title": "An Introduction to Data Science on Azure",
   "url": "http://#",
-  "thumbnail": {
-    "description": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
-    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
   "startDateTime": "2017-04-18T14:00:00Z",
   "endDateTime": "2017-04-18T16:00:00Z",
   "calendarType": "User Groups",

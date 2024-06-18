@@ -1,10 +1,8 @@
 {
   "title": "The Azure Superpowers Tour - Online",
   "url": "https://www.ssw.com.au/ssw/Events/Training/Azure-Superpowers-Tour.aspx",
-  "thumbnail": {
-    "description": "The Azure Superpowers Tour: Online",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg",
+  "thumbnailDescription": "The Azure Superpowers Tour: Online",
   "presenterName": "Matt Wicks & William Liebenberg",
   "startDateTime": "2020-10-08T22:00:00Z",
   "endDateTime": "2020-10-09T06:00:00Z",

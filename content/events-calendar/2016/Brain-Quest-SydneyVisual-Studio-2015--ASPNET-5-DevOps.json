@@ -1,10 +1,8 @@
 {
   "title": "Brain Quest: SydneyVisual Studio 2015 + ASP.NET 5 +DevOps",
   "url": "https://www.ssw.com.au/ssw/Events/Training/Brain-Quest-VS2015-ASP-NET-vNext-DevOps.aspx",
-  "thumbnail": {
-    "description": "Brain Quest Sydney - Visual Studio 2015 + ASP.NET 5 + DevOps",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/BrainQuestLogo.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/BrainQuestLogo.png",
+  "thumbnailDescription": "Brain Quest Sydney - Visual Studio 2015 + ASP.NET 5 + DevOps",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2016-03-08T22:00:00Z",

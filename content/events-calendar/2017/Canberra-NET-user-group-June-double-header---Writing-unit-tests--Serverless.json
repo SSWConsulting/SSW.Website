@@ -1,10 +1,8 @@
 {
   "title": "Canberra .NET user group: June double header - Writing unit tests + Serverless",
   "url": "https://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
-  "thumbnail": {
-    "description": "Canberra .NET user group: June double header - Writing unit tests + Serverless",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg",
+  "thumbnailDescription": "Canberra .NET user group: June double header - Writing unit tests + Serverless",
   "presenterName": "Thiago Passos and Jason Taylor",
   "startDateTime": "2017-06-19T07:30:00Z",
   "endDateTime": "2017-06-19T09:30:00Z",

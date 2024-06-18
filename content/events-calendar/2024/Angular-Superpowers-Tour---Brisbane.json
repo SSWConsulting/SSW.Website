@@ -1,10 +1,8 @@
 {
   "title": "Angular Superpowers Tour - Brisbane",
   "url": "https://www.ssw.com.au/events/angular-superpowers-tour",
-  "thumbnail": {
-    "description": "Angular Superpowers Tour - Brisbane",
-    "url": "/images/events/SuperPower-Icon-Angular.jpg"
-  },
+  "thumbnail": "/images/events/SuperPower-Icon-Angular.jpg",
+  "thumbnailDescription": "Angular Superpowers Tour - Brisbane",
   "presenterName": "Matt Wicks & Luke Cook",
   "presenterProfileUrl": "http://ssw.com.au/people/",
   "startDateTime": "2024-04-02T23:00:00Z",

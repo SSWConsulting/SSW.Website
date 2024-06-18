@@ -1,10 +1,8 @@
 {
   "title": "Techniques and practices for testing Angular 2",
   "url": "http://#",
-  "thumbnail": {
-    "description": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
-    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
   "startDateTime": "2016-12-13T21:00:00Z",
   "endDateTime": "2016-12-14T06:00:00Z",
   "calendarType": "SSW Courses",

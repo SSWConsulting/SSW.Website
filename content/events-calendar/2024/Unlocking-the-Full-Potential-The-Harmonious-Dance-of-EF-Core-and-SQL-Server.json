@@ -1,10 +1,8 @@
 {
   "title": "Unlocking the Full Potential: The Harmonious Dance of EF Core and SQL Server",
   "url": "https://www.ssw.com.au/netug/brisbane",
-  "thumbnail": {
-    "description": "Brisbane Full Stack User Group",
-    "url": "/images/thumbs/thumb-brisbaneUG.jpg"
-  },
+  "thumbnail": "/images/thumbs/thumb-brisbaneUG.jpg",
+  "thumbnailDescription": "Brisbane Full Stack User Group",
   "presenterName": "Jernej Kavka",
   "presenterProfileUrl": "http://ssw.com.au/people/jernej-kavka",
   "startDateTime": "2024-01-17T07:00:00Z",

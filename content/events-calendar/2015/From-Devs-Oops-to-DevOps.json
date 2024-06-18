@@ -1,10 +1,8 @@
 {
   "title": "From Devs\u2019 Oops to DevOps",
   "url": "http://#",
-  "thumbnail": {
-    "description": "Power Sessions",
-    "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
   "startDateTime": "2015-11-17T13:00:00Z",
   "endDateTime": "2015-11-17T15:00:00Z",
   "calendarType": "SSW Courses",

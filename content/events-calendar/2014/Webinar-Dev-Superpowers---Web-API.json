@@ -1,10 +1,8 @@
 {
   "title": "Webinar: Dev Superpowers - Web API",
   "url": "http://www.ssw.com.au/ssw/events/webinars/DevSuperpowers.aspx",
-  "thumbnail": {
-    "description": "Webinar: Dev Superpowers - Web API",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png",
+  "thumbnailDescription": "Webinar: Dev Superpowers - Web API",
   "presenterName": "David Burela",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/David-Burela.aspx",
   "startDateTime": "2014-06-26T01:00:00Z",

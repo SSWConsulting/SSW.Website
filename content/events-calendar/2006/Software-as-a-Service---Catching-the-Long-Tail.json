@@ -1,10 +1,8 @@
 {
   "title": "Software as a Service - Catching the Long Tail",
   "url": "https://www.ssw.com.au/images/newsletter-uploads/2006/_2006_10__Microsoft%20Reporting%20Services%20Training_.htm",
-  "thumbnail": {
-    "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
-    "url": "/images/events/sydney-ug-thumb.jpg"
-  },
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
   "presenterName": "Nigel Watson",
   "presenterProfileUrl": "https://www.linkedin.com/in/nigelwatson/",
   "startDateTime": "2006-10-18T07:45:00Z",

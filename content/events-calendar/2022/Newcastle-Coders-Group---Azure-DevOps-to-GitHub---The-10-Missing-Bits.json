@@ -1,10 +1,8 @@
 {
   "title": "Newcastle Coders Group - Azure DevOps to GitHub - The 10 Missing Bits",
   "url": "https://www.meetup.com/newcastle-coders-group/events/288511141/",
-  "thumbnail": {
-    "description": "Newcastle Coders Group",
-    "url": "https://www.ssw.com.au/ssw/NETUG/SSWUpdate/images/Newcastlecoders.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/SSWUpdate/images/Newcastlecoders.jpg",
+  "thumbnailDescription": "Newcastle Coders Group",
   "presenterName": "Adam Cogan & Matt Wicks",
   "presenterProfileUrl": "https://www.ssw.com.au/people/matt-wicks",
   "startDateTime": "2022-11-02T07:00:00Z",

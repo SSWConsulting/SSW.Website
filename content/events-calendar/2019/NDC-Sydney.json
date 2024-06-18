@@ -1,10 +1,8 @@
 {
   "title": "NDC Sydney",
   "url": "https://ndcsydney.com/",
-  "thumbnail": {
-    "description": "NDC Sydney",
-    "url": "https://www.ssw.com.au/ssw/eventscalendar/images/ndc2019-event-thumb.jpg"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/eventscalendar/images/ndc2019-event-thumb.jpg",
+  "thumbnailDescription": "NDC Sydney",
   "startDateTime": "2019-10-13T22:00:00Z",
   "endDateTime": "2019-10-18T08:00:00Z",
   "calendarType": "Conferences",

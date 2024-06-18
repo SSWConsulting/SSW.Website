@@ -1,10 +1,8 @@
 {
   "title": "Angular Superpowers Tour: Sydney",
   "url": "https://firebootcamp.com/angular-superpower-tour/",
-  "thumbnail": {
-    "description": "Angular Superpowers Tour: Sydney",
-    "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png"
-  },
+  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
+  "thumbnailDescription": "Angular Superpowers Tour: Sydney",
   "presenterName": "Brendan Richards & Jean Thirion",
   "startDateTime": "2019-09-12T23:00:00Z",
   "endDateTime": "2019-09-12T20:00:00Z",

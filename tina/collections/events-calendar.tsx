@@ -31,25 +31,19 @@ export const eventsCalendarSchema: Collection = {
       required: true,
     },
     {
-      type: "object",
+      type: "image",
       label: "Thumbnail",
       name: "thumbnail",
-      fields: [
-        {
-          type: "image",
-          label: "URL",
-          name: "url",
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore - upload dir not included in Tina type but works anyway
-          uploadDir: () => "events",
-        },
-        {
-          type: "string",
-          label: "Description",
-          name: "description",
-          description: "Used as alt text for the thumbnail",
-        },
-      ],
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore - // upload dir not included in Tina type but works anyway
+      uploadDir: () => "events",
+      required: true,
+    },
+    {
+      type: "string",
+      label: "Thumbnail Description",
+      name: "thumbnailDescription",
+      description: "Used as alt text for the thumbnail",
     },
     {
       type: "string",

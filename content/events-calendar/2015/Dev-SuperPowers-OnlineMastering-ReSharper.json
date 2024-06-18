@@ -1,10 +1,8 @@
 {
   "title": "Dev SuperPowers: OnlineMastering ReSharper",
   "url": "http://tv.ssw.com/free-webinar-mastering-resharper",
-  "thumbnail": {
-    "description": "Dev SuperPowers - Mastering ReSharper",
-    "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png"
-  },
+  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png",
+  "thumbnailDescription": "Dev SuperPowers - Mastering ReSharper",
   "presenterName": "Danijel Malik",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/PublishingImages/danijel_thumb.jpg",
   "startDateTime": "2015-12-17T00:00:00Z",
