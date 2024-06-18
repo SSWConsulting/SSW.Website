@@ -1,20 +1,27 @@
 import { Template } from "tinacms";
-import { InlineJotForm, JotFormEmbed } from "../blocks";
+import { useTina } from "tinacms/dist/react";
+import { JotFormEmbed } from "../blocks";
 
-export const InterestForm = () => {
+export const InterestForm = (props) => {
+  const { data } = useTina({
+    query: props.query,
+    variables: props.variables,
+    data: props.data,
+  });
   return (
     <JotFormEmbed
-      jotFormId="241638083078865"
+      jotFormId={`${eoiFormId}?pageUrl=${data.pageUrl}`}
       buttonText={"Let me know about the next one"}
       containerClass="mt-20"
     />
   );
-  // return <h1>Interest Form</h1>;
 };
+
+const eoiFormId: string = "241638083078865";
 
 export const interestFormSchema: Template = {
   label: "Interest Form",
-  name: "interestForm",
+  name: "InterestForm",
   fields: [
     {
       type: "string",
