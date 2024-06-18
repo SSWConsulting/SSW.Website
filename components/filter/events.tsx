@@ -40,7 +40,7 @@ export type EventTrimmed = {
   endDateTime: Date;
   city?: string;
   url: string;
-  presenter?: string;
+  presenterName?: string;
   presenterProfileUrl?: string;
   calendarType?: string;
   category?: string;
@@ -258,11 +258,11 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
             />
 
             <div>
-              {event.presenter && (
+              {event.presenterName && (
                 <EventDescItem
                   label="Presenter"
                   linkValue={event?.presenterProfileUrl}
-                  value={event.presenter}
+                  value={event.presenterName}
                 />
               )}
               {event.city && CITY_MAP[event.city] && (

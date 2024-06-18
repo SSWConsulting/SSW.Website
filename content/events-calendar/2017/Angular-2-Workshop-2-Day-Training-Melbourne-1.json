@@ -5,7 +5,7 @@
     "description": "Angular 2 Workshop (2 Day Training): Melbourne",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png"
   },
-  "presenter": "Duncan Hunter and Brendan Richards",
+  "presenterName": "Duncan Hunter and Brendan Richards",
   "startDateTime": "2017-06-04T23:00:00Z",
   "endDateTime": "2017-06-06T07:00:00Z",
   "calendarType": "SSW Courses",

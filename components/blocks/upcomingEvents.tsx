@@ -96,9 +96,9 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
             formattedDate={formattedDate}
             dateFontSize="text-xs"
           />
-          {!!event.presenter && (
+          {!!event.presenterName && (
             <span className="mt-1 inline-flex items-center text-xs text-black">
-              {event.presenter}
+              {event.presenterName}
             </span>
           )}
         </div>

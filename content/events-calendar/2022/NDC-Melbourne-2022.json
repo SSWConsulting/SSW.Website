@@ -5,7 +5,7 @@
     "description": "NDC Melbourne 2022",
     "url": "http://ssw.com.au/NETUG/SSWUPdate/Images/NDC-Melbourne-logo.jpg"
   },
-  "presenter": "Adam Cogan, Jason Taylor, Patrick Zhao, William Liebenberg and more",
+  "presenterName": "Adam Cogan, Jason Taylor, Patrick Zhao, William Liebenberg and more",
   "startDateTime": "2022-06-19T22:00:00Z",
   "endDateTime": "2022-06-24T08:00:00Z",
   "calendarType": "Conferences",

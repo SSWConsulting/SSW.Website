@@ -5,7 +5,7 @@
     "description": "Melbourne .NET User Group Double Header: Azure Containers: From Zero to Kubernetes & I\u2019m a .NET Developer in a Pure Functional Universe",
     "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-MelbourneUG.jpg"
   },
-  "presenter": "Anthony Ison & Stephan Dekker",
+  "presenterName": "Anthony Ison & Stephan Dekker",
   "startDateTime": "2019-10-09T07:00:00Z",
   "endDateTime": "2019-10-09T09:30:00Z",
   "calendarType": "User Groups",

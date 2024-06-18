@@ -5,7 +5,7 @@
     "description": "NDC Minnesota",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/NDC-Conferences.png"
   },
-  "presenter": "Jernej \"JK\" Kavka",
+  "presenterName": "Jernej \"JK\" Kavka",
   "presenterProfileUrl": "https://ssw.com.au/people/jk",
   "startDateTime": "2020-09-10T19:30:00Z",
   "endDateTime": "2020-09-10T23:00:00Z",

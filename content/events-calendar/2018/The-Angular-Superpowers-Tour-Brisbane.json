@@ -5,7 +5,7 @@
     "description": "The Angular Superpowers Tour",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Angular.jpg"
   },
-  "presenter": "Brendan Richards and Jean Thirion",
+  "presenterName": "Brendan Richards and Jean Thirion",
   "startDateTime": "2018-06-24T23:00:00Z",
   "endDateTime": "2018-06-25T07:00:00Z",
   "calendarType": "SSW Courses",

@@ -5,7 +5,7 @@
     "description": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-lightswitch.jpg",
     "url": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-lightswitch.jpg"
   },
-  "presenter": "Mehmet Ozdemir / Andrew Coates",
+  "presenterName": "Mehmet Ozdemir / Andrew Coates",
   "startDateTime": "2012-11-28T00:00:00Z",
   "endDateTime": "2012-11-28T01:00:00Z",
   "calendarType": "Webinars",

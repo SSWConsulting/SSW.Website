@@ -5,7 +5,7 @@
     "description": "TechEd New Zealand ",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/TechEdNZ2014.png"
   },
-  "presenter": "TechEd New Zealand ",
+  "presenterName": "TechEd New Zealand ",
   "startDateTime": "2014-09-08T14:00:00Z",
   "endDateTime": "2014-09-12T13:55:00Z",
   "calendarType": "Conferences",

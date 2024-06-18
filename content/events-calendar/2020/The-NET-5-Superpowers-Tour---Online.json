@@ -5,7 +5,7 @@
     "description": "The .NET 5 Superpowers Tour - Online",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-NetCore.jpg"
   },
-  "presenter": "Jason Taylor and Brendan Richards",
+  "presenterName": "Jason Taylor and Brendan Richards",
   "startDateTime": "2020-10-29T22:00:00Z",
   "endDateTime": "2020-10-30T06:00:00Z",
   "calendarType": "SSW Courses",

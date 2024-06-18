@@ -5,7 +5,7 @@
     "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
     "url": "/images/events/sydney-ug-thumb.jpg"
   },
-  "presenter": "Andrew Franklin",
+  "presenterName": "Andrew Franklin",
   "startDateTime": "2006-12-20T06:45:00Z",
   "endDateTime": "2006-12-20T10:00:00Z",
   "calendarType": "User Groups",

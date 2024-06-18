@@ -5,7 +5,7 @@
     "description": "Sydney .NET User Group: Machine Learning simplified for Developers with ML.NET - presented by Jernej \"JK\" Kavka",
     "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
   },
-  "presenter": "Jernej Kavka",
+  "presenterName": "Jernej Kavka",
   "startDateTime": "2019-07-17T08:00:00Z",
   "endDateTime": "2019-07-17T10:00:00Z",
   "liveStreamUrl": {

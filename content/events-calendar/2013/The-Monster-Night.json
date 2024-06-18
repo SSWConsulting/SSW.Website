@@ -5,7 +5,7 @@
     "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/banner-monster-night-icon.png",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/banner-monster-night-icon.png"
   },
-  "presenter": "Jason Beres, Glenn Block",
+  "presenterName": "Jason Beres, Glenn Block",
   "startDateTime": "2013-09-09T07:00:00Z",
   "endDateTime": "2013-09-09T11:00:00Z",
   "calendarType": "User Groups",

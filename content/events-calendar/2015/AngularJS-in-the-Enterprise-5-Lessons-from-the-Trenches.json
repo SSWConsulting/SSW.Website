@@ -5,7 +5,7 @@
     "description": "AngularJS in the Enterprise Webinar",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png"
   },
-  "presenter": "Duncan Hunter",
+  "presenterName": "Duncan Hunter",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/PublishingImages/duncanhunters-profile-photo.jpg",
   "startDateTime": "2015-10-21T22:00:00Z",
   "endDateTime": "2015-10-21T23:00:00Z",

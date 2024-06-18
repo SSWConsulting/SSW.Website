@@ -5,7 +5,7 @@
     "description": "Angular Superpowers Tour - Online",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png"
   },
-  "presenter": "Jean Thirion & Matt Wicks",
+  "presenterName": "Jean Thirion & Matt Wicks",
   "startDateTime": "2021-03-18T22:00:00Z",
   "endDateTime": "2021-03-19T06:00:00Z",
   "calendarType": "SSW Courses",

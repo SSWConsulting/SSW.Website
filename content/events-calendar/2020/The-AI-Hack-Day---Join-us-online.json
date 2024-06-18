@@ -5,7 +5,7 @@
     "description": "The AI Hack Day - Sydney",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/AIHackDaySSWEvents.jpg"
   },
-  "presenter": "William Liebenberg, Jk Kavka & Patrick Zhao",
+  "presenterName": "William Liebenberg, Jk Kavka & Patrick Zhao",
   "startDateTime": "2020-06-12T23:00:00Z",
   "endDateTime": "2020-06-13T07:00:00Z",
   "calendarType": "Hack Days",

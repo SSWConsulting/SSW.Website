@@ -5,7 +5,7 @@
     "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/hanselman-thumbnail.png",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/hanselman-thumbnail.png"
   },
-  "presenter": "Scott Hanselman ",
+  "presenterName": "Scott Hanselman ",
   "presenterProfileUrl": "http://www.hanselman.com/",
   "startDateTime": "2013-12-11T07:00:00Z",
   "endDateTime": "2013-12-11T09:00:00Z",

@@ -5,7 +5,7 @@
     "description": "http://ssw.com.au/ssw/NETUG/Images/thumbs/hanselman-thumbnail.png",
     "url": "http://ssw.com.au/ssw/NETUG/Images/thumbs/hanselman-thumbnail.png"
   },
-  "presenter": "Scott Hanselman",
+  "presenterName": "Scott Hanselman",
   "presenterProfileUrl": "http://www.hanselman.com/",
   "startDateTime": "2016-08-05T08:00:00Z",
   "endDateTime": "2016-08-05T10:00:00Z",

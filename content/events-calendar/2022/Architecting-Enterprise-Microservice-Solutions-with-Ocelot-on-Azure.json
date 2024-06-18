@@ -5,7 +5,7 @@
     "description": "Architecting Enterprise Microservice Solutions with Ocelot on Azure",
     "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
   },
-  "presenter": "Patrick Zhao",
+  "presenterName": "Patrick Zhao",
   "presenterProfileUrl": "https://ssw.com.au/people/patrick-zhao",
   "startDateTime": "2022-03-16T07:00:00Z",
   "endDateTime": "2022-03-16T11:00:00Z",

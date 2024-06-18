@@ -5,7 +5,7 @@
     "description": "The Azure Superpowers Tour: Online",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg"
   },
-  "presenter": "Matt Wicks & William Liebenberg",
+  "presenterName": "Matt Wicks & William Liebenberg",
   "startDateTime": "2020-10-08T22:00:00Z",
   "endDateTime": "2020-10-09T06:00:00Z",
   "calendarType": "SSW Courses",

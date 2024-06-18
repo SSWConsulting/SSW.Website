@@ -5,7 +5,7 @@
     "description": "The Angular SuperPowers Tour",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Angular.jpg"
   },
-  "presenter": "Brendan Richards and Duncan Hunter",
+  "presenterName": "Brendan Richards and Duncan Hunter",
   "startDateTime": "2017-11-22T22:00:00Z",
   "endDateTime": "2017-11-23T06:00:00Z",
   "calendarType": "SSW Courses",

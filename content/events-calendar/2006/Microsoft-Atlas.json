@@ -5,7 +5,7 @@
     "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
     "url": "/images/events/sydney-ug-thumb.jpg"
   },
-  "presenter": "Tim Kremer",
+  "presenterName": "Tim Kremer",
   "startDateTime": "2006-09-20T07:45:00Z",
   "endDateTime": "2006-09-20T11:00:00Z",
   "calendarType": "User Groups",

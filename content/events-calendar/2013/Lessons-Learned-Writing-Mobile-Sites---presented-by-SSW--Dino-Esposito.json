@@ -5,7 +5,7 @@
     "description": "SSW Webinar - Lessons learned writing mobile sites",
     "url": "http://ssw.com.au/ssw/Events/Images/icons/thumb-webinar-dinoesposito_smaller.jpg"
   },
-  "presenter": "Dino Esposito",
+  "presenterName": "Dino Esposito",
   "startDateTime": "2013-10-15T06:00:00Z",
   "endDateTime": "2013-10-15T07:00:00Z",
   "startShowBannerDateTime": "2013-10-14T13:00:00Z",

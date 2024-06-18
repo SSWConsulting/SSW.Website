@@ -5,7 +5,7 @@
     "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg"
   },
-  "presenter": "Paco Gonzalez",
+  "presenterName": "Paco Gonzalez",
   "startDateTime": "2012-10-17T13:00:00Z",
   "endDateTime": "2012-10-17T13:00:00Z",
   "calendarType": "SolidQ Courses",

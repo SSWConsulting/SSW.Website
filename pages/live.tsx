@@ -68,14 +68,14 @@ export default function LivePage(
             <div className="whitespace-pre-wrap text-2xl font-semibold">
               {props.event?.title}
             </div>
-            {props.event?.presenter && (
+            {props.event?.presenterName && (
               <div className="py-1 text-lg">
                 With
                 <CustomLink
                   href={props.event?.presenterProfileUrl}
                   className="ml-2"
                 >
-                  {props.event?.presenter}
+                  {props.event?.presenterName}
                 </CustomLink>
               </div>
             )}

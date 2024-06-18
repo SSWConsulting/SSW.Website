@@ -5,7 +5,7 @@
     "description": "The Angular 2-day Workshop",
     "url": "/images/Newsletters/Angular-2-0-logo.png"
   },
-  "presenter": "Matt Wicks & Luke Cook",
+  "presenterName": "Matt Wicks & Luke Cook",
   "presenterProfileUrl": "https://ssw.com.au/people/",
   "startDateTime": "2024-10-07T22:00:00Z",
   "endDateTime": "2024-10-09T06:00:00Z",

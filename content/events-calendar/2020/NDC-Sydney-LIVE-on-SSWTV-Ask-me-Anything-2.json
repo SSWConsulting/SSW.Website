@@ -5,7 +5,7 @@
     "description": "NDC Sydney LIVE on SSWTV: Ask me Anything!",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/NDC-Conferences.png"
   },
-  "presenter": "Special Guests from NDC Conferences",
+  "presenterName": "Special Guests from NDC Conferences",
   "startDateTime": "2020-10-15T21:00:00Z",
   "endDateTime": "2020-10-16T08:00:00Z",
   "startShowBannerDateTime": "2020-10-15T21:00:00Z",

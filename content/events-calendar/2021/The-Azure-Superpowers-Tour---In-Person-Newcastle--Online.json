@@ -5,7 +5,7 @@
     "description": "Azure Superpower Tour: Newcastle",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg"
   },
-  "presenter": "Adam Cogan, Matt Wicks & William Liebenberg",
+  "presenterName": "Adam Cogan, Matt Wicks & William Liebenberg",
   "startDateTime": "2021-07-03T23:00:00Z",
   "endDateTime": "2021-07-04T07:00:00Z",
   "calendarType": "SSW Courses",

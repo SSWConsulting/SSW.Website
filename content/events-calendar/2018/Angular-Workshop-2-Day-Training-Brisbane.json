@@ -5,7 +5,7 @@
     "description": "Angular Workshop (2 Day Training): Brisbane",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png"
   },
-  "presenter": "Brendan Richards & Jean Thirion",
+  "presenterName": "Brendan Richards & Jean Thirion",
   "startDateTime": "2018-10-21T22:00:00Z",
   "endDateTime": "2018-10-23T06:00:00Z",
   "calendarType": "SSW Courses",

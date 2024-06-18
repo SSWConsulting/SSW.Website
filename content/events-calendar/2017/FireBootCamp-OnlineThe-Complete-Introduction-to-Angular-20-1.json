@@ -5,7 +5,7 @@
     "description": "FireBootCamp Webinar",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/firebootcamp_icon.png"
   },
-  "presenter": "Adam Stephensen",
+  "presenterName": "Adam Stephensen",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/PublishingImages/adamS_info.jpg",
   "startDateTime": "2017-03-01T00:00:00Z",
   "endDateTime": "2017-03-01T01:00:00Z",

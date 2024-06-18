@@ -5,7 +5,7 @@
     "description": "Newcastle",
     "url": "http://www.ssw.com.au/ssw/Images/Newcastle.jpg"
   },
-  "presenter": "Adam Cogan",
+  "presenterName": "Adam Cogan",
   "startDateTime": "2021-03-12T06:30:00Z",
   "endDateTime": "2021-03-12T09:30:00Z",
   "calendarType": "User Groups",

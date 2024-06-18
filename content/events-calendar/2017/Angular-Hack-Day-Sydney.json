@@ -5,7 +5,7 @@
     "description": "Angular Hack Day: Sydney",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/AHD-thumb.jpg"
   },
-  "presenter": "Adam Stephensen",
+  "presenterName": "Adam Stephensen",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/AdamS.aspx",
   "startDateTime": "2017-04-07T22:30:00Z",
   "endDateTime": "2017-04-08T07:00:00Z",

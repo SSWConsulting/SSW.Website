@@ -5,7 +5,7 @@
     "description": ".NET 7 Superpowers - Melbourne",
     "url": "https://ssw.com.au/images/Newsletters/SuperPower-Icon-DotNet.jpg"
   },
-  "presenter": "William Liebenberg & Gert Marx",
+  "presenterName": "William Liebenberg & Gert Marx",
   "startDateTime": "2023-04-11T23:00:00Z",
   "endDateTime": "2023-04-12T07:00:00Z",
   "calendarType": "SSW Courses",

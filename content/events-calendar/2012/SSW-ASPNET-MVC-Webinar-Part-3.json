@@ -5,7 +5,7 @@
     "description": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-aspnet-3.jpg",
     "url": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-aspnet-3.jpg"
   },
-  "presenter": "Damian Brady",
+  "presenterName": "Damian Brady",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Damian.aspx",
   "startDateTime": "2012-12-20T00:00:00Z",
   "endDateTime": "2012-12-20T01:00:00Z",

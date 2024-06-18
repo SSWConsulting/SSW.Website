@@ -5,7 +5,7 @@
     "description": "The Azure Superpowers Tour - In-Person (Melbourne) & Online!",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg"
   },
-  "presenter": "Adam Cogan, William Liebenberg, and Matt Wicks",
+  "presenterName": "Adam Cogan, William Liebenberg, and Matt Wicks",
   "startDateTime": "2021-07-03T23:00:00Z",
   "endDateTime": "2021-07-04T07:00:00Z",
   "calendarType": "SSW Courses",

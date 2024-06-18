@@ -5,7 +5,7 @@
     "description": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-aspnet-2.jpg",
     "url": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-aspnet-2.jpg"
   },
-  "presenter": "Adam Stephensen ",
+  "presenterName": "Adam Stephensen ",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/AdamS.aspx",
   "startDateTime": "2012-10-02T01:00:00Z",
   "endDateTime": "2012-10-02T02:00:00Z",

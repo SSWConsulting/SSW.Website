@@ -5,7 +5,7 @@
     "description": "Angular 2 Workshop (2 Day Training): Melbourne",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png"
   },
-  "presenter": "Adam Stephensen and Duncan Hunter",
+  "presenterName": "Adam Stephensen and Duncan Hunter",
   "startDateTime": "2017-03-08T22:00:00Z",
   "endDateTime": "2017-03-10T06:00:00Z",
   "calendarType": "SSW Courses",

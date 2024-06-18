@@ -5,7 +5,7 @@
     "description": "The Azure Superpowers Tour: Melbourne",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg"
   },
-  "presenter": "Adam Cogan & William Liebenberg",
+  "presenterName": "Adam Cogan & William Liebenberg",
   "startDateTime": "2020-04-14T23:00:00Z",
   "endDateTime": "2020-04-15T07:00:00Z",
   "calendarType": "SSW Courses",

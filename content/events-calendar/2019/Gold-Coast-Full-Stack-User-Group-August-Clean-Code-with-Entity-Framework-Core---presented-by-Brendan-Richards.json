@@ -5,7 +5,7 @@
     "description": "Gold Coast Full Stack User Group: August: Clean Code with Entity Framework Core - presented by Brendan Richards",
     "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-BrisbaneUG.jpg"
   },
-  "presenter": "Brendan Richards",
+  "presenterName": "Brendan Richards",
   "startDateTime": "2019-08-05T08:00:00Z",
   "endDateTime": "2019-08-05T10:00:00Z",
   "calendarType": "User Groups",

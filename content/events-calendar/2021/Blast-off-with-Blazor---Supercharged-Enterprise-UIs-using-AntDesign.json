@@ -5,7 +5,7 @@
     "description": "TBA - Placeholder for Blazor Talk",
     "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
   },
-  "presenter": "Luke Parker",
+  "presenterName": "Luke Parker",
   "presenterProfileUrl": "https://www.ssw.com.au/people/luke-parker",
   "startDateTime": "2021-09-15T08:00:00Z",
   "endDateTime": "2021-09-15T11:00:00Z",

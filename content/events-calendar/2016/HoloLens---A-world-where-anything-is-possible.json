@@ -5,7 +5,7 @@
     "description": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
     "url": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png"
   },
-  "presenter": "Stephen Carter",
+  "presenterName": "Stephen Carter",
   "startDateTime": "2016-09-21T08:30:00Z",
   "endDateTime": "2016-09-21T10:30:00Z",
   "startShowBannerDateTime": "2016-09-19T14:00:00Z",

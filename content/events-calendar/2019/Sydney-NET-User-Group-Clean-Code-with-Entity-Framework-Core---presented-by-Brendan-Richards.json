@@ -5,7 +5,7 @@
     "description": "Sydney .NET User Group: Clean Code with Entity Framework Core - presented by Brendan Richards",
     "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
   },
-  "presenter": "Brendan Richards",
+  "presenterName": "Brendan Richards",
   "startDateTime": "2019-08-21T08:00:00Z",
   "endDateTime": "2019-08-21T10:00:00Z",
   "liveStreamUrl": {

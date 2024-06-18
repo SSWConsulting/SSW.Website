@@ -5,7 +5,7 @@
     "description": "Dev SuperPowers - ASP.NET 5 and MVC 6, Where\u2019s my cheese? with Ben Cull",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png"
   },
-  "presenter": "Ben Cull",
+  "presenterName": "Ben Cull",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Ben.aspx",
   "startDateTime": "2015-09-23T14:00:00Z",
   "endDateTime": "2015-09-24T13:00:00Z",

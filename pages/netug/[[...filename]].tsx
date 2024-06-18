@@ -68,7 +68,7 @@ export default function NETUGPage(
               date={new Date(props.event?.startDateTime)}
               title={props.event?.title}
               presenter={{
-                name: props.event?.presenter,
+                name: props.event?.presenterName,
                 url: props.event?.presenterProfileUrl,
                 image: speaker?.presenter.torsoImg || "",
               }}

@@ -5,7 +5,7 @@
     "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
     "url": "/images/events/sydney-ug-thumb.jpg"
   },
-  "presenter": "Jonas Folles",
+  "presenterName": "Jonas Folles",
   "startDateTime": "2008-12-10T06:45:00Z",
   "endDateTime": "2008-12-10T10:00:00Z",
   "calendarType": "User Groups",

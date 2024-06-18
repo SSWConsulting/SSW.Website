@@ -5,7 +5,7 @@
     "description": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-scrum.jpg",
     "url": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-scrum.jpg"
   },
-  "presenter": "Marlon Marescia / Gerard Beckerleg",
+  "presenterName": "Marlon Marescia / Gerard Beckerleg",
   "startDateTime": "2012-11-29T00:00:00Z",
   "endDateTime": "2012-11-29T01:00:00Z",
   "calendarType": "Webinars",

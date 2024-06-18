@@ -5,7 +5,7 @@
     "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg"
   },
-  "presenter": "Francisco A Gonz\u00e1lez D\u00edaz",
+  "presenterName": "Francisco A Gonz\u00e1lez D\u00edaz",
   "startDateTime": "2013-08-01T14:00:00Z",
   "endDateTime": "2013-08-01T14:00:00Z",
   "calendarType": "SolidQ Courses",

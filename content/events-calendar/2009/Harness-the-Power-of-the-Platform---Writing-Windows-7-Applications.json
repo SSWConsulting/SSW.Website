@@ -5,7 +5,7 @@
     "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
     "url": "/images/events/sydney-ug-thumb.jpg"
   },
-  "presenter": "Andrew Coates",
+  "presenterName": "Andrew Coates",
   "startDateTime": "2009-06-17T07:45:00Z",
   "endDateTime": "2009-06-17T08:00:00Z",
   "calendarType": "User Groups",

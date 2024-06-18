@@ -5,7 +5,7 @@
     "description": "Melbourne .NET User Group: Taking the Challenge out of Auth with OpenID Connect ",
     "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-melbourneUG.jpg"
   },
-  "presenter": "Ben Dechrai",
+  "presenterName": "Ben Dechrai",
   "presenterProfileUrl": "https://twitter.com/bendechrai",
   "startDateTime": "2018-11-14T07:00:00Z",
   "endDateTime": "2018-11-14T09:30:00Z",

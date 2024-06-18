@@ -5,7 +5,7 @@
     "description": "Azure real-time analytics (look mum, no warehouse!)",
     "url": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg"
   },
-  "presenter": "Prem Radhakrishnan",
+  "presenterName": "Prem Radhakrishnan",
   "startDateTime": "2021-11-17T07:00:00Z",
   "endDateTime": "2021-11-17T09:30:00Z",
   "startShowBannerDateTime": "2021-11-16T13:00:00Z",

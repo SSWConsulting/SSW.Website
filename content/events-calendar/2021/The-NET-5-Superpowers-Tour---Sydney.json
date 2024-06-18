@@ -5,7 +5,7 @@
     "description": "The .NET 5 Superpowers Tour - Sydney",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-NetCore.jpg"
   },
-  "presenter": "Jason Taylor & Matt Wicks",
+  "presenterName": "Jason Taylor & Matt Wicks",
   "startDateTime": "2021-06-29T23:00:00Z",
   "endDateTime": "2021-06-30T08:00:00Z",
   "calendarType": "SSW Courses",

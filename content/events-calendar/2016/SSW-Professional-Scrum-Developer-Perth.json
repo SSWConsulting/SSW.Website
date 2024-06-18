@@ -5,7 +5,7 @@
     "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb_scrum.jpg",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb_scrum.jpg"
   },
-  "presenter": "Adam Cogan",
+  "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2016-06-05T23:00:00Z",
   "endDateTime": "2016-06-08T08:00:00Z",

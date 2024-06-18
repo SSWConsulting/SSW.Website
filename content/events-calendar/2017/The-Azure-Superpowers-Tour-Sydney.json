@@ -5,7 +5,7 @@
     "description": "The Azure Superpowers Tour: Sydney",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg"
   },
-  "presenter": "Adam Stephensen and Thiago Passos",
+  "presenterName": "Adam Stephensen and Thiago Passos",
   "startDateTime": "2017-09-14T23:00:00Z",
   "endDateTime": "2017-09-15T07:00:00Z",
   "calendarType": "SSW Courses",

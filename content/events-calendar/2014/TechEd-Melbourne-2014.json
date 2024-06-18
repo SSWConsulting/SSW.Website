@@ -5,7 +5,7 @@
     "description": "TechEd Melbourne 2014",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/TechEd-Melb-2014.png"
   },
-  "presenter": "TechEd Melbourne 2014",
+  "presenterName": "TechEd Melbourne 2014",
   "startDateTime": "2014-10-06T22:00:00Z",
   "endDateTime": "2014-10-08T07:00:00Z",
   "calendarType": "Conferences",

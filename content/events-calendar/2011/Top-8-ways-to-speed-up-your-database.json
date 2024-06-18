@@ -5,7 +5,7 @@
     "description": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-sqlserver.jpg",
     "url": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-sqlserver.jpg"
   },
-  "presenter": "Daniel Hyles / Mehmet Ozdemir",
+  "presenterName": "Daniel Hyles / Mehmet Ozdemir",
   "startDateTime": "2011-10-06T00:00:00Z",
   "endDateTime": "2011-10-06T01:00:00Z",
   "calendarType": "Webinars",

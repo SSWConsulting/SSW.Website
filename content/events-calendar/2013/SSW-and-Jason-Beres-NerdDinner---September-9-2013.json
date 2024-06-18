@@ -5,7 +5,7 @@
     "description": "NerdDinner",
     "url": "http://www.ssw.com.au/ssw/Images/nerd-dinner-thumb.jpg"
   },
-  "presenter": "Jason Beres",
+  "presenterName": "Jason Beres",
   "startDateTime": "2013-09-09T11:10:00Z",
   "endDateTime": "2013-09-09T13:00:00Z",
   "calendarType": "NerdDinner",

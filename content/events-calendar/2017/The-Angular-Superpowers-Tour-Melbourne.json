@@ -5,7 +5,7 @@
     "description": "The Angular Superpowers Tour: Melbourne",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Angular.jpg"
   },
-  "presenter": "Adam Stephensen and Duncan Hunter",
+  "presenterName": "Adam Stephensen and Duncan Hunter",
   "startDateTime": "2017-04-20T23:00:00Z",
   "endDateTime": "2017-04-21T07:00:00Z",
   "calendarType": "SSW Courses",

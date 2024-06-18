@@ -5,7 +5,7 @@
     "description": "Modern Enterprise Best Practices with ASP.Net MVC and AngularJS",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/TechEd-Melb-2014.png"
   },
-  "presenter": "Adam Stephensen",
+  "presenterName": "Adam Stephensen",
   "startDateTime": "2014-10-08T22:00:00Z",
   "endDateTime": "2014-10-10T06:00:00Z",
   "calendarType": "SSW Courses",

@@ -5,7 +5,7 @@
     "description": "Webinar: Dev Superpowers - Bootstrap",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png"
   },
-  "presenter": "Ben Cull",
+  "presenterName": "Ben Cull",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Ben.aspx",
   "startDateTime": "2014-08-28T01:00:00Z",
   "endDateTime": "2014-08-28T02:00:00Z",

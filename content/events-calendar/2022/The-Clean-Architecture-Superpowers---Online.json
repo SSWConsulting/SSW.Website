@@ -5,7 +5,7 @@
     "description": "The Clean Architecture Superpowers - Sydney",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPowers-Icon-CleanArchitecture.jpg"
   },
-  "presenter": "Jason Taylor and Matt Goldman  ",
+  "presenterName": "Jason Taylor and Matt Goldman  ",
   "startDateTime": "2022-04-07T23:00:00Z",
   "endDateTime": "2022-04-08T07:00:00Z",
   "calendarType": "SSW Courses",

@@ -5,7 +5,7 @@
     "description": "Angular Hack Day - Join us online!",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/AHD-thumb.jpg"
   },
-  "presenter": "Brendan Richards, Gabriel George & Jason Taylor",
+  "presenterName": "Brendan Richards, Gabriel George & Jason Taylor",
   "startDateTime": "2020-06-26T23:00:00Z",
   "endDateTime": "2020-06-27T08:00:00Z",
   "calendarType": "Hack Days",

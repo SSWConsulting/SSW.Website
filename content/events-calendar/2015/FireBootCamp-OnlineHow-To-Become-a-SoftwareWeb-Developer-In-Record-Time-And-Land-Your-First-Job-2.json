@@ -5,7 +5,7 @@
     "description": "FireBootCamp Webinar",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/firebootcamp_icon.png"
   },
-  "presenter": "Marlon Marescia",
+  "presenterName": "Marlon Marescia",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Marlon.aspx",
   "startDateTime": "2015-10-09T00:00:00Z",
   "endDateTime": "2015-10-09T01:00:00Z",

@@ -5,7 +5,7 @@
     "description": "Brisbane Full Stack User Group: A Merry Geek-mas Party & Fishbowl Presentations!",
     "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-BrisbaneUG.jpg"
   },
-  "presenter": "Fishbowl - Open to anyoone!",
+  "presenterName": "Fishbowl - Open to anyoone!",
   "startDateTime": "2019-12-17T07:00:00Z",
   "endDateTime": "2019-12-17T09:00:00Z",
   "calendarType": "User Groups",

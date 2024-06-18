@@ -5,7 +5,7 @@
     "description": "Angular Superpowers Tour Sydney",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png"
   },
-  "presenter": "Adam Stephensen and Duncan Hunter",
+  "presenterName": "Adam Stephensen and Duncan Hunter",
   "startDateTime": "2015-11-25T22:00:00Z",
   "endDateTime": "2015-11-27T07:00:00Z",
   "calendarType": "SSW Courses",

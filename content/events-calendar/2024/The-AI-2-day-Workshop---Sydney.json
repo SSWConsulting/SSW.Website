@@ -5,7 +5,7 @@
     "description": "The AI 2-day Workshop",
     "url": "http://ssw.com.au/images/thumbs/ai-workshop-logo.png"
   },
-  "presenter": "Calum Simpson & Jernej Kavka",
+  "presenterName": "Calum Simpson & Jernej Kavka",
   "presenterProfileUrl": "http://www.ssw.com.au/people",
   "startDateTime": "2024-06-05T23:00:00Z",
   "endDateTime": "2024-06-07T07:00:00Z",

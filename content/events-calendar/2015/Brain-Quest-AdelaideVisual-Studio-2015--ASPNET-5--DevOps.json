@@ -5,7 +5,7 @@
     "description": "Brain Quest Adelaide - Visual Studio 2015 + ASP.NET 5 + DevOps",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/BrainQuestLogo.png"
   },
-  "presenter": "Adam Cogan",
+  "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2015-10-11T22:00:00Z",
   "endDateTime": "2015-10-12T02:00:00Z",

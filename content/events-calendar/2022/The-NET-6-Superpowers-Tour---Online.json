@@ -5,7 +5,7 @@
     "description": "The .NET 6 Superpowers Tour - Online",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-NetCore.jpg"
   },
-  "presenter": "Jason Taylor & Matt Goldman",
+  "presenterName": "Jason Taylor & Matt Goldman",
   "startDateTime": "2022-02-24T22:00:00Z",
   "endDateTime": "2022-02-25T07:00:00Z",
   "calendarType": "SSW Courses",

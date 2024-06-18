@@ -5,7 +5,7 @@
     "description": "Long lunch at SSW Newcastle \u2013 DevOps + GitHub Training - Microsoft Azure Virtual Day",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/AzureDevOps.png"
   },
-  "presenter": "Microsoft DevOps specialists | Matt Wicks | William Liebenberg",
+  "presenterName": "Microsoft DevOps specialists | Matt Wicks | William Liebenberg",
   "startDateTime": "2021-04-13T01:00:00Z",
   "endDateTime": "2021-04-14T04:00:00Z",
   "calendarType": "SSW Courses",

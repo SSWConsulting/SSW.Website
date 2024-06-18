@@ -5,7 +5,7 @@
     "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
     "url": "/images/events/sydney-ug-thumb.jpg"
   },
-  "presenter": "Adam Cogan and Mark Liu, and Cameron Shaw",
+  "presenterName": "Adam Cogan and Mark Liu, and Cameron Shaw",
   "startDateTime": "2008-02-20T06:45:00Z",
   "endDateTime": "2008-02-20T10:00:00Z",
   "calendarType": "User Groups",

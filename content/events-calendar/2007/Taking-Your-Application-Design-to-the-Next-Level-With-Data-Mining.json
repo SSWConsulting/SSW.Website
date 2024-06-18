@@ -5,7 +5,7 @@
     "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
     "url": "/images/events/sydney-ug-thumb.jpg"
   },
-  "presenter": "Peter Myers",
+  "presenterName": "Peter Myers",
   "startDateTime": "2007-10-17T07:45:00Z",
   "endDateTime": "2007-10-17T11:00:00Z",
   "calendarType": "User Groups",

@@ -5,7 +5,7 @@
     "description": "Brisbane Full Stack User Group: Getting Started with Vue.js + CosmosDB with EF Core",
     "url": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-brisbaneUG.jpg"
   },
-  "presenter": "Jason Taylor and Thiago Passos",
+  "presenterName": "Jason Taylor and Thiago Passos",
   "startDateTime": "2018-12-18T07:00:00Z",
   "endDateTime": "2018-12-18T09:30:00Z",
   "calendarType": "User Groups",

@@ -5,7 +5,7 @@
     "description": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
     "url": "/images/events/sydney-ug-thumb.jpg"
   },
-  "presenter": "Mike Fitzmaurice and Joel Oleson",
+  "presenterName": "Mike Fitzmaurice and Joel Oleson",
   "startDateTime": "2007-05-16T07:45:00Z",
   "endDateTime": "2007-05-16T11:00:00Z",
   "calendarType": "User Groups",

@@ -5,7 +5,7 @@
     "description": "The .NET Core Superpowers Tour: Sydney",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-NetCore.jpg"
   },
-  "presenter": "Jason Taylor and Brendan Richards",
+  "presenterName": "Jason Taylor and Brendan Richards",
   "startDateTime": "2018-11-29T22:00:00Z",
   "endDateTime": "2018-11-30T06:00:00Z",
   "calendarType": "SSW Courses",

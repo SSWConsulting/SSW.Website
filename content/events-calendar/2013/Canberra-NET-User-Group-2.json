@@ -5,7 +5,7 @@
     "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb_canberraUG.jpg",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb_canberraUG.jpg"
   },
-  "presenter": "TJ Gokcen",
+  "presenterName": "TJ Gokcen",
   "startDateTime": "2013-11-18T07:00:00Z",
   "endDateTime": "2013-11-18T09:00:00Z",
   "calendarType": "User Groups",

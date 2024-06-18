@@ -5,7 +5,7 @@
     "description": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png",
     "url": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png"
   },
-  "presenter": "Michael Ridland",
+  "presenterName": "Michael Ridland",
   "presenterProfileUrl": "http://www.michaelridland.com/",
   "startDateTime": "2017-03-17T22:00:00Z",
   "endDateTime": "2017-03-18T06:00:00Z",

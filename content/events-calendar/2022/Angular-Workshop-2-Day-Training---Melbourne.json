@@ -5,7 +5,7 @@
     "description": "Angular Workshop (2-Day Training) - Melbourne",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png"
   },
-  "presenter": "Jean Thirion and Luke Cook",
+  "presenterName": "Jean Thirion and Luke Cook",
   "startDateTime": "2022-09-25T23:00:00Z",
   "endDateTime": "2022-09-27T07:00:00Z",
   "calendarType": "SSW Courses",

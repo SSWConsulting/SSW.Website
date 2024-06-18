@@ -5,7 +5,7 @@
     "description": "Angular Workshop (2-Day Training) - Sydney",
     "url": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png"
   },
-  "presenter": "Jean Thirion, Matt Wicks and Luke Cook",
+  "presenterName": "Jean Thirion, Matt Wicks and Luke Cook",
   "startDateTime": "2022-09-27T23:00:00Z",
   "endDateTime": "2022-09-29T07:00:00Z",
   "calendarType": "SSW Courses",

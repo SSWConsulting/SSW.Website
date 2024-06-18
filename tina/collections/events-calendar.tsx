@@ -53,8 +53,8 @@ export const eventsCalendarSchema: Collection = {
     },
     {
       type: "string",
-      label: "Presenter",
-      name: "presenter",
+      label: "Presenter Name",
+      name: "presenterName",
     },
     {
       type: "string",
