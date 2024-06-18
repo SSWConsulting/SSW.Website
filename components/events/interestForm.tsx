@@ -11,7 +11,7 @@ export const InterestForm = (props) => {
   return (
     <JotFormEmbed
       jotFormId={`${eoiFormId}?pageUrl=${data.pageUrl}`}
-      buttonText={"Let me know about the next one"}
+      buttonText={data.buttonText || "I am interested"}
       containerClass="mt-20"
     />
   );
@@ -28,6 +28,12 @@ export const interestFormSchema: Template = {
       label: "Page URL",
       name: "pageUrl",
       required: true,
+    },
+    {
+      type: "string",
+      label: "Button Text",
+      name: "buttonText",
+      required: false,
     },
   ],
 };
