@@ -29,7 +29,7 @@ interface EventsFilterProps {
 }
 
 export type EventTrimmed = {
-  hostedAtSSW?: boolean;
+  hostedAtSsw?: boolean;
   id?: string;
   title: string;
   thumbnail?: string;
@@ -37,6 +37,7 @@ export type EventTrimmed = {
   startDateTime: Date;
   endDateTime: Date;
   city?: string;
+  cityOther?: string;
   url: string;
   presenterName?: string;
   presenterProfileUrl?: string;
@@ -209,14 +210,15 @@ interface EventProps {
 }
 
 const Event = ({ visible, event, jsonLd }: EventProps) => {
-  let eventSite;
-  if (event.hostedAtSSW) {
-    const { city } = event;
+  const city = event.city === "Other" ? event.cityOther : event.city;
+  let eventSite = { name: city, url: event.url };
+
+  if (event.hostedAtSsw) {
     eventSite = {
       name: CITY_MAP[city]?.name,
       url: CITY_MAP[city]?.url,
     };
-  } else eventSite = { name: event.city, url: event.url };
+  }
 
   const { formattedDate, relativeDate } = useFormatDates(event, true);
 
@@ -263,7 +265,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
                   value={event.presenterName}
                 />
               )}
-              {event.city && CITY_MAP[event.city] && (
+              {city && (
                 <EventDescItem
                   label="Location"
                   value={eventSite.name}

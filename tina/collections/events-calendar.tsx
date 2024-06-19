@@ -1,4 +1,7 @@
-import { Collection } from "tinacms";
+import { Collection, TextField } from "tinacms";
+// Disable needed for Tina to return JSX in ui property
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React from "react";
 
 const datetimeFormat = {
   timeFormat: "hh:mm a",
@@ -137,6 +140,19 @@ export const eventsCalendarSchema: Collection = {
         "Beijing",
         "Other",
       ],
+    },
+    {
+      type: "string",
+      label: "City - Other",
+      description: "Enter the name of the city",
+      name: "cityOther",
+      ui: {
+        component: (props) => {
+          return props.tinaForm.values.city === "Other"
+            ? TextField(props)
+            : null;
+        },
+      },
     },
     {
       type: "string",
