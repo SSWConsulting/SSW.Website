@@ -111,13 +111,9 @@ export const eventsCalendarSchema: Collection = {
       },
       options: [
         "Conferences",
-        "FireBootCamp",
-        "SolidQ Courses",
         "SSW Courses",
         "User Groups",
         "Hack Days",
-        "UTS Courses",
-        "Webinars",
         "Other",
       ],
     },
@@ -141,11 +137,6 @@ export const eventsCalendarSchema: Collection = {
         "Beijing",
         "Other",
       ],
-    },
-    {
-      type: "boolean",
-      label: "Enabled",
-      name: "enabled",
     },
     {
       type: "string",
@@ -187,6 +178,7 @@ export const eventsCalendarSchema: Collection = {
       type: "rich-text",
       label: "Description",
       name: "description",
+      description: "This shows on ssw.com.au/events",
     },
     {
       type: "object",
@@ -220,11 +212,6 @@ export const eventsCalendarSchema: Collection = {
     },
     {
       type: "string",
-      label: "Internal Note",
-      name: "internalNote",
-    },
-    {
-      type: "string",
       label: "YouTube ID",
       name: "youTubeId",
     },
@@ -249,6 +236,21 @@ export const eventsCalendarSchema: Collection = {
       name: "hostedAtSsw",
       description:
         "Indicates that the event is being hosted at the SSW office at the chosen city",
+    },
+    {
+      type: "boolean",
+      label: "Enabled",
+      name: "enabled",
+      description: "Show this event on ssw.com.au",
+    },
+    {
+      type: "string",
+      label: "Internal Note",
+      name: "internalNote",
+      description: "For internal use only - This does not render anywhere",
+      ui: {
+        component: "textarea",
+      },
     },
   ],
 };
