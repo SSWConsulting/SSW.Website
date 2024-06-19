@@ -3,16 +3,11 @@ import { useTina } from "tinacms/dist/react";
 import { JotFormEmbed } from "../blocks";
 
 export const InterestForm = (props) => {
-  const { data } = useTina({
-    query: props.query,
-    variables: props.variables,
-    data: props.data,
-  });
   return (
     <JotFormEmbed
-      jotFormId={`${eoiFormId}?pageUrl=${data.pageUrl}`}
-      buttonText={data.buttonText || "I am interested"}
-      containerClass="mt-20"
+      jotFormId={`${eoiFormId}?pageUrl=${props.pageUrl}`}
+      buttonText={props.buttonText || "I am interested"}
+      containerClass=""
     />
   );
 };
