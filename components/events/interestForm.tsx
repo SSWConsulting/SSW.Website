@@ -1,5 +1,4 @@
 import { Template } from "tinacms";
-import { useTina } from "tinacms/dist/react";
 import { JotFormEmbed } from "../blocks";
 
 export const InterestForm = (props) => {
