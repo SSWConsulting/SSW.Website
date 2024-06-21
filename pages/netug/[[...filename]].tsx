@@ -40,7 +40,9 @@ export default function NETUGPage(
     query: props.query,
     variables: props.variables,
   });
-  const speaker = props.event?.presenterList[0] ?? null;
+  const speaker = props.event?.presenterList
+    ? props.event.presenterList[0]
+    : null;
 
   // Converting element to string to render in presenter block
   const aboutDescription = ReactDomServer.renderToString(
