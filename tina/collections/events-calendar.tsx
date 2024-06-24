@@ -1,7 +1,7 @@
-import { Collection, TextField } from "tinacms";
+import { Collection, NumberField, TextField } from "tinacms";
 // Disable needed for Tina to return JSX in ui property
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React from "react";
+import { useEffect } from "react";
 
 const datetimeFormat = {
   timeFormat: "hh:mm a",
@@ -233,6 +233,11 @@ export const eventsCalendarSchema: Collection = {
     },
     {
       type: "boolean",
+      label: "Live StreamEvent",
+      name: "liveStreamEvent",
+    },
+    {
+      type: "boolean",
       label: "Delayed LiveStream Start",
       name: "delayedLiveStreamStart",
     },
@@ -240,6 +245,19 @@ export const eventsCalendarSchema: Collection = {
       type: "number",
       label: "Live Stream Delay (Minutes)",
       name: "liveStreamDelayMinutes",
+      ui: {
+        component: (props) => {
+          useEffect(() => {
+            const { calendarType, liveStreamEvent } = props.tinaForm.values;
+            if (calendarType === "User Groups" && liveStreamEvent)
+              props.tinaForm.change("liveStreamDelayMinutes", 30);
+          }, [
+            props.tinaForm.values.calendarType,
+            props.tinaForm.values.liveStreamEvent,
+          ]);
+          return NumberField(props);
+        },
+      },
     },
     {
       type: "string",
