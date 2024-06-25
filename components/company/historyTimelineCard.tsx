@@ -20,7 +20,6 @@ const HistoryTimelineCard: FC<HistoryTimelineCardProps> = ({
 
   return (
     // &:nth-child(even/odd) selects every even/odd card in the timeline, >*:nth-child(n) then selects the nth child of the card (either the body or the year)
-    // eslint-disable-next-line tailwindcss/no-arbitrary-value
     <div className="flex even:flex-row-reverse [&:nth-child(even)>*:nth-child(2)]:rounded-e [&:nth-child(even)>*:nth-child(3)]:rounded-s [&:nth-child(odd)>*:nth-child(2)]:rounded-s [&:nth-child(odd)>*:nth-child(3)]:rounded-e">
       <div className="flex-1 p-6"></div>
       <div className="flex h-full flex-initial flex-col justify-center bg-sswRed px-12 text-3xl text-white">
