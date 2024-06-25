@@ -1,0 +1,8 @@
+{
+  "content": "%cWelcome to SSW!\n\n%cSSW has offices in Sydney, Brisbane, Melbourne, Newcastle, Strasbourg (France), and Hangzhou (China).\n\nWe're always looking for exceptional candidates at SSW\n\n%c 🚀 Check out our current opportunites: https://ssw.com.au/employment#available",
+  "styles": [
+    "font-weight: bold;font-size: 1.6em;",
+    "font-weight: default;font-size:1.2em;",
+    "font-weight: bold;font-size:1.2em;"
+  ]
+}
