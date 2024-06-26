@@ -1,10 +1,11 @@
 import { Template } from "tinacms";
+import globals from "../../content/global/index.json";
 import { JotFormEmbed } from "../blocks";
 
 export const InterestForm = (props) => {
   return (
     <JotFormEmbed
-      jotFormId={`${eoiFormId}?pageUrl=${props.pageUrl}`}
+      jotFormId={`${eoiFormId}?pageUrl=${globals.newsletterJotFormId}`}
       buttonText={props.buttonText || "I am interested"}
       containerClass=""
     />
