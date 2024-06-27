@@ -50,6 +50,10 @@ const EventBooking = dynamic(() =>
   import("./training/eventBooking").then((mod) => mod.EventBooking)
 );
 
+const InterestForm = dynamic(() =>
+  import("./events/interestForm").then((mod) => mod.InterestForm)
+);
+
 const LocationBlock = dynamic(() =>
   import("./training/locationBlock").then((mod) => mod.LocationBlock)
 );
@@ -90,6 +94,7 @@ const componentMap = {
   BookingButton,
   PaymentBlock,
   ClientList,
+  InterestForm,
   LatestTech,
   VideoEmbed,
   JotFormEmbed,
