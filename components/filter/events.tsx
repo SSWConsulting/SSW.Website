@@ -100,7 +100,9 @@ export const EventsFilter = ({
             />
             {hasMoreFuturePages && (
               <LoadMore
-                load={fetchFutureNextPage}
+                load={() => {
+                  fetchFutureNextPage();
+                }}
                 isLoading={isFetchingFuturePages}
               />
             )}
@@ -113,7 +115,9 @@ export const EventsFilter = ({
             />
             {hasMorePastPages && (
               <LoadMore
-                load={fetchNextPastPage}
+                load={() => {
+                  fetchNextPastPage();
+                }}
                 isLoading={isFetchingPastPages}
               />
             )}
