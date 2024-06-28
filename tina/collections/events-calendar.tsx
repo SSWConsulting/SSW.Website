@@ -1,4 +1,5 @@
 import { Collection, NumberField, TextField } from "tinacms";
+import React from "react";
 // Disable needed for Tina to return JSX in ui property
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useEffect } from "react";
