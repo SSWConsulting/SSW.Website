@@ -1,6 +1,17 @@
 {
   "testimonials": [
     {
+      "name": "Niru Verma",
+      "avatar": "/images/testimonialAvatars/niru-verma.jpeg",
+      "company": "Mercury Information Security Services",
+      "body": "[Uly](https://ssw.com.au/people/ulysses-maclaren/), your team is such a bunch of angels! Could not be happier that we chose to go with you. The whole crew have been so nice and so wonderful to us – they all deserve big props. I had the chance to go check out [SSW's Melbourne office](https://ssw.com.au/offices/melbourne) this Sprint, and everyone there was so nice – what a great vibe you have!\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Web-Development.mdx"
+        }
+      ]
+    },
+    {
       "name": "Shawn Rosewarne",
       "avatar": "/images/testimonialAvatars/shawn.jpg",
       "company": "Ceridian",
