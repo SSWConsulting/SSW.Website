@@ -1,7 +1,5 @@
-import { Collection, NumberField, TextField } from "tinacms";
-// Disable needed for Tina to return JSX in ui property
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useEffect } from "react";
+import { Collection, NumberField, TextField } from "tinacms";
 
 const datetimeFormat = {
   timeFormat: "hh:mm a",
