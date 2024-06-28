@@ -334,5 +334,10 @@ export const globalSchema: Collection = {
       name: "newsletterJotFormId",
       label: "Newsletter JotForm Id",
     },
+    {
+      type: "string",
+      name: "registrationOfInterestJotFormId",
+      label: "Registration of Interest JotForm Id",
+    },
   ],
 };
