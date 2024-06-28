@@ -1,6 +1,6 @@
 {
   "title": "Hanselman Unplugged at SSW",
-  "url": "https://www.ssw.com.au/ssw/netug/hanselman-user-group-special.aspx",
+  "url": "/ssw/netug/hanselman-user-group-special.aspx",
   "thumbnail": "http://ssw.com.au/ssw/NETUG/Images/thumbs/hanselman-thumbnail.png",
   "thumbnailDescription": "http://ssw.com.au/ssw/NETUG/Images/thumbs/hanselman-thumbnail.png",
   "presenterName": "Scott Hanselman",
@@ -11,7 +11,7 @@
   "endShowBannerDateTime": "2016-08-05T11:00:00Z",
   "liveStreamUrl": {
     "description": "Watch this event live",
-    "url": "https://www.ssw.com.au/ssw/Live/"
+    "url": "/ssw/Live/"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

@@ -1,7 +1,7 @@
 {
   "title": "Sydny .NET User Group: Rapidly Producing Real World IoT Projects \u2013 presented by Peter Cole",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
   "thumbnailDescription": "Sydny .NET User Group: Rapidly Producing Real World IoT Projects \u2013 presented by Peter Cole",
   "presenterName": "Peter Cole",
   "startDateTime": "2019-04-17T08:00:00Z",
@@ -10,7 +10,7 @@
   "endShowBannerDateTime": "2019-04-17T11:00:00Z",
   "liveStreamUrl": {
     "description": "Sydny .NET User Group: Rapidly Producing Real World IoT Projects \u2013 presented by Peter Cole",
-    "url": "https://www.ssw.com.au/ssw/Live/"
+    "url": "/ssw/Live/"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

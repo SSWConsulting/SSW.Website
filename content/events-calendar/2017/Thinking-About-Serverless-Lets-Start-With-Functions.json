@@ -1,8 +1,8 @@
 {
   "title": "Thinking About Serverless? Let's Start With Functions",
   "url": "http://#",
-  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
-  "thumbnailDescription": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "/ssw/Events/Images/Icons/daytime-training-115px.png",
   "startDateTime": "2017-06-20T14:00:00Z",
   "endDateTime": "2017-06-20T15:00:00Z",
   "calendarType": "User Groups",

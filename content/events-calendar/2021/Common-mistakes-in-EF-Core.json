@@ -1,7 +1,7 @@
 {
   "title": "Common mistakes in EF Core",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
   "thumbnailDescription": "Sydney .NET User Group",
   "presenterName": "Jernej JK Kavka",
   "startDateTime": "2021-12-15T07:00:00Z",

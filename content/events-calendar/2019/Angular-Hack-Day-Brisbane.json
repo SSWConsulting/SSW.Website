@@ -1,7 +1,7 @@
 {
   "title": "Angular Hack Day: Brisbane",
   "url": "http://angularhackday.com/brisbane",
-  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/AHD-thumb.jpg",
+  "thumbnail": "/ssw/EventsCalendar/Images/AHD-thumb.jpg",
   "thumbnailDescription": "Angular Hack Day: Brisbane",
   "startDateTime": "2019-05-31T23:00:00Z",
   "endDateTime": "2019-06-01T07:00:00Z",

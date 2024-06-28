@@ -1,8 +1,8 @@
 {
   "title": "Azure HotShots - The Azure bits you didn\u2019t know you needed to know",
   "url": "http://#",
-  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
-  "thumbnailDescription": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "/ssw/Events/Images/Icons/daytime-training-115px.png",
   "startDateTime": "2017-09-20T08:00:00Z",
   "endDateTime": "2017-09-20T10:00:00Z",
   "calendarType": "User Groups",

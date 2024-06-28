@@ -1,7 +1,7 @@
 {
   "title": ".NET 7 Superpowers - Melbourne",
-  "url": "https://www.ssw.com.au/ssw/Events/Training/NET-Superpowers-Tour.aspx",
-  "thumbnail": "https://ssw.com.au/images/Newsletters/SuperPower-Icon-DotNet.jpg",
+  "url": "/ssw/Events/Training/NET-Superpowers-Tour.aspx",
+  "thumbnail": "/images/Newsletters/SuperPower-Icon-DotNet.jpg",
   "thumbnailDescription": ".NET 7 Superpowers - Melbourne",
   "presenterName": "William Liebenberg & Gert Marx",
   "startDateTime": "2023-04-11T23:00:00Z",

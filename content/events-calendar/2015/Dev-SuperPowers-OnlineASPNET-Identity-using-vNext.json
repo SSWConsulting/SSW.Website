@@ -1,15 +1,15 @@
 {
   "title": "Dev SuperPowers: OnlineASP.NET Identity using vNext",
-  "url": "http://www.ssw.com.au/ssw/Events/Webinars/DevSuperpowers-ASP-NET-vNext.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png",
-  "thumbnailDescription": "http://www.ssw.com.au/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png",
+  "url": "/ssw/Events/Webinars/DevSuperpowers-ASP-NET-vNext.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png",
+  "thumbnailDescription": "/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png",
   "presenterName": "Ben Cull",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Ben.aspx",
   "startDateTime": "2015-05-26T14:00:00Z",
   "endDateTime": "2015-05-28T13:00:00Z",
   "liveStreamUrl": {
-    "description": "http://www.ssw.com.au/ssw/Live/",
-    "url": "http://www.ssw.com.au/ssw/Live/"
+    "description": "/ssw/Live/",
+    "url": "/ssw/Live/"
   },
   "calendarType": "Webinars",
   "city": "Online",

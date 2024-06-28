@@ -1,15 +1,15 @@
 {
   "title": "Online User Group April - From Paper to Power using Azure Form Recognition",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
   "thumbnailDescription": ".NET User Group Online",
   "presenterName": "Jernej Kavka",
-  "presenterProfileUrl": "https://www.ssw.com.au/people/jk",
+  "presenterProfileUrl": "/people/jk",
   "startDateTime": "2020-04-29T08:30:00Z",
   "endDateTime": "2020-04-29T10:00:00Z",
   "liveStreamUrl": {
     "description": "SSW Live Feed",
-    "url": "https://www.ssw.com.au/ssw/Live/"
+    "url": "/ssw/Live/"
   },
   "calendarType": "User Groups",
   "city": "Online",

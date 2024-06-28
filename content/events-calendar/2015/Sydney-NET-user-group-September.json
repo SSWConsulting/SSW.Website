@@ -1,7 +1,7 @@
 {
   "title": "Sydney .NET user group: September",
-  "url": "http://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
   "thumbnailDescription": "Sydney .NET user group: September",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
@@ -11,7 +11,7 @@
   "endShowBannerDateTime": "2015-09-16T13:00:00Z",
   "liveStreamUrl": {
     "description": "Sydney .NET User Group Live Stream",
-    "url": "https://www.ssw.com.au/ssw/Live/"
+    "url": "/ssw/Live/"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

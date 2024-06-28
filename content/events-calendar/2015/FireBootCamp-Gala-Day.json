@@ -1,7 +1,7 @@
 {
   "title": "FireBootCamp Gala Day",
   "url": "http://http://firebootcamp.com/gala/",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/firebootcamp_icon.png",
+  "thumbnail": "/ssw/EventsCalendar/Images/firebootcamp_icon.png",
   "thumbnailDescription": "FireBootCamp Gala Day ",
   "startDateTime": "2015-03-19T21:55:00Z",
   "endDateTime": "2015-03-20T12:00:00Z",
@@ -9,7 +9,7 @@
   "endShowBannerDateTime": "2015-03-20T04:00:00Z",
   "liveStreamUrl": {
     "description": "FireBootCamp Gala Day Live Stream",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Live.aspx"
+    "url": "/ssw/NETUG/Live.aspx"
   },
   "calendarType": "FireBootCamp",
   "city": "Sydney",

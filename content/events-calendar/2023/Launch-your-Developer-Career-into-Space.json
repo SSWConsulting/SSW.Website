@@ -1,17 +1,17 @@
 {
   "title": "Launch your Developer Career into Space",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
   "thumbnailDescription": "Sydney .NET User Group",
   "presenterName": "Piers Sinclair",
-  "presenterProfileUrl": "https://www.ssw.com.au/people/piers-sinclair",
+  "presenterProfileUrl": "/people/piers-sinclair",
   "startDateTime": "2023-02-15T07:00:00Z",
   "endDateTime": "2023-02-15T10:00:00Z",
   "startShowBannerDateTime": "2023-02-14T13:00:00Z",
   "endShowBannerDateTime": "2023-02-15T11:00:00Z",
   "liveStreamUrl": {
     "description": "Livestream",
-    "url": "http://www.ssw.com.au/live"
+    "url": "/live"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

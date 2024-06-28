@@ -1,7 +1,7 @@
 {
   "title": "FireBootCamp Angular 2 Online Boot Camp (6 Weeks)",
   "url": "http://firebootcamp.com/angular-2-online-boot-camp/",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/firebootcamp_icon.png",
+  "thumbnail": "/ssw/EventsCalendar/Images/firebootcamp_icon.png",
   "thumbnailDescription": "FireBootCamp Angular 2 Online Boot Camp (6 Weeks)",
   "startDateTime": "2016-08-28T14:00:00Z",
   "endDateTime": "2016-08-29T14:00:00Z",

@@ -1,7 +1,7 @@
 {
   "title": "Sydney .NET user group - April",
-  "url": "http://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
   "thumbnailDescription": "Sydney .NET user group - April",
   "presenterName": "Peter Myers",
   "startDateTime": "2015-04-15T08:00:00Z",
@@ -10,7 +10,7 @@
   "endShowBannerDateTime": "2015-04-15T12:00:00Z",
   "liveStreamUrl": {
     "description": "Sydney .NET User Group Live Stream",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Live.aspx"
+    "url": "/ssw/NETUG/Live.aspx"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

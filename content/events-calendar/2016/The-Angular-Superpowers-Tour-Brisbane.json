@@ -1,7 +1,7 @@
 {
   "title": "The Angular Superpowers Tour: Brisbane",
-  "url": "https://www.ssw.com.au/ssw/Events/Training/Angular-Superpowers-Tour.aspx",
-  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
+  "url": "/ssw/Events/Training/Angular-Superpowers-Tour.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
   "thumbnailDescription": "The Angular Superpowers Tour: Brisbane",
   "presenterName": "Adam Stephensen",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/AdamS.aspx",

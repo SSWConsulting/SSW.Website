@@ -1,6 +1,6 @@
 {
   "title": "Evolving the Building Blocks of your Codebase as you Scale",
-  "url": "https://www.ssw.com.au/netug/melbourne",
+  "url": "/netug/melbourne",
   "thumbnail": "/images/thumbs/thumb-melbourneUG.jpg",
   "thumbnailDescription": "Melbourne .NET User Group",
   "presenterName": "Alix Klingenberg",
@@ -11,7 +11,7 @@
   "endShowBannerDateTime": "2023-11-15T11:00:00Z",
   "liveStreamUrl": {
     "description": "Livestream",
-    "url": "http://www.ssw.com.au/live"
+    "url": "/live"
   },
   "calendarType": "User Groups",
   "city": "Melbourne",

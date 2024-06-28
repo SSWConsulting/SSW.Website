@@ -1,17 +1,17 @@
 {
   "title": "Azure DevOps to GitHub - The 10 Missing Bits",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
   "thumbnailDescription": "Sydney .NET User Group",
   "presenterName": "Matt Wicks",
-  "presenterProfileUrl": "https://www.ssw.com.au/people/matt-wicks/",
+  "presenterProfileUrl": "/people/matt-wicks/",
   "startDateTime": "2022-09-21T08:00:00Z",
   "endDateTime": "2022-09-21T11:00:00Z",
   "startShowBannerDateTime": "2022-09-20T14:00:00Z",
   "endShowBannerDateTime": "2022-09-21T13:00:00Z",
   "liveStreamUrl": {
-    "description": "http://www.ssw.com.au/live",
-    "url": "http://www.ssw.com.au/live"
+    "description": "/live",
+    "url": "/live"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

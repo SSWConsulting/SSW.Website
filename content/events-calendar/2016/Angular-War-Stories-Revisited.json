@@ -1,8 +1,8 @@
 {
   "title": "Angular War Stories Revisited",
   "url": "http://#",
-  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
-  "thumbnailDescription": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "/ssw/Events/Images/Icons/daytime-training-115px.png",
   "startDateTime": "2016-12-13T22:00:00Z",
   "endDateTime": "2016-12-14T06:00:00Z",
   "calendarType": "SSW Courses",

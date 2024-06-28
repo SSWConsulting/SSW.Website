@@ -1,8 +1,8 @@
 {
   "title": "Xamarin Hack Day",
   "url": "http://xamarinhackday.com/",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png",
-  "thumbnailDescription": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png",
+  "thumbnail": "/ssw/EventsCalendar/Images/xamarin-thumb.png",
+  "thumbnailDescription": "/ssw/EventsCalendar/Images/xamarin-thumb.png",
   "startDateTime": "2014-06-20T22:30:00Z",
   "endDateTime": "2014-06-21T07:30:00Z",
   "calendarType": "Hack Days",

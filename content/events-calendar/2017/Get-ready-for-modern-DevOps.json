@@ -1,8 +1,8 @@
 {
   "title": "\u200bGet ready for modern DevOps",
   "url": "http://#",
-  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
-  "thumbnailDescription": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "/ssw/Events/Images/Icons/daytime-training-115px.png",
   "startDateTime": "2017-07-18T14:00:00Z",
   "endDateTime": "2017-07-18T16:00:00Z",
   "calendarType": "User Groups",

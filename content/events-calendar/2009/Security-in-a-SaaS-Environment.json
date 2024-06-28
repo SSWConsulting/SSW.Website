@@ -1,8 +1,8 @@
 {
   "title": "Security in a SaaS Environment",
-  "url": "https://www.ssw.com.au/ssw/NETUG/PastSessions.aspx",
+  "url": "/ssw/NETUG/PastSessions.aspx",
   "thumbnail": "/images/events/sydney-ug-thumb.jpg",
-  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "/images/events/sydney-ug-thumb.jpg",
   "presenterName": "Corneliu Tusnea",
   "startDateTime": "2009-03-18T06:45:00Z",
   "endDateTime": "2009-03-18T10:00:00Z",

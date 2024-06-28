@@ -1,7 +1,7 @@
 {
   "title": "The Bitter-sweet Taste of PhoneGap for Mobile Developers by Dino Esposito",
-  "url": "http://www.ssw.com.au/ssw/Events/Webinars/PhoneGap-for-Mobile-Developers.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/Events/Webinars/Images/thumbs/thumb-webinar-phonegap_smaller.jpg",
+  "url": "/ssw/Events/Webinars/PhoneGap-for-Mobile-Developers.aspx",
+  "thumbnail": "/ssw/Events/Webinars/Images/thumbs/thumb-webinar-phonegap_smaller.jpg",
   "thumbnailDescription": "The Bitter-sweet Taste of PhoneGap for Mobile Developers",
   "presenterName": "Dino Esposito",
   "startDateTime": "2013-12-05T00:00:00Z",
@@ -10,7 +10,7 @@
   "endShowBannerDateTime": "2013-12-05T02:00:00Z",
   "liveStreamUrl": {
     "description": "Live streaming now! ",
-    "url": "http://www.ssw.com.au/ssw/Events/Webinars/Live.aspx"
+    "url": "/ssw/Events/Webinars/Live.aspx"
   },
   "calendarType": "Webinars",
   "city": "Sydney",

@@ -1,10 +1,10 @@
 {
   "title": "NDC Minnesota: Getting Started with Machine Learning using ML.NET (half day workshop)",
   "url": "https://ndcminnesota.com/agenda/getting-started-with-machine-learning-using-mlnet-0r7l/0jy71lj4nx6",
-  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/NDC-Conferences.png",
+  "thumbnail": "/ssw/EventsCalendar/Images/NDC-Conferences.png",
   "thumbnailDescription": "NDC Minnesota",
   "presenterName": "Jernej \"JK\" Kavka",
-  "presenterProfileUrl": "https://ssw.com.au/people/jk",
+  "presenterProfileUrl": "/people/jk",
   "startDateTime": "2020-09-10T19:30:00Z",
   "endDateTime": "2020-09-10T23:00:00Z",
   "calendarType": "Conferences",

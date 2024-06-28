@@ -1,8 +1,8 @@
 {
   "title": "The Azure Superpowers Tour: Melbourne",
-  "url": "https://www.ssw.com.au/ssw/Events/Training/Azure-Superpowers-Tour.aspx",
-  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg",
-  "thumbnailDescription": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg",
+  "url": "/ssw/Events/Training/Azure-Superpowers-Tour.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg",
+  "thumbnailDescription": "/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg",
   "startDateTime": "2019-10-22T22:00:00Z",
   "endDateTime": "2019-10-23T06:00:00Z",
   "calendarType": "SSW Courses",

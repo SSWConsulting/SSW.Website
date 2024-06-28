@@ -1,7 +1,7 @@
 {
   "title": "Xamarin HackDay - Ljubljana, Slovenia",
   "url": "http://xamarinhackday.com/slovenia/",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png",
+  "thumbnail": "/ssw/EventsCalendar/Images/xamarin-thumb.png",
   "thumbnailDescription": "Xamarin HackDay - Ljubljana ",
   "startDateTime": "2015-06-12T14:00:00Z",
   "endDateTime": "2015-06-13T13:55:00Z",

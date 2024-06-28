@@ -1,7 +1,7 @@
 {
   "title": ".NET Superpowers - Sydney + ONLINE",
-  "url": "https://www.ssw.com.au/events/net-superpowers-tour",
-  "thumbnail": "https://ssw.com.au/images/Newsletters/SuperPower-Icon-DotNet.jpg",
+  "url": "/events/net-superpowers-tour",
+  "thumbnail": "/images/Newsletters/SuperPower-Icon-DotNet.jpg",
   "thumbnailDescription": ".NET Superpowers",
   "presenterName": "William Liebenberg & Daniel Mackay",
   "presenterProfileUrl": "http://ssw.com.au/people/",

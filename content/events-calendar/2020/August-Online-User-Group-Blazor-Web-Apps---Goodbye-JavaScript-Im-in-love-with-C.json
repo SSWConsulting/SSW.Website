@@ -1,17 +1,17 @@
 {
   "title": "August Online User Group: Blazor Web Apps - Goodbye JavaScript! I'm in love with C#",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
   "thumbnailDescription": "Online User Group",
   "presenterName": "William Liebenberg",
-  "presenterProfileUrl": "https://www.ssw.com.au/people/william-liebenberg",
+  "presenterProfileUrl": "/people/william-liebenberg",
   "startDateTime": "2020-08-19T08:30:00Z",
   "endDateTime": "2020-08-19T10:30:00Z",
   "startShowBannerDateTime": "2020-08-18T14:00:00Z",
   "endShowBannerDateTime": "2020-08-19T10:00:00Z",
   "liveStreamUrl": {
     "description": "SSW Live Feed",
-    "url": "https://www.ssw.com.au/ssw/Live/"
+    "url": "/ssw/Live/"
   },
   "calendarType": "User Groups",
   "city": "Online",

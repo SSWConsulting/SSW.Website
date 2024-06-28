@@ -1,7 +1,7 @@
 {
   "title": "Education in the Cloud \u2013 Campion's Digital Journey",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Melbourne.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-MelbourneUG.jpg",
+  "url": "/ssw/NETUG/Melbourne.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-MelbourneUG.jpg",
   "thumbnailDescription": "Melbourne .NET User Group",
   "presenterName": "Michael Smedley, Patrick Zhao & Alexander Candy-Levey",
   "startDateTime": "2022-06-15T08:00:00Z",
@@ -10,7 +10,7 @@
   "endShowBannerDateTime": "2022-06-15T13:00:00Z",
   "liveStreamUrl": {
     "description": "Livestream",
-    "url": "http://www.ssw.com.au/live"
+    "url": "/live"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

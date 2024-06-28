@@ -1,8 +1,8 @@
 {
   "title": "The Monster Night",
   "url": "http://www.meetup.com/Sydney-NET-User-Group/events/134869362/",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/banner-monster-night-icon.png",
-  "thumbnailDescription": "http://www.ssw.com.au/ssw/EventsCalendar/Images/banner-monster-night-icon.png",
+  "thumbnail": "/ssw/EventsCalendar/Images/banner-monster-night-icon.png",
+  "thumbnailDescription": "/ssw/EventsCalendar/Images/banner-monster-night-icon.png",
   "presenterName": "Jason Beres, Glenn Block",
   "startDateTime": "2013-09-09T07:00:00Z",
   "endDateTime": "2013-09-09T11:00:00Z",

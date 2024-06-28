@@ -1,7 +1,7 @@
 {
   "title": "FireBootCamp Tech Breakfast",
-  "url": "http://www.ssw.com.au/ssw/events/techbreakfast/How-to-upgrade-your-skills-to-developer-in-2015.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/techbrekky2014-thumbnail.jpg",
+  "url": "/ssw/events/techbreakfast/How-to-upgrade-your-skills-to-developer-in-2015.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/techbrekky2014-thumbnail.jpg",
   "thumbnailDescription": "FireBootCamp Tech Breakfast",
   "startDateTime": "2014-12-08T22:00:00Z",
   "endDateTime": "2014-12-09T00:00:00Z",

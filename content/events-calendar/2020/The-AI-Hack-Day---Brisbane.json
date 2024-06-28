@@ -1,7 +1,7 @@
 {
   "title": "The AI Hack Day - Brisbane",
   "url": "http://aihackday.com",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/AIHackDaySSWEvents.jpg",
+  "thumbnail": "/ssw/EventsCalendar/Images/AIHackDaySSWEvents.jpg",
   "thumbnailDescription": "The AI Hack Day - Brisbane",
   "presenterName": "William Liebenberg, Jk Kavka & Patrick Zhao",
   "startDateTime": "2020-03-27T22:00:00Z",

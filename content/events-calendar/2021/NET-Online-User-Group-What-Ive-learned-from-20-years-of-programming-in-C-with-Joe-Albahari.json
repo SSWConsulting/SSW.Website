@@ -1,7 +1,7 @@
 {
   "title": ".NET Online User Group: What I've learned from 20 years of programming in C# with Joe Albahari",
-  "url": "https://www.ssw.com.au/live",
-  "thumbnail": "http://www.ssw.com.au/ssw/Images/trunk/SSW.Website.WebUI/NETUG/SSWUpdate/Images/Joe-Albahari-profile.jpg",
+  "url": "/live",
+  "thumbnail": "/ssw/Images/trunk/SSW.Website.WebUI/NETUG/SSWUpdate/Images/Joe-Albahari-profile.jpg",
   "thumbnailDescription": "Joe Albahari",
   "presenterName": "Joe Albahari",
   "presenterProfileUrl": "https://mvp.microsoft.com/en-us/PublicProfile/4021948?fullName=joe%20albahari",
@@ -10,8 +10,8 @@
   "startShowBannerDateTime": "2021-03-16T13:00:00Z",
   "endShowBannerDateTime": "2021-03-17T11:00:00Z",
   "liveStreamUrl": {
-    "description": "https://www.ssw.com.au/ssw/Live/",
-    "url": "https://www.ssw.com.au/ssw/Live/"
+    "description": "/ssw/Live/",
+    "url": "/ssw/Live/"
   },
   "calendarType": "User Groups",
   "city": "Online",

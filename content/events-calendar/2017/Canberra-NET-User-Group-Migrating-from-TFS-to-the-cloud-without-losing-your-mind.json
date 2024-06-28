@@ -1,7 +1,7 @@
 {
   "title": "Canberra .NET User Group: Migrating from TFS to the cloud... without losing your mind",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg",
+  "url": "/ssw/NETUG/Canberra.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg",
   "thumbnailDescription": "Canberra .NET User Group: Migrating from TFS to the cloud... without losing your mind",
   "presenterName": "Danijel Malik",
   "startDateTime": "2017-01-16T06:30:00Z",

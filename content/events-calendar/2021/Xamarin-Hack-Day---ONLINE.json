@@ -1,10 +1,10 @@
 {
   "title": "Xamarin Hack Day - *ONLINE*",
   "url": "http://xamarinhackday.com/",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png",
+  "thumbnail": "/ssw/EventsCalendar/Images/xamarin-thumb.png",
   "thumbnailDescription": "Xamarin Hack Day - Melbourne",
   "presenterName": "Matt Goldman, Brady Stroud, and Andreas Lengkeek",
-  "presenterProfileUrl": "https://www.ssw.com.au/people/matt-goldman",
+  "presenterProfileUrl": "/people/matt-goldman",
   "startDateTime": "2021-10-22T22:00:00Z",
   "endDateTime": "2021-10-23T06:00:00Z",
   "calendarType": "Hack Days",

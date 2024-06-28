@@ -1,10 +1,10 @@
 {
   "title": "Azure Super Skills - Melbourne",
-  "url": "https://www.ssw.com.au/ssw/Events/training/azure-superskills.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/events/training/images/azure-super-skills-icon-2022.png",
+  "url": "/ssw/Events/training/azure-superskills.aspx",
+  "thumbnail": "/ssw/events/training/images/azure-super-skills-icon-2022.png",
   "thumbnailDescription": "Azure Super Skills",
   "presenterName": "William Liebenberg & Matt Wicks",
-  "presenterProfileUrl": "https://www.ssw.com.au/people/",
+  "presenterProfileUrl": "/people/",
   "startDateTime": "2023-02-16T22:00:00Z",
   "endDateTime": "2023-02-17T06:00:00Z",
   "calendarType": "SSW Courses",

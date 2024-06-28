@@ -1,7 +1,7 @@
 {
   "title": "Sydney .NET User Group: 7 Deadly Presentation Sins",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
   "thumbnailDescription": "Sydney .NET User Group:  7 Deadly Presentation Sins",
   "presenterName": "Samantha and Andrew Coates",
   "startDateTime": "2019-10-23T07:00:00Z",

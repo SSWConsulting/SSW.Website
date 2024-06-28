@@ -1,7 +1,7 @@
 {
   "title": "Sydney .NET User Group: DevOps Best Practices for Azure and VSTS - Damian Brady",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
   "thumbnailDescription": "Sydney .NET User Group: DevOps Best Practices for Azure and VSTS - Damian Brady",
   "presenterName": "Damian Brady",
   "presenterProfileUrl": "https://damianbrady.com.au/",
@@ -11,7 +11,7 @@
   "endShowBannerDateTime": "2018-04-10T13:50:00Z",
   "liveStreamUrl": {
     "description": "Sydney .NET User Group: DevOps Best Practices for Azure and VSTS - Damian Brady",
-    "url": "https://www.ssw.com.au/ssw/Live/"
+    "url": "/ssw/Live/"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

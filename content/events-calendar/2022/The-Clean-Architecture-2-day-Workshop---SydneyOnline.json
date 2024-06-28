@@ -1,10 +1,10 @@
 {
   "title": "The Clean Architecture 2-day Workshop - Sydney/Online",
-  "url": "https://www.ssw.com.au/ssw/events/Training/Clean-Architecture-Workshop.aspx",
-  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Workshop-Icon-CleanArchitecture.jpg",
+  "url": "/ssw/events/Training/Clean-Architecture-Workshop.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/Workshop-Icon-CleanArchitecture.jpg",
   "thumbnailDescription": "The Clean Architecture 2-day Workshop - Sydney/Online",
   "presenterName": "Jason Taylor & Luke Cook",
-  "presenterProfileUrl": "https://www.ssw.com.au/people/jason-taylor",
+  "presenterProfileUrl": "/people/jason-taylor",
   "startDateTime": "2022-08-23T23:00:00Z",
   "endDateTime": "2022-08-25T07:00:00Z",
   "calendarType": "SSW Courses",

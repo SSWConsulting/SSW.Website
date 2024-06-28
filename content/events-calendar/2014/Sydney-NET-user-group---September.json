@@ -1,7 +1,7 @@
 {
   "title": "Sydney .NET user group - September",
-  "url": "http://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
   "thumbnailDescription": "Sydney .NET user group - September",
   "presenterName": "Steve Yap",
   "startDateTime": "2014-09-17T08:00:00Z",
@@ -10,7 +10,7 @@
   "endShowBannerDateTime": "2014-09-17T13:30:00Z",
   "liveStreamUrl": {
     "description": "Sydney .NET User Group Live Stream",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Live.aspx"
+    "url": "/ssw/NETUG/Live.aspx"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

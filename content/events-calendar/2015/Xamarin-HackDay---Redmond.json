@@ -1,7 +1,7 @@
 {
   "title": "Xamarin HackDay - Redmond",
   "url": "http://xamarinhackday.com/redmond/",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png",
+  "thumbnail": "/ssw/EventsCalendar/Images/xamarin-thumb.png",
   "thumbnailDescription": "Xamarin HackDay - Redmond",
   "startDateTime": "2015-01-23T21:30:00Z",
   "endDateTime": "2015-01-24T06:30:00Z",

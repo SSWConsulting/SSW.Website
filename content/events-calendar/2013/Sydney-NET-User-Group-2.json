@@ -1,8 +1,8 @@
 {
   "title": "Sydney .NET User Group",
-  "url": "http://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb_sydneyUG.jpg",
-  "thumbnailDescription": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb_sydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/thumb_sydneyUG.jpg",
+  "thumbnailDescription": "/ssw/EventsCalendar/Images/thumb_sydneyUG.jpg",
   "presenterName": "TJ Gokcen",
   "startDateTime": "2013-11-20T07:00:00Z",
   "endDateTime": "2013-11-20T09:00:00Z",
@@ -10,7 +10,7 @@
   "endShowBannerDateTime": "2013-11-20T10:00:00Z",
   "liveStreamUrl": {
     "description": "Sydney User Group Live Stream ",
-    "url": "http://www.ssw.com.au/ssw/NETUG/Live.aspx"
+    "url": "/ssw/NETUG/Live.aspx"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

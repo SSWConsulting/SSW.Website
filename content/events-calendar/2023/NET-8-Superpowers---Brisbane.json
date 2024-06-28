@@ -1,10 +1,10 @@
 {
   "title": ".NET 8 Superpowers - Brisbane",
-  "url": "https://www.ssw.com.au/events/net-superpowers-tour",
-  "thumbnail": "https://ssw.com.au/images/Newsletters/SuperPower-Icon-DotNet.jpg",
+  "url": "/events/net-superpowers-tour",
+  "thumbnail": "/images/Newsletters/SuperPower-Icon-DotNet.jpg",
   "thumbnailDescription": ".NET 8 Superpowers",
   "presenterName": "William Liebenberg and Daniel Mackay",
-  "presenterProfileUrl": "https://www.ssw.com.au/people/",
+  "presenterProfileUrl": "/people/",
   "startDateTime": "2023-12-03T22:00:00Z",
   "endDateTime": "2023-12-04T06:00:00Z",
   "calendarType": "SSW Courses",

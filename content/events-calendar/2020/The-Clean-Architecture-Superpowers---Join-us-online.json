@@ -1,7 +1,7 @@
 {
   "title": "The Clean Architecture Superpowers - Join us online!",
-  "url": "https://www.ssw.com.au/ssw/Events/Training/Clean-Architecture-Superpowers-Tour.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPowers-Icon-CleanArchitecture.jpg",
+  "url": "/ssw/Events/Training/Clean-Architecture-Superpowers-Tour.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/SuperPowers-Icon-CleanArchitecture.jpg",
   "thumbnailDescription": "The Clean Architecture Superpowers - Join us online!",
   "presenterName": "Jason Taylor & Matt Goldman",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/JasonTaylor.aspx",

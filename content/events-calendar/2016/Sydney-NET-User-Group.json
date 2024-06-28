@@ -1,8 +1,8 @@
 {
   "title": "Sydney .NET User Group",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
-  "thumbnailDescription": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
   "presenterName": "David Gardiner and Danijel Malik",
   "presenterProfileUrl": "http://david.gardiner.net.au/",
   "startDateTime": "2016-06-15T08:00:00Z",
@@ -11,7 +11,7 @@
   "endShowBannerDateTime": "2016-06-15T11:00:00Z",
   "liveStreamUrl": {
     "description": "Stream the Sydney .NET User Group live!",
-    "url": "https://www.ssw.com.au/ssw/Live/"
+    "url": "/ssw/Live/"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

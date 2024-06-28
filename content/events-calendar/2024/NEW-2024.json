@@ -1,10 +1,10 @@
 {
   "title": "../NEW 2024",
   "url": "https://slashnew.tech/",
-  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-slashnew.jpg",
+  "thumbnail": "/ssw/EventsCalendar/Images/thumb-slashnew.jpg",
   "thumbnailDescription": "../NEW conference Newcastle",
   "presenterName": "Matt Wicks, Bryden Oliver & many others",
-  "presenterProfileUrl": "https://www.ssw.com.au/people",
+  "presenterProfileUrl": "/people",
   "startDateTime": "2024-05-14T23:00:00Z",
   "endDateTime": "2024-05-16T07:00:00Z",
   "calendarType": "Conferences",

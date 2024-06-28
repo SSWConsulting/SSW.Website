@@ -1,17 +1,17 @@
 {
   "title": "Newcastle Coders Group - Rules to Better ChatGPT and Using the Best API Ever \u2b50",
   "url": "https://www.meetup.com/newcastle-coders-group/events/293987497/",
-  "thumbnail": "https://ssw.com.au/images/Newsletters/Newcastlecoders.jpg",
+  "thumbnail": "/images/Newsletters/Newcastlecoders.jpg",
   "thumbnailDescription": "Newcastle Coders Group",
   "presenterName": "Adam Cogan",
-  "presenterProfileUrl": "https://ssw.com.au/people/adam-cogan/",
+  "presenterProfileUrl": "/people/adam-cogan/",
   "startDateTime": "2023-08-02T08:00:00Z",
   "endDateTime": "2023-08-02T11:00:00Z",
   "startShowBannerDateTime": "2023-08-01T14:00:00Z",
   "endShowBannerDateTime": "2023-08-02T12:00:00Z",
   "liveStreamUrl": {
     "description": "Livestream",
-    "url": "http://www.ssw.com.au/live"
+    "url": "/live"
   },
   "calendarType": "User Groups",
   "city": "Newcastle",

@@ -1,17 +1,17 @@
 {
   "title": "Rules to Better ChatGPT and Using the Best API Ever \u2b50 + Australia vs England",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
+  "url": "/ssw/NETUG/Sydney.aspx",
   "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
   "thumbnailDescription": "Sydney .NET User Group",
   "presenterName": "Adam Cogan",
-  "presenterProfileUrl": "https://ssw.com.au/people/adam-cogan",
+  "presenterProfileUrl": "/people/adam-cogan",
   "startDateTime": "2023-08-16T08:00:00Z",
   "endDateTime": "2023-08-16T12:00:00Z",
   "startShowBannerDateTime": "2023-08-15T14:00:00Z",
   "endShowBannerDateTime": "2023-08-16T13:00:00Z",
   "liveStreamUrl": {
     "description": "Livestream",
-    "url": "http://www.ssw.com.au/live"
+    "url": "/live"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

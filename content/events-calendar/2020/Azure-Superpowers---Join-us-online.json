@@ -1,8 +1,8 @@
 {
   "title": "Azure Superpowers - Join us online!",
-  "url": "https://www.ssw.com.au/ssw/Events/Training/Azure-Superpowers-Tour.aspx",
-  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg",
-  "thumbnailDescription": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg",
+  "url": "/ssw/Events/Training/Azure-Superpowers-Tour.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg",
+  "thumbnailDescription": "/ssw/EventsCalendar/Images/SuperPower-Icon-Azure.jpg",
   "presenterName": "Matt Wicks & William Liebenberg",
   "startDateTime": "2020-04-16T23:00:00Z",
   "endDateTime": "2020-04-17T07:00:00Z",

@@ -1,8 +1,8 @@
 {
   "title": "Deploying ASP.NET Core Applications including Octopus, Docker & RM",
   "url": "http://#",
-  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
-  "thumbnailDescription": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "/ssw/Events/Images/Icons/daytime-training-115px.png",
   "startDateTime": "2016-07-12T14:00:00Z",
   "endDateTime": "2016-07-12T15:00:00Z",
   "calendarType": "User Groups",

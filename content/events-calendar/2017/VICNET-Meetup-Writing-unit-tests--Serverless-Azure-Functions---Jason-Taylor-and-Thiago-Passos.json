@@ -1,7 +1,7 @@
 {
   "title": "VIC.NET Meetup: Writing unit tests + Serverless Azure Functions - Jason Taylor and Thiago Passos",
   "url": "https://www.meetup.com/VIC-NET-Meetup/events/241318261/",
-  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/vicdotnetmeetup.jpg",
+  "thumbnail": "/ssw/EventsCalendar/Images/vicdotnetmeetup.jpg",
   "thumbnailDescription": "VIC.NET Meetup: Writing unit tests + Serverless Azure Functions - Jason Taylor and Thiago Passos",
   "presenterName": "Jason Taylor and Thiago Passos",
   "startDateTime": "2017-07-11T07:30:00Z",

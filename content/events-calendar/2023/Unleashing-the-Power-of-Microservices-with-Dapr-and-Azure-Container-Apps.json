@@ -1,17 +1,17 @@
 {
   "title": "Unleashing the Power of Microservices with Dapr and Azure Container Apps",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Melbourne.aspx",
+  "url": "/ssw/NETUG/Melbourne.aspx",
   "thumbnail": "/images/thumbs/thumb-melbourneUG.jpg",
   "thumbnailDescription": "Melbourne .NET User Group",
   "presenterName": "William Liebenberg",
-  "presenterProfileUrl": "https://ssw.com.au/people/william-liebenberg",
+  "presenterProfileUrl": "/people/william-liebenberg",
   "startDateTime": "2023-05-17T08:00:00Z",
   "endDateTime": "2023-05-17T11:00:00Z",
   "startShowBannerDateTime": "2023-05-16T14:00:00Z",
   "endShowBannerDateTime": "2023-05-17T12:00:00Z",
   "liveStreamUrl": {
     "description": "Live Stream",
-    "url": "http://www.ssw.com.au/live"
+    "url": "/live"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

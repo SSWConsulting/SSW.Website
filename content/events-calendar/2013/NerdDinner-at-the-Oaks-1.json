@@ -1,8 +1,8 @@
 {
   "title": "NerdDinner at the Oaks",
   "url": "http://nerddinner.com/7090",
-  "thumbnail": "http://www.ssw.com.au/ssw/Images/nerd-dinner-thumb.jpg",
-  "thumbnailDescription": "http://www.ssw.com.au/ssw/Images/nerd-dinner-thumb.jpg",
+  "thumbnail": "/ssw/Images/nerd-dinner-thumb.jpg",
+  "thumbnailDescription": "/ssw/Images/nerd-dinner-thumb.jpg",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
   "startDateTime": "2013-10-16T09:10:00Z",

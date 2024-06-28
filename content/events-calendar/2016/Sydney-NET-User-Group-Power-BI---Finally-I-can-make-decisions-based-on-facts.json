@@ -1,7 +1,7 @@
 {
   "title": "Sydney .NET User Group: \u200bPower BI - Finally I can make decisions based on facts",
-  "url": "https://www.ssw.com.au/ssw/netug/sydney.aspx",
-  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "url": "/ssw/netug/sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
   "thumbnailDescription": "Sydney .NET User Group",
   "presenterName": "Ulysses Maclaren",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Uly.aspx",
@@ -11,7 +11,7 @@
   "endShowBannerDateTime": "2016-10-19T12:00:00Z",
   "liveStreamUrl": {
     "description": "Sydney .NET user group: October",
-    "url": "https://www.ssw.com.au/ssw/live/"
+    "url": "/ssw/live/"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

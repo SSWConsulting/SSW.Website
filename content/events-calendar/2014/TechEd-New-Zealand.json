@@ -1,7 +1,7 @@
 {
   "title": "TechEd New Zealand",
   "url": "https://newzealand.msteched.com/",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/TechEdNZ2014.png",
+  "thumbnail": "/ssw/EventsCalendar/Images/TechEdNZ2014.png",
   "thumbnailDescription": "TechEd New Zealand ",
   "presenterName": "TechEd New Zealand ",
   "startDateTime": "2014-09-08T14:00:00Z",

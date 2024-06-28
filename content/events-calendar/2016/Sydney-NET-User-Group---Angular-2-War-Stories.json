@@ -1,8 +1,8 @@
 {
   "title": "Sydney .NET User Group - Angular 2 War Stories",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
-  "thumbnailDescription": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
   "presenterName": "Adam Stephensen",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/AdamS.aspx",
   "startDateTime": "2016-07-20T08:00:00Z",
@@ -10,8 +10,8 @@
   "startShowBannerDateTime": "2016-07-19T14:00:00Z",
   "endShowBannerDateTime": "2016-07-20T11:00:00Z",
   "liveStreamUrl": {
-    "description": "https://www.ssw.com.au/ssw/Live/",
-    "url": "https://www.ssw.com.au/ssw/Live/"
+    "description": "/ssw/Live/",
+    "url": "/ssw/Live/"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

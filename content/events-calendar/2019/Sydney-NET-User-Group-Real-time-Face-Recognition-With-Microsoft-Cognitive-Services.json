@@ -1,7 +1,7 @@
 {
   "title": "Sydney .NET User Group: Real-time Face Recognition With Microsoft Cognitive Services",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
   "thumbnailDescription": "Sydney .NET User Group: Real-time Face Recognition With Microsoft Cognitive Services",
   "presenterName": "Jernej \"JK\" Kavka",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/JK.aspx",
@@ -11,7 +11,7 @@
   "endShowBannerDateTime": "2019-01-16T10:00:00Z",
   "liveStreamUrl": {
     "description": "Sydney .NET User Group: Real-time Face Recognition With Microsoft Cognitive Services",
-    "url": "https://www.ssw.com.au/ssw/Live/"
+    "url": "/ssw/Live/"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

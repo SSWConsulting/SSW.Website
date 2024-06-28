@@ -1,17 +1,17 @@
 {
   "title": "Newcastle Coders Group - Practical Applications of GPT-3",
   "url": "https://www.meetup.com/newcastle-coders-group/events/290782115/",
-  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/SSWUpdate/images/Newcastlecoders.jpg",
+  "thumbnail": "/ssw/NETUG/SSWUpdate/images/Newcastlecoders.jpg",
   "thumbnailDescription": "Newcastle Coders Group",
   "presenterName": "Calum Simpson",
-  "presenterProfileUrl": "https://ssw.com.au/people/calum-simpson",
+  "presenterProfileUrl": "/people/calum-simpson",
   "startDateTime": "2023-03-01T07:00:00Z",
   "endDateTime": "2023-03-01T10:00:00Z",
   "startShowBannerDateTime": "2023-02-28T13:00:00Z",
   "endShowBannerDateTime": "2023-03-01T12:00:00Z",
   "liveStreamUrl": {
     "description": "Livestream",
-    "url": "http://www.ssw.com.au/live"
+    "url": "/live"
   },
   "calendarType": "User Groups",
   "city": "Newcastle",

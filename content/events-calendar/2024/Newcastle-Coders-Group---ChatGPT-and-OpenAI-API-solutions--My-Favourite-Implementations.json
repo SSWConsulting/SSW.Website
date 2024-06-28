@@ -1,7 +1,7 @@
 {
   "title": "Newcastle Coders Group - ChatGPT and OpenAI API solutions: \ud83d\udc51 My Favourite Implementations",
   "url": "https://www.meetup.com/newcastle-coders-group/events/300837217/",
-  "thumbnail": "https://ssw.com.au/images/Newsletters/Newcastlecoders.jpg",
+  "thumbnail": "/images/Newsletters/Newcastlecoders.jpg",
   "thumbnailDescription": "Newcastle Coders Group",
   "presenterName": "Adam Cogan",
   "presenterProfileUrl": "http://ssw.com.au/people/adam-cogan",
@@ -11,7 +11,7 @@
   "endShowBannerDateTime": "2024-08-07T12:00:00Z",
   "liveStreamUrl": {
     "description": "Livestream",
-    "url": "http://www.ssw.com.au/live"
+    "url": "/live"
   },
   "calendarType": "User Groups",
   "city": "Newcastle",

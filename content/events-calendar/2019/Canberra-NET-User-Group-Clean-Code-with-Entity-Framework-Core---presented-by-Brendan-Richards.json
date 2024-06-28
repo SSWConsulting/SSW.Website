@@ -1,7 +1,7 @@
 {
   "title": "Canberra .NET User Group: Clean Code with Entity Framework Core - presented by Brendan Richards",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Canberra.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg",
+  "url": "/ssw/NETUG/Canberra.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg",
   "thumbnailDescription": "Canberra .NET User Group: Clean Code with Entity Framework Core - presented by Brendan Richards",
   "presenterName": "Brendan Richards",
   "startDateTime": "2019-08-19T07:30:00Z",

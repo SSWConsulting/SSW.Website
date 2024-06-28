@@ -1,10 +1,10 @@
 {
   "title": "The Clean Architecture 2-day Workshop - Brisbane",
-  "url": "https://www.ssw.com.au/ssw/Events/Training/Clean-Architecture-Workshop.aspx",
+  "url": "/ssw/Events/Training/Clean-Architecture-Workshop.aspx",
   "thumbnail": "/images/Newsletters/Workshop-Icon-CleanArchitecture.jpg",
   "thumbnailDescription": "The Clean Architecture 2-day Workshop - Brisbane",
   "presenterName": "Daniel Mackay & Luke Parker",
-  "presenterProfileUrl": "https://ssw.com.au/people/",
+  "presenterProfileUrl": "/people/",
   "startDateTime": "2023-07-23T23:00:00Z",
   "endDateTime": "2023-07-25T07:00:00Z",
   "calendarType": "SSW Courses",

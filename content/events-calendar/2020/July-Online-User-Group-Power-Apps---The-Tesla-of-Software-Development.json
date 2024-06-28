@@ -1,17 +1,17 @@
 {
   "title": "July Online User Group: Power Apps - The Tesla of Software Development",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
   "thumbnailDescription": "Online User Group",
   "presenterName": "Calum Simpson",
-  "presenterProfileUrl": "https://www.ssw.com.au/people/Calum-Simpson/",
+  "presenterProfileUrl": "/people/Calum-Simpson/",
   "startDateTime": "2020-07-22T08:30:00Z",
   "endDateTime": "2020-07-22T10:30:00Z",
   "startShowBannerDateTime": "2020-07-21T14:00:00Z",
   "endShowBannerDateTime": "2020-07-22T10:00:00Z",
   "liveStreamUrl": {
     "description": "SSW Live Feed",
-    "url": "https://www.ssw.com.au/ssw/Live/"
+    "url": "/ssw/Live/"
   },
   "calendarType": "User Groups",
   "city": "Online",

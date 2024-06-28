@@ -1,17 +1,17 @@
 {
   "title": "Developing Flexible Authorisation Capabilities in ASP.NET Core",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
   "thumbnailDescription": "Developing Flexible Authorisation Capabilities in ASP.NET Core",
   "presenterName": "Jason Taylor",
-  "presenterProfileUrl": "https://www.ssw.com.au/people/jason-taylor",
+  "presenterProfileUrl": "/people/jason-taylor",
   "startDateTime": "2022-05-18T08:00:00Z",
   "endDateTime": "2022-05-18T12:00:00Z",
   "startShowBannerDateTime": "2022-05-17T14:00:00Z",
   "endShowBannerDateTime": "2022-05-18T12:00:00Z",
   "liveStreamUrl": {
     "description": "Live Stream",
-    "url": "http://www.ssw.com.au/live"
+    "url": "/live"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

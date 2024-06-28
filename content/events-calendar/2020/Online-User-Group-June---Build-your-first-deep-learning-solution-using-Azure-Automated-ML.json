@@ -1,17 +1,17 @@
 {
   "title": "Online User Group June - Build your first deep learning solution using Azure Automated ML",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
   "thumbnailDescription": "Online User Group",
   "presenterName": "Patrick Zhao",
-  "presenterProfileUrl": "https://www.ssw.com.au/people/patrick-zhao",
+  "presenterProfileUrl": "/people/patrick-zhao",
   "startDateTime": "2020-06-17T08:30:00Z",
   "endDateTime": "2020-06-17T10:30:00Z",
   "startShowBannerDateTime": "2020-06-16T14:00:00Z",
   "endShowBannerDateTime": "2020-06-17T11:00:00Z",
   "liveStreamUrl": {
     "description": "SSW Live Feed",
-    "url": "https://www.ssw.com.au/ssw/Live/"
+    "url": "/ssw/Live/"
   },
   "calendarType": "User Groups",
   "city": "Online",

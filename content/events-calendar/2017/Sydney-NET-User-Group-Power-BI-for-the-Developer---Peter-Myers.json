@@ -1,7 +1,7 @@
 {
   "title": "Sydney .NET User Group: Power BI for the Developer - Peter Myers",
-  "url": "https://www.ssw.com.au/ssw/netug/sydney.aspx",
-  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "url": "/ssw/netug/sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
   "thumbnailDescription": "Sydney .NET User Group: Power BI for the Developer - Peter Myers",
   "presenterName": "Peter Myers",
   "startDateTime": "2017-11-15T07:00:00Z",
@@ -10,7 +10,7 @@
   "endShowBannerDateTime": "2017-11-15T12:00:00Z",
   "liveStreamUrl": {
     "description": "Sydney .NET User Group: Power BI for the Developer - Peter Myers",
-    "url": "https://www.ssw.com.au/ssw/Live/"
+    "url": "/ssw/Live/"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

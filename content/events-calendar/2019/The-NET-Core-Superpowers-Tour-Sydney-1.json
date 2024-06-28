@@ -1,7 +1,7 @@
 {
   "title": "The .NET Core Superpowers Tour: Sydney",
   "url": "https://firebootcamp.com/netcore-superpower-tour/",
-  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPower-Icon-NetCore.jpg",
+  "thumbnail": "/ssw/EventsCalendar/Images/SuperPower-Icon-NetCore.jpg",
   "thumbnailDescription": "The .NET Core Superpowers Tour: Sydney",
   "presenterName": "Jason Taylor and Brendan Richards",
   "startDateTime": "2019-10-31T22:00:00Z",

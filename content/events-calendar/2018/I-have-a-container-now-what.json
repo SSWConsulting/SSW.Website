@@ -1,8 +1,8 @@
 {
   "title": "I have a container... now what?",
   "url": "http://#",
-  "thumbnail": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
-  "thumbnailDescription": "http://www.ssw.com.au/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "/ssw/Events/Images/Icons/daytime-training-115px.png",
   "startDateTime": "2018-02-20T13:00:00Z",
   "endDateTime": "2018-02-20T15:00:00Z",
   "calendarType": "User Groups",

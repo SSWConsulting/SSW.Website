@@ -1,8 +1,8 @@
 {
   "title": "Angular Workshop (2 Day Training): Sydney",
-  "url": "https://www.ssw.com.au/ssw/Events/Training/Angular-Workshop.aspx",
-  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
-  "thumbnailDescription": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
+  "url": "/ssw/Events/Training/Angular-Workshop.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
+  "thumbnailDescription": "/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
   "presenterName": "Brendan Richards & Jean Thirion",
   "startDateTime": "2019-05-22T23:00:00Z",
   "endDateTime": "2019-05-24T07:00:00Z",

@@ -1,10 +1,10 @@
 {
   "title": "The Clean Architecture 2-day Workshop - Online",
-  "url": "https://www.ssw.com.au/ssw/Events/Training/Clean-Architecture-Workshop.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPowers-Icon-CleanArchitecture.jpg",
+  "url": "/ssw/Events/Training/Clean-Architecture-Workshop.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/SuperPowers-Icon-CleanArchitecture.jpg",
   "thumbnailDescription": "The Clean Architecture 2-day Workshop - Online",
   "presenterName": "Jason Taylor & Matt Goldman",
-  "presenterProfileUrl": "https://www.ssw.com.au/people/jason-taylor",
+  "presenterProfileUrl": "/people/jason-taylor",
   "startDateTime": "2021-03-24T22:00:00Z",
   "endDateTime": "2021-03-26T06:00:00Z",
   "calendarType": "SSW Courses",

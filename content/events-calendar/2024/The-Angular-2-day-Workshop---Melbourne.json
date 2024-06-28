@@ -1,10 +1,10 @@
 {
   "title": "The Angular 2-day Workshop - Melbourne",
-  "url": "https://www.ssw.com.au/events/angular-workshop",
+  "url": "/events/angular-workshop",
   "thumbnail": "/images/Newsletters/Angular-2-0-logo.png",
   "thumbnailDescription": "The Angular 2-day Workshop",
   "presenterName": "Matt Wicks & Luke Cook",
-  "presenterProfileUrl": "https://ssw.com.au/people/",
+  "presenterProfileUrl": "/people/",
   "startDateTime": "2024-10-13T22:00:00Z",
   "endDateTime": "2024-10-15T06:00:00Z",
   "calendarType": "SSW Courses",

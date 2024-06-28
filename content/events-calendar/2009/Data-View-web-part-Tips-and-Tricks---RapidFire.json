@@ -1,8 +1,8 @@
 {
   "title": "Data View web part Tips and Tricks - RapidFire",
-  "url": "https://www.ssw.com.au/ssw/NETUG/PastSessions.aspx",
+  "url": "/ssw/NETUG/PastSessions.aspx",
   "thumbnail": "/images/events/sydney-ug-thumb.jpg",
-  "thumbnailDescription": "https://www.ssw.com.au/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "/images/events/sydney-ug-thumb.jpg",
   "presenterName": "Sergio Otoya",
   "startDateTime": "2009-02-18T06:45:00Z",
   "endDateTime": "2009-02-18T10:00:00Z",

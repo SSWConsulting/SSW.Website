@@ -1,6 +1,6 @@
 {
   "title": "Vercel - Simplifying Your Development with Zero Configuration",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Brisbane.aspx",
+  "url": "/ssw/NETUG/Brisbane.aspx",
   "thumbnail": "/images/thumbs/thumb-brisbaneUG.jpg",
   "thumbnailDescription": "Brisbane Full Stack User Group",
   "presenterName": "Tylah Kapa",
@@ -11,7 +11,7 @@
   "endShowBannerDateTime": "2023-10-18T11:00:00Z",
   "liveStreamUrl": {
     "description": "Livestream",
-    "url": "http://www.ssw.com.au/live"
+    "url": "/live"
   },
   "calendarType": "User Groups",
   "city": "Brisbane",

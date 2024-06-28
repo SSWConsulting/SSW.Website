@@ -1,8 +1,8 @@
 {
   "title": "Test",
   "url": "http://test.com",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
-  "thumbnailDescription": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
   "presenterName": "David Burela",
   "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/David-Burela.aspx",
   "startDateTime": "2015-03-25T08:30:00Z",

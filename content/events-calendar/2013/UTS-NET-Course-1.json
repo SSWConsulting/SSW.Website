@@ -1,8 +1,8 @@
 {
   "title": "UTS .NET Course",
-  "url": "http://www.ssw.com.au/ssw/training/VisualStudio.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb_uts.jpg",
-  "thumbnailDescription": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb_uts.jpg",
+  "url": "/ssw/training/VisualStudio.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/thumb_uts.jpg",
+  "thumbnailDescription": "/ssw/EventsCalendar/Images/thumb_uts.jpg",
   "startDateTime": "2013-09-05T08:00:00Z",
   "endDateTime": "2013-09-05T11:00:00Z",
   "calendarType": "UTS Courses",

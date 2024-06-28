@@ -1,7 +1,7 @@
 {
   "title": "DDD Sydney",
   "url": "http://dddsydney.com.au",
-  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/DDD-Sydney.jpg",
+  "thumbnail": "/ssw/EventsCalendar/Images/DDD-Sydney.jpg",
   "thumbnailDescription": "DDD Sydney",
   "startDateTime": "2016-05-27T22:00:00Z",
   "endDateTime": "2016-05-28T08:00:00Z",

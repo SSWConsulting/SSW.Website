@@ -4,7 +4,7 @@
   "thumbnail": "/images/events/AHD-thumb.jpg",
   "thumbnailDescription": "Angular Hack Day",
   "presenterName": "Jernej Kavka",
-  "presenterProfileUrl": "https://ssw.com.au/people/",
+  "presenterProfileUrl": "/people/",
   "startDateTime": "2024-11-15T22:00:00Z",
   "endDateTime": "2024-11-16T06:00:00Z",
   "calendarType": "Hack Days",

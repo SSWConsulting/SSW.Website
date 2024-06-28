@@ -1,7 +1,7 @@
 {
   "title": "/serverless/DAYS Sydney",
   "url": "https://anz.serverlessdays.io/",
-  "thumbnail": "https://ssw.com.au/images/thumbs/serverless-days.png",
+  "thumbnail": "/images/thumbs/serverless-days.png",
   "thumbnailDescription": "/serverless/DAYS Sydney",
   "startDateTime": "2024-05-20T23:00:00Z",
   "endDateTime": "2024-05-21T07:30:00Z",

@@ -1,7 +1,7 @@
 {
   "title": "Sydney .NET User Group: Microsoft Ignite 2018 SharePoint News \u2013 Drinking from the firehose!",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
   "thumbnailDescription": "Sydney .NET User Group: Microsoft Ignite 2018 SharePoint News \u2013 Drinking from the firehose!",
   "presenterName": "Cameron Dwyer",
   "presenterProfileUrl": "https://camerondwyer.com",
@@ -11,7 +11,7 @@
   "endShowBannerDateTime": "2018-11-14T09:30:00Z",
   "liveStreamUrl": {
     "description": "Sydney .NET User Group: Microsoft Ignite 2018 SharePoint News",
-    "url": "https://www.ssw.com.au/ssw/Live/"
+    "url": "/ssw/Live/"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

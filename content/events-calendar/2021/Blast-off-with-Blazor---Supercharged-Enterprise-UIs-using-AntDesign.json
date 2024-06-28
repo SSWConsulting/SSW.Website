@@ -1,17 +1,17 @@
 {
   "title": "Blast off with Blazor! - Supercharged Enterprise UIs using AntDesign",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
   "thumbnailDescription": "TBA - Placeholder for Blazor Talk",
   "presenterName": "Luke Parker",
-  "presenterProfileUrl": "https://www.ssw.com.au/people/luke-parker",
+  "presenterProfileUrl": "/people/luke-parker",
   "startDateTime": "2021-09-15T08:00:00Z",
   "endDateTime": "2021-09-15T11:00:00Z",
   "startShowBannerDateTime": "2021-09-14T14:00:00Z",
   "endShowBannerDateTime": "2021-09-15T12:00:00Z",
   "liveStreamUrl": {
-    "description": "https://www.ssw.com.au/ssw/Live/",
-    "url": "https://www.ssw.com.au/ssw/Live/"
+    "description": "/ssw/Live/",
+    "url": "/ssw/Live/"
   },
   "calendarType": "User Groups",
   "city": "Online",

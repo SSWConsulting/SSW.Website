@@ -1,7 +1,7 @@
 {
   "title": "March Online User Group: Federated Identity:  \ud83d\udd11 An introduction to OAuth2 \u2014> Open Id Connect \u2014> IdentityServer 5",
-  "url": "https://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
   "thumbnailDescription": "Online User Group",
   "presenterName": "Anthony Nguyen",
   "startDateTime": "2021-03-17T07:00:00Z",
@@ -9,8 +9,8 @@
   "startShowBannerDateTime": "2021-03-16T13:00:00Z",
   "endShowBannerDateTime": "2021-03-17T12:00:00Z",
   "liveStreamUrl": {
-    "description": "https://www.ssw.com.au/ssw/Live/",
-    "url": "https://www.ssw.com.au/ssw/Live/"
+    "description": "/ssw/Live/",
+    "url": "/ssw/Live/"
   },
   "calendarType": "User Groups",
   "city": "Online",

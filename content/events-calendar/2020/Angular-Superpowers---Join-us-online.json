@@ -1,7 +1,7 @@
 {
   "title": "Angular Superpowers - Join us online!",
-  "url": "https://www.ssw.com.au/ssw/Events/Training/Angular-Superpowers-Tour.aspx",
-  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
+  "url": "/ssw/Events/Training/Angular-Superpowers-Tour.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
   "thumbnailDescription": "Angular Superpowers - Join us online!",
   "presenterName": "Brendan Richards & Jean Thirion",
   "startDateTime": "2020-05-13T23:00:00Z",

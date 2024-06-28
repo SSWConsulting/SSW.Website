@@ -1,7 +1,7 @@
 {
   "title": "Chinafy Experience Breakfast: Melbourne",
-  "url": "https://www.ssw.com.au/ssw/Events/chinafy-experience.aspx",
-  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Chinafy-Experience-thumb.png",
+  "url": "/ssw/Events/chinafy-experience.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/Chinafy-Experience-thumb.png",
   "thumbnailDescription": "Chinafy Experience Breakfast: Melbourne",
   "presenterName": "Adam Cogan, Lindsay Corfield, and Alvin Shen",
   "startDateTime": "2018-06-26T22:30:00Z",

@@ -1,7 +1,7 @@
 {
   "title": "Xamarin Hack Day - Sydney",
   "url": "http://xamarinhackday.com/Sydney",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png",
+  "thumbnail": "/ssw/EventsCalendar/Images/xamarin-thumb.png",
   "thumbnailDescription": "Xamarin Hack Day - Sydney",
   "presenterName": "Michael Ridland & Matt Goldman",
   "startDateTime": "2020-07-17T23:00:00Z",

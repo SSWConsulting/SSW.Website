@@ -1,7 +1,7 @@
 {
   "title": "Chinafy Experience Breakfast: Sydney",
-  "url": "https://www.ssw.com.au/ssw/Events/chinafy-experience.aspx",
-  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Chinafy-Experience-thumb.png",
+  "url": "/ssw/Events/chinafy-experience.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/Chinafy-Experience-thumb.png",
   "thumbnailDescription": "Chinafy Experience Breakfast: Sydney",
   "presenterName": "Adam Cogan and Lindsay Corfield",
   "startDateTime": "2018-05-02T22:30:00Z",

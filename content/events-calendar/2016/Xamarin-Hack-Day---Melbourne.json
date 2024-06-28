@@ -1,8 +1,8 @@
 {
   "title": "Xamarin Hack Day - Melbourne",
   "url": "http://xamarinhackday.com/Melbourne/",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png",
-  "thumbnailDescription": "http://www.ssw.com.au/ssw/EventsCalendar/Images/xamarin-thumb.png",
+  "thumbnail": "/ssw/EventsCalendar/Images/xamarin-thumb.png",
+  "thumbnailDescription": "/ssw/EventsCalendar/Images/xamarin-thumb.png",
   "presenterName": "Michael Ridland",
   "presenterProfileUrl": "http://www.michaelridland.com/",
   "startDateTime": "2016-12-09T22:00:00Z",

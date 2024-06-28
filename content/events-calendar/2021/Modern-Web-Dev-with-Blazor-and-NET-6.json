@@ -1,7 +1,7 @@
 {
   "title": "Modern Web Dev with Blazor and .NET 6",
   "url": "https://www.eventbrite.com.au/e/168881891283",
-  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-BrisbaneUG.jpg",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-BrisbaneUG.jpg",
   "thumbnailDescription": "Modern Web Dev with Blazor and .NET 6",
   "presenterName": "Jason Taylor",
   "startDateTime": "2021-10-20T07:00:00Z",
@@ -9,8 +9,8 @@
   "startShowBannerDateTime": "2021-10-19T13:00:00Z",
   "endShowBannerDateTime": "2021-10-20T11:00:00Z",
   "liveStreamUrl": {
-    "description": "https://www.ssw.com.au/ssw/Live/",
-    "url": "https://www.ssw.com.au/ssw/Live/"
+    "description": "/ssw/Live/",
+    "url": "/ssw/Live/"
   },
   "calendarType": "User Groups",
   "city": "Online",

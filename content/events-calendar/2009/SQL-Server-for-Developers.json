@@ -1,8 +1,8 @@
 {
   "title": "SQL Server for Developers",
-  "url": "https://www.ssw.com.au/ssw/events/Past.aspx?tech=all&type=all",
-  "thumbnail": "https://www.ssw.com.au/ssw/Consulting/images/thumb-sharepoint.jpg",
-  "thumbnailDescription": "https://www.ssw.com.au/ssw/Consulting/images/thumb-sharepoint.jpg",
+  "url": "/ssw/events/Past.aspx?tech=all&type=all",
+  "thumbnail": "/ssw/Consulting/images/thumb-sharepoint.jpg",
+  "thumbnailDescription": "/ssw/Consulting/images/thumb-sharepoint.jpg",
   "presenterName": "Peter Gfader & Eric Phan",
   "startDateTime": "2009-02-16T13:00:00Z",
   "endDateTime": "2009-08-07T14:00:00Z",

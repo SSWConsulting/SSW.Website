@@ -1,6 +1,6 @@
 {
   "title": "ChatGPT and OpenAI API solutions: \ud83d\udc51 My Favourite Implementations",
-  "url": "https://www.ssw.com.au/netug/melbourne",
+  "url": "/netug/melbourne",
   "thumbnail": "/images/events/melbourne-ug-thumb.jpg",
   "thumbnailDescription": "Melbourne .NET User Group",
   "presenterName": "Adam Cogan",
@@ -11,7 +11,7 @@
   "endShowBannerDateTime": "2024-03-20T11:00:00Z",
   "liveStreamUrl": {
     "description": "Livestream",
-    "url": "http://www.ssw.com.au/live"
+    "url": "/live"
   },
   "calendarType": "User Groups",
   "city": "Melbourne",

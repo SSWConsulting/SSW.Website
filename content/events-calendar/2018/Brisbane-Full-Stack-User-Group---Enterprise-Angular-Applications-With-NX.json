@@ -1,8 +1,8 @@
 {
   "title": "Brisbane Full Stack User Group - Enterprise Angular Applications With NX",
   "url": "https://www.meetup.com/Brisbane-Full-Stack-User-Group/events/250353705/",
-  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-brisbaneUG.jpg",
-  "thumbnailDescription": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-brisbaneUG.jpg",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-brisbaneUG.jpg",
+  "thumbnailDescription": "/ssw/NETUG/Images/thumbs/thumb-brisbaneUG.jpg",
   "presenterName": "Anthony Miller",
   "startDateTime": "2018-05-08T08:00:00Z",
   "endDateTime": "2018-05-08T11:30:00Z",

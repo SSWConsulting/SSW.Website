@@ -1,7 +1,7 @@
 {
   "title": "Sydney .NET User Group: .NET to The Power of R1",
-  "url": "https://www.ssw.com.au/ssw/netug/sydney.aspx",
-  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "url": "/ssw/netug/sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
   "thumbnailDescription": "Sydney .NET User Group",
   "presenterName": "TJ Gokcen",
   "startDateTime": "2016-11-16T07:30:00Z",
@@ -10,7 +10,7 @@
   "endShowBannerDateTime": "2016-11-16T12:55:00Z",
   "liveStreamUrl": {
     "description": "Sydney .NET user group: November",
-    "url": "https://www.ssw.com.au/ssw/live/"
+    "url": "/ssw/live/"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

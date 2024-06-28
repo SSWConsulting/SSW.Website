@@ -1,7 +1,7 @@
 {
   "title": "DDD Melbourne",
   "url": "http://www.dddmelbourne.com/",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/ddd-melbourne.png",
+  "thumbnail": "/ssw/EventsCalendar/Images/ddd-melbourne.png",
   "thumbnailDescription": "DDD Melbourne",
   "startDateTime": "2014-07-18T23:00:00Z",
   "endDateTime": "2014-07-19T07:00:00Z",

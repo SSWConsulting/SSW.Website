@@ -1,7 +1,7 @@
 {
   "title": "Sydney .NET UG: Saving the World One App at a Time \u2013 The Humanitarian Toolbox",
-  "url": "https://www.ssw.com.au/ssw/netug/sydney.aspx",
-  "thumbnail": "https://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "url": "/ssw/netug/sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
   "thumbnailDescription": "Sydney .NET UG: Saving the World One App at a Time \u2013 The Humanitarian Toolbox",
   "presenterName": "Richard Campbell ",
   "presenterProfileUrl": "https://twitter.com/richcampbell",
@@ -11,7 +11,7 @@
   "endShowBannerDateTime": "2017-08-09T13:55:00Z",
   "liveStreamUrl": {
     "description": "Sydney .NET UG: Saving the World One App at a Time \u2013 The Humanitarian Toolbox",
-    "url": "https://www.ssw.com.au/ssw/Live/"
+    "url": "/ssw/Live/"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

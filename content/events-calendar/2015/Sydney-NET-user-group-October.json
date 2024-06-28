@@ -1,7 +1,7 @@
 {
   "title": "Sydney .NET user group: October",
-  "url": "http://www.ssw.com.au/ssw/NETUG/Sydney.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
   "thumbnailDescription": "Sydney .NET user group: October",
   "startDateTime": "2015-10-21T07:30:00Z",
   "endDateTime": "2015-10-21T09:30:00Z",
@@ -9,7 +9,7 @@
   "endShowBannerDateTime": "2015-10-21T12:00:00Z",
   "liveStreamUrl": {
     "description": "Sydney .NET user group: October",
-    "url": "https://www.ssw.com.au/ssw/NETUG/Live.aspx"
+    "url": "/ssw/NETUG/Live.aspx"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

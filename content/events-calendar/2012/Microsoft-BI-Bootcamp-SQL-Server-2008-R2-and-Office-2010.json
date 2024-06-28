@@ -1,8 +1,8 @@
 {
   "title": "Microsoft BI Bootcamp: SQL Server 2008 R2 and Office 2010",
-  "url": "http://www.ssw.com.au/ssw/Events/training/BI-Bootcamp.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg",
-  "thumbnailDescription": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg",
+  "url": "/ssw/Events/training/BI-Bootcamp.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/thumb-solidq.jpg",
+  "thumbnailDescription": "/ssw/EventsCalendar/Images/thumb-solidq.jpg",
   "presenterName": "Paco Gonzalez",
   "startDateTime": "2012-10-15T13:00:00Z",
   "endDateTime": "2012-10-15T13:00:00Z",

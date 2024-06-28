@@ -1,10 +1,10 @@
 {
   "title": "The Clean Architecture 2-day Workshop - Brisbane",
-  "url": "https://www.ssw.com.au/ssw/Events/Training/Clean-Architecture-Workshop.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/SuperPowers-Icon-CleanArchitecture.jpg",
+  "url": "/ssw/Events/Training/Clean-Architecture-Workshop.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/SuperPowers-Icon-CleanArchitecture.jpg",
   "thumbnailDescription": "The Clean Architecture 2-day Course",
   "presenterName": "Jason Taylor & Brady Stroud",
-  "presenterProfileUrl": "https://www.ssw.com.au/people/jason-taylor",
+  "presenterProfileUrl": "/people/jason-taylor",
   "startDateTime": "2022-07-13T23:00:00Z",
   "endDateTime": "2022-07-15T07:00:00Z",
   "calendarType": "SSW Courses",

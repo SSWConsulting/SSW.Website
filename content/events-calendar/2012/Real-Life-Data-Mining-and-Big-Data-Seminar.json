@@ -1,8 +1,8 @@
 {
   "title": "Real Life Data Mining and Big Data: Seminar",
-  "url": "http://www.ssw.com.au/ssw/events/training/Data-Mining-Seminar.aspx",
-  "thumbnail": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg",
-  "thumbnailDescription": "http://www.ssw.com.au/ssw/EventsCalendar/Images/thumb-solidq.jpg",
+  "url": "/ssw/events/training/Data-Mining-Seminar.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/thumb-solidq.jpg",
+  "thumbnailDescription": "/ssw/EventsCalendar/Images/thumb-solidq.jpg",
   "presenterName": "Paco Gonzlez",
   "startDateTime": "2012-10-17T13:00:00Z",
   "endDateTime": "2012-10-17T13:00:00Z",

@@ -1,7 +1,7 @@
 {
   "title": "Angular Workshop (2 Day Training): Melbourne",
   "url": "https://firebootcamp.com/2-day-angular-workshop/",
-  "thumbnail": "https://www.ssw.com.au/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
+  "thumbnail": "/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
   "thumbnailDescription": "Angular Workshop (2 Day Training): Melbourne",
   "presenterName": "Brendan Richards & Jean Thirion",
   "startDateTime": "2018-02-28T22:00:00Z",
