@@ -13,10 +13,7 @@ const LiveStreamDelayMinutes = (props) => {
     const { calendarType, liveStreamEvent } = props.tinaForm.values;
     if (calendarType === "User Groups" && liveStreamEvent)
       props.tinaForm.change("liveStreamDelayMinutes", 30);
-  }, [
-    props.tinaForm.values.calendarType,
-    props.tinaForm.values.liveStreamEvent,
-  ]);
+  }, [props]);
   return NumberField(props);
 };
 
