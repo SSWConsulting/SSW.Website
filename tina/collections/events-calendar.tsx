@@ -8,7 +8,7 @@ const datetimeFormat = {
   dateFormat: "ddd DD MMMM YYYY,",
 };
 
-const liveStreamDelayMinutes = (props) => {
+const LiveStreamDelayMinutes = (props) => {
   useEffect(() => {
     const { calendarType, liveStreamEvent } = props.tinaForm.values;
     if (calendarType === "User Groups" && liveStreamEvent)
@@ -258,7 +258,7 @@ export const eventsCalendarSchema: Collection = {
       label: "Live Stream Delay (Minutes)",
       name: "liveStreamDelayMinutes",
       ui: {
-        component: liveStreamDelayMinutes,
+        component: LiveStreamDelayMinutes,
       },
     },
     {
