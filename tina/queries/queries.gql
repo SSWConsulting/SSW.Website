@@ -36,6 +36,14 @@ query companyContentQuery($relativePath: String!) {
     ...CompanyParts
   }
 }
+
+query articlesContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  articles(relativePath: $relativePath) {
+    ...ArticlesParts
+  }
+}
+
 query caseStudyContentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   caseStudy(relativePath: $relativePath) {
@@ -46,6 +54,13 @@ query companyIndexContentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   companyIndex(relativePath: $relativePath) {
     ...CompanyIndexParts
+  }
+}
+
+query articlesIndexContentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  articlesIndex(relativePath: $relativePath) {
+    ...ArticlesIndexParts
   }
 }
 
