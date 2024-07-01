@@ -95,24 +95,6 @@ export const eventsCalendarSchema: Collection = {
       ui: datetimeFormat,
     },
     {
-      type: "object",
-      label: "Live Stream",
-      name: "liveStreamUrl",
-      description: "Only input these values when the event has live stream",
-      fields: [
-        {
-          type: "string",
-          label: "URL",
-          name: "url",
-        },
-        {
-          type: "string",
-          label: "Description",
-          name: "description",
-        },
-      ],
-    },
-    {
       type: "string",
       label: "Calendar Type",
       name: "calendarType",
