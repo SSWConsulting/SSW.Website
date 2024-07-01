@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import { Collection, NumberField, TextField } from "tinacms";
 
 const datetimeFormat = {
@@ -7,13 +7,23 @@ const datetimeFormat = {
 };
 
 const LiveStreamDelayMinutes = (props) => {
-  const { liveStreamEvent, calendarType, delayedLiveStreamStart } =
-    props.tinaForm.values;
-  useEffect(() => {
-    const { calendarType, liveStreamEvent } = props.tinaForm.values;
-    if (calendarType === "User Groups" && liveStreamEvent)
-      props.tinaForm.change("liveStreamDelayMinutes", 30);
-  }, [liveStreamEvent, calendarType, delayedLiveStreamStart]);
+  const { values } = props.tinaForm;
+  const { calendarType, delayedLiveStreamStart, liveStreamEvent } = values;
+
+  const [oldProps, setOldProps] = useState(values);
+  if (
+    oldProps.calendarType === calendarType &&
+    oldProps.delayedLiveStreamStart === delayedLiveStreamStart &&
+    oldProps.liveStreamEvent === liveStreamEvent
+  )
+    return NumberField(props);
+  if (
+    calendarType === "User Groups" &&
+    liveStreamEvent &&
+    delayedLiveStreamStart
+  )
+    props.tinaForm.change("liveStreamDelayMinutes", 30);
+  setOldProps(values);
   return NumberField(props);
 };
 
