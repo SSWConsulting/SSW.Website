@@ -1,22 +1,27 @@
 {
+  "eventShortDescription": "<div class=\"ExternalClass01EB841293CD492DAA034C18B42F3DFE\"><p>​<span style=\"font-weight&#58;700;background-color&#58;#ffffff;color&#58;#6f7287;font-family&#58;&quot;neue plak&quot;, -apple-system, blinkmacsystemfont, roboto, &quot;helvetica neue&quot;, helvetica, tahoma, arial, sans-serif;font-size&#58;16px;\">What is AI Hack Day</span><span style=\"font-weight&#58;700;background-color&#58;#ffffff;color&#58;#6f7287;font-family&#58;&quot;neue plak&quot;, -apple-system, blinkmacsystemfont, roboto, &quot;helvetica neue&quot;, helvetica, tahoma, arial, sans-serif;font-size&#58;16px;\">?</span></p><p style=\"margin-bottom&#58;0px;padding&#58;10px 0px 0px;box-sizing&#58;border-box;color&#58;#6f7287;font-size&#58;16px;line-height&#58;1.5rem;font-family&#58;&quot;neue plak&quot;, -apple-system, blinkmacsystemfont, roboto, &quot;helvetica neue&quot;, helvetica, tahoma, arial, sans-serif;background-color&#58;#ffffff;\">AI Hack Days are community run events for Developers or people who want to learn AI for free.</p><p style=\"margin-bottom&#58;0px;padding&#58;10px 0px 0px;box-sizing&#58;border-box;color&#58;#6f7287;font-size&#58;16px;line-height&#58;1.5rem;font-family&#58;&quot;neue plak&quot;, -apple-system, blinkmacsystemfont, roboto, &quot;helvetica neue&quot;, helvetica, tahoma, arial, sans-serif;background-color&#58;#ffffff;\">There will be something for everyone. Experienced AI developers can share ideas with other experienced developers. If you’re a beginner then there’s plenty to learn on the day.</p><p style=\"margin-bottom&#58;0px;padding&#58;10px 0px 0px;box-sizing&#58;border-box;color&#58;#6f7287;font-size&#58;16px;line-height&#58;1.5rem;font-family&#58;&quot;neue plak&quot;, -apple-system, blinkmacsystemfont, roboto, &quot;helvetica neue&quot;, helvetica, tahoma, arial, sans-serif;background-color&#58;#ffffff;\">If you then want to build something yourself, you'll need some of the Microsoft AI and/or Machine Learning (ML) tools already setup and installed. If you’ve never played with AI or ML before it would be good to do a little bit of learning before the day but it’s not a requirement as all experience levels are welcome.<br></p><p><br></p></div>",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
   "title": "AI Hack Day - Brisbane",
   "url": "https://aihackday.com/brisbane/",
   "thumbnail": "/images/events/AIHackDaySSWEvents.jpg",
   "thumbnailDescription": "AI Hack Day - Brisbane",
-  "presenterName": "N\ufeffick Curran & Jernej Kavka (JK) ",
+  "presenterName": "N﻿ick Curran & Jernej Kavka (JK) ",
   "presenterProfileUrl": "/people/",
-  "startDateTime": "2024-09-27T23:00:00Z",
-  "endDateTime": "2024-09-28T05:00:00Z",
+  "startDateTime": "2024-09-27T23:00:00.000Z",
+  "endDateTime": "2024-09-28T05:00:00.000Z",
   "calendarType": "Hack Days",
   "city": "Brisbane",
-  "enabled": true,
   "category": "Other",
-  "eventShortDescription": "<div class=\"ExternalClass01EB841293CD492DAA034C18B42F3DFE\"><p>\u200b<span style=\"font-weight&#58;700;background-color&#58;#ffffff;color&#58;#6f7287;font-family&#58;&quot;neue plak&quot;, -apple-system, blinkmacsystemfont, roboto, &quot;helvetica neue&quot;, helvetica, tahoma, arial, sans-serif;font-size&#58;16px;\">What is AI Hack Day</span><span style=\"font-weight&#58;700;background-color&#58;#ffffff;color&#58;#6f7287;font-family&#58;&quot;neue plak&quot;, -apple-system, blinkmacsystemfont, roboto, &quot;helvetica neue&quot;, helvetica, tahoma, arial, sans-serif;font-size&#58;16px;\">?</span></p><p style=\"margin-bottom&#58;0px;padding&#58;10px 0px 0px;box-sizing&#58;border-box;color&#58;#6f7287;font-size&#58;16px;line-height&#58;1.5rem;font-family&#58;&quot;neue plak&quot;, -apple-system, blinkmacsystemfont, roboto, &quot;helvetica neue&quot;, helvetica, tahoma, arial, sans-serif;background-color&#58;#ffffff;\">AI Hack Days are community run events for Developers or people who want to learn AI for free.</p><p style=\"margin-bottom&#58;0px;padding&#58;10px 0px 0px;box-sizing&#58;border-box;color&#58;#6f7287;font-size&#58;16px;line-height&#58;1.5rem;font-family&#58;&quot;neue plak&quot;, -apple-system, blinkmacsystemfont, roboto, &quot;helvetica neue&quot;, helvetica, tahoma, arial, sans-serif;background-color&#58;#ffffff;\">There will be something for everyone. Experienced AI developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.</p><p style=\"margin-bottom&#58;0px;padding&#58;10px 0px 0px;box-sizing&#58;border-box;color&#58;#6f7287;font-size&#58;16px;line-height&#58;1.5rem;font-family&#58;&quot;neue plak&quot;, -apple-system, blinkmacsystemfont, roboto, &quot;helvetica neue&quot;, helvetica, tahoma, arial, sans-serif;background-color&#58;#ffffff;\">If you then want to build something yourself, you'll need some of the Microsoft AI and/or Machine Learning (ML) tools already setup and installed. If you\u2019ve never played with AI or ML before it would be good to do a little bit of learning before the day but it\u2019s not a requirement as all experience levels are welcome.<br></p><p><br></p></div>",
-  "description": "\u200b\n\nWhat is AI Hack Day\n\n?\n\nAI Hack Days are community run events for Developers or people who want to learn AI for free.\n\nThere will be something for everyone. Experienced AI developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.\n\nIf you then want to build something yourself, you'll need some of the Microsoft AI and/or Machine Learning (ML) tools already setup and installed. If you\u2019ve never played with AI or ML before it would be good to do a little bit of learning before the day but it\u2019s not a requirement as all experience levels are welcome.",
-  "showOnPowerSessions": "No",
-  "hasVideo": false,
-  "externalPresenters": [],
+  "description": "​\n\nWhat is AI Hack Day\n\n?\n\nAI Hack Days are community run events for Developers or people who want to learn AI for free.\n\nThere will be something for everyone. Experienced AI developers can share ideas with other experienced developers. If you’re a beginner then there’s plenty to learn on the day.\n\nIf you then want to build something yourself, you'll need some of the Microsoft AI and/or Machine Learning (ML) tools already setup and installed. If you’ve never played with AI or ML before it would be good to do a little bit of learning before the day but it’s not a requirement as all experience levels are welcome.\n",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/jernej-kavka.mdx"
+    }
+  ],
   "delayedLiveStreamStart": false,
   "liveStreamDelayMinutes": 30,
-  "hostedAtSsw": false
+  "hostedAtSsw": false,
+  "enabled": true
 }
