@@ -1,0 +1,33 @@
+{
+  "title": "Serverless Functions with Adam Cogan",
+  "url": "serverless-computing-adam-cogan",
+  "thumbnail": "/images/people/Adam-Cogan.jpg",
+  "thumbnailDescription": "Bob Northwind profile",
+  "presenterName": "Bob Northwind",
+  "presenterProfileUrl": "/people/adam-cogan",
+  "startDateTime": "2024-07-01T08:00:00.000Z",
+  "endDateTime": "2024-07-01T10:00:00.000Z",
+  "startShowBannerDateTime": "2024-06-30T14:00:00.000Z",
+  "endShowBannerDateTime": "2024-07-01T12:00:00.000Z",
+  "liveStreamUrl": {
+    "url": "ssw.com.au/live",
+    "description": "Learn about serverless functions in Azure with Adam Cogan"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "category": "Azure",
+  "abstract": "Adamdiscusses serverless computing using Azure functions",
+  "description": "",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
+    }
+  ],
+  "youTubeId": "3456sdf",
+  "liveStreamEvent": true,
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "trailerUrl": "https://www.youtube.com/watch?v=Jxv2JwnKsew",
+  "hostedAtSsw": true,
+  "enabled": true
+}
