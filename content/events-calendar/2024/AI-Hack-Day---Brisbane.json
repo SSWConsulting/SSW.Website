@@ -22,6 +22,6 @@
   ],
   "delayedLiveStreamStart": false,
   "liveStreamDelayMinutes": 30,
-  "hostedAtSsw": false,
+  "hostedAtSsw": true,
   "enabled": true
 }
