@@ -6,3 +6,30 @@ fragment LayoutQueryFragment on Query {
     ...MegamenuParts
   }
 }
+
+fragment GetCalendarEventsParts on EventsCalendarConnection {
+      pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...EventsCalendarParts
+      }
+    }
+}

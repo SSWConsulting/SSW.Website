@@ -1,0 +1,21 @@
+{
+  "title": "\u200bIntroducing Entity Framework Core (previously known as EF7)",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2016-02-17T07:00:00Z",
+  "endDateTime": "2016-02-17T09:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "categoryAnchor": "OverviewOther",
+  "sessionTitle": "\u200bIntroducing Entity Framework Core (previously known as EF7)",
+  "sessionTitleAnchor": "\u200bIntroducingEntity FrameworkCore",
+  "eventShortDescription": "<div class=\"ExternalClassC6BD5E5AFE4B43528E3D509F39F5C930\"><p>Entity Framework Core (previously known as EF7) has been self-described as \u201cMicrosoft\u2019s recommended data access technology for new applications in .NET\u201d<br></p><div><br></div><div>EF Core is effectively a complete rewrite of Entity Framework designed to work in more places and with more persistence stores so you can use non-SQL data sources.</div><div><br></div><div>This talk covers&#58;</div><div><ul><li>What has changed and what remains the same compared to EF6<br></li><li>EF Migrations&#58; from powershell to the new dnx commands&#160;<br></li><li>Configuration and Initialisation using Dependency Injection.<br></li><li>DbContext lifecycle management<br></li><li>How to hack / override EF behaviour.<br></li><li>Is it ready for Production use? My suggestions for the team.<br></li></ul></div></div>",
+  "eventDescription": "<div class=\"ExternalClassFDA164C9BFE74271BA376590E98C8CCC\"><p>\u200bEntity Framework Core (previously known as EF7) has been self-described as \u201cMicrosoft\u2019s recommended data access technology for new applications in .NET\u201d<br></p><div><br></div><div>EF Core is effectively a complete rewrite of Entity Framework designed to work in more places and with more persistence stores so you can use non-SQL data sources.</div><div><br></div><div>This talk covers&#58;</div><div><ul><li>What has changed and what remains the same compared to EF6<br></li><li>EF Migrations&#58; from powershell to the new dnx commands&#160;<br></li><li>Configuration and Initialisation using Dependency Injection.<br></li><li>DbContext lifecycle management<br></li><li>How to hack / override EF behaviour.<br></li><li>Is it ready for Production use? My suggestions for the team.</li></ul></div></div>",
+  "description": "Entity Framework Core (previously known as EF7) has been self-described as \u201cMicrosoft\u2019s recommended data access technology for new applications in .NET\u201d\n\nEF Core is effectively a complete rewrite of Entity Framework designed to work in more places and with more persistence stores so you can use non-SQL data sources.\n\nThis talk covers:\n\nWhat has changed and what remains the same compared to EF6\n\nEF Migrations: from powershell to the new dnx commands\u00a0\n\nConfiguration and Initialisation using Dependency Injection.\n\nDbContext lifecycle management\n\nHow to hack / override EF behaviour.\n\nIs it ready for Production use? My suggestions for the team.",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

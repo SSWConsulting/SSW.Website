@@ -1,0 +1,26 @@
+{
+  "title": "Sydney .NET user group: February",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET user group: February",
+  "presenterName": "Brendan Richards",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Brendan.aspx",
+  "startDateTime": "2016-02-17T07:30:00Z",
+  "endDateTime": "2016-02-17T09:30:00Z",
+  "startShowBannerDateTime": "2016-02-16T13:00:00Z",
+  "endShowBannerDateTime": "2016-02-17T12:55:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET user group: February",
+    "url": "/ssw/NETUG/Live.aspx"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": ".NET Core",
+  "eventShortDescription": "<div class=\"ExternalClass03D021F071E548D3B2369326A34933B0\"><div><strong>\u200bIntroducing Entity Framework Core</strong></div><div><br></div><div>Entity Framework Core (previously known as EF7) has been self-described as \u201cMicrosoft\u2019s recommended data access technology for new applications in .NET\u201d</div><div><br></div><div>EF Core is effectively a complete rewrite of Entity Framework designed to work in more places and with more persistence stores&#160;so you can use non-SQL data sources.</div><div><br></div><div><strong>This talk covers&#58;</strong></div><div><ul><li>What has changed and what remains the same compared to EF6<br></li><li>EF Migrations&#58; from powershell to the new dnx commands&#160;</li><li>Configuration and Initialisation using Dependency Injection.<br></li><li>DbContext lifecycle management<br></li><li>How to hack / override EF behaviour.<br></li><li>Is it ready for Production use?&#160;My suggestions for the team&#160;<br></li></ul></div><div><br></div><div><strong>About the presenter&#58;</strong></div><div>Brendan Richards is an SSW Solution Architect based in Brisbane. He has worked with many different ORMs across many languages and is currently a core developer on SSW Data Onion \u2013 a library that generates a persistence-ignorant repository-pattern data layer.&#160;He also contributes to the SSW enterprise music store on GitHub\u200b.</div><div><br></div></div>",
+  "eventDescription": "<div class=\"ExternalClassBD4A1F1C65EE499F971D8CC306023BB7\"><div><strong>\u200b\u200bIntroducing Entity Framework Core</strong></div><div><br></div><div>Entity Framework Core (previously known as EF7) has been self-described as \u201cMicrosoft\u2019s recommended data access technology for new applications in .NET\u201d</div><div><br></div><div>EF Core is effectively a complete rewrite of Entity Framework designed to work in more places and with more persistence stores&#160;so you can use non-SQL data sources.</div><div><br></div><div><strong>This talk covers&#58;</strong></div><div><ul><li>What has changed and what remains the same compared to EF6<br></li><li>EF Migrations&#58; from powershell to the new dnx commands&#160;</li><li>Configuration and Initialisation using Dependency Injection.<br></li><li>DbContext lifecycle management<br></li><li>How to hack / override EF behaviour.<br></li><li>Is it ready for Production use?&#160;My suggestions for the team&#160;<br></li></ul></div><div><br></div><div><strong>About the presenter&#58;</strong></div><div>Brendan Richards is an SSW Solution Architect based in Brisbane. He has worked with many different ORMs across many languages and is currently a core developer on SSW Data Onion \u2013 a library that generates a persistence-ignorant repository-pattern data layer.&#160;He also contributes to the SSW enterprise music store on GitHub.</div><div><br></div></div>",
+  "description": "\u200bIntroducing Entity Framework Core\n\nEntity Framework Core (previously known as EF7) has been self-described as \u201cMicrosoft\u2019s recommended data access technology for new applications in .NET\u201d\n\nEF Core is effectively a complete rewrite of Entity Framework designed to work in more places and with more persistence stores\u00a0so you can use non-SQL data sources.\n\nThis talk covers:\n\nWhat has changed and what remains the same compared to EF6\n\nEF Migrations: from powershell to the new dnx commands\u00a0\n\nConfiguration and Initialisation using Dependency Injection.\n\nDbContext lifecycle management\n\nHow to hack / override EF behaviour.\n\nIs it ready for Production use?\u00a0My suggestions for the team\u00a0\n\nAbout the presenter:\n\nBrendan Richards is an SSW Solution Architect based in Brisbane. He has worked with many different ORMs across many languages and is currently a core developer on SSW Data Onion \u2013 a library that generates a persistence-ignorant repository-pattern data layer.\u00a0He also contributes to the SSW enterprise music store on GitHub\u200b.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

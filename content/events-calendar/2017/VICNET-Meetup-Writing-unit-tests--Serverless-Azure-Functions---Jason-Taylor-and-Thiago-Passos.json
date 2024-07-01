@@ -1,0 +1,19 @@
+{
+  "title": "VIC.NET Meetup: Writing unit tests + Serverless Azure Functions - Jason Taylor and Thiago Passos",
+  "url": "https://www.meetup.com/VIC-NET-Meetup/events/241318261/",
+  "thumbnail": "/ssw/EventsCalendar/Images/vicdotnetmeetup.jpg",
+  "thumbnailDescription": "VIC.NET Meetup: Writing unit tests + Serverless Azure Functions - Jason Taylor and Thiago Passos",
+  "presenterName": "Jason Taylor and Thiago Passos",
+  "startDateTime": "2017-07-11T07:30:00Z",
+  "endDateTime": "2017-07-11T09:30:00Z",
+  "calendarType": "User Groups",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass450F277F446F47B18AD6C404F9F3FC33\"><strong>\u200bSimplified Unit Testing with the Entity Framework Core InMemory Provider - Jason Taylor</strong><div><br></div><div>In this talk, we'll look at how using the EF Core InMemory Provider will simplify your unit testing approach. We will discuss the typical approach versus the simplified approach, limitations, and other considerations. You will walk away from this talk ready to write simplified unit tests for systems that depend on EF Core.</div><div><br></div><div><strong>Thinking About Serverless? Let's Start With Functions - Thiago Passos</strong><br></div><div><br></div><div>What's serverless? And why would you go serverless? Worry no more, these questions will be answered and Thiago will show you a great way to get started by using Azure Functions.<br></div><br><br><br></div>",
+  "eventDescription": "<div class=\"ExternalClassB307550BA70E49EBAD13E22A8F837F06\">\u200b<strong>\u200bSimplified Unit Testing with the Entity Framework Core InMemory Provider - Jason Taylor</strong><div><br></div><div>In this talk, we'll look at how using the EF Core InMemory Provider will simplify your unit testing approach. We will discuss the typical approach versus the simplified approach, limitations, and other considerations. You will walk away from this talk ready to write simplified unit tests for systems that depend on EF Core.</div><div><br></div><div><strong>Thinking About Serverless? Let's Start With Functions - Thiago Passos</strong><br></div><div><br></div><div>What's serverless? And why would you go serverless? Worry no more, these questions will be answered and Thiago will show you a great way to get started by using Azure Functions.<br></div><br><p><br></p></div>",
+  "description": "\u200bSimplified Unit Testing with the Entity Framework Core InMemory Provider - Jason Taylor\n\nIn this talk, we'll look at how using the EF Core InMemory Provider will simplify your unit testing approach. We will discuss the typical approach versus the simplified approach, limitations, and other considerations. You will walk away from this talk ready to write simplified unit tests for systems that depend on EF Core.\n\nThinking About Serverless? Let's Start With Functions - Thiago Passos\n\nWhat's serverless? And why would you go serverless? Worry no more, these questions will be answered and Thiago will show you a great way to get started by using Azure Functions.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

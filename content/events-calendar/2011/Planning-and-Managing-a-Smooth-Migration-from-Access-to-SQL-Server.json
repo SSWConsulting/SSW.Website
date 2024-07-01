@@ -1,0 +1,19 @@
+{
+  "title": "Planning and Managing a Smooth Migration from Access to SQL Server",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "SQL Server",
+  "categoryAnchor": "OverviewSQLServer",
+  "sessionTitle": "Planning and Managing a Smooth Migration from Access to SQL Server",
+  "sessionTitleAnchor": "AccesstoSQLServer",
+  "eventShortDescription": "<div class=\"ExternalClass4521B32ED75C4740932A4001019CEF28\"><div>When Access mdb's hit their limit of scalability, corrupting too often and unable to handle the number of concurrent users required, it's time to upsize to SQL Server. But upsizing your application involves a lot more than running the Upsizing Wizard...<br><br>This session will demonstrate what changes to make to your application before running the Upsizing Wizard and what to do after. You will be walked through development tools, application interface changes, query design and stored procedures to bring scalability for more users. You'll begin by learning how to&#58;<br><br><ul><li>Maximize the benefits of MS SQL server in your application</li><li>Upsize MS Access applications to MS SQL Server/MSDE while maintaining the user interface in Access</li><li>Design efficient applications for MS SQL Server</li><li>Weigh up when to use the new ADP Access 2016 option as opposed to link tables</li><li>Move processes to stored procedures (action queries) and views</li><li>Use triggers for de-normalized fields\u200b\u200b</li></ul></div></div>",
+  "eventDescription": "<div class=\"ExternalClass4521B32ED75C4740932A4001019CEF28\"><div>When Access mdb's hit their limit of scalability, corrupting too often and unable to handle the number of concurrent users required, it's time to upsize to SQL Server. But upsizing your application involves a lot more than running the Upsizing Wizard...<br><br>This session will demonstrate what changes to make to your application before running the Upsizing Wizard and what to do after. You will be walked through development tools, application interface changes, query design and stored procedures to bring scalability for more users. You'll begin by learning how to&#58;<br><br><ul><li>Maximize the benefits of MS SQL server in your application</li><li>Upsize MS Access applications to MS SQL Server/MSDE while maintaining the user interface in Access</li><li>Design efficient applications for MS SQL Server</li><li>Weigh up when to use the new ADP Access 2016&#160;option as opposed to link tables</li><li>Move processes to stored procedures (action queries) and views</li><li>Use triggers for de-normalized fields\u200b</li></ul></div></div>",
+  "description": "When Access mdb's hit their limit of scalability, corrupting too often and unable to handle the number of concurrent users required, it's time to upsize to SQL Server. But upsizing your application involves a lot more than running the Upsizing Wizard...\n\nThis session will demonstrate what changes to make to your application before running the Upsizing Wizard and what to do after. You will be walked through development tools, application interface changes, query design and stored procedures to bring scalability for more users. You'll begin by learning how to:\n\nMaximize the benefits of MS SQL server in your application\n\nUpsize MS Access applications to MS SQL Server/MSDE while maintaining the user interface in Access\n\nDesign efficient applications for MS SQL Server\n\nWeigh up when to use the new ADP Access 2016 option as opposed to link tables\n\nMove processes to stored procedures (action queries) and views\n\nUse triggers for de-normalized fields\u200b\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

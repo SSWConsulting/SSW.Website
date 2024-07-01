@@ -1,0 +1,15 @@
+{
+  "title": "DDD Melbourne",
+  "url": "https://www.dddmelbourne.com/",
+  "thumbnail": "/ssw/EventsCalendar/Images/ddd-melbourne.png",
+  "thumbnailDescription": "DDD Melbourne ",
+  "startDateTime": "2018-09-14T22:00:00Z",
+  "endDateTime": "2018-09-15T10:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "Other",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

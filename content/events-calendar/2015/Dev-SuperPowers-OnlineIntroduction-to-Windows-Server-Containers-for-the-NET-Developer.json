@@ -1,0 +1,20 @@
+{
+  "title": "Dev SuperPowers: OnlineIntroduction to Windows Server Containers for the .NET Developer",
+  "url": "http://tv.ssw.com/free-webinar-introduction-to-windows-server-containers-for-the-net-developer",
+  "thumbnail": "/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png",
+  "thumbnailDescription": "Dev SuperPowers - Introduction to Windows Server Containers for the .NET Developer with Jeremy Cade",
+  "presenterName": "Jeremy Cade",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/jeremy.aspx",
+  "startDateTime": "2015-10-29T00:00:00Z",
+  "endDateTime": "2015-10-29T01:00:00Z",
+  "calendarType": "Webinars",
+  "city": "Online",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass0210DBDB41454BD8AA776DF384BAF021\"><p></p><div><strong>Introduction to Windows Server Containers for the .NET Developer</strong></div><div><br></div><div>Join Jeremy as he walks you through the steps required to containerize, provision and deploy a ASP.NET&#160;5 (vNext) on the upcoming Windows Server Nano platform with .NET</div><div><br></div></div>",
+  "eventDescription": "<div class=\"ExternalClass4C43C44244D74E37A9BB34FC86B816F5\"><p></p><div><strong>Introduction to Windows Server Containers for the .NET&#160;Developer</strong></div><div><br></div><div>Join Jeremy as he walks you through the steps required to containerize, provision and deploy a ASP.NET 5 (vNext) on the upcoming Windows Server Nano platform with .NET</div><div><br></div></div>",
+  "description": "Introduction to Windows Server Containers for the .NET Developer\n\nJoin Jeremy as he walks you through the steps required to containerize, provision and deploy a ASP.NET\u00a05 (vNext) on the upcoming Windows Server Nano platform with .NET",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

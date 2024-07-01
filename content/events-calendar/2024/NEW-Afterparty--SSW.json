@@ -1,0 +1,51 @@
+{
+  "title": "../NEW Afterparty @ SSW",
+  "url": "https://www.eventbrite.com.au/e/887445813317",
+  "thumbnail": "/ssw/EventsCalendar/Images/thumb-slashnew.jpg",
+  "thumbnailDescription": "../NEW conference Newcastle",
+  "presenterName": "Adam Cogan, Matt Wicks & William Liebenberg",
+  "presenterProfileUrl": "/people/",
+  "startDateTime": "2024-05-15T07:30:00Z",
+  "endDateTime": "2024-05-15T10:30:00Z",
+  "startShowBannerDateTime": "2024-05-14T14:00:00Z",
+  "endShowBannerDateTime": "2024-05-15T11:30:00Z",
+  "liveStreamUrl": {
+    "description": "Livestream",
+    "url": "/live"
+  },
+  "calendarType": "Party",
+  "city": "Newcastle",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassE18BC3F87907400188C7956698829A67\">Our .NET User Group will run live&#160;Live from SSW Newcastle! Come join us for an evening of delicious food, drinks, networking and big news in Newcastle. Just 2 blocks away from the ../NEW venue - take the opportunity to meet industry experts, make connections and explore opportunities. And we might have a surprise guest...<br><br>\u26a0\ufe0f Please <a href=\"https&#58;//www.eventbrite.com.au/e/887445813317\">RSVP</a>&#160;for catering purposes and venue capacity \u26a0\ufe0f<br><br><strong>Agenda</strong><br><br>5&#58;30pm - Welcome to /NEW afterparty with a special guest at SSW Newcastle&#160;&#127860;&#127863;<br><div><p>6&#58;00pm - Tech news with Adam Cogan</p><p>6&#58;10pm - Special presentation with Matt Wicks</p><p>6&#58;20pm - Special presentation with William Liebenberg<br></p><br></div><div><br></div><div><div>--</div><div><br></div><div>Join us in person from 6&#160;pm AEST in Sydney, Melbourne and Brisbane for a watch party&#58;</div><div><br></div><div>SSW Sydney \u2013 Watch party &#127910;<br></div><div>SSW Melbourne \u2013&#160;Watch party &#127910;<br></div><div>SSW Brisbane \u2013 Watch party &#127910;<br></div><br></div><br><br></div>",
+  "description": "Our .NET User Group will run live\u00a0Live from SSW Newcastle! Come join us for an evening of delicious food, drinks, networking and big news in Newcastle. Just 2 blocks away from the ../NEW venue - take the opportunity to meet industry experts, make connections and explore opportunities. And we might have a surprise guest...\n\n\u26a0\ufe0f Please \n\nRSVP\n\n\u00a0for catering purposes and venue capacity \u26a0\ufe0f\n\nAgenda\n\n5:30pm - Welcome to /NEW afterparty with a special guest at SSW Newcastle\u00a0\ud83c\udf74\ud83c\udf77\n\n6:00pm - Tech news with Adam Cogan\n\n6:10pm - Special presentation with Matt Wicks\n\n6:20pm - Special presentation with William Liebenberg\n\n--\n\nJoin us in person from 6\u00a0pm AEST in Sydney, Melbourne and Brisbane for a watch party:\n\nSSW Sydney \u2013 Watch party \ud83c\udfa6\n\nSSW Melbourne \u2013\u00a0Watch party \ud83c\udfa6\n\nSSW Brisbane \u2013 Watch party \ud83c\udfa6",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [
+    {
+      "LookupId": 32,
+      "LookupValue": "Adam Cogan"
+    },
+    {
+      "LookupId": 24,
+      "LookupValue": "Matt Wicks"
+    },
+    {
+      "LookupId": 8,
+      "LookupValue": "William Liebenberg"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
+    },
+    {
+      "presenter": "content/presenters/matt-wicks.mdx"
+    },
+    {
+      "presenter": "content/presenters/william-liebenberg.mdx"
+    }
+  ],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30
+}

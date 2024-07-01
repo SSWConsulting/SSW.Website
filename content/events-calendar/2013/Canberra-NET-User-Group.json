@@ -1,0 +1,17 @@
+{
+  "title": "Canberra .NET User Group",
+  "url": "/ssw/NETUG/Canberra.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/thumb_canberraUG.jpg",
+  "thumbnailDescription": "Canberra .NET User Group ",
+  "presenterName": "Adam Cogan ",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
+  "startDateTime": "2013-09-16T08:00:00Z",
+  "endDateTime": "2013-09-16T10:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Canberra",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "sessionTitle": "What's new in Visual Studio 2013 and the ALM + Team Foundation Server (TFS) 2013 story",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

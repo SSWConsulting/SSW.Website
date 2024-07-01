@@ -1,0 +1,20 @@
+{
+  "title": "Moving the Titanic - Rapid SharePoint Development for Teams using Visual Studio 2015",
+  "url": "/ssw/events/visual-studio-2013-rapid-sharepoint-development.aspx",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewTFS",
+  "sessionTitle": "Moving the Titanic - Rapid SharePoint Development for Teams using Visual Studio 2015",
+  "sessionTitleAnchor": "RapidSharePoint",
+  "eventShortDescription": "<div class=\"ExternalClassCD38A5C9B8A5433D8F13AE853612C51D\"><div>Team Foundation Server 2015&#160;(TFS) is the fully integrated solution to manage projects, giving developers, testers and management a single source of truth for all project needs. Using TFS to develop for SharePoint will make the development and maintenance process much more efficient and effective.</div><br>\u200b</div>",
+  "eventDescription": "<div class=\"ExternalClassCD38A5C9B8A5433D8F13AE853612C51D\"><div><div>Team Foundation Server 2015&#160;(TFS) is the fully integrated solution to manage projects, giving developers, testers and management a single source of truth for all project needs. Using TFS to develop for SharePoint will make the development and maintenance process much more efficient and effective.</div><br>During the session you will see Adam Cogan explain how the 3 roles in a development team will benefit from using Team Foundation Server 2015&#58;<br><br><ul><li>What do Project Managers and stakeholders love?</li><li>What do Developers need to do?</li><li>What do Testers love? (including Web tests, Performance tests and Coded UI Tests)</li></ul><br><a href=\"http&#58;//www.ssw.com.au/ssw/events/visual-studio-2010-rapid-sharepoint-development.aspx\">Read more about Moving the Titanic - Rapid SharePoint Development for Teams using Visual Studio 2013</a></div></div>",
+  "description": "Team Foundation Server 2015\u00a0(TFS) is the fully integrated solution to manage projects, giving developers, testers and management a single source of truth for all project needs. Using TFS to develop for SharePoint will make the development and maintenance process much more efficient and effective.\n\n\u200b",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

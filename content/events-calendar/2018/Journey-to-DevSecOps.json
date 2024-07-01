@@ -1,0 +1,22 @@
+{
+  "title": "Journey to DevSecOps!",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Journey to DevSecOps!",
+  "presenterProfileUrl": "http://#",
+  "startDateTime": "2018-03-20T13:00:00Z",
+  "endDateTime": "2018-03-20T16:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "DevOps",
+  "categoryAnchor": "OverviewDevOps",
+  "sessionTitle": "Journey to DevSecOps!",
+  "sessionTitleAnchor": "JourneytoDevSecOps",
+  "eventShortDescription": "<div class=\"ExternalClassA565AD4F0FC545DBB184922D449DDE5B\"><div>Admit it! Ever since you adopted DevOps, things are spinning way faster than you thought they would. Tools are taking care of the CI/CD process, an APM platform gives you insights into issues in production, and you are fully focused on your code. Having said that, how good is your code actually? I bet you protect your secrets, prevent XSS and SQL Injection, use encrypted passwords, put your websites and APIs behind HTTPS, etc., \u2026but is that enough? The answer is NO! In this session, I\u2019ll guide you through the risks your solutions are exposed to and how to fight them by putting Sec in your DevOps process. You\u2019ll walk away with an understanding of how to secure your applications without compromising your pace and ability to deliver.&#160;<br></div><div><br></div><div>DevSecOps - fast, secure, reliable\u200b<br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassBF665EEC8ADB49FC93DDABA52EAE5DB1\"><div>\u200bAdmit it! Ever since you adopted DevOps, things are spinning way faster than you thought they would. Tools are taking care of the CI/CD process, an APM platform gives you insights into issues in production, and you are fully focused on your code. Having said that, how good is your code actually? I bet you protect your secrets, prevent XSS and SQL Injection, use encrypted passwords, put your websites and APIs behind HTTPS, etc., \u2026but is that enough? The answer is NO! In this session, I\u2019ll guide you through the risks your solutions are exposed to and how to fight them by putting Sec in your DevOps process. You\u2019ll walk away with an understanding of how to secure your applications without compromising your pace and ability to deliver.&#160;<br></div><div><br></div><div>DevSecOps - fast, secure, reliable\u200b<br></div><p><br></p></div>",
+  "description": "Admit it! Ever since you adopted DevOps, things are spinning way faster than you thought they would. Tools are taking care of the CI/CD process, an APM platform gives you insights into issues in production, and you are fully focused on your code. Having said that, how good is your code actually? I bet you protect your secrets, prevent XSS and SQL Injection, use encrypted passwords, put your websites and APIs behind HTTPS, etc., \u2026but is that enough? The answer is NO! In this session, I\u2019ll guide you through the risks your solutions are exposed to and how to fight them by putting Sec in your DevOps process. You\u2019ll walk away with an understanding of how to secure your applications without compromising your pace and ability to deliver.\u00a0\n\nDevSecOps - fast, secure, reliable\u200b",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

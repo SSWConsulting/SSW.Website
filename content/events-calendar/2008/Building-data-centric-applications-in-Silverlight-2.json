@@ -1,0 +1,21 @@
+{
+  "title": "Building data-centric applications in Silverlight 2",
+  "url": "/images/newsletter-uploads/2008/_2008_12__Do%20you%20know%20the%20best%20way%20to%20demo%20Microsoft%20CRM%204%20to%20clients_.htm",
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "/images/events/sydney-ug-thumb.jpg",
+  "presenterName": "Jonas Folles",
+  "startDateTime": "2008-12-10T06:45:00Z",
+  "endDateTime": "2008-12-10T10:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass0BA6E6E6751846DD8A79DF5C2C73D0CB\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;In this presentation you will get a good overview of how to build data-centric (line-of-business) applications in Silverlight 2 using LINQ to SQL and WCF on the server. The presentation will cover how to deal with authentication for your WCF services from a Silverlight application, tips on how to architect your Silverlight application, and how to build flexible, testable code your designers can work with. You will also get a sneak preview of an application framework Microsoft is working on to make building business applications easier.</span><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass11747FB886574B4081F9848DBFD344D6\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;In this presentation you will get a good overview of how to build data-centric (line-of-business) applications in Silverlight 2 using LINQ to SQL and WCF on the server. The presentation will cover how to deal with authentication for your WCF services from a Silverlight application, tips on how to architect your Silverlight application, and how to build flexible, testable code your designers can work with. You will also get a sneak preview of an application framework Microsoft is working on to make building business applications easier.</span><br></p></div>",
+  "description": "\u200b\n\nDescription:\n\n\u00a0In this presentation you will get a good overview of how to build data-centric (line-of-business) applications in Silverlight 2 using LINQ to SQL and WCF on the server. The presentation will cover how to deal with authentication for your WCF services from a Silverlight application, tips on how to architect your Silverlight application, and how to build flexible, testable code your designers can work with. You will also get a sneak preview of an application framework Microsoft is working on to make building business applications easier.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30
+}

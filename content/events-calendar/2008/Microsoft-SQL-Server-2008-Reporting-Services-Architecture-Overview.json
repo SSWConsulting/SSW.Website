@@ -1,0 +1,22 @@
+{
+  "title": "Microsoft SQL Server 2008 Reporting Services: Architecture Overview",
+  "url": "/images/newsletter-uploads/2008/_2008_10__Do%20you%20use%20setup%20and%20set%20up%20correctly_.htm",
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "/images/events/sydney-ug-thumb.jpg",
+  "presenterName": "Adam Cogan",
+  "presenterProfileUrl": "https://adamcogan.com/",
+  "startDateTime": "2008-10-15T07:45:00Z",
+  "endDateTime": "2008-10-15T11:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassA4FB6B5FA32546CBBC6EE7D35FCA4DCC\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;In SQL Server 2008, the report server has been re-architected to remove the dependency on Internet Information Services and provide better control over memory usage. Get an overview of the Reporting Services 2008 architecture and the impact on installation, upgrade, and reporting services management tools.</span><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassAC056458EAE245CE903DDC85A73B3C86\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;In SQL Server 2008, the report server has been re-architected to remove the dependency on Internet Information Services and provide better control over memory usage. Get an overview of the Reporting Services 2008 architecture and the impact on installation, upgrade, and reporting services management tools.</span><br></p></div>",
+  "description": "\u200b\n\nDescription:\n\n\u00a0In SQL Server 2008, the report server has been re-architected to remove the dependency on Internet Information Services and provide better control over memory usage. Get an overview of the Reporting Services 2008 architecture and the impact on installation, upgrade, and reporting services management tools.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30
+}

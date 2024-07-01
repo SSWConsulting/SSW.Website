@@ -1,0 +1,24 @@
+{
+  "title": "Sydney .NET User Group",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/thumb_sydneyUG.jpg",
+  "thumbnailDescription": "/ssw/EventsCalendar/Images/thumb_sydneyUG.jpg",
+  "presenterName": "TJ Gokcen",
+  "startDateTime": "2013-11-20T07:00:00Z",
+  "endDateTime": "2013-11-20T09:00:00Z",
+  "startShowBannerDateTime": "2013-11-19T13:00:00Z",
+  "endShowBannerDateTime": "2013-11-20T10:00:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney User Group Live Stream ",
+    "url": "/ssw/NETUG/Live.aspx"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassB637D06B138C4887AB4D917F6CB1E2B1\"><strong>Talk #1 -&#160;Kanban for Developers</strong><br>There is much hype about Kanban since it was perfected and introduced to the world by Toyota. Since then, not only manufacturers but all businesses looked into this simple but extremely powerful approach.&#160;<br><br>As software developers are yearning for better project management and visibility on all aspects of their work, Kanban naturally blipped on their radar.<br><br></div>",
+  "eventDescription": "<div class=\"ExternalClassB637D06B138C4887AB4D917F6CB1E2B1\"><strong>Talk #1 -&#160;Kanban for Developers</strong><br>There is much hype about Kanban since it was perfected and introduced to the world by Toyota. Since then, not only manufacturers but all businesses looked into this simple but extremely powerful approach.&#160;<br><br>As software developers are yearning for better project management and visibility on all aspects of their work, Kanban naturally blipped on their radar.<br><br>In this session, we will look at the origins of Kanban, how it applies to software development along with misunderstandings and myths. We will also compare manufacturing practices with software development techniques and see how we can benefit from their experiences. During the session we will have some interactive exercises to help us better understand Kanban and becoming more efficient and productive by limiting the amount of work we do.<br><br><strong>Talk #2 -&#160;Kaizen&#58; Continuous Process Improvement</strong><br>Enterprises can utilize Process Improvement to improve their workflow, allowing them to be more efficient, eliminate bottlenecks and problem areas, and as a result, achieve reduced costs, on-time delivery and increased profits. Currently, enterprises are facing stiffer competition to win customer acceptance through quality, and the need to develop more customer-oriented products and services faster than ever before.&#160; <br><br>Einstein said &quot;We can't solve problems by using the same kind of thinking we used when we created them.&quot;, and that is what lies at the heart of Kaizen. Improvement comes with a different look at the problems and doing this continuously every day and everywhere. It is more of a company culture than a project.<br><br>But where do we start improving? British comic writer Douglas Adams said &quot;See first, think later, then test. But always see first. Otherwise you will only see what you were expecting.&quot;. And that is exactly where we start. By looking deep into our workflow and process.<br><br>In this session, we will look at Kaizen philosophy, why change is important and very hard to do. we'll also analyze waste and why it is bad for our business and see how quality-first approach makes us better at what we do. I will also provide some test cases and finish off by looking into implementing a Kaizen culture at the office by involving everybody.<br><br><br><strong>About The Speaker</strong><br>TJ Gokcen is the Chief Software Architect at codebyts, leaders in software and process improvement consultancy.<br><br>TJ worked for large manufacturing companies in Europe, implementing software programs to automate systems and processes. TJ has designed and implemented customized software solutions for Fortune 500 companies in the USA, Europe and Australia.<br><br>He is a big advocate of Kanban and Kaizen and Process Improvement and more recently he co-developed codebyts' latest process improvement approach, Kaihen.<br><br></div>",
+  "description": "Talk #1 -\u00a0Kanban for Developers\n\nThere is much hype about Kanban since it was perfected and introduced to the world by Toyota. Since then, not only manufacturers but all businesses looked into this simple but extremely powerful approach.\u00a0\n\nAs software developers are yearning for better project management and visibility on all aspects of their work, Kanban naturally blipped on their radar.",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

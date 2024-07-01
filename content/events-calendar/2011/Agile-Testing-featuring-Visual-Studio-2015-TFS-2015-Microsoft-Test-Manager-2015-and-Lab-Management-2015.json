@@ -1,0 +1,19 @@
+{
+  "title": "Agile Testing featuring Visual Studio 2015, TFS 2015, Microsoft Test Manager 2015, and Lab Management 2015",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewTFS",
+  "sessionTitle": "Agile Testing featuring Visual Studio 2015, TFS 2015, Microsoft Test Manager 2015, and Lab Management 2015",
+  "sessionTitleAnchor": "AgileTesting",
+  "eventShortDescription": "<div class=\"ExternalClass4E2C7AEA7A2E4B029FBC3920B2C15F75\"><div>\u200bLet's do a lap around the improvements to Microsoft Test Manager and see how the world has improved with manual, exploratory, and automated testing.<br><br>In this session, we will&#58;<br><br><ul><li>Talk about how stakeholders can start a discussion with the Feedback tool</li><li>Show how the initial testing experience is now in the web and the advanced experience is in Microsoft Test Manager</li><li>Use Visual Studio to author automated tests that can be played back against a variety of browsers</li><li>Look at a technique that will allow you to test across different devices and form factors</li><li>Explain how Lab Management setup and administration has improved dramatically</li></ul>Whether you're a tester or a developer, this session is for you.</div></div>",
+  "eventDescription": "<div class=\"ExternalClass4E2C7AEA7A2E4B029FBC3920B2C15F75\"><div>\u200bLet's do a lap around the improvements to Microsoft Test Manager and see how the world has improved with manual, exploratory, and automated testing.<br><br>In this session, we will&#58;<br><br><ul><li>Talk about how stakeholders can start a discussion with the Feedback tool</li><li>Show how the initial testing experience is now in the web and the advanced experience is in Microsoft Test Manager</li><li>Use Visual Studio to author automated tests that can be played back against a variety of browsers</li><li>Look at a technique that will allow you to test across different devices and form factors</li><li>Explain how Lab Management setup and administration has improved dramatically</li></ul>Whether you're a tester or a developer, this session is for you.</div></div>",
+  "description": "\u200bLet's do a lap around the improvements to Microsoft Test Manager and see how the world has improved with manual, exploratory, and automated testing.\n\nIn this session, we will:\n\nTalk about how stakeholders can start a discussion with the Feedback tool\n\nShow how the initial testing experience is now in the web and the advanced experience is in Microsoft Test Manager\n\nUse Visual Studio to author automated tests that can be played back against a variety of browsers\n\nLook at a technique that will allow you to test across different devices and form factors\n\nExplain how Lab Management setup and administration has improved dramatically\n\nWhether you're a tester or a developer, this session is for you.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

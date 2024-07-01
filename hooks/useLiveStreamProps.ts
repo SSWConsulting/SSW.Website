@@ -1,7 +1,7 @@
-import axios from "axios";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { EventInfo } from "../services/server/events";
+import client from "../tina/__generated__/client";
 
 export type LiveStreamProps = {
   countdownMins?: number;
@@ -18,33 +18,40 @@ export function useLiveStreamProps(): LiveStreamProps {
 
   useEffect(() => {
     const fetchEvent = async () => {
-      const res = await axios.get<EventInfo[]>("/api/get-livestream-banner");
+      const nextUG = await client.queries.getFutureEventsQuery({
+        fromDate: new Date().toISOString(),
+        top: 1,
+        calendarType: "User Groups",
+      });
 
-      if (res?.status !== 200 || !res?.data?.length) {
-        setEvent(undefined);
+      const liveStreamData: EventInfo =
+        nextUG.data.eventsCalendarConnection.edges.map((edge) => ({
+          ...edge.node,
+          startDateTime: new Date(edge.node.startDateTime),
+          endDateTime: new Date(edge.node.endDateTime),
+          startShowBannerDateTime: new Date(edge.node.startShowBannerDateTime),
+          endShowBannerDateTime: new Date(edge.node.endShowBannerDateTime),
+        }))[0] ?? null;
 
-        return;
-      }
-
-      setEvent(res.data[0]);
+      setEvent(liveStreamData);
     };
 
     fetchEvent();
   }, []);
 
   useEffect(() => {
-    if (!event?.StartDateTime || !event?.EndDateTime) {
+    if (!event?.startDateTime || !event?.endDateTime) {
       return;
     }
 
     const rightnow = dayjs().utc();
 
-    const liveDelay = event.SSW_LiveStreamDelayMinutes ?? 0;
-    if (!liveStreamDelayMinutes && event.SSW_DelayedLiveStreamStart) {
+    const liveDelay = event.liveStreamDelayMinutes ?? 0;
+    if (!liveStreamDelayMinutes && event.delayedLiveStreamStart) {
       setLiveStreamDelayMinutes(liveDelay);
     }
 
-    const start = dayjs(event.StartDateTime).add(liveDelay, "minute");
+    const start = dayjs(event.startDateTime).add(liveDelay, "minute");
     const minsToStart = start.diff(rightnow, "minute");
     setCountdownMins(minsToStart);
 
