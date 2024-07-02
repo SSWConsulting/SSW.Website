@@ -1,0 +1,17 @@
+{
+  "title": "FireBootCamp - Sydney Gala",
+  "url": "http://firebootcamp.com/",
+  "thumbnail": "/ssw/EventsCalendar/Images/firebootcamp_icon.png",
+  "thumbnailDescription": "FireBootCamp",
+  "startDateTime": "2014-03-20T22:00:00Z",
+  "endDateTime": "2014-03-21T03:00:00Z",
+  "calendarType": "FireBootCamp",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass466A16028FB146909E78592D44ADCCDA\">Gala Event for the FireBootCampers from the June\u200b\u200b&#160;Intake\u200b<div>\u200b\u200b</div>If you're looking for a developer who is so passionate about coding they take&#160;9 weeks&#160;out of their life to do nothing but code, then you need to be at our Gala morning tea. This&#160;morning&#160;is for employers to see the web&#160;applications our Boot Campers have developed over the&#160;9&#160;weeks,&#160;and have a chance to speak to them. After 9&#160;weeks&#160;of intense training, these &quot;FireBootCampers&quot; are the best candidates on the market. Come along, meet the guys&#160;and put an offer in for the developer you want. Strike while the iron's hot!\u200b</div>",
+  "description": "Gala Event for the FireBootCampers from the June\u200b\u200b\u00a0Intake\u200b\n\n\u200b\u200b\n\nIf you're looking for a developer who is so passionate about coding they take\u00a09 weeks\u00a0out of their life to do nothing but code, then you need to be at our Gala morning tea. This\u00a0morning\u00a0is for employers to see the web\u00a0applications our Boot Campers have developed over the\u00a09\u00a0weeks,\u00a0and have a chance to speak to them. After 9\u00a0weeks\u00a0of intense training, these \"FireBootCampers\" are the best candidates on the market. Come along, meet the guys\u00a0and put an offer in for the developer you want. Strike while the iron's hot!\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

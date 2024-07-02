@@ -1,0 +1,26 @@
+{
+  "title": "Sydney .NET user group - October",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET user group - October",
+  "presenterName": "Grant Holliday ",
+  "startDateTime": "2014-10-15T07:00:00Z",
+  "endDateTime": "2014-10-15T09:00:00Z",
+  "startShowBannerDateTime": "2014-10-14T13:00:00Z",
+  "endShowBannerDateTime": "2014-10-15T12:55:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET User Group Live Stream",
+    "url": "/ssw/NETUG/Live.aspx"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "Tour of the Physical Internet",
+  "eventShortDescription": "<div class=\"ExternalClass5A56E3AFFF374F41AE563415BCE844C7\">\u200bHave you ever wondered how your bits and bytes travel between your PC to all the servers on the Internet? In this session, we will take a virtual road-trip out your router, through some Internet Exchange Points, under the ocean in some submarine cables and speed along some of the widest sections of the Internet Superhighway.<br><br></div>",
+  "eventDescription": "<div class=\"ExternalClass1308784335C144C8AE3F656D27536548\"><p>\u200bHave you ever wondered how your bits and bytes travel between your PC to all the servers on the Internet? In this session, we will take a virtual road-trip out your router, through some Internet Exchange Points, under the ocean in some submarine cables and speed along some of the widest sections of the Internet Superhighway.</p></div>",
+  "description": "\u200bHave you ever wondered how your bits and bytes travel between your PC to all the servers on the Internet? In this session, we will take a virtual road-trip out your router, through some Internet Exchange Points, under the ocean in some submarine cables and speed along some of the widest sections of the Internet Superhighway.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

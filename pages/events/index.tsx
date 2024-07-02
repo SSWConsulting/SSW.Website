@@ -1,23 +1,23 @@
 import client from "@/tina/client";
+import { useRouter } from "next/router";
+import type { InferGetStaticPropsType } from "next";
+import { useTina } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { Blocks } from "../../components/blocks-renderer";
+import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import { EventsFilter } from "../../components/filter/events";
+import { Layout } from "../../components/layout";
+import { Container } from "../../components/util/container";
+import { SEO } from "../../components/util/seo";
 import {
   HydrationBoundary,
   QueryClient,
   dehydrate,
 } from "@tanstack/react-query";
-import { useRouter } from "next/router";
-import * as appInsights from "applicationinsights";
-import { AxiosError } from "axios";
-import { EVENTS_QUERY_KEY } from "hooks/useFetchEvents";
-import type { InferGetStaticPropsType } from "next";
-import { getEvents } from "services/server/events";
-import { useTina } from "tinacms/dist/react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { Blocks } from "../../components/blocks-renderer";
-import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
-import { EventTrimmed, EventsFilter } from "../../components/filter/events";
-import { Layout } from "../../components/layout";
-import { Container } from "../../components/util/container";
-import { SEO } from "../../components/util/seo";
+import {
+  FUTURE_EVENTS_QUERY_KEY,
+  getFutureEvents,
+} from "../../hooks/useFetchEvents";
 
 const ISR_TIME = 60 * 60; // 1 hour
 
@@ -67,48 +67,13 @@ export const getStaticProps = async () => {
     relativePath: "index.mdx",
   });
 
-  const startOfDay = new Date();
-  startOfDay.setHours(0, 0, 0, 0);
-
-  const fields =
-    "Title,Thumbnail,StartDateTime,EndDateTime,City,Url,Presenter,PresenterProfileUrl,CalendarType,Category_f5a9cf4c_x002d_8228_x00,EventShortDescription";
-
-  const odataFilter = `$select=id&$expand=fields($select=${fields})&$filter=fields/Enabled ne false \
-      and fields/EndDateTime gt '${startOfDay.toISOString()}'\
-      &$orderby=fields/StartDateTime asc\
-      &$top=${10}`;
-
   const queryClient = new QueryClient();
 
-  try {
-    await queryClient.prefetchInfiniteQuery({
-      queryKey: [EVENTS_QUERY_KEY],
-      queryFn: async ({ pageParam = 1 }) => {
-        const events = await getEvents(odataFilter, pageParam);
-        return events as EventTrimmed[];
-      },
-      initialPageParam: 1,
-    });
-  } catch (err) {
-    const properties = {
-      Request: "GET /events",
-      Status: 500,
-      FailedSharePointRequest: false,
-    };
-
-    if (err instanceof AxiosError) {
-      // eslint-disable-next-line no-console
-      console.error(err.response.data);
-      properties.Status = err.response.status;
-      properties.FailedSharePointRequest = true;
-    }
-
-    appInsights.defaultClient.trackException({
-      exception: err,
-      properties,
-      severity: appInsights.Contracts.SeverityLevel.Error,
-    });
-  }
+  await queryClient.prefetchInfiniteQuery({
+    queryKey: [FUTURE_EVENTS_QUERY_KEY],
+    queryFn: getFutureEvents,
+    initialPageParam: "",
+  });
 
   if (!tinaProps.data.eventsIndex.seo.canonical) {
     tinaProps.data.eventsIndex.seo.canonical = `${tinaProps.data.global.header.url}events`;

@@ -1,0 +1,19 @@
+{
+  "title": "Visual Studio Ultimate 2015 (was Team System (aka VSTS and TFS))",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewTFS",
+  "sessionTitle": "Visual Studio Ultimate 2015 (was Team System (aka VSTS and TFS))",
+  "sessionTitleAnchor": "TeamFoundationServer",
+  "eventShortDescription": "<div class=\"ExternalClass7EC57E4B0E8E4A8E8C5CA7D84A393226\">\u200bMicrosoft Visual Studio Team System has given us the integration of development, project management, testing and analysis tool that was missing in the previous version of Visual Studio. In this talk you will learn about Visual Studio, Visual Studio Team System and Team Foundation Server 2015. You will also see what's currently hot on the Visual Studio widgets scene with a demo-driven session on the most useful tools for Visual Studio Team System<br><br>\u200b</div>",
+  "eventDescription": "<div class=\"ExternalClass7EC57E4B0E8E4A8E8C5CA7D84A393226\"><div>\u200bMicrosoft Visual Studio Team System has given us the integration of development, project management, testing and analysis tool that was missing in the previous version of Visual Studio. In this talk you will learn about Visual Studio, Visual Studio Team System and Team Foundation Server 2015. You will also see what's currently hot on the Visual Studio widgets scene with a demo-driven session on the most useful tools for Visual Studio Team System<br><br>Features covered include&#58;<br><br><ul><li>What's in Visual Studio</li><li>What's in Team Foundation Server 2015</li><li>Hot widgets&#58; Team Foundation Power Tools, MSSCCIs, Diff Dog, SSW Code Auditor, MS Build GUI and much more!\u200b\u200b</li></ul></div></div>",
+  "description": "\u200bMicrosoft Visual Studio Team System has given us the integration of development, project management, testing and analysis tool that was missing in the previous version of Visual Studio. In this talk you will learn about Visual Studio, Visual Studio Team System and Team Foundation Server 2015. You will also see what's currently hot on the Visual Studio widgets scene with a demo-driven session on the most useful tools for Visual Studio Team System\n\n\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

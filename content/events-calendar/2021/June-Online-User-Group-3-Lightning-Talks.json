@@ -1,0 +1,54 @@
+{
+  "title": "June Online User Group: 3 Lightning Talks",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": "Online User Group",
+  "presenterName": "William Liebenberg, Jernej Kavka & Bryden Oliver",
+  "startDateTime": "2021-06-16T08:00:00Z",
+  "endDateTime": "2021-06-16T12:00:00Z",
+  "startShowBannerDateTime": "2021-06-15T14:00:00Z",
+  "endShowBannerDateTime": "2021-06-16T12:00:00Z",
+  "liveStreamUrl": {
+    "description": "SSW Live Feed",
+    "url": "/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass20768AAEF3ED4CC7B2353EF54DE18782\"><p>Join us live at SSW Sydney \u2013 There will be news, chats, pizza and a Live Stream for those who can't be there in person&#58;<br></p><p><br>SSW TV -----&gt;&#160;<a href=\"http&#58;//www.ssw.com.au/live/\">www.ssw.com.au/live/</a><br><br>For those joining us in person&#58;<br><br>6pm - Check-in, Pizza &amp; networking<br>6&#58;30pm - Live feed kicks off with the news<br>7pm - Lightning Talks!<br><br>-----<br><br>#1 Getting the most out of your logging in .NET<br>with Jernej &quot;JK&quot; Kavka<br></p><p>Does setting up logging do your head in? Join Jk, a battle scared logging in .NET Core veteran as he attempts to reduce your headache. Dissolve an aspirin, dim the lights, and let Jk soothe your head. In this talk, you will learn easily from JK's past trials and errors and get straight into setting up logs like a Pro!</p><p>Feedback Form&#58;&#160;<a href=\"https&#58;//forms.office.com/r/saZmwG1KXc\" title=\"https&#58;//forms.office.com/r/saZmwG1KXc\">https&#58;//forms.office.com/r/saZmwG1KXc</a><br></p><p><br></p><p>#2 Taking control of your APIs with Azure API Management<br>with William Liebenberg<br></p><p>In this lightning talk William covers his favourite features of Azure API Management such as the Developer Portal, Policies and Analytics and how easy it is for you to start using them to secure and monitor your own APIs. He will also highlight where Azure API Management becomes really difficult to manage and how to tackle those issues.</p><p>Feedback Form&#58;&#160;<a href=\"https&#58;//forms.office.com/r/Dx8MNTxuPJ\" title=\"https&#58;//forms.office.com/r/Dx8MNTxuPJ\" style=\"text-decoration-line&#58;underline;\">https&#58;//forms.office.com/r/Dx8MNTxuPJ</a>\u200b<br></p><p><br></p><p>#3 An intro to Biceps of Steel<br>with Bryden Oliver<br></p><p>In this talk Bryden will cover how to create Bicep templates, how to add Managed Identities. He will then walk you through his new GitHub Repo, &quot;Biceps of Steel&quot;, with the relevant code and examples.\u200b<br></p><p>Feedback Form&#58;&#160;<a href=\"https&#58;//forms.office.com/r/8uA1XXmxpQ\">https&#58;//forms.office.com/r/8uA1XXmxpQ</a><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassAC209F9099B842C9A59CFDFE067B1B0E\"><p></p></div><p>Join us live at SSW Sydney \u2013 There will be news, chats, pizza and a Live Stream for those who can't be there in person&#58;<br></p><p><br>SSW TV -----&gt;&#160;<a href=\"http&#58;//www.ssw.com.au/live/\">www.ssw.com.au/live/</a><br><br>For those joining us in person&#58;<br><br>6pm - Check-in, Pizza &amp; networking<br>6&#58;30pm - Live feed kicks off with the news<br>7pm - Lightning Talks!<br><br>-----<br><br>#1 Getting the most out of your logging in .NET<br>with Jernej &quot;JK&quot; Kavka<br></p><p>Does setting up logging do your head in? Join Jk, a battle scared logging in .NET Core veteran as he attempts to reduce your headache. Dissolve an aspirin, dim the lights, and let Jk soothe your head. In this talk, you will learn easily from JK's past trials and errors and get straight into setting up logs like a Pro!</p><p>Feedback Form&#58;&#160;<a href=\"https&#58;//forms.office.com/r/saZmwG1KXc\" title=\"https&#58;//forms.office.com/r/saZmwG1KXc\">https&#58;//forms.office.com/r/saZmwG1KXc</a><br></p><p><br></p><p>#2 Taking control of your APIs with Azure API Management<br>with William Liebenberg<br></p><p>In this lightning talk William covers his favourite features of Azure API Management such as the Developer Portal, Policies and Analytics and how easy it is for you to start using them to secure and monitor your own APIs. He will also highlight where Azure API Management becomes really difficult to manage and how to tackle those issues.</p><p>Feedback Form&#58;&#160;<a href=\"https&#58;//forms.office.com/r/Dx8MNTxuPJ\" title=\"https&#58;//forms.office.com/r/Dx8MNTxuPJ\" style=\"text-decoration-line&#58;underline;\">https&#58;//forms.office.com/r/Dx8MNTxuPJ</a>\u200b<br></p><p><br></p><p>#3 An intro to Biceps of Steel<br>with Bryden Oliver<br></p><p>In this talk Bryden will cover how to create Bicep templates, how to add Managed Identities. He will then walk you through his new GitHub Repo, &quot;Biceps of Steel&quot;, with the relevant code and examples.\u200b<br></p><p>Feedback Form&#58;&#160;<a href=\"https&#58;//forms.office.com/r/8uA1XXmxpQ\">https&#58;//forms.office.com/r/8uA1XXmxpQ</a>\u200b<br></p>",
+  "description": "Join us live at SSW Sydney \u2013 There will be news, chats, pizza and a Live Stream for those who can't be there in person:\n\nSSW TV ----->\u00a0\n\nwww.ssw.com.au/live/\n\nFor those joining us in person:\n\n6pm - Check-in, Pizza & networking\n\n6:30pm - Live feed kicks off with the news\n\n7pm - Lightning Talks!\n\n-----\n\n#1 Getting the most out of your logging in .NET\n\nwith Jernej \"JK\" Kavka\n\nDoes setting up logging do your head in? Join Jk, a battle scared logging in .NET Core veteran as he attempts to reduce your headache. Dissolve an aspirin, dim the lights, and let Jk soothe your head. In this talk, you will learn easily from JK's past trials and errors and get straight into setting up logs like a Pro!\n\nFeedback Form:\u00a0\n\nhttps://forms.office.com/r/saZmwG1KXc\n\n#2 Taking control of your APIs with Azure API Management\n\nwith William Liebenberg\n\nIn this lightning talk William covers his favourite features of Azure API Management such as the Developer Portal, Policies and Analytics and how easy it is for you to start using them to secure and monitor your own APIs. He will also highlight where Azure API Management becomes really difficult to manage and how to tackle those issues.\n\nFeedback Form:\u00a0\n\nhttps://forms.office.com/r/Dx8MNTxuPJ\n\n\u200b\n\n#3 An intro to Biceps of Steel\n\nwith Bryden Oliver\n\nIn this talk Bryden will cover how to create Bicep templates, how to add Managed Identities. He will then walk you through his new GitHub Repo, \"Biceps of Steel\", with the relevant code and examples.\u200b\n\nFeedback Form:\u00a0\n\nhttps://forms.office.com/r/8uA1XXmxpQ",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "6lxssGkQhnc",
+  "evalFormURL": {
+    "description": "Feedback Form",
+    "url": "http://https://forms.office.com/r/saZmwG1KXc"
+  },
+  "externalPresenters": [
+    {
+      "LookupId": 8,
+      "LookupValue": "William Liebenberg"
+    },
+    {
+      "LookupId": 14,
+      "LookupValue": "Bryden Oliver"
+    },
+    {
+      "LookupId": 13,
+      "LookupValue": "Jernej Kavka"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/william-liebenberg.mdx"
+    },
+    {
+      "presenter": "content/presenters/bryden-oliver.mdx"
+    },
+    {
+      "presenter": "content/presenters/jernej-kavka.mdx"
+    }
+  ]
+}

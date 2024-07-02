@@ -1,0 +1,19 @@
+{
+  "title": "15 Rules to Better Code + Tools to Keep your Code Healthy (including FX Cop)",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": ".NET Core",
+  "categoryAnchor": "OverviewOther",
+  "sessionTitle": "15 Rules to Better Code + Tools to Keep your Code Healthy (including FX Cop)",
+  "sessionTitleAnchor": "HealthyCode",
+  "eventShortDescription": "<div class=\"ExternalClassBFB14A9A64014A80A1EB7899FC5F2FCE\"><div>Are you looking to eradicate bugs and ensure consistency? Learn how to take control of your code, ensuring large, complex source code can be simplified, cleaned and maintained. The focus is on the most popular .NET languages (C#, VB.NET) for both Windows Forms and ASP.NET; however, you will learn how to maintain quality code in any language.<br><br>As a project or company grows, managing code standards throughout your team becomes virtually impossible. Consistent code is crucial to future development and maintenance. Learn how to review your web apps and projects.<br><br>The tools we will explore include FX Cop, SSW Code Auditor, and Re-Sharper.</div></div>",
+  "eventDescription": "<div class=\"ExternalClassBFB14A9A64014A80A1EB7899FC5F2FCE\"><div>Are you looking to eradicate bugs and ensure consistency? Learn how to take control of your code, ensuring large, complex source code can be simplified, cleaned and maintained. The focus is on the most popular .NET languages (C#, VB.NET) for both Windows Forms and ASP.NET; however, you will learn how to maintain quality code in any language.<br><br>As a project or company grows, managing code standards throughout your team becomes virtually impossible. Consistent code is crucial to future development and maintenance. Learn how to review your web apps and projects.<br><br>The tools we will explore include FX Cop, SSW Code Auditor, and Re-Sharper.</div></div>",
+  "description": "Are you looking to eradicate bugs and ensure consistency? Learn how to take control of your code, ensuring large, complex source code can be simplified, cleaned and maintained. The focus is on the most popular .NET languages (C#, VB.NET) for both Windows Forms and ASP.NET; however, you will learn how to maintain quality code in any language.\n\nAs a project or company grows, managing code standards throughout your team becomes virtually impossible. Consistent code is crucial to future development and maintenance. Learn how to review your web apps and projects.\n\nThe tools we will explore include FX Cop, SSW Code Auditor, and Re-Sharper.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

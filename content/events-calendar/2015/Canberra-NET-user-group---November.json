@@ -1,0 +1,21 @@
+{
+  "title": "Canberra .NET user group - November",
+  "url": "/ssw/NETUG/Canberra.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg",
+  "thumbnailDescription": "Canberra .NET user group - November",
+  "presenterName": "Danijel Malik",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Danijel-Malik.aspx",
+  "startDateTime": "2015-11-16T06:30:00Z",
+  "endDateTime": "2015-11-16T08:30:00Z",
+  "calendarType": "User Groups",
+  "city": "Canberra",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "\"From Devs\u2019 Oops to DevOps\" - Danijel Malik",
+  "eventShortDescription": "<div class=\"ExternalClass26F0F5D94209473CBF0A7E4EA9E6D996\"><p><strong>&quot;From Devs\u2019 Oops to DevOps&quot; - Danijel Malik</strong><br></p><p>\u200bIt's probably safe to say that most development teams are Agile. But regardless of which side you are on, nothing saves you if you start off on the wrong foot. There are a lot of pitfalls before your software goes into production, and you will learn about the most common mistakes that are taken in a hurry to get a product out. Of course you won\u2019t miss out on what best practices you should follow to ensure your DevOps cycle is running like a well-oiled machine. You will also learn how great tools like TFS (for orchestration), Octopus Deploy or Release Management (for deployment), SonarQube (for managing technical debt) and Docker (for app isolation) help you in that manner.&#160;</p></div>",
+  "eventDescription": "<div class=\"ExternalClass40A67278A1724A17A670B3F86075F3D7\"><p><strong>&quot;From Devs\u2019 Oops to DevOps&quot; - Danijel Malik</strong><br></p><p>\u200bIt's probably safe to say that most development teams are Agile. But regardless of which side you are on, nothing saves you if you start off on the wrong foot. There are a lot of pitfalls before your software goes into production, and you will learn about the most common mistakes that are taken in a hurry to get a product out. Of course you won\u2019t miss out on what best practices you should follow to ensure your DevOps cycle is running like a well-oiled machine. You will also learn how great tools like TFS (for orchestration), Octopus Deploy or Release Management (for deployment), SonarQube (for managing technical debt) and Docker (for app isolation) help you in that manner.&#160;\u200b</p></div>",
+  "description": "\"From Devs\u2019 Oops to DevOps\" - Danijel Malik\n\n\u200bIt's probably safe to say that most development teams are Agile. But regardless of which side you are on, nothing saves you if you start off on the wrong foot. There are a lot of pitfalls before your software goes into production, and you will learn about the most common mistakes that are taken in a hurry to get a product out. Of course you won\u2019t miss out on what best practices you should follow to ensure your DevOps cycle is running like a well-oiled machine. You will also learn how great tools like TFS (for orchestration), Octopus Deploy or Release Management (for deployment), SonarQube (for managing technical debt) and Docker (for app isolation) help you in that manner.\u00a0",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Build on Your Knowledge of Microsoft Access",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Office",
+  "categoryAnchor": "OverviewOffice",
+  "sessionTitle": "Build on Your Knowledge of Microsoft Access",
+  "sessionTitleAnchor": "BuildonAccess",
+  "eventShortDescription": "<div class=\"ExternalClass3CE8394C59E844308AA5CDCF3123B4BB\"><div>Microsoft Access plays an integral role in the Microsoft Office suite. Small-to-Medium enterprises still use the familiar Access front-end as the centre-piece for their database systems. For developers wanting to keep this valuable market, a knowledge of Access is an invaluable tool for rapid development. This session can go hand-in-hand with the Access to SQL Server Upsizing session.<br><br><ul><li>Design and develop quality solutions with Microsoft Access</li><li>Build on your knowledge of using Access</li><li>Leverage the strengths of Access to build powerful applications</li><li>maximize form and report events to enable outcomes</li><li>Develop better shrink wrapped applications</li><li>Modulise/genericise your development for easy reuse and/or smaller deployments</li><li>What's new in Access 2016</li></ul></div></div>",
+  "eventDescription": "<div class=\"ExternalClass3CE8394C59E844308AA5CDCF3123B4BB\"><div>Microsoft Access plays an integral role in the Microsoft Office suite. Small-to-Medium enterprises still use the familiar Access front-end as the centre-piece for their database systems. For developers wanting to keep this valuable market, a knowledge of Access is an invaluable tool for rapid development. This session can go hand-in-hand with the Access to SQL Server Upsizing session.<br><br><ul><li>Design and develop quality solutions with Microsoft Access</li><li>Build on your knowledge of using Access</li><li>Leverage the strengths of Access to build powerful applications</li><li>maximize form and report events to enable outcomes</li><li>Develop better shrink wrapped applications</li><li>Modulise/genericise your development for easy reuse and/or smaller deployments</li><li>What's new in Access 2016</li></ul></div></div>",
+  "description": "Microsoft Access plays an integral role in the Microsoft Office suite. Small-to-Medium enterprises still use the familiar Access front-end as the centre-piece for their database systems. For developers wanting to keep this valuable market, a knowledge of Access is an invaluable tool for rapid development. This session can go hand-in-hand with the Access to SQL Server Upsizing session.\n\nDesign and develop quality solutions with Microsoft Access\n\nBuild on your knowledge of using Access\n\nLeverage the strengths of Access to build powerful applications\n\nmaximize form and report events to enable outcomes\n\nDevelop better shrink wrapped applications\n\nModulise/genericise your development for easy reuse and/or smaller deployments\n\nWhat's new in Access 2016",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Dynamics 365 for the .NET dev",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "startDateTime": "2018-01-16T07:30:00Z",
+  "endDateTime": "2018-01-17T09:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Dynamics 365",
+  "categoryAnchor": "OVerviewCRM",
+  "sessionTitle": "Dynamics 365 for the .NET dev",
+  "sessionTitleAnchor": "Dynamics365forNETdev",
+  "eventShortDescription": "<div class=\"ExternalClass20E29D02B2544DF0A51E423A988C5103\"><div>When it comes to developing a website, you don't use pure HTML and JavaScript - you find frameworks to help. So why should your client CRM/ERP be any different?<br></div><div><br></div><div>In this talk, Andrew explains what exactly is Dynamics 365 and how we got here. Then we explore how your existing .NET and JavaScript skills can help you create powerful systems for your clients using Dynamics 365 as a base.\u200b<br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassAF8CAA7F32234327AC6501FA0487128A\"><p>\u200bWhen it comes to developing a website, you don't use pure HTML and JavaScript - you find frameworks to help. So why should your client CRM/ERP be any different?</p><p><br>In this talk, Andrew explains what exactly is Dynamics 365 and how we got here. Then we explore how your existing .NET and JavaScript skills can help you create powerful systems for your clients using Dynamics 365 as a base.<br><br></p></div>",
+  "description": "When it comes to developing a website, you don't use pure HTML and JavaScript - you find frameworks to help. So why should your client CRM/ERP be any different?\n\nIn this talk, Andrew explains what exactly is Dynamics 365 and how we got here. Then we explore how your existing .NET and JavaScript skills can help you create powerful systems for your clients using Dynamics 365 as a base.\u200b",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

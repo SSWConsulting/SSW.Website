@@ -1,0 +1,19 @@
+{
+  "title": "Introduction to SQL Indexing",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewSQLServer",
+  "sessionTitle": "Introduction to SQL Indexing",
+  "sessionTitleAnchor": "SQLIndexing",
+  "eventShortDescription": "<div class=\"ExternalClass0E806ED0B97443EBAB330CB35ACBB086\"><div>In this session we look at a fast-paced collection of indexing tips and tricks based on an already optimized base table structure. How you create your base table - as well as cluster it - has a big impact on that table's performance.<br><br>Once the base table structures have been defined and you have to further improve system performance, where do you look and how do you do this? In this session we will talk about targeting both the known and finding the unknown performance problems. Once you know where the problems are we'll go through numerous options to improve the performance using indexes.</div></div>",
+  "eventDescription": "<div class=\"ExternalClass0E806ED0B97443EBAB330CB35ACBB086\"><div>In this session we look at a fast-paced collection of indexing tips and tricks based on an already optimized base table structure. How you create your base table - as well as cluster it - has a big impact on that table's performance.<br><br>Once the base table structures have been defined and you have to further improve system performance, where do you look and how do you do this? In this session we will talk about targeting both the known and finding the unknown performance problems. Once you know where the problems are we'll go through numerous options to improve the performance using indexes.</div></div>",
+  "description": "In this session we look at a fast-paced collection of indexing tips and tricks based on an already optimized base table structure. How you create your base table - as well as cluster it - has a big impact on that table's performance.\n\nOnce the base table structures have been defined and you have to further improve system performance, where do you look and how do you do this? In this session we will talk about targeting both the known and finding the unknown performance problems. Once you know where the problems are we'll go through numerous options to improve the performance using indexes.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

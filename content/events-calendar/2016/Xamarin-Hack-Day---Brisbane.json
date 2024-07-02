@@ -1,0 +1,20 @@
+{
+  "title": "Xamarin Hack Day - Brisbane",
+  "url": "http://xamarinhackday.com/brisbane/",
+  "thumbnail": "/ssw/EventsCalendar/Images/xamarin-thumb.png",
+  "thumbnailDescription": "/ssw/EventsCalendar/Images/xamarin-thumb.png",
+  "presenterName": "Michael Ridland",
+  "presenterProfileUrl": "http://www.michaelridland.com/",
+  "startDateTime": "2016-09-23T23:00:00Z",
+  "endDateTime": "2016-09-24T08:00:00Z",
+  "calendarType": "Hack Days",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": "Mobile",
+  "eventShortDescription": "<div class=\"ExternalClass797A7634E2E74EEB990F79524806752C\"><p></p><div>What is Xamarin Hack Day?<br></div><div>Xamarin Hack Days are for Xamarin Developers or people who want to learn Xamarin.</div><div>There will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.</div><div>It\u2019s recommended that attendees bring their own laptop on the day with Xamarin already setup and installed. If you\u2019ve never played with Xamarin before it would be good to do a little bit of learning before the day but it\u2019s not a requirement as all are welcome.</div><div><br><br></div></div>",
+  "eventDescription": "<div class=\"ExternalClass22DB7E854D694E02B6A6A359544E481C\"><p></p><div>\u200bWhat is Xamarin Hack Day?<br></div><div>Xamarin Hack Days are for Xamarin Developers or people who want to learn Xamarin.</div><div>There will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.</div><div>It\u2019s recommended that attendees bring their own laptop on the day with Xamarin already setup and installed. If you\u2019ve never played with Xamarin before it would be good to do a little bit of learning before the day but it\u2019s not a requirement as all are welcome.</div><div><br><br></div><p><br></p></div>",
+  "description": "What is Xamarin Hack Day?\n\nXamarin Hack Days are for Xamarin Developers or people who want to learn Xamarin.\n\nThere will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.\n\nIt\u2019s recommended that attendees bring their own laptop on the day with Xamarin already setup and installed. If you\u2019ve never played with Xamarin before it would be good to do a little bit of learning before the day but it\u2019s not a requirement as all are welcome.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

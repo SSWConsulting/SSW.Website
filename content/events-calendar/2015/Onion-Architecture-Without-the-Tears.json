@@ -1,0 +1,21 @@
+{
+  "title": "Onion Architecture Without the Tears",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power sessions",
+  "startDateTime": "2015-06-16T14:00:00Z",
+  "endDateTime": "2015-06-16T16:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "categoryAnchor": "OverviewOther",
+  "sessionTitle": "Onion Architecture Without the Tears",
+  "sessionTitleAnchor": "OnionArchitecture",
+  "eventShortDescription": "<div class=\"ExternalClass8ED7830E304F498B800A916E1CC9B9AC\"><div>\u200b&quot;In spaghetti code the relations between the pieces of code are so tangled that it is nearly impossible to add or change something without unpredictably breaking something somewhere else.&quot;</div><div><br></div><div>This talk explores techniques in avoiding spaghetti code including Dependency Injection and Onion Architecture before introducing SSW Data Onion \u2013 a free library developed to speed up the day-to-day development of Data-Driven enterprise web applications using Entity Framework Code First.</div></div>",
+  "eventDescription": "<div class=\"ExternalClass29F33CC897D040FEBF9A981864AC9558\"><div>&quot;In spaghetti code the relations between the pieces of code are so tangled that it is nearly impossible to add or change something without unpredictably breaking something somewhere else.&quot;</div><div><br></div><div>This talk explores techniques in avoiding spaghetti code including Dependency Injection and Onion Architecture before introducing SSW Data Onion \u2013 a free library developed to speed up the day-to-day development of Data-Driven enterprise web applications using Entity Framework Code First.</div></div>",
+  "description": "\u200b\"In spaghetti code the relations between the pieces of code are so tangled that it is nearly impossible to add or change something without unpredictably breaking something somewhere else.\"\n\nThis talk explores techniques in avoiding spaghetti code including Dependency Injection and Onion Architecture before introducing SSW Data Onion \u2013 a free library developed to speed up the day-to-day development of Data-Driven enterprise web applications using Entity Framework Code First.",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

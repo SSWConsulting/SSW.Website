@@ -1,0 +1,20 @@
+{
+  "title": "January Brisbane Full Stack User Group: Progressive Web Apps - You might not need to go native",
+  "url": "/ssw/NETUG/Brisbane.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-BrisbaneUG.jpg",
+  "thumbnailDescription": "January Brisbane Full Stack User Group",
+  "presenterName": "Jack Kranz",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/JackKranz.aspx",
+  "startDateTime": "2020-01-14T07:00:00Z",
+  "endDateTime": "2020-01-14T09:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": "Mobile",
+  "eventShortDescription": "<div class=\"ExternalClassCCC949B4912E451581829682EFCDB6DD\"><p>Jack's first girlfriend was Swift. His second one was Xamarin. He was shocked when he saw how sexy PWA's were on his last mobile project.&#160;</p><p>Progressive Web Apps are now supported on all popular mobile platforms and have some serious benefits over native mobile apps\u2026 and of course old school&#160;mobile responsive websites!</p><p>Jack will also tell you the secrets of when he chooses to build Progressive Web App's vs. React Native Apps vs. Xamarin Apps.<br></p><p>Come learn how to build your first PWA and how to easily turn your existing web app into a PWA. Dive into the lifecycle of a Service Worker by seeing one configured from scratch and discover some excellent tools for quickly setting up a fully offline Progressive Web App.\u200b<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassC8A6701A66E543C18EEC9289A6F98B08\"><p>Jack's first girlfriend was Swift. His second one was Xamarin. He was shocked when he saw how sexy PWA's were on his last mobile project.&#160;</p><p>Progressive Web Apps are now supported on all popular mobile platforms and have some serious benefits over native mobile apps\u2026 and of course old school&#160;mobile responsive websites!</p><p>Jack will also tell you the secrets of when he chooses to build Progressive Web App's vs. React Native Apps vs. Xamarin Apps.<br></p><p>Come learn how to build your first PWA and how to easily turn your existing web app into a PWA. Dive into the lifecycle of a Service Worker by seeing one configured from scratch and discover some excellent tools for quickly setting up a fully offline Progressive Web App.<br></p><p>About the speaker&#58;<br><br> Jack is an experienced web/mobile application developer, React trainer and scrum practitioner.<br><br>Jack has delivered successful projects ranging in scale from large digital transformation projects to minimum viable products for tech startup s . He has a keen eye for detail, a drive for results and strives for quality and robustness. Being a trainer/developer means Jack is always familiar with latest technologies and best practices.<br> <br>His areas of interest include .NET web development, mobile application development, augmented reality, user interaction design and artificial intelligence. \u200b<br></p></div>",
+  "description": "Jack's first girlfriend was Swift. His second one was Xamarin. He was shocked when he saw how sexy PWA's were on his last mobile project.\u00a0\n\nProgressive Web Apps are now supported on all popular mobile platforms and have some serious benefits over native mobile apps\u2026 and of course old school\u00a0mobile responsive websites!\n\nJack will also tell you the secrets of when he chooses to build Progressive Web App's vs. React Native Apps vs. Xamarin Apps.\n\nCome learn how to build your first PWA and how to easily turn your existing web app into a PWA. Dive into the lifecycle of a Service Worker by seeing one configured from scratch and discover some excellent tools for quickly setting up a fully offline Progressive Web App.\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

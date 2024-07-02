@@ -1,0 +1,41 @@
+{
+  "title": "Sydney. NET User Group: What I've learned from 20 years of programming in C# with Joe Albahari",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
+  "presenterName": "Joe Albahari",
+  "presenterProfileUrl": "https://mvp.microsoft.com/en-us/PublicProfile/4021948?fullName=joe%20albahari",
+  "startDateTime": "2021-04-21T08:00:00Z",
+  "endDateTime": "2021-04-21T13:00:00Z",
+  "startShowBannerDateTime": "2021-04-20T14:00:00Z",
+  "endShowBannerDateTime": "2021-04-21T12:00:00Z",
+  "liveStreamUrl": {
+    "description": "SSW Live Feed",
+    "url": "/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": ".NET Core",
+  "eventShortDescription": "<div class=\"ExternalClass91BD4F2E2BF0443BBD5EBD06BB974CC7\"><div><strong></strong></div><p></p><p><strong>Join us at SSW Sydney \u2013 There will be news, chats, pizza and a Live Stream from SSW TV -----&gt;&#160;</strong><a href=\"http&#58;//www.ssw.com.au/live/\"><strong>www.ssw.com.au/live/</strong></a><br><br>Joe will be streaming in from Perth, but if you would like to join us in person please come to SSW Sydney, Level 1, 81-91 Military Rd, Neutral Bay from 6pm for pizza. The livestream will start at 6&#58;30pm and you can enjoy a ''behind the scenes'' look!<br></p><p>_____<br></p><p><br><strong>What I've learned from 20 years of programming in C# with Joe Albahari</strong></p><p>In April 2001, I wrote and published my first C# program. Join me in discovering the most valuable principles that I've learned in the 20 years of C# programming that followed. We'll cover a range of topics, with plenty of samples and useful code that you can take away.</p><p><br><strong>About the Speaker&#58;</strong></p><p>Joe Albahari is a C# MVP, author of &quot;C# 9 in a Nutshell&quot;, and the creator of LINQPad. Joe has given more than 40 talks at conferences and user groups over the past 10 years.<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassC0B50F42469E4EF8964548CC6D317B4F\"><div><strong>\u200b</strong></div><div><p><strong>Join us at SSW Sydney \u2013 There will be news, chats, pizza and a Live Stream from SSW TV -----&gt;&#160;</strong><a href=\"http&#58;//www.ssw.com.au/live/\"><strong>www.ssw.com.au/live/</strong></a><br><br>Joe will be streaming in from Perth, but if you would like to join us in person please come to SSW Sydney, Level 1, 81-91 Military Rd, Neutral Bay from 6pm for pizza. The livestream will start at 6&#58;30pm and you can enjoy a ''behind the scenes'' look!<br></p><p>_____\u200b<br></p><p><br><strong>What I've learned from 20 years of programming in C# with Joe Albahari</strong></p><p>In April 2001, I wrote and published my first C# program. Join me in discovering the most valuable principles that I've learned in the 20 years of C# programming that followed. We'll cover a range of topics, with plenty of samples and useful code that you can take away.</p><p><br><strong>About the Speaker&#58;</strong></p><p>Joe Albahari is a C# MVP, author of &quot;C# 9 in a Nutshell&quot;, and the creator of LINQPad. Joe has given more than 40 talks at conferences and user groups over the past 10 years.\u200b<br></p></div></div>",
+  "description": "Join us at SSW Sydney \u2013 There will be news, chats, pizza and a Live Stream from SSW TV ----->\u00a0\n\nwww.ssw.com.au/live/\n\nJoe will be streaming in from Perth, but if you would like to join us in person please come to SSW Sydney, Level 1, 81-91 Military Rd, Neutral Bay from 6pm for pizza. The livestream will start at 6:30pm and you can enjoy a ''behind the scenes'' look!\n\n_____\n\nWhat I've learned from 20 years of programming in C# with Joe Albahari\n\nIn April 2001, I wrote and published my first C# program. Join me in discovering the most valuable principles that I've learned in the 20 years of C# programming that followed. We'll cover a range of topics, with plenty of samples and useful code that you can take away.\n\nAbout the Speaker:\n\nJoe Albahari is a C# MVP, author of \"C# 9 in a Nutshell\", and the creator of LINQPad. Joe has given more than 40 talks at conferences and user groups over the past 10 years.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "dVmVcPEOzgs",
+  "evalFormURL": {
+    "description": "https://forms.office.com/Pages/ResponsePage.aspx?id=NHwvrDW56Uir3BHl1PyysPj1WXHPfJ5OhXxqnVi-9WJUMDdPUFhMSlBZRkk4SlhENlFCVTZZWEVRMiQlQCN0PWcu",
+    "url": "https://forms.office.com/Pages/ResponsePage.aspx?id=NHwvrDW56Uir3BHl1PyysPj1WXHPfJ5OhXxqnVi-9WJUMDdPUFhMSlBZRkk4SlhENlFCVTZZWEVRMiQlQCN0PWcu"
+  },
+  "externalPresenters": [
+    {
+      "LookupId": 10,
+      "LookupValue": "Joe Albahari"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/joe-albahari.mdx"
+    }
+  ]
+}

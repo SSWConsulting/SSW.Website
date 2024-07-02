@@ -1,0 +1,21 @@
+{
+  "title": "Using LINQ to SQL with WCF (the Brad and Angelina of Data Access; Part 3)",
+  "url": "/images/newsletter-uploads/2008/_2008_08__Do%20you%20run%20web%20tests%20on%20your%20website%20(for%20load%20and%20automated%20testing)_.htm",
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "/images/events/sydney-ug-thumb.jpg",
+  "presenterName": "Cameron Townshend",
+  "startDateTime": "2008-08-20T07:45:00Z",
+  "endDateTime": "2008-08-20T11:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass6188E29A7BA742089AC766E4E5621E43\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;LINQ to SQL has been out for a while now. Come and hear SSW experiences and hear if it is ready or not. Find out how you can use LINQ to SQL with WCF, the right way to structure your projects and know 6 helpful tips.</span><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass64D2817E08E14D739B564BF353FD88DB\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;LINQ to SQL has been out for a while now. Come and hear SSW experiences and hear if it is ready or not. Find out how you can use LINQ to SQL with WCF, the right way to structure your projects and know 6 helpful tips.</span><br></p></div>",
+  "description": "\u200b\n\nDescription:\n\n\u00a0LINQ to SQL has been out for a while now. Come and hear SSW experiences and hear if it is ready or not. Find out how you can use LINQ to SQL with WCF, the right way to structure your projects and know 6 helpful tips.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30
+}

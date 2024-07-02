@@ -1,0 +1,20 @@
+{
+  "title": "DDD Melbourne 2024",
+  "url": "https://www.dddmelbourne.com/",
+  "thumbnail": "/images/events/ddd-logo.png",
+  "thumbnailDescription": "DDD Melbourne 2024",
+  "startDateTime": "2024-03-15T22:00:00Z",
+  "endDateTime": "2024-03-16T10:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass3F7C42203933435892D1E3357703C712\"><div dir=\"ltr\"><p>DDD Melbourne&#160;is an inclusive non-profit conference for the software community. Our goal is to create an approachable event that appeals to the whole community, especially people who usually don\u2019t have the opportunity to attend, or speak at, conferences.<br></p><p>Meet us there! &#128578;<br></p></div><p></p><div dir=\"ltr\">Note&#58; SSW does not host this event.<br></div><br><p></p></div>",
+  "eventDescription": "<div class=\"ExternalClass3D72C9D070B942B6B655C6C7A5951E9F\"><p></p><div class=\"ExternalClass7F5A48D4A99F43FAA7D496F96587B997\"><p></p></div><div class=\"ExternalClass7F5A48D4A99F43FAA7D496F96587B997\"><div><div dir=\"ltr\"><p>DDD Melbourne&#160;is an inclusive non-profit conference for the software community. Our goal is to create an approachable event that appeals to the whole community, especially people who usually don\u2019t have the opportunity to attend, or speak at, conferences.<br></p><p>Meet us there! &#128578;<br></p></div><p></p><div dir=\"ltr\">Note&#58; SSW does not host this event.<br></div><br></div></div><br></div>",
+  "description": "DDD Melbourne\u00a0is an inclusive non-profit conference for the software community. Our goal is to create an approachable event that appeals to the whole community, especially people who usually don\u2019t have the opportunity to attend, or speak at, conferences.\n\nMeet us there! \ud83d\ude42\n\nNote: SSW does not host this event.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": false,
+  "liveStreamDelayMinutes": 30
+}

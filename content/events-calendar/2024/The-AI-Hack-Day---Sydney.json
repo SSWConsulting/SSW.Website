@@ -1,0 +1,21 @@
+{
+  "title": "The AI Hack Day - Sydney",
+  "url": "http://aihackday.com/",
+  "thumbnail": "/images/events/AIHackDaySSWEvents.jpg",
+  "thumbnailDescription": "The AI Hack Day - Sydney",
+  "presenterName": "Jernej Kavka (JK)",
+  "presenterProfileUrl": "/people/jk",
+  "startDateTime": "2024-07-19T23:00:00Z",
+  "endDateTime": "2024-07-20T05:00:00Z",
+  "calendarType": "Hack Days",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass1550B7D439F54E199A6C5A7C65C7E8DB\"><p>\u200b<span style=\"background-color&#58;#ffffff;font-family&#58;arial, sans-serif;font-size&#58;14px;\">AI Hack Days are community run events for Developers or people who want to learn AI for free.</span></p><p style=\"box-sizing&#58;border-box;word-break&#58;break-word;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">There will be something for everyone. Experienced AI developers can share ideas with other experienced developers. If you're a beginner then there's plenty to learn on the day.<br style=\"box-sizing&#58;border-box;\"></p><p style=\"box-sizing&#58;border-box;word-break&#58;break-word;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">It's recommended that attendees bring their own laptop on the day with some of the Microsoft AI and/or Machine Learning (ML) tools already setup and installed. If you've&#160;never played with AI or ML before it would be good to do a little bit of learning before the day but it's not a requirement as all experience levels are welcome.<br></p><p><br></p></div>",
+  "description": "\u200b\n\nAI Hack Days are community run events for Developers or people who want to learn AI for free.\n\nThere will be something for everyone. Experienced AI developers can share ideas with other experienced developers. If you're a beginner then there's plenty to learn on the day.\n\nIt's recommended that attendees bring their own laptop on the day with some of the Microsoft AI and/or Machine Learning (ML) tools already setup and installed. If you've\u00a0never played with AI or ML before it would be good to do a little bit of learning before the day but it's not a requirement as all experience levels are welcome.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": false,
+  "hostedAtSsw": false
+}

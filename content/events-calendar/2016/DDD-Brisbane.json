@@ -1,0 +1,18 @@
+{
+  "title": "DDD Brisbane",
+  "url": "http://dddbrisbane.com/",
+  "thumbnail": "/ssw/EventsCalendar/Images/DDD-Brisbane.png",
+  "thumbnailDescription": "DDD Brisbane",
+  "startDateTime": "2016-12-02T21:00:00Z",
+  "endDateTime": "2016-12-03T12:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass237F0C304E8D48BD9C25BB570BEFFCAC\"><p>\u200bDDD Brisbane is a non profit community event run by developers, for developers &amp; will be held on Sat 3rd December 2016<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass3E41F01E37C04DA79F6954D3B5A8DBEB\"><p>\u200bDDD Brisbane is a non profit community event run by developers, for developers &amp; will be held on Sat 3rd December 2016\u200b<br></p></div>",
+  "description": "\u200bDDD Brisbane is a non profit community event run by developers, for developers & will be held on Sat 3rd December 2016",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

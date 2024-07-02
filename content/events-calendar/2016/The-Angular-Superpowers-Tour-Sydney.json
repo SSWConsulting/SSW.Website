@@ -1,0 +1,20 @@
+{
+  "title": "The Angular Superpowers Tour: Sydney",
+  "url": "/ssw/Events/Training/Angular-Superpowers-Tour.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/Angular-2-0-logo.png",
+  "thumbnailDescription": "The Angular Superpowers Tour: Sydney",
+  "presenterName": "Adam Stephensen",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/AdamS.aspx",
+  "startDateTime": "2016-11-24T22:00:00Z",
+  "endDateTime": "2016-11-25T07:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Angular",
+  "eventShortDescription": "<div class=\"ExternalClassA9B4920923E349338827263B5D707A39\"><p>\u200b<span style=\"background-color&#58;#ffffff;color&#58;#333333;font-family&#58;arial, sans-serif;font-size&#58;14px;\">This one-day workshop brings developers up-to-speed on the new features and benefits of using Angular 2 to build awesome web applications.</span></p><p style=\"box-sizing&#58;border-box;word-wrap&#58;break-word;word-break&#58;break-word;color&#58;#333333;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Everything has changed! Angular 2 and modern web best practices involve massive changes to how we build modern web applications.</p><p style=\"box-sizing&#58;border-box;word-wrap&#58;break-word;word-break&#58;break-word;color&#58;#333333;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">At SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies.\u200b<br></p><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass5D5882D0A72F44F3AFC948E2968C15DE\"><p>\u200b<span style=\"background-color&#58;#ffffff;color&#58;#333333;font-family&#58;arial, sans-serif;font-size&#58;14px;\">This one-day workshop brings developers up-to-speed on the new features and benefits of using Angular 2 to build awesome web applications.</span></p><p style=\"box-sizing&#58;border-box;word-wrap&#58;break-word;word-break&#58;break-word;color&#58;#333333;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Everything has changed! Angular 2 and modern web best practices involve massive changes to how we build modern web applications.</p><p style=\"box-sizing&#58;border-box;word-wrap&#58;break-word;word-break&#58;break-word;color&#58;#333333;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">At SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies.\u200b<br></p><p><br></p></div>",
+  "description": "\u200b\n\nThis one-day workshop brings developers up-to-speed on the new features and benefits of using Angular 2 to build awesome web applications.\n\nEverything has changed! Angular 2 and modern web best practices involve massive changes to how we build modern web applications.\n\nAt SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies.\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}
