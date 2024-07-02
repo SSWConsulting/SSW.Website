@@ -44,13 +44,15 @@ export const eventsCalendarSchema: Collection = {
       name: "title",
       required: true,
       isTitle: true,
-      description: "10-15 words max",
+      description: "{{ NAME OF EVENT }} - {{ LOCATION }} (10-15 words max)",
     },
     {
       type: "string",
       label: "URL",
       name: "url",
       required: true,
+      description:
+        "URL of the event page (e.g. https://www.ssw.com.au/events/angular-workshop)",
     },
     {
       type: "image",
@@ -76,39 +78,40 @@ export const eventsCalendarSchema: Collection = {
       type: "string",
       label: "Presenter profile URL",
       name: "presenterProfileUrl",
+      description: "For SSWers use their people page",
     },
     {
       type: "datetime",
-      label: "Start Date Time",
+      label: "Start Date/Time",
       name: "startDateTime",
-      description: "Add the time of the event as it is in Sydney",
+      description: "Add the time of the event in Sydney time",
       required: true,
       ui: datetimeFormat,
     },
     {
       type: "datetime",
-      label: "End Date Time",
+      label: "End Date/Time",
       name: "endDateTime",
       required: true,
       ui: datetimeFormat,
     },
     {
       type: "datetime",
-      label: "Start Show Banner Date Time",
+      label: "Website - Show livestream banner start time",
       name: "startShowBannerDateTime",
-      description: "Only input this value when the event has live stream",
+      description: "Leave empty if the event isn't being livestreamed",
       ui: datetimeFormat,
     },
     {
       type: "datetime",
-      label: "End Show Banner Date Time",
+      label: "Website - Show livestream banner end time",
       name: "endShowBannerDateTime",
-      description: "Only input this value when the event has live stream",
+      description: "Leave empty if the event isn't being livestreamed",
       ui: datetimeFormat,
     },
     {
       type: "string",
-      label: "Calendar Type",
+      label: "Event Type",
       name: "calendarType",
       ui: {
         component: "select",
@@ -200,7 +203,7 @@ export const eventsCalendarSchema: Collection = {
     {
       type: "object",
       name: "presenterList",
-      label: "Presenter List",
+      label: "Presenters",
       list: true,
       ui: {
         itemProps: (item) => {
@@ -228,14 +231,16 @@ export const eventsCalendarSchema: Collection = {
       ],
     },
     {
+      type: "boolean",
+      label: "Live Stream Event",
+      name: "liveStreamEvent",
+    },
+    {
       type: "string",
       label: "YouTube ID",
       name: "youTubeId",
-    },
-    {
-      type: "boolean",
-      label: "Live StreamEvent",
-      name: "liveStreamEvent",
+      description:
+        "The Youtube ID of the livestream - For SSW TV to fill in on the day of the event",
     },
     {
       type: "boolean",
@@ -252,21 +257,19 @@ export const eventsCalendarSchema: Collection = {
     },
     {
       type: "string",
-      label: "Trailer",
+      label: "Trailer Video - URL",
       name: "trailerUrl",
     },
     {
       type: "boolean",
       label: "Hosted at SSW",
       name: "hostedAtSsw",
-      description:
-        "Indicates that the event is being hosted at the SSW office at the chosen city",
     },
     {
       type: "boolean",
-      label: "Enabled",
+      label: "Show on SSW Website",
       name: "enabled",
-      description: "Show this event on ssw.com.au",
+      description: "Disable for private events",
     },
     {
       type: "string",
