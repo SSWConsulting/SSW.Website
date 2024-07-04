@@ -35,7 +35,9 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
 }) => {
   const isExternal = isExternalLink(href);
   const rel =
-    isExternal && !href.includes("ssw") ? "noopener noreferrer nofollow" : "";
+    isExternal && !href.includes("ssw") && !href.includes("tina.io")
+      ? "noopener noreferrer nofollow"
+      : "";
 
   if (!href) return <>{children}</>;
   return (
