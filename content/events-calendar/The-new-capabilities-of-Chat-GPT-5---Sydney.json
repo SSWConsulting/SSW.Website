@@ -1,0 +1,29 @@
+{
+  "title": "The new capabilities of Chat GPT 5 - Sydney",
+  "url": "/netug/sydney",
+  "thumbnail": "/images/people/Calum-Simpson-Profile-square-d2b42a1060b510cc25609f188c1f2a01-5cdf5fdc8a8f8.jpg",
+  "thumbnailDescription": "profile shot of calum",
+  "presenterName": "Calum Simpson",
+  "presenterProfileUrl": "/people/calum-simpson",
+  "startDateTime": "2024-07-06T08:00:00.000Z",
+  "endDateTime": "2024-07-06T10:00:00.000Z",
+  "startShowBannerDateTime": "2024-07-06T00:00:00.000Z",
+  "endShowBannerDateTime": "2024-07-06T02:00:00.000Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "category": "Other",
+  "abstract": "Calum discusses the new and exciting features offered in ChatGPT 5 and explains the impact it will have on the software development industry. ",
+  "description": "Watch Calum's exciting new talk about the features offered by ChatGPT 5, such as contextually aware responses, multi-modal capabilities, and expanded media type support. In his talk he'll in depth about how these features will impact our careers as consultants and change the lives of end users.\n",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/calum-simpson.mdx"
+    }
+  ],
+  "liveStreamEvent": true,
+  "youTubeId": "PAROOfqJRyw",
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "trailerUrl": "https://www.youtube.com/watch?v=9cUciEMUcnA&pp=ygUYY2FsdW0gc2ltcHNvbiB1c2VyIGdyb3Vw",
+  "hostedAtSsw": true,
+  "enabled": true
+}
