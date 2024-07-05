@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import Image from "next/image";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
@@ -8,24 +9,42 @@ import { Section } from "../util/section";
 export const BuiltOnAzure = ({ data }) => {
   return (
     <Section color={data.backgroundColor}>
-      <Container className="text-lg">
-        <CustomLink
+      <Container className="grid grid-cols-1 text-lg lg:grid-cols-2">
+        <Link
+          data={data}
           href="/consulting/azure"
-          data-tina-field={tinaField(data, builtOnAzureBlock.backgroundColor)}
-          className="unstyled flex items-center justify-center hover:border-azure hover:text-azure"
-        >
-          <Image
-            src="/images/logos/azure.png"
-            alt="Microsoft Azure Logo"
-            height={30}
-            width={30}
-          />
-          <div className="ml-2 text-center uppercase tracking-widest">
-            Built on the Microsoft Azure Platform
-          </div>
-        </CustomLink>
+          className="hover:border-azure hover:text-azure"
+          imgSrc="/images/logos/azure.png"
+          imgAlt="Microsoft Azure Logo"
+          text="Built on Microsoft Azure"
+        />
+
+        <Link
+          data={data}
+          href="https://tina.io"
+          className="hover:border-tina hover:text-tina"
+          imgSrc="/images/logos/tina-llama-orange.png"
+          imgAlt="TinaCMS logo"
+          text="Powered by TinaCMS"
+        />
       </Container>
     </Section>
+  );
+};
+
+const Link = ({ data, href, className, imgSrc, imgAlt, text }) => {
+  return (
+    <CustomLink
+      href={href}
+      data-tina-field={tinaField(data, builtOnAzureBlock.backgroundColor)}
+      className={classNames(
+        "unstyled flex items-center justify-center",
+        className
+      )}
+    >
+      <Image src={imgSrc} alt={imgAlt} height={30} width={30} />
+      <div className="ml-2 text-center uppercase tracking-widest">{text}</div>
+    </CustomLink>
   );
 };
 
