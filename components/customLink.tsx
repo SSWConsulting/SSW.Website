@@ -9,9 +9,6 @@ interface CustomLinkProps extends PropsWithChildren {
   style?: React.CSSProperties;
 }
 
-const externalSSWSitePatterns =
-  /^(https:\/\/(?:www\.)?ssw\.com\.au\/(?:people|rules|ssw)(?:\/|$))/i;
-
 const isExternalLink = (href: string): boolean => {
   // i.e. href = https://anydomain.com.au => true | href = https://ssw.com.au/rule/* => true for SSW External Site | href = /company => false for relative path
   return (
@@ -21,7 +18,14 @@ const isExternalLink = (href: string): boolean => {
 };
 
 const isExternalSSWSite = (href: string): boolean => {
+  const externalSSWSitePatterns =
+    /^(https:\/\/(?:www\.)?ssw\.com\.au\/(?:people|rules|ssw)(?:\/|$))/i;
   return externalSSWSitePatterns.test(href);
+};
+
+const isTinaSite = (href: string): boolean => {
+  const tinaSitePatterns = /^(https:\/\/(?:www\.)?tina\.io(?:\/|$))/i;
+  return tinaSitePatterns.test(href);
 };
 
 export const CustomLink: React.FC<CustomLinkProps> = ({
@@ -34,8 +38,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
   ...props
 }) => {
   const isExternal = isExternalLink(href);
-  const rel =
-    isExternal && !href.includes("ssw") ? "noopener noreferrer nofollow" : "";
+  const isAnSSWBrandedSite = isExternalSSWSite(href) || isTinaSite(href);
 
   if (!href) return <>{children}</>;
   return (
@@ -45,7 +48,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
           className={className}
           href={href}
           target={target || "_blank"}
-          rel={rel}
+          rel={isAnSSWBrandedSite ? "" : "noopener noreferrer nofollow"}
           title={title}
           style={style}
           {...props}
