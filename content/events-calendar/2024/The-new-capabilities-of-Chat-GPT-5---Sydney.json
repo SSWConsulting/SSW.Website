@@ -1,0 +1,30 @@
+{
+  "title": "The new capabilities of Chat GPT 5 - Sydney",
+  "url": "/netug/sydney",
+  "thumbnail": "/images/people/jk-torso.png",
+  "thumbnailDescription": "Torso shot of Jernej",
+  "presenterName": "Jernej Kavka",
+  "presenterProfileUrl": "/people/jernej-kavka",
+  "startDateTime": "2024-07-06T08:00:00.000Z",
+  "endDateTime": "2024-07-06T10:00:00.000Z",
+  "startShowBannerDateTime": "2024-07-06T00:00:00.000Z",
+  "endShowBannerDateTime": "2024-07-06T12:00:00.000Z",
+  "calendarType": "User Groups",
+  "city": "Newcastle",
+  "category": ".NET Core",
+  "abstract": "Jernej discusses the new and exciting features offered in Chat GPT 5, and explains the impact it will have on the software development industry.",
+  "description": "Watch Jernej's exciting new talk about the features offered by Chat GPT 5, such as contextually aware responses, multi-modal capabilities, and expanded media type support. In his talk he'll in depth about how these features will impact our careers as consultants and change the lives of end users.\n",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/jernej-kavka.mdx"
+    }
+  ],
+  "liveStreamEvent": true,
+  "youTubeId": "R0aNp9nQevk",
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "trailerUrl": "https://www.youtube.com/watch?v=yyJuol7oxtA",
+  "hostedAtSsw": true,
+  "enabled": true,
+  "internalNote": "Testing SharePoint Tina migration"
+}
