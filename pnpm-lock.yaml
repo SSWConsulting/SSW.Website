@@ -164,8 +164,8 @@ devDependencies:
     specifier: ^29.7.0
     version: 29.7.0
   '@next/eslint-plugin-next':
-    specifier: 14.2.3
-    version: 14.2.3
+    specifier: 14.2.4
+    version: 14.2.4
   '@playwright/test':
     specifier: 1.44.1
     version: 1.44.1
@@ -4514,17 +4514,10 @@ packages:
   /@next/env@14.2.4:
     resolution: {integrity: sha512-3EtkY5VDkuV2+lNmKlbkibIJxcO4oIHEhBWne6PaAp+76J9KoSsGvNikp6ivzAT8dhhBMYrm6op2pS1ApG0Hzg==}
 
-  /@next/eslint-plugin-next@14.2.3:
-    resolution: {integrity: sha512-L3oDricIIjgj1AVnRdRor21gI7mShlSwU/1ZGHmqM3LzHhXXhdkrfeNY5zif25Bi5Dd7fiJHsbhoZCHfXYvlAw==}
-    dependencies:
-      glob: 10.3.10
-    dev: true
-
   /@next/eslint-plugin-next@14.2.4:
     resolution: {integrity: sha512-svSFxW9f3xDaZA3idQmlFw7SusOuWTpDTAeBlO3AEPDltrraV+lqs7mAc6A27YdnpQVVIA3sODqUAAHdWhVWsA==}
     dependencies:
       glob: 10.3.10
-    dev: false
 
   /@next/swc-darwin-arm64@14.2.4:
     resolution: {integrity: sha512-AH3mO4JlFUqsYcwFUHb1wAKlebHU/Hv2u2kb1pAuRanDZ7pD/A/KPD98RHZmwsJpdHQwfEc/06mgpSzwrJYnNg==}
@@ -13457,7 +13450,7 @@ packages:
     dependencies:
       foreground-child: 3.1.1
       jackspeak: 2.3.6
-      minimatch: 9.0.3
+      minimatch: 9.0.4
       minipass: 7.0.4
       path-scurry: 1.10.1
 
@@ -15945,7 +15938,6 @@ packages:
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
       brace-expansion: 2.0.1
-    dev: true
 
   /minimist@1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
