@@ -105,7 +105,7 @@ export const pageBlocks: Template[] = [
   verticalImageLayoutBlockSchema,
   verticalListItemSchema,
   videoEmbedBlockSchema,
-  inlineJotFormSchema
+  inlineJotFormSchema,
 ];
 
 export * from "../bookingButton/bookingButton";
