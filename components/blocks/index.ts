@@ -5,6 +5,7 @@ import { utilityButtonSchema } from "../button/utilityButton";
 import { clientListSchema } from "../company/clientList";
 import { tweetEmbedSchema } from "../embeds/tweetEmbed";
 import { interestFormSchema } from "../events/interestForm";
+import { inlineJotFormSchema } from "../inlineJotForm/inlineJotForm";
 import { agreementFormBlockSchema } from "../terms-and-conditions/agreementForm";
 import { eventBookingSchema } from "../training/eventBooking";
 import { locationBlockSchema } from "../training/locationBlock";
@@ -104,6 +105,7 @@ export const pageBlocks: Template[] = [
   verticalImageLayoutBlockSchema,
   verticalListItemSchema,
   videoEmbedBlockSchema,
+  inlineJotFormSchema
 ];
 
 export * from "../bookingButton/bookingButton";
@@ -148,3 +150,4 @@ export * from "./upcomingEvents";
 export * from "./verticalImageLayout";
 export * from "./verticalListItem";
 export * from "./videoEmbed";
+
