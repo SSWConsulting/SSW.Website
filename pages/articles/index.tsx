@@ -1,11 +1,12 @@
+import ArticlesList from "@/components/articles/articlesList";
 import MicroservicesPanel from "@/components/microservices/microservicesPanel";
 import client from "@/tina/client";
 import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { ArticleCardProps } from "../../components/articles/articleCard";
 import ArticlesHeader from "../../components/articles/articlesHeader";
-import { ArticlesIndexProps } from "../../components/articles/articlesListItem";
 import { BuiltOnAzure } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
@@ -23,12 +24,15 @@ export default function ArticlesIndexPage(
     variables: props.variables,
   });
 
-  const articlesPageProps =
-    data.articlesIndex?.articlesPages?.map<ArticlesIndexProps>((m) => ({
+  const articlesProps =
+    data.articlesIndex?.articles?.map<ArticleCardProps>((m) => ({
       title: m.title,
       body: m.body,
       pageURL: m.pageURL,
       isExternal: m.isExternal,
+      userName: m.userName,
+      userPosition: m.userPosition,
+      userImage: m.userImage,
     })) || [];
 
   return (
@@ -75,11 +79,11 @@ export default function ArticlesIndexPage(
                 content={data.articlesIndex._body}
               />
 
-            {data.articlesIndex.companyPages?.length > 0 ? (
-              <Section className="mx-auto !bg-gray-100 px-8">
-                <CompanyPages
-                  cardProps={companyPageProps}
-                  schema={data.companyIndex.companyPages}
+            {data.articlesIndex.articles?.length > 0 ? (
+              <Section className="mx-auto w-full">
+                <ArticlesList
+                  listItemProps={articlesProps}
+                  schema={data.articlesIndex.articles}
                 />
               </Section>
             ) : (

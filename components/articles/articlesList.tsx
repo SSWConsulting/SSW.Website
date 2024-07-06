@@ -1,13 +1,13 @@
-import ArticlesListItem from "./articlesListItem";
+import ArticleCard from "./articleCard";
 
 const ArticlesList = ({ listItemProps, schema }) => {
   if (!listItemProps) return null;
   const listItems = listItemProps.map((p, i) => (
-    <ArticlesListItem key={i} data={p} schema={schema} index={i} />
+    <ArticleCard key={i} data={p} schema={schema} index={i} />
   ));
 
   return (
-    <div className="mx-auto mb-2 grid w-full max-w-9xl grid-cols-1 gap-3 rounded py-8 md:grid-cols-2 md:p-8">
+    <div className="flex flex-col w-full">
       {listItems}
     </div>
   );

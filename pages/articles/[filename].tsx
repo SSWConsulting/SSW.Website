@@ -4,7 +4,7 @@ import { TechUpgrade } from "@/blocks/techUpgrade";
 import { BuiltOnAzure } from "@/components/blocks";
 import { Blocks } from "@/components/blocks-renderer";
 import { Layout } from "@/components/layout";
-import TestimonialPanel from "@/components/offices/testimonialPanel";
+import MicroservicesPanel from "@/components/microservices/microservicesPanel";
 import { Section } from "@/components/util/section";
 import { SEO } from "@/components/util/seo";
 import { RecaptchaContext } from "@/context/RecaptchaContext";
@@ -65,28 +65,13 @@ export default function ArticlesPage(
                   components={componentRenderer}
                 />
               </div>
-              {(data.articles.sidebar ||
-                data.articles.sidebarTestimonial ||
-                data.articles.showRdPanel) && (
+              {data.articles.showMicroservices && (
                 <div className="max-w-sm shrink pl-16">
-                  {data.articles.sidebar && (
-                    <div
-                      className={classNames("md:block lg:min-w-96", {
-                        hidden: data.articles.hideSidebarOnMobile,
-                        "min-w-fit": data.articles.fixedWidthSidebar,
-                      })}
-                    >
-                      <TinaMarkdown
-                        content={data.articles.sidebar}
-                        components={componentRenderer}
-                      />
-                    </div>
-                  )}
-                  {data.articles.sidebarTestimonial && (
-                    <TestimonialPanel
-                      testimonialName={data.articles.sidebarTestimonial}
-                    />
-                  )}
+                  <MicroservicesPanel
+                    title={data.articles.microservicesTitle}
+                    description={data.articles.microservicesDescription}
+                    url={data.articles.microservicesUrl}
+                  />
                 </div>
               )}
             </section>

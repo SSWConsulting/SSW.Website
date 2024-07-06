@@ -78,33 +78,30 @@ export const articlesSchema: Collection = {
       label: "Full Width Body",
     },
     {
-      type: "rich-text",
-      name: "sidebar",
-      label: "Sidebar",
-      required: false,
-      templates: [microsoftPanelSchema],
-    },
-    {
       type: "boolean",
       name: "hideSidebarOnMobile",
       label: "Hide sidebar on mobile",
     },
     {
       type: "boolean",
-      name: "fixedWidthSidebar",
-      label: "Fixed width sidebar",
+      name: "showMicroservices",
+      label: "Show Microservice Sidebar",
+      required: false,
     },
     {
       type: "string",
-      name: "sidebarTestimonial",
-      label: "Sidebar Testimonial",
-      options: testimonialToSelectOptions(),
+      name: "microservicesTitle",
+      label: "Microservices Title"
     },
     {
-      type: "boolean",
-      name: "showRdPanel",
-      label: "Show Regional Director Panel",
-      required: false,
+      type: "string",
+      name: "microservicesDescription",
+      label: "Microservices Description"
+    },
+    {
+      type: "string",
+      name: "microservicesUrl",
+      label: "Action URL"
     },
     {
       type: "boolean",
@@ -183,12 +180,15 @@ export const articlesIndexSchemaConstants = {
     txtOverlay: "txtOverlay",
   },
   _body: "_body",
-  articlesPages: {
-    value: "articlesPages",
+  articles: {
+    value: "articles",
     title: "title",
     body: "body",
     pageURL: "pageURL",
     isExternal: "isExternal",
+    userName: "userName",
+    userPosition: "userPosition",
+    userImage: "userImage",
   },
 };
 
@@ -278,9 +278,9 @@ export const articlesIndexSchema: Collection = {
     },
     {
       type: "object",
-      label: "Pages",
-      description: "Cards for the timeline on the History page.",
-      name: articlesIndexSchemaConstants.articlesPages.value,
+      label: "Articles",
+      description: "Articles",
+      name: articlesIndexSchemaConstants.articles.value,
       ui: {
         itemProps: (item) => {
           return { label: item?.title };
@@ -291,24 +291,39 @@ export const articlesIndexSchema: Collection = {
         {
           type: "string",
           label: "Title",
-          name: articlesIndexSchemaConstants.articlesPages.title,
+          name: articlesIndexSchemaConstants.articles.title,
         },
         {
           type: "rich-text",
           label: "Body",
-          name: articlesIndexSchemaConstants.articlesPages.body,
+          name: articlesIndexSchemaConstants.articles.body,
         },
         {
           type: "string",
           label: "Page URL",
-          name: articlesIndexSchemaConstants.articlesPages.pageURL,
+          name: articlesIndexSchemaConstants.articles.pageURL,
+        },
+        {
+          type: "string",
+          label: "User Name",
+          name: articlesIndexSchemaConstants.articles.userName,
+        },
+        {
+          type: "string",
+          label: "User Position",
+          name: articlesIndexSchemaConstants.articles.userPosition,
+        },
+        {
+          type: "string",
+          label: "User Image URL",
+          name: articlesIndexSchemaConstants.articles.userImage,
         },
         {
           type: "boolean",
           label: "External Page",
           description:
             "Select this if the link is not part of the website. This includes SSW.Rules, and SSW.People links",
-          name: articlesIndexSchemaConstants.articlesPages.isExternal,
+          name: articlesIndexSchemaConstants.articles.isExternal,
         },
       ],
     },
