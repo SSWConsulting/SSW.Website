@@ -1,5 +1,7 @@
 "use client";
 
+import { CustomLink } from "../customLink";
+
 type MicroservicesPanelProps = {
   title?: string;
   description: string;
@@ -18,12 +20,12 @@ const MicroservicesPanel = ({
         <p className="pt-5">{description}</p>
         {!!url && (
           <div className="flex justify-center pt-5">
-            <a
+            <CustomLink
               className="unstyled flex h-12 w-80 shrink-0 cursor-pointer items-center justify-center rounded bg-ssw-red px-5 uppercase text-white hover:opacity-70 max-sm:my-5 sm:w-fit"
               href={url}
             >
               Learn more
-            </a>
+            </CustomLink>
           </div>
         )}
       </div>
