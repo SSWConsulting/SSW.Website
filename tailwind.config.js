@@ -45,6 +45,11 @@ export const platform = [
     text: "PowerBI",
     color: "#F2C811",
   },
+  {
+    name: "tina",
+    text: "TinaCMS",
+    color: "#EC4815",
+  },
 ];
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -271,6 +276,7 @@ export default {
           (acc, c) => ({ ...acc, [c.name]: c.color }),
           {}
         ),
+        ...platform.reduce((acc, c) => ({ ...acc, [c.name]: c.color }), {}),
         social: {
           phone: "#b31217",
           youtube: "#b31217",
