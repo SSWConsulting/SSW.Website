@@ -23,7 +23,7 @@ export const eventsCalendarSchema: Collection = {
       name: "title",
       required: true,
       isTitle: true,
-      description: "{{ NAME OF EVENT }} - {{ LOCATION }} (10-15 words max)",
+      description: "(10-15 words max)",
     },
     {
       type: "string",
