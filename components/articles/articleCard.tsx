@@ -1,4 +1,5 @@
 import { articlesIndexSchemaConstants } from "@/tina-collections/articles";
+import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { CustomLink } from "../customLink";
@@ -14,7 +15,15 @@ export type ArticleCardProps = {
 };
 
 const ArticleCard = ({ data, schema, index }) => {
-  const { title, pageURL, body, isExternal, userName, userImage, userPosition }: ArticleCardProps = data;
+  const {
+    title,
+    pageURL,
+    body,
+    isExternal,
+    userName,
+    userImage,
+    userPosition,
+  }: ArticleCardProps = data;
 
   return isExternal ? (
     <CustomLink
@@ -51,7 +60,15 @@ const ArticleCard = ({ data, schema, index }) => {
   );
 };
 
-const ArticleCardContent = ({ title, body, userName, userImage, userPosition, schema, index }) => {
+const ArticleCardContent = ({
+  title,
+  body,
+  userName,
+  userImage,
+  userPosition,
+  schema,
+  index,
+}) => {
   return (
     <div className="size-full bg-white">
       <div>
@@ -65,10 +82,16 @@ const ArticleCardContent = ({ title, body, userName, userImage, userPosition, sc
           {title}
         </h2>
         <div className="flex flex-row items-center gap-2 py-1">
-          <img src={userImage} alt="User Photo" className="w-10 h-10 rounded-full" />
+          <Image
+            src={userImage}
+            alt="User Photo"
+            width={40}
+            height={40}
+            className="size-10 rounded-full"
+          />
           <div className="font-semibold uppercase">{userName}</div>
           <div className="font-semibold">|</div>
-          <div className="text-gray-500 text-sm uppercase">{userPosition}</div>
+          <div className="text-sm uppercase text-gray-500">{userPosition}</div>
         </div>
         <div
           className="prose-p:mt-0"

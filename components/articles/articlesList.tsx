@@ -6,11 +6,7 @@ const ArticlesList = ({ listItemProps, schema }) => {
     <ArticleCard key={i} data={p} schema={schema} index={i} />
   ));
 
-  return (
-    <div className="flex flex-col w-full">
-      {listItems}
-    </div>
-  );
+  return <div className="flex w-full flex-col">{listItems}</div>;
 };
 
 export default ArticlesList;
