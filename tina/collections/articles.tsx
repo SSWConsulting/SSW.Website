@@ -11,13 +11,11 @@ import {
   verticalImageLayoutBlockSchema,
 } from "../../components/blocks";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
-import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
 import { seoSchema } from "../../components/util/seo";
 import { tipField } from "./shared-fields";
 
 import type { Collection } from "tinacms";
 import { dynamicCardGridBlockSchema } from "../../components/blocks/dynamicCardGridBlock";
-import { testimonialToSelectOptions } from "../../helpers/getTestimonials";
 
 export const articlesSchema: Collection = {
   label: "Articles - Pages",
@@ -91,17 +89,17 @@ export const articlesSchema: Collection = {
     {
       type: "string",
       name: "microservicesTitle",
-      label: "Microservices Title"
+      label: "Microservices Title",
     },
     {
       type: "string",
       name: "microservicesDescription",
-      label: "Microservices Description"
+      label: "Microservices Description",
     },
     {
       type: "string",
       name: "microservicesUrl",
-      label: "Action URL"
+      label: "Action URL",
     },
     {
       type: "boolean",
@@ -264,17 +262,17 @@ export const articlesIndexSchema: Collection = {
     {
       type: "string",
       name: "microservicesTitle",
-      label: "Microservices Title"
+      label: "Microservices Title",
     },
     {
       type: "string",
       name: "microservicesDescription",
-      label: "Microservices Description"
+      label: "Microservices Description",
     },
     {
       type: "string",
       name: "microservicesUrl",
-      label: "Action URL"
+      label: "Action URL",
     },
     {
       type: "object",
