@@ -210,11 +210,6 @@ export const eventsCalendarSchema: Collection = {
       ],
     },
     {
-      type: "boolean",
-      label: "Live Stream Event",
-      name: "liveStreamEvent",
-    },
-    {
       type: "string",
       label: "YouTube ID",
       name: "youTubeId",

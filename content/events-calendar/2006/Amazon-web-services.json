@@ -15,7 +15,6 @@
   "city": "Sydney",
   "category": "Other",
   "description": "​\n\nDescription:\n\n Amazon have recently unleashed a series of new web services which enable scalable computing, mass storage and an accessible human work force which allow small projects to use facilities previously only available to large companies at a fraction of the cost. Andrew Franklin will give a short presentation looking at some of the services offered by Amazon and will discuss implementation issues with practical examples.\n",
-  "liveStreamEvent": true,
   "delayedLiveStreamStart": true,
   "liveStreamDelayMinutes": 30,
   "enabled": true
