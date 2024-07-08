@@ -9,6 +9,7 @@ export const DEFAULT: Metadata = {
   },
   generator: "Next.js",
   applicationName: "SSW.Website",
+  manifest: "/site.webmanifest",
   publisher: "SSW",
   description: layoutData.header.description,
   openGraph: {
