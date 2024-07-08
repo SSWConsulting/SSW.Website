@@ -70,5 +70,4 @@ export const DEFAULT: Metadata = {
       url: "/safari-pinned-tab.svg",
     },
   ],
-  manifest: "/site.webmanifest",
 };
