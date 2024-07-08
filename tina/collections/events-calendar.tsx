@@ -6,27 +6,6 @@ const datetimeFormat = {
   dateFormat: "ddd DD MMMM YYYY,",
 };
 
-const LiveStreamDelayMinutes = (props) => {
-  const { values } = props.tinaForm;
-  const { calendarType, delayedLiveStreamStart, liveStreamEvent } = values;
-
-  const [oldProps, setOldProps] = useState(values);
-  if (
-    oldProps.calendarType === calendarType &&
-    oldProps.delayedLiveStreamStart === delayedLiveStreamStart &&
-    oldProps.liveStreamEvent === liveStreamEvent
-  )
-    return NumberField(props);
-  if (
-    calendarType === "User Groups" &&
-    liveStreamEvent &&
-    delayedLiveStreamStart
-  )
-    props.tinaForm.change("liveStreamDelayMinutes", 30);
-  setOldProps(values);
-  return NumberField(props);
-};
-
 export const eventsCalendarSchema: Collection = {
   label: "Events - Calendar",
   name: "eventsCalendar",
@@ -35,7 +14,7 @@ export const eventsCalendarSchema: Collection = {
   ui: {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore - upload dir not included in Tina type but works anyway
-    defaultItem: () => ({ enabled: true }),
+    defaultItem: () => ({ enabled: true, liveStreamDelayMinutes: 30 }),
   },
   fields: [
     {
@@ -251,9 +230,6 @@ export const eventsCalendarSchema: Collection = {
       type: "number",
       label: "Live Stream Delay (Minutes)",
       name: "liveStreamDelayMinutes",
-      ui: {
-        component: LiveStreamDelayMinutes,
-      },
     },
     {
       type: "string",
