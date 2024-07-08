@@ -1,7 +1,6 @@
 import { Breadcrumbs } from "@/blocks/breadcrumbs";
 import { componentRenderer } from "@/blocks/mdxComponentRenderer";
 import { TechUpgrade } from "@/blocks/techUpgrade";
-import { BuiltOnAzure } from "@/components/blocks";
 import { Blocks } from "@/components/blocks-renderer";
 import { Layout } from "@/components/layout";
 import MicroservicesPanel from "@/components/microservices/microservicesPanel";
@@ -30,8 +29,11 @@ export default function ArticlesPage(
     >
       <div>
         <SEO seo={props.seo} />
-        <Layout menu={data.megamenu}>
-          <Blocks prefix="ArticlesBeforeBody" blocks={data.articles.beforeBody} />
+        <Layout menu={data.megamenu} showAzureBanner={true}>
+          <Blocks
+            prefix="ArticlesBeforeBody"
+            blocks={data.articles.beforeBody}
+          />
           {data.articles.seo?.showBreadcrumb === null ||
             (data.articles.seo?.showBreadcrumb && (
               <Section className="mx-auto w-full max-w-9xl px-8 py-5">
@@ -83,9 +85,6 @@ export default function ArticlesPage(
               <TechUpgrade />
             </Section>
           )}
-          <Section>
-            <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
-          </Section>
         </Layout>
       </div>
     </RecaptchaContext.Provider>

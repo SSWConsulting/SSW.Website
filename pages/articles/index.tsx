@@ -3,11 +3,11 @@ import MicroservicesPanel from "@/components/microservices/microservicesPanel";
 import client from "@/tina/client";
 import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
+import React from "react";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { ArticleCardProps } from "../../components/articles/articleCard";
 import ArticlesHeader from "../../components/articles/articlesHeader";
-import { BuiltOnAzure } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { Layout } from "../../components/layout";
@@ -36,9 +36,9 @@ export default function ArticlesIndexPage(
     })) || [];
 
   return (
-    <div>
+    <>
       <SEO seo={props.seo} />
-      <Layout menu={data.megamenu}>
+      <Layout menu={data.megamenu} showAzureBanner={true}>
         {data.articlesIndex.headerImage?.heroBackground && (
           <Section className="mx-auto hidden w-full sm:block">
             <ArticlesHeader
@@ -67,11 +67,11 @@ export default function ArticlesIndexPage(
           </h1>
         </Section>
         <section
-            className={classNames(
-              "prose mx-auto w-full max-w-9xl flex-row px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0",
-              data.articlesIndex.fullWidthBody ? "" : "md:flex"
-            )}
-          >
+          className={classNames(
+            "prose mx-auto w-full max-w-9xl flex-row px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0",
+            data.articlesIndex.fullWidthBody ? "" : "md:flex"
+          )}
+        >
           {data.articlesIndex._body.children.length > 0 && (
             <div data-tina-field={tinaField(data.articlesIndex, "_body")}>
               <TinaMarkdown
@@ -79,33 +79,30 @@ export default function ArticlesIndexPage(
                 content={data.articlesIndex._body}
               />
 
-            {data.articlesIndex.articles?.length > 0 ? (
-              <Section className="mx-auto w-full">
-                <ArticlesList
-                  listItemProps={articlesProps}
-                  schema={data.articlesIndex.articles}
-                />
-              </Section>
-            ) : (
-              <></>
-            )}
+              {data.articlesIndex.articles?.length > 0 ? (
+                <Section className="mx-auto w-full">
+                  <ArticlesList
+                    listItemProps={articlesProps}
+                    schema={data.articlesIndex.articles}
+                  />
+                </Section>
+              ) : (
+                <></>
+              )}
             </div>
           )}
-          {(data.articlesIndex.showMicroservices) && (
+          {data.articlesIndex.showMicroservices && (
             <div className="max-w-sm shrink pl-16">
-                <MicroservicesPanel
-                  title={data.articlesIndex.microservicesTitle}
-                  description={data.articlesIndex.microservicesDescription}
-                  url={data.articlesIndex.microservicesUrl}
-                />
+              <MicroservicesPanel
+                title={data.articlesIndex.microservicesTitle}
+                description={data.articlesIndex.microservicesDescription}
+                url={data.articlesIndex.microservicesUrl}
+              />
             </div>
           )}
         </section>
-        <Section>
-          <BuiltOnAzure data={{ backgroundColor: "default" }} />
-        </Section>
       </Layout>
-    </div>
+    </>
   );
 }
 
