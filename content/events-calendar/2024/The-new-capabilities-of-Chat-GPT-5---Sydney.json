@@ -1,0 +1,27 @@
+{
+  "title": "The new capabilities of Chat GPT 5 - Sydney",
+  "url": "/netug/sydney",
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "presenterName": "Jernej",
+  "presenterProfileUrl": "/people/jernej-kaval",
+  "startDateTime": "2024-07-08T08:00:00.000Z",
+  "endDateTime": "2024-07-08T11:00:00.000Z",
+  "startShowBannerDateTime": "2024-07-07T14:00:00.000Z",
+  "endShowBannerDateTime": "2024-07-08T12:00:00.000Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "category": "Other",
+  "abstract": "Jernej discusses the new and exciting features offered in Chat GPT 5 and explains the impact it will have on the software development industry.",
+  "description": "Watch Jernej's exciting new talk about the features offered by Chat GPT 5, such as contextually aware responses, multi-modal capabilities, and expanded media type support. In his talk he'll in depth about how these features will impact our careers as consultants and change the lives of end users.\n",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/jernej-kavka.mdx"
+    }
+  ],
+  "youTubeId": "PAROOfqJRyw",
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "trailerUrl": "https://www.youtube.com/watch?v=9cUciEMUcnA&pp=ygUYY2FsdW0gc2ltcHNvbiB1c2VyIGdyb3Vw",
+  "hostedAtSsw": true,
+  "enabled": true
+}
