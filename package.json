@@ -101,5 +101,5 @@
   "resolutions": {
     "final-form": "4.20.1"
   },
-  "packageManager": "pnpm@8.15.5"
+  "packageManager": "pnpm@9.5.0"
 }
