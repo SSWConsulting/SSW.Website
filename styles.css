@@ -79,6 +79,10 @@
   }
 
   @media print {
+    #chatbase-message-bubbles,
+    #chatbase-bubble-button {
+      display: none !important;
+    }
     .no-print,
     .no-print * {
       display: none !important;

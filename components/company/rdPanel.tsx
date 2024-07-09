@@ -9,7 +9,7 @@ export const RDPanel = () => {
         Australia!
       </strong>
       <Image
-        src="/images/company/regional-director.png"
+        src="/images/company/Microsoft_Regional_Director.png"
         alt="Microsoft Regional Director logo"
         width={124}
         height={50}

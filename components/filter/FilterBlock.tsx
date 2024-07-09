@@ -33,7 +33,7 @@ export const FilterBlock = ({
 
         {sidebarChildren && <div className="mt-8">{sidebarChildren}</div>}
       </div>
-      <div className="min-w-0 max-w-full shrink grow ">{children}</div>
+      <div className="min-w-0 max-w-full shrink grow">{children}</div>
     </div>
   );
 };

@@ -18,7 +18,7 @@ export const LiveHeader = (props: LiveHeaderprops) => {
     >
       <Container
         className={classNames(
-          "flex-row  justify-center py-0 text-center text-white md:flex"
+          "flex-row justify-center py-0 text-center text-white md:flex"
         )}
         size="custom"
       >

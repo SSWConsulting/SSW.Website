@@ -63,7 +63,7 @@ export default function CompanyPage(
             content={data.caseStudy.content}
           />
         </Section>
-        <Section className="mx-auto w-full  !bg-gray-75 px-8 py-5">
+        <Section className="mx-auto w-full !bg-gray-75 px-8 py-5">
           <TechUpgrade />
         </Section>
         <Section>

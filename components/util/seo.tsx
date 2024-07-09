@@ -1,6 +1,7 @@
 import { NextSeo, NextSeoProps } from "next-seo";
 import layoutData from "../../content/global/index.json";
 import { NEXT_SEO_DEFAULT } from "../../next-seo.config";
+import { TextInputWithCount } from "../textInputWithCount/textInputWithCount";
 
 export const SEO = ({ seo }) => {
   if (!seo) return null;
@@ -52,6 +53,7 @@ export const seoSchema = {
             return "Title should be 70 characters or less";
           }
         },
+        component: TextInputWithCount(70),
       },
     },
     {
@@ -65,6 +67,7 @@ export const seoSchema = {
             return "Description should be 150 characters or less";
           }
         },
+        component: TextInputWithCount(150, true),
       },
     },
     {
