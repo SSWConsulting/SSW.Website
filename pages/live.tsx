@@ -16,8 +16,8 @@ import { SEO } from "../components/util/seo";
 import { VideoCard } from "../components/util/videoCards";
 import { removeExtension } from "../services/client/utils.service";
 import {
-  convertEventDatesToStrings,
   getNextEventToBeLiveStreamed,
+  getSpeakersInfoFromEvent,
 } from "../services/server/events";
 
 const ISR_TIME = 60 * 60;
@@ -63,19 +63,19 @@ export default function LivePage(
             openInNewTab={true}
           />
         </div>
-        {props.event?.title && (
+        {props.event?.Title && (
           <div className="pb-10 pt-4">
             <div className="whitespace-pre-wrap text-2xl font-semibold">
-              {props.event?.title}
+              {props.event?.Title}
             </div>
-            {props.event?.presenterName && (
+            {props.speaker && (
               <div className="py-1 text-lg">
                 With
                 <CustomLink
-                  href={props.event?.presenterProfileUrl}
+                  href={props.speaker?.PresenterProfileLink}
                   className="ml-2"
                 >
-                  {props.event?.presenterName}
+                  {props.speaker?.Title}
                 </CustomLink>
               </div>
             )}
@@ -84,22 +84,22 @@ export default function LivePage(
 
         <div className="grid grid-cols-1 justify-center gap-8 lg:grid-cols-2">
           <div className="col-span-1">
-            {props.event?.abstract && (
+            {props.event?.Abstract && (
               <div className="whitespace-pre-wrap text-lg">
                 <ReadMore
-                  text={props.event?.abstract}
+                  text={props.event?.Abstract}
                   previewSentenceCount={PREVIEW_SENTENCE_COUNT}
                 />
               </div>
             )}
           </div>
           <div className="col-span-1">
-            {props.event?.url &&
-              props.event?.title &&
-              (props.event?.trailerUrl ? (
+            {props.event?.Url &&
+              props.event?.Title &&
+              (props.event?.TrailerUrl?.Url ? (
                 <VideoCard
-                  link={props.event.trailerUrl}
-                  title={props.event.title}
+                  link={props.event.TrailerUrl.Url}
+                  title={props.event.Title}
                   theme="light"
                 />
               ) : (
@@ -126,14 +126,16 @@ export const getStaticProps = async () => {
   });
 
   const event = await getNextEventToBeLiveStreamed();
-  const eventWithStaticProperties = convertEventDatesToStrings(event);
+  const speakers = await getSpeakersInfoFromEvent(event);
+  const speaker = speakers[0];
 
   return {
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
-      event: eventWithStaticProperties || null,
+      event: event || null,
+      speaker: speaker || null,
     },
     revalidate: ISR_TIME,
   };

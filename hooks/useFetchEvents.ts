@@ -1,62 +1,45 @@
+import { EventTrimmed } from "@/components/filter/events";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import client from "../tina/__generated__/client";
+import axios from "axios";
 
 const PAGE_LENGTH = 10;
+const PAST_PAGE_LENGTH = 10;
 
-export const FUTURE_EVENTS_QUERY_KEY = "futureEvents";
+export const EVENTS_QUERY_KEY = "events";
 export const PAST_EVENTS_QUERY_KEY = "pastEvents";
 
-const TODAY = new Date();
-TODAY.setHours(0, 0, 0, 0);
-
-export const getFutureEvents = async ({ pageParam }) => {
-  const res = await client.queries.getFutureEventsQuery({
-    fromDate: TODAY.toISOString(),
-    top: PAGE_LENGTH,
-    after: pageParam,
+const getEvents = async ({ pageParam = 1 }) => {
+  const res = await axios.get<EventTrimmed[]>("/api/get-upcoming-events", {
+    params: { top: PAGE_LENGTH, page: pageParam },
   });
 
   return res.data;
 };
 
-export const useFetchFutureEvents = () => {
-  const { data, fetchNextPage, isFetchingNextPage, error, isLoading } =
-    useInfiniteQuery({
-      queryKey: [FUTURE_EVENTS_QUERY_KEY],
-      queryFn: getFutureEvents,
-      initialPageParam: undefined,
-      getNextPageParam: (lastPage) => {
-        return lastPage.eventsCalendarConnection.pageInfo.endCursor;
-      },
-    });
+const getPastEvents = async ({ pageParam = 1 }) => {
+  const res = await axios.get<EventTrimmed[]>("/api/get-past-events", {
+    params: { top: PAST_PAGE_LENGTH, page: pageParam },
+  });
+
+  return res.data;
+};
+
+export const useFetchEvents = () => {
+  const { data, fetchNextPage, isFetchingNextPage, error } = useInfiniteQuery({
+    queryKey: [EVENTS_QUERY_KEY],
+    queryFn: getEvents,
+    initialPageParam: 1,
+    getNextPageParam: (lastPage, allPages) => {
+      return (allPages?.length || 1) + 1;
+    },
+  });
 
   return {
-    futureEvents:
-      data?.pages.flat().flatMap((item) =>
-        item.eventsCalendarConnection.edges.map((edge) => ({
-          ...edge.node,
-          startDateTime: new Date(edge.node.startDateTime),
-          endDateTime: new Date(edge.node.endDateTime),
-        }))
-      ) || [],
+    events: data?.pages.flat() || [],
     error,
-    isLoadingFuturePages: isLoading,
-    fetchFutureNextPage: fetchNextPage,
-    isFetchingFuturePages: isFetchingNextPage,
-    hasMoreFuturePages:
-      data?.pages[data?.pages.length - 1].eventsCalendarConnection.pageInfo
-        .hasNextPage,
+    fetchNextPage,
+    isFetchingNextPage,
   };
-};
-
-const getPastEvents = async ({ pageParam }) => {
-  const res = await client.queries.getPastEventsQuery({
-    fromDate: TODAY.toISOString(),
-    top: PAGE_LENGTH,
-    before: pageParam,
-  });
-
-  return res.data;
 };
 
 export const useFetchPastEvents = (enabled: boolean) => {
@@ -64,28 +47,18 @@ export const useFetchPastEvents = (enabled: boolean) => {
     useInfiniteQuery({
       queryKey: [PAST_EVENTS_QUERY_KEY],
       queryFn: getPastEvents,
-      initialPageParam: undefined,
-      getNextPageParam: (lastPage) => {
-        return lastPage.eventsCalendarConnection.pageInfo.endCursor;
+      initialPageParam: 1,
+      getNextPageParam: (lastPage, allPages) => {
+        return (allPages?.length || 1) + 1;
       },
       enabled,
     });
 
   return {
-    pastEvents:
-      data?.pages.flat().flatMap((item) =>
-        item.eventsCalendarConnection.edges.map((edge) => ({
-          ...edge.node,
-          startDateTime: new Date(edge.node.startDateTime),
-          endDateTime: new Date(edge.node.endDateTime),
-        }))
-      ) || [],
+    pastEvents: data?.pages.flat() || [],
     error,
-    isLoadingPastPages: isLoading,
-    fetchNextPastPage: fetchNextPage,
-    isFetchingPastPages: isFetchingNextPage,
-    hasMorePastPages:
-      data?.pages[data?.pages.length - 1].eventsCalendarConnection.pageInfo
-        .hasPreviousPage,
+    isLoading,
+    fetchNextPage,
+    isFetchingNextPage,
   };
 };

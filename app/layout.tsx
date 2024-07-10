@@ -22,8 +22,8 @@ import utc from "dayjs/plugin/utc";
 import Head from "next/head";
 import { LiveSteam } from "./live-steam-banner/live-stream";
 import { DEFAULT } from "./meta-data/default";
+import { getLiveStreamData } from "./utils/get-live-stream-data";
 import { getMegamenu } from "./utils/get-mega-menu";
-import client from "../tina/__generated__/client";
 
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
@@ -50,20 +50,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const menuData = await getMegamenu();
-  const nextUG = await client.queries.getFutureEventsQuery({
-    fromDate: new Date().toISOString(),
-    top: 1,
-    calendarType: "User Groups",
-  });
-
-  const liveStreamData: EventInfo =
-    nextUG.data.eventsCalendarConnection.edges.map((edge) => ({
-      ...edge.node,
-      startDateTime: new Date(edge.node.startDateTime),
-      endDateTime: new Date(edge.node.endDateTime),
-      startShowBannerDateTime: new Date(edge.node.startShowBannerDateTime),
-      endShowBannerDateTime: new Date(edge.node.endShowBannerDateTime),
-    }))[0] ?? null;
+  const liveStreamData: EventInfo = await getLiveStreamData();
 
   return (
     <html lang="en" className={openSans.className}>

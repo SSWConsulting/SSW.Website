@@ -4,7 +4,6 @@ import { tipField } from "./shared-fields";
 export const presenterSchemaConstants = {
   value: "presenter",
   profileImg: "profileImg",
-  torsoImg: "torsoImg",
   presenter: {
     value: "presenter",
     name: "name",
@@ -24,14 +23,6 @@ export const presenterSchema: Collection = {
       type: "image",
       name: presenterSchemaConstants.profileImg,
       label: "Profile Image",
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      uploadDir: () => "people",
-    },
-    {
-      type: "image",
-      name: presenterSchemaConstants.torsoImg,
-      label: "Torso Image",
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       uploadDir: () => "people",

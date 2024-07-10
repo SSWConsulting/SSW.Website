@@ -35,7 +35,7 @@ export const LiveStreamBanner = ({
     setCountdownText(`Airing in ${formattedCountdown}. `);
   }, [countdownMins]);
 
-  if (!event?.startDateTime) {
+  if (!event?.StartDateTime) {
     return <></>;
   }
 
@@ -50,13 +50,13 @@ export const LiveStreamBanner = ({
           )}
         >
           <h1 className="m-0 py-0 text-xl font-light text-gray-300">
-            {event.title}
+            {event.Title}
           </h1>
           <p className="py-0 text-xs text-white">
             <span className="block text-sswRed">
               {isLive ? liveText : countdownText}
             </span>
-            {!isLive && scheduledTimeText(dayjs(event.startDateTime))}
+            {!isLive && scheduledTimeText(dayjs(event.StartDateTime))}
           </p>
         </div>
       </CustomLink>

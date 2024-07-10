@@ -11,8 +11,9 @@ export const useEvents = (events: EventTrimmed[]) => {
 
   const options = useMemo(() => {
     const categoryCount: Record<string, number> = events?.reduce(
-      (acc: object, event) => {
-        acc[event.category] = (acc[event.category] || 0) + 1;
+      (acc, event) => {
+        acc[event.Category_f5a9cf4c_x002d_8228_x00] =
+          (acc[event.Category_f5a9cf4c_x002d_8228_x00] || 0) + 1;
         return acc;
       },
       {}
@@ -20,13 +21,10 @@ export const useEvents = (events: EventTrimmed[]) => {
 
     const categories = Object.keys(categoryCount || {})?.sort() || [];
 
-    const formatCount: Record<string, number> = events?.reduce(
-      (acc: object, event) => {
-        acc[event.calendarType] = (acc[event.calendarType] || 0) + 1;
-        return acc;
-      },
-      {}
-    );
+    const formatCount: Record<string, number> = events?.reduce((acc, event) => {
+      acc[event.CalendarType] = (acc[event.CalendarType] || 0) + 1;
+      return acc;
+    }, {});
 
     const formats = Object.keys(formatCount || {}).sort();
 
@@ -66,9 +64,10 @@ export const useEvents = (events: EventTrimmed[]) => {
     return events?.filter(
       (event) =>
         (filterControls.technology === NO_SELECTION ||
-          event.category === options.categories[filterControls.technology]) &&
+          event.Category_f5a9cf4c_x002d_8228_x00 ===
+            options.categories[filterControls.technology]) &&
         (filterControls.format === NO_SELECTION ||
-          event.calendarType === options.formats[filterControls.format])
+          event.CalendarType === options.formats[filterControls.format])
     );
   }, [events, filterControls, options.categories, options.formats]);
 

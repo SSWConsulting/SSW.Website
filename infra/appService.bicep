@@ -101,6 +101,18 @@ var appSettings = [
     value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/MICROSOFT-OAUTH-CLIENT-SECRET)'
   }
   {
+    name: 'SHAREPOINT_SITE_ID'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/SHAREPOINT-SITE-ID)'
+  }
+  {
+    name: 'SHAREPOINT_EVENTS_LIST_ID'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/SHAREPOINT-EVENTS-LIST-ID)'
+  }
+  {
+    name: 'SHAREPOINT_EXTERNAL_PRESENTERS_LIST_ID'
+    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/SHAREPOINT-EXTERNAL-PRESENTERS-LIST-ID)'
+  }
+  {
     name: 'RECAPTCHA_BYPASS_SECRET'
     value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/SECRET-KEY-TO-BYPASS-RECAPTCHA)'
   }

@@ -25,8 +25,10 @@ import { SEO } from "../../components/util/seo";
 import { getRandomTestimonialsByCategory } from "../../helpers/getTestimonials";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
-import { EventInfo } from "../../services/server/events";
-import ReactDomServer from "react-dom/server";
+import {
+  getEvents,
+  getSpeakersInfoFromEvent,
+} from "../../services/server/events";
 
 const ISR_TIME = 60 * 60; // 1 hour;
 
@@ -40,13 +42,8 @@ export default function NETUGPage(
     query: props.query,
     variables: props.variables,
   });
-  const speaker = props.event?.presenterList
-    ? props.event.presenterList[0]
-    : null;
-
-  // Converting element to string to render in presenter block
-  const aboutDescription = ReactDomServer.renderToString(
-    <TinaMarkdown content={speaker?.presenter.about} />
+  const speakerDescription = sanitiseXSS(
+    props.speaker?.PresenterShortDescription
   );
 
   if (data?.userGroupPage?.__typename === "UserGroupPageLocationPage") {
@@ -67,18 +64,18 @@ export default function NETUGPage(
 
           {props.event && (
             <UserGroupHeader
-              date={new Date(props.event?.startDateTime)}
-              title={props.event?.title}
+              date={new Date(props.event?.StartDateTime)}
+              title={props.event?.Title}
               presenter={{
-                name: props.event?.presenterName,
-                url: props.event?.presenterProfileUrl,
-                image: speaker?.presenter.torsoImg || "",
+                name: props.event?.Presenter,
+                url: props.event?.PresenterProfileUrl?.Url,
+                image: props.speaker?.TorsoImage?.Url || "",
               }}
-              trailerUrl={props.event?.trailerUrl}
+              trailerUrl={props.event?.TrailerUrl?.Url}
               registerUrl={data.userGroupPage.registerUrl}
               city={props.city}
-              online={props.city !== props.event?.city?.toLowerCase()}
-              youTubeId={props.event?.youTubeId}
+              online={props.city !== props.event?.City?.toLowerCase()}
+              youTubeId={props.event?.YouTubeId}
             />
           )}
 
@@ -92,14 +89,14 @@ export default function NETUGPage(
 
           <Container size="custom" className="pb-8">
             <section className="grid-cols-3 gap-10 md:grid">
-              {props.event?.abstract && (
+              {props.event?.Abstract && (
                 <div className="col-span-2">
                   <h2 className="mt-0 text-4xl font-medium text-sswRed">
                     Event Description
                   </h2>
                   <div className="whitespace-pre-wrap">
                     <ReadMore
-                      text={props.event?.abstract}
+                      text={props.event?.Abstract}
                       previewSentenceCount={PREVIEW_SENTENCE_COUNT}
                     />
                   </div>
@@ -113,7 +110,9 @@ export default function NETUGPage(
               </div>
 
               <div
-                className={classNames(speaker ? "col-span-1" : "col-span-2")}
+                className={classNames(
+                  props.speaker ? "col-span-1" : "col-span-2"
+                )}
               >
                 <h2 className="text-4xl font-medium text-sswRed">
                   When & Where
@@ -180,7 +179,7 @@ export default function NETUGPage(
                   ))}
                 </div>
               </div>
-              {speaker && (
+              {props.speaker && (
                 <div className="col-span-1 py-4 md:py-0">
                   <h2 className="text-4xl font-medium text-sswRed">
                     Presenter
@@ -188,12 +187,11 @@ export default function NETUGPage(
                   <div className="pb-3">
                     <Organizer
                       data={{
-                        profileImg: speaker.presenter.profileImg,
-                        name: speaker.presenter.presenter.name,
-                        profileLink:
-                          speaker.presenter.presenter.peopleProfileURL,
+                        profileImg: props.speaker?.PresenterProfileImage?.Url,
+                        name: props.speaker?.Title,
+                        profileLink: props.speaker?.PresenterProfileLink,
                       }}
-                      stringContent={aboutDescription}
+                      stringContent={speakerDescription}
                     />
                   </div>
                 </div>
@@ -351,40 +349,21 @@ export const getStaticProps = async ({ params }) => {
 
   const currentDate = new Date().toISOString();
 
-  const eventData = await client.queries.getFutureEventsQuery({
-    fromDate: currentDate,
-    top: 1,
-    calendarType: "User Groups",
-  });
+  const events = await getEvents(
+    `$filter=fields/Enabled ne false and fields/EndDateTime gt '${currentDate}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime asc`
+  );
 
-  // Converting Date properties to string so they can be passed as static props
-  let event: Omit<
-    EventInfo,
-    | "startShowBannerDateTime"
-    | "endShowBannerDateTime"
-    | "startDateTime"
-    | "endDateTime"
-  > & {
-    startShowBannerDateTime?: string;
-    endShowBannerDateTime?: string;
-    startDateTime?: string;
-    endDateTime?: string;
-  };
+  let event = events[0];
 
-  if (eventData?.data.eventsCalendarConnection.totalCount > 0) {
-    event = eventData?.data.eventsCalendarConnection.edges[0].node;
-  } else {
-    const pastEventData = await client.queries.getFutureEventsQuery({
-      fromDate: currentDate,
-      top: 1,
-      calendarType: "User Groups",
-    });
-    if (pastEventData?.data.eventsCalendarConnection.totalCount > 0) {
-      event = pastEventData?.data.eventsCalendarConnection.edges[0].node;
-    } else {
-      event = null;
-    }
+  if (!event) {
+    const pastEvents = await getEvents(
+      `$filter=fields/Enabled ne false and fields/EndDateTime lt '${currentDate}' and fields/CalendarType eq 'User Groups'&$orderby=fields/StartDateTime desc`
+    );
+
+    event = pastEvents[0];
   }
+
+  const speakers = await getSpeakersInfoFromEvent(event);
 
   return {
     props: {
@@ -392,7 +371,8 @@ export const getStaticProps = async ({ params }) => {
       query: tinaProps.query,
       variables: tinaProps.variables,
       testimonialsResult: testimonialsResult || [],
-      event,
+      event: event || null,
+      speaker: speakers[0] || null,
       city: filename,
     },
     revalidate: ISR_TIME,

@@ -68,13 +68,13 @@ export const Layout = ({
     liveStreamProps?.countdownMins &&
     liveStreamProps?.countdownMins <= 0 &&
     !!liveStreamProps?.event &&
-    rightnow.isBefore(liveStreamProps?.event?.endDateTime);
+    rightnow.isBefore(liveStreamProps?.event?.EndDateTime);
 
   const showBanner =
     !!liveStreamProps?.event &&
     dayjs().isBetween(
-      dayjs(liveStreamProps?.event.startShowBannerDateTime),
-      dayjs(liveStreamProps?.event.endShowBannerDateTime),
+      dayjs(liveStreamProps?.event.StartShowBannerDateTime),
+      dayjs(liveStreamProps?.event.EndShowBannerDateTime),
       null,
       "[)"
     );
