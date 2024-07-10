@@ -14,25 +14,37 @@ export const BuiltOnAzure = ({ data }) => {
           data={data}
           href="/consulting/azure"
           className="hover:border-azure hover:text-azure"
-          imgSrc="/images/logos/azure.png"
-          imgAlt="Microsoft Azure Logo"
           text="Built on Microsoft Azure"
+          image={
+            <Image
+              src="/images/logos/azure.png"
+              alt="Microsoft Azure Logo"
+              height={30}
+              width={30}
+            />
+          }
         />
 
         <Link
           data={data}
           href="https://tina.io"
           className="hover:border-tina hover:text-tina"
-          imgSrc="/images/logos/tina-llama-orange.png"
-          imgAlt="TinaCMS logo"
           text="Powered by TinaCMS"
+          image={
+            <Image
+              src="/images/logos/tina-llama-orange.png"
+              alt="TinaCMS logo"
+              height={30}
+              width={22}
+            />
+          }
         />
       </Container>
     </Section>
   );
 };
 
-const Link = ({ data, href, className, imgSrc, imgAlt, text }) => {
+const Link = ({ data, href, className, text, image }) => {
   return (
     <CustomLink
       href={href}
@@ -42,7 +54,7 @@ const Link = ({ data, href, className, imgSrc, imgAlt, text }) => {
         className
       )}
     >
-      <Image src={imgSrc} alt={imgAlt} height={30} width={30} />
+      {image}
       <div className="ml-2 text-center uppercase tracking-widest">{text}</div>
     </CustomLink>
   );
