@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Collection, NumberField, TextField } from "tinacms";
+import { Collection, TextField } from "tinacms";
 
 const datetimeFormat = {
   timeFormat: "hh:mm a",
