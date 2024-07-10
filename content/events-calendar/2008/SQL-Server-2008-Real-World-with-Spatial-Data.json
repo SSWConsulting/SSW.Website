@@ -1,0 +1,22 @@
+{
+  "title": "SQL Server 2008 Real World with Spatial Data",
+  "url": "/images/newsletter-uploads/2008/_2008_11__Do%20you%20keep%20chunks%20of%20work%20small_.htm",
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "/images/events/sydney-ug-thumb.jpg",
+  "presenterName": "Adam Cogan",
+  "presenterProfileUrl": "https://adamcogan.com/",
+  "startDateTime": "2008-11-19T06:45:00Z",
+  "endDateTime": "2008-11-19T10:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassA1927FD8E1DA4C1F800B0C5BC63274B6\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;In this presentation Adam Cogan will demonstrate a real world web mapping application using SQL 2008 spatial capabilities and show you how to build location enabled application and services. Adam will also show a few gotchas in querying spatial data and tips on indexing to get the best performance for your spatial data.</span><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass361B92E73D7243CCA7E63E87DE6FAF41\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;In this presentation Adam Cogan will demonstrate a real world web mapping application using SQL 2008 spatial capabilities and show you how to build location enabled application and services. Adam will also show a few gotchas in querying spatial data and tips on indexing to get the best performance for your spatial data.</span><br></p></div>",
+  "description": "\u200b\n\nDescription:\n\n\u00a0In this presentation Adam Cogan will demonstrate a real world web mapping application using SQL 2008 spatial capabilities and show you how to build location enabled application and services. Adam will also show a few gotchas in querying spatial data and tips on indexing to get the best performance for your spatial data.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30
+}

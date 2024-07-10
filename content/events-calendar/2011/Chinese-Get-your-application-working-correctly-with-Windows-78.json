@@ -1,0 +1,19 @@
+{
+  "title": "Chinese: Get your application working correctly with Windows 7/8",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Non-English Courses",
+  "categoryAnchor": "OverviewForeign",
+  "sessionTitle": "Chinese: Get your application working correctly with Windows 7/8",
+  "sessionTitleAnchor": "ChineseVista",
+  "eventShortDescription": "<div class=\"ExternalClass655C53F9514C404DA6ADD47D7D223AA6\"><div>\u200bWindows 7 and 8 introduced a new security architecture which causes many of your applications to break. This is mainly because of UAC, Virtualization, WRP protection, Session 0 and x64 compatibility issues. This session will help you understand all of these major issues and get your applications working correctly on Windows 7/8.</div></div>",
+  "eventDescription": "<div class=\"ExternalClass655C53F9514C404DA6ADD47D7D223AA6\"><div>\u200bWindows 7 and 8 introduced a new security architecture which causes many of your applications to break. This is mainly because of UAC, Virtualization, WRP protection, Session 0 and x64 compatibility issues. This session will help you understand all of these major issues and get your applications working correctly on Windows 7/8.</div></div>",
+  "description": "\u200bWindows 7 and 8 introduced a new security architecture which causes many of your applications to break. This is mainly because of UAC, Virtualization, WRP protection, Session 0 and x64 compatibility issues. This session will help you understand all of these major issues and get your applications working correctly on Windows 7/8.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

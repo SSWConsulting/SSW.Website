@@ -1,0 +1,19 @@
+{
+  "title": "Migrating from Access Reports to Microsoft SQL Server Reporting Services",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "BI and Reporting Services",
+  "categoryAnchor": "OverviewReportingServices",
+  "sessionTitle": "Migrating from Access Reports to Microsoft SQL Server Reporting Services",
+  "sessionTitleAnchor": "AccessToReporting",
+  "eventShortDescription": "<div class=\"ExternalClass55CA5E48F0054434866167A4BAE85F96\"><div>Microsoft SQL Server Reporting Services 2016&#160;is a&#160;web-based reporting solution from Microsoft. It solves many of the issues with existing reporting solutions, such as deployment, scalability and availability.<br><br>In this session, you will learn about all the important differences between Access Reports and Reporting Services, and equip yourself with the knowledge to make a decision on whether or not to move your reports into Reporting Services. You will also be taken through a real demo of an Access to Reporting Services migration.\u200b\u200b</div></div>",
+  "eventDescription": "<div class=\"ExternalClass55CA5E48F0054434866167A4BAE85F96\"><div>Microsoft SQL Server Reporting Services 2016&#160;is a&#160;web-based reporting solution from Microsoft. It solves many of the issues with existing reporting solutions, such as deployment, scalability and availability.<br><br>In this session, you will learn about all the important differences between Access Reports and Reporting Services, and equip yourself with the knowledge to make a decision on whether or not to move your reports into Reporting Services. You will also be taken through a real demo of an Access to Reporting Services migration.</div></div>",
+  "description": "Microsoft SQL Server Reporting Services 2016\u00a0is a\u00a0web-based reporting solution from Microsoft. It solves many of the issues with existing reporting solutions, such as deployment, scalability and availability.\n\nIn this session, you will learn about all the important differences between Access Reports and Reporting Services, and equip yourself with the knowledge to make a decision on whether or not to move your reports into Reporting Services. You will also be taken through a real demo of an Access to Reporting Services migration.\u200b\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

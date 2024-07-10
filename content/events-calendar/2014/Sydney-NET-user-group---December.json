@@ -1,0 +1,26 @@
+{
+  "title": "Sydney .NET user group - December",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET user group - December",
+  "presenterName": "Craig Woollett ",
+  "startDateTime": "2014-12-17T07:00:00Z",
+  "endDateTime": "2014-12-17T09:00:00Z",
+  "startShowBannerDateTime": "2014-12-16T14:00:00Z",
+  "endShowBannerDateTime": "2014-12-17T10:00:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET User Group Live Stream",
+    "url": "/ssw/NETUG/Live.aspx"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "sessionTitle": "Using virtualisation to Debug Mobile Applications.",
+  "eventShortDescription": "<div class=\"ExternalClass2ABA3EF0D9574F1BBAE5701726C509F5\"><div>Virtualisation is the core of cloud technology but it also provides an opportunity for developers to simulate production environments for ease of testing and debugging. This talk will demonstrate debugging Web API for an Android mobile application using Genymotion and Visual Studio as part of a virtual test network. Also there will be a demonstration of the Genymotion emulator interfacing to Xamarin and the emulator interfacing to a fitness sensor</div><div><br></div><div>About the speaker&#58;</div><div><div>Craig Woollett is a Technical Project Manager and Systems Analyst having delivered Large Software projects for Telstra and Siemens Communications, Including the Telstra T-Hub and&#160;<span style=\"font-size&#58;13px;\">the Bigpond Self install kits. He has lots of stories to tell of introducing devices to the Telstra Network</span></div><div><br></div><br></div><div><br></div></div>",
+  "eventDescription": "<div class=\"ExternalClassC2A8639F0E164B2082E5BC43497272EF\"><p></p><div style=\"font-size&#58;13.3333339691162px;\">Virtualisation is the core of cloud technology but it also provides an opportunity for developers to simulate production environments for ease of testing and debugging. This talk will demonstrate debugging Web API for an Android mobile application using Genymotion and Visual Studio as part of a virtual test network. Also there will be a demonstration of the Genymotion emulator interfacing to Xamarin and the emulator interfacing to a fitness sensor</div><div style=\"font-size&#58;13.3333339691162px;\"><br></div><div style=\"font-size&#58;13.3333339691162px;\">About the speaker&#58;</div><div style=\"font-size&#58;13.3333339691162px;\">Craig Woollett is a Technical Project Manager and Systems Analyst having delivered Large Software projects for Telstra and Siemens Communications, Including the Telstra T-Hub and&#160;<span style=\"font-size&#58;13px;\">the Bigpond Self install kits. He has lots of stories to tell of introducing devices to the Telstra Network\u200b</span></div></div>",
+  "description": "Virtualisation is the core of cloud technology but it also provides an opportunity for developers to simulate production environments for ease of testing and debugging. This talk will demonstrate debugging Web API for an Android mobile application using Genymotion and Visual Studio as part of a virtual test network. Also there will be a demonstration of the Genymotion emulator interfacing to Xamarin and the emulator interfacing to a fitness sensor\n\nAbout the speaker:\n\nCraig Woollett is a Technical Project Manager and Systems Analyst having delivered Large Software projects for Telstra and Siemens Communications, Including the Telstra T-Hub and\u00a0\n\nthe Bigpond Self install kits. He has lots of stories to tell of introducing devices to the Telstra Network",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

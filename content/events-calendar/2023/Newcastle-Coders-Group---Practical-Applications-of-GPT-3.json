@@ -1,0 +1,37 @@
+{
+  "title": "Newcastle Coders Group - Practical Applications of GPT-3",
+  "url": "https://www.meetup.com/newcastle-coders-group/events/290782115/",
+  "thumbnail": "/ssw/NETUG/SSWUpdate/images/Newcastlecoders.jpg",
+  "thumbnailDescription": "Newcastle Coders Group",
+  "presenterName": "Calum Simpson",
+  "presenterProfileUrl": "/people/calum-simpson",
+  "startDateTime": "2023-03-01T07:00:00Z",
+  "endDateTime": "2023-03-01T10:00:00Z",
+  "startShowBannerDateTime": "2023-02-28T13:00:00Z",
+  "endShowBannerDateTime": "2023-03-01T12:00:00Z",
+  "liveStreamUrl": {
+    "description": "Livestream",
+    "url": "/live"
+  },
+  "calendarType": "User Groups",
+  "city": "Newcastle",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass03701D4B0FC94CF58D24B81BBD3CD1D2\">Newcastle Coders Group&#160;at the <a href=\"https&#58;//www.ssw.com.au/ssw/Company/Offices/Newcastle/\">SSW Newcastle office</a><br><br>Unlocking the Potential of GPT-3 - Practical Applications for AI-Powered\r\nSolutions with <a href=\"https&#58;//www.ssw.com.au/people/calum-simpson/\">Calum Simpson</a><br><br>Brace yourself for a mind-blowing experience as SSW Solution Architect&#160;Calum Simpson, the AI aficionado, takes the stage to unveil the awe-inspiring potential of GPT-3. Discover the cutting-edge capabilities of this AI powerhouse, and learn how you can leverage it to revolutionize your work and personal life. With Calum's expertise, you'll be equipped with practical ideas to boost your productivity and efficiency from day one.<br><br>Witness first-hand some of the most impressive GPT-3-powered solutions through Calum's practical demos (including a few &quot;epic fails&quot; that will keep you on the edge of your seat). Get inspired to apply these innovations to your own projects, and become a pioneer in the AI-driven world of tomorrow.<br><br>Don't miss out on this rare opportunity to gain a glimpse into the future. Join Calum for an unforgettable presentation that your descendants will still be talking about for generations to come.&#160;<a href=\"https&#58;//www.meetup.com/newcastle-coders-group/events/290782115/\">RSVP here.</a><br><br>Getting there&#58;<br>&#128652; Public Transport&#58; The closest public transport is the civic tram stop.<br>&#127359;\ufe0f Parking&#58; There is some on-street parking available in Civic Lane and a car park at the Wright Lane car&#160;park.<br></div>",
+  "eventDescription": "<div class=\"ExternalClassA8A52B4316EF49038F4E34E914D2A482\"><div>\u200bUnlocking the Potential of GPT-3 - Practical Applications for AI-Powered Solutions with&#160;<a href=\"https&#58;//www.ssw.com.au/people/calum-simpson/\">Calum Simpson</a><br><br>Brace yourself for a mind-blowing experience as SSW Solution Architect&#160;Calum Simpson, the AI aficionado, takes the stage to unveil the awe-inspiring potential of GPT-3. Discover the cutting-edge capabilities of this AI powerhouse, and learn how you can leverage it to revolutionize your work and personal life. With Calum's expertise, you'll be equipped with practical ideas to boost your productivity and efficiency from day one.<br><br>Witness first-hand some of the most impressive GPT-3-powered solutions through Calum's practical demos (including a few &quot;epic fails&quot; that will keep you on the edge of your seat). Get inspired to apply these innovations to your own projects, and become a pioneer in the AI-driven world of tomorrow.<br><br>Don't miss&#160;out on this rare opportunity to gain a glimpse into the future. Join Calum for an unforgettable presentation that your descendants will still be talking about for generations to come.<br></div></div>",
+  "description": "Newcastle Coders Group\u00a0at the \n\nSSW Newcastle office\n\nUnlocking the Potential of GPT-3 - Practical Applications for AI-Powered\r\nSolutions with \n\nCalum Simpson\n\nBrace yourself for a mind-blowing experience as SSW Solution Architect\u00a0Calum Simpson, the AI aficionado, takes the stage to unveil the awe-inspiring potential of GPT-3. Discover the cutting-edge capabilities of this AI powerhouse, and learn how you can leverage it to revolutionize your work and personal life. With Calum's expertise, you'll be equipped with practical ideas to boost your productivity and efficiency from day one.\n\nWitness first-hand some of the most impressive GPT-3-powered solutions through Calum's practical demos (including a few \"epic fails\" that will keep you on the edge of your seat). Get inspired to apply these innovations to your own projects, and become a pioneer in the AI-driven world of tomorrow.\n\nDon't miss out on this rare opportunity to gain a glimpse into the future. Join Calum for an unforgettable presentation that your descendants will still be talking about for generations to come.\u00a0\n\nRSVP here.\n\nGetting there:\n\n\ud83d\ude8c Public Transport: The closest public transport is the civic tram stop.\n\n\ud83c\udd7f\ufe0f Parking: There is some on-street parking available in Civic Lane and a car park at the Wright Lane car\u00a0park.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "jndjad5GSAs",
+  "externalPresenters": [
+    {
+      "LookupId": 27,
+      "LookupValue": "Calum Simpson"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/calum-simpson.mdx"
+    }
+  ]
+}

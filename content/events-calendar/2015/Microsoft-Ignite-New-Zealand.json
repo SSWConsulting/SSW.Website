@@ -1,0 +1,20 @@
+{
+  "title": "Microsoft Ignite, New Zealand",
+  "url": "https://msignite.nz/",
+  "thumbnail": "/ssw/EventsCalendar/Images/ms-ignite-NZ.jpg",
+  "thumbnailDescription": "Microsoft Ignite, New Zealand",
+  "presenterName": "Adam Cogan",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
+  "startDateTime": "2015-08-31T23:00:00Z",
+  "endDateTime": "2015-09-04T08:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Auckland",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "What's new in Visual Studio 2015 and ALM 2015 \u2013 Parts 1 and 2",
+  "eventShortDescription": "<div class=\"ExternalClass3DAD6330E2254BC195AA397097B42972\"><p>\u200bVisual Studio 2015 is going to be a huge change for both windows and non-windows developers. Thanks to a new/refreshing/cool/awesome change of attitude, Microsoft is embracing the winning tools in the development space and is building them into the next version of Visual Studio. The open sourcing of .NET Core 5 and ASP.NET 5 along with the release of the free Visual Studio Community Edition and the upcoming release of Windows 10 for all devices makes for some very exciting times ahead. Come see Adam give you a tour and expand your development horizons. This session is guaranteed to make you even more productive and highlight why Visual Studio is still the best IDE for developing software. What's new in VS 2015 and ALM 2015&#58; *All the best features from .NET versions *The cool stuff in Application Insights *New tracing and debugging features in VS2015 \u2013 Code Lens, Intellitrace, PerfTips *Middle Tier testing - Smart Unit Tests *Roslyn \u2013 the new C# compiler *New C# Language features *The big game changer \u2013 Windows 10 *Shared Projects vs Portable Class Libraries (PCLs) *Mobile Development Tools \u2013 Hybrid (Cordova), Native and Cross Platform (Xamarin) *Visual Studio Community and open source .NET 5 Core ASP.NET 5 (was vNext) \u2013 New architecture and tools (AngularJS, Bower, Grunt, NPM) *The power of K *Azure Deployment Slots - Continuous Integration, Testing in Production *Front end testing frameworks for JavaScript\u200b</p></div>",
+  "description": "\u200bVisual Studio 2015 is going to be a huge change for both windows and non-windows developers. Thanks to a new/refreshing/cool/awesome change of attitude, Microsoft is embracing the winning tools in the development space and is building them into the next version of Visual Studio. The open sourcing of .NET Core 5 and ASP.NET 5 along with the release of the free Visual Studio Community Edition and the upcoming release of Windows 10 for all devices makes for some very exciting times ahead. Come see Adam give you a tour and expand your development horizons. This session is guaranteed to make you even more productive and highlight why Visual Studio is still the best IDE for developing software. What's new in VS 2015 and ALM 2015: *All the best features from .NET versions *The cool stuff in Application Insights *New tracing and debugging features in VS2015 \u2013 Code Lens, Intellitrace, PerfTips *Middle Tier testing - Smart Unit Tests *Roslyn \u2013 the new C# compiler *New C# Language features *The big game changer \u2013 Windows 10 *Shared Projects vs Portable Class Libraries (PCLs) *Mobile Development Tools \u2013 Hybrid (Cordova), Native and Cross Platform (Xamarin) *Visual Studio Community and open source .NET 5 Core ASP.NET 5 (was vNext) \u2013 New architecture and tools (AngularJS, Bower, Grunt, NPM) *The power of K *Azure Deployment Slots - Continuous Integration, Testing in Production *Front end testing frameworks for JavaScript\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,54 @@
+{
+  "title": "Education in the Cloud \u2013 Campion's Digital Journey",
+  "url": "/ssw/NETUG/Melbourne.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-MelbourneUG.jpg",
+  "thumbnailDescription": "Melbourne .NET User Group",
+  "presenterName": "Michael Smedley, Patrick Zhao & Alexander Candy-Levey",
+  "startDateTime": "2022-06-15T08:00:00Z",
+  "endDateTime": "2022-06-15T12:00:00Z",
+  "startShowBannerDateTime": "2022-06-14T14:00:00Z",
+  "endShowBannerDateTime": "2022-06-15T13:00:00Z",
+  "liveStreamUrl": {
+    "description": "Livestream",
+    "url": "/live"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassA9BA076840A24350A1E1097BFCB3E371\"><p>\u200bJune&#160;.NET User Group&#58;&#160;Education in the Cloud \u2013 Campion's Digital Journey<br></p><p>Come see how four million students are moving from paper to digital, leveraging containerized microservices for scale, and integrating with a complex partner network as well as the national schools ecosystem.<br></p><p>Campion Education is the largest supplier of education resources to primary and secondary schools in Australia, including print, digital and stationery.<br></p><p>Years ago,&#160;Campion sourced an e-reader platform from the U.S. as students migrated away from paper-based textbooks.&#160;Working with SSW, Campion have undertaken the immense task of regaining ownership by building their own e-reader platform, and solving complex technical challenges along the way.<br></p><p>In this talk, the inter-organisational team comprised of Patrick Zhao and Michael Smedley from SSW, and Alexander Candy-Levy from Campion, will take us through the complexities of dealing with multiple school IT systems across many states, complex book licensing and API management with various publishers. All while providing a stable user experience for hundreds of thousands of students and teachers who depend on their textbooks every day.<br></p><p>This talk will focus on the architecture to accommodate the at-scale performance needed, the Single Sign-on (SSO), Learning Tools Interoperability (LTI) and Learning Management System (LMS) required to allow other publishers and schools to authenticate, and some of the deployment and cloud setup required by the SaaS product.<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassD4992501619E4964B39FCFA1D6B4F531\"><p>\u200bJune&#160;.NET User Group&#58;&#160;Education in the Cloud \u2013 Campion's Digital Journey<br></p><p>Come see how four million students are moving from paper to digital, leveraging containerized microservices for&#160;scale,&#160;and integrating&#160;with&#160;a complex partner network as well as the national schools ecosystem.<br></p><p>Campion Education is the largest supplier of education resources to primary and secondary schools in Australia, including print, digital and stationery.<br></p><p>Years ago,&#160;Campion sourced an e-reader platform from the U.S. as students migrated away from paper-based textbooks.&#160;Working with SSW, Campion have undertaken the immense task of&#160;regaining ownership by building their own e-reader platform, and solving complex technical challenges along the way.<br></p><p>In this talk, the inter-organisational team comprised of&#160;Patrick Zhao and Michael Smedley from SSW, and Alexander Candy-Levy from Campion,&#160;will take us through the complexities of dealing with multiple school IT systems across many states, complex book licensing and API management with various publishers. All while providing a stable user experience for hundreds of thousands of students and teachers who depend on their textbooks every day.<br></p><p>This talk will focus on the architecture to accommodate the at-scale performance needed, the Single Sign-on (SSO), Learning Tools Interoperability (LTI) and Learning Management System (LMS) required to allow other publishers and schools to authenticate, and some of the deployment and cloud setup required by the SaaS product.<br></p><p><br></p></div>",
+  "description": "\u200bJune\u00a0.NET User Group:\u00a0Education in the Cloud \u2013 Campion's Digital Journey\n\nCome see how four million students are moving from paper to digital, leveraging containerized microservices for scale, and integrating with a complex partner network as well as the national schools ecosystem.\n\nCampion Education is the largest supplier of education resources to primary and secondary schools in Australia, including print, digital and stationery.\n\nYears ago,\u00a0Campion sourced an e-reader platform from the U.S. as students migrated away from paper-based textbooks.\u00a0Working with SSW, Campion have undertaken the immense task of regaining ownership by building their own e-reader platform, and solving complex technical challenges along the way.\n\nIn this talk, the inter-organisational team comprised of Patrick Zhao and Michael Smedley from SSW, and Alexander Candy-Levy from Campion, will take us through the complexities of dealing with multiple school IT systems across many states, complex book licensing and API management with various publishers. All while providing a stable user experience for hundreds of thousands of students and teachers who depend on their textbooks every day.\n\nThis talk will focus on the architecture to accommodate the at-scale performance needed, the Single Sign-on (SSO), Learning Tools Interoperability (LTI) and Learning Management System (LMS) required to allow other publishers and schools to authenticate, and some of the deployment and cloud setup required by the SaaS product.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "uPIcavVx0rI",
+  "evalFormURL": {
+    "description": "Evaluation form",
+    "url": "https://forms.microsoft.com/Pages/ResponsePage.aspx?id=NHwvrDW56Uir3BHl1PyysPj1WXHPfJ5OhXxqnVi-9WJURVVZQloxSU1YNjY4QUhJNDZGNFUzSVlJUiQlQCN0PWcu"
+  },
+  "externalPresenters": [
+    {
+      "LookupId": 20,
+      "LookupValue": "Alexander Candy-Levey"
+    },
+    {
+      "LookupId": 18,
+      "LookupValue": "Michael Smedley"
+    },
+    {
+      "LookupId": 19,
+      "LookupValue": "Patrick Zhao"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/alexander-candy-levey.mdx"
+    },
+    {
+      "presenter": "content/presenters/michael-smedley.mdx"
+    },
+    {
+      "presenter": "content/presenters/patrick-zhao.mdx"
+    }
+  ]
+}

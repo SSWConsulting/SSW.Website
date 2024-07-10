@@ -13,20 +13,20 @@ export const useFormatDates = (event: EventTrimmed, formatLong: boolean) => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       setRelativeDate(
-        formatRelativeEventDate(event.StartDateTime, event.EndDateTime)
+        formatRelativeEventDate(event.startDateTime, event.endDateTime)
       );
 
       if (formatLong) {
         setFormattedDate(
-          formatEventLongDate(event.StartDateTime, event.EndDateTime)
+          formatEventLongDate(event.startDateTime, event.endDateTime)
         );
       } else {
         setFormattedDate(
-          formatEventDate(event.StartDateTime, event.EndDateTime)
+          formatEventDate(event.startDateTime, event.endDateTime)
         );
       }
     }
-  }, [event.StartDateTime, event.EndDateTime, formatLong]);
+  }, [event.startDateTime, event.endDateTime, formatLong]);
 
   return { relativeDate, formattedDate };
 };

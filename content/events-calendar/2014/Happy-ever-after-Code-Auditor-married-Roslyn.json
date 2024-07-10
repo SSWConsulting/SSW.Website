@@ -1,0 +1,21 @@
+{
+  "title": "Happy ever after: Code Auditor married Roslyn",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2014-11-18T13:00:00Z",
+  "endDateTime": "2014-11-18T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "categoryAnchor": "OverviewOther",
+  "sessionTitle": "Happy ever after: Code Auditor married Roslyn",
+  "sessionTitleAnchor": "CodeAuditormarriedRoslyn",
+  "eventShortDescription": "<div class=\"ExternalClass42F1324119D54476A1EB630D7917E884\"><p>\u200bAt SSW we care about quality. Actually we care about it some much that we have built a tool named Code Auditor which scans code and reports issues. It\u2019s not really a secret that our rules relied on C# snippets and Regex patterns. Over time - as the C# language evolved - we started seeing false positives. Yikes! Then we met Roslyn \u2013 the new .NET compiler platform \u2013 which opened a new dimension in Code Analysis world. We drive Mercedes now. Want to have a test drive? Join me in this session and you\u2019ll learn what Roslyn can do for you. Forget the demos, see the real world code.</p></div>",
+  "eventDescription": "<div class=\"ExternalClass83F1F9EE30944206A16269FE5B74EFDD\"><p>\u200bAt SSW we care about quality. Actually we care about it some much that we have built a tool named Code Auditor which scans code and reports issues. It\u2019s not really a secret that our rules relied on C# snippets and Regex patterns. Over time - as the C# language evolved - we started seeing false positives. Yikes! Then we met Roslyn \u2013 the new .NET compiler platform \u2013 which opened a new dimension in Code Analysis world. We drive Mercedes now. Want to have a test drive? Join me in this session and you\u2019ll learn what Roslyn can do for you. Forget the demos, see the real world code.\u200b</p></div>",
+  "description": "\u200bAt SSW we care about quality. Actually we care about it some much that we have built a tool named Code Auditor which scans code and reports issues. It\u2019s not really a secret that our rules relied on C# snippets and Regex patterns. Over time - as the C# language evolved - we started seeing false positives. Yikes! Then we met Roslyn \u2013 the new .NET compiler platform \u2013 which opened a new dimension in Code Analysis world. We drive Mercedes now. Want to have a test drive? Join me in this session and you\u2019ll learn what Roslyn can do for you. Forget the demos, see the real world code.",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

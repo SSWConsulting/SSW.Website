@@ -1,0 +1,21 @@
+{
+  "title": "Migrating from TFS to the cloud... without losing your mind",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "startDateTime": "2017-01-17T22:00:00Z",
+  "endDateTime": "2017-01-18T06:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "RapidSharePoint",
+  "sessionTitle": "Migrating from TFS to the cloud... without losing your mind",
+  "sessionTitleAnchor": "MigratingfromTFStothecloudwithoutlosingyourmind",
+  "eventShortDescription": "<div class=\"ExternalClass4F8EF37456A74026B59762B41E0301E8\"><p>\u200bAre you tired of upgrading and maintaining your on-premise TFS and just want to use the VSTS portal instead?&#160;</p>\u2022&#160;Is your New Years Resolution to move to VSTS ... but you don't how to do it?&#160;<br>\u2022&#160;Is your TFS server the only server in the office that you haven't move the cloud?<br>\u2022&#160;Are you worried about losing your TFS history when you moved to VSTS?<br>If your answer is &quot;Yes&quot; to any of these questions, then this is the sessions for you. Danijel will save you days of headaches and research by explaining what options you have at your disposal and the issu es you will have to deal with before you can put this to bed.<p><br>&#160;</p></div>",
+  "eventDescription": "<div class=\"ExternalClass266F4CE782424E118E68D28860C086CA\"><p>\u200bAre you tired of upgrading and maintaining your on-premise TFS and just want to use the VSTS portal instead?&#160;</p>\u2022&#160;Is your New Years Resolution to move to VSTS ... but you don't how to do it?&#160;<br>\u2022&#160;Is your TFS server the only server in the office that you haven't move the cloud?<br>\u2022&#160;Are you worried about losing your TFS history when you moved to VSTS?<br>If your answer is &quot;Yes&quot; to any of these questions, then this is the sessions for you. Danijel will save you days of headaches and research by explaining what options you have at your disposal and the issu es you will have to deal with before you can put this to bed.\u200b<p><br>&#160;</p></div>",
+  "description": "\u200bAre you tired of upgrading and maintaining your on-premise TFS and just want to use the VSTS portal instead?\u00a0\n\n\u2022\u00a0Is your New Years Resolution to move to VSTS ... but you don't how to do it?\u00a0\n\n\u2022\u00a0Is your TFS server the only server in the office that you haven't move the cloud?\n\n\u2022\u00a0Are you worried about losing your TFS history when you moved to VSTS?\n\nIf your answer is \"Yes\" to any of these questions, then this is the sessions for you. Danijel will save you days of headaches and research by explaining what options you have at your disposal and the issu es you will have to deal with before you can put this to bed.\n\n\u00a0",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,19 @@
+{
+  "title": "What's new in Reporting Services 2016 + Developing Custom Report Items",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "BI and Reporting Services",
+  "categoryAnchor": "OverviewReportingServices",
+  "sessionTitle": "What's new in Reporting Services 2016 + Developing Custom Report Items",
+  "sessionTitleAnchor": "ReportingServices2016",
+  "eventShortDescription": "<div class=\"ExternalClass6C91BAF6636846D486BEADE15B0C8B48\"><div>Reporting Services makes viewing your data a breeze and SQL Server 2016 brings database reporting to a whole new level. In this session you will learn how to take full advantage of the new Report Designer that is integrated into Visual Studio 2015. We will discuss the core product improvements, reporting improvements, the better integration, and the richer developer experience.<br><br>You will also discover how to create and implement Custom Report Items - custom data visualization controls that allow you to make powerful reports.\u200b</div></div>",
+  "eventDescription": "<div class=\"ExternalClass6C91BAF6636846D486BEADE15B0C8B48\"><div>Reporting Services makes viewing your data a breeze and SQL Server 2016 brings database reporting to a whole new level. In this session you will learn how to take full advantage of the new Report Designer that is integrated into Visual Studio 2015. We will discuss the core product improvements, reporting improvements, the better integration, and the richer developer experience.<br><br>You will also discover how to create and implement Custom Report Items - custom data visualization controls that allow you to make powerful reports.\u200b</div></div>",
+  "description": "Reporting Services makes viewing your data a breeze and SQL Server 2016 brings database reporting to a whole new level. In this session you will learn how to take full advantage of the new Report Designer that is integrated into Visual Studio 2015. We will discuss the core product improvements, reporting improvements, the better integration, and the richer developer experience.\n\nYou will also discover how to create and implement Custom Report Items - custom data visualization controls that allow you to make powerful reports.\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

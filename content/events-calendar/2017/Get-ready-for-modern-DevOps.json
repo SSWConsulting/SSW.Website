@@ -1,0 +1,21 @@
+{
+  "title": "\u200bGet ready for modern DevOps",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "startDateTime": "2017-07-18T14:00:00Z",
+  "endDateTime": "2017-07-18T16:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "DevOps",
+  "categoryAnchor": "OverviewDevOps",
+  "sessionTitle": "\u200bGet ready for modern DevOps",
+  "sessionTitleAnchor": "ReadyForModernDevOps",
+  "eventShortDescription": "<div class=\"ExternalClass14D14EFDAFB8467481793A027CC64F7E\"><div>Modern DevOps is a highway to greater business value and it works cross-platform. Automated deployments solved a handover problem, Application Monitoring Platforms closed the feedback and crash reporting gap, and containers made the \u201cworks on my machine\u201d stereotype real. Next mission&#58; automated environments.</div><div><br></div><div>In this session, Danijel will start by identifying the common bad practices to give you some quick wins. His experience starts from the smallest businesses and extends to the largest businesses including some of the largest banks. You will learn why Zero Based&#160;</div><div>Infrastructure is the next step of a DevOps evolution, why Cloud is your best friend, and how to integrate this approach back into your deployment pipeline. You will walk away with a solid understanding of what Infrastructure as Code is and the main advantages, leaving you with nothing to worry about but your code.<br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass8D647FDD7E094995AD1E25FDA7F6C3E4\"><div>\u200bModern DevOps is a highway to greater business value and it works cross-platform. Automated deployments solved a handover problem, Application Monitoring Platforms closed the feedback and crash reporting gap, and containers made the \u201cworks on my machine\u201d stereotype real. Next mission&#58; automated environments.<br></div><div><br></div><div>In this session, Danijel will start by identifying the common bad practices to give you some quick wins. His experience starts from the smallest businesses and extends to the largest businesses including some of the largest banks. You will learn why Zero Based&#160;</div><div>Infrastructure is the next step of a DevOps evolution, why Cloud is your best friend, and how to integrate this approach back into your deployment pipeline. You will walk away with a solid understanding of what Infrastructure as Code is and the main advantages, leaving you with nothing to worry about but your code.<br></div></div>",
+  "description": "Modern DevOps is a highway to greater business value and it works cross-platform. Automated deployments solved a handover problem, Application Monitoring Platforms closed the feedback and crash reporting gap, and containers made the \u201cworks on my machine\u201d stereotype real. Next mission: automated environments.\n\nIn this session, Danijel will start by identifying the common bad practices to give you some quick wins. His experience starts from the smallest businesses and extends to the largest businesses including some of the largest banks. You will learn why Zero Based\u00a0\n\nInfrastructure is the next step of a DevOps evolution, why Cloud is your best friend, and how to integrate this approach back into your deployment pipeline. You will walk away with a solid understanding of what Infrastructure as Code is and the main advantages, leaving you with nothing to worry about but your code.",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

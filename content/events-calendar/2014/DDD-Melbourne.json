@@ -1,0 +1,19 @@
+{
+  "title": "DDD Melbourne",
+  "url": "http://www.dddmelbourne.com/",
+  "thumbnail": "/ssw/EventsCalendar/Images/ddd-melbourne.png",
+  "thumbnailDescription": "DDD Melbourne",
+  "startDateTime": "2014-07-18T23:00:00Z",
+  "endDateTime": "2014-07-19T07:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "DDD Melbourne ",
+  "eventShortDescription": "<div class=\"ExternalClass7F21BC0DB202429A90EFC24D7D77F284\">\u200bSSW will have 2 presenters at DDD Melbourne this year&#58;<div><ul><li>Damian Brady -&#160;Octopus Deploy and how to stop deploying like an idiot\u200b - 11.15am-12pm<br></li><li>\u200b\u200bBen Cull -&#160;Taking other people's money&#58; The state of payments in Australia - 1pm-1.45pm&#160;\u200b<br></li></ul><div>See the full DDD agenda for more details&#58;&#160;http&#58;//www.dddmelbourne.com/agenda</div></div></div>",
+  "eventDescription": "<div class=\"ExternalClass100401BF0FDA4C1B9E2203DB9CA93662\"><p>\u200b\u200bSSW will have 2 presenters at DDD Melbourne this year&#58;</p><div><ul><li>Damian Brady -&#160;Octopus Deploy and how to stop deploying like an idiot\u200b - 11.15am-12pm<br></li><li>\u200b\u200bBen Cull -&#160;Taking other people's money&#58; The state of payments in Australia - 1pm-1.45pm&#160;\u200b<br></li></ul><div>See the full DDD agenda for more details&#58;&#160;http&#58;//www.dddmelbourne.com/agenda</div></div></div>",
+  "description": "\u200bSSW will have 2 presenters at DDD Melbourne this year:\n\nDamian Brady -\u00a0Octopus Deploy and how to stop deploying like an idiot\u200b - 11.15am-12pm\n\n\u200b\u200bBen Cull -\u00a0Taking other people's money: The state of payments in Australia - 1pm-1.45pm\u00a0\u200b\n\nSee the full DDD agenda for more details:\u00a0http://www.dddmelbourne.com/agenda",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

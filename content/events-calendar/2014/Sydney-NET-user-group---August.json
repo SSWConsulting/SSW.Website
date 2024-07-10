@@ -1,0 +1,27 @@
+{
+  "title": "Sydney .NET user group - August",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET user group - August",
+  "presenterName": "Adam Cogan ",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
+  "startDateTime": "2014-08-20T08:00:00Z",
+  "endDateTime": "2014-08-20T10:00:00Z",
+  "startShowBannerDateTime": "2014-08-19T14:00:00Z",
+  "endShowBannerDateTime": "2014-08-20T13:55:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET User Group Live Stream",
+    "url": "/ssw/NETUG/Live.aspx"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "sessionTitle": "What\u2019s New in Visual Studio + ALM",
+  "eventShortDescription": "<div class=\"ExternalClass76D0558D4D6D452C9A82ADFAD69CDCE1\">\u200bThe&#160;latest versions of Visual Studio and TFS are packed full of great new tools. Among the highlights are improved tools for Windows Phone 8.1 and Microsoft Azure, tooling support for Apache Cordova, ASP.NET vNext preview, the great new TFS Rest API, Application Insights and well as a bunch of cross-platform additions to make the mobile development experience fantastic. Come along and chec\u200bk out how you should be building your next application. Objective&#58; Update attendees to the great few features in Visual Studio and TFS.<br><br></div>",
+  "eventDescription": "<div class=\"ExternalClass7E70CA4C9E064A29A64D0C50B637DF4E\">\u200b\u200bThe&#160;latest versions of Visual Studio and TFS are packed full of great new tools. Among the highlights are improved tools for Windows Phone 8.1 and Microsoft Azure, tooling support for Apache Cordova, ASP.NET vNext preview, the great new TFS Rest API, Application Insights and well as a bunch of cross-platform additions to make the mobile development experience fantastic. Come along and check out how you should be building your next application. Objective&#58; Update attendees to the great few features in Visual Studio and TFS.<br><br></div>",
+  "description": "\u200bThe\u00a0latest versions of Visual Studio and TFS are packed full of great new tools. Among the highlights are improved tools for Windows Phone 8.1 and Microsoft Azure, tooling support for Apache Cordova, ASP.NET vNext preview, the great new TFS Rest API, Application Insights and well as a bunch of cross-platform additions to make the mobile development experience fantastic. Come along and chec\u200bk out how you should be building your next application. Objective: Update attendees to the great few features in Visual Studio and TFS.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

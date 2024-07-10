@@ -1,0 +1,41 @@
+{
+  "title": "March Online User Group: Federated Identity:  \ud83d\udd11 An introduction to OAuth2 \u2014> Open Id Connect \u2014> IdentityServer 5",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": "Online User Group",
+  "presenterName": "Anthony Nguyen",
+  "startDateTime": "2021-03-17T07:00:00Z",
+  "endDateTime": "2021-03-17T11:00:00Z",
+  "startShowBannerDateTime": "2021-03-16T13:00:00Z",
+  "endShowBannerDateTime": "2021-03-17T12:00:00Z",
+  "liveStreamUrl": {
+    "description": "/ssw/Live/",
+    "url": "/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Online",
+  "enabled": true,
+  "category": "Azure",
+  "eventShortDescription": "<div class=\"ExternalClass56367923906D4B31A53E515634802C0F\"><div><div><table class=\"ms-formtable\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" role=\"presentation\" style=\"margin-top&#58;8px;\"><tbody><tr><td valign=\"top\" class=\"ms-formbody\" width=\"350px\"><div><div><div class=\"ExternalClassADF46C4AFF0241D6AE5903D423419376\"><div><strong>SSW User Groups March&#58;</strong>&#160;We've been successfully running these online, but if you're in Sydney we'd love to see you in person.&#160;RSVP to penny@ssw.com.au with the subject&#58; <strong>&quot;I want 1 of the 10 spots&quot;</strong> before Mon&#160;15th March&#160;(masks maybe&#160;required).<br></div><div><br></div><div>Join us ONLINE -----&gt; https&#58;//www.ssw.com.au/live<br></div><div><br></div><div>Session&#58;&#160;Federated Identity&#58;&#160; &#128273; An introduction to OAuth2 \u2014&gt; Open Id Connect \u2014&gt; Identity Server 5 with Anthony Ngyuen<br></div><div><br></div><div><p>Securing your application is bloody important. With so much jargon to sift through, it's easy to get lost, for example there's SSO, OAuth2, SAML 2.0, OpenID Connect, Federated Identity, 2FA, &amp; MFA. Just to name a few! &#128561;</p><p><br>In this talk, Anthony will take an in depth look at Federated Identity using OpenID Connect and OAuth2 Framework for ASP. NET Core using Duende Identity Server (aka Identity Server 5). You will walk away knowing how to navigate the security options and avoid the madness.<br></p></div></div></div></div></td></tr></tbody></table></div><br></div><div><br><br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass8A7F6A9CB42C4DC1AE2ACF033DBC14AE\"><div><strong>\u200b\u200b</strong></div><div><div><strong></strong></div><div><div><strong>SSW User Groups March&#58;</strong>&#160;We've been successfully running these online, but if you're in Sydney we'd love to see you in person.&#160;RSVP to penny@ssw.com.au with the subject&#58;&#160;<strong>&quot;I want 1 of the 10 spots&quot;</strong>&#160;before Mon&#160;15th March&#160;(masks maybe&#160;required).<br></div><div><br></div><div>Join us ONLINE -----&gt; https&#58;//www.ssw.com.au/live<br></div><div><br></div><div>Session&#58;&#160;Federated Identity&#58;&#160; &#128273; An introduction to OAuth2 \u2014&gt; Open Id Connect \u2014&gt; Identity Server 5 with Anthony Ngyuen\u200b<br></div><div><br></div><div><p>Securing your application is bloody important. With so much jargon to sift through, it's easy to get lost, for example there's SSO, OAuth2, SAML 2.0, OpenID Connect, Federated Identity, 2FA, &amp; MFA. Just to name a few!&#160;&#128561;</p><p><br>In this talk, Anthony will take an in depth look at Federated Identity using OpenID Connect and OAuth2 Framework for ASP. NET Core using Duende Identity Server (aka Identity Server 5). You will walk away knowing how to navigate the security options and avoid the madness.\u200b<br></p></div><br></div></div><p><br></p></div>",
+  "description": "SSW User Groups March:\n\n\u00a0We've been successfully running these online, but if you're in Sydney we'd love to see you in person.\u00a0RSVP to penny@ssw.com.au with the subject: \n\n\"I want 1 of the 10 spots\"\n\n before Mon\u00a015th March\u00a0(masks maybe\u00a0required).\n\nJoin us ONLINE -----> https://www.ssw.com.au/live\n\nSession:\u00a0Federated Identity:\u00a0 \ud83d\udd11 An introduction to OAuth2 \u2014> Open Id Connect \u2014> Identity Server 5 with Anthony Ngyuen\n\nSecuring your application is bloody important. With so much jargon to sift through, it's easy to get lost, for example there's SSO, OAuth2, SAML 2.0, OpenID Connect, Federated Identity, 2FA, & MFA. Just to name a few! \ud83d\ude31\n\nIn this talk, Anthony will take an in depth look at Federated Identity using OpenID Connect and OAuth2 Framework for ASP. NET Core using Duende Identity Server (aka Identity Server 5). You will walk away knowing how to navigate the security options and avoid the madness.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "gLPuXYaA98w",
+  "evalFormURL": {
+    "description": "Feedback Form",
+    "url": "https://forms.office.com/Pages/ResponsePage.aspx?id=NHwvrDW56Uir3BHl1PyysPj1WXHPfJ5OhXxqnVi-9WJUODBGTkpQRUdVMEdQS1E3OFg3T09MVVVXSSQlQCN0PWcu"
+  },
+  "presenterDescription": "<div class=\"ExternalClass8405839E665A42198B9A54DB683F4226\"><p></p><br></div><p>\u200b</p>",
+  "externalPresenters": [
+    {
+      "LookupId": 9,
+      "LookupValue": "Anthony Ngyuen"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/anthony-ngyuen.mdx"
+    }
+  ]
+}

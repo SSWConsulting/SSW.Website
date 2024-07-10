@@ -1,0 +1,16 @@
+{
+  "title": "TechEd Sydney 2014",
+  "url": "http://www.microsoft.com/en-au/teched/default.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/TechEd-Syd-2014.png",
+  "thumbnailDescription": "TechEd Sydney 2014",
+  "presenterName": "TechEd Sydney 2014",
+  "startDateTime": "2014-10-26T22:00:00Z",
+  "endDateTime": "2014-10-28T07:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

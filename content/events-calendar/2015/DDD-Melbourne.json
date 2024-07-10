@@ -1,0 +1,18 @@
+{
+  "title": "DDD Melbourne",
+  "url": "http://www.dddmelbourne.com/",
+  "thumbnail": "/ssw/EventsCalendar/Images/DDD-melbourne2015.jpg",
+  "thumbnailDescription": "DDD Melbourne",
+  "startDateTime": "2015-08-07T22:00:00Z",
+  "endDateTime": "2015-08-08T08:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassD21F2C59A97A4CB49A99B87AC2D5120A\"><p>\u200bDDD Melbourne is a non profit community event run by developers, for developers &amp; will be held on Sat Aug 8th 2015</p></div>",
+  "eventDescription": "<div class=\"ExternalClass54654A518C35488BBB5DF6FC0EBA7281\"><p>\u200bDDD Melbourne is a non profit community event run by developers, for developers &amp; will be held on Sat Aug 8th 2015\u200b</p></div>",
+  "description": "\u200bDDD Melbourne is a non profit community event run by developers, for developers & will be held on Sat Aug 8th 2015",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

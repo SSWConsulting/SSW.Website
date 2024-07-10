@@ -1,0 +1,21 @@
+{
+  "title": "Chasing the Holy Grail with Release Management",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2015-01-20T13:00:00Z",
+  "endDateTime": "2015-01-20T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "categoryAnchor": "OverviewOther",
+  "sessionTitle": "Chasing the Holy Grail with Release Management",
+  "sessionTitleAnchor": "ReleaseManagement",
+  "eventShortDescription": "<div class=\"ExternalClass484C0733D26F40718A3BBFD1B6C52D8E\"><p>\u200bIndiana Jones had a great adventure when he was searching for the Holy Grail. But hey\u2026 software development is not far behind, especially if your deployment procedure requires manual steps. You can feel sweat dripping off your forehead before you go to production and there\u2019s always a chance you\u2019ll step on a broken board. Exciting, isn\u2019t it? Not really. It\u2019s time you start releasing your software with confidence and enjoy watching Indiana on TV rather than being in his shoes at 3 AM at work. This session will show you how easy it is to fully automate your deployment procedure using Release Management.</p></div>",
+  "eventDescription": "<div class=\"ExternalClassC8C7B33A027A4813A7E4A92883F5CA0B\"><p>\u200bIndiana Jones had a great adventure when he was searching for the Holy Grail. But hey\u2026 software development is not far behind, especially if your deployment procedure requires manual steps. You can feel sweat dripping off your forehead before you go to production and there\u2019s always a chance you\u2019ll step on a broken board. Exciting, isn\u2019t it? Not really. It\u2019s time you start releasing your software with confidence and enjoy watching Indiana on TV rather than being in his shoes at 3 AM at work. This session will show you how easy it is to fully automate your deployment procedure using Release Management.\u200b</p></div>",
+  "description": "\u200bIndiana Jones had a great adventure when he was searching for the Holy Grail. But hey\u2026 software development is not far behind, especially if your deployment procedure requires manual steps. You can feel sweat dripping off your forehead before you go to production and there\u2019s always a chance you\u2019ll step on a broken board. Exciting, isn\u2019t it? Not really. It\u2019s time you start releasing your software with confidence and enjoy watching Indiana on TV rather than being in his shoes at 3 AM at work. This session will show you how easy it is to fully automate your deployment procedure using Release Management.",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

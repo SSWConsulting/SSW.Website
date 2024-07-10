@@ -1,0 +1,19 @@
+{
+  "title": "eXtreme Programming for .NET Developers",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewVSNet",
+  "sessionTitle": "eXtreme Programming for .NET Developers",
+  "sessionTitleAnchor": "XPForDotNetDev",
+  "eventShortDescription": "<div class=\"ExternalClass56A4A3581D2C40B0B5D408960D742594\"><div>\u200b<span style=\"color&#58;#ed0033;\">*Discontinued*&#160;\u200b</span>\u200b</div><div><br></div><div>Presented by Adam Cogan, this session will cover how to incorporate eXtreme Programming practices with .NET- connected technologies to create high quality, low cost software. Adam will walk you through the 12 tenets of eXtreme Programming and then tell you what works and what doesn't.&#160;<br>How to implement is discussed and demo'ed in the context of Visual Studio.\u200b\u200b</div></div>",
+  "eventDescription": "<div class=\"ExternalClass56A4A3581D2C40B0B5D408960D742594\"><div>\u200b<span style=\"color&#58;#ed0033;\">*Discontinued*&#160;\u200b</span>\u200b</div><div><br></div><div>Presented by Adam Cogan, this session will cover how to incorporate eXtreme Programming practices with .NET- connected technologies to create high quality, low cost software. Adam will walk you through the 12 tenets of eXtreme Programming and then tell you what works and what doesn't.&#160;</div><div>How to implement is discussed and demo'ed in the context of Visual Studio.\u200b</div></div>",
+  "description": "\u200b\n\n*Discontinued*\u00a0\u200b\n\n\u200b\n\nPresented by Adam Cogan, this session will cover how to incorporate eXtreme Programming practices with .NET- connected technologies to create high quality, low cost software. Adam will walk you through the 12 tenets of eXtreme Programming and then tell you what works and what doesn't.\u00a0\n\nHow to implement is discussed and demo'ed in the context of Visual Studio.\u200b\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

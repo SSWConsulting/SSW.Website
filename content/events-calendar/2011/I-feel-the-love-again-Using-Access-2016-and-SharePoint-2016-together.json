@@ -1,0 +1,19 @@
+{
+  "title": "I feel the love again? Using Access 2016 and SharePoint 2016 together",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "SharePoint",
+  "categoryAnchor": "OverviewSharePoint",
+  "sessionTitle": "I feel the love again? Using Access 2016 and SharePoint 2016 together",
+  "sessionTitleAnchor": "OfficeAndSharePoint",
+  "eventShortDescription": "<div class=\"ExternalClass1A419341927A4755BCE392A88C406B0B\"><div>SharePoint 2016 and Access (along with the rest of Office 2016) have had an enormous amount of work done in this version and they work together beautifully.<br><br>SharePoint 2016 is, to many, a web version of Access. Come see Adam Cogan show you how you have a lot of options including&#58;<br><br><ul><li>using SharePoint data in your Access solution</li><li>using Access to report on your SharePoint data</li><li>upsizing your access data to SharePoint and then continue with Access as the frontend</li><li>upsizing your entire Access solution to SharePoint and then finish using Access as your platform</li></ul>In addition we will look at using SharePoint data in other Office applications.\u200b</div></div>",
+  "eventDescription": "<div class=\"ExternalClass1A419341927A4755BCE392A88C406B0B\"><div>SharePoint 2016 and Access (along with the rest of Office 2016) have had an enormous amount of work done in this version and they work together beautifully.<br><br>SharePoint 2016 is, to many, a web version of Access. Come see Adam Cogan show you how you have a lot of options including&#58;<br><br><ul><li>using SharePoint data in your Access solution</li><li>using Access to report on your SharePoint data</li><li>upsizing your access data to SharePoint and then continue with Access as the frontend</li><li>upsizing your entire Access solution to SharePoint and then finish using Access as your platform</li></ul>In addition we will look at using SharePoint data in other Office applications.\u200b</div></div>",
+  "description": "SharePoint 2016 and Access (along with the rest of Office 2016) have had an enormous amount of work done in this version and they work together beautifully.\n\nSharePoint 2016 is, to many, a web version of Access. Come see Adam Cogan show you how you have a lot of options including:\n\nusing SharePoint data in your Access solution\n\nusing Access to report on your SharePoint data\n\nupsizing your access data to SharePoint and then continue with Access as the frontend\n\nupsizing your entire Access solution to SharePoint and then finish using Access as your platform\n\nIn addition we will look at using SharePoint data in other Office applications.\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

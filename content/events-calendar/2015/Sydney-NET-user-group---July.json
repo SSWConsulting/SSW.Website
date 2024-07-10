@@ -1,0 +1,26 @@
+{
+  "title": "Sydney .NET user group - July",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET user group - July",
+  "presenterName": "Filip Ekberg",
+  "startDateTime": "2015-07-15T08:30:00Z",
+  "endDateTime": "2015-07-15T10:30:00Z",
+  "startShowBannerDateTime": "2015-07-14T15:00:00Z",
+  "endShowBannerDateTime": "2015-07-15T13:00:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET User Group Live Stream",
+    "url": "/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "\u201cC# Is The Future\u201d & \u201cNo More Deadlocks\u201d \u2013 Filip Ekberg",
+  "eventShortDescription": "<div class=\"ExternalClassDAD55F5FBF5C46EF94B499EE75B4CBDF\"><strong>\u201cC# Is The Future\u201d &amp; \u201cNo More Deadlocks\u201d \u2013 Filip Ekberg\u200b\u200b<br><br>C# Is The Future</strong><br>The next version of C# is upon us so if you thought that this language was long forgotten by its creators come along on this journey where I'll prove you otherwise!&#160;<br><br>We will look at how C# has evolved over the years and what we might expect in the future. Are you ready to embrace the programming language of the future?<br><br><strong>No More Deadlocks</strong><br>Do you find yourself in situations when your applications deadlock because of async and await? Do you want to make your applications more reliable?<br><br>In this session we will talk about how to do asynchronous programming properly in .NET. We will discover pitfalls and best practices which will help you along your way!<br><br><strong>About the speaker&#58;</strong><br>Filip Ekberg is the author of C# Smorgasbord. Speaker. Pluralsight author. Microsoft .NET MVP. Xamarin MVP. Works for @Invoice2Go. Swede living in Sydney!\u200b<br><br></div><p>\u200b</p>",
+  "eventDescription": "<div class=\"ExternalClass3131B8FC9B53420DBCF38786ADF3D2ED\"><p>\u200b<strong>\u201cC# Is The Future\u201d &amp; \u201cNo More Deadlocks\u201d \u2013 Filip Ekberg\u200b\u200b<br><br>C# Is The Future</strong><br>The next version of C# is upon us so if you thought that this language was long forgotten by its creators come along on this journey where I'll prove you otherwise!&#160;<br><br>We will look at how C# has evolved over the years and what we might expect in the future. Are you ready to embrace the programming language of the future?<br><br><strong>No More Deadlocks</strong><br>Do you find yourself in situations when your applications deadlock because of async and await? Do you want to make your applications more reliable?<br><br>In this session we will talk about how to do asynchronous programming properly in .NET. We will discover pitfalls and best practices which will help you along your way!<br><br><strong>About the speaker&#58;</strong><br>Filip Ekberg is the author of C# Smorgasbord. Speaker. Pluralsight author. Microsoft .NET MVP. Xamarin MVP. Works for @Invoice2Go. Swede living in Sydney!\u200b</p></div>",
+  "description": "\u201cC# Is The Future\u201d & \u201cNo More Deadlocks\u201d \u2013 Filip Ekberg\u200b\u200b\n\nC# Is The Future\n\nThe next version of C# is upon us so if you thought that this language was long forgotten by its creators come along on this journey where I'll prove you otherwise!\u00a0\n\nWe will look at how C# has evolved over the years and what we might expect in the future. Are you ready to embrace the programming language of the future?\n\nNo More Deadlocks\n\nDo you find yourself in situations when your applications deadlock because of async and await? Do you want to make your applications more reliable?\n\nIn this session we will talk about how to do asynchronous programming properly in .NET. We will discover pitfalls and best practices which will help you along your way!\n\nAbout the speaker:\n\nFilip Ekberg is the author of C# Smorgasbord. Speaker. Pluralsight author. Microsoft .NET MVP. Xamarin MVP. Works for @Invoice2Go. Swede living in Sydney!\u200b\n\n\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

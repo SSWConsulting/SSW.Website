@@ -1,0 +1,22 @@
+{
+  "title": "Prototype in Production - From Tech Debt to a Verifiably Stable Application",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-SydneyUG.jpg",
+  "thumbnailDescription": "Prototype in Production - From Tech Debt to a Verifiably Stable Application",
+  "presenterName": "Luke Parker",
+  "presenterProfileUrl": "/people/luke-parker",
+  "startDateTime": "2022-04-20T08:00:00Z",
+  "endDateTime": "2022-04-20T10:00:00Z",
+  "startShowBannerDateTime": "2022-04-19T14:00:00Z",
+  "endShowBannerDateTime": "2022-04-20T12:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": ".NET Core",
+  "eventShortDescription": "<div class=\"ExternalClass0FE551FA6B054C069E54DE4D62CDD6CD\"><p>\u200bApril&#160;.NET User Group&#58;&#160;From Prototype in Production to Verifiably Stable Application with Luke Parker<br></p><p>Tech consultants are constantly building Proof of Concept (PoC) applications to show immediate value to clients, but what happens when the prototype goes too far, and gets deployed to production? <br></p><p>Tech debt quickly builds up, since the PoC will contain anti-patterns and poor design decisions, leading to severe future pain for developers as the code-base scales.<br></p><p>Many developers would pause their feature focus and immediately go into refactor mode in a situation like this. SSW's Luke Parker will show you how to improve technical debt without wreaking havoc on your team, while still delivering business value for your Product Owner.<br></p><p>Luke has battle-tested this approach working with a multi-team client organization with this exact scenario&#58; a prototype gone too far! Luke will demonstrate how to measure tech debt, recognize anti-patterns, and slowly recover. You will learn how to tackle the seemingly impossible task of refactoring a prototype now in production into a Verifiably Stable Application (VSA).<br></p><p>See a cool demo, and learn how tools like xUnit (with Moq &amp; FluentAssertions) turn a non-trivial code-base prototype into a VSA enterprise application with as little refactoring as possible.<br></p></div>",
+  "description": "\u200bApril\u00a0.NET User Group:\u00a0From Prototype in Production to Verifiably Stable Application with Luke Parker\n\nTech consultants are constantly building Proof of Concept (PoC) applications to show immediate value to clients, but what happens when the prototype goes too far, and gets deployed to production? \n\nTech debt quickly builds up, since the PoC will contain anti-patterns and poor design decisions, leading to severe future pain for developers as the code-base scales.\n\nMany developers would pause their feature focus and immediately go into refactor mode in a situation like this. SSW's Luke Parker will show you how to improve technical debt without wreaking havoc on your team, while still delivering business value for your Product Owner.\n\nLuke has battle-tested this approach working with a multi-team client organization with this exact scenario: a prototype gone too far! Luke will demonstrate how to measure tech debt, recognize anti-patterns, and slowly recover. You will learn how to tackle the seemingly impossible task of refactoring a prototype now in production into a Verifiably Stable Application (VSA).\n\nSee a cool demo, and learn how tools like xUnit (with Moq & FluentAssertions) turn a non-trivial code-base prototype into a VSA enterprise application with as little refactoring as possible.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "NOtDdDU2vZ4",
+  "externalPresenters": []
+}

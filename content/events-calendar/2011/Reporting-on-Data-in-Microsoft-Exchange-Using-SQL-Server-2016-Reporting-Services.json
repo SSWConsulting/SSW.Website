@@ -1,0 +1,19 @@
+{
+  "title": "Reporting on Data in Microsoft Exchange Using SQL Server 2016 Reporting Services",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "BI and Reporting Services",
+  "categoryAnchor": "OverviewReportingServices",
+  "sessionTitle": "Reporting on Data in Microsoft Exchange Using SQL Server 2016 Reporting Services",
+  "sessionTitleAnchor": "CombiningExchangeData",
+  "eventShortDescription": "<div class=\"ExternalClassAB1BA01C153043CC94897A02F81ED1EE\"><div>\u200bCome see a code packed session that will show how to extend the out-of-the box features of Reporting Services. Everyone who has an Exchange Server should be reporting on it - but nobody does. Following this, we will explore the creation of a real Reporting Services solution. You will learn about the important issues of security, data access, rendering, and delivery. We will also discuss the deployment issues of an application that requires Reporting Services. Sample code is provided so you can use this useful solution.&#160;&#160;</div></div>",
+  "eventDescription": "<div class=\"ExternalClassAB1BA01C153043CC94897A02F81ED1EE\"><div>\u200bCome see a code packed session that will show how to extend the out-of-the box features of Reporting Services. Everyone who has an Exchange Server should be reporting on it - but nobody does. Following this, we will explore the creation of a real Reporting Services solution. You will learn about the important issues of security, data access, rendering, and delivery. We will also discuss the deployment issues of an application that requires Reporting Services. Sample code is provided so you can use this useful solution.&#160;&#160;</div></div>",
+  "description": "\u200bCome see a code packed session that will show how to extend the out-of-the box features of Reporting Services. Everyone who has an Exchange Server should be reporting on it - but nobody does. Following this, we will explore the creation of a real Reporting Services solution. You will learn about the important issues of security, data access, rendering, and delivery. We will also discuss the deployment issues of an application that requires Reporting Services. Sample code is provided so you can use this useful solution.\u00a0\u00a0",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}
