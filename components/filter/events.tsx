@@ -214,6 +214,21 @@ interface EventProps {
 }
 
 const Event = ({ visible, event, jsonLd }: EventProps) => {
+  /* TODO: remove this when Tina cloud sync issue is fixed https://github.com/tinacms/tina-cloud/issues/2073
+
+  We need this because there's an issue preventing us from syncing the files in the repo
+  to Tina cloud. Images that aren't synced will 404.
+   
+   */
+  const [thumbnail, setFallbackImage] = useState(event.thumbnail);
+  const handleImageError = () => {
+    const tinaUrl = /https:\/\/assets\.tina\.io\/[^/]+\/(.*)/;
+    const match = event.thumbnail.match(tinaUrl);
+    if (match) {
+      setFallbackImage(`/images/${match[1]}`);
+    }
+  };
+
   const city = event.city === "Other" ? event.cityOther : event.city;
   let eventSite = { name: city, url: event.url };
 
@@ -245,7 +260,8 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
               height={100}
               width={100}
               alt={`${event.thumbnailDescription || event.title} logo`}
-              src={event.thumbnail}
+              src={thumbnail}
+              onError={handleImageError}
             />
           </div>
           <div>

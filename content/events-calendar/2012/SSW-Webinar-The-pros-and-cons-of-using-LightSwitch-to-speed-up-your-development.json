@@ -1,7 +1,7 @@
 {
   "title": "SSW Webinar: The pros and cons of using LightSwitch to speed up your development",
   "url": "/ssw/Events/Webinars/lightswitch.aspx",
-  "thumbnail": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-lightswitch.jpg",
+  "thumbnail": "/images/Newsletters/thumb-webinar-lightswitch.jpg",
   "thumbnailDescription": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-lightswitch.jpg",
   "presenterName": "Mehmet Ozdemir / Andrew Coates",
   "startDateTime": "2012-11-28T00:00:00Z",
