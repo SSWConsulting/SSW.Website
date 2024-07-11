@@ -1,7 +1,7 @@
 {
   "title": "Hanselman Unplugged at SSW",
   "url": "/ssw/netug/hanselman-user-group-special.aspx",
-  "thumbnail": "http://ssw.com.au/ssw/NETUG/Images/thumbs/hanselman-thumbnail.png",
+  "thumbnail": "/images/thumbs/hanselman-thumbnail.png",
   "thumbnailDescription": "http://ssw.com.au/ssw/NETUG/Images/thumbs/hanselman-thumbnail.png",
   "presenterName": "Scott Hanselman",
   "presenterProfileUrl": "http://www.hanselman.com/",
