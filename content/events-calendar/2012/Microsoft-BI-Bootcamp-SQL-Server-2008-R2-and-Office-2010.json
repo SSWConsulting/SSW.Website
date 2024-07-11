@@ -1,0 +1,17 @@
+{
+  "title": "Microsoft BI Bootcamp: SQL Server 2008 R2 and Office 2010",
+  "url": "/ssw/Events/training/BI-Bootcamp.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/thumb-solidq.jpg",
+  "thumbnailDescription": "/ssw/EventsCalendar/Images/thumb-solidq.jpg",
+  "presenterName": "Paco Gonzalez",
+  "startDateTime": "2012-10-15T13:00:00Z",
+  "endDateTime": "2012-10-15T13:00:00Z",
+  "calendarType": "SolidQ Courses",
+  "enabled": true,
+  "category": "SQL Server",
+  "eventShortDescription": "<div class=\"ExternalClass5000661E5F0F4D3BBF0B6FAF27B29AEF\">\u200bWritten and presented by industry experts, this intensive five-day workshop gives professional developers the information and hands-on experience they need to deliver state-of-the-art, integrated reporting and analytics solutions using Microsoft Business Intelligence.<br></div><br>",
+  "eventDescription": "<div class=\"ExternalClass5000661E5F0F4D3BBF0B6FAF27B29AEF\"><div>\u200bWritten and presented by industry experts, this intensive five-day workshop gives professional developers the information and hands-on experience they need to deliver state-of-the-art, integrated reporting and analytics solutions using Microsoft Business Intelligence.<br><br>Delivering the right information in the right format at the right time to all users in the organization\u2014that is Microsoft\u2019s Business Intelligence (BI) strategy and vision for enterprise information management. Microsoft\u2019s integrated BI tools enable developers to create effective solutions that information workers use every day to find meaningful patterns in the vast sea of data they collect and to use that insight to quickly respond to changing business conditions.<br><br>On completion of this workshop attendees will be able to position different types of Business Intelligence solutions, from enterprise data warehousing to data marts to real-time operational reporting and analytics. Attendees will learn how to design and build powerful integrated solutions that provide users with rich reporting, analysis, visualization and performance management capabilities by targeting operational data from an existing line-of-business application using the Microsoft Business Intelligence platform.<br><br>Attendees will work through 32 practical hands-on labs to build a complete BI solution by the end of the workshop.</div></div>",
+  "description": "\u200bWritten and presented by industry experts, this intensive five-day workshop gives professional developers the information and hands-on experience they need to deliver state-of-the-art, integrated reporting and analytics solutions using Microsoft Business Intelligence.",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

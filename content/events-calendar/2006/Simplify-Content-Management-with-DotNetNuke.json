@@ -1,0 +1,21 @@
+{
+  "title": "Simplify Content Management with DotNetNuke",
+  "url": "/images/newsletter-uploads/2006/_2006_09__Do%20you%20maintain%20verbal%20contact%20with%20your%20client_.htm",
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "/images/events/sydney-ug-thumb.jpg",
+  "presenterName": "Kusal Wijewantha",
+  "startDateTime": "2006-09-20T07:45:00Z",
+  "endDateTime": "2006-09-20T11:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass22FA019580AE470FAAD2080796272537\"><p style=\"box-sizing&#58;border-box;word-break&#58;break-word;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\"><strong style=\"box-sizing&#58;border-box;\">Description&#58;</strong>&#160;Overview of different ways of installing DotNetNuke, introducing key components of portal framework and Demonstration showing how to manage the content using built-in modules.</p><p style=\"box-sizing&#58;border-box;word-break&#58;break-word;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\"><strong style=\"box-sizing&#58;border-box;\">About the Presenter&#58;</strong>&#160;Kusal is a member of the Open Source DotNetNuke Development Team. Presently he is contributing to the DotNetNuke Help Module Project.<br></p><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassFEEF100969F5445BB35552A5FE7425C5\"><p style=\"box-sizing&#58;border-box;word-break&#58;break-word;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\"><strong style=\"box-sizing&#58;border-box;\">Description&#58;</strong>&#160;Overview of different ways of installing DotNetNuke, introducing key components of portal framework and Demonstration showing how to manage the content using built-in modules.</p><p style=\"box-sizing&#58;border-box;word-break&#58;break-word;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\"><strong style=\"box-sizing&#58;border-box;\">About the Presenter&#58;</strong>&#160;Kusal is a member of the Open Source DotNetNuke Development Team. Presently he is contributing to the DotNetNuke Help Module Project.<br></p><p><br></p></div>",
+  "description": "Description:\n\n\u00a0Overview of different ways of installing DotNetNuke, introducing key components of portal framework and Demonstration showing how to manage the content using built-in modules.\n\nAbout the Presenter:\n\n\u00a0Kusal is a member of the Open Source DotNetNuke Development Team. Presently he is contributing to the DotNetNuke Help Module Project.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30
+}

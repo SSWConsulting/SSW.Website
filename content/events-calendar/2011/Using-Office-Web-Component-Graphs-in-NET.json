@@ -1,0 +1,19 @@
+{
+  "title": "Using Office Web-Component Graphs in .NET",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewVSNet",
+  "sessionTitle": "Using Office Web-Component Graphs in .NET",
+  "sessionTitleAnchor": "OfficeWebComponentGraphs",
+  "eventShortDescription": "<div class=\"ExternalClass2CC87D36A763428D8A79AC687E817ABA\"><div><span class=\"ms-rteThemeForeColor-9-0\">*Discontinued*&#160;</span></div><div><br class=\"ms-rteThemeForeColor-9-0\"></div><div>Too often we expect users to read and understand data in a table instead of showing them an easy to understand graph. This was because we had to rely upon expensive 3rd party charting tools. The new expanded charting function in Office XP Office Web Components offers developers a great solution to this problem.<br><br>This session will show you how to create a dynamically driven graphs in ASP.NET with tips and tricks for fine\u2013tuning your chart with some of the new features in OWC 10, such as automatic axis scaling, label orientation, and color control, and as well as some of the manual override features. We also discuss the features of good and bad charts.\u200b\u200b</div></div>",
+  "eventDescription": "<div class=\"ExternalClass2CC87D36A763428D8A79AC687E817ABA\"><div><div><span class=\"ms-rteThemeForeColor-9-0\">*Discontinued*&#160;\u200b<br><br></span></div>Too often we expect users to read and understand data in a table instead of showing them an easy to understand graph. This was because we had to rely upon expensive 3rd party charting tools. The new expanded charting function in Office XP Office Web Components offers developers a great solution to this problem.<br><br>This session will show you how to create a dynamically driven graphs in ASP.NET with tips and tricks for fine\u2013tuning your chart with some of the new features in OWC 10, such as automatic axis scaling, label orientation, and color control, and as well as some of the manual override features. We also discuss the features of good and bad charts.\u200b\u200b</div></div>",
+  "description": "*Discontinued*\u00a0\n\nToo often we expect users to read and understand data in a table instead of showing them an easy to understand graph. This was because we had to rely upon expensive 3rd party charting tools. The new expanded charting function in Office XP Office Web Components offers developers a great solution to this problem.\n\nThis session will show you how to create a dynamically driven graphs in ASP.NET with tips and tricks for fine\u2013tuning your chart with some of the new features in OWC 10, such as automatic axis scaling, label orientation, and color control, and as well as some of the manual override features. We also discuss the features of good and bad charts.\u200b\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

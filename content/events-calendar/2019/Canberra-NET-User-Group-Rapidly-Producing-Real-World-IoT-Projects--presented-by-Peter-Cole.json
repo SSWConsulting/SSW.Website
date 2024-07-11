@@ -1,0 +1,19 @@
+{
+  "title": "Canberra .NET User Group: Rapidly Producing Real World IoT Projects \u2013 presented by Peter Cole",
+  "url": "/ssw/NETUG/Canberra.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-canberraUG.jpg",
+  "thumbnailDescription": "Canberra .NET User Group: Rapidly Producing Real World IoT Projects \u2013 presented by Peter Cole",
+  "presenterName": "Peter Cole",
+  "startDateTime": "2019-04-15T07:00:00Z",
+  "endDateTime": "2019-04-15T09:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Canberra",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassC2A118FF9ABA4D39B5B7FA0483E57F2A\"><p>Rapidly Producing Real World IoT Projects \u2013 presented by Peter Cole<br></p>I was given the challenge of producing a low cost customer tracking solution for the Microsoft Technology Centre in Sydney.<br>The team was astounded at how I made a working prototype in just 3 days, using open source technology, RFID tags and Azure IoT services. Come along and see how you can do it!<br>&#160;<br>About the presenter&#58;<br>Peter Cole, Technical Solutions Professional for Azure app development. He has a very diverse background in electrical engineering and naturally gravitated to IoT solutions. Combining his passion of electronics with his development skills allows him to rapidly prototype solutions on the Azure platform.<p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass76144E1DBB494177ABB5DF7B2503C540\"><div>Rapidly Producing Real World IoT Projects \u2013 presented by Peter Cole<br></div><div>&#160;</div><div>I was given the challenge of producing a low cost customer tracking solution for the Microsoft Technology Centre in Sydney.</div><div>The team was astounded at how I made a working prototype in just 3 days, using open source technology, RFID tags and Azure IoT services. Come along and see how you can do it!</div><div>&#160;</div><div>About the presenter&#58;</div><div>Peter Cole, Technical Solutions Professional for Azure app development. He has a very diverse background in electrical engineering and naturally gravitated to IoT solutions. Combining his passion of electronics with his development skills allows him to rapidly prototype solutions on the Azure platform.</div><div><br><br></div><p><br></p></div>",
+  "description": "Rapidly Producing Real World IoT Projects \u2013 presented by Peter Cole\n\nI was given the challenge of producing a low cost customer tracking solution for the Microsoft Technology Centre in Sydney.\n\nThe team was astounded at how I made a working prototype in just 3 days, using open source technology, RFID tags and Azure IoT services. Come along and see how you can do it!\n\n\u00a0\n\nAbout the presenter:\n\nPeter Cole, Technical Solutions Professional for Azure app development. He has a very diverse background in electrical engineering and naturally gravitated to IoT solutions. Combining his passion of electronics with his development skills allows him to rapidly prototype solutions on the Azure platform.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

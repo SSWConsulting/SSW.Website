@@ -1,0 +1,19 @@
+{
+  "title": "Connect your enterprise data to Microsoft Office with VS.NET (aka Smart Tags)",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Office",
+  "categoryAnchor": "OverviewOffice",
+  "sessionTitle": "Connect your enterprise data to Microsoft Office with VS.NET (aka Smart Tags)",
+  "sessionTitleAnchor": "SmartTags",
+  "eventShortDescription": "<div class=\"ExternalClass9BCD24E57CBC4994974E2DBC45A038A3\"><div>\u200bWondering how to develop better Word, Outlook and Excel solutions that can either communicate over XML Web Services or automatically make your applications more productive through intelligent hyperlinks? Smart tags provide a way to connect directly to your database. With or without defined terms you can associate user actions right from within these applications. We will build a real world solution from woah to go. Smart tags work by recognizing certain types of text and then offering related functions and commands - this session will cover both topics&#58; Smart Tags and XML Web Services in Word, Outlook and Excel. Join us on the journey as we teach you how easy it now is to build interactive applications that leverage XML web services inside Word, Outlook and Excel, and extend these applications with Add-ins.</div></div>",
+  "eventDescription": "<div class=\"ExternalClass9BCD24E57CBC4994974E2DBC45A038A3\"><div>\u200bWondering how to develop better Word, Outlook and Excel solutions that can either communicate over XML Web Services or automatically make your applications more productive through intelligent hyperlinks? Smart tags provide a way to connect directly to your database. With or without defined terms you can associate user actions right from within these applications. We will build a real world solution from woah to go. Smart tags work by recognizing certain types of text and then offering related functions and commands - this session will cover both topics&#58; Smart Tags and XML Web Services in Word, Outlook and Excel. Join us on the journey as we teach you how easy it now is to build interactive applications that leverage XML web services inside Word, Outlook and Excel, and extend these applications with Add-ins.</div></div>",
+  "description": "\u200bWondering how to develop better Word, Outlook and Excel solutions that can either communicate over XML Web Services or automatically make your applications more productive through intelligent hyperlinks? Smart tags provide a way to connect directly to your database. With or without defined terms you can associate user actions right from within these applications. We will build a real world solution from woah to go. Smart tags work by recognizing certain types of text and then offering related functions and commands - this session will cover both topics: Smart Tags and XML Web Services in Word, Outlook and Excel. Join us on the journey as we teach you how easy it now is to build interactive applications that leverage XML web services inside Word, Outlook and Excel, and extend these applications with Add-ins.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

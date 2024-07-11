@@ -1,0 +1,19 @@
+{
+  "title": "The Angular Superpowers Tour: Brisbane",
+  "url": "/ssw/Events/Training/Angular-Superpowers-Tour.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/SuperPower-Icon-Angular.jpg",
+  "thumbnailDescription": "/ssw/EventsCalendar/Images/SuperPower-Icon-Angular.jpg",
+  "presenterName": "Brendan Richards and Duncan Hunter",
+  "startDateTime": "2017-11-12T22:00:00Z",
+  "endDateTime": "2017-11-13T06:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": "Angular and React",
+  "eventShortDescription": "<div class=\"ExternalClass58B751FDB9254CCA9A3B11531032A6DA\"><p style=\"color&#58;#333333;font-family&#58;arial, sans-serif;font-size&#58;14px;word-wrap&#58;break-word;box-sizing&#58;border-box;background-color&#58;#ffffff;\"><strong></strong></p><div></div><div><div><p>\u200b\u200b\u200bThis one-day Dev Superpower Tour brings developers up-to-speed with Angular!</p><div>Everything has changed! Angular and modern web best practices involve massive changes to how we build modern web applications.<br></div><div><br></div><div>At SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies.\u200b<br></div><p><br></p></div></div></div>",
+  "eventDescription": "<div class=\"ExternalClassF3122D58B1EB4A5D9920ED43625B3E72\"><p>\u200bThis one-day Dev Superpower Tour brings developers up-to-speed with Angular!</p><div>Everything has changed! Angular and modern web best practices involve massive changes to how we build modern web applications.</div><div><br></div><div>At SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies.\u200b<br></div><p><br></p></div>",
+  "description": "\u200b\u200b\u200bThis one-day Dev Superpower Tour brings developers up-to-speed with Angular!\n\nEverything has changed! Angular and modern web best practices involve massive changes to how we build modern web applications.\n\nAt SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies.\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

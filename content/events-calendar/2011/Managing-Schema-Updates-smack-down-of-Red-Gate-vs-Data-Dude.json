@@ -1,0 +1,19 @@
+{
+  "title": "Managing Schema Updates (smack down of Red-Gate vs Data Dude)",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewTFS",
+  "sessionTitle": "Managing Schema Updates (smack down of Red-Gate vs Data Dude)",
+  "sessionTitleAnchor": "ManagingSchemaUpdates",
+  "eventShortDescription": "<div class=\"ExternalClass26206984A9844B0EAE75F5609E83ED58\">\u200bBest practices, SQL Compare, SQL Packager, Data Dude 2013 and SQL Deploy.<br><br><br></div>",
+  "eventDescription": "<div class=\"ExternalClass26206984A9844B0EAE75F5609E83ED58\"><div>\u200bBest practices, SQL Compare, SQL Packager, Data Dude 2013 and SQL Deploy.<br><br>Nowadays everything (except Exchange of course) runs off a database. Why do so many places have a weak schema deployment strategy? In this session learn the best ways to move from one version to the next, using tools like RedGate SQL Compare, RedGate SQL Packager, Visual Studio 2015 Database Professional (aka Data Dude) and SSW SQL Deploy.</div></div>",
+  "description": "\u200bBest practices, SQL Compare, SQL Packager, Data Dude 2013 and SQL Deploy.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

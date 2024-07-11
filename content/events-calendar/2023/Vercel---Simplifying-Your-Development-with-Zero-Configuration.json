@@ -1,0 +1,46 @@
+{
+  "title": "Vercel - Simplifying Your Development with Zero Configuration",
+  "url": "/ssw/NETUG/Brisbane.aspx",
+  "thumbnail": "/images/thumbs/thumb-brisbaneUG.jpg",
+  "thumbnailDescription": "Brisbane Full Stack User Group",
+  "presenterName": "Tylah Kapa",
+  "presenterProfileUrl": "http://ssw.com.au/people/tylah-kapa",
+  "startDateTime": "2023-10-18T07:00:00Z",
+  "endDateTime": "2023-10-18T10:00:00Z",
+  "startShowBannerDateTime": "2023-10-17T13:00:00Z",
+  "endShowBannerDateTime": "2023-10-18T11:00:00Z",
+  "liveStreamUrl": {
+    "description": "Livestream",
+    "url": "/live"
+  },
+  "calendarType": "User Groups",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": "Other",
+  "abstract": "Struggling with the 1,001 pieces of your JavaScript project? Ready to kickstart your web app journey? Discover the secret of lightning-fast deployments.\r\n\r\nJoin SSW Software Engineer Tylah Kapa and see your code will go from zero to a live website in seconds.\r\n\r\nTylah will show you the power of Vercel with some real-world applications, a comparison with normal cloud providers\u2026\r\n\r\nSee you at this interesting talk and explore Vercel's robust tools for personal and professional growth and learn how you can take advantage of this awesome platform.",
+  "eventShortDescription": "<div class=\"ExternalClassF9DB7D79F33E4581A949DFB2443B42B7\">October .NET User Group&#58;\u200b<br><br>Vercel - Simplifying Your Development with Zero Configuration<br><br> Struggling with the 1,001 pieces of your JavaScript project? Ready to kickstart your web app journey? Discover the secret of lightning-fast deployments.<br><br>Join SSW Software Engineer Tylah Kapa and see your code will go from zero to a live website in seconds.<br><br>Tylah will show you the power of Vercel with some real-world applications, a comparison with normal cloud providers\u2026<br><br>Come explore Vercel's robust tools for personal and professional growth and learn how you can take advantage of this awesome platform.<br><br><div>--<br><br>Join us in person&#160;from 5&#160;pm AEST&#160;in Brisbane, or 6p m AEDT in Sydney and&#160;Melbourne&#58;<br><br><a href=\"https&#58;//www.meetup.com/sydney-net-user-group/events/296351792/\" target=\"_blank\">SSW Sydney</a> \u2013&#160;Watch party&#160;&#127910;<br><a href=\"https&#58;//www.meetup.com/melbourne-net-user-group/events/296351776/\" target=\"_blank\">SSW Melbourne</a> \u2013&#160;Watch party &#127910;<br><a href=\"https&#58;//www.meetup.com/brisbane-full-stack-user-group/events/296351760/\" target=\"_blank\">SSW Brisbane</a> \u2013&#160;Live &#128308;<br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass0121549DCF1742329883D435660D181C\">\u200bOctober .NET User Group&#58;\u200b<br><br>Vercel - Simplifying Your Development with Zero Configuration<br><br>Struggling with the 1,001 pieces of your JavaScript project? Ready to kickstart your web app journey? Discover the secret of lightning-fast deployments.<br><br>Join SSW Software Engineer Tylah Kapa and see your code will go from zero to a live website in seconds.<br><br>Tylah will show you the power of Vercel with some real-world applications, a comparison with normal cloud providers\u2026<br><br>See you at this interesting talk and explore Vercel's robust tools for personal and professional growth and learn how you can take advantage of this awesome platform.<br><br><div>--<br><br>Join us in person&#160;from&#160;5pm AEST&#160;in Brisbane, or 6pm AEDT in&#160;Sydney and&#160;Melbourne&#58;<br><br>SSW Sydney \u2013&#160;Watch party&#160;&#127910;<br>SSW Melbourne \u2013&#160;Watch party &#127910;<br>SSW Brisbane \u2013&#160;Live &#128308;<br></div><p><br></p></div>",
+  "description": "October .NET User Group:\u200b\n\nVercel - Simplifying Your Development with Zero Configuration\n\n Struggling with the 1,001 pieces of your JavaScript project? Ready to kickstart your web app journey? Discover the secret of lightning-fast deployments.\n\nJoin SSW Software Engineer Tylah Kapa and see your code will go from zero to a live website in seconds.\n\nTylah will show you the power of Vercel with some real-world applications, a comparison with normal cloud providers\u2026\n\nCome explore Vercel's robust tools for personal and professional growth and learn how you can take advantage of this awesome platform.\n\n--\n\nJoin us in person\u00a0from 5\u00a0pm AEST\u00a0in Brisbane, or 6p m AEDT in Sydney and\u00a0Melbourne:\n\nSSW Sydney\n\n \u2013\u00a0Watch party\u00a0\ud83c\udfa6\n\nSSW Melbourne\n\n \u2013\u00a0Watch party \ud83c\udfa6\n\nSSW Brisbane\n\n \u2013\u00a0Live \ud83d\udd34",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "3uni0QNiL3o",
+  "evalFormURL": {
+    "description": "http://forms.office.com/pages/responsepage.aspx?id=NHwvrDW56Uir3BHl1PyysPj1WXHPfJ5OhXxqnVi-9WJUNEw1VVpVRVFEUFI3NTNYNERPR1pMWVVXTiQlQCN0PWcu",
+    "url": "http://forms.office.com/pages/responsepage.aspx?id=NHwvrDW56Uir3BHl1PyysPj1WXHPfJ5OhXxqnVi-9WJUNEw1VVpVRVFEUFI3NTNYNERPR1pMWVVXTiQlQCN0PWcu"
+  },
+  "externalPresenters": [
+    {
+      "LookupId": 29,
+      "LookupValue": "Tylah Kapa"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/tylah-kapa.mdx"
+    }
+  ],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "trailerUrl": "https://www.youtube.com/watch?v=-veXqQCYBXw",
+  "hostedAtSsw": false
+}

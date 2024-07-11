@@ -1,0 +1,22 @@
+{
+  "title": "NDC Sydney 2024",
+  "url": "https://ndcsydney.com/",
+  "thumbnail": "/images/Newsletters/ndc2019-event-thumb.jpg",
+  "thumbnailDescription": "NDC Sydney 2024",
+  "presenterName": "Matt Goldman, William Liebenberg, Jernej Kavka, Luke Parker, Adam Cogan and more",
+  "presenterProfileUrl": "https://ndcsydney.com/speakers",
+  "startDateTime": "2024-02-11T22:00:00Z",
+  "endDateTime": "2024-02-16T06:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass26FE23E6C50C4397920ACE24EF50A51B\"><table border=\"0\" width=\"100%\" style=\"width&#58;988px;\"><tbody><tr><td valign=\"top\" width=\"350px\"><div><div><div><p>NDC Sydney 2024&#160;will be an in-person event, held 12-16&#160;February&#160;2024&#160;at the Hilton Sydney. It's a five-day event comprised of 2-days deep-dive workshops, followed by 3 conference days with multiple simultaneous tracks.<br></p></div></div></div></td></tr></tbody></table><div></div><p>SSW'ers presenting&#58;<br></p><div><ul><li><p><a href=\"https&#58;//ndcsydney.com/speakers/matt-goldman\" target=\"_blank\">Matt Goldman</a><br></p></li><li><p><a href=\"https&#58;//ndcsydney.com/speakers/william-liebenberg\" target=\"_blank\">William Liebenberg</a><br></p></li><li><p><a href=\"https&#58;//ndcsydney.com/speakers/luke-parker\" target=\"_blank\">Luke Parker</a><br></p></li><li><p><a href=\"https&#58;//ndcsydney.com/speakers/jernej-kavka\" target=\"_blank\">Jernej Kavka</a></p></li><li><p><a href=\"https&#58;//ndcsydney.com/speakers/adam-cogan\" target=\"_blank\">Adam Cogan</a><br></p></li></ul></div><p>Meet us there! &#128578;<br></p><p>Note&#58; SSW does not host this event.<br></p></div>",
+  "description": "NDC Sydney 2024\u00a0will be an in-person event, held 12-16\u00a0February\u00a02024\u00a0at the Hilton Sydney. It's a five-day event comprised of 2-days deep-dive workshops, followed by 3 conference days with multiple simultaneous tracks.\n\nSSW'ers presenting:\n\nMatt Goldman\n\nWilliam Liebenberg\n\nLuke Parker\n\nJernej Kavka\n\nAdam Cogan\n\nMeet us there! \ud83d\ude42\n\nNote: SSW does not host this event.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": false,
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": false
+}

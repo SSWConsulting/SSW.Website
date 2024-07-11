@@ -1,0 +1,18 @@
+{
+  "title": "Xamarin HackDay - Sydney",
+  "url": "http://xamarinhackday.com/sydney/",
+  "thumbnail": "/ssw/EventsCalendar/Images/xamarin-thumb.png",
+  "thumbnailDescription": "Xamarin HackDay - Sydney",
+  "startDateTime": "2014-12-05T21:30:00Z",
+  "endDateTime": "2014-12-06T06:30:00Z",
+  "calendarType": "Hack Days",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "Xamarin HackDay - Sydney",
+  "eventShortDescription": "<div class=\"ExternalClass24075DF9AF3941B7B86A5211086279A6\">\u200bXamarin HackDays are for Xamarin Developers or people who want to learn Xamarin.\u200b<br><br><p>There will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.</p></div>",
+  "description": "\u200bXamarin HackDays are for Xamarin Developers or people who want to learn Xamarin.\u200b\n\nThere will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

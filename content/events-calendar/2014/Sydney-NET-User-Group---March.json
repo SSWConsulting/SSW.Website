@@ -1,0 +1,26 @@
+{
+  "title": "Sydney .NET User Group - March",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group - March ",
+  "presenterName": "Grant Holliday ",
+  "startDateTime": "2014-03-19T07:00:00Z",
+  "endDateTime": "2014-03-19T09:00:00Z",
+  "startShowBannerDateTime": "2014-03-18T13:00:00Z",
+  "endShowBannerDateTime": "2014-03-19T13:00:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET User Group Live Stream ",
+    "url": "/ssw/NETUG/Live.aspx"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "Building and running a large scale service on Windows Azure \u2013 Behind the scenes of the Team Foundation Servic",
+  "eventShortDescription": "<div class=\"ExternalClass4693AFC8C0B24FFEA8893D11F9DF27DA\"><div>\u200bGrant Holliday will be presenting on &quot;Building\nand running a large scale service on Windows Azure \u2013 Behind the scenes of the\nTeam Foundation Service&quot; - check back soon for more details!</div></div>",
+  "eventDescription": "<div class=\"ExternalClassA7DB895973EA487AAC73D8A092B97661\"><p>\u200bGrant Holliday will be presenting on &quot;Building and running a large scale service on Windows Azure \u2013 Behind the scenes of the Team Foundation Service&quot; - check back soon for more details!\u200b</p></div>",
+  "description": "\u200bGrant Holliday will be presenting on \"Building\nand running a large scale service on Windows Azure \u2013 Behind the scenes of the\nTeam Foundation Service\" - check back soon for more details!",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

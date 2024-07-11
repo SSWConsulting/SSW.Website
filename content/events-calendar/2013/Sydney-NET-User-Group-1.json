@@ -1,0 +1,26 @@
+{
+  "title": "Sydney .NET User Group",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/thumb_sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group ",
+  "presenterName": "George Doubinksi",
+  "startDateTime": "2013-10-16T07:00:00Z",
+  "endDateTime": "2013-10-16T09:00:00Z",
+  "startShowBannerDateTime": "2013-10-16T00:00:00Z",
+  "endShowBannerDateTime": "2013-10-16T10:00:00Z",
+  "liveStreamUrl": {
+    "description": "Live Stream here",
+    "url": "http://au.ssw.com.au/ssw/NETUG/Live.aspx"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Dynamics 365",
+  "sessionTitle": "ALM for CRM",
+  "eventShortDescription": "<div class=\"ExternalClass93A5303DB02443C995985ACC62981381\"><p>\u200b<span style=\"line-height&#58;1.6;\">Do you need ALM if you do not have code to write and maintain? How do you manage the unmanageable?</span><strong style=\"line-height&#58;1.6;\"> </strong><span style=\"line-height&#58;1.6;\">Microsoft Dynamics CRM continues pushing towards the enterprise space, it becomes increasingly important to support the requirements of the enterprise\u2014not only through functionality, scale, resilience, and security of the product \u2014but also by inclusion of CRM into the enterprise development lifecycle. This session focuses on providing a coherent end-to-end approach to enterprise development for Dynamics CRM.</span></p></div>",
+  "eventDescription": "<div class=\"ExternalClass93A5303DB02443C995985ACC62981381\"><p>\u200b<span style=\"line-height&#58;1.6;\">Do you need ALM if you do not have code to write and maintain? How do you manage the unmanageable?</span><strong style=\"line-height&#58;1.6;\"> </strong><span style=\"line-height&#58;1.6;\">Microsoft Dynamics CRM continues pushing towards the enterprise space, it becomes increasingly important to support the requirements of the enterprise\u2014not only through functionality, scale, resilience, and security of the product \u2014but also by inclusion of CRM into the enterprise development lifecycle. This session focuses on providing a coherent end-to-end approach to enterprise development for Dynamics CRM.</span></p><p>In fast-paced hands-on session we're going to cover CRM solution lifecycle management including managed vs. unmanaged battle, version control of solution components, multi-regional deployment, ISV vs. Enterprise approach, to name but a few.<strong> </strong>Learn how to use Powershell-based ALM Toolkit for CRM to fully automate the solution lifecycle including provisioning of CRM organisations, deployment, data migrations and much more.\u200b</p></div>",
+  "description": "\u200b\n\nDo you need ALM if you do not have code to write and maintain? How do you manage the unmanageable?\n\n \n\nMicrosoft Dynamics CRM continues pushing towards the enterprise space, it becomes increasingly important to support the requirements of the enterprise\u2014not only through functionality, scale, resilience, and security of the product \u2014but also by inclusion of CRM into the enterprise development lifecycle. This session focuses on providing a coherent end-to-end approach to enterprise development for Dynamics CRM.",
+  "showOnPowerSessions": "No",
+  "hasVideo": true,
+  "externalPresenters": []
+}

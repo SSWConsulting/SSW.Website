@@ -1,0 +1,21 @@
+{
+  "title": "Thinking About Serverless? Let's Start With Functions",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "startDateTime": "2017-06-20T14:00:00Z",
+  "endDateTime": "2017-06-20T15:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Azure",
+  "categoryAnchor": "OverviewAzure",
+  "sessionTitle": "Thinking About Serverless? Let's Start With Functions",
+  "sessionTitleAnchor": "ServerlessFunctions",
+  "eventShortDescription": "<div class=\"ExternalClass713830852FBF42ADB44EBC2A7AA5C96B\"><p>\u200bWhat's serverless? And why would you go serverless? Worry no more, these questions will be answered and I'll show you a great way to get started by using Azure Functions.<br>\u200b<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass89CEC312271340DE823DAD422FE67EDD\"><p>\u200bWhat's serverless? And why would you go serverless? Worry no more, these questions will be answered and I'll show you a great way to get started by using Azure Functions.<br><br></p></div>",
+  "description": "\u200bWhat's serverless? And why would you go serverless? Worry no more, these questions will be answered and I'll show you a great way to get started by using Azure Functions.\n\n\u200b",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

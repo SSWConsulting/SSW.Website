@@ -1,0 +1,18 @@
+{
+  "title": "FireBootCamp Angular 2 Online Boot Camp (6 Weeks)",
+  "url": "http://firebootcamp.com/angular-2-online-boot-camp/",
+  "thumbnail": "/ssw/EventsCalendar/Images/firebootcamp_icon.png",
+  "thumbnailDescription": "FireBootCamp Angular 2 Online Boot Camp (6 Weeks)",
+  "startDateTime": "2016-08-28T14:00:00Z",
+  "endDateTime": "2016-08-29T14:00:00Z",
+  "calendarType": "FireBootCamp",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Angular",
+  "eventShortDescription": "<div class=\"ExternalClass5639D61ACE67433B9B7AF816560B7404\"><div>Our Angular 2.0 course teaches you how to build robust user interfaces using the Angular 2 framework.</div><div><br></div><div>With Angular 2 about to be released and so much interest in the technology there is a race on to learn the tech as fast as possible. All of our mentors are experienced professionals who have worked on Angular projects. Most split their time between training and developing full time so you are being taught by experts with cutting edge experience.</div><div><br></div><div><br></div><div><br></div></div>",
+  "eventDescription": "<div class=\"ExternalClass6173426D2E1244D8A6E996809E0C37D5\">\u200b\u200bOur Angular 2.0 course teaches you how to build robust user interfaces using the Angular 2 framework.<div><br>With Angular 2 about to be released and so much interest in the technology there is a race on to learn the tech as fast as possible. All of our mentors are experienced professionals who have worked on Angular projects. Most split their time between training and developing full time so you are being taught by experts with cutting edge experience.<br></div></div>",
+  "description": "Our Angular 2.0 course teaches you how to build robust user interfaces using the Angular 2 framework.\n\nWith Angular 2 about to be released and so much interest in the technology there is a race on to learn the tech as fast as possible. All of our mentors are experienced professionals who have worked on Angular projects. Most split their time between training and developing full time so you are being taught by experts with cutting edge experience.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Evolving the Building Blocks of your Codebase as you Scale",
+  "url": "/netug/melbourne",
+  "thumbnail": "/images/thumbs/thumb-melbourneUG.jpg",
+  "thumbnailDescription": "Melbourne .NET User Group",
+  "presenterName": "Alix Klingenberg",
+  "presenterProfileUrl": "https://www.linkedin.com/in/alixjklingenberg/",
+  "startDateTime": "2023-11-15T07:00:00Z",
+  "endDateTime": "2023-11-15T09:00:00Z",
+  "startShowBannerDateTime": "2023-11-14T13:00:00Z",
+  "endShowBannerDateTime": "2023-11-15T11:00:00Z",
+  "liveStreamUrl": {
+    "description": "Livestream",
+    "url": "/live"
+  },
+  "calendarType": "User Groups",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "DevOps",
+  "abstract": "Octopus Deploy is a leading deployment automation solution that is built in Australia and beyond. Their product is being scaled to meet the needs of some of their largest Enterprise customers and they have spun up a team to help with that growth - the \"Server at Scale\" team. \ud83d\ude80\r\n\r\nOver the last 6 months, \"Server at Scale\" has been hitting some interesting failure modes at Enterprise scale in one of their application's building blocks, the \"ServerTask\". Octopus Deploy is concurrently rebuilding that entire area, but delivery is two years away! \ud83d\udc77\u200d\u2642\ufe0f\u23f3\r\n\r\nAlix Klingenberg will talk about those interesting failure modes and how Octopus Deploy decided to fix them to support their customers now, while they wait for the rebuild. ",
+  "eventShortDescription": "<div class=\"ExternalClass01BA74340E1445E6A4F696EA31CF9878\"><p></p><div class=\"ExternalClass018269EEDCDF45008B085D4FD993312F\">Octopus Deploy is a leading deployment automation solution that is built in Australia and beyond. Their product is being scaled to meet the needs of some of their largest Enterprise customers and they have spun up a team to help with that growth - the &quot;Server at Scale&quot; team.&#160;&#128640;</div><div class=\"ExternalClass018269EEDCDF45008B085D4FD993312F\"> <br>Over the last 6 months, &quot;Server at Scale&quot; has been hitting some interesting failure modes at Enterprise scale in one of their application's building blocks, the &quot;ServerTask&quot;. Octopus Deploy is concurrently rebuilding that entire area, but delivery is two years away! &#128119;\u200d\u2642\ufe0f\u23f3<br> <br>Alix Klingenberg will talk about those interesting failure modes and how Octopus Deploy decided to fix them to support their customers now, while they wait for the rebuild.&#160;<div><br></div><div>--<br><br>Join us in person&#160;from 6 pm AEDT&#160;in&#160;Sydney,&#160;Melbourne,&#160;or&#160;Brisbane&#58;<br><br><a href=\"https&#58;//www.meetup.com/sydney-net-user-group/events/296982080/\" target=\"_blank\">SSW Sydney</a> \u2013&#160;Watch party &#127910;<br><a href=\"https&#58;//www.meetup.com/melbourne-net-user-group/events/296982071/\" target=\"_blank\">SSW Melbourne</a> \u2013&#160;Live &#128308;<br><a href=\"https&#58;//www.meetup.com/brisbane-full-stack-user-group/events/296982095/\" target=\"_blank\">SSW Brisbane</a> \u2013&#160;Watch party &#127910;<br></div></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass913F971BA1304D2C93CEACA0E7EE76C0\"><p></p></div><div>Octopus Deploy is a leading deployment automation solution that is built in Australia and beyond. Their product is being scaled to meet the needs of some of their largest Enterprise customers and they have spun up a team to help with that growth - the &quot;Server at Scale&quot; team. &#128640;</div><div><br></div><div>Over the last 6 months, &quot;Server at Scale&quot; has been hitting some interesting failure modes at Enterprise scale in one of their application's building blocks, the &quot;ServerTask&quot;. Octopus Deploy is concurrently rebuilding that entire area, but delivery is two years away! &#128119;\u200d\u2642\ufe0f\u23f3</div><div><br></div><div>Alix Klingenberg will talk about those interesting failure modes and how Octopus Deploy decided to fix them to support their customers now, while they wait for the rebuild.&#160;<br></div>",
+  "description": "Octopus Deploy is a leading deployment automation solution that is built in Australia and beyond. Their product is being scaled to meet the needs of some of their largest Enterprise customers and they have spun up a team to help with that growth - the \"Server at Scale\" team.\u00a0\ud83d\ude80\n\n \n\nOver the last 6 months, \"Server at Scale\" has been hitting some interesting failure modes at Enterprise scale in one of their application's building blocks, the \"ServerTask\". Octopus Deploy is concurrently rebuilding that entire area, but delivery is two years away! \ud83d\udc77\u200d\u2642\ufe0f\u23f3\n\n \n\nAlix Klingenberg will talk about those interesting failure modes and how Octopus Deploy decided to fix them to support their customers now, while they wait for the rebuild.\u00a0\n\n--\n\nJoin us in person\u00a0from 6 pm AEDT\u00a0in\u00a0Sydney,\u00a0Melbourne,\u00a0or\u00a0Brisbane:\n\nSSW Sydney\n\n \u2013\u00a0Watch party \ud83c\udfa6\n\nSSW Melbourne\n\n \u2013\u00a0Live \ud83d\udd34\n\nSSW Brisbane\n\n \u2013\u00a0Watch party \ud83c\udfa6",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "MptNnWPqaVs",
+  "evalFormURL": {
+    "description": "Feedback Form",
+    "url": "https://forms.microsoft.com/pages/responsepage.aspx?id=NHwvrDW56Uir3BHl1PyysPj1WXHPfJ5OhXxqnVi-9WJUMVVVWlNPVlRKVFhPVjNHRk9VTDdPVkQ0NiQlQCN0PWcu"
+  },
+  "externalPresenters": [
+    {
+      "LookupId": 30,
+      "LookupValue": "Alix Klingenberg"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/alix-klingenberg.mdx"
+    }
+  ],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": false
+}

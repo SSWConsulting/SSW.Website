@@ -1,0 +1,19 @@
+{
+  "title": "Component-based Design in .NET",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Other",
+  "categoryAnchor": "OverviewOther",
+  "sessionTitle": "Component-based Design in .NET",
+  "sessionTitleAnchor": "Components",
+  "eventShortDescription": "<div class=\"ExternalClassF2B8A0C9C3484ACEBD25AE309A1281D2\"><div>\u200bThis course presents an introduction to the Component-based features of Visual Basic .NET &amp; C#, and advanced topics such as connecting objects to a database using ADO.NET, architecting great .NET applications, building components. It starts with the basics of object-oriented techniques in .NET, including building a class and creating and using objects from the class. It then details many of the new features of .NET such as parameterized constructors, function overloading, static class data, inheritance and inheritance-based polymorphism.<br><br><ul><li>What does .NET do to replace COM and COM+.</li><li>What functionalities does .NET provide e.g. remoting, assemblies work and how the development paradigm from VB6 and C++ has changed.</li><li>Overview of how UML can be used to describe components that you're building.</li></ul></div></div>",
+  "eventDescription": "<div class=\"ExternalClassF2B8A0C9C3484ACEBD25AE309A1281D2\"><div>\u200bThis course presents an introduction to the Component-based features of Visual Basic .NET &amp; C#, and advanced topics such as connecting objects to a database using ADO.NET, architecting great .NET applications, building components. It starts with the basics of object-oriented techniques in .NET, including building a class and creating and using objects from the class. It then details many of the new features of .NET such as parameterized constructors, function overloading, static class data, inheritance and inheritance-based polymorphism.<br><br><ul><li>What does .NET do to replace COM and COM+.</li><li>What functionalities does .NET provide e.g. remoting, assemblies work and how the development paradigm from VB6 and C++ has changed.</li><li>Overview of how UML can be used to describe components that you're building.</li></ul></div></div>",
+  "description": "\u200bThis course presents an introduction to the Component-based features of Visual Basic .NET & C#, and advanced topics such as connecting objects to a database using ADO.NET, architecting great .NET applications, building components. It starts with the basics of object-oriented techniques in .NET, including building a class and creating and using objects from the class. It then details many of the new features of .NET such as parameterized constructors, function overloading, static class data, inheritance and inheritance-based polymorphism.\n\nWhat does .NET do to replace COM and COM+.\n\nWhat functionalities does .NET provide e.g. remoting, assemblies work and how the development paradigm from VB6 and C++ has changed.\n\nOverview of how UML can be used to describe components that you're building.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

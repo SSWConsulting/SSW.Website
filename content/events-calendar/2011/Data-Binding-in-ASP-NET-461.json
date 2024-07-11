@@ -1,0 +1,19 @@
+{
+  "title": "Data Binding in ASP .NET 4.6.1",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewVSNet",
+  "sessionTitle": "Data Binding in ASP .NET 4.6.1",
+  "sessionTitleAnchor": "DataBindingASP461",
+  "eventShortDescription": "<div class=\"ExternalClass0C9D50F11D084AC1B62767AACCCD5AA7\"><div>\u200bDo you want to connect people to your data? You will learn how to unleash the data binding potential of ASP.NET 4.6.1 to assist you in creating powerful data-driven websites in a snap. You will discover how to utilize the newest ASP.NET 4.6.1 data-bound controls to give your users a rich and responsive web experience. You will also see how the improved caching works.<br><br>Are you ready to be connected? Let us show you how!\u200b</div></div>",
+  "eventDescription": "<div class=\"ExternalClass0C9D50F11D084AC1B62767AACCCD5AA7\"><div>\u200bDo you want to connect people to your data? You will learn how to unleash the data binding potential of ASP.NET 4.6.1 to assist you in creating powerful data-driven websites in a snap. You will discover how to utilize the newest ASP.NET 4.6.1&#160;data-bound controls to give your users a rich and responsive web experience. You will also see how the improved caching works.<br><br>Are you ready to be connected? Let us show you how!\u200b</div></div>",
+  "description": "\u200bDo you want to connect people to your data? You will learn how to unleash the data binding potential of ASP.NET 4.6.1 to assist you in creating powerful data-driven websites in a snap. You will discover how to utilize the newest ASP.NET 4.6.1 data-bound controls to give your users a rich and responsive web experience. You will also see how the improved caching works.\n\nAre you ready to be connected? Let us show you how!\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

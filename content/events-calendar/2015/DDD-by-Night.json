@@ -1,0 +1,18 @@
+{
+  "title": "DDD by Night",
+  "url": "http://dddbynight.dddmelbourne.com/",
+  "thumbnail": "/ssw/EventsCalendar/Images/DDD-by-night.jpg",
+  "thumbnailDescription": "DDD by Night",
+  "startDateTime": "2015-06-04T08:00:00Z",
+  "endDateTime": "2015-06-04T10:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass61198ADCAD4A4D65B0BDF416ABA2032C\"><div>From those guys that brought you DDD Melbourne comes a free pre-conference evening to get you warmed up for DDD Melbourne 6.</div><div><br></div><div>The evening will be hosted by Alex Mackey &amp; Lars Klint (but don't let that put you off) &amp; consist of 10 short &amp; sharp presentations of around five minutes in length on a dev related subject.</div><div><br></div><div>Our friends from Xero in Hawthorn have kindly donated us some space to hold this and DDD Melbourne will be providing beer, soft drink and pizza.</div></div>",
+  "eventDescription": "<div class=\"ExternalClassAC67090F1C9645B0A0A61FC6A6D0698D\"><div>\u200bFrom those guys that brought you DDD Melbourne comes a free pre-conference evening to get you warmed up for DDD Melbourne 6.</div><div><br></div><div>The evening will be hosted by Alex Mackey &amp; Lars Klint (but don't let that put you off) &amp; consist of 10 short &amp; sharp presentations of around five minutes in length on a dev related subject.</div><div><br></div><div>Our friends from Xero in Hawthorn have kindly donated us some space to hold this and DDD Melbourne will be providing beer, soft drink and pizza.</div></div>",
+  "description": "From those guys that brought you DDD Melbourne comes a free pre-conference evening to get you warmed up for DDD Melbourne 6.\n\nThe evening will be hosted by Alex Mackey & Lars Klint (but don't let that put you off) & consist of 10 short & sharp presentations of around five minutes in length on a dev related subject.\n\nOur friends from Xero in Hawthorn have kindly donated us some space to hold this and DDD Melbourne will be providing beer, soft drink and pizza.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

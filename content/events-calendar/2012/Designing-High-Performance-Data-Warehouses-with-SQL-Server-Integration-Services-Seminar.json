@@ -1,0 +1,17 @@
+{
+  "title": "Designing High Performance Data Warehouses with SQL Server Integration Services: Seminar",
+  "url": "/ssw/events/training/ssis-seminar.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/thumb-solidq.jpg",
+  "thumbnailDescription": "/ssw/EventsCalendar/Images/thumb-solidq.jpg",
+  "presenterName": "Paco Gonzalez",
+  "startDateTime": "2012-10-17T13:00:00Z",
+  "endDateTime": "2012-10-17T13:00:00Z",
+  "calendarType": "SolidQ Courses",
+  "enabled": true,
+  "category": "SQL Server",
+  "eventShortDescription": "<div class=\"ExternalClass438DE623B5BA48699A419D3598240E5D\"><div>\u200bJust knowing how to use SSIS is often not enough when faced with challenging processing requirements or complicated environments. This course takes IT professionals, DBAs and developers to a deeper level of SSIS skills maturity. By the end of the seminar, students will have the knowledge on how to architect SSIS solutions and deal with advanced requirements for data cleansing and data warehousing.\u200b</div></div>",
+  "eventDescription": "<div class=\"ExternalClass438DE623B5BA48699A419D3598240E5D\"><div>\u200bJust knowing how to use SSIS is often not enough when faced with challenging processing requirements or complicated environments. This course takes IT professionals, DBAs and developers to a deeper level of SSIS skills maturity. By the end of the seminar, students will have the knowledge on how to architect SSIS solutions and deal with advanced requirements for data cleansing and data warehousing.\u200b</div></div>",
+  "description": "\u200bJust knowing how to use SSIS is often not enough when faced with challenging processing requirements or complicated environments. This course takes IT professionals, DBAs and developers to a deeper level of SSIS skills maturity. By the end of the seminar, students will have the knowledge on how to architect SSIS solutions and deal with advanced requirements for data cleansing and data warehousing.\u200b",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

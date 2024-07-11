@@ -1,0 +1,19 @@
+{
+  "title": "Brain Quest: MelbourneVisual Studio 2015 + ASP.NET 5 + DevOps",
+  "url": "/ssw/Events/Training/Brain-Quest-VS2015-ASP-NET-vNext-DevOps.aspx",
+  "thumbnail": "/ssw/EventsCalendar/Images/BrainQuestLogo.png",
+  "thumbnailDescription": "Brainquest: Visual Studio 2015 + ASP.NET 5 + DevOps",
+  "presenterName": "Adam Cogan",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
+  "startDateTime": "2016-03-07T22:00:00Z",
+  "endDateTime": "2016-03-08T07:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "eventShortDescription": "<div class=\"ExternalClass9284567E6E63490A947C08FBC1A5B6BD\"><div>\u200bThis half&#160;day training course brings developers up-to-speed on the new features and benefits of Visual Studio 2015, ASP.NET vNext, and DevOps.</div><div><br></div><div>With detailed insight into project management, requirements gathering, user stories, testing, workflow, document managemet and Office integration, attendees will leave with a strong understanding of how to embrace Visual Studio 2015, ASP.NET 5 and DevOps in their organization.</div></div>",
+  "description": "\u200bThis half\u00a0day training course brings developers up-to-speed on the new features and benefits of Visual Studio 2015, ASP.NET vNext, and DevOps.\n\nWith detailed insight into project management, requirements gathering, user stories, testing, workflow, document managemet and Office integration, attendees will leave with a strong understanding of how to embrace Visual Studio 2015, ASP.NET 5 and DevOps in their organization.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Azure on a budget - Build in the cloud without breaking the bank",
+  "url": "/ssw/NETUG/Brisbane.aspx",
+  "thumbnail": "/ssw/NETUG/Images/thumbs/thumb-BrisbaneUG.jpg",
+  "thumbnailDescription": "Brisbane Full Stack User Group",
+  "presenterName": "Bryden Oliver",
+  "presenterProfileUrl": "/people/bryden-oliver",
+  "startDateTime": "2022-12-14T07:00:00Z",
+  "endDateTime": "2022-12-14T10:00:00Z",
+  "startShowBannerDateTime": "2022-12-13T13:00:00Z",
+  "endShowBannerDateTime": "2022-12-14T11:00:00Z",
+  "liveStreamUrl": {
+    "description": "Livestream",
+    "url": "/live"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Azure",
+  "eventShortDescription": "<div class=\"ExternalClass6A1EB3E505B2440687C294DD4EF2DA5C\">December Full Stack&#160;User Group&#58;&#160;Azure on a budget - Build in the cloud without\r\nbreaking the bank&#160;</div><div class=\"ExternalClass6A1EB3E505B2440687C294DD4EF2DA5C\"><br><p>Are you about to embark on a new Azure project? Do you want to know how much it'll cost to run? And everyone needs to get the cost down on their current project. Right? &#128184;<br></p><p>Join SSW Solution Architect Bryden Oliver as he walks you through how to manage your Azure project cost.<br></p><p>In this talk, Bryden will cover&#58;<br> \u25aa\ufe0f Managed vs unmanaged services<br> \u25aa\ufe0f Understanding your expected workload<br> \u25aa\ufe0f How to choose the right performance or pricing tier<br> \u25aa\ufe0f Understanding the best way to use the Azure pricing calculator<br> \u25aa\ufe0f Monitoring, alerting and tuning the costs once deployed<br> \u25aa\ufe0f The hidden costs you may not expect<br> \u25aa\ufe0f Balancing cost with other priorities (like availability or security)</p><p>After this talk, you will be able to start small and scale up, understanding how costs will change throughout your project.</p><p><br>Bryden will share real-life project examples and plenty of anecdotes from many years of experience designing large Azure-based systems.<br></p><p><span style=\"font-size&#58;13px;\">--<br><br>Join us in person&#160;from 6 pm in Sydney &amp; Melbourne,&#160;or 5&#160;pm in Brisbane&#58;<br><br>SSW Sydney \u2013&#160;Watch party &#127910;<br>SSW Melbourne \u2013 Watch party &#127910;<br></span>SSW Brisbane \u2013 Live &#128308;</p></div>",
+  "eventDescription": "<div class=\"ExternalClassD847FBB879C1494593D5D89AA7AA5ABB\"><p>December .NET User Group&#58;&#160;Azure on a budget - Build in the cloud without breaking the bank&#160;</p><br><p>Are you about to embark on a new Azure project? Do you want to know how much it'll cost to run? And everyone needs to get the cost down on their current project. Right? &#128184;<br></p><p>Join SSW Solution Architect Bryden Oliver as he walks you through how to manage your Azure project cost.<br></p><p>In this talk, Bryden will cover&#58;<br> \u25aa\ufe0f Managed vs unmanaged services<br> \u25aa\ufe0f Understanding your expected workload<br> \u25aa\ufe0f How to choose the right performance or pricing tier<br> \u25aa\ufe0f Understanding the best way to use the Azure pricing calculator<br> \u25aa\ufe0f Monitoring, alerting and tuning the costs once deployed<br> \u25aa\ufe0f The hidden costs you may not expect<br> \u25aa\ufe0f Balancing cost with other priorities (like availability or security)</p><p>After this talk, you will be able to start small and scale up, understanding how costs will change throughout your project.<br></p><p>Bryden will share real-life project examples and plenty of anecdotes from many years of experience designing large Azure-based systems.<br></p><p><br></p></div>",
+  "description": "December Full Stack\u00a0User Group:\u00a0Azure on a budget - Build in the cloud without\r\nbreaking the bank\u00a0\n\nAre you about to embark on a new Azure project? Do you want to know how much it'll cost to run? And everyone needs to get the cost down on their current project. Right? \ud83d\udcb8\n\nJoin SSW Solution Architect Bryden Oliver as he walks you through how to manage your Azure project cost.\n\nIn this talk, Bryden will cover:\n\n \u25aa\ufe0f Managed vs unmanaged services\n\n \u25aa\ufe0f Understanding your expected workload\n\n \u25aa\ufe0f How to choose the right performance or pricing tier\n\n \u25aa\ufe0f Understanding the best way to use the Azure pricing calculator\n\n \u25aa\ufe0f Monitoring, alerting and tuning the costs once deployed\n\n \u25aa\ufe0f The hidden costs you may not expect\n\n \u25aa\ufe0f Balancing cost with other priorities (like availability or security)\n\nAfter this talk, you will be able to start small and scale up, understanding how costs will change throughout your project.\n\nBryden will share real-life project examples and plenty of anecdotes from many years of experience designing large Azure-based systems.\n\n--\n\nJoin us in person\u00a0from 6 pm in Sydney & Melbourne,\u00a0or 5\u00a0pm in Brisbane:\n\nSSW Sydney \u2013\u00a0Watch party \ud83c\udfa6\n\nSSW Melbourne \u2013 Watch party \ud83c\udfa6\n\nSSW Brisbane \u2013 Live \ud83d\udd34",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "bWa-DXjQu_Q",
+  "externalPresenters": [
+    {
+      "LookupId": 14,
+      "LookupValue": "Bryden Oliver"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/bryden-oliver.mdx"
+    }
+  ]
+}

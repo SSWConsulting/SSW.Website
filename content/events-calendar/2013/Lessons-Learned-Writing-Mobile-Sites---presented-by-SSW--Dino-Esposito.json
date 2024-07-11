@@ -1,0 +1,25 @@
+{
+  "title": "Lessons Learned Writing Mobile Sites - presented by SSW & Dino Esposito",
+  "url": "/ssw/Events/Webinars/Lessons-Learned-Writing-Mobile-Sites.aspx",
+  "thumbnail": "http://ssw.com.au/ssw/Events/Images/icons/thumb-webinar-dinoesposito_smaller.jpg",
+  "thumbnailDescription": "SSW Webinar - Lessons learned writing mobile sites",
+  "presenterName": "Dino Esposito",
+  "startDateTime": "2013-10-15T06:00:00Z",
+  "endDateTime": "2013-10-15T07:00:00Z",
+  "startShowBannerDateTime": "2013-10-14T13:00:00Z",
+  "endShowBannerDateTime": "2013-10-15T07:00:00Z",
+  "liveStreamUrl": {
+    "description": "Lessons Learned Writing Mobile Sites - presented by SSW & Dino Esposito",
+    "url": "/ssw/Events/Webinars/Live.aspx"
+  },
+  "calendarType": "Webinars",
+  "enabled": true,
+  "category": "Mobile Development",
+  "categoryAnchor": "Mobile",
+  "sessionTitle": "Lessons Learned Writing Mobile Sites - presented by SSW & Dino Esposito",
+  "eventShortDescription": "<div class=\"ExternalClass380235355D624493AE762C836E532EBE\"><p></p><div>Multi-device views without extra costs\u200b.</div><div> <br>      <br>Too many web sites are neither optimized nor adapted to render well on mobile devices and too many developers think it only needs some CSS.&#160;</div><div> <br><br></div></div>",
+  "eventDescription": "<div class=\"ExternalClass380235355D624493AE762C836E532EBE\"><p></p><div>Multi-device views without extra costs\u200b.</div><div> \n      <br>Too many web sites are neither optimized nor adapted to render well on mobile devices and too many developers think it only needs some CSS.&#160;</div><div> \n      <br>Responsive Web Design (RWD) delivers multi-device views without extra costs, but what if you have workflows to implement or different use-cases The session discusses a few real examples where RWD is not enough and server-side detection is necessary.</div><div> \n      <br> \n   </div><div> \n      <a href=\"http&#58;//software2cents.wordpress.com/\">Presented by<strong> \u200bDino Esposito</strong></a><strong> </strong>\u200bin conjunction with \n      <a href=\"http&#58;//www.ssw.com.au/\">SSW\u200b</a>.<br></div><div> \n      <br> \n   </div></div>",
+  "description": "Multi-device views without extra costs\u200b.\n\n \n\n \n\nToo many web sites are neither optimized nor adapted to render well on mobile devices and too many developers think it only needs some CSS.\u00a0\n\n ",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

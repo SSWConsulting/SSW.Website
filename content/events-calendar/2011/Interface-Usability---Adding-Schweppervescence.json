@@ -1,0 +1,19 @@
+{
+  "title": "Interface Usability - Adding Schweppervescence",
+  "url": "http://#",
+  "thumbnail": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewTFS",
+  "sessionTitle": "Interface Usability - Adding Schweppervescence",
+  "sessionTitleAnchor": "InterfaceUsability",
+  "eventShortDescription": "<div class=\"ExternalClassE7B5BA86528E47ABB8D2B192379FDE33\"><div>\u200biPhones give an awesome User Experience but interface design is not something that belongs solely in the world of Apple. Your website and applications can all benefit greatly from an understanding of how your users might navigate your product. Unfortunately for developers, interface usability is something of an afterthought, making your otherwise perfect application suck.<br><br>In this session, get real world examples of good and bad usability from Adam. Bring along your websites and applications and undergo the Adam Cogan crash test!</div></div>",
+  "eventDescription": "<div class=\"ExternalClassE7B5BA86528E47ABB8D2B192379FDE33\"><div>\u200biPhones give an awesome User Experience but interface design is not something that belongs solely in the world of Apple. Your website and applications can all benefit greatly from an understanding of how your users might navigate your product. Unfortunately for developers, interface usability is something of an afterthought, making your otherwise perfect application suck.<br><br>In this session, get real world examples of good and bad usability from Adam. Bring along your websites and applications and undergo the Adam Cogan crash test!</div></div>",
+  "description": "\u200biPhones give an awesome User Experience but interface design is not something that belongs solely in the world of Apple. Your website and applications can all benefit greatly from an understanding of how your users might navigate your product. Unfortunately for developers, interface usability is something of an afterthought, making your otherwise perfect application suck.\n\nIn this session, get real world examples of good and bad usability from Adam. Bring along your websites and applications and undergo the Adam Cogan crash test!",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

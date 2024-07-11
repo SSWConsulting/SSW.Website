@@ -1,0 +1,47 @@
+{
+  "title": "Cloud Native Aspirations with .NET Aspire",
+  "url": "/netug/sydney",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
+  "presenterName": "Matt Wicks & Rob Pearson",
+  "presenterProfileUrl": "/people/matt-wicks",
+  "startDateTime": "2024-04-17T08:00:00Z",
+  "endDateTime": "2024-04-17T11:00:00Z",
+  "startShowBannerDateTime": "2024-04-16T14:00:00Z",
+  "endShowBannerDateTime": "2024-04-17T13:00:00Z",
+  "liveStreamUrl": {
+    "description": "Livestream",
+    "url": "/live"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "abstract": "Join this talk and learn from an experienced .NET developer\u2019s perspective! \ud83e\udd13\r\n\r\nSSW Solution Architect, Matt Wicks, joined by Rob Pearson, from Octopus Deploy, together, presents .NET Aspire and .NET 8, highlighting their role in cloud-native application development. This session focuses on .NET Aspire\u2019s capabilities and the multi-platform versatility of .NET 8. Addressing orchestration, service integration, and telemetry, this session demonstrates how .NET Aspire and .NET 8 facilitate scalable, distributed app development and deployment across different platforms. \r\n\r\nDiscover its impact on developer experience on your local machine through deployment via the command line and CD tools like Octopus Deploy.",
+  "eventShortDescription": "<div class=\"ExternalClass87B84583D4F4491FAD375F1CA4C3E805\"><p>\u200bJoin this talk and learn from an experienced .NET developer\u2019s perspective! &#129299;<br></p><div>SSW Solution Architect, Matt Wicks, joined by Rob Pearson, from Octopus Deploy, together, presents .NET Aspire and .NET 8, highlighting their role in cloud-native application development. This session focuses on .NET Aspire\u2019s capabilities and the multi-platform versatility of .NET 8. Addressing orchestration, service integration, and telemetry, this session demonstrates how .NET Aspire and .NET 8 facilitate scalable, distributed app development and deployment across different platforms.&#160;</div><div><br></div><div>Discover its impact on developer experience on your local machine through deployment via the command line and CD tools like Octopus Deploy.</div><div><br></div><div>--</div><div><br></div><div>Join us in person from 6&#160;pm AEST in Sydney, Melbourne and Brisbane&#58;</div><div><br></div><div>SSW Sydney \u2013 Live &#128308;<br></div><div>SSW Melbourne \u2013&#160;Watch party &#127910;<br></div><div>SSW Brisbane \u2013 Watch party &#127910;<br></div><p><br></p></div>",
+  "description": "\u200bJoin this talk and learn from an experienced .NET developer\u2019s perspective! \ud83e\udd13\n\nSSW Solution Architect, Matt Wicks, joined by Rob Pearson, from Octopus Deploy, together, presents .NET Aspire and .NET 8, highlighting their role in cloud-native application development. This session focuses on .NET Aspire\u2019s capabilities and the multi-platform versatility of .NET 8. Addressing orchestration, service integration, and telemetry, this session demonstrates how .NET Aspire and .NET 8 facilitate scalable, distributed app development and deployment across different platforms.\u00a0\n\nDiscover its impact on developer experience on your local machine through deployment via the command line and CD tools like Octopus Deploy.\n\n--\n\nJoin us in person from 6\u00a0pm AEST in Sydney, Melbourne and Brisbane:\n\nSSW Sydney \u2013 Live \ud83d\udd34\n\nSSW Melbourne \u2013\u00a0Watch party \ud83c\udfa6\n\nSSW Brisbane \u2013 Watch party \ud83c\udfa6",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "udn6onn2Z28",
+  "externalPresenters": [
+    {
+      "LookupId": 24,
+      "LookupValue": "Matt Wicks"
+    },
+    {
+      "LookupId": 33,
+      "LookupValue": "Rob Pearson"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/matt-wicks.mdx"
+    },
+    {
+      "presenter": "content/presenters/rob-pearson.mdx"
+    }
+  ],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": false
+}
