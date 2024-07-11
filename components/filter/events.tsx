@@ -214,6 +214,15 @@ interface EventProps {
 }
 
 const Event = ({ visible, event, jsonLd }: EventProps) => {
+  const [thumbnail, setFallbackImage] = useState(event.thumbnail);
+  const handleImageError = () => {
+    const tinaUrl = /https:\/\/assets\.tina\.io\/[^/]+\/(.*)/;
+    const match = event.thumbnail.match(tinaUrl);
+    if (match) {
+      setFallbackImage(`/images/${match[1]}`);
+    }
+  };
+
   const city = event.city === "Other" ? event.cityOther : event.city;
   let eventSite = { name: city, url: event.url };
 
@@ -245,7 +254,8 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
               height={100}
               width={100}
               alt={`${event.thumbnailDescription || event.title} logo`}
-              src={event.thumbnail}
+              src={thumbnail}
+              onError={handleImageError}
             />
           </div>
           <div>
