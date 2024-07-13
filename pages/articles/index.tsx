@@ -1,8 +1,10 @@
 import ArticlesList from "@/components/articles/articlesList";
-import MicroservicesPanel from "@/components/microservices/microservicesPanel";
+import SidebarPanel from "@/components/sidebar/sidebarPanel";
 import client from "@/tina/client";
 import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
+import { useEffect, useState } from "react";
+import { gql } from "tinacms";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { ArticleCardProps } from "../../components/articles/articleCard";
@@ -34,6 +36,29 @@ export default function ArticlesIndexPage(
       userPosition: m.userPosition,
       userImage: m.userImage,
     })) || [];
+
+    const [pages, setPages] = useState([]);
+
+    useEffect(() => {
+      const fetchData = async () => {
+        const pageListData = await client.queries.articlesConnection();
+        const pages: ArticleCardProps[] = [];
+        console.log(pageListData);
+        pageListData.data.articlesConnection.edges.forEach((page) => pages.push({
+          title: page.node.title,
+          body: page.node.seo?.description,
+          pageURL: `/articles/${page.node._sys.filename}`,
+          isExternal: false,
+          userName: page.node.articleAuthor.authorName,
+          userPosition: page.node.articleAuthor.authorPosition,
+          userImage: page.node.articleAuthor.authorImage,
+        }));
+
+        setPages(pages);
+      };
+
+      fetchData();
+    }, []);
 
   return (
     <div>
@@ -81,22 +106,20 @@ export default function ArticlesIndexPage(
 
             {data.articlesIndex.articles?.length > 0 ? (
               <Section className="mx-auto w-full">
-                <ArticlesList
-                  listItemProps={articlesProps}
-                  schema={data.articlesIndex.articles}
-                />
+                <ArticlesList articles={pages} />
               </Section>
             ) : (
               <></>
             )}
             </div>
           )}
-          {(data.articlesIndex.showMicroservices) && (
+          {(data.articlesIndex.showSidebarPanel) && (
             <div className="max-w-sm shrink pl-16">
-                <MicroservicesPanel
-                  title={data.articlesIndex.microservicesTitle}
-                  description={data.articlesIndex.microservicesDescription}
-                  url={data.articlesIndex.microservicesUrl}
+                <SidebarPanel
+                  title={data.articlesIndex.sidebarPanel.title}
+                  description={data.articlesIndex.sidebarPanel.description}
+                  actionUrl={data.articlesIndex.sidebarPanel.actionUrl}
+                  actionText={data.articlesIndex.sidebarPanel.actionText}
                 />
             </div>
           )}

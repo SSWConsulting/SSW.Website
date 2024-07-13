@@ -1,13 +1,12 @@
 import { Breadcrumbs } from "@/blocks/breadcrumbs";
 import { componentRenderer } from "@/blocks/mdxComponentRenderer";
-import { TechUpgrade } from "@/blocks/techUpgrade";
+import ArticleAuthor from "@/components/articles/articleAuthor";
 import { BuiltOnAzure } from "@/components/blocks";
 import { Blocks } from "@/components/blocks-renderer";
 import { Layout } from "@/components/layout";
-import MicroservicesPanel from "@/components/microservices/microservicesPanel";
+import SidebarPanel from "@/components/sidebar/sidebarPanel";
 import { Section } from "@/components/util/section";
 import { SEO } from "@/components/util/seo";
-import { RecaptchaContext } from "@/context/RecaptchaContext";
 import { removeExtension } from "@/services/client/utils.service";
 import client from "@/tina/client";
 import classNames from "classnames";
@@ -25,70 +24,67 @@ export default function ArticlesPage(
   });
 
   return (
-    <RecaptchaContext.Provider
-      value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
-    >
-      <div>
-        <SEO seo={props.seo} />
-        <Layout menu={data.megamenu}>
-          <Blocks prefix="ArticlesBeforeBody" blocks={data.articles.beforeBody} />
-          {data.articles.seo?.showBreadcrumb === null ||
-            (data.articles.seo?.showBreadcrumb && (
-              <Section className="mx-auto w-full max-w-9xl px-8 py-5">
-                <Breadcrumbs
-                  path={removeExtension(props.variables.relativePath)}
-                  suffix={data.global.breadcrumbSuffix}
-                  title={data.articles.seo?.title}
-                  seoSchema={data.articles.seo}
-                />
-              </Section>
-            ))}
-          {data.articles.title && (
-            <Section
-              className="mx-auto w-full max-w-9xl px-8"
-              data-tina-field={tinaField(data.articles, "title")}
-            >
-              <h1 className="mt-4 py-2">{data.articles.title}</h1>
+    <div>
+      <SEO seo={props.seo} />
+      <Layout menu={data.megamenu}>
+        <Blocks prefix="ArticlesBeforeBody" blocks={data.articles.beforeBody} />
+        {data.articles.seo?.showBreadcrumb === null ||
+          (data.articles.seo?.showBreadcrumb && (
+            <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+              <Breadcrumbs
+                path={removeExtension(props.variables.relativePath)}
+                suffix={data.global.breadcrumbSuffix}
+                title={data.articles.seo?.title}
+                seoSchema={data.articles.seo}
+              />
             </Section>
-          )}
-          {data.articles.subTitle && (
-            <section
-              className={classNames(
-                "prose mx-auto w-full max-w-9xl flex-row px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0",
-                data.articles.fullWidthBody ? "" : "md:flex"
-              )}
-            >
-              <div>
-                <TinaMarkdown
-                  content={data.articles.subTitle}
-                  data-tina-field={tinaField(data.articles, "subTitle")}
-                  components={componentRenderer}
+          ))}
+        {data.articles.title && (
+          <Section
+            className="mx-auto w-full max-w-9xl px-8"
+            data-tina-field={tinaField(data.articles, "title")}
+          >
+            <h1 className="mt-4 py-2">{data.articles.title}</h1>
+          </Section>
+        )}
+        {!!data.articles.articleAuthor && (
+          <Section className="mx-auto w-full max-w-9xl px-8">
+            <ArticleAuthor name={data.articles.articleAuthor.authorName} position={data.articles.articleAuthor.authorPosition} image={data.articles.articleAuthor.authorImage} />
+          </Section>
+        )}
+        {data.articles.subTitle && (
+          <section
+            className={classNames(
+              "prose mx-auto w-full max-w-9xl flex-row px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0",
+              data.articles.fullWidthBody ? "" : "md:flex"
+            )}
+          >
+            <div data-tina-field={tinaField(data.articles, "_body")}>
+              <TinaMarkdown
+                content={data.articles.subTitle}
+                data-tina-field={tinaField(data.articles, "subTitle")}
+                components={componentRenderer}
+              />
+            </div>
+            {data.articles.showSidebarPanel && (
+              <div className="max-w-sm shrink pl-16">
+                <SidebarPanel
+                  title={data.articles.sidebarPanel.title}
+                  description={data.articles.sidebarPanel.description}
+                  actionUrl={data.articles.sidebarPanel.actionUrl}
+                  actionText={data.articles.sidebarPanel.actionText}
                 />
               </div>
-              {data.articles.showMicroservices && (
-                <div className="max-w-sm shrink pl-16">
-                  <MicroservicesPanel
-                    title={data.articles.microservicesTitle}
-                    description={data.articles.microservicesDescription}
-                    url={data.articles.microservicesUrl}
-                  />
-                </div>
-              )}
-            </section>
-          )}
+            )}
+          </section>
+        )}
 
-          <Blocks prefix="Articles_body" blocks={data.articles._body} />
-          {data.articles.showTechUpgradeBlock && (
-            <Section className="mx-auto w-full !bg-gray-75 px-8 py-5">
-              <TechUpgrade />
-            </Section>
-          )}
-          <Section>
-            <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
-          </Section>
-        </Layout>
-      </div>
-    </RecaptchaContext.Provider>
+        <Blocks prefix="Articles_body" blocks={data.articles._body} />
+        <Section>
+          <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+        </Section>
+      </Layout>
+    </div>
   );
 }
 

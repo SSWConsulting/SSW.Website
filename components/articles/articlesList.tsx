@@ -1,9 +1,8 @@
 import ArticleCard from "./articleCard";
 
-const ArticlesList = ({ listItemProps, schema }) => {
-  if (!listItemProps) return null;
-  const listItems = listItemProps.map((p, i) => (
-    <ArticleCard key={i} data={p} schema={schema} index={i} />
+const ArticlesList = ({ articles }) => {
+  const listItems = articles.map((p, i) => (
+    <ArticleCard data={p} key={i} />
   ));
 
   return (

@@ -11,13 +11,35 @@ import {
   verticalImageLayoutBlockSchema,
 } from "../../components/blocks";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
-import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
+import { articleAuthorSchema } from "../../components/util/articleAuthor";
 import { seoSchema } from "../../components/util/seo";
+import { sidebarPanelSchema } from "../../components/util/sidebarPanel";
 import { tipField } from "./shared-fields";
 
 import type { Collection } from "tinacms";
 import { dynamicCardGridBlockSchema } from "../../components/blocks/dynamicCardGridBlock";
-import { testimonialToSelectOptions } from "../../helpers/getTestimonials";
+
+export const articlesIndexSchemaConstants = {
+  value: "articlesIndex",
+  title: "title",
+  headerImage: {
+    value: "headerImage",
+    heroBackground: "heroBackground",
+    altText: "altText",
+    txtOverlay: "txtOverlay",
+  },
+  _body: "_body",
+  articles: {
+    value: "articles",
+    title: "title",
+    body: "body",
+    pageURL: "pageURL",
+    isExternal: "isExternal",
+    userName: "userName",
+    userPosition: "userPosition",
+    userImage: "userImage",
+  },
+};
 
 export const articlesSchema: Collection = {
   label: "Articles - Pages",
@@ -72,6 +94,9 @@ export const articlesSchema: Collection = {
         videoEmbedBlockSchema,
       ],
     },
+     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    articleAuthorSchema,
     {
       type: "boolean",
       name: "fullWidthBody",
@@ -84,31 +109,13 @@ export const articlesSchema: Collection = {
     },
     {
       type: "boolean",
-      name: "showMicroservices",
-      label: "Show Microservice Sidebar",
+      name: "showSidebarPanel",
+      label: "Show Sidebar Panel",
       required: false,
     },
-    {
-      type: "string",
-      name: "microservicesTitle",
-      label: "Microservices Title"
-    },
-    {
-      type: "string",
-      name: "microservicesDescription",
-      label: "Microservices Description"
-    },
-    {
-      type: "string",
-      name: "microservicesUrl",
-      label: "Action URL"
-    },
-    {
-      type: "boolean",
-      name: "showTechUpgradeBlock",
-      label: "Show Tech Upgrade Block",
-      required: false,
-    },
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    sidebarPanelSchema,
     {
       type: "object",
       list: true,
@@ -168,28 +175,6 @@ export const articlesSchema: Collection = {
       ],
     },
   ],
-};
-
-export const articlesIndexSchemaConstants = {
-  value: "articlesIndex",
-  title: "title",
-  headerImage: {
-    value: "headerImage",
-    heroBackground: "heroBackground",
-    altText: "altText",
-    txtOverlay: "txtOverlay",
-  },
-  _body: "_body",
-  articles: {
-    value: "articles",
-    title: "title",
-    body: "body",
-    pageURL: "pageURL",
-    isExternal: "isExternal",
-    userName: "userName",
-    userPosition: "userPosition",
-    userImage: "userImage",
-  },
 };
 
 export const articlesIndexSchema: Collection = {
@@ -257,25 +242,13 @@ export const articlesIndexSchema: Collection = {
     },
     {
       type: "boolean",
-      name: "showMicroservices",
-      label: "Show Microservice Sidebar",
+      name: "showSidebarPanel",
+      label: "Show Sidebar Panel",
       required: false,
     },
-    {
-      type: "string",
-      name: "microservicesTitle",
-      label: "Microservices Title"
-    },
-    {
-      type: "string",
-      name: "microservicesDescription",
-      label: "Microservices Description"
-    },
-    {
-      type: "string",
-      name: "microservicesUrl",
-      label: "Action URL"
-    },
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    sidebarPanelSchema,
     {
       type: "object",
       label: "Articles",
