@@ -5,11 +5,7 @@ const ArticlesList = ({ articles }) => {
     <ArticleCard data={p} key={i} />
   ));
 
-  return (
-    <div className="flex flex-col w-full">
-      {listItems}
-    </div>
-  );
+  return <div className="flex w-full flex-col">{listItems}</div>;
 };
 
 export default ArticlesList;

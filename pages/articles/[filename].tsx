@@ -26,8 +26,10 @@ export default function ArticlesPage(
   return (
     <div>
       <SEO seo={props.seo} />
-      <Layout menu={data.megamenu}>
-        <Blocks prefix="ArticlesBeforeBody" blocks={data.articles.beforeBody} />
+      <Layout menu={data.megamenu} showAzureBanner={true}>
+        <Blocks
+          prefix="ArticlesBeforeBody"
+          blocks={data.articles.beforeBody} />
         {data.articles.seo?.showBreadcrumb === null ||
           (data.articles.seo?.showBreadcrumb && (
             <Section className="mx-auto w-full max-w-9xl px-8 py-5">

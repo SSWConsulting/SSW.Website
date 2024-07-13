@@ -11,8 +11,16 @@ export type ArticleCardProps = {
   isExternal: boolean;
 };
 
-const ArticleCard = ({ data }) => {
-  const { title, pageURL, body, isExternal, userName, userImage, userPosition }: ArticleCardProps = data;
+const ArticleCard = ({ data, schema, index }) => {
+  const {
+    title,
+    pageURL,
+    body,
+    isExternal,
+    userName,
+    userImage,
+    userPosition,
+  }: ArticleCardProps = data;
 
   return isExternal ? (
     <CustomLink
@@ -45,7 +53,13 @@ const ArticleCard = ({ data }) => {
   );
 };
 
-const ArticleCardContent = ({ title, body, userName, userImage, userPosition }) => {
+const ArticleCardContent = ({
+  title,
+  body,
+  userName,
+  userImage,
+  userPosition
+}) => {
   return (
     <div className="size-full bg-white">
       <div>

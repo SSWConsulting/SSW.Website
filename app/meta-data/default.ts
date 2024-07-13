@@ -9,6 +9,7 @@ export const DEFAULT: Metadata = {
   },
   generator: "Next.js",
   applicationName: "SSW.Website",
+  manifest: "/site.webmanifest",
   publisher: "SSW",
   description: layoutData.header.description,
   openGraph: {
@@ -69,5 +70,4 @@ export const DEFAULT: Metadata = {
       url: "/safari-pinned-tab.svg",
     },
   ],
-  manifest: "/site.webmanifest",
 };
