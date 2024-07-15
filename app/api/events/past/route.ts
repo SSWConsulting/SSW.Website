@@ -1,11 +1,13 @@
 import { NextRequest } from "next/server";
 import client from "../../../../tina/__generated__/client";
 import { getEventsWithClient } from "../getEvents";
+import { formatName } from "../upcoming/route";
 
 export async function GET(req: NextRequest) {
-  const presenterName = req.nextUrl.searchParams.get("presenterName");
+  let presenterName = req.nextUrl.searchParams.get("presenterName");
   if (!presenterName)
     return new Response("presenterName is required", { status: 400 });
+  presenterName = formatName(presenterName);
   const eventClient = await client.queries.getPastEventsQuery({
     fromDate: new Date().toISOString(),
     top: 999 /* GraphQL will limit the count to 50 by default, 

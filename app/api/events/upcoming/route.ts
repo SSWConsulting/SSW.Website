@@ -3,12 +3,17 @@ import client from "../../../../tina/__generated__/client";
 import { getEventsWithClient } from "../getEvents";
 
 export async function GET(req: NextRequest) {
-  const presenterName = req.nextUrl.searchParams.get("presenterName");
+  let presenterName = req.nextUrl.searchParams.get("presenterName");
   if (!presenterName)
     return new Response("presenterName is required", { status: 400 });
+  presenterName = formatName(presenterName);
   const eventClient = await client.queries.getFutureEventsQuery({
     fromDate: new Date().toISOString(),
   });
   const events = await getEventsWithClient(eventClient, presenterName);
   return new Response(JSON.stringify(events), { status: 200 });
 }
+
+export const formatName = (name: string) => {
+  return name.replace("-", " ");
+};
