@@ -1,0 +1,21 @@
+{
+  "title": "Full Stack RX Programming",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "startDateTime": "2018-06-12T14:00:00Z",
+  "endDateTime": "2018-06-12T16:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Angular and React",
+  "categoryAnchor": "OverviewOthers",
+  "sessionTitle": "Full Stack RX Programming",
+  "sessionTitleAnchor": "FullStackRXProgramming",
+  "eventShortDescription": "<div class=\"ExternalClass3D039CDF454E4FDCBF418430A3B40144\"><div>Like many of us, Brendan first started working with reactive programming patterns under JavaScript-based\u200b user interfaces with RxJS. But Reactive Programming is a pattern available to most modern languages, including Reactive Extensions for .NET and Entity Framework RX.</div><div><br></div><div>This talk is an introduction to using Reactive Extensions on the server side with ASP.NET Core 2.1 <br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassE23B12BD2D6E49689AD0CB83FC106AE7\"><p>\u200bLike many of us, Brendan first started working with reactive programming patterns under JavaScript-based user interfaces with RxJS. But Reactive Programming is a pattern available to most modern languages, including Reactive Extensions for .NET and Entity Framework RX.<br>This talk is an introduction to using Reactive Extensions on the server side with&#160;ASP.NET&#160;Core 2.1<br><br></p></div>",
+  "description": "Like many of us, Brendan first started working with reactive programming patterns under JavaScript-based\u200b user interfaces with RxJS. But Reactive Programming is a pattern available to most modern languages, including Reactive Extensions for .NET and Entity Framework RX.\n\nThis talk is an introduction to using Reactive Extensions on the server side with ASP.NET Core 2.1 ",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

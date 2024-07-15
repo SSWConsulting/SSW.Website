@@ -1,0 +1,41 @@
+{
+  "title": "Azure DevOps to GitHub - The 10 Missing Bits",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
+  "presenterName": "Matt Wicks",
+  "presenterProfileUrl": "/people/matt-wicks/",
+  "startDateTime": "2022-09-21T08:00:00Z",
+  "endDateTime": "2022-09-21T11:00:00Z",
+  "startShowBannerDateTime": "2022-09-20T14:00:00Z",
+  "endShowBannerDateTime": "2022-09-21T13:00:00Z",
+  "liveStreamUrl": {
+    "description": "/live",
+    "url": "/live"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassF56B262390BE4F7DB5AE495A52298A76\">September .NET User Group&#58;&#160;Azure DevOps to\r\nGitHub - The 10 Missing Bits<br><br><p>GitHub is the best engineering platform for developers, and has really matured in recent years. Still, we hear developers say &quot;I can't believe that I can't do this on GitHub, it's easy on Azure DevOps &#128293;&quot;. <br><br>In this talk, Matt Wicks will give you the top 10 things you need to know to turn those frowns upside down and make development great again.<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassC5482DCE67BD47B0B2527E0CD327D590\"><p></p>September .NET User Group&#58;&#160;Azure DevOps to GitHub - The 10 Missing Bits<br><br><p>GitHub is the best engineering platform for developers, and has really matured in recent years. Still, we hear developers say &quot;I can't believe that I can't do this on GitHub, it's easy on Azure DevOps &#128293;&quot;.<br><br>In this talk, Matt Wicks will give you the top 10 things you need to know to turn those frowns upside down and make development great again.<br></p></div>",
+  "description": "September .NET User Group:\u00a0Azure DevOps to\r\nGitHub - The 10 Missing Bits\n\nGitHub is the best engineering platform for developers, and has really matured in recent years. Still, we hear developers say \"I can't believe that I can't do this on GitHub, it's easy on Azure DevOps \ud83d\udd25\". \n\nIn this talk, Matt Wicks will give you the top 10 things you need to know to turn those frowns upside down and make development great again.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "FlUGcjG517o",
+  "evalFormURL": {
+    "description": "Leave your feedback",
+    "url": "https://forms.microsoft.com/Pages/ResponsePage.aspx?id=NHwvrDW56Uir3BHl1PyysPj1WXHPfJ5OhXxqnVi-9WJUOEtZTVEzM1hDNlcxQUVKQVQyTkdWRU5JNyQlQCN0PWcu"
+  },
+  "externalPresenters": [
+    {
+      "LookupId": 24,
+      "LookupValue": "Matt Wicks"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/matt-wicks.mdx"
+    }
+  ]
+}

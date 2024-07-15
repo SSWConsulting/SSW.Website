@@ -1,0 +1,19 @@
+{
+  "title": "Team Foundation Server 2015 (TFS) for Successful Project Management",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewTFS",
+  "sessionTitle": "Team Foundation Server 2015 (TFS) for Successful Project Management",
+  "sessionTitleAnchor": "TFSProjectManagement",
+  "eventShortDescription": "<div class=\"ExternalClassE141451159C74D58B2127F0D3B3CD76C\">\u200bVisual Studio Ultimate (formerly Visual Studio Team System (VSTS)) and Team Foundation Server (TFS) are the cornerstones of development on the Microsoft .NET platform. These are the best tools for a project manager to have successful projects and for the developers to have a focused and smooth software development process.<br><br><br></div>",
+  "eventDescription": "<div class=\"ExternalClassE141451159C74D58B2127F0D3B3CD76C\"><div>\u200bVisual Studio Ultimate (formerly Visual Studio Team System (VSTS)) and Team Foundation Server (TFS) are the cornerstones of development on the Microsoft .NET platform. These are the best tools for a project manager to have successful projects and for the developers to have a focused and smooth software development process.<br><br>Come and see Adam Cogan, Microsoft Regional Director, VSTS Champ and Chief Architect from SSW show you&#58;<br><br><ul><li>How to successfully gather requirements with User stories</li><li>The right want to use work items</li><li>The way to complete a work items and send a &quot;done&quot;</li><li>Use templates for your standard work items</li><li>The extra work items that developers always forget</li><li>What is good and bad about Excel and Project integration</li><li>What you can use from the built in reporting as well as the Project portals available on from the SharePoint dashboard</li><li>The important reports to give your Project Manager</li></ul>Walk away knowing how to see the project health and progress. Visual Studio Ultimate is designed to help address many of these traditional problems faced by project managers. It does so by providing a set of integrated tools to help teams improve their software development activities and to help project managers better support the software development processes.<br><br>During this session we will cover the lifecycle of creating work items and tracking of releases using Visual Studio Ultimate and Team Foundation Server.</div></div>",
+  "description": "\u200bVisual Studio Ultimate (formerly Visual Studio Team System (VSTS)) and Team Foundation Server (TFS) are the cornerstones of development on the Microsoft .NET platform. These are the best tools for a project manager to have successful projects and for the developers to have a focused and smooth software development process.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

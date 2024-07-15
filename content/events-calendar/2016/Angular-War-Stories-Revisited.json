@@ -1,0 +1,21 @@
+{
+  "title": "Angular War Stories Revisited",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "startDateTime": "2016-12-13T22:00:00Z",
+  "endDateTime": "2016-12-14T06:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Angular",
+  "categoryAnchor": "OverviewOther",
+  "sessionTitle": "Angular War Stories (Revisited)",
+  "sessionTitleAnchor": "AngularWarStories(Revisited)",
+  "eventShortDescription": "<div class=\"ExternalClass28B1C5CA6DD544C6A0D03A0648F05640\"><p>\u200bAt SSW, we love Angular 2.&#160;</p>We have been building web applications for enterprises and large government projects since Angular 2 was in early beta.<div><br>Performance, Mobile friendly, Flexible. Sweet! Happy Users, Happy Developers, Happy Business. Awesome! \u2026but there are so many options, and so many unanswered questions.&#160;<div><br>This session will de-mystify Angular 2, highlight the lessons we wish we hadn\u2019t had to learn the hard way. We will teach you what you need to know but aren\u2019t going to find out until you are too far into your project to turn around. You will learn the pitfalls to avoid when building Angular 2 in production.</div><div><br>Come and see why we are loving Angular 2 for everything from startups to large enterprise applications.<p><br></p></div></div></div>",
+  "eventDescription": "<div class=\"ExternalClass119763AA40634472BE1AF281CA6CB747\"><p>\u200bAt SSW, we love Angular 2.&#160;</p>We have been building web applications for enterprises and large government projects since Angular 2 was in early beta.<div><br>Performance, Mobile friendly, Flexible. Sweet! Happy Users, Happy Developers, Happy Business. Awesome! \u2026but there are so many options, and so many unanswered questions.&#160;</div><div><br>This session will de-mystify Angular 2, highlight the lessons we wish we hadn\u2019t had to learn the hard way. We will teach you what you need to know but aren\u2019t going to find out until you are too far into your project to turn around. You will learn the pitfalls to avoid when building Angular 2 in production.</div><div><br>Come and see why we are loving Angular 2 for everything from startups to large enterprise applications.<p><br></p></div></div>",
+  "description": "\u200bAt SSW, we love Angular 2.\u00a0\n\nWe have been building web applications for enterprises and large government projects since Angular 2 was in early beta.\n\nPerformance, Mobile friendly, Flexible. Sweet! Happy Users, Happy Developers, Happy Business. Awesome! \u2026but there are so many options, and so many unanswered questions.\u00a0\n\nThis session will de-mystify Angular 2, highlight the lessons we wish we hadn\u2019t had to learn the hard way. We will teach you what you need to know but aren\u2019t going to find out until you are too far into your project to turn around. You will learn the pitfalls to avoid when building Angular 2 in production.\n\nCome and see why we are loving Angular 2 for everything from startups to large enterprise applications.",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

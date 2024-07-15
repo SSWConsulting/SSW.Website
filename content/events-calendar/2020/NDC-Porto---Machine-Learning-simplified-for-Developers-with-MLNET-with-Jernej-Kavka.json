@@ -1,0 +1,20 @@
+{
+  "title": "NDC Porto - Machine Learning simplified for Developers with ML.NET with Jernej Kavka",
+  "url": "https://ndcporto.com/talk/machine-learning-simplified-for-developers-with-ml-net/",
+  "thumbnail": "/images/Newsletters/Jernej_Kavka.jpg",
+  "thumbnailDescription": "NDC Porto - Machine Learning simplified for Developers with ML.NET with Jernej Kavka",
+  "presenterName": "Jernej Kavka",
+  "presenterProfileUrl": "/people/jk",
+  "startDateTime": "2020-04-24T08:20:00Z",
+  "endDateTime": "2020-04-24T09:20:00Z",
+  "calendarType": "Conferences",
+  "city": "Online",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassBB3C3E04373C41F7915B1979B766289D\">SSW's Jernej Kavka (JK) presents&#160;\u200bMachine Learning simplified for Developers with ML.NET&#160;at NDC Porto&#58;<br><br><section>Do you want to try machine learning, but don't want to invest too much time learning a new programming language or some other complicated API?</section><section><br></section><section>See why many Australians considered this to be their favorite machine learning talk presented at 5 different cities and 10 events!<br><br>We'll look at ML from a developer perspective. We'll start prototyping our solution with the help of ML.NET Model Builder, tweak it with elementary data science knowledge, and finally generate code that we can use in our applications.</section><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass8A87258AFC864879A1CBFEDC5CBCBB18\"><p>NDC Porto&#58;&#160;Jernej Kavka (JK)&#160;presents&#160;\u200bMachine Learning simplified for Developers with ML.NET<br></p>Date&#58; 23/04/20<br><p>Time&#58; 4&#58;20 to 5&#58;20 pm (Sydney Time)<br></p><section>Do you want to try machine learning, but don't want to invest too much time learning a new programming language or some other complicated API?</section><section><br></section><section>See why many Australians considered this to be their favorite machine learning talk presented at 5 different cities and 10 events!<br><br>We'll look at ML from a developer perspective. We'll start prototyping our solution with the help of ML.NET Model Builder, tweak it with elementary data science knowledge, and finally generate code that we can use in our applications.</section><div><br></div><div>About the presenter<br></div><div><br></div><div>With 10 years of experience in software engineering Jernej has worked on full-stack .Net development, mobile applications, and Microsoft Cognitive Services. He worked on some of Australia's largest corporates with great customer satisfaction.<br></div></div>",
+  "description": "SSW's Jernej Kavka (JK) presents\u00a0\u200bMachine Learning simplified for Developers with ML.NET\u00a0at NDC Porto:\n\nDo you want to try machine learning, but don't want to invest too much time learning a new programming language or some other complicated API?\n\nSee why many Australians considered this to be their favorite machine learning talk presented at 5 different cities and 10 events!\n\nWe'll look at ML from a developer perspective. We'll start prototyping our solution with the help of ML.NET Model Builder, tweak it with elementary data science knowledge, and finally generate code that we can use in our applications.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

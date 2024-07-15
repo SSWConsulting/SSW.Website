@@ -1,0 +1,41 @@
+{
+  "title": "Flexing Your Biceps with Azure",
+  "url": "/ssw/NETUG/Melbourne.aspx",
+  "thumbnail": "/images/thumbs/thumb-melbourneUG.jpg",
+  "thumbnailDescription": "Melbourne .NET User Group",
+  "presenterName": "William Liebenberg",
+  "presenterProfileUrl": "/people/william-liebenberg/",
+  "startDateTime": "2022-08-17T08:00:00Z",
+  "endDateTime": "2022-08-17T12:00:00Z",
+  "startShowBannerDateTime": "2022-08-16T14:00:00Z",
+  "endShowBannerDateTime": "2022-08-17T12:00:00Z",
+  "liveStreamUrl": {
+    "description": "/live",
+    "url": "/live"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Azure",
+  "eventShortDescription": "<div class=\"ExternalClassE22138E6E5454193B7140A0D9C4A07AC\"><p>\u200bAugust&#160;.NET User Group&#58;&#160;Flexing Your Biceps with Azure<br></p>No matter how hard we try, Azure Resource Manager (ARM) JSON templates aren't easy or fun to maintain for enterprise platforms and applications.<br><br><p>Now we can flex our Infrastructure as Code (IaC) muscles using a new tool called Azure Bicep.</p><p><br>Azure Bicep is a Domain Specific Language (DSL) that puts the fun back into IaC development with a simpler syntax, better code reusability and modularity.<br> <br>In this talk, we are going to&#160;start by exploring how Bicep works, how we use it, and compare it to other IaC options such as Terraform and Pulumi.<br> <br>We will wrap up the talk with a live demo to deploy a full-stack application to Azure.<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassACB31C4B04674C5690AB4654AD7A32BA\"><p>August&#160;.NET User Group&#58;&#160;Flexing Your Biceps with Azure</p>No matter how hard we try, Azure Resource Manager (ARM) JSON templates aren't easy or fun to maintain for enterprise platforms and applications.<br><br><p>Now we can flex our Infrastructure as Code (IaC) muscles using a new tool called Azure Bicep.</p><p><br>Azure Bicep is a Domain Specific Language (DSL) that puts the fun back into IaC development with a simpler syntax, better code reusability and modularity.<br><br>In this talk, we are going to&#160;start by exploring how Bicep works, how we use it,&#160;and compare it to other IaC options such as Terraform and Pulumi.<br><br>We will wrap up the talk with a live demo to deploy a full-stack application to Azure.<br></p></div>",
+  "description": "\u200bAugust\u00a0.NET User Group:\u00a0Flexing Your Biceps with Azure\n\nNo matter how hard we try, Azure Resource Manager (ARM) JSON templates aren't easy or fun to maintain for enterprise platforms and applications.\n\nNow we can flex our Infrastructure as Code (IaC) muscles using a new tool called Azure Bicep.\n\nAzure Bicep is a Domain Specific Language (DSL) that puts the fun back into IaC development with a simpler syntax, better code reusability and modularity.\n\n \n\nIn this talk, we are going to\u00a0start by exploring how Bicep works, how we use it, and compare it to other IaC options such as Terraform and Pulumi.\n\n \n\nWe will wrap up the talk with a live demo to deploy a full-stack application to Azure.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "-kl7e76ODos",
+  "evalFormURL": {
+    "description": "Evaluation form",
+    "url": "https://forms.office.com/r/HFNqehwYNN"
+  },
+  "externalPresenters": [
+    {
+      "LookupId": 8,
+      "LookupValue": "William Liebenberg"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/william-liebenberg.mdx"
+    }
+  ]
+}

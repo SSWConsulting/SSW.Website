@@ -1,0 +1,19 @@
+{
+  "title": "What is new in SharePoint 2016",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "SharePoint",
+  "categoryAnchor": "OverviewSharePoint",
+  "sessionTitle": "What is new in SharePoint 2016",
+  "sessionTitleAnchor": "NewinSP2016",
+  "eventShortDescription": "<div class=\"ExternalClass7EE606E082D54E62BBE78C26D173DD23\"><div>In this session Adam Cogan will provide information about what is new in SharePoint 2016&#160;and his personal favourites. The SharePoint Team has invested in many including&#58;<br><br><ul><li>UX support for&#160;Ajax</li><li>Their Web Content Management System</li><li>Digital Asset Management System (for videos)</li><li>Visual Studio 2015 tools for SharePoint 2016</li><li>Developer Platform</li><li>Office 2016&#160;integration</li><li>RESTful Web API</li><li>Tagging and Rating</li></ul>Lets see what is good and what is not.\u200b\u200b</div></div>",
+  "eventDescription": "<div class=\"ExternalClass7EE606E082D54E62BBE78C26D173DD23\"><div>In this session Adam Cogan will provide information about what is new in SharePoint 2016 and his personal favourites. The SharePoint Team has invested in many including&#58;<br><br><ul><li>UX support for&#160;Ajax</li><li>Their Web Content Management System</li><li>Digital Asset Management System (for videos)</li><li>Visual Studio 2015 tools for SharePoint 2016</li><li>Developer Platform</li><li>Office 2016&#160;integration</li><li>RESTful Web API</li><li>Tagging and Rating</li></ul>Lets see what is good and what is not.\u200b\u200b</div></div>",
+  "description": "In this session Adam Cogan will provide information about what is new in SharePoint 2016\u00a0and his personal favourites. The SharePoint Team has invested in many including:\n\nUX support for\u00a0Ajax\n\nTheir Web Content Management System\n\nDigital Asset Management System (for videos)\n\nVisual Studio 2015 tools for SharePoint 2016\n\nDeveloper Platform\n\nOffice 2016\u00a0integration\n\nRESTful Web API\n\nTagging and Rating\n\nLets see what is good and what is not.\u200b\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

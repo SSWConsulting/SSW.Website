@@ -1,0 +1,17 @@
+{
+  "title": "UTS .NET Course",
+  "url": "/ssw/training/VisualStudio.aspx",
+  "thumbnail": "/images/Newsletters/thumb_uts.jpg",
+  "thumbnailDescription": "/ssw/EventsCalendar/Images/thumb_uts.jpg",
+  "startDateTime": "2013-10-03T08:00:00Z",
+  "endDateTime": "2013-10-03T11:00:00Z",
+  "calendarType": "UTS Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "sessionTitle": "UTS .NET Session 8",
+  "eventShortDescription": "<div class=\"ExternalClassD9353119A1F145FEB67E0FC41D7F2703\"><div>\u200bUTS has the proud distinction of being the first academic institution in the world to teach participants to develop on the .NET Framework with Visual Studio 2012. The .NET Framework is one of the leading Microsoft development platforms for Windows and Web applications and this short course aims to introduce attendees to the latest Microsoft Development platform Visual Studio 2012.\u200b</div></div>",
+  "eventDescription": "<div class=\"ExternalClassD9353119A1F145FEB67E0FC41D7F2703\"><div>\u200bUTS has the proud distinction of being the first academic institution in the world to teach participants to develop on the .NET Framework with Visual Studio 2012. The .NET Framework is one of the leading Microsoft development platforms for Windows and Web applications and this short course aims to introduce attendees to the latest Microsoft Development platform Visual Studio 2012.\u200b</div></div>",
+  "description": "\u200bUTS has the proud distinction of being the first academic institution in the world to teach participants to develop on the .NET Framework with Visual Studio 2012. The .NET Framework is one of the leading Microsoft development platforms for Windows and Web applications and this short course aims to introduce attendees to the latest Microsoft Development platform Visual Studio 2012.\u200b",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

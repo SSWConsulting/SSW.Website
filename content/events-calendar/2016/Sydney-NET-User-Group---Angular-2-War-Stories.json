@@ -1,0 +1,29 @@
+{
+  "title": "Sydney .NET User Group - Angular 2 War Stories",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "presenterName": "Adam Stephensen",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/AdamS.aspx",
+  "startDateTime": "2016-07-20T08:00:00Z",
+  "endDateTime": "2016-07-20T10:30:00Z",
+  "startShowBannerDateTime": "2016-07-19T14:00:00Z",
+  "endShowBannerDateTime": "2016-07-20T11:00:00Z",
+  "liveStreamUrl": {
+    "description": "/ssw/Live/",
+    "url": "/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Angular",
+  "categoryAnchor": "Angular2",
+  "sessionTitle": "Sydney .NET User Group - Angular 2 War Stories",
+  "sessionTitleAnchor": "Angular2WarStories",
+  "eventShortDescription": "<div class=\"ExternalClass5B16B291E6F2415CA8DE2DD38DD30222\"><p>Angular 2 War Stories - We're bringing the front line to you!&#160;</p><div>Presented by Adam Stephensen &#160;<br></div><div><br></div><div>Angular 2 is awesome. Performance, Mobile friendly, Flexible. Sweet! Happy Users, Happy Developers, Happy Business. Awesome! .... but there are so many options, and so many unanswered questions.</div><div><br></div><div>This session will de-mystify Angular 2 and show you the pitfalls to avoid when building Angular 2 in production. Come see how we are doing it now on large enterprise applications.</div><div><br></div><div>Catch it live on https&#58;//www.ssw.com.au/ssw/Live/&#160;<br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass0D5C912A2A454987A70CFED3DC486C90\"><p><span style=\"line-height&#58;1.6;\">An</span><span style=\"line-height&#58;1.6;\">gular 2 War Stories - We're bringing the front line to you!&#160;</span></p><div>Presented by Adam Stephensen &#160;<br></div><div><br></div><div>Angular 2 is awesome. Performance, Mobile friendly, Flexible. Sweet! Happy Users, Happy Developers, Happy Business. Awesome! .... but there are so many options, and so many unanswered questions.</div><div><br></div><div>This session will de-mystify Angular 2 and show you the pitfalls to avoid when building Angular 2 in production. Come see how we are doing it now on large enterprise applications.</div><div>\u200b<br></div><div>Catch it live on https&#58;//www.ssw.com.au/ssw/Live/&#160;\u200b<br></div><p><br></p></div>",
+  "description": "Angular 2 War Stories - We're bringing the front line to you!\u00a0\n\nPresented by Adam Stephensen \u00a0\n\nAngular 2 is awesome. Performance, Mobile friendly, Flexible. Sweet! Happy Users, Happy Developers, Happy Business. Awesome! .... but there are so many options, and so many unanswered questions.\n\nThis session will de-mystify Angular 2 and show you the pitfalls to avoid when building Angular 2 in production. Come see how we are doing it now on large enterprise applications.\n\nCatch it live on https://www.ssw.com.au/ssw/Live/\u00a0",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

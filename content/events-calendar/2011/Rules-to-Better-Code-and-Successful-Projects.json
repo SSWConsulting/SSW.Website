@@ -1,0 +1,19 @@
+{
+  "title": "Rules to Better Code and Successful Projects",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Other",
+  "categoryAnchor": "OverviewOther",
+  "sessionTitle": "Rules to Better Code and Successful Projects",
+  "sessionTitleAnchor": "RulestoBetterCode",
+  "eventShortDescription": "<div class=\"ExternalClassE52683E87B5742778C81DCAAAC57F973\"><div>\u200bManaging a team of coders can be a tricky experience, especially as most coders like to do things their own way. During this session we go through a list of rules that help make the development process as smooth as possible. These rules govern the creation of specifications and schedules, best methods for testing and fixing bugs and even the employees working conditions.</div></div>",
+  "eventDescription": "<div class=\"ExternalClassE52683E87B5742778C81DCAAAC57F973\"><div>\u200bManaging a team of coders can be a tricky experience, especially as most coders like to do things their own way. During this session we go through a list of rules that help make the development process as smooth as possible. These rules govern the creation of specifications and schedules, best methods for testing and fixing bugs and even the employees working conditions.</div></div>",
+  "description": "\u200bManaging a team of coders can be a tricky experience, especially as most coders like to do things their own way. During this session we go through a list of rules that help make the development process as smooth as possible. These rules govern the creation of specifications and schedules, best methods for testing and fixing bugs and even the employees working conditions.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

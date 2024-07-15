@@ -1,0 +1,18 @@
+{
+  "title": "Xamarin HackDay - Redmond",
+  "url": "http://xamarinhackday.com/redmond/",
+  "thumbnail": "/images/Newsletters/xamarin-thumb.png",
+  "thumbnailDescription": "Xamarin HackDay - Redmond",
+  "startDateTime": "2015-01-23T21:30:00Z",
+  "endDateTime": "2015-01-24T06:30:00Z",
+  "calendarType": "User Groups",
+  "city": "Redmond",
+  "enabled": true,
+  "category": "Mobile",
+  "sessionTitle": "Xamarin HackDay - Redmond",
+  "eventShortDescription": "<div class=\"ExternalClassC3C033A561FF478693E30FA20534D835\"><p><span style=\"font-size&#58;13px;\">Xamarin HackDays are for Xamarin Developers or people who want to learn Xamarin.\u200b</span><br></p><div><br></div><div>There will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.\u200b</div></div>",
+  "description": "Xamarin HackDays are for Xamarin Developers or people who want to learn Xamarin.\u200b\n\nThere will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Sydney .NET User Group: Dynamics 365 for the .NET dev - Andrew Campey",
+  "url": "/ssw/netug/sydney.aspx",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group: Dynamics 365 for the .NET dev",
+  "presenterName": "Andrew Campey",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/AndrewCampey.aspx",
+  "startDateTime": "2018-01-17T07:00:00Z",
+  "endDateTime": "2018-01-17T09:00:00Z",
+  "startShowBannerDateTime": "2018-01-16T14:00:00Z",
+  "endShowBannerDateTime": "2018-01-17T12:30:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET User Group: Dynamics 365 for the .NET dev - Andrew Campey",
+    "url": "/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Dynamics 365",
+  "eventShortDescription": "<div class=\"ExternalClassA6CBB1D65CA44BA7B820D311F161958E\">When it comes to developing a website, you don't use pure HTML and JavaScript - you find frameworks to help. So why should your client CRM/ERP be any different?</div><div class=\"ExternalClassA6CBB1D65CA44BA7B820D311F161958E\"><br>In this talk Andrew explains what exactly is Dynamics 365 and how we got here. Then we explore how your existing .NET and JavaScript skills can help you create powerful systems for your clients using Dynamics 365 as a base.<br><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassA282A16A23914DEF853BD280E6E7FEF5\"><p></p></div>When it comes to developing a website, you don't use pure HTML and JavaScript - you find frameworks to help. So why should your client CRM/ERP be any different?<div><br>In this&#160;talk&#160;Andrew explains what exactly is Dynamics 365 and how we got here. Then we explore how your existing .NET and JavaScript skills can help you create powerful systems for your clients using Dynamics 365 as a base.<br></div>",
+  "description": "When it comes to developing a website, you don't use pure HTML and JavaScript - you find frameworks to help. So why should your client CRM/ERP be any different?\n\nIn this talk Andrew explains what exactly is Dynamics 365 and how we got here. Then we explore how your existing .NET and JavaScript skills can help you create powerful systems for your clients using Dynamics 365 as a base.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Online User Group May - Accessify your Blazor apps - Hot accessibility techniques for Blazor apps",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": ".NET User Group Online",
+  "presenterName": "Ross Mullen",
+  "startDateTime": "2020-05-20T08:30:00Z",
+  "endDateTime": "2020-05-20T10:00:00Z",
+  "startShowBannerDateTime": "2020-05-19T14:00:00Z",
+  "endShowBannerDateTime": "2020-05-20T11:00:00Z",
+  "liveStreamUrl": {
+    "description": "SSW Live Feed",
+    "url": "/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Online",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass38C3514DBB7D477097D43B348BD30E14\">\u200bJoin us ONLINE -&gt;&#160;<a href=\"https&#58;//www.ssw.com.au/ssw/Live/\">https&#58;//www.ssw.com.au/ssw/Live/</a>&#160;<br><br>Accessibility can be a jungle to navigate for regular websites and it becomes impenetrable for complex web applications. It doesn't need to be this way. Ross will show three core techniques that move beyond the basics to really address how to start strong and begin to make your Blazor apps accessible.<br><br><p>He will explain why you should avoid the DIV button, the 'Frankenstein's monster' of non-semantic HTML which makes things that much difficult for a screen reader user. How to manage on-screen focus using Javascript Interop and show how accessibility can be maintained in large development teams by creating reusable components.<br><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassF7228A330BBA49D687A84F6750901273\"><p>\u200bJoin us ONLINE -&gt;&#160;<a href=\"https&#58;//www.ssw.com.au/ssw/Live/\">https&#58;//www.ssw.com.au/ssw/Live/</a>&#160;<br></p>Accessibility can be a jungle to navigate for regular websites and it becomes impenetrable for complex web applications. It doesn't need to be this way. Ross will show three core techniques that move beyond the basics to really address how to start strong and begin to make your Blazor apps accessible.<br><br>He will explain why you should avoid the DIV button, the 'Frankenstein's monster' of non-semantic HTML which makes things that much difficult for a screen reader user. How to manage on-screen focus using Javascript Interop and show how accessibility can be maintained in large development teams by creating reusable components.<br><br>ABOUT THE PRESENTER<br><br><p>Ross Mullen is Director of CANAXESS a web and digital accessibility company. He works with a range of organizations from charities and start-ups to governments making their digital services and platforms inclusive and accessible using best practice web accessibility techniques.<br></p><p><br></p></div>",
+  "description": "\u200bJoin us ONLINE ->\u00a0\n\nhttps://www.ssw.com.au/ssw/Live/\n\n\u00a0\n\nAccessibility can be a jungle to navigate for regular websites and it becomes impenetrable for complex web applications. It doesn't need to be this way. Ross will show three core techniques that move beyond the basics to really address how to start strong and begin to make your Blazor apps accessible.\n\nHe will explain why you should avoid the DIV button, the 'Frankenstein's monster' of non-semantic HTML which makes things that much difficult for a screen reader user. How to manage on-screen focus using Javascript Interop and show how accessibility can be maintained in large development teams by creating reusable components.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

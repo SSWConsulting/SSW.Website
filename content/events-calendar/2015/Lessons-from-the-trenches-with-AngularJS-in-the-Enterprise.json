@@ -1,0 +1,21 @@
+{
+  "title": "Lessons from the trenches with AngularJS in the Enterprise",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2015-08-18T14:00:00Z",
+  "endDateTime": "2015-08-18T17:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Angular",
+  "categoryAnchor": "OverviewOther",
+  "sessionTitle": "Lessons from the trenches with AngularJS in the Enterprise",
+  "sessionTitleAnchor": "AngularJSinEnterprise",
+  "eventShortDescription": "<div class=\"ExternalClass36AD47C3693943CAB8318FB0A4ADD143\"><div>This talk&#160;will cover the 10 main questions any developer will have to ask themselves when making an Angular application in .NET today.&#160;</div><div><br></div><div>The talk will cover the following&#58;</div><div><ol><li>A brief introduction to Angular and why it has dominated the front end framework space.<br></li><li>The top ten questions you need to ask yourself when starting and Angular application in .NET today. This will draw on the lessons learnt building enterprise applications with Angular at SSW<br></li></ol></div></div>",
+  "eventDescription": "<div class=\"ExternalClass62D13F401B1A423D94FB0C7BB131C9C0\">This talk&#160;will\u200b&#160;cover the 10 main questions any developer will have to ask themselves when making an Angular application in .NET today.&#160;<br>The talk will cover the following&#58;<br><ol><li>A brief introduction to Angular and why it has dominated the front end framework space.<br></li><li>The top ten questions you need to ask yourself when starting and Angular application in .NET today. This will draw on the lessons learnt building enterprise applications with Angular at SSW<br></li></ol></div>",
+  "description": "This talk\u00a0will cover the 10 main questions any developer will have to ask themselves when making an Angular application in .NET today.\u00a0\n\nThe talk will cover the following:\n\nA brief introduction to Angular and why it has dominated the front end framework space.\n\nThe top ten questions you need to ask yourself when starting and Angular application in .NET today. This will draw on the lessons learnt building enterprise applications with Angular at SSW",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

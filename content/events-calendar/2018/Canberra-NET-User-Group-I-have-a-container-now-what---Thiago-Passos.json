@@ -1,0 +1,20 @@
+{
+  "title": "Canberra .NET User Group: I have a container... now what? - Thiago Passos",
+  "url": "/ssw/NETUG/Canberra.aspx",
+  "thumbnail": "/images/thumbs/thumb-canberraUG.jpg",
+  "thumbnailDescription": "Canberra .NET User Group: I have a container... now what? - Thiago Passos",
+  "presenterName": "Thiago Passos",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Thiago.aspx",
+  "startDateTime": "2018-02-19T06:30:00Z",
+  "endDateTime": "2018-02-19T08:30:00Z",
+  "calendarType": "User Groups",
+  "city": "Canberra",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass5BEC91C13163483BA24EE5B7D1A6B713\"><p><strong></strong></p></div><div class=\"ExternalClassA381C6B383BB4F1F814FF3AC2888D3E8\"><strong>I have a container... now what? - Thiago Passos</strong></div><div class=\"ExternalClassA381C6B383BB4F1F814FF3AC2888D3E8\"><strong></strong><strong><br></strong>This is not the same container 101 talk you\u2019ve seen a dozen times. The point of this talk is how to ship a container to production, once you\u2019ve built it.<br>&#160;<br>We\u2019ll containerize a .net core app, debug locally, set up continuous deployment, set up a container cluster and deploy to it.</div><div><br>\u200b<br></div>",
+  "eventDescription": "<div class=\"ExternalClassB388B9EA4CDF41B48E80E7E8B6061989\"><p><strong></strong></p><div class=\"ExternalClassA381C6B383BB4F1F814FF3AC2888D3E8\"><strong>I have a container... now what? - Thiago Passos</strong></div><div class=\"ExternalClassA381C6B383BB4F1F814FF3AC2888D3E8\"><strong></strong><strong><br></strong>This is not the same container 101 talk you\u2019ve seen a dozen times. The point of this talk is how to ship a container to production, once you\u2019ve built it.<br>&#160;<br>We\u2019ll containerize a .net core app, debug locally, set up continuous deployment, set up a container cluster and deploy to it.</div><div><br><br></div><p><br></p></div>",
+  "description": "I have a container... now what? - Thiago Passos\n\nThis is not the same container 101 talk you\u2019ve seen a dozen times. The point of this talk is how to ship a container to production, once you\u2019ve built it.\n\n\u00a0\n\nWe\u2019ll containerize a .net core app, debug locally, set up continuous deployment, set up a container cluster and deploy to it.\n\n\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Continuous Delivery with Visual Studio and TFS",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewTFS",
+  "sessionTitle": "Continuous Delivery with Visual Studio and TFS",
+  "sessionTitleAnchor": "ContinuousDelivery",
+  "eventShortDescription": "<div class=\"ExternalClass7D9B1FFB48F2451085CFEB7745149F10\"><div>\u200bIs Deployment costing you too much?<br><br>Deploying early and often delivers business value fast, generates early customer feedback and ensures &quot;Go Live&quot; day end with a bottle of French Champagne, in place of a sleepless night. You will see the beauty of TFS Build and then dive into the new world of the cloud and see TFS Build on Azure.<br><br>Learn why continuous delivery and deploying with TFS, is an investment you should be making today.</div></div>",
+  "eventDescription": "<div class=\"ExternalClass7D9B1FFB48F2451085CFEB7745149F10\"><div>\u200bIs Deployment costing you too much?<br><br>Deploying early and often delivers business value fast, generates early customer feedback and ensures &quot;Go Live&quot; day end with a bottle of French Champagne, in place of a sleepless night. You will see the beauty of TFS Build and then dive into the new world of the cloud and see TFS Build on Azure.<br><br>Learn why continuous delivery and deploying with TFS, is an investment you should be making today.</div></div>",
+  "description": "\u200bIs Deployment costing you too much?\n\nDeploying early and often delivers business value fast, generates early customer feedback and ensures \"Go Live\" day end with a bottle of French Champagne, in place of a sleepless night. You will see the beauty of TFS Build and then dive into the new world of the cloud and see TFS Build on Azure.\n\nLearn why continuous delivery and deploying with TFS, is an investment you should be making today.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

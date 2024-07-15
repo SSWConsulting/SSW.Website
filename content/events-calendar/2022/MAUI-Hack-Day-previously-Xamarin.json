@@ -1,0 +1,34 @@
+{
+  "title": "MAUI Hack Day (previously Xamarin)",
+  "url": "https://mauihackday.com/",
+  "thumbnail": "/images/events/mauihackday-thumb.png",
+  "thumbnailDescription": "MAUI Hack Day - ONLINE",
+  "presenterName": "Matt Goldman, Brady Stroud, Jack Pettit, Alec Tucker, Kym Phillpotts, Sam Basu",
+  "presenterProfileUrl": "/people/matt-goldman",
+  "startDateTime": "2022-11-04T22:00:00Z",
+  "endDateTime": "2022-11-05T06:00:00Z",
+  "liveStreamUrl": {
+    "description": "Online",
+    "url": "https://mauihackday.com/"
+  },
+  "calendarType": "Hack Days",
+  "city": "Online",
+  "enabled": true,
+  "category": "Mobile",
+  "eventShortDescription": "<div class=\"ExternalClass73E6EAAC24954203ABD891E8EDD15EC7\"><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;\">MAUI Hack Days (previously Xamarin Hack Days) are community-run events for MAUI developers or people who want to learn MAUI for free.<br><br>There will be something for everyone. Experienced MAUI developers can share ideas with other experienced developers. If you\u2019re a beginner, then there\u2019s plenty to learn on the day.<br><br><br><div><span style=\"font-family&#58;&quot;segoe ui&quot;, segoe, tahoma, helvetica, arial, sans-serif;\"><br><br></span></div><p><br></p></span></div>",
+  "eventDescription": "<div class=\"ExternalClass45210119A5074D09972E3A29AC1D6EC4\"><p><br></p></div><p>\u200b</p>",
+  "description": "MAUI Hack Days (previously Xamarin Hack Days) are community-run events for MAUI developers or people who want to learn MAUI for free.\n\nThere will be something for everyone. Experienced MAUI developers can share ideas with other experienced developers. If you\u2019re a beginner, then there\u2019s plenty to learn on the day.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [
+    {
+      "LookupId": 7,
+      "LookupValue": "Matt Goldman"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/matt-goldman.mdx"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "What's new in Visual Studio 2017 and VS Code 2017",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power sessions",
+  "startDateTime": "2015-05-19T14:00:00Z",
+  "endDateTime": "2015-05-19T16:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewTFS",
+  "sessionTitle": "What's new in Visual Studio 2017 and VS Code 2017",
+  "sessionTitleAnchor": "newin VS2017andVSCode2017",
+  "eventShortDescription": "<div class=\"ExternalClass6EFE3AD3BAE348D3BF46C7B0E354DF95\"></div>",
+  "eventDescription": "<div class=\"ExternalClass9AA11AD5AB3E41D698B769441AC4B165\"></div><div>Visual Studio 2017 is a great step forward in developer productivity, thanks to a new/refreshing/cool/awesome change of attitude, Microsoft is embracing the winning tools in the development space and is building them into the next version of Visual Studio. The open sourcing of .NET Core and ASP.NET Core along with the release of the free Visual Studio Community Edition and Visual Studio Code gives developers lots of choice as to which IDE to use.&#160;</div><div><br></div><div>Come see Adam give you a tour of all the sexy new features in Visual Studio 2017 and Team Foundatio...n Server 2017. This session is guaranteed to make you even more productive and highlight why Visual Studio is still the best IDE for developing software.&#160;</div><div><br></div><div>As a bonus, Adam will show you the cool stuff you gotta know&#58;&#160;\u200b<br></div><div><ul><li>Light weight installer<br></li><li>Light weight solution loading<br></li><li>New refactoring features<br></li><li>New code navigation features</li><li>Live Unit Testing</li><li>VS Code + ASP.NET Core&#160;</li></ul></div><div><br><br></div>",
+  "description": "",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Online User Group June - Build your first deep learning solution using Azure Automated ML",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Online User Group",
+  "presenterName": "Patrick Zhao",
+  "presenterProfileUrl": "/people/patrick-zhao",
+  "startDateTime": "2020-06-17T08:30:00Z",
+  "endDateTime": "2020-06-17T10:30:00Z",
+  "startShowBannerDateTime": "2020-06-16T14:00:00Z",
+  "endShowBannerDateTime": "2020-06-17T11:00:00Z",
+  "liveStreamUrl": {
+    "description": "SSW Live Feed",
+    "url": "/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Online",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass9BC4974E61B34A8DA5A561B21B49B2FA\"><div><div>Machine learning is a blazing topic today. Data scientists love the power of machine learning frameworks such as TensorFlow. However, software developers can struggle with a TensorFlow based machine learning solution on Azure.</div><div>\u200b<br></div>In this talk, I will show you how to use TensorFlow to design a deep learning neural network, train, and save the model. I will show how easy it can be to create a service from this model with the Azure Machine Learning Service.&#160;<br></div><div><br></div><div>We will cover data ingestion, experiments, model management, and deployment. After this talk, you will have a basic understanding of Azure Machine Learning service, the key concepts and workflows involved and how to set up machine learning DevOps<br></div></div>",
+  "eventDescription": "<div class=\"ExternalClassB21D92DC060044C3A4713F8378AC61E3\"><div>SSW User Groups June&#58; We're moving online and combining our User Groups for the foreseeable future - more talks for everyone!<br></div><div><br></div><div>Join us ONLINE -----&gt; https&#58;//www.ssw.com.au/ssw/Live/</div><div><br></div><div>Machine learning is a blazing topic today. Data scientists love the power of machine learning frameworks such as TensorFlow. However, software developers can struggle with a TensorFlow based machine learning solution on Azure.</div><div><br></div><div>In this talk, I will show you how to use TensorFlow to design a deep learning neural network, train, and save the model. I will show how easy it can be to create a service from this model with the Azure Machine Learning Service.&#160;</div><div><br></div><div>We will cover data ingestion, experiments, model management, and deployment. After this talk, you will have a basic understanding of Azure Machine Learning service, the key concepts and workflows involved and how to set up machine learning DevOps</div><div><br></div><div>About the Speaker&#58;</div><div>Patrick Zhao is a Senior Software Architect at SSW. He has +6 years of experience in the FinTech industry and during that time Patrick has delivered a number of different data analytics and machine learning solutions. Patrick is enthusiastic for cloud technology and machine learning DevOps.<br></div><p><br></p></div>",
+  "description": "Machine learning is a blazing topic today. Data scientists love the power of machine learning frameworks such as TensorFlow. However, software developers can struggle with a TensorFlow based machine learning solution on Azure.\n\n\u200b\n\nIn this talk, I will show you how to use TensorFlow to design a deep learning neural network, train, and save the model. I will show how easy it can be to create a service from this model with the Azure Machine Learning Service.\u00a0\n\nWe will cover data ingestion, experiments, model management, and deployment. After this talk, you will have a basic understanding of Azure Machine Learning service, the key concepts and workflows involved and how to set up machine learning DevOps",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

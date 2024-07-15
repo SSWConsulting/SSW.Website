@@ -1,0 +1,18 @@
+{
+  "title": "Angular Hack Day: Brisbane",
+  "url": "http://angularhackday.com/brisbane",
+  "thumbnail": "/images/events/AHD-thumb.jpg",
+  "thumbnailDescription": "Angular Hack Day: Brisbane",
+  "startDateTime": "2019-05-31T23:00:00Z",
+  "endDateTime": "2019-06-01T07:00:00Z",
+  "calendarType": "Hack Days",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": "Angular and React",
+  "eventShortDescription": "<div class=\"ExternalClass1AEB29B6358D4EED864D97D0F0678647\"><p>\u200b\u200b\u200bAngular&#160;Hack Days are community run events for Angular Developers or people who want to learn&#160;Angular&#160;for free.</p><div>There will be something for everyone. Experienced Angular&#160;developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.\u200b\u200b\u200b\u200b\u200b<br></div><div><br><br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass782D7A7D9D7A41D7BF44B62C72D8C3F9\"><p>Angular&#160;Hack Days are community run events for Angular Developers or people who want to learn&#160;Angular&#160;for free.</p><div>There will be something for everyone. Experienced Angular&#160;developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.\u200b\u200b\u200b\u200b\u200b<br></div><div><br>\u200b<br></div><p><br></p></div>",
+  "description": "\u200b\u200b\u200bAngular\u00a0Hack Days are community run events for Angular Developers or people who want to learn\u00a0Angular\u00a0for free.\n\nThere will be something for everyone. Experienced Angular\u00a0developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.\u200b\u200b\u200b\u200b\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

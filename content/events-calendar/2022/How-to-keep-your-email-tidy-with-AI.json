@@ -1,0 +1,40 @@
+{
+  "title": "How to keep your email tidy with AI",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
+  "presenterName": "Jernej Kavka (JK)",
+  "presenterProfileUrl": "/people/jk",
+  "startDateTime": "2022-10-19T07:00:00Z",
+  "endDateTime": "2022-10-19T10:00:00Z",
+  "startShowBannerDateTime": "2022-10-18T13:00:00Z",
+  "endShowBannerDateTime": "2022-10-19T12:00:00Z",
+  "liveStreamUrl": {
+    "description": "/live",
+    "url": "/live"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass0B341E1084A24EA19D5998E1BCD55FDD\">\u200bOctober .NET User Group&#58;&#160;How to keep your\r\nemail tidy with AI<br><br>Many of us deal with a mountain of never-ending emails, and a zero email inbox is an impossible dream. Did you know AI can help?<br><br>Employees can spend hours on emails every week, or even every day. <br><br>Let's see how to use AI to cut through email&#58;<br>- Find out quickly what are the important messages<br>- Learn how to automate your emails in a time-efficient way<br><br>See JK prototype a few AI models with simple tools like ML.NET, Cognitive Services and Open AI.&#160;<br><br><br><p><br></p></div>",
+  "description": "\u200bOctober .NET User Group:\u00a0How to keep your\r\nemail tidy with AI\n\nMany of us deal with a mountain of never-ending emails, and a zero email inbox is an impossible dream. Did you know AI can help?\n\nEmployees can spend hours on emails every week, or even every day. \n\nLet's see how to use AI to cut through email:\n\n- Find out quickly what are the important messages\n\n- Learn how to automate your emails in a time-efficient way\n\nSee JK prototype a few AI models with simple tools like ML.NET, Cognitive Services and Open AI.\u00a0",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "aPBTib42pKg",
+  "evalFormURL": {
+    "description": "Leave your feedback",
+    "url": "https://forms.microsoft.com/r/QdU8Y0jFy0"
+  },
+  "externalPresenters": [
+    {
+      "LookupId": 13,
+      "LookupValue": "Jernej Kavka"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/jernej-kavka.mdx"
+    }
+  ]
+}

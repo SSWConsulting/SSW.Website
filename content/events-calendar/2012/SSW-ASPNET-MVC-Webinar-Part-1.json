@@ -1,0 +1,18 @@
+{
+  "title": "SSW ASP.NET MVC Webinar (Part 1)",
+  "url": "/ssw/Events/Webinars/MVC-Apps.aspx",
+  "thumbnail": "/images/thumbs/thumb-webinar-aspnet-1.jpg",
+  "thumbnailDescription": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-aspnet-1.jpg",
+  "presenterName": "Eric Phan",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Eric.aspx",
+  "startDateTime": "2012-05-31T01:00:00Z",
+  "endDateTime": "2012-05-31T02:00:00Z",
+  "calendarType": "Webinars",
+  "enabled": true,
+  "category": ".NET Core",
+  "eventShortDescription": "<div class=\"ExternalClassF27B52EA54424A9EB1C8503F8E46F208\">\u200bMicrosoft developers are swarming to ASP.NET MVC - the next big web development platform. The last big change in the web space was the move from classic ASP to ASP.NET Web Forms and this was a big driver in the adoption of the Microsoft web platform.<br><br></div>",
+  "eventDescription": "<div class=\"ExternalClassF27B52EA54424A9EB1C8503F8E46F208\"><div>\u200bMicrosoft developers are swarming to ASP.NET MVC - the next big web development platform. The last big change in the web space was the move from classic ASP to ASP.NET Web Forms and this was a big driver in the adoption of the Microsoft web platform.<br><br>In this webinar, find out what all the fuss about ASP.NET MVC is; why developers love it; and why businesses should pick ASP.NET MVC over ASP.NET Web Forms.<br><br>Join SSW's Eric Phan as he discusses Microsoft's next big web platform and his experiences with it on real world projects. There will be lots of time for live questions.</div></div>",
+  "description": "\u200bMicrosoft developers are swarming to ASP.NET MVC - the next big web development platform. The last big change in the web space was the move from classic ASP to ASP.NET Web Forms and this was a big driver in the adoption of the Microsoft web platform.",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

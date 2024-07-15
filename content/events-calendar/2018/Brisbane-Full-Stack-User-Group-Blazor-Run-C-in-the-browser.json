@@ -1,0 +1,20 @@
+{
+  "title": "Brisbane Full Stack User Group: Blazor: Run C# in the browser",
+  "url": "/ssw/NETUG/Brisbane.aspx",
+  "thumbnail": "/images/thumbs/thumb-BrisbaneUG.jpg",
+  "thumbnailDescription": "Brisbane Full Stack User Group: Blazor: Run C# in the browser",
+  "presenterName": "Brendan Richards",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Brendan.aspx",
+  "startDateTime": "2018-10-09T07:00:00Z",
+  "endDateTime": "2018-10-09T09:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass33B0560D3E684434B35195C60219156A\"><div>Blazor&#58; Run C# in the browser - presented by Brendan Richards</div><div><br></div><div>Blazor is a new experimental framework from Microsoft that uses web assembly to run a .NET framework inside the browser. This talk covers getting started with Blazor, before demonstrating its capabilities and readiness for typical line of business applications by building a UI over the venerable Northwind database. <br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass826DEC0EB914463C992B2A48225F3774\">Blazor&#58; Run C# in the browser - presented by Brendan Richards<div><br>Blazor is a new experimental framework from Microsoft that uses web assembly to run a .NET framework inside the browser. This talk covers getting started with Blazor, before demonstrating its capabilities and readiness for typical line of business applications by building a UI over the venerable Northwind database.<br><p><br></p></div></div>",
+  "description": "Blazor: Run C# in the browser - presented by Brendan Richards\n\nBlazor is a new experimental framework from Microsoft that uses web assembly to run a .NET framework inside the browser. This talk covers getting started with Blazor, before demonstrating its capabilities and readiness for typical line of business applications by building a UI over the venerable Northwind database. ",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Building a VB.NET Windows Service",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewVSNet",
+  "sessionTitle": "Building a VB.NET Windows Service",
+  "sessionTitleAnchor": "VBNETWindowsService",
+  "eventShortDescription": "<div class=\"ExternalClass5FA786BBE9434659804499BA297B3F63\"><div>\u200bBuilding a Windows Service in VB6 was a tricky affair and so rarely done. With VB.NET, the Windows Service is now easier to build and deploy. This session will&#58;<br><br><ul><li>Let you know when you need a Windows Service</li><li>Show you how to build a Windows Service that is a useful real life utility</li><li>Provide tips and tricks for developing Windows Services</li><li>Help you understand .NET remoting</li><li>Assist you to use it for real performance</li></ul></div></div>",
+  "eventDescription": "<div class=\"ExternalClass5FA786BBE9434659804499BA297B3F63\"><div>\u200bBuilding a Windows Service in VB6 was a tricky affair and so rarely done. With VB.NET, the Windows Service is now easier to build and deploy. This session will&#58;<br><br><ul><li>Let you know when you need a Windows Service</li><li>Show you how to build a Windows Service that is a useful real life utility</li><li>Provide tips and tricks for developing Windows Services</li><li>Help you understand .NET remoting</li><li>Assist you to use it for real performance</li></ul></div></div>",
+  "description": "\u200bBuilding a Windows Service in VB6 was a tricky affair and so rarely done. With VB.NET, the Windows Service is now easier to build and deploy. This session will:\n\nLet you know when you need a Windows Service\n\nShow you how to build a Windows Service that is a useful real life utility\n\nProvide tips and tricks for developing Windows Services\n\nHelp you understand .NET remoting\n\nAssist you to use it for real performance",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

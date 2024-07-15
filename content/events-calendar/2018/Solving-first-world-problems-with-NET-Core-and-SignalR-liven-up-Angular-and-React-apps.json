@@ -1,0 +1,21 @@
+{
+  "title": "\u200bSolving first world problems with .NET Core and SignalR (liven up Angular and React apps)",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "\u200bSolving first world problems with .NET Core and SignalR (liven up Angular and React apps)",
+  "startDateTime": "2018-07-09T14:00:00Z",
+  "endDateTime": "2018-07-09T16:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Sydney",
+  "enabled": true,
+  "category": ".NET Core",
+  "categoryAnchor": "OverviewOther",
+  "sessionTitle": "\u200bSolving first world problems with .NET Core and SignalR (liven up Angular and React apps)",
+  "sessionTitleAnchor": "SolvingFirstWorldProblems",
+  "eventShortDescription": "<div class=\"ExternalClassDEE023CC48874AA0B1034FBED3D83127\"><p>SignalR has been around since 2013, offering real-time push notifications for our websites. This year, Microsoft gave us SignalR Core, combined all of the features of SignalR with the benefits of .NET Core.<br></p><p><br>Come and see&#160;how easy it is to build a real-time web client in both Angular and React using SignalR and .NET Core.<br><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass0CC8EE13012642C89BCB7C204C9F5F5F\"><p>SignalR has been around since 2013, offering real-time push notifications for our websites. This year, Microsoft gave us SignalR Core, combined all of the features of SignalR with the benefits of .NET Core. <br></p><div>Come and see how easy it is to build a real-time web client in both Angular and React using SignalR and .NET Core.<br></div><div><br></div></div>",
+  "description": "SignalR has been around since 2013, offering real-time push notifications for our websites. This year, Microsoft gave us SignalR Core, combined all of the features of SignalR with the benefits of .NET Core.\n\nCome and see\u00a0how easy it is to build a real-time web client in both Angular and React using SignalR and .NET Core.",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

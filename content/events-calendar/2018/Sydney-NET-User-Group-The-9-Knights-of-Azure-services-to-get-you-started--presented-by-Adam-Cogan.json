@@ -1,0 +1,26 @@
+{
+  "title": "Sydney .NET User Group: The 9 Knights of Azure: services to get you started \u2013 presented by Adam Cogan",
+  "url": "/ssw/netug/sydney.aspx",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group: The 9 Knights of Azure: services to get you started \u2013 presented by Adam Cogan",
+  "presenterName": "Adam Cogan",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
+  "startDateTime": "2018-04-18T08:00:00Z",
+  "endDateTime": "2018-04-18T10:30:00Z",
+  "startShowBannerDateTime": "2018-04-17T14:00:00Z",
+  "endShowBannerDateTime": "2018-04-18T13:45:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET User Group: The 9 Knights of Azure: services to get you started \u2013 presented by Adam Cogan",
+    "url": "/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassC6DE35609B3845778C9FC9F92ADB126B\"><p>\u200b<strong>Sydney .NET User Group&#58; The 9 Knights of Azure&#58; services to get you started \u2013 presented by Adam Cogan\u200b</strong><br></p><div>Azure is huge. There are over 70 services and getting started is not always easy.<br></div><div><br></div><div>In this whirlwind adventure, Adam will take you on a tour of the 9 most important services available to IT Pros and Developers.</div><div>He will cover App Services, DevOps, Persistence, Azure AD, API Management, Logic Apps, Containers, Cognitive Services and Bots.</div><div>You will walk away from this presentation inspired and informed, ready to create your own Azure story.</div><div><br><br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass66C6F1D0DE144584A14E99BFE615D366\"><p>\u200b<strong>\u200bSydney .NET User Group&#58; The 9 Knights of Azure&#58; services to get you started \u2013 presented by Adam Cogan\u200b</strong><br></p><div>Azure is huge. There are over 70 services and getting started is not always easy.<br></div><div><br></div><div>In this whirlwind adventure, Adam will take you on a tour of the 9 most important services available to IT Pros and Developers.</div><div>He will cover App Services, DevOps, Persistence, Azure AD, API Management, Logic Apps, Containers, Cognitive Services and Bots.</div><div>You will walk away from this presentation inspired and informed, ready to create your own Azure story.</div><div><br><br></div><p><br></p></div>",
+  "description": "\u200b\n\nSydney .NET User Group: The 9 Knights of Azure: services to get you started \u2013 presented by Adam Cogan\u200b\n\nAzure is huge. There are over 70 services and getting started is not always easy.\n\nIn this whirlwind adventure, Adam will take you on a tour of the 9 most important services available to IT Pros and Developers.\n\nHe will cover App Services, DevOps, Persistence, Azure AD, API Management, Logic Apps, Containers, Cognitive Services and Bots.\n\nYou will walk away from this presentation inspired and informed, ready to create your own Azure story.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

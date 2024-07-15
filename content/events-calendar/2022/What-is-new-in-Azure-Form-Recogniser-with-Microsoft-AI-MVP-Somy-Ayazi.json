@@ -1,0 +1,33 @@
+{
+  "title": "What is new in Azure Form Recogniser? with Microsoft AI MVP Somy Ayazi",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "What is new in Azure Form Recogniser? with Microsoft AI MVP Somy Ayazi",
+  "presenterName": "Microsoft AI MVP, Somy Ayazi",
+  "presenterProfileUrl": "https://www.linkedin.com/in/somy-ayazi/",
+  "startDateTime": "2022-01-19T07:00:00Z",
+  "endDateTime": "2022-01-19T11:00:00Z",
+  "startShowBannerDateTime": "2022-01-18T13:00:00Z",
+  "endShowBannerDateTime": "2022-01-19T11:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass6FCEB88EA80347D387D60B7CF7D2C23A\"><p><span style=\"font-size&#58;11pt;font-family&#58;calibri, sans-serif;\">A brief on Azure\r\nCognitive Services and an overview on Azure From Recogniser new capabilities.</span><span style=\"font-size&#58;5.5pt;font-family&#58;calibri, sans-serif;color&#58;#fefefe;\">.</span><span style=\"font-size&#58;11pt;font-family&#58;calibri, sans-serif;\"> </span><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassF45D1590F0E44850AACC19325C5C014A\"><p><span style=\"font-size&#58;11pt;font-family&#58;calibri, sans-serif;\">A brief on Azure\r\nCognitive Services and an overview on Azure From Recogniser new capabilities.</span><span style=\"font-size&#58;5.5pt;font-family&#58;calibri, sans-serif;color&#58;#fefefe;\">.</span><span style=\"font-size&#58;11pt;font-family&#58;calibri, sans-serif;\"> </span><br></p></div>",
+  "description": "A brief on Azure\r\nCognitive Services and an overview on Azure From Recogniser new capabilities.\n\n.\n\n ",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "o_P-_OFJgE4",
+  "externalPresenters": [
+    {
+      "LookupId": 17,
+      "LookupValue": "Somy Ayazi"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/somy-ayazi.mdx"
+    }
+  ]
+}

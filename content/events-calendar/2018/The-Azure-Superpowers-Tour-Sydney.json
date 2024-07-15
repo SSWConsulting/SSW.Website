@@ -1,0 +1,19 @@
+{
+  "title": "The Azure Superpowers Tour: Sydney",
+  "url": "/ssw/Events/Training/Azure-Superpowers-Tour.aspx",
+  "thumbnail": "/images/Newsletters/SuperPower-Icon-Azure.jpg",
+  "thumbnailDescription": "The Azure Superpowers Tour: Sydney",
+  "presenterName": "Thiago Passos and Adam Cogan",
+  "startDateTime": "2018-05-24T23:00:00Z",
+  "endDateTime": "2018-05-25T07:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass736B06686BF54E8BB4B42E1A4F808A18\"><p>\u200b<span style=\"background-color&#58;#ffffff;color&#58;#333333;font-family&#58;arial, sans-serif;font-size&#58;14px;\">This one-day event is designed to bring developers up-to-speed on the new features and benefits of using Microsoft Azure to build awesome cloud-based applications.</span></p><p style=\"box-sizing&#58;border-box;word-wrap&#58;break-word;word-break&#58;break-word;color&#58;#333333;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">At SSW we have already gone through the hard work of learning how to implement apps on Azure and we will be showing you everything you need to know&#160;in&#160;a day to get started.&#160;<br></p><div><br>\u200b<br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassC8C57DBCF6CB431A8034270F05BC3C16\"><p>\u200b<span style=\"background-color&#58;#ffffff;color&#58;#333333;font-family&#58;arial, sans-serif;font-size&#58;14px;\">This one-day event is designed to bring developers up-to-speed on the new features and benefits of using Microsoft Azure to build awesome cloud-based applications.</span></p><p style=\"box-sizing&#58;border-box;word-wrap&#58;break-word;word-break&#58;break-word;color&#58;#333333;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">At SSW we have already gone through the hard work of learning how to implement apps on Azure and we will be showing you everything you need to know&#160;in&#160;a day to get started.&#160;<br></p><div><br><br></div><p><br></p></div>",
+  "description": "\u200b\n\nThis one-day event is designed to bring developers up-to-speed on the new features and benefits of using Microsoft Azure to build awesome cloud-based applications.\n\nAt SSW we have already gone through the hard work of learning how to implement apps on Azure and we will be showing you everything you need to know\u00a0in\u00a0a day to get started.\u00a0\n\n\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

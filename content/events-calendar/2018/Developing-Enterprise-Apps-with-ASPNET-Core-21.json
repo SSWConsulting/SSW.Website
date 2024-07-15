@@ -1,0 +1,21 @@
+{
+  "title": "Developing Enterprise Apps with ASP.NET Core 2.1",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "startDateTime": "2018-06-19T14:00:00Z",
+  "endDateTime": "2018-06-19T16:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Sydney",
+  "enabled": true,
+  "category": ".NET Core",
+  "categoryAnchor": "OverviewOther",
+  "sessionTitle": "Developing Enterprise Apps with ASP.NET Core 2.1 ",
+  "sessionTitleAnchor": "DevelopingEnterpriseAppsWASPNETCore21 ",
+  "eventShortDescription": "<div class=\"ExternalClass24406F0F8EF647A0A7EC38F799C2FBEE\"><div>\u200b\u200bThe explosive growth of web frameworks and the demands of users have changed the approach to building web applications. Many challenges exist, and getting started can be a daunting prospect. Let's change that now.<br></div><div><br></div><div>This talk provides practical guidance and recommendations. We will cover architecture, technologies, tools, and frameworks. We will examine strategies for organizing your projects, folders and files. We will design a system that is simple to build and maintain - all the way from development to production. You leave this talk inspired and prepared to take your enterprise application development to the next level.\u200b<br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassF31A1C3F62FE40F88DC6746D1A48B367\"><div>The explosive growth of web frameworks and the demands of users have changed the approach to building web applications. Many challenges exist, and getting started can be a daunting prospect. Let's change that now.<br></div><div><br></div><div>This talk provides practical guidance and recommendations. We will cover architecture, technologies, tools, and frameworks. We will examine strategies for organizing your projects, folders and files. We will design a system that is simple to build and maintain - all the way from development to production. You leave this talk inspired and prepared to take your enterprise application development to the next level.\u200b<br></div><p><br></p></div>",
+  "description": "\u200b\u200bThe explosive growth of web frameworks and the demands of users have changed the approach to building web applications. Many challenges exist, and getting started can be a daunting prospect. Let's change that now.\n\nThis talk provides practical guidance and recommendations. We will cover architecture, technologies, tools, and frameworks. We will examine strategies for organizing your projects, folders and files. We will design a system that is simple to build and maintain - all the way from development to production. You leave this talk inspired and prepared to take your enterprise application development to the next level.\u200b",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

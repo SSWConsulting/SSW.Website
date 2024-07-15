@@ -1,0 +1,19 @@
+{
+  "title": "An Examination of DNN (previously called DotNetNuke)",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewVSNet",
+  "sessionTitle": "An Examination of DNN (previously DotNetNuke)",
+  "sessionTitleAnchor": "DotNetNuke",
+  "eventShortDescription": "<div class=\"ExternalClass47D8A9599FC14379808BB9A0EA7F04C2\"><div>\u200bAdam will compare IBuySpy Portal vs DNN (previously called&#160;DotNetNuke), then he will take a deeper look into the new DNN 7.4.1, which now offers a mature portal framework that helps increase everyday organizational efficiency.<br><br>DNN is an open source reference application for everyone from the aspiring webmaster to the experienced ASP.NET developer. Adam discusses&#58;<br><br><ul><li>The history of the Project</li><li>Multiple Database Support</li><li>Portal Features</li><li>Portal Architecture</li><li>Skinning (via a two-tiered presentation model)</li><li>Module Development</li><li>Run-time extensibility\u200b</li></ul></div></div>",
+  "eventDescription": "<div class=\"ExternalClass47D8A9599FC14379808BB9A0EA7F04C2\"><div>\u200bAdam will compare IBuySpy Portal vs DNN (previously called&#160;DotNetNuke), then he will take a deeper look into the new DNN 7.4.1, which now offers a mature portal framework that helps increase everyday organizational efficiency.<br><br>DNN is an open source reference application for everyone from the aspiring webmaster to the experienced ASP.NET developer. Adam discusses&#58;<br><br><ul><li>The history of the Project</li><li>Multiple Database Support</li><li>Portal Features</li><li>Portal Architecture</li><li>Skinning (via a two-tiered presentation model)</li><li>Module Development</li><li>Run-time extensibility</li></ul></div></div>",
+  "description": "\u200bAdam will compare IBuySpy Portal vs DNN (previously called\u00a0DotNetNuke), then he will take a deeper look into the new DNN 7.4.1, which now offers a mature portal framework that helps increase everyday organizational efficiency.\n\nDNN is an open source reference application for everyone from the aspiring webmaster to the experienced ASP.NET developer. Adam discusses:\n\nThe history of the Project\n\nMultiple Database Support\n\nPortal Features\n\nPortal Architecture\n\nSkinning (via a two-tiered presentation model)\n\nModule Development\n\nRun-time extensibility\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

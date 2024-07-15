@@ -1,0 +1,19 @@
+{
+  "title": "The Angular Superpowers Tour: Sydney",
+  "url": "/ssw/Events/Training/Angular-Superpowers-Tour.aspx",
+  "thumbnail": "/images/events/SuperPower-Icon-Angular.jpg",
+  "thumbnailDescription": "The Angular SuperPowers Tour",
+  "presenterName": "Brendan Richards and Duncan Hunter",
+  "startDateTime": "2017-11-23T22:00:00Z",
+  "endDateTime": "2017-11-24T06:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Angular and React",
+  "eventShortDescription": "<div class=\"ExternalClassD6F0B25E4D5A4CD58AEEC8B2A1475742\"><p>\u200bThis one-day Dev Superpower Tour brings developers up-to-speed with Angular!</p><div>Everything has changed! Angular and modern web best practices involve massive changes to how we build modern web applications.<br></div><div><br></div><div>At SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies.\u200b<br></div><p><br><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass17D9F70D44C44068B7A51772F92BF50F\"><p>\u200bThis one-day Dev Superpower Tour brings developers up-to-speed with Angular!</p><div>Everything has changed! Angular and modern web best practices involve massive changes to how we build modern web applications.<br></div><div><br></div><div>At SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies.\u200b<br></div><p><br></p></div>",
+  "description": "\u200bThis one-day Dev Superpower Tour brings developers up-to-speed with Angular!\n\nEverything has changed! Angular and modern web best practices involve massive changes to how we build modern web applications.\n\nAt SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies.\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

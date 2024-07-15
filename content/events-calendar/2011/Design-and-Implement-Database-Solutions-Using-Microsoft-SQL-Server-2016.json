@@ -1,0 +1,19 @@
+{
+  "title": "Design and Implement Database Solutions Using Microsoft SQL Server 2016",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "SQL Server",
+  "categoryAnchor": "OverviewSQLServer",
+  "sessionTitle": "Design and Implement Database Solutions Using Microsoft SQL Server 2016",
+  "sessionTitleAnchor": "SQLServer2016",
+  "eventShortDescription": "<div class=\"ExternalClassCD7EC1A5436745DEA799DE2D531A170C\"><div>Microsoft SQL Server has set the fastest TCP-C Performance record ever and is setting itself as the preferred database for both developer and industry. In this session you'll learn to&#58;<br><br><ul><li>Plan and initiate a logical data model</li><li>Create solutions for performance, maintainability, and scalability</li><li>Implement stored procedures and triggers</li><li>Develop and maintain explicit, implicit, and distributed transactions to ensure data integrity</li><li>Run Index Tuning Wizard and Database Maintenance Wizard</li><li>Utilize SP Mail as the most powerful work-horse in your application</li><li>Use DTS (Data Transformation Services) effectively</li></ul></div></div>",
+  "eventDescription": "<div class=\"ExternalClassCD7EC1A5436745DEA799DE2D531A170C\"><div>Microsoft SQL Server has set the fastest TCP-C Performance record ever and is setting itself as the preferred database for both developer and industry. In this session you'll learn to&#58;<br><br><ul><li>Plan and initiate a logical data model</li><li>Create solutions for performance, maintainability, and scalability</li><li>Implement stored procedures and triggers</li><li>Develop and maintain explicit, implicit, and distributed transactions to ensure data integrity</li><li>Run Index Tuning Wizard and Database Maintenance Wizard</li><li>Utilize SP Mail as the most powerful work-horse in your application</li><li>Use DTS (Data Transformation Services) effectively</li></ul></div></div>",
+  "description": "Microsoft SQL Server has set the fastest TCP-C Performance record ever and is setting itself as the preferred database for both developer and industry. In this session you'll learn to:\n\nPlan and initiate a logical data model\n\nCreate solutions for performance, maintainability, and scalability\n\nImplement stored procedures and triggers\n\nDevelop and maintain explicit, implicit, and distributed transactions to ensure data integrity\n\nRun Index Tuning Wizard and Database Maintenance Wizard\n\nUtilize SP Mail as the most powerful work-horse in your application\n\nUse DTS (Data Transformation Services) effectively",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

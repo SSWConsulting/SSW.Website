@@ -1,0 +1,17 @@
+{
+  "title": "SSW Windows Azure Webinar",
+  "url": "/ssw/Events/Webinars/Windows-Azure.aspx",
+  "thumbnail": "/images/thumbs/thumb-webinar-windowsazure.jpg",
+  "thumbnailDescription": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-windowsazure.jpg",
+  "presenterName": "Andrew Coates",
+  "startDateTime": "2012-04-27T01:00:00Z",
+  "endDateTime": "2012-04-27T02:00:00Z",
+  "calendarType": "Webinars",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass1A9C8B880ECA40D48BCD50B804ECD98A\">More and more companies are moving their infrastructure to the cloud. Driven by the low costs in terms of hardware, bandwidth and the promised reduction in support staff to maintain the infrastructure. So is moving to the cloud the right decision for your business?<br><br></div>",
+  "eventDescription": "<div class=\"ExternalClass1A9C8B880ECA40D48BCD50B804ECD98A\"><div>More and more companies are moving their infrastructure to the cloud. Driven by the low costs in terms of hardware, bandwidth and the promised reduction in support staff to maintain the infrastructure. So is moving to the cloud the right decision for your business?<br><br><br>Microsoft Australia\u2019s Andrew Coates as he discusses the benefits (and some of the pitfalls) of adopting the cloud as your platform. There will be lots of time for live questions.</div></div>",
+  "description": "More and more companies are moving their infrastructure to the cloud. Driven by the low costs in terms of hardware, bandwidth and the promised reduction in support staff to maintain the infrastructure. So is moving to the cloud the right decision for your business?",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

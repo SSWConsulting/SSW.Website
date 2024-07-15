@@ -1,0 +1,21 @@
+{
+  "title": "Building Single Page Applications with ASP.NET Core 2.1",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Building Single Page Applications with ASP.NET Core 2.1",
+  "startDateTime": "2018-09-11T08:00:00Z",
+  "endDateTime": "2018-09-11T09:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Sydney",
+  "enabled": true,
+  "category": ".NET Core",
+  "categoryAnchor": "OverviewOther",
+  "sessionTitle": "Building Single Page Applications with ASP.NET Core 2.1",
+  "sessionTitleAnchor": "BuildingSinglePageApplicationsNETCore",
+  "eventShortDescription": "<div class=\"ExternalClassD2ADB87D3CC94AA28E4006E518DE4B29\"><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass41A96D032B154BF5ABF7ECC4A6B71CD2\">\u200b\u200b\u200b\u200b\u200b\u200bMost people think Azure Functions are only for a tiny bit of code. They will be surprised! Why not build your whole application following best practices and only expose the endpoints through functions? In this talk, I'll present a new paradigm, a new way of thinking whilst still leveraging your existing knowledge.\u200b<br><div><br><br></div><p><br></p></div>",
+  "description": "",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

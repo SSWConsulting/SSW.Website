@@ -1,0 +1,17 @@
+{
+  "title": "NDC Oslo",
+  "url": "http://ndcoslo.com/",
+  "thumbnail": "/images/Newsletters/NDC-Oslo-2017.jpg",
+  "thumbnailDescription": "NDC Oslo",
+  "startDateTime": "2017-06-11T15:00:00Z",
+  "endDateTime": "2017-06-16T10:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Oslo",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass65A77AC27D044B3B89BE81791B804590\"><p>\u200b\u200b\u200b\u200b<br></p></div>",
+  "description": "\u200b\u200b\u200b\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

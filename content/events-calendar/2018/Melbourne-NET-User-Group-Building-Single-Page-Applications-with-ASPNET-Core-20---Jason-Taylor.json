@@ -1,0 +1,20 @@
+{
+  "title": "Melbourne .NET User Group: Building Single Page Applications with ASP.NET Core 2.0 - Jason Taylor",
+  "url": "https://www.meetup.com/Melbourne-NET-User-Group/events/244479054/",
+  "thumbnail": "/images/thumbs/thumb-melbourneUG.jpg",
+  "thumbnailDescription": "Melbourne .NET User Group: Building Single Page Applications with ASP.NET Core 2.0 - Jason Taylor ",
+  "presenterName": "Jason Taylor ",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/JasonTaylor.aspx",
+  "startDateTime": "2018-02-14T07:00:00Z",
+  "endDateTime": "2018-02-14T09:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": ".NET Core",
+  "eventShortDescription": "<div class=\"ExternalClass599FE493E8204008A1FDA8B508E163E1\"><p>\u200bIn this talk, we\u2019ll look at using ASP.NET Core JavaScript Services to build single page applications using Angular, Aurelia, Knockout, React, React+Redux or Vue. With this approach, you can develop on Windows, Mac, or Linux using your preferred source code editor. I\u2019ll demonstrate server-side prerendering, webpack dev middleware, hot module replacement (HMR), efficient production builds and much more. You will walk away ready to create single page applications using your favourite client-side framework and ASP.NET Core.&#160; <br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassBC4394A087EE41648FD67A9C0C148A27\"><p>\u200bIn this talk, we\u2019ll look at using ASP.NET Core JavaScript Services to build single page applications using Angular, Aurelia, Knockout, React, React+Redux or Vue. With this approach, you can develop on Windows, Mac, or Linux using your preferred source code editor. I\u2019ll demonstrate server-side prerendering, webpack dev middleware, hot module replacement (HMR), efficient production builds and much more. You will walk away ready to create single page applications using your favourite client-side framework and ASP.NET Core.&#160; <br></p></div>",
+  "description": "\u200bIn this talk, we\u2019ll look at using ASP.NET Core JavaScript Services to build single page applications using Angular, Aurelia, Knockout, React, React+Redux or Vue. With this approach, you can develop on Windows, Mac, or Linux using your preferred source code editor. I\u2019ll demonstrate server-side prerendering, webpack dev middleware, hot module replacement (HMR), efficient production builds and much more. You will walk away ready to create single page applications using your favourite client-side framework and ASP.NET Core.\u00a0 ",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

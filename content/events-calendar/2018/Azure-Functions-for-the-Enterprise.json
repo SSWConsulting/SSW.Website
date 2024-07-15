@@ -1,0 +1,21 @@
+{
+  "title": "Azure Functions for the Enterprise",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "/ssw/Events/Images/Icons/daytime-training-115px.png",
+  "startDateTime": "2018-08-09T14:00:00Z",
+  "endDateTime": "2018-08-09T16:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Azure",
+  "categoryAnchor": "OverviewAzure",
+  "sessionTitle": "Azure Functions for the Enterprise",
+  "sessionTitleAnchor": "AzureFunctionsfortheEnterprise",
+  "eventShortDescription": "<div class=\"ExternalClass5E16E2BB00ED4B7CA5331C9D90E93EE3\"><p>\u200bMost people think Azure Functions are only for a tiny bit of code. They will be surprised! Why not build your whole application following best practices and only expose the endpoints through functions? In this talk, I'll present a new paradigm, a new way of thinking whilst still leveraging your existing knowledge.<br><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassFA128A482E4048E99CDAD313C81C49AA\"><p>\u200bMost people think Azure Functions are only for a tiny bit of code. They will be surprised! Why not build your whole application following best practices and only expose the endpoints through functions? In this talk, I'll present a new paradigm, a new way of thinking whilst still leveraging your existing knowledge.<br>\u200b<br></p></div>",
+  "description": "\u200bMost people think Azure Functions are only for a tiny bit of code. They will be surprised! Why not build your whole application following best practices and only expose the endpoints through functions? In this talk, I'll present a new paradigm, a new way of thinking whilst still leveraging your existing knowledge.",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

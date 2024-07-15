@@ -1,0 +1,17 @@
+{
+  "title": "Microsoft Ignite Australia: Gold Coast(Formerly TechEd)",
+  "url": "https://www.microsoft.com.au/ignite/",
+  "thumbnail": "/images/Newsletters/MS-Ignite-AU.jpg",
+  "thumbnailDescription": "Microsoft Ignite Australia: Gold Coast (Formerly TechEd)",
+  "presenterName": "Adam Cogan",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
+  "startDateTime": "2015-11-16T14:00:00Z",
+  "endDateTime": "2015-11-19T13:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Gold Coast",
+  "enabled": true,
+  "category": "Other",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

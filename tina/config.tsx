@@ -14,6 +14,7 @@ import {
 } from "./collections/consulting";
 import { employmentSchema } from "./collections/employment";
 import { eventsIndexSchema, eventsSchema } from "./collections/events";
+import { eventsCalendarSchema } from "./collections/events-calendar";
 import { globalSchema } from "./collections/global";
 import { industryIndexSchema, industrySchema } from "./collections/industry";
 import { liveSchema } from "./collections/live";
@@ -105,9 +106,10 @@ const config = defineStaticConfig({
       opportunitiesSchema,
       eventsIndexSchema,
       eventsSchema,
+      eventsCalendarSchema,
       locationSchema,
-      logosSchema,
       presenterSchema,
+      logosSchema,
       industrySchema,
       liveSchema,
       marketingSchema,

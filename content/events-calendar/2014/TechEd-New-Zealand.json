@@ -1,0 +1,16 @@
+{
+  "title": "TechEd New Zealand",
+  "url": "https://newzealand.msteched.com/",
+  "thumbnail": "/images/Newsletters/TechEdNZ2014.png",
+  "thumbnailDescription": "TechEd New Zealand ",
+  "presenterName": "TechEd New Zealand ",
+  "startDateTime": "2014-09-08T14:00:00Z",
+  "endDateTime": "2014-09-12T13:55:00Z",
+  "calendarType": "Conferences",
+  "city": "Auckland",
+  "enabled": true,
+  "category": "Other",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

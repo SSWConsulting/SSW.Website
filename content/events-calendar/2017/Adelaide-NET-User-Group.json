@@ -1,0 +1,17 @@
+{
+  "title": "Adelaide .NET User Group",
+  "url": "https://www.meetup.com/Adelaide-dotNET/events/237357085/",
+  "thumbnail": "/images/Newsletters/adelaide-net-user-group.jpg",
+  "thumbnailDescription": "Adelaide .NET User Group",
+  "presenterName": "Adam Cogan",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
+  "startDateTime": "2017-02-09T14:00:00Z",
+  "endDateTime": "2017-02-10T12:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Adelaide",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

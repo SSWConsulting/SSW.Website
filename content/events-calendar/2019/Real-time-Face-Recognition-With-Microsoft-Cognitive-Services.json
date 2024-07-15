@@ -1,0 +1,20 @@
+{
+  "title": "Real-time Face Recognition With Microsoft Cognitive Services",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Real-time Face Recognition With Microsoft Cognitive Services",
+  "startDateTime": "2019-01-16T07:00:00Z",
+  "endDateTime": "2019-01-16T08:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Azure",
+  "categoryAnchor": "OverviewAzure",
+  "sessionTitle": "Real-time Face Recognition With Microsoft Cognitive Services",
+  "sessionTitleAnchor": "FaceRecognitionwMSCognitiveServices",
+  "eventDescription": "<div class=\"ExternalClass8992D4D98BF645CBBD4B617D05B2A4EB\"><div>This session is all about Microsoft Face API in practice!<br></div><div><br></div><div>We&#160;will cover what it means to use Microsoft Cognitive Services in real-time, why offline detection libraries are essential and why you should use infrared and depth cameras like Kinect and Intel RealSense in your applications.<br></div><div><br></div></div>",
+  "description": "This session is all about Microsoft Face API in practice!\n\nWe\u00a0will cover what it means to use Microsoft Cognitive Services in real-time, why offline detection libraries are essential and why you should use infrared and depth cameras like Kinect and Intel RealSense in your applications.",
+  "showOnPowerSessions": "Yes",
+  "hasVideo": false,
+  "externalPresenters": []
+}

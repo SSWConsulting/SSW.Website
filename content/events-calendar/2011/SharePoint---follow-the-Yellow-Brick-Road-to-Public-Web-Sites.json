@@ -1,0 +1,19 @@
+{
+  "title": "SharePoint - follow the Yellow Brick Road to Public Web Sites",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "SharePoint",
+  "categoryAnchor": "OverviewSharePoint",
+  "sessionTitle": "SharePoint - follow the Yellow Brick Road to Public Web Sites",
+  "sessionTitleAnchor": "SPYellowBrickRoad",
+  "eventShortDescription": "<div class=\"ExternalClass4A1C3F05208048048ACBF91DC40691A9\"><div>Come join us as we learn how the largest public SharePoint site in Australia (<a href=\"http&#58;//www.ssw.com.au/ssw/redirect/WorleyParsons.htm\">www.WorleyParsons.com</a>) got up and running.<br><br><a href=\"http&#58;//www.ssw.com.au/ssw/redirect/AdamCogan.htm\">Adam Cogan</a>&#160;of SSW will share his experience and lessons learnt on this project. Adam will also show you how to sexify the look and feel of your site (or de-SharePointing with style)<br><br>More info&#58;<br><br><ul><li>Why companies want SharePoint's Web Content Management</li><li>How to sexify the look and feel (aka de-SharePointing with style)</li><li>Reducing use of tables via ASP.NET control adapters</li><li>Cross-browser compatibility - the easy way with JQuery</li><li>How to use the Custom Navigation Control Adapters - the golden pearl</li><li>Customizing SharePoint web parts</li><li>How to deploy (and how you can avoid three all-nighters)</li><li>Performance - targeting anonymous users</li><li>The lessons learned (aka rules)</li></ul></div></div>",
+  "eventDescription": "<div class=\"ExternalClass4A1C3F05208048048ACBF91DC40691A9\"><div>Come join us as we learn how the largest public SharePoint site in Australia (<a href=\"http&#58;//www.ssw.com.au/ssw/redirect/WorleyParsons.htm\">www.WorleyParsons.com</a>) got up and running.<br><br><a href=\"http&#58;//www.ssw.com.au/ssw/redirect/AdamCogan.htm\">Adam Cogan</a>&#160;of SSW will share his experience and lessons learnt on this project. Adam will also show you how to sexify the look and feel of your site (or de-SharePointing with style)<br><br>More info&#58;<br><br><ul><li>Why companies want SharePoint's Web Content Management</li><li>How to sexify the look and feel (aka de-SharePointing with style)</li><li>Reducing use of tables via ASP.NET control adapters</li><li>Cross-browser compatibility - the easy way with JQuery</li><li>How to use the Custom Navigation Control Adapters - the golden pearl</li><li>Customizing SharePoint web parts</li><li>How to deploy (and how you can avoid three all-nighters)</li><li>Performance - targeting anonymous users</li><li>The lessons learned (aka rules)</li></ul></div></div>",
+  "description": "Come join us as we learn how the largest public SharePoint site in Australia (\n\nwww.WorleyParsons.com\n\n) got up and running.\n\nAdam Cogan\n\n\u00a0of SSW will share his experience and lessons learnt on this project. Adam will also show you how to sexify the look and feel of your site (or de-SharePointing with style)\n\nMore info:\n\nWhy companies want SharePoint's Web Content Management\n\nHow to sexify the look and feel (aka de-SharePointing with style)\n\nReducing use of tables via ASP.NET control adapters\n\nCross-browser compatibility - the easy way with JQuery\n\nHow to use the Custom Navigation Control Adapters - the golden pearl\n\nCustomizing SharePoint web parts\n\nHow to deploy (and how you can avoid three all-nighters)\n\nPerformance - targeting anonymous users\n\nThe lessons learned (aka rules)",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

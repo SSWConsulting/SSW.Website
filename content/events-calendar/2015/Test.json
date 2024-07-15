@@ -1,0 +1,19 @@
+{
+  "title": "Test",
+  "url": "http://test.com",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "/ssw/NETUG/Images/thumbs/thumb-sydneyUG.jpg",
+  "presenterName": "David Burela",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/David-Burela.aspx",
+  "startDateTime": "2015-03-25T08:30:00Z",
+  "endDateTime": "2015-03-25T09:00:00Z",
+  "startShowBannerDateTime": "2015-03-25T08:00:00Z",
+  "endShowBannerDateTime": "2015-03-25T09:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,29 @@
+{
+  "title": "Sydney .NET User Group - Search Indexing: It's Your Data - But Faster",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET Thumb",
+  "presenterName": "Brendan Richards",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Brendan.aspx",
+  "startDateTime": "2016-08-17T08:00:00Z",
+  "endDateTime": "2016-08-16T22:30:00Z",
+  "startShowBannerDateTime": "2016-08-16T14:00:00Z",
+  "endShowBannerDateTime": "2016-08-17T11:00:00Z",
+  "liveStreamUrl": {
+    "description": "/ssw/Live/",
+    "url": "/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "categoryAnchor": "SearchIndexing",
+  "sessionTitle": "Syndey .NET User Group - Search Indexing: It's Your Data - But Faster",
+  "sessionTitleAnchor": "SearchIndexing-It'sYourData-ButFaster",
+  "eventShortDescription": "<div class=\"ExternalClass4D4818CE0D4145698D47D549C79E4640\"><div>\u200bEver wonder why Google can return results from billions of pages in a fraction of a second while your database query across mere thousands seems to drag?</div><div><br></div><div>In this session we'll show you how to really rock search by leveraging the capabilities of the top Open Source search index tools and libraries - either embedded within your own application or across the cloud.&#160;</div><div><br></div><div>If you want to learn to run blinding fast searches in Lucene.net, Elastic Search or Azure Search this session is for you.</div><div><br></div><div>Catch it live on https&#58;//www.ssw.com.au/ssw/Live/&#160;<br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass7620E0D3DB4C4A8480234A708118A143\"><p>Presented by Brendan Richards&#160;&#160;\u200b<span style=\"line-height&#58;20.8px;\">\u200b</span></p><p><span style=\"line-height&#58;20.8px;\"></span><span style=\"color&#58;#4b4f56;font-family&#58;helvetica, arial, sans-serif;font-size&#58;14px;line-height&#58;18.76px;background-color&#58;#ffffff;\"></span></p><div>\u200bEver wonder why Google can return results from billions of pages in a fraction of a second while your database query across mere thousands seems to drag?</div><div><br></div><div>In this session we'll show you how to really rock search by leveraging the capabilities of the top Open Source search index tools and libraries - either embedded within your own application or across the cloud.&#160;</div><div><br></div><div>If you want to learn to run blinding fast searches in Lucene.net, Elastic Search or Azure Search this session is for you.</div><div><br></div><div>Catch it live on https&#58;//www.ssw.com.au/ssw/Live/&#160;\u200b<br></div><p><span style=\"line-height&#58;20.8px;\"><br></span></p></div>",
+  "description": "\u200bEver wonder why Google can return results from billions of pages in a fraction of a second while your database query across mere thousands seems to drag?\n\nIn this session we'll show you how to really rock search by leveraging the capabilities of the top Open Source search index tools and libraries - either embedded within your own application or across the cloud.\u00a0\n\nIf you want to learn to run blinding fast searches in Lucene.net, Elastic Search or Azure Search this session is for you.\n\nCatch it live on https://www.ssw.com.au/ssw/Live/\u00a0",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

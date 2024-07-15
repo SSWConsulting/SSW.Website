@@ -1,0 +1,19 @@
+{
+  "title": "Angular Superpowers Tour - Online",
+  "url": "/ssw/Events/Training/Angular-Superpowers-Tour.aspx",
+  "thumbnail": "/images/Newsletters/Angular-2-0-logo.png",
+  "thumbnailDescription": "Angular Superpowers Tour - Online",
+  "presenterName": "Jean Thirion & Matt Wicks",
+  "startDateTime": "2021-03-18T22:00:00Z",
+  "endDateTime": "2021-03-19T06:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Online",
+  "enabled": true,
+  "category": "Angular and React",
+  "eventShortDescription": "<div class=\"ExternalClass4568F9E58DE94CE1A333927EFFF324A4\"><p>This one-day workshop brings developers up-to-speed on the new features and benefits of using Angular to build awesome web applications.</p><p>Everything has changed! Angular and modern web best practices involve massive changes to how we build modern web applications.</p><p>At SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies. View our&#160;<a href=\"https&#58;//www.ssw.com.au/ssw/Consulting/Angular.aspx\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"><span style=\"text-decoration-line&#58;underline;\"><font color=\"#0066cc\">Angular consulting page</font></span></a>.</p><p>Come watch our best Angular devs build an Angular application from scratch and take it all the way to an enterprise application using all the best tools and practices we use.</p><p>Don't waste weeks learning Angular, the Angular CLI, RxJS, TypeScript, ngrx, NPM, WebPack, end to end testing and unit testing. Get your head around all the core concepts and get jump started in just one day.<br></p><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassC01CD7E4C8024F2290FC4D8A14E0E5EC\"><p>\u200bThis one-day workshop brings developers up-to-speed on the new features and benefits of using Angular to build awesome web applications.</p><p>Everything has changed! Angular and modern web best practices involve massive changes to how we build modern web applications.</p><p>At SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies. View our&#160;<a href=\"https&#58;//www.ssw.com.au/ssw/Consulting/Angular.aspx\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"><span style=\"text-decoration-line&#58;underline;\"><font color=\"#0066cc\">Angular consulting page</font></span></a>.</p><p>Come watch our best Angular devs build an Angular application from scratch and take it all the way to an enterprise application using all the best tools and practices we use.</p><p>Don't waste weeks learning Angular, the Angular CLI, RxJS, TypeScript, ngrx, NPM, WebPack, end to end testing and unit testing. Get your head around all the core concepts and get jump started in just one day.<br></p><p><br></p></div>",
+  "description": "This one-day workshop brings developers up-to-speed on the new features and benefits of using Angular to build awesome web applications.\n\nEverything has changed! Angular and modern web best practices involve massive changes to how we build modern web applications.\n\nAt SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies. View our\u00a0\n\nAngular consulting page\n\n.\n\nCome watch our best Angular devs build an Angular application from scratch and take it all the way to an enterprise application using all the best tools and practices we use.\n\nDon't waste weeks learning Angular, the Angular CLI, RxJS, TypeScript, ngrx, NPM, WebPack, end to end testing and unit testing. Get your head around all the core concepts and get jump started in just one day.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

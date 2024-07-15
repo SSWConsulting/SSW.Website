@@ -1,0 +1,19 @@
+{
+  "title": "Favorite 3rd Party Tools for SQL Server",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "SQL Server",
+  "categoryAnchor": "OverviewSQLServer",
+  "sessionTitle": "Favorite 3rd Party Tools for SQL Server",
+  "sessionTitleAnchor": "3rdPartyToolsSQLServer",
+  "eventShortDescription": "<div class=\"ExternalClassAF2073DF53B54B459CE3F9120286BD8A\"><div>\u200bMicrosoft's tools don't have all the answers. Let someone else's hard work save you time in SQL Server development. Adam reviews some of the best SQL Server tools on the market from Red-Gate, Lecco, Embarcadero, FMS and others.</div></div>",
+  "eventDescription": "<div class=\"ExternalClassAF2073DF53B54B459CE3F9120286BD8A\"><div>\u200bMicrosoft's tools don't have all the answers. Let someone else's hard work save you time in SQL Server development. Adam reviews some of the best SQL Server tools on the market from Red-Gate, Lecco, Embarcadero, FMS and others.</div></div>",
+  "description": "\u200bMicrosoft's tools don't have all the answers. Let someone else's hard work save you time in SQL Server development. Adam reviews some of the best SQL Server tools on the market from Red-Gate, Lecco, Embarcadero, FMS and others.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

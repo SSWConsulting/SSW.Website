@@ -1,0 +1,19 @@
+{
+  "title": "Microsoft SQL Server 2016 Reporting Services: Architecture Overview",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "BI and Reporting Services",
+  "categoryAnchor": "OverviewReportingServices",
+  "sessionTitle": "Microsoft SQL Server 2016 Reporting Services: Architecture Overview",
+  "sessionTitleAnchor": "MSSSRS2016Overview",
+  "eventShortDescription": "<div class=\"ExternalClassCB1A536EC9DF4BD7873FB88141894D5C\"><div>\u200bIn SQL Server 2016, the report server has been re-architected to remove the dependency on Internet Information Services and provide better control over memory usage. Get an overview of the Reporting Services 2016 architecture and the impact on installation, upgrade, and reporting services management tools.\u200b\u200b\u200b</div></div>",
+  "eventDescription": "<div class=\"ExternalClassCB1A536EC9DF4BD7873FB88141894D5C\"><div>\u200bIn SQL Server 2016, the report server has been re-architected to remove the dependency on Internet Information Services and provide better control over memory usage. Get an overview of the Reporting Services 2016 architecture and the impact on installation, upgrade, and reporting services management tools.\u200b</div></div>",
+  "description": "\u200bIn SQL Server 2016, the report server has been re-architected to remove the dependency on Internet Information Services and provide better control over memory usage. Get an overview of the Reporting Services 2016 architecture and the impact on installation, upgrade, and reporting services management tools.\u200b\u200b\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

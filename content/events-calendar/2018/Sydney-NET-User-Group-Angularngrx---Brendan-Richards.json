@@ -1,0 +1,26 @@
+{
+  "title": "Sydney .NET User Group: Angular/ngrx - Brendan Richards",
+  "url": "/ssw/netug/sydney.aspx",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group: Angular/ngrx - Brendan Richards",
+  "presenterName": "Brendan Richards",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Brendan.aspx",
+  "startDateTime": "2018-05-16T08:00:00Z",
+  "endDateTime": "2018-05-16T10:00:00Z",
+  "startShowBannerDateTime": "2018-05-15T15:00:00Z",
+  "endShowBannerDateTime": "2018-05-16T13:00:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET User Group: Angular/ngrx - Brendan Richards",
+    "url": "/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Angular and React",
+  "eventShortDescription": "<div class=\"ExternalClassE9066FF8988D461DB4112F886266158F\"><p>Like many of us, Brendan first started working with reactive programming patterns under JavaScript based user interfaces with RxJS. But Reactive Programming is a pattern available to most modern languages, including Reactive Extensions for .NET and Entity Framework RX.<br>This talk is an introduction to using Reactive Extensions on the server side with ASP.NET Core 2.1<br><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassE227D2E9EF54416CAE19E098E8C44E55\"><div>\u200bLike many of us, Brendan first started working with reactive programming patterns under JavaScript based user interfaces with RxJS. But Reactive Programming is a pattern available to most modern languages, including Reactive Extensions for .NET and Entity Framework RX.<br></div><div><br></div><div>This talk is an introduction to using Reactive Extensions on the server side with ASP.NET Core 2.1<br></div><p><br></p></div>",
+  "description": "Like many of us, Brendan first started working with reactive programming patterns under JavaScript based user interfaces with RxJS. But Reactive Programming is a pattern available to most modern languages, including Reactive Extensions for .NET and Entity Framework RX.\n\nThis talk is an introduction to using Reactive Extensions on the server side with ASP.NET Core 2.1",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Dev SuperPowers: OnlineAngular 2 - Part 2",
+  "url": "http://tv.ssw.com/free-webinar-angular-2",
+  "thumbnail": "/images/Newsletters/DevSuperpowers-Thumb.png",
+  "thumbnailDescription": "Dev SuperPowers: Online<br />Angular 2 - Part 2",
+  "presenterName": "Duncan Hunter",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/DuncanHunter.aspx",
+  "startDateTime": "2016-03-31T00:00:00Z",
+  "endDateTime": "2016-03-31T01:00:00Z",
+  "calendarType": "Webinars",
+  "city": "Online",
+  "enabled": true,
+  "category": "Angular",
+  "eventShortDescription": "<div class=\"ExternalClass8EB145972B9548EC95ED20E5DD9CD4AC\"><div><strong>\u200bAngular 2</strong></div><div><br></div><div>Watch Duncan Hunter build a simple Angular 2 application from scratch as he explains the many changes to the newest version of Angular 2. TypeScript, Rx.JS, components, dependency injection, routing and more have all changed in Angular2. In this video you will get up to speed with all these changes and learn to make your first Angular2 application.</div></div>",
+  "description": "\u200bAngular 2\n\nWatch Duncan Hunter build a simple Angular 2 application from scratch as he explains the many changes to the newest version of Angular 2. TypeScript, Rx.JS, components, dependency injection, routing and more have all changed in Angular2. In this video you will get up to speed with all these changes and learn to make your first Angular2 application.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

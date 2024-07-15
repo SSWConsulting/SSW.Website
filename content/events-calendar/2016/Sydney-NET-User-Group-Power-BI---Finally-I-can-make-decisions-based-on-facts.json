@@ -1,0 +1,26 @@
+{
+  "title": "Sydney .NET User Group: \u200bPower BI - Finally I can make decisions based on facts",
+  "url": "/ssw/netug/sydney.aspx",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
+  "presenterName": "Ulysses Maclaren",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Uly.aspx",
+  "startDateTime": "2016-10-19T07:30:00Z",
+  "endDateTime": "2016-10-19T09:30:00Z",
+  "startShowBannerDateTime": "2016-10-18T14:00:00Z",
+  "endShowBannerDateTime": "2016-10-19T12:00:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET user group: October",
+    "url": "/ssw/live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "BI and Reporting Services",
+  "eventShortDescription": "<div class=\"ExternalClassB9D8F7A7DB8E466B837640971DE4A1C9\"><div><strong>\u200bPower BI - Finally I can make decisions based on facts</strong><br></div><div><br></div><div>SSW's General Manager, Ulysses Maclaren, will take you through his personal journey of discovery into the world of Power BI.&#160;</div><div><br></div><div>Many companies have valuable data, but the challenge is being able to easily visualize it in a way that allows you to make decisions.&#160;</div><div><br></div><div>He will show in a live demo how Power BI allows even non technical users to produce and share invaluable reports and dashboards.&#160;</div><div><br><br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassBB0C0B7C929949F6A53176EF46314D9D\"><div><strong>Power BI - Finally I can make decisions based on facts</strong></div><div><br></div><div>SSW's General Manager, Ulysses Maclaren, will take you through his personal journey of discovery into the world of Power BI.&#160;</div><div><br></div><div>Many companies have valuable data, but the challenge is being able to easily visualize it in a way that allows you to make decisions.&#160;</div><div><br></div><div>He will show in a live demo how Power BI allows even non technical users to produce and share invaluable reports and dashboards.&#160;</div><div><br><br></div><p><br></p></div>",
+  "description": "\u200bPower BI - Finally I can make decisions based on facts\n\nSSW's General Manager, Ulysses Maclaren, will take you through his personal journey of discovery into the world of Power BI.\u00a0\n\nMany companies have valuable data, but the challenge is being able to easily visualize it in a way that allows you to make decisions.\u00a0\n\nHe will show in a live demo how Power BI allows even non technical users to produce and share invaluable reports and dashboards.\u00a0",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

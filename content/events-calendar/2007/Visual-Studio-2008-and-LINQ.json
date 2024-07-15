@@ -1,0 +1,22 @@
+{
+  "title": "Visual Studio 2008 and LINQ",
+  "url": "/images/newsletter-uploads/2007/_2007_11__What%20sort%20of%20primary%20keys%20do%20you%20use%20-%20Natural%20or%20Surrogate_%20.htm",
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "/images/events/sydney-ug-thumb.jpg",
+  "presenterName": "Adam Cogan and Eric Phan",
+  "presenterProfileUrl": "https://adamcogan.com/",
+  "startDateTime": "2007-11-21T06:45:00Z",
+  "endDateTime": "2007-11-21T10:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass35D93195CEEB47A5BA9FC8942C7DCF7F\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;Come hear Adam Cogan and Eric Phan present Visual Studio 2008 and LINQ. Linq is the future of ORM on the .NET platform and with the release of Visual Studio 2008 only months away it will become mainstream. In this presentation you will learn about the different types of LINQ and how to use LINQ to quickly build data-driven applications.</span><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClassB130260D37884E76B0EC12F09C2FF8D5\"><p>\u200b<strong style=\"box-sizing&#58;border-box;font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">Description&#58;</strong><span style=\"font-family&#58;arial, sans-serif;font-size&#58;14px;background-color&#58;#ffffff;\">&#160;Come hear Adam Cogan and Eric Phan present Visual Studio 2008 and LINQ. Linq is the future of ORM on the .NET platform and with the release of Visual Studio 2008 only months away it will become mainstream. In this presentation you will learn about the different types of LINQ and how to use LINQ to quickly build data-driven applications.</span><br></p></div>",
+  "description": "\u200b\n\nDescription:\n\n\u00a0Come hear Adam Cogan and Eric Phan present Visual Studio 2008 and LINQ. Linq is the future of ORM on the .NET platform and with the release of Visual Studio 2008 only months away it will become mainstream. In this presentation you will learn about the different types of LINQ and how to use LINQ to quickly build data-driven applications.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30
+}

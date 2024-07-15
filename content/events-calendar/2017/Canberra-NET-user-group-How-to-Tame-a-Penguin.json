@@ -1,0 +1,21 @@
+{
+  "title": "Canberra .NET user group: \u200bHow to Tame a Penguin",
+  "url": "/ssw/NETUG/Canberra.aspx",
+  "thumbnail": "/images/thumbs/thumb-canberraUG.jpg",
+  "thumbnailDescription": "Canberra .NET user group: \u200bHow to Tame a Penguin",
+  "presenterName": "Brendan Richards",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Brendan.aspx",
+  "startDateTime": "2017-05-15T07:30:00Z",
+  "endDateTime": "2017-05-15T09:30:00Z",
+  "calendarType": "User Groups",
+  "city": "Canberra",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "\u200bHow to Tame a Penguin",
+  "eventShortDescription": "<div class=\"ExternalClass5893E7AA0FDE4068887C8E5AC0FCFA09\"><div><strong>\u200b\u200bHow to Tame a Penguin</strong><br></div><div><br></div><div>&quot;Microsoft Heart Linux&quot; is a big statement backed up by exciting software releases that give the .NET developer more choices than ever before. But how to get started? &#160;Brendan is a former Linux fundamentalist turned .NET Developer, &#160;and this talk will teach some essential Linux command-line basics before going on to deploy a dotnet web application.\u200b</div><div><br></div><div><strong>About the presenter&#58;&#160;</strong></div><div><br></div><div>Brendan Richards is an SSW Solution Architect based in Brisbane. Over the past 18 years he has designed, developed and delivered many successful enterprise web solutions using a diverse spectrum of platforms and technologies&#58; stretching from Perl/CGI on Linux in the 90s, through PHP and Java, to .NET and Angular. His current specialisations include Linux, .NET Core, Entity Framework, Angular 2 and Elastic Search.\u200b\u200b<br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass87E0DAC8F11148F88DBE2BCCA33905E3\"><div><strong>\u200bHow to Tame a Penguin</strong></div><div><br></div><div>&quot;Microsoft Heart Linux&quot; is a big statement backed up by exciting software releases that give the .NET developer more choices than ever before. But how to get started? &#160;Brendan is a former Linux fundamentalist turned .NET Developer, &#160;and this talk will teach some essential Linux command-line basics before going on to deploy a dotnet web application.\u200b</div><div><br></div><div><strong>About the presenter&#58;&#160;</strong></div><div><br></div><div>Brendan Richards is an SSW Solution Architect based in Brisbane. Over the past 18 years he has designed, developed and delivered many successful enterprise web solutions using a diverse spectrum of platforms and technologies&#58; stretching from Perl/CGI on Linux in the 90s, through PHP and Java, to .NET and Angular. His current specialisations include Linux, .NET Core, Entity Framework, Angular 2 and Elastic Search.\u200b\u200b<br></div><p><br></p></div>",
+  "description": "\u200b\u200bHow to Tame a Penguin\n\n\"Microsoft Heart Linux\" is a big statement backed up by exciting software releases that give the .NET developer more choices than ever before. But how to get started? \u00a0Brendan is a former Linux fundamentalist turned .NET Developer, \u00a0and this talk will teach some essential Linux command-line basics before going on to deploy a dotnet web application.\u200b\n\nAbout the presenter:\u00a0\n\nBrendan Richards is an SSW Solution Architect based in Brisbane. Over the past 18 years he has designed, developed and delivered many successful enterprise web solutions using a diverse spectrum of platforms and technologies: stretching from Perl/CGI on Linux in the 90s, through PHP and Java, to .NET and Angular. His current specialisations include Linux, .NET Core, Entity Framework, Angular 2 and Elastic Search.\u200b\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Sydney .NET user group: April",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET user group: April",
+  "presenterName": "Eric Phan",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Eric.aspx",
+  "startDateTime": "2016-04-27T08:30:00Z",
+  "endDateTime": "2016-04-27T10:30:00Z",
+  "startShowBannerDateTime": "2016-04-26T14:00:00Z",
+  "endShowBannerDateTime": "2016-04-27T11:00:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET user group: April",
+    "url": "/ssw/NETUG/Live.aspx"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "Performance Tuning from the Trenches",
+  "eventShortDescription": "<div class=\"ExternalClass922EECC628B049B2BBB384D7AC6D1786\"><strong>Performance Tuning from the Trenches</strong><div><br></div><div><div>Performance is often the last thing that developers think about when working on their projects. Often times it is after the website has crashed and burned before performance gets brought to the top of the backlog.&#160;</div><div><br></div><div>In this session Eric will share war stories from helping clients performance tune their applications and guide you through the process of&#58;&#160;</div><div><ul><li>identifying the bottle necks,<br></li><li>finding solutions to the bottlenecks whether it be&#58;<br></li><ul><li>c\u200bode changes</li><li>\u200bhardware changes</li></ul><li>setting up a process to continually measure performance<br></li></ul></div><div><br></div><br></div></div>",
+  "eventDescription": "<div class=\"ExternalClass4377EDED60774C21BDFDC635CD81AE9A\">\u200b<strong>Performance Tuning from the Trenches</strong><div><br></div><div><div>Performance is often the last thing that developers think about when working on their projects. Often times it is after the website has crashed and burned before performance gets brought to the top of the backlog.&#160;</div><div><br></div><div>In this session Eric will share war stories from helping clients performance tune their applications and guide you through the process of&#58;&#160;</div><div><ul><li>identifying the bottle necks,<br></li><li>finding solutions to the bottlenecks whether it be&#58;<br></li><ul><li>c\u200bode changes</li><li>\u200bhardware changes</li></ul><li>setting up a process to continually measure performance</li></ul></div></div></div>",
+  "description": "Performance Tuning from the Trenches\n\nPerformance is often the last thing that developers think about when working on their projects. Often times it is after the website has crashed and burned before performance gets brought to the top of the backlog.\u00a0\n\nIn this session Eric will share war stories from helping clients performance tune their applications and guide you through the process of:\u00a0\n\nidentifying the bottle necks,\n\nfinding solutions to the bottlenecks whether it be:\n\nc\u200bode changes\n\n\u200bhardware changes\n\nsetting up a process to continually measure performance",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

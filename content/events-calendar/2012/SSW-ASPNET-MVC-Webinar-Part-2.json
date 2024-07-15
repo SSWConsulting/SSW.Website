@@ -1,0 +1,18 @@
+{
+  "title": "SSW ASP.NET MVC Webinar (Part 2)",
+  "url": "/ssw/Events/Webinars/MVC-Dont_use_Web_Forms_again.aspx",
+  "thumbnail": "/images/thumbs/thumb-webinar-aspnet-2.jpg",
+  "thumbnailDescription": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-aspnet-2.jpg",
+  "presenterName": "Adam Stephensen ",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/AdamS.aspx",
+  "startDateTime": "2012-10-02T01:00:00Z",
+  "endDateTime": "2012-10-02T02:00:00Z",
+  "calendarType": "Webinars",
+  "enabled": true,
+  "category": ".NET Core",
+  "eventShortDescription": "<div class=\"ExternalClassF550E6A3458D419D9B87C86C2BA5D5E5\">\u200bDo you want to enjoy the art of coding again?<br><br>Are you sick of fighting with the Web Forms page lifecycle?<br><br>Do you want to spend more time building better functionality instead of finding elusive bugs?<br><br></div>",
+  "eventDescription": "<div class=\"ExternalClassF550E6A3458D419D9B87C86C2BA5D5E5\"><div>\u200bDo you want to enjoy the art of coding again?<br><br>Are you sick of fighting with the Web Forms page lifecycle?<br><br>Do you want to spend more time building better functionality instead of finding elusive bugs?<br><br>Are you looking to build websites that can run on desktop and mobile devices with little extra effort?<br><br>Like most, I was a Web Forms developer. These things used to get me down, until I started using ASP .NET MVC.<br><br>In this webinar I\u2019ll show you why I will never go back to Web Forms again, and how MVC has brought the joy and creativity back into programming for me.\u200b</div></div>",
+  "description": "\u200bDo you want to enjoy the art of coding again?\n\nAre you sick of fighting with the Web Forms page lifecycle?\n\nDo you want to spend more time building better functionality instead of finding elusive bugs?",
+  "showOnPowerSessions": "No",
+  "externalPresenters": []
+}

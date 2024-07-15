@@ -1,0 +1,19 @@
+{
+  "title": "Up and running with LINQ",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Data and LINQ",
+  "categoryAnchor": "OverviewData",
+  "sessionTitle": "Up and running with LINQ",
+  "sessionTitleAnchor": "LINQ",
+  "eventShortDescription": "<div class=\"ExternalClass362A2C3E39B04B23ACCDE3D742C043D5\"><div>\u200bLinq is the future of ORM on the .NET platform and with the release of Visual Studio 2013 only months away it will become mainstream. In this presentation you will learn about the different types of LINQ and how to use LINQ to quickly build data-driven applications.</div></div>",
+  "eventDescription": "<div class=\"ExternalClass362A2C3E39B04B23ACCDE3D742C043D5\"><div>\u200bLinq is the future of ORM on the .NET platform and with the release of Visual Studio 2013 only months away it will become mainstream. In this presentation you will learn about the different types of LINQ and how to use LINQ to quickly build data-driven applications.</div></div>",
+  "description": "\u200bLinq is the future of ORM on the .NET platform and with the release of Visual Studio 2013 only months away it will become mainstream. In this presentation you will learn about the different types of LINQ and how to use LINQ to quickly build data-driven applications.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

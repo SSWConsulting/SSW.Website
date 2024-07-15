@@ -1,0 +1,18 @@
+{
+  "title": "NDC { Sydney }",
+  "url": "http://ndcsydney.com/",
+  "thumbnail": "/images/Newsletters/NDC-Sydney.jpg",
+  "thumbnailDescription": "NDC { Sydney }",
+  "startDateTime": "2017-08-13T14:00:00Z",
+  "endDateTime": "2017-08-17T14:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassA8AA3E1D34FF4D90948125D741D4B922\"><p>\u200bFrom 14-18 August 2017 Hilton Sydney will host NDC Sydney. The conference will have the same format as its European sisters NDC Oslo and NDC London with 2 days of workshops and 3 days of conference sessions.&#160;<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass2B33625277044E4EA9C2DED94182A36C\"><p>\u200bFrom 14-18 August 2017 Hilton Sydney will host NDC Sydney. The conference will have the same format as its European sisters NDC Oslo and NDC London with 2 days of workshops and 3 days of conference sessions.&#160;\u200b<br></p></div>",
+  "description": "\u200bFrom 14-18 August 2017 Hilton Sydney will host NDC Sydney. The conference will have the same format as its European sisters NDC Oslo and NDC London with 2 days of workshops and 3 days of conference sessions.\u00a0",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

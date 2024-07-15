@@ -1,0 +1,21 @@
+{
+  "title": "Canberra .NET user group - November",
+  "url": "/ssw/NETUG/Canberra.aspx",
+  "thumbnail": "/images/thumbs/thumb-canberraUG.jpg",
+  "thumbnailDescription": "Canberra .NET user group - November",
+  "presenterName": "Danijel Malik ",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Danijel-Malik.aspx",
+  "startDateTime": "2014-11-17T07:00:00Z",
+  "endDateTime": "2014-11-17T09:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Canberra",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "Happy ever after: Code Auditor married Roslyn",
+  "eventShortDescription": "<div class=\"ExternalClass90D7DC873151412FA2C393F8B78D8D3B\"><div>At SSW we care about quality. Actually we care about it some much that we have built a tool named Code Auditor which scans code and reports issues. It\u2019s not really a secret that our rules relied on C# snippets and Regex patterns. Over time - as the C# language evolved - we started seeing false positives. Yikes! Then we met Roslyn \u2013 the new .NET compiler platform \u2013 which opened a new dimension in Code Analysis world. We drive Mercedes now. Want to have a test drive? Join me in this session and you\u2019ll learn what Roslyn can do for you. Forget the demos, see the real world code.</div><div><br></div><div>About the speaker&#58;</div><div>Danijel works as a Solution Architect for SSW. He has 10+ years of experience building custom software solutions. Although he likes to explore bleeding edge technologies he will always look for quality first. Danijel is a Visual Studio ALM MVP and MCSD for Web Applications.</div></div>",
+  "eventDescription": "<div class=\"ExternalClass15A60A512FEF4D7193F8F94BE0B68E54\"><div>\u200bAt SSW we care about quality. Actually we care about it some much that we have built a tool named Code Auditor which scans code and reports issues. It\u2019s not really a secret that our rules relied on C# snippets and Regex patterns. Over time - as the C# language evolved - we started seeing false positives. Yikes! Then we met Roslyn \u2013 the new .NET compiler platform \u2013 which opened a new dimension in Code Analysis world. We drive Mercedes now. Want to have a test drive? Join me in this session and you\u2019ll learn what Roslyn can do for you. Forget the demos, see the real world code.</div><div><br></div><div>About the speaker&#58;</div><div>Danijel works as a Solution Architect for SSW. He has 10+ years of experience building custom software solutions. Although he likes to explore bleeding edge technologies he will always look for quality first. Danijel is a Visual Studio ALM MVP and MCSD for Web Applications.</div></div>",
+  "description": "At SSW we care about quality. Actually we care about it some much that we have built a tool named Code Auditor which scans code and reports issues. It\u2019s not really a secret that our rules relied on C# snippets and Regex patterns. Over time - as the C# language evolved - we started seeing false positives. Yikes! Then we met Roslyn \u2013 the new .NET compiler platform \u2013 which opened a new dimension in Code Analysis world. We drive Mercedes now. Want to have a test drive? Join me in this session and you\u2019ll learn what Roslyn can do for you. Forget the demos, see the real world code.\n\nAbout the speaker:\n\nDanijel works as a Solution Architect for SSW. He has 10+ years of experience building custom software solutions. Although he likes to explore bleeding edge technologies he will always look for quality first. Danijel is a Visual Studio ALM MVP and MCSD for Web Applications.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

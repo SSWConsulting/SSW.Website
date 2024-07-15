@@ -1,0 +1,19 @@
+{
+  "title": "Visual Studio 2015 Team System - Extending Check in Policies",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewTFS",
+  "sessionTitle": "Visual Studio 2015 Team System - Extending Check in Policies",
+  "sessionTitleAnchor": "ExtendingCheckPoliciesVSTS",
+  "eventShortDescription": "<div class=\"ExternalClassF678154AA0C04BF6BBB86404F7B6EC1F\">\u200bVisual Studio Team System (VSTS) and Team Foundation Server (TFS) combine to integrate the whole development cycle from initial design, testing and development as well as bug tracking and project management tools.<br><br></div>",
+  "eventDescription": "<div class=\"ExternalClassF678154AA0C04BF6BBB86404F7B6EC1F\"><div>\u200bVisual Studio Team System (VSTS) and Team Foundation Server (TFS) combine to integrate the whole development cycle from initial design, testing and development as well as bug tracking and project management tools.<br><br>Check in policies can stop developers checking in code that&#58;<br><br><ul><li>does not comply with existing unit tests</li><li>does not comply Static Code Analysis Rules (aka FXCop)</li><li>is not associated with a Work Item</li></ul>But what if you want more checks? In this session you will learn about extending check in policies and what you can do with them. You will also see the steps that were involved for&#160;<a href=\"http&#58;//www.ssw.com.au/ssw/CodeAuditor/\">SSW Code Auditor</a>&#160;the first commercial check in policy for TFS.</div></div>",
+  "description": "\u200bVisual Studio Team System (VSTS) and Team Foundation Server (TFS) combine to integrate the whole development cycle from initial design, testing and development as well as bug tracking and project management tools.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

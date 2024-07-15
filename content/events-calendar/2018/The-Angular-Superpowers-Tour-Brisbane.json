@@ -1,0 +1,19 @@
+{
+  "title": "The Angular Superpowers Tour: Brisbane",
+  "url": "/ssw/Events/Training/Angular-Superpowers-Tour.aspx",
+  "thumbnail": "/images/events/SuperPower-Icon-Angular.jpg",
+  "thumbnailDescription": "The Angular Superpowers Tour",
+  "presenterName": "Brendan Richards and Jean Thirion",
+  "startDateTime": "2018-06-24T23:00:00Z",
+  "endDateTime": "2018-06-25T07:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": "Angular and React",
+  "eventShortDescription": "<div class=\"ExternalClass4B4F8E482B1E48F9B75AB3A904997B30\"><p>\u200bThis one-day Dev Superpower Tour brings developers up-to-speed with Angular!</p><div>Everything has changed! Angular and modern web best practices involve massive changes to how we build modern web applications.<br></div><div><br></div><div>At SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies.\u200b<br></div><div><br><br></div><p><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass2620795C951940A2B39AEB63BE171FE2\"><p>\u200bThis one-day Dev Superpower Tour brings developers up-to-speed with Angular!</p><div>Everything has changed! Angular and modern web best practices involve massive changes to how we build modern web applications.<br></div><div><br></div><div>At SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies.\u200b<br></div><div><br><br></div><p><br></p></div>",
+  "description": "\u200bThis one-day Dev Superpower Tour brings developers up-to-speed with Angular!\n\nEverything has changed! Angular and modern web best practices involve massive changes to how we build modern web applications.\n\nAt SSW we have already gone through the hard work of implementing these new and exciting technologies in our projects for everything from small start-ups to enterprises and government agencies.\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

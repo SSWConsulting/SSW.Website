@@ -1,0 +1,36 @@
+{
+  "title": "October Online User Group: The 5 important questions about .NET 5",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Online User Group",
+  "presenterName": "Brendan Richards",
+  "presenterProfileUrl": "/people/brendan-richards/",
+  "startDateTime": "2020-10-21T06:00:00Z",
+  "endDateTime": "2020-10-21T11:00:00Z",
+  "startShowBannerDateTime": "2020-10-20T22:00:00Z",
+  "endShowBannerDateTime": "2020-10-21T11:00:00Z",
+  "liveStreamUrl": {
+    "description": "SSW Live Feed",
+    "url": "/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Online",
+  "enabled": true,
+  "category": ".NET Core",
+  "eventShortDescription": "<div class=\"ExternalClass65F103AC86644CA6B4D4675D8880C5C9\"><div><strong>SSW User Groups October&#58; We're moving online and combining our User Groups for the foreseeable future - more talks for everyone!</strong><br></div><div><br></div><div>Join us ONLINE -----&gt; https&#58;//www.ssw.com.au/ssw/Live/\u200b<br></div><div><br></div><p><strong></strong><strong>The 5 important questions about .NET 5</strong></p><p>\u200bBack in 2016&#160;Microsoft made&#160;the brave step of building a brand new .Net Core away from the classic &quot;Full Framework&quot; .NET.&#160;This meant they&#160;were able to hit the &quot;Redo button&quot; in so many ways, bringing us the modern, open-source, fast and cross-platform framework&#160;that&#160;we use today.</p><p>But now&#160;in 2020, Microsoft&#160;have delivered what&#160;they&#160;promised us in the roadmaps. The&#160;story&#160;has come&#160;full-circle with&#160;the release&#160;of .NET 5 \u2013 finally bringing us back to one .NET to rule them all.<br></p><p>In this talk we\u2019ll answer the 5 important questions&#58;<br></p><div>1.<span style=\"white-space&#58;pre;\">\t</span>What will .NET 5 mean for my .NET Core projects?</div><div>2.<span style=\"white-space&#58;pre;\">\t</span>What will .NET 5 mean for my old full-framework projects?</div><div>3.<span style=\"white-space&#58;pre;\">\t</span>What\u2019s new?<br></div><div>4.<span style=\"white-space&#58;pre;\">\t</span>What\u2019s coming next?</div><div>5.<span style=\"white-space&#58;pre;\">\t</span>Will Microsoft ever get better at naming things? (Or does it make total logical sense)<br></div><div><br></div></div>",
+  "eventDescription": "<div class=\"ExternalClass81698B6DBA1C4D6EAFD112D113568B0D\"><div><strong>SSW User Groups October&#58; We're moving online and combining our User Groups for the foreseeable future - more talks for everyone!</strong><br></div><div><br></div><div>Join us ONLINE -----&gt; https&#58;//www.ssw.com.au<br></div><div><br></div><div></div><p><strong>The 5 important questions about .NET 5</strong></p><p>\u200bBack in 2016&#160;Microsoft made&#160;the brave step of building a brand new .Net Core away from the classic &quot;Full Framework&quot; .NET.&#160;This meant they&#160;were able to hit the &quot;Redo button&quot; in so many ways, bringing us the modern, open-source, fast and cross-platform framework&#160;that&#160;we use today.</p><p>But now&#160;in 2020, Microsoft&#160;have delivered what&#160;they&#160;promised us in the roadmaps. The&#160;story&#160;has come&#160;full-circle with&#160;the release&#160;of .NET 5 \u2013 finally bringing us back to one .NET to rule them all.<br></p><p>In this talk we\u2019ll answer the 5 important questions&#58;<br></p><div>1.<span style=\"white-space&#58;pre;\">\t</span>What will .NET 5 mean for my .NET Core projects?</div><div>2.<span style=\"white-space&#58;pre;\">\t</span>What will .NET 5 mean for my old full-framework projects?</div><div>3.<span style=\"white-space&#58;pre;\">\t</span>What\u2019s new?<br></div><div>4.<span style=\"white-space&#58;pre;\">\t</span>What\u2019s coming next?</div><div>5.<span style=\"white-space&#58;pre;\">\t</span>Will Microsoft ever get better at naming things? (Or does it make total logical sense)\u200b<br></div><p><br></p></div>",
+  "description": "SSW User Groups October: We're moving online and combining our User Groups for the foreseeable future - more talks for everyone!\n\nJoin us ONLINE -----> https://www.ssw.com.au/ssw/Live/\u200b\n\nThe 5 important questions about .NET 5\n\n\u200bBack in 2016\u00a0Microsoft made\u00a0the brave step of building a brand new .Net Core away from the classic \"Full Framework\" .NET.\u00a0This meant they\u00a0were able to hit the \"Redo button\" in so many ways, bringing us the modern, open-source, fast and cross-platform framework\u00a0that\u00a0we use today.\n\nBut now\u00a0in 2020, Microsoft\u00a0have delivered what\u00a0they\u00a0promised us in the roadmaps. The\u00a0story\u00a0has come\u00a0full-circle with\u00a0the release\u00a0of .NET 5 \u2013 finally bringing us back to one .NET to rule them all.\n\nIn this talk we\u2019ll answer the 5 important questions:\n\n1.\n\n \n\nWhat will .NET 5 mean for my .NET Core projects?\n\n2.\n\n \n\nWhat will .NET 5 mean for my old full-framework projects?\n\n3.\n\n \n\nWhat\u2019s new?\n\n4.\n\n \n\nWhat\u2019s coming next?\n\n5.\n\n \n\nWill Microsoft ever get better at naming things? (Or does it make total logical sense)",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "luveuqQ1E-k",
+  "gitHubURL": {
+    "description": "https://github.com/brendan-ssw",
+    "url": "https://github.com/brendan-ssw"
+  },
+  "evalFormURL": {
+    "description": "https://forms.office.com/Pages/ResponsePage.aspx?id=NHwvrDW56Uir3BHl1PyysPj1WXHPfJ5OhXxqnVi-9WJUMVNMUDMyOFE1WFJFM083UEJFWjRTTkRISiQlQCN0PWcu",
+    "url": "https://forms.office.com/Pages/ResponsePage.aspx?id=NHwvrDW56Uir3BHl1PyysPj1WXHPfJ5OhXxqnVi-9WJUMVNMUDMyOFE1WFJFM083UEJFWjRTTkRISiQlQCN0PWcu"
+  },
+  "presenterDescription": "<div class=\"ExternalClass0F8126DBD4404687AAFADE6416309F52\"><table cellspacing=\"0\" style=\"width&#58;372.364px;height&#58;1113px;\"><tbody><tr><td style=\"width&#58;104.909px;\"><img src=\"https&#58;//ssw.com.au/people/static/Brendan-Richards-Profile-da146545ac8d48eae19699de24992bd9.jpg\" data-themekey=\"#\" alt=\"\" style=\"margin&#58;5px;width&#58;71px;height&#58;100px;\" /><br></td><td style=\"width&#58;263.455px;\"><div><strong>Brendan Richards</strong><br></div><div style=\"text-align&#58;justify;\"></div><div style=\"text-align&#58;justify;\">Brendan is a Solution Architect at SSW Brisbane and has been delivering successful web projects across diverse platforms and technologies since 1999.</div><div style=\"text-align&#58;justify;\"><br>He currently spends most of his day coding for clients, with occasional breaks to deliver training at SSW FirebootCamp or speak at .Net User Groups, hackdays and a few awesome conferences including NDC and DDD.</div><div style=\"text-align&#58;justify;\"><br>A few of his favorite things include Linux, Open Source, .NET Core, Mediatr, Angular, ngrx and Elastic Search.<br></div><div style=\"text-align&#58;right;\"><a href=\"https&#58;//ssw.com.au/people/brendan-richards\" target=\"_blank\">Brendan's Profile -&gt;\u200b\u200b\u200b<br></a></div></td></tr><tr><td style=\"width&#58;104.909px;\"><br></td><td style=\"width&#58;263.455px;\"></td></tr></tbody></table><p>\u200b<br></p></div>",
+  "externalPresenters": []
+}

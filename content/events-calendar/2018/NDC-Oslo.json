@@ -1,0 +1,17 @@
+{
+  "title": "NDC Oslo",
+  "url": "http://ndcoslo.com/",
+  "thumbnail": "/images/Newsletters/NDC-Oslo-2017.jpg",
+  "thumbnailDescription": "NDC Oslo",
+  "presenterName": "Adam Cogan",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
+  "startDateTime": "2018-06-10T14:00:00Z",
+  "endDateTime": "2018-06-14T14:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Oslo",
+  "enabled": true,
+  "category": "Other",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

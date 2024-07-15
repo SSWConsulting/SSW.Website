@@ -1,0 +1,22 @@
+{
+  "title": "The Angular 2-day Workshop - Brisbane",
+  "url": "/events/angular-workshop",
+  "thumbnail": "/images/Newsletters/Angular-2-0-logo.png",
+  "thumbnailDescription": "The Angular 2-day Workshop",
+  "presenterName": "Matt Wicks & Luke Cook",
+  "presenterProfileUrl": "/people/",
+  "startDateTime": "2024-10-07T22:00:00Z",
+  "endDateTime": "2024-10-09T06:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": "Angular and React",
+  "eventShortDescription": "<div class=\"ExternalClass6845399170E642398EFAC2EE986E4F84\">In this workshop, we will build a CRM application with Angular using components, services, dependency injection, forms, Angular modules and lazy-loaded routes. We will then cover unit tests and using the redux pattern with the NgRx library.&#160;&#160;<br><br>By the end of this workshop, you will have built a working Angular&#160;application&#160;you can extend into an enterprise application. You will also walk away with the source code and the course material. So join us to learn to build great enterprise applications with Angular.<br><br>What\u2019s included in this workshop?<br><div><ul><li>Two days of&#160;tuition&#160;with awesome experienced Angular developers</li><li>Full course material which will be updated as Angular is updated</li><li><p>Full source code for the apps you will build for later reference and to be used as best practice<br></p></li></ul></div></div>",
+  "description": "In this workshop, we will build a CRM application with Angular using components, services, dependency injection, forms, Angular modules and lazy-loaded routes. We will then cover unit tests and using the redux pattern with the NgRx library.\u00a0\u00a0\n\nBy the end of this workshop, you will have built a working Angular\u00a0application\u00a0you can extend into an enterprise application. You will also walk away with the source code and the course material. So join us to learn to build great enterprise applications with Angular.\n\nWhat\u2019s included in this workshop?\n\nTwo days of\u00a0tuition\u00a0with awesome experienced Angular developers\n\nFull course material which will be updated as Angular is updated\n\nFull source code for the apps you will build for later reference and to be used as best practice",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": false
+}

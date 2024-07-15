@@ -1,0 +1,25 @@
+{
+  "title": "Sydney .NET user group: October",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET user group: October",
+  "startDateTime": "2015-10-21T07:30:00Z",
+  "endDateTime": "2015-10-21T09:30:00Z",
+  "startShowBannerDateTime": "2015-10-20T13:00:00Z",
+  "endShowBannerDateTime": "2015-10-21T12:00:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET user group: October",
+    "url": "/ssw/NETUG/Live.aspx"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "Coding in the Open: Open Source at Microsoft",
+  "eventShortDescription": "<div class=\"ExternalClass301797418B464966A3638B1E3026A045\"><p>\u200b\u200b\u200b</p></div>",
+  "eventDescription": "<div class=\"ExternalClass81F3B61B3B9C4BB8AAEB39AB2807DDEE\"><p><strong>\u200bCoding in the Open&#58; Open Source at Microsoft</strong></p><p>Rita, Steven and Felix are Open Source Engineers at Microsoft, hacking away with engineering teams inside Microsoft, open source communities, and startups. In this talk, they will candidly and openly talk about how open source is used inside Microsoft, how they team up with communities outside the Microsoft ecosystem, and what the Redmond company is doing to make developers working in a bunch of diverse environments happy.</p><p>&#160;</p><p><strong>Bios</strong></p><p><a href=\"https&#58;//na01.safelinks.protection.outlook.com/?url=https&#58;//www.felixrieseberg.com/&amp;data=01%7c01%7cfelix.rieseberg%40microsoft.com%7c824db38c4b42433741af08d2cd55d4c7%7c72f988bf86f141af91ab2d7cd011db47%7c1&amp;sdata=MxG56GCkXPJmkmdw3IRXI/Hr1jIA%2b2VT3HY48222CtI%3d\"><em>Felix Rieseberg</em></a><em> </em>is an Open Source Engineer based in San Francisco, working on sophisticated web app development, modern DevOps workflows, and cross-platform development. Previously, he provided engineering guidance to startups in the Silicon Valley, worked as a developer evangelist with Microsoft Germany, and was editor in chief for one of Europe's biggest Apple magazines. He holds a Master of Science from University of Oxford's Internet Institute and is famous for eating way too much ice cream.</p><p>&#160;</p><p><em>Rita Zhang </em>is an open source engineer/architect in San Francisco, working on strategic engagements with customers and partners using emerging open source technologies, and sharing technical collaterals with the open source community. Prior to that, she was an architect at GE delivering features for Industrial internet and was an Enterprise consultant with Microsoft Consulting Services. During her spare time, she develops new smart home gadgets for her startup.</p><p>&#160;</p><p><a href=\"https&#58;//na01.safelinks.protection.outlook.com/?url=http&#58;//stevenedouard.com/&amp;data=01%7c01%7cfelix.rieseberg%40microsoft.com%7c824db38c4b42433741af08d2cd55d4c7%7c72f988bf86f141af91ab2d7cd011db47%7c1&amp;sdata=gTvK7s7noXvDeeILbqMeAcsKwZhho1H7XTbCAPyyDGA%3d\"><em>Steven Edouard</em></a><em> </em>is a Software Engineer based out of San Francisco, focusing on open source integrations with Microsoft Azure.&#160;In addition to open source projects, he also assists Y-Combinator companies with getting their&#160;deployments&#160;running on Azure.&#160;Steven was previously a test engineer on the .NET runtime team. He is a hacker at heart and in his free time he works on&#160;<a href=\"https&#58;//na01.safelinks.protection.outlook.com/?url=http&#58;//blog.stevenedouard.com/projects/&amp;data=01%7c01%7cfelix.rieseberg%40microsoft.com%7c824db38c4b42433741af08d2cd55d4c7%7c72f988bf86f141af91ab2d7cd011db47%7c1&amp;sdata=Te4/vRURpOym9egsDlf21QOCFdPM9WHMJxTR9gnoldc%3d\">fun side projects</a>.&#160;Aside from engineering Steven enjoys sailing in San Francisco Bay.</p></div>",
+  "description": "\u200b\u200b\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

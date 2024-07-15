@@ -1,0 +1,19 @@
+{
+  "title": "A big peek at ASP .NET 4.6.1 Applications",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewVSNet",
+  "sessionTitle": "A big peek at ASP .NET 4.6.1 Applications",
+  "sessionTitleAnchor": "ASPPeek",
+  "eventShortDescription": "<div class=\"ExternalClassADD69E33C38D46CC9C6587973A601881\"><div>\u200bAdam Cogan will give a talk on&#58; ASP.NET overview, working with data, caching improvements to significantly boost the performance of the next generation of ASP.NET applications, master pages for consistent web sites, new membership features, and personalization.</div></div>",
+  "eventDescription": "<div class=\"ExternalClassADD69E33C38D46CC9C6587973A601881\"><div>\u200bAdam Cogan will give a talk on&#58; ASP.NET overview, working with data, caching improvements to significantly boost the performance of the next generation of ASP.NET applications, master pages for consistent web sites, new membership features, and personalization.</div></div>",
+  "description": "\u200bAdam Cogan will give a talk on: ASP.NET overview, working with data, caching improvements to significantly boost the performance of the next generation of ASP.NET applications, master pages for consistent web sites, new membership features, and personalization.",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

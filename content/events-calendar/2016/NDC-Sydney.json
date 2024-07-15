@@ -1,0 +1,16 @@
+{
+  "title": "NDC: Sydney",
+  "url": "http://ndcsydney.com/",
+  "thumbnail": "/images/Newsletters/NDC-Sydney.jpg",
+  "thumbnailDescription": "NDC Sydney",
+  "presenterName": "Adam Cogan and Troy Hunt",
+  "startDateTime": "2016-07-31T14:00:00Z",
+  "endDateTime": "2016-08-04T14:00:00Z",
+  "calendarType": "Conferences",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

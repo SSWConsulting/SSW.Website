@@ -1,0 +1,19 @@
+{
+  "title": "A Modern Architecture Review - using the new Code Review tools",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewTFS",
+  "sessionTitle": "A Modern Architecture Review - using the new Code Review tools",
+  "sessionTitleAnchor": "ArchitectureReview",
+  "eventShortDescription": "<div class=\"ExternalClass283E96692EC9451492E550FAD841CEBA\"><div>\u200bAdam Cogan (Australian Microsoft Regional Director and Scrum.org Trainer) will lead you through the 20 steps to achieve a 'Modern Architecture Review'.<br><br>During this session he will show how performing an architecture review on a big project, no longer needs to be daunting.<br><br>Adam will demonstrate the first steps, then finding patterns and anti-patterns, then you will see how Visual Studio 15 helps the process with architecture tools, code smell tools etc. that all enable you to attend to the code that needs the most attention. All this while creating TFS code review work items to speed great results of the review.\u200b</div></div>",
+  "eventDescription": "<div class=\"ExternalClass283E96692EC9451492E550FAD841CEBA\"><div>\u200bAdam Cogan (Australian Microsoft Regional Director and Scrum.org Trainer) will lead you through the 20 steps to achieve a 'Modern Architecture Review'.<br><br>During this session he will show how performing an architecture review on a big project, no longer needs to be daunting.<br><br>Adam will demonstrate the first steps, then finding patterns and anti-patterns, then you will see how Visual Studio 15 helps the process with architecture tools, code smell tools etc. that all enable you to attend to the code that needs the most attention. All this while creating TFS code review work items to speed great results of the review.\u200b</div></div>",
+  "description": "\u200bAdam Cogan (Australian Microsoft Regional Director and Scrum.org Trainer) will lead you through the 20 steps to achieve a 'Modern Architecture Review'.\n\nDuring this session he will show how performing an architecture review on a big project, no longer needs to be daunting.\n\nAdam will demonstrate the first steps, then finding patterns and anti-patterns, then you will see how Visual Studio 15 helps the process with architecture tools, code smell tools etc. that all enable you to attend to the code that needs the most attention. All this while creating TFS code review work items to speed great results of the review.\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

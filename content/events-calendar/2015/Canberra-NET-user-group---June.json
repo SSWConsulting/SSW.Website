@@ -1,0 +1,20 @@
+{
+  "title": "Canberra .NET user group - June",
+  "url": "/ssw/NETUG/Canberra.aspx",
+  "thumbnail": "/images/thumbs/thumb-canberraUG.jpg",
+  "thumbnailDescription": "Canberra .NET user group - June",
+  "presenterName": "Brendan Richards",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Brendan.aspx",
+  "startDateTime": "2015-06-15T08:00:00Z",
+  "endDateTime": "2015-06-15T10:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Canberra",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass0F0E12FFB3F24622ABADA1D9E4968A70\"><div><strong>Onion Architecture Without the Tears</strong><br>&quot;In spaghetti code the relations between the pieces of code are so tangled that it is nearly impossible to add or change something without unpredictably breaking something somewhere else.&quot;<br><br>This talk explores techniques in avoiding spaghetti code including Dependency Injection and Onion Architecture before introducing SSW Data Onion \u2013 a free library developed to speed up the day-to-day development of Data-Driven enterprise web applications using Entity Framework Code First.<br><br><strong>About the speaker&#58;</strong><br>Brendan Richards has been developing enterprise web applications for quite some time across a number of platforms before finally picking .Net as the &quot;currently winning&quot; choice. He Joined the team at SSW in 2012 and is now a Solution Architect based in Brisbane.</div></div>",
+  "eventDescription": "<div class=\"ExternalClass75430D531CC449F8B124236F122B0485\"><div><strong>Onion Architecture Without the Tears</strong><br>&quot;In spaghetti code the relations between the pieces of code are so tangled that it is nearly impossible to add or change something without unpredictably breaking something somewhere&#160;else.&quot;<br><br>This talk explores techniques in avoiding spaghetti code including Dependency Injection and Onion Architecture before introducing SSW Data Onion \u2013 a free library developed to speed up the day-to-day development of Data-Driven enterprise web applications using Entity Framework Code First.<br><br><strong>About the speaker&#58;</strong><br>Brendan Richards has been developing enterprise web applications for quite some time across a number of platforms before finally picking .Net as the &quot;currently winning&quot; choice. He Joined the team at SSW in 2012 and is now a Solution Architect based in Brisbane.</div></div>",
+  "description": "Onion Architecture Without the Tears\n\n\"In spaghetti code the relations between the pieces of code are so tangled that it is nearly impossible to add or change something without unpredictably breaking something somewhere else.\"\n\nThis talk explores techniques in avoiding spaghetti code including Dependency Injection and Onion Architecture before introducing SSW Data Onion \u2013 a free library developed to speed up the day-to-day development of Data-Driven enterprise web applications using Entity Framework Code First.\n\nAbout the speaker:\n\nBrendan Richards has been developing enterprise web applications for quite some time across a number of platforms before finally picking .Net as the \"currently winning\" choice. He Joined the team at SSW in 2012 and is now a Solution Architect based in Brisbane.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

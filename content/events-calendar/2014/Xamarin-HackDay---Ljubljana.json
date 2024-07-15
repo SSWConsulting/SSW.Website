@@ -1,0 +1,17 @@
+{
+  "title": "Xamarin HackDay - Ljubljana",
+  "url": "http://xamarinhackday.com/slovenia/",
+  "thumbnail": "/images/Newsletters/xamarin-thumb.png",
+  "thumbnailDescription": "Xamarin HackDay - Ljubljana",
+  "startDateTime": "2014-10-24T21:30:00Z",
+  "endDateTime": "2014-10-25T06:30:00Z",
+  "calendarType": "Hack Days",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "Ljubljana",
+  "eventShortDescription": "<div class=\"ExternalClass46EACD6C1D27413089FE664E76A7B4D6\"><div>\u200bXamarin HackDays are for Xamarin Developers or people who want to learn Xamarin.\u200b</div><div><br></div><div>There will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.</div></div>",
+  "description": "\u200bXamarin HackDays are for Xamarin Developers or people who want to learn Xamarin.\u200b\n\nThere will be something for everyone, experienced Xamarin developers can share ideas with other experienced developers. If you\u2019re a beginner then there\u2019s plenty to learn on the day.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

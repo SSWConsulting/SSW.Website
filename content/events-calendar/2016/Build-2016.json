@@ -1,0 +1,15 @@
+{
+  "title": "Build 2016",
+  "url": "http://build.microsoft.com/",
+  "thumbnail": "/images/Newsletters/build-2016.jpg",
+  "thumbnailDescription": "Build 2016",
+  "startDateTime": "2016-03-29T19:00:00Z",
+  "endDateTime": "2016-04-01T12:00:00Z",
+  "calendarType": "Conferences",
+  "city": "San Francisco",
+  "enabled": true,
+  "category": "Other",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

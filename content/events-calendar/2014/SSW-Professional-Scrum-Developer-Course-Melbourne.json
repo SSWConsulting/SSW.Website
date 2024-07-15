@@ -1,0 +1,19 @@
+{
+  "title": "SSW Professional Scrum Developer Course: Melbourne",
+  "url": "/ssw/Events/Scrum-Training-Course-3-days.aspx",
+  "thumbnail": "/images/Newsletters/thumb_scrum.jpg",
+  "thumbnailDescription": "Scrum 3 day course",
+  "presenterName": "Adam Cogan",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Adam.aspx",
+  "startDateTime": "2014-08-04T14:00:00Z",
+  "endDateTime": "2014-08-06T14:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Melbourne",
+  "enabled": true,
+  "category": "Scrum",
+  "eventShortDescription": "<div class=\"ExternalClassDC28955C7CA64609BF725D28784EBABB\"><div><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\"><tbody><tr><td valign=\"top\" width=\"350px\"><div><div><div>This Professional Scrum Developer (PSD) course is a unique and intensive three day experience for software developers. The course guides teams on how to turn product requirements into potentially shippable increments of software using the Scrum framework, Visual Studio 2012, and modern software engineering practices. Attendees will work in self-organizing, self-managing teams using a common instance of Visual Studio Team Foundation Server 2013&#160;to achieve this goal.\u200b\u200b</div></div></div></td></tr></tbody></table></div></div>",
+  "description": "This Professional Scrum Developer (PSD) course is a unique and intensive three day experience for software developers. The course guides teams on how to turn product requirements into potentially shippable increments of software using the Scrum framework, Visual Studio 2012, and modern software engineering practices. Attendees will work in self-organizing, self-managing teams using a common instance of Visual Studio Team Foundation Server 2013\u00a0to achieve this goal.\u200b\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Webinar: Dev Superpowers - Azure",
+  "url": "/ssw/events/webinars/DevSuperpowers.aspx",
+  "thumbnail": "/images/Newsletters/DevSuperpowers-Thumb.png",
+  "thumbnailDescription": "Webinar: Dev Superpowers - Azure ",
+  "presenterName": "David Burela",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/David-Burela.aspx",
+  "startDateTime": "2015-01-29T00:00:00Z",
+  "endDateTime": "2015-01-29T01:00:00Z",
+  "startShowBannerDateTime": "2015-01-28T13:00:00Z",
+  "endShowBannerDateTime": "2015-01-29T03:00:00Z",
+  "liveStreamUrl": {
+    "description": "Webinar: Dev Superpowers - Azure ",
+    "url": "/ssw/Events/Webinars/Live.aspx"
+  },
+  "calendarType": "Webinars",
+  "city": "Online",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "Webinar: Dev Superpowers - Azure",
+  "eventShortDescription": "<div class=\"ExternalClassFE49F99BB16742F39BE232A3BDAA8A9A\">\u200bIn many teams, planning the deployment to production is one of the scarier aspects. This session will explore how you can connect your source code repository to Microsoft Azure to seamlessly enable continuous deployment to production<br><br></div>",
+  "eventDescription": "<div class=\"ExternalClass0BA35FEA7BAD49C58DBB4370BAAF5DF4\"><p>\u200bIn many teams, planning the deployment to production is one of the scarier aspects. This session will explore how you can connect your source code repository to Microsoft Azure to seamlessly enable continuous deployment to production</p></div>",
+  "description": "\u200bIn many teams, planning the deployment to production is one of the scarier aspects. This session will explore how you can connect your source code repository to Microsoft Azure to seamlessly enable continuous deployment to production",
+  "showOnPowerSessions": "No",
+  "hasVideo": true,
+  "externalPresenters": []
+}

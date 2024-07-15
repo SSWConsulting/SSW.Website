@@ -1,0 +1,19 @@
+{
+  "title": "Building Web Applications with ASP.NET",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewVSNet",
+  "sessionTitle": "Building Web Applications with ASP.NET",
+  "sessionTitleAnchor": "WebAppsASPNET",
+  "eventShortDescription": "<div class=\"ExternalClassB03E088B723743F58B65338A8C4D5D78\"><div><span class=\"ms-rteThemeForeColor-9-0\">*Discontinued*</span></div><div><br></div><div>ASP.NET is a revolutionary new version of Microsoft's Active Server Pages. It provides a wealth of new features that make developers more productive and the applications they build faster, more reliable and scalable. There's a lot to learn about ASP.NET and this session is devoted to bringing you the latest and best information. You will walk away with code samples you can plug into your application.<br><br><ul><li>ASP.NET and the .NET Framework</li><li>Validating Data Using the ASP.NET Validator Controls</li><li>Moving from ASP to ASP.NET</li><li>Building Web Services</li><li>Making Sense of ADO.NET</li><li>ASP.NET Configuration and Deployment\u200b\u200b</li></ul></div></div>",
+  "eventDescription": "<div class=\"ExternalClassB03E088B723743F58B65338A8C4D5D78\"><div><div><span class=\"ms-rteThemeForeColor-9-0\">*Discontinued*</span></div><div><span class=\"ms-rteThemeForeColor-9-0\"><br></span></div>\u200bASP.NET is a revolutionary new version of Microsoft's Active Server Pages. It provides a wealth of new features that make developers more productive and the applications they build faster, more reliable and scalable. There's a lot to learn about ASP.NET and this session is devoted to bringing you the latest and best information. You will walk away with code samples you can plug into your application.<br><br><ul><li>ASP.NET and the .NET Framework</li><li>Validating Data Using the ASP.NET Validator Controls</li><li>Moving from ASP to ASP.NET</li><li>Building Web Services</li><li>Making Sense of ADO.NET</li><li>ASP.NET Configuration and Deployment\u200b</li></ul></div></div>",
+  "description": "*Discontinued*\n\nASP.NET is a revolutionary new version of Microsoft's Active Server Pages. It provides a wealth of new features that make developers more productive and the applications they build faster, more reliable and scalable. There's a lot to learn about ASP.NET and this session is devoted to bringing you the latest and best information. You will walk away with code samples you can plug into your application.\n\nASP.NET and the .NET Framework\n\nValidating Data Using the ASP.NET Validator Controls\n\nMoving from ASP to ASP.NET\n\nBuilding Web Services\n\nMaking Sense of ADO.NET\n\nASP.NET Configuration and Deployment\u200b\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

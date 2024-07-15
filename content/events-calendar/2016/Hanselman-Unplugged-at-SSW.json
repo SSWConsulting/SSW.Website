@@ -1,0 +1,28 @@
+{
+  "title": "Hanselman Unplugged at SSW",
+  "url": "/ssw/netug/hanselman-user-group-special.aspx",
+  "thumbnail": "/images/thumbs/hanselman-thumbnail.png",
+  "thumbnailDescription": "http://ssw.com.au/ssw/NETUG/Images/thumbs/hanselman-thumbnail.png",
+  "presenterName": "Scott Hanselman",
+  "presenterProfileUrl": "http://www.hanselman.com/",
+  "startDateTime": "2016-08-05T08:00:00Z",
+  "endDateTime": "2016-08-05T10:00:00Z",
+  "startShowBannerDateTime": "2016-08-04T14:00:00Z",
+  "endShowBannerDateTime": "2016-08-05T11:00:00Z",
+  "liveStreamUrl": {
+    "description": "Watch this event live",
+    "url": "/ssw/Live/"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "Hanselman Unplugged at SSW",
+  "sessionTitleAnchor": "HanselmanUnpluggedSSW",
+  "eventShortDescription": "<div class=\"ExternalClass9814DD0137DB4AE3AFC7A210FCE75730\"><p>\u200b<span style=\"color&#58;#4b4f56;font-family&#58;helvetica, arial, sans-serif;font-size&#58;14px;line-height&#58;18.76px;background-color&#58;#ffffff;\">Scott Hanselman is in Australia as a special guest presenter at NDC Sydney and will be stopping in at SSW to give a talk at an extra-special Sydney user group, where he will be presenting 2 x 1-hour session</span>s<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass6D753C36DADD4E829DC2178DE3B45189\"><div></div><div>\u200bScott Hanselman is in Australia as a special guest presenter at NDC Sydney and will be stopping in at SSW to give a talk at an extra-special Sydney user group, where he will be presenting 2 x 1-hour sessions&#58;</div><div><br></div><div>Session #1&#58; What you need to know</div><div><br></div><div>Come and find out from Scott Hanselman what you need to know to be a great developer in 2016.</div><div><br></div><div>Session #2&#58; Hanselman Unplugged \u2013 open Q&amp;A</div><div><br></div><div>This is your chance to ask Scott any questions on life at Microsoft, the future direction of .NET and any other technical or pop culture geek questions you may have.\u200b<br></div><div><br></div><div>For those of you who can't make it in person, this event will also be live-streamed at <a href=\"https&#58;//www.ssw.com.au/ssw/Live/\">https&#58;//www.ssw.com.au/ssw/Live/&#160;</a><br></div><div><br></div><div>IMPORTANT &#58; although this is a free event, you need to register to get a ticket from</div><div><a href=\"https&#58;//www.eventbrite.com/e/hanselman-unplugged-at-ssw-tickets-26676296521\">https&#58;//www.eventbrite.com/e/hanselman-unplugged-at-ssw-tickets-26676296521&#160;\u200b</a><br></div><div>to secure your ticket! &#58;)</div><div><br></div><div>Afterwards, join us for a beer at the Oaks across the road\u200b<br></div></div>",
+  "description": "\u200b\n\nScott Hanselman is in Australia as a special guest presenter at NDC Sydney and will be stopping in at SSW to give a talk at an extra-special Sydney user group, where he will be presenting 2 x 1-hour session\n\ns",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

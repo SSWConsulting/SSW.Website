@@ -1,0 +1,26 @@
+{
+  "title": "Sydney .NET user group - September",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET user group - September",
+  "presenterName": "Steve Yap",
+  "startDateTime": "2014-09-17T08:00:00Z",
+  "endDateTime": "2014-09-17T10:00:00Z",
+  "startShowBannerDateTime": "2014-09-16T14:00:00Z",
+  "endShowBannerDateTime": "2014-09-17T13:30:00Z",
+  "liveStreamUrl": {
+    "description": "Sydney .NET User Group Live Stream",
+    "url": "/ssw/NETUG/Live.aspx"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "\u200bPublishing your first mobile game - Steve Yap ",
+  "eventShortDescription": "<div class=\"ExternalClassCD038A703B4041AA90CC380228C81ED2\"><div>\u200bWith the advancement of free game engines like Unity and the explosive popularity of app stores and digital distribution, there has never been a better time to get into game development. However, building a killer game is only one piece of the puzzle. Steve Yap will share his experience and insights on what is really involved in developing and publishing your first mobile game and some of the hurdles you might encounter along the way.</div><div><br></div><div><br></div><div>About the presenter&#58;</div><div>Steve Yap is the man behind the #1 game on Windows Phone. Steve is also the founder of Mugshot Games, an independent game developer focused on the mobile market. Steve has been a developer for over 10 years and started making mobile games as a hobby back in 2011. He has since turned that hobby into a business and his latest game CastleMine has gathered over 2 million downloads and can be found on iOS, Android, Windows Phone and Windows 8.</div><div><br></div><div><br></div><div>Can't come in person? No worries!&#160;</div><div>We live stream the event so you can watch it from anywhere! Catch all the action live on Wednesday September 17 from 6pm here&#58; http&#58;//www.ssw.com.au/ssw/NETUG/Live.aspx</div></div>",
+  "eventDescription": "<div class=\"ExternalClass23C4E777D4054B51AEE95B2029070A06\"><div><span style=\"font-size&#58;13px;\">With the advancement of free game engines like Unity and the explosive popularity of app stores and digital distribution, there has never been a better time to get into game development. However, building a killer game is only one piece of the puzzle. Steve Yap will share his experience and insights on what is really involved in developing and publishing your first mobile game and some of the hurdles you might encounter along the way.</span><br></div><div><br></div><div><br></div><div>About the presenter&#58;</div><div>Steve Yap is the man behind the #1 game on Windows Phone. Steve is also the founder of Mugshot Games, an independent game developer focused on the mobile market. Steve has been a developer for over 10 years and started making mobile games as a hobby back in 2011. He has since turned that hobby into a business and his latest game CastleMine has gathered over 2 million downloads and can be found on iOS, Android, Windows Phone and Windows 8.</div><div><br></div><div><br></div><div>Can't come in person? No worries!&#160;</div><div>We live stream the event so you can watch it from anywhere! Catch all the action live on Wednesday September 17 from 6pm here&#58; http&#58;//www.ssw.com.au/ssw/NETUG/Live.aspx</div></div>",
+  "description": "\u200bWith the advancement of free game engines like Unity and the explosive popularity of app stores and digital distribution, there has never been a better time to get into game development. However, building a killer game is only one piece of the puzzle. Steve Yap will share his experience and insights on what is really involved in developing and publishing your first mobile game and some of the hurdles you might encounter along the way.\n\nAbout the presenter:\n\nSteve Yap is the man behind the #1 game on Windows Phone. Steve is also the founder of Mugshot Games, an independent game developer focused on the mobile market. Steve has been a developer for over 10 years and started making mobile games as a hobby back in 2011. He has since turned that hobby into a business and his latest game CastleMine has gathered over 2 million downloads and can be found on iOS, Android, Windows Phone and Windows 8.\n\nCan't come in person? No worries!\u00a0\n\nWe live stream the event so you can watch it from anywhere! Catch all the action live on Wednesday September 17 from 6pm here: http://www.ssw.com.au/ssw/NETUG/Live.aspx",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

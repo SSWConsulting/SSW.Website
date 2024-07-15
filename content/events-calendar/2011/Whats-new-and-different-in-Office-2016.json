@@ -1,0 +1,19 @@
+{
+  "title": "What's new and different in Office 2016?",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Office",
+  "categoryAnchor": "OverviewOffice",
+  "sessionTitle": "What's new and different in Office 2016?",
+  "sessionTitleAnchor": "office2016newdifferent",
+  "eventShortDescription": "<div class=\"ExternalClassD2370F2DFD3746159597B728DDE2B4E7\"><div>In this fun and informative session, you will discover the upcoming suite of tools in Office 2016. You will be led through the new features including&#58;<br><br><ul><li>New collaboration capabilities that enable workers to more easily share, access and synchronize information and documents across a wide range of devices</li><li>Improved Business Intelligence capabilities such as OLAP reporting within Excel&#160;</li><li>New User Interface to streamline access to common functions</li><li>Extensible XML-based file formats and improved XML support\u200b\u200b</li></ul></div></div>",
+  "eventDescription": "<div class=\"ExternalClassD2370F2DFD3746159597B728DDE2B4E7\"><div>In this fun and informative session, you will discover the upcoming suite of tools in Office 2016. You will be led through the new features including&#58;<br><br><ul><li>New collaboration capabilities that enable workers to more easily share, access and synchronize information and documents across a wide range of devices</li><li>Improved Business Intelligence capabilities such as OLAP reporting within Excel</li><li>New User Interface to streamline access to common functions</li><li>Extensible XML-based file formats and improved XML support\u200b</li></ul></div></div>",
+  "description": "In this fun and informative session, you will discover the upcoming suite of tools in Office 2016. You will be led through the new features including:\n\nNew collaboration capabilities that enable workers to more easily share, access and synchronize information and documents across a wide range of devices\n\nImproved Business Intelligence capabilities such as OLAP reporting within Excel\u00a0\n\nNew User Interface to streamline access to common functions\n\nExtensible XML-based file formats and improved XML support\u200b\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Common mistakes in EF Core",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
+  "presenterName": "Jernej JK Kavka",
+  "startDateTime": "2021-12-15T07:00:00Z",
+  "endDateTime": "2021-12-15T11:00:00Z",
+  "startShowBannerDateTime": "2021-12-14T13:00:00Z",
+  "endShowBannerDateTime": "2021-12-15T11:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Online",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassA9707BE3E35749318418660BF2CB0FA6\"><p><strong>.NET User Group&#58; Common mistakes in EF Core with Jernej JK Kavka</strong><br></p><p>When JK worked with many different clients and projects, he frequently heard &quot;EF Core is slow&quot; or &quot;We should do this in raw SQL&quot; only to realize they haven't used EF Core correctly.&#160;</p><p>JK will show you how to improve your EF Core statements as well as how various configurations impacts the performance and scalability of your application. You'll be blown away at how small changes can significantly impact not only the performance but also stability of the application.<br></p><br></div><div class=\"ExternalClassA9707BE3E35749318418660BF2CB0FA6\">About the Speaker&#58;<br></div><div class=\"ExternalClassA9707BE3E35749318418660BF2CB0FA6\"><br></div><div class=\"ExternalClassA9707BE3E35749318418660BF2CB0FA6\">Jernej Kavka (JK) is a Microsoft AI MVP, SSW Solution Architect, and organizer of several user groups like APAC AI and Global AI The Podcast. JK is a full-stack .NET developer, but his passion lies in Azure Cognitive Services, AI and machine learning. He is the main architect behind SSW's virtual receptionist - SophieAI&#58; https&#58;//sswsophie.com</div><div class=\"ExternalClassA9707BE3E35749318418660BF2CB0FA6\"><br>He is also very active in the developer community and enjoys speaking at conferences like NDC, DDD, as well as User Groups and Hack Days.<br><br></div>",
+  "eventDescription": "<div class=\"ExternalClass909546D1FC2047E292156CF0DE2EC1D6\"><p></p><div class=\"ExternalClassA9707BE3E35749318418660BF2CB0FA6\"><p><strong>.NET User Group &#58;&#160;Common mistakes in EF Core with Jernej JK Kavka</strong><br></p><p>When JK worked with many different clients and projects, he frequently heard &quot;EF Core is slow&quot; or &quot;We should do this in raw SQL&quot; only to realize they haven't used EF Core correctly.&#160;</p><p>JK will show you how to improve your EF Core statements as well as how various configurations impacts the performance and scalability of your application. You'll be blown away at how small changes can significantly impact not only the performance but also stability of the application.<br></p><br></div><div class=\"ExternalClassA9707BE3E35749318418660BF2CB0FA6\">About the Speaker&#58;<br></div><div class=\"ExternalClassA9707BE3E35749318418660BF2CB0FA6\"><br></div><div class=\"ExternalClassA9707BE3E35749318418660BF2CB0FA6\">Jernej Kavka (JK) is a Microsoft AI MVP, SSW Solution Architect, and organizer of several user groups like APAC AI and Global AI The Podcast. JK is a full-stack .NET developer, but his passion lies in Azure Cognitive Services, AI and machine learning. He is the main architect behind SSW's virtual receptionist - SophieAI&#58; https&#58;//sswsophie.com</div><div class=\"ExternalClassA9707BE3E35749318418660BF2CB0FA6\"><br>He is also very active in the developer community and enjoys speaking at conferences like NDC, DDD, as well as User Groups and Hack Days.<br></div><p><br></p></div>",
+  "description": ".NET User Group: Common mistakes in EF Core with Jernej JK Kavka\n\nWhen JK worked with many different clients and projects, he frequently heard \"EF Core is slow\" or \"We should do this in raw SQL\" only to realize they haven't used EF Core correctly.\u00a0\n\nJK will show you how to improve your EF Core statements as well as how various configurations impacts the performance and scalability of your application. You'll be blown away at how small changes can significantly impact not only the performance but also stability of the application.\n\nAbout the Speaker:\n\nJernej Kavka (JK) is a Microsoft AI MVP, SSW Solution Architect, and organizer of several user groups like APAC AI and Global AI The Podcast. JK is a full-stack .NET developer, but his passion lies in Azure Cognitive Services, AI and machine learning. He is the main architect behind SSW's virtual receptionist - SophieAI: https://sswsophie.com\n\nHe is also very active in the developer community and enjoys speaking at conferences like NDC, DDD, as well as User Groups and Hack Days.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "wljWpM_PZvo",
+  "externalPresenters": [
+    {
+      "LookupId": 13,
+      "LookupValue": "Jernej Kavka"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/jernej-kavka.mdx"
+    }
+  ]
+}

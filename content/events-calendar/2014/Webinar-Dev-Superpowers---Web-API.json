@@ -1,0 +1,27 @@
+{
+  "title": "Webinar: Dev Superpowers - Web API",
+  "url": "/ssw/events/webinars/DevSuperpowers.aspx",
+  "thumbnail": "/images/Newsletters/DevSuperpowers-Thumb.png",
+  "thumbnailDescription": "Webinar: Dev Superpowers - Web API",
+  "presenterName": "David Burela",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/David-Burela.aspx",
+  "startDateTime": "2014-06-26T01:00:00Z",
+  "endDateTime": "2014-06-26T02:00:00Z",
+  "startShowBannerDateTime": "2014-06-25T14:00:00Z",
+  "endShowBannerDateTime": "2014-06-26T13:00:00Z",
+  "liveStreamUrl": {
+    "description": "Webinar: Dev Superpowers - Web API",
+    "url": "/ssw/Events/Webinars/Live.aspx"
+  },
+  "calendarType": "Webinars",
+  "city": "Online",
+  "enabled": true,
+  "category": "Other",
+  "sessionTitle": "Webinar: Dev Superpowers - Web API",
+  "eventShortDescription": "<div class=\"ExternalClass14D511C79FD045268DBB8BE7372C2724\">You have an existing website but its data is locked up inside of it and not being fully utilised.<br><br>Learn how to expose your data in a standard way with Web Api, making it available for other applications to consume.<br><br></div>",
+  "eventDescription": "<div class=\"ExternalClassBD420166DAD6456AA216ED1E4FD65BC2\">You have an existing website but its data is locked up inside of it and not being fully utilised.<br><br>Learn how to expose your data in a standard way with Web Api, making it available for other applications to consume.<br><br></div>",
+  "description": "You have an existing website but its data is locked up inside of it and not being fully utilised.\n\nLearn how to expose your data in a standard way with Web Api, making it available for other applications to consume.",
+  "showOnPowerSessions": "No",
+  "hasVideo": true,
+  "externalPresenters": []
+}

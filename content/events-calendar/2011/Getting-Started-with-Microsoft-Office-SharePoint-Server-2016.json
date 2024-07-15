@@ -1,0 +1,19 @@
+{
+  "title": "Getting Started with Microsoft Office SharePoint Server 2016",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "SharePoint",
+  "categoryAnchor": "OverviewSharePoint",
+  "sessionTitle": "Getting Started with Microsoft Office SharePoint Server 2016",
+  "sessionTitleAnchor": "SharePoint2016",
+  "eventShortDescription": "<div class=\"ExternalClassFD7DD4FA44CB49F2BE2EF0525D10308F\"><div>\u200bIn this session, we will explore the design goals and features of Office SharePoint Server 2016. You also manage documents and Web content using Office SharePoint Server 2016. We will cover&#58;<br><br><ul><li>The design goals and features of Office SharePoint Server 2016</li><li>How to manage documents and Web content using Office SharePoint Server 2016</li><li>The Office SharePoint Server 2013 features for organizing and finding data</li><li>How to implement business solutions using Office SharePoint Server 2016</li></ul></div></div>",
+  "eventDescription": "<div class=\"ExternalClassFD7DD4FA44CB49F2BE2EF0525D10308F\"><div>\u200bIn this session, we will explore the design goals and features of Office SharePoint Server 2013. You also manage documents and Web content using Office SharePoint Server 2013. We will cover&#58;<br><br><ul><li>The design goals and features of Office SharePoint Server 2016</li><li>How to manage documents and Web content using Office SharePoint Server 2016</li><li>The Office SharePoint Server 2016 features for organizing and finding data</li><li>How to implement business solutions using Office SharePoint Server 2016\u200b</li></ul></div></div>",
+  "description": "\u200bIn this session, we will explore the design goals and features of Office SharePoint Server 2016. You also manage documents and Web content using Office SharePoint Server 2016. We will cover:\n\nThe design goals and features of Office SharePoint Server 2016\n\nHow to manage documents and Web content using Office SharePoint Server 2016\n\nThe Office SharePoint Server 2013 features for organizing and finding data\n\nHow to implement business solutions using Office SharePoint Server 2016",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

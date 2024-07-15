@@ -1,0 +1,24 @@
+{
+  "title": "The Bitter-sweet Taste of PhoneGap for Mobile Developers by Dino Esposito",
+  "url": "/ssw/Events/Webinars/PhoneGap-for-Mobile-Developers.aspx",
+  "thumbnail": "/images/thumbs/thumb-webinar-phonegap_smaller.jpg",
+  "thumbnailDescription": "The Bitter-sweet Taste of PhoneGap for Mobile Developers",
+  "presenterName": "Dino Esposito",
+  "startDateTime": "2013-12-05T00:00:00Z",
+  "endDateTime": "2013-12-05T01:00:00Z",
+  "startShowBannerDateTime": "2013-12-04T13:00:00Z",
+  "endShowBannerDateTime": "2013-12-05T02:00:00Z",
+  "liveStreamUrl": {
+    "description": "Live streaming now! ",
+    "url": "/ssw/Events/Webinars/Live.aspx"
+  },
+  "calendarType": "Webinars",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Web Design",
+  "eventShortDescription": "<div class=\"ExternalClass0CD4B78D90774681A39B8424013E363B\">PhoneGap enables developers to build mobile apps for a variety of platforms using web tools and frameworks. PhoneGap just works and delivers all of its promises. However, a PhoneGap application is inherently tied up to the performance of the browser and a relatively device agnostic user interface. Is this a problem? Or is this part, or all, of the solution to the long-standing problem of minimizing costs of multi-platform apps? To properly try to answer the question it is essential to get a deeper grasp of how the PhoneGap platform work and explore its technical details. That would give you a hardly debatable list of pros and cons upon which you can calculate your own tradeoffs.&#160;<br><br><br></div>",
+  "description": "PhoneGap enables developers to build mobile apps for a variety of platforms using web tools and frameworks. PhoneGap just works and delivers all of its promises. However, a PhoneGap application is inherently tied up to the performance of the browser and a relatively device agnostic user interface. Is this a problem? Or is this part, or all, of the solution to the long-standing problem of minimizing costs of multi-platform apps? To properly try to answer the question it is essential to get a deeper grasp of how the PhoneGap platform work and explore its technical details. That would give you a hardly debatable list of pros and cons upon which you can calculate your own tradeoffs.\u00a0",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Visual Studio 2015 Testing with Team Foundation Server (TFS) 2015 - the life of a bug",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewTFS",
+  "sessionTitle": "Visual Studio 2015 Testing with Team Foundation Server (TFS) 2015 - the life of a bug",
+  "sessionTitleAnchor": "TFS2015",
+  "eventShortDescription": "<div class=\"ExternalClass19A8F738AB7649358A241D7D7489C446\">Visual Studio 2015 makes up a large part of a .NET developer's life. This session will delve into the 'life of a bug' by taking a walk in the shoes of an everyday bug from discovery to release (and the steps that make up the in-between). Come along and check out the new features that will make you happier by making your code better, your job easier, and your team more productive by reducing the obstacles you face in your everyday coding life. Learn&#58;<br><br>\u200b</div>",
+  "eventDescription": "<div class=\"ExternalClass19A8F738AB7649358A241D7D7489C446\"><div>Visual Studio 2015 makes up a large part of a .NET&#160;developer's life. This session will delve into the 'life of a bug' by taking a walk in the shoes of an everyday bug from discovery to release (and the steps that make up the in-between). Come along and check out the new features that will make you happier by making your code better, your job easier, and your team more productive by reducing the obstacles you face in your everyday coding life. Learn&#58;<br><br><ul><li>What are the new features for testers and developers</li><li>How you now care - even if the tester can't reproduce the bug</li><li>How to stop struggling to find the source of the bug in your code</li><li>How can you streamline the testing process and make sure you don't repeat the same bugs</li><li>How to automate more and reproduce bugs easier and discover problems sooner.\u200b</li></ul></div></div>",
+  "description": "Visual Studio 2015 makes up a large part of a .NET developer's life. This session will delve into the 'life of a bug' by taking a walk in the shoes of an everyday bug from discovery to release (and the steps that make up the in-between). Come along and check out the new features that will make you happier by making your code better, your job easier, and your team more productive by reducing the obstacles you face in your everyday coding life. Learn:\n\n\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Architecting Enterprise Microservice Solutions with Ocelot on Azure",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Architecting Enterprise Microservice Solutions with Ocelot on Azure",
+  "presenterName": "Patrick Zhao",
+  "presenterProfileUrl": "/people/patrick-zhao",
+  "startDateTime": "2022-03-16T07:00:00Z",
+  "endDateTime": "2022-03-16T11:00:00Z",
+  "startShowBannerDateTime": "2022-03-15T13:00:00Z",
+  "endShowBannerDateTime": "2022-03-16T11:00:00Z",
+  "calendarType": "User Groups",
+  "city": "Online",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClass5EEF563BC85544DFA46EA6B86B4825BA\">March&#160;.NET User Group&#58;&#160;Architecting Enterprise Microservice Solutions with Ocelot on Azure with Patrick Zhao<br><br>Microservices have been a hot topic in .NET's world since .NET Core. Everyone has heard of microservices, but not many have had the chance to build them. In this talk, Patrick will show how he has architected an enterprise solution with cloud-native services on Azure and using Ocelot to build the API gateway. You will also learn the pros and cons of alternatives such as Azure API management.<br><p><br>Learn from Patrick how valuable Ocelot is and see the ins and outs of building an API gateway and protect the services using Azure VNet.&#160;<br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass06D64A45EA544E16BCA740E68ED9C21C\"><p></p>March&#160;.NET User Group&#58;&#160;Architecting Enterprise Microservice Solutions with Ocelot on Azure with Patrick Zhao<br><br>Microservices have been a hot topic in .NET's world since .NET Core. Everyone has heard of microservices, but not many have had the chance to build them. In this talk, Patrick will show how he has architected an enterprise solution with cloud-native services on Azure and using Ocelot to build the API gateway. You will also learn the pros and cons of alternatives such as Azure API management.<br><p><br>Learn from Patrick how valuable Ocelot is and see the ins and outs of building an API gateway and protect the services using Azure VNet.&#160;<br></p></div>",
+  "description": "March\u00a0.NET User Group:\u00a0Architecting Enterprise Microservice Solutions with Ocelot on Azure with Patrick Zhao\n\nMicroservices have been a hot topic in .NET's world since .NET Core. Everyone has heard of microservices, but not many have had the chance to build them. In this talk, Patrick will show how he has architected an enterprise solution with cloud-native services on Azure and using Ocelot to build the API gateway. You will also learn the pros and cons of alternatives such as Azure API management.\n\nLearn from Patrick how valuable Ocelot is and see the ins and outs of building an API gateway and protect the services using Azure VNet.\u00a0",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "qk1NeDcqZ-M",
+  "externalPresenters": [
+    {
+      "LookupId": 19,
+      "LookupValue": "Patrick Zhao"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/patrick-zhao.mdx"
+    }
+  ]
+}

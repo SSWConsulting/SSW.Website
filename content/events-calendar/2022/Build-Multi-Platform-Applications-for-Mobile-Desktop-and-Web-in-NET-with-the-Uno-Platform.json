@@ -1,0 +1,41 @@
+{
+  "title": "Build Multi-Platform Applications for Mobile, Desktop and Web in .NET with the Uno Platform",
+  "url": "/ssw/NETUG/Sydney.aspx",
+  "thumbnail": "/images/thumbs/thumb-sydneyUG.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
+  "presenterName": "Nick Randolph",
+  "presenterProfileUrl": "https://mvp.microsoft.com/en-us/PublicProfile/9968",
+  "startDateTime": "2022-07-20T08:00:00Z",
+  "endDateTime": "2022-07-20T12:00:00Z",
+  "startShowBannerDateTime": "2022-07-19T14:00:00Z",
+  "endShowBannerDateTime": "2022-07-20T12:00:00Z",
+  "liveStreamUrl": {
+    "description": "Livestream",
+    "url": "/live"
+  },
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "enabled": true,
+  "category": ".NET Core",
+  "eventShortDescription": "<div class=\"ExternalClassD493F10EC2DF4AF5B045742639880B2A\">July .NET User Group&#58;&#160;Build Multi-Platform Applications for Mobile, Desktop and Web in .NET with the Uno Platform<div><br>The open-source Uno Platform extends pixel-perfect WinUI experiences built with C# and XAML to all platforms where WinUI doesn't natively run on \u2013 Web/WebAssembly, macOS, Linux, iOS, Android. <br><br>The ability to deploy the same UI codebase across all platforms is a great productivity booster. But the application lifecycle starts much earlier \u2013 at design time. Uno Platform provides a Figma plugin, which eliminates the timely designer-developer handoff. In addition, the platform now provides a set of non-UI extensions to help jump-start your apps. Lastly, the VS Code extensions allows C# and XAML to use VS Code with IntelliSense-like experience, C# and XAML Hot Reload, and more.<br><br>In this session, you'll learn how you can create applications spanning across multiple platforms and device form factors, all while reusing your existing XAML and C# skills.<br><br></div></div>",
+  "eventDescription": "<div class=\"ExternalClassA27A6E777BA642ECA39B4DB9B267D1D2\"><p>July .NET User Group&#58;&#160;Build Multi-Platform Applications for Mobile, Desktop and Web in .NET with the Uno Platform</p><p>\u200bThe open-source Uno Platform extends pixel-perfect WinUI experiences built with C# and XAML to all platforms where WinUI doesn't natively run on \u2013 Web/WebAssembly, macOS, Linux, iOS, Android.<br><br>The ability to deploy the same UI codebase across all platforms is a great productivity booster. But the application lifecycle starts much earlier \u2013 at design time. Uno Platform provides a Figma plugin, which eliminates the timely designer-developer handoff. In addition, the platform now provides a set of non-UI extensions to help jump-start your apps. Lastly, the VS Code extensions allows C# and XAML to use VS Code with IntelliSense-like experience, C# and XAML Hot Reload, and more.<br><br>In this session, you'll learn how you can create applications spanning across multiple platforms and device form factors, all while reusing your existing XAML and C# skills.<br></p></div>",
+  "description": "July .NET User Group:\u00a0Build Multi-Platform Applications for Mobile, Desktop and Web in .NET with the Uno Platform\n\nThe open-source Uno Platform extends pixel-perfect WinUI experiences built with C# and XAML to all platforms where WinUI doesn't natively run on \u2013 Web/WebAssembly, macOS, Linux, iOS, Android. \n\nThe ability to deploy the same UI codebase across all platforms is a great productivity booster. But the application lifecycle starts much earlier \u2013 at design time. Uno Platform provides a Figma plugin, which eliminates the timely designer-developer handoff. In addition, the platform now provides a set of non-UI extensions to help jump-start your apps. Lastly, the VS Code extensions allows C# and XAML to use VS Code with IntelliSense-like experience, C# and XAML Hot Reload, and more.\n\nIn this session, you'll learn how you can create applications spanning across multiple platforms and device form factors, all while reusing your existing XAML and C# skills.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "youTubeId": "4PPjFzuR_cw",
+  "evalFormURL": {
+    "description": "Leave your feedback",
+    "url": "https://forms.microsoft.com/Pages/ResponsePage.aspx?id=NHwvrDW56Uir3BHl1PyysPj1WXHPfJ5OhXxqnVi-9WJUMTZDMVVaQVUxWTlNWTVHSFdPOTZSNlE3SSQlQCN0PWcu"
+  },
+  "externalPresenters": [
+    {
+      "LookupId": 21,
+      "LookupValue": "Nick Randolph"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/nick-randolph.mdx"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Implementing Scrum Using Team Foundation Server 2015",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "Visual Studio and TFS",
+  "categoryAnchor": "OverviewTFS",
+  "sessionTitle": "Implementing Scrum Using Team Foundation Server 2015",
+  "sessionTitleAnchor": "ScrumUsingTFS2015",
+  "eventShortDescription": "<div class=\"ExternalClass94BFE47DA708483DA2FADC4B489E9C64\"><div>\u200bToday, 84% of Agile teams are using Scrum. Gerard will guide you through what\u2019s new in TFS 2015, changes in the Visual Studio Scrum template, how to use the new Agile project management tools, and many other best practices. He will create and manage a product backlog, forecast and plan work for a Sprint, and manage the Sprint tasks using the new tools in TFS.\u200b</div></div>",
+  "eventDescription": "<div class=\"ExternalClass94BFE47DA708483DA2FADC4B489E9C64\"><div>\u200bToday, 84% of Agile teams are using Scrum. Gerard will guide you through what\u2019s new in TFS 2015, changes in the Visual Studio Scrum template, how to use the new Agile project management tools, and many other best practices. He will create and manage a product backlog, forecast and plan work for a Sprint, and manage the Sprint tasks using the new tools in TFS.\u200b</div></div>",
+  "description": "\u200bToday, 84% of Agile teams are using Scrum. Gerard will guide you through what\u2019s new in TFS 2015, changes in the Visual Studio Scrum template, how to use the new Agile project management tools, and many other best practices. He will create and manage a product backlog, forecast and plan work for a Sprint, and manage the Sprint tasks using the new tools in TFS.\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}

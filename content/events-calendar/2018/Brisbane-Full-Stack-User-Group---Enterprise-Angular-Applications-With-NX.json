@@ -1,0 +1,19 @@
+{
+  "title": "Brisbane Full Stack User Group - Enterprise Angular Applications With NX",
+  "url": "https://www.meetup.com/Brisbane-Full-Stack-User-Group/events/250353705/",
+  "thumbnail": "/images/thumbs/thumb-BrisbaneUG.jpg",
+  "thumbnailDescription": "/ssw/NETUG/Images/thumbs/thumb-brisbaneUG.jpg",
+  "presenterName": "Anthony Miller",
+  "startDateTime": "2018-05-08T08:00:00Z",
+  "endDateTime": "2018-05-08T11:30:00Z",
+  "calendarType": "User Groups",
+  "city": "Brisbane",
+  "enabled": true,
+  "category": "Angular and React",
+  "eventShortDescription": "<div class=\"ExternalClass230503C4A4A547F1A0E6BC902C24D41E\"><p>\u200bIn this talk, we're going to cover using NX from Nrwl to separate application and libraries for an Angular application. This will enable you to share some common components with multiple applications throughout your company and give you the ability to target multiple platforms, including Ionic, from a single application code base.\u200b<br><br></p></div>",
+  "eventDescription": "<div class=\"ExternalClass4785627133F14EB5A7563335C7FAA1DD\"><div>In this talk, we're going to cover using NX from Nrwl to separate application and libraries for an Angular application. This will enable you to share some common components with multiple applications throughout your company and give you the ability to target multiple platforms, including Ionic, from a single application code base.<br></div><div><br></div><div>About the presenter</div><div>Anthony Miller (@nthonymiller) has been a software developer for 25 years, covering languages such as C, C++, PAscal, Delphi, and C#. 3 years ago, he made the transition from a Windows application developer to a web developer after attending SSW FireBootCamp, where he learnt AngularJS. He jumped onto the new version of Angular a year later whilst still in beta, and have successfully deployed many Angular applications to production. He has a pattern for learning patterns and practices to build enterprise applications.<br></div><p><br></p></div>",
+  "description": "\u200bIn this talk, we're going to cover using NX from Nrwl to separate application and libraries for an Angular application. This will enable you to share some common components with multiple applications throughout your company and give you the ability to target multiple platforms, including Ionic, from a single application code base.\u200b",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

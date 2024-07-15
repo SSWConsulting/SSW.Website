@@ -1,0 +1,29 @@
+{
+  "title": "The Clean Architecture 2-day Workshop - Sydney/Online",
+  "url": "/ssw/events/Training/Clean-Architecture-Workshop.aspx",
+  "thumbnail": "/images/Newsletters/Workshop-Icon-CleanArchitecture.jpg",
+  "thumbnailDescription": "The Clean Architecture 2-day Workshop - Sydney/Online",
+  "presenterName": "Jason Taylor & Luke Cook",
+  "presenterProfileUrl": "/people/jason-taylor",
+  "startDateTime": "2022-08-23T23:00:00Z",
+  "endDateTime": "2022-08-25T07:00:00Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassD8C36703049E4D509D0E597FB2D0654C\"><p>In this 2-day hands-on workshop, we will cover the best approach to building enterprise applications using Clean Architecture &amp; .NET Core.</p><br><div><div>About this Event</div><div><br><div data-automation=\"about-this-event-sc\">Introduction<br><br>The explosive growth of web frameworks and the demands of users have changed the approach to building enterprise applications. Many challenges exist and just getting started can be a daunting prospect. Let's change that now.<br><br>This workshop will provide practical guidance and recommendations. We will cover architecture, technologies, tools and frameworks. We will examine strategies for organizing your projects, folders and files.<br><br>We will design a system that is simple to build and maintain - now and well into the future.<br><br>You will leave this workshop having developed the foundation and structure for your next enterprise application, along with the knowledge to take your enterprise application development to the next level.<br><div><br></div></div></div></div></div>",
+  "description": "In this 2-day hands-on workshop, we will cover the best approach to building enterprise applications using Clean Architecture & .NET Core.\n\nAbout this Event\n\nIntroduction\n\nThe explosive growth of web frameworks and the demands of users have changed the approach to building enterprise applications. Many challenges exist and just getting started can be a daunting prospect. Let's change that now.\n\nThis workshop will provide practical guidance and recommendations. We will cover architecture, technologies, tools and frameworks. We will examine strategies for organizing your projects, folders and files.\n\nWe will design a system that is simple to build and maintain - now and well into the future.\n\nYou will leave this workshop having developed the foundation and structure for your next enterprise application, along with the knowledge to take your enterprise application development to the next level.",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": [
+    {
+      "LookupId": 16,
+      "LookupValue": "Jason Taylor"
+    }
+  ],
+  "presenterList": [
+    {
+      "presenter": "content/presenters/jason-taylor.mdx"
+    }
+  ]
+}

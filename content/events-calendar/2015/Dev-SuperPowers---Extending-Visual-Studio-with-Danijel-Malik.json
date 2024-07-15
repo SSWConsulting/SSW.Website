@@ -1,0 +1,24 @@
+{
+  "title": "Dev SuperPowers - Extending Visual Studio with Danijel Malik",
+  "url": "http://tv.ssw.com/dsp-extending-visual-studio",
+  "thumbnail": "/images/Newsletters/DevSuperpowers-Thumb.png",
+  "thumbnailDescription": "/ssw/EventsCalendar/Images/DevSuperpowers-Thumb.png",
+  "presenterName": "Danijel Malik",
+  "presenterProfileUrl": "https://sswcom.sharepoint.com/sites/Events/AboutUs/Employees/Pages/Danijel-Malik.aspx",
+  "startDateTime": "2015-08-26T14:00:00Z",
+  "endDateTime": "2015-08-26T14:00:00Z",
+  "liveStreamUrl": {
+    "description": "http://tv.ssw.com/devsuperpowers-extendingvisualstudio-live-event?countdown",
+    "url": "http://tv.ssw.com/devsuperpowers-extendingvisualstudio-live-event?countdown"
+  },
+  "calendarType": "Webinars",
+  "city": "Online",
+  "enabled": true,
+  "category": "Other",
+  "eventShortDescription": "<div class=\"ExternalClassF9333976A50F4F31B4ECF54CF254B9DD\"><p>\u200b\u200b\u200b<strong style=\"line-height&#58;1.6;\">Extending Visual Studio</strong></p><p>Visual Studio is an awesome development tool, but what really makes it great are the extensions you can find in the Visual Studio Gallery.</p><p>I reckon you've at least heard about ReSharper, WebEssentials, JustCode and tools that can make your life a little bit simpler. Now what if you wanted to write something of your own, where would you start? That's what I'm going to address in this webinar. I will teach you the basic things you need to know when writing your own extensions and at the same time build something nice and cool. You'll see it for yourself what it will be ;)<img src=\"file&#58;///C&#58;/Users/BRITTA~1/AppData/Local/Temp/msohtmlclip1/01/clip_image001.png\" alt=\"&#128521;\" style=\"width&#58;72px;margin&#58;5px;\" /></p></div>",
+  "eventDescription": "<div class=\"ExternalClassF6CE5852301747DBBE5A1181BC556603\"><p>\u200b<strong style=\"line-height&#58;1.6;\">\u200bExtending Visual Studio</strong></p><p>Visual Studio is an awesome development tool, but what really makes it great are the extensions you can find in the Visual Studio Gallery.</p><p>I reckon you've at least heard about ReSharper, WebEssentials, JustCode and tools that can make your life a little bit simpler. Now what if you wanted to write something of your own, where would you start? That's what I'm going to address in this webinar. I will teach you the basic things you need to know when writing your own extensions and at the same time build something nice and cool. You'll see it for yourself what it will be ;)\u200b</p></div>",
+  "description": "\u200b\u200b\u200b\n\nExtending Visual Studio\n\nVisual Studio is an awesome development tool, but what really makes it great are the extensions you can find in the Visual Studio Gallery.\n\nI reckon you've at least heard about ReSharper, WebEssentials, JustCode and tools that can make your life a little bit simpler. Now what if you wanted to write something of your own, where would you start? That's what I'm going to address in this webinar. I will teach you the basic things you need to know when writing your own extensions and at the same time build something nice and cool. You'll see it for yourself what it will be ;)",
+  "showOnPowerSessions": "No",
+  "hasVideo": false,
+  "externalPresenters": []
+}

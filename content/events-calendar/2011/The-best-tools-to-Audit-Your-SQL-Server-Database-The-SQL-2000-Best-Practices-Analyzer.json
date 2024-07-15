@@ -1,0 +1,19 @@
+{
+  "title": "The best tools to Audit Your SQL Server Database \"The SQL 2000 Best Practices Analyzer\"",
+  "url": "http://#",
+  "thumbnail": "/images/icons/Daytime-Training-115px.png",
+  "thumbnailDescription": "Power Sessions",
+  "startDateTime": "2011-07-31T14:00:00Z",
+  "endDateTime": "2011-07-31T15:00:00Z",
+  "calendarType": "SSW Courses",
+  "enabled": true,
+  "category": "SQL Server",
+  "categoryAnchor": "OverviewSQLServer",
+  "sessionTitle": "The best tools to Audit Your SQL Server Database \"The SQL 2000 Best Practices Analyzer\"",
+  "sessionTitleAnchor": "BestTools",
+  "eventShortDescription": "<div class=\"ExternalClass80E076CC610E4B4B82A6D23D6C42BDE8\"><div>Microsoft have&#160;a tool called &quot;Best Practices Analyzer&quot;, which&#160;all&#160;SQL Server developers and administrators should run. Come learn about many issues you can't afford to ignore from Database Design and SQL Server 2016 Readiness to T-SQL issues and poor Configuration choices.<br><br>This is a great session for everyone - from the new SQL Server developer to the old DBA! You'll all be impressed when you see how to run the tool and how to fix the identified issues.\u200b</div></div>",
+  "eventDescription": "<div class=\"ExternalClass80E076CC610E4B4B82A6D23D6C42BDE8\"><div>Microsoft recently released a tool called &quot;Best Practices Analyzer&quot;. All SQL Server developers and administrators should run this tool. Come learn about many issues you can't afford to ignore from Database Design and SQL Server 2012 Readiness to T-SQL issues and poor Configuration choices.<br><br>This is a great session for everyone - from the new SQL Server developer to the old DBA! You'll all be impressed when you see how to run the tool and how to fix the identified issues.</div></div>",
+  "description": "Microsoft have\u00a0a tool called \"Best Practices Analyzer\", which\u00a0all\u00a0SQL Server developers and administrators should run. Come learn about many issues you can't afford to ignore from Database Design and SQL Server 2016 Readiness to T-SQL issues and poor Configuration choices.\n\nThis is a great session for everyone - from the new SQL Server developer to the old DBA! You'll all be impressed when you see how to run the tool and how to fix the identified issues.\u200b",
+  "showOnPowerSessions": "Yes",
+  "externalPresenters": []
+}
