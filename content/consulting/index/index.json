@@ -383,6 +383,12 @@
       "category": "content/consulting/category/consulting.json",
       "pages": [
         {
+          "title": "Vertical Slice Architecture",
+          "description": "Unlock efficient development with Vertical Slice Architecture, enhancing scalability and simplifying maintenance in your projects.\n\n",
+          "logo": "/images/thumbs/vertical-slice-architecture-ssw.jpg",
+          "page": "content/consulting/vertical-slice-architecture.mdx"
+        },
+        {
           "title": "Brainstorming",
           "description": "Transform your team's untapped ideas into business solutions with SSW's Brainstorming Days. an engaging, collaborative environment.",
           "logo": "/images/thumbs/thumb-brainstorming.png",
