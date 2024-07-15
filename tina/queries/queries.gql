@@ -209,12 +209,14 @@ query getFutureEventsQuery(
   $fromDate: String!
   $top: Float!
   $after: String
+  $presenterName: String
   $calendarType: String
 ) {
   eventsCalendarConnection(
     filter: {
       endDateTime: { after: $fromDate }
       calendarType: { eq: $calendarType }
+      presenterName: { eq: $presenterName }
       enabled: { eq: true }
     }
     sort: "startDateTime"
@@ -229,12 +231,14 @@ query getPastEventsQuery(
   $fromDate: String!
   $top: Float!
   $before: String
+  $presenterName: String
   $calendarType: String
 ) {
   eventsCalendarConnection(
     filter: {
       startDateTime: { before: $fromDate }
       calendarType: { eq: $calendarType }
+      presenterName: { eq: $presenterName }
       enabled: { eq: true }
     }
     sort: "startDateTime"
