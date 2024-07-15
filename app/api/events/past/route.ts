@@ -5,8 +5,10 @@ import { getEventsWithClient } from "../getEvents";
 
 export async function GET(req: NextRequest) {
   let presenterName = req.nextUrl.searchParams.get("presenterName");
-  if (!presenterName)
+  if (!presenterName) {
     return new Response("presenterName is required", { status: 400 });
+  }
+  
   presenterName = hyphenateUrl(presenterName);
   const eventClient = await client.queries.getPastEventsQuery({
     fromDate: new Date().toISOString(),
