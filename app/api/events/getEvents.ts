@@ -1,16 +1,7 @@
 const formatEvent = (event) => {
-  let presenterNames = "";
-  if (event.presenterList) {
-    event.presenterList.forEach((presenter) => {
-      const presentername = presenter.presenter.presenter; // TODO: this returns an object, should return a string
-      if (presenterNames !== event.presenterName)
-        presenterNames += `, ${presenter.presenter.presenter} `;
-    });
-  }
-
   const url = event.url && fixRelativeUrl(event.url);
   return {
-    Presenter: event.presenterName + presenterNames,
+    Presenter: event.presenterName,
     Url: {
       Description: event.title, // this is alt text for the link, ask matt what he wants to do for it
       Url: url,
@@ -95,8 +86,6 @@ export const getEventsWithClient = async (eventClient, presenterName) => {
     eventClient.data.eventsCalendarConnection.edges.length
   );
   for (let event of eventClient.data.eventsCalendarConnection.edges) {
-    // await eventClient.data.eventsCalendarConnection.edges.map((event) => {
-    // console.log("presenterName", event.node.presenterName);
     if (
       event.node.presenterName &&
       event.node.presenterName.includes(presenterName)
