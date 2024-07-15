@@ -207,7 +207,7 @@ query logosContentQuery($relativePath: String!) {
 
 query getFutureEventsQuery(
   $fromDate: String!
-  $top: Float!
+  $top: Float
   $after: String
   $presenterName: String
   $calendarType: String
@@ -229,7 +229,7 @@ query getFutureEventsQuery(
 
 query getPastEventsQuery(
   $fromDate: String!
-  $top: Float!
+  $top: Float
   $before: String
   $presenterName: String
   $calendarType: String

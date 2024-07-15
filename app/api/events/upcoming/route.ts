@@ -1,15 +1,14 @@
 import { NextRequest } from "next/server";
 import client from "../../../../tina/__generated__/client";
-import { getEventsWithClient } from "../formatEvent";
+import { getEventsWithClient } from "../getEvents";
 
 export async function GET(req: NextRequest) {
-  const query = req.nextUrl.searchParams.get("presenterName");
-  if (!query) return new Response("presenterName is required", { status: 400 });
+  const presenterName = req.nextUrl.searchParams.get("presenterName");
+  if (!presenterName)
+    return new Response("presenterName is required", { status: 400 });
   const eventClient = await client.queries.getFutureEventsQuery({
     fromDate: new Date().toISOString(),
-    top: 10,
-    presenterName: query,
   });
-  const events = await getEventsWithClient(eventClient);
+  const events = await getEventsWithClient(eventClient, presenterName);
   return new Response(JSON.stringify(events), { status: 200 });
 }

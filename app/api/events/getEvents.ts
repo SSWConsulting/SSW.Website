@@ -87,11 +87,25 @@ const formatEvent = (event) => {
   };
 };
 
-export const getEventsWithClient = async (eventClient) => {
+export const getEventsWithClient = async (eventClient, presenterName) => {
   const events = [];
-  await eventClient.data.eventsCalendarConnection.edges.map((event) => {
-    events.push(formatEvent(event.node));
-  });
+
+  console.log(
+    "records",
+    eventClient.data.eventsCalendarConnection.edges.length
+  );
+  for (let event of eventClient.data.eventsCalendarConnection.edges) {
+    // await eventClient.data.eventsCalendarConnection.edges.map((event) => {
+    // console.log("presenterName", event.node.presenterName);
+    if (
+      event.node.presenterName &&
+      event.node.presenterName.includes(presenterName)
+    )
+      events.push(formatEvent(event.node));
+    if (events.length === 10) {
+      break;
+    }
+  }
   return events;
 };
 
