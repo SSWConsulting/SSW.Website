@@ -11,7 +11,7 @@ export type ArticleCardProps = {
   isExternal: boolean;
 };
 
-const ArticleCard = ({ data, schema, index }) => {
+const ArticleCard = ({ data }) => {
   const {
     title,
     pageURL,
@@ -58,16 +58,17 @@ const ArticleCardContent = ({
   body,
   userName,
   userImage,
-  userPosition
+  userPosition,
 }) => {
   return (
     <div className="size-full bg-white">
       <div>
-        <h2 className="my-1">
-          {title}
-        </h2>
-        <ArticleAuthor name={userName} position={userPosition} image={userImage} />
-        <div className="prose-p:mt-0 font-normal">
+        <h2 className="my-1">{title}</h2>
+        <ArticleAuthor
+          name={userName}
+          position={userPosition}
+          image={userImage} />
+        <div className="font-normal prose-p:mt-0">
           {body}
         </div>
       </div>
