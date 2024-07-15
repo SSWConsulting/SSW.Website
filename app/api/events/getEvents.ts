@@ -41,7 +41,9 @@ export const getEventsWithClient = async (eventClient, presenterName) => {
   for (const event of eventClient.data.eventsCalendarConnection.edges) {
     if (
       event.node.presenterName &&
-      event.node.presenterName.includes(presenterName)
+      event.node.presenterName
+        .toLowerCase()
+        .includes(presenterName.toLowerCase())
     )
       events.push(formatEvent(event.node));
     if (events.length === 10) {
