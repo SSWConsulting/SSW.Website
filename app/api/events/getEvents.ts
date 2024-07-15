@@ -38,7 +38,7 @@ const formatEvent = (event) => {
 export const getEventsWithClient = async (eventClient, presenterName) => {
   const events = [];
   // TODO: remove client side after fixing events with multiple presenters in the name
-  for (let event of eventClient.data.eventsCalendarConnection.edges) {
+  for (const event of eventClient.data.eventsCalendarConnection.edges) {
     if (
       event.node.presenterName &&
       event.node.presenterName.includes(presenterName)
