@@ -12,7 +12,7 @@ const ArticleAuthor = ({ name, position, image }: ArticleAuthorProps) => {
       <img src={image} alt="User Photo" className="h-10 w-10 rounded-full" />
       <div className="font-semibold uppercase">{name}</div>
       <div className="font-semibold">|</div>
-      <div className="text-gray-500 text-sm uppercase">{position}</div>
+      <div className="sm uppercase text-gray-500">{position}</div>
     </div>
   );
 };
