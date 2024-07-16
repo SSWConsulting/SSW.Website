@@ -416,6 +416,12 @@
           ]
         },
         {
+        "title": "Clean Architecture",
+          "description": "Discover how Clean Architecture can enhance software scalability, maintainability, and flexibility for your development projects.",
+          "logo": "/images/thumbs/clean-architecture-ssw.jpg",
+          "page": "content/consulting/clean-architecture.mdx"
+        },
+        {
           "title": "Strategic Architecture",
           "description": "Combine SSW's deep experience with best practices and industry trends to develop a strategic architecture for your organization.",
           "logo": "/images/thumbs/thumb-strategicarchitecture.jpg",
