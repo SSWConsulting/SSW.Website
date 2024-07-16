@@ -14,6 +14,9 @@ import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+import { Container } from "@/components/util/container";
+import Image from "next/image";
+
 export default function ArticlesPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
@@ -26,10 +29,21 @@ export default function ArticlesPage(
   return (
     <div>
       <SEO seo={props.seo} />
+
       <Layout menu={data.megamenu} showAzureBanner={true}>
-        <Blocks
-          prefix="ArticlesBeforeBody"
-          blocks={data.articles.beforeBody} />
+        {data.articles.bannerImg && (
+          <Container className="prose flex-1" size="custom">
+            <div data-tina-field={tinaField(data.articles, "bannerImg")}>
+              <Image
+                src={data.articles.bannerImg}
+                width={1312}
+                height={0}
+                alt="SSW Industry Banner"
+                sizes="100vw"
+              />
+            </div>
+          </Container>
+        )}
         {data.articles.seo?.showBreadcrumb === null ||
           (data.articles.seo?.showBreadcrumb && (
             <Section className="mx-auto w-full max-w-9xl px-8 py-5">
@@ -41,6 +55,7 @@ export default function ArticlesPage(
               />
             </Section>
           ))}
+
         {data.articles.title && (
           <Section
             className="mx-auto w-full max-w-9xl px-8"
@@ -51,7 +66,11 @@ export default function ArticlesPage(
         )}
         {!!data.articles.articleAuthor && (
           <Section className="mx-auto w-full max-w-9xl px-8">
-            <ArticleAuthor name={data.articles.articleAuthor.authorName} position={data.articles.articleAuthor.authorPosition} image={data.articles.articleAuthor.authorImage} />
+            <ArticleAuthor
+              name={data.articles.articleAuthor.authorName}
+              position={data.articles.articleAuthor.authorPosition}
+              image={data.articles.articleAuthor.authorImage}
+            />
           </Section>
         )}
         {data.articles.subTitle && (

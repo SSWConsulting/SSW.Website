@@ -60,14 +60,13 @@ export const articlesSchema: Collection = {
     // @ts-ignore
     seoSchema,
     {
-      type: "object",
-      list: true,
-      name: "beforeBody",
-      label: "Before body",
-      ui: {
-        visualSelector: true,
-      },
-      templates: [carouselBlockSchema],
+      type: "image",
+      name: "bannerImg",
+      label: "Banner Image",
+      required: false,
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      uploadDir: () => "articles",
     },
     {
       type: "string",
@@ -94,7 +93,7 @@ export const articlesSchema: Collection = {
         videoEmbedBlockSchema,
       ],
     },
-     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     articleAuthorSchema,
     {
