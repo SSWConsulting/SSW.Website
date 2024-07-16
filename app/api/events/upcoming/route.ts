@@ -5,9 +5,13 @@ import { getEventsWithClient } from "../getEvents";
 
 export async function GET(req: NextRequest) {
   let presenterName = req.nextUrl.searchParams.get("presenterName");
-  if (!presenterName)
-    return new Response("presenterName is required", { status: 400 });
-  presenterName = hyphenateUrl(presenterName);
+  if (presenterName) {
+    presenterName = hyphenateUrl(presenterName);
+  }
+  let query = {
+    fromDate: new Date().toISOString(),
+    top: presenterName ? undefined : 10,
+  };
   const eventClient = await client.queries.getFutureEventsQuery({
     fromDate: new Date().toISOString(),
   });

@@ -40,10 +40,11 @@ export const getEventsWithClient = async (eventClient, presenterName) => {
   // TODO: remove client side after fixing events with multiple presenters in the name
   for (const event of eventClient.data.eventsCalendarConnection.edges) {
     if (
-      event.node.presenterName &&
-      event.node.presenterName
-        .toLowerCase()
-        .includes(presenterName.toLowerCase())
+      !presenterName ||
+      (event.node.presenterName &&
+        event.node.presenterName
+          .toLowerCase()
+          .includes(presenterName.toLowerCase()))
     )
       events.push(formatEvent(event.node));
     if (events.length === 10) {
