@@ -1,7 +1,5 @@
-import { QueryClient } from "@tanstack/react-query";
 import { useFetchArticles } from "hooks/useFetchArticles";
-import { useEffect } from "react";
-import { seoSchema } from "../util/seo";
+import { LoadMore } from "../filter/events";
 import ArticleCard, { ArticleProps } from "./articleCard";
 
 const ArticlesList = () => {
@@ -32,7 +30,17 @@ const ArticlesList = () => {
     return <ArticleCard data={prop} key={i} />;
   });
 
-  return <div className="flex w-full flex-col">{list}</div>;
+  return (
+    <div className="flex w-full flex-col">
+      {list}
+      {hasMoreFuturePages && (
+        <LoadMore
+          isLoading={isFetchingFuturePages}
+          load={fetchFutureNextPage}
+        />
+      )}
+    </div>
+  );
 };
 
 export default ArticlesList;
