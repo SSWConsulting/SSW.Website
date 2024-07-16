@@ -101,9 +101,6 @@ export default function ArticlesPage(
         )}
 
         <Blocks prefix="Articles_body" blocks={data.articles._body} />
-        <Section>
-          <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
-        </Section>
       </Layout>
     </div>
   );
