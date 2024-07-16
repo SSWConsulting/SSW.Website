@@ -30,9 +30,9 @@ export const useFetchArticles = () => {
 
     error,
     isLoadingFuturePages: isLoading,
-    fetchFutureNextPage: fetchNextPage,
-    isFetchingFuturePages: isFetchingNextPage,
-    hasMoreFuturePages:
+    fetchMoreArticles: fetchNextPage,
+    isFetchingArticles: isFetchingNextPage,
+    hasMoreArticles:
       data?.pages[data?.pages.length - 1].articlesConnection.pageInfo
         .hasNextPage,
   };

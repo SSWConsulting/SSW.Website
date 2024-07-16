@@ -5,10 +5,9 @@ import ArticleCard, { ArticleProps } from "./articleCard";
 const ArticlesList = () => {
   const {
     nextArticles,
-    isLoadingFuturePages,
-    fetchFutureNextPage,
-    isFetchingFuturePages,
-    hasMoreFuturePages,
+    fetchMoreArticles,
+    isFetchingArticles,
+    hasMoreArticles,
   } = useFetchArticles();
 
   const list = nextArticles.map((article, i) => {
@@ -33,11 +32,8 @@ const ArticlesList = () => {
   return (
     <div className="flex w-full flex-col">
       {list}
-      {hasMoreFuturePages && (
-        <LoadMore
-          isLoading={isFetchingFuturePages}
-          load={fetchFutureNextPage}
-        />
+      {hasMoreArticles && (
+        <LoadMore isLoading={isFetchingArticles} load={fetchMoreArticles} />
       )}
     </div>
   );
