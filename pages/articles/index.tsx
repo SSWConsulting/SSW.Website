@@ -7,11 +7,8 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 import classNames from "classnames";
-import { InferGetStaticPropsType } from "next";
-import { useEffect, useState } from "react";
-import { tinaField, useTina } from "tinacms/dist/react";
+import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { ArticleCardProps } from "../../components/articles/articleCard";
 import ArticlesHeader from "../../components/articles/articlesHeader";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
