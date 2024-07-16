@@ -12,6 +12,9 @@ export type ArticleCardProps = {
 };
 
 const ArticleCard = ({ data }) => {
+  const url = `/articles/${data._sys.filename}`;
+  const { authorImage, authorName, authorPosition } = data.articleAuthor;
+
   const {
     title,
     pageURL,
@@ -21,7 +24,6 @@ const ArticleCard = ({ data }) => {
     userImage,
     userPosition,
   }: ArticleCardProps = data;
-
   return isExternal ? (
     <CustomLink
       href={pageURL ?? ""}
@@ -37,17 +39,13 @@ const ArticleCard = ({ data }) => {
       />
     </CustomLink>
   ) : (
-    <CustomLink
-      href={pageURL ?? ""}
-      className="unstyled no-underline"
-      key={pageURL}
-    >
+    <CustomLink href={url ?? ""} className="unstyled no-underline" key={url}>
       <ArticleCardContent
         title={title}
-        body={body}
-        userImage={userImage}
-        userName={userName}
-        userPosition={userPosition}
+        body={data.seo.description}
+        userImage={authorImage}
+        userName={authorName}
+        userPosition={authorPosition}
       />
     </CustomLink>
   );
@@ -67,10 +65,9 @@ const ArticleCardContent = ({
         <ArticleAuthor
           name={userName}
           position={userPosition}
-          image={userImage} />
-        <div className="font-normal prose-p:mt-0">
-          {body}
-        </div>
+          image={userImage}
+        />
+        <div className="font-normal prose-p:mt-0">{body}</div>
       </div>
     </div>
   );
