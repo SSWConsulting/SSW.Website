@@ -8,13 +8,13 @@ export async function GET(req: NextRequest) {
   if (!presenterName) {
     return new Response("presenterName is required", { status: 400 });
   }
-  
+
   presenterName = hyphenateUrl(presenterName);
   const eventClient = await client.queries.getPastEventsQuery({
     fromDate: new Date().toISOString(),
-    top: 999 /* GraphQL will limit the count to 50 by default, 
-    but were doing the filtering outside of the query because GraphQL has no "like" filter
-    https://tina.io/docs/graphql/queries/advanced/filter-documents/#operator-types
+    top: 999 /* 
+    TODO: Update this to do filtering in the data layer instead 
+    https://github.com/SSWConsulting/SSW.Website/issues/2833
     */,
   });
   const events = await getEventsWithClient(eventClient, presenterName);
