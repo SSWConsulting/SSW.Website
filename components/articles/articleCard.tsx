@@ -1,48 +1,38 @@
 import { CustomLink } from "../customLink";
 import ArticleAuthor from "./articleAuthor";
 
-export type ArticleCardProps = {
+export type ArticleProps = {
   title: string;
+  url: string;
   body: string;
-  pageURL: string;
-  userName: string;
-  userPosition: string;
-  userImage: string;
-  isExternal: boolean;
+  authorName: string;
+  authorPosition: string;
+  authorImage: string;
 };
 
-const ArticleCard = ({ data }) => {
-  const url = `/articles/${data._sys.filename}`;
-  const { authorImage, authorName, authorPosition } = data.articleAuthor;
+export type ArticleCardProps = {
+  data: ArticleProps;
+  key: number;
+};
 
+const ArticleCard = (props: ArticleCardProps) => {
   const {
     title,
-    pageURL,
     body,
-    isExternal,
-    userName,
-    userImage,
-    userPosition,
-  }: ArticleCardProps = data;
-  return isExternal ? (
+    authorImage,
+    authorName,
+    authorPosition,
+    url,
+  }: ArticleProps = props.data;
+  return (
     <CustomLink
-      href={pageURL ?? ""}
+      href={url ?? ""}
       className="unstyled no-underline"
-      key={pageURL}
+      key={props.key}
     >
       <ArticleCardContent
         title={title}
         body={body}
-        userImage={userImage}
-        userName={userName}
-        userPosition={userPosition}
-      />
-    </CustomLink>
-  ) : (
-    <CustomLink href={url ?? ""} className="unstyled no-underline" key={url}>
-      <ArticleCardContent
-        title={title}
-        body={data.seo.description}
         userImage={authorImage}
         userName={authorName}
         userPosition={authorPosition}
