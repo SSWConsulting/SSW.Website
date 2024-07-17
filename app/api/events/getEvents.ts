@@ -34,8 +34,14 @@ const formatEvent = (event) => {
         : null,
   };
 };
-
-export const getEventsWithClient = async (eventClient, presenterName) => {
+export const getEventsWithClient = async (
+  eventClient,
+  presenterName: string | undefined,
+  top
+) => {
+  if (top) {
+    top = parseInt(top);
+  }
   const events = [];
   // TODO: remove client side after fixing events with multiple presenters in the name
   for (const event of eventClient.data.eventsCalendarConnection.edges) {
@@ -46,9 +52,11 @@ export const getEventsWithClient = async (eventClient, presenterName) => {
           .toLowerCase()
           .includes(presenterName.toLowerCase()))
     ) {
+      console.log("adding event to list");
       events.push(formatEvent(event.node));
     }
-    if (events.length === 10) {
+
+    if (events.length === (top || 10)) {
       break;
     }
   }
