@@ -52,7 +52,6 @@ export const getEventsWithClient = async (
           .toLowerCase()
           .includes(presenterName.toLowerCase()))
     ) {
-      console.log("adding event to list");
       events.push(formatEvent(event.node));
     }
 

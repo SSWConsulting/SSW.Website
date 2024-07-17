@@ -6,7 +6,7 @@ import { getParams } from "../upcoming/route";
 
 export async function GET(req: NextRequest) {
   let presenterName = req.nextUrl.searchParams.get("presenterName");
-  let top = req.nextUrl.searchParams.get("top");
+  const top = req.nextUrl.searchParams.get("top");
   if (presenterName) {
     presenterName = hyphenateUrl(presenterName);
   }
