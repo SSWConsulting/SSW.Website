@@ -19,8 +19,10 @@
       "presenter": "content/presenters/matt-goldman.mdx"
     }
   ],
+  "youTubeId": "UuBhJa0l0MU",
   "delayedLiveStreamStart": true,
   "liveStreamDelayMinutes": 30,
+  "trailerUrl": "https://youtu.be/mfQkM7Kop5s",
   "hostedAtSsw": true,
   "enabled": true
 }
