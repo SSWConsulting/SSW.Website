@@ -45,8 +45,9 @@ export const getEventsWithClient = async (eventClient, presenterName) => {
         event.node.presenterName
           .toLowerCase()
           .includes(presenterName.toLowerCase()))
-    )
+    ) {
       events.push(formatEvent(event.node));
+    }
     if (events.length === 10) {
       break;
     }
