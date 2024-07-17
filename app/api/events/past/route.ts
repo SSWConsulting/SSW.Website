@@ -14,5 +14,11 @@ export async function GET(req: NextRequest) {
     getParams(top, presenterName)
   );
   const events = await getEventsWithClient(eventClient, presenterName, top);
-  return new Response(JSON.stringify(events), { status: 200 });
+  return new Response(JSON.stringify(events), {
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "https://ssw.com.au",
+    },
+    status: 200,
+  });
 }
