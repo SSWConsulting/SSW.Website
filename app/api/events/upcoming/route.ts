@@ -12,9 +12,7 @@ export async function GET(req: NextRequest) {
     fromDate: new Date().toISOString(),
     top: presenterName ? undefined : 10,
   };
-  const eventClient = await client.queries.getFutureEventsQuery({
-    fromDate: new Date().toISOString(),
-  });
+  const eventClient = await client.queries.getFutureEventsQuery(query);
   const events = await getEventsWithClient(eventClient, presenterName);
   return new Response(JSON.stringify(events), { status: 200 });
 }
