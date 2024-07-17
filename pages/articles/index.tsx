@@ -22,8 +22,6 @@ export const ARTICLES_QUERY_KEY = "articlesKey";
 
 export default function ArticlesIndexPage(props) {
   const { data, dehydratedState } = props;
-  console.log("data", data);
-
   return (
     <>
       <HydrationBoundary state={dehydratedState}>

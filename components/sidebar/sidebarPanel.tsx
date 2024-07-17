@@ -15,7 +15,7 @@ const SidebarPanel = ({
 }: SidebarPanelProps) => {
   return (
     <>
-      <div className="border-2 bg-gray-100 px-5 py-5">
+      <div className="border-2 bg-gray-100 p-5">
         {title && <strong>{title}</strong>}
         <p className="pt-5">{description}</p>
         {actionUrl && (

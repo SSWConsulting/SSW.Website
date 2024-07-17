@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 type ArticleAuthorProps = {
   name?: string;
   position: string;
@@ -18,7 +20,7 @@ const ArticleAuthor = ({ name, position, image }: ArticleAuthorProps) => {
       />
       <div className="font-semibold uppercase">{name}</div>
       <div className="font-semibold">|</div>
-      <div className="sm uppercase text-gray-500">{position}</div>
+      <div className="text-sm uppercase text-gray-500">{position}</div>
     </div>
   );
 };
