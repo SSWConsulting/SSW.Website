@@ -23,7 +23,7 @@ const formatEvent = (event) => {
     CalendarType: event.calendarType,
     City: event.city,
     Enabled: event.enabled,
-    EventShortDescription: descriptionToPlainText(event.description),
+    EventShortDescription: descriptionToHTML(event.description),
     ShowOnPowerSessions: "No",
     NoteInternal: event.internalNote,
     HasVideo: event.youTubeId ? "Yes" : "No",
@@ -62,7 +62,7 @@ const fixRelativeUrl = (url: string) => {
   return url;
 };
 
-const descriptionToPlainText = (description) => {
+const descriptionToHTML = (description) => {
   let plainText = "";
   description.children.forEach((paragraph) => {
     paragraph.children.forEach((textNode) => {
