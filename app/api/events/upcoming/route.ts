@@ -8,7 +8,7 @@ export async function GET(req: NextRequest) {
   if (presenterName) {
     presenterName = hyphenateUrl(presenterName);
   }
-  let query = {
+  const query = {
     fromDate: new Date().toISOString(),
     top: presenterName ? undefined : 10,
   };
