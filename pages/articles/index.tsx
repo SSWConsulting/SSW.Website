@@ -7,7 +7,7 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 import classNames from "classnames";
-import { tinaField } from "tinacms/dist/react";
+import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import ArticlesHeader from "../../components/articles/articlesHeader";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
@@ -21,7 +21,12 @@ import { removeExtension } from "../../services/client/utils.service";
 export const ARTICLES_QUERY_KEY = "articlesKey";
 
 export default function ArticlesIndexPage(props) {
-  const { data, dehydratedState } = props;
+  const { data } = useTina({
+    data: props.data,
+    query: props.query,
+    variables: props.variables,
+  });
+  const { dehydratedState } = props;
   return (
     <>
       <HydrationBoundary state={dehydratedState}>
