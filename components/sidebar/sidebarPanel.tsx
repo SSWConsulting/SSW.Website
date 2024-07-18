@@ -21,7 +21,7 @@ const SidebarPanel = ({
         {actionUrl && (
           <div className="flex justify-center pt-5">
             <a
-              className="unstyled flex h-12 shrink-0 cursor-pointer items-center justify-center rounded bg-ssw-red px-5 uppercase text-white no-underline hover:opacity-70 max-sm:my-5 sm:w-fit"
+              className="unstyled flex h-12 shrink-0 cursor-pointer items-center justify-center rounded bg-ssw-red px-5 text-center uppercase text-white no-underline hover:opacity-70 max-sm:my-5 sm:w-fit"
               href={actionUrl}
             >
               {actionText ?? "Learn more"}

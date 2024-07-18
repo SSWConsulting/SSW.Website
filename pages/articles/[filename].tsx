@@ -75,7 +75,7 @@ export default function ArticlesPage(
         {data.articles.subTitle && (
           <section
             className={classNames(
-              "prose mx-auto w-full max-w-9xl flex-row px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 xl:flex"
+              "prose mx-auto w-full max-w-9xl flex-row px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 lg:flex"
             )}
           >
             <div data-tina-field={tinaField(data.articles, "_body")}>
@@ -86,7 +86,7 @@ export default function ArticlesPage(
               />
             </div>
             {data.articles.showSidebarPanel && (
-              <div className="w-full md:px-16 xl:max-w-sm xl:shrink xl:pl-16">
+              <div className="w-full pl-16 pr-16 lg:shrink lg:pl-16 lg:pr-0">
                 <SidebarPanel
                   title={data.articles.sidebarPanel.title}
                   description={data.articles.sidebarPanel.description}
