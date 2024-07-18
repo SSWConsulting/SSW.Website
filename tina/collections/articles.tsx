@@ -11,7 +11,6 @@ import {
   verticalImageLayoutBlockSchema,
 } from "../../components/blocks";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
-import { articleAuthorSchema } from "../../components/util/articleAuthor";
 import { seoSchema } from "../../components/util/seo";
 import { sidebarPanelSchema } from "../../components/util/sidebarPanel";
 import { tipField } from "./shared-fields";
@@ -93,9 +92,14 @@ export const articlesSchema: Collection = {
         videoEmbedBlockSchema,
       ],
     },
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    articleAuthorSchema,
+    {
+      type: "reference",
+      name: "author",
+      label: "Presenter",
+      description:
+        'if you cannot see the Author here add them to "Presenters" in the list',
+      collections: ["presenter"],
+    },
     {
       type: "boolean",
       name: "fullWidthBody",
