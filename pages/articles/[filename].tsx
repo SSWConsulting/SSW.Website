@@ -97,8 +97,6 @@ export default function ArticlesPage(
             )}
           </section>
         )}
-
-        <Blocks prefix="Articles_body" blocks={data.articles._body} />
       </Layout>
     </div>
   );

@@ -109,16 +109,6 @@ export const articlesSchema: Collection = {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     sidebarPanelSchema,
-    {
-      type: "object",
-      list: true,
-      name: "_body",
-      label: "Blocks",
-      templates: [...Schemas.pageBlocks],
-      ui: {
-        visualSelector: true,
-      },
-    },
   ],
 };
 
