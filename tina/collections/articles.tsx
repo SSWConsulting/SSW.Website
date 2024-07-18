@@ -102,16 +102,6 @@ export const articlesSchema: Collection = {
     },
     {
       type: "boolean",
-      name: "fullWidthBody",
-      label: "Full Width Body",
-    },
-    {
-      type: "boolean",
-      name: "hideSidebarOnMobile",
-      label: "Hide sidebar on mobile",
-    },
-    {
-      type: "boolean",
       name: "showSidebarPanel",
       label: "Show Sidebar Panel",
       required: false,
