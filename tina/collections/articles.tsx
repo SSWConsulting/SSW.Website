@@ -125,54 +125,6 @@ export const articlesSchema: Collection = {
         visualSelector: true,
       },
     },
-    {
-      type: "object",
-      label: "History Cards",
-      description: "Cards for the timeline on the History page.",
-      name: "historyCards",
-      ui: {
-        itemProps: (item) => {
-          return { label: item?.year };
-        },
-      },
-      list: true,
-      fields: [
-        {
-          type: "number",
-          label: "Year",
-          name: "year",
-        },
-        {
-          type: "string",
-          label: "Title",
-          name: "title",
-        },
-        {
-          type: "string",
-          label: "Location",
-          name: "location",
-          options: [
-            {
-              value: "Australia",
-              label: "Australia",
-            },
-            {
-              value: "France",
-              label: "France",
-            },
-            {
-              value: "China",
-              label: "China",
-            },
-          ],
-        },
-        {
-          type: "rich-text",
-          label: "Description",
-          name: "description",
-        },
-      ],
-    },
   ],
 };
 
