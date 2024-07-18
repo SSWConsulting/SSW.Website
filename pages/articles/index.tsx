@@ -72,13 +72,9 @@ export default function ArticlesIndexPage(props) {
                   content={data.articlesIndex._body}
                 />
 
-                {data.articlesIndex.articles?.length > 0 ? (
-                  <Section className="mx-auto w-full">
-                    <ArticlesList />
-                  </Section>
-                ) : (
-                  <></>
-                )}
+                <Section className="mx-auto w-full">
+                  <ArticlesList />
+                </Section>
               </div>
             )}
             {data.articlesIndex.showSidebarPanel && (
