@@ -1,3 +1,20 @@
+import client from "@/tina/client";
+
+export const getPastEvents = async (top, presenterName) => {
+  console.log("presenterName", presenterName);
+  const eventClient = await client.queries.getPastEventsQuery(
+    formatEventParams(top, presenterName)
+  );
+  return await fetchEventsWithClient(eventClient, presenterName, top);
+};
+
+export const getUpcomingEvents = async (top, presenterName) => {
+  const eventClient = await client.queries.getFutureEventsQuery(
+    formatEventParams(top, presenterName)
+  );
+  return await fetchEventsWithClient(eventClient, presenterName, top);
+};
+
 const formatEvent = (event) => {
   const url = event.url && fixRelativeUrl(event.url);
   return {
@@ -34,7 +51,7 @@ const formatEvent = (event) => {
         : null,
   };
 };
-export const getEventsWithClient = async (
+export const fetchEventsWithClient = async (
   eventClient,
   presenterName: string | undefined,
   top
@@ -77,4 +94,23 @@ const descriptionToHTML = (description) => {
     });
   });
   return plainText;
+};
+
+const formatEventParams = (
+  top: string | undefined,
+  presenterName: string | undefined
+) => {
+  let topArg = 999;
+  if (top && !presenterName) {
+    topArg = parseInt(top);
+  } else if (!top && !presenterName) {
+    topArg = 10;
+  }
+  // return the first 10 results if no presenter name is provided and no top argurment is provided
+  const queryArgs = {
+    fromDate: new Date().toISOString(),
+    top: topArg,
+  };
+  console.log(queryArgs);
+  return queryArgs;
 };
