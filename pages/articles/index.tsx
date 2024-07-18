@@ -78,7 +78,7 @@ export default function ArticlesIndexPage(props) {
               </div>
             )}
             {data.articlesIndex.showSidebarPanel && (
-              <div className="max-w-sm shrink pl-16">
+              <div className="w-full pl-16 pr-16 md:max-w-sm lg:shrink lg:pl-16 lg:pr-0">
                 <SidebarPanel
                   title={data.articlesIndex.sidebarPanel.title}
                   description={data.articlesIndex.sidebarPanel.description}
