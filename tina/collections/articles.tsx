@@ -189,38 +189,6 @@ export const articlesIndexSchema: Collection = {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     sidebarPanelSchema,
-    {
-      type: "object",
-      label: "Articles",
-      description: "Articles",
-      name: articlesIndexSchemaConstants.articles.value,
-      ui: {
-        itemProps: (item) => {
-          return { label: item?.title };
-        },
-      },
-      list: true,
-      fields: [
-        {
-          type: "string",
-          label: "Title",
-          name: articlesIndexSchemaConstants.articles.title,
-          required: true,
-        },
-        {
-          type: "rich-text",
-          label: "Body",
-          name: articlesIndexSchemaConstants.articles.body,
-          required: true,
-        },
-        {
-          type: "string",
-          label: "Page URL",
-          name: articlesIndexSchemaConstants.articles.pageURL,
-          required: true,
-        },
-      ],
-    },
   ],
 };
 
