@@ -192,11 +192,6 @@ export const articlesIndexSchema: Collection = {
     },
     {
       type: "boolean",
-      name: "fullWidthBody",
-      label: "Full Width Body",
-    },
-    {
-      type: "boolean",
       name: "showSidebarPanel",
       label: "Show Sidebar Panel",
       required: false,
@@ -220,38 +215,19 @@ export const articlesIndexSchema: Collection = {
           type: "string",
           label: "Title",
           name: articlesIndexSchemaConstants.articles.title,
+          required: true,
         },
         {
           type: "rich-text",
           label: "Body",
           name: articlesIndexSchemaConstants.articles.body,
+          required: true,
         },
         {
           type: "string",
           label: "Page URL",
           name: articlesIndexSchemaConstants.articles.pageURL,
-        },
-        {
-          type: "string",
-          label: "User Name",
-          name: articlesIndexSchemaConstants.articles.userName,
-        },
-        {
-          type: "string",
-          label: "User Position",
-          name: articlesIndexSchemaConstants.articles.userPosition,
-        },
-        {
-          type: "string",
-          label: "User Image URL",
-          name: articlesIndexSchemaConstants.articles.userImage,
-        },
-        {
-          type: "boolean",
-          label: "External Page",
-          description:
-            "Select this if the link is not part of the website. This includes SSW.Rules, and SSW.People links",
-          name: articlesIndexSchemaConstants.articles.isExternal,
+          required: true,
         },
       ],
     },

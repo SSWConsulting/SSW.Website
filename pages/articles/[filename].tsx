@@ -24,7 +24,7 @@ export default function ArticlesPage(
     query: props.query,
     variables: props.variables,
   });
-
+  const { author } = data.articles;
   return (
     <div>
       <SEO seo={props.seo} />
@@ -63,20 +63,19 @@ export default function ArticlesPage(
             <h1 className="mt-4 py-2">{data.articles.title}</h1>
           </Section>
         )}
-        {!!data.articles.articleAuthor && (
+        {!!data.articles.author && (
           <Section className="mx-auto w-full max-w-9xl px-8">
             <ArticleAuthor
-              name={data.articles.articleAuthor.authorName}
-              position={data.articles.articleAuthor.authorPosition}
-              image={data.articles.articleAuthor.authorImage}
+              name={author?.presenter?.name}
+              position={author?.position}
+              image={author?.profileImg}
             />
           </Section>
         )}
         {data.articles.subTitle && (
           <section
             className={classNames(
-              "prose mx-auto w-full max-w-9xl flex-row px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0",
-              data.articles.fullWidthBody ? "" : "md:flex"
+              "prose mx-auto w-full max-w-9xl flex-row px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 xl:flex"
             )}
           >
             <div data-tina-field={tinaField(data.articles, "_body")}>
@@ -87,7 +86,7 @@ export default function ArticlesPage(
               />
             </div>
             {data.articles.showSidebarPanel && (
-              <div className="max-w-sm shrink pl-16">
+              <div className="w-full md:px-16 xl:max-w-sm xl:shrink xl:pl-16">
                 <SidebarPanel
                   title={data.articles.sidebarPanel.title}
                   description={data.articles.sidebarPanel.description}

@@ -5,9 +5,9 @@ export type ArticleProps = {
   title: string;
   url: string;
   body: string;
-  authorName: string;
-  authorPosition: string;
-  authorImage: string;
+  authorName: string | null;
+  authorPosition: string | null;
+  authorImage: string | null;
 };
 
 export type ArticleCardProps = {

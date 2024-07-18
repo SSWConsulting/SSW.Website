@@ -12,17 +12,19 @@ const ArticlesList = () => {
 
   const list = nextArticles.map((article, i) => {
     const {
+      author,
       title,
-      articleAuthor: { authorImage, authorName, authorPosition },
       seo: { description },
       _sys: { filename },
     } = article;
+
+    console.log(author);
     const prop: ArticleProps = {
       url: `/articles/${filename}`,
       title,
-      authorImage,
-      authorName,
-      authorPosition,
+      authorImage: author?.profileImg,
+      authorName: author?.presenter?.name,
+      authorPosition: author?.position,
       body: description,
     };
 

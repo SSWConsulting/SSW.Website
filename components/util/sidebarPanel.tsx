@@ -4,6 +4,7 @@ export const sidebarPanelSchema = {
   type: "object",
   label: "Sidebar Panel Values",
   name: "sidebarPanel",
+  required: false,
   fields: [
     {
       type: "string",
