@@ -1,7 +1,6 @@
 import { Breadcrumbs } from "@/blocks/breadcrumbs";
 import { componentRenderer } from "@/blocks/mdxComponentRenderer";
 import ArticleAuthor from "@/components/articles/articleAuthor";
-import { Blocks } from "@/components/blocks-renderer";
 import { Layout } from "@/components/layout";
 import SidebarPanel from "@/components/sidebar/sidebarPanel";
 import { Section } from "@/components/util/section";
@@ -78,10 +77,9 @@ export default function ArticlesPage(
               "prose mx-auto w-full max-w-9xl flex-row px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 lg:flex"
             )}
           >
-            <div data-tina-field={tinaField(data.articles, "_body")}>
+            <div data-tina-field={tinaField(data.articles, "subTitle")}>
               <TinaMarkdown
                 content={data.articles.subTitle}
-                data-tina-field={tinaField(data.articles, "subTitle")}
                 components={componentRenderer}
               />
             </div>

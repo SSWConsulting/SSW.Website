@@ -17,8 +17,6 @@ const ArticlesList = () => {
       seo: { description },
       _sys: { filename },
     } = article;
-
-    console.log(author);
     const prop: ArticleProps = {
       url: `/articles/${filename}`,
       title,
