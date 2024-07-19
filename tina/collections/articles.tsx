@@ -96,7 +96,8 @@ export const articlesSchema: Collection = {
       type: "reference",
       name: "author",
       label: "Author",
-      description: `if you cannot see the Author here add them to "Events - Presenters" in the list`,
+      description:
+        "if you cannot see the Author here add them to 'Events - Presenters' in the list",
       collections: ["presenter"],
     },
     {
