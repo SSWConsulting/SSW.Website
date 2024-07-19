@@ -84,7 +84,6 @@ export default function ArticlesPage(
               />
             </div>
             {data.articles.showSidebarPanel && (
-              // eslint-disable-next-line
               <div className="w-full px-16 lg:shrink lg:pl-16 lg:pr-0">
                 <SidebarPanel
                   title={data.articles.sidebarPanel.title}
