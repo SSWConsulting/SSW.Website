@@ -78,8 +78,7 @@ export default function ArticlesIndexPage(props) {
               </div>
             )}
             {data.articlesIndex.showSidebarPanel && (
-              // eslint-disable-next-line
-              <div className="w-full pl-16 pr-16 pt-16 md:max-w-sm md:pt-0 lg:shrink lg:pl-16 lg:pr-0">
+              <div className="w-full px-16 pt-16 md:max-w-sm md:pt-0 lg:shrink lg:pl-16 lg:pr-0">
                 <SidebarPanel
                   title={data.articlesIndex.sidebarPanel.title}
                   description={data.articlesIndex.sidebarPanel.description}
