@@ -417,10 +417,10 @@
           ]
         },
         {
-          "title": "Clean Architecture",
+        "title": "Clean Architecture",
           "description": "Discover how Clean Architecture can enhance software scalability, maintainability, and flexibility for your development projects.",
           "logo": "/images/thumbs/clean-architecture-ssw.jpg",
-          "page": "content/consulting/Clean-Architecture.mdx"
+          "page": "content/consulting/clean-architecture.mdx"
         },
         {
           "title": "Vertical Slice Architecture",

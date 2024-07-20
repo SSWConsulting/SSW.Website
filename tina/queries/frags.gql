@@ -7,29 +7,56 @@ fragment LayoutQueryFragment on Query {
   }
 }
 
-fragment GetCalendarEventsParts on EventsCalendarConnection {
-      pageInfo {
-      hasPreviousPage
-      hasNextPage
-      startCursor
-      endCursor
-    }
-    totalCount
-    edges {
-      cursor
-      node {
-        ... on Document {
-          _sys {
-            filename
-            basename
-            breadcrumbs
-            path
-            relativePath
-            extension
-          }
-          id
+fragment GetArticleParts on ArticlesConnection {
+  pageInfo {
+    hasPreviousPage
+    hasNextPage
+    startCursor
+    endCursor
+  }
+  totalCount
+  edges {
+    cursor
+    node {
+      ... on Document {
+        _sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
         }
-        ...EventsCalendarParts
+        id
       }
+      ...ArticlesParts
     }
+  }
+}
+
+fragment GetCalendarEventsParts on EventsCalendarConnection {
+  pageInfo {
+    hasPreviousPage
+    hasNextPage
+    startCursor
+    endCursor
+  }
+  totalCount
+  edges {
+    cursor
+    node {
+      ... on Document {
+        _sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+      ...EventsCalendarParts
+    }
+  }
 }

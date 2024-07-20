@@ -345,7 +345,7 @@ interface LoadMoreProps {
   isLoading: boolean;
 }
 
-const LoadMore = ({ load, isLoading }: LoadMoreProps) => {
+export const LoadMore = ({ load, isLoading }: LoadMoreProps) => {
   return (
     <div className="flex flex-col items-center">
       <UtilityButton
