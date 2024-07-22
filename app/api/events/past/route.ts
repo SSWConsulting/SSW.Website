@@ -1,12 +1,12 @@
 import { getPastEvents } from "@/services/server/getEvents";
-import { hyphenateUrl } from "app/api/hyphenateUrl";
+import { dehyphenateUrl } from "app/api/dehyphenateUrl";
 import { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {
   let presenterName = req.nextUrl.searchParams.get("presenterName");
   const top = req.nextUrl.searchParams.get("top");
   if (presenterName) {
-    presenterName = hyphenateUrl(presenterName);
+    presenterName = dehyphenateUrl(presenterName);
   }
   const events = await getPastEvents(top, presenterName);
   return new Response(JSON.stringify(events), {
