@@ -22,7 +22,7 @@ const formatEvent = (event) => {
   return {
     Presenter: event.presenterName,
     Url: {
-      Description: event.title, // this is alt text for the link, ask matt what he wants to do for it
+      Description: event.title,
       Url: url,
     },
     title: event.title,
