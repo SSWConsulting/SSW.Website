@@ -3,7 +3,6 @@ import client from "@/tina/client";
 const WEBSITE_URL = "https://ssw.com.au";
 
 export const getPastEvents = async (top, presenterName) => {
-  console.log("presenterName", presenterName);
   const eventClient = await client.queries.getPastEventsQuery(
     formatEventParams(top, presenterName)
   );
