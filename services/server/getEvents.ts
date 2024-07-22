@@ -62,7 +62,9 @@ export const fetchEventsWithClient = async (
     top = parseInt(top);
   }
   const events = [];
-  // TODO: remove client side after fixing events with multiple presenters in the name
+  /* TODO: remove client side after fixing events with multiple presenters in the name
+    https://github.com/SSWConsulting/SSW.Website/issues/2833  */
+
   for (const event of eventClient.data.eventsCalendarConnection.edges) {
     if (presenterListedInName(presenterName, event)) {
       events.push(formatEvent(event.node));
