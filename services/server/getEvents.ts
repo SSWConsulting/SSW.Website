@@ -62,13 +62,7 @@ export const fetchEventsWithClient = async (
   const events = [];
   // TODO: remove client side after fixing events with multiple presenters in the name
   for (const event of eventClient.data.eventsCalendarConnection.edges) {
-    if (
-      !presenterName ||
-      (event.node.presenterName &&
-        event.node.presenterName
-          .toLowerCase()
-          .includes(presenterName.toLowerCase()))
-    ) {
+    if (presenterListedInName(presenterName, event)) {
       events.push(formatEvent(event.node));
     }
 
@@ -96,6 +90,19 @@ const descriptionToHTML = (description) => {
   return plainText;
 };
 
+const presenterListedInName = (
+  presenterName: string | null | undefined,
+  event: eventEdge
+) => {
+  return (
+    !presenterName ||
+    (event.node.presenterName &&
+      event.node.presenterName
+        .toLowerCase()
+        .includes(presenterName.toLowerCase()))
+  );
+};
+
 const formatEventParams = (
   top: string | undefined,
   presenterName: string | undefined
@@ -113,4 +120,10 @@ const formatEventParams = (
   };
   console.log(queryArgs);
   return queryArgs;
+};
+
+type eventEdge = {
+  node: {
+    presenterName: string | null | undefined;
+  };
 };
