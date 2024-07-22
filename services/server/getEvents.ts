@@ -25,7 +25,7 @@ const formatEvent = (event) => {
       Description: event.title,
       Url: url,
     },
-    title: event.title,
+    Title: event.title,
     Thumbnail: {
       Url: fixRelativeUrl(event.thumbnail),
       Description: event.thumbnailDescription,
