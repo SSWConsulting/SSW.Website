@@ -112,11 +112,10 @@ const formatEventParams = (
   presenterName: string | undefined
 ) => {
   let topArg = EVENTS_MAX_SIZE_OVERRIDE;
-  if (top && !presenterName) {
-    topArg = parseInt(top);
-  } else if (!top && !presenterName) {
-    topArg = 10;
+  if (!presenterName) {
+    topArg = top ? parseInt(top) : 10;
   }
+
   // return the first 10 results if no presenter name is provided and no top argurment is provided
   const queryArgs = {
     fromDate: new Date().toISOString(),
