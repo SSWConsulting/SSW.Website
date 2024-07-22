@@ -54,12 +54,14 @@ query getPastEventsQuery(
   $fromDate: String!
   $top: Float!
   $before: String
+  $presenterName: String
   $calendarType: String
 ) {
   eventsCalendarConnection(
     filter: {
       startDateTime: { before: $fromDate }
       calendarType: { eq: $calendarType }
+      presenterName: { eq: $presenterName }
       enabled: { eq: true }
     }
     sort: "startDateTime"
@@ -263,28 +265,6 @@ query getFutureEventsQuery(
     sort: "startDateTime"
     first: $top
     after: $after
-  ) {
-    ...GetCalendarEventsParts
-  }
-}
-
-query getPastEventsQuery(
-  $fromDate: String!
-  $top: Float
-  $before: String
-  $presenterName: String
-  $calendarType: String
-) {
-  eventsCalendarConnection(
-    filter: {
-      startDateTime: { before: $fromDate }
-      calendarType: { eq: $calendarType }
-      presenterName: { eq: $presenterName }
-      enabled: { eq: true }
-    }
-    sort: "startDateTime"
-    last: $top
-    before: $before
   ) {
     ...GetCalendarEventsParts
   }
