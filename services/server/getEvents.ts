@@ -1,6 +1,7 @@
 import client from "@/tina/client";
 
 const WEBSITE_URL = "https://ssw.com.au";
+const EVENTS_MAX_SIZE_OVERRIDE = 999;
 
 export const getPastEvents = async (top, presenterName) => {
   const eventClient = await client.queries.getPastEventsQuery(
@@ -110,7 +111,7 @@ const formatEventParams = (
   top: string | undefined,
   presenterName: string | undefined
 ) => {
-  let topArg = 999;
+  let topArg = EVENTS_MAX_SIZE_OVERRIDE;
   if (top && !presenterName) {
     topArg = parseInt(top);
   } else if (!top && !presenterName) {
