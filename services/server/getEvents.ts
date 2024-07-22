@@ -1,5 +1,7 @@
 import client from "@/tina/client";
 
+const WEBSITE_URL = "https://ssw.com.au";
+
 export const getPastEvents = async (top, presenterName) => {
   console.log("presenterName", presenterName);
   const eventClient = await client.queries.getPastEventsQuery(
@@ -75,7 +77,7 @@ export const fetchEventsWithClient = async (
 
 const fixRelativeUrl = (url: string) => {
   if (url.startsWith("/")) {
-    return `https://ssw.com.au${url}`;
+    return WEBSITE_URL + url;
   }
   return url;
 };
