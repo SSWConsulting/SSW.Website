@@ -1,5 +1,5 @@
+import { dehyphenateUrl } from "@/services/server/dehyphenateUrl";
 import { getPastEvents } from "@/services/server/getEvents";
-import { dehyphenateUrl } from "app/api/dehyphenateUrl";
 import { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {
