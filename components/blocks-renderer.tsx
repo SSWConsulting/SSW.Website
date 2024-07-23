@@ -112,8 +112,10 @@ export const Blocks = ({ prefix, blocks, prefetchedEvents = {} }) => {
       {blocks ? (
         blocks.map((block, i) => {
           if (block.__typename.endsWith(UPCOMING_EVENTS_TYPE)) {
-            if (!prefetchedEvents[block.__typename])
-              console.log("ERROR, no events found for", block.__typename);
+            block = {
+              ...block,
+              prefetchedEvents: prefetchedEvents[block.__typename][i],
+            };
           }
           return (
             <Block

@@ -40,12 +40,9 @@ export default function HomePage(
     variables: props.variables,
   });
 
-  if (props.prefetchedEvents)
-    console.log("prefetched events", props.prefetchedEvents);
-  else console.log("no prefetched events");
   let events = {};
   events = props.prefetchedEvents;
-
+  console.log("prefetched events in homepage", events);
   if (!pageBlocks) {
     return null;
   }
@@ -121,7 +118,7 @@ export default function HomePage(
               <div className="mt-5 md:col-span-2 md:mt-0">
                 <Blocks
                   prefix="PageSideBar"
-                  prefetchedEvents={events}
+                  prefetchedEvents={props.prefetchedEvents}
                   blocks={data.page.sideBar}
                 />
               </div>
@@ -147,22 +144,39 @@ export const getStaticProps = async ({ params }) => {
     //TODO: refactor using object.values
     const blockComponentNames = ["sideBar", "beforeBody", "afterBody"];
 
-    blockComponentNames.forEach(async (element) => {
-      tinaProps.data.page[element].forEach(async (blockElement, i) => {
-        const typename = blockElement.__typename;
-        if (typename.endsWith(UPCOMING_EVENTS_TYPE)) {
-          if (!eventsMap[typename]) eventsMap[typename] = [];
-          const prefetchedEvents = await getFiniteEvents(
-            blockElement.numberOfEvents
-          );
-          eventsMap[typename][i] = prefetchedEvents;
-        }
-      });
-    });
+    await Promise.all(
+      blockComponentNames.map(async (element) => {
+        await Promise.all(
+          tinaProps.data.page[element].map(async (blockElement, i) => {
+            const typename = blockElement.__typename;
+            if (typename.endsWith(UPCOMING_EVENTS_TYPE)) {
+              if (!eventsMap[typename]) {
+                console.log(
+                  "emptying eventsMap array due to missing type",
+                  typename
+                );
+                eventsMap[typename] = [];
+              }
+              const prefetchedEvents = await getFiniteEvents(
+                blockElement.numberOfEvents
+              );
+
+              console.log("assigning value to array", typename);
+              eventsMap[typename][i] = prefetchedEvents;
+            }
+          })
+        );
+      })
+    );
+    console.log("eventsMap (end of foreach)", eventsMap);
   }
+
+  console.log("eventsMap (after foreach)", eventsMap);
   if (tinaProps.data.page.seo && !tinaProps.data.page.seo.canonical) {
     tinaProps.data.page.seo.canonical = `${tinaProps.data.global.header.url}${relativePath}`;
   }
+  console.log("prefetche");
+  console.log("eventsMap (get static props)", eventsMap);
 
   return {
     props: {

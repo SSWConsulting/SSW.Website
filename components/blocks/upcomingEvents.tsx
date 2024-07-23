@@ -13,36 +13,38 @@ import { EventTrimmed } from "../filter/events";
 
 export const UpcomingEvents = ({ data }) => {
   const [events, setEvents] = useState<EventTrimmed[]>([]);
-
-  useEffect(() => {
-    if (data.prefetchedEvents)
-      console.log("prefetechedEvents", data.prefetchedEvents);
-    else console.log("events not provided");
-  });
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   // console.log("prefetchedEvents", data.prefetchedEvents);
 
   // data.prefetchedEvents && setEvents(data.prefetchedEvents);
-  // useEffect(() => {
-  //   const fetchEvents = async () => {
-  //     setLoading(true);
-  //     const today = new Date();
-  //     today.setHours(0, 0, 0, 0);
-  //     const events = await client.queries.getFutureEventsQuery({
-  //       fromDate: today.toISOString(),
-  //       top: data.numberOfEvents,
-  //     });
-  //     setLoading(false);
+  useEffect(() => {
+    if (data.prefetchedEvents?.length === data.numberOfEvents) {
+      setEvents(data.prefetchedEvents);
+    } else {
+      const fetchEvents = async () => {
+        setLoading(true);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const events = await client.queries.getFutureEventsQuery({
+          fromDate: today.toISOString(),
+          top: data.numberOfEvents,
+        });
+        setLoading(false);
 
-  // if (!events.data) return;
-  // const mappedEvents = events.data.eventsCalendarConnection.edges.map(
-  //   (event) => ({
-  //     ...event.node,
-  //     startDateTime: new Date(event.node.startDateTime),
-  //     endDateTime: new Date(event.node.endDateTime),
-  //   })
-  // );
-  // setEvents(mappedEvents);
+        if (!events.data) return;
+        const mappedEvents = events.data.eventsCalendarConnection.edges.map(
+          (event) => ({
+            ...event.node,
+            startDateTime: new Date(event.node.startDateTime),
+            endDateTime: new Date(event.node.endDateTime),
+          })
+        );
+        setEvents(mappedEvents);
+      };
+
+      await fetchEvents();
+    }
+  });
 
   return (
     <div className="prose mt-5 max-w-none sm:my-0">
@@ -56,7 +58,8 @@ export const UpcomingEvents = ({ data }) => {
         <div className="grow">
           {data.prefetchedEvents &&
             data.prefetchedEvents.map((event, index) => {
-              <UpcomingEvent event={event} key={index} />;
+              console.log("mapping prefetech events");
+              return <UpcomingEvent event={event} key={index} />;
             })}
         </div>
         <div className="mt-3 flex flex-row-reverse justify-center sm:justify-start">
@@ -78,7 +81,7 @@ type UpcomingEventProps = {
 
 const UpcomingEvent = ({ event }: UpcomingEventProps) => {
   const [imageFailed, setImageFailed] = useState<boolean>(false);
-
+  console.log("upcoming event");
   const { relativeDate, formattedDate } = useFormatDates(event, false);
 
   return (
