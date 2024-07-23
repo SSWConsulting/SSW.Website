@@ -2,6 +2,7 @@ import client from "@/tina/client";
 
 const WEBSITE_URL = "https://ssw.com.au";
 const EVENTS_MAX_SIZE_OVERRIDE = 999;
+const DEFAULT_PAGE_SIZE = 10;
 
 export const getPastEvents = async (top, presenterName) => {
   const eventClient = await client.queries.getPastEventsQuery(
@@ -69,7 +70,7 @@ export const fetchEventsWithClient = async (
       events.push(formatEvent(event.node));
     }
 
-    if (events.length === (top || 10)) {
+    if (events.length === (top || DEFAULT_PAGE_SIZE)) {
       break;
     }
   }
@@ -102,7 +103,7 @@ const formatEventParams = (
 ) => {
   let topArg = EVENTS_MAX_SIZE_OVERRIDE;
   if (!presenterName) {
-    topArg = top ? parseInt(top) : 10;
+    topArg = top ? parseInt(top) : DEFAULT_PAGE_SIZE;
   }
 
   // return the first 10 results if no presenter name is provided and no top argurment is provided
