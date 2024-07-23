@@ -42,7 +42,6 @@ const formatEvent = (event) => {
     CalendarType: event.calendarType,
     City: event.city,
     Enabled: event.enabled,
-    EventShortDescription: descriptionToHTML(event.description),
     ShowOnPowerSessions: "No",
     NoteInternal: event.internalNote,
     HasVideo: event.youTubeId ? "Yes" : "No",
@@ -82,16 +81,6 @@ const fixRelativeUrl = (url: string) => {
     return WEBSITE_URL + url;
   }
   return url;
-};
-
-const descriptionToHTML = (description) => {
-  let plainText = "";
-  description.children.forEach((paragraph) => {
-    paragraph.children.forEach((textNode) => {
-      plainText += `<p>${textNode.text}</p>`;
-    });
-  });
-  return plainText;
 };
 
 const presenterListedInName = (
