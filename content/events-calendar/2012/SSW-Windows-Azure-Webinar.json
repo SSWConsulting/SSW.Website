@@ -1,7 +1,7 @@
 {
   "title": "SSW Windows Azure Webinar",
   "url": "/ssw/Events/Webinars/Windows-Azure.aspx",
-  "thumbnail": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-windowsazure.jpg",
+  "thumbnail": "/images/thumbs/thumb-webinar-windowsazure.jpg",
   "thumbnailDescription": "http://ssw.com.au/ssw/EventsCalendar/Images/thumb-webinar-windowsazure.jpg",
   "presenterName": "Andrew Coates",
   "startDateTime": "2012-04-27T01:00:00Z",
