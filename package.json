@@ -53,7 +53,7 @@
     "@headlessui/tailwindcss": "^0.2.1",
     "@heroicons/react": "^2.1.1",
     "@marketsystems/nextjs13-appdir-breadcrumbs": "^1.0.4",
-    "@microsoft/applicationinsights-react-js": "17.1.2",
+    "@microsoft/applicationinsights-react-js": "17.3.0",
     "@microsoft/applicationinsights-web": "3.1.2",
     "@next/bundle-analyzer": "^14.2.4",
     "@next/third-parties": "^14.2.3",
