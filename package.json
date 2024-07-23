@@ -47,7 +47,7 @@
     "ts-node": "^10.9.2"
   },
   "dependencies": {
-    "@azure/msal-node": "^2.9.2",
+    "@azure/msal-node": "^2.11.1",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@headlessui/react": "^1.7.19",
     "@headlessui/tailwindcss": "^0.2.1",
@@ -101,5 +101,5 @@
   "resolutions": {
     "final-form": "4.20.1"
   },
-  "packageManager": "pnpm@8.15.5"
+  "packageManager": "pnpm@9.5.0"
 }

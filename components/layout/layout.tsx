@@ -96,7 +96,6 @@ export const Layout = ({
         break;
     }
   });
-
   return (
     <>
       <Head>
@@ -121,8 +120,7 @@ export const Layout = ({
         />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#cc4141" />
-        <meta name="msapplication-TileColor" content="#cc4141" />
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#cc4141" />
       </Head>
       <Theme>
         {/* Ensures next/font CSS variable is accessible for all components */}

@@ -19,7 +19,6 @@ import isBetween from "dayjs/plugin/isBetween";
 import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
-import Head from "next/head";
 import { LiveSteam } from "./live-steam-banner/live-stream";
 import { DEFAULT } from "./meta-data/default";
 import { getMegamenu } from "./utils/get-mega-menu";
@@ -41,7 +40,9 @@ export const DEFAULT_METADATA: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#cc4141",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default async function RootLayout({
@@ -67,13 +68,6 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={openSans.className}>
-      <Head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <meta name="msapplication-TileColor" content="#cc4141" />
-        <meta name="theme-color" content="#ffffff" />
-      </Head>
       <body>
         {/* <Theme> */}
         {/* Ensures next/font CSS variable is accessible for all components */}

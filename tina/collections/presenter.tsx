@@ -11,6 +11,7 @@ export const presenterSchemaConstants = {
     peopleProfileURL: "peopleProfileURL",
   },
   about: "about",
+  position: "position",
 };
 
 export const presenterSchema: Collection = {
@@ -57,6 +58,15 @@ export const presenterSchema: Collection = {
       type: "rich-text",
       name: presenterSchemaConstants.about,
       label: "About",
+    },
+
+    {
+      type: "string",
+      label: "Position",
+      name: presenterSchemaConstants.position,
+      description:
+        "The presenter's occupation, e.g. Chief Architect for Adam Cogan",
+      required: false,
     },
   ],
 };

@@ -468,6 +468,10 @@
               "name": "Our Blogs",
               "menuItems": [
                 {
+                  "name": "Articles",
+                  "url": "/articles"
+                },
+                {
                   "name": "News & Press",
                   "url": "/company/news/"
                 },
