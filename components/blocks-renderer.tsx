@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 
+import { UPCOMING_EVENTS_TYPE } from "pages/[...filename]";
 import { AboutUs } from "./blocks/aboutUs";
 import { Agenda } from "./blocks/agenda";
 import { BuiltOnAzure } from "./blocks/builtOnAzure";
@@ -105,18 +106,24 @@ const componentMap = {
   HorizontalCard,
 };
 
-export const Blocks = ({ prefix, blocks }) => {
+export const Blocks = ({ prefix, blocks, prefetchedEvents = {} }) => {
   return (
     <div>
       {blocks ? (
-        blocks.map((block, i) => (
-          <Block
-            key={i + block.__typename}
-            blockData={block}
-            prefix={prefix}
-            i={i}
-          />
-        ))
+        blocks.map((block, i) => {
+          if (block.__typename.endsWith(UPCOMING_EVENTS_TYPE)) {
+            if (!prefetchedEvents[block.__typename])
+              console.log("ERROR, no events found for", block.__typename);
+          }
+          return (
+            <Block
+              key={i + block.__typename}
+              blockData={block}
+              prefix={prefix}
+              i={i}
+            />
+          );
+        })
       ) : (
         <></>
       )}
@@ -126,14 +133,14 @@ export const Blocks = ({ prefix, blocks }) => {
 
 const Block = ({ prefix, blockData, i }) => {
   const Component = componentMap[blockData.__typename?.replace(prefix, "")];
-
+  prefix;
   if (!Component) {
     return <></>;
   }
 
   const field = `blocks.${i}`;
-  const blockProps = { ...blockData, data: blockData, parentField: field };
 
+  const blockProps = { ...blockData, data: blockData, parentField: field };
   return (
     <div className="contents" data-tinafield={field}>
       <Component {...blockProps} />

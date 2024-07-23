@@ -6,39 +6,43 @@ import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 
 import { useFormatDates } from "../../hooks/useFormatDates";
+import client from "../../tina/__generated__/client";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
-import client from "../../tina/__generated__/client";
 import { EventTrimmed } from "../filter/events";
 
 export const UpcomingEvents = ({ data }) => {
   const [events, setEvents] = useState<EventTrimmed[]>([]);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const fetchEvents = async () => {
-      setLoading(true);
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-      const events = await client.queries.getFutureEventsQuery({
-        fromDate: today.toISOString(),
-        top: data.numberOfEvents,
-      });
-      setLoading(false);
+    if (data.prefetchedEvents)
+      console.log("prefetechedEvents", data.prefetchedEvents);
+    else console.log("events not provided");
+  });
+  // const [loading, setLoading] = useState(false);
+  // console.log("prefetchedEvents", data.prefetchedEvents);
 
-      if (!events.data) return;
-      const mappedEvents = events.data.eventsCalendarConnection.edges.map(
-        (event) => ({
-          ...event.node,
-          startDateTime: new Date(event.node.startDateTime),
-          endDateTime: new Date(event.node.endDateTime),
-        })
-      );
-      setEvents(mappedEvents);
-    };
+  // data.prefetchedEvents && setEvents(data.prefetchedEvents);
+  // useEffect(() => {
+  //   const fetchEvents = async () => {
+  //     setLoading(true);
+  //     const today = new Date();
+  //     today.setHours(0, 0, 0, 0);
+  //     const events = await client.queries.getFutureEventsQuery({
+  //       fromDate: today.toISOString(),
+  //       top: data.numberOfEvents,
+  //     });
+  //     setLoading(false);
 
-    fetchEvents();
-  }, [data.numberOfEvents]);
+  // if (!events.data) return;
+  // const mappedEvents = events.data.eventsCalendarConnection.edges.map(
+  //   (event) => ({
+  //     ...event.node,
+  //     startDateTime: new Date(event.node.startDateTime),
+  //     endDateTime: new Date(event.node.endDateTime),
+  //   })
+  // );
+  // setEvents(mappedEvents);
 
   return (
     <div className="prose mt-5 max-w-none sm:my-0">
@@ -50,13 +54,10 @@ export const UpcomingEvents = ({ data }) => {
       </h2>
       <div className="not-prose">
         <div className="grow">
-          {loading ? (
-            <p>Loading...</p>
-          ) : (
-            events.map((event, index) => (
-              <UpcomingEvent event={event} key={index} />
-            ))
-          )}
+          {data.prefetchedEvents &&
+            data.prefetchedEvents.map((event, index) => {
+              <UpcomingEvent event={event} key={index} />;
+            })}
         </div>
         <div className="mt-3 flex flex-row-reverse justify-center sm:justify-start">
           <CustomLink
