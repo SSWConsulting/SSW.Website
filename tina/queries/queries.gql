@@ -50,26 +50,6 @@ query getArticlesQuery($after: String, $top: Float!) {
   }
 }
 
-query getPastEventsQuery(
-  $fromDate: String!
-  $top: Float!
-  $before: String
-  $calendarType: String
-) {
-  eventsCalendarConnection(
-    filter: {
-      startDateTime: { before: $fromDate }
-      calendarType: { eq: $calendarType }
-      enabled: { eq: true }
-    }
-    sort: "startDateTime"
-    last: $top
-    before: $before
-  ) {
-    ...GetCalendarEventsParts
-  }
-}
-
 query caseStudyContentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   caseStudy(relativePath: $relativePath) {
