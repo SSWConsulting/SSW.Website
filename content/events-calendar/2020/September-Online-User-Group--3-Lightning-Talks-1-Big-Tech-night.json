@@ -47,8 +47,5 @@
     }
   ],
   "presenterList": [
-    {
-      "presenter": "content/presenters/presenter-test.mdx"
-    }
   ]
 }

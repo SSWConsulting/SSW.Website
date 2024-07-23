@@ -54,12 +54,14 @@ query getPastEventsQuery(
   $fromDate: String!
   $top: Float!
   $before: String
+  $presenterName: String
   $calendarType: String
 ) {
   eventsCalendarConnection(
     filter: {
       startDateTime: { before: $fromDate }
       calendarType: { eq: $calendarType }
+      presenterName: { eq: $presenterName }
       enabled: { eq: true }
     }
     sort: "startDateTime"
@@ -248,39 +250,21 @@ query logosContentQuery($relativePath: String!) {
 
 query getFutureEventsQuery(
   $fromDate: String!
-  $top: Float!
+  $top: Float
   $after: String
+  $presenterName: String
   $calendarType: String
 ) {
   eventsCalendarConnection(
     filter: {
       endDateTime: { after: $fromDate }
       calendarType: { eq: $calendarType }
+      presenterName: { eq: $presenterName }
       enabled: { eq: true }
     }
     sort: "startDateTime"
     first: $top
     after: $after
-  ) {
-    ...GetCalendarEventsParts
-  }
-}
-
-query getPastEventsQuery(
-  $fromDate: String!
-  $top: Float!
-  $before: String
-  $calendarType: String
-) {
-  eventsCalendarConnection(
-    filter: {
-      startDateTime: { before: $fromDate }
-      calendarType: { eq: $calendarType }
-      enabled: { eq: true }
-    }
-    sort: "startDateTime"
-    last: $top
-    before: $before
   ) {
     ...GetCalendarEventsParts
   }
