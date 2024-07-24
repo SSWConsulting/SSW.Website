@@ -201,9 +201,11 @@ export const getStaticProps = async ({ params }) => {
     tinaProps.data.consulting?.testimonialCategories
       ?.map((category) => category?.testimonialCategory?.name)
       ?.filter((item) => !!item) || [];
-  const eventsMap = tinaProps?.data?.consulting?.afterBody
-    ? await prefetchEventsForBlocks(["afterBody"], tinaProps.data.consulting)
-    : {};
+  const eventsMap = await prefetchEventsForBlocks(
+    ["afterBody"],
+    tinaProps.data.consulting
+  );
+
   const testimonialsResult = await getRandomTestimonialsByCategory(categories);
 
   const seo = tinaProps.data.consulting.seo;

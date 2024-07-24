@@ -6,21 +6,22 @@ export const prefetchEventsForBlocks = async (blocks: string[], dataSource) => {
   let eventsMap = {};
   await Promise.all(
     blocks.map(async (element) => {
-      await Promise.all(
-        dataSource[element].map(async (blockElement, i) => {
-          const typename = blockElement.__typename;
-          if (typename.endsWith(UPCOMING_EVENTS_TYPE)) {
-            if (!eventsMap[typename]) {
-              eventsMap[typename] = [];
+      if (dataSource[element]) {
+        await Promise.all(
+          dataSource[element].map(async (blockElement, i) => {
+            const typename = blockElement.__typename;
+            if (typename.endsWith(UPCOMING_EVENTS_TYPE)) {
+              if (!eventsMap[typename]) {
+                eventsMap[typename] = [];
+              }
+              const prefetchedEvents = await getFiniteEvents(
+                blockElement.numberOfEvents
+              );
+              eventsMap[typename][i] = prefetchedEvents;
             }
-            const prefetchedEvents = await getFiniteEvents(
-              blockElement.numberOfEvents
-            );
-
-            eventsMap[typename][i] = prefetchedEvents;
-          }
-        })
-      );
+          })
+        );
+      }
     })
   );
   return eventsMap;
