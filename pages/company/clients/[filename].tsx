@@ -1,3 +1,4 @@
+import { prefetchEventsForBlocks } from "@/helpers/prefetchEventsForBlocks";
 import client from "@/tina/client";
 import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
@@ -55,7 +56,11 @@ export default function CompanyPage(
             </h2>
           </div>
         </Section>
-        <Blocks prefix="CaseStudy_body" blocks={data.caseStudy._body} />
+        <Blocks
+          prefetchedEvents={props.prefetchedEvents}
+          prefix="CaseStudy_body"
+          blocks={data.caseStudy._body}
+        />
         <Section className="prose mx-auto !block w-full max-w-9xl px-8 pb-16 pt-0">
           <TinaMarkdown
             data-tina-field={tinaField(data.caseStudy, "content")}
@@ -79,6 +84,11 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${params.filename}.mdx`,
   });
 
+  const eventsMap = await prefetchEventsForBlocks(
+    ["_body"],
+    tinaProps.data.caseStudy
+  );
+
   const seo = tinaProps.data.caseStudy.seo;
   if (seo && (seo?.canonical === null || seo?.canonical === "")) {
     seo.canonical = `${tinaProps.data.global.header.url}company/clients/${params.filename}`;
@@ -86,6 +96,7 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
+      prefetchedEvents: eventsMap,
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,

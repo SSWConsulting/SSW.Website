@@ -1,6 +1,7 @@
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+import { prefetchEventsForBlocks } from "@/helpers/prefetchEventsForBlocks";
 import { client } from "@/tina/client";
 import { InferGetStaticPropsType } from "next";
 import { ReactElement } from "react";
@@ -103,6 +104,7 @@ export default function ConsultingPage(
             {data.consulting.afterBody ? (
               <div>
                 <Blocks
+                  prefetchedEvents={props.prefetchedEvents}
                   prefix={"ConsultingAfterBody"}
                   blocks={data.consulting.afterBody}
                 />
@@ -199,7 +201,9 @@ export const getStaticProps = async ({ params }) => {
     tinaProps.data.consulting?.testimonialCategories
       ?.map((category) => category?.testimonialCategory?.name)
       ?.filter((item) => !!item) || [];
-
+  const eventsMap = tinaProps?.data?.consulting?.afterBody
+    ? await prefetchEventsForBlocks(["afterBody"], tinaProps.data.consulting)
+    : {};
   const testimonialsResult = await getRandomTestimonialsByCategory(categories);
 
   const seo = tinaProps.data.consulting.seo;
@@ -225,6 +229,7 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
+      prefetchedEvents: eventsMap,
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,

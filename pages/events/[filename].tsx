@@ -1,5 +1,6 @@
 import { tinaField, useTina } from "tinacms/dist/react";
 
+import { prefetchEventsForBlocks } from "@/helpers/prefetchEventsForBlocks";
 import { client } from "@/tina/client";
 import { InferGetStaticPropsType } from "next";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -81,7 +82,11 @@ export default function EventsPage(
             </Container>
           )}
 
-          <Blocks prefix="Events_body" blocks={data.events._body} />
+          <Blocks
+            prefetchedEvents={props.prefetchedEvents}
+            prefix="Events_body"
+            blocks={data.events._body}
+          />
 
           <div data-tina-field={tinaField(data.events, "videos")}>
             <VideoCards
@@ -143,7 +148,10 @@ export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.eventsContentQuery({
     relativePath: `${params.filename}.mdx`,
   });
-
+  const eventsMap = await prefetchEventsForBlocks(
+    ["_body"],
+    tinaProps.data.events
+  );
   const categories =
     tinaProps.data.events?.testimonialCategories?.map(
       (category) => category.testimonialCategory.name
@@ -157,6 +165,7 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
+      prefetchedEvents: eventsMap,
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,

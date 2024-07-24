@@ -2,12 +2,12 @@ import client from "@/tina/client";
 
 export const UPCOMING_EVENTS_TYPE = "UpcomingEvents";
 
-export const prefetchEventsForBlocks = async (blocks: string[], tinaProps) => {
+export const prefetchEventsForBlocks = async (blocks: string[], dataSource) => {
   let eventsMap = {};
   await Promise.all(
     blocks.map(async (element) => {
       await Promise.all(
-        tinaProps.data.page[element].map(async (blockElement, i) => {
+        dataSource[element].map(async (blockElement, i) => {
           const typename = blockElement.__typename;
           if (typename.endsWith(UPCOMING_EVENTS_TYPE)) {
             if (!eventsMap[typename]) {

@@ -112,11 +112,13 @@ export const Blocks = ({ prefix, blocks, prefetchedEvents = {} }) => {
         blocks.map((block, i) => {
           if (block.__typename.endsWith(UPCOMING_EVENTS_TYPE)) {
             console.log("block element located in blocks-renderer.tsx");
-            block = {
-              ...block,
-              prefetchedEvents: prefetchedEvents[block.__typename][i],
-            };
-          } else console.log("name did not match", block.__typename);
+            if (prefetchedEvents[block.__typename]) {
+              block = {
+                ...block,
+                prefetchedEvents: prefetchedEvents[block.__typename][i],
+              };
+            }
+          }
           return (
             <Block
               key={i + block.__typename}

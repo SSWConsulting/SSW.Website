@@ -94,7 +94,11 @@ export default function HomePage(
             </span>
           </Section>
         )}
-        <Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
+        <Blocks
+          prefix="PageBeforeBody"
+          prefetchedEvents={props.prefetchedEvents}
+          blocks={data.page.beforeBody}
+        />
         <Container
           className={classNames("flex-1", {
             "pt-0": data.page.removeBodyTopMargin,
@@ -125,7 +129,11 @@ export default function HomePage(
           </div>
         </Container>
         <div className="no-print">
-          <Blocks prefix="PageAfterBody" blocks={data.page.afterBody} />
+          <Blocks
+            prefetchedEvents={props.prefetchedEvents}
+            prefix="PageAfterBody"
+            blocks={data.page.afterBody}
+          />
         </div>
       </Layout>
     </>
@@ -134,12 +142,14 @@ export default function HomePage(
 
 export const getStaticProps = async ({ params }) => {
   const relativePath = params.filename.join("/");
-  const blockComponentNames = ["sideBar", "beforeBody", "afterBody"];
   const tinaProps = await client.queries.contentQuery({
     relativePath: `${relativePath}.mdx`,
   });
 
-  let eventsMap = await prefetchEventsForBlocks(blockComponentNames, tinaProps);
+  let eventsMap = await prefetchEventsForBlocks(
+    ["sideBar", "beforeBody", "afterBody"],
+    tinaProps.data.page
+  );
 
   console.log("eventsMap", eventsMap);
   if (tinaProps.data.page.seo && !tinaProps.data.page.seo.canonical) {

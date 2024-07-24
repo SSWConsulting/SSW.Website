@@ -18,6 +18,7 @@ import { SEO } from "../../../components/util/seo";
 import { RecaptchaContext } from "../../../context/RecaptchaContext";
 import { removeExtension } from "../../../services/client/utils.service";
 
+import { prefetchEventsForBlocks } from "@/helpers/prefetchEventsForBlocks";
 import ReactDOMServer from "react-dom/server";
 import { sanitiseXSS, spanWhitelist } from "../../../helpers/validator";
 
@@ -97,6 +98,7 @@ export default function VideoProductionPage(
             <Container padding="px-4" className="flex w-full flex-wrap">
               <div>
                 <Blocks
+                  prefetchedEvents={props.prefetchedEvents}
                   prefix={"VideoProductionAfterBody"}
                   blocks={data.videoProduction.afterBody}
                 />
@@ -139,7 +141,10 @@ export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.videoProductionContentQuery({
     relativePath: `${params.filename}.mdx`,
   });
-
+  const eventsMap = await prefetchEventsForBlocks(
+    ["afterBody"],
+    tinaProps.data.videoProduction
+  );
   const seo = tinaProps.data.videoProduction.seo;
   if (seo && !seo.canonical) {
     seo.canonical = `${tinaProps.data.global.header.url}consulting/video-production/${params.filename}`;
@@ -147,6 +152,7 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
+      prefetchedEvents: eventsMap,
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,

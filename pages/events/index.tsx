@@ -1,6 +1,12 @@
+import { prefetchEventsForBlocks } from "@/helpers/prefetchEventsForBlocks";
 import client from "@/tina/client";
-import { useRouter } from "next/router";
+import {
+  HydrationBoundary,
+  QueryClient,
+  dehydrate,
+} from "@tanstack/react-query";
 import type { InferGetStaticPropsType } from "next";
+import { useRouter } from "next/router";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Blocks } from "../../components/blocks-renderer";
@@ -9,11 +15,6 @@ import { EventsFilter } from "../../components/filter/events";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
-import {
-  HydrationBoundary,
-  QueryClient,
-  dehydrate,
-} from "@tanstack/react-query";
 import {
   FUTURE_EVENTS_QUERY_KEY,
   getFutureEvents,
@@ -54,6 +55,7 @@ export default function EventsIndexPage(
           />
         </Container>
         <Blocks
+          prefetchedEvents={props.prefetchedEvents}
           prefix="EventsIndexAfterEvents"
           blocks={data.eventsIndex.afterEvents}
         />
@@ -66,7 +68,10 @@ export const getStaticProps = async () => {
   const tinaProps = await client.queries.eventsIndexContentQuery({
     relativePath: "index.mdx",
   });
-
+  const eventsMap = await prefetchEventsForBlocks(
+    ["afterEvents"],
+    tinaProps.data.eventsIndex
+  );
   const queryClient = new QueryClient();
 
   await queryClient.prefetchInfiniteQuery({
@@ -81,6 +86,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
+      prefetchedEvents: eventsMap,
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,

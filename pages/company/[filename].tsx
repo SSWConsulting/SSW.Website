@@ -11,6 +11,7 @@ import TestimonialPanel from "@/components/offices/testimonialPanel";
 import { Section } from "@/components/util/section";
 import { SEO } from "@/components/util/seo";
 import { RecaptchaContext } from "@/context/RecaptchaContext";
+import { prefetchEventsForBlocks } from "@/helpers/prefetchEventsForBlocks";
 import { removeExtension } from "@/services/client/utils.service";
 import client from "@/tina/client";
 import classNames from "classnames";
@@ -42,7 +43,11 @@ export default function CompanyPage(
       <div>
         <SEO seo={props.seo} />
         <Layout menu={data.megamenu}>
-          <Blocks prefix="CompanyBeforeBody" blocks={data.company.beforeBody} />
+          <Blocks
+            prefetchedEvents={props.prefetchedEvents}
+            prefix="CompanyBeforeBody"
+            blocks={data.company.beforeBody}
+          />
           {data.company.seo?.showBreadcrumb === null ||
             (data.company.seo?.showBreadcrumb && (
               <Section className="mx-auto w-full max-w-9xl px-8 py-5">
@@ -104,7 +109,11 @@ export default function CompanyPage(
             </section>
           )}
 
-          <Blocks prefix="Company_body" blocks={data.company._body} />
+          <Blocks
+            prefetchedEvents={props.prefetchedEvents}
+            prefix="Company_body"
+            blocks={data.company._body}
+          />
           {data.company.historyCards?.length > 0 && (
             <Section className="mx-auto w-full max-w-9xl px-8 py-5">
               <HistoryTimeline cardProps={historyCardProps} />
@@ -133,9 +142,13 @@ export const getStaticProps = async ({ params }) => {
   if (seo && (seo?.canonical === null || seo?.canonical === "")) {
     seo.canonical = `${tinaProps.data.global.header.url}company/${params.filename}`;
   }
-
+  const eventsMap = await prefetchEventsForBlocks(
+    ["beforeBody", "_body"],
+    tinaProps
+  );
   return {
     props: {
+      prefetchedEvents: eventsMap,
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
@@ -150,7 +163,6 @@ export const getStaticProps = async ({ params }) => {
 export const getStaticPaths = async () => {
   let pageListData = await client.queries.companyConnection();
   const allPagesListData = pageListData;
-
   while (pageListData.data.companyConnection.pageInfo.hasNextPage) {
     const lastCursor = pageListData.data.companyConnection.pageInfo.endCursor;
     pageListData = await client.queries.companyConnection({
