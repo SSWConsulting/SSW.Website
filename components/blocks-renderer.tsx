@@ -1,6 +1,5 @@
+import { UPCOMING_EVENTS_TYPE } from "@/helpers/prefetchEventsForBlocks";
 import dynamic from "next/dynamic";
-
-import { UPCOMING_EVENTS_TYPE } from "pages/[...filename]";
 import { AboutUs } from "./blocks/aboutUs";
 import { Agenda } from "./blocks/agenda";
 import { BuiltOnAzure } from "./blocks/builtOnAzure";
@@ -112,11 +111,12 @@ export const Blocks = ({ prefix, blocks, prefetchedEvents = {} }) => {
       {blocks ? (
         blocks.map((block, i) => {
           if (block.__typename.endsWith(UPCOMING_EVENTS_TYPE)) {
+            console.log("block element located in blocks-renderer.tsx");
             block = {
               ...block,
               prefetchedEvents: prefetchedEvents[block.__typename][i],
             };
-          }
+          } else console.log("name did not match", block.__typename);
           return (
             <Block
               key={i + block.__typename}

@@ -1,6 +1,7 @@
 import { Blocks } from "@/components/blocks-renderer";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { EventTrimmed } from "@/components/filter/events";
+import { prefetchEventsForBlocks } from "@/helpers/prefetchEventsForBlocks";
 import { client } from "@/tina/client";
 import classNames from "classnames";
 import { getFutureEvents } from "hooks/useFetchEvents";
@@ -19,8 +20,6 @@ import { Container } from "../components/util/container";
 import { Section } from "../components/util/section";
 import { SEO } from "../components/util/seo";
 import { removeExtension } from "../services/client/utils.service";
-
-export const UPCOMING_EVENTS_TYPE = "UpcomingEvents";
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -135,48 +134,17 @@ export default function HomePage(
 
 export const getStaticProps = async ({ params }) => {
   const relativePath = params.filename.join("/");
-
+  const blockComponentNames = ["sideBar", "beforeBody", "afterBody"];
   const tinaProps = await client.queries.contentQuery({
     relativePath: `${relativePath}.mdx`,
   });
-  let eventsMap = {};
-  if (relativePath === "home") {
-    //TODO: refactor using object.values
-    const blockComponentNames = ["sideBar", "beforeBody", "afterBody"];
 
-    await Promise.all(
-      blockComponentNames.map(async (element) => {
-        await Promise.all(
-          tinaProps.data.page[element].map(async (blockElement, i) => {
-            const typename = blockElement.__typename;
-            if (typename.endsWith(UPCOMING_EVENTS_TYPE)) {
-              if (!eventsMap[typename]) {
-                console.log(
-                  "emptying eventsMap array due to missing type",
-                  typename
-                );
-                eventsMap[typename] = [];
-              }
-              const prefetchedEvents = await getFiniteEvents(
-                blockElement.numberOfEvents
-              );
+  let eventsMap = await prefetchEventsForBlocks(blockComponentNames, tinaProps);
 
-              console.log("assigning value to array", typename);
-              eventsMap[typename][i] = prefetchedEvents;
-            }
-          })
-        );
-      })
-    );
-    console.log("eventsMap (end of foreach)", eventsMap);
-  }
-
-  console.log("eventsMap (after foreach)", eventsMap);
+  console.log("eventsMap", eventsMap);
   if (tinaProps.data.page.seo && !tinaProps.data.page.seo.canonical) {
     tinaProps.data.page.seo.canonical = `${tinaProps.data.global.header.url}${relativePath}`;
   }
-  console.log("prefetche");
-  console.log("eventsMap (get static props)", eventsMap);
 
   return {
     props: {
@@ -186,18 +154,6 @@ export const getStaticProps = async ({ params }) => {
       variables: tinaProps.variables,
     },
   };
-};
-
-const getFiniteEvents = async (numberOfEvents) => {
-  const res = await client.queries.getFutureEventsQuery({
-    fromDate: new Date().toISOString(),
-    top: numberOfEvents,
-  });
-  return res.data.eventsCalendarConnection.edges.map((event) => ({
-    ...event.node,
-    startDateTime: new Date(event.node.startDateTime).toISOString(),
-    endDateTime: new Date(event.node.endDateTime).toISOString(),
-  }));
 };
 
 export const getStaticPaths = async () => {
