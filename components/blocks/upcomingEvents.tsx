@@ -81,7 +81,6 @@ type UpcomingEventProps = {
 
 const UpcomingEvent = ({ event }: UpcomingEventProps) => {
   const [imageFailed, setImageFailed] = useState<boolean>(false);
-  console.log("upcoming event");
   const { relativeDate, formattedDate } = useFormatDates(event, false);
 
   return (

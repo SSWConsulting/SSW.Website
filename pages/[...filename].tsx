@@ -41,7 +41,6 @@ export default function HomePage(
 
   let events = {};
   events = props.prefetchedEvents;
-  console.log("prefetched events in homepage", events);
   if (!pageBlocks) {
     return null;
   }
@@ -151,7 +150,6 @@ export const getStaticProps = async ({ params }) => {
     tinaProps.data.page
   );
 
-  console.log("eventsMap", eventsMap);
   if (tinaProps.data.page.seo && !tinaProps.data.page.seo.canonical) {
     tinaProps.data.page.seo.canonical = `${tinaProps.data.global.header.url}${relativePath}`;
   }
