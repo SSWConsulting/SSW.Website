@@ -13,6 +13,8 @@ export async function GET(req: NextRequest) {
     status: 200,
     headers: {
       "Content-Type": "application/json",
+      "Access-Control-Allow-Origin":
+        "https://sapeoplestagjthgmptzb46i.z8.web.core.windows.net",
     },
   });
 }
