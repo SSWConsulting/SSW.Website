@@ -88,6 +88,7 @@ export const clientListSchema: Template = {
       label: "Clients list",
       list: true,
       ui: {
+        previewSrc: "/images/thumbs/tina/clients-list.jpg",
         itemProps: (item) => {
           return { label: item?.name };
         },
