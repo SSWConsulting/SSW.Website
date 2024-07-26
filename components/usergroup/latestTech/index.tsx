@@ -72,6 +72,9 @@ export const LatestTech = ({ data }: LatestTechProps) => {
 export const latestTechSchema: Template = {
   name: "LatestTech",
   label: "Latest Tech",
+  ui: {
+    previewSrc: "/images/thumbs/tina/latest-tech.jpg",
+  },
   fields: [
     {
       type: "reference",

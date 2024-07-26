@@ -151,6 +151,9 @@ export const paymentBlockConstants = {
 export const paymentBlockSchema: Template = {
   label: "Payment Block",
   name: paymentBlockConstants.value,
+  ui: {
+    previewSrc: "/images/thumbs/tina/payment-block.jpg",
+  },
   fields: [
     {
       type: "string",

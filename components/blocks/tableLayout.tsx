@@ -99,6 +99,9 @@ export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
 export const tableBlockSchema: Template = {
   label: "Table Layout",
   name: "TableLayout",
+  ui: {
+    previewSrc: "/images/thumbs/tina/table-layout.jpg"
+  },
   fields: [
     {
       label: "Table Style",

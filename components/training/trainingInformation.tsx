@@ -57,6 +57,9 @@ export const TrainingInformation = ({ data }) => {
 export const trainingInformationSchema: Template = {
   label: "Training Information",
   name: "TrainingInformation",
+  ui: {
+    previewSrc: "/images/thumbs/tina/training-information.jpg",
+  },
   fields: [
     {
       type: "object",
