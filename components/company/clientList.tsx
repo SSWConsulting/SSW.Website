@@ -59,6 +59,9 @@ const clientListBlocks: Template[] = [
 export const clientListSchema: Template = {
   label: "Client List",
   name: "ClientList",
+  ui: {
+    previewSrc: "/images/thumbs/tina/clients-list.jpg",
+  },
   fields: [
     {
       type: "object",
