@@ -148,7 +148,7 @@ export const recurringEventSchema: Template = {
   label: "Recurring Event",
   name: "RecurringEvent",
   ui: {
-    previewSrc: "/images/thumbs/tina/recurring-event.jpg"
+    previewSrc: "/images/thumbs/tina/recurring-event.jpg",
   },
   fields: [
     {
