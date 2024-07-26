@@ -132,6 +132,9 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
 export const newslettersTableBlockSchema: Template = {
   name: "NewslettersTable",
   label: "Newsletters Table",
+  ui: {
+    previewSrc: "/images/thumbs/tina/newsletters-table.jpg",
+  },
   fields: [
     {
       type: "string",

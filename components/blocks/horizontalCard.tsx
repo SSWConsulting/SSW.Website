@@ -84,7 +84,9 @@ const Card = (card: CardType) => {
 export const horizontalBlockSchema: Template = {
   name: "HorizontalCard",
   label: "Horizontal Card",
-  ui: {},
+  ui: {
+    previewSrc: "/images/thumbs/tina/horizontal-card.jpg",
+  },
   fields: [
     {
       type: "object",

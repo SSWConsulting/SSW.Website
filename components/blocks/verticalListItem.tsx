@@ -47,6 +47,9 @@ export const VerticalListItem = ({ data }) => {
 export const verticalListItemSchema: Template = {
   label: "List Item",
   name: "VerticalListItem",
+  ui: {
+    previewSrc: "/images/thumbs/tina/vertical-list-item.jpg",
+  },
   fields: [
     {
       type: "rich-text",

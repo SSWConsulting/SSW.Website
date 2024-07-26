@@ -139,6 +139,9 @@ export const locationBlockConstant = {
 export const locationBlockSchema: Template = {
   name: locationBlockConstant.value,
   label: "Locations",
+  ui: {
+    previewSrc: "/images/thumbs/tina/locations.jpg",
+  },
   fields: [
     {
       type: "string",

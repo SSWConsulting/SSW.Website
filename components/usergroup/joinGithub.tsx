@@ -47,6 +47,9 @@ export const JoinGithub = ({ data, className }: JoinGithubProps) => {
 export const joinGithubSchema: Template = {
   label: "Join Github",
   name: "joinGithub",
+  ui: {
+    previewSrc: "/images/thumbs/tina/join-github.jpg",
+  },
   fields: [
     {
       label: "Title",

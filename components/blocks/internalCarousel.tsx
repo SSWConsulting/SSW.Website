@@ -171,7 +171,7 @@ export const internalCarouselBlockSchema: Template = {
   name: "InternalCarousel",
   label: "Internal Carousel",
   ui: {
-    previewSrc: "/blocks/hero.png",
+    previewSrc: "/images/thumbs/tina/internal-carousel.jpg",
     itemProps: (item) => ({ label: item.items.header }),
   },
   fields: [

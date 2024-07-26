@@ -59,6 +59,9 @@ const clientListBlocks: Template[] = [
 export const clientListSchema: Template = {
   label: "Client List",
   name: "ClientList",
+  ui: {
+    previewSrc: "/images/thumbs/tina/clients-list.jpg",
+  },
   fields: [
     {
       type: "object",
@@ -88,6 +91,7 @@ export const clientListSchema: Template = {
       label: "Clients list",
       list: true,
       ui: {
+        previewSrc: "/images/thumbs/tina/clients-list.jpg",
         itemProps: (item) => {
           return { label: item?.name };
         },

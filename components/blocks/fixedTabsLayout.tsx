@@ -77,6 +77,9 @@ const renderTabButton = (tab, selectedTab, onTabBtnClicked) => {
 export const fixedTabsLayoutSchema: Template = {
   name: "FixedTabsLayout",
   label: "Fixed Tabs Layout",
+  ui: {
+    previewSrc: "/images/thumbs/tina/fixed-tabs-layout.jpg",
+  },
   fields: [
     {
       type: "string",

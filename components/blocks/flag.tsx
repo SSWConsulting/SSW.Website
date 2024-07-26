@@ -30,6 +30,9 @@ export const Flag = ({ country, height, width, className = "" }: FlagProps) => {
 export const flagSchema: Template = {
   name: "Flag",
   label: "Flag Image",
+  ui: {
+    previewSrc: "/images/thumbs/tina/flag-image.jpg",
+  },
   fields: [
     {
       type: "string",

@@ -84,6 +84,10 @@ export const agendaBlockConstant = {
 export const agendaSchema: Template = {
   label: "Agenda",
   name: agendaBlockConstant.value,
+
+  ui: {
+    previewSrc: "/images/thumbs/tina/agenda.jpg",
+  },
   fields: [
     {
       type: "string",

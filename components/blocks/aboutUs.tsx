@@ -450,6 +450,10 @@ export const aboutUsBlock = {
 export const aboutUsBlockSchema: Template = {
   name: "AboutUs",
   label: "About Us",
+
+  ui: {
+    previewSrc: "/images/thumbs/tina/about-us.jpg",
+  },
   fields: [
     {
       type: "string",

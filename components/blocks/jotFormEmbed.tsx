@@ -54,6 +54,9 @@ export const JotFormEmbed: React.FC<JotFormEmbedProps> = ({
 export const jotFormEmbedSchema: Template = {
   name: "JotFormEmbed",
   label: "JotForm Embed",
+  ui: {
+    previewSrc: "/images/thumbs/tina/jotform-embed.jpg",
+  },
   fields: [
     {
       type: "string",
