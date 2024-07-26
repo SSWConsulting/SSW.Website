@@ -49,6 +49,9 @@ export const TrainingLearningOutcome: FC<TrainingLearningOutcomeProps> = ({
 export const trainingLearningOutcomeSchema: Template = {
   label: "Training Learning Outcomes",
   name: "TrainingLearningOutcome",
+  ui: {
+    previewSrc: "/images/thumbs/tina/training-learning-outcomes.jpg",
+  },
   fields: [
     {
       type: "string",

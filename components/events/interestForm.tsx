@@ -15,6 +15,9 @@ export const InterestForm = (props) => {
 export const interestFormSchema: Template = {
   label: "Interest Form",
   name: "InterestForm",
+  ui: {
+    previewSrc: "/images/thumbs/tina/interest-form.jpg",
+  },
   fields: [
     {
       type: "string",

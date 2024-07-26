@@ -110,6 +110,9 @@ export const presenterBlockConstant = {
 export const presenterBlockSchema: Template = {
   name: presenterBlockConstant.value,
   label: "Presenters",
+  ui: {
+    previewSrc: "/images/thumbs/tina/presenters.jpg",
+  },
   fields: [
     {
       type: "string",

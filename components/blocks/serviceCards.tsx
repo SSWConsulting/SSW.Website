@@ -228,7 +228,7 @@ export const serviceCardsBlockSchema: Template = {
   name: "ServiceCards",
   label: "Service Cards",
   ui: {
-    previewSrc: "/blocks/hero.png",
+    previewSrc: "/images/thumbs/tina/services-cards.jpg",
   },
   fields: [
     {

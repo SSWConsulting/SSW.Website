@@ -47,6 +47,9 @@ export const TestimonialsList = ({ data: { excludedCategories = [] } }) => {
 export const testimonialsListSchema: Template = {
   name: "TestimonialsList",
   label: "Testimonials List",
+  ui: {
+    previewSrc: "/images/thumbs/tina/testimonials.jpg",
+  },
   fields: [
     {
       type: "object",

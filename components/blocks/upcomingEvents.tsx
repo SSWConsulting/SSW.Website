@@ -6,9 +6,9 @@ import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 
 import { useFormatDates } from "../../hooks/useFormatDates";
+import client from "../../tina/__generated__/client";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
-import client from "../../tina/__generated__/client";
 import { EventTrimmed } from "../filter/events";
 
 export const UpcomingEvents = ({ data }) => {
@@ -128,7 +128,7 @@ export const upcomingEventsBlockSchema: Template = {
   name: "UpcomingEvents",
   label: "Upcoming Events",
   ui: {
-    previewSrc: "/blocks/content.png",
+    previewSrc: "/images/thumbs/tina/upcoming-events.jpg",
     defaultItem: {
       title: "Upcoming Events",
       numberOfEvents: 30,

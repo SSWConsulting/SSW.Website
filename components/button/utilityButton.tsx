@@ -87,7 +87,7 @@ export const utilityButtonSchema: Template = {
   name: "UtilityButton",
   label: "Utility Button",
   ui: {
-    previewSrc: "/blocks/hero.png",
+    previewSrc: "/images/thumbs/tina/utility-button.jpg",
     itemProps: (item) => ({ label: item?.btnText }),
   },
   fields: [

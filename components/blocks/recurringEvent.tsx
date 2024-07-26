@@ -147,6 +147,9 @@ export const RecurringEvent = ({ data }) => {
 export const recurringEventSchema: Template = {
   label: "Recurring Event",
   name: "RecurringEvent",
+  ui: {
+    previewSrc: "/images/thumbs/tina/recurring-event.jpg"
+  },
   fields: [
     {
       type: "string",

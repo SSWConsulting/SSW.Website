@@ -21,6 +21,7 @@ export const sectionHeaderSchema: Template = {
   name: "SectionHeader",
   label: "Section Header",
   ui: {
+    previewSrc: "/images/thumbs/tina/section-header.jpg",
     itemProps: (item) => ({ label: item?.headerText }),
   },
   fields: [

@@ -34,6 +34,9 @@ export const TweetEmbed = (props: TweetEmbedProps) => {
 export const tweetEmbedSchema: Template = {
   label: "Tweet Embed",
   name: "TweetEmbed",
+  ui: {
+    previewSrc: "/images/thumbs/tina/tweet-embed.jpg",
+  },
   fields: [
     {
       type: "string",
