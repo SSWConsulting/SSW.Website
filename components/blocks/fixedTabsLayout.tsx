@@ -78,7 +78,7 @@ export const fixedTabsLayoutSchema: Template = {
   name: "FixedTabsLayout",
   label: "Fixed Tabs Layout",
   ui: {
-    previewSrc: "/images/tina/thumbs/fixed-tabs-layout.jpg",
+    previewSrc: "/images/thumbs/tina/fixed-tabs-layout.jpg",
   },
   fields: [
     {

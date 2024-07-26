@@ -21,7 +21,7 @@ export const customDownloadButtonSchema: Template = {
   name: "CustomDownloadButton",
   label: "Custom Download Button",
   ui: {
-    previewSrc: "/images/tina/thumbs/download-button.jpg",
+    previewSrc: "/images/thumbs/tina/download-button.jpg",
   },
   fields: [
     {

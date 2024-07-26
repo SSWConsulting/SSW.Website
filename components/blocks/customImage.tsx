@@ -64,7 +64,7 @@ export const customImageBlockSchema: Template = {
   label: "Custom Image",
 
   ui: {
-    previewSrc: "/images/tina/thumbs/custom-image.jpg",
+    previewSrc: "/images/thumbs/tina/custom-image.jpg",
   },
   fields: [
     {

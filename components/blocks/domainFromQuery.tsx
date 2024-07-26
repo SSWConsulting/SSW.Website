@@ -31,7 +31,7 @@ export const domainFromQuerySchema: Template = {
   name: "DomainFromQuery",
   label: "Domain from query",
   ui: {
-    previewSrc: "/images/tina/thumbs/domain-from-query.jpg",
+    previewSrc: "/images/thumbs/tina/domain-from-query.jpg",
   },
   fields: [
     {

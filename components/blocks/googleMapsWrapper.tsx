@@ -24,7 +24,7 @@ export const googleMapsSchema: Template = {
   label: "Google Maps",
   name: "GoogleMaps",
   ui: {
-    previewSrc: "/images/tina/thumbs/google-maps.jpg",
+    previewSrc: "/images/thumbs/tina/google-maps.jpg",
   },
   fields: [
     {

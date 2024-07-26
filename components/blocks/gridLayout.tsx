@@ -95,7 +95,7 @@ export const gridLayoutSchema: Template = {
   name: "GridLayout",
 
   ui: {
-    previewSrc: "/images/tina/thumbs/grid-layout.jpg",
+    previewSrc: "/images/thumbs/tina/grid-layout.jpg",
   },
   fields: [
     {

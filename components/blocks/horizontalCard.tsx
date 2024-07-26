@@ -85,7 +85,7 @@ export const horizontalBlockSchema: Template = {
   name: "HorizontalCard",
   label: "Horizontal Card",
   ui: {
-    previewSrc: "/images/tina/thumbs/horizontal-card.jpg",
+    previewSrc: "/images/thumbs/tina/horizontal-card.jpg",
   },
   fields: [
     {

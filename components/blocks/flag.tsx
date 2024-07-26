@@ -31,7 +31,7 @@ export const flagSchema: Template = {
   name: "Flag",
   label: "Flag Image",
   ui: {
-    previewSrc: "/images/tina/thumbs/flag-image.jpg",
+    previewSrc: "/images/thumbs/tina/flag-image.jpg",
   },
   fields: [
     {

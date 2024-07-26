@@ -41,7 +41,7 @@ export const eventLinkSchema: Template = {
   name: "EventLink",
   label: "Event Link",
   ui: {
-    previewSrc: "/images/tina/thumbs/event-link.jpg",
+    previewSrc: "/images/thumbs/tina/event-link.jpg",
   },
   fields: [
     {

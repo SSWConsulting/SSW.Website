@@ -78,7 +78,7 @@ export const colorBlockSchema: Template = {
   name: "ColorBlock",
   label: "Color block",
   ui: {
-    previewSrc: "/images/tina/thumbs/color-block.jpg",
+    previewSrc: "/images/thumbs/tina/color-block.jpg",
   },
   fields: [
     {

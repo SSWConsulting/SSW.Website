@@ -147,7 +147,7 @@ export const carouselBlockSchema: Template = {
   name: "Carousel",
   label: "Carousel",
   ui: {
-    previewSrc: "/images/tina/thumbs/carousel.jpg",
+    previewSrc: "/images/thumbs/tina/carousel.jpg",
   },
   fields: [
     {

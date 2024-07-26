@@ -23,7 +23,7 @@ export const inlineJotFormSchema: Template = {
   name: "InlineJotForm",
   label: "In-line JotForm",
   ui: {
-    previewSrc: "/images/tina/thumbs/inline-jot-form.jpg",
+    previewSrc: "/images/thumbs/tina/inline-jot-form.jpg",
   },
   fields: [
     {

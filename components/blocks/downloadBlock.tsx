@@ -134,7 +134,7 @@ export const downloadBlockSchema: Template = {
   name: "DownloadBlock",
   label: "Download Block",
   ui: {
-    previewSrc: "/images/tina/thumbs/download-block.jpg",
+    previewSrc: "/images/thumbs/tina/download-block.jpg",
   },
   fields: [
     {

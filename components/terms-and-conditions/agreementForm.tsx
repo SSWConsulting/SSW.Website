@@ -66,7 +66,7 @@ export const agreementFormBlockSchema: Template = {
   label: "Agreement Form",
   name: "AgreementForm",
   ui: {
-    previewSrc: "/images/tina/thumbs/agreement-form.jpg",
+    previewSrc: "/images/thumbs/tina/agreement-form.jpg",
   },
   fields: [
     {
