@@ -270,7 +270,7 @@ export const eventBookingSchema: Template = {
   name: eventBookingBlock.eventBooking,
   label: "Events Booking",
   ui: {
-    previewSrc: "/images/thumbs/tina/event-booking.jpg",
+    previewSrc: "/images/thumbs/tina/events-booking.jpg",
   },
   fields: [
     {
