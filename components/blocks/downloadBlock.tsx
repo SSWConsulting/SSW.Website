@@ -133,6 +133,9 @@ const DownloadButton = (data) => {
 export const downloadBlockSchema: Template = {
   name: "DownloadBlock",
   label: "Download Block",
+  ui: {
+    previewSrc: "/images/tina/thumbs/download-block.jpg",
+  },
   fields: [
     {
       type: "string",

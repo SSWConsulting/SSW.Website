@@ -42,6 +42,9 @@ export const FixedColumns = ({ data }: FixedColumnsProps) => {
 export const fixedColumnsSchema: Template = {
   name: "FixedColumns",
   label: "Fixed Column Layout (2 columns)",
+  ui: {
+    previewSrc: "/images/tina/thumbs/fixed-columns.jpg",
+  },
   fields: [
     {
       type: "rich-text",

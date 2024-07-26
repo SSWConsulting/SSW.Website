@@ -24,6 +24,9 @@ export const ColorPalette = () => {
 export const colorPaletteSchema: Template = {
   name: "ColorPalette",
   label: "Color Palette",
+  ui: {
+    previewSrc: "/images/tina/thumbs/color-palette.jpg",
+  },
   fields: [
     {
       type: "string",

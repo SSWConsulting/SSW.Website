@@ -62,6 +62,10 @@ export const CustomImage = ({ data }: { data: CustomImageProps }) => {
 export const customImageBlockSchema: Template = {
   name: "CustomImage",
   label: "Custom Image",
+
+  ui: {
+    previewSrc: "/images/tina/thumbs/custom-image.jpg",
+  },
   fields: [
     {
       type: "image",

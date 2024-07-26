@@ -40,6 +40,9 @@ export const EventLink = ({
 export const eventLinkSchema: Template = {
   name: "EventLink",
   label: "Event Link",
+  ui: {
+    previewSrc: "/images/tina/thumbs/event-link.jpg",
+  },
   fields: [
     {
       type: "rich-text",

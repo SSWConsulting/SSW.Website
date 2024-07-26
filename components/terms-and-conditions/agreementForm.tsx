@@ -65,7 +65,9 @@ const FormField = ({ label, id, placeholder, resizeable }) => {
 export const agreementFormBlockSchema: Template = {
   label: "Agreement Form",
   name: "AgreementForm",
-  ui: {},
+  ui: {
+    previewSrc: "/images/tina/thumbs/agreement-form.jpg",
+  },
   fields: [
     {
       type: "string",

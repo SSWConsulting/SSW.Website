@@ -68,7 +68,7 @@ export const contentCardBlockSchema: Template = {
   name: "ContentCard",
   label: "Content Card",
   ui: {
-    previewSrc: "/blocks/content.png",
+    previewSrc: "/images/tina/thumbs/content-card.jpg",
     defaultItem: {
       content:
         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",

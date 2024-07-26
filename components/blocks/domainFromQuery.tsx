@@ -30,6 +30,9 @@ export const DomainFromQuery = (props: DomainFromQueryProps) => {
 export const domainFromQuerySchema: Template = {
   name: "DomainFromQuery",
   label: "Domain from query",
+  ui: {
+    previewSrc: "/images/tina/thumbs/domain-from-query.jpg",
+  },
   fields: [
     {
       name: "title",

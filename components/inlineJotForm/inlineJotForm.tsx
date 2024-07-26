@@ -1,5 +1,5 @@
-import type { Template } from "tinacms";
 import Jotform from "react-jotform";
+import type { Template } from "tinacms";
 
 export type InlineJotFormProps = {
   title?: string;
@@ -22,6 +22,9 @@ export const InlineJotForm = (props: InlineJotFormProps) => {
 export const inlineJotFormSchema: Template = {
   name: "InlineJotForm",
   label: "In-line JotForm",
+  ui: {
+    previewSrc: "/images/tina/thumbs/inline-jot-form.jpg",
+  },
   fields: [
     {
       type: "string",
