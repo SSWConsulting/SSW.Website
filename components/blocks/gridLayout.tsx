@@ -1,11 +1,11 @@
-import type { Template } from "tinacms";
-import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
-import { tinaField } from "tinacms/dist/react";
 import Image from "next/image";
+import type { Template } from "tinacms";
+import { tinaField } from "tinacms/dist/react";
+import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 
-import { Section } from "../util/section";
-import { Container } from "../util/container";
 import { utilityButtonSchema } from "../button/utilityButton";
+import { Container } from "../util/container";
+import { Section } from "../util/section";
 import { componentRenderer } from "./mdxComponentRenderer";
 
 type GridLayoutProps = {
@@ -93,6 +93,10 @@ export const GridLayout = ({ data }: GridLayoutProps) => {
 export const gridLayoutSchema: Template = {
   label: "Grid Layout",
   name: "GridLayout",
+
+  ui: {
+    previewSrc: "/images/thumbs/tina/grid-layout.jpg",
+  },
   fields: [
     {
       type: "string",

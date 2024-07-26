@@ -67,6 +67,9 @@ export const builtOnAzureBlock = {
 export const builtOnAzureBlockSchema: Template = {
   name: "BuiltOnAzure",
   label: "Built on Azure",
+  ui: {
+    previewSrc: "/images/thumbs/tina/built-on-azure.jpg",
+  },
   // Todo: Turn into util field
   fields: [
     {

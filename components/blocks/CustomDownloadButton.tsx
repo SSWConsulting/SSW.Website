@@ -20,6 +20,9 @@ export const CustomDownloadButton = ({ data }) => {
 export const customDownloadButtonSchema: Template = {
   name: "CustomDownloadButton",
   label: "Custom Download Button",
+  ui: {
+    previewSrc: "/images/thumbs/tina/download-button.jpg",
+  },
   fields: [
     {
       type: "string",

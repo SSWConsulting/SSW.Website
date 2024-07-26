@@ -49,7 +49,7 @@ export const bookingButtonSchema: Template = {
   name: "BookingButton",
   label: "Booking Button",
   ui: {
-    previewSrc: "/blocks/hero.png",
+    previewSrc: "/images/thumbs/tina/booking-button.jpg",
     itemProps: (item) => ({ label: item?.btnText }),
   },
   fields: [

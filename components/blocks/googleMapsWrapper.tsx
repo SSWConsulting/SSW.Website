@@ -23,6 +23,9 @@ export const GoogleMapsWrapper = (props: GoogleMapsWrapperProps) => (
 export const googleMapsSchema: Template = {
   label: "Google Maps",
   name: "GoogleMaps",
+  ui: {
+    previewSrc: "/images/thumbs/tina/google-maps.jpg",
+  },
   fields: [
     {
       type: "string",
