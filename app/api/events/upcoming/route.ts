@@ -10,12 +10,15 @@ export async function GET(req: NextRequest) {
     presenterName = dehyphenateUrl(presenterName);
   }
   const events = await getUpcomingEvents(top, presenterName);
-  return new Response(JSON.stringify(events), {
+  console.log(req.nextUrl.origin);
+
+  // const allowedOrigns = returnCorsIfAllowed(req.nextUrl.origin);
+  const allowedOrigins = process.env.ALLOWED_ORIGINS;
+  const headers = {
     status: 200,
     headers: {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin":
-        "https://sapeoplestagjthgmptzb46i.z8.web.core.windows.net",
+      "Access-Control-Allow-Origin": "*",
     },
-  });
+  };
 }
