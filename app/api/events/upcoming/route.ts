@@ -10,15 +10,11 @@ export async function GET(req: NextRequest) {
     presenterName = dehyphenateUrl(presenterName);
   }
   const events = await getUpcomingEvents(top, presenterName);
-  console.log(req.nextUrl.origin);
-
-  // const allowedOrigns = returnCorsIfAllowed(req.nextUrl.origin);
-  const allowedOrigins = process.env.ALLOWED_ORIGINS;
-  const headers = {
+  return new Response(JSON.stringify(events), {
     status: 200,
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
     },
-  };
+  });
 }
