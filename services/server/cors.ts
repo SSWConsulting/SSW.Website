@@ -1,5 +1,4 @@
 export const setAllowOriginIfTrusted = (responseHeaders, origin) => {
-  responseHeaders.set("Access-Control-Allow-Origin", origin);
   if (trustedOrigins.includes(origin)) {
     responseHeaders["Access-Control-Allow-Origin"] = origin;
   }
