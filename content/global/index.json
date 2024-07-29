@@ -98,6 +98,30 @@
       "phone": "+61 2 9953 3000",
       "hours": "9am - 6pm AEST",
       "days": "Monday - Friday"
+    },
+    {
+      "url": "https://ssw.cn",
+      "name": "SSW China Office",
+      "streetAddress": "Room 305, Building 2, Xingcheng Development Building, No. 406 Xintiandi Street",
+      "addressLocality": "Hangzhou, China",
+      "addressRegion": "Zheijang Province",
+      "addressCountry": "China",
+      "postalCode": 310004,
+      "phone": "+86 571 8517 8910",
+      "hours": "9:00am - 6:00pm CST",
+      "days": "Monday - Friday"
+    },
+    {
+      "url": "https://ssw.fr",
+      "name": "SSW Europe Office",
+      "streetAddress": "Niveau 4 – 19 Rue du Fossé des Treize",
+      "addressLocality": "Strasbourg, France",
+      "addressRegion": "Strasbourg",
+      "addressCountry": "France",
+      "postalCode": 67000,
+      "phone": "+33 3 67 39 05 39",
+      "hours": "9:00am - 6:00pm CET",
+      "days": "Monday - Friday"
     }
   ],
   "socials": [
