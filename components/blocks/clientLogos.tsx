@@ -6,7 +6,7 @@ const clientsData = layoutData.clients.clientsList;
 
 export const ClientLogos = () => {
   return (
-    <div className="flex flex-wrap justify-center gap-6">
+    <div className="flex flex-wrap justify-center">
       {clientsData.length &&
         clientsData.map((client) => (
           <Image
