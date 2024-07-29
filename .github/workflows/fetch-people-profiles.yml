@@ -1,0 +1,43 @@
+name: Fetch SSW - People Profiles
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          path: main
+
+      - name: Checkout People Profiles
+        uses: actions/checkout@v4
+        with:
+          repository: 'tkapa/SSW.People.Profiles'
+          path: ssw-people-profiles
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '20.x'
+
+      - run: npm install gray-matter
+
+      - name: Fetch SSW.People.Profiles
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const script = require(`${process.env.GITHUB_WORKSPACE}/main/.github/workflows/get-people-profiles.js`);
+
+            script({
+            github,
+            context,
+            peopleDirectory: `${process.env.GITHUB_WORKSPACE}/ssw-people-profiles`
+            presentersDirectory: `${process.env.GITHUB_WORKSPACE}/main/content/presenters`
+            });
+
+      - name: Fetch People Profiles
+        run: |
+          echo "Fetching People Profiles"
+          echo "People Profiles Fetched"
