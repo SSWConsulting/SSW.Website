@@ -1,5 +1,7 @@
+import { setAllowOriginIfTrusted } from "@/services/server/cors";
 import { dehyphenateUrl } from "@/services/server/dehyphenateUrl";
 import { getPastEvents } from "@/services/server/getEvents";
+import { request } from "http";
 import { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {
@@ -9,11 +11,12 @@ export async function GET(req: NextRequest) {
     presenterName = dehyphenateUrl(presenterName);
   }
   const events = await getPastEvents(top, presenterName);
-  return new Response(JSON.stringify(events), {
+  let responseHeaders = {
     status: 200,
     headers: {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
     },
-  });
+  };
+  setAllowOriginIfTrusted(responseHeaders, req.nextUrl.origin);
+  return new Response(JSON.stringify(events), responseHeaders);
 }
