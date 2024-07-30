@@ -23,6 +23,7 @@ import isBetween from "dayjs/plugin/isBetween";
 import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
+import ErrorBoundary from "next/dist/client/components/error-boundary";
 
 const FIVE_MINS = 1000 * 60 * 5;
 
@@ -78,6 +79,9 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <>
+      {/* <ErrorBoundary> */}
+
+      <ErrorComponent />
       <Analytics />
       <DefaultSeo {...NEXT_SEO_DEFAULT} />
       <AppInsightsProvider>
@@ -92,8 +96,16 @@ const App = ({ Component, pageProps }) => {
         </QueryClientProvider>
       </AppInsightsProvider>
       <ChatBaseBot />
+      {/* </ErrorBoundary> */}
     </>
   );
 };
 
 export default App;
+
+const ErrorComponent = () => {
+  useEffect(() => {
+    throw new Error("test error");
+  });
+  return <></>;
+};
