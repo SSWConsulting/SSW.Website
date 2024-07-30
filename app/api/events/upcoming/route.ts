@@ -1,7 +1,6 @@
 import { setAllowOriginIfTrusted } from "@/services/server/cors";
 import { dehyphenateUrl } from "@/services/server/dehyphenateUrl";
 import { getUpcomingEvents } from "@/services/server/getEvents";
-
 import { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {
@@ -12,7 +11,7 @@ export async function GET(req: NextRequest) {
   }
   const events = await getUpcomingEvents(top, presenterName);
 
-  let responseHeaders = {
+  const responseHeaders = {
     status: 200,
     headers: {
       "Content-Type": "application/json",

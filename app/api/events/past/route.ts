@@ -10,7 +10,7 @@ export async function GET(req: NextRequest) {
     presenterName = dehyphenateUrl(presenterName);
   }
   const events = await getPastEvents(top, presenterName);
-  let responseHeaders = {
+  const responseHeaders = {
     status: 200,
     headers: {
       "Content-Type": "application/json",
