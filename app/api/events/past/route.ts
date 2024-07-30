@@ -1,7 +1,6 @@
 import { setAllowOriginIfTrusted } from "@/services/server/cors";
 import { dehyphenateUrl } from "@/services/server/dehyphenateUrl";
 import { getPastEvents } from "@/services/server/getEvents";
-import { request } from "http";
 import { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {
