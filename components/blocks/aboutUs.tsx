@@ -118,7 +118,9 @@ export const AboutUs = ({ data }) => {
         <div className="grid grid-cols-3 gap-6">
           <TV className="col-span-3 max-md:hidden sm:col-span-1" />
           <div className="col-span-3 md:col-span-2">
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div
+              className={`grid grid-cols-1 gap-6 ${!data.hideMap ? "sm:grid-cols-2" : ""}`}
+            >
               <ContactUs
                 className=""
                 offices={offices}
@@ -131,17 +133,19 @@ export const AboutUs = ({ data }) => {
                 setMapClickedTrigger={setMapClickedTrigger}
                 mapClickedTrigger={mapClickedTrigger}
               />
-              <Map
-                className="hidden sm:block"
-                offices={offices}
-                selectedOffice={selectedOffice}
-                setSelectedOffice={setSelectedOffice}
-                stateBeingHovered={stateBeingHovered}
-                setOfficeBeingHovered={setOfficeBeingHovered}
-                setStateBeingHovered={setStateBeingHovered}
-                setMapHoveredTrigger={setMapHoveredTrigger}
-                setMapClickedTrigger={setMapClickedTrigger}
-              />
+              {(data.showMap ?? true) && (
+                <Map
+                  className="hidden sm:block"
+                  offices={offices}
+                  selectedOffice={selectedOffice}
+                  setSelectedOffice={setSelectedOffice}
+                  stateBeingHovered={stateBeingHovered}
+                  setOfficeBeingHovered={setOfficeBeingHovered}
+                  setStateBeingHovered={setStateBeingHovered}
+                  setMapHoveredTrigger={setMapHoveredTrigger}
+                  setMapClickedTrigger={setMapClickedTrigger}
+                />
+              )}
             </div>
           </div>
         </div>
@@ -465,6 +469,12 @@ export const aboutUsBlockSchema: Template = {
         { label: "Red", value: "red" },
         { label: "Black", value: "black" },
       ],
+    },
+    {
+      type: "boolean",
+      label: "Show Map",
+      name: "showMap",
+      required: false,
     },
   ],
 };
