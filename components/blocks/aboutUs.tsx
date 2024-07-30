@@ -133,7 +133,7 @@ export const AboutUs = ({ data }) => {
                 setMapClickedTrigger={setMapClickedTrigger}
                 mapClickedTrigger={mapClickedTrigger}
               />
-              {(!data.hideMap ?? false) && (
+              {(data.showMap ?? true) && (
                 <Map
                   className="hidden sm:block"
                   offices={offices}
@@ -472,8 +472,9 @@ export const aboutUsBlockSchema: Template = {
     },
     {
       type: "boolean",
-      label: "Hide Map",
-      name: "hideMap",
+      label: "Show Map",
+      name: "showMap",
+      required: false,
     },
   ],
 };
