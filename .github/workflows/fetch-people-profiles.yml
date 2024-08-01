@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: "0 * * * TUE"
 
+env:
+  TEMPORARY_FOLDER: temp-profiles
+
 jobs:
   fetch-data:
     runs-on: ubuntu-latest
@@ -17,7 +20,7 @@ jobs:
         with:
           #TODO: Update to SSWConsulting
           repository: "tkapa/SSW.People.Profiles"
-          path: temp-profiles
+          path: ${{ env.TEMPORARY_FOLDER}}
 
       - uses: actions/setup-node@v4
         with:
@@ -34,7 +37,7 @@ jobs:
             script({
               github,
               context,
-              peopleDirectory: `${process.env.GITHUB_WORKSPACE}/temp-profiles`,
+              peopleDirectory: `${process.env.GITHUB_WORKSPACE}/${ process.env.TEMPORARY_FOLDER }`,
               websiteContentPath: `${process.env.GITHUB_WORKSPACE}/content`,
               websitePublicPath: `${process.env.GITHUB_WORKSPACE}/public`,
               presentersPath: `presenters`,

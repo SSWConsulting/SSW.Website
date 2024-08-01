@@ -33,7 +33,7 @@ const GetPeopleProfiles = ( {
     const file = matter.read(`${peopleDirectory}/${person}/${person}.md`);
     const contentFiltered = file.content?.split(/\n\s*\n/).filter(line => !line.includes('imgBadge')).join();
     const profileImageRelativePath = `${peopleImagePath}/${person}.jpg`;
-    const peopleProfileImagePath = `${peopleDirectory}/${person}/images/${person}-Profile.jpg`;
+    const peopleProfileImagePath = `${peopleDirectory}/${person}/Images/${person}-Profile.jpg`;
 
     presenterJson.profileImg = ``
 
