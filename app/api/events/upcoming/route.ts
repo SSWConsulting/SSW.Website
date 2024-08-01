@@ -1,6 +1,6 @@
+import { setAllowOriginIfTrusted } from "@/services/server/cors";
 import { dehyphenateUrl } from "@/services/server/dehyphenateUrl";
 import { getUpcomingEvents } from "@/services/server/getEvents";
-
 import { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {
@@ -10,12 +10,13 @@ export async function GET(req: NextRequest) {
     presenterName = dehyphenateUrl(presenterName);
   }
   const events = await getUpcomingEvents(top, presenterName);
-  return new Response(JSON.stringify(events), {
+
+  const responseHeaders = {
     status: 200,
     headers: {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin":
-        "https://sapeoplestagjthgmptzb46i.z8.web.core.windows.net",
     },
-  });
+  };
+  setAllowOriginIfTrusted(responseHeaders, req.nextUrl.origin);
+  return new Response(JSON.stringify(events));
 }
