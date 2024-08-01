@@ -52,6 +52,7 @@ module.exports = {
           "/*Browse.aspx$",
           "/*browse.aspx$",
           "/*BrowseXML.aspx$",
+          "/*BrowseXML.aspx*",
           "/ssw/Redirect",
           "/ssw/CodeAuditor",
           "/ssw/Version.aspx",
