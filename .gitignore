@@ -5,7 +5,8 @@
 /.pnp
 .pnp.js
 public/admin/.gitignore
-.github/workflows/presenters
+.github/workflows/content
+.github/workflows/public
 # testing
 /coverage
 

@@ -4,6 +4,8 @@ script({
   github: {},
   context: {},
   peopleDirectory: '../../../SSW.People.Profiles',
-  presentersDirectory: './presenters',
-  peopleImageDirectory: './presenters/images'
+  websiteContentPath: './content',
+  websitePublicPath: './public',
+  presentersPath: 'presenters',
+  peopleImagePath: 'images/people'
 })
