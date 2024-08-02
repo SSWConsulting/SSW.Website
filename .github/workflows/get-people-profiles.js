@@ -37,7 +37,7 @@ const GetPeopleProfiles = ( {
 
     if (fs.existsSync(peopleProfileImagePath)) {
       fs.copyFileSync(peopleProfileImagePath, `${websitePublicPath}/${profileImageRelativePath}`);
-      presenterJson.profileImg = profileImageRelativePath;
+      presenterJson.profileImg = `/${profileImageRelativePath}`;
     }
 
     presenterJson.presenter = presenterJson.presenter ?? {
