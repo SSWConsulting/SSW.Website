@@ -18,8 +18,7 @@ jobs:
       - name: Checkout People Profiles
         uses: actions/checkout@v4
         with:
-          #TODO: Update to SSWConsulting
-          repository: "tkapa/SSW.People.Profiles"
+          repository: "SSWConsulting/SSW.People.Profiles"
           path: ${{ env.TEMPORARY_FOLDER}}
 
       - uses: actions/setup-node@v4
