@@ -49,8 +49,8 @@ module.exports = {
         disallow: [
           "/404",
           "/500",
-          "/*Browse.aspx$",
-          "/*browse.aspx$",
+          "/*Browse.aspx*",
+          "/*browse.aspx*",
           "/*browsexml.aspx*",
           "/*BrowseXML.aspx*",
           "/ssw/Redirect",
