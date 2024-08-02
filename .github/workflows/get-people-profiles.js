@@ -30,23 +30,24 @@ const GetPeopleProfiles = ( {
       presenterJson = matter.read(presenterFilePath).data ?? {};
     }
 
-    const file = matter.read(`${peopleDirectory}/${person}/${person}.md`);
-    const contentFiltered = file.content?.split(/\n\s*\n/).filter(line => !line.includes('imgBadge')).join();
     const profileImageRelativePath = `${peopleImagePath}/${person}.jpg`;
     const peopleProfileImagePath = `${peopleDirectory}/${person}/Images/${person}-Profile.jpg`;
 
-    presenterJson.profileImg = ``
+    presenterJson.profileImg = presenterJson.profileImg ?? ``;
 
     if (fs.existsSync(peopleProfileImagePath)) {
       fs.copyFileSync(peopleProfileImagePath, `${websitePublicPath}/${profileImageRelativePath}`);
       presenterJson.profileImg = profileImageRelativePath;
     }
 
-    presenterJson.presenter = {
+    presenterJson.presenter = presenterJson.presenter ?? {
       name: `${person.replace('-', ' ')}`,
       peopleProfileURL: `https://ssw.com.au/people/${person}`,
     };
-    presenterJson.about = contentFiltered?.split(/\n/, 4).join();
+
+    const file = matter.read(`${peopleDirectory}/${person}/${person}.md`);
+    const contentFiltered = file.content?.split(/\n\s*\n/).filter(line => !line.includes('imgBadge')).join();
+    presenterJson.about = presenterJson.about ?? contentFiltered?.split(/\n/, 4).join();
 
     fs.writeFileSync(presenterFilePath, matter.stringify('', presenterJson));
   })
