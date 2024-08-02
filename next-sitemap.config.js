@@ -51,7 +51,7 @@ module.exports = {
           "/500",
           "/*Browse.aspx$",
           "/*browse.aspx$",
-          "/*browsexml.aspx$*",
+          "/*browsexml.aspx$",
           "/*browsexml.aspx*",
           "/*BrowseXML.aspx$",
           "/*BrowseXML.aspx*",
