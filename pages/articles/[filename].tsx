@@ -99,7 +99,7 @@ export default function ArticlesPage(
         )}
         <Section className="mx-auto w-full max-w-9xl flex-col overflow-visible bg-gray-75">
           <Container>
-            <h2 className="mx-4 pb-5 pt-15 text-center text-3xl leading-10">
+            <h2 className="mb-4 mt-0 pb-5 text-center text-3xl leading-10">
               Contact Us
             </h2>
             <p className="text-lg">
