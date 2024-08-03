@@ -6,7 +6,7 @@
   a:not(.unstyled) {
     @apply transition duration-300 hover:border-sswRed hover:text-sswRed;
   }
-  a:not(.no-underline) {
+  a:not(.no-underline)a:not(.unstyled) {
     @apply underline;
   }
   html,
