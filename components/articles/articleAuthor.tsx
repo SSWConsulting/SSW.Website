@@ -1,14 +1,14 @@
 "use client";
-
 import Image from "next/image";
 
 type ArticleAuthorProps = {
   name?: string;
   position: string;
   image?: string;
+  url?: string;
 };
 
-const ArticleAuthor = ({ name, position, image }: ArticleAuthorProps) => {
+const ArticleAuthor = ({ name, position, image, url }: ArticleAuthorProps) => {
   return (
     <div className="flex flex-row items-center gap-2 py-1">
       {image && (
@@ -20,7 +20,15 @@ const ArticleAuthor = ({ name, position, image }: ArticleAuthorProps) => {
           className="size-10 rounded-full object-cover"
         />
       )}
-      <div className="font-semibold uppercase">{name}</div>
+      <div className="font-semibold uppercase">
+        {url ? (
+          <a className="no-underline" href={url}>
+            {name}
+          </a>
+        ) : (
+          <>{name}</>
+        )}
+      </div>
 
       {position && (
         <>
