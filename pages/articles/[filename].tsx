@@ -1,19 +1,20 @@
 import { Breadcrumbs } from "@/blocks/breadcrumbs";
 import { componentRenderer } from "@/blocks/mdxComponentRenderer";
 import ArticleAuthor from "@/components/articles/articleAuthor";
+import { BookingButton, JotFormEmbed } from "@/components/blocks";
 import { Layout } from "@/components/layout";
 import SidebarPanel from "@/components/sidebar/sidebarPanel";
+import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { SEO } from "@/components/util/seo";
 import { removeExtension } from "@/services/client/utils.service";
 import client from "@/tina/client";
 import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
+import Image from "next/image";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-
-import { Container } from "@/components/util/container";
-import Image from "next/image";
+import globals from "../../content/global/index.json";
 
 export default function ArticlesPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -24,6 +25,7 @@ export default function ArticlesPage(
     variables: props.variables,
   });
   const { author } = data.articles;
+
   return (
     <div>
       <SEO seo={props.seo} />
@@ -95,6 +97,23 @@ export default function ArticlesPage(
             )}
           </section>
         )}
+        <Section className="mx-auto w-full max-w-9xl flex-col overflow-visible bg-gray-75">
+          <Container>
+            <h2 className="mx-4 pb-5 pt-15 text-center text-3xl leading-10">
+              Contact Us
+            </h2>
+            <p className="text-lg">
+              Interested in discussing your project with one of our consultants?
+            </p>
+            <JotFormEmbed
+              animated={true}
+              jotFormId={globals.bookingButtonText}
+              containerClass={""}
+              buttonClass="z-content"
+              buttonText={"Book a FREE Initial Meeting"}
+            />
+          </Container>
+        </Section>
       </Layout>
     </div>
   );
