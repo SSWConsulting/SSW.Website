@@ -107,10 +107,10 @@ export default function ArticlesPage(
             </p>
             <JotFormEmbed
               animated={true}
-              jotFormId={globals.bookingButtonText}
+              jotFormId={globals.bookingJotFormId}
               containerClass={""}
               buttonClass="z-content"
-              buttonText={"Book a FREE Initial Meeting"}
+              buttonText={globals.bookingButtonText}
             />
           </Container>
         </Section>
