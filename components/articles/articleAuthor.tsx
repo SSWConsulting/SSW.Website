@@ -25,7 +25,7 @@ const ArticleAuthor = ({ name, position, image, url }: ArticleAuthorProps) => {
         {url ? (
           <Link className="no-underline" href={url}>
             {name}
-          </ Link>
+          </Link>
         ) : (
           <>{name}</>
         )}
