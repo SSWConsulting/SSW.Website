@@ -22,9 +22,9 @@ const ArticleAuthor = ({ name, position, image, url }: ArticleAuthorProps) => {
       )}
       <div className="font-semibold uppercase">
         {url ? (
-          <a className="no-underline" href={url}>
+          <Link className="no-underline" href={url}>
             {name}
-          </a>
+          </ Link>
         ) : (
           <>{name}</>
         )}
