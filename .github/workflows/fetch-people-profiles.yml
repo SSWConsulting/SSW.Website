@@ -7,6 +7,7 @@ on:
 
 env:
   TEMPORARY_FOLDER: temp-profiles
+  SSW_PEOPLE_BASE_URL: https://ssw.com.au/people
 
 jobs:
   fetch-data:
@@ -33,9 +34,10 @@ jobs:
           script: |
             const script = require(`${process.env.GITHUB_WORKSPACE}/.github/workflows/get-people-profiles.js`);
 
-            script({
+            await script({
               github,
               context,
+              peopleBaseUrl: ${process.env.SSW_PEOPLE_BASE_URL},
               peopleDirectory: `${process.env.GITHUB_WORKSPACE}/${ process.env.TEMPORARY_FOLDER }`,
               websiteContentPath: `${process.env.GITHUB_WORKSPACE}/content`,
               websitePublicPath: `${process.env.GITHUB_WORKSPACE}/public`,

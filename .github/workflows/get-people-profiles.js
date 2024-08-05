@@ -1,9 +1,10 @@
 const matter = require('gray-matter');
 const fs = require('fs');
 
-const GetPeopleProfiles = ( {
+const GetPeopleProfiles = async ( {
   github,
   context,
+  peopleBaseUrl,
   peopleDirectory,
   websiteContentPath,
   websitePublicPath,
@@ -16,41 +17,43 @@ const GetPeopleProfiles = ( {
   fs.mkdirSync(presentersDirectory, { recursive: true });
   fs.mkdirSync(peopleImageDirectory, { recursive: true });
 
-  var people = fs.readdirSync(peopleDirectory);
+  try {
+    const people = await fetch(`${peopleBaseUrl}/people.json`);
+    const peopleList = await people.json();
 
-  people = people.filter(peopleFolder => peopleFolder.includes('-') && peopleFolder !== 'We-are-hiring')
+    peopleList.forEach(async person => {
+      const existingPresenterPath = `${presentersDirectory}/${person}.mdx`;
+      const peopleMd = await fetch(`${peopleBaseUrl}/${person}/profile.md`);
+      const peopleMdStr = await peopleMd.text();
 
-  people.forEach(person => {
-    const presenterFilePath = `${presentersDirectory}/${person.toLocaleLowerCase()}.mdx`
-    const existingPresenterFile = fs.existsSync(presenterFilePath);
-    var presenterJson = {}
+      var presenterJson = {};
+      const peopleMatter = matter(peopleMdStr);
 
-    // Don't Overwrite existing fields that we can't get from the people profiles
-    if (existingPresenterFile) {
-      presenterJson = matter.read(presenterFilePath).data ?? {};
-    }
+      if (fs.existsSync(existingPresenterPath)) {
+        const existingPresenterFile = matter.read(existingPresenterPath);
+        presenterJson = existingPresenterFile.data;
+      }
 
-    const profileImageRelativePath = `${peopleImagePath}/${person}.jpg`;
-    const peopleProfileImagePath = `${peopleDirectory}/${person}/Images/${person}-Profile.jpg`;
+      presenterJson = {
+        ...presenterJson,
+        ...peopleMatter.data,
+      };
 
-    presenterJson.profileImg = presenterJson.profileImg ?? ``;
+      const profileImageRelativePath = `${peopleImagePath}/${person}.jpg`;
+      const peopleProfileImagePath = `${peopleDirectory}/${person}/Images/${person}-Profile.jpg`;
 
-    if (fs.existsSync(peopleProfileImagePath)) {
-      fs.copyFileSync(peopleProfileImagePath, `${websitePublicPath}/${profileImageRelativePath}`);
-      presenterJson.profileImg = `/${profileImageRelativePath}`;
-    }
+      presenterJson.profileImg = presenterJson.profileImg ?? ``;
 
-    presenterJson.presenter = presenterJson.presenter ?? {
-      name: `${person.replace('-', ' ')}`,
-      peopleProfileURL: `https://ssw.com.au/people/${person}`,
-    };
+      if (fs.existsSync(peopleProfileImagePath)) {
+        fs.copyFileSync(peopleProfileImagePath, `${websitePublicPath}/${profileImageRelativePath}`);
+        presenterJson.profileImg = `/${profileImageRelativePath}`;
+      }
 
-    const file = matter.read(`${peopleDirectory}/${person}/${person}.md`);
-    const contentFiltered = file.content?.split(/\n\s*\n/).filter(line => !line.includes('imgBadge')).join();
-    presenterJson.about = presenterJson.about ?? contentFiltered?.split(/\n/, 4).join();
-
-    fs.writeFileSync(presenterFilePath, matter.stringify('', presenterJson));
-  })
+      console.log(presenterJson);
+    });
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 module.exports = GetPeopleProfiles;
