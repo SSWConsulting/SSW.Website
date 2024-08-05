@@ -12,9 +12,6 @@ env:
 jobs:
   fetch-data:
     runs-on: ubuntu-latest
-    outputs:
-      pr-number: ${{ steps.cpr.outputs.pull-request-number }}
-      branch-name: ${{ steps.cpr.outputs.pull-request-branch }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -48,10 +45,17 @@ jobs:
               peopleImagePath: `images/people`
             });
 
+      - uses: actions/create-github-app-token@v1
+        id: get-app-token
+        with:
+          app-id: ${{ vars.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_KEY }}
+
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v6
         with:
+          token: ${{ steps.get-app-token.outputs.token }}
           commit-message: "Fetch People Profiles"
           title: "Auto - Fetch People Profiles"
           body: >
@@ -63,105 +67,8 @@ jobs:
             content/*
             public/*
 
-  build:
-    runs-on: ubuntu-latest
-    needs: fetch-data
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ needs.fetch-data.outputs.branch-name }}
-
-      - name: Load .env file
-        uses: xom9ikk/dotenv@v2
-        with:
-          path: ./.github
-
-      - name: Get current date
-        id: date
-        run: |
-          echo "date=$(Get-Date -Format yyyy-MM-ddThh:mm:ssZ -AsUtc)" >> $env:GITHUB_OUTPUT
-
-      - name: Azure CLI - Login
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-
-      - name: keyVault - Secrets
-        uses: theotow/keyvault-secret-azure@v1
-        id: KeyVaultSecrets
-        with:
-          key-vault-name: ${{ env.KEY_VAULT }}
-          config: |
-            {
-              "GoogleRecaptchaSiteKey": "Google-Recaptcha-Site-KEY",
-              "MICROSOFT_OAUTH_TENANT_ID": "MICROSOFT-OAUTH-TENANT-ID",
-              "MICROSOFT_OAUTH_CLIENT_ID": "MICROSOFT-OAUTH-CLIENT-ID",
-              "MICROSOFT_OAUTH_CLIENT_SECRET": "MICROSOFT-OAUTH-CLIENT-SECRET",
-              "DYNAMICS_CLIENT_ID": "DYNAMICS-CLIENT-ID",
-              "DYNAMICS_CLIENT_SECRET": "DYNAMICS-CLIENT-SECRET",
-              "YOUTUBE_PRIVATE_KEY": "YOUTUBE-PRIVATE-KEY"
-            }
-
-      - name: AppInsight - Connection Strings
-        shell: pwsh
-        id: AppInsight
-        run: |
-          # AppInsight - Connection String
-          az config set extension.use_dynamic_install=yes_without_prompt
-          $AppInsightName = if ("${{ inputs.tag }}" -clike "pr-*") { "${{ env.APP_INSIGHT_DEV }}" } else { "${{ env.APP_INSIGHT_PROD }}" }
-
-          $AppInsightConnectionString = (az monitor app-insights component show --resource-group ${{ env.AZURE_RESOURCE_GROUP }} --app $AppInsightName --query connectionString -o tsv)
-          echo "AppInsightConnectionString=$AppInsightConnectionString" >> $env:GITHUB_OUTPUT
-          Write-Host '✅ AppInsight - Connection String retrieved'
-
-      - name: ACR - Login
-        run: |
-          az acr login --name ${{ env.ACR_LOGIN_SERVER }}
-
-      - name: Docker - Build and push
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          push: true
-          build-args: |
-            NODE_OPTIONS=--max_old_space_size=8192
-            NEXT_PUBLIC_GOOGLE_GTM_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID }}
-            NEXT_PUBLIC_GOOGLE_ANALYTICS=${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS }}
-            NEXT_PUBLIC_GITHUB_RUN_DATE=${{ steps.date.outputs.date }}
-            NEXT_PUBLIC_GITHUB_RUN_ID=${{ github.run_id }}
-            NEXT_PUBLIC_GITHUB_RUN_NUMBER=${{ github.run_number }}
-            NEXT_PUBLIC_GITHUB_REPOSITORY=${{ github.repository }}
-            NEXT_PUBLIC_HOTJAR_ID=${{ secrets.NEXT_PUBLIC_HOTJAR_ID }}
-            NEXT_PUBLIC_HOTJAR_SV=${{ secrets.NEXT_PUBLIC_HOTJAR_SV }}
-            NEXT_PUBLIC_TINA_CLIENT_ID=${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
-            NEXT_PUBLIC_TINA_BRANCH=${{ github.head_ref || github.ref_name }}
-            NEXT_PUBLIC_ZENDESK_CHAT_KEY=${{ secrets.NEXT_PUBLIC_ZENDESK_CHAT_KEY }}
-            GOOGLE_RECAPTCHA_SITE_KEY=${{ env.GoogleRecaptchaSiteKey }}
-            MICROSOFT_OAUTH_TENANT_ID=${{ env.MICROSOFT_OAUTH_TENANT_ID }}
-            MICROSOFT_OAUTH_CLIENT_ID=${{ env.MICROSOFT_OAUTH_CLIENT_ID }}
-            MICROSOFT_OAUTH_CLIENT_SECRET=${{ env.MICROSOFT_OAUTH_CLIENT_SECRET }}
-            DYNAMICS_CLIENT_ID=${{ env.DYNAMICS_CLIENT_ID }}
-            DYNAMICS_CLIENT_SECRET=${{ env.DYNAMICS_CLIENT_SECRET }}
-            YOUTUBE_PRIVATE_KEY=${{ env.YOUTUBE_PRIVATE_KEY }}
-            KEY_VAULT=${{ env.KEY_VAULT }}
-            NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING=${{ steps.AppInsight.outputs.AppInsightConnectionString }}
-            TINA_TOKEN=${{ secrets.TINA_TOKEN }}
-            NEXT_PUBLIC_CHATBASE_BOT_ID=${{ env.NEXT_PUBLIC_CHATBASE_BOT_ID }}
-            SITE_URL=https://www.ssw.com.au
-            TINA_SEARCH_TOKEN=${{ secrets.TINA_SEARCH_TOKEN }}
-            NEXT_PUBLIC_SLOT_URL=https://${{ env.APP_SERVICE_NAME}}-pr-${{github.event.number}}.azurewebsites.net/
-
-          tags: |
-            ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
-
-  merge-pr:
-    runs-on: ubuntu-latest
-    needs: [fetch-data, build]
-    steps:
-      - name: Enable Auto-Merge
-        if: ${{ needs.fetch-data.outputs.pr-number }}
-        run: gh pr merge --merge --auto ${{ needs.fetch-data.outputs.pr-number }}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+      # - name: Enable Auto-Merge
+      #   if: ${{ steps.cpr.outputs.pull-request-number }}
+      #   run: gh pr merge -s ${{ steps.cpr.outputs.pull-request-number }}
+      #   env:
+      #     GH_TOKEN: ${{ steps.get-app-token.outputs.token }}
