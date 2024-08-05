@@ -49,7 +49,7 @@ const GetPeopleProfiles = async ( {
         presenterJson.profileImg = `/${profileImageRelativePath}`;
       }
 
-      console.log(presenterJson);
+      fs.writeFileSync(existingPresenterPath, matter.stringify(peopleMatter.content, presenterJson));
     });
   } catch (error) {
     console.error(error);
