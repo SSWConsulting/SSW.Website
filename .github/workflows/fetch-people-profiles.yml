@@ -45,6 +45,11 @@ jobs:
               peopleImagePath: `images/people`
             });
 
+      - uses: ./.github/workflows/template-build.yml
+        with:
+          tag: staging
+          secrets: inherit
+
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v6
