@@ -223,8 +223,8 @@ importers:
         specifier: ^4.2.3
         version: 4.2.3(next@14.2.4(@babel/core@7.25.2)(@opentelemetry/api@1.9.0)(@playwright/test@1.44.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       playwright:
-        specifier: 1.44.1
-        version: 1.44.1
+        specifier: 1.45.3
+        version: 1.45.3
       postcss:
         specifier: ^8.4.38
         version: 8.4.40
@@ -6274,9 +6274,19 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
+  playwright-core@1.45.3:
+    resolution: {integrity: sha512-+ym0jNbcjikaOwwSZycFbwkWgfruWvYlJfThKYAlImbxUgdWFO2oW70ojPm4OpE4t6TAo2FY/smM+hpVTtkhDA==}
+    engines: {node: '>=18'}
+    hasBin: true
+
   playwright@1.44.1:
     resolution: {integrity: sha512-qr/0UJ5CFAtloI3avF95Y0L1xQo6r3LQArLIg/z/PoGJ6xa+EwzrwO5lpNr/09STxdHuUoP2mvuELJS+hLdtgg==}
     engines: {node: '>=16'}
+    hasBin: true
+
+  playwright@1.45.3:
+    resolution: {integrity: sha512-QhVaS+lpluxCaioejDZ95l4Y4jSFCsBvl2UZkpeXlzxmqS+aABr5c82YmfMHrL6x27nvrvykJAFpkzT2eWdJww==}
+    engines: {node: '>=18'}
     hasBin: true
 
   popmotion@11.0.3:
@@ -16374,9 +16384,17 @@ snapshots:
 
   playwright-core@1.44.1: {}
 
+  playwright-core@1.45.3: {}
+
   playwright@1.44.1:
     dependencies:
       playwright-core: 1.44.1
+    optionalDependencies:
+      fsevents: 2.3.2
+
+  playwright@1.45.3:
+    dependencies:
+      playwright-core: 1.45.3
     optionalDependencies:
       fsevents: 2.3.2
 
