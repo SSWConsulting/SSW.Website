@@ -22,15 +22,17 @@ const GetPeopleProfiles = async ( {
     const peopleList = await people.json();
 
     peopleList.forEach(async person => {
-      const existingPresenterPath = `${presentersDirectory}/${person}.mdx`;
+      console.log(`Processing ${person}`);
+
+      const contentPresenterPath = `${presentersDirectory}/${person}.mdx`;
       const peopleMd = await fetch(`${peopleBaseUrl}/${person}/profile.md`);
       const peopleMdStr = await peopleMd.text();
 
       var presenterJson = {};
       const peopleMatter = matter(peopleMdStr);
 
-      if (fs.existsSync(existingPresenterPath)) {
-        const existingPresenterFile = matter.read(existingPresenterPath);
+      if (fs.existsSync(contentPresenterPath)) {
+        const existingPresenterFile = matter.read(contentPresenterPath);
         presenterJson = existingPresenterFile.data;
       }
 
@@ -43,13 +45,15 @@ const GetPeopleProfiles = async ( {
       const peopleProfileImagePath = `${peopleDirectory}/${person}/Images/${person}-Profile.jpg`;
 
       presenterJson.profileImg = presenterJson.profileImg ?? ``;
+      console.log(peopleProfileImagePath)
 
       if (fs.existsSync(peopleProfileImagePath)) {
         fs.copyFileSync(peopleProfileImagePath, `${websitePublicPath}/${profileImageRelativePath}`);
         presenterJson.profileImg = `/${profileImageRelativePath}`;
       }
 
-      fs.writeFileSync(existingPresenterPath, matter.stringify(peopleMatter.content, presenterJson));
+      console.log(`Writing ${contentPresenterPath}`);
+      fs.writeFileSync(contentPresenterPath, matter.stringify('', presenterJson));
     });
   } catch (error) {
     console.error(error);
