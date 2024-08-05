@@ -68,6 +68,7 @@ export default function ArticlesPage(
               name={author?.presenter?.name}
               position={author?.position}
               image={author?.profileImg}
+              url={author?.presenter?.peopleProfileURL}
             />
           </Section>
         )}
