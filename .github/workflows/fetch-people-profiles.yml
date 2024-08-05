@@ -3,7 +3,7 @@ name: Weekly - Fetch SSW People Profiles
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 * * * TUE"
+    - cron: "0 0 * * TUE"
 
 env:
   TEMPORARY_FOLDER: temp-profiles
