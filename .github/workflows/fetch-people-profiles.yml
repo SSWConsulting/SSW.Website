@@ -67,8 +67,8 @@ jobs:
             content/*
             public/*
 
-      # - name: Enable Auto-Merge
-      #   if: ${{ steps.cpr.outputs.pull-request-number }}
-      #   run: gh pr merge -s ${{ steps.cpr.outputs.pull-request-number }}
-      #   env:
-      #     GH_TOKEN: ${{ steps.get-app-token.outputs.token }}
+      - name: Enable Auto-Merge
+        if: ${{ steps.cpr.outputs.pull-request-number }}
+        run: gh pr merge -s ${{ steps.cpr.outputs.pull-request-number }}
+        env:
+          GH_TOKEN: ${{ steps.get-app-token.outputs.token }}
