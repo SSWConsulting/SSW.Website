@@ -46,6 +46,7 @@ jobs:
             });
 
       - name: Create Pull Request
+        id: cpr
         uses: peter-evans/create-pull-request@v6
         with:
           commit-message: "Fetch People Profiles"
@@ -58,3 +59,9 @@ jobs:
           add-paths: |
             content/*
             public/*
+
+      - name: Enable Auto-Merge
+        if: ${{ steps.cpr.outputs.pull-request-number }}
+        run: gh pr merge --merge --auto ${{ steps.cpr.outputs.pull-request-number }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN}}
