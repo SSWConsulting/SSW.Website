@@ -10,7 +10,7 @@ env:
   SSW_PEOPLE_BASE_URL: https://ssw.com.au/people
 
 jobs:
-  fetch-data:
+  fetch-and-pr:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -69,6 +69,6 @@ jobs:
 
       - name: Enable Auto-Merge
         if: ${{ steps.cpr.outputs.pull-request-number }}
-        run: gh pr merge -s ${{ steps.cpr.outputs.pull-request-number }}
+        run: gh pr merge -s --auto ${{ steps.cpr.outputs.pull-request-number }}
         env:
           GH_TOKEN: ${{ steps.get-app-token.outputs.token }}
