@@ -41,8 +41,9 @@ const GetPeopleProfiles = async ( {
         ...peopleMatter.data,
       };
 
+      const personName = presenterJson.presenter.name.split(' ').join('-');
       const profileImageRelativePath = `${peopleImagePath}/${person}.jpg`;
-      const peopleProfileImagePath = `${peopleDirectory}/${person}/Images/${person}-Profile.jpg`;
+      const peopleProfileImagePath = `${peopleDirectory}/${personName}/Images/${personName}-Profile.jpg`;
 
       presenterJson.profileImg = presenterJson.profileImg ?? ``;
       console.log(peopleProfileImagePath)
