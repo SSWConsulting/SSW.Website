@@ -24,7 +24,8 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version-file: ${{ env.GITHUB_WORKSPACE }}/.nvmrc
+
       - run: corepack enable pnpm
       - run: pnpm add -w gray-matter
 
