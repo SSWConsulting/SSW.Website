@@ -41,12 +41,11 @@ const GetPeopleProfiles = async ( {
         ...peopleMatter.data,
       };
 
-      const personName = presenterJson.presenter.name.split(' ').join('-');
+      const personName = presenterJson.presenter?.name?.split(' ')?.join('-') ?? 'not-found';
       const profileImageRelativePath = `${peopleImagePath}/${personName}.jpg`;
       const peopleProfileImagePath = `${peopleDirectory}/${personName}/Images/${personName}-Profile.jpg`;
 
       presenterJson.profileImg = presenterJson.profileImg ?? ``;
-      console.log(peopleProfileImagePath)
 
       if (fs.existsSync(peopleProfileImagePath)) {
         fs.copyFileSync(peopleProfileImagePath, `${websitePublicPath}/${profileImageRelativePath}`);
@@ -57,7 +56,7 @@ const GetPeopleProfiles = async ( {
       fs.writeFileSync(contentPresenterPath, matter.stringify('', presenterJson));
     });
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 }
 
