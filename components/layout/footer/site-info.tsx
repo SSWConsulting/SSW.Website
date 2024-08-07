@@ -6,14 +6,14 @@ export const SiteInfo = () => (
   <div>
     <CustomLink
       // TODO: Implementation
-      href="https://www.ssw.com.au/ssw/MenuMap.aspx"
+      href="/ssw/MenuMap.aspx"
     >
       SITEMAP
     </CustomLink>
     <Divider />
     <CustomLink
       // TODO: Implementation
-      href="https://www.ssw.com.au/ssw/HealthCheck"
+      href="/ssw/HealthCheck"
     >
       HEALTH CHECK
       <Image

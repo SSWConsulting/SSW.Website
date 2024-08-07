@@ -1,4 +1,4 @@
-import test, { expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 test("🔎 Page can be indexed, no 'noindex' found", async ({
   page,
