@@ -1,4 +1,4 @@
-import test, { expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 test("Images load successfully on index", async ({ page }) => {
   await page.on("response", (response) => {
