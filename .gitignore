@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 public/admin/.gitignore
+.github/workflows/content
+.github/workflows/public
+
+/temp-profiles
 
 # testing
 /coverage
