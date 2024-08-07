@@ -5,14 +5,14 @@ import { Divider } from "./divider";
 export const SiteInfo = () => (
   <div>
     <CustomLink
-      // TODO: Implementation
+      // TODO: Implementation https://github.com/SSWConsulting/SSW.Website/issues/2913
       href="/ssw/MenuMap.aspx"
     >
       SITEMAP
     </CustomLink>
     <Divider />
     <CustomLink
-      // TODO: Implementation
+      // TODO: Implementation https://github.com/SSWConsulting/SSW.Website/issues/2914
       href="/ssw/HealthCheck"
     >
       HEALTH CHECK
