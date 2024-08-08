@@ -12,6 +12,7 @@ export const presenterSchemaConstants = {
   },
   about: "about",
   position: "position",
+  skills: "skills",
 };
 
 export const presenterSchema: Collection = {
@@ -66,6 +67,13 @@ export const presenterSchema: Collection = {
       name: presenterSchemaConstants.position,
       description:
         "The presenter's occupation, e.g. Chief Architect for Adam Cogan",
+      required: false,
+    },
+    {
+      type: "string",
+      label: "Skills",
+      name: presenterSchemaConstants.skills,
+      description: "The presenter's skills, e.g. React | TypeScript",
       required: false,
     },
   ],

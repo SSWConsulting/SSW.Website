@@ -1,4 +1,4 @@
-import test, { expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 test("🔎 Page cannot be indexed, 'noindex' header found!", async ({
   page,
