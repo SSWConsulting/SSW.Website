@@ -155,7 +155,8 @@
                 {
                   "name": "YakShaver",
                   "url": "https://www.sswyakshaver.com",
-                  "description": "An AI tool that records your screen and voice, then assigns tasks to the appropriate people based on the content"
+                  "description": "An AI tool that records your screen and voice, then assigns tasks to the appropriate people based on the content",
+                  "iconImg": "/images//megamenu-icons/YakShaver.svg"
                 },
                 {
                   "name": "EagleEye",
