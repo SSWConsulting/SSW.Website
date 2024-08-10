@@ -12,6 +12,7 @@ import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+import { BookingButton } from "@/components/blocks";
 import { Container } from "@/components/util/container";
 import Image from "next/image";
 
@@ -24,11 +25,15 @@ export default function ArticlesPage(
     variables: props.variables,
   });
   const { author } = data.articles;
+  const bookingButtonProps = {
+    buttonText: data.global.bookingButtonText,
+  };
+
   return (
     <div>
       <SEO seo={props.seo} />
 
-      <Layout menu={data.megamenu} showAzureBanner={true}>
+      <Layout menu={data.megamenu} showAzureBanner={true} footerColor="default">
         {data.articles.bannerImg && (
           <Container className="prose flex-1" size="custom">
             <div data-tina-field={tinaField(data.articles, "bannerImg")}>
@@ -96,6 +101,17 @@ export default function ArticlesPage(
             )}
           </section>
         )}
+        <Section className="!bg-gray-75 pb-25 text-center">
+          <Container size="custom" className="w-full">
+            <h1 data-tina-field={tinaField(data.articles, "callToAction")}>
+              {data.articles.callToAction ?? "Talk to us about your project"}
+            </h1>
+            <p className="text-lg">
+              Connect with our Account Managers to discuss how we can help.
+            </p>
+            <BookingButton data={bookingButtonProps} />
+          </Container>
+        </Section>
       </Layout>
     </div>
   );

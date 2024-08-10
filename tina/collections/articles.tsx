@@ -106,6 +106,13 @@ export const articlesSchema: Collection = {
       label: "Show Sidebar Panel",
       required: false,
     },
+    {
+      type: "string",
+      label: "Call to Action",
+      description: "Default is 'Talk to us about your project'",
+      name: "callToAction",
+      required: false,
+    },
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     sidebarPanelSchema,
