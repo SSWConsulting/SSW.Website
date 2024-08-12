@@ -1,0 +1,23 @@
+{
+  "title": "Top Database Performance Techniques 🚀",
+  "url": "/netug/brisbane",
+  "thumbnail": "/images/events/brisbane-ug-thumb.jpg",
+  "thumbnailDescription": "Brisbane Full Stack User Group",
+  "presenterName": "Bryden Oliver",
+  "presenterProfileUrl": "/people/bryden-oliver",
+  "startDateTime": "2024-08-21T08:00:00.000Z",
+  "endDateTime": "2024-08-21T10:00:00.000Z",
+  "startShowBannerDateTime": "2024-08-20T14:00:00.000Z",
+  "endShowBannerDateTime": "2024-08-21T13:00:00.000Z",
+  "calendarType": "User Groups",
+  "city": "Brisbane",
+  "category": "Other",
+  "abstract": "Discover the secrets to unlocking lightning-fast database performance! In this engaging presentation, Bryden will guide you through a range of tried-and-true techniques that will revolutionize the way you approach database optimization.\n\nWith plenty of live demos along the way, you'll gain a deep understanding of each technique and learn how to apply them to your own databases.\n\nFrom the simplest tips to more advanced techniques, this session has something for everyone. Get ready to take your database performance to the next level!\n\nThis session is aimed at making databases more accessible to developers. Aimed squarely at SQL Server, it contains lots of little tips and tricks along the way to help quickly and easily identify problem queries.",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/bryden-oliver.mdx"
+    }
+  ],
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
+}
