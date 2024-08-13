@@ -1,19 +1,6 @@
 {
-  "title": "The AI 2-day Workshop - Brisbane",
-  "url": "/events/ai-workshop",
-  "thumbnail": "/images/thumbs/ai-workshop-logo.png",
-  "thumbnailDescription": "The AI 2-day Workshop",
-  "presenterName": "Calum Simpson & Jernej Kavka",
-  "presenterProfileUrl": "/people",
-  "startDateTime": "2024-05-29T23:00:00Z",
-  "endDateTime": "2024-05-31T07:00:00Z",
-  "calendarType": "SSW Courses",
-  "city": "Brisbane",
-  "enabled": true,
-  "category": "Other",
-  "eventShortDescription": "<div class=\"ExternalClass59C9973DA8AD4399AE28291907AF7880\"><p></p></div>SSW is thoroughly exploring the evolving field of AI for software development and everyone at SSW is encouraged to use AI in their work. Since Generative AI has become widespread, developers taking advantage of it are building better software faster and SSW\u2019s&#160;productivity has risen. This 2-day&#160;workshop aims to share the knowledge of these great modern tools to help others.&#160;Developers of all skill levels with any level of AI experience.",
-  "eventDescription": "<div class=\"ExternalClass5864272A3257427BB076F66B1621F293\"><p></p></div>SSW is thoroughly exploring the evolving field of AI for software development and everyone at SSW is encouraged to use AI in their work. Since Generative AI has become widespread, developers taking advantage of it are building better software faster and SSW\u2019s&#160;productivity has risen. This 2-day&#160;workshop aims to share the knowledge of these great modern tools to help others.&#160;Developers of all skill levels with any level of AI experience.<br>",
-  "description": "SSW is thoroughly exploring the evolving field of AI for software development and everyone at SSW is encouraged to use AI in their work. Since Generative AI has become widespread, developers taking advantage of it are building better software faster and SSW\u2019s\u00a0productivity has risen. This 2-day\u00a0workshop aims to share the knowledge of these great modern tools to help others.\u00a0Developers of all skill levels with any level of AI experience.",
+  "eventShortDescription": "<div class=\"ExternalClass59C9973DA8AD4399AE28291907AF7880\"><p></p></div>SSW is thoroughly exploring the evolving field of AI for software development and everyone at SSW is encouraged to use AI in their work. Since Generative AI has become widespread, developers taking advantage of it are building better software faster and SSW’s&#160;productivity has risen. This 2-day&#160;workshop aims to share the knowledge of these great modern tools to help others.&#160;Developers of all skill levels with any level of AI experience.",
+  "eventDescription": "<div class=\"ExternalClass5864272A3257427BB076F66B1621F293\"><p></p></div>SSW is thoroughly exploring the evolving field of AI for software development and everyone at SSW is encouraged to use AI in their work. Since Generative AI has become widespread, developers taking advantage of it are building better software faster and SSW’s&#160;productivity has risen. This 2-day&#160;workshop aims to share the knowledge of these great modern tools to help others.&#160;Developers of all skill levels with any level of AI experience.<br>",
   "showOnPowerSessions": "No",
   "hasVideo": false,
   "externalPresenters": [
@@ -26,6 +13,18 @@
       "LookupValue": "Jernej Kavka"
     }
   ],
+  "title": "The AI 2-day Workshop - Brisbane",
+  "url": "/events/ai-workshop",
+  "thumbnail": "/images/thumbs/ai-workshop-logo.png",
+  "thumbnailDescription": "The AI 2-day Workshop",
+  "presenterName": "Calum Simpson & Jernej Kavka",
+  "presenterProfileUrl": "/people",
+  "startDateTime": "2024-05-29T23:00:00.000Z",
+  "endDateTime": "2024-05-31T07:00:00.000Z",
+  "calendarType": "SSW Courses",
+  "city": "Brisbane",
+  "category": "Other",
+  "description": "SSW is thoroughly exploring the evolving field of AI for software development and everyone at SSW is encouraged to use AI in their work. Since Generative AI has become widespread, developers taking advantage of it are building better software faster and SSW’s productivity has risen. This 2-day workshop aims to share the knowledge of these great modern tools to help others. Developers of all skill levels with any level of AI experience.\n",
   "presenterList": [
     {
       "presenter": "content/presenters/calum-simpson.mdx"
@@ -35,5 +34,6 @@
     }
   ],
   "delayedLiveStreamStart": true,
-  "liveStreamDelayMinutes": 30
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
 }
