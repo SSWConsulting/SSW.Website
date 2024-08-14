@@ -153,7 +153,10 @@ export const getStaticProps = async ({ params }) => {
   );
 
   if (sideBars.length > 0 && preFetchedUpcomingEvents.length > 0) {
-    tinaProps.data.page.sideBar = [...preFetchedUpcomingEvents];
+    tinaProps.data.page.sideBar = [
+      ...tinaProps.data.page.sideBar,
+      ...preFetchedUpcomingEvents,
+    ];
   }
 
   if (tinaProps.data.page.seo && !tinaProps.data.page.seo.canonical) {
