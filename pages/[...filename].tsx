@@ -15,7 +15,8 @@ import { Container } from "../components/util/container";
 import { Section } from "../components/util/section";
 import { SEO } from "../components/util/seo";
 import { removeExtension } from "../services/client/utils.service";
-const ISR_TIME = 60 * 60; // 1 hour;
+
+const ISR_TIME_SECONDS = 60 * 60;
 
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -165,7 +166,7 @@ export const getStaticProps = async ({ params }) => {
       query: tinaProps.query,
       variables: tinaProps.variables,
     },
-    revalidate: ISR_TIME,
+    revalidate: ISR_TIME_SECONDS,
   };
 };
 
