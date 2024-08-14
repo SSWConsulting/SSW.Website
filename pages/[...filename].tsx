@@ -129,6 +129,31 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${relativePath}.mdx`,
   });
 
+  const sideBars = tinaProps.data.page?.sideBar || [];
+
+  const preFetchedUpcomingEvents = await Promise.all(
+    sideBars
+      .filter((sideBar) => sideBar.__typename === "PageSideBarUpcomingEvents")
+      .map(async (sideBar) => {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const upcomingevents = await client.queries.getFutureEventsQuery({
+          fromDate: today.toISOString(),
+          top: sideBar.numberOfEvents,
+        });
+
+        return {
+          ...sideBar,
+          events: upcomingevents,
+        };
+      })
+  );
+
+  if (sideBars.length > 0 && preFetchedUpcomingEvents.length > 0) {
+    tinaProps.data.page.sideBar = [...preFetchedUpcomingEvents];
+  }
+
   if (tinaProps.data.page.seo && !tinaProps.data.page.seo.canonical) {
     tinaProps.data.page.seo.canonical = `${tinaProps.data.global.header.url}${relativePath}`;
   }
