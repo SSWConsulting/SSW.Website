@@ -20,10 +20,12 @@ export const UpcomingEvents = ({ data }) => {
       setLoading(true);
       const today = new Date();
       today.setHours(0, 0, 0, 0);
-      const events = await client.queries.getFutureEventsQuery({
-        fromDate: today.toISOString(),
-        top: data.numberOfEvents,
-      });
+      const events =
+        data.events ||
+        (await client.queries.getFutureEventsQuery({
+          fromDate: today.toISOString(),
+          top: data.numberOfEvents,
+        }));
       setLoading(false);
 
       if (!events.data) return;
@@ -38,7 +40,7 @@ export const UpcomingEvents = ({ data }) => {
     };
 
     fetchEvents();
-  }, [data.numberOfEvents]);
+  }, [data.numberOfEvents, data.events]);
 
   return (
     <div className="prose mt-5 max-w-none sm:my-0">
