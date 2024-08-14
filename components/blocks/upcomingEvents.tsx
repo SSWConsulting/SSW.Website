@@ -40,7 +40,7 @@ export const UpcomingEvents = ({ data }) => {
     };
 
     fetchEvents();
-  }, [data.numberOfEvents]);
+  }, [data.numberOfEvents, data.events]);
 
   return (
     <div className="prose mt-5 max-w-none sm:my-0">
