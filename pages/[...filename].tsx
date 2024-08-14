@@ -154,7 +154,9 @@ export const getStaticProps = async ({ params }) => {
 
   if (sideBars.length > 0 && preFetchedUpcomingEvents.length > 0) {
     tinaProps.data.page.sideBar = [
-      ...tinaProps.data.page.sideBar,
+      ...sideBars.filter(
+        ({ __typename }) => __typename !== "PageSideBarUpcomingEvents"
+      ),
       ...preFetchedUpcomingEvents,
     ];
   }
