@@ -109,7 +109,7 @@ export const articlesSchema: Collection = {
     {
       type: "string",
       label: "Call to Action",
-      description: "Default is 'Talk to us about your project'",
+      description: "Default value is 'Talk to us about your project'",
       name: "callToAction",
       required: false,
     },
