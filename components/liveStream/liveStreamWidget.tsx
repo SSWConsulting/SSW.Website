@@ -9,6 +9,7 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import layoutData, {
   default as globals,
 } from "../../content/global/index.json";
@@ -18,7 +19,6 @@ import { InlineJotForm } from "../blocks";
 import { CustomLink } from "../customLink";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
 import { SocialIcons } from "../socialIcons/socialIcons";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;
@@ -291,23 +291,21 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                       {!!presenterDetails.profileImg && (
                         <Image
                           src={presenterDetails.profileImg}
-                          alt={presenterDetails.presenter.name}
+                          alt={presenterDetails.name}
                           width={200}
                           height={200}
                         />
                       )}
                     </div>
                     <div className="col-span-5">
-                      <p className="mb-3 font-bold">
-                        {presenterDetails.presenter.name}
-                      </p>
+                      <p className="mb-3 font-bold">{presenterDetails.name}</p>
                       <TinaMarkdown content={presenterDetails.about} />
-                      {!!presenterDetails.presenter.peopleProfileURL && (
+                      {!!presenterDetails.peopleProfileURL && (
                         <CustomLink
                           className="float-right border-b-1 border-dotted border-gray-450 !no-underline"
-                          href={presenterDetails.presenter.peopleProfileURL}
+                          href={presenterDetails.peopleProfileURL}
                         >
-                          {`${presenterDetails.presenter.name}'s profile >`}
+                          {`${presenterDetails.name}'s profile >`}
                         </CustomLink>
                       )}
                     </div>

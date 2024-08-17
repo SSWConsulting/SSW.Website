@@ -1,6 +1,6 @@
+import { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { EventTrimmed } from "../../components/filter/events";
 import client from "../../tina/__generated__/client";
-import { TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 /**
  * Querying TinaCMS event data for the next UG event
@@ -87,10 +87,8 @@ export interface EventInfo extends EventTrimmed {
     presenter?: {
       profileImg?: string;
       torsoImg?: string;
-      presenter?: {
-        name?: string;
-        peopleProfileURL?: string;
-      };
+      name?: string;
+      peopleProfileURL?: string;
       about?: TinaMarkdownContent;
       tip?: string;
     };
