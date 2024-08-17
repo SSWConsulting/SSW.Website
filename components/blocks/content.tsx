@@ -97,6 +97,7 @@ export const contentBlockSchema: Template = {
         videoEmbedBlockSchema,
         colorBlockSchema,
       ],
+      required: true,
     },
     {
       type: "string",
