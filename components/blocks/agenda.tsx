@@ -93,7 +93,6 @@ export const agendaSchema: Template = {
       type: "string",
       label: "Header",
       name: agendaBlockConstant.header,
-      required: true,
     },
     {
       type: "string",
