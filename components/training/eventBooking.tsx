@@ -17,6 +17,21 @@ export const isEmpty = (value) => {
   );
 };
 
+export const formatTimeWithAmPm = (date) => {
+  let hours = date.getHours();
+  const minutes = date.getMinutes();
+  const amPm = hours >= 12 ? "PM" : "AM";
+
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+
+  const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+
+  return minutes === 0
+    ? `${hours}${amPm}`
+    : `${hours}:${formattedMinutes}${amPm}`;
+};
+
 const classes = {
   mdColSpan4: "md:col-span-4",
   mdColSpan6: "md:col-span-6",
@@ -96,7 +111,11 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
                 />
               </div>
               <div className="py-0.5 text-xs uppercase text-gray-500">
-                {EventModel.TIMINGS}
+                {event.date && event.endDate
+                  ? formatTimeWithAmPm(new Date(event.date)) +
+                    " - " +
+                    formatTimeWithAmPm(new Date(event.endDate))
+                  : EventModel.TIMINGS}
               </div>
             </>
           )}
@@ -260,6 +279,7 @@ export const eventBookingBlock = {
     value: "eventList",
     city: "city",
     date: "date",
+    endDate: "endDate",
     bookingURL: "bookingURL",
     location: "location",
   },
@@ -321,7 +341,17 @@ export const eventBookingSchema: Template = {
           label: "Start Date",
           name: eventBookingBlock.eventList.date,
           ui: {
-            parse: (value) => value && value.format("YYYY-MM-DD"),
+            parse: (value) => value && value.format("YYYY-MM-DD HH:mm"),
+            timeFormat: "HH:mm",
+          },
+        },
+        {
+          type: "datetime",
+          label: "End Date (for time only)",
+          name: eventBookingBlock.eventList.endDate,
+          ui: {
+            parse: (value) => value && value.format("YYYY-MM-DD HH:mm"),
+            timeFormat: "HH:mm",
           },
         },
         {
