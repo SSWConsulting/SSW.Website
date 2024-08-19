@@ -1,8 +1,6 @@
 import client from "@/tina/client";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
-import { draftMode } from "next/headers";
-import ProductsContent from "./products-content";
 import ProductsPreview from "./products-preview";
 
 export const dynamicParams = false; // False will not allow Next to generate any routes on request - https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
@@ -67,11 +65,6 @@ export default async function Products({
   const { filename } = params;
 
   const tinaProps = await getData(filename);
-  const { isEnabled: isPreview } = draftMode();
 
-  return isPreview ? (
-    <ProductsPreview props={{ ...tinaProps }} />
-  ) : (
-    <ProductsContent props={tinaProps} />
-  );
+  return <ProductsPreview props={{ ...tinaProps }} />;
 }

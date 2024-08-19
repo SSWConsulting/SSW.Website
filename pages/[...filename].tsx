@@ -16,6 +16,8 @@ import { Section } from "../components/util/section";
 import { SEO } from "../components/util/seo";
 import { removeExtension } from "../services/client/utils.service";
 
+const ISR_TIME_SECONDS = 60 * 60;
+
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
@@ -129,6 +131,36 @@ export const getStaticProps = async ({ params }) => {
     relativePath: `${relativePath}.mdx`,
   });
 
+  const sideBars = tinaProps.data.page?.sideBar || [];
+
+  const preFetchedUpcomingEvents = await Promise.all(
+    sideBars
+      .filter((sideBar) => sideBar.__typename === "PageSideBarUpcomingEvents")
+      .map(async (sideBar) => {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const upcomingevents = await client.queries.getFutureEventsQuery({
+          fromDate: today.toISOString(),
+          top: sideBar.numberOfEvents,
+        });
+
+        return {
+          ...sideBar,
+          events: upcomingevents,
+        };
+      })
+  );
+
+  if (sideBars.length > 0 && preFetchedUpcomingEvents.length > 0) {
+    tinaProps.data.page.sideBar = [
+      ...sideBars.filter(
+        ({ __typename }) => __typename !== "PageSideBarUpcomingEvents"
+      ),
+      ...preFetchedUpcomingEvents,
+    ];
+  }
+
   if (tinaProps.data.page.seo && !tinaProps.data.page.seo.canonical) {
     tinaProps.data.page.seo.canonical = `${tinaProps.data.global.header.url}${relativePath}`;
   }
@@ -139,6 +171,7 @@ export const getStaticProps = async ({ params }) => {
       query: tinaProps.query,
       variables: tinaProps.variables,
     },
+    revalidate: ISR_TIME_SECONDS,
   };
 };
 
