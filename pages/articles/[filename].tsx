@@ -12,7 +12,7 @@ import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-import { BookingButton } from "@/components/blocks";
+import { BookingButton, BuiltOnAzure } from "@/components/blocks";
 import { Container } from "@/components/util/container";
 import Image from "next/image";
 
@@ -33,7 +33,7 @@ export default function ArticlesPage(
     <div>
       <SEO seo={props.seo} />
 
-      <Layout menu={data.megamenu} showAzureBanner={true} footerColor="default">
+      <Layout menu={data.megamenu} footerColor="default">
         {data.articles.bannerImg && (
           <Container className="prose flex-1" size="custom">
             <div data-tina-field={tinaField(data.articles, "bannerImg")}>
@@ -111,6 +111,9 @@ export default function ArticlesPage(
             </p>
             <BookingButton data={bookingButtonProps} />
           </Container>
+        </Section>
+        <Section>
+          <BuiltOnAzure data={{ backgroundColor: "default" }} />
         </Section>
       </Layout>
     </div>
