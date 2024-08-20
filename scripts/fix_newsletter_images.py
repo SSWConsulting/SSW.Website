@@ -3,30 +3,19 @@ import re
 import chardet
 from bs4 import BeautifulSoup
 
-
 base_directory = "../public/images/newsletter-uploads"
 images_path = "../public"
 ssw_url = "https://www.ssw.com.au/"
 ssw_url_alt = "https://ssw.com.au/"
 
-
 def path_to_relative_url(path):
     return path.replace("\\", "/").replace(images_path, "")
-
-def find_image_paths(html_content):
-    img_paths = re.findall(r'<img[^>]+src="([^">]+)"', html_content)
-    return img_paths
-
-def check_image_exists(image_path):
-    full_path = os.path.join(base_directory, image_path)
-    return os.path.exists(full_path)
 
 def detect_encoding(file_path: str) -> str:
     with open(file_path, 'rb') as file:
         raw_data = file.read()
     result = chardet.detect(raw_data)
     return result['encoding']
-
 
 def image_hosted_locally(image_path: str)-> bool:
     return image_path.startswith('/') or  image_path.startswith(ssw_url) or image_path.startswith(ssw_url_alt) or (not image_path.startswith('http')) 
@@ -41,18 +30,6 @@ def path_to_file(path: str) -> str:
     file = os.path.basename(path)
     return path.rstrip(file)
 
-def getfile_insensitive(path: str):
-    directory, filename = os.path.split(path)
-    directory, filename = (directory or '.'), filename.lower()
-    if not os.path.exists(directory):
-        return None
-    for f in os.listdir(directory):
-        newpath = os.path.join(directory, f)
-        if os.path.isfile(newpath) and f.lower() == filename:
-            return newpath
-    return None
-
-
 def find_path_case_insensitive(path: str):
     path = path.replace("/", "\\")
     split_path = path.split("\\")
@@ -64,7 +41,7 @@ def find_path_in_directory(cwd: str, next_paths):
     for dir in os.listdir(cwd):
         if dir.lower() == next_paths[0].lower():
             return find_path_in_directory(os.path.join(cwd, dir), next_paths[1:])
-    return None
+
 def main():
     for root, _, files in os.walk(base_directory):
         for file in files:
