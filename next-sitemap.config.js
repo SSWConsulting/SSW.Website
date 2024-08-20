@@ -10,7 +10,6 @@ module.exports = {
   additionalPaths: async () => {
     const otherURLs = [
       "https://blog.ssw.com.au/",
-      "https://tv.ssw.com/",
       "https://www.ssw.com.au/rules/",
     ];
 
