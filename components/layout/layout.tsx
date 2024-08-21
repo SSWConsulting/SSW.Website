@@ -160,7 +160,7 @@ export const Layout = ({
           <ErrorBoundary key={router.asPath}>
             <main className={classNames("grow bg-white")}>{children}</main>
 
-            {showAzureBanner && <PreFooter backgroundColor={footerColor} />}
+            {showAzureBanner && <PreFooter />}
             <Footer />
           </ErrorBoundary>
         </div>
