@@ -22,7 +22,7 @@ export const PhoneButton = ({
 }: PhoneButtonProps) => {
   const url =
     (isMobile ? mobile.url : desktop.url) ||
-    "https://ssw.com.au/company/contact-us";
+    "https://www.ssw.com.au/company/contact-us";
   const text = (isMobile ? mobile.text : desktop.text) || "CONTACT US";
 
   return (

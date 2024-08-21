@@ -386,6 +386,13 @@ export const getStaticProps = async ({ params }) => {
     }
   }
 
+  if (
+    tinaProps.data.userGroupPage.seo &&
+    !tinaProps.data.userGroupPage.seo.canonical
+  ) {
+    tinaProps.data.userGroupPage.seo.canonical = `${tinaProps.data.global.header.url}netug/${params.filename ?? ""}`;
+  }
+
   return {
     props: {
       data: tinaProps.data,
