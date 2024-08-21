@@ -1,5 +1,5 @@
 ﻿img {
-	behavior: url("./iepngfix.htc");
+	behavior: url('/images/Newsletters/iepngfix.htc');
 }
 body {
 	background-image: url('/images/Newsletters/background_dna.gif');
@@ -428,7 +428,7 @@ p.presenter {
 div#headerMenu {
 	padding: 5px 0 0 155px;
 	background-repeat: repeat-x;
-	/*background-image: url(../../public/HeaderMenuBarBack.gif);*/
+	/*background-image: url('/images/Newsletters/HeaderMenuBarBack.gif');*/
 	height: 30px;
 	font-size: 80%;
 	top: 81px;
@@ -564,7 +564,7 @@ div#headerMenu {
 	padding-left: 15px;
 }
 #showcase span.more {
-	background: url(../../public/icon_link.gif) no-repeat 100% 80%;
+	background: url('/images/Newsletters/icon_link.gif') no-repeat 100% 80%;
 	padding-right: 15px;
 }
 #showcase .details a.more {
@@ -888,7 +888,7 @@ div#sidebar .first {
 	background-image: url('/images/Newsletters/training_moon.png');
 }
 #sidebar div.offer .selfpaced {
-	background-image: url(../../public/images/offer_selfpaced.png);
+	background-image: url('/images/Newsletters/offer_selfpaced.png');
 }
 #sidebar .offer h4 {
 	font-family: "Trebuchet MS", Arial, Helvetica, Sans-Serif;
@@ -1118,7 +1118,7 @@ dl.imgRight dd {
 /* ******************** */
 
 #frmSearch {
-	background-image: url(../../public/404page1.jpg);
+	background-image: url('/images/Newsletters/404page1.jpg');
 	display: block;
 	background-repeat: no-repeat;
 	height: 400px;
@@ -1347,24 +1347,24 @@ dl.badImage dd {
 	color: #000000;
 }
 dl.goodImage dd {
-	background-image: url(/ssw/Standards/Rules/images/Good.gif);
+	background-image: url('/images/Newsletters/Good.gif');
 	background-repeat: no-repeat;
 	background-color: transparent;
 	padding: 0 0 0 20px;
 }
 /*dl.goodImage dd:before
 {
-	content: "<img src=" /ssw/Standards/Rules/images/Good.gif ">";
+	content: "<img src=" /images/Newsletters/Good.gif ">";
 }*/
 dl.badImage dd {
-	background-image: url(/ssw/Standards/Rules/images/Bad.gif);
+	background-image: url('/images/Newsletters/Bad.gif');
 	background-repeat: no-repeat;
 	background-color: transparent;
 	padding: 0 0 0 20px;
 }
 /*dl.badImage dd:before
 {
-	content: "<img src=" /ssw/Standards/Rules/images/Bad.gif ">";
+	content: "<img src=" /images/Newsletters/Bad.gif ">";
 }*/
 #contentPane a {
 	text-decoration: underline;
@@ -1410,7 +1410,7 @@ dl.badImage dd {
 /* ******************* */
 /* a.external, a.external:link
 {
-	background-image: url(../../public/LeaveSite.gif);
+	background-image: url('/images/Newsletters/LeaveSite.gif');
 	background-repeat: no-repeat;
 	background-position: right center;
 	padding-top: 0px;
@@ -1420,7 +1420,7 @@ dl.badImage dd {
 }
 a.newWindow, a.newWindow:link
 {
-	background-image: url(../../public/NewWindow.gif);
+	background-image: url('/images/Newsletters/NewWindow.gif');
 	background-repeat: no-repeat;
 	background-position: right center;
 	padding-top: 0px;
@@ -1430,42 +1430,42 @@ a.newWindow, a.newWindow:link
 }
 a.pdf, a.pdf:link
 {
-	background-image: url(../../public/IconPdf.gif);
+	background-image: url('/images/Newsletters/IconPdf.gif');
 	background-repeat: no-repeat;
 	background-position: left top;
 	padding: 3px 4px 3px 20px;
 }
 a.audio, a.audio:link
 {
-	background-image: url(../../public/IconAudio.gif);
+	background-image: url('/images/Newsletters/iconAudio.gif');
 	background-repeat: no-repeat;
 	background-position: left top;
 	padding: 3px 4px 3px 20px;
 }
 a.video, a.video:link
 {
-	background-image: url(../../public/iconVideo.png);
+	background-image: url('/images/Newsletters/iconVideo.png');
 	background-repeat: no-repeat;
 	background-position: left top;
 	padding: 3px 4px 3px 20px;
 }
 a.wmv, a.wmv:link
 {
-	background-image: url(../../public/iconwmv.gif);
+	background-image: url('/images/Newsletters/iconwmv.gif');
 	background-repeat: no-repeat;
 	background-position: left top;
 	padding: 3px 4px 3px 20px;
 }
 a.eps, a.eps:link
 {
-	background-image: url(../../public/IconEps.gif);
+	background-image: url('/images/Newsletters/iconEps.gif');
 	background-repeat: no-repeat;
 	background-position: -4px top;
 	padding: 3px 4px 3px 20px;
 }
 a.gif, a.gif:link
 {
-	background-image: url(../../public/iconGif.gif);
+	background-image: url('/images/Newsletters/IconGif.gif');
 	background-repeat: no-repeat;
 	background-position: left top;
 	padding: 3px 4px 3px 20px;
@@ -1488,13 +1488,13 @@ dl.badCode dt {
 
 #maincontentFull dl.goodCode dd {
 	background-color: transparent;
-	background-image: url(/ssw/Standards/Rules/images/Good.gif);
+	background-image: url('/images/Newsletters/Good.gif');
 	background-repeat: no-repeat;
 }
 
 #maincontentFull dl.badCode dd {
 	background-color: transparent;
-	background-image: url(/ssw/Standards/Rules/images/Bad.gif);
+	background-image: url('/images/Newsletters/Bad.gif');
 	background-repeat: no-repeat;
 }
 
@@ -1541,7 +1541,7 @@ a.strike {
 
 #maincontentFull .infoBox {
 	background-color: #eeeeee;
-	background-image: url(../../public/icon_info.gif);
+	background-image: url('/images/Newsletters/icon_info.gif');
 	background-repeat: no-repeat;
 	background-position: 5px 5px;
 	border: 1px dashed #999999;
@@ -1567,7 +1567,7 @@ a.strike {
 
 .interInfoBoxSide {
 	background-color: #eeeeee;
-	background-image: url(../../public/Icon_attention.png);
+	background-image: url('/images/Newsletters/Icon_attention.png');
 	background-repeat: no-repeat;
 	background-position: 10px 10px;
 	border: 1px dashed #999999;
@@ -1763,7 +1763,7 @@ img.regist_grey {
 }
 
 #silverlightControlHost {
-	background: black url(/ssw/Video/loading.gif) scroll no-repeat center center;
+	background: black url('/images/Newsletters/loading.gif') scroll no-repeat center center;
 	width: 512px;
 	height: 288px;
 	border: 5px solid #333;
@@ -2140,7 +2140,7 @@ span.bookNow {
 	color: #fff;
 	height: 30px;
 	line-height: 30px;
-	background: transparent url(../../public/images/button_bg.png) no-repeat
+	background: transparent url(ssw.com.au/ssw/images/Newsletters/button_bg.png) no-repeat
 		scroll 0 0;
 }
 #maincontent ul.events a.more:hover {
@@ -2629,7 +2629,7 @@ ul.homepage-special-list li:hover {
 }
 
 ul.homepage-special-list li h3 {
-	background: url("/public/images/homepage_services.jpg") repeat scroll 0 0
+	background: url('/images/Newsletters/homepage_services.jpg') repeat scroll 0 0
 		transparent;
 	border-color: #aaaaaa #ffffff #ffffff #aaaaaa;
 	border-style: solid;
@@ -2771,14 +2771,14 @@ a#homepage-products {
 }
 
 .ConsultingOptionsButtons {
-	background: transparent url(../../public/images/consulting-optionsBG.jpg)
+	background: transparent url('/images/Newsletters/consulting-optionsBG.jpg')
 		repeat-x top left;
 	padding-top: 16px;
 	padding-left: 20px;
 }
 
 .ConsultingOptions-Text {
-	background: transparent url(../../public/images/consulting-optionsTextBG.jpg)
+	background: transparent url('/images/Newsletters/consulting-optionsTextBG.jpg')
 		repeat-x top left;
 }
 
@@ -2862,7 +2862,7 @@ a#homepage-products {
 }
 
 #subpage .ConsultingOptionsButtons a.expert {
-	background: transparent url(../../public/images/consulting-optionsBG.jpg)
+	background: transparent url('/images/Newsletters/consulting-optionsBG.jpg')
 		no-repeat -16px -294px;
 	height: 139px;
 	width: 378px;
@@ -2872,7 +2872,7 @@ a#homepage-products {
 }
 
 #subpage .ConsultingOptionsButtons a.team {
-	background: transparent url(../../public/images/consulting-optionsBG.jpg)
+	background: transparent url('/images/Newsletters/consulting-optionsBG.jpg')
 		no-repeat -401px -294px;
 	height: 139px;
 	width: 378px;
@@ -2882,12 +2882,12 @@ a#homepage-products {
 }
 
 #subpage .ConsultingOptionsButtons a.expert:hover {
-	background: transparent url(../../public/images/consulting-optionsBG.jpg)
+	background: transparent url('/images/Newsletters/consulting-optionsBG.jpg')
 		no-repeat -16px -155px;
 }
 
 #subpage .ConsultingOptionsButtons a.team:hover {
-	background: transparent url(../../public/images/consulting-optionsBG.jpg)
+	background: transparent url('/images/Newsletters/consulting-optionsBG.jpg')
 		no-repeat -401px -155px;
 }
 
@@ -3052,7 +3052,7 @@ a.directions {
 }
 
 .contactForm a.button {
-	background: url("/public/images/button.png") no-repeat scroll right top
+	background: url('/images/Newsletters/button.png') no-repeat scroll right top
 		transparent;
 	border: 0 none !important;
 	color: white;
@@ -3069,7 +3069,7 @@ a.directions {
 }
 
 .contactForm a.button span {
-	background: url("/public/images/button.png") no-repeat scroll left top
+	background: url('/images/Newsletters/button.png') no-repeat scroll left top
 		transparent;
 	display: inline-block;
 	height: 30px;
@@ -3199,11 +3199,11 @@ th span.auServerMini {
 }
 
 th span.usServerMini {
-	background-image: url("/public/images/smallflag_us.png");
+	background-image: url('/images/Newsletters/smallflag_us.png');
 }
 
 th span.auServerMini {
-	background-image: url("/public/images/smallflag_au.png");
+	background-image: url('/images/Newsletters/smallflag_au.png');
 }
 
 th span.usServer,
@@ -3216,29 +3216,29 @@ th span.auServer {
 }
 
 th span.usServer {
-	background-image: url("/public/images/flag_us.png");
+	background-image: url('/images/Newsletters/flag_us.png');
 }
 
 th span.auServer {
-	background-image: url("/public/images/flag_au.png");
+	background-image: url('/images/Newsletters/flag_au.png');
 }
 
 .VS2008 {
-	background: url("/public/images/VS2008Icon.png") no-repeat scroll 0 3px
+	background: url('/images/Newsletters/VS2008Icon.png') no-repeat scroll 0 3px
 		transparent;
 	margin-left: 4px;
 	padding-left: 24px;
 }
 
 .VS2010 {
-	background: url("/public/images/VS2008Icon.png") no-repeat scroll 0 3px
+	background: url('/images/Newsletters/VS2008Icon.png') no-repeat scroll 0 3px
 		transparent;
 	padding-left: 24px;
 	margin-left: 4px;
 }
 
 .mainTestimonial {
-	background: url("/public/images/mainTestimonial_bg.png") no-repeat scroll 5px
+	background: url('/images/Newsletters/mainTestimonial_bg.png') no-repeat scroll 5px
 		20px #f8f8f8;
 	font-size: 14px;
 	line-height: 20px;
@@ -3355,12 +3355,12 @@ th span.auServer {
 	margin: 20px auto;
 	padding: 10px 0;
 	clear: both;
-	background: transparent url("/public/images/testimonial_top.png") no-repeat
+	background: transparent url('/images/Newsletters/testimonial_top.png') no-repeat
 		top left;
 }
 
 .testimonials-bg {
-	background: transparent url("/public/images/testimonial_repeat.png") repeat-y
+	background: transparent url('/images/Newsletters/testimonial_repeat.png') repeat-y
 		top left;
 	font-size: 12px;
 	font-style: italic;
@@ -3368,13 +3368,13 @@ th span.auServer {
 }
 
 .testimonials-content {
-	background: transparent url("/public/images/testimonial_quote.png") no-repeat
+	background: transparent url('/images/Newsletters/testimonial_quote.png') no-repeat
 		top left;
 	padding: 10px 20px 0px 50px;
 }
 
 .testimonials-content-bottom {
-	background: transparent url("/public/images/testimonial_bottom.png") no-repeat
+	background: transparent url('/images/Newsletters/testimonial_bottom.png') no-repeat
 		top left;
 	height: 25px;
 }
@@ -3416,7 +3416,7 @@ th span.auServer {
 }
 
 .testimonials-logo {
-	background: url("/public/images/testimonial_logo.png") no-repeat right top;
+	background: url('/images/Newsletters/testimonial_logo.png') no-repeat right top;
 	width: 67px;
 	height: 57px;
 	float: right;
@@ -3427,7 +3427,7 @@ th span.auServer {
 }
 
 #subpage div.CMS-buttons a {
-	background-image: url("/public/images/CMS-buttons.jpg");
+	background-image: url('/images/Newsletters/CMS-buttons.jpg');
 	width: 205px;
 	height: 94px;
 	display: block;
@@ -3640,11 +3640,11 @@ div.CMS-buttons a.CMS-DNN:focus {
 	font-weight: bold;
 	font-size: 13px;
 	text-decoration: none !important;
-	background: transparent url("/public/images/button.png") no-repeat right top;
+	background: transparent url('/images/Newsletters/button.png') no-repeat right top;
 }
 
 #Newsletter a.button span {
-	background: transparent url("/public/images/button.png") no-repeat left top;
+	background: transparent url('/images/Newsletters/button.png') no-repeat left top;
 	height: 30px;
 	line-height: 29px;
 	margin: 0 0 0 -5px;
@@ -3667,7 +3667,7 @@ div.scrum-flow {
 }
 
 div.scrum-flow-one {
-	background: url("/public/images/ScrumFlow-1.png") top left;
+	background: url('/images/Newsletters/ScrumFlow-1.png') top left;
 	width: 171px;
 	height: 108px;
 	display: inline-block;
@@ -3678,11 +3678,11 @@ div.scrum-flow-one {
 }
 
 div.scrum-flow div.scrum-flow-one:hover {
-	background: url("/public/images/ScrumFlow-1.png") bottom left;
+	background: url('/images/Newsletters/ScrumFlow-1.png') bottom left;
 }
 
 div.scrum-flow-two {
-	background: url("/public/images/ScrumFlow-2.png") top left;
+	background: url('/images/Newsletters/ScrumFlow-2.png') top left;
 	width: 172px;
 	height: 108px;
 	position: relative;
@@ -3695,11 +3695,11 @@ div.scrum-flow-two {
 }
 
 div.scrum-flow div.scrum-flow-two:hover {
-	background: url("/public/images/ScrumFlow-2.png") bottom left;
+	background: url('/images/Newsletters/ScrumFlow-2.png') bottom left;
 }
 
 div.scrum-flow-three {
-	background: url("/public/images/ScrumFlow-3.png") top left;
+	background: url('/images/Newsletters/ScrumFlow-3.png') top left;
 	width: 173px;
 	height: 108px;
 	position: relative;
@@ -3712,11 +3712,11 @@ div.scrum-flow-three {
 }
 
 div.scrum-flow div.scrum-flow-three:hover {
-	background: url("/public/images/ScrumFlow-3.png") bottom left;
+	background: url('/images/Newsletters/ScrumFlow-3.png') bottom left;
 }
 
 div.scrum-flow-four {
-	background: url("/public/images/ScrumFlow-4.png") top left;
+	background: url('/images/Newsletters/ScrumFlow-4.png') top left;
 	width: 173px;
 	height: 108px;
 	position: relative;
@@ -3729,11 +3729,11 @@ div.scrum-flow-four {
 }
 
 div.scrum-flow div.scrum-flow-four:hover {
-	background: url("/public/images/ScrumFlow-4.png") bottom left;
+	background: url('/images/Newsletters/ScrumFlow-4.png') bottom left;
 }
 
 div.scrum-flow-five {
-	background: url("/public/images/ScrumFlow-5.png") top left;
+	background: url('/images/Newsletters/ScrumFlow-5.png') top left;
 	width: 153px;
 	height: 108px;
 	position: absolute;
@@ -3748,12 +3748,12 @@ div.scrum-flow-five {
 }
 
 div.scrum-flow div.scrum-flow-five:hover {
-	background: url("/public/images/ScrumFlow-5.png") bottom left;
+	background: url('/images/Newsletters/ScrumFlow-5.png') bottom left;
 }
 
 #maincontentFull .scrum #tabs ul.ui-tabs-nav {
 	border: none;
-	background: url(../../public/images/ScrumFlow_TabBG.png) transparent no-repeat
+	background: url('/images/Newsletters/ScrumFlow_TabBG.png') transparent no-repeat
 		0px -2px;
 	width: 204px;
 	height: 100%;
@@ -3766,7 +3766,7 @@ div.scrum-flow div.scrum-flow-five:hover {
 }
 
 #maincontentFull .scrum #tabs ul.ui-tabs-nav li.ui-state-active a {
-	background: url(../../public/images/ScrumFlow_TabSelect.png) transparent
+	background: url('/images/Newsletters/ScrumFlow_TabSelect.png') transparent
 		no-repeat top center;
 	border-top: none;
 	width: 100%;
@@ -3833,7 +3833,7 @@ div.scrum-flow div.scrum-flow-five:hover {
 }
 
 div.ScrumHeader {
-	background: url(../../public/images/ScrumFlowheader.png);
+	background: url('/images/Newsletters/ScrumFlowheader.png');
 	height: 325;
 	width: 799;
 }
@@ -3880,7 +3880,7 @@ div.ScrumHeader ul {
 
 .definition-table {
 	width: 593px;
-	background: url(../../public/images/ScrumFlow-DropBG.png) transparent
+	background: url('/images/Newsletters/ScrumFlow-DropBG.png') transparent
 		no-repeat bottom left;
 	padding: 1px 20px 20px 20px;
 }
@@ -4020,7 +4020,7 @@ ul#filterOptions li a:hover {
 }
 ul#filterOptions li.active a {
 	color: #ce4242;
-	background: url(images/filterOptions-active-bg.png) no-repeat left;
+	background: url('/images/Newsletters/filterOptions-active-bg.png') no-repeat left;
 	padding-left: 15px;
 }
 
