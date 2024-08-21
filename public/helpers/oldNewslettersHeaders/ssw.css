@@ -134,13 +134,13 @@ div.section {
 	padding: 0 0 0 5px;
 }
 #wrapper {
-	background-image: url(../../public/images/background.png);
+	background-image: url('/images/Newsletters/background.png');
 	background-repeat: repeat-y;
 	background-position: top center;
 	min-width: 800px;
 }
 * html div#wrapper {
-	background-image: url(../../public/images/backgroundIE6.gif);
+	background-image: url('/images/Newsletters/backgroundIE6.gif');
 	padding-left: 1px;
 }
 #container {
@@ -199,7 +199,7 @@ div.section {
 	margin-top: 10px;
 }
 .section .content {
-	background: url(../../public/images/bg_section.gif);
+	background: url('/images/Newsletters/bg_section.gif');
 	background-repeat: repeat-x;
 	background-color: #ffffff;
 	background-position: 0 -1px;
@@ -284,7 +284,7 @@ input.q {
 	font-family: Georgia,"Times New Roman",Times,serif;
 	font-style: italic;
 	font-size: 1.2em;
-	background-image: url(../../public/images/quote_open_home.gif);
+	background-image: url('/images/Newsletters/quote_open_home.gif');
 	background-repeat: no-repeat;
 	padding-top: 10px;
 }
@@ -293,7 +293,7 @@ input.q {
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-style: italic;
 	font-size: 1.2em;
-	background-image: url(../../public/images/quote_open_home.gif);
+	background-image: url('/images/Newsletters/quote_open_home.gif');
 	background-repeat: no-repeat;
 	padding-top: 10px;
 }
@@ -316,7 +316,7 @@ Removed this as it was causing linebreak issues
 	font-style: italic;
 	font-weight: normal;
 	font-size: 1.2em;
-	background-image: url(../../public/images/quote_open_home.gif);
+	background-image: url('/images/Newsletters/quote_open_home.gif');
 	background-repeat: no-repeat;
 	padding-top: 10px;
 }
@@ -325,7 +325,7 @@ Removed this as it was causing linebreak issues
 	float: left;
 }
 .popular li {
-	background: url(../../public/images/bullet_square.gif);
+	background: url('/images/Newsletters/bullet_square.gif');
 	background-repeat: no-repeat;
 	padding-left: 15px;
 	background-position: 0px 9px;
@@ -335,16 +335,16 @@ Removed this as it was causing linebreak issues
 	background: #e0e0e0;
 }
 .rbtop div {
-	background: url(../../public/images/tl.gif) no-repeat top left;
+	background: url('/images/Newsletters/tl.gif') no-repeat top left;
 }
 .rbtop {
-	background: url(../../public/images/tr.gif) no-repeat top right;
+	background: url('/images/Newsletters/tr.gif') no-repeat top right;
 }
 .rbbot div {
-	background: url(../../public/images/bl.gif) no-repeat bottom left;
+	background: url('/images/Newsletters/bl.gif') no-repeat bottom left;
 }
 .rbbot {
-	background: url(../../public/images/br.gif) no-repeat bottom right;
+	background: url('/images/Newsletters/br.gif') no-repeat bottom right;
 }
 .rbtop div,
 .rbtop,
@@ -513,7 +513,7 @@ div#headerMenu {
 }
 
 #subpage #titleUX .ConsultingOptions ul li {
-	background: transparent url(../../public/images/tick.gif) no-repeat left
+	background: transparent url('/images/Newsletters/tick.gif') no-repeat left
 		center;
 	font-size: 14px;
 	padding: 3px 5px 3px 40px;
@@ -574,7 +574,7 @@ div#headerMenu {
 /*jQuery light box*/
 #showcase .popeye {
 	float: right;
-	background: url(../../public/images/Newsletters/showcases/thum_template.jpg) no-repeat;
+	background: url('/images/Newsletters/showcases/thum_template.jpg') no-repeat;
 	/*overflow:auto;    fallback popeye is scrolling! */
 	height: 235px; /* set to max height of fallback popeye */
 }
@@ -631,7 +631,7 @@ div#headerMenu {
 	z-index: 5;
 }
 #subpage #index li {
-	background-image: url(../../public/images/bullet_square.gif);
+	background-image: url('/images/Newsletters/bullet_square.gif');
 	background-position: 0pt 9px;
 	background-repeat: no-repeat;
 	padding-left: 15px;
@@ -642,7 +642,7 @@ div#headerMenu {
 #maincontent ul li,
 #maincontentFull ul li,
 #maincontent ul li ul li {
-	background-image: url(../../public/images/bullet_square.gif);
+	background-image: url('/images/Newsletters/bullet_square.gif');
 	background-position: 0pt 9px;
 	background-repeat: no-repeat;
 	padding-left: 15px;
@@ -663,7 +663,7 @@ p + ul {
 	padding-top: 3px;
 }
 #subpage #index li:hover {
-	background-image: url(../../public/images/arrow_tiny.gif);
+	background-image: url('/images/Newsletters/arrow_tiny.gif');
 }
 
 #maincontentCase {
@@ -673,7 +673,7 @@ p + ul {
 	float: left;
 }
 #maincontent ul li ul li {
-	background-image: url(../../public/images/bullet_square_grey.gif);
+	background-image: url('/images/Newsletters/bullet_square_grey.gif');
 }
 #subpage #maincontent {
 	width: 515px;
@@ -798,7 +798,7 @@ span.small {
 #subpage #maincontent ul.benefits li,
 #maincontentFull ul.benefits li,
 #subpage #titleUX ul.benefits li {
-	background-image: url(../../public/images/bullet_check.gif);
+	background-image: url('/images/Newsletters/bullet_check.gif');
 	background-repeat: no-repeat;
 	background-position: 8px 9px;
 	padding: 6px 0 0 30px;
@@ -851,7 +851,7 @@ span.small {
 #sidebar .rounded + .section {
 }
 #sidebar .rounded {
-	background-image: url(../../public/images/bg_rounded.gif);
+	background-image: url('/images/Newsletters/bg_rounded.gif');
 	background-repeat: no-repeat;
 	background-position: left top;
 	height: 27px;
@@ -876,16 +876,16 @@ div#sidebar .first {
 	margin-bottom: 20px;
 }
 #sidebar div.offer .onsite {
-	background-image: url(../../public/images/offer_onsite.png);
+	background-image: url('/images/Newsletters/offer_onsite.png');
 }
 #sidebar div.offer .customworkshop {
-	background-image: url(../../public/images/offer_custom.png);
+	background-image: url('/images/Newsletters/offer_custom.png');
 }
 #sidebar div.offer .trainday {
-	background-image: url(../../public/images/training_sun.png);
+	background-image: url('/images/Newsletters/training_sun.png');
 }
 #sidebar div.offer .trainnight {
-	background-image: url(../../public/images/training_moon.png);
+	background-image: url('/images/Newsletters/training_moon.png');
 }
 #sidebar div.offer .selfpaced {
 	background-image: url(../../public/images/offer_selfpaced.png);
@@ -900,7 +900,7 @@ div#sidebar .first {
 #sidebar .offer dl {
 	margin: 0 0 1em;
 	overflow: hidden;
-	background: transparent url(../../public/images/dot.gif) repeat-x 0 1em;
+	background: transparent url('/images/Newsletters/dot.gif') repeat-x 0 1em;
 }
 #sidebar .offer dt {
 	float: left;
@@ -921,7 +921,7 @@ div#sidebar .first {
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-style: italic;
 	font-size: 1.2em;
-	background-image: url(../../public/images/quote_open_home.gif);
+	background-image: url('/images/Newsletters/quote_open_home.gif');
 	background-repeat: no-repeat;
 	padding-top: 10px;
 }
@@ -937,41 +937,41 @@ div#sidebar .first {
 	font-style: italic;
 	font-weight: normal;
 	font-size: 1em;
-	background-image: url(../../public/images/quote_open_home.gif);
+	background-image: url('/images/Newsletters/quote_open_home.gif');
 	background-repeat: no-repeat;
 	padding-top: 10px;
 }
 #sidebar .rbtop div {
-	background: url(../../public/images/tlw.gif) no-repeat top left;
+	background: url('/images/Newsletters/tlw.gif') no-repeat top left;
 }
 #sidebar .rbtop {
-	background: url(../../public/images/trw.gif) no-repeat top right;
+	background: url('/images/Newsletters/trw.gif') no-repeat top right;
 }
 
 #sidebar .rbbot div {
-	background: url(../../public/images/blw.gif) no-repeat bottom left;
+	background: url('/images/Newsletters/blw.gif') no-repeat bottom left;
 }
 #sidebar .rbbot {
-	background: url(../../public/images/brw.gif) no-repeat bottom right;
+	background: url('/images/Newsletters/brw.gif') no-repeat bottom right;
 }
 
 /*end sidebar testimonial*/
 #maincontent .accordionHeader {
 	padding: 5px 5px 7px 30px;
 	margin: 5px 0;
-	background-image: url(../../public/images/accordion_headers.gif);
+	background-image: url('/images/Newsletters/accordion_headers.gif');
 	background-repeat: no-repeat;
 }
 #maincontent .accordionHeaderSelected {
 	padding: 5px 5px 7px 30px;
 	margin-top: 5px;
-	background-image: url(../../public/images/accordion_headers_selected.gif);
+	background-image: url('/images/Newsletters/accordion_headers_selected.gif');
 	background-repeat: no-repeat;
 }
 #maincontentCase .accordionHeader {
 	padding: 5px 5px 7px 30px;
 	margin-top: 5px;
-	background-image: url(../../public/images/accordion_headers350.gif);
+	background-image: url('/images/Newsletters/accordion_headers350.gif');
 	background-repeat: no-repeat;
 }
 
@@ -998,7 +998,7 @@ div#sidebar .first {
 #maincontentFull .accordionHeader {
 	padding: 5px 5px 7px 30px;
 	margin-top: 15px;
-	background-image: url(../../public/images/accordion_headers_full.gif);
+	background-image: url('/images/Newsletters/accordion_headers_full.gif');
 	background-repeat: no-repeat;
 }
 #maincontentFull h2 {
@@ -1019,7 +1019,7 @@ div#sidebar .first {
 	font-style: italic;
 	font-weight: normal;
 	font-size: 1.2em;
-	background: url(../../public/images/quote_open_services.png) no-repeat;
+	background: url('/images/Newsletters/quote_open_services.png') no-repeat;
 	padding-top: 5px;
 }
 #sidebar .servicesTestimonial p {
@@ -1038,7 +1038,7 @@ div#sidebar .first {
 a[target^="_blank"]:after
 {
     padding-left:4px;
-    content: url(../../public/images/external.gif);
+    content: url('/images/Newsletters/external.gif');
     }
 
 */
@@ -1165,7 +1165,7 @@ Div.quote {
 	background: #eee;
 	border-top: 2px solid #cccccc;
 	border-bottom: 2px solid #ccc;
-	background-image: url(../../public/images/quote_open.gif);
+	background-image: url('/images/Newsletters/quote_open.gif');
 	background-repeat: no-repeat;
 	background-position: 10px 5px;
 	padding: 10px 10px 0;
@@ -1386,7 +1386,7 @@ dl.badImage dd {
 	border-width: 1px 0px;
 }
 .loginProgressHeader {
-	background: url(../../public/images/sprite.png) repeat-x 0px 0px;
+	background: url('/images/Newsletters/sprite.png') repeat-x 0px 0px;
 	border-color: #808080 #808080 #ccc;
 	border-style: solid;
 	border-width: 0px 1px 1px;
@@ -1532,7 +1532,7 @@ a.strike {
 }
 
 #maincontentFull .multimediaBox {
-	background: #ffffcc url(../../public/images/icon-multimedia.jpg) no-repeat
+	background: #ffffcc url('/images/Newsletters/icon-multimedia.jpg') no-repeat
 		scroll 5px 5px;
 	border: 1px dashed #999999;
 	margin: 5px 10px;
@@ -1630,7 +1630,7 @@ div.quoteRightWrapImg {
 .NETUGdownload a#newsletterSignUpButton {
 	display: inline-block;
 	*zoom: 1;
-	background: transparent url(../../public/images/NEWbutton.jpg) no-repeat top
+	background: transparent url('/images/Newsletters/NEWbutton.jpg') no-repeat top
 		left;
 	width: 140px;
 	height: 50px;
@@ -1659,7 +1659,7 @@ div.quoteRightWrapImg {
 	background: #eee;
 	border-top: 2px solid #cccccc;
 	border-bottom: 2px solid #ccc;
-	background-image: url(../../public/images/quote_open.gif);
+	background-image: url('/images/Newsletters/quote_open.gif');
 	background-repeat: no-repeat;
 	background-position: 10px 5px;
 	padding: 10px;
@@ -1900,14 +1900,14 @@ img.regist_grey {
 #eventsummary ul.schedule li li a span,
 span.bookNow {
 	color: #fff;
-	background: transparent url(../../public/images/button_mini.png) no-repeat top
+	background: transparent url('/images/Newsletters/button_mini.png') no-repeat top
 		center;
 	height: 16px;
 	margin-top: 2px;
 }
 span.bookNow {
 	color: #fff;
-	background: transparent url(../../public/images/button_mini.png) no-repeat top
+	background: transparent url('/images/Newsletters/button_mini.png') no-repeat top
 		center;
 	height: 16px;
 	line-height: 18px;
@@ -1931,7 +1931,7 @@ span.bookNow {
 	border: none;
 }
 #eventsummary ul.schedule > li strong {
-	background: #e5e5e5 url(../../public/images/schedulebg.png) no-repeat right
+	background: #e5e5e5 url('/images/Newsletters/schedulebg.png') no-repeat right
 		center;
 	display: block;
 	float: left;
@@ -2460,7 +2460,7 @@ a.lightbox-hover {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 18px;
 	line-height: 150%;
-	list-style-image: url(../../public/images/tick.gif);
+	list-style-image: url('/images/Newsletters/tick.gif');
 	list-style-position: inside;
 	margin: 0 0 10px;
 	padding-left: 0;
@@ -2506,7 +2506,7 @@ a.lightbox-hover {
 }
 #coursesSchedule td a span {
 	color: #fff;
-	background: transparent url(../../public/images/button_mini.png) no-repeat top
+	background: transparent url('/images/Newsletters/button_mini.png') no-repeat top
 		center;
 	height: 16px;
 	display: block;
@@ -2541,13 +2541,13 @@ a.lightbox-hover {
 }
 
 .hovergroup {
-	background: url(../../public/images/tooltipbg.png) no-repeat top left
+	background: url('/images/Newsletters/tooltipbg.png') no-repeat top left
 		transparent;
 	padding: 0px 30px 25px 15px;
 }
 
 .hoverend {
-	background: url(../../public/images/tooltipend.png) no-repeat top left
+	background: url('/images/Newsletters/tooltipend.png') no-repeat top left
 		transparent;
 	height: 15px;
 	width: 100%;
@@ -2726,7 +2726,7 @@ ul.services-rollover li:hover {
 }
 
 .homepage-buttons a {
-	background: transparent url(../../public/images/homepage_buttons3.jpg)
+	background: transparent url('/images/Newsletters/homepage_buttons3.jpg')
 		no-repeat bottom;
 	width: 158px;
 	height: 158px;
@@ -2892,7 +2892,7 @@ a#homepage-products {
 }
 
 .consulting-image {
-	background: transparent url(../../public/images/Newsletters/showcases/thum_template.jpg)
+	background: transparent url('/images/Newsletters/showcases/thum_template.jpg')
 		no-repeat;
 	padding: 5px 10px 20px 5px;
 	float: right;
@@ -2900,7 +2900,7 @@ a#homepage-products {
 }
 
 #subpage #titleUX ul.arrow li {
-	background-image: url(../../public/images/arrow_tiny.gif);
+	background-image: url('/images/Newsletters/arrow_tiny.gif');
 }
 
 .image-caption {
@@ -2956,7 +2956,7 @@ a#homepage-products {
 }
 
 .video {
-	/*    background: white url(../../public/images/videobg.jpg) no-repeat top left; */
+	/*    background: white url('/images/Newsletters/videobg.jpg') no-repeat top left; */
 	padding: 30px 0px;
 	text-align: center;
 }
@@ -2968,7 +2968,7 @@ p.contactActionPhone {
 	font-size: 18px;
 	float: left;
 	padding: 5px 0 0 44px;
-	background: url(../../public/images/contactIcons.png) no-repeat 0 0;
+	background: url('/images/Newsletters/contactIcons.png') no-repeat 0 0;
 	height: 26px;
 	color: #575757;
 	margin-top: 10px;
@@ -2985,7 +2985,7 @@ p.contactActionPhone {
 
 h2.offices,
 h3.offices {
-	background: url(../../public/images/officesHeading_bg.png) repeat-x 0 0;
+	background: url('/images/Newsletters/officesHeading_bg.png') repeat-x 0 0;
 	height: 20px;
 	width: 100%;
 	font-weight: bold;
@@ -3010,7 +3010,7 @@ h2.offices div.chi,
 h2.offices div.uk,
 h2.offices div.mal,
 h2.offices div.bra {
-	background: url(../../public/images/flags.png) no-repeat 0 0;
+	background: url('/images/Newsletters/flags.png') no-repeat 0 0;
 	width: 32px;
 	height: 24px;
 	display: block;
@@ -3039,7 +3039,7 @@ h2.offices div.aus {
 }
 
 a.directions {
-	background: url(../../public/images/earth_view.png) no-repeat 0 0;
+	background: url('/images/Newsletters/earth_view.png') no-repeat 0 0;
 	padding-left: 20px;
 }
 
@@ -3964,7 +3964,7 @@ div.ScrumHeader ul {
 
 h2.calloutUG {
 	font-size: 12px;
-	background: url(../../public/images/calendar-ug.png) #f0f0f0 no-repeat 10px
+	background: url('/images/Newsletters/calendar-ug.png') #f0f0f0 no-repeat 10px
 		center;
 	padding: 10px 10px 10px 60px;
 	color: #333;
