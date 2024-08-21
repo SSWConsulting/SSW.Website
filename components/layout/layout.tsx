@@ -51,7 +51,6 @@ interface LayoutProps {
   };
   children: React.ReactNode;
   showAzureBanner?: boolean;
-  footerColor?: string;
 }
 
 export const Layout = ({
@@ -59,7 +58,6 @@ export const Layout = ({
   menu,
   className = "",
   showAzureBanner,
-  footerColor = "",
 }: LayoutProps) => {
   const liveStreamProps = useLiveStreamProps();
   const router = useRouter();

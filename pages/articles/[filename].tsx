@@ -33,7 +33,7 @@ export default function ArticlesPage(
     <div>
       <SEO seo={props.seo} />
 
-      <Layout menu={data.megamenu} footerColor="default">
+      <Layout menu={data.megamenu}>
         {data.articles.bannerImg && (
           <Container className="prose flex-1" size="custom">
             <div data-tina-field={tinaField(data.articles, "bannerImg")}>
