@@ -2,7 +2,7 @@
 	behavior: url("./iepngfix.htc");
 }
 body {
-	background-image: url("/public/images/background_dna.gif");
+	background-image: url('/images/Newsletters/background_dna.gif');
 	background-repeat: repeat-x;
 	background-position: top;
 	background-color: #FFFFFF;
@@ -154,7 +154,7 @@ div.section {
 	clear: both;
 }
 #subPane .section h1 {
-	background-image: url("/public/images/box_header.gif");
+	background-image: url('/images/Newsletters/box_header.gif');
 	background-repeat: no-repeat;
 	display: block;
 	padding: 0 0 0 20px;
@@ -181,7 +181,7 @@ div.section {
 	margin: 0;
 	padding: 0 0 0 10px;
 	font-size: 0.85em;
-	background-image: url("/public/images/bullet_square.gif");
+	background-image: url('/images/Newsletters/bullet_square.gif');
 	background-position: 0 9px;
 	background-repeat: no-repeat;
 	color: #333;
@@ -397,7 +397,7 @@ p.presenter {
 	padding-top: 20px;
 }
 #nav {
-	background-image: url("/public/images/bg_nav.gif");
+	background-image: url('/images/Newsletters/bg_nav.gif');
 	background-repeat: repeat-x;
 	height: 117px;
 }
@@ -498,11 +498,11 @@ div#headerMenu {
 	margin: 0;
 }
 #subpage .WebsiteDesign {
-	background: url("/public/images/header_ux.jpg") no-repeat;
+	background: url('/images/Newsletters/header_ux.jpg') no-repeat;
 }
 
 #subpage .ConsultingOptions {
-	background: url("/public/images/header_scrum_temp.png") no-repeat;
+	background: url('/images/Newsletters/header_scrum_temp.png') no-repeat;
 	height: 208px;
 	padding: 35px 20px 40px 475px;
 	margin: 0;
@@ -532,7 +532,7 @@ div#headerMenu {
 	margin-bottom: 20px;
 }
 #subpage #titleUX ul li {
-	background-image: url("/public/images/bullet_square.gif");
+	background-image: url('/images/Newsletters/bullet_square.gif');
 	background-position: 0 9px;
 	background-repeat: no-repeat;
 	padding-left: 15px;
@@ -557,7 +557,7 @@ div#headerMenu {
 	color: inherit;
 }
 #showcase ul.tech li {
-	background-image: url("/public/images/bullet_square.gif");
+	background-image: url('/images/Newsletters/bullet_square.gif');
 	background-position: 0 9px;
 	background-repeat: no-repeat;
 	margin-left: 1.5em;
@@ -1715,10 +1715,10 @@ img.regist_grey {
 }
 /*seperate css from imgRight by using presenter's name to switch between class*/
 .joe {
-	background: transparent url("/public/images/hover_joe.jpg") no-repeat 0 0;
+	background: transparent url('/images/Newsletters/hover_joe.jpg') no-repeat 0 0;
 }
 .adam {
-	background: transparent url("/public/images/video_Adam.jpg") no-repeat 0 0;
+	background: transparent url('/images/Newsletters/video_Adam.jpg') no-repeat 0 0;
 }
 
 #subpage a.imgRight {
@@ -2260,7 +2260,7 @@ img.edgeright {
 	padding: 0;
 	display: block;
 	border-width: 0;
-	background: #fdfdfd url("/public/images/panel_bg.jpg") repeat-x;
+	background: #fdfdfd url('/images/Newsletters/panel_bg.jpg') repeat-x;
 	width: 445px;
 	padding: 25px 10px 0 30px;
 	height: 480px;
@@ -2277,7 +2277,7 @@ img.edgeright {
 #maincontentFull #tabs ul.ui-tabs-nav li {
 	margin-left: 0;
 	padding: 0;
-	background: #fff url("/public/images/list_bg.jpg") no-repeat;
+	background: #fff url('/images/Newsletters/list_bg.jpg') no-repeat;
 	border-top: 1px solid #e5e5e5;
 }
 
@@ -2294,7 +2294,7 @@ img.edgeright {
 	color: #3a66cc;
 }
 #maincontentFull #tabs ul.ui-tabs-nav li.ui-state-active {
-	background: transparent url("/public/images/tab_active.png") no-repeat;
+	background: transparent url('/images/Newsletters/tab_active.png') no-repeat;
 	width: 276px;
 	display: block;
 	border-top: 1px dotted transparent;
@@ -2925,7 +2925,7 @@ a#homepage-products {
 
 #maincontent .eventpast ul > li strong {
 	float: left;
-	background: url("/public/images/schedulebg.png") no-repeat scroll right center
+	background: url('/images/Newsletters/schedulebg.png') no-repeat scroll right center
 		#e5e5e5;
 	padding: 5px 15px;
 	width: 120px;
@@ -3110,7 +3110,7 @@ input[type="password"] {
 }
 
 .creditcard {
-	background: url("/public/images/creditcards.png") no-repeat scroll right
+	background: url('/images/creditcards.png') no-repeat scroll right
 		center transparent;
 	color: #666666;
 	display: inline-block;
@@ -3123,7 +3123,7 @@ input[type="password"] {
 }
 
 #maincontent ul.greenTicks li {
-	background: url("/public/images/tick_small.png") no-repeat scroll left center
+	background: url('/images/Newsletters/tick_small.png') no-repeat scroll left center
 		transparent;
 	padding: 3px 5px 3px 30px;
 }
@@ -3587,7 +3587,7 @@ div.CMS-buttons a.CMS-DNN:focus {
 }
 
 #headerMenu li.Popular {
-	background: url("/public/images/popular.png") no-repeat 120px;
+	background: url('/images/Newsletters/popular.png') no-repeat 120px;
 }
 
 #headerMenu .NoChild .rsmLink:hover {
