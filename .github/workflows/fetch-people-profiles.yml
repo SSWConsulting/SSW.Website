@@ -7,7 +7,7 @@ on:
 
 env:
   TEMPORARY_FOLDER: temp-profiles
-  SSW_PEOPLE_BASE_URL: https://ssw.com.au/people
+  SSW_PEOPLE_BASE_URL: https://www.ssw.com.au/people
 
 jobs:
   fetch-and-pr:
