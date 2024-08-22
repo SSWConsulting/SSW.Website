@@ -28,6 +28,11 @@ const isTinaSite = (href: string): boolean => {
   return tinaSitePatterns.test(href);
 };
 
+const isExternalSSWLink = (href: string): boolean => {
+  const externalSSWPagesPatterns = /^https.*ssw/i;
+  return externalSSWPagesPatterns.test(href);
+}
+
 export const CustomLink: React.FC<CustomLinkProps> = ({
   href,
   target,
@@ -38,7 +43,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
   ...props
 }) => {
   const isExternal = isExternalLink(href);
-  const isAnSSWBrandedSite = isExternalSSWSite(href) || isTinaSite(href);
+  const isAnSSWBrandedSite = isExternalSSWSite(href) || isTinaSite(href) || isExternalSSWLink(href);
 
   if (!href) return <>{children}</>;
   return (
