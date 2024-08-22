@@ -2,7 +2,7 @@
 	behavior: url('/images/Newsletters/iepngfix.htc');
 }
 body {
-	background-image: url('/images/Newsletters/background_dna.gif');
+	/* background-image: url('/images/Newsletters/background_dna.gif'); */
 	background-repeat: repeat-x;
 	background-position: top;
 	background-color: #FFFFFF;
