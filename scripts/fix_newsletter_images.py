@@ -75,6 +75,8 @@ def main():
                     soup = BeautifulSoup(contents, 'html.parser')
                     contents = fix_elements('img', 'src', soup, contents, html_file_path)
                     contents = fix_elements('td', 'background', soup, contents, html_file_path)
+                    contents = fix_elements('link', 'href', soup, contents, html_file_path)
+                    contents = fix_elements('script', 'src', soup, contents, html_file_path)
                 with open(html_file_path, 'w', encoding=encoding) as html_file:
                     html_file.write(contents)
 main()
