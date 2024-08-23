@@ -55,7 +55,7 @@
       "pages": [
         {
           "title": "Artificial intelligence",
-          "description": "Enable better decisions based on data. Now computers can understand and learn on their own.",
+          "description": "Develop custom AI solutions tailored for your business.",
           "logo": "/images/thumbs/thumb-machinelearning.jpg",
           "page": "content/consulting/artificial-intelligence.mdx",
           "tags": [
@@ -98,7 +98,7 @@
           ]
         },
         {
-          "title": "Azure Cognitive Services",
+          "title": "Azure AI",
           "description": "Make your existing applications smarter. Add Artificial Intelligence APIs like vision, speech, language and knowledge capability to your apps.",
           "logo": "/images/thumbs/thumb-azurecognitiveservices.jpg",
           "page": "content/consulting/azure.mdx",
@@ -110,7 +110,7 @@
         },
         {
           "title": "Bots",
-          "description": "Awesome bots gives you an advantage in finding and automatically entering data for your business with advanced artificial intelligence.",
+          "description": "Awesome bots give you an advantage in finding and automatically entering data for your business with advanced artificial intelligence.",
           "logo": "/images/thumbs/thumb-azure-bot-icon.jpg",
           "page": "content/consulting/bots.mdx",
           "tags": [
