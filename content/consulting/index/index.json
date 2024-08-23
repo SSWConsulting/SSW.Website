@@ -54,7 +54,7 @@
       "category": "content/consulting/category/ai-development.json",
       "pages": [
         {
-          "title": "Artificial intelligence",
+          "title": "Artificial Intelligence",
           "description": "Develop custom AI solutions tailored for your business.",
           "logo": "/images/thumbs/thumb-machinelearning.jpg",
           "page": "content/consulting/artificial-intelligence.mdx",
