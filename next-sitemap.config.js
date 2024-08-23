@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
@@ -31,13 +31,17 @@ module.exports = {
       return arrayOfFiles;
     };
 
-    const newsletterUploadsDir = path.join(__dirname, 'public', 'images', 'newsletter-uploads');
-    const newsletterUploads = getAllFiles(newsletterUploadsDir).map(file => ({
-      loc: `/images/newsletter-uploads/${path.relative(newsletterUploadsDir, file).replace(/\\/g, '/')}`,
+    const newsletterUploadsDir = path.join(
+      __dirname,
+      "public",
+      "images",
+      "newsletter-uploads"
+    );
+    const newsletterUploads = getAllFiles(newsletterUploadsDir).map((file) => ({
+      loc: `/images/newsletter-uploads/${path.relative(newsletterUploadsDir, file).replace(/\\/g, "/")}`,
       changefreq: "daily",
       priority: 0.7,
       lastmod: new Date().toISOString(),
-      trailingSlash: true,
     }));
 
     const otherURLsMapped = otherURLs.map((url) => ({
@@ -56,8 +60,7 @@ module.exports = {
         loc: path.replace("/home", "/"),
         changefreq: config.changefreq,
         priority: 1.0,
-        lastmod: config.lastmod || new Date().
-        toISOString(),
+        lastmod: config.lastmod || new Date().toISOString(),
       };
     } else if (path.includes("/500") || path.includes("/404")) {
       return null;
