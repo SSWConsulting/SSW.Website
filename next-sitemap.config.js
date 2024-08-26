@@ -1,5 +1,7 @@
-/** @type {import('next-sitemap').IConfig} */
+const fs = require("fs");
+const path = require("path");
 
+/** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: process.env.SITE_URL,
   changefreq: "daily",
@@ -13,13 +15,44 @@ module.exports = {
       "https://www.ssw.com.au/rules/",
     ];
 
-    return otherURLs.map((url) => ({
+    const getAllFiles = (dirPath, arrayOfFiles) => {
+      const files = fs.readdirSync(dirPath);
+
+      arrayOfFiles = arrayOfFiles || [];
+
+      files.forEach((file) => {
+        if (fs.statSync(path.join(dirPath, file)).isDirectory()) {
+          arrayOfFiles = getAllFiles(path.join(dirPath, file), arrayOfFiles);
+        } else {
+          arrayOfFiles.push(path.join(dirPath, file));
+        }
+      });
+
+      return arrayOfFiles;
+    };
+
+    const newsletterUploadsDir = path.join(
+      __dirname,
+      "public",
+      "images",
+      "newsletter-uploads"
+    );
+    const newsletterUploads = getAllFiles(newsletterUploadsDir).map((file) => ({
+      loc: `/images/newsletter-uploads/${path.relative(newsletterUploadsDir, file).replace(/\\/g, "/")}`,
+      changefreq: "daily",
+      priority: 0.7,
+      lastmod: new Date().toISOString(),
+    }));
+
+    const otherURLsMapped = otherURLs.map((url) => ({
       loc: url,
       changefreq: "daily",
       priority: 0.7,
       lastmod: new Date().toISOString(),
       trailingSlash: true,
     }));
+
+    return [...otherURLsMapped, ...newsletterUploads];
   },
   transform: async (config, path) => {
     if (path.includes("/home")) {
