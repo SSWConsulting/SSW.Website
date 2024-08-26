@@ -22,7 +22,7 @@ importers:
         version: 1.7.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@headlessui/tailwindcss':
         specifier: ^0.2.1
-        version: 0.2.1(tailwindcss@3.4.3(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)))
+        version: 0.2.1(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)))
       '@heroicons/react':
         specifier: ^2.1.1
         version: 2.1.1(react@18.3.1)
@@ -43,7 +43,7 @@ importers:
         version: 14.2.3(next@14.2.5(@babel/core@7.23.9)(@opentelemetry/api@1.8.0)(@playwright/test@1.46.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@tailwindcss/typography':
         specifier: ^0.5.13
-        version: 0.5.13(tailwindcss@3.4.3(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)))
+        version: 0.5.13(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)))
       '@tanstack/react-query':
         specifier: ^5.51.15
         version: 5.51.21(react@18.3.1)
@@ -141,8 +141,8 @@ importers:
         specifier: ^2.3.0
         version: 2.3.0
       tailwindcss:
-        specifier: 3.4.3
-        version: 3.4.3(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2))
+        specifier: 3.4.10
+        version: 3.4.10(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2))
       tailwindcss-gradients:
         specifier: ^3.0.0
         version: 3.0.0
@@ -212,7 +212,7 @@ importers:
         version: 5.1.3(@types/eslint@8.56.10)(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.3.0)
       eslint-plugin-tailwindcss:
         specifier: ^3.17.4
-        version: 3.17.4(tailwindcss@3.4.3(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)))
+        version: 3.17.4(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)))
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@20.14.14)(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2))
@@ -1647,20 +1647,12 @@ packages:
     resolution: {integrity: sha512-u3UPsIilWKOM3F9CXtrG8LEJmNxwoCQC/XVj4IKYXvvpx7QIi/Kg1LI5uDmDpKlac62NUtX7eLjRh+jVZcLOzw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
 
-  '@jridgewell/gen-mapping@0.3.3':
-    resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
-    engines: {node: '>=6.0.0'}
-
   '@jridgewell/gen-mapping@0.3.5':
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
     engines: {node: '>=6.0.0'}
 
   '@jridgewell/resolve-uri@3.1.1':
     resolution: {integrity: sha512-dSYZh7HhCDtCKm4QakX0xFpsRDqjjtZf/kjI/v3T3Nwt5r8/qz/M19F9ySyOqU94SXBmeG9ttTul+YnR4LOxFA==}
-    engines: {node: '>=6.0.0'}
-
-  '@jridgewell/set-array@1.1.2':
-    resolution: {integrity: sha512-xnkseuNADM0gt2bs+BvhO0p78Mk762YnZdsuzFV018NoG1Sj1SCQvpSqa7XUaTam5vAGasABV9qXASMKnFMwMw==}
     engines: {node: '>=6.0.0'}
 
   '@jridgewell/set-array@1.2.1':
@@ -6371,10 +6363,6 @@ packages:
     resolution: {integrity: sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==}
     engines: {node: '>=4'}
 
-  postcss-selector-parser@6.0.13:
-    resolution: {integrity: sha512-EaV1Gl4mUEV4ddhDnv/xtj7sxwrwxdetHdWUGnT4VJQf+4d05v6lHYZr8N573k5Z0BViss7BDhfWtKS3+sfAqQ==}
-    engines: {node: '>=4'}
-
   postcss-selector-parser@6.1.2:
     resolution: {integrity: sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==}
     engines: {node: '>=4'}
@@ -7360,13 +7348,8 @@ packages:
   tailwindcss-gradients@3.0.0:
     resolution: {integrity: sha512-EM1OreQggjWW6WuaiHKy02j1ZxgQIEp2zj0cruf4XMZ1RoCBpb1a14i/CiTE9rjl+APk57oCb3l+kbsJy4W4EA==}
 
-  tailwindcss@3.4.3:
-    resolution: {integrity: sha512-U7sxQk/n397Bmx4JHbJx/iSOOv5G+II3f1kpLpY2QeUv5DcPdcTsYLlusZfq1NthHS1c1cZoyFmmkex1rzke0A==}
-    engines: {node: '>=14.0.0'}
-    hasBin: true
-
-  tailwindcss@3.4.7:
-    resolution: {integrity: sha512-rxWZbe87YJb4OcSopb7up2Ba4U82BoiSGUdoDr3Ydrg9ckxFS/YWsvhN323GMcddgU65QRy7JndC7ahhInhvlQ==}
+  tailwindcss@3.4.10:
+    resolution: {integrity: sha512-KWZkVPm7yJRhdu4SRSl9d4AK2wM3a50UsvgHZO7xY77NQr2V+fIrEuoDGQcbvswWvFGbS2f6e+jC/6WJm1Dl0w==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -8019,10 +8002,6 @@ packages:
   yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
 
-  yaml@2.3.3:
-    resolution: {integrity: sha512-zw0VAJxgeZ6+++/su5AFoqBbZbrEakwu+X0M5HmcwUiBL7AzcuPKjj5we4xfQLp78LkEMpD0cOnUhmgOVy3KdQ==}
-    engines: {node: '>= 14'}
-
   yaml@2.5.0:
     resolution: {integrity: sha512-2wWLbGbYDiSqqIKoPjar3MPgB94ErzCtrNE1FdqGuaO0pi2JGjmE8aW8TDZwzU7vuxcGRdL/4gPQwQ7hD5AMSw==}
     engines: {node: '>= 14'}
@@ -8089,7 +8068,7 @@ snapshots:
 
   '@ampproject/remapping@2.2.1':
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.3
+      '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.20
 
   '@ardatan/relay-compiler@12.0.0(graphql@15.8.0)':
@@ -8235,7 +8214,7 @@ snapshots:
   '@babel/generator@7.23.0':
     dependencies:
       '@babel/types': 7.23.0
-      '@jridgewell/gen-mapping': 0.3.3
+      '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.20
       jsesc: 2.5.2
 
@@ -10068,9 +10047,9 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@headlessui/tailwindcss@0.2.1(tailwindcss@3.4.3(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)))':
+  '@headlessui/tailwindcss@0.2.1(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)))':
     dependencies:
-      tailwindcss: 3.4.3(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2))
+      tailwindcss: 3.4.10(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2))
 
   '@heroicons/react@1.0.6(react@18.3.1)':
     dependencies:
@@ -10354,12 +10333,6 @@ snapshots:
       '@types/yargs': 17.0.32
       chalk: 4.1.2
 
-  '@jridgewell/gen-mapping@0.3.3':
-    dependencies:
-      '@jridgewell/set-array': 1.1.2
-      '@jridgewell/sourcemap-codec': 1.4.15
-      '@jridgewell/trace-mapping': 0.3.20
-
   '@jridgewell/gen-mapping@0.3.5':
     dependencies:
       '@jridgewell/set-array': 1.2.1
@@ -10367,8 +10340,6 @@ snapshots:
       '@jridgewell/trace-mapping': 0.3.25
 
   '@jridgewell/resolve-uri@3.1.1': {}
-
-  '@jridgewell/set-array@1.1.2': {}
 
   '@jridgewell/set-array@1.2.1': {}
 
@@ -11177,25 +11148,17 @@ snapshots:
       '@swc/counter': 0.1.3
       tslib: 2.6.2
 
-  '@tailwindcss/aspect-ratio@0.4.2(tailwindcss@3.4.7(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)))':
+  '@tailwindcss/aspect-ratio@0.4.2(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)))':
     dependencies:
-      tailwindcss: 3.4.7(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2))
+      tailwindcss: 3.4.10(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2))
 
-  '@tailwindcss/typography@0.5.13(tailwindcss@3.4.3(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)))':
+  '@tailwindcss/typography@0.5.13(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)))':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.3(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2))
-
-  '@tailwindcss/typography@0.5.13(tailwindcss@3.4.7(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)))':
-    dependencies:
-      lodash.castarray: 4.4.0
-      lodash.isplainobject: 4.0.6
-      lodash.merge: 4.6.2
-      postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.7(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2))
+      tailwindcss: 3.4.10(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2))
 
   '@tanstack/query-core@5.51.21': {}
 
@@ -11303,8 +11266,8 @@ snapshots:
       '@graphql-tools/load': 7.8.14(graphql@15.8.0)
       '@rollup/pluginutils': 5.0.5(rollup@3.29.4)
       '@svgr/core': 8.1.0(typescript@5.5.4)
-      '@tailwindcss/aspect-ratio': 0.4.2(tailwindcss@3.4.7(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)))
-      '@tailwindcss/typography': 0.5.13(tailwindcss@3.4.7(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)))
+      '@tailwindcss/aspect-ratio': 0.4.2(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)))
+      '@tailwindcss/typography': 0.5.13(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)))
       '@tinacms/app': 2.0.2(@babel/core@7.23.9)(@babel/template@7.23.9)(@codemirror/language@6.0.0)(@types/node@20.14.14)(@types/react-dom@18.2.19)(@types/react@18.3.3)(abstract-level@1.0.3)(scheduler@0.23.2)(yup@0.32.11)
       '@tinacms/graphql': 1.4.39(react@18.3.1)(typescript@5.5.4)
       '@tinacms/metrics': 1.0.5(fs-extra@9.1.0)
@@ -11336,7 +11299,7 @@ snapshots:
       progress: 2.0.3
       prompts: 2.4.2
       readable-stream: 4.4.2
-      tailwindcss: 3.4.7(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2))
+      tailwindcss: 3.4.10(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2))
       tinacms: 2.1.0(@babel/core@7.23.9)(@babel/template@7.23.9)(@types/react-dom@18.2.19)(@types/react@18.3.3)(abstract-level@1.0.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(scheduler@0.23.2)(typescript@5.5.4)
       typanion: 3.13.0
       typescript: 5.5.4
@@ -14516,11 +14479,11 @@ snapshots:
       semver: 6.3.1
       string.prototype.matchall: 4.0.10
 
-  eslint-plugin-tailwindcss@3.17.4(tailwindcss@3.4.3(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2))):
+  eslint-plugin-tailwindcss@3.17.4(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2))):
     dependencies:
       fast-glob: 3.3.1
       postcss: 8.4.41
-      tailwindcss: 3.4.3(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2))
+      tailwindcss: 3.4.10(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2))
 
   eslint-scope@5.1.1:
     dependencies:
@@ -17117,7 +17080,7 @@ snapshots:
   postcss-load-config@4.0.1(postcss@8.4.41)(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)):
     dependencies:
       lilconfig: 2.1.0
-      yaml: 2.3.3
+      yaml: 2.5.0
     optionalDependencies:
       postcss: 8.4.41
       ts-node: 10.9.2(@types/node@20.14.14)(typescript@5.5.2)
@@ -17125,7 +17088,7 @@ snapshots:
   postcss-nested@6.0.1(postcss@8.4.41):
     dependencies:
       postcss: 8.4.41
-      postcss-selector-parser: 6.0.13
+      postcss-selector-parser: 6.1.2
 
   postcss-nesting@13.0.0(postcss@8.4.41):
     dependencies:
@@ -17135,11 +17098,6 @@ snapshots:
       postcss-selector-parser: 6.1.2
 
   postcss-selector-parser@6.0.10:
-    dependencies:
-      cssesc: 3.0.0
-      util-deprecate: 1.0.2
-
-  postcss-selector-parser@6.0.13:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
@@ -18212,7 +18170,7 @@ snapshots:
 
   sucrase@3.34.0:
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.3
+      '@jridgewell/gen-mapping': 0.3.5
       commander: 4.1.1
       glob: 7.1.6
       lines-and-columns: 1.2.4
@@ -18267,7 +18225,7 @@ snapshots:
       color: 3.2.1
       lodash: 4.17.21
 
-  tailwindcss@3.4.3(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)):
+  tailwindcss@3.4.10(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)):
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -18282,40 +18240,13 @@ snapshots:
       micromatch: 4.0.5
       normalize-path: 3.0.0
       object-hash: 3.0.0
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       postcss: 8.4.41
       postcss-import: 15.1.0(postcss@8.4.41)
       postcss-js: 4.0.1(postcss@8.4.41)
       postcss-load-config: 4.0.1(postcss@8.4.41)(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2))
       postcss-nested: 6.0.1(postcss@8.4.41)
-      postcss-selector-parser: 6.0.13
-      resolve: 1.22.8
-      sucrase: 3.34.0
-    transitivePeerDependencies:
-      - ts-node
-
-  tailwindcss@3.4.7(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2)):
-    dependencies:
-      '@alloc/quick-lru': 5.2.0
-      arg: 5.0.2
-      chokidar: 3.5.3
-      didyoumean: 1.2.2
-      dlv: 1.1.3
-      fast-glob: 3.3.1
-      glob-parent: 6.0.2
-      is-glob: 4.0.3
-      jiti: 1.21.0
-      lilconfig: 2.1.0
-      micromatch: 4.0.5
-      normalize-path: 3.0.0
-      object-hash: 3.0.0
-      picocolors: 1.0.0
-      postcss: 8.4.41
-      postcss-import: 15.1.0(postcss@8.4.41)
-      postcss-js: 4.0.1(postcss@8.4.41)
-      postcss-load-config: 4.0.1(postcss@8.4.41)(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.2))
-      postcss-nested: 6.0.1(postcss@8.4.41)
-      postcss-selector-parser: 6.0.13
+      postcss-selector-parser: 6.1.2
       resolve: 1.22.8
       sucrase: 3.34.0
     transitivePeerDependencies:
@@ -18960,7 +18891,7 @@ snapshots:
       html-escaper: 2.0.2
       is-plain-object: 5.0.0
       opener: 1.5.2
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       sirv: 2.0.4
       ws: 7.5.9
     transitivePeerDependencies:
@@ -19107,8 +19038,6 @@ snapshots:
   yallist@3.1.1: {}
 
   yallist@4.0.0: {}
-
-  yaml@2.3.3: {}
 
   yaml@2.5.0: {}
 
