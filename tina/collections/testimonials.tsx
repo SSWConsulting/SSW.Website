@@ -12,7 +12,7 @@ export const tipForReference: TinaField = {
         // eslint-disable-next-line tailwindcss/no-custom-classname
         <div className="whitepace-normal">
           {" "}
-          💡 Testimonials will be shown in the following order.
+          💡 Testimnials will be shown in the following order.
         </div>
       );
     },
