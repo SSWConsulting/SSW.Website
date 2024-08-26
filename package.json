@@ -19,7 +19,7 @@
   "devDependencies": {
     "@jest/globals": "^29.7.0",
     "@next/eslint-plugin-next": "14.2.6",
-    "@playwright/test": "1.46.0",
+    "@playwright/test": "1.46.1",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
