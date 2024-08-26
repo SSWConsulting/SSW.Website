@@ -1,5 +1,8 @@
 import * as Schemas from "../../components/blocks";
+import global from '../../content/global/index.json';
+
 import {
+  bookingButtonSchema,
   carouselBlockSchema,
   colorBlockSchema,
   colorPaletteSchema,
@@ -15,6 +18,7 @@ import { seoSchema } from "../../components/util/seo";
 import { sidebarPanelSchema } from "../../components/util/sidebarPanel";
 import { tipField } from "./shared-fields";
 
+import { title } from "process";
 import type { Collection } from "tinacms";
 import { dynamicCardGridBlockSchema } from "../../components/blocks/dynamicCardGridBlock";
 
@@ -45,13 +49,24 @@ export const articlesSchema: Collection = {
   name: "articles",
   format: "mdx",
   path: "content/articles/",
+  defaultItem: () => {return { bookingButton: {
+    title: "Talk to us about your project",
+    buttonText: global.bookingButtonText,
+    subTitle: "Connect with our Account Managers to discuss how we can help.",
+    animated: true,
+    buttonSubtitle: `or call ${global.bookingPhone}`,
+    showContactForm: true,
+  }}},
   match: {
     exclude: "@(case-study|index|clientCategories)/*",
   },
   ui: {
+    
     router: ({ document }) => {
       return `/articles/${document._sys.filename}`;
     },
+    
+    
   },
   fields: [
     tipField,
@@ -107,12 +122,29 @@ export const articlesSchema: Collection = {
       required: false,
     },
     {
-      type: "string",
-      label: "Call to Action",
-      description: "Default value is 'Talk to us about your project'",
-      name: "callToAction",
-      required: false,
+      name: 'bookingButton',
+      label: 'Booking Button',
+      description: 'The call to action button for contacting SSW',
+      type: 'object',
+      fields: [
+        {
+          name: 'title',
+          type: 'string',
+          label: 'Title',
+        },
+        {
+          type: "string",
+          label: "Sub Title",
+          name: "subTitle",
+        },
+        {
+          type: "boolean",
+          label: "Show contact us form",
+          name: "showContactForm"
+        },
+        ...bookingButtonSchema.fields],
     },
+    
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     sidebarPanelSchema,
@@ -188,7 +220,6 @@ export const articlesIndexSchema: Collection = {
     sidebarPanelSchema,
   ],
 };
-
 export const clientsCategorySchema: Collection = {
   label: "Articles - Client Categories",
   name: "clientCategories",

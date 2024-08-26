@@ -1,21 +1,22 @@
 import { Breadcrumbs } from "@/blocks/breadcrumbs";
 import { componentRenderer } from "@/blocks/mdxComponentRenderer";
 import ArticleAuthor from "@/components/articles/articleAuthor";
+import { BookingButton, BuiltOnAzure } from "@/components/blocks";
 import { Layout } from "@/components/layout";
 import SidebarPanel from "@/components/sidebar/sidebarPanel";
+import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { SEO } from "@/components/util/seo";
 import { removeExtension } from "@/services/client/utils.service";
 import client from "@/tina/client";
 import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
+import Image from "next/image";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import global from '../../content/global/index.json';
 
-import { BookingButton, BuiltOnAzure } from "@/components/blocks";
-import { Container } from "@/components/util/container";
-import Image from "next/image";
-
+console.log(global);
 export default function ArticlesPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
@@ -24,13 +25,13 @@ export default function ArticlesPage(
     query: props.query,
     variables: props.variables,
   });
+
   const { author } = data.articles;
   const bookingButtonProps = {
     buttonText: data.global.bookingButtonText,
   };
 
-  return (
-    <div>
+  return (<div>
       <SEO seo={props.seo} />
 
       <Layout menu={data.megamenu}>
@@ -102,15 +103,24 @@ export default function ArticlesPage(
           </section>
         )}
         <Section className="!bg-gray-75 pb-25 text-center">
-          <Container size="custom" className="w-full">
-            <h1 data-tina-field={tinaField(data.articles, "callToAction")}>
-              {data.articles.callToAction ?? "Talk to us about your project"}
-            </h1>
-            <p className="text-lg">
-              Connect with our Account Managers to discuss how we can help.
-            </p>
-            <BookingButton data={bookingButtonProps} />
-          </Container>
+          {
+
+            
+            (data.articles.bookingButton?.showContactForm) && <Container size="custom" className="w-full">
+              {data.articles.bookingButton.title && 
+                <h1 className="mx-auto w-fit" data-tina-field={tinaField(data.articles.bookingButton, "title")}>
+                  {data.articles.bookingButton.title}
+                </h1>
+              }
+              {
+                data.articles.bookingButton.subTitle &&
+              <p data-tina-field={tinaField(data.articles.bookingButton, "subTitle")} className="text-lg w-fit mx-auto">
+                {data.articles.bookingButton.subTitle}
+              </p>
+              }
+              <BookingButton buttonSubtitle={data.articles.bookingButton.buttonSubtitle} dataTinaField={tinaField(data.articles.bookingButton, "buttonSubtitle")} buttonText={data.articles.bookingButton.buttonText} />
+              </Container>
+            }
         </Section>
         <Section>
           <BuiltOnAzure data={{ backgroundColor: "default" }} />
@@ -157,7 +167,6 @@ export const getStaticPaths = async () => {
       ...pageListData.data.articlesConnection.edges
     );
   }
-
   return {
     paths: allPagesListData.data.articlesConnection.edges.map((page) => ({
       params: { filename: page.node._sys.filename },

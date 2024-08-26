@@ -1,4 +1,4 @@
-import type { Template } from "tinacms";
+import type { Template, TinaField } from "tinacms";
 import {
   default as defaultSetting,
   default as layoutData,
@@ -10,19 +10,22 @@ export interface BookingButtonProps {
   containerClass?: string;
   buttonClass?: string;
   hideCallUs?: boolean;
+  buttonSubtitle?: string;
+  dataTinaField?: TinaField;
   animated?: boolean;
 }
 
-export const BookingButton = ({ data }) => {
+export const BookingButton = (data) => {
   const {
     containerClass,
     buttonClass,
     buttonText,
+    buttonSubtitle = `or call ${layoutData.bookingPhone}`,
     hideCallUs,
+    dataTinaField,
     animated = true,
   }: BookingButtonProps = data;
 
-  const bookingPhone = layoutData.bookingPhone;
 
   const jotFormBookingForm: JotFormEmbedProps = {
     jotFormId: defaultSetting.bookingJotFormId,
@@ -35,9 +38,9 @@ export const BookingButton = ({ data }) => {
   return (
     <>
       <JotFormEmbed {...jotFormBookingForm}>
-        {!hideCallUs && (
-          <h2 className="mx-auto max-w-full text-center">
-            or call {bookingPhone}
+        {(!hideCallUs && buttonSubtitle) && (
+          <h2 data-tina-field={dataTinaField} className="mx-auto max-w-full text-center">
+            {buttonSubtitle}
           </h2>
         )}
       </JotFormEmbed>
@@ -49,6 +52,7 @@ export const bookingButtonSchema: Template = {
   name: "BookingButton",
   label: "Booking Button",
   ui: {
+    defaultItem: () => {return {buttonText: "Book Now"}},
     previewSrc: "/images/thumbs/tina/booking-button.jpg",
     itemProps: (item) => ({ label: item?.btnText }),
   },
@@ -63,6 +67,11 @@ export const bookingButtonSchema: Template = {
       type: "boolean",
       label: "Animated",
       name: "animated",
+    },
+    {
+      type: "string",
+      label: "Button Subtitle",
+      name: "buttonSubtitle",
     },
   ],
 };
