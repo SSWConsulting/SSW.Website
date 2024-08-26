@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        @camillars @sethdailyssw @ulyssesmaclaren (these people are tagged automatically)
+        @sethdailyssw @ulyssesmaclaren (this tags them automatically)
 
         Fill out the below fields with information about your new page:
   - type: textarea
@@ -62,6 +62,14 @@ body:
       value:
     validations:
       required: true
+  - type: checkboxes
+    id: train-chatbot
+    attributes:
+      label: "Task - remind yourself to add the new page to the website chatbot's training data"
+      description: The chatbot needs to know which consulting pages to refer people to!
+      options:
+        - label: "Similar to [this SugarLearning item](https://my.sugarlearning.com/SSW/items/9363/github-create-your-employee-profile), I have sent an email and cc'd FollowUpThen so this page gets added to the chatbot once it's live."
+          required: true
   - type: textarea
     id: meta
     attributes:

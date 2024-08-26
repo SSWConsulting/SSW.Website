@@ -1,6 +1,7 @@
 import client from "@/tina/client";
 import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
+import ReactDomServer from "react-dom/server";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import {
@@ -26,7 +27,6 @@ import { getRandomTestimonialsByCategory } from "../../helpers/getTestimonials";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
 import { EventInfo } from "../../services/server/events";
-import ReactDomServer from "react-dom/server";
 
 const ISR_TIME = 60 * 60; // 1 hour;
 
@@ -384,6 +384,13 @@ export const getStaticProps = async ({ params }) => {
     } else {
       event = null;
     }
+  }
+
+  if (
+    tinaProps.data.userGroupPage.seo &&
+    !tinaProps.data.userGroupPage.seo.canonical
+  ) {
+    tinaProps.data.userGroupPage.seo.canonical = `${tinaProps.data.global.header.url}netug${params.filename ? `/${params.filename}` : ""}`;
   }
 
   return {
