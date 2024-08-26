@@ -48,7 +48,7 @@ export async function generateMetadata({
 
   const seo = tinaProps.data.products.seo;
   if (seo && !seo.canonical) {
-    seo.canonical = `${tinaProps.data.global.header.url}/products/${params.filename}`;
+    seo.canonical = `${tinaProps.data.global.header.url}products/${params.filename}`;
   }
 
   // eslint-disable-next-line react-hooks/rules-of-hooks

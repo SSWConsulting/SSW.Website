@@ -9,6 +9,12 @@
               "name": "Development Teams",
               "menuItems": [
                 {
+                  "name": "AI Development",
+                  "url": "/consulting?tag=AI-Development",
+                  "description": "Creating intelligent, data-driven solutions for businesses",
+                  "iconImg": "/images/megamenu-icons/AIDevelopment.svg"
+                },
+                {
                   "name": "Web Development",
                   "url": "/consulting?tag=Web-Development",
                   "description": "Professional web development service that creates stylish, functional, user-friendly websites",
@@ -19,12 +25,6 @@
                   "url": "/consulting?tag=Mobile-Development",
                   "description": "Building cutting-edge apps for diverse platforms",
                   "iconImg": "/images/megamenu-icons/MobileDevelopment.svg"
-                },
-                {
-                  "name": "AI Development",
-                  "url": "/consulting?tag=AI-Development",
-                  "description": "Creating intelligent, data-driven solutions for businesses",
-                  "iconImg": "/images/megamenu-icons/AIDevelopment.svg"
                 },
                 {
                   "name": "Database Development",
@@ -81,7 +81,7 @@
           "name": "Featured",
           "items": [
             {
-              "name": "ChatGPT & GPT-4",
+              "name": "ChatGPT & GPT-4o",
               "url": "/consulting/gpt",
               "description": "Unlock the power of language Al for your business",
               "widgetType": "featured"
