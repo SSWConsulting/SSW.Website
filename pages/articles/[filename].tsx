@@ -90,7 +90,7 @@ export default function ArticlesPage(
                 components={componentRenderer}
               />
             </div>
-            {data.articles.sidebarPanel.showSidebarPanel && (
+            {data.articles.sidebarPanel?.showSidebarPanel && (
               <div className="w-full px-16 lg:shrink lg:pl-16 lg:pr-0">
                 <SidebarPanel
                   title={data.articles.sidebarPanel?.title}
