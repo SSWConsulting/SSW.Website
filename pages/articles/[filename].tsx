@@ -105,16 +105,16 @@ export default function ArticlesPage(
 
 
       {
-        (data.articles.bookingButton?.showContactForm) && <CallToAction
-          animated={data.articles?.bookingButton?.animated}
-          object={data.articles?.bookingButton}
-          subTitle={data.articles?.bookingButton?.subTitle}
-          buttonText={data.articles?.bookingButton?.buttonText}
-          buttonSubtitle={data.articles?.bookingButton?.buttonSubtitle}
+        (data.articles.callToAction?.showCallToAction) && <CallToAction
+          animated={data.articles?.callToAction?.animated}
+          object={data.articles?.callToAction}
+          subTitle={data.articles?.callToAction?.subTitle}
+          buttonText={data.articles?.callToAction?.buttonText}
+          buttonSubtitle={data.articles?.callToAction?.buttonSubtitle}
           tinaField={tinaField}
         >
-          {data.articles?.bookingButton?.title && <h1 className="mx-auto w-fit" data-tina-field={tinaField(data.articles?.bookingButton, "title")}>
-                  {data.articles?.bookingButton?.title}
+          {data.articles?.callToAction?.title && <h1 className="mx-auto w-fit" data-tina-field={tinaField(data.articles?.callToAction, "title")}>
+                  {data.articles?.callToAction?.title}
                 </h1>
             }              
         </CallToAction>

@@ -124,8 +124,8 @@ export const articlesSchema: Collection = {
       collections: ["presenter"],
     },
     {
-      name: 'bookingButton',
-      label: 'Booking Button',
+      name: 'callToAction',
+      label: 'Call to Action',
       description: 'The call to action button for contacting SSW',
       type: 'object',
       fields: [
@@ -141,8 +141,8 @@ export const articlesSchema: Collection = {
         },
         {
           type: "boolean",
-          label: "Show contact us form",
-          name: "showContactForm"
+          label: "Show Call to Action",
+          name: "showCallToAction"
         },
         ...bookingButtonSchema.fields],
     },
