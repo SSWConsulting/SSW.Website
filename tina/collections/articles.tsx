@@ -49,13 +49,13 @@ export const articlesSchema: Collection = {
   name: "articles",
   format: "mdx",
   path: "content/articles/",
-  defaultItem: () => {return { bookingButton: {
+  defaultItem: () => {return { callToAction: {
     title: "Talk to us about your project",
     buttonText: global.bookingButtonText,
     subTitle: "Connect with our Account Managers to discuss how we can help.",
     animated: true,
     buttonSubtitle: `or call ${global.bookingPhone}`,
-    showContactForm: true,
+    showCallToAction: true,
   },
   sidebarPanel: {
     title: "2-Day Pre-Migration Assessment Engagement",
