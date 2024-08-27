@@ -14,9 +14,7 @@ import { InferGetStaticPropsType } from "next";
 import Image from "next/image";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import global from '../../content/global/index.json';
 
-console.log(global);
 export default function ArticlesPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
@@ -27,9 +25,6 @@ export default function ArticlesPage(
   });
 
   const { author } = data.articles;
-  const bookingButtonProps = {
-    buttonText: data.global.bookingButtonText,
-  };
 
   return (<div>
       <SEO seo={props.seo} />
@@ -123,7 +118,13 @@ export default function ArticlesPage(
                 {data.articles.bookingButton.subTitle}
               </p>
               }
-              <BookingButton animated={data.articles.bookingButton?.animated} buttonSubtitle={data.articles.bookingButton.buttonSubtitle} dataTinaField={tinaField(data.articles.bookingButton, "buttonSubtitle")} buttonText={data.articles.bookingButton.buttonText} />
+              <BookingButton data={
+                {
+                  animated: data.articles.bookingButton?.animated,
+                  buttonText: data.articles.bookingButton.buttonText,
+                  buttonSubtitle: data.articles.bookingButton.buttonSubtitle,
+                  dataTinaField: tinaField(data.articles.bookingButton, "buttonSubtitle")
+                }} />
               </Container>
             
         </Section>

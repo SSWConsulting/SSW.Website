@@ -1,10 +1,11 @@
 import type { Template, TinaField } from "tinacms";
-import {
-  default as defaultSetting,
-  default as layoutData,
-} from "../../content/global/index.json";
+import globals from "../../content/global/index.json";
 import { JotFormEmbed, JotFormEmbedProps } from "../blocks/jotFormEmbed";
 
+
+
+
+const DEFAULT_SUBTITLE  = `or call ${globals.bookingPhone}`;
 export interface BookingButtonProps {
   buttonText?: string;
   containerClass?: string;
@@ -15,22 +16,16 @@ export interface BookingButtonProps {
   animated?: boolean;
 }
 
-export const BookingButton = (data) => {
-  const {
-    containerClass,
-    buttonClass,
-    buttonText,
-    buttonSubtitle = `or call ${layoutData.bookingPhone}`,
-    hideCallUs,
-    dataTinaField,
-    animated = true,
-  }: BookingButtonProps = data;
-
-
+export const BookingButton = ({data}) => {
+  const buttonText = data?.buttonText ?? globals.bookingButtonText;
+  const buttonSubtitle = data?.buttonSubtitle ?? DEFAULT_SUBTITLE;
+  const hideCallUs = data?.hideCallUs ?? false;
+  const dataTinaField = data?.dataTinaField || undefined
+  const animated = data?.animated ?? true;
   const jotFormBookingForm: JotFormEmbedProps = {
-    jotFormId: defaultSetting.bookingJotFormId,
-    containerClass: containerClass,
-    buttonClass: buttonClass,
+    jotFormId: globals.bookingJotFormId,
+    containerClass: data?.containerClass || "",
+    buttonClass: data?.buttonClass || "",
     buttonText: buttonText,
     animated: animated,
   };
@@ -52,9 +47,13 @@ export const bookingButtonSchema: Template = {
   name: "BookingButton",
   label: "Booking Button",
   ui: {
-    defaultItem: () => {return {buttonText: "Book Now"}},
     previewSrc: "/images/thumbs/tina/booking-button.jpg",
-    itemProps: (item) => ({ label: item?.btnText }),
+    defaultItem: {
+      buttonText: globals.bookingButtonText,
+      buttonSubtitle: DEFAULT_SUBTITLE,
+      animated: true,
+    }
+    // itemProps: (item) => ({ label: item?.btnText }),
   },
   fields: [
     {

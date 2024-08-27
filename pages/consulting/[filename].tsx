@@ -5,6 +5,7 @@ import { client } from "@/tina/client";
 import { InferGetStaticPropsType } from "next";
 import { ReactElement } from "react";
 import ReactDOMServer from "react-dom/server";
+import { defineConfig } from "tinacms";
 import { BuiltOnAzure, ClientLogos } from "../../components/blocks";
 import { Blocks } from "../../components/blocks-renderer";
 import { Booking } from "../../components/blocks/booking";
@@ -26,6 +27,7 @@ import { getRandomTestimonialsByCategory } from "../../helpers/getTestimonials";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
 
+
 export default function ConsultingPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
@@ -34,7 +36,6 @@ export default function ConsultingPage(
     query: props.query,
     variables: props.variables,
   });
-
   const technologyCardDocs =
     props.technologyCards.data.technologiesConnection.edges.map((n) => n.node);
   const techCards =
@@ -50,9 +51,6 @@ export default function ConsultingPage(
       content: m.content,
     })) || [];
 
-  const bookingButtonProps = {
-    buttonText: data.global.bookingButtonText,
-  };
 
   const categories =
     data.consulting.testimonialCategories
@@ -77,7 +75,7 @@ export default function ConsultingPage(
         </Section>
         <Section className="w-full" color="black">
           <Booking {...data.consulting.booking}>
-            <BookingButton data={bookingButtonProps} />
+            <BookingButton />
           </Booking>
         </Section>
         <Section
@@ -116,7 +114,7 @@ export default function ConsultingPage(
               tagline={data.consulting.testimonials?.tagline}
             />
             <BookingButton
-              data={{ ...bookingButtonProps, containerClass: "mt-20" }}
+              containerClass={"mt-20"}
             />
           </Container>
         </Section>
@@ -159,7 +157,7 @@ export default function ConsultingPage(
             <p className="text-lg">
               Connect with our Account Managers to discuss how we can help.
             </p>
-            <BookingButton data={bookingButtonProps} />
+            <BookingButton />
           </Container>
         </Section>
         <Section>

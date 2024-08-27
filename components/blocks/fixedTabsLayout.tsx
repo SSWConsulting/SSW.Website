@@ -79,7 +79,9 @@ export const fixedTabsLayoutSchema: Template = {
   label: "Fixed Tabs Layout",
   ui: {
     previewSrc: "/images/thumbs/tina/fixed-tabs-layout.jpg",
+    defaultItem: ()=>{return {}},
   },
+  
   fields: [
     {
       type: "string",
@@ -91,6 +93,7 @@ export const fixedTabsLayoutSchema: Template = {
       name: "firstHeading",
       label: "First Heading",
       templates: [...fixedTabsBlocks],
+      
     },
     {
       type: "rich-text",
