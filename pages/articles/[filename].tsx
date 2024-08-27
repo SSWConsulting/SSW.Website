@@ -65,7 +65,7 @@ export default function ArticlesPage(
             className="mx-auto w-full max-w-9xl px-8"
             data-tina-field={tinaField(data.articles, "title")}
           >
-            <h1 className="mt-4 py-2">{data.articles.title}</h1>
+            <h1 data-tina-field={tinaField} className="mt-4 py-2">{data.articles.title}</h1>
           </Section>
         )}
         {!!data.articles.author && (
@@ -123,7 +123,7 @@ export default function ArticlesPage(
                 {data.articles.bookingButton.subTitle}
               </p>
               }
-              <BookingButton buttonSubtitle={data.articles.bookingButton.buttonSubtitle} dataTinaField={tinaField(data.articles.bookingButton, "buttonSubtitle")} buttonText={data.articles.bookingButton.buttonText} />
+              <BookingButton animated={data.articles.bookingButton?.animated} buttonSubtitle={data.articles.bookingButton.buttonSubtitle} dataTinaField={tinaField(data.articles.bookingButton, "buttonSubtitle")} buttonText={data.articles.bookingButton.buttonText} />
               </Container>
             
         </Section>
