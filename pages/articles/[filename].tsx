@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/blocks/breadcrumbs";
 import { componentRenderer } from "@/blocks/mdxComponentRenderer";
 import ArticleAuthor from "@/components/articles/articleAuthor";
 import { BookingButton, BuiltOnAzure } from "@/components/blocks";
+import { CallToAction } from "@/components/callToAction/callToAction";
 import { Layout } from "@/components/layout";
 import SidebarPanel from "@/components/sidebar/sidebarPanel";
 import { Container } from "@/components/util/container";
@@ -104,30 +105,20 @@ export default function ArticlesPage(
 
 
       {
-        (data.articles.bookingButton?.showContactForm) && 
-        <Section className="!bg-gray-75 pb-25 text-center">
-            <Container size="custom" className="w-full">
-              {data.articles.bookingButton.title && 
-                <h1 className="mx-auto w-fit" data-tina-field={tinaField(data.articles.bookingButton, "title")}>
-                  {data.articles.bookingButton.title}
+        (data.articles.bookingButton?.showContactForm) && <CallToAction
+          animated={data.articles?.bookingButton?.animated}
+          object={data.articles?.bookingButton}
+          subTitle={data.articles?.bookingButton?.subTitle}
+          buttonText={data.articles?.bookingButton?.buttonText}
+          buttonSubtitle={data.articles?.bookingButton?.buttonSubtitle}
+          tinaField={tinaField}
+        >
+          {data.articles?.bookingButton?.title && <h1 className="mx-auto w-fit" data-tina-field={tinaField(data.articles?.bookingButton, "title")}>
+                  {data.articles?.bookingButton?.title}
                 </h1>
-              }
-              {
-                data.articles.bookingButton.subTitle &&
-              <p data-tina-field={tinaField(data.articles.bookingButton, "subTitle")} className="text-lg w-fit mx-auto">
-                {data.articles.bookingButton.subTitle}
-              </p>
-              }
-              <BookingButton data={
-                {
-                  animated: data.articles.bookingButton?.animated,
-                  buttonText: data.articles.bookingButton.buttonText,
-                  buttonSubtitle: data.articles.bookingButton.buttonSubtitle,
-                  dataTinaField: tinaField(data.articles.bookingButton, "buttonSubtitle")
-                }} />
-              </Container>
-            
-        </Section>
+            }              
+        </CallToAction>
+
         }
         <Section>
           <BuiltOnAzure data={{ backgroundColor: "default" }} />
@@ -181,3 +172,6 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
+
+
+
