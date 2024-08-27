@@ -56,7 +56,15 @@ export const articlesSchema: Collection = {
     animated: true,
     buttonSubtitle: `or call ${global.bookingPhone}`,
     showContactForm: true,
-  }}},
+  },
+  sidebarPanel: {
+    title: "2-Day Pre-Migration Assessment Engagement",
+    description: "Get a solid foundation for your .NET 8 migration project, ensuring you are well-prepared to tackle the migration with confidence.",
+    actionUrl: "/",
+    actionText: "Learn more",
+    showSidebarPanel: true,
+  }
+}},
   match: {
     exclude: "@(case-study|index|clientCategories)/*",
   },
@@ -114,12 +122,6 @@ export const articlesSchema: Collection = {
       description:
         "if you cannot see the Author here add them to 'Events - Presenters' in the list",
       collections: ["presenter"],
-    },
-    {
-      type: "boolean",
-      name: "showSidebarPanel",
-      label: "Show Sidebar Panel",
-      required: false,
     },
     {
       name: 'bookingButton',

@@ -34,6 +34,13 @@ export const sidebarPanelSchema = {
       },
     },
     {
+      type: "boolean",
+      name: "showSidebarPanel",
+      label: "Show Sidebar Panel",
+      description: "Disable this if you don't want the sidebar for this article",
+      required: false,
+    },
+    {
       type: "string",
       label: "Action URL",
       name: "actionUrl",

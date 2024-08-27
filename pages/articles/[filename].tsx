@@ -90,13 +90,17 @@ export default function ArticlesPage(
                 components={componentRenderer}
               />
             </div>
-            {data.articles.showSidebarPanel && (
+            {data.articles.sidebarPanel.showSidebarPanel && (
               <div className="w-full px-16 lg:shrink lg:pl-16 lg:pr-0">
                 <SidebarPanel
-                  title={data.articles.sidebarPanel.title}
-                  description={data.articles.sidebarPanel.description}
-                  actionUrl={data.articles.sidebarPanel.actionUrl}
-                  actionText={data.articles.sidebarPanel.actionText}
+                  title={data.articles.sidebarPanel?.title}
+                  tinaFields={{
+                    title: tinaField(data.articles.sidebarPanel, "title"),
+                    description: tinaField(data.articles.sidebarPanel, "description")
+                  }}
+                  description={data.articles.sidebarPanel?.description}
+                  actionUrl={data.articles.sidebarPanel?.actionUrl}
+                  actionText={data.articles.sidebarPanel?.actionText}
                 />
               </div>
             )}
