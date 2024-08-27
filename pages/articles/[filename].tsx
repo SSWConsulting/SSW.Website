@@ -106,11 +106,12 @@ export default function ArticlesPage(
             )}
           </section>
         )}
-        <Section className="!bg-gray-75 pb-25 text-center">
-          {
 
-            
-            (data.articles.bookingButton?.showContactForm) && <Container size="custom" className="w-full">
+
+      {
+        (data.articles.bookingButton?.showContactForm) && 
+        <Section className="!bg-gray-75 pb-25 text-center">
+            <Container size="custom" className="w-full">
               {data.articles.bookingButton.title && 
                 <h1 className="mx-auto w-fit" data-tina-field={tinaField(data.articles.bookingButton, "title")}>
                   {data.articles.bookingButton.title}
@@ -124,8 +125,9 @@ export default function ArticlesPage(
               }
               <BookingButton buttonSubtitle={data.articles.bookingButton.buttonSubtitle} dataTinaField={tinaField(data.articles.bookingButton, "buttonSubtitle")} buttonText={data.articles.bookingButton.buttonText} />
               </Container>
-            }
+            
         </Section>
+        }
         <Section>
           <BuiltOnAzure data={{ backgroundColor: "default" }} />
         </Section>
