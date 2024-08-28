@@ -1,8 +1,8 @@
-import * as Schemas from "../../components/blocks";
-import { seoSchema } from "../../components/util/seo";
-
 import type { Collection } from "tinacms";
+import * as Schemas from "../../components/blocks";
+import { callToActionSchema } from "../../components/callToAction/callToAction";
 import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
+import { seoSchema } from "../../components/util/seo";
 import { benefitsFields, tipField } from "./shared-fields";
 
 export const consultingIndexSchema: Collection = {
@@ -230,13 +230,23 @@ export const consultingSchema: Collection = {
         },
       ],
     },
+
     {
-      type: "string",
-      label: "Call to Action",
-      description:
-        "Technology title inserted via {{TITLE}}. E.g. 'Talk to us about your {{TITLE}} project'",
-      name: "callToAction",
-      required: false,
+      ...callToActionSchema,
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+      fields: [
+        ...callToActionSchema.fields,
+        {
+            type: "string",
+            label: "Call to Action",
+            description:
+              "Technology title inserted via {{TITLE}}. E.g. 'Talk to us about your {{TITLE}} project'",
+            name: "title",
+            required: false,
+          },
+      ],
     },
     {
       type: "object",

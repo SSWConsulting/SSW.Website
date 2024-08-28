@@ -21,6 +21,7 @@ import { tipField } from "./shared-fields";
 import { title } from "process";
 import type { Collection } from "tinacms";
 import { dynamicCardGridBlockSchema } from "../../components/blocks/dynamicCardGridBlock";
+import { callToActionSchema } from "../../components/callToAction/callToAction";
 
 export const articlesIndexSchemaConstants = {
   value: "articlesIndex",
@@ -123,34 +124,30 @@ export const articlesSchema: Collection = {
         "if you cannot see the Author here add them to 'Events - Presenters' in the list",
       collections: ["presenter"],
     },
-    {
-      name: 'callToAction',
-      label: 'Call to Action',
-      description: 'The call to action button for contacting SSW',
-      type: 'object',
-      fields: [
-        {
-          name: 'title',
-          type: 'string',
-          label: 'Title',
-        },
-        {
-          type: "string",
-          label: "Sub Title",
-          name: "subTitle",
-        },
-        {
-          type: "boolean",
-          label: "Show Call to Action",
-          name: "showCallToAction"
-        },
-        ...bookingButtonSchema.fields],
-    },
+    
     
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     sidebarPanelSchema,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    {
+      ...callToActionSchema,
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+      fields: [
+        ...callToActionSchema.fields,
+        {
+          type: "string",
+          label: "Title",
+          name: "title"
+        },
+      ],
+    }
+    
   ],
+  
 };
 
 export const articlesIndexSchema: Collection = {

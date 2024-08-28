@@ -1,6 +1,7 @@
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+import { CallToAction } from "@/components/callToAction/callToAction";
 import { client } from "@/tina/client";
 import { InferGetStaticPropsType } from "next";
 import { ReactElement } from "react";
@@ -142,7 +143,27 @@ export default function ConsultingPage(
             </Container>
           </Section>
         )}
-        <Section className="!bg-gray-75 pb-25 text-center">
+
+        <CallToAction 
+          buttonSubtitle={data?.consulting?.callToAction.buttonSubtitle} 
+          subTitle={data?.consulting?.callToAction.subTitle}
+          animated={data?.consulting?.callToAction.animated}
+          buttonText={data?.consulting?.callToAction.buttonText}
+          object={data?.consulting?.callToAction}
+          tinaField={tinaField(data.consulting?.callToAction, "buttonSubtitle")}
+          >
+        <h1 data-tina-field={tinaField(data.consulting, "callToAction")}
+              dangerouslySetInnerHTML={{
+                __html: parseCallToAction(
+                  data.consulting?.callToAction?.title,
+                  data.consulting?.solution?.project,
+                  data.consulting?.solution
+                ),
+              }}
+            ></h1>
+          
+        </CallToAction>
+        {/* <Section className="!bg-gray-75 pb-25 text-center">
           <Container size="custom" className="w-full">
             <h1
               data-tina-field={tinaField(data.consulting, "callToAction")}
@@ -159,7 +180,7 @@ export default function ConsultingPage(
             </p>
             <BookingButton />
           </Container>
-        </Section>
+        </Section> */}
         <Section>
           <BuiltOnAzure data={{ backgroundColor: "default" }} />
         </Section>
