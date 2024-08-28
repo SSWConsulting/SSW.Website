@@ -1,18 +1,15 @@
 "use client";
 
-import { TinaMarkdown } from "tinacms/dist/rich-text";
-import Button from "../button/button";
-import { componentRenderer } from "./mdxComponentRenderer";
-import { videoEmbedBlockSchema } from "./videoEmbed";
-
+import classNames from "classnames";
 import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
-
-import classNames from "classnames";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
-import { callToActionDefaults } from "../callToAction/callToAction";
+import Button from "../button/button";
 import { customImageBlockSchema } from "./customImage";
 import { expertBlockSchema } from "./expertBlock";
+import { componentRenderer } from "./mdxComponentRenderer";
+import { videoEmbedBlockSchema } from "./videoEmbed";
 import { youtubePlayListBlockSchema } from "./youtubePlaylist";
 
 const fixedTabsBlocks: Template[] = [

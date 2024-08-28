@@ -1,5 +1,4 @@
 import { Template } from "tinacms";
-import { TableLayout } from "./tableLayout";
 
 export type SectionHeaderProps = {
   headerText: string;

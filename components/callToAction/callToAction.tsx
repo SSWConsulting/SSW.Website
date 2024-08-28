@@ -1,5 +1,4 @@
 import { tinaField } from "tinacms/dist/react";
-import globals from "../../content/global/index.json";
 import { BookingButton } from "../blocks";
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
 import { Container } from "../util/container";
