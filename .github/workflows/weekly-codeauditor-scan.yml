@@ -1,9 +1,9 @@
-name: Weekly - CodeAuditor test
+name: Daily - CodeAuditor test
 
-# Schedule scan for SSW Website at 1pm every Monday
+# Schedule scan for SSW Website at 7am every day
 on:
   schedule:
-    - cron: "0 13 * * 0"
+    - cron: "0 21 * * *"
 
   workflow_dispatch:
 
