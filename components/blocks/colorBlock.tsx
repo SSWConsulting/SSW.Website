@@ -77,7 +77,6 @@ const ColorRow = (props: ColorRow) => {
 export const colorBlockSchema: Template = {
   name: "ColorBlock",
   label: "Color block",
-  
   ui: {
     previewSrc: "/images/thumbs/tina/color-block.jpg",
   },
