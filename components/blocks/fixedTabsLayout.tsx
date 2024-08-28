@@ -93,7 +93,6 @@ export const fixedTabsLayoutSchema: Template = {
       name: "firstHeading",
       label: "First Heading",
       templates: [...fixedTabsBlocks],
-      
     },
     {
       type: "rich-text",
