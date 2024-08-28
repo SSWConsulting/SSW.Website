@@ -137,12 +137,12 @@ export const articlesSchema: Collection = {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
       fields: [
-        ...callToActionSchema.fields,
         {
           type: "string",
           label: "Title",
           name: "title"
         },
+        ...callToActionSchema.fields,
       ],
     }
     

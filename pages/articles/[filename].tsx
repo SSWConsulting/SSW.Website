@@ -1,7 +1,7 @@
 import { Breadcrumbs } from "@/blocks/breadcrumbs";
 import { componentRenderer } from "@/blocks/mdxComponentRenderer";
 import ArticleAuthor from "@/components/articles/articleAuthor";
-import { BookingButton, BuiltOnAzure } from "@/components/blocks";
+import { BuiltOnAzure } from "@/components/blocks";
 import { CallToAction } from "@/components/callToAction/callToAction";
 import { Layout } from "@/components/layout";
 import SidebarPanel from "@/components/sidebar/sidebarPanel";
@@ -111,7 +111,6 @@ export default function ArticlesPage(
           subTitle={data.articles?.callToAction?.subTitle}
           buttonText={data.articles?.callToAction?.buttonText}
           buttonSubtitle={data.articles?.callToAction?.buttonSubtitle}
-          tinaField={tinaField}
         >
           {data.articles?.callToAction?.title && <h1 className="mx-auto w-fit" data-tina-field={tinaField(data.articles?.callToAction, "title")}>
                   {data.articles?.callToAction?.title}

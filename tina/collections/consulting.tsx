@@ -237,15 +237,16 @@ export const consultingSchema: Collection = {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
       fields: [
-        ...callToActionSchema.fields,
         {
-            type: "string",
-            label: "Call to Action",
-            description:
-              "Technology title inserted via {{TITLE}}. E.g. 'Talk to us about your {{TITLE}} project'",
-            name: "title",
-            required: false,
-          },
+          type: "string",
+          label: "Title",
+          description:
+            "Technology title inserted via {{TITLE}}. E.g. 'Talk to us about your {{TITLE}} project'",
+          name: "title",
+          required: false,
+        },
+        ...callToActionSchema.fields,
+        
       ],
     },
     {
