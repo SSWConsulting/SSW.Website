@@ -3,7 +3,7 @@ import globals from "../../content/global/index.json";
 import { JotFormEmbed, JotFormEmbedProps } from "../blocks/jotFormEmbed";
 const DEFAULT_SUBTITLE = `or call ${globals.bookingPhone}`;
 export interface BookingButtonProps {
-  data: {
+  data?: {
     buttonText?: string;
     containerClass?: string;
     buttonClass?: string;
