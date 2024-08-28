@@ -1,5 +1,7 @@
 import { tinaField } from "tinacms/dist/react";
-import { BookingButton, bookingButtonSchema } from "../blocks";
+import globals from "../../content/global/index.json";
+import { BookingButton } from "../blocks";
+import { bookingButtonSchema } from "../bookingButton/bookingButton";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
  
@@ -42,4 +44,13 @@ export const CallToAction = ({object, animated, subTitle, buttonText, buttonSubt
                 }} />
               </Container>
     </Section>)
+}
+
+export const callToActionDefaults = {
+  callToAction: {
+    title: "Talk to us about your project",
+    subTitle: "Connect with our Account Managers to discuss how we can help.",
+    showCallToAction: true,
+    ...bookingButtonSchema?.ui.defaultItem,
+  },
 }

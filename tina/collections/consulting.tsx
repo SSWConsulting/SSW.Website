@@ -1,6 +1,6 @@
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
-import { callToActionSchema } from "../../components/callToAction/callToAction";
+import { callToActionDefaults, callToActionSchema } from "../../components/callToAction/callToAction";
 import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
 import { seoSchema } from "../../components/util/seo";
 import { benefitsFields, tipField } from "./shared-fields";
@@ -175,6 +175,7 @@ export const consultingSchema: Collection = {
   name: "consulting",
   format: "mdx",
   path: "content/consulting",
+  defaultItem : callToActionDefaults,
   ui: {
     router: ({ document }) => {
       return `/consulting/${document._sys.filename}`;

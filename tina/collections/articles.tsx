@@ -21,7 +21,7 @@ import { tipField } from "./shared-fields";
 import { title } from "process";
 import type { Collection } from "tinacms";
 import { dynamicCardGridBlockSchema } from "../../components/blocks/dynamicCardGridBlock";
-import { callToActionSchema } from "../../components/callToAction/callToAction";
+import { callToActionDefaults, callToActionSchema } from "../../components/callToAction/callToAction";
 
 export const articlesIndexSchemaConstants = {
   value: "articlesIndex",
@@ -50,14 +50,7 @@ export const articlesSchema: Collection = {
   name: "articles",
   format: "mdx",
   path: "content/articles/",
-  defaultItem: () => {return { callToAction: {
-    title: "Talk to us about your project",
-    buttonText: global.bookingButtonText,
-    subTitle: "Connect with our Account Managers to discuss how we can help.",
-    animated: true,
-    buttonSubtitle: `or call ${global.bookingPhone}`,
-    showCallToAction: true,
-  },
+  defaultItem: () => {return { ...callToActionDefaults,
   sidebarPanel: {
     title: "2-Day Pre-Migration Assessment Engagement",
     description: "Get a solid foundation for your .NET 8 migration project, ensuring you are well-prepared to tackle the migration with confidence.",
@@ -137,6 +130,7 @@ export const articlesSchema: Collection = {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
       fields: [
+        
         {
           type: "string",
           label: "Title",

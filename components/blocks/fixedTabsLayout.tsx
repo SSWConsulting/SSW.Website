@@ -10,6 +10,7 @@ import type { Template } from "tinacms";
 
 import classNames from "classnames";
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
+import { callToActionDefaults } from "../callToAction/callToAction";
 import { customImageBlockSchema } from "./customImage";
 import { expertBlockSchema } from "./expertBlock";
 import { youtubePlayListBlockSchema } from "./youtubePlaylist";
@@ -79,7 +80,6 @@ export const fixedTabsLayoutSchema: Template = {
   label: "Fixed Tabs Layout",
   ui: {
     previewSrc: "/images/thumbs/tina/fixed-tabs-layout.jpg",
-    defaultItem: ()=>{return {}},
   },
   
   fields: [
