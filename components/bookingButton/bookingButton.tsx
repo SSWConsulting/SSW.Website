@@ -1,4 +1,4 @@
-import type { Template, TinaField } from "tinacms";
+import type { Template } from "tinacms";
 import globals from "../../content/global/index.json";
 import { JotFormEmbed, JotFormEmbedProps } from "../blocks/jotFormEmbed";
 const DEFAULT_SUBTITLE = `or call ${globals.bookingPhone}`;

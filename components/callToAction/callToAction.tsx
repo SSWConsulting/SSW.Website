@@ -1,5 +1,3 @@
-import { subtle } from "crypto";
-import { tinaField } from "tinacms/dist/react";
 import { BookingButton } from "../blocks";
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
 import { Container } from "../util/container";
@@ -34,7 +32,7 @@ type CallToActionProps = {
   subTitle: string;
   buttonText: string;
   buttonSubtitle: string;
-  children: any;
+  children: React.ReactNode;
 };
 export const CallToAction: React.FC<CallToActionProps> = ({
   tinaFields,
