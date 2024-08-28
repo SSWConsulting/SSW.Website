@@ -75,6 +75,7 @@ const config = {
   },
   experimental: {
     optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
+    nextScriptWorkers: true,
     turbo: {
       resolveExtensions: [
         ".mdx",

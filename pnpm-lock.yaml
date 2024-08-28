@@ -162,6 +162,9 @@ importers:
         specifier: ^0.32.11
         version: 0.32.11
     devDependencies:
+      '@builder.io/partytown':
+        specifier: ^0.10.2
+        version: 0.10.2
       '@jest/globals':
         specifier: ^29.7.0
         version: 29.7.0
@@ -1058,6 +1061,11 @@ packages:
     resolution: {integrity: sha512-4eKO2KdQEXcR5LI4QcxqlJykJUDQJWDeWYAukIn6sRQYoabcfI5kDl61PUi6FR6o8VFgQ8IEP7HleKqWlSe8SQ==}
     peerDependencies:
       react: ^16.8 || ^17 || ^18
+
+  '@builder.io/partytown@0.10.2':
+    resolution: {integrity: sha512-A9U+4PREWcS+CCYzKGIPovtGB/PBgnH/8oQyCE6Nr9drDJk6cMPpLQIEajpGPmG9tYF7N3FkRvhXm/AS9+0iKg==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
 
   '@codemirror/language@6.0.0':
     resolution: {integrity: sha512-rtjk5ifyMzOna1c7PBu7J1VCt0PvA5wy3o8eMVnxMKb7z8KA7JFecvD04dSn14vj/bBaAbqRsGed5OjtofEnLA==}
@@ -9657,6 +9665,8 @@ snapshots:
   '@bedrock-layout/use-stateful-ref@1.4.1(react@18.3.1)':
     dependencies:
       react: 18.3.1
+
+  '@builder.io/partytown@0.10.2': {}
 
   '@codemirror/language@6.0.0':
     dependencies:

@@ -17,6 +17,7 @@
     "test-and-coverage": "jest --ci --json --coverage --testLocationInResults"
   },
   "devDependencies": {
+    "@builder.io/partytown": "^0.10.2",
     "@jest/globals": "^29.7.0",
     "@next/eslint-plugin-next": "14.2.6",
     "@playwright/test": "1.46.0",

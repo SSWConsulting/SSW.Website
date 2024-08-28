@@ -9,7 +9,7 @@ const ChatBaseBot = () => {
         src="https://www.chatbase.co/embed.min.js"
         id={chatBaseBotId}
         defer
-        strategy="lazyOnload"
+        strategy="worker"
       />
     )
   );
