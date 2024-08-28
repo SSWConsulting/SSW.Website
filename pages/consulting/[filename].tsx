@@ -1,12 +1,10 @@
-import { tinaField, useTina } from "tinacms/dist/react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
-
 import { CallToAction } from "@/components/callToAction/callToAction";
 import { client } from "@/tina/client";
 import { InferGetStaticPropsType } from "next";
 import { ReactElement } from "react";
 import ReactDOMServer from "react-dom/server";
-import { defineConfig } from "tinacms";
+import { tinaField, useTina } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { BuiltOnAzure, ClientLogos } from "../../components/blocks";
 import { Blocks } from "../../components/blocks-renderer";
 import { Booking } from "../../components/blocks/booking";

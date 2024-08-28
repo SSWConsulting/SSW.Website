@@ -8,11 +8,11 @@ type SidebarPanelProps = {
   tinaFields: {
     title: TinaField;
     description: TinaField;
-  }
+  };
   description: string;
   actionUrl?: string;
   actionText?: string;
-  };
+};
 const SidebarPanel = ({
   title,
   description,
@@ -24,7 +24,12 @@ const SidebarPanel = ({
     <>
       <div className="border-2 bg-gray-100 p-5">
         {title && <strong data-tina-field={tinaFields.title}>{title}</strong>}
-        <p data-tina-field={tinaFields.description} className={classNames("pt-5", "w-f")}>{description}</p>
+        <p
+          data-tina-field={tinaFields.description}
+          className={classNames("pt-5", "w-f")}
+        >
+          {description}
+        </p>
         {actionUrl && (
           <div className="flex justify-center pt-5">
             <a

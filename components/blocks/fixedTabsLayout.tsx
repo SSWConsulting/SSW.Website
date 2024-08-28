@@ -81,7 +81,6 @@ export const fixedTabsLayoutSchema: Template = {
   ui: {
     previewSrc: "/images/thumbs/tina/fixed-tabs-layout.jpg",
   },
-  
   fields: [
     {
       type: "string",
