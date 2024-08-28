@@ -48,8 +48,8 @@ export const bookingButtonSchema: Template = {
       buttonText: globals.bookingButtonText,
       buttonSubtitle: DEFAULT_SUBTITLE,
       animated: true,
-    }
-    // itemProps: (item) => ({ label: item?.btnText }),
+    },
+    itemProps: (item) => ({ label: item?.btnText }),
   },
   fields: [
     {
