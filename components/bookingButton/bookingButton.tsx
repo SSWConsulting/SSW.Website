@@ -3,16 +3,20 @@ import globals from "../../content/global/index.json";
 import { JotFormEmbed, JotFormEmbedProps } from "../blocks/jotFormEmbed";
 const DEFAULT_SUBTITLE = `or call ${globals.bookingPhone}`;
 export interface BookingButtonProps {
-  buttonText?: string;
-  containerClass?: string;
-  buttonClass?: string;
-  hideCallUs?: boolean;
-  buttonSubtitle?: string;
-  dataTinaField?: TinaField;
-  animated?: boolean;
+  data: {
+    buttonText?: string;
+    containerClass?: string;
+    buttonClass?: string;
+    hideCallUs?: boolean;
+    buttonSubtitle?: string;
+    dataTinaField?: TinaField;
+    animated?: boolean;
+  };
 }
 
-export const BookingButton = ({ data }) => {
+export const BookingButton: React.FC<undefined | BookingButtonProps> = ({
+  data,
+}) => {
   const buttonText = data?.buttonText ?? globals.bookingButtonText;
   const buttonSubtitle = data?.buttonSubtitle ?? DEFAULT_SUBTITLE;
   const hideCallUs = data?.hideCallUs ?? false;
