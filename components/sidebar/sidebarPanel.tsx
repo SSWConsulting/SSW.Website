@@ -1,6 +1,6 @@
 "use client";
 
-import { classNames, TinaField } from "tinacms";
+import { classNames } from "tinacms";
 
 type SidebarPanelProps = {
   title?: string;
