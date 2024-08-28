@@ -49,7 +49,6 @@ export const CallToAction = ({
             animated: animated,
             buttonText: buttonText,
             buttonSubtitle: buttonSubtitle,
-            dataTinaField: tinaField(object, "buttonSubtitle"),
           }}
         />
       </Container>
