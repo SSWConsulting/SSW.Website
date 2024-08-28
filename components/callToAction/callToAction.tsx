@@ -1,3 +1,4 @@
+import { subtle } from "crypto";
 import { tinaField } from "tinacms/dist/react";
 import { BookingButton } from "../blocks";
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
@@ -24,8 +25,19 @@ export const callToActionSchema = {
   ],
 };
 
-export const CallToAction = ({
-  object,
+type CallToActionProps = {
+  tinaFields: {
+    subTitle: string;
+    buttonSubtitle: string;
+  };
+  animated: boolean;
+  subTitle: string;
+  buttonText: string;
+  buttonSubtitle: string;
+  children: any;
+};
+export const CallToAction: React.FC<CallToActionProps> = ({
+  tinaFields,
   animated,
   subTitle,
   buttonText,
@@ -38,7 +50,7 @@ export const CallToAction = ({
         {children}
         {subTitle && (
           <p
-            data-tina-field={tinaField(object, "subTitle")}
+            data-tina-field={tinaFields.subTitle}
             className="mx-auto w-fit text-lg"
           >
             {subTitle}
@@ -49,6 +61,7 @@ export const CallToAction = ({
             animated: animated,
             buttonText: buttonText,
             buttonSubtitle: buttonSubtitle,
+            tinaField: tinaFields.buttonSubtitle,
           }}
         />
       </Container>

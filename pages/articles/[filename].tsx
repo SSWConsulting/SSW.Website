@@ -112,7 +112,13 @@ export default function ArticlesPage(
         {data.articles.callToAction?.showCallToAction && (
           <CallToAction
             animated={data.articles?.callToAction?.animated}
-            object={data.articles?.callToAction}
+            tinaFields={{
+              subTitle: tinaField(data.articles?.callToAction, "subTitle"),
+              buttonSubtitle: tinaField(
+                data.articles?.callToAction,
+                "buttonSubtitle"
+              ),
+            }}
             subTitle={data.articles?.callToAction?.subTitle}
             buttonText={data.articles?.callToAction?.buttonText}
             buttonSubtitle={data.articles?.callToAction?.buttonSubtitle}

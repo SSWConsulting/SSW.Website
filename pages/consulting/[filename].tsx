@@ -143,7 +143,13 @@ export default function ConsultingPage(
             subTitle={data?.consulting?.callToAction?.subTitle}
             animated={data?.consulting?.callToAction?.animated}
             buttonText={data?.consulting?.callToAction?.buttonText}
-            object={data?.consulting?.callToAction}
+            tinaFields={{
+              subTitle: tinaField(data.consulting?.callToAction, "subTitle"),
+              buttonSubtitle: tinaField(
+                data.consulting?.callToAction,
+                "buttonSubtitle"
+              ),
+            }}
           >
             <h1
               data-tina-field={tinaField(data.consulting, "callToAction")}

@@ -9,18 +9,18 @@ export interface BookingButtonProps {
     buttonClass?: string;
     hideCallUs?: boolean;
     buttonSubtitle?: string;
-    dataTinaField?: TinaField;
+    tinaField?: string;
     animated?: boolean;
   };
 }
 
-export const BookingButton: React.FC<undefined | BookingButtonProps> = ({
-  data,
+export const BookingButton: React.FC<BookingButtonProps> = ({
+  data = undefined,
 }) => {
   const buttonText = data?.buttonText ?? globals.bookingButtonText;
   const buttonSubtitle = data?.buttonSubtitle ?? DEFAULT_SUBTITLE;
   const hideCallUs = data?.hideCallUs ?? false;
-  const dataTinaField = data?.dataTinaField || undefined;
+  const dataTinaField = data?.tinaField || undefined;
   const animated = data?.animated ?? true;
   const jotFormBookingForm: JotFormEmbedProps = {
     jotFormId: globals.bookingJotFormId,
