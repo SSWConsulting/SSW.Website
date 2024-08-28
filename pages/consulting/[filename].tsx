@@ -28,7 +28,6 @@ import { getRandomTestimonialsByCategory } from "../../helpers/getTestimonials";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
 
-
 export default function ConsultingPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
@@ -51,7 +50,6 @@ export default function ConsultingPage(
       type: m.type as MediaCardProps["type"],
       content: m.content,
     })) || [];
-
 
   const categories =
     data.consulting.testimonialCategories
@@ -114,9 +112,7 @@ export default function ConsultingPage(
               categories={categories}
               tagline={data.consulting.testimonials?.tagline}
             />
-            <BookingButton
-              containerClass={"mt-20"}
-            />
+            <BookingButton containerClass={"mt-20"} />
           </Container>
         </Section>
         <Marketing content={props.marketingData} />
@@ -143,15 +139,16 @@ export default function ConsultingPage(
             </Container>
           </Section>
         )}
-        {
-          data?.consulting?.callToAction?.showCallToAction &&  <CallToAction 
-          buttonSubtitle={data?.consulting?.callToAction?.buttonSubtitle} 
-          subTitle={data?.consulting?.callToAction?.subTitle}
-          animated={data?.consulting?.callToAction?.animated}
-          buttonText={data?.consulting?.callToAction?.buttonText}
-          object={data?.consulting?.callToAction}
+        {data?.consulting?.callToAction?.showCallToAction && (
+          <CallToAction
+            buttonSubtitle={data?.consulting?.callToAction?.buttonSubtitle}
+            subTitle={data?.consulting?.callToAction?.subTitle}
+            animated={data?.consulting?.callToAction?.animated}
+            buttonText={data?.consulting?.callToAction?.buttonText}
+            object={data?.consulting?.callToAction}
           >
-        <h1 data-tina-field={tinaField(data.consulting, "callToAction")}
+            <h1
+              data-tina-field={tinaField(data.consulting, "callToAction")}
               dangerouslySetInnerHTML={{
                 __html: parseCallToAction(
                   data.consulting?.callToAction?.title,
@@ -160,8 +157,8 @@ export default function ConsultingPage(
                 ),
               }}
             ></h1>
-        </CallToAction>
-        }
+          </CallToAction>
+        )}
 
         <Section>
           <BuiltOnAzure data={{ backgroundColor: "default" }} />

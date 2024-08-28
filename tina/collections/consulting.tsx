@@ -1,6 +1,9 @@
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
-import { callToActionDefaults, callToActionSchema } from "../../components/callToAction/callToAction";
+import {
+  callToActionDefaults,
+  callToActionSchema,
+} from "../../components/callToAction/callToAction";
 import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
 import { seoSchema } from "../../components/util/seo";
 import { benefitsFields, tipField } from "./shared-fields";
@@ -175,7 +178,7 @@ export const consultingSchema: Collection = {
   name: "consulting",
   format: "mdx",
   path: "content/consulting",
-  defaultItem : callToActionDefaults,
+  defaultItem: callToActionDefaults,
   ui: {
     router: ({ document }) => {
       return `/consulting/${document._sys.filename}`;
@@ -235,8 +238,8 @@ export const consultingSchema: Collection = {
     {
       ...callToActionSchema,
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       fields: [
         {
           type: "string",
@@ -247,7 +250,6 @@ export const consultingSchema: Collection = {
           required: false,
         },
         ...callToActionSchema.fields,
-        
       ],
     },
     {

@@ -4,13 +4,12 @@ import { BookingButton } from "../blocks";
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
- 
 
 export const callToActionSchema = {
-  name: 'callToAction',
-  label: 'Call to Action',
-  description: 'The call to action button for contacting SSW',
-  type: 'object',
+  name: "callToAction",
+  label: "Call to Action",
+  description: "The call to action button for contacting SSW",
+  type: "object",
   fields: [
     {
       type: "string",
@@ -20,31 +19,44 @@ export const callToActionSchema = {
     {
       type: "boolean",
       label: "Show Call to Action",
-      name: "showCallToAction"
+      name: "showCallToAction",
     },
-    ...bookingButtonSchema.fields],
-}
+    ...bookingButtonSchema.fields,
+  ],
+};
 
-export const CallToAction = ({object, animated, subTitle, buttonText, buttonSubtitle, children}) => {
-  return (<Section className="!bg-gray-75 pb-25 text-center">
-            <Container size="custom" className="w-full">
-              {children}
-              {
-                subTitle &&
-              <p data-tina-field={tinaField(object, "subTitle")} className="text-lg w-fit mx-auto">
-                {subTitle}
-              </p>
-              }
-              <BookingButton data={
-                {
-                  animated: animated,
-                  buttonText: buttonText,
-                  buttonSubtitle: buttonSubtitle,
-                  dataTinaField: tinaField(object, "buttonSubtitle")
-                }} />
-              </Container>
-    </Section>)
-}
+export const CallToAction = ({
+  object,
+  animated,
+  subTitle,
+  buttonText,
+  buttonSubtitle,
+  children,
+}) => {
+  return (
+    <Section className="!bg-gray-75 pb-25 text-center">
+      <Container size="custom" className="w-full">
+        {children}
+        {subTitle && (
+          <p
+            data-tina-field={tinaField(object, "subTitle")}
+            className="mx-auto w-fit text-lg"
+          >
+            {subTitle}
+          </p>
+        )}
+        <BookingButton
+          data={{
+            animated: animated,
+            buttonText: buttonText,
+            buttonSubtitle: buttonSubtitle,
+            dataTinaField: tinaField(object, "buttonSubtitle"),
+          }}
+        />
+      </Container>
+    </Section>
+  );
+};
 
 export const callToActionDefaults = {
   callToAction: {
@@ -53,4 +65,4 @@ export const callToActionDefaults = {
     showCallToAction: true,
     ...bookingButtonSchema?.ui.defaultItem,
   },
-}
+};

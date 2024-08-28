@@ -1,8 +1,6 @@
+import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
-import global from '../../content/global/index.json';
-
 import {
-  bookingButtonSchema,
   carouselBlockSchema,
   colorBlockSchema,
   colorPaletteSchema,
@@ -13,15 +11,15 @@ import {
   testimonialsListSchema,
   verticalImageLayoutBlockSchema,
 } from "../../components/blocks";
+import { dynamicCardGridBlockSchema } from "../../components/blocks/dynamicCardGridBlock";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
+import {
+  callToActionDefaults,
+  callToActionSchema,
+} from "../../components/callToAction/callToAction";
 import { seoSchema } from "../../components/util/seo";
 import { sidebarPanelSchema } from "../../components/util/sidebarPanel";
 import { tipField } from "./shared-fields";
-
-import { title } from "process";
-import type { Collection } from "tinacms";
-import { dynamicCardGridBlockSchema } from "../../components/blocks/dynamicCardGridBlock";
-import { callToActionDefaults, callToActionSchema } from "../../components/callToAction/callToAction";
 
 export const articlesIndexSchemaConstants = {
   value: "articlesIndex",
@@ -50,25 +48,26 @@ export const articlesSchema: Collection = {
   name: "articles",
   format: "mdx",
   path: "content/articles/",
-  defaultItem: () => {return { ...callToActionDefaults,
-  sidebarPanel: {
-    title: "2-Day Pre-Migration Assessment Engagement",
-    description: "Get a solid foundation for your .NET 8 migration project, ensuring you are well-prepared to tackle the migration with confidence.",
-    actionUrl: "/",
-    actionText: "Learn more",
-    showSidebarPanel: true,
-  }
-}},
+  defaultItem: () => {
+    return {
+      ...callToActionDefaults,
+      sidebarPanel: {
+        title: "2-Day Pre-Migration Assessment Engagement",
+        description:
+          "Get a solid foundation for your .NET 8 migration project, ensuring you are well-prepared to tackle the migration with confidence.",
+        actionUrl: "/",
+        actionText: "Learn more",
+        showSidebarPanel: true,
+      },
+    };
+  },
   match: {
     exclude: "@(case-study|index|clientCategories)/*",
   },
   ui: {
-    
     router: ({ document }) => {
       return `/articles/${document._sys.filename}`;
     },
-    
-    
   },
   fields: [
     tipField,
@@ -117,8 +116,7 @@ export const articlesSchema: Collection = {
         "if you cannot see the Author here add them to 'Events - Presenters' in the list",
       collections: ["presenter"],
     },
-    
-    
+
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     sidebarPanelSchema,
@@ -127,21 +125,18 @@ export const articlesSchema: Collection = {
     {
       ...callToActionSchema,
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       fields: [
-        
         {
           type: "string",
           label: "Title",
-          name: "title"
+          name: "title",
         },
         ...callToActionSchema.fields,
       ],
-    }
-    
+    },
   ],
-  
 };
 
 export const articlesIndexSchema: Collection = {

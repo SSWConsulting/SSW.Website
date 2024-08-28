@@ -27,7 +27,8 @@ export default function ArticlesPage(
 
   const { author } = data.articles;
 
-  return (<div>
+  return (
+    <div>
       <SEO seo={props.seo} />
 
       <Layout menu={data.megamenu}>
@@ -61,7 +62,9 @@ export default function ArticlesPage(
             className="mx-auto w-full max-w-9xl px-8"
             data-tina-field={tinaField(data.articles, "title")}
           >
-            <h1 data-tina-field={tinaField} className="mt-4 py-2">{data.articles.title}</h1>
+            <h1 data-tina-field={tinaField} className="mt-4 py-2">
+              {data.articles.title}
+            </h1>
           </Section>
         )}
         {!!data.articles.author && (
@@ -92,7 +95,10 @@ export default function ArticlesPage(
                   title={data.articles.sidebarPanel?.title}
                   tinaFields={{
                     title: tinaField(data.articles.sidebarPanel, "title"),
-                    description: tinaField(data.articles.sidebarPanel, "description")
+                    description: tinaField(
+                      data.articles.sidebarPanel,
+                      "description"
+                    ),
                   }}
                   description={data.articles.sidebarPanel?.description}
                   actionUrl={data.articles.sidebarPanel?.actionUrl}
@@ -103,22 +109,27 @@ export default function ArticlesPage(
           </section>
         )}
 
-
-      {
-        (data.articles.callToAction?.showCallToAction) && <CallToAction
-          animated={data.articles?.callToAction?.animated}
-          object={data.articles?.callToAction}
-          subTitle={data.articles?.callToAction?.subTitle}
-          buttonText={data.articles?.callToAction?.buttonText}
-          buttonSubtitle={data.articles?.callToAction?.buttonSubtitle}
-        >
-          {data.articles?.callToAction?.title && <h1 className="mx-auto w-fit" data-tina-field={tinaField(data.articles?.callToAction, "title")}>
-                  {data.articles?.callToAction?.title}
-                </h1>
-            }              
-        </CallToAction>
-
-        }
+        {data.articles.callToAction?.showCallToAction && (
+          <CallToAction
+            animated={data.articles?.callToAction?.animated}
+            object={data.articles?.callToAction}
+            subTitle={data.articles?.callToAction?.subTitle}
+            buttonText={data.articles?.callToAction?.buttonText}
+            buttonSubtitle={data.articles?.callToAction?.buttonSubtitle}
+          >
+            {data.articles?.callToAction?.title && (
+              <h1
+                className="mx-auto w-fit"
+                data-tina-field={tinaField(
+                  data.articles?.callToAction,
+                  "title"
+                )}
+              >
+                {data.articles?.callToAction?.title}
+              </h1>
+            )}
+          </CallToAction>
+        )}
         <Section>
           <BuiltOnAzure data={{ backgroundColor: "default" }} />
         </Section>
@@ -171,6 +182,3 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
-
-
-
