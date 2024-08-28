@@ -14,7 +14,7 @@ export interface BookingButtonProps {
   };
 }
 
-export const BookingButton: React.FC<BookingButtonProps> = ({
+export const BookingButton: React.FC<BookingButtonProps | undefined> = ({
   data = undefined,
 }) => {
   const buttonText = data?.buttonText ?? globals.bookingButtonText;
