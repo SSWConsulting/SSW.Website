@@ -6,8 +6,8 @@ type SidebarPanelProps = {
   title?: string;
 
   tinaFields: {
-    title: TinaField;
-    description: TinaField;
+    title: string;
+    description: string;
   };
   description: string;
   actionUrl?: string;
