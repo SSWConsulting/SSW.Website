@@ -110,7 +110,11 @@ export default function ConsultingPage(
               categories={categories}
               tagline={data.consulting.testimonials?.tagline}
             />
-            <BookingButton containerClass={"mt-20"} />
+            <BookingButton
+              data={{
+                containerClass: "mt-20",
+              }}
+            />
           </Container>
         </Section>
         <Marketing content={props.marketingData} />
