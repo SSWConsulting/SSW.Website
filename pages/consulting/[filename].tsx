@@ -143,14 +143,13 @@ export default function ConsultingPage(
             </Container>
           </Section>
         )}
-
-        <CallToAction 
-          buttonSubtitle={data?.consulting?.callToAction.buttonSubtitle} 
-          subTitle={data?.consulting?.callToAction.subTitle}
-          animated={data?.consulting?.callToAction.animated}
-          buttonText={data?.consulting?.callToAction.buttonText}
+        {
+          data?.consulting?.callToAction?.showCallToAction && <CallToAction 
+          buttonSubtitle={data?.consulting?.callToAction?.buttonSubtitle} 
+          subTitle={data?.consulting?.callToAction?.subTitle}
+          animated={data?.consulting?.callToAction?.animated}
+          buttonText={data?.consulting?.callToAction?.buttonText}
           object={data?.consulting?.callToAction}
-          tinaField={tinaField(data.consulting?.callToAction, "buttonSubtitle")}
           >
         <h1 data-tina-field={tinaField(data.consulting, "callToAction")}
               dangerouslySetInnerHTML={{
@@ -161,26 +160,9 @@ export default function ConsultingPage(
                 ),
               }}
             ></h1>
-          
         </CallToAction>
-        {/* <Section className="!bg-gray-75 pb-25 text-center">
-          <Container size="custom" className="w-full">
-            <h1
-              data-tina-field={tinaField(data.consulting, "callToAction")}
-              dangerouslySetInnerHTML={{
-                __html: parseCallToAction(
-                  data.consulting.callToAction,
-                  data.consulting.solution?.project,
-                  data.consulting.solution
-                ),
-              }}
-            ></h1>
-            <p className="text-lg">
-              Connect with our Account Managers to discuss how we can help.
-            </p>
-            <BookingButton />
-          </Container>
-        </Section> */}
+        }
+
         <Section>
           <BuiltOnAzure data={{ backgroundColor: "default" }} />
         </Section>
