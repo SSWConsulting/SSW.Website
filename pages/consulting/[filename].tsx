@@ -144,7 +144,7 @@ export default function ConsultingPage(
           </Section>
         )}
         {
-          data?.consulting?.callToAction?.showCallToAction && <CallToAction 
+          data?.consulting?.callToAction?.showCallToAction &&  <CallToAction 
           buttonSubtitle={data?.consulting?.callToAction?.buttonSubtitle} 
           subTitle={data?.consulting?.callToAction?.subTitle}
           animated={data?.consulting?.callToAction?.animated}
