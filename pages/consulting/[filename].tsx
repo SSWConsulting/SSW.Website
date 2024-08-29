@@ -156,7 +156,7 @@ export default function ConsultingPage(
             }}
           >
             <h1
-              data-tina-field={tinaField(data.consulting, "callToAction")}
+              data-tina-field={tinaField(data.consulting.callToAction, "title")}
               dangerouslySetInnerHTML={{
                 __html: parseCallToAction(
                   data.consulting?.callToAction?.title,
