@@ -2,6 +2,11 @@
   "name": "@tinacms/starter",
   "version": "1.22.19",
   "private": true,
+  "pnpm": {
+    "overrides": {
+      "@babel/parser": "7.21.9"
+    }
+  },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "tinacms dev -c \"node --require ./appInsight-api.js node_modules/next/dist/bin/next dev\"",
