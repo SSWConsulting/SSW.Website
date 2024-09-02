@@ -124,15 +124,15 @@ export default function ArticlesPage(
             buttonSubtitle={data.articles?.callToAction?.buttonSubtitle}
           >
             {data.articles?.callToAction?.title && (
-              <h1
-                className="mx-auto w-fit"
+              <h2
+                className="mx-auto mb-4 mt-4 w-fit pb-5 pt-15 text-4xl"
                 data-tina-field={tinaField(
                   data.articles?.callToAction,
                   "title"
                 )}
               >
                 {data.articles?.callToAction?.title}
-              </h1>
+              </h2>
             )}
           </CallToAction>
         )}

@@ -155,7 +155,8 @@ export default function ConsultingPage(
               ),
             }}
           >
-            <h1
+            <h2
+              className="mx-auto mb-4 mt-4 w-fit pb-5 pt-15 text-4xl"
               data-tina-field={tinaField(data.consulting.callToAction, "title")}
               dangerouslySetInnerHTML={{
                 __html: parseCallToAction(
@@ -164,7 +165,7 @@ export default function ConsultingPage(
                   data.consulting?.solution
                 ),
               }}
-            ></h1>
+            ></h2>
           </CallToAction>
         )}
 
