@@ -25,7 +25,7 @@
     "@testing-library/react": "^16.0.0",
     "@tinacms/cli": "^1.5.51",
     "@types/js-cookie": "^3.0.6",
-    "@types/node": "^20.14.10",
+    "@types/node": "^20.16.3",
     "@types/react": "^18.3.3",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
