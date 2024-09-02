@@ -7,6 +7,7 @@ import { FaSpinner } from "react-icons/fa";
 import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 
+import { EventCategories } from "pages/events";
 import { useEvents } from "../../hooks/useEvents";
 import {
   useFetchFutureEvents,
@@ -19,13 +20,14 @@ import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { CITY_MAP } from "../util/constants/country";
 import { sswOrganisation } from "../util/constants/json-ld";
-import { FilterBlock } from "./FilterBlock";
+import { EventFilterAllCategories, FilterBlock } from "./FilterBlock";
 
 const EVENTS_JSON_LD_LIMIT = 5;
 
 interface EventsFilterProps {
   sidebarBody: TinaMarkdownContent;
   defaultToPastTab?: boolean;
+  filterCategories: EventFilterAllCategories;
 }
 
 export type EventTrimmed = {
@@ -47,11 +49,12 @@ export type EventTrimmed = {
 };
 
 export const EventsFilter = ({
+  filterCategories,
   sidebarBody,
   defaultToPastTab,
 }: EventsFilterProps) => {
   const [pastSelected, setPastSelected] = useState<boolean>(defaultToPastTab);
-
+  const { past, upcoming } = filterCategories;
   const {
     futureEvents,
     fetchFutureNextPage,
@@ -60,7 +63,7 @@ export const EventsFilter = ({
     isLoadingFuturePages,
   } = useFetchFutureEvents();
   const { filters: futureFilters, filteredEvents: filteredFutureEvents } =
-    useEvents(futureEvents);
+    useEvents(futureEvents, past);
 
   const {
     pastEvents,
@@ -70,8 +73,9 @@ export const EventsFilter = ({
     isLoadingPastPages,
   } = useFetchPastEvents(true);
 
+  //events need to be past in as a prop because an object including the list of events and the selected filter is returned
   const { filters: pastFilters, filteredEvents: pastFilteredEvents } =
-    useEvents(pastEvents);
+    useEvents(pastEvents, upcoming);
 
   return (
     <FilterBlock
@@ -80,7 +84,7 @@ export const EventsFilter = ({
           <TinaMarkdown content={sidebarBody} components={componentRenderer} />
         </div>
       }
-      groups={!pastSelected ? futureFilters : pastFilters}
+      groups={pastSelected ? futureFilters : pastFilters}
     >
       <Tab.Group
         onChange={(index) => setPastSelected(index === 1)}

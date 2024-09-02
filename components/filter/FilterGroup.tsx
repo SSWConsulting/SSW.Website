@@ -10,12 +10,13 @@ export interface FilterGroupProps {
   selected: number;
   setSelected: (index: number) => void;
   allText: string;
-  options: {
-    label: string | Readonly<string>;
-    count: number;
-  }[];
+  options: Option[];
 }
 
+export type Option = {
+  label: string | Readonly<string>;
+  count: number;
+};
 export const FilterGroup = ({
   selected,
   setSelected,

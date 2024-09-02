@@ -1,6 +1,7 @@
 import client from "@/tina/client";
-import { useRouter } from "next/router";
+import { GetPastEventsQueryQuery } from "@/tina/types";
 import type { InferGetStaticPropsType } from "next";
+import { useRouter } from "next/router";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Blocks } from "../../components/blocks-renderer";
@@ -9,6 +10,10 @@ import { EventsFilter } from "../../components/filter/events";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
+
+import { EventFilterAllCategories } from "@/components/filter/FilterBlock";
+import { getPastEvents } from "@/services/server/getEvents";
+import { EventsCalendarConnectionEdges } from "@/tina/types";
 import {
   HydrationBoundary,
   QueryClient,
@@ -24,10 +29,11 @@ const ISR_TIME = 60 * 60; // 1 hour
 export default function EventsIndexPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
+  const { query, variables, filterCategories } = props;
   const { data } = useTina({
     data: props.data,
-    query: props.query,
-    variables: props.variables,
+    query,
+    variables,
   });
 
   const router = useRouter();
@@ -49,6 +55,7 @@ export default function EventsIndexPage(
             </div>
           </div>
           <EventsFilter
+            filterCategories={filterCategories}
             sidebarBody={data.eventsIndex.sidebarBody}
             defaultToPastTab={defaultToPastTab}
           />
@@ -63,6 +70,33 @@ export default function EventsIndexPage(
 }
 
 export const getStaticProps = async () => {
+  const today: string = new Date().toISOString();
+  const limit: number = 9999;
+
+  const pastEvents = await client.queries.getPastEventsQuery({
+    fromDate: today,
+    top: limit,
+  });
+  const upcomingEvents = await client.queries.getFutureEventsQuery({
+    fromDate: today,
+    top: limit,
+  });
+
+  const category = "calendarType";
+
+  const technology = "category";
+
+  const filterCategories: EventFilterAllCategories = {
+    past: {
+      technologies: aggregateByCategory(pastEvents.data, technology),
+      categories: aggregateByCategory(pastEvents.data, category),
+    },
+    upcoming: {
+      technologies: aggregateByCategory(upcomingEvents.data, technology),
+      categories: aggregateByCategory(upcomingEvents.data, category),
+    },
+  };
+
   const tinaProps = await client.queries.eventsIndexContentQuery({
     relativePath: "index.mdx",
   });
@@ -84,8 +118,28 @@ export const getStaticProps = async () => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
+      filterCategories,
       dehydratedState: dehydrate(queryClient),
     },
     revalidate: ISR_TIME,
   };
+};
+
+const aggregateByCategory = (
+  events: GetPastEventsQueryQuery,
+  targetCategory: string
+): EventCategories => {
+  return events.eventsCalendarConnection.edges.reduce((occurences, event) => {
+    const category = event.node[targetCategory];
+    if (occurences[category]) {
+      occurences[category]++;
+    } else {
+      occurences[category] = 1;
+    }
+    return occurences;
+  }, {});
+};
+
+export type EventCategories = {
+  [key: string]: number;
 };
