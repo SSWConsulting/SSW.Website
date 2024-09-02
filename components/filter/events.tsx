@@ -6,8 +6,6 @@ import { Fragment, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
-
-import { EventCategories } from "pages/events";
 import { useEvents } from "../../hooks/useEvents";
 import {
   useFetchFutureEvents,
