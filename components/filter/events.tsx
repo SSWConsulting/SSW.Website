@@ -61,7 +61,7 @@ export const EventsFilter = ({
     isLoadingFuturePages,
   } = useFetchFutureEvents();
   const { filters: futureFilters, filteredEvents: filteredFutureEvents } =
-    useEvents(futureEvents, past);
+    useEvents(futureEvents, upcoming);
 
   const {
     pastEvents,
@@ -73,7 +73,7 @@ export const EventsFilter = ({
 
   //events need to be past in as a prop because an object including the list of events and the selected filter is returned
   const { filters: pastFilters, filteredEvents: pastFilteredEvents } =
-    useEvents(pastEvents, upcoming);
+    useEvents(pastEvents, past);
 
   return (
     <FilterBlock
@@ -82,7 +82,7 @@ export const EventsFilter = ({
           <TinaMarkdown content={sidebarBody} components={componentRenderer} />
         </div>
       }
-      groups={pastSelected ? futureFilters : pastFilters}
+      groups={!pastSelected ? futureFilters : pastFilters}
     >
       <Tab.Group
         onChange={(index) => setPastSelected(index === 1)}
