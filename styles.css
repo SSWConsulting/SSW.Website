@@ -15,6 +15,9 @@
     /* see https://github.com/SSWConsulting/SSW.Website/issues/1147 */
     font-size: 18px;
   }
+  h2.callToAction {
+    @apply mx-auto mb-4 mt-4 w-fit pb-5 pt-15 text-4xl;
+  }
 
   h1,
   h2,

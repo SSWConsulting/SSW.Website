@@ -125,7 +125,7 @@ export default function ArticlesPage(
           >
             {data.articles?.callToAction?.title && (
               <h2
-                className="mx-auto mb-4 mt-4 w-fit pb-5 pt-15 text-4xl"
+                className="callToAction"
                 data-tina-field={tinaField(
                   data.articles?.callToAction,
                   "title"
