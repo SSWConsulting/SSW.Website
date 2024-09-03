@@ -27,7 +27,6 @@ const getCategoriesForFilter = (category: string) => {
 
 const formatCategory = (category: string): string => {
   {
-    console.log("category", category);
     const categoryReplacements = {
       "Non-English Courses": "Other",
     };
