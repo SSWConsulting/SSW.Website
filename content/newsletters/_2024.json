@@ -2,11 +2,6 @@
   "newsletters_year": "2024",
   "newsletters": [
     {
-      "month": 5,
-      "file": "/images/newsletter-uploads/2024/_2024_05__SSW purchases TinaCMS – the No 1 CMS on GitHub – we love Markdown__.html",
-      "description": "SSW purchases TinaCMS – the #1 CMS on GitHub – we love Markdown ❤️"
-    },
-    {
       "month": 1,
       "file": "/images/newsletter-uploads/2024/_2024_01__Adams 2023 - Year in Review__.html",
       "description": "Adam’s 2023 Year in Review"
@@ -30,6 +25,31 @@
       "month": 5,
       "file": "/images/newsletter-uploads/2024/_2024_05__Announcing the SSW Clean Architecture Template__.html",
       "description": "Announcing the SSW Clean Architecture Template!"
+    },
+    {
+      "month": 5,
+      "file": "/images/newsletter-uploads/2024/_2024_05__SSW purchases TinaCMS – the No 1 CMS on GitHub – we love Markdown__.html",
+      "description": "SSW purchases TinaCMS – the #1 CMS on GitHub – we love Markdown ❤️"
+    },
+    {
+      "month": 6,
+      "file": "/images/newsletter-uploads/2024/_2024_06__Up and running with TinaCMS in 15 minutes - No prob-llamas__.html",
+      "description": "Up and running with 🦙TinaCMS in 15 minutes - No prob-llamas!"
+    },
+    {
+      "month": 7,
+      "file": "/images/newsletter-uploads/2024/_2024_07__Showcasing TinaCMS 🦙 at Europe's No1 Developer Conference__.html",
+      "description": "Showcasing TinaCMS 🦙 at Europe's #1 Developer Conference"
+    },
+    {
+      "month": 8,
+      "file": "/images/newsletter-uploads/2024/_2024_08__How to Modernize an Enterprise Application to dotnet 8 and Lose 75 of the Code__.html",
+      "description": "How to Modernize an Enterprise Application to .NET 8 and Lose 75% of the Code 👑"
+    },
+    {
+      "month": 9,
+      "file": "/images/newsletter-uploads/2024/_2024_09__7 Important Updates to TinaCMS 2.0__.html",
+      "description": "7 Important Updates to 🦙TinaCMS 2.0"
     }
   ]
 }
