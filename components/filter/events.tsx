@@ -64,15 +64,12 @@ export const EventsFilter = ({
 
   const pastSelectedFilters = useMemo<SelectedFilters>(() => {
     let filters = getFilterState(pastFilters);
-    console.log("filters", filters);
     return filters;
   }, [pastFilters]);
 
   const futureSelectedFilters = useMemo<SelectedFilters>(() => {
     let filters = getFilterState(futureFilters);
-    // console.log("filters", filters);
     return filters;
-    return getFilterState(futureFilters);
   }, [futureFilters]);
 
   const {
@@ -90,8 +87,6 @@ export const EventsFilter = ({
     isFetchingPastPages,
     isLoadingPastPages,
   } = useFetchPastEvents(pastSelectedFilters);
-
-  //events need to be past in as a prop because an object including the list of events and the selected filter is returned
 
   return (
     <FilterBlock
@@ -114,7 +109,6 @@ export const EventsFilter = ({
           <Tab.Panel>
             <EventsList
               events={futureEvents}
-              // filteredEvents={futureEvents}
               isUpcoming
               isLoading={isLoadingFuturePages}
             />
@@ -161,9 +155,7 @@ interface EventsListProps {
 }
 
 const EventsList = ({ events, isUpcoming, isLoading }: EventsListProps) => {
-  useEffect(() => {
-    console.log("events", events);
-  }, [events]);
+  useEffect(() => {}, [events]);
   return (
     <div>
       {isLoading ? (
