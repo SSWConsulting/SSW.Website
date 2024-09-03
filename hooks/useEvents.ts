@@ -4,7 +4,7 @@ import {
   NO_SELECTION,
 } from "../components/filter/FilterBlock";
 import { FilterGroupProps, Option } from "../components/filter/FilterGroup";
-import { EventCategories as EventsCategories } from "../pages/events";
+import { EventCategories } from "./useFetchEvents";
 
 export const useEvents = (categories: EventFilterCategories) => {
   const [filterControls, setFilterControls] = useState<{
@@ -35,7 +35,7 @@ export const useEvents = (categories: EventFilterCategories) => {
   return { filters };
 };
 
-const getOptions = (categories: EventsCategories): Option[] => {
+const getOptions = (categories: EventCategories): Option[] => {
   return Object.entries(categories).map(([category, count]) => {
     return {
       label: category,

@@ -25,6 +25,7 @@ import {
 } from "@tanstack/react-query";
 import {
   FUTURE_EVENTS_QUERY_KEY,
+  getEventsCategories,
   getFutureEvents,
 } from "../../hooks/useFetchEvents";
 
@@ -74,38 +75,13 @@ export default function EventsIndexPage(
 }
 
 export const getStaticProps = async () => {
-  const today: string = new Date().toISOString();
-  const limit: number = 9999;
-
-  const pastEvents = await client.queries.getPastEventsQuery({
-    fromDate: today,
-    top: limit,
-  });
-  const upcomingEvents = await client.queries.getFutureEventsQuery({
-    fromDate: today,
-    top: limit,
-  });
-
-  const category = "calendarType";
-
-  const technology = "category";
-
-  const filterCategories: EventFilterAllCategories = {
-    past: {
-      technologies: aggregateByCategory(pastEvents.data, technology),
-      categories: aggregateByCategory(pastEvents.data, category),
-    },
-    upcoming: {
-      technologies: aggregateByCategory(upcomingEvents.data, technology),
-      categories: aggregateByCategory(upcomingEvents.data, category),
-    },
-  };
-
   const tinaProps = await client.queries.eventsIndexContentQuery({
     relativePath: "index.mdx",
   });
 
   const queryClient = new QueryClient();
+
+  const filterCategories = await getEventsCategories();
 
   await queryClient.prefetchInfiniteQuery({
     /* values of undefined cannot be serialized as JSON, so were passing the values as strings 
@@ -133,23 +109,4 @@ export const getStaticProps = async () => {
     },
     revalidate: ISR_TIME,
   };
-};
-
-const aggregateByCategory = (
-  events: GetPastEventsQueryQuery,
-  targetCategory: string
-): EventCategories => {
-  return events.eventsCalendarConnection.edges.reduce((occurences, event) => {
-    const category = event.node[targetCategory];
-    if (occurences[category]) {
-      occurences[category]++;
-    } else {
-      occurences[category] = 1;
-    }
-    return occurences;
-  }, {});
-};
-
-export type EventCategories = {
-  [key: string]: number;
 };
