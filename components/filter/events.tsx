@@ -161,6 +161,9 @@ interface EventsListProps {
 }
 
 const EventsList = ({ events, isUpcoming, isLoading }: EventsListProps) => {
+  useEffect(() => {
+    console.log("events", events);
+  }, [events]);
   return (
     <div>
       {isLoading ? (
@@ -222,7 +225,7 @@ const LoadedEvents: React.FC<AllEventsProps> = ({ events, isUpcoming }) => {
               key={index}
               // visible={!!filteredEvents?.find((e) => e.id === event.id)}
               event={event}
-              jsonLd={eventJsonLd}
+              // jsonLd={eventJsonLd}
             />
           );
         })
@@ -246,7 +249,11 @@ const Event = ({ event, jsonLd }: EventProps) => {
   to Tina cloud. Images that aren't synced will 404.
    
    */
-  const [thumbnail, setFallbackImage] = useState(event.thumbnail);
+  const [thumbnail, setFallbackImage] = useState("");
+  useEffect(() => {
+    setFallbackImage(event.thumbnail);
+  }, [event.thumbnail]);
+
   const handleImageError = () => {
     const tinaUrl = /https:\/\/assets\.tina\.io\/[^/]+\/(.*)/;
     const match = event.thumbnail.match(tinaUrl);

@@ -10,9 +10,9 @@ const TODAY = new Date();
 TODAY.setHours(0, 0, 0, 0);
 
 export const getFutureEvents = async (
-  pageParam: string,
-  category: string = undefined,
-  calendarType: string = undefined
+  pageParam?: string,
+  category?: string,
+  calendarType?: string
 ) => {
   const res = await client.queries.getFutureEventsQuery({
     fromDate: TODAY.toISOString(),
@@ -21,6 +21,8 @@ export const getFutureEvents = async (
     category: category,
     calendarType: calendarType,
   });
+
+  console.log(res.data);
   return res.data;
 };
 

@@ -115,7 +115,7 @@ export const getStaticProps = async () => {
         DEFAULT_TECHNOLOGY_FITLER +
         DEFAULT_CATEGORY_FILTER,
     ],
-    queryFn: () => getFutureEvents(undefined, undefined, undefined),
+    queryFn: () => getFutureEvents(),
     initialPageParam: "",
   });
 
