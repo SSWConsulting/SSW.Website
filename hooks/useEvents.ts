@@ -1,4 +1,3 @@
-import { EventTrimmed } from "@/components/filter/events";
 import { useMemo, useState } from "react";
 import {
   EventFilterCategories,
@@ -7,41 +6,13 @@ import {
 import { FilterGroupProps, Option } from "../components/filter/FilterGroup";
 import { EventCategories as EventsCategories } from "../pages/events";
 
-export const useEvents = (
-  events: EventTrimmed[],
-  categories: EventFilterCategories
-) => {
+export const useEvents = (categories: EventFilterCategories) => {
   const [filterControls, setFilterControls] = useState<{
     technology: number;
     format: number;
   }>({ technology: NO_SELECTION, format: NO_SELECTION });
-  const options = useMemo(() => {
-    const categoryCount: Record<string, number> = events?.reduce(
-      (acc: object, event) => {
-        acc[event.category] = (acc[event.category] || 0) + 1;
-        return acc;
-      },
-      {}
-    );
-
-    const categories = Object.keys(categoryCount || {})?.sort() || [];
-
-    const formatCount: Record<string, number> = events?.reduce(
-      (acc: object, event) => {
-        acc[event.calendarType] = (acc[event.calendarType] || 0) + 1;
-        return acc;
-      },
-      {}
-    );
-
-    const formats = Object.keys(formatCount || {}).sort();
-
-    return { categories, categoryCount, formats, formatCount };
-  }, [events]);
 
   const filters = useMemo<FilterGroupProps[]>(() => {
-    if (!events) return [];
-
     const groups: FilterGroupProps[] = [
       {
         selected: filterControls.technology,
@@ -60,19 +31,8 @@ export const useEvents = (
     ];
 
     return groups;
-  }, [events, filterControls, options]);
-
-  const filteredEvents = useMemo(() => {
-    return events?.filter(
-      (event) =>
-        (filterControls.technology === NO_SELECTION ||
-          event.category === options.categories[filterControls.technology]) &&
-        (filterControls.format === NO_SELECTION ||
-          event.calendarType === options.formats[filterControls.format])
-    );
-  }, [events, filterControls, options.categories, options.formats]);
-
-  return { filters, filteredEvents };
+  }, [filterControls]);
+  return { filters };
 };
 
 const getOptions = (categories: EventsCategories): Option[] => {

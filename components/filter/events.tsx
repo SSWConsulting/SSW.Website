@@ -2,12 +2,13 @@
 
 import { Tab, Transition } from "@headlessui/react";
 import Image from "next/image";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { useEvents } from "../../hooks/useEvents";
 import {
+  SelectedCategories,
   useFetchFutureEvents,
   useFetchPastEvents,
 } from "../../hooks/useFetchEvents";
@@ -19,6 +20,7 @@ import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { CITY_MAP } from "../util/constants/country";
 import { sswOrganisation } from "../util/constants/json-ld";
 import { EventFilterAllCategories, FilterBlock } from "./FilterBlock";
+import { FilterGroupProps } from "./FilterGroup";
 
 const EVENTS_JSON_LD_LIMIT = 5;
 
@@ -53,15 +55,31 @@ export const EventsFilter = ({
 }: EventsFilterProps) => {
   const [pastSelected, setPastSelected] = useState<boolean>(defaultToPastTab);
   const { past, upcoming } = filterCategories;
+  const { filters: futureFilters } = useEvents(upcoming);
+  const { filters: pastFilters } = useEvents(past);
+
+  useEffect(() => {}, [pastFilters, futureFilters]);
+
+  const pastSelectedFilters = useMemo<SelectedFilters>(() => {
+    let filters = getFilterState(pastFilters);
+    console.log("filters", filters);
+    return filters;
+  }, [pastFilters]);
+
+  const futureSelectedFilters = useMemo<SelectedFilters>(() => {
+    let filters = getFilterState(futureFilters);
+    // console.log("filters", filters);
+    return filters;
+    return getFilterState(futureFilters);
+  }, [futureFilters]);
+
   const {
     futureEvents,
     fetchFutureNextPage,
     hasMoreFuturePages,
     isFetchingFuturePages,
     isLoadingFuturePages,
-  } = useFetchFutureEvents();
-  const { filters: futureFilters, filteredEvents: filteredFutureEvents } =
-    useEvents(futureEvents, upcoming);
+  } = useFetchFutureEvents(futureSelectedFilters);
 
   const {
     pastEvents,
@@ -69,11 +87,9 @@ export const EventsFilter = ({
     hasMorePastPages,
     isFetchingPastPages,
     isLoadingPastPages,
-  } = useFetchPastEvents(true);
+  } = useFetchPastEvents(pastSelectedFilters);
 
   //events need to be past in as a prop because an object including the list of events and the selected filter is returned
-  const { filters: pastFilters, filteredEvents: pastFilteredEvents } =
-    useEvents(pastEvents, past);
 
   return (
     <FilterBlock
@@ -96,7 +112,7 @@ export const EventsFilter = ({
           <Tab.Panel>
             <EventsList
               events={futureEvents}
-              filteredEvents={filteredFutureEvents}
+              // filteredEvents={futureEvents}
               isUpcoming
               isLoading={isLoadingFuturePages}
             />
@@ -110,11 +126,7 @@ export const EventsFilter = ({
             )}
           </Tab.Panel>
           <Tab.Panel>
-            <EventsList
-              events={pastEvents}
-              filteredEvents={pastFilteredEvents}
-              isLoading={isLoadingPastPages}
-            />
+            <EventsList events={pastEvents} isLoading={isLoadingPastPages} />
             {hasMorePastPages && (
               <LoadMore
                 load={() => {
@@ -142,70 +154,80 @@ const EventTab = ({ children }: { children: React.ReactNode }) => {
 
 interface EventsListProps {
   events: EventTrimmed[];
-  filteredEvents: EventTrimmed[];
   isUpcoming?: boolean;
   isLoading?: boolean;
 }
 
-const EventsList = ({
-  events,
-  filteredEvents,
-  isUpcoming,
-  isLoading,
-}: EventsListProps) => {
+const EventsList = ({ events, isUpcoming, isLoading }: EventsListProps) => {
   return (
     <div>
-      {!isLoading ? (
-        <>
-          {filteredEvents.length > 0 ? (
-            events?.map((event, index) => {
-              let eventJsonLd: WithContext<Event> = undefined;
-
-              if (index < EVENTS_JSON_LD_LIMIT && isUpcoming) {
-                eventJsonLd = {
-                  "@context": "https://schema.org",
-                  "@type": "Event",
-                  name: event.title,
-                  image: event.thumbnail,
-                  startDate: event.startDateTime?.toISOString(),
-                  endDate: event.endDateTime?.toISOString(),
-                  location: {
-                    "@type": "Place",
-                    address: {
-                      "@type": "PostalAddress",
-                      addressLocality: CITY_MAP[event.city]?.name,
-                      addressRegion: CITY_MAP[event.city]?.state,
-                      addressCountry: CITY_MAP[event.city]?.country,
-                    },
-                    name: CITY_MAP[event.city]?.name,
-                    url: CITY_MAP[event.city]?.url,
-                  },
-                  eventStatus: "https://schema.org/EventScheduled",
-                  eventAttendanceMode:
-                    "https://schema.org/MixedEventAttendanceMode",
-                  organizer: sswOrganisation,
-                };
-              }
-
-              return (
-                <Event
-                  key={index}
-                  visible={!!filteredEvents?.find((e) => e.id === event.id)}
-                  event={event}
-                  jsonLd={eventJsonLd}
-                />
-              );
-            })
-          ) : (
-            <h3>No events found matching the filters</h3>
-          )}
-        </>
+      {isLoading ? (
+        <LoadingIcon />
       ) : (
-        <p className="flex flex-row text-xl">
-          <FaSpinner className="m-icon animate-spin" /> Loading Events...
-        </p>
+        <LoadedEvents events={events} isUpcoming={isUpcoming}></LoadedEvents>
       )}
     </div>
+  );
+};
+
+type AllEventsProps = {
+  events: EventTrimmed[];
+  isUpcoming: boolean;
+};
+
+const LoadingIcon: React.FC = () => {
+  return (
+    <p className="flex flex-row text-xl">
+      <FaSpinner className="m-icon animate-spin" /> Loading Events...
+    </p>
+  );
+};
+
+const LoadedEvents: React.FC<AllEventsProps> = ({ events, isUpcoming }) => {
+  return (
+    <>
+      {events.length > 0 ? (
+        events?.map((event, index) => {
+          let eventJsonLd: WithContext<Event> = undefined;
+
+          if (index < EVENTS_JSON_LD_LIMIT && isUpcoming) {
+            eventJsonLd = {
+              "@context": "https://schema.org",
+              "@type": "Event",
+              name: event.title,
+              image: event.thumbnail,
+              startDate: event.startDateTime?.toISOString(),
+              endDate: event.endDateTime?.toISOString(),
+              location: {
+                "@type": "Place",
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: CITY_MAP[event.city]?.name,
+                  addressRegion: CITY_MAP[event.city]?.state,
+                  addressCountry: CITY_MAP[event.city]?.country,
+                },
+                name: CITY_MAP[event.city]?.name,
+                url: CITY_MAP[event.city]?.url,
+              },
+              eventStatus: "https://schema.org/EventScheduled",
+              eventAttendanceMode:
+                "https://schema.org/MixedEventAttendanceMode",
+              organizer: sswOrganisation,
+            };
+          }
+          return (
+            <Event
+              key={index}
+              // visible={!!filteredEvents?.find((e) => e.id === event.id)}
+              event={event}
+              jsonLd={eventJsonLd}
+            />
+          );
+        })
+      ) : (
+        <h3>No events found matching the filters</h3>
+      )}
+    </>
   );
 };
 
@@ -215,7 +237,7 @@ interface EventProps {
   jsonLd?: WithContext<Event>;
 }
 
-const Event = ({ visible, event, jsonLd }: EventProps) => {
+const Event = ({ event, jsonLd }: EventProps) => {
   /* TODO: remove this when Tina cloud sync issue is fixed https://github.com/tinacms/tina-cloud/issues/2073
 
   We need this because there's an issue preventing us from syncing the files in the repo
@@ -247,7 +269,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
     <>
       <Transition
         className="mb-15 border-b-1 bg-white pb-8"
-        show={!!visible}
+        show={true}
         enter="transition duration-100 ease-out"
         enterFrom="transform scale-95 opacity-0"
         enterTo="transform scale-100 opacity-100"
@@ -363,4 +385,22 @@ export const LoadMore = ({ load, isLoading }: LoadMoreProps) => {
       )}
     </div>
   );
+};
+
+type SelectedFilters = {
+  category: string;
+  technology: string;
+};
+
+const getFilterState = (filterGroup: FilterGroupProps[]): SelectedFilters => {
+  const technologyGroup = filterGroup[0];
+  const categoryGroup = filterGroup[1];
+
+  const { selected: technologyIndex, options: technologyOptions } =
+    technologyGroup;
+  const { selected: categoryIndex, options: categoryOptions } = categoryGroup;
+  return {
+    category: categoryOptions[categoryIndex]?.label,
+    technology: technologyOptions[technologyIndex]?.label,
+  };
 };

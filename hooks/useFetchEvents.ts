@@ -9,21 +9,33 @@ export const PAST_EVENTS_QUERY_KEY = "pastEvents";
 const TODAY = new Date();
 TODAY.setHours(0, 0, 0, 0);
 
-export const getFutureEvents = async ({ pageParam }) => {
+export const getFutureEvents = async (
+  pageParam: string,
+  category: string = undefined,
+  calendarType: string = undefined
+) => {
   const res = await client.queries.getFutureEventsQuery({
     fromDate: TODAY.toISOString(),
     top: PAGE_LENGTH,
     after: pageParam,
+    category: category,
+    calendarType: calendarType,
   });
-
+  console.log(res.data);
   return res.data;
 };
 
-export const useFetchFutureEvents = () => {
+export type SelectedCategories = {
+  technology: string;
+  category: string;
+};
+
+export const useFetchFutureEvents = (filters: SelectedCategories) => {
   const { data, fetchNextPage, isFetchingNextPage, error, isLoading } =
     useInfiniteQuery({
-      queryKey: [FUTURE_EVENTS_QUERY_KEY],
-      queryFn: getFutureEvents,
+      queryKey: [FUTURE_EVENTS_QUERY_KEY, filters.technology, filters.category],
+      queryFn: ({ pageParam }) =>
+        getFutureEvents(pageParam, filters.technology, filters.category),
       initialPageParam: undefined,
       getNextPageParam: (lastPage) => {
         return lastPage.eventsCalendarConnection.pageInfo.endCursor;
@@ -49,26 +61,31 @@ export const useFetchFutureEvents = () => {
   };
 };
 
-const getPastEvents = async ({ pageParam }) => {
+const getPastEvents = async (
+  pageParam: string,
+  category: string = undefined,
+  calendarType: string = undefined
+) => {
   const res = await client.queries.getPastEventsQuery({
     fromDate: TODAY.toISOString(),
     top: PAGE_LENGTH,
     before: pageParam,
+    category: category,
+    calendarType: calendarType,
   });
-
   return res.data;
 };
 
-export const useFetchPastEvents = (enabled: boolean) => {
+export const useFetchPastEvents = (filters: SelectedCategories) => {
   const { data, isLoading, fetchNextPage, isFetchingNextPage, error } =
     useInfiniteQuery({
-      queryKey: [PAST_EVENTS_QUERY_KEY],
-      queryFn: getPastEvents,
+      queryKey: [PAST_EVENTS_QUERY_KEY, filters.technology, filters.category],
+      queryFn: ({ pageParam }) =>
+        getPastEvents(pageParam, filters.technology, filters.category),
       initialPageParam: undefined,
       getNextPageParam: (lastPage) => {
         return lastPage.eventsCalendarConnection.pageInfo.endCursor;
       },
-      enabled,
     });
 
   return {
