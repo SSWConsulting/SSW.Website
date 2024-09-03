@@ -6,7 +6,11 @@ import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Blocks } from "../../components/blocks-renderer";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
-import { EventsFilter } from "../../components/filter/events";
+import {
+  DEFAULT_CATEGORY_FILTER,
+  DEFAULT_TECHNOLOGY_FITLER,
+  EventsFilter,
+} from "../../components/filter/events";
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
@@ -104,8 +108,14 @@ export const getStaticProps = async () => {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchInfiniteQuery({
-    queryKey: [FUTURE_EVENTS_QUERY_KEY],
-    queryFn: getFutureEvents,
+    /* values of undefined cannot be serialized as JSON, so were passing the values as strings 
+      using concatenation */
+    queryKey: [
+      FUTURE_EVENTS_QUERY_KEY +
+        DEFAULT_TECHNOLOGY_FITLER +
+        DEFAULT_CATEGORY_FILTER,
+    ],
+    queryFn: () => getFutureEvents(undefined, undefined, undefined),
     initialPageParam: "",
   });
 

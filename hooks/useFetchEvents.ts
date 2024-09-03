@@ -21,7 +21,6 @@ export const getFutureEvents = async (
     category: category,
     calendarType: calendarType,
   });
-  console.log(res.data);
   return res.data;
 };
 
@@ -33,7 +32,9 @@ export type SelectedCategories = {
 export const useFetchFutureEvents = (filters: SelectedCategories) => {
   const { data, fetchNextPage, isFetchingNextPage, error, isLoading } =
     useInfiniteQuery({
-      queryKey: [FUTURE_EVENTS_QUERY_KEY, filters.technology, filters.category],
+      queryKey: [
+        FUTURE_EVENTS_QUERY_KEY + filters.technology + filters.category,
+      ],
       queryFn: ({ pageParam }) =>
         getFutureEvents(pageParam, filters.technology, filters.category),
       initialPageParam: undefined,
@@ -79,7 +80,7 @@ const getPastEvents = async (
 export const useFetchPastEvents = (filters: SelectedCategories) => {
   const { data, isLoading, fetchNextPage, isFetchingNextPage, error } =
     useInfiniteQuery({
-      queryKey: [PAST_EVENTS_QUERY_KEY, filters.technology, filters.category],
+      queryKey: [PAST_EVENTS_QUERY_KEY + filters.technology + filters.category],
       queryFn: ({ pageParam }) =>
         getPastEvents(pageParam, filters.technology, filters.category),
       initialPageParam: undefined,

@@ -8,7 +8,6 @@ import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { useEvents } from "../../hooks/useEvents";
 import {
-  SelectedCategories,
   useFetchFutureEvents,
   useFetchPastEvents,
 } from "../../hooks/useFetchEvents";
@@ -23,6 +22,9 @@ import { EventFilterAllCategories, FilterBlock } from "./FilterBlock";
 import { FilterGroupProps } from "./FilterGroup";
 
 const EVENTS_JSON_LD_LIMIT = 5;
+
+export const DEFAULT_TECHNOLOGY_FITLER = undefined;
+export const DEFAULT_CATEGORY_FILTER = undefined;
 
 interface EventsFilterProps {
   sidebarBody: TinaMarkdownContent;
