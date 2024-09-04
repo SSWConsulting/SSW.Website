@@ -63,12 +63,12 @@ export const EventsFilter = ({
   useEffect(() => {}, [pastFilters, futureFilters]);
 
   const pastSelectedFilters = useMemo<SelectedFilters>(() => {
-    let filters = getFilterState(pastFilters);
+    const filters = getFilterState(pastFilters);
     return filters;
   }, [pastFilters]);
 
   const futureSelectedFilters = useMemo<SelectedFilters>(() => {
-    let filters = getFilterState(futureFilters);
+    const filters = getFilterState(futureFilters);
     return filters;
   }, [futureFilters]);
 
