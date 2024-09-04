@@ -2,7 +2,7 @@
 
 import { Tab, Transition } from "@headlessui/react";
 import Image from "next/image";
-import { Fragment, useEffect, useMemo, useState } from "react";
+import { Fragment, useEffect, useMemo, useReducer, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
@@ -157,23 +157,33 @@ interface EventsListProps {
   isFetching?: boolean;
 }
 
+const eventsReducer = (state, action) => {
+  switch (action.type) {
+    case "SET_EVENTS":
+      return state.visible
+        ? { ...state, firstEvents: action.payload, visible: !state.visible }
+        : { ...state, secondEvents: action.payload, visible: !state.visible };
+    default:
+      return state;
+  }
+};
+
+const initialState = {
+  firstEvents: [],
+  secondEvents: [],
+  visible: true,
+};
+
 const EventsList = ({
   events,
   isUpcoming,
   isLoading,
   isFetching,
 }: EventsListProps) => {
-  const [firstEvents, setFirstEvents] = useState<EventTrimmed[]>(events);
-  const [secondEvents, setSecondEvents] = useState<EventTrimmed[]>([]);
-  const [visible, setVisible] = useState<boolean>(true);
+  const [state, dispatch] = useReducer(eventsReducer, initialState);
   useEffect(() => {
     if (!isFetching) {
-      if (visible) {
-        setFirstEvents(events);
-      } else {
-        setSecondEvents(events);
-      }
-      setVisible((v) => !v);
+      dispatch({ type: "SET_EVENTS", payload: events });
     }
   }, [events, isFetching]);
 
@@ -184,13 +194,13 @@ const EventsList = ({
       ) : (
         <>
           <LoadedEvents
-            visible={!visible}
-            events={firstEvents}
+            visible={!state.visible}
+            events={state.firstEvents}
             isUpcoming={isUpcoming}
           ></LoadedEvents>
           <LoadedEvents
-            visible={visible}
-            events={secondEvents}
+            visible={state.visible}
+            events={state.secondEvents}
             isUpcoming={isUpcoming}
           ></LoadedEvents>
         </>
