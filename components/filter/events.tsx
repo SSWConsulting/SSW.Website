@@ -211,7 +211,7 @@ const LoadedEvents: React.FC<AllEventsProps> = ({ events, isUpcoming }) => {
               organizer: sswOrganisation,
             };
           }
-          return <Event key={index} event={event} />;
+          return <Event key={index} jsonLd={eventJsonLd} event={event} />;
         })
       ) : (
         <h3>No events found matching the filters</h3>
