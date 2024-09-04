@@ -59,9 +59,6 @@ export const EventsFilter = ({
   const { past, upcoming } = filterCategories;
   const { filters: futureFilters } = useEvents(upcoming);
   const { filters: pastFilters } = useEvents(past);
-
-  useEffect(() => {}, [pastFilters, futureFilters]);
-
   const pastSelectedFilters = useMemo<SelectedFilters>(() => {
     const filters = getFilterState(pastFilters);
     return filters;
