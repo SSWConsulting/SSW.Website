@@ -240,9 +240,10 @@ const Event = ({ event, jsonLd }: EventProps) => {
     if (event.title !== oldTitle) setVisible(false);
     setTimeout(() => {
       setVisible(true);
+      setOldTitle(event.title);
     }, 100);
     setFallbackImage(event.thumbnail);
-  }, [event.thumbnail]);
+  }, [event.thumbnail, event.title, oldTitle]);
 
   const handleImageError = () => {
     const tinaUrl = /https:\/\/assets\.tina\.io\/[^/]+\/(.*)/;
