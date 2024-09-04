@@ -152,17 +152,18 @@ interface EventsListProps {
 }
 
 const EventsList = ({ events, isUpcoming, isLoading }: EventsListProps) => {
-  useEffect(() => {
-    if (visible) {
-      setFirstEvents(events);
-    } else {
-      setSecondEvents(events);
-    }
-    setVisible(!visible);
-  }, [events]);
   const [firstEvents, setFirstEvents] = useState<EventTrimmed[]>(events);
   const [secondEvents, setSecondEvents] = useState<EventTrimmed[]>([]);
   const [visible, setVisible] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (visible) {
+      setFirstEvents(() => events);
+    } else {
+      setSecondEvents(() => events);
+    }
+    setVisible((v) => !v);
+  }, [events.length]);
 
   return (
     <div>
