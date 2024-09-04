@@ -234,7 +234,9 @@ const Event = ({ event, jsonLd }: EventProps) => {
   const [visible, setVisible] = useState(false);
   const [thumbnail, setFallbackImage] = useState("");
   useEffect(() => {
-    if (event.title !== oldTitle) setVisible(false);
+    if (event.title !== oldTitle) {
+      setVisible(false);
+    }
     setTimeout(() => {
       setVisible(true);
       setOldTitle(event.title);
