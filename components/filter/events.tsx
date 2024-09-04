@@ -60,13 +60,11 @@ export const EventsFilter = ({
   const { filters: futureFilters } = useEvents(upcoming);
   const { filters: pastFilters } = useEvents(past);
   const pastSelectedFilters = useMemo<SelectedFilters>(() => {
-    console.log("recomputing futureSelectedFilters");
     const filters = getFilterState(pastFilters);
     return filters;
   }, [pastFilters]);
 
   const futureSelectedFilters = useMemo<SelectedFilters>(() => {
-    console.log("recomputing pastSelectedFilters");
     const filters = getFilterState(futureFilters);
     return filters;
   }, [futureFilters]);
