@@ -158,6 +158,12 @@ interface EventsListProps {
 }
 
 const eventsReducer = (state, action) => {
+  if (!state.visible && arraysEqual(state.firstEvents, action.payload)) {
+    return state;
+  }
+  if (state.visible && arraysEqual(state.secondEvents, action.payload)) {
+    return state;
+  }
   switch (action.type) {
     case "SET_EVENTS":
       return state.visible
@@ -168,9 +174,15 @@ const eventsReducer = (state, action) => {
   }
 };
 
+const arraysEqual = (arr1: any[], arr2: any[]): boolean => {
+  if (arr1.length !== arr2.length) return false;
+  return arr1.every((value, index) => value.id === arr2[index].id);
+};
+
 const initialState = {
   firstEvents: [],
   secondEvents: [],
+  isFetching: false,
   visible: true,
 };
 
@@ -182,10 +194,8 @@ const EventsList = ({
 }: EventsListProps) => {
   const [state, dispatch] = useReducer(eventsReducer, initialState);
   useEffect(() => {
-    if (!isFetching) {
-      dispatch({ type: "SET_EVENTS", payload: events });
-    }
-  }, [events, isFetching]);
+    dispatch({ type: "SET_EVENTS", payload: events });
+  }, [events]);
 
   return (
     <div>
