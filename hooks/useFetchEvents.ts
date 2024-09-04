@@ -68,7 +68,6 @@ export const useFetchFutureEvents = (filters: SelectedCategories) => {
         return lastPage.eventsCalendarConnection.pageInfo.endCursor;
       },
     });
-
   return {
     futureEvents:
       data?.pages.flat().flatMap((item) =>

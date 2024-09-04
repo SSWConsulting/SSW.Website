@@ -60,11 +60,13 @@ export const EventsFilter = ({
   const { filters: futureFilters } = useEvents(upcoming);
   const { filters: pastFilters } = useEvents(past);
   const pastSelectedFilters = useMemo<SelectedFilters>(() => {
+    console.log("recomputing futureSelectedFilters");
     const filters = getFilterState(pastFilters);
     return filters;
   }, [pastFilters]);
 
   const futureSelectedFilters = useMemo<SelectedFilters>(() => {
+    console.log("recomputing pastSelectedFilters");
     const filters = getFilterState(futureFilters);
     return filters;
   }, [futureFilters]);
@@ -107,6 +109,7 @@ export const EventsFilter = ({
             <EventsList
               events={futureEvents}
               isUpcoming
+              isFetching={isFetchingFuturePages}
               isLoading={isLoadingFuturePages}
             />
             {hasMoreFuturePages && (
@@ -119,7 +122,11 @@ export const EventsFilter = ({
             )}
           </Tab.Panel>
           <Tab.Panel>
-            <EventsList events={pastEvents} isLoading={isLoadingPastPages} />
+            <EventsList
+              events={pastEvents}
+              isFetching={isFetchingPastPages}
+              isLoading={isLoadingPastPages}
+            />
             {hasMorePastPages && (
               <LoadMore
                 load={() => {
@@ -149,21 +156,29 @@ interface EventsListProps {
   events: EventTrimmed[];
   isUpcoming?: boolean;
   isLoading?: boolean;
+  isFetching?: boolean;
 }
 
-const EventsList = ({ events, isUpcoming, isLoading }: EventsListProps) => {
+const EventsList = ({
+  events,
+  isUpcoming,
+  isLoading,
+  isFetching,
+}: EventsListProps) => {
   const [firstEvents, setFirstEvents] = useState<EventTrimmed[]>(events);
   const [secondEvents, setSecondEvents] = useState<EventTrimmed[]>([]);
   const [visible, setVisible] = useState<boolean>(true);
-
   useEffect(() => {
-    if (visible) {
-      setFirstEvents(() => events);
-    } else {
-      setSecondEvents(() => events);
+    console.log("isFetching", isFetching);
+    if (!isFetching) {
+      if (visible) {
+        setFirstEvents(events);
+      } else {
+        setSecondEvents(events);
+      }
+      setVisible(!visible);
     }
-    setVisible((v) => !v);
-  }, [events.length]);
+  }, [events]);
 
   return (
     <div>
