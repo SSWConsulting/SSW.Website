@@ -2,6 +2,11 @@
   "name": "@tinacms/starter",
   "version": "1.22.19",
   "private": true,
+  "pnpm": {
+    "overrides": {
+      "@babel/parser": "7.21.9"
+    }
+  },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "tinacms dev -c \"node --require ./appInsight-api.js node_modules/next/dist/bin/next dev\"",
@@ -23,9 +28,9 @@
     "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
-    "@tinacms/cli": "^1.5.51",
+    "@tinacms/cli": "^1.6.1",
     "@types/js-cookie": "^3.0.6",
-    "@types/node": "^20.14.10",
+    "@types/node": "^20.16.3",
     "@types/react": "^18.3.3",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
@@ -54,7 +59,7 @@
     "@heroicons/react": "^2.1.1",
     "@marketsystems/nextjs13-appdir-breadcrumbs": "^1.0.4",
     "@microsoft/applicationinsights-react-js": "17.3.0",
-    "@microsoft/applicationinsights-web": "3.3.0",
+    "@microsoft/applicationinsights-web": "3.3.1",
     "@next/bundle-analyzer": "^14.2.5",
     "@next/third-parties": "^14.2.3",
     "@tailwindcss/typography": "^0.5.13",
@@ -65,7 +70,7 @@
     "applicationinsights": "^2.9.5",
     "axios": "^1.7.4",
     "classnames": "^2.5.1",
-    "dayjs": "^1.11.12",
+    "dayjs": "^1.11.13",
     "dotenv": "^16.4.5",
     "eslint-config-next": "14.2.5",
     "formik": "^2.4.6",
@@ -88,12 +93,12 @@
     "react-use": "^17.5.1",
     "schema-dts": "^1.1.2",
     "sharp": "^0.33.5",
-    "ssw.megamenu": "4.5.9",
+    "ssw.megamenu": "4.6.2",
     "tailwind-merge": "^2.3.0",
     "tailwindcss": "3.4.10",
     "tailwindcss-gradients": "^3.0.0",
-    "tinacms": "^2.1.0",
-    "typescript": "^5.5.2",
+    "tinacms": "^2.2.1",
+    "typescript": "^5.5.4",
     "usehooks-ts": "^3.1.0",
     "xss": "^1.0.15",
     "yup": "^0.32.11"
