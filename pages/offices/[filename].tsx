@@ -74,6 +74,11 @@ export default function OfficePage(
 const OfficeLayout = ({ office }) => {
   return (
     <div className="prose max-w-full">
+      {office.name && (
+        <h1 className="py-0" data-tina-field={tinaField(office.name, "name")}>
+          {office.name}
+        </h1>
+      )}
       <h2>About Us</h2>
       <div data-tina-field={tinaField(office, "aboutUs")}>
         <TinaMarkdown components={componentRenderer} content={office.aboutUs} />
