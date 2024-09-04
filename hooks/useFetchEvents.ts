@@ -1,4 +1,5 @@
 import { EventFilterAllCategories } from "@/components/filter/FilterBlock";
+import { EVENTS_MAX_SIZE_OVERRIDE } from "@/services/server/getEvents";
 import {
   EventsCalendarConnectionEdges,
   GetFutureEventsQueryQuery,
@@ -145,7 +146,6 @@ export const useFetchPastEvents = (filters: SelectedCategories) => {
 
 export const getEventsCategories = async () => {
   const today: string = new Date().toISOString();
-  const limit: number = 9999;
 
   const pastEvents = await client.queries.getPastEventsQuery({
     fromDate: today,
