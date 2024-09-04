@@ -84,6 +84,13 @@ export default function ArticlesIndexPage(props) {
                   description={data.articlesIndex.sidebarPanel.description}
                   actionUrl={data.articlesIndex.sidebarPanel.actionUrl}
                   actionText={data.articlesIndex.sidebarPanel.actionText}
+                  tinaFields={{
+                    title: tinaField(data.articlesIndex.sidebarPanel, "title"),
+                    description: tinaField(
+                      data.articlesIndex.sidebarPanel,
+                      "description"
+                    ),
+                  }}
                 />
               </div>
             )}
