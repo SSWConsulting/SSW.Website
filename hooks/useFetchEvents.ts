@@ -17,8 +17,6 @@ const getCategoriesForFilter = (category: string) => {
   if (!category) return undefined;
   const categories = {
     "Angular and React": ["Angular and React", "Angular", "React"],
-    Mobile: ["Mobile Development", "Mobile"],
-    "Mobile Development": ["Mobile Development", "Mobile"],
     Other: ["Other", "Non-English Courses"],
   };
   const lookup = categories[category];
@@ -32,7 +30,6 @@ const formatCategory = (category: string): string => {
       "Non-English Courses": "Other",
     };
     const lookup = categoryReplacements[category];
-    if (lookup) console.log("lookup", lookup);
 
     return lookup ? lookup : category;
   }
