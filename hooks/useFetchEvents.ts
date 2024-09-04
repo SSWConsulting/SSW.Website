@@ -1,10 +1,6 @@
 import { EventFilterAllCategories } from "@/components/filter/FilterBlock";
 import { EVENTS_MAX_SIZE_OVERRIDE } from "@/services/server/getEvents";
-import {
-  EventsCalendarConnectionEdges,
-  GetFutureEventsQueryQuery,
-  GetPastEventsQueryQuery,
-} from "@/tina/types";
+import { GetPastEventsQueryQuery } from "@/tina/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import client from "../tina/__generated__/client";
 

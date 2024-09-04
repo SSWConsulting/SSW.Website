@@ -1,4 +1,4 @@
-import { EventCategories } from "pages/events";
+import { EventCategories } from "hooks/useFetchEvents";
 import { MdLiveHelp } from "react-icons/md";
 import { FilterGroup, type FilterGroupProps } from "./FilterGroup";
 
