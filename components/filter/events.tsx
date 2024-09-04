@@ -152,12 +152,35 @@ interface EventsListProps {
 }
 
 const EventsList = ({ events, isUpcoming, isLoading }: EventsListProps) => {
+  useEffect(() => {
+    if (visible) {
+      setFirstEvents(events);
+    } else {
+      setSecondEvents(events);
+    }
+    setVisible(!visible);
+  }, [events]);
+  const [firstEvents, setFirstEvents] = useState<EventTrimmed[]>(events);
+  const [secondEvents, setSecondEvents] = useState<EventTrimmed[]>([]);
+  const [visible, setVisible] = useState<boolean>(true);
+
   return (
     <div>
       {isLoading ? (
         <LoadingIcon />
       ) : (
-        <LoadedEvents events={events} isUpcoming={isUpcoming}></LoadedEvents>
+        <>
+          <LoadedEvents
+            visible={!visible}
+            events={firstEvents}
+            isUpcoming={isUpcoming}
+          ></LoadedEvents>
+          <LoadedEvents
+            visible={visible}
+            events={secondEvents}
+            isUpcoming={isUpcoming}
+          ></LoadedEvents>
+        </>
       )}
     </div>
   );
@@ -166,6 +189,7 @@ const EventsList = ({ events, isUpcoming, isLoading }: EventsListProps) => {
 type AllEventsProps = {
   events: EventTrimmed[];
   isUpcoming: boolean;
+  visible: boolean;
 };
 
 const LoadingIcon: React.FC = () => {
@@ -176,43 +200,52 @@ const LoadingIcon: React.FC = () => {
   );
 };
 
-const LoadedEvents: React.FC<AllEventsProps> = ({ events, isUpcoming }) => {
+const LoadedEvents: React.FC<AllEventsProps> = ({
+  visible,
+  events,
+  isUpcoming,
+}) => {
   return (
     <>
-      {events.length > 0 ? (
-        events?.map((event, index) => {
-          let eventJsonLd: WithContext<Event> = undefined;
+      {events.length > 0
+        ? events?.map((event, index) => {
+            let eventJsonLd: WithContext<Event> = undefined;
 
-          if (index < EVENTS_JSON_LD_LIMIT && isUpcoming) {
-            eventJsonLd = {
-              "@context": "https://schema.org",
-              "@type": "Event",
-              name: event.title,
-              image: event.thumbnail,
-              startDate: event.startDateTime?.toISOString(),
-              endDate: event.endDateTime?.toISOString(),
-              location: {
-                "@type": "Place",
-                address: {
-                  "@type": "PostalAddress",
-                  addressLocality: CITY_MAP[event.city]?.name,
-                  addressRegion: CITY_MAP[event.city]?.state,
-                  addressCountry: CITY_MAP[event.city]?.country,
+            if (index < EVENTS_JSON_LD_LIMIT && isUpcoming) {
+              eventJsonLd = {
+                "@context": "https://schema.org",
+                "@type": "Event",
+                name: event.title,
+                image: event.thumbnail,
+                startDate: event.startDateTime?.toISOString(),
+                endDate: event.endDateTime?.toISOString(),
+                location: {
+                  "@type": "Place",
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: CITY_MAP[event.city]?.name,
+                    addressRegion: CITY_MAP[event.city]?.state,
+                    addressCountry: CITY_MAP[event.city]?.country,
+                  },
+                  name: CITY_MAP[event.city]?.name,
+                  url: CITY_MAP[event.city]?.url,
                 },
-                name: CITY_MAP[event.city]?.name,
-                url: CITY_MAP[event.city]?.url,
-              },
-              eventStatus: "https://schema.org/EventScheduled",
-              eventAttendanceMode:
-                "https://schema.org/MixedEventAttendanceMode",
-              organizer: sswOrganisation,
-            };
-          }
-          return <Event key={index} jsonLd={eventJsonLd} event={event} />;
-        })
-      ) : (
-        <h3>No events found matching the filters</h3>
-      )}
+                eventStatus: "https://schema.org/EventScheduled",
+                eventAttendanceMode:
+                  "https://schema.org/MixedEventAttendanceMode",
+                organizer: sswOrganisation,
+              };
+            }
+            return (
+              <Event
+                visible={visible}
+                key={index}
+                jsonLd={eventJsonLd}
+                event={event}
+              />
+            );
+          })
+        : visible && <h3>No events found matching the filters</h3>}
     </>
   );
 };
@@ -223,26 +256,17 @@ interface EventProps {
   jsonLd?: WithContext<Event>;
 }
 
-const Event = ({ event, jsonLd }: EventProps) => {
+const Event = ({ visible, event, jsonLd }: EventProps) => {
   /* TODO: remove this when Tina cloud sync issue is fixed https://github.com/tinacms/tina-cloud/issues/2073
 
   We need this because there's an issue preventing us from syncing the files in the repo
   to Tina cloud. Images that aren't synced will 404.
    
    */
-  const [oldTitle, setOldTitle] = useState(event.title);
-  const [visible, setVisible] = useState(false);
   const [thumbnail, setFallbackImage] = useState("");
   useEffect(() => {
-    if (event.title !== oldTitle) {
-      setVisible(false);
-    }
-    setTimeout(() => {
-      setVisible(true);
-      setOldTitle(event.title);
-    }, 100);
     setFallbackImage(event.thumbnail);
-  }, [event.thumbnail, event.title, oldTitle]);
+  }, [event.thumbnail]);
 
   const handleImageError = () => {
     const tinaUrl = /https:\/\/assets\.tina\.io\/[^/]+\/(.*)/;
