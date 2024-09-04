@@ -167,16 +167,15 @@ const EventsList = ({
   const [secondEvents, setSecondEvents] = useState<EventTrimmed[]>([]);
   const [visible, setVisible] = useState<boolean>(true);
   useEffect(() => {
-    console.log("isFetching", isFetching);
     if (!isFetching) {
       if (visible) {
         setFirstEvents(events);
       } else {
         setSecondEvents(events);
       }
-      setVisible(!visible);
+      setVisible((v) => !v);
     }
-  }, [events]);
+  }, [events, isFetching]);
 
   return (
     <div>
