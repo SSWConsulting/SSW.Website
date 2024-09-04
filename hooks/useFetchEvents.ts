@@ -149,11 +149,11 @@ export const getEventsCategories = async () => {
 
   const pastEvents = await client.queries.getPastEventsQuery({
     fromDate: today,
-    top: limit,
+    top: EVENTS_MAX_SIZE_OVERRIDE,
   });
   const upcomingEvents = await client.queries.getFutureEventsQuery({
     fromDate: today,
-    top: limit,
+    top: EVENTS_MAX_SIZE_OVERRIDE,
   });
   const upcomingEventsData = upcomingEvents.data;
 
