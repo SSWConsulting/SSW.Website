@@ -31,7 +31,7 @@ export const useEvents = (categories: EventFilterCategories) => {
     ];
 
     return groups;
-  }, [filterControls]);
+  }, [filterControls, categories.categories, categories.technologies]);
   return { filters };
 };
 
