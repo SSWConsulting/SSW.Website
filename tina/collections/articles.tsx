@@ -1,3 +1,4 @@
+import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import {
   carouselBlockSchema,
@@ -10,13 +11,15 @@ import {
   testimonialsListSchema,
   verticalImageLayoutBlockSchema,
 } from "../../components/blocks";
+import { dynamicCardGridBlockSchema } from "../../components/blocks/dynamicCardGridBlock";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
+import {
+  callToActionDefaults,
+  callToActionSchema,
+} from "../../components/callToAction/callToAction";
 import { seoSchema } from "../../components/util/seo";
 import { sidebarPanelSchema } from "../../components/util/sidebarPanel";
 import { tipField } from "./shared-fields";
-
-import type { Collection } from "tinacms";
-import { dynamicCardGridBlockSchema } from "../../components/blocks/dynamicCardGridBlock";
 
 export const articlesIndexSchemaConstants = {
   value: "articlesIndex",
@@ -45,6 +48,19 @@ export const articlesSchema: Collection = {
   name: "articles",
   format: "mdx",
   path: "content/articles/",
+  defaultItem: () => {
+    return {
+      ...callToActionDefaults,
+      sidebarPanel: {
+        title: "2-Day Pre-Migration Assessment Engagement",
+        description:
+          "Get a solid foundation for your .NET 8 migration project, ensuring you are well-prepared to tackle the migration with confidence.",
+        actionUrl: "/",
+        actionText: "Learn more",
+        showSidebarPanel: true,
+      },
+    };
+  },
   match: {
     exclude: "@(case-study|index|clientCategories)/*",
   },
@@ -100,15 +116,26 @@ export const articlesSchema: Collection = {
         "if you cannot see the Author here add them to 'Events - Presenters' in the list",
       collections: ["presenter"],
     },
-    {
-      type: "boolean",
-      name: "showSidebarPanel",
-      label: "Show Sidebar Panel",
-      required: false,
-    },
+
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     sidebarPanelSchema,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    {
+      ...callToActionSchema,
+
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      fields: [
+        {
+          type: "string",
+          label: "Title",
+          name: "title",
+        },
+        ...callToActionSchema.fields,
+      ],
+    },
   ],
 };
 
@@ -181,7 +208,6 @@ export const articlesIndexSchema: Collection = {
     sidebarPanelSchema,
   ],
 };
-
 export const clientsCategorySchema: Collection = {
   label: "Articles - Client Categories",
   name: "clientCategories",
