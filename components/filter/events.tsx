@@ -155,7 +155,6 @@ interface EventsListProps {
 }
 
 const EventsList = ({ events, isUpcoming, isLoading }: EventsListProps) => {
-  useEffect(() => {}, [events]);
   return (
     <div>
       {isLoading ? (
@@ -234,8 +233,14 @@ const Event = ({ event, jsonLd }: EventProps) => {
   to Tina cloud. Images that aren't synced will 404.
    
    */
+  const [oldTitle, setOldTitle] = useState(event.title);
+  const [visible, setVisible] = useState(false);
   const [thumbnail, setFallbackImage] = useState("");
   useEffect(() => {
+    if (event.title !== oldTitle) setVisible(false);
+    setTimeout(() => {
+      setVisible(true);
+    }, 100);
     setFallbackImage(event.thumbnail);
   }, [event.thumbnail]);
 
@@ -263,7 +268,7 @@ const Event = ({ event, jsonLd }: EventProps) => {
     <>
       <Transition
         className="mb-15 border-b-1 bg-white pb-8"
-        show={true}
+        show={visible}
         enter="transition duration-100 ease-out"
         enterFrom="transform scale-95 opacity-0"
         enterTo="transform scale-100 opacity-100"
