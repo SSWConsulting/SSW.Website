@@ -1,5 +1,9 @@
 import client from "@/tina/client";
-import { GetPastEventsQueryQuery } from "@/tina/types";
+import {
+  HydrationBoundary,
+  QueryClient,
+  dehydrate,
+} from "@tanstack/react-query";
 import type { InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
 import { useTina } from "tinacms/dist/react";
@@ -14,15 +18,6 @@ import {
 import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
-
-import { EventFilterAllCategories } from "@/components/filter/FilterBlock";
-import { getPastEvents } from "@/services/server/getEvents";
-import { EventsCalendarConnectionEdges } from "@/tina/types";
-import {
-  HydrationBoundary,
-  QueryClient,
-  dehydrate,
-} from "@tanstack/react-query";
 import {
   FUTURE_EVENTS_QUERY_KEY,
   getEventsCategories,
