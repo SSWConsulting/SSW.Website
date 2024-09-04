@@ -89,7 +89,16 @@ export default function NETUGPage(
               title={data.userGroupPage.seo?.title}
             />
           </Section>
-
+          {data.userGroupPage.title && (
+            <Container size="custom" className="pb-8">
+              <h1
+                className="py-0"
+                data-tina-field={tinaField(data.userGroupPage, "title")}
+              >
+                {data.userGroupPage.title}
+              </h1>
+            </Container>
+          )}
           <Container size="custom" className="pb-8">
             <section className="grid-cols-3 gap-10 md:grid">
               {props.event?.abstract && (
