@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useState } from "react";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
@@ -21,6 +22,7 @@ export const Organizer = ({
   data: OrganizerType;
   stringContent?: string;
 }) => {
+  const [image, setFallbackImage] = useState<string>(data.profileImg ?? "");
   return (
     <div className="flex flex-col gap-5">
       <div className="flex flex-row items-center gap-2">
@@ -30,9 +32,12 @@ export const Organizer = ({
         >
           <Image
             alt={`Picture of ${data?.name ?? "Organizer"}`}
-            src={data?.profileImg ?? ""}
+            src={image}
             height={68}
             width={68}
+            onError={() =>
+              setFallbackImage("/images/thumbs/avatar-thumbnail.png")
+            }
             className="w-17"
           />
         </div>
