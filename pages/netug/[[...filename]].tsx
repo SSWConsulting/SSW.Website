@@ -46,7 +46,7 @@ export default function NETUGPage(
 
   // Converting element to string to render in presenter block
   const aboutDescription = ReactDomServer.renderToString(
-    <TinaMarkdown content={speaker?.presenter.about} />
+    <TinaMarkdown content={speaker?.presenter?.about} />
   );
 
   if (data?.userGroupPage?.__typename === "UserGroupPageLocationPage") {
@@ -72,7 +72,7 @@ export default function NETUGPage(
               presenter={{
                 name: props.event?.presenterName,
                 url: props.event?.presenterProfileUrl,
-                image: speaker?.presenter.torsoImg || "",
+                image: speaker?.presenter?.torsoImg || "",
               }}
               trailerUrl={props.event?.trailerUrl}
               registerUrl={data.userGroupPage.registerUrl}
@@ -197,10 +197,10 @@ export default function NETUGPage(
                   <div className="pb-3">
                     <Organizer
                       data={{
-                        profileImg: speaker.presenter.profileImg,
-                        name: speaker.presenter.presenter.name,
+                        profileImg: speaker?.presenter?.profileImg,
+                        name: speaker?.presenter?.presenter?.name,
                         profileLink:
-                          speaker.presenter.presenter.peopleProfileURL,
+                          speaker?.presenter?.presenter?.peopleProfileURL,
                       }}
                       stringContent={aboutDescription}
                     />
