@@ -168,10 +168,10 @@ const eventsReducer = (state, action) => {
   }
 };
 
-const arraysEqual = (arr1: any[], arr2: any[]): boolean => {
+const arraysEqual = (arr1: EventTrimmed[], arr2: EventTrimmed[]): boolean => {
   if (arr1.length !== arr2.length) return false;
   return arr1.every(
-    (value: { id: string }, index: number) => value.id === arr2[index].id
+    (value: EventTrimmed, index: number) => value.id === arr2[index].id
   );
 };
 
