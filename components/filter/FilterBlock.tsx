@@ -1,3 +1,4 @@
+import { EventCategories } from "hooks/useFetchEvents";
 import { MdLiveHelp } from "react-icons/md";
 import { FilterGroup, type FilterGroupProps } from "./FilterGroup";
 
@@ -36,4 +37,14 @@ export const FilterBlock = ({
       <div className="min-w-0 max-w-full shrink grow">{children}</div>
     </div>
   );
+};
+
+export type EventFilterAllCategories = {
+  past: EventFilterCategories;
+  upcoming: EventFilterCategories;
+};
+
+export type EventFilterCategories = {
+  technologies: EventCategories;
+  categories: EventCategories;
 };

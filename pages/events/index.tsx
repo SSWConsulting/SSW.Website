@@ -1,21 +1,26 @@
 import client from "@/tina/client";
-import { useRouter } from "next/router";
-import type { InferGetStaticPropsType } from "next";
-import { useTina } from "tinacms/dist/react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { Blocks } from "../../components/blocks-renderer";
-import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
-import { EventsFilter } from "../../components/filter/events";
-import { Layout } from "../../components/layout";
-import { Container } from "../../components/util/container";
-import { SEO } from "../../components/util/seo";
 import {
   HydrationBoundary,
   QueryClient,
   dehydrate,
 } from "@tanstack/react-query";
+import type { InferGetStaticPropsType } from "next";
+import { useRouter } from "next/router";
+import { useTina } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { Blocks } from "../../components/blocks-renderer";
+import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
+import {
+  DEFAULT_CATEGORY_FILTER,
+  DEFAULT_TECHNOLOGY_FITLER,
+  EventsFilter,
+} from "../../components/filter/events";
+import { Layout } from "../../components/layout";
+import { Container } from "../../components/util/container";
+import { SEO } from "../../components/util/seo";
 import {
   FUTURE_EVENTS_QUERY_KEY,
+  getEventsCategories,
   getFutureEvents,
 } from "../../hooks/useFetchEvents";
 
@@ -24,10 +29,11 @@ const ISR_TIME = 60 * 60; // 1 hour
 export default function EventsIndexPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
+  const { query, variables, filterCategories } = props;
   const { data } = useTina({
     data: props.data,
-    query: props.query,
-    variables: props.variables,
+    query,
+    variables,
   });
 
   const router = useRouter();
@@ -49,6 +55,7 @@ export default function EventsIndexPage(
             </div>
           </div>
           <EventsFilter
+            filterCategories={filterCategories}
             sidebarBody={data.eventsIndex.sidebarBody}
             defaultToPastTab={defaultToPastTab}
           />
@@ -69,9 +76,17 @@ export const getStaticProps = async () => {
 
   const queryClient = new QueryClient();
 
+  const filterCategories = await getEventsCategories();
+
   await queryClient.prefetchInfiniteQuery({
-    queryKey: [FUTURE_EVENTS_QUERY_KEY],
-    queryFn: getFutureEvents,
+    /* values of undefined cannot be serialized as JSON, so were passing the values as strings 
+      using concatenation */
+    queryKey: [
+      FUTURE_EVENTS_QUERY_KEY +
+        DEFAULT_TECHNOLOGY_FITLER +
+        DEFAULT_CATEGORY_FILTER,
+    ],
+    queryFn: () => getFutureEvents(),
     initialPageParam: "",
   });
 
@@ -84,6 +99,7 @@ export const getStaticProps = async () => {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
+      filterCategories,
       dehydratedState: dehydrate(queryClient),
     },
     revalidate: ISR_TIME,
