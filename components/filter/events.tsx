@@ -107,7 +107,6 @@ export const EventsFilter = ({
             <EventsList
               events={futureEvents}
               isUpcoming
-              isFetching={isFetchingFuturePages}
               isLoading={isLoadingFuturePages}
             />
             {hasMoreFuturePages && (
@@ -120,11 +119,7 @@ export const EventsFilter = ({
             )}
           </Tab.Panel>
           <Tab.Panel>
-            <EventsList
-              events={pastEvents}
-              isFetching={isFetchingPastPages}
-              isLoading={isLoadingPastPages}
-            />
+            <EventsList events={pastEvents} isLoading={isLoadingPastPages} />
             {hasMorePastPages && (
               <LoadMore
                 load={() => {
@@ -154,7 +149,6 @@ interface EventsListProps {
   events: EventTrimmed[];
   isUpcoming?: boolean;
   isLoading?: boolean;
-  isFetching?: boolean;
 }
 
 const eventsReducer = (state, action) => {
@@ -176,7 +170,9 @@ const eventsReducer = (state, action) => {
 
 const arraysEqual = (arr1: any[], arr2: any[]): boolean => {
   if (arr1.length !== arr2.length) return false;
-  return arr1.every((value, index) => value.id === arr2[index].id);
+  return arr1.every(
+    (value: { id: string }, index: number) => value.id === arr2[index].id
+  );
 };
 
 const initialState = {
@@ -186,12 +182,7 @@ const initialState = {
   visible: true,
 };
 
-const EventsList = ({
-  events,
-  isUpcoming,
-  isLoading,
-  isFetching,
-}: EventsListProps) => {
+const EventsList = ({ events, isUpcoming, isLoading }: EventsListProps) => {
   const [state, dispatch] = useReducer(eventsReducer, initialState);
   useEffect(() => {
     dispatch({ type: "SET_EVENTS", payload: events });
