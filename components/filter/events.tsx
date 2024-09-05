@@ -168,6 +168,7 @@ const eventsReducer = (state, action) => {
   }
 };
 
+// TODO: Compare arrays by reference instead of value https://github.com/SSWConsulting/SSW.Website/issues/3066
 const arraysEqual = (arr1: EventTrimmed[], arr2: EventTrimmed[]): boolean => {
   if (arr1.length !== arr2.length) return false;
   return arr1.every(
