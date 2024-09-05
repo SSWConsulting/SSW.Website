@@ -28,13 +28,15 @@ export const Organizer = ({
           className="size-17 overflow-hidden rounded-full"
           data-tina-field={tinaField(data, "name")}
         >
-          <Image
-            alt={`Picture of ${data?.name ?? "Organizer"}`}
-            src={data?.profileImg ?? ""}
-            height={68}
-            width={68}
-            className="w-17"
-          />
+          {data.profileImg && (
+            <Image
+              alt={`Picture of ${data?.name ?? "Organizer"}`}
+              src={data?.profileImg ?? ""}
+              height={68}
+              width={68}
+              className="w-17"
+            />
+          )}
         </div>
         <div className="font-sans">
           <CustomLink
