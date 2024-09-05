@@ -46,7 +46,7 @@ export default function NETUGPage(
 
   // Converting element to string to render in presenter block
   const aboutDescription = ReactDomServer.renderToString(
-    <TinaMarkdown content={speaker?.presenter.about} />
+    <TinaMarkdown content={speaker?.presenter?.about} />
   );
 
   if (data?.userGroupPage?.__typename === "UserGroupPageLocationPage") {
@@ -72,7 +72,7 @@ export default function NETUGPage(
               presenter={{
                 name: props.event?.presenterName,
                 url: props.event?.presenterProfileUrl,
-                image: speaker?.presenter.torsoImg || "",
+                image: speaker?.presenter?.torsoImg || "",
               }}
               trailerUrl={props.event?.trailerUrl}
               registerUrl={data.userGroupPage.registerUrl}
@@ -89,7 +89,16 @@ export default function NETUGPage(
               title={data.userGroupPage.seo?.title}
             />
           </Section>
-
+          {data.userGroupPage.title && (
+            <Container size="custom" className="pb-8">
+              <h1
+                className="py-0"
+                data-tina-field={tinaField(data.userGroupPage, "title")}
+              >
+                {data.userGroupPage.title}
+              </h1>
+            </Container>
+          )}
           <Container size="custom" className="pb-8">
             <section className="grid-cols-3 gap-10 md:grid">
               {props.event?.abstract && (
@@ -188,9 +197,9 @@ export default function NETUGPage(
                   <div className="pb-3">
                     <Organizer
                       data={{
-                        profileImg: speaker.presenter.profileImg,
-                        name: speaker.presenter.name,
-                        profileLink: speaker.presenter.peopleProfileURL,
+                        profileImg: speaker?.presenter?.profileImg,
+                        name: speaker.presenter?.name,
+                        profileLink: speaker?.presenter?.peopleProfileURL,
                       }}
                       stringContent={aboutDescription}
                     />
@@ -383,6 +392,13 @@ export const getStaticProps = async ({ params }) => {
     } else {
       event = null;
     }
+  }
+
+  if (
+    tinaProps.data.userGroupPage.seo &&
+    !tinaProps.data.userGroupPage.seo.canonical
+  ) {
+    tinaProps.data.userGroupPage.seo.canonical = `${tinaProps.data.global.header.url}netug${params.filename ? `/${params.filename}` : ""}`;
   }
 
   return {

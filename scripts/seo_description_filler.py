@@ -14,8 +14,8 @@ seo_field = "seo:"
 
 # MODIFY THIS TO IMPROVE THE SYSTEM PROMPT
 system_prompt = """
-        Provide a meta description for the content provided assuming it will be hosted on a web 
-        page. YOUR RESPONSE MUST BE UNDER 150 CHARACTERS OR UNDER. DO NOT INCLUDE AIR QUOTES IN 
+        Provide a meta description for the content provided assuming it will be hosted on a web
+        page. YOUR RESPONSE MUST BE UNDER 150 CHARACTERS OR UNDER. DO NOT INCLUDE AIR QUOTES IN
         YOUR RESPONSE.
     """
 
@@ -32,7 +32,7 @@ def export_to_xlsx(data:list[dict], filename: str):
 
 # TODO - Replace with an olm for reduced cost
 def query_meta_description_gpt(query: str) -> str:
-    
+
 
     openai_api_key = os.getenv("OPENAI_API_KEY")
     if not openai_api_key:
@@ -101,15 +101,15 @@ def find_term_line_numbers(terms: list[str], lines:list[str] ) -> dict:
           if line.startswith(term):
             if term == title_field:
               # in case the title is spread across multiple lines
-              while lines[line_index + 1 ].startswith("    "): 
+              while lines[line_index + 1 ].startswith("    "):
                 line_index += 1
-                
-              
+
+
             search_term_locations[term] = line_index
     return search_term_locations
 
 def path_to_url(path:str):
-   ssw_url = "https://ssw.com.au/"
+   ssw_url = "https://www.ssw.com.au/"
    path = path[2:]
    path = path.replace("\\", "/")
    path = path.replace("index.mdx", "")
@@ -117,7 +117,7 @@ def path_to_url(path:str):
    # There's a routing rule that changes case-study to clients
    path = path.replace("company/case-study","company/clients" )
    path = path.replace("pages/", "")
-  
+
    return ssw_url + path
 
 def append_description(terms_line_number_dict: dict, file: list[str], new_description: str) -> None:
@@ -126,8 +126,8 @@ def append_description(terms_line_number_dict: dict, file: list[str], new_descri
     if title_index != -1:
       file.insert(title_index + 1 ,new_description)
       return
-    file.insert(seo_index + 1, new_description) 
-  
+    file.insert(seo_index + 1, new_description)
+
 def find_mdx_with_seo():
   load_dotenv()
   descriptions: list[dict] = []
@@ -136,7 +136,7 @@ def find_mdx_with_seo():
           if file.endswith('.mdx'):
             file_path = os.path.join(root, file)
             with open(file_path, 'r+', encoding='utf-8') as f:
-              lines : list[str]= f.readlines() 
+              lines : list[str]= f.readlines()
               line_number_of_terms = find_term_line_numbers([title_field, description_field, seo_field], lines)
               if line_number_of_terms[description_field] != -1:
                 continue

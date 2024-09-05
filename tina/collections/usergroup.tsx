@@ -36,6 +36,11 @@ export const userGroupPageSchema: Collection = {
           name: "registerUrl",
         },
         {
+          type: "string",
+          label: "Title",
+          name: "title",
+        },
+        {
           type: "object",
           label: "Join GitHub Panel",
           name: "joinGithub",
