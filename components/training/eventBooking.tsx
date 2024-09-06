@@ -277,11 +277,13 @@ export const eventBookingSchema: Template = {
       type: "number",
       label: "Duration (In Days)",
       name: eventBookingBlock.eventDurationInDays,
+      required: true,
     },
     {
       type: "number",
       label: "Price",
       name: eventBookingBlock.price,
+      required: true,
     },
     {
       type: "number",
@@ -293,6 +295,7 @@ export const eventBookingSchema: Template = {
       name: eventBookingBlock.gstText,
       label: "Select GST Option",
       options: gstTypeOptions,
+      required: true,
     },
 
     {
