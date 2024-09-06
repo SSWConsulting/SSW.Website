@@ -197,7 +197,8 @@ export default function NETUGPage(
                     <Organizer
                       data={{
                         profileImg: speaker?.presenter?.profileImg,
-                        name: speaker?.presenter?.presenter?.name ||
+                        name:
+                          speaker?.presenter?.presenter?.name ||
                           props.event.presenterName,
                         profileLink:
                           speaker?.presenter?.presenter?.peopleProfileURL ||
