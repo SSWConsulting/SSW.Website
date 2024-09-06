@@ -1,19 +1,20 @@
 import { Breadcrumbs } from "@/blocks/breadcrumbs";
 import { componentRenderer } from "@/blocks/mdxComponentRenderer";
 import ArticleAuthor from "@/components/articles/articleAuthor";
+import { BuiltOnAzure } from "@/components/blocks";
+import { CallToAction } from "@/components/callToAction/callToAction";
 import { Layout } from "@/components/layout";
 import SidebarPanel from "@/components/sidebar/sidebarPanel";
+import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { SEO } from "@/components/util/seo";
 import { removeExtension } from "@/services/client/utils.service";
 import client from "@/tina/client";
 import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
+import Image from "next/image";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-
-import { Container } from "@/components/util/container";
-import Image from "next/image";
 
 export default function ArticlesPage(
   props: InferGetStaticPropsType<typeof getStaticProps>
@@ -23,12 +24,14 @@ export default function ArticlesPage(
     query: props.query,
     variables: props.variables,
   });
+
   const { author } = data.articles;
+
   return (
     <div>
       <SEO seo={props.seo} />
 
-      <Layout menu={data.megamenu} showAzureBanner={true}>
+      <Layout menu={data.megamenu}>
         {data.articles.bannerImg && (
           <Container className="prose flex-1" size="custom">
             <div data-tina-field={tinaField(data.articles, "bannerImg")}>
@@ -59,7 +62,9 @@ export default function ArticlesPage(
             className="mx-auto w-full max-w-9xl px-8"
             data-tina-field={tinaField(data.articles, "title")}
           >
-            <h1 className="mt-4 py-2">{data.articles.title}</h1>
+            <h1 data-tina-field={tinaField} className="mt-4 py-2">
+              {data.articles.title}
+            </h1>
           </Section>
         )}
         {!!data.articles.author && (
@@ -84,18 +89,56 @@ export default function ArticlesPage(
                 components={componentRenderer}
               />
             </div>
-            {data.articles.showSidebarPanel && (
+            {data.articles.sidebarPanel?.showSidebarPanel && (
               <div className="w-full px-16 lg:shrink lg:pl-16 lg:pr-0">
                 <SidebarPanel
-                  title={data.articles.sidebarPanel.title}
-                  description={data.articles.sidebarPanel.description}
-                  actionUrl={data.articles.sidebarPanel.actionUrl}
-                  actionText={data.articles.sidebarPanel.actionText}
+                  title={data.articles.sidebarPanel?.title}
+                  tinaFields={{
+                    title: tinaField(data.articles.sidebarPanel, "title"),
+                    description: tinaField(
+                      data.articles.sidebarPanel,
+                      "description"
+                    ),
+                  }}
+                  description={data.articles.sidebarPanel?.description}
+                  actionUrl={data.articles.sidebarPanel?.actionUrl}
+                  actionText={data.articles.sidebarPanel?.actionText}
                 />
               </div>
             )}
           </section>
         )}
+
+        {data.articles.callToAction?.showCallToAction && (
+          <CallToAction
+            animated={data.articles?.callToAction?.animated}
+            tinaFields={{
+              subTitle: tinaField(data.articles?.callToAction, "subTitle"),
+              buttonSubtitle: tinaField(
+                data.articles?.callToAction,
+                "buttonSubtitle"
+              ),
+            }}
+            subTitle={data.articles?.callToAction?.subTitle}
+            buttonText={data.articles?.callToAction?.buttonText}
+            buttonSubtitle={data.articles?.callToAction?.buttonSubtitle}
+          >
+            {data.articles?.callToAction?.title && (
+              <h2
+                className="callToAction"
+                data-tina-field={tinaField(
+                  data.articles?.callToAction,
+                  "title"
+                )}
+              >
+                {data.articles?.callToAction?.title}
+              </h2>
+            )}
+          </CallToAction>
+        )}
+        <Section>
+          <BuiltOnAzure data={{ backgroundColor: "default" }} />
+        </Section>
       </Layout>
     </div>
   );
@@ -138,7 +181,6 @@ export const getStaticPaths = async () => {
       ...pageListData.data.articlesConnection.edges
     );
   }
-
   return {
     paths: allPagesListData.data.articlesConnection.edges.map((page) => ({
       params: { filename: page.node._sys.filename },

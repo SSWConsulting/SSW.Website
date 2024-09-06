@@ -1,10 +1,10 @@
-import { tinaField, useTina } from "tinacms/dist/react";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
-
+import { CallToAction } from "@/components/callToAction/callToAction";
 import { client } from "@/tina/client";
 import { InferGetStaticPropsType } from "next";
 import { ReactElement } from "react";
 import ReactDOMServer from "react-dom/server";
+import { tinaField, useTina } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { BuiltOnAzure, ClientLogos } from "../../components/blocks";
 import { Blocks } from "../../components/blocks-renderer";
 import { Booking } from "../../components/blocks/booking";
@@ -34,7 +34,6 @@ export default function ConsultingPage(
     query: props.query,
     variables: props.variables,
   });
-
   const technologyCardDocs =
     props.technologyCards.data.technologiesConnection.edges.map((n) => n.node);
   const techCards =
@@ -49,10 +48,6 @@ export default function ConsultingPage(
       type: m.type as MediaCardProps["type"],
       content: m.content,
     })) || [];
-
-  const bookingButtonProps = {
-    buttonText: data.global.bookingButtonText,
-  };
 
   const categories =
     data.consulting.testimonialCategories
@@ -77,7 +72,7 @@ export default function ConsultingPage(
         </Section>
         <Section className="w-full" color="black">
           <Booking {...data.consulting.booking}>
-            <BookingButton data={bookingButtonProps} />
+            <BookingButton />
           </Booking>
         </Section>
         <Section
@@ -116,7 +111,9 @@ export default function ConsultingPage(
               tagline={data.consulting.testimonials?.tagline}
             />
             <BookingButton
-              data={{ ...bookingButtonProps, containerClass: "mt-20" }}
+              data={{
+                containerClass: "mt-20",
+              }}
             />
           </Container>
         </Section>
@@ -144,24 +141,34 @@ export default function ConsultingPage(
             </Container>
           </Section>
         )}
-        <Section className="!bg-gray-75 pb-25 text-center">
-          <Container size="custom" className="w-full">
-            <h1
-              data-tina-field={tinaField(data.consulting, "callToAction")}
+        {data?.consulting?.callToAction?.showCallToAction && (
+          <CallToAction
+            buttonSubtitle={data?.consulting?.callToAction?.buttonSubtitle}
+            subTitle={data?.consulting?.callToAction?.subTitle}
+            animated={data?.consulting?.callToAction?.animated}
+            buttonText={data?.consulting?.callToAction?.buttonText}
+            tinaFields={{
+              subTitle: tinaField(data.consulting?.callToAction, "subTitle"),
+              buttonSubtitle: tinaField(
+                data.consulting?.callToAction,
+                "buttonSubtitle"
+              ),
+            }}
+          >
+            <h2
+              className="callToAction"
+              data-tina-field={tinaField(data.consulting.callToAction, "title")}
               dangerouslySetInnerHTML={{
                 __html: parseCallToAction(
-                  data.consulting.callToAction,
-                  data.consulting.solution?.project,
-                  data.consulting.solution
+                  data.consulting?.callToAction?.title,
+                  data.consulting?.solution?.project,
+                  data.consulting?.solution
                 ),
               }}
-            ></h1>
-            <p className="text-lg">
-              Connect with our Account Managers to discuss how we can help.
-            </p>
-            <BookingButton data={bookingButtonProps} />
-          </Container>
-        </Section>
+            ></h2>
+          </CallToAction>
+        )}
+
         <Section>
           <BuiltOnAzure data={{ backgroundColor: "default" }} />
         </Section>

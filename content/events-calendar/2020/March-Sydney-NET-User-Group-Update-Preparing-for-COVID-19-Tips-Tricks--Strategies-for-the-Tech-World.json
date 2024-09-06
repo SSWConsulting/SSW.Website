@@ -8,8 +8,8 @@
   "startDateTime": "2020-03-18T07:30:00Z",
   "endDateTime": "2020-03-18T09:00:00Z",
   "liveStreamUrl": {
-    "description": "http://ssw.com.au/ssw/live",
-    "url": "http://ssw.com.au/ssw/live"
+    "description": "http://www.ssw.com.au/ssw/live",
+    "url": "http://www.ssw.com.au/ssw/live"
   },
   "calendarType": "User Groups",
   "city": "Sydney",

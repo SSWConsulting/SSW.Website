@@ -1,33 +1,31 @@
 import type { Template } from "tinacms";
-import {
-  default as defaultSetting,
-  default as layoutData,
-} from "../../content/global/index.json";
+import globals from "../../content/global/index.json";
 import { JotFormEmbed, JotFormEmbedProps } from "../blocks/jotFormEmbed";
-
+const DEFAULT_SUBTITLE = `or call ${globals.bookingPhone}`;
 export interface BookingButtonProps {
-  buttonText?: string;
-  containerClass?: string;
-  buttonClass?: string;
-  hideCallUs?: boolean;
-  animated?: boolean;
+  data?: {
+    buttonText?: string;
+    containerClass?: string;
+    buttonClass?: string;
+    hideCallUs?: boolean;
+    buttonSubtitle?: string;
+    tinaField?: string;
+    animated?: boolean;
+  };
 }
 
-export const BookingButton = ({ data }) => {
-  const {
-    containerClass,
-    buttonClass,
-    buttonText,
-    hideCallUs,
-    animated = true,
-  }: BookingButtonProps = data;
-
-  const bookingPhone = layoutData.bookingPhone;
-
+export const BookingButton: React.FC<BookingButtonProps | undefined> = ({
+  data = undefined,
+}) => {
+  const buttonText = data?.buttonText ?? globals.bookingButtonText;
+  const buttonSubtitle = data?.buttonSubtitle ?? DEFAULT_SUBTITLE;
+  const hideCallUs = data?.hideCallUs ?? false;
+  const dataTinaField = data?.tinaField || undefined;
+  const animated = data?.animated ?? true;
   const jotFormBookingForm: JotFormEmbedProps = {
-    jotFormId: defaultSetting.bookingJotFormId,
-    containerClass: containerClass,
-    buttonClass: buttonClass,
+    jotFormId: globals.bookingJotFormId,
+    containerClass: data?.containerClass || "",
+    buttonClass: data?.buttonClass || "",
     buttonText: buttonText,
     animated: animated,
   };
@@ -35,9 +33,12 @@ export const BookingButton = ({ data }) => {
   return (
     <>
       <JotFormEmbed {...jotFormBookingForm}>
-        {!hideCallUs && (
-          <h2 className="mx-auto max-w-full text-center">
-            or call {bookingPhone}
+        {!hideCallUs && buttonSubtitle && (
+          <h2
+            data-tina-field={dataTinaField}
+            className="mx-auto max-w-full text-center"
+          >
+            {buttonSubtitle}
           </h2>
         )}
       </JotFormEmbed>
@@ -50,6 +51,11 @@ export const bookingButtonSchema: Template = {
   label: "Booking Button",
   ui: {
     previewSrc: "/images/thumbs/tina/booking-button.jpg",
+    defaultItem: {
+      buttonText: globals.bookingButtonText,
+      buttonSubtitle: DEFAULT_SUBTITLE,
+      animated: true,
+    },
     itemProps: (item) => ({ label: item?.btnText }),
   },
   fields: [
@@ -63,6 +69,11 @@ export const bookingButtonSchema: Template = {
       type: "boolean",
       label: "Animated",
       name: "animated",
+    },
+    {
+      type: "string",
+      label: "Button Subtitle",
+      name: "buttonSubtitle",
     },
   ],
 };

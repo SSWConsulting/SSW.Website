@@ -1,0 +1,26 @@
+{
+  "title": "Spies, screen readers and semantic HTML",
+  "url": "/netug/sydney",
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
+  "presenterName": "Ross Mullen",
+  "presenterProfileUrl": "https://www.linkedin.com/in/rossmullen/",
+  "startDateTime": "2024-09-18T07:30:00.000Z",
+  "endDateTime": "2024-09-18T09:30:00.000Z",
+  "startShowBannerDateTime": "2024-09-17T14:00:00.000Z",
+  "endShowBannerDateTime": "2024-09-18T12:00:00.000Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "category": "Other",
+  "abstract": "A great working guide to accessibility in software development. Whether you're a web developer, designer, or accessibility advocate there's plenty to take away and embed into your own digital products to make them accessible, inclusive and user friendly. Ross will evaluate the effectiveness and see how well it works with screen readers!",
+  "description": "We all know the power of ALT text in making images accessible for screen readers. But when an image is rich with detail like textures, placement, and text ALT text alone can't capture the full picture.\n\nAustralia's spy agency, Australian Signals Directorate (ADS), faced this challenge with their webpage for the 75th anniversary 50 cent coin. Instead of relying on intricate ALT text, they used semantic HTML to convey the coin's unique features. Semantic HTML is the bedrock of accessible web design. Using the right HTML elements means that users of all abilities can understand the content just as it is intended.\n\nI'll explain ASD's approach, evaluate its effectiveness, and see how well it works with screen readers. Whether you're a web developer, designer, or accessibility advocate there's plenty to take away and embed into your own digital products to make them accessible, inclusive and user friendly.\n",
+  "presenterList": [
+    {
+      "presenter": ""
+    }
+  ],
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
