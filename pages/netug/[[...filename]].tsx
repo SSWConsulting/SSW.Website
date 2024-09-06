@@ -43,7 +43,6 @@ export default function NETUGPage(
   const speaker = props.event?.presenterList
     ? props.event.presenterList[0]
     : null;
-
   // Converting element to string to render in presenter block
   const aboutDescription = ReactDomServer.renderToString(
     <TinaMarkdown content={speaker?.presenter?.about} />
@@ -189,7 +188,7 @@ export default function NETUGPage(
                   ))}
                 </div>
               </div>
-              {speaker && (
+              {(speaker || props.event.presenterName) && (
                 <div className="col-span-1 py-4 md:py-0">
                   <h2 className="text-4xl font-medium text-sswRed">
                     Presenter
@@ -198,8 +197,11 @@ export default function NETUGPage(
                     <Organizer
                       data={{
                         profileImg: speaker?.presenter?.profileImg,
-                        name: speaker.presenter?.name,
-                        profileLink: speaker?.presenter?.peopleProfileURL,
+                        name: speaker?.presenter?.presenter?.name ||
+                          props.event.presenterName,
+                        profileLink:
+                          speaker?.presenter?.presenter?.peopleProfileURL ||
+                          props.event.presenterProfileUrl,
                       }}
                       stringContent={aboutDescription}
                     />
