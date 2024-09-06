@@ -14,7 +14,7 @@
   },
   "calendarType": "Webinars",
   "enabled": true,
-  "category": "Mobile Development",
+  "category": "Mobile",
   "categoryAnchor": "Mobile",
   "sessionTitle": "Lessons Learned Writing Mobile Sites - presented by SSW & Dino Esposito",
   "eventShortDescription": "<div class=\"ExternalClass380235355D624493AE762C836E532EBE\"><p></p><div>Multi-device views without extra costs\u200b.</div><div> <br>      <br>Too many web sites are neither optimized nor adapted to render well on mobile devices and too many developers think it only needs some CSS.&#160;</div><div> <br><br></div></div>",

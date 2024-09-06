@@ -28,7 +28,7 @@ jobs:
     name: Run Playwright Tests
     uses: ./.github/workflows/template-ui-tests.yml
     with:
-      deploy_url: ${{ inputs.deploy_url || 'https://ssw.com.au' }}
+      deploy_url: ${{ inputs.deploy_url || 'https://www.ssw.com.au' }}
       tests_to_run: ${{ inputs.tests_to_run || 'images seo-index'}}
       continue-on-failure: true
 

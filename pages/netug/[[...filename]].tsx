@@ -1,6 +1,7 @@
 import client from "@/tina/client";
 import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
+import ReactDomServer from "react-dom/server";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import {
@@ -26,7 +27,6 @@ import { getRandomTestimonialsByCategory } from "../../helpers/getTestimonials";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
 import { EventInfo } from "../../services/server/events";
-import ReactDomServer from "react-dom/server";
 
 const ISR_TIME = 60 * 60; // 1 hour;
 
@@ -43,10 +43,9 @@ export default function NETUGPage(
   const speaker = props.event?.presenterList
     ? props.event.presenterList[0]
     : null;
-
   // Converting element to string to render in presenter block
   const aboutDescription = ReactDomServer.renderToString(
-    <TinaMarkdown content={speaker?.presenter.about} />
+    <TinaMarkdown content={speaker?.presenter?.about} />
   );
 
   if (data?.userGroupPage?.__typename === "UserGroupPageLocationPage") {
@@ -72,7 +71,7 @@ export default function NETUGPage(
               presenter={{
                 name: props.event?.presenterName,
                 url: props.event?.presenterProfileUrl,
-                image: speaker?.presenter.torsoImg || "",
+                image: speaker?.presenter?.torsoImg || "",
               }}
               trailerUrl={props.event?.trailerUrl}
               registerUrl={data.userGroupPage.registerUrl}
@@ -89,7 +88,16 @@ export default function NETUGPage(
               title={data.userGroupPage.seo?.title}
             />
           </Section>
-
+          {data.userGroupPage.title && (
+            <Container size="custom" className="pb-8">
+              <h1
+                className="py-0"
+                data-tina-field={tinaField(data.userGroupPage, "title")}
+              >
+                {data.userGroupPage.title}
+              </h1>
+            </Container>
+          )}
           <Container size="custom" className="pb-8">
             <section className="grid-cols-3 gap-10 md:grid">
               {props.event?.abstract && (
@@ -180,7 +188,7 @@ export default function NETUGPage(
                   ))}
                 </div>
               </div>
-              {speaker && (
+              {(speaker || props.event.presenterName) && (
                 <div className="col-span-1 py-4 md:py-0">
                   <h2 className="text-4xl font-medium text-sswRed">
                     Presenter
@@ -188,10 +196,13 @@ export default function NETUGPage(
                   <div className="pb-3">
                     <Organizer
                       data={{
-                        profileImg: speaker.presenter.profileImg,
-                        name: speaker.presenter.presenter.name,
+                        profileImg: speaker?.presenter?.profileImg,
+                        name:
+                          speaker?.presenter?.presenter?.name ||
+                          props.event.presenterName,
                         profileLink:
-                          speaker.presenter.presenter.peopleProfileURL,
+                          speaker?.presenter?.presenter?.peopleProfileURL ||
+                          props.event.presenterProfileUrl,
                       }}
                       stringContent={aboutDescription}
                     />
@@ -384,6 +395,13 @@ export const getStaticProps = async ({ params }) => {
     } else {
       event = null;
     }
+  }
+
+  if (
+    tinaProps.data.userGroupPage.seo &&
+    !tinaProps.data.userGroupPage.seo.canonical
+  ) {
+    tinaProps.data.userGroupPage.seo.canonical = `${tinaProps.data.global.header.url}netug${params.filename ? `/${params.filename}` : ""}`;
   }
 
   return {
