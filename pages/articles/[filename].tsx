@@ -70,10 +70,10 @@ export default function ArticlesPage(
         {!!data.articles.author && (
           <Section className="mx-auto w-full max-w-9xl px-8">
             <ArticleAuthor
-              name={author?.presenter?.name}
+              name={author?.name}
               position={author?.position}
               image={author?.profileImg}
-              url={author?.presenter?.peopleProfileURL}
+              url={author?.peopleProfileURL}
             />
           </Section>
         )}
