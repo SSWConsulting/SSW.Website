@@ -1,6 +1,8 @@
 # Meta Description Generator
 
-## Description
+## Explanation video
+![Done video icon AI generated meta descriptions](https://github.com/user-attachments/assets/2469bff1-14d3-416a-aea7-5243e33fa54e)
+
 
 Similar to [rules](https://github.com/SSWConsulting/SSW.Rules.Content/blob/main/scripts/generateSeoDescriptions/README.md) we have a generator for our main website. Their implementation uses Llama 3 whereas ours uses GPT 4 for the time being. This means that the script will cost a small amount of money to run. $0.06 per page (assuming the the api call doesn't fail).
 
@@ -31,3 +33,6 @@ Similar to [rules](https://github.com/SSWConsulting/SSW.Rules.Content/blob/main/
 4. Navigate to `https://platform.openai.com/api-keys`
 5. Click "+ Create new secret key" | Create new secret key **Note**
 6. Save the key in Keeper or your password manager of choice
+
+
+
