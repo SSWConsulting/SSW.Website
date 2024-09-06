@@ -1,13 +1,8 @@
 # Meta Description Generator
 
-
 ## Explanation Video
 
-
-
 [![Done video icon AI generated meta descriptions](https://github.com/user-attachments/assets/884e6258-a0cc-404e-be90-9cd993926bdb)](https://youtu.be/hHLEO-L6JbM)
-
-
 
 ## Description
 
@@ -39,4 +34,4 @@ Similar to [rules](https://github.com/SSWConsulting/SSW.Rules.Content/blob/main/
 3. Enter your desired amount, You'll need about $0.06 per page. (It's unreasonable to expect people to pay to run the script so I've created a todo for replacing this implementation with an olm)
 4. Navigate to `https://platform.openai.com/api-keys`
 5. Click "+ Create new secret key" | Create new secret key **Note**
-6. Save the key in Keeper or your password manager of choice
+6. Save the key in Keeper or your password manager of choic
