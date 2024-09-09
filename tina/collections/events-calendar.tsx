@@ -59,6 +59,36 @@ export const eventsCalendarSchema: Collection = {
       description: "For SSWers use their people page",
     },
     {
+      type: "object",
+      name: "presenterList",
+      label: "Presenters",
+      list: true,
+      ui: {
+        itemProps: (item) => {
+          const presenter = item?.presenter;
+          if (!presenter) return { label: "Please Attach Presenter" };
+
+          const formattedLabel = presenter
+            .split("/")[2]
+            .replace(".mdx", "")
+            .replace(/-/g, " ")
+            .toUpperCase();
+
+          return {
+            label: formattedLabel,
+          };
+        },
+      },
+      fields: [
+        {
+          type: "reference",
+          name: "presenter",
+          label: "Presenter",
+          collections: ["presenter"],
+        },
+      ],
+    },
+    {
       type: "datetime",
       label: "Start Date/Time",
       name: "startDateTime",
@@ -178,36 +208,7 @@ export const eventsCalendarSchema: Collection = {
       name: "description",
       description: "This shows on ssw.com.au/events",
     },
-    {
-      type: "object",
-      name: "presenterList",
-      label: "Presenters",
-      list: true,
-      ui: {
-        itemProps: (item) => {
-          const presenter = item?.presenter;
-          if (!presenter) return { label: "Please Attach Presenter" };
 
-          const formattedLabel = presenter
-            .split("/")[2]
-            .replace(".mdx", "")
-            .replace(/-/g, " ")
-            .toUpperCase();
-
-          return {
-            label: formattedLabel,
-          };
-        },
-      },
-      fields: [
-        {
-          type: "reference",
-          name: "presenter",
-          label: "Presenter",
-          collections: ["presenter"],
-        },
-      ],
-    },
     {
       type: "string",
       label: "YouTube ID",
