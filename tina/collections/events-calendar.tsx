@@ -56,7 +56,6 @@ export const eventsCalendarSchema: Collection = {
       list: true,
       ui: {
         validate: (value) => {
-          console.log(value);
           if (value && value.length > 0) {
             for (let val of value) {
               if (!val.presenter) {
