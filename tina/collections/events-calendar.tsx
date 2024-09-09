@@ -55,6 +55,16 @@ export const eventsCalendarSchema: Collection = {
         "Shown on the event listing (Presenters: Presenter1, Presenter2 & Presenter3) - Add the main presenter to the top of the list",
       list: true,
       ui: {
+        validate: (value) => {
+          console.log(value);
+          if (value && value.length > 0) {
+            for (let val of value) {
+              if (!val.presenter) {
+                return "A presenter must be attached for each item in the list";
+              }
+            }
+          }
+        },
         itemProps: (item) => {
           const presenter = item?.presenter;
           if (!presenter) return { label: "Please Attach Presenter" };
