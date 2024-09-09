@@ -239,7 +239,6 @@ const LoadedEvents: React.FC<AllEventsProps> = ({
   events,
   isUpcoming,
 }) => {
-  console.log(events);
   return (
     <>
       {events.length > 0
@@ -322,8 +321,6 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
   }
 
   const { formattedDate, relativeDate } = useFormatDates(event, true);
-  console.log("presenter list", event.presenterList);
-  console.log("PRESENTER LIST LENGTH", event.presenterList?.length);
   return (
     <>
       <Transition
