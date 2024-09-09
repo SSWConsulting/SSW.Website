@@ -88,9 +88,10 @@ export const eventsCalendarSchema: Collection = {
     },
     {
       type: "string",
-      label: "Presenter profile URL",
+      label: "Presenter Website",
       name: "presenterProfileUrl",
-      description: "For SSWers use their people page",
+      description:
+        "Use this for external presenters - This link will appear the on the presenter's name when the field above is filled out \"",
     },
 
     {
