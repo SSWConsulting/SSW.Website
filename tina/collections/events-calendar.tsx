@@ -48,20 +48,11 @@ export const eventsCalendarSchema: Collection = {
       description: "Used as alt text for the thumbnail",
     },
     {
-      type: "string",
-      label: "Presenter Name",
-      name: "presenterName",
-    },
-    {
-      type: "string",
-      label: "Presenter profile URL",
-      name: "presenterProfileUrl",
-      description: "For SSWers use their people page",
-    },
-    {
       type: "object",
       name: "presenterList",
       label: "Presenters",
+      description:
+        "Shown on the event listing (Presenters: Presenter1, Presenter2 & Presenter3) - Add the main presenter to the top of the list",
       list: true,
       ui: {
         itemProps: (item) => {
@@ -88,6 +79,20 @@ export const eventsCalendarSchema: Collection = {
         },
       ],
     },
+    {
+      type: "string",
+      label: "Presenter Name Override",
+      name: "presenterName",
+      description:
+        "Use this for external presenters - Will override the presenter name(s) shown on the event",
+    },
+    {
+      type: "string",
+      label: "Presenter profile URL",
+      name: "presenterProfileUrl",
+      description: "For SSWers use their people page",
+    },
+
     {
       type: "datetime",
       label: "Start Date/Time",
