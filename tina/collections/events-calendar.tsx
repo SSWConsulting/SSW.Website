@@ -57,7 +57,7 @@ export const eventsCalendarSchema: Collection = {
       ui: {
         validate: (value) => {
           if (value && value.length > 0) {
-            for (let val of value) {
+            for (const val of value) {
               if (!val.presenter) {
                 return "A presenter must be attached for each item in the list";
               }
