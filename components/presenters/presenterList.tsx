@@ -1,4 +1,3 @@
-import { Presenter as TinaPresenter } from "@/tina/types";
 import React from "react";
 import { CustomLink } from "../customLink";
 
