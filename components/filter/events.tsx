@@ -1,8 +1,13 @@
 "use client";
-
 import { Tab, Transition } from "@headlessui/react";
 import Image from "next/image";
-import { Fragment, useEffect, useMemo, useReducer, useState } from "react";
+import React, {
+  Fragment,
+  useEffect,
+  useMemo,
+  useReducer,
+  useState,
+} from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
@@ -16,6 +21,7 @@ import { UtilityButton } from "../blocks";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
+import { Presenter, PresenterList } from "../presenters/presenterList";
 import { CITY_MAP } from "../util/constants/country";
 import { sswOrganisation } from "../util/constants/json-ld";
 import { EventFilterAllCategories, FilterBlock } from "./FilterBlock";
@@ -43,6 +49,9 @@ export type EventTrimmed = {
   city?: string;
   cityOther?: string;
   url: string;
+  presenterList?: {
+    presenter?: Presenter;
+  }[];
   presenterName?: string;
   presenterProfileUrl?: string;
   calendarType?: string;
@@ -230,6 +239,7 @@ const LoadedEvents: React.FC<AllEventsProps> = ({
   events,
   isUpcoming,
 }) => {
+  console.log(events);
   return (
     <>
       {events.length > 0
@@ -312,7 +322,8 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
   }
 
   const { formattedDate, relativeDate } = useFormatDates(event, true);
-
+  console.log("presenter list", event.presenterList);
+  console.log("PRESENTER LIST LENGTH", event.presenterList?.length);
   return (
     <>
       <Transition
@@ -350,25 +361,45 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
             />
 
             <div>
-              {event.presenterName && (
+              {event.presenterList?.length ? (
                 <EventDescItem
-                  label="Presenter"
-                  linkValue={event?.presenterProfileUrl}
-                  value={event.presenterName}
-                />
+                  label={
+                    event.presenterList.length === 1
+                      ? "Presenter"
+                      : "Presenters"
+                  }
+                >
+                  <PresenterList presenters={event.presenterList} />
+                </EventDescItem>
+              ) : (
+                event.presenterName && (
+                  <EventDescItem label="Presenter">
+                    {
+                      <EventDescLink
+                        value={event.presenterName}
+                        linkValue={event.presenterProfileUrl}
+                      />
+                    }
+                  </EventDescItem>
+                )
               )}
               {city && (
-                <EventDescItem
-                  label="Location"
-                  value={eventSite.name}
-                  linkValue={eventSite.url}
-                />
+                <EventDescItem label="Location">
+                  <EventDescLink
+                    value={eventSite.name}
+                    linkValue={eventSite.url}
+                  />
+                </EventDescItem>
               )}
               {event.calendarType && (
-                <EventDescItem label="Type" value={event.calendarType} />
+                <EventDescItem label="Type">
+                  <EventDescLink value={event.calendarType} />
+                </EventDescItem>
               )}
               {event.category && (
-                <EventDescItem label="Category" value={event.category} />
+                <EventDescItem label="Category">
+                  <EventDescLink value={event.category} />
+                </EventDescItem>
               )}
             </div>
           </div>
@@ -396,19 +427,30 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
   );
 };
 
-type EventDescItemProps = { label: string; value: string; linkValue?: string };
+type EventDescItemProps = {
+  label: string;
+  children: React.ReactNode;
+};
 
-const EventDescItem = ({ label, value, linkValue }: EventDescItemProps) => {
+const EventDescItem = ({ label, children }: EventDescItemProps) => {
   return (
     <span className="mr-2 inline-block whitespace-nowrap">
       <strong>{label}: </strong>
-
-      {linkValue ? (
-        <CustomLink href={linkValue}>{value}</CustomLink>
-      ) : (
-        <>{value}</>
-      )}
+      {children}
     </span>
+  );
+};
+
+type EventDescLinkProps = { value: string; linkValue?: string };
+
+const EventDescLink: React.FC<EventDescLinkProps> = ({
+  value,
+  linkValue,
+}: EventDescLinkProps) => {
+  return linkValue ? (
+    <CustomLink href={linkValue}>{value}</CustomLink>
+  ) : (
+    <>{value}</>
   );
 };
 
