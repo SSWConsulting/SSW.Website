@@ -67,7 +67,7 @@
     "@tanstack/react-query-devtools": "^5.45.1",
     "animate-css-grid": "^1.5.1",
     "aos": "^2.3.4",
-    "applicationinsights": "^2.9.5",
+    "applicationinsights": "^3.2.2",
     "axios": "^1.7.4",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
