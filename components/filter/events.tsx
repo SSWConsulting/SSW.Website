@@ -362,9 +362,9 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
               {(event.presenterName || event.presenterList?.length > 0) && (
                 <EventDescItem
                   label={
-                    event?.presenterName || event?.presenterList?.length > 0
-                      ? "Presenters"
-                      : "Presenter"
+                    event?.presenterName || event?.presenterList?.length === 1
+                      ? "Presenter"
+                      : "Presenters"
                   }
                 >
                   {event.presenterName ? (
