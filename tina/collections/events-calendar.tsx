@@ -74,7 +74,7 @@ export const eventsCalendarSchema: Collection = {
         {
           type: "reference",
           ui: {
-            validate: (value, data) => {
+            validate: (value) => {
               if (!value) return "Please select a presenter";
             },
           },
