@@ -48,6 +48,7 @@ export default function NETUGPage(
     ? {
         name: props.event?.presenterName,
         url: props.event?.presenterProfileUrl,
+        image: speaker?.presenter?.torsoImg,
       }
     : {
         name: speaker?.presenter?.presenter?.name,
