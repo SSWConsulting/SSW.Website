@@ -18,6 +18,9 @@
   "presenterList": [
     {
       "presenter": "content/presenters/jernej-kavka.mdx"
+    },
+    {
+      "presenter": "content/presenters/nick-curran.mdx"
     }
   ],
   "delayedLiveStreamStart": false,
