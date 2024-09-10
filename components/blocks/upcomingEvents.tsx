@@ -9,7 +9,7 @@ import client from "../../tina/__generated__/client";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { EventTrimmed } from "../filter/events";
-import { PresenterLinks, PresenterList } from "../presenters/presenterList";
+import { PresenterList } from "../presenters/presenterList";
 
 export const UpcomingEvents = ({ data }) => {
   const [events, setEvents] = useState<EventTrimmed[]>([]);

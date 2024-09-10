@@ -1,4 +1,3 @@
-import { CustomLink } from "@/components/customLink";
 import client from "@/tina/client";
 import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
