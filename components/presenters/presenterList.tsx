@@ -8,10 +8,13 @@ export type Presenter = {
   };
 };
 
-type PresenterListProps = {
+type PresenterLinksProps = {
   presenters: { presenter?: Presenter }[];
 };
-export const PresenterList: React.FC<PresenterListProps> = ({ presenters }) => {
+
+export const PresenterLinks: React.FC<PresenterLinksProps> = ({
+  presenters,
+}) => {
   return (
     <>
       {presenters.length === 1 ? (
@@ -32,6 +35,34 @@ export const PresenterList: React.FC<PresenterListProps> = ({ presenters }) => {
             })}{" "}
           &{" "}
           <Presenter presenter={presenters[presenters.length - 1].presenter} />
+        </>
+      )}
+    </>
+  );
+};
+
+type PresenterListProps = {
+  presenters: { presenter?: Presenter }[];
+};
+
+export const PresenterList = ({ presenters }: PresenterListProps) => {
+  return (
+    <>
+      {presenters.length === 1 ? (
+        <>{presenters[0].presenter.presenter.name}</>
+      ) : (
+        <>
+          {presenters
+            .slice(0, presenters.length - 1)
+            .map((presenter, index) => {
+              return (
+                <>
+                  {presenter.presenter.presenter.name +
+                    (index < presenters.length - 2 ? ", " : "")}
+                </>
+              );
+            })}{" "}
+          &{` ${presenters[presenters.length - 1].presenter.presenter.name}`}
         </>
       )}
     </>

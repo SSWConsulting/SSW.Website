@@ -21,7 +21,7 @@ import { UtilityButton } from "../blocks";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
-import { Presenter, PresenterList } from "../presenters/presenterList";
+import { Presenter, PresenterLinks } from "../presenters/presenterList";
 import { CITY_MAP } from "../util/constants/country";
 import { sswOrganisation } from "../util/constants/json-ld";
 import { EventFilterAllCategories, FilterBlock } from "./FilterBlock";
@@ -366,7 +366,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
                       : "Presenters"
                   }
                 >
-                  <PresenterList presenters={event.presenterList} />
+                  <PresenterLinks presenters={event.presenterList} />
                 </EventDescItem>
               ) : (
                 event.presenterName && (

@@ -1,3 +1,4 @@
+import { CustomLink } from "@/components/customLink";
 import client from "@/tina/client";
 import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
@@ -43,6 +44,18 @@ export default function NETUGPage(
   const speaker = props.event?.presenterList
     ? props.event.presenterList[0]
     : null;
+
+  const presenter = speaker
+    ? {
+        name: speaker?.presenter?.presenter?.name,
+        url: speaker?.presenter?.presenter?.peopleProfileURL,
+        image: speaker?.presenter?.torsoImg,
+      }
+    : {
+        name: props.event?.presenterName,
+        url: props.event?.presenterProfileUrl,
+      };
+
   // Converting element to string to render in presenter block
   const aboutDescription = ReactDomServer.renderToString(
     <TinaMarkdown content={speaker?.presenter?.about} />
@@ -68,11 +81,7 @@ export default function NETUGPage(
             <UserGroupHeader
               date={new Date(props.event?.startDateTime)}
               title={props.event?.title}
-              presenter={{
-                name: props.event?.presenterName,
-                url: props.event?.presenterProfileUrl,
-                image: speaker?.presenter?.torsoImg || "",
-              }}
+              presenter={{ ...presenter }}
               trailerUrl={props.event?.trailerUrl}
               registerUrl={data.userGroupPage.registerUrl}
               city={props.city}
@@ -188,7 +197,7 @@ export default function NETUGPage(
                   ))}
                 </div>
               </div>
-              {(speaker || props.event.presenterName) && (
+              {(speaker || props?.event?.presenterName) && (
                 <div className="col-span-1 py-4 md:py-0">
                   <h2 className="text-4xl font-medium text-sswRed">
                     Presenter
@@ -196,13 +205,9 @@ export default function NETUGPage(
                   <div className="pb-3">
                     <Organizer
                       data={{
-                        profileImg: speaker?.presenter?.profileImg,
-                        name:
-                          speaker?.presenter?.presenter?.name ||
-                          props.event.presenterName,
-                        profileLink:
-                          speaker?.presenter?.presenter?.peopleProfileURL ||
-                          props.event.presenterProfileUrl,
+                        profileImg: presenter.image,
+                        name: presenter.name,
+                        profileLink: presenter.url,
                       }}
                       stringContent={aboutDescription}
                     />
