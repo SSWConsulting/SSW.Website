@@ -2,8 +2,6 @@ import classNames from "classnames";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useLiveStreamProps } from "../../hooks/useLiveStreamProps";
-import { Footer } from "./footer/footer";
-import { PreFooter } from "./footer/pre-footer";
 import { Theme } from "./theme";
 
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
@@ -31,6 +29,10 @@ const LiveStreamWidget = dynamic(
     ssr: true,
   }
 );
+
+const PreFooter = dynamic(() => {
+  return import("./footer/pre-footer").then((mod) => mod.PreFooter);
+});
 
 const LiveStreamBanner = dynamic(
   () => {
