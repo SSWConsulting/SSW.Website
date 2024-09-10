@@ -44,15 +44,15 @@ export default function NETUGPage(
     ? props.event.presenterList[0]
     : null;
 
-  const presenter = speaker
+  const presenter = props.event?.presenterName
     ? {
+        name: props.event?.presenterName,
+        url: props.event?.presenterProfileUrl,
+      }
+    : {
         name: speaker?.presenter?.presenter?.name,
         url: speaker?.presenter?.presenter?.peopleProfileURL,
         image: speaker?.presenter?.torsoImg,
-      }
-    : {
-        name: props.event?.presenterName,
-        url: props.event?.presenterProfileUrl,
       };
 
   // Converting element to string to render in presenter block
