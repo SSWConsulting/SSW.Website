@@ -52,7 +52,7 @@ export const eventsCalendarSchema: Collection = {
       name: "presenterList",
       label: "Presenters",
       description:
-        "Shown on the event listing (Presenters: Presenter1, Presenter2 & Presenter3) - Add the main presenter to the top of the list",
+        "Shown on the event listing (Presenters: Presenter1, Presenter2 & Presenter3) - Please ensure all presenters in the list are filled out",
       list: true,
       ui: {
         itemProps: (item) => {
