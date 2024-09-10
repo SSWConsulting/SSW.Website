@@ -476,7 +476,6 @@ type SelectedFilters = {
   technology: string;
 };
 
-const MuliplePresenters = {};
 const getFilterState = (filterGroup: FilterGroupProps[]): SelectedFilters => {
   const technologyGroup = filterGroup[0];
   const categoryGroup = filterGroup[1];
