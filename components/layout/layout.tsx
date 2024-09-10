@@ -12,6 +12,7 @@ import { useReportWebVitals } from "next/web-vitals";
 import { MegaMenuLayout, NavMenuGroup } from "ssw.megamenu";
 import { CustomLink } from "../customLink";
 import { ErrorBoundary } from "../util/error/error-boundary";
+import { Footer } from "./footer/footer";
 
 const openSans = Open_Sans({
   variable: "--open-sans-font",
