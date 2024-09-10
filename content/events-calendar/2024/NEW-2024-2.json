@@ -1,0 +1,17 @@
+{
+  "title": "../NEW 2024",
+  "url": "https://slashnew.tech/",
+  "thumbnail": "/images/thumbs/thumb-slashnew.jpg",
+  "thumbnailDescription": "../NEW conference Newcastle",
+  "presenterName": "",
+  "presenterProfileUrl": "/people",
+  "startDateTime": "2024-05-14T23:00:00.000Z",
+  "endDateTime": "2024-05-16T07:00:00.000Z",
+  "calendarType": "Conferences",
+  "city": "Newcastle",
+  "category": "Other",
+  "description": "../NEW 2024 will be an in-person event, held 15th and 16th of May 2024 at Newcastle City Hall. It's a 2-day event comprised of talks and networking among the most innovative minds in the Sydney-Newcastle region.\n\nSSW'ers presenting:\n\nMatt Wicks\n\nBryden Oliver\n\nand many more speakers!\n\nMeet us there! 🙂\n\nNote: SSW does not host this event.\n",
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
+}
