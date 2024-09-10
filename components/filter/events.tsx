@@ -297,6 +297,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
   to Tina cloud. Images that aren't synced will 404.
    
    */
+
   const [thumbnail, setFallbackImage] = useState("");
   useEffect(() => {
     setFallbackImage(event.thumbnail);
@@ -358,27 +359,23 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
             />
 
             <div>
-              {event.presenterList?.length ? (
+              {(event.presenterName || event.presenterList?.length > 0) && (
                 <EventDescItem
                   label={
-                    event.presenterList.length === 1
-                      ? "Presenter"
-                      : "Presenters"
+                    event?.presenterName || event?.presenterList?.length > 0
+                      ? "Presenters"
+                      : "Presenter"
                   }
                 >
-                  <PresenterLinks presenters={event.presenterList} />
+                  {event.presenterName ? (
+                    <EventDescLink
+                      value={event.presenterName}
+                      linkValue={event.presenterProfileUrl}
+                    />
+                  ) : (
+                    <PresenterLinks presenters={event.presenterList} />
+                  )}
                 </EventDescItem>
-              ) : (
-                event.presenterName && (
-                  <EventDescItem label="Presenter">
-                    {
-                      <EventDescLink
-                        value={event.presenterName}
-                        linkValue={event.presenterProfileUrl}
-                      />
-                    }
-                  </EventDescItem>
-                )
               )}
               {city && (
                 <EventDescItem label="Location">
@@ -479,6 +476,7 @@ type SelectedFilters = {
   technology: string;
 };
 
+const MuliplePresenters = {};
 const getFilterState = (filterGroup: FilterGroupProps[]): SelectedFilters => {
   const technologyGroup = filterGroup[0];
   const categoryGroup = filterGroup[1];
