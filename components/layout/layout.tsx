@@ -1,7 +1,10 @@
 import classNames from "classnames";
+import Document, { Head as H, Html, Main, NextScript } from "next/document";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useLiveStreamProps } from "../../hooks/useLiveStreamProps";
+import { Footer } from "./footer/footer";
+import { PreFooter } from "./footer/pre-footer";
 import { Theme } from "./theme";
 
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
@@ -12,7 +15,6 @@ import { useReportWebVitals } from "next/web-vitals";
 import { MegaMenuLayout, NavMenuGroup } from "ssw.megamenu";
 import { CustomLink } from "../customLink";
 import { ErrorBoundary } from "../util/error/error-boundary";
-import { Footer } from "./footer/footer";
 
 const openSans = Open_Sans({
   variable: "--open-sans-font",
@@ -30,10 +32,6 @@ const LiveStreamWidget = dynamic(
     ssr: true,
   }
 );
-
-const PreFooter = dynamic(() => {
-  return import("./footer/pre-footer").then((mod) => mod.PreFooter);
-});
 
 const LiveStreamBanner = dynamic(
   () => {
@@ -101,30 +99,6 @@ export const Layout = ({
   });
   return (
     <>
-      <Head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#cc4141" />
-        <meta name="theme-color" content="#cc4141" />
-      </Head>
       <Theme>
         {/* Ensures next/font CSS variable is accessible for all components */}
         <style jsx global>{`
