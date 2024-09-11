@@ -4,10 +4,7 @@
 
 @layer base {
   a:not(.unstyled) {
-    @apply transition duration-300 hover:border-sswRed hover:text-sswRed;
-  }
-  a:not(.no-underline)a:not(.unstyled) {
-    @apply underline;
+    @apply transition duration-300 hover:border-sswRed hover:text-sswRed underline decoration-ssw-gray-light decoration-1;
   }
   html,
   body {
