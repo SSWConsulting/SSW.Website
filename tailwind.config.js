@@ -391,8 +391,10 @@ export default {
       backgroundImage: {
         done: "url('/images/icons/done.png')",
         "arrow-right": "url('/images/icons/arrow-right.png')",
-        "live-banner-wait": "url('/blocks/LiveStreamBanner-Wait.png')",
-        "live-banner-live": "url('/blocks/LiveStreamBanner-Live.gif')",
+        "live-banner-wait":
+          "url('/images/Newsletters/LiveStreambanner-Wait.png')",
+        "live-banner-live":
+          "url('/images/Newsletters/LiveStreamBanner-Live.gif')",
         "card-video": "url('/images/icons/video-icon.svg')",
         "card-blog": "url('/images/icons/blog-post.svg')",
         benefits: "url('/consulting/mvc-benefits-bg.jpg')",
