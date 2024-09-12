@@ -14,14 +14,13 @@ type LiveStreamBannerProps = {
 
 const LiveStreamBanner = ({
   liveStreamData,
-  isLive: isLiveProp,
+  isLive,
 }: LiveStreamBannerProps) => {
   const { delayedLiveStreamStart, title } = liveStreamData;
 
   const { startDateTime } = formatDates(liveStreamData);
   const [countdownMins, setCountdownMins] = useState<number>();
   const [countdownText, setCountdownText] = useState("");
-  const [isLive, setIslive] = useState(true);
   const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
 
   const rightnow = dayjs().utc().toDate();
@@ -52,15 +51,7 @@ const LiveStreamBanner = ({
 
     const minsToStart = start.diff(rightnow, "minute");
     setCountdownMins(minsToStart);
-
-    if (rightnow > startDateTime) {
-      setIslive(true);
-    }
   }, [countdownMins]);
-
-  if (!(isLive || isLiveProp)) {
-    return <></>;
-  }
 
   const liveText = "Streaming live now.";
   return (
@@ -77,7 +68,7 @@ const LiveStreamBanner = ({
             <span className="block text-sswRed">
               {isLive ? liveText : countdownText}
             </span>
-            {isLive && scheduledTimeText(dayjs(startDateTime))}
+            {!isLive && scheduledTimeText(dayjs(startDateTime))}
           </p>
         </div>
       </CustomLink>

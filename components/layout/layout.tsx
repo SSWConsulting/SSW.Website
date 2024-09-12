@@ -124,10 +124,12 @@ export const Layout = ({
           )}
         >
           <header className="no-print">
-            <LiveStreamBanner
-              liveStreamData={liveStreamData?.edges[0]?.node}
-              isLive={Boolean(router?.query.liveBanner?.length > 0)}
-            />
+            {(showBanner || router?.query?.liveBanner?.length > 0) && (
+              <LiveStreamBanner
+                liveStreamData={liveStreamData?.edges[0]?.node}
+                isLive={!!isLive}
+              />
+            )}
             <div className="mx-auto max-w-9xl px-8">
               {(isLive || router.query.liveStream) && (
                 <LiveStreamWidget {...liveStreamProps} isLive={!!isLive} />
