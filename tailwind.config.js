@@ -394,7 +394,7 @@ export default {
         "live-banner-wait":
           "url('/images/Newsletters/LiveStreambanner-Wait.png')",
         "live-banner-live":
-          "url('/images/Newsletters/LiveStreamBanner-Live.gif')",
+          "url('/images/Newsletters/LiveStreambanner-air.gif')",
         "card-video": "url('/images/icons/video-icon.svg')",
         "card-blog": "url('/images/icons/blog-post.svg')",
         benefits: "url('/consulting/mvc-benefits-bg.jpg')",
