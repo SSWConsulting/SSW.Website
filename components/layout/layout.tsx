@@ -1,11 +1,15 @@
 import classNames from "classnames";
 import { useRouter } from "next/router";
-import { useLiveStreamProps } from "../../hooks/useLiveStreamProps";
+import { useLiveStreamTimer } from "../../hooks/useLiveStreamProps";
 import { Footer } from "./footer/footer";
 import { PreFooter } from "./footer/pre-footer";
 import { Theme } from "./theme";
 
-import { EventInfoStatic } from "@/services/server/events";
+import {
+  EventInfo,
+  EventInfoStatic,
+  formatDates,
+} from "@/services/server/events";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
@@ -70,22 +74,28 @@ export const Layout = ({
   className = "",
   showAzureBanner,
 }: LayoutProps) => {
-  const liveStreamProps = useLiveStreamProps();
+  const eventJson: EventInfoStatic = liveStreamData?.edges[0]?.node;
+
+  const event: EventInfo = eventJson
+    ? { ...eventJson, ...formatDates(eventJson) }
+    : null;
+
+  const { countdownMins, liveStreamDelayMinutes } = useLiveStreamTimer(event);
   const router = useRouter();
 
   const rightnow = dayjs().utc();
 
   const isLive =
-    liveStreamProps?.countdownMins &&
-    liveStreamProps?.countdownMins <= 0 &&
-    !!liveStreamProps?.event &&
-    rightnow.isBefore(liveStreamProps?.event?.endDateTime);
+    countdownMins &&
+    countdownMins <= 0 &&
+    !!event &&
+    rightnow.isBefore(event.endDateTime);
 
   const showBanner =
-    !!liveStreamProps?.event &&
+    !!event &&
     dayjs().isBetween(
-      dayjs(liveStreamProps?.event.startShowBannerDateTime),
-      dayjs(liveStreamProps?.event.endShowBannerDateTime),
+      dayjs(event.startShowBannerDateTime),
+      dayjs(event.endShowBannerDateTime),
       null,
       "[)"
     );
@@ -126,13 +136,19 @@ export const Layout = ({
           <header className="no-print">
             {(showBanner || router?.query?.liveBanner?.length > 0) && (
               <LiveStreamBanner
-                liveStreamData={liveStreamData?.edges[0]?.node}
+                countdownMins={countdownMins}
+                liveStreamData={event}
                 isLive={!!isLive}
               />
             )}
             <div className="mx-auto max-w-9xl px-8">
               {(isLive || router.query.liveStream) && (
-                <LiveStreamWidget {...liveStreamProps} isLive={!!isLive} />
+                <LiveStreamWidget
+                  event={event}
+                  countdownMins={countdownMins}
+                  liveStreamDelayMinutes={liveStreamDelayMinutes}
+                  isLive={!!isLive}
+                />
               )}
               <MegaMenuLayout
                 menuBarItems={menu.menuGroups}

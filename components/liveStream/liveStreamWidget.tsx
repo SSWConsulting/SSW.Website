@@ -2,6 +2,7 @@
 
 import "react-tooltip/dist/react-tooltip.css";
 
+import { EventInfo } from "@/services/server/events";
 import classNames from "classnames";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
@@ -9,6 +10,7 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import layoutData, {
   default as globals,
 } from "../../content/global/index.json";
@@ -18,10 +20,10 @@ import { InlineJotForm } from "../blocks";
 import { CustomLink } from "../customLink";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
 import { SocialIcons } from "../socialIcons/socialIcons";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;
+  event: EventInfo;
 } & LiveStreamProps;
 
 export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {

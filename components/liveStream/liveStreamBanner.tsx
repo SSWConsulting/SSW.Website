@@ -1,6 +1,6 @@
 "use client";
 
-import { EventInfoStatic, formatDates } from "@/services/server/events";
+import { EventInfo, EventInfoStatic } from "@/services/server/events";
 import classNames from "classnames";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
@@ -8,24 +8,20 @@ import countdownTextFormat from "../../helpers/countdownTextFormat";
 import { CustomLink } from "../customLink";
 
 type LiveStreamBannerProps = {
-  liveStreamData: EventInfoStatic;
+  liveStreamData: EventInfo;
   isLive?: boolean;
+  countdownMins: number;
 };
 
 const LiveStreamBanner = ({
   liveStreamData,
   isLive,
+  countdownMins,
 }: LiveStreamBannerProps) => {
-  const { delayedLiveStreamStart, title } = liveStreamData;
+  const { title, liveStreamDelayMinutes } = liveStreamData;
 
-  const { startDateTime } = formatDates(liveStreamData);
-  const [countdownMins, setCountdownMins] = useState<number>();
+  const { startDateTime } = liveStreamData;
   const [countdownText, setCountdownText] = useState("");
-  const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(
-    liveStreamData.liveStreamDelayMinutes
-  );
-
-  const rightnow = dayjs().utc().toDate();
 
   const scheduledTimeText = (startDateTime: dayjs.Dayjs) => {
     const sydStartTime = startDateTime.tz("Australia/Sydney").format("h:mm a");
@@ -37,23 +33,11 @@ const LiveStreamBanner = ({
       "Do MMM YYYY "
     )} #NetUG`;
   };
+
   useEffect(() => {
     const formattedCountdown = countdownTextFormat(countdownMins);
     setCountdownText(`Airing in ${formattedCountdown}. `);
-
-    const liveDelay = liveStreamDelayMinutes ?? 0;
-    if (!liveStreamDelayMinutes && delayedLiveStreamStart) {
-      setLiveStreamDelayMinutes(liveDelay);
-    }
-    const start = dayjs(startDateTime).add(liveDelay, "minute");
-
-    if (!liveStreamDelayMinutes && delayedLiveStreamStart) {
-      setLiveStreamDelayMinutes(liveDelay);
-    }
-
-    const minsToStart = start.diff(rightnow, "minute");
-    setCountdownMins(minsToStart);
-  }, [countdownMins]);
+  }, [[liveStreamData, countdownMins]]);
 
   const liveText = "Streaming live now.";
   return (
