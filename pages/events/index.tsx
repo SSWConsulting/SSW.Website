@@ -4,7 +4,6 @@ import {
   HydrationBoundary,
   QueryClient,
 } from "@tanstack/react-query";
-import { getUpcomingUG } from "hooks/useLiveStreamProps";
 import type { InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
 import { useTina } from "tinacms/dist/react";
