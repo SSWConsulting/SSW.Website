@@ -8,6 +8,7 @@ import { YouTubeEmbed } from "@/components/embeds/youtubeEmbed";
 import { SocialIcons } from "@/components/socialIcons/socialIcons";
 import layoutData, { default as globals } from "@/content/global/index.json";
 import { getYouTubeId } from "@/helpers/embeds";
+import { EventInfo } from "@/services/server/events";
 import classNames from "classnames";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
@@ -15,11 +16,12 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
-import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;
+  event: EventInfo;
 } & LiveStreamProps;
 
 export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
