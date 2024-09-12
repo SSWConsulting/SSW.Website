@@ -284,7 +284,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
 
           <div className="bg-gray-75 px-4 py-2">
             <h3 className="mb-3 text-xl font-bold">About the Speaker</h3>
-            {!!event?.presenterList.length &&
+            {!!event?.presenterList?.length &&
               event.presenterList.map((presenter, index) => {
                 const presenterDetails = presenter.presenter;
                 return (
