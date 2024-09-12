@@ -1,13 +1,8 @@
 "use client";
 
-import {
-  EventInfo,
-  EventInfoStatic,
-  formatDates,
-} from "@/services/server/events";
+import { EventInfoStatic, formatDates } from "@/services/server/events";
 import classNames from "classnames";
 import dayjs from "dayjs";
-import { format } from "path";
 import { useEffect, useState } from "react";
 import countdownTextFormat from "../../helpers/countdownTextFormat";
 import { CustomLink } from "../customLink";
@@ -38,6 +33,7 @@ const LiveStreamBanner = ({ liveStreamData }: LiveStreamBannerProps) => {
   };
 
   useEffect(() => {
+    console.log("liveStreamData", liveStreamData);
     const formattedCountdown = countdownTextFormat(countdownMins);
     setCountdownText(`Airing in ${formattedCountdown}. `);
 
@@ -55,9 +51,9 @@ const LiveStreamBanner = ({ liveStreamData }: LiveStreamBannerProps) => {
     setCountdownMins(minsToStart);
   }, [countdownMins]);
 
-  if (startDateTime) {
-    return <></>;
-  }
+  // if (startDateTime) {
+  //   return <></>;
+  // }
 
   const liveText = "Streaming live now.";
   return (
