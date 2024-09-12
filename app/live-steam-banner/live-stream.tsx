@@ -3,7 +3,6 @@
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
-
 import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
@@ -14,8 +13,8 @@ import {
   EventInfoStatic,
   formatDates,
 } from "@/services/server/events";
+import { useSearchParams } from "next/navigation";
 import { PropsWithChildren, useEffect, useState } from "react";
-
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
 dayjs.extend(utc);
@@ -47,6 +46,7 @@ interface LiveStreamProps extends PropsWithChildren {
 }
 
 export function LiveSteam({ event, children }: LiveStreamProps) {
+  const params = useSearchParams();
   const [countdownMins, setCountdownMins] = useState<number>();
   const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
 
@@ -103,7 +103,7 @@ export function LiveSteam({ event, children }: LiveStreamProps) {
 
   return (
     <>
-      {showBanner && (
+      {(showBanner || params.get("liveBanner")) && (
         <LiveStreamBanner liveStreamData={event} isLive={!!isLive} />
       )}
       <div className="mx-auto max-w-9xl px-8">
