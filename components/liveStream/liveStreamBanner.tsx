@@ -9,10 +9,15 @@ import { CustomLink } from "../customLink";
 
 type LiveStreamBannerProps = {
   liveStreamData: EventInfoStatic;
+  isLive?: boolean;
 };
 
-const LiveStreamBanner = ({ liveStreamData }: LiveStreamBannerProps) => {
+const LiveStreamBanner = ({
+  liveStreamData,
+  isLive: isLiveProp,
+}: LiveStreamBannerProps) => {
   const { delayedLiveStreamStart, title } = liveStreamData;
+
   const { startDateTime } = formatDates(liveStreamData);
   const [countdownMins, setCountdownMins] = useState<number>();
   const [countdownText, setCountdownText] = useState("");
@@ -51,9 +56,9 @@ const LiveStreamBanner = ({ liveStreamData }: LiveStreamBannerProps) => {
     setCountdownMins(minsToStart);
   }, [countdownMins]);
 
-  // if (startDateTime) {
-  //   return <></>;
-  // }
+  if (!(isLive || isLiveProp)) {
+    return <></>;
+  }
 
   const liveText = "Streaming live now.";
   return (
@@ -70,35 +75,12 @@ const LiveStreamBanner = ({ liveStreamData }: LiveStreamBannerProps) => {
             <span className="block text-sswRed">
               {isLive ? liveText : countdownText}
             </span>
-            {!isLive && scheduledTimeText(dayjs(startDateTime))}
+            {isLive && scheduledTimeText(dayjs(startDateTime))}
           </p>
         </div>
       </CustomLink>
     </div>
   );
 };
-
-// export const getStaticProps = async () => {
-//   const nextUG = await client.queries.getFutureEventsQuery({
-//     fromDate: new Date().toISOString(),
-//     top: 1,
-//     calendarType: "User Groups",
-//   });
-//   const liveStreamData: EventInfo =
-//     nextUG.data.eventsCalendarConnection.edges.map((edge) => ({
-//       ...edge.node,
-//       startDateTime: new Date(edge.node.startDateTime),
-//       endDateTime: new Date(edge.node.endDateTime),
-//       startShowBannerDateTime: new Date(edge.node.startShowBannerDateTime),
-//       endShowBannerDateTime: new Date(edge.node.endShowBannerDateTime),
-//     }))[0] ?? null;
-
-//   console.log("liveStreamData", liveStreamData);
-//   return {
-//     props: {
-//       liveStreamData,
-//     },
-//   };
-// };
 
 export default LiveStreamBanner;

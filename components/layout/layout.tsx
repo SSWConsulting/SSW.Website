@@ -1,13 +1,11 @@
 import classNames from "classnames";
-import Document, { Head as H, Html, Main, NextScript } from "next/document";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { useLiveStreamProps } from "../../hooks/useLiveStreamProps";
 import { Footer } from "./footer/footer";
 import { PreFooter } from "./footer/pre-footer";
 import { Theme } from "./theme";
 
-import { EventInfo, EventInfoStatic } from "@/services/server/events";
+import { EventInfoStatic } from "@/services/server/events";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
@@ -126,7 +124,10 @@ export const Layout = ({
           )}
         >
           <header className="no-print">
-            <LiveStreamBanner liveStreamData={liveStreamData?.edges[0]?.node} />
+            <LiveStreamBanner
+              liveStreamData={liveStreamData?.edges[0]?.node}
+              isLive={Boolean(router?.query.liveBanner?.length > 0)}
+            />
             <div className="mx-auto max-w-9xl px-8">
               {(isLive || router.query.liveStream) && (
                 <LiveStreamWidget {...liveStreamProps} isLive={!!isLive} />
