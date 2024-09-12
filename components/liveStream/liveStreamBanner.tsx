@@ -1,6 +1,6 @@
 "use client";
 
-import { EventInfo, EventInfoStatic } from "@/services/server/events";
+import { EventInfo } from "@/services/server/events";
 import classNames from "classnames";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
