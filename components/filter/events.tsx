@@ -38,8 +38,8 @@ export type EventTrimmed = {
   title: string;
   thumbnail?: string;
   thumbnailDescription?: string;
-  startDateTime: Date;
-  endDateTime: Date;
+  startDateTime?: Date;
+  endDateTime?: Date;
   city?: string;
   cityOther?: string;
   url: string;

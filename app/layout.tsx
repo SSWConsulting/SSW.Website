@@ -11,7 +11,7 @@ import { MenuWrapper } from "@/components/server/MenuWrapper";
 import ChatBaseBot from "@/components/zendeskButton/chatBaseBot";
 import { Metadata, Viewport } from "next";
 
-import { EventInfo } from "@/services/server/events";
+import { EventInfo, EventInfoStatic } from "@/services/server/events";
 import { GoogleTagManager } from "@next/third-parties/google";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
@@ -19,10 +19,10 @@ import isBetween from "dayjs/plugin/isBetween";
 import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
+import client from "../tina/__generated__/client";
 import { LiveSteam } from "./live-steam-banner/live-stream";
 import { DEFAULT } from "./meta-data/default";
 import { getMegamenu } from "./utils/get-mega-menu";
-import client from "../tina/__generated__/client";
 
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
@@ -57,14 +57,10 @@ export default async function RootLayout({
     calendarType: "User Groups",
   });
 
-  const liveStreamData: EventInfo =
-    nextUG.data.eventsCalendarConnection.edges.map((edge) => ({
-      ...edge.node,
-      startDateTime: new Date(edge.node.startDateTime),
-      endDateTime: new Date(edge.node.endDateTime),
-      startShowBannerDateTime: new Date(edge.node.startShowBannerDateTime),
-      endShowBannerDateTime: new Date(edge.node.endShowBannerDateTime),
-    }))[0] ?? null;
+  const liveStreamData: EventInfoStatic =
+    nextUG.data.eventsCalendarConnection.edges.length > 0
+      ? nextUG.data.eventsCalendarConnection.edges[0].node
+      : null;
 
   return (
     <html lang="en" className={openSans.className}>

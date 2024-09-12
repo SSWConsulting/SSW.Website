@@ -9,7 +9,11 @@ import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import dynamic from "next/dynamic";
 
-import { EventInfo } from "@/services/server/events";
+import {
+  EventInfo,
+  EventInfoStatic,
+  formatDates,
+} from "@/services/server/events";
 import { PropsWithChildren, useEffect, useState } from "react";
 
 dayjs.extend(relativeTime);
@@ -29,11 +33,7 @@ const LiveStreamWidget = dynamic(
 );
 
 const LiveStreamBanner = dynamic(
-  () => {
-    return import("@/components/liveStream/liveStreamBanner").then(
-      (mod) => mod.LiveStreamBanner
-    );
-  },
+  () => import("../../components/liveStream/liveStreamBanner"),
   {
     loading: () => <></>,
     ssr: true,
@@ -43,12 +43,17 @@ const LiveStreamBanner = dynamic(
 const INTERVAL_MINUTES = 1;
 
 interface LiveStreamProps extends PropsWithChildren {
-  event: EventInfo;
+  event: EventInfoStatic;
 }
 
 export function LiveSteam({ event, children }: LiveStreamProps) {
   const [countdownMins, setCountdownMins] = useState<number>();
   const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
+
+  const eventDynamic: EventInfo = {
+    ...event,
+    ...formatDates(event),
+  };
 
   useEffect(() => {
     if (!event?.startDateTime || !event?.endDateTime) {
@@ -99,15 +104,12 @@ export function LiveSteam({ event, children }: LiveStreamProps) {
   return (
     <>
       {showBanner && (
-        <LiveStreamBanner
-          {...{ countdownMins, liveStreamDelayMinutes, isLive, event }}
-          isLive={!!isLive}
-        />
+        <LiveStreamBanner liveStreamData={event} isLive={!!isLive} />
       )}
       <div className="mx-auto max-w-9xl px-8">
         {isLive && (
           <LiveStreamWidget
-            {...{ event, liveStreamDelayMinutes }}
+            {...{ eventDynamic, liveStreamDelayMinutes }}
             isLive={!!isLive}
           />
         )}
