@@ -2,7 +2,6 @@ import { Layout } from "@/components/layout";
 import { ErrorPage } from "@/components/util/error-page";
 import client from "@/tina/client";
 import { TODAY } from "hooks/useFetchEvents";
-import { getUpcomingUG } from "hooks/useLiveStreamProps";
 import { InferGetStaticPropsType } from "next";
 
 export default function FourOhFour(

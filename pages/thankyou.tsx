@@ -1,6 +1,5 @@
 import client from "@/tina/client";
 import { TODAY } from "hooks/useFetchEvents";
-import { getUpcomingUG } from "hooks/useLiveStreamProps";
 import { InferGetStaticPropsType } from "next";
 import { FaGlobe, FaUsers } from "react-icons/fa";
 import { CustomLink } from "../components/customLink";

@@ -3,7 +3,6 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { client } from "@/tina/client";
 import { TODAY } from "hooks/useFetchEvents";
-import { getUpcomingUG } from "hooks/useLiveStreamProps";
 import { InferGetStaticPropsType } from "next";
 import { BuiltOnAzure } from "../../components/blocks";
 import { Booking } from "../../components/blocks/booking";

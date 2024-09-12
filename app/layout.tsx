@@ -11,7 +11,7 @@ import { MenuWrapper } from "@/components/server/MenuWrapper";
 import ChatBaseBot from "@/components/zendeskButton/chatBaseBot";
 import { Metadata, Viewport } from "next";
 
-import { EventInfo, EventInfoStatic } from "@/services/server/events";
+import { EventInfoStatic } from "@/services/server/events";
 import { GoogleTagManager } from "@next/third-parties/google";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";

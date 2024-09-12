@@ -10,7 +10,6 @@ import { Section } from "@/components/util/section";
 import { SEO } from "@/components/util/seo";
 import client from "@/tina/client";
 import { TODAY } from "hooks/useFetchEvents";
-import { getUpcomingUG } from "hooks/useLiveStreamProps";
 import { removeExtension } from "services/client/utils.service";
 import { tinaField, useTina } from "tinacms/dist/react";
 

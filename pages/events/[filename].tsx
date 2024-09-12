@@ -2,7 +2,6 @@ import { tinaField, useTina } from "tinacms/dist/react";
 
 import { client } from "@/tina/client";
 import { TODAY } from "hooks/useFetchEvents";
-import { getUpcomingUG } from "hooks/useLiveStreamProps";
 import { InferGetStaticPropsType } from "next";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { ClientLogos } from "../../components/blocks";

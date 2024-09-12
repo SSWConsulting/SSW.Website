@@ -1,8 +1,6 @@
 import client from "@/tina/client";
 import classNames from "classnames";
 import { TODAY } from "hooks/useFetchEvents";
-import { getUpcomingUG } from "hooks/useLiveStreamProps";
-import { event } from "lib/gtag";
 import { InferGetStaticPropsType } from "next";
 import ReactDomServer from "react-dom/server";
 import { tinaField, useEditState, useTina } from "tinacms/dist/react";
