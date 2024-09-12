@@ -8,9 +8,7 @@ import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { client } from "@/tina/client";
-import { LiveSteam } from "app/live-steam-banner/live-stream";
 import { TODAY } from "hooks/useFetchEvents";
-import { getUpcomingUG } from "hooks/useLiveStreamProps";
 import { pageBlocks } from "../components/blocks";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { Layout } from "../components/layout";
