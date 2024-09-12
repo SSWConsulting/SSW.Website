@@ -24,7 +24,7 @@ const LiveStreamBanner = ({
   const [isLive, setIslive] = useState(true);
   const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
 
-  const rightnow = dayjs().utc();
+  const rightnow = dayjs().utc().toDate();
 
   const scheduledTimeText = (startDateTime: dayjs.Dayjs) => {
     const sydStartTime = startDateTime.tz("Australia/Sydney").format("h:mm a");
@@ -36,7 +36,6 @@ const LiveStreamBanner = ({
       "Do MMM YYYY "
     )} #NetUG`;
   };
-
   useEffect(() => {
     const formattedCountdown = countdownTextFormat(countdownMins);
     setCountdownText(`Airing in ${formattedCountdown}. `);
@@ -53,6 +52,10 @@ const LiveStreamBanner = ({
 
     const minsToStart = start.diff(rightnow, "minute");
     setCountdownMins(minsToStart);
+
+    if (rightnow > startDateTime) {
+      setIslive(true);
+    }
   }, [countdownMins]);
 
   if (!(isLive || isLiveProp)) {
