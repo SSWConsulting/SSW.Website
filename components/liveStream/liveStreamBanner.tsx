@@ -38,7 +38,6 @@ const LiveStreamBanner = ({
   };
 
   useEffect(() => {
-    console.log("liveStreamData", liveStreamData);
     const formattedCountdown = countdownTextFormat(countdownMins);
     setCountdownText(`Airing in ${formattedCountdown}. `);
 
