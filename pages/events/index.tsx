@@ -1,9 +1,10 @@
 import client from "@/tina/client";
 import {
+  dehydrate,
   HydrationBoundary,
   QueryClient,
-  dehydrate,
 } from "@tanstack/react-query";
+import { getUpcomingUG } from "hooks/useLiveStreamProps";
 import type { InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
 import { useTina } from "tinacms/dist/react";
@@ -22,6 +23,7 @@ import {
   FUTURE_EVENTS_QUERY_KEY,
   getEventsCategories,
   getFutureEvents,
+  TODAY,
 } from "../../hooks/useFetchEvents";
 
 const ISR_TIME = 60 * 60; // 1 hour
@@ -43,7 +45,7 @@ export default function EventsIndexPage(
   return (
     <HydrationBoundary state={props.dehydratedState}>
       <SEO seo={data.eventsIndex.seo} />
-      <Layout menu={data.megamenu}>
+      <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
         <Container size="small">
           <div className="md:flex md:flex-row">
             <h1 className="md:mr-12 md:shrink-0 md:basis-64">SSW Events</h1>
@@ -72,6 +74,7 @@ export default function EventsIndexPage(
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.eventsIndexContentQuery({
     relativePath: "index.mdx",
+    date: TODAY.toISOString(),
   });
 
   const queryClient = new QueryClient();

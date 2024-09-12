@@ -1,5 +1,7 @@
 import { ReadMore } from "@/components/usergroup/readMore";
 import { client } from "@/tina/client";
+import { TODAY } from "hooks/useFetchEvents";
+import { getUpcomingUG } from "hooks/useLiveStreamProps";
 import { InferGetStaticPropsType } from "next";
 import { FaYoutube } from "react-icons/fa";
 import { useTina } from "tinacms/dist/react";
@@ -34,7 +36,7 @@ export default function LivePage(
   });
 
   return (
-    <Layout menu={data.megamenu}>
+    <Layout liveStreamData={data.userGroup} menu={data.megamenu}>
       <SEO seo={data.live.seo} />
       <LiveHeader title={data.live.title} subtitle={data.live.subtitle} />
       <Section className="mx-auto w-full max-w-9xl px-8 py-5">
@@ -123,17 +125,18 @@ export default function LivePage(
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.liveContentQuery({
     relativePath: "index.mdx",
+    data: TODAY.toISOString(),
   });
 
   const event = await getNextEventToBeLiveStreamed();
   const eventWithStaticProperties = convertEventDatesToStrings(event);
-
   return {
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
       event: eventWithStaticProperties || null,
+      liveStreamData,
     },
     revalidate: ISR_TIME,
   };

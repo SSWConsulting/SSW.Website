@@ -7,6 +7,7 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 import classNames from "classnames";
+import { TODAY } from "hooks/useFetchEvents";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import ArticlesHeader from "../../components/articles/articlesHeader";
@@ -31,7 +32,11 @@ export default function ArticlesIndexPage(props) {
     <>
       <HydrationBoundary state={dehydratedState}>
         <SEO seo={data.articlesIndex.seo} />
-        <Layout menu={data.megamenu} showAzureBanner={true}>
+        <Layout
+          liveStreamData={props.data.userGroup}
+          menu={data.megamenu}
+          showAzureBanner={true}
+        >
           {data.articlesIndex.headerImage?.heroBackground && (
             <Section className="mx-auto hidden w-full sm:block">
               <ArticlesHeader
@@ -104,6 +109,7 @@ export default function ArticlesIndexPage(props) {
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.articlesIndexContentQuery({
     relativePath: "index.mdx",
+    date: TODAY.toISOString(),
   });
   const queryClient = new QueryClient();
   await queryClient.prefetchInfiniteQuery({

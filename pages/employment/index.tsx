@@ -2,6 +2,8 @@ import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { client } from "@/tina/client";
+import { TODAY } from "hooks/useFetchEvents";
+import { getUpcomingUG } from "hooks/useLiveStreamProps";
 import { InferGetStaticPropsType } from "next";
 import { BuiltOnAzure } from "../../components/blocks";
 import { Booking } from "../../components/blocks/booking";
@@ -72,7 +74,7 @@ export default function EmploymentPage(
   return (
     <>
       <SEO seo={props.seo} />
-      <Layout menu={data.megamenu}>
+      <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
         <Section className="mx-auto w-full max-w-9xl px-8 py-5">
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}
@@ -183,6 +185,7 @@ export default function EmploymentPage(
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.employmentPageQuery({
     relativePath: "index.mdx",
+    date: TODAY.toISOString(),
   });
 
   const seo = tinaProps.data.employment.seo;

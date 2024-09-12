@@ -7,6 +7,36 @@ fragment LayoutQueryFragment on Query {
   }
 }
 
+fragment UserGroupParts on EventsCalendarConnection {
+  edges {
+    node {
+      title
+      url
+      thumbnail
+      thumbnailDescription
+      presenterName
+      presenterProfileUrl
+      startDateTime
+      endDateTime
+      startShowBannerDateTime
+      endShowBannerDateTime
+      presenterList {
+        presenter {
+          ... on Presenter {
+            profileImg
+            torsoImg
+            presenter {
+              name
+              peopleProfileURL
+            }
+          }
+        }
+      }
+      youTubeId
+    }
+  }
+}
+
 fragment GetArticleParts on ArticlesConnection {
   pageInfo {
     hasPreviousPage

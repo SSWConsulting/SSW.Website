@@ -1,46 +1,116 @@
-query layoutQuery {
+query layoutQuery($date: String) {
   ...LayoutQueryFragment
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
+  }
 }
 
-query contentQuery($relativePath: String!) {
+query contentQuery($relativePath: String!, $date: String) {
   ...LayoutQueryFragment
   page(relativePath: $relativePath) {
     ...PageParts
   }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
+  }
 }
 
-query consultingContentQuery($relativePath: String!) {
+query consultingContentQuery($relativePath: String!, $date: String) {
   ...LayoutQueryFragment
   consulting(relativePath: $relativePath) {
     ...ConsultingParts
   }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
+  }
 }
 
-query consultingIndexQuery {
+query consultingIndexQuery($date: String) {
   ...LayoutQueryFragment
   consultingIndex(relativePath: "index.json") {
     ...ConsultingIndexParts
   }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
+  }
 }
 
-query videoProductionContentQuery($relativePath: String!) {
+query videoProductionContentQuery($relativePath: String!, $date: String) {
   ...LayoutQueryFragment
   videoProduction(relativePath: $relativePath) {
     ...VideoProductionParts
   }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
+  }
 }
 
-query companyContentQuery($relativePath: String!) {
+query companyContentQuery($relativePath: String!, $date: String) {
   ...LayoutQueryFragment
   company(relativePath: $relativePath) {
     ...CompanyParts
   }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
+  }
 }
 
-query articlesContentQuery($relativePath: String!) {
+query articlesContentQuery($relativePath: String!, $date: String) {
   ...LayoutQueryFragment
   articles(relativePath: $relativePath) {
     ...ArticlesParts
+  }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
   }
 }
 
@@ -74,37 +144,87 @@ query getPastEventsQuery(
   }
 }
 
-query caseStudyContentQuery($relativePath: String!) {
+query caseStudyContentQuery($relativePath: String!, $date: String) {
   ...LayoutQueryFragment
   caseStudy(relativePath: $relativePath) {
     ...CaseStudyParts
   }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
+  }
 }
-query companyIndexContentQuery($relativePath: String!) {
+query companyIndexContentQuery($relativePath: String!, $date: String) {
   ...LayoutQueryFragment
   companyIndex(relativePath: $relativePath) {
     ...CompanyIndexParts
   }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
+  }
 }
 
-query articlesIndexContentQuery($relativePath: String!) {
+query articlesIndexContentQuery($relativePath: String!, $date: String) {
   ...LayoutQueryFragment
   articlesIndex(relativePath: $relativePath) {
     ...ArticlesIndexParts
   }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
+  }
 }
 
-query officeContentQuery($relativePath: String!) {
+query officeContentQuery($relativePath: String!, $date: String) {
   ...LayoutQueryFragment
   offices(relativePath: $relativePath) {
     ...OfficesParts
   }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
+  }
 }
 
-query trainingContentQuery($relativePath: String!) {
+query trainingContentQuery($relativePath: String!, $date: String) {
   ...LayoutQueryFragment
   training(relativePath: $relativePath) {
     ...TrainingParts
+  }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
   }
 }
 
@@ -124,10 +244,20 @@ query technologyCardContentQuery($cardNames: [String!]) {
   }
 }
 
-query employmentPageQuery($relativePath: String!) {
+query employmentPageQuery($relativePath: String!, $date: String) {
   ...LayoutQueryFragment
   employment(relativePath: $relativePath) {
     ...EmploymentParts
+  }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
   }
   opportunitiesConnection {
     edges {
@@ -138,7 +268,7 @@ query employmentPageQuery($relativePath: String!) {
   }
 }
 
-query officeIndexQuery($relativePath: String!) {
+query officeIndexQuery($relativePath: String!, $date: String) {
   ...LayoutQueryFragment
   officeIndex(relativePath: $relativePath) {
     seo {
@@ -173,6 +303,16 @@ query officeIndexQuery($relativePath: String!) {
       }
     }
   }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
+  }
 }
 
 query productContentQuery($relativePath: String!) {
@@ -189,64 +329,144 @@ query productsIndexQuery {
   }
 }
 
-query industryIndexQuery {
+query industryIndexQuery($date: String) {
   ...LayoutQueryFragment
   industryIndex(relativePath: "index.json") {
     ...IndustryIndexParts
   }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
+  }
 }
 
-query industryContentQuery($relativePath: String!) {
+query industryContentQuery($relativePath: String!, $date: String) {
   ...LayoutQueryFragment
   industry(relativePath: $relativePath) {
     ...IndustryParts
   }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
+  }
 }
 
-query eventsContentQuery($relativePath: String!) {
+query eventsContentQuery($relativePath: String!, $date: String) {
   ...LayoutQueryFragment
   events(relativePath: $relativePath) {
     ...EventsParts
   }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
+  }
 }
 
-query eventsIndexContentQuery($relativePath: String!) {
+query eventsIndexContentQuery($relativePath: String!, $date: String) {
   ...LayoutQueryFragment
   eventsIndex(relativePath: $relativePath) {
     ...EventsIndexParts
   }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
+  }
 }
 
-query userGroupPageContentQuery($relativePath: String!) {
+query userGroupPageContentQuery($relativePath: String!, $date: String) {
   ...LayoutQueryFragment
   userGroupPage(relativePath: $relativePath) {
     ...UserGroupPageParts
     __typename
+  }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
   }
   userGroupGlobal(relativePath: "global.json") {
     ...UserGroupGlobalParts
   }
 }
 
-query partnerIndexQuery {
+query partnerIndexQuery($date: String) {
   ...LayoutQueryFragment
   partnerIndex(relativePath: "index.json") {
     ...PartnerIndexParts
     __typename
   }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
+  }
 }
 
-query liveContentQuery($relativePath: String!) {
+query liveContentQuery($relativePath: String!, $date: String) {
   ...LayoutQueryFragment
   live(relativePath: $relativePath) {
     ...LiveParts
   }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
+  }
 }
 
-query logosContentQuery($relativePath: String!) {
+query logosContentQuery($relativePath: String!, $date: String) {
   ...LayoutQueryFragment
   logos(relativePath: $relativePath) {
     ...LogosParts
+  }
+  userGroup: eventsCalendarConnection(
+    filter: {
+      calendarType: { eq: "User Groups" }
+      startDateTime: { after: $date }
+    }
+    sort: "startDateTime"
+    first: 1
+  ) {
+    ...GetCalendarEventsParts
   }
 }
 

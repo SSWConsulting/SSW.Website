@@ -1,8 +1,11 @@
 import client from "@/tina/client";
 import classNames from "classnames";
+import { TODAY } from "hooks/useFetchEvents";
+import { getUpcomingUG } from "hooks/useLiveStreamProps";
+import { event } from "lib/gtag";
 import { InferGetStaticPropsType } from "next";
 import ReactDomServer from "react-dom/server";
-import { tinaField, useTina } from "tinacms/dist/react";
+import { tinaField, useEditState, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import {
   BuiltOnAzure,
@@ -40,6 +43,9 @@ export default function NETUGPage(
     query: props.query,
     variables: props.variables,
   });
+
+  const { edit } = useEditState();
+  console.log("edit", edit);
   const speaker = props.event?.presenterList
     ? props.event.presenterList[0]
     : null;
@@ -61,7 +67,7 @@ export default function NETUGPage(
     );
     return (
       <>
-        <Layout menu={data.megamenu}>
+        <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
           <SEO seo={data.userGroupPage.seo} />
 
           {props.event && (
@@ -304,7 +310,7 @@ export default function NETUGPage(
   } else if (data?.userGroupPage.__typename === "UserGroupPageContentPage") {
     return (
       <>
-        <Layout menu={data.megamenu}>
+        <Layout liveStreamData={props.event} menu={data.megamenu}>
           <SEO seo={data.userGroupPage.seo} />
           {data.userGroupPage.seo.showBreadcrumb && (
             <Section className="mx-auto w-full max-w-9xl px-8 py-5">
@@ -338,6 +344,7 @@ export const getStaticProps = async ({ params }) => {
 
   const tinaProps = await client.queries.userGroupPageContentQuery({
     relativePath: `${filename}.mdx`,
+    date: TODAY.toISOString(),
   });
 
   if (!tinaProps?.data?.userGroupPage?.__typename) {
@@ -419,7 +426,6 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const userGroupPages = await client.queries.userGroupPageConnection();
-
   const paths = userGroupPages.data.userGroupPageConnection.edges.map(
     (page) => {
       if (page.node._sys.filename === "index") {

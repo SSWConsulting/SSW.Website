@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
-import { EventInfo } from "../services/server/events";
+import { EventInfo, EventInfoStatic } from "../services/server/events";
 import client from "../tina/__generated__/client";
 
 export type LiveStreamProps = {
@@ -74,3 +74,24 @@ export function useLiveStreamProps(): LiveStreamProps {
     event,
   };
 }
+
+export const getUpcomingUG = async (): Promise<EventInfoStatic> => {
+  const nextUG = await client.queries.getFutureEventsQuery({
+    fromDate: new Date().toISOString(),
+    top: 1,
+    calendarType: "User Groups",
+  });
+  const liveStreamData: EventInfoStatic =
+    nextUG.data.eventsCalendarConnection.edges.map((edge) => ({
+      ...edge.node,
+      startDateTime: new Date(edge.node.startDateTime).toISOString(),
+      endDateTime: new Date(edge.node.endDateTime).toISOString(),
+      startShowBannerDateTime: new Date(
+        edge.node.startShowBannerDateTime
+      ).toISOString(),
+      endShowBannerDateTime: new Date(
+        edge.node.endShowBannerDateTime
+      ).toISOString(),
+    }))[0] ?? null;
+  return liveStreamData;
+};

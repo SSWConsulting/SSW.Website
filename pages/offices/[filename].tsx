@@ -4,6 +4,8 @@ import { client } from "@/tina/client";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+import { TODAY } from "hooks/useFetchEvents";
+import { getUpcomingUG } from "hooks/useLiveStreamProps";
 import { InferGetStaticPropsType } from "next";
 import { BuiltOnAzure } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
@@ -30,7 +32,7 @@ export default function OfficePage(
   return (
     <>
       <SEO seo={data.offices.seo} />
-      <Layout menu={data.megamenu}>
+      <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
         {data.offices.coverImg ? (
           <div className="mx-auto max-w-9xl px-6 sm:px-8">
             <div className="size-auto">
@@ -199,6 +201,7 @@ const SidePanel = ({ office }) => {
 export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.officeContentQuery({
     relativePath: `${params.filename}.mdx`,
+    date: TODAY.toISOString(),
   });
 
   if (tinaProps.data.offices.seo && !tinaProps.data.offices.seo.canonical) {

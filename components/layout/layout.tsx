@@ -7,6 +7,7 @@ import { Footer } from "./footer/footer";
 import { PreFooter } from "./footer/pre-footer";
 import { Theme } from "./theme";
 
+import { EventInfo, EventInfoStatic } from "@/services/server/events";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
@@ -34,11 +35,7 @@ const LiveStreamWidget = dynamic(
 );
 
 const LiveStreamBanner = dynamic(
-  () => {
-    return import("../liveStream/liveStreamBanner").then(
-      (mod) => mod.LiveStreamBanner
-    );
-  },
+  () => import("../liveStream/liveStreamBanner"),
   {
     loading: () => <></>,
     ssr: true,
@@ -52,9 +49,24 @@ interface LayoutProps {
   };
   children: React.ReactNode;
   showAzureBanner?: boolean;
+  liveStreamData: {
+    __typename?: "EventsCalendarConnection";
+    totalCount: number;
+    pageInfo: {
+      __typename?: "PageInfo";
+      hasPreviousPage: boolean;
+      hasNextPage: boolean;
+      startCursor: string;
+      endCursor: string;
+    };
+    edges?: {
+      node?: EventInfoStatic;
+    }[];
+  };
 }
 
 export const Layout = ({
+  liveStreamData,
   children,
   menu,
   className = "",
@@ -114,9 +126,7 @@ export const Layout = ({
           )}
         >
           <header className="no-print">
-            {(showBanner || router.query.liveBanner) && (
-              <LiveStreamBanner {...liveStreamProps} isLive={!!isLive} />
-            )}
+            <LiveStreamBanner liveStreamData={liveStreamData?.edges[0]?.node} />
             <div className="mx-auto max-w-9xl px-8">
               {(isLive || router.query.liveStream) && (
                 <LiveStreamWidget {...liveStreamProps} isLive={!!isLive} />

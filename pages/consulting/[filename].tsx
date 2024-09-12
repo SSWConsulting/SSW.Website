@@ -1,5 +1,6 @@
 import { CallToAction } from "@/components/callToAction/callToAction";
 import { client } from "@/tina/client";
+import { TODAY } from "hooks/useFetchEvents";
 import { InferGetStaticPropsType } from "next";
 import { ReactElement } from "react";
 import ReactDOMServer from "react-dom/server";
@@ -61,7 +62,7 @@ export default function ConsultingPage(
       }}
     >
       <SEO seo={props.seo} />
-      <Layout menu={data.megamenu}>
+      <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
         <Section className="mx-auto w-full max-w-9xl px-8 py-5">
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}
@@ -200,6 +201,7 @@ const parseCallToAction = (
 export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.consultingContentQuery({
     relativePath: `${params.filename}.mdx`,
+    date: TODAY.toISOString(),
   });
 
   const categories =

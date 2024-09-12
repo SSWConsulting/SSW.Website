@@ -11,6 +11,8 @@ import { SEO } from "@/components/util/seo";
 import { removeExtension } from "@/services/client/utils.service";
 import client from "@/tina/client";
 import classNames from "classnames";
+import { TODAY } from "hooks/useFetchEvents";
+import { getUpcomingUG } from "hooks/useLiveStreamProps";
 import { InferGetStaticPropsType } from "next";
 import Image from "next/image";
 import { tinaField, useTina } from "tinacms/dist/react";
@@ -31,7 +33,7 @@ export default function ArticlesPage(
     <div>
       <SEO seo={props.seo} />
 
-      <Layout menu={data.megamenu}>
+      <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
         {data.articles.bannerImg && (
           <Container className="prose flex-1" size="custom">
             <div data-tina-field={tinaField(data.articles, "bannerImg")}>
@@ -147,6 +149,7 @@ export default function ArticlesPage(
 export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.articlesContentQuery({
     relativePath: `${params.filename}.mdx`,
+    date: TODAY.toISOString(),
   });
 
   const seo = tinaProps.data.articles.seo;

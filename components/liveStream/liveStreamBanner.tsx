@@ -1,23 +1,30 @@
 "use client";
 
+import {
+  EventInfo,
+  EventInfoStatic,
+  formatDates,
+} from "@/services/server/events";
 import classNames from "classnames";
 import dayjs from "dayjs";
+import { format } from "path";
 import { useEffect, useState } from "react";
 import countdownTextFormat from "../../helpers/countdownTextFormat";
-import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 import { CustomLink } from "../customLink";
 
 type LiveStreamBannerProps = {
-  isLive?: boolean;
-} & LiveStreamProps;
+  liveStreamData: EventInfoStatic;
+};
 
-export const LiveStreamBanner = ({
-  countdownMins,
-  liveStreamDelayMinutes,
-  isLive,
-  event,
-}: LiveStreamBannerProps) => {
+const LiveStreamBanner = ({ liveStreamData }: LiveStreamBannerProps) => {
+  const { delayedLiveStreamStart, title } = liveStreamData;
+  const { startDateTime } = formatDates(liveStreamData);
+  const [countdownMins, setCountdownMins] = useState<number>();
   const [countdownText, setCountdownText] = useState("");
+  const [isLive, setIslive] = useState(true);
+  const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
+
+  const rightnow = dayjs().utc();
 
   const scheduledTimeText = (startDateTime: dayjs.Dayjs) => {
     const sydStartTime = startDateTime.tz("Australia/Sydney").format("h:mm a");
@@ -33,9 +40,22 @@ export const LiveStreamBanner = ({
   useEffect(() => {
     const formattedCountdown = countdownTextFormat(countdownMins);
     setCountdownText(`Airing in ${formattedCountdown}. `);
+
+    const liveDelay = liveStreamDelayMinutes ?? 0;
+    if (!liveStreamDelayMinutes && delayedLiveStreamStart) {
+      setLiveStreamDelayMinutes(liveDelay);
+    }
+    const start = dayjs(startDateTime).add(liveDelay, "minute");
+
+    if (!liveStreamDelayMinutes && delayedLiveStreamStart) {
+      setLiveStreamDelayMinutes(liveDelay);
+    }
+
+    const minsToStart = start.diff(rightnow, "minute");
+    setCountdownMins(minsToStart);
   }, [countdownMins]);
 
-  if (!event?.startDateTime) {
+  if (startDateTime) {
     return <></>;
   }
 
@@ -49,17 +69,40 @@ export const LiveStreamBanner = ({
             isLive ? "md:bg-live-banner-live" : "md:bg-live-banner-wait"
           )}
         >
-          <h1 className="m-0 py-0 text-xl font-light text-gray-300">
-            {event.title}
-          </h1>
+          <h1 className="m-0 py-0 text-xl font-light text-gray-300">{title}</h1>
           <p className="py-0 text-xs text-white">
             <span className="block text-sswRed">
               {isLive ? liveText : countdownText}
             </span>
-            {!isLive && scheduledTimeText(dayjs(event.startDateTime))}
+            {!isLive && scheduledTimeText(dayjs(startDateTime))}
           </p>
         </div>
       </CustomLink>
     </div>
   );
 };
+
+// export const getStaticProps = async () => {
+//   const nextUG = await client.queries.getFutureEventsQuery({
+//     fromDate: new Date().toISOString(),
+//     top: 1,
+//     calendarType: "User Groups",
+//   });
+//   const liveStreamData: EventInfo =
+//     nextUG.data.eventsCalendarConnection.edges.map((edge) => ({
+//       ...edge.node,
+//       startDateTime: new Date(edge.node.startDateTime),
+//       endDateTime: new Date(edge.node.endDateTime),
+//       startShowBannerDateTime: new Date(edge.node.startShowBannerDateTime),
+//       endShowBannerDateTime: new Date(edge.node.endShowBannerDateTime),
+//     }))[0] ?? null;
+
+//   console.log("liveStreamData", liveStreamData);
+//   return {
+//     props: {
+//       liveStreamData,
+//     },
+//   };
+// };
+
+export default LiveStreamBanner;

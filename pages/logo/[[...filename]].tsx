@@ -9,6 +9,8 @@ import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { SEO } from "@/components/util/seo";
 import client from "@/tina/client";
+import { TODAY } from "hooks/useFetchEvents";
+import { getUpcomingUG } from "hooks/useLiveStreamProps";
 import { removeExtension } from "services/client/utils.service";
 import { tinaField, useTina } from "tinacms/dist/react";
 
@@ -22,7 +24,11 @@ export default function LogosPage(
   });
 
   return (
-    <Layout menu={data?.megamenu} showAzureBanner>
+    <Layout
+      liveStreamData={props.data.userGroup}
+      menu={data?.megamenu}
+      showAzureBanner
+    >
       <SEO seo={props.seo} />
       <Container className="flex-1 pt-2">
         {props?.seo?.showBreadcrumb && (
@@ -69,13 +75,13 @@ export const getStaticProps = async ({ params }) => {
 
   const tinaProps = await client.queries.logosContentQuery({
     relativePath: `${filename}.mdx`,
+    date: TODAY.toISOString(),
   });
 
   const seo = tinaProps.data.logos.seo;
   if (seo && (seo?.canonical === null || seo?.canonical === "")) {
     seo.canonical = `${tinaProps.data.global.header.url}logo/${params.filename}`;
   }
-
   return {
     props: {
       data: tinaProps.data,

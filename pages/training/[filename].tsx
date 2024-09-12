@@ -1,6 +1,8 @@
 import { tinaField, useTina } from "tinacms/dist/react";
 
 import { client } from "@/tina/client";
+import { TODAY } from "hooks/useFetchEvents";
+import { getUpcomingUG } from "hooks/useLiveStreamProps";
 import { InferGetStaticPropsType } from "next";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { ClientLogos } from "../../components/blocks";
@@ -36,7 +38,7 @@ export default function TrainingPage(
   return (
     <>
       <SEO seo={data.training.seo} />
-      <Layout menu={data.megamenu}>
+      <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
         <div
           data-tina-field={tinaField(data.training, "trainingHeaderCarousel")}
         >
@@ -125,6 +127,7 @@ export default function TrainingPage(
 export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.trainingContentQuery({
     relativePath: `${params.filename}.mdx`,
+    date: TODAY.toISOString(),
   });
 
   const testimonialsResult = await getTestimonialsByCategories(["Internship"]);
@@ -132,7 +135,6 @@ export const getStaticProps = async ({ params }) => {
   if (tinaProps.data.training.seo && !tinaProps.data.training.seo.canonical) {
     tinaProps.data.training.seo.canonical = `${tinaProps.data.global.header.url}training/${params.filename}`;
   }
-
   return {
     props: {
       data: tinaProps.data,

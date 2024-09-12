@@ -8,6 +8,9 @@ import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { client } from "@/tina/client";
+import { LiveSteam } from "app/live-steam-banner/live-stream";
+import { TODAY } from "hooks/useFetchEvents";
+import { getUpcomingUG } from "hooks/useLiveStreamProps";
 import { pageBlocks } from "../components/blocks";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { Layout } from "../components/layout";
@@ -58,7 +61,11 @@ export default function HomePage(
       )}
 
       <SEO seo={data.page.seo} />
-      <Layout menu={data.megamenu} showAzureBanner={data.page.showAzureFooter}>
+      <Layout
+        menu={data.megamenu}
+        liveStreamData={props.data.userGroup}
+        showAzureBanner={data.page.showAzureFooter}
+      >
         {data.page.breadcrumbs && (
           <Section className="mx-auto w-full max-w-9xl px-8 py-5">
             <Breadcrumbs
@@ -129,10 +136,10 @@ export const getStaticProps = async ({ params }) => {
 
   const tinaProps = await client.queries.contentQuery({
     relativePath: `${relativePath}.mdx`,
+    date: TODAY.toISOString(),
   });
 
   const sideBars = tinaProps.data.page?.sideBar || [];
-
   const preFetchedUpcomingEvents = await Promise.all(
     sideBars
       .filter((sideBar) => sideBar.__typename === "PageSideBarUpcomingEvents")
