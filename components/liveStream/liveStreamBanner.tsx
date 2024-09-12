@@ -37,7 +37,7 @@ const LiveStreamBanner = ({
   useEffect(() => {
     const formattedCountdown = countdownTextFormat(countdownMins);
     setCountdownText(`Airing in ${formattedCountdown}. `);
-  }, [[liveStreamData, countdownMins]]);
+  }, [liveStreamData, countdownMins]);
 
   const liveText = "Streaming live now.";
   return (
