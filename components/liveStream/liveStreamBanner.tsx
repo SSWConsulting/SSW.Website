@@ -21,7 +21,9 @@ const LiveStreamBanner = ({
   const { startDateTime } = formatDates(liveStreamData);
   const [countdownMins, setCountdownMins] = useState<number>();
   const [countdownText, setCountdownText] = useState("");
-  const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
+  const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(
+    liveStreamData.liveStreamDelayMinutes
+  );
 
   const rightnow = dayjs().utc().toDate();
 
