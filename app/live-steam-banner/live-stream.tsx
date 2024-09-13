@@ -104,12 +104,17 @@ export function LiveSteam({ event, children }: LiveStreamProps) {
   return (
     <>
       {(showBanner || params.get("liveBanner")) && (
-        <LiveStreamBanner liveStreamData={event} isLive={!!isLive} />
+        <LiveStreamBanner
+          countdownMins={countdownMins}
+          liveStreamData={eventDynamic}
+          isLive={!!isLive}
+        />
       )}
       <div className="mx-auto max-w-9xl px-8">
         {isLive && (
           <LiveStreamWidget
             {...{ eventDynamic, liveStreamDelayMinutes }}
+            event={eventDynamic}
             isLive={!!isLive}
           />
         )}
