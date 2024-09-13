@@ -349,7 +349,6 @@ export const getStaticProps = async ({ params }) => {
 
   const tinaProps = await client.queries.userGroupPageContentQuery({
     relativePath: `${filename}.mdx`,
-    date: TODAY.toISOString(),
   });
 
   if (!tinaProps?.data?.userGroupPage?.__typename) {
