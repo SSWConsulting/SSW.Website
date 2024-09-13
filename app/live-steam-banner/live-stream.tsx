@@ -111,7 +111,7 @@ export function LiveStream({ event, children }: LiveStreamProps) {
         />
       )}
       <div className="mx-auto max-w-9xl px-8">
-        {isLive && (
+        {(isLive || params.get("liveStream")) && (
           <LiveStreamWidget
             {...{ eventDynamic, liveStreamDelayMinutes }}
             event={eventDynamic}
