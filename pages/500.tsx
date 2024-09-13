@@ -3,7 +3,6 @@ import { ErrorPage } from "@/components/util/error-page";
 import client from "@/tina/client";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import { TODAY } from "hooks/useFetchEvents";
-import { getUpcomingUG } from "hooks/useLiveStreamProps";
 import { InferGetStaticPropsType } from "next";
 import { useEffect } from "react";
 
@@ -35,12 +34,9 @@ export const getStaticProps = async () => {
   const tinaProps = await client.queries.layoutQuery({
     date: TODAY.toISOString(),
   });
-  const liveStreamData = await getUpcomingUG();
-
   return {
     props: {
       ...tinaProps,
-      liveStreamData,
     },
   };
 };
