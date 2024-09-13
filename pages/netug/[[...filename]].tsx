@@ -27,7 +27,7 @@ import { SEO } from "../../components/util/seo";
 import { getRandomTestimonialsByCategory } from "../../helpers/getTestimonials";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
-import { EventInfo, EventInfoStatic } from "../../services/server/events";
+import { EventInfo } from "../../services/server/events";
 
 const ISR_TIME = 60 * 60; // 1 hour;
 
