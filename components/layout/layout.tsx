@@ -52,15 +52,6 @@ interface LayoutProps {
   children: React.ReactNode;
   showAzureBanner?: boolean;
   liveStreamData: {
-    __typename?: "EventsCalendarConnection";
-    totalCount: number;
-    pageInfo: {
-      __typename?: "PageInfo";
-      hasPreviousPage: boolean;
-      hasNextPage: boolean;
-      startCursor: string;
-      endCursor: string;
-    };
     edges?: {
       node?: EventInfoStatic;
     }[];
