@@ -397,7 +397,7 @@ query eventsIndexContentQuery($relativePath: String!, $date: String) {
   }
 }
 
-query userGroupPageContentQuery($relativePath: String!, $date: String) {
+query userGroupPageContentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   userGroupPage(relativePath: $relativePath) {
     ...UserGroupPageParts
