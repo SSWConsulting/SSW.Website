@@ -10,6 +10,7 @@ export default function FourOhFour(
   return (
     <Layout liveStreamData={props.data.userGroup} menu={props.data.megamenu}>
       <ErrorPage
+        userGroup={props.data.userGroup}
         code="404"
         title="PAGE NOT FOUND!"
         tipText={
