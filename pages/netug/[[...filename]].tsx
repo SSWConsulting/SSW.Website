@@ -1,6 +1,5 @@
 import client from "@/tina/client";
 import classNames from "classnames";
-import { TODAY } from "hooks/useFetchEvents";
 import { InferGetStaticPropsType } from "next";
 import ReactDomServer from "react-dom/server";
 import { tinaField, useTina } from "tinacms/dist/react";
