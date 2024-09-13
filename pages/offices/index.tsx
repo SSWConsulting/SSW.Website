@@ -149,7 +149,6 @@ export const getStaticProps = async () => {
       query: tinaProps.query,
       variables: tinaProps.variables,
       seo: tinaProps.data.officeIndex.seo,
-      liveStreamData,
     },
   };
 };
