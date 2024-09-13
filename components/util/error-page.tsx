@@ -6,6 +6,7 @@ import { Disclosure } from "@headlessui/react";
 import React from "react";
 import { BiChevronRight } from "react-icons/bi";
 import { FaXmark } from "react-icons/fa6";
+import { LiveStreamData } from "../layout/layout";
 
 type ErrorPageProps = {
   code?: string;
@@ -13,6 +14,7 @@ type ErrorPageProps = {
   tipText?: React.ReactNode;
   details?: string;
   exitButtonCallback?: () => void;
+  userGroup: LiveStreamData;
 };
 
 export const ErrorPage = (props: ErrorPageProps) => {

@@ -43,7 +43,11 @@ const LiveStreamBanner = dynamic(
     ssr: true,
   }
 );
-
+export type LiveStreamData = {
+  edges?: {
+    node?: EventInfoStatic;
+  }[];
+};
 interface LayoutProps {
   className?: string;
   menu: {
@@ -51,11 +55,7 @@ interface LayoutProps {
   };
   children: React.ReactNode;
   showAzureBanner?: boolean;
-  liveStreamData: {
-    edges?: {
-      node?: EventInfoStatic;
-    }[];
-  };
+  liveStreamData: LiveStreamData;
 }
 
 export const Layout = ({
