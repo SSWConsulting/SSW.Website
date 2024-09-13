@@ -22,6 +22,7 @@ export default function ConsultingIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const gridRef = useRef(null);
+
   const { data } = useTina({
     query: props.query,
     variables: props.variables,
@@ -29,6 +30,7 @@ export default function ConsultingIndex(
   });
 
   const router = useRouter();
+
   const [selectedTag, setSelectedTag] = useState(
     getSelectedTagFromQuery(router.query)
   );
@@ -80,9 +82,13 @@ export default function ConsultingIndex(
     wrapGrid(gridRef.current);
   }, []);
 
+  const canonical = useMemo(() => {
+    return `/consulting?tag=${selectedTag}`;
+  }, [selectedTag]);
+
   return (
     <Layout menu={data.megamenu}>
-      <SEO seo={{ ...props.seo, canonical: "/consulting" }} />
+      <SEO seo={{ ...props.seo, canonical: canonical }} />
       <Container className="flex-1 pt-2">
         <Breadcrumbs path={"/consulting"} suffix="" title={"Services"} />
         <h1 className="pt-0 text-3xl">Consulting Services</h1>
