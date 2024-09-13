@@ -14,7 +14,7 @@ type ErrorPageProps = {
   tipText?: React.ReactNode;
   details?: string;
   exitButtonCallback?: () => void;
-  userGroup: LiveStreamData;
+  userGroup?: LiveStreamData;
 };
 
 export const ErrorPage = (props: ErrorPageProps) => {

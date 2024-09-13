@@ -17,7 +17,6 @@ class ErrorBoundary extends React.Component<
   static getDerivedStateFromError(error: Error) {
     return { hasError: true, error };
   }
-
   static contextType?: React.Context<ReactPlugin> = AppInsightsContext;
   context!: React.ContextType<typeof AppInsightsContext>;
 
@@ -43,6 +42,7 @@ class ErrorBoundary extends React.Component<
       return (
         <>
           <ErrorPage
+            userGroup={null}
             tipText={
               <div>
                 <p className="pt-4 text-xl">
