@@ -62,7 +62,12 @@ export default function NETUGPage(
     );
     return (
       <>
-        <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
+        <Layout
+          liveStreamData={{
+            edges: [{ node: props.event }],
+          }}
+          menu={data.megamenu}
+        >
           <SEO seo={data.userGroupPage.seo} />
 
           {props.event && (

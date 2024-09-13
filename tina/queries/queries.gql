@@ -403,16 +403,6 @@ query userGroupPageContentQuery($relativePath: String!, $date: String) {
     ...UserGroupPageParts
     __typename
   }
-  userGroup: eventsCalendarConnection(
-    filter: {
-      calendarType: { eq: "User Groups" }
-      startDateTime: { after: $date }
-    }
-    sort: "startDateTime"
-    first: 1
-  ) {
-    ...GetCalendarEventsParts
-  }
   userGroupGlobal(relativePath: "global.json") {
     ...UserGroupGlobalParts
   }
