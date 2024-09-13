@@ -20,7 +20,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import client from "../tina/__generated__/client";
-import { LiveSteam } from "./live-steam-banner/live-stream";
+import { LiveStream } from "./live-steam-banner/live-stream";
 import { DEFAULT } from "./meta-data/default";
 import { getMegamenu } from "./utils/get-mega-menu";
 
@@ -74,9 +74,9 @@ export default async function RootLayout({
           )}
         >
           <header className="no-print">
-            <LiveSteam event={liveStreamData}>
+            <LiveStream event={liveStreamData}>
               <MenuWrapper menu={menuData.data.megamenu.menuGroups} />
-            </LiveSteam>
+            </LiveStream>
           </header>
           <main className="grow bg-white">{children}</main>
 

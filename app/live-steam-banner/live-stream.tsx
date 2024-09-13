@@ -45,7 +45,7 @@ interface LiveStreamProps extends PropsWithChildren {
   event: EventInfoStatic;
 }
 
-export function LiveSteam({ event, children }: LiveStreamProps) {
+export function LiveStream({ event, children }: LiveStreamProps) {
   const params = useSearchParams();
   const [countdownMins, setCountdownMins] = useState<number>();
   const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
