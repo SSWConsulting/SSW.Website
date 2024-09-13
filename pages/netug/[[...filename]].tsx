@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { TODAY } from "hooks/useFetchEvents";
 import { InferGetStaticPropsType } from "next";
 import ReactDomServer from "react-dom/server";
-import { tinaField, useEditState, useTina } from "tinacms/dist/react";
+import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import {
   BuiltOnAzure,
@@ -27,7 +27,7 @@ import { SEO } from "../../components/util/seo";
 import { getRandomTestimonialsByCategory } from "../../helpers/getTestimonials";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { removeExtension } from "../../services/client/utils.service";
-import { EventInfo } from "../../services/server/events";
+import { EventInfo, EventInfoStatic } from "../../services/server/events";
 
 const ISR_TIME = 60 * 60; // 1 hour;
 
@@ -41,7 +41,6 @@ export default function NETUGPage(
     query: props.query,
     variables: props.variables,
   });
-
   const speaker = props.event?.presenterList
     ? props.event.presenterList[0]
     : null;
@@ -306,7 +305,12 @@ export default function NETUGPage(
   } else if (data?.userGroupPage.__typename === "UserGroupPageContentPage") {
     return (
       <>
-        <Layout liveStreamData={props.event} menu={data.megamenu}>
+        <Layout
+          liveStreamData={{
+            edges: [{ node: props.event }],
+          }}
+          menu={data.megamenu}
+        >
           <SEO seo={data.userGroupPage.seo} />
           {data.userGroupPage.seo.showBreadcrumb && (
             <Section className="mx-auto w-full max-w-9xl px-8 py-5">
