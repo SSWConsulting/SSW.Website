@@ -229,7 +229,15 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
           </div>
         </div>
 
-        <div className="mb-4 grid grid-cols-1 gap-x-8 md:grid-cols-2">
+        <div
+          className={classNames(
+            "mb-4",
+            "grid",
+            "grid-cols-1",
+            "gap-x-8",
+            event.presenterList?.length && "md:grid-cols-2"
+          )}
+        >
           <div>
             <div className="mb-8 bg-gray-75 px-4 py-2">
               <div>
@@ -240,7 +248,9 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                   className={classNames(
                     { "max-h-70": collapseMap[eventDescriptionCollapseId] },
                     {
-                      "max-h-screen": !collapseMap[eventDescriptionCollapseId],
+                      "max-h-screen":
+                        !collapseMap[eventDescriptionCollapseId] ||
+                        !eventDescriptionCollapsable,
                     },
                     {
                       "overflow-hidden":
@@ -281,12 +291,12 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
             <InlineJotForm jotFormId={globals.newsletterJotFormId} />
           </div>
 
-          <div className="bg-gray-75 px-4 py-2">
-            <h3 className="mb-3 text-xl font-bold">About the Speaker</h3>
-            {!!event?.presenterList.length &&
-              event.presenterList.map((presenter, index) => {
-                const presenterDetails = presenter.presenter;
-                return (
+          {!!event?.presenterList?.length &&
+            event.presenterList.map((presenter, index) => {
+              const presenterDetails = presenter.presenter;
+              return (
+                <div className="bg-gray-75 px-4 py-2">
+                  <h3 className="mb-3 text-xl font-bold">About the Speaker</h3>
                   <div key={index} className="mb-8 grid grid-cols-6 gap-x-8">
                     <div className="col-span-1">
                       {!!presenterDetails.profileImg && (
@@ -313,9 +323,9 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                       )}
                     </div>
                   </div>
-                );
-              })}
-          </div>
+                </div>
+              );
+            })}
         </div>
       </div>
     </>
