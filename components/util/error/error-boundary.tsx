@@ -42,7 +42,6 @@ class ErrorBoundary extends React.Component<
       return (
         <>
           <ErrorPage
-            userGroup={null}
             tipText={
               <div>
                 <p className="pt-4 text-xl">

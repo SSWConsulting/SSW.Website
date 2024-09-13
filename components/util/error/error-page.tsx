@@ -11,8 +11,7 @@ type ErrorPageProps = {
     menuGroups: NavMenuGroup[];
   };
   code?: string;
-
-  userGroup;
+  userGroup?;
   title?: string;
   tipText?: React.ReactNode;
   details?: string;
