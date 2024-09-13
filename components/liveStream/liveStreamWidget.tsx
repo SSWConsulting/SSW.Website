@@ -297,9 +297,9 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
             event.presenterList.map((presenter, index) => {
               const presenterDetails = presenter.presenter;
               return (
-                <div className="bg-gray-75 px-4 py-2">
+                <div key={index} className="bg-gray-75 px-4 py-2">
                   <h3 className="mb-3 text-xl font-bold">About the Speaker</h3>
-                  <div key={index} className="mb-8 grid grid-cols-6 gap-x-8">
+                  <div className="mb-8 grid grid-cols-6 gap-x-8">
                     <div className="col-span-1">
                       {!!presenterDetails.profileImg && (
                         <Image
