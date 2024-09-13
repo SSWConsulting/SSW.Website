@@ -14,7 +14,7 @@ import {
   formatDates,
 } from "@/services/server/events";
 import { useSearchParams } from "next/navigation";
-import { PropsWithChildren, useEffect, useState } from "react";
+import { PropsWithChildren, Suspense, useEffect, useState } from "react";
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
 dayjs.extend(utc);
@@ -102,7 +102,7 @@ export function LiveStream({ event, children }: LiveStreamProps) {
     );
 
   return (
-    <>
+    <Suspense>
       {(showBanner || params.get("liveBanner")) && (
         <LiveStreamBanner
           countdownMins={countdownMins}
@@ -120,6 +120,6 @@ export function LiveStream({ event, children }: LiveStreamProps) {
         )}
         {children}
       </div>
-    </>
+    </Suspense>
   );
 }
