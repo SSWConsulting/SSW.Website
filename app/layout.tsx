@@ -19,6 +19,7 @@ import isBetween from "dayjs/plugin/isBetween";
 import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
+import { Suspense } from "react";
 import client from "../tina/__generated__/client";
 import { LiveStream } from "./live-steam-banner/live-stream";
 import { DEFAULT } from "./meta-data/default";
@@ -74,9 +75,11 @@ export default async function RootLayout({
           )}
         >
           <header className="no-print">
-            <LiveStream event={liveStreamData}>
-              <MenuWrapper menu={menuData.data.megamenu.menuGroups} />
-            </LiveStream>
+            <Suspense>
+              <LiveStream event={liveStreamData}>
+                <MenuWrapper menu={menuData.data.megamenu.menuGroups} />
+              </LiveStream>
+            </Suspense>
           </header>
           <main className="grow bg-white">{children}</main>
 
