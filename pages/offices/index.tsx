@@ -1,6 +1,5 @@
 import { client } from "@/tina/client";
 import { TODAY } from "hooks/useFetchEvents";
-import { getUpcomingUG } from "hooks/useLiveStreamProps";
 import { InferGetStaticPropsType } from "next";
 import Image from "next/image";
 import { useTina } from "tinacms/dist/react";
@@ -137,7 +136,6 @@ export const getStaticProps = async () => {
     relativePath: "officesIndex.json",
     date: TODAY.toISOString(),
   });
-  const liveStreamData = await getUpcomingUG();
   if (
     tinaProps.data.officeIndex.seo &&
     !tinaProps.data.officeIndex.seo.canonical
