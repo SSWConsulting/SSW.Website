@@ -42,7 +42,6 @@ export default function NETUGPage(
     variables: props.variables,
   });
 
-  const { edit } = useEditState();
   const speaker = props.event?.presenterList
     ? props.event.presenterList[0]
     : null;
