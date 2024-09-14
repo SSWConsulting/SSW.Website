@@ -329,8 +329,7 @@ export default {
               marginBottom: "1.5em",
             },
             a: {
-              textDecorationColor: "#aaa",
-              textDecorationStyle: "solid",
+              textDecorationColor: theme("color.ssw.gray.light"),
               textDecorationThickness: "1px",
             },
             ul: {

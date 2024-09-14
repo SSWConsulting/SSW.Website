@@ -52,7 +52,7 @@ def query_meta_description_gpt(query: str) -> str:
           }
        ],
        model="gpt-4",
-       temperature=0.2,
+       temperature=0.2, #A lower temperature indicates a more concise but less creative response
     )
 
     description = chat_completion.choices[0].message.content

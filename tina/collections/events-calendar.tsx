@@ -48,16 +48,57 @@ export const eventsCalendarSchema: Collection = {
       description: "Used as alt text for the thumbnail",
     },
     {
-      type: "string",
-      label: "Presenter Name",
-      name: "presenterName",
+      type: "object",
+      name: "presenterList",
+      label: "Presenters",
+      description:
+        "Shown on the event listing (Presenters: Presenter1, Presenter2 & Presenter3) - Please ensure all presenters in the list are filled out",
+      list: true,
+      ui: {
+        itemProps: (item) => {
+          const presenter = item?.presenter;
+          if (!presenter) return { label: "Please Attach Presenter" };
+
+          const formattedLabel = presenter
+            .split("/")[2]
+            .replace(".mdx", "")
+            .replace(/-/g, " ")
+            .toUpperCase();
+
+          return {
+            label: formattedLabel,
+          };
+        },
+      },
+      fields: [
+        {
+          type: "reference",
+          ui: {
+            validate: (value) => {
+              if (!value) return "Please select a presenter";
+            },
+          },
+          name: "presenter",
+          label: "Presenter",
+          collections: ["presenter"],
+        },
+      ],
     },
     {
       type: "string",
-      label: "Presenter profile URL",
-      name: "presenterProfileUrl",
-      description: "For SSWers use their people page",
+      label: "Presenter Name Override",
+      name: "presenterName",
+      description:
+        "Use this for external presenters - Will override the presenter name(s) shown on the event",
     },
+    {
+      type: "string",
+      label: "Presenter Website",
+      name: "presenterProfileUrl",
+      description:
+        "Use this for external presenters - This link will appear the on the presenter's name when the field above is filled out \"",
+    },
+
     {
       type: "datetime",
       label: "Start Date/Time",
@@ -178,36 +219,7 @@ export const eventsCalendarSchema: Collection = {
       name: "description",
       description: "This shows on ssw.com.au/events",
     },
-    {
-      type: "object",
-      name: "presenterList",
-      label: "Presenters",
-      list: true,
-      ui: {
-        itemProps: (item) => {
-          const presenter = item?.presenter;
-          if (!presenter) return { label: "Please Attach Presenter" };
 
-          const formattedLabel = presenter
-            .split("/")[2]
-            .replace(".mdx", "")
-            .replace(/-/g, " ")
-            .toUpperCase();
-
-          return {
-            label: formattedLabel,
-          };
-        },
-      },
-      fields: [
-        {
-          type: "reference",
-          name: "presenter",
-          label: "Presenter",
-          collections: ["presenter"],
-        },
-      ],
-    },
     {
       type: "string",
       label: "YouTube ID",
