@@ -111,11 +111,11 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
                 />
               </div>
               <div className="py-0.5 text-xs uppercase text-gray-500">
-                {
-                event.date ? formatTimeWithAmPm(new Date(event.date) ) : "9AM" +
-                " - " +
-                event.endDate ? formatTimeWithAmPm(new Date(event.endDate)) : "5PM"
-                }
+                {event.date
+                  ? formatTimeWithAmPm(new Date(event.date))
+                  : "9AM" + " - " + event.endDate
+                    ? formatTimeWithAmPm(new Date(event.endDate))
+                    : "5PM"}
               </div>
             </>
           )}
