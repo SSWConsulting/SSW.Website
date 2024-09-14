@@ -13,11 +13,7 @@ type UserGroupHeaderProps = {
   className?: string;
   date: Date;
   title: string;
-  presenter: {
-    name: string;
-    url: string;
-    image?: string;
-  };
+  presenter: { name?: string; url?: string; image?: string };
   trailerUrl?: string;
   registerUrl: string;
   online?: boolean;
@@ -82,10 +78,24 @@ export const UserGroupHeader = ({
           >
             {formattedDate} <OnlineBadge online={online} />
           </div>
-          <h1 className="mb-2 pb-1 pt-3 text-5xl font-semibold">{title}</h1>
-          <span className="mb-12 text-lg">
-            With <CustomLink href={presenter.url}>{presenter.name}</CustomLink>
-          </span>
+          <h1
+            className={classNames(
+              presenter.name ? "mb-2" : "mb-12",
+              "pb-1",
+              "pt-3",
+              "text-5xl",
+              "font-semibold"
+            )}
+          >
+            {title}
+          </h1>
+
+          {presenter.name && (
+            <span className="mb-12 text-lg">
+              With{" "}
+              <CustomLink href={presenter.url}>{presenter.name}</CustomLink>
+            </span>
+          )}
           <div
             className={classNames(
               "mb-5 mt-auto flex-row",
