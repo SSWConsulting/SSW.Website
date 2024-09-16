@@ -9,7 +9,7 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-import { Analytics } from "../components/layout/analytics";
+import { GoogleTagManager } from "@next/third-parties/google";
 import { AppInsightsProvider } from "../context/app-insight-client";
 import * as gtag from "../lib/gtag";
 import { NEXT_SEO_DEFAULT } from "../next-seo.config";
@@ -91,6 +91,7 @@ const App = ({ Component, pageProps }) => {
         </QueryClientProvider>
       </AppInsightsProvider>
       <ChatBaseBot />
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
     </>
   );
 };
