@@ -46,7 +46,7 @@
     "postcss": "^8.4.41",
     "postcss-import": "^16.1.0",
     "postcss-nesting": "^13.0.0",
-    "prettier": "3.3.0",
+    "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "source-map-explorer": "^2.5.3",
     "ts-node": "^10.9.2"
