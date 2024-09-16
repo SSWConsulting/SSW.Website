@@ -78,7 +78,6 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <>
-      <Analytics />
       <DefaultSeo {...NEXT_SEO_DEFAULT} />
       <AppInsightsProvider>
         <QueryClientProvider client={queryClient}>
