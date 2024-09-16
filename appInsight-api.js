@@ -1,6 +1,7 @@
+
 if (process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING) {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  let appInsights = require("applicationinsights");
+  let appInsights = require("applicationinsights"); 
 
   appInsights
     .setup(process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING)
