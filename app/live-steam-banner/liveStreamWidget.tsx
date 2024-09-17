@@ -1,13 +1,9 @@
 "use client";
 
-import "react-tooltip/dist/react-tooltip.css";
-
-import { InlineJotForm } from "@/components/blocks";
+import { InlineJotForm, VideoEmbed } from "@/components/blocks";
 import { CustomLink } from "@/components/customLink";
-import { YouTubeEmbed } from "@/components/embeds/youtubeEmbed";
 import { SocialIcons } from "@/components/socialIcons/socialIcons";
 import layoutData, { default as globals } from "@/content/global/index.json";
-import { getYouTubeId } from "@/helpers/embeds";
 import classNames from "classnames";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
@@ -15,8 +11,9 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
-import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
+import "react-tooltip/dist/react-tooltip.css";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;
@@ -126,10 +123,10 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
           <div id="thumbnailAnchor" className="col-span-3 md:col-span-2">
             <div className="relative h-0 pt-9/16">
               <div className="absolute top-0 size-full">
-                <YouTubeEmbed
-                  id={getYouTubeId(youtubeUrls?.videoUrl)}
-                  width="100%"
-                  height="100%"
+                <VideoEmbed
+                  data={{
+                    url: youtubeUrls?.videoUrl,
+                  }}
                 />
               </div>
             </div>
@@ -142,10 +139,10 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
             data-aos-anchor="#thumbnailAnchor"
             data-aos-anchor-placement="bottom-top"
           >
-            <YouTubeEmbed
-              id={getYouTubeId(youtubeUrls?.videoUrl)}
-              width="100%"
-              height="100%"
+            <VideoEmbed
+              data={{
+                url: youtubeUrls?.videoUrl,
+              }}
             />
           </div>
           <div className="hidden h-full sm:col-span-3 sm:block md:col-span-1">
