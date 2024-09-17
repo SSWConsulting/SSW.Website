@@ -57,7 +57,7 @@
       "addressCountry": "Australia",
       "postalCode": 2089,
       "phone": "+61 2 9953 3000",
-      "hours": "9am - 6pm AEST",
+      "hours": "9am - 6pm AEDT",
       "days": "Monday - Friday"
     },
     {
@@ -83,7 +83,7 @@
       "addressCountry": "Australia",
       "postalCode": 3000,
       "phone": "+61 3 9005 2034",
-      "hours": "9am - 6pm AEST",
+      "hours": "9am - 6pm AEDT",
       "days": "Monday - Friday"
     },
     {
@@ -96,7 +96,7 @@
       "addressCountry": "Australia",
       "postalCode": 2300,
       "phone": "+61 2 9953 3000",
-      "hours": "9am - 6pm AEST",
+      "hours": "9am - 6pm AEDT",
       "days": "Monday - Friday"
     },
     {
