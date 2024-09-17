@@ -1,4 +1,5 @@
 import client from "@/tina/client";
+import { TODAY } from "hooks/useFetchEvents";
 import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -27,7 +28,7 @@ export default function CompanyPage(
       value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
     >
       <SEO seo={props.seo} />
-      <Layout menu={data.megamenu}>
+      <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
         {data.caseStudy.seo?.showBreadcrumb === null ||
           (data.caseStudy.seo?.showBreadcrumb && (
             <Section className="mx-auto w-full max-w-9xl px-8 py-0">
@@ -77,6 +78,7 @@ export default function CompanyPage(
 export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.caseStudyContentQuery({
     relativePath: `${params.filename}.mdx`,
+    date: TODAY.toISOString(),
   });
 
   const seo = tinaProps.data.caseStudy.seo;

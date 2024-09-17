@@ -1,6 +1,7 @@
 import { tinaField, useTina } from "tinacms/dist/react";
 
 import { client } from "@/tina/client";
+import { TODAY } from "hooks/useFetchEvents";
 import { InferGetStaticPropsType } from "next";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { ClientLogos } from "../../components/blocks";
@@ -45,7 +46,7 @@ export default function EventsPage(
       }}
     >
       <SEO seo={data.events.seo} />
-      <Layout menu={data.megamenu}>
+      <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
         <div data-tina-field={tinaField(data.events, "eventHeader")}>
           <EventsHeader data={data.events.eventHeader} />
         </div>
@@ -142,6 +143,7 @@ export default function EventsPage(
 export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.eventsContentQuery({
     relativePath: `${params.filename}.mdx`,
+    date: TODAY.toISOString(),
   });
 
   const categories =
