@@ -7,6 +7,7 @@ import { wrapGrid } from "animate-css-grid";
 import { client } from "@/tina/client";
 import { tinaField, useTina } from "tinacms/dist/react";
 
+import { TODAY } from "hooks/useFetchEvents";
 import { InferGetStaticPropsType } from "next";
 import { ParsedUrlQuery } from "querystring";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
@@ -81,7 +82,7 @@ export default function ConsultingIndex(
   }, []);
 
   return (
-    <Layout menu={data.megamenu}>
+    <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
       <SEO seo={{ ...props.seo, canonical: "/consulting" }} />
       <Container className="flex-1 pt-2">
         <Breadcrumbs path={"/consulting"} suffix="" title={"Services"} />
@@ -166,7 +167,9 @@ const updateParams = (router: NextRouter, tags, selectedTag) => {
 };
 
 export const getStaticProps = async () => {
-  const tinaProps = await client.queries.consultingIndexQuery();
+  const tinaProps = await client.queries.consultingIndexQuery({
+    date: TODAY.toISOString(),
+  });
 
   const seo = tinaProps.data.consultingIndex.seo;
   if (seo && !seo.canonical) {

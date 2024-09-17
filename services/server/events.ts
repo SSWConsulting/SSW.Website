@@ -1,6 +1,6 @@
+import { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { EventTrimmed } from "../../components/filter/events";
 import client from "../../tina/__generated__/client";
-import { TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 /**
  * Querying TinaCMS event data for the next UG event
@@ -95,4 +95,40 @@ export interface EventInfo extends EventTrimmed {
       tip?: string;
     };
   }[];
+}
+
+type EventDates = {
+  startShowBannerDateTime: Date;
+  endShowBannerDateTime: Date;
+  startDateTime: Date;
+  endDateTime: Date;
+};
+
+export const formatDates = (eventInfo: EventInfoStatic): EventDates => {
+  const {
+    startShowBannerDateTime,
+    endShowBannerDateTime,
+    startDateTime,
+    endDateTime,
+  } = eventInfo;
+  return {
+    startShowBannerDateTime: new Date(startShowBannerDateTime),
+    endShowBannerDateTime: new Date(endShowBannerDateTime),
+    startDateTime: new Date(startDateTime),
+    endDateTime: new Date(endDateTime),
+  };
+};
+
+export interface EventInfoStatic
+  extends Omit<
+    EventInfo,
+    | "startShowBannerDateTime"
+    | "endShowBannerDateTime"
+    | "startDateTime"
+    | "endDateTime"
+  > {
+  startShowBannerDateTime?: string;
+  endShowBannerDateTime?: string;
+  startDateTime?: string;
+  endDateTime?: string;
 }

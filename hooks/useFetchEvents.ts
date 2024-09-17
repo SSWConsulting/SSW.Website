@@ -31,7 +31,7 @@ const formatCategory = (category: string): string => {
   }
 };
 
-const TODAY = new Date();
+export const TODAY = new Date();
 TODAY.setHours(0, 0, 0, 0);
 
 export const getFutureEvents = async (

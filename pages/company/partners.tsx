@@ -1,6 +1,7 @@
 import { client } from "@/tina/client";
 import { useTina } from "tinacms/dist/react";
 
+import { TODAY } from "hooks/useFetchEvents";
 import { InferGetStaticPropsType } from "next";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { PageCard } from "../../components/blocks/pageCards";
@@ -18,7 +19,7 @@ export default function PartnersIndex(
   });
 
   return (
-    <Layout menu={data.megamenu}>
+    <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
       <SEO seo={props.seo} />
       <Container className="mb-10 flex-1 pt-2">
         <Breadcrumbs path={"/Partners"} suffix="" title={"Partners"} />
@@ -37,7 +38,9 @@ export default function PartnersIndex(
 }
 
 export const getStaticProps = async () => {
-  const tinaProps = await client.queries.partnerIndexQuery();
+  const tinaProps = await client.queries.partnerIndexQuery({
+    date: TODAY.toISOString(),
+  });
 
   const seo = tinaProps.data.partnerIndex.seo;
   if (seo && !seo.canonical) {

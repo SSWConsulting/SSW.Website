@@ -18,6 +18,7 @@ import { SEO } from "../../../components/util/seo";
 import { RecaptchaContext } from "../../../context/RecaptchaContext";
 import { removeExtension } from "../../../services/client/utils.service";
 
+import { TODAY } from "hooks/useFetchEvents";
 import ReactDOMServer from "react-dom/server";
 import { sanitiseXSS, spanWhitelist } from "../../../helpers/validator";
 
@@ -39,7 +40,7 @@ export default function VideoProductionPage(
       value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
     >
       <SEO seo={props.seo} />
-      <Layout menu={data.megamenu}>
+      <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
         <Section className="mx-auto w-full max-w-9xl px-8 py-5">
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}
@@ -138,6 +139,7 @@ const parseCallToAction = (
 export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.videoProductionContentQuery({
     relativePath: `${params.filename}.mdx`,
+    date: TODAY.toISOString(),
   });
 
   const seo = tinaProps.data.videoProduction.seo;

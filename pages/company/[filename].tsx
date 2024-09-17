@@ -14,6 +14,7 @@ import { RecaptchaContext } from "@/context/RecaptchaContext";
 import { removeExtension } from "@/services/client/utils.service";
 import client from "@/tina/client";
 import classNames from "classnames";
+import { TODAY } from "hooks/useFetchEvents";
 import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -41,7 +42,7 @@ export default function CompanyPage(
     >
       <div>
         <SEO seo={props.seo} />
-        <Layout menu={data.megamenu}>
+        <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
           <Blocks prefix="CompanyBeforeBody" blocks={data.company.beforeBody} />
           {data.company.seo?.showBreadcrumb === null ||
             (data.company.seo?.showBreadcrumb && (
@@ -127,6 +128,7 @@ export default function CompanyPage(
 export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.companyContentQuery({
     relativePath: `${params.filename}.mdx`,
+    date: TODAY.toISOString(),
   });
 
   const seo = tinaProps.data.company.seo;

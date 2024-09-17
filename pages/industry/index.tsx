@@ -1,3 +1,4 @@
+import { TODAY } from "hooks/useFetchEvents";
 import { InferGetStaticPropsType } from "next";
 import { useTina } from "tinacms/dist/react";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
@@ -17,7 +18,7 @@ export default function IndustryIndex(
   });
 
   return (
-    <Layout menu={data.megamenu}>
+    <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
       <SEO seo={props.seo} />
       <Container className="mb-10 flex-1 pt-2">
         <Breadcrumbs path={"/industry"} suffix="" title={"Industry"} />
@@ -40,7 +41,9 @@ export default function IndustryIndex(
 }
 
 export const getStaticProps = async () => {
-  const tinaProps = await client.queries.industryIndexQuery();
+  const tinaProps = await client.queries.industryIndexQuery({
+    date: TODAY.toISOString(),
+  });
 
   const seo = tinaProps.data.industryIndex.seo;
   if (seo && !seo.canonical) {

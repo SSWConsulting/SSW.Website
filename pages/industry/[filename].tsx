@@ -1,4 +1,5 @@
 import { client } from "@/tina/client";
+import { TODAY } from "hooks/useFetchEvents";
 import { InferGetStaticPropsType } from "next";
 import Image from "next/image";
 import { tinaField, useTina } from "tinacms/dist/react";
@@ -31,7 +32,7 @@ export default function IndustryPage(
     <RecaptchaContext.Provider
       value={{ recaptchaKey: props.env.GOOGLE_RECAPTCHA_SITE_KEY }}
     >
-      <Layout menu={data.megamenu}>
+      <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
         <SEO seo={pageData.seo} />
         <Container className="prose flex-1" size="custom">
           {pageData.whitepaperFile ? (
@@ -88,6 +89,7 @@ export default function IndustryPage(
 
 export const getStaticProps = async ({ params }) => {
   const tinaProps = await client.queries.industryContentQuery({
+    date: TODAY.toISOString(),
     relativePath: `${params.filename}.mdx`,
   });
 
