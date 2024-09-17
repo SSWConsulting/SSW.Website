@@ -4,7 +4,6 @@ import { InlineJotForm, VideoEmbed } from "@/components/blocks";
 import { CustomLink } from "@/components/customLink";
 import { SocialIcons } from "@/components/socialIcons/socialIcons";
 import layoutData, { default as globals } from "@/content/global/index.json";
-import { getYouTubeId } from "@/helpers/embeds";
 import { EventInfo } from "@/services/server/events";
 import classNames from "classnames";
 import Image from "next/image";
