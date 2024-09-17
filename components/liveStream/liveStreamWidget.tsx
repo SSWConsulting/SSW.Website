@@ -14,8 +14,6 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import layoutData, {
   default as globals,
 } from "../../content/global/index.json";
-
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 import { InlineJotForm, VideoEmbed } from "../blocks";
 import { CustomLink } from "../customLink";
