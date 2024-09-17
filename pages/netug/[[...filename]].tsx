@@ -74,7 +74,12 @@ export default function NETUGPage(
     );
     return (
       <>
-        <Layout menu={data.megamenu}>
+        <Layout
+          liveStreamData={{
+            edges: [{ node: props.event }],
+          }}
+          menu={data.megamenu}
+        >
           <SEO seo={data.userGroupPage.seo} />
 
           {props.event && (
@@ -309,7 +314,12 @@ export default function NETUGPage(
   } else if (data?.userGroupPage.__typename === "UserGroupPageContentPage") {
     return (
       <>
-        <Layout menu={data.megamenu}>
+        <Layout
+          liveStreamData={{
+            edges: [{ node: props.event }],
+          }}
+          menu={data.megamenu}
+        >
           <SEO seo={data.userGroupPage.seo} />
           {data.userGroupPage.seo.showBreadcrumb && (
             <Section className="mx-auto w-full max-w-9xl px-8 py-5">
@@ -424,7 +434,6 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const userGroupPages = await client.queries.userGroupPageConnection();
-
   const paths = userGroupPages.data.userGroupPageConnection.edges.map(
     (page) => {
       if (page.node._sys.filename === "index") {

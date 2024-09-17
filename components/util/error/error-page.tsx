@@ -1,17 +1,17 @@
 import classNames from "classnames";
+import React from "react";
 import { NavMenuGroup } from "ssw.megamenu";
 import { CustomLink } from "../../customLink";
 import { Layout } from "../../layout";
 import { Container } from "../container";
 import { ErrorText } from "./error";
 
-import React from "react";
-
 type ErrorPageProps = {
   menu?: {
     menuGroups: NavMenuGroup[];
   };
   code?: string;
+  userGroup?;
   title?: string;
   tipText?: React.ReactNode;
   details?: string;
@@ -20,7 +20,10 @@ type ErrorPageProps = {
 
 export const ErrorPage = (props: ErrorPageProps) => {
   return (
-    <Layout menu={props.menu || { menuGroups: [] }}>
+    <Layout
+      liveStreamData={props.userGroup}
+      menu={props.menu || { menuGroups: [] }}
+    >
       <Container
         width="large"
         size="custom"

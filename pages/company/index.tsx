@@ -1,4 +1,5 @@
 import client from "@/tina/client";
+import { TODAY } from "hooks/useFetchEvents";
 import { InferGetStaticPropsType } from "next";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -33,7 +34,7 @@ export default function CompanyIndexPage(
   return (
     <div>
       <SEO seo={props.seo} />
-      <Layout menu={data.megamenu}>
+      <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
         {data.companyIndex.headerImage?.heroBackground && (
           <Section className="mx-auto hidden w-full sm:block">
             <CompanyHeader
@@ -92,6 +93,7 @@ export default function CompanyIndexPage(
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.companyIndexContentQuery({
     relativePath: "index.mdx",
+    date: TODAY.toISOString(),
   });
 
   const seo = tinaProps.data.companyIndex.seo;
