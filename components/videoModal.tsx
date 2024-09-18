@@ -74,11 +74,7 @@ export const VideoModal = ({
     <div
       className={classNames(
         "h-full",
-        roundedEdges === null ||
-          roundedEdges === undefined ||
-          roundedEdges === true
-          ? "rounded"
-          : "rounded-none",
+        roundedEdges !== false ? "rounded": "rounded-none",
         overflow ? "clear-both" : "overflow-hidden",
         className
       )}
