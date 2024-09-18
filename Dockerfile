@@ -22,7 +22,7 @@ WORKDIR /app
 
 
 # Create a folder with read/write permissions for tina cache files
-RUN mkdir -p chmod 666 /app/tina
+RUN mkdir -p /app/tina && chmod 666 /app/tina
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
