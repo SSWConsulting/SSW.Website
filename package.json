@@ -10,10 +10,10 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "tinacms dev -c \"node --require ./appInsight-api.js node_modules/next/dist/bin/next dev\"",
-    "build": "tinacms build && next build && next-sitemap --config next-sitemap.config.js",
+    "build": "tinacms build --no-client-build-cache && next build && next-sitemap --config next-sitemap.config.js",
     "partytown": "partytown copylib public/~partytown",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
-    "start": "tinacms build && node_modules/next/dist/bin/next start -p $PORT",
+    "start": "tinacms build --no-client-build-cache && node_modules/next/dist/bin/next start -p $PORT",
     "export": "npm run build && next export",
     "lint": "eslint . --ext .ts,.tsx",
     "lint-fix": "eslint . --fix --ext .ts,.tsx",
