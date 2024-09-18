@@ -109,8 +109,8 @@ RUN mkdir .next
 RUN chown nextjs:nodejs .next
 
 # Set the correct permissions for the tina cache folder
-RUN mkdir -p app/tina
-RUN chown -p nextjs:nodejs app/tina
+RUN mkdir -p /app/tina
+RUN chown nextjs:nodejs /app/tina
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
