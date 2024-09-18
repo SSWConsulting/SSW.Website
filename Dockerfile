@@ -21,9 +21,6 @@ FROM base AS builder
 WORKDIR /app
 
 
-# Create a folder with read/write permissions for tina cache files
-RUN mkdir -p /app/tina && chmod 666 /app/tina
-
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
@@ -110,6 +107,10 @@ COPY --from=builder /app/public ./public
 # Set the correct permission for prerender cache
 RUN mkdir .next
 RUN chown nextjs:nodejs .next
+
+# Set the correct permissions for the tina cache folder
+RUN mkdir -p app/tina
+RUN chown -p nextjs:nodejs app/tina
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
