@@ -87,10 +87,8 @@ export interface EventInfo extends EventTrimmed {
     presenter?: {
       profileImg?: string;
       torsoImg?: string;
-      presenter?: {
-        name?: string;
-        peopleProfileURL?: string;
-      };
+      name?: string;
+      peopleProfileURL?: string;
       about?: TinaMarkdownContent;
       tip?: string;
     };

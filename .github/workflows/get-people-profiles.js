@@ -36,12 +36,25 @@ const GetPeopleProfiles = async ( {
         presenterJson = existingPresenterFile.data;
       }
 
+      const remoteData = peopleMatter.data;
+
+      // this is required to flatten presenter object
+      if (!!presenterJson.presenter) {
+        presenterJson = flattenObject(presenterJson);
+      }
+
+      // this is required to flatten presenter object
+      if (!!remoteData.presenter) {
+        remoteData = flattenObject(remoteData);
+      }
+
+      // merge remote data with existing data giving preference to remote data
       presenterJson = {
         ...presenterJson,
-        ...peopleMatter.data,
+        ...remoteData,
       };
 
-      const personName = presenterJson.presenter?.name?.split(' ')?.join('-') ?? 'not-found';
+      const personName = presenterJson.name?.split(' ')?.join('-') ?? 'not-found';
       const profileImageRelativePath = `${peopleImagePath}/${personName}.jpg`;
       const peopleProfileImagePath = `${peopleDirectory}/${personName}/Images/${personName}-Profile.jpg`;
 
@@ -59,5 +72,19 @@ const GetPeopleProfiles = async ( {
     console.log(error);
   }
 }
+
+const flattenObject = (obj) => {
+  const flattened = {};
+
+  for (const [key, value] of Object.entries(obj)) {
+      if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+          Object.assign(flattened, flattenObject(value));
+      } else {
+          flattened[key] = value;
+      }
+  }
+
+  return flattened;
+};
 
 module.exports = GetPeopleProfiles;

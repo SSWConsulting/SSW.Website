@@ -5,11 +5,8 @@ export const presenterSchemaConstants = {
   value: "presenter",
   profileImg: "profileImg",
   torsoImg: "torsoImg",
-  presenter: {
-    value: "presenter",
-    name: "name",
-    peopleProfileURL: "peopleProfileURL",
-  },
+  name: "name",
+  peopleProfileURL: "peopleProfileURL",
   about: "about",
   position: "position",
   skills: "skills",
@@ -39,21 +36,14 @@ export const presenterSchema: Collection = {
       uploadDir: () => "people",
     },
     {
-      type: "object",
-      name: presenterSchemaConstants.presenter.value,
-      label: "Presenter",
-      fields: [
-        {
-          type: "string",
-          label: "Full Name",
-          name: presenterSchemaConstants.presenter.name,
-        },
-        {
-          type: "string",
-          label: "People Profile URL",
-          name: presenterSchemaConstants.presenter.peopleProfileURL,
-        },
-      ],
+      type: "string",
+      label: "Full Name",
+      name: presenterSchemaConstants.name,
+    },
+    {
+      type: "string",
+      label: "People Profile URL",
+      name: presenterSchemaConstants.peopleProfileURL,
     },
     {
       type: "rich-text",

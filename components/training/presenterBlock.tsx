@@ -61,12 +61,12 @@ const PresenterCard = ({ presenter, schema, index }) => {
         className="not-prose flex flex-col items-center"
         data-tina-field={tinaField(
           schema[index].presenter,
-          presenterSchemaConstants.presenter.peopleProfileURL
+          presenterSchemaConstants.peopleProfileURL
         )}
       >
         <span className="size-32 overflow-hidden rounded-full">
           <Image
-            alt={`Picture of ${presenter?.presenter?.name ?? "Presenter"}`}
+            alt={`Picture of ${presenter?.name ?? "Presenter"}`}
             src={presenter?.profileImg ?? ""}
             height={120}
             width={120}
@@ -79,7 +79,7 @@ const PresenterCard = ({ presenter, schema, index }) => {
         className="mt-4 font-normal"
         data-tina-field={tinaField(
           schema[index].presenter?.presenter,
-          presenterSchemaConstants.presenter.name
+          presenterSchemaConstants.name
         )}
       >
         {presenter?.presenter?.name}

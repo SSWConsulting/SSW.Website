@@ -21,7 +21,7 @@ const ArticlesList = () => {
       url: `/articles/${filename}`,
       title,
       authorImage: author?.profileImg,
-      authorName: author?.presenter?.name,
+      authorName: author?.name,
       authorPosition: author?.position,
       body: description,
     };
