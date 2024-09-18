@@ -5,6 +5,7 @@ import { VideoModal } from "../videoModal";
 type VideoEmbedProps = {
   data: {
     url: string;
+    roundedEdges?: boolean;
     videoWidth?: string;
     removeMargin?: boolean;
     overflow?: boolean;
@@ -26,6 +27,7 @@ export const VideoEmbed = ({ data }: VideoEmbedProps) => {
       <VideoModal
         url={data.url}
         overflow={data.overflow}
+        roundedEdges={data.roundedEdges}
         className="cursor-pointer"
       />
       {data.caption && (

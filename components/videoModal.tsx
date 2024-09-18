@@ -29,6 +29,7 @@ const VimeoEmbed = dynamic(
 type VideoModalProps = {
   children?: React.ReactNode;
   className?: string;
+  roundedEdges?: boolean;
   url: string;
   overflow?: boolean;
 };
@@ -43,12 +44,12 @@ export const VideoModal = ({
   children = null,
   url,
   overflow,
+  roundedEdges,
   className,
 }: VideoModalProps) => {
   const [videoId, setVideoId] = useState<string>();
   const [clicked, setClicked] = useState<boolean>(false);
   const [imageSrc, setImageSrc] = useState<string>("");
-
   const isYouTube = MATCH_URL_YOUTUBE.test(url);
   const isVimeo = MATCH_URL_VIMEO.test(url);
 
@@ -72,7 +73,8 @@ export const VideoModal = ({
   return (
     <div
       className={classNames(
-        "h-full rounded",
+        "h-full",
+        roundedEdges !== false ? "rounded" : "rounded-none",
         overflow ? "clear-both" : "overflow-hidden",
         className
       )}

@@ -14,11 +14,9 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import layoutData, {
   default as globals,
 } from "../../content/global/index.json";
-import { getYouTubeId } from "../../helpers/embeds";
 import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
-import { InlineJotForm } from "../blocks";
+import { InlineJotForm, VideoEmbed } from "../blocks";
 import { CustomLink } from "../customLink";
-import { YouTubeEmbed } from "../embeds/youtubeEmbed";
 import { SocialIcons } from "../socialIcons/socialIcons";
 
 type LiveStreamWidgetProps = {
@@ -129,10 +127,13 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
           <div id="thumbnailAnchor" className="col-span-3 md:col-span-2">
             <div className="relative h-0 pt-9/16">
               <div className="absolute top-0 size-full">
-                <YouTubeEmbed
-                  id={getYouTubeId(youtubeUrls?.videoUrl)}
-                  width="100%"
-                  height="100%"
+                <VideoEmbed
+                  data={{
+                    url: youtubeUrls.videoUrl,
+                    videoWidth: "w-full",
+                    removeMargin: true,
+                    roundedEdges: false,
+                  }}
                 />
               </div>
             </div>
@@ -145,10 +146,13 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
             data-aos-anchor="#thumbnailAnchor"
             data-aos-anchor-placement="bottom-top"
           >
-            <YouTubeEmbed
-              id={getYouTubeId(youtubeUrls?.videoUrl)}
-              width="100%"
-              height="100%"
+            <VideoEmbed
+              data={{
+                url: youtubeUrls.videoUrl,
+                videoWidth: "w-full",
+                removeMargin: true,
+                roundedEdges: false,
+              }}
             />
           </div>
           <div className="hidden h-full sm:col-span-3 sm:block md:col-span-1">
