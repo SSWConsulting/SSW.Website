@@ -7,7 +7,7 @@ import { Open_Sans } from "next/font/google";
 // import Head from "next/head";
 // import { Theme } from "../components/layout/theme";
 import { Footer } from "@/components/layout/footer/footer";
-import { MenuWrapper } from "@/components/server/MenuWrapper";
+import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import ChatBaseBot from "@/components/zendeskButton/chatBaseBot";
 import { Metadata, Viewport } from "next";
 
@@ -21,6 +21,7 @@ import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import { Suspense } from "react";
 import client from "../tina/__generated__/client";
+import { MenuWrapper } from "./components/MenuWrapper";
 import { LiveStream } from "./live-steam-banner/live-stream";
 import { DEFAULT } from "./meta-data/default";
 import { getMegamenu } from "./utils/get-mega-menu";
@@ -78,10 +79,13 @@ export default async function RootLayout({
             <Suspense>
               {liveStreamData && (
                 <LiveStream event={liveStreamData}>
-                  <MenuWrapper menu={menuData.data.megamenu.menuGroups} />
+                  <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
                 </LiveStream>
               )}
             </Suspense>
+            <MenuWrapper>
+              <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
+            </MenuWrapper>
           </header>
           <main className="grow bg-white">{children}</main>
 
