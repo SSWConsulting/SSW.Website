@@ -59,8 +59,8 @@ export default async function RootLayout({
   });
 
   const liveStreamData: EventInfoStatic =
-    nextUG.data.eventsCalendarConnection.edges.length > 0
-      ? nextUG.data.eventsCalendarConnection.edges[0].node
+    nextUG?.data?.eventsCalendarConnection?.edges?.length > 0
+      ? nextUG?.data?.eventsCalendarConnection?.edges[0]?.node
       : null;
 
   return (
@@ -76,9 +76,11 @@ export default async function RootLayout({
         >
           <header className="no-print">
             <Suspense>
-              <LiveStream event={liveStreamData}>
-                <MenuWrapper menu={menuData.data.megamenu.menuGroups} />
-              </LiveStream>
+              {liveStreamData && (
+                <LiveStream event={liveStreamData}>
+                  <MenuWrapper menu={menuData.data.megamenu.menuGroups} />
+                </LiveStream>
+              )}
             </Suspense>
           </header>
           <main className="grow bg-white">{children}</main>

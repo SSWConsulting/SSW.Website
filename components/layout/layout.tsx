@@ -125,7 +125,7 @@ export const Layout = ({
           )}
         >
           <header className="no-print">
-            {(showBanner || router?.query?.liveBanner?.length > 0) && (
+            {event && (showBanner || router?.query?.liveBanner?.length > 0) && (
               <LiveStreamBanner
                 countdownMins={countdownMins}
                 liveStreamData={event}
@@ -133,7 +133,7 @@ export const Layout = ({
               />
             )}
             <div className="mx-auto max-w-9xl px-8">
-              {(isLive || router.query.liveStream) && (
+              {event && (isLive || router?.query?.liveStream) && (
                 <LiveStreamWidget
                   event={event}
                   countdownMins={countdownMins}
