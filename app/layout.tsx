@@ -58,12 +58,10 @@ export default async function RootLayout({
     top: 1,
     calendarType: "User Groups",
   });
-
   const liveStreamData: EventInfoStatic =
     nextUG?.data?.eventsCalendarConnection?.edges?.length > 0
       ? nextUG?.data?.eventsCalendarConnection?.edges[0]?.node
       : null;
-
   return (
     <html lang="en" className={openSans.className}>
       <body>
@@ -76,16 +74,17 @@ export default async function RootLayout({
           )}
         >
           <header className="no-print">
-            <Suspense>
-              {liveStreamData && (
+            {liveStreamData ? (
+              <Suspense>
                 <LiveStream event={liveStreamData}>
                   <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
                 </LiveStream>
-              )}
-            </Suspense>
-            <MenuWrapper>
-              <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
-            </MenuWrapper>
+              </Suspense>
+            ) : (
+              <MenuWrapper>
+                <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
+              </MenuWrapper>
+            )}
           </header>
           <main className="grow bg-white">{children}</main>
 
