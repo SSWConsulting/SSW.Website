@@ -15,12 +15,12 @@ export function useLiveStreamTimer(event: EventInfo): LiveStreamProps {
 
   useEffect(() => {
     const rightnow = dayjs().utc();
-    const liveDelay = event.liveStreamDelayMinutes ?? 0;
-    if (!liveStreamDelayMinutes && event.delayedLiveStreamStart) {
+    const liveDelay = event?.liveStreamDelayMinutes ?? 0;
+    if (!liveStreamDelayMinutes && event?.delayedLiveStreamStart) {
       setLiveStreamDelayMinutes(liveDelay);
     }
 
-    const start = dayjs(event.startDateTime).add(liveDelay, "minute");
+    const start = dayjs(event?.startDateTime).add(liveDelay, "minute");
     const minsToStart = start.diff(rightnow, "minute");
     setCountdownMins(minsToStart);
 
