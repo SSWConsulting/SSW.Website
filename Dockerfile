@@ -103,6 +103,10 @@ RUN adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app/public ./public
 
+# Set the correct permissions for the tina cache folder
+RUN mkdir -p /app/tina
+RUN chown nextjs:nodejs /app/tina
+
 # Set the correct permission for prerender cache
 RUN mkdir .next
 RUN chown nextjs:nodejs .next
