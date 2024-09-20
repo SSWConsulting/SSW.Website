@@ -156,10 +156,23 @@ jobs:
       - name: ACR - Delete image
         run: |
           $imageTagWithPrefix = '${{ env.SLOT_PREFIX }}${{ matrix.SLOT_NAME}}'
+          $imageName = "${{ env.IMAGE_NAME }}:$imageTagWithPrefix"
 
-          az acr repository delete --name ${{ env.ACR_NAME }} `
-          --image ${{ env.IMAGE_NAME }}:$imageTagWithPrefix --yes
-          Write-Output "✅ ACR - ${{ env.IMAGE_NAME }}:$imageTagWithPrefix image deleted successfully."
+          # Check if the image exists in the ACR
+          $imageExists = az acr repository show-manifests `
+            --name ${{ env.ACR_NAME }} `
+            --repository ${{ env.IMAGE_NAME }} `
+            --query "[?tags[?contains(@, '$imageTagWithPrefix')]].tags[]" `
+            --output tsv
+
+          if ($imageExists) {
+            # If the image exists, delete it
+            az acr repository delete --name ${{ env.ACR_NAME }} `
+            --image $imageName --yes
+            Write-Output "✅ ACR - $imageName image deleted successfully."
+          } else {
+            Write-Output "❌ ACR - $imageName image not found, skipping deletion."
+          }
 
       - name: Delete slot
         run: |
