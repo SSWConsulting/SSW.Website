@@ -1,5 +1,6 @@
 "use client";
 
+import { MenuWrapper } from "app/components/MenuWrapper";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
@@ -110,7 +111,7 @@ export function LiveStream({ event, children }: LiveStreamProps) {
           isLive={!!isLive}
         />
       )}
-      <div className="mx-auto max-w-9xl px-8">
+      <MenuWrapper>
         {(isLive || params.get("liveStream")) && (
           <LiveStreamWidget
             {...{ eventDynamic, liveStreamDelayMinutes }}
@@ -119,7 +120,7 @@ export function LiveStream({ event, children }: LiveStreamProps) {
           />
         )}
         {children}
-      </div>
+      </MenuWrapper>
     </>
   );
 }
