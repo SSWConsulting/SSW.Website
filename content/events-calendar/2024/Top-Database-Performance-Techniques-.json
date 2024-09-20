@@ -1,10 +1,15 @@
 {
   "title": "Top Database Performance Techniques 🚀",
   "url": "/netug/brisbane",
-  "thumbnail": "/images/events/brisbane-ug-thumb.jpg",
+  "thumbnail": "/images/events/urgent-flowchart.png",
   "thumbnailDescription": "Brisbane Full Stack User Group",
-  "presenterName": "Bryden Oliver",
-  "presenterProfileUrl": "/people/bryden-oliver",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/bryden-oliver.mdx"
+    }
+  ],
+  "presenterName": "",
+  "presenterProfileUrl": "",
   "startDateTime": "2024-08-21T08:00:00.000Z",
   "endDateTime": "2024-08-21T10:00:00.000Z",
   "startShowBannerDateTime": "2024-08-20T14:00:00.000Z",
@@ -14,11 +19,6 @@
   "category": "Other",
   "abstract": "In this engaging presentation, Bryden will guide you through a range of tried-and-true techniques that will revolutionize the way you approach database optimization.",
   "description": "Discover the secrets to unlocking lightning-fast database performance! In this engaging presentation, Bryden will guide you through a range of tried-and-true techniques that will revolutionize the way you approach database optimization.\n\nWith plenty of live demos along the way, you'll gain a deep understanding of each technique and learn how to apply them to your own databases.\n\nFrom the simplest tips to more advanced techniques, this session has something for everyone. Get ready to take your database performance to the next level!\n\nThis session is aimed at making databases more accessible to developers. Aimed squarely at SQL Server, it contains lots of little tips and tricks along the way to help quickly and easily identify problem queries.\n\nAgenda (AEST)\n6 pm - Pizza at SSW Brisbane🍕\n6:30 pm - Welcome & News with Adam Cogan - this will be live-streamed around the world\n6:35 pm - Top Database Performance Techniques 🚀 with Bryden Oliver (Live from SSW Brisbane)\n\n* [OR, join us on the live feed from 6:30 pm!](https://www.ssw.com.au/live)\n",
-  "presenterList": [
-    {
-      "presenter": "content/presenters/bryden-oliver.mdx"
-    }
-  ],
   "youTubeId": "7ZTVCGDTj5g",
   "liveStreamDelayMinutes": 30,
   "hostedAtSsw": true,
