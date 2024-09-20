@@ -1,9 +1,6 @@
 name: Weekly app service slot cleanup
 
 on:
-  pull_request:
-    branches:
-      - main
   schedule:
     # Monday at 12 PM UTC - https://cron.help/#0_12_*_*_MON
     - cron: "0 12 * * MON"
