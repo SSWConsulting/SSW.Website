@@ -75,6 +75,7 @@ const config = {
     ];
   },
   experimental: {
+    bundlePagesExternals: true,
     optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
     turbo: {
       resolveExtensions: [
