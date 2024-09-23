@@ -35,26 +35,18 @@ export const LayoutContent = ({
 
   return (
     <AppInsightsProvider>
-      <ParamsProvider setQueryParams={setQueryParams}>
-        <Suspense
-          fallback={
-            <Content liveStreamData={liveStreamData} menuData={menuData}>
-              {children}
-            </Content>
-          }
-        >
-          {/* App Router components must be wrapped in a Suspense when retrieving url search params */}
-          <TelemetryProvider>
-            <Content
-              params={queryParams}
-              liveStreamData={liveStreamData}
-              menuData={menuData}
-            >
-              {children}
-            </Content>
-          </TelemetryProvider>
-        </Suspense>
-      </ParamsProvider>
+      <Suspense>
+        <ParamsProvider setQueryParams={setQueryParams}></ParamsProvider>
+      </Suspense>
+      {/* App Router components must be wrapped in a Suspense when retrieving url search params */}
+      <TelemetryProvider params={queryParams} />
+      <Content
+        params={queryParams}
+        liveStreamData={liveStreamData}
+        menuData={menuData}
+      >
+        {children}
+      </Content>
     </AppInsightsProvider>
   );
 };
