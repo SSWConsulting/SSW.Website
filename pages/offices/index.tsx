@@ -1,4 +1,5 @@
 import { client } from "@/tina/client";
+import { TODAY } from "hooks/useFetchEvents";
 import { InferGetStaticPropsType } from "next";
 import Image from "next/image";
 import { useTina } from "tinacms/dist/react";
@@ -27,7 +28,7 @@ export default function OfficeIndex(
 
   return (
     offices && (
-      <Layout menu={data.megamenu}>
+      <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
         <SEO seo={seo} />
         <Container className="flex-1 pt-2">
           <Breadcrumbs
@@ -133,8 +134,8 @@ export default function OfficeIndex(
 export const getStaticProps = async () => {
   const tinaProps = await client.queries.officeIndexQuery({
     relativePath: "officesIndex.json",
+    date: TODAY.toISOString(),
   });
-
   if (
     tinaProps.data.officeIndex.seo &&
     !tinaProps.data.officeIndex.seo.canonical

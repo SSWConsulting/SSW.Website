@@ -86,13 +86,25 @@ jobs:
             --output tsv
           Write-Host '✅ slot identity found'
 
-          # grant access to the identity on ACR
-          az role assignment delete `
+          # Check if the role assignment exists before deleting it
+          $acrRoleAssignment = az role assignment list `
             --assignee $identityId `
             --scope $acrId `
             --role acrpull `
-            --output none
-          Write-Host '✅ acrpull role deleted'
+            --query "[].roleDefinitionName" `
+            --output tsv
+
+          if ($acrRoleAssignment) {
+            # Delete the role assignment if it exists
+            az role assignment delete `
+              --assignee $identityId `
+              --scope $acrId `
+              --role acrpull `
+              --output none
+            Write-Host '✅ acrpull role deleted'
+          } else {
+            Write-Host '❌ acrpull role assignment not found'
+          }
 
           $kvId = az keyvault show `
             --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
@@ -100,16 +112,28 @@ jobs:
             --query id `
             --output tsv
 
-          if($kvId) {
+          if($kvId){
           Write-Host '✅ KeyVault found'
 
-          # grant access to the identity on KeyVault
-          az role assignment delete `
-            --assignee $identityId `
-            --scope $kvId `
-            --role "Key Vault Secrets User" `
-            -o none
-          Write-Host '✅ Key Vault Secrets User role deleted'
+          # Check if the Key Vault role assignment exists
+          $kvRoleAssignment = az role assignment list `
+          --assignee $identityId `
+          --scope $kvId `
+          --role "Key Vault Secrets User" `
+          --query "[].roleDefinitionName" `
+          --output tsv
+
+            if ($kvRoleAssignment) {
+            # Delete the Key Vault role assignment if it exists
+            az role assignment delete `
+              --assignee $identityId `
+              --scope $kvId `
+              --role "Key Vault Secrets User" `
+              --output none
+            Write-Host '✅ Key Vault Secrets User role deleted'
+            } else {
+              Write-Host '❌ Key Vault Secrets User role assignment not found'
+            }
           } else {
             Write-Host '❌ Key Vault not found'
           }
@@ -132,10 +156,23 @@ jobs:
       - name: ACR - Delete image
         run: |
           $imageTagWithPrefix = '${{ env.SLOT_PREFIX }}${{ matrix.SLOT_NAME}}'
+          $imageName = "${{ env.IMAGE_NAME }}:$imageTagWithPrefix"
 
-          az acr repository delete --name ${{ env.ACR_NAME }} `
-          --image ${{ env.IMAGE_NAME }}:$imageTagWithPrefix --yes
-          Write-Output "✅ ACR - ${{ env.IMAGE_NAME }}:$imageTagWithPrefix image deleted successfully."
+          # Check if the image exists in the ACR
+          $imageExists = az acr repository show-manifests `
+            --name ${{ env.ACR_NAME }} `
+            --repository ${{ env.IMAGE_NAME }} `
+            --query "[?tags[?contains(@, '$imageTagWithPrefix')]].tags[]" `
+            --output tsv
+
+          if ($imageExists) {
+            # If the image exists, delete it
+            az acr repository delete --name ${{ env.ACR_NAME }} `
+            --image $imageName --yes
+            Write-Output "✅ ACR - $imageName image deleted successfully."
+          } else {
+            Write-Output "❌ ACR - $imageName image not found, skipping deletion."
+          }
 
       - name: Delete slot
         run: |

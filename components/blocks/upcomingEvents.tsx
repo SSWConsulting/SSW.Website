@@ -4,12 +4,12 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
-
 import { useFormatDates } from "../../hooks/useFormatDates";
 import client from "../../tina/__generated__/client";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { EventTrimmed } from "../filter/events";
+import { PresenterList } from "../presenters/presenterList";
 
 export const UpcomingEvents = ({ data }) => {
   const [events, setEvents] = useState<EventTrimmed[]>([]);
@@ -98,9 +98,13 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
             formattedDate={formattedDate}
             dateFontSize="text-xs"
           />
-          {!!event.presenterName && (
+          {!!(event.presenterName || event?.presenterList?.length > 0) && (
             <span className="mt-1 inline-flex items-center text-xs text-black">
-              {event.presenterName}
+              {event.presenterName ? (
+                <>{event.presenterName}</>
+              ) : (
+                <PresenterList presenters={event.presenterList} />
+              )}
             </span>
           )}
         </div>

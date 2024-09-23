@@ -1,13 +1,10 @@
 "use client";
 
-import "react-tooltip/dist/react-tooltip.css";
-
-import { InlineJotForm } from "@/components/blocks";
+import { InlineJotForm, VideoEmbed } from "@/components/blocks";
 import { CustomLink } from "@/components/customLink";
-import { YouTubeEmbed } from "@/components/embeds/youtubeEmbed";
 import { SocialIcons } from "@/components/socialIcons/socialIcons";
 import layoutData, { default as globals } from "@/content/global/index.json";
-import { getYouTubeId } from "@/helpers/embeds";
+import { EventInfo } from "@/services/server/events";
 import classNames from "classnames";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
@@ -15,11 +12,12 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
-import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;
+  event: EventInfo;
 } & LiveStreamProps;
 
 export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
@@ -126,10 +124,13 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
           <div id="thumbnailAnchor" className="col-span-3 md:col-span-2">
             <div className="relative h-0 pt-9/16">
               <div className="absolute top-0 size-full">
-                <YouTubeEmbed
-                  id={getYouTubeId(youtubeUrls?.videoUrl)}
-                  width="100%"
-                  height="100%"
+                <VideoEmbed
+                  data={{
+                    url: youtubeUrls?.videoUrl,
+                    videoWidth: "w-full",
+                    removeMargin: true,
+                    roundedEdges: false,
+                  }}
                 />
               </div>
             </div>
@@ -142,10 +143,13 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
             data-aos-anchor="#thumbnailAnchor"
             data-aos-anchor-placement="bottom-top"
           >
-            <YouTubeEmbed
-              id={getYouTubeId(youtubeUrls?.videoUrl)}
-              width="100%"
-              height="100%"
+            <VideoEmbed
+              data={{
+                url: youtubeUrls?.videoUrl,
+                videoWidth: "w-full",
+                removeMargin: true,
+                roundedEdges: false,
+              }}
             />
           </div>
           <div className="hidden h-full sm:col-span-3 sm:block md:col-span-1">
@@ -227,7 +231,15 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
           </div>
         </div>
 
-        <div className="mb-4 grid grid-cols-1 gap-x-8 md:grid-cols-2">
+        <div
+          className={classNames(
+            "mb-4",
+            "grid",
+            "grid-cols-1",
+            "gap-x-8",
+            event.presenterList?.length && "md:grid-cols-2"
+          )}
+        >
           <div>
             <div className="mb-8 bg-gray-75 px-4 py-2">
               <div>
@@ -238,7 +250,9 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                   className={classNames(
                     { "max-h-70": collapseMap[eventDescriptionCollapseId] },
                     {
-                      "max-h-screen": !collapseMap[eventDescriptionCollapseId],
+                      "max-h-screen":
+                        !collapseMap[eventDescriptionCollapseId] ||
+                        !eventDescriptionCollapsable,
                     },
                     {
                       "overflow-hidden":
@@ -279,13 +293,13 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
             <InlineJotForm jotFormId={globals.newsletterJotFormId} />
           </div>
 
-          <div className="bg-gray-75 px-4 py-2">
-            <h3 className="mb-3 text-xl font-bold">About the Speaker</h3>
-            {!!event?.presenterList.length &&
-              event.presenterList.map((presenter, index) => {
-                const presenterDetails = presenter.presenter;
-                return (
-                  <div key={index} className="mb-8 grid grid-cols-6 gap-x-8">
+          {!!event?.presenterList?.length &&
+            event.presenterList.map((presenter, index) => {
+              const presenterDetails = presenter.presenter;
+              return (
+                <div key={index} className="bg-gray-75 px-4 py-2">
+                  <h3 className="mb-3 text-xl font-bold">About the Speaker</h3>
+                  <div className="mb-8 grid grid-cols-6 gap-x-8">
                     <div className="col-span-1">
                       {!!presenterDetails.profileImg && (
                         <Image
@@ -311,9 +325,9 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                       )}
                     </div>
                   </div>
-                );
-              })}
-          </div>
+                </div>
+              );
+            })}
         </div>
       </div>
     </>

@@ -1,4 +1,5 @@
 import client from "@/tina/client";
+import { TODAY } from "hooks/useFetchEvents";
 import { InferGetStaticPropsType } from "next";
 import { FaGlobe, FaUsers } from "react-icons/fa";
 import { CustomLink } from "../components/customLink";
@@ -12,7 +13,11 @@ const ThankyouPage = (
   const doneButtonClass = "done p-3 inline-flex cursor-pointer";
 
   return (
-    <Layout className="bg-gray-75" menu={props.data.megamenu}>
+    <Layout
+      liveStreamData={props.tinaProps.data.userGroup}
+      className="bg-gray-75"
+      menu={props.tinaProps.data.megamenu}
+    >
       <div className="!max-w-full !bg-white">
         <Container padding="px-4" className="pb-8 text-center">
           <h1>
@@ -55,10 +60,13 @@ const ThankyouPage = (
 };
 
 export const getStaticProps = async () => {
-  const tinaProps = await client.queries.layoutQuery();
-
+  const tinaProps = await client.queries.layoutQuery({
+    date: TODAY.toISOString(),
+  });
   return {
-    props: tinaProps,
+    props: {
+      tinaProps,
+    },
   };
 };
 

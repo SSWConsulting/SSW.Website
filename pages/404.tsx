@@ -1,14 +1,16 @@
 import { Layout } from "@/components/layout";
 import { ErrorPage } from "@/components/util/error-page";
 import client from "@/tina/client";
+import { TODAY } from "hooks/useFetchEvents";
 import { InferGetStaticPropsType } from "next";
 
 export default function FourOhFour(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   return (
-    <Layout menu={props.data.megamenu}>
+    <Layout liveStreamData={props.data.userGroup} menu={props.data.megamenu}>
       <ErrorPage
+        userGroup={props.data.userGroup}
         code="404"
         title="PAGE NOT FOUND!"
         tipText={
@@ -20,8 +22,9 @@ export default function FourOhFour(
 }
 
 export const getStaticProps = async () => {
-  const tinaProps = await client.queries.layoutQuery();
-
+  const tinaProps = await client.queries.layoutQuery({
+    date: TODAY.toISOString(),
+  });
   return {
     props: tinaProps,
   };
