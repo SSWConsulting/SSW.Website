@@ -12,7 +12,6 @@ export const TelemetryProvider = ({ children }) => {
   const path = usePathname();
   const params: ReadonlyURLSearchParams = useSearchParams();
 
-  const p = useSearchParams();
   useReportWebVitals((metric) => {
     switch (metric.name) {
       case "TTFB":

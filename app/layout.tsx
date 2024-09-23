@@ -12,7 +12,6 @@ import { Metadata, Viewport } from "next";
 
 import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events";
-import { AppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import { GoogleTagManager } from "@next/third-parties/google";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
