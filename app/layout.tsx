@@ -67,7 +67,7 @@ export default async function RootLayout({
     <html lang="en" className={openSans.className}>
       <body>
         <AppInsightsProvider>
-          <Suspense fallback={<p>Afternoon pog champ</p>}>
+          <Suspense>
             {/* App Router components must be wrapped in a Suspense when retrieving url search params */}
             <TelemetryProvider>
               {/* <Theme> */}
