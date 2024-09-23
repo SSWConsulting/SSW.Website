@@ -14,7 +14,7 @@ import {
   EventInfoStatic,
   formatDates,
 } from "@/services/server/events";
-import { ReadonlyURLSearchParams } from "next/navigation";
+import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
 import { PropsWithChildren, useEffect, useState } from "react";
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
@@ -44,10 +44,10 @@ const INTERVAL_MINUTES = 1;
 
 interface LiveStreamProps extends PropsWithChildren {
   event: EventInfoStatic;
-  params?: ReadonlyURLSearchParams;
 }
 
-export function LiveStream({ event, children, params }: LiveStreamProps) {
+export function LiveStream({ event, children }: LiveStreamProps) {
+  const params: ReadonlyURLSearchParams = useSearchParams();
   const [countdownMins, setCountdownMins] = useState<number>();
   const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
 

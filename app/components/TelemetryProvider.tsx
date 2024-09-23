@@ -1,13 +1,14 @@
 "use client";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
-
-import { ReadonlyURLSearchParams, usePathname } from "next/navigation";
+import {
+  ReadonlyURLSearchParams,
+  usePathname,
+  useSearchParams,
+} from "next/navigation";
 import { useReportWebVitals } from "next/web-vitals";
 
-type TelemetryProviderProps = {
-  params: ReadonlyURLSearchParams | null;
-};
-export const TelemetryProvider = ({ params }: TelemetryProviderProps) => {
+export const TelemetryProvider = () => {
+  const params: ReadonlyURLSearchParams = useSearchParams();
   const appInsights = useAppInsightsContext();
   const path = usePathname();
   if (params !== null) {
