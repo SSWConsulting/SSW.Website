@@ -1,5 +1,4 @@
 "use client";
-import { AppInsightsProvider } from "@/context/app-insight-client";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import {
   ReadonlyURLSearchParams,
