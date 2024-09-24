@@ -6,8 +6,9 @@ import {
   useSearchParams,
 } from "next/navigation";
 import { useReportWebVitals } from "next/web-vitals";
+import React from "react";
 
-export const TelemetryProvider = () => {
+export const TelemetryProvider = ({ children }) => {
   const params: ReadonlyURLSearchParams = useSearchParams();
   const appInsights = useAppInsightsContext();
   const path = usePathname();
@@ -28,5 +29,5 @@ export const TelemetryProvider = () => {
       }
     });
   }
-  return <></>;
+  return <React.Fragment>{children}</React.Fragment>;
 };

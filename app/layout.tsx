@@ -19,9 +19,9 @@ import { Metadata, Viewport } from "next";
 import { Open_Sans } from "next/font/google";
 import client from "../tina/__generated__/client";
 import { MenuWrapper } from "./components/MenuWrapper";
-import { TelemetryProvider } from "./components/TelemetryProvider";
 import { LiveStream } from "./live-steam-banner/live-stream";
 import { DEFAULT } from "./meta-data/default";
+import Template from "./template";
 import { getMegamenu } from "./utils/get-mega-menu";
 
 dayjs.extend(relativeTime);
@@ -68,7 +68,6 @@ export default async function RootLayout({
     <html lang="en" className={openSans.className}>
       <body>
         <AppInsightsProvider>
-          <TelemetryProvider />
           {/* <Theme> */}
           {/* Ensures next/font CSS variable is accessible for all components */}
           <div
