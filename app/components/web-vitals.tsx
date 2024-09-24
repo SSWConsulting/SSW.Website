@@ -7,6 +7,7 @@ import { useReportWebVitals } from "next/web-vitals";
 export const WebVitals = () => {
   const appInsights = useAppInsightsContext();
   const pathname = usePathname();
+  console.log("🚀 ~ WebVitals ~ pathname:", pathname);
 
   useReportWebVitals((metric) => {
     switch (metric.name) {
@@ -16,7 +17,7 @@ export const WebVitals = () => {
       case "FID":
       case "CLS":
       case "INP":
-        appInsights.trackMetric(
+        appInsights?.trackMetric(
           { name: metric.name, average: metric.value },
           { page: `${pathname}` }
         );
