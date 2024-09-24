@@ -12,22 +12,20 @@ export const TelemetryProvider = ({ children }) => {
   const params: ReadonlyURLSearchParams = useSearchParams();
   const appInsights = useAppInsightsContext();
   const path = usePathname();
-  if (params !== null) {
-    useReportWebVitals((metric) => {
-      switch (metric.name) {
-        case "TTFB":
-        case "FCP":
-        case "LCP":
-        case "FID":
-        case "CLS":
-        case "INP":
-          appInsights.trackMetric(
-            { name: metric.name, average: metric.value },
-            { page: `${path}${params.toString()}` }
-          );
-          break;
-      }
-    });
-  }
+  useReportWebVitals((metric) => {
+    switch (metric.name) {
+      case "TTFB":
+      case "FCP":
+      case "LCP":
+      case "FID":
+      case "CLS":
+      case "INP":
+        appInsights.trackMetric(
+          { name: metric.name, average: metric.value },
+          { page: `${path}${params.toString()}` }
+        );
+        break;
+    }
+  });
   return <React.Fragment>{children}</React.Fragment>;
 };
