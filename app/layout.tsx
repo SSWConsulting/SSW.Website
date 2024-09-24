@@ -21,7 +21,6 @@ import client from "../tina/__generated__/client";
 import { MenuWrapper } from "./components/MenuWrapper";
 import { LiveStream } from "./live-steam-banner/live-stream";
 import { DEFAULT } from "./meta-data/default";
-import Template from "./template";
 import { getMegamenu } from "./utils/get-mega-menu";
 
 dayjs.extend(relativeTime);
