@@ -6,7 +6,6 @@ import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import ChatBaseBot from "@/components/zendeskButton/chatBaseBot";
 import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events";
-import { MegamenuQuery } from "@/tina/types";
 import { GoogleTagManager } from "@next/third-parties/google";
 import classNames from "classnames";
 import dayjs from "dayjs";
