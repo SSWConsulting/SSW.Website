@@ -7,7 +7,6 @@ import { useReportWebVitals } from "next/web-vitals";
 export const WebVitals = () => {
   const appInsights = useAppInsightsContext();
   const pathname = usePathname();
-  console.log("🚀 ~ WebVitals ~ pathname:", pathname);
 
   useReportWebVitals((metric) => {
     switch (metric.name) {
