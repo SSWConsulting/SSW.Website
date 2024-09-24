@@ -39,10 +39,6 @@ export const DEFAULT_METADATA: Metadata = {
   ...DEFAULT,
 };
 
-export type MenuData = {
-  data: MegamenuQuery;
-};
-
 export const viewport: Viewport = {
   themeColor: "#cc4141",
   width: "device-width",
