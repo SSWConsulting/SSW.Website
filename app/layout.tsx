@@ -19,9 +19,9 @@ import { Metadata, Viewport } from "next";
 import { Open_Sans } from "next/font/google";
 import client from "../tina/__generated__/client";
 import { MenuWrapper } from "./components/MenuWrapper";
+import { WebVitals } from "./components/web-vitals";
 import { LiveStream } from "./live-steam-banner/live-stream";
 import { DEFAULT } from "./meta-data/default";
-import Template from "./template";
 import { getMegamenu } from "./utils/get-mega-menu";
 
 dayjs.extend(relativeTime);
@@ -65,38 +65,37 @@ export default async function RootLayout({
       ? nextUG?.data?.eventsCalendarConnection?.edges[0]?.node
       : null;
   return (
-    <Template>
-      <html lang="en" className={openSans.className}>
-        <body>
-          <AppInsightsProvider>
-            {/* <Theme> */}
-            {/* Ensures next/font CSS variable is accessible for all components */}
-            <div
-              className={classNames(
-                "flex min-h-screen flex-col font-sans",
-                openSans.className
-              )}
-            >
-              <header className="no-print">
-                {liveStreamData ? (
-                  <LiveStream event={liveStreamData}>
-                    <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
-                  </LiveStream>
-                ) : (
-                  <MenuWrapper>
-                    <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
-                  </MenuWrapper>
-                )}
-              </header>
-              <main className="grow bg-white">{children}</main>
-              <Footer />
-            </div>
-            {/* </Theme> */}
-            <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
-            <ChatBaseBot />
-          </AppInsightsProvider>
-        </body>
-      </html>
-    </Template>
+    <html lang="en" className={openSans.className}>
+      <body>
+        {/* <Theme> */}
+        {/* Ensures next/font CSS variable is accessible for all components */}
+        <div
+          className={classNames(
+            "flex min-h-screen flex-col font-sans",
+            openSans.className
+          )}
+        >
+          <header className="no-print">
+            {liveStreamData ? (
+              <LiveStream event={liveStreamData}>
+                <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
+              </LiveStream>
+            ) : (
+              <MenuWrapper>
+                <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
+              </MenuWrapper>
+            )}
+          </header>
+          <main className="grow bg-white">
+            <WebVitals />
+            <AppInsightsProvider>{children}</AppInsightsProvider>
+          </main>
+          <Footer />
+        </div>
+        {/* </Theme> */}
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
+        <ChatBaseBot />
+      </body>
+    </html>
   );
 }
