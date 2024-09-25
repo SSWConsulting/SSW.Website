@@ -84,8 +84,10 @@ export default async function RootLayout({
             )}
           </header>
           <main className="grow bg-white">
-            <WebVitals />
-            <AppInsightsProvider>{children}</AppInsightsProvider>
+            <AppInsightsProvider>
+              <WebVitals />
+              {children}
+            </AppInsightsProvider>
           </main>
           <Footer />
         </div>
