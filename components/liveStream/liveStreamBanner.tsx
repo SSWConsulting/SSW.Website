@@ -52,7 +52,7 @@ const LiveStreamBanner = ({
           <h1 className="m-0 py-0 text-xl font-light text-gray-300">{title}</h1>
           <p className="py-0 text-xs text-white">
             <span className="block text-sswRed">
-              {isLive ? liveText : countdownText}
+              {(isLive ? liveText : countdownText) || "Calculating..."}
             </span>
             {!isLive && scheduledTimeText(dayjs(startDateTime))}
           </p>
