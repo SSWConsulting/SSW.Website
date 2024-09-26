@@ -84,8 +84,9 @@ const BigCards = ({ title, cards, schema }) => {
                     src={card.imgSrc ?? ""}
                     width="100"
                     height="100"
-                    sizes="(max-width: 768px) 50vw, 33vw"
+                    sizes="(max-width: 768px) 20vw, 33vw"
                     alt={`Icon for ${card.title}`}
+                    priority
                   />
                 </div>
                 <div className="relative flex grow flex-col p-8">
@@ -105,7 +106,7 @@ const BigCards = ({ title, cards, schema }) => {
                       serviceCards.bigCards.description
                     )}
                   >
-                    <p>{card.description}</p>
+                    {card.description}
                   </span>
                 </div>
               </div>
