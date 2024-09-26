@@ -1,5 +1,6 @@
 import client from "@/tina/client";
 
+import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { ClientPage } from "./client-page";
@@ -51,11 +52,41 @@ const getData = async (filename: string) => {
   if (!filename) {
     filename = "home";
   }
-  const data = await client.queries.contentQuery({
+  const tinaProps = await client.queries.contentQuery({
     relativePath: `${filename}.mdx`,
+    date: TODAY.toISOString(),
   });
 
-  return { ...data };
+  const sideBars = tinaProps.data.page?.sideBar || [];
+  const preFetchedUpcomingEvents = await Promise.all(
+    sideBars
+      .filter((sideBar) => sideBar.__typename === "PageSideBarUpcomingEvents")
+      .map(async (sideBar) => {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const upcomingevents = await client.queries.getFutureEventsQuery({
+          fromDate: today.toISOString(),
+          top: sideBar.numberOfEvents,
+        });
+
+        return {
+          ...sideBar,
+          events: upcomingevents,
+        };
+      })
+  );
+
+  if (sideBars.length > 0 && preFetchedUpcomingEvents.length > 0) {
+    tinaProps.data.page.sideBar = [
+      ...sideBars.filter(
+        ({ __typename }) => __typename !== "PageSideBarUpcomingEvents"
+      ),
+      ...preFetchedUpcomingEvents,
+    ];
+  }
+
+  return { ...tinaProps };
 };
 
 export default async function HomePage({
