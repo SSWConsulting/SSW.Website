@@ -84,7 +84,7 @@ const BigCards = ({ title, cards, schema }) => {
                     src={card.imgSrc ?? ""}
                     width="100"
                     height="100"
-                    sizes="(max-width: 768px) 20vw, 33vw"
+                    sizes="33vw"
                     alt={`Icon for ${card.title}`}
                     priority
                   />
@@ -164,7 +164,7 @@ const SmallCardContent = ({ card, schema, index }) => {
           src={card.imgSrc ?? ""}
           width="50"
           height="50"
-          sizes="(max-width: 768px) 50vw, 33vw"
+          sizes="33vw"
           alt={`Icon for ${card.title}`}
         />{" "}
       </span>
