@@ -49,7 +49,7 @@ export default function PageContent({ props }) {
           </span>
         </Section>
       )}
-      <Blocks prefix="pageBeforeBody" blocks={data.page.beforeBody} />
+      <Blocks prefix="PageBeforeBody" blocks={data.page.beforeBody} />
       <Container
         className={classNames("flex-1", {
           "pt-0": data.page.removeBodyTopMargin,
@@ -70,13 +70,13 @@ export default function PageContent({ props }) {
 
           {!!data.page.sideBar && (
             <div className="mt-5 md:col-span-2 md:mt-0">
-              <Blocks prefix="pageSideBar" blocks={data.page.sideBar} />
+              <Blocks prefix="PageSideBar" blocks={data.page.sideBar} />
             </div>
           )}
         </div>
       </Container>
       <div className="no-print">
-        <Blocks prefix="pageAfterBody" blocks={data.page.afterBody} />
+        <Blocks prefix="PageAfterBody" blocks={data.page.afterBody} />
       </div>
     </>
   );
