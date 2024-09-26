@@ -20,10 +20,7 @@ const BuiltOnAzure = dynamic(() =>
   import("./blocks/builtOnAzure").then((mod) => mod.BuiltOnAzure)
 );
 
-const Carousel = dynamic(() =>
-  import("./blocks/carousel").then((mod) => mod.Carousel)
-);
-
+import { Carousel } from "./blocks/carousel";
 const ClientLogos = dynamic(() =>
   import("./blocks/clientLogos").then((mod) => mod.ClientLogos)
 );
@@ -52,9 +49,7 @@ const JotFormEmbed = dynamic(() =>
   import("./blocks/jotFormEmbed").then((mod) => mod.JotFormEmbed)
 );
 
-const ServiceCards = dynamic(() =>
-  import("./blocks/serviceCards").then((mod) => mod.ServiceCards)
-);
+import { ServiceCards } from "./blocks/serviceCards";
 
 const TableLayout = dynamic(() =>
   import("./blocks/tableLayout").then((mod) => mod.TableLayout)
