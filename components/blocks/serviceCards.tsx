@@ -86,7 +86,7 @@ const BigCards = ({ title, cards, schema }) => {
                     height="100"
                     sizes="33vw"
                     alt={`Icon for ${card.title}`}
-                    priority
+                    priority={true}
                   />
                 </div>
                 <div className="relative flex grow flex-col p-8">
