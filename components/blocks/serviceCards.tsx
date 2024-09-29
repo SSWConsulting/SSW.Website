@@ -78,17 +78,19 @@ const BigCards = ({ title, cards, schema }) => {
               className="unstyled flex grow text-left text-white"
             >
               <div className="flex grow flex-col">
-                <div className="absolute flex-1 self-end">
-                  <Image
-                    className="opacity-50"
-                    src={card.imgSrc ?? ""}
-                    width="100"
-                    height="100"
-                    sizes="20vw"
-                    alt={`Icon for ${card.title}`}
-                    priority={true}
-                  />
-                </div>
+                {card?.imgSrc && (
+                  <div className="absolute flex-1 self-end">
+                    <Image
+                      className="opacity-50"
+                      src={card.imgSrc ?? ""}
+                      width="100"
+                      height="100"
+                      sizes="20vw"
+                      alt={`Icon for ${card.title}`}
+                      priority={true}
+                    />
+                  </div>
+                )}
                 <div className="relative flex grow flex-col p-8">
                   <h3
                     className="flex pb-3 text-2xl font-thin lg:pt-8"
