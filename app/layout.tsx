@@ -33,6 +33,7 @@ const openSans = Open_Sans({
   variable: "--open-sans-font",
   subsets: ["latin"],
   display: "swap",
+  weight: "400",
 });
 
 const ChatBaseBot = dynamic(
