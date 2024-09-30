@@ -4,11 +4,8 @@ const BookingButton = dynamic(() =>
   import("./bookingButton/bookingButton").then((mod) => mod.BookingButton)
 );
 
-const UpcomingEvents = dynamic(
-  () => import("./blocks/upcomingEvents").then((mod) => mod.UpcomingEvents),
-  {
-    ssr: false,
-  }
+const UpcomingEvents = dynamic(() =>
+  import("./blocks/upcomingEvents").then((mod) => mod.UpcomingEvents)
 );
 
 const AboutUs = dynamic(() =>

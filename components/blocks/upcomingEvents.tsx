@@ -116,7 +116,8 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
               alt={`${event.thumbnailDescription || event.title} logo`}
               width={90}
               height={90}
-              sizes="75w (max-width: 768px) 25vw"
+              sizes="(max-width: 768px) 25vw, 50px"
+              loading="lazy"
               onError={() => setImageFailed(true)}
             />
           </div>

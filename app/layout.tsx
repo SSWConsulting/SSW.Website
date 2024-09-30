@@ -1,12 +1,7 @@
+import { Footer } from "@/components/layout/footer/footer";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import dynamic from "next/dynamic";
 import "styles.css";
-const Footer = dynamic(
-  () => import("@/components/layout/footer/footer").then((x) => x.Footer),
-  {
-    ssr: false,
-  }
-);
 
 import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events";

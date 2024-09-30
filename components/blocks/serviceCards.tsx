@@ -90,6 +90,7 @@ const BigCards = ({ title, cards, schema }) => {
                       height="100"
                       sizes="20vw"
                       alt={`Icon for ${card.title}`}
+                      loading="lazy"
                     />
                   </div>
                 )}
