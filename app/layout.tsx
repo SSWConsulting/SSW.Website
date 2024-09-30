@@ -72,12 +72,7 @@ export default async function RootLayout({
       <body>
         {/* <Theme> */}
         {/* Ensures next/font CSS variable is accessible for all components */}
-        <div
-          className={classNames(
-            "flex min-h-screen flex-col font-sans",
-            openSans.className
-          )}
-        >
+        <div className="flex min-h-screen flex-col">
           <header className="no-print">
             {liveStreamData ? (
               <LiveStream event={liveStreamData}>
