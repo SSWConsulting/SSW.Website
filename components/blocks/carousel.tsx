@@ -10,6 +10,7 @@ import dynamic from "next/dynamic";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
+import { useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const CarouselImplementation = dynamic(() =>
@@ -18,6 +19,21 @@ const CarouselImplementation = dynamic(() =>
 
 export const Carousel = ({ data }) => {
   const router = useRouter();
+
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  if (!data.showOnMobileDevices && isMobile) {
+    return null;
+  }
 
   const openItem = ({ link, openIn }) => {
     if (openIn === "newWindow") {
