@@ -4,8 +4,11 @@ const BookingButton = dynamic(() =>
   import("./bookingButton/bookingButton").then((mod) => mod.BookingButton)
 );
 
-const UpcomingEvents = dynamic(() =>
-  import("./blocks/upcomingEvents").then((mod) => mod.UpcomingEvents)
+const UpcomingEvents = dynamic(
+  () => import("./blocks/upcomingEvents").then((mod) => mod.UpcomingEvents),
+  {
+    ssr: false,
+  }
 );
 
 const AboutUs = dynamic(() =>
@@ -45,8 +48,11 @@ const HorizontalCard = dynamic(() =>
   import("./blocks/horizontalCard").then((mod) => mod.HorizontalCard)
 );
 
-const JotFormEmbed = dynamic(() =>
-  import("./blocks/jotFormEmbed").then((mod) => mod.JotFormEmbed)
+const JotFormEmbed = dynamic(
+  () => import("./blocks/jotFormEmbed").then((mod) => mod.JotFormEmbed),
+  {
+    ssr: false,
+  }
 );
 
 import { ServiceCards } from "./blocks/serviceCards";
@@ -95,8 +101,9 @@ const EventBooking = dynamic(() =>
   import("./training/eventBooking").then((mod) => mod.EventBooking)
 );
 
-const InterestForm = dynamic(() =>
-  import("./events/interestForm").then((mod) => mod.InterestForm)
+const InterestForm = dynamic(
+  () => import("./events/interestForm").then((mod) => mod.InterestForm),
+  { ssr: false }
 );
 
 const LocationBlock = dynamic(() =>

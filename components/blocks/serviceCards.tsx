@@ -1,4 +1,4 @@
-import { tinaField } from "tinacms/dist/react";
+import { tinaField, useEditState } from "tinacms/dist/react";
 
 const Image = dynamic(() => import("next/image"), { ssr: false });
 
@@ -57,6 +57,7 @@ const Label = ({ text, schema, cardLabel }) => {
 };
 
 const BigCards = ({ title, cards, schema }) => {
+  const tineMode = useEditState();
   return (
     <>
       <Label
@@ -103,7 +104,7 @@ const BigCards = ({ title, cards, schema }) => {
                     {card.title}
                   </h3>
                   <div className="grow"></div>
-                  {schema.bigCards[index].length > 0 ? (
+                  {tineMode.edit ? (
                     <p
                       data-tina-field={tinaField(
                         schema.bigCards[index],
