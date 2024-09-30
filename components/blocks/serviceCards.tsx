@@ -1,8 +1,10 @@
-import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
+
+const Image = dynamic(() => import("next/image"), { ssr: false });
 
 import type { Template } from "tinacms";
 
+import dynamic from "next/dynamic";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
