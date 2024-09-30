@@ -5,11 +5,6 @@ import { Footer } from "@/components/layout/footer/footer";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import dynamic from "next/dynamic";
 
-const ChatBaseBot = dynamic(
-  () => import("@/components/zendeskButton/chatBaseBot"),
-  { ssr: false }
-);
-
 import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events";
 import { GoogleTagManager } from "@next/third-parties/google";
@@ -37,7 +32,13 @@ dayjs.extend(isBetween);
 const openSans = Open_Sans({
   variable: "--open-sans-font",
   subsets: ["latin"],
+  display: "swap",
 });
+
+const ChatBaseBot = dynamic(
+  () => import("@/components/zendeskButton/chatBaseBot"),
+  { ssr: false }
+);
 
 export const DEFAULT_METADATA: Metadata = {
   ...DEFAULT,
