@@ -68,7 +68,7 @@
     "animate-css-grid": "^1.5.1",
     "aos": "^2.3.4",
     "applicationinsights": "^2.9.5",
-    "axios": "^1.7.4",
+    "axios": "^1.7.7",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
     "dotenv": "^16.4.5",
