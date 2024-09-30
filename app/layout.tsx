@@ -1,9 +1,7 @@
-import "styles.css";
-// import { CustomLink } from "@/components/customLink";
-// import { Footer } from "@/components/layout/footer";
 import { Footer } from "@/components/layout/footer/footer";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import dynamic from "next/dynamic";
+import "styles.css";
 
 import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events";

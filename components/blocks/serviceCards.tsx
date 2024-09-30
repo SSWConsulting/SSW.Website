@@ -103,14 +103,14 @@ const BigCards = ({ title, cards, schema }) => {
                     {card.title}
                   </h3>
                   <div className="grow"></div>
-                  <span
+                  <p
                     data-tina-field={tinaField(
                       schema.bigCards[index],
                       serviceCards.bigCards.description
                     )}
                   >
                     {card.description}
-                  </span>
+                  </p>
                 </div>
               </div>
             </CustomLink>
