@@ -3,7 +3,13 @@ import "styles.css";
 // import { Footer } from "@/components/layout/footer";
 import { Footer } from "@/components/layout/footer/footer";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
-import ChatBaseBot from "@/components/zendeskButton/chatBaseBot";
+import dynamic from "next/dynamic";
+
+const ChatBaseBot = dynamic(
+  () => import("@/components/zendeskButton/chatBaseBot"),
+  { ssr: false }
+);
+
 import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events";
 import { GoogleTagManager } from "@next/third-parties/google";
