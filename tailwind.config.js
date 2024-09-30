@@ -61,6 +61,7 @@ export default {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "node_modules/ssw.megamenu/**/*.js",
   ],
+  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   safelist: [...platform.map((p) => `bg-platform-${p.name}`)],
   // This needs to be set to `class` or it will use OS settings https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
   darkMode: "class",
