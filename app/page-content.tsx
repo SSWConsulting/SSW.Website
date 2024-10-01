@@ -6,7 +6,7 @@ import { Section } from "@/components/util/section";
 import { removeExtension } from "@/services/client/utils.service";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import classNames from "classnames";
-import Head from "next/head";
+import { useEffect } from "react";
 import { WebSite, WithContext } from "schema-dts";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -27,14 +27,19 @@ export default function PageContent({ props }) {
     ? "max-w-full md:col-span-3 prose prose-h2:text-3xl/9 prose-h2:text-black"
     : "max-w-full md:col-span-5 prose prose-h2:text-3xl/9 prose-h2:text-black";
 
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.text = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+
+    // Cleanup to remove the script when the component unmounts
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, [structuredData]);
   return (
     <>
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </Head>
       {data.page.breadcrumbs && (
         <Section className="mx-auto w-full max-w-9xl px-8 py-5">
           <Breadcrumbs
