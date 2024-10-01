@@ -37,6 +37,8 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = (props) => {
           { from: "clients", to: "Clients" },
           { from: "live", to: "Live" },
           { from: "logo", to: "Logo" },
+          { from: "articles", to: "SSW Articles" },
+          { from: "ai", to: "AI" },
           { from: props.path, to: `${props.title}` },
         ]}
         useDefaultStyle={true}
