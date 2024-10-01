@@ -1,31 +1,46 @@
+"use client";
+
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { useFormatDates } from "../../hooks/useFormatDates";
+import client from "../../tina/__generated__/client";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { EventTrimmed } from "../filter/events";
 import { PresenterList } from "../presenters/presenterList";
 
-const fetchEvents = async (data) => {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  const events = data.events;
+export const UpcomingEvents = ({ data }) => {
+  const [events, setEvents] = useState<EventTrimmed[]>([]);
+  const [loading, setLoading] = useState(false);
 
-  if (!events.data) return;
-  const mappedEvents = events.data.eventsCalendarConnection.edges.map(
-    (event) => ({
-      ...event.node,
-      startDateTime: new Date(event.node.startDateTime),
-      endDateTime: new Date(event.node.endDateTime),
-    })
-  );
-  return mappedEvents;
-};
+  useEffect(() => {
+    const fetchEvents = async () => {
+      setLoading(true);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const events =
+        data.events ||
+        (await client.queries.getFutureEventsQuery({
+          fromDate: today.toISOString(),
+          top: data.numberOfEvents,
+        }));
+      setLoading(false);
 
-export const UpcomingEvents = async ({ data }) => {
-  const events = await fetchEvents(data);
+      if (!events.data) return;
+      const mappedEvents = events.data.eventsCalendarConnection.edges.map(
+        (event) => ({
+          ...event.node,
+          startDateTime: new Date(event.node.startDateTime),
+          endDateTime: new Date(event.node.endDateTime),
+        })
+      );
+      setEvents(mappedEvents);
+    };
+
+    fetchEvents();
+  }, [data.numberOfEvents, data.events]);
 
   return (
     <div className="prose mt-5 max-w-none sm:my-0">
@@ -37,9 +52,13 @@ export const UpcomingEvents = async ({ data }) => {
       </h2>
       <div className="not-prose">
         <div className="grow">
-          {events.map((event, index) => (
-            <UpcomingEvent event={event} key={index} />
-          ))}
+          {loading ? (
+            <p>Loading...</p>
+          ) : (
+            events.map((event, index) => (
+              <UpcomingEvent event={event} key={index} />
+            ))
+          )}
         </div>
         <div className="mt-3 flex flex-row-reverse justify-center sm:justify-start">
           <CustomLink
