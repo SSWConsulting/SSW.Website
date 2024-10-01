@@ -37,7 +37,7 @@ export default function PageContent({ props }) {
     return () => {
       document.head.removeChild(script);
     };
-  }, []);
+  }, [props?.data.global.header]);
 
   return (
     <>
