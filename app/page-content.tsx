@@ -14,7 +14,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 export default function PageContent({ props }) {
   const { data } = props;
 
-  const structuredData = useMemo(
+  const structuredData: WithContext<WebSite> = useMemo(
     () => ({
       "@context": "https://schema.org",
       "@type": "WebSite",
