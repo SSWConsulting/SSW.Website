@@ -5,7 +5,6 @@ const Image = dynamic(() => import("next/image"), { ssr: false });
 import type { Template } from "tinacms";
 
 import dynamic from "next/dynamic";
-import Link from "next/link";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
@@ -77,10 +76,9 @@ const BigCards = ({ title, cards, schema }) => {
               bgColor[card.color]
             } hover:opacity-80`}
           >
-            <Link
+            <CustomLink
               href={card.link ?? ""}
               className="unstyled flex grow text-left text-white"
-              prefetch={false}
             >
               <div className="flex grow flex-col">
                 {card?.imgSrc && (
@@ -121,7 +119,7 @@ const BigCards = ({ title, cards, schema }) => {
                   )}
                 </div>
               </div>
-            </Link>
+            </CustomLink>
           </li>
         ))}
       </ul>
