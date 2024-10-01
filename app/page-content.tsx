@@ -6,7 +6,7 @@ import { Section } from "@/components/util/section";
 import { removeExtension } from "@/services/client/utils.service";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import classNames from "classnames";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { WebSite, WithContext } from "schema-dts";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -14,14 +14,17 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 export default function PageContent({ props }) {
   const { data } = props;
 
-  const structuredData: WithContext<WebSite> = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: props?.data.global?.header.site_name,
-    alternateName: props?.data.global?.header?.alternate_site_name,
-    description: props?.data.global.header.description,
-    url: props?.data.global.header.url,
-  };
+  const structuredData = useMemo(
+    () => ({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: data.global?.header.site_name,
+      alternateName: data.global?.header?.alternate_site_name,
+      description: data.global.header.description,
+      url: data.global.header.url,
+    }),
+    [data.global?.header]
+  );
 
   const contentClass = data.page.sideBar
     ? "max-w-full md:col-span-3 prose prose-h2:text-3xl/9 prose-h2:text-black"
