@@ -14,20 +14,20 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 export default function PageContent({ props }) {
   const { data } = props;
 
+  const structuredData: WithContext<WebSite> = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: props?.data.global?.header.site_name,
+    alternateName: props?.data.global?.header?.alternate_site_name,
+    description: props?.data.global.header.description,
+    url: props?.data.global.header.url,
+  };
+
   const contentClass = data.page.sideBar
     ? "max-w-full md:col-span-3 prose prose-h2:text-3xl/9 prose-h2:text-black"
     : "max-w-full md:col-span-5 prose prose-h2:text-3xl/9 prose-h2:text-black";
 
   useEffect(() => {
-    const structuredData: WithContext<WebSite> = {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: props?.data.global?.header.site_name,
-      alternateName: props?.data.global?.header?.alternate_site_name,
-      description: props?.data.global.header.description,
-      url: props?.data.global.header.url,
-    };
-
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.text = JSON.stringify(structuredData);
@@ -37,8 +37,7 @@ export default function PageContent({ props }) {
     return () => {
       document.head.removeChild(script);
     };
-  }, [props?.data.global.header]);
-
+  }, [structuredData]);
   return (
     <>
       {data.page.breadcrumbs && (

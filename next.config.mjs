@@ -71,11 +71,6 @@ const config = {
         destination: "/admin/index.html",
         permanent: true,
       },
-      {
-        source: "/consulting/artificial-intelligence",
-        destination: "/ai",
-        permanent: true,
-      },
     ];
   },
   experimental: {
