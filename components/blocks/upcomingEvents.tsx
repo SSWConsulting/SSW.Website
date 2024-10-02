@@ -1,6 +1,6 @@
-import { EventImageClient } from "app/components/event-image-client";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
+import { EventImageClient } from "../../app/components/event-image-client";
 import { useFormatDates } from "../../hooks/useFormatDates";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
