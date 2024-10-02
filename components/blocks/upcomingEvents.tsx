@@ -1,5 +1,4 @@
 import { EventImageClient } from "app/components/event-image-client";
-import { useState } from "react";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { useFormatDates } from "../../hooks/useFormatDates";
