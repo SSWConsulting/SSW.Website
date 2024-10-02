@@ -1,46 +1,34 @@
-"use client";
-
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import { EventImageClient } from "app/components/event-image-client";
+import { useState } from "react";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { useFormatDates } from "../../hooks/useFormatDates";
-import client from "../../tina/__generated__/client";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { EventTrimmed } from "../filter/events";
 import { PresenterList } from "../presenters/presenterList";
 
-export const UpcomingEvents = ({ data }) => {
-  const [events, setEvents] = useState<EventTrimmed[]>([]);
-  const [loading, setLoading] = useState(false);
+const fetchEvents = async (data) => {
+  const events = data.events;
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      setLoading(true);
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-      const events =
-        data.events ||
-        (await client.queries.getFutureEventsQuery({
-          fromDate: today.toISOString(),
-          top: data.numberOfEvents,
-        }));
-      setLoading(false);
+  if (!events) {
+    return [];
+  }
 
-      if (!events.data) return;
-      const mappedEvents = events.data.eventsCalendarConnection.edges.map(
-        (event) => ({
-          ...event.node,
-          startDateTime: new Date(event.node.startDateTime),
-          endDateTime: new Date(event.node.endDateTime),
-        })
-      );
-      setEvents(mappedEvents);
-    };
+  const mappedEvents = events.data.eventsCalendarConnection.edges.map(
+    (event) => ({
+      ...event.node,
+      startDateTime: new Date(event.node.startDateTime),
+      endDateTime: new Date(event.node.endDateTime),
+    })
+  );
+  return mappedEvents;
+};
 
-    fetchEvents();
-  }, [data.numberOfEvents, data.events]);
+export const UpcomingEvents = async ({ data }) => {
+  if (!data.events) return null;
+
+  const events: EventTrimmed[] = await fetchEvents(data);
 
   return (
     <div className="prose mt-5 max-w-none sm:my-0">
@@ -52,13 +40,9 @@ export const UpcomingEvents = ({ data }) => {
       </h2>
       <div className="not-prose">
         <div className="grow">
-          {loading ? (
-            <p>Loading...</p>
-          ) : (
-            events.map((event, index) => (
-              <UpcomingEvent event={event} key={index} />
-            ))
-          )}
+          {events.map((event, index) => (
+            <UpcomingEvent event={event} key={index} />
+          ))}
         </div>
         <div className="mt-3 flex flex-row-reverse justify-center sm:justify-start">
           <CustomLink
@@ -78,8 +62,6 @@ type UpcomingEventProps = {
 };
 
 const UpcomingEvent = ({ event }: UpcomingEventProps) => {
-  const [imageFailed, setImageFailed] = useState<boolean>(false);
-
   const { relativeDate, formattedDate } = useFormatDates(event, false);
 
   return (
@@ -108,20 +90,11 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
             </span>
           )}
         </div>
-        {!imageFailed && (
-          <div className="col-span-1 flex items-center justify-center sm:mr-2 sm:justify-end">
-            <Image
-              className={"rounded-md"}
-              src={event.thumbnail}
-              alt={`${event.thumbnailDescription || event.title} logo`}
-              width={90}
-              height={90}
-              sizes="(max-width: 768px) 25vw, 50px"
-              loading="lazy"
-              onError={() => setImageFailed(true)}
-            />
-          </div>
-        )}
+        <EventImageClient
+          thumbnail={event.thumbnail}
+          title={event.title}
+          thumbnailDescription={event.thumbnailDescription}
+        />
       </article>
     </CustomLink>
   );
