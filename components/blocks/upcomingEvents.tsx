@@ -7,7 +7,7 @@ import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { EventTrimmed } from "../filter/events";
 import { PresenterList } from "../presenters/presenterList";
 
-const fetchEvents = async (data) => {
+const fetchEvents = (data) => {
   const events = data.events;
 
   if (!events) {
@@ -24,10 +24,10 @@ const fetchEvents = async (data) => {
   return mappedEvents;
 };
 
-export const UpcomingEvents = async ({ data }) => {
+export const UpcomingEvents = ({ data }) => {
   if (!data.events) return null;
 
-  const events: EventTrimmed[] = await fetchEvents(data);
+  const events: EventTrimmed[] = fetchEvents(data);
 
   return (
     <div className="prose mt-5 max-w-none sm:my-0">
