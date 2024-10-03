@@ -21,6 +21,16 @@ dayjs.extend(utc);
 dayjs.extend(advancedFormat);
 dayjs.extend(isBetween);
 
+const LiveStreamClient = dynamic(
+  () => {
+    return import("./live-stream-client").then((mod) => mod.LiveStreamClient);
+  },
+  {
+    loading: () => <></>,
+    ssr: false,
+  }
+);
+
 const LiveStreamWidget = dynamic(
   () => {
     return import("./liveStreamWidget").then((mod) => mod.LiveStreamWidget);
@@ -102,20 +112,38 @@ export function LiveStream({ event, children }: LiveStreamProps) {
 
   return (
     <>
-      {showBanner && (
+      {showBanner ? (
         <LiveStreamBanner
           countdownMins={countdownMins}
           liveStreamData={eventDynamic}
           isLive={!!isLive}
         />
+      ) : (
+        <LiveStreamClient param={"liveBanner"}>
+          {" "}
+          <LiveStreamBanner
+            countdownMins={countdownMins}
+            liveStreamData={eventDynamic}
+            isLive={!!isLive}
+          />
+        </LiveStreamClient>
       )}
+
       <MenuWrapper>
-        {isLive && (
+        {isLive ? (
           <LiveStreamWidget
             {...{ eventDynamic, liveStreamDelayMinutes }}
             event={eventDynamic}
             isLive={!!isLive}
           />
+        ) : (
+          <LiveStreamClient param={"liveStream"}>
+            <LiveStreamWidget
+              {...{ eventDynamic, liveStreamDelayMinutes }}
+              event={eventDynamic}
+              isLive={!!isLive}
+            />
+          </LiveStreamClient>
         )}
         {children}
       </MenuWrapper>
