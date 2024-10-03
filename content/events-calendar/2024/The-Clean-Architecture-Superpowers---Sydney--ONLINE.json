@@ -12,6 +12,8 @@
   "presenterProfileUrl": "/people/",
   "startDateTime": "2024-10-03T08:00:00.000Z",
   "endDateTime": "2024-10-03T09:00:00.000Z",
+  "startShowBannerDateTime": "2024-10-02T23:00:00.000Z",
+  "endShowBannerDateTime": "2024-10-03T11:00:00.000Z",
   "calendarType": "User Groups",
   "city": "Sydney",
   "category": "Other",
