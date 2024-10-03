@@ -57,7 +57,6 @@ const Label = ({ text, schema, cardLabel }) => {
 };
 
 const BigCards = ({ title, cards, schema }) => {
-  const tineMode = useEditState();
   return (
     <>
       <Label
@@ -105,18 +104,14 @@ const BigCards = ({ title, cards, schema }) => {
                     {card.title}
                   </h3>
                   <div className="grow"></div>
-                  {tineMode.edit ? (
-                    <p
-                      data-tina-field={tinaField(
-                        schema.bigCards[index],
-                        serviceCards.bigCards.description
-                      )}
-                    >
-                      {card.description}
-                    </p>
-                  ) : (
-                    <p>{card.description}</p>
-                  )}
+                  <p
+                    data-tina-field={tinaField(
+                      schema.bigCards[index],
+                      serviceCards.bigCards.description
+                    )}
+                  >
+                    {card.description}
+                  </p>
                 </div>
               </div>
             </CustomLink>

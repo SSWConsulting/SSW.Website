@@ -3,7 +3,7 @@ import client from "@/tina/client";
 import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
-import { ClientPage } from "./client-page";
+import { PageClient } from "./page-client";
 
 export async function generateStaticParams() {
   let PageListData = await client.queries.pageConnection();
@@ -97,5 +97,5 @@ export default async function HomePage({
   const { filename } = params;
   const tinaProps = await getData(filename);
   const buildTime = new Date().toLocaleString();
-  return <ClientPage props={{ ...tinaProps, buildTime }} />;
+  return <PageClient props={{ ...tinaProps, buildTime }} />;
 }

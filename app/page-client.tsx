@@ -3,15 +3,11 @@
 import { useTina } from "tinacms/dist/react";
 import PageContent from "./page-content";
 
-export function ClientPage({ props }) {
+export function PageClient({ props }) {
   const { data } = useTina({
     query: props.query,
     variables: props.variables,
     data: props.data,
   });
-  return (
-    <PageContent
-      props={{ data, variables: props.variables, buildTime: props.buildTime }}
-    />
-  );
+  return <PageContent props={{ data, variables: props.variables }} />;
 }
