@@ -73,15 +73,10 @@ export default async function RootLayout({
         {/* Ensures next/font CSS variable is accessible for all components */}
         <div className="flex min-h-screen flex-col">
           <header className="no-print">
-            {liveStreamData ? (
-              <LiveStream event={liveStreamData}>
-                <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
-              </LiveStream>
-            ) : (
-              <MenuWrapper>
-                <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
-              </MenuWrapper>
-            )}
+            {liveStreamData && <LiveStream event={liveStreamData} />}
+            <MenuWrapper>
+              <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
+            </MenuWrapper>
           </header>
           <main className="grow bg-white">
             <AppInsightsProvider>
