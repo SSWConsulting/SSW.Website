@@ -1,5 +1,4 @@
 import { Blocks } from "@/components/blocks-renderer";
-
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";

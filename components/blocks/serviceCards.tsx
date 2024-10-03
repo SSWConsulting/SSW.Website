@@ -1,4 +1,4 @@
-import { tinaField, useEditState } from "tinacms/dist/react";
+import { tinaField } from "tinacms/dist/react";
 
 const Image = dynamic(() => import("next/image"), { ssr: false });
 
