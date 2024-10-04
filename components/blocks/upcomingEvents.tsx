@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
-import { tinaField, useEditState } from "tinacms/dist/react";
+import { tinaField } from "tinacms/dist/react";
 import { EventImageClient } from "../../app/components/event-image-client";
 import { useFormatDates } from "../../hooks/useFormatDates";
 import client from "../../tina/__generated__/client";
@@ -10,7 +10,7 @@ import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { EventTrimmed } from "../filter/events";
 import { PresenterList } from "../presenters/presenterList";
 
-const fetchEvents = (data) => {
+const mapEventData = (data) => {
   const events = data.events;
 
   if (!events) {
@@ -28,42 +28,16 @@ const fetchEvents = (data) => {
 };
 
 export const UpcomingEvents = ({ data }) => {
-  const { edit } = useEditState();
-
   if (!data.events) {
     return <UpcomingEventsClient data={data} />;
   }
 
-  const events: EventTrimmed[] = fetchEvents(data);
+  const events: EventTrimmed[] = mapEventData(data);
 
-  return (
-    <div className="prose mt-5 max-w-none sm:my-0">
-      <h2
-        data-tina-field={tinaField(data, upcomingEventsBlock.title)}
-        className="pb-1.5 text-3xl/9 font-normal text-black"
-      >
-        {data.title}
-      </h2>
-      <div className="not-prose">
-        <div className="grow">
-          {events.map((event, index) => (
-            <UpcomingEvent event={event} key={index} />
-          ))}
-        </div>
-        <div className="mt-3 flex flex-row-reverse justify-center sm:justify-start">
-          <CustomLink
-            href="/events"
-            className="unstyled rounded bg-sswRed px-3 py-2 text-xs font-normal text-white hover:bg-sswDarkRed"
-          >
-            See more events
-          </CustomLink>
-        </div>
-      </div>
-    </div>
-  );
+  return <EventsCard events={events} data={data} />;
 };
+
 export const UpcomingEventsClient = ({ data }) => {
-  console.log("U'm hdsfd");
   const [events, setEvents] = useState<EventTrimmed[]>([]);
 
   useEffect(() => {
@@ -89,32 +63,34 @@ export const UpcomingEventsClient = ({ data }) => {
     fetchEvents();
   }, [data.numberOfEvents]);
 
-  return (
-    <div className="prose mt-5 max-w-none sm:my-0">
-      <h2
-        data-tina-field={tinaField(data, upcomingEventsBlock.title)}
-        className="pb-1.5 text-3xl/9 font-normal text-black"
-      >
-        {data.title}
-      </h2>
-      <div className="not-prose">
-        <div className="grow">
-          {events.map((event, index) => (
-            <UpcomingEvent event={event} key={index} />
-          ))}
-        </div>
-        <div className="mt-3 flex flex-row-reverse justify-center sm:justify-start">
-          <CustomLink
-            href="/events"
-            className="unstyled rounded bg-sswRed px-3 py-2 text-xs font-normal text-white hover:bg-sswDarkRed"
-          >
-            See more events
-          </CustomLink>
-        </div>
+  return <EventsCard events={events} data={data} />;
+};
+
+const EventsCard = ({ events, data }) => (
+  <div className="prose mt-5 max-w-none sm:my-0">
+    <h2
+      data-tina-field={tinaField(data, upcomingEventsBlock.title)}
+      className="pb-1.5 text-3xl/9 font-normal text-black"
+    >
+      {data.title}
+    </h2>
+    <div className="not-prose">
+      <div className="grow">
+        {events.map((event, index) => (
+          <UpcomingEvent event={event} key={index} />
+        ))}
+      </div>
+      <div className="mt-3 flex flex-row-reverse justify-center sm:justify-start">
+        <CustomLink
+          href="/events"
+          className="unstyled rounded bg-sswRed px-3 py-2 text-xs font-normal text-white hover:bg-sswDarkRed"
+        >
+          See more events
+        </CustomLink>
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 type UpcomingEventProps = {
   event: EventTrimmed;
