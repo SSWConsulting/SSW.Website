@@ -32,7 +32,7 @@ export const TableLayout = ({ data }: { data: TableLayoutProps }) => {
   return (
     <div
       className={classNames(
-        "not-prose descendant-th:border-1 descendant-th:border-gray-75 descendant-th:py-2 descendant-th:pl-2 descendant-td:border-y-1 descendant-td:py-1.5 descendant-td:pl-2",
+        "not-prose overflow-x-auto descendant-th:border-1 descendant-th:border-gray-75 descendant-th:py-2 descendant-th:pl-2 descendant-td:border-y-1 descendant-td:py-1.5 descendant-td:pl-2",
         tableStyles[data.tableStyle]
       )}
     >
