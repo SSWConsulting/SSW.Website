@@ -1,14 +1,29 @@
 "use client";
-import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
-import { EventImageClient } from "../../app/components/event-image-client";
+
+import dynamic from "next/dynamic";
 import { useFormatDates } from "../../hooks/useFormatDates";
-import client from "../../tina/__generated__/client";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { EventTrimmed } from "../filter/events";
 import { PresenterList } from "../presenters/presenterList";
+
+const EventImageClient = dynamic(
+  () =>
+    import("../../app/components/event-client").then(
+      (mod) => mod.EventImageClient
+    ),
+  { ssr: false }
+);
+
+const UpcomingEventsClient = dynamic(
+  () =>
+    import("../../app/components/event-client").then(
+      (mod) => mod.UpcomingEventsClient
+    ),
+  { ssr: false }
+);
 
 const mapEventData = (data) => {
   const events = data.events;
@@ -37,36 +52,7 @@ export const UpcomingEvents = ({ data }) => {
   return <EventsCard events={events} data={data} />;
 };
 
-export const UpcomingEventsClient = ({ data }) => {
-  const [events, setEvents] = useState<EventTrimmed[]>([]);
-
-  useEffect(() => {
-    const fetchEvents = async () => {
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-      const events = await client.queries.getFutureEventsQuery({
-        fromDate: today.toISOString(),
-        top: data.numberOfEvents,
-      });
-
-      if (!events.data) return;
-      const mappedEvents = events.data.eventsCalendarConnection.edges.map(
-        (event) => ({
-          ...event.node,
-          startDateTime: new Date(event.node.startDateTime),
-          endDateTime: new Date(event.node.endDateTime),
-        })
-      );
-      setEvents(mappedEvents);
-    };
-
-    fetchEvents();
-  }, [data.numberOfEvents]);
-
-  return <EventsCard events={events} data={data} />;
-};
-
-const EventsCard = ({ events, data }) => (
+export const EventsCard = ({ events, data }) => (
   <div className="prose mt-5 max-w-none sm:my-0">
     <h2
       data-tina-field={tinaField(data, upcomingEventsBlock.title)}
