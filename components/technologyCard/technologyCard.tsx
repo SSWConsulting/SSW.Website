@@ -9,12 +9,12 @@ const TechnologyCard: FC<TechnologyCardProps> = (props) => {
   const { name, readMoreSlug, thumbnail, body } = props;
   return (
     <article
-      className="mx-3.5 mb-15 mt-5 flex h-full flex-col border-b-2 border-solid border-sswRed bg-gray-75 px-16 py-11"
+      className="mx-3.5 mb-15 mt-5 flex h-full flex-col border-b-2 border-solid border-sswRed bg-gray-75 px-8 py-11"
       data-aos="flip-left"
     >
       {thumbnail ? (
         <figure
-          className="relative h-24"
+          className="relative h-24 px-8"
           data-tina-field={tinaField(props, "thumbnail")}
         >
           <Image
@@ -30,7 +30,7 @@ const TechnologyCard: FC<TechnologyCardProps> = (props) => {
 
       <div
         data-tina-field={tinaField(props, "body")}
-        className="prose max-w-full grow prose-p:text-justify prose-strong:text-sswRed prose-ul:grid prose-ul:grid-flow-col prose-ul:grid-rows-12 prose-ul:text-left descendant-div:!m-0"
+        className="prose max-w-full grow prose-strong:text-sswRed prose-ul:grid prose-ul:grid-flow-col prose-ul:grid-rows-12 prose-ul:text-left descendant-div:!m-0 md:prose-p:text-justify"
       >
         <TinaMarkdown content={body} />
       </div>
