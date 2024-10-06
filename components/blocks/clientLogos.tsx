@@ -8,7 +8,7 @@ const clientsData = layoutData.clients.clientsList;
 
 export const ClientLogos = () => {
   return (
-    <div className="flex flex-wrap justify-center">
+    <div className="flex flex-wrap justify-center gap-4">
       {clientsData.length &&
         clientsData.map((client) => (
           <Image
@@ -19,7 +19,7 @@ export const ClientLogos = () => {
             width={200}
             // commented out to test whether this is breaking images on the homepage see #2368
             //sizes="20vw"
-            className="my-4 max-w-full rounded-lg"
+            className="max-w-full rounded-lg"
           />
         ))}
     </div>
