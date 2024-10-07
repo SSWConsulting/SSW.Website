@@ -75,7 +75,6 @@ export const Carousel = ({ data }) => {
                 label={item.label}
                 index={index}
                 carouselSchema={item.carouselSchema}
-                showOnMobileDevices={data.showOnMobileDevices}
               />
             ))}
         </CarouselImplementation>
@@ -89,11 +88,10 @@ type CarouselItemImageProps = {
   label: string;
   index: number;
   carouselSchema: Record<string, unknown>;
-  showOnMobileDevices: boolean;
 };
 
 const CarouselItemImage = (props: CarouselItemImageProps) => {
-  const { imgSrc, label, index, carouselSchema, showOnMobileDevices } = props;
+  const { imgSrc, label, index, carouselSchema } = props;
 
   return (
     <div
@@ -108,7 +106,7 @@ const CarouselItemImage = (props: CarouselItemImageProps) => {
         height={388}
         width={1080}
         sizes="100vw"
-        priority={index === 0 && showOnMobileDevices}
+        priority={index === 0}
       />
       {/* `legend` required so that the carousel works properly */}
       <p className="legend sr-only">{label}</p>
