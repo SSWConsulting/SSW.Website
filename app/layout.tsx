@@ -1,13 +1,11 @@
-import "styles.css";
-// import { CustomLink } from "@/components/customLink";
-// import { Footer } from "@/components/layout/footer";
 import { Footer } from "@/components/layout/footer/footer";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
-import ChatBaseBot from "@/components/zendeskButton/chatBaseBot";
+import dynamic from "next/dynamic";
+import "styles.css";
+
 import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events";
 import { GoogleTagManager } from "@next/third-parties/google";
-import classNames from "classnames";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
@@ -32,7 +30,14 @@ dayjs.extend(isBetween);
 const openSans = Open_Sans({
   variable: "--open-sans-font",
   subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "600", "700"],
 });
+
+const ChatBaseBot = dynamic(
+  () => import("@/components/zendeskButton/chatBaseBot"),
+  { ssr: false }
+);
 
 export const DEFAULT_METADATA: Metadata = {
   ...DEFAULT,
@@ -66,12 +71,7 @@ export default async function RootLayout({
       <body>
         {/* <Theme> */}
         {/* Ensures next/font CSS variable is accessible for all components */}
-        <div
-          className={classNames(
-            "flex min-h-screen flex-col font-sans",
-            openSans.className
-          )}
-        >
+        <div className="flex min-h-screen flex-col">
           <header className="no-print">
             {liveStreamData ? (
               <LiveStream event={liveStreamData}>

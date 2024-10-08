@@ -22,6 +22,7 @@ export const Flag = ({ country, height, width, className = "" }: FlagProps) => {
         width={width || 35}
         height={height || 35}
         alt="country"
+        loading="lazy"
       />
     </>
   );

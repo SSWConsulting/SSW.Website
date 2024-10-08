@@ -9,6 +9,7 @@ import { BiChevronRightCircle } from "react-icons/bi";
 
 import { tinaField } from "tinacms/dist/react";
 import layoutData from "../../content/global/index.json";
+import useIsMobile from "../../hooks/useIsMobile";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
@@ -106,6 +107,8 @@ export const AboutUs = ({ data }) => {
     defaultOffice?.addressRegion || ""
   );
 
+  const isMobile = useIsMobile();
+
   const [mapHoveredTrigger, setMapHoveredTrigger] = useState(false);
   const [mapClickedTrigger, setMapClickedTrigger] = useState(false);
 
@@ -116,7 +119,10 @@ export const AboutUs = ({ data }) => {
         data-tina-field={tinaField(data, aboutUsBlock.backgroundColor)}
       >
         <div className="grid grid-cols-3 gap-6">
-          <TV className="col-span-3 max-md:hidden sm:col-span-1" />
+          <TV
+            className="col-span-3 max-md:hidden sm:col-span-1"
+            isMobile={isMobile}
+          />
           <div className="col-span-3 md:col-span-2">
             <div
               className={`grid grid-cols-1 gap-6 ${!data.hideMap ? "sm:grid-cols-2" : ""}`}
@@ -144,6 +150,7 @@ export const AboutUs = ({ data }) => {
                   setStateBeingHovered={setStateBeingHovered}
                   setMapHoveredTrigger={setMapHoveredTrigger}
                   setMapClickedTrigger={setMapClickedTrigger}
+                  isMobile={isMobile}
                 />
               )}
             </div>
@@ -154,7 +161,16 @@ export const AboutUs = ({ data }) => {
   );
 };
 
-const TV = memo(function TV({ className }: { className?: string }) {
+const TV = memo(function TV({
+  className,
+  isMobile,
+}: {
+  className?: string;
+  isMobile: boolean;
+}) {
+  if (isMobile) {
+    return null;
+  }
   return (
     <div className={className}>
       <h2 className="mt-0">tv.ssw.com</h2>
@@ -353,7 +369,11 @@ const Map = ({
   setStateBeingHovered,
   setMapHoveredTrigger,
   setMapClickedTrigger,
+  isMobile,
 }) => {
+  if (isMobile) {
+    return null;
+  }
   return (
     <div className={className}>
       <h2 className="mt-0">&nbsp;</h2>

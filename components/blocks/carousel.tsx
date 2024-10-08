@@ -7,6 +7,7 @@ import { tinaField } from "tinacms/dist/react";
 import type { Template } from "tinacms";
 
 import dynamic from "next/dynamic";
+import useIsMobile from "../../hooks/useIsMobile";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
@@ -18,6 +19,11 @@ const CarouselImplementation = dynamic(() =>
 
 export const Carousel = ({ data }) => {
   const router = useRouter();
+  const isMobile = useIsMobile();
+
+  if (!data.showOnMobileDevices && isMobile) {
+    return null;
+  }
 
   const openItem = ({ link, openIn }) => {
     if (openIn === "newWindow") {
@@ -99,7 +105,7 @@ const CarouselItemImage = (props: CarouselItemImageProps) => {
         alt={label}
         height={388}
         width={1080}
-        sizes="100vw"
+        sizes="(max-width: 768px) 20vw, 100vw" // for mobile, it will load 20% of the viewport width as it is not visible on mobile
         priority={index === 0}
       />
       {/* `legend` required so that the carousel works properly */}

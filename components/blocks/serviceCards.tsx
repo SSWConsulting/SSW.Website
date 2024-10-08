@@ -1,8 +1,10 @@
-import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
+
+const Image = dynamic(() => import("next/image"), { ssr: false });
 
 import type { Template } from "tinacms";
 
+import dynamic from "next/dynamic";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
@@ -78,16 +80,19 @@ const BigCards = ({ title, cards, schema }) => {
               className="unstyled flex grow text-left text-white"
             >
               <div className="flex grow flex-col">
-                <div className="absolute flex-1 self-end">
-                  <Image
-                    className="opacity-50"
-                    src={card.imgSrc ?? ""}
-                    width="100"
-                    height="100"
-                    sizes="(max-width: 768px) 50vw, 33vw"
-                    alt={`Icon for ${card.title}`}
-                  />
-                </div>
+                {card?.imgSrc && (
+                  <div className="absolute flex-1 self-end">
+                    <Image
+                      className="opacity-50"
+                      src={card.imgSrc ?? ""}
+                      width="100"
+                      height="100"
+                      sizes="20vw"
+                      alt={`Icon for ${card.title}`}
+                      loading="lazy"
+                    />
+                  </div>
+                )}
                 <div className="relative flex grow flex-col p-8">
                   <h3
                     className="flex pb-3 text-2xl font-thin lg:pt-8"
@@ -99,14 +104,14 @@ const BigCards = ({ title, cards, schema }) => {
                     {card.title}
                   </h3>
                   <div className="grow"></div>
-                  <span
+                  <p
                     data-tina-field={tinaField(
                       schema.bigCards[index],
                       serviceCards.bigCards.description
                     )}
                   >
-                    <p>{card.description}</p>
-                  </span>
+                    {card.description}
+                  </p>
                 </div>
               </div>
             </CustomLink>
@@ -163,7 +168,7 @@ const SmallCardContent = ({ card, schema, index }) => {
           src={card.imgSrc ?? ""}
           width="50"
           height="50"
-          sizes="(max-width: 768px) 50vw, 33vw"
+          sizes="20vw"
           alt={`Icon for ${card.title}`}
         />{" "}
       </span>

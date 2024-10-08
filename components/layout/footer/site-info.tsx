@@ -22,6 +22,7 @@ export const SiteInfo = () => (
         height={14}
         width={40}
         className="inline-block pb-1 pl-2"
+        loading="lazy"
       />
     </CustomLink>
   </div>
