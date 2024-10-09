@@ -5,7 +5,7 @@ const Image = dynamic(() => import("next/image"), { ssr: false });
 import type { Template } from "tinacms";
 
 import dynamic from "next/dynamic";
-import React, { Profiler, useMemo } from "react";
+import React, { useMemo } from "react";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
@@ -26,18 +26,11 @@ export const ServiceCards = ({ data }) => {
         data-tina-field={tinaField(data, serviceCards.bigCardsLabel)}
       >
         <div className="py-4">
-          <Profiler
-            id="bigCards"
-            onRender={(id, phase, actualDuration) => {
-              console.log("Profiler", { id, phase, actualDuration });
-            }}
-          >
-            <BigCards
-              title={data.bigCardsLabel}
-              cards={data.bigCards}
-              schema={data}
-            />
-          </Profiler>
+          <BigCards
+            title={data.bigCardsLabel}
+            cards={data.bigCards}
+            schema={data}
+          />
         </div>
 
         <div className="py-4">
