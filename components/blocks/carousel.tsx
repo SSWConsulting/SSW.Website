@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import * as React from "react";
@@ -6,16 +5,13 @@ import { tinaField } from "tinacms/dist/react";
 
 import type { Template } from "tinacms";
 
-import dynamic from "next/dynamic";
 import useIsMobile from "../../hooks/useIsMobile";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const CarouselImplementation = dynamic(() =>
-  import("react-responsive-carousel").then((module) => module.Carousel)
-);
+import { Carousel as CarouselImplementation } from "react-responsive-carousel";
 
 export const Carousel = ({ data }) => {
   const router = useRouter();
@@ -51,7 +47,6 @@ export const Carousel = ({ data }) => {
         className={/* eslint-disable-line */ "aspect-carousel w-full"}
         data-tina-field={tinaField(data, carouselBlock.delay)}
       >
-        {/* @ts-expect-error next/dynamic */}
         <CarouselImplementation
           autoPlay={true}
           infiniteLoop={true}
