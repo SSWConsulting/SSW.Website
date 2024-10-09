@@ -5,9 +5,11 @@ const Image = dynamic(() => import("next/image"), { ssr: false });
 import type { Template } from "tinacms";
 
 import dynamic from "next/dynamic";
+import React, { useMemo } from "react";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
+import BigCardContent from "./bigCardContent";
 
 const bgColor = {
   red: "bg-sswRed",
@@ -57,6 +59,8 @@ const Label = ({ text, schema, cardLabel }) => {
 };
 
 const BigCards = ({ title, cards, schema }) => {
+  const memoizedCards = useMemo(() => cards, [cards]);
+
   return (
     <>
       <Label
@@ -68,54 +72,14 @@ const BigCards = ({ title, cards, schema }) => {
         role="list"
         className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4"
       >
-        {cards.map((card, index) => (
-          <li
+        {memoizedCards.map((card, index) => (
+          <BigCardContent
             key={card.title}
-            className={`col-span-1 flex flex-col divide-y divide-gray-200 text-center shadow ${
-              bgColor[card.color]
-            } hover:opacity-80`}
-          >
-            <CustomLink
-              href={card.link ?? ""}
-              className="unstyled flex grow text-left text-white"
-            >
-              <div className="flex grow flex-col">
-                {card?.imgSrc && (
-                  <div className="absolute flex-1 self-end">
-                    <Image
-                      className="opacity-50"
-                      src={card.imgSrc ?? ""}
-                      width="100"
-                      height="100"
-                      sizes="20vw"
-                      alt={`Icon for ${card.title}`}
-                      loading="lazy"
-                    />
-                  </div>
-                )}
-                <div className="relative flex grow flex-col p-8">
-                  <h3
-                    className="flex pb-3 text-2xl font-thin lg:pt-8"
-                    data-tina-field={tinaField(
-                      schema.bigCards[index],
-                      serviceCards.bigCards.title
-                    )}
-                  >
-                    {card.title}
-                  </h3>
-                  <div className="grow"></div>
-                  <p
-                    data-tina-field={tinaField(
-                      schema.bigCards[index],
-                      serviceCards.bigCards.description
-                    )}
-                  >
-                    {card.description}
-                  </p>
-                </div>
-              </div>
-            </CustomLink>
-          </li>
+            card={card}
+            index={index}
+            schema={schema}
+            bgColor={bgColor}
+          />
         ))}
       </ul>
     </>
