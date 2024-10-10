@@ -88,7 +88,6 @@ export default async function RootLayout({
               {children}
             </AppInsightsProvider>
           </main>
-          <Footer />
         </div>
         {/* </Theme> */}
         <ChatBaseBot />
