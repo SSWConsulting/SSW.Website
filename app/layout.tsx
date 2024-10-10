@@ -1,4 +1,3 @@
-import { Footer } from "@/components/layout/footer/footer";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import dynamic from "next/dynamic";
 import "styles.css";
