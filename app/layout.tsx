@@ -5,7 +5,6 @@ import "styles.css";
 
 import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events";
-import { GoogleTagManager } from "@next/third-parties/google";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
@@ -92,7 +91,6 @@ export default async function RootLayout({
           <Footer />
         </div>
         {/* </Theme> */}
-        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
         <ChatBaseBot />
       </body>
     </html>
