@@ -1,3 +1,4 @@
+"use client";
 import { BookingButton, BuiltOnAzure, ClientLogos } from "@/components/blocks";
 import { Blocks } from "@/components/blocks-renderer";
 import { Booking } from "@/components/blocks/booking";
@@ -20,7 +21,7 @@ import ReactDOMServer from "react-dom/server";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-export default function ConsultingPage({ props }) {
+export default function Consulting({ props }) {
   const { data, technologyCards } = props;
   const technologyCardDocs =
     technologyCards?.data.technologiesConnection.edges.map((n) => n.node);

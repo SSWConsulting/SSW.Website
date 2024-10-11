@@ -3,9 +3,17 @@ import AOS from "aos";
 
 import { useEffect } from "react";
 import { useTina } from "tinacms/dist/react";
-import ConsultingPage from "./consulting-content";
 
-export default function ConsultingClient({ props }) {
+interface TinaClientProps {
+  props: {
+    query: string;
+    variables: Record<string, unknown>;
+    data: Record<string, unknown>;
+  };
+  Component: React.ComponentType<{ props: unknown }>;
+}
+
+export function TinaClient({ props, Component }: TinaClientProps) {
   const { data } = useTina({
     query: props.query,
     variables: props.variables,
@@ -29,7 +37,5 @@ export default function ConsultingClient({ props }) {
     };
   }, []);
 
-  return (
-    <ConsultingPage props={{ data, variables: props.variables, ...props }} />
-  );
+  return <Component props={{ data, variables: props.variables, ...props }} />;
 }

@@ -4,7 +4,8 @@ import "aos/dist/aos.css"; // This is important to keep the animation
 import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
-import ConsultingClient from "./consulting-client";
+import { TinaClient } from "../../tina-client";
+import ConsultingPage from "./consulting";
 
 export const dynamicParams = false;
 
@@ -110,5 +111,7 @@ export default async function Consulting({
 
   const tinaProps = await getData(filename);
 
-  return <ConsultingClient props={{ ...tinaProps.props }} />;
+  return (
+    <TinaClient props={{ ...tinaProps.props }} Component={ConsultingPage} />
+  );
 }
