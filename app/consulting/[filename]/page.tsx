@@ -26,7 +26,7 @@ export async function generateStaticParams() {
 
   const pages = allPagesListData.data.consultingConnection.edges.map(
     (page) => ({
-      params: { filename: page.node._sys.filename },
+      filename: page.node._sys.filename,
     })
   );
 
