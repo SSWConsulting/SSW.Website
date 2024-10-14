@@ -1,19 +1,11 @@
 "use client";
+
 import AOS from "aos";
 
 import { useEffect } from "react";
 import { useTina } from "tinacms/dist/react";
 
-interface TinaClientProps {
-  props: {
-    query: string;
-    variables: Record<string, unknown>;
-    data: Record<string, unknown>;
-  };
-  Component: React.ComponentType<{ props: unknown }>;
-}
-
-export function TinaClient({ props, Component }: TinaClientProps) {
+export function TinaClient({ props, Component }) {
   const { data } = useTina({
     query: props.query,
     variables: props.variables,
@@ -37,5 +29,5 @@ export function TinaClient({ props, Component }: TinaClientProps) {
     };
   }, []);
 
-  return <Component props={{ data, variables: props.variables, ...props }} />;
+  return <Component props={{ data, variables: props.variables }} />;
 }

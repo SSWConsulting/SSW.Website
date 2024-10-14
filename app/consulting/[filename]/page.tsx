@@ -6,6 +6,7 @@ import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { TinaClient } from "../../tina-client";
 import ConsultingPage from "./consulting";
+import { ConsultingClient } from "./consulting-client";
 
 export const dynamicParams = false;
 
@@ -77,6 +78,7 @@ const getData = async (filename: string) => {
         url: tinaProps.data.global.header.url,
       },
       seo,
+      ...tinaProps,
     },
   };
 };
@@ -109,9 +111,7 @@ export default async function Consulting({
 }) {
   const { filename } = params;
 
-  const tinaProps = await getData(filename);
+  const { props } = await getData(filename);
 
-  return (
-    <TinaClient props={{ ...tinaProps.props }} Component={ConsultingPage} />
-  );
+  return <TinaClient props={props} Component={ConsultingPage} />;
 }
