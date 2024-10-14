@@ -96,6 +96,5 @@ export default async function HomePage({
 }) {
   const { filename } = params;
   const tinaProps = await getData(filename);
-  const buildTime = new Date().toLocaleString();
-  return <PageClient props={{ ...tinaProps, buildTime }} />;
+  return <PageClient props={{ ...tinaProps }} />;
 }
