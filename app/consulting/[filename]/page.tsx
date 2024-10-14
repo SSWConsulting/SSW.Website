@@ -1,3 +1,4 @@
+import { MediaCardProps } from "@/components/consulting/mediaCard/mediaCard";
 import { getRandomTestimonialsByCategory } from "@/helpers/getTestimonials";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
@@ -74,6 +75,14 @@ const getData = async (filename: string) => {
     tinaProps.data.consulting.testimonialCategories
       ?.filter((category) => !!category?.testimonialCategory)
       ?.map((category) => category.testimonialCategory.name) ?? [];
+
+  const mediaCardProps =
+    tinaProps.data.consulting?.medias?.mediaCards?.map(
+      (m): MediaCardProps => ({
+        type: m.type as MediaCardProps["type"],
+        content: m.content,
+      })
+    ) || [];
   const marketingSection = await client.queries.marketing({
     relativePath: "/why-choose-ssw.mdx",
   });
@@ -87,6 +96,7 @@ const getData = async (filename: string) => {
       techCards: techCards,
       marketingData: marketingSection.data,
       categories: categoriesData,
+      mediaCardProps: mediaCardProps,
       header: {
         url: tinaProps.data.global.header.url,
       },

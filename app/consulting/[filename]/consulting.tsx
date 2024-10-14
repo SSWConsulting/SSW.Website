@@ -22,15 +22,7 @@ import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export default function Consulting({ props }) {
-  const { data, techCards, marketingData, categories } = props;
-
-  const mediaCardProps =
-    data.consulting.consulting?.medias?.mediaCards?.map(
-      (m): MediaCardProps => ({
-        type: m.type as MediaCardProps["type"],
-        content: m.content,
-      })
-    ) || [];
+  const { data, techCards, marketingData, categories, mediaCardProps } = props;
 
   return (
     <>
