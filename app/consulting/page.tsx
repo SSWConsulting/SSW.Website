@@ -51,6 +51,6 @@ const getData = async () => {
 };
 
 export default async function Index() {
-  const tinaProps = await getData();
-  return <TinaClient props={tinaProps.props} Component={ConsultingIndex} />;
+  const { props } = await getData();
+  return <TinaClient props={props} Component={ConsultingIndex} />;
 }
