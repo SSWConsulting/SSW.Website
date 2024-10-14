@@ -22,15 +22,7 @@ import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export default function Consulting({ props }) {
-  const { data, technologyCards, marketingData } = props;
-  const technologyCardDocs =
-    technologyCards?.data.technologiesConnection.edges.map((n) => n.node);
-  const techCards =
-    data.consulting.technologies?.technologyCards?.map((c) => ({
-      ...technologyCardDocs?.find(
-        (n) => !!n.name && n.name === c.technologyCard?.name
-      ),
-    })) || [];
+  const { data, techCards, marketingData } = props;
 
   const mediaCardProps =
     data.consulting.consulting?.medias?.mediaCards?.map(

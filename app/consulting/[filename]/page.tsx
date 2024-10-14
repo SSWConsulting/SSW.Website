@@ -61,6 +61,16 @@ const getData = async (filename: string) => {
     cardNames: technologyCardNames,
   });
 
+  const technologyCardDocs =
+    technologyCardsProps?.data.technologiesConnection.edges.map((n) => n.node);
+  const techCards =
+    tinaProps.data.consulting.technologies?.technologyCards?.map((c) => ({
+      ...technologyCardDocs?.find(
+        (n) => !!n.name && n.name === c.technologyCard?.name
+      ),
+    })) || [];
+
+  console.log("🚀 ~ getData ~ techCards:", techCards);
   const marketingSection = await client.queries.marketing({
     relativePath: "/why-choose-ssw.mdx",
   });
@@ -71,7 +81,7 @@ const getData = async (filename: string) => {
       query: tinaProps.query,
       variables: tinaProps.variables,
       testimonialsResult,
-      technologyCards: technologyCardsProps,
+      techCards: techCards,
       marketingData: marketingSection.data,
       header: {
         url: tinaProps.data.global.header.url,
