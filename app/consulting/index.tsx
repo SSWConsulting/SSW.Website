@@ -1,40 +1,34 @@
-import { useRouter, type NextRouter } from "next/router";
+"use client";
+
+import { useRouter } from "next/navigation";
+
 import { useEffect, useMemo, useRef, useState } from "react";
 import { MdLiveHelp } from "react-icons/md";
 
 import { wrapGrid } from "animate-css-grid";
 
-import { client } from "@/tina/client";
-import { tinaField, useTina } from "tinacms/dist/react";
+import { tinaField } from "tinacms/dist/react";
 
-import { TODAY } from "hooks/useFetchEvents";
-import { InferGetStaticPropsType } from "next";
+import { Category } from "@/components/consulting/index/category";
+import { Tag } from "@/components/consulting/index/tag";
+import { Container } from "@/components/util/container";
+import { Breadcrumbs } from "app/components/breadcrumb";
+import { useSearchParams } from "next/navigation";
 import { ParsedUrlQuery } from "querystring";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
-import { Category } from "../../components/consulting/index/category";
-import { Tag } from "../../components/consulting/index/tag";
-import { Layout } from "../../components/layout";
-import { Container } from "../../components/util/container";
-import { SEO } from "../../components/util/seo";
 
 const allServices = "All SSW Services";
 
-export default function ConsultingIndex(
-  props: InferGetStaticPropsType<typeof getStaticProps>
-) {
+export default function ConsultingIndex({ tinaProps }) {
+  console.log("🚀 ~ ConsultingIndex ~ tinaProps:", tinaProps);
   const gridRef = useRef(null);
-  const { data } = useTina({
-    query: props.query,
-    variables: props.variables,
-    data: props.data,
-  });
-
+  const { data } = tinaProps;
   const router = useRouter();
+  const params = useSearchParams();
   const [selectedTag, setSelectedTag] = useState(
-    getSelectedTagFromQuery(router.query)
+    getSelectedTagFromQuery(params.get("tag") as unknown as ParsedUrlQuery)
   );
 
-  const node = data.consultingIndex;
+  const node = tinaProps.data.consultingIndex;
 
   const categories = useMemo(() => {
     return node.categories
@@ -72,9 +66,11 @@ export default function ConsultingIndex(
 
   useEffect(() => {
     // as the querystring changes, update the selected tag
-    const qsTag = getSelectedTagFromQuery(router.query);
+    const qsTag = getSelectedTagFromQuery(
+      params.get("tag") as unknown as ParsedUrlQuery
+    );
     setSelectedTag(qsTag);
-  }, [router.query]);
+  }, [params.get("tag") as unknown as ParsedUrlQuery]);
 
   useEffect(() => {
     // grid animation seutp - will automatically clean itself up when dom node is removed
@@ -82,8 +78,7 @@ export default function ConsultingIndex(
   }, []);
 
   return (
-    <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
-      <SEO seo={{ ...props.seo, canonical: "/consulting" }} />
+    <>
       <Container className="flex-1 pt-2">
         <Breadcrumbs path={"/consulting"} suffix="" title={"Services"} />
         <h1 className="pt-0 text-3xl">Consulting Services</h1>
@@ -129,13 +124,13 @@ export default function ConsultingIndex(
           </div>
         </div>
       </Container>
-    </Layout>
+    </>
   );
 }
 
 const getSelectedTagFromQuery = (query: ParsedUrlQuery): string => {
   let parsedTag = allServices;
-  if (query.tag) {
+  if (query?.tag) {
     const { tag } = query;
 
     if (tag instanceof Array) {
@@ -148,7 +143,7 @@ const getSelectedTagFromQuery = (query: ParsedUrlQuery): string => {
   return parsedTag;
 };
 
-const updateParams = (router: NextRouter, tags, selectedTag) => {
+const updateParams = (router, tags, selectedTag) => {
   if (tags.some((x) => x.name === selectedTag)) {
     router.push(
       {
@@ -164,24 +159,4 @@ const updateParams = (router: NextRouter, tags, selectedTag) => {
       { shallow: true }
     );
   }
-};
-
-export const getStaticProps = async () => {
-  const tinaProps = await client.queries.consultingIndexQuery({
-    date: TODAY.toISOString(),
-  });
-
-  const seo = tinaProps.data.consultingIndex.seo;
-  if (seo && !seo.canonical) {
-    seo.canonical = `${tinaProps.data.global.header.url}/consulting`;
-  }
-
-  return {
-    props: {
-      data: tinaProps.data,
-      query: tinaProps.query,
-      variables: tinaProps.variables,
-      seo,
-    },
-  };
 };
