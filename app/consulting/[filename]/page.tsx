@@ -101,7 +101,6 @@ const getData = async (filename: string) => {
         url: tinaProps.data.global.header.url,
       },
       seo,
-      ...tinaProps,
     },
   };
 };
