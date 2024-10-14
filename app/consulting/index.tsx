@@ -19,11 +19,9 @@ import { ParsedUrlQuery } from "querystring";
 const allServices = "All SSW Services";
 
 export default function ConsultingIndex({ tinaProps }) {
-  console.log("🚀 ~ ConsultingIndex ~ tinaProps:", tinaProps);
   const gridRef = useRef(null);
-  const { data } = tinaProps;
-  const router = useRouter();
   const params = useSearchParams();
+  const router = useRouter();
   const [selectedTag, setSelectedTag] = useState(
     getSelectedTagFromQuery(params.get("tag") as unknown as ParsedUrlQuery)
   );
@@ -70,7 +68,7 @@ export default function ConsultingIndex({ tinaProps }) {
       params.get("tag") as unknown as ParsedUrlQuery
     );
     setSelectedTag(qsTag);
-  }, [params.get("tag") as unknown as ParsedUrlQuery]);
+  }, [params.get("tag")]);
 
   useEffect(() => {
     // grid animation seutp - will automatically clean itself up when dom node is removed
@@ -130,13 +128,13 @@ export default function ConsultingIndex({ tinaProps }) {
 
 const getSelectedTagFromQuery = (query: ParsedUrlQuery): string => {
   let parsedTag = allServices;
-  if (query?.tag) {
-    const { tag } = query;
+  if (query) {
+    const tag = query;
 
     if (tag instanceof Array) {
       parsedTag = tag[0];
     } else {
-      parsedTag = tag;
+      parsedTag = tag as unknown as string;
     }
     parsedTag = parsedTag.replace("-", " ");
   }
@@ -145,18 +143,12 @@ const getSelectedTagFromQuery = (query: ParsedUrlQuery): string => {
 
 const updateParams = (router, tags, selectedTag) => {
   if (tags.some((x) => x.name === selectedTag)) {
-    router.push(
-      {
-        pathname: router.basePath,
-        query:
-          selectedTag === allServices
-            ? {}
-            : {
-                tag: selectedTag?.replace(" ", "-"),
-              },
-      },
-      undefined,
-      { shallow: true }
-    );
+    const query =
+      selectedTag === allServices
+        ? {}
+        : {
+            tag: selectedTag?.replace(" ", "-"),
+          };
+    router.push(`/consulting${query.tag ? `?tag=${query.tag}` : ""}`);
   }
 };
