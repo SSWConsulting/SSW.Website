@@ -21,9 +21,9 @@ import ReactDOMServer from "react-dom/server";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-export default function Consulting({ props }) {
-  const { data, techCards, marketingData, categories, mediaCardProps } = props;
-
+export default function Consulting({ tinaProps, props }) {
+  const { techCards, marketingData, categories, mediaCardProps } = props;
+  const { data } = tinaProps;
   return (
     <>
       <Section className="mx-auto w-full max-w-9xl px-8 py-5">

@@ -29,16 +29,5 @@ export function TinaClient({ props, Component }) {
     };
   }, []);
 
-  return (
-    <Component
-      props={{
-        data,
-        variables: props.variables,
-        marketingData: props.marketingData,
-        techCards: props.techCards,
-        categories: props.categories,
-        mediaCardProps: props.mediaCardProps,
-      }}
-    />
-  );
+  return <Component tinaProps={{ data }} props={{ ...props }} />;
 }
