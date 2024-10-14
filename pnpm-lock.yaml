@@ -40,8 +40,8 @@ importers:
         specifier: ^14.2.13
         version: 14.2.13
       '@next/third-parties':
-        specifier: ^14.2.11
-        version: 14.2.11(next@14.2.10(@babel/core@7.23.9)(@opentelemetry/api@1.9.0)(@playwright/test@1.47.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+        specifier: ^14.2.15
+        version: 14.2.15(next@14.2.10(@babel/core@7.23.9)(@opentelemetry/api@1.9.0)(@playwright/test@1.47.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@tailwindcss/typography':
         specifier: ^0.5.15
         version: 0.5.15(tailwindcss@3.4.13(ts-node@10.9.2(@types/node@20.16.5)(typescript@5.5.4)))
@@ -1824,8 +1824,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@next/third-parties@14.2.11':
-    resolution: {integrity: sha512-KpTrJg05vyi+0NxjuQT9CR4lsiVTciLSupMosR/BtSHek5bqHWP3KvHfFEsOcxBeOZLNhSmBUhkYclQ4eUVu9Q==}
+  '@next/third-parties@14.2.15':
+    resolution: {integrity: sha512-15CvipE1p1GtlzVfbDfXPrAGIhzJJe75Yy6+GIBRTd36lu95BegRsUJwCxJYoKz47Q09stcU2gJDMduMGqrikw==}
     peerDependencies:
       next: ^13.0.0 || ^14.0.0
       react: ^18.2.0
@@ -10515,7 +10515,7 @@ snapshots:
   '@next/swc-win32-x64-msvc@14.2.10':
     optional: true
 
-  '@next/third-parties@14.2.11(next@14.2.10(@babel/core@7.23.9)(@opentelemetry/api@1.9.0)(@playwright/test@1.47.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
+  '@next/third-parties@14.2.15(next@14.2.10(@babel/core@7.23.9)(@opentelemetry/api@1.9.0)(@playwright/test@1.47.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
     dependencies:
       next: 14.2.10(@babel/core@7.23.9)(@opentelemetry/api@1.9.0)(@playwright/test@1.47.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
