@@ -6,7 +6,6 @@ import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { TinaClient } from "../../tina-client";
 import ConsultingPage from "./consulting";
-import { ConsultingClient } from "./consulting-client";
 
 export const dynamicParams = false;
 
