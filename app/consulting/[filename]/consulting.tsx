@@ -22,7 +22,7 @@ import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export default function Consulting({ props }) {
-  const { data, technologyCards } = props;
+  const { data, technologyCards, marketingData } = props;
   const technologyCardDocs =
     technologyCards?.data.technologiesConnection.edges.map((n) => n.node);
   const techCards =
@@ -102,7 +102,7 @@ export default function Consulting({ props }) {
           />
         </Container>
       </Section>
-      <Marketing content={props.marketingData} />
+      <Marketing content={marketingData} />
       <Section className="!bg-gray-75 pb-40">
         <Container size="custom">
           <h1 className="text-center">Companies we have worked with</h1>
