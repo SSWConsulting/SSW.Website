@@ -36,6 +36,7 @@ export function TinaClient({ props, Component }) {
         variables: props.variables,
         marketingData: props.marketingData,
         techCards: props.techCards,
+        categories: props.categories,
       }}
     />
   );

@@ -22,7 +22,7 @@ import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export default function Consulting({ props }) {
-  const { data, techCards, marketingData } = props;
+  const { data, techCards, marketingData, categories } = props;
 
   const mediaCardProps =
     data.consulting.consulting?.medias?.mediaCards?.map(
@@ -31,11 +31,6 @@ export default function Consulting({ props }) {
         content: m.content,
       })
     ) || [];
-
-  const categories =
-    data.consulting.testimonialCategories
-      ?.filter((category) => !!category?.testimonialCategory)
-      ?.map((category) => category.testimonialCategory.name) ?? [];
 
   return (
     <>

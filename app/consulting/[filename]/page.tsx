@@ -70,7 +70,10 @@ const getData = async (filename: string) => {
       ),
     })) || [];
 
-  console.log("🚀 ~ getData ~ techCards:", techCards);
+  const categoriesData =
+    tinaProps.data.consulting.testimonialCategories
+      ?.filter((category) => !!category?.testimonialCategory)
+      ?.map((category) => category.testimonialCategory.name) ?? [];
   const marketingSection = await client.queries.marketing({
     relativePath: "/why-choose-ssw.mdx",
   });
@@ -83,6 +86,7 @@ const getData = async (filename: string) => {
       testimonialsResult,
       techCards: techCards,
       marketingData: marketingSection.data,
+      categories: categoriesData,
       header: {
         url: tinaProps.data.global.header.url,
       },
