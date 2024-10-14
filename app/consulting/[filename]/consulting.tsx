@@ -1,10 +1,10 @@
 "use client";
+
 import { BookingButton, BuiltOnAzure, ClientLogos } from "@/components/blocks";
 import { Blocks } from "@/components/blocks-renderer";
 import { Booking } from "@/components/blocks/booking";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { CallToAction } from "@/components/callToAction/callToAction";
-import { MediaCardProps } from "@/components/consulting/mediaCard/mediaCard";
 import MediaCards from "@/components/consulting/mediaCard/mediaCards";
 import { Marketing } from "@/components/marketing/Marketing";
 import TechnologyCards from "@/components/technologyCard/technologyCards";
