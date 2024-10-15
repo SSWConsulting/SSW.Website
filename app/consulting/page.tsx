@@ -6,14 +6,7 @@ import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import ConsultingIndex from "./index";
 
-type GenerateMetaDataProps = {
-  params: { filename: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
-
-export async function generateMetadata({
-  params,
-}: GenerateMetaDataProps): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const tinaProps = await getData();
 
   const seo = tinaProps.props.seo;

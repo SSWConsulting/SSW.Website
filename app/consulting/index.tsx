@@ -68,7 +68,7 @@ export default function ConsultingIndex({ tinaProps }) {
       params.get("tag") as unknown as ParsedUrlQuery
     );
     setSelectedTag(qsTag);
-  }, [params.get("tag")]);
+  }, [params]);
 
   useEffect(() => {
     // grid animation seutp - will automatically clean itself up when dom node is removed
