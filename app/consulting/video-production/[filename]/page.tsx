@@ -1,0 +1,89 @@
+import client from "@/tina/client";
+import "aos/dist/aos.css"; // This is important to keep the animation
+import { TODAY } from "hooks/useFetchEvents";
+import { useSEO } from "hooks/useSeo";
+import { Metadata } from "next";
+import { TinaClient } from "../../../tina-client";
+import VideoProduction from "./video-production";
+
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  let pageListData = await client.queries.videoProductionConnection();
+  const allPagesListData = pageListData;
+
+  while (pageListData.data.videoProductionConnection.pageInfo.hasNextPage) {
+    const lastCursor =
+      pageListData.data.videoProductionConnection.pageInfo.endCursor;
+    pageListData = await client.queries.videoProductionConnection({
+      after: lastCursor,
+    });
+
+    allPagesListData.data.videoProductionConnection.edges.push(
+      ...pageListData.data.videoProductionConnection.edges
+    );
+  }
+
+  const pages = allPagesListData.data.videoProductionConnection.edges.map(
+    (page) => ({
+      params: { filename: page.node._sys.filename },
+    })
+  );
+
+  return pages;
+}
+
+const getData = async (filename: string) => {
+  const tinaProps = await client.queries.videoProductionContentQuery({
+    relativePath: `${filename}.mdx`,
+    date: TODAY.toISOString(),
+  });
+
+  const seo = tinaProps.data.videoProduction.seo;
+
+  return {
+    props: {
+      data: tinaProps.data,
+      query: tinaProps.query,
+      variables: tinaProps.variables,
+      header: {
+        url: tinaProps.data.global.header.url,
+      },
+      seo,
+      ...tinaProps,
+    },
+  };
+};
+
+type GenerateMetaDataProps = {
+  params: { filename: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata({
+  params,
+}: GenerateMetaDataProps): Promise<Metadata> {
+  const { props } = await getData(params.filename);
+
+  const { seo } = props;
+  if (seo && !seo.canonical) {
+    seo.canonical = `${props.header.url}consulting/video-production/${params.filename}`;
+  }
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { seoProps } = useSEO(seo);
+
+  return { ...seoProps };
+}
+
+export default async function Consulting({
+  params,
+}: {
+  params: { filename: string };
+}) {
+  const { filename } = params;
+
+  const { props } = await getData(filename);
+
+  return <TinaClient props={props} Component={VideoProduction} />;
+}
