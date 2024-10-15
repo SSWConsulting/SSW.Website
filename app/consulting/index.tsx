@@ -14,7 +14,6 @@ import { Tag } from "@/components/consulting/index/tag";
 import { Container } from "@/components/util/container";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import { useSearchParams } from "next/navigation";
-import { ParsedUrlQuery } from "querystring";
 
 const allServices = "All SSW Services";
 
