@@ -23,7 +23,7 @@ export default function ConsultingIndex({ tinaProps }) {
   const params = useSearchParams();
   const router = useRouter();
   const [selectedTag, setSelectedTag] = useState(
-    getSelectedTagFromQuery(params.get("tag") as unknown as ParsedUrlQuery)
+    getSelectedTagFromQuery(params.get("tag"))
   );
 
   const node = tinaProps.data.consultingIndex;
@@ -64,9 +64,7 @@ export default function ConsultingIndex({ tinaProps }) {
 
   useEffect(() => {
     // as the querystring changes, update the selected tag
-    const qsTag = getSelectedTagFromQuery(
-      params.get("tag") as unknown as ParsedUrlQuery
-    );
+    const qsTag = getSelectedTagFromQuery(params.get("tag"));
     setSelectedTag(qsTag);
   }, [params]);
 
@@ -126,15 +124,15 @@ export default function ConsultingIndex({ tinaProps }) {
   );
 }
 
-const getSelectedTagFromQuery = (query: ParsedUrlQuery): string => {
+const getSelectedTagFromQuery = (query: string): string => {
   let parsedTag = allServices;
   if (query) {
     const tag = query;
 
-    if (tag instanceof Array) {
+    if (Array.isArray(tag)) {
       parsedTag = tag[0];
     } else {
-      parsedTag = tag as unknown as string;
+      parsedTag = tag;
     }
     parsedTag = parsedTag.replace("-", " ");
   }
