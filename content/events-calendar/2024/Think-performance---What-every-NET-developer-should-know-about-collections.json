@@ -17,6 +17,7 @@
   "category": ".NET Core",
   "abstract": "The world of .NET development offers powerful collections like List, Dictionary, HashSet, and many others, but knowing when to use each can make or break your app's performance.\n\nThis session will walk you through the ins and outs of .NET collections, diving into their use cases, internal mechanics, and performance tips—empowering you to write efficient, scalable code with confidence.",
   "description": "Join us for an insightful session on optimizing .NET collections like List, Dictionary, and HashSet, crucial for enhancing app performance. Led by Anton Polkanov, a Senior Software Engineer at SSW, this event covers the internal workings and best practices for .NET collections.\n",
+  "youTubeId": "7V1y0SRi4DI",
   "delayedLiveStreamStart": true,
   "liveStreamDelayMinutes": 30,
   "hostedAtSsw": true,
