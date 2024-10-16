@@ -41,7 +41,7 @@ const LiveStreamWidget = dynamic(
   }
 );
 
-import LiveStreamBanner from "../../components/liveStream/liveStreamBanner";
+import LiveStreamBanner from "@/components/liveStream/liveStreamBanner";
 
 const INTERVAL_MINUTES = 1;
 
