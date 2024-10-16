@@ -115,9 +115,11 @@ const VerticalImageLayout = dynamic(() =>
 const VerticalListItem = dynamic(() =>
   import("./verticalListItem").then((mod) => mod.VerticalListItem)
 );
-const VideoEmbed = dynamic(() =>
-  import("./videoEmbed").then((mod) => mod.VideoEmbed)
+const VideoEmbed = dynamic(
+  () => import("./videoEmbed").then((mod) => mod.VideoEmbed),
+  { ssr: false }
 );
+
 const YoutubePlaylistBlock = dynamic<YoutubePlaylistProps>(() =>
   import("./youtubePlaylist").then((mod) => mod.YoutubePlaylistBlock)
 );
