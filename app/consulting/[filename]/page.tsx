@@ -5,8 +5,16 @@ import "aos/dist/aos.css"; // This is important to keep the animation
 import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
+import { Open_Sans } from "next/font/google";
 import { TinaClient } from "../../tina-client";
 import ConsultingPage from "./consulting";
+
+const openSans = Open_Sans({
+  variable: "--open-sans-font",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "600"],
+});
 
 export const dynamicParams = false;
 
@@ -136,5 +144,9 @@ export default async function Consulting({
 
   const { props } = await getData(filename);
 
-  return <TinaClient props={props} Component={ConsultingPage} />;
+  return (
+    <div className={openSans.className}>
+      <TinaClient props={props} Component={ConsultingPage} />
+    </div>
+  );
 }
