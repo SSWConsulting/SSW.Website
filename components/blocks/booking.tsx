@@ -5,6 +5,12 @@ import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 
+import dynamic from "next/dynamic";
+
+const VideoBackground = dynamic(() => import("./videoBackground"), {
+  ssr: false,
+});
+
 export const Booking: FC<{
   title?: string;
   subTitle?: string;
@@ -33,20 +39,11 @@ export const Booking: FC<{
         </div>
       </Container>
 
-      <video
-        className="absolute h-full min-w-full object-cover transition-opacity duration-1000 z-bgVideo"
-        playsInline
-        autoPlay
-        muted
-        loop
-      >
-        <source
-          data-tina-field={tinaField(props, "videoBackground")}
-          src={props.videoBackground}
-          type="video/mp4"
-        />
-        Your browser does not support HTML5 video.
-      </video>
+      <VideoBackground
+        videoBackground={props.videoBackground}
+        tinaField={tinaField}
+        props={props}
+      />
     </div>
   );
 };
