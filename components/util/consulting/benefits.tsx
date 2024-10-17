@@ -1,8 +1,10 @@
 import classNames from "classnames";
-import Image from "next/image";
+import dynamic from "next/dynamic";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { CustomLink } from "../../customLink";
+
+const Image = dynamic(() => import("next/image"), { ssr: true });
 
 const BenefitCard = (props) => {
   const { image, title, description, linkURL, linkName } = props.data;
@@ -25,6 +27,7 @@ const BenefitCard = (props) => {
             width={120}
             height={120}
             alt={title || "benefit icon"}
+            loading="lazy"
           />
         )}
       </figure>
