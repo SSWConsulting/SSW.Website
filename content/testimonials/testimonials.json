@@ -1,10 +1,15 @@
 {
   "testimonials": [
     {
+      "name": "Dino T., CIO",
+      "company": "BizCover",
+      "body": "SSW helped us streamline our development process by reducing complexity in our environment and increase our development throughput. Their expertise, innovative approach and access to SMEs in all areas enabled the project to exceed goals. The work done during the project and the knowledge transferred to the BizCover team has set us on the right path to achieve our objectives.\n"
+    },
+    {
       "name": "Niru Verma",
       "avatar": "/images/testimonialAvatars/niru-verma.jpeg",
       "company": "Mercury Information Security Services",
-      "body": "Uly, your team is such a bunch of angels! Could not be happier that we chose to go with you. The whole crew have been so nice and so wonderful to us – they all deserve big props. I had the chance to go check out SSW's Melbourne office this Sprint, and everyone there was so nice – what a great vibe you have!",
+      "body": "Uly, your team is such a bunch of angels! Could not be happier that we chose to go with you. The whole crew have been so nice and so wonderful to us – they all deserve big props. I had the chance to go check out SSW's Melbourne office this Sprint, and everyone there was so nice – what a great vibe you have!\n",
       "categories": [
         {
           "category": "content/testimonialCategories/Web-Development.mdx"
