@@ -4,12 +4,7 @@ import { tinaField } from "tinacms/dist/react";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
-
-import dynamic from "next/dynamic";
-
-const VideoBackground = dynamic(() => import("./videoBackground"), {
-  ssr: false,
-});
+import VideoBackground from "./videoBackground";
 
 export const Booking: FC<{
   title?: string;
