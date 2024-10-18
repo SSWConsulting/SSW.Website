@@ -1,5 +1,6 @@
 "use client";
-import { Tab, Transition } from "@headlessui/react";
+import { Tab } from "@headlessui/react/dist/components/tabs/tabs";
+import { Transition } from "@headlessui/react/dist/components/transitions/Transition";
 import Image from "next/image";
 import React, {
   Fragment,
@@ -296,6 +297,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
   We need this because there's an issue preventing us from syncing the files in the repo
   to Tina cloud. Images that aren't synced will 404.
    
+
    */
 
   const [thumbnail, setFallbackImage] = useState("");

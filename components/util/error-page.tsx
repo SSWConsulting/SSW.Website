@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { CustomLink } from "../customLink";
 import { Container } from "./container";
 
-import { Disclosure } from "@headlessui/react";
+import { Disclosure } from "@headlessui/react/dist/components/disclosure/disclosure";
 import React from "react";
 import { BiChevronRight } from "react-icons/bi";
 import { FaXmark } from "react-icons/fa6";
