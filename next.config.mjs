@@ -79,6 +79,7 @@ const config = {
       "@fortawesome/fontawesome-svg-core",
       "@headlessui/react",
       "@headlessui/tailwindcss",
+      "ssw.megamenu",
     ],
     turbo: {
       resolveExtensions: [
@@ -91,6 +92,8 @@ const config = {
         ".json",
       ],
     },
+    serverSourceMaps: true,
+    productionBrowserSourceMaps: true,
   },
 };
 
