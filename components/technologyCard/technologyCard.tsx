@@ -1,9 +1,11 @@
-import Image from "next/image";
+import dynamic from "next/dynamic";
 import { FC } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { CustomLink } from "../customLink";
 import { TechnologyCardProps } from "./technologyCardTypes";
+
+const Image = dynamic(() => import("next/image"), { ssr: false });
 
 const TechnologyCard: FC<TechnologyCardProps> = (props) => {
   const { name, readMoreSlug, thumbnail, body } = props;
@@ -18,7 +20,7 @@ const TechnologyCard: FC<TechnologyCardProps> = (props) => {
           data-tina-field={tinaField(props, "thumbnail")}
         >
           <Image
-            src={thumbnail || "/images/ssw-logo.svg"}
+            src={thumbnail || "/images/ssw-logo.webp"}
             alt={thumbnail ? name : "SSW Consulting"}
             fill
             className="object-contain"
