@@ -17,7 +17,7 @@ export const Booking: FC<{
   videoBackground?: string;
   children: React.ReactNode;
 }> = (props) => {
-  const isMobile = useIsMobile() || true;
+  const isMobile = useIsMobile();
 
   return (
     <div className="flex w-full items-center text-center font-light after:absolute after:size-full after:bg-black/75 after:bg-video-mask after:z-videoMask">
