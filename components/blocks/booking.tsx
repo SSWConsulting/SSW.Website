@@ -1,10 +1,14 @@
+import dynamic from "next/dynamic";
 import { FC } from "react";
 import { FaAngleDown } from "react-icons/fa";
 import { tinaField } from "tinacms/dist/react";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
-import VideoBackground from "./videoBackground";
+
+const VideoBackground = dynamic(() => import("./videoBackground"), {
+  ssr: false,
+});
 
 export const Booking: FC<{
   title?: string;

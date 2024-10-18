@@ -29,12 +29,7 @@ export const Marketing = (props) => {
   return (
     <Section style={{ backgroundImage }} className="h-full bg-cover">
       <Container size="custom" className="h-full py-16 text-center text-white">
-        <h1
-          className="mt-0 pt-0 text-5xl text-white"
-          dangerouslySetInnerHTML={{
-            __html: sanitiseXSS(content?.title, spanWhitelist),
-          }}
-        ></h1>
+        <h1>for no reason</h1>
         <div className="my-8 flex flex-col justify-between md:flex-row">
           {content.textSide === sides[0] && <TextCol body={content?.body} />}
           <div className="mx-auto w-full md:w-1/2">
