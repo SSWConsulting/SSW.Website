@@ -1,4 +1,3 @@
-import useIsMobile from "hooks/useIsMobile";
 import React from "react";
 
 interface VideoBackgroundProps {
@@ -12,11 +11,6 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
   tinaField,
   props,
 }) => {
-  const isMobile = useIsMobile();
-
-  if (isMobile) {
-    return null;
-  }
   return (
     <video
       className="absolute h-full min-w-full object-cover transition-opacity duration-1000 z-bgVideo"
