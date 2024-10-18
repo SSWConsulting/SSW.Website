@@ -87,7 +87,6 @@ const config = {
       ],
     },
   },
-  productionBrowserSourceMaps: true,
 };
 
 const withBundleAnalyzer = bundleAnalyser({
