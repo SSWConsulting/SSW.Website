@@ -1,12 +1,11 @@
-"use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import * as React from "react";
+import { isMobile } from "react-device-detect";
 import { tinaField } from "tinacms/dist/react";
 
 import type { Template } from "tinacms";
 
-import useIsMobile from "../../hooks/useIsMobile";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
@@ -16,7 +15,6 @@ import { Carousel as CarouselImplementation } from "react-responsive-carousel";
 
 export const Carousel = ({ data }) => {
   const router = useRouter();
-  const isMobile = useIsMobile();
 
   if (!data.showOnMobileDevices && isMobile) {
     return null;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const useIsMobile = (breakpoint = 768) => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
     // Check if the window width is less than or equal to the given breakpoint
