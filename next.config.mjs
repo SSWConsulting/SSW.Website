@@ -74,7 +74,12 @@ const config = {
     ];
   },
   experimental: {
-    optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
+    optimizePackageImports: [
+      "tinacms",
+      "@fortawesome/fontawesome-svg-core",
+      "@headlessui/react",
+      "@headlessui/tailwindcss",
+    ],
     turbo: {
       resolveExtensions: [
         ".mdx",
