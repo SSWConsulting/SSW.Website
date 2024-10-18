@@ -83,7 +83,7 @@ export default function CompanyPage(
                 <div className="max-w-sm shrink pl-16">
                   {data.company.sidebar && (
                     <div
-                      className={classNames("md:block lg:min-w-96", {
+                      className={classNames("md:block", {
                         hidden: data.company.hideSidebarOnMobile,
                         "min-w-fit": data.company.fixedWidthSidebar,
                       })}
