@@ -1,6 +1,17 @@
 {
   "testimonials": [
     {
+      "name": "Dino T",
+      "avatar": "/images/testimonialAvatars/dino-t-bizcover.jpeg",
+      "company": "BizCover",
+      "body": "SSW helped us streamline our development process by reducing complexity in our environment and increase our development throughput. Their expertise, innovative approach and access to SMEs in all areas enabled the project to exceed goals. The work done during the project and the knowledge transferred to the BizCover team has set us on the right path to achieve our objectives.\n",
+      "categories": [
+        {
+          "category": "content/testimonialCategories/Blazor.mdx"
+        }
+      ]
+    },
+    {
       "name": "Niru Verma",
       "avatar": "/images/testimonialAvatars/niru-verma.jpeg",
       "company": "Mercury Information Security Services",
