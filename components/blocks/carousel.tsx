@@ -16,9 +16,9 @@ import { Carousel as CarouselImplementation } from "react-responsive-carousel";
 
 export const Carousel = ({ data }) => {
   const router = useRouter();
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile() || false;
 
-  if (!data.showOnMobileDevices && isMobile && typeof window !== "undefined") {
+  if (!data.showOnMobileDevices && isMobile) {
     return null;
   }
 
