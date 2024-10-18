@@ -1,7 +1,6 @@
 "use client";
 
-import { Disclosure } from "@headlessui/react/dist/components/disclosure/Disclosure";
-import { Transition } from "@headlessui/react/dist/components/transitions/transition";
+import { Disclosure, Transition } from "@headlessui/react";
 import classNames from "classnames";
 import { useEffect, useMemo, useState } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
