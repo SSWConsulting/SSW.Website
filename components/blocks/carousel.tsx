@@ -18,7 +18,7 @@ export const Carousel = ({ data }) => {
   const router = useRouter();
   const isMobile = useIsMobile();
 
-  if (!data.showOnMobileDevices && isMobile) {
+  if (!data.showOnMobileDevices && isMobile && typeof window !== "undefined") {
     return null;
   }
 
