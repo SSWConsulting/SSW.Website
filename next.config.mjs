@@ -92,9 +92,8 @@ const config = {
         ".json",
       ],
     },
-    serverSourceMaps: true,
-    productionBrowserSourceMaps: true,
   },
+  productionBrowserSourceMaps: true,
 };
 
 const withBundleAnalyzer = bundleAnalyser({

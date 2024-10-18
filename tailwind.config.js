@@ -54,7 +54,7 @@ export const platform = [
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  // mode: "jit",
+  mode: "jit",
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
