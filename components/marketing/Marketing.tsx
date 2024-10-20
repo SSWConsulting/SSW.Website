@@ -1,7 +1,7 @@
-import { sanitiseXSS, spanWhitelist } from "@/helpers/validator";
 import { getImageProps } from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { getBackgroundImage } from "../../helpers/images";
+import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
