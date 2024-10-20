@@ -2,15 +2,21 @@
 
 import classNames from "classnames";
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import { useEffect, useState } from "react";
-import { FaPlayCircle } from "react-icons/fa";
+
+const FaPlayCircle = dynamic(
+  () => import("react-icons/fa").then((mod) => mod.FaPlayCircle),
+  { ssr: false }
+);
+
 import {
   MATCH_URL_VIMEO,
   MATCH_URL_YOUTUBE,
   getVimeoId,
   getYouTubeId,
 } from "../helpers/embeds";
+
+const Image = dynamic(() => import("next/image"), { ssr: false });
 
 const YouTubeEmbed = dynamic(
   () => import("./embeds/youtubeEmbed").then((mod) => mod.YouTubeEmbed),
