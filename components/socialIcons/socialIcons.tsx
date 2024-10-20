@@ -2,18 +2,35 @@
 import classNames from "classnames";
 import React, { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
-import { IconType } from "react-icons";
 
-import {
-  FaFacebookF,
-  FaGithub,
-  FaInstagram,
-  FaLinkedinIn,
-  FaMeetup,
-  FaTiktok,
-  FaYoutube,
-} from "react-icons/fa";
+const FaFacebookF = dynamic(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaFacebookF }))
+);
+const FaGithub = dynamic(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaGithub }))
+);
+const FaInstagram = dynamic(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaInstagram }))
+);
+const FaLinkedinIn = dynamic(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaLinkedinIn }))
+);
+const FaMeetup = dynamic(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaMeetup }))
+);
+const FaTiktok = dynamic(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaTiktok }))
+);
+const FaYoutube = dynamic(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaYoutube }))
+);
 
+const IconType = dynamic(
+  () => import("react-icons").then((mod) => mod.default),
+  { ssr: false }
+);
+
+import dynamic from "next/dynamic";
 import { FaXTwitter } from "react-icons/fa6";
 import layoutData from "../../content/global/index.json";
 import { CustomLink } from "../customLink";
@@ -30,7 +47,7 @@ export type SocialTypes =
 
 export const socialStyles: Record<
   SocialTypes,
-  { icon: IconType; bgClassName: string; fill?: string }
+  { icon: typeof IconType; bgClassName: string; fill?: string }
 > = {
   youtube: {
     icon: FaYoutube,
