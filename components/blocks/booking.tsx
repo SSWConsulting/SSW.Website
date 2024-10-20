@@ -1,7 +1,6 @@
 import useIsMobile from "hooks/useIsMobile";
 import dynamic from "next/dynamic";
 import { FC } from "react";
-import { FaAngleDown } from "react-icons/fa";
 import { tinaField } from "tinacms/dist/react";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { CustomLink } from "../customLink";
@@ -10,6 +9,11 @@ import { Container } from "../util/container";
 const VideoBackground = dynamic(() => import("./videoBackground"), {
   ssr: false,
 });
+
+const FaAngleDown = dynamic(
+  () => import("react-icons/fa").then((mod) => mod.FaAngleDown),
+  { ssr: false }
+);
 
 export const Booking: FC<{
   title?: string;

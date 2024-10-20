@@ -3,7 +3,6 @@
 import { useRouter } from "next/navigation";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { MdLiveHelp } from "react-icons/md";
 
 import { wrapGrid } from "animate-css-grid";
 
@@ -13,7 +12,13 @@ import { Category } from "@/components/consulting/index/category";
 import { Tag } from "@/components/consulting/index/tag";
 import { Container } from "@/components/util/container";
 import { Breadcrumbs } from "app/components/breadcrumb";
+import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
+
+const MdLiveHelp = dynamic(
+  () => import("react-icons/md").then((mod) => mod.MdLiveHelp),
+  { ssr: false }
+);
 
 const allServices = "All SSW Services";
 
