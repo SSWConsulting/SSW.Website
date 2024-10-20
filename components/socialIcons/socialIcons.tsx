@@ -2,6 +2,7 @@
 import classNames from "classnames";
 import React, { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
+import { IconType } from "react-icons";
 
 const FaFacebookF = dynamic(() =>
   import("react-icons/fa").then((module) => ({ default: module.FaFacebookF }))
@@ -25,11 +26,6 @@ const FaYoutube = dynamic(() =>
   import("react-icons/fa").then((module) => ({ default: module.FaYoutube }))
 );
 
-const IconType = dynamic(
-  () => import("react-icons").then((mod) => mod.default),
-  { ssr: false }
-);
-
 import dynamic from "next/dynamic";
 import { FaXTwitter } from "react-icons/fa6";
 import layoutData from "../../content/global/index.json";
@@ -47,22 +43,22 @@ export type SocialTypes =
 
 export const socialStyles: Record<
   SocialTypes,
-  { icon: typeof IconType; bgClassName: string; fill?: string }
+  { icon: IconType; bgClassName: string; fill?: string }
 > = {
   youtube: {
-    icon: FaYoutube,
+    icon: FaYoutube as IconType,
     bgClassName: "bg-social-youtube",
   },
   linkedin: {
-    icon: FaLinkedinIn,
+    icon: FaLinkedinIn as IconType,
     bgClassName: "bg-social-linkedin",
   },
   facebook: {
-    icon: FaFacebookF,
+    icon: FaFacebookF as IconType,
     bgClassName: "bg-social-facebook",
   },
   instagram: {
-    icon: FaInstagram,
+    icon: FaInstagram as IconType,
     bgClassName: "bg-gradient-tr-social-instagram",
   },
   xtwitter: {
@@ -70,16 +66,16 @@ export const socialStyles: Record<
     bgClassName: "bg-social-xtwitter",
   },
   tiktok: {
-    icon: FaTiktok,
+    icon: FaTiktok as IconType,
     bgClassName: "bg-social-tiktok",
   },
   github: {
-    icon: FaGithub,
+    icon: FaGithub as IconType,
     bgClassName: "bg-social-github",
     fill: "black",
   },
   meetup: {
-    icon: FaMeetup,
+    icon: FaMeetup as IconType,
     bgClassName: "bg-social-meetup",
   },
 } as const;
