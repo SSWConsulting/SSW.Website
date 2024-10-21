@@ -2,7 +2,6 @@
 import classNames from "classnames";
 import React, { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
-
 import { IconType } from "react-icons";
 
 import {
@@ -16,7 +15,6 @@ import {
 } from "react-icons/fa";
 
 import { FaXTwitter } from "react-icons/fa6";
-
 import layoutData from "../../content/global/index.json";
 import { CustomLink } from "../customLink";
 
