@@ -1,12 +1,8 @@
 import dynamic from "next/dynamic";
+import { SocialIcons } from "../../socialIcons/socialIcons";
 import { Container } from "../../util/container";
 import { CopyrightInfo } from "./copyright-info";
 import { DeploymentInfo } from "./deployment-info";
-
-const SocialIcons = dynamic(
-  () => import("../../socialIcons/socialIcons").then((x) => x.SocialIcons),
-  { ssr: false }
-);
 
 const SiteInfo = dynamic(() => import("./site-info").then((x) => x.SiteInfo), {
   ssr: false,

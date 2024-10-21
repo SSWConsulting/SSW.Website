@@ -23,12 +23,10 @@ import { SectionHeaderProps } from "./sectionHeader";
 const MicrosoftPanel = dynamic(() =>
   import("../offices/microsoftPanel").then((mod) => mod.default)
 );
-const AgreementForm = dynamic(
-  () =>
-    import("../terms-and-conditions/agreementForm").then(
-      (mod) => mod.AgreementForm
-    ),
-  { ssr: false }
+const AgreementForm = dynamic(() =>
+  import("../terms-and-conditions/agreementForm").then(
+    (mod) => mod.AgreementForm
+  )
 );
 const TrainingInformation = dynamic(() =>
   import("../training/trainingInformation").then((mod) => mod.default)
@@ -49,9 +47,8 @@ const Carousel = dynamic(() =>
 const Citation = dynamic(() =>
   import("./citation").then((mod) => mod.Citation)
 );
-const ClientLogos = dynamic(
-  () => import("./clientLogos").then((mod) => mod.ClientLogos),
-  { ssr: false }
+const ClientLogos = dynamic(() =>
+  import("./clientLogos").then((mod) => mod.ClientLogos)
 );
 
 const ColorBlock = dynamic<ColorBlockProps>(() =>
@@ -81,9 +78,7 @@ const FixedColumns = dynamic(() =>
 const FixedTabsLayout = dynamic(() =>
   import("./fixedTabsLayout").then((mod) => mod.FixedTabsLayout)
 );
-const Flag = dynamic(() => import("./flag").then((mod) => mod.Flag), {
-  ssr: false,
-});
+const Flag = dynamic(() => import("./flag").then((mod) => mod.Flag));
 
 const ColorPalette = dynamic(() =>
   import("./colorPalette").then((mod) => mod.ColorPalette)

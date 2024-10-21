@@ -4,9 +4,8 @@ import classNames from "classnames";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
-const FaPlayCircle = dynamic(
-  () => import("react-icons/fa").then((mod) => mod.FaPlayCircle),
-  { ssr: false }
+const FaPlayCircle = dynamic(() =>
+  import("react-icons/fa").then((mod) => mod.FaPlayCircle)
 );
 
 import {
@@ -16,20 +15,14 @@ import {
   getYouTubeId,
 } from "../helpers/embeds";
 
-const Image = dynamic(() => import("next/image"), { ssr: false });
+const Image = dynamic(() => import("next/image"));
 
-const YouTubeEmbed = dynamic(
-  () => import("./embeds/youtubeEmbed").then((mod) => mod.YouTubeEmbed),
-  {
-    ssr: false,
-  }
+const YouTubeEmbed = dynamic(() =>
+  import("./embeds/youtubeEmbed").then((mod) => mod.YouTubeEmbed)
 );
 
-const VimeoEmbed = dynamic(
-  () => import("./embeds/vimeoEmbed").then((mod) => mod.VimeoEmbed),
-  {
-    ssr: false,
-  }
+const VimeoEmbed = dynamic(() =>
+  import("./embeds/vimeoEmbed").then((mod) => mod.VimeoEmbed)
 );
 
 type VideoModalProps = {

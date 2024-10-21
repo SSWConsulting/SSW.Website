@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 import { TestimonialType } from "../../helpers/getTestimonials";
 
-const Image = dynamic(() => import("next/image"), { ssr: false });
+const Image = dynamic(() => import("next/image"));
 
 const defaultAvatar = "/images/thumbs/avatar-thumbnail.png";
 

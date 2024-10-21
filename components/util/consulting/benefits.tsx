@@ -4,7 +4,7 @@ import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { CustomLink } from "../../customLink";
 
-const Image = dynamic(() => import("next/image"), { ssr: false });
+const Image = dynamic(() => import("next/image"));
 
 const BenefitCard = (props) => {
   const { image, title, description, linkURL, linkName } = props.data;

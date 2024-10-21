@@ -5,7 +5,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { CustomLink } from "../customLink";
 import { TechnologyCardProps } from "./technologyCardTypes";
 
-const Image = dynamic(() => import("next/image"), { ssr: false });
+const Image = dynamic(() => import("next/image"));
 
 const TechnologyCard: FC<TechnologyCardProps> = (props) => {
   const { name, readMoreSlug, thumbnail, body } = props;

@@ -6,7 +6,7 @@ import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
-const Image = dynamic(() => import("next/image"), { ssr: false });
+const Image = dynamic(() => import("next/image"));
 
 export const BuiltOnAzure = ({ data }) => {
   return (
