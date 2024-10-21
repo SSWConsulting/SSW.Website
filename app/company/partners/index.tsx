@@ -1,3 +1,5 @@
+"use client";
+
 import { PageCard } from "@/components/blocks/pageCards";
 import { Container } from "@/components/util/container";
 import { Breadcrumbs } from "app/components/breadcrumb";
