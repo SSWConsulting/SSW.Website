@@ -2,35 +2,21 @@
 import classNames from "classnames";
 import React, { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
+
 import { IconType } from "react-icons";
 
-const FaFacebookF = dynamic(() =>
-  import("react-icons/fa").then((module) => ({ default: module.FaFacebookF }))
-);
-const FaGithub = dynamic(() =>
-  import("react-icons/fa").then((module) => ({ default: module.FaGithub }))
-);
-const FaInstagram = dynamic(() =>
-  import("react-icons/fa").then((module) => ({ default: module.FaInstagram }))
-);
-const FaLinkedinIn = dynamic(() =>
-  import("react-icons/fa").then((module) => ({ default: module.FaLinkedinIn }))
-);
-const FaMeetup = dynamic(() =>
-  import("react-icons/fa").then((module) => ({ default: module.FaMeetup }))
-);
-const FaTiktok = dynamic(() =>
-  import("react-icons/fa").then((module) => ({ default: module.FaTiktok }))
-);
-const FaYoutube = dynamic(() =>
-  import("react-icons/fa").then((module) => ({ default: module.FaYoutube }))
-);
+import {
+  FaFacebookF,
+  FaGithub,
+  FaInstagram,
+  FaLinkedinIn,
+  FaMeetup,
+  FaTiktok,
+  FaYoutube,
+} from "react-icons/fa";
 
-const FaXTwitter = dynamic(() =>
-  import("react-icons/fa").then((module) => ({ default: module.FaTwitter }))
-);
+import { FaXTwitter } from "react-icons/fa6";
 
-import dynamic from "next/dynamic";
 import layoutData from "../../content/global/index.json";
 import { CustomLink } from "../customLink";
 
@@ -49,36 +35,36 @@ export const socialStyles: Record<
   { icon: IconType; bgClassName: string; fill?: string }
 > = {
   youtube: {
-    icon: FaYoutube as IconType,
+    icon: FaYoutube,
     bgClassName: "bg-social-youtube",
   },
   linkedin: {
-    icon: FaLinkedinIn as IconType,
+    icon: FaLinkedinIn,
     bgClassName: "bg-social-linkedin",
   },
   facebook: {
-    icon: FaFacebookF as IconType,
+    icon: FaFacebookF,
     bgClassName: "bg-social-facebook",
   },
   instagram: {
-    icon: FaInstagram as IconType,
+    icon: FaInstagram,
     bgClassName: "bg-gradient-tr-social-instagram",
   },
   xtwitter: {
-    icon: FaXTwitter as IconType,
+    icon: FaXTwitter,
     bgClassName: "bg-social-xtwitter",
   },
   tiktok: {
-    icon: FaTiktok as IconType,
+    icon: FaTiktok,
     bgClassName: "bg-social-tiktok",
   },
   github: {
-    icon: FaGithub as IconType,
+    icon: FaGithub,
     bgClassName: "bg-social-github",
     fill: "black",
   },
   meetup: {
-    icon: FaMeetup as IconType,
+    icon: FaMeetup,
     bgClassName: "bg-social-meetup",
   },
 } as const;
