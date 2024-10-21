@@ -26,8 +26,11 @@ const FaYoutube = dynamic(() =>
   import("react-icons/fa").then((module) => ({ default: module.FaYoutube }))
 );
 
+const FaXTwitter = dynamic(() =>
+  import("react-icons/fa").then((module) => ({ default: module.FaTwitter }))
+);
+
 import dynamic from "next/dynamic";
-import { FaXTwitter } from "react-icons/fa6";
 import layoutData from "../../content/global/index.json";
 import { CustomLink } from "../customLink";
 
@@ -62,7 +65,7 @@ export const socialStyles: Record<
     bgClassName: "bg-gradient-tr-social-instagram",
   },
   xtwitter: {
-    icon: FaXTwitter,
+    icon: FaXTwitter as IconType,
     bgClassName: "bg-social-xtwitter",
   },
   tiktok: {
