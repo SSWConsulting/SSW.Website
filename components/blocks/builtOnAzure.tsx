@@ -1,10 +1,12 @@
 import classNames from "classnames";
-import Image from "next/image";
+import dynamic from "next/dynamic";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
+
+const Image = dynamic(() => import("next/image"));
 
 export const BuiltOnAzure = ({ data }) => {
   return (
@@ -21,6 +23,7 @@ export const BuiltOnAzure = ({ data }) => {
               alt="Microsoft Azure Logo"
               height={30}
               width={30}
+              loading="lazy"
             />
           }
         />
@@ -36,6 +39,7 @@ export const BuiltOnAzure = ({ data }) => {
               alt="TinaCMS logo"
               height={30}
               width={22}
+              loading="lazy"
             />
           }
         />

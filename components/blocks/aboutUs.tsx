@@ -119,10 +119,9 @@ export const AboutUs = ({ data }) => {
         data-tina-field={tinaField(data, aboutUsBlock.backgroundColor)}
       >
         <div className="grid grid-cols-3 gap-6">
-          <TV
-            className="col-span-3 max-md:hidden sm:col-span-1"
-            isMobile={isMobile}
-          />
+          {!isMobile && (
+            <TV className="col-span-3 max-md:hidden sm:col-span-1" />
+          )}
           <div className="col-span-3 md:col-span-2">
             <div
               className={`grid grid-cols-1 gap-6 ${!data.hideMap ? "sm:grid-cols-2" : ""}`}
@@ -139,7 +138,7 @@ export const AboutUs = ({ data }) => {
                 setMapClickedTrigger={setMapClickedTrigger}
                 mapClickedTrigger={mapClickedTrigger}
               />
-              {(data.showMap ?? true) && (
+              {(data.showMap ?? true) && !isMobile && (
                 <Map
                   className="hidden sm:block"
                   offices={offices}
@@ -150,7 +149,6 @@ export const AboutUs = ({ data }) => {
                   setStateBeingHovered={setStateBeingHovered}
                   setMapHoveredTrigger={setMapHoveredTrigger}
                   setMapClickedTrigger={setMapClickedTrigger}
-                  isMobile={isMobile}
                 />
               )}
             </div>
@@ -161,16 +159,7 @@ export const AboutUs = ({ data }) => {
   );
 };
 
-const TV = memo(function TV({
-  className,
-  isMobile,
-}: {
-  className?: string;
-  isMobile: boolean;
-}) {
-  if (isMobile) {
-    return null;
-  }
+const TV = memo(function TV({ className }: { className?: string }) {
   return (
     <div className={className}>
       <h2 className="mt-0">tv.ssw.com</h2>
@@ -369,11 +358,7 @@ const Map = ({
   setStateBeingHovered,
   setMapHoveredTrigger,
   setMapClickedTrigger,
-  isMobile,
 }) => {
-  if (isMobile) {
-    return null;
-  }
   return (
     <div className={className}>
       <h2 className="mt-0">&nbsp;</h2>

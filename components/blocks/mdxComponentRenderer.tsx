@@ -31,11 +31,13 @@ const AgreementForm = dynamic(() =>
 const TrainingInformation = dynamic(() =>
   import("../training/trainingInformation").then((mod) => mod.default)
 );
+
 const TrainingLearningOutcome = dynamic(() =>
   import("../training/trainingLearningOutcome").then(
     (mod) => mod.TrainingLearningOutcome
   )
 );
+
 const CustomDownloadButton = dynamic(() =>
   import("./CustomDownloadButton").then((mod) => mod.CustomDownloadButton)
 );
@@ -48,6 +50,7 @@ const Citation = dynamic(() =>
 const ClientLogos = dynamic(() =>
   import("./clientLogos").then((mod) => mod.ClientLogos)
 );
+
 const ColorBlock = dynamic<ColorBlockProps>(() =>
   import("./colorBlock").then((mod) => mod.ColorBlock)
 );
@@ -76,12 +79,15 @@ const FixedTabsLayout = dynamic(() =>
   import("./fixedTabsLayout").then((mod) => mod.FixedTabsLayout)
 );
 const Flag = dynamic(() => import("./flag").then((mod) => mod.Flag));
+
 const ColorPalette = dynamic(() =>
   import("./colorPalette").then((mod) => mod.ColorPalette)
 );
-const GoogleMapsWrapper = dynamic(() =>
-  import("./googleMapsWrapper").then((mod) => mod.GoogleMapsWrapper)
+const GoogleMapsWrapper = dynamic(
+  () => import("./googleMapsWrapper").then((mod) => mod.GoogleMapsWrapper),
+  { ssr: false }
 );
+
 const InlineJotForm = dynamic(() =>
   import("../inlineJotForm/inlineJotForm").then((mod) => mod.InlineJotForm)
 );

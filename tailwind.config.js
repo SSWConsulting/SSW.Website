@@ -54,7 +54,7 @@ export const platform = [
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  // mode: "jit",
+  mode: "jit",
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -396,8 +396,8 @@ export default {
           "url('/images/Newsletters/LiveStreambanner-air.gif')",
         "card-video": "url('/images/icons/video-icon.svg')",
         "card-blog": "url('/images/icons/blog-post.svg')",
-        benefits: "url('/consulting/mvc-benefits-bg.jpg')",
-        "video-mask": "url('/images/video-mask.png')",
+        benefits: "url('/consulting/mvc-benefits-bg.webp')",
+        "video-mask": "url('/images/video-mask.webp')",
         polygons: "url('/images/background/polygonBackground.png')",
         subscribeBackground: "url('/images/thumbs/subscribeBackground.png')",
         arcBackground: "url('/images/background/arcBackground.png')",

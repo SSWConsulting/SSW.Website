@@ -3,12 +3,17 @@ import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { removeExtension } from "@/services/client/utils.service";
-import { Breadcrumbs } from "app/components/breadcrumb";
 import classNames from "classnames";
+import dynamic from "next/dynamic";
 import { useEffect, useMemo } from "react";
 import { WebSite, WithContext } from "schema-dts";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+
+const Breadcrumbs = dynamic(
+  () => import("app/components/breadcrumb").then((x) => x.Breadcrumbs),
+  { ssr: true }
+);
 
 export default function PageContent({ props }) {
   const { data } = props;

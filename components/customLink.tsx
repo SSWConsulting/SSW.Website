@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { PropsWithChildren } from "react";
 
 interface CustomLinkProps extends PropsWithChildren {
@@ -40,6 +43,9 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
   const isExternal = isExternalLink(href);
   const isAnSSWBrandedSite = isExternalSSWSite(href) || isTinaSite(href);
 
+  const path = usePathname();
+  const isHomePage = path === "/"; // Check if current page is the homepage
+
   if (!href) return <>{children}</>;
   return (
     <>
@@ -63,6 +69,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
           title={title}
           {...props}
           style={style}
+          prefetch={!isHomePage}
         >
           {children}
         </Link>
