@@ -1,6 +1,6 @@
 "use client";
 
-import { BookingButton } from "@/components/blocks";
+import { BookingButton, BuiltOnAzure, ClientLogos } from "@/components/blocks";
 import { Blocks } from "@/components/blocks-renderer";
 import { Booking } from "@/components/blocks/booking";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
@@ -15,24 +15,11 @@ import { Section } from "@/components/util/section";
 import { sanitiseXSS, spanWhitelist } from "@/helpers/validator";
 import { removeExtension } from "@/services/client/utils.service";
 import { Breadcrumbs } from "app/components/breadcrumb";
-import dynamic from "next/dynamic";
 
 import { ReactElement } from "react";
 import ReactDOMServer from "react-dom/server";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-
-const BuiltOnAzure = dynamic(
-  () => import("@/components/blocks/builtOnAzure").then((x) => x.BuiltOnAzure),
-  {
-    ssr: false,
-  }
-);
-
-const ClientLogos = dynamic(
-  () => import("@/components/blocks/clientLogos").then((x) => x.ClientLogos),
-  { ssr: false }
-);
 
 export default function Consulting({ tinaProps, props }) {
   const { techCards, marketingData, categories, mediaCardProps } = props;
