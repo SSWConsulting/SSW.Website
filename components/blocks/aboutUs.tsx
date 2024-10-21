@@ -5,7 +5,8 @@ import dayjs from "dayjs";
 import { memo, useEffect, useState } from "react";
 import type { Template } from "tinacms";
 
-import dynamic from "next/dynamic";
+import { BiChevronRightCircle } from "react-icons/bi";
+
 import { tinaField } from "tinacms/dist/react";
 import layoutData from "../../content/global/index.json";
 import useIsMobile from "../../hooks/useIsMobile";
@@ -13,11 +14,6 @@ import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import { VideoModal } from "../videoModal";
-
-const BiChevronRightCircle = dynamic(
-  () => import("react-icons/bi").then((mod) => mod.BiChevronRightCircle),
-  { ssr: false }
-);
 
 const DAY_KEYS = {
   Sunday: 0,

@@ -4,9 +4,7 @@ import classNames from "classnames";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
-const FaPlayCircle = dynamic(() =>
-  import("react-icons/fa").then((mod) => mod.FaPlayCircle)
-);
+import { FaPlayCircle } from "react-icons/fa";
 
 import {
   MATCH_URL_VIMEO,
