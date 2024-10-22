@@ -19,7 +19,7 @@ param servicePrincipalObjectId string
   'P2V3'
   'P3V3'
 ])
-param skuName string = 'P1V2'
+param skuName string = 'P1V3'
 
 
 @minValue(1)
