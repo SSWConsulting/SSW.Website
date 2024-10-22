@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import type { Template } from "tinacms";
 import layoutData from "../../content/global/index.json";
 
-const Image = dynamic(() => import("next/image"), { ssr: false });
+const Image = dynamic(() => import("next/image"));
 
 const clientsData = layoutData.clients.clientsList;
 

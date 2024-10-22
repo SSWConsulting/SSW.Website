@@ -4,7 +4,7 @@ import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";
 import { serviceCards } from "./serviceCards";
 
-const Image = dynamic(() => import("next/image"), { ssr: false });
+const Image = dynamic(() => import("next/image"));
 
 interface BigCardContentProps {
   card: {

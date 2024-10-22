@@ -1,6 +1,6 @@
 import { tinaField } from "tinacms/dist/react";
 
-const Image = dynamic(() => import("next/image"), { ssr: false });
+const Image = dynamic(() => import("next/image"));
 
 import type { Template } from "tinacms";
 
