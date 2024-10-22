@@ -2,18 +2,11 @@ import { Blocks } from "@/components/blocks-renderer";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
-import { removeExtension } from "@/services/client/utils.service";
 import classNames from "classnames";
-import dynamic from "next/dynamic";
 import { useEffect, useMemo } from "react";
 import { WebSite, WithContext } from "schema-dts";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-
-const Breadcrumbs = dynamic(
-  () => import("app/components/breadcrumb").then((x) => x.Breadcrumbs),
-  { ssr: true }
-);
 
 export default function PageContent({ props }) {
   const { data } = props;
@@ -47,15 +40,6 @@ export default function PageContent({ props }) {
   }, [structuredData]);
   return (
     <>
-      {data.page.breadcrumbs && (
-        <Section className="mx-auto w-full max-w-9xl px-8 py-5">
-          <Breadcrumbs
-            path={removeExtension(props.variables.relativePath)}
-            suffix={data.global.breadcrumbSuffix}
-            title={data.page.seo?.title}
-          />
-        </Section>
-      )}
       {data.page?.title && (
         <Section
           className="mx-auto w-full max-w-9xl px-8"
