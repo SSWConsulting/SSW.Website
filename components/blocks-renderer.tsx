@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { PaymentBlock } from "./blocks/payment-block";
 
 const BookingButton = dynamic(() =>
   import("./bookingButton/bookingButton").then((mod) => mod.BookingButton)
@@ -88,10 +89,6 @@ const GridLayout = dynamic(() =>
 
 const LatestTech = dynamic(() =>
   import("./usergroup/latestTech").then((mod) => mod.LatestTech)
-);
-
-const PaymentBlock = dynamic(() =>
-  import("./blocks/payment-block").then((mod) => mod.PaymentBlock)
 );
 
 const EventBooking = dynamic(() =>
