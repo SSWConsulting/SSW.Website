@@ -69,7 +69,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
           title={title}
           {...props}
           style={style}
-          {...(isHomePage ? { prefetch: true } : {})}
+          {...(isHomePage ? { prefetch: false } : {})}
         >
           {children}
         </Link>
