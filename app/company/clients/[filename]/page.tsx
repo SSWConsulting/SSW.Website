@@ -2,8 +2,8 @@ import client from "@/tina/client";
 import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
-import { TinaClient } from "../../tina-client";
-import ConsultingPage from "./[filename]/index";
+import { TinaClient } from "../../../tina-client";
+import CaseStudies from "./index";
 
 export const dynamicParams = false;
 
@@ -81,5 +81,5 @@ export default async function Consulting({
 
   const { props } = await getData(filename);
 
-  return <>Hello</>;
+  return <TinaClient props={props} Component={CaseStudies} />;
 }
