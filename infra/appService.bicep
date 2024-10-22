@@ -5,30 +5,11 @@ param tags object
 param dockerRegistryServerURL string
 param appInsightConnectionString string
 param keyVaultName string
+param skuName string
+param skuCapacity int
 
 param healthCheckPath string = '/'
 
-@allowed([
-  'B1'
-  'B2'
-  'B3'
-  'S1'
-  'S2'
-  'S3'
-  'P1'
-  'P2'
-  'P3'
-  'P1V2'
-  'P2V2'
-  'P3V2'
-  'P1V3'
-  'P2V3'
-  'P3V3'
-])
-param skuName string = 'P1V2'
-
-@minValue(1)
-param skuCapacity int = 1
 
 param acrName string
 
