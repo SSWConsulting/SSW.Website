@@ -682,7 +682,7 @@
         {
           "title": "Video Production",
           "description": "Use a great video to promote your message and build more customers.",
-          "logo": "/images/thumbs/thumb-video-production.jpg",
+          "logo": "/images/thumbs/consulting/thumb-sswtv.svg",
           "page": "content/consulting/video-production.mdx",
           "externalUrl": "",
           "tags": [
@@ -712,12 +712,12 @@
         {
           "title": "SSW Chapel Conference Rental",
           "description": "Do you have an event idea? Then we have the venue! The SSW Chapel conference rooms are spacious and quiet retreats in convenient locations.",
-          "logo": "/images/thumbs/thumb-chapelrental.jpg",
+          "logo": "/images/thumbs/consulting/thumb-chapel.svg",
           "page": "content/consulting/angular.mdx",
-          "externalUrl": "https://sswchapel.com.au/",
+          "externalUrl": "https://sswchapel.com.au",
           "tags": [
             {
-              "tag": "content/consulting/tag/design.json"
+              "tag": "content/consulting/tag/consulting.json"
             },
             {
               "tag": "content/consulting/tag/video.json"
