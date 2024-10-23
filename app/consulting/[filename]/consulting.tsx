@@ -2,7 +2,9 @@
 
 import { Blocks } from "@/components/blocks-renderer";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
+import MediaCards from "@/components/consulting/mediaCard/mediaCards";
 import { Marketing } from "@/components/marketing/Marketing";
+import TechnologyCards from "@/components/technologyCard/technologyCards";
 import { TestimonialRow } from "@/components/testimonials/TestimonialRow";
 import { Benefits } from "@/components/util/consulting/benefits";
 import { Container } from "@/components/util/container";
@@ -69,8 +71,23 @@ export default function Consulting({ props, tinaProps }) {
           <h1 className="text-center">Companies we have worked with</h1>
         </Container>
       </Section>
-      {!!techCards.length && <></>}
-      {!!mediaCardProps.length && <></>}
+      {!!techCards.length && (
+        <Section className="pb-16 text-center">
+          <Container padding="px-4">
+            <TechnologyCards {...data.consulting.technologies} />
+          </Container>
+        </Section>
+      )}
+      {!!mediaCardProps.length && (
+        <Section className="pb-40 pt-8 text-center">
+          <Container size="custom">
+            <MediaCards
+              header={data.consulting.medias?.header}
+              cardProps={mediaCardProps}
+            />
+          </Container>
+        </Section>
+      )}
     </>
   );
 }
