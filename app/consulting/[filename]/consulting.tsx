@@ -1,15 +1,12 @@
 "use client";
 
-import { BookingButton, ClientLogos } from "@/components/blocks";
 import { Blocks } from "@/components/blocks-renderer";
-import { Booking } from "@/components/blocks/booking";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
-import MediaCards from "@/components/consulting/mediaCard/mediaCards";
 import { Marketing } from "@/components/marketing/Marketing";
-import TechnologyCards from "@/components/technologyCard/technologyCards";
 import { TestimonialRow } from "@/components/testimonials/TestimonialRow";
 import { Benefits } from "@/components/util/consulting/benefits";
 import { Container } from "@/components/util/container";
+
 import { Section } from "@/components/util/section";
 import { removeExtension } from "@/services/client/utils.service";
 import { Breadcrumbs } from "app/components/breadcrumb";
@@ -17,7 +14,7 @@ import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export default function Consulting({ props, tinaProps }) {
-  const { techCards, marketingData, categories, mediaCardProps } = props;
+  const { categories, marketingData, mediaCardProps, techCards } = props;
   const { data } = tinaProps;
   return (
     <>
@@ -28,11 +25,6 @@ export default function Consulting({ props, tinaProps }) {
           title={data.consulting.seo?.title}
           seoSchema={data.consulting.seo}
         />
-      </Section>
-      <Section className="w-full" color="black">
-        <Booking {...data.consulting.booking}>
-          <BookingButton />
-        </Booking>
       </Section>
       <Section
         color="black"
@@ -69,37 +61,16 @@ export default function Consulting({ props, tinaProps }) {
             categories={categories}
             tagline={data.consulting.testimonials?.tagline}
           />
-          <BookingButton
-            data={{
-              containerClass: "mt-20",
-            }}
-          />
         </Container>
       </Section>
       <Marketing content={marketingData} />
       <Section className="!bg-gray-75 pb-40">
         <Container size="custom">
           <h1 className="text-center">Companies we have worked with</h1>
-          <ClientLogos />
         </Container>
       </Section>
-      {!!techCards.length && (
-        <Section className="pb-16 text-center">
-          <Container padding="px-4">
-            <TechnologyCards {...data.consulting.technologies} />
-          </Container>
-        </Section>
-      )}
-      {!!mediaCardProps.length && (
-        <Section className="pb-40 pt-8 text-center">
-          <Container size="custom">
-            <MediaCards
-              header={data.consulting.medias?.header}
-              cardProps={mediaCardProps}
-            />
-          </Container>
-        </Section>
-      )}
+      {!!techCards.length && <></>}
+      {!!mediaCardProps.length && <></>}
     </>
   );
 }
