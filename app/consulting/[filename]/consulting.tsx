@@ -1,7 +1,6 @@
 "use client";
 
 import { BookingButton, BuiltOnAzure, ClientLogos } from "@/components/blocks";
-import { Blocks } from "@/components/blocks-renderer";
 import { Booking } from "@/components/blocks/booking";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { CallToAction } from "@/components/callToAction/callToAction";
@@ -59,16 +58,6 @@ export default function Consulting({ tinaProps, props }) {
       </Section>
       <Section className="mb-16">
         <Container padding="px-4" className="flex w-full flex-wrap">
-          {data.consulting.afterBody ? (
-            <div>
-              <Blocks
-                prefix={"ConsultingAfterBody"}
-                blocks={data.consulting.afterBody}
-              />
-            </div>
-          ) : (
-            <></>
-          )}
           <TestimonialRow
             testimonialsResult={props.testimonialsResult}
             categories={categories}
