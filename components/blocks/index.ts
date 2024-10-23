@@ -1,5 +1,6 @@
 import type { Template } from "tinacms";
 
+import { clientLogosBlockSchema } from "../../tinacms-schemas/client-logos-block-schema";
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
 import { utilityButtonSchema } from "../button/utilityButton";
 import { clientListSchema } from "../company/clientList";
@@ -22,7 +23,6 @@ import { agendaSchema } from "./agenda";
 import { builtOnAzureBlockSchema } from "./builtOnAzure";
 import { carouselBlockSchema } from "./carousel";
 import { citationBlockSchema } from "./citation";
-import { clientLogosBlockSchema } from "./clientLogos";
 import { colorBlockSchema } from "./colorBlock";
 import { colorPaletteSchema } from "./colorPalette";
 import { contentBlockSchema } from "./content";

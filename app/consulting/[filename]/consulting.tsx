@@ -1,5 +1,6 @@
 "use client";
 
+import { ClientLogos } from "@/components/blocks";
 import { Blocks } from "@/components/blocks-renderer";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import MediaCards from "@/components/consulting/mediaCard/mediaCards";
@@ -69,6 +70,7 @@ export default function Consulting({ props, tinaProps }) {
       <Section className="!bg-gray-75 pb-40">
         <Container size="custom">
           <h1 className="text-center">Companies we have worked with</h1>
+          <ClientLogos />
         </Container>
       </Section>
       {!!techCards.length && (

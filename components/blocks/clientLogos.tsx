@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import type { Template } from "tinacms";
 import layoutData from "../../content/global/index.json";
 
 const Image = dynamic(() => import("next/image"));
@@ -24,21 +23,4 @@ export const ClientLogos = () => {
         ))}
     </div>
   );
-};
-
-export const clientLogosBlockSchema: Template = {
-  name: "ClientLogos",
-  label: "Client Logos",
-  ui: {
-    previewSrc: "/images/thumbs/tina/client-logos.jpg",
-  },
-  // Todo: Find a way to have no fields - the one below is to satisfy compiler
-  fields: [
-    {
-      type: "string",
-      label: "Alt text",
-      name: "altText",
-      required: true,
-    },
-  ],
 };
