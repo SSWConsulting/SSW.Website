@@ -1,29 +1,28 @@
-import { HistoryTimelineCardProps } from "@/components/company/historyTimelineCard";
 import client from "@/tina/client";
 import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
-import { TinaClient } from "../../tina-client";
-import CompanyPage from "./index";
+import { TinaClient } from "../../../tina-client";
+import CaseStudies from "./index";
 
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  let pageListData = await client.queries.companyConnection();
+  let pageListData = await client.queries.caseStudyConnection();
   const allPagesListData = pageListData;
 
-  while (pageListData.data.companyConnection.pageInfo.hasNextPage) {
-    const lastCursor = pageListData.data.companyConnection.pageInfo.endCursor;
-    pageListData = await client.queries.companyConnection({
+  while (pageListData.data.caseStudyConnection.pageInfo.hasNextPage) {
+    const lastCursor = pageListData.data.caseStudyConnection.pageInfo.endCursor;
+    pageListData = await client.queries.caseStudyConnection({
       after: lastCursor,
     });
 
-    allPagesListData.data.companyConnection.edges.push(
-      ...pageListData.data.companyConnection.edges
+    allPagesListData.data.caseStudyConnection.edges.push(
+      ...pageListData.data.caseStudyConnection.edges
     );
   }
 
-  const pages = allPagesListData.data.companyConnection.edges.map((page) => ({
+  const pages = allPagesListData.data.caseStudyConnection.edges.map((page) => ({
     filename: page.node._sys.filename,
   }));
 
@@ -31,22 +30,12 @@ export async function generateStaticParams() {
 }
 
 const getData = async (filename: string) => {
-  const tinaProps = await client.queries.companyContentQuery({
+  const tinaProps = await client.queries.caseStudyContentQuery({
     relativePath: `${filename}.mdx`,
     date: TODAY.toISOString(),
   });
 
-  const seo = tinaProps.data.company.seo;
-
-  const historyCardProps =
-    tinaProps.data?.company?.historyCards?.map<HistoryTimelineCardProps>(
-      (m) => ({
-        year: m.year,
-        title: m.title,
-        location: m.location as HistoryTimelineCardProps["location"],
-        description: m.description,
-      })
-    ) || [];
+  const seo = tinaProps.data.caseStudy.seo;
 
   return {
     props: {
@@ -56,7 +45,6 @@ const getData = async (filename: string) => {
       header: {
         url: tinaProps.data.global.header.url,
       },
-      historyCardProps: historyCardProps,
       seo,
       ...tinaProps,
     },
@@ -75,7 +63,7 @@ export async function generateMetadata({
 
   const seo = tinaProps.props.seo;
   if (seo && !seo.canonical) {
-    seo.canonical = `${tinaProps.props.header.url}company/${params.filename}`;
+    seo.canonical = `${tinaProps.props.header.url}company/clients/${params.filename}`;
   }
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -93,5 +81,5 @@ export default async function Consulting({
 
   const { props } = await getData(filename);
 
-  return <TinaClient props={props} Component={CompanyPage} />;
+  return <TinaClient props={props} Component={CaseStudies} />;
 }

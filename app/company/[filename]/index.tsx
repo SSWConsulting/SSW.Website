@@ -25,7 +25,7 @@ export default function CompanyPage({ tinaProps, props }) {
         <Blocks prefix="CompanyBeforeBody" blocks={data.company.beforeBody} />
         {data.company.seo?.showBreadcrumb === null ||
           (data.company.seo?.showBreadcrumb && (
-            <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+            <Section className="mx-auto min-h-24 w-full max-w-9xl px-8 py-5 md:min-h-16">
               <Breadcrumbs
                 path={removeExtension(props.variables.relativePath)}
                 suffix={data.global.breadcrumbSuffix}
