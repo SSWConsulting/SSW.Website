@@ -1,6 +1,6 @@
 "use client";
 
-import { BuiltOnAzure } from "@/components/blocks";
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import CompanyHeader from "@/components/company/companyHeader";
 import CompanyPages from "@/components/company/companyPages";

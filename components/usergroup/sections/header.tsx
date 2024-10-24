@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import Image from "next/image";
 import { useMemo } from "react";
 import { BiVideo } from "react-icons/bi";
-import { UtilityButton } from "../../blocks";
+import { UtilityButton } from "../../button/utilityButton";
 import { CustomLink } from "../../customLink";
 import { CITY_TIMEZONES } from "../../util/constants/country";
 import { Container } from "../../util/container";

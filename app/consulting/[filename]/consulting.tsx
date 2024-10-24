@@ -1,9 +1,11 @@
 "use client";
 
-import { BookingButton, BuiltOnAzure, ClientLogos } from "@/components/blocks";
 import { Blocks } from "@/components/blocks-renderer";
 import { Booking } from "@/components/blocks/booking";
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
+import { ClientLogos } from "@/components/blocks/clientLogos";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
+import { BookingButton } from "@/components/bookingButton/bookingButton";
 import { CallToAction } from "@/components/callToAction/callToAction";
 import MediaCards from "@/components/consulting/mediaCard/mediaCards";
 import { Marketing } from "@/components/marketing/Marketing";
@@ -15,7 +17,6 @@ import { Section } from "@/components/util/section";
 import { sanitiseXSS, spanWhitelist } from "@/helpers/validator";
 import { removeExtension } from "@/services/client/utils.service";
 import { Breadcrumbs } from "app/components/breadcrumb";
-
 import { ReactElement } from "react";
 import ReactDOMServer from "react-dom/server";
 import { tinaField } from "tinacms/dist/react";
@@ -132,7 +133,6 @@ export default function Consulting({ tinaProps, props }) {
           ></h2>
         </CallToAction>
       )}
-
       <Section>
         <BuiltOnAzure data={{ backgroundColor: "default" }} />
       </Section>

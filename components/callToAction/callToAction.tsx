@@ -1,5 +1,7 @@
-import { BookingButton } from "../blocks";
-import { bookingButtonSchema } from "../bookingButton/bookingButton";
+import {
+  BookingButton,
+  bookingButtonSchema,
+} from "../bookingButton/bookingButton";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 

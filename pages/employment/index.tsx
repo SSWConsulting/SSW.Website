@@ -4,9 +4,9 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "@/tina/client";
 import { TODAY } from "hooks/useFetchEvents";
 import { InferGetStaticPropsType } from "next";
-import { BuiltOnAzure } from "../../components/blocks";
 import { Booking } from "../../components/blocks/booking";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { BuiltOnAzure } from "../../components/blocks/builtOnAzure";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import {
   Opportunities,

@@ -15,8 +15,9 @@ import layoutData, {
   default as globals,
 } from "../../content/global/index.json";
 import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
-import { InlineJotForm, VideoEmbed } from "../blocks";
+import { VideoEmbed } from "../blocks/videoEmbed";
 import { CustomLink } from "../customLink";
+import { InlineJotForm } from "../inlineJotForm/inlineJotForm";
 import { SocialIcons } from "../socialIcons/socialIcons";
 
 type LiveStreamWidgetProps = {

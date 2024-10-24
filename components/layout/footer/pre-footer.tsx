@@ -1,4 +1,4 @@
-import { BuiltOnAzure } from "@/components/blocks";
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { Section } from "@/components/util/section";
 
 export const PreFooter = () => {

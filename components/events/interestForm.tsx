@@ -1,6 +1,6 @@
 import { Template } from "tinacms";
 import globals from "../../content/global/index.json";
-import { JotFormEmbed } from "../blocks";
+import { JotFormEmbed } from "../blocks/jotFormEmbed";
 
 export const InterestForm = (props) => {
   return (
