@@ -2,7 +2,7 @@ import classNames from "classnames";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
-import { clientLogosBlockSchema } from "../../tinacms-schemas/client-logos-block-schema";
+import { clientLogosBlockSchema } from "../../components/blocks/clientLogos";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import { colorBlockSchema } from "./colorBlock";

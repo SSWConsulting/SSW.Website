@@ -1,6 +1,6 @@
 import type { Template } from "tinacms";
 
-import { clientLogosBlockSchema } from "../../tinacms-schemas/client-logos-block-schema";
+import { clientLogosBlockSchema } from "../../components/blocks/clientLogos";
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
 import { utilityButtonSchema } from "../button/utilityButton";
 import { clientListSchema } from "../company/clientList";
