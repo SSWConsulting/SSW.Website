@@ -1,8 +1,11 @@
 "use client";
 
 import { Blocks } from "@/components/blocks-renderer";
+import { Booking } from "@/components/blocks/booking";
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { ClientLogos } from "@/components/blocks/clientLogos";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
+import { BookingButton } from "@/components/bookingButton/bookingButton";
 import MediaCards from "@/components/consulting/mediaCard/mediaCards";
 import { Marketing } from "@/components/marketing/Marketing";
 import TechnologyCards from "@/components/technologyCard/technologyCards";
@@ -28,6 +31,11 @@ export default function Consulting({ props, tinaProps }) {
           title={data.consulting.seo?.title}
           seoSchema={data.consulting.seo}
         />
+      </Section>
+      <Section className="w-full" color="black">
+        <Booking {...data.consulting.booking}>
+          <BookingButton />
+        </Booking>
       </Section>
       <Section
         color="black"
@@ -64,6 +72,11 @@ export default function Consulting({ props, tinaProps }) {
             categories={categories}
             tagline={data.consulting.testimonials?.tagline}
           />
+          <BookingButton
+            data={{
+              containerClass: "mt-20",
+            }}
+          />
         </Container>
       </Section>
       <Marketing content={marketingData} />
@@ -90,6 +103,9 @@ export default function Consulting({ props, tinaProps }) {
           </Container>
         </Section>
       )}
+      <Section>
+        <BuiltOnAzure data={{ backgroundColor: "default" }} />
+      </Section>
     </>
   );
 }
