@@ -1,7 +1,7 @@
 import { Breadcrumbs } from "@/blocks/breadcrumbs";
 import { componentRenderer } from "@/blocks/mdxComponentRenderer";
 import ArticleAuthor from "@/components/articles/articleAuthor";
-import { BuiltOnAzure } from "@/components/blocks";
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { CallToAction } from "@/components/callToAction/callToAction";
 import { Layout } from "@/components/layout";
 import SidebarPanel from "@/components/sidebar/sidebarPanel";

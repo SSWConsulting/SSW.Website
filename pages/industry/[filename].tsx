@@ -4,8 +4,8 @@ import { InferGetStaticPropsType } from "next";
 import Image from "next/image";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { BuiltOnAzure } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { BuiltOnAzure } from "../../components/blocks/builtOnAzure";
 import {
   DownloadWhitepaperLink,
   industryRenderer,

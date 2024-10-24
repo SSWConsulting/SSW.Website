@@ -1,22 +1,24 @@
 import * as Schemas from "../../components/blocks";
-import {
-  carouselBlockSchema,
-  colorBlockSchema,
-  colorPaletteSchema,
-  customDownloadButtonSchema,
-  fixedColumnsSchema,
-  sectionHeaderSchema,
-  tableBlockSchema,
-  testimonialsListSchema,
-  verticalImageLayoutBlockSchema,
-} from "../../components/blocks";
+
+import { carouselBlockSchema } from "../../components/blocks/carousel";
+import { fixedColumnsSchema } from "../../components/blocks/fixedColumns";
+import { sectionHeaderSchema } from "../../components/blocks/sectionHeader";
+import { tableBlockSchema } from "../../components/blocks/tableLayout";
+import { testimonialsListSchema } from "../../components/blocks/testimonialsList";
+import { verticalImageLayoutBlockSchema } from "../../components/blocks/verticalImageLayout";
+
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
 import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
 import { seoSchema } from "../../components/util/seo";
 import { tipField } from "./shared-fields";
 
 import type { Collection } from "tinacms";
+import { colorBlockSchema } from "../../components/blocks/colorBlock";
+import { colorPaletteSchema } from "../../components/blocks/colorPalette";
+import { customDownloadButtonSchema } from "../../components/blocks/CustomDownloadButton";
+import { customImageBlockSchema } from "../../components/blocks/customImage";
 import { dynamicCardGridBlockSchema } from "../../components/blocks/dynamicCardGridBlock";
+import { utilityButtonSchema } from "../../components/button/utilityButton";
 import { testimonialToSelectOptions } from "../../helpers/getTestimonials";
 
 export const companySchema: Collection = {
@@ -61,13 +63,13 @@ export const companySchema: Collection = {
         colorBlockSchema,
         colorPaletteSchema,
         customDownloadButtonSchema,
-        Schemas.customImageBlockSchema,
+        customImageBlockSchema,
         dynamicCardGridBlockSchema,
         fixedColumnsSchema,
         sectionHeaderSchema,
         tableBlockSchema,
         testimonialsListSchema,
-        Schemas.utilityButtonSchema,
+        utilityButtonSchema,
         verticalImageLayoutBlockSchema,
         videoEmbedBlockSchema,
       ],
