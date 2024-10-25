@@ -92,6 +92,7 @@ export const articlesSchema: Collection = {
       type: "rich-text",
       name: "subTitle",
       label: "Body",
+      isBody: true,
       templates: [
         carouselBlockSchema,
         colorBlockSchema,
