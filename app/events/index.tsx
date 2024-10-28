@@ -4,14 +4,12 @@ import { Blocks } from "@/components/blocks-renderer";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { EventsFilter } from "@/components/filter/events";
 import { Container } from "@/components/util/container";
-import { HydrationBoundary, QueryClient } from "@tanstack/react-query";
+import { HydrationBoundary } from "@tanstack/react-query";
 import { useSearchParams } from "next/navigation";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-const FIVE_MINS = 1000 * 60 * 5;
-
 export default function EventsIndexPage({ props, tinaProps }) {
-  const { filterCategories, dehydratedState } = props;
+  const { filterCategories } = props;
   const { data } = tinaProps;
 
   const searchParams = useSearchParams();
