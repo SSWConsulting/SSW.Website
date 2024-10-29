@@ -4,7 +4,11 @@ import {
   DEFAULT_CATEGORY_FILTER,
   DEFAULT_TECHNOLOGY_FITLER,
 } from "@/components/filter/events";
-import { dehydrate, QueryClient } from "@tanstack/react-query";
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
 import { TinaClient } from "app/tina-client";
 import {
   FUTURE_EVENTS_QUERY_KEY,
@@ -78,5 +82,9 @@ const getData = async () => {
 export default async function EventPage() {
   const { props } = await getData();
 
-  return <TinaClient props={props} Component={EventIndex} />;
+  return (
+    <HydrationBoundary state={props.dehydratedState}>
+      <TinaClient props={props} Component={EventIndex} />
+    </HydrationBoundary>
+  );
 }

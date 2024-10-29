@@ -4,7 +4,6 @@ import { Blocks } from "@/components/blocks-renderer";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { EventsFilter } from "@/components/filter/events";
 import { Container } from "@/components/util/container";
-import { HydrationBoundary } from "@tanstack/react-query";
 import { useSearchParams } from "next/navigation";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
@@ -17,7 +16,7 @@ export default function EventsIndexPage({ props, tinaProps }) {
   const defaultToPastTab = searchParams.get("past") === "1";
 
   return (
-    <HydrationBoundary state={props.dehydratedState}>
+    <>
       <Container size="small">
         <div className="md:flex md:flex-row">
           <h1 className="md:mr-12 md:shrink-0 md:basis-64">SSW Events</h1>
@@ -38,6 +37,6 @@ export default function EventsIndexPage({ props, tinaProps }) {
         prefix="EventsIndexAfterEvents"
         blocks={data.eventsIndex.afterEvents}
       />
-    </HydrationBoundary>
+    </>
   );
 }
