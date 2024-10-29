@@ -6,6 +6,8 @@ import {
   FUTURE_EVENTS_QUERY_KEY,
   getEventsCategories,
   getFutureEvents,
+  getPastEvents,
+  PAST_EVENTS_QUERY_KEY,
   TODAY,
 } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
@@ -44,13 +46,24 @@ const getData = async () => {
 
   // Default filters are set to undefined on initial load to prevent losing the prefetched cache.
   // This avoids extra load time on the client side.
-  const intialCachedQuery = FUTURE_EVENTS_QUERY_KEY + DEFAULT_FILTERS;
+  const intialCachedQueryForFutureEvent =
+    FUTURE_EVENTS_QUERY_KEY + DEFAULT_FILTERS;
+  const intialCachedQueryForPastEvents =
+    PAST_EVENTS_QUERY_KEY + DEFAULT_FILTERS;
 
   await queryClient.prefetchInfiniteQuery({
     /* values of undefined cannot be serialized as JSON, so were passing the values as strings
       using concatenation */
-    queryKey: [intialCachedQuery],
+    queryKey: [intialCachedQueryForFutureEvent],
     queryFn: () => getFutureEvents(),
+    initialPageParam: "",
+  });
+
+  await queryClient.prefetchInfiniteQuery({
+    /* values of undefined cannot be serialized as JSON, so were passing the values as strings
+      using concatenation */
+    queryKey: [intialCachedQueryForPastEvents],
+    queryFn: () => getPastEvents(),
     initialPageParam: "",
   });
 
@@ -78,3 +91,14 @@ export default async function EventPage() {
 
   return <TinaClient props={props} Component={EventIndex} />;
 }
+
+const formatCategory = (category: string): string => {
+  {
+    const categoryReplacements = {
+      "Non-English Courses": "Other",
+    };
+    const lookup = categoryReplacements[category];
+
+    return lookup ? lookup : category;
+  }
+};
