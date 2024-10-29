@@ -91,14 +91,3 @@ export default async function EventPage() {
 
   return <TinaClient props={props} Component={EventIndex} />;
 }
-
-const formatCategory = (category: string): string => {
-  {
-    const categoryReplacements = {
-      "Non-English Courses": "Other",
-    };
-    const lookup = categoryReplacements[category];
-
-    return lookup ? lookup : category;
-  }
-};
