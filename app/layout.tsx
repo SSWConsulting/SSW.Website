@@ -66,7 +66,6 @@ export default async function RootLayout({
     nextUG?.data?.eventsCalendarConnection?.edges?.length > 0
       ? nextUG?.data?.eventsCalendarConnection?.edges[0]?.node
       : null;
-
   return (
     <html lang="en" className={openSans.className}>
       <body>
