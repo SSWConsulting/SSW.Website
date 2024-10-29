@@ -1,7 +1,7 @@
 "use client";
 
-import { ClientLogos } from "@/components/blocks";
 import { Blocks } from "@/components/blocks-renderer";
+import { ClientLogos } from "@/components/blocks/clientLogos";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import EventsHeader from "@/components/events/eventsHeader";
 import { TestimonialRow } from "@/components/testimonials/TestimonialRow";
