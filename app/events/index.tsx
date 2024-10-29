@@ -4,15 +4,10 @@ import { Blocks } from "@/components/blocks-renderer";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { EventsFilter } from "@/components/filter/events";
 import { Container } from "@/components/util/container";
-import {
-  HydrationBoundary,
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
+import { HydrationBoundary } from "@tanstack/react-query";
+import { QueryProvider } from "app/providers/query-provider";
 import { useSearchParams } from "next/navigation";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-
-const FIVE_MINS = 1000 * 60 * 5;
 
 export default function EventsIndexPage({ props, tinaProps }) {
   const { filterCategories } = props;
@@ -22,12 +17,8 @@ export default function EventsIndexPage({ props, tinaProps }) {
 
   const defaultToPastTab = searchParams.get("past") === "1";
 
-  const queryClient = new QueryClient({
-    defaultOptions: { queries: { staleTime: FIVE_MINS } },
-  });
-
   return (
-    <QueryClientProvider client={queryClient}>
+    <QueryProvider>
       <HydrationBoundary state={props.dehydratedState}>
         <Container size="small">
           <div className="md:flex md:flex-row">
@@ -50,6 +41,6 @@ export default function EventsIndexPage({ props, tinaProps }) {
           blocks={data.eventsIndex.afterEvents}
         />
       </HydrationBoundary>
-    </QueryClientProvider>
+    </QueryProvider>
   );
 }

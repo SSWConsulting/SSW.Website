@@ -1,15 +1,13 @@
 import client from "@/tina/client";
 
-import {
-  DEFAULT_CATEGORY_FILTER,
-  DEFAULT_TECHNOLOGY_FITLER,
-} from "@/components/filter/events";
 import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { TinaClient } from "app/tina-client";
 import {
   FUTURE_EVENTS_QUERY_KEY,
   getEventsCategories,
   getFutureEvents,
+  getPastEvents,
+  PAST_EVENTS_QUERY_KEY,
   TODAY,
 } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
@@ -17,6 +15,8 @@ import { Metadata } from "next";
 import EventIndex from "./index";
 
 export const revalidate = 3600;
+
+const DEFAULT_FILTERS = "undefinedundefined";
 
 export async function generateMetadata(): Promise<Metadata> {
   const tinaProps = await getData();
@@ -44,15 +44,26 @@ const getData = async () => {
 
   const filterCategories = await getEventsCategories();
 
+  // Default filters are set to undefined on initial load to prevent losing the prefetched cache.
+  // This avoids extra load time on the client side.
+  const intialCachedQueryForFutureEvent =
+    FUTURE_EVENTS_QUERY_KEY + DEFAULT_FILTERS;
+  const intialCachedQueryForPastEvents =
+    PAST_EVENTS_QUERY_KEY + DEFAULT_FILTERS;
+
   await queryClient.prefetchInfiniteQuery({
     /* values of undefined cannot be serialized as JSON, so were passing the values as strings
       using concatenation */
-    queryKey: [
-      FUTURE_EVENTS_QUERY_KEY +
-        DEFAULT_TECHNOLOGY_FITLER +
-        DEFAULT_CATEGORY_FILTER,
-    ],
+    queryKey: [intialCachedQueryForFutureEvent],
     queryFn: () => getFutureEvents(),
+    initialPageParam: "",
+  });
+
+  await queryClient.prefetchInfiniteQuery({
+    /* values of undefined cannot be serialized as JSON, so were passing the values as strings
+      using concatenation */
+    queryKey: [intialCachedQueryForPastEvents],
+    queryFn: () => getPastEvents(),
     initialPageParam: "",
   });
 

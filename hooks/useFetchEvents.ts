@@ -88,10 +88,10 @@ export const useFetchFutureEvents = (filters: SelectedCategories) => {
   };
 };
 
-const getPastEvents = async (
-  pageParam: string,
-  category: string = undefined,
-  calendarType: string = undefined
+export const getPastEvents = async (
+  pageParam?: string,
+  category?: string,
+  calendarType?: string
 ) => {
   const categories = getCategoriesForFilter(category);
   const res = await client.queries.getPastEventsQuery({
