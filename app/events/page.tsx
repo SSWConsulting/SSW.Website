@@ -1,14 +1,6 @@
 import client from "@/tina/client";
 
-import {
-  DEFAULT_CATEGORY_FILTER,
-  DEFAULT_TECHNOLOGY_FITLER,
-} from "@/components/filter/events";
-import {
-  dehydrate,
-  HydrationBoundary,
-  QueryClient,
-} from "@tanstack/react-query";
+import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { TinaClient } from "app/tina-client";
 import {
   FUTURE_EVENTS_QUERY_KEY,
@@ -21,6 +13,8 @@ import { Metadata } from "next";
 import EventIndex from "./index";
 
 export const revalidate = 3600;
+
+const DEFAULT_FILTERS = "undefinedundefined";
 
 export async function generateMetadata(): Promise<Metadata> {
   const tinaProps = await getData();
@@ -48,14 +42,14 @@ const getData = async () => {
 
   const filterCategories = await getEventsCategories();
 
+  // Default filters are set to undefined on initial load to prevent losing the prefetched cache.
+  // This avoids extra load time on the client side.
+  const intialCachedQuery = FUTURE_EVENTS_QUERY_KEY + DEFAULT_FILTERS;
+
   await queryClient.prefetchInfiniteQuery({
     /* values of undefined cannot be serialized as JSON, so were passing the values as strings
       using concatenation */
-    queryKey: [
-      FUTURE_EVENTS_QUERY_KEY +
-        DEFAULT_TECHNOLOGY_FITLER +
-        DEFAULT_CATEGORY_FILTER,
-    ],
+    queryKey: [intialCachedQuery],
     queryFn: () => getFutureEvents(),
     initialPageParam: "",
   });
@@ -82,9 +76,5 @@ const getData = async () => {
 export default async function EventPage() {
   const { props } = await getData();
 
-  return (
-    <HydrationBoundary state={props.dehydratedState}>
-      <TinaClient props={props} Component={EventIndex} />
-    </HydrationBoundary>
-  );
+  return <TinaClient props={props} Component={EventIndex} />;
 }

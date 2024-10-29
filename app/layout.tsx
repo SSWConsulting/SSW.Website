@@ -19,7 +19,6 @@ import { MenuWrapper } from "./components/MenuWrapper";
 import { WebVitals } from "./components/web-vitals";
 import { LiveStream } from "./live-steam-banner/live-stream";
 import { DEFAULT } from "./meta-data/default";
-import { QueryProvider } from "./providers/query-provider";
 import { getMegamenu } from "./utils/get-mega-menu";
 
 dayjs.extend(relativeTime);
@@ -88,7 +87,7 @@ export default async function RootLayout({
           <main className="grow bg-white">
             <AppInsightsProvider>
               <WebVitals />
-              <QueryProvider>{children}</QueryProvider>
+              {children}
             </AppInsightsProvider>
           </main>
           <Footer />
