@@ -17,7 +17,19 @@ import EventIndex from "./index";
 
 export const revalidate = 3600;
 
+export const dynamicParams = false;
+
 const DEFAULT_FILTERS = "undefinedundefined";
+
+export async function generateStaticParams() {
+  const pagesListData = await client.queries.eventsIndexConnection();
+
+  const pages = pagesListData.data.eventsIndexConnection.edges.map((page) => ({
+    filename: page.node._sys.filename,
+  }));
+
+  return pages;
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   const tinaProps = await getData();
