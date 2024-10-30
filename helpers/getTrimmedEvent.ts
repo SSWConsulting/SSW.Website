@@ -1,12 +1,10 @@
 export const getTrimmedEvent = (events) =>
-  events?.pages.flat().flatMap((item) =>
-    item.eventsCalendarConnection.edges.map((edge) => ({
-      ...edge.node,
-      startDateTime: new Date(edge.node.startDateTime),
-      endDateTime: new Date(edge.node.endDateTime),
-      category: formatCategory(edge.node.category),
-    }))
-  ) || [];
+  events.eventsCalendarConnection.edges.map((edge) => ({
+    ...edge.node,
+    startDateTime: new Date(edge.node.startDateTime),
+    endDateTime: new Date(edge.node.endDateTime),
+    category: formatCategory(edge.node.category),
+  })) || [];
 
 export const formatCategory = (category: string): string => {
   {

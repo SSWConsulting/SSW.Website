@@ -1,14 +1,11 @@
 import client from "@/tina/client";
 
 import { getTrimmedEvent } from "@/helpers/getTrimmedEvent";
-import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { TinaClient } from "app/tina-client";
 import {
-  FUTURE_EVENTS_QUERY_KEY,
   getEventsCategories,
   getFutureEvents,
   getPastEvents,
-  PAST_EVENTS_QUERY_KEY,
   TODAY,
 } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
@@ -16,8 +13,6 @@ import { Metadata } from "next";
 import EventIndex from "./index";
 
 export const revalidate = 3600;
-
-const DEFAULT_FILTERS = "undefinedundefined";
 
 export async function generateMetadata(): Promise<Metadata> {
   const tinaProps = await getData();
@@ -39,45 +34,17 @@ const getData = async () => {
     date: TODAY.toISOString(),
   });
 
-  const queryClient = new QueryClient();
-
   const seo = tinaProps.data.eventsIndex.seo;
 
   const filterCategories = await getEventsCategories();
-
-  // Default filters are set to undefined on initial load to prevent losing the prefetched cache.
-  // This avoids extra load time on the client side.
-  const intialCachedQueryForFutureEvent =
-    FUTURE_EVENTS_QUERY_KEY + DEFAULT_FILTERS;
-  const intialCachedQueryForPastEvents =
-    PAST_EVENTS_QUERY_KEY + DEFAULT_FILTERS;
-
-  await queryClient.prefetchInfiniteQuery({
-    /* values of undefined cannot be serialized as JSON, so were passing the values as strings
-      using concatenation */
-    queryKey: [intialCachedQueryForFutureEvent],
-    queryFn: () => getFutureEvents(),
-    initialPageParam: "",
-  });
-
-  await queryClient.prefetchInfiniteQuery({
-    /* values of undefined cannot be serialized as JSON, so were passing the values as strings
-      using concatenation */
-    queryKey: [intialCachedQueryForPastEvents],
-    queryFn: () => getPastEvents(),
-    initialPageParam: "",
-  });
 
   if (!tinaProps.data.eventsIndex.seo.canonical) {
     tinaProps.data.eventsIndex.seo.canonical = `${tinaProps.data.global.header.url}events`;
   }
 
-  const futureEventsData = getTrimmedEvent(
-    queryClient.getQueryData([intialCachedQueryForFutureEvent])
-  );
-  const pastEventsData = getTrimmedEvent(
-    queryClient.getQueryData([intialCachedQueryForFutureEvent])
-  );
+  const futureEventsData = await getFutureEvents();
+
+  const pastEventsData = await getPastEvents();
 
   return {
     props: {
@@ -87,7 +54,6 @@ const getData = async () => {
       filterCategories,
       futureEventsData,
       pastEventsData,
-      dehydratedState: dehydrate(queryClient),
       header: {
         url: tinaProps.data.global.header.url,
       },
