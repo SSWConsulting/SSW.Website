@@ -104,11 +104,5 @@ const getData = async () => {
 export default async function EventPage() {
   const { props } = await getData();
 
-  return (
-    <QueryProvider>
-      <HydrationBoundary state={props.dehydratedState}>
-        <TinaClient props={props} Component={EventIndex} />
-      </HydrationBoundary>
-    </QueryProvider>
-  );
+  return <TinaClient props={props} Component={EventIndex} />;
 }
