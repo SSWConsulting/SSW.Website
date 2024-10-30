@@ -7,8 +7,8 @@ import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { useEvents } from "../../hooks/useEvents";
 
 import { useFormatDates } from "../../hooks/useFormatDates";
-import { UtilityButton } from "../blocks";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
+import { UtilityButton } from "../button/utilityButton";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { Presenter, PresenterLinks } from "../presenters/presenterList";
