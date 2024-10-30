@@ -1,6 +1,5 @@
 import client from "@/tina/client";
 
-import { getTrimmedEvent } from "@/helpers/getTrimmedEvent";
 import { TinaClient } from "app/tina-client";
 import {
   getEventsCategories,
