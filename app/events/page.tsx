@@ -41,7 +41,10 @@ const getData = async () => {
     tinaProps.data.eventsIndex.seo.canonical = `${tinaProps.data.global.header.url}events`;
   }
 
-  const futureEventsData = await getFutureEvents();
+  const futureEventsData = await client.queries.getFutureEventsQuery({
+    fromDate: TODAY.toISOString(),
+    top: 10,
+  });
 
   const pastEventsData = await getPastEvents();
 
