@@ -16,12 +16,12 @@ export default function EventsIndexPage({ props, tinaProps }) {
   const { data: tinaData } = tinaProps;
 
   const { data: FutureEvents } = useQuery({
-    queryKey: ["posts"],
+    queryKey: ["futureEvents"],
     queryFn: () => getFutureEvents(),
     initialData: futureEventsData,
   });
   const { data: PastEvents } = useQuery({
-    queryKey: ["posts"],
+    queryKey: ["pastEvents"],
     queryFn: () => getPastEvents(),
     initialData: pastEventsData,
   });
