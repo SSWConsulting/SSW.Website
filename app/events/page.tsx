@@ -24,8 +24,8 @@ const DEFAULT_FILTERS = "undefinedundefined";
 export async function generateStaticParams() {
   const pagesListData = await client.queries.eventsIndexConnection();
 
-  const pages = pagesListData.data.eventsIndexConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
+  const pages = pagesListData.data.eventsIndexConnection.edges.map(() => ({
+    filename: [],
   }));
 
   return pages;
