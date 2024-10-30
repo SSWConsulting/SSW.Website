@@ -1,5 +1,6 @@
 import client from "@/tina/client";
 
+import { getTrimmedEvent } from "@/helpers/getTrimmedEvent";
 import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { TinaClient } from "app/tina-client";
 import {
@@ -71,12 +72,21 @@ const getData = async () => {
     tinaProps.data.eventsIndex.seo.canonical = `${tinaProps.data.global.header.url}events`;
   }
 
+  const futureEventsData = getTrimmedEvent(
+    queryClient.getQueryData([intialCachedQueryForFutureEvent])
+  );
+  const pastEventsData = getTrimmedEvent(
+    queryClient.getQueryData([intialCachedQueryForFutureEvent])
+  );
+
   return {
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
       filterCategories,
+      futureEventsData,
+      pastEventsData,
       dehydratedState: dehydrate(queryClient),
       header: {
         url: tinaProps.data.global.header.url,
