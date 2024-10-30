@@ -1,7 +1,12 @@
 import client from "@/tina/client";
 
 import { getTrimmedEvent } from "@/helpers/getTrimmedEvent";
-import { dehydrate, QueryClient } from "@tanstack/react-query";
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
+import { QueryProvider } from "app/providers/query-provider";
 import { TinaClient } from "app/tina-client";
 import {
   FUTURE_EVENTS_QUERY_KEY,
@@ -17,19 +22,7 @@ import EventIndex from "./index";
 
 export const revalidate = 3600;
 
-export const dynamicParams = false;
-
 const DEFAULT_FILTERS = "undefinedundefined";
-
-export async function generateStaticParams() {
-  const pagesListData = await client.queries.eventsIndexConnection();
-
-  const pages = pagesListData.data.eventsIndexConnection.edges.map(() => ({
-    filename: [],
-  }));
-
-  return pages;
-}
 
 export async function generateMetadata(): Promise<Metadata> {
   const tinaProps = await getData();
@@ -111,5 +104,11 @@ const getData = async () => {
 export default async function EventPage() {
   const { props } = await getData();
 
-  return <TinaClient props={props} Component={EventIndex} />;
+  return (
+    <QueryProvider>
+      <HydrationBoundary state={props.dehydratedState}>
+        <TinaClient props={props} Component={EventIndex} />
+      </HydrationBoundary>
+    </QueryProvider>
+  );
 }
