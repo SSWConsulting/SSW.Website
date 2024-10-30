@@ -5,9 +5,7 @@ import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { EventsFilter } from "@/components/filter/events";
 import { Container } from "@/components/util/container";
 import { getTrimmedEvent } from "@/helpers/getTrimmedEvent";
-import { dehydrate, HydrationBoundary, useQuery } from "@tanstack/react-query";
-import queryClient from "app/providers/get-query-client";
-import { getFutureEvents, getPastEvents } from "hooks/useFetchEvents";
+
 import { useSearchParams } from "next/navigation";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
@@ -15,28 +13,15 @@ export default function EventsIndexPage({ props, tinaProps }) {
   const { filterCategories, futureEventsData, pastEventsData } = props;
   const { data: tinaData } = tinaProps;
 
-  const { data: FutureEvents } = useQuery({
-    queryKey: ["futureEvents"],
-    queryFn: () => getFutureEvents(),
-    initialData: futureEventsData,
-  });
-  const { data: PastEvents } = useQuery({
-    queryKey: ["pastEvents"],
-    queryFn: () => getPastEvents(),
-    initialData: pastEventsData,
-  });
-
-  const futureEvents = getTrimmedEvent(FutureEvents);
-  const pastEvents = getTrimmedEvent(PastEvents);
-
-  const dehydratedState = dehydrate(queryClient());
+  const futureEvents = getTrimmedEvent(futureEventsData);
+  const pastEvents = getTrimmedEvent(pastEventsData);
 
   const searchParams = useSearchParams();
 
   const defaultToPastTab = searchParams.get("past") === "1";
 
   return (
-    <HydrationBoundary state={dehydratedState}>
+    <>
       <Container size="small">
         <div className="md:flex md:flex-row">
           <h1 className="md:mr-12 md:shrink-0 md:basis-64">SSW Events</h1>
@@ -59,6 +44,6 @@ export default function EventsIndexPage({ props, tinaProps }) {
         prefix="EventsIndexAfterEvents"
         blocks={tinaData.eventsIndex.afterEvents}
       />
-    </HydrationBoundary>
+    </>
   );
 }
