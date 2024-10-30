@@ -1,12 +1,7 @@
 import client from "@/tina/client";
 
 import { getTrimmedEvent } from "@/helpers/getTrimmedEvent";
-import {
-  dehydrate,
-  HydrationBoundary,
-  QueryClient,
-} from "@tanstack/react-query";
-import { QueryProvider } from "app/providers/query-provider";
+import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { TinaClient } from "app/tina-client";
 import {
   FUTURE_EVENTS_QUERY_KEY,
