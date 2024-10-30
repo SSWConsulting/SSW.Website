@@ -10,7 +10,7 @@ import { useSearchParams } from "next/navigation";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export default function EventsIndexPage({ props, tinaProps }) {
-  const { filterCategories } = props;
+  const { filterCategories, futureEventsData, pastEventsData } = props;
   const { data } = tinaProps;
 
   const searchParams = useSearchParams();
@@ -34,6 +34,8 @@ export default function EventsIndexPage({ props, tinaProps }) {
             filterCategories={filterCategories}
             sidebarBody={data.eventsIndex.sidebarBody}
             defaultToPastTab={defaultToPastTab}
+            futureEvents={futureEventsData}
+            pastEvents={pastEventsData}
           />
         </Container>
         <Blocks

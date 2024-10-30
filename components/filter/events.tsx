@@ -1,21 +1,11 @@
-"use client";
 import { Tab, Transition } from "@headlessui/react";
 import Image from "next/image";
-import React, {
-  Fragment,
-  useEffect,
-  useMemo,
-  useReducer,
-  useState,
-} from "react";
+import React, { Fragment, useEffect, useReducer, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { useEvents } from "../../hooks/useEvents";
-import {
-  useFetchFutureEvents,
-  useFetchPastEvents,
-} from "../../hooks/useFetchEvents";
+
 import { useFormatDates } from "../../hooks/useFormatDates";
 import { UtilityButton } from "../blocks";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
@@ -25,7 +15,6 @@ import { Presenter, PresenterLinks } from "../presenters/presenterList";
 import { CITY_MAP } from "../util/constants/country";
 import { sswOrganisation } from "../util/constants/json-ld";
 import { EventFilterAllCategories, FilterBlock } from "./FilterBlock";
-import { FilterGroupProps } from "./FilterGroup";
 
 const EVENTS_JSON_LD_LIMIT = 5;
 
@@ -33,6 +22,8 @@ interface EventsFilterProps {
   sidebarBody: TinaMarkdownContent;
   defaultToPastTab?: boolean;
   filterCategories: EventFilterAllCategories;
+  futureEvents: EventTrimmed[];
+  pastEvents: EventTrimmed[];
 }
 
 export type EventTrimmed = {
@@ -60,36 +51,13 @@ export const EventsFilter = ({
   filterCategories,
   sidebarBody,
   defaultToPastTab,
+  futureEvents,
+  pastEvents,
 }: EventsFilterProps) => {
   const [pastSelected, setPastSelected] = useState<boolean>(defaultToPastTab);
   const { past, upcoming } = filterCategories;
   const { filters: futureFilters } = useEvents(upcoming);
   const { filters: pastFilters } = useEvents(past);
-  const pastSelectedFilters = useMemo<SelectedFilters>(() => {
-    const filters = getFilterState(pastFilters);
-    return filters;
-  }, [pastFilters]);
-
-  const futureSelectedFilters = useMemo<SelectedFilters>(() => {
-    const filters = getFilterState(futureFilters);
-    return filters;
-  }, [futureFilters]);
-
-  const {
-    futureEvents,
-    fetchFutureNextPage,
-    hasMoreFuturePages,
-    isFetchingFuturePages,
-    isLoadingFuturePages,
-  } = useFetchFutureEvents(futureSelectedFilters);
-
-  const {
-    pastEvents,
-    fetchNextPastPage,
-    hasMorePastPages,
-    isFetchingPastPages,
-    isLoadingPastPages,
-  } = useFetchPastEvents(pastSelectedFilters);
 
   return (
     <FilterBlock
@@ -110,30 +78,10 @@ export const EventsFilter = ({
         </Tab.List>
         <Tab.Panels>
           <Tab.Panel>
-            <EventsList
-              events={futureEvents}
-              isUpcoming
-              isLoading={isLoadingFuturePages}
-            />
-            {hasMoreFuturePages && (
-              <LoadMore
-                load={() => {
-                  fetchFutureNextPage();
-                }}
-                isLoading={isFetchingFuturePages}
-              />
-            )}
+            <EventsList events={futureEvents} isUpcoming isLoading={false} />
           </Tab.Panel>
           <Tab.Panel>
-            <EventsList events={pastEvents} isLoading={isLoadingPastPages} />
-            {hasMorePastPages && (
-              <LoadMore
-                load={() => {
-                  fetchNextPastPage();
-                }}
-                isLoading={isFetchingPastPages}
-              />
-            )}
+            <EventsList events={pastEvents} isLoading={false} />
           </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
@@ -292,7 +240,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
 
   We need this because there's an issue preventing us from syncing the files in the repo
   to Tina cloud. Images that aren't synced will 404.
-   
+
    */
 
   const [thumbnail, setFallbackImage] = useState("");
@@ -466,22 +414,4 @@ export const LoadMore = ({ load, isLoading }: LoadMoreProps) => {
       )}
     </div>
   );
-};
-
-type SelectedFilters = {
-  category: string;
-  technology: string;
-};
-
-const getFilterState = (filterGroup: FilterGroupProps[]): SelectedFilters => {
-  const technologyGroup = filterGroup[0];
-  const categoryGroup = filterGroup[1];
-
-  const { selected: technologyIndex, options: technologyOptions } =
-    technologyGroup;
-  const { selected: categoryIndex, options: categoryOptions } = categoryGroup;
-  return {
-    category: categoryOptions[categoryIndex]?.label,
-    technology: technologyOptions[technologyIndex]?.label,
-  };
 };
