@@ -17,8 +17,8 @@ import {
   useFetchPastEvents,
 } from "../../hooks/useFetchEvents";
 import { useFormatDates } from "../../hooks/useFormatDates";
-import { UtilityButton } from "../blocks";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
+import { UtilityButton } from "../button/utilityButton";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { Presenter, PresenterLinks } from "../presenters/presenterList";
@@ -292,7 +292,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
 
   We need this because there's an issue preventing us from syncing the files in the repo
   to Tina cloud. Images that aren't synced will 404.
-   
+
    */
 
   const [thumbnail, setFallbackImage] = useState("");

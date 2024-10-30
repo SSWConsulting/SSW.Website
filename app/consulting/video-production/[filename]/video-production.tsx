@@ -11,7 +11,7 @@ import { Section } from "@/components/util/section";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import { ReactElement } from "react";
 
-import { BuiltOnAzure } from "@/components/blocks";
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { sanitiseXSS, spanWhitelist } from "@/helpers/validator";
 import { removeExtension } from "@/services/client/utils.service";
 import ReactDOMServer from "react-dom/server";

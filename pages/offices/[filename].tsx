@@ -6,8 +6,8 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { TODAY } from "hooks/useFetchEvents";
 import { InferGetStaticPropsType } from "next";
-import { BuiltOnAzure } from "../../components/blocks";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
+import { BuiltOnAzure } from "../../components/blocks/builtOnAzure";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import { CustomLink } from "../../components/customLink";
 import { Layout } from "../../components/layout";
