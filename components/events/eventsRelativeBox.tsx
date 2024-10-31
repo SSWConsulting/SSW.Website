@@ -13,7 +13,7 @@ export const EventsRelativeBox = ({
   dateFontSize,
 }: EventsRelativeBoxProps) => {
   return (
-    <time className="my-1.5 flex items-center">
+    <time className="my-1.5 flex min-h-6 items-center">
       {relativeDate && (
         <span
           className={classNames(
