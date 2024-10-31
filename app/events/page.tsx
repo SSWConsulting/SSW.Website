@@ -1,6 +1,7 @@
 import client from "@/tina/client";
 import { TinaClient } from "app/tina-client";
 
+import { QueryProvider } from "app/providers/query-provider";
 import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
@@ -61,5 +62,9 @@ const getData = async () => {
 export default async function EventPage() {
   const { props } = await getData();
 
-  return <TinaClient props={props} Component={EventIndex} />;
+  return (
+    <QueryProvider>
+      <TinaClient props={props} Component={EventIndex} />
+    </QueryProvider>
+  );
 }
