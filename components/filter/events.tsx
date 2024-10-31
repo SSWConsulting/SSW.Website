@@ -330,6 +330,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
               width={100}
               alt={`${event.thumbnailDescription || event.title} logo`}
               src={thumbnail}
+              loading="lazy"
               onError={handleImageError}
               onLoad={() => setBannerLoaded(true)}
             />
