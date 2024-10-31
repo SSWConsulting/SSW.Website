@@ -1,13 +1,7 @@
 "use client";
 import { Tab, Transition } from "@headlessui/react";
 import Image from "next/image";
-import React, {
-  Fragment,
-  useEffect,
-  useMemo,
-  useReducer,
-  useState,
-} from "react";
+import React, { Fragment, useEffect, useMemo, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
