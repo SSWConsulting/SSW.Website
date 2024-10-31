@@ -55,9 +55,6 @@ export const EventsFilter = ({
   pastEvents,
 }: EventsFilterProps) => {
   const [pastSelected, setPastSelected] = useState<boolean>(defaultToPastTab);
-  const { past, upcoming } = filterCategories;
-  const { filters: futureFilters } = useEvents(upcoming);
-  const { filters: pastFilters } = useEvents(past);
 
   return (
     <FilterBlock
@@ -66,7 +63,6 @@ export const EventsFilter = ({
           <TinaMarkdown content={sidebarBody} components={componentRenderer} />
         </div>
       }
-      groups={!pastSelected ? futureFilters : pastFilters}
     >
       <Tab.Group
         onChange={(index) => setPastSelected(index === 1)}

@@ -1,12 +1,7 @@
 import client from "@/tina/client";
-
 import { TinaClient } from "app/tina-client";
-import {
-  getEventsCategories,
-  getFutureEvents,
-  getPastEvents,
-  TODAY,
-} from "hooks/useFetchEvents";
+
+import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import EventIndex from "./index";
@@ -35,8 +30,6 @@ const getData = async () => {
 
   const seo = tinaProps.data.eventsIndex.seo;
 
-  const filterCategories = await getEventsCategories();
-
   if (!tinaProps.data.eventsIndex.seo.canonical) {
     tinaProps.data.eventsIndex.seo.canonical = `${tinaProps.data.global.header.url}events`;
   }
@@ -45,17 +38,18 @@ const getData = async () => {
     fromDate: TODAY.toISOString(),
     top: 10,
   });
-
-  const pastEventsData = await getPastEvents();
+  const pastEventsData = await client.queries.getPastEventsQuery({
+    fromDate: TODAY.toISOString(),
+    top: 10,
+  });
 
   return {
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
+      futureEventsData: futureEventsData.data,
+      pastEventsData: pastEventsData.data,
       variables: tinaProps.variables,
-      filterCategories,
-      futureEventsData,
-      pastEventsData,
       header: {
         url: tinaProps.data.global.header.url,
       },

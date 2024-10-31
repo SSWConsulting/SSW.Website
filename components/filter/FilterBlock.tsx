@@ -5,7 +5,7 @@ import { FilterGroup, type FilterGroupProps } from "./FilterGroup";
 export const NO_SELECTION = -1;
 
 interface FilterBlockProps {
-  groups: FilterGroupProps[];
+  groups?: FilterGroupProps[];
   children: React.ReactNode;
   sidebarChildren?: React.ReactNode;
 }
