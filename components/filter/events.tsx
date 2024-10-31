@@ -300,6 +300,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
   }
 
   const { formattedDate, relativeDate } = useFormatDates(event, true);
+  const [bannerLoaded, setBannerLoaded] = useState(false);
   return (
     <>
       <Transition
@@ -314,13 +315,23 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
       >
         <div className="mb-8 flex max-md:flex-col md:flex-row">
           <div className="mr-3 shrink-0">
+            {!bannerLoaded && (
+              <Image
+                className="rounded-md max-md:pb-3"
+                height={100}
+                width={100}
+                alt={`${event.thumbnailDescription || event.title} placeholder`}
+                src="/event_placeholder.png"
+              />
+            )}
             <Image
-              className="rounded-md max-md:pb-3"
+              className={`rounded-md max-md:pb-3 ${bannerLoaded ? "" : "invisible h-0"}`}
               height={100}
               width={100}
               alt={`${event.thumbnailDescription || event.title} logo`}
               src={thumbnail}
               onError={handleImageError}
+              onLoad={() => setBannerLoaded(true)}
             />
           </div>
           <div>
