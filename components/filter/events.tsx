@@ -157,23 +157,6 @@ interface EventsListProps {
   isLoading?: boolean;
 }
 
-const eventsReducer = (state, action) => {
-  if (!state.visible && arraysEqual(state.firstEvents, action.payload)) {
-    return state;
-  }
-  if (state.visible && arraysEqual(state.secondEvents, action.payload)) {
-    return state;
-  }
-  switch (action.type) {
-    case "SET_EVENTS":
-      return state.visible
-        ? { ...state, firstEvents: action.payload, visible: !state.visible }
-        : { ...state, secondEvents: action.payload, visible: !state.visible };
-    default:
-      return state;
-  }
-};
-
 // TODO: Compare arrays by reference instead of value https://github.com/SSWConsulting/SSW.Website/issues/3066
 const arraysEqual = (arr1: EventTrimmed[], arr2: EventTrimmed[]): boolean => {
   if (arr1.length !== arr2.length) return false;
@@ -182,18 +165,22 @@ const arraysEqual = (arr1: EventTrimmed[], arr2: EventTrimmed[]): boolean => {
   );
 };
 
-const initialState = {
-  firstEvents: [],
-  secondEvents: [],
-  isFetching: false,
-  visible: true,
-};
-
 const EventsList = ({ events, isUpcoming, isLoading }: EventsListProps) => {
-  const [state, dispatch] = useReducer(eventsReducer, initialState);
+  const [firstEvents, setFirstEvents] = useState(events);
+  const [secondEvents, setSecondEvents] = useState(events);
+  const [visible, setVisible] = useState(true);
+
+  // Update events and toggle visibility if `events` changes
   useEffect(() => {
-    dispatch({ type: "SET_EVENTS", payload: events });
-  }, [events]);
+    if (!arraysEqual(visible ? firstEvents : secondEvents, events)) {
+      if (visible) {
+        setFirstEvents(events);
+      } else {
+        setSecondEvents(events);
+      }
+      setVisible(!visible); // Toggle visibility
+    }
+  }, [events, visible, firstEvents, secondEvents]);
 
   return (
     <div>
@@ -202,15 +189,15 @@ const EventsList = ({ events, isUpcoming, isLoading }: EventsListProps) => {
       ) : (
         <>
           <LoadedEvents
-            visible={!state.visible}
-            events={state.firstEvents}
+            visible={!visible}
+            events={firstEvents}
             isUpcoming={isUpcoming}
-          ></LoadedEvents>
+          />
           <LoadedEvents
-            visible={state.visible}
-            events={state.secondEvents}
+            visible={visible}
+            events={secondEvents}
             isUpcoming={isUpcoming}
-          ></LoadedEvents>
+          />
         </>
       )}
     </div>
