@@ -323,11 +323,11 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
         leaveFrom="transform scale-100 opacity-100"
         leaveTo="transform scale-95 opacity-0"
       >
-        <div className="mb-8 flex max-md:flex-col md:flex-row">
-          <div className="mr-3 shrink-0">
+        <div className="mb-8 block md:flex md:flex-row">
+          <div className="float-left mb-3 mr-3 shrink-0 pr-2 md:float-none md:pr-0">
             {!bannerLoaded && (
               <Image
-                className="rounded-md max-md:pb-3"
+                className="rounded-md"
                 height={100}
                 width={100}
                 alt={`${event.thumbnailDescription || event.title} placeholder`}
@@ -335,7 +335,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
               />
             )}
             <Image
-              className={`rounded-md max-md:pb-3 ${bannerLoaded ? "" : "invisible h-0"}`}
+              className={`rounded-md ${bannerLoaded ? "" : "invisible h-0"}`}
               height={100}
               width={100}
               alt={`${event.thumbnailDescription || event.title} logo`}
