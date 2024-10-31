@@ -1,6 +1,7 @@
 "use client";
 import { Tab, Transition } from "@headlessui/react";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import React, { Fragment, useEffect, useMemo, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Event, WithContext } from "schema-dts";
@@ -25,7 +26,6 @@ const EVENTS_JSON_LD_LIMIT = 5;
 
 interface EventsFilterProps {
   sidebarBody: TinaMarkdownContent;
-  defaultToPastTab?: boolean;
   filterCategories: EventFilterAllCategories;
 }
 
@@ -53,12 +53,22 @@ export type EventTrimmed = {
 export const EventsFilter = ({
   filterCategories,
   sidebarBody,
-  defaultToPastTab,
 }: EventsFilterProps) => {
-  const [pastSelected, setPastSelected] = useState<boolean>(defaultToPastTab);
+  const searchParams = useSearchParams();
+  const [pastSelected, setPastSelected] = useState<boolean>(false);
   const { past, upcoming } = filterCategories;
   const { filters: futureFilters } = useEvents(upcoming);
   const { filters: pastFilters } = useEvents(past);
+
+  useEffect(() => {
+    const queryTab = searchParams.get("past");
+    if (queryTab === "1") {
+      setPastSelected(true);
+    } else if (queryTab === "upcoming") {
+      setPastSelected(false);
+    }
+  }, [searchParams, pastSelected]);
+
   const pastSelectedFilters = useMemo<SelectedFilters>(() => {
     const filters = getFilterState(pastFilters);
     return filters;
@@ -96,7 +106,7 @@ export const EventsFilter = ({
     >
       <Tab.Group
         onChange={(index) => setPastSelected(index === 1)}
-        defaultIndex={defaultToPastTab ? 1 : 0}
+        selectedIndex={pastSelected ? 1 : 0}
       >
         <Tab.List className="mb-8 flex flex-row">
           <EventTab>Upcoming Events</EventTab>

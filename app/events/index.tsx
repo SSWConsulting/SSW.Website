@@ -12,8 +12,6 @@ export default function EventsIndexPage({ props, tinaProps }) {
   const { filterCategories } = props;
   const { data } = tinaProps;
 
-  const defaultToPastTab = false;
-
   return (
     <QueryProvider>
       <HydrationBoundary state={props.dehydratedState}>
@@ -30,7 +28,6 @@ export default function EventsIndexPage({ props, tinaProps }) {
           <EventsFilter
             filterCategories={filterCategories}
             sidebarBody={data.eventsIndex.sidebarBody}
-            defaultToPastTab={defaultToPastTab}
           />
         </Container>
         <Blocks
