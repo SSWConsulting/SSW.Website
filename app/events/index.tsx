@@ -6,16 +6,13 @@ import { EventsFilter } from "@/components/filter/events";
 import { Container } from "@/components/util/container";
 import { HydrationBoundary } from "@tanstack/react-query";
 import { QueryProvider } from "app/providers/query-provider";
-import { useSearchParams } from "next/navigation";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export default function EventsIndexPage({ props, tinaProps }) {
   const { filterCategories } = props;
   const { data } = tinaProps;
 
-  const searchParams = useSearchParams();
-
-  const defaultToPastTab = searchParams.get("past") === "1";
+  const defaultToPastTab = false;
 
   return (
     <QueryProvider>
