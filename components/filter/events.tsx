@@ -1,7 +1,6 @@
 "use client";
 import { Tab, Transition } from "@headlessui/react";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
 import React, { Fragment, useEffect, useMemo, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Event, WithContext } from "schema-dts";
@@ -54,20 +53,10 @@ export const EventsFilter = ({
   filterCategories,
   sidebarBody,
 }: EventsFilterProps) => {
-  const searchParams = useSearchParams();
   const [pastSelected, setPastSelected] = useState<boolean>(false);
   const { past, upcoming } = filterCategories;
   const { filters: futureFilters } = useEvents(upcoming);
   const { filters: pastFilters } = useEvents(past);
-
-  useEffect(() => {
-    const queryTab = searchParams.get("past");
-    if (queryTab === "1") {
-      setPastSelected(true);
-    } else if (queryTab === "upcoming") {
-      setPastSelected(false);
-    }
-  }, [searchParams, pastSelected]);
 
   const pastSelectedFilters = useMemo<SelectedFilters>(() => {
     const filters = getFilterState(pastFilters);
