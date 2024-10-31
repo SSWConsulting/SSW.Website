@@ -4,7 +4,6 @@ import React, { Fragment, useEffect, useReducer, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
-import { useEvents } from "../../hooks/useEvents";
 
 import { useFormatDates } from "../../hooks/useFormatDates";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
@@ -48,14 +47,11 @@ export type EventTrimmed = {
 };
 
 export const EventsFilter = ({
-  filterCategories,
   sidebarBody,
   defaultToPastTab,
   futureEvents,
   pastEvents,
 }: EventsFilterProps) => {
-  const [pastSelected, setPastSelected] = useState<boolean>(defaultToPastTab);
-
   return (
     <FilterBlock
       sidebarChildren={
@@ -65,7 +61,7 @@ export const EventsFilter = ({
       }
     >
       <Tab.Group
-        onChange={(index) => setPastSelected(index === 1)}
+        onChange={(index) => index === 1}
         defaultIndex={defaultToPastTab ? 1 : 0}
       >
         <Tab.List className="mb-8 flex flex-row">
