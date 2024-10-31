@@ -1,5 +1,4 @@
 "use client";
-import { getBase64Image } from "@/helpers/getBlurBase64";
 import { BluredBase64Image } from "@/helpers/images";
 import { Tab, Transition } from "@headlessui/react";
 import Image from "next/image";
