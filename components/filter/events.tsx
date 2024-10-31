@@ -1,4 +1,6 @@
 "use client";
+import { getBase64Image } from "@/helpers/getBlurBase64";
+import { BluredBase64Image } from "@/helpers/images";
 import { Tab, Transition } from "@headlessui/react";
 import Image from "next/image";
 import React, { Fragment, useEffect, useMemo, useState } from "react";
@@ -275,7 +277,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
 
    */
 
-  const [thumbnail, setFallbackImage] = useState("");
+  const [thumbnail, setFallbackImage] = useState(event.thumbnail);
   useEffect(() => {
     setFallbackImage(event.thumbnail);
   }, [event.thumbnail]);
@@ -299,7 +301,6 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
   }
 
   const { formattedDate, relativeDate } = useFormatDates(event, true);
-  const [bannerLoaded, setBannerLoaded] = useState(false);
   return (
     <>
       <Transition
@@ -314,24 +315,16 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
       >
         <div className="mb-8 block md:flex md:flex-row">
           <div className="float-left mb-3 mr-3 shrink-0 pr-2 md:float-none md:pr-0">
-            {!bannerLoaded && (
-              <Image
-                className="rounded-md"
-                height={100}
-                width={100}
-                alt={`${event.thumbnailDescription || event.title} placeholder`}
-                src="/event_placeholder.png"
-              />
-            )}
             <Image
-              className={`rounded-md ${bannerLoaded ? "" : "invisible h-0"}`}
+              className={"rounded-md"}
               height={100}
               width={100}
+              placeholder="blur"
               alt={`${event.thumbnailDescription || event.title} logo`}
               src={thumbnail}
               loading="lazy"
+              blurDataURL={BluredBase64Image}
               onError={handleImageError}
-              onLoad={() => setBannerLoaded(true)}
             />
           </div>
           <div>
