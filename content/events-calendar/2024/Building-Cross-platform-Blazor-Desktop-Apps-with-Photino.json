@@ -4,7 +4,9 @@
   "thumbnail": "/images/events/brisbane-ug-thumb.jpg",
   "thumbnailDescription": "Brisbane Full Stack User Group",
   "presenterList": [
-    {}
+    {
+      "presenter": "content/presenters/matt-parker.mdx"
+    }
   ],
   "startDateTime": "2024-11-20T08:00:00.000Z",
   "endDateTime": "2024-11-20T12:00:00.000Z",
