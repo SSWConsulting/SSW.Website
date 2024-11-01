@@ -21,9 +21,7 @@ const TestimonialRow = dynamic(() =>
   )
 );
 
-const VideoCards = dynamic(() =>
-  import("@/components/util/videoCards").then((mod) => mod.VideoCard)
-);
+const VideoCards = dynamic(() => import("@/components/util/videoCards"));
 
 export default function EventsPage({ props, tinaProps }) {
   const { data } = tinaProps;
@@ -73,7 +71,7 @@ export default function EventsPage({ props, tinaProps }) {
 
         <div data-tina-field={tinaField(data.events, "videos")}>
           <VideoCards
-            {...videoCardProps}
+            cardProps={videoCardProps}
             channelLink={data.events.videos?.channelLink}
             defaultChannelLink={data?.global?.youtubeChannelLink}
           />
