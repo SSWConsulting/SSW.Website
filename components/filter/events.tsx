@@ -85,6 +85,16 @@ export const EventsFilter = ({
     isLoadingPastPages,
   } = useFetchPastEvents(pastSelectedFilters);
 
+  useEffect(() => {
+    // Using native function as Next native function UseSearchParams is causing complete client side rendering
+    const params = new URLSearchParams(window.location.search);
+    const queryTab = params.get("past");
+
+    if (queryTab === "1") {
+      setPastSelected(true);
+    }
+  }, []);
+
   return (
     <FilterBlock
       sidebarChildren={
