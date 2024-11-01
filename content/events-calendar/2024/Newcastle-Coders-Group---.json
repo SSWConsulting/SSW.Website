@@ -1,10 +1,12 @@
 {
-  "title": "Newcastle Coders Group - ",
+  "title": "Newcastle Coders Group - Building Cross-platform Blazor Desktop Apps with Photino",
   "url": "https://www.meetup.com/newcastle-coders-group/events/302897230/",
   "thumbnail": "/images/events/1936286a-ad92-4d23-87d6-a1329a1d39d9.png",
   "thumbnailDescription": "Newcastle Coders Group",
   "presenterList": [
-    {}
+    {
+      "presenter": "content/presenters/matt-parker.mdx"
+    }
   ],
   "presenterName": "",
   "startDateTime": "2024-11-06T08:00:00.000Z",
