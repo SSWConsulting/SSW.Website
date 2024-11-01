@@ -1,11 +1,11 @@
 "use client";
-import { BluredBase64Image } from "@/helpers/images";
 import { Tab, Transition } from "@headlessui/react";
 import Image from "next/image";
 import React, { Fragment, useEffect, useMemo, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { BluredBase64Image } from "../../helpers/images";
 import { useEvents } from "../../hooks/useEvents";
 import {
   useFetchFutureEvents,

@@ -1,7 +1,7 @@
-import { BluredBase64Image } from "@/helpers/images";
 import classNames from "classnames";
 import Image from "next/image";
 import type { Template } from "tinacms";
+import { BluredBase64Image } from "../../helpers/images";
 import { CustomLink } from "../customLink";
 import { customClasses } from "../util/constants";
 
