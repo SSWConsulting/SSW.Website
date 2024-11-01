@@ -86,7 +86,7 @@ export const EventsFilter = ({
   } = useFetchPastEvents(pastSelectedFilters);
 
   useEffect(() => {
-    // Using native function as Next native function UseSearchParams is causing complete client side rendering
+    // Using Next.js's useSearchParams function leads to complete client-side rendering, which impacts SEO and page load performance, therefore using javascript's function
     const params = new URLSearchParams(window.location.search);
     const queryTab = params.get("past");
 
