@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import Image from "next/image";
 import type { Template } from "tinacms";
+import { BluredBase64Image } from "../../helpers/images";
 import { CustomLink } from "../customLink";
 import { customClasses } from "../util/constants";
 
@@ -36,6 +37,9 @@ export const CustomImage = ({ data }: { data: CustomImageProps }) => {
             alt={data.altText}
             height={data.height || 400}
             width={data.width || 400}
+            loading="lazy"
+            placeholder="blur"
+            blurDataURL={BluredBase64Image}
             className={classNames(
               "inline-block",
               (customClasses[data.customClass] || data.customClass) ?? ""
