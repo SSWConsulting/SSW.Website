@@ -7,7 +7,7 @@ const EventsHeader = ({ data }) => {
       <Image
         src={data?.heroBackground || "/images/polygonBackground.png"}
         alt={data?.altText || "Events header background"}
-        layout="fill"
+        fill
         className="bg-contain bg-no-repeat"
         sizes="(max-width: 768px) 50vw, 1728px"
         priority
