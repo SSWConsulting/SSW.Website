@@ -17,6 +17,7 @@
   "category": "Other",
   "abstract": "Are you a Blazor developer wishing you could build cross-platform desktop apps (yes, even for Linux!) with familiar syntax? Join us to explore Photino, a lightweight framework that brings Blazor to the desktop with direct access to desktop APIs like file system access and multithreading. We’ll compare options like Electron, MAUI and Avalonia, then dive into a live example to show how quickly you can build a Blazor desktop app using Photino—no complex setups or new frameworks required!",
   "description": "Are you a Blazor developer wishing you could build cross-platform desktop apps (yes, even for Linux!) with familiar syntax? Join us to explore Photino, a lightweight framework that brings Blazor to the desktop with direct access to desktop APIs like file system access and multithreading. We’ll compare options like Electron, MAUI and Avalonia, then dive into a live example to show how quickly you can build a Blazor desktop app using Photino—no complex setups or new frameworks required!\n",
+  "delayedLiveStreamStart": true,
   "liveStreamDelayMinutes": 30,
   "hostedAtSsw": true,
   "enabled": true
