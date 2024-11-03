@@ -13,7 +13,7 @@ const EventsHeader = ({ data }) => {
         priority
       />
       {data?.imgOverlay && (
-        <div className="z-10 flex max-w-2xl lg:max-w-3xl">
+        <div className="z-1 flex max-w-2xl lg:max-w-3xl">
           <Image
             src={data.imgOverlay}
             alt={data?.altText}
