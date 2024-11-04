@@ -75,7 +75,9 @@ export default function ConsultingIndex({ tinaProps }) {
   return (
     <>
       <Container className="flex-1 pt-2">
-        <Breadcrumbs path={"/consulting"} suffix="" title={"Services"} />
+        <div className="min-h-8 w-full max-w-9xl md:min-h-12">
+          <Breadcrumbs path={"/consulting"} suffix="" title={"Services"} />
+        </div>
         <h1 className="pt-0 text-3xl">Consulting Services</h1>
         <div className="flex flex-col md:flex-row">
           <div className="shrink-0 md:pr-20">
