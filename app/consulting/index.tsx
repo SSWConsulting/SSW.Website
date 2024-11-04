@@ -58,8 +58,8 @@ export default function ConsultingIndex({ tinaProps }) {
   );
 
   useEffect(() => {
-    // Using Next.js's useSearchParams function leads to complete client-side rendering, which impacts SEO and page load performance,
-    // therefore using javascript's function
+    // We stopped using Next.js's useSearchParams function because it lead to complete client-side rendering, which impacts SEO and page load performance,
+    // Therefore we are now using javascript's function
     const params = new URLSearchParams(window.location.search);
     const query = getSelectedTagFromQuery(params.get("tag"));
 
