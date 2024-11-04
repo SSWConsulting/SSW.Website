@@ -13,7 +13,6 @@ import { Category } from "@/components/consulting/index/category";
 import { Tag } from "@/components/consulting/index/tag";
 import { Container } from "@/components/util/container";
 import { Breadcrumbs } from "app/components/breadcrumb";
-import { useSearchParams } from "next/navigation";
 
 const allServices = "All SSW Services";
 
