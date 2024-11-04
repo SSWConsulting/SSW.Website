@@ -13,9 +13,7 @@ const AboutUs = dynamic(() =>
   import("./blocks/aboutUs").then((mod) => mod.AboutUs)
 );
 
-const Agenda = dynamic(() =>
-  import("./blocks/agenda").then((mod) => mod.Agenda)
-);
+import { Agenda } from "./blocks/agenda";
 
 const BuiltOnAzure = dynamic(() =>
   import("./blocks/builtOnAzure").then((mod) => mod.BuiltOnAzure)
@@ -91,9 +89,7 @@ const LatestTech = dynamic(() =>
   import("./usergroup/latestTech").then((mod) => mod.LatestTech)
 );
 
-const EventBooking = dynamic(() =>
-  import("./training/eventBooking").then((mod) => mod.EventBooking)
-);
+import { EventBooking } from "./training/eventBooking";
 
 const InterestForm = dynamic(
   () => import("./events/interestForm").then((mod) => mod.InterestForm),
