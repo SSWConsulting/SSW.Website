@@ -19,11 +19,8 @@ const allServices = "All SSW Services";
 
 export default function ConsultingIndex({ tinaProps }) {
   const gridRef = useRef(null);
-  const params = useSearchParams();
   const router = useRouter();
-  const [selectedTag, setSelectedTag] = useState(
-    getSelectedTagFromQuery(params.get("tag"))
-  );
+  const [selectedTag, setSelectedTag] = useState(allServices);
 
   const node = tinaProps.data.consultingIndex;
 
@@ -62,10 +59,13 @@ export default function ConsultingIndex({ tinaProps }) {
   );
 
   useEffect(() => {
-    // as the querystring changes, update the selected tag
-    const qsTag = getSelectedTagFromQuery(params.get("tag"));
-    setSelectedTag(qsTag);
-  }, [params]);
+    // Using Next.js's useSearchParams function leads to complete client-side rendering, which impacts SEO and page load performance,
+    // therefore using javascript's function
+    const params = new URLSearchParams(window.location.search);
+    const query = getSelectedTagFromQuery(params.get("tag"));
+
+    setSelectedTag(query || allServices);
+  }, []);
 
   useEffect(() => {
     // grid animation seutp - will automatically clean itself up when dom node is removed
