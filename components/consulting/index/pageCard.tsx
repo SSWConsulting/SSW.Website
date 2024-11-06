@@ -1,3 +1,4 @@
+import { BluredBase64Image } from "@/helpers/images";
 import classNames from "classnames";
 import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
@@ -21,6 +22,9 @@ export const PageCard = ({ page, category, pageIndex }) => {
               width={115}
               src={page.logo}
               alt={`${page.title} logo`}
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL={BluredBase64Image}
             />
           )}
         </div>

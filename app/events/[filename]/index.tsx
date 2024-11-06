@@ -1,17 +1,27 @@
 "use client";
 
 import { Blocks } from "@/components/blocks-renderer";
-import { ClientLogos } from "@/components/blocks/clientLogos";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import EventsHeader from "@/components/events/eventsHeader";
-import { TestimonialRow } from "@/components/testimonials/TestimonialRow";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
-import VideoCards from "@/components/util/videoCards";
 import { removeExtension } from "@/services/client/utils.service";
 import { Breadcrumbs } from "app/components/breadcrumb";
+import dynamic from "next/dynamic";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+
+const ClientLogos = dynamic(() =>
+  import("@/components/blocks/clientLogos").then((mod) => mod.ClientLogos)
+);
+
+const TestimonialRow = dynamic(() =>
+  import("@/components/testimonials/TestimonialRow").then(
+    (mod) => mod.TestimonialRow
+  )
+);
+
+const VideoCards = dynamic(() => import("@/components/util/videoCards"));
 
 export default function EventsPage({ props, tinaProps }) {
   const { data } = tinaProps;

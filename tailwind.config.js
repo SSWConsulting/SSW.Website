@@ -97,6 +97,7 @@ export default {
         15: ".15",
       },
       zIndex: {
+        1: 1,
         videoThumbnail: 11,
       },
       height: {
