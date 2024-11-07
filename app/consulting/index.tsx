@@ -81,7 +81,7 @@ export default function ConsultingIndex({ tinaProps }) {
         <div className="flex flex-col md:flex-row">
           <div className="shrink-0 md:pr-20">
             <h3 className="mb-4 text-sswRed">
-              <MdLiveHelp className="inline-block" /> I am looking for...
+              <MdLiveHelp className="inline-block" /> I am looking for....
             </h3>
             <ul className="list-none">
               {tags?.map((tag, index) => (
