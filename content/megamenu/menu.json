@@ -347,6 +347,20 @@
         {
           "menuColumnGroups": [
             {
+              "name": "12-Week Programs",
+              "menuItems": [
+                {
+                  "name": "FireBootCamp",
+                  "url": "https://firebootcamp.com/firebootcamp",
+                  "iconImg": "/images/megamenu-icons/firebootcamp.svg"
+                },
+                {
+                  "name": "Full Stack Developer Internship",
+                  "url": "/training/internship-fullstack"
+                }
+              ]
+            },
+            {
               "name": "Training Services",
               "menuItems": [
                 {
@@ -355,16 +369,7 @@
                 },
                 {
                   "name": "Conference Room for Hire",
-                  "url": "http://sswchapel.com.au/"
-                }
-              ]
-            },
-            {
-              "name": "SSW Internship Programs",
-              "menuItems": [
-                {
-                  "name": "Full Stack Developers",
-                  "url": "/training/internship-fullstack"
+                  "url": "https://sswchapel.com.au/"
                 }
               ]
             }
