@@ -26,7 +26,7 @@ export default function ArticlesIndexPage(props) {
   useEffect(() => {
     // @ts-ignore
     const prop: any = {};
-
+    // @ts-ignore
     console.log(prop.data.nonexistent);
   }, []);
   const { data } = useTina({
