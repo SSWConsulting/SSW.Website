@@ -31,8 +31,8 @@ importers:
         specifier: 3.3.1
         version: 3.3.1(tslib@2.7.0)
       '@next/bundle-analyzer':
-        specifier: ^14.2.13
-        version: 14.2.13
+        specifier: ^15.0.3
+        version: 15.0.3
       '@next/third-parties':
         specifier: ^14.2.15
         version: 14.2.15(next@14.2.15(@babel/core@7.23.9)(@opentelemetry/api@1.9.0)(@playwright/test@1.48.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
@@ -1739,8 +1739,8 @@ packages:
   '@nevware21/ts-utils@0.11.3':
     resolution: {integrity: sha512-oipW+tyKN68bREjoESYAzOZiatM+1LF+ez1TX3BaeinhCkI18xsLgmpH9tvwHaVgKf1Tsth25sdbXVtYmgRYvQ==}
 
-  '@next/bundle-analyzer@14.2.13':
-    resolution: {integrity: sha512-CQOVKmfenD9HsG4AmyXG2ElMvtGKAT9TlS2JLgpL/EORi4WX+QMiQ8Ri6b+A7HRT+AiUGjsYnocIOET59i6Jfw==}
+  '@next/bundle-analyzer@15.0.3':
+    resolution: {integrity: sha512-x7ZNvpoQPO0C5ZG//qVp21Qs3v6+C8LBJmdu9DKj4/NmjlnwoQ7dqRZ/nKZcwVhkFT7BHf+Qd5FaeHq9IDJvDQ==}
 
   '@next/env@13.5.6':
     resolution: {integrity: sha512-Yac/bV5sBGkkEXmAX5FWPS9Mmo2rthrOPRQQNfycJPkjUAUclomCPH7QFVCDQ4Mp2k2K1SSM6m0zrxYrOwtFQw==}
@@ -10336,7 +10336,7 @@ snapshots:
 
   '@nevware21/ts-utils@0.11.3': {}
 
-  '@next/bundle-analyzer@14.2.13':
+  '@next/bundle-analyzer@15.0.3':
     dependencies:
       webpack-bundle-analyzer: 4.10.1
     transitivePeerDependencies:
