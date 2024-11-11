@@ -8,6 +8,7 @@ import {
 } from "@tanstack/react-query";
 import classNames from "classnames";
 import { TODAY } from "hooks/useFetchEvents";
+import { useEffect } from "react";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import ArticlesHeader from "../../components/articles/articlesHeader";
@@ -22,6 +23,11 @@ import { removeExtension } from "../../services/client/utils.service";
 export const ARTICLES_QUERY_KEY = "articlesKey";
 
 export default function ArticlesIndexPage(props) {
+  useEffect(() => {
+    const prop: any = {};
+
+    console.log(prop.data.nonexistent);
+  }, []);
   const { data } = useTina({
     data: props.data,
     query: props.query,
