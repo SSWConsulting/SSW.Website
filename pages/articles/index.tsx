@@ -24,6 +24,7 @@ export const ARTICLES_QUERY_KEY = "articlesKey";
 
 export default function ArticlesIndexPage(props) {
   useEffect(() => {
+    // @ts-ignore
     const prop: any = {};
 
     console.log(prop.data.nonexistent);
