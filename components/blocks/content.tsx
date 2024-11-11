@@ -50,6 +50,7 @@ export const Content = ({ data }: ContentProps) => {
     <Section
       color={data.backgroundColor}
       data-tina-field={tinaField(data, contentBlock.title)}
+      className="px-8 md:px-0"
     >
       <Container
         size="medium"

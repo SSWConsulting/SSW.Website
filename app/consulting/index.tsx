@@ -13,17 +13,13 @@ import { Category } from "@/components/consulting/index/category";
 import { Tag } from "@/components/consulting/index/tag";
 import { Container } from "@/components/util/container";
 import { Breadcrumbs } from "app/components/breadcrumb";
-import { useSearchParams } from "next/navigation";
 
 const allServices = "All SSW Services";
 
 export default function ConsultingIndex({ tinaProps }) {
   const gridRef = useRef(null);
-  const params = useSearchParams();
   const router = useRouter();
-  const [selectedTag, setSelectedTag] = useState(
-    getSelectedTagFromQuery(params.get("tag"))
-  );
+  const [selectedTag, setSelectedTag] = useState(allServices);
 
   const node = tinaProps.data.consultingIndex;
 
@@ -62,10 +58,13 @@ export default function ConsultingIndex({ tinaProps }) {
   );
 
   useEffect(() => {
-    // as the querystring changes, update the selected tag
-    const qsTag = getSelectedTagFromQuery(params.get("tag"));
-    setSelectedTag(qsTag);
-  }, [params]);
+    // We stopped using Next.js's useSearchParams function because it lead to complete client-side rendering, which impacts SEO and page load performance,
+    // Therefore we are now using javascript's function
+    const params = new URLSearchParams(window.location.search);
+    const query = getSelectedTagFromQuery(params.get("tag"));
+
+    setSelectedTag(query || allServices);
+  }, []);
 
   useEffect(() => {
     // grid animation seutp - will automatically clean itself up when dom node is removed
@@ -75,7 +74,9 @@ export default function ConsultingIndex({ tinaProps }) {
   return (
     <>
       <Container className="flex-1 pt-2">
-        <Breadcrumbs path={"/consulting"} suffix="" title={"Services"} />
+        <div className="min-h-8 w-full max-w-9xl md:min-h-12">
+          <Breadcrumbs path={"/consulting"} suffix="" title={"Services"} />
+        </div>
         <h1 className="pt-0 text-3xl">Consulting Services</h1>
         <div className="flex flex-col md:flex-row">
           <div className="shrink-0 md:pr-20">
