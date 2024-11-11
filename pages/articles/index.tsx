@@ -24,8 +24,10 @@ export const ARTICLES_QUERY_KEY = "articlesKey";
 
 export default function ArticlesIndexPage(props) {
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const prop: any = {};
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     console.log(prop.data.nonexistent);
   }, []);
