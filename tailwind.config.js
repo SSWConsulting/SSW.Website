@@ -198,7 +198,12 @@ export default {
         "tooltip",
       ], // ordered by z-index ascendant
       fontFamily: {
-        sans: ["var(--inter-font)"],
+        sans: [
+          "var(--inter-font)",
+          "Helvetica Neue",
+          "Helvetica",
+          "sans-serif",
+        ],
         helvetica: ["Helvetica Neue", "Helvetica", "sans-serif"],
         body: [
           "var(--inter-font)",
