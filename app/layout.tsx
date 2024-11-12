@@ -13,7 +13,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import { Metadata, Viewport } from "next";
-import { Open_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import client from "../tina/__generated__/client";
 import { MenuWrapper } from "./components/MenuWrapper";
 import { WebVitals } from "./components/web-vitals";
@@ -27,8 +27,8 @@ dayjs.extend(utc);
 dayjs.extend(advancedFormat);
 dayjs.extend(isBetween);
 
-const openSans = Open_Sans({
-  variable: "--open-sans-font",
+const inter = Inter({
+  variable: "--inter-font",
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "600", "700"],
@@ -67,7 +67,7 @@ export default async function RootLayout({
       ? nextUG?.data?.eventsCalendarConnection?.edges[0]?.node
       : null;
   return (
-    <html lang="en" className={openSans.className}>
+    <html lang="en" className={inter.className}>
       <body>
         {/* <Theme> */}
         {/* Ensures next/font CSS variable is accessible for all components */}
