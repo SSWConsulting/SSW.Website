@@ -199,14 +199,14 @@ export default {
       ], // ordered by z-index ascendant
       fontFamily: {
         sans: [
-          "var(--open-sans-font)",
+          "var(--inter-font)",
           "Helvetica Neue",
           "Helvetica",
           "sans-serif",
         ],
         helvetica: ["Helvetica Neue", "Helvetica", "sans-serif"],
         body: [
-          "var(--open-sans-font)",
+          "var(--inter-font)",
           "Helvetica Neue",
           "Helvetica",
           "sans-serif",
