@@ -1,10 +1,8 @@
 "use client";
 
-import { ErrorPage, ErrorPageProps } from "@/components/util/error-page";
-import { useEffect } from "react";
+import { ErrorPage } from "@/components/util/error-page";
 export const Error = ({
   error,
-  reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;
@@ -35,3 +33,5 @@ const tipText = () => {
     </div>
   );
 };
+
+export default Error;
