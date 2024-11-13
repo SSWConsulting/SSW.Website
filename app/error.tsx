@@ -2,8 +2,6 @@
 
 import { ErrorPage, ErrorPageProps } from "@/components/util/error-page";
 import { useEffect } from "react";
-import "use client"; // Error components must be Client Components
-
 export const Error = ({
   error,
   reset,
