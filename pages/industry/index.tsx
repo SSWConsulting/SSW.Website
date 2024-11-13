@@ -1,5 +1,6 @@
 import { TODAY } from "hooks/useFetchEvents";
 import { InferGetStaticPropsType } from "next";
+import { useEffect } from "react";
 import { useTina } from "tinacms/dist/react";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { PageCard } from "../../components/blocks/pageCards";
@@ -7,10 +8,12 @@ import { Layout } from "../../components/layout";
 import { Container } from "../../components/util/container";
 import { SEO } from "../../components/util/seo";
 import { client } from "../../tina/__generated__/client";
-
 export default function IndustryIndex(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
+  useEffect(() => {
+    throw new Error("This is a test error");
+  });
   const { data } = useTina({
     query: props.query,
     variables: props.variables,
