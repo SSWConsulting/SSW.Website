@@ -1,6 +1,5 @@
 import "styles.css";
 
-import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
@@ -10,7 +9,6 @@ import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import { Metadata, Viewport } from "next";
 import client from "../tina/__generated__/client";
-import { WebVitals } from "./components/web-vitals";
 import LayoutWrapper from "./layout-wrapper";
 import { DEFAULT } from "./meta-data/default";
 
