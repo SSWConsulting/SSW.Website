@@ -8,7 +8,6 @@ import {
 } from "@tanstack/react-query";
 import classNames from "classnames";
 import { TODAY } from "hooks/useFetchEvents";
-import { useEffect } from "react";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import ArticlesHeader from "../../components/articles/articlesHeader";
@@ -19,6 +18,7 @@ import { Section } from "../../components/util/section";
 import { SEO } from "../../components/util/seo";
 import { getArticles } from "../../hooks/useFetchArticles";
 import { removeExtension } from "../../services/client/utils.service";
+
 export const ARTICLES_QUERY_KEY = "articlesKey";
 
 export default function ArticlesIndexPage(props) {
@@ -26,10 +26,6 @@ export default function ArticlesIndexPage(props) {
     data: props.data,
     query: props.query,
     variables: props.variables,
-  });
-
-  useEffect(() => {
-    throw new Error("Error boundary test");
   });
   const { dehydratedState } = props;
   return (
