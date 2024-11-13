@@ -66,7 +66,7 @@
                   "iconImg": "/images/megamenu-icons/CloudAndInfrastructure.svg"
                 },
                 {
-                  "name": "Other SSW Service",
+                  "name": "Other SSW Services",
                   "url": "/consulting?tag=Other-SSW+Services",
                   "description": "SSW's other enterprise software development services",
                   "iconImg": "/images/megamenu-icons/OtherSSWService.svg"
@@ -351,8 +351,7 @@
               "menuItems": [
                 {
                   "name": "FireBootCamp",
-                  "url": "https://firebootcamp.com/firebootcamp",
-                  "iconImg": "/images/megamenu-icons/firebootcamp.svg"
+                  "url": "https://firebootcamp.com/firebootcamp"
                 },
                 {
                   "name": "Full Stack Developer Internship",
@@ -361,7 +360,7 @@
               ]
             },
             {
-              "name": "Training Services",
+              "name": "Related Services",
               "menuItems": [
                 {
                   "name": "Video Production & Live Streaming",
