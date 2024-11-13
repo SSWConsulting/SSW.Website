@@ -11,8 +11,13 @@ export default function GlobalError({
   reset: () => void;
 }) {
   return (
-    <LayoutWrapper>
-      <ErrorPage details={error.message} />
-    </LayoutWrapper>
+    <html>
+      <body>
+        <h1>Error occurred in layout</h1>
+        {/* <LayoutWrapper>
+          <ErrorPage details={error.message} />
+        </LayoutWrapper> */}
+      </body>
+    </html>
   );
 }
