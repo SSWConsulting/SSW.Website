@@ -1,6 +1,5 @@
 import { Footer } from "@/components/layout/footer/footer";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
-import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events";
 import { GoogleTagManager } from "@next/third-parties/google";
 import dayjs from "dayjs";
@@ -14,9 +13,7 @@ import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import React from "react";
 import "styles.css";
-import client from "../tina/__generated__/client";
 import { MenuWrapper } from "./components/MenuWrapper";
-import { WebVitals } from "./components/web-vitals";
 import { LiveStream } from "./live-steam-banner/live-stream";
 import { DEFAULT } from "./meta-data/default";
 import { getMegamenu } from "./utils/get-mega-menu";
