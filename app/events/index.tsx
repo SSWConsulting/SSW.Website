@@ -16,9 +16,11 @@ export default function EventsIndexPage({ props, tinaProps }) {
   const { filterCategories } = props;
   const { data } = tinaProps;
 
-  useEffect(() => {
-    throw Error("Error Boundary test");
-  });
+
+
+  useEffect(()=> {
+    throw Error("Error Boundary test")
+  })
 
   return (
     <QueryProvider>
