@@ -9,11 +9,18 @@ import { removeExtension } from "@/services/client/utils.service";
 import { HydrationBoundary } from "@tanstack/react-query";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import { QueryProvider } from "app/providers/query-provider";
+import { useEffect } from "react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export default function EventsIndexPage({ props, tinaProps }) {
   const { filterCategories } = props;
   const { data } = tinaProps;
+
+
+
+  useEffect(()=> {
+    throw Error("Error Boundary test")
+  })
 
   return (
     <QueryProvider>
