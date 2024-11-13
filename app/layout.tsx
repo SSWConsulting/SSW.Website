@@ -47,11 +47,6 @@ export default async function RootLayout({
       ? nextUG?.data?.eventsCalendarConnection?.edges[0]?.node
       : null;
   return (
-    <LayoutWrapper liveStreamData={liveStreamData}>
-      <AppInsightsProvider>
-        <WebVitals />
-        {children}
-      </AppInsightsProvider>
-    </LayoutWrapper>
+    <LayoutWrapper liveStreamData={liveStreamData}>{children}</LayoutWrapper>
   );
 }
