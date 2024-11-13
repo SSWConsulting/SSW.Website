@@ -49,7 +49,7 @@ export const viewport: Viewport = {
 };
 
 export const revalidate = 3600;
-
+throw new Error("Testing error boundary");
 export default async function RootLayout({
   children,
 }: {
