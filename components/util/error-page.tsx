@@ -8,7 +8,7 @@ import { BiChevronRight } from "react-icons/bi";
 import { FaXmark } from "react-icons/fa6";
 import { LiveStreamData } from "../layout/layout";
 
-type ErrorPageProps = {
+export type ErrorPageProps = {
   code?: string;
   title?: string;
   tipText?: React.ReactNode;
