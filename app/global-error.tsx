@@ -1,5 +1,4 @@
 "use client";
-import { ErrorPageProps } from "@/components/util/error-page";
 import { ErrorPage } from "@/components/util/error/error";
 import LayoutWrapper from "./layout-wrapper";
 

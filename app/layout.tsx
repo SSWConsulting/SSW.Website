@@ -1,4 +1,3 @@
-import dynamic from "next/dynamic";
 import "styles.css";
 
 import { AppInsightsProvider } from "@/context/app-insight-client";
