@@ -10,13 +10,11 @@ export default function GlobalError({ error }: { error: Error }) {
   return (
     <html>
       <body>
-        <AppInsightsProvider>
-          <LayoutWrapper>
-            <GlobalErrorHandler error={error}>
-              <ErrorPage details={errorDetails}></ErrorPage>
-            </GlobalErrorHandler>
-          </LayoutWrapper>
-        </AppInsightsProvider>
+        <LayoutWrapper>
+          <GlobalErrorHandler error={error}>
+            <ErrorPage details={errorDetails}></ErrorPage>
+          </GlobalErrorHandler>
+        </LayoutWrapper>
       </body>
     </html>
   );
