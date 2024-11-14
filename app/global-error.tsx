@@ -9,13 +9,14 @@ import GlobalErrorHandler from "./components/global-error-handler";
 import { MenuWrapper } from "./components/MenuWrapper";
 // Error boundaries must be Client Components
 
+const inter = Inter({
+  variable: "--inter-font",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "600", "700"],
+});
+
 export default function GlobalError({ error }: { error: Error }) {
-  const inter = Inter({
-    variable: "--inter-font",
-    subsets: ["latin"],
-    display: "swap",
-    weight: ["400", "600", "700"],
-  });
   const errorDetails = error.stack || error.message;
   return (
     <html className={inter.className}>
