@@ -9,7 +9,6 @@ import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import { Metadata, Viewport } from "next";
 import client from "../tina/__generated__/client";
-import ErrorThrower from "./error-thrower";
 import LayoutWrapper from "./layout-wrapper";
 import { DEFAULT } from "./meta-data/default";
 
@@ -46,9 +45,6 @@ export default async function RootLayout({
       ? nextUG?.data?.eventsCalendarConnection?.edges[0]?.node
       : null;
   return (
-    <LayoutWrapper liveStreamData={liveStreamData}>
-      {children}
-      <ErrorThrower></ErrorThrower>
-    </LayoutWrapper>
+    <LayoutWrapper liveStreamData={liveStreamData}>{children}</LayoutWrapper>
   );
 }

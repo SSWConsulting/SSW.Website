@@ -1,17 +1,17 @@
 "use client";
-
 import { ErrorPage } from "@/components/util/error-page";
+import GlobalErrorHandler from "./components/global-error-handler";
 export const Error = ({
   error,
 }: {
   error: Error & { digest?: string };
   reset: () => void;
 }) => {
-  if (error.message) {
-    JSON.stringify(error.message, null, 2);
-  }
-
-  return <ErrorPage details={error.message} />;
+  return (
+    <GlobalErrorHandler error={error}>
+      <ErrorPage details={error.message} />;
+    </GlobalErrorHandler>
+  );
 };
 
 export default Error;

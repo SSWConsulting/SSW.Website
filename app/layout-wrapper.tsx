@@ -18,7 +18,7 @@ import { MenuWrapper } from "./components/MenuWrapper";
 import { WebVitals } from "./components/web-vitals";
 import { LiveStream } from "./live-steam-banner/live-stream";
 import { DEFAULT } from "./meta-data/default";
-import { getMegamenu } from "./utils/get-mega-menu";
+import { getMegamenu, MegaMenuProps } from "./utils/get-mega-menu";
 
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
@@ -57,7 +57,7 @@ export default async function LayoutWrapper({
   children,
   liveStreamData,
 }: LayoutWrapperProps) {
-  const menuData = await getMegamenu();
+  const menuData: MegaMenuProps = await getMegamenu();
   return (
     <html lang="en" className={inter.className}>
       <body>
