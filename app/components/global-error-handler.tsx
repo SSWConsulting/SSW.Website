@@ -11,14 +11,22 @@ function GlobalErrorHandler({ error, children }) {
       console.log("AppInsights not initialized");
     // eslint-disable-next-line no-console
     else console.log("AppInsights initialized");
-    appInsights.trackException({
-      exception: error,
-      properties: {
-        Request: `GET /${window?.location?.pathname || "unknown"}`,
-        Type: "ErrorBoundary",
-        ErrorInfo: error.stack || error.message,
-      },
-    });
+
+    try {
+      // eslint-disable-next-line no-console
+      console.log("Tracking exception");
+      appInsights.trackException({
+        exception: error,
+        properties: {
+          Request: `GET /${window?.location?.pathname || "unknown"}`,
+          Type: "ErrorBoundary",
+          ErrorInfo: error.stack || error.message,
+        },
+      });
+    } catch {
+      // eslint-disable-next-line no-console
+      console.error("Error in tracking exception");
+    }
   });
   return <>{children}</>;
 }
