@@ -1,42 +1,48 @@
+"use client";
+
+import ArticleAuthor from "@/components/articles/articleAuthor";
+import ArticlesHeader from "@/components/articles/articlesHeader";
 import ArticlesList from "@/components/articles/articlesList";
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
+import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
+import { CallToAction } from "@/components/callToAction/callToAction";
 import SidebarPanel from "@/components/sidebar/sidebarPanel";
-import client from "@/tina/client";
-import {
-  dehydrate,
-  HydrationBoundary,
-  QueryClient,
-} from "@tanstack/react-query";
+import { Container } from "@/components/util/container";
+import { Section } from "@/components/util/section";
+import { removeExtension } from "@/services/client/utils.service";
+import { ArticlesIndexContentQueryQuery } from "@/tina/types";
+import { DehydratedState, HydrationBoundary } from "@tanstack/react-query";
+import { Breadcrumbs } from "app/components/breadcrumb";
+import { QueryProvider } from "app/providers/query-provider";
 import classNames from "classnames";
-import { TODAY } from "hooks/useFetchEvents";
+import Image from "next/image";
+import React from "react";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import ArticlesHeader from "../../components/articles/articlesHeader";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
-import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
-import { Layout } from "../../components/layout";
-import { Section } from "../../components/util/section";
-import { SEO } from "../../components/util/seo";
-import { getArticles } from "../../hooks/useFetchArticles";
-import { removeExtension } from "../../services/client/utils.service";
+import { ArticlesIndexContentResponse } from "./page";
 
-export const ARTICLES_QUERY_KEY = "articlesKey";
+type ArticlesindexPageProps = {
+  tinaProps: {
+    data: ArticlesIndexContentResponse["data"];
+  };
+  props: { dehydratedState: DehydratedState; relativePath: string };
+};
 
-export default function ArticlesIndexPage(props) {
-  const { data } = useTina({
-    data: props.data,
-    query: props.query,
-    variables: props.variables,
-  });
+function ArticlesIndexPage({ props, tinaProps }: ArticlesindexPageProps) {
+  const { data } = tinaProps;
+  data.articlesIndex;
+  data.articlesIndex.seo;
   const { dehydratedState } = props;
+
   return (
     <>
-      <HydrationBoundary state={dehydratedState}>
-        <SEO seo={data.articlesIndex.seo} />
-        <Layout
+      <QueryProvider>
+        <HydrationBoundary state={dehydratedState}>
+          {/* <Layout
           liveStreamData={props.data.userGroup}
           menu={data.megamenu}
           showAzureBanner={true}
-        >
+        > */}
           {data.articlesIndex.headerImage?.heroBackground && (
             <Section className="mx-auto hidden w-full sm:block">
               <ArticlesHeader
@@ -49,7 +55,7 @@ export default function ArticlesIndexPage(props) {
             (data.articlesIndex.seo?.showBreadcrumb && (
               <Section className="mx-auto w-full max-w-9xl px-8 py-5">
                 <Breadcrumbs
-                  path={removeExtension(props.variables.relativePath)}
+                  path={removeExtension(props.relativePath)}
                   suffix={data.global.breadcrumbSuffix}
                   title={data.articlesIndex.seo?.title}
                   seoSchema={data.articlesIndex.seo}
@@ -66,8 +72,7 @@ export default function ArticlesIndexPage(props) {
           </Section>
           <section
             className={classNames(
-              "prose mx-auto w-full max-w-9xl flex-row px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0",
-              data.articlesIndex.fullWidthBody ? "" : "md:flex"
+              "prose mx-auto w-full max-w-9xl flex-row px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0"
             )}
           >
             {data.articlesIndex._body.children.length > 0 && (
@@ -100,37 +105,10 @@ export default function ArticlesIndexPage(props) {
               </div>
             )}
           </section>
-        </Layout>
-      </HydrationBoundary>
+        </HydrationBoundary>
+      </QueryProvider>
     </>
   );
 }
 
-export const getStaticProps = async () => {
-  const tinaProps = await client.queries.articlesIndexContentQuery({
-    relativePath: "index.mdx",
-    date: TODAY.toISOString(),
-  });
-  const queryClient = new QueryClient();
-  await queryClient.prefetchInfiniteQuery({
-    queryKey: [ARTICLES_QUERY_KEY],
-    queryFn: getArticles,
-    initialPageParam: "",
-  });
-  if (
-    tinaProps.data.articlesIndex.seo &&
-    !tinaProps.data.articlesIndex.seo.canonical
-  ) {
-    {
-      tinaProps.data.articlesIndex.seo.canonical = `${tinaProps.data.global.header.url}articles`;
-    }
-    return {
-      props: {
-        data: tinaProps.data,
-        query: tinaProps.query,
-        variables: tinaProps.variables,
-        dehydratedState: dehydrate(queryClient),
-      },
-    };
-  }
-};
+export default ArticlesIndexPage;

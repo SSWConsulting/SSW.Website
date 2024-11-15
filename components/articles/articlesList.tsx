@@ -1,3 +1,5 @@
+"use client";
+
 import { useFetchArticles } from "hooks/useFetchArticles";
 import { LoadMore } from "../filter/events";
 import ArticleCard, { ArticleProps } from "./articleCard";

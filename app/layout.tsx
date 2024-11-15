@@ -6,6 +6,7 @@ import "styles.css";
 import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { QueryClientProvider } from "@tanstack/react-query";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
@@ -19,6 +20,7 @@ import { MenuWrapper } from "./components/MenuWrapper";
 import { WebVitals } from "./components/web-vitals";
 import { LiveStream } from "./live-steam-banner/live-stream";
 import { DEFAULT } from "./meta-data/default";
+import { QueryProvider } from "./providers/query-provider";
 import { getMegamenu } from "./utils/get-mega-menu";
 
 dayjs.extend(relativeTime);
