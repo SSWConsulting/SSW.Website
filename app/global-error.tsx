@@ -1,5 +1,4 @@
 "use client";
-import { Footer } from "@/components/layout/footer/footer";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import { ErrorPage } from "@/components/util/error-page";
 import { AppInsightsProvider } from "@/context/app-insight-client";
