@@ -23,9 +23,9 @@ function GlobalErrorHandler({ error, children }) {
           ErrorInfo: error.stack || error.message,
         },
       });
-    } catch {
+    } catch (e) {
       // eslint-disable-next-line no-console
-      console.error("Error in tracking exception");
+      console.error("Error in tracking exception", e.message);
     }
   });
   return <>{children}</>;
