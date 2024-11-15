@@ -6,6 +6,11 @@ function GlobalErrorHandler({ error, children }) {
   // eslint-disable-next-line no-console
   console.error("ErrorBoundary caught an error", error);
   useEffect(() => {
+    if (!appInsights)
+      // eslint-disable-next-line no-console
+      console.log("AppInsights not initialized");
+    // eslint-disable-next-line no-console
+    else console.log("AppInsights initialized");
     appInsights.trackException({
       exception: error,
       properties: {
