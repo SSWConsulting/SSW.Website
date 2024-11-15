@@ -6,11 +6,17 @@ import CompanyHeader from "@/components/company/companyHeader";
 import CompanyPages from "@/components/company/companyPages";
 import { Section } from "@/components/util/section";
 import { removeExtension } from "@/services/client/utils.service";
+import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import { Breadcrumbs } from "app/components/breadcrumb";
+import { useEffect } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export default function CompanyIndexPage({ props, tinaProps }) {
+  const appInsights = useAppInsightsContext();
+  useEffect(() => {
+    appInsights.trackException({ error: new Error("Company Index Page") });
+  });
   const { data } = tinaProps;
   const { companyPageProps } = props;
 
