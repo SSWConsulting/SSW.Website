@@ -1,4 +1,5 @@
 "use client";
+import { Footer } from "@/components/layout/footer/footer";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import { ErrorPage } from "@/components/util/error-page";
 import { AppInsightsProvider } from "@/context/app-insight-client";
@@ -7,6 +8,7 @@ import "styles.css";
 import menu from "../content/megamenu/menu.json";
 import GlobalErrorHandler from "./components/global-error-handler";
 import { MenuWrapper } from "./components/MenuWrapper";
+import PageLayout from "./components/page-layout";
 // Error boundaries must be Client Components
 
 const inter = Inter({
@@ -19,17 +21,24 @@ const inter = Inter({
 export default function GlobalError({ error }: { error: Error }) {
   const errorDetails = error.stack || error.message;
   return (
-    <html className={inter.className}>
+    <html lang="en" className={inter.className}>
       <body>
-        <AppInsightsProvider>
-          <GlobalErrorHandler error={error}>
-            <MenuWrapper>
-              <MegaMenuWrapper menuBarItems={menu.menuGroups} />
-            </MenuWrapper>
-            <ErrorPage details={errorDetails}></ErrorPage>
-          </GlobalErrorHandler>
-        </AppInsightsProvider>
+        <PageLayout megaMenu={MegaMenu()}>
+          <AppInsightsProvider>
+            <GlobalErrorHandler error={error}>
+              <ErrorPage details={errorDetails}></ErrorPage>
+            </GlobalErrorHandler>
+          </AppInsightsProvider>
+        </PageLayout>
       </body>
     </html>
   );
 }
+
+const MegaMenu = () => {
+  return (
+    <MenuWrapper>
+      <MegaMenuWrapper menuBarItems={menu.menuGroups} />
+    </MenuWrapper>
+  );
+};
