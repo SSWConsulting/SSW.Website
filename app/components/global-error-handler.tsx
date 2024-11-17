@@ -14,7 +14,6 @@ function GlobalErrorHandler({ error, children }) {
 
     try {
       // eslint-disable-next-line no-console
-      console.log("Tracking exception");
       appInsights.trackException({
         exception: error,
         properties: {
@@ -23,11 +22,15 @@ function GlobalErrorHandler({ error, children }) {
           ErrorInfo: error.stack || error.message,
         },
       });
+      // eslint-disable-next-line no-console
+      console.log("error", error);
+      // eslint-disable-next-line no-console
+      console.log("appInsights client", appInsights);
     } catch (e) {
       // eslint-disable-next-line no-console
       console.error("Error in tracking exception", e.message);
     }
-  });
+  }, [appInsights, error]);
   return <>{children}</>;
 }
 
