@@ -8,7 +8,7 @@ import { ApplicationInsights } from "@microsoft/applicationinsights-web";
 import { ReactNode, useEffect, useMemo } from "react";
 
 export function AppInsightsProvider({ children }: { children: ReactNode }) {
-  const reactPlugin = useMemo(() => new ReactPlugin(), []);
+  const reactPlugin = new ReactPlugin();
   useEffect(() => {
     const appInsights = new ApplicationInsights({
       config: {
