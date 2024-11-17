@@ -13,7 +13,6 @@ function GlobalErrorHandler({ error, children }) {
     else console.log("AppInsights initialized");
 
     try {
-      // eslint-disable-next-line no-console
       appInsights.trackException({
         exception: error,
         properties: {
