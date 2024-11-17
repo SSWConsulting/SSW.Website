@@ -8,6 +8,7 @@ import menu from "../content/megamenu/menu.json";
 import GlobalErrorHandler from "./components/global-error-handler";
 import { MenuWrapper } from "./components/MenuWrapper";
 import PageLayout from "./components/page-layout";
+import { WebVitals } from "./components/web-vitals";
 // Error boundaries must be Client Components
 
 const inter = Inter({
@@ -24,6 +25,7 @@ export default function GlobalError({ error }: { error: Error }) {
       <body>
         <PageLayout megaMenu={MegaMenu()}>
           <AppInsightsProvider>
+            <WebVitals />
             <GlobalErrorHandler error={error}>
               <ErrorPage details={errorDetails}></ErrorPage>
             </GlobalErrorHandler>
