@@ -18,7 +18,6 @@ function ArticlesIndexPage({ props, tinaProps }) {
   data.articlesIndex;
   data.articlesIndex.seo;
   const { dehydratedState } = props;
-  console.log("dehydrated state", dehydratedState);
   return (
     <>
       <HydrationBoundary state={dehydratedState}>
