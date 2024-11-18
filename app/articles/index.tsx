@@ -7,7 +7,7 @@ import { PreFooter } from "@/components/layout/footer/pre-footer";
 import SidebarPanel from "@/components/sidebar/sidebarPanel";
 import { Section } from "@/components/util/section";
 import client from "@/tina/client";
-import { HydrationBoundary } from "@tanstack/react-query";
+import { DehydratedState, HydrationBoundary } from "@tanstack/react-query";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import classNames from "classnames";
 import React from "react";
@@ -16,7 +16,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 type ArticlesIndexPageProps = {
   props: {
-    dehydratedState: any;
+    dehydratedState: DehydratedState;
     relativePath: string;
   };
   tinaProps: {
