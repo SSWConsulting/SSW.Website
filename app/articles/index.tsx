@@ -6,7 +6,6 @@ import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { PreFooter } from "@/components/layout/footer/pre-footer";
 import SidebarPanel from "@/components/sidebar/sidebarPanel";
 import { Section } from "@/components/util/section";
-import { removeExtension } from "@/services/client/utils.service";
 import client from "@/tina/client";
 import { HydrationBoundary } from "@tanstack/react-query";
 import { Breadcrumbs } from "app/components/breadcrumb";
@@ -46,10 +45,11 @@ function ArticlesIndexPage({ props, tinaProps }: ArticlesIndexPageProps) {
         {data.articlesIndex.seo?.showBreadcrumb === null ||
           (data.articlesIndex.seo?.showBreadcrumb && (
             <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+              <></>
               <Breadcrumbs
-                path={removeExtension(props.relativePath)}
+                path={"articles"}
                 suffix={data.global.breadcrumbSuffix}
-                title={data.articlesIndex.seo?.title}
+                title={data.articlesIndex.title}
                 seoSchema={data.articlesIndex.seo}
               />
             </Section>
