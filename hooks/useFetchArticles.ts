@@ -6,7 +6,6 @@ export const ARTICLES_QUERY_KEY = "articlesKey";
 export const getArticles = async ({
   pageParam,
 }): Promise<GetArticlesQueryQuery> => {
-  console.log("query in getArticles", pageParam);
   const res = await client.queries.getArticlesQuery({
     top: 10,
     after: pageParam,
