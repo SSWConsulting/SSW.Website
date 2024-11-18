@@ -11,6 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     relativePath: "index.mdx",
     date: new Date().toISOString(),
   });
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { seoProps } = useSEO(data.data.articlesIndex.seo);
   return { ...seoProps };
 }
