@@ -6,7 +6,6 @@ import "styles.css";
 import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events";
 import { GoogleTagManager } from "@next/third-parties/google";
-import { QueryClientProvider } from "@tanstack/react-query";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
@@ -71,31 +70,33 @@ export default async function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body>
-        {/* <Theme> */}
-        {/* Ensures next/font CSS variable is accessible for all components */}
-        <div className="flex min-h-screen flex-col">
-          <header className="no-print">
-            {liveStreamData ? (
-              <LiveStream event={liveStreamData}>
-                <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
-              </LiveStream>
-            ) : (
-              <MenuWrapper>
-                <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
-              </MenuWrapper>
-            )}
-          </header>
-          <main className="grow bg-white">
-            <AppInsightsProvider>
-              <WebVitals />
-              {children}
-            </AppInsightsProvider>
-          </main>
-          <Footer />
-        </div>
-        {/* </Theme> */}
-        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
-        <ChatBaseBot />
+        <QueryProvider>
+          {/* <Theme> */}
+          {/* Ensures next/font CSS variable is accessible for all components */}
+          <div className="flex min-h-screen flex-col">
+            <header className="no-print">
+              {liveStreamData ? (
+                <LiveStream event={liveStreamData}>
+                  <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
+                </LiveStream>
+              ) : (
+                <MenuWrapper>
+                  <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
+                </MenuWrapper>
+              )}
+            </header>
+            <main className="grow bg-white">
+              <AppInsightsProvider>
+                <WebVitals />
+                {children}
+              </AppInsightsProvider>
+            </main>
+            <Footer />
+          </div>
+          {/* </Theme> */}
+          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
+          <ChatBaseBot />
+        </QueryProvider>
       </body>
     </html>
   );
