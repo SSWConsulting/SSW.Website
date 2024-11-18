@@ -1,17 +1,12 @@
 "use client";
 
-import ArticleAuthor from "@/components/articles/articleAuthor";
 import ArticlesHeader from "@/components/articles/articlesHeader";
 import ArticlesList from "@/components/articles/articlesList";
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
-import { CallToAction } from "@/components/callToAction/callToAction";
 import SidebarPanel from "@/components/sidebar/sidebarPanel";
-import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { removeExtension } from "@/services/client/utils.service";
-import { ArticlesIndexContentQueryQuery } from "@/tina/types";
-import { DehydratedState, HydrationBoundary } from "@tanstack/react-query";
+import { HydrationBoundary } from "@tanstack/react-query";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import { QueryProvider } from "app/providers/query-provider";
 import classNames from "classnames";
@@ -19,14 +14,6 @@ import Image from "next/image";
 import React from "react";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-// import { ArticlesIndexContentResponse } from "./page";
-
-// export type ArticlesindexPageProps = {
-//   tinaProps: {
-//     data: ArticlesIndexContentResponse["data"];
-//   };
-//   props: { dehydratedState: DehydratedState; relativePath: string };
-// };
 
 function ArticlesIndexPage({ props, tinaProps }) {
   const { data } = tinaProps;
