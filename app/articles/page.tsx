@@ -1,9 +1,8 @@
 import { dehydrate, DehydratedState, QueryClient } from "@tanstack/react-query";
 import { TinaClient, TinaClientProps, UseTinaProps } from "app/tina-client";
-import { getArticles } from "hooks/useFetchArticles";
+import { ARTICLES_QUERY_KEY, getArticles } from "hooks/useFetchArticles";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
-import { Article } from "schema-dts";
 import client from "tina/__generated__/client";
 import ArticlesIndexPage from "./index";
 
@@ -19,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
 async function getDehydratedClient(): Promise<DehydratedState> {
   const queryClient = new QueryClient();
   await queryClient.prefetchInfiniteQuery({
-    queryKey: ["articlesKey"],
+    queryKey: [ARTICLES_QUERY_KEY],
     queryFn: getArticles,
     initialPageParam: "",
   });
