@@ -1,5 +1,5 @@
 import { dehydrate, DehydratedState, QueryClient } from "@tanstack/react-query";
-import { TinaClient, TinaClientProps, UseTinaProps } from "app/tina-client";
+import { TinaClient } from "app/tina-client";
 import { ARTICLES_QUERY_KEY, getArticles } from "hooks/useFetchArticles";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
@@ -31,14 +31,14 @@ async function getData() {
     date: new Date().toISOString(),
   });
 
-  const otherClient: DehydratedState = await getDehydratedClient();
+  const queryClient: DehydratedState = await getDehydratedClient();
   return {
     props: {
       data: pageData.data,
       query: pageData.query,
       variables: pageData.variables,
       relativePath: pageData.variables.relativePath,
-      dehydratedState: otherClient,
+      dehydratedState: queryClient,
     },
   };
 }
