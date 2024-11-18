@@ -1,14 +1,17 @@
-"use client";
-
+import { GetArticlesQueryQuery } from "@/tina/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { ARTICLES_QUERY_KEY } from "app/articles/page";
 import client from "../tina/__generated__/client";
+const ARTICLES_QUERY_KEY = "articlesKey";
 
-export const getArticles = async ({ pageParam }) => {
+export const getArticles = async ({
+  pageParam,
+}): Promise<GetArticlesQueryQuery> => {
+  console.log("query in getArticles", pageParam);
   const res = await client.queries.getArticlesQuery({
     top: 10,
     after: pageParam,
   });
+
   return res.data;
 };
 

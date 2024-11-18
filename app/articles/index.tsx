@@ -19,30 +19,25 @@ import Image from "next/image";
 import React from "react";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { ArticlesIndexContentResponse } from "./page";
+// import { ArticlesIndexContentResponse } from "./page";
 
-type ArticlesindexPageProps = {
-  tinaProps: {
-    data: ArticlesIndexContentResponse["data"];
-  };
-  props: { dehydratedState: DehydratedState; relativePath: string };
-};
+// export type ArticlesindexPageProps = {
+//   tinaProps: {
+//     data: ArticlesIndexContentResponse["data"];
+//   };
+//   props: { dehydratedState: DehydratedState; relativePath: string };
+// };
 
-function ArticlesIndexPage({ props, tinaProps }: ArticlesindexPageProps) {
+function ArticlesIndexPage({ props, tinaProps }) {
   const { data } = tinaProps;
   data.articlesIndex;
   data.articlesIndex.seo;
   const { dehydratedState } = props;
-
+  console.log("dehydrated state", dehydratedState);
   return (
     <>
       <QueryProvider>
         <HydrationBoundary state={dehydratedState}>
-          {/* <Layout
-          liveStreamData={props.data.userGroup}
-          menu={data.megamenu}
-          showAzureBanner={true}
-        > */}
           {data.articlesIndex.headerImage?.heroBackground && (
             <Section className="mx-auto hidden w-full sm:block">
               <ArticlesHeader
