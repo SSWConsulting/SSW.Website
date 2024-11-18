@@ -68,11 +68,13 @@ function ArticlesIndexPage({ props, tinaProps }: ArticlesIndexPageProps) {
           )}
         >
           {data.articlesIndex._body.children.length > 0 && (
-            <div data-tina-field={tinaField(data.articlesIndex, "_body")}>
-              <TinaMarkdown
-                components={componentRenderer}
-                content={data.articlesIndex._body}
-              />
+            <div>
+              <section data-tina-field={tinaField(data.articlesIndex, "_body")}>
+                <TinaMarkdown
+                  components={componentRenderer}
+                  content={data.articlesIndex._body}
+                />
+              </section>
 
               <Section className="mx-auto w-full">
                 <ArticlesList />
