@@ -14,7 +14,6 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 export default function EventsIndexPage({ props, tinaProps }) {
   const { filterCategories } = props;
   const { data } = tinaProps;
-
   return (
     <QueryProvider>
       <HydrationBoundary state={props.dehydratedState}>
