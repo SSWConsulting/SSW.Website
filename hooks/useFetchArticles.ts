@@ -1,7 +1,7 @@
 import { GetArticlesQueryQuery } from "@/tina/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import client from "../tina/__generated__/client";
-const ARTICLES_QUERY_KEY = "articlesKey";
+export const ARTICLES_QUERY_KEY = "articlesKey";
 
 export const getArticles = async ({
   pageParam,
