@@ -8,7 +8,6 @@ import { Section } from "@/components/util/section";
 import { removeExtension } from "@/services/client/utils.service";
 import { HydrationBoundary } from "@tanstack/react-query";
 import { Breadcrumbs } from "app/components/breadcrumb";
-import { QueryProvider } from "app/providers/query-provider";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export default function EventsIndexPage({ props, tinaProps }) {
