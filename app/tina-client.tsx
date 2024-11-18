@@ -4,8 +4,18 @@ import AOS from "aos";
 
 import { useEffect } from "react";
 import { useTina } from "tinacms/dist/react";
+export type UseTinaProps = {
+  query: string;
+  variables: object;
+  data: object;
+};
 
-export function TinaClient({ props, Component }) {
+export type TinaClientProps<T> = {
+  props: UseTinaProps & T;
+  Component: React.FC<{ tinaProps: { data: object }; props: T }>;
+};
+
+export function TinaClient<T>({ props, Component }: TinaClientProps<T>) {
   const { data } = useTina({
     query: props.query,
     variables: props.variables,
