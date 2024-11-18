@@ -82,7 +82,7 @@ function ArticlesIndexPage({ props, tinaProps }: ArticlesIndexPageProps) {
             </div>
           )}
           {data.articlesIndex.showSidebarPanel && (
-            <div className="w-full px-16 pt-16 md:max-w-sm md:pt-0 lg:shrink lg:pl-16 lg:pr-0">
+            <div className="w-full pt-16 md:max-w-sm md:px-16 md:pt-0 lg:shrink lg:pl-16 lg:pr-0">
               <SidebarPanel
                 title={data.articlesIndex.sidebarPanel.title}
                 description={data.articlesIndex.sidebarPanel.description}
