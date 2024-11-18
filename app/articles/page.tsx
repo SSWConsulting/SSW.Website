@@ -45,7 +45,5 @@ async function getData() {
 
 export default async function Articles() {
   const { props } = await getData();
-  console.log("dehydrated client", props.dehydratedState.queries.length);
-
   return <TinaClient props={props} Component={ArticlesIndexPage} />;
 }
