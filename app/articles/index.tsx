@@ -3,9 +3,11 @@
 import ArticlesHeader from "@/components/articles/articlesHeader";
 import ArticlesList from "@/components/articles/articlesList";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
+import { PreFooter } from "@/components/layout/footer/pre-footer";
 import SidebarPanel from "@/components/sidebar/sidebarPanel";
 import { Section } from "@/components/util/section";
 import { removeExtension } from "@/services/client/utils.service";
+import client from "@/tina/client";
 import { HydrationBoundary } from "@tanstack/react-query";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import classNames from "classnames";
@@ -13,7 +15,19 @@ import React from "react";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-function ArticlesIndexPage({ props, tinaProps }) {
+type ArticlesIndexPageProps = {
+  props: {
+    dehydratedState: any;
+    relativePath: string;
+  };
+  tinaProps: {
+    data: Awaited<
+      ReturnType<typeof client.queries.articlesIndexContentQuery>
+    >["data"];
+  };
+};
+
+function ArticlesIndexPage({ props, tinaProps }: ArticlesIndexPageProps) {
   const { data } = tinaProps;
   data.articlesIndex;
   data.articlesIndex.seo;
@@ -83,6 +97,7 @@ function ArticlesIndexPage({ props, tinaProps }) {
             </div>
           )}
         </section>
+        {data.articlesIndex.showAzureFooter && <PreFooter />}
       </HydrationBoundary>
     </>
   );
