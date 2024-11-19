@@ -20,7 +20,9 @@ import { WebVitals } from "./components/web-vitals";
 import ErrorThrower from "./error-thrower";
 import { LiveStream } from "./live-steam-banner/live-stream";
 import { DEFAULT } from "./meta-data/default";
+import { QueryProvider } from "./providers/query-provider";
 import { getMegamenu, MegaMenuProps } from "./utils/get-mega-menu";
+
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
 dayjs.extend(utc);
@@ -69,24 +71,26 @@ export default async function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body>
-        {/* <Theme> */}
-        {/* Ensures next/font CSS variable is accessible for all components */}
-        <PageLayout
-          footer={<Footer />}
-          megaMenu={MegaMenu({
-            menuData: menuData,
-            liveStreamData: liveStreamData,
-          })}
-        >
-          <AppInsightsProvider>
-            <WebVitals />
-            {children}
-            <ErrorThrower />
-          </AppInsightsProvider>
-          {/* </Theme> */}
-        </PageLayout>
-        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
-        <ChatBaseBot />
+        <QueryProvider>
+          {/* <Theme> */}
+          {/* Ensures next/font CSS variable is accessible for all components */}
+          <PageLayout
+            footer={<Footer />}
+            megaMenu={MegaMenu({
+              menuData: menuData,
+              liveStreamData: liveStreamData,
+            })}
+          >
+            <AppInsightsProvider>
+              <WebVitals />
+              {children}
+              <ErrorThrower />
+            </AppInsightsProvider>
+            {/* </Theme> */}
+          </PageLayout>
+          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
+          <ChatBaseBot />
+        </QueryProvider>
       </body>
     </html>
   );
