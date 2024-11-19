@@ -19,6 +19,7 @@ import { MenuWrapper } from "./components/MenuWrapper";
 import { WebVitals } from "./components/web-vitals";
 import { LiveStream } from "./live-steam-banner/live-stream";
 import { DEFAULT } from "./meta-data/default";
+import { QueryProvider } from "./providers/query-provider";
 import { getMegamenu } from "./utils/get-mega-menu";
 
 dayjs.extend(relativeTime);
@@ -69,31 +70,33 @@ export default async function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body>
-        {/* <Theme> */}
-        {/* Ensures next/font CSS variable is accessible for all components */}
-        <div className="flex min-h-screen flex-col">
-          <header className="no-print">
-            {liveStreamData ? (
-              <LiveStream event={liveStreamData}>
-                <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
-              </LiveStream>
-            ) : (
-              <MenuWrapper>
-                <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
-              </MenuWrapper>
-            )}
-          </header>
-          <main className="grow bg-white">
-            <AppInsightsProvider>
-              <WebVitals />
-              {children}
-            </AppInsightsProvider>
-          </main>
-          <Footer />
-        </div>
-        {/* </Theme> */}
-        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
-        <ChatBaseBot />
+        <QueryProvider>
+          {/* <Theme> */}
+          {/* Ensures next/font CSS variable is accessible for all components */}
+          <div className="flex min-h-screen flex-col">
+            <header className="no-print">
+              {liveStreamData ? (
+                <LiveStream event={liveStreamData}>
+                  <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
+                </LiveStream>
+              ) : (
+                <MenuWrapper>
+                  <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
+                </MenuWrapper>
+              )}
+            </header>
+            <main className="grow bg-white">
+              <AppInsightsProvider>
+                <WebVitals />
+                {children}
+              </AppInsightsProvider>
+            </main>
+            <Footer />
+          </div>
+          {/* </Theme> */}
+          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
+          <ChatBaseBot />
+        </QueryProvider>
       </body>
     </html>
   );
