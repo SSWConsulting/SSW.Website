@@ -5,7 +5,7 @@ import { Section } from "@/components/util/section";
 export const PreFooter = ({
   backgroundColor = SectionColor.LightGray,
 }: {
-  backgroundColor: SectionColor;
+  backgroundColor?: SectionColor;
 }) => {
   return (
     <Section className="w-full flex-none">
