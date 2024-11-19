@@ -1,15 +1,10 @@
-import dynamic from "next/dynamic";
-import { SocialIcons } from "../../socialIcons/socialIcons";
-import { Container } from "../../util/container";
-import DeploymentLink from "../deploymentLink";
+import { SocialIcons } from "@/components/socialIcons/socialIcons";
+import { Container } from "@/components/util/container";
 import { CopyrightInfo } from "./copyright-info";
 import { DeploymentInfo } from "./deployment-info";
+import { SiteInfo } from "./site-info";
 
-const SiteInfo = dynamic(() => import("./site-info").then((x) => x.SiteInfo), {
-  ssr: false,
-});
-
-export const Footer = () => {
+const ErrorFooter = () => {
   return (
     <footer className="no-print w-full bg-ssw-black text-xxs text-gray-300">
       <Container size="xsmall">
@@ -23,12 +18,12 @@ export const Footer = () => {
         </div>
         <hr className="my-2 border-gray-800" />
         <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
-          <DeploymentInfo>
-            <DeploymentLink />
-          </DeploymentInfo>
+          <DeploymentInfo />
           <SiteInfo />
         </div>
       </Container>
     </footer>
   );
 };
+
+export default ErrorFooter;

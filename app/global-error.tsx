@@ -1,4 +1,5 @@
 "use client";
+import ErrorFooter from "@/components/layout/footer/error-footer";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import { ErrorPage } from "@/components/util/error-page";
 import { AppInsightsProvider } from "@/context/app-insight-client";
@@ -23,7 +24,7 @@ export default function GlobalError({ error }: { error: Error }) {
   return (
     <html lang="en" className={inter.className}>
       <body>
-        <PageLayout megaMenu={MegaMenu()}>
+        <PageLayout footer={ErrorFooter()} megaMenu={MegaMenu()}>
           <AppInsightsProvider>
             <WebVitals />
             <GlobalErrorHandler error={error}>
