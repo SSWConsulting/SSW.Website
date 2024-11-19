@@ -1,6 +1,7 @@
 "use client";
 
 import ArticleAuthor from "@/components/articles/articleAuthor";
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { CallToAction } from "@/components/callToAction/callToAction";
 import SidebarPanel from "@/components/sidebar/sidebarPanel";
@@ -16,9 +17,9 @@ export type ArticleData = Awaited<
   ReturnType<typeof client.queries.articlesContentQuery>
 >;
 
-type ArticlePageProps = {
+export type ArticlePageProps = {
   tinaProps: { data: ArticleData["data"] };
-  props: { filename: string };
+  props: { filename: string; indexPageTitle: string };
 };
 
 const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
@@ -44,9 +45,14 @@ const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
           <Section className="mx-auto w-full max-w-9xl px-8 py-5">
             <Breadcrumbs
               path={props.filename}
-              suffix={data.global.breadcrumbSuffix}
               title={data.articles.seo?.title}
               seoSchema={data.articles.seo}
+              additionalReplacements={[
+                {
+                  from: "articles",
+                  to: props.indexPageTitle,
+                },
+              ]}
             />
           </Section>
         ))}
@@ -127,9 +133,10 @@ const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
           )}
         </CallToAction>
       )}
-      {/* <Section>
-          <BuiltOnAzure data={{ backgroundColor: "default" }} />
-        </Section> */}
+
+      <Section>
+        <BuiltOnAzure data={{ backgroundColor: "default" }} />
+      </Section>
     </>
   );
 };

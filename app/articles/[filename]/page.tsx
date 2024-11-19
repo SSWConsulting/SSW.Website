@@ -3,16 +3,20 @@ import { TinaClient, UseTinaProps } from "app/tina-client";
 import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
-import ArticlePage, { ArticleData } from ".";
+import ArticlePage, { ArticleData, ArticlePageProps } from ".";
 const getData = async (
   filename: string
-): Promise<{ props: UseTinaProps & { filename: string } }> => {
+): Promise<{
+  props: UseTinaProps & ArticlePageProps["props"];
+}> => {
   const tinaProps = await getArticle(filename);
+  tinaProps.data.articlesIndex.title;
   return {
     props: {
       data: tinaProps.data,
       query: tinaProps.query,
       variables: tinaProps.variables,
+      indexPageTitle: tinaProps.data.articlesIndex.title,
       filename,
     },
   };

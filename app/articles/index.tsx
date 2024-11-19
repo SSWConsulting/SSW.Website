@@ -48,7 +48,6 @@ function ArticlesIndexPage({ props, tinaProps }: ArticlesIndexPageProps) {
               <></>
               <Breadcrumbs
                 path={"articles"}
-                suffix={data.global.breadcrumbSuffix}
                 title={data.articlesIndex.title}
                 seoSchema={data.articlesIndex.seo}
               />
