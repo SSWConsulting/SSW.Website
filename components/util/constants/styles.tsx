@@ -4,3 +4,10 @@ export const sectionColors = {
   red: "bg-sswRed text-white",
   black: "bg-black text-white",
 };
+
+export enum SectionColor {
+  Default = "default",
+  LightGray = "lightgray",
+  Red = "red",
+  Black = "black",
+}
