@@ -7,7 +7,7 @@ export default function ProductsIndexContent({ props }) {
   return (
     <>
       <Container className="mb-10 flex-1 pt-2">
-        <Breadcrumbs path={"/products"} suffix="" title={"Products"} />
+        <Breadcrumbs path={"/products"} title={"Products"} />
         {props.productsIndex.title && (
           <h1
             props-tina-field={tinaField(props.productsIndex, "title")}

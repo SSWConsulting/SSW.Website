@@ -43,7 +43,6 @@ export default function EventsPage({ props, tinaProps }) {
           >
             <Breadcrumbs
               path={removeExtension(props.variables.relativePath)}
-              suffix={data.global?.breadcrumbSuffix}
               title={data.events?.seo?.title}
             />
           </div>
