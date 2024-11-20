@@ -137,6 +137,7 @@ export const articlesSchema: Collection = {
         ...callToActionSchema.fields,
       ],
     },
+    azureBannerSchema,
   ],
 };
 
