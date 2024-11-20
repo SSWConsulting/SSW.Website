@@ -28,7 +28,6 @@ export default function VideoProductionPage({ props, tinaProps }) {
       <Section className="mx-auto w-full max-w-9xl px-8 py-5">
         <Breadcrumbs
           path={removeExtension(props.variables.relativePath)}
-          suffix={data.global.breadcrumbSuffix}
           title={data.videoProduction.seo?.title}
           seoSchema={data.videoProduction.seo}
         />
