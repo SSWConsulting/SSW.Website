@@ -10,7 +10,7 @@ export default function PartnersIndex({ tinaProps }) {
   return (
     <>
       <Container className="mb-10 flex-1 pt-2">
-        <Breadcrumbs path={"/Partners"} suffix="" title={"Partners"} />
+        <Breadcrumbs path={"/Partners"} title={"Partners"} />
         <h1 className="mb-0 py-0 text-3xl">{data.partnerIndex.title}</h1>
         <h2 className="mb-4 text-base">{data.partnerIndex.subTitle}</h2>
         <div className="flex flex-col md:flex-row">
