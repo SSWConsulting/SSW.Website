@@ -82,7 +82,7 @@ type ErrorTextProps = {
 
 export const ErrorText = (props: ErrorTextProps) => {
   return (
-    <div className="py-12">
+    <div className="overflow-x-hidden py-12">
       {props.exitButtonCallback && (
         <div className="flex justify-end">
           <button
@@ -124,8 +124,8 @@ export const ErrorText = (props: ErrorTextProps) => {
                   <BiChevronRight className={open ? "rotate-90" : ""} />
                 </div>
               </Disclosure.Button>
-              <Disclosure.Panel>
-                <pre>
+              <Disclosure.Panel className={"overflow-x-auto"}>
+                <pre className={"hello"}>
                   <code>{props.details}</code>
                 </pre>
               </Disclosure.Panel>
