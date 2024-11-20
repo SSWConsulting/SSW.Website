@@ -20,6 +20,7 @@ import { organizerSchema } from "../usergroup/organizer";
 import { customDownloadButtonSchema } from "./CustomDownloadButton";
 import { aboutUsBlockSchema } from "./aboutUs";
 import { agendaSchema } from "./agenda";
+import { BreadcrumbSchema } from "./breadcrumbs/breadcrumbs.schema";
 import { builtOnAzureBlockSchema } from "./builtOnAzure";
 import { carouselBlockSchema } from "./carousel";
 import { citationBlockSchema } from "./citation";
@@ -61,6 +62,7 @@ export const pageBlocks: Template[] = [
   bookingButtonSchema,
   builtOnAzureBlockSchema,
   carouselBlockSchema,
+  BreadcrumbSchema,
   citationBlockSchema,
   clientListSchema,
   clientLogosBlockSchema,

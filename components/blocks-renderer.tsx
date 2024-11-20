@@ -91,6 +91,10 @@ const LatestTech = dynamic(() =>
 
 import { EventBooking } from "./training/eventBooking";
 
+const Breadcrumbs = dynamic(() =>
+  import("./blocks/breadcrumbs/breadcrumbs").then((mod) => mod.Breadcrumbs)
+);
+
 const InterestForm = dynamic(
   () => import("./events/interestForm").then((mod) => mod.InterestForm),
   { ssr: false }
@@ -118,6 +122,7 @@ const componentMap = {
   AboutUs,
   Carousel,
   Content,
+  Breadcrumbs,
   ServiceCards,
   UpcomingEvents,
   BuiltOnAzure,
