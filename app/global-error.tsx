@@ -1,14 +1,12 @@
 "use client";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import { ErrorPage } from "@/components/util/error-page";
-import { AppInsightsProvider } from "@/context/app-insight-client";
 import { ReactPlugin } from "@microsoft/applicationinsights-react-js";
 import { ApplicationInsights } from "@microsoft/applicationinsights-web";
 import { Inter } from "next/font/google";
 import { useEffect } from "react";
 import "styles.css";
 import menu from "../content/megamenu/menu.json";
-import GlobalErrorHandler from "./components/global-error-handler";
 import { MenuWrapper } from "./components/MenuWrapper";
 import PageLayout from "./components/page-layout";
 
