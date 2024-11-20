@@ -27,18 +27,6 @@ type ArticlesIndexPageProps = {
 };
 
 function ArticlesIndexPage({ props, tinaProps }: ArticlesIndexPageProps) {
-  const trace = `Error: Boundary error test
-    at https://app-sswwebsite-9eb3-pr-3303.azurewebsites.net/_next/static/chunks/9018-8d40e5ca379120ef.js:1:704
-    at aW (https://app-sswwebsite-9eb3-pr-3303.azurewebsites.net/_next/static/chunks/85cb52d0-025d895595333257.js:1:73245)
-    at oe (https://app-sswwebsite-9eb3-pr-3303.azurewebsites.net/_next/static/chunks/85cb52d0-025d895595333257.js:1:84686)
-    at ol (https://app-sswwebsite-9eb3-pr-3303.azurewebsites.net/_next/static/chunks/85cb52d0-025d895595333257.js:1:85324)
-    at or (https://app-sswwebsite-9eb3-pr-3303.azurewebsites.net/_next/static/chunks/85cb52d0-025d895595333257.js:1:85208)
-    at ol (https://app-sswwebsite-9eb3-pr-3303.azurewebsites.net/_next/static/chunks/85cb52d0-025d895595333257.js:1:86269)
-    at or (https://app-sswwebsite-9eb3-pr-3303.azurewebsites.net/_next/static/chunks/85cb52d0-025d895595333257.js:1:85208)
-    at ol (https://app-sswwebsite-9eb3-pr-3303.azurewebsites.net/_next/static/chunks/85cb52d0-025d895595333257.js:1:85304)
-    at or (https://app-sswwebsite-9eb3-pr-3303.azurewebsites.net/_next/static/chunks/85cb52d0-025d895595333257.js:1:85208)
-    at ol (https://app-sswwebsite-9eb3-pr-3303.azurewebsites.net/_next/static/chunks/85cb52d0-025d895595333257.js:1:86269)`;
-  throw new Error(trace);
   const { data } = tinaProps;
   data.articlesIndex;
   data.articlesIndex.seo;
