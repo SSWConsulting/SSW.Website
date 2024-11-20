@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
 import { SocialIcons } from "../../socialIcons/socialIcons";
 import { Container } from "../../util/container";
-import DeploymentLink from "../deploymentLink";
 import { CopyrightInfo } from "./copyright-info";
 import { DeploymentInfo } from "./deployment-info";
 
@@ -23,9 +22,7 @@ export const Footer = () => {
         </div>
         <hr className="my-2 border-gray-800" />
         <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between">
-          <DeploymentInfo>
-            <DeploymentLink />
-          </DeploymentInfo>
+          <DeploymentInfo />
           <SiteInfo />
         </div>
       </Container>

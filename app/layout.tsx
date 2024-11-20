@@ -1,4 +1,3 @@
-import { Footer } from "@/components/layout/footer/footer";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events";
@@ -75,7 +74,6 @@ export default async function RootLayout({
           {/* <Theme> */}
           {/* Ensures next/font CSS variable is accessible for all components */}
           <PageLayout
-            footer={<Footer />}
             megaMenu={MegaMenu({
               menuData: menuData,
               liveStreamData: liveStreamData,
@@ -91,6 +89,23 @@ export default async function RootLayout({
           <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
           <ChatBaseBot />
         </QueryProvider>
+        {/* <Theme> */}
+        {/* Ensures next/font CSS variable is accessible for all components */}
+        <PageLayout
+          megaMenu={MegaMenu({
+            menuData: menuData,
+            liveStreamData: liveStreamData,
+          })}
+        >
+          <AppInsightsProvider>
+            <WebVitals />
+            {children}
+            <ErrorThrower />
+          </AppInsightsProvider>
+          {/* </Theme> */}
+        </PageLayout>
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
+        <ChatBaseBot />
       </body>
     </html>
   );
