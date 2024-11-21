@@ -20,10 +20,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 function getLinks(paths: string[]): React.ReactNode[] {
-  if (paths.length === 0) {
-    return [];
-  }
   switch (paths.length) {
+    case 0:
+      return [];
     case 1:
       return [
         <BreadcrumbPage key={"breadcrumb-item-1"}>{paths[0]}</BreadcrumbPage>,
@@ -82,6 +81,7 @@ export function Breadcrumbs() {
     <Breadcrumb>
       <BreadcrumbList>
         {links.map((link, index) => (
+          // react fragments don't appear in the dom
           <React.Fragment key={`breadcrumb-${index}`}>
             {index && <BreadcrumbSeparator />}
             <BreadcrumbItem>{link}</BreadcrumbItem>
