@@ -28,10 +28,10 @@ export const ErrorPage = (props: ErrorPageProps) => {
         "bg-[url('/images/404/broken-chain.png')] bg-center bg-no-repeat md:bg-bottom"
       )}
     >
-      <div className="flex min-h-screen-4/5 flex-col md:flex-row">
-        <div className="px-7 pt-7">
+      <div className="flex min-h-screen-4/5 flex-col md:flex-row md:gap-7 lg:gap-14">
+        <div className="md:pt-7">
           <p className="text-center">
-            <span className="font-sans text-9xl font-extrabold leading-none text-sswRed">
+            <span className="font-sans text-[7rem] font-extrabold leading-none text-sswRed sm:text-9xl">
               {props.code || "Error"}
             </span>
           </p>
@@ -82,7 +82,7 @@ type ErrorTextProps = {
 
 export const ErrorText = (props: ErrorTextProps) => {
   return (
-    <div className="overflow-x-hidden py-12">
+    <div className="min-h-[35rem] overflow-x-hidden py-4 pt-4 md:py-12">
       {props.exitButtonCallback && (
         <div className="flex justify-end">
           <button
@@ -94,16 +94,15 @@ export const ErrorText = (props: ErrorTextProps) => {
         </div>
       )}
       <span
-        className="font-sans text-3xl font-extralight text-gray-650 md:text-5xl"
+        className="font-sans font-extralight text-gray-650"
         style={{ wordBreak: "break-word" }}
       >
-        <h1 className="mt-0 pb-1 pt-0 text-5xl">
+        <h1 className="mt-0 pb-1 pt-0 text-3xl sm:text-5xl">
           {props.title || "We're sorry, something has gone wrong here."}
         </h1>
         {props.tipText || (
           <div>
-            <h1 className="pb-1 pt-0 text-4xl"></h1>
-            <p className="pt-4 text-xl">
+            <p className="pt-4">
               For help, please submit a bug report issue on our GitHub at{" "}
               <a href="https://github.com/SSWConsulting/SSW.Website/issues/new/choose">
                 github.com/SSWConsulting/SSW.Website
@@ -118,7 +117,7 @@ export const ErrorText = (props: ErrorTextProps) => {
         <Disclosure>
           {({ open }) => (
             <>
-              <Disclosure.Button>
+              <Disclosure.Button className={"mt-5"}>
                 <div className="flex flex-row items-center font-extralight text-gray-650">
                   See details{" "}
                   <BiChevronRight className={open ? "rotate-90" : ""} />

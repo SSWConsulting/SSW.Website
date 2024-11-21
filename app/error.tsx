@@ -9,7 +9,7 @@ export const Error = ({
 }) => {
   return (
     <GlobalErrorHandler error={error}>
-      <ErrorPage details={error.message} />;
+      <ErrorPage details={error.message} />
     </GlobalErrorHandler>
   );
 };
