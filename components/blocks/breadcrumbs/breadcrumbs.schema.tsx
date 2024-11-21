@@ -6,12 +6,12 @@ export const BreadcrumbSchema: Template = {
   ui: {
     previewSrc: "/images/thumbs/tina/client-logos.jpg",
   },
-  // Todo: Find a way to have no fields - the one below is to satisfy compiler
   fields: [
     {
       type: "string",
       label: "Final Breadcrumb",
       name: "finalBreadcrumb",
+      description: "The final breadcrumb in the list",
     },
   ],
 };

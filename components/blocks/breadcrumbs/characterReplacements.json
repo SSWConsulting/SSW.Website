@@ -1,0 +1,18 @@
+[
+  { "from": "consulting", "to": "Services" },
+  { "from": "products", "to": "Products" },
+  { "from": "offices", "to": "Offices" },
+  { "from": "training", "to": "Training" },
+  { "from": "employment", "to": "Employment" },
+  { "from": "video-production", "to": "Video Production" },
+  { "from": "Training-videos", "to": "Training Videos" },
+  { "from": "industry", "to": "Industry" },
+  { "from": "company", "to": "Company" },
+  { "from": "events", "to": "Events" },
+  { "from": "partners", "to": "Partners" },
+  { "from": "netug", "to": ".NET User Group" },
+  { "from": "clients", "to": "Clients" },
+  { "from": "live", "to": "Live" },
+  { "from": "logo", "to": "Logo" },
+  { "from": "articles", "to": "Articles" }
+]
