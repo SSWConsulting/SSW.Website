@@ -31,7 +31,7 @@ export const ErrorPage = (props: ErrorPageProps) => {
       <div className="flex min-h-screen-4/5 flex-col md:flex-row md:gap-7 lg:gap-14">
         <div className="md:pt-7">
           <p className="text-center">
-            <span className="font-sans text-[7rem] font-extrabold leading-none text-sswRed sm:text-9xl">
+            <span className="font-sans text-8xl font-extrabold leading-none text-sswRed sm:text-9xl">
               {props.code || "Error"}
             </span>
           </p>
@@ -82,7 +82,7 @@ type ErrorTextProps = {
 
 export const ErrorText = (props: ErrorTextProps) => {
   return (
-    <div className="min-h-[35rem] overflow-x-hidden py-4 pt-4 md:py-12">
+    <div className="overflow-x-hidden py-4 md:py-12">
       {props.exitButtonCallback && (
         <div className="flex justify-end">
           <button
@@ -114,23 +114,25 @@ export const ErrorText = (props: ErrorTextProps) => {
         )}
       </span>
       {props.details && (
-        <Disclosure>
-          {({ open }) => (
-            <>
-              <Disclosure.Button className={"mt-5"}>
-                <div className="flex flex-row items-center font-extralight text-gray-650">
-                  See details{" "}
-                  <BiChevronRight className={open ? "rotate-90" : ""} />
-                </div>
-              </Disclosure.Button>
-              <Disclosure.Panel className={"overflow-x-auto"}>
-                <pre>
-                  <code>{props.details}</code>
-                </pre>
-              </Disclosure.Panel>
-            </>
-          )}
-        </Disclosure>
+        <div className="min-h-40">
+          <Disclosure>
+            {({ open }) => (
+              <>
+                <Disclosure.Button className={"mt-5"}>
+                  <div className="flex flex-row items-center font-extralight text-gray-650">
+                    See details{" "}
+                    <BiChevronRight className={open ? "rotate-90" : ""} />
+                  </div>
+                </Disclosure.Button>
+                <Disclosure.Panel className={"overflow-x-auto"}>
+                  <pre>
+                    <code>{props.details}</code>
+                  </pre>
+                </Disclosure.Panel>
+              </>
+            )}
+          </Disclosure>
+        </div>
       )}
     </div>
   );
