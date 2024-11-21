@@ -4,6 +4,11 @@ import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import ArticlePage, { ArticleData, ArticlePageProps } from ".";
+
+export const dynamicParams = false;
+
+type Articles = Awaited<ReturnType<typeof client.queries.articlesConnection>>;
+
 const getData = async (
   filename: string
 ): Promise<{
@@ -22,6 +27,12 @@ const getData = async (
   };
 };
 
+export async function generateStaticParams(): Promise<{ filename: string }[]> {
+  const articles: Articles = await client.queries.articlesConnection();
+  return articles.data.articlesConnection.edges.map((edge) => {
+    return { filename: edge.node._sys.filename };
+  });
+}
 export async function generateMetadata({
   params,
 }: {
