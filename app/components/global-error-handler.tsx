@@ -3,14 +3,11 @@ import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import React, { useEffect } from "react";
 function GlobalErrorHandler({ error, children }) {
   const appInsights = useAppInsightsContext();
-  // eslint-disable-next-line no-console
-  console.error("ErrorBoundary caught an error", error);
   useEffect(() => {
-    if (!appInsights)
+    if (!appInsights) {
       // eslint-disable-next-line no-console
-      console.log("AppInsights not initialized");
-    // eslint-disable-next-line no-console
-    else console.log("AppInsights initialized");
+      console.error("AppInsights not initialized");
+    }
 
     try {
       appInsights.trackException({
