@@ -1,3 +1,8 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+import React from "react";
+
 import {
   Breadcrumb,
   BreadcrumbEllipsis,
@@ -14,35 +19,74 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+function getLinks(paths: string[]): React.ReactNode[] {
+  if (paths.length === 0) {
+    return [];
+  }
+  switch (paths.length) {
+    case 1:
+      return [
+        <BreadcrumbPage key={"breadcrumb-item-1"}>{paths[0]}</BreadcrumbPage>,
+      ];
+    //may need to seperate out case 2 later
+    case 2:
+    case 3:
+    case 4:
+      return [
+        <BreadcrumbLink key={"breadcrumb-item-1"} href={"/"}>
+          {paths[0]}
+        </BreadcrumbLink>,
+        ...paths.slice(1, -1).map((path, index) => (
+          <BreadcrumbLink
+            key={`breadcrumb-item-${index + 1}`}
+            href={`/${path}`}
+          >
+            {path}
+          </BreadcrumbLink>
+        )),
+        <BreadcrumbPage key={"breadcrumb-last-item"}>
+          {paths[-1]}
+        </BreadcrumbPage>,
+      ];
+    default:
+      return [
+        <BreadcrumbLink key={"breadcrumb-item-1"} href={"/"}>
+          {paths[0]}
+        </BreadcrumbLink>,
+        <DropdownMenu key={"breadcrumb-dropdown"}>
+          <DropdownMenuTrigger className="flex items-center gap-1">
+            <BreadcrumbEllipsis className="size-4" />
+            <span className="sr-only">Toggle menu</span>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="start">
+            {paths.slice(1, -1).map((path, index) => (
+              <DropdownMenuItem key={`breadcrumb-dropdown-${index}`}>
+                {path}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>,
+        <BreadcrumbPage key={"breadcrumb-last-item"}>
+          {paths[-1]}
+        </BreadcrumbPage>,
+      ];
+  }
+}
+
 export function Breadcrumbs() {
+  const paths = usePathname().split("/");
+  // Index 0 is an empty string if the path starts with a slash
+  const links = getLinks(paths.slice(1));
+
   return (
     <Breadcrumb>
       <BreadcrumbList>
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/">Home</BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-1">
-              <BreadcrumbEllipsis className="size-4" />
-              <span className="sr-only">Toggle menu</span>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start">
-              <DropdownMenuItem>Documentation</DropdownMenuItem>
-              <DropdownMenuItem>Themes</DropdownMenuItem>
-              <DropdownMenuItem>GitHub</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/docs/components">Components</BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
-        </BreadcrumbItem>
+        {links.map((link, index) => (
+          <React.Fragment key={`breadcrumb-${index}`}>
+            {index && <BreadcrumbSeparator />}
+            <BreadcrumbItem>{link}</BreadcrumbItem>
+          </React.Fragment>
+        ))}
       </BreadcrumbList>
     </Breadcrumb>
   );
