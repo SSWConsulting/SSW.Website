@@ -125,7 +125,7 @@ export const ErrorText = (props: ErrorTextProps) => {
                 </div>
               </Disclosure.Button>
               <Disclosure.Panel className={"overflow-x-auto"}>
-                <pre className={"hello"}>
+                <pre>
                   <code>{props.details}</code>
                 </pre>
               </Disclosure.Panel>
