@@ -37,7 +37,7 @@ export function AppInsightsProvider({ children }: { children: ReactNode }) {
     }
 
     return () => {
-      // appInsights.unload();
+      appInsights.unload();
     };
   }, [reactPlugin]);
 
