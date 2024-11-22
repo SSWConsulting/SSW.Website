@@ -32,7 +32,7 @@ export const ErrorPage = (props: ErrorPageProps) => {
         className={classNames(
           "w-full",
           "select-none",
-          "bg-[url('/images/404/broken-chain.png')] bg-center bg-no-repeat md:bg-bottom"
+          "bg-errorPage bg-center bg-no-repeat md:bg-bottom"
         )}
       >
         <div className="flex min-h-screen-4/5 flex-col md:flex-row md:gap-7 lg:gap-14">
