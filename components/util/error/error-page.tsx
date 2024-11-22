@@ -6,7 +6,7 @@ import { Layout } from "../../layout";
 import { Container } from "../container";
 import { ErrorText } from "./error";
 
-//TODO: delete merge both ErrorPage components after migrating the 404 and 500 pages to app routing https://github.com/SSWConsulting/SSW.Website/issues/2600
+//TODO: consolidate all of the error components into one https://github.com/SSWConsulting/SSW.Website/issues/3350
 
 type ErrorPageProps = {
   menu?: {

@@ -8,6 +8,8 @@ import { BiChevronRight } from "react-icons/bi";
 import { FaXmark } from "react-icons/fa6";
 import { LiveStreamData } from "../layout/layout";
 
+//TODO: consolidate all of the error components into one https://github.com/SSWConsulting/SSW.Website/issues/3350
+
 export type ErrorPageProps = {
   code?: string;
   title?: string;
