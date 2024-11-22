@@ -43,7 +43,14 @@ export default function GlobalError({ error }: { error: Error }) {
 
     if (appInsights.config.connectionString) {
       appInsights.loadAppInsights();
-      appInsights.trackException({ error: error });
+      appInsights.trackException({
+        exception: error,
+        properties: {
+          Request: `GET /${window?.location?.pathname || "unknown"}`,
+          Type: "ErrorBoundary",
+          ErrorInfo: error.stack || error.message,
+        },
+      });
     } else {
       // eslint-disable-next-line no-console
       console.error(
