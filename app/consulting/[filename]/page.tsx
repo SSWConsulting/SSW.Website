@@ -3,8 +3,8 @@ import { getRandomTestimonialsByCategory } from "@/helpers/getTestimonials";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
 import { TODAY } from "hooks/useFetchEvents";
-import { useSEO } from "hooks/useSeo";
-import { Metadata } from "next";
+// import { useSEO } from "hooks/useSeo";
+// import { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { TinaClient } from "../../tina-client";
 import OldConsultingPage from "./consulting";
@@ -38,7 +38,7 @@ type PageData = {
 };
 
 export async function generateStaticParams(): Promise<PageData[]> {
-  let newConsultingPages: NewConsultingPages =
+  const newConsultingPages: NewConsultingPages =
     await client.queries.consultingv2Connection();
   const newConsultingPagesData: PageData[] =
     newConsultingPages.data.consultingv2Connection.edges.map((page) => {
@@ -59,7 +59,7 @@ const newConsultingPageData = async (filename: string) => {
   const tinaProps: NewConsultingPage = await client.queries.consultingv2({
     relativePath: `${filename}.json`,
   });
-  const global = await client.queries.global({ relativePath: "global.json" });
+  const global = await client.queries.global({ relativePath: "index.json" });
   const seo = tinaProps.data.consultingv2.seo;
   return {
     props: {
@@ -146,10 +146,10 @@ const consultingPageData = async (filename: string) => {
   };
 };
 
-type GenerateMetaDataProps = {
-  params: PageData;
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+// type GenerateMetaDataProps = {
+//   params: PageData;
+//   searchParams: { [key: string]: string | string[] | undefined };
+// };
 
 // export async function generateMetadata({
 //   params: { filename, isNewConsultingPage
@@ -193,12 +193,12 @@ export default async function Consulting({ params }: { params: PageData }) {
   const { props } = pageData;
 
   return isNewConsultingPage ? (
-    <div className={openSans.className}>
-      <TinaClient props={props} Component={OldConsultingPage} />
-    </div>
-  ) : (
     <div>
       <TinaClient props={props} Component={ConsultingPage2} />
+    </div>
+  ) : (
+    <div className={openSans.className}>
+      <TinaClient props={props} Component={OldConsultingPage} />
     </div>
   );
 }
