@@ -403,6 +403,14 @@ export default {
         subscribeBackground: "url('/images/thumbs/subscribeBackground.png')",
         arcBackground: "url('/images/background/arcBackground.png')",
         waveBackground: "url('/images/background/waveBackground.svg')",
+        bgGradientDarkToLeft:
+          "linear-gradient(to left, #333333 0%, #121212 100%)",
+        bgGradientDarkToRight:
+          "linear-gradient(to right, #333333 0%, #121212 100%)",
+        bgGradientDarkToBottom:
+          "linear-gradient(to bottom, #333333 0%, #000000 100%)",
+        bgGradientDarkToTop:
+          "linear-gradient(to top, #333333 0%, #000000 100%)",
       },
     },
     linearGradientColors: {
