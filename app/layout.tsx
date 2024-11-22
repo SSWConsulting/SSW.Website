@@ -16,6 +16,7 @@ import client from "../tina/__generated__/client";
 import { MenuWrapper } from "./components/MenuWrapper";
 import PageLayout from "./components/page-layout";
 import { WebVitals } from "./components/web-vitals";
+import ErrorThrower from "./error-thrower";
 import { LiveStream } from "./live-steam-banner/live-stream";
 import { DEFAULT } from "./meta-data/default";
 import { QueryProvider } from "./providers/query-provider";
@@ -81,6 +82,7 @@ export default async function RootLayout({
             <AppInsightsProvider>
               <WebVitals />
               {children}
+              <ErrorThrower />
             </AppInsightsProvider>
             {/* </Theme> */}
           </PageLayout>
