@@ -173,11 +173,11 @@ export const consultingv2Schema: Collection = {
   name: "consultingv2",
   format: "json",
   path: "content/consultingv2",
-  ui: {
-    router: ({ document }) => {
-      return `/consultingv2/${document._sys.filename}`;
-    },
-  },
+  // ui: {
+  //   router: ({ document }) => {
+  //     return `/consultingv2/${document._sys.filename}`;
+  //   },
+  // },
   fields: [
     tipField,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment

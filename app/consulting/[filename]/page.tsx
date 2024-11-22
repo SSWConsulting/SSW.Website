@@ -7,43 +7,75 @@ import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { TinaClient } from "../../tina-client";
-import ConsultingPage from "./consulting";
-
+import OldConsultingPage from "./consulting";
+import ConsultingPage2 from "./consulting2";
 const openSans = Open_Sans({
   variable: "--open-sans-font",
   subsets: ["latin"],
   display: "swap",
   weight: ["300", "400", "600"],
 });
+type NewConsultingPage = Awaited<
+  ReturnType<typeof client.queries.consultingv2>
+>;
+
+type OldConsultingPage = Awaited<
+  ReturnType<typeof client.queries.consultingContentQuery>
+>;
+
+type NewConsultingPages = Awaited<
+  ReturnType<typeof client.queries.consultingv2Connection>
+>;
+type ConsultingPages = Awaited<
+  ReturnType<typeof client.queries.consultingConnection>
+>;
 
 export const dynamicParams = false;
 
-export async function generateStaticParams() {
-  let pageListData = await client.queries.consultingConnection();
-  const allPagesListData = pageListData;
+type PageData = {
+  filename: string;
+  isNewConsultingPage: boolean;
+};
 
-  while (pageListData.data.consultingConnection.pageInfo.hasNextPage) {
-    const lastCursor =
-      pageListData.data.consultingConnection.pageInfo.endCursor;
-    pageListData = await client.queries.consultingConnection({
-      after: lastCursor,
+export async function generateStaticParams(): Promise<PageData[]> {
+  let newConsultingPages: NewConsultingPages =
+    await client.queries.consultingv2Connection();
+  const newConsultingPagesData: PageData[] =
+    newConsultingPages.data.consultingv2Connection.edges.map((page) => {
+      return { filename: page.node._sys.filename, isNewConsultingPage: true };
+    });
+  const consultingPagesData: ConsultingPages =
+    await client.queries.consultingConnection();
+
+  const consultingPages: PageData[] =
+    consultingPagesData.data.consultingConnection.edges.map((page) => {
+      return { filename: page.node._sys.filename, isNewConsultingPage: false };
     });
 
-    allPagesListData.data.consultingConnection.edges.push(
-      ...pageListData.data.consultingConnection.edges
-    );
-  }
-
-  const pages = allPagesListData.data.consultingConnection.edges.map(
-    (page) => ({
-      filename: page.node._sys.filename,
-    })
-  );
-
-  return pages;
+  return [...consultingPages, ...newConsultingPagesData];
 }
 
-const getData = async (filename: string) => {
+const newConsultingPageData = async (filename: string) => {
+  const tinaProps: NewConsultingPage = await client.queries.consultingv2({
+    relativePath: `${filename}.json`,
+  });
+  const global = await client.queries.global({ relativePath: "global.json" });
+  const seo = tinaProps.data.consultingv2.seo;
+  return {
+    props: {
+      data: tinaProps.data,
+      query: tinaProps.query,
+      variables: tinaProps.variables,
+      header: {
+        url: global.data.global.header.url,
+      },
+      seo,
+      ...tinaProps,
+    },
+  };
+};
+
+const consultingPageData = async (filename: string) => {
   const tinaProps = await client.queries.consultingContentQuery({
     relativePath: `${filename}.mdx`,
     date: TODAY.toISOString(),
@@ -115,38 +147,73 @@ const getData = async (filename: string) => {
 };
 
 type GenerateMetaDataProps = {
-  params: { filename: string };
+  params: PageData;
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export async function generateMetadata({
-  params,
-}: GenerateMetaDataProps): Promise<Metadata> {
-  const tinaProps = await getData(params.filename);
+// export async function generateMetadata({
+//   params: { filename, isNewConsultingPage
+//   },
+// }: GenerateMetaDataProps): Promise<Metadata> {
 
-  const seo = tinaProps.props.seo;
-  if (seo && !seo.canonical) {
-    seo.canonical = `${tinaProps.props.header.url}consulting/${params.filename}`;
+//   newConsultingPageData(filename);
+
+//   consultingPageData(filename)
+//   const tinaProps = isNewConsultingPage ? await newConsultingPageData(filename) : await consultingPageData(filename);
+
+//   const seo = tinaProps.props.data.[""].seo;
+//   if (seo && !seo.canonical) {
+//     seo.canonical = `${tinaProps.props.header.url}consulting/${params.filename}`;
+//   }
+
+//   // eslint-disable-next-line react-hooks/rules-of-hooks
+//   const { seoProps } = useSEO(seo);
+
+//   return { ...seoProps };
+// }
+
+export default async function Consulting({ params }: { params: PageData }) {
+  // console.log("params", params);
+  // const { filename, isNewConsultingPage } = params;
+  // const { props } = isNewConsultingPage
+  //   ? await newConsultingPageData(filename)
+  //   : await consultingPageData(filename);
+  const isNewConsultingPage: boolean = Boolean(
+    await findConsultingPageType(params.filename)
+  );
+  let pageData:
+    | Awaited<ReturnType<typeof consultingPageData>>
+    | Awaited<ReturnType<typeof newConsultingPageData>>;
+
+  if (isNewConsultingPage) {
+    pageData = await newConsultingPageData(params.filename);
+  } else {
+    pageData = await consultingPageData(params.filename);
   }
+  const { props } = pageData;
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(seo);
-
-  return { ...seoProps };
-}
-
-export default async function Consulting({
-  params,
-}: {
-  params: { filename: string };
-}) {
-  const { filename } = params;
-
-  const { props } = await getData(filename);
-
-  return (
+  return isNewConsultingPage ? (
     <div className={openSans.className}>
-      <TinaClient props={props} Component={ConsultingPage} />
+      <TinaClient props={props} Component={OldConsultingPage} />
+    </div>
+  ) : (
+    <div>
+      <TinaClient props={props} Component={ConsultingPage2} />
     </div>
   );
+}
+
+const findConsultingPageType = async (
+  filename: string
+): Promise<ConsultingPageType> => {
+  const tinaProps: NewConsultingPage = await client.queries.consultingv2({
+    relativePath: `${filename}.json`,
+  });
+  if (tinaProps.data.consultingv2) return ConsultingPageType.New;
+  return ConsultingPageType.Old;
+};
+
+enum ConsultingPageType {
+  New = 1,
+  Old = 0,
 }
