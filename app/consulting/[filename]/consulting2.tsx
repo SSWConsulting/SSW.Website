@@ -7,10 +7,13 @@ import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { useTina } from "tinacms/dist/react";
 
-export default function ConsultingV2({ props }) {
-  const { data } = props;
+type ConsultingV2Props = {
+  tinaProps: any;
+  props: any;
+};
 
-  useTina(data);
+export default function ConsultingV2({ tinaProps, props }: ConsultingV2Props) {
+  const { data } = tinaProps;
   return (
     <>
       <Section className="mb-16">
@@ -18,7 +21,7 @@ export default function ConsultingV2({ props }) {
           {data.consultingv2.blocks ? (
             <div>
               <Blocks
-                prefix={"ConsultingV2AfterBody"}
+                prefix={"Consultingv2Blocks"}
                 blocks={data.consultingv2.blocks}
               />
             </div>

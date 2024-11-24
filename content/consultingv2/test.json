@@ -1,6 +1,11 @@
 {
+  "seo": {
+    "title": "Angular",
+    "description": "Come chat to us about your angular project!"
+  },
   "blocks": [
     {
+      "finalBreadcrumb": "Angular",
       "_template": "breadcrumbs"
     }
   ]
