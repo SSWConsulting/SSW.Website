@@ -84,7 +84,13 @@ function getLinks(paths: string[], finalNode?: string): React.ReactNode[] {
   }
 }
 
-export function Breadcrumbs({ data }) {
+type BreadcrumbsProps = {
+  data: {
+    finalBreadcrumb: string;
+  };
+};
+
+export function Breadcrumbs({ data }: BreadcrumbsProps) {
   const paths = usePathname().split("/");
   // Index 0 is an empty string if the path starts with a slash
   const links = getLinks(paths, data.finalBreadcrumb);
