@@ -19,6 +19,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
 
 function getLinks(paths: string[], finalNode?: string): React.ReactNode[] {
   const initialTitle = "Home";
@@ -98,7 +99,11 @@ export function Breadcrumbs({ data }: BreadcrumbsProps) {
         {links.map((link, index) => (
           // react fragments don't appear in the dom
           <React.Fragment key={`breadcrumb-${index}`}>
-            {index !== 0 ? <BreadcrumbSeparator /> : null}
+            {index !== 0 ? (
+              <BreadcrumbSeparator>
+                <Separator />
+              </BreadcrumbSeparator>
+            ) : null}
             <BreadcrumbItem>{link}</BreadcrumbItem>
           </React.Fragment>
         ))}
@@ -106,3 +111,20 @@ export function Breadcrumbs({ data }: BreadcrumbsProps) {
     </Breadcrumb>
   );
 }
+
+const Separator = () => {
+  return (
+    <svg
+      className={cn("h-5 w-5")}
+      strokeWidth={1.5}
+      width="10"
+      height="10"
+      viewBox="0 0 20 20"
+      sharp-rendering="auto"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M14 2L6.2384 18.5754" stroke="#CCCCCC" stroke-linecap="round" />
+    </svg>
+  );
+};
