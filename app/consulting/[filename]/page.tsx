@@ -193,13 +193,9 @@ export default async function Consulting({ params }: { params: PageData }) {
   const { props } = pageData;
 
   return isNewConsultingPage ? (
-    <div>
-      <TinaClient props={props} Component={ConsultingPage2} />
-    </div>
+    <TinaClient props={props} Component={ConsultingPage2} />
   ) : (
-    <div className={openSans.className}>
-      <TinaClient props={props} Component={OldConsultingPage} />
-    </div>
+    <TinaClient props={props} Component={OldConsultingPage} />
   );
 }
 

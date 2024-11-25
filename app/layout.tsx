@@ -73,7 +73,7 @@ export default async function RootLayout({
         <QueryProvider>
           {/* <Theme> */}
           {/* Ensures next/font CSS variable is accessible for all components */}
-          <div className="flex min-h-screen flex-col">
+          <div className="flex h-screen min-h-screen flex-col">
             <header className="no-print">
               {liveStreamData ? (
                 <LiveStream event={liveStreamData}>
