@@ -116,7 +116,7 @@ const Separator = () => {
   return (
     <svg
       className={cn("h-5 w-5")}
-      strokeWidth={1.5}
+      strokeWidth={1}
       width="10"
       height="10"
       viewBox="0 0 20 20"

@@ -19,7 +19,7 @@ const BreadcrumbList = React.forwardRef<
   <ol
     ref={ref}
     className={cn(
-      "unstyled flex flex-wrap items-center gap-1 break-words text-sm dark:text-neutral-400",
+      "unstyled flex flex-wrap items-center gap-1 break-words text-sm font-light dark:text-neutral-400",
       className
     )}
     {...props}
@@ -69,7 +69,7 @@ const BreadcrumbPage = React.forwardRef<
     role="link"
     aria-disabled="true"
     aria-current="page"
-    className={cn("font-normal dark:text-neutral-50", className)}
+    className={cn("dark:text-neutral-50", className)}
     {...props}
   />
 ));
