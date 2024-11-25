@@ -82,6 +82,9 @@ export default {
       8: "8px",
     },
     extend: {
+      textUnderlineOffset: {
+        3: "3px",
+      },
       gridTemplateRows: {
         12: "repeat(12, minmax(min-content, 0fr))",
       },
@@ -271,6 +274,7 @@ export default {
           700: "#606060",
           800: "#414141",
           900: "#333333",
+          950: "#222222",
           1000: "#1c1b2e",
         },
         platform: platform.reduce(
