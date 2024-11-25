@@ -20,11 +20,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-// interface BreadcrumbsProps {
-//   finalNode: string;
-// }
-
 function getLinks(paths: string[], finalNode?: string): React.ReactNode[] {
+  const initialTitle = "Home";
   // Replace paths with character replacements
   const displayNames = paths.map(
     (path) =>
@@ -45,7 +42,7 @@ function getLinks(paths: string[], finalNode?: string): React.ReactNode[] {
     case 4:
       return [
         <BreadcrumbLink key={"breadcrumb-item-1"} href={"/"}>
-          Home
+          {initialTitle}
         </BreadcrumbLink>,
         ...paths.slice(1, -1).map((path, index) => (
           <BreadcrumbLink
@@ -62,7 +59,7 @@ function getLinks(paths: string[], finalNode?: string): React.ReactNode[] {
     default:
       return [
         <BreadcrumbLink key={"breadcrumb-item-1"} href={"/"}>
-          Home
+          {initialTitle}
         </BreadcrumbLink>,
         <DropdownMenu key={"breadcrumb-dropdown"}>
           <DropdownMenuTrigger className="flex items-center gap-1">
