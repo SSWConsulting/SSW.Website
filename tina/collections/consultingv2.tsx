@@ -181,6 +181,9 @@ export const consultingv2Schema: Collection = {
           finalBreadcrumb: string;
           _template: string;
         }[];
+        if (!blocks) {
+          return values;
+        }
         const breadcrumbsWithTitle = blocks.map((block) => {
           if (block._template !== "breadcrumbs") {
             return block;
