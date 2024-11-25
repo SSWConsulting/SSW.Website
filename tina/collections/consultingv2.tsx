@@ -167,7 +167,6 @@ export const consultingTagSchema: Collection = {
     },
   ],
 };
-
 export const consultingv2Schema: Collection = {
   label: "Consultingv2 - Pages",
   name: "consultingv2",
@@ -200,11 +199,8 @@ export const consultingv2Schema: Collection = {
           ...values,
           blocks: [...breadcrumbsWithTitle],
         };
-        console.log("returner", returner);
         return returner;
       }
-      console.log("crud operation is not create", form.crudType);
-      return values;
     },
   },
   fields: [
