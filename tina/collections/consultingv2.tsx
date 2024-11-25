@@ -173,11 +173,37 @@ export const consultingv2Schema: Collection = {
   name: "consultingv2",
   format: "json",
   path: "content/consultingv2",
-  // ui: {
-  //   router: ({ document }) => {
-  //     return `/consultingv2/${document._sys.filename}`;
-  //   },
-  // },
+  ui: {
+    beforeSubmit: async ({ values, form }) => {
+      if (form.crudType === "create") {
+        const seo = values.seo as { title: string };
+        const blocks = form.values.blocks as {
+          finalBreadcrumb: string;
+          _template: string;
+        }[];
+        const breadcrumbsWithTitle = blocks.map((block) => {
+          if (block._template !== "breadcrumbs") {
+            return block;
+          }
+          if (block.finalBreadcrumb) {
+            return block;
+          }
+          return {
+            ...block,
+            finalBreadcrumb: seo.title,
+          };
+        });
+        const returner = {
+          ...values,
+          blocks: [...breadcrumbsWithTitle],
+        };
+        console.log("returner", returner);
+        return returner;
+      }
+      console.log("crud operation is not create", form.crudType);
+      return values;
+    },
+  },
   fields: [
     tipField,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
