@@ -202,10 +202,11 @@ export default async function Consulting({ params }: { params: PageData }) {
 const findConsultingPageType = async (
   filename: string
 ): Promise<ConsultingPageType> => {
-  const tinaProps: NewConsultingPage = await client.queries.consultingv2({
-    relativePath: `${filename}.json`,
+  const v2Pages = await client.queries.consultingv2Connection();
+  v2Pages.data.consultingv2Connection.edges.map((page) => {
+    if (page.node._sys.filename === `${filename}`)
+      return ConsultingPageType.New;
   });
-  if (tinaProps.data.consultingv2) return ConsultingPageType.New;
   return ConsultingPageType.Old;
 };
 
