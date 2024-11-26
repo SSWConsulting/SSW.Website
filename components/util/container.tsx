@@ -4,7 +4,7 @@ const verticalPadding = {
   custom: "",
   xsmall: "py-4",
   small: "py-8",
-  medium: "py-10",
+  medium: "py-12",
   large: "py-24",
   default: "py-12",
 } as const;

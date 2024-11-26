@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { Button, Input, Template, wrapFieldsWithMeta } from "tinacms";
 
@@ -36,6 +37,27 @@ export const BreadcrumbSchema: Template = {
         }),
       },
       description: "The final breadcrumb in the list",
+    },
+    {
+      type: "string",
+      name: "tip",
+      label: "Tip",
+      ui: {
+        component: () => {
+          return (
+            <div className="whitespace-pre-wrap">
+              {" "}
+              💡 Breadcrumb url segment mapping can be configured inside of{" "}
+              <Link
+                className="text-blue-600 hover:underline"
+                href="/admin/index.html#/collections/edit/global/index"
+              >
+                global settings
+              </Link>
+            </div>
+          );
+        },
+      },
     },
   ],
 };

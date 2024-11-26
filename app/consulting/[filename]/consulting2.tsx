@@ -20,12 +20,11 @@ export default function ConsultingV2({ tinaProps }: ConsultingV2PageProps) {
   return (
     <>
       <div className="dark flex h-full flex-col">
-        <Section color={SectionColor.ToggleLightMode}>
-          <Container
-            padding="px-4"
-            className="h-full w-full flex-wrap sm:py-12"
-            size="medium"
-          >
+        <Section
+          className="flex h-full flex-col"
+          color={SectionColor.ToggleLightMode}
+        >
+          <Container className="h-full w-full flex-wrap sm:py-12" size="medium">
             {data.consultingv2.blocks ? (
               <div>
                 <Blocks
