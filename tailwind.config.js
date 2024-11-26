@@ -407,6 +407,8 @@ export default {
         subscribeBackground: "url('/images/thumbs/subscribeBackground.png')",
         arcBackground: "url('/images/background/arcBackground.png')",
         waveBackground: "url('/images/background/waveBackground.svg')",
+        errorPage:
+          "linear-gradient(#ffffff, transparent 75%), url(/images/404/broken-chain.png)",
       },
     },
     linearGradientColors: {
