@@ -69,7 +69,7 @@ const BreadcrumbPage = React.forwardRef<
     role="link"
     aria-disabled="true"
     aria-current="page"
-    className={cn(className)}
+    className={cn(className, "min-h-4 min-w-1")}
     {...props}
   />
 ));
