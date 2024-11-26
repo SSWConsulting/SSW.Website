@@ -125,6 +125,33 @@ export const globalSchema: Collection = {
       name: "breadcrumbSuffix",
     },
     {
+      type: "object",
+      label: "Breadcrumb Replacements",
+      name: "breadcrumbReplacements",
+      ui: {
+        description:
+          'Used to replace the URL segment in the breadcrumbs component with the "to" field',
+        itemProps(item) {
+          return { label: `${item.from} ➡️ ${item.to}` };
+        },
+      },
+      list: true,
+      fields: [
+        {
+          name: "from",
+          type: "string",
+          label: "From",
+          required: true,
+        },
+        {
+          name: "to",
+          type: "string",
+          label: "To",
+          required: true,
+        },
+      ],
+    },
+    {
       type: "string",
       label: "Booking Button Text",
       name: "bookingButtonText",

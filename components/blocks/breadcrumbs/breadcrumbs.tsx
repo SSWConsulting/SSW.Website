@@ -15,12 +15,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import global from "@/content/global/index.json";
 import { cn } from "@/lib/utils";
 import { Consultingv2BlocksBreadcrumbs } from "@/tina/types";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { tinaField } from "tinacms/dist/react";
-import characterReplacements from "./characterReplacements.json";
 
 function getLinks(
   paths: string[],
@@ -31,7 +31,8 @@ function getLinks(
   // Replace paths with character replacements
   const displayNames = paths.map(
     (path) =>
-      characterReplacements.find((value) => value.from === path)?.to || path
+      global.breadcrumbReplacements.find((value) => value.from === path)?.to ||
+      path
   );
   switch (paths.length) {
     case 0:
