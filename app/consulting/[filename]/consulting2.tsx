@@ -16,11 +16,16 @@ type ConsultingV2PageProps = {
 
 export default function ConsultingV2({ tinaProps }: ConsultingV2PageProps) {
   const { data } = tinaProps;
+
   return (
     <>
-      <div className="flex h-full flex-col">
-        <Section color={SectionColor.DarkGray} className="">
-          <Container padding="px-4" className="w-full flex-wrap">
+      <div className="dark flex h-full flex-col">
+        <Section color={SectionColor.ToggleLightMode}>
+          <Container
+            padding="px-4"
+            className="h-full w-full flex-wrap sm:py-12"
+            size="medium"
+          >
             {data.consultingv2.blocks ? (
               <div>
                 <Blocks

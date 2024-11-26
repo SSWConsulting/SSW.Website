@@ -4,6 +4,7 @@ export const sectionColors = {
   darkgray: "bg-gray-950 text-gray-300",
   red: "bg-sswRed text-white",
   black: "bg-black text-white",
+  toggleLightMode: "dark:bg-gray-950 dark:text-gray-300",
 };
 
 export enum SectionColor {
@@ -12,4 +13,7 @@ export enum SectionColor {
   DarkGray = "darkgray",
   Red = "red",
   Black = "black",
+  ToggleLightMode = "toggleLightMode",
 }
+
+export enum SectionColorConsulting {}

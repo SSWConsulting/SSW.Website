@@ -115,7 +115,7 @@ export function Breadcrumbs({ data }: BreadcrumbsProps) {
 const Separator = () => {
   return (
     <svg
-      className={cn("h-5 w-5")}
+      className={cn("h-4 w-4", "dark:stroke-gray-300")}
       strokeWidth={1}
       width="10"
       height="10"
@@ -124,7 +124,7 @@ const Separator = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M14 2L6.2384 18.5754" stroke="#CCCCCC" stroke-linecap="round" />
+      <path d="M14 2L6.2384 18.5754" stroke-linecap="round" />
     </svg>
   );
 };
