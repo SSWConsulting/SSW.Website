@@ -99,6 +99,7 @@ export default {
       zIndex: {
         1: 1,
         videoThumbnail: 11,
+        1000: "1000",
       },
       height: {
         22: "5.5rem",
@@ -403,14 +404,10 @@ export default {
         subscribeBackground: "url('/images/thumbs/subscribeBackground.png')",
         arcBackground: "url('/images/background/arcBackground.png')",
         waveBackground: "url('/images/background/waveBackground.svg')",
-        bgGradientDarkToLeft:
-          "linear-gradient(to left, #333333 0%, #121212 100%)",
-        bgGradientDarkToRight:
-          "linear-gradient(to right, #333333 0%, #121212 100%)",
-        bgGradientDarkToBottom:
-          "linear-gradient(to bottom, #333333 0%, #000000 100%)",
-        bgGradientDarkToTop:
-          "linear-gradient(to top, #333333 0%, #000000 100%)",
+        "dark-to-left": "linear-gradient(to left, #333333, #121212)",
+        "dark-to-right": "linear-gradient(to right, #333333, #121212)",
+        "dark-to-top": "linear-gradient(to bottom, #333333, #000000)",
+        "dark-to-bottom": "linear-gradient(to top, #333333, #000000)",
       },
     },
     linearGradientColors: {

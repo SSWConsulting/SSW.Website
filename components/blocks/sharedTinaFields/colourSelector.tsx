@@ -1,45 +1,38 @@
 import React from "react";
 import { wrapFieldsWithMeta } from "tinacms";
 
-export const colorOptions = [
-  "gradientLeft",
-  "gradientRight",
-  "gradientTop",
-  "gradientBottom",
-  "transparent",
-  "gray",
-];
+export interface ColorPickerOptions {
+  name: string;
+  classes: string;
+}
 
-export const ColorPickerInput = wrapFieldsWithMeta(({ input }) => {
-  const inputClasses = {
-    gradientLeft: "bgGradientDarkToLeft",
-    gradientRight: "bgGradientDarkToRight",
-    gradientTop: "bgGradientDarkToTop",
-    gradientBottom: "bgGradientDarkToBottom",
-    transparent: "bg-transparent",
-    gray: "bg-gray-700",
-  };
-
-  return (
-    <>
-      <input type="text" id={input.name} className="hidden" {...input} />
-      <div className="flex flex-wrap gap-2">
-        {colorOptions.map((color) => {
-          return (
-            <button
-              key={color}
-              className={`size-9 rounded-full border shadow ${
-                inputClasses[color]
-              } ${
-                input.value === color ? "ring ring-blue-400 ring-offset-2" : ""
-              }`}
-              onClick={() => {
-                input.onChange(color);
-              }}
-            ></button>
-          );
-        })}
-      </div>
-    </>
-  );
-});
+export const ColorPickerInput = (colours: ColorPickerOptions[]) => {
+  return wrapFieldsWithMeta(({ input }) => {
+    return (
+      <>
+        <input type="text" id={input.name} className="hidden" {...input} />
+        <div className="flex flex-wrap gap-2">
+          {colours.map((colour) => {
+            return (
+              <button
+                key={colour.name}
+                className={`h-9 w-full rounded-full border shadow ${
+                  colour.classes
+                } ${
+                  input.value === colour.name
+                    ? "ring ring-blue-400 ring-offset-2"
+                    : ""
+                }`}
+                onClick={() => {
+                  input.onChange(colour.name);
+                }}
+              >
+                <span>{colour.name}</span>
+              </button>
+            );
+          })}
+        </div>
+      </>
+    );
+  });
+};
