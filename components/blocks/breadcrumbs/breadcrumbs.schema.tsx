@@ -14,6 +14,12 @@ export const BreadcrumbSchema: Template = {
       label: "Final Breadcrumb",
       name: "finalBreadcrumb",
       ui: {
+        validate: (value) => {
+          if (typeof value === "string") {
+            value = value.trim();
+          }
+          return value ? null : "The final breadcrumb must be filled out";
+        },
         component: wrapFieldsWithMeta(({ form, input }) => {
           const formState = form.getState();
           return (
@@ -26,12 +32,9 @@ export const BreadcrumbSchema: Template = {
                     input.onChange(formState.values.seo.title);
                   }}
                 >
-                  Reset
+                  Use Page Title
                 </Button>
               </div>
-              <span className="mt-2 block whitespace-normal font-sans text-xs text-gray-400">
-                Note: This field defaults to the title of the current page
-              </span>
             </div>
           );
         }), // make final breadcrumb heading bigger
