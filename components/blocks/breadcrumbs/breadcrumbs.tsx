@@ -1,9 +1,5 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import React from "react";
-import characterReplacements from "./characterReplacements.json";
-
 import {
   Breadcrumb,
   BreadcrumbEllipsis,
@@ -20,8 +16,17 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
+import { Consultingv2BlocksBreadcrumbs } from "@/tina/types";
+import { usePathname } from "next/navigation";
+import React from "react";
+import { tinaField } from "tinacms/dist/react";
+import characterReplacements from "./characterReplacements.json";
 
-function getLinks(paths: string[], finalNode?: string): React.ReactNode[] {
+function getLinks(
+  paths: string[],
+  data: Consultingv2BlocksBreadcrumbs,
+  finalNode?: string
+): React.ReactNode[] {
   const initialTitle = "Home";
   // Replace paths with character replacements
   const displayNames = paths.map(
@@ -33,7 +38,10 @@ function getLinks(paths: string[], finalNode?: string): React.ReactNode[] {
       return [];
     case 1:
       return [
-        <BreadcrumbPage key={"breadcrumb-item-1"}>
+        <BreadcrumbPage
+          key={"breadcrumb-item-1"}
+          data-tina-field={tinaField(data, "finalBreadcrumb")}
+        >
           {finalNode || "Home"}
         </BreadcrumbPage>,
       ];
@@ -53,7 +61,10 @@ function getLinks(paths: string[], finalNode?: string): React.ReactNode[] {
             {displayNames[index + 1]}
           </BreadcrumbLink>
         )),
-        <BreadcrumbPage key={"breadcrumb-last-item"}>
+        <BreadcrumbPage
+          key={"breadcrumb-last-item"}
+          data-tina-field={tinaField(data, "finalBreadcrumb")}
+        >
           {finalNode || displayNames.at(-1)}
         </BreadcrumbPage>,
       ];
@@ -82,16 +93,10 @@ function getLinks(paths: string[], finalNode?: string): React.ReactNode[] {
   }
 }
 
-type BreadcrumbsProps = {
-  data: {
-    finalBreadcrumb: string;
-  };
-};
-
-export function Breadcrumbs({ data }: BreadcrumbsProps) {
+export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
   const paths = usePathname().split("/");
   // Index 0 is an empty string if the path starts with a slash
-  const links = getLinks(paths, data.finalBreadcrumb);
+  const links = getLinks(paths, data, data.finalBreadcrumb);
 
   return (
     <Breadcrumb>

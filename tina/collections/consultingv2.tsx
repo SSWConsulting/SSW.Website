@@ -202,6 +202,9 @@ export const consultingv2Schema: Collection = {
         return returner;
       }
     },
+    router: (args) => {
+      return `/consulting/${args.document._sys.filename}`;
+    },
   },
   fields: [
     tipField,
