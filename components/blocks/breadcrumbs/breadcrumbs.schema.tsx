@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { Button, Input, Template, wrapFieldsWithMeta } from "tinacms";
-
+import { TinaInfo } from "../../../components/tina/tina-info";
 export const BreadcrumbSchema: Template = {
   name: "breadcrumbs",
   label: "Breadcrumbs",
@@ -29,8 +29,8 @@ export const BreadcrumbSchema: Template = {
                   Reset
                 </Button>
               </div>
-              <span className="mt-2 block whitespace-normal font-sans text-xs font-bold text-gray-400">
-                Note: this field defaults to the title of the current page
+              <span className="mt-2 block whitespace-normal font-sans text-xs text-gray-400">
+                Note: This field defaults to the title of the current page
               </span>
             </div>
           );
@@ -45,7 +45,7 @@ export const BreadcrumbSchema: Template = {
       ui: {
         component: () => {
           return (
-            <div className="whitespace-pre-wrap">
+            <TinaInfo>
               {" "}
               💡 Breadcrumb url segment mapping can be configured inside of{" "}
               <Link
@@ -54,7 +54,7 @@ export const BreadcrumbSchema: Template = {
               >
                 global settings
               </Link>
-            </div>
+            </TinaInfo>
           );
         },
       },
