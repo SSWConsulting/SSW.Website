@@ -100,7 +100,7 @@
         {
           "title": "Azure AI",
           "description": "Make your existing applications smarter. Add Artificial Intelligence APIs like vision, speech, language and knowledge capability to your apps.",
-          "logo": "/images/thumbs/thumb-azurecognitiveservices.jpg",
+          "logo": "/images/thumbs/consulting/thumb-azure.svg",
           "page": "content/consulting/azure.mdx",
           "tags": [
             {
@@ -856,7 +856,7 @@
         {
           "title": "Network Architecture",
           "description": "In such a fast paced moving industry, it's important to have a well designed and maintained Network Infrastructure.",
-          "logo": "/images/thumbs/thumb-network.jpg",
+          "logo": "/images/thumbs/consulting/thumb-networkarchitecture.svg",
           "page": "content/consulting/network-architecture.mdx",
           "tags": [
             {
@@ -867,7 +867,7 @@
         {
           "title": "PowerShell",
           "description": "Get your infrastructure automation from snail's pace to blazing fast.",
-          "logo": "/images/thumbs/thumb-powershell.jpg",
+          "logo": "/images/thumbs/consulting/thumb-powershell.svg",
           "page": "content/consulting/powershell.mdx",
           "tags": [
             {
@@ -878,7 +878,7 @@
         {
           "title": "On-Premises: Hyper-V",
           "description": "We recommend Microsoft Hyper-V - the fastest growing virtualization solution on the market today.",
-          "logo": "/images/thumbs/thumb-hyper-v.jpg",
+          "logo": "/images/thumbs/consulting/thumb-hyperv.svg",
           "page": "content/consulting/hyper-v.mdx",
           "tags": [
             {
@@ -889,7 +889,7 @@
         {
           "title": "On-Premises: Data Protection Manager",
           "description": "Microsoft System Center Data Protection Manager can take the stress out of backups by allowing you to control all backups from one central console.",
-          "logo": "/images/thumbs/thumb-data-protection.jpg",
+          "logo": "/images/thumbs/consulting/thumb-dataprotection.svg",
           "page": "content/consulting/data-protection-manager.mdx",
           "externalUrl": "",
           "tags": [
