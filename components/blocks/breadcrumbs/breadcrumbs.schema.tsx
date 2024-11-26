@@ -34,7 +34,13 @@ export const BreadcrumbSchema: Template = {
               </span>
             </div>
           );
-        }),
+        }), // make final breadcrumb heading bigger
+        // make all headings the same size
+        // fix the bug when the final breadcrumb is not set
+        // fix the note to be smaller
+        // add a note under show breadcrumb to indicate that this is for the old breadcrumb components
+        // add a title (similar to seo and blocks) in seo values
+        // talk to matt about moving the "filename" field to the top
       },
       description: "The final breadcrumb in the list",
     },

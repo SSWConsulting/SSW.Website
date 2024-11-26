@@ -138,6 +138,7 @@ export const consultingCategorySchema: Collection = {
   label: "Consulting - Categories",
   name: "consultingCategory",
   path: "content/consulting/category",
+
   format: "json",
   ui: {
     global: true,
@@ -172,6 +173,7 @@ export const consultingv2Schema: Collection = {
   name: "consultingv2",
   format: "json",
   path: "content/consultingv2",
+  description: "Add components to build your page",
   ui: {
     beforeSubmit: async ({ values, form }) => {
       if (form.crudType === "create") {

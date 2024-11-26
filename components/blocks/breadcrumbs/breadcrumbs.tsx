@@ -66,7 +66,7 @@ function getLinks(
           key={"breadcrumb-last-item"}
           data-tina-field={tinaField(data, "finalBreadcrumb")}
         >
-          {finalNode || displayNames.at(-1)}
+          {finalNode || ""}
         </BreadcrumbPage>,
       ];
     default:
@@ -88,7 +88,7 @@ function getLinks(
           </DropdownMenuContent>
         </DropdownMenu>,
         <BreadcrumbPage key={"breadcrumb-last-item"}>
-          {finalNode || displayNames.at(-1)}
+          {finalNode || ""}
         </BreadcrumbPage>,
       ];
   }

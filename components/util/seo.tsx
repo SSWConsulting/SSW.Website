@@ -1,4 +1,7 @@
 import { NextSeo, NextSeoProps } from "next-seo";
+import { title } from "process";
+import React from "react";
+import { GroupField, GroupFieldProps, wrapFieldsWithMeta } from "tinacms";
 import layoutData from "../../content/global/index.json";
 import { NEXT_SEO_DEFAULT } from "../../next-seo.config";
 import { TextInputWithCount } from "../textInputWithCount/textInputWithCount";
@@ -40,7 +43,10 @@ export const SEO = ({ seo }) => {
 
 export const seoSchema = {
   type: "object",
-  label: "SEO Values",
+  label: "Page Metadata",
+  component: "group",
+  title: "SEO",
+  description: "Update the title, description, URL, and OG image",
   name: "seo",
   fields: [
     {
@@ -77,6 +83,7 @@ export const seoSchema = {
     },
     {
       type: "boolean",
+      desciption: "This is for the old breadcrumb components only",
       name: "showBreadcrumb",
       label: "Show Breadcrumb",
     },
