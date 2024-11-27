@@ -199,14 +199,14 @@ export default {
       ], // ordered by z-index ascendant
       fontFamily: {
         sans: [
-          "var(--open-sans-font)",
+          "var(--inter-font)",
           "Helvetica Neue",
           "Helvetica",
           "sans-serif",
         ],
         helvetica: ["Helvetica Neue", "Helvetica", "sans-serif"],
         body: [
-          "var(--open-sans-font)",
+          "var(--inter-font)",
           "Helvetica Neue",
           "Helvetica",
           "sans-serif",
@@ -403,6 +403,8 @@ export default {
         subscribeBackground: "url('/images/thumbs/subscribeBackground.png')",
         arcBackground: "url('/images/background/arcBackground.png')",
         waveBackground: "url('/images/background/waveBackground.svg')",
+        errorPage:
+          "linear-gradient(#ffffff, transparent 75%), url(/images/404/broken-chain.png)",
       },
     },
     linearGradientColors: {

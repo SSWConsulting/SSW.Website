@@ -12,7 +12,6 @@ export default function ProductsContent({ props }) {
       <Section className="mx-auto w-full max-w-9xl px-8 pt-5">
         <Breadcrumbs
           path={removeExtension(variables.relativePath)}
-          suffix={data.global?.breadcrumbSuffix}
           title={data.products?.seo?.title}
         />
       </Section>

@@ -8,3 +8,4 @@ export const getMegamenu = cache(async () => {
 
   return data;
 });
+export type MegaMenuProps = Awaited<ReturnType<typeof client.queries.megamenu>>;
