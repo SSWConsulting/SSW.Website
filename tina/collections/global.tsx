@@ -130,7 +130,7 @@ export const globalSchema: Collection = {
       name: "breadcrumbReplacements",
       ui: {
         description:
-          'Used to replace the URL segment in the breadcrumbs component with the "to" field',
+          "Used to replace the URL segment in the breadcrumbs component with the 'to' field",
         itemProps(item) {
           return { label: `${item.from} ➡️ ${item.to}` };
         },

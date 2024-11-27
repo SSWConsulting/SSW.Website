@@ -1,7 +1,5 @@
 import { NextSeo, NextSeoProps } from "next-seo";
-import { title } from "process";
 import React from "react";
-import { GroupField, GroupFieldProps, wrapFieldsWithMeta } from "tinacms";
 import layoutData from "../../content/global/index.json";
 import { NEXT_SEO_DEFAULT } from "../../next-seo.config";
 import { TextInputWithCount } from "../textInputWithCount/textInputWithCount";
