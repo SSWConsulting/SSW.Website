@@ -21,27 +21,23 @@ export default function ConsultingV2({
 
   return (
     <>
-      <Section
-        className="dark flex h-full flex-grow flex-col"
-        color={SectionColor.ToggleLightMode}
-      >
-        <Container
-          className="size-full w-full flex-grow flex-wrap sm:py-12"
-          size="small"
-        >
-          {data.consultingv2.blocks ? (
-            <div>
-              <Blocks
-                prefix={"Consultingv2Blocks"}
-                blocks={data.consultingv2.blocks}
-              />
+      <div className="dark flex h-full flex-col">
+        <Section color={SectionColor.ToggleLightMode}>
+          <Container width="custom" size="small" className="w-full sm:py-12">
+            <div className="w-full">
+              {data.consultingv2.blocks ? (
+                <Blocks
+                  prefix={"Consultingv2Blocks"}
+                  blocks={data.consultingv2.blocks}
+                />
+              ) : (
+                <></>
+              )}
             </div>
-          ) : (
-            <></>
-          )}
-        </Container>
+          </Container>
+        </Section>
         <PreFooter />
-      </Section>
+      </div>
     </>
   );
 }

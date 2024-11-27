@@ -15,6 +15,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Container } from "@/components/util/container";
 import global from "@/content/global/index.json";
 import { cn } from "@/lib/utils";
 import { Consultingv2BlocksBreadcrumbs } from "@/tina/types";
@@ -100,21 +101,23 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
   const links = getLinks(paths, data, data.finalBreadcrumb);
 
   return (
-    <Breadcrumb>
-      <BreadcrumbList>
-        {links.map((link, index) => (
-          // react fragments don't appear in the dom
-          <React.Fragment key={`breadcrumb-${index}`}>
-            {index !== 0 ? (
-              <BreadcrumbSeparator>
-                <Separator />
-              </BreadcrumbSeparator>
-            ) : null}
-            <BreadcrumbItem>{link}</BreadcrumbItem>
-          </React.Fragment>
-        ))}
-      </BreadcrumbList>
-    </Breadcrumb>
+    <Container size="custom">
+      <Breadcrumb>
+        <BreadcrumbList>
+          {links.map((link, index) => (
+            // react fragments don't appear in the dom
+            <React.Fragment key={`breadcrumb-${index}`}>
+              {index !== 0 ? (
+                <BreadcrumbSeparator>
+                  <Separator />
+                </BreadcrumbSeparator>
+              ) : null}
+              <BreadcrumbItem>{link}</BreadcrumbItem>
+            </React.Fragment>
+          ))}
+        </BreadcrumbList>
+      </Breadcrumb>
+    </Container>
   );
 }
 
