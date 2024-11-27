@@ -100,7 +100,7 @@
         {
           "title": "Azure AI",
           "description": "Make your existing applications smarter. Add Artificial Intelligence APIs like vision, speech, language and knowledge capability to your apps.",
-          "logo": "/images/thumbs/consulting/thumb-azure.svg",
+          "logo": "/images/thumbs/thumb-azurecognitiveservices.jpg",
           "page": "content/consulting/azure.mdx",
           "tags": [
             {
@@ -305,7 +305,7 @@
         {
           "title": "Microsoft Azure",
           "description": "Enables you to build and run highly available applications without focusing on the infrastructure. Azure makes it easy, scalable, and cheap... for others it is difficult and expensive :)",
-          "logo": "/images/thumbs/thumb-azure-2023.png",
+          "logo": "/images/thumbs/consulting/thumb-azure.svg",
           "page": "content/consulting/azure.mdx",
           "tags": [
             {
