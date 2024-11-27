@@ -27,7 +27,7 @@ export default function ConsultingV2({
       >
         <Container
           className="size-full w-full flex-grow flex-wrap sm:py-12"
-          size="medium"
+          size="small"
         >
           {data.consultingv2.blocks ? (
             <div>
