@@ -6,7 +6,7 @@ type PageLayoutProps = {
 };
 const PageLayout = ({ children, megaMenu }: PageLayoutProps) => {
   return (
-    <div className="screen flex h-screen min-h-screen flex-col">
+    <div className="flex h-screen min-h-screen flex-col">
       <header className="no-print">{megaMenu}</header>
       <main className="grow bg-white">{children}</main>
       <Footer />
