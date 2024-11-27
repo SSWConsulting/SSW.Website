@@ -203,10 +203,12 @@ const findConsultingPageType = async (
   filename: string
 ): Promise<ConsultingPageType> => {
   const v2Pages = await client.queries.consultingv2Connection();
-  v2Pages.data.consultingv2Connection.edges.map((page) => {
-    if (page.node._sys.filename === `${filename}`)
+
+  for (const page of v2Pages.data.consultingv2Connection.edges) {
+    if (page.node._sys.filename === filename) {
       return ConsultingPageType.New;
-  });
+    }
+  }
   return ConsultingPageType.Old;
 };
 
