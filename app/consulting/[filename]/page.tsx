@@ -176,11 +176,6 @@ export async function generateMetadata({
 }
 
 export default async function Consulting({ params }: { params: PageData }) {
-  // console.log("params", params);
-  // const { filename, isNewConsultingPage } = params;
-  // const { props } = isNewConsultingPage
-  //   ? await newConsultingPageData(filename)
-  //   : await consultingPageData(filename);
   const isNewConsultingPage: boolean = Boolean(
     await findConsultingPageType(params.filename)
   );
