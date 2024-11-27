@@ -7,14 +7,16 @@ import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { Consultingv2Query } from "@/tina/types";
 
-type ConsultingV2PageProps = {
+type ConsultingV2PageProps<T> = {
   tinaProps: {
     data: Consultingv2Query;
   };
-  props: any;
+  props: T;
 };
 
-export default function ConsultingV2({ tinaProps }: ConsultingV2PageProps) {
+export default function ConsultingV2({
+  tinaProps,
+}: ConsultingV2PageProps<object>) {
   const { data } = tinaProps;
 
   return (
