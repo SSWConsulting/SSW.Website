@@ -1,5 +1,6 @@
 import { Template } from "tinacms";
-import { backgroundOptions } from "../sharedTinaFields/blockBackgroundOptions";
+import { backgroundOptions } from "../sharedTinaFields/colourOptions/blockBackgroundOptions";
+import { buttonOptions } from "../sharedTinaFields/colourOptions/buttonOptions";
 import { ColorPickerInput } from "../sharedTinaFields/colourSelector";
 import { IconPickerInput } from "../sharedTinaFields/iconSelector";
 
@@ -222,7 +223,7 @@ export const ImageTextBlockSchema: Template = {
           name: "colour",
           ui: {
             //@ts-expect-error – custom component typing won't be pinned down
-            component: ColorPickerInput(backgroundOptions),
+            component: ColorPickerInput(buttonOptions),
           },
         },
       ],

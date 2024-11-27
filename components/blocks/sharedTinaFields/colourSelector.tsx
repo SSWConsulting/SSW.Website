@@ -16,7 +16,7 @@ export const ColorPickerInput = (colours: ColorPickerOptions[]) => {
             return (
               <button
                 key={colour.name}
-                className={`h-9 w-full rounded-full border shadow ${
+                className={`h-9 w-full rounded-full border text-white shadow ${
                   colour.classes
                 } ${
                   input.value === colour.name
@@ -27,7 +27,7 @@ export const ColorPickerInput = (colours: ColorPickerOptions[]) => {
                   input.onChange(colour.name);
                 }}
               >
-                <span>{colour.name}</span>
+                {colour.name}
               </button>
             );
           })}
