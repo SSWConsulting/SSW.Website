@@ -3,10 +3,11 @@ import { backgroundOptions } from "../sharedTinaFields/colourOptions/blockBackgr
 import { buttonOptions } from "../sharedTinaFields/colourOptions/buttonOptions";
 import { ColorPickerInput } from "../sharedTinaFields/colourSelector";
 import { IconPickerInput } from "../sharedTinaFields/iconSelector";
+import { listItemSchema } from "./listItem";
 
 export const ImageTextBlockSchema: Template = {
-  name: "mediaTextBlock",
-  label: "Media Text Block",
+  name: "imageTextBlock",
+  label: "Image Text Block",
   ui: {
     previewSrc: "/images/thumbs/tina/client-logos.jpg",
     defaultItem: {
@@ -132,30 +133,11 @@ export const ImageTextBlockSchema: Template = {
         {
           list: true,
           type: "object",
-          label: "Feature",
-          name: "feature",
-          description: "Add a feature to the the feature columns.",
-          fields: [
-            {
-              type: "string",
-              label: "Heading",
-              name: "heading",
-            },
-            {
-              type: "string",
-              label: "Description",
-              name: "description",
-            },
-            {
-              type: "string",
-              label: "Icon",
-              name: "icon",
-              ui: {
-                //@ts-expect-error – custom component typing won't be pinned down
-                component: IconPickerInput,
-              },
-            },
-          ],
+          label: "Features",
+          name: "features",
+          description: "Add an item to the the feature columns.",
+          //@ts-expect-error – fields are not being recognized
+          fields: listItemSchema,
         },
       ],
     },
