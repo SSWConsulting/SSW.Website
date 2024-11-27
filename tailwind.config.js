@@ -404,10 +404,8 @@ export default {
         subscribeBackground: "url('/images/thumbs/subscribeBackground.png')",
         arcBackground: "url('/images/background/arcBackground.png')",
         waveBackground: "url('/images/background/waveBackground.svg')",
-        "dark-to-left": "linear-gradient(to left, #333333, #121212)",
-        "dark-to-right": "linear-gradient(to right, #333333, #121212)",
-        "dark-to-top": "linear-gradient(to bottom, #333333, #000000)",
-        "dark-to-bottom": "linear-gradient(to top, #333333, #000000)",
+        errorPage:
+          "linear-gradient(#ffffff, transparent 75%), url(/images/404/broken-chain.png)",
       },
     },
     linearGradientColors: {

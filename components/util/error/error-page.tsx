@@ -6,6 +6,8 @@ import { Layout } from "../../layout";
 import { Container } from "../container";
 import { ErrorText } from "./error";
 
+//TODO: consolidate all of the error components into one https://github.com/SSWConsulting/SSW.Website/issues/3350
+
 type ErrorPageProps = {
   menu?: {
     menuGroups: NavMenuGroup[];
@@ -30,13 +32,13 @@ export const ErrorPage = (props: ErrorPageProps) => {
         className={classNames(
           "w-full",
           "select-none",
-          "bg-[url('/images/404/broken-chain.png')] bg-center bg-no-repeat md:bg-bottom"
+          "bg-errorPage bg-center bg-no-repeat md:bg-bottom"
         )}
       >
-        <div className="flex min-h-screen-4/5 flex-col md:flex-row">
-          <div className="px-7 pt-7">
+        <div className="flex min-h-screen-4/5 flex-col md:flex-row md:gap-7 lg:gap-14">
+          <div className="md:pt-7">
             <p className="text-center">
-              <span className="font-sans text-9xl font-extrabold leading-none text-sswRed">
+              <span className="font-sans text-8xl font-extrabold leading-none text-sswRed sm:text-9xl">
                 {props.code || "Error"}
               </span>
             </p>
