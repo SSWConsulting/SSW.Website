@@ -5,6 +5,8 @@ import "aos/dist/aos.css"; // This is important to keep the animation
 import { TODAY } from "hooks/useFetchEvents";
 // import { useSEO } from "hooks/useSeo";
 // import { Metadata } from "next";
+import { useSEO } from "@/hooks/useSeo";
+import { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { TinaClient } from "../../tina-client";
 import OldConsultingPage from "./consulting";
@@ -146,31 +148,32 @@ const consultingPageData = async (filename: string) => {
   };
 };
 
-// type GenerateMetaDataProps = {
-//   params: PageData;
-//   searchParams: { [key: string]: string | string[] | undefined };
-// };
+type GenerateMetaDataProps = {
+  params: { filename: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
-// export async function generateMetadata({
-//   params: { filename, isNewConsultingPage
-//   },
-// }: GenerateMetaDataProps): Promise<Metadata> {
+export async function generateMetadata({
+  params: { filename },
+}: GenerateMetaDataProps): Promise<Metadata> {
+  const isNewConsultingPage = Boolean(await findConsultingPageType(filename));
 
-//   newConsultingPageData(filename);
+  const tinaProps = isNewConsultingPage
+    ? await newConsultingPageData(filename)
+    : await consultingPageData(filename);
 
-//   consultingPageData(filename)
-//   const tinaProps = isNewConsultingPage ? await newConsultingPageData(filename) : await consultingPageData(filename);
+  const seo =
+    tinaProps.props.data[isNewConsultingPage ? "consultingv2" : "consulting"]
+      .seo;
+  if (seo && !seo.canonical) {
+    seo.canonical = `${tinaProps.props.header.url}consulting/${filename}`;
+  }
 
-//   const seo = tinaProps.props.data.[""].seo;
-//   if (seo && !seo.canonical) {
-//     seo.canonical = `${tinaProps.props.header.url}consulting/${params.filename}`;
-//   }
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { seoProps } = useSEO(seo);
 
-//   // eslint-disable-next-line react-hooks/rules-of-hooks
-//   const { seoProps } = useSEO(seo);
-
-//   return { ...seoProps };
-// }
+  return { ...seoProps };
+}
 
 export default async function Consulting({ params }: { params: PageData }) {
   // console.log("params", params);
