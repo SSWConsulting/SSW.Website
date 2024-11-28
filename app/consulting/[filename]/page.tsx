@@ -35,9 +35,8 @@ type ConsultingPages = Awaited<
 
 export const dynamicParams = false;
 
-type PageData = {
+type ConsultingPageParams = {
   filename: string;
-  isNewConsultingPage: boolean;
 };
 
 async function extractAllPages(query, field: string) {
@@ -57,13 +56,13 @@ async function extractAllPages(query, field: string) {
   return accmulatedPages;
 }
 
-export async function generateStaticParams(): Promise<PageData[]> {
+export async function generateStaticParams(): Promise<ConsultingPageParams[]> {
   const newConsultingPages: NewConsultingPages = await extractAllPages(
     client.queries.consultingv2Connection,
     "consultingv2Connection"
   );
 
-  const newConsultingPagesData: PageData[] =
+  const newConsultingPagesData: ConsultingPageParams[] =
     newConsultingPages.data.consultingv2Connection.edges.map((page) => {
       return { filename: page.node._sys.filename, isNewConsultingPage: true };
     });
@@ -72,7 +71,7 @@ export async function generateStaticParams(): Promise<PageData[]> {
     client.queries.consultingConnection,
     "consultingConnection"
   );
-  const consultingPages: PageData[] =
+  const consultingPages: ConsultingPageParams[] =
     consultingPagesData.data.consultingConnection.edges.map((page) => {
       return { filename: page.node._sys.filename, isNewConsultingPage: false };
     });
@@ -198,7 +197,11 @@ export async function generateMetadata({
   return { ...seoProps };
 }
 
-export default async function Consulting({ params }: { params: PageData }) {
+export default async function Consulting({
+  params,
+}: {
+  params: ConsultingPageParams;
+}) {
   const isNewConsultingPage: boolean = Boolean(
     await findConsultingPageType(params.filename)
   );
