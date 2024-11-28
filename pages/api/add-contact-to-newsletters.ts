@@ -33,6 +33,7 @@ export default async function handler(
     if (error instanceof CustomError) {
       appInsight.defaultClient?.trackException({
         exception: new Error(error.message),
+
         properties: {
           Method: `${PowerAutomate_Endpoint.NEWSLETTERS} - ${error.method}`,
           RequestBody: error.requestBody,
@@ -49,7 +50,7 @@ export default async function handler(
           RequestBody: req.body,
           Status: error.response.status,
         },
-        severity: appInsight.Contracts.SeverityLevel.Error,
+        severity: appInsight.KnownSeverityLevel.Error,
       });
       res
         .status(error.response.status)
