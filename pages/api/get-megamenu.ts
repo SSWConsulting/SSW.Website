@@ -35,7 +35,7 @@ export default async function handler(
         Request: "GET /api/get-megamenu",
         Status: 500,
       },
-      severity: appInsights.Contracts.SeverityLevel.Error,
+      severity: appInsights.KnownSeverityLevel.Error,
     });
 
     console.error(err);

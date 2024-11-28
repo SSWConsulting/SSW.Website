@@ -1,14 +1,16 @@
+import { KnownSeverityLevel } from "applicationinsights";
+
 export class CustomError extends Error {
   statusCode: number;
   requestBody: string;
-  severity: number;
+  severity: KnownSeverityLevel;
   method: string;
 
   constructor(
     message: string,
     statusCode: number,
     requestBody?: string,
-    severity?: number,
+    severity?: KnownSeverityLevel,
     method?: string
   ) {
     super(message);

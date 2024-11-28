@@ -393,6 +393,11 @@
               "name": "Past User Groups",
               "url": "https://www.youtube.com/playlist?list=PLpiOR7CBNvlpmhfwQeIVhbqZKxV-do0wY",
               "widgetType": "standardLink"
+            },
+            {
+              "name": "Northwind365",
+              "url": "https://northwind365.com",
+              "widgetType": "standardLink"
             }
           ]
         }
