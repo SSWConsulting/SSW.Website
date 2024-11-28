@@ -40,11 +40,35 @@ type PageData = {
   isNewConsultingPage: boolean;
 };
 
+// export async function generateStaticParams() {
+//   let pageListData = await client.queries.consultingConnection();
+//   const allPagesListData = pageListData;
+
+//   while (pageListData.data.consultingConnection.pageInfo.hasNextPage) {
+//     const lastCursor =
+//       pageListData.data.consultingConnection.pageInfo.endCursor;
+//     pageListData = await client.queries.consultingConnection({
+//       after: lastCursor,
+//     });
+
+//     allPagesListData.data.consultingConnection.edges.push(
+//       ...pageListData.data.consultingConnection.edges
+//     );
+//   }
+
+//   const pages = allPagesListData.data.consultingConnection.edges.map(
+//     (page) => ({
+//       filename: page.node._sys.filename,
+//     })
+//   );
+//   console.log("pages", pages.length);
+//   return pages;
+// }
+
 async function extractAllPages(query, field: string) {
   let accumulatedPages = await query();
 
   const initialFetch = accumulatedPages;
-
   while (accumulatedPages.data[field].pageInfo.hasNextPage) {
     const lastCursor = accumulatedPages.data[field].pageInfo.endCursor;
 
@@ -56,8 +80,6 @@ async function extractAllPages(query, field: string) {
 }
 
 export async function generateStaticParams(): Promise<PageData[]> {
-  client.queries.articlesConnection;
-
   const newConsultingPages: NewConsultingPages = await extractAllPages(
     client.queries.consultingv2Connection,
     "consultingv2Connection"
