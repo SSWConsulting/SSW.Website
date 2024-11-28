@@ -28,7 +28,11 @@ function getLinks(
   data: Consultingv2BlocksBreadcrumbs,
   finalNode?: string
 ): React.ReactNode[] {
-  const initialTitle = "Home";
+  const french = false;
+
+  const placeholder = french ? "{{ TITRE DE LA PAGE }}" : "{{ PAGE TITLE }}";
+  const initialTitle = global.breadcrumbHomeRoute;
+
   // Replace paths with character replacements
   const displayNames = paths.map(
     (path) =>
@@ -44,7 +48,7 @@ function getLinks(
           key={"breadcrumb-item-1"}
           data-tina-field={tinaField(data, "finalBreadcrumb")}
         >
-          {finalNode || "Home"}
+          {finalNode || initialTitle || placeholder}
         </BreadcrumbPage>,
       ];
     //may need to seperate out case 2 later
@@ -67,7 +71,7 @@ function getLinks(
           key={"breadcrumb-last-item"}
           data-tina-field={tinaField(data, "finalBreadcrumb")}
         >
-          {finalNode || ""}
+          {finalNode || placeholder}
         </BreadcrumbPage>,
       ];
     default:
@@ -89,7 +93,7 @@ function getLinks(
           </DropdownMenuContent>
         </DropdownMenu>,
         <BreadcrumbPage key={"breadcrumb-last-item"}>
-          {finalNode || ""}
+          {finalNode || placeholder}
         </BreadcrumbPage>,
       ];
   }
