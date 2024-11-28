@@ -3,6 +3,7 @@ import { getRandomTestimonialsByCategory } from "@/helpers/getTestimonials";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
 import { TODAY } from "hooks/useFetchEvents";
+
 // import { useSEO } from "hooks/useSeo";
 // import { Metadata } from "next";
 import { useSEO } from "@/hooks/useSeo";
@@ -39,16 +40,38 @@ type PageData = {
   isNewConsultingPage: boolean;
 };
 
+async function extractAllPages(query, field: string) {
+  let accumulatedPages = await query();
+
+  const initialFetch = accumulatedPages;
+
+  while (accumulatedPages.data[field].pageInfo.hasNextPage) {
+    const lastCursor = accumulatedPages.data[field].pageInfo.endCursor;
+
+    accumulatedPages = await query({ after: lastCursor });
+
+    initialFetch.data[field].edges.push(...accumulatedPages.data[field].edges);
+  }
+  return accumulatedPages;
+}
+
 export async function generateStaticParams(): Promise<PageData[]> {
-  const newConsultingPages: NewConsultingPages =
-    await client.queries.consultingv2Connection();
+  client.queries.articlesConnection;
+
+  const newConsultingPages: NewConsultingPages = await extractAllPages(
+    client.queries.consultingv2Connection,
+    "consultingv2Connection"
+  );
+
   const newConsultingPagesData: PageData[] =
     newConsultingPages.data.consultingv2Connection.edges.map((page) => {
       return { filename: page.node._sys.filename, isNewConsultingPage: true };
     });
-  const consultingPagesData: ConsultingPages =
-    await client.queries.consultingConnection();
 
+  const consultingPagesData: ConsultingPages = await extractAllPages(
+    client.queries.consultingConnection,
+    "consultingConnection"
+  );
   const consultingPages: PageData[] =
     consultingPagesData.data.consultingConnection.edges.map((page) => {
       return { filename: page.node._sys.filename, isNewConsultingPage: false };
