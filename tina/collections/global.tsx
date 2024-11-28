@@ -123,6 +123,8 @@ export const globalSchema: Collection = {
       type: "string",
       label: "Breadcrumb Suffix",
       name: "breadcrumbSuffix",
+      description:
+        "Note: this is only used for the legacy breadcrumb component",
     },
     {
       type: "object",
@@ -150,6 +152,13 @@ export const globalSchema: Collection = {
           required: true,
         },
       ],
+    },
+    {
+      type: "string",
+      description: "The display heading for the first breadcrumb route",
+      label: "Breadcrumb Home Route",
+      required: true,
+      name: "breadcrumbHomeRoute",
     },
     {
       type: "string",
