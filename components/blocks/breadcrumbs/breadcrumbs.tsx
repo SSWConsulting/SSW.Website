@@ -133,7 +133,7 @@ const Separator = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M14 2L6.2384 18.5754" stroke-linecap="round" />
+      <path d="M14 2L6.2384 18.5754" strokeLinecap="round" />
     </svg>
   );
 };
