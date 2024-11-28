@@ -6,7 +6,7 @@ export const BreadcrumbSchema: Template = {
   name: "breadcrumbs",
   label: "Breadcrumbs",
   ui: {
-    previewSrc: "/images/thumbs/tina/client-logos.jpg",
+    previewSrc: "/images/thumbs/tina/breadcrumbs.jpg",
   },
   fields: [
     {
