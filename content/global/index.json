@@ -109,7 +109,7 @@
       "to": "Articles"
     }
   ],
-  "breadcrumbHomeRoute": "Test Home Route",
+  "breadcrumbHomeRoute": "Home",
   "bookingButtonText": "Book a FREE Initial Meeting",
   "bookingPhone": "+61 2 9953 3000",
   "defaultOGImage": "/images/ssw-default-og.jpg",
