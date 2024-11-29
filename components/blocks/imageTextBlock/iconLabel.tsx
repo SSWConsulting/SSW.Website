@@ -2,7 +2,7 @@ import { tinaField } from "tinacms/dist/react";
 import { Icon } from "../sharedTinaFields/icon";
 import { IconPickerInput } from "../sharedTinaFields/iconSelector";
 
-export const ListItem = ({ data }) => {
+export const IconLabel = ({ data }) => {
   return (
     <div className="flex gap-1 align-top">
       <div className="h-full">
@@ -14,33 +14,23 @@ export const ListItem = ({ data }) => {
           />
         )}
       </div>
-      <div className="flex flex-col">
-        <h4 className="w-full" data-tina-field={tinaField(data, "heading")}>
-          {data.heading}
-        </h4>
-        <p className="w-full" data-tina-field={tinaField(data, "description")}>
-          {data.description}
-        </p>
-      </div>
+      <p data-tina-field={tinaField(data, "labelText")}>{data.labelText}</p>
     </div>
   );
 };
 
-export const listItemSchema = [
+export const IconLabelSchema = [
   {
     type: "string",
-    label: "Heading",
-    name: "heading",
-  },
-  {
-    type: "string",
-    label: "Description",
-    name: "description",
+    label: "Label Text",
+    name: "labelText",
+    description: "Text for the label.",
   },
   {
     type: "string",
     label: "Icon",
     name: "icon",
+    description: "Icon to proceed the label.",
     ui: {
       component: IconPickerInput,
     },

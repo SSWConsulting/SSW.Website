@@ -26,12 +26,14 @@ export const IconOptions = {
 
 export const Icon = ({ data, className = "", tinaField = "" }) => {
   if (IconOptions[data.name] === null || IconOptions[data.name] === undefined) {
-    return null;
+    return <></>;
   }
 
   const { name } = data;
 
   const IconSVG = IconOptions[name];
 
-  return <IconSVG data-tina-field={tinaField} className={`${className}`} />;
+  return (
+    <IconSVG data-tina-field={tinaField} className={`${className} shrink-0`} />
+  );
 };

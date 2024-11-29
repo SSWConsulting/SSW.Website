@@ -3,6 +3,7 @@ import { backgroundOptions } from "../sharedTinaFields/colourOptions/blockBackgr
 import { buttonOptions } from "../sharedTinaFields/colourOptions/buttonOptions";
 import { ColorPickerInput } from "../sharedTinaFields/colourSelector";
 import { IconPickerInput } from "../sharedTinaFields/iconSelector";
+import { IconLabelSchema } from "./iconLabel";
 import { listItemSchema } from "./listItem";
 
 export const ImageTextBlockSchema: Template = {
@@ -16,9 +17,9 @@ export const ImageTextBlockSchema: Template = {
   },
   fields: [
     {
-      type: "string",
+      type: "number",
       label: "Background Colour",
-      name: "backgroundColor",
+      name: "background",
       ui: {
         //@ts-expect-error – custom component typing won't be pinned down
         component: ColorPickerInput(backgroundOptions),
@@ -85,24 +86,8 @@ export const ImageTextBlockSchema: Template = {
       label: "Top Label",
       name: "topLabel",
       description: "Add a label 'chip' to the top of the media text block.",
-      fields: [
-        {
-          type: "string",
-          label: "Label Text",
-          name: "labelText",
-          description: "Text for the label.",
-        },
-        {
-          type: "string",
-          label: "Icon",
-          name: "Icon",
-          description: "Choose an icon to go to the left of the label.",
-          ui: {
-            //@ts-expect-error – custom component typing won't be pinned down
-            component: IconPickerInput,
-          },
-        },
-      ],
+      //@ts-expect-error – fields are not being recognized
+      fields: IconLabelSchema,
     },
     {
       type: "string",
@@ -138,6 +123,12 @@ export const ImageTextBlockSchema: Template = {
           description: "Add an item to the the feature columns.",
           //@ts-expect-error – fields are not being recognized
           fields: listItemSchema,
+          ui: {
+            defaultItem: {
+              heading: "Lorem",
+              description: "Ipsum",
+            },
+          },
         },
       ],
     },
@@ -200,7 +191,7 @@ export const ImageTextBlockSchema: Template = {
           description: "Place the icon to the left of the button text.",
         },
         {
-          type: "string",
+          type: "number",
           label: "Colour",
           name: "colour",
           ui: {
