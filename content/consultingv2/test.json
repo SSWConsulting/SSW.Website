@@ -11,40 +11,40 @@
     {
       "background": 2,
       "topLabel": {
-        "labelText": "Top Label",
-        "icon": "BiArchiveIn"
+        "labelText": "Consulting",
+        "icon": "BiSolidBolt"
       },
-      "heading": "Test",
+      "heading": "Heading",
       "isH1": true,
-      "description": "test desc\n",
+      "description": "Futureproof your apps with .NET8, Microsoft’s latest LTS version, offering optimized performance, enhanced security, and cloud-native development in a stable, long-term supported ecosystem.\n",
+      "chips": {
+        "filledChipText": "Label",
+        "clearChipText": "Label"
+      },
       "featureColumns": {
         "twoColumns": true,
         "features": [
           {
-            "heading": "Test",
-            "description": "Description",
-            "icon": "BiAdjust"
+            "heading": "Lorem Ipsum",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+            "icon": "BiTimer"
           },
           {
-            "heading": "Desc",
-            "description": "rest",
-            "icon": "BiArch"
+            "heading": "Lorem Ipsum",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+            "icon": "BiSolidPhone"
           },
           {
-            "heading": "Heading",
-            "description": "some flavour text",
-            "icon": "BiAlarmExclamation"
+            "heading": "Lorem Ipsum",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+            "icon": "BiSolidPhone"
           },
           {
-            "heading": "Heading 2",
-            "description": "Some flavour text again this one.",
-            "icon": "BiArchiveIn"
+            "heading": "Lorem Ipsum",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+            "icon": "BiSolidPhone"
           }
         ]
-      },
-      "chips": {
-        "filledChipText": "chip a",
-        "clearChipText": "chip b"
       },
       "buttons": [
         {

@@ -53,6 +53,14 @@ export const ImageTextBlockSchema: Template = {
       toolbarOverride: ["bold", "italic", "link"],
     },
     {
+      name: "chips",
+      label: "Chips",
+      type: "object",
+      description: "Add chips to the bottom of the media text block.",
+      //@ts-expect-error – fields are not being recognized
+      fields: pillGroupSchema,
+    },
+    {
       name: "featureColumns",
       label: "Feature Columns",
       description:
@@ -83,14 +91,6 @@ export const ImageTextBlockSchema: Template = {
       ],
     },
     {
-      name: "chips",
-      label: "Chips",
-      type: "object",
-      description: "Add chips to the bottom of the media text block.",
-      //@ts-expect-error – fields are not being recognized
-      fields: pillGroupSchema,
-    },
-    {
       name: "buttons",
       label: "Button Row",
       type: "object",
@@ -104,27 +104,6 @@ export const ImageTextBlockSchema: Template = {
       },
       //@ts-expect-error – fields are not being recognized
       fields: buttonSchema,
-    },
-    {
-      label: "Lead Capture Button",
-      name: "leadCaptureButton",
-      type: "object",
-      description:
-        "An input and button field that provides the user a Jot form to get in contact.",
-      fields: [
-        {
-          type: "string",
-          label: "Button Text",
-          name: "buttonText",
-          description: "Text for the button.",
-        },
-        {
-          type: "string",
-          label: "Input Placeholder Text",
-          name: "inputPlaceholder",
-          description: "Placeholder text for the input field.",
-        },
-      ],
     },
     {
       type: "object",
