@@ -75,8 +75,8 @@ export const ImageTextBlockSchema: Template = {
           fields: listItemSchema,
           ui: {
             defaultItem: {
-              heading: "Lorem",
-              description: "Ipsum",
+              heading: "{{ HEADING }}",
+              description: "{{ DESCRIPTION }}",
             },
           },
         },

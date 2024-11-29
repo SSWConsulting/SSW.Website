@@ -18,7 +18,10 @@ export const ListItem = ({ data }) => {
         <h4 className="w-full" data-tina-field={tinaField(data, "heading")}>
           {data.heading}
         </h4>
-        <p className="w-full" data-tina-field={tinaField(data, "description")}>
+        <p
+          className="w-full font-light"
+          data-tina-field={tinaField(data, "description")}
+        >
           {data.description}
         </p>
       </div>
