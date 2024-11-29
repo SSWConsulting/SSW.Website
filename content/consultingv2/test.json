@@ -7,6 +7,56 @@
     {
       "finalBreadcrumb": "Angular",
       "_template": "breadcrumbs"
+    },
+    {
+      "background": 2,
+      "topLabel": {
+        "labelText": "Top Label",
+        "icon": "BiArchiveIn"
+      },
+      "heading": "Test",
+      "isH1": true,
+      "description": "test desc\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Test",
+            "description": "Description",
+            "icon": "BiAdjust"
+          },
+          {
+            "heading": "Desc",
+            "description": "rest",
+            "icon": "BiArch"
+          },
+          {
+            "heading": "Heading",
+            "description": "some flavour text",
+            "icon": "BiAlarmExclamation"
+          },
+          {
+            "heading": "Heading 2",
+            "description": "Some flavour text again this one.",
+            "icon": "BiArchiveIn"
+          }
+        ]
+      },
+      "chips": {
+        "filledChipText": "chip a",
+        "clearChipText": "chip b"
+      },
+      "buttons": [
+        {
+          "buttonText": "test",
+          "icon": "Tina"
+        },
+        {}
+      ],
+      "mediaConfuguration": {
+        "imageSource": "/images/AuctionsPlus-logo.jpg"
+      },
+      "_template": "imageTextBlock"
     }
   ]
 }
