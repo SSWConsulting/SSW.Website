@@ -57,8 +57,8 @@ export const BreadcrumbSchema: Template = {
               >
                 global settings
               </Link>
-              . For example, you can make '/consulting' routes show as
-              'Services' in the breadcrumb trail.
+              . For example, you can make &apos;/consulting&apos; routes show as
+              &apos;Services&apos; in the breadcrumb trail.
             </TinaInfo>
           );
         },
