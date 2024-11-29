@@ -5,6 +5,7 @@ import { ColorPickerInput } from "../sharedTinaFields/colourSelector";
 import { IconPickerInput } from "../sharedTinaFields/iconSelector";
 import { IconLabelSchema } from "./iconLabel";
 import { listItemSchema } from "./listItem";
+import { pillGroupSchema } from "./pillGroup";
 
 export const ImageTextBlockSchema: Template = {
   name: "imageTextBlock",
@@ -137,20 +138,8 @@ export const ImageTextBlockSchema: Template = {
       label: "Chips",
       type: "object",
       description: "Add chips to the bottom of the media text block.",
-      fields: [
-        {
-          type: "string",
-          label: "Filled Chip",
-          name: "filledChipText",
-          description: "Text for the filled chip.",
-        },
-        {
-          type: "string",
-          label: "Clear Chip",
-          name: "clearChipText",
-          description: "Text for the clear chip.",
-        },
-      ],
+      //@ts-expect-error – fields are not being recognized
+      fields: pillGroupSchema,
     },
     {
       name: "buttons",
