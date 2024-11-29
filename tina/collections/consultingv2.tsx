@@ -10,33 +10,6 @@ export const consultingv2Schema: Collection = {
   path: "content/consultingv2",
   description: "Add components to build your page",
   ui: {
-    beforeSubmit: async ({ values, form }) => {
-      const seo = values.seo as { title: string };
-      const blocks = form.values.blocks as {
-        finalBreadcrumb: string;
-        _template: string;
-      }[];
-      if (!blocks) {
-        return values;
-      }
-      const breadcrumbsWithTitle = blocks.map((block) => {
-        if (block._template !== "breadcrumbs") {
-          return block;
-        }
-        if (block.finalBreadcrumb) {
-          return block;
-        }
-        return {
-          ...block,
-          finalBreadcrumb: seo.title,
-        };
-      });
-      const returner = {
-        ...values,
-        blocks: [...breadcrumbsWithTitle],
-      };
-      return returner;
-    },
     router: (args) => {
       return `/consulting/${args.document._sys.filename}`;
     },
