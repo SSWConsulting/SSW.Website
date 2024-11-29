@@ -28,62 +28,6 @@ export const ImageTextBlockSchema: Template = {
     },
     {
       type: "object",
-      label: "Media",
-      name: "mediaConfuguration",
-      description: "Media configuration including layout and image upload.",
-      fields: [
-        {
-          type: "string",
-          label: "Media Placement",
-          name: "placement",
-          description:
-            "Choose the desktop (columned) layout for the media text block.",
-          default: "Right",
-          ui: {
-            component: "select",
-            //@ts-expect-error – options are not being recognized
-            options: ["Left", "Right"],
-          },
-        },
-        {
-          type: "string",
-          label: "Media Placement (mobile)",
-          name: "mobilePlacement",
-          description:
-            "Choose the mobile (stacked) layout for the media text block.",
-          default: "Above Text",
-          ui: {
-            component: "select",
-            //@ts-expect-error – options are not being recognized
-            options: [
-              {
-                label: "Above Text",
-                value: "Above",
-              },
-              {
-                label: "Below Text",
-                value: "Below",
-              },
-            ],
-          },
-        },
-        {
-          type: "image",
-          label: "Image Source",
-          name: "imageSource",
-          description:
-            "Upload an image or other media to display in the media text block.",
-        },
-        {
-          type: "string",
-          label: "Alt Text",
-          name: "altText",
-          description: "Add alt text for the image.",
-        },
-      ],
-    },
-    {
-      type: "object",
       label: "Top Label",
       name: "topLabel",
       description: "Add a label 'chip' to the top of the media text block.",
@@ -95,6 +39,12 @@ export const ImageTextBlockSchema: Template = {
       label: "Heading",
       name: "heading",
       description: "Heading text for the media text block.",
+    },
+    {
+      type: "boolean",
+      label: "Use as H1",
+      name: "isH1",
+      description: "Choose to use the heading as an H1 instead of an H2.",
     },
     {
       type: "rich-text",
@@ -208,6 +158,62 @@ export const ImageTextBlockSchema: Template = {
           label: "Input Placeholder Text",
           name: "inputPlaceholder",
           description: "Placeholder text for the input field.",
+        },
+      ],
+    },
+    {
+      type: "object",
+      label: "Media",
+      name: "mediaConfuguration",
+      description: "Media configuration including layout and image upload.",
+      fields: [
+        {
+          type: "string",
+          label: "Media Placement",
+          name: "placement",
+          description:
+            "Choose the desktop (columned) layout for the media text block.",
+          default: "Right",
+          ui: {
+            component: "select",
+            //@ts-expect-error – options are not being recognized
+            options: ["Left", "Right"],
+          },
+        },
+        {
+          type: "string",
+          label: "Media Placement (mobile)",
+          name: "mobilePlacement",
+          description:
+            "Choose the mobile (stacked) layout for the media text block.",
+          default: "Above Text",
+          ui: {
+            component: "select",
+            //@ts-expect-error – options are not being recognized
+            options: [
+              {
+                label: "Above Text",
+                value: "Above",
+              },
+              {
+                label: "Below Text",
+                value: "Below",
+              },
+            ],
+          },
+        },
+        {
+          type: "image",
+          label: "Image Source",
+          name: "imageSource",
+          description:
+            "Upload an image or other media to display in the media text block.",
+        },
+        {
+          type: "string",
+          label: "Alt Text",
+          name: "altText",
+          description: "Add alt text for the image.",
         },
       ],
     },

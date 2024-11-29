@@ -17,7 +17,7 @@ export const ImageTextBlock = ({ data }) => {
       <Container className="mx-auto flex align-top">
         <div className="w-full">
           {data.topLabel && <IconLabel data={data.topLabel} />}
-          <h3>{data.heading}</h3>
+          {data.isH1 ? <h1>{data.heading}</h1> : <h2>{data.heading}</h2>}
           <p>{data.description}</p>
           {data.chips && <PillGroup data={data.chips} />}
           <div
