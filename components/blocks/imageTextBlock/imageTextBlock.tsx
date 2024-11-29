@@ -1,3 +1,4 @@
+import { Button } from "@/components/button/templateButton";
 import { Container } from "@/components/util/container";
 import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
@@ -36,6 +37,9 @@ export const ImageTextBlock = ({ data }) => {
               return <ListItem key={index} data={item} />;
             })}
           </div>
+          {data.buttons?.map((button, index) => {
+            return <Button key={`image-text-button-${index}`} data={button} />;
+          })}
         </div>
         <div className="relative w-full">
           {data.mediaConfuguration?.imageSource && (

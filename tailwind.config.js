@@ -224,8 +224,18 @@ export default {
           "badge-bounce-down var(--animate-duration, 3s) infinite",
         ripple: "ripple-out 0.75s",
         "ripple-pseudo": "ripple-out-pseudo 0.75s",
+        rippling: "rippling var(--duration) ease-out",
       },
       keyframes: {
+        rippling: {
+          "0%": {
+            opacity: "1",
+          },
+          "100%": {
+            transform: "scale(2)",
+            opacity: "0",
+          },
+        },
         "more-bounce": {
           "0%, 20%, 50%, 80%, 100%": { transform: "translateY(0)" },
           "40%": { transform: "translateY(-30px)" },

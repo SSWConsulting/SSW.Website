@@ -1,8 +1,7 @@
 import { Template } from "tinacms";
+import { buttonSchema } from "../../button/templateButtonSchema";
 import { backgroundOptions } from "../sharedTinaFields/colourOptions/blockBackgroundOptions";
-import { buttonOptions } from "../sharedTinaFields/colourOptions/buttonOptions";
 import { ColorPickerInput } from "../sharedTinaFields/colourSelector";
-import { IconPickerInput } from "../sharedTinaFields/iconSelector";
 import { IconLabelSchema } from "./iconLabel";
 import { listItemSchema } from "./listItem";
 import { pillGroupSchema } from "./pillGroup";
@@ -103,42 +102,8 @@ export const ImageTextBlockSchema: Template = {
           color: "Transparent",
         },
       },
-      fields: [
-        {
-          type: "string",
-          label: "Button Text",
-          name: "buttonText",
-        },
-        {
-          type: "string",
-          label: "Button Link",
-          name: "buttonLink",
-        },
-        {
-          type: "string",
-          label: "Icon",
-          name: "icon",
-          ui: {
-            //@ts-expect-error – custom component typing won't be pinned down
-            component: IconPickerInput,
-          },
-        },
-        {
-          type: "boolean",
-          label: "Icon First",
-          name: "iconFirst",
-          description: "Place the icon to the left of the button text.",
-        },
-        {
-          type: "number",
-          label: "Colour",
-          name: "colour",
-          ui: {
-            //@ts-expect-error – custom component typing won't be pinned down
-            component: ColorPickerInput(buttonOptions),
-          },
-        },
-      ],
+      //@ts-expect-error – fields are not being recognized
+      fields: buttonSchema,
     },
     {
       label: "Lead Capture Button",
