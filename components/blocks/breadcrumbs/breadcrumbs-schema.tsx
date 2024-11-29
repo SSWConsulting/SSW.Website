@@ -1,7 +1,7 @@
-import Link from "next/link";
-import React from "react";
+import { Link } from "lucide-react";
 import { Button, Input, Template, wrapFieldsWithMeta } from "tinacms";
-import { TinaInfo } from "../../components/tina/tina-info";
+import { TinaInfo } from "../../../components/tina/tina-info";
+
 export const BreadcrumbSchema: Template = {
   name: "breadcrumbs",
   label: "Breadcrumbs",
