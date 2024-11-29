@@ -224,7 +224,7 @@ export default {
           "badge-bounce-down var(--animate-duration, 3s) infinite",
         ripple: "ripple-out 0.75s",
         "ripple-pseudo": "ripple-out-pseudo 0.75s",
-        rippling: "rippling var(--duration) ease-out",
+        rippling: "rippling 0.6s ease-out",
       },
       keyframes: {
         rippling: {
