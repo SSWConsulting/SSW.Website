@@ -1,4 +1,5 @@
-import { Link } from "lucide-react";
+import Link from "next/link";
+import React from "react";
 import { Button, Input, Template, wrapFieldsWithMeta } from "tinacms";
 import { TinaInfo } from "../../../components/tina/tina-info";
 
