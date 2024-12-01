@@ -3,10 +3,7 @@ import { getRandomTestimonialsByCategory } from "@/helpers/getTestimonials";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
 import { TODAY } from "hooks/useFetchEvents";
-
-// import { useSEO } from "hooks/useSeo";
-// import { Metadata } from "next";
-import { useSEO } from "@/hooks/useSeo";
+import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { TinaClient } from "../../tina-client";

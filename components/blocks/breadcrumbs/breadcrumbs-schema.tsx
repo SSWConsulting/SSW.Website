@@ -50,14 +50,15 @@ export const BreadcrumbSchema: Template = {
         component: () => {
           return (
             <TinaInfo>
-              {" "}
-              💡 Breadcrumb url segment mapping can be configured inside of{" "}
+              💡 Customize how sections appear in your navigation breadcrumbs in{" "}
               <Link
                 className="text-blue-600 hover:underline"
                 href="/admin/index.html#/collections/edit/global/index"
               >
                 global settings
               </Link>
+              . For example, you can make &apos;/consulting&apos; routes show as
+              &apos;Services&apos; in the breadcrumb trail.
             </TinaInfo>
           );
         },
