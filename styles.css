@@ -4,7 +4,7 @@
 
 @layer base {
   a:not(.unstyled) {
-    @apply transition duration-300 hover:border-sswRed hover:text-sswRed underline decoration-ssw-gray-light decoration-1;
+    @apply underline decoration-ssw-gray-light decoration-1 transition duration-300 hover:border-sswRed hover:text-sswRed;
   }
   html,
   body {
@@ -61,7 +61,7 @@
     @apply items-center justify-center rounded border-none bg-sswRed px-4 py-3 align-middle text-sm font-normal uppercase leading-[18px] text-white no-underline !outline-sswRed hover:!bg-sswDarkRed hover:!text-white;
   }
 
-  a:hover {
+  a:hover:not(.unstyled) {
     @apply decoration-sswRed;
   }
 

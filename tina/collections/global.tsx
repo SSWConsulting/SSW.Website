@@ -123,6 +123,42 @@ export const globalSchema: Collection = {
       type: "string",
       label: "Breadcrumb Suffix",
       name: "breadcrumbSuffix",
+      description:
+        "Note: this is only used for the legacy breadcrumb component",
+    },
+    {
+      type: "object",
+      label: "Breadcrumb Replacements",
+      name: "breadcrumbReplacements",
+      ui: {
+        description:
+          "Used to replace the URL segment in the breadcrumbs component with the 'to' field",
+        itemProps(item) {
+          return { label: `${item.from} ➡️ ${item.to}` };
+        },
+      },
+      list: true,
+      fields: [
+        {
+          name: "from",
+          type: "string",
+          label: "From",
+          required: true,
+        },
+        {
+          name: "to",
+          type: "string",
+          label: "To",
+          required: true,
+        },
+      ],
+    },
+    {
+      type: "string",
+      description: "The display heading for the first breadcrumb route",
+      label: "Breadcrumb Home Route",
+      required: true,
+      name: "breadcrumbHomeRoute",
     },
     {
       type: "string",

@@ -1,7 +1,7 @@
+import global from "@/content/global/index.json";
 import NextBreadcrumbs from "nextjs-breadcrumbs2";
 import { FC } from "react";
 import { tinaField } from "tinacms/dist/react";
-
 interface BreadcrumbsProps {
   path: string;
   suffix: string;
@@ -23,22 +23,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = (props) => {
     >
       <NextBreadcrumbs
         replaceCharacterList={[
-          { from: "consulting", to: "Services" },
-          { from: "products", to: "Products" },
-          { from: "offices", to: "Offices" },
-          { from: "training", to: "Training" },
-          { from: "employment", to: "Employment" },
-          { from: "video-production", to: "Video Production" },
-          { from: "Training-videos", to: "Training Videos" },
-          { from: "industry", to: "Industry" },
-          { from: "company", to: "Company" },
-          { from: "events", to: "Events" },
-          { from: "partners", to: "Partners" },
-          { from: "netug", to: ".NET User Group" },
-          { from: "clients", to: "Clients" },
-          { from: "live", to: "Live" },
-          { from: "logo", to: "Logo" },
-          { from: "articles", to: "SSW Articles" },
+          ...global.breadcrumbReplacements,
           { from: props.path, to: `${props.title}` },
         ]}
         activeItemClassName={listItemStyling}
