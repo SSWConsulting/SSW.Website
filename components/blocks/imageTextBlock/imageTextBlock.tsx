@@ -23,14 +23,14 @@ export const ImageTextBlock = ({ data }) => {
           {data.isH1 ? (
             <h1
               data-tina-field={tinaField(data, "heading")}
-              className="my-0 py-2 text-3xl font-bold dark:text-gray-200 lg:text-4xl"
+              className="my-0 py-2 text-3xl font-bold lg:text-4xl dark:text-gray-200"
             >
               {data.heading}
             </h1>
           ) : (
             <h2
               data-tina-field={tinaField(data, "heading")}
-              className="my-0 py-2 text-2xl font-bold dark:text-gray-200 lg:text-3xl"
+              className="my-0 py-2 text-2xl font-bold lg:text-3xl dark:text-gray-200"
             >
               {data.heading}
             </h2>
@@ -61,9 +61,14 @@ export const ImageTextBlock = ({ data }) => {
               return <ListItem key={index} data={item} />;
             })}
           </div>
-          {data.buttons?.map((button, index) => {
-            return <Button key={`image-text-button-${index}`} data={button} />;
-          })}
+
+          <div className="flex gap-3">
+            {data.buttons?.map((button, index) => {
+              return (
+                <Button key={`image-text-button-${index}`} data={button} />
+              );
+            })}
+          </div>
         </div>
         <div className="relative w-full">
           {data.mediaConfuguration?.imageSource && (
