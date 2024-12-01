@@ -3,14 +3,14 @@
 import { cn } from "@/lib/utils";
 import React, { MouseEvent, useEffect, useState } from "react";
 
-type colorVariant = "primary" | "secondary";
+export type ColorVariant = "primary" | "secondary";
 
 interface RippleButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
   rippleColor?: string;
   duration?: string;
-  bordered: boolean;
-  variant: colorVariant;
+  variant: ColorVariant;
 }
 
 const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
@@ -87,7 +87,7 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
   }
 );
 
-const variants: Record<colorVariant, string> = {
+const variants: Record<ColorVariant, string> = {
   primary: "bg-ssw-red",
   secondary: "bg-transparent border-1.5",
 };

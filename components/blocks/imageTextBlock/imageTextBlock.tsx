@@ -8,7 +8,13 @@ import { IconLabel } from "./iconLabel";
 import { ListItem } from "./listItem";
 import { PillGroup } from "./pillGroup";
 
-export const ImageTextBlock = ({ data }) => {
+import { Consultingv2BlocksImageTextBlock } from "@/tina/types";
+
+export const ImageTextBlock = ({
+  data,
+}: {
+  data: Consultingv2BlocksImageTextBlock;
+}) => {
   return (
     <section
       className={`${

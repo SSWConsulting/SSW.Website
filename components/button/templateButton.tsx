@@ -1,5 +1,27 @@
-import RippleButton from "./rippleButtonV2";
+import { Consultingv2BlocksImageTextBlockButtons } from "@/tina/types";
+import RippleButton, { ColorVariant } from "./rippleButtonV2";
 
-export const Button = ({ data }) => {
-  return <RippleButton className="bg-sswRed">{data.buttonText}</RippleButton>;
+enum ButtonColors {
+  Red = 0,
+  Transparent = 1,
+}
+export interface ColorPickerOptions {
+  buttonLink: string;
+  buttonText: string;
+  reference: number;
+  color: ButtonColors;
+  iconFirst: boolean;
+}
+
+export const Button = ({
+  data,
+}: {
+  data: Consultingv2BlocksImageTextBlockButtons;
+}) => {
+  const variants: ColorVariant[] = ["primary", "secondary"];
+  return (
+    <RippleButton variant={variants[data.colour]}>
+      {data.buttonText}
+    </RippleButton>
+  );
 };
