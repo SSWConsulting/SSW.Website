@@ -3,15 +3,20 @@
 import { cn } from "@/lib/utils";
 import React, { MouseEvent, useEffect, useState } from "react";
 
+type colorVariant = "primary" | "secondary";
+
 interface RippleButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   rippleColor?: string;
   duration?: string;
+  bordered: boolean;
+  variant: colorVariant;
 }
 
 const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
   (
     {
+      variant = "primary",
       className,
       children,
       rippleColor = "rgba(0, 0, 0, 0.25)",
@@ -24,6 +29,7 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
       Array<{ x: number; y: number; size: number; key: number }>
     >([]);
 
+    const isPrimary = variant === "primary";
     const createRipple = (event: MouseEvent<HTMLButtonElement>) => {
       const button = event.currentTarget;
       const rect = button.getBoundingClientRect();
@@ -50,10 +56,12 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
     return (
       <button
         className={cn(
-          "text-primary relative flex cursor-pointer items-center justify-center overflow-hidden rounded-lg border-2 bg-ssw-red px-4 py-2 text-center",
+          "text-primary relative flex cursor-pointer items-center justify-center overflow-hidden rounded-lg px-4 py-2 text-center",
+          "",
+          variants[variant],
           className
         )}
-        onMouseEnter={createRipple}
+        onMouseEnter={isPrimary ? createRipple : undefined}
         ref={ref}
         {...props}
       >
@@ -78,6 +86,11 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
     );
   }
 );
+
+const variants: Record<colorVariant, string> = {
+  primary: "bg-ssw-red",
+  secondary: "bg-transparent border-1.5",
+};
 
 RippleButton.displayName = "RippleButton";
 
