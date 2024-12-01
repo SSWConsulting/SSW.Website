@@ -4,17 +4,22 @@ import { IconPickerInput } from "../sharedTinaFields/iconSelector";
 
 export const IconLabel = ({ data }) => {
   return (
-    <div className="flex gap-1 align-top">
+    <div className="flex gap-1 py-2 align-top">
       <div className="h-full">
         {data.icon && (
           <Icon
             data={{ name: data.icon }}
             tinaField={tinaField(data, "icon")}
-            className="size-6"
+            className="size-4 text-gray-300"
           />
         )}
       </div>
-      <p data-tina-field={tinaField(data, "labelText")}>{data.labelText}</p>
+      <p
+        className="text-xs font-bold dark:text-gray-300"
+        data-tina-field={tinaField(data, "labelText")}
+      >
+        {data.labelText}
+      </p>
     </div>
   );
 };

@@ -1,1 +1,62 @@
-{}
+{
+  "seo": {
+    "title": "Angular",
+    "description": "Come chat to us about your angular project!"
+  },
+  "blocks": [
+    {
+      "finalBreadcrumb": "Angular",
+      "_template": "breadcrumbs"
+    },
+    {
+      "background": 2,
+      "topLabel": {
+        "labelText": "Consulting",
+        "icon": "BiSolidBolt"
+      },
+      "heading": "Heading",
+      "isH1": true,
+      "description": "Futureproof your apps with .NET8, Microsoft’s latest LTS version, offering optimized performance, enhanced security, and cloud-native development in a stable, long-term supported ecosystem.\n",
+      "chips": {
+        "filledChipText": "Label",
+        "clearChipText": "Label"
+      },
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Lorem Ipsum",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+            "icon": "BiTimer"
+          },
+          {
+            "heading": "Lorem Ipsum",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+            "icon": "BiSolidPhone"
+          },
+          {
+            "heading": "Lorem Ipsum",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+            "icon": "BiSolidPhone"
+          },
+          {
+            "heading": "Lorem Ipsum",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+            "icon": "BiSolidPhone"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "test",
+          "icon": "Tina"
+        },
+        {}
+      ],
+      "mediaConfuguration": {
+        "imageSource": "/images/AuctionsPlus-logo.jpg"
+      },
+      "_template": "imageTextBlock"
+    }
+  ]
+}

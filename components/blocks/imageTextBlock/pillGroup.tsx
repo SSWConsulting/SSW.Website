@@ -2,14 +2,20 @@ import { tinaField } from "tinacms/dist/react";
 
 export const PillGroup = ({ data }) => {
   return (
-    <div className="flex gap-1">
+    <div className="flex gap-2 py-2">
       {data.filledChipText && (
-        <span data-tina-field={tinaField(data, "filledChipText")}>
+        <span
+          data-tina-field={tinaField(data, "filledChipText")}
+          className="rounded-md bg-[#525252] px-2 py-1 text-xs font-light text-white"
+        >
           {data.filledChipText}
         </span>
       )}
       {data.clearChipText && (
-        <span data-tina-field={tinaField(data, "clearChipText")}>
+        <span
+          data-tina-field={tinaField(data, "clearChipText")}
+          className="px-2 py-1 text-xs font-normal text-white"
+        >
           {data.clearChipText}
         </span>
       )}

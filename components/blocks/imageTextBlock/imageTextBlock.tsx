@@ -17,17 +17,41 @@ export const ImageTextBlock = ({ data }) => {
         })?.classes
       } w-full`}
     >
-      <Container className="mx-auto flex align-top">
+      <Container className="mx-auto flex gap-16 align-top">
         <div className="w-full">
           {data.topLabel && <IconLabel data={data.topLabel} />}
           {data.isH1 ? (
-            <h1 data-tina-field={tinaField(data, "heading")}>{data.heading}</h1>
+            <h1
+              data-tina-field={tinaField(data, "heading")}
+              className="my-0 py-2 text-3xl font-bold dark:text-gray-200 lg:text-4xl"
+            >
+              {data.heading}
+            </h1>
           ) : (
-            <h2 data-tina-field={tinaField(data, "heading")}>{data.heading}</h2>
+            <h2
+              data-tina-field={tinaField(data, "heading")}
+              className="my-0 py-2 text-2xl font-bold dark:text-gray-200 lg:text-3xl"
+            >
+              {data.heading}
+            </h2>
           )}
           <TinaMarkdown
             content={data.description}
-            data-tina-field={tinaField(data, "description")}
+            components={{
+              p: (props) => (
+                <p
+                  {...props}
+                  className="py-2 text-base font-light dark:text-gray-300"
+                  data-tina-field={tinaField(data, "description")}
+                />
+              ),
+              h6: () => <></>,
+              h5: () => <></>,
+              h4: () => <></>,
+              h3: () => <></>,
+              h2: () => <></>,
+              h1: () => <></>,
+            }}
           />
           {data.chips && <PillGroup data={data.chips} />}
           <div

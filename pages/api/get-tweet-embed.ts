@@ -25,7 +25,7 @@ export default async function handler(
           Status: 500,
         },
         exception: err,
-        severity: appInsights.Contracts.SeverityLevel.Error,
+        severity: appInsights.KnownSeverityLevel.Error,
       });
       res.status(500).json({ message: err.message });
     }
