@@ -96,6 +96,11 @@ export const ImageTextBlockSchema: Template = {
       type: "object",
       list: true,
       description: "A row of buttons. Max 2.",
+      ui: {
+        defaultItem: {
+          buttonText: "{{ TEXT }}",
+        },
+      },
       //@ts-expect-error – fields are not being recognized
       fields: buttonSchema,
     },
