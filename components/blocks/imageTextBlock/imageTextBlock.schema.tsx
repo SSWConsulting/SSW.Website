@@ -107,7 +107,7 @@ export const ImageTextBlockSchema: Template = {
     {
       type: "object",
       label: "Media",
-      name: "mediaConfuguration",
+      name: "mediaConfiguration",
       description: "Media configuration including layout and image upload.",
       fields: [
         {
