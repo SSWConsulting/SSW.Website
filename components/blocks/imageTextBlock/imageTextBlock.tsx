@@ -9,6 +9,7 @@ import { ListItem } from "./listItem";
 import { PillGroup } from "./pillGroup";
 
 import { Consultingv2BlocksImageTextBlock } from "@/tina/types";
+import { classNames } from "tinacms";
 
 export const ImageTextBlock = ({
   data,
@@ -85,8 +86,9 @@ export const ImageTextBlock = ({
             })}
           </div>
         </div>
-        <div className="relative w-full">
-          {data.mediaConfiguration?.imageSource && (
+
+        {data.mediaConfiguration?.imageSource && (
+          <div className="relative w-full">
             <Image
               src={data.mediaConfiguration?.imageSource}
               alt={data.mediaConfiguration?.altText ?? "image"}
@@ -94,8 +96,8 @@ export const ImageTextBlock = ({
               objectFit="contain"
               data-tina-field={tinaField(data, "mediaConfiguration")}
             />
-          )}
-        </div>
+          </div>
+        )}
       </Container>
     </section>
   );
