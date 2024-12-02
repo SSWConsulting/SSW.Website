@@ -2,6 +2,7 @@ import { Button } from "@/components/button/templateButton";
 import { Container } from "@/components/util/container";
 import { Consultingv2BlocksImageTextBlock } from "@/tina/types";
 import Image from "next/image";
+import Link from "next/link";
 import { classNames } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -75,12 +76,20 @@ export const ImageTextBlock = ({
           {data.buttons?.length > 0 && (
             <div className="mt-5 flex gap-3">
               {data.buttons?.map((button, index) => {
-                return (
+                const buttonElement = (
                   <Button
                     className="font-semibold"
                     key={`image-text-button-${index}`}
                     data={button}
                   />
+                );
+
+                return button.buttonLink ? (
+                  <Link href={button.buttonLink} key={`link-wrapper-${index}`}>
+                    {buttonElement}
+                  </Link>
+                ) : (
+                  <>{buttonElement}</>
                 );
               })}
             </div>
@@ -88,7 +97,7 @@ export const ImageTextBlock = ({
         </div>
 
         {data.mediaConfiguration?.imageSource && (
-          <div className="aspect-4/3 relative w-full sm:aspect-auto">
+          <div className="relative aspect-4/3 w-full sm:aspect-auto">
             <Image
               objectFit="contain"
               fill={true}
