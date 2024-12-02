@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import classNames from "classnames";
 import React, { MouseEvent, useEffect, useState } from "react";
 
 export type ColorVariant = "primary" | "secondary";
@@ -9,6 +10,7 @@ interface RippleButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   rippleColor?: string;
+  fontClassName?: string;
   duration?: string;
   variant: ColorVariant;
 }
@@ -18,6 +20,7 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
     {
       variant = "primary",
       className,
+      fontClassName,
       children,
       rippleColor = "rgba(0, 0, 0, 0.25)",
       duration = "600ms",
@@ -65,11 +68,18 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
         ref={ref}
         {...props}
       >
-        <div className="relative z-10 text-white">{children}</div>
+        <div
+          className={classNames(
+            "relative z-10 flex items-center text-white",
+            fontClassName
+          )}
+        >
+          {children}
+        </div>
         <span className="pointer-events-none absolute inset-0">
           {buttonRipples.map((ripple) => (
             <span
-              className="absolute animate-rippling rounded-full opacity-30"
+              className={"absolute animate-rippling rounded-full opacity-30"}
               key={ripple.key}
               style={{
                 width: `${ripple.size}px`,

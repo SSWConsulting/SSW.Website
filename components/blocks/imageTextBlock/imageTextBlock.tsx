@@ -78,7 +78,7 @@ export const ImageTextBlock = ({
               {data.buttons?.map((button, index) => {
                 const buttonElement = (
                   <Button
-                    className="font-semibold"
+                    className="text-base font-semibold"
                     key={`image-text-button-${index}`}
                     data={button}
                   />

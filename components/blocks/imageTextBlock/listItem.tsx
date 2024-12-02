@@ -16,7 +16,7 @@ export const ListItem = ({ data }) => {
       </div>
       <div className="flex flex-col">
         <h6
-          className="w-full p-1 text-sm font-semibold dark:text-white"
+          className="w-full p-1 text-base font-semibold dark:text-white"
           data-tina-field={tinaField(data, "heading")}
         >
           {data.heading}

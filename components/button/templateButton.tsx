@@ -1,16 +1,16 @@
-import { Consultingv2BlocksImageTextBlockButtons } from "@/tina/types";
 import RippleButton, { ColorVariant } from "./rippleButtonV2";
+
+import { Icon } from "@/components/blocks/sharedTinaFields/icon";
 
 enum ButtonColors {
   Red = 0,
   Transparent = 1,
 }
-export interface ColorPickerOptions {
-  buttonLink: string;
+export interface TemplateButtonOptions {
   buttonText: string;
-  reference: number;
-  color: ButtonColors;
+  colour: ButtonColors;
   iconFirst: boolean;
+  icon?: string;
 }
 
 export const Button = ({
@@ -18,11 +18,22 @@ export const Button = ({
   data,
 }: {
   className: string;
-  data: Consultingv2BlocksImageTextBlockButtons;
+  data: TemplateButtonOptions;
 }) => {
   const variants: ColorVariant[] = ["primary", "secondary"];
   return (
-    <RippleButton className={className} variant={variants[data.colour]}>
+    <RippleButton
+      className={className}
+      fontClassName="gap-0.5"
+      variant={variants[data.colour]}
+    >
+      <Icon
+        className="size-6"
+        data={{
+          name: data.icon,
+        }}
+      />
+
       {data.buttonText}
     </RippleButton>
   );
