@@ -1,15 +1,14 @@
 import { Button } from "@/components/button/templateButton";
 import { Container } from "@/components/util/container";
+import { Consultingv2BlocksImageTextBlock } from "@/tina/types";
 import Image from "next/image";
+import { classNames } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { backgroundOptions } from "../sharedTinaFields/colourOptions/blockBackgroundOptions";
 import { IconLabel } from "./iconLabel";
 import { ListItem } from "./listItem";
 import { PillGroup } from "./pillGroup";
-
-import { Consultingv2BlocksImageTextBlock } from "@/tina/types";
-import { classNames } from "tinacms";
 
 export const ImageTextBlock = ({
   data,
@@ -26,8 +25,8 @@ export const ImageTextBlock = ({
     >
       <Container
         className={classNames(
-          "mx-auto flex gap-16 align-top",
-          data.mediaConfiguration?.placement === "Left" && "flex-row-reverse"
+          "mx-auto flex flex-col gap-8 align-top sm:flex-row sm:gap-16",
+          data.mediaConfiguration?.placement === "Left" && "sm:flex-row-reverse"
         )}
       >
         <div className="w-full">
@@ -73,27 +72,28 @@ export const ImageTextBlock = ({
               return <ListItem key={index} data={item} />;
             })}
           </div>
-
-          <div className="mt-5 flex gap-3">
-            {data.buttons?.map((button, index) => {
-              return (
-                <Button
-                  className="font-semibold"
-                  key={`image-text-button-${index}`}
-                  data={button}
-                />
-              );
-            })}
-          </div>
+          {data.buttons?.length > 0 && (
+            <div className="mt-5 flex gap-3">
+              {data.buttons?.map((button, index) => {
+                return (
+                  <Button
+                    className="font-semibold"
+                    key={`image-text-button-${index}`}
+                    data={button}
+                  />
+                );
+              })}
+            </div>
+          )}
         </div>
 
         {data.mediaConfiguration?.imageSource && (
-          <div className="relative w-full">
+          <div className="aspect-4/3 relative w-full sm:aspect-auto">
             <Image
+              objectFit="contain"
+              fill={true}
               src={data.mediaConfiguration?.imageSource}
               alt={data.mediaConfiguration?.altText ?? "image"}
-              fill={true}
-              objectFit="contain"
               data-tina-field={tinaField(data, "mediaConfiguration")}
             />
           </div>
