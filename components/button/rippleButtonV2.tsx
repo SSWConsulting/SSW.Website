@@ -56,7 +56,7 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
     return (
       <button
         className={cn(
-          "text-primary relative flex cursor-pointer items-center justify-center overflow-hidden rounded-lg px-4 py-2 text-center",
+          "text-primary relative cursor-pointer items-center justify-center overflow-hidden rounded-md px-6 py-3 text-center",
           "",
           variants[variant],
           className
@@ -89,7 +89,8 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
 
 const variants: Record<ColorVariant, string> = {
   primary: "bg-ssw-red",
-  secondary: "bg-transparent border-1.5",
+  secondary:
+    "bg-transparent outline -outline-1.5 outline-white -outline-offset-1.5",
 };
 
 RippleButton.displayName = "RippleButton";

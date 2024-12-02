@@ -76,6 +76,7 @@ export default {
       DEFAULT: "3px",
       0: "0",
       1: "1px",
+      1.5: "1.5px",
       2: "2px",
       3: "3px",
       4: "4px",
@@ -84,6 +85,12 @@ export default {
     extend: {
       textUnderlineOffset: {
         3: "3px",
+      },
+      outlineWidth: {
+        "-1.5": "1.5px",
+      },
+      outlineOffset: {
+        "-1.5": "-1.5px",
       },
       gridTemplateRows: {
         12: "repeat(12, minmax(min-content, 0fr))",
