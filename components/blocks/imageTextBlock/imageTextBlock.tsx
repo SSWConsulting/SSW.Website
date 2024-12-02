@@ -77,10 +77,10 @@ export const ImageTextBlock = ({
           </div>
         </div>
         <div className="relative w-full">
-          {data.mediaConfuguration?.imageSource && (
+          {data.mediaConfiguration?.imageSource && (
             <Image
-              src={data.mediaConfuguration?.imageSource}
-              alt={data.mediaConfuguration?.altText ?? "image"}
+              src={data.mediaConfiguration?.imageSource}
+              alt={data.mediaConfiguration?.altText ?? "image"}
               fill={true}
               objectFit="contain"
               data-tina-field={tinaField(data, "mediaConfiguration")}
