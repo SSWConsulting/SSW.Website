@@ -83,6 +83,9 @@ export default {
       8: "8px",
     },
     extend: {
+      aspectRatio: {
+        "4/3": "4 / 3",
+      },
       textUnderlineOffset: {
         3: "3px",
       },
