@@ -23,7 +23,12 @@ export const ImageTextBlock = ({
         })?.classes
       } w-full`}
     >
-      <Container className="mx-auto flex gap-16 align-top">
+      <Container
+        className={classNames(
+          "mx-auto flex gap-16 align-top",
+          data.mediaConfiguration?.placement === "Left" && "flex-row-reverse"
+        )}
+      >
         <div className="w-full">
           {data.topLabel && <IconLabel data={data.topLabel} />}
           {data.isH1 ? (
