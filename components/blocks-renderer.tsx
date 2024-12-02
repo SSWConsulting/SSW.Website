@@ -118,6 +118,10 @@ const TrainingLearningOutcome = dynamic(() =>
   )
 );
 
+const LogoCarousel = dynamic(() =>
+  import("./blocks/logoCarousel/logoCarousel").then((mod) => mod.LogoCarousel)
+);
+
 const componentMap = {
   AboutUs,
   Carousel,
@@ -150,6 +154,7 @@ const componentMap = {
   GridLayout,
   FixedColumns,
   HorizontalCard,
+  LogoCarousel,
 };
 
 export const Blocks = ({ prefix, blocks }) => {

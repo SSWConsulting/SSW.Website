@@ -226,6 +226,8 @@ export default {
           "badge-bounce-down var(--animate-duration, 3s) infinite",
         ripple: "ripple-out 0.75s",
         "ripple-pseudo": "ripple-out-pseudo 0.75s",
+        marquee: "marquee 20s linear infinite",
+        "marquee-vertical": "marquee-vertical 20s linear infinite",
       },
       keyframes: {
         "more-bounce": {
@@ -248,6 +250,14 @@ export default {
         "ripple-out-pseudo": {
           "0%": { background: "rgba(0, 0, 0, 0.25)" },
           "100%": { background: "transparent" },
+        },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
         },
       },
       colors: {

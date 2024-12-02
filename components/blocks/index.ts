@@ -41,6 +41,7 @@ import { heroBlockSchema } from "./hero";
 import { horizontalBlockSchema } from "./horizontalCard";
 import { internalCarouselBlockSchema } from "./internalCarousel";
 import { jotFormEmbedSchema } from "./jotFormEmbed";
+import { LogoCarouselSchema } from "./logoCarousel/logoCarouselSchema";
 import { newslettersTableBlockSchema } from "./newslettersTable";
 import { paymentBlockSchema } from "./payment-block";
 import { recurringEventSchema } from "./recurringEvent";
@@ -107,4 +108,5 @@ export const pageBlocks: Template[] = [
   verticalListItemSchema,
   videoEmbedBlockSchema,
   inlineJotFormSchema,
+  LogoCarouselSchema,
 ];
