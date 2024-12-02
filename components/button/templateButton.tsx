@@ -1,7 +1,7 @@
+import { Icon } from "@/components/blocks/sharedTinaFields/icon";
+import classNames from "classnames";
 import { tinaField } from "tinacms/dist/react";
 import RippleButton, { ButtonTinaFields, ColorVariant } from "./rippleButtonV2";
-
-import { Icon } from "@/components/blocks/sharedTinaFields/icon";
 
 enum ButtonColors {
   Red = 0,
@@ -23,12 +23,16 @@ export const Button = ({
   data: TemplateButtonOptions;
 }) => {
   const variants: ColorVariant[] = ["primary", "secondary"];
+  const { iconFirst, buttonText, colour } = data;
   return (
     <RippleButton
       textTinaField={tinaField(data, "buttonText")}
       className={className}
-      fontClassName="gap-0.5"
-      variant={variants[data.colour]}
+      fontClassName={classNames(
+        "gap-0.5",
+        iconFirst ? "flex-row" : "flex-row-reverse"
+      )}
+      variant={variants[colour]}
     >
       <Icon
         tinaField={tinaField(data, "icon")}
@@ -38,7 +42,7 @@ export const Button = ({
         }}
       />
 
-      {data.buttonText}
+      {buttonText}
     </RippleButton>
   );
 };
