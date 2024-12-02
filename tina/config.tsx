@@ -12,6 +12,7 @@ import {
   consultingSchema,
   consultingTagSchema,
 } from "./collections/consulting";
+import { consultingv2Schema } from "./collections/consultingv2";
 import { employmentSchema } from "./collections/employment";
 import { eventsIndexSchema, eventsSchema } from "./collections/events";
 import { eventsCalendarSchema } from "./collections/events-calendar";
@@ -94,6 +95,7 @@ const config = defineStaticConfig({
       caseStudySchema,
       consultingIndexSchema,
       consultingSchema,
+      consultingv2Schema,
       videoProductionSchema,
       consultingCategorySchema,
       consultingTagSchema,
