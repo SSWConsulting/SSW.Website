@@ -16,6 +16,7 @@ export const ImageTextBlock = ({
 }: {
   data: Consultingv2BlocksImageTextBlock;
 }) => {
+  const imageIsLeftAligined = data.mediaConfiguration?.placement === "Left";
   return (
     <section
       className={`${
@@ -26,11 +27,13 @@ export const ImageTextBlock = ({
     >
       <Container
         className={classNames(
-          "mx-auto flex flex-col gap-8 align-top sm:grid-cols-1 sm:gap-16",
-          data.mediaConfiguration?.placement === "Left" && "sm:flex-row-reverse"
+          "mx-auto flex flex-col gap-8 align-top sm:grid sm:grid-cols-2 sm:gap-16",
+          imageIsLeftAligined && ""
         )}
       >
-        <div className="w-full">
+        <div
+          className={classNames("w-full", imageIsLeftAligined && "sm:order-2")}
+        >
           {data.topLabel && <IconLabel data={data.topLabel} />}
           {data.isH1 ? (
             <h1
@@ -97,7 +100,12 @@ export const ImageTextBlock = ({
         </div>
 
         {data.mediaConfiguration?.imageSource && (
-          <div className="relative aspect-4/3 w-full sm:aspect-auto">
+          <div
+            className={classNames(
+              "relative aspect-4/3 w-full sm:aspect-auto",
+              imageIsLeftAligined && "sm:order-1"
+            )}
+          >
             <Image
               objectFit="contain"
               fill={true}
