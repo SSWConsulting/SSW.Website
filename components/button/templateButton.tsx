@@ -14,13 +14,15 @@ export interface ColorPickerOptions {
 }
 
 export const Button = ({
+  className,
   data,
 }: {
+  className: string;
   data: Consultingv2BlocksImageTextBlockButtons;
 }) => {
   const variants: ColorVariant[] = ["primary", "secondary"];
   return (
-    <RippleButton variant={variants[data.colour]}>
+    <RippleButton className={className} variant={variants[data.colour]}>
       {data.buttonText}
     </RippleButton>
   );
