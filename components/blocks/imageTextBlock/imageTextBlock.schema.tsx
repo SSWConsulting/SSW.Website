@@ -101,6 +101,9 @@ export const ImageTextBlockSchema: Template = {
           buttonText: "{{ TEXT }}",
         },
         max: 2,
+        itemProps(item) {
+          return { label: `${item.buttonText}` };
+        },
       },
       //@ts-expect-error – fields are not being recognized
       fields: buttonSchema,
