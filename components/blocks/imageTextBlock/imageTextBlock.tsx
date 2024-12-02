@@ -73,10 +73,14 @@ export const ImageTextBlock = ({
             })}
           </div>
 
-          <div className="flex gap-3">
+          <div className="mt-5 flex gap-3">
             {data.buttons?.map((button, index) => {
               return (
-                <Button key={`image-text-button-${index}`} data={button} />
+                <Button
+                  className="font-semibold"
+                  key={`image-text-button-${index}`}
+                  data={button}
+                />
               );
             })}
           </div>
