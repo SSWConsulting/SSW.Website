@@ -25,7 +25,6 @@ export const Button = ({
   const variants: ColorVariant[] = ["primary", "secondary"];
   return (
     <RippleButton
-      tinaField={tinaField(data)}
       textTinaField={tinaField(data, "buttonText")}
       className={className}
       fontClassName="gap-0.5"
