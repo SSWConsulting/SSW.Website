@@ -7,7 +7,6 @@ import React, { MouseEvent, useEffect, useState } from "react";
 export type ColorVariant = "primary" | "secondary";
 
 export interface ButtonTinaFields {
-  tinaField?: string;
   textTinaField?: string;
 }
 
@@ -31,7 +30,6 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
       rippleColor = "rgba(0, 0, 0, 0.25)",
       duration = "600ms",
       textTinaField,
-      tinaField,
       ...props
     },
     ref
@@ -66,7 +64,6 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
 
     return (
       <button
-        data-tina-field={tinaField}
         className={cn(
           "text-primary relative cursor-pointer items-center justify-center overflow-hidden rounded-md px-6 py-3 text-center",
           "",
