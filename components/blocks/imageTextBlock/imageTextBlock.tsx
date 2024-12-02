@@ -25,7 +25,7 @@ export const ImageTextBlock = ({
     >
       <Container
         className={classNames(
-          "mx-auto flex flex-col gap-8 align-top sm:flex-row sm:gap-16",
+          "mx-auto flex flex-col gap-8 align-top sm:grid-cols-1 sm:gap-16",
           data.mediaConfiguration?.placement === "Left" && "sm:flex-row-reverse"
         )}
       >
