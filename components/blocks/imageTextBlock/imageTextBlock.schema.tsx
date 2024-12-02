@@ -109,6 +109,11 @@ export const ImageTextBlockSchema: Template = {
       label: "Media",
       name: "mediaConfiguration",
       description: "Media configuration including layout and image upload.",
+      ui: {
+        defaultItem: {
+          placement: "Right",
+        },
+      },
       fields: [
         {
           type: "string",
