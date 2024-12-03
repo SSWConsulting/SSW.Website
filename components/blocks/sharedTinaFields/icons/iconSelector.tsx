@@ -3,7 +3,7 @@ import React from "react";
 import { BiChevronRight } from "react-icons/bi";
 import { GoCircleSlash } from "react-icons/go";
 import { Button, wrapFieldsWithMeta } from "tinacms";
-import { Icon } from "./icon";
+import Icon from "./icon";
 import IconOptions from "./iconOptions";
 
 const parseIconName = (name: string) => {

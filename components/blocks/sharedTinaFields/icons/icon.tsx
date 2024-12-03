@@ -16,7 +16,7 @@ const DynamicIconComponent = ({ name, className, tinaField }) => {
   return <IconComponent className={className} data-tina-field={tinaField} />;
 };
 
-export const Icon = ({ data, className = "", tinaField = "" }) => {
+const Icon = ({ data, className = "", tinaField = "" }) => {
   if (!data?.name) {
     return null;
   }
@@ -29,3 +29,5 @@ export const Icon = ({ data, className = "", tinaField = "" }) => {
     />
   );
 };
+
+export default Icon;

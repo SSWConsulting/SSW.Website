@@ -45,6 +45,7 @@
       "buttons": [
         {
           "buttonText": "Primary",
+          "icon": "BiLogoAws",
           "colour": 0
         },
         {

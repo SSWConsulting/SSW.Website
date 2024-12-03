@@ -1,3 +1,4 @@
+import React from "react";
 import * as BoxIcons from "react-icons/bi";
 
 export const getIcon = (name) => {
