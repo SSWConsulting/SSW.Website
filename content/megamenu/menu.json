@@ -201,6 +201,12 @@
           "name": "Latest Videos",
           "items": [
             {
+              "name": "SugarLearning",
+              "url": "https://www.youtube.com/@sugarlearning",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
+            },
+            {
               "name": "TinaCMS",
               "url": "https://www.youtube.com/@TinaCMS",
               "widgetType": "standardLink",
