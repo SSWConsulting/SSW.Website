@@ -61,6 +61,17 @@
         "imageSource": "/images/404/broken-chain.png"
       },
       "_template": "imageTextBlock"
+    },
+    {
+      "background": 3,
+      "heading": "Trusted By",
+      "isWhiteImages": false,
+      "logos": [
+        {
+          "logo": "/images/10-million-dollars-banner.png"
+        }
+      ],
+      "_template": "logoCarousel"
     }
   ]
 }
