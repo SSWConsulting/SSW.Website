@@ -27,7 +27,7 @@ export const ImageTextBlock = ({
     >
       <Container
         className={classNames(
-          "mx-auto flex flex-col gap-8 align-top sm:grid sm:grid-cols-2 sm:gap-16",
+          "mx-auto flex flex-col gap-8 align-top md:grid md:grid-cols-2 md:gap-16",
 
           data.mediaConfiguration?.mobilePlacement === "Above"
             ? "flex-col-reverse"
@@ -35,7 +35,7 @@ export const ImageTextBlock = ({
         )}
       >
         <div
-          className={classNames("w-full", imageIsLeftAligined && "sm:order-2")}
+          className={classNames("w-full", imageIsLeftAligined && "md:order-2")}
         >
           {data.topLabel && <IconLabel data={data.topLabel} />}
           {data.isH1 ? (
@@ -114,8 +114,8 @@ export const ImageTextBlock = ({
         {data.mediaConfiguration?.imageSource && (
           <div
             className={classNames(
-              "relative aspect-4/3 w-full sm:aspect-auto",
-              imageIsLeftAligined && "sm:order-1"
+              "relative aspect-4/3 w-full md:aspect-auto",
+              imageIsLeftAligined && "md:order-1"
             )}
           >
             {data.mediaConfiguration.verticalPlacement === "Center"}
