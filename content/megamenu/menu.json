@@ -201,38 +201,14 @@
           "name": "Latest Videos",
           "items": [
             {
-              "name": "SophieHub",
-              "url": "https://www.youtube.com/@sophiehub",
+              "name": "SSW Rewards",
+              "url": "https://www.youtube.com/@sswrewards",
               "widgetType": "standardLink",
               "icon": "playCircle"
             },
             {
-              "name": "SophieBot",
-              "url": "https://www.youtube.com/@sswsophiebot",
-              "widgetType": "standardLink",
-              "icon": "playCircle"
-            },
-            {
-              "name": "YakShaver",
-              "url": "https://www.youtube.com/@SSWYakShaver",
-              "widgetType": "standardLink",
-              "icon": "playCircle"
-            },
-            {
-              "name": "EagleEye",
-              "url": "https://www.youtube.com/@SSWEagleEye",
-              "widgetType": "standardLink",
-              "icon": "playCircle"
-            },
-            {
-              "name": "CodeAuditor",
-              "url": "https://www.youtube.com/@codeauditor",
-              "widgetType": "standardLink",
-              "icon": "playCircle"
-            },
-            {
-              "name": "TimePro",
-              "url": "https://www.youtube.com/@sswtimepro",
+              "name": "TinaCMS",
+              "url": "https://www.youtube.com/@TinaCMS",
               "widgetType": "standardLink",
               "icon": "playCircle"
             },
@@ -243,8 +219,38 @@
               "icon": "playCircle"
             },
             {
-              "name": "TinaCMS",
-              "url": "https://www.youtube.com/@TinaCMS",
+              "name": "TimePro",
+              "url": "https://www.youtube.com/@sswtimepro",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
+            },
+            {
+              "name": "CodeAuditor",
+              "url": "https://www.youtube.com/@codeauditor",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
+            },
+            {
+              "name": "EagleEye",
+              "url": "https://www.youtube.com/@SSWEagleEye",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
+            },
+            {
+              "name": "YakShaver",
+              "url": "https://www.youtube.com/@SSWYakShaver",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
+            },
+            {
+              "name": "SophieBot",
+              "url": "https://www.youtube.com/@sswsophiebot",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
+            },
+            {
+              "name": "SophieHub",
+              "url": "https://www.youtube.com/@sophiehub",
               "widgetType": "standardLink",
               "icon": "playCircle"
             }
