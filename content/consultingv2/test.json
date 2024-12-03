@@ -1,0 +1,11 @@
+{
+  "seo": {
+    "title": "Angular",
+    "description": "Description"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumbs"
+    }
+  ]
+}
