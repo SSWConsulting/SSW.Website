@@ -17,7 +17,7 @@ export function Marquee({
   pauseOnHover = false,
   children,
   vertical = false,
-  repeat = 4,
+  repeat = 6,
   ...props
 }: MarqueeProps) {
   return (
