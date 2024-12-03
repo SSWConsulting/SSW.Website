@@ -134,6 +134,17 @@ export const ImageTextBlockSchema: Template = {
         },
         {
           type: "string",
+          label: "Media placement (vertical)",
+          name: "verticalPlacement",
+          description: "Where the image sits vertically in desktop view",
+          ui: {
+            component: "select",
+            //@ts-expect-error – options are not being recognized
+            options: ["Centered", "Top"],
+          },
+        },
+        {
+          type: "string",
           label: "Media Placement (mobile)",
           name: "mobilePlacement",
           description:

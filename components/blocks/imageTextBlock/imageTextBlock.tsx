@@ -118,10 +118,15 @@ export const ImageTextBlock = ({
               imageIsLeftAligined && "sm:order-1"
             )}
           >
+            {data.mediaConfiguration.verticalPlacement === "Center"}
             <Image
               objectFit="contain"
               fill={true}
-              className="!h-auto rounded-md"
+              className={classNames(
+                data.mediaConfiguration?.verticalPlacement === "Centered" &&
+                  "my-auto",
+                "!h-auto rounded-md"
+              )}
               src={data.mediaConfiguration?.imageSource}
               alt={data.mediaConfiguration?.altText ?? "image"}
               data-tina-field={tinaField(data, "mediaConfiguration")}
