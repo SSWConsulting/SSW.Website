@@ -201,6 +201,12 @@
           "name": "Latest Videos",
           "items": [
             {
+              "name": "SophieBot",
+              "url": "https://www.youtube.com/@sswsophiebot",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
+            },
+            {
               "name": "YakShaver",
               "url": "https://www.youtube.com/@SSWYakShaver",
               "widgetType": "standardLink",
