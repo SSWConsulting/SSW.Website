@@ -201,6 +201,12 @@
           "name": "Latest Videos",
           "items": [
             {
+              "name": "YakShaver",
+              "url": "https://www.youtube.com/@SSWYakShaver",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
+            },
+            {
               "name": "EagleEye",
               "url": "https://www.youtube.com/@SSWEagleEye",
               "widgetType": "standardLink",
