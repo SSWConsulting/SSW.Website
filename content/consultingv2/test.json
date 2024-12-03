@@ -68,6 +68,9 @@
       "isWhiteImages": false,
       "logos": [
         {
+          "logo": "/images/123aspx.gif"
+        },
+        {
           "logo": "/images/10-million-dollars-banner.png"
         }
       ],
