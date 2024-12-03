@@ -39,8 +39,10 @@ import { googleMapsSchema } from "./googleMapsWrapper";
 import { gridLayoutSchema } from "./gridLayout";
 import { heroBlockSchema } from "./hero";
 import { horizontalBlockSchema } from "./horizontalCard";
+import { ImageTextBlockSchema } from "./imageTextBlock/imageTextBlock.schema";
 import { internalCarouselBlockSchema } from "./internalCarousel";
 import { jotFormEmbedSchema } from "./jotFormEmbed";
+import { LogoCarouselSchema } from "./logoCarousel/logoCarouselSchema";
 import { newslettersTableBlockSchema } from "./newslettersTable";
 import { paymentBlockSchema } from "./payment-block";
 import { recurringEventSchema } from "./recurringEvent";
@@ -107,4 +109,6 @@ export const pageBlocks: Template[] = [
   verticalListItemSchema,
   videoEmbedBlockSchema,
   inlineJotFormSchema,
+  LogoCarouselSchema,
+  ImageTextBlockSchema,
 ];

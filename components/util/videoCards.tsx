@@ -3,7 +3,7 @@
 import classNames from "classnames";
 import Image from "next/image";
 import { FC } from "react";
-import Button from "../button/button";
+import Button from "../button/rippleButton";
 import { VideoModal } from "../videoModal";
 import { Container } from "./container";
 import { Section } from "./section";

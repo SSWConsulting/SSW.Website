@@ -24,7 +24,12 @@ export default function ConsultingV2({
       {/* eslint-disable-next-line tailwindcss/no-custom-classname*/}
       <div className="dark flex h-full flex-col">
         <Section color={SectionColor.ToggleLightMode}>
-          <Container width="custom" size="small" className="w-full sm:py-12">
+          <Container
+            size="custom"
+            width="custom"
+            padding="custom"
+            className="w-full p-0"
+          >
             <div className="w-full">
               {data.consultingv2.blocks ? (
                 <Blocks
