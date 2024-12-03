@@ -1,13 +1,15 @@
+"use client";
 import { Button } from "@/components/button/templateButton";
 import { Container } from "@/components/util/container";
 import { Consultingv2BlocksImageTextBlock } from "@/tina/types";
+import "aos/dist/aos.css";
 import Image from "next/image";
 import Link from "next/link";
 import { classNames } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { backgroundOptions } from "../sharedTinaFields/colourOptions/blockBackgroundOptions";
 import { IconLabel } from "./iconLabel";
+import ImageTextBlockWrapper from "./imageTextBlockWrapper";
 import { ListItem } from "./listItem";
 import { PillGroup } from "./pillGroup";
 
@@ -17,18 +19,12 @@ export const ImageTextBlock = ({
   data: Consultingv2BlocksImageTextBlock;
 }) => {
   const imageIsLeftAligined = data.mediaConfiguration?.placement === "Left";
+
   return (
-    <section
-      className={`${
-        backgroundOptions.find((value) => {
-          return value.reference === data.background;
-        })?.classes
-      } w-full`}
-    >
+    <ImageTextBlockWrapper data={data}>
       <Container
         className={classNames(
           "mx-auto flex flex-col gap-8 align-top md:grid md:grid-cols-2 md:gap-16",
-
           data.mediaConfiguration?.mobilePlacement === "Above"
             ? "flex-col-reverse"
             : "flex-col"
@@ -76,16 +72,7 @@ export const ImageTextBlock = ({
             className={`grid ${data.featureColumns?.twoColumns ? "grid-cols-2" : "grid-cols-1"}`}
           >
             {data.featureColumns?.features?.map((item, index) => {
-              return (
-                <ListItem
-                  key={index}
-                  data={{
-                    ...item,
-                    key: index,
-                    twoColumns: data.featureColumns.twoColumns,
-                  }}
-                />
-              );
+              return <ListItem key={index} data={item} />;
             })}
           </div>
           {data.buttons?.length > 0 && (
@@ -134,6 +121,6 @@ export const ImageTextBlock = ({
           </div>
         )}
       </Container>
-    </section>
+    </ImageTextBlockWrapper>
   );
 };
