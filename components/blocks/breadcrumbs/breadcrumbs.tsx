@@ -105,7 +105,7 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
   const links = getLinks(paths, data, data.finalBreadcrumb);
 
   return (
-    <Container size="custom">
+    <Container size="custom" className="pt-8 sm:pt-12">
       <Breadcrumb>
         <BreadcrumbList>
           {links.map((link, index) => (

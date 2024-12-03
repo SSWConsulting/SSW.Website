@@ -76,14 +76,24 @@ export default {
       DEFAULT: "3px",
       0: "0",
       1: "1px",
+      1.5: "1.5px",
       2: "2px",
       3: "3px",
       4: "4px",
       8: "8px",
     },
     extend: {
+      aspectRatio: {
+        "4/3": "4 / 3",
+      },
       textUnderlineOffset: {
         3: "3px",
+      },
+      outlineWidth: {
+        "-1.5": "1.5px",
+      },
+      outlineOffset: {
+        "-1.5": "-1.5px",
       },
       gridTemplateRows: {
         12: "repeat(12, minmax(min-content, 0fr))",
@@ -102,6 +112,7 @@ export default {
       zIndex: {
         1: 1,
         videoThumbnail: 11,
+        1000: "1000",
       },
       height: {
         22: "5.5rem",
@@ -226,10 +237,20 @@ export default {
           "badge-bounce-down var(--animate-duration, 3s) infinite",
         ripple: "ripple-out 0.75s",
         "ripple-pseudo": "ripple-out-pseudo 0.75s",
+        rippling: "rippling 0.6s ease-out",
         marquee: "marquee 20s linear infinite",
         "marquee-vertical": "marquee-vertical 20s linear infinite",
       },
       keyframes: {
+        rippling: {
+          "0%": {
+            opacity: "1",
+          },
+          "100%": {
+            transform: "scale(2)",
+            opacity: "0",
+          },
+        },
         "more-bounce": {
           "0%, 20%, 50%, 80%, 100%": { transform: "translateY(0)" },
           "40%": { transform: "translateY(-30px)" },
