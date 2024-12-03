@@ -77,7 +77,7 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
         <div
           data-tina-field={textTinaField}
           className={classNames(
-            "relative z-10 flex items-center text-white",
+            "relative z-10 flex items-center",
             fontClassName
           )}
         >
@@ -105,9 +105,9 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
 );
 
 const variants: Record<ColorVariant, string> = {
-  primary: "bg-ssw-red",
+  primary: "bg-ssw-red hover:bg-sswDarkRed text-white",
   secondary:
-    "bg-transparent outline -outline-1.5 outline-white -outline-offset-1.5",
+    "bg-transparent outline -outline-1.5 outline-white -outline-offset-1.5 hover:outline-gray-200 hover:text-gray-200 text-white",
 };
 
 RippleButton.displayName = "RippleButton";
