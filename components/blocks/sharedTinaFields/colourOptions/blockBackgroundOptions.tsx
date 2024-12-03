@@ -1,5 +1,9 @@
 import { ColorPickerOptions } from "../colourSelector";
 
+// Tech Debt – Tina doesn't pick up tailwind config classes for custom UI components, so this is a workaround.
+// Changes to the tailwind config will reflect in site components, but not the tina editor form components (they will need to be changed here).
+const sswBlack = "!bg-ssw-black bg-[#333333] text-white";
+
 export const backgroundOptions: ColorPickerOptions[] = [
   {
     name: "Soft Left Gradient",
@@ -28,7 +32,7 @@ export const backgroundOptions: ColorPickerOptions[] = [
   },
   {
     name: "Gray",
-    classes: "bg-gray-700 text-white",
+    classes: `${sswBlack} text-white`,
     reference: 5,
   },
 ];
