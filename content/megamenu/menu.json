@@ -201,6 +201,12 @@
           "name": "Latest Videos",
           "items": [
             {
+              "name": "TimePro",
+              "url": "https://www.youtube.com/@sswtimepro",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
+            },
+            {
               "name": "SugarLearning",
               "url": "https://www.youtube.com/@sugarlearning",
               "widgetType": "standardLink",
