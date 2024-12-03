@@ -1,4 +1,4 @@
-import { IconPickerInput } from "../sharedTinaFields/iconSelector";
+import { IconPickerInput } from "../sharedTinaFields/icons/iconSelector";
 
 export const listItemSchema = [
   {

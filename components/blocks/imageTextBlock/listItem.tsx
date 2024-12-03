@@ -1,7 +1,7 @@
 "use client";
 import { BlurFade } from "@/components/ui/fade-in";
 import { tinaField } from "tinacms/dist/react";
-import { Icon } from "../sharedTinaFields/icon";
+import { Icon } from "../sharedTinaFields/icons/icon";
 export const ListItem = ({ data }) => {
   const { key } = data;
   let xOffset = -10;

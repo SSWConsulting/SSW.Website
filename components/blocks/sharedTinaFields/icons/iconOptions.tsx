@@ -1,8 +1,10 @@
-"use client";
-import React from "react";
 import * as BoxIcons from "react-icons/bi";
 
-export const IconOptions = {
+export const getIcon = (name) => {
+  return IconOptions[name];
+};
+
+const IconOptions = {
   Tina: (props) => (
     <svg
       {...props}
@@ -24,16 +26,4 @@ export const IconOptions = {
   ...BoxIcons,
 };
 
-export const Icon = ({ data, className = "", tinaField = "" }) => {
-  if (IconOptions[data.name] === null || IconOptions[data.name] === undefined) {
-    return <></>;
-  }
-
-  const { name } = data;
-
-  const IconSVG = IconOptions[name];
-
-  return (
-    <IconSVG data-tina-field={tinaField} className={`${className} shrink-0`} />
-  );
-};
+export default IconOptions;

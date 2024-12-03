@@ -1,4 +1,4 @@
-import { Icon } from "@/components/blocks/sharedTinaFields/icon";
+import { Icon } from "@/components/blocks/sharedTinaFields/icons/icon";
 import classNames from "classnames";
 import { tinaField } from "tinacms/dist/react";
 import RippleButton, { ButtonTinaFields, ColorVariant } from "./rippleButtonV2";

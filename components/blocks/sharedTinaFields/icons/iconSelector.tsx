@@ -1,10 +1,10 @@
-"use client";
 import { Popover, Transition } from "@headlessui/react";
 import React from "react";
 import { BiChevronRight } from "react-icons/bi";
 import { GoCircleSlash } from "react-icons/go";
 import { Button, wrapFieldsWithMeta } from "tinacms";
-import { Icon, IconOptions } from "./icon";
+import { Icon } from "./icon";
+import IconOptions from "./iconOptions";
 
 const parseIconName = (name: string) => {
   const splitName = name.split(/(?=[A-Z])/);
@@ -27,9 +27,10 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
     ? parseIconName(input.value)
     : "Select Icon";
   const InputIcon = IconOptions[input.value] ? IconOptions[input.value] : null;
+  const wrapperClasses = "relative z-1000";
 
   return (
-    <div className="relative z-1000">
+    <div className={wrapperClasses}>
       <input type="text" id={input.name} className="hidden" {...input} />
       <Popover>
         {({ open }) => (
