@@ -9,9 +9,9 @@ import { classNames } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { IconLabel } from "./iconLabel";
-import ImageTextBlockWrapper from "./imageTextBlockWrapper";
 import { ListItem } from "./listItem";
 import { PillGroup } from "./pillGroup";
+import { default as V2ComponentWrapper } from "./v2ComponentWrapper";
 
 export const ImageTextBlock = ({
   data,
@@ -21,7 +21,7 @@ export const ImageTextBlock = ({
   const imageIsLeftAligined = data.mediaConfiguration?.placement === "Left";
 
   return (
-    <ImageTextBlockWrapper data={data}>
+    <V2ComponentWrapper data={data} shouldFadeIn={true}>
       <Container
         className={classNames(
           "mx-auto flex flex-col gap-8 align-top md:grid md:gap-16",
@@ -124,6 +124,6 @@ export const ImageTextBlock = ({
           </div>
         )}
       </Container>
-    </ImageTextBlockWrapper>
+    </V2ComponentWrapper>
   );
 };

@@ -1,4 +1,6 @@
 import { Template } from "tinacms";
+import { backgroundOptions } from "../sharedTinaFields/colourOptions/blockBackgroundOptions";
+import { ColorPickerInput } from "../sharedTinaFields/colourSelector";
 
 export const LogoCarouselSchema: Template = {
   name: "logoCarousel",
@@ -7,7 +9,15 @@ export const LogoCarouselSchema: Template = {
     previewSrc: "/images/thumbs/tina/logo-carousel.png",
   },
   fields: [
-    //TODO – background selector once ImageTextBlock is merged in
+    {
+      type: "number",
+      label: "Background Colour",
+      name: "background",
+      ui: {
+        //@ts-expect-error – custom component typing won't be pinned down
+        component: ColorPickerInput(backgroundOptions),
+      },
+    },
     {
       type: "string",
       label: "Heading",

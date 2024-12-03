@@ -4,7 +4,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { backgroundOptions } from "../sharedTinaFields/colourOptions/blockBackgroundOptions";
 
-const ImageTextBlockWrapper = ({ data, children }) => {
+const V2ComponentWrapper = ({ data, children, shouldFadeIn }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
@@ -17,7 +17,7 @@ const ImageTextBlockWrapper = ({ data, children }) => {
             return value.reference === data.background;
           })?.classes
         } w-full`,
-        isInView ? "opacity-100" : "opacity-0"
+        isInView || !shouldFadeIn ? "opacity-100" : "opacity-0"
       )}
     >
       {children}
@@ -25,4 +25,4 @@ const ImageTextBlockWrapper = ({ data, children }) => {
   );
 };
 
-export default ImageTextBlockWrapper;
+export default V2ComponentWrapper;
