@@ -201,6 +201,12 @@
           "name": "Latest Videos",
           "items": [
             {
+              "name": "SophieHub",
+              "url": "https://www.youtube.com/@sophiehub",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
+            },
+            {
               "name": "SophieBot",
               "url": "https://www.youtube.com/@sswsophiebot",
               "widgetType": "standardLink",
