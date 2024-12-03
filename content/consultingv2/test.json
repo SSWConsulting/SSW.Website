@@ -5,11 +5,7 @@
   },
   "blocks": [
     {
-      "finalBreadcrumb": "Angular",
-      "_template": "breadcrumbs"
-    },
-    {
-      "background": 2,
+      "background": 4,
       "topLabel": {
         "labelText": "Consulting",
         "icon": "BiSolidBolt"
@@ -22,7 +18,7 @@
         "clearChipText": "Label"
       },
       "featureColumns": {
-        "twoColumns": true,
+        "twoColumns": false,
         "features": [
           {
             "heading": "Lorem Ipsum",
@@ -48,13 +44,20 @@
       },
       "buttons": [
         {
-          "buttonText": "test",
-          "icon": "Tina"
+          "buttonText": "Primary",
+          "colour": 0
         },
-        {}
+        {
+          "buttonText": "Secondary",
+          "icon": "Tina",
+          "iconFirst": false,
+          "colour": 1
+        }
       ],
-      "mediaConfuguration": {
-        "imageSource": "/images/AuctionsPlus-logo.jpg"
+      "mediaConfiguration": {
+        "placement": "Left",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/404/broken-chain.png"
       },
       "_template": "imageTextBlock"
     }
