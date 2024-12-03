@@ -6,7 +6,6 @@ export const ListItem = ({ data }) => {
   const { key } = data;
   let xOffset = -10;
   if (data.twoColumns && key % 2 === 0) {
-    console.log("xOffset", xOffset);
     xOffset *= -1;
   }
   return (

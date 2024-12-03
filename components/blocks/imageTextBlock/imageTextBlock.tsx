@@ -29,7 +29,9 @@ export const ImageTextBlock = ({
         className={classNames(
           "mx-auto flex flex-col gap-8 align-top sm:grid sm:grid-cols-2 sm:gap-16",
 
-          data.mediaConfiguration?.mobilePlacement === "Above" ? "flex-col-reverse" : "flex-col"
+          data.mediaConfiguration?.mobilePlacement === "Above"
+            ? "flex-col-reverse"
+            : "flex-col"
         )}
       >
         <div
@@ -74,7 +76,16 @@ export const ImageTextBlock = ({
             className={`grid ${data.featureColumns?.twoColumns ? "grid-cols-2" : "grid-cols-1"}`}
           >
             {data.featureColumns?.features?.map((item, index) => {
-              return <ListItem key={index} data={{...item, key: index, twoColumns: data.featureColumns.twoColumns}} />;
+              return (
+                <ListItem
+                  key={index}
+                  data={{
+                    ...item,
+                    key: index,
+                    twoColumns: data.featureColumns.twoColumns,
+                  }}
+                />
+              );
             })}
           </div>
           {data.buttons?.length > 0 && (

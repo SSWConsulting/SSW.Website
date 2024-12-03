@@ -21,7 +21,7 @@ export default function ConsultingV2({
 
   return (
     <>
-      {}
+      {/* eslint-disable-next-line tailwindcss/no-custom-classname*/}
       <div className="dark flex h-full flex-col">
         <Section color={SectionColor.ToggleLightMode}>
           <Container

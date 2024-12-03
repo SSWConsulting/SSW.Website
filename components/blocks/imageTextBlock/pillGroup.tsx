@@ -6,7 +6,7 @@ export const PillGroup = ({ data }) => {
       {data.filledChipText && (
         <span
           data-tina-field={tinaField(data, "filledChipText")}
-          className="rounded-md bg-[#525252] px-2 py-1 text-xs font-light text-white"
+          className="rounded-md bg-neutral-600 px-2 py-1 text-xs font-light text-white"
         >
           {data.filledChipText}
         </span>

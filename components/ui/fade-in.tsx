@@ -51,7 +51,10 @@ export function BlurFade({
       ...defaultVariants.hidden,
       filter: `blur(${blur})`,
     };
-    defaultVariants.visible = { ...defaultVariants.visible, filter: `blur(0px)` };
+    defaultVariants.visible = {
+      ...defaultVariants.visible,
+      filter: "blur(0px)",
+    };
   }
   const combinedVariants = variant || defaultVariants;
   return (
