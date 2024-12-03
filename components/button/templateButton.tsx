@@ -9,9 +9,9 @@ enum ButtonColors {
 }
 
 export interface TemplateButtonOptions extends ButtonTinaFields {
-  buttonText: string;
-  colour: ButtonColors;
-  iconFirst: boolean;
+  buttonText?: string;
+  colour?: ButtonColors;
+  iconFirst?: boolean;
   icon?: string;
 }
 
