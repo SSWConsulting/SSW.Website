@@ -121,6 +121,7 @@ export const ImageTextBlock = ({
             <Image
               objectFit="contain"
               fill={true}
+              className="!h-auto rounded-md"
               src={data.mediaConfiguration?.imageSource}
               alt={data.mediaConfiguration?.altText ?? "image"}
               data-tina-field={tinaField(data, "mediaConfiguration")}
