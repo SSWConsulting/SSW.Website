@@ -9,6 +9,7 @@ const DynamicIconComponent = ({ name, className, tinaField }) => {
       if (!Component) {
         throw new Error(`Icon with name "${name}" not found`);
       }
+      Component.displayName = `Icon(${name})`;
       return (props) => <Component {...props} />;
     })
   );
