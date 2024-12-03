@@ -28,7 +28,8 @@ export const ImageTextBlock = ({
       <Container
         className={classNames(
           "mx-auto flex flex-col gap-8 align-top sm:grid sm:grid-cols-2 sm:gap-16",
-          imageIsLeftAligined && ""
+
+          data.mediaConfiguration?.mobilePlacement === "Above" ? "flex-col-reverse" : "flex-col"
         )}
       >
         <div
