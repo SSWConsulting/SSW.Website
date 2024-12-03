@@ -10,6 +10,7 @@ const DynamicIconComponent = ({ name, className, tinaField }) => {
         throw new Error(`Icon with name "${name}" not found`);
       }
       Component.displayName = `Icon(${name})`;
+      // eslint-disable-next-line react/display-name
       return (props) => <Component {...props} />;
     })
   );
