@@ -24,7 +24,10 @@ export const ImageTextBlock = ({
     <ImageTextBlockWrapper data={data}>
       <Container
         className={classNames(
-          "mx-auto flex flex-col gap-8 align-top md:grid md:grid-cols-2 md:gap-16",
+          "mx-auto flex flex-col gap-8 align-top md:grid md:gap-16",
+          data.mediaConfiguration?.imageSource
+            ? "md:grid-cols-2"
+            : "md:grid-cols-1",
           data.mediaConfiguration?.mobilePlacement === "Above"
             ? "flex-col-reverse"
             : "flex-col"
