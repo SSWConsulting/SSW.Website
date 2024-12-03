@@ -1,9 +1,11 @@
 import { ColorPickerOptions } from "../colourSelector";
 
+const sswRed = "!bg-ssw-red bg-[#cc4141] text-white";
+
 export const buttonOptions: ColorPickerOptions[] = [
   {
     name: "Red",
-    classes: "bg-red-700 text-white",
+    classes: `${sswRed}`,
     reference: 0,
   },
   {

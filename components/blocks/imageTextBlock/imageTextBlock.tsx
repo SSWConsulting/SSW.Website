@@ -1,13 +1,15 @@
+"use client";
 import { Button } from "@/components/button/templateButton";
 import { Container } from "@/components/util/container";
 import { Consultingv2BlocksImageTextBlock } from "@/tina/types";
+import "aos/dist/aos.css";
 import Image from "next/image";
 import Link from "next/link";
 import { classNames } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { backgroundOptions } from "../sharedTinaFields/colourOptions/blockBackgroundOptions";
 import { IconLabel } from "./iconLabel";
+import ImageTextBlockWrapper from "./imageTextBlockWrapper";
 import { ListItem } from "./listItem";
 import { PillGroup } from "./pillGroup";
 
@@ -17,25 +19,22 @@ export const ImageTextBlock = ({
   data: Consultingv2BlocksImageTextBlock;
 }) => {
   const imageIsLeftAligined = data.mediaConfiguration?.placement === "Left";
+
   return (
-    <section
-      className={`${
-        backgroundOptions.find((value) => {
-          return value.reference === data.background;
-        })?.classes
-      } w-full`}
-    >
+    <ImageTextBlockWrapper data={data}>
       <Container
         className={classNames(
-          "mx-auto flex flex-col gap-8 align-top sm:grid sm:grid-cols-2 sm:gap-16",
-
+          "mx-auto flex flex-col gap-8 align-top md:grid md:gap-16",
+          data.mediaConfiguration?.imageSource
+            ? "md:grid-cols-2"
+            : "md:grid-cols-1",
           data.mediaConfiguration?.mobilePlacement === "Above"
             ? "flex-col-reverse"
             : "flex-col"
         )}
       >
         <div
-          className={classNames("w-full", imageIsLeftAligined && "sm:order-2")}
+          className={classNames("w-full", imageIsLeftAligined && "md:order-2")}
         >
           {data.topLabel && <IconLabel data={data.topLabel} />}
           {data.isH1 ? (
@@ -76,16 +75,7 @@ export const ImageTextBlock = ({
             className={`grid ${data.featureColumns?.twoColumns ? "grid-cols-2" : "grid-cols-1"}`}
           >
             {data.featureColumns?.features?.map((item, index) => {
-              return (
-                <ListItem
-                  key={index}
-                  data={{
-                    ...item,
-                    key: index,
-                    twoColumns: data.featureColumns.twoColumns,
-                  }}
-                />
-              );
+              return <ListItem key={index} data={item} />;
             })}
           </div>
           {data.buttons?.length > 0 && (
@@ -114,14 +104,19 @@ export const ImageTextBlock = ({
         {data.mediaConfiguration?.imageSource && (
           <div
             className={classNames(
-              "relative aspect-4/3 w-full sm:aspect-auto",
-              imageIsLeftAligined && "sm:order-1"
+              "relative aspect-4/3 w-full md:aspect-auto",
+              imageIsLeftAligined && "md:order-1"
             )}
           >
+            {data.mediaConfiguration.verticalPlacement === "Center"}
             <Image
               objectFit="contain"
               fill={true}
-              className="!h-auto rounded-md"
+              className={classNames(
+                data.mediaConfiguration?.verticalPlacement === "Centered" &&
+                  "my-auto",
+                "!h-auto rounded-md"
+              )}
               src={data.mediaConfiguration?.imageSource}
               alt={data.mediaConfiguration?.altText ?? "image"}
               data-tina-field={tinaField(data, "mediaConfiguration")}
@@ -129,6 +124,6 @@ export const ImageTextBlock = ({
           </div>
         )}
       </Container>
-    </section>
+    </ImageTextBlockWrapper>
   );
 };
