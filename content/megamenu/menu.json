@@ -201,6 +201,12 @@
           "name": "Latest Videos",
           "items": [
             {
+              "name": "EagleEye",
+              "url": "https://www.youtube.com/@SSWEagleEye",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
+            },
+            {
               "name": "CodeAuditor",
               "url": "https://www.youtube.com/@codeauditor",
               "widgetType": "standardLink",
