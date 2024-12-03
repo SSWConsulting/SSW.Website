@@ -198,25 +198,13 @@
       ],
       "sidebarItems": [
         {
-          "name": "What's New",
+          "name": "Latest Videos",
           "items": [
             {
-              "name": "TinaCMS V1.5",
-              "url": "https://www.tina.io",
-              "description": "The world's leading open source, headless CMS that is powered by Markdown and GitHub.",
-              "widgetType": "featured"
-            },
-            {
-              "name": "SugarLearning V1.50",
-              "url": "https://www.sugarlearning.com/",
-              "description": "The next generation on-boarding & induction tool for smart companies.",
-              "widgetType": "featured"
-            },
-            {
-              "name": "TimePro V2.10",
-              "url": "https://sswtimepro.com/",
-              "description": "TimePro offers everything an enterprise needs, such as invoicing, receipting, and time sheeting",
-              "widgetType": "featured"
+              "name": "TinaCMS",
+              "url": "https://www.youtube.com/@TinaCMS",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
             }
           ]
         },
