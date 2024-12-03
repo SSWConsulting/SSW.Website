@@ -73,7 +73,7 @@ export const ImageTextBlock = ({
             className={`grid ${data.featureColumns?.twoColumns ? "grid-cols-2" : "grid-cols-1"}`}
           >
             {data.featureColumns?.features?.map((item, index) => {
-              return <ListItem key={index} data={item} />;
+              return <ListItem key={index} data={{...item, key: index, twoColumns: data.featureColumns.twoColumns}} />;
             })}
           </div>
           {data.buttons?.length > 0 && (

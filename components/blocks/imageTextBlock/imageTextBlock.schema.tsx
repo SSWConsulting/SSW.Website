@@ -3,7 +3,7 @@ import { buttonSchema } from "../../button/templateButtonSchema";
 import { backgroundOptions } from "../sharedTinaFields/colourOptions/blockBackgroundOptions";
 import { ColorPickerInput } from "../sharedTinaFields/colourSelector";
 import { IconLabelSchema } from "./iconLabel";
-import { listItemSchema } from "./listItem";
+import { listItemSchema } from "./listItem-schema";
 import { pillGroupSchema } from "./pillGroup";
 
 export const ImageTextBlockSchema: Template = {
