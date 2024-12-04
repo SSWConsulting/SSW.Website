@@ -91,6 +91,12 @@ const LatestTech = dynamic(() =>
 
 import { EventBooking } from "./training/eventBooking";
 
+const AccordionBlock = dynamic(() =>
+  import("./blocks/imageComponents/accordionBlock/accordionBlock").then(
+    (mod) => mod.AccordionBlock
+  )
+);
+
 const Breadcrumbs = dynamic(() =>
   import("./blocks/breadcrumbs/breadcrumbs").then((mod) => mod.Breadcrumbs)
 );
@@ -115,6 +121,12 @@ const TrainingInformation = dynamic(() =>
 const TrainingLearningOutcome = dynamic(() =>
   import("./training/trainingLearningOutcome").then(
     (mod) => mod.TrainingLearningOutcome
+  )
+);
+
+const ImageTextBlock = dynamic(() =>
+  import("./blocks/imageComponents/imageTextBlock/imageTextBlock").then(
+    (mod) => mod.ImageTextBlock
   )
 );
 
@@ -150,6 +162,8 @@ const componentMap = {
   GridLayout,
   FixedColumns,
   HorizontalCard,
+  ImageTextBlock,
+  AccordionBlock,
 };
 
 export const Blocks = ({ prefix, blocks }) => {

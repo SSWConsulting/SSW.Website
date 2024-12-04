@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { Components } from "tinacms/dist/rich-text";
 import { getYouTubeId } from "../../helpers/embeds";
 import { BookingForm } from "../bookingForm/bookingForm";
-import Button from "../button/button";
+import Button from "../button/rippleButton";
 import { CustomLink } from "../customLink";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
 import { componentRenderer } from "./mdxComponentRenderer";
