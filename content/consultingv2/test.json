@@ -5,12 +5,29 @@
   },
   "blocks": [
     {
-      "background": 5,
+      "heading": "Test",
+      "isH1": true,
+      "body": "Some text",
+      "buttons": [
+        {
+          "buttonText": "{{ TEXT }}"
+        },
+        {
+          "buttonText": "{{ TEXT }}"
+        }
+      ],
+      "background": 3,
+      "mediaConfiguration": {
+        "imageSource": "/images/3StepsToAPBI.jpg"
+      },
+      "_template": "accordionBlock"
+    },
+    {
       "topLabel": {
         "labelText": "Consulting",
         "icon": "BiSolidBolt"
       },
-      "heading": "Heading",
+      "heading": "Title",
       "isH1": true,
       "description": "Futureproof your apps with .NET8, Microsoft’s latest LTS version, offering optimized performance, enhanced security, and cloud-native development in a stable, long-term supported ecosystem.\n",
       "chips": {
@@ -54,6 +71,7 @@
           "colour": 1
         }
       ],
+      "background": 5,
       "mediaConfiguration": {
         "placement": "Left",
         "verticalPlacement": "Centered",

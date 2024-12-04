@@ -238,8 +238,18 @@ export default {
         ripple: "ripple-out 0.75s",
         "ripple-pseudo": "ripple-out-pseudo 0.75s",
         rippling: "rippling 0.6s ease-out",
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
       keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
         rippling: {
           "0%": {
             opacity: "1",
