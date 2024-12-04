@@ -35,7 +35,7 @@ export const AccordionSchema: Template = {
       list: true,
       ui: {
         itemProps: (item) => {
-          return { label: item?.heading ?? "Accordion" };
+          return { label: item?.label ?? "Accordion" };
         },
       },
       fields: [
@@ -46,12 +46,18 @@ export const AccordionSchema: Template = {
           description: "Label for the accordion item.",
         },
         {
-          type: "string",
+          type: "rich-text",
           label: "Content",
           name: "content",
           description: "Content/description text for the accordion item.",
         },
       ],
+    },
+    {
+      type: "boolean",
+      label: "Multiple Accordion Items Open Simultaneously",
+      name: "isMultipleOpen",
+      description: "Allow multiple accordion items to be open at once.",
     },
     {
       name: "buttons",

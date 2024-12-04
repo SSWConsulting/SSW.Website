@@ -9,6 +9,7 @@ import {
 import "aos/dist/aos.css";
 import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { ImageComponentLayout } from "../ImageComponentLayout";
 
 export const AccordionBlock = ({ data }) => {
@@ -59,7 +60,11 @@ export const AccordionBlock = ({ data }) => {
         </div>
       )}
       {data.accordionItems && (
-        <Accordion type="single" collapsible className="mt-15 w-full">
+        <Accordion
+          type={data.isMultipleOpen ? "multiple" : "single"}
+          collapsible
+          className="mt-15 w-full"
+        >
           {data.accordionItems?.map((item, index) => {
             return (
               <AccordionItem
@@ -70,7 +75,33 @@ export const AccordionBlock = ({ data }) => {
                 <AccordionTrigger className="border-t-1 border-gray-300 text-white">
                   {item.label}
                 </AccordionTrigger>
-                <AccordionContent>{item.content}</AccordionContent>
+                <AccordionContent
+                  data-tina-field={tinaField(item, "content")}
+                  className="marker:text-sswRed child-ul:!ml-0 descendant-ul:ml-6 descendant-ul:!list-square"
+                >
+                  <TinaMarkdown
+                    content={item.content}
+                    components={{
+                      p: (props) => (
+                        <p
+                          {...props}
+                          className="text-sm font-light text-white"
+                        />
+                      ),
+                      h6: (props) => <h6 {...props} className="py-2" />,
+                      h5: (props) => <h5 {...props} className="py-2" />,
+                      h4: (props) => <h4 {...props} className="py-2" />,
+                      h3: (props) => <h3 {...props} className="py-2" />,
+                      h2: (props) => <h2 {...props} className="py-2" />,
+                      h1: (props) => <h1 {...props} className="py-2" />,
+                      //Import sadly needed as somewhere up the food chain the default ul is overridden
+                      ul: (props) => <ul className="my-0 !ml-5" {...props} />,
+                      ol: (props) => (
+                        <ol className="my-0 ml-5 list-decimal" {...props} />
+                      ),
+                    }}
+                  />
+                </AccordionContent>
               </AccordionItem>
             );
           })}

@@ -7,21 +7,18 @@
     {
       "heading": "Title Part 2",
       "isH1": true,
-      "body": "This is some flavour text that sits beneath the title.",
+      "body": "Some body text",
       "accordionItems": [
         {
-          "label": "Angular",
-          "content": "This is a great idea"
+          "label": "Item",
+          "content": "Some item text change\n\n* **One:** This is a list\n* **Two:** Another list item\n* **Three:** Some other thing\n"
         },
         {
-          "label": "React",
-          "content": "We love react"
-        },
-        {
-          "label": "Vue",
-          "content": "Viewing vue"
+          "label": "Beta",
+          "content": "Beta kapa psi\n"
         }
       ],
+      "isMultipleOpen": false,
       "buttons": [
         {
           "buttonText": "Primary",
@@ -35,6 +32,7 @@
       ],
       "background": 3,
       "mediaConfiguration": {
+        "verticalPlacement": "Top",
         "imageSource": "/images/3StepsToAPBI.jpg"
       },
       "_template": "accordionBlock"
