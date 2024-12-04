@@ -1,5 +1,11 @@
 "use client";
 import { Button } from "@/components/button/templateButton";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import "aos/dist/aos.css";
 import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
@@ -30,7 +36,9 @@ export const AccordionBlock = ({ data }) => {
         {data.body}
       </p>
       {data.buttons?.length > 0 && (
-        <div className="mt-5 flex gap-3">
+        <div
+          className={`mt-5 flex ${data.mediaConfiguration.imageSource ? "" : "justify-center"} gap-3`}
+        >
           {data.buttons?.map((button, index) => {
             const buttonElement = (
               <Button
@@ -49,6 +57,24 @@ export const AccordionBlock = ({ data }) => {
             );
           })}
         </div>
+      )}
+      {data.accordionItems && (
+        <Accordion type="single" collapsible className="mt-15 w-full">
+          {data.accordionItems?.map((item, index) => {
+            return (
+              <AccordionItem
+                key={`accord-${index}`}
+                className="w-full"
+                value={`accord-${index}`}
+              >
+                <AccordionTrigger className="border-t-1 border-gray-300 text-white">
+                  {item.label}
+                </AccordionTrigger>
+                <AccordionContent>{item.content}</AccordionContent>
+              </AccordionItem>
+            );
+          })}
+        </Accordion>
       )}
     </ImageComponentLayout>
   );

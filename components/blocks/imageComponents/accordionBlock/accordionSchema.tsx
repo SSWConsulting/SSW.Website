@@ -30,7 +30,7 @@ export const AccordionSchema: Template = {
     {
       type: "object",
       label: "Accordion",
-      name: "accordions",
+      name: "accordionItems",
       description: "The accordion (collapsable) portion of the block.",
       list: true,
       ui: {

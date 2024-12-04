@@ -5,15 +5,32 @@
   },
   "blocks": [
     {
-      "heading": "Test",
+      "heading": "Title Part 2",
       "isH1": true,
-      "body": "Some text",
-      "buttons": [
+      "body": "This is some flavour text that sits beneath the title.",
+      "accordionItems": [
         {
-          "buttonText": "{{ TEXT }}"
+          "label": "Angular",
+          "content": "This is a great idea"
         },
         {
-          "buttonText": "{{ TEXT }}"
+          "label": "React",
+          "content": "We love react"
+        },
+        {
+          "label": "Vue",
+          "content": "Viewing vue"
+        }
+      ],
+      "buttons": [
+        {
+          "buttonText": "Primary",
+          "icon": "BiAlignRight"
+        },
+        {
+          "buttonText": "Secondary",
+          "icon": "BiAnalyse",
+          "colour": 1
         }
       ],
       "background": 3,

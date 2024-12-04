@@ -2,14 +2,12 @@
 import { Container } from "@/components/util/container";
 import "aos/dist/aos.css";
 import Image from "next/image";
-import { useState } from "react";
 import { classNames } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import ImageTextBlockWrapper from "./imageTextBlock/imageTextBlockWrapper";
 
 export const ImageComponentLayout = ({ data, children }) => {
   const imageIsLeftAligined = data.mediaConfiguration?.placement === "Left";
-  const [imageHeight, setImageHeight] = useState(0);
 
   return (
     <ImageTextBlockWrapper data={data}>
@@ -52,9 +50,6 @@ export const ImageComponentLayout = ({ data, children }) => {
               src={data.mediaConfiguration?.imageSource}
               alt={data.mediaConfiguration?.altText ?? "image"}
               data-tina-field={tinaField(data, "mediaConfiguration")}
-              onLoad={(e) =>
-                setImageHeight((e.target as HTMLImageElement).naturalHeight)
-              }
             />
           </div>
         )}
