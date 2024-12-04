@@ -22,6 +22,7 @@ import { Consultingv2BlocksBreadcrumbs } from "@/tina/types";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { tinaField } from "tinacms/dist/react";
+import V2ComponentWrapper from "../imageComponents/imageTextBlock/v2ComponentWrapper";
 
 function getLinks(
   paths: string[],
@@ -105,23 +106,25 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
   const links = getLinks(paths, data, data.finalBreadcrumb);
 
   return (
-    <Container size="custom" className="pt-8 sm:pt-12">
-      <Breadcrumb>
-        <BreadcrumbList>
-          {links.map((link, index) => (
-            // react fragments don't appear in the dom
-            <React.Fragment key={`breadcrumb-${index}`}>
-              {index !== 0 ? (
-                <BreadcrumbSeparator>
-                  <Separator />
-                </BreadcrumbSeparator>
-              ) : null}
-              <BreadcrumbItem>{link}</BreadcrumbItem>
-            </React.Fragment>
-          ))}
-        </BreadcrumbList>
-      </Breadcrumb>
-    </Container>
+    <V2ComponentWrapper data={data} shouldFadeIn={false}>
+      <Container size="custom" className="pt-8 sm:pt-12">
+        <Breadcrumb>
+          <BreadcrumbList>
+            {links.map((link, index) => (
+              // react fragments don't appear in the dom
+              <React.Fragment key={`breadcrumb-${index}`}>
+                {index !== 0 ? (
+                  <BreadcrumbSeparator>
+                    <Separator />
+                  </BreadcrumbSeparator>
+                ) : null}
+                <BreadcrumbItem>{link}</BreadcrumbItem>
+              </React.Fragment>
+            ))}
+          </BreadcrumbList>
+        </Breadcrumb>
+      </Container>
+    </V2ComponentWrapper>
   );
 }
 

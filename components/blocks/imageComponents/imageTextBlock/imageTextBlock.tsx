@@ -56,7 +56,7 @@ export const ImageTextBlock = ({ data }) => {
       </div>
       {data.buttons?.length > 0 && (
         <div
-          className={`mt-5 flex gap-3 ${data.mediaConfiguration.imageSource ? "" : "justify-center"}`}
+          className={`mt-5 flex gap-3 ${data.mediaConfiguration?.imageSource ? "" : "justify-center"}`}
         >
           {data.buttons?.map((button, index) => {
             const buttonElement = (

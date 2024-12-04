@@ -24,7 +24,7 @@ export const ImageComponentLayout = ({ data, children }) => {
       >
         <div
           className={classNames(
-            "aspect-auto w-full md:aspect-4/3",
+            `aspect-auto w-full ${data?.mediaConfiguration?.imageSource ? "md:aspect-4/3" : ""}`,
             imageIsLeftAligined && "md:order-2"
           )}
         >

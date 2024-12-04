@@ -5,6 +5,11 @@
   },
   "blocks": [
     {
+      "background": 5,
+      "finalBreadcrumb": "Title",
+      "_template": "breadcrumbs"
+    },
+    {
       "heading": "Title Part 2",
       "isH1": true,
       "body": "Some body text",
@@ -32,8 +37,8 @@
       ],
       "background": 3,
       "mediaConfiguration": {
-        "verticalPlacement": "Top",
-        "imageSource": "/images/3StepsToAPBI.jpg"
+        "verticalPlacement": "Centered",
+        "imageSource": ""
       },
       "_template": "accordionBlock"
     },
@@ -108,6 +113,58 @@
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
         "imageSource": "/images/404/broken-chain.png"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Some other thing",
+        "icon": "BiAccessibility"
+      },
+      "heading": "Secondary Block",
+      "description": "Futureproof your apps with .NET8, Microsoft’s latest LTS version, offering optimized performance, enhanced security, and cloud-native development in a stable, long-term supported ecosystem.\n",
+      "chips": {
+        "filledChipText": "Isaac",
+        "clearChipText": "Caleb"
+      },
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Lorem Ipsum",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+            "icon": "BiBug"
+          },
+          {
+            "heading": "Lorem Ipsum",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+            "icon": "BiBowlRice"
+          },
+          {
+            "heading": "Lorem Ipsum",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+            "icon": "BiBug"
+          },
+          {
+            "heading": "Lorem Ipsum",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+            "icon": "BiBowlRice"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Primary",
+          "icon": "BiBarChartAlt2",
+          "iconFirst": true,
+          "colour": 0
+        }
+      ],
+      "background": 5,
+      "mediaConfiguration": {
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "imageSource": "/images/8StepstoScrum.png"
       },
       "_template": "imageTextBlock"
     }

@@ -99,6 +99,12 @@ export const AccordionBlock = ({ data }) => {
                       ol: (props) => (
                         <ol className="my-0 ml-5 list-decimal" {...props} />
                       ),
+                      li: (props) => (
+                        <li
+                          className="text-sm font-light text-white"
+                          {...props}
+                        />
+                      ),
                     }}
                   />
                 </AccordionContent>
