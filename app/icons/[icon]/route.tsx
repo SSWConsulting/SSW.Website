@@ -6,6 +6,7 @@ export async function GET(
   { params }: { params: Promise<{ icon: string }> }
 ) {
   const icon = (await params).icon;
+
   const ReactDOMServer = (await import("react-dom/server")).default;
 
   const svg = ReactDOMServer.renderToString(<Icon data={{ name: icon }} />);

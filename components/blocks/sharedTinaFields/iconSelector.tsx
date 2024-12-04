@@ -1,11 +1,17 @@
 "use client";
-import { IconData } from "@/app/icons/route";
 import { Popover, Transition } from "@headlessui/react";
+import {
+  QueryClient,
+  QueryClientProvider,
+  useInfiniteQuery,
+} from "@tanstack/react-query";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo } from "react";
 import { BiChevronRight } from "react-icons/bi";
 import { GoCircleSlash } from "react-icons/go";
 import { Button, wrapFieldsWithMeta } from "tinacms";
+import { IconQueryResponse } from "../../../app/icons/route";
+import { QueryProvider } from "../../../app/providers/query-provider";
 const parseIconName = (name: string) => {
   const splitName = name.split(/(?=[A-Z])/);
   if (splitName.length > 1) {
@@ -16,32 +22,46 @@ const parseIconName = (name: string) => {
 };
 
 export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
-  const [filter, setFilter] = React.useState("");
+  const [client] = React.useState(new QueryClient());
+  return (
+    <QueryClientProvider client={client}>
+      <IconPickerContents input={input} />
+    </QueryClientProvider>
+  );
+});
 
-  const [iconList, setIconList] = useState<IconData[]>([]);
-
-  const [filteredBlocks, setFilteredBlocks] = useState<IconData[]>([]);
-
-  useEffect(() => {
-    if (!filter.length) {
-      setFilteredBlocks(iconList);
-    } else {
-      const filteredBlocks = iconList.filter((icon) => {
-        console.log(`filter: ${filter} displayName ${icon.displayName}`);
-        return icon.displayName.toLowerCase().includes(filter.toLowerCase());
-      });
-
-      setFilteredBlocks(filteredBlocks);
-    }
-  }, [filter, iconList]);
-
-  useEffect(() => {
-    console.log("use effect");
-    axios.get("/icons").then((res) => {
-      console.log("data", res.data);
-      setIconList(res.data);
+const IconPickerContents = ({ input }) => {
+  const fetchPage = async ({
+    pageParam = 0,
+  }: {
+    pageParam?: number;
+  }): Promise<IconQueryResponse & { nextCursor: number }> => {
+    const res = await axios.get("/icons", {
+      params: {
+        pageParam,
+      },
     });
-  }, []);
+    return {
+      ...res.data,
+      nextCursor: res.data.hasNextPage ? pageParam + 1 : null,
+    };
+  };
+
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    useInfiniteQuery({
+      initialPageParam: undefined,
+      queryKey: ["queryKey"],
+      queryFn: fetchPage,
+      getNextPageParam: (lastPage) => {
+        return lastPage.nextCursor;
+      },
+    });
+
+  const filteredIcons = useMemo(() => {
+    return data.pages.map((page) => page.data).flat();
+  }, [data]);
+
+  const [filter, setFilter] = React.useState("");
 
   const inputLabel = input.value ? parseIconName(input.value) : "Select Icon";
 
@@ -53,13 +73,16 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
           <>
             <Popover.Button>
               <Button
-                className={`h-11 px-4 text-sm ${iconList ? "h-11" : "h-10"}`}
+                className={`h-11 px-4 text-sm ${false ? "h-11" : "h-10"}`}
                 size="custom"
                 rounded="full"
                 variant={open ? "secondary" : "white"}
               >
                 {input.value && (
-                  <img src={input.value} className="r-1 h-auto w-7"></img>
+                  <img
+                    src={`/icons/${input.value}`}
+                    className="r-1 h-auto w-7"
+                  ></img>
                 )}
 
                 {/* {InputIcon && (
@@ -108,12 +131,12 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                           placeholder="Filter..."
                         />
                       </div>
-                      {filteredBlocks.length === 0 && (
+                      {filteredIcons.length === 0 && (
                         <span className="relative bg-gray-50 px-2 py-3 text-center text-xs italic text-gray-300">
                           Loading...
                         </span>
                       )}
-                      {filteredBlocks.length > 0 && (
+                      {filteredIcons.length > 0 && (
                         <div className="grid w-full auto-rows-auto grid-cols-6 overflow-y-auto p-2">
                           <button
                             className="relative flex-1 rounded-lg px-3 py-2 text-center text-xs outline-none transition-all duration-150 ease-out hover:bg-gray-50 hover:text-blue-500 focus:bg-gray-50 focus:text-blue-500"
@@ -126,7 +149,7 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                           >
                             <GoCircleSlash className="h-auto w-6 text-gray-200" />
                           </button>
-                          {filteredBlocks.map((name, index) => {
+                          {filteredIcons.map((name) => {
                             return (
                               <button
                                 className="relative flex flex-1 items-center justify-center rounded-lg px-3 py-2 text-center text-xs outline-none transition-all duration-150 ease-out hover:bg-gray-50 hover:text-blue-500 focus:bg-gray-50 focus:text-blue-500"
@@ -137,15 +160,11 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                                   close();
                                 }}
                               >
-                                <img src={name.url} alt={name.displayName} />
-                                {/* <Icon
-                                  data={{
-                                    name: name,
-                                    size: "custom",
-                                    color: "blue",
-                                  }}
-                                  className="h-auto w-7"
-                                /> */}
+                                <img
+                                  src={name.url}
+                                  className="mr-1 w-7"
+                                  alt={name.displayName}
+                                />
                               </button>
                             );
                           })}
@@ -161,4 +180,4 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
       </Popover>
     </div>
   );
-});
+};
