@@ -1,11 +1,11 @@
 "use client";
+import { IconData } from "@/app/icons/route";
 import { Popover, Transition } from "@headlessui/react";
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { BiChevronRight } from "react-icons/bi";
 import { GoCircleSlash } from "react-icons/go";
 import { Button, wrapFieldsWithMeta } from "tinacms";
-import { Icon, IconOptions } from "./icon";
-
 const parseIconName = (name: string) => {
   const splitName = name.split(/(?=[A-Z])/);
   if (splitName.length > 1) {
@@ -17,16 +17,33 @@ const parseIconName = (name: string) => {
 
 export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
   const [filter, setFilter] = React.useState("");
-  const filteredBlocks = React.useMemo(() => {
-    return Object.keys(IconOptions).filter((name) => {
-      return name.toLowerCase().includes(filter.toLowerCase());
-    });
-  }, [filter]);
 
-  const inputLabel = Object.keys(IconOptions).includes(input.value)
-    ? parseIconName(input.value)
-    : "Select Icon";
-  const InputIcon = IconOptions[input.value] ? IconOptions[input.value] : null;
+  const [iconList, setIconList] = useState<IconData[]>([]);
+
+  const [filteredBlocks, setFilteredBlocks] = useState<IconData[]>([]);
+
+  useEffect(() => {
+    if (!filter.length) {
+      setFilteredBlocks(iconList);
+    } else {
+      const filteredBlocks = iconList.filter((icon) => {
+        console.log(`filter: ${filter} displayName ${icon.displayName}`);
+        return icon.displayName.toLowerCase().includes(filter.toLowerCase());
+      });
+
+      setFilteredBlocks(filteredBlocks);
+    }
+  }, [filter, iconList]);
+
+  useEffect(() => {
+    console.log("use effect");
+    axios.get("/icons").then((res) => {
+      console.log("data", res.data);
+      setIconList(res.data);
+    });
+  }, []);
+
+  const inputLabel = input.value ? parseIconName(input.value) : "Select Icon";
 
   return (
     <div className="relative z-1000">
@@ -36,17 +53,24 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
           <>
             <Popover.Button>
               <Button
-                className={`h-11 px-4 text-sm ${InputIcon ? "h-11" : "h-10"}`}
+                className={`h-11 px-4 text-sm ${iconList ? "h-11" : "h-10"}`}
                 size="custom"
                 rounded="full"
                 variant={open ? "secondary" : "white"}
               >
-                {InputIcon && (
-                  <InputIcon className="mr-1 h-auto w-7 fill-current text-blue-500" />
+                {input.value && (
+                  <img src={input.value} className="r-1 h-auto w-7"></img>
                 )}
+
+                {/* {InputIcon && (
+                  <InputIcon className="mr-1 h-auto w-7 fill-current text-blue-500" />
+                )} */}
                 {inputLabel}
-                {!InputIcon && (
-                  <BiChevronRight className="ml-1 h-auto w-5 fill-current opacity-70" />
+
+                {!input.value && (
+                  <>
+                    <BiChevronRight className="ml-1 h-auto w-5 fill-current opacity-70" />
+                  </>
                 )}
               </Button>
             </Popover.Button>
@@ -86,7 +110,7 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                       </div>
                       {filteredBlocks.length === 0 && (
                         <span className="relative bg-gray-50 px-2 py-3 text-center text-xs italic text-gray-300">
-                          No matches found
+                          Loading...
                         </span>
                       )}
                       {filteredBlocks.length > 0 && (
@@ -102,25 +126,26 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                           >
                             <GoCircleSlash className="h-auto w-6 text-gray-200" />
                           </button>
-                          {filteredBlocks.map((name) => {
+                          {filteredBlocks.map((name, index) => {
                             return (
                               <button
                                 className="relative flex flex-1 items-center justify-center rounded-lg px-3 py-2 text-center text-xs outline-none transition-all duration-150 ease-out hover:bg-gray-50 hover:text-blue-500 focus:bg-gray-50 focus:text-blue-500"
-                                key={name}
+                                key={name.displayName}
                                 onClick={() => {
-                                  input.onChange(name);
+                                  input.onChange(name.displayName);
                                   setFilter("");
                                   close();
                                 }}
                               >
-                                <Icon
+                                <img src={name.url} alt={name.displayName} />
+                                {/* <Icon
                                   data={{
                                     name: name,
                                     size: "custom",
                                     color: "blue",
                                   }}
                                   className="h-auto w-7"
-                                />
+                                /> */}
                               </button>
                             );
                           })}
