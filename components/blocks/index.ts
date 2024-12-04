@@ -43,6 +43,7 @@ import { AccordionSchema } from "./imageComponents/accordionBlock/accordionSchem
 import { ImageTextBlockSchema } from "./imageComponents/imageTextBlock/imageTextBlock.schema";
 import { internalCarouselBlockSchema } from "./internalCarousel";
 import { jotFormEmbedSchema } from "./jotFormEmbed";
+import { LogoCarouselSchema } from "./logoCarousel/logoCarouselSchema";
 import { newslettersTableBlockSchema } from "./newslettersTable";
 import { paymentBlockSchema } from "./payment-block";
 import { recurringEventSchema } from "./recurringEvent";
@@ -109,6 +110,7 @@ export const pageBlocks: Template[] = [
   verticalListItemSchema,
   videoEmbedBlockSchema,
   inlineJotFormSchema,
+  LogoCarouselSchema,
   ImageTextBlockSchema,
   AccordionSchema,
 ];

@@ -38,6 +38,22 @@
       "_template": "accordionBlock"
     },
     {
+      "background": 5,
+      "heading": "Trusted By",
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/logos/tina-llama-orange.png",
+          "altText": "Tina"
+        },
+        {
+          "logo": "/images/ssw-logo.svg",
+          "altText": "SSW"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
       "topLabel": {
         "labelText": "Consulting",
         "icon": "BiSolidBolt"

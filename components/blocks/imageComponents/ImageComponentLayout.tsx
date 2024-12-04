@@ -4,13 +4,13 @@ import "aos/dist/aos.css";
 import Image from "next/image";
 import { classNames } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
-import ImageTextBlockWrapper from "./imageTextBlock/imageTextBlockWrapper";
+import V2ComponentWrapper from "./imageTextBlock/v2ComponentWrapper";
 
 export const ImageComponentLayout = ({ data, children }) => {
   const imageIsLeftAligined = data.mediaConfiguration?.placement === "Left";
 
   return (
-    <ImageTextBlockWrapper data={data}>
+    <V2ComponentWrapper data={data} shouldFadeIn={true}>
       <Container
         className={classNames(
           "mx-auto flex flex-col gap-8 align-top md:grid md:gap-16",
@@ -54,6 +54,6 @@ export const ImageComponentLayout = ({ data, children }) => {
           </div>
         )}
       </Container>
-    </ImageTextBlockWrapper>
+    </V2ComponentWrapper>
   );
 };

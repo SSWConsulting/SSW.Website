@@ -240,6 +240,8 @@ export default {
         rippling: "rippling 0.6s ease-out",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        marquee: "marquee 20s linear infinite",
+        "marquee-vertical": "marquee-vertical 20s linear infinite",
       },
       keyframes: {
         "accordion-down": {
@@ -279,6 +281,14 @@ export default {
         "ripple-out-pseudo": {
           "0%": { background: "rgba(0, 0, 0, 0.25)" },
           "100%": { background: "transparent" },
+        },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
         },
       },
       colors: {

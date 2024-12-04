@@ -189,9 +189,9 @@ export async function generateMetadata({
   }
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(seo);
+  const seoData = useSEO(seo);
 
-  return { ...seoProps };
+  return seoData ? { ...seoData.seoProps } : {};
 }
 
 export default async function Consulting({
