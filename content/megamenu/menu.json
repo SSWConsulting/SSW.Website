@@ -590,7 +590,17 @@
                 }
               ]
             },
-            {}
+            {
+              "name": "Featured Categories",
+              "menuItems": [
+                {
+                  "name": "Artificial Intelligence",
+                  "url": "https://www.ssw.com.au/rules/rules-to-better-chatgpt-prompt-engineering/"
+                },
+                {},
+                {}
+              ]
+            }
           ]
         }
       ],
