@@ -589,7 +589,11 @@
                   "icon": "magnifyingGlass"
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "menuColumnGroups": [
             {
               "name": "Top Categories",
               "menuItems": [
@@ -597,14 +601,8 @@
                   "name": "Artificial Intelligence",
                   "url": "https://www.ssw.com.au/rules/rules-to-better-chatgpt-prompt-engineering/"
                 },
-                {
-                  "name": "Communication",
-                  "url": "https://www.ssw.com.au/rules/rules-to-better-communication/"
-                },
-                {
-                  "name": "Project Delivery",
-                  "url": "https://www.ssw.com.au/rules/rules-to-better-scrum/"
-                }
+                {},
+                {}
               ]
             }
           ]
