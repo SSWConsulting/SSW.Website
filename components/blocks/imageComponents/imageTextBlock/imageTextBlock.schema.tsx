@@ -12,6 +12,39 @@ export const ImageTextBlockSchema: Template = {
     previewSrc: "/images/thumbs/tina/client-logos.jpg",
     defaultItem: {
       backgroundColor: "Transparent",
+      topLabel: {
+        labelText: "Lorem Ipsum",
+      },
+      heading: "Lorem Ipsum",
+      isH1: false,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      chips: {
+        filledChipText: "Lorem",
+        clearChipText: "Ipsum",
+      },
+      featureColumns: {
+        twoColumns: true,
+        features: [
+          {
+            heading: "Lorem",
+            description: "Ipsum dolor sit amet, consectetur adipiscing elit.",
+          },
+          {
+            heading: "Ipsum",
+            description: "Lorem dolor sit amet, consectetur adipiscing elit.",
+          },
+        ],
+      },
+      buttons: [
+        {
+          color: 0,
+          buttonText: "Lorem Ipsum",
+        },
+        {
+          color: 1,
+          buttonText: "Dolor Sit",
+        },
+      ],
     },
   },
   fields: [
@@ -73,8 +106,8 @@ export const ImageTextBlockSchema: Template = {
           fields: listItemSchema,
           ui: {
             defaultItem: {
-              heading: "{{ HEADING }}",
-              description: "{{ DESCRIPTION }}",
+              heading: "Lorem",
+              description: "Ipsum dolor sit amet, consectetur adipiscing elit.",
             },
           },
         },
@@ -88,7 +121,7 @@ export const ImageTextBlockSchema: Template = {
       description: "A row of buttons. Max 2.",
       ui: {
         defaultItem: {
-          buttonText: "{{ TEXT }}",
+          buttonText: "Lorem Ipsum",
         },
         max: 2,
         itemProps(item) {
