@@ -636,7 +636,11 @@
     },
     {
       "name": "SSW TV",
-      "url": "https://tv.ssw.com.au/"
+      "viewAll": {
+        "name": "See all our videos",
+        "url": "https://www.youtube.com/@SSWTV"
+      },
+      "url": ""
     }
   ]
 }
