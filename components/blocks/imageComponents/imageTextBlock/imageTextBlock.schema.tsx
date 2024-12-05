@@ -37,11 +37,11 @@ export const ImageTextBlockSchema: Template = {
       },
       buttons: [
         {
-          color: 0,
+          colour: 0,
           buttonText: "Lorem Ipsum",
         },
         {
-          color: 1,
+          colour: 1,
           buttonText: "Dolor Sit",
         },
       ],
