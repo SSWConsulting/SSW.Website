@@ -8,6 +8,31 @@ export const AccordionSchema: Template = {
   // ui: {
   //   previewSrc: "/images/thumbs/tina/accordian.jpg",
   // },
+
+  ui: {
+    defaultItem: {
+      heading: "Lorem Ipsum",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      accordionItems: [
+        {
+          label: "Lorem",
+        },
+        {
+          label: "Ipsum",
+        },
+      ],
+      buttons: [
+        {
+          buttonText: "Lorem Ipsum",
+          colour: 0,
+        },
+        {
+          buttonText: "Dolor Sit",
+          colour: 1,
+        },
+      ],
+    },
+  },
   fields: [
     {
       type: "string",
@@ -67,7 +92,7 @@ export const AccordionSchema: Template = {
       description: "A row of buttons. Max 2.",
       ui: {
         defaultItem: {
-          buttonText: "{{ TEXT }}",
+          buttonText: "Lorem Ipsum",
         },
         max: 2,
         itemProps(item) {
