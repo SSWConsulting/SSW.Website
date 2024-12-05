@@ -624,7 +624,11 @@
           ]
         }
       ],
-      "url": "https://www.ssw.com.au/rules"
+      "viewAll": {
+        "name": "Check out all our Rules",
+        "url": "https://www.ssw.com.au/rules"
+      },
+      "url": ""
     },
     {
       "name": "SSW TV",
