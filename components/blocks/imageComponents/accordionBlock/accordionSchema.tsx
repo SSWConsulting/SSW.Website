@@ -16,9 +16,25 @@ export const AccordionSchema: Template = {
       accordionItems: [
         {
           label: "Lorem",
+          content: {
+            type: "p",
+            children: [
+              {
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              },
+            ],
+          },
         },
         {
           label: "Ipsum",
+          content: {
+            type: "p",
+            children: [
+              {
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              },
+            ],
+          },
         },
       ],
       buttons: [
