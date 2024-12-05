@@ -29,8 +29,6 @@ function getLinks(
   data: Consultingv2BlocksBreadcrumbs,
   finalNode?: string
 ): React.ReactNode[] {
-  const french = false;
-
   const placeholder = "Lorem Ipsum";
   const initialTitle = global.breadcrumbHomeRoute;
 
