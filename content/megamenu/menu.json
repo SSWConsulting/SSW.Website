@@ -647,7 +647,11 @@
                   "url": "https://youtu.be/U9TJ7jj6418?si=eMs9JmM9lQvU3VDA",
                   "icon": "playCircle"
                 },
-                {},
+                {
+                  "name": "Building Cross-platform Blazor Desktop Apps with Photino",
+                  "url": "https://youtu.be/PVRNOoO_iXA?si=IjCjj2b5jXn2LDxa",
+                  "icon": "playCircle"
+                },
                 {}
               ]
             }
