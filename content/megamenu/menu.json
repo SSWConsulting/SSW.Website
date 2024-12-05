@@ -610,6 +610,20 @@
           ]
         }
       ],
+      "sidebarItems": [
+        {
+          "name": "Featured",
+          "items": [
+            {
+              "name": "RulesGPT",
+              "url": "https://rulesgpt.ssw.com.au/",
+              "description": "Try out our custom GPT used to write our Rules",
+              "widgetType": "featured",
+              "icon": "fingerPrint"
+            }
+          ]
+        }
+      ],
       "url": "https://www.ssw.com.au/rules"
     },
     {
