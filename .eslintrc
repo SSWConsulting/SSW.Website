@@ -13,6 +13,7 @@
   "rules": {
     "quotes": ["error", "double"],
     "no-console": "warn",
+    "@typescript-eslint/no-unused-expressions": "off",
     "tailwindcss/no-arbitrary-value": "error",
     "tailwindcss/no-custom-classname": [
       "error",
