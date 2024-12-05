@@ -597,7 +597,10 @@
                   "name": "Artificial Intelligence",
                   "url": "https://www.ssw.com.au/rules/rules-to-better-chatgpt-prompt-engineering/"
                 },
-                {},
+                {
+                  "name": "Communication",
+                  "url": "https://www.ssw.com.au/rules/rules-to-better-communication/"
+                },
                 {}
               ]
             }
