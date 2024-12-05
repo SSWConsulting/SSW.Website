@@ -31,7 +31,7 @@ function getLinks(
 ): React.ReactNode[] {
   const french = false;
 
-  const placeholder = french ? "{{ TITRE DE LA PAGE }}" : "{{ PAGE TITLE }}";
+  const placeholder = "Lorem Ipsum";
   const initialTitle = global.breadcrumbHomeRoute;
 
   // Replace paths with character replacements
