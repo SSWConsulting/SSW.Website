@@ -567,6 +567,25 @@
     },
     {
       "name": "SSW Rules",
+      "menuColumns": [
+        {
+          "menuColumnGroups": [
+            {
+              "name": "Latest Rules",
+              "menuItems": [
+                {
+                  "name": "Do you allow users to comment and rate your pages?",
+                  "url": "https://www.ssw.com.au/rules/best-commenting-engine",
+                  "icon": "magnifyingGlass"
+                },
+                {},
+                {}
+              ]
+            },
+            {}
+          ]
+        }
+      ],
       "url": "https://www.ssw.com.au/rules"
     },
     {
