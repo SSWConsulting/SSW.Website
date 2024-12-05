@@ -661,7 +661,20 @@
             }
           ]
         },
-        {}
+        {
+          "menuColumnGroups": [
+            {
+              "name": "Playlists",
+              "menuItems": [
+                {
+                  "name": "User Groups",
+                  "url": "https://youtube.com/playlist?list=PLpiOR7CBNvlpmhfwQeIVhbqZKxV-do0wY&si=77S27Tbts3ISbV-o",
+                  "icon": "magnifyingGlass"
+                }
+              ]
+            }
+          ]
+        }
       ],
       "viewAll": {
         "name": "See all our videos",
