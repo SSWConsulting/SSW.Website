@@ -583,7 +583,11 @@
                   "url": "https://www.ssw.com.au/rules/record-a-quick-and-dirty-done-video/",
                   "icon": "magnifyingGlass"
                 },
-                {}
+                {
+                  "name": "Do you know how to record your screen?",
+                  "url": "https://www.ssw.com.au/rules/recording-screen/",
+                  "icon": "magnifyingGlass"
+                }
               ]
             },
             {}
