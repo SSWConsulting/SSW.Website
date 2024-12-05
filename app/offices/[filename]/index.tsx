@@ -1,3 +1,5 @@
+"use client";
+
 import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { CustomLink } from "@/components/customLink";
