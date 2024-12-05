@@ -1,5 +1,5 @@
 import { Template } from "tinacms";
-import { buttonSchema } from "../../../button/templateButtonSchema";
+import { buttonSchema } from "../../../button/templateButton.schema";
 import { ImageComponentLayoutSchema } from "../ImageComponentLayoutSchema";
 
 export const AccordionSchema: Template = {
