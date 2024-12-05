@@ -7,6 +7,15 @@ export const LogoCarouselSchema: Template = {
   label: "Logo Carousel",
   ui: {
     previewSrc: "/images/thumbs/tina/logo-carousel.png",
+    defaultItem: {
+      heading: "Lorem Ipsum",
+      logos: [
+        {
+          logo: "",
+          altText: "Logo",
+        },
+      ],
+    },
   },
   fields: [
     {
