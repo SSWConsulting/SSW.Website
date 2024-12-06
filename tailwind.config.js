@@ -450,6 +450,8 @@ export default {
         waveBackground: "url('/images/background/waveBackground.svg')",
         errorPage:
           "linear-gradient(#ffffff, transparent 75%), url(/images/404/broken-chain.png)",
+        glass:
+          "linear-gradient(152.97deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%)",
       },
     },
     linearGradientColors: {

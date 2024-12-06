@@ -6,8 +6,132 @@
   "blocks": [
     {
       "background": 5,
-      "finalBreadcrumb": "Title",
+      "finalBreadcrumb": "Consulting",
       "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": "Consulting",
+        "icon": "BiSolidBolt"
+      },
+      "heading": "Migrate to .NET 8",
+      "isH1": true,
+      "description": "Cloud-ready and enterprise-tested. Secure, efficient, proven.\n",
+      "chips": {
+        "filledChipText": "",
+        "clearChipText": ""
+      },
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a FREE INITIAL Meeting",
+          "icon": "BiCalendarAlt",
+          "iconFirst": true,
+          "colour": 0
+        },
+        {
+          "buttonText": "Secondary",
+          "icon": "Tina",
+          "iconFirst": false,
+          "colour": 1
+        }
+      ],
+      "background": 5,
+      "mediaConfiguration": {
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/404/broken-chain.png"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": false,
+      "heading": "Some",
+      "body": "Some text to go under the title. This is really flavour text and has some max w less than the max container width so it'll look nice.",
+      "buttons": [
+        {
+          "buttonText": "Primary"
+        },
+        {
+          "buttonText": "Secondary",
+          "colour": 1
+        }
+      ],
+      "categoryGroup": [
+        {
+          "categoryName": "A way longer bit of text",
+          "cardGuidList": {
+            "guid": "d82nut",
+            "cardGuidList": [
+              "fzc9cq",
+              "4nap7",
+              "o8s48m",
+              "oe5bg",
+              null
+            ]
+          }
+        },
+        {
+          "categoryName": "B",
+          "cardGuidList": {
+            "guid": "xcxcn1a",
+            "cardGuidList": [
+              "fzc9cq"
+            ]
+          }
+        }
+      ],
+      "cards": [
+        {
+          "guid": "o8s48m",
+          "cardStyle": 0,
+          "chips": {
+            "filledChipText": "Article",
+            "clearChipText": "5 min. read"
+          },
+          "icon": "BiBook",
+          "heading": "Piers and a Rocket",
+          "description": "This is an article about piers and a rocket.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "First Item",
+                "description": "Second item",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Third Item",
+                "description": "oh wait this is the second",
+                "icon": "BiAnalyse"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "text",
+            "icon": "BiRightArrowAlt"
+          }
+        },
+        {
+          "guid": "fzc9cq",
+          "cardStyle": 0,
+          "image": "/images/OG-Azure-Superskills.jpg",
+          "altText": "Alt text",
+          "icon": "BiAccessibility",
+          "heading": "Card A",
+          "description": "Some description"
+        },
+        {
+          "guid": "4nap7",
+          "cardStyle": 0,
+          "heading": "Card X"
+        }
+      ],
+      "background": 5,
+      "_template": "cardCarousel"
     },
     {
       "heading": "Title Part 2",
@@ -57,64 +181,6 @@
         }
       ],
       "_template": "logoCarousel"
-    },
-    {
-      "topLabel": {
-        "labelText": "Consulting",
-        "icon": "BiSolidBolt"
-      },
-      "heading": "Title",
-      "isH1": true,
-      "description": "Futureproof your apps with .NET8, Microsoft’s latest LTS version, offering optimized performance, enhanced security, and cloud-native development in a stable, long-term supported ecosystem.\n",
-      "chips": {
-        "filledChipText": "Label",
-        "clearChipText": "Label"
-      },
-      "featureColumns": {
-        "twoColumns": false,
-        "features": [
-          {
-            "heading": "Lorem Ipsum",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-            "icon": "BiTimer"
-          },
-          {
-            "heading": "Lorem Ipsum",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-            "icon": "BiSolidPhone"
-          },
-          {
-            "heading": "Lorem Ipsum",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-            "icon": "BiSolidPhone"
-          },
-          {
-            "heading": "Lorem Ipsum",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-            "icon": "BiSolidPhone"
-          }
-        ]
-      },
-      "buttons": [
-        {
-          "buttonText": "Primary",
-          "colour": 0
-        },
-        {
-          "buttonText": "Secondary",
-          "icon": "Tina",
-          "iconFirst": false,
-          "colour": 1
-        }
-      ],
-      "background": 5,
-      "mediaConfiguration": {
-        "placement": "Left",
-        "verticalPlacement": "Centered",
-        "mobilePlacement": "Above",
-        "imageSource": "/images/404/broken-chain.png"
-      },
-      "_template": "imageTextBlock"
     },
     {
       "topLabel": {

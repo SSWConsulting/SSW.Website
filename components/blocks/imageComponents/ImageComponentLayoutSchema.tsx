@@ -1,15 +1,7 @@
-import { backgroundOptions } from "../sharedTinaFields/colourOptions/blockBackgroundOptions";
-import { ColorPickerInput } from "../sharedTinaFields/colourSelector";
+import { backgroundSchema } from "./imageTextBlock/v2ComponentWrapper";
 
 export const ImageComponentLayoutSchema = [
-  {
-    type: "number",
-    label: "Background Colour",
-    name: "background",
-    ui: {
-      component: ColorPickerInput(backgroundOptions),
-    },
-  },
+  backgroundSchema,
   {
     type: "object",
     label: "Media",

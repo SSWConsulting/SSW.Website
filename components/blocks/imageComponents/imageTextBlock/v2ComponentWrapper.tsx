@@ -3,6 +3,7 @@ import classNames from "classnames";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { backgroundOptions } from "../../sharedTinaFields/colourOptions/blockBackgroundOptions";
+import { ColorPickerInput } from "../../sharedTinaFields/colourSelector";
 
 const V2ComponentWrapper = ({ data, children, shouldFadeIn }) => {
   const ref = useRef(null);
@@ -23,6 +24,15 @@ const V2ComponentWrapper = ({ data, children, shouldFadeIn }) => {
       {children}
     </section>
   );
+};
+
+export const backgroundSchema = {
+  type: "number",
+  label: "Background Colour",
+  name: "background",
+  ui: {
+    component: ColorPickerInput(backgroundOptions),
+  },
 };
 
 export default V2ComponentWrapper;
