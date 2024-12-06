@@ -4,10 +4,9 @@
   "plugins": ["@typescript-eslint", "tailwindcss"],
   "extends": [
     "eslint:recommended",
+    "prettier",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:tailwindcss/recommended",
-    "plugin:prettier/recommended",
     "next/core-web-vitals",
   ],
   "rules": {
