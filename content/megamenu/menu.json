@@ -676,8 +676,24 @@
           ]
         }
       ],
+      "sidebarItems": [
+        {
+          "name": "Featured",
+          "items": [
+            {
+              "name": "The People Behind SSW",
+              "url": "https://www.youtube.com/watch?v=Jveq6VFjWTA&t=12s",
+              "description": "Why SSW is Australia's leading custom software development company",
+              "widgetType": "featured",
+              "icon": "fingerPrint"
+            },
+            {},
+            {}
+          ]
+        }
+      ],
       "viewAll": {
-        "name": "See all our videos",
+        "name": "Visit our channel",
         "url": "https://www.youtube.com/@SSWTV"
       },
       "url": ""
