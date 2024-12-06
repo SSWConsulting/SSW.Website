@@ -21,7 +21,7 @@
           "g\\-yt.+",
           "legend",
           "prose-dark",
-          "prose-h2:text-3xl/9",
+          "prose-h2\\:text-3xl/9",
           "prose-opportunity",
         ],
       },
