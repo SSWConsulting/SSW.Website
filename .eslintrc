@@ -17,11 +17,11 @@
     "tailwindcss/no-custom-classname": [
       "error",
       {
-        "whitelist": ["g\\-yt.+", "legend"],
+        "whitelist": ["prose-.*", "prose(:.*)?", "g\\-yt.+", "legend"],
       },
     ],
     "prettier/prettier": [
-      "error",
+      "warn",
       {
         "endOfLine": "auto",
       },
