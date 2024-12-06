@@ -4,10 +4,10 @@
   "plugins": ["@typescript-eslint", "tailwindcss"],
   "extends": [
     "eslint:recommended",
-    "prettier",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "next/core-web-vitals",
+    "plugin:prettier/recommended",
   ],
   "rules": {
     "quotes": ["error", "double"],
