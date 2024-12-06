@@ -9,7 +9,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:tailwindcss/recommended",
     "next/core-web-vitals",
-    "plugin:prettier/recommended",
+    "plugin:prettier/recommended"
   ],
   "rules": {
     "quotes": ["error", "double"],
