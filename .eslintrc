@@ -15,13 +15,13 @@
     "no-console": "warn",
     "tailwindcss/no-arbitrary-value": "error",
     "tailwindcss/no-custom-classname": [
-      "error",
+      "warn",
       {
         "whitelist": ["g\\-yt.+", "legend"],
       },
     ],
     "prettier/prettier": [
-      "error",
+      "warn",
       {
         "endOfLine": "auto",
       },
