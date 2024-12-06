@@ -687,7 +687,13 @@
               "widgetType": "featured",
               "icon": "fingerPrint"
             },
-            {},
+            {
+              "name": "Why work at SSW?",
+              "url": "https://www.youtube.com/watch?v=tWuutobJtdg&t=2s",
+              "description": "Check for employment opportunities in our team",
+              "widgetType": "featured",
+              "icon": "fingerPrint"
+            },
             {}
           ]
         }
