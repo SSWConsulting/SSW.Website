@@ -51,6 +51,7 @@ jobs:
       - name: Azure CLI - Login
         uses: azure/login@v2
         with:
+          node-version-file: ".nvmrc"
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
