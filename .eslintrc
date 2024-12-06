@@ -15,9 +15,15 @@
     "no-console": "warn",
     "tailwindcss/no-arbitrary-value": "error",
     "tailwindcss/no-custom-classname": [
-      "warn",
+      "error",
       {
-        "whitelist": ["g\\-yt.+", "legend"],
+        "whitelist": [
+          "g\\-yt.+",
+          "legend",
+          "prose-dark",
+          "prose-h2:text-3xl/9",
+          "prose-opportunity",
+        ],
       },
     ],
     "prettier/prettier": [
