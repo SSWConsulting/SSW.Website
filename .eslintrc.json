@@ -19,15 +19,15 @@
     "tailwindcss/no-custom-classname": [
       "error",
       {
-        "whitelist": ["g\\-yt.+", "legend"],
-      },
+        "whitelist": ["g\\-yt.+", "legend"]
+      }
     ],
     "prettier/prettier": [
       "error",
       {
-        "endOfLine": "auto",
-      },
-    ],
+        "endOfLine": "auto"
+      }
+    ]
   },
-  "reportUnusedDisableDirectives": true,
+  "reportUnusedDisableDirectives": true
 }
