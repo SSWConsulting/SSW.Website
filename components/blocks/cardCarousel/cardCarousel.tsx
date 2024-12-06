@@ -39,6 +39,18 @@ export const CardCarousel = ({ data }) => {
     setSelectedTabWidth(currentTab?.clientWidth ?? 0);
   }, [activeCategory, data.categoryGroup]);
 
+  const cards = data.cards
+    ?.filter((card) =>
+      activeCategory?.cardGuidList.cardGuidList.includes(card.guid)
+    )
+    .map((card, index) => (
+      <Card
+        data={card}
+        key={`card-carousel-${index}`}
+        placeholder={hasImages}
+      />
+    ));
+
   return (
     <V2ComponentWrapper shouldFadeIn={false} data={data}>
       <Container>
@@ -120,19 +132,13 @@ export const CardCarousel = ({ data }) => {
               })}
             </div>
           )}
-          <div className="flex flex-wrap items-stretch justify-evenly gap-4">
-            {data.cards
-              ?.filter((card) =>
-                activeCategory?.cardGuidList.cardGuidList.includes(card.guid)
-              )
-              .map((card, index) => (
-                <Card
-                  data={card}
-                  key={`card-carousel-${index}`}
-                  placeholder={hasImages}
-                />
-              ))}
-          </div>
+          {data.isStacked ? (
+            <div className="flex flex-wrap items-stretch justify-evenly gap-4">
+              {cards}
+            </div>
+          ) : (
+            <CarouselLayout>{cards}</CarouselLayout>
+          )}
         </div>
       </Container>
     </V2ComponentWrapper>
@@ -146,7 +152,7 @@ const Card = ({ data, placeholder }) => {
 
   return (
     <div
-      className={`w-full min-w-64 max-w-sm rounded-md p-4 text-start md:p-6 lg:p-8 ${
+      className={`w-full min-w-64 max-w-sm shrink rounded-md p-4 text-start md:p-6 lg:p-8 ${
         cardOptions.find((value) => {
           return value.reference === data.cardStyle;
         })?.classes
@@ -205,10 +211,25 @@ const Card = ({ data, placeholder }) => {
   );
 };
 
-const CarouselLayout = (props) => {
-  return <></>;
-};
-
-const GridLayout = (props) => {
-  return <></>;
+//TODO: this layout needs to be completed
+const CarouselLayout = ({ children }) => {
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
+  return (
+    <div>
+      <div className="mask-horizontal-fade flex items-stretch justify-center gap-4">
+        {children}
+      </div>
+      <div className="m-auto flex w-3/4 justify-center gap-4 p-6">
+        {children.map((_, index) => {
+          return (
+            <button
+              key={`card-carousel-button-${index}`}
+              className={`h-1 w-full ${activeCardIndex === index ? "bg-gray-300" : "bg-gray-500"}`}
+              onClick={() => setActiveCardIndex(index)}
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
 };
