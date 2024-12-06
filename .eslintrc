@@ -17,13 +17,7 @@
     "tailwindcss/no-custom-classname": [
       "error",
       {
-        "whitelist": [
-          "prose-.*",
-          "g\\-yt.+",
-          "legend",
-          "prose-dark",
-          "prose-opportunity",
-        ],
+        "whitelist": ["prose-.*", "prose-.*:.*", "g\\-yt.+", "legend"],
       },
     ],
     "prettier/prettier": [
