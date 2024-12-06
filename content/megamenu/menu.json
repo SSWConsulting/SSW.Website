@@ -694,7 +694,13 @@
               "widgetType": "featured",
               "icon": "fingerPrint"
             },
-            {}
+            {
+              "name": "The Future of Business with AI",
+              "url": "https://www.youtube.com/watch?v=-q9lLqtkC00",
+              "description": "Investing early with AI will deliver the greatest rewards",
+              "widgetType": "featured",
+              "icon": "fingerPrint"
+            }
           ]
         }
       ],
