@@ -10,11 +10,6 @@
     "next/core-web-vitals",
     "plugin:prettier/recommended",
   ],
-  "settings": {
-    "tailwindcss": {
-      "config": "./tailwind.config.js",
-    },
-  },
   "rules": {
     "@typescript-eslint/no-unused-expressions": [
       "error",
