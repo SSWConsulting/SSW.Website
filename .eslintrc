@@ -4,8 +4,7 @@
   "plugins": ["@typescript-eslint", "tailwindcss",],
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
+    "next/typescript",
     "plugin:react/recommended",
     "plugin:tailwindcss/recommended",
     "next/core-web-vitals",
