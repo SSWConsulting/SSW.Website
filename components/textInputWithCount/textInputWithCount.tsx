@@ -13,12 +13,12 @@ export const TextInputWithCount = (max: number, isTextArea: boolean = false) =>
     <div className="flex flex-col gap-2">
       {isTextArea ? (
         <textarea
-          className="focus:shadow-outline block min-h-40 w-full resize-y rounded-md border border-gray-200 px-3 py-2 text-base text-gray-600 shadow-inner focus:border-blue-500 focus:text-gray-900"
+          className="block min-h-40 w-full resize-y rounded-md border border-gray-200 px-3 py-2 text-base text-gray-600 shadow-inner focus:border-blue-500 focus:text-gray-900 focus:ring"
           {...input}
         />
       ) : (
         <input
-          className="focus:shadow-outline block w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-base text-gray-600 shadow-inner transition-all duration-150 ease-out placeholder:text-gray-300 focus:border-blue-500 focus:text-gray-900 focus:outline-none"
+          className="block w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-base text-gray-600 shadow-inner transition-all duration-150 ease-out placeholder:text-gray-300 focus:border-blue-500 focus:text-gray-900 focus:outline-none focus:ring"
           {...input}
         />
       )}
