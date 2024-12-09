@@ -9,6 +9,8 @@ import { cardOptions } from "../sharedTinaFields/colourOptions/cardOptions";
 import { ColorPickerInput } from "../sharedTinaFields/colourSelector";
 import { IconPickerInput } from "../sharedTinaFields/iconSelector";
 
+import { fadeInSchema } from "../imageComponents/imageTextBlock/v2ComponentWrapper";
+
 const GUIDFunction = () => Math.random().toString(36).substring(7);
 
 const GUIDGeneratorComponent = (props) => {
@@ -309,5 +311,7 @@ export const CardCarouselSchema: Template = {
     },
     //@ts-expect-error – fields are not being recognized
     backgroundSchema,
+    //@ts-expect-error – fields are not being recognized
+    fadeInSchema,
   ],
 };

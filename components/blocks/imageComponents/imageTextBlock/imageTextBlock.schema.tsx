@@ -4,6 +4,7 @@ import { ImageComponentLayoutSchema } from "../ImageComponentLayoutSchema";
 import { IconLabelSchema } from "./iconLabel";
 import { listItemSchema } from "./listItem-schema";
 import { pillGroupSchema } from "./pillGroup";
+import { fadeInSchema } from "./v2ComponentWrapper";
 
 export const ImageTextBlockSchema: Template = {
   name: "imageTextBlock",
@@ -100,5 +101,7 @@ export const ImageTextBlockSchema: Template = {
     },
     //@ts-expect-error – fields are not being recognized
     ...ImageComponentLayoutSchema,
+    //@ts-expect-error – fields are not being recognized
+    fadeInSchema,
   ],
 };

@@ -1,4 +1,5 @@
 import { Template } from "tinacms";
+import { fadeInSchema } from "../imageComponents/imageTextBlock/v2ComponentWrapper";
 import { backgroundOptions } from "../sharedTinaFields/colourOptions/blockBackgroundOptions";
 import { ColorPickerInput } from "../sharedTinaFields/colourSelector";
 
@@ -58,5 +59,7 @@ export const LogoCarouselSchema: Template = {
         },
       ],
     },
+    //@ts-expect-error – fields are not being recognized
+    fadeInSchema,
   ],
 };

@@ -106,7 +106,7 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
   const links = getLinks(paths, data, data.finalBreadcrumb);
 
   return (
-    <V2ComponentWrapper data={data} shouldFadeIn={false}>
+    <V2ComponentWrapper data={data}>
       <Container size="custom" className="pt-8 sm:pt-12">
         <Breadcrumb>
           <BreadcrumbList>

@@ -10,7 +10,7 @@ export const ImageComponentLayout = ({ data, children }) => {
   const imageIsLeftAligined = data.mediaConfiguration?.placement === "Left";
 
   return (
-    <V2ComponentWrapper data={data} shouldFadeIn={true}>
+    <V2ComponentWrapper data={data}>
       <Container
         className={classNames(
           "mx-auto flex flex-col gap-8 align-top md:grid md:gap-16",

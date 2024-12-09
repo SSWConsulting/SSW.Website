@@ -1,6 +1,7 @@
 import { Template } from "tinacms";
 import { buttonSchema } from "../../../button/templateButtonSchema";
 import { ImageComponentLayoutSchema } from "../ImageComponentLayoutSchema";
+import { fadeInSchema } from "../imageTextBlock/v2ComponentWrapper";
 
 export const AccordionSchema: Template = {
   name: "accordionBlock",
@@ -79,5 +80,7 @@ export const AccordionSchema: Template = {
     },
     //@ts-expect-error – fields are not being recognized
     ...ImageComponentLayoutSchema,
+    //@ts-expect-error – fields are not being recognized
+    fadeInSchema,
   ],
 };

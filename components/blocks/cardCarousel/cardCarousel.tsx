@@ -41,7 +41,7 @@ export const CardCarousel = ({ data }) => {
   }, [activeCategory, data.categoryGroup]);
 
   return (
-    <V2ComponentWrapper shouldFadeIn={false} data={data}>
+    <V2ComponentWrapper data={data}>
       <Container>
         <div className="flex flex-col gap-4 text-center">
           <div className="relative m-auto flex w-fit overflow-hidden rounded-md bg-black">
