@@ -219,9 +219,6 @@ const CardList = ({ activeCategory, data, hasImages }) => {
   }, [activeCategory]);
   return (
     <>
-      <h1>
-        hello {cardData.length} {typeof cardData}
-      </h1>
       {cardData.map((card, index) => {
         return (
           <Card
