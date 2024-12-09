@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/button/templateButton";
+import { Marquee } from "@/components/ui/marquee";
 import { Container } from "@/components/util/container";
 import Image from "next/image";
 import Link from "next/link";
@@ -238,7 +239,9 @@ const CarouselLayout = ({ children, cardData }) => {
   return (
     <div>
       <div className="mask-horizontal-fade flex items-stretch justify-center gap-4">
-        {children}
+        <Marquee pauseOnHover className="h-full justify-center overflow-hidden">
+          {children}
+        </Marquee>
       </div>
       <div className="m-auto flex w-3/4 justify-center gap-4 p-6">
         {cardData.map((_, index) => {
