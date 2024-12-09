@@ -12,16 +12,21 @@ const V2ComponentWrapper = ({ data, children, shouldFadeIn }) => {
     <section
       ref={ref}
       className={classNames(
-        "transition-opacity duration-300",
         `${
           backgroundOptions.find((value) => {
             return value.reference === data.background;
           })?.classes
-        } w-full`,
-        isInView || !shouldFadeIn ? "opacity-100" : "opacity-0"
+        } w-full`
       )}
     >
-      {children}
+      <section
+        className={classNames(
+          "transition-opacity duration-300",
+          isInView || !shouldFadeIn ? "opacity-100" : "opacity-0"
+        )}
+      >
+        {children}
+      </section>
     </section>
   );
 };
