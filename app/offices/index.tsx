@@ -9,7 +9,7 @@ import { Container } from "@/components/util/container";
 import Image from "next/image";
 import { Breadcrumbs } from "../components/breadcrumb";
 
-export default function OfficeIndexPage({ tinaProps }) {
+export default function OfficesPage({ tinaProps }) {
   const { data } = tinaProps;
   const offices = data.officeIndex.officesIndex?.map((office) => office.office);
 

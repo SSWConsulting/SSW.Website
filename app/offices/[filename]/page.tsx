@@ -2,7 +2,7 @@ import { useSEO } from "@/hooks/useSeo";
 import client from "@/tina/client";
 import { TODAY } from "hooks/useFetchEvents";
 import { Metadata } from "next";
-import OfficesPage from ".";
+import OfficePage from ".";
 import { TinaClient } from "../../tina-client";
 
 const getData = async (filename: string) => {
@@ -66,12 +66,12 @@ export async function generateStaticParams() {
   return pages;
 }
 
-export default async function Offices({
+export default async function Office({
   params,
 }: {
   params: { filename: string };
 }) {
   const { filename } = params;
   const { props } = await getData(filename);
-  return <TinaClient props={props} Component={OfficesPage} />;
+  return <TinaClient props={props} Component={OfficePage} />;
 }

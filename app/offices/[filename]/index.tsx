@@ -14,7 +14,7 @@ import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-export default function OfficesPage({ props, tinaProps }) {
+export default function OfficePage({ props, tinaProps }) {
   const { data } = tinaProps;
 
   return (

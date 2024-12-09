@@ -2,7 +2,7 @@ import { TODAY } from "@/hooks/useFetchEvents";
 import { useSEO } from "@/hooks/useSeo";
 import client from "@/tina/client";
 import { Metadata } from "next";
-import OfficeIndexPage from ".";
+import OfficesPage from ".";
 import { TinaClient } from "../tina-client";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -37,7 +37,7 @@ const getData = async () => {
   };
 };
 
-export default async function OfficePage() {
+export default async function Offices() {
   const { props } = await getData();
-  return <TinaClient props={props} Component={OfficeIndexPage} />;
+  return <TinaClient props={props} Component={OfficesPage} />;
 }
