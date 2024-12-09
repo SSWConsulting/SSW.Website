@@ -41,7 +41,6 @@ export default function Consulting({ tinaProps, props }) {
       </Section>
       <Section
         color="black"
-        // eslint-disable-next-line tailwindcss/no-custom-classname
         className={"prose-dark border-y-4 border-y-sswRed text-center"}
       >
         <a id="more" />
