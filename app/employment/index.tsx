@@ -1,6 +1,6 @@
 "use client";
 import { Breadcrumbs } from "app/components/breadcrumb";
-import { tinaField, useTina } from "tinacms/dist/react";
+import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Booking } from "../../components/blocks/booking";
 
@@ -10,7 +10,6 @@ import {
   Opportunities,
   OpportunityType,
 } from "../../components/filter/opportunities";
-import { Layout } from "../../components/layout";
 import { Marketing } from "../../components/marketing/Marketing";
 import {
   jobStatus,
@@ -20,7 +19,6 @@ import {
 import { Benefits } from "../../components/util/consulting/benefits";
 import { Container } from "../../components/util/container";
 import { Section } from "../../components/util/section";
-import { SEO } from "../../components/util/seo";
 import { removeExtension } from "../../services/client/utils.service";
 
 const AVAILABLE = jobStatus[0];
