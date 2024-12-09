@@ -39,18 +39,6 @@ export const CardCarousel = ({ data }) => {
     setSelectedTabWidth(currentTab?.clientWidth ?? 0);
   }, [activeCategory, data.categoryGroup]);
 
-  const cards = data.cards
-    ?.filter((card) =>
-      activeCategory?.cardGuidList.cardGuidList.includes(card.guid)
-    )
-    .map((card, index) => (
-      <Card
-        data={card}
-        key={`card-carousel-${index}`}
-        placeholder={hasImages}
-      />
-    ));
-
   return (
     <V2ComponentWrapper shouldFadeIn={false} data={data}>
       <Container>
@@ -134,10 +122,16 @@ export const CardCarousel = ({ data }) => {
           )}
           {data.isStacked ? (
             <div className="flex flex-wrap items-stretch justify-evenly gap-4">
-              {cards}
+              {/* {cards} */}
             </div>
           ) : (
-            <CarouselLayout>{cards}</CarouselLayout>
+            <CarouselLayout cardData={data.cards}>
+              <CardList
+                activeCategory={activeCategory}
+                data={data}
+                hasImages={hasImages}
+              />
+            </CarouselLayout>
           )}
         </div>
       </Container>
@@ -211,8 +205,38 @@ const Card = ({ data, placeholder }) => {
   );
 };
 
+const CardList = ({ activeCategory, data, hasImages }) => {
+  const [cardData, setCardData] = useState(data.cards);
+
+  useEffect(() => {
+    console.log("activeCategory", activeCategory);
+    if (activeCategory)
+      setCardData(
+        data.cards.filter((card) => {
+          return activeCategory?.cardGuidList.cardGuidList.includes(card.guid);
+        })
+      );
+  }, [activeCategory]);
+  return (
+    <>
+      <h1>
+        hello {cardData.length} {typeof cardData}
+      </h1>
+      {cardData.map((card, index) => {
+        return (
+          <Card
+            data={card}
+            key={`card-carousel-${index}`}
+            placeholder={hasImages}
+          />
+        );
+      })}
+    </>
+  );
+};
+
 //TODO: this layout needs to be completed
-const CarouselLayout = ({ children }) => {
+const CarouselLayout = ({ children, cardData }) => {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
   return (
     <div>
@@ -220,7 +244,7 @@ const CarouselLayout = ({ children }) => {
         {children}
       </div>
       <div className="m-auto flex w-3/4 justify-center gap-4 p-6">
-        {children.map((_, index) => {
+        {cardData.map((_, index) => {
           return (
             <button
               key={`card-carousel-button-${index}`}
