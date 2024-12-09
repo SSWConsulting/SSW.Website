@@ -4,20 +4,27 @@
   "plugins": ["@typescript-eslint", "tailwindcss"],
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
+    "next/typescript",
+    "plugin:react/recommended",
     "plugin:tailwindcss/recommended",
-    "plugin:prettier/recommended",
     "next/core-web-vitals",
+    "plugin:prettier/recommended",
   ],
   "rules": {
+    "@typescript-eslint/no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true,
+      },
+    ],
     "quotes": ["error", "double"],
     "no-console": "warn",
     "tailwindcss/no-arbitrary-value": "error",
     "tailwindcss/no-custom-classname": [
       "error",
       {
-        "whitelist": ["g\\-yt.+", "legend"],
+        "whitelist": ["g\\-yt.+", "legend", "dark"],
       },
     ],
     "prettier/prettier": [

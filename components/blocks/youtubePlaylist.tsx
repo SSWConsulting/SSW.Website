@@ -35,7 +35,6 @@ export const YoutubePlaylistBlock: React.FC<YoutubePlaylistProps> = (props) => {
             },
           })
           .then((response) => {
-            response;
             setPlaylistVideosLinks(response.data);
           });
       } catch (error) {
