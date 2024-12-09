@@ -15,7 +15,6 @@ const getData = async (
   props: UseTinaProps & ArticlePageProps["props"];
 }> => {
   const tinaProps = await getArticle(filename);
-  tinaProps.data.articlesIndex.title;
   return {
     props: {
       data: tinaProps.data,
