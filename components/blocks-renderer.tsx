@@ -118,6 +118,12 @@ const TrainingLearningOutcome = dynamic(() =>
   )
 );
 
+const ImageTextBlock = dynamic(() =>
+  import("./blocks/imageTextBlock/imageTextBlock").then(
+    (mod) => mod.ImageTextBlock
+  )
+);
+
 const componentMap = {
   AboutUs,
   Carousel,
@@ -150,6 +156,7 @@ const componentMap = {
   GridLayout,
   FixedColumns,
   HorizontalCard,
+  ImageTextBlock,
 };
 
 export const Blocks = ({ prefix, blocks }) => {

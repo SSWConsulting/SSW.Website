@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
-import Button from "../button/button";
+import Button from "../button/rippleButton";
 import { customImageBlockSchema } from "./customImage";
 import { expertBlockSchema } from "./expertBlock";
 import { componentRenderer } from "./mdxComponentRenderer";

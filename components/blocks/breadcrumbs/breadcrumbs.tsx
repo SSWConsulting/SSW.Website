@@ -1,5 +1,6 @@
 "use client";
 
+import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import {
   Breadcrumb,
   BreadcrumbEllipsis,
@@ -28,9 +29,7 @@ function getLinks(
   data: Consultingv2BlocksBreadcrumbs,
   finalNode?: string
 ): React.ReactNode[] {
-  const french = false;
-
-  const placeholder = french ? "{{ TITRE DE LA PAGE }}" : "{{ PAGE TITLE }}";
+  const placeholder = "Lorem Ipsum";
   const initialTitle = global.breadcrumbHomeRoute;
 
   // Replace paths with character replacements
@@ -105,23 +104,25 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
   const links = getLinks(paths, data, data.finalBreadcrumb);
 
   return (
-    <Container size="custom">
-      <Breadcrumb>
-        <BreadcrumbList>
-          {links.map((link, index) => (
-            // react fragments don't appear in the dom
-            <React.Fragment key={`breadcrumb-${index}`}>
-              {index !== 0 ? (
-                <BreadcrumbSeparator>
-                  <Separator />
-                </BreadcrumbSeparator>
-              ) : null}
-              <BreadcrumbItem>{link}</BreadcrumbItem>
-            </React.Fragment>
-          ))}
-        </BreadcrumbList>
-      </Breadcrumb>
-    </Container>
+    <V2ComponentWrapper data={data}>
+      <Container size="custom" className="pt-8 sm:pt-12">
+        <Breadcrumb className="text-gray-300">
+          <BreadcrumbList>
+            {links.map((link, index) => (
+              // react fragments don't appear in the dom
+              <React.Fragment key={`breadcrumb-${index}`}>
+                {index !== 0 ? (
+                  <BreadcrumbSeparator>
+                    <Separator />
+                  </BreadcrumbSeparator>
+                ) : null}
+                <BreadcrumbItem>{link}</BreadcrumbItem>
+              </React.Fragment>
+            ))}
+          </BreadcrumbList>
+        </Breadcrumb>
+      </Container>
+    </V2ComponentWrapper>
   );
 }
 
