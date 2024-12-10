@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/button/templateButton";
+import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { Consultingv2BlocksImageTextBlock } from "@/tina/types";
 import "aos/dist/aos.css";
@@ -21,7 +22,7 @@ export const ImageTextBlock = ({
   const imageIsLeftAligined = data.mediaConfiguration?.placement === "Left";
 
   return (
-    <ImageTextBlockWrapper data={data}>
+    <V2ComponentWrapper data={data}>
       <Container
         className={classNames(
           "mx-auto flex flex-col gap-8 align-top md:grid md:gap-16",
@@ -125,6 +126,6 @@ export const ImageTextBlock = ({
           </div>
         )}
       </Container>
-    </ImageTextBlockWrapper>
+    </V2ComponentWrapper>
   );
 };

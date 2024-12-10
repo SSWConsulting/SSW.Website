@@ -50,15 +50,13 @@ const ComponentWrapperDynamic = ({
   fadeInMargin?: UseInViewOptions["margin"];
 }): React.ReactNode => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: fadeInMargin });
+  const isInView = useInView(ref, { once: true, margin: fadeInMargin });
 
   const [isInInitialViewport, setIsInInitialViewport] = React.useState(null);
 
   useEffect(() => {
-    if (isInInitialViewport === null) {
-      setIsInInitialViewport(isInView);
-    }
-  }, [isInView]);
+    setIsInInitialViewport(isInView);
+  }, []);
 
   return (
     <ComponentWrapperStatic data={data}>
