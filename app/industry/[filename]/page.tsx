@@ -1,4 +1,5 @@
 import { TODAY } from "@/hooks/useFetchEvents";
+import { useSEO } from "@/hooks/useSeo";
 import client from "@/tina/client";
 import { Metadata } from "next";
 import IndustryPage from ".";
@@ -19,9 +20,9 @@ export async function generateMetadata({
     seo.canonical = `${tinaProps.props.data.global.header.url}industry/${params.filename}`;
   }
 
-  return {
-    ...seo,
-  };
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { seoProps } = useSEO(seo);
+  return { ...seoProps };
 }
 
 const getData = async (filename: string) => {
