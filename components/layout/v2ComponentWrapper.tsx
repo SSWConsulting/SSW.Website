@@ -4,8 +4,8 @@ import { useInView } from "framer-motion";
 
 import { UseInViewOptions } from "framer-motion";
 import React, { useEffect, useRef } from "react";
-import { backgroundOptions } from "../blocks/sharedTinaFields/colourOptions/blockBackgroundOptions";
-import { ColorPickerInput } from "../blocks/sharedTinaFields/colourSelector";
+import { backgroundOptions } from "../blocksSubtemplates/tinaFormElements/colourOptions/blockBackgroundOptions";
+import { ColorPickerInput } from "../blocksSubtemplates/tinaFormElements/colourSelector";
 
 type BackgroundData = {
   background?: number;

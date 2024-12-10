@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React from "react";
 import { Button, Input, Template, wrapFieldsWithMeta } from "tinacms";
+import { backgroundOptions } from "../../blocksSubtemplates/tinaFormElements/colourOptions/blockBackgroundOptions";
+import { ColorPickerInput } from "../../blocksSubtemplates/tinaFormElements/colourSelector";
 import { TinaInfo } from "../../tina/tina-info";
-import { backgroundOptions } from "../sharedTinaFields/colourOptions/blockBackgroundOptions";
-import { ColorPickerInput } from "../sharedTinaFields/colourSelector";
 
 export const BreadcrumbSchema: Template = {
   name: "breadcrumbs",

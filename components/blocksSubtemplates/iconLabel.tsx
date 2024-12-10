@@ -1,6 +1,6 @@
 import { tinaField } from "tinacms/dist/react";
-import { Icon } from "../../sharedTinaFields/icon";
-import { IconPickerInput } from "../../sharedTinaFields/iconSelector";
+import { Icon } from "./tinaFormElements/icon";
+import { IconPickerInput } from "./tinaFormElements/iconSelector";
 
 export const IconLabel = ({ data }) => {
   return (

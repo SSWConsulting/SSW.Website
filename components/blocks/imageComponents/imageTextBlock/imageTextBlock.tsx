@@ -5,10 +5,10 @@ import classNames from "classnames";
 import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { IconLabel } from "../../../blocksSubtemplates/iconLabel";
+import { ListItem } from "../../../blocksSubtemplates/listItem";
+import { PillGroup } from "../../../blocksSubtemplates/pillGroup";
 import { ImageComponentLayout } from "../ImageComponentLayout";
-import { IconLabel } from "./iconLabel";
-import { ListItem } from "./listItem";
-import { PillGroup } from "./pillGroup";
 
 export const ImageTextBlock = ({ data }) => {
   const headingClasses = "my-0 py-2 dark:text-gray-200";

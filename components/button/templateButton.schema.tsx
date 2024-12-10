@@ -1,6 +1,6 @@
-import { buttonOptions } from "../blocks/sharedTinaFields/colourOptions/buttonOptions";
-import { ColorPickerInput } from "../blocks/sharedTinaFields/colourSelector";
-import { IconPickerInput } from "../blocks/sharedTinaFields/iconSelector";
+import { buttonOptions } from "../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
+import { ColorPickerInput } from "../blocksSubtemplates/tinaFormElements/colourSelector";
+import { IconPickerInput } from "../blocksSubtemplates/tinaFormElements/iconSelector";
 
 export const buttonSchema = [
   {

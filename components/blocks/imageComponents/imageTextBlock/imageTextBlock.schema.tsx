@@ -1,9 +1,9 @@
 import { Template } from "tinacms";
+import { IconLabelSchema } from "../../../blocksSubtemplates/iconLabel";
+import { listItemSchema } from "../../../blocksSubtemplates/listItem.schema";
+import { pillGroupSchema } from "../../../blocksSubtemplates/pillGroup";
 import { buttonSchema } from "../../../button/templateButton.schema";
 import { ImageComponentLayoutSchema } from "../ImageComponentLayoutSchema";
-import { IconLabelSchema } from "./iconLabel";
-import { listItemSchema } from "./listItem.schema";
-import { pillGroupSchema } from "./pillGroup";
 
 export const ImageTextBlockSchema: Template = {
   name: "imageTextBlock",

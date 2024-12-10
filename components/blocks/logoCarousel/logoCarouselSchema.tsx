@@ -1,6 +1,6 @@
 import { Template } from "tinacms";
-import { backgroundOptions } from "../sharedTinaFields/colourOptions/blockBackgroundOptions";
-import { ColorPickerInput } from "../sharedTinaFields/colourSelector";
+import { backgroundOptions } from "../../blocksSubtemplates/tinaFormElements/colourOptions/blockBackgroundOptions";
+import { ColorPickerInput } from "../../blocksSubtemplates/tinaFormElements/colourSelector";
 
 export const LogoCarouselSchema: Template = {
   name: "logoCarousel",

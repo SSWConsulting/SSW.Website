@@ -1,6 +1,7 @@
 "use client";
 import { tinaField } from "tinacms/dist/react";
-import { Icon } from "../../sharedTinaFields/icon";
+import { Icon } from "./tinaFormElements/icon";
+
 export const ListItem = ({ data }) => {
   return (
     <div className={"flex gap-1 align-top"}>
