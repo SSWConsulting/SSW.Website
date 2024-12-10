@@ -40,7 +40,7 @@ export const ImageComponentLayoutSchema = [
         description: "Where the image sits vertically in desktop view",
         ui: {
           component: "select",
-          options: ["Centered", "Top"],
+          options: ["Centered", "Top", "Bottom"],
         },
       },
       {

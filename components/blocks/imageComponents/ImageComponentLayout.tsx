@@ -12,6 +12,7 @@ export const ImageComponentLayout = ({ data, children }) => {
   return (
     <V2ComponentWrapper data={data}>
       <Container
+        size="custom"
         className={classNames(
           "mx-auto flex flex-col gap-8 align-middle md:grid md:gap-16",
           data.mediaConfiguration?.imageSource
@@ -19,13 +20,17 @@ export const ImageComponentLayout = ({ data, children }) => {
             : "md:grid-cols-1",
           data.mediaConfiguration?.mobilePlacement === "Above"
             ? "flex-col-reverse"
-            : "flex-col"
+            : "flex-col",
+          data.mediaConfiguration?.verticalPlacement === "Bottom"
+            ? "pt-12"
+            : "py-12"
         )}
       >
         <div
           className={classNames(
             `flex aspect-auto w-full flex-col justify-center ${data?.mediaConfiguration?.imageSource ? "md:aspect-4/3" : "items-center"}`,
-            imageIsLeftAligined && "md:order-2"
+            imageIsLeftAligined && "md:order-2",
+            data.mediaConfiguration?.verticalPlacement === "Bottom" && "pb-12"
           )}
         >
           {children}
