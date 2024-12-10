@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { useInView } from "framer-motion";
 
 import { UseInViewOptions } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { backgroundOptions } from "../blocks/sharedTinaFields/colourOptions/blockBackgroundOptions";
 import { ColorPickerInput } from "../blocks/sharedTinaFields/colourSelector";
 
@@ -50,7 +50,15 @@ const ComponentWrapperDynamic = ({
   fadeInMargin?: UseInViewOptions["margin"];
 }): React.ReactNode => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: fadeInMargin });
+  const isInView = useInView(ref, { once: false, margin: fadeInMargin });
+
+  const [isInInitialViewport, setIsInInitialViewport] = React.useState(null);
+
+  useEffect(() => {
+    if (isInInitialViewport === null) {
+      setIsInInitialViewport(isInView);
+    }
+  }, [isInView]);
 
   return (
     <ComponentWrapperStatic data={data}>
@@ -58,7 +66,8 @@ const ComponentWrapperDynamic = ({
         ref={ref}
         className={classNames(
           "transition-opacity duration-300",
-          isInView ? "opacity-100" : "opacity-0"
+          isInInitialViewport === false && "opacity-0",
+          !isInInitialViewport && isInView && "opacity-100"
         )}
       >
         {children}
