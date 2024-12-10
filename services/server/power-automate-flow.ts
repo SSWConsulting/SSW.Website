@@ -29,8 +29,8 @@ export const invokePowerAutomateFlow = async (
         JSON.stringify(data),
         axiosError.response &&
         axiosError.response.status === HttpStatusCode.Conflict
-          ? appInsight.Contracts.SeverityLevel.Information
-          : appInsight.Contracts.SeverityLevel.Critical,
+          ? appInsight.KnownSeverityLevel.Information
+          : appInsight.KnownSeverityLevel.Error,
         STAGE.PA_FLOW_AXIOS
       );
     } else {
