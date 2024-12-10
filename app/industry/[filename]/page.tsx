@@ -15,8 +15,6 @@ export async function generateMetadata({
   const tinaProps = await getData(params.filename);
   const seo = tinaProps.props.data.industry.seo;
 
-  console.log(tinaProps.props.data.global.header.url);
-
   if (seo && !seo.canonical) {
     seo.canonical = `${tinaProps.props.data.global.header.url}industry/${params.filename}`;
   }

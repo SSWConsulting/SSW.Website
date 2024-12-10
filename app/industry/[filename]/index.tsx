@@ -14,52 +14,50 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export default function IndustryPage({ props, tinaProps }) {
   const { data } = tinaProps;
-  const pageData = data.industry;
+  const industry = data.industry;
 
   return (
     <>
-      <Container className="prose flex-1" size="custom">
-        {pageData.whitepaperFile ? (
-          <DownloadWhitepaperLink whitepaperFile={pageData.whitepaperFile}>
-            <div data-tina-field={tinaField(pageData, "bannerImg")}>
-              <Image
-                src={pageData.bannerImg}
-                width={1312}
-                height={0}
-                alt="SSW Industry Banner"
-                sizes="100vw"
-              />
-            </div>
-          </DownloadWhitepaperLink>
-        ) : (
-          <Image
-            src={pageData.bannerImg}
-            width={1312}
-            height={0}
-            alt="SSW Industry Banner"
-            sizes="100vw"
-          />
-        )}
-        {pageData.seo?.showBreadcrumb === null ||
-        pageData.seo?.showBreadcrumb ? (
+      {industry.bannerImg ? (
+        <div className="mx-auto max-w-9xl px-6 sm:px-8">
+          <div className="size-auto">
+            {industry.whitepaperFile ? (
+              <DownloadWhitepaperLink whitepaperFile={industry.whitepaperFile}>
+                <ImageComponent data={industry} />
+              </DownloadWhitepaperLink>
+            ) : (
+              <ImageComponent data={industry} />
+            )}
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
+
+      <Container className="pt-2">
+        {industry.seo?.showBreadcrumb === null ||
+        industry.seo?.showBreadcrumb ? (
           <Breadcrumbs
             path={removeExtension(props.variables.relativePath)}
-            title={pageData.seo.title}
+            title={industry.seo.title}
           />
         ) : (
           <></>
         )}
-        <h1 className="mb-1 py-0 text-3xl">{pageData?.heading}</h1>
+      </Container>
+
+      <Container className="prose flex-1" size="custom">
+        <h1 className="mb-1 py-0 text-3xl">{industry?.heading}</h1>
         <h2 className="!mt-1 pt-0 text-base font-light text-sswBlack">
-          {pageData?.subHeading}
+          {industry?.subHeading}
         </h2>
         <div
           className="mb-24 mt-15"
-          data-tina-field={tinaField(pageData, "_body")}
+          data-tina-field={tinaField(industry, "_body")}
         >
           <TinaMarkdown
             components={industryRenderer}
-            content={pageData._body}
+            content={industry._body}
           />
         </div>
       </Container>
@@ -67,3 +65,16 @@ export default function IndustryPage({ props, tinaProps }) {
     </>
   );
 }
+
+const ImageComponent = ({ data }) => {
+  return (
+    <Image
+      data-tina-field={tinaField(data, "bannerImg")}
+      src={data.bannerImg}
+      width={1312}
+      height={0}
+      alt="SSW Industry Banner"
+      sizes="100vw"
+    />
+  );
+};

@@ -6,6 +6,7 @@ import { Breadcrumbs } from "../components/breadcrumb";
 
 export default function IndustriesPage({ tinaProps }) {
   const { data } = tinaProps;
+
   return (
     <>
       <Container className="mb-10 flex-1 pt-2">
