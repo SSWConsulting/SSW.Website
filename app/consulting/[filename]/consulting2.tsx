@@ -17,35 +17,32 @@ type ConsultingV2PageProps<T> = {
   props: T;
 };
 
-const ConsultingV2 = React.memo(
-  function ConsultingV2({ tinaProps }: ConsultingV2PageProps<object>) {
-    const { data } = tinaProps;
-    return (
-      <>
-        {}
-        <div className="dark flex h-full flex-col">
-          <Section color={SectionColor.ToggleLightMode}>
-            <Container
-              size="custom"
-              width="custom"
-              padding="custom"
-              className="w-full p-0"
-            >
-              <div className="w-full">
-                <Blocks
-                  prefix={"Consultingv2Blocks"}
-                  blocks={data.consultingv2.blocks}
-                />
-              </div>
-            </Container>
-          </Section>
-          <PreFooter />
-        </div>
-      </>
-    );
-  },
-  (prevProps, nextProps) => {
-    return _.isEqual(prevProps.tinaProps.data, nextProps.tinaProps.data);
-  }
-);
+const ConsultingV2 = React.memo(function ConsultingV2({
+  tinaProps,
+}: ConsultingV2PageProps<object>) {
+  const { data } = tinaProps;
+  return (
+    <>
+      {}
+      <div className="dark flex h-full flex-col">
+        <Section color={SectionColor.ToggleLightMode}>
+          <Container
+            size="custom"
+            width="custom"
+            padding="custom"
+            className="w-full p-0"
+          >
+            <div className="w-full">
+              <Blocks
+                prefix={"Consultingv2Blocks"}
+                blocks={data.consultingv2.blocks}
+              />
+            </div>
+          </Container>
+        </Section>
+        <PreFooter />
+      </div>
+    </>
+  );
+});
 export default ConsultingV2;

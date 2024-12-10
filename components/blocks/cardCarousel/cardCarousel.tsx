@@ -1,5 +1,12 @@
 "use client";
 import { Button } from "@/components/button/templateButton";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { Marquee } from "@/components/ui/marquee";
 import { Container } from "@/components/util/container";
 import Image from "next/image";
@@ -220,15 +227,27 @@ const CardList = ({ activeCategory, data, hasImages }) => {
   }, [activeCategory]);
   return (
     <>
-      {cardData.map((card, index) => {
+      <Carousel>
+        <CarouselContent>
+          {cardData.map((cardData, index) => {
+            return (
+              <CarouselItem className="" key={`card-carousel-${index}`}>
+                <Card placeholder={hasImages} data={cardData} />
+              </CarouselItem>
+            );
+          })}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+      {/* {cardData.map((card, index) => {
         return (
           <Card
             data={card}
             key={`card-carousel-${index}`}
             placeholder={hasImages}
           />
-        );
-      })}
+        ); */}
     </>
   );
 };
@@ -239,9 +258,9 @@ const CarouselLayout = ({ children, cardData }) => {
   return (
     <div>
       <div className="mask-horizontal-fade flex items-stretch justify-center gap-4">
-        <Marquee pauseOnHover className="h-full justify-center overflow-hidden">
-          {children}
-        </Marquee>
+        {/* <Marquee pauseOnHover className="h-full justify-center overflow-hidden"> */}
+        {children}
+        {/* </Marquee> */}
       </div>
       <div className="m-auto flex w-3/4 justify-center gap-4 p-6">
         {cardData.map((_, index) => {
