@@ -4,13 +4,13 @@ import "aos/dist/aos.css";
 import Image from "next/image";
 import { classNames } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
-import V2ComponentWrapper from "./imageTextBlock/v2ComponentWrapper";
+import V2ComponentWrapper from "../../layout/v2ComponentWrapper";
 
 export const ImageComponentLayout = ({ data, children }) => {
   const imageIsLeftAligined = data.mediaConfiguration?.placement === "Left";
 
   return (
-    <V2ComponentWrapper data={data} shouldFadeIn={true}>
+    <V2ComponentWrapper data={data}>
       <Container
         className={classNames(
           "mx-auto flex flex-col gap-8 align-middle md:grid md:gap-16",
@@ -24,7 +24,7 @@ export const ImageComponentLayout = ({ data, children }) => {
       >
         <div
           className={classNames(
-            `flex aspect-auto h-full w-full flex-col justify-center ${data?.mediaConfiguration?.imageSource ? "md:aspect-4/3" : "items-center"}`,
+            `flex aspect-auto w-full flex-col justify-center ${data?.mediaConfiguration?.imageSource ? "md:aspect-4/3" : "items-center"}`,
             imageIsLeftAligined && "md:order-2"
           )}
         >
@@ -45,6 +45,8 @@ export const ImageComponentLayout = ({ data, children }) => {
               className={classNames(
                 data.mediaConfiguration?.verticalPlacement === "Centered" &&
                   "my-auto",
+                data.mediaConfiguration?.verticalPlacement === "Bottom" &&
+                  "mt-auto",
                 "!h-auto rounded-md"
               )}
               src={data.mediaConfiguration?.imageSource}

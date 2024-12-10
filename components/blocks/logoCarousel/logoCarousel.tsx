@@ -1,12 +1,12 @@
+import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Marquee } from "@/components/ui/marquee";
 import { Container } from "@/components/util/container";
 import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
-import V2ComponentWrapper from "../imageComponents/imageTextBlock/v2ComponentWrapper";
 
 export function LogoCarousel({ data }) {
   return (
-    <V2ComponentWrapper data={data} shouldFadeIn={false}>
+    <V2ComponentWrapper data={data}>
       <Container size="custom">
         <div className="flex w-full flex-col items-center justify-center pt-8">
           <h2

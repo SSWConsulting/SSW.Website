@@ -51,7 +51,7 @@ const BreadcrumbLink = React.forwardRef<
     <Comp
       ref={ref}
       className={cn(
-        "unstyled underline underline-offset-3 transition-colors dark:text-gray-300 dark:hover:text-white",
+        "unstyled text-gray-300 underline underline-offset-3 transition-colors hover:text-white",
         className
       )}
       {...props}
@@ -114,5 +114,6 @@ export {
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
-  BreadcrumbSeparator,
+  BreadcrumbSeparator
 };
+

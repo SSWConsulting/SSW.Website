@@ -1,5 +1,6 @@
 "use client";
 
+import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import {
   Breadcrumb,
   BreadcrumbEllipsis,
@@ -22,7 +23,6 @@ import { Consultingv2BlocksBreadcrumbs } from "@/tina/types";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { tinaField } from "tinacms/dist/react";
-import V2ComponentWrapper from "../imageComponents/imageTextBlock/v2ComponentWrapper";
 
 function getLinks(
   paths: string[],
@@ -104,9 +104,9 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
   const links = getLinks(paths, data, data.finalBreadcrumb);
 
   return (
-    <V2ComponentWrapper data={data} shouldFadeIn={false}>
+    <V2ComponentWrapper data={data}>
       <Container size="custom" className="pt-8 sm:pt-12">
-        <Breadcrumb>
+        <Breadcrumb className="text-gray-300">
           <BreadcrumbList>
             {links.map((link, index) => (
               // react fragments don't appear in the dom

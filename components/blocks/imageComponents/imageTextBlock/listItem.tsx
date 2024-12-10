@@ -3,7 +3,7 @@ import { tinaField } from "tinacms/dist/react";
 import { Icon } from "../../sharedTinaFields/icon";
 export const ListItem = ({ data }) => {
   return (
-    <div className="flex gap-1 align-top">
+    <div className={"flex gap-1 align-top"}>
       {data.icon && (
         <div className="h-full p-1">
           <Icon
