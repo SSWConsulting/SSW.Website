@@ -1,9 +1,9 @@
 import { MediaCardProps } from "@/components/consulting/mediaCard/mediaCard";
 import { getRandomTestimonialsByCategory } from "@/helpers/getTestimonials";
-import { useSEO } from "@/hooks/useSeo";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
 import { TODAY } from "hooks/useFetchEvents";
+import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { TinaClient } from "../../tina-client";
@@ -189,9 +189,9 @@ export async function generateMetadata({
   }
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(seo);
+  const seoData = useSEO(seo);
 
-  return { ...seoProps };
+  return seoData ? { ...seoData.seoProps } : {};
 }
 
 export default async function Consulting({
