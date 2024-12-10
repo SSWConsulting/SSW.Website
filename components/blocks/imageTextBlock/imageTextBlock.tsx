@@ -108,14 +108,15 @@ export const ImageTextBlock = ({
               imageIsLeftAligined && "md:order-1"
             )}
           >
-            {data.mediaConfiguration.verticalPlacement === "Center"}
             <Image
               objectFit="contain"
               fill={true}
               className={classNames(
                 data.mediaConfiguration?.verticalPlacement === "Centered" &&
                   "my-auto",
-                "!h-auto rounded-md"
+                "!h-auto rounded-md",
+                data.mediaConfiguration?.verticalPlacement === "Bottom" &&
+                  "mt-auto"
               )}
               src={data.mediaConfiguration?.imageSource}
               alt={data.mediaConfiguration?.altText ?? "image"}

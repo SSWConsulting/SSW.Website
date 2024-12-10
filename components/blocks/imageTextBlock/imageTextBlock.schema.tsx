@@ -173,7 +173,7 @@ export const ImageTextBlockSchema: Template = {
           ui: {
             component: "select",
             //@ts-expect-error – options are not being recognized
-            options: ["Centered", "Top"],
+            options: ["Top", "Centered", "Bottom"],
           },
         },
         {
