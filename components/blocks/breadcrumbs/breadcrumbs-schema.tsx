@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
 import { Button, Input, Template, wrapFieldsWithMeta } from "tinacms";
-import { fadeInSchema } from "../../../components/layout/v2ComponentWrapper";
 import { TinaInfo } from "../../../components/tina/tina-info";
 import { backgroundOptions } from "../sharedTinaFields/colourOptions/blockBackgroundOptions";
 import { ColorPickerInput } from "../sharedTinaFields/colourSelector";
@@ -76,7 +75,5 @@ export const BreadcrumbSchema: Template = {
         },
       },
     },
-    //@ts-expect-error – fields are not being recognized
-    fadeInSchema,
   ],
 };
