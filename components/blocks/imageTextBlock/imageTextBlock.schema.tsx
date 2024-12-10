@@ -13,6 +13,39 @@ export const ImageTextBlockSchema: Template = {
     previewSrc: "/images/thumbs/tina/client-logos.jpg",
     defaultItem: {
       backgroundColor: "Transparent",
+      topLabel: {
+        labelText: "Lorem Ipsum",
+      },
+      heading: "Lorem Ipsum",
+      isH1: false,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      chips: {
+        filledChipText: "Lorem",
+        clearChipText: "Ipsum",
+      },
+      featureColumns: {
+        twoColumns: true,
+        features: [
+          {
+            heading: "Lorem",
+            description: "Ipsum dolor sit amet, consectetur adipiscing elit.",
+          },
+          {
+            heading: "Ipsum",
+            description: "Lorem dolor sit amet, consectetur adipiscing elit.",
+          },
+        ],
+      },
+      buttons: [
+        {
+          colour: 0,
+          buttonText: "Lorem Ipsum",
+        },
+        {
+          colour: 1,
+          buttonText: "Dolor Sit",
+        },
+      ],
     },
   },
   fields: [
