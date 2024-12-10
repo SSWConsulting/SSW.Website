@@ -3,12 +3,12 @@ import { ColorPickerOptions } from "../colourSelector";
 export const backgroundOptions: ColorPickerOptions[] = [
   {
     name: "Soft Left Gradient",
-    classes: "bg-gradient-to-l from-gray-900 to-gray-1000 text-white",
+    classes: "bg-gradient-to-l from-gray-900 to-black text-white",
     reference: 0,
   },
   {
     name: "Soft Right Gradient",
-    classes: "bg-gradient-to-r from-gray-900 to-gray-1000 text-white",
+    classes: "bg-gradient-to-r from-gray-900 to-black text-white",
     reference: 1,
   },
   {
@@ -22,15 +22,13 @@ export const backgroundOptions: ColorPickerOptions[] = [
     reference: 3,
   },
   {
-    name: "Transparent",
-    classes: "bg-transparent text-gray-950",
+    name: "Dark Gray",
+    classes: "bg-gray-950 text-white",
     reference: 4,
   },
   {
     name: "Gray",
-    classes: "bg-ssw-black text-white",
-    //Note: this is necessary as Tina doesn't recognise tailwind config settings
-    editorClasses: "bg-[#333333] text-white",
+    classes: "bg-gray-900 text-white",
     reference: 5,
   },
 ];

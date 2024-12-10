@@ -7,35 +7,46 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import "aos/dist/aos.css";
+import classNames from "classnames";
 import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { ImageComponentLayout } from "../ImageComponentLayout";
 
 export const AccordionBlock = ({ data }) => {
+  const headingClasses = "my-0 py-2 dark:text-gray-200";
+
   return (
     <ImageComponentLayout data={data}>
       {data.isH1 ? (
         <h1
           data-tina-field={tinaField(data, "heading")}
-          className="my-0 py-2 text-3xl font-bold lg:text-4xl dark:text-gray-200"
+          className={classNames(
+            headingClasses,
+            "text-3xl font-bold lg:text-4xl"
+          )}
         >
           {data.heading}
         </h1>
       ) : (
         <h2
           data-tina-field={tinaField(data, "heading")}
-          className="my-0 py-2 text-2xl font-bold lg:text-3xl dark:text-gray-200"
+          className={classNames(
+            "text-2xl font-semibold lg:text-3xl",
+            headingClasses
+          )}
         >
           {data.heading}
         </h2>
       )}
-      <p
-        className="py-2 text-base font-light dark:text-gray-300"
-        data-tina-field={tinaField(data, "body")}
-      >
-        {data.body}
-      </p>
+      {data.body && (
+        <p
+          className="py-2 text-base font-light dark:text-gray-300"
+          data-tina-field={tinaField(data, "body")}
+        >
+          {data.body}
+        </p>
+      )}
       {data.buttons?.length > 0 && (
         <div
           className={`mt-5 flex ${data.mediaConfiguration?.imageSource ? "" : "justify-center"} gap-3`}

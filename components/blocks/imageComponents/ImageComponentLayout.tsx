@@ -13,7 +13,7 @@ export const ImageComponentLayout = ({ data, children }) => {
     <V2ComponentWrapper data={data} shouldFadeIn={true}>
       <Container
         className={classNames(
-          "mx-auto flex flex-col gap-8 align-top md:grid md:gap-16",
+          "mx-auto flex flex-col gap-8 align-middle md:grid md:gap-16",
           data.mediaConfiguration?.imageSource
             ? "md:grid-cols-2"
             : "md:grid-cols-1",
@@ -24,7 +24,7 @@ export const ImageComponentLayout = ({ data, children }) => {
       >
         <div
           className={classNames(
-            `aspect-auto w-full ${data?.mediaConfiguration?.imageSource ? "md:aspect-4/3" : ""}`,
+            `flex aspect-auto h-full w-full flex-col justify-center ${data?.mediaConfiguration?.imageSource ? "md:aspect-4/3" : "items-center"}`,
             imageIsLeftAligined && "md:order-2"
           )}
         >
