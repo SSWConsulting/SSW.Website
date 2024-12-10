@@ -5,15 +5,15 @@ import { IconPickerInput } from "../sharedTinaFields/iconSelector";
 export const IconLabel = ({ data }) => {
   return (
     <div className="flex gap-1 py-2 align-top">
-      <div className="h-full">
-        {data.icon && (
+      {data.icon && (
+        <div className="h-full">
           <Icon
             data={{ name: data.icon }}
             tinaField={tinaField(data, "icon")}
             className="size-4 text-gray-300"
           />
-        )}
-      </div>
+        </div>
+      )}
       <p
         className="text-xs font-bold dark:text-gray-300"
         data-tina-field={tinaField(data, "labelText")}
