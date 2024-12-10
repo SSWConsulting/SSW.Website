@@ -23,7 +23,7 @@ export const backgroundOptions: ColorPickerOptions[] = [
   },
   {
     name: "Transparent",
-    classes: "bg-transparent text-gray-950",
+    classes: "bg-transparent text-white",
     reference: 4,
   },
   {

@@ -1,5 +1,6 @@
 "use client";
 
+import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import {
   Breadcrumb,
   BreadcrumbEllipsis,
@@ -105,23 +106,25 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
   const links = getLinks(paths, data, data.finalBreadcrumb);
 
   return (
-    <Container size="custom" className="pt-8 sm:pt-12">
-      <Breadcrumb>
-        <BreadcrumbList>
-          {links.map((link, index) => (
-            // react fragments don't appear in the dom
-            <React.Fragment key={`breadcrumb-${index}`}>
-              {index !== 0 ? (
-                <BreadcrumbSeparator>
-                  <Separator />
-                </BreadcrumbSeparator>
-              ) : null}
-              <BreadcrumbItem>{link}</BreadcrumbItem>
-            </React.Fragment>
-          ))}
-        </BreadcrumbList>
-      </Breadcrumb>
-    </Container>
+    <V2ComponentWrapper data={data}>
+      <Container size="custom" className="pt-8 sm:pt-12">
+        <Breadcrumb className="text-gray-300">
+          <BreadcrumbList>
+            {links.map((link, index) => (
+              // react fragments don't appear in the dom
+              <React.Fragment key={`breadcrumb-${index}`}>
+                {index !== 0 ? (
+                  <BreadcrumbSeparator>
+                    <Separator />
+                  </BreadcrumbSeparator>
+                ) : null}
+                <BreadcrumbItem>{link}</BreadcrumbItem>
+              </React.Fragment>
+            ))}
+          </BreadcrumbList>
+        </Breadcrumb>
+      </Container>
+    </V2ComponentWrapper>
   );
 }
 
