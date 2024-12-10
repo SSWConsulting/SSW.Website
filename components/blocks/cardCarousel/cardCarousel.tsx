@@ -217,7 +217,6 @@ const CardList = ({ activeCategory, data, hasImages }) => {
   const [cardData, setCardData] = useState(data.cards);
 
   useEffect(() => {
-    console.log("activeCategory", activeCategory);
     if (activeCategory)
       setCardData(
         data.cards.filter((card) => {
@@ -225,13 +224,21 @@ const CardList = ({ activeCategory, data, hasImages }) => {
         })
       );
   }, [activeCategory]);
+
+  useEffect(() => {
+    console.log(data);
+    setCardData(data.cards);
+  }, [data]);
   return (
     <>
-      <Carousel>
-        <CarouselContent>
+      <Carousel opts={{ align: "center" }} className="">
+        <CarouselContent className="justify-center">
           {cardData.map((cardData, index) => {
             return (
-              <CarouselItem className="" key={`card-carousel-${index}`}>
+              <CarouselItem
+                className="flex basis-1/5"
+                key={`card-carousel-${index}`}
+              >
                 <Card placeholder={hasImages} data={cardData} />
               </CarouselItem>
             );
