@@ -121,21 +121,29 @@ export const CardCarousel = ({ data }) => {
               })}
             </div>
           )}
-          {data.cards && 
-          <>
-          {data.isStacked ? (<div className="flex flex-wrap items-stretch justify-center gap-4">
-              {data.cards.map((cardData, index) => {
-                return <Card placeholder={hasImages} data={cardData} />
-              })}
-            </div>
-          ) : (
-              <CardList
-                activeCategory={activeCategory}
-                data={data}
-                hasImages={hasImages}
-              />
-
-          )}</>}
+          {data.cards && (
+            <>
+              {data.isStacked ? (
+                <div className="flex flex-wrap items-stretch justify-center gap-4">
+                  {data.cards.map((cardData, index) => {
+                    return (
+                      <Card
+                        key={`card-${index}`}
+                        placeholder={hasImages}
+                        data={cardData}
+                      />
+                    );
+                  })}
+                </div>
+              ) : (
+                <CardList
+                  activeCategory={activeCategory}
+                  data={data}
+                  hasImages={hasImages}
+                />
+              )}
+            </>
+          )}
         </div>
       </Container>
     </V2ComponentWrapper>
@@ -149,7 +157,7 @@ const Card = ({ data, placeholder }) => {
 
   return (
     <div
-      className={`shrink w-88 rounded-md text-start  ${
+      className={`w-88 shrink rounded-md text-start ${
         cardOptions.find((value) => {
           return value.reference === data.cardStyle;
         })?.classes
@@ -208,8 +216,4 @@ const Card = ({ data, placeholder }) => {
   );
 };
 
-
-
-
 export { Card };
-
