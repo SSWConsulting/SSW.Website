@@ -37,12 +37,9 @@
         {
           "buttonText": "Start Your Project",
           "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
         }
       ],
+      "background": 3,
       "_template": "imageTextBlock"
     }
   ]
