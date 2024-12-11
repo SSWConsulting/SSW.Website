@@ -104,7 +104,7 @@ export const AccordionBlock = ({ data }) => {
                       h4: (props) => <h4 {...props} className="py-2" />,
                       h3: (props) => <h3 {...props} className="py-2" />,
                       h2: (props) => <h2 {...props} className="py-2" />,
-                      h1: (props) => <h1 {...props} className="py-2" />,
+                      h1: (props) => <h2 {...props} className="py-2" />,
                       //Import sadly needed as somewhere up the food chain the default ul is overridden
                       ul: (props) => <ul className="my-0 !ml-5" {...props} />,
                       ol: (props) => (

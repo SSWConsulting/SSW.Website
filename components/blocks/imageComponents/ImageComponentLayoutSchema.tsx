@@ -69,7 +69,7 @@ export const ImageComponentLayoutSchema = [
         label: "Image Source",
         name: "imageSource",
         description:
-          "Upload an image or other media to display in the media text block.",
+          "Upload an image or other media to display in the media text block. 4/3 aspect ratio recommended.",
       },
       {
         type: "string",
