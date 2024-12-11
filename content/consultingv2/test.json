@@ -73,7 +73,7 @@
         "twoColumns": false
       },
       "mediaConfiguration": {
-        "verticalPlacement": "Top",
+        "verticalPlacement": "Centered",
         "imageSource": "/images/16x9-Newsletter-Developing-Flexible-Authorization-Capabilities-in-ASP.NET-Core.jpg"
       },
       "_template": "imageTextBlock"
