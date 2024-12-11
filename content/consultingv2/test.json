@@ -62,15 +62,22 @@
       "topLabel": {
         "labelText": "Stable and reliable"
       },
-      "heading": "Predictably fast ACH payments",
+      "heading": "Predictably fast software development",
       "isH1": false,
-      "description": "ACH payments can feel like a black box. They can take several business days to complete and it’s unclear when funds will be available.\n\nWe offer same-day ACH, submit at every Fed window, and provide robust settlement tracking. This means that your payments can arrive in less than 24 hours—often even quicker.\n",
+      "description": "Software development can be unpredictable and risky. We manage that risk through our proven processes and expert team, making delivery timelines transparent and reliable.\n",
       "chips": {
-        "filledChipText": "Send same-day ACH",
-        "clearChipText": "Submissions at every ACH window"
+        "filledChipText": "",
+        "clearChipText": ""
       },
       "featureColumns": {
-        "twoColumns": false
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "Agile development cycles",
+            "description": "",
+            "icon": "BiAlarm"
+          }
+        ]
       },
       "mediaConfiguration": {
         "verticalPlacement": "Centered",
