@@ -128,9 +128,10 @@ export const CardCarousel = ({ data }) => {
               })}
             </div>
           )}
-          {data.isStacked ? (
-            <div className="flex flex-wrap items-stretch justify-evenly gap-4">
-              {/* {cards} */}
+          {data.isStacked ? (<div className="flex flex-wrap items-stretch justify-center gap-4">
+              {data.cards.map((cardData, index) => {
+                return <Card placeholder={hasImages} data={cardData} />
+              })}
             </div>
           ) : (
             <CarouselLayout cardData={data.cards}>
@@ -154,7 +155,7 @@ const Card = ({ data, placeholder }) => {
 
   return (
     <div
-      className={`w-full shrink rounded-md p-4 text-start md:p-6 lg:p-8 ${
+      className={`shrink w-88 rounded-md p-4 text-start md:p-6 lg:p-8 ${
         cardOptions.find((value) => {
           return value.reference === data.cardStyle;
         })?.classes
