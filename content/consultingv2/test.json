@@ -4,6 +4,43 @@
   },
   "blocks": [
     {
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "Custom Web Application Development",
+      "isH1": true,
+      "description": "We specialize in building complex, custom web applications that push the boundaries of technology. When off-the-shelf solutions aren't enough, we create tailored software that fits your exact needs.\n",
+      "chips": {
+        "filledChipText": "Lorem",
+        "clearChipText": "Ipsum"
+      },
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Clean Architecture",
+            "description": "Our solutions are built with scalability, testability, and extensibility in mind, ensuring long-term value and adaptability.",
+            "icon": "BiSolidArch"
+          },
+          {
+            "heading": "Ipsum",
+            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "_template": "imageTextBlock"
+    },
+    {
       "finalBreadcrumb": "Custom Web Applications",
       "_template": "breadcrumbs"
     }
