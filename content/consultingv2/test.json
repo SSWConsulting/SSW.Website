@@ -46,6 +46,16 @@
         "imageSource": "/images/BeforeCoding.jpg"
       },
       "_template": "imageTextBlock"
+    },
+    {
+      "heading": "Lorem Ipsum",
+      "logos": [
+        {
+          "logo": "",
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
     }
   ]
 }
