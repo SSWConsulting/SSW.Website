@@ -87,17 +87,19 @@ export const CardCarousel = ({ data }) => {
           ) : (
             <h2
               data-tina-field={tinaField(data, "heading")}
-              className="my-0 py-2 text-2xl font-bold lg:text-3xl dark:text-gray-200"
+              className="my-0 py-2 text-2xl font-normal lg:text-3xl dark:text-gray-200"
             >
               {data.heading}
             </h2>
           )}
-          <p
-            className="m-auto max-w-4xl py-2 text-base font-light dark:text-gray-300"
-            data-tina-field={tinaField(data, "body")}
-          >
-            {data.body}
-          </p>
+          {data.body && (
+            <p
+              className="m-auto max-w-4xl py-2 text-base font-light dark:text-gray-300"
+              data-tina-field={tinaField(data, "body")}
+            >
+              {data.body}
+            </p>
+          )}
           {data.buttons?.length > 0 && (
             <div
               className={`mb-4 mt-2 flex gap-3 ${data.mediaConfiguration?.imageSource ? "" : "justify-center"}`}
@@ -124,13 +126,13 @@ export const CardCarousel = ({ data }) => {
           {data.cards && (
             <>
               {data.isStacked ? (
-                <div className="flex flex-wrap items-stretch justify-center gap-4">
+                <div className="flex flex-wrap items-stretch justify-center gap-4 lg:gap-8">
                   {data.cards.map((cardData, index) => {
                     return (
                       <Card
                         key={`card-${index}`}
                         placeholder={hasImages}
-                        data={cardData}
+                        data={{ ...cardData, cardStyle: data.cardStyle }}
                       />
                     );
                   })}
@@ -157,7 +159,7 @@ const Card = ({ data, placeholder }) => {
 
   return (
     <div
-      className={`w-88 shrink rounded-md text-start ${
+      className={`w-90 flex shrink flex-col rounded-md text-start ${
         cardOptions.find((value) => {
           return value.reference === data.cardStyle;
         })?.classes
@@ -165,7 +167,7 @@ const Card = ({ data, placeholder }) => {
     >
       {(data.image || placeholder) && (
         <div
-          className="relative mb-2 h-48 w-full overflow-hidden rounded-md"
+          className="relative mb-2 min-h-36 w-full overflow-hidden rounded-md"
           data-tina-field={tinaField(data, "image")}
         >
           <Image
@@ -184,7 +186,7 @@ const Card = ({ data, placeholder }) => {
       <Icon data={{ name: data.icon }} className="size-6 text-sswRed" />
       {data.chips && <PillGroup data={data.chips} />}
       <h3
-        className="text-lg font-semibold dark:text-gray-200"
+        className="pb-2 text-xl font-semibold leading-6 dark:text-gray-200"
         data-tina-field={tinaField(data, "heading")}
       >
         {data.heading}
@@ -201,16 +203,18 @@ const Card = ({ data, placeholder }) => {
         return <ListItem key={index} data={item} />;
       })}
       {data.embeddedButton && (
-        <a
-          href={data.embeddedButton.buttonLink}
-          className="text-sm font-semibold text-white !decoration-white !decoration-2 hover:!decoration-sswRed"
-        >
-          {data.embeddedButton.buttonText}
-          <Icon
-            data={{ name: data.embeddedButton.icon }}
-            className="inline size-4"
-          />
-        </a>
+        <div className="flex h-full flex-col-reverse justify-between">
+          <a
+            href={data.embeddedButton.buttonLink}
+            className="text-md pt-2 font-semibold text-white !decoration-gray-400 !decoration-1 hover:!decoration-sswRed"
+          >
+            {data.embeddedButton.buttonText}
+            <Icon
+              data={{ name: data.embeddedButton.icon }}
+              className="inline size-4"
+            />
+          </a>
+        </div>
       )}
     </div>
   );

@@ -124,6 +124,7 @@ export default {
       },
       width: {
         88: "22rem",
+        90: "22.5rem",
         104: "26rem",
       },
       minHeight: {

@@ -64,4 +64,3 @@ const CardList = ({ activeCategory, data, hasImages }) => {
 };
 
 export { CardList };
-

@@ -4,7 +4,7 @@ import { Icon } from "../../sharedTinaFields/icon";
 export const ListItem = ({ data }) => {
   return (
     <div className="flex gap-1 align-top">
-      <div className="h-full p-1">
+      <div className="h-full">
         {data.icon && (
           <Icon
             data={{ name: data.icon }}
@@ -14,12 +14,14 @@ export const ListItem = ({ data }) => {
         )}
       </div>
       <div className="flex flex-col">
-        <h6
-          className="w-full p-1 text-base font-semibold dark:text-white"
-          data-tina-field={tinaField(data, "heading")}
-        >
-          {data.heading}
-        </h6>
+        {data.heading && (
+          <h6
+            className="w-full p-1 text-base font-semibold dark:text-white"
+            data-tina-field={tinaField(data, "heading")}
+          >
+            {data.heading}
+          </h6>
+        )}
         <p
           className="w-full p-1 text-sm font-light dark:text-gray-200"
           data-tina-field={tinaField(data, "description")}

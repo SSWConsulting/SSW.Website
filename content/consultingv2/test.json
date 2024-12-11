@@ -48,18 +48,9 @@
       "_template": "imageTextBlock"
     },
     {
-      "isStacked": false,
+      "isStacked": true,
       "heading": "Some",
-      "body": "Some text to go under the title. This is really flavour text and has some max w less than the max container width so it'll look nice.",
-      "buttons": [
-        {
-          "buttonText": "Primary"
-        },
-        {
-          "buttonText": "Secondary",
-          "colour": 1
-        }
-      ],
+      "body": "",
       "categoryGroup": [
         {
           "categoryName": "A way longer bit of text",
@@ -70,7 +61,10 @@
               "4nap7",
               "o8s48m",
               "oe5bg",
-              null
+              null,
+              "ul9uqb",
+              "05xd5j",
+              "qnt59v"
             ]
           }
         },
@@ -79,60 +73,73 @@
           "cardGuidList": {
             "guid": "xcxcn1a",
             "cardGuidList": [
-              "fzc9cq"
+              "fzc9cq",
+              "qnt59v"
             ]
           }
         }
       ],
+      "cardStyle": 0,
       "cards": [
-        {},
-        {},
         {
-          "guid": "o8s48m",
-          "cardStyle": 0,
+          "guid": "ul9uqb",
           "chips": {
-            "filledChipText": "Article",
-            "clearChipText": "5 min. read"
+            "filledChipText": "Case study",
+            "clearChipText": "4 min read"
           },
-          "icon": "BiBook",
-          "heading": "Piers and a Rocket",
-          "description": "This is an article about piers and a rocket.",
+          "heading": "Hearing Australia Streamlined operations with .NET 8",
+          "description": "",
           "featureList": {
             "features": [
               {
-                "heading": "First Item",
-                "description": "Second item",
-                "icon": "Tina"
+                "heading": "",
+                "description": "Migrated legacy systems using the Strangler Fig Strategy",
+                "icon": "BiCheckCircle"
               },
               {
-                "heading": "Third Item",
-                "description": "oh wait this is the second",
-                "icon": "BiAnalyse"
+                "heading": "",
+                "description": "Lorem ipsum lorem ipsum loprem ipsum",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "",
+                "description": "Lorem ipsum lorem ipsum loprem ipsum",
+                "icon": "BiCheck"
               }
             ]
           },
           "embeddedButton": {
             "buttonText": "Read more",
-            "buttonLink": "text",
-            "icon": "BiRightArrowAlt"
+            "icon": "BiChevronRight"
           }
         },
         {
-          "guid": "fzc9cq",
-          "cardStyle": 0,
-          "image": "/images/OG-Azure-Superskills.jpg",
-          "altText": "Alt text",
-          "icon": "BiAccessibility",
-          "heading": "Card A",
-          "description": "Some description"
+          "guid": "qnt59v",
+          "image": "/images/videoPlaceholder.png",
+          "chips": {},
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tepor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": []
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
         },
         {
-          "guid": "4nap7",
-          "cardStyle": 0,
-          "heading": "Card X"
+          "guid": "05xd5j",
+          "chips": {},
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": []
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
         }
       ],
-      "background": 5,
+      "background": 3,
       "_template": "cardCarousel"
     },
     {
