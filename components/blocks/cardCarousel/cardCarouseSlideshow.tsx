@@ -19,7 +19,7 @@ import { Card } from "./cardCarousel";
   
     return <div>
       <div className="mask-horizontal-fade">
-    <Carousel opts={{ align: "center", loop: true}} className="w-full max-w-9xl">
+    <Carousel opts={{ align: "center", loop: true, containScroll:false}} className="w-full max-w-9xl">
           <CarouselContent>
             {cardData.map((cardData, index) => {
               return (
