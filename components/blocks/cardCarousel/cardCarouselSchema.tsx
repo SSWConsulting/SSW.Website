@@ -29,7 +29,6 @@ export const CardCarouselSchema: Template = {
   //   previewSrc: "/images/thumbs/tina/accordian.jpg",
   // },
   ui: {
-
     defaultItem: {
       isStacked: false,
       heading: "Lorem Ipsum",
@@ -41,9 +40,9 @@ export const CardCarouselSchema: Template = {
         },
         {
           buttonText: "Ipsum",
-        }
+        },
       ],
-    }
+    },
   },
   fields: [
     {
@@ -232,7 +231,7 @@ export const CardCarouselSchema: Template = {
           embeddedButton: {
             buttonText: "Lorem",
           },
-        }
+        },
       },
       fields: [
         {
