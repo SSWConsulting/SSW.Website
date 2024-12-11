@@ -191,6 +191,25 @@ const CarouselItem = React.forwardRef<
 });
 CarouselItem.displayName = "CarouselItem";
 
+
+const CarouselPickItem = React.forwardRef<HTMLButtonElement, {className?: string, index: number, onClick, children?: React.ReactNode}>(function({className, index, onClick ,children}) {
+  const { api }  = useCarousel();
+  return (
+    <button
+      className={cn(className)}
+      onClick={() => {
+        api?.scrollTo(index);
+        onClick()
+      }}
+    >
+      {children}
+    </button>
+  );
+}
+)
+
+CarouselPickItem.displayName
+
 const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
   React.ButtonHTMLAttributes<HTMLButtonElement>
@@ -249,8 +268,6 @@ export {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi
+  CarouselNext, CarouselPickItem, CarouselPrevious, type CarouselApi
 };
 

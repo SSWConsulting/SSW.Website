@@ -201,6 +201,15 @@ export const CardCarouselSchema: Template = {
       ],
     },
     {
+      type: "number",
+      label: "Card Style",
+      name: "cardStyle",
+      ui: {
+        // @ts-expect-error – component is not being recognized
+        component: ColorPickerInput(cardOptions),
+      },
+    },
+    {
       type: "object",
       label: "Cards",
       name: "cards",
@@ -211,7 +220,6 @@ export const CardCarouselSchema: Template = {
           return { label: item?.heading ?? "Card" };
         },
         defaultItem: {
-          cardStyle: 0,
           chips: {
             chips: [],
           },
@@ -233,15 +241,6 @@ export const CardCarouselSchema: Template = {
           name: "guid",
           ui: {
             component: GUIDGeneratorComponent,
-          },
-        },
-        {
-          type: "number",
-          label: "Card Style",
-          name: "cardStyle",
-          ui: {
-            // @ts-expect-error – component is not being recognized
-            component: ColorPickerInput(cardOptions),
           },
         },
         {

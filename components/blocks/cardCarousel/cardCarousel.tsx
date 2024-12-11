@@ -1,13 +1,5 @@
 "use client";
 import { Button } from "@/components/button/templateButton";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Marquee } from "@/components/ui/marquee";
 import { Container } from "@/components/util/container";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,6 +10,7 @@ import { PillGroup } from "../imageComponents/imageTextBlock/pillGroup";
 import V2ComponentWrapper from "../imageComponents/imageTextBlock/v2ComponentWrapper";
 import { cardOptions } from "../sharedTinaFields/colourOptions/cardOptions";
 import { Icon } from "../sharedTinaFields/icon";
+import { CardList } from "./cardCarouseSlideshow";
 
 export const CardCarousel = ({ data }) => {
   //Check if any images are used in cards (adds a placeholder to the other cards)
@@ -128,8 +121,6 @@ export const CardCarousel = ({ data }) => {
               })}
             </div>
           )}
-
-
           {data.cards && 
           <>
           {data.isStacked ? (<div className="flex flex-wrap items-stretch justify-center gap-4">
@@ -138,13 +129,12 @@ export const CardCarousel = ({ data }) => {
               })}
             </div>
           ) : (
-            <CarouselLayout cardData={data.cards}>
               <CardList
                 activeCategory={activeCategory}
                 data={data}
                 hasImages={hasImages}
               />
-            </CarouselLayout>
+
           )}</>}
         </div>
       </Container>
@@ -159,7 +149,7 @@ const Card = ({ data, placeholder }) => {
 
   return (
     <div
-      className={`shrink w-88 rounded-md p-4 text-start md:p-6 lg:p-8 ${
+      className={`shrink w-88 rounded-md text-start md:p-6 lg:p-8 ${
         cardOptions.find((value) => {
           return value.reference === data.cardStyle;
         })?.classes
@@ -218,65 +208,8 @@ const Card = ({ data, placeholder }) => {
   );
 };
 
-const CardList = ({ activeCategory, data, hasImages }) => {
-  const [cardData, setCardData] = useState(data.cards);
 
-  useEffect(() => {
-    if (activeCategory)
-      setCardData(
-        data.cards.filter((card) => {
-          return activeCategory?.cardGuidList.cardGuidList.includes(card.guid);
-        })
-      );
-  }, [activeCategory]);
 
-  useEffect(() => {
-    console.log(data);
-    setCardData(data.cards);
-  }, [data]);
-  return (
-    <>
-      <Carousel opts={{ align: "center", loop: true}} className="w-full max-w-9xl">
-        <CarouselContent>
-          {cardData.map((cardData, index) => {
-            return (
-              <CarouselItem
-                className="flex basis-96"
-                key={`card-carousel-${index}`}
-              >
-                <Card placeholder={hasImages} data={cardData} />
-              </CarouselItem>
-            );
-          })}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
-    </>
-  );
-};
 
-//TODO: this layout needs to be completed
-const CarouselLayout = ({ children, cardData }) => {
-  const [activeCardIndex, setActiveCardIndex] = useState(0);
-  return (
-    <div>
-      <div className="mask-horizontal-fade flex items-stretch justify-center gap-4">
-        {/* <Marquee pauseOnHover className="h-full justify-center overflow-hidden"> */}
-        {children}
-        {/* </Marquee> */}
-      </div>
-      <div className="m-auto flex w-3/4 justify-center gap-4 p-6">
-        {cardData.map((_, index) => {
-          return (
-            <button
-              key={`card-carousel-button-${index}`}
-              className={`h-1 w-full ${activeCardIndex === index ? "bg-gray-300" : "bg-gray-500"}`}
-              onClick={() => setActiveCardIndex(index)}
-            />
-          );
-        })}
-      </div>
-    </div>
-  );
-};
+export { Card };
+
