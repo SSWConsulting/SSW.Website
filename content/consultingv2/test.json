@@ -41,6 +41,9 @@
         }
       ],
       "background": 3,
+      "mediaConfiguration": {
+        "imageSource": "/images/BeforeCoding.jpg"
+      },
       "_template": "imageTextBlock"
     }
   ]
