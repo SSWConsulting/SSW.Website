@@ -154,7 +154,7 @@ const Card = ({ data, placeholder }) => {
 
   return (
     <div
-      className={`w-full min-w-64 max-w-sm shrink rounded-md p-4 text-start md:p-6 lg:p-8 ${
+      className={`w-full max-w-sm shrink rounded-md p-4 text-start md:p-6 lg:p-8 ${
         cardOptions.find((value) => {
           return value.reference === data.cardStyle;
         })?.classes
@@ -231,12 +231,12 @@ const CardList = ({ activeCategory, data, hasImages }) => {
   }, [data]);
   return (
     <>
-      <Carousel opts={{ align: "center" }} className="">
-        <CarouselContent className="justify-center">
+      <Carousel opts={{ align: "center"}} className="w-full max-w-9xl">
+        <CarouselContent>
           {cardData.map((cardData, index) => {
             return (
               <CarouselItem
-                className="flex basis-1/5"
+                className="flex basis-1/3 md:basis-1/3 lg:basis-1/5"
                 key={`card-carousel-${index}`}
               >
                 <Card placeholder={hasImages} data={cardData} />
@@ -247,14 +247,6 @@ const CardList = ({ activeCategory, data, hasImages }) => {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-      {/* {cardData.map((card, index) => {
-        return (
-          <Card
-            data={card}
-            key={`card-carousel-${index}`}
-            placeholder={hasImages}
-          />
-        ); */}
     </>
   );
 };
