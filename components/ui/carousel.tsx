@@ -1,12 +1,13 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { EmblaCarouselType, EmblaEventType } from "embla-carousel";
+import AutoPlay from 'embla-carousel-autoplay';
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import * as React from "react";
-
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
 type CarouselOptions = UseCarouselParameters[0];
@@ -22,6 +23,7 @@ type CarouselProps = {
 type CarouselContextProps = {
   carouselRef: ReturnType<typeof useEmblaCarousel>[0];
   api: ReturnType<typeof useEmblaCarousel>[1];
+  selectedIndex: number;
   scrollPrev: () => void;
   scrollNext: () => void;
   canScrollPrev: boolean;
@@ -30,7 +32,7 @@ type CarouselContextProps = {
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null);
 
-function useCarousel() {
+export function useCarousel() {
   const context = React.useContext(CarouselContext);
 
   if (!context) {
@@ -62,11 +64,24 @@ const Carousel = React.forwardRef<
         axis: orientation === "horizontal" ? "x" : "y",
         loop: true,
       },
-      plugins
+
+
+      [AutoPlay({ delay: 5000, playOnInit: true, stopOnInteraction: false, stopOnMouseEnter: true }), ...(plugins || [])]
     );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
-
+    React.useEffect(()=> {
+      if(api)
+        console.log("scroll progress", api.scrollProgress())
+    }, [api])
+    const [selectedIndex, setSelectedIndex] = React.useState(0);
+    React.useEffect(() => {
+      if(api)
+        api.on("select", (emblaApi: EmblaCarouselType)=>{
+          setSelectedIndex(emblaApi.selectedScrollSnap())
+        })
+    }, [api])
+  
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) {
         return;
@@ -121,6 +136,7 @@ const Carousel = React.forwardRef<
     return (
       <CarouselContext.Provider
         value={{
+          selectedIndex,
           carouselRef,
           api: api,
           opts,
@@ -192,14 +208,15 @@ const CarouselItem = React.forwardRef<
 CarouselItem.displayName = "CarouselItem";
 
 
-const CarouselPickItem = React.forwardRef<HTMLButtonElement, {className?: string, index: number, onClick, children?: React.ReactNode}>(function({className, index, onClick ,children}) {
+const CarouselPickItem = React.forwardRef<HTMLButtonElement, {className?: string, index: number, onClick?, children?: React.ReactNode}>(function({className, index, onClick ,children}) {
   const { api }  = useCarousel();
   return (
     <button
       className={cn(className)}
       onClick={() => {
         api?.scrollTo(index);
-        onClick()
+        if (onClick)
+          onClick()
       }}
     >
       {children}

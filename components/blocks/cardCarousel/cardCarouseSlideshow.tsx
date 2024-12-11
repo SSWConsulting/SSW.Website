@@ -3,6 +3,7 @@ import {
   CarouselContent,
   CarouselItem,
   CarouselPickItem,
+  useCarousel,
 } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 import { Card } from "./cardCarousel";
@@ -46,14 +47,7 @@ const CardList = ({ activeCategory, data, hasImages }) => {
           <div className="m-auto flex w-3/4 justify-center gap-4 p-6">
             {cardData.map((_, index) => {
               return (
-                <CarouselPickItem
-                  key={`card-carousel-pick-${index}`}
-                  onClick={() => {
-                    setActiveCardIndex(index);
-                  }}
-                  className={`h-1 w-full max-w-8 rounded-full ${activeCardIndex === index ? "bg-gray-300" : "bg-gray-500"}`}
-                  index={index}
-                />
+                <CarouselButton index={index} />
               );
             })}
           </div>
@@ -63,4 +57,12 @@ const CardList = ({ activeCategory, data, hasImages }) => {
   );
 };
 
+
+const CarouselButton = ({index})=>{
+  const {selectedIndex} = useCarousel();
+return <CarouselPickItem className={`h-1 w-full max-w-8 rounded-full ${selectedIndex === index ? "bg-gray-300" : "bg-gray-500"}`} index={index}></CarouselPickItem>
+
+}
+                
 export { CardList };
+
