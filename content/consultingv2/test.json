@@ -4,6 +4,10 @@
   },
   "blocks": [
     {
+      "finalBreadcrumb": "Custom Web Applications",
+      "_template": "breadcrumbs"
+    },
+    {
       "topLabel": {
         "labelText": "Custom Web Apps"
       },
@@ -31,7 +35,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Start Your Project",
           "colour": 0
         },
         {
@@ -40,10 +44,6 @@
         }
       ],
       "_template": "imageTextBlock"
-    },
-    {
-      "finalBreadcrumb": "Custom Web Applications",
-      "_template": "breadcrumbs"
     }
   ]
 }
