@@ -10,14 +10,15 @@ import { Card } from "./cardCarousel";
 const CardList = ({ activeCategory, data, hasImages }) => {
   const [cardData, setCardData] = useState(data.cards);
   useEffect(() => {
-    if (activeCategory)
-      setCardData(
-        data.cards.filter((card) => {
-          return activeCategory?.cardGuidList.cardGuidList.includes(card.guid);
-        })
-      );
+    if (activeCategory && activeCategory?.cardGuidList?.cardGuidList )
+    {
+        setCardData(data.cards.filter((card) => {
+          return activeCategory?.cardGuidList.cardGuidList.includes(card.guid)}))
+    }
+    else {
+      setCardData([])
+    }
   }, [activeCategory, data.cards]);
-  const [activeCardIndex, setActiveCardIndex] = useState(0);
   useEffect(() => {
     setCardData(data.cards);
   }, [data]);
