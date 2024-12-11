@@ -114,6 +114,7 @@
       ],
       "mediaConfiguration": {
         "placement": "Left",
+        "verticalPlacement": "Top",
         "imageSource": "/images/16x9-Newsletter-NextJS-ModernWebsites.png"
       },
       "_template": "imageTextBlock"
