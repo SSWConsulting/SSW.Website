@@ -88,6 +88,7 @@ export const AccordionSchema: Template = {
           label: "Content",
           name: "content",
           description: "Content/description text for the accordion item.",
+          toolbarOverride: ["bold", "italic", "link"],
         },
       ],
     },
