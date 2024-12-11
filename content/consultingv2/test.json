@@ -93,6 +93,11 @@
         "twoColumns": true,
         "features": [
           {
+            "heading": "Auto-reject unwanted transfers",
+            "description": "",
+            "icon": "BiNoEntry"
+          },
+          {
             "heading": "Just-in-time funding",
             "description": "",
             "icon": "BiArrowToRight"
