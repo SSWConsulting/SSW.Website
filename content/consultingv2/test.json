@@ -1,6 +1,10 @@
 {
   "seo": {
-    "title": "test text",
-    "description": "test"
-  }
+    "title": "Custom Web Applications"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumbs"
+    }
+  ]
 }
