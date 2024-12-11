@@ -83,8 +83,8 @@
         ]
       },
       "mediaConfiguration": {
-        "verticalPlacement": "Top",
-        "imageSource": "/images/0107SSWUpdateSysdevmag.gif"
+        "verticalPlacement": "Bottom",
+        "imageSource": "/images/16x9-Newsletter-Developing-Flexible-Authorization-Capabilities-in-ASP.NET-Core.jpg"
       },
       "_template": "imageTextBlock"
     },
