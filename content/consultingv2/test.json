@@ -5,14 +5,14 @@
   "blocks": [
     {
       "topLabel": {
-        "labelText": "Lorem Ipsum"
+        "labelText": "Custom Web Apps"
       },
       "heading": "Custom Web Application Development",
       "isH1": true,
       "description": "We specialize in building complex, custom web applications that push the boundaries of technology. When off-the-shelf solutions aren't enough, we create tailored software that fits your exact needs.\n",
       "chips": {
-        "filledChipText": "Lorem",
-        "clearChipText": "Ipsum"
+        "filledChipText": "",
+        "clearChipText": ""
       },
       "featureColumns": {
         "twoColumns": true,
