@@ -34,7 +34,7 @@ const CardList = ({ activeCategory, data, hasImages }) => {
             {cardData.map((cardData, index) => {
               return (
                 <CarouselItem
-                  className="flex basis-96"
+                  className="flex basis-72 md:basis-96"
                   key={`card-carousel-${index}`}
                 >
                   <Card
@@ -45,7 +45,7 @@ const CardList = ({ activeCategory, data, hasImages }) => {
               );
             })}
           </CarouselContent>
-          <div className="m-auto flex w-3/4 justify-center gap-4 p-6">
+          <div className="m-auto flex w-3/4 justify-center gap-2 p-6">
             {cardData.map((_, index) => {
               return (
                 <CarouselButton index={index} />
@@ -61,7 +61,7 @@ const CardList = ({ activeCategory, data, hasImages }) => {
 
 const CarouselButton = ({index})=>{
   const {selectedIndex} = useCarousel();
-return <CarouselPickItem className={`h-1 w-full max-w-8 rounded-full ${selectedIndex === index ? "bg-gray-300" : "bg-gray-500"}`} index={index}></CarouselPickItem>
+return <CarouselPickItem className={`sm:h-1 h-0.5 w-full max-w-8 rounded-full ${selectedIndex === index ? "bg-gray-300" : "bg-gray-500"}`} index={index}></CarouselPickItem>
 
 }
                 
