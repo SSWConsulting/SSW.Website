@@ -42,6 +42,7 @@
       ],
       "background": 3,
       "mediaConfiguration": {
+        "verticalPlacement": "Top",
         "imageSource": "/images/BeforeCoding.jpg"
       },
       "_template": "imageTextBlock"
