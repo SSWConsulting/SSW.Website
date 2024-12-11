@@ -28,6 +28,23 @@ export const CardCarouselSchema: Template = {
   // ui: {
   //   previewSrc: "/images/thumbs/tina/accordian.jpg",
   // },
+  ui: {
+
+    defaultItem: {
+      isStacked: false,
+      heading: "Lorem Ipsum",
+      isH1: false,
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      buttonRow: [
+        {
+          buttonText: "Lorem",
+        },
+        {
+          buttonText: "Ipsum",
+        }
+      ],
+    }
+  },
   fields: [
     {
       type: "boolean",
@@ -64,7 +81,7 @@ export const CardCarouselSchema: Template = {
       description: "A row of buttons. Max 2.",
       ui: {
         defaultItem: {
-          buttonText: "{{ TEXT }}",
+          buttonText: "Lorem",
         },
         max: 2,
         itemProps(item) {
@@ -193,6 +210,21 @@ export const CardCarouselSchema: Template = {
         itemProps: (item) => {
           return { label: item?.heading ?? "Card" };
         },
+        defaultItem: {
+          cardStyle: 0,
+          chips: {
+            chips: [],
+          },
+          heading: "Lorem Ipsum",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          featureList: {
+            features: [],
+          },
+          embeddedButton: {
+            buttonText: "Lorem",
+          },
+        }
       },
       fields: [
         {
