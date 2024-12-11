@@ -149,7 +149,7 @@ const Card = ({ data, placeholder }) => {
 
   return (
     <div
-      className={`shrink w-88 rounded-md text-start md:p-6 lg:p-8 ${
+      className={`shrink w-88 rounded-md text-start  ${
         cardOptions.find((value) => {
           return value.reference === data.cardStyle;
         })?.classes

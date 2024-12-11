@@ -18,7 +18,7 @@ import { Card } from "./cardCarousel";
     }, [data]);
   
     return <div>
-      <div className="mask-horizontal-fade flex items-stretch justify-center gap-4">
+      <div className="mask-horizontal-fade">
     <Carousel opts={{ align: "center", loop: true}} className="w-full max-w-9xl">
           <CarouselContent>
             {cardData.map((cardData, index) => {
