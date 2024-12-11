@@ -98,8 +98,9 @@
             "icon": "BiArrowToRight"
           },
           {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+            "heading": "Custom allow and disallow lists",
+            "description": "",
+            "icon": "BiBadgeCheck"
           }
         ]
       },
