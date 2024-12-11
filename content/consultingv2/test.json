@@ -73,6 +73,11 @@
         "twoColumns": false,
         "features": [
           {
+            "heading": "Transparent progress tracking",
+            "description": "",
+            "icon": "BiListCheck"
+          },
+          {
             "heading": "Regular sprint deliveries",
             "description": "",
             "icon": "BiComment"
