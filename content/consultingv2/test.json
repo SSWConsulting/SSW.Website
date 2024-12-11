@@ -23,8 +23,9 @@
             "icon": "BiSolidArch"
           },
           {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+            "heading": "Future-Proof Development",
+            "description": "We architect solutions that can evolve with your business, making it easy to adapt to new technologies and changing requirements.",
+            "icon": "BiSolidTime"
           }
         ]
       },
