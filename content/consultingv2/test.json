@@ -64,7 +64,7 @@
       },
       "heading": "Predictably fast ACH payments",
       "isH1": false,
-      "description": "ACH payments can feel like a black box. They can take several business days to complete and it’s unclear when funds will be available.\n\nWe offer same-day ACH, submit at every Fed window, and provide robust settlement tracking. This means that your payments can arrive in less than 24 hours—often even quicker.\\\n\\\nACH payments can feel like a black box. They can take several business days to complete and it’s unclear when funds will be available.\n\nWe offer same-day ACH, submit at every Fed window, and provide robust settlement tracking. This means that your payments can arrive in less than 24 hours—often even quicker.\n",
+      "description": "ACH payments can feel like a black box. They can take several business days to complete and it’s unclear when funds will be available.\n\nWe offer same-day ACH, submit at every Fed window, and provide robust settlement tracking. This means that your payments can arrive in less than 24 hours—often even quicker.\n",
       "chips": {
         "filledChipText": "Send same-day ACH",
         "clearChipText": "Submissions at every ACH window"
