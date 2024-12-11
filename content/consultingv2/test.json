@@ -86,8 +86,8 @@
       "isH1": false,
       "description": "Increase lets you preview incoming ACH transfers for one hour before allocating them. This gives you flexibility to reject unwanted debits or fund accounts just-in-time. For advanced use cases, create your own allow or disallow lists and write specialized rules or limits.\n",
       "chips": {
-        "filledChipText": "Lorem",
-        "clearChipText": "Ipsum"
+        "filledChipText": "",
+        "clearChipText": ""
       },
       "featureColumns": {
         "twoColumns": true,
@@ -114,16 +114,6 @@
           }
         ]
       },
-      "buttons": [
-        {
-          "buttonText": "Lorem Ipsum",
-          "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
-        }
-      ],
       "mediaConfiguration": {
         "placement": "Left",
         "verticalPlacement": "Centered",
