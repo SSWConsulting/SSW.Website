@@ -128,6 +128,10 @@ export const CardCarousel = ({ data }) => {
               })}
             </div>
           )}
+
+
+          {data.cards && 
+          <>
           {data.isStacked ? (<div className="flex flex-wrap items-stretch justify-center gap-4">
               {data.cards.map((cardData, index) => {
                 return <Card placeholder={hasImages} data={cardData} />
@@ -141,7 +145,7 @@ export const CardCarousel = ({ data }) => {
                 hasImages={hasImages}
               />
             </CarouselLayout>
-          )}
+          )}</>}
         </div>
       </Container>
     </V2ComponentWrapper>
