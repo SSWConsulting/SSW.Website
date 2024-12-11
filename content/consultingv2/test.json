@@ -4,6 +4,7 @@
   },
   "blocks": [
     {
+      "background": 5,
       "finalBreadcrumb": "Custom Web Applications",
       "_template": "breadcrumbs"
     },
