@@ -70,17 +70,7 @@
         "clearChipText": "Submissions at every ACH window"
       },
       "featureColumns": {
-        "twoColumns": false,
-        "features": [
-          {
-            "heading": "",
-            "description": "ACH payments can feel like a black box. They can take several business days to complete and it’s unclear when funds will be available."
-          },
-          {
-            "heading": "",
-            "description": "We offer same-day ACH, submit at every Fed window, and provide robust settlement tracking. This means that your payments can arrive in less than 24 hours—often even quicker."
-          }
-        ]
+        "twoColumns": false
       },
       "mediaConfiguration": {
         "verticalPlacement": "Bottom",
