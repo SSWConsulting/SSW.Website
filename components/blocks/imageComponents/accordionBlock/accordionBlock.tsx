@@ -49,7 +49,7 @@ export const AccordionBlock = ({ data }) => {
       )}
       {data.buttons?.length > 0 && (
         <div
-          className={`mt-5 flex ${data.mediaConfiguration?.imageSource ? "" : "justify-center"} gap-3`}
+          className={`mt-5 flex ${data.mediaConfiguration?.imageSource ? "" : "justify-center"} flex-wrap gap-3`}
         >
           {data.buttons?.map((button, index) => {
             const buttonElement = (
