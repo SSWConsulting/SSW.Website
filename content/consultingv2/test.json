@@ -70,15 +70,15 @@
         "clearChipText": "Ipsum"
       },
       "featureColumns": {
-        "twoColumns": true,
+        "twoColumns": false,
         "features": [
           {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+            "heading": "",
+            "description": "ACH payments can feel like a black box. They can take several business days to complete and it’s unclear when funds will be available."
           },
           {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+            "heading": "",
+            "description": "We offer same-day ACH, submit at every Fed window, and provide robust settlement tracking. This means that your payments can arrive in less than 24 hours—often even quicker."
           }
         ]
       },
