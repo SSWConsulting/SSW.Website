@@ -82,16 +82,6 @@
           }
         ]
       },
-      "buttons": [
-        {
-          "buttonText": "Lorem Ipsum",
-          "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
-        }
-      ],
       "mediaConfiguration": {
         "verticalPlacement": "Top",
         "imageSource": "/images/0107SSWUpdateSysdevmag.gif"
