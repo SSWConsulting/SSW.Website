@@ -2,10 +2,5 @@
   "seo": {
     "title": "test text",
     "description": "test"
-  },
-  "blocks": [
-    {
-      "_template": "AboutUs"
-    }
-  ]
+  }
 }
