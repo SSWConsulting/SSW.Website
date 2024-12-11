@@ -4,7 +4,7 @@ import { ColorPickerInput } from "../../blocksSubtemplates/tinaFormElements/colo
 
 export const LogoCarouselSchema: Template = {
   name: "logoCarousel",
-  label: "Logo Carousel",
+  label: "<V2> Logo Carousel",
   ui: {
     previewSrc: "/images/thumbs/tina/logo-carousel.png",
     defaultItem: {

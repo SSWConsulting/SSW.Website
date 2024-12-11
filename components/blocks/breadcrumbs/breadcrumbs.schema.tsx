@@ -7,7 +7,7 @@ import { TinaInfo } from "../../tina/tina-info";
 
 export const BreadcrumbSchema: Template = {
   name: "breadcrumbs",
-  label: "Breadcrumbs",
+  label: "<V2> Breadcrumbs",
   ui: {
     previewSrc: "/images/thumbs/tina/breadcrumbs.jpg",
   },

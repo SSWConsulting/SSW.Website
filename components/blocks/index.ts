@@ -56,7 +56,12 @@ import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
 
+//NOTE: this is the order that blocks will appear in the Tina Editor
 export const pageBlocks: Template[] = [
+  BreadcrumbSchema,
+  ImageTextBlockSchema,
+  LogoCarouselSchema,
+  AccordionSchema,
   aboutUsBlockSchema,
   agendaSchema,
   agreementFormBlockSchema,
@@ -64,7 +69,6 @@ export const pageBlocks: Template[] = [
   bookingButtonSchema,
   builtOnAzureBlockSchema,
   carouselBlockSchema,
-  BreadcrumbSchema,
   citationBlockSchema,
   clientListSchema,
   clientLogosBlockSchema,
@@ -110,7 +114,4 @@ export const pageBlocks: Template[] = [
   verticalListItemSchema,
   videoEmbedBlockSchema,
   inlineJotFormSchema,
-  LogoCarouselSchema,
-  ImageTextBlockSchema,
-  AccordionSchema,
 ];
