@@ -4,7 +4,7 @@ import classNames from "classnames";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import type { Template } from "tinacms";
 import { CustomLink } from "../customLink";
-import Button from "./button";
+import Button from "./rippleButton";
 
 const sizes = {
   small: "px-4 py-2 text-sm",
