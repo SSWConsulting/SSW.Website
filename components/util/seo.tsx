@@ -51,6 +51,8 @@ export const seoSchema = {
       type: "string",
       label: "Title (70 characters)",
       name: "title",
+      description:
+        "This is going to be the meta (SEO) title used, to be indexed by search engines. It should be 70 characters or less.",
       ui: {
         validate: (value) => {
           if (value && value.length > 70) {
@@ -65,6 +67,8 @@ export const seoSchema = {
       label: "Description (150 characters)",
       name: "description",
       component: "textarea",
+      description:
+        "This is going to be the meta (SEO) description used, to be indexed by search engines. It should be 150 characters or less.",
       ui: {
         validate: (value) => {
           if (value && value.length > 150) {
@@ -81,7 +85,8 @@ export const seoSchema = {
     },
     {
       type: "boolean",
-      desciption: "This is for the old breadcrumb components only",
+      desciption:
+        "DISREGARD THIS FIELD. This is for the old breadcrumb components only.",
       name: "showBreadcrumb",
       label: "Show Breadcrumb",
     },

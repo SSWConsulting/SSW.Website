@@ -1,6 +1,6 @@
 import { FaFileDownload } from "react-icons/fa";
 import { Template } from "tinacms";
-import Button from "../button/button";
+import Button from "../button/rippleButton";
 import { CustomLink } from "../customLink";
 
 export const CustomDownloadButton = ({ data }) => {

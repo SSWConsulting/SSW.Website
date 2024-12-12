@@ -13,6 +13,11 @@ export const consultingv2Schema: Collection = {
     router: (args) => {
       return `/consulting/${args.document._sys.filename}`;
     },
+    filename: {
+      showFirst: true,
+      description:
+        "The filename will be used for the URL path of the page (slug). It should be unique and spaces aren't allowed.",
+    },
   },
   fields: [
     tipField,
