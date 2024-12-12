@@ -10,13 +10,14 @@ import { Card } from "./cardCarousel";
 const CardList = ({ activeCategory, data, hasImages }) => {
   const [cardData, setCardData] = useState(data.cards);
   useEffect(() => {
-    if (activeCategory && activeCategory?.cardGuidList?.cardGuidList )
-    {
-        setCardData(data.cards.filter((card) => {
-          return activeCategory?.cardGuidList.cardGuidList.includes(card.guid)}))
-    }
-    else {
-      setCardData([])
+    if (activeCategory && activeCategory?.cardGuidList?.cardGuidList) {
+      setCardData(
+        data.cards.filter((card) => {
+          return activeCategory?.cardGuidList.cardGuidList.includes(card.guid);
+        })
+      );
+    } else {
+      setCardData([]);
     }
   }, [activeCategory, data.cards]);
   useEffect(() => {
@@ -48,7 +49,10 @@ const CardList = ({ activeCategory, data, hasImages }) => {
           <div className="m-auto flex w-3/4 justify-center gap-2 p-6">
             {cardData.map((_, index) => {
               return (
-                <CarouselButton index={index} />
+                <CarouselButton
+                  key={`carousel-button-${index}`}
+                  index={index}
+                />
               );
             })}
           </div>
@@ -58,12 +62,14 @@ const CardList = ({ activeCategory, data, hasImages }) => {
   );
 };
 
+const CarouselButton = ({ index }) => {
+  const { selectedIndex } = useCarousel();
+  return (
+    <CarouselPickItem
+      className={`h-0.5 w-full max-w-8 rounded-full sm:h-1 ${selectedIndex === index ? "bg-gray-300" : "bg-gray-500"}`}
+      index={index}
+    ></CarouselPickItem>
+  );
+};
 
-const CarouselButton = ({index})=>{
-  const {selectedIndex} = useCarousel();
-return <CarouselPickItem className={`sm:h-1 h-0.5 w-full max-w-8 rounded-full ${selectedIndex === index ? "bg-gray-300" : "bg-gray-500"}`} index={index}></CarouselPickItem>
-
-}
-                
 export { CardList };
-

@@ -53,72 +53,32 @@
       "body": "",
       "categoryGroup": [
         {
-          "categoryName": "A way longer bit of text",
+          "categoryName": "Cat B",
           "cardGuidList": {
-            "guid": "d82nut",
+            "guid": "2d4xoa",
             "cardGuidList": [
-              "fzc9cq",
-              "4nap7",
-              "o8s48m",
-              "oe5bg",
-              null,
-              "ul9uqb",
-              "05xd5j",
-              "qnt59v"
+              "922bwf",
+              "la7o0f",
+              "8vt2yi",
+              "kn7szh"
             ]
           }
         },
         {
-          "categoryName": "B",
+          "categoryName": "Cat C",
           "cardGuidList": {
-            "guid": "xcxcn1a",
-            "cardGuidList": [
-              "fzc9cq",
-              "qnt59v"
-            ]
+            "guid": "llbdj",
+            "cardGuidList": []
           }
         }
       ],
       "cardStyle": 0,
       "cards": [
         {
-          "guid": "ul9uqb",
-          "chips": {
-            "filledChipText": "Case study",
-            "clearChipText": "4 min read"
-          },
-          "heading": "Hearing Australia Streamlined operations with .NET 8",
-          "description": "",
-          "featureList": {
-            "features": [
-              {
-                "heading": "",
-                "description": "Migrated legacy systems using the Strangler Fig Strategy",
-                "icon": "BiCheckCircle"
-              },
-              {
-                "heading": "",
-                "description": "Lorem ipsum lorem ipsum loprem ipsum",
-                "icon": "BiCheck"
-              },
-              {
-                "heading": "",
-                "description": "Lorem ipsum lorem ipsum loprem ipsum",
-                "icon": "BiCheck"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": "Read more",
-            "icon": "BiChevronRight"
-          }
-        },
-        {
-          "guid": "qnt59v",
-          "image": "/images/videoPlaceholder.png",
+          "guid": "kn7szh",
           "chips": {},
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tepor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Edit",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "featureList": {
             "features": []
           },
@@ -127,7 +87,66 @@
           }
         },
         {
-          "guid": "05xd5j",
+          "chips": {},
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": []
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "8vt2yi",
+          "chips": {},
+          "heading": "Test card",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": []
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "922bwf",
+          "chips": {},
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": []
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "la7o0f",
+          "chips": {},
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": []
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "w5as1",
+          "chips": {},
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": []
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "5bg9a",
           "chips": {},
           "heading": "Lorem Ipsum",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",

@@ -149,6 +149,7 @@ export const CardCarouselSchema: Template = {
                 if (!input.value.guid) {
                   input.onChange({
                     guid: GUIDFunction(),
+                    cardGuidList: [],
                   });
                 }
                 cardCarouselBlocks.forEach((block) => {
@@ -166,8 +167,12 @@ export const CardCarouselSchema: Template = {
                     {options.length === 0 && <p>No cards found.</p>}
                     {options?.map((item, index) => {
                       return (
-                        <div key={`${index}-${item}`} className="flex gap-2">
+                        <div
+                          key={`${index}-${item}`}
+                          className="flex flex-wrap gap-2"
+                        >
                           <Checkbox
+                            disabled={!item.guid}
                             checked={fieldValues.includes(item.guid)}
                             onCheckedChange={(checked) => {
                               const newFieldValues = checked
@@ -183,11 +188,17 @@ export const CardCarouselSchema: Template = {
                               return input.onChange(newObjectValue);
                             }}
                           />
-                          <label>
+                          <label className={!item.guid ? "text-gray-600" : ""}>
                             {item.heading ||
                               item.altText ||
                               `Unlabeled – ${item.guid}`}
                           </label>
+                          {!item.guid && (
+                            <p className="text-wrap text-red-700">
+                              ⚠️ Make and save changes to this card before
+                              assigning it to a tab ⚠️
+                            </p>
+                          )}
                         </div>
                       );
                     })}

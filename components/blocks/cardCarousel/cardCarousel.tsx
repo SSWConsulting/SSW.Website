@@ -15,6 +15,8 @@ import { CardList } from "./cardCarouseSlideshow";
 export const CardCarousel = ({ data }) => {
   //Check if any images are used in cards (adds a placeholder to the other cards)
   const [hasImages, setHasImages] = useState(false);
+  const [cardSet, setCardSet] = useState(data.cards);
+
   useEffect(() => {
     setHasImages(data.cards?.some((card) => card.image));
   }, [data.cards]);
@@ -69,6 +71,13 @@ export const CardCarousel = ({ data }) => {
                     }`}
                     onClick={() => {
                       setActiveCategory(category);
+                      setCardSet(
+                        data.cards.filter((card) => {
+                          return category.cardGuidList.cardGuidList.includes(
+                            card.guid
+                          );
+                        })
+                      );
                     }}
                   >
                     {category.categoryName}
@@ -123,33 +132,33 @@ export const CardCarousel = ({ data }) => {
               })}
             </div>
           )}
-              {(data.isStacked && data.cards) && <>
-                <div className="flex flex-wrap items-stretch justify-center gap-4 lg:gap-8">
-                  {data.cards.map((cardData, index) => {
-                    return (
-                      <Card
-                        key={`card-${index}`}
-                        placeholder={hasImages}
-                        data={{ ...cardData, cardStyle: data.cardStyle }}
-                      />
-                    );
-                  })}
-                </div>
-            </>}
-  
+          {data.isStacked && data.cards && (
+            <>
+              <div className="flex flex-wrap items-stretch justify-center gap-4 lg:gap-8">
+                {cardSet.map((cardData, index) => {
+                  return (
+                    <Card
+                      key={`card-${index}`}
+                      placeholder={hasImages}
+                      data={{ ...cardData, cardStyle: data.cardStyle }}
+                    />
+                  );
+                })}
+              </div>
+            </>
+          )}
         </div>
       </Container>
 
-      {data.cards && !data.isStacked &&
-      <Container padding="sm:px-8">
-       <CardList
-                  activeCategory={activeCategory}
-                  data={data}
-                  hasImages={hasImages}
-                />
-        
-      </Container>      
-      }
+      {data.cards && !data.isStacked && (
+        <Container padding="sm:px-8">
+          <CardList
+            activeCategory={activeCategory}
+            data={cardSet}
+            hasImages={hasImages}
+          />
+        </Container>
+      )}
     </V2ComponentWrapper>
   );
 };
@@ -161,7 +170,7 @@ const Card = ({ data, placeholder }) => {
 
   return (
     <div
-      className={`w-full flex shrink flex-col rounded-md text-start ${
+      className={`w-90 flex shrink flex-col rounded-md text-start ${
         cardOptions.find((value) => {
           return value.reference === data.cardStyle;
         })?.classes
@@ -223,4 +232,3 @@ const Card = ({ data, placeholder }) => {
 };
 
 export { Card };
-
