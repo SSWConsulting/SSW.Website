@@ -1,10 +1,13 @@
 "use client";
 import { Button } from "@/components/button/templateButton";
 import { Container } from "@/components/util/container";
+import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { setState, useEffect, useMemo, useRef, useState } from "react";
+import { current } from "tailwindcss/colors";
 import { tinaField } from "tinacms/dist/react";
+import { useResizeObserver } from "usehooks-ts";
 import { ListItem } from "../imageComponents/imageTextBlock/listItem";
 import { PillGroup } from "../imageComponents/imageTextBlock/pillGroup";
 import V2ComponentWrapper from "../imageComponents/imageTextBlock/v2ComponentWrapper";
@@ -15,40 +18,78 @@ import { CardList } from "./cardCarouseSlideshow";
 export const CardCarousel = ({ data }) => {
   //Check if any images are used in cards (adds a placeholder to the other cards)
   const [hasImages, setHasImages] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(0);
+
   useEffect(() => {
     setHasImages(data.cards?.some((card) => card.image));
   }, [data.cards]);
-
+  const [containerDimensions, setContainerDimensions] = useState({
+    width: 0,
+    height: 0,
+  });
   //Sliding tabs
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const [selectedTabWidth, setSelectedTabWidth] = useState(0);
-  const [selectedTabOffset, setSelectedTabOffset] = useState(0);
+  const tabWrapperRef = useRef<HTMLDivElement>(null);
+  const [tabDimemsions, setTabDimensions] = useState({
+    top: 0,
+    left: 0,
+    width: 0,
+    height: 0,
+  });
 
+  useEffect(() => {
+    if (tabWrapperRef) {
+      const { clientHeight, clientWidth } = tabWrapperRef.current;
+      setContainerDimensions({ width: clientWidth, height: clientHeight });
+    }
+  }, [tabWrapperRef]);
+
+  useEffect(() => {
+    console.log("containerDimensions", containerDimensions);
+    const button = buttonRefs.current[selectedIndex];
+    if (button) {
+      const { clientWidth, offsetLeft, offsetTop, clientHeight } = button;
+      setTabDimensions({
+        top: offsetTop,
+        left: offsetLeft,
+        width: clientWidth,
+        height: clientHeight,
+      });
+    }
+  }, [selectedIndex, containerDimensions]);
   const [activeCategory, setActiveCategory] = useState(
     data.categoryGroup?.at(0) ?? null
   );
-
+  useResizeObserver({
+    ref: tabWrapperRef,
+    onResize: () => {
+      const { clientWidth, clientHeight } = tabWrapperRef.current;
+      // const clientHeight = spanref.current.clientHeight;
+      setContainerDimensions({ width: clientWidth, height: clientHeight });
+    },
+  });
   useEffect(() => {
-    if (activeCategory === null) {
-      return;
-    }
-
-    const currentTab = buttonRefs.current[
-      data.categoryGroup?.indexOf(activeCategory)
-    ] as HTMLElement;
-    setSelectedTabOffset(currentTab?.offsetLeft ?? 0);
-    setSelectedTabWidth(currentTab?.clientWidth ?? 0);
+    const tabIndex = data.categoryGroup?.indexOf(activeCategory);
+    setSelectedIndex(tabIndex ?? 0);
   }, [activeCategory, data.categoryGroup]);
 
   return (
     <V2ComponentWrapper data={data}>
       <Container>
         <div className="flex flex-col gap-4 text-center">
-          <div className="relative m-auto flex w-fit overflow-hidden rounded-md bg-black">
+          <div
+            className="relative m-auto flex w-fit flex-wrap overflow-hidden rounded-md bg-black"
+            ref={tabWrapperRef}
+          >
             {/* Underlay to achieve the slide effect */}
             <span
               className="absolute inset-y-0 flex overflow-hidden rounded-md transition-all duration-500"
-              style={{ left: selectedTabOffset, width: selectedTabWidth }}
+              style={{
+                left: tabDimemsions.left,
+                width: tabDimemsions.width,
+                marginTop: tabDimemsions.top,
+                height: tabDimemsions.height,
+              }}
             >
               <span className="size-full bg-white" />
             </span>
@@ -63,9 +104,7 @@ export const CardCarousel = ({ data }) => {
                     }}
                     key={`category-${index}`}
                     className={`relative w-fit min-w-24 rounded-md bg-transparent p-2 transition-colors duration-500 ${
-                      activeCategory === category
-                        ? "text-black"
-                        : "text-gray-200"
+                      selectedIndex === index ? "text-black" : "text-gray-200"
                     }`}
                     onClick={() => {
                       setActiveCategory(category);
@@ -123,33 +162,33 @@ export const CardCarousel = ({ data }) => {
               })}
             </div>
           )}
-              {(data.isStacked && data.cards) && <>
-                <div className="flex flex-wrap items-stretch justify-center gap-4 lg:gap-8">
-                  {data.cards.map((cardData, index) => {
-                    return (
-                      <Card
-                        key={`card-${index}`}
-                        placeholder={hasImages}
-                        data={{ ...cardData, cardStyle: data.cardStyle }}
-                      />
-                    );
-                  })}
-                </div>
-            </>}
-  
+          {data.isStacked && data.cards && (
+            <>
+              <div className="flex flex-wrap items-stretch justify-center gap-4 lg:gap-8">
+                {data.cards.map((cardData, index) => {
+                  return (
+                    <Card
+                      key={`card-${index}`}
+                      placeholder={hasImages}
+                      data={{ ...cardData, cardStyle: data.cardStyle }}
+                    />
+                  );
+                })}
+              </div>
+            </>
+          )}
         </div>
       </Container>
 
-      {data.cards && !data.isStacked &&
-      <Container padding="sm:px-8">
-       <CardList
-                  activeCategory={activeCategory}
-                  data={data}
-                  hasImages={hasImages}
-                />
-        
-      </Container>      
-      }
+      {data.cards && !data.isStacked && (
+        <Container padding="sm:px-8">
+          <CardList
+            activeCategory={activeCategory}
+            data={data}
+            hasImages={hasImages}
+          />
+        </Container>
+      )}
     </V2ComponentWrapper>
   );
 };
@@ -161,7 +200,7 @@ const Card = ({ data, placeholder }) => {
 
   return (
     <div
-      className={`w-full flex shrink flex-col rounded-md text-start ${
+      className={`flex w-full shrink flex-col rounded-md text-start ${
         cardOptions.find((value) => {
           return value.reference === data.cardStyle;
         })?.classes
@@ -223,4 +262,3 @@ const Card = ({ data, placeholder }) => {
 };
 
 export { Card };
-
