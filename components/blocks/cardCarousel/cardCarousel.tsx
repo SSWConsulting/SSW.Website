@@ -26,9 +26,7 @@ export const CardCarousel = ({ data }) => {
   const [selectedTabWidth, setSelectedTabWidth] = useState(0);
   const [selectedTabOffset, setSelectedTabOffset] = useState(0);
 
-  const [activeCategory, setActiveCategory] = useState(
-    data.categoryGroup?.at(0) ?? null
-  );
+  const [activeCategory, setActiveCategory] = useState(null);
 
   useEffect(() => {
     if (activeCategory === null) {
