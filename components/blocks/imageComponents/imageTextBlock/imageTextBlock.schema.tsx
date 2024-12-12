@@ -7,9 +7,9 @@ import { ImageComponentLayoutSchema } from "../ImageComponentLayoutSchema";
 
 export const ImageTextBlockSchema: Template = {
   name: "imageTextBlock",
-  label: "Image Text Block",
+  label: "<V2> Image Text Block",
   ui: {
-    previewSrc: "/images/thumbs/tina/client-logos.jpg",
+    previewSrc: "/images/thumbs/tina/image-text.png",
     defaultItem: {
       backgroundColor: "Transparent",
       topLabel: {

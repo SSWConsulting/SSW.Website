@@ -4,12 +4,9 @@ import { ImageComponentLayoutSchema } from "../ImageComponentLayoutSchema";
 
 export const AccordionSchema: Template = {
   name: "accordionBlock",
-  label: "Accordion",
-  // ui: {
-  //   previewSrc: "/images/thumbs/tina/accordian.jpg",
-  // },
-
+  label: "<V2> Accordion",
   ui: {
+    previewSrc: "/images/thumbs/tina/accordion.png",
     defaultItem: {
       heading: "Lorem Ipsum",
       body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -91,6 +88,7 @@ export const AccordionSchema: Template = {
           label: "Content",
           name: "content",
           description: "Content/description text for the accordion item.",
+          toolbarOverride: ["bold", "italic", "link"],
         },
       ],
     },

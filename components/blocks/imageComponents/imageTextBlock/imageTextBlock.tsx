@@ -70,7 +70,7 @@ export const ImageTextBlock = ({ data }) => {
         })}
       </div>
       {data.buttons?.length > 0 && (
-        <div className={classNames("mt-5 flex gap-3", noImageCenter)}>
+        <div className={classNames("mt-5 flex flex-wrap gap-3", noImageCenter)}>
           {data.buttons?.map((button, index) => {
             const buttonElement = (
               <Button

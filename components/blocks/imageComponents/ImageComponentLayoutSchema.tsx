@@ -1,15 +1,7 @@
-import { backgroundOptions } from "../../blocksSubtemplates/tinaFormElements/colourOptions/blockBackgroundOptions";
-import { ColorPickerInput } from "../../blocksSubtemplates/tinaFormElements/colourSelector";
+import { backgroundSchema } from "../../../components/layout/v2ComponentWrapper";
 
 export const ImageComponentLayoutSchema = [
-  {
-    type: "number",
-    label: "Background Colour",
-    name: "background",
-    ui: {
-      component: ColorPickerInput(backgroundOptions),
-    },
-  },
+  backgroundSchema,
   {
     type: "object",
     label: "Media",
@@ -69,7 +61,7 @@ export const ImageComponentLayoutSchema = [
         label: "Image Source",
         name: "imageSource",
         description:
-          "Upload an image or other media to display in the media text block.",
+          "Upload an image or other media to display in the media text block. 4/3 aspect ratio recommended.",
       },
       {
         type: "string",
