@@ -1,6 +1,7 @@
 "use client";
 import classNames from "classnames";
 import { useInView } from "framer-motion";
+import Image from "next/image";
 
 import { UseInViewOptions } from "framer-motion";
 import React, { useEffect, useRef } from "react";
@@ -44,9 +45,11 @@ const V2ComponentWrapper = ({
     >
       {data.background?.bleed ? (
         <div>
-          <img
+          <Image
             src={data.background?.backgroundImage}
-            className="absolute inset-0 z-0 w-full object-cover"
+            className="absolute inset-0 w-full object-cover"
+            alt="background image"
+            fill={true}
           />
         </div>
       ) : (
