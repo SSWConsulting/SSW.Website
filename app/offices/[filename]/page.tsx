@@ -5,6 +5,8 @@ import { Metadata } from "next";
 import OfficePage from ".";
 import { TinaClient } from "../../tina-client";
 
+export const dynamicParams = false;
+
 const getData = async (filename: string) => {
   const tinaProps = await client.queries.officeContentQuery({
     relativePath: `${filename}.mdx`,
